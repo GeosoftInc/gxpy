@@ -15,7 +15,7 @@ setup(
     long_description=read('README.rst'),
     author='Geosoft Inc.',
     author_email='support@geosoft.com',
-    url='https://bitbucket.org/ianneilmacleod/geosoft', #TODO replace with final
+    url='https://github.com/GeosoftInc/gxpy',
     license='BSD',
     install_requires=[
           'numpy>=1.7',
@@ -34,7 +34,11 @@ setup(
     classifiers=[
         "Development Status :: 4 - Beta", #TODO Upgrade to production and review other classifiers (https://pypi.python.org/pypi?%3Aaction=list_classifiers)
         "Topic :: Scientific/Engineering",
+        "Intended Audience :: Science/Research",
         "License :: OSI Approved :: BSD License",
+        "Natural Language :: English",
+        "Operating System :: Microsoft :: Windows",
+        "Programming Language :: Python :: 3 :: Only",
     ],
     )
 
