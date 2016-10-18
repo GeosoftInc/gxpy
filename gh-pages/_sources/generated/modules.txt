@@ -1,7 +1,0 @@
-geosoft
-=======
-
-.. toctree::
-   :maxdepth: 4
-
-   geosoft
