@@ -44,6 +44,7 @@
   <ul>
 <li><a class="reference internal" href="#">Indices and tables</a></li>
 <li><a class="reference internal" href="#introduction">Introduction</a><ul>
+<li><a class="reference internal" href="#hello-world-example">Hello World Example</a></li>
 <li><a class="reference internal" href="#the-geosoft-gxpy-package">The geosoft.gxpy package</a></li>
 <li><a class="reference internal" href="#the-gxcontext-class">The GXContext class</a></li>
 <li><a class="reference internal" href="#exceptions">Exceptions</a></li>
@@ -225,6 +226,20 @@
 </div>
 <div class="section" id="introduction">
 <h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="hello-world-example">
+<h2>Hello World Example<a class="headerlink" href="#hello-world-example" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">geosoft.gxapi</span> <span class="kn">as</span> <span class="nn">gxapi</span> <span class="c1"># gxapi methods</span>
+<span class="kn">import</span> <span class="nn">geosoft.gxpy</span> <span class="kn">as</span> <span class="nn">gxpy</span>   <span class="c1"># gxpy methods</span>
+
+<span class="c1"># a python script must have a rungx(), which is executed by OM when the script is run</span>
+<span class="k">def</span> <span class="nf">rungx</span><span class="p">():</span>
+    <span class="n">gxp</span> <span class="o">=</span> <span class="n">gxpy</span><span class="o">.</span><span class="n">gx</span><span class="o">.</span><span class="n">GXpy</span><span class="p">()</span> <span class="c1"># get the current gx context</span>
+    
+    <span class="c1"># say hello to the user identified by gxp.gid.</span>
+    <span class="n">gxapi</span><span class="o">.</span><span class="n">GXSYS</span><span class="o">.</span><span class="n">display_message</span><span class="p">(</span><span class="s2">&quot;GX Python&quot;</span><span class="p">,</span> <span class="s2">&quot;Hello {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">gxp</span><span class="o">.</span><span class="n">gid</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
 <div class="section" id="the-geosoft-gxpy-package">
 <h2>The geosoft.gxpy package<a class="headerlink" href="#the-geosoft-gxpy-package" title="Permalink to this headline">¶</a></h2>
 <div class="admonition note">

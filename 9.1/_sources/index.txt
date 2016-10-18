@@ -8,6 +8,12 @@ Indices and tables
 Introduction
 ============
 
+Hello World Example
+-------------------
+
+.. literalinclude:: ../examples/hello_world/hello_world.py
+
+
 The geosoft.gxpy package
 ------------------------
 
