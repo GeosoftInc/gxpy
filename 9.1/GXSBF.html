@@ -1,0 +1,470 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>GXSBF class &mdash; Geosoft GX Python API 9.1.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/maki.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '9.1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="Geosoft GX Python API 9.1.0 documentation" href="index.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">GXSBF class</a><ul>
+<li><a class="reference internal" href="#sbf-open-constants">SBF_OPEN constants</a></li>
+<li><a class="reference internal" href="#sbf-type-constants">SBF_TYPE constants</a></li>
+</ul>
+</li>
+</ul>
+
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/GXSBF.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="gxsbf-class">
+<span id="gxsbf"></span><h1>GXSBF class<a class="headerlink" href="#gxsbf-class" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="geosoft.gxapi.GXSBF">
+<em class="property">class </em><code class="descclassname">geosoft.gxapi.</code><code class="descname">GXSBF</code><a class="headerlink" href="#geosoft.gxapi.GXSBF" title="Permalink to this definition">¶</a></dt>
+<dd><pre class="literal-block">
+The SBF class provides a means of storing data in a
+file-type directory structure within a workspace, database
+or map. Each of these three objects contains its own SBF object,
+which may be accessed using the <a class="reference internal" href="#geosoft.gxapi.GXSBF.h_get_sys" title="geosoft.gxapi.GXSBF.h_get_sys"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXSBF.h_get_sys()</span></code></a>, <a class="reference internal" href="#geosoft.gxapi.GXSBF.h_get_db" title="geosoft.gxapi.GXSBF.h_get_db"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXSBF.h_get_db()</span></code></a> and
+<a class="reference internal" href="#geosoft.gxapi.GXSBF.h_get_map" title="geosoft.gxapi.GXSBF.h_get_map"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXSBF.h_get_map()</span></code></a> functions. To access data in a file, or create a
+new file in the SBF object, call the CreatSBF_BF function (see BF),
+which will return a BF object to use.
+</pre>
+<dl class="method">
+<dt id="geosoft.gxapi.GXSBF.create">
+<code class="descname">create</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(int)arg2</em><span class="sig-paren">)</span> &rarr; GXSBF:<a class="headerlink" href="#geosoft.gxapi.GXSBF.create" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Create a child SBF object inside an SBF.
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arg1</strong> (<em>str</em>) &#8211; directory name to open / create</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#sbf-open"><span>SBF_OPEN constants</span></a></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">SBF object, terminates if fails.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="#geosoft.gxapi.GXSBF" title="geosoft.gxapi.GXSBF"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXSBF</span></code></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.0.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXSBF.create_obj_list">
+<code class="descname">create_obj_list</code><span class="sig-paren">(</span><em>(GXLST)arg1</em>, <em>(int)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSBF.create_obj_list" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Fills an LST with embedded storage names of an SBF.
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arg1</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXLST</span></code></a>) &#8211; LST handle</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#sbf-type"><span>SBF_TYPE constants</span></a></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.7.</span></p>
+</div>
+<p><strong>Note:</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span></span>Function will populate an LST object with embedded files (SBF_TYPE_FILES),
+directories (SBF_TYPE_DIRS), or both (pass SBF_TYPE_BOTH) in an SBF.
+Along with the Name of the file or directory, a constant &quot;dir&quot; or &quot;file&quot; string is written
+to the LST also.
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXSBF.del_dir">
+<code class="descname">del_dir</code><span class="sig-paren">(</span><em>(str)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSBF.del_dir" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Delete a directory (storage) from this storage.
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>str</em>) &#8211; Dir/Storage Name</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Nothing</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">None</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.0.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXSBF.del_file">
+<code class="descname">del_file</code><span class="sig-paren">(</span><em>(str)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSBF.del_file" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Delete a file from this storage.
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>str</em>) &#8211; File Name</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Nothing</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">None</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.0.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXSBF.exist_dir">
+<code class="descname">exist_dir</code><span class="sig-paren">(</span><em>(str)arg1</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXSBF.exist_dir" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Check to see if a directory (storage) exists inside this storage.
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>str</em>) &#8211; Dir/Storage Name</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">0 - Does not exist
+1 - Exists</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.0.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXSBF.exist_file">
+<code class="descname">exist_file</code><span class="sig-paren">(</span><em>(str)arg1</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXSBF.exist_file" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Check to see if a file exists inside this storage.
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>str</em>) &#8211; File Name</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">0 - Does not exist
+1 - Exists</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.0.</span></p>
+</div>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="geosoft.gxapi.GXSBF.h_get_db">
+<em class="property">static </em><code class="descname">h_get_db</code><span class="sig-paren">(</span><em>(GXDB)arg1</em><span class="sig-paren">)</span> &rarr; GXSBF:<a class="headerlink" href="#geosoft.gxapi.GXSBF.h_get_db" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Get the embedded file storage from a database.
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXDB</span></code></a>) &#8211; Database</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">SBF Object</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXSBF" title="geosoft.gxapi.GXSBF"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXSBF</span></code></a></td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.0.</span></p>
+</div>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="geosoft.gxapi.GXSBF.h_get_map">
+<em class="property">static </em><code class="descname">h_get_map</code><span class="sig-paren">(</span><em>(GXMAP)arg1</em><span class="sig-paren">)</span> &rarr; GXSBF:<a class="headerlink" href="#geosoft.gxapi.GXSBF.h_get_map" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Get the embedded file storage from a map.
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<a class="reference internal" href="GXMAP.html#geosoft.gxapi.GXMAP" title="geosoft.gxapi.GXMAP"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXMAP</span></code></a>) &#8211; MAP object</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">SBF Object</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXSBF" title="geosoft.gxapi.GXSBF"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXSBF</span></code></a></td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.0.</span></p>
+</div>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="geosoft.gxapi.GXSBF.h_get_sys">
+<em class="property">static </em><code class="descname">h_get_sys</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; GXSBF:<a class="headerlink" href="#geosoft.gxapi.GXSBF.h_get_sys" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Get the main embedded file storage (in workspace).
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">SBF Object</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXSBF" title="geosoft.gxapi.GXSBF"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXSBF</span></code></a></td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.0.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXSBF.is_null">
+<code class="descname">is_null</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; bool<a class="headerlink" href="#geosoft.gxapi.GXSBF.is_null" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if the instance of <code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXSBF</span> <span class="pre">is</span> <span class="pre">null</span> <span class="pre">(undefined)</span></code></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if this is a null instance of <a class="reference internal" href="#geosoft.gxapi.GXSBF" title="geosoft.gxapi.GXSBF"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXSBF</span></code></a>, False otherwise.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool`</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="geosoft.gxapi.GXSBF.null">
+<em class="property">static </em><code class="descname">null</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; GXSBF<a class="headerlink" href="#geosoft.gxapi.GXSBF.null" title="Permalink to this definition">¶</a></dt>
+<dd><p>A null (undefined) instance of <a class="reference internal" href="#geosoft.gxapi.GXSBF" title="geosoft.gxapi.GXSBF"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXSBF</span></code></a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A null <a class="reference internal" href="#geosoft.gxapi.GXSBF" title="geosoft.gxapi.GXSBF"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXSBF</span></code></a></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXSBF" title="geosoft.gxapi.GXSBF"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXSBF</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXSBF.save_log">
+<code class="descname">save_log</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(str)arg2</em>, <em>(str)arg3</em>, <em>(int)arg4</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSBF.save_log" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Save an embedded file to an ASCII file.
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arg1</strong> (<em>str</em>) &#8211; Directory name in the Parent SBF</li>
+<li><strong>arg2</strong> (<em>str</em>) &#8211; File name in the directory</li>
+<li><strong>arg3</strong> (<em>str</em>) &#8211; File to save as (as an ASCII file)</li>
+<li><strong>arg4</strong> (<em>int</em>) &#8211; Append Mode: 0 - New file, 1 - Append file</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.0.</span></p>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<div class="section" id="sbf-open-constants">
+<span id="sbf-open"></span><h2>SBF_OPEN constants<a class="headerlink" href="#sbf-open-constants" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><div class="highlight"><pre><span></span>SBF Open defines
+</pre></div>
+</div>
+<dl class="attribute">
+<dt id="geosoft.gxapi.SBF_READ">
+<code class="descclassname">gxapi.</code><code class="descname">SBF_READ</code><em class="property"> = 0</em><a class="headerlink" href="#geosoft.gxapi.SBF_READ" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="highlight-python"><div class="highlight"><pre><span></span>Read only
+</pre></div>
+</div>
+<dl class="attribute">
+<dt id="geosoft.gxapi.SBF_READWRITE_NEW">
+<code class="descclassname">gxapi.</code><code class="descname">SBF_READWRITE_NEW</code><em class="property"> = 1</em><a class="headerlink" href="#geosoft.gxapi.SBF_READWRITE_NEW" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="highlight-python"><div class="highlight"><pre><span></span>Read/write - erases structured file
+</pre></div>
+</div>
+<dl class="attribute">
+<dt id="geosoft.gxapi.SBF_READWRITE_OLD">
+<code class="descclassname">gxapi.</code><code class="descname">SBF_READWRITE_OLD</code><em class="property"> = 2</em><a class="headerlink" href="#geosoft.gxapi.SBF_READWRITE_OLD" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="highlight-python"><div class="highlight"><pre><span></span>Read/write - open and append onto pre-existing structured file
+</pre></div>
+</div>
+</div>
+<div class="section" id="sbf-type-constants">
+<span id="sbf-type"></span><h2>SBF_TYPE constants<a class="headerlink" href="#sbf-type-constants" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><div class="highlight"><pre><span></span>SBF Object type defines
+</pre></div>
+</div>
+<dl class="attribute">
+<dt id="geosoft.gxapi.SBF_TYPE_DIRS">
+<code class="descclassname">gxapi.</code><code class="descname">SBF_TYPE_DIRS</code><em class="property"> = 1</em><a class="headerlink" href="#geosoft.gxapi.SBF_TYPE_DIRS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="highlight-python"><div class="highlight"><pre><span></span>Embedded directory names
+</pre></div>
+</div>
+<dl class="attribute">
+<dt id="geosoft.gxapi.SBF_TYPE_FILES">
+<code class="descclassname">gxapi.</code><code class="descname">SBF_TYPE_FILES</code><em class="property"> = 2</em><a class="headerlink" href="#geosoft.gxapi.SBF_TYPE_FILES" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="highlight-python"><div class="highlight"><pre><span></span>Embedded file names
+</pre></div>
+</div>
+<dl class="attribute">
+<dt id="geosoft.gxapi.SBF_TYPE_BOTH">
+<code class="descclassname">gxapi.</code><code class="descname">SBF_TYPE_BOTH</code><em class="property"> = 3</em><a class="headerlink" href="#geosoft.gxapi.SBF_TYPE_BOTH" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="highlight-python"><div class="highlight"><pre><span></span>Embedded file and directory names
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2016, Geosoft Inc.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

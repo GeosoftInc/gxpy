@@ -1,0 +1,242 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>GXTRND class &mdash; Geosoft GX Python API 9.1.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/maki.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '9.1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="Geosoft GX Python API 9.1.0 documentation" href="index.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">GXTRND class</a><ul>
+<li><a class="reference internal" href="#trnd-node-constants">TRND_NODE constants</a></li>
+</ul>
+</li>
+</ul>
+
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/GXTRND.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="gxtrnd-class">
+<span id="gxtrnd"></span><h1>GXTRND class<a class="headerlink" href="#gxtrnd-class" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="geosoft.gxapi.GXTRND">
+<em class="property">class </em><code class="descclassname">geosoft.gxapi.</code><code class="descname">GXTRND</code><a class="headerlink" href="#geosoft.gxapi.GXTRND" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-python"><div class="highlight"><pre><span></span>The TRND methods are used to determine trend directions in database data by locating
+maxima and minima along lines and joining them in a specified direction.
+The resulting trend lines are appended to the database and used by gridding methods
+such as Bigrid and Rangrid to enforce features in the specified direction.
+</pre></div>
+</div>
+<dl class="staticmethod">
+<dt id="geosoft.gxapi.GXTRND.get_max_min">
+<em class="property">static </em><code class="descname">get_max_min</code><span class="sig-paren">(</span><em>(GXVV)arg1</em>, <em>(GXVV)arg2</em>, <em>(GXVV)arg3</em>, <em>(GXVV)arg4</em>, <em>(GXVV)arg5</em>, <em>(GXVV)arg6</em>, <em>(float)arg7</em>, <em>(int)arg8</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXTRND.get_max_min" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Find the max/min nodes in a line.
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arg1</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; X Channel</li>
+<li><strong>arg2</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Y Channel</li>
+<li><strong>arg3</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Data Channel</li>
+<li><strong>arg4</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; X MaxMin (returned)</li>
+<li><strong>arg5</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Y MaxMin (returned)</li>
+<li><strong>arg6</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Data MaxMin (returned)</li>
+<li><strong>arg7</strong> (<em>float</em>) &#8211; MaxMin Window</li>
+<li><strong>arg8</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#trnd-node"><span>TRND_NODE constants</span></a></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.0.</span></p>
+</div>
+<p><strong>Note:</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span></span>Trend lines positions consist of X and Y VVs
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="geosoft.gxapi.GXTRND.get_mesh">
+<em class="property">static </em><code class="descname">get_mesh</code><span class="sig-paren">(</span><em>(GXDB)arg1</em>, <em>(str)arg2</em>, <em>(float)arg3</em>, <em>(float)arg4</em>, <em>(GXVV)arg5</em>, <em>(int)arg6</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXTRND.get_mesh" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Get the lines in a trend mesh.
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arg1</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXDB</span></code></a>) &#8211; Database</li>
+<li><strong>arg2</strong> (<em>str</em>) &#8211; Selected channel</li>
+<li><strong>arg3</strong> (<em>float</em>) &#8211; MaxMin Window</li>
+<li><strong>arg4</strong> (<em>float</em>) &#8211; Maximum join length</li>
+<li><strong>arg5</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; VV of type GS_D2POINT (returned)</li>
+<li><strong>arg6</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#trnd-node"><span>TRND_NODE constants</span></a></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.0.</span></p>
+</div>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="geosoft.gxapi.GXTRND.trnd_db">
+<em class="property">static </em><code class="descname">trnd_db</code><span class="sig-paren">(</span><em>(GXDB)arg1</em>, <em>(str)arg2</em>, <em>(float)arg3</em>, <em>(float)arg4</em>, <em>(float)arg5</em>, <em>(float)arg6</em>, <em>(float)arg7</em>, <em>(float)arg8</em>, <em>(float)arg9</em>, <em>(float)arg10</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXTRND.trnd_db" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Uses a selected channel to find data trends in a database.
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arg1</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXDB</span></code></a>) &#8211; Database handle</li>
+<li><strong>arg2</strong> (<em>str</em>) &#8211; Selected channel</li>
+<li><strong>arg3</strong> (<em>float</em>) &#8211; MaxMin Window</li>
+<li><strong>arg4</strong> (<em>float</em>) &#8211; Preferred angle, degrees CCW from X</li>
+<li><strong>arg5</strong> (<em>float</em>) &#8211; Allowed deviation</li>
+<li><strong>arg6</strong> (<em>float</em>) &#8211; Longest join</li>
+<li><strong>arg7</strong> (<em>float</em>) &#8211; Maximum deflection in join (can be rDUMMY)</li>
+<li><strong>arg8</strong> (<em>float</em>) &#8211; Minimum length for trend lines (can be rDUMMY)</li>
+<li><strong>arg9</strong> (<em>float</em>) &#8211; Resampling distance (can be rDUMMY)</li>
+<li><strong>arg10</strong> (<em>float</em>) &#8211; Breaking angle, degrees CCW from X (can be rDUMMY)</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.0.</span></p>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<div class="section" id="trnd-node-constants">
+<span id="trnd-node"></span><h2>TRND_NODE constants<a class="headerlink" href="#trnd-node-constants" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><div class="highlight"><pre><span></span>Node to find
+</pre></div>
+</div>
+<dl class="attribute">
+<dt id="geosoft.gxapi.TRND_MIN">
+<code class="descclassname">gxapi.</code><code class="descname">TRND_MIN</code><em class="property"> = 0</em><a class="headerlink" href="#geosoft.gxapi.TRND_MIN" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxapi.TRND_MAX">
+<code class="descclassname">gxapi.</code><code class="descname">TRND_MAX</code><em class="property"> = 1</em><a class="headerlink" href="#geosoft.gxapi.TRND_MAX" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2016, Geosoft Inc.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>
