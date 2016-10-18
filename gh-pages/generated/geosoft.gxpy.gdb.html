@@ -1,0 +1,780 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>geosoft.gxpy.gdb package &mdash; Geosoft GX Python API 9.1.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '9.1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="Geosoft GX Python API 9.1.0 documentation" href="../index.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Geosoft GX Python API 9.1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="geosoft-gxpy-gdb-package">
+<h1>geosoft.gxpy.gdb package<a class="headerlink" href="#geosoft-gxpy-gdb-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-geosoft.gxpy.gdb.gdb">
+<span id="geosoft-gxpy-gdb-gdb-module"></span><h2>geosoft.gxpy.gdb.gdb module<a class="headerlink" href="#module-geosoft.gxpy.gdb.gdb" title="Permalink to this headline">¶</a></h2>
+<dl class="exception">
+<dt id="geosoft.gxpy.gdb.gdb.GDBException">
+<em class="property">exception </em><code class="descclassname">geosoft.gxpy.gdb.gdb.</code><code class="descname">GDBException</code><a class="headerlink" href="#geosoft.gxpy.gdb.gdb.GDBException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">Exception</span></code></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="geosoft.gxpy.gdb.gdb.GXdb">
+<em class="property">class </em><code class="descclassname">geosoft.gxpy.gdb.gdb.</code><code class="descname">GXdb</code><a class="headerlink" href="#geosoft.gxpy.gdb.gdb.GXdb" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>Class to work with Geosoft databases. This class wraps many of the functions found in geosoft.gxapi.GXDB.</p>
+<p>Member ._db is the GXDB handle, which can be used to call GXDB methods directly</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Constructor open:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">open  open an existing file</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Member fileName:</th></tr>
+<tr class="field-even field"><td>&nbsp;</td><td class="field-body">database file name</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Some typical programming patterns</strong></p>
+<p>Open and read through all data in a database:</p>
+<div class="code highlight-python"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span><span class="o">,</span><span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+
+<span class="c1"># GEOSOFTPY must contain the location of the gxpy folder</span>
+<span class="n">gxpyFolder</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;GEOSOFTPY&#39;</span><span class="p">]</span>
+<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">gxpyFolder</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;GEOSOFTPY environment is not defined.  This should point to the folder that contains the gxpy modules.&quot;</span><span class="p">)</span>
+    <span class="nb">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">gxpy.gx</span> <span class="kn">as</span> <span class="nn">gxp</span>
+<span class="kn">import</span> <span class="nn">gxpy.gdb</span> <span class="kn">as</span> <span class="nn">gxgdb</span>
+
+<span class="c1"># initalize the gx environment</span>
+<span class="n">gxp</span> <span class="o">=</span> <span class="n">gxu</span><span class="o">.</span><span class="n">GXpy</span><span class="p">()</span>
+
+<span class="c1"># open a database</span>
+<span class="n">gdb</span> <span class="o">=</span> <span class="n">gxdb</span><span class="o">.</span><span class="n">GXdb</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">gxp</span><span class="p">,</span><span class="s1">&#39;test.gdb&#39;</span><span class="p">)</span>
+<span class="n">lines</span> <span class="o">=</span> <span class="n">gdb</span><span class="o">.</span><span class="n">lines</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">:</span>
+
+    <span class="n">npd</span><span class="p">,</span><span class="n">ch</span><span class="p">,</span><span class="n">fid</span> <span class="o">=</span> <span class="n">gdb</span><span class="o">.</span><span class="n">readLine</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+    <span class="c1"># npd is a 2D numpy array to all data in this line.</span>
+    <span class="c1"># ch is a list of the channels, one channel for each column in npd.</span>
+    <span class="c1"># Array channels are expanded with channel names &quot;name[0]&quot;, &quot;name[1]&quot; ...</span>
+    <span class="c1"># fid is a tuple (start,increment) fiducial, which will be the minimum start and smallest increment.</span>
+
+    <span class="c1"># ... do something with the data in npd ...</span>
+</pre></div>
+</div>
+<p>The following creates a new channel that is the distance from the origin to the X,Y,Z location of every point.
+This code assumes that there are no dummies in the X, Y or Z channels (the next example shows how to
+deal with dummies).</p>
+<div class="code highlight-python"><div class="highlight"><pre><span></span><span class="o">...</span>
+<span class="n">gdb</span> <span class="o">=</span> <span class="n">gxdb</span><span class="o">.</span><span class="n">GXdb</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">gxp</span><span class="p">,</span><span class="s1">&#39;test.gdb&#39;</span><span class="p">)</span>
+<span class="n">lines</span> <span class="o">=</span> <span class="n">gdb</span><span class="o">.</span><span class="n">lines</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">:</span>
+
+    <span class="n">npd</span><span class="p">,</span><span class="n">ch</span><span class="p">,</span><span class="n">fid</span> <span class="o">=</span> <span class="n">gdb</span><span class="o">.</span><span class="n">readLine</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="n">channels</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;X&#39;</span><span class="p">,</span><span class="s1">&#39;Y&#39;</span><span class="p">,</span><span class="s1">&#39;Z&#39;</span><span class="p">])</span>
+
+    <span class="n">squares</span> <span class="o">=</span> <span class="n">npd</span><span class="o">.</span><span class="n">square</span><span class="p">(</span><span class="n">npd</span><span class="p">)</span>
+    <span class="n">dist</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">npd</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">npd</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">npd</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+
+    <span class="n">gdb</span><span class="o">.</span><span class="n">writeDataChan</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="s1">&#39;distance&#39;</span><span class="p">,</span> <span class="n">dist</span><span class="p">,</span> <span class="n">fid</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Create a distance channel (as in previous example), with dummy handling:</p>
+<div class="code highlight-python"><div class="highlight"><pre><span></span><span class="o">...</span>
+<span class="n">gdb</span> <span class="o">=</span> <span class="n">gxdb</span><span class="o">.</span><span class="n">GXdb</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">gxp</span><span class="p">,</span><span class="s1">&#39;test.gdb&#39;</span><span class="p">)</span>
+<span class="n">lines</span> <span class="o">=</span> <span class="n">gdb</span><span class="o">.</span><span class="n">lines</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">:</span>
+
+    <span class="n">ln</span><span class="p">,</span><span class="n">lsymb</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">gdb</span><span class="o">.</span><span class="n">lineNameSymb</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+
+    <span class="n">data</span><span class="p">,</span><span class="n">ch</span><span class="p">,</span><span class="n">fid</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">gdb</span><span class="o">.</span><span class="n">readLine</span><span class="p">(</span><span class="n">lsymb</span><span class="p">,</span> <span class="n">channels</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;X&#39;</span><span class="p">,</span><span class="s1">&#39;Y&#39;</span><span class="p">,</span><span class="s1">&#39;Z&#39;</span><span class="p">])</span>
+
+    <span class="c1"># get a dummy mask, True for all rows with a dummy</span>
+    <span class="n">dummyMask</span> <span class="o">=</span> <span class="n">gxu</span><span class="o">.</span><span class="n">dummyMask</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+    <span class="n">squares</span> <span class="o">=</span> <span class="n">npd</span><span class="o">.</span><span class="n">square</span><span class="p">(</span><span class="n">npd</span><span class="p">)</span>
+    <span class="n">dist</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">npd</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">npd</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">npd</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+
+    <span class="c1"># insert dummies using the dummy mask, then write</span>
+    <span class="n">dist</span><span class="p">[</span><span class="n">dummyMask</span><span class="p">]</span> <span class="o">=</span> <span class="n">dummy</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">gdb</span><span class="o">.</span><span class="n">writeDataChan</span><span class="p">(</span><span class="n">lsymb</span><span class="p">,</span> <span class="s1">&#39;distance&#39;</span><span class="p">,</span> <span class="n">dist</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="method">
+<dt id="geosoft.gxpy.gdb.gdb.GXdb.chanArray">
+<code class="descname">chanArray</code><span class="sig-paren">(</span><em>channel</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.gdb.gdb.GXdb.chanArray" title="Permalink to this definition">¶</a></dt>
+<dd><p>Channel array dimension.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>channel</strong> &#8211; channel symbol or name</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">array dimension, 1 for non-array channels</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxpy.gdb.gdb.GXdb.chanDetails">
+<code class="descname">chanDetails</code><span class="sig-paren">(</span><em>channel</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.gdb.gdb.GXdb.chanDetails" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return dictionary of channel details</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>channel</strong> &#8211; channel name or symbol</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">dictionary:<table border="1" class="docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Key</th>
+<th class="head">Meaning</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>name</td>
+<td>channel name</td>
+</tr>
+<tr class="row-odd"><td>symbol</td>
+<td>channel symbol</td>
+</tr>
+<tr class="row-even"><td>class</td>
+<td>class name</td>
+</tr>
+<tr class="row-odd"><td>format</td>
+<td>format, one of gxapi.DB_CHAN_FORMAT constants</td>
+</tr>
+<tr class="row-even"><td>width</td>
+<td>display width in characters</td>
+</tr>
+<tr class="row-odd"><td>decimal</td>
+<td>decimal places to display</td>
+</tr>
+<tr class="row-even"><td>unit</td>
+<td>measurement unit</td>
+</tr>
+<tr class="row-odd"><td>label</td>
+<td>channel label, which can be different from the channel name</td>
+</tr>
+<tr class="row-even"><td>protect</td>
+<td>proptection: 0 can be modified; 1 protected from modification</td>
+</tr>
+<tr class="row-odd"><td>columns</td>
+<td>number data columns, 1 for normal channels, n for VA channels</td>
+</tr>
+<tr class="row-even"><td>type</td>
+<td>data type, one of gxapi.DB_CATEGORY_CHAN constants</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxpy.gdb.gdb.GXdb.chanDtype">
+<code class="descname">chanDtype</code><span class="sig-paren">(</span><em>channel</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.gdb.gdb.GXdb.chanDtype" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns channel numpy dtype</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>channel</strong> &#8211; channel name or symbol</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">numpy dtype</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxpy.gdb.gdb.GXdb.chanFid">
+<code class="descname">chanFid</code><span class="sig-paren">(</span><em>line</em>, <em>channel</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.gdb.gdb.GXdb.chanFid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the fiducial of a line, channel</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>line</strong> &#8211; line name or symbol</li>
+<li><strong>channel</strong> &#8211; channel name or symbol</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">(start,increment)</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxpy.gdb.gdb.GXdb.chanNameSymb">
+<code class="descname">chanNameSymb</code><span class="sig-paren">(</span><em>channel</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.gdb.gdb.GXdb.chanNameSymb" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the channel name, symbol number</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>channel</strong> &#8211; channel name, or symbol number</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">channel name, symbol</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxpy.gdb.gdb.GXdb.chanSetDetails">
+<code class="descname">chanSetDetails</code><span class="sig-paren">(</span><em>channel</em>, <em>detail</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.gdb.gdb.GXdb.chanSetDetails" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set/change channel details from dictionary</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>channel</strong> &#8211; channel name or symbol</li>
+<li><strong>detail</strong> &#8211; dictionary, see chanDetails</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxpy.gdb.gdb.GXdb.channels">
+<code class="descname">channels</code><span class="sig-paren">(</span><em>chan=None</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.gdb.gdb.GXdb.channels" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a dict of channels in the database.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>chan</strong> &#8211; <p>channel filter, default returns all channels</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="35%" />
+<col width="65%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>CHAN_ALL</td>
+<td>all channels, normal and VA</td>
+</tr>
+<tr class="row-even"><td>CHAN_NORMAL</td>
+<td>normal channels only</td>
+</tr>
+<tr class="row-odd"><td>CHAN_ARRAY</td>
+<td>VA channels only</td>
+</tr>
+<tr class="row-even"><td>CHAN_DISPLAYED</td>
+<td>displayed channels</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">dictionary {channel_names: channel_symbols}</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxpy.gdb.gdb.GXdb.commit">
+<code class="descname">commit</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.gdb.gdb.GXdb.commit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Commit database changes.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxpy.gdb.gdb.GXdb.delChan">
+<code class="descname">delChan</code><span class="sig-paren">(</span><em>channels</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.gdb.gdb.GXdb.delChan" title="Permalink to this definition">¶</a></dt>
+<dd><p>Delete channel(s) by name or symbol.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>channels</strong> &#8211; channel name or symbol, or a list of channel names or symbols</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxpy.gdb.gdb.GXdb.delLine">
+<code class="descname">delLine</code><span class="sig-paren">(</span><em>s</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.gdb.gdb.GXdb.delLine" title="Permalink to this definition">¶</a></dt>
+<dd><p>Delete a line by name or symbol.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>s</strong> &#8211; line name or symbol</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxpy.gdb.gdb.GXdb.discard">
+<code class="descname">discard</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.gdb.gdb.GXdb.discard" title="Permalink to this definition">¶</a></dt>
+<dd><p>Discard database changes.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxpy.gdb.gdb.GXdb.fileName">
+<code class="descname">fileName</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.gdb.gdb.GXdb.fileName" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">database file name</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxpy.gdb.gdb.GXdb.lineDetails">
+<code class="descname">lineDetails</code><span class="sig-paren">(</span><em>line</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.gdb.gdb.GXdb.lineDetails" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return dictionary of line details</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>line</strong> &#8211; channel name or symbol</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">dictionary:<table border="1" class="docutils">
+<colgroup>
+<col width="15%" />
+<col width="85%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Key</th>
+<th class="head">Meaning</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>name</td>
+<td>line name</td>
+</tr>
+<tr class="row-odd"><td>symbol</td>
+<td>line symbol</td>
+</tr>
+<tr class="row-even"><td>type</td>
+<td>line type, one of gxapi.DB_LINE_TYPE</td>
+</tr>
+<tr class="row-odd"><td>category</td>
+<td>one of SYMB_LINE</td>
+</tr>
+<tr class="row-even"><td>date</td>
+<td>date of the line</td>
+</tr>
+<tr class="row-odd"><td>number</td>
+<td>numeric line number</td>
+</tr>
+<tr class="row-even"><td>flight</td>
+<td>flight number</td>
+</tr>
+<tr class="row-odd"><td>version</td>
+<td>line version number</td>
+</tr>
+<tr class="row-even"><td>groupclass</td>
+<td>class name for grouped lines, &#8216;&#8217; if not a grouped line</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxpy.gdb.gdb.GXdb.lineNameSymb">
+<code class="descname">lineNameSymb</code><span class="sig-paren">(</span><em>line</em>, <em>create=False</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.gdb.gdb.GXdb.lineNameSymb" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return line name, symbol</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>line</strong> &#8211; line name, or symbol number</li>
+<li><strong>create</strong> &#8211; True to create a line if one does not exist</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">line name, symbol, returns (&#8216;&#8217;,-1) if invalid</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxpy.gdb.gdb.GXdb.lines">
+<code class="descname">lines</code><span class="sig-paren">(</span><em>select=True</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.gdb.gdb.GXdb.lines" title="Permalink to this definition">¶</a></dt>
+<dd><p>List of lines in the database
+:param select=True:  True to return selected lines, false to return all lines
+:return: dictionary (line name: symbol)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxpy.gdb.gdb.GXdb.listValues">
+<code class="descname">listValues</code><span class="sig-paren">(</span><em>chan</em>, <em>max=1000</em>, <em>selected=True</em>, <em>dupl=50</em>, <em>progress=None</em>, <em>stop=None</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.gdb.gdb.GXdb.listValues" title="Permalink to this definition">¶</a></dt>
+<dd><p>Build a list of unique values in a channel.  Uniqueness depends on the current display format for
+the field.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>chan</strong> &#8211; channel to scan</li>
+<li><strong>max=1000</strong> &#8211; maximum values allowed, once this maximum is reached scanning stops</li>
+<li><strong>selected=True</strong> &#8211; True to scan only selected lines</li>
+<li><strong>dupl</strong> &#8211; Stop growing list after this many lines fail to grow the list, 0 scans all lines</li>
+<li><strong>progress</strong> &#8211; progress reporting function</li>
+<li><strong>stop</strong> &#8211; stop check function</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">list of values, represented as a string</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxpy.gdb.gdb.GXdb.new">
+<em class="property">classmethod </em><code class="descname">new</code><span class="sig-paren">(</span><em>name</em>, <em>maxLines=500</em>, <em>maxChannels=200</em>, <em>maxBlobs=0</em>, <em>pageSize=1024</em>, <em>comp=None</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.gdb.gdb.GXdb.new" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a new database.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>name</strong> &#8211; database name</li>
+<li><strong>maxLines</strong> &#8211; maximum number of lines, default 500</li>
+<li><strong>maxChannels</strong> &#8211; maximum number of channels, default 200</li>
+<li><strong>maxBlobs</strong> &#8211; maximum number of blobs, default lines*channels+20</li>
+<li><strong>comp</strong> &#8211; compression:
+| COMP_NONE
+| COMP_SPEED (default)
+| COMP_SIZE</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxpy.gdb.gdb.GXdb.newChannel">
+<code class="descname">newChannel</code><span class="sig-paren">(</span><em>name</em>, <em>dtype=&lt;class 'numpy.float64'&gt;</em>, <em>array=1</em>, <em>details={'width': 12</em>, <em>'decimal': 2}</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.gdb.gdb.GXdb.newChannel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a channel symbol, create if it does not exist.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>name</strong> &#8211; channel name</li>
+<li><strong>dtype</strong> &#8211; numpy dtype (ie. np.int64)</li>
+<li><strong>array</strong> &#8211; array columns (default is 1)</li>
+<li><strong>details</strong> &#8211; dictionary containing channel details, see chanDetails()</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">channel symbol</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Examples:</p>
+<p>..code:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">symb</span> <span class="o">=</span> <span class="n">gdb</span><span class="o">.</span><span class="n">newChan</span><span class="p">(</span><span class="s1">&#39;X&#39;</span><span class="p">)</span>
+<span class="n">symb</span> <span class="o">=</span> <span class="n">gdb</span><span class="o">.</span><span class="n">newChan</span><span class="p">(</span><span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">,</span> <span class="n">details</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;decimal&#39;</span><span class="p">:</span><span class="mi">4</span><span class="p">})</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxpy.gdb.gdb.GXdb.newLine">
+<code class="descname">newLine</code><span class="sig-paren">(</span><em>line</em>, <em>linetype=None</em>, <em>group=''</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.gdb.gdb.GXdb.newLine" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a line symbol.  If line exists an error is raised.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>line</strong> &#8211; line name</li>
+<li><strong>linetype</strong> &#8211; <p>line type for creating a new line, ignored if group defines</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="29%" />
+<col width="71%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>SYMB_LINE_NORMAL</td>
+<td>normal lines, name is a string</td>
+</tr>
+<tr class="row-even"><td>SYMB_LINE_FLIGHT</td>
+<td>flight lines, first letter is line type</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><strong>group</strong> &#8211; group name for a grouped class</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">line symbol</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxpy.gdb.gdb.GXdb.open">
+<em class="property">classmethod </em><code class="descname">open</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.gdb.gdb.GXdb.open" title="Permalink to this definition">¶</a></dt>
+<dd><p>Open an existing database.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> &#8211; name of the database</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">GXdb instance</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxpy.gdb.gdb.GXdb.readLine">
+<code class="descname">readLine</code><span class="sig-paren">(</span><em>line</em>, <em>channels=None</em>, <em>dtype=&lt;class 'numpy.float64'&gt;</em>, <em>fid=None</em>, <em>dummy=None</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.gdb.gdb.GXdb.readLine" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read a line of data into a numpy array.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>line</strong> &#8211; line to read, string or symbol number</li>
+<li><strong>channels</strong> &#8211; list of channels, strings or symbol number.  If empty, read all channels</li>
+<li><strong>dtype</strong> &#8211; numpy data type for the array, default np.float64.  This can be a string type &#8220;&lt;Unnn&#8221;</li>
+<li><strong>fid</strong> &#8211; required fiducial as tuple (start,incr), default smallest in data</li>
+<li><strong>dummy</strong> &#8211; <p>dummy_handling, default leaves dummies in place:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="32%" />
+<col width="68%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>READ_REMOVE_DUMMYROWS</td>
+<td>remove rows with dummies, fiducials lose meaning</td>
+</tr>
+<tr class="row-even"><td>READ_REMOVE_DUMMYCOLUMNS</td>
+<td>remove columns with dummies</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">2D numpy array shape(records,channels), list of channel names, (fidStart,fidIncr)</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last">GDBException if first channel requested is empty</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>VA channels are expanded by element with channel names name[0], name[1], etc.</p>
+<p>Examples:</p>
+<div class="code highlight-python"><div class="highlight"><pre><span></span><span class="c1"># npd - returned numpy array shape (n, number of channels)</span>
+<span class="c1"># ch  - list of returned channels names, array channels expanded to array[0], array[1], ...</span>
+<span class="c1"># fid - tuple (fidStart,fidIncrement), channels resampled as necessary</span>
+
+<span class="n">npd</span><span class="p">,</span><span class="n">ch</span><span class="p">,</span><span class="n">fid</span> <span class="o">=</span> <span class="n">gdb</span><span class="o">.</span><span class="n">readLine</span><span class="p">(</span><span class="s1">&#39;L100&#39;</span><span class="p">)</span>                           <span class="c1">#read all channels in line &quot;L100&quot;</span>
+<span class="n">npd</span><span class="p">,</span><span class="n">ch</span><span class="p">,</span><span class="n">fid</span> <span class="o">=</span> <span class="n">gdb</span><span class="o">.</span><span class="n">readLine</span><span class="p">(</span><span class="mi">681</span><span class="p">)</span>                              <span class="c1">#read all channels in line symbol 681</span>
+<span class="n">npd</span><span class="p">,</span><span class="n">ch</span><span class="p">,</span><span class="n">fid</span> <span class="o">=</span> <span class="n">gdb</span><span class="o">.</span><span class="n">readLine</span><span class="p">(</span><span class="s1">&#39;L100&#39;</span><span class="p">,</span><span class="s1">&#39;X&#39;</span><span class="p">)</span>                       <span class="c1">#read channel &#39;X&#39; from line &#39;L100&#39;</span>
+<span class="n">npd</span><span class="p">,</span><span class="n">ch</span><span class="p">,</span><span class="n">fid</span> <span class="o">=</span> <span class="n">gdb</span><span class="o">.</span><span class="n">readLine</span><span class="p">(</span><span class="s1">&#39;L100&#39;</span><span class="p">,</span><span class="mi">2135</span><span class="p">)</span>                      <span class="c1">#read channel symbol 2135 from &#39;L100&quot;</span>
+<span class="n">npd</span><span class="p">,</span><span class="n">ch</span><span class="p">,</span><span class="n">fid</span> <span class="o">=</span> <span class="n">gdb</span><span class="o">.</span><span class="n">readLine</span><span class="p">(</span><span class="s1">&#39;L100&#39;</span><span class="p">,</span><span class="n">channels</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;X&#39;</span><span class="p">,</span><span class="s1">&#39;Y&#39;</span><span class="p">,</span><span class="s1">&#39;Z&#39;</span><span class="p">])</span>    <span class="c1">#read a list of channels to (n,3) array</span>
+<span class="n">npd</span><span class="p">,</span><span class="n">ch</span><span class="p">,</span><span class="n">fid</span> <span class="o">=</span> <span class="n">gdb</span><span class="o">.</span><span class="n">readLine</span><span class="p">(</span><span class="s1">&#39;L100&#39;</span><span class="p">,</span><span class="s1">&#39;X&#39;</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">)</span>              <span class="c1">#read channel &#39;X&#39; into integer array</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxpy.gdb.gdb.GXdb.selectLines">
+<code class="descname">selectLines</code><span class="sig-paren">(</span><em>selection=''</em>, <em>select=True</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.gdb.gdb.GXdb.selectLines" title="Permalink to this definition">¶</a></dt>
+<dd><p>Change selected state of a line, or group of lines
+:param selection:   string representing selection, comma-delimit multiple selections
+:param select=True: True to select, False to deselect</p>
+<p>&#8220;L99:800&#8221; will select all lines of type &#8220;L&#8221; in range 99 through 800.</p>
+<div class="line-block">
+<div class="line">Use a &#8220;T&#8221; prefix for Tie lines.</div>
+<div class="line">Use an &#8220;F&#8221; prefix to specify lines of a specific flight.</div>
+<div class="line-block">
+<div class="line">For example, &#8220;F10&#8221; would select all lines of flight 10.</div>
+</div>
+<div class="line">Use an empty string (&#8220;&#8221;) to select/deselect ALL lines.</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxpy.gdb.gdb.GXdb.writeDataChan">
+<code class="descname">writeDataChan</code><span class="sig-paren">(</span><em>line</em>, <em>channel</em>, <em>data</em>, <em>fid=(0.0</em>, <em>1.0)</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.gdb.gdb.GXdb.writeDataChan" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write data to a channel.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>line</strong> &#8211; line name or symbol</li>
+<li><strong>channel</strong> &#8211; channel name or symbol</li>
+<li><strong>data</strong> &#8211; numpy array (2D for VA channel)</li>
+<li><strong>fid</strong> &#8211; tuple (fid start, increment), default (0.0,1.0)</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxpy.gdb.gdb.GXdb.writeDataLine">
+<code class="descname">writeDataLine</code><span class="sig-paren">(</span><em>line</em>, <em>data</em>, <em>channels=None</em>, <em>name=None</em>, <em>fid=(0.0</em>, <em>1.0)</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.gdb.gdb.GXdb.writeDataLine" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write data to a line.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>line</strong> &#8211; line to write to, name or symbol</li>
+<li><strong>data</strong> &#8211; numpy array shape (records,channels).  If single dimension, one channel</li>
+<li><strong>channels</strong> &#8211; channel name or symbol list, or a single name/symbol.  If a single name is specified
+for multi-column data, a VA channel is assumed.</li>
+<li><strong>fid</strong> &#8211; option fid tupple (start, increment), default (0.0,1.0)</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-geosoft.gxpy.gdb">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-geosoft.gxpy.gdb" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">geosoft.gxpy.gdb package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-geosoft.gxpy.gdb.gdb">geosoft.gxpy.gdb.gdb module</a></li>
+<li><a class="reference internal" href="#module-geosoft.gxpy.gdb">Module contents</a></li>
+</ul>
+</li>
+</ul>
+
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/generated/geosoft.gxpy.gdb.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Geosoft GX Python API 9.1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2016, Geosoft Inc.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

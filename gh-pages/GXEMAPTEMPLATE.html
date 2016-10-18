@@ -1,0 +1,1305 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>GXEMAPTEMPLATE class &mdash; Geosoft GX Python API 9.1.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/maki.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '9.1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="Geosoft GX Python API 9.1.0 documentation" href="index.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">GXEMAPTEMPLATE class</a><ul>
+<li><a class="reference internal" href="#emaptemplate-path-constants">EMAPTEMPLATE_PATH constants</a></li>
+<li><a class="reference internal" href="#emaptemplate-track-constants">EMAPTEMPLATE_TRACK constants</a></li>
+<li><a class="reference internal" href="#emaptemplate-window-position-constants">EMAPTEMPLATE_WINDOW_POSITION constants</a></li>
+<li><a class="reference internal" href="#emaptemplate-window-state-constants">EMAPTEMPLATE_WINDOW_STATE constants</a></li>
+</ul>
+</li>
+</ul>
+
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/GXEMAPTEMPLATE.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="gxemaptemplate-class">
+<span id="gxemaptemplate"></span><h1>GXEMAPTEMPLATE class<a class="headerlink" href="#gxemaptemplate-class" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="geosoft.gxapi.GXEMAPTEMPLATE">
+<em class="property">class </em><code class="descclassname">geosoft.gxapi.</code><code class="descname">GXEMAPTEMPLATE</code><a class="headerlink" href="#geosoft.gxapi.GXEMAPTEMPLATE" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-python"><div class="highlight"><pre><span></span>             The EMAPTEMPLATE class provides access to a map template as displayed within
+Oasis montaj, but does not change data within the template itself.
+It performs functions such as setting the currently displayed area,
+or drawing &quot;tracking&quot; lines or boxes on the template (which are not
+part of the template itself).
+</pre></div>
+</div>
+<p><strong>Note:</strong></p>
+<pre class="literal-block">
+             To obtain access to the map template itself, it is recommended practice
+to begin with an EMAPTEMPLATE object, and use the Lock function to
+lock the underlying template to prevent external changes. The returned
+MAPTEMPLATE object may then be safely used to make changes to the template itself.
+
+VIRTUAL EMAPTEMPLATE SUPPORT
+
+These methods are only available when running in an external application.
+They allow the GX to open a map template and then create a Virtual EMAPTEMPLATE from that
+map template. The GX can then call MakeCurrent and set the current EMAPTEMPLATE so
+that code that follows sees this map template as the current MAPTEMPLATE.
+
+Supported methods on Virtual EMAPTEMPLATEs are:
+
+  <a class="reference internal" href="#geosoft.gxapi.GXEMAPTEMPLATE.current" title="geosoft.gxapi.GXEMAPTEMPLATE.current"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXEMAPTEMPLATE.current()</span></code></a>
+  <a class="reference internal" href="#geosoft.gxapi.GXEMAPTEMPLATE.current_no_activate" title="geosoft.gxapi.GXEMAPTEMPLATE.current_no_activate"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXEMAPTEMPLATE.current_no_activate()</span></code></a>
+  <a class="reference internal" href="#geosoft.gxapi.GXEMAPTEMPLATE.make_current" title="geosoft.gxapi.GXEMAPTEMPLATE.make_current"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXEMAPTEMPLATE.make_current()</span></code></a>
+  <a class="reference internal" href="#geosoft.gxapi.GXEMAPTEMPLATE.have_current" title="geosoft.gxapi.GXEMAPTEMPLATE.have_current"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXEMAPTEMPLATE.have_current()</span></code></a>
+  <a class="reference internal" href="#geosoft.gxapi.GXEMAPTEMPLATE.current_if_exists" title="geosoft.gxapi.GXEMAPTEMPLATE.current_if_exists"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXEMAPTEMPLATE.current_if_exists()</span></code></a>
+
+  <a class="reference internal" href="#geosoft.gxapi.GXEMAPTEMPLATE.lock" title="geosoft.gxapi.GXEMAPTEMPLATE.lock"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXEMAPTEMPLATE.lock()</span></code></a>
+  <a class="reference internal" href="#geosoft.gxapi.GXEMAPTEMPLATE.un_lock" title="geosoft.gxapi.GXEMAPTEMPLATE.un_lock"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXEMAPTEMPLATE.un_lock()</span></code></a>
+
+  <a class="reference internal" href="#geosoft.gxapi.GXEMAPTEMPLATE.get_name" title="geosoft.gxapi.GXEMAPTEMPLATE.get_name"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXEMAPTEMPLATE.get_name()</span></code></a>
+
+  <a class="reference internal" href="#geosoft.gxapi.GXEMAPTEMPLATE.loaded" title="geosoft.gxapi.GXEMAPTEMPLATE.loaded"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXEMAPTEMPLATE.loaded()</span></code></a>
+  <a class="reference internal" href="#geosoft.gxapi.GXEMAPTEMPLATE.load" title="geosoft.gxapi.GXEMAPTEMPLATE.load"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXEMAPTEMPLATE.load()</span></code></a>
+  <a class="reference internal" href="#geosoft.gxapi.GXEMAPTEMPLATE.load_no_activate" title="geosoft.gxapi.GXEMAPTEMPLATE.load_no_activate"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXEMAPTEMPLATE.load_no_activate()</span></code></a>
+  <a class="reference internal" href="#geosoft.gxapi.GXEMAPTEMPLATE.un_load_verify" title="geosoft.gxapi.GXEMAPTEMPLATE.un_load_verify"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXEMAPTEMPLATE.un_load_verify()</span></code></a>
+  <a class="reference internal" href="#geosoft.gxapi.GXEMAPTEMPLATE.un_load" title="geosoft.gxapi.GXEMAPTEMPLATE.un_load"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXEMAPTEMPLATE.un_load()</span></code></a>
+
+  <a class="reference internal" href="#geosoft.gxapi.GXEMAPTEMPLATE.create_virtual" title="geosoft.gxapi.GXEMAPTEMPLATE.create_virtual"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXEMAPTEMPLATE.create_virtual()</span></code></a>
+</pre>
+<dl class="staticmethod">
+<dt id="geosoft.gxapi.GXEMAPTEMPLATE.create_virtual">
+<em class="property">static </em><code class="descname">create_virtual</code><span class="sig-paren">(</span><em>(str)arg1</em><span class="sig-paren">)</span> &rarr; GXEMAPTEMPLATE:<a class="headerlink" href="#geosoft.gxapi.GXEMAPTEMPLATE.create_virtual" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Makes this EMAPTEMPLATE object the current active object to the user.
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>str</em>) &#8211; Name of map to create a virtual EMAMTEMPLATE from</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">EMAPTEMPLATE Object</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXEMAPTEMPLATE" title="geosoft.gxapi.GXEMAPTEMPLATE"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXEMAPTEMPLATE</span></code></a></td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.0.</span></p>
+</div>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="geosoft.gxapi.GXEMAPTEMPLATE.current">
+<em class="property">static </em><code class="descname">current</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; GXEMAPTEMPLATE:<a class="headerlink" href="#geosoft.gxapi.GXEMAPTEMPLATE.current" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-python"><div class="highlight"><pre><span></span>This method returns the Current Edited map template.
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">EMAPTEMPLATE Object</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXEMAPTEMPLATE" title="geosoft.gxapi.GXEMAPTEMPLATE"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXEMAPTEMPLATE</span></code></a></td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.0.</span></p>
+</div>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="geosoft.gxapi.GXEMAPTEMPLATE.current_if_exists">
+<em class="property">static </em><code class="descname">current_if_exists</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; GXEMAPTEMPLATE:<a class="headerlink" href="#geosoft.gxapi.GXEMAPTEMPLATE.current_if_exists" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-python"><div class="highlight"><pre><span></span>This method returns the Current Edited map.
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">EMAPTEMPLATE Object to current edited map. If there is no current map,
+the user is not prompted for a map, and 0 is returned.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXEMAPTEMPLATE" title="geosoft.gxapi.GXEMAPTEMPLATE"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXEMAPTEMPLATE</span></code></a></td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.0.</span></p>
+</div>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="geosoft.gxapi.GXEMAPTEMPLATE.current_no_activate">
+<em class="property">static </em><code class="descname">current_no_activate</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; GXEMAPTEMPLATE:<a class="headerlink" href="#geosoft.gxapi.GXEMAPTEMPLATE.current_no_activate" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-python"><div class="highlight"><pre><span></span>This method returns the Current Edited map template.
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">EMAPTEMPLATE Object</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXEMAPTEMPLATE" title="geosoft.gxapi.GXEMAPTEMPLATE"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXEMAPTEMPLATE</span></code></a></td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.0.0.</span></p>
+</div>
+<p><strong>Note:</strong></p>
+<pre class="literal-block">
+This function acts just like <a class="reference internal" href="#geosoft.gxapi.GXEMAPTEMPLATE.current" title="geosoft.gxapi.GXEMAPTEMPLATE.current"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXEMAPTEMPLATE.current()</span></code></a> except that the document is not activated (brought to foreground) and no
+guarantee is given about which document is currently active.
+</pre>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXEMAPTEMPLATE.drag_drop_enabled">
+<code class="descname">drag_drop_enabled</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; bool:<a class="headerlink" href="#geosoft.gxapi.GXEMAPTEMPLATE.drag_drop_enabled" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Is drag-and-drop enabled for the map?
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">bool</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.0.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXEMAPTEMPLATE.get_box">
+<code class="descname">get_box</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(float_ref)arg2</em>, <em>(float_ref)arg3</em>, <em>(float_ref)arg4</em>, <em>(float_ref)arg5</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXEMAPTEMPLATE.get_box" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Returns the coordinates of a user selected box.
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arg1</strong> (<em>str</em>) &#8211; user prompt string</li>
+<li><strong>arg2</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; X minimum in current view user units.</li>
+<li><strong>arg3</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Y</li>
+<li><strong>arg4</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; X maximum</li>
+<li><strong>arg5</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Y</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">0 if point returned.
+1 if user cancelled.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.0.</span></p>
+</div>
+<p><strong>Note:</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span></span>                                     The coordinates are returned in the current template units
+(See GetUnits and SetUnits in MAPTEMPLATE)
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXEMAPTEMPLATE.get_display_area">
+<code class="descname">get_display_area</code><span class="sig-paren">(</span><em>(float_ref)arg1</em>, <em>(float_ref)arg2</em>, <em>(float_ref)arg3</em>, <em>(float_ref)arg4</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXEMAPTEMPLATE.get_display_area" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Get the area you are currently looking at.
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arg1</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; X Min returned</li>
+<li><strong>arg2</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Y Min returned</li>
+<li><strong>arg3</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; X Max returned</li>
+<li><strong>arg4</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Y Max returned</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.0.</span></p>
+</div>
+<p><strong>Note:</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span></span>                                     The coordinates are based on the current template units
+(See GetUnits and SetUnits in MAPTEMPLATE)
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXEMAPTEMPLATE.get_item_selection">
+<code class="descname">get_item_selection</code><span class="sig-paren">(</span><em>(str_ref)arg1</em><span class="sig-paren">)</span> &rarr; bool:<a class="headerlink" href="#geosoft.gxapi.GXEMAPTEMPLATE.get_item_selection" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Gets info about the current selected item
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; returned item name</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">bool Is item a view?</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.0.</span></p>
+</div>
+<p><strong>Note:</strong></p>
+<pre class="literal-block">
+If nothing is selected the string will be empty and the function will return <code class="docutils literal"><span class="pre">False</span></code>;
+</pre>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXEMAPTEMPLATE.get_line">
+<code class="descname">get_line</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(float_ref)arg2</em>, <em>(float_ref)arg3</em>, <em>(float_ref)arg4</em>, <em>(float_ref)arg5</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXEMAPTEMPLATE.get_line" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Returns the end points of a line.
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arg1</strong> (<em>str</em>) &#8211; user prompt string</li>
+<li><strong>arg2</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; X1 in view user units</li>
+<li><strong>arg3</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Y1</li>
+<li><strong>arg4</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; X2</li>
+<li><strong>arg5</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Y2</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">0 if line returned.
+1 if user cancelled.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.0.</span></p>
+</div>
+<p><strong>Note:</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span></span>                                     The coordinates are returned in the current template units
+(See GetUnits and SetUnits in MAPTEMPLATE)
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="geosoft.gxapi.GXEMAPTEMPLATE.get_map_templates_lst">
+<em class="property">static </em><code class="descname">get_map_templates_lst</code><span class="sig-paren">(</span><em>(GXLST)arg1</em>, <em>(int)arg2</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXEMAPTEMPLATE.get_map_templates_lst" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Load the file names of open maps into a LST.
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arg1</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXLST</span></code></a>) &#8211; LST to load</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#emaptemplate-path"><span>EMAPTEMPLATE_PATH constants</span></a></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">The number of documents loaded into the LST.
+The LST is cleared first.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.0.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXEMAPTEMPLATE.get_name">
+<code class="descname">get_name</code><span class="sig-paren">(</span><em>(str_ref)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXEMAPTEMPLATE.get_name" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Get the name of the map object of this EMAPTEMPLATE.
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; Name returned</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Nothing</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">None</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.0.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXEMAPTEMPLATE.get_point">
+<code class="descname">get_point</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(float_ref)arg2</em>, <em>(float_ref)arg3</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXEMAPTEMPLATE.get_point" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Returns the coordinates of a user selected point.
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arg1</strong> (<em>str</em>) &#8211; user prompt string</li>
+<li><strong>arg2</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; X coordinate in current view user units.</li>
+<li><strong>arg3</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Y</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">0 if point returned.
+1 if user cancelled.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.0.</span></p>
+</div>
+<p><strong>Note:</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span></span>                                     The coordinates are returned in the current template units
+(See GetUnits and SetUnits in MAPTEMPLATE)
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXEMAPTEMPLATE.get_rect">
+<code class="descname">get_rect</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(float_ref)arg2</em>, <em>(float_ref)arg3</em>, <em>(float_ref)arg4</em>, <em>(float_ref)arg5</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXEMAPTEMPLATE.get_rect" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Returns the coordinates of a user selected box starting at a corner.
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arg1</strong> (<em>str</em>) &#8211; user prompt string</li>
+<li><strong>arg2</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; X minimum in current view user units.   (defines corner)</li>
+<li><strong>arg3</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Y</li>
+<li><strong>arg4</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; X maximum</li>
+<li><strong>arg5</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Y</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">0 if point returned.
+1 if user cancelled.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.0.</span></p>
+</div>
+<p><strong>Note:</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span></span>                                     The coordinates are returned in the current template units
+(See GetUnits and SetUnits in MAPTEMPLATE)
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXEMAPTEMPLATE.get_template_layout_props">
+<code class="descname">get_template_layout_props</code><span class="sig-paren">(</span><em>(bool_ref)arg1</em>, <em>(float_ref)arg2</em>, <em>(int_ref)arg3</em>, <em>(int_ref)arg4</em>, <em>(int_ref)arg5</em>, <em>(int_ref)arg6</em>, <em>(int_ref)arg7</em>, <em>(int_ref)arg8</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXEMAPTEMPLATE.get_template_layout_props" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Get the base layout view properties.
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arg1</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.bool_ref" title="geosoft.gxapi.bool_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.bool_ref</span></code></a>) &#8211; bool Snap to grid</li>
+<li><strong>arg2</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Snapping distance (always in mm)</li>
+<li><strong>arg3</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; View Grid</li>
+<li><strong>arg4</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; View Rulers</li>
+<li><strong>arg5</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; <a class="reference internal" href="GXEMAP.html#layout-view-units"><span>LAYOUT_VIEW_UNITS constants</span></a> View Units</li>
+<li><strong>arg6</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; Grid Red Component (0-255)</li>
+<li><strong>arg7</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; Grid Green Component (0-255)</li>
+<li><strong>arg8</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; Grid Blue Component (0-255)</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.0.</span></p>
+</div>
+<p><strong>Note:</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span></span>                                     This affects the display units and other related properties for the base
+view of a map.
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXEMAPTEMPLATE.get_window_position">
+<code class="descname">get_window_position</code><span class="sig-paren">(</span><em>(int_ref)arg1</em>, <em>(int_ref)arg2</em>, <em>(int_ref)arg3</em>, <em>(int_ref)arg4</em>, <em>(int_ref)arg5</em>, <em>(int_ref)arg6</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXEMAPTEMPLATE.get_window_position" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Get the map window&#39;s position and dock state
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arg1</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; Window left position</li>
+<li><strong>arg2</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; Window top position</li>
+<li><strong>arg3</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; Window right position</li>
+<li><strong>arg4</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; Window bottom position</li>
+<li><strong>arg5</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; Window state <a class="reference internal" href="#emaptemplate-window-state"><span>EMAPTEMPLATE_WINDOW_STATE constants</span></a></li>
+<li><strong>arg6</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; Docked or floating <a class="reference internal" href="#emaptemplate-window-position"><span>EMAPTEMPLATE_WINDOW_POSITION constants</span></a></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.0.0.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXEMAPTEMPLATE.get_window_state">
+<code class="descname">get_window_state</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXEMAPTEMPLATE.get_window_state" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Retrieve the current state of the map window
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><a class="reference internal" href="#emaptemplate-window-state"><span>EMAPTEMPLATE_WINDOW_STATE constants</span></a></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.0.</span></p>
+</div>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="geosoft.gxapi.GXEMAPTEMPLATE.have_current">
+<em class="property">static </em><code class="descname">have_current</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXEMAPTEMPLATE.have_current" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-python"><div class="highlight"><pre><span></span>This method returns whether a current map is loaded
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">0 - no current map.
+1 - current map</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.0.</span></p>
+</div>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="geosoft.gxapi.GXEMAPTEMPLATE.i_get_specified_map_name">
+<em class="property">static </em><code class="descname">i_get_specified_map_name</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(str)arg2</em>, <em>(str_ref)arg3</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXEMAPTEMPLATE.i_get_specified_map_name" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Find a loaded map that has a setting in its reg.
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arg1</strong> (<em>str</em>) &#8211; REG field name</li>
+<li><strong>arg2</strong> (<em>str</em>) &#8211; REG field value to find</li>
+<li><strong>arg3</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; buffer for map name</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">0 - Ok
+1 - No Map Found</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.0.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXEMAPTEMPLATE.is_locked">
+<code class="descname">is_locked</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; bool:<a class="headerlink" href="#geosoft.gxapi.GXEMAPTEMPLATE.is_locked" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Is this MapTemplate locked
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">bool</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.0.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXEMAPTEMPLATE.is_null">
+<code class="descname">is_null</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; bool<a class="headerlink" href="#geosoft.gxapi.GXEMAPTEMPLATE.is_null" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if the instance of <code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXEMAPTEMPLATE</span> <span class="pre">is</span> <span class="pre">null</span> <span class="pre">(undefined)</span></code></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if this is a null instance of <a class="reference internal" href="#geosoft.gxapi.GXEMAPTEMPLATE" title="geosoft.gxapi.GXEMAPTEMPLATE"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXEMAPTEMPLATE</span></code></a>, False otherwise.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool`</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="geosoft.gxapi.GXEMAPTEMPLATE.load">
+<em class="property">static </em><code class="descname">load</code><span class="sig-paren">(</span><em>(str)arg1</em><span class="sig-paren">)</span> &rarr; GXEMAPTEMPLATE:<a class="headerlink" href="#geosoft.gxapi.GXEMAPTEMPLATE.load" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Loads maps into the editor.
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>str</em>) &#8211; list of maps (&#8216;;&#8217; or &#8216;<cite>|</cite>&#8216; delimited) to load.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">EMAPTEMPLATE Object to edited map.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXEMAPTEMPLATE" title="geosoft.gxapi.GXEMAPTEMPLATE"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXEMAPTEMPLATE</span></code></a></td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.0.</span></p>
+</div>
+<p><strong>Note:</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span></span>                                     The last map in the list will be the current map.
+
+Maps may already be loaded.
+
+Only the first file in the list may have a directory path.
+All other files in the list are assumed to be in the same
+directory as the first file.
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="geosoft.gxapi.GXEMAPTEMPLATE.load_no_activate">
+<em class="property">static </em><code class="descname">load_no_activate</code><span class="sig-paren">(</span><em>(str)arg1</em><span class="sig-paren">)</span> &rarr; GXEMAPTEMPLATE:<a class="headerlink" href="#geosoft.gxapi.GXEMAPTEMPLATE.load_no_activate" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Loads documents into the workspace
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>str</em>) &#8211; list of documents (&#8216;;&#8217; or &#8216;<cite>|</cite>&#8216; delimited) to load.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Handle to current edited document, which will be the last
+database in the list if multiple files were provided.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXEMAPTEMPLATE" title="geosoft.gxapi.GXEMAPTEMPLATE"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXEMAPTEMPLATE</span></code></a></td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.0.</span></p>
+</div>
+<p><strong>Note:</strong></p>
+<pre class="literal-block">
+This function acts just like <a class="reference internal" href="#geosoft.gxapi.GXEMAPTEMPLATE.load" title="geosoft.gxapi.GXEMAPTEMPLATE.load"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXEMAPTEMPLATE.load()</span></code></a> except that the document(s) is not activated (brought to foreground) and no
+guarantee is given about which document is currently active.
+</pre>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="geosoft.gxapi.GXEMAPTEMPLATE.loaded">
+<em class="property">static </em><code class="descname">loaded</code><span class="sig-paren">(</span><em>(str)arg1</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXEMAPTEMPLATE.loaded" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Returns 1 if a map is loaded .
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>str</em>) &#8211; map name</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">1 if map is loaded, 0 otherwise.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.0.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXEMAPTEMPLATE.lock">
+<code class="descname">lock</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; GXMAPTEMPLATE:<a class="headerlink" href="#geosoft.gxapi.GXEMAPTEMPLATE.lock" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-python"><div class="highlight"><pre><span></span>This method locks the Edited map.
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">MAPTEMPLATE Object to map associated with edited map.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="GXMAPTEMPLATE.html#geosoft.gxapi.GXMAPTEMPLATE" title="geosoft.gxapi.GXMAPTEMPLATE"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXMAPTEMPLATE</span></code></a></td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.0.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXEMAPTEMPLATE.make_current">
+<code class="descname">make_current</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXEMAPTEMPLATE.make_current" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Makes this EMAPTEMPLATE object the current active object to the user.
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Nothing</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">None</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.0.</span></p>
+</div>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="geosoft.gxapi.GXEMAPTEMPLATE.null">
+<em class="property">static </em><code class="descname">null</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; GXEMAPTEMPLATE<a class="headerlink" href="#geosoft.gxapi.GXEMAPTEMPLATE.null" title="Permalink to this definition">¶</a></dt>
+<dd><p>A null (undefined) instance of <a class="reference internal" href="#geosoft.gxapi.GXEMAPTEMPLATE" title="geosoft.gxapi.GXEMAPTEMPLATE"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXEMAPTEMPLATE</span></code></a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A null <a class="reference internal" href="#geosoft.gxapi.GXEMAPTEMPLATE" title="geosoft.gxapi.GXEMAPTEMPLATE"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXEMAPTEMPLATE</span></code></a></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXEMAPTEMPLATE" title="geosoft.gxapi.GXEMAPTEMPLATE"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXEMAPTEMPLATE</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXEMAPTEMPLATE.read_only">
+<code class="descname">read_only</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; bool:<a class="headerlink" href="#geosoft.gxapi.GXEMAPTEMPLATE.read_only" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Checks if a map is currently opened in a read-only mode.
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">bool</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.0.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXEMAPTEMPLATE.set_display_area">
+<code class="descname">set_display_area</code><span class="sig-paren">(</span><em>(float)arg1</em>, <em>(float)arg2</em>, <em>(float)arg3</em>, <em>(float)arg4</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXEMAPTEMPLATE.set_display_area" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Set the area you wish to see.
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arg1</strong> (<em>float</em>) &#8211; X Min</li>
+<li><strong>arg2</strong> (<em>float</em>) &#8211; Y Min</li>
+<li><strong>arg3</strong> (<em>float</em>) &#8211; X Max</li>
+<li><strong>arg4</strong> (<em>float</em>) &#8211; Y Max</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.0.</span></p>
+</div>
+<p><strong>Note:</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span></span>                                     The coordinates are based on the current template units
+(See GetUnits and SetUnits in MAPTEMPLATE)
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXEMAPTEMPLATE.set_drag_drop_enabled">
+<code class="descname">set_drag_drop_enabled</code><span class="sig-paren">(</span><em>(bool)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXEMAPTEMPLATE.set_drag_drop_enabled" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Set whether drag-and-drop is enabled for the map.
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>bool</em>) &#8211; Enables/disables drag-and-drop bool</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Nothing</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">None</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.0.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXEMAPTEMPLATE.set_item_selection">
+<code class="descname">set_item_selection</code><span class="sig-paren">(</span><em>(str)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXEMAPTEMPLATE.set_item_selection" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Sets the current selected item
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>str</em>) &#8211; item name</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Nothing</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">None</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.0.</span></p>
+</div>
+<p><strong>Note:</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span></span>An empty string will unselect everything.
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXEMAPTEMPLATE.set_template_layout_props">
+<code class="descname">set_template_layout_props</code><span class="sig-paren">(</span><em>(bool)arg1</em>, <em>(float)arg2</em>, <em>(int)arg3</em>, <em>(int)arg4</em>, <em>(int)arg5</em>, <em>(int)arg6</em>, <em>(int)arg7</em>, <em>(int)arg8</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXEMAPTEMPLATE.set_template_layout_props" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Set the base layout view properties.
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arg1</strong> (<em>bool</em>) &#8211; bool Snap to grid</li>
+<li><strong>arg2</strong> (<em>float</em>) &#8211; Snapping distance (always in mm)</li>
+<li><strong>arg3</strong> (<em>int</em>) &#8211; View Grid</li>
+<li><strong>arg4</strong> (<em>int</em>) &#8211; View Rulers</li>
+<li><strong>arg5</strong> (<em>int</em>) &#8211; <a class="reference internal" href="GXEMAP.html#layout-view-units"><span>LAYOUT_VIEW_UNITS constants</span></a> View Units</li>
+<li><strong>arg6</strong> (<em>int</em>) &#8211; Grid Red Component (0-255)</li>
+<li><strong>arg7</strong> (<em>int</em>) &#8211; Grid Green Component (0-255)</li>
+<li><strong>arg8</strong> (<em>int</em>) &#8211; Grid Blue Component (0-255)</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.0.</span></p>
+</div>
+<p><strong>Note:</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span></span>                                     This affects the display units and other related properties for the base
+view of a map.
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXEMAPTEMPLATE.set_window_position">
+<code class="descname">set_window_position</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(int)arg2</em>, <em>(int)arg3</em>, <em>(int)arg4</em>, <em>(int)arg5</em>, <em>(int)arg6</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXEMAPTEMPLATE.set_window_position" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Get the map window&#39;s position and dock state
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arg1</strong> (<em>int</em>) &#8211; Window left position</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; Window top position</li>
+<li><strong>arg3</strong> (<em>int</em>) &#8211; Window right position</li>
+<li><strong>arg4</strong> (<em>int</em>) &#8211; Window bottom position</li>
+<li><strong>arg5</strong> (<em>int</em>) &#8211; Window state <a class="reference internal" href="#emaptemplate-window-state"><span>EMAPTEMPLATE_WINDOW_STATE constants</span></a></li>
+<li><strong>arg6</strong> (<em>int</em>) &#8211; Docked or floating <a class="reference internal" href="#emaptemplate-window-position"><span>EMAPTEMPLATE_WINDOW_POSITION constants</span></a></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.0.0.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXEMAPTEMPLATE.set_window_state">
+<code class="descname">set_window_state</code><span class="sig-paren">(</span><em>(int)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXEMAPTEMPLATE.set_window_state" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Changes the state of the map window
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#emaptemplate-window-state"><span>EMAPTEMPLATE_WINDOW_STATE constants</span></a></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Nothing</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">None</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.0.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXEMAPTEMPLATE.track_point">
+<code class="descname">track_point</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(float_ref)arg2</em>, <em>(float_ref)arg3</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXEMAPTEMPLATE.track_point" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Get point without prompt or cursor change with tracking
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arg1</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#emaptemplate-track"><span>EMAPTEMPLATE_TRACK constants</span></a></li>
+<li><strong>arg2</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; X coordinate in current view user units.</li>
+<li><strong>arg3</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Y</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">0 if point returned.
+1 if user cancelled.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.0.</span></p>
+</div>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="geosoft.gxapi.GXEMAPTEMPLATE.un_load">
+<em class="property">static </em><code class="descname">un_load</code><span class="sig-paren">(</span><em>(str)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXEMAPTEMPLATE.un_load" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Unloads a map template.
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>str</em>) &#8211; Name of the map to unload</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Nothing</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">None</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.0.</span></p>
+</div>
+<p><strong>Note:</strong></p>
+<pre class="literal-block">
+                                     If the map template is not loaded, nothing happens.
+Same as <a class="reference internal" href="#geosoft.gxapi.GXEMAPTEMPLATE.un_load_verify" title="geosoft.gxapi.GXEMAPTEMPLATE.un_load_verify"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXEMAPTEMPLATE.un_load_verify()</span></code></a> with FALSE to prompt save.
+</pre>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="geosoft.gxapi.GXEMAPTEMPLATE.un_load_all">
+<em class="property">static </em><code class="descname">un_load_all</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXEMAPTEMPLATE.un_load_all" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Unloads all opened maps
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Nothing</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">None</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.0.</span></p>
+</div>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="geosoft.gxapi.GXEMAPTEMPLATE.un_load_verify">
+<em class="property">static </em><code class="descname">un_load_verify</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(bool)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXEMAPTEMPLATE.un_load_verify" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Unloads an edited map, optional prompt to save.
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arg1</strong> (<em>str</em>) &#8211; Name of map to unload</li>
+<li><strong>arg2</strong> (<em>bool</em>) &#8211; prompt bool</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.0.</span></p>
+</div>
+<p><strong>Note:</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span></span>                                     If the map is not loaded, nothing happens.
+If &quot;FALSE&quot;, map is saved without a prompt.
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXEMAPTEMPLATE.un_lock">
+<code class="descname">un_lock</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXEMAPTEMPLATE.un_lock" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-python"><div class="highlight"><pre><span></span>This method unlocks the Edited map.
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Nothing</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">None</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.0.</span></p>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<div class="section" id="emaptemplate-path-constants">
+<span id="emaptemplate-path"></span><h2>EMAPTEMPLATE_PATH constants<a class="headerlink" href="#emaptemplate-path-constants" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><div class="highlight"><pre><span></span>Four forms
+</pre></div>
+</div>
+<dl class="attribute">
+<dt id="geosoft.gxapi.EMAPTEMPLATE_PATH_FULL">
+<code class="descclassname">gxapi.</code><code class="descname">EMAPTEMPLATE_PATH_FULL</code><em class="property"> = 0</em><a class="headerlink" href="#geosoft.gxapi.EMAPTEMPLATE_PATH_FULL" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="highlight-python"><div class="highlight"><pre><span></span>d:\directory\file.gdb
+</pre></div>
+</div>
+<dl class="attribute">
+<dt id="geosoft.gxapi.EMAPTEMPLATE_PATH_DIR">
+<code class="descclassname">gxapi.</code><code class="descname">EMAPTEMPLATE_PATH_DIR</code><em class="property"> = 1</em><a class="headerlink" href="#geosoft.gxapi.EMAPTEMPLATE_PATH_DIR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="highlight-python"><div class="highlight"><pre><span></span>\directory\file.gdb
+</pre></div>
+</div>
+<dl class="attribute">
+<dt id="geosoft.gxapi.EMAPTEMPLATE_PATH_NAME_EXT">
+<code class="descclassname">gxapi.</code><code class="descname">EMAPTEMPLATE_PATH_NAME_EXT</code><em class="property"> = 2</em><a class="headerlink" href="#geosoft.gxapi.EMAPTEMPLATE_PATH_NAME_EXT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="nb">file</span><span class="o">.</span><span class="n">gdb</span>
+</pre></div>
+</div>
+<dl class="attribute">
+<dt id="geosoft.gxapi.EMAPTEMPLATE_PATH_NAME">
+<code class="descclassname">gxapi.</code><code class="descname">EMAPTEMPLATE_PATH_NAME</code><em class="property"> = 3</em><a class="headerlink" href="#geosoft.gxapi.EMAPTEMPLATE_PATH_NAME" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="nb">file</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="emaptemplate-track-constants">
+<span id="emaptemplate-track"></span><h2>EMAPTEMPLATE_TRACK constants<a class="headerlink" href="#emaptemplate-track-constants" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><div class="highlight"><pre><span></span>Tracking Options
+</pre></div>
+</div>
+<dl class="attribute">
+<dt id="geosoft.gxapi.EMAPTEMPLATE_TRACK_ERASE">
+<code class="descclassname">gxapi.</code><code class="descname">EMAPTEMPLATE_TRACK_ERASE</code><em class="property"> = 1</em><a class="headerlink" href="#geosoft.gxapi.EMAPTEMPLATE_TRACK_ERASE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="highlight-python"><div class="highlight"><pre><span></span>Erase Object after you return?
+</pre></div>
+</div>
+<dl class="attribute">
+<dt id="geosoft.gxapi.EMAPTEMPLATE_TRACK_RMENU">
+<code class="descclassname">gxapi.</code><code class="descname">EMAPTEMPLATE_TRACK_RMENU</code><em class="property"> = 2</em><a class="headerlink" href="#geosoft.gxapi.EMAPTEMPLATE_TRACK_RMENU" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="highlight-python"><div class="highlight"><pre><span></span>Allow use of right-menu
+</pre></div>
+</div>
+<dl class="attribute">
+<dt id="geosoft.gxapi.EMAPTEMPLATE_TRACK_CYCLE">
+<code class="descclassname">gxapi.</code><code class="descname">EMAPTEMPLATE_TRACK_CYCLE</code><em class="property"> = 4</em><a class="headerlink" href="#geosoft.gxapi.EMAPTEMPLATE_TRACK_CYCLE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="highlight-python"><div class="highlight"><pre><span></span>If user holds down left-mouse, will return many times
+</pre></div>
+</div>
+</div>
+<div class="section" id="emaptemplate-window-position-constants">
+<span id="emaptemplate-window-position"></span><h2>EMAPTEMPLATE_WINDOW_POSITION constants<a class="headerlink" href="#emaptemplate-window-position-constants" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><div class="highlight"><pre><span></span>Window Positioning Options
+</pre></div>
+</div>
+<dl class="attribute">
+<dt id="geosoft.gxapi.EMAPTEMPLATE_WINDOW_POSITION_DOCKED">
+<code class="descclassname">gxapi.</code><code class="descname">EMAPTEMPLATE_WINDOW_POSITION_DOCKED</code><em class="property"> = 0</em><a class="headerlink" href="#geosoft.gxapi.EMAPTEMPLATE_WINDOW_POSITION_DOCKED" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxapi.EMAPTEMPLATE_WINDOW_POSITION_FLOATING">
+<code class="descclassname">gxapi.</code><code class="descname">EMAPTEMPLATE_WINDOW_POSITION_FLOATING</code><em class="property"> = 1</em><a class="headerlink" href="#geosoft.gxapi.EMAPTEMPLATE_WINDOW_POSITION_FLOATING" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="emaptemplate-window-state-constants">
+<span id="emaptemplate-window-state"></span><h2>EMAPTEMPLATE_WINDOW_STATE constants<a class="headerlink" href="#emaptemplate-window-state-constants" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><div class="highlight"><pre><span></span>Window State Options
+</pre></div>
+</div>
+<dl class="attribute">
+<dt id="geosoft.gxapi.EMAPTEMPLATE_WINDOW_RESTORE">
+<code class="descclassname">gxapi.</code><code class="descname">EMAPTEMPLATE_WINDOW_RESTORE</code><em class="property"> = 0</em><a class="headerlink" href="#geosoft.gxapi.EMAPTEMPLATE_WINDOW_RESTORE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxapi.EMAPTEMPLATE_WINDOW_MINIMIZE">
+<code class="descclassname">gxapi.</code><code class="descname">EMAPTEMPLATE_WINDOW_MINIMIZE</code><em class="property"> = 1</em><a class="headerlink" href="#geosoft.gxapi.EMAPTEMPLATE_WINDOW_MINIMIZE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxapi.EMAPTEMPLATE_WINDOW_MAXIMIZE">
+<code class="descclassname">gxapi.</code><code class="descname">EMAPTEMPLATE_WINDOW_MAXIMIZE</code><em class="property"> = 2</em><a class="headerlink" href="#geosoft.gxapi.EMAPTEMPLATE_WINDOW_MAXIMIZE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2016, Geosoft Inc.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

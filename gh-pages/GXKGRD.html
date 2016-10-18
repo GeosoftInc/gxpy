@@ -1,0 +1,362 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>GXKGRD class &mdash; Geosoft GX Python API 9.1.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/maki.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '9.1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="Geosoft GX Python API 9.1.0 documentation" href="index.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/GXKGRD.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="gxkgrd-class">
+<span id="gxkgrd"></span><h1>GXKGRD class<a class="headerlink" href="#gxkgrd-class" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="geosoft.gxapi.GXKGRD">
+<em class="property">class </em><code class="descclassname">geosoft.gxapi.</code><code class="descname">GXKGRD</code><a class="headerlink" href="#geosoft.gxapi.GXKGRD" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-python"><div class="highlight"><pre><span></span>The KGRD object is used as a storage place for the control
+parameters that the Krigrid program needs to execute. The
+Run_KGRD function executes the Krigrid program using the
+KGRD object.
+</pre></div>
+</div>
+<dl class="method">
+<dt id="geosoft.gxapi.GXKGRD.clear">
+<code class="descname">clear</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXKGRD.clear" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Clears all the parameters in a KGRD object
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Nothing</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">None</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.0.</span></p>
+</div>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="geosoft.gxapi.GXKGRD.create">
+<em class="property">static </em><code class="descname">create</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; GXKGRD:<a class="headerlink" href="#geosoft.gxapi.GXKGRD.create" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Create a handle to a Krigrid object
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">KGRD Object</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXKGRD" title="geosoft.gxapi.GXKGRD"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXKGRD</span></code></a></td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.0.</span></p>
+</div>
+<p><strong>Note:</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span></span>The Krigrid object is initially empty. It will store the
+control file parameters which the Krigrid program needs
+to execute. Use the LoadParms_KGRD method to get the
+control file parameters into the KGRD object.
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXKGRD.is_null">
+<code class="descname">is_null</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; bool<a class="headerlink" href="#geosoft.gxapi.GXKGRD.is_null" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if the instance of <code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXKGRD</span> <span class="pre">is</span> <span class="pre">null</span> <span class="pre">(undefined)</span></code></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if this is a null instance of <a class="reference internal" href="#geosoft.gxapi.GXKGRD" title="geosoft.gxapi.GXKGRD"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXKGRD</span></code></a>, False otherwise.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool`</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXKGRD.load_parms">
+<code class="descname">load_parms</code><span class="sig-paren">(</span><em>(str)arg1</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXKGRD.load_parms" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Retrieves a Krigrid object&#39;s control parameters from a file.
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>str</em>) &#8211; Name of file to get the parameter settings from</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">0 OK, 1 Error.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 6.0.1.</span></p>
+</div>
+<p><strong>Note:</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span></span>If the control file name passed into this function is a file
+which does not exist, then the defaults for a Krigrid control
+file will be generated and put into the KGRD object.
+Otherwise, the control file&#39;s settings are retrieved from
+the file and loaded into the KGRD object.
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="geosoft.gxapi.GXKGRD.null">
+<em class="property">static </em><code class="descname">null</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; GXKGRD<a class="headerlink" href="#geosoft.gxapi.GXKGRD.null" title="Permalink to this definition">¶</a></dt>
+<dd><p>A null (undefined) instance of <a class="reference internal" href="#geosoft.gxapi.GXKGRD" title="geosoft.gxapi.GXKGRD"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXKGRD</span></code></a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A null <a class="reference internal" href="#geosoft.gxapi.GXKGRD" title="geosoft.gxapi.GXKGRD"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXKGRD</span></code></a></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXKGRD" title="geosoft.gxapi.GXKGRD"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXKGRD</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXKGRD.run">
+<code class="descname">run</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(GXDAT)arg2</em>, <em>(GXDAT)arg3</em>, <em>(GXDAT)arg4</em>, <em>(str)arg5</em>, <em>(str)arg6</em>, <em>(int)arg7</em>, <em>(int)arg8</em>, <em>(int)arg9</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXKGRD.run" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Executes the Krigrid program, using the input channel and
+output file parameters.
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arg1</strong> (<em>str</em>) &#8211; Name of Z Channel to perfrom gridding on</li>
+<li><strong>arg2</strong> (<a class="reference internal" href="GXDAT.html#geosoft.gxapi.GXDAT" title="geosoft.gxapi.GXDAT"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXDAT</span></code></a>) &#8211; Handle to source DAT object (from database)</li>
+<li><strong>arg3</strong> (<a class="reference internal" href="GXDAT.html#geosoft.gxapi.GXDAT" title="geosoft.gxapi.GXDAT"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXDAT</span></code></a>) &#8211; Handle to output grid file DAT</li>
+<li><strong>arg4</strong> (<a class="reference internal" href="GXDAT.html#geosoft.gxapi.GXDAT" title="geosoft.gxapi.GXDAT"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXDAT</span></code></a>) &#8211; Handle to output error grid file DAT ((DAT)0) if no error grid required</li>
+<li><strong>arg5</strong> (<em>str</em>) &#8211; Name of input variogram file</li>
+<li><strong>arg6</strong> (<em>str</em>) &#8211; Name of output variogram file</li>
+<li><strong>arg7</strong> (<em>int</em>) &#8211; Flag of variogram only</li>
+<li><strong>arg8</strong> (<em>int</em>) &#8211; Flag of input variogram</li>
+<li><strong>arg9</strong> (<em>int</em>) &#8211; Flag of output variogram</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">0 OK, 1 Error.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 6.0.1.</span></p>
+</div>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="geosoft.gxapi.GXKGRD.run2">
+<em class="property">static </em><code class="descname">run2</code><span class="sig-paren">(</span><em>(GXDB)arg1</em>, <em>(str)arg2</em>, <em>(str)arg3</em>, <em>(str)arg4</em>, <em>(str)arg5</em>, <em>(str)arg6</em>, <em>(str)arg7</em>, <em>(str)arg8</em>, <em>(str)arg9</em>, <em>(int)arg10</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXKGRD.run2" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Executes the Krigrid program directly on a database.
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arg1</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXDB</span></code></a>) &#8211; Handle to a database</li>
+<li><strong>arg2</strong> (<em>str</em>) &#8211; Y Channel</li>
+<li><strong>arg3</strong> (<em>str</em>) &#8211; X Channel</li>
+<li><strong>arg4</strong> (<em>str</em>) &#8211; Data channel</li>
+<li><strong>arg5</strong> (<em>str</em>) &#8211; KRIGRID control file.</li>
+<li><strong>arg6</strong> (<em>str</em>) &#8211; (output grid name (not required if variogram analysis only))</li>
+<li><strong>arg7</strong> (<em>str</em>) &#8211; (output error file, &#8220;&#8221; for none)</li>
+<li><strong>arg8</strong> (<em>str</em>) &#8211; (input variogram file, &#8220;&#8221; for none)</li>
+<li><strong>arg9</strong> (<em>str</em>) &#8211; (output variogram file, &#8220;&#8221; for none)</li>
+<li><strong>arg10</strong> (<em>int</em>) &#8211; 1 if Variogram Analysis Only, other wise 0</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">0 OK, 1 Error.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 6.0.1.</span></p>
+</div>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="geosoft.gxapi.GXKGRD.run3">
+<em class="property">static </em><code class="descname">run3</code><span class="sig-paren">(</span><em>(GXDB)arg1</em>, <em>(str)arg2</em>, <em>(str)arg3</em>, <em>(str)arg4</em>, <em>(str)arg5</em>, <em>(str)arg6</em>, <em>(str)arg7</em>, <em>(str)arg8</em>, <em>(str)arg9</em>, <em>(str)arg10</em>, <em>(int)arg11</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXKGRD.run3" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Executes the Krigrid program directly on a database and specifies the log file
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arg1</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXDB</span></code></a>) &#8211; Handle to a database</li>
+<li><strong>arg2</strong> (<em>str</em>) &#8211; Y Channel</li>
+<li><strong>arg3</strong> (<em>str</em>) &#8211; X Channel</li>
+<li><strong>arg4</strong> (<em>str</em>) &#8211; Data channel</li>
+<li><strong>arg5</strong> (<em>str</em>) &#8211; KRIGRID control file.</li>
+<li><strong>arg6</strong> (<em>str</em>) &#8211; (output grid name (not required if variogram analysis only))</li>
+<li><strong>arg7</strong> (<em>str</em>) &#8211; (output error file, &#8220;&#8221; for none)</li>
+<li><strong>arg8</strong> (<em>str</em>) &#8211; (input variogram file, &#8220;&#8221; for none)</li>
+<li><strong>arg9</strong> (<em>str</em>) &#8211; (output variogram file, &#8220;&#8221; for none)</li>
+<li><strong>arg10</strong> (<em>str</em>) &#8211; (log file name, &#8220;&#8221; for default)</li>
+<li><strong>arg11</strong> (<em>int</em>) &#8211; 1 if Variogram Analysis Only, other wise 0</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">0 OK, 1 Error.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 6.4.0.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXKGRD.save_parms">
+<code class="descname">save_parms</code><span class="sig-paren">(</span><em>(str)arg1</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXKGRD.save_parms" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Puts the Krigrid object&#39;s control parameters back into
+its control file.
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>str</em>) &#8211; Name of file to put the parameter settings into</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">0 OK, 1 Error.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 6.0.1.</span></p>
+</div>
+<p><strong>Note:</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span></span>If the control file did not previously exist, it will be
+created. Otherwise, the old file will be overwritten.
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2016, Geosoft Inc.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

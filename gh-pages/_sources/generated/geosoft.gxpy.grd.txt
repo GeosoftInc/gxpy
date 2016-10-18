@@ -1,0 +1,22 @@
+geosoft.gxpy.grd package
+========================
+
+Submodules
+----------
+
+geosoft.gxpy.grd.grd module
+---------------------------
+
+.. automodule:: geosoft.gxpy.grd.grd
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+
+Module contents
+---------------
+
+.. automodule:: geosoft.gxpy.grd
+    :members:
+    :undoc-members:
+    :show-inheritance:
