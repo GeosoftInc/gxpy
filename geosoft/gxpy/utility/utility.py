@@ -318,8 +318,45 @@ def dummyMask(npd):
     dummy = gxDummy(npd.dtype)
     return np.apply_along_axis(lambda a: dummy in a, 1, npd)
 
-###############################################
-# simple user input, depends on "user_input.gx"
+def save_parameters(group='_', parms={}):
+    '''
+    Save parameters to the Project Parameter Block.
+
+    :param group:   parameter block group name
+    :param parms:   dict containing named parameter settings
+    '''
+
+    for k,v in parms.items():
+        gxapi.GXSYS.set_string(group, k, str(v))
+
+def get_parameters(group='_', parms=None):
+    '''
+    Get parameters from the Project Parameter Block.
+
+    :param group:   name in the parameter block group name
+    :param parms:   if specified only these items are found and returned, otherwise all are found and returned
+    :return:        dictionary containing group parameters
+    '''
+
+    sv = gxapi.str_ref()
+    p = {}
+
+    if parms is not None:
+        for k in parms:
+            if gxapi.GXSYS.exist_string(group, k):
+                gxapi.GXSYS.gt_string(group, k, sv)
+                p[k] = sv.value
+
+    else:
+        hREG = gxapi.GXREG.create(4096)
+        gxapi.GXSYS.get_reg(hREG, group)
+        k = gxapi.str_ref()
+        for i in range(hREG.entries()):
+            hREG.get_one(i, k, sv)
+            p[k.value.split('.')[1]] = sv.value
+
+    return p
+
 
 def get_user_input(title="Input required...", prompt='?', kind='string', default='',items=''):
     '''
@@ -337,20 +374,35 @@ def get_user_input(title="Input required...", prompt='?', kind='string', default
     :raise:         'User cancelled' if the user cancels the dialog
     '''
 
-    gxapi.GXSYS.set_string("USER_INPUT", "TITLE", title)
-    gxapi.GXSYS.set_string("USER_INPUT", "PROMPT", prompt)
-    gxapi.GXSYS.set_string("USER_INPUT", "RESPONSE", str(default))
 
     if (kind == 'float'):
         gxapi.GXSYS.set_string("USER_INPUT", "TYPE", "1")
+
     elif (kind == 'int'):
         gxapi.GXSYS.set_string("USER_INPUT", "TYPE", "2")
+
     elif (kind == 'list'):
         gxapi.GXSYS.set_string("USER_INPUT", "TYPE", "3")
-        gxapi.GXSYS.set_string("USER_INPUT", "LIST", items)
+
+        # first make a list out of the items.
+        if type(items) is dict:
+            items = [(k) for k in items.keys()]
+        elif type(items) is str:
+            items = items.split(',')
+
+        # make sure default is in the list
+        if default not in items:
+            if len(items) > 0:
+                default = items[0]
+
+        gxapi.GXSYS.set_string("USER_INPUT", "LIST", ",".join(items))
+
     else:
         gxapi.GXSYS.set_string("USER_INPUT", "TYPE", "0")
 
+    gxapi.GXSYS.set_string("USER_INPUT", "TITLE", str(title))
+    gxapi.GXSYS.set_string("USER_INPUT", "PROMPT", str(prompt))
+    gxapi.GXSYS.set_string("USER_INPUT", "RESPONSE", str(default))
     ret = gxapi.GXSYS.run_gx("user_input.gx")
 
     if ret == 0:
