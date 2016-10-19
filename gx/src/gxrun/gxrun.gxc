@@ -1,0 +1,194 @@
+//===========================================================================
+NAME          = "Run a GX or Python script"
+#include <version.gxh>
+DESCRIPTION   = "\
+        GXRUN.GX     GX name
+"
+TRANSLATIONDOMAIN = "core"
+TRANSLATIONFRIENDLYPATH = "GX/GX Menu"
+
+//===========================================================================
+//                                 RESOURCES
+//===========================================================================
+
+RESOURCE = "gxrun.gr"
+#include "gxrun.grh"
+
+//===========================================================================
+//                                  INCLUDE
+//===========================================================================
+
+#include <all.gxh>     // system
+
+//===========================================================================
+//                                 VARIABLES
+//===========================================================================
+
+DGW   hDGW;            // Dialogue handle
+LST   hLST,hLST2,hDotNetLST;
+SBF   hSBF;
+BF    hBF;
+
+string(STR_FILE) sGX,sGX2,sExtension,sQualifiers,sEntryPoints,sToken,sEntryFullName;
+int i,iRun,x,iNumTokens;
+
+//===========================================================================
+//                                   CODE
+//===========================================================================
+
+#define GX_LST_FILE "GX_History.lst"
+
+{
+
+   // --- Are we running interactively ? ---
+
+   if (iInteractive_SYS()) {
+   
+
+      // --- get history ---
+      
+      hSBF = hGetSYS_SBF();
+      if (iExistFile_SBF(hSBF,GX_LST_FILE)) {
+         hBF  = CreateSBF_BF(hSBF,GX_LST_FILE,BF_READWRITE_OLD);
+         hLST = CreateS_LST(hBF);
+      } else
+         hLST = Create_LST(STR_FILE);
+         
+         
+      // --- get dialog setting ---
+      
+      if (iExistInt_SYS("GXRUN","DIALOG")) {
+         i = iGetInt_SYS("GXRUN","DIALOG");
+         if (i <= 0 || i > 2) i = 1;
+      } else
+         i = 1;   
+               
+      while (i != 0) {
+      
+      
+         if (i == 1) { // --- browse ---
+
+            hDGW = Create_DGW("GXRUNB");
+            SetInfoSYS_DGW(hDGW,_GXRUNB_0,DGW_FILEPATH,"GXRUN","GX");
+            i = iRunDialogue_DGW(hDGW);
+            if (i == -1) Cancel_SYS();
+            GetInfoSYS_DGW(hDGW,_GXRUNB_0,DGW_FILEPATH,"GXRUN","GX");
+            Destroy_DGW(hDGW);
+            
+            SetString_SYS("GXRUN","DIALOG","BROWSE");
+
+
+            // --- check to see if this ends with a .dll, if so
+            // --- then bring up the list of .NET methods to call
+
+            GetString_SYS("GXRUN","GX",sGX);
+
+            FileNamePart_STR(sGX,sExtension,STR_FILE_PART_EXTENSION);
+
+            if (iStrcmp_STR(sExtension,_n("dll"),STR_CASE_TOLERANT) == 0) {
+                
+               // --- this is a .NET dll ---
+               // --- check to see if they have already specified an entry point ---
+
+               FileNamePart_STR(sGX,sQualifiers,STR_FILE_PART_QUALIFIERS);
+
+               if (iStrlen_STR(sQualifiers) == 0) {
+                  GetDotNetGXEntries_SYS(sGX,sEntryPoints);
+
+                  hDotNetLST = Create_LST(STR_FILE);
+  
+                  iNumTokens = iTokens_STR(sEntryPoints,"|");
+               
+                  for (x = 0; x < iNumTokens; x++) {
+                     GetToken_STR(sToken, sEntryPoints, x);
+                     Strcpy_STR(sEntryFullName, sGX);
+                     Strcat_STR(sEntryFullName, sToken);
+                     AddItem_LST(hDotNetLST, sEntryFullName, "");
+                  }
+                  i = 3;
+               }
+            }
+            
+         } else if (i == 2) { // --- history ---
+
+            hDGW = Create_DGW("GXRUNH");
+            Copy_LST(GetList_DGW(hDGW,_GXRUNH_0),hLST);
+            SetInfoSYS_DGW(hDGW,_GXRUNH_0,DGW_TEXT,"GXRUN","GX");
+            i = iRunDialogue_DGW(hDGW);
+            if (i == -1) Cancel_SYS();
+            GetInfoSYS_DGW(hDGW,_GXRUNH_0,DGW_TEXT,"GXRUN","GX");
+            Destroy_DGW(hDGW);
+            
+            SetString_SYS("GXRUN","DIALOG","HISTORY");
+            
+         } else if (i == 3) { // --- Dot Net GX List ---
+            
+            hDGW = Create_DGW("GXRUNDOTNET");
+
+            // --- setup the list of exposed .NET entry points ---
+           
+            if (iSize_LST(hDotNetLST) > 0 ) {
+               Copy_LST(GetList_DGW(hDGW,_GXRUNDOTNET_0),hDotNetLST);
+               GetItem_LST(hDotNetLST, 0, 0, sGX);
+               SetInfo_DGW(hDGW,_GXRUNDOTNET_0,DGW_TEXT,sGX);
+
+               i = iRunDialogue_DGW(hDGW);
+               if (i == -1) Cancel_SYS();
+               GetInfoSYS_DGW(hDGW,_GXRUNDOTNET_0,DGW_TEXT,"GXRUN","GX");
+               Destroy_DGW(hDGW);
+            } else {
+               i = 1;
+            }
+         }         
+      }
+   }
+
+   // --- run GX ---
+
+   GetString_SYS("GXRUN","GX",sGX);
+
+   iRun = iRunGX_SYS(sGX);
+
+   if (iInteractive_SYS()) {
+
+      // --- update history ---
+      
+      hLST2 = Create_LST(STR_FILE);
+      AddItem_LST(hLST2,sGX,"");
+         
+      if (iExistFile_SBF(hSBF,GX_LST_FILE)) {
+      
+         for (i=0;i<iSize_LST(hLST);i++) {
+      
+            // --- if same as last, just copy old ---
+         
+            GetItem_LST(hLST,0,i,sGX2);
+            if (iStrcmp_STR(sGX,sGX2,STR_CASE_TOLERANT) == 0) {
+               Copy_LST(hLST2,hLST);
+               break;
+            }
+         
+         
+            // --- otherwise add old items ---
+         
+            AddItem_LST(hLST2,sGX2,"");
+         
+         }
+         
+      } else    
+         hBF  = CreateSBF_BF(hSBF,GX_LST_FILE,BF_READWRITE_NEW);
+         
+      Seek_BF(hBF,0,0);
+      Serial_LST(hLST2,hBF);
+      DestroyEx_BF(hBF);
+      Destroy_SBF(hSBF);
+      Destroy_LST(hLST2);
+      
+   }
+
+   // --- Reflect child GX's return values ---
+   if (iRun == 1)
+      Assert_SYS(0);
+   else if (iRun == -1)
+      Cancel_SYS();
+}
