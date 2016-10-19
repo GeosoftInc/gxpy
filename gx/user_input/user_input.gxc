@@ -1,0 +1,55 @@
+//===========================================================================
+NAME          = "Get input from the user"
+DESCRIPTION   = "
+Utility GX to get simple information from a user.
+
+Parameters: 
+
+	USER_INPUT.TITLE 	- Dialog title
+	USER_INPUT.PROMPT 	- Prompt to present to the user
+	USER_INPUT.RESPONSE - Response returned
+    USER_INPUT.TYPE     - 0 for string
+                          1 for real
+						  2 for int
+						  3 for list					  
+	USER_INPUT.LIST		- comma-separated list
+"
+#include <version.gxh>
+
+// Revision History:
+// v1.0.0: First version for OM 9.1
+
+RESOURCE = "user_input.gr"
+#include <all.gxh>     // system
+DGW hDGW;
+LST hLST;
+string(STR_DEFAULT_LONG) sStr;
+
+{
+	switch (iGetInt_SYS("USER_INPUT", "TYPE")) {
+		case 1: 
+            hDGW = Create_DGW("REAL"); 
+            break;
+		case 2: 
+            hDGW = Create_DGW("INT"); 
+            break;
+		case 3: 
+			hDGW = Create_DGW("LIST");
+			GetString_SYS("USER_INPUT","LIST",sStr);			
+			hLST = GetList_DGW(hDGW, ((DGW_OBJ) 0));
+			ConvertFromCSVString_LST(hLST,sStr);
+            break;
+		default: 
+            hDGW = Create_DGW("STRING");
+	}
+	
+    GetString_SYS("USER_INPUT", "TITLE", sStr);
+    SetTitle_DGW(hDGW, sStr);
+	SetInfoSYS_DGW(hDGW, ((DGW_OBJ) 0), DGW_LABEL, "USER_INPUT", "PROMPT");
+	SetInfoSYS_DGW(hDGW, ((DGW_OBJ) 0), DGW_TEXT, "USER_INPUT", "RESPONSE");     
+	if (iRunDialogue_DGW(hDGW) != 0) {
+		Destroy_DGW(hDGW);
+		Cancel_SYS();
+	}	
+	GetInfoSYS_DGW(hDGW, ((DGW_OBJ) 0), DGW_TEXT, "USER_INPUT", "RESPONSE");
+}
