@@ -317,3 +317,52 @@ def dummyMask(npd):
         raise UtilityException('Must be a 2D array')
     dummy = gxDummy(npd.dtype)
     return np.apply_along_axis(lambda a: dummy in a, 1, npd)
+
+###############################################
+# simple user input, depends on "user_input.gx"
+
+def get_user_input(title="Input required...", prompt='?', kind='string', default='',items=''):
+    '''
+    Display a dialog prompt on the Geosoft Desktop and wait for user input.
+    This method depends on "user_input.gx" and can only be used from an extension running
+    inside a Geosoft Desktop application.
+
+    :param title:   dialog box title.  A description can be added as a second-line using a line-break.
+                    example: "Your title/nDescriptive help"
+    :param prompt:  prompt string to
+    :param kind:    kind of response required: 'string', 'int', 'float' or 'list'
+    :param items:   string of comma-separated items for a list
+    :param default: default value
+    :return:        user response
+    :raise:         'User cancelled' if the user cancels the dialog
+    '''
+
+    gxapi.GXSYS.set_string("USER_INPUT", "TITLE", title)
+    gxapi.GXSYS.set_string("USER_INPUT", "PROMPT", prompt)
+    gxapi.GXSYS.set_string("USER_INPUT", "RESPONSE", str(default))
+
+    if (kind == 'float'):
+        gxapi.GXSYS.set_string("USER_INPUT", "TYPE", "1")
+    elif (kind == 'int'):
+        gxapi.GXSYS.set_string("USER_INPUT", "TYPE", "2")
+    elif (kind == 'list'):
+        gxapi.GXSYS.set_string("USER_INPUT", "TYPE", "3")
+        gxapi.GXSYS.set_string("USER_INPUT", "LIST", items)
+    else:
+        gxapi.GXSYS.set_string("USER_INPUT", "TYPE", "0")
+
+    ret = gxapi.GXSYS.run_gx("user_input.gx")
+
+    if ret == 0:
+
+        strr = gxapi.str_ref()
+        gxapi.GXSYS.gt_string("USER_INPUT", "RESPONSE", strr)
+        if kind == 'int':
+            return int(strr.value)
+        if kind == 'float':
+            return float(strr.value)
+        return strr.value
+
+    if ret == -1:
+        raise UtilityException('User cancelled.')
+    raise UtilityException('GX Error {}'.format(ret))
