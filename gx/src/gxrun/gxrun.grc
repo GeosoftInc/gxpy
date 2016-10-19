@@ -1,0 +1,29 @@
+RESOURCE,FORM,GXRUNB,"Run a GX or Python script",-1
+FEDIT,,,64,"GX file",R,OLD,,~gx,*.gx;*.py
+EBUT,&OK,0
+EBUT,&History,2,CANCEL
+EBUT,&Cancel,-1,CANCEL
+HBUT,&Help,help
+
+RESOURCE,FORM,GXRUNH,"Run a GX or Python script",-1
+LEDIT,,,64,"GX file",R,,,history
+EBUT,&OK,0
+EBUT,&Browse,1,CANCEL
+EBUT,&Cancel,-1,CANCEL
+HBUT,&Help,help
+
+RESOURCE,FORM,GXRUNDOTNET,"Run a .NET GX",-1
+LEDIT,,,64,"GX Entry",R,,,entry
+EBUT,&OK,0
+EBUT,&Browse,1,CANCEL
+EBUT,&Cancel,-1,CANCEL
+HBUT,&Help,help
+
+RESOURCE,LIST,history
+
+RESOURCE,LIST,entry
+
+RESOURCE,HELP,help,nogx.hlp
+
+
+
