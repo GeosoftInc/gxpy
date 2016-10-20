@@ -1,6 +1,7 @@
-__all__ = ['system', 'gx', 'utility', 'vv', 'ipj', 'grd', 'gdb']
+__all__ = ['system', 'gx', 'om', 'utility', 'vv', 'ipj', 'grd', 'gdb']
 from .system import system
 from .gx import gx
+from .om import om
 from .utility import utility
 from .vv import vv
 from .ipj import ipj
