@@ -14,7 +14,6 @@ Follwoing are the basic steps:
 '''
 
 import os
-import numpy as np
 import argparse as argp
 import geosoft.gxpy as gxpy
 
