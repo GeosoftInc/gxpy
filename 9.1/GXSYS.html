@@ -135,6 +135,31 @@ GetString_SYS(&quot;group1&quot;,&quot;multiparm[3]&quot;,sSetting);
 returns sSetting = &quot;value4&quot;
 </pre>
 <dl class="staticmethod">
+<dt id="geosoft.gxapi.GXSYS.abort">
+<em class="property">static </em><code class="descname">abort</code><span class="sig-paren">(</span><em>(str)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSYS.abort" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-python"><div class="highlight"><pre><span></span>This method terminates the execution of a script. A message
+giving the reason for the abort will be displayed along with
+the line number where we stopped in the script.
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>str</em>) &#8211; Message to display</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Nothing</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">None</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.0.</span></p>
+</div>
+</dd></dl>
+
+<dl class="staticmethod">
 <dt id="geosoft.gxapi.GXSYS.absolute_file_name">
 <em class="property">static </em><code class="descname">absolute_file_name</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(str_ref)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSYS.absolute_file_name" title="Permalink to this definition">¶</a></dt>
 <dd><div class="highlight-python"><div class="highlight"><pre><span></span>Convert an abbreviated path name to a full path name.
@@ -227,6 +252,77 @@ name at run-time.
 </dd></dl>
 
 <dl class="staticmethod">
+<dt id="geosoft.gxapi.GXSYS.assert">
+<em class="property">static </em><code class="descname">assert</code><span class="sig-paren">(</span><em>(int)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSYS.assert" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Abort with GX line number if not true.
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>int</em>) &#8211; Expression to evaluate (0 aborts)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Nothing</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">None</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.0.</span></p>
+</div>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="geosoft.gxapi.GXSYS.assert_gx">
+<em class="property">static </em><code class="descname">assert_gx</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(str)arg2</em>, <em>(str)arg3</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXSYS.assert_gx" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-python"><div class="highlight"><pre><span></span>DLL function argument error assertion
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arg1</strong> (<em>int</em>) &#8211; boolean expression (ie. (dB != 0.0) )</li>
+<li><strong>arg2</strong> (<em>str</em>) &#8211; module name</li>
+<li><strong>arg3</strong> (<em>str</em>) &#8211; argument name</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">0 assertion passed
+1 assertion failed</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.0.</span></p>
+</div>
+<p><strong>Note:</strong></p>
+<pre class="literal-block">
+Use this function to evaluate errors in passed
+function arguments.  Functions called by GX programs
+should be tolerant of all errors in the passed argument
+list.  The <a class="reference internal" href="#geosoft.gxapi.GXSYS.assert_gx" title="geosoft.gxapi.GXSYS.assert_gx"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXSYS.assert_gx()</span></code></a> can be used to test each
+argument before doing any work in the function.  If
+an assertion fails, an error will be registered with
+the name of the function and the parameter name and
+a 1 will be returned.  The caller should immediatley
+cleaning up (if necessary) and return.
+
+You could also test the validity of arguments and call
+the <a class="reference internal" href="#geosoft.gxapi.GXSYS.error" title="geosoft.gxapi.GXSYS.error"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXSYS.error()</span></code></a>, <a class="reference internal" href="#geosoft.gxapi.GXSYS.error_tag" title="geosoft.gxapi.GXSYS.error_tag"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXSYS.error_tag()</span></code></a> and <a class="reference internal" href="#geosoft.gxapi.GXSYS.terminate" title="geosoft.gxapi.GXSYS.terminate"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXSYS.terminate()</span></code></a>
+functions if you would like to provide a more specific
+error message.
+</pre>
+</dd></dl>
+
+<dl class="staticmethod">
 <dt id="geosoft.gxapi.GXSYS.backup_geo_file">
 <em class="property">static </em><code class="descname">backup_geo_file</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(str_ref)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSYS.backup_geo_file" title="Permalink to this definition">¶</a></dt>
 <dd><div class="highlight-python"><div class="highlight"><pre><span></span>Backup a Geosoft data file and all associated files to a temporary folder.
@@ -289,6 +385,29 @@ guarantee all grid files besides the main one are copied.
 </table>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.1.1.</span></p>
+</div>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="geosoft.gxapi.GXSYS.cancel">
+<em class="property">static </em><code class="descname">cancel</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSYS.cancel" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-python"><div class="highlight"><pre><span></span>This method indicates that the GX program terminated without
+doing anything of interest and should be ignored.  In
+particular, the GX will not be logged in a recorded GS.
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Nothing</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">None</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 </dd></dl>
 
@@ -1645,6 +1764,28 @@ which is only known at run-time.
 </table>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 7.2.0.</span></p>
+</div>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="geosoft.gxapi.GXSYS.exit">
+<em class="property">static </em><code class="descname">exit</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSYS.exit" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-python"><div class="highlight"><pre><span></span>This method terminates the execution of a script in  a regular
+fashion with no error messages displayed.
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Nothing</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">None</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 </dd></dl>
 

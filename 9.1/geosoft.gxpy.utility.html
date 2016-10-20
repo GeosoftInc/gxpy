@@ -203,6 +203,36 @@ have a Geosoft dummy value.</p>
 </dd></dl>
 
 <dl class="function">
+<dt id="geosoft.gxpy.utility.utility.get_user_input">
+<code class="descclassname">geosoft.gxpy.utility.utility.</code><code class="descname">get_user_input</code><span class="sig-paren">(</span><em>title='Input required...'</em>, <em>prompt='?'</em>, <em>kind='string'</em>, <em>default=''</em>, <em>items=''</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.utility.utility.get_user_input" title="Permalink to this definition">¶</a></dt>
+<dd><p>Display a dialog prompt on the Geosoft Desktop and wait for user input.
+This method depends on &#8220;user_input.gx&#8221; and can only be used from an extension running
+inside a Geosoft Desktop application.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>title</strong> &#8211; dialog box title.  A description can be added as a second-line using a line-break.
+example: &#8220;Your title/nDescriptive help&#8221;</li>
+<li><strong>prompt</strong> &#8211; prompt string to</li>
+<li><strong>kind</strong> &#8211; kind of response required: &#8216;string&#8217;, &#8216;int&#8217;, &#8216;float&#8217; or &#8216;list&#8217;</li>
+<li><strong>items</strong> &#8211; string of comma-separated items for a list</li>
+<li><strong>default</strong> &#8211; default value</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">user response</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raise:</th><td class="field-body"><p class="first last">&#8216;User cancelled&#8217; if the user cancels the dialog</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
 <dt id="geosoft.gxpy.utility.utility.gxDummy">
 <code class="descclassname">geosoft.gxpy.utility.utility.</code><code class="descname">gxDummy</code><span class="sig-paren">(</span><em>dtype</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.utility.utility.gxDummy" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">

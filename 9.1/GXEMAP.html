@@ -109,12 +109,12 @@ MAP Redraw Rules:
 You can safely call other GX's and the map will not redraw. If you need the
 map to redraw immediately use <a class="reference internal" href="#geosoft.gxapi.GXEMAP.redraw" title="geosoft.gxapi.GXEMAP.redraw"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXEMAP.redraw()</span></code></a> instead.
 
-2. If the final GX calls <code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXSYS._cancel()</span></code>, the map redraw is not done. If you
+2. If the final GX calls <a class="reference internal" href="GXSYS.html#geosoft.gxapi.GXSYS.cancel" title="geosoft.gxapi.GXSYS.cancel"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXSYS.cancel()</span></code></a>, the map redraw is not done. If you
 need to force a redraw when the user hits cancel use the <a class="reference internal" href="#geosoft.gxapi.GXEMAP.redraw" title="geosoft.gxapi.GXEMAP.redraw"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXEMAP.redraw()</span></code></a> function.
 
 3. You can set the redraw flag to EMAP_REDRAW_YES or EMAP_REDRAW_NO at any
 time using <a class="reference internal" href="#geosoft.gxapi.GXEMAP.set_redraw_flag" title="geosoft.gxapi.GXEMAP.set_redraw_flag"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXEMAP.set_redraw_flag()</span></code></a>. This flag will only be looked at, when
-the last call to <a class="reference internal" href="#geosoft.gxapi.GXEMAP.un_lock" title="geosoft.gxapi.GXEMAP.un_lock"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXEMAP.un_lock()</span></code></a> occurs and is ignored on a <code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXSYS._cancel()</span></code>.
+the last call to <a class="reference internal" href="#geosoft.gxapi.GXEMAP.un_lock" title="geosoft.gxapi.GXEMAP.un_lock"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXEMAP.un_lock()</span></code></a> occurs and is ignored on a <a class="reference internal" href="GXSYS.html#geosoft.gxapi.GXSYS.cancel" title="geosoft.gxapi.GXSYS.cancel"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXSYS.cancel()</span></code></a>.
 
 4. <a class="reference internal" href="#geosoft.gxapi.GXEMAP.redraw" title="geosoft.gxapi.GXEMAP.redraw"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXEMAP.redraw()</span></code></a> only works if the current map is not locked. It will do nothing
 if the map is locked.  Issue an <a class="reference internal" href="#geosoft.gxapi.GXEMAP.un_lock" title="geosoft.gxapi.GXEMAP.un_lock"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXEMAP.un_lock()</span></code></a> before using this function.
