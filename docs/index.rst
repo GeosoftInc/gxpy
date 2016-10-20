@@ -11,7 +11,9 @@ Introduction
 Hello World Example
 -------------------
 
-.. literalinclude:: ../examples/hello_world/hello_world.py
+.. literalinclude:: ../examples/om-extensions/hello_world.py
+
+.. literalinclude:: ../examples/stand-alone/hello_world.py
 
 
 The geosoft.gxpy package
