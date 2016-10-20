@@ -3,26 +3,20 @@
 Add a constant value to a channel on all selected lines.
 
 This is a sample Python program that illustrates how to connect to the GX
-developer environment from a stand-alone program.  In this case, there
-the following basic steps:
+developer environment from a stand-alone program.
+
+Follwoing are the basic steps:
 
    1. Get (create) a GX Object handle.
-
-   2. Open existing database
-
-   3. Save the list of database channels to a file
-
-   4. Get the channel data
-
-   5. Increase the data by a given amount
-
-   6. Save the changed data back to the channel
+   2. Collect command-line parameters
+   3. Open the database
+   4. Process the data
 '''
+
 import os
 import numpy as np
 import argparse as argp
 import geosoft.gxpy as gxpy
-
 
 def process_database(db, channel_name, add_value):
     '''
@@ -55,9 +49,13 @@ def process_database(db, channel_name, add_value):
 
 if __name__ == "__main__":
 
+    # get (create) a GX context
+    gxp = gxpy.gx.GXpy()  # get the current gx context
+
     # The GX_GEOSOFT_BIN_PATH Environment variable should contain a path with geodist.dll
     print("GX_GEOSOFT_BIN_PATH: {}".format(os.getenv("GX_GEOSOFT_BIN_PATH")))
     print('Working directory: ' + os.path.abspath(os.curdir))
+    print('User: {}'.format(gxp.gid))
 
     # get command line parameters
     parser = argp.ArgumentParser(description="Add a constant to a Geosoft database channel")
@@ -71,9 +69,6 @@ if __name__ == "__main__":
     print("Channel = "+args.sCh)
     print("Value to add = {}".format(args.value))
 
-    # get (create) a GX context
-    gxp = gxpy.gx.GXpy()  # get the current gx context
-    
     # open the database
     db = gxpy.gdb.GXdb.open(args.sDB)
     

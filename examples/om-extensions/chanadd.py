@@ -1,4 +1,3 @@
-#!python3.3
 '''
 Add a constant value to a channel on all selected lines.
 
@@ -18,7 +17,7 @@ the following basic steps:
 
    6. Save the changed data back to the channel
 '''
-import geosoft.gxapi as gxapi
+
 import geosoft.gxpy as gxpy
 import geosoft.gxpy.om as gxom
 import geosoft.gxpy.utility as gxu
@@ -28,6 +27,7 @@ def rungx():
 
     # pydevd supports remote debugging - see Debugging Python Extensions in the GX Developer documentation
     # this sets a break-point after this line when this script is run from Oasis montaj.
+    # un-comment the follwoing like to activate remote debugging:
     # pydevd.settrace('localhost', port=34765, stdoutToServer=True, stderrToServer=True)
 
     # get the current database
