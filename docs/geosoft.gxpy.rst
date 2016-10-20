@@ -10,6 +10,7 @@ Subpackages
     geosoft.gxpy.grd
     geosoft.gxpy.gx
     geosoft.gxpy.ipj
+    geosoft.gxpy.om
     geosoft.gxpy.system
     geosoft.gxpy.utility
     geosoft.gxpy.vv

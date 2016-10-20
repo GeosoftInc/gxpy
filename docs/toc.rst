@@ -8,6 +8,8 @@ Table of Contents
 
    index
  
+   geosoft.gxpy
+   
    GX3DN 
    GX3DV 
    GXACQUIRE 
