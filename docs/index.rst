@@ -45,7 +45,35 @@ The GXContext class
 Exceptions
 ----------
 
-.. autoexception:: geosoft.gxapi.GXRunTimeError
+.. autoexception:: geosoft.gxapi.GXRuntimeError
+
+.. autoexception:: geosoft.gxapi.GXTerminate
+
+TERMINATE constants
+-----------------------------------------------------------------------
+
+::
+
+   Value of :py:exc:GXTerminate indicating cause of termination 
+
+.. autoattribute:: geosoft.gxapi.TERMINATE_EXITED
+
+::
+
+   Normal exit
+
+.. autoattribute:: geosoft.gxapi.TERMINATE_CANCELLED
+
+::
+
+   Opration cancelled
+
+.. autoattribute:: geosoft.gxapi.TERMINATE_USER_ERROR
+
+::
+
+   User error registered
+
 
 
 Helper classed to pass immutable values by reference
