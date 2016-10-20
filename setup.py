@@ -25,6 +25,7 @@ setup(
       'geosoft.gxpy',
       'geosoft.gxpy.gx',
       'geosoft.gxpy.system',
+      'geosoft.gxpy.om',
 	  'geosoft.gxpy.vv',
 	  'geosoft.gxpy.grd',
 	  'geosoft.gxpy.gdb',

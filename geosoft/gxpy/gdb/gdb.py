@@ -52,30 +52,46 @@ class GXdb():
     '''
     Class to work with Geosoft databases. This class wraps many of the functions found in geosoft.gxapi.GXDB.
 
-    Member ._db is the GXDB handle, which can be used to call GXDB methods directly
+    Member ._db is the GXDB handle, which can be used to call gxapi methods.
 
-    :constructor open: open  open an existing file
+    :constructor open: open  open an existing file, or if not specified open/lock the current database.
 
     :member fileName:  database file name
 
     **Some typical programming patterns**
 
-    Open and read through all data in a database:
+    Python Oasis extension opens read through all data in the current database:
 
     .. code::
 
         import os,sys
         import numpy as np
-
-        # GEOSOFTPY must contain the location of the gxpy folder
-        gxpyFolder = os.environ['GEOSOFTPY']
-        if len(gxpyFolder.strip()) == 0:
-            print("GEOSOFTPY environment is not defined.  This should point to the folder that contains the gxpy modules.")
-            exit(0)
         import gxpy.gx as gxp
         import gxpy.gdb as gxgdb
 
-        # initalize the gx environment
+        # open the current database
+        gdb = gxdb.GXdb.open(gxp)
+        lines = gdb.lines()
+        for line in lines:
+
+            npd,ch,fid = gdb.readLine(line)
+            # npd is a 2D numpy array to all data in this line.
+            # ch is a list of the channels, one channel for each column in npd.
+            # Array channels are expanded with channel names "name[0]", "name[1]" ...
+            # fid is a tuple (start,increment) fiducial, which will be the minimum start and smallest increment.
+
+            # ... do something with the data in npd ...
+
+    External Python program to open and read through all data in a database:
+
+    .. code::
+
+        import os,sys
+        import numpy as np
+        import gxpy.gx as gxp
+        import gxpy.gdb as gxgdb
+
+        # initalize the gx environment - required for external programs.
         gxp = gxu.GXpy()
 
         # open a database
@@ -118,9 +134,10 @@ class GXdb():
         lines = gdb.lines()
         for l in lines:
 
-            ln,lsymb = self.gdb.lineNameSymb(l)
+            ln,lsymb = gdb.lineNameSymb(l)
 
-            data,ch,fid = self.gdb.readLine(lsymb, channels=['X','Y','Z'])
+            data,ch,fid = gdb.readLine(lsymb, channels=['X','Y','Z'])
+            dummy = gxu.gxDummy(data.dtype)
 
             # get a dummy mask, True for all rows with a dummy
             dummyMask = gxu.dummyMask(data)
@@ -130,10 +147,11 @@ class GXdb():
 
             # insert dummies using the dummy mask, then write
             dist[dummyMask] = dummy
-            self.gdb.writeDataChan(lsymb, 'distance', dist)
+            gdb.writeDataChan(lsymb, 'distance', dist)
 
     '''
 
+    _edb = None
     _db = None
     _fileName = None
 
@@ -148,16 +166,30 @@ class GXdb():
         self._lst = gxapi.GXLST.create(2000)
         self._sr = gxapi.str_ref()
 
+    def __del__(self):
+        if self._db is not None:
+            if  self._edb is not None:
+                if self._edb.is_locked():
+                    self._edb.un_lock()
+
     @classmethod
-    def open(cls, name):
+    def open(cls, name=None):
         '''
         Open an existing database.
 
-        :param name:    name of the database
+        :param name:    name of the database, default is the current database
         :return:        GXdb instance
         '''
+
         gdb = cls()
-        gdb._db  = gxapi.GXDB.open(name, 'SUPER','')
+
+        if name is None:
+            gdb._edb = gxapi.GXEDB.current()
+            gdb._db = gxapi.GXEDB.lock(gdb._edb)
+        else:
+            gdb._eDB = None;
+            gdb._db  = gxapi.GXDB.open(name, 'SUPER','')
+
         gxapi.GXDB.get_name(gdb._db, gxapi.DB_NAME_FILE, gdb._sr)
         gdb._fileName = gdb._sr.value
 
@@ -459,7 +491,7 @@ class GXdb():
 
         def setDetail(what,fn):
             det = detail.get(what)
-            if det != None:
+            if det is not None:
                 fn(cs,det)
 
         cs = self.chanNameSymb(channel)[1]
@@ -473,7 +505,7 @@ class GXdb():
             setDetail('label',self._db.set_chan_label)
 
             protect = detail.get('protect')
-            if protect != None:
+            if protect is not None:
                 self._db.set_chan_protect(cs,protect)
 
         except:
@@ -732,7 +764,7 @@ class GXdb():
         dtype = np.dtype(dtype)
 
         #default all channels, sorted, X,Y,Z first
-        if channels == None:
+        if channels is None:
             ch = list(self.channels())
             ch.sort(key=str.lower)
             channels = []
@@ -787,7 +819,7 @@ class GXdb():
             vvs.append(vv)
 
         # determine fiducial
-        if fid == None:
+        if fid is None:
             start = gxapi.GS_R8MX
             incr = gxapi.GS_R8MX
             for c in chNames:
@@ -899,7 +931,7 @@ class GXdb():
             raise GDBException("Only one or two-dimensional data allowed")
 
         #create channel names
-        if channels == None:
+        if channels is None:
             raise GDBException('Channel name(s) not specified')
 
         #single channel, which can be an array channel

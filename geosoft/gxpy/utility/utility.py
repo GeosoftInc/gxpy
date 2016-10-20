@@ -318,51 +318,41 @@ def dummyMask(npd):
     dummy = gxDummy(npd.dtype)
     return np.apply_along_axis(lambda a: dummy in a, 1, npd)
 
-###############################################
-# simple user input, depends on "user_input.gx"
-
-def get_user_input(title="Input required...", prompt='?', kind='string', default='',items=''):
+def save_parameters(group='_', parms={}):
     '''
-    Display a dialog prompt on the Geosoft Desktop and wait for user input.
-    This method depends on "user_input.gx" and can only be used from an extension running
-    inside a Geosoft Desktop application.
+    Save parameters to the Project Parameter Block.
 
-    :param title:   dialog box title.  A description can be added as a second-line using a line-break.
-                    example: "Your title/nDescriptive help"
-    :param prompt:  prompt string to
-    :param kind:    kind of response required: 'string', 'int', 'float' or 'list'
-    :param items:   string of comma-separated items for a list
-    :param default: default value
-    :return:        user response
-    :raise:         'User cancelled' if the user cancels the dialog
+    :param group:   parameter block group name
+    :param parms:   dict containing named parameter settings
     '''
 
-    gxapi.GXSYS.set_string("USER_INPUT", "TITLE", title)
-    gxapi.GXSYS.set_string("USER_INPUT", "PROMPT", prompt)
-    gxapi.GXSYS.set_string("USER_INPUT", "RESPONSE", str(default))
+    for k,v in parms.items():
+        gxapi.GXSYS.set_string(group, k, str(v))
 
-    if (kind == 'float'):
-        gxapi.GXSYS.set_string("USER_INPUT", "TYPE", "1")
-    elif (kind == 'int'):
-        gxapi.GXSYS.set_string("USER_INPUT", "TYPE", "2")
-    elif (kind == 'list'):
-        gxapi.GXSYS.set_string("USER_INPUT", "TYPE", "3")
-        gxapi.GXSYS.set_string("USER_INPUT", "LIST", items)
+def get_parameters(group='_', parms=None):
+    '''
+    Get parameters from the Project Parameter Block.
+
+    :param group:   name in the parameter block group name
+    :param parms:   if specified only these items are found and returned, otherwise all are found and returned
+    :return:        dictionary containing group parameters
+    '''
+
+    sv = gxapi.str_ref()
+    p = {}
+
+    if parms is not None:
+        for k in parms:
+            if gxapi.GXSYS.exist_string(group, k):
+                gxapi.GXSYS.gt_string(group, k, sv)
+                p[k] = sv.value
+
     else:
-        gxapi.GXSYS.set_string("USER_INPUT", "TYPE", "0")
+        hREG = gxapi.GXREG.create(4096)
+        gxapi.GXSYS.get_reg(hREG, group)
+        k = gxapi.str_ref()
+        for i in range(hREG.entries()):
+            hREG.get_one(i, k, sv)
+            p[k.value.split('.')[1]] = sv.value
 
-    ret = gxapi.GXSYS.run_gx("user_input.gx")
-
-    if ret == 0:
-
-        strr = gxapi.str_ref()
-        gxapi.GXSYS.gt_string("USER_INPUT", "RESPONSE", strr)
-        if kind == 'int':
-            return int(strr.value)
-        if kind == 'float':
-            return float(strr.value)
-        return strr.value
-
-    if ret == -1:
-        raise UtilityException('User cancelled.')
-    raise UtilityException('GX Error {}'.format(ret))
+    return p

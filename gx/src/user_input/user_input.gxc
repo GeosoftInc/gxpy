@@ -11,9 +11,12 @@ Parameters:
     USER_INPUT.TYPE     - 0 for string
                           1 for real
 						  2 for int
-						  3 for list					  
+						  3 for list
+                          4 pause
+                          5 pause, with option to cancel
 	USER_INPUT.LIST		- comma-separated list
 "
+
 #include <version.gxh>
 
 // Revision History:
@@ -24,10 +27,15 @@ RESOURCE = "user_input.gr"
 DGW hDGW;
 LST hLST;
 string(STR_DEFAULT_LONG) sStr;
+int iType;
 
 {
-	switch (iGetInt_SYS("USER_INPUT", "TYPE")) {
-		case 1: 
+	iType = iGetInt_SYS("USER_INPUT", "TYPE");
+    switch (iType) {
+		case 0:
+            hDGW = Create_DGW("STRING");
+            break;
+        case 1: 
             hDGW = Create_DGW("REAL"); 
             break;
 		case 2: 
@@ -39,17 +47,26 @@ string(STR_DEFAULT_LONG) sStr;
 			hLST = GetList_DGW(hDGW, ((DGW_OBJ) 0));
 			ConvertFromCSVString_LST(hLST,sStr);
             break;
-		default: 
-            hDGW = Create_DGW("STRING");
+        case 4:
+            hDGW = Create_DGW("PAUSE");
+            break;
+        case 5:
+            hDGW = Create_DGW("PAUSECANCEL");
+            break;
+        default:
+            DisplayMessage_SYS("Error","Unrecognized dialog type to user_input.gx");
+            Cancel_SYS();
 	}
 	
     GetString_SYS("USER_INPUT", "TITLE", sStr);
     SetTitle_DGW(hDGW, sStr);
-	SetInfoSYS_DGW(hDGW, ((DGW_OBJ) 0), DGW_LABEL, "USER_INPUT", "PROMPT");
-	SetInfoSYS_DGW(hDGW, ((DGW_OBJ) 0), DGW_TEXT, "USER_INPUT", "RESPONSE");     
+    if (iType < 4) {
+        SetInfoSYS_DGW(hDGW, ((DGW_OBJ) 0), DGW_LABEL, "USER_INPUT", "PROMPT");
+        SetInfoSYS_DGW(hDGW, ((DGW_OBJ) 0), DGW_TEXT, "USER_INPUT", "RESPONSE");
+    }
 	if (iRunDialogue_DGW(hDGW) != 0) {
 		Destroy_DGW(hDGW);
 		Cancel_SYS();
-	}	
-	GetInfoSYS_DGW(hDGW, ((DGW_OBJ) 0), DGW_TEXT, "USER_INPUT", "RESPONSE");
+	}
+    if (iType < 4)	GetInfoSYS_DGW(hDGW, ((DGW_OBJ) 0), DGW_TEXT, "USER_INPUT", "RESPONSE");
 }
