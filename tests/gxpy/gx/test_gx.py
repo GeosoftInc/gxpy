@@ -3,13 +3,13 @@ import unittest
 import pprint
 
 import geosoft.gxpy.system as gsys
-import geosoft.gxpy.gx as gx
+import geosoft.gxpy.gx as gxp
 
 class Test(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
-        cls.gx = gx.GXpy()
+        cls.gxp = gxp.GXpy()
         cls.pp = pprint.PrettyPrinter(indent=3)
 
     @classmethod
@@ -23,20 +23,20 @@ class Test(unittest.TestCase):
     def test_gxpy(self):
         self.start(gsys.func_name())
 
-        self.assertTrue(self.gx.gid.find('@') > 0)
-        self.assertEqual(self.gx.main_wind_id(),0)
-        self.assertEqual(self.gx.active_wind_id(), 0)
+        self.assertTrue(self.gxp.gid.find('@') > 0)
+        self.assertEqual(self.gxp.main_wind_id(),0)
+        self.assertEqual(self.gxp.active_wind_id(), 0)
 
     def test_ui_onoff(self):
         self.start(gsys.func_name())
 
-        self.gx.dissable_app()
-        self.gx.enable_app()
+        self.gxp.dissable_app()
+        self.gxp.enable_app()
 
     def test_env(self):
         self.start(gsys.func_name())
 
-        env = self.gx.environment()
+        env = self.gxp.environment()
         self.assertFalse(env.get('gid') is None)
         self.assertFalse(env.get('id_window_main') is None)
         self.assertFalse(env.get('id_window_active') is None)
@@ -53,7 +53,7 @@ class Test(unittest.TestCase):
         self.assertFalse(env.get('folder_temp') is None)
         self.assertFalse(env.get('folder_user') is None)
 
-        env = self.gx.environment(2)
+        env = self.gxp.environment(2)
         self.assertTrue(isinstance(env,str))
         print(env)
 
@@ -61,15 +61,14 @@ class Test(unittest.TestCase):
     def test_entitlements(self):
         self.start(gsys.func_name())
 
-        ent = self.gx.entitlements()
-        self.assertTrue(ent.get('1000'), 'Oasis montaj Base')
-        self.assertTrue(ent.get('1100'), 'Oasis montaj™ Viewer Mapping and Processing System')
+        ent = self.gxp.entitlements()
+        self.assertTrue(ent.get('1000'), 'Oasis montaj™ Base')
         self.pp.pprint(ent)
 
     def test_display_message(self):
         self.start(gsys.func_name())
 
-        self.gx.display_message('test title', 'test message')
+        self.gxp.display_message('test title', 'test message')
 
 ###############################################################################################
 
