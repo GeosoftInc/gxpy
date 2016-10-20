@@ -1,0 +1,273 @@
+/==============================================================================
+/ Oasis montaj Main Core Menu
+
+
+
+/------------------------------------------------------------------------------
+/ Pop-ups
+
+LOADMENU "montaj_popups.smn"
+
+
+/------------------------------------------------------------------------------
+/ File menu
+
+MENU  "&File"
+SUBMENU "&Project"
+LOCATE AFTER "&Subscriptions"
+SEPARATOR
+ITEM  "P&rinter Setup..."              ,*ID_FILE_PRINT_SETUP
+ITEM  "P&age Setup..."                 ,*ID_FILE_PAGESET
+ITEM  "&Print..."                      ,*ID_FILE_PRINT
+ITEM  "Print Pre&view..."              ,*ID_FILE_PRINT_PREVIEW
+ITEM  "&Batch Printing..."             ,mapprint.gx
+ITEM  "Print Saved &Files..."          ,fileprnt.gx
+
+MENU  "&File/&Project"
+LOCATE AFTER "&Open..."
+ITEM  "&Save"                          ,*ID_FILE_SAVEPROJECT            <standard.bmp[0]>
+ITEM  "Save &As..."                    ,*ID_FILE_SAVEPROJECTAS          
+ITEM  "&Close"                         ,*ID_FILE_CLOSEPROJECT
+SEPARATOR                              
+ITEM  "Co&mments..."                   ,gpfcmnt.gx
+
+
+/------------------------------------------------------------------------------
+/ Edit menu
+
+MENU  "&Edit"
+ITEM  "E&dit a File..."                ,edit.gx
+SEPARATOR                         
+ITEM  "Cut from Map"                   ,*ID_MAPEDIT_CUT                 <standard.bmp[10]>
+ITEM  "Copy Map Selection"             ,*ID_MAPEDIT_COPY                <standard.bmp[11]>
+ITEM  "Paste into Map"                 ,*ID_MAPEDIT_PASTE               <standard.bmp[12]>
+ITEM  "Paste Georeferenced into Map"   ,*ID_MAPEDIT_PASTE_GEOREFERENCED
+ITEM  "Delete Map Selection"           ,*ID_MAPEDIT_CLEAR
+SEPARATOR
+ITEM  "Cut from Database"              ,*ID_GDBEDIT_CUT                 <standard.bmp[10]>
+ITEM  "Copy Database Selection"        ,*ID_GDBEDIT_COPY                <standard.bmp[11]>
+ITEM  "Paste into Database"            ,*ID_GDBEDIT_PASTE               <standard.bmp[12]>
+ITEM  "Delete Database Selection"      ,*ID_GDBEDIT_CLEAR
+
+
+/------------------------------------------------------------------------------
+/ Settings menu
+
+MENU "Settings"
+
+ITEM  "&Manage Menus..."          ,geogxnet.dll(Geosoft.GX.Extensions.LoadUnload;Run)            <standard.bmp[14]>
+SEPARATOR
+ITEM  "Run &GX or Python..."      ,gxrun.gx                     <standard.bmp[13]>
+SEPARATOR
+SUBMENU "&Scripting"
+SUBMENU "&Parameters"
+SUBMENU "&Log File"
+SEPARATOR
+ITEM  "Enable Communication Service", *ID_MEDIT_PROCLINK
+SEPARATOR
+SUBMENU "&Global Settings"
+SUBMENU "&Database Settings"
+SUBMENU "&Map Settings"
+
+
+MENU  "Settings/&Scripting"
+ITEM  "Run &Script..."                 ,gsrun.gx 		<gstools.bmp[0]>
+ITEM  "&Record Script..."            ,*ID_GX_RECORD 		<gstools.bmp[2]>
+ITEM  "S&top Recording"                ,*ID_GX_ENDRECORD	<gstools.bmp[3]>
+SEPARATOR
+ITEM "Load a Channel..."         ,loadchan.gx
+ITEM "Load All Channels"         ,ldallch.gx
+ITEM "Unload a Channel..."       ,unloadchan.gx
+ITEM "Create Channel..."         ,newchan.gx
+ITEM "Delete Channel..."         ,delchan.gx
+SEPARATOR
+ITEM "Create Line..."            ,newline.gx                <lntools.bmp[4]>
+ITEM "Delete Line..."            ,delline.gx                <lntools.bmp[5]>
+SEPARATOR
+ITEM "Math Expression..."        ,math.gx
+ITEM "Math File..."              ,mathfile.gx
+SEPARATOR
+ITEM "Set Printer..."            ,setprnt.gx
+SEPARATOR
+ITEM "Run Program..."            ,geo32.gx
+ITEM "Run Process..."            ,winexec.gx
+ITEM  "Run Sushi &PDF..."              ,runpdf.gx
+
+MENU  "Settings/&Parameters"
+ITEM  "S&ave Parameters..."            ,*ID_GX_SAVE_PARMS
+ITEM  "Load &Parameters..."            ,*ID_GX_LOAD_PARMS
+ITEM  "&Clear Parameters"              ,*ID_GX_CLEAR_PARMS
+SEPARATOR
+ITEM  "&Browse Parameters", geogxnet.dll(Geosoft.GX.Project.SettingsGrid;Run)
+
+MENU  "Settings/&Log File"
+ITEM  "View Log..."                    ,viewlog.gx
+ITEM  "Save Log..."                    ,*ID_GX_SAVELOG
+ITEM  "Clear Log"                      ,*ID_GX_CLEARLOG
+
+LOADMENU "settings.smn"
+
+/------------------------------------------------------------------------------
+/ Data menu
+
+MENU  "&Database"
+ITEM  "&New Database..."               ,geogxnet.dll(Geosoft.GX.NewGDB.NewGDB;Run)       <standard.bmp[1]>
+ITEM  "&Open Database..."              ,*ID_FILE_OPEN_DATA           <standard.bmp[2]>
+SEPARATOR
+ITEM  "&Save Database Changes..."      ,*ID_FILE_COMMIT              <standard.bmp[3]>     {?gdb}
+ITEM  "&Discard Database Changes..."   ,*ID_FILE_DISCARD             <standard.bmp[4]>     {?gdb}
+ITEM  "Save Database &As..."           ,savegdb.gx                        {?gdb}
+SEPARATOR
+ITEM  "&Close Database"                ,closegdb.gx                                        {?gdb}
+ITEM  "Cl&ose All Databases"           ,dbclose.gx                                         {?gdb}
+SEPARATOR
+ITEM  "&Properties..."                 ,geogxnet.dll(Geosoft.GX.Database.DatabaseProperties;Run)
+ITEM  "&Metadata..."                   ,geogxnet.dll(Geosoft.GX.ViewMeta.MetaDataChooser;RunDatabase) 
+ITEM  "&Edit Database Audit Log..."    ,dbactlog.gx                                        {?gdb}
+SEPARATOR
+SUBMENU "&Import"
+SUBMENU "&Export"
+SEPARATOR
+ITEM  "Save Working View..."           ,savedbvu.gx                                        {?gdb}
+ITEM  "Get Saved View..."              ,loaddbvu.gx                                        {?gdb}
+SEPARATOR
+SUBMENU "Maintenance" 									   {?gdb}                                                 
+MENU  "&Database/Maintenance"
+ITEM  "Verify..."                      ,*ID_FILE_VERIFY                                    {?gdb}
+ITEM  "Defragment..."                  ,*ID_FILE_PACK                                      {?gdb}
+ITEM  "Grow..."                        ,*ID_FILE_GROW                
+ITEM  "Repair..."                      ,*ID_FILE_REPAIR              
+
+MENU  "&Database/&Import"
+ITEM  "&Ascii..."                      ,impasc.gx                    
+SUBMENU "&Database Table"              
+SUBMENU "&Excel Spreadsheet"              
+ITEM  "Geosoft &XYZ..."                ,import.gx                    
+ITEM  "Geosoft Database &Merge..."     ,dbmerge.gx                   
+ITEM  "Geosoft &Binary..."             ,gbn.gx                       
+ITEM  "&Flat Archive..."               ,imparc.gx                    
+ITEM  "B&locked Binary..."             ,importbb.gx                  
+ITEM  "&ODBC..."                       ,impodbc.gx                   
+SEPARATOR
+ITEM  "Map&Info TAB or MIF File(s)..." ,importmi.gx
+ITEM  "&ArcView Shape File(s)..."      ,importarc.gx
+SEPARATOR
+SUBMENU "ASEG-&GDF"                      
+ITEM  "ASEG-E&SF..."					   ,geogxnet.dll(Geosoft.GX.Database.ImportAsegEsf;Run)
+ITEM  "&RMS..."                        ,rms.gx
+ITEM  "&RMS DAARC500 binary data"      ,geogxnet.dll(Geosoft.GX.DBUtilities.ImportDAARC500;Run)
+ITEM  "&UBC Mag3D Model(s)..."         ,impubcmodmsh.gx
+SUBMENU "&Picodas PDAS"
+SUBMENU "&USGS"
+SUBMENU "&AMIRA"
+SEPARATOR
+ITEM  "Run SEG-Y Reader..."            ,gmssegy.gx     <gmsys.bmp[6]>
+
+MENU  "&Database/&Import/&Picodas PDAS"
+ITEM  "&Scan Data..."                  ,scanpico.gx
+ITEM  "&Import Data..."                ,picodas.gx
+
+MENU  "&Database/&Import/ASEG-&GDF"
+ITEM  "&Scan GDF..."                   ,scanaseg.gx
+ITEM  "&Import GDF..."                 ,impaseg.gx
+
+MENU  "&Database/&Import/&Database Table"
+ITEM  "Single Table..."                ,impdb.gx
+ITEM  "All Tables..."                  ,impdb2.gx
+                                        
+MENU  "&Database/&Import/&Excel Spreadsheet"
+ITEM  "Single Sheet..."                ,impexcel.gx
+ITEM  "All Sheets..."                  ,impexcel2.gx
+
+MENU  "&Database/&Import/&USGS"
+ITEM  "ODDF Express..."                ,impoddf.gx
+ITEM  "POST File..."                   ,impost.gx
+
+MENU  "&Database/&Import/&AMIRA"
+ITEM  "&Import AMIRA File..."          ,impamira.gx
+ITEM  "&View AMIRA Constant..."        ,amrconst.gx
+
+MENU  "&Database/&Export"
+ITEM  "&CSV etc..."                    ,expgen.gx                                                   {?gdb}
+SEPARATOR																				            
+ITEM  "Geosoft &XYZ..."                ,export.gx                                                   {?gdb}
+ITEM  "&Geosoft GBN..."                ,expgbn.gx                                                   {?gdb}
+ITEM  "&Subset GDB..."                 ,dbsubset.gx                                                 {?gdb}
+ITEM  "&Access Database..."           ,expdb.gx                                                    {?gdb}
+ITEM  "&ASEG-GDF..."                   ,expaseg.gx                                                  {?gdb}
+ITEM  "ASEG-E&SF..."				   ,geogxnet.dll(Geosoft.GX.Database.ExportAsegEsf;Run)		{?gdb}
+ITEM  "&Esri File Geodatabase..."      ,geogxnet.dll(Geosoft.GX.Database.ExportToGeodatabase;Run)   {?gdb} 
+ITEM  "Sha&pe File(s)..."              ,expshp.gx                                                   {?gdb}
+SEPARATOR                                                   							            
+ITEM  "Mar&k..."                       ,mark2xyz.gx                                                 {?gdb}
+
+
+/------------------------------------------------------------------------------
+/ Map menu
+
+MENU  "&Map"
+ITEM  "&New Map..."                    ,newmap.gx                    <extra.bmp[8]>
+ITEM  "&Open Map..."                   ,*ID_FILE_OPEN_MAP            <standard.bmp[5]>
+SEPARATOR
+ITEM  "&Save Changes"                  ,*ID_MAP_COMMIT               <standard.bmp[6]>     {?map}
+ITEM  "&Discard Changes..."            ,*ID_MAP_DISCARD              <standard.bmp[7]>     {?map}
+ITEM  "Save Map &As..."                ,savemap.gx                        {?map}
+ITEM  "Duplicate &Map..."              ,dupmap.gx                                          {?map}
+SEPARATOR
+ITEM  "&Close Map"                     ,closemap.gx                                        {?map}
+ITEM  "Cl&ose All Maps"                ,mapclose.gx                                        {?map}
+SEPARATOR
+ITEM  "&Metadata..."                   ,geogxnet.dll(Geosoft.GX.ViewMeta.MetaDataChooser;RunMap)
+ITEM  "&Edit Map Comments..."          ,mapcmnt.gx                                         {?map}
+SEPARATOR
+SUBMENU "&Import"
+ITEM  "&Export..."                     ,*ID_MAP_EXPORT                                     {?map}
+ITEM  "Copy Map to Clipboard"          ,copymap.gx                   <standard.bmp[11]>    {?map}
+SEPARATOR
+ITEM  "Create Snapshot"                ,*ID_MAP_CREATE_SNAPSHOT      <mptools.bmp[34]>     {?map}
+ITEM  "Manage Snapshots..."            ,*ID_MAP_SNAPSHOT_MANAGER                           {?snapshot_map}
+SEPARATOR
+ITEM  "Send Map To..."                 ,sendmap.gx                                         {?map}
+ITEM  "Pack Map Files..."              ,packmap.gx                                         {?map}
+ITEM  "Unpack Map Files..."            ,unpackmap.gx                                       {?packed_map}
+ITEM  "Pack All Maps..."               ,packallmaps.gx                                     {?map}
+ITEM  "Unpack All Maps..."             ,unpackallmaps.gx                                   {?packed_map}
+
+
+MENU  "&Map/&Import"
+ITEM  "Geosoft PLT File..."            ,loadplot.gx
+ITEM  "AutoCAD DXF File(s)..."            ,geogxnet.dll(Geosoft.GX.Map.ImportDXF2D;Run)
+ITEM  "Image (bmp,tiff,etc.)..."       ,gridimg.gx
+ITEM  "EMF File..."                    ,geogxnet.dll(Geosoft.GX.Map.DrawEMF;Run)
+SEPARATOR
+ITEM  "Map&Info TAB or MIF File(s)..." ,importmi.gx
+ITEM  "&ArcView Shape File(s)..."      ,importarc.gx
+ITEM  "ArcGIS &LYR File..."            ,geogxnet.dll(Geosoft.GX.ArcGIS.ImportLYR;Run)
+ITEM  "Microstation &DGN File(s)..."   ,importdgn.gx
+ITEM  "&Datamine DM File(s)..."        ,impdatamine.gx
+ITEM  "&Surpac STR or DTM File(s)..."  ,impsurpac.gx
+ITEM  "Mi&cromine File..."             ,geogxnet.dll(Geosoft.GX.Micromine.Micromine;Run)
+ITEM  "&Gemcom BT2 File..."            ,geogxnet.dll(Geosoft.GX.Map.Gemcom;Run2D)
+ITEM  "Mi&nesight File..."             ,geogxnet.dll(Geosoft.GX.Minesight.Minesight;Run)
+                                       
+/------------------------------------------------------------------------------
+/ ArcGIS Tools menu
+MENU "ArcGIS &Tools"
+ITEM "Import &ArcGIS Shapefile(s)..." ,importarc.gx
+ITEM "Import ArcGIS &LYR File..." ,geogxnet.dll(Geosoft.GX.ArcGIS.ImportLYR;Run)
+SEPARATOR
+ITEM "Import ArcGIS M&XD as Map..." ,geogxnet.dll(Geosoft.GX.ArcGIS.SaveMXDAsMap;Run)
+ITEM "ArcGIS MXD &Metadata..." ,geogxnet.dll(Geosoft.GX.ViewMeta.MetaDataChooser;RunMXD)
+SEPARATOR
+ITEM "&Save Current Map as MXD..." ,geogxnet.dll(Geosoft.GX.ArcGIS.SaveMapAsMXD;Run) {?map}
+
+/------------------------------------------------------------------------------
+/ Other menus
+
+LOADMENU "Coordinates.smn"
+LOADMENU "Database_Tools.smn"
+LOADMENU "Grid_and_Image.smn"
+LOADMENU "Map_Tools.smn"
+LOADMENU "SectionTools.omn"
+LOADMENU "3D_Tools.smn"
+LOADMENU "dap.smn"
