@@ -5,6 +5,7 @@ GX Context and related methods to with Geosoft Python.
 import pprint
 import geosoft.gxapi as gxapi
 from .. import utility as gxu
+import unittest
 
 class GXException(Exception):
     pass
@@ -147,4 +148,36 @@ class GXpy():
             return info
 
 
+class GXTestTerminateException(Exception):
+    pass
+    
+class _GXTerminateAddError:
+    def __init__(self,addError):
+        self.addError = addError
+    def __call__(self,*args,**kwargs):
+        exc_info = list(args[1])
+        if (exc_info[0] == gxapi.GXTerminate):
+            exc_info[0] = GXTestTerminateException
+            info = gxapi.GXContext.current().get_terminate_info_and_resume()
+            if (info.cause == gxapi.TERMINATE_CANCELLED):
+                exc_info[1] = GXTestTerminateException('cause: terminated')
+            elif (info.cause == gxapi.TERMINATE_EXITED):
+                exc_info[1] = GXTestTerminateException('cause: exited')
+            else:
+                exc_info[1] = GXTestTerminateException(
+                    "\ncause: error\nmodule: {}\nmessage: {}\nnumber: {}\n"
+                    .format(info.error_module, info.error_message, info.error_number))
+            args_list = list(args)
+            args_list[1] = tuple(exc_info)
+            args = tuple(args_list)
+        return self.addError(*args,**kwargs)
 
+class GXTestCase(unittest.TestCase):
+    def __filter_gx_terminate(self, _, err):
+        value, traceback = err[1:]
+        raise value.with_traceback(traceback)
+
+    def run(self, result=None):
+        if result:
+            result.addError = _GXTerminateAddError(result.addError)
+        super().run(result)
