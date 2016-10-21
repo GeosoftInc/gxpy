@@ -19,7 +19,7 @@ class Test(gx.GXTestCase):
     @classmethod
     def setUpClass(cls):
         cls.gx = gx.GXpy()
-        cls.folder, files = gsys.unzip('.\\test_database.zip')
+        cls.folder, files = gsys.unzip(os.path.join(os.path.dirname(__file__), 'test_database.zip'))
         cls.gdb_name = os.path.join(cls.folder, files[0])
         cls.gdb = gxgdb.GXdb.open(cls.gdb_name)
 

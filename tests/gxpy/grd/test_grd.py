@@ -12,7 +12,7 @@ class Test(gx.GXTestCase):
     @classmethod
     def setUpClass(cls):
         cls.gx = gx.GXpy()
-        cls.folder, files = gsys.unzip('.\\testdata.zip')
+        cls.folder, files = gsys.unzip(os.path.join(os.path.dirname(__file__), 'testdata.zip'))
         cls.g1 = gxgrd.GXgrd.open(os.path.join(cls.folder, files[0]))
         cls.g2 = gxgrd.GXgrd.open(os.path.join(cls.folder, files[3]))
         pass
