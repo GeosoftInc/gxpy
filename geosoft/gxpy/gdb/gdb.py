@@ -277,7 +277,7 @@ class GXdb():
                 self._db.get_symb_name(line,self._sr)
                 name = self._sr.value
                 return name,line
-            except:
+            except Exception:
                 raise GDBException('Invalid line symbol: {}'.format(line))
 
 
@@ -298,7 +298,7 @@ class GXdb():
                 self._db.get_symb_name(channel,self._sr)
                 name = self._sr.value
                 return(name,channel)
-            except:
+            except Exception:
                 raise GDBException('Invalid channel symbol: {}'.format(channel))
 
     def chanArray(self,channel):
@@ -408,7 +408,7 @@ class GXdb():
             try:
                 fn(ls,self._sr)
                 return self._sr.value
-            except:
+            except Exception:
                 return ''
 
         ln,ls = self.lineNameSymb(line)
@@ -425,7 +425,7 @@ class GXdb():
             detail['type'] = self._db.line_type(ls)
             detail['groupclass'] = getDetail(self._db.get_group_class)
 
-        except:
+        except Exception:
             self._unlock(ls)
             raise
 
@@ -475,7 +475,7 @@ class GXdb():
             detail['protect'] = self._db.get_chan_protect(cs)
             detail['array'] = self._db.get_col_va(cs)
             detail['type'] = self._db.get_chan_type(cs)
-        except:
+        except Exception:
             self._unlock(cs)
             raise
 
@@ -508,7 +508,7 @@ class GXdb():
             if protect is not None:
                 self._db.set_chan_protect(cs,protect)
 
-        except:
+        except Exception:
             self._unlock(cs)
             raise
 
@@ -535,7 +535,7 @@ class GXdb():
         try:
             fidStart = self._db.get_fid_start(ls,cs)
             fidIncr = self._db.get_fid_incr(ls,cs)
-        except:
+        except Exception:
             self._unlock(cs)
             raise
 
@@ -617,7 +617,7 @@ class GXdb():
             self._lockWrite(symb)
             try:
                 self._db.set_group_class(symb, group)
-            except:
+            except Exception:
                 self._unlock(symb)
 
         return symb
@@ -637,7 +637,7 @@ class GXdb():
 
             try:
                 cn,cs = self.chanNameSymb(s)
-            except:
+            except GDBException:
                 continue
 
             self._db.un_lock_all_symb()
@@ -681,22 +681,30 @@ class GXdb():
     # reading and writing
 
     def _lockRead(self,s):
-        try: self._db.lock_symb(s, gxapi.DB_LOCK_READONLY, gxapi.DB_WAIT_INFINITY)
-        except: raise GDBException('Cannot read lock symbol {}'.format(s))
+        try:
+            self._db.lock_symb(s, gxapi.DB_LOCK_READONLY, gxapi.DB_WAIT_INFINITY)
+        except Exception:
+            raise GDBException('Cannot read lock symbol {}'.format(s))
 
     def _lockWrite(self,s):
-        try: self._db.lock_symb(s, gxapi.DB_LOCK_READWRITE, gxapi.DB_WAIT_INFINITY)
-        except: raise GDBException('Cannot write lock symbol {}'.format(s))
+        try:
+            self._db.lock_symb(s, gxapi.DB_LOCK_READWRITE, gxapi.DB_WAIT_INFINITY)
+        except Exception:
+            raise GDBException('Cannot write lock symbol {}'.format(s))
 
     def _unlock(self,s):
-        try: self._db.un_lock_symb(s)
-        except: pass
+        try:
+            self._db.un_lock_symb(s)
+        except Exception:
+            pass
 
     def _vvNp(self, npdata, fid=(0.0,1.0)):
         ''' return a VV copy of the numpy data.'''
         vv = gxapi.GXVV.create_ext(gxu.gxType(npdata.dtype), 0)
-        try: vv.set_data_np(0,npdata)
-        except: vv.destroy()
+        try:
+            vv.set_data_np(0,npdata)
+        except Exception:
+            vv.destroy()
         vv.set_fid_start(fid[0])
         vv.set_fid_incr(fid[1])
         return vv
@@ -704,8 +712,10 @@ class GXdb():
     def _vaNp(self, npdata, fid=(0.0,1.0)):
         ''' return a VA copy of data in a 2D numpy array.'''
         va = gxapi.GXVA.create_ext(gxu.gxType(npdata.dtype), npdata.shape[0], npdata.shape[1])
-        try: va.set_array_np(0,0,npdata)
-        except: va.destroy()
+        try:
+            va.set_array_np(0,0,npdata)
+        except Exception:
+            va.destroy()
         va.set_fid_start(fid[0])
         va.set_fid_incr(fid[1])
         return va
@@ -715,8 +725,10 @@ class GXdb():
 
         vv = gxvv.GXvv(dtype)
         self._lockRead(cs)
-        try: self._db.get_chan_vv(ls, cs, vv._vv)
-        except: self._unlock(cs);  raise
+        try:
+            self._db.get_chan_vv(ls, cs, vv._vv)
+        except Exception:
+            self._unlock(cs);  raise
         self._unlock(cs)
 
         return vv
@@ -773,15 +785,18 @@ class GXdb():
             try:
                 nX,sX = self.chanNameSymb(self._db.get_xyz_chan_symb(gxapi.DB_CHAN_X))
                 channels.append(nX)
-            except: nX = ''; pass
+            except Exception:
+                nX = ''; pass
             try:
                 nY,sY = self.chanNameSymb(self._db.get_xyz_chan_symb(gxapi.DB_CHAN_Y))
                 channels.append(nY)
-            except: nY = ''; pass
+            except Exception:
+                nY = ''; pass
             try:
                 nZ,sZ = self.chanNameSymb(self._db.get_xyz_chan_symb(gxapi.DB_CHAN_Z))
                 channels.append(nZ)
-            except: nZ = ''; pass
+            except Exception:
+                nZ = ''; pass
 
             for c in ch:
                 if (c == nX) or (c == nY) or (c == nZ): continue
@@ -814,7 +829,7 @@ class GXdb():
             try:
                 cs = self._db.find_symb(c, gxapi.DB_SYMB_CHAN)
                 vv = self._vvCh(ls,cs,dtype=dtype)
-            except:
+            except Exception:
                 raise
             vvs.append(vv)
 
@@ -897,8 +912,10 @@ class GXdb():
             vv = self._vvNp(data, fid)
 
             self._lockWrite(cs)
-            try: self._db.put_chan_vv(ls,cs,vv)
-            except: cleanup(); raise
+            try:
+                self._db.put_chan_vv(ls,cs,vv)
+            except Exception:
+                cleanup(); raise
 
         else:
 
@@ -906,8 +923,10 @@ class GXdb():
             va = self._vaNp(data, fid)
 
             self._lockWrite(cs)
-            try: self._db.put_chan_va(ls,cs,va)
-            except: cleanup(); raise
+            try:
+                self._db.put_chan_va(ls,cs,va)
+            except Exception:
+                cleanup(); raise
 
 
         cleanup()
@@ -976,7 +995,7 @@ class GXdb():
 
             try:
                 d,c,f = self.readLine(l, cs, dtype='<U{}'.format(details.get('width')))
-            except:
+            except Exception:
                 continue
 
             if d.shape[0] == 0: continue
