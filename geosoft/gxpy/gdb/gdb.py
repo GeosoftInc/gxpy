@@ -273,12 +273,19 @@ class GXdb():
             else:
                 return line, symb
         else:
-            try:
-                self._db.get_symb_name(line,self._sr)
-                name = self._sr.value
-                return name,line
-            except:
-                raise GDBException('Invalid line symbol: {}'.format(line))
+            return self._safeNameSymb(line, "line")
+
+    def _safeNameSymb(self, symb, type):
+        try:
+            self._db.get_symb_name(symb,self._sr)
+            name = self._sr.value
+            return name, symb
+        except gxapi.GXTerminate:
+            info = gxapi.GXContext.current().get_terminate_info_and_resume()
+            if (info.cause == gxapi.TERMINATE_USER_ERROR):
+                raise GDBException('Invalid {} symbol: {} error: {}'.format(type, symb, info.error_message))
+            else:
+                raise
 
 
     def chanNameSymb(self,channel):
@@ -294,12 +301,7 @@ class GXdb():
                 raise GDBException('Channel \'{}\' not found'.format(channel))
             return channel,symb
         else:
-            try:
-                self._db.get_symb_name(channel,self._sr)
-                name = self._sr.value
-                return(name,channel)
-            except:
-                raise GDBException('Invalid channel symbol: {}'.format(channel))
+            return self._safeNameSymb(channel, "channel")
 
     def chanArray(self,channel):
         '''
@@ -408,7 +410,8 @@ class GXdb():
             try:
                 fn(ls,self._sr)
                 return self._sr.value
-            except:
+            except gxapi.GXTerminate:
+                info = gxapi.GXContext.current().get_terminate_info_and_resume() # Eat exception and continue silently
                 return ''
 
         ln,ls = self.lineNameSymb(line)
