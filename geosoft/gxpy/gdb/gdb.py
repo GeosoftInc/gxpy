@@ -411,6 +411,7 @@ class GXdb():
                 fn(ls,self._sr)
                 return self._sr.value
             except gxapi.GXTerminate:
+                info = gxapi.GXContext.current().get_terminate_info_and_resume() # Eat exception and continue silently
                 return ''
 
         ln,ls = self.lineNameSymb(line)
