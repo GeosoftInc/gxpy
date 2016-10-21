@@ -1,6 +1,6 @@
 #TODO: abstract grid file decorations to a dict
 
-import os,sys,gc,time
+import os,gc,time
 import numpy as np
 import geosoft.gxapi as gxapi
 from .. import ipj as gxipj
@@ -80,27 +80,37 @@ class GXgrd():
 
             try:
                 if (self._filename == None):
-                    self._img = gxapi.GXIMG.create(gxu.gxType(dtype), kx, dim[0], dim[1])
+                    self._img = gxu.safeApiException(gxapi.GXIMG.create,
+                                                     (gxu.gxType(dtype), kx, dim[0], dim[1]),
+                                                     GRDException)
 
                 elif mode == FILE_NEW:
                     if self._hgd:
                         # for HGD grids, make a memory grid and save to an HGD on closing
-                        self._img = gxapi.GXIMG.create(gxu.gxType(dtype), kx, dim[0], dim[1])
+                        self._img = gxu.safeApiException(gxapi.GXIMG.create,
+                                                         (gxu.gxType(dtype), kx, dim[0], dim[1]),
+                                                         GRDException)
                     else:
-                        self._img = gxapi.GXIMG.create_new_file(gxu.gxType(dtype), kx, dim[0], dim[1], self._filename )
+                        self._img = gxu.safeApiException(gxapi.GXIMG.create_new_file,
+                                                         (gxu.gxType(dtype), kx, dim[0], dim[1], self._filename),
+                                                         GRDException)
 
                 elif mode == FILE_READ:
-                    self._img = gxapi.GXIMG.create_file(gxu.gxType(dtype), self._filename, gxapi.IMG_FILE_READONLY )
+                    self._img = gxu.safeApiException(gxapi.GXIMG.create_file,
+                                                     (gxu.gxType(dtype), self._filename, gxapi.IMG_FILE_READONLY),
+                                                     GRDException)
                     self._readonly = True
 
                 else:
-                    self._img = gxapi.GXIMG.create_file(gxu.gxType(dtype), self._filename, gxapi.IMG_FILE_READORWRITE )
-            except Exception as e:
+                    self._img = gxu.safeApiException(gxapi.GXIMG.create_file,
+                                                     (gxu.gxType(dtype), self._filename, gxapi.IMG_FILE_READORWRITE),
+                                                     GRDException)
+
+            except GRDException as e:
                 time.sleep(0.1)
                 gc.collect()
                 attempt += 1
                 if attempt > 10:
-
                     raise GRDException('Cannot open: {}\nBecause: {}'.format(self._filename,str(e)))
 
     def __del__(self):
