@@ -173,10 +173,6 @@ class _GXTerminateAddError:
         return self.addError(*args,**kwargs)
 
 class GXTestCase(unittest.TestCase):
-    def __filter_gx_terminate(self, _, err):
-        value, traceback = err[1:]
-        raise value.with_traceback(traceback)
-
     def run(self, result=None):
         if result:
             result.addError = _GXTerminateAddError(result.addError)
