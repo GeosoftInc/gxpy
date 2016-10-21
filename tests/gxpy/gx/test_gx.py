@@ -1,11 +1,11 @@
-import unittest
+﻿import unittest
 
 import pprint
 
 import geosoft.gxpy.system as gsys
 import geosoft.gxpy.gx as gxp
 
-class Test(unittest.TestCase):
+class Test(gxp.GXTestCase):
 
     @classmethod
     def setUpClass(cls):
@@ -15,7 +15,7 @@ class Test(unittest.TestCase):
     @classmethod
     def tearDownClass(cls):
         pass
-    
+        
     @classmethod
     def start(cls,test):
         print("\n*** {} ***".format(test))
@@ -37,6 +37,7 @@ class Test(unittest.TestCase):
         self.start(gsys.func_name())
 
         env = self.gxp.environment()
+        
         self.assertFalse(env.get('gid') is None)
         self.assertFalse(env.get('id_window_main') is None)
         self.assertFalse(env.get('id_window_active') is None)
@@ -63,7 +64,7 @@ class Test(unittest.TestCase):
 
         ent = self.gxp.entitlements()
         self.assertTrue(ent.get('1000'), 'Oasis montaj™ Base')
-        self.pp.pprint(ent)
+        #self.pp.pprint(ent)
 
     def test_display_message(self):
         self.start(gsys.func_name())

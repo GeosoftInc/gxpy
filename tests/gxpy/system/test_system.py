@@ -7,12 +7,13 @@ import shutil
 import time
 import numpy as np
 
+import geosoft.gxpy.gx as gx
 import geosoft.gxpy.system as gsys
 
 def tf(f):
     return os.path.join(os.path.dirname(__file__), f)
 
-class Test(unittest.TestCase):
+class Test(gx.GXTestCase):
     @classmethod
     def setUpClass(cls):
         pass

@@ -14,8 +14,7 @@ import geosoft.gxpy.utility as gxu
 import geosoft.gxpy.system as gsys
 import geosoft.gxpy.gdb as gxgdb
 
-
-class Test(unittest.TestCase):
+class Test(gx.GXTestCase):
 
     @classmethod
     def setUpClass(cls):
