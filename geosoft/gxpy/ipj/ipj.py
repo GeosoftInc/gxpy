@@ -225,7 +225,7 @@ class GXipj():
             jstr = jstr.replace('"', '\\"').replace("'", '"')
             try:
                 jsondict = json.loads(jstr)
-            except:
+            except ValueError:
                 raise ValueError("Invalid JSON coordinate system string <{}>".format(jstr))
 
         cstype = jsondict.get('type', None)

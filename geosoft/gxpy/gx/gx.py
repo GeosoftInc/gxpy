@@ -52,8 +52,8 @@ class GXpy():
         ''' display a message to the user.'''
 
         try:
-            gxapi.GXSYS.display_message(title, message)
-        except:
+            gxu.safeApiException(gxapi.GXSYS.display_message, (title, message), GXException)
+        except GXException:
             print('Title: {}\nMessage: {}'.format(title,message))
 
     def main_wind_id(self):
