@@ -1,6 +1,5 @@
 
 import os
-import yaml
 import numpy as np
 
 import geosoft.gxapi as gxapi
@@ -47,6 +46,8 @@ READ_REMOVE_DUMMYCOLUMNS   = 2
 
 class GDBException(Exception):
     pass
+
+####################################################################################################################
 
 class GXdb():
     '''
@@ -247,6 +248,28 @@ class GXdb():
         self._db.discard()
 
     #============================================================================
+    # internal helper functions
+
+    def _exist_symb(self, symb, symb_type):
+        '''
+        Check if a symbol exists of the required type.
+        :param symb: symbol name or number
+        :param symb_type: one of DB_SYMB_TYPE
+        :return: True if the symbol exists and is the expected symbol type, False otherwise
+        '''
+        if type(symb) is str:
+            return self._db.exist_symb(symb, symb_type)
+        else:
+            try:
+                gxu.safeApiException(self._db.get_symb_name, (symb, self._sr), GDBException)
+
+                # symbol is there, but is it the right type?
+                return self._db.exist_symb(self._sr.value, symb_type)
+
+            except GDBException:
+                return False
+
+    #============================================================================
     #Information
 
     def fileName(self):
@@ -263,45 +286,39 @@ class GXdb():
         :param create:  True to create a line if one does not exist
         :return:        line name, symbol, returns ('',-1) if invalid
         '''
-        if type(line) == str:
-            symb = self._db.find_symb(line,gxapi.DB_SYMB_LINE)
-            if (symb == gxapi.NULLSYMB):
-                if create:
-                    return line,self.newLine(line)
-                else:
-                    raise GDBException('Line \'{}\' not found'.format(line))
-            else:
+
+        if (self._exist_symb(line, gxapi.DB_SYMB_LINE)):
+            if type(line) == str:
+                symb = self._db.find_symb(line, gxapi.DB_SYMB_LINE)
                 return line, symb
-        else:
-            return self._safeNameSymb(line, "line")
-
-    def _safeNameSymb(self, symb, type):
-        try:
-            self._db.get_symb_name(symb,self._sr)
-            name = self._sr.value
-            return name, symb
-        except gxapi.GXTerminate:
-            info = gxapi.GXContext.current().get_terminate_info_and_resume()
-            if (info.cause == gxapi.TERMINATE_USER_ERROR):
-                raise GDBException('Invalid {} symbol: {} error: {}'.format(type, symb, info.error_message))
             else:
-                raise
+                self._db.get_symb_name(line, self._sr)
+                return self._sr.value, line
+        if create:
+            return line, self.newLine(line)
 
+        raise GDBException('Line \'{}\' not found'.format(line))
 
-    def chanNameSymb(self,channel):
+    def chanNameSymb(self, chan, create=False):
         '''
-        Return the channel name, symbol number
+        Return channel name, symbol
 
-        :param channel: channel name, or symbol number
-        :return:        channel name, symbol
+        :param line:    line name, or symbol number
+        :param create:  True to create a line if one does not exist
+        :return:        line name, symbol, returns ('',-1) if invalid
         '''
-        if type(channel) == str:
-            symb = self._db.find_symb(channel,gxapi.DB_SYMB_CHAN)
-            if symb == gxapi.NULLSYMB:
-                raise GDBException('Channel \'{}\' not found'.format(channel))
-            return channel,symb
-        else:
-            return self._safeNameSymb(channel, "channel")
+
+        if (self._exist_symb(chan, gxapi.DB_SYMB_CHAN)):
+            if type(chan) == str:
+                symb = self._db.find_symb(chan, gxapi.DB_SYMB_CHAN)
+                return chan, symb
+            else:
+                self._db.get_symb_name(chan, self._sr)
+                return self._sr.value, chan
+        if create:
+            return chan, self.newLine(chan)
+
+        raise GDBException('Channel \'{}\' not found'.format(chan))
 
     def chanArray(self,channel):
         '''
@@ -408,10 +425,9 @@ class GXdb():
 
         def getDetail(fn):
             try:
-                fn(ls,self._sr)
+                gxu.safeApiException(fn, (ls, self._sr), GDBException)
                 return self._sr.value
-            except gxapi.GXTerminate:
-                info = gxapi.GXContext.current().get_terminate_info_and_resume() # Eat exception and continue silently
+            except GDBException:
                 return ''
 
         ln,ls = self.lineNameSymb(line)
@@ -619,9 +635,11 @@ class GXdb():
         if len(group) > 0:
             self._lockWrite(symb)
             try:
-                self._db.set_group_class(symb, group)
-            except:
+                gxu.safeApiException(self._db.set_group_class, (symb, group), GDBException)
+            except GDBException:
                 self._unlock(symb)
+            except:
+                raise
 
         return symb
 
@@ -684,22 +702,31 @@ class GXdb():
     # reading and writing
 
     def _lockRead(self,s):
-        try: self._db.lock_symb(s, gxapi.DB_LOCK_READONLY, gxapi.DB_WAIT_INFINITY)
-        except: raise GDBException('Cannot read lock symbol {}'.format(s))
+        try:
+            gxu.safeApiException(self._db.lock_symb, (s, gxapi.DB_LOCK_READONLY, gxapi.DB_WAIT_INFINITY), GDBException)
+        except GDBException:
+            raise GDBException('Cannot read lock symbol {}'.format(s))
 
     def _lockWrite(self,s):
-        try: self._db.lock_symb(s, gxapi.DB_LOCK_READWRITE, gxapi.DB_WAIT_INFINITY)
-        except: raise GDBException('Cannot write lock symbol {}'.format(s))
+        try:
+            gxu.safeApiException(self._db.lock_symb, (s, gxapi.DB_LOCK_READWRITE, gxapi.DB_WAIT_INFINITY), GDBException)
+        except GDBException:
+            raise GDBException('Cannot write lock symbol {}'.format(s))
 
     def _unlock(self,s):
-        try: self._db.un_lock_symb(s)
-        except: pass
+        try:
+            gxu.safeApiException(self._db.un_lock_symb, (s,), GDBException)
+        except GDBException:
+            pass
 
     def _vvNp(self, npdata, fid=(0.0,1.0)):
         ''' return a VV copy of the numpy data.'''
         vv = gxapi.GXVV.create_ext(gxu.gxType(npdata.dtype), 0)
-        try: vv.set_data_np(0,npdata)
-        except: vv.destroy()
+        try:
+            vv.set_data_np(0,npdata)
+        except:
+            vv.destroy()
+            raise
         vv.set_fid_start(fid[0])
         vv.set_fid_incr(fid[1])
         return vv
@@ -707,8 +734,11 @@ class GXdb():
     def _vaNp(self, npdata, fid=(0.0,1.0)):
         ''' return a VA copy of data in a 2D numpy array.'''
         va = gxapi.GXVA.create_ext(gxu.gxType(npdata.dtype), npdata.shape[0], npdata.shape[1])
-        try: va.set_array_np(0,0,npdata)
-        except: va.destroy()
+        try:
+           va.set_array_np(0,0,npdata)
+        except:
+            va.destroy()
+            raise
         va.set_fid_start(fid[0])
         va.set_fid_incr(fid[1])
         return va
@@ -718,8 +748,11 @@ class GXdb():
 
         vv = gxvv.GXvv(dtype)
         self._lockRead(cs)
-        try: self._db.get_chan_vv(ls, cs, vv._vv)
-        except: self._unlock(cs);  raise
+        try:
+            self._db.get_chan_vv(ls, cs, vv._vv)
+        except:
+            self._unlock(cs);
+            raise
         self._unlock(cs)
 
         return vv
@@ -776,15 +809,18 @@ class GXdb():
             try:
                 nX,sX = self.chanNameSymb(self._db.get_xyz_chan_symb(gxapi.DB_CHAN_X))
                 channels.append(nX)
-            except: nX = ''; pass
+            except GDBException:
+                nX = ''; pass
             try:
                 nY,sY = self.chanNameSymb(self._db.get_xyz_chan_symb(gxapi.DB_CHAN_Y))
                 channels.append(nY)
-            except: nY = ''; pass
+            except GDBException:
+                nY = ''; pass
             try:
                 nZ,sZ = self.chanNameSymb(self._db.get_xyz_chan_symb(gxapi.DB_CHAN_Z))
                 channels.append(nZ)
-            except: nZ = ''; pass
+            except GDBException:
+                nZ = ''; pass
 
             for c in ch:
                 if (c == nX) or (c == nY) or (c == nZ): continue
@@ -901,7 +937,9 @@ class GXdb():
 
             self._lockWrite(cs)
             try: self._db.put_chan_vv(ls,cs,vv)
-            except: cleanup(); raise
+            except:
+                cleanup();
+                raise
 
         else:
 
@@ -910,7 +948,9 @@ class GXdb():
 
             self._lockWrite(cs)
             try: self._db.put_chan_va(ls,cs,va)
-            except: cleanup(); raise
+            except:
+                cleanup();
+                raise
 
 
         cleanup()
@@ -979,7 +1019,7 @@ class GXdb():
 
             try:
                 d,c,f = self.readLine(l, cs, dtype='<U{}'.format(details.get('width')))
-            except:
+            except GDBException:
                 continue
 
             if d.shape[0] == 0: continue

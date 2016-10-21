@@ -356,3 +356,25 @@ def get_parameters(group='_', parms=None):
             p[k.value.split('.')[1]] = sv.value
 
     return p
+
+def safeApiException(fn, args, EClass=Exception):
+    '''
+    This is a helper method that turns an gxapi.GXTerminate TERMINATE_USER_ERROR exception into GDBExceptions so
+    you can catch and deal with it. The GXTerminate information is provided in the GDBException.
+    All other conditions are raised.
+
+    :param fn:      gxapi finction to call
+    :param args:    arguments as a tuple
+    :param EClass:  exception class returned if TERMINATE_USER_ERROR, default Exception
+    :returns:       function return
+    '''
+
+    try:
+        return fn(*args)
+
+    except gxapi.GXTerminate:
+        info = gxapi.GXContext.current().get_terminate_info_and_resume()
+        if (info.cause == gxapi.TERMINATE_USER_ERROR):
+            raise EClass(info.error_message)
+        raise
+
