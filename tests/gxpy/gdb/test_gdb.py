@@ -386,16 +386,6 @@ class Test(gx.GXTestCase):
         self.start(gsys.func_name())
 
         gdb = self.gdb
-
-        gdb.delLine('testgroup')
-        ls = gdb.newLine('testgroup',group="TeSt")
-        det = gdb.lineDetails(ls)
-        self.assertEqual(det.get('category'),gxgdb.SYMB_LINE_GROUP)
-        self.assertEqual(det.get('name'),'testgroup')
-        self.assertEqual(det.get('symbol'),ls)
-        self.assertEqual(det.get('groupclass'),'TeSt')
-        gdb.delLine('testgroup')
-
         cs = gdb.newChannel("detailtest")
         det = gdb.chanDetails(cs)
         self.assertEqual(det.get('name'),"detailtest")
@@ -429,6 +419,15 @@ class Test(gx.GXTestCase):
         self.assertEqual(det.get('version'),0)
         self.assertEqual(det.get('type'),gxapi.DB_LINE_TYPE_RANDOM)
         self.assertEqual(det.get('groupclass'),'')
+
+        gdb.delLine('testgroup')
+        ls = gdb.newLine('testgroup',group="TeSt")
+        det = gdb.lineDetails(ls)
+        self.assertEqual(det.get('category'),gxgdb.SYMB_LINE_GROUP)
+        self.assertEqual(det.get('name'),'testgroup')
+        self.assertEqual(det.get('symbol'),ls)
+        self.assertEqual(det.get('groupclass'),'TeSt')
+        gdb.delLine('testgroup')
 
         gdb.discard()
 
