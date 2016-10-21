@@ -366,9 +366,10 @@ class Test(gx.GXTestCase):
         gdb = gxgdb.GXdb.new( os.path.join(self.folder, 'new.gdb'))
 
         #read an image and put it in a new database
-        im = Image.open(os.path.join(self.folder, 'image.png'))
-        im.thumbnail( (20,20), Image.ANTIALIAS)
-        imageIn = np.asarray(im,dtype=np.float32)
+        with open(os.path.join(self.folder, 'image.png'), 'rb') as im_handle:
+            im = Image.open(im_handle)
+            im.thumbnail( (20,20), Image.ANTIALIAS)
+            imageIn = np.asarray(im,dtype=np.float32)
         gdb.newChannel('R',dtype=np.int)
         gdb.newChannel('G',dtype=np.int)
         gdb.newChannel('B', dtype=np.int)

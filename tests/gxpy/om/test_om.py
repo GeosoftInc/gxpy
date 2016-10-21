@@ -1,6 +1,5 @@
-import pydevd
+# import pydevd
 import geosoft.gxpy.om as gxom
-
 
 
 ###############################################################################################
