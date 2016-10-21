@@ -1,4 +1,3 @@
-import queue
 import time
 import inspect
 import os, gc, shutil

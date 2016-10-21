@@ -285,6 +285,7 @@ class GXdb():
         :param line:    line name, or symbol number
         :param create:  True to create a line if one does not exist
         :return:        line name, symbol, returns ('',-1) if invalid
+        :raises:        GDBException if line not found or cannot be created
         '''
 
         if (self._exist_symb(line, gxapi.DB_SYMB_LINE)):
@@ -299,13 +300,13 @@ class GXdb():
 
         raise GDBException('Line \'{}\' not found'.format(line))
 
-    def chanNameSymb(self, chan, create=False):
+    def chanNameSymb(self, chan):
         '''
         Return channel name, symbol
 
-        :param line:    line name, or symbol number
-        :param create:  True to create a line if one does not exist
+        :param chan:    channel name, or symbol number
         :return:        line name, symbol, returns ('',-1) if invalid
+        :raises:        GDBException if channel does not exist
         '''
 
         if (self._exist_symb(chan, gxapi.DB_SYMB_CHAN)):
@@ -315,8 +316,6 @@ class GXdb():
             else:
                 self._db.get_symb_name(chan, self._sr)
                 return self._sr.value, chan
-        if create:
-            return chan, self.newLine(chan)
 
         raise GDBException('Channel \'{}\' not found'.format(chan))
 
