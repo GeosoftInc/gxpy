@@ -13,7 +13,7 @@ Follwoing are the basic steps:
    4. Process the data
 '''
 
-import os
+import os,sys
 import argparse as argp
 import geosoft.gxpy as gxpy
 
@@ -24,6 +24,7 @@ def process_database(db, channel_name, add_value):
     '''
 
     # work through the data a line at a time - get a list of selected lines
+    print('Processing selected lines...')
     lines = db.lines()
 
     # for each line, get the data, add a value, return the data to the line
@@ -46,7 +47,9 @@ def process_database(db, channel_name, add_value):
         # write the data back to the database
         db.writeDataChan(l, channel_name, sum, fid)
 
-if __name__ == "__main__":
+def main(argv=None):
+    if argv is None:
+        argv = sys.argv
 
     # get (create) a GX context
     gxp = gxpy.gx.GXpy()  # get the current gx context
@@ -64,14 +67,18 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     # echo parameters
-    print("Database = "+args.sDB)
+    print("\nDatabase = "+args.sDB)
     print("Channel = "+args.sCh)
-    print("Value to add = {}".format(args.value))
+    print("Value to add = {}\n".format(args.value))
 
     # open the database
     db = gxpy.gdb.GXdb.open(args.sDB)
-    
+
     # process the data
     process_database(db, args.sCh, args.value)
     
-
+if __name__ == "__main__":
+    sys.exit(main())
+    # Creating a separate main() function supports the ability for the main() method to be called
+    # by some other Python script, which can also pass arguments.
+    # http://stackoverflow.com/a/287548
