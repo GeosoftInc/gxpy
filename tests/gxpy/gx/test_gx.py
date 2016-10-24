@@ -5,7 +5,7 @@ import pprint
 import geosoft.gxpy.system as gsys
 import geosoft.gxpy.gx as gxp
 
-class Test(gxp.GXTestCase):
+class Test(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):

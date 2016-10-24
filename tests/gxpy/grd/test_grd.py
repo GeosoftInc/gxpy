@@ -7,7 +7,7 @@ import geosoft.gxpy.system as gsys
 import geosoft.gxpy.ipj as gxipj
 import geosoft.gxpy.grd as gxgrd
 
-class Test(gx.GXTestCase):
+class Test(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):

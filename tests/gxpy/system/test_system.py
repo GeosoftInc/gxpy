@@ -13,7 +13,7 @@ import geosoft.gxpy.system as gsys
 def tf(f):
     return os.path.join(os.path.dirname(__file__), f)
 
-class Test(gx.GXTestCase):
+class Test(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         pass

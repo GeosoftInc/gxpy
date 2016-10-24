@@ -4,10 +4,12 @@
 
 '''
 
+import sys
 from time import gmtime, strftime
 from jdcal import is_leap, gcal2jd, jd2gcal
 import numpy as np
 import geosoft.gxapi as gxapi
+
 
 class UtilityException(Exception):
     pass
@@ -359,22 +361,21 @@ def get_parameters(group='_', parms=None):
 
 def safeApiException(fn, args, EClass=Exception):
     '''
-    This is a helper method that turns an gxapi.GXTerminate TERMINATE_USER_ERROR exception into GDBExceptions so
-    you can catch and deal with it. The GXTerminate information is provided in the GDBException.
-    All other conditions are raised.
+    This is a helper method that turns a gxapi.GXError and gxapi.GXAPIError exceptions into exception of class EClass so
+    you can catch and deal with it. The GXError message is provided in the EClass, traceback of original
+    exception is preserved.
+    
 
     :param fn:      gxapi finction to call
     :param args:    arguments as a tuple
-    :param EClass:  exception class returned if TERMINATE_USER_ERROR, default Exception
+    :param EClass:  exception class returned, default is Exception
     :returns:       function return
     '''
 
     try:
         return fn(*args)
-
-    except gxapi.GXTerminate:
-        info = gxapi.GXContext.current().get_terminate_info_and_resume()
-        if (info.cause == gxapi.TERMINATE_USER_ERROR):
-            raise EClass(info.error_message)
-        raise
+    except (gxapi.GXError, gxapi.GXAPIError):
+        exc_class, exc, tb = sys.exc_info()
+        raise EClass(str(exc)).with_traceback(tb)
+        
 

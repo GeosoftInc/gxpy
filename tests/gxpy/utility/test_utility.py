@@ -6,7 +6,7 @@ import geosoft.gxpy.system as gsys
 import geosoft.gxpy.gx as gx
 import geosoft.gxpy.utility as gxu
 
-class Test(gx.GXTestCase):
+class Test(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):

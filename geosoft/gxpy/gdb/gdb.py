@@ -260,14 +260,7 @@ class GXdb():
         if type(symb) is str:
             return self._db.exist_symb(symb, symb_type)
         else:
-            try:
-                gxu.safeApiException(self._db.get_symb_name, (symb, self._sr), GDBException)
-
-                # symbol is there, but is it the right type?
-                return self._db.exist_symb(self._sr.value, symb_type)
-
-            except GDBException:
-                return False
+            return self._db.valid_symb(symb, symb_type)
 
     #============================================================================
     #Information
