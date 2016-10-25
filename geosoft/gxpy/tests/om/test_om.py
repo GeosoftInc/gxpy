@@ -1,4 +1,5 @@
-import pydevd
+#import pydevd
+import geosoft.gxapi as gxapi
 import geosoft.gxpy.om as gxom
 
 
@@ -28,12 +29,10 @@ def environment(self, formated_indent=-1):
             'folder_workspace': self.folder_workspace(),
             'folder_temp': self.folder_temp(),
             'folder_user': self.folder_user(),
+            'id_window_main': self.main_wind_id(),
+            'id_window_active': self.active_wind_id(),
+            'id_thread': gxapi.GXSYS.get_thread_id(),
             }
-
-
-'id_window_main': self.main_wind_id(),
-'id_window_active': self.active_wind_id(),
-'id_thread': gxapi.GXSYS.get_thread_id(),
 
 
 ###############################################################################################
@@ -49,13 +48,13 @@ def rungx():
 
     ret = gxom.get_user_input('Testing string input','String',default='test')
     if ret != 'test':
-        gxom.pause('You should gave entered \'test\', but you enetered {}'.format(ret))
+        gxom.pause('You should gave entered \'test\', but you entered \'{}\''.format(ret))
     ret = gxom.get_user_input('Testing float', 'Float', kind='float', default=1.5)
     if ret != 1.5:
-        gxom.pause('You should gave entered \'1.5\', but you enetered {}'.format(ret))
+        gxom.pause('You should gave entered \'1.5\', but you entered \'{}\''.format(ret))
     ret = gxom.get_user_input('Testing int', 'Int', kind='int', default=7)
     if ret != 7:
-        gxom.pause('You should gave entered \'7\', but you enetered {}'.format(ret))
+        gxom.pause('You should gave entered \'7\', but you entered \'{}\''.format(ret))
     ret = gxom.get_user_input('Testing a list', 'List', kind='list', default='maki', items='maki, rider, explorer')
     if ret != 'maki':
-        gxom.pause('You should gave entered \'maki\', but you enetered {}'.format(ret))
+        gxom.pause('You should gave entered \'maki\', but you entered \'{}\''.format(ret))

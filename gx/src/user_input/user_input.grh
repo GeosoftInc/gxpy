@@ -1,0 +1,76 @@
+﻿//------------------------------------------------------------------------
+//                         RESOURCE HEADER FILE
+//------------------------------------------------------------------------
+//
+// INPUT RESOURCE SCRIPT : user_input.grc
+//
+
+//------------------------------------------------------------------------
+// FORM RESOURCE PAUSE
+
+// _PAUSE_0   Exit Button - Continue~
+
+#define _PAUSE_0  ((DGW_OBJ) 0  )
+
+
+//------------------------------------------------------------------------
+// FORM RESOURCE PAUSECANCEL
+
+// _PAUSECANCEL_0   Exit Button - Continue~
+// _PAUSECANCEL_1   Exit Button - Cancel
+
+#define _PAUSECANCEL_0  ((DGW_OBJ) 0  )
+#define _PAUSECANCEL_1  ((DGW_OBJ) 1  )
+
+
+//------------------------------------------------------------------------
+// FORM RESOURCE STRING
+
+// _STRING_0   Edit Field - 
+// _STRING_1   Exit Button - OK
+// _STRING_2   Exit Button - Cancel
+
+#define _STRING_0  ((DGW_OBJ) 0  )
+#define _STRING_1  ((DGW_OBJ) 1  )
+#define _STRING_2  ((DGW_OBJ) 2  )
+
+
+//------------------------------------------------------------------------
+// FORM RESOURCE REAL
+
+// _REAL_0   Edit Field - 
+// _REAL_1   Exit Button - OK
+// _REAL_2   Exit Button - Cancel
+
+#define _REAL_0  ((DGW_OBJ) 0  )
+#define _REAL_1  ((DGW_OBJ) 1  )
+#define _REAL_2  ((DGW_OBJ) 2  )
+
+
+//------------------------------------------------------------------------
+// FORM RESOURCE INT
+
+// _INT_0   Edit Field - 
+// _INT_1   Exit Button - OK
+// _INT_2   Exit Button - Cancel
+
+#define _INT_0  ((DGW_OBJ) 0  )
+#define _INT_1  ((DGW_OBJ) 1  )
+#define _INT_2  ((DGW_OBJ) 2  )
+
+
+//------------------------------------------------------------------------
+// FORM RESOURCE LIST
+
+// _LIST_0   List Edit Field -  List Used - simplelist
+// _LIST_1   Exit Button - OK
+// _LIST_2   Exit Button - Cancel
+
+#define _LIST_0  ((DGW_OBJ) 0  )
+#define _LIST_1  ((DGW_OBJ) 1  )
+#define _LIST_2  ((DGW_OBJ) 2  )
+
+
+//------------------------------------------------------------------------
+// LIST RESOURCE simplelist
+

@@ -2,30 +2,30 @@
 // USER_INPUT.GRC
 //-----------------------------------------------------------------------------
 
-RESOURCE,FORM,PAUSE,"         |         |         |         |         |         |         |         |         ",0
+RESOURCE,FORM,PAUSE,"",0
 EBUT,&Continue~,0
 
-RESOURCE,FORM,PAUSECANCEL,"         |         |         |         |         |         |         |         |         ",-1
+RESOURCE,FORM,PAUSECANCEL,"",-1
 EBUT,&Continue~,0
 EBUT,&Cancel,-1,CANCEL
 
 RESOURCE,FORM,STRING,"Input required...",-1
-EDIT,,,64,"         |         |         |         |         |         |         |         |         "
+EDIT,,,64,""
 EBUT,&OK,0
 EBUT,&Cancel,-1,CANCEL
 
 RESOURCE,FORM,REAL,"Input required...",-1
-EDIT,,,24,"         |         |         |         |         |         |         |         |         ",R,REAL
+EDIT,,,24,"",R,REAL
 EBUT,&OK,0
 EBUT,&Cancel,-1,CANCEL
 
 RESOURCE,FORM,INT,"Input required...",-1
-EDIT,,,24,"         |         |         |         |         |         |         |         |         ",R,INT
+EDIT,,,24,"",R,INT
 EBUT,&OK,0
 EBUT,&Cancel,-1,CANCEL
 
 RESOURCE,FORM,LIST,"Input required...",-1
-LEDIT,,,32,"         |         |         |         |         |         |         |         |         ",r,,,simplelist
+LEDIT,,,32,"",r,,,simplelist
 EBUT,&OK,0
 EBUT,&Cancel,-1,CANCEL
 

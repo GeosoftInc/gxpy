@@ -24,7 +24,7 @@ def pause(title='Pause...', cancel=None):
     Display a pause dialog, wait for user to press continue or cancel
     :param title:   The pause dialog title, default is "Pause..."
     :param cancel:  If specified, add a cancel button with cancel text (ie cancel="STOP")
-    :raises:        'cancelled' if the user cancels the dialog
+    :raises:        :py:ex:GXCancel if the user cancels the dialog
     '''
     
     gxapi.GXSYS.set_string("USER_INPUT", "TITLE", str(title))
@@ -35,7 +35,7 @@ def pause(title='Pause...', cancel=None):
         gxapi.GXSYS.set_string("USER_INPUT", "PROMPT", str(cancel))
 
     if gxapi.GXSYS.run_gx("user_input.gx") == -1:
-        raise OMException('cancelled')
+        gxapi.GXSYS.cancel()
 
 def get_user_input(title="Input required...", prompt='?', kind='string', default='',items=''):
     '''
@@ -50,7 +50,7 @@ def get_user_input(title="Input required...", prompt='?', kind='string', default
     :param items:   string of comma-separated items for a list
     :param default: default value
     :return:        user response
-    :raise:         'cancelled' if the user cancels the dialog
+    :raise:         :py:ex:GXCancel if the user cancels the dialog
     '''
 
 
@@ -95,5 +95,5 @@ def get_user_input(title="Input required...", prompt='?', kind='string', default
         return strr.value
 
     if ret == -1:
-        raise OMException('cancelled')
+        gxapi.GXSYS.cancel()
     raise OMException('GX Error {}'.format(ret))
