@@ -10,4 +10,3 @@ Table of Contents
  
    gxapi
    geosoft.gxpy
-   gxcon

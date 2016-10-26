@@ -1,16 +1,23 @@
-﻿import os
+﻿# coding = utf-8
+
+import json
+from os.path import dirname, join
 from setuptools import setup
 
-import build_version
-
-product_version = '.'.join(build_version.PRODUCT_VERSION_BLOCK.split(','))
+with open('geosoft/pkg_info.json') as fp:
+    _info = json.load(fp)
 
 def read(fname):
-    return open(os.path.join(os.path.dirname(__file__), fname)).read()
+    return open(join(dirname(__file__), fname)).read()
+
+if _info['branch'] == 'release':
+    version_tag = _info['version']
+else:
+    version_tag = "{}.{}0".format(_info['version'], _info['branch'])
 
 setup(
     name='geosoft',
-    version=product_version,
+    version=version_tag,
     description='Geosoft GX API module for Python',
     long_description=read('README.rst'),
     author='Geosoft Inc.',
@@ -21,7 +28,7 @@ setup(
           'numpy>=1.7',
           'jdcal',
       ],
-    packages=['geosoft', 
+    packages=['geosoft',
       'geosoft.gxpy',
       'geosoft.gxpy.gx',
       'geosoft.gxpy.system',

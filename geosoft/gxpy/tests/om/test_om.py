@@ -6,6 +6,7 @@ import geosoft.gxpy.om as gxom
 def environment(self, formated_indent=-1):
     ''' :returns: Geosoft environment information as a dictionary'''
 
+gxapi.GXContext.create()
     def_menus = gxapi.GXLST.create(512)
     loaded_menus = gxapi.GXLST.create(512)
     user_menus = gxapi.GXLST.create(512)
