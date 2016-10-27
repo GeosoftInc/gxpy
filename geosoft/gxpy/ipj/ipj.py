@@ -1,6 +1,9 @@
 import json
+import geosoft
 import geosoft.gxapi as gxapi
 from .. import utility as gxu
+
+__version__ = geosoft.__release__
 
 
 #############

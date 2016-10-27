@@ -1,7 +1,11 @@
 
+import geosoft
 import numpy as np
 import geosoft.gxapi as gxapi
 from .. import utility as gxu
+
+__version__ = geosoft.__release__
+
 
 class VVException(Exception):
     pass

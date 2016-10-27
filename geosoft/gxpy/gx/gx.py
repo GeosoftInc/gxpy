@@ -3,9 +3,11 @@ GX Context and related methods to with Geosoft Python.
 '''
 
 import pprint
+import geosoft
 import geosoft.gxapi as gxapi
 from .. import utility as gxu
-import unittest
+
+__version__ = geosoft.__release__
 
 class GXException(Exception):
     pass
@@ -31,7 +33,7 @@ class GXpy():
     def __repr__(self):
         return "{}({})".format(self.__class__,self.__dict__)
 
-    def __init__(self, name=__name__, version="0", parent_window=0):
+    def __init__(self, name=__name__, version=__version__, parent_window=0):
 
         try:
             self.gxapi = gxapi.GXContext.create(name, version, parent_window)

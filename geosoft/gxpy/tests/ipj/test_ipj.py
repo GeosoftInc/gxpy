@@ -6,6 +6,7 @@ import geosoft.gxapi as gxapi
 import geosoft.gxpy.gx as gx
 import geosoft.gxpy.system as gsys
 import geosoft.gxpy.ipj as gxipj
+import geosoft
 
 class Test(unittest.TestCase):
 
@@ -19,7 +20,11 @@ class Test(unittest.TestCase):
 
     @classmethod
     def start(cls,test):
-        print("\n*** {} ***".format(test))
+        print("\n*** {} *** - {}".format(test, geosoft.__release__))
+
+    def test_ipj(self):
+        self.start(gsys.func_name())
+        self.assertEqual(gxipj.__version__, geosoft.__release__)
 
     def test_lists_IPJ(self):
         self.start(gsys.func_name())

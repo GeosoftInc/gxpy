@@ -2,12 +2,11 @@
 @author: Ian
 '''
 import unittest
-import os, sys, inspect, gc
-import shutil
+import os
 import time
 import numpy as np
 
-import geosoft.gxpy.gx as gx
+import geosoft
 import geosoft.gxpy.system as gsys
 
 def tf(f):
@@ -20,7 +19,11 @@ class Test(unittest.TestCase):
 
     @classmethod
     def start(cls, test):
-        print("\n*** {} ***".format(test))
+        print("\n*** {} *** - {}".format(test, geosoft.__release__))
+
+    def test_system(self):
+        self.start(gsys.func_name())
+        self.assertEqual(gsys.__version__, geosoft.__release__)
 
     def test_statics(self):
         self.start(gsys.func_name())

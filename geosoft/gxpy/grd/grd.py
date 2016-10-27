@@ -2,11 +2,14 @@
 
 import os,gc,time
 import numpy as np
+
+import geosoft
 import geosoft.gxapi as gxapi
 from .. import ipj as gxipj
 from .. import vv as gxvv
 from .. import utility as gxu
 
+__version__ = geosoft.__release__
 
 class GRDException(Exception):
     pass

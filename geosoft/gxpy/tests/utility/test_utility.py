@@ -1,6 +1,7 @@
 import unittest
 import numpy as np
 
+import geosoft
 import geosoft.gxapi as gxapi
 import geosoft.gxpy.system as gsys
 import geosoft.gxpy.gx as gx
@@ -18,10 +19,12 @@ class Test(unittest.TestCase):
     
     @classmethod
     def start(cls,test):
-        print("\n*** {} ***".format(test))
+        print("\n*** {} *** - {}".format(test, geosoft.__release__))
 
     def test_misc(self):
         self.start(gsys.func_name())
+
+        self.assertEqual(gxu.__version__, geosoft.__release__)
 
         print(gxu.timeStamp(),self.gxp)
         self.assertEqual(gxu.gxType('float'),gxapi.GS_DOUBLE)

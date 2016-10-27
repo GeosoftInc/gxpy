@@ -1,7 +1,7 @@
 import numpy as np
 import unittest
-import sys,os
 
+import geosoft
 import geosoft.gxapi as gxapi
 import geosoft.gxpy.gx as gx
 import geosoft.gxpy.system as gsys
@@ -19,10 +19,12 @@ class Test(unittest.TestCase):
 
     @classmethod
     def start(cls,test):
-        print("\n*** {} ***".format(test))
+        print("\n*** {} *** - {}".format(test, geosoft.__release__))
 
     def test_vv(self):
         self.start(gsys.func_name())
+
+        self.assertEqual(gxvv.__version__, geosoft.__release__)
 
         vv = gxvv.GXvv(np.float)
         self.assertEqual(vv.fid(),(0.0,1.0))

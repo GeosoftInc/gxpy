@@ -8,7 +8,11 @@ import sys
 from time import gmtime, strftime
 from jdcal import is_leap, gcal2jd, jd2gcal
 import numpy as np
+import geosoft
 import geosoft.gxapi as gxapi
+
+__version__ = geosoft.__release__
+
 
 
 class UtilityException(Exception):

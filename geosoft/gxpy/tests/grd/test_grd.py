@@ -6,12 +6,14 @@ import geosoft.gxpy.gx as gx
 import geosoft.gxpy.system as gsys
 import geosoft.gxpy.ipj as gxipj
 import geosoft.gxpy.grd as gxgrd
+import geosoft
 
 class Test(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
         cls.gx = gx.GXpy()
+        os.chdir(os.path.dirname(os.path.realpath(__file__)))
         cls.folder, files = gsys.unzip(os.path.join(os.path.dirname(__file__), 'testdata.zip'))
         cls.g1 = gxgrd.GXgrd.open(os.path.join(cls.folder, files[0]))
         cls.g2 = gxgrd.GXgrd.open(os.path.join(cls.folder, files[3]))
@@ -28,8 +30,11 @@ class Test(unittest.TestCase):
     
     @classmethod
     def start(cls,test):
-        print("\n*** {} ***".format(test))
-        os.chdir(os.path.dirname(os.path.realpath(__file__)))
+        print("\n*** {} *** - {}".format(test, geosoft.__release__))
+
+    def test_grc(self):
+        self.start(gsys.func_name())
+        self.assertEqual(gxgrd.__version__, geosoft.__release__)
 
     def test_gridProperties(self):
         self.start(gsys.func_name())

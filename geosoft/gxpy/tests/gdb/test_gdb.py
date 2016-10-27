@@ -8,6 +8,7 @@ import numpy as np
 import gc
 from PIL import Image
 
+import geosoft
 import geosoft.gxapi as gxapi
 import geosoft.gxpy.gx as gx
 import geosoft.gxpy.utility as gxu
@@ -35,10 +36,14 @@ class Test(unittest.TestCase):
 
     @classmethod
     def start(cls,test):
-        print("\n*** {} ***".format(test))
+        print("\n*** {} *** - {}".format(test, geosoft.__release__))
         
     def tf(f):
-        return os.path.join(os.path.dirname(__file__),f)
+        return os.path.join(os.path.dirname(__file__), f)
+
+    def test_gdb(self):
+        self.start(gsys.func_name())
+        self.assertEqual(gxgdb.__version__, geosoft.__release__)
 
     def test_noprops_GDB(self):
         self.start(gsys.func_name())

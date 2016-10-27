@@ -4,7 +4,9 @@ import os, gc, shutil
 import zipfile
 import threading
 from itertools import count
+import geosoft
 
+__version__ = geosoft.__release__
 
 ###############
 # local statics
