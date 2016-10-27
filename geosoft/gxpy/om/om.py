@@ -11,7 +11,7 @@ import numpy as np
 import geosoft
 import geosoft.gxapi as gxapi
 
-__version__ = geosoft.__release__
+__version__ = geosoft.__version__
 
 class OMException(Exception):
     pass

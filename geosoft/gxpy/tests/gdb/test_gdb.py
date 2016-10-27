@@ -36,14 +36,14 @@ class Test(unittest.TestCase):
 
     @classmethod
     def start(cls,test):
-        print("\n*** {} *** - {}".format(test, geosoft.__release__))
+        print("\n*** {} *** - {}".format(test, geosoft.__version__))
         
     def tf(f):
         return os.path.join(os.path.dirname(__file__), f)
 
     def test_gdb(self):
         self.start(gsys.func_name())
-        self.assertEqual(gxgdb.__version__, geosoft.__release__)
+        self.assertEqual(gxgdb.__version__, geosoft.__version__)
 
     def test_noprops_GDB(self):
         self.start(gsys.func_name())

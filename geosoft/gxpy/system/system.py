@@ -6,7 +6,7 @@ import threading
 from itertools import count
 import geosoft
 
-__version__ = geosoft.__release__
+__version__ = geosoft.__version__
 
 ###############
 # local statics

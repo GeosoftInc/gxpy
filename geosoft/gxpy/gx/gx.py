@@ -7,7 +7,7 @@ import geosoft
 import geosoft.gxapi as gxapi
 from .. import utility as gxu
 
-__version__ = geosoft.__release__
+__version__ = geosoft.__version__
 
 class GXException(Exception):
     pass

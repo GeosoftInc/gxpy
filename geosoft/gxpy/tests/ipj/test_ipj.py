@@ -20,11 +20,11 @@ class Test(unittest.TestCase):
 
     @classmethod
     def start(cls,test):
-        print("\n*** {} *** - {}".format(test, geosoft.__release__))
+        print("\n*** {} *** - {}".format(test, geosoft.__version__))
 
     def test_ipj(self):
         self.start(gsys.func_name())
-        self.assertEqual(gxipj.__version__, geosoft.__release__)
+        self.assertEqual(gxipj.__version__, geosoft.__version__)
 
     def test_lists_IPJ(self):
         self.start(gsys.func_name())

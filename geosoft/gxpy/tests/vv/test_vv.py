@@ -19,12 +19,12 @@ class Test(unittest.TestCase):
 
     @classmethod
     def start(cls,test):
-        print("\n*** {} *** - {}".format(test, geosoft.__release__))
+        print("\n*** {} *** - {}".format(test, geosoft.__version__))
 
     def test_vv(self):
         self.start(gsys.func_name())
 
-        self.assertEqual(gxvv.__version__, geosoft.__release__)
+        self.assertEqual(gxvv.__version__, geosoft.__version__)
 
         vv = gxvv.GXvv(np.float)
         self.assertEqual(vv.fid(),(0.0,1.0))

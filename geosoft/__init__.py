@@ -7,13 +7,13 @@ import geosoft.__check_deps__
 
 with open(join(dirname(__file__), 'pkg_info.json')) as fp:
     _info = json.load(fp)
-__version__ = _info['version']
+
 __branch__ = _info['branch']
 
 if __branch__ == 'release':
-    __release__ = _info['version']
+    __version__ = _info['version']
 else:
-    __release__ = "{}.{}0".format(_info['version'], _info['branch'])
+    __version__ = "{}.{}0".format(_info['version'], _info['branch'])
 
 __all__ = ['gxapi', 'gxpy']
 

@@ -27,7 +27,7 @@ class Test(unittest.TestCase):
         self.assertTrue(self.gxp.gid.find('@') > 0)
         self.assertEqual(self.gxp.main_wind_id(),0)
         self.assertEqual(self.gxp.active_wind_id(), 0)
-        self.assertEqual(gxp.__version__, geosoft.__release__)
+        self.assertEqual(gxp.__version__, geosoft.__version__)
 
     def test_ui_onoff(self):
         self.start(gsys.func_name())

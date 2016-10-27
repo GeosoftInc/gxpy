@@ -9,7 +9,7 @@ from .. import ipj as gxipj
 from .. import vv as gxvv
 from .. import utility as gxu
 
-__version__ = geosoft.__release__
+__version__ = geosoft.__version__
 
 class GRDException(Exception):
     pass
