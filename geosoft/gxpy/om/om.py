@@ -10,7 +10,7 @@ import numpy as np
 
 import geosoft
 import geosoft.gxapi as gxapi
-import geosoft.gxpy.utility as gxu
+from ..utility import dictFromLst
 
 __version__ = geosoft.__version__
 
@@ -103,91 +103,137 @@ def get_user_input(title="Input required...", prompt='?', kind='string', default
     raise OMException('GX Error {}'.format(ret))
 
 
-def environment(self, formated_indent=-1):
-    ''' :returns: Oasis montaj environment information as a dictionary'''
+def menus():
+    ''' Returns Oasis montaj menu information as a dictionary:
+    {
+        'default'
+        'loaded'
+        'user'
+    }
+    '''
 
     def_menus = gxapi.GXLST.create(512)
     loaded_menus = gxapi.GXLST.create(512)
     user_menus = gxapi.GXLST.create(512)
-    try:
-        gxapi.GXSYS.get_loaded_menus(def_menus, loaded_menus, user_menus)
-        def_menus = gxu.dictFromLst(def_menus),
-        loaded_menus = gxu.dictFromLst(loaded_menus),
-        user_menus = gxu.dictFromLst(user_menus),
-    except:
-        def_menus = loaded_menus = user_menus = ""
+    gxapi.GXSYS.get_loaded_menus(def_menus, loaded_menus, user_menus)
 
-    info = {'gid': self.gid,
-            'current_date': gxapi.GXSYS.date(),
-            'current_utc_date': gxapi.GXSYS.utc_date(),
-            'current_time': gxapi.GXSYS.time(),
-            'current_utc_time': gxapi.GXSYS.utc_time(),
-            'license_class': self.license_class(),
-            'menu_default': def_menus,
-            'menu_loaded': loaded_menus,
-            'menu_user': user_menus,
-            'folder_workspace': self.folder_workspace(),
-            'folder_temp': self.folder_temp(),
-            'folder_user': self.folder_user(),
-            'id_window_main': self.main_wind_id(),
-            'id_window_active': self.active_wind_id(),
-            'id_thread': gxapi.GXSYS.get_thread_id(),
-            }
+    info = {'menu_default': list(dictFromLst(def_menus).keys()),
+            'menu_loaded': list(dictFromLst(loaded_menus).keys()),
+            'menu_user': list(dictFromLst(user_menus).keys()) }
+
+    return info
 
 
-def get_om_state():
+def state():
     '''
-    Return a dictionary that contains the current Oasis montaj state.
+    Return a dictionary that contains the current Oasis montaj state:
 
-    project_path
-    gdb {
-        open_list
-        current
-        disp_chan_list
-        selection
+    {
+        'project_path'
+        'temp_path'
+        'user_path'
+        'gdb' {
+            'open_list'
+            'current'
+            'disp_chan_list'
+            'selection' [
+                line, channel, start_fid, end_fid       # channel is '' if no channel selected
+                                                        # start_fid is '' if no fiducials selected
+                                                        # start_fid is '*' is all fiducials selected
+                                                        # line is "*" is all lines selected
+            ]
+        }
+        'map' {
+            'open_list'
+            'current'
+            'point' [
+                x, y, z
+            ]
+            'cursor' [
+                x, y, z
+            ]
+            'display_area' [
+                xmin, ymin, xmax, ymax
+            ]
+        }
     }
-    map {
-        map_open_list
-        map_current
-        map_point
-        map_cursor
-
     '''
 
     s = gxapi.str_ref()
-    lst = gxapi.GXLST.create()
+    glst = gxapi.GXLST.create(4096)
     state = {}
 
     # project path
-    gxapi.gxsys.get_path(gxapi.SYS_PATH_LOCAL, s)
-    s['project_path'] = s.value
+    gxapi.GXSYS.get_path(gxapi.SYS_PATH_LOCAL, s)
+    state['project_path'] = s.value
+    gxapi.GXSYS.get_path(gxapi.SYS_PATH_GEOTEMP, s)
+    state['temp_path'] = s.value
+    gxapi.GXSYS.get_path(gxapi.SYS_PATH_GEOSOFT_USER, s)
+    state['user_path'] = s.value
 
     # databases
-    ndb = gxapi.GXEDB.get_databases_lst(lst, gxapi.EDB_PATH_FULL)
+    ndb = gxapi.GXEDB.get_databases_lst(glst, gxapi.EDB_PATH_FULL)
     if ndb > 0:
         sdb = {}
         edb = gxapi.GXEDB.current_no_activate()
         edb.get_name(s)
         sdb['current'] = s.value
-        sdb['open_list'] = list(lst.keys())
+        sdb['open_list'] = list(dictFromLst(glst).keys())
 
-        n = gxapi.GXEDB.disp_chan_list(lst)
+        n = edb.disp_chan_lst(glst)
         if n > 0:
-            sdb['disp_chan_list'] = list(lst.keys())
+            sdb['disp_chan_list'] = list(dictFromLst(glst).keys())
         else:
             sdb['disp_chan_list'] = []
 
         sch = gxapi.str_ref()
         sln = gxapi.str_ref()
         sfd = gxapi.str_ref()
-        gxapi.GXEDB.get_current_selection(s, sch, sln, sfd)
+        edb.get_current_selection(s, sch, sln, sfd)
         if sch.value == '[All]':
             sch.value = '*'
         if sln.value == '[All]':
             sln.value = '*'
-        if sfd.value == '[None]':
-            fd = None
+        if sfd.value == '[All]':
+            fd = ('*','*')
+        elif sfd.value == "[None]":
+            fd = ('','')
         else:
             fd = sfd.value.split(' to ')
             fd = (fd[0], fd[1])
-        sdb['selection'] = (sch, sln, fd)
+        sdb['selection'] = (sln.value, sch.value, fd[0], fd[1])
+        state['gdb'] = sdb
+
+    # maps
+    nmaps = gxapi.GXEMAP.get_maps_lst(glst, gxapi.EMAP_PATH_FULL)
+    if nmaps > 0:
+        fx = gxapi.float_ref()
+        fy = gxapi.float_ref()
+        fx2 = gxapi.float_ref()
+        fy2 = gxapi.float_ref()
+
+        smap = {}
+        emap = gxapi.GXEMAP.current_no_activate()
+        emap.get_name(s)
+        smap['current'] = s.value
+        smap['open_list'] = list(dictFromLst(glst).keys())
+
+        emap.get_display_area(fx, fy, fx2, fy2)
+        smap['display_area'] = (fx.value, fy.value, fx2.value, fy2.value)
+
+        if emap.is_3d_view():
+
+            emap.get_3d_view_name(s)
+            smap['3d_view_name'] = s.value
+
+        else:
+            # 2D
+
+            emap.get_cur_point(fx, fy)
+            smap["point"] = (fx.value, fy.value, None)
+            emap.get_cursor(fx, fy)
+            smap["cursor"] = (fx.value, fy.value, None)
+
+        state['map'] = smap
+
+    return state

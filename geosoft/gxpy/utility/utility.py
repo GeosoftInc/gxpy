@@ -14,7 +14,6 @@ import geosoft.gxapi as gxapi
 __version__ = geosoft.__version__
 
 
-
 class UtilityException(Exception):
     pass
 
