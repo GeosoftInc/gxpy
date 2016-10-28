@@ -39,6 +39,7 @@ setup(
 	  'geosoft.gxpy.ipj',
       'geosoft.gxpy.utility'],
     package_data={'geosoft': ['*.key', '*.dll', '*.pyd', '*.json', '*.zip']},
+    test_suite="geosoft.gxpy.tests",
     classifiers=[
         "Development Status :: 4 - Beta", #TODO Upgrade to production and review other classifiers (https://pypi.python.org/pypi?%3Aaction=list_classifiers)
         "Topic :: Scientific/Engineering",
