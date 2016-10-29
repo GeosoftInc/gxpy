@@ -1,5 +1,6 @@
 import unittest
 import numpy as np
+import os
 
 import geosoft
 import geosoft.gxapi as gxapi
@@ -165,6 +166,32 @@ class Test(unittest.TestCase):
         self.assertEqual(test("62N12345",'S5'),"62N12")
         self.assertEqual(test("62N12345",'a5'),"62N12")
 
+    def test_run_external_python(self):
+        self.start(gsys.func_name())
+
+        testpy = 'test_python.py'
+        with open(testpy, 'w') as py:
+            py.write("import json\n")
+            py.write("result = {'a':'letter a', 'b':'letter b', 'c':[1,2,3]}\n")
+            py.write("with open('{}','w') as f:\n".format(gxu.results_file()))
+            py.write("   json.dump(result, f)\n")
+
+        test_result = gxu.run_external_python(testpy)
+        self.assertEqual(test_result['a'], 'letter a')
+        l = test_result['c']
+        self.assertEqual(len(l), 3)
+        self.assertEqual(l[1], 2)
+        os.remove(testpy)
+
+    def test_paths(self):
+        self.start(gsys.func_name())
+
+        local = gxu.project_path()
+        self.assertEqual(os.path.normpath(local), os.getcwd())
+        user = gxu.user_path()
+        self.assertTrue(os.path.isdir(user))
+        temp = gxu.temp_path()
+        self.assertTrue(os.path.isdir(temp))
 
 ###############################################################################################
 

@@ -4,7 +4,8 @@
 
 '''
 
-import sys
+import sys, os
+import json
 from time import gmtime, strftime
 from jdcal import is_leap, gcal2jd, jd2gcal
 import numpy as np
@@ -13,10 +14,12 @@ import geosoft.gxapi as gxapi
 
 __version__ = geosoft.__version__
 
-
 class UtilityException(Exception):
     pass
 
+# translation hook
+def _(string):
+    return string
 
 ###############
 # static
@@ -270,7 +273,7 @@ def gxType(dtype):
     if dtype == np.uint32:  return gxapi.GS_ULONG
     if dtype == np.uint64:  return gxapi.GS_ULONG64
 
-    raise UtilityException("Unsupported numpy type {}".format(dtype))
+    raise UtilityException(_("Unsupported numpy type {}").format(dtype))
 
 def dtypeGX(gtype):
     '''
@@ -289,7 +292,7 @@ def dtypeGX(gtype):
     if gtype == gxapi.GS_USHORT:   return np.dtype(np.uint16)
     if gtype == gxapi.GS_ULONG:    return np.dtype(np.uint32)
     if gtype == gxapi.GS_ULONG64:  return np.dtype(np.uint64)
-    raise UtilityException("Unsupported GX type {}".format(gtype))
+    raise UtilityException(_("Unsupported GX type {}").format(gtype))
 
 def gxDummy(dtype):
     '''
@@ -306,7 +309,7 @@ def gxDummy(dtype):
     if dtype == np.int32: return gxapi.GS_S4DM
     if dtype == np.int64: return gxapi.GS_S8DM
     if dtype.type is np.str_: return '*'
-    raise UtilityException("Unsupported dummy for numpy type {}".format(dtype))
+    raise UtilityException(_("Unsupported dummy for numpy type {}").format(dtype))
 
 def dummyMask(npd):
     '''
@@ -319,7 +322,7 @@ def dummyMask(npd):
     '''
 
     if len(npd.shape) != 2:
-        raise UtilityException('Must be a 2D array')
+        raise UtilityException(_('Must be a 2D array'))
     dummy = gxDummy(npd.dtype)
     return np.apply_along_axis(lambda a: dummy in a, 1, npd)
 
@@ -362,6 +365,25 @@ def get_parameters(group='_', parms=None):
 
     return p
 
+
+def project_path():
+    ''' return the Geosoft project folder path'''
+    path = gxapi.str_ref()
+    gxapi.GXSYS.get_path(gxapi.SYS_PATH_LOCAL, path)
+    return path.value.replace('\\', '/')
+
+def user_path():
+    ''' return the Geosoft user configurations folder path'''
+    path = gxapi.str_ref()
+    gxapi.GXSYS.get_path(gxapi.SYS_PATH_GEOSOFT_USER, path)
+    return path.value.replace('\\', '/')
+
+def temp_path():
+    ''' return the Geosoft temporary folder path'''
+    path = gxapi.str_ref()
+    gxapi.GXSYS.get_path(gxapi.SYS_PATH_GEOTEMP, path)
+    return path.value.replace('\\', '/')
+
 def safeApiException(fn, args, EClass=Exception):
     '''
     This is a helper method that turns a gxapi.GXError and gxapi.GXAPIError exceptions into exception of class EClass so
@@ -380,5 +402,39 @@ def safeApiException(fn, args, EClass=Exception):
     except (gxapi.GXError, gxapi.GXAPIError):
         exc_class, exc, tb = sys.exc_info()
         raise EClass(str(exc)).with_traceback(tb)
-        
 
+def results_file():
+    ''' returns the name of the expected python results json file from run_external_python()'''
+    return os.path.join(temp_path(), '__external_python_results__')
+
+def run_external_python(script, args='', hold=gxapi.SYS_RUN_HOLD_ONERROR):
+    '''
+    Run a python script as an external program, returning results as a dictionary.
+    :param script:  path of the python script
+    :param args:    command line arguments, as a single string or an iterable
+    :param hold:    gxapi.SYS_RUN_HOLD_ option, default is gxapi.SYS_RUN_HOLD_ONERROR
+    :return:
+    '''
+
+    s = gxapi.str_ref()
+    py = gxapi.GXSYS.get_env('PYTHON_HOME', s)
+    py = os.path.join(s.value, 'python.exe')
+
+    arguments = script
+    if type(args) is str:
+        arguments = arguments + ' ' + args
+    else:
+        for arg in args:
+            arguments = arguments + ' ' + str(arg)
+
+    if gxapi.GXSYS.run(py, arguments, gxapi.SYS_RUN_TYPE_EXE+hold) == -1:
+        raise UtilityException(_('Failed running:\n{} {}').format(py, arguments))
+
+    # look for default script result dictionary
+    results = results_file()
+    if os.path.isfile(results):
+        with open(results) as f:
+            data = json.load(f)
+        os.remove(results)
+        return data
+    return {}
