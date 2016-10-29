@@ -1,4 +1,4 @@
-import pydevd
+#import pydevd
 #pydevd.settrace('localhost', port=34765, stdoutToServer=True, stderrToServer=True)
 
 import json
@@ -9,9 +9,6 @@ import geosoft.gxpy.om as gxom
 ###############################################################################################
 
 def test_get_user_input():
-
-    # pydevd modules supports remote debugging - see Debugging Python Extensions in the GX Developer documentation
-    # pydevd.settrace('localhost', port=34765, stdoutToServer=True, stderrToServer=True)
 
     gxom.pause('Testing pause')
     gxom.pause('Testing pause\nSome descriptive mumbo-gumbo.........')

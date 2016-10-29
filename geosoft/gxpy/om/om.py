@@ -129,9 +129,6 @@ def state():
     Return a dictionary that contains the current Oasis montaj state:
 
     {
-        'project_path'
-        'temp_path'
-        'user_path'
         'gdb' {
             'open_list'
             'current'
@@ -162,14 +159,6 @@ def state():
     s = gxapi.str_ref()
     glst = gxapi.GXLST.create(4096)
     state = {}
-
-    # project path
-    gxapi.GXSYS.get_path(gxapi.SYS_PATH_LOCAL, s)
-    state['project_path'] = s.value
-    gxapi.GXSYS.get_path(gxapi.SYS_PATH_GEOTEMP, s)
-    state['temp_path'] = s.value
-    gxapi.GXSYS.get_path(gxapi.SYS_PATH_GEOSOFT_USER, s)
-    state['user_path'] = s.value
 
     # databases
     ndb = gxapi.GXEDB.get_databases_lst(glst, gxapi.EDB_PATH_FULL)
