@@ -432,13 +432,13 @@ def run_external_python(script, script_args='', python_args='', hold=gxapi.SYS_R
     gxapi.GXSYS.get_env('PYTHON_HOME', s)
     py = os.path.join(s.value, 'python.exe')
 
-    if len(python_args) > 0:
-        arguments = python_args + ' ' + script
-    else:
-        arguments = script
+    command = "{} {} {}".format(python_args, script, script_args)
 
-    if gxapi.GXSYS.run(py, arguments, gxapi.SYS_RUN_TYPE_EXE+hold) == -1:
-        raise UtilityException(_('Failed running:\n{} {}').format(py, arguments))
+    try:
+        if gxapi.GXSYS.run(py, command, gxapi.SYS_RUN_TYPE_EXE+hold) == -1:
+            raise UtilityException(_('Failed running:\n{} {}').format(py, command))
+    except:
+        raise
 
     # look for default script result dictionary
     results = _results_file()

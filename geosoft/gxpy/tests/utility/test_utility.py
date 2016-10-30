@@ -171,16 +171,26 @@ class Test(unittest.TestCase):
 
         testpy = 'test_python.py'
         with open(testpy, 'w') as py:
+            py.write("import sys\n")
             py.write("import geosoft.gxpy as gxpy\n")
             py.write("gxc = gxpy.gx.GXpy()\n")
-            py.write("gxpy.utility.run_return({'a':'letter a', 'b':'letter b', 'c':[1,2,3]})")
+            py.write("gxpy.utility.run_return({'a':'letter a', 'b':'letter b', 'c':[1,2,3], 'argv': sys.argv})")
 
-        test_result = gxu.run_external_python(testpy)
+        test_result = gxu.run_external_python(testpy, script_args='test1 test2')
         self.assertEqual(test_result['a'], 'letter a')
         l = test_result['c']
         self.assertEqual(len(l), 3)
         self.assertEqual(l[1], 2)
+        self.assertEqual(test_result['argv'][1], 'test1')
+        self.assertEqual(test_result['argv'][2], 'test2')
         os.remove(testpy)
+
+        #TODO - Jacques, this should not hang on the gxapi.GXSYS.run at line 438 in utility.py
+        # try:
+        #    test_result = gxu.run_external_python(testpy, script_args='test1 test2')
+        #    self.assertTrue(False)
+        # except:
+        #    raise #just raising for now so I can see what is happenning
 
     def test_paths(self):
         self.start(gsys.func_name())
