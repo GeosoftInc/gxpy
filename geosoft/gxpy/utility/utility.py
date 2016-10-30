@@ -403,25 +403,49 @@ def safeApiException(fn, args, EClass=Exception):
         exc_class, exc, tb = sys.exc_info()
         raise EClass(str(exc)).with_traceback(tb)
 
-def _results_file():
-    ''' name of the expected python results json file from run_external_python()'''
-    return os.path.join(temp_path(), '__external_python_results__')
+def _temp_dict_file_name():
+    ''' name of the expected python dictionary as a json file from run_external_python()'''
+    return '__shared_dictionary__'
 
-def run_return(parameters):
+def set_shared_dict(dict=None):
     ''' 
-    Parameters to be passed back to run_external_pyhton caller.
+    Save a dictionary to be shared by an separate application.
+    This is a companion file to run_external_python().
     
-    :param parameters:  dictionary of parameters to pass back to caller.
+    :param dict:  dictionary of parameters to save
     '''
-    with open(_results_file(), 'w') as f:
-        json.dump(parameters, f)
 
-def run_external_python(script, script_args='', python_args='', hold=gxapi.SYS_RUN_HOLD_ONERROR):
+    # if no ditionary, pop the existing one if it is there
+    if dict is None:
+        get_shared_dict()
+    else:
+        with open(_temp_dict_file_name(), 'w') as f:
+            json.dump(dict, f)
+
+
+def get_shared_dict():
+    ''' 
+    Get a dictionary shared by an external application.
+    The shared dictionary is cleared (popped) so a subsequent call will return an empty dictionary.
+    '''
+
+    try:
+        with open(_temp_dict_file_name(), 'r') as f:
+            dict = json.load(f)
+        os.remove(_temp_dict_file_name())
+        return dict
+
+    except (IOError, OSError):
+        return {}
+
+
+def run_external_python(script, script_args='', python_args='', dict=None, hold=gxapi.SYS_RUN_HOLD_NEVER):
     '''
     Run a python script as an external program, returning results as a dictionary.
     External program can call gxpy.utility.run_return(dict) to pass a dictionary back to caller.
     
     :param script:      path of the python script
+    :param dict:        dictionary to pass to child via get_run_dict()
     :param script_args: command line arguments as a string
     :param python_args: command line arguments as a string
     :param hold:        gxapi.SYS_RUN_HOLD_ option, default is gxapi.SYS_RUN_HOLD_ONERROR
@@ -434,6 +458,8 @@ def run_external_python(script, script_args='', python_args='', hold=gxapi.SYS_R
 
     command = "{} {} {}".format(python_args, script, script_args)
 
+    set_shared_dict(dict)
+
     try:
         err = gxapi.GXSYS.run(py, command, gxapi.SYS_RUN_TYPE_EXE+hold)
         if err != 0:
@@ -441,11 +467,4 @@ def run_external_python(script, script_args='', python_args='', hold=gxapi.SYS_R
     except:
         raise
 
-    # look for default script result dictionary
-    results = _results_file()
-    if os.path.isfile(results):
-        with open(results) as f:
-            data = json.load(f)
-        os.remove(results)
-        return data
-    return {}
+    return get_shared_dict()

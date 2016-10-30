@@ -166,6 +166,21 @@ class Test(unittest.TestCase):
         self.assertEqual(test("62N12345",'S5'),"62N12")
         self.assertEqual(test("62N12345",'a5'),"62N12")
 
+    def test_shared_dict(self):
+        self.start(gsys.func_name())
+
+        gxu.set_shared_dict()
+        d = gxu.get_shared_dict()
+        self.assertEqual(len(d), 0)
+
+        gxu.set_shared_dict({'a':0, 'b':[1,2,3]})
+        d = gxu.get_shared_dict()
+        self.assertEqual(d['a'], 0)
+        self.assertEqual(d['b'][2], 3)
+
+        d = gxu.get_shared_dict()
+        self.assertEqual(len(d), 0)
+
     def test_run_external_python(self):
         self.start(gsys.func_name())
 
@@ -173,16 +188,19 @@ class Test(unittest.TestCase):
         with open(testpy, 'w') as py:
             py.write("import sys\n")
             py.write("import geosoft.gxpy as gxpy\n")
+            py.write("import geosoft.gxpy.utility as gxu\n")
             py.write("gxc = gxpy.gx.GXpy()\n")
-            py.write("gxpy.utility.run_return({'a':'letter a', 'b':'letter b', 'c':[1,2,3], 'argv': sys.argv})")
+            py.write("d = gxu.get_shared_dict()\n")
+            py.write("gxpy.utility.set_shared_dict({'a':'letter a', 'b':'letter b', 'c':[1,2,3], 'argv': sys.argv, 'input':d})")
 
-        test_result = gxu.run_external_python(testpy, script_args='test1 test2')
+        test_result = gxu.run_external_python(testpy, script_args='test1 test2', dict={'howdy':'hey there'})
         self.assertEqual(test_result['a'], 'letter a')
         l = test_result['c']
         self.assertEqual(len(l), 3)
         self.assertEqual(l[1], 2)
         self.assertEqual(test_result['argv'][1], 'test1')
         self.assertEqual(test_result['argv'][2], 'test2')
+        self.assertEqual(test_result['input']['howdy'], 'hey there')
         os.remove(testpy)
 
         try:
