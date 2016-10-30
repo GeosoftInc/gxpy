@@ -45,6 +45,8 @@ class Test(unittest.TestCase):
         self.start(gsys.func_name())
         self.assertEqual(gxgdb.__version__, geosoft.__version__)
 
+
+
     def test_noprops_GDB(self):
         self.start(gsys.func_name())
 
@@ -368,25 +370,25 @@ class Test(unittest.TestCase):
     def test_new(self):
         self.start(gsys.func_name())
 
-        gdb = gxgdb.GXdb.new( os.path.join(self.folder, 'new.gdb'))
+        with gxgdb.GXdb.new( os.path.join(self.folder, 'new.gdb')) as gdb:
 
-        #read an image and put it in a new database
-        with open(os.path.join(self.folder, 'image.png'), 'rb') as im_handle:
-            im = Image.open(im_handle)
-            im.thumbnail( (20,20), Image.ANTIALIAS)
-            imageIn = np.asarray(im,dtype=np.float32)
-        gdb.newChannel('R',dtype=np.int)
-        gdb.newChannel('G',dtype=np.int)
-        gdb.newChannel('B', dtype=np.int)
-        gdb.newChannel('A', dtype=np.int)
-        for l in range(imageIn.shape[0]):
-            gdb.writeDataLine('L{}'.format(l),imageIn[l,:,:],channels=['R','G','B','A'])
+            #read an image and put it in a new database
+            with open(os.path.join(self.folder, 'image.png'), 'rb') as im_handle:
+                im = Image.open(im_handle)
+                im.thumbnail( (20,20), Image.ANTIALIAS)
+                imageIn = np.asarray(im,dtype=np.float32)
+            gdb.newChannel('R',dtype=np.int)
+            gdb.newChannel('G',dtype=np.int)
+            gdb.newChannel('B', dtype=np.int)
+            gdb.newChannel('A', dtype=np.int)
+            for l in range(imageIn.shape[0]):
+                gdb.writeDataLine('L{}'.format(l),imageIn[l,:,:],channels=['R','G','B','A'])
 
-        self.assertEqual(len(gdb.lines()),imageIn.shape[0])
-        self.assertEqual(len(gdb.channels()),4)
-        d,c,f = gdb.readLine('L5')
-        self.assertEqual(d.shape[0],imageIn.shape[1])
-        self.assertEqual(d.shape[1],imageIn.shape[2])
+            self.assertEqual(len(gdb.lines()),imageIn.shape[0])
+            self.assertEqual(len(gdb.channels()),4)
+            d,c,f = gdb.readLine('L5')
+            self.assertEqual(d.shape[0],imageIn.shape[1])
+            self.assertEqual(d.shape[1],imageIn.shape[2])
 
     def test_details(self):
         self.start(gsys.func_name())

@@ -159,6 +159,8 @@ class GXdb():
     _db = None
     _fileName = None
 
+    def __enter__(self):
+        return self
 
     def __repr__(self):
         return "{}({})".format(self.__class__,self.__dict__)
@@ -175,6 +177,9 @@ class GXdb():
             if  self._edb is not None:
                 if self._edb.is_locked():
                     self._edb.un_lock()
+
+    def __exit__(self, type, value, traceback):
+        self.__del__()
 
     @classmethod
     def open(cls, name=None):
