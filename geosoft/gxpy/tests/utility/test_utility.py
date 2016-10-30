@@ -171,10 +171,9 @@ class Test(unittest.TestCase):
 
         testpy = 'test_python.py'
         with open(testpy, 'w') as py:
-            py.write("import json\n")
-            py.write("result = {'a':'letter a', 'b':'letter b', 'c':[1,2,3]}\n")
-            py.write("with open('{}','w') as f:\n".format(gxu.results_file()))
-            py.write("   json.dump(result, f)\n")
+            py.write("import geosoft.gxpy as gxpy\n")
+            py.write("gxc = gxpy.gx.GXpy()\n")
+            py.write("gxpy.utility.run_return({'a':'letter a', 'b':'letter b', 'c':[1,2,3]})")
 
         test_result = gxu.run_external_python(testpy)
         self.assertEqual(test_result['a'], 'letter a')

@@ -403,35 +403,45 @@ def safeApiException(fn, args, EClass=Exception):
         exc_class, exc, tb = sys.exc_info()
         raise EClass(str(exc)).with_traceback(tb)
 
-def results_file():
-    ''' returns the name of the expected python results json file from run_external_python()'''
+def _results_file():
+    ''' name of the expected python results json file from run_external_python()'''
     return os.path.join(temp_path(), '__external_python_results__')
 
-def run_external_python(script, args='', hold=gxapi.SYS_RUN_HOLD_ONERROR):
+def run_return(parameters):
+    ''' 
+    Parameters to be passed back to run_external_pyhton caller.
+    
+    :param parameters:  dictionary of parameters to pass back to caller.
+    '''
+    with open(_results_file(), 'w') as f:
+        json.dump(parameters, f)
+
+def run_external_python(script, script_args='', python_args='', hold=gxapi.SYS_RUN_HOLD_ONERROR):
     '''
     Run a python script as an external program, returning results as a dictionary.
-    :param script:  path of the python script
-    :param args:    command line arguments, as a single string or an iterable
-    :param hold:    gxapi.SYS_RUN_HOLD_ option, default is gxapi.SYS_RUN_HOLD_ONERROR
-    :return:
+    External program can call gxpy.utility.run_return(dict) to pass a dictionary back to caller.
+    
+    :param script:      path of the python script
+    :param script_args: command line arguments as a string
+    :param python_args: command line arguments as a string
+    :param hold:        gxapi.SYS_RUN_HOLD_ option, default is gxapi.SYS_RUN_HOLD_ONERROR
+    :return:            dictionary registered gxpy.utility.run_return(dict)
     '''
 
     s = gxapi.str_ref()
-    py = gxapi.GXSYS.get_env('PYTHON_HOME', s)
+    gxapi.GXSYS.get_env('PYTHON_HOME', s)
     py = os.path.join(s.value, 'python.exe')
 
-    arguments = script
-    if type(args) is str:
-        arguments = arguments + ' ' + args
+    if len(python_args) > 0:
+        arguments = python_args + ' ' + script
     else:
-        for arg in args:
-            arguments = arguments + ' ' + str(arg)
+        arguments = script
 
     if gxapi.GXSYS.run(py, arguments, gxapi.SYS_RUN_TYPE_EXE+hold) == -1:
         raise UtilityException(_('Failed running:\n{} {}').format(py, arguments))
 
     # look for default script result dictionary
-    results = results_file()
+    results = _results_file()
     if os.path.isfile(results):
         with open(results) as f:
             data = json.load(f)
