@@ -5,7 +5,6 @@
 '''
 
 import sys, os
-from pathlib import Path
 import json
 from time import gmtime, strftime
 from jdcal import is_leap, gcal2jd, jd2gcal
@@ -455,11 +454,8 @@ def run_external_python(script, script_args='', python_args='', dict=None, hold=
     :return:            dictionary registered gxpy.utility.run_return(dict)
     '''
 
-    try:
-        script = Path(script).resolve()
-    except:
+    if not os.path.isfile(script):
         raise UtilityException('Cannot find script: {}'.format(script))
-
 
     s = gxapi.str_ref()
     gxapi.GXSYS.get_env('PYTHON_HOME', s)
