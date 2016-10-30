@@ -435,8 +435,9 @@ def run_external_python(script, script_args='', python_args='', hold=gxapi.SYS_R
     command = "{} {} {}".format(python_args, script, script_args)
 
     try:
-        if gxapi.GXSYS.run(py, command, gxapi.SYS_RUN_TYPE_EXE+hold) == -1:
-            raise UtilityException(_('Failed running:\n{} {}').format(py, command))
+        err = gxapi.GXSYS.run(py, command, gxapi.SYS_RUN_TYPE_EXE+hold)
+        if err != 0:
+            raise UtilityException(_('\n\nError({}) running: {} {}').format(err, py, command))
     except:
         raise
 

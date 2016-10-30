@@ -185,12 +185,13 @@ class Test(unittest.TestCase):
         self.assertEqual(test_result['argv'][2], 'test2')
         os.remove(testpy)
 
-        #TODO - Jacques, this should not hang on the gxapi.GXSYS.run at line 438 in utility.py
-        # try:
-        #    test_result = gxu.run_external_python(testpy, script_args='test1 test2')
-        #    self.assertTrue(False)
-        # except:
-        #    raise #just raising for now so I can see what is happenning
+        try:
+            test_result = gxu.run_external_python(testpy, script_args='test1 test2', hold=gxapi.SYS_RUN_HOLD_NEVER)
+            self.assertTrue(False)
+        except gxu.UtilityException:
+            pass
+        except:
+            raise
 
     def test_paths(self):
         self.start(gsys.func_name())
