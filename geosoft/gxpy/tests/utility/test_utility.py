@@ -184,7 +184,7 @@ class Test(unittest.TestCase):
     def test_run_external_python(self):
         self.start(gsys.func_name())
 
-        testpy = 'test_python.py'
+        testpy = os.path.join(os.getcwd(),'test_python.py')
         with open(testpy, 'w') as py:
             py.write("import sys\n")
             py.write("import geosoft.gxpy as gxpy\n")
@@ -204,7 +204,7 @@ class Test(unittest.TestCase):
         os.remove(testpy)
 
         try:
-            test_result = gxu.run_external_python(testpy, script_args='test1 test2', hold=gxapi.SYS_RUN_HOLD_NEVER)
+            gxu.run_external_python(testpy, script_args='test1 test2', hold=gxapi.SYS_RUN_HOLD_NEVER)
             self.assertTrue(False)
         except gxu.UtilityException:
             pass

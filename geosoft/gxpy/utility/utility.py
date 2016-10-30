@@ -5,6 +5,7 @@
 '''
 
 import sys, os
+from pathlib import Path
 import json
 from time import gmtime, strftime
 from jdcal import is_leap, gcal2jd, jd2gcal
@@ -443,8 +444,10 @@ def run_external_python(script, script_args='', python_args='', dict=None, hold=
     '''
     Run a python script as an external program, returning results as a dictionary.
     External program can call gxpy.utility.run_return(dict) to pass a dictionary back to caller.
-    
-    :param script:      path of the python script
+
+    NOTE: DO NOT call sys.exit() from an external program as this will kill Oasis montaj.
+
+    :param script:      full path of the python script
     :param dict:        dictionary to pass to child via get_run_dict()
     :param script_args: command line arguments as a string
     :param python_args: command line arguments as a string
@@ -452,11 +455,17 @@ def run_external_python(script, script_args='', python_args='', dict=None, hold=
     :return:            dictionary registered gxpy.utility.run_return(dict)
     '''
 
+    try:
+        script = Path(script).resolve()
+    except:
+        raise UtilityException('Cannot find script: {}'.format(script))
+
+
     s = gxapi.str_ref()
     gxapi.GXSYS.get_env('PYTHON_HOME', s)
     py = os.path.join(s.value, 'python.exe')
 
-    command = "{} {} {}".format(python_args, script, script_args)
+    command = "{} \"{}\" {}".format(python_args, script, script_args)
 
     set_shared_dict(dict)
 
