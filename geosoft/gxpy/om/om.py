@@ -24,6 +24,14 @@ def running_script():
 
     return not gxapi.GXSYS.interactive()
 
+def message(title, message):
+    '''
+    Display a message to the user
+    :param title:   message box title
+    :param message: message
+    '''
+    gxapi.GXSYS.display_message(title, message)
+
 def pause(title='Pause...', cancel=None):
     '''
     Display a pause dialog, wait for user to press continue or cancel
