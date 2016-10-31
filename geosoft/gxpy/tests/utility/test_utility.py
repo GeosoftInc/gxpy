@@ -191,9 +191,10 @@ class Test(unittest.TestCase):
             py.write("import geosoft.gxpy.utility as gxu\n")
             py.write("gxc = gxpy.gx.GXpy()\n")
             py.write("d = gxu.get_shared_dict()\n")
-            py.write("gxpy.utility.set_shared_dict({'a':'letter a', 'b':'letter b', 'c':[1,2,3], 'argv': sys.argv, 'input':d})")
+            py.write("gxpy.utility.set_shared_dict({'a':'letter a', 'b':'letter b', 'c':[1,2,3], 'argv': sys.argv, 'input':d})\n")
+            #py.write("input('RUN_EXTERNAL! Press return to continue...')\n")
 
-        test_result = gxu.run_external_python(testpy, script_args='test1 test2', dict={'howdy':'hey there'})
+        test_result = gxu.run_external_python(testpy, script_args='test1 test2', dict={'howdy':'hey there'}, console=False)
         self.assertEqual(test_result['a'], 'letter a')
         l = test_result['c']
         self.assertEqual(len(l), 3)
@@ -204,7 +205,7 @@ class Test(unittest.TestCase):
         os.remove(testpy)
 
         try:
-            gxu.run_external_python(testpy, script_args='test1 test2', hold=gxapi.SYS_RUN_HOLD_NEVER)
+            gxu.run_external_python(testpy, script_args='test1 test2')
             self.assertTrue(False)
         except gxu.UtilityException:
             pass

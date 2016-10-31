@@ -6,6 +6,7 @@
 
 import sys, os
 import json
+import subprocess
 from time import gmtime, strftime
 from jdcal import is_leap, gcal2jd, jd2gcal
 import numpy as np
@@ -439,7 +440,7 @@ def get_shared_dict():
         return {}
 
 
-def run_external_python(script, script_args='', python_args='', dict=None, hold=gxapi.SYS_RUN_HOLD_NEVER):
+def run_external_python(script, script_args='', python_args='', dict=None, console=True):
     '''
     Run a python script as an external program, returning results as a dictionary.
     External program can call gxpy.utility.run_return(dict) to pass a dictionary back to caller.
@@ -450,7 +451,7 @@ def run_external_python(script, script_args='', python_args='', dict=None, hold=
     :param dict:        dictionary to pass to child via get_run_dict()
     :param script_args: command line arguments as a string
     :param python_args: command line arguments as a string
-    :param hold:        gxapi.SYS_RUN_HOLD_ option, default is gxapi.SYS_RUN_HOLD_ONERROR
+    :param console:     True (default) will create a separate console for the process.
     :return:            dictionary registered gxpy.utility.run_return(dict)
     '''
 
@@ -461,14 +462,17 @@ def run_external_python(script, script_args='', python_args='', dict=None, hold=
     gxapi.GXSYS.get_env('PYTHON_HOME', s)
     py = os.path.join(s.value, 'python.exe')
 
-    command = "{} \"{}\" {}".format(python_args, script, script_args)
+    command = "\"{}\" {} \"{}\" {}".format(py, python_args, script, script_args)
 
     set_shared_dict(dict)
 
     try:
-        err = gxapi.GXSYS.run(py, command, gxapi.SYS_RUN_TYPE_EXE+hold)
+        if console:
+            err = subprocess.call(command, creationflags=subprocess.CREATE_NEW_CONSOLE)
+        else:
+            err = subprocess.call(command)
         if err != 0:
-            raise UtilityException(_('\n\nError({}) running: {} {}').format(err, py, command))
+            raise UtilityException(_('\n\nError({}) running: {}').format(err, command))
     except:
         raise
 
