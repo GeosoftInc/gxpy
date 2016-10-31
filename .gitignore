@@ -137,3 +137,12 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+
+# PyCharm
+# =========================
+.idea
+
+# GX Developer
+# =========================
+*.gr
+*.grh
