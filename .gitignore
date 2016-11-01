@@ -143,5 +143,5 @@ $RECYCLE.BIN/
 
 # GX Developer
 # =========================
-#*.gr
-#*.grh
+*.gr
+*.grh
