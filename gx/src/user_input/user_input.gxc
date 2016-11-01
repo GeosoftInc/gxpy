@@ -14,10 +14,13 @@ Parameters:
                           1 for real
 						  2 for int
 						  3 for list
-                          4 file
-                          5 colour
-						  6 pause
-                          7 pause, with option to cancel
+                          4 colour
+                          5 file
+                          6 newfile
+                          7 oldfile
+                          8 multi-file
+						  9 pause
+                         10 pause, with option to cancel
 	USER_INPUT.LIST		- comma-separated list
 "
 
@@ -52,15 +55,27 @@ int iType;
 			ConvertFromCSVString_LST(hLST,sStr);
             break;
         case 4:
-            hDGW = Create_DGW("FILE");
-            break;
-        case 5:
             hDGW = Create_DGW("COLOUR");
             break;
+        case 5:
+            hDGW = Create_DGW("FILE");
+            SetInfoSYS_DGW(hDGW, ((DGW_OBJ) 0), DGW_EXT, "USER_INPUT", "FILEMASK");
+            break;
         case 6:
-            hDGW = Create_DGW("PAUSE");
+            hDGW = Create_DGW("NEWFILE");
+            SetInfoSYS_DGW(hDGW, ((DGW_OBJ) 0), DGW_EXT, "USER_INPUT", "FILEMASK");
             break;
         case 7:
+            hDGW = Create_DGW("OLDFILE");
+            SetInfoSYS_DGW(hDGW, ((DGW_OBJ) 0), DGW_EXT, "USER_INPUT", "FILEMASK");
+            break;
+        case 8:
+            hDGW = Create_DGW("MULTIFILE");
+            break;
+        case 9:
+            hDGW = Create_DGW("PAUSE");
+            break;
+        case 10:
             hDGW = Create_DGW("PAUSECANCEL");
             break;
         default:
@@ -70,13 +85,9 @@ int iType;
 	
     GetString_SYS("USER_INPUT", "TITLE", sStr);
     SetTitle_DGW(hDGW, sStr);
-    if (iType < 5) {
+    if (iType < 9) {
         SetInfoSYS_DGW(hDGW, ((DGW_OBJ) 0), DGW_LABEL, "USER_INPUT", "PROMPT");
         SetInfoSYS_DGW(hDGW, ((DGW_OBJ) 0), DGW_TEXT, "USER_INPUT", "RESPONSE");
-
-        if (iType == 4) {
-            SetInfoSYS_DGW(hDGW, ((DGW_OBJ) 0), DGW_FILEPATH, "USER_INPUT", "FILEMASK");
-        }
     }
 	if (iRunDialogue_DGW(hDGW) != 0) {
 		Destroy_DGW(hDGW);

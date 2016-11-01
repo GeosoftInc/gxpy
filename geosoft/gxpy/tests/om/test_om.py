@@ -10,9 +10,9 @@ import geosoft.gxpy.om as gxom
 
 def test_get_user_input():
 
-    gxom.pause('Testing pause')
+    gxom.pause('Testing pause, no info')
     gxom.pause('Testing pause\nSome descriptive mumbo-gumbo.........')
-    gxom.pause('Testing pause with cancel',cancel='Cancel')
+    gxom.pause('Testing pause with cancel',cancel=True)
 
     ret = gxom.get_user_input('Testing string input','String is a bit long',default='test')
     print(ret)
@@ -20,19 +20,28 @@ def test_get_user_input():
     ret = gxom.get_user_input('Testing float', 'Float', kind='float', default=1.5)
     print(ret)
 
-    ret = gxom.get_user_input('Testing int', 'Int', kind='int', default=7)
+    ret = gxom.get_user_input('Testing int\nThis needs to be an integer value as nothing else is allowed.\nI hope you understand.\nSorry about that.\nI am Canadian after all.', 'Int', kind='int', default=7)
     print(ret)
 
     ret = gxom.get_user_input('Testing a list', 'List', kind='list', default='maki', items='maki, rider, explorer')
     print(ret)
 
-    ret = gxom.get_user_input('Testing a file', 'Enter maki2.dat', kind='file', default='maki.dat')
+    ret = gxom.get_user_input('Testing a file', 'Any file', kind='file', default='anyfile.dat')
     print(ret)
 
-    ret = gxom.get_user_input('Testing a multi-file', 'Multiple files:', kind='file', default='maki.dat', filemask="**")
+    ret = gxom.get_user_input('Testing a file', 'New file', kind='newfile', default='new.dat')
+    print(ret)
+
+    ret = gxom.get_user_input('Testing a file', 'Old file', kind='oldfile')
+    print(ret)
+
+    ret = gxom.get_user_input('Testing a file *.grd', 'Some file', kind='file', default='maki.dat', filemask="*.grd")
+    print(ret)
+
+    ret = gxom.get_user_input('Testing a multi-file/nSome extra info here, and long-winded too.', 'Multiple files:', kind='multifile', default='maki.dat')
     print (ret)
 
-    ret = gxom.get_user_input('Testing a multi-file', 'Multiple grids:', kind='file', default='maki.dat', filemask="**,*.grd")
+    ret = gxom.get_user_input('Testing a multi-file *.grd;*.hgd', 'Multiple grids:', kind='mulstifile', default='maki.dat', filemask="*.grd;*.hgd")
     print (ret)
 
     pass
@@ -50,6 +59,7 @@ def rungx():
 
     try:
         test_get_user_input()
+        input("User inputs test finished...")
         test_state()
         test_menus()
     except:

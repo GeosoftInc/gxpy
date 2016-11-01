@@ -10,32 +10,47 @@ EBUT,&Continue~,0
 EBUT,&Cancel,-1,CANCEL
 
 RESOURCE,FORM,STRING,"Input required...",-1
-EDIT,,,64,"abc"
+EDIT,,,64,"                                                                                                      "
 EBUT,&OK,0
 EBUT,&Cancel,-1,CANCEL
 
 RESOURCE,FORM,REAL,"Input required...",-1
-EDIT,,,24,"",R,REAL
+EDIT,,,24,"                                                                                                      ",R,REAL
 EBUT,&OK,0
 EBUT,&Cancel,-1,CANCEL
 
 RESOURCE,FORM,INT,"Input required...",-1
-EDIT,,,24,"",R,INT
+EDIT,,,24,"                                                                                                      ",R,INT
 EBUT,&OK,0
 EBUT,&Cancel,-1,CANCEL
 
 RESOURCE,FORM,LIST,"Input required...",-1
-LEDIT,,,32,"",r,,,simplelist
+LEDIT,,,32,"                                                                                                      ",r,,,simplelist
 EBUT,&OK,0
 EBUT,&Cancel,-1,CANCEL
 
 RESOURCE,FORM,FILE,"Input required...",-1
-FEDIT,,,64,"",r
+FEDIT,,,64,"                                                                                                      ",R,,,,"*.*
+EBUT,&OK,0
+EBUT,&Cancel,-1,CANCEL
+
+RESOURCE,FORM,NEWFILE,"Input required...",-1
+FEDIT,,,64,"                                                                                                      ",R,NEW,,,"*.*
+EBUT,&OK,0
+EBUT,&Cancel,-1,CANCEL
+
+RESOURCE,FORM,OLDFILE,"Input required...",-1
+FEDIT,,,64,"                                                                                                      ",R,OLD,,,"*.*
+EBUT,&OK,0
+EBUT,&Cancel,-1,CANCEL
+
+RESOURCE,FORM,MULTIFILE,"Input required...",-1
+FEDIT,,,64,"                                                                                                      ",R,OLD,,,**;*.grd
 EBUT,&OK,0
 EBUT,&Cancel,-1,CANCEL
 
 RESOURCE,FORM,COLOUR,"Input required...",-1
-CEDIT,,,20,""
+CEDIT,,,20,"                                                                                                      "
 EBUT,&OK,0
 EBUT,&Cancel,-1,CANCEL
 
