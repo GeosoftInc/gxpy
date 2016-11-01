@@ -112,7 +112,7 @@ def get_user_input(title="Input required...", prompt='?', kind='string', default
         gxapi.GXSYS.set_string("USER_INPUT", "FILEMASK", filemask)
 
     else:
-        raise OMException(_("Do not support kind={}".format(kind)))
+        raise OMException(_("Do now support kind={}".format(kind)))
 
     gxapi.GXSYS.set_string("USER_INPUT", "TITLE", str(title))
     gxapi.GXSYS.set_string("USER_INPUT", "PROMPT", str(prompt))
