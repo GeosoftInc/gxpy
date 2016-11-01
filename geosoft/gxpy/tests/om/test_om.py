@@ -38,10 +38,13 @@ def test_get_user_input():
     ret = gxom.get_user_input('Testing a file *.grd', 'Some file', kind='file', default='maki.dat', filemask="*.grd")
     print(ret)
 
-    ret = gxom.get_user_input('Testing a multi-file/nSome extra info here, and long-winded too.', 'Multiple files:', kind='multifile', default='maki.dat')
+    ret = gxom.get_user_input('Testing a multi-file string default', 'Multiple files:', kind='multifile', default='maki.dat|mak2.dat|yamma.grd')
     print (ret)
 
-    ret = gxom.get_user_input('Testing a multi-file *.grd;*.hgd', 'Multiple grids:', kind='mulstifile', default='maki.dat', filemask="*.grd;*.hgd")
+    ret = gxom.get_user_input('Testing a multi-file list default', 'Multiple files:', kind='multifile', default=['maki.dat', 'list.', '4.5'])
+    print (ret)
+
+    ret = gxom.get_user_input('Testing a multi-file *.grd;*.hgd', 'Multiple grids:', kind='multifile', filemask="*.grd;*.hgd")
     print (ret)
 
     pass
@@ -57,14 +60,9 @@ def test_menus():
 
 def rungx():
 
-    try:
-        test_get_user_input()
-        input("User inputs test finished...")
-        test_state()
-        test_menus()
-    except:
-        input("There was a problem...")
-        exit(1)
+    test_get_user_input()
+    input("User inputs test finished...")
+    test_state()
+    test_menus()
     input("Success...")
-    exit(0)
 

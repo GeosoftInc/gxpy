@@ -93,5 +93,8 @@ int iType;
 		Destroy_DGW(hDGW);
 		Cancel_SYS();
 	}
-    if (iType < 4)	GetInfoSYS_DGW(hDGW, ((DGW_OBJ) 0), DGW_TEXT, "USER_INPUT", "RESPONSE");
+    if (iType <= 8) {
+        if (iType <=4) GetInfoSYS_DGW(hDGW, ((DGW_OBJ) 0), DGW_TEXT, "USER_INPUT", "RESPONSE");
+        else GetInfoSYS_DGW(hDGW, ((DGW_OBJ) 0), DGW_FILEPATH, "USER_INPUT", "RESPONSE");
+    }
 }

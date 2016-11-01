@@ -61,11 +61,23 @@ def get_user_input(title="Input required...", prompt='?', kind='string', default
     :param prompt:      prompt string to
     :param kind:        kind of response required: 'string', 'int', 'float', 'file', 'colour' or 'list'
     :param items:       string of comma-separated items for a list
-    :param default:     default value
+    :param default:     default value.  For multifile can be a string ('|' delimiter) or iterable.
     :param filemask:    File type mask "*.dat", "*.dat;*.grd", "**,*.grd" for multiple files
     :return:        user response
     :raise:         :py:ex:GXCancel if the user cancels the dialog
     '''
+
+    gxapi.GXSYS.set_string("USER_INPUT", "TITLE", str(title))
+    gxapi.GXSYS.set_string("USER_INPUT", "PROMPT", str(prompt))
+    gxapi.GXSYS.set_string("USER_INPUT", "FILEMASK", filemask)
+
+    if isinstance(default, str):
+        gxapi.GXSYS.set_string("USER_INPUT", "RESPONSE", default)
+    else:
+        try:
+            gxapi.GXSYS.set_string("USER_INPUT", "RESPONSE", '|'.join(default))
+        except TypeError:
+            gxapi.GXSYS.set_string("USER_INPUT", "RESPONSE", str(default))
 
     if (kind == 'string'):
         gxapi.GXSYS.set_string("USER_INPUT", "TYPE", "0")
@@ -97,26 +109,18 @@ def get_user_input(title="Input required...", prompt='?', kind='string', default
 
     elif (kind == 'file'):
         gxapi.GXSYS.set_string("USER_INPUT", "TYPE", "5")
-        gxapi.GXSYS.set_string("USER_INPUT", "FILEMASK", filemask)
 
     elif (kind == 'newfile'):
         gxapi.GXSYS.set_string("USER_INPUT", "TYPE", "6")
-        gxapi.GXSYS.set_string("USER_INPUT", "FILEMASK", filemask)
 
     elif (kind == 'oldfile'):
         gxapi.GXSYS.set_string("USER_INPUT", "TYPE", "7")
-        gxapi.GXSYS.set_string("USER_INPUT", "FILEMASK", filemask)
 
     elif (kind == 'multifile'):
         gxapi.GXSYS.set_string("USER_INPUT", "TYPE", "8")
-        gxapi.GXSYS.set_string("USER_INPUT", "FILEMASK", filemask)
 
     else:
         raise OMException(_("Do now support kind={}".format(kind)))
-
-    gxapi.GXSYS.set_string("USER_INPUT", "TITLE", str(title))
-    gxapi.GXSYS.set_string("USER_INPUT", "PROMPT", str(prompt))
-    gxapi.GXSYS.set_string("USER_INPUT", "RESPONSE", str(default))
 
     ret = gxapi.GXSYS.run_gx("user_input.gx")
 
@@ -128,6 +132,8 @@ def get_user_input(title="Input required...", prompt='?', kind='string', default
             return int(strr.value)
         if kind == 'float':
             return float(strr.value)
+        if kind == 'multifile':
+            return strr.value.split('|')
         return strr.value
 
     if ret == -1:

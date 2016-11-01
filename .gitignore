@@ -68,6 +68,9 @@ target/
 # IPython Notebook
 .ipynb_checkpoints
 
+# PyCharm
+.idea/
+
 # pyenv
 .python-version
 
@@ -138,11 +141,7 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-# PyCharm
-# =========================
-.idea
-
 # GX Developer
 # =========================
-*.gr
-*.grh
+#*.gr
+#*.grh
