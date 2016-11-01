@@ -7,13 +7,17 @@ Parameters:
 
 	USER_INPUT.TITLE 	- Dialog title
 	USER_INPUT.PROMPT 	- Prompt to present to the user
-	USER_INPUT.RESPONSE - Response returned
+	USER_INPUT.RESPONSE - default response on start-up, response returned
+	USER_INPUT.FILEMASK - File path masks, \"*.dat\", or \"*.dat;*.grd\"
+	                      \"**\" for multiple file, for example \"**;*.grd\"
     USER_INPUT.TYPE     - 0 for string
                           1 for real
 						  2 for int
 						  3 for list
-                          4 pause
-                          5 pause, with option to cancel
+                          4 file
+                          5 colour
+						  6 pause
+                          7 pause, with option to cancel
 	USER_INPUT.LIST		- comma-separated list
 "
 
@@ -48,9 +52,15 @@ int iType;
 			ConvertFromCSVString_LST(hLST,sStr);
             break;
         case 4:
-            hDGW = Create_DGW("PAUSE");
+            hDGW = Create_DGW("FILE");
             break;
         case 5:
+            hDGW = Create_DGW("COLOUR");
+            break;
+        case 6:
+            hDGW = Create_DGW("PAUSE");
+            break;
+        case 7:
             hDGW = Create_DGW("PAUSECANCEL");
             break;
         default:
@@ -60,9 +70,13 @@ int iType;
 	
     GetString_SYS("USER_INPUT", "TITLE", sStr);
     SetTitle_DGW(hDGW, sStr);
-    if (iType < 4) {
+    if (iType < 5) {
         SetInfoSYS_DGW(hDGW, ((DGW_OBJ) 0), DGW_LABEL, "USER_INPUT", "PROMPT");
         SetInfoSYS_DGW(hDGW, ((DGW_OBJ) 0), DGW_TEXT, "USER_INPUT", "RESPONSE");
+
+        if (iType == 4) {
+            SetInfoSYS_DGW(hDGW, ((DGW_OBJ) 0), DGW_FILEPATH, "USER_INPUT", "FILEMASK");
+        }
     }
 	if (iRunDialogue_DGW(hDGW) != 0) {
 		Destroy_DGW(hDGW);

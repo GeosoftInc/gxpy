@@ -42,26 +42,27 @@ def pause(title='Pause...', cancel=None):
     
     gxapi.GXSYS.set_string("USER_INPUT", "TITLE", str(title))
     if cancel is None:
-        gxapi.GXSYS.set_string("USER_INPUT", "TYPE", "4")
+        gxapi.GXSYS.set_string("USER_INPUT", "TYPE", "6")
     else:
-        gxapi.GXSYS.set_string("USER_INPUT", "TYPE", "5")
+        gxapi.GXSYS.set_string("USER_INPUT", "TYPE", "7")
         gxapi.GXSYS.set_string("USER_INPUT", "PROMPT", str(cancel))
 
     if gxapi.GXSYS.run_gx("user_input.gx") == -1:
         gxapi.GXSYS.cancel()
 
-def get_user_input(title="Input required...", prompt='?', kind='string', default='',items=''):
+def get_user_input(title="Input required...", prompt='?', kind='string', default='', items='', filemask=''):
     '''
     Display a dialog prompt on the Geosoft Desktop and wait for user input.
     This method depends on "user_input.gx" and can only be used from an extension running
     inside a Geosoft Desktop application.
 
-    :param title:   dialog box title.  A description can be added as a second-line using a line-break.
-                    example: "Your title/nDescriptive help"
-    :param prompt:  prompt string to
-    :param kind:    kind of response required: 'string', 'int', 'float' or 'list'
-    :param items:   string of comma-separated items for a list
-    :param default: default value
+    :param title:       dialog box title.  A description can be added as a second-line using a line-break.
+                        example: "Your title/nDescriptive help"
+    :param prompt:      prompt string to
+    :param kind:        kind of response required: 'string', 'int', 'float', 'file', 'colour' or 'list'
+    :param items:       string of comma-separated items for a list
+    :param default:     default value
+    :param filemask:    File type mask "*.dat", "*.dat;*.grd", "**,*.grd" for multiple files
     :return:        user response
     :raise:         :py:ex:GXCancel if the user cancels the dialog
     '''
@@ -88,12 +89,20 @@ def get_user_input(title="Input required...", prompt='?', kind='string', default
 
         gxapi.GXSYS.set_string("USER_INPUT", "LIST", ",".join(items))
 
+    elif (kind == 'file'):
+        gxapi.GXSYS.set_string("USER_INPUT", "TYPE", "4")
+        gxapi.GXSYS.set_string("USER_INPUT", "FILEMASK", filemask)
+
+    elif (kind == 'colour' or kind == 'color'):
+        gxapi.GXSYS.set_string("USER_INPUT", "TYPE", "5")
+
     else:
         gxapi.GXSYS.set_string("USER_INPUT", "TYPE", "0")
 
     gxapi.GXSYS.set_string("USER_INPUT", "TITLE", str(title))
     gxapi.GXSYS.set_string("USER_INPUT", "PROMPT", str(prompt))
     gxapi.GXSYS.set_string("USER_INPUT", "RESPONSE", str(default))
+
     ret = gxapi.GXSYS.run_gx("user_input.gx")
 
     if ret == 0:

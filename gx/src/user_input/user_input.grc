@@ -10,7 +10,7 @@ EBUT,&Continue~,0
 EBUT,&Cancel,-1,CANCEL
 
 RESOURCE,FORM,STRING,"Input required...",-1
-EDIT,,,64,""
+EDIT,,,64,"abc"
 EBUT,&OK,0
 EBUT,&Cancel,-1,CANCEL
 
@@ -26,6 +26,16 @@ EBUT,&Cancel,-1,CANCEL
 
 RESOURCE,FORM,LIST,"Input required...",-1
 LEDIT,,,32,"",r,,,simplelist
+EBUT,&OK,0
+EBUT,&Cancel,-1,CANCEL
+
+RESOURCE,FORM,FILE,"Input required...",-1
+FEDIT,,,64,"",r
+EBUT,&OK,0
+EBUT,&Cancel,-1,CANCEL
+
+RESOURCE,FORM,COLOUR,"Input required...",-1
+CEDIT,,,20,""
 EBUT,&OK,0
 EBUT,&Cancel,-1,CANCEL
 

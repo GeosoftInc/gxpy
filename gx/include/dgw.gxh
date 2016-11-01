@@ -1,0 +1,300 @@
+//===========================================================================================================
+//
+// Class	
+//
+//-----------------------------------------------------------------------------------------------------------
+// Description
+//
+// Provides access to dialog boxes for user I/O. You can
+// use this class to store to, or retrieve information from
+// the current workspace parameter block via dialog boxes
+//
+//-----------------------------------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------------------------------
+// Notes
+//
+// Setting Fonts in GX dialogs.
+// 
+// By default, "new look" GX dialogs uses the "Tahoma" font. This font can be
+// overridden by updating the application settings. This can be done programmatically
+// using the GlobalSet_SYS function using the following parameters:
+// 
+// MONTAJ.GX_FONT="Font_name"
+// 
+// This sets the default font to "Font_name". It applies to text in all
+// components of the dialog.
+// 
+// Additional customization of individual components can be accomplished
+// using the following parameters:
+// 
+// MONTAJ.GX_CAPTION_FONT="Caption_Font": Font for the field captions (labels)
+// MONTAJ.GX_BUTTON_FONT="Button_Font"  : Font for buttons, including the "Browse"
+// button
+// MONTAJ.GX_TITLE_FONT="Title_Font"    : Font for special titles (see SetTitle_DGW).
+// 
+// The font used for the text in edit windows remains the default, or the
+// value specified using MONTAJ.GX_FONT.
+// 
+// Note that the "OK" button, and the Title, use "Bold" versions of the
+// specified font. If the bolded version does not exist as a normal font,
+// then the operating system may provide its own alternative which may not
+// appear the same as you expect.
+// 
+// Before version 6.2. there used to be a parameter, MONTAJ.GX_CHARSET, that
+// affected characters above ASCII 127. 6.2. introduced Unicode in the core
+// montaj engine that eliminated the need for such a setting. All strings
+// on the GX API level are encoded in UTF8 during runtime which makes it possible
+// to represent all possible characters without using character sets.
+//
+//-----------------------------------------------------------------------------------------------------------
+
+
+
+#ifndef DGW_GXH_DEFINED
+#define DGW_GXH_DEFINED
+
+//===========================================================================================================
+//
+// Define	DGW_OBJECT
+//
+// Dialog object defines
+// INFO TYPE   EDIT   FEDIT  LEDIT  CEDIT  EBUT
+// =========   =====  =====  =====  =====  =====
+// LABEL       RW     RW     RW     RW     RW          R - can use GetInfo_DGW
+// TEXT        RW     RW     RW     RW     .           W - can use SetInfo_DGW
+// PATH        .      RW     .      .      .
+// FILEPATH    .      RW     .      .      .
+// LISTVAL     .      .      R      .      .
+// LISTALIAS   .      .      RW     .      .
+//
+// DGW_LABEL       The text label tied to each dialogue component.
+// DGW_TEXT        The edit field text.
+// DGW_PATH        The file edit path.
+// DGW_FILEPATH    The complete file name, path included.
+// DGW_LISTVAL     The alias value associated with the list entry.
+// DGW_LISTALIAS   The text value associated with the list entry.
+// DGW_EXT         The extension associated with a filename entry.
+// DGW_HIDE        Hide the button or entry and its label, if string is not "0"
+//
+//===========================================================================================================
+
+#define DGW_LABEL        0
+#define DGW_TEXT         1
+#define DGW_PATH         2
+#define DGW_FILEPATH     3
+#define DGW_LISTVAL      4
+#define DGW_LISTALIAS    5
+#define DGW_EXT          7
+#define DGW_HIDE         8
+
+
+//-----------------------------------------------------------------------------------------------------------
+// Create_DGW   This method creates a dialogue window from a specified
+//              resource. The Resource is loaded into memory but not displayed.
+//
+// Returns      Handle to the DGW object.
+//
+// Available    5.0.0
+//
+
+[_public_app] DGW
+Create_DGW (
+            string   // Name of the Window Resource to use
+            );
+
+
+//-----------------------------------------------------------------------------------------------------------
+// Destroy_DGW   Destroys a Dialogue Window.
+//
+// Returns       Nothing
+//
+// Available     5.0.0
+//
+
+[_public_app] void
+Destroy_DGW (
+             DGW   // Dialogue to Destroy
+             );
+
+
+//-----------------------------------------------------------------------------------------------------------
+// GetInfoMETA_DGW   Copies the dialogue information to a META attribute.
+//
+// Returns           Nothing
+//
+// Available         5.0.0
+//
+
+[_public_app] void
+GetInfoMETA_DGW (
+                 DGW,         // Dialogue
+                 DGW_OBJ,     // Dialogue Object
+                 int,         // <define>DGW_OBJECT</define>
+                 META,        // META
+                 META_TOKEN,  // Object
+                 META_TOKEN   // Attribute
+                 );
+
+
+//-----------------------------------------------------------------------------------------------------------
+// GetInfoSYS_DGW   This method uses the information in a dialogue box to
+//                  set a SYS variable.
+//
+// Returns          Nothing
+//
+// Available        5.0.0
+//
+
+[_public_app] void
+GetInfoSYS_DGW (
+                DGW,      // Dialogue
+                DGW_OBJ,  // Dialogue Object
+                int,      // <define>DGW_OBJECT</define>
+                string,   // Group name of the Variable
+                string    // Variable name
+                );
+
+
+//-----------------------------------------------------------------------------------------------------------
+// GetList_DGW   This method retrieves the list (LST) object associated
+//               with a dialogue object.
+//
+// Returns       The List Object
+//
+// Available     5.0.0
+//
+
+[_public_app] LST
+GetList_DGW (
+             DGW,      // Dialogue
+             DGW_OBJ   // Dialogue Object
+             );
+
+
+//-----------------------------------------------------------------------------------------------------------
+// GtInfo_DGW   This method fills the specified string with the text from
+//              the text object specified.
+//
+// Returns      Nothing
+//
+// Available    5.0.0
+//
+
+[_public_app] void
+GtInfo_DGW (
+            DGW,         // Dialogue
+            DGW_OBJ,     // Handle to the TEXT Object
+            int,         // <define>DGW_OBJECT</define>
+            var string,  // Where to place the String
+            int          // Size of the String
+            );
+
+#define GetInfo_DGW(A, B, C, D) GtInfo_DGW(A, B, C, D, sizeof(D))
+
+
+//-----------------------------------------------------------------------------------------------------------
+// iRunDialogue_DGW   This method runs the dialogue window.
+//
+// Returns            The Exit Code of the dialogue window.
+//
+// Available          5.0.0
+//
+
+[_public_app] int
+iRunDialogue_DGW (
+                  DGW   // Dialogue Window
+                  );
+
+
+//-----------------------------------------------------------------------------------------------------------
+// SetInfo_DGW   This method sets the string of a text object. If the string
+//               is too long it will be truncated.
+//
+// Returns       Nothing
+//
+// Available     5.0.0
+//
+
+[_public_app] void
+SetInfo_DGW (
+             DGW,      // Dialogue
+             DGW_OBJ,  // Handle to the TEXT Object
+             int,      // <define>DGW_OBJECT</define>
+             string    // String to set the Text To
+             );
+
+
+//-----------------------------------------------------------------------------------------------------------
+// SetInfoMETA_DGW   This sets a text object to the text found in a META attribute.
+//
+// Returns           Nothing
+//
+// Available         5.0.0
+//
+
+[_public_app] void
+SetInfoMETA_DGW (
+                 DGW,         // Dialogue
+                 DGW_OBJ,     // Dialogue Object
+                 int,         // <define>DGW_OBJECT</define>
+                 META,        // META
+                 META_TOKEN,  // Object
+                 META_TOKEN   // Attribute
+                 );
+
+
+//-----------------------------------------------------------------------------------------------------------
+// SetInfoSYS_DGW   This sets a text object to the text found in a system
+//                  parameter variable. If the variable has not been set,
+//                  the text is not set.
+//
+// Returns          Nothing
+//
+// Available        5.0.0
+//
+
+[_public_app] void
+SetInfoSYS_DGW (
+                DGW,      // Dialogue
+                DGW_OBJ,  // Dialogue Object
+                int,      // <define>DGW_OBJECT</define>
+                string,   // Group name of the Variable
+                string    // Variable name
+                );
+
+
+//-----------------------------------------------------------------------------------------------------------
+// SetTitle_DGW   Changes the title of the dialog.
+//
+// Returns        Nothing
+//
+// Notes          A "Special", additional title can be added to a dialog by using
+//                the following syntax:
+//                
+//                SetTitle_DGW(Diag, "Window Title\nAdditional Title");
+//                
+//                In the title argument, a line break character '\n' is used to
+//                separate the parts.
+//                
+//                The window title free_appears as the title in the upper bar of the dialog.
+//                The additional title free_appears below this, in the main body of the
+//                dialog, and is separated from the rest of the fields by a horizontal
+//                line. It is printed in the bold version of the default font (or of the
+//                special font specified using the MONTAJ.GX_TITLE_FONT parameter noted
+//                above in "Setting Fonts in GX dialogs."
+//
+// Available      5.0.0
+//
+
+[_public_app] void
+SetTitle_DGW (
+              DGW,     // Dialogue
+              string   // Title to set
+              );
+
+
+
+
+
+#endif
+
