@@ -85,7 +85,7 @@ int iType;
 	
     GetString_SYS("USER_INPUT", "TITLE", sStr);
     SetTitle_DGW(hDGW, sStr);
-    if (iType < 9) {
+    if (iType <= 8) {
         SetInfoSYS_DGW(hDGW, ((DGW_OBJ) 0), DGW_LABEL, "USER_INPUT", "PROMPT");
         SetInfoSYS_DGW(hDGW, ((DGW_OBJ) 0), DGW_TEXT, "USER_INPUT", "RESPONSE");
     }
@@ -93,5 +93,8 @@ int iType;
 		Destroy_DGW(hDGW);
 		Cancel_SYS();
 	}
-    if (iType < 4)	GetInfoSYS_DGW(hDGW, ((DGW_OBJ) 0), DGW_TEXT, "USER_INPUT", "RESPONSE");
+    if (iType <= 4)
+        GetInfoSYS_DGW(hDGW, ((DGW_OBJ) 0), DGW_TEXT, "USER_INPUT", "RESPONSE");
+    else if (iType <= 8)
+        GetInfoSYS_DGW(hDGW, ((DGW_OBJ) 0), DGW_FILEPATH, "USER_INPUT", "RESPONSE");
 }

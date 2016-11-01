@@ -31,8 +31,9 @@ def message(title, message):
     '''
     gxapi.GXSYS.display_message(title, message)
 
-def _user_input_gx():
+def _user_input_gx(kind):
     ''' resolve and run the user_input GX'''
+    gxapi.GXSYS.set_string("USER_INPUT", "TYPE", str(kind))
     dir = os.path.split(__file__)[0]
     user_input = os.path.join(os.path.join(dir,'user_input'), 'user_input.gx')
     ret = gxapi.GXSYS.run_gx(user_input)
@@ -50,10 +51,10 @@ def pause(title='Pause...', cancel=False):
     
     gxapi.GXSYS.set_string("USER_INPUT", "TITLE", str(title))
     if not cancel:
-        gxapi.GXSYS.set_string("USER_INPUT", "TYPE", "9")
+        _user_input_gx(9)
     else:
-        gxapi.GXSYS.set_string("USER_INPUT", "TYPE", "10")
-    _user_input_gx()
+        _user_input_gx(10)
+
 
 def get_user_input(title="Input required...", prompt='?', kind='string', default='', items='', filemask='*.*'):
     '''
@@ -98,49 +99,34 @@ def get_user_input(title="Input required...", prompt='?', kind='string', default
         except TypeError:  # this happens if ints or reals are passed
             gxapi.GXSYS.set_string("USER_INPUT", "RESPONSE", str(default))
 
-    # choose the dialog
-    if (kind == 'string'):
-        gxapi.GXSYS.set_string("USER_INPUT", "TYPE", "0")
-
-    elif (kind == 'float'):
-        gxapi.GXSYS.set_string("USER_INPUT", "TYPE", "1")
-
-    elif (kind == 'int'):
-        gxapi.GXSYS.set_string("USER_INPUT", "TYPE", "2")
-
-    elif (kind == 'list'):
-        gxapi.GXSYS.set_string("USER_INPUT", "TYPE", "3")
-
-    elif (kind == 'colour' or kind == 'color'):
-        gxapi.GXSYS.set_string("USER_INPUT", "TYPE", "4")
-
-    elif (kind == 'file'):
-        gxapi.GXSYS.set_string("USER_INPUT", "TYPE", "5")
-
-    elif (kind == 'newfile'):
-        gxapi.GXSYS.set_string("USER_INPUT", "TYPE", "6")
-
-    elif (kind == 'oldfile'):
-        gxapi.GXSYS.set_string("USER_INPUT", "TYPE", "7")
-
-    elif (kind == 'multifile'):
-        gxapi.GXSYS.set_string("USER_INPUT", "TYPE", "8")
-
-    else:
-        raise OMException(_("Do now support kind={}".format(kind)))
+    if kind == 'color':
+        kind = 'colour'
+    kind_list = {'string':  0,
+                 'float':   1,
+                 'int':     2,
+                 'list':    3,
+                 'colour':  4,
+                 'file':    5,
+                 'newfile': 6,
+                 'oldfile': 7,
+                 'multifile':8}
+    try:
+        kind = kind_list[kind]
+    except:
+        raise OMException(_("Do not support kind={}".format(kind)))
 
     # show the dialog
-    ret = _user_input_gx()
+    ret = _user_input_gx(kind)
 
     if ret == 0:
 
         strr = gxapi.str_ref()
         gxapi.GXSYS.gt_string("USER_INPUT", "RESPONSE", strr)
-        if kind == 'int':
+        if kind == kind_list['int']:
             return int(strr.value)
-        if kind == 'float':
+        if kind == kind_list['float']:
             return float(strr.value)
-        if kind == 'multifile':
+        if kind == kind_list['multifile']:
             return strr.value.split('|')
         return strr.value
 

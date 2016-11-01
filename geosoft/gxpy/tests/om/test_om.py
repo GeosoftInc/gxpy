@@ -1,5 +1,6 @@
-#import pydevd
-#pydevd.settrace('localhost', port=34765, stdoutToServer=True, stderrToServer=True)
+# import pydevd
+# pydevd.settrace('localhost', port=34765, stdoutToServer=True, stderrToServer=True)
+
 import json
 import geosoft.gxapi as gxapi
 import geosoft.gxpy.om as gxom
@@ -58,7 +59,6 @@ def test_menus():
     print(json.dumps(env, indent=4))
 
 def rungx():
-
     test_get_user_input()
     test_state()
     test_menus()
