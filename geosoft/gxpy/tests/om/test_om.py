@@ -38,10 +38,10 @@ def test_get_user_input():
     ret = gxom.get_user_input('Testing a file *.grd', 'Some file', kind='file', default='maki.dat', filemask="*.grd")
     print(ret)
 
-    ret = gxom.get_user_input('Testing a multi-file\nSome extra info here, and long-winded too.', 'Multiple files:', kind='multifile', default='maki.dat')
+    ret = gxom.get_user_input('Testing a multi-file/nSome extra info here, and long-winded too.', 'Multiple files:', kind='multifile', default='maki.dat')
     print (ret)
 
-    ret = gxom.get_user_input('Testing a multi-file *.grd;*.hgd', 'Multiple grids:', kind='multifile', default='maki.dat', filemask="*.grd;*.hgd")
+    ret = gxom.get_user_input('Testing a multi-file *.grd;*.hgd', 'Multiple grids:', kind='mulstifile', default='maki.dat', filemask="*.grd;*.hgd")
     print (ret)
 
     pass
