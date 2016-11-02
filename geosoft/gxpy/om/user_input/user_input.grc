@@ -44,11 +44,6 @@ FEDIT,,,64,"                                                                    
 EBUT,&OK,0
 EBUT,&Cancel,-1,CANCEL
 
-RESOURCE,FORM,MULTIFILE,"Input required...",-1
-FEDIT,,,64,"                                                                                                      ",R,OLD,,,**;*.grd
-EBUT,&OK,0
-EBUT,&Cancel,-1,CANCEL
-
 RESOURCE,FORM,COLOUR,"Input required...",-1
 CEDIT,,,20,"                                                                                                      "
 EBUT,&OK,0

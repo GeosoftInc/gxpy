@@ -1,5 +1,5 @@
-# import pydevd
-# pydevd.settrace('localhost', port=34765, stdoutToServer=True, stderrToServer=True)
+import pydevd
+pydevd.settrace('localhost', port=34765, stdoutToServer=True, stderrToServer=True)
 
 import json
 import geosoft.gxapi as gxapi
@@ -26,15 +26,6 @@ def test_get_user_input():
     ret = gxom.get_user_input('Testing a list', 'List', kind='list', default='maki', items='maki, rider, explorer')
     print('list return: {}'.format(ret))
 
-    ret = gxom.get_user_input('Testing a multi-file string default', 'Multiple files:', kind='multifile', default='maki.dat|mak2.dat|yamma.grd')
-    print('multifile from string default return: {}'.format(ret))
-
-    ret = gxom.get_user_input('Testing a multi-file list default', 'Multiple files:', kind='multifile', default=['maki.dat', 'list.', '4.5'])
-    print('multifile from list default return: {}'.format(ret))
-
-    ret = gxom.get_user_input('Testing a multi-file *.grd;*.hgd', 'Multiple grids:', kind='multifile', filemask="*.grd;*.hgd")
-    print('multifile grid return: {}'.format(ret))
-
     input("Simple inputs test finished...")
 
 def test_file():
@@ -48,20 +39,23 @@ def test_file():
     ret = gxom.get_user_input('Testing a file', 'Old file', kind='oldfile')
     print('old file return: {}'.format(ret))
 
-    ret = gxom.get_user_input('Testing a file *.grd', 'Some file', kind='file', default='maki.dat', filemask="*.grd")
+    ret = gxom.get_user_input('Testing a file *.grd,*.gdb', 'Some file', kind='file', default='maki.dat', filemask="*.grd,*.gdb")
     print('grid file return: {}'.format(ret))
 
     input("File inputs test finished...")
 
 def test_multifile():
 
-    ret = gxom.get_user_input('Testing a multi-file string default', 'Multiple files:', kind='multifile', default='maki.dat|mak2.dat|yamma.grd')
+    ret = gxom.get_user_input('Testing a multi-file string default', 'Multiple files:', kind='file', default='maki.dat,mak2.dat;yamma.grd', filemask="**")
     print('multifile from string default return: {}'.format(ret))
 
-    ret = gxom.get_user_input('Testing a multi-file list default', 'Multiple files:', kind='multifile', default=['maki.dat', 'list.', '4.5'])
+    ret = gxom.get_user_input('Testing a multi-file list default', 'Multiple files:', kind='file', default=['maki.dat', 'list.', '4.5'], filemask="**")
     print('multifile from list default return: {}'.format(ret))
 
-    ret = gxom.get_user_input('Testing a multi-file *.grd;*.hgd', 'Multiple grids:', kind='multifile', filemask="*.grd")
+    ret = gxom.get_user_input('Testing a multi-file *.grd;', 'Multiple grids:', kind='file', filemask="**,*.grd")
+    print('multifile grid return: {}'.format(ret))
+
+    ret = gxom.get_user_input('Testing a multi-file *.map,*.gdb', 'Multiple grids:', kind='file', filemask="**;*.map;*.gdb")
     print('multifile grid return: {}'.format(ret))
 
     input("File inputs test finished...")

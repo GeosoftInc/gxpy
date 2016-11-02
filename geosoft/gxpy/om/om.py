@@ -66,15 +66,39 @@ def get_user_input(title="Input required...", prompt='?', kind='string', default
                         example: "Your title/nDescriptive help"
     :param prompt:      prompt string to
     :param kind:        kind of response required: 'string', 'int', 'float', 'file', 'colour' or 'list'
-    :param items:       string of comma-separated items for a list
-    :param default:     default value.  For multifile can be a string ('|' delimiter) or iterable.
-    :param filemask:    File type mask "*.dat", "*.dat;*.grd", "**,*.grd" for multiple files
+    :param items:       comma-separated string or list/tupple of items for a list
+    :param default:     default value.  For multifile can be a string ('|' delimiter) or list/tupple.
+    :param filemask:    File type mask "*.dat", "*.dat,*.grd", "**,*.grd" for multiple files
+                        Comma delimited, or a list/tupple
     :return:        user response
     :raise:         :py:ex:GXCancel if the user cancels the dialog
     '''
 
+    # what kind of dialog
+    if kind == 'color':
+        kind = 'colour'
+    kind_list = {'string':  0,
+                 'float':   1,
+                 'int':     2,
+                 'list':    3,
+                 'colour':  4,
+                 'file':    5,
+                 'newfile': 6,
+                 'oldfile': 7,}
+    kind = kind_list[kind]
+
     gxapi.GXSYS.set_string("USER_INPUT", "TITLE", str(title))
     gxapi.GXSYS.set_string("USER_INPUT", "PROMPT", str(prompt))
+
+    # clean up filemask
+    if not isinstance(filemask, str):
+        if len(filemask) > 0:
+            filemask = ';'.join(filemask)
+        else:
+            filemask = ''
+    filemask = filemask.replace(',',';')
+    if filemask == '**':
+        filemask = '**;*.*'
     gxapi.GXSYS.set_string("USER_INPUT", "FILEMASK", filemask)
 
     # make a list out of the items.
@@ -90,27 +114,16 @@ def get_user_input(title="Input required...", prompt='?', kind='string', default
             if len(items) > 0:
                 default = items[0]
 
-    # resolve default string, which may be a list of files for the multifile dialogs
-    if isinstance(default, str):
-        gxapi.GXSYS.set_string("USER_INPUT", "RESPONSE", default)
-    else:
-        try:
-            gxapi.GXSYS.set_string("USER_INPUT", "RESPONSE", '|'.join(default))
-        except TypeError:  # this happens if ints or reals are passed
-            gxapi.GXSYS.set_string("USER_INPUT", "RESPONSE", str(default))
-
-    if kind == 'color':
-        kind = 'colour'
-    kind_list = {'string':  0,
-                 'float':   1,
-                 'int':     2,
-                 'list':    3,
-                 'colour':  4,
-                 'file':    5,
-                 'newfile': 6,
-                 'oldfile': 7,
-                 'multifile':8}
-    kind = kind_list[kind]
+    # resolve default string
+    if kind == kind_list['file']:
+        if isinstance(default, str):
+           default = default.replace(',','|').replace(';', '|')
+        else:
+            if len(default) > 0:
+                default = '|'.join(default)
+            else:
+                default = ''
+    gxapi.GXSYS.set_string("USER_INPUT", "RESPONSE", str(default))
 
     # show the dialog
     ret = _user_input_gx(kind)
@@ -123,7 +136,7 @@ def get_user_input(title="Input required...", prompt='?', kind='string', default
             return int(strr.value)
         if kind == kind_list['float']:
             return float(strr.value)
-        if kind == kind_list['multifile']:
+        if kind == kind_list['file'] and filemask[:2] == '**':
             return strr.value.split('|')
         return strr.value
 
