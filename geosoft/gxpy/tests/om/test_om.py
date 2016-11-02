@@ -26,6 +26,19 @@ def test_get_user_input():
     ret = gxom.get_user_input('Testing a list', 'List', kind='list', default='maki', items='maki, rider, explorer')
     print('list return: {}'.format(ret))
 
+    ret = gxom.get_user_input('Testing a multi-file string default', 'Multiple files:', kind='multifile', default='maki.dat|mak2.dat|yamma.grd')
+    print('multifile from string default return: {}'.format(ret))
+
+    ret = gxom.get_user_input('Testing a multi-file list default', 'Multiple files:', kind='multifile', default=['maki.dat', 'list.', '4.5'])
+    print('multifile from list default return: {}'.format(ret))
+
+    ret = gxom.get_user_input('Testing a multi-file *.grd;*.hgd', 'Multiple grids:', kind='multifile', filemask="*.grd;*.hgd")
+    print('multifile grid return: {}'.format(ret))
+
+    input("Simple inputs test finished...")
+
+def test_file():
+
     ret = gxom.get_user_input('Testing a file', 'Any file', kind='file', default='anyfile.dat')
     print('file return: {}'.format(ret))
 
@@ -38,17 +51,21 @@ def test_get_user_input():
     ret = gxom.get_user_input('Testing a file *.grd', 'Some file', kind='file', default='maki.dat', filemask="*.grd")
     print('grid file return: {}'.format(ret))
 
+    input("File inputs test finished...")
+
+def test_multifile():
+
     ret = gxom.get_user_input('Testing a multi-file string default', 'Multiple files:', kind='multifile', default='maki.dat|mak2.dat|yamma.grd')
     print('multifile from string default return: {}'.format(ret))
 
     ret = gxom.get_user_input('Testing a multi-file list default', 'Multiple files:', kind='multifile', default=['maki.dat', 'list.', '4.5'])
     print('multifile from list default return: {}'.format(ret))
 
-    ret = gxom.get_user_input('Testing a multi-file *.grd;*.hgd', 'Multiple grids:', kind='multifile', filemask="*.grd;*.hgd")
+    ret = gxom.get_user_input('Testing a multi-file *.grd;*.hgd', 'Multiple grids:', kind='multifile', filemask="*.grd")
     print('multifile grid return: {}'.format(ret))
 
-    input("User inputs test finished...")
-
+    input("File inputs test finished...")
+    
 def test_state():
 
     state = gxom.state()
@@ -59,6 +76,8 @@ def test_menus():
     print(json.dumps(env, indent=4))
 
 def rungx():
+    test_multifile()
+    test_file()
     test_get_user_input()
     test_state()
     test_menus()
