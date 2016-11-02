@@ -11,7 +11,7 @@ import geosoft.gxpy as gxpy
 # a python script must have a rungx(), which is executed by OM when the script is run
 def rungx():
 
-    # get the current gx context
+    # get the current gx context, normally not required but in this example we want the gid.
     gxp = gxpy.gx.GXpy()
     
     # say hello to the user identified by gxp.gid.
