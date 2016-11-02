@@ -1,9 +1,5 @@
-# Oasis montaj Python extension to say Hello.import geosoft.gxapi as gxapi # gxapi methods
+# Oasis montaj Python extension to say Hello.
 # To run this extension, select "Settings / Run GX or Python...", then browse to this script file.
-
-# comment-out following 2 lines to support remote debugging
-import pydevd
-pydevd.settrace('localhost', port=34765, stdoutToServer=True, stderrToServer=True)
 
 import geosoft.gxapi as gxapi
 import geosoft.gxpy as gxpy

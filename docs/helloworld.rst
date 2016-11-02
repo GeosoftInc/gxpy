@@ -12,7 +12,7 @@ Hello user extension...
 
 .. literalinclude:: ../examples/om-extensions/hello_world.py
 
-Add a constant to a channel extension.
+Add a constant to a channel extension...
 
 .. literalinclude:: ../examples/om-extensions/chanadd.py
 

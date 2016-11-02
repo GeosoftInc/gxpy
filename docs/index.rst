@@ -3,10 +3,8 @@ Introduction
 ============
 
 This is documentation for the Geosoft GX API, which is part of Geosoft GX Developer. The complete GX Developer
-programming guide can be found here: `GX Developer Documentation`_.  Refer to the documentation version
-that matches this version of this API.
-
-.. _GX Developer Documentation: https://geosoftgxdev.atlassian.net/wiki/spaces/GD/overview
+programming guide can be found here: `GX Developer Documentation <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/overview>`__.
+Refer to the documentation version that matches this version of this API.
 
 The Geosoft GX API provides the full low-level library of functions available to all languages.
 
