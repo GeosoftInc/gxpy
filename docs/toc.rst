@@ -8,5 +8,5 @@ Table of Contents
 
    index
  
-   gxapi
+   geosoft.gxapi
    geosoft.gxpy

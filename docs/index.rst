@@ -2,22 +2,23 @@
 Introduction
 ============
 
-This is documentation for the  GX API, which is part of Geosoft GX Developer. A more through GX Developer programming
-guide can be found at https://geosoftgxdev.atlassian.net/wiki/spaces/GD/overview.  You should refer to the
-documentation version that matches this version of this API.  You will find download and installation instructions
-the 'GX Developer programming guide <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/overvie>'.
+This is documentation for the Geosoft GX API, which is part of Geosoft GX Developer. The complete GX Developer
+programming guide can be found here: `GX Developer Documentation`_.  Refer to the documentation version
+that matches this version of this API.
+
+.. _GX Developer Documentation: https://geosoftgxdev.atlassian.net/wiki/spaces/GD/overview
 
 The Geosoft GX API provides the full low-level library of functions available to all languages.
 
-    :doc:`See gxapi... </gxapi>`
+    :doc:`GX API reference... </geosoft.gxapi>`
 
 The Geosoft GXPY modules provide a Python-oriented set of simplified interfaces.
 
-    :doc:`See gxpy... </geosoft.gxpy>`
+    :doc:`GXPY reference... </geosoft.gxpy>`
 
 Some sample Python scripts...
 
-    :doc:`Hello World examples... </helloworld>`
+    :doc:`Example scripts... </helloworld>`
 
 Indices and tables
 ==================
