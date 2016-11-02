@@ -32,7 +32,6 @@
   <HelpKINode Title="AddBlock method" Url="html/M_GeoEngine_Core_GXNet_CDBWRITE_AddBlock.htm" />
   <HelpKINode Title="AddColor method" Url="html/M_GeoEngine_Core_GXNet_CTPAT_AddColor.htm" />
   <HelpKINode Title="AddComment method" Url="html/M_GeoEngine_Core_GXNet_CDB_AddComment.htm" />
-  <HelpKINode Title="AddControl method" Url="html/M_Geosoft_Desktop_GXNet_CDGW_AddControl.htm" />
   <HelpKINode Title="AddData method" Url="html/M_Geosoft_Desktop_GXNet_CCSYMB_AddData.htm" />
   <HelpKINode Title="AddElevationsVVToDepths method" Url="html/M_GeoEngine_Core_GXNet_CVA_AddElevationsVVToDepths.htm" />
   <HelpKINode Title="AddExaggWarp method" Url="html/M_GeoEngine_Core_GXNet_CIPJ_AddExaggWarp.htm" />
@@ -1193,16 +1192,13 @@
     <HelpKINode Title="about CDGW class" Url="html/T_Geosoft_Desktop_GXNet_CDGW.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_Geosoft_Desktop_GXNet_CDGW.htm" />
   </HelpKINode>
-  <HelpKINode Title="CDGW.AddControl method" Url="html/M_Geosoft_Desktop_GXNet_CDGW_AddControl.htm" />
   <HelpKINode Title="CDGW.Create method" Url="html/M_Geosoft_Desktop_GXNet_CDGW_Create.htm" />
-  <HelpKINode Title="CDGW.CreateDynamic method" Url="html/M_Geosoft_Desktop_GXNet_CDGW_CreateDynamic.htm" />
   <HelpKINode Title="CDGW.Dispose method" Url="html/M_Geosoft_Desktop_GXNet_CDGW_Dispose.htm" />
   <HelpKINode Title="CDGW.GetInfoMETA method" Url="html/M_Geosoft_Desktop_GXNet_CDGW_GetInfoMETA.htm" />
   <HelpKINode Title="CDGW.GetInfoSYS method" Url="html/M_Geosoft_Desktop_GXNet_CDGW_GetInfoSYS.htm" />
   <HelpKINode Title="CDGW.GetList method" Url="html/M_Geosoft_Desktop_GXNet_CDGW_GetList.htm" />
   <HelpKINode Title="CDGW.GtInfo method" Url="html/M_Geosoft_Desktop_GXNet_CDGW_GtInfo.htm" />
   <HelpKINode Title="CDGW.iRunDialogue method" Url="html/M_Geosoft_Desktop_GXNet_CDGW_iRunDialogue.htm" />
-  <HelpKINode Title="CDGW.RealizeDynamic method" Url="html/M_Geosoft_Desktop_GXNet_CDGW_RealizeDynamic.htm" />
   <HelpKINode Title="CDGW.SetInfo method" Url="html/M_Geosoft_Desktop_GXNet_CDGW_SetInfo.htm" />
   <HelpKINode Title="CDGW.SetInfoMETA method" Url="html/M_Geosoft_Desktop_GXNet_CDGW_SetInfoMETA.htm" />
   <HelpKINode Title="CDGW.SetInfoSYS method" Url="html/M_Geosoft_Desktop_GXNet_CDGW_SetInfoSYS.htm" />
@@ -3578,12 +3574,12 @@
     <HelpKINode Title="CVVU.CondDepthTEM Method " Url="html/M_Geosoft_Desktop_GXNet_CVVU_CondDepthTEM.htm" />
   </HelpKINode>
   <HelpKINode Title="Constant class">
-    <HelpKINode Title="Constant Class" Url="html/T_GeoEngine_Core_GXNet_Constant.htm" />
     <HelpKINode Title="Constant Class" Url="html/T_Geosoft_Desktop_GXNet_Constant.htm" />
-    <HelpKINode Title="about Constant class" Url="html/T_GeoEngine_Core_GXNet_Constant.htm" />
+    <HelpKINode Title="Constant Class" Url="html/T_GeoEngine_Core_GXNet_Constant.htm" />
     <HelpKINode Title="about Constant class" Url="html/T_Geosoft_Desktop_GXNet_Constant.htm" />
-    <HelpKINode Title="fields" Url="html/Fields_T_GeoEngine_Core_GXNet_Constant.htm" />
+    <HelpKINode Title="about Constant class" Url="html/T_GeoEngine_Core_GXNet_Constant.htm" />
     <HelpKINode Title="fields" Url="html/Fields_T_Geosoft_Desktop_GXNet_Constant.htm" />
+    <HelpKINode Title="fields" Url="html/Fields_T_GeoEngine_Core_GXNet_Constant.htm" />
   </HelpKINode>
   <HelpKINode Title="Constant.ACQUIRE_SEL_HOLES field" Url="html/F_Geosoft_Desktop_GXNet_Constant_ACQUIRE_SEL_HOLES.htm" />
   <HelpKINode Title="Constant.ACQUIRE_SEL_POINT field" Url="html/F_Geosoft_Desktop_GXNet_Constant_ACQUIRE_SEL_POINT.htm" />
@@ -5744,7 +5740,6 @@
   <HelpKINode Title="CreateDrillholeParameterWeightConstraintDatabase method" Url="html/M_Geosoft_Desktop_GXNet_CDU_CreateDrillholeParameterWeightConstraintDatabase.htm" />
   <HelpKINode Title="CreateDup method" Url="html/M_GeoEngine_Core_GXNet_CDB_CreateDup.htm" />
   <HelpKINode Title="CreateDupComp method" Url="html/M_GeoEngine_Core_GXNet_CDB_CreateDupComp.htm" />
-  <HelpKINode Title="CreateDynamic method" Url="html/M_Geosoft_Desktop_GXNet_CDGW_CreateDynamic.htm" />
   <HelpKINode Title="CreateEx method">
     <HelpKINode Title="CDB.CreateEx Method " Url="html/M_GeoEngine_Core_GXNet_CDB_CreateEx.htm" />
     <HelpKINode Title="CFFT.CreateEx Method " Url="html/M_Geosoft_Desktop_GXNet_CFFT_CreateEx.htm" />
@@ -12909,8 +12904,8 @@
   <HelpKINode Title="iNSlices method" Url="html/M_GeoEngine_Core_GXNet_CPG_iNSlices.htm" />
   <HelpKINode Title="INT field" Url="html/F_Geosoft_Desktop_GXNet_FILE_FILTERConstant_INT.htm" />
   <HelpKINode Title="IntConstants enumeration">
-    <HelpKINode Title="IntConstants Enumeration" Url="html/T_Geosoft_Desktop_GXNet_IntConstants.htm" />
     <HelpKINode Title="IntConstants Enumeration" Url="html/T_GeoEngine_Core_GXNet_IntConstants.htm" />
+    <HelpKINode Title="IntConstants Enumeration" Url="html/T_Geosoft_Desktop_GXNet_IntConstants.htm" />
   </HelpKINode>
   <HelpKINode Title="InternalItem method" Url="html/M_GeoEngine_Core_GXNet_Vector_InternalItem.htm" />
   <HelpKINode Title="InternalUtils class">
@@ -14013,8 +14008,8 @@
   <HelpKINode Title="LoadLib method" Url="html/M_Geosoft_Desktop_GXNet_CGX_NET_LoadLib.htm" />
   <HelpKINode Title="LoadLTB method" Url="html/M_Geosoft_Desktop_GXNet_CDU_LoadLTB.htm" />
   <HelpKINode Title="LoadLYR method" Url="html/M_Geosoft_Desktop_GXNet_CARCMAP_LoadLYR.htm" />
-  <HelpKINode Title="LoadMap method" Url="html/M_Geosoft_Desktop_GXNet_CARCMAP_LoadMap.htm" />
   <HelpKINode Title="LoadMAP method" Url="html/M_GeoEngine_Core_GXNet_CGIS_LoadMAP.htm" />
+  <HelpKINode Title="LoadMap method" Url="html/M_Geosoft_Desktop_GXNet_CARCMAP_LoadMap.htm" />
   <HelpKINode Title="LoadMAPEx method" Url="html/M_GeoEngine_Core_GXNet_CGIS_LoadMAPEx.htm" />
   <HelpKINode Title="LoadMapView method" Url="html/M_Geosoft_Desktop_GXNet_CARCMAP_LoadMapView.htm" />
   <HelpKINode Title="LoadMetaGroupsMAP method" Url="html/M_GeoEngine_Core_GXNet_CGIS_LoadMetaGroupsMAP.htm" />
@@ -16175,7 +16170,6 @@
   </HelpKINode>
   <HelpKINode Title="ReadX method" Url="html/M_GeoEngine_Core_GXNet_CIMG_ReadX.htm" />
   <HelpKINode Title="ReadY method" Url="html/M_GeoEngine_Core_GXNet_CIMG_ReadY.htm" />
-  <HelpKINode Title="RealizeDynamic method" Url="html/M_Geosoft_Desktop_GXNet_CDGW_RealizeDynamic.htm" />
   <HelpKINode Title="ReAllocate method" Url="html/M_GeoEngine_Core_GXNet_CPG_ReAllocate.htm" />
   <HelpKINode Title="ReAllocate3D method" Url="html/M_GeoEngine_Core_GXNet_CPG_ReAllocate3D.htm" />
   <HelpKINode Title="Recalculate method" Url="html/M_Geosoft_Desktop_GXNet_CIP_Recalculate.htm" />
