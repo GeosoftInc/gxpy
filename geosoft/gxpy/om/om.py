@@ -110,10 +110,7 @@ def get_user_input(title="Input required...", prompt='?', kind='string', default
                  'newfile': 6,
                  'oldfile': 7,
                  'multifile':8}
-    try:
-        kind = kind_list[kind]
-    except:
-        raise OMException(_("Do not support kind={}".format(kind)))
+    kind = kind_list[kind]
 
     # show the dialog
     ret = _user_input_gx(kind)

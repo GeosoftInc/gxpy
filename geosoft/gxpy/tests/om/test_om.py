@@ -65,7 +65,7 @@ def test_multifile():
     print('multifile grid return: {}'.format(ret))
 
     input("File inputs test finished...")
-    
+
 def test_state():
 
     state = gxom.state()
