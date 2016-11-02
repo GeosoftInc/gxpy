@@ -71,6 +71,7 @@ int iType;
             break;
         case 8:
             hDGW = Create_DGW("MULTIFILE");
+            SetInfoSYS_DGW(hDGW, ((DGW_OBJ) 0), DGW_EXT, "USER_INPUT", "FILEMASK");
             break;
         case 9:
             hDGW = Create_DGW("PAUSE");

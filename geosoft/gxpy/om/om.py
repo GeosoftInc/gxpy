@@ -56,7 +56,7 @@ def pause(title='Pause...', cancel=False):
         _user_input_gx(10)
 
 
-def get_user_input(title="Input required...", prompt='?', kind='string', default='', items='', filemask='*.*'):
+def get_user_input(title="Input required...", prompt='?', kind='string', default='', items='', filemask=''):
     '''
     Display a dialog prompt on the Geosoft Desktop and wait for user input.
     This method depends on "user_input.gx" and can only be used from an extension running
