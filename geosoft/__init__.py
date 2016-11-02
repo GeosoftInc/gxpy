@@ -13,7 +13,7 @@ __branch__ = _info['branch']
 if __branch__ == 'release':
     __version__ = _info['version']
 else:
-    __version__ = "{}.{}0".format(_info['version'], _info['branch'])
+    __version__ = "{}.{}".format(_info['version'], _info['branch'])
 
 __all__ = ['gxapi', 'gxpy']
 

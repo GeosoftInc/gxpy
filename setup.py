@@ -11,8 +11,10 @@ def read(fname):
     return open(join(dirname(__file__), fname)).read()
 
 if _info['branch'] == 'release':
+    dev_status_classifier = "Development Status :: 5 - Production/Stable"
     version_tag = _info['version']
 else:
+    dev_status_classifier = "Development Status :: 4 - Beta"
     version_tag = "{}.{}0".format(_info['version'], _info['branch'])
 
 setup(
@@ -25,23 +27,25 @@ setup(
     url='https://github.com/GeosoftInc/gxpy',
     license='BSD',
     install_requires=[
-          'numpy>=1.7',
-          'jdcal',
-      ],
-    packages=['geosoft',
-      'geosoft.gxpy',
-      'geosoft.gxpy.gx',
-      'geosoft.gxpy.system',
-      'geosoft.gxpy.om',
-	  'geosoft.gxpy.vv',
-	  'geosoft.gxpy.grd',
-	  'geosoft.gxpy.gdb',
-	  'geosoft.gxpy.ipj',
-      'geosoft.gxpy.utility'],
+        'numpy>=1.7',
+        'jdcal'
+    ],
+    packages=[
+        'geosoft',
+        'geosoft.gxpy',
+        'geosoft.gxpy.gx',
+        'geosoft.gxpy.system',
+        'geosoft.gxpy.om',
+        'geosoft.gxpy.vv',
+        'geosoft.gxpy.grd',
+        'geosoft.gxpy.gdb',
+        'geosoft.gxpy.ipj',
+        'geosoft.gxpy.utility'
+    ],
     package_data={'geosoft': ['*.key', '*.dll', '*.pyd', '*.json', '*.zip']},
     test_suite="geosoft.gxpy.tests",
     classifiers=[
-        "Development Status :: 4 - Beta", #TODO Upgrade to production and review other classifiers (https://pypi.python.org/pypi?%3Aaction=list_classifiers)
+        dev_status_classifier,
         "Topic :: Scientific/Engineering",
         "Intended Audience :: Science/Research",
         "License :: OSI Approved :: BSD License",
