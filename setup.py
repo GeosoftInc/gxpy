@@ -15,7 +15,7 @@ if _info['branch'] == 'release':
     version_tag = _info['version']
 else:
     dev_status_classifier = "Development Status :: 4 - Beta"
-    version_tag = "{}.{}0".format(_info['version'], _info['branch'])
+    version_tag = "{}.{}".format(_info['version'], _info['branch'])
 
 setup(
     name='geosoft',
