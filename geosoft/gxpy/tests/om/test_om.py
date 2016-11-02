@@ -1,5 +1,5 @@
-import pydevd
-pydevd.settrace('localhost', port=34765, stdoutToServer=True, stderrToServer=True)
+# import pydevd
+# pydevd.settrace('localhost', port=34765, stdoutToServer=True, stderrToServer=True)
 
 import json
 import geosoft.gxapi as gxapi
@@ -55,7 +55,7 @@ def test_multifile():
     ret = gxom.get_user_input('Testing a multi-file *.grd;', 'Multiple grids:', kind='file', filemask="**,*.grd")
     print('multifile grid return: {}'.format(ret))
 
-    ret = gxom.get_user_input('Testing a multi-file *.map,*.gdb', 'Multiple grids:', kind='file', filemask="**;*.map;*.gdb")
+    ret = gxom.get_user_input('Testing a multi-file *.map,*.gdb', 'Multiple grids:', kind='file', filemask=["**", "*.map", "*.gdb"])
     print('multifile grid return: {}'.format(ret))
 
     input("File inputs test finished...")
