@@ -59,12 +59,16 @@ def pause(title='Pause...', cancel=False):
 
     .. versionadded:: 9.1
     '''
-    
-    gxapi.GXSYS.set_string("USER_INPUT", "TITLE", str(title))
-    if not cancel:
-        _user_input_gx(9)
-    else:
-        _user_input_gx(10)
+
+    gxapi.GXSYS.filter_parm_group("USER_INPUT", 1)
+    try:
+        gxapi.GXSYS.set_string("USER_INPUT", "TITLE", str(title))
+        if not cancel:
+            _user_input_gx(9)
+        else:
+            _user_input_gx(10)
+    finally:
+        gxapi.GXSYS.filter_parm_group("USER_INPUT", 0)
 
 
 def get_user_input(title="Input required...", prompt='?', kind='string', default='', items='', filemask=''):
@@ -87,73 +91,77 @@ def get_user_input(title="Input required...", prompt='?', kind='string', default
     .. versionadded:: 9.1
     '''
 
-    # what kind of dialog
-    if kind == 'color':
-        kind = 'colour'
-    kind_list = {'string':  0,
-                 'float':   1,
-                 'int':     2,
-                 'list':    3,
-                 'colour':  4,
-                 'file':    5,
-                 'newfile': 6,
-                 'oldfile': 7,}
-    kind = kind_list[kind]
+    gxapi.GXSYS.filter_parm_group("USER_INPUT", 1)
+    try:
+        # what kind of dialog
+        if kind == 'color':
+            kind = 'colour'
+        kind_list = {'string':  0,
+                     'float':   1,
+                     'int':     2,
+                     'list':    3,
+                     'colour':  4,
+                     'file':    5,
+                     'newfile': 6,
+                     'oldfile': 7,}
+        kind = kind_list[kind]
 
-    gxapi.GXSYS.set_string("USER_INPUT", "TITLE", str(title))
-    gxapi.GXSYS.set_string("USER_INPUT", "PROMPT", str(prompt))
+        gxapi.GXSYS.set_string("USER_INPUT", "TITLE", str(title))
+        gxapi.GXSYS.set_string("USER_INPUT", "PROMPT", str(prompt))
 
-    # clean up filemask
-    if not isinstance(filemask, str):
-        if len(filemask) > 0:
-            filemask = ';'.join(filemask)
-        else:
-            filemask = ''
-    filemask = filemask.replace(',',';')
-    if filemask == '**':
-        filemask = '**;*.*'
-    gxapi.GXSYS.set_string("USER_INPUT", "FILEMASK", filemask)
-
-    # make a list out of the items.
-    if len(items) > 0:
-        if type(items) is dict:
-            items = [(k) for k in items.keys()]
-        elif isinstance(items, str):
-            items = items.split(',')
-        gxapi.GXSYS.set_string("USER_INPUT", "LIST", ",".join(items))
-
-        # make sure default is in the list
-        if default not in items:
-            if len(items) > 0:
-                default = items[0]
-
-    # resolve default string
-    if kind == kind_list['file']:
-        if isinstance(default, str):
-           default = default.replace(',','|').replace(';', '|')
-        else:
-            if len(default) > 0:
-                default = '|'.join(default)
+        # clean up filemask
+        if not isinstance(filemask, str):
+            if len(filemask) > 0:
+                filemask = ';'.join(filemask)
             else:
-                default = ''
-    gxapi.GXSYS.set_string("USER_INPUT", "RESPONSE", str(default))
+                filemask = ''
+        filemask = filemask.replace(',',';')
+        if filemask == '**':
+            filemask = '**;*.*'
+        gxapi.GXSYS.set_string("USER_INPUT", "FILEMASK", filemask)
 
-    # show the dialog
-    ret = _user_input_gx(kind)
+        # make a list out of the items.
+        if len(items) > 0:
+            if type(items) is dict:
+                items = [(k) for k in items.keys()]
+            elif isinstance(items, str):
+                items = items.split(',')
+            gxapi.GXSYS.set_string("USER_INPUT", "LIST", ",".join(items))
 
-    if ret == 0:
+            # make sure default is in the list
+            if default not in items:
+                if len(items) > 0:
+                    default = items[0]
 
-        strr = gxapi.str_ref()
-        gxapi.GXSYS.gt_string("USER_INPUT", "RESPONSE", strr)
-        if kind == kind_list['int']:
-            return int(strr.value)
-        if kind == kind_list['float']:
-            return float(strr.value)
-        if kind == kind_list['file'] and filemask[:2] == '**':
-            return strr.value.split('|')
-        return strr.value
+        # resolve default string
+        if kind == kind_list['file']:
+            if isinstance(default, str):
+               default = default.replace(',','|').replace(';', '|')
+            else:
+                if len(default) > 0:
+                    default = '|'.join(default)
+                else:
+                    default = ''
+        gxapi.GXSYS.set_string("USER_INPUT", "RESPONSE", str(default))
 
-    raise OMException('GX Error ({})'.format(ret))
+        # show the dialog
+        ret = _user_input_gx(kind)
+
+        if ret == 0:
+
+            strr = gxapi.str_ref()
+            gxapi.GXSYS.gt_string("USER_INPUT", "RESPONSE", strr)
+            if kind == kind_list['int']:
+                return int(strr.value)
+            if kind == kind_list['float']:
+                return float(strr.value)
+            if kind == kind_list['file'] and filemask[:2] == '**':
+                return strr.value.split('|')
+            return strr.value
+
+        raise OMException('GX Error ({})'.format(ret))
+    finally:
+        gxapi.GXSYS.filter_parm_group("USER_INPUT", 0)
 
 
 def menus():
