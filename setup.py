@@ -32,15 +32,7 @@ setup(
     ],
     packages=[
         'geosoft',
-        'geosoft.gxpy',
-        'geosoft.gxpy.gx',
-        'geosoft.gxpy.system',
-        'geosoft.gxpy.om',
-        'geosoft.gxpy.vv',
-        'geosoft.gxpy.grd',
-        'geosoft.gxpy.gdb',
-        'geosoft.gxpy.ipj',
-        'geosoft.gxpy.utility'
+        'geosoft.gxpy'
     ],
     package_data={'geosoft': ['*.key', '*.dll', '*.pyd', '*.json', '*.zip']},
     test_suite="geosoft.gxpy.tests",

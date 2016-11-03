@@ -1,9 +1,9 @@
 __all__ = ['system', 'gx', 'om', 'utility', 'vv', 'ipj', 'grd', 'gdb']
-from .system import system
-from .gx import gx
-from .om import om
-from .utility import utility
-from .vv import vv
-from .ipj import ipj
-from .grd import grd
-from .gdb import gdb
+from . import system
+from . import gx
+from . import om
+from . import utility
+from . import vv
+from . import ipj
+from . import grd
+from . import gdb

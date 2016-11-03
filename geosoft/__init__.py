@@ -22,13 +22,38 @@ __all__ = ['gxapi', 'gxpy']
 
 import geosoft.gxapi as gxapi
 
-gxapi.GXCancel.__doc__ = "TODO"
+gxapi.GXCancel.__doc__ = '''
+A subclass of :exc:`SystemExit` which is raised when a script should cleanly exit due to a cancellation condition. 
+Generally not caught since it will have the same effect as :exc:`SystemExit` for both standalone and Oasis montaj 
+extension scripts. Raised from within API by :func:`geosoft.gxapi.GXSYS.cancel()`
 
-gxapi.GXExit.__doc__ = "TODO"
+.. versionadded:: 9.1
+'''
 
-gxapi.GXAPIError.__doc__ = "TODO"
+gxapi.GXExit.__doc__ = '''
+A subclass of :exc:`SystemExit` which is raised when a script should cleanly exit due to a completion condition. 
+Generally not caught since it will have the same effect as :exc:`SystemExit` for both standalone and Oasis montaj 
+extension scripts. Raised from within API by :func:`geosoft.gxapi.GXSYS.exit()`
 
-gxapi.GXError.__doc__ = "TODO"
+.. versionadded:: 9.1
+'''
+
+gxapi.GXAPIError.__doc__ = '''
+   A subclass of :exc:`RuntimeError` which is raised whenever the GX Python API
+   encounters initialization issues or other API violations. It generally indicates a bug in Python code.
+
+   .. versionadded:: 9.1
+'''
+
+gxapi.GXError.__doc__ = '''
+A subclass of :exc:`RuntimeError` which is raised whenever a GX Python API call encounters an 
+error. Often the message string of these errors are informative to the user (e.g. File 'x' i locked in another application)
+but there could be cases where this is not the case. In most cases an :code:`int` attribute, :attr:`number`, is also available on the exception
+object that matches the number in the :code:`geosoft.ger` file. These numbers instead of the string (which could change or even
+be translated) should be used to identify and handle very specific exceptions. 
+
+.. versionadded:: 9.1
+'''
 
 gxapi.GXContext.__doc__ = '''The main GX execution context
 
@@ -48,7 +73,7 @@ Creates the GX execution context (will return the current one if it exsists alre
 :returns: A GX execution context.
 :rtype: geosoft.gxapi.GXContext
 
-.. versionadded:: 9.1.0
+.. versionadded:: 9.1
 
 '''
 
@@ -58,7 +83,7 @@ Get the current thread's GX execution context (throws if not created yet).
 :returns: A GX execution context.
 :rtype: geosoft.gxapi.GXContext
 
-.. versionadded:: 9.1.0
+.. versionadded:: 9.1
 
 '''
 
@@ -68,7 +93,7 @@ Get the main window handle (0 if not available).
 :returns: Window handle as an int (HWND cast to unsigned on Windows)
 :rtype: int
 
-.. versionadded:: 9.1.0
+.. versionadded:: 9.1
 
 '''
 
@@ -78,7 +103,7 @@ Get currently active window (main window, floating document or other popup, 0 if
 :returns: Window handle as an int (HWND cast to unsigned on Windows)
 :rtype: int
 
-.. versionadded:: 9.1.0
+.. versionadded:: 9.1
 
 '''
 
@@ -92,7 +117,7 @@ The :class:`geosoft.gxapi.GXEMAP` digitization methods.
 :returns: Nothing
 :rtype: None
 
-.. versionadded:: 9.1.0
+.. versionadded:: 9.1
 
 '''
 
@@ -100,7 +125,7 @@ gxapi.GXContext.clear_ui_console.__doc__ = '''clear_ui_console() -> None:
 :returns: Nothing
 :rtype: None
 
-.. versionadded:: 9.1.0
+.. versionadded:: 9.1
 
 '''
 
@@ -110,7 +135,7 @@ gxapi.GXContext.show_ui_console.__doc__ = '''show_ui_console((bool)show) -> None
 :returns: Nothing
 :rtype: None
 
-.. versionadded:: 9.1.0
+.. versionadded:: 9.1
 
 '''
 
@@ -118,7 +143,7 @@ gxapi.GXContext.has_ui_console.__doc__ = '''has_ui_console() -> bool:
 :returns: Window handle as an int (HWND cast to unsigned on Windows)
 :rtype: bool
 
-.. versionadded:: 9.1.0
+.. versionadded:: 9.1
 
 '''
 
@@ -126,7 +151,7 @@ gxapi.GXContext.has_ui_console.__doc__ = '''has_ui_console() -> bool:
 :returns: Window handle as an int (HWND cast to unsigned on Windows)
 :rtype: bool
 
-.. versionadded:: 9.1.0
+.. versionadded:: 9.1
 
 '''
 
