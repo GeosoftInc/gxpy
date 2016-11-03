@@ -13,6 +13,11 @@ from . import utility as gxu
 __version__ = geosoft.__version__
 
 class GRDException(Exception):
+    '''
+    Exceptions from this module.
+
+    .. versionadded:: 9.1
+    '''
     pass
 
 #################

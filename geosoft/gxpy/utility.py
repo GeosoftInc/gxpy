@@ -16,6 +16,11 @@ import geosoft.gxapi as gxapi
 __version__ = geosoft.__version__
 
 class UtilityException(Exception):
+    '''
+    Exceptions from this module.
+
+    .. versionadded:: 9.1
+    '''
     pass
 
 # translation hook

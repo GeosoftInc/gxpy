@@ -10,6 +10,11 @@ from . import utility as gxu
 __version__ = geosoft.__version__
 
 class GXException(Exception):
+    '''
+    Exceptions from this module.
+
+    .. versionadded:: 9.1
+    '''
     pass
 
 class GXpy():

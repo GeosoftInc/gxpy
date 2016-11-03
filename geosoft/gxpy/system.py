@@ -28,6 +28,9 @@ def _logit(fn, *args, **kw):
 def app_name():
     """
     Returns application script name.
+
+    .. versionadded:: 9.1
+
     """
     frm = inspect.stack()[1]
     modfrm = inspect.getmodule(frm[0])
@@ -37,6 +40,9 @@ def app_name():
 def func_name():
     """
     Returns function name.
+
+    .. versionadded:: 9.1
+
     """
     return inspect.stack()[1][3]
 
@@ -138,6 +144,8 @@ def parallel_map(f, l, threads=None):
         # same thing using a lambda function
         print(gsys.parallel_map(lambda ab: ab[0] + ab[1], data))
 
+    .. versionadded:: 9.1
+
     """
     if threads is None:
         threads = os.cpu_count()
@@ -148,6 +156,11 @@ def parallel_map(f, l, threads=None):
 # classes
 
 class GXSysException(Exception):
+    '''
+    Exceptions from this module.
+
+    .. versionadded:: 9.1
+    '''
     pass
 
 
@@ -165,6 +178,9 @@ def wait_on_file(fileName, wait=100, retries=10):
     :wait:              time in milliseconds to wait between retries
     :retries:           maximum number of retries
     :raises:            GX_SysException if fail to get read access to the file.
+
+    .. versionadded:: 9.1
+
     """
 
     tries = 0
@@ -177,12 +193,9 @@ def wait_on_file(fileName, wait=100, retries=10):
         time.sleep(wait / 1000.0)
 
 def _unzip(zip_file_name, folder):
-    zf = zipfile.ZipFile(zip_file_name)
-    zf.extractall(folder)
-    files = zf.namelist()
-    zf.close()
-    del zf
-    gc.collect()
+    with zipfile.ZipFile(zip_file_name) as zf:
+        zf.extractall(folder)
+        files = zf.namelist()
     return files
 
 def unzip(zip_file_name, folder=None, report=None, checkready=25):
@@ -194,6 +207,9 @@ def unzip(zip_file_name, folder=None, report=None, checkready=25):
     :param report:          function report(s) to report file names as they are decompressed
     :param checkready:      time in 1/10 second to check completion of each file, default 25
     :return:                (folder that contains unzipped files, list of files)
+
+    .. versionadded:: 9.1
+
     """
 
     # get full path
@@ -203,7 +219,7 @@ def unzip(zip_file_name, folder=None, report=None, checkready=25):
     if folder is None:
         folder = os.path.splitext(zip_file_name)[0]
 
-    # change to working folder
+    # create a folder
     if not os.path.exists(folder):
         os.makedirs(folder)
 
@@ -230,6 +246,9 @@ def remove_dir(directory, wait=200, tries=10):
     :param wait :       wait between retries in milliseconds
     :param tries:       number of times to retry
     :return:
+
+    .. versionadded:: 9.1
+
     """
 
     if os.path.isdir(directory):

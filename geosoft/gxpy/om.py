@@ -12,6 +12,11 @@ from .utility import dictFromLst
 __version__ = geosoft.__version__
 
 class OMException(Exception):
+    '''
+    Exceptions from this module.
+
+    .. versionadded:: 9.1
+    '''
     pass
 
 def _(s): return s

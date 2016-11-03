@@ -41,6 +41,11 @@ LIST_LOCALDATUMNAME = gxapi.IPJ_PARM_LST_LOCALDATUMNAME
 
 
 class IPJException(Exception):
+    '''
+    Exceptions from this module.
+
+    .. versionadded:: 9.1
+    '''
     pass
 
 

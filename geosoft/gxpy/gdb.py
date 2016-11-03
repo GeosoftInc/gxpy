@@ -48,6 +48,11 @@ READ_REMOVE_DUMMYROWS      = 1
 READ_REMOVE_DUMMYCOLUMNS   = 2
 
 class GDBException(Exception):
+    '''
+    Exceptions from this module.
+
+    .. versionadded:: 9.1
+    '''
     pass
 
 ####################################################################################################################

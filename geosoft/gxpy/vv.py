@@ -8,6 +8,11 @@ __version__ = geosoft.__version__
 
 
 class VVException(Exception):
+    '''
+    Exceptions from this module.
+
+    .. versionadded:: 9.1
+    '''
     pass
 
 class GXvv():
@@ -18,6 +23,7 @@ class GXvv():
     :param fid:     fid tuple (start,increment), default (0.0,1.0)
     :constructor vvNP:  create from a numpy array
 
+    .. versionadded:: 9.1
     '''
 
     def __init__(self, dtype=np.float, fid=(0.0,1.0)):
@@ -36,6 +42,8 @@ class GXvv():
         :param npdata:  numpy data array
         :param fid:     fid tuple (start,increment), default (0.0,1.0)
         :return:        GXvv
+
+        .. versionadded:: 9.1
         """
 
         vv = cls(dtype=npdata.dtype, fid=fid)
@@ -56,6 +64,8 @@ class GXvv():
     def fid(self):
         '''
         :return:    fid tuple (start,increment)
+
+        .. versionadded:: 9.1
         '''
         start = self._vv.get_fid_start()
         incr = self._vv.get_fid_incr()
@@ -66,6 +76,8 @@ class GXvv():
         Set the fiducial of the vv.
 
         :param fid: (fidStart,fidIncrement)
+
+        .. versionadded:: 9.1
         '''
         self._vv.set_fid_start(fid[0])
         self._vv.set_fid_incr(fid[1])
@@ -76,24 +88,32 @@ class GXvv():
 
         :param fid: (start,incr)
         :param length: length
+
+        .. versionadded:: 9.1
         '''
         self._vv.re_fid(fid[0],fid[1],length)
 
     def length(self):
         '''
         :return:    number of elements in the VV
+
+        .. versionadded:: 9.1
         '''
         return self._vv.length()
 
     def gxtype(self):
         '''
         :return: GX data type
+
+        .. versionadded:: 9.1
         '''
         return self._gxtype
 
     def dtype(self):
         '''
         :return: numpy data type
+
+        .. versionadded:: 9.1
         '''
         return self._dtype
 
@@ -104,6 +124,8 @@ class GXvv():
         :param start:   index of first value, must be >=0
         :param n:       number of values wanted
         :param dtype:   numpy data type wanted
+
+        .. versionadded:: 9.1
         '''
 
         if dtype is None:
@@ -156,6 +178,8 @@ class GXvv():
         :param npdata:  numpy data array
         :param fid:     fid tuple (start,increment), default (0.0,1.0)
         :return:        GXvv
+
+        .. versionadded:: 9.1
         """
 
         npdata = npdata.flatten()
