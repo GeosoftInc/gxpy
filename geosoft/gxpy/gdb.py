@@ -675,6 +675,7 @@ class GXdb():
             except geosoft.gxapi.GXAPIError:
                 self._unlock(symb)
             except:
+                self._unlock(symb)
                 raise
 
         return symb
@@ -692,16 +693,15 @@ class GXdb():
         if not(type(channels) is list):
             channels = [channels]
 
+        self._db.un_lock_all_symb()
         for s in channels:
-
             try:
                 cn,cs = self.chanNameSymb(s)
+                self._lockWrite(cs)
+                self._db.delete_symb(cs)
             except GDBException:
                 continue
 
-            self._db.un_lock_all_symb()
-            self._lockWrite(cs)
-            self._db.delete_symb(cs)
 
 
     def delLine(self,s):
