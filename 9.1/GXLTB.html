@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>GXLTB class &mdash; Geosoft GX Python API 9.1.0 documentation</title>
+    <title>GXLTB class &#8212; Geosoft GX Python API 9.1 documentation</title>
     
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '9.1.0',
+        VERSION:     '9.1',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +23,7 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="Geosoft GX Python API 9.1.0 documentation" href="index.html" /> 
+    <link rel="top" title="Geosoft GX Python API 9.1 documentation" href="index.html" /> 
   </head>
   <body role="document">
     <div class="related" role="navigation" aria-label="related navigation">
@@ -35,7 +35,7 @@
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.1.0 documentation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.1 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -61,14 +61,11 @@
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -84,35 +81,35 @@
 <dl class="class">
 <dt id="geosoft.gxapi.GXLTB">
 <em class="property">class </em><code class="descclassname">geosoft.gxapi.</code><code class="descname">GXLTB</code><a class="headerlink" href="#geosoft.gxapi.GXLTB" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>An LTB object is typically created from a CSV (comma-separated values)
-file, and is a table of information that may be accessed by row
-or column. The LTB class is recommended for use with small tables
-produced from short lists (of the order of 1000&#39;s or records) such
-as the different geographic projections and their defining parameters.
-Large tables, such as those required for table-lookup functions, should
-be accessed using the TB class.
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">An</span> <span class="n">LTB</span> <span class="nb">object</span> <span class="ow">is</span> <span class="n">typically</span> <span class="n">created</span> <span class="kn">from</span> <span class="nn">a</span> <span class="n">CSV</span> <span class="p">(</span><span class="n">comma</span><span class="o">-</span><span class="n">separated</span> <span class="n">values</span><span class="p">)</span>
+<span class="n">file</span><span class="p">,</span> <span class="ow">and</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">table</span> <span class="n">of</span> <span class="n">information</span> <span class="n">that</span> <span class="n">may</span> <span class="n">be</span> <span class="n">accessed</span> <span class="n">by</span> <span class="n">row</span>
+<span class="ow">or</span> <span class="n">column</span><span class="o">.</span> <span class="n">The</span> <span class="n">LTB</span> <span class="k">class</span> <span class="nc">is</span> <span class="n">recommended</span> <span class="k">for</span> <span class="n">use</span> <span class="k">with</span> <span class="n">small</span> <span class="n">tables</span>
+<span class="n">produced</span> <span class="kn">from</span> <span class="nn">short</span> <span class="n">lists</span> <span class="p">(</span><span class="n">of</span> <span class="n">the</span> <span class="n">order</span> <span class="n">of</span> <span class="mi">1000</span><span class="s1">&#39;s or records) such</span>
+<span class="k">as</span> <span class="n">the</span> <span class="n">different</span> <span class="n">geographic</span> <span class="n">projections</span> <span class="ow">and</span> <span class="n">their</span> <span class="n">defining</span> <span class="n">parameters</span><span class="o">.</span>
+<span class="n">Large</span> <span class="n">tables</span><span class="p">,</span> <span class="n">such</span> <span class="k">as</span> <span class="n">those</span> <span class="n">required</span> <span class="k">for</span> <span class="n">table</span><span class="o">-</span><span class="n">lookup</span> <span class="n">functions</span><span class="p">,</span> <span class="n">should</span>
+<span class="n">be</span> <span class="n">accessed</span> <span class="n">using</span> <span class="n">the</span> <span class="n">TB</span> <span class="n">class</span><span class="o">.</span>
 </pre></div>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>An LTB ASCII table file has the following structure:
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">An</span> <span class="n">LTB</span> <span class="n">ASCII</span> <span class="n">table</span> <span class="n">file</span> <span class="n">has</span> <span class="n">the</span> <span class="n">following</span> <span class="n">structure</span><span class="p">:</span>
 
-/ comments
-key_name,col_1,col_2,col_3,etc...    /field names
-key_1,token,token,token,etc...       /data lines
-key_2,token,token,token,etc...
-etc...
+<span class="o">/</span> <span class="n">comments</span>
+<span class="n">key_name</span><span class="p">,</span><span class="n">col_1</span><span class="p">,</span><span class="n">col_2</span><span class="p">,</span><span class="n">col_3</span><span class="p">,</span><span class="n">etc</span><span class="o">...</span>    <span class="o">/</span><span class="n">field</span> <span class="n">names</span>
+<span class="n">key_1</span><span class="p">,</span><span class="n">token</span><span class="p">,</span><span class="n">token</span><span class="p">,</span><span class="n">token</span><span class="p">,</span><span class="n">etc</span><span class="o">...</span>       <span class="o">/</span><span class="n">data</span> <span class="n">lines</span>
+<span class="n">key_2</span><span class="p">,</span><span class="n">token</span><span class="p">,</span><span class="n">token</span><span class="p">,</span><span class="n">token</span><span class="p">,</span><span class="n">etc</span><span class="o">...</span>
+<span class="n">etc</span><span class="o">...</span>
 
-The first column must be the key column (all entries unique).
+<span class="n">The</span> <span class="n">first</span> <span class="n">column</span> <span class="n">must</span> <span class="n">be</span> <span class="n">the</span> <span class="n">key</span> <span class="n">column</span> <span class="p">(</span><span class="nb">all</span> <span class="n">entries</span> <span class="n">unique</span><span class="p">)</span><span class="o">.</span>
 
-The header line is optional and can be used to find entries.
+<span class="n">The</span> <span class="n">header</span> <span class="n">line</span> <span class="ow">is</span> <span class="n">optional</span> <span class="ow">and</span> <span class="n">can</span> <span class="n">be</span> <span class="n">used</span> <span class="n">to</span> <span class="n">find</span> <span class="n">entries</span><span class="o">.</span>
 
-Comment and empty lines are ignored.
+<span class="n">Comment</span> <span class="ow">and</span> <span class="n">empty</span> <span class="n">lines</span> <span class="n">are</span> <span class="n">ignored</span><span class="o">.</span>
 </pre></div>
 </div>
 <dl class="method">
 <dt id="geosoft.gxapi.GXLTB.add_record">
 <code class="descname">add_record</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(int_ref)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXLTB.add_record" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Add a new record.
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Add</span> <span class="n">a</span> <span class="n">new</span> <span class="n">record</span><span class="o">.</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -121,7 +118,7 @@ Comment and empty lines are ignored.
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<em>str</em>) &#8211; key name</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; returned record number</li>
+<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; returned record number</li>
 </ul>
 </td>
 </tr>
@@ -137,8 +134,8 @@ Comment and empty lines are ignored.
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>If the record exists, the existing record is cleared
-and the record number is returned.
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">If</span> <span class="n">the</span> <span class="n">record</span> <span class="n">exists</span><span class="p">,</span> <span class="n">the</span> <span class="n">existing</span> <span class="n">record</span> <span class="ow">is</span> <span class="n">cleared</span>
+<span class="ow">and</span> <span class="n">the</span> <span class="n">record</span> <span class="n">number</span> <span class="ow">is</span> <span class="n">returned</span><span class="o">.</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -146,7 +143,7 @@ and the record number is returned.
 <dl class="method">
 <dt id="geosoft.gxapi.GXLTB.contract">
 <code class="descname">contract</code><span class="sig-paren">(</span><em>(GXLTB)arg1</em><span class="sig-paren">)</span> &rarr; GXLTB:<a class="headerlink" href="#geosoft.gxapi.GXLTB.contract" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Contract the contents of two same-key and same-fields tables.
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Contract</span> <span class="n">the</span> <span class="n">contents</span> <span class="n">of</span> <span class="n">two</span> <span class="n">same</span><span class="o">-</span><span class="n">key</span> <span class="ow">and</span> <span class="n">same</span><span class="o">-</span><span class="n">fields</span> <span class="n">tables</span><span class="o">.</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -166,14 +163,14 @@ NULL - Error of some kind</td>
 <p><span class="versionmodified">New in version 5.1.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>The &quot;Key&quot; of the child must be the same as the &quot;Key&quot; of the Master.
-The fields of two LTB must be the same.
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="s2">&quot;Key&quot;</span> <span class="n">of</span> <span class="n">the</span> <span class="n">child</span> <span class="n">must</span> <span class="n">be</span> <span class="n">the</span> <span class="n">same</span> <span class="k">as</span> <span class="n">the</span> <span class="s2">&quot;Key&quot;</span> <span class="n">of</span> <span class="n">the</span> <span class="n">Master</span><span class="o">.</span>
+<span class="n">The</span> <span class="n">fields</span> <span class="n">of</span> <span class="n">two</span> <span class="n">LTB</span> <span class="n">must</span> <span class="n">be</span> <span class="n">the</span> <span class="n">same</span><span class="o">.</span>
 
-Contracting takes place as follows:
+<span class="n">Contracting</span> <span class="n">takes</span> <span class="n">place</span> <span class="k">as</span> <span class="n">follows</span><span class="p">:</span>
 
-1. The Master LTB is copied to the New LTB.
-2. All records in the contract LIB are deleted from the New LTB (if there are any)
-3. The New LTB is returned.
+<span class="mf">1.</span> <span class="n">The</span> <span class="n">Master</span> <span class="n">LTB</span> <span class="ow">is</span> <span class="n">copied</span> <span class="n">to</span> <span class="n">the</span> <span class="n">New</span> <span class="n">LTB</span><span class="o">.</span>
+<span class="mf">2.</span> <span class="n">All</span> <span class="n">records</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">contract</span> <span class="n">LIB</span> <span class="n">are</span> <span class="n">deleted</span> <span class="kn">from</span> <span class="nn">the</span> <span class="n">New</span> <span class="n">LTB</span> <span class="p">(</span><span class="k">if</span> <span class="n">there</span> <span class="n">are</span> <span class="nb">any</span><span class="p">)</span>
+<span class="mf">3.</span> <span class="n">The</span> <span class="n">New</span> <span class="n">LTB</span> <span class="ow">is</span> <span class="n">returned</span><span class="o">.</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -181,7 +178,7 @@ Contracting takes place as follows:
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXLTB.create">
 <em class="property">static </em><code class="descname">create</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(int)arg2</em>, <em>(int)arg3</em>, <em>(str)arg4</em><span class="sig-paren">)</span> &rarr; GXLTB:<a class="headerlink" href="#geosoft.gxapi.GXLTB.create" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Creates a LTB object from a file.
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Creates</span> <span class="n">a</span> <span class="n">LTB</span> <span class="nb">object</span> <span class="kn">from</span> <span class="nn">a</span> <span class="n">file</span><span class="o">.</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -190,8 +187,8 @@ Contracting takes place as follows:
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<em>str</em>) &#8211; file name, .csv assumed, searched locally then in GEOSOFT.</li>
-<li><strong>arg2</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#ltb-type"><span>LTB_TYPE constants</span></a></li>
-<li><strong>arg3</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#ltb-delim"><span>LTB_DELIM constants</span></a></li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#ltb-type"><span class="std std-ref">LTB_TYPE constants</span></a></li>
+<li><strong>arg3</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#ltb-delim"><span class="std std-ref">LTB_DELIM constants</span></a></li>
 <li><strong>arg4</strong> (<em>str</em>) &#8211; Key to find if only one record required, &#8220;&#8221; to read entire table.</li>
 </ul>
 </td>
@@ -209,7 +206,7 @@ NULL - Error of some kind</p>
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>If the file has no header, field names are assumed to be &quot;0&quot;, &quot;1&quot;, etc.
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">If</span> <span class="n">the</span> <span class="n">file</span> <span class="n">has</span> <span class="n">no</span> <span class="n">header</span><span class="p">,</span> <span class="n">field</span> <span class="n">names</span> <span class="n">are</span> <span class="n">assumed</span> <span class="n">to</span> <span class="n">be</span> <span class="s2">&quot;0&quot;</span><span class="p">,</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span> <span class="n">etc</span><span class="o">.</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -217,7 +214,7 @@ NULL - Error of some kind</p>
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXLTB.create_crypt">
 <em class="property">static </em><code class="descname">create_crypt</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(int)arg2</em>, <em>(int)arg3</em>, <em>(int)arg4</em>, <em>(str)arg5</em>, <em>(str)arg6</em><span class="sig-paren">)</span> &rarr; GXLTB:<a class="headerlink" href="#geosoft.gxapi.GXLTB.create_crypt" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Creates a LTB object from an encrypted file.
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Creates</span> <span class="n">a</span> <span class="n">LTB</span> <span class="nb">object</span> <span class="kn">from</span> <span class="nn">an</span> <span class="n">encrypted</span> <span class="n">file</span><span class="o">.</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -226,11 +223,11 @@ NULL - Error of some kind</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<em>str</em>) &#8211; file name, .csv assumed, searched locally then in GEOSOFT.</li>
-<li><strong>arg2</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#ltb-type"><span>LTB_TYPE constants</span></a></li>
-<li><strong>arg3</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#ltb-delim"><span>LTB_DELIM constants</span></a></li>
-<li><strong>arg4</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#ltb-case"><span>LTB_CASE constants</span></a></li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#ltb-type"><span class="std std-ref">LTB_TYPE constants</span></a></li>
+<li><strong>arg3</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#ltb-delim"><span class="std std-ref">LTB_DELIM constants</span></a></li>
+<li><strong>arg4</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#ltb-case"><span class="std std-ref">LTB_CASE constants</span></a></li>
 <li><strong>arg5</strong> (<em>str</em>) &#8211; Key to find if only one record required, &#8220;&#8221; to read entire table.</li>
-<li><strong>arg6</strong> (<em>str</em>) &#8211; Decryption Key <a class="reference internal" href="index.html#sys-crypt-key"><span>SYS_CRYPT_KEY constants</span></a></li>
+<li><strong>arg6</strong> (<em>str</em>) &#8211; Decryption Key <span class="xref std std-ref">SYS_CRYPT_KEY</span></li>
 </ul>
 </td>
 </tr>
@@ -247,7 +244,7 @@ NULL - Error of some kind</p>
 <p><span class="versionmodified">New in version 6.2.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>If the file has no header, field names are assumed to be &quot;0&quot;, &quot;1&quot;, etc.
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">If</span> <span class="n">the</span> <span class="n">file</span> <span class="n">has</span> <span class="n">no</span> <span class="n">header</span><span class="p">,</span> <span class="n">field</span> <span class="n">names</span> <span class="n">are</span> <span class="n">assumed</span> <span class="n">to</span> <span class="n">be</span> <span class="s2">&quot;0&quot;</span><span class="p">,</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span> <span class="n">etc</span><span class="o">.</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -255,7 +252,7 @@ NULL - Error of some kind</p>
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXLTB.create_ex">
 <em class="property">static </em><code class="descname">create_ex</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(int)arg2</em>, <em>(int)arg3</em>, <em>(int)arg4</em>, <em>(str)arg5</em><span class="sig-paren">)</span> &rarr; GXLTB:<a class="headerlink" href="#geosoft.gxapi.GXLTB.create_ex" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Creates a LTB object from a file.
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Creates</span> <span class="n">a</span> <span class="n">LTB</span> <span class="nb">object</span> <span class="kn">from</span> <span class="nn">a</span> <span class="n">file</span><span class="o">.</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -264,9 +261,9 @@ NULL - Error of some kind</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<em>str</em>) &#8211; file name, .csv assumed, searched locally then in GEOSOFT.</li>
-<li><strong>arg2</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#ltb-type"><span>LTB_TYPE constants</span></a></li>
-<li><strong>arg3</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#ltb-delim"><span>LTB_DELIM constants</span></a></li>
-<li><strong>arg4</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#ltb-case"><span>LTB_CASE constants</span></a></li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#ltb-type"><span class="std std-ref">LTB_TYPE constants</span></a></li>
+<li><strong>arg3</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#ltb-delim"><span class="std std-ref">LTB_DELIM constants</span></a></li>
+<li><strong>arg4</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#ltb-case"><span class="std std-ref">LTB_CASE constants</span></a></li>
 <li><strong>arg5</strong> (<em>str</em>) &#8211; Key to find if only one record required, &#8220;&#8221; to read entire table.</li>
 </ul>
 </td>
@@ -284,7 +281,7 @@ NULL - Error of some kind</p>
 <p><span class="versionmodified">New in version 6.1.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>If the file has no header, field names are assumed to be &quot;0&quot;, &quot;1&quot;, etc.
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">If</span> <span class="n">the</span> <span class="n">file</span> <span class="n">has</span> <span class="n">no</span> <span class="n">header</span><span class="p">,</span> <span class="n">field</span> <span class="n">names</span> <span class="n">are</span> <span class="n">assumed</span> <span class="n">to</span> <span class="n">be</span> <span class="s2">&quot;0&quot;</span><span class="p">,</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span> <span class="n">etc</span><span class="o">.</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -292,7 +289,7 @@ NULL - Error of some kind</p>
 <dl class="method">
 <dt id="geosoft.gxapi.GXLTB.delete_record">
 <code class="descname">delete_record</code><span class="sig-paren">(</span><em>(int)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXLTB.delete_record" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Delete a record.
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Delete</span> <span class="n">a</span> <span class="n">record</span><span class="o">.</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -311,8 +308,8 @@ NULL - Error of some kind</p>
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>Record numbers after the deleted record will be reduced
-by 1.
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Record</span> <span class="n">numbers</span> <span class="n">after</span> <span class="n">the</span> <span class="n">deleted</span> <span class="n">record</span> <span class="n">will</span> <span class="n">be</span> <span class="n">reduced</span>
+<span class="n">by</span> <span class="mf">1.</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -320,7 +317,7 @@ by 1.
 <dl class="method">
 <dt id="geosoft.gxapi.GXLTB.fields">
 <code class="descname">fields</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXLTB.fields" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Get number of fields.
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">number</span> <span class="n">of</span> <span class="n">fields</span><span class="o">.</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -341,7 +338,7 @@ by 1.
 <dl class="method">
 <dt id="geosoft.gxapi.GXLTB.find_field">
 <code class="descname">find_field</code><span class="sig-paren">(</span><em>(str)arg1</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXLTB.find_field" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Return the field number for the specified field.
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Return</span> <span class="n">the</span> <span class="n">field</span> <span class="n">number</span> <span class="k">for</span> <span class="n">the</span> <span class="n">specified</span> <span class="n">field</span><span class="o">.</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -365,7 +362,7 @@ field number if field does exist.</td>
 <dl class="method">
 <dt id="geosoft.gxapi.GXLTB.find_key">
 <code class="descname">find_key</code><span class="sig-paren">(</span><em>(str)arg1</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXLTB.find_key" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Return the key index of a record.
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Return</span> <span class="n">the</span> <span class="n">key</span> <span class="n">index</span> <span class="n">of</span> <span class="n">a</span> <span class="n">record</span><span class="o">.</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -389,7 +386,7 @@ record number if key does exist.</td>
 <dl class="method">
 <dt id="geosoft.gxapi.GXLTB.get_con_lst">
 <code class="descname">get_con_lst</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(str)arg2</em>, <em>(int)arg3</em>, <em>(GXLST)arg4</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXLTB.get_con_lst" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Populate a LST with LTB names from matching fields.
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Populate</span> <span class="n">a</span> <span class="n">LST</span> <span class="k">with</span> <span class="n">LTB</span> <span class="n">names</span> <span class="kn">from</span> <span class="nn">matching</span> <span class="n">fields</span><span class="o">.</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -399,7 +396,7 @@ record number if key does exist.</td>
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<em>int</em>) &#8211; field</li>
 <li><strong>arg2</strong> (<em>str</em>) &#8211; string to match to field, must be lower-case</li>
-<li><strong>arg3</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#ltb-conlst"><span>LTB_CONLST constants</span></a></li>
+<li><strong>arg3</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#ltb-conlst"><span class="std std-ref">LTB_CONLST constants</span></a></li>
 <li><strong>arg4</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXLST</span></code></a>) &#8211; list to populate</li>
 </ul>
 </td>
@@ -416,9 +413,9 @@ record number if key does exist.</td>
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>The LST object will be in the order of the file.
-The LST names will be the LTB key fields and the
-LST values will be the LTB record numbers.
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">LST</span> <span class="nb">object</span> <span class="n">will</span> <span class="n">be</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">order</span> <span class="n">of</span> <span class="n">the</span> <span class="n">file</span><span class="o">.</span>
+<span class="n">The</span> <span class="n">LST</span> <span class="n">names</span> <span class="n">will</span> <span class="n">be</span> <span class="n">the</span> <span class="n">LTB</span> <span class="n">key</span> <span class="n">fields</span> <span class="ow">and</span> <span class="n">the</span>
+<span class="n">LST</span> <span class="n">values</span> <span class="n">will</span> <span class="n">be</span> <span class="n">the</span> <span class="n">LTB</span> <span class="n">record</span> <span class="n">numbers</span><span class="o">.</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -426,7 +423,7 @@ LST values will be the LTB record numbers.
 <dl class="method">
 <dt id="geosoft.gxapi.GXLTB.get_double">
 <code class="descname">get_double</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(int)arg2</em><span class="sig-paren">)</span> &rarr; float:<a class="headerlink" href="#geosoft.gxapi.GXLTB.get_double" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Get a real entry from the LTB
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">a</span> <span class="n">real</span> <span class="n">entry</span> <span class="kn">from</span> <span class="nn">the</span> <span class="n">LTB</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -456,7 +453,7 @@ an empty string or dummy value is returned.</p>
 <dl class="method">
 <dt id="geosoft.gxapi.GXLTB.get_english_string">
 <code class="descname">get_english_string</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(int)arg2</em>, <em>(str_ref)arg3</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXLTB.get_english_string" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Get the English entry from the LTB
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">the</span> <span class="n">English</span> <span class="n">entry</span> <span class="kn">from</span> <span class="nn">the</span> <span class="n">LTB</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -466,7 +463,7 @@ an empty string or dummy value is returned.</p>
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<em>int</em>) &#8211; record number</li>
 <li><strong>arg2</strong> (<em>int</em>) &#8211; field number</li>
-<li><strong>arg3</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; returned field token</li>
+<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; returned field token</li>
 </ul>
 </td>
 </tr>
@@ -482,8 +479,8 @@ an empty string or dummy value is returned.</p>
 <p><span class="versionmodified">New in version 8.2.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>If the record or field are out of range,
-an empty string or dummy value is returned.
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">If</span> <span class="n">the</span> <span class="n">record</span> <span class="ow">or</span> <span class="n">field</span> <span class="n">are</span> <span class="n">out</span> <span class="n">of</span> <span class="nb">range</span><span class="p">,</span>
+<span class="n">an</span> <span class="n">empty</span> <span class="n">string</span> <span class="ow">or</span> <span class="n">dummy</span> <span class="n">value</span> <span class="ow">is</span> <span class="n">returned</span><span class="o">.</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -491,7 +488,7 @@ an empty string or dummy value is returned.
 <dl class="method">
 <dt id="geosoft.gxapi.GXLTB.get_field">
 <code class="descname">get_field</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(str_ref)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXLTB.get_field" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Get a field name by index.
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">a</span> <span class="n">field</span> <span class="n">name</span> <span class="n">by</span> <span class="n">index</span><span class="o">.</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -500,7 +497,7 @@ an empty string or dummy value is returned.
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<em>int</em>) &#8211; field number</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; returned field name</li>
+<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; returned field name</li>
 </ul>
 </td>
 </tr>
@@ -516,7 +513,7 @@ an empty string or dummy value is returned.
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>If the record or field are out of range, an empty string is returned.
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">If</span> <span class="n">the</span> <span class="n">record</span> <span class="ow">or</span> <span class="n">field</span> <span class="n">are</span> <span class="n">out</span> <span class="n">of</span> <span class="nb">range</span><span class="p">,</span> <span class="n">an</span> <span class="n">empty</span> <span class="n">string</span> <span class="ow">is</span> <span class="n">returned</span><span class="o">.</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -524,7 +521,7 @@ an empty string or dummy value is returned.
 <dl class="method">
 <dt id="geosoft.gxapi.GXLTB.get_int">
 <code class="descname">get_int</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(int)arg2</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXLTB.get_int" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Get a int entry from the LTB
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">a</span> <span class="nb">int</span> <span class="n">entry</span> <span class="kn">from</span> <span class="nn">the</span> <span class="n">LTB</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -554,7 +551,7 @@ an empty string or dummy value is returned.</p>
 <dl class="method">
 <dt id="geosoft.gxapi.GXLTB.get_lst">
 <code class="descname">get_lst</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(GXLST)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXLTB.get_lst" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Populate an LST with LTB names
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Populate</span> <span class="n">an</span> <span class="n">LST</span> <span class="k">with</span> <span class="n">LTB</span> <span class="n">names</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -579,9 +576,9 @@ an empty string or dummy value is returned.</p>
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>The LST object will be in the order of the file.
-The LST names will be the LTB fields and the
-LST values will be the LTB record numbers.
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">LST</span> <span class="nb">object</span> <span class="n">will</span> <span class="n">be</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">order</span> <span class="n">of</span> <span class="n">the</span> <span class="n">file</span><span class="o">.</span>
+<span class="n">The</span> <span class="n">LST</span> <span class="n">names</span> <span class="n">will</span> <span class="n">be</span> <span class="n">the</span> <span class="n">LTB</span> <span class="n">fields</span> <span class="ow">and</span> <span class="n">the</span>
+<span class="n">LST</span> <span class="n">values</span> <span class="n">will</span> <span class="n">be</span> <span class="n">the</span> <span class="n">LTB</span> <span class="n">record</span> <span class="n">numbers</span><span class="o">.</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -589,7 +586,7 @@ LST values will be the LTB record numbers.
 <dl class="method">
 <dt id="geosoft.gxapi.GXLTB.get_lst2">
 <code class="descname">get_lst2</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(int)arg2</em>, <em>(GXLST)arg3</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXLTB.get_lst2" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Populate an LST with LTB names and values
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Populate</span> <span class="n">an</span> <span class="n">LST</span> <span class="k">with</span> <span class="n">LTB</span> <span class="n">names</span> <span class="ow">and</span> <span class="n">values</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -615,9 +612,9 @@ LST values will be the LTB record numbers.
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>The LST object will be in the order of the file.
-The LST names will come from the LTB name field and the
-LST values will come from value field specified.
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">LST</span> <span class="nb">object</span> <span class="n">will</span> <span class="n">be</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">order</span> <span class="n">of</span> <span class="n">the</span> <span class="n">file</span><span class="o">.</span>
+<span class="n">The</span> <span class="n">LST</span> <span class="n">names</span> <span class="n">will</span> <span class="n">come</span> <span class="kn">from</span> <span class="nn">the</span> <span class="n">LTB</span> <span class="n">name</span> <span class="n">field</span> <span class="ow">and</span> <span class="n">the</span>
+<span class="n">LST</span> <span class="n">values</span> <span class="n">will</span> <span class="n">come</span> <span class="kn">from</span> <span class="nn">value</span> <span class="n">field</span> <span class="n">specified</span><span class="o">.</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -625,7 +622,7 @@ LST values will come from value field specified.
 <dl class="method">
 <dt id="geosoft.gxapi.GXLTB.get_string">
 <code class="descname">get_string</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(int)arg2</em>, <em>(str_ref)arg3</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXLTB.get_string" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Get an entry from the LTB
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">an</span> <span class="n">entry</span> <span class="kn">from</span> <span class="nn">the</span> <span class="n">LTB</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -635,7 +632,7 @@ LST values will come from value field specified.
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<em>int</em>) &#8211; record number</li>
 <li><strong>arg2</strong> (<em>int</em>) &#8211; field number</li>
-<li><strong>arg3</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; returned field token</li>
+<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; returned field token</li>
 </ul>
 </td>
 </tr>
@@ -651,8 +648,8 @@ LST values will come from value field specified.
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>If the record or field are out of range,
-an empty string or dummy value is returned.
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">If</span> <span class="n">the</span> <span class="n">record</span> <span class="ow">or</span> <span class="n">field</span> <span class="n">are</span> <span class="n">out</span> <span class="n">of</span> <span class="nb">range</span><span class="p">,</span>
+<span class="n">an</span> <span class="n">empty</span> <span class="n">string</span> <span class="ow">or</span> <span class="n">dummy</span> <span class="n">value</span> <span class="ow">is</span> <span class="n">returned</span><span class="o">.</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -676,7 +673,7 @@ an empty string or dummy value is returned.
 <dl class="method">
 <dt id="geosoft.gxapi.GXLTB.merge">
 <code class="descname">merge</code><span class="sig-paren">(</span><em>(GXLTB)arg1</em><span class="sig-paren">)</span> &rarr; GXLTB:<a class="headerlink" href="#geosoft.gxapi.GXLTB.merge" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Merge the contents of two same-key tables.
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Merge</span> <span class="n">the</span> <span class="n">contents</span> <span class="n">of</span> <span class="n">two</span> <span class="n">same</span><span class="o">-</span><span class="n">key</span> <span class="n">tables</span><span class="o">.</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -696,21 +693,21 @@ NULL - Error of some kind</td>
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>Merging takes place as follows:
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Merging</span> <span class="n">takes</span> <span class="n">place</span> <span class="k">as</span> <span class="n">follows</span><span class="p">:</span>
 
-1. The &quot;Key&quot; of the child must be the same as the &quot;Key&quot; of the Master.
-2. The fields of the Master LTB are collected in-order.
-3. Any new fields of the Child LTB are added to the end of the list.
-4. A new LTB is created to contain the new field list (in-order).
-5. The Child table contents are added to the New LTB.
-6. The Master table contents are added/replace the New LTB.
-7. The New LTB is returned.
+<span class="mf">1.</span> <span class="n">The</span> <span class="s2">&quot;Key&quot;</span> <span class="n">of</span> <span class="n">the</span> <span class="n">child</span> <span class="n">must</span> <span class="n">be</span> <span class="n">the</span> <span class="n">same</span> <span class="k">as</span> <span class="n">the</span> <span class="s2">&quot;Key&quot;</span> <span class="n">of</span> <span class="n">the</span> <span class="n">Master</span><span class="o">.</span>
+<span class="mf">2.</span> <span class="n">The</span> <span class="n">fields</span> <span class="n">of</span> <span class="n">the</span> <span class="n">Master</span> <span class="n">LTB</span> <span class="n">are</span> <span class="n">collected</span> <span class="ow">in</span><span class="o">-</span><span class="n">order</span><span class="o">.</span>
+<span class="mf">3.</span> <span class="n">Any</span> <span class="n">new</span> <span class="n">fields</span> <span class="n">of</span> <span class="n">the</span> <span class="n">Child</span> <span class="n">LTB</span> <span class="n">are</span> <span class="n">added</span> <span class="n">to</span> <span class="n">the</span> <span class="n">end</span> <span class="n">of</span> <span class="n">the</span> <span class="nb">list</span><span class="o">.</span>
+<span class="mf">4.</span> <span class="n">A</span> <span class="n">new</span> <span class="n">LTB</span> <span class="ow">is</span> <span class="n">created</span> <span class="n">to</span> <span class="n">contain</span> <span class="n">the</span> <span class="n">new</span> <span class="n">field</span> <span class="nb">list</span> <span class="p">(</span><span class="ow">in</span><span class="o">-</span><span class="n">order</span><span class="p">)</span><span class="o">.</span>
+<span class="mf">5.</span> <span class="n">The</span> <span class="n">Child</span> <span class="n">table</span> <span class="n">contents</span> <span class="n">are</span> <span class="n">added</span> <span class="n">to</span> <span class="n">the</span> <span class="n">New</span> <span class="n">LTB</span><span class="o">.</span>
+<span class="mf">6.</span> <span class="n">The</span> <span class="n">Master</span> <span class="n">table</span> <span class="n">contents</span> <span class="n">are</span> <span class="n">added</span><span class="o">/</span><span class="n">replace</span> <span class="n">the</span> <span class="n">New</span> <span class="n">LTB</span><span class="o">.</span>
+<span class="mf">7.</span> <span class="n">The</span> <span class="n">New</span> <span class="n">LTB</span> <span class="ow">is</span> <span class="n">returned</span><span class="o">.</span>
 
-If the fields of the Master and Child are the same, steps 4, 5, 6 are
-replaced by:
+<span class="n">If</span> <span class="n">the</span> <span class="n">fields</span> <span class="n">of</span> <span class="n">the</span> <span class="n">Master</span> <span class="ow">and</span> <span class="n">Child</span> <span class="n">are</span> <span class="n">the</span> <span class="n">same</span><span class="p">,</span> <span class="n">steps</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span> <span class="n">are</span>
+<span class="n">replaced</span> <span class="n">by</span><span class="p">:</span>
 
-4. The Master LTB is copied to the New LTB.
-5. Any New records found in the child are added to the New LTB
+<span class="mf">4.</span> <span class="n">The</span> <span class="n">Master</span> <span class="n">LTB</span> <span class="ow">is</span> <span class="n">copied</span> <span class="n">to</span> <span class="n">the</span> <span class="n">New</span> <span class="n">LTB</span><span class="o">.</span>
+<span class="mf">5.</span> <span class="n">Any</span> <span class="n">New</span> <span class="n">records</span> <span class="n">found</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">child</span> <span class="n">are</span> <span class="n">added</span> <span class="n">to</span> <span class="n">the</span> <span class="n">New</span> <span class="n">LTB</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -734,7 +731,7 @@ replaced by:
 <dl class="method">
 <dt id="geosoft.gxapi.GXLTB.records">
 <code class="descname">records</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXLTB.records" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Get number of records in LTB.
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">number</span> <span class="n">of</span> <span class="n">records</span> <span class="ow">in</span> <span class="n">LTB</span><span class="o">.</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -755,7 +752,7 @@ replaced by:
 <dl class="method">
 <dt id="geosoft.gxapi.GXLTB.save">
 <code class="descname">save</code><span class="sig-paren">(</span><em>(str)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXLTB.save" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Save LTB changes to existing or new file
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Save</span> <span class="n">LTB</span> <span class="n">changes</span> <span class="n">to</span> <span class="n">existing</span> <span class="ow">or</span> <span class="n">new</span> <span class="n">file</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -778,7 +775,7 @@ replaced by:
 <dl class="method">
 <dt id="geosoft.gxapi.GXLTB.save_crypt">
 <code class="descname">save_crypt</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(str)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXLTB.save_crypt" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Save LTB to a new file using encryption
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Save</span> <span class="n">LTB</span> <span class="n">to</span> <span class="n">a</span> <span class="n">new</span> <span class="n">file</span> <span class="n">using</span> <span class="n">encryption</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -787,7 +784,7 @@ replaced by:
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<em>str</em>) &#8211; file name, .csv assumed.  If &#8220;&#8221;, save to original file.</li>
-<li><strong>arg2</strong> (<em>str</em>) &#8211; encryption key  <a class="reference internal" href="index.html#sys-crypt-key"><span>SYS_CRYPT_KEY constants</span></a></li>
+<li><strong>arg2</strong> (<em>str</em>) &#8211; encryption key  <span class="xref std std-ref">SYS_CRYPT_KEY</span></li>
 </ul>
 </td>
 </tr>
@@ -807,7 +804,7 @@ replaced by:
 <dl class="method">
 <dt id="geosoft.gxapi.GXLTB.search">
 <code class="descname">search</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(int)arg2</em>, <em>(str)arg3</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXLTB.search" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Search for a record containing field value
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Search</span> <span class="k">for</span> <span class="n">a</span> <span class="n">record</span> <span class="n">containing</span> <span class="n">field</span> <span class="n">value</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -838,7 +835,7 @@ record number if search succeeds</p>
 <dl class="method">
 <dt id="geosoft.gxapi.GXLTB.set_double">
 <code class="descname">set_double</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(int)arg2</em>, <em>(float)arg3</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXLTB.set_double" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Set a double entry
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Set</span> <span class="n">a</span> <span class="n">double</span> <span class="n">entry</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -868,7 +865,7 @@ record number if search succeeds</p>
 <dl class="method">
 <dt id="geosoft.gxapi.GXLTB.set_int">
 <code class="descname">set_int</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(int)arg2</em>, <em>(int)arg3</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXLTB.set_int" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Set a long entry
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Set</span> <span class="n">a</span> <span class="n">long</span> <span class="n">entry</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -898,7 +895,7 @@ record number if search succeeds</p>
 <dl class="method">
 <dt id="geosoft.gxapi.GXLTB.set_string">
 <code class="descname">set_string</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(int)arg2</em>, <em>(str)arg3</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXLTB.set_string" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Set an entry
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Set</span> <span class="n">an</span> <span class="n">entry</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -929,7 +926,7 @@ record number if search succeeds</p>
 
 <div class="section" id="ltb-case-constants">
 <span id="ltb-case"></span><h2>LTB_CASE constants<a class="headerlink" href="#ltb-case-constants" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-python"><div class="highlight"><pre><span></span>Case handling of LTB strings
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Case</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">LTB</span> <span class="n">strings</span>
 </pre></div>
 </div>
 <dl class="attribute">
@@ -937,7 +934,7 @@ record number if search succeeds</p>
 <code class="descclassname">gxapi.</code><code class="descname">LTB_CASE_INSENSITIVE</code><em class="property"> = 0</em><a class="headerlink" href="#geosoft.gxapi.LTB_CASE_INSENSITIVE" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<div class="highlight-python"><div class="highlight"><pre><span></span>Ignore case
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Ignore</span> <span class="n">case</span>
 </pre></div>
 </div>
 <dl class="attribute">
@@ -945,13 +942,13 @@ record number if search succeeds</p>
 <code class="descclassname">gxapi.</code><code class="descname">LTB_CASE_SENSITIVE</code><em class="property"> = 1</em><a class="headerlink" href="#geosoft.gxapi.LTB_CASE_SENSITIVE" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">Case</span> <span class="ow">is</span> <span class="n">used</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Case</span> <span class="ow">is</span> <span class="n">used</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="ltb-conlst-constants">
 <span id="ltb-conlst"></span><h2>LTB_CONLST constants<a class="headerlink" href="#ltb-conlst-constants" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-python"><div class="highlight"><pre><span></span>Matching types
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Matching</span> <span class="n">types</span>
 </pre></div>
 </div>
 <dl class="attribute">
@@ -967,7 +964,7 @@ record number if search succeeds</p>
 </div>
 <div class="section" id="ltb-delim-constants">
 <span id="ltb-delim"></span><h2>LTB_DELIM constants<a class="headerlink" href="#ltb-delim-constants" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-python"><div class="highlight"><pre><span></span>Types of LTB Delimiters
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Types</span> <span class="n">of</span> <span class="n">LTB</span> <span class="n">Delimiters</span>
 </pre></div>
 </div>
 <dl class="attribute">
@@ -975,7 +972,7 @@ record number if search succeeds</p>
 <code class="descclassname">gxapi.</code><code class="descname">LTB_DELIM_SPACE</code><em class="property"> = 0</em><a class="headerlink" href="#geosoft.gxapi.LTB_DELIM_SPACE" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">Spaces</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Spaces</span>
 </pre></div>
 </div>
 <dl class="attribute">
@@ -983,7 +980,7 @@ record number if search succeeds</p>
 <code class="descclassname">gxapi.</code><code class="descname">LTB_DELIM_COMMA</code><em class="property"> = 1</em><a class="headerlink" href="#geosoft.gxapi.LTB_DELIM_COMMA" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">Commas</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Commas</span>
 </pre></div>
 </div>
 <dl class="attribute">
@@ -991,13 +988,13 @@ record number if search succeeds</p>
 <code class="descclassname">gxapi.</code><code class="descname">LTB_DELIM_SPACECOMMA</code><em class="property"> = 2</em><a class="headerlink" href="#geosoft.gxapi.LTB_DELIM_SPACECOMMA" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">Spaces</span> <span class="ow">and</span> <span class="n">Commas</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Spaces</span> <span class="ow">and</span> <span class="n">Commas</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="ltb-type-constants">
 <span id="ltb-type"></span><h2>LTB_TYPE constants<a class="headerlink" href="#ltb-type-constants" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-python"><div class="highlight"><pre><span></span>Types of LTB Headers
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Types</span> <span class="n">of</span> <span class="n">LTB</span> <span class="n">Headers</span>
 </pre></div>
 </div>
 <dl class="attribute">
@@ -1005,7 +1002,7 @@ record number if search succeeds</p>
 <code class="descclassname">gxapi.</code><code class="descname">LTB_TYPE_HEADER</code><em class="property"> = 0</em><a class="headerlink" href="#geosoft.gxapi.LTB_TYPE_HEADER" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<div class="highlight-python"><div class="highlight"><pre><span></span>Has a header
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Has</span> <span class="n">a</span> <span class="n">header</span>
 </pre></div>
 </div>
 <dl class="attribute">
@@ -1013,7 +1010,7 @@ record number if search succeeds</p>
 <code class="descclassname">gxapi.</code><code class="descname">LTB_TYPE_NOHEADER</code><em class="property"> = 1</em><a class="headerlink" href="#geosoft.gxapi.LTB_TYPE_NOHEADER" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<div class="highlight-python"><div class="highlight"><pre><span></span>Has no header
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Has</span> <span class="n">no</span> <span class="n">header</span>
 </pre></div>
 </div>
 </div>
@@ -1034,12 +1031,12 @@ record number if search succeeds</p>
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.1.0 documentation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.1 documentation</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &copy; Copyright 2016, Geosoft Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+        &#169; Copyright 2016, Geosoft Inc.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.6.
     </div>
   </body>
 </html>

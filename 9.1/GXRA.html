@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>GXRA class &mdash; Geosoft GX Python API 9.1.0 documentation</title>
+    <title>GXRA class &#8212; Geosoft GX Python API 9.1 documentation</title>
     
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '9.1.0',
+        VERSION:     '9.1',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +23,7 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="Geosoft GX Python API 9.1.0 documentation" href="index.html" /> 
+    <link rel="top" title="Geosoft GX Python API 9.1 documentation" href="index.html" /> 
   </head>
   <body role="document">
     <div class="related" role="navigation" aria-label="related navigation">
@@ -35,7 +35,7 @@
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.1.0 documentation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.1 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -50,14 +50,11 @@
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -73,15 +70,15 @@
 <dl class="class">
 <dt id="geosoft.gxapi.GXRA">
 <em class="property">class </em><code class="descclassname">geosoft.gxapi.</code><code class="descname">GXRA</code><a class="headerlink" href="#geosoft.gxapi.GXRA" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>The RA class is used to access ASCII files sequentially or
-by line number. The files are opened in read-only mode, so no
-write operations are defined
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">RA</span> <span class="k">class</span> <span class="nc">is</span> <span class="n">used</span> <span class="n">to</span> <span class="n">access</span> <span class="n">ASCII</span> <span class="n">files</span> <span class="n">sequentially</span> <span class="ow">or</span>
+<span class="n">by</span> <span class="n">line</span> <span class="n">number</span><span class="o">.</span> <span class="n">The</span> <span class="n">files</span> <span class="n">are</span> <span class="n">opened</span> <span class="ow">in</span> <span class="n">read</span><span class="o">-</span><span class="n">only</span> <span class="n">mode</span><span class="p">,</span> <span class="n">so</span> <span class="n">no</span>
+<span class="n">write</span> <span class="n">operations</span> <span class="n">are</span> <span class="n">defined</span>
 </pre></div>
 </div>
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXRA.create">
 <em class="property">static </em><code class="descname">create</code><span class="sig-paren">(</span><em>(str)arg1</em><span class="sig-paren">)</span> &rarr; GXRA:<a class="headerlink" href="#geosoft.gxapi.GXRA.create" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Creates RA
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Creates</span> <span class="n">RA</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -104,7 +101,7 @@ write operations are defined
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXRA.create_sbf">
 <em class="property">static </em><code class="descname">create_sbf</code><span class="sig-paren">(</span><em>(GXSBF)arg1</em>, <em>(str)arg2</em><span class="sig-paren">)</span> &rarr; GXRA:<a class="headerlink" href="#geosoft.gxapi.GXRA.create_sbf" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Creates RA on an SBF
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Creates</span> <span class="n">RA</span> <span class="n">on</span> <span class="n">an</span> <span class="n">SBF</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -129,11 +126,11 @@ write operations are defined
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>This method allows you to open an RA in a structured file
-storage (an SBF).  SBFs can be created inside other data
-containers, such as workspaces, maps, images and databases.
-This lets you store application specific information together
-with the data to which it applies.
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="n">method</span> <span class="n">allows</span> <span class="n">you</span> <span class="n">to</span> <span class="nb">open</span> <span class="n">an</span> <span class="n">RA</span> <span class="ow">in</span> <span class="n">a</span> <span class="n">structured</span> <span class="n">file</span>
+<span class="n">storage</span> <span class="p">(</span><span class="n">an</span> <span class="n">SBF</span><span class="p">)</span><span class="o">.</span>  <span class="n">SBFs</span> <span class="n">can</span> <span class="n">be</span> <span class="n">created</span> <span class="n">inside</span> <span class="n">other</span> <span class="n">data</span>
+<span class="n">containers</span><span class="p">,</span> <span class="n">such</span> <span class="k">as</span> <span class="n">workspaces</span><span class="p">,</span> <span class="n">maps</span><span class="p">,</span> <span class="n">images</span> <span class="ow">and</span> <span class="n">databases</span><span class="o">.</span>
+<span class="n">This</span> <span class="n">lets</span> <span class="n">you</span> <span class="n">store</span> <span class="n">application</span> <span class="n">specific</span> <span class="n">information</span> <span class="n">together</span>
+<span class="k">with</span> <span class="n">the</span> <span class="n">data</span> <span class="n">to</span> <span class="n">which</span> <span class="n">it</span> <span class="n">applies</span><span class="o">.</span>
 </pre></div>
 </div>
 <div class="admonition seealso">
@@ -145,14 +142,14 @@ with the data to which it applies.
 <dl class="method">
 <dt id="geosoft.gxapi.GXRA.gets">
 <code class="descname">gets</code><span class="sig-paren">(</span><em>(str_ref)arg1</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXRA.gets" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Get next full line from RA
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="nb">next</span> <span class="n">full</span> <span class="n">line</span> <span class="kn">from</span> <span class="nn">RA</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; buffer in which to place string</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; buffer in which to place string</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">0 - Ok
 1 - End of file</td>
@@ -185,7 +182,7 @@ with the data to which it applies.
 <dl class="method">
 <dt id="geosoft.gxapi.GXRA.len">
 <code class="descname">len</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXRA.len" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Returns the total number of lines in RA
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Returns</span> <span class="n">the</span> <span class="n">total</span> <span class="n">number</span> <span class="n">of</span> <span class="n">lines</span> <span class="ow">in</span> <span class="n">RA</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -206,7 +203,7 @@ with the data to which it applies.
 <dl class="method">
 <dt id="geosoft.gxapi.GXRA.line">
 <code class="descname">line</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXRA.line" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Returns current line #, 0 is the first
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Returns</span> <span class="n">current</span> <span class="n">line</span> <span class="c1">#, 0 is the first</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -223,7 +220,7 @@ with the data to which it applies.
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>This will be the next line read.
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="n">will</span> <span class="n">be</span> <span class="n">the</span> <span class="nb">next</span> <span class="n">line</span> <span class="n">read</span><span class="o">.</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -247,7 +244,7 @@ with the data to which it applies.
 <dl class="method">
 <dt id="geosoft.gxapi.GXRA.seek">
 <code class="descname">seek</code><span class="sig-paren">(</span><em>(int)arg1</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXRA.seek" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Position next read to specified line #
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Position</span> <span class="nb">next</span> <span class="n">read</span> <span class="n">to</span> <span class="n">specified</span> <span class="n">line</span> <span class="c1">#</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -287,12 +284,12 @@ with the data to which it applies.
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.1.0 documentation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.1 documentation</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &copy; Copyright 2016, Geosoft Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+        &#169; Copyright 2016, Geosoft Inc.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.6.
     </div>
   </body>
 </html>

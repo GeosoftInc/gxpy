@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>GXVM class &mdash; Geosoft GX Python API 9.1.0 documentation</title>
+    <title>GXVM class &#8212; Geosoft GX Python API 9.1 documentation</title>
     
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '9.1.0',
+        VERSION:     '9.1',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +23,7 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="Geosoft GX Python API 9.1.0 documentation" href="index.html" /> 
+    <link rel="top" title="Geosoft GX Python API 9.1 documentation" href="index.html" /> 
   </head>
   <body role="document">
     <div class="related" role="navigation" aria-label="related navigation">
@@ -35,7 +35,7 @@
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.1.0 documentation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.1 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -50,14 +50,11 @@
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -97,7 +94,7 @@ See VV for methods to move data between a VM and a VV.
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXVM.create">
 <em class="property">static </em><code class="descname">create</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(int)arg2</em><span class="sig-paren">)</span> &rarr; GXVM:<a class="headerlink" href="#geosoft.gxapi.GXVM.create" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Create a VM.
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Create</span> <span class="n">a</span> <span class="n">VM</span><span class="o">.</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -105,7 +102,7 @@ See VV for methods to move data between a VM and a VV.
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<em>int</em>) &#8211; <a class="reference internal" href="index.html#geo-var"><span>GEO_VAR constants</span></a></li>
+<li><strong>arg1</strong> (<em>int</em>) &#8211; <span class="xref std std-ref">GEO_VAR</span></li>
 <li><strong>arg2</strong> (<em>int</em>) &#8211; VM length (less than 16777215)</li>
 </ul>
 </td>
@@ -122,7 +119,7 @@ See VV for methods to move data between a VM and a VV.
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>The VM elements are initialized to dummies.
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">VM</span> <span class="n">elements</span> <span class="n">are</span> <span class="n">initialized</span> <span class="n">to</span> <span class="n">dummies</span><span class="o">.</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -131,14 +128,14 @@ See VV for methods to move data between a VM and a VV.
 <dt id="geosoft.gxapi.GXVM.create_ext">
 <em class="property">static </em><code class="descname">create_ext</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(int)arg2</em><span class="sig-paren">)</span> &rarr; GXVM:<a class="headerlink" href="#geosoft.gxapi.GXVM.create_ext" title="Permalink to this definition">¶</a></dt>
 <dd><pre class="literal-block">
-Create a VM, using one of the <a class="reference internal" href="index.html#gs-types"><span>GS_TYPES constants</span></a> special data types.
+Create a VM, using one of the <span class="xref std std-ref">GS_TYPES</span> special data types.
 </pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<em>int</em>) &#8211; <a class="reference internal" href="index.html#gs-types"><span>GS_TYPES constants</span></a></li>
+<li><strong>arg1</strong> (<em>int</em>) &#8211; <span class="xref std std-ref">GS_TYPES</span></li>
 <li><strong>arg2</strong> (<em>int</em>) &#8211; VM length (less than 16777215)</li>
 </ul>
 </td>
@@ -155,7 +152,7 @@ Create a VM, using one of the <a class="reference internal" href="index.html#gs-
 <p><span class="versionmodified">New in version 6.4.2.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>The VM elements are initialized to dummies.
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">VM</span> <span class="n">elements</span> <span class="n">are</span> <span class="n">initialized</span> <span class="n">to</span> <span class="n">dummies</span><span class="o">.</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -163,7 +160,7 @@ Create a VM, using one of the <a class="reference internal" href="index.html#gs-
 <dl class="method">
 <dt id="geosoft.gxapi.GXVM.get_double">
 <code class="descname">get_double</code><span class="sig-paren">(</span><em>(int)arg1</em><span class="sig-paren">)</span> &rarr; float:<a class="headerlink" href="#geosoft.gxapi.GXVM.get_double" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Get a real element from a VM.
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">a</span> <span class="n">real</span> <span class="n">element</span> <span class="kn">from</span> <span class="nn">a</span> <span class="n">VM</span><span class="o">.</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -187,7 +184,7 @@ if the value is dummy or outside of the range of data.</td>
 <dl class="method">
 <dt id="geosoft.gxapi.GXVM.get_int">
 <code class="descname">get_int</code><span class="sig-paren">(</span><em>(int)arg1</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXVM.get_int" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Get an integer element from a VM.
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">an</span> <span class="n">integer</span> <span class="n">element</span> <span class="kn">from</span> <span class="nn">a</span> <span class="n">VM</span><span class="o">.</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -211,7 +208,7 @@ if the value is dummy or outside of the range of data.</td>
 <dl class="method">
 <dt id="geosoft.gxapi.GXVM.get_string">
 <code class="descname">get_string</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(str_ref)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXVM.get_string" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Get a string element from a VM.
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">a</span> <span class="n">string</span> <span class="n">element</span> <span class="kn">from</span> <span class="nn">a</span> <span class="n">VM</span><span class="o">.</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -220,7 +217,7 @@ if the value is dummy or outside of the range of data.</td>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<em>int</em>) &#8211; element wanted</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; string in which to place element</li>
+<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; string in which to place element</li>
 </ul>
 </td>
 </tr>
@@ -264,7 +261,7 @@ are converted to &quot;<cite>*</cite>&quot; string.
 <dl class="method">
 <dt id="geosoft.gxapi.GXVM.length">
 <code class="descname">length</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXVM.length" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Returns current VM length.
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Returns</span> <span class="n">current</span> <span class="n">VM</span> <span class="n">length</span><span class="o">.</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -301,7 +298,7 @@ are converted to &quot;<cite>*</cite>&quot; string.
 <dl class="method">
 <dt id="geosoft.gxapi.GXVM.re_size">
 <code class="descname">re_size</code><span class="sig-paren">(</span><em>(int)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXVM.re_size" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Re-set the size of a VM.
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Re</span><span class="o">-</span><span class="nb">set</span> <span class="n">the</span> <span class="n">size</span> <span class="n">of</span> <span class="n">a</span> <span class="n">VM</span><span class="o">.</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -320,7 +317,7 @@ are converted to &quot;<cite>*</cite>&quot; string.
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>If increasing the VM size, new elements are set to dummies.
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">If</span> <span class="n">increasing</span> <span class="n">the</span> <span class="n">VM</span> <span class="n">size</span><span class="p">,</span> <span class="n">new</span> <span class="n">elements</span> <span class="n">are</span> <span class="nb">set</span> <span class="n">to</span> <span class="n">dummies</span><span class="o">.</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -328,7 +325,7 @@ are converted to &quot;<cite>*</cite>&quot; string.
 <dl class="method">
 <dt id="geosoft.gxapi.GXVM.set_double">
 <code class="descname">set_double</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(float)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXVM.set_double" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Set a real element in a VM.
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Set</span> <span class="n">a</span> <span class="n">real</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">a</span> <span class="n">VM</span><span class="o">.</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -353,11 +350,11 @@ are converted to &quot;<cite>*</cite>&quot; string.
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>Element being set cannot be &lt; 0.
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Element</span> <span class="n">being</span> <span class="nb">set</span> <span class="n">cannot</span> <span class="n">be</span> <span class="o">&lt;</span> <span class="mf">0.</span>
 
-If the element is &gt; current VM length, the VM length is
-increased.  Reallocating VM lengths can lead to fragmented
-memory and should be avoided if possible.
+<span class="n">If</span> <span class="n">the</span> <span class="n">element</span> <span class="ow">is</span> <span class="o">&gt;</span> <span class="n">current</span> <span class="n">VM</span> <span class="n">length</span><span class="p">,</span> <span class="n">the</span> <span class="n">VM</span> <span class="n">length</span> <span class="ow">is</span>
+<span class="n">increased</span><span class="o">.</span>  <span class="n">Reallocating</span> <span class="n">VM</span> <span class="n">lengths</span> <span class="n">can</span> <span class="n">lead</span> <span class="n">to</span> <span class="n">fragmented</span>
+<span class="n">memory</span> <span class="ow">and</span> <span class="n">should</span> <span class="n">be</span> <span class="n">avoided</span> <span class="k">if</span> <span class="n">possible</span><span class="o">.</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -365,7 +362,7 @@ memory and should be avoided if possible.
 <dl class="method">
 <dt id="geosoft.gxapi.GXVM.set_int">
 <code class="descname">set_int</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(int)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXVM.set_int" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Set an integer element in a VM.
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Set</span> <span class="n">an</span> <span class="n">integer</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">a</span> <span class="n">VM</span><span class="o">.</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -390,11 +387,11 @@ memory and should be avoided if possible.
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>Element being set cannot be &lt; 0.
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Element</span> <span class="n">being</span> <span class="nb">set</span> <span class="n">cannot</span> <span class="n">be</span> <span class="o">&lt;</span> <span class="mf">0.</span>
 
-If the element is &gt; current VM length, the VM length is
-increased.  Reallocating VM lengths can lead to fragmented
-memory and should be avoided if possible.
+<span class="n">If</span> <span class="n">the</span> <span class="n">element</span> <span class="ow">is</span> <span class="o">&gt;</span> <span class="n">current</span> <span class="n">VM</span> <span class="n">length</span><span class="p">,</span> <span class="n">the</span> <span class="n">VM</span> <span class="n">length</span> <span class="ow">is</span>
+<span class="n">increased</span><span class="o">.</span>  <span class="n">Reallocating</span> <span class="n">VM</span> <span class="n">lengths</span> <span class="n">can</span> <span class="n">lead</span> <span class="n">to</span> <span class="n">fragmented</span>
+<span class="n">memory</span> <span class="ow">and</span> <span class="n">should</span> <span class="n">be</span> <span class="n">avoided</span> <span class="k">if</span> <span class="n">possible</span><span class="o">.</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -402,7 +399,7 @@ memory and should be avoided if possible.
 <dl class="method">
 <dt id="geosoft.gxapi.GXVM.set_string">
 <code class="descname">set_string</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(str)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXVM.set_string" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Set a string element in a VM.
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Set</span> <span class="n">a</span> <span class="n">string</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">a</span> <span class="n">VM</span><span class="o">.</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -427,11 +424,11 @@ memory and should be avoided if possible.
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>Element being set cannot be &lt; 0.
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Element</span> <span class="n">being</span> <span class="nb">set</span> <span class="n">cannot</span> <span class="n">be</span> <span class="o">&lt;</span> <span class="mf">0.</span>
 
-If the element is &gt; current VM length, the VM length is
-increased.  Reallocating VM lengths can lead to fragmented
-memory and should be avoided if possible.
+<span class="n">If</span> <span class="n">the</span> <span class="n">element</span> <span class="ow">is</span> <span class="o">&gt;</span> <span class="n">current</span> <span class="n">VM</span> <span class="n">length</span><span class="p">,</span> <span class="n">the</span> <span class="n">VM</span> <span class="n">length</span> <span class="ow">is</span>
+<span class="n">increased</span><span class="o">.</span>  <span class="n">Reallocating</span> <span class="n">VM</span> <span class="n">lengths</span> <span class="n">can</span> <span class="n">lead</span> <span class="n">to</span> <span class="n">fragmented</span>
+<span class="n">memory</span> <span class="ow">and</span> <span class="n">should</span> <span class="n">be</span> <span class="n">avoided</span> <span class="k">if</span> <span class="n">possible</span><span class="o">.</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -455,12 +452,12 @@ memory and should be avoided if possible.
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.1.0 documentation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.1 documentation</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &copy; Copyright 2016, Geosoft Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+        &#169; Copyright 2016, Geosoft Inc.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.6.
     </div>
   </body>
 </html>

@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>GXSTK class &mdash; Geosoft GX Python API 9.1.0 documentation</title>
+    <title>GXSTK class &#8212; Geosoft GX Python API 9.1 documentation</title>
     
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '9.1.0',
+        VERSION:     '9.1',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +23,7 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="Geosoft GX Python API 9.1.0 documentation" href="index.html" /> 
+    <link rel="top" title="Geosoft GX Python API 9.1 documentation" href="index.html" /> 
   </head>
   <body role="document">
     <div class="related" role="navigation" aria-label="related navigation">
@@ -35,7 +35,7 @@
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.1.0 documentation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.1 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -60,14 +60,11 @@
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -96,16 +93,16 @@ SEE MSTK FILE FOR DETAILED DESCRIPTIONS OF ALL FUNCTION PARAMETERS.
 <dl class="method">
 <dt id="geosoft.gxapi.GXSTK.get_axis_format">
 <code class="descname">get_axis_format</code><span class="sig-paren">(</span><em>(int)arg1</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXSTK.get_axis_format" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Get axis number display format.
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">axis</span> <span class="n">number</span> <span class="n">display</span> <span class="nb">format</span><span class="o">.</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#stk-axis"><span>STK_AXIS constants</span></a></td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#stk-axis"><span class="std std-ref">STK_AXIS constants</span></a></td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">The current format - <a class="reference internal" href="GXDB.html#db-chan-format"><span>DB_CHAN_FORMAT constants</span></a></td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">The current format - <a class="reference internal" href="GXDB.html#db-chan-format"><span class="std std-ref">DB_CHAN_FORMAT constants</span></a></td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
 </tr>
@@ -115,7 +112,7 @@ SEE MSTK FILE FOR DETAILED DESCRIPTIONS OF ALL FUNCTION PARAMETERS.
 <p><span class="versionmodified">New in version 5.1.5.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>By default, DB_CHAN_FORMAT_NORMAL
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">By</span> <span class="n">default</span><span class="p">,</span> <span class="n">DB_CHAN_FORMAT_NORMAL</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -123,7 +120,7 @@ SEE MSTK FILE FOR DETAILED DESCRIPTIONS OF ALL FUNCTION PARAMETERS.
 <dl class="method">
 <dt id="geosoft.gxapi.GXSTK.get_axis_parms">
 <code class="descname">get_axis_parms</code><span class="sig-paren">(</span><em>(int_ref)arg1</em>, <em>(float_ref)arg2</em>, <em>(float_ref)arg3</em>, <em>(float_ref)arg4</em>, <em>(str_ref)arg5</em>, <em>(float_ref)arg6</em>, <em>(float_ref)arg7</em>, <em>(float_ref)arg8</em>, <em>(int_ref)arg9</em>, <em>(int)arg10</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSTK.get_axis_parms" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Get parameters in STK object relating drawing X/Y axis
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">parameters</span> <span class="ow">in</span> <span class="n">STK</span> <span class="nb">object</span> <span class="n">relating</span> <span class="n">drawing</span> <span class="n">X</span><span class="o">/</span><span class="n">Y</span> <span class="n">axis</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -131,16 +128,16 @@ SEE MSTK FILE FOR DETAILED DESCRIPTIONS OF ALL FUNCTION PARAMETERS.
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; ?BARDRAW: Bottom and/or Top, or Left and/or Right</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Bottom Y/Left X location</li>
-<li><strong>arg3</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Top Y/Right X location</li>
-<li><strong>arg4</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; ?BARLINETHICK  - Line thickness in mm. Default is 0.05</li>
-<li><strong>arg5</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; ?BARCOLOR      - Line color string in RGB model. Default is black</li>
-<li><strong>arg6</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; ?BARTICKINTEERVAL</li>
-<li><strong>arg7</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Major tick size in mm for bottom/left axis bar.</li>
-<li><strong>arg8</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Major tick size in mm for top/right axis bar.</li>
-<li><strong>arg9</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; ?BARMINORTICK  - Number of minor ticks. (0) none, (-1) automatic</li>
-<li><strong>arg10</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#stk-axis"><span>STK_AXIS constants</span></a></li>
+<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; ?BARDRAW: Bottom and/or Top, or Left and/or Right</li>
+<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Bottom Y/Left X location</li>
+<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Top Y/Right X location</li>
+<li><strong>arg4</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; ?BARLINETHICK  - Line thickness in mm. Default is 0.05</li>
+<li><strong>arg5</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; ?BARCOLOR      - Line color string in RGB model. Default is black</li>
+<li><strong>arg6</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; ?BARTICKINTEERVAL</li>
+<li><strong>arg7</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Major tick size in mm for bottom/left axis bar.</li>
+<li><strong>arg8</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Major tick size in mm for top/right axis bar.</li>
+<li><strong>arg9</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; ?BARMINORTICK  - Number of minor ticks. (0) none, (-1) automatic</li>
+<li><strong>arg10</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#stk-axis"><span class="std std-ref">STK_AXIS constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -156,7 +153,7 @@ SEE MSTK FILE FOR DETAILED DESCRIPTIONS OF ALL FUNCTION PARAMETERS.
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>See MSTK for detailed description of all function parameters
+<div class="highlight-default"><div class="highlight"><pre><span></span>See MSTK for detailed description of all function parameters
 ? mark in the note represent either X and Y
 </pre></div>
 </div>
@@ -165,7 +162,7 @@ SEE MSTK FILE FOR DETAILED DESCRIPTIONS OF ALL FUNCTION PARAMETERS.
 <dl class="method">
 <dt id="geosoft.gxapi.GXSTK.get_fid_parms">
 <code class="descname">get_fid_parms</code><span class="sig-paren">(</span><em>(float_ref)arg1</em>, <em>(float_ref)arg2</em>, <em>(float_ref)arg3</em>, <em>(str_ref)arg4</em>, <em>(float_ref)arg5</em>, <em>(str_ref)arg6</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSTK.get_fid_parms" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Get parameters in STK object relating drawing fid ticks
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">parameters</span> <span class="ow">in</span> <span class="n">STK</span> <span class="nb">object</span> <span class="n">relating</span> <span class="n">drawing</span> <span class="n">fid</span> <span class="n">ticks</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -173,12 +170,12 @@ SEE MSTK FILE FOR DETAILED DESCRIPTIONS OF ALL FUNCTION PARAMETERS.
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Y location in data unit to draw Fid ticks. Default is the bottom of the stack</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Fid tick size in mm. Default is 2.0mm</li>
-<li><strong>arg3</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Fid interval to draw ticks. Nice number is calculated by default</li>
-<li><strong>arg4</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; Font to use to label fids. Default is use &#8216;default&#8217; font set in Montaj</li>
-<li><strong>arg5</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Text size in mm to label fids. Default is 5mm</li>
-<li><strong>arg6</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; Text color string in RGB model. Default is black</li>
+<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Y location in data unit to draw Fid ticks. Default is the bottom of the stack</li>
+<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Fid tick size in mm. Default is 2.0mm</li>
+<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Fid interval to draw ticks. Nice number is calculated by default</li>
+<li><strong>arg4</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; Font to use to label fids. Default is use &#8216;default&#8217; font set in Montaj</li>
+<li><strong>arg5</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Text size in mm to label fids. Default is 5mm</li>
+<li><strong>arg6</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; Text color string in RGB model. Default is black</li>
 </ul>
 </td>
 </tr>
@@ -194,7 +191,7 @@ SEE MSTK FILE FOR DETAILED DESCRIPTIONS OF ALL FUNCTION PARAMETERS.
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>See MSTK for detailed description of all function parameters
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">See</span> <span class="n">MSTK</span> <span class="k">for</span> <span class="n">detailed</span> <span class="n">description</span> <span class="n">of</span> <span class="nb">all</span> <span class="n">function</span> <span class="n">parameters</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -202,14 +199,14 @@ SEE MSTK FILE FOR DETAILED DESCRIPTIONS OF ALL FUNCTION PARAMETERS.
 <dl class="method">
 <dt id="geosoft.gxapi.GXSTK.get_flag">
 <code class="descname">get_flag</code><span class="sig-paren">(</span><em>(int)arg1</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXSTK.get_flag" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Get flag indicating part of STK object is to be drawn or not
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">flag</span> <span class="n">indicating</span> <span class="n">part</span> <span class="n">of</span> <span class="n">STK</span> <span class="nb">object</span> <span class="ow">is</span> <span class="n">to</span> <span class="n">be</span> <span class="n">drawn</span> <span class="ow">or</span> <span class="ow">not</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#stk-flag"><span>STK_FLAG constants</span></a></td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#stk-flag"><span class="std std-ref">STK_FLAG constants</span></a></td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">FALSE (0) if part of the object is not to be drawn
 TRUE  (1) if part of the object is drawn</td>
@@ -226,7 +223,7 @@ TRUE  (1) if part of the object is drawn</td>
 <dl class="method">
 <dt id="geosoft.gxapi.GXSTK.get_gen_parms">
 <code class="descname">get_gen_parms</code><span class="sig-paren">(</span><em>(str_ref)arg1</em>, <em>(str_ref)arg2</em>, <em>(str_ref)arg3</em>, <em>(float_ref)arg4</em>, <em>(float_ref)arg5</em>, <em>(float_ref)arg6</em>, <em>(float_ref)arg7</em>, <em>(float_ref)arg8</em>, <em>(float_ref)arg9</em>, <em>(float_ref)arg10</em>, <em>(float_ref)arg11</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSTK.get_gen_parms" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Get general parameters in STK object
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">general</span> <span class="n">parameters</span> <span class="ow">in</span> <span class="n">STK</span> <span class="nb">object</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -234,17 +231,17 @@ TRUE  (1) if part of the object is drawn</td>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; X channel name, REQUIRED</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; Y channel name, REQUIRED</li>
-<li><strong>arg3</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; Group name</li>
-<li><strong>arg4</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; X scale (map scale, units/metre), REQUIRED</li>
-<li><strong>arg5</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Y scale (plot scale, units/mm), REQUIRED</li>
-<li><strong>arg6</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Minimum X value (data unit) to draw</li>
-<li><strong>arg7</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Maximum X value (data unit) to draw</li>
-<li><strong>arg8</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Minimum Y value (data unit) to draw</li>
-<li><strong>arg9</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Minimum horizontal location in mm of the stack on the map</li>
-<li><strong>arg10</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Minimum vertical location in mm on the map</li>
-<li><strong>arg11</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Profile height in mm on the map, must be &gt; 0.0</li>
+<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; X channel name, REQUIRED</li>
+<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; Y channel name, REQUIRED</li>
+<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; Group name</li>
+<li><strong>arg4</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; X scale (map scale, units/metre), REQUIRED</li>
+<li><strong>arg5</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Y scale (plot scale, units/mm), REQUIRED</li>
+<li><strong>arg6</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Minimum X value (data unit) to draw</li>
+<li><strong>arg7</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Maximum X value (data unit) to draw</li>
+<li><strong>arg8</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Minimum Y value (data unit) to draw</li>
+<li><strong>arg9</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Minimum horizontal location in mm of the stack on the map</li>
+<li><strong>arg10</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Minimum vertical location in mm on the map</li>
+<li><strong>arg11</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Profile height in mm on the map, must be &gt; 0.0</li>
 </ul>
 </td>
 </tr>
@@ -260,7 +257,7 @@ TRUE  (1) if part of the object is drawn</td>
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>See MSTK for detailed description of all function parameters
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">See</span> <span class="n">MSTK</span> <span class="k">for</span> <span class="n">detailed</span> <span class="n">description</span> <span class="n">of</span> <span class="nb">all</span> <span class="n">function</span> <span class="n">parameters</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -268,7 +265,7 @@ TRUE  (1) if part of the object is drawn</td>
 <dl class="method">
 <dt id="geosoft.gxapi.GXSTK.get_grid_parms">
 <code class="descname">get_grid_parms</code><span class="sig-paren">(</span><em>(int_ref)arg1</em>, <em>(float_ref)arg2</em>, <em>(float_ref)arg3</em>, <em>(float_ref)arg4</em>, <em>(float_ref)arg5</em>, <em>(float_ref)arg6</em>, <em>(float_ref)arg7</em>, <em>(float_ref)arg8</em>, <em>(float_ref)arg9</em>, <em>(str_ref)arg10</em>, <em>(int)arg11</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSTK.get_grid_parms" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Get background grid parameters in STK object
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">background</span> <span class="n">grid</span> <span class="n">parameters</span> <span class="ow">in</span> <span class="n">STK</span> <span class="nb">object</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -276,17 +273,17 @@ TRUE  (1) if part of the object is drawn</td>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; Type of grid to draw:</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Minimum X in ground unit to draw grid</li>
-<li><strong>arg3</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Maximum X in ground unit to draw grid</li>
-<li><strong>arg4</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Minimum Y in ground unit to draw grid</li>
-<li><strong>arg5</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Maximum Y in ground unit to draw grid</li>
-<li><strong>arg6</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Line thickness in mm. Default is 0.01mm</li>
-<li><strong>arg7</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Cross size or separation between dots in mm.</li>
-<li><strong>arg8</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Separation between vertical grid lines.</li>
-<li><strong>arg9</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Separation between horizontal grid lines.</li>
-<li><strong>arg10</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; Grid line color string in RGB model. Default is black</li>
-<li><strong>arg11</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#stk-grid"><span>STK_GRID constants</span></a></li>
+<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; Type of grid to draw:</li>
+<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Minimum X in ground unit to draw grid</li>
+<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Maximum X in ground unit to draw grid</li>
+<li><strong>arg4</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Minimum Y in ground unit to draw grid</li>
+<li><strong>arg5</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Maximum Y in ground unit to draw grid</li>
+<li><strong>arg6</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Line thickness in mm. Default is 0.01mm</li>
+<li><strong>arg7</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Cross size or separation between dots in mm.</li>
+<li><strong>arg8</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Separation between vertical grid lines.</li>
+<li><strong>arg9</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Separation between horizontal grid lines.</li>
+<li><strong>arg10</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; Grid line color string in RGB model. Default is black</li>
+<li><strong>arg11</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#stk-grid"><span class="std std-ref">STK_GRID constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -302,7 +299,7 @@ TRUE  (1) if part of the object is drawn</td>
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>See MSTK for detailed description of all function parameters
+<div class="highlight-default"><div class="highlight"><pre><span></span>See MSTK for detailed description of all function parameters
 ? mark in the note represent either X and Y
 </pre></div>
 </div>
@@ -311,7 +308,7 @@ TRUE  (1) if part of the object is drawn</td>
 <dl class="method">
 <dt id="geosoft.gxapi.GXSTK.get_label_parms">
 <code class="descname">get_label_parms</code><span class="sig-paren">(</span><em>(int_ref)arg1</em>, <em>(float_ref)arg2</em>, <em>(int_ref)arg3</em>, <em>(float_ref)arg4</em>, <em>(int_ref)arg5</em>, <em>(float_ref)arg6</em>, <em>(str_ref)arg7</em>, <em>(float_ref)arg8</em>, <em>(str_ref)arg9</em>, <em>(int_ref)arg10</em>, <em>(int)arg11</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSTK.get_label_parms" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Get parameters in STK object relating X/Y axis labels
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">parameters</span> <span class="ow">in</span> <span class="n">STK</span> <span class="nb">object</span> <span class="n">relating</span> <span class="n">X</span><span class="o">/</span><span class="n">Y</span> <span class="n">axis</span> <span class="n">labels</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -319,17 +316,17 @@ TRUE  (1) if part of the object is drawn</td>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; Which axes to draw: Bottom/Top or Left/Right axes</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Bottom or Left axis label location</li>
-<li><strong>arg3</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; Bottom or Left labels orientation.</li>
-<li><strong>arg4</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Top or Right axis label location</li>
-<li><strong>arg5</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; Top or Right axis label orientation</li>
-<li><strong>arg6</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Label interval. Default is to use related axis tick interval</li>
-<li><strong>arg7</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; Font to use to label. Default is use &#8216;default&#8217; font set in Montaj</li>
-<li><strong>arg8</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Text size in mm to draw profile labels. Default is 5mm</li>
-<li><strong>arg9</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; Text color string in RGB model. Default is black</li>
-<li><strong>arg10</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; ?LABELBOUND    - Edge bound.  0 - No</li>
-<li><strong>arg11</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#stk-axis"><span>STK_AXIS constants</span></a></li>
+<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; Which axes to draw: Bottom/Top or Left/Right axes</li>
+<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Bottom or Left axis label location</li>
+<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; Bottom or Left labels orientation.</li>
+<li><strong>arg4</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Top or Right axis label location</li>
+<li><strong>arg5</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; Top or Right axis label orientation</li>
+<li><strong>arg6</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Label interval. Default is to use related axis tick interval</li>
+<li><strong>arg7</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; Font to use to label. Default is use &#8216;default&#8217; font set in Montaj</li>
+<li><strong>arg8</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Text size in mm to draw profile labels. Default is 5mm</li>
+<li><strong>arg9</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; Text color string in RGB model. Default is black</li>
+<li><strong>arg10</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; ?LABELBOUND    - Edge bound.  0 - No</li>
+<li><strong>arg11</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#stk-axis"><span class="std std-ref">STK_AXIS constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -356,7 +353,7 @@ use the <a class="reference internal" href="#geosoft.gxapi.GXSTK.set_axis_format
 <dl class="method">
 <dt id="geosoft.gxapi.GXSTK.get_profile">
 <code class="descname">get_profile</code><span class="sig-paren">(</span><em>(int_ref)arg1</em>, <em>(float_ref)arg2</em>, <em>(float_ref)arg3</em>, <em>(str_ref)arg4</em>, <em>(int_ref)arg5</em>, <em>(int_ref)arg6</em>, <em>(int_ref)arg7</em>, <em>(GXVV)arg8</em>, <em>(str_ref)arg9</em>, <em>(int_ref)arg10</em>, <em>(str_ref)arg11</em>, <em>(float_ref)arg12</em>, <em>(str_ref)arg13</em>, <em>(int_ref)arg14</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSTK.get_profile" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Get profile parameters in STK object
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">profile</span> <span class="n">parameters</span> <span class="ow">in</span> <span class="n">STK</span> <span class="nb">object</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -364,20 +361,20 @@ use the <a class="reference internal" href="#geosoft.gxapi.GXSTK.set_axis_format
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; Profile line type.    1 - solid (default)</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Patterned line pitch in mm. Default is 10 mm</li>
-<li><strong>arg3</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Line thickness in mm. Default is 0.05mm</li>
-<li><strong>arg4</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; Color string in RGB model. Default is black</li>
-<li><strong>arg5</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; Wrap option</li>
-<li><strong>arg6</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; Clip option</li>
-<li><strong>arg7</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; Plot smoothed polyline.</li>
+<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; Profile line type.    1 - solid (default)</li>
+<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Patterned line pitch in mm. Default is 10 mm</li>
+<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Line thickness in mm. Default is 0.05mm</li>
+<li><strong>arg4</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; Color string in RGB model. Default is black</li>
+<li><strong>arg5</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; Wrap option</li>
+<li><strong>arg6</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; Clip option</li>
+<li><strong>arg7</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; Plot smoothed polyline.</li>
 <li><strong>arg8</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Only use for VA channels. NULL is acceptable which means all profiles in the VA are plotted. VV type of INT (integer)</li>
-<li><strong>arg9</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; Characters string to label profiles</li>
-<li><strong>arg10</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; Reference location to draw label.</li>
-<li><strong>arg11</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; Font to use to draw profile labels. Default is use &#8216;default&#8217; font set in Montaj</li>
-<li><strong>arg12</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Text size in mm to draw profile labels. Default is 5mm</li>
-<li><strong>arg13</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; Text color string in RGB model. Default is black</li>
-<li><strong>arg14</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; Include VA column numbers as part of the profile label 0 - no, 1 - yes</li>
+<li><strong>arg9</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; Characters string to label profiles</li>
+<li><strong>arg10</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; Reference location to draw label.</li>
+<li><strong>arg11</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; Font to use to draw profile labels. Default is use &#8216;default&#8217; font set in Montaj</li>
+<li><strong>arg12</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Text size in mm to draw profile labels. Default is 5mm</li>
+<li><strong>arg13</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; Text color string in RGB model. Default is black</li>
+<li><strong>arg14</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; Include VA column numbers as part of the profile label 0 - no, 1 - yes</li>
 </ul>
 </td>
 </tr>
@@ -393,7 +390,7 @@ use the <a class="reference internal" href="#geosoft.gxapi.GXSTK.set_axis_format
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>See MSTK for detailed description of all function parameters
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">See</span> <span class="n">MSTK</span> <span class="k">for</span> <span class="n">detailed</span> <span class="n">description</span> <span class="n">of</span> <span class="nb">all</span> <span class="n">function</span> <span class="n">parameters</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -401,7 +398,7 @@ use the <a class="reference internal" href="#geosoft.gxapi.GXSTK.set_axis_format
 <dl class="method">
 <dt id="geosoft.gxapi.GXSTK.get_profile_ex">
 <code class="descname">get_profile_ex</code><span class="sig-paren">(</span><em>(int_ref)arg1</em>, <em>(float_ref)arg2</em>, <em>(float_ref)arg3</em>, <em>(str_ref)arg4</em>, <em>(int_ref)arg5</em>, <em>(int_ref)arg6</em>, <em>(int_ref)arg7</em>, <em>(int_ref)arg8</em>, <em>(GXVV)arg9</em>, <em>(str_ref)arg10</em>, <em>(int_ref)arg11</em>, <em>(str_ref)arg12</em>, <em>(float_ref)arg13</em>, <em>(str_ref)arg14</em>, <em>(int_ref)arg15</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSTK.get_profile_ex" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Get profile parameters in STK object (added Break on dummy option)
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">profile</span> <span class="n">parameters</span> <span class="ow">in</span> <span class="n">STK</span> <span class="nb">object</span> <span class="p">(</span><span class="n">added</span> <span class="n">Break</span> <span class="n">on</span> <span class="n">dummy</span> <span class="n">option</span><span class="p">)</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -409,21 +406,21 @@ use the <a class="reference internal" href="#geosoft.gxapi.GXSTK.set_axis_format
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; Profile line type.    1 - solid (default)</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Patterned line pitch in mm. Default is 10 mm</li>
-<li><strong>arg3</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Line thickness in mm. Default is 0.05mm</li>
-<li><strong>arg4</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; Color string in RGB model. Default is black</li>
-<li><strong>arg5</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; Break on dummy option</li>
-<li><strong>arg6</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; Wrap option</li>
-<li><strong>arg7</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; Clip option</li>
-<li><strong>arg8</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; Plot smoothed polyline.</li>
+<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; Profile line type.    1 - solid (default)</li>
+<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Patterned line pitch in mm. Default is 10 mm</li>
+<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Line thickness in mm. Default is 0.05mm</li>
+<li><strong>arg4</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; Color string in RGB model. Default is black</li>
+<li><strong>arg5</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; Break on dummy option</li>
+<li><strong>arg6</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; Wrap option</li>
+<li><strong>arg7</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; Clip option</li>
+<li><strong>arg8</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; Plot smoothed polyline.</li>
 <li><strong>arg9</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Only use for VA channels. NULL is acceptable which means all profiles in the VA are plotted. VV type of INT (integer)</li>
-<li><strong>arg10</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; Characters string to label profiles</li>
-<li><strong>arg11</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; Reference location to draw label.</li>
-<li><strong>arg12</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; Font to use to draw profile labels. Default is use &#8216;default&#8217; font set in Montaj</li>
-<li><strong>arg13</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Text size in mm to draw profile labels. Default is 5mm</li>
-<li><strong>arg14</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; Text color string in RGB model. Default is black</li>
-<li><strong>arg15</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; Include VA column numbers as part of the profile label 0 - no, 1 - yes</li>
+<li><strong>arg10</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; Characters string to label profiles</li>
+<li><strong>arg11</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; Reference location to draw label.</li>
+<li><strong>arg12</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; Font to use to draw profile labels. Default is use &#8216;default&#8217; font set in Montaj</li>
+<li><strong>arg13</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Text size in mm to draw profile labels. Default is 5mm</li>
+<li><strong>arg14</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; Text color string in RGB model. Default is black</li>
+<li><strong>arg15</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; Include VA column numbers as part of the profile label 0 - no, 1 - yes</li>
 </ul>
 </td>
 </tr>
@@ -439,7 +436,7 @@ use the <a class="reference internal" href="#geosoft.gxapi.GXSTK.set_axis_format
 <p><span class="versionmodified">New in version 5.0.3.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>See MSTK for detailed description of all function parameters
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">See</span> <span class="n">MSTK</span> <span class="k">for</span> <span class="n">detailed</span> <span class="n">description</span> <span class="n">of</span> <span class="nb">all</span> <span class="n">function</span> <span class="n">parameters</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -447,7 +444,7 @@ use the <a class="reference internal" href="#geosoft.gxapi.GXSTK.set_axis_format
 <dl class="method">
 <dt id="geosoft.gxapi.GXSTK.get_symb_parms">
 <code class="descname">get_symb_parms</code><span class="sig-paren">(</span><em>(str_ref)arg1</em>, <em>(float_ref)arg2</em>, <em>(str_ref)arg3</em>, <em>(str_ref)arg4</em>, <em>(int_ref)arg5</em>, <em>(int_ref)arg6</em>, <em>(float_ref)arg7</em>, <em>(int_ref)arg8</em>, <em>(GXVV)arg9</em>, <em>(GXVV)arg10</em>, <em>(int_ref)arg11</em>, <em>(str_ref)arg12</em>, <em>(float_ref)arg13</em>, <em>(str_ref)arg14</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSTK.get_symb_parms" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Get parameters in STK object relating drawing symbols
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">parameters</span> <span class="ow">in</span> <span class="n">STK</span> <span class="nb">object</span> <span class="n">relating</span> <span class="n">drawing</span> <span class="n">symbols</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -455,20 +452,20 @@ use the <a class="reference internal" href="#geosoft.gxapi.GXSTK.set_axis_format
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; Font to use to draw symbols. Default is use &#8216;symbols.gfn&#8217; font</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Symbol size in mm. Default is 5mm</li>
-<li><strong>arg3</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; Edge color string in RGB model. Default is black</li>
-<li><strong>arg4</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; Fill color string in RGB model. Default is black</li>
-<li><strong>arg5</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; Wrap option</li>
-<li><strong>arg6</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; Clip option</li>
-<li><strong>arg7</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Y location to draw symbols. Default is to use the data from Y channel</li>
-<li><strong>arg8</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; Number of levels to draw symbols</li>
+<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; Font to use to draw symbols. Default is use &#8216;symbols.gfn&#8217; font</li>
+<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Symbol size in mm. Default is 5mm</li>
+<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; Edge color string in RGB model. Default is black</li>
+<li><strong>arg4</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; Fill color string in RGB model. Default is black</li>
+<li><strong>arg5</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; Wrap option</li>
+<li><strong>arg6</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; Clip option</li>
+<li><strong>arg7</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Y location to draw symbols. Default is to use the data from Y channel</li>
+<li><strong>arg8</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; Number of levels to draw symbols</li>
 <li><strong>arg9</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Y values to define data ranges for each symbol types Type of REAL</li>
 <li><strong>arg10</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Symbol numbers (given in the symbol font) to draw, default is 20 TYPE of INT</li>
-<li><strong>arg11</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; Draw symbols ID (1) or not (0)</li>
-<li><strong>arg12</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; Font to use to draw symbol ID (A,B,C...). Default is use &#8216;default&#8217;</li>
-<li><strong>arg13</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Text size in mm to draw profile labels. Default is 5mm</li>
-<li><strong>arg14</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; Text color string in RGB model. Default is black</li>
+<li><strong>arg11</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; Draw symbols ID (1) or not (0)</li>
+<li><strong>arg12</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; Font to use to draw symbol ID (A,B,C...). Default is use &#8216;default&#8217;</li>
+<li><strong>arg13</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Text size in mm to draw profile labels. Default is 5mm</li>
+<li><strong>arg14</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; Text color string in RGB model. Default is black</li>
 </ul>
 </td>
 </tr>
@@ -484,7 +481,7 @@ use the <a class="reference internal" href="#geosoft.gxapi.GXSTK.set_axis_format
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>See MSTK for detailed description of all function parameters
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">See</span> <span class="n">MSTK</span> <span class="k">for</span> <span class="n">detailed</span> <span class="n">description</span> <span class="n">of</span> <span class="nb">all</span> <span class="n">function</span> <span class="n">parameters</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -492,7 +489,7 @@ use the <a class="reference internal" href="#geosoft.gxapi.GXSTK.set_axis_format
 <dl class="method">
 <dt id="geosoft.gxapi.GXSTK.get_title_parms">
 <code class="descname">get_title_parms</code><span class="sig-paren">(</span><em>(str_ref)arg1</em>, <em>(str_ref)arg2</em>, <em>(int_ref)arg3</em>, <em>(float_ref)arg4</em>, <em>(float_ref)arg5</em>, <em>(int_ref)arg6</em>, <em>(float_ref)arg7</em>, <em>(float_ref)arg8</em>, <em>(str_ref)arg9</em>, <em>(float_ref)arg10</em>, <em>(str_ref)arg11</em>, <em>(int)arg12</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSTK.get_title_parms" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Get parameters in STK object relating X/Y axis titles
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">parameters</span> <span class="ow">in</span> <span class="n">STK</span> <span class="nb">object</span> <span class="n">relating</span> <span class="n">X</span><span class="o">/</span><span class="n">Y</span> <span class="n">axis</span> <span class="n">titles</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -500,18 +497,18 @@ use the <a class="reference internal" href="#geosoft.gxapi.GXSTK.set_axis_format
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; Title for bottom X axis/left Y axis. Default is no title.</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; Title for top X axis/right Y axis. Default is no title.</li>
-<li><strong>arg3</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; Bottom/Left axis title orientation.</li>
-<li><strong>arg4</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; X location to draw bottom/left axis title</li>
-<li><strong>arg5</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Y location to draw bottom/left axis title</li>
-<li><strong>arg6</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; Top/Right axis title orientation.</li>
-<li><strong>arg7</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; X location to draw top/right axis title</li>
-<li><strong>arg8</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Y location to draw top/right axis title</li>
-<li><strong>arg9</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; Font to draw titles. Default is use &#8216;default&#8217; font set in Montaj</li>
-<li><strong>arg10</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Text size in mm to draw titles. Default is 5mm</li>
-<li><strong>arg11</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; Text color string in RGB model. Default is black</li>
-<li><strong>arg12</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#stk-axis"><span>STK_AXIS constants</span></a></li>
+<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; Title for bottom X axis/left Y axis. Default is no title.</li>
+<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; Title for top X axis/right Y axis. Default is no title.</li>
+<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; Bottom/Left axis title orientation.</li>
+<li><strong>arg4</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; X location to draw bottom/left axis title</li>
+<li><strong>arg5</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Y location to draw bottom/left axis title</li>
+<li><strong>arg6</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; Top/Right axis title orientation.</li>
+<li><strong>arg7</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; X location to draw top/right axis title</li>
+<li><strong>arg8</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Y location to draw top/right axis title</li>
+<li><strong>arg9</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; Font to draw titles. Default is use &#8216;default&#8217; font set in Montaj</li>
+<li><strong>arg10</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Text size in mm to draw titles. Default is 5mm</li>
+<li><strong>arg11</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; Text color string in RGB model. Default is black</li>
+<li><strong>arg12</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#stk-axis"><span class="std std-ref">STK_AXIS constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -527,7 +524,7 @@ use the <a class="reference internal" href="#geosoft.gxapi.GXSTK.set_axis_format
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>See MSTK for detailed description of all function parameters
+<div class="highlight-default"><div class="highlight"><pre><span></span>See MSTK for detailed description of all function parameters
 ? mark in the note represent either X and Y
 </pre></div>
 </div>
@@ -536,7 +533,7 @@ use the <a class="reference internal" href="#geosoft.gxapi.GXSTK.set_axis_format
 <dl class="method">
 <dt id="geosoft.gxapi.GXSTK.get_trans_parms">
 <code class="descname">get_trans_parms</code><span class="sig-paren">(</span><em>(int_ref)arg1</em>, <em>(float_ref)arg2</em>, <em>(GXVV)arg3</em>, <em>(GXVV)arg4</em>, <em>(int_ref)arg5</em>, <em>(float_ref)arg6</em>, <em>(GXVV)arg7</em>, <em>(GXVV)arg8</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSTK.get_trans_parms" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Get transformation parameters in STK object
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">transformation</span> <span class="n">parameters</span> <span class="ow">in</span> <span class="n">STK</span> <span class="nb">object</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -544,12 +541,12 @@ use the <a class="reference internal" href="#geosoft.gxapi.GXSTK.set_axis_format
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; Type of transformation for horizontal axis</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Minimum value to apply logarithmic</li>
+<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; Type of transformation for horizontal axis</li>
+<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Minimum value to apply logarithmic</li>
 <li><strong>arg3</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Comma separated parameters defining linear compress data range</li>
 <li><strong>arg4</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Comma separated parameters defining scaling factors for</li>
-<li><strong>arg5</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; Type of scaling for vertical axis</li>
-<li><strong>arg6</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Minimum value to apply logarithmic</li>
+<li><strong>arg5</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; Type of scaling for vertical axis</li>
+<li><strong>arg6</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Minimum value to apply logarithmic</li>
 <li><strong>arg7</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Comma separated parameters defining linear compress data range</li>
 <li><strong>arg8</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Comma separated parameters defining scaling factors for</li>
 </ul>
@@ -567,11 +564,11 @@ use the <a class="reference internal" href="#geosoft.gxapi.GXSTK.set_axis_format
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>See above full description of each parameters
-VV&#39;s for X channel transformation can be NULL if the
-transformation is log or loglinear. The same for Y channel.
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">See</span> <span class="n">above</span> <span class="n">full</span> <span class="n">description</span> <span class="n">of</span> <span class="n">each</span> <span class="n">parameters</span>
+<span class="n">VV</span><span class="s1">&#39;s for X channel transformation can be NULL if the</span>
+<span class="n">transformation</span> <span class="ow">is</span> <span class="n">log</span> <span class="ow">or</span> <span class="n">loglinear</span><span class="o">.</span> <span class="n">The</span> <span class="n">same</span> <span class="k">for</span> <span class="n">Y</span> <span class="n">channel</span><span class="o">.</span>
 
-See MSTK for detailed description of all function parameters
+<span class="n">See</span> <span class="n">MSTK</span> <span class="k">for</span> <span class="n">detailed</span> <span class="n">description</span> <span class="n">of</span> <span class="nb">all</span> <span class="n">function</span> <span class="n">parameters</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -611,7 +608,7 @@ See MSTK for detailed description of all function parameters
 <dl class="method">
 <dt id="geosoft.gxapi.GXSTK.set_array_colors">
 <code class="descname">set_array_colors</code><span class="sig-paren">(</span><em>(GXITR)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSTK.set_array_colors" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Set colours for individual channels in a VA, via an ITR
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Set</span> <span class="n">colours</span> <span class="k">for</span> <span class="n">individual</span> <span class="n">channels</span> <span class="ow">in</span> <span class="n">a</span> <span class="n">VA</span><span class="p">,</span> <span class="n">via</span> <span class="n">an</span> <span class="n">ITR</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -630,9 +627,9 @@ See MSTK for detailed description of all function parameters
 <p><span class="versionmodified">New in version 5.0.1.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>The ITR is consulted by taking the channel index and dividing
-by the number of channels; hence the ITR maximum values should
-be in the range: 0 &gt; values &gt;= 1.0.
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">ITR</span> <span class="ow">is</span> <span class="n">consulted</span> <span class="n">by</span> <span class="n">taking</span> <span class="n">the</span> <span class="n">channel</span> <span class="n">index</span> <span class="ow">and</span> <span class="n">dividing</span>
+<span class="n">by</span> <span class="n">the</span> <span class="n">number</span> <span class="n">of</span> <span class="n">channels</span><span class="p">;</span> <span class="n">hence</span> <span class="n">the</span> <span class="n">ITR</span> <span class="n">maximum</span> <span class="n">values</span> <span class="n">should</span>
+<span class="n">be</span> <span class="ow">in</span> <span class="n">the</span> <span class="nb">range</span><span class="p">:</span> <span class="mi">0</span> <span class="o">&gt;</span> <span class="n">values</span> <span class="o">&gt;=</span> <span class="mf">1.0</span><span class="o">.</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -640,7 +637,7 @@ be in the range: 0 &gt; values &gt;= 1.0.
 <dl class="method">
 <dt id="geosoft.gxapi.GXSTK.set_axis_format">
 <code class="descname">set_axis_format</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(int)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSTK.set_axis_format" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Set axis number display format.
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Set</span> <span class="n">axis</span> <span class="n">number</span> <span class="n">display</span> <span class="nb">format</span><span class="o">.</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -648,8 +645,8 @@ be in the range: 0 &gt; values &gt;= 1.0.
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<em>int</em>) &#8211; <a class="reference internal" href="GXDB.html#db-chan-format"><span>DB_CHAN_FORMAT constants</span></a></li>
-<li><strong>arg2</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#stk-axis"><span>STK_AXIS constants</span></a></li>
+<li><strong>arg1</strong> (<em>int</em>) &#8211; <a class="reference internal" href="GXDB.html#db-chan-format"><span class="std std-ref">DB_CHAN_FORMAT constants</span></a></li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#stk-axis"><span class="std std-ref">STK_AXIS constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -665,8 +662,8 @@ be in the range: 0 &gt; values &gt;= 1.0.
 <p><span class="versionmodified">New in version 5.1.5.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>By default, DB_CHAN_FORMAT_NORMAL is used to display the values,
-or for values &gt; 1.e7, DB_CHAN_FORMAT_EXP.
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">By</span> <span class="n">default</span><span class="p">,</span> <span class="n">DB_CHAN_FORMAT_NORMAL</span> <span class="ow">is</span> <span class="n">used</span> <span class="n">to</span> <span class="n">display</span> <span class="n">the</span> <span class="n">values</span><span class="p">,</span>
+<span class="ow">or</span> <span class="k">for</span> <span class="n">values</span> <span class="o">&gt;</span> <span class="mf">1.e7</span><span class="p">,</span> <span class="n">DB_CHAN_FORMAT_EXP</span><span class="o">.</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -674,7 +671,7 @@ or for values &gt; 1.e7, DB_CHAN_FORMAT_EXP.
 <dl class="method">
 <dt id="geosoft.gxapi.GXSTK.set_axis_parms">
 <code class="descname">set_axis_parms</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(float)arg2</em>, <em>(float)arg3</em>, <em>(float)arg4</em>, <em>(str)arg5</em>, <em>(float)arg6</em>, <em>(float)arg7</em>, <em>(float)arg8</em>, <em>(int)arg9</em>, <em>(int)arg10</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSTK.set_axis_parms" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Set parameters in STK object relating drawing X/Y axis
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Set</span> <span class="n">parameters</span> <span class="ow">in</span> <span class="n">STK</span> <span class="nb">object</span> <span class="n">relating</span> <span class="n">drawing</span> <span class="n">X</span><span class="o">/</span><span class="n">Y</span> <span class="n">axis</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -691,7 +688,7 @@ or for values &gt; 1.e7, DB_CHAN_FORMAT_EXP.
 <li><strong>arg7</strong> (<em>float</em>) &#8211; Major tick size in mm for bottom/left axis bar.</li>
 <li><strong>arg8</strong> (<em>float</em>) &#8211; Major tick size in mm for top/right axis bar.</li>
 <li><strong>arg9</strong> (<em>int</em>) &#8211; ?BARMINORTICK  - Number of minor ticks. (0) none, (-1) automatic</li>
-<li><strong>arg10</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#stk-axis"><span>STK_AXIS constants</span></a></li>
+<li><strong>arg10</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#stk-axis"><span class="std std-ref">STK_AXIS constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -707,7 +704,7 @@ or for values &gt; 1.e7, DB_CHAN_FORMAT_EXP.
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>See MSTK for detailed description of all function parameters
+<div class="highlight-default"><div class="highlight"><pre><span></span>See MSTK for detailed description of all function parameters
 ? mark in the note represent either X and Y
 </pre></div>
 </div>
@@ -716,7 +713,7 @@ or for values &gt; 1.e7, DB_CHAN_FORMAT_EXP.
 <dl class="method">
 <dt id="geosoft.gxapi.GXSTK.set_fid_parms">
 <code class="descname">set_fid_parms</code><span class="sig-paren">(</span><em>(float)arg1</em>, <em>(float)arg2</em>, <em>(float)arg3</em>, <em>(str)arg4</em>, <em>(float)arg5</em>, <em>(str)arg6</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSTK.set_fid_parms" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Set parameters in STK object relating drawing fid ticks
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Set</span> <span class="n">parameters</span> <span class="ow">in</span> <span class="n">STK</span> <span class="nb">object</span> <span class="n">relating</span> <span class="n">drawing</span> <span class="n">fid</span> <span class="n">ticks</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -745,7 +742,7 @@ or for values &gt; 1.e7, DB_CHAN_FORMAT_EXP.
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>See MSTK for detailed description of all function parameters
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">See</span> <span class="n">MSTK</span> <span class="k">for</span> <span class="n">detailed</span> <span class="n">description</span> <span class="n">of</span> <span class="nb">all</span> <span class="n">function</span> <span class="n">parameters</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -753,7 +750,7 @@ or for values &gt; 1.e7, DB_CHAN_FORMAT_EXP.
 <dl class="method">
 <dt id="geosoft.gxapi.GXSTK.set_flag">
 <code class="descname">set_flag</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(int)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSTK.set_flag" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Set flag indicating part of STK object is to be drawn or not
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Set</span> <span class="n">flag</span> <span class="n">indicating</span> <span class="n">part</span> <span class="n">of</span> <span class="n">STK</span> <span class="nb">object</span> <span class="ow">is</span> <span class="n">to</span> <span class="n">be</span> <span class="n">drawn</span> <span class="ow">or</span> <span class="ow">not</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -762,7 +759,7 @@ or for values &gt; 1.e7, DB_CHAN_FORMAT_EXP.
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<em>int</em>) &#8211; Flag to set (0 or 1)</li>
-<li><strong>arg2</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#stk-flag"><span>STK_FLAG constants</span></a></li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#stk-flag"><span class="std std-ref">STK_FLAG constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -782,7 +779,7 @@ or for values &gt; 1.e7, DB_CHAN_FORMAT_EXP.
 <dl class="method">
 <dt id="geosoft.gxapi.GXSTK.set_gen_parms">
 <code class="descname">set_gen_parms</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(str)arg2</em>, <em>(str)arg3</em>, <em>(float)arg4</em>, <em>(float)arg5</em>, <em>(float)arg6</em>, <em>(float)arg7</em>, <em>(float)arg8</em>, <em>(float)arg9</em>, <em>(float)arg10</em>, <em>(float)arg11</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSTK.set_gen_parms" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Set general parameters in STK object
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Set</span> <span class="n">general</span> <span class="n">parameters</span> <span class="ow">in</span> <span class="n">STK</span> <span class="nb">object</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -816,7 +813,7 @@ or for values &gt; 1.e7, DB_CHAN_FORMAT_EXP.
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>See MSTK for detailed description of all function parameters
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">See</span> <span class="n">MSTK</span> <span class="k">for</span> <span class="n">detailed</span> <span class="n">description</span> <span class="n">of</span> <span class="nb">all</span> <span class="n">function</span> <span class="n">parameters</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -824,7 +821,7 @@ or for values &gt; 1.e7, DB_CHAN_FORMAT_EXP.
 <dl class="method">
 <dt id="geosoft.gxapi.GXSTK.set_grid_parms">
 <code class="descname">set_grid_parms</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(float)arg2</em>, <em>(float)arg3</em>, <em>(float)arg4</em>, <em>(float)arg5</em>, <em>(float)arg6</em>, <em>(float)arg7</em>, <em>(float)arg8</em>, <em>(float)arg9</em>, <em>(str)arg10</em>, <em>(int)arg11</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSTK.set_grid_parms" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Set background grid parameters in STK object
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Set</span> <span class="n">background</span> <span class="n">grid</span> <span class="n">parameters</span> <span class="ow">in</span> <span class="n">STK</span> <span class="nb">object</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -842,7 +839,7 @@ or for values &gt; 1.e7, DB_CHAN_FORMAT_EXP.
 <li><strong>arg8</strong> (<em>float</em>) &#8211; Separation between vertical grid lines.</li>
 <li><strong>arg9</strong> (<em>float</em>) &#8211; Separation between horizontal grid lines.</li>
 <li><strong>arg10</strong> (<em>str</em>) &#8211; Grid line color string in RGB model. Default is black</li>
-<li><strong>arg11</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#stk-grid"><span>STK_GRID constants</span></a></li>
+<li><strong>arg11</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#stk-grid"><span class="std std-ref">STK_GRID constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -858,7 +855,7 @@ or for values &gt; 1.e7, DB_CHAN_FORMAT_EXP.
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>See MSTK for detailed description of all function parameters
+<div class="highlight-default"><div class="highlight"><pre><span></span>See MSTK for detailed description of all function parameters
 ? mark in the note represent either X and Y
 </pre></div>
 </div>
@@ -867,7 +864,7 @@ or for values &gt; 1.e7, DB_CHAN_FORMAT_EXP.
 <dl class="method">
 <dt id="geosoft.gxapi.GXSTK.set_label_parms">
 <code class="descname">set_label_parms</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(float)arg2</em>, <em>(int)arg3</em>, <em>(float)arg4</em>, <em>(int)arg5</em>, <em>(float)arg6</em>, <em>(str)arg7</em>, <em>(float)arg8</em>, <em>(str)arg9</em>, <em>(int)arg10</em>, <em>(int)arg11</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSTK.set_label_parms" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Set parameters in STK object relating X/Y axis labels
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Set</span> <span class="n">parameters</span> <span class="ow">in</span> <span class="n">STK</span> <span class="nb">object</span> <span class="n">relating</span> <span class="n">X</span><span class="o">/</span><span class="n">Y</span> <span class="n">axis</span> <span class="n">labels</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -885,7 +882,7 @@ or for values &gt; 1.e7, DB_CHAN_FORMAT_EXP.
 <li><strong>arg8</strong> (<em>float</em>) &#8211; Text size in mm to draw profile labels. Default is 5mm</li>
 <li><strong>arg9</strong> (<em>str</em>) &#8211; Text color string in RGB model. Default is black</li>
 <li><strong>arg10</strong> (<em>int</em>) &#8211; ?LABELBOUND    - Edge bound.  0 - No</li>
-<li><strong>arg11</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#stk-axis"><span>STK_AXIS constants</span></a></li>
+<li><strong>arg11</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#stk-axis"><span class="std std-ref">STK_AXIS constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -912,7 +909,7 @@ use the <a class="reference internal" href="#geosoft.gxapi.GXSTK.set_axis_format
 <dl class="method">
 <dt id="geosoft.gxapi.GXSTK.set_line_parm">
 <code class="descname">set_line_parm</code><span class="sig-paren">(</span><em>(int)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSTK.set_line_parm" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Set line parameter (of Y Chan) in STK object
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Set</span> <span class="n">line</span> <span class="n">parameter</span> <span class="p">(</span><span class="n">of</span> <span class="n">Y</span> <span class="n">Chan</span><span class="p">)</span> <span class="ow">in</span> <span class="n">STK</span> <span class="nb">object</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -931,7 +928,7 @@ use the <a class="reference internal" href="#geosoft.gxapi.GXSTK.set_axis_format
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>See MSTK for detailed description of all function parameters
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">See</span> <span class="n">MSTK</span> <span class="k">for</span> <span class="n">detailed</span> <span class="n">description</span> <span class="n">of</span> <span class="nb">all</span> <span class="n">function</span> <span class="n">parameters</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -939,7 +936,7 @@ use the <a class="reference internal" href="#geosoft.gxapi.GXSTK.set_axis_format
 <dl class="method">
 <dt id="geosoft.gxapi.GXSTK.set_profile">
 <code class="descname">set_profile</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(float)arg2</em>, <em>(float)arg3</em>, <em>(str)arg4</em>, <em>(int)arg5</em>, <em>(int)arg6</em>, <em>(int)arg7</em>, <em>(GXVV)arg8</em>, <em>(str)arg9</em>, <em>(int)arg10</em>, <em>(str)arg11</em>, <em>(float)arg12</em>, <em>(str)arg13</em>, <em>(int)arg14</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSTK.set_profile" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Set profile parameters in STK object
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Set</span> <span class="n">profile</span> <span class="n">parameters</span> <span class="ow">in</span> <span class="n">STK</span> <span class="nb">object</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -976,7 +973,7 @@ use the <a class="reference internal" href="#geosoft.gxapi.GXSTK.set_axis_format
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>See MSTK for detailed description of all function parameters
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">See</span> <span class="n">MSTK</span> <span class="k">for</span> <span class="n">detailed</span> <span class="n">description</span> <span class="n">of</span> <span class="nb">all</span> <span class="n">function</span> <span class="n">parameters</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -984,7 +981,7 @@ use the <a class="reference internal" href="#geosoft.gxapi.GXSTK.set_axis_format
 <dl class="method">
 <dt id="geosoft.gxapi.GXSTK.set_profile_ex">
 <code class="descname">set_profile_ex</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(float)arg2</em>, <em>(float)arg3</em>, <em>(str)arg4</em>, <em>(int)arg5</em>, <em>(int)arg6</em>, <em>(int)arg7</em>, <em>(int)arg8</em>, <em>(GXVV)arg9</em>, <em>(str)arg10</em>, <em>(int)arg11</em>, <em>(str)arg12</em>, <em>(float)arg13</em>, <em>(str)arg14</em>, <em>(int)arg15</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSTK.set_profile_ex" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Set profile parameters in STK object (added Break on dummy option)
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Set</span> <span class="n">profile</span> <span class="n">parameters</span> <span class="ow">in</span> <span class="n">STK</span> <span class="nb">object</span> <span class="p">(</span><span class="n">added</span> <span class="n">Break</span> <span class="n">on</span> <span class="n">dummy</span> <span class="n">option</span><span class="p">)</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -1022,7 +1019,7 @@ use the <a class="reference internal" href="#geosoft.gxapi.GXSTK.set_axis_format
 <p><span class="versionmodified">New in version 5.0.3.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>See MSTK for detailed description of all function parameters
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">See</span> <span class="n">MSTK</span> <span class="k">for</span> <span class="n">detailed</span> <span class="n">description</span> <span class="n">of</span> <span class="nb">all</span> <span class="n">function</span> <span class="n">parameters</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -1030,7 +1027,7 @@ use the <a class="reference internal" href="#geosoft.gxapi.GXSTK.set_axis_format
 <dl class="method">
 <dt id="geosoft.gxapi.GXSTK.set_symb_parms">
 <code class="descname">set_symb_parms</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(float)arg2</em>, <em>(str)arg3</em>, <em>(str)arg4</em>, <em>(int)arg5</em>, <em>(int)arg6</em>, <em>(float)arg7</em>, <em>(int)arg8</em>, <em>(GXVV)arg9</em>, <em>(GXVV)arg10</em>, <em>(int)arg11</em>, <em>(str)arg12</em>, <em>(float)arg13</em>, <em>(str)arg14</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSTK.set_symb_parms" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Set parameters in STK object relating drawing symbols
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Set</span> <span class="n">parameters</span> <span class="ow">in</span> <span class="n">STK</span> <span class="nb">object</span> <span class="n">relating</span> <span class="n">drawing</span> <span class="n">symbols</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -1067,7 +1064,7 @@ use the <a class="reference internal" href="#geosoft.gxapi.GXSTK.set_axis_format
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>See MSTK for detailed description of all function parameters
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">See</span> <span class="n">MSTK</span> <span class="k">for</span> <span class="n">detailed</span> <span class="n">description</span> <span class="n">of</span> <span class="nb">all</span> <span class="n">function</span> <span class="n">parameters</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -1075,7 +1072,7 @@ use the <a class="reference internal" href="#geosoft.gxapi.GXSTK.set_axis_format
 <dl class="method">
 <dt id="geosoft.gxapi.GXSTK.set_title_parms">
 <code class="descname">set_title_parms</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(str)arg2</em>, <em>(int)arg3</em>, <em>(float)arg4</em>, <em>(float)arg5</em>, <em>(int)arg6</em>, <em>(float)arg7</em>, <em>(float)arg8</em>, <em>(str)arg9</em>, <em>(float)arg10</em>, <em>(str)arg11</em>, <em>(int)arg12</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSTK.set_title_parms" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Set parameters in STK object relating X/Y axis titles
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Set</span> <span class="n">parameters</span> <span class="ow">in</span> <span class="n">STK</span> <span class="nb">object</span> <span class="n">relating</span> <span class="n">X</span><span class="o">/</span><span class="n">Y</span> <span class="n">axis</span> <span class="n">titles</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -1094,7 +1091,7 @@ use the <a class="reference internal" href="#geosoft.gxapi.GXSTK.set_axis_format
 <li><strong>arg9</strong> (<em>str</em>) &#8211; Font to draw titles. Default is use &#8216;default&#8217; font set in Montaj</li>
 <li><strong>arg10</strong> (<em>float</em>) &#8211; Text size in mm to draw titles. Default is 5mm</li>
 <li><strong>arg11</strong> (<em>str</em>) &#8211; Text color string in RGB model. Default is black</li>
-<li><strong>arg12</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#stk-axis"><span>STK_AXIS constants</span></a></li>
+<li><strong>arg12</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#stk-axis"><span class="std std-ref">STK_AXIS constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -1110,7 +1107,7 @@ use the <a class="reference internal" href="#geosoft.gxapi.GXSTK.set_axis_format
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>See MSTK for detailed description of all function parameters
+<div class="highlight-default"><div class="highlight"><pre><span></span>See MSTK for detailed description of all function parameters
 ? mark in the note represent either X and Y
 </pre></div>
 </div>
@@ -1119,7 +1116,7 @@ use the <a class="reference internal" href="#geosoft.gxapi.GXSTK.set_axis_format
 <dl class="method">
 <dt id="geosoft.gxapi.GXSTK.set_trans_parms">
 <code class="descname">set_trans_parms</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(float)arg2</em>, <em>(int)arg3</em>, <em>(int)arg4</em>, <em>(int)arg5</em>, <em>(float)arg6</em>, <em>(int)arg7</em>, <em>(int)arg8</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSTK.set_trans_parms" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Set transformation parameters in STK object
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Set</span> <span class="n">transformation</span> <span class="n">parameters</span> <span class="ow">in</span> <span class="n">STK</span> <span class="nb">object</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -1150,10 +1147,10 @@ use the <a class="reference internal" href="#geosoft.gxapi.GXSTK.set_axis_format
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>See above full description of each parameters
-VV&#39;s for X channel transformation can be NULL if the
-transformation is log or loglinear. The same for Y channel.
-See MSTK for detailed description of all function parameters
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">See</span> <span class="n">above</span> <span class="n">full</span> <span class="n">description</span> <span class="n">of</span> <span class="n">each</span> <span class="n">parameters</span>
+<span class="n">VV</span><span class="s1">&#39;s for X channel transformation can be NULL if the</span>
+<span class="n">transformation</span> <span class="ow">is</span> <span class="n">log</span> <span class="ow">or</span> <span class="n">loglinear</span><span class="o">.</span> <span class="n">The</span> <span class="n">same</span> <span class="k">for</span> <span class="n">Y</span> <span class="n">channel</span><span class="o">.</span>
+<span class="n">See</span> <span class="n">MSTK</span> <span class="k">for</span> <span class="n">detailed</span> <span class="n">description</span> <span class="n">of</span> <span class="nb">all</span> <span class="n">function</span> <span class="n">parameters</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -1161,7 +1158,7 @@ See MSTK for detailed description of all function parameters
 <dl class="method">
 <dt id="geosoft.gxapi.GXSTK.set_va_index_start">
 <code class="descname">set_va_index_start</code><span class="sig-paren">(</span><em>(int)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSTK.set_va_index_start" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Start array profile index labels at 0 or 1.
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Start</span> <span class="n">array</span> <span class="n">profile</span> <span class="n">index</span> <span class="n">labels</span> <span class="n">at</span> <span class="mi">0</span> <span class="ow">or</span> <span class="mf">1.</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -1180,9 +1177,9 @@ See MSTK for detailed description of all function parameters
 <p><span class="versionmodified">New in version 6.0.1.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>By default, the index labels for array channel profiles
-begin at 0. Use this function to start them at either 0
-or 1.
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">By</span> <span class="n">default</span><span class="p">,</span> <span class="n">the</span> <span class="n">index</span> <span class="n">labels</span> <span class="k">for</span> <span class="n">array</span> <span class="n">channel</span> <span class="n">profiles</span>
+<span class="n">begin</span> <span class="n">at</span> <span class="mf">0.</span> <span class="n">Use</span> <span class="n">this</span> <span class="n">function</span> <span class="n">to</span> <span class="n">start</span> <span class="n">them</span> <span class="n">at</span> <span class="n">either</span> <span class="mi">0</span>
+<span class="ow">or</span> <span class="mf">1.</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -1191,7 +1188,7 @@ or 1.
 
 <div class="section" id="stk-axis-constants">
 <span id="stk-axis"></span><h2>STK_AXIS constants<a class="headerlink" href="#stk-axis-constants" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-python"><div class="highlight"><pre><span></span>STK Axis defines
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">STK</span> <span class="n">Axis</span> <span class="n">defines</span>
 </pre></div>
 </div>
 <dl class="attribute">
@@ -1199,7 +1196,7 @@ or 1.
 <code class="descclassname">gxapi.</code><code class="descname">STK_AXIS_X</code><em class="property"> = 0</em><a class="headerlink" href="#geosoft.gxapi.STK_AXIS_X" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<div class="highlight-python"><div class="highlight"><pre><span></span>X Axis
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="n">Axis</span>
 </pre></div>
 </div>
 <dl class="attribute">
@@ -1207,13 +1204,13 @@ or 1.
 <code class="descclassname">gxapi.</code><code class="descname">STK_AXIS_Y</code><em class="property"> = 1</em><a class="headerlink" href="#geosoft.gxapi.STK_AXIS_Y" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<div class="highlight-python"><div class="highlight"><pre><span></span>Y Axis
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Y</span> <span class="n">Axis</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="stk-flag-constants">
 <span id="stk-flag"></span><h2>STK_FLAG constants<a class="headerlink" href="#stk-flag-constants" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-python"><div class="highlight"><pre><span></span>Stack flags
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Stack</span> <span class="n">flags</span>
 </pre></div>
 </div>
 <dl class="attribute">
@@ -1274,7 +1271,7 @@ or 1.
 </div>
 <div class="section" id="stk-grid-constants">
 <span id="stk-grid"></span><h2>STK_GRID constants<a class="headerlink" href="#stk-grid-constants" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-python"><div class="highlight"><pre><span></span>Stack Grid define
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Stack</span> <span class="n">Grid</span> <span class="n">define</span>
 </pre></div>
 </div>
 <dl class="attribute">
@@ -1282,7 +1279,7 @@ or 1.
 <code class="descclassname">gxapi.</code><code class="descname">STK_GRID_PRIMARY</code><em class="property"> = 0</em><a class="headerlink" href="#geosoft.gxapi.STK_GRID_PRIMARY" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<div class="highlight-python"><div class="highlight"><pre><span></span>Primary Grid
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Primary</span> <span class="n">Grid</span>
 </pre></div>
 </div>
 <dl class="attribute">
@@ -1290,7 +1287,7 @@ or 1.
 <code class="descclassname">gxapi.</code><code class="descname">STK_GRID_SECONDARY</code><em class="property"> = 1</em><a class="headerlink" href="#geosoft.gxapi.STK_GRID_SECONDARY" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<div class="highlight-python"><div class="highlight"><pre><span></span>Secondary Grid
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Secondary</span> <span class="n">Grid</span>
 </pre></div>
 </div>
 </div>
@@ -1311,12 +1308,12 @@ or 1.
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.1.0 documentation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.1 documentation</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &copy; Copyright 2016, Geosoft Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+        &#169; Copyright 2016, Geosoft Inc.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.6.
     </div>
   </body>
 </html>

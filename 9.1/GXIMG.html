@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>GXIMG class &mdash; Geosoft GX Python API 9.1.0 documentation</title>
+    <title>GXIMG class &#8212; Geosoft GX Python API 9.1 documentation</title>
     
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '9.1.0',
+        VERSION:     '9.1',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +23,7 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="Geosoft GX Python API 9.1.0 documentation" href="index.html" /> 
+    <link rel="top" title="Geosoft GX Python API 9.1 documentation" href="index.html" /> 
   </head>
   <body role="document">
     <div class="related" role="navigation" aria-label="related navigation">
@@ -35,7 +35,7 @@
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.1.0 documentation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.1 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -60,14 +60,11 @@
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -118,7 +115,7 @@ and the <cite>*</cite>.gi file will contain the information.
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXIMG.average2">
 <em class="property">static </em><code class="descname">average2</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(str)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIMG.average2" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Reduce the dimensions in a 2D pager by a factor of 2
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Reduce</span> <span class="n">the</span> <span class="n">dimensions</span> <span class="ow">in</span> <span class="n">a</span> <span class="mi">2</span><span class="n">D</span> <span class="n">pager</span> <span class="n">by</span> <span class="n">a</span> <span class="n">factor</span> <span class="n">of</span> <span class="mi">2</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -143,13 +140,13 @@ and the <cite>*</cite>.gi file will contain the information.
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>This method is useful for reducing the dimensions in a 2D pager by a factor of 2.
-The output pager retains the same origin, but the X and Y spacing is double that of the original. Essentially,
-the process removes all the even-indexed rows and columns, while leaving the locations of all the remaining
-data points in the &quot;odd&quot; rows and columns unchanged.
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="n">method</span> <span class="ow">is</span> <span class="n">useful</span> <span class="k">for</span> <span class="n">reducing</span> <span class="n">the</span> <span class="n">dimensions</span> <span class="ow">in</span> <span class="n">a</span> <span class="mi">2</span><span class="n">D</span> <span class="n">pager</span> <span class="n">by</span> <span class="n">a</span> <span class="n">factor</span> <span class="n">of</span> <span class="mf">2.</span>
+<span class="n">The</span> <span class="n">output</span> <span class="n">pager</span> <span class="n">retains</span> <span class="n">the</span> <span class="n">same</span> <span class="n">origin</span><span class="p">,</span> <span class="n">but</span> <span class="n">the</span> <span class="n">X</span> <span class="ow">and</span> <span class="n">Y</span> <span class="n">spacing</span> <span class="ow">is</span> <span class="n">double</span> <span class="n">that</span> <span class="n">of</span> <span class="n">the</span> <span class="n">original</span><span class="o">.</span> <span class="n">Essentially</span><span class="p">,</span>
+<span class="n">the</span> <span class="n">process</span> <span class="n">removes</span> <span class="nb">all</span> <span class="n">the</span> <span class="n">even</span><span class="o">-</span><span class="n">indexed</span> <span class="n">rows</span> <span class="ow">and</span> <span class="n">columns</span><span class="p">,</span> <span class="k">while</span> <span class="n">leaving</span> <span class="n">the</span> <span class="n">locations</span> <span class="n">of</span> <span class="nb">all</span> <span class="n">the</span> <span class="n">remaining</span>
+<span class="n">data</span> <span class="n">points</span> <span class="ow">in</span> <span class="n">the</span> <span class="s2">&quot;odd&quot;</span> <span class="n">rows</span> <span class="ow">and</span> <span class="n">columns</span> <span class="n">unchanged</span><span class="o">.</span>
 
-The output values at the output data locations are created by performing an average of the original data point and
-its valid surrounding data points; what is essentially a 3x3 smoothing filter.
+<span class="n">The</span> <span class="n">output</span> <span class="n">values</span> <span class="n">at</span> <span class="n">the</span> <span class="n">output</span> <span class="n">data</span> <span class="n">locations</span> <span class="n">are</span> <span class="n">created</span> <span class="n">by</span> <span class="n">performing</span> <span class="n">an</span> <span class="n">average</span> <span class="n">of</span> <span class="n">the</span> <span class="n">original</span> <span class="n">data</span> <span class="n">point</span> <span class="ow">and</span>
+<span class="n">its</span> <span class="n">valid</span> <span class="n">surrounding</span> <span class="n">data</span> <span class="n">points</span><span class="p">;</span> <span class="n">what</span> <span class="ow">is</span> <span class="n">essentially</span> <span class="n">a</span> <span class="mi">3</span><span class="n">x3</span> <span class="n">smoothing</span> <span class="nb">filter</span><span class="o">.</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -157,7 +154,7 @@ its valid surrounding data points; what is essentially a 3x3 smoothing filter.
 <dl class="method">
 <dt id="geosoft.gxapi.GXIMG.copy">
 <code class="descname">copy</code><span class="sig-paren">(</span><em>(GXIMG)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIMG.copy" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Copy IMGs.
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Copy</span> <span class="n">IMGs</span><span class="o">.</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -180,7 +177,7 @@ its valid surrounding data points; what is essentially a 3x3 smoothing filter.
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXIMG.create">
 <em class="property">static </em><code class="descname">create</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(int)arg2</em>, <em>(int)arg3</em>, <em>(int)arg4</em><span class="sig-paren">)</span> &rarr; GXIMG:<a class="headerlink" href="#geosoft.gxapi.GXIMG.create" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Creates an IMG not tied to a file at all
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Creates</span> <span class="n">an</span> <span class="n">IMG</span> <span class="ow">not</span> <span class="n">tied</span> <span class="n">to</span> <span class="n">a</span> <span class="n">file</span> <span class="n">at</span> <span class="nb">all</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -188,7 +185,7 @@ its valid surrounding data points; what is essentially a 3x3 smoothing filter.
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<em>int</em>) &#8211; Data type <a class="reference internal" href="index.html#gs-types"><span>GS_TYPES constants</span></a></li>
+<li><strong>arg1</strong> (<em>int</em>) &#8211; Data type <span class="xref std std-ref">GS_TYPES</span></li>
 <li><strong>arg2</strong> (<em>int</em>) &#8211; Grid orientation (KX): 1 (rows in X) -1 (rows in Y)</li>
 <li><strong>arg3</strong> (<em>int</em>) &#8211; Grid width</li>
 <li><strong>arg4</strong> (<em>int</em>) &#8211; Grid height</li>
@@ -207,7 +204,7 @@ its valid surrounding data points; what is essentially a 3x3 smoothing filter.
 <p><span class="versionmodified">New in version 5.0.3.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>Once destroyed all the data in this IMG is lost.
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Once</span> <span class="n">destroyed</span> <span class="nb">all</span> <span class="n">the</span> <span class="n">data</span> <span class="ow">in</span> <span class="n">this</span> <span class="n">IMG</span> <span class="ow">is</span> <span class="n">lost</span><span class="o">.</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -215,7 +212,7 @@ its valid surrounding data points; what is essentially a 3x3 smoothing filter.
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXIMG.create_file">
 <em class="property">static </em><code class="descname">create_file</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(str)arg2</em>, <em>(int)arg3</em><span class="sig-paren">)</span> &rarr; GXIMG:<a class="headerlink" href="#geosoft.gxapi.GXIMG.create_file" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Creates an Image object tied to a grid file.
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Creates</span> <span class="n">an</span> <span class="n">Image</span> <span class="nb">object</span> <span class="n">tied</span> <span class="n">to</span> <span class="n">a</span> <span class="n">grid</span> <span class="n">file</span><span class="o">.</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -223,9 +220,9 @@ its valid surrounding data points; what is essentially a 3x3 smoothing filter.
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<em>int</em>) &#8211; Data type, <a class="reference internal" href="index.html#gs-types"><span>GS_TYPES constants</span></a> or GS_TYPE_DEFAULT to use native DAT type.</li>
+<li><strong>arg1</strong> (<em>int</em>) &#8211; Data type, <span class="xref std std-ref">GS_TYPES</span> or GS_TYPE_DEFAULT to use native DAT type.</li>
 <li><strong>arg2</strong> (<em>str</em>) &#8211; Name of the Grid to link to</li>
-<li><strong>arg3</strong> (<em>int</em>) &#8211; Grid File Open Mode <a class="reference internal" href="#img-file"><span>IMG_FILE constants</span></a></li>
+<li><strong>arg3</strong> (<em>int</em>) &#8211; Grid File Open Mode <a class="reference internal" href="#img-file"><span class="std std-ref">IMG_FILE constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -241,10 +238,10 @@ its valid surrounding data points; what is essentially a 3x3 smoothing filter.
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>When the GS_DOUBLE data type is chosen the actual on-disk
-type of the input image will be used instead of GS_DOUBLE
-if the on-disk values represent colour data as opposed
-to real numbers.
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">When</span> <span class="n">the</span> <span class="n">GS_DOUBLE</span> <span class="n">data</span> <span class="nb">type</span> <span class="ow">is</span> <span class="n">chosen</span> <span class="n">the</span> <span class="n">actual</span> <span class="n">on</span><span class="o">-</span><span class="n">disk</span>
+<span class="nb">type</span> <span class="n">of</span> <span class="n">the</span> <span class="nb">input</span> <span class="n">image</span> <span class="n">will</span> <span class="n">be</span> <span class="n">used</span> <span class="n">instead</span> <span class="n">of</span> <span class="n">GS_DOUBLE</span>
+<span class="k">if</span> <span class="n">the</span> <span class="n">on</span><span class="o">-</span><span class="n">disk</span> <span class="n">values</span> <span class="n">represent</span> <span class="n">colour</span> <span class="n">data</span> <span class="k">as</span> <span class="n">opposed</span>
+<span class="n">to</span> <span class="n">real</span> <span class="n">numbers</span><span class="o">.</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -252,7 +249,7 @@ to real numbers.
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXIMG.create_mem">
 <em class="property">static </em><code class="descname">create_mem</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(int)arg2</em>, <em>(int)arg3</em>, <em>(int)arg4</em><span class="sig-paren">)</span> &rarr; GXIMG:<a class="headerlink" href="#geosoft.gxapi.GXIMG.create_mem" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Creates an IMG object that is backed only by memory.
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Creates</span> <span class="n">an</span> <span class="n">IMG</span> <span class="nb">object</span> <span class="n">that</span> <span class="ow">is</span> <span class="n">backed</span> <span class="n">only</span> <span class="n">by</span> <span class="n">memory</span><span class="o">.</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -260,7 +257,7 @@ to real numbers.
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<em>int</em>) &#8211; Data type, <a class="reference internal" href="index.html#gs-types"><span>GS_TYPES constants</span></a></li>
+<li><strong>arg1</strong> (<em>int</em>) &#8211; Data type, <span class="xref std std-ref">GS_TYPES</span></li>
 <li><strong>arg2</strong> (<em>int</em>) &#8211; Grid orientation (KX): 1 (rows in X) -1 (rows in Y)</li>
 <li><strong>arg3</strong> (<em>int</em>) &#8211; Grid width</li>
 <li><strong>arg4</strong> (<em>int</em>) &#8211; Grid height</li>
@@ -279,7 +276,7 @@ to real numbers.
 <p><span class="versionmodified">New in version 5.0.6.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>Once destroyed all the data is lost. This is temporary.
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Once</span> <span class="n">destroyed</span> <span class="nb">all</span> <span class="n">the</span> <span class="n">data</span> <span class="ow">is</span> <span class="n">lost</span><span class="o">.</span> <span class="n">This</span> <span class="ow">is</span> <span class="n">temporary</span><span class="o">.</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -287,7 +284,7 @@ to real numbers.
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXIMG.create_new_file">
 <em class="property">static </em><code class="descname">create_new_file</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(int)arg2</em>, <em>(int)arg3</em>, <em>(int)arg4</em>, <em>(str)arg5</em><span class="sig-paren">)</span> &rarr; GXIMG:<a class="headerlink" href="#geosoft.gxapi.GXIMG.create_new_file" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Creates an output image file using User defined info.
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Creates</span> <span class="n">an</span> <span class="n">output</span> <span class="n">image</span> <span class="n">file</span> <span class="n">using</span> <span class="n">User</span> <span class="n">defined</span> <span class="n">info</span><span class="o">.</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -295,7 +292,7 @@ to real numbers.
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<em>int</em>) &#8211; Data type, <a class="reference internal" href="index.html#gs-types"><span>GS_TYPES constants</span></a> Cannot be GS_TYPE_DEFAULT</li>
+<li><strong>arg1</strong> (<em>int</em>) &#8211; Data type, <span class="xref std std-ref">GS_TYPES</span> Cannot be GS_TYPE_DEFAULT</li>
 <li><strong>arg2</strong> (<em>int</em>) &#8211; Grid orientation (KX): 1 (rows in X) -1 (rows in Y)</li>
 <li><strong>arg3</strong> (<em>int</em>) &#8211; Grid width</li>
 <li><strong>arg4</strong> (<em>int</em>) &#8211; Grid height</li>
@@ -334,7 +331,7 @@ of your application.
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXIMG.create_out_file">
 <em class="property">static </em><code class="descname">create_out_file</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(str)arg2</em>, <em>(GXIMG)arg3</em><span class="sig-paren">)</span> &rarr; GXIMG:<a class="headerlink" href="#geosoft.gxapi.GXIMG.create_out_file" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Creates an output image file using input image info.
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Creates</span> <span class="n">an</span> <span class="n">output</span> <span class="n">image</span> <span class="n">file</span> <span class="n">using</span> <span class="nb">input</span> <span class="n">image</span> <span class="n">info</span><span class="o">.</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -342,7 +339,7 @@ of your application.
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<em>int</em>) &#8211; Data type, <a class="reference internal" href="index.html#gs-types"><span>GS_TYPES constants</span></a> or GS_TYPE_DEFAULT</li>
+<li><strong>arg1</strong> (<em>int</em>) &#8211; Data type, <span class="xref std std-ref">GS_TYPES</span> or GS_TYPE_DEFAULT</li>
 <li><strong>arg2</strong> (<em>str</em>) &#8211; Name of the Grid to link to</li>
 <li><strong>arg3</strong> (<a class="reference internal" href="#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXIMG</span></code></a>) &#8211; Input Image for new image creation</li>
 </ul>
@@ -360,10 +357,10 @@ of your application.
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>When the GS_DOUBLE data type is chosen the actual on-disk
-type of the input image will be used instead of GS_DOUBLE
-if the on-disk values represent colour data as opposed
-to real numbers.
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">When</span> <span class="n">the</span> <span class="n">GS_DOUBLE</span> <span class="n">data</span> <span class="nb">type</span> <span class="ow">is</span> <span class="n">chosen</span> <span class="n">the</span> <span class="n">actual</span> <span class="n">on</span><span class="o">-</span><span class="n">disk</span>
+<span class="nb">type</span> <span class="n">of</span> <span class="n">the</span> <span class="nb">input</span> <span class="n">image</span> <span class="n">will</span> <span class="n">be</span> <span class="n">used</span> <span class="n">instead</span> <span class="n">of</span> <span class="n">GS_DOUBLE</span>
+<span class="k">if</span> <span class="n">the</span> <span class="n">on</span><span class="o">-</span><span class="n">disk</span> <span class="n">values</span> <span class="n">represent</span> <span class="n">colour</span> <span class="n">data</span> <span class="k">as</span> <span class="n">opposed</span>
+<span class="n">to</span> <span class="n">real</span> <span class="n">numbers</span><span class="o">.</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -371,7 +368,7 @@ to real numbers.
 <dl class="method">
 <dt id="geosoft.gxapi.GXIMG.create_projected">
 <code class="descname">create_projected</code><span class="sig-paren">(</span><em>(GXIPJ)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIMG.create_projected" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Applies a projection to an image.
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Applies</span> <span class="n">a</span> <span class="n">projection</span> <span class="n">to</span> <span class="n">an</span> <span class="n">image</span><span class="o">.</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -390,8 +387,8 @@ to real numbers.
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>The IMG now appears to be in the projected coordinate
-system space.
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">IMG</span> <span class="n">now</span> <span class="n">appears</span> <span class="n">to</span> <span class="n">be</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">projected</span> <span class="n">coordinate</span>
+<span class="n">system</span> <span class="n">space</span><span class="o">.</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -399,7 +396,7 @@ system space.
 <dl class="method">
 <dt id="geosoft.gxapi.GXIMG.create_projected2">
 <code class="descname">create_projected2</code><span class="sig-paren">(</span><em>(GXIPJ)arg1</em>, <em>(float)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIMG.create_projected2" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Applies a projection to an image, specify cell size.
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Applies</span> <span class="n">a</span> <span class="n">projection</span> <span class="n">to</span> <span class="n">an</span> <span class="n">image</span><span class="p">,</span> <span class="n">specify</span> <span class="n">cell</span> <span class="n">size</span><span class="o">.</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -481,7 +478,7 @@ the legacy behaviour.
 <dl class="method">
 <dt id="geosoft.gxapi.GXIMG.e_type">
 <code class="descname">e_type</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXIMG.e_type" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Returns the element type.
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Returns</span> <span class="n">the</span> <span class="n">element</span> <span class="nb">type</span><span class="o">.</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -498,7 +495,7 @@ the legacy behaviour.
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>Same as sElementType_IMG(img,1)
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Same</span> <span class="k">as</span> <span class="n">sElementType_IMG</span><span class="p">(</span><span class="n">img</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -506,7 +503,7 @@ the legacy behaviour.
 <dl class="method">
 <dt id="geosoft.gxapi.GXIMG.element_type">
 <code class="descname">element_type</code><span class="sig-paren">(</span><em>(int)arg1</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXIMG.element_type" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Returns the element type.
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Returns</span> <span class="n">the</span> <span class="n">element</span> <span class="nb">type</span><span class="o">.</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -529,7 +526,7 @@ the legacy behaviour.
 <dl class="method">
 <dt id="geosoft.gxapi.GXIMG.get_def_itr">
 <code class="descname">get_def_itr</code><span class="sig-paren">(</span><em>(GXITR)arg1</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXIMG.get_def_itr" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Get default transform, if it exists
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">default</span> <span class="n">transform</span><span class="p">,</span> <span class="k">if</span> <span class="n">it</span> <span class="n">exists</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -553,7 +550,7 @@ the legacy behaviour.
 <dl class="method">
 <dt id="geosoft.gxapi.GXIMG.get_double_parameter">
 <code class="descname">get_double_parameter</code><span class="sig-paren">(</span><em>(str)arg1</em><span class="sig-paren">)</span> &rarr; float:<a class="headerlink" href="#geosoft.gxapi.GXIMG.get_double_parameter" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Store a real parameter in an IMG object
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Store</span> <span class="n">a</span> <span class="n">real</span> <span class="n">parameter</span> <span class="ow">in</span> <span class="n">an</span> <span class="n">IMG</span> <span class="nb">object</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -576,7 +573,7 @@ the legacy behaviour.
 <dl class="method">
 <dt id="geosoft.gxapi.GXIMG.get_info">
 <code class="descname">get_info</code><span class="sig-paren">(</span><em>(float_ref)arg1</em>, <em>(float_ref)arg2</em>, <em>(float_ref)arg3</em>, <em>(float_ref)arg4</em>, <em>(float_ref)arg5</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIMG.get_info" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Retrieves location information about this image.
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Retrieves</span> <span class="n">location</span> <span class="n">information</span> <span class="n">about</span> <span class="n">this</span> <span class="n">image</span><span class="o">.</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -584,11 +581,11 @@ the legacy behaviour.
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; X element separation</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Y element separation</li>
-<li><strong>arg3</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; X location of first point</li>
-<li><strong>arg4</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Y location of first point</li>
-<li><strong>arg5</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; grid X axis rotation deg. CCW from reference X</li>
+<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; X element separation</li>
+<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Y element separation</li>
+<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; X location of first point</li>
+<li><strong>arg4</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Y location of first point</li>
+<li><strong>arg5</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; grid X axis rotation deg. CCW from reference X</li>
 </ul>
 </td>
 </tr>
@@ -608,7 +605,7 @@ the legacy behaviour.
 <dl class="method">
 <dt id="geosoft.gxapi.GXIMG.get_ipj">
 <code class="descname">get_ipj</code><span class="sig-paren">(</span><em>(GXIPJ)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIMG.get_ipj" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Get the projection of a grid.
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">the</span> <span class="n">projection</span> <span class="n">of</span> <span class="n">a</span> <span class="n">grid</span><span class="o">.</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -631,7 +628,7 @@ the legacy behaviour.
 <dl class="method">
 <dt id="geosoft.gxapi.GXIMG.get_meta">
 <code class="descname">get_meta</code><span class="sig-paren">(</span><em>(GXMETA)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIMG.get_meta" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Get the metadata of a grid.
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">the</span> <span class="n">metadata</span> <span class="n">of</span> <span class="n">a</span> <span class="n">grid</span><span class="o">.</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -654,7 +651,7 @@ the legacy behaviour.
 <dl class="method">
 <dt id="geosoft.gxapi.GXIMG.get_pg">
 <code class="descname">get_pg</code><span class="sig-paren">(</span><em>(GXPG)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIMG.get_pg" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Get a copy of the pager of a grid.
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">a</span> <span class="n">copy</span> <span class="n">of</span> <span class="n">the</span> <span class="n">pager</span> <span class="n">of</span> <span class="n">a</span> <span class="n">grid</span><span class="o">.</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -681,7 +678,7 @@ the legacy behaviour.
 <dl class="method">
 <dt id="geosoft.gxapi.GXIMG.get_projected_cell_size">
 <code class="descname">get_projected_cell_size</code><span class="sig-paren">(</span><em>(GXIPJ)arg1</em>, <em>(float_ref)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIMG.get_projected_cell_size" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Returns default cell size from projected image.
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Returns</span> <span class="n">default</span> <span class="n">cell</span> <span class="n">size</span> <span class="kn">from</span> <span class="nn">projected</span> <span class="n">image</span><span class="o">.</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -690,7 +687,7 @@ the legacy behaviour.
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXIPJ</span></code></a>) &#8211; Projection to apply</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Returned cell size</li>
+<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Returned cell size</li>
 </ul>
 </td>
 </tr>
@@ -717,7 +714,7 @@ is actually performed to the input IMG.
 <dl class="method">
 <dt id="geosoft.gxapi.GXIMG.get_tr">
 <code class="descname">get_tr</code><span class="sig-paren">(</span><em>(GXTR)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIMG.get_tr" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Get the trend information from a grid.
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">the</span> <span class="n">trend</span> <span class="n">information</span> <span class="kn">from</span> <span class="nn">a</span> <span class="n">grid</span><span class="o">.</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -740,7 +737,7 @@ is actually performed to the input IMG.
 <dl class="method">
 <dt id="geosoft.gxapi.GXIMG.get_z">
 <code class="descname">get_z</code><span class="sig-paren">(</span><em>(float)arg1</em>, <em>(float)arg2</em><span class="sig-paren">)</span> &rarr; float:<a class="headerlink" href="#geosoft.gxapi.GXIMG.get_z" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Gets the grid value at a point
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Gets</span> <span class="n">the</span> <span class="n">grid</span> <span class="n">value</span> <span class="n">at</span> <span class="n">a</span> <span class="n">point</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -769,7 +766,7 @@ is actually performed to the input IMG.
 <dl class="method">
 <dt id="geosoft.gxapi.GXIMG.geth_pg">
 <code class="descname">geth_pg</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; GXPG:<a class="headerlink" href="#geosoft.gxapi.GXIMG.geth_pg" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Get the actual pager of a grid.
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">the</span> <span class="n">actual</span> <span class="n">pager</span> <span class="n">of</span> <span class="n">a</span> <span class="n">grid</span><span class="o">.</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -794,7 +791,7 @@ is actually performed to the input IMG.
 <dl class="method">
 <dt id="geosoft.gxapi.GXIMG.inherit">
 <code class="descname">inherit</code><span class="sig-paren">(</span><em>(GXIPJ)arg1</em>, <em>(float)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIMG.inherit" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Inherit a projection/new cell size on the IMG.
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Inherit</span> <span class="n">a</span> <span class="n">projection</span><span class="o">/</span><span class="n">new</span> <span class="n">cell</span> <span class="n">size</span> <span class="n">on</span> <span class="n">the</span> <span class="n">IMG</span><span class="o">.</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -819,13 +816,13 @@ is actually performed to the input IMG.
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>If cell size is GS_R8DM, then &quot;nice&quot; values for the cell
-size of the new projected grid will be determined so that
-the new grid has about the same number of cells as the old.
-If the cell size is specified, the inheritance will always
-work, even if the input IPJ is identical to the original
-IPJ, and the cell boundaries will be forced to be aligned
-with the new cell size.
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">If</span> <span class="n">cell</span> <span class="n">size</span> <span class="ow">is</span> <span class="n">GS_R8DM</span><span class="p">,</span> <span class="n">then</span> <span class="s2">&quot;nice&quot;</span> <span class="n">values</span> <span class="k">for</span> <span class="n">the</span> <span class="n">cell</span>
+<span class="n">size</span> <span class="n">of</span> <span class="n">the</span> <span class="n">new</span> <span class="n">projected</span> <span class="n">grid</span> <span class="n">will</span> <span class="n">be</span> <span class="n">determined</span> <span class="n">so</span> <span class="n">that</span>
+<span class="n">the</span> <span class="n">new</span> <span class="n">grid</span> <span class="n">has</span> <span class="n">about</span> <span class="n">the</span> <span class="n">same</span> <span class="n">number</span> <span class="n">of</span> <span class="n">cells</span> <span class="k">as</span> <span class="n">the</span> <span class="n">old</span><span class="o">.</span>
+<span class="n">If</span> <span class="n">the</span> <span class="n">cell</span> <span class="n">size</span> <span class="ow">is</span> <span class="n">specified</span><span class="p">,</span> <span class="n">the</span> <span class="n">inheritance</span> <span class="n">will</span> <span class="n">always</span>
+<span class="n">work</span><span class="p">,</span> <span class="n">even</span> <span class="k">if</span> <span class="n">the</span> <span class="nb">input</span> <span class="n">IPJ</span> <span class="ow">is</span> <span class="n">identical</span> <span class="n">to</span> <span class="n">the</span> <span class="n">original</span>
+<span class="n">IPJ</span><span class="p">,</span> <span class="ow">and</span> <span class="n">the</span> <span class="n">cell</span> <span class="n">boundaries</span> <span class="n">will</span> <span class="n">be</span> <span class="n">forced</span> <span class="n">to</span> <span class="n">be</span> <span class="n">aligned</span>
+<span class="k">with</span> <span class="n">the</span> <span class="n">new</span> <span class="n">cell</span> <span class="n">size</span><span class="o">.</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -833,7 +830,7 @@ with the new cell size.
 <dl class="method">
 <dt id="geosoft.gxapi.GXIMG.inherit_img">
 <code class="descname">inherit_img</code><span class="sig-paren">(</span><em>(GXIMG)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIMG.inherit_img" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Make a grids match in size and coordinate system
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Make</span> <span class="n">a</span> <span class="n">grids</span> <span class="n">match</span> <span class="ow">in</span> <span class="n">size</span> <span class="ow">and</span> <span class="n">coordinate</span> <span class="n">system</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -856,7 +853,7 @@ with the new cell size.
 <dl class="method">
 <dt id="geosoft.gxapi.GXIMG.is_colour">
 <code class="descname">is_colour</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; bool:<a class="headerlink" href="#geosoft.gxapi.GXIMG.is_colour" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Is this a Geosoft colour grid?
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span>Is this a Geosoft colour grid?
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -893,7 +890,7 @@ with the new cell size.
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXIMG.is_valid_img_file">
 <em class="property">static </em><code class="descname">is_valid_img_file</code><span class="sig-paren">(</span><em>(str)arg1</em><span class="sig-paren">)</span> &rarr; bool:<a class="headerlink" href="#geosoft.gxapi.GXIMG.is_valid_img_file" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Is this a valid IMG file?
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span>Is this a valid IMG file?
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -916,7 +913,7 @@ with the new cell size.
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXIMG.is_valid_img_file_ex">
 <em class="property">static </em><code class="descname">is_valid_img_file_ex</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(str_ref)arg2</em><span class="sig-paren">)</span> &rarr; bool:<a class="headerlink" href="#geosoft.gxapi.GXIMG.is_valid_img_file_ex" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Is this a valid IMG file? Returns error message if it cannot be opened for any reason.
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span>Is this a valid IMG file? Returns error message if it cannot be opened for any reason.
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -925,7 +922,7 @@ with the new cell size.
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<em>str</em>) &#8211; File to check</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; Error message registered if unable to open</li>
+<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; Error message registered if unable to open</li>
 </ul>
 </td>
 </tr>
@@ -945,7 +942,7 @@ with the new cell size.
 <dl class="method">
 <dt id="geosoft.gxapi.GXIMG.load_img">
 <code class="descname">load_img</code><span class="sig-paren">(</span><em>(GXIMG)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIMG.load_img" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Loads an IMG into a master IMG.
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Loads</span> <span class="n">an</span> <span class="n">IMG</span> <span class="n">into</span> <span class="n">a</span> <span class="n">master</span> <span class="n">IMG</span><span class="o">.</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -964,7 +961,7 @@ with the new cell size.
 <p><span class="versionmodified">New in version 5.0.6.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>The Cell sizes and projections must be the same.
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">Cell</span> <span class="n">sizes</span> <span class="ow">and</span> <span class="n">projections</span> <span class="n">must</span> <span class="n">be</span> <span class="n">the</span> <span class="n">same</span><span class="o">.</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -972,8 +969,8 @@ with the new cell size.
 <dl class="method">
 <dt id="geosoft.gxapi.GXIMG.load_into_pager">
 <code class="descname">load_into_pager</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIMG.load_into_pager" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Load IMG data from file into a pager to increase
-access time.
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Load</span> <span class="n">IMG</span> <span class="n">data</span> <span class="kn">from</span> <span class="nn">file</span> <span class="n">into</span> <span class="n">a</span> <span class="n">pager</span> <span class="n">to</span> <span class="n">increase</span>
+<span class="n">access</span> <span class="n">time</span><span class="o">.</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -994,7 +991,7 @@ access time.
 <dl class="method">
 <dt id="geosoft.gxapi.GXIMG.ne">
 <code class="descname">ne</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXIMG.ne" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Gets the # of elements in the optimal KX direction.
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Gets</span> <span class="n">the</span> <span class="c1"># of elements in the optimal KX direction.</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -1031,7 +1028,7 @@ access time.
 <dl class="method">
 <dt id="geosoft.gxapi.GXIMG.nv">
 <code class="descname">nv</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXIMG.nv" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Gets the # of vectors in the optimal KX direction.
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Gets</span> <span class="n">the</span> <span class="c1"># of vectors in the optimal KX direction.</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -1052,7 +1049,7 @@ access time.
 <dl class="method">
 <dt id="geosoft.gxapi.GXIMG.nx">
 <code class="descname">nx</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXIMG.nx" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Gets the # of X elements.
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Gets</span> <span class="n">the</span> <span class="c1"># of X elements.</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -1073,7 +1070,7 @@ access time.
 <dl class="method">
 <dt id="geosoft.gxapi.GXIMG.ny">
 <code class="descname">ny</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXIMG.ny" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Gets the # of Y elements.
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Gets</span> <span class="n">the</span> <span class="c1"># of Y elements.</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -1094,7 +1091,7 @@ access time.
 <dl class="method">
 <dt id="geosoft.gxapi.GXIMG.opt_kx">
 <code class="descname">opt_kx</code><span class="sig-paren">(</span><em>(int)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIMG.opt_kx" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Force optimal KX as desired.
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Force</span> <span class="n">optimal</span> <span class="n">KX</span> <span class="k">as</span> <span class="n">desired</span><span class="o">.</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -1113,11 +1110,11 @@ access time.
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>This will force loading an image into a PG if it is not already
-accessible in the direction requested.
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="n">will</span> <span class="n">force</span> <span class="n">loading</span> <span class="n">an</span> <span class="n">image</span> <span class="n">into</span> <span class="n">a</span> <span class="n">PG</span> <span class="k">if</span> <span class="n">it</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">already</span>
+<span class="n">accessible</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">direction</span> <span class="n">requested</span><span class="o">.</span>
 
-Subsequent calls to methods that use the optimal KX will use the
-KX set here.
+<span class="n">Subsequent</span> <span class="n">calls</span> <span class="n">to</span> <span class="n">methods</span> <span class="n">that</span> <span class="n">use</span> <span class="n">the</span> <span class="n">optimal</span> <span class="n">KX</span> <span class="n">will</span> <span class="n">use</span> <span class="n">the</span>
+<span class="n">KX</span> <span class="nb">set</span> <span class="n">here</span><span class="o">.</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -1125,14 +1122,14 @@ KX set here.
 <dl class="method">
 <dt id="geosoft.gxapi.GXIMG.query_double">
 <code class="descname">query_double</code><span class="sig-paren">(</span><em>(int)arg1</em><span class="sig-paren">)</span> &rarr; float:<a class="headerlink" href="#geosoft.gxapi.GXIMG.query_double" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Query information about the IMG
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Query</span> <span class="n">information</span> <span class="n">about</span> <span class="n">the</span> <span class="n">IMG</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#img-query"><span>IMG_QUERY constants</span></a></td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#img-query"><span class="std std-ref">IMG_QUERY constants</span></a></td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Information requested, dummy if unknown or invalid.</td>
 </tr>
@@ -1144,8 +1141,8 @@ KX set here.
 <p><span class="versionmodified">New in version 5.0.5.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>You can call either funtion to retrieve any data,
-int or real.
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">You</span> <span class="n">can</span> <span class="n">call</span> <span class="n">either</span> <span class="n">funtion</span> <span class="n">to</span> <span class="n">retrieve</span> <span class="nb">any</span> <span class="n">data</span><span class="p">,</span>
+<span class="nb">int</span> <span class="ow">or</span> <span class="n">real</span><span class="o">.</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -1153,14 +1150,14 @@ int or real.
 <dl class="method">
 <dt id="geosoft.gxapi.GXIMG.query_int">
 <code class="descname">query_int</code><span class="sig-paren">(</span><em>(int)arg1</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXIMG.query_int" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Query information about the IMG
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Query</span> <span class="n">information</span> <span class="n">about</span> <span class="n">the</span> <span class="n">IMG</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#img-query"><span>IMG_QUERY constants</span></a></td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#img-query"><span class="std std-ref">IMG_QUERY constants</span></a></td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Information requested, dummy if unknown or invalid.</td>
 </tr>
@@ -1172,8 +1169,8 @@ int or real.
 <p><span class="versionmodified">New in version 5.0.5.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>You can call either funtion to retrieve any data,
-int or real.
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">You</span> <span class="n">can</span> <span class="n">call</span> <span class="n">either</span> <span class="n">funtion</span> <span class="n">to</span> <span class="n">retrieve</span> <span class="nb">any</span> <span class="n">data</span><span class="p">,</span>
+<span class="nb">int</span> <span class="ow">or</span> <span class="n">real</span><span class="o">.</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -1181,7 +1178,7 @@ int or real.
 <dl class="method">
 <dt id="geosoft.gxapi.GXIMG.query_kx">
 <code class="descname">query_kx</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXIMG.query_kx" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Asks the IMG for the most efficient way to access the data.
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Asks</span> <span class="n">the</span> <span class="n">IMG</span> <span class="k">for</span> <span class="n">the</span> <span class="n">most</span> <span class="n">efficient</span> <span class="n">way</span> <span class="n">to</span> <span class="n">access</span> <span class="n">the</span> <span class="n">data</span><span class="o">.</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -1216,7 +1213,7 @@ int or real.
 <dl class="method">
 <dt id="geosoft.gxapi.GXIMG.read_v">
 <code class="descname">read_v</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(int)arg2</em>, <em>(int)arg3</em>, <em>(GXVV)arg4</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIMG.read_v" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Read a vector in the optimal KX direction.
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Read</span> <span class="n">a</span> <span class="n">vector</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">optimal</span> <span class="n">KX</span> <span class="n">direction</span><span class="o">.</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -1247,7 +1244,7 @@ int or real.
 <dl class="method">
 <dt id="geosoft.gxapi.GXIMG.read_x">
 <code class="descname">read_x</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(int)arg2</em>, <em>(int)arg3</em>, <em>(GXVV)arg4</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIMG.read_x" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Read a column (constant X)
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Read</span> <span class="n">a</span> <span class="n">column</span> <span class="p">(</span><span class="n">constant</span> <span class="n">X</span><span class="p">)</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -1278,7 +1275,7 @@ int or real.
 <dl class="method">
 <dt id="geosoft.gxapi.GXIMG.read_y">
 <code class="descname">read_y</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(int)arg2</em>, <em>(int)arg3</em>, <em>(GXVV)arg4</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIMG.read_y" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Read a row (constant Y)
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Read</span> <span class="n">a</span> <span class="n">row</span> <span class="p">(</span><span class="n">constant</span> <span class="n">Y</span><span class="p">)</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -1309,7 +1306,7 @@ int or real.
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXIMG.refresh_gi">
 <em class="property">static </em><code class="descname">refresh_gi</code><span class="sig-paren">(</span><em>(str)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIMG.refresh_gi" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Refresh the GI of a grid after it has moved or changed.
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Refresh</span> <span class="n">the</span> <span class="n">GI</span> <span class="n">of</span> <span class="n">a</span> <span class="n">grid</span> <span class="n">after</span> <span class="n">it</span> <span class="n">has</span> <span class="n">moved</span> <span class="ow">or</span> <span class="n">changed</span><span class="o">.</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -1332,7 +1329,7 @@ int or real.
 <dl class="method">
 <dt id="geosoft.gxapi.GXIMG.relocate">
 <code class="descname">relocate</code><span class="sig-paren">(</span><em>(float)arg1</em>, <em>(float)arg2</em>, <em>(float)arg3</em>, <em>(float)arg4</em>, <em>(int)arg5</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIMG.relocate" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Re-locate a grid image.
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Re</span><span class="o">-</span><span class="n">locate</span> <span class="n">a</span> <span class="n">grid</span> <span class="n">image</span><span class="o">.</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -1344,7 +1341,7 @@ int or real.
 <li><strong>arg2</strong> (<em>float</em>) &#8211; area Y minimum</li>
 <li><strong>arg3</strong> (<em>float</em>) &#8211; area X maximum</li>
 <li><strong>arg4</strong> (<em>float</em>) &#8211; area Y maximum</li>
-<li><strong>arg5</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#img-relocate"><span>IMG_RELOCATE constants</span></a></li>
+<li><strong>arg5</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#img-relocate"><span class="std std-ref">IMG_RELOCATE constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -1364,7 +1361,7 @@ int or real.
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXIMG.report">
 <em class="property">static </em><code class="descname">report</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(GXWA)arg2</em>, <em>(int)arg3</em>, <em>(int)arg4</em>, <em>(str)arg5</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIMG.report" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Writes grid info report to a file
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Writes</span> <span class="n">grid</span> <span class="n">info</span> <span class="n">report</span> <span class="n">to</span> <span class="n">a</span> <span class="n">file</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -1396,7 +1393,7 @@ int or real.
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXIMG.report_csv">
 <em class="property">static </em><code class="descname">report_csv</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(GXWA)arg2</em>, <em>(int)arg3</em>, <em>(int)arg4</em>, <em>(int)arg5</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIMG.report_csv" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Writes grid info as a line to a CSV file
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Writes</span> <span class="n">grid</span> <span class="n">info</span> <span class="k">as</span> <span class="n">a</span> <span class="n">line</span> <span class="n">to</span> <span class="n">a</span> <span class="n">CSV</span> <span class="n">file</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -1424,8 +1421,8 @@ int or real.
 <p><span class="versionmodified">New in version 6.4.2.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>Appends the stats as a CSV line to the input text file.
-The header line should only be written to a new text file.
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Appends</span> <span class="n">the</span> <span class="n">stats</span> <span class="k">as</span> <span class="n">a</span> <span class="n">CSV</span> <span class="n">line</span> <span class="n">to</span> <span class="n">the</span> <span class="nb">input</span> <span class="n">text</span> <span class="n">file</span><span class="o">.</span>
+<span class="n">The</span> <span class="n">header</span> <span class="n">line</span> <span class="n">should</span> <span class="n">only</span> <span class="n">be</span> <span class="n">written</span> <span class="n">to</span> <span class="n">a</span> <span class="n">new</span> <span class="n">text</span> <span class="n">file</span><span class="o">.</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -1433,7 +1430,7 @@ The header line should only be written to a new text file.
 <dl class="method">
 <dt id="geosoft.gxapi.GXIMG.set_def_itr">
 <code class="descname">set_def_itr</code><span class="sig-paren">(</span><em>(GXITR)arg1</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXIMG.set_def_itr" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Set default transform
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Set</span> <span class="n">default</span> <span class="n">transform</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -1457,7 +1454,7 @@ The header line should only be written to a new text file.
 <dl class="method">
 <dt id="geosoft.gxapi.GXIMG.set_double_parameter">
 <code class="descname">set_double_parameter</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(float)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIMG.set_double_parameter" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Store a real parameter in an IMG object
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Store</span> <span class="n">a</span> <span class="n">real</span> <span class="n">parameter</span> <span class="ow">in</span> <span class="n">an</span> <span class="n">IMG</span> <span class="nb">object</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -1486,7 +1483,7 @@ The header line should only be written to a new text file.
 <dl class="method">
 <dt id="geosoft.gxapi.GXIMG.set_grid_unchanged">
 <code class="descname">set_grid_unchanged</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIMG.set_grid_unchanged" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Mark the grid as unchanged so it will not output lineage
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Mark</span> <span class="n">the</span> <span class="n">grid</span> <span class="k">as</span> <span class="n">unchanged</span> <span class="n">so</span> <span class="n">it</span> <span class="n">will</span> <span class="ow">not</span> <span class="n">output</span> <span class="n">lineage</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -1507,7 +1504,7 @@ The header line should only be written to a new text file.
 <dl class="method">
 <dt id="geosoft.gxapi.GXIMG.set_info">
 <code class="descname">set_info</code><span class="sig-paren">(</span><em>(float)arg1</em>, <em>(float)arg2</em>, <em>(float)arg3</em>, <em>(float)arg4</em>, <em>(float)arg5</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIMG.set_info" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Sets location information about this image.
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Sets</span> <span class="n">location</span> <span class="n">information</span> <span class="n">about</span> <span class="n">this</span> <span class="n">image</span><span class="o">.</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -1544,7 +1541,7 @@ as the latter function sets up the bounding rectangle in the metadata.
 <dl class="method">
 <dt id="geosoft.gxapi.GXIMG.set_ipj">
 <code class="descname">set_ipj</code><span class="sig-paren">(</span><em>(GXIPJ)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIMG.set_ipj" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Set the projection of a grid.
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Set</span> <span class="n">the</span> <span class="n">projection</span> <span class="n">of</span> <span class="n">a</span> <span class="n">grid</span><span class="o">.</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -1572,7 +1569,7 @@ as <a class="reference internal" href="#geosoft.gxapi.GXIMG.set_ipj" title="geos
 <dl class="method">
 <dt id="geosoft.gxapi.GXIMG.set_meta">
 <code class="descname">set_meta</code><span class="sig-paren">(</span><em>(GXMETA)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIMG.set_meta" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Set the metadata of a grid.
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Set</span> <span class="n">the</span> <span class="n">metadata</span> <span class="n">of</span> <span class="n">a</span> <span class="n">grid</span><span class="o">.</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -1595,7 +1592,7 @@ as <a class="reference internal" href="#geosoft.gxapi.GXIMG.set_ipj" title="geos
 <dl class="method">
 <dt id="geosoft.gxapi.GXIMG.set_pg">
 <code class="descname">set_pg</code><span class="sig-paren">(</span><em>(GXPG)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIMG.set_pg" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Copy a pager into the pager of a grid.
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Copy</span> <span class="n">a</span> <span class="n">pager</span> <span class="n">into</span> <span class="n">the</span> <span class="n">pager</span> <span class="n">of</span> <span class="n">a</span> <span class="n">grid</span><span class="o">.</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -1618,7 +1615,7 @@ as <a class="reference internal" href="#geosoft.gxapi.GXIMG.set_ipj" title="geos
 <dl class="method">
 <dt id="geosoft.gxapi.GXIMG.set_tr">
 <code class="descname">set_tr</code><span class="sig-paren">(</span><em>(GXTR)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIMG.set_tr" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Set the trend information to a grid.
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Set</span> <span class="n">the</span> <span class="n">trend</span> <span class="n">information</span> <span class="n">to</span> <span class="n">a</span> <span class="n">grid</span><span class="o">.</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -1641,7 +1638,7 @@ as <a class="reference internal" href="#geosoft.gxapi.GXIMG.set_ipj" title="geos
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXIMG.sync">
 <em class="property">static </em><code class="descname">sync</code><span class="sig-paren">(</span><em>(str)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIMG.sync" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Syncronize the Metadata for this Grid
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Syncronize</span> <span class="n">the</span> <span class="n">Metadata</span> <span class="k">for</span> <span class="n">this</span> <span class="n">Grid</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -1664,7 +1661,7 @@ as <a class="reference internal" href="#geosoft.gxapi.GXIMG.set_ipj" title="geos
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXIMG.user_preference_to_plot_as_colour_shaded_grid">
 <em class="property">static </em><code class="descname">user_preference_to_plot_as_colour_shaded_grid</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXIMG.user_preference_to_plot_as_colour_shaded_grid" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Returns the global setting.
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Returns</span> <span class="n">the</span> <span class="k">global</span> <span class="n">setting</span><span class="o">.</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -1686,7 +1683,7 @@ as <a class="reference internal" href="#geosoft.gxapi.GXIMG.set_ipj" title="geos
 <dl class="method">
 <dt id="geosoft.gxapi.GXIMG.write_v">
 <code class="descname">write_v</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(int)arg2</em>, <em>(int)arg3</em>, <em>(GXVV)arg4</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIMG.write_v" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Write a vector in the optimal KX direction.
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Write</span> <span class="n">a</span> <span class="n">vector</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">optimal</span> <span class="n">KX</span> <span class="n">direction</span><span class="o">.</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -1717,7 +1714,7 @@ as <a class="reference internal" href="#geosoft.gxapi.GXIMG.set_ipj" title="geos
 <dl class="method">
 <dt id="geosoft.gxapi.GXIMG.write_x">
 <code class="descname">write_x</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(int)arg2</em>, <em>(int)arg3</em>, <em>(GXVV)arg4</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIMG.write_x" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Write a column (constant X)
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Write</span> <span class="n">a</span> <span class="n">column</span> <span class="p">(</span><span class="n">constant</span> <span class="n">X</span><span class="p">)</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -1748,7 +1745,7 @@ as <a class="reference internal" href="#geosoft.gxapi.GXIMG.set_ipj" title="geos
 <dl class="method">
 <dt id="geosoft.gxapi.GXIMG.write_y">
 <code class="descname">write_y</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(int)arg2</em>, <em>(int)arg3</em>, <em>(GXVV)arg4</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIMG.write_y" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Write a row (constant Y)
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Write</span> <span class="n">a</span> <span class="n">row</span> <span class="p">(</span><span class="n">constant</span> <span class="n">Y</span><span class="p">)</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -1780,7 +1777,7 @@ as <a class="reference internal" href="#geosoft.gxapi.GXIMG.set_ipj" title="geos
 
 <div class="section" id="img-file-constants">
 <span id="img-file"></span><h2>IMG_FILE constants<a class="headerlink" href="#img-file-constants" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-python"><div class="highlight"><pre><span></span>Image open modes
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Image</span> <span class="nb">open</span> <span class="n">modes</span>
 </pre></div>
 </div>
 <dl class="attribute">
@@ -1788,7 +1785,7 @@ as <a class="reference internal" href="#geosoft.gxapi.GXIMG.set_ipj" title="geos
 <code class="descclassname">gxapi.</code><code class="descname">IMG_FILE_READONLY</code><em class="property"> = 0</em><a class="headerlink" href="#geosoft.gxapi.IMG_FILE_READONLY" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<div class="highlight-python"><div class="highlight"><pre><span></span>Reading only
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Reading</span> <span class="n">only</span>
 </pre></div>
 </div>
 <dl class="attribute">
@@ -1796,7 +1793,7 @@ as <a class="reference internal" href="#geosoft.gxapi.GXIMG.set_ipj" title="geos
 <code class="descclassname">gxapi.</code><code class="descname">IMG_FILE_READWRITE</code><em class="property"> = 2</em><a class="headerlink" href="#geosoft.gxapi.IMG_FILE_READWRITE" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">Reading</span> <span class="ow">and</span> <span class="n">writting</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Reading</span> <span class="ow">and</span> <span class="n">writting</span>
 </pre></div>
 </div>
 <dl class="attribute">
@@ -1804,17 +1801,17 @@ as <a class="reference internal" href="#geosoft.gxapi.GXIMG.set_ipj" title="geos
 <code class="descclassname">gxapi.</code><code class="descname">IMG_FILE_READORWRITE</code><em class="property"> = 3</em><a class="headerlink" href="#geosoft.gxapi.IMG_FILE_READORWRITE" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<div class="highlight-python"><div class="highlight"><pre><span></span>Allows you to open read-only grids to change the
-projection or location information.  If you can write
-to the original grid (dat), the changed projection
-or location information will be passed on to the grid,
-otherwise changes will only occur in the .gi file.
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Allows</span> <span class="n">you</span> <span class="n">to</span> <span class="nb">open</span> <span class="n">read</span><span class="o">-</span><span class="n">only</span> <span class="n">grids</span> <span class="n">to</span> <span class="n">change</span> <span class="n">the</span>
+<span class="n">projection</span> <span class="ow">or</span> <span class="n">location</span> <span class="n">information</span><span class="o">.</span>  <span class="n">If</span> <span class="n">you</span> <span class="n">can</span> <span class="n">write</span>
+<span class="n">to</span> <span class="n">the</span> <span class="n">original</span> <span class="n">grid</span> <span class="p">(</span><span class="n">dat</span><span class="p">),</span> <span class="n">the</span> <span class="n">changed</span> <span class="n">projection</span>
+<span class="ow">or</span> <span class="n">location</span> <span class="n">information</span> <span class="n">will</span> <span class="n">be</span> <span class="n">passed</span> <span class="n">on</span> <span class="n">to</span> <span class="n">the</span> <span class="n">grid</span><span class="p">,</span>
+<span class="n">otherwise</span> <span class="n">changes</span> <span class="n">will</span> <span class="n">only</span> <span class="n">occur</span> <span class="ow">in</span> <span class="n">the</span> <span class="o">.</span><span class="n">gi</span> <span class="n">file</span><span class="o">.</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="img-query-constants">
 <span id="img-query"></span><h2>IMG_QUERY constants<a class="headerlink" href="#img-query-constants" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-python"><div class="highlight"><pre><span></span>Information to Query
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Information</span> <span class="n">to</span> <span class="n">Query</span>
 </pre></div>
 </div>
 <dl class="attribute">
@@ -1837,7 +1834,7 @@ otherwise changes will only occur in the .gi file.
 <code class="descclassname">gxapi.</code><code class="descname">IMG_QUERY_iIMGTYPE</code><em class="property"> = 3</em><a class="headerlink" href="#geosoft.gxapi.IMG_QUERY_iIMGTYPE" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<div class="highlight-python"><div class="highlight"><pre><span></span>The element type used to open the IMG.
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">element</span> <span class="nb">type</span> <span class="n">used</span> <span class="n">to</span> <span class="nb">open</span> <span class="n">the</span> <span class="n">IMG</span><span class="o">.</span>
 </pre></div>
 </div>
 <dl class="attribute">
@@ -1845,13 +1842,13 @@ otherwise changes will only occur in the .gi file.
 <code class="descclassname">gxapi.</code><code class="descname">IMG_QUERY_iDATTYPE</code><em class="property"> = 4</em><a class="headerlink" href="#geosoft.gxapi.IMG_QUERY_iDATTYPE" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<div class="highlight-python"><div class="highlight"><pre><span></span>DATTYPE is the native element type of the DAT.
-Types are:   0 - byte
-1 - unsigned 16-bit short
-2 - 16-bit short
-3 - 32-bit long
-4 - 32-bit float
-5 - 64-bit double
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">DATTYPE</span> <span class="ow">is</span> <span class="n">the</span> <span class="n">native</span> <span class="n">element</span> <span class="nb">type</span> <span class="n">of</span> <span class="n">the</span> <span class="n">DAT</span><span class="o">.</span>
+<span class="n">Types</span> <span class="n">are</span><span class="p">:</span>   <span class="mi">0</span> <span class="o">-</span> <span class="n">byte</span>
+<span class="mi">1</span> <span class="o">-</span> <span class="n">unsigned</span> <span class="mi">16</span><span class="o">-</span><span class="n">bit</span> <span class="n">short</span>
+<span class="mi">2</span> <span class="o">-</span> <span class="mi">16</span><span class="o">-</span><span class="n">bit</span> <span class="n">short</span>
+<span class="mi">3</span> <span class="o">-</span> <span class="mi">32</span><span class="o">-</span><span class="n">bit</span> <span class="n">long</span>
+<span class="mi">4</span> <span class="o">-</span> <span class="mi">32</span><span class="o">-</span><span class="n">bit</span> <span class="nb">float</span>
+<span class="mi">5</span> <span class="o">-</span> <span class="mi">64</span><span class="o">-</span><span class="n">bit</span> <span class="n">double</span>
 </pre></div>
 </div>
 <dl class="attribute">
@@ -1859,9 +1856,9 @@ Types are:   0 - byte
 <code class="descclassname">gxapi.</code><code class="descname">IMG_QUERY_iRENDER</code><em class="property"> = 5</em><a class="headerlink" href="#geosoft.gxapi.IMG_QUERY_iRENDER" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<div class="highlight-python"><div class="highlight"><pre><span></span>Render modes are:    0 - interpolate
-1 - pixelate
-2 - colour
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Render</span> <span class="n">modes</span> <span class="n">are</span><span class="p">:</span>    <span class="mi">0</span> <span class="o">-</span> <span class="n">interpolate</span>
+<span class="mi">1</span> <span class="o">-</span> <span class="n">pixelate</span>
+<span class="mi">2</span> <span class="o">-</span> <span class="n">colour</span>
 </pre></div>
 </div>
 <dl class="attribute">
@@ -1932,7 +1929,7 @@ Types are:   0 - byte
 </div>
 <div class="section" id="img-relocate-constants">
 <span id="img-relocate"></span><h2>IMG_RELOCATE constants<a class="headerlink" href="#img-relocate-constants" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-python"><div class="highlight"><pre><span></span>Relocation Style
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Relocation</span> <span class="n">Style</span>
 </pre></div>
 </div>
 <dl class="attribute">
@@ -1940,7 +1937,7 @@ Types are:   0 - byte
 <code class="descclassname">gxapi.</code><code class="descname">IMG_RELOCATE_FIT</code><em class="property"> = 0</em><a class="headerlink" href="#geosoft.gxapi.IMG_RELOCATE_FIT" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<div class="highlight-python"><div class="highlight"><pre><span></span>will fit the image to fill the specified area
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">will</span> <span class="n">fit</span> <span class="n">the</span> <span class="n">image</span> <span class="n">to</span> <span class="n">fill</span> <span class="n">the</span> <span class="n">specified</span> <span class="n">area</span>
 </pre></div>
 </div>
 <dl class="attribute">
@@ -1948,7 +1945,7 @@ Types are:   0 - byte
 <code class="descclassname">gxapi.</code><code class="descname">IMG_RELOCATE_ASPECT</code><em class="property"> = 1</em><a class="headerlink" href="#geosoft.gxapi.IMG_RELOCATE_ASPECT" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<div class="highlight-python"><div class="highlight"><pre><span></span>will maintain aspect ratio
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">will</span> <span class="n">maintain</span> <span class="n">aspect</span> <span class="n">ratio</span>
 </pre></div>
 </div>
 </div>
@@ -1969,12 +1966,12 @@ Types are:   0 - byte
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.1.0 documentation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.1 documentation</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &copy; Copyright 2016, Geosoft Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+        &#169; Copyright 2016, Geosoft Inc.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.6.
     </div>
   </body>
 </html>

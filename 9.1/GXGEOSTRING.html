@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>GXGEOSTRING class &mdash; Geosoft GX Python API 9.1.0 documentation</title>
+    <title>GXGEOSTRING class &#8212; Geosoft GX Python API 9.1 documentation</title>
     
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '9.1.0',
+        VERSION:     '9.1',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +23,7 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="Geosoft GX Python API 9.1.0 documentation" href="index.html" /> 
+    <link rel="top" title="Geosoft GX Python API 9.1 documentation" href="index.html" /> 
   </head>
   <body role="document">
     <div class="related" role="navigation" aria-label="related navigation">
@@ -35,7 +35,7 @@
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.1.0 documentation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.1 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -59,14 +59,11 @@
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -88,7 +85,7 @@ The GEOSTRING class is used to read information stored in Geostring files (<cite
 <dl class="method">
 <dt id="geosoft.gxapi.GXGEOSTRING.get_all_shapes">
 <code class="descname">get_all_shapes</code><span class="sig-paren">(</span><em>(GXLST)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXGEOSTRING.get_all_shapes" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Get the all shapes
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">the</span> <span class="nb">all</span> <span class="n">shapes</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -111,7 +108,7 @@ The GEOSTRING class is used to read information stored in Geostring files (<cite
 <dl class="method">
 <dt id="geosoft.gxapi.GXGEOSTRING.get_feature_properties">
 <code class="descname">get_feature_properties</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(str_ref)arg2</em>, <em>(str_ref)arg3</em>, <em>(bool_ref)arg4</em>, <em>(int_ref)arg5</em>, <em>(float_ref)arg6</em>, <em>(float_ref)arg7</em>, <em>(float_ref)arg8</em>, <em>(int_ref)arg9</em>, <em>(int_ref)arg10</em>, <em>(int_ref)arg11</em>, <em>(float_ref)arg12</em>, <em>(float_ref)arg13</em>, <em>(int_ref)arg14</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXGEOSTRING.get_feature_properties" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Get a feature&#39;s properties
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">a</span> <span class="n">feature</span><span class="s1">&#39;s properties</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -120,19 +117,19 @@ The GEOSTRING class is used to read information stored in Geostring files (<cite
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<em>str</em>) &#8211; Feature GUID</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; Name</li>
-<li><strong>arg3</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; Description</li>
-<li><strong>arg4</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.bool_ref" title="geosoft.gxapi.bool_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.bool_ref</span></code></a>) &#8211; bool indicating if feature is decribed by polygons (shapes are polylines if not set)</li>
-<li><strong>arg5</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; The fill pattern number (see PatNumber_MVIEW)</li>
-<li><strong>arg6</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; The fill pattern size (see PatSize_MVIEW)</li>
-<li><strong>arg7</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; The fill pattern thickness (see PatThick_MVIEW)</li>
-<li><strong>arg8</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; The fill pattern density (see PatDensity_MVIEW)</li>
-<li><strong>arg9</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; The fill color (an MVIEW color)</li>
-<li><strong>arg10</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; The fill background color (an MVIEW color)</li>
-<li><strong>arg11</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; The line style (see LineStyle_MVIEW)</li>
-<li><strong>arg12</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; The line thickness (see LineThick_MVIEW)</li>
-<li><strong>arg13</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; The dash pattern pitch (see LineStyle_MVIEW)</li>
-<li><strong>arg14</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; The line color (an MVIEW color)</li>
+<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; Name</li>
+<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; Description</li>
+<li><strong>arg4</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.bool_ref" title="geosoft.gxapi.bool_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.bool_ref</span></code></a>) &#8211; bool indicating if feature is decribed by polygons (shapes are polylines if not set)</li>
+<li><strong>arg5</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; The fill pattern number (see PatNumber_MVIEW)</li>
+<li><strong>arg6</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; The fill pattern size (see PatSize_MVIEW)</li>
+<li><strong>arg7</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; The fill pattern thickness (see PatThick_MVIEW)</li>
+<li><strong>arg8</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; The fill pattern density (see PatDensity_MVIEW)</li>
+<li><strong>arg9</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; The fill color (an MVIEW color)</li>
+<li><strong>arg10</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; The fill background color (an MVIEW color)</li>
+<li><strong>arg11</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; The line style (see LineStyle_MVIEW)</li>
+<li><strong>arg12</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; The line thickness (see LineThick_MVIEW)</li>
+<li><strong>arg13</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; The dash pattern pitch (see LineStyle_MVIEW)</li>
+<li><strong>arg14</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; The line color (an MVIEW color)</li>
 </ul>
 </td>
 </tr>
@@ -152,7 +149,7 @@ The GEOSTRING class is used to read information stored in Geostring files (<cite
 <dl class="method">
 <dt id="geosoft.gxapi.GXGEOSTRING.get_features">
 <code class="descname">get_features</code><span class="sig-paren">(</span><em>(GXLST)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXGEOSTRING.get_features" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Get the features
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">the</span> <span class="n">features</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -171,7 +168,7 @@ The GEOSTRING class is used to read information stored in Geostring files (<cite
 <p><span class="versionmodified">New in version 8.4.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>List items are returned with feature GUID in name and feature name in value.
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">List</span> <span class="n">items</span> <span class="n">are</span> <span class="n">returned</span> <span class="k">with</span> <span class="n">feature</span> <span class="n">GUID</span> <span class="ow">in</span> <span class="n">name</span> <span class="ow">and</span> <span class="n">feature</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">value</span><span class="o">.</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -179,7 +176,7 @@ The GEOSTRING class is used to read information stored in Geostring files (<cite
 <dl class="method">
 <dt id="geosoft.gxapi.GXGEOSTRING.get_ipj">
 <code class="descname">get_ipj</code><span class="sig-paren">(</span><em>(GXIPJ)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXGEOSTRING.get_ipj" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Get the coordinate system of the Geostring.
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">the</span> <span class="n">coordinate</span> <span class="n">system</span> <span class="n">of</span> <span class="n">the</span> <span class="n">Geostring</span><span class="o">.</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -202,7 +199,7 @@ The GEOSTRING class is used to read information stored in Geostring files (<cite
 <dl class="method">
 <dt id="geosoft.gxapi.GXGEOSTRING.get_section_properties">
 <code class="descname">get_section_properties</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(str_ref)arg2</em>, <em>(str_ref)arg3</em>, <em>(int_ref)arg4</em>, <em>(float_ref)arg5</em>, <em>(float_ref)arg6</em>, <em>(float_ref)arg7</em>, <em>(float_ref)arg8</em>, <em>(float_ref)arg9</em>, <em>(float_ref)arg10</em>, <em>(float_ref)arg11</em>, <em>(float_ref)arg12</em>, <em>(float_ref)arg13</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXGEOSTRING.get_section_properties" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Get a section&#39;s properties
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">a</span> <span class="n">section</span><span class="s1">&#39;s properties</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -211,18 +208,18 @@ The GEOSTRING class is used to read information stored in Geostring files (<cite
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<em>str</em>) &#8211; Section GUID</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; Name</li>
-<li><strong>arg3</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; ContainerName</li>
-<li><strong>arg4</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; <a class="reference internal" href="#section-orientation"><span>SECTION_ORIENTATION constants</span></a></li>
-<li><strong>arg5</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Easting</li>
-<li><strong>arg6</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Northing</li>
-<li><strong>arg7</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Elevation</li>
-<li><strong>arg8</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Azimuth</li>
-<li><strong>arg9</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Swing</li>
-<li><strong>arg10</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; A in the scalar equation of best-fit plane describing the section</li>
-<li><strong>arg11</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; B in the scalar equation of best-fit plane describing the section</li>
-<li><strong>arg12</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; C in the scalar equation of best-fit plane describing the section</li>
-<li><strong>arg13</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; D in the scalar equation of best-fit plane describing the section</li>
+<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; Name</li>
+<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; ContainerName</li>
+<li><strong>arg4</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; <a class="reference internal" href="#section-orientation"><span class="std std-ref">SECTION_ORIENTATION constants</span></a></li>
+<li><strong>arg5</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Easting</li>
+<li><strong>arg6</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Northing</li>
+<li><strong>arg7</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Elevation</li>
+<li><strong>arg8</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Azimuth</li>
+<li><strong>arg9</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Swing</li>
+<li><strong>arg10</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; A in the scalar equation of best-fit plane describing the section</li>
+<li><strong>arg11</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; B in the scalar equation of best-fit plane describing the section</li>
+<li><strong>arg12</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; C in the scalar equation of best-fit plane describing the section</li>
+<li><strong>arg13</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; D in the scalar equation of best-fit plane describing the section</li>
 </ul>
 </td>
 </tr>
@@ -242,7 +239,7 @@ The GEOSTRING class is used to read information stored in Geostring files (<cite
 <dl class="method">
 <dt id="geosoft.gxapi.GXGEOSTRING.get_sections">
 <code class="descname">get_sections</code><span class="sig-paren">(</span><em>(GXLST)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXGEOSTRING.get_sections" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Get the sections
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">the</span> <span class="n">sections</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -261,7 +258,7 @@ The GEOSTRING class is used to read information stored in Geostring files (<cite
 <p><span class="versionmodified">New in version 8.4.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>List items are returned with section GUID in name and section name in value.
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">List</span> <span class="n">items</span> <span class="n">are</span> <span class="n">returned</span> <span class="k">with</span> <span class="n">section</span> <span class="n">GUID</span> <span class="ow">in</span> <span class="n">name</span> <span class="ow">and</span> <span class="n">section</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">value</span><span class="o">.</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -269,7 +266,7 @@ The GEOSTRING class is used to read information stored in Geostring files (<cite
 <dl class="method">
 <dt id="geosoft.gxapi.GXGEOSTRING.get_shape_properties">
 <code class="descname">get_shape_properties</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(str_ref)arg2</em>, <em>(str_ref)arg3</em>, <em>(GXVV)arg4</em>, <em>(GXVV)arg5</em>, <em>(GXVV)arg6</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXGEOSTRING.get_shape_properties" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Get a shape&#39;s properties
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">a</span> <span class="n">shape</span><span class="s1">&#39;s properties</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -278,8 +275,8 @@ The GEOSTRING class is used to read information stored in Geostring files (<cite
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<em>str</em>) &#8211; Shape GUID</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; Feature GUID</li>
-<li><strong>arg3</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; Section GUID</li>
+<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; Feature GUID</li>
+<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; Section GUID</li>
 <li><strong>arg4</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Vertices X location</li>
 <li><strong>arg5</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Vertices Y location</li>
 <li><strong>arg6</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Vertices Z location</li>
@@ -302,7 +299,7 @@ The GEOSTRING class is used to read information stored in Geostring files (<cite
 <dl class="method">
 <dt id="geosoft.gxapi.GXGEOSTRING.get_shapes_for_feature">
 <code class="descname">get_shapes_for_feature</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(GXLST)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXGEOSTRING.get_shapes_for_feature" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Get all shapes linked to a specific feature
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="nb">all</span> <span class="n">shapes</span> <span class="n">linked</span> <span class="n">to</span> <span class="n">a</span> <span class="n">specific</span> <span class="n">feature</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -331,7 +328,7 @@ The GEOSTRING class is used to read information stored in Geostring files (<cite
 <dl class="method">
 <dt id="geosoft.gxapi.GXGEOSTRING.get_shapes_for_feature_and_section">
 <code class="descname">get_shapes_for_feature_and_section</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(str)arg2</em>, <em>(GXLST)arg3</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXGEOSTRING.get_shapes_for_feature_and_section" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Get all shapes linked to a specific feature and section
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="nb">all</span> <span class="n">shapes</span> <span class="n">linked</span> <span class="n">to</span> <span class="n">a</span> <span class="n">specific</span> <span class="n">feature</span> <span class="ow">and</span> <span class="n">section</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -361,7 +358,7 @@ The GEOSTRING class is used to read information stored in Geostring files (<cite
 <dl class="method">
 <dt id="geosoft.gxapi.GXGEOSTRING.get_shapes_for_section">
 <code class="descname">get_shapes_for_section</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(GXLST)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXGEOSTRING.get_shapes_for_section" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Get all shapes linked to a specific section
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="nb">all</span> <span class="n">shapes</span> <span class="n">linked</span> <span class="n">to</span> <span class="n">a</span> <span class="n">specific</span> <span class="n">section</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -422,7 +419,7 @@ The GEOSTRING class is used to read information stored in Geostring files (<cite
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXGEOSTRING.open">
 <em class="property">static </em><code class="descname">open</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(int)arg2</em><span class="sig-paren">)</span> &rarr; GXGEOSTRING:<a class="headerlink" href="#geosoft.gxapi.GXGEOSTRING.open" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Open a Geostring file
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Open</span> <span class="n">a</span> <span class="n">Geostring</span> <span class="n">file</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -431,7 +428,7 @@ The GEOSTRING class is used to read information stored in Geostring files (<cite
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<em>str</em>) &#8211; Geostring file name</li>
-<li><strong>arg2</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#geostring-open"><span>GEOSTRING_OPEN constants</span></a></li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#geostring-open"><span class="std std-ref">GEOSTRING_OPEN constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -452,7 +449,7 @@ The GEOSTRING class is used to read information stored in Geostring files (<cite
 
 <div class="section" id="geostring-open-constants">
 <span id="geostring-open"></span><h2>GEOSTRING_OPEN constants<a class="headerlink" href="#geostring-open-constants" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-python"><div class="highlight"><pre><span></span>Open Modes
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Open</span> <span class="n">Modes</span>
 </pre></div>
 </div>
 <dl class="attribute">
@@ -468,7 +465,7 @@ The GEOSTRING class is used to read information stored in Geostring files (<cite
 </div>
 <div class="section" id="section-orientation-constants">
 <span id="section-orientation"></span><h2>SECTION_ORIENTATION constants<a class="headerlink" href="#section-orientation-constants" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-python"><div class="highlight"><pre><span></span>Section orientation types
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Section</span> <span class="n">orientation</span> <span class="n">types</span>
 </pre></div>
 </div>
 <dl class="attribute">
@@ -514,12 +511,12 @@ The GEOSTRING class is used to read information stored in Geostring files (<cite
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.1.0 documentation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.1 documentation</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &copy; Copyright 2016, Geosoft Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+        &#169; Copyright 2016, Geosoft Inc.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.6.
     </div>
   </body>
 </html>

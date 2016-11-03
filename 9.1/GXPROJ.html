@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>GXPROJ class &mdash; Geosoft GX Python API 9.1.0 documentation</title>
+    <title>GXPROJ class &#8212; Geosoft GX Python API 9.1 documentation</title>
     
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '9.1.0',
+        VERSION:     '9.1',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +23,7 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="Geosoft GX Python API 9.1.0 documentation" href="index.html" /> 
+    <link rel="top" title="Geosoft GX Python API 9.1 documentation" href="index.html" /> 
   </head>
   <body role="document">
     <div class="related" role="navigation" aria-label="related navigation">
@@ -35,7 +35,7 @@
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.1.0 documentation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.1 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -60,14 +60,11 @@
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -83,13 +80,13 @@
 <dl class="class">
 <dt id="geosoft.gxapi.GXPROJ">
 <em class="property">class </em><code class="descclassname">geosoft.gxapi.</code><code class="descname">GXPROJ</code><a class="headerlink" href="#geosoft.gxapi.GXPROJ" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Project functions
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Project</span> <span class="n">functions</span>
 </pre></div>
 </div>
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXPROJ.add_document">
 <em class="property">static </em><code class="descname">add_document</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(str)arg2</em>, <em>(int)arg3</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXPROJ.add_document" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Adds (and opens) a document file in the current project.
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Adds</span> <span class="p">(</span><span class="ow">and</span> <span class="n">opens</span><span class="p">)</span> <span class="n">a</span> <span class="n">document</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">current</span> <span class="n">project</span><span class="o">.</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -99,7 +96,7 @@
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<em>str</em>) &#8211; Document name</li>
 <li><strong>arg2</strong> (<em>str</em>) &#8211; Type of document to add</li>
-<li><strong>arg3</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#proj-display"><span>PROJ_DISPLAY constants</span></a></li>
+<li><strong>arg3</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#proj-display"><span class="std std-ref">PROJ_DISPLAY constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -116,14 +113,14 @@
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>The passed file name must be a valid
-file name complete with an extension and
-qualifiers (if applicable).
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">passed</span> <span class="n">file</span> <span class="n">name</span> <span class="n">must</span> <span class="n">be</span> <span class="n">a</span> <span class="n">valid</span>
+<span class="n">file</span> <span class="n">name</span> <span class="n">complete</span> <span class="k">with</span> <span class="n">an</span> <span class="n">extension</span> <span class="ow">and</span>
+<span class="n">qualifiers</span> <span class="p">(</span><span class="k">if</span> <span class="n">applicable</span><span class="p">)</span><span class="o">.</span>
 
-The type string can be one of the following:
-Database    Save and close only databases.
-Map         Save and close only maps.
-Grid        Save and close only grids.
+<span class="n">The</span> <span class="nb">type</span> <span class="n">string</span> <span class="n">can</span> <span class="n">be</span> <span class="n">one</span> <span class="n">of</span> <span class="n">the</span> <span class="n">following</span><span class="p">:</span>
+<span class="n">Database</span>    <span class="n">Save</span> <span class="ow">and</span> <span class="n">close</span> <span class="n">only</span> <span class="n">databases</span><span class="o">.</span>
+<span class="n">Map</span>         <span class="n">Save</span> <span class="ow">and</span> <span class="n">close</span> <span class="n">only</span> <span class="n">maps</span><span class="o">.</span>
+<span class="n">Grid</span>        <span class="n">Save</span> <span class="ow">and</span> <span class="n">close</span> <span class="n">only</span> <span class="n">grids</span><span class="o">.</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -131,7 +128,7 @@ Grid        Save and close only grids.
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXPROJ.add_document_without_opening">
 <em class="property">static </em><code class="descname">add_document_without_opening</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(str)arg2</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXPROJ.add_document_without_opening" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Adds (and opens) a document file in the current project.
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Adds</span> <span class="p">(</span><span class="ow">and</span> <span class="n">opens</span><span class="p">)</span> <span class="n">a</span> <span class="n">document</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">current</span> <span class="n">project</span><span class="o">.</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -157,15 +154,15 @@ Grid        Save and close only grids.
 <p><span class="versionmodified">New in version 8.5.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>The passed file name must be a valid
-file name complete with an extension and
-qualifiers (if applicable).
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">passed</span> <span class="n">file</span> <span class="n">name</span> <span class="n">must</span> <span class="n">be</span> <span class="n">a</span> <span class="n">valid</span>
+<span class="n">file</span> <span class="n">name</span> <span class="n">complete</span> <span class="k">with</span> <span class="n">an</span> <span class="n">extension</span> <span class="ow">and</span>
+<span class="n">qualifiers</span> <span class="p">(</span><span class="k">if</span> <span class="n">applicable</span><span class="p">)</span><span class="o">.</span>
 
-The type string can be one of the following:
-Database    Save and close only databases.
-Map         Save and close only maps.
-Grid        Save and close only grids.
-Voxel                Voxel file.
+<span class="n">The</span> <span class="nb">type</span> <span class="n">string</span> <span class="n">can</span> <span class="n">be</span> <span class="n">one</span> <span class="n">of</span> <span class="n">the</span> <span class="n">following</span><span class="p">:</span>
+<span class="n">Database</span>    <span class="n">Save</span> <span class="ow">and</span> <span class="n">close</span> <span class="n">only</span> <span class="n">databases</span><span class="o">.</span>
+<span class="n">Map</span>         <span class="n">Save</span> <span class="ow">and</span> <span class="n">close</span> <span class="n">only</span> <span class="n">maps</span><span class="o">.</span>
+<span class="n">Grid</span>        <span class="n">Save</span> <span class="ow">and</span> <span class="n">close</span> <span class="n">only</span> <span class="n">grids</span><span class="o">.</span>
+<span class="n">Voxel</span>                <span class="n">Voxel</span> <span class="n">file</span><span class="o">.</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -173,7 +170,7 @@ Voxel                Voxel file.
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXPROJ.drop_map_clip_data">
 <em class="property">static </em><code class="descname">drop_map_clip_data</code><span class="sig-paren">(</span><em>(int)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXPROJ.drop_map_clip_data" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Drop Map clipboard data in the current project (workspace background)
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Drop</span> <span class="n">Map</span> <span class="n">clipboard</span> <span class="n">data</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">current</span> <span class="n">project</span> <span class="p">(</span><span class="n">workspace</span> <span class="n">background</span><span class="p">)</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -196,14 +193,14 @@ Voxel                Voxel file.
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXPROJ.get_command_environment">
 <em class="property">static </em><code class="descname">get_command_environment</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXPROJ.get_command_environment" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>The current command environment
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">current</span> <span class="n">command</span> <span class="n">environment</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><a class="reference internal" href="#command-env"><span>COMMAND_ENV constants</span></a><p>Notes                                                                 We are moving towards embedded tools and menus and this setting can be set
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><a class="reference internal" href="#command-env"><span class="std std-ref">COMMAND_ENV constants</span></a><p>Notes                                                                 We are moving towards embedded tools and menus and this setting can be set
 queried from the project to determine how specific commands should react.
 ly 3D viewer is currently making use of this.</p>
 </td>
@@ -220,14 +217,14 @@ ly 3D viewer is currently making use of this.</p>
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXPROJ.get_name">
 <em class="property">static </em><code class="descname">get_name</code><span class="sig-paren">(</span><em>(str_ref)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXPROJ.get_name" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Return the name of the project file.
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Return</span> <span class="n">the</span> <span class="n">name</span> <span class="n">of</span> <span class="n">the</span> <span class="n">project</span> <span class="n">file</span><span class="o">.</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; name</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; name</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Nothing.</td>
 </tr>
@@ -239,7 +236,7 @@ ly 3D viewer is currently making use of this.</p>
 <p><span class="versionmodified">New in version 8.4.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>Return the name of the project file.
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Return</span> <span class="n">the</span> <span class="n">name</span> <span class="n">of</span> <span class="n">the</span> <span class="n">project</span> <span class="n">file</span><span class="o">.</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -247,7 +244,7 @@ ly 3D viewer is currently making use of this.</p>
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXPROJ.list_documents">
 <em class="property">static </em><code class="descname">list_documents</code><span class="sig-paren">(</span><em>(GXVV)arg1</em>, <em>(str)arg2</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXPROJ.list_documents" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Fills a VV with documents of a certain type.
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Fills</span> <span class="n">a</span> <span class="n">VV</span> <span class="k">with</span> <span class="n">documents</span> <span class="n">of</span> <span class="n">a</span> <span class="n">certain</span> <span class="nb">type</span><span class="o">.</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -272,18 +269,18 @@ ly 3D viewer is currently making use of this.</p>
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>GX will terminate if error.
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">GX</span> <span class="n">will</span> <span class="n">terminate</span> <span class="k">if</span> <span class="n">error</span><span class="o">.</span>
 
-The type string can be one of the following:
-Database         List Databases.
-Grid             List Grids.
-Map              List Maps.
-Voxel            List Voxels.
-VoxelInversion   List VOXI Documents.
-MXD              List ArcGIS MXDs.
-GMS3D            List GM-SYS 3D Models.
-GMS2D            List GM-SYS 2D Models.
-All              Lists all files.
+<span class="n">The</span> <span class="nb">type</span> <span class="n">string</span> <span class="n">can</span> <span class="n">be</span> <span class="n">one</span> <span class="n">of</span> <span class="n">the</span> <span class="n">following</span><span class="p">:</span>
+<span class="n">Database</span>         <span class="n">List</span> <span class="n">Databases</span><span class="o">.</span>
+<span class="n">Grid</span>             <span class="n">List</span> <span class="n">Grids</span><span class="o">.</span>
+<span class="n">Map</span>              <span class="n">List</span> <span class="n">Maps</span><span class="o">.</span>
+<span class="n">Voxel</span>            <span class="n">List</span> <span class="n">Voxels</span><span class="o">.</span>
+<span class="n">VoxelInversion</span>   <span class="n">List</span> <span class="n">VOXI</span> <span class="n">Documents</span><span class="o">.</span>
+<span class="n">MXD</span>              <span class="n">List</span> <span class="n">ArcGIS</span> <span class="n">MXDs</span><span class="o">.</span>
+<span class="n">GMS3D</span>            <span class="n">List</span> <span class="n">GM</span><span class="o">-</span><span class="n">SYS</span> <span class="mi">3</span><span class="n">D</span> <span class="n">Models</span><span class="o">.</span>
+<span class="n">GMS2D</span>            <span class="n">List</span> <span class="n">GM</span><span class="o">-</span><span class="n">SYS</span> <span class="mi">2</span><span class="n">D</span> <span class="n">Models</span><span class="o">.</span>
+<span class="n">All</span>              <span class="n">Lists</span> <span class="nb">all</span> <span class="n">files</span><span class="o">.</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -291,8 +288,8 @@ All              Lists all files.
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXPROJ.list_tools">
 <em class="property">static </em><code class="descname">list_tools</code><span class="sig-paren">(</span><em>(GXLST)arg1</em>, <em>(int)arg2</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXPROJ.list_tools" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Fills an LST object with tools of a certain type and
-notes the current visibility setting.
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Fills</span> <span class="n">an</span> <span class="n">LST</span> <span class="nb">object</span> <span class="k">with</span> <span class="n">tools</span> <span class="n">of</span> <span class="n">a</span> <span class="n">certain</span> <span class="nb">type</span> <span class="ow">and</span>
+<span class="n">notes</span> <span class="n">the</span> <span class="n">current</span> <span class="n">visibility</span> <span class="n">setting</span><span class="o">.</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -301,7 +298,7 @@ notes the current visibility setting.
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXLST</span></code></a>) &#8211; LST object to hold list</li>
-<li><strong>arg2</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#tool-type"><span>TOOL_TYPE constants</span></a></li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#tool-type"><span class="std std-ref">TOOL_TYPE constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -317,11 +314,11 @@ notes the current visibility setting.
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>GX will terminate if there is an error.
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">GX</span> <span class="n">will</span> <span class="n">terminate</span> <span class="k">if</span> <span class="n">there</span> <span class="ow">is</span> <span class="n">an</span> <span class="n">error</span><span class="o">.</span>
 
-LST object will hold the tool name in the name column and
-include whether the tool is currently visible in the value
-column (1=visible, 0-hidden).
+<span class="n">LST</span> <span class="nb">object</span> <span class="n">will</span> <span class="n">hold</span> <span class="n">the</span> <span class="n">tool</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">name</span> <span class="n">column</span> <span class="ow">and</span>
+<span class="n">include</span> <span class="n">whether</span> <span class="n">the</span> <span class="n">tool</span> <span class="ow">is</span> <span class="n">currently</span> <span class="n">visible</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">value</span>
+<span class="n">column</span> <span class="p">(</span><span class="mi">1</span><span class="o">=</span><span class="n">visible</span><span class="p">,</span> <span class="mi">0</span><span class="o">-</span><span class="n">hidden</span><span class="p">)</span><span class="o">.</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -329,7 +326,7 @@ column (1=visible, 0-hidden).
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXPROJ.remove_document">
 <em class="property">static </em><code class="descname">remove_document</code><span class="sig-paren">(</span><em>(str)arg1</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXPROJ.remove_document" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Removes (and closes if visible) a document from the current project.
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Removes</span> <span class="p">(</span><span class="ow">and</span> <span class="n">closes</span> <span class="k">if</span> <span class="n">visible</span><span class="p">)</span> <span class="n">a</span> <span class="n">document</span> <span class="kn">from</span> <span class="nn">the</span> <span class="n">current</span> <span class="n">project</span><span class="o">.</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -349,9 +346,9 @@ column (1=visible, 0-hidden).
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>The passed file name must be a valid
-file name complete with an extension and
-qualifiers (if applicable).
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">passed</span> <span class="n">file</span> <span class="n">name</span> <span class="n">must</span> <span class="n">be</span> <span class="n">a</span> <span class="n">valid</span>
+<span class="n">file</span> <span class="n">name</span> <span class="n">complete</span> <span class="k">with</span> <span class="n">an</span> <span class="n">extension</span> <span class="ow">and</span>
+<span class="n">qualifiers</span> <span class="p">(</span><span class="k">if</span> <span class="n">applicable</span><span class="p">)</span><span class="o">.</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -359,7 +356,7 @@ qualifiers (if applicable).
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXPROJ.remove_tool">
 <em class="property">static </em><code class="descname">remove_tool</code><span class="sig-paren">(</span><em>(str)arg1</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXPROJ.remove_tool" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Removes (and closes if visible) a auxiliary tool from the current project.
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Removes</span> <span class="p">(</span><span class="ow">and</span> <span class="n">closes</span> <span class="k">if</span> <span class="n">visible</span><span class="p">)</span> <span class="n">a</span> <span class="n">auxiliary</span> <span class="n">tool</span> <span class="kn">from</span> <span class="nn">the</span> <span class="n">current</span> <span class="n">project</span><span class="o">.</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -379,7 +376,7 @@ qualifiers (if applicable).
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">Nothing</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Nothing</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -387,7 +384,7 @@ qualifiers (if applicable).
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXPROJ.save_close_documents">
 <em class="property">static </em><code class="descname">save_close_documents</code><span class="sig-paren">(</span><em>(str)arg1</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXPROJ.save_close_documents" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Saves and closes (if visible) documents contained in the current project.
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Saves</span> <span class="ow">and</span> <span class="n">closes</span> <span class="p">(</span><span class="k">if</span> <span class="n">visible</span><span class="p">)</span> <span class="n">documents</span> <span class="n">contained</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">current</span> <span class="n">project</span><span class="o">.</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -408,15 +405,15 @@ qualifiers (if applicable).
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>This wrapper brings up the save dialog tool to allow
-the user to save the modified documents for this project.
-Only documents that have actually changed will be listed.
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="n">wrapper</span> <span class="n">brings</span> <span class="n">up</span> <span class="n">the</span> <span class="n">save</span> <span class="n">dialog</span> <span class="n">tool</span> <span class="n">to</span> <span class="n">allow</span>
+<span class="n">the</span> <span class="n">user</span> <span class="n">to</span> <span class="n">save</span> <span class="n">the</span> <span class="n">modified</span> <span class="n">documents</span> <span class="k">for</span> <span class="n">this</span> <span class="n">project</span><span class="o">.</span>
+<span class="n">Only</span> <span class="n">documents</span> <span class="n">that</span> <span class="n">have</span> <span class="n">actually</span> <span class="n">changed</span> <span class="n">will</span> <span class="n">be</span> <span class="n">listed</span><span class="o">.</span>
 
-The type string can be one of the following:
-Database    Save and close only databases.
-Map         Save and close only maps.
-Grid        Save and close only grids.
-All         Saves and closes all files.
+<span class="n">The</span> <span class="nb">type</span> <span class="n">string</span> <span class="n">can</span> <span class="n">be</span> <span class="n">one</span> <span class="n">of</span> <span class="n">the</span> <span class="n">following</span><span class="p">:</span>
+<span class="n">Database</span>    <span class="n">Save</span> <span class="ow">and</span> <span class="n">close</span> <span class="n">only</span> <span class="n">databases</span><span class="o">.</span>
+<span class="n">Map</span>         <span class="n">Save</span> <span class="ow">and</span> <span class="n">close</span> <span class="n">only</span> <span class="n">maps</span><span class="o">.</span>
+<span class="n">Grid</span>        <span class="n">Save</span> <span class="ow">and</span> <span class="n">close</span> <span class="n">only</span> <span class="n">grids</span><span class="o">.</span>
+<span class="n">All</span>         <span class="n">Saves</span> <span class="ow">and</span> <span class="n">closes</span> <span class="nb">all</span> <span class="n">files</span><span class="o">.</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -425,7 +422,7 @@ All         Saves and closes all files.
 
 <div class="section" id="command-env-constants">
 <span id="command-env"></span><h2>COMMAND_ENV constants<a class="headerlink" href="#command-env-constants" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-python"><div class="highlight"><pre><span></span>Command environments
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Command</span> <span class="n">environments</span>
 </pre></div>
 </div>
 <dl class="attribute">
@@ -433,7 +430,7 @@ All         Saves and closes all files.
 <code class="descclassname">gxapi.</code><code class="descname">COMMAND_ENV_NORMAL</code><em class="property"> = 0</em><a class="headerlink" href="#geosoft.gxapi.COMMAND_ENV_NORMAL" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">Normal</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Normal</span>
 </pre></div>
 </div>
 <dl class="attribute">
@@ -441,13 +438,13 @@ All         Saves and closes all files.
 <code class="descclassname">gxapi.</code><code class="descname">COMMAND_ENV_IN3DVIEWER</code><em class="property"> = 1</em><a class="headerlink" href="#geosoft.gxapi.COMMAND_ENV_IN3DVIEWER" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<div class="highlight-python"><div class="highlight"><pre><span></span>Executing from inside 3D Viewer
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Executing</span> <span class="kn">from</span> <span class="nn">inside</span> <span class="mi">3</span><span class="n">D</span> <span class="n">Viewer</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="tool-type-constants">
 <span id="tool-type"></span><h2>TOOL_TYPE constants<a class="headerlink" href="#tool-type-constants" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-python"><div class="highlight"><pre><span></span>Tool type defines
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Tool</span> <span class="nb">type</span> <span class="n">defines</span>
 </pre></div>
 </div>
 <dl class="attribute">
@@ -455,7 +452,7 @@ All         Saves and closes all files.
 <code class="descclassname">gxapi.</code><code class="descname">TOOL_TYPE_DEFAULT</code><em class="property"> = 0</em><a class="headerlink" href="#geosoft.gxapi.TOOL_TYPE_DEFAULT" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<div class="highlight-python"><div class="highlight"><pre><span></span>Geosoft created default tools
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Geosoft</span> <span class="n">created</span> <span class="n">default</span> <span class="n">tools</span>
 </pre></div>
 </div>
 <dl class="attribute">
@@ -463,7 +460,7 @@ All         Saves and closes all files.
 <code class="descclassname">gxapi.</code><code class="descname">TOOL_TYPE_AUXILIARY</code><em class="property"> = 1</em><a class="headerlink" href="#geosoft.gxapi.TOOL_TYPE_AUXILIARY" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<div class="highlight-python"><div class="highlight"><pre><span></span>Auxiliary tools (including custom XTools)
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Auxiliary</span> <span class="n">tools</span> <span class="p">(</span><span class="n">including</span> <span class="n">custom</span> <span class="n">XTools</span><span class="p">)</span>
 </pre></div>
 </div>
 <dl class="attribute">
@@ -471,13 +468,13 @@ All         Saves and closes all files.
 <code class="descclassname">gxapi.</code><code class="descname">TOOL_TYPE_ALL</code><em class="property"> = 2</em><a class="headerlink" href="#geosoft.gxapi.TOOL_TYPE_ALL" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<div class="highlight-python"><div class="highlight"><pre><span></span>All tools
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">All</span> <span class="n">tools</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="proj-display-constants">
 <span id="proj-display"></span><h2>PROJ_DISPLAY constants<a class="headerlink" href="#proj-display-constants" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-python"><div class="highlight"><pre><span></span>How to display an object
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">How</span> <span class="n">to</span> <span class="n">display</span> <span class="n">an</span> <span class="nb">object</span>
 </pre></div>
 </div>
 <dl class="attribute">
@@ -485,7 +482,7 @@ All         Saves and closes all files.
 <code class="descclassname">gxapi.</code><code class="descname">PROJ_DISPLAY_NO</code><em class="property"> = 0</em><a class="headerlink" href="#geosoft.gxapi.PROJ_DISPLAY_NO" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<div class="highlight-python"><div class="highlight"><pre><span></span>Do not display the object
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Do</span> <span class="ow">not</span> <span class="n">display</span> <span class="n">the</span> <span class="nb">object</span>
 </pre></div>
 </div>
 <dl class="attribute">
@@ -493,7 +490,7 @@ All         Saves and closes all files.
 <code class="descclassname">gxapi.</code><code class="descname">PROJ_DISPLAY_YES</code><em class="property"> = 1</em><a class="headerlink" href="#geosoft.gxapi.PROJ_DISPLAY_YES" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<div class="highlight-python"><div class="highlight"><pre><span></span>Display the object unless user set option not too
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Display</span> <span class="n">the</span> <span class="nb">object</span> <span class="n">unless</span> <span class="n">user</span> <span class="nb">set</span> <span class="n">option</span> <span class="ow">not</span> <span class="n">too</span>
 </pre></div>
 </div>
 <dl class="attribute">
@@ -501,7 +498,7 @@ All         Saves and closes all files.
 <code class="descclassname">gxapi.</code><code class="descname">PROJ_DISPLAY_ALWAYS</code><em class="property"> = 2</em><a class="headerlink" href="#geosoft.gxapi.PROJ_DISPLAY_ALWAYS" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<div class="highlight-python"><div class="highlight"><pre><span></span>Always display the object
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Always</span> <span class="n">display</span> <span class="n">the</span> <span class="nb">object</span>
 </pre></div>
 </div>
 </div>
@@ -522,12 +519,12 @@ All         Saves and closes all files.
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.1.0 documentation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.1 documentation</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &copy; Copyright 2016, Geosoft Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+        &#169; Copyright 2016, Geosoft Inc.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.6.
     </div>
   </body>
 </html>

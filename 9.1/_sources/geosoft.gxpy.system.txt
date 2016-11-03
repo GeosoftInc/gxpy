@@ -1,17 +1,5 @@
-geosoft.gxpy.system package
-===========================
-
-Submodules
-----------
-
-.. automodule:: geosoft.gxpy.system.system
-    :members:
-    :undoc-members:
-    :show-inheritance:
-
-
-Module contents
----------------
+geosoft.gxpy.system submodule
+=============================
 
 .. automodule:: geosoft.gxpy.system
     :members:

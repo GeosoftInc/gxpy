@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>GXDAT class &mdash; Geosoft GX Python API 9.1.0 documentation</title>
+    <title>GXDAT class &#8212; Geosoft GX Python API 9.1 documentation</title>
     
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '9.1.0',
+        VERSION:     '9.1',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +23,7 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="Geosoft GX Python API 9.1.0 documentation" href="index.html" /> 
+    <link rel="top" title="Geosoft GX Python API 9.1 documentation" href="index.html" /> 
   </head>
   <body role="document">
     <div class="related" role="navigation" aria-label="related navigation">
@@ -35,7 +35,7 @@
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.1.0 documentation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.1 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -60,14 +60,11 @@
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -98,7 +95,7 @@ by a specific processing function.  The gridding methods all use DATs.
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXDAT.create_db">
 <em class="property">static </em><code class="descname">create_db</code><span class="sig-paren">(</span><em>(GXDB)arg1</em>, <em>(str)arg2</em>, <em>(str)arg3</em>, <em>(str)arg4</em><span class="sig-paren">)</span> &rarr; GXDAT:<a class="headerlink" href="#geosoft.gxapi.GXDAT.create_db" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Create a handle to a database DAT object
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Create</span> <span class="n">a</span> <span class="n">handle</span> <span class="n">to</span> <span class="n">a</span> <span class="n">database</span> <span class="n">DAT</span> <span class="nb">object</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -129,7 +126,7 @@ by a specific processing function.  The gridding methods all use DATs.
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXDAT.create_xgd">
 <em class="property">static </em><code class="descname">create_xgd</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(int)arg2</em><span class="sig-paren">)</span> &rarr; GXDAT:<a class="headerlink" href="#geosoft.gxapi.GXDAT.create_xgd" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Create a handle to a grid file DAT object
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Create</span> <span class="n">a</span> <span class="n">handle</span> <span class="n">to</span> <span class="n">a</span> <span class="n">grid</span> <span class="n">file</span> <span class="n">DAT</span> <span class="nb">object</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -138,7 +135,7 @@ by a specific processing function.  The gridding methods all use DATs.
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<em>str</em>) &#8211; Name of grid file to associate DAT with</li>
-<li><strong>arg2</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#dat-xgd"><span>DAT_XGD constants</span></a></li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#dat-xgd"><span class="std std-ref">DAT_XGD constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -158,7 +155,7 @@ by a specific processing function.  The gridding methods all use DATs.
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXDAT.get_lst">
 <em class="property">static </em><code class="descname">get_lst</code><span class="sig-paren">(</span><em>(GXLST)arg1</em>, <em>(str)arg2</em>, <em>(int)arg3</em>, <em>(int)arg4</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXDAT.get_lst" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Put available DAT filters and qualifiers in a LST
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Put</span> <span class="n">available</span> <span class="n">DAT</span> <span class="n">filters</span> <span class="ow">and</span> <span class="n">qualifiers</span> <span class="ow">in</span> <span class="n">a</span> <span class="n">LST</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -168,8 +165,8 @@ by a specific processing function.  The gridding methods all use DATs.
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXLST</span></code></a>) &#8211; LST object to populate</li>
 <li><strong>arg2</strong> (<em>str</em>) &#8211; DAT interface name (&#8220;XGD&#8221; only support option currently)</li>
-<li><strong>arg3</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#dat-file"><span>DAT_FILE constants</span></a></li>
-<li><strong>arg4</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#dat-file-form"><span>DAT_FILE_FORM constants</span></a></li>
+<li><strong>arg3</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#dat-file"><span class="std std-ref">DAT_FILE constants</span></a></li>
+<li><strong>arg4</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#dat-file-form"><span class="std std-ref">DAT_FILE_FORM constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -185,9 +182,9 @@ by a specific processing function.  The gridding methods all use DATs.
 <p><span class="versionmodified">New in version 5.1.8.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>The filters displayed in the Grid/Image file browse dialog are put
-in the &quot;Name&quot; of the LST, while the file qualifiers are stored in
-the &quot;Value&quot;.
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">filters</span> <span class="n">displayed</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">Grid</span><span class="o">/</span><span class="n">Image</span> <span class="n">file</span> <span class="n">browse</span> <span class="n">dialog</span> <span class="n">are</span> <span class="n">put</span>
+<span class="ow">in</span> <span class="n">the</span> <span class="s2">&quot;Name&quot;</span> <span class="n">of</span> <span class="n">the</span> <span class="n">LST</span><span class="p">,</span> <span class="k">while</span> <span class="n">the</span> <span class="n">file</span> <span class="n">qualifiers</span> <span class="n">are</span> <span class="n">stored</span> <span class="ow">in</span>
+<span class="n">the</span> <span class="s2">&quot;Value&quot;</span><span class="o">.</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -227,7 +224,7 @@ the &quot;Value&quot;.
 <dl class="method">
 <dt id="geosoft.gxapi.GXDAT.range_xyz">
 <code class="descname">range_xyz</code><span class="sig-paren">(</span><em>(float_ref)arg1</em>, <em>(float_ref)arg2</em>, <em>(float_ref)arg3</em>, <em>(float_ref)arg4</em>, <em>(float_ref)arg5</em>, <em>(float_ref)arg6</em>, <em>(int_ref)arg7</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXDAT.range_xyz" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Determine the range in X, Y and Z in the DAT source
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Determine</span> <span class="n">the</span> <span class="nb">range</span> <span class="ow">in</span> <span class="n">X</span><span class="p">,</span> <span class="n">Y</span> <span class="ow">and</span> <span class="n">Z</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">DAT</span> <span class="n">source</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -235,13 +232,13 @@ the &quot;Value&quot;.
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Minimum X (rMAX if none)</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Minimum Y (rMAX if none)</li>
-<li><strong>arg3</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Minimum Z (rMAX if none)</li>
-<li><strong>arg4</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Maximum X (rMIN if none)</li>
-<li><strong>arg5</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Maximum Y (rMIN if none)</li>
-<li><strong>arg6</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Maximum Z (rMIN if none)</li>
-<li><strong>arg7</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; Number of non-dummy XYZ.</li>
+<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Minimum X (rMAX if none)</li>
+<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Minimum Y (rMAX if none)</li>
+<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Minimum Z (rMAX if none)</li>
+<li><strong>arg4</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Maximum X (rMIN if none)</li>
+<li><strong>arg5</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Maximum Y (rMIN if none)</li>
+<li><strong>arg6</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Maximum Z (rMIN if none)</li>
+<li><strong>arg7</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; Number of non-dummy XYZ.</li>
 </ul>
 </td>
 </tr>
@@ -257,7 +254,7 @@ the &quot;Value&quot;.
 <p><span class="versionmodified">New in version 7.3.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>Terminates if unable to open an RPT DAT interface.
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Terminates</span> <span class="k">if</span> <span class="n">unable</span> <span class="n">to</span> <span class="nb">open</span> <span class="n">an</span> <span class="n">RPT</span> <span class="n">DAT</span> <span class="n">interface</span><span class="o">.</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -266,7 +263,7 @@ the &quot;Value&quot;.
 
 <div class="section" id="dat-file-constants">
 <span id="dat-file"></span><h2>DAT_FILE constants<a class="headerlink" href="#dat-file-constants" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-python"><div class="highlight"><pre><span></span>Type of grid
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Type</span> <span class="n">of</span> <span class="n">grid</span>
 </pre></div>
 </div>
 <dl class="attribute">
@@ -282,7 +279,7 @@ the &quot;Value&quot;.
 </div>
 <div class="section" id="dat-file-form-constants">
 <span id="dat-file-form"></span><h2>DAT_FILE_FORM constants<a class="headerlink" href="#dat-file-form-constants" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-python"><div class="highlight"><pre><span></span>Type of form
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Type</span> <span class="n">of</span> <span class="n">form</span>
 </pre></div>
 </div>
 <dl class="attribute">
@@ -298,7 +295,7 @@ the &quot;Value&quot;.
 </div>
 <div class="section" id="dat-xgd-constants">
 <span id="dat-xgd"></span><h2>DAT_XGD constants<a class="headerlink" href="#dat-xgd-constants" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-python"><div class="highlight"><pre><span></span>DAT Open modes
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">DAT</span> <span class="n">Open</span> <span class="n">modes</span>
 </pre></div>
 </div>
 <dl class="attribute">
@@ -334,12 +331,12 @@ the &quot;Value&quot;.
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.1.0 documentation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.1 documentation</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &copy; Copyright 2016, Geosoft Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+        &#169; Copyright 2016, Geosoft Inc.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.6.
     </div>
   </body>
 </html>

@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>GXAGG class &mdash; Geosoft GX Python API 9.1.0 documentation</title>
+    <title>GXAGG class &#8212; Geosoft GX Python API 9.1 documentation</title>
     
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '9.1.0',
+        VERSION:     '9.1',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +23,7 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="Geosoft GX Python API 9.1.0 documentation" href="index.html" /> 
+    <link rel="top" title="Geosoft GX Python API 9.1 documentation" href="index.html" /> 
   </head>
   <body role="document">
     <div class="related" role="navigation" aria-label="related navigation">
@@ -35,7 +35,7 @@
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.1.0 documentation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.1 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -60,14 +60,11 @@
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -83,16 +80,16 @@
 <dl class="class">
 <dt id="geosoft.gxapi.GXAGG">
 <em class="property">class </em><code class="descclassname">geosoft.gxapi.</code><code class="descname">GXAGG</code><a class="headerlink" href="#geosoft.gxapi.GXAGG" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>The AGG class is used to handle image display on maps.
-An aggragate contains one or more image layers (LAY) with
-each layer representing a grid or image file. The AGG
-will combine all the layers to form one image
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">AGG</span> <span class="k">class</span> <span class="nc">is</span> <span class="n">used</span> <span class="n">to</span> <span class="n">handle</span> <span class="n">image</span> <span class="n">display</span> <span class="n">on</span> <span class="n">maps</span><span class="o">.</span>
+<span class="n">An</span> <span class="n">aggragate</span> <span class="n">contains</span> <span class="n">one</span> <span class="ow">or</span> <span class="n">more</span> <span class="n">image</span> <span class="n">layers</span> <span class="p">(</span><span class="n">LAY</span><span class="p">)</span> <span class="k">with</span>
+<span class="n">each</span> <span class="n">layer</span> <span class="n">representing</span> <span class="n">a</span> <span class="n">grid</span> <span class="ow">or</span> <span class="n">image</span> <span class="n">file</span><span class="o">.</span> <span class="n">The</span> <span class="n">AGG</span>
+<span class="n">will</span> <span class="n">combine</span> <span class="nb">all</span> <span class="n">the</span> <span class="n">layers</span> <span class="n">to</span> <span class="n">form</span> <span class="n">one</span> <span class="n">image</span>
 </pre></div>
 </div>
 <dl class="method">
 <dt id="geosoft.gxapi.GXAGG.change_brightness">
 <code class="descname">change_brightness</code><span class="sig-paren">(</span><em>(float)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXAGG.change_brightness" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Change the brightness.
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Change</span> <span class="n">the</span> <span class="n">brightness</span><span class="o">.</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -109,9 +106,9 @@ will combine all the layers to form one image
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>0.0 brightness does nothing.
--1.0 to 0.0 makes colours darker, -1.0 is black
-0.0 to 1.0 makes colours lighter, 1.0 is white
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="mf">0.0</span> <span class="n">brightness</span> <span class="n">does</span> <span class="n">nothing</span><span class="o">.</span>
+<span class="o">-</span><span class="mf">1.0</span> <span class="n">to</span> <span class="mf">0.0</span> <span class="n">makes</span> <span class="n">colours</span> <span class="n">darker</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.0</span> <span class="ow">is</span> <span class="n">black</span>
+<span class="mf">0.0</span> <span class="n">to</span> <span class="mf">1.0</span> <span class="n">makes</span> <span class="n">colours</span> <span class="n">lighter</span><span class="p">,</span> <span class="mf">1.0</span> <span class="ow">is</span> <span class="n">white</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -119,7 +116,7 @@ will combine all the layers to form one image
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXAGG.create">
 <em class="property">static </em><code class="descname">create</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; GXAGG:<a class="headerlink" href="#geosoft.gxapi.GXAGG.create" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Create an aggregate
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Create</span> <span class="n">an</span> <span class="n">aggregate</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -140,7 +137,7 @@ will combine all the layers to form one image
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXAGG.create_map">
 <em class="property">static </em><code class="descname">create_map</code><span class="sig-paren">(</span><em>(GXMAP)arg1</em>, <em>(str)arg2</em><span class="sig-paren">)</span> &rarr; GXAGG:<a class="headerlink" href="#geosoft.gxapi.GXAGG.create_map" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Create AGG from Map with Group name.
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Create</span> <span class="n">AGG</span> <span class="kn">from</span> <span class="nn">Map</span> <span class="k">with</span> <span class="n">Group</span> <span class="n">name</span><span class="o">.</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -176,7 +173,7 @@ represents as single ).
 <dl class="method">
 <dt id="geosoft.gxapi.GXAGG.get_brightness">
 <code class="descname">get_brightness</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; float:<a class="headerlink" href="#geosoft.gxapi.GXAGG.get_brightness" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Get the brightness setting of the AGG
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">the</span> <span class="n">brightness</span> <span class="n">setting</span> <span class="n">of</span> <span class="n">the</span> <span class="n">AGG</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -191,16 +188,16 @@ represents as single ).
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>Brightness can range from -1.0 (black) to 1.0 (white).
-This brightness control is relative to the normal colour
-when the AGG is created.
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Brightness</span> <span class="n">can</span> <span class="nb">range</span> <span class="kn">from</span> <span class="o">-</span><span class="mf">1.0</span> <span class="p">(</span><span class="n">black</span><span class="p">)</span> <span class="n">to</span> <span class="mf">1.0</span> <span class="p">(</span><span class="n">white</span><span class="p">)</span><span class="o">.</span>
+<span class="n">This</span> <span class="n">brightness</span> <span class="n">control</span> <span class="ow">is</span> <span class="n">relative</span> <span class="n">to</span> <span class="n">the</span> <span class="n">normal</span> <span class="n">colour</span>
+<span class="n">when</span> <span class="n">the</span> <span class="n">AGG</span> <span class="ow">is</span> <span class="n">created</span><span class="o">.</span>
 
-AGG brightness depends on the brightness of the ITR of each layer.
-Calling dGetBright_AGG will poll all layers, and if all have the same
-brightness, this is returned.  If any of the layers have a different
-brightness, the current brightness of each layer is changed to be
-the reference brightness (0.0)and the brightness value of 0.0 is
-returned.
+<span class="n">AGG</span> <span class="n">brightness</span> <span class="n">depends</span> <span class="n">on</span> <span class="n">the</span> <span class="n">brightness</span> <span class="n">of</span> <span class="n">the</span> <span class="n">ITR</span> <span class="n">of</span> <span class="n">each</span> <span class="n">layer</span><span class="o">.</span>
+<span class="n">Calling</span> <span class="n">dGetBright_AGG</span> <span class="n">will</span> <span class="n">poll</span> <span class="nb">all</span> <span class="n">layers</span><span class="p">,</span> <span class="ow">and</span> <span class="k">if</span> <span class="nb">all</span> <span class="n">have</span> <span class="n">the</span> <span class="n">same</span>
+<span class="n">brightness</span><span class="p">,</span> <span class="n">this</span> <span class="ow">is</span> <span class="n">returned</span><span class="o">.</span>  <span class="n">If</span> <span class="nb">any</span> <span class="n">of</span> <span class="n">the</span> <span class="n">layers</span> <span class="n">have</span> <span class="n">a</span> <span class="n">different</span>
+<span class="n">brightness</span><span class="p">,</span> <span class="n">the</span> <span class="n">current</span> <span class="n">brightness</span> <span class="n">of</span> <span class="n">each</span> <span class="n">layer</span> <span class="ow">is</span> <span class="n">changed</span> <span class="n">to</span> <span class="n">be</span>
+<span class="n">the</span> <span class="n">reference</span> <span class="n">brightness</span> <span class="p">(</span><span class="mf">0.0</span><span class="p">)</span><span class="ow">and</span> <span class="n">the</span> <span class="n">brightness</span> <span class="n">value</span> <span class="n">of</span> <span class="mf">0.0</span> <span class="ow">is</span>
+<span class="n">returned</span><span class="o">.</span>
 </pre></div>
 </div>
 <div class="admonition seealso">
@@ -212,7 +209,7 @@ returned.
 <dl class="method">
 <dt id="geosoft.gxapi.GXAGG.get_layer_itr">
 <code class="descname">get_layer_itr</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(GXITR)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXAGG.get_layer_itr" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Get the ITR of a layer
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">the</span> <span class="n">ITR</span> <span class="n">of</span> <span class="n">a</span> <span class="n">layer</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -237,12 +234,12 @@ returned.
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>Layers are numbered from 0, consecutively in the order they are
-placed in the aggregate.
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Layers</span> <span class="n">are</span> <span class="n">numbered</span> <span class="kn">from</span> <span class="mi">0</span><span class="p">,</span> <span class="n">consecutively</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">order</span> <span class="n">they</span> <span class="n">are</span>
+<span class="n">placed</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">aggregate</span><span class="o">.</span>
 
-An error will occur if the layer does not exist.
+<span class="n">An</span> <span class="n">error</span> <span class="n">will</span> <span class="n">occur</span> <span class="k">if</span> <span class="n">the</span> <span class="n">layer</span> <span class="n">does</span> <span class="ow">not</span> <span class="n">exist</span><span class="o">.</span>
 
-Caller must create/destroy ITR.
+<span class="n">Caller</span> <span class="n">must</span> <span class="n">create</span><span class="o">/</span><span class="n">destroy</span> <span class="n">ITR</span><span class="o">.</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -266,7 +263,7 @@ Caller must create/destroy ITR.
 <dl class="method">
 <dt id="geosoft.gxapi.GXAGG.layer_img">
 <code class="descname">layer_img</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(int)arg2</em>, <em>(str)arg3</em>, <em>(float)arg4</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXAGG.layer_img" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Add an image as a layer in an aggregate.
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Add</span> <span class="n">an</span> <span class="n">image</span> <span class="k">as</span> <span class="n">a</span> <span class="n">layer</span> <span class="ow">in</span> <span class="n">an</span> <span class="n">aggregate</span><span class="o">.</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -275,7 +272,7 @@ Caller must create/destroy ITR.
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<em>str</em>) &#8211; grid name</li>
-<li><strong>arg2</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#agg-layer-zone"><span>AGG_LAYER_ZONE constants</span></a> transform to use if colour table has none defined.</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#agg-layer-zone"><span class="std std-ref">AGG_LAYER_ZONE constants</span></a> transform to use if colour table has none defined.</li>
 <li><strong>arg3</strong> (<em>str</em>) &#8211; colour table name, &#8220;&#8221; for default This can be a .TBL .ZON .ITR or .AGG file .TBL is the default</li>
 <li><strong>arg4</strong> (<em>float</em>) &#8211; colour contour interval or rDUMMY for default</li>
 </ul>
@@ -301,7 +298,7 @@ Caller must create/destroy ITR.
 <dl class="method">
 <dt id="geosoft.gxapi.GXAGG.layer_img_ex">
 <code class="descname">layer_img_ex</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(int)arg2</em>, <em>(str)arg3</em>, <em>(float)arg4</em>, <em>(float)arg5</em>, <em>(float)arg6</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXAGG.layer_img_ex" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Add an image as a layer in an aggregate.
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Add</span> <span class="n">an</span> <span class="n">image</span> <span class="k">as</span> <span class="n">a</span> <span class="n">layer</span> <span class="ow">in</span> <span class="n">an</span> <span class="n">aggregate</span><span class="o">.</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -310,7 +307,7 @@ Caller must create/destroy ITR.
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<em>str</em>) &#8211; grid name</li>
-<li><strong>arg2</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#agg-layer-zone"><span>AGG_LAYER_ZONE constants</span></a> transform to use if colour table has none defined.</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#agg-layer-zone"><span class="std std-ref">AGG_LAYER_ZONE constants</span></a> transform to use if colour table has none defined.</li>
 <li><strong>arg3</strong> (<em>str</em>) &#8211; colour table name, &#8220;&#8221; for default This can be a .TBL .ZON .ITR or .AGG file .TBL is the default</li>
 <li><strong>arg4</strong> (<em>float</em>) &#8211; minimum value or rDUMMY for default</li>
 <li><strong>arg5</strong> (<em>float</em>) &#8211; maximum value or rDUMMY for default</li>
@@ -338,7 +335,7 @@ Caller must create/destroy ITR.
 <dl class="method">
 <dt id="geosoft.gxapi.GXAGG.layer_shade_img">
 <code class="descname">layer_shade_img</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(str)arg2</em>, <em>(float)arg3</em>, <em>(float)arg4</em>, <em>(float_ref)arg5</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXAGG.layer_shade_img" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Add a shaded image as a layer in an aggregate.
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Add</span> <span class="n">a</span> <span class="n">shaded</span> <span class="n">image</span> <span class="k">as</span> <span class="n">a</span> <span class="n">layer</span> <span class="ow">in</span> <span class="n">an</span> <span class="n">aggregate</span><span class="o">.</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -350,7 +347,7 @@ Caller must create/destroy ITR.
 <li><strong>arg2</strong> (<em>str</em>) &#8211; colour table name, &#8220;&#8221; for default</li>
 <li><strong>arg3</strong> (<em>float</em>) &#8211; inclination</li>
 <li><strong>arg4</strong> (<em>float</em>) &#8211; declination</li>
-<li><strong>arg5</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; scale (rDUMMY for default, returns value used)</li>
+<li><strong>arg5</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; scale (rDUMMY for default, returns value used)</li>
 </ul>
 </td>
 </tr>
@@ -366,12 +363,12 @@ Caller must create/destroy ITR.
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>A new grid file will be created to hold the shaded
-image data.  This file will have the same name as the
-original grid but with &quot;_s&quot; added to the root name.
-It will always be located in the workspace directory
-regardless of the location of the original source image.
-If the file already exists, it will replaced.
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="n">new</span> <span class="n">grid</span> <span class="n">file</span> <span class="n">will</span> <span class="n">be</span> <span class="n">created</span> <span class="n">to</span> <span class="n">hold</span> <span class="n">the</span> <span class="n">shaded</span>
+<span class="n">image</span> <span class="n">data</span><span class="o">.</span>  <span class="n">This</span> <span class="n">file</span> <span class="n">will</span> <span class="n">have</span> <span class="n">the</span> <span class="n">same</span> <span class="n">name</span> <span class="k">as</span> <span class="n">the</span>
+<span class="n">original</span> <span class="n">grid</span> <span class="n">but</span> <span class="k">with</span> <span class="s2">&quot;_s&quot;</span> <span class="n">added</span> <span class="n">to</span> <span class="n">the</span> <span class="n">root</span> <span class="n">name</span><span class="o">.</span>
+<span class="n">It</span> <span class="n">will</span> <span class="n">always</span> <span class="n">be</span> <span class="n">located</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">workspace</span> <span class="n">directory</span>
+<span class="n">regardless</span> <span class="n">of</span> <span class="n">the</span> <span class="n">location</span> <span class="n">of</span> <span class="n">the</span> <span class="n">original</span> <span class="n">source</span> <span class="n">image</span><span class="o">.</span>
+<span class="n">If</span> <span class="n">the</span> <span class="n">file</span> <span class="n">already</span> <span class="n">exists</span><span class="p">,</span> <span class="n">it</span> <span class="n">will</span> <span class="n">replaced</span><span class="o">.</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -379,7 +376,7 @@ If the file already exists, it will replaced.
 <dl class="method">
 <dt id="geosoft.gxapi.GXAGG.list_img">
 <code class="descname">list_img</code><span class="sig-paren">(</span><em>(GXVV)arg1</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXAGG.list_img" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Lists file names of all the IMGs inside of the AGG.
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Lists</span> <span class="n">file</span> <span class="n">names</span> <span class="n">of</span> <span class="nb">all</span> <span class="n">the</span> <span class="n">IMGs</span> <span class="n">inside</span> <span class="n">of</span> <span class="n">the</span> <span class="n">AGG</span><span class="o">.</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -398,7 +395,7 @@ If the file already exists, it will replaced.
 <p><span class="versionmodified">New in version 5.0.6.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>The returned VV contains the file names.
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">returned</span> <span class="n">VV</span> <span class="n">contains</span> <span class="n">the</span> <span class="n">file</span> <span class="n">names</span><span class="o">.</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -422,7 +419,7 @@ If the file already exists, it will replaced.
 <dl class="method">
 <dt id="geosoft.gxapi.GXAGG.num_layers">
 <code class="descname">num_layers</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXAGG.num_layers" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Get the number of layers in an aggregate.
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">the</span> <span class="n">number</span> <span class="n">of</span> <span class="n">layers</span> <span class="ow">in</span> <span class="n">an</span> <span class="n">aggregate</span><span class="o">.</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -443,7 +440,7 @@ If the file already exists, it will replaced.
 <dl class="method">
 <dt id="geosoft.gxapi.GXAGG.set_layer_itr">
 <code class="descname">set_layer_itr</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(GXITR)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXAGG.set_layer_itr" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Set the ITR of a layer
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Set</span> <span class="n">the</span> <span class="n">ITR</span> <span class="n">of</span> <span class="n">a</span> <span class="n">layer</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -465,12 +462,12 @@ If the file already exists, it will replaced.
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>Layers are numbered from 0, consecutively in the order they are
-placed in the aggregate.
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Layers</span> <span class="n">are</span> <span class="n">numbered</span> <span class="kn">from</span> <span class="mi">0</span><span class="p">,</span> <span class="n">consecutively</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">order</span> <span class="n">they</span> <span class="n">are</span>
+<span class="n">placed</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">aggregate</span><span class="o">.</span>
 
-An error will occur if the layer does not exist.
+<span class="n">An</span> <span class="n">error</span> <span class="n">will</span> <span class="n">occur</span> <span class="k">if</span> <span class="n">the</span> <span class="n">layer</span> <span class="n">does</span> <span class="ow">not</span> <span class="n">exist</span><span class="o">.</span>
 
-Caller must create/destroy ITR.
+<span class="n">Caller</span> <span class="n">must</span> <span class="n">create</span><span class="o">/</span><span class="n">destroy</span> <span class="n">ITR</span><span class="o">.</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -478,14 +475,14 @@ Caller must create/destroy ITR.
 <dl class="method">
 <dt id="geosoft.gxapi.GXAGG.set_model">
 <code class="descname">set_model</code><span class="sig-paren">(</span><em>(int)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXAGG.set_model" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Sets the Color Model
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Sets</span> <span class="n">the</span> <span class="n">Color</span> <span class="n">Model</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#agg-model"><span>AGG_MODEL constants</span></a></td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#agg-model"><span class="std std-ref">AGG_MODEL constants</span></a></td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Nothing</td>
 </tr>
@@ -501,14 +498,14 @@ Caller must create/destroy ITR.
 <dl class="method">
 <dt id="geosoft.gxapi.GXAGG.set_render_method">
 <code class="descname">set_render_method</code><span class="sig-paren">(</span><em>(int)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXAGG.set_render_method" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span></span>Sets the Rendering Method
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Sets</span> <span class="n">the</span> <span class="n">Rendering</span> <span class="n">Method</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#agg-render"><span>AGG_RENDER constants</span></a></td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#agg-render"><span class="std std-ref">AGG_RENDER constants</span></a></td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Nothing</td>
 </tr>
@@ -525,7 +522,7 @@ Caller must create/destroy ITR.
 
 <div class="section" id="agg-layer-zone-constants">
 <span id="agg-layer-zone"></span><h2>AGG_LAYER_ZONE constants<a class="headerlink" href="#agg-layer-zone-constants" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-python"><div class="highlight"><pre><span></span>Aggregate Layer Zone defines
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Aggregate</span> <span class="n">Layer</span> <span class="n">Zone</span> <span class="n">defines</span>
 </pre></div>
 </div>
 <dl class="attribute">
@@ -533,10 +530,10 @@ Caller must create/destroy ITR.
 <code class="descclassname">gxapi.</code><code class="descname">AGG_LAYER_ZONE_DEFAULT</code><em class="property"> = 0</em><a class="headerlink" href="#geosoft.gxapi.AGG_LAYER_ZONE_DEFAULT" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<div class="highlight-python"><div class="highlight"><pre><span></span>If a colour table with no colour transform is passed
-it will be used with the default zoning
-method of the data, which is usually
-AGG_LAYER_ZONE_EQUALAREA.
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">If</span> <span class="n">a</span> <span class="n">colour</span> <span class="n">table</span> <span class="k">with</span> <span class="n">no</span> <span class="n">colour</span> <span class="n">transform</span> <span class="ow">is</span> <span class="n">passed</span>
+<span class="n">it</span> <span class="n">will</span> <span class="n">be</span> <span class="n">used</span> <span class="k">with</span> <span class="n">the</span> <span class="n">default</span> <span class="n">zoning</span>
+<span class="n">method</span> <span class="n">of</span> <span class="n">the</span> <span class="n">data</span><span class="p">,</span> <span class="n">which</span> <span class="ow">is</span> <span class="n">usually</span>
+<span class="n">AGG_LAYER_ZONE_EQUALAREA</span><span class="o">.</span>
 </pre></div>
 </div>
 <dl class="attribute">
@@ -544,7 +541,7 @@ AGG_LAYER_ZONE_EQUALAREA.
 <code class="descclassname">gxapi.</code><code class="descname">AGG_LAYER_ZONE_LINEAR</code><em class="property"> = 1</em><a class="headerlink" href="#geosoft.gxapi.AGG_LAYER_ZONE_LINEAR" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<div class="highlight-python"><div class="highlight"><pre><span></span>Linear Distribution
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Linear</span> <span class="n">Distribution</span>
 </pre></div>
 </div>
 <dl class="attribute">
@@ -552,7 +549,7 @@ AGG_LAYER_ZONE_EQUALAREA.
 <code class="descclassname">gxapi.</code><code class="descname">AGG_LAYER_ZONE_NORMAL</code><em class="property"> = 2</em><a class="headerlink" href="#geosoft.gxapi.AGG_LAYER_ZONE_NORMAL" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<div class="highlight-python"><div class="highlight"><pre><span></span>Normal Distribution
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Normal</span> <span class="n">Distribution</span>
 </pre></div>
 </div>
 <dl class="attribute">
@@ -560,7 +557,7 @@ AGG_LAYER_ZONE_EQUALAREA.
 <code class="descclassname">gxapi.</code><code class="descname">AGG_LAYER_ZONE_EQUALAREA</code><em class="property"> = 3</em><a class="headerlink" href="#geosoft.gxapi.AGG_LAYER_ZONE_EQUALAREA" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<div class="highlight-python"><div class="highlight"><pre><span></span>Equal Area Distribution
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Equal</span> <span class="n">Area</span> <span class="n">Distribution</span>
 </pre></div>
 </div>
 <dl class="attribute">
@@ -568,7 +565,7 @@ AGG_LAYER_ZONE_EQUALAREA.
 <code class="descclassname">gxapi.</code><code class="descname">AGG_LAYER_ZONE_SHADE</code><em class="property"> = 4</em><a class="headerlink" href="#geosoft.gxapi.AGG_LAYER_ZONE_SHADE" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<div class="highlight-python"><div class="highlight"><pre><span></span>If AGG_LAYER_ZONE_SHADE is specified, a shaded relief
+<div class="highlight-default"><div class="highlight"><pre><span></span>If AGG_LAYER_ZONE_SHADE is specified, a shaded relief
 layer is created from the specified grid.  A new grid
 file will also be created to hold the shaded relief
 image data.  This file will have the same name as the
@@ -586,7 +583,7 @@ use the \ :func:`geosoft.gxapi.GXAGG.layer_shade_img`\  method.
 <code class="descclassname">gxapi.</code><code class="descname">AGG_LAYER_ZONE_LOGLINEAR</code><em class="property"> = 5</em><a class="headerlink" href="#geosoft.gxapi.AGG_LAYER_ZONE_LOGLINEAR" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<div class="highlight-python"><div class="highlight"><pre><span></span>Log Linear Distribution
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Log</span> <span class="n">Linear</span> <span class="n">Distribution</span>
 </pre></div>
 </div>
 <dl class="attribute">
@@ -594,16 +591,16 @@ use the \ :func:`geosoft.gxapi.GXAGG.layer_shade_img`\  method.
 <code class="descclassname">gxapi.</code><code class="descname">AGG_LAYER_ZONE_LAST</code><em class="property"> = 6</em><a class="headerlink" href="#geosoft.gxapi.AGG_LAYER_ZONE_LAST" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<div class="highlight-python"><div class="highlight"><pre><span></span>The last ITR used to display this
-data will be used if it exists.  If it
-does not exist, the behaviour is the same
-as AGG_LAYER_ZONE_DEFAULT.
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">last</span> <span class="n">ITR</span> <span class="n">used</span> <span class="n">to</span> <span class="n">display</span> <span class="n">this</span>
+<span class="n">data</span> <span class="n">will</span> <span class="n">be</span> <span class="n">used</span> <span class="k">if</span> <span class="n">it</span> <span class="n">exists</span><span class="o">.</span>  <span class="n">If</span> <span class="n">it</span>
+<span class="n">does</span> <span class="ow">not</span> <span class="n">exist</span><span class="p">,</span> <span class="n">the</span> <span class="n">behaviour</span> <span class="ow">is</span> <span class="n">the</span> <span class="n">same</span>
+<span class="k">as</span> <span class="n">AGG_LAYER_ZONE_DEFAULT</span><span class="o">.</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="agg-model-constants">
 <span id="agg-model"></span><h2>AGG_MODEL constants<a class="headerlink" href="#agg-model-constants" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-python"><div class="highlight"><pre><span></span>Aggregation color model defines
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Aggregation</span> <span class="n">color</span> <span class="n">model</span> <span class="n">defines</span>
 </pre></div>
 </div>
 <dl class="attribute">
@@ -611,7 +608,7 @@ as AGG_LAYER_ZONE_DEFAULT.
 <code class="descclassname">gxapi.</code><code class="descname">AGG_MODEL_HSV</code><em class="property"> = 1</em><a class="headerlink" href="#geosoft.gxapi.AGG_MODEL_HSV" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<div class="highlight-python"><div class="highlight"><pre><span></span>Hue Saturation Value
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Hue</span> <span class="n">Saturation</span> <span class="n">Value</span>
 </pre></div>
 </div>
 <dl class="attribute">
@@ -619,7 +616,7 @@ as AGG_LAYER_ZONE_DEFAULT.
 <code class="descclassname">gxapi.</code><code class="descname">AGG_MODEL_RGB</code><em class="property"> = 2</em><a class="headerlink" href="#geosoft.gxapi.AGG_MODEL_RGB" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<div class="highlight-python"><div class="highlight"><pre><span></span>Red Green Blue
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Red</span> <span class="n">Green</span> <span class="n">Blue</span>
 </pre></div>
 </div>
 <dl class="attribute">
@@ -627,13 +624,13 @@ as AGG_LAYER_ZONE_DEFAULT.
 <code class="descclassname">gxapi.</code><code class="descname">AGG_MODEL_CMY</code><em class="property"> = 3</em><a class="headerlink" href="#geosoft.gxapi.AGG_MODEL_CMY" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<div class="highlight-python"><div class="highlight"><pre><span></span>Cyan Magenta Yellow
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Cyan</span> <span class="n">Magenta</span> <span class="n">Yellow</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="agg-render-constants">
 <span id="agg-render"></span><h2>AGG_RENDER constants<a class="headerlink" href="#agg-render-constants" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-python"><div class="highlight"><pre><span></span>Aggregation rendering modes
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Aggregation</span> <span class="n">rendering</span> <span class="n">modes</span>
 </pre></div>
 </div>
 <dl class="attribute">
@@ -641,7 +638,7 @@ as AGG_LAYER_ZONE_DEFAULT.
 <code class="descclassname">gxapi.</code><code class="descname">AGG_RENDER_ADD</code><em class="property"> = 0</em><a class="headerlink" href="#geosoft.gxapi.AGG_RENDER_ADD" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<div class="highlight-python"><div class="highlight"><pre><span></span>Add all the colors together
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Add</span> <span class="nb">all</span> <span class="n">the</span> <span class="n">colors</span> <span class="n">together</span>
 </pre></div>
 </div>
 <dl class="attribute">
@@ -649,7 +646,7 @@ as AGG_LAYER_ZONE_DEFAULT.
 <code class="descclassname">gxapi.</code><code class="descname">AGG_RENDER_BLEND</code><em class="property"> = 1</em><a class="headerlink" href="#geosoft.gxapi.AGG_RENDER_BLEND" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<div class="highlight-python"><div class="highlight"><pre><span></span>Adds and divides by the number of non-dummy colors
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Adds</span> <span class="ow">and</span> <span class="n">divides</span> <span class="n">by</span> <span class="n">the</span> <span class="n">number</span> <span class="n">of</span> <span class="n">non</span><span class="o">-</span><span class="n">dummy</span> <span class="n">colors</span>
 </pre></div>
 </div>
 <dl class="attribute">
@@ -657,7 +654,7 @@ as AGG_LAYER_ZONE_DEFAULT.
 <code class="descclassname">gxapi.</code><code class="descname">AGG_RENDER_BLEND_ALL</code><em class="property"> = 2</em><a class="headerlink" href="#geosoft.gxapi.AGG_RENDER_BLEND_ALL" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<div class="highlight-python"><div class="highlight"><pre><span></span>Adds and divides by the number of colors
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Adds</span> <span class="ow">and</span> <span class="n">divides</span> <span class="n">by</span> <span class="n">the</span> <span class="n">number</span> <span class="n">of</span> <span class="n">colors</span>
 </pre></div>
 </div>
 <dl class="attribute">
@@ -665,7 +662,7 @@ as AGG_LAYER_ZONE_DEFAULT.
 <code class="descclassname">gxapi.</code><code class="descname">AGG_RENDER_FADE</code><em class="property"> = 3</em><a class="headerlink" href="#geosoft.gxapi.AGG_RENDER_FADE" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<div class="highlight-python"><div class="highlight"><pre><span></span>Multiplies current colors by the input&#39;s colors over 255 (input works as the percentage of color to preserve)
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Multiplies</span> <span class="n">current</span> <span class="n">colors</span> <span class="n">by</span> <span class="n">the</span> <span class="nb">input</span><span class="s1">&#39;s colors over 255 (input works as the percentage of color to preserve)</span>
 </pre></div>
 </div>
 </div>
@@ -686,12 +683,12 @@ as AGG_LAYER_ZONE_DEFAULT.
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.1.0 documentation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.1 documentation</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &copy; Copyright 2016, Geosoft Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+        &#169; Copyright 2016, Geosoft Inc.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.6.
     </div>
   </body>
 </html>
