@@ -67,8 +67,8 @@ class GXpy():
         '''
 
         try:
-            gxu.safeApiException(gxapi.GXSYS.display_message, (title, message), GXException)
-        except GXException:
+            gxapi.GXSYS.display_message(title, message)
+        except geosoft.gxapi.GXAPIError:
             print('Title: {}\nMessage: {}'.format(title,message))
 
     def main_wind_id(self):

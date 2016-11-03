@@ -27,7 +27,6 @@ class Test(unittest.TestCase):
 
         self.assertEqual(gxu.__version__, geosoft.__version__)
 
-        print(gxu.timeStamp(),self.gxp)
         self.assertEqual(gxu.gxType('float'),gxapi.GS_DOUBLE)
         self.assertEqual(gxu.gxType('int'),gxapi.GS_LONG)
         self.assertEqual(gxu.gxType("<U18"),-18)
