@@ -14,7 +14,7 @@ class Test(unittest.TestCase):
     def setUpClass(cls):
         cls.gx = gx.GXpy()
         os.chdir(os.path.dirname(os.path.realpath(__file__)))
-        cls.folder, files = gsys.unzip(os.path.join(os.path.dirname(__file__), 'testdata.zip'))
+        cls.folder, files = gsys.unzip(os.path.join(os.path.dirname(__file__), 'testgrids.zip'))
         cls.g1 = gxgrd.GXgrd.open(os.path.join(cls.folder, files[0]))
         cls.g2 = gxgrd.GXgrd.open(os.path.join(cls.folder, files[3]))
         pass
@@ -306,7 +306,7 @@ class Test(unittest.TestCase):
     def test_from_array(self):
         self.start(gsys.func_name())
 
-        filename = ".\\testdata\\test_array.grd"
+        filename = os.path.join(self.folder, "test_array.grd")
 
         data = np.arange(24).reshape((8,3))
         grd = gxgrd.GXgrd.from_data_array(data, filename)

@@ -106,7 +106,7 @@ class GXgrd():
                 else:
                     self._img = gxapi.GXIMG.create_file(gxu.gxType(dtype), self._filename, gxapi.IMG_FILE_READORWRITE)
 
-            except geosoft.gxapi.GXAPIError:
+            except geosoft.gxapi.GXError as e:
                 time.sleep(0.1)
                 gc.collect()
                 attempt += 1

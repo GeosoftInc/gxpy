@@ -194,6 +194,7 @@ class Test(unittest.TestCase):
             #py.write("input('RUN_EXTERNAL! Press return to continue...')\n")
 
         test_result = gxu.run_external_python(testpy, script_args='test1 test2', dict={'howdy':'hey there'}, console=False)
+        os.remove(testpy)
         self.assertEqual(test_result['a'], 'letter a')
         l = test_result['c']
         self.assertEqual(len(l), 3)
@@ -201,7 +202,6 @@ class Test(unittest.TestCase):
         self.assertEqual(test_result['argv'][1], 'test1')
         self.assertEqual(test_result['argv'][2], 'test2')
         self.assertEqual(test_result['input']['howdy'], 'hey there')
-        os.remove(testpy)
 
         try:
             gxu.run_external_python(testpy, script_args='test1 test2')
