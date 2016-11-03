@@ -1,4 +1,5 @@
 #TODO: abstract grid file decorations to a dict
+#TODO: add __enter__() __exit__() to support with construct
 
 import os,gc,time
 import numpy as np
@@ -31,7 +32,8 @@ class GXgrd():
         open() open an existing grid/image
         new()  create a new grid/image
         ====== =============================
-        
+
+    .. versionadded:: 9.1
     """
 
     gc = None
@@ -83,33 +85,23 @@ class GXgrd():
 
             try:
                 if (self._filename == None):
-                    self._img = gxu.safeApiException(gxapi.GXIMG.create,
-                                                     (gxu.gxType(dtype), kx, dim[0], dim[1]),
-                                                     GRDException)
+                    self._img = gxapi.GXIMG.create(gxu.gxType(dtype), kx, dim[0], dim[1])
 
                 elif mode == FILE_NEW:
                     if self._hgd:
-                        # for HGD grids, make a memory grid and save to an HGD on closing
-                        self._img = gxu.safeApiException(gxapi.GXIMG.create,
-                                                         (gxu.gxType(dtype), kx, dim[0], dim[1]),
-                                                         GRDException)
+                        # for HGD grids, make a memory grid, which will be saved to an HGD on closing
+                        self._img = gxapi.GXIMG.create(gxu.gxType(dtype), kx, dim[0], dim[1])
                     else:
-                        self._img = gxu.safeApiException(gxapi.GXIMG.create_new_file,
-                                                         (gxu.gxType(dtype), kx, dim[0], dim[1], self._filename),
-                                                         GRDException)
+                        self._img = gxapi.GXIMG.create_new_file(gxu.gxType(dtype), kx, dim[0], dim[1], self._filename)
 
                 elif mode == FILE_READ:
-                    self._img = gxu.safeApiException(gxapi.GXIMG.create_file,
-                                                     (gxu.gxType(dtype), self._filename, gxapi.IMG_FILE_READONLY),
-                                                     GRDException)
+                    self._img = gxapi.GXIMG.create_file(gxu.gxType(dtype), self._filename, gxapi.IMG_FILE_READONLY)
                     self._readonly = True
 
                 else:
-                    self._img = gxu.safeApiException(gxapi.GXIMG.create_file,
-                                                     (gxu.gxType(dtype), self._filename, gxapi.IMG_FILE_READORWRITE),
-                                                     GRDException)
+                    self._img = gxapi.GXIMG.create_file(gxu.gxType(dtype), self._filename, gxapi.IMG_FILE_READORWRITE)
 
-            except GRDException as e:
+            except geosoft.gxapi.GXAPIError:
                 time.sleep(0.1)
                 gc.collect()
                 attempt += 1
@@ -168,6 +160,7 @@ class GXgrd():
             FILE_READWRITE     grid stays the same, but properties may change
             =================  ================================================
 
+        .. versionadded:: 9.1
         """
 
         if mode == None:
@@ -185,6 +178,8 @@ class GXgrd():
         :param gxPy:        GX context
         :param fileName:    name of the grid file, None or '' for a memory grid
         :param properties:  dictionary of grid properties
+
+        .. versionadded:: 9.1
         """
 
         #set basic grid properties
@@ -208,6 +203,8 @@ class GXgrd():
         :param data:        2D numpy data array, must be 2D
         :param filename:    name of the file
         :return:            GXgrd instance
+
+        .. versionadded:: 9.1
         """
 
         ny, nx = data.shape
@@ -225,6 +222,8 @@ class GXgrd():
         deleted and garbage collection is performed.
 
         :param delete: set to False to reverse a previous delete request
+
+        .. versionadded:: 9.1
         """
         self._deleteFiles = delete
 
@@ -244,6 +243,7 @@ class GXgrd():
             >>> print(namep)
             ('f:/someFolder/','name.grd','name','.grd','(GRD;TYPE=SHORT)')
 
+        .. versionadded:: 9.1
         """
 
         path = os.path.abspath(name)
@@ -272,6 +272,8 @@ class GXgrd():
         :param name:        file name
         :param decorations: file decorations, semicolon delimited
         :returns:           decorated file name
+
+        .. versionadded:: 9.1
         """
 
         if len(decorations.strip()) > 0:
@@ -292,6 +294,8 @@ class GXgrd():
     def dtype(self):
         """
         :return: numpy data type for the grid
+
+        .. versionadded:: 9.1
         """
         return gxu.dtypeGX(self._img.e_type())
 
@@ -299,6 +303,8 @@ class GXgrd():
         """
         Get the grid properties dictionary
         :return: properties dictionary
+
+        .. versionadded:: 9.1
         """
 
         properties = {}
@@ -342,6 +348,8 @@ class GXgrd():
         the grid and modify those that need to change and pass the properties back.
 
         :param properties: properties dictionary
+
+        .. versionadded:: 9.1
         """
 
         if self._readonly:
@@ -366,6 +374,8 @@ class GXgrd():
         :param fileName:    name of the file to save
         :param dtype:       numpy data type, None to use type of the parent grid
         :return:            GXgrd of saved file
+
+        .. versionadded:: 9.1
         """
 
         p = self.properties()
@@ -380,9 +390,7 @@ class GXgrd():
         return GXgrd.open( fileName, mode= FILE_READWRITE)
 
     def _geth_pg(self):
-        '''
-        get an hpg for the grid, adding the handle to the class so it does not get destroyed
-        '''
+        '''Get an hpg for the grid, adding the handle to the class so it does not get destroyed.'''
         if self._hpg == None:
             self._hpg = self._img.geth_pg()
         return self._hpg
@@ -394,6 +402,8 @@ class GXgrd():
         :param y0:  integer index of the first Y point
         :param nx:  number of points in x
         :param ny:  number of points in y
+
+        .. versionadded:: 9.1
         """
 
         p = self.properties()
@@ -434,6 +444,8 @@ class GXgrd():
         :param ix0:     grid X index of first point
         :param iy0:     grid Y index of first point, top index if writing rows top to bottom
         :param order:   1: bottom to top; -1: top to bottom
+
+        .. versionadded:: 9.1
         """
 
         ny, nx = data.shape
@@ -449,6 +461,8 @@ class GXgrd():
         :param ix0:
         :param iy0:
         :return:
+
+        .. versionadded:: 9.1
         '''
 
 
@@ -460,6 +474,8 @@ def array_locations(properties, z=0.):
     Create an array of (x,y,z) points for a grid defined by properties
     :param properties:  grid properties
     :return:            array of points, shaped (ny, nx, 3)
+
+    .. versionadded:: 9.1
     '''
 
     nx = properties.get('nx')
@@ -481,6 +497,8 @@ def gridMosaic(mosaic, gridList, typeDecoration='', report=None):
     :param typeDecoration:  decoration for input grids if not default
     :param report:          string reporting function, report=print to print progress
     :return:                GXgrd
+
+    .. versionadded:: 9.1
     """
 
     def props(gn, repro=None):
@@ -615,6 +633,8 @@ def gridBool(g1, g2, joinedGrid, opt=1, size=3, olap=1):
         === ==========================================
 
     :returns:       GXgrd of the merged output grid
+
+    .. versionadded:: 9.1
     """
 
     if isinstance(g1, str):

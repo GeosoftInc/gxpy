@@ -47,22 +47,24 @@ gxapi.GXAPIError.__doc__ = '''
 
 gxapi.GXError.__doc__ = '''
 A subclass of :exc:`RuntimeError` which is raised whenever a GX Python API call encounters an 
-error. Often the message string of these errors are informative to the user (e.g. File 'x' i locked in another application)
-but there could be cases where this is not the case. In most cases an :code:`int` attribute, :attr:`number`, is also available on the exception
-object that matches the number in the :code:`geosoft.ger` file. These numbers instead of the string (which could change or even
-be translated) should be used to identify and handle very specific exceptions. 
+error. Often the message string of these errors are informative to the user (e.g. File 'x' is locked in another
+application) but there could be cases where this is not the case. In most cases an :code:`int` attribute,
+:attr:`number`, is also available on the exception object that matches the number in the :code:`geosoft.ger` file.
+These numbers instead of the string (which could change or even be translated) should be used to identify and handle
+very specific exceptions.
 
 .. versionadded:: 9.1
 '''
 
 gxapi.GXContext.__doc__ = '''The main GX execution context
 
-A single instance of this object needs to be created per thread and persisted before using any other class in the geosoft.gxapi module.
+A single instance of this object needs to be created per thread and persisted before using any other class in the
+geosoft.gxapi module.
 
 '''
 
 gxapi.GXContext.create.__doc__ = '''create((str)application, (str)version, (int)parent_wnd_id = 0) -> GXContext:
-Creates the GX execution context (will return the current one if it exsists already).
+Creates the GX execution context (will return the current one if it exists).
 
 :param application: Calling application name"
 :type application: str

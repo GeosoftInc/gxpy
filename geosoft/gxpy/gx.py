@@ -17,16 +17,17 @@ class GXpy():
     Geosoft GX context.
 
     :param app:             application name, default is the script name
-    :param version:         application version number, default 0.
-    :param parent_window    ID of the parent window if needed.
+    :param version:         application version number, default this module version.
+    :param parent_window:   ID of the parent window if needed, default 0.
 
     :members:
-        :gxapi:            GX context to be used to call geosoft.gxapi methods
-        :gid:           Geosoft ID
+        :gxapi:             GX context to be used to call geosoft.gxapi methods
+        :gid:               User's Geosoft ID
 
     :raises:
         :GXException():  if unable to create context
 
+    .. versionadded:: 9.1
     '''
 
 
@@ -51,7 +52,14 @@ class GXpy():
         self._sr = gxapi.str_ref()
 
     def display_message(self, title, message):
-        ''' display a message to the user.'''
+        '''
+        Display a message to the user.
+
+        :param title:   dialog title
+        :param message: message
+
+        .. versionadded:: 9.1
+        '''
 
         try:
             gxu.safeApiException(gxapi.GXSYS.display_message, (title, message), GXException)
@@ -59,61 +67,101 @@ class GXpy():
             print('Title: {}\nMessage: {}'.format(title,message))
 
     def main_wind_id(self):
-        ''' :returns: the main window ID (HWND cast to unsigned for Windows).'''
+        '''
+        :returns: The main window ID (HWND cast to unsigned for Windows).
+
+        .. versionadded:: 9.1
+        '''
 
         return self.gxapi.get_main_wnd_id()
 
 
     def active_wind_id(self):
-        ''' :returns: the active window ID (HWND cast to unsigned for Windows).'''
+        '''
+        :returns: The active window ID (HWND cast to unsigned for Windows).
+
+        .. versionadded:: 9.1
+        '''
 
         return self.gxapi.get_active_wnd_id()
 
-    def dissable_app(self):
-        ''' disables application windows to allow modal Python UI.  Call before opening your own UI window.'''
+    def disable_app(self):
+        '''
+        Disables application windows to allow modal Python UI.  Call before opening your own UI window.
+
+        .. versionadded:: 9.1
+        '''
         self.gxapi.enable_application_windows(False)
 
     def enable_app(self):
-        ''' enables application windows to allow modal Python UI.  Call before returning control to OM.'''
+        '''
+        Enables application windows to allow modal Python UI.  Call before returning control to OM.
+
+        .. versionadded:: 9.1
+        '''
         self.gxapi.enable_application_windows(True)
 
     def entitlements(self):
-        ''' :return: current entitlements as a dictionary'''
+        '''
+        :return: The current user entitlements as a dictionary.
+
+        .. versionadded:: 9.1
+        '''
 
         lst = gxapi.GXLST.create(1000)
         gxapi.GXSYS.get_entitlement_rights(lst)
         return gxu.dictFromLst(lst)
 
     def license_class(self):
-        ''' :return: current license class'''
+        '''
+        :return: The current license class.
+
+        .. versionadded:: 9.1
+        '''
 
         lc = gxapi.str_ref()
         gxapi.GXSYS.get_license_class(lc)
         return lc.value
 
     def folder_workspace(self):
-        ''' :return: workspace folder'''
+        '''
+        :return: The workspace folder.
+
+        .. versionadded:: 9.1
+        '''
 
         folder = gxapi.str_ref()
         gxapi.GXSYS.get_path(gxapi.SYS_PATH_LOCAL, folder)
         return folder.value
 
     def folder_temp(self):
-        ''' :return: temp folder'''
+        '''
+        :return: The Geosoft tempporary folder.
+
+        .. versionadded:: 9.1
+        '''
 
         folder = gxapi.str_ref()
         gxapi.GXSYS.get_path(gxapi.SYS_PATH_GEOTEMP, folder)
         return folder.value
 
     def folder_user(self):
-        ''' :return: Geosoft user files'''
+        '''
+        :return: The Geosoft user configuration files folder.
+
+        .. versionadded:: 9.1
+        '''
 
         folder = gxapi.str_ref()
         gxapi.GXSYS.get_path(gxapi.SYS_PATH_GEOSOFT_USER, folder)
         return folder.value
 
     def environment(self, formated_indent=-1):
-        ''' :returns: Geosoft environment information as a dictionary'''
+        '''
+        :returns: Geosoft environment information as a dictionary.
+
+        .. versionadded:: 9.1
+        '''
 
         info = {'gid': self.gid,
                 'current_date': gxapi.GXSYS.date(),

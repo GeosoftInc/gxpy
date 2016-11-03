@@ -32,7 +32,7 @@ class Test(unittest.TestCase):
     def test_ui_onoff(self):
         self.start(gsys.func_name())
 
-        self.gxp.dissable_app()
+        self.gxp.disable_app()
         self.gxp.enable_app()
 
     def test_env(self):
@@ -60,7 +60,7 @@ class Test(unittest.TestCase):
 
         ent = self.gxp.entitlements()
         self.assertTrue(ent.get('1000'), 'Oasis montaj™ Base')
-        #self.pp.pprint(ent)
+        self.pp.pprint(ent)
 
     def test_display_message(self):
         self.start(gsys.func_name())

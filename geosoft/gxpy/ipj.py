@@ -5,6 +5,8 @@ from . import utility as gxu
 
 __version__ = geosoft.__version__
 
+# translation hook
+def _(s): return s
 
 #############
 # Constants
@@ -56,8 +58,7 @@ class GXipj():
         :from_json:     from a json string
         :from_esri:     from an ESRI wkt string
 
-    #TODO: implement orientation support on top of Geosoft IPJ, or add orientation support to Geosoft
-           oblique stereographic.
+    .. versionadded:: 9.1
     """
 
     def __repr__(self):
@@ -79,6 +80,8 @@ class GXipj():
 
         :params:
             gxfs:   list of GXF strings.  See GXFIPJ.set_gxf() reference.
+
+        .. versionadded:: 9.1
         """
 
         ipj = cls()
@@ -101,7 +104,7 @@ class GXipj():
         ipj._ipj.set_gxf(gxfs[0], gxfs[1], gxfs[2], gxfs[3], gxfs[4])
         ipj._ipj.get_display_name(ipj._sr)
         if ipj._sr.value == '*unknown':
-            raise IPJException('Unknown coordinate system:\n>{}\n>{}\n>{}\n>{}\n>{}'.format(gxfs[0],
+            raise IPJException(_('Unknown coordinate system:\n>{}\n>{}\n>{}\n>{}\n>{}').format(gxfs[0],
                                                                                             gxfs[1],
                                                                                             gxfs[2],
                                                                                             gxfs[3],
@@ -184,32 +187,39 @@ class GXipj():
 
         :"orientation":
 
-            In Geosoft coordinate systems, a cartesian system can be oriented arbitrarily
+            .. note::
+
+                Only orientations of "<0, 0, 0, 0, 0, 0>" are supported in version 9.1.  Oriented coordinate
+                systems will be added at some point in the future.  Oriented coordinates can be achieved using
+                Oblique Stereographic.
+
+            *FUTURE:* In Geosoft coordinate systems, a cartesian system can be oriented arbitrarily
             in three dimensions relative to a base coordinate system.  This requires the definition
             of the local origin location on the base system, and the rotation in degrees clockwise
             (azimuth in plan view) around each of the three base system axis, as defined by the
             "orientation" description, which is a set of 6 values within angle brackets:
-            
+
             .. code::
-            
+
                 "<oX,oY,oZ,rX,rY,rX>"
-            
+
             The orientation string can be appended to the name, or added as it's own key "orientation"
-            
+
             For example, a local grid with origin at (550000,6250000) rotated at azimuth 15 degrees
             (clockwise) from the base "UTM zone 15N" Northings and Eastings on "WGS 84" would be:
-            
+
             .. code::
-            
+
                 {"type":"Geosoft","properties":{"name":"WGS 84 / UTM zone 15N <550000,6250000,0,0,0,15>"}}
-            
+
             or:
-            
+
             .. code::
-            
+
                 {"type":"Geosoft","properties":{"name":"WGS 84 / UTM zone 15N"},
                                                 "orientation":"<550000,6250000,0,0,0,15>"}
 
+        .. versionadded:: 9.1
         """
 
         # empty string
@@ -306,8 +316,9 @@ class GXipj():
         """
         Create an IPJ from an ESRI wkt coordinate string
 
-        :param:
-            esri_str:   ESRI coordinate definition string
+        :param esri_str:   ESRI coordinate definition string
+
+        .. versionadded:: 9.1
         """
         ipj = cls()
         ipj._ipj.set_esri(esri_str)
@@ -320,8 +331,9 @@ class GXipj():
         """
         Create an IPJ from a projection name in the form "datum / projection <orientation>".
 
-        :param:
-            name:   coordinate system name in the form "datum / projection <orientation>"
+        :param name:   coordinate system name in the form "datum / projection <orientation>"
+
+        .. versionadded:: 9.1
         """
         ipj = cls.from_gxf([name.strip(' \t"\''), '', '', '', ''])
         return ipj
@@ -331,8 +343,9 @@ class GXipj():
         """
         Create an IPJ from a ipj_dict
 
-        :param:
-            ipj_dict:   IPJ dictionary, or a valid name string
+        :param ipj_dict:   IPJ dictionary, or a valid name string
+
+        .. versionadded:: 9.1
         """
         return cls.from_json(json.dumps(ipj_dict))
 
@@ -341,9 +354,7 @@ class GXipj():
         """
         Get a list of coordinate system names
 
-        :param:
-
-            :what:
+        :param what:
                 | gxipj.LIST_COORDINATESYSTEM
                 | gxipj.LIST_DATUM
                 | gxipj.LIST_PROJECTION
@@ -352,10 +363,12 @@ class GXipj():
                 | gxipj.LIST_LOCALDATUMNAME
                 | gxipj.LIST_UNITSDESCRIPTION
 
-            :datum_filter:
+        :param datum_filter:
                 name of a datum to filter results
 
         :returns:   sorted list of names
+
+        .. versionadded:: 9.1
         """
 
         lst = gxapi.GXLST.create( 1000)
@@ -369,6 +382,8 @@ class GXipj():
         """
         Fill in coordinate system dict self._ipjDict
         This is a convenience dictionary that makes it easy to get names from a coordinate system
+
+        .. versionadded:: 9.1
         """
 
         # initially from GXF values
@@ -403,6 +418,8 @@ class GXipj():
         """
         Get GXF string list from ipj.
         Returns list of 5 GXF strings.
+
+        .. versionadded:: 9.1
         """
 
         s1 = gxapi.str_ref()
@@ -439,12 +456,15 @@ class GXipj():
                "unitName": "m"
             }
 
+        .. versionadded:: 9.1
         """
         return json.dumps(self._ipjDict)
 
     def dict(self):
         """
         Return IPJ dictionary
+
+        .. versionadded:: 9.1
         """
         return self._ipjDict
 
@@ -452,9 +472,7 @@ class GXipj():
         """
         Return requested name.
 
-        :param:
-
-            :what:
+        :param what:
                 | gxipj.NAME
                 | gxipj.NAME_PCS
                 | gxipj.NAME_PROJECTION
@@ -477,8 +495,9 @@ class GXipj():
 
         If 'what' is not specified, gxipj.NAME assumed, which returns the coordinate system display name.
 
-        :return:
-            The name requested
+        :return: The name requested
+
+        .. versionadded:: 9.1
         """
 
         if what is None:
@@ -491,15 +510,18 @@ class GXipj():
     def compare(ipj1, ipj2):
         """
         :return: True if two projections are the same
-        :param:
-            :ipj1:  GXipj
-            :ipj2:  GXipj
+        :param ipj1:  GXipj
+        :param ipj2:  GXipj
+
+        .. versionadded:: 9.1
         """
         return ipj1._ipj.coordinate_systems_are_the_same_within_a_small_tolerance(ipj2._ipj)
 
     def units(self):
         """
         :return: tuple (factor, abbreviation), where factor is multiplier to convert to metres
+
+        .. versionadded:: 9.1
         """
         self._ipj.get_units(self._fr, self._sr)
         return self._fr.value, self._sr.value
@@ -509,9 +531,10 @@ class GXpj:
     """
     Class to reproject coordinates.
 
-    :params:
-        :ipj_from:  GXipj from coordinate system
-        :ipj_to:    GXipj to coordinate system
+    :params ipj_from:  GXipj from coordinate system
+    :params ipj_to:    GXipj to coordinate system
+
+    .. versionadded:: 9.1
     """
 
     def __repr__(self):
@@ -535,8 +558,7 @@ class GXpj:
 
         Coordinates are reprojected in-place.
 
-        :param:
-            :xyz:
+        :param xyz:
                 | numpy array shape (,3+) for (x,y,z) conversion
                 | numpy array shape (,2) for x,y conversion
 
@@ -552,6 +574,7 @@ class GXpj:
                 pj.convert(data[:,3])       #transform x,y and z
                 pj.convert(data)            #transform x,y and z (same as previous line)
 
+        .. versionadded:: 9.1
         """
 
         npoints = xyz.shape[0]
@@ -560,7 +583,7 @@ class GXpj:
 
         nd = xyz.shape[1]
         if nd < 2:
-            raise IPJException('Data must have minimum dimension 2 (x,y) or 3 for (x,y,z).')
+            raise IPJException(_('Data must have minimum dimension 2 (x,y) or 3 for (x,y,z).'))
 
         vvx = gxapi.GXVV.create_ext(gxapi.GS_DOUBLE, npoints)
         vvy = gxapi.GXVV.create_ext(gxapi.GS_DOUBLE, npoints)

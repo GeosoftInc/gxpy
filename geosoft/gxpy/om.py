@@ -19,6 +19,8 @@ def _(s): return s
 def running_script():
     '''
     :return: 1 if running from a script, 0 if running interactively.
+
+    .. versionadded:: 9.1
     '''
 
     return not gxapi.GXSYS.interactive()
@@ -28,6 +30,8 @@ def message(title, message):
     Display a message to the user
     :param title:   message box title
     :param message: message
+
+    .. versionadded:: 9.1
     '''
     gxapi.GXSYS.display_message(title, message)
 
@@ -47,6 +51,8 @@ def pause(title='Pause...', cancel=False):
     :param title:   The pause dialog title, default is "Pause..."
     :param cancel:  If True, show a cancel button
     :raises:        :py:ex:GXCancel if the user cancels the dialog
+
+    .. versionadded:: 9.1
     '''
     
     gxapi.GXSYS.set_string("USER_INPUT", "TITLE", str(title))
@@ -72,6 +78,8 @@ def get_user_input(title="Input required...", prompt='?', kind='string', default
                         Comma delimited, or a list/tupple
     :return:        user response
     :raise:         :py:ex:GXCancel if the user cancels the dialog
+
+    .. versionadded:: 9.1
     '''
 
     # what kind of dialog
@@ -150,6 +158,8 @@ def menus():
         'loaded'
         'user'
     }
+
+    .. versionadded:: 9.1
     '''
 
     def_menus = gxapi.GXLST.create(512)
@@ -194,6 +204,8 @@ def state():
             ]
         }
     }
+
+    .. versionadded:: 9.1
     '''
 
     s = gxapi.str_ref()

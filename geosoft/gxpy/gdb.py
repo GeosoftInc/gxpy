@@ -153,6 +153,7 @@ class GXdb():
             dist[dummyMask] = dummy
             gdb.writeDataChan(lsymb, 'distance', dist)
 
+    .. versionadded:: 9.1
     '''
 
     _edb = None
@@ -188,6 +189,8 @@ class GXdb():
 
         :param name:    name of the database, default is the current database
         :return:        GXdb instance
+
+        .. versionadded:: 9.1
         '''
 
         gdb = cls()
@@ -217,6 +220,8 @@ class GXdb():
                             | COMP_NONE
                             | COMP_SPEED (default)
                             | COMP_SIZE
+
+        .. versionadded:: 9.1
         '''
         maxLines = max(10,maxLines)
         maxChannels = max(25,maxChannels)
@@ -246,12 +251,16 @@ class GXdb():
     def commit(self):
         '''
         Commit database changes.
+
+        .. versionadded:: 9.1
         '''
         self._db.commit()
 
     def discard(self):
         '''
         Discard database changes.
+
+        .. versionadded:: 9.1
         '''
         self._db.discard()
 
@@ -264,6 +273,8 @@ class GXdb():
         :param symb: symbol name or number
         :param symb_type: one of DB_SYMB_TYPE
         :return: True if the symbol exists and is the expected symbol type, False otherwise
+
+        .. versionadded:: 9.1
         '''
         if type(symb) is str:
             return self._db.exist_symb(symb, symb_type)
@@ -276,6 +287,8 @@ class GXdb():
     def fileName(self):
         '''
         :return: database file name
+
+        .. versionadded:: 9.1
         '''
         return os.path.abspath(self._fileName)
 
@@ -287,6 +300,8 @@ class GXdb():
         :param create:  True to create a line if one does not exist
         :return:        line name, symbol, returns ('',-1) if invalid
         :raises:        GDBException if line not found or cannot be created
+
+        .. versionadded:: 9.1
         '''
 
         if (self._exist_symb(line, gxapi.DB_SYMB_LINE)):
@@ -308,6 +323,8 @@ class GXdb():
         :param chan:    channel name, or symbol number
         :return:        line name, symbol, returns ('',-1) if invalid
         :raises:        GDBException if channel does not exist
+
+        .. versionadded:: 9.1
         '''
 
         if (self._exist_symb(chan, gxapi.DB_SYMB_CHAN)):
@@ -326,6 +343,8 @@ class GXdb():
 
         :param channel: channel symbol or name
         :return:        array dimension, 1 for non-array channels
+
+        .. versionadded:: 9.1
         '''
         return self._db.get_col_va(self.chanNameSymb(channel)[1])
 
@@ -343,6 +362,8 @@ class GXdb():
             =============== ============================
 
         :return: dictionary {channel_names: channel_symbols}
+
+        .. versionadded:: 9.1
         '''
 
         def cleanChannelsDct():
@@ -391,6 +412,8 @@ class GXdb():
         List of lines in the database
         :param select=True:  True to return selected lines, false to return all lines
         :return: dictionary (line name: symbol)
+
+        .. versionadded:: 9.1
         '''
         if select:
             self._db.selected_line_lst(self._lst)
@@ -421,13 +444,14 @@ class GXdb():
             groupclass  class name for grouped lines, '' if not a grouped line
             =========== ==============================================================
 
+        .. versionadded:: 9.1
         '''
 
         def getDetail(fn):
             try:
-                gxu.safeApiException(fn, (ls, self._sr), GDBException)
+                fn(ls, self._sr)
                 return self._sr.value
-            except GDBException:
+            except geosoft.gxapi.GXAPIError:
                 return ''
 
         ln,ls = self.lineNameSymb(line)
@@ -473,6 +497,7 @@ class GXdb():
             type    data type, one of gxapi.DB_CATEGORY_CHAN constants
             ======= ==============================================================
 
+        .. versionadded:: 9.1
         '''
 
         def getDetail(fn):
@@ -506,6 +531,8 @@ class GXdb():
 
         :param channel: channel name or symbol
         :param detail:  dictionary, see chanDetails
+
+        .. versionadded:: 9.1
         '''
 
         def setDetail(what,fn):
@@ -537,6 +564,8 @@ class GXdb():
 
         :param channel: channel name or symbol
         :return:        numpy dtype
+
+        .. versionadded:: 9.1
         '''
         return gxu.dtypeGX(self._db.get_chan_type(self.chanNameSymb(channel)[1]))
 
@@ -582,7 +611,7 @@ class GXdb():
             symb = gdb.newChan('X')
             symb = gdb.newChan('X', dtype=np.float64, details={'decimal':4})
 
-
+        .. versionadded:: 9.1
         '''
 
         symb = self._db.find_symb(name,gxapi.DB_SYMB_CHAN)
@@ -613,6 +642,8 @@ class GXdb():
         :param group:       group name for a grouped class
 
         :return:            line symbol
+
+        .. versionadded:: 9.1
         '''
 
         if not self._db.is_line_name(line):
@@ -635,8 +666,8 @@ class GXdb():
         if len(group) > 0:
             self._lockWrite(symb)
             try:
-                gxu.safeApiException(self._db.set_group_class, (symb, group), GDBException)
-            except GDBException:
+                self._db.set_group_class(symb, group)
+            except geosoft.gxapi.GXAPIError:
                 self._unlock(symb)
             except:
                 raise
@@ -649,6 +680,8 @@ class GXdb():
         Delete channel(s) by name or symbol.
 
         :param channels: channel name or symbol, or a list of channel names or symbols
+
+        .. versionadded:: 9.1
         '''
 
         if not(type(channels) is list):
@@ -658,7 +691,7 @@ class GXdb():
 
             try:
                 cn,cs = self.chanNameSymb(s)
-            except:
+            except GDBException:
                 continue
 
             self._db.un_lock_all_symb()
@@ -671,6 +704,8 @@ class GXdb():
         Delete a line by name or symbol.
 
         :param s: line name or symbol
+
+        .. versionadded:: 9.1
         '''
         if type(s) == str:
             s = self._db.find_symb(s,gxapi.DB_SYMB_LINE)
@@ -690,6 +725,8 @@ class GXdb():
         | Use an "F" prefix to specify lines of a specific flight.
         |    For example, "F10" would select all lines of flight 10.
         | Use an empty string ("") to select/deselect ALL lines.
+
+        .. versionadded:: 9.1
         '''
 
         for s in selection.split(','):
@@ -703,19 +740,19 @@ class GXdb():
 
     def _lockRead(self,s):
         try:
-            gxu.safeApiException(self._db.lock_symb, (s, gxapi.DB_LOCK_READONLY, gxapi.DB_WAIT_INFINITY), GDBException)
+            self._db.lock_symb(s, gxapi.DB_LOCK_READONLY, gxapi.DB_WAIT_INFINITY)
         except GDBException:
             raise GDBException('Cannot read lock symbol {}'.format(s))
 
     def _lockWrite(self,s):
         try:
-            gxu.safeApiException(self._db.lock_symb, (s, gxapi.DB_LOCK_READWRITE, gxapi.DB_WAIT_INFINITY), GDBException)
+            self._db.lock_symb(s, gxapi.DB_LOCK_READWRITE, gxapi.DB_WAIT_INFINITY)
         except GDBException:
             raise GDBException('Cannot write lock symbol {}'.format(s))
 
     def _unlock(self,s):
         try:
-            gxu.safeApiException(self._db.un_lock_symb, (s,), GDBException)
+            self._db.un_lock_symb(s)
         except GDBException:
             pass
 
@@ -735,7 +772,7 @@ class GXdb():
         ''' return a VA copy of data in a 2D numpy array.'''
         va = gxapi.GXVA.create_ext(gxu.gxType(npdata.dtype), npdata.shape[0], npdata.shape[1])
         try:
-           va.set_array_np(0,0,npdata)
+            va.set_array_np(0,0,npdata)
         except:
             va.destroy()
             raise
@@ -792,6 +829,7 @@ class GXdb():
             npd,ch,fid = gdb.readLine('L100',channels=['X','Y','Z'])    #read a list of channels to (n,3) array
             npd,ch,fid = gdb.readLine('L100','X',np.int32)              #read channel 'X' into integer array
 
+        .. versionadded:: 9.1
         '''
 
         ln,ls = self.lineNameSymb(line)
@@ -810,17 +848,17 @@ class GXdb():
                 nX,sX = self.chanNameSymb(self._db.get_xyz_chan_symb(gxapi.DB_CHAN_X))
                 channels.append(nX)
             except GDBException:
-                nX = ''; pass
+                nX = ''
             try:
                 nY,sY = self.chanNameSymb(self._db.get_xyz_chan_symb(gxapi.DB_CHAN_Y))
                 channels.append(nY)
             except GDBException:
-                nY = ''; pass
+                nY = ''
             try:
                 nZ,sZ = self.chanNameSymb(self._db.get_xyz_chan_symb(gxapi.DB_CHAN_Z))
                 channels.append(nZ)
             except GDBException:
-                nZ = ''; pass
+                nZ = ''
 
             for c in ch:
                 if (c == nX) or (c == nY) or (c == nZ): continue
@@ -850,11 +888,8 @@ class GXdb():
 
         vvs = []
         for c in chNames:
-            try:
-                cs = self._db.find_symb(c, gxapi.DB_SYMB_CHAN)
-                vv = self._vvCh(ls,cs,dtype=dtype)
-            except:
-                raise
+            cs = self._db.find_symb(c, gxapi.DB_SYMB_CHAN)
+            vv = self._vvCh(ls,cs,dtype=dtype)
             vvs.append(vv)
 
         # determine fiducial
@@ -920,6 +955,8 @@ class GXdb():
         :param channel: channel name or symbol
         :param data:    numpy array (2D for VA channel)
         :param fid:     tuple (fid start, increment), default (0.0,1.0)
+
+        .. versionadded:: 9.1
         '''
 
         def cleanup():
@@ -964,6 +1001,8 @@ class GXdb():
         :param channels:    channel name or symbol list, or a single name/symbol.  If a single name is specified
                             for multi-column data, a VA channel is assumed.
         :param fid:         option fid tupple (start, increment), default (0.0,1.0)
+
+        .. versionadded:: 9.1
         '''
 
         if len(data.shape) == 1:
@@ -1004,6 +1043,8 @@ class GXdb():
         :param progress:        progress reporting function
         :param stop:            stop check function
         :return:                list of values, represented as a string
+
+        .. versionadded:: 9.1
         '''
 
         lines = list(self.lines(select=selected))

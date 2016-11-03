@@ -19,8 +19,7 @@ class UtilityException(Exception):
     pass
 
 # translation hook
-def _(string):
-    return string
+def _(s): return s
 
 ###############
 # static
@@ -28,6 +27,8 @@ def _(string):
 def dictFromLst(lst):
     '''
     :return:    python dictionary from a Geosoft GXLST
+
+    .. versionadded:: 9.1
     '''
     key = gxapi.str_ref()
     val = gxapi.str_ref()
@@ -48,6 +49,8 @@ def yearFromJulianDay2(jd1,jd2):
     :param jd1: part 1 Julian date (https://pypi.python.org/pypi/jdcal)
     :param jd2: part 2 Julian date
     :return: decimal Gregorian year (Western calendar year)
+
+    .. versionadded:: 9.1
     '''
     y, m, d, f = jd2gcal(jd1, jd2)
     jdt_1, jdt_2 = gcal2jd(y, 1, 1)
@@ -94,6 +97,8 @@ def rdecode_err(s):
 
     Note that mm and ss.ss can go over 60.0 and will be decoded as minutes or seconds
     as presented. For example, "20 90 0.00" will return 21.5.
+
+    .. versionadded:: 9.1
     """
 
     #nothing there, or a dummy
@@ -178,6 +183,8 @@ def rdecode(s):
     :return:    decoded number, gxapi.rDUMMY if unable to decode the string
 
     See rdecode_err(string) for more details.
+
+    .. versionadded:: 9.1
     """
 
     try:
@@ -216,6 +223,7 @@ def decode(s,f):
         ValueError if there is a problem with the string.
         ========== ======================================
 
+    .. versionadded:: 9.1
     '''
 
     #always use Unicode for strings
@@ -254,6 +262,8 @@ def decode(s,f):
 def gxType(dtype):
     '''
     :return:    GX type for a numpy dtype
+
+    .. versionadded:: 9.1
     '''
     if dtype is None:
         return gxapi.GS_TYPE_DEFAULT
@@ -279,6 +289,8 @@ def gxType(dtype):
 def dtypeGX(gtype):
     '''
     :return:    numpy dtype from a GX type
+
+    .. versionadded:: 9.1
     '''
     if gtype == gxapi.GS_TYPE_DEFAULT: return None
     if gtype == gxapi.GS_DOUBLE:   return np.dtype(np.float)
@@ -298,6 +310,8 @@ def dtypeGX(gtype):
 def gxDummy(dtype):
     '''
     :return:    GX dummy for this dtype
+
+    .. versionadded:: 9.1
     '''
     dtype = np.dtype(dtype)
     if dtype == np.float: return gxapi.rDUMMY
@@ -320,6 +334,7 @@ def dummyMask(npd):
     :param npd: numpy data array
     :return:    numpy 1D array, True for any row that had a dummy in any data field
 
+    .. versionadded:: 9.1
     '''
 
     if len(npd.shape) != 2:
@@ -333,6 +348,8 @@ def save_parameters(group='_', parms={}):
 
     :param group:   parameter block group name
     :param parms:   dict containing named parameter settings
+
+    .. versionadded:: 9.1
     '''
 
     for k,v in parms.items():
@@ -345,6 +362,8 @@ def get_parameters(group='_', parms=None):
     :param group:   name in the parameter block group name
     :param parms:   if specified only these items are found and returned, otherwise all are found and returned
     :return:        dictionary containing group parameters
+
+    .. versionadded:: 9.1
     '''
 
     sv = gxapi.str_ref()
@@ -368,44 +387,40 @@ def get_parameters(group='_', parms=None):
 
 
 def project_path():
-    ''' return the Geosoft project folder path'''
+    '''
+    Return the Geosoft project folder path.
+
+    .. versionadded:: 9.1
+    '''
     path = gxapi.str_ref()
     gxapi.GXSYS.get_path(gxapi.SYS_PATH_LOCAL, path)
     return path.value.replace('\\', '/')
 
 def user_path():
-    ''' return the Geosoft user configurations folder path'''
+    '''
+    Return the Geosoft user configurations folder path.
+
+    .. versionadded:: 9.1
+    '''
     path = gxapi.str_ref()
     gxapi.GXSYS.get_path(gxapi.SYS_PATH_GEOSOFT_USER, path)
     return path.value.replace('\\', '/')
 
 def temp_path():
-    ''' return the Geosoft temporary folder path'''
+    '''
+    Return the Geosoft temporary folder path.
+
+    .. versionadded:: 9.1
+    '''
     path = gxapi.str_ref()
     gxapi.GXSYS.get_path(gxapi.SYS_PATH_GEOTEMP, path)
     return path.value.replace('\\', '/')
 
-def safeApiException(fn, args, EClass=Exception):
-    '''
-    This is a helper method that turns a gxapi.GXError and gxapi.GXAPIError exceptions into exception of class EClass so
-    you can catch and deal with it. The GXError message is provided in the EClass, traceback of original
-    exception is preserved.
-    
-
-    :param fn:      gxapi finction to call
-    :param args:    arguments as a tuple
-    :param EClass:  exception class returned, default is Exception
-    :returns:       function return
-    '''
-
-    try:
-        return fn(*args)
-    except (gxapi.GXError, gxapi.GXAPIError):
-        exc_class, exc, tb = sys.exc_info()
-        raise EClass(str(exc)).with_traceback(tb)
-
 def _temp_dict_file_name():
-    ''' name of the expected python dictionary as a json file from run_external_python()'''
+    '''Name of the expected python dictionary as a json file from run_external_python().
+
+    .. versionadded:: 9.1
+    '''
     return '__shared_dictionary__'
 
 def set_shared_dict(dict=None):
@@ -414,6 +429,8 @@ def set_shared_dict(dict=None):
     This is a companion file to run_external_python().
     
     :param dict:  dictionary of parameters to save
+
+    .. versionadded:: 9.1
     '''
 
     # if no ditionary, pop the existing one if it is there
@@ -428,6 +445,8 @@ def get_shared_dict():
     ''' 
     Get a dictionary shared by an external application.
     The shared dictionary is cleared (popped) so a subsequent call will return an empty dictionary.
+
+    .. versionadded:: 9.1
     '''
 
     try:
@@ -453,6 +472,8 @@ def run_external_python(script, script_args='', python_args='', dict=None, conso
     :param python_args: command line arguments as a string
     :param console:     True (default) will create a separate console for the process.
     :return:            dictionary registered gxpy.utility.run_return(dict)
+
+    .. versionadded:: 9.1
     '''
 
     if not os.path.isfile(script):
