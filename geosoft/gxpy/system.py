@@ -1,6 +1,8 @@
 import time
 import inspect
-import os, gc, shutil
+import os
+import gc
+import shutil
 import zipfile
 import threading
 from itertools import count
@@ -8,8 +10,6 @@ import geosoft
 
 __version__ = geosoft.__version__
 
-###############
-# local statics
 
 def _logit(fn, *args, **kw):
     """function console printing decorator"""
@@ -21,9 +21,6 @@ def _logit(fn, *args, **kw):
 
     return logger
 
-
-#############
-# statics
 
 def app_name():
     """
@@ -46,16 +43,14 @@ def func_name():
     """
     return inspect.stack()[1][3]
 
-#####################################################
-# very simple threading
-# From: http://wiki.scipy.org/Cookbook/Multithreading
 
 def _parallel_foreach(f, l, threads=3, return_=False):
     """
-    Apply f to each element of l, in parallel, called by parallel_map()
+    Apply f to each element of l, in parallel, called by parallel_map().
+    From: http://wiki.scipy.org/Cookbook/Multithreading
     """
 
-    if threads>1:
+    if threads > 1:
         iteratorlock = threading.Lock()
         exceptions = []
         if return_:
@@ -64,7 +59,6 @@ def _parallel_foreach(f, l, threads=3, return_=False):
             i = zip(count(), l.__iter__())
         else:
             i = l.__iter__()
-
 
         def runall():
             while True:
@@ -80,7 +74,7 @@ def _parallel_foreach(f, l, threads=3, return_=False):
                     return
                 try:
                     if return_:
-                        n,x = v
+                        n, x = v
                         d[n] = f(x)
                     else:
                         f(v)
@@ -102,7 +96,7 @@ def _parallel_foreach(f, l, threads=3, return_=False):
             raise (a, b, c)
         if return_:
             r = sorted(d.items())
-            return [v for (n,v) in r]
+            return [v for (n, v) in r]
     else:
         if return_:
             return [f(v) for v in l]
@@ -110,6 +104,7 @@ def _parallel_foreach(f, l, threads=3, return_=False):
             for v in l:
                 f(v)
             return
+
 
 def parallel_map(f, l, threads=None):
     """
@@ -185,18 +180,20 @@ def wait_on_file(fileName, wait=100, retries=10):
 
     tries = 0
     while True:
-        if os.access(fileName,os.W_OK):
+        if os.access(fileName, os.W_OK):
             return
         if tries >= retries:
             raise GXSysException('Unable to access {}'.format(fileName))
         tries += 1
         time.sleep(wait / 1000.0)
 
+
 def _unzip(zip_file_name, folder):
     with zipfile.ZipFile(zip_file_name) as zf:
         zf.extractall(folder)
         files = zf.namelist()
     return files
+
 
 def unzip(zip_file_name, folder=None, report=None, checkready=25):
     """
@@ -234,7 +231,7 @@ def unzip(zip_file_name, folder=None, report=None, checkready=25):
         # check that files are ready for access
         if checkready > 0:
             for n in files:
-                wait_on_file(os.path.join(folder,n), wait=100, retries=int(checkready * 100))
+                wait_on_file(os.path.join(folder, n), wait=100, retries=int(checkready * 100))
 
     return folder, files
 

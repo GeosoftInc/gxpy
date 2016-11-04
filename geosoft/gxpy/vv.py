@@ -15,6 +15,7 @@ class VVException(Exception):
     '''
     pass
 
+
 class GXvv():
     '''
     VV class wrapper.
@@ -32,7 +33,7 @@ class GXvv():
     def __exit__(self, type, value, traceback):
         pass
 
-    def __init__(self, dtype=np.float, fid=(0.0,1.0)):
+    def __init__(self, dtype=np.float, fid=(0.0, 1.0)):
         self._gxtype = gxu.gxType(dtype)
         self._dtype = gxu.dtypeGX(self._gxtype)
         self._vv = gxapi.GXVV.create_ext(self._gxtype, 0)
@@ -41,7 +42,7 @@ class GXvv():
         self._sr = None
 
     @classmethod
-    def vvNp(cls, npdata, fid=(0.0,1.0)):
+    def vvNp(cls, npdata, fid=(0.0, 1.0)):
         """
         Create a VV from numpy data.
 
@@ -56,14 +57,14 @@ class GXvv():
 
         # numerical data
         if vv._gxtype >= 0:
-            vv._vv.set_data_np(0,npdata.flatten())
+            vv._vv.set_data_np(0, npdata.flatten())
 
         # strings
         else:
             npdata = npdata.flatten()
             ne = npdata.shape[0]
             for i in range(ne):
-                vv._vv.set_string(i,str(npdata[i]))
+                vv._vv.set_string(i, str(npdata[i]))
 
         return vv
 
@@ -75,9 +76,9 @@ class GXvv():
         '''
         start = self._vv.get_fid_start()
         incr = self._vv.get_fid_incr()
-        return (start,incr)
+        return (start, incr)
 
-    def setFid(self,fid):
+    def setFid(self, fid):
         '''
         Set the fiducial of the vv.
 
@@ -88,7 +89,7 @@ class GXvv():
         self._vv.set_fid_start(fid[0])
         self._vv.set_fid_incr(fid[1])
 
-    def reFid(self,fid,length):
+    def reFid(self, fid, length):
         '''
         Resample VV to a new fiducial and length
 
@@ -97,7 +98,7 @@ class GXvv():
 
         .. versionadded:: 9.1
         '''
-        self._vv.re_fid(fid[0],fid[1],length)
+        self._vv.re_fid(fid[0], fid[1], length)
 
     def length(self):
         '''
@@ -139,22 +140,22 @@ class GXvv():
         else:
             dtype = np.dtype(dtype)
 
-        if n == None:
+        if n is None:
             n = self.length() - start
         else:
-            n = min((self.length()-start),n)
+            n = min((self.length() - start), n)
 
         if (n <= 0) or (start < 0):
-            raise VVException('Cannot get (start,n) ({},{}) from vv of length {}'.format(start,n,self.length()))
+            raise VVException('Cannot get (start,n) ({},{}) from vv of length {}'.format(start, n, self.length()))
 
         # strings wanted
         if dtype.type is np.str_:
             if self._sr is None:
                 self._sr = gxapi.str_ref()
-            npd = np.empty((n,),dtype=dtype)
-            for i in range(start,start+n):
-                self._vv.get_string(i,self._sr)
-                npd[i-start] = self._sr.value
+            npd = np.empty((n,), dtype=dtype)
+            for i in range(start, start + n):
+                self._vv.get_string(i, self._sr)
+                npd[i - start] = self._sr.value
 
         # numeric wanted
         else:
@@ -166,18 +167,18 @@ class GXvv():
                 else:
                     vvd = gxapi.GXVV.create_ext(gxapi.GS_DOUBLE, n)
 
-                vvd.copy(self._vv) # this will do the conversion
-                npd = vvd.get_data_np(start,n,dtype)
+                vvd.copy(self._vv)  # this will do the conversion
+                npd = vvd.get_data_np(start, n, dtype)
 
             # numeric to numeric
             else:
-               npd = self._vv.get_data_np(start,n,dtype)
+                npd = self._vv.get_data_np(start, n, dtype)
 
         fid = self.fid()
-        start = fid[0] + start*fid[1]
-        return npd,(start,fid[1])
+        start = fid[0] + start * fid[1]
+        return npd, (start, fid[1])
 
-    def vv(self, npdata, fid=(0.0,1.0)):
+    def vv(self, npdata, fid=(0.0, 1.0)):
         """
         Return existing vv with numpy data.
 
@@ -192,13 +193,13 @@ class GXvv():
 
         # numerical data
         if self._gxtype >= 0:
-            self._vv.set_data_np(0,npdata)
+            self._vv.set_data_np(0, npdata)
 
         # strings
         else:
             ne = npdata.shape[0]
             for i in range(ne):
-                self._vv.set_string(i,str(npdata[i]))
+                self._vv.set_string(i, str(npdata[i]))
 
         self._vv.set_len(npdata.shape[0])
         self.setFid(fid)

@@ -5,8 +5,10 @@ from . import utility as gxu
 
 __version__ = geosoft.__version__
 
+
 # translation hook
-def _(s): return s
+def _(s):
+    return s
 
 #############
 # Constants
@@ -115,11 +117,12 @@ class GXipj():
         ipj._ipj.set_gxf(gxfs[0], gxfs[1], gxfs[2], gxfs[3], gxfs[4])
         ipj._ipj.get_display_name(ipj._sr)
         if ipj._sr.value == '*unknown':
-            raise IPJException(_('Unknown coordinate system:\n>{}\n>{}\n>{}\n>{}\n>{}').format(gxfs[0],
-                                                                                            gxfs[1],
-                                                                                            gxfs[2],
-                                                                                            gxfs[3],
-                                                                                            gxfs[4]))
+            raise IPJException(_('Unknown coordinate system:\n>{}\n>{}\n>{}\n>{}\n>{}').format(
+                gxfs[0],
+                gxfs[1],
+                gxfs[2],
+                gxfs[3],
+                gxfs[4]))
 
         ipj._coordinate_dict_()
         return ipj
@@ -382,7 +385,7 @@ class GXipj():
         .. versionadded:: 9.1
         """
 
-        lst = gxapi.GXLST.create( 1000)
+        lst = gxapi.GXLST.create(1000)
         gxapi.GXIPJ.get_list(what, datum_filter, lst)
         namelist = list(gxu.dictFromLst(lst).keys())
         namelist.sort(key=str.lower)

@@ -67,7 +67,8 @@ class UtilityException(Exception):
 
 
 # translation hook
-def _(s): return s
+def _(s):
+    return s
 
 ###############
 # static
@@ -205,7 +206,7 @@ def rdecode_err(s):
             sg = sg.upper()
             twelve = 0.0
             negsuf = negpre = 1.0
-            suf = sg[len(sg)-1]
+            suf = sg[len(sg) - 1]
             if (suf == 'S') or (suf == 'W'):
                 negsuf = -1.0
             if sg[0] == '-':
@@ -225,7 +226,7 @@ def rdecode_err(s):
                 seconds = float(dms[2])
             else:
                 seconds = 0.0
-            return (degrees + (minutes + seconds/60.0)/60.0) * negpre * negsuf + twelve
+            return (degrees + (minutes + seconds / 60.0) / 60.0) * negpre * negsuf + twelve
 
 
 def rdecode(s):
@@ -281,7 +282,7 @@ def decode(s, f):
 
     # always use Unicode for strings
     if f[0] in "Sa":
-        f = 'U'+f[1:]
+        f = 'U' + f[1:]
 
     # handle strings
     if f[:1] == 'U':

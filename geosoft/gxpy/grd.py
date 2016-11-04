@@ -1,7 +1,9 @@
-#TODO: abstract grid file decorations to a dict
-#TODO: add __enter__() __exit__() to support with construct
+# TODO: abstract grid file decorations to a dict
+# TODO: add __enter__() __exit__() to support with construct
 
-import os,gc,time
+import os
+import gc
+import time
 import numpy as np
 
 import geosoft
@@ -12,6 +14,7 @@ from . import utility as gxu
 
 __version__ = geosoft.__version__
 
+
 class GRDException(Exception):
     '''
     Exceptions from this module.
@@ -20,19 +23,18 @@ class GRDException(Exception):
     '''
     pass
 
-#################
 # constants
+FILE_READ = 0
+FILE_READWRITE = 1     # file exists, but can change properties
+FILE_NEW = 2
 
-FILE_READ          = 0
-FILE_READWRITE     = 1     #file exists, but can change properties
-FILE_NEW           = 2
 
 class GXgrd():
     """
     Grid and image class.
-    
+
     Creation options:
-    
+
         ====== =============================
         open() open an existing grid/image
         new()  create a new grid/image
@@ -46,10 +48,10 @@ class GXgrd():
     _filename = None
 
     def __repr__(self):
-        return "{}({})".format(self.__class__,self.__dict__)
+        return "{}({})".format(self.__class__, self.__dict__)
 
     def __str__(self):
-        if self._filename == None:
+        if self._filename is None:
             return '__memory__'
         else:
             return self._filename
@@ -66,16 +68,16 @@ class GXgrd():
         # grid. Though this is actually a system problem, we deal with this problem by attempting
         # to open a grid three times before raising an error.
 
-        #rebuild a clean file name
+        # rebuild a clean file name
         self._hgd = False
-        if (fileName == None) or (len(fileName.strip()) == 0):
+        if (fileName is None) or (len(fileName.strip()) == 0):
             self._filename = None
         else:
             self._np = GXgrd.nameParts(fileName)
-            self._filename = GXgrd.decorateName(os.path.join(self._np[0],self._np[1]),self._np[4])
+            self._filename = GXgrd.decorateName(os.path.join(self._np[0], self._np[1]), self._np[4])
 
             if mode == FILE_NEW:
-                #special case - HGD file, must work with a memory grid, save to HGD at end
+                # special case - HGD file, must work with a memory grid, save to HGD at end
                 if self._np[4].lower() == 'hgd':
                     self._hgd = True
 
@@ -86,10 +88,10 @@ class GXgrd():
 
         self._img = None
         attempt = 0
-        while self._img == None:
+        while self._img is None:
 
             try:
-                if (self._filename == None):
+                if (self._filename is None):
                     self._img = gxapi.GXIMG.create(gxu.gxType(dtype), kx, dim[0], dim[1])
 
                 elif mode == FILE_NEW:
@@ -111,7 +113,7 @@ class GXgrd():
                 gc.collect()
                 attempt += 1
                 if attempt > 10:
-                    raise GRDException('Cannot open: {}\nBecause: {}'.format(self._filename,str(e)))
+                    raise GRDException('Cannot open: {}\nBecause: {}'.format(self._filename, str(e)))
 
     def __del__(self):
 
@@ -127,28 +129,25 @@ class GXgrd():
             self._img = None
             del img
 
-
             # delete files
-            if self._filename != None:
+            if self._filename is not None:
 
                 fn = GXgrd.nameParts(self._filename)
-                filename = os.path.join(fn[0],fn[1])
+                filename = os.path.join(fn[0], fn[1])
                 ext = fn[3]
                 df(filename)
-                df(filename+'.gi')
-                df(filename+'.xml')
+                df(filename + '.gi')
+                df(filename + '.xml')
 
-                #hgd files
+                # hgd files
                 if ext == '.hgd':
                     for i in range(16):
                         df(filename + str(i))
 
         elif self._hgd:
             # an HGD memory grid was made, save it to an HGD file
-            gxapi.GXHGD.h_create_img(self._img, GXgrd.decorateName(self._filename,'HGD'))
+            gxapi.GXHGD.h_create_img(self._img, GXgrd.decorateName(self._filename, 'HGD'))
             gc.collect()
-
-
 
     @classmethod
     def open(cls, fileName, dtype=None, mode=None):
@@ -168,12 +167,11 @@ class GXgrd():
         .. versionadded:: 9.1
         """
 
-        if mode == None:
+        if mode is None:
             mode = FILE_READ
         grd = cls(fileName, dtype=dtype, mode=mode)
 
         return grd
-
 
     @classmethod
     def new(cls, fileName=None, properties={}):
@@ -187,14 +185,14 @@ class GXgrd():
         .. versionadded:: 9.1
         """
 
-        #set basic grid properties
+        # set basic grid properties
         dtype = properties.get('dtype', None)
-        nx = properties.get('nx',0)
-        ny = properties.get('ny',0)
+        nx = properties.get('nx', 0)
+        ny = properties.get('ny', 0)
         if (nx <= 0) or (ny <= 0):
-            raise ValueError('Grid dimension ({},{}) must be > 0'.format(nx,ny))
+            raise ValueError('Grid dimension ({},{}) must be > 0'.format(nx, ny))
 
-        grd = cls(fileName, dtype=dtype, mode=FILE_NEW, dim=(nx,ny))
+        grd = cls(fileName, dtype=dtype, mode=FILE_NEW, dim=(nx, ny))
         grd.setProperties(properties)
 
         return grd
@@ -255,7 +253,7 @@ class GXgrd():
         fn = os.path.dirname(path)
         bn = os.path.basename(path).split('(')
         name = bn[0]
-        root,ext = os.path.splitext(bn[0])
+        root, ext = os.path.splitext(bn[0])
         if len(bn) > 1:
             dec = bn[1].split(')')[0]
         else:
@@ -267,10 +265,10 @@ class GXgrd():
                 ext = '.grd'
                 name = name + ext
 
-        return fn,name,root,ext,dec
+        return fn, name, root, ext, dec
 
     @staticmethod
-    def decorateName(name,decorations=''):
+    def decorateName(name, decorations=''):
         """
         Properly decorate a grid name.
 
@@ -284,7 +282,8 @@ class GXgrd():
         if len(decorations.strip()) > 0:
             d = decorations.lstrip('(')
             end = d.find(')')
-            if end != -1: d = d[:end]
+            if end != -1:
+                d = d[:end]
             name = name.split('(')[0]
         else:
             name = name.strip()
@@ -322,14 +321,14 @@ class GXgrd():
         properties['rot'] = self._img.query_double(gxapi.IMG_QUERY_rROT)
         properties['dtype'] = self.dtype()
         np = GXgrd.nameParts(self._filename)
-        properties['filename'] = os.path.join(np[0],np[1])
+        properties['filename'] = os.path.join(np[0], np[1])
         if len(np[4]) > 0:
             properties['gridtype'] = np[4].split(';')[0]
         else:
             properties['gridtype'] = np[3][1:]
         properties['decoration'] = np[4]
 
-        #get coordinate system
+        # get coordinate system
         ipj = gxipj.GXipj()
         self._img.get_ipj(ipj._ipj)
         properties['ipj'] = ipj
@@ -360,16 +359,16 @@ class GXgrd():
         if self._readonly:
             raise ValueError('{} opened as read-only, cannot set properties.'.format(self._filename))
 
-        dx = properties.get('dx',1.0)
-        dy = properties.get('dy',dx)
+        dx = properties.get('dx', 1.0)
+        dy = properties.get('dy', dx)
         self._img.set_info(dx, dy,
-                           properties.get('x0',0.0),
-                           properties.get('y0',0.0),
-                           properties.get('rot',0.0))
-        ipj = properties.get('ipj',None)
-        if ipj != None:
+                           properties.get('x0', 0.0),
+                           properties.get('y0', 0.0),
+                           properties.get('rot', 0.0))
+        ipj = properties.get('ipj', None)
+        if ipj is not None:
             if isinstance(ipj, str):
-                ipj = gxipj.GXipj.from_name( ipj)
+                ipj = gxipj.GXipj.from_name(ipj)
             self._img.set_ipj(ipj._ipj)
 
     def saveAs(self, fileName, dtype=None):
@@ -387,16 +386,16 @@ class GXgrd():
         if not (dtype is None):
             p['dtype'] = dtype
 
-        savegrid = GXgrd.new( fileName, p)
+        savegrid = GXgrd.new(fileName, p)
         self._img.copy(savegrid._img)
         del savegrid
         gc.collect()
 
-        return GXgrd.open( fileName, mode= FILE_READWRITE)
+        return GXgrd.open(fileName, mode=FILE_READWRITE)
 
     def _geth_pg(self):
         '''Get an hpg for the grid, adding the handle to the class so it does not get destroyed.'''
-        if self._hpg == None:
+        if self._hpg is None:
             self._hpg = self._img.geth_pg()
         return self._hpg
 
@@ -414,30 +413,30 @@ class GXgrd():
         p = self.properties()
         gnx = p.get('nx')
         gny = p.get('ny')
-        if nx == None:
+        if nx is None:
             nx = gnx - x0
-        if ny == None:
+        if ny is None:
             ny = gny - y0
         mx = x0 + nx
         my = y0 + ny
-        if  ((x0 >= gnx) or (y0 >= gny) or\
-             (x0 < 0) or (y0 < 0) or\
-             (nx <= 0) or (ny <= 0) or\
-             (mx > gnx) or (my > gny)):
-            raise GRDException('Window x0,y0,mx,my({},{},{},{}) out of bounds ({},{})'.format(x0,y0,mx,my,gnx,gny))
+        if ((x0 >= gnx) or (y0 >= gny) or
+                (x0 < 0) or (y0 < 0) or
+                (nx <= 0) or (ny <= 0) or
+                (mx > gnx) or (my > gny)):
+            raise GRDException('Window x0,y0,mx,my({},{},{},{}) out of bounds ({},{})'.format(x0, y0, mx, my, gnx, gny))
 
         if p.get('rot') != 0.0:
             raise ('Cannot window a rotated grid.')
 
-        #create new grid
+        # create new grid
         p['nx'] = nx
         p['ny'] = ny
         p['x0'] = p.get('x0') + p.get('dx') * x0
         p['y0'] = p.get('y0') + p.get('dy') * y0
-        wgd = self.new(name,p)
+        wgd = self.new(name, p)
         wpg = wgd._geth_pg()
         gpg = self._geth_pg()
-        wpg.copy_subset(gpg,0,0,y0,x0,ny,nx)
+        wpg.copy_subset(gpg, 0, 0, y0, x0, ny, nx)
 
         return wgd
 
@@ -457,7 +456,7 @@ class GXgrd():
         vv = gxvv.GXvv(self.dtype())
         iy = iy0
         for i in range(ny):
-            self._img.write_y(iy, ix0, 0, vv.vv(data[i,:])._vv)
+            self._img.write_y(iy, ix0, 0, vv.vv(data[i, :])._vv)
             iy += order
 
     def read_rows(self, ix0=0, iy0=0):
@@ -471,9 +470,7 @@ class GXgrd():
         '''
 
 
-#################################
 # grid utilities
-
 def array_locations(properties, z=0.):
     '''
     Create an array of (x,y,z) points for a grid defined by properties
@@ -486,12 +483,13 @@ def array_locations(properties, z=0.):
     nx = properties.get('nx')
     ny = properties.get('ny')
     dx = properties.get('dx')
-    dy = properties.get('dy',dx)
-    offset = np.array([properties.get('x0',0.), properties.get('y0',0.), z])
+    dy = properties.get('dy', dx)
+    offset = np.array([properties.get('x0', 0.), properties.get('y0', 0.), z])
     loc = np.zeros((ny, nx, 3))
-    loc[:,:,0:2] = np.mgrid[0:(nx-0.5)*dx:dx, 0:(ny-0.5)*dy:dy].swapaxes(0,2)
+    loc[:, :, 0:2] = np.mgrid[0: (nx - 0.5) * dx: dx, 0: (ny - 0.5) * dy: dy].swapaxes(0, 2)
 
     return loc + offset
+
 
 def gridMosaic(mosaic, gridList, typeDecoration='', report=None):
     """
@@ -509,82 +507,84 @@ def gridMosaic(mosaic, gridList, typeDecoration='', report=None):
     def props(gn, repro=None):
         g = GXgrd.open(gn)
         if repro:
-            g._img.create_projected2(repro[0],repro[1])
+            g._img.create_projected2(repro[0], repro[1])
         p = g.properties()
         return p
 
-
     def dimension(glist):
 
-        def dimg(g,repro=None):
-            p = props(g,repro)
+        def dimg(g, repro=None):
+            p = props(g, repro)
             x0 = p.get('x0')
             y0 = p.get('y0')
-            xM = x0 + (p.get('nx')-1) * p.get('dx')
-            yM = y0 + (p.get('ny')-1) * p.get('dy')
+            xM = x0 + (p.get('nx') - 1) * p.get('dx')
+            yM = y0 + (p.get('ny') - 1) * p.get('dy')
             ipj = p.get('ipj')._ipj
             cell = p.get('dx')
-            return x0,y0,xM,yM,(ipj,cell)
+            return x0, y0, xM, yM, (ipj, cell)
 
-        def ndim(x0,xM,dX):
-            return int((xM-x0+dX/2.0)/dX) + 1
+        def ndim(x0, xM, dX):
+            return int((xM - x0 + dX / 2.0) / dX) + 1
 
-
-        x0,y0,xM,yM,repro = dimg(glist[0])
+        x0, y0, xM, yM, repro = dimg(glist[0])
         for g in glist[1:]:
-            xx0,yy0,xxM,yyM,r = dimg(g,repro)
-            if xx0 < x0: x0 = xx0
-            if yy0 < y0: y0 = yy0
-            if xxM > xM: xM = xxM
-            if yyM > yM: yM = yyM
+            xx0, yy0, xxM, yyM, r = dimg(g, repro)
+            if xx0 < x0:
+                x0 = xx0
+            if yy0 < y0:
+                y0 = yy0
+            if xxM > xM:
+                xM = xxM
+            if yyM > yM:
+                yM = yyM
 
-        #calculate new grid dimension
+        # calculate new grid dimension
         p = props(glist[0])
-        nX = ndim(x0,xM,p.get('dx'))
-        nY = ndim(y0,yM,p.get('dy'))
+        nX = ndim(x0, xM, p.get('dx'))
+        nY = ndim(y0, yM, p.get('dy'))
 
-        return x0,y0,nX,nY,xM,yM
+        return x0, y0, nX, nY, xM, yM
 
-    def locate(x0,y0,p):
+    def locate(x0, y0, p):
 
         dx = p.get('dx')
         dy = p.get('dy')
         dsx = round((p.get('x0') - x0) / dx)
         dsy = round((p.get('y0') - y0) / dy)
 
-        return dsx,dsy
+        return dsx, dsy
 
-    def paste(gn,mpg):
+    def paste(gn, mpg):
         g = GXgrd.open(gn)
         p = g.properties()
         nX = p.get('nx')
         nY = p.get('ny')
         gpg = g._geth_pg()
-        destx, desty = locate(x0,y0,p)
+        destx, desty = locate(x0, y0, p)
         if report:
-            report('    +{} nx,ny({},{})'.format(g,nX,nY))
-            report('     Copy ({},{}) -> ({},{}) of ({},{})'.format(nX,nY,destx,desty,mnx,mny))
-        mpg.copy_subset(gpg,desty,destx,0,0,nY,nX)
+            report('    +{} nx,ny({},{})'.format(g, nX, nY))
+            report('     Copy ({},{}) -> ({},{}) of ({},{})'.format(nX, nY, destx, desty, mnx, mny))
+        mpg.copy_subset(gpg, desty, destx, 0, 0, nY, nX)
         return
 
     if len(gridList) == 0:
         raise ValueError('At least one grid is required')
 
-    #create list of grids, all matching on coordinate system of first grid
+    # create list of grids, all matching on coordinate system of first grid
     grids = []
     for i in range(len(gridList)):
-        grids.append(GXgrd.decorateName(gridList[i],typeDecoration))
+        grids.append(GXgrd.decorateName(gridList[i], typeDecoration))
 
-    #output grid
-    x0,y0,nX,nY,xm,ym = dimension(grids)
+    # output grid
+    x0, y0, nX, nY, xm, ym = dimension(grids)
     p = props(grids[0])
     p['x0'] = x0
     p['y0'] = y0
     p['nx'] = nX
     p['ny'] = nY
-    if report != None:
+    if report is not None:
         report('')
-        report('Mosaic: dim({},{}) x({},{}) y({},{}), cell({})...'.format(nX,nY,x0,xm,y0,ym,p.get('dx')))
+        report('Mosaic: dim({},{}) x({},{}) y({},{}), cell({})...'.format(nX, nY, x0, xm, y0, ym, p.get('dx')))
     master = GXgrd.new(mosaic, p)
     if report:
         p = master.properties()
@@ -592,20 +592,21 @@ def gridMosaic(mosaic, gridList, typeDecoration='', report=None):
         y0 = p.get('y0')
         nx = p.get('nx')
         ny = p.get('ny')
-        report('Memory image ready ({}) dim({},{}) x0,y0({},{})'.format(master,nx,ny,x0,y0))
+        report('Memory image ready ({}) dim({},{}) x0,y0({},{})'.format(master, nx, ny, x0, y0))
 
-    #paste grids onto master
+    # paste grids onto master
     pm = master.properties()
     mnx = pm.get('nx')
     mny = pm.get('ny')
     mpg = master._geth_pg()
     for g in grids:
-        paste(g,mpg)
+        paste(g, mpg)
 
     if report:
         report('Mosaic completed: {}'.format(mosaic))
 
     return master
+
 
 def gridBool(g1, g2, joinedGrid, opt=1, size=3, olap=1):
     """
