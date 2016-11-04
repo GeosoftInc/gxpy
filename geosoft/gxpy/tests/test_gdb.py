@@ -235,11 +235,37 @@ class Test(unittest.TestCase):
         npd,ch,fid = gdb.readLine('D590875',channels=['test'])
         self.assertEqual(npd.shape,(4,1))
         self.assertEqual(npd[:,0].tolist(),[1.0,2.0,3.0,4.0])
-        self.assertEqual(fid[0],2.5)
-        self.assertEqual(fid[1],0.33)
+        self.assertEqual(fid[0], 2.5)
+        self.assertEqual(fid[1], 0.33)
 
         gdb.delChan('test')
 
+        gdb.discard()
+
+    def test_write_VA_GDB(self):
+        self.start(gsys.func_name())
+
+        gdb = self.gdb
+
+        gdb.delChan('testVA')
+        gdb.newChannel('testVA')
+        try:
+            gdb.writeDataChan('D590875', 'testVA',
+                              np.array([[1.0, 2.0, 3.0, 4.0], [10.0, 20.0, 30.0, 40.0], [15.0, 25.0, 35.0, 45.0]]))
+            self.assertTrue(False)
+        except gxgdb.GDBException:
+            pass
+
+        gdb.delChan('testVA')
+        gdb.writeDataChan('D590875', 'testVA',
+                          np.array([[1.0, 2.0, 3.0, 4.0], [10.0, 20.0, 30.0, 40.0], [15.0, 25.0, 35.0, 45.0]]))
+        npd,ch,fid = gdb.readLine('D590875', channels=['testVA'])
+        self.assertEqual(npd.shape,(3, 4))
+        self.assertEqual(npd[0, :].tolist(), [1.0, 2.0, 3.0, 4.0])
+        self.assertEqual(npd[1, :].tolist(), [10.0, 20.0, 30.0, 40.0])
+        self.assertEqual(npd[2, :].tolist(), [15.0, 25.0, 35.0, 45.0])
+
+        gdb.delChan('testVA')
         gdb.discard()
 
     def test_dummy_GDB(self):
