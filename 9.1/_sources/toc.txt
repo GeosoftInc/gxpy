@@ -10,3 +10,5 @@ Table of Contents
  
    geosoft.gxapi
    geosoft.gxpy
+
+   version_history.rst

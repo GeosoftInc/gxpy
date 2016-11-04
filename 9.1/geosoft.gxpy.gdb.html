@@ -71,6 +71,10 @@
 <dt id="geosoft.gxpy.gdb.GDBException">
 <em class="property">exception </em><code class="descclassname">geosoft.gxpy.gdb.</code><code class="descname">GDBException</code><a class="headerlink" href="#geosoft.gxpy.gdb.GDBException" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">Exception</span></code></p>
+<p>Exceptions from this module.</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.1.</span></p>
+</div>
 </dd></dl>
 
 <dl class="class">
@@ -157,9 +161,9 @@ deal with dummies).</p>
 <span class="n">lines</span> <span class="o">=</span> <span class="n">gdb</span><span class="o">.</span><span class="n">lines</span><span class="p">()</span>
 <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">:</span>
 
-    <span class="n">ln</span><span class="p">,</span><span class="n">lsymb</span> <span class="o">=</span> <span class="n">gdb</span><span class="o">.</span><span class="n">lineNameSymb</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+    <span class="n">ln</span><span class="p">,</span> <span class="n">lsymb</span> <span class="o">=</span> <span class="n">gdb</span><span class="o">.</span><span class="n">lineNameSymb</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
 
-    <span class="n">data</span><span class="p">,</span><span class="n">ch</span><span class="p">,</span><span class="n">fid</span> <span class="o">=</span> <span class="n">gdb</span><span class="o">.</span><span class="n">readLine</span><span class="p">(</span><span class="n">lsymb</span><span class="p">,</span> <span class="n">channels</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;X&#39;</span><span class="p">,</span><span class="s1">&#39;Y&#39;</span><span class="p">,</span><span class="s1">&#39;Z&#39;</span><span class="p">])</span>
+    <span class="n">data</span><span class="p">,</span> <span class="n">ch</span><span class="p">,</span> <span class="n">fid</span> <span class="o">=</span> <span class="n">gdb</span><span class="o">.</span><span class="n">readLine</span><span class="p">(</span><span class="n">lsymb</span><span class="p">,</span> <span class="n">channels</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;X&#39;</span><span class="p">,</span><span class="s1">&#39;Y&#39;</span><span class="p">,</span><span class="s1">&#39;Z&#39;</span><span class="p">])</span>
     <span class="n">dummy</span> <span class="o">=</span> <span class="n">gxu</span><span class="o">.</span><span class="n">gxDummy</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
 
     <span class="c1"># get a dummy mask, True for all rows with a dummy</span>
@@ -172,6 +176,9 @@ deal with dummies).</p>
     <span class="n">dist</span><span class="p">[</span><span class="n">dummyMask</span><span class="p">]</span> <span class="o">=</span> <span class="n">dummy</span>
     <span class="n">gdb</span><span class="o">.</span><span class="n">writeDataChan</span><span class="p">(</span><span class="n">lsymb</span><span class="p">,</span> <span class="s1">&#39;distance&#39;</span><span class="p">,</span> <span class="n">dist</span><span class="p">)</span>
 </pre></div>
+</div>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.1.</span></p>
 </div>
 <dl class="method">
 <dt id="geosoft.gxpy.gdb.GXdb.chanArray">
@@ -187,6 +194,9 @@ deal with dummies).</p>
 </tr>
 </tbody>
 </table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.1.</span></p>
+</div>
 </dd></dl>
 
 <dl class="method">
@@ -249,6 +259,9 @@ deal with dummies).</p>
 </tr>
 </tbody>
 </table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.1.</span></p>
+</div>
 </dd></dl>
 
 <dl class="method">
@@ -265,6 +278,9 @@ deal with dummies).</p>
 </tr>
 </tbody>
 </table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.1.</span></p>
+</div>
 </dd></dl>
 
 <dl class="method">
@@ -304,6 +320,9 @@ deal with dummies).</p>
 </tr>
 </tbody>
 </table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.1.</span></p>
+</div>
 </dd></dl>
 
 <dl class="method">
@@ -322,6 +341,9 @@ deal with dummies).</p>
 </tr>
 </tbody>
 </table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.1.</span></p>
+</div>
 </dd></dl>
 
 <dl class="method">
@@ -359,12 +381,18 @@ deal with dummies).</p>
 </tr>
 </tbody>
 </table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.1.</span></p>
+</div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxpy.gdb.GXdb.commit">
 <code class="descname">commit</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.gdb.GXdb.commit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Commit database changes.</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.1.</span></p>
+</div>
 </dd></dl>
 
 <dl class="method">
@@ -379,6 +407,9 @@ deal with dummies).</p>
 </tr>
 </tbody>
 </table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.1.</span></p>
+</div>
 </dd></dl>
 
 <dl class="method">
@@ -393,12 +424,18 @@ deal with dummies).</p>
 </tr>
 </tbody>
 </table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.1.</span></p>
+</div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxpy.gdb.GXdb.discard">
 <code class="descname">discard</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.gdb.GXdb.discard" title="Permalink to this definition">¶</a></dt>
 <dd><p>Discard database changes.</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.1.</span></p>
+</div>
 </dd></dl>
 
 <dl class="method">
@@ -412,6 +449,9 @@ deal with dummies).</p>
 </tr>
 </tbody>
 </table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.1.</span></p>
+</div>
 </dd></dl>
 
 <dl class="method">
@@ -468,6 +508,9 @@ deal with dummies).</p>
 </tr>
 </tbody>
 </table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.1.</span></p>
+</div>
 </dd></dl>
 
 <dl class="method">
@@ -492,6 +535,9 @@ deal with dummies).</p>
 </tr>
 </tbody>
 </table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.1.</span></p>
+</div>
 </dd></dl>
 
 <dl class="method">
@@ -500,6 +546,9 @@ deal with dummies).</p>
 <dd><p>List of lines in the database
 :param select=True:  True to return selected lines, false to return all lines
 :return: dictionary (line name: symbol)</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.1.</span></p>
+</div>
 </dd></dl>
 
 <dl class="method">
@@ -526,6 +575,9 @@ the field.</p>
 </tr>
 </tbody>
 </table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.1.</span></p>
+</div>
 </dd></dl>
 
 <dl class="classmethod">
@@ -550,11 +602,14 @@ the field.</p>
 </tr>
 </tbody>
 </table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.1.</span></p>
+</div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxpy.gdb.GXdb.newChannel">
-<code class="descname">newChannel</code><span class="sig-paren">(</span><em>name</em>, <em>dtype=&lt;class 'numpy.float64'&gt;</em>, <em>array=1</em>, <em>details={'width': 12</em>, <em>'decimal': 2}</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.gdb.GXdb.newChannel" title="Permalink to this definition">¶</a></dt>
+<code class="descname">newChannel</code><span class="sig-paren">(</span><em>name</em>, <em>dtype=&lt;class 'numpy.float64'&gt;</em>, <em>array=1</em>, <em>details={'decimal': 2</em>, <em>'width': 12}</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.gdb.GXdb.newChannel" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return a channel symbol, create if it does not exist.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -578,6 +633,9 @@ the field.</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">symb</span> <span class="o">=</span> <span class="n">gdb</span><span class="o">.</span><span class="n">newChan</span><span class="p">(</span><span class="s1">&#39;X&#39;</span><span class="p">)</span>
 <span class="n">symb</span> <span class="o">=</span> <span class="n">gdb</span><span class="o">.</span><span class="n">newChan</span><span class="p">(</span><span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">,</span> <span class="n">details</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;decimal&#39;</span><span class="p">:</span><span class="mi">4</span><span class="p">})</span>
 </pre></div>
+</div>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.1.</span></p>
 </div>
 </dd></dl>
 
@@ -616,6 +674,9 @@ the field.</p>
 </tr>
 </tbody>
 </table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.1.</span></p>
+</div>
 </dd></dl>
 
 <dl class="classmethod">
@@ -632,6 +693,9 @@ the field.</p>
 </tr>
 </tbody>
 </table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.1.</span></p>
+</div>
 </dd></dl>
 
 <dl class="method">
@@ -680,13 +744,16 @@ the field.</p>
 <span class="c1"># ch  - list of returned channels names, array channels expanded to array[0], array[1], ...</span>
 <span class="c1"># fid - tuple (fidStart,fidIncrement), channels resampled as necessary</span>
 
-<span class="n">npd</span><span class="p">,</span><span class="n">ch</span><span class="p">,</span><span class="n">fid</span> <span class="o">=</span> <span class="n">gdb</span><span class="o">.</span><span class="n">readLine</span><span class="p">(</span><span class="s1">&#39;L100&#39;</span><span class="p">)</span>                           <span class="c1">#read all channels in line &quot;L100&quot;</span>
-<span class="n">npd</span><span class="p">,</span><span class="n">ch</span><span class="p">,</span><span class="n">fid</span> <span class="o">=</span> <span class="n">gdb</span><span class="o">.</span><span class="n">readLine</span><span class="p">(</span><span class="mi">681</span><span class="p">)</span>                              <span class="c1">#read all channels in line symbol 681</span>
-<span class="n">npd</span><span class="p">,</span><span class="n">ch</span><span class="p">,</span><span class="n">fid</span> <span class="o">=</span> <span class="n">gdb</span><span class="o">.</span><span class="n">readLine</span><span class="p">(</span><span class="s1">&#39;L100&#39;</span><span class="p">,</span><span class="s1">&#39;X&#39;</span><span class="p">)</span>                       <span class="c1">#read channel &#39;X&#39; from line &#39;L100&#39;</span>
-<span class="n">npd</span><span class="p">,</span><span class="n">ch</span><span class="p">,</span><span class="n">fid</span> <span class="o">=</span> <span class="n">gdb</span><span class="o">.</span><span class="n">readLine</span><span class="p">(</span><span class="s1">&#39;L100&#39;</span><span class="p">,</span><span class="mi">2135</span><span class="p">)</span>                      <span class="c1">#read channel symbol 2135 from &#39;L100&quot;</span>
-<span class="n">npd</span><span class="p">,</span><span class="n">ch</span><span class="p">,</span><span class="n">fid</span> <span class="o">=</span> <span class="n">gdb</span><span class="o">.</span><span class="n">readLine</span><span class="p">(</span><span class="s1">&#39;L100&#39;</span><span class="p">,</span><span class="n">channels</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;X&#39;</span><span class="p">,</span><span class="s1">&#39;Y&#39;</span><span class="p">,</span><span class="s1">&#39;Z&#39;</span><span class="p">])</span>    <span class="c1">#read a list of channels to (n,3) array</span>
-<span class="n">npd</span><span class="p">,</span><span class="n">ch</span><span class="p">,</span><span class="n">fid</span> <span class="o">=</span> <span class="n">gdb</span><span class="o">.</span><span class="n">readLine</span><span class="p">(</span><span class="s1">&#39;L100&#39;</span><span class="p">,</span><span class="s1">&#39;X&#39;</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">)</span>              <span class="c1">#read channel &#39;X&#39; into integer array</span>
+<span class="n">npd</span><span class="p">,</span><span class="n">ch</span><span class="p">,</span><span class="n">fid</span> <span class="o">=</span> <span class="n">gdb</span><span class="o">.</span><span class="n">readLine</span><span class="p">(</span><span class="s1">&#39;L100&#39;</span><span class="p">)</span>                           <span class="c1"># read all channels in line &quot;L100&quot;</span>
+<span class="n">npd</span><span class="p">,</span><span class="n">ch</span><span class="p">,</span><span class="n">fid</span> <span class="o">=</span> <span class="n">gdb</span><span class="o">.</span><span class="n">readLine</span><span class="p">(</span><span class="mi">681</span><span class="p">)</span>                              <span class="c1"># read all channels in line symbol 681</span>
+<span class="n">npd</span><span class="p">,</span><span class="n">ch</span><span class="p">,</span><span class="n">fid</span> <span class="o">=</span> <span class="n">gdb</span><span class="o">.</span><span class="n">readLine</span><span class="p">(</span><span class="s1">&#39;L100&#39;</span><span class="p">,</span><span class="s1">&#39;X&#39;</span><span class="p">)</span>                       <span class="c1"># read channel &#39;X&#39; from line &#39;L100&#39;</span>
+<span class="n">npd</span><span class="p">,</span><span class="n">ch</span><span class="p">,</span><span class="n">fid</span> <span class="o">=</span> <span class="n">gdb</span><span class="o">.</span><span class="n">readLine</span><span class="p">(</span><span class="s1">&#39;L100&#39;</span><span class="p">,</span><span class="mi">2135</span><span class="p">)</span>                      <span class="c1"># read channel symbol 2135 from &#39;L100&quot;</span>
+<span class="n">npd</span><span class="p">,</span><span class="n">ch</span><span class="p">,</span><span class="n">fid</span> <span class="o">=</span> <span class="n">gdb</span><span class="o">.</span><span class="n">readLine</span><span class="p">(</span><span class="s1">&#39;L100&#39;</span><span class="p">,</span><span class="n">channels</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;X&#39;</span><span class="p">,</span><span class="s1">&#39;Y&#39;</span><span class="p">,</span><span class="s1">&#39;Z&#39;</span><span class="p">])</span>    <span class="c1"># read a list of channels to (n,3) array</span>
+<span class="n">npd</span><span class="p">,</span><span class="n">ch</span><span class="p">,</span><span class="n">fid</span> <span class="o">=</span> <span class="n">gdb</span><span class="o">.</span><span class="n">readLine</span><span class="p">(</span><span class="s1">&#39;L100&#39;</span><span class="p">,</span><span class="s1">&#39;X&#39;</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">)</span>              <span class="c1"># read channel &#39;X&#39; into integer array</span>
 </pre></div>
+</div>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.1.</span></p>
 </div>
 </dd></dl>
 
@@ -704,6 +771,9 @@ the field.</p>
 <div class="line">For example, &#8220;F10&#8221; would select all lines of flight 10.</div>
 </div>
 <div class="line">Use an empty string (&#8220;&#8221;) to select/deselect ALL lines.</div>
+</div>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.1.</span></p>
 </div>
 </dd></dl>
 
@@ -725,6 +795,9 @@ the field.</p>
 </tr>
 </tbody>
 </table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.1.</span></p>
+</div>
 </dd></dl>
 
 <dl class="method">
@@ -746,6 +819,9 @@ for multi-column data, a VA channel is assumed.</li>
 </tr>
 </tbody>
 </table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.1.</span></p>
+</div>
 </dd></dl>
 
 </dd></dl>

@@ -72,6 +72,10 @@
 <dt id="geosoft.gxpy.gx.GXException">
 <em class="property">exception </em><code class="descclassname">geosoft.gxpy.gx.</code><code class="descname">GXException</code><a class="headerlink" href="#geosoft.gxpy.gx.GXException" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">Exception</span></code></p>
+<p>Exceptions from this module.</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.1.</span></p>
+</div>
 </dd></dl>
 
 <dl class="class">
@@ -83,26 +87,20 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>app</strong> &#8211; application name, default is the script name</li>
-<li><strong>version</strong> &#8211; application version number, default 0.</li>
+<li><strong>version</strong> &#8211; application version number, default geosoft version</li>
+<li><strong>parent_window</strong> &#8211; ID of the parent window if needed, default 0.</li>
 </ul>
 </td>
 </tr>
-</tbody>
-</table>
-<p>:param parent_window    ID of the parent window if needed.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Members:</th><td class="field-body"><table class="first docutils field-list" frame="void" rules="none">
+<tr class="field-even field"><th class="field-name">Members:</th><td class="field-body"><table class="first docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">gxapi:</th><td class="field-body">GX context to be used to call geosoft.gxapi methods</td>
 </tr>
-<tr class="field-even field"><th class="field-name">gid:</th><td class="field-body">Geosoft ID</td>
+<tr class="field-even field"><th class="field-name">gid:</th><td class="field-body">User&#8217;s Geosoft ID</td>
 </tr>
 </tbody>
 </table>
@@ -120,6 +118,9 @@
 </tr>
 </tbody>
 </table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.1.</span></p>
+</div>
 <dl class="method">
 <dt id="geosoft.gxpy.gx.GXpy.active_wind_id">
 <code class="descname">active_wind_id</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.gx.GXpy.active_wind_id" title="Permalink to this definition">¶</a></dt>
@@ -127,28 +128,33 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">the active window ID (HWND cast to unsigned for Windows).</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The active window ID (HWND cast to unsigned for Windows).</td>
 </tr>
 </tbody>
 </table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.1.</span></p>
+</div>
 </dd></dl>
 
 <dl class="method">
-<dt id="geosoft.gxpy.gx.GXpy.display_message">
-<code class="descname">display_message</code><span class="sig-paren">(</span><em>title</em>, <em>message</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.gx.GXpy.display_message" title="Permalink to this definition">¶</a></dt>
-<dd><p>display a message to the user.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="geosoft.gxpy.gx.GXpy.dissable_app">
-<code class="descname">dissable_app</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.gx.GXpy.dissable_app" title="Permalink to this definition">¶</a></dt>
-<dd><p>disables application windows to allow modal Python UI.  Call before opening your own UI window.</p>
+<dt id="geosoft.gxpy.gx.GXpy.disable_app">
+<code class="descname">disable_app</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.gx.GXpy.disable_app" title="Permalink to this definition">¶</a></dt>
+<dd><p>Disables application windows to allow modal Python UI.
+Call before opening your own UI window.</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.1.</span></p>
+</div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxpy.gx.GXpy.enable_app">
 <code class="descname">enable_app</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.gx.GXpy.enable_app" title="Permalink to this definition">¶</a></dt>
-<dd><p>enables application windows to allow modal Python UI.  Call before returning control to OM.</p>
+<dd><p>Enables application windows to allow modal Python UI.
+Call before returning control to OM.</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.1.</span></p>
+</div>
 </dd></dl>
 
 <dl class="method">
@@ -158,10 +164,13 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">current entitlements as a dictionary</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The current user entitlements as a dictionary.</td>
 </tr>
 </tbody>
 </table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.1.</span></p>
+</div>
 </dd></dl>
 
 <dl class="method">
@@ -171,10 +180,13 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Geosoft environment information as a dictionary</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Geosoft environment information as a dictionary.</td>
 </tr>
 </tbody>
 </table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.1.</span></p>
+</div>
 </dd></dl>
 
 <dl class="method">
@@ -184,10 +196,13 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">temp folder</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The Geosoft tempporary folder.</td>
 </tr>
 </tbody>
 </table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.1.</span></p>
+</div>
 </dd></dl>
 
 <dl class="method">
@@ -197,10 +212,13 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Geosoft user files</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The Geosoft user configuration files folder.</td>
 </tr>
 </tbody>
 </table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.1.</span></p>
+</div>
 </dd></dl>
 
 <dl class="method">
@@ -210,10 +228,13 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">workspace folder</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The workspace folder.</td>
 </tr>
 </tbody>
 </table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.1.</span></p>
+</div>
 </dd></dl>
 
 <dl class="method">
@@ -223,10 +244,13 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">current license class</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The current license class.</td>
 </tr>
 </tbody>
 </table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.1.</span></p>
+</div>
 </dd></dl>
 
 <dl class="method">
@@ -236,10 +260,13 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">the main window ID (HWND cast to unsigned for Windows).</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The main window ID (HWND cast to unsigned for Windows).</td>
 </tr>
 </tbody>
 </table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.1.</span></p>
+</div>
 </dd></dl>
 
 </dd></dl>

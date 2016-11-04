@@ -72,6 +72,10 @@
 <dt id="geosoft.gxpy.utility.UtilityException">
 <em class="property">exception </em><code class="descclassname">geosoft.gxpy.utility.</code><code class="descname">UtilityException</code><a class="headerlink" href="#geosoft.gxpy.utility.UtilityException" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">Exception</span></code></p>
+<p>Exceptions from this module.</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.1.</span></p>
+</div>
 </dd></dl>
 
 <dl class="function">
@@ -143,6 +147,9 @@ and return a decimal Gregorian year. Other date formats will raise a ValueErr.</
 </tr>
 </tbody>
 </table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.1.</span></p>
+</div>
 </dd></dl>
 
 <dl class="function">
@@ -156,6 +163,30 @@ and return a decimal Gregorian year. Other date formats will raise a ValueErr.</
 </tr>
 </tbody>
 </table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.1.</span></p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="geosoft.gxpy.utility.display_message">
+<code class="descclassname">geosoft.gxpy.utility.</code><code class="descname">display_message</code><span class="sig-paren">(</span><em>title</em>, <em>message</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.utility.display_message" title="Permalink to this definition">¶</a></dt>
+<dd><p>Display a message to the user.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>title</strong> &#8211; message title</li>
+<li><strong>message</strong> &#8211; message</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.1.</span></p>
+</div>
 </dd></dl>
 
 <dl class="function">
@@ -169,6 +200,9 @@ and return a decimal Gregorian year. Other date formats will raise a ValueErr.</
 </tr>
 </tbody>
 </table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.1.</span></p>
+</div>
 </dd></dl>
 
 <dl class="function">
@@ -186,6 +220,9 @@ have a Geosoft dummy value.</p>
 </tr>
 </tbody>
 </table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.1.</span></p>
+</div>
 </dd></dl>
 
 <dl class="function">
@@ -207,6 +244,9 @@ have a Geosoft dummy value.</p>
 </tr>
 </tbody>
 </table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.1.</span></p>
+</div>
 </dd></dl>
 
 <dl class="function">
@@ -214,6 +254,9 @@ have a Geosoft dummy value.</p>
 <code class="descclassname">geosoft.gxpy.utility.</code><code class="descname">get_shared_dict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.utility.get_shared_dict" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get a dictionary shared by an external application.
 The shared dictionary is cleared (popped) so a subsequent call will return an empty dictionary.</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.1.</span></p>
+</div>
 </dd></dl>
 
 <dl class="function">
@@ -227,6 +270,9 @@ The shared dictionary is cleared (popped) so a subsequent call will return an em
 </tr>
 </tbody>
 </table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.1.</span></p>
+</div>
 </dd></dl>
 
 <dl class="function">
@@ -240,12 +286,18 @@ The shared dictionary is cleared (popped) so a subsequent call will return an em
 </tr>
 </tbody>
 </table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.1.</span></p>
+</div>
 </dd></dl>
 
 <dl class="function">
 <dt id="geosoft.gxpy.utility.project_path">
 <code class="descclassname">geosoft.gxpy.utility.</code><code class="descname">project_path</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.utility.project_path" title="Permalink to this definition">¶</a></dt>
-<dd><p>return the Geosoft project folder path</p>
+<dd><p>Return the Geosoft project folder path.</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.1.</span></p>
+</div>
 </dd></dl>
 
 <dl class="function">
@@ -263,6 +315,9 @@ The shared dictionary is cleared (popped) so a subsequent call will return an em
 </tbody>
 </table>
 <p>See rdecode_err(string) for more details.</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.1.</span></p>
+</div>
 </dd></dl>
 
 <dl class="function">
@@ -325,6 +380,9 @@ strings to return decimal hours or decimal degrees respectively:</p>
 </table>
 <p>Note that mm and ss.ss can go over 60.0 and will be decoded as minutes or seconds
 as presented. For example, &#8220;20 90 0.00&#8221; will return 21.5.</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.1.</span></p>
+</div>
 </dd></dl>
 
 <dl class="function">
@@ -351,30 +409,9 @@ External program can call gxpy.utility.run_return(dict) to pass a dictionary bac
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
-<dl class="function">
-<dt id="geosoft.gxpy.utility.safeApiException">
-<code class="descclassname">geosoft.gxpy.utility.</code><code class="descname">safeApiException</code><span class="sig-paren">(</span><em>fn</em>, <em>args</em>, <em>EClass=&lt;class 'Exception'&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.utility.safeApiException" title="Permalink to this definition">¶</a></dt>
-<dd><p>This is a helper method that turns a gxapi.GXError and gxapi.GXAPIError exceptions into exception of class EClass so
-you can catch and deal with it. The GXError message is provided in the EClass, traceback of original
-exception is preserved.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>fn</strong> &#8211; gxapi finction to call</li>
-<li><strong>args</strong> &#8211; arguments as a tuple</li>
-<li><strong>EClass</strong> &#8211; exception class returned, default is Exception</li>
-</ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">function return</p>
-</td>
-</tr>
-</tbody>
-</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.1.</span></p>
+</div>
 </dd></dl>
 
 <dl class="function">
@@ -393,6 +430,9 @@ exception is preserved.</p>
 </tr>
 </tbody>
 </table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.1.</span></p>
+</div>
 </dd></dl>
 
 <dl class="function">
@@ -408,12 +448,18 @@ This is a companion file to run_external_python().</p>
 </tr>
 </tbody>
 </table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.1.</span></p>
+</div>
 </dd></dl>
 
 <dl class="function">
 <dt id="geosoft.gxpy.utility.temp_path">
 <code class="descclassname">geosoft.gxpy.utility.</code><code class="descname">temp_path</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.utility.temp_path" title="Permalink to this definition">¶</a></dt>
-<dd><p>return the Geosoft temporary folder path</p>
+<dd><p>Return the Geosoft temporary folder path.</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.1.</span></p>
+</div>
 </dd></dl>
 
 <dl class="function">
@@ -424,7 +470,10 @@ This is a companion file to run_external_python().</p>
 <dl class="function">
 <dt id="geosoft.gxpy.utility.user_path">
 <code class="descclassname">geosoft.gxpy.utility.</code><code class="descname">user_path</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.utility.user_path" title="Permalink to this definition">¶</a></dt>
-<dd><p>return the Geosoft user configurations folder path</p>
+<dd><p>Return the Geosoft user configurations folder path.</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.1.</span></p>
+</div>
 </dd></dl>
 
 <dl class="function">
@@ -445,6 +494,9 @@ This is a companion file to run_external_python().</p>
 </tr>
 </tbody>
 </table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.1.</span></p>
+</div>
 </dd></dl>
 
 </div>

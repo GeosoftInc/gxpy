@@ -98,10 +98,9 @@ This class wraps many of the functions found in geosoft.gxapi.GXIPJ.</p>
 </tr>
 </tbody>
 </table>
-<dl class="docutils">
-<dt>#TODO: implement orientation support on top of Geosoft IPJ, or add orientation support to Geosoft</dt>
-<dd>oblique stereographic.</dd>
-</dl>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.1.</span></p>
+</div>
 <dl class="staticmethod">
 <dt id="geosoft.gxpy.ipj.GXipj.compare">
 <em class="property">static </em><code class="descname">compare</code><span class="sig-paren">(</span><em>ipj1</em>, <em>ipj2</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.ipj.GXipj.compare" title="Permalink to this definition">¶</a></dt>
@@ -112,26 +111,26 @@ This class wraps many of the functions found in geosoft.gxapi.GXIPJ.</p>
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">True if two projections are the same</p>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Param:</th><td class="field-body"><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">ipj1:</th><td class="field-body">GXipj</td>
-</tr>
-<tr class="field-even field"><th class="field-name">ipj2:</th><td class="field-body">GXipj</td>
-</tr>
-</tbody>
-</table>
+<tr class="field-even field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>ipj1</strong> &#8211; GXipj</li>
+<li><strong>ipj2</strong> &#8211; GXipj</li>
+</ul>
 </td>
 </tr>
 </tbody>
 </table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.1.</span></p>
+</div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxpy.ipj.GXipj.dict">
 <code class="descname">dict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.ipj.GXipj.dict" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return IPJ dictionary</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.1.</span></p>
+</div>
 </dd></dl>
 
 <dl class="classmethod">
@@ -142,10 +141,13 @@ This class wraps many of the functions found in geosoft.gxapi.GXIPJ.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Param:</th><td class="field-body">ipj_dict:   IPJ dictionary, or a valid name string</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>ipj_dict</strong> &#8211; IPJ dictionary, or a valid name string</td>
 </tr>
 </tbody>
 </table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.1.</span></p>
+</div>
 </dd></dl>
 
 <dl class="classmethod">
@@ -156,10 +158,13 @@ This class wraps many of the functions found in geosoft.gxapi.GXIPJ.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Param:</th><td class="field-body">esri_str:   ESRI coordinate definition string</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>esri_str</strong> &#8211; ESRI coordinate definition string</td>
 </tr>
 </tbody>
 </table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.1.</span></p>
+</div>
 </dd></dl>
 
 <dl class="classmethod">
@@ -174,6 +179,9 @@ This class wraps many of the functions found in geosoft.gxapi.GXIPJ.</p>
 </tr>
 </tbody>
 </table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.1.</span></p>
+</div>
 </dd></dl>
 
 <dl class="classmethod">
@@ -248,7 +256,13 @@ length units are comparable to UTM length units (0.9996).</p>
 </div>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">&#8220;orientation&#8221;:</th><td class="field-body"><p class="first">In Geosoft coordinate systems, a cartesian system can be oriented arbitrarily
+<tr class="field-odd field"><th class="field-name">&#8220;orientation&#8221;:</th><td class="field-body"><div class="first admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Only orientations of &#8220;&lt;0, 0, 0, 0, 0, 0&gt;&#8221; are supported in version 9.1.  Oriented coordinate
+systems will be added at some point in the future.  Oriented coordinates can be achieved using
+Oblique Stereographic.</p>
+</div>
+<p><em>FUTURE:</em> In Geosoft coordinate systems, a cartesian system can be oriented arbitrarily
 in three dimensions relative to a base coordinate system.  This requires the definition
 of the local origin location on the base system, and the rotation in degrees clockwise
 (azimuth in plan view) around each of the three base system axis, as defined by the
@@ -271,6 +285,9 @@ of the local origin location on the base system, and the rotation in degrees clo
 </tr>
 </tbody>
 </table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.1.</span></p>
+</div>
 </dd></dl>
 
 <dl class="classmethod">
@@ -281,10 +298,13 @@ of the local origin location on the base system, and the rotation in degrees clo
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Param:</th><td class="field-body">name:   coordinate system name in the form &#8220;datum / projection &lt;orientation&gt;&#8221;</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> &#8211; coordinate system name in the form &#8220;datum / projection &lt;orientation&gt;&#8221;</td>
 </tr>
 </tbody>
 </table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.1.</span></p>
+</div>
 </dd></dl>
 
 <dl class="method">
@@ -295,11 +315,7 @@ of the local origin location on the base system, and the rotation in degrees clo
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Param:</th><td class="field-body"><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">what:</th><td class="field-body"><div class="first last line-block">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>what</strong> &#8211; <div class="line-block">
 <div class="line">gxipj.NAME</div>
 <div class="line">gxipj.NAME_PCS</div>
 <div class="line">gxipj.NAME_PROJECTION</div>
@@ -324,10 +340,6 @@ of the local origin location on the base system, and the rotation in degrees clo
 </tr>
 </tbody>
 </table>
-</td>
-</tr>
-</tbody>
-</table>
 <p>If &#8216;what&#8217; is not specified, gxipj.NAME assumed, which returns the coordinate system display name.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -337,6 +349,9 @@ of the local origin location on the base system, and the rotation in degrees clo
 </tr>
 </tbody>
 </table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.1.</span></p>
+</div>
 </dd></dl>
 
 <dl class="staticmethod">
@@ -347,11 +362,8 @@ of the local origin location on the base system, and the rotation in degrees clo
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Param:</th><td class="field-body"><table class="first docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">what:</th><td class="field-body"><div class="first last line-block">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>what</strong> &#8211; <div class="line-block">
 <div class="line">gxipj.LIST_COORDINATESYSTEM</div>
 <div class="line">gxipj.LIST_DATUM</div>
 <div class="line">gxipj.LIST_PROJECTION</div>
@@ -360,19 +372,19 @@ of the local origin location on the base system, and the rotation in degrees clo
 <div class="line">gxipj.LIST_LOCALDATUMNAME</div>
 <div class="line">gxipj.LIST_UNITSDESCRIPTION</div>
 </div>
+</li>
+<li><strong>datum_filter</strong> &#8211; name of a datum to filter results</li>
+</ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">datum_filter:</th><td class="field-body">name of a datum to filter results</td>
-</tr>
-</tbody>
-</table>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">sorted list of names</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">sorted list of names</p>
 </td>
 </tr>
 </tbody>
 </table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.1.</span></p>
+</div>
 </dd></dl>
 
 <dl class="method">
@@ -380,6 +392,9 @@ of the local origin location on the base system, and the rotation in degrees clo
 <code class="descname">to_gxf</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.ipj.GXipj.to_gxf" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get GXF string list from ipj.
 Returns list of 5 GXF strings.</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.1.</span></p>
+</div>
 </dd></dl>
 
 <dl class="method">
@@ -406,6 +421,9 @@ Returns list of 5 GXF strings.</p>
 <span class="p">}</span>
 </pre></div>
 </div>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.1.</span></p>
+</div>
 </dd></dl>
 
 <dl class="method">
@@ -419,6 +437,9 @@ Returns list of 5 GXF strings.</p>
 </tr>
 </tbody>
 </table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.1.</span></p>
+</div>
 </dd></dl>
 
 </dd></dl>
@@ -432,20 +453,16 @@ Returns list of 5 GXF strings.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Params:</th><td class="field-body"><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">ipj_from:</th><td class="field-body">GXipj from coordinate system</td>
+<tr class="field-odd field"><th class="field-name" colspan="2">Params ipj_from:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">GXipj from coordinate system</td>
 </tr>
-<tr class="field-even field"><th class="field-name">ipj_to:</th><td class="field-body">GXipj to coordinate system</td>
+<tr class="field-even field"><th class="field-name">Params ipj_to:</th><td class="field-body">GXipj to coordinate system</td>
 </tr>
 </tbody>
 </table>
-</td>
-</tr>
-</tbody>
-</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.1.</span></p>
+</div>
 <dl class="method">
 <dt id="geosoft.gxpy.ipj.GXpj.convert">
 <code class="descname">convert</code><span class="sig-paren">(</span><em>xyz</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.ipj.GXpj.convert" title="Permalink to this definition">¶</a></dt>
@@ -455,18 +472,11 @@ Returns list of 5 GXF strings.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Param:</th><td class="field-body"><table class="first docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">xyz:</th><td class="field-body"><div class="first last line-block">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>xyz</strong> &#8211; <div class="line-block">
 <div class="line">numpy array shape (,3+) for (x,y,z) conversion</div>
 <div class="line">numpy array shape (,2) for x,y conversion</div>
 </div>
-</td>
-</tr>
-</tbody>
-</table>
+</p>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Example:</th><td class="field-body"><p class="first">Given an array shape (500,6), which represents 500 data records with 6 columns
@@ -482,6 +492,9 @@ in which the first 3 columns are coordinates X, Y and Z.</p>
 </tr>
 </tbody>
 </table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.1.</span></p>
+</div>
 </dd></dl>
 
 </dd></dl>
@@ -490,6 +503,10 @@ in which the first 3 columns are coordinates X, Y and Z.</p>
 <dt id="geosoft.gxpy.ipj.IPJException">
 <em class="property">exception </em><code class="descclassname">geosoft.gxpy.ipj.</code><code class="descname">IPJException</code><a class="headerlink" href="#geosoft.gxpy.ipj.IPJException" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">Exception</span></code></p>
+<p>Exceptions from this module.</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.1.</span></p>
+</div>
 </dd></dl>
 
 </div>

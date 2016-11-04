@@ -82,19 +82,21 @@
 <p>Python extensions have a rungx() function.</p>
 <p>Hello user extension...</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># Oasis montaj Python extension to say Hello.</span>
-<span class="c1"># To run this extension, select &quot;Settings / Run GX or Python...&quot;, then browse to this script file.</span>
+<span class="c1"># To run this extension, select &quot;Settings / Run GX or Python...&quot;,</span>
+<span class="c1"># then browse to this script file.</span>
 
-<span class="kn">import</span> <span class="nn">geosoft.gxapi</span> <span class="k">as</span> <span class="nn">gxapi</span>
 <span class="kn">import</span> <span class="nn">geosoft.gxpy</span> <span class="k">as</span> <span class="nn">gxpy</span>
 
-<span class="c1"># a python script must have a rungx(), which is executed by OM when the script is run</span>
+
+<span class="c1"># a python script must have a rungx()</span>
 <span class="k">def</span> <span class="nf">rungx</span><span class="p">():</span>
 
-    <span class="c1"># get the current gx context, normally not required but in this example we want the gid.</span>
+    <span class="c1"># Get the current gx context</span>
+    <span class="c1"># This is normally not required but in this example we want the gid.</span>
     <span class="n">gxp</span> <span class="o">=</span> <span class="n">gxpy</span><span class="o">.</span><span class="n">gx</span><span class="o">.</span><span class="n">GXpy</span><span class="p">()</span>
-    
+
     <span class="c1"># say hello to the user identified by gxp.gid.</span>
-    <span class="n">gxapi</span><span class="o">.</span><span class="n">GXSYS</span><span class="o">.</span><span class="n">display_message</span><span class="p">(</span><span class="s2">&quot;GX Python&quot;</span><span class="p">,</span> <span class="s2">&quot;Hello </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">gxp</span><span class="o">.</span><span class="n">gid</span><span class="p">))</span>
+    <span class="n">gxpy</span><span class="o">.</span><span class="n">utility</span><span class="o">.</span><span class="n">display_message</span><span class="p">(</span><span class="s2">&quot;GX Python&quot;</span><span class="p">,</span> <span class="s2">&quot;Hello </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">gxp</span><span class="o">.</span><span class="n">gid</span><span class="p">))</span>
 </pre></div>
 </div>
 <p>Add a constant to a channel extension...</p>
@@ -121,14 +123,9 @@
 <span class="kn">import</span> <span class="nn">geosoft.gxpy</span> <span class="k">as</span> <span class="nn">gxpy</span>
 <span class="kn">import</span> <span class="nn">geosoft.gxpy.om</span> <span class="k">as</span> <span class="nn">gxom</span>
 <span class="kn">import</span> <span class="nn">geosoft.gxpy.utility</span> <span class="k">as</span> <span class="nn">gxu</span>
-<span class="kn">import</span> <span class="nn">pydevd</span>
+
 
 <span class="k">def</span> <span class="nf">rungx</span><span class="p">():</span>
-
-    <span class="c1"># pydevd supports remote debugging - see Debugging Python Extensions in the GX Developer documentation</span>
-    <span class="c1"># this sets a break-point after this line when this script is run from Oasis montaj.</span>
-    <span class="c1"># un-comment the follwoing like to activate remote debugging:</span>
-    <span class="c1"># pydevd.settrace(&#39;localhost&#39;, port=34765, stdoutToServer=True, stderrToServer=True)</span>
 
     <span class="c1"># get the current database</span>
     <span class="n">db</span> <span class="o">=</span> <span class="n">gxpy</span><span class="o">.</span><span class="n">gdb</span><span class="o">.</span><span class="n">GXdb</span><span class="o">.</span><span class="n">open</span><span class="p">()</span>
@@ -139,26 +136,26 @@
     <span class="n">p_addval</span> <span class="o">=</span> <span class="s1">&#39;ADDVAL&#39;</span>
 
     <span class="c1"># get parameters from the parameter block, initializing to start-up defaults &#39;&#39; and 0.0</span>
-    <span class="n">parms</span> <span class="o">=</span> <span class="n">gxu</span><span class="o">.</span><span class="n">get_parameters</span><span class="p">(</span><span class="n">group</span><span class="p">,</span> <span class="p">{</span><span class="n">p_chan</span><span class="p">:</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">p_addval</span><span class="p">:</span><span class="mf">0.0</span><span class="p">})</span>
+    <span class="n">parms</span> <span class="o">=</span> <span class="n">gxu</span><span class="o">.</span><span class="n">get_parameters</span><span class="p">(</span><span class="n">group</span><span class="p">,</span> <span class="p">{</span><span class="n">p_chan</span><span class="p">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">p_addval</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">})</span>
 
     <span class="c1"># if interactive, get user input</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="n">gxom</span><span class="o">.</span><span class="n">running_script</span><span class="p">():</span>
 
         <span class="k">try</span><span class="p">:</span>
-            <span class="c1"># ask for a channel to process from list of channels in the database</span>
+            <span class="c1"># get channel to process from list of database channels</span>
             <span class="n">chan</span> <span class="o">=</span> <span class="n">gxom</span><span class="o">.</span><span class="n">get_user_input</span><span class="p">(</span>
-                                    <span class="s1">&#39;Channel to process&#39;</span><span class="p">,</span>
-                                    <span class="s1">&#39;Channel:&#39;</span><span class="p">,</span>
-                                    <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;list&#39;</span><span class="p">,</span>
-                                    <span class="n">default</span><span class="o">=</span><span class="n">parms</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">p_chan</span><span class="p">),</span>
-                                    <span class="n">items</span><span class="o">=</span><span class="nb">sorted</span><span class="p">([</span><span class="n">k</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">db</span><span class="o">.</span><span class="n">channels</span><span class="p">()</span><span class="o">.</span><span class="n">keys</span><span class="p">()]))</span>
+                    <span class="s1">&#39;Channel to process&#39;</span><span class="p">,</span>
+                    <span class="s1">&#39;Channel:&#39;</span><span class="p">,</span>
+                    <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;list&#39;</span><span class="p">,</span>
+                    <span class="n">default</span><span class="o">=</span><span class="n">parms</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">p_chan</span><span class="p">),</span>
+                    <span class="n">items</span><span class="o">=</span><span class="nb">sorted</span><span class="p">([</span><span class="n">k</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">db</span><span class="o">.</span><span class="n">channels</span><span class="p">()</span><span class="o">.</span><span class="n">keys</span><span class="p">()]))</span>
 
             <span class="c1"># value to add to the channel</span>
             <span class="n">addval</span> <span class="o">=</span> <span class="n">gxom</span><span class="o">.</span><span class="n">get_user_input</span><span class="p">(</span>
-                                    <span class="s1">&#39;Value to add to the data&#39;</span><span class="p">,</span>
-                                    <span class="s1">&#39;value to add:&#39;</span><span class="p">,</span>
-                                    <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;float&#39;</span><span class="p">,</span>
-                                    <span class="n">default</span><span class="o">=</span><span class="n">parms</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">p_addval</span><span class="p">))</span>
+                    <span class="s1">&#39;Value to add to the data&#39;</span><span class="p">,</span>
+                    <span class="s1">&#39;value to add:&#39;</span><span class="p">,</span>
+                    <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;float&#39;</span><span class="p">,</span>
+                    <span class="n">default</span><span class="o">=</span><span class="n">parms</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">p_addval</span><span class="p">))</span>
         <span class="k">except</span> <span class="n">gxom</span><span class="o">.</span><span class="n">OMException</span><span class="p">:</span>
             <span class="n">exit</span><span class="p">()</span>
 
@@ -166,8 +163,6 @@
         <span class="n">parms</span><span class="p">[</span><span class="n">p_chan</span><span class="p">]</span> <span class="o">=</span> <span class="n">chan</span>
         <span class="n">parms</span><span class="p">[</span><span class="n">p_addval</span><span class="p">]</span> <span class="o">=</span> <span class="n">addval</span>
         <span class="n">gxu</span><span class="o">.</span><span class="n">save_parameters</span><span class="p">(</span><span class="n">group</span><span class="p">,</span> <span class="n">parms</span><span class="p">)</span>
-
-
 
     <span class="c1"># work through the data a line at a time - get a list of selected lines</span>
     <span class="n">lines</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">lines</span><span class="p">()</span>
@@ -192,8 +187,8 @@
         <span class="c1"># write the data back to the database</span>
         <span class="n">db</span><span class="o">.</span><span class="n">writeDataChan</span><span class="p">(</span><span class="n">l</span><span class="p">,</span> <span class="n">chan</span><span class="p">,</span> <span class="nb">sum</span><span class="p">,</span> <span class="n">fid</span><span class="p">)</span>
 
-    <span class="c1"># pause hold the console so user can review</span>
-    <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Press return to exit...&quot;</span><span class="p">)</span>
+    <span class="c1"># pause the console so user can review</span>
+    <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Press return to continue...&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -203,28 +198,27 @@
 <p>Hello user program...</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># This sample stand-alone Python script shows a minimal use of the Pythonic gxpy module to</span>
 <span class="c1"># create a Geosoft context and say hello to the user.</span>
-
-<span class="c1"># comment-out following 2 lines to support remote debugging</span>
-<span class="c1">#import pydevd</span>
-<span class="c1">#pydevd.settrace(&#39;localhost&#39;, port=34765, stdoutToServer=True, stderrToServer=True)</span>
+<span class="c1"># This example can be run stand-alon or as a Oasis montaj extension.</span>
 
 <span class="kn">import</span> <span class="nn">geosoft.gxpy</span> <span class="k">as</span> <span class="nn">gxpy</span>   <span class="c1"># gxpy methods</span>
+
 
 <span class="c1"># running as an extension from Oasis montaj will execute rungx()</span>
 <span class="k">def</span> <span class="nf">rungx</span><span class="p">():</span>
 
-    <span class="c1"># say hello to the user identified by gxp.gid.</span>
-    <span class="n">gxapi</span><span class="o">.</span><span class="n">GXSYS</span><span class="o">.</span><span class="n">display_message</span><span class="p">(</span><span class="s2">&quot;GX Python&quot;</span><span class="p">,</span> <span class="s2">&quot;Hello world&quot;</span><span class="p">)</span>
+    <span class="c1"># say hello</span>
+    <span class="n">gxpy</span><span class="o">.</span><span class="n">utility</span><span class="o">.</span><span class="n">display_message</span><span class="p">(</span><span class="s2">&quot;GX Python&quot;</span><span class="p">,</span> <span class="s2">&quot;Hello </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">gxpy</span><span class="o">.</span><span class="n">gx</span><span class="o">.</span><span class="n">GXpy</span><span class="p">()</span><span class="o">.</span><span class="n">gid</span><span class="p">))</span>
+
 
 <span class="c1"># running as stand-alone program</span>
 <span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
 
-    <span class="c1"># Stand-alone programs must create a GX context before calling any Geosoft methods.</span>
+    <span class="c1"># Stand-alone programs must create a GX context before calling Geosoft methods.</span>
     <span class="n">gxc</span> <span class="o">=</span> <span class="n">gxpy</span><span class="o">.</span><span class="n">gx</span><span class="o">.</span><span class="n">GXpy</span><span class="p">()</span>
 
     <span class="c1"># The context has a member &#39;gid&#39; which contains the user&#39;s Geosoft ID.</span>
     <span class="c1"># Say hello to the user</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello world&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">gxc</span><span class="o">.</span><span class="n">gid</span><span class="p">))</span>
 </pre></div>
 </div>
 <p>Add a constant to a channel program...</p>
@@ -243,9 +237,11 @@
 <span class="sd">   4. Process the data</span>
 <span class="sd">&#39;&#39;&#39;</span>
 
-<span class="kn">import</span> <span class="nn">os</span><span class="o">,</span><span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">sys</span>
 <span class="kn">import</span> <span class="nn">argparse</span> <span class="k">as</span> <span class="nn">argp</span>
 <span class="kn">import</span> <span class="nn">geosoft.gxpy</span> <span class="k">as</span> <span class="nn">gxpy</span>
+
 
 <span class="k">def</span> <span class="nf">process_database</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">channel_name</span><span class="p">,</span> <span class="n">add_value</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39;</span>
@@ -277,9 +273,8 @@
         <span class="c1"># write the data back to the database</span>
         <span class="n">db</span><span class="o">.</span><span class="n">writeDataChan</span><span class="p">(</span><span class="n">l</span><span class="p">,</span> <span class="n">channel_name</span><span class="p">,</span> <span class="nb">sum</span><span class="p">,</span> <span class="n">fid</span><span class="p">)</span>
 
-<span class="k">def</span> <span class="nf">main</span><span class="p">(</span><span class="n">argv</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">argv</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="n">argv</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span>
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
 
     <span class="c1"># get (create) a GX context</span>
     <span class="n">gxp</span> <span class="o">=</span> <span class="n">gxpy</span><span class="o">.</span><span class="n">gx</span><span class="o">.</span><span class="n">GXpy</span><span class="p">()</span>  <span class="c1"># get the current gx context</span>
@@ -293,7 +288,11 @@
     <span class="n">parser</span> <span class="o">=</span> <span class="n">argp</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="s2">&quot;Add a constant to a Geosoft database channel&quot;</span><span class="p">)</span>
     <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;sDB&quot;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Geosoft database&quot;</span><span class="p">)</span>
     <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;sCh&quot;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;channel to process&quot;</span><span class="p">)</span>
-    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;-v&quot;</span><span class="p">,</span><span class="s2">&quot;--value&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">float</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;value to add, default is 1.0&quot;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;-v&quot;</span><span class="p">,</span>
+                        <span class="s2">&quot;--value&quot;</span><span class="p">,</span>
+                        <span class="nb">type</span><span class="o">=</span><span class="nb">float</span><span class="p">,</span>
+                        <span class="n">default</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
+                        <span class="n">help</span><span class="o">=</span><span class="s2">&quot;value to add, default is 1.0&quot;</span><span class="p">)</span>
     <span class="n">args</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
 
     <span class="c1"># echo parameters</span>
@@ -306,12 +305,6 @@
 
     <span class="c1"># process the data</span>
     <span class="n">process_database</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">args</span><span class="o">.</span><span class="n">sCh</span><span class="p">,</span> <span class="n">args</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
-    
-<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
-    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
-    <span class="c1"># Creating a separate main() function supports the ability for the main() method to be called</span>
-    <span class="c1"># by some other Python script, which can also pass arguments.</span>
-    <span class="c1"># http://stackoverflow.com/a/287548</span>
 </pre></div>
 </div>
 </div>
