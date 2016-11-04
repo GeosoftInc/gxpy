@@ -60,7 +60,6 @@ def test_multifile():
     input("File inputs test finished...")
 
 def test_state():
-
     state = gxom.state()
     print(json.dumps(state, indent=4))
 
@@ -68,7 +67,35 @@ def test_menus():
     env = gxom.menus()
     print(json.dumps(env, indent=4))
 
+def test_scripting():
+    import os
+    import geosoft.gxapi as gxa
+
+    # record script
+    if os.path.exists("gxpy_om.gs"):
+        os.remove("gxpy_om.gs")
+
+    gxom.user_message('SCRIPTING TEST', 'Choose file name as gxpy_om.gs in the browse dialog for this test to succeed')
+    gxa.GXSYS.do_command("[ID] ID_GX_RECORD")
+    dir = os.path.split(__file__)[0]
+    script_gx = os.path.join(dir, 'script_gx.py')
+    gxa.GXSYS.do_command("[GX] {}".format(script_gx)) # We have to use do_command to record a GXs in script not run_gx
+    gxa.GXSYS.do_command("[ID] ID_GX_ENDRECORD")
+
+    with open("gxpy_om.gs", 'r') as f:
+        script = f.read()
+
+    # show script
+    gxom.user_message('SCRIPTING TEST RESULT',
+                      'The following should contain one SETINI of the value to SCRIPT_GX.VALUE\n\n{}'.format(script))
+
+    # run script
+    gxa.GXSYS.set_interactive(0)
+    gxa.GXSYS.run_gx(script_gx)
+    gxa.GXSYS.set_interactive(1)
+
 def rungx():
+    test_scripting()
     test_get_user_input()
     test_file()
     test_multifile()
