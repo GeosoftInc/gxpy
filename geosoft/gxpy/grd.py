@@ -1,6 +1,3 @@
-# TODO: abstract grid file decorations to a dict
-# TODO: add __enter__() __exit__() to support with construct
-
 import os
 import gc
 import time
@@ -46,6 +43,12 @@ class GXgrd():
     gc = None
     _deleteFiles = False
     _filename = None
+
+    def __enter__(self):
+        return self
+
+    def __exit__(self, type, value, traceback):
+        self.__del__()
 
     def __repr__(self):
         return "{}({})".format(self.__class__, self.__dict__)

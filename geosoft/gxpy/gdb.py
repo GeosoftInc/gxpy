@@ -56,6 +56,19 @@ class GDBException(Exception):
     pass
 
 
+def _(s):
+    return s
+
+def _va_width(data):
+    if len(data.shape) == 1:
+        width = 1
+    elif len(data.shape) == 2:
+        width = data.shape[1]
+    else:
+        raise GDBException(_("Only one or two-dimensional data allowed."))
+    return width
+
+
 class GXdb():
     '''
     Class to work with Geosoft databases. This class wraps many of the functions found in geosoft.gxapi.GXDB.
@@ -167,6 +180,9 @@ class GXdb():
     def __enter__(self):
         return self
 
+    def __exit__(self, type, value, traceback):
+        self.__del__()
+
     def __repr__(self):
         return "{}({})".format(self.__class__, self.__dict__)
 
@@ -182,9 +198,6 @@ class GXdb():
             if self._edb is not None:
                 if self._edb.is_locked():
                     self._edb.un_lock()
-
-    def __exit__(self, type, value, traceback):
-        self.__del__()
 
     @classmethod
     def open(cls, name=None):
@@ -309,7 +322,7 @@ class GXdb():
         '''
 
         if (self._exist_symb(line, gxapi.DB_SYMB_LINE)):
-            if type(line) == str:
+            if type(line) is str:
                 symb = self._db.find_symb(line, gxapi.DB_SYMB_LINE)
                 return line, symb
             else:
@@ -332,7 +345,7 @@ class GXdb():
         '''
 
         if (self._exist_symb(chan, gxapi.DB_SYMB_CHAN)):
-            if type(chan) == str:
+            if type(chan) is str:
                 symb = self._db.find_symb(chan, gxapi.DB_SYMB_CHAN)
                 return chan, symb
             else:
@@ -710,7 +723,7 @@ class GXdb():
 
         .. versionadded:: 9.1
         '''
-        if type(s) == str:
+        if type(s) is str:
             s = self._db.find_symb(s, gxapi.DB_SYMB_LINE)
             if s == gxapi.NULLSYMB:
                 return
@@ -914,7 +927,7 @@ class GXdb():
         nCh = len(chNames)
         nvd = vvs[0].length()
         if (nvd == 0) or (fid[0] == gxapi.GS_R8MX):
-            raise GDBException("\'{}\' on line \'{}\' is empty".format(chNames[0], ln))
+            raise GDBException(_("\'{}\' on line \'{}\' is empty").format(chNames[0], ln))
         for j in range(1, nCh):
             vvs[j].reFid(fid, nvd)
 
@@ -949,7 +962,7 @@ class GXdb():
                 fid = (0.0, 1.0)
 
             else:
-                raise GDBException('Unrecognized dummy={}'.format(dummy))
+                raise GDBException(_('Unrecognized dummy={}').format(dummy))
 
         return npd, chNames, fid
 
@@ -969,8 +982,20 @@ class GXdb():
             self._unlock(cs)
 
         ln, ls = self.lineNameSymb(line, create=True)
-        cn, cs = self.chanNameSymb(channel)
+        
+        try:
+            cn, cs = self.chanNameSymb(channel)
+
+        except GDBException:
+            if type(channel) is str:
+                cn = channel
+                cs = self.newChannel(channel, data.dtype, array=_va_width(data))
+
         w = self._db.get_col_va(cs)
+        if w != _va_width(data):
+            raise GDBException(
+                _("Array data width {} does not fit into VA channel '{}' with width {}").
+                    format(_va_width(data), cn, w))
 
         # 1D channel
         if w == 1:
@@ -1012,25 +1037,20 @@ class GXdb():
         .. versionadded:: 9.1
         '''
 
-        if len(data.shape) == 1:
-            nch = 1
-        elif len(data.shape) == 2:
-            nch = data.shape[1]
-        else:
-            raise GDBException("Only one or two-dimensional data allowed")
+        nch = _va_width(data)
 
         # create channel names
         if channels is None:
-            raise GDBException('Channel name(s) not specified')
+            raise GDBException(_('Channel name(s) not specified'))
 
         # single channel, which can be an array channel
-        if type(channels) == str:
+        if type(channels) is str:
             s = self.newChannel(channels, data.dtype, array=nch)
             self.writeDataChan(line, s, data, fid)
 
         else:
             if len(channels) != nch:
-                raise GDBException('Data has {} columns, {} channels defined'.format(nch, len(channels)))
+                raise GDBException(_('Data has {} columns, {} channels defined').format(nch, len(channels)))
 
             n = 0
             for c in channels:

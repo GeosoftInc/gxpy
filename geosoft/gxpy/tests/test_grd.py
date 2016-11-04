@@ -107,21 +107,21 @@ class Test(unittest.TestCase):
     def test_memoryGrid(self):
         self.start(gsys.func_name())
 
-        grd = gxgrd.GXgrd.new(properties={'dtype':np.int16,'nx': 100, 'ny': 50, 'x0':4, 'y0':8, 'dx': 0.1, 'dy':0.2,
-                                          'rot': 5, 'ipj': gxipj.GXipj.from_name('NAD27 / UTM zone 18N')})
-        properties = grd.properties()
-        self.assertEqual(properties.get('dx'),0.1)
-        self.assertEqual(properties.get('dy'),0.2)
-        self.assertEqual(properties.get('x0'),4.0)
-        self.assertEqual(properties.get('y0'),8.0)
-        self.assertEqual(properties.get('rot'),5.0)
-        self.assertEqual(properties.get('nx'),100)
-        self.assertEqual(properties.get('ny'),50)
-        self.assertEqual(str(properties.get('ipj')),'NAD27 / UTM zone 18N')
-        self.assertEqual(properties.get('dtype'),np.int16)
-
-        del grd
-        gc.collect()
+        with gxgrd.GXgrd.new(properties={'dtype': np.int16,
+                                         'nx': 100, 'ny': 50,
+                                         'x0':4, 'y0':8,
+                                         'dx': 0.1, 'dy':0.2,
+                                         'rot': 5, 'ipj': gxipj.GXipj.from_name('NAD27 / UTM zone 18N')}) as grd:
+            properties = grd.properties()
+            self.assertEqual(properties.get('dx'),0.1)
+            self.assertEqual(properties.get('dy'),0.2)
+            self.assertEqual(properties.get('x0'),4.0)
+            self.assertEqual(properties.get('y0'),8.0)
+            self.assertEqual(properties.get('rot'),5.0)
+            self.assertEqual(properties.get('nx'),100)
+            self.assertEqual(properties.get('ny'),50)
+            self.assertEqual(str(properties.get('ipj')),'NAD27 / UTM zone 18N')
+            self.assertEqual(properties.get('dtype'),np.int16)
 
     def test_gridMosaic(self):
         self.start(gsys.func_name())
@@ -153,20 +153,17 @@ class Test(unittest.TestCase):
         del grd
         gc.collect()
 
-        grd = gxgrd.GXgrd.open(m)
-        grd.deleteFiles()
-        properties = grd.properties()
-        self.assertAlmostEqual(properties.get('dx'),0.01)
-        self.assertAlmostEqual(properties.get('dy'),0.01)
-        self.assertAlmostEqual(properties.get('x0'),7.0)
-        self.assertAlmostEqual(properties.get('y0'),44.0)
-        self.assertEqual(properties.get('rot'),0.0)
-        self.assertEqual(properties.get('nx'),201)
-        self.assertEqual(properties.get('ny'),101)
-        self.assertEqual(str(properties.get('ipj')),'WGS 84')
-
-        del grd
-        gc.collect()
+        with gxgrd.GXgrd.open(m) as grd:
+            grd.deleteFiles()
+            properties = grd.properties()
+            self.assertAlmostEqual(properties.get('dx'),0.01)
+            self.assertAlmostEqual(properties.get('dy'),0.01)
+            self.assertAlmostEqual(properties.get('x0'),7.0)
+            self.assertAlmostEqual(properties.get('y0'),44.0)
+            self.assertEqual(properties.get('rot'),0.0)
+            self.assertEqual(properties.get('nx'),201)
+            self.assertEqual(properties.get('ny'),101)
+            self.assertEqual(str(properties.get('ipj')),'WGS 84')
 
     def test_gridBool(self):
         self.start(gsys.func_name())
@@ -309,32 +306,30 @@ class Test(unittest.TestCase):
         filename = os.path.join(self.folder, "test_array.grd")
 
         data = np.arange(24).reshape((8,3))
-        grd = gxgrd.GXgrd.from_data_array(data, filename)
-        grd.deleteFiles()
-        properties = grd.properties()
-        self.assertEqual(properties.get('dx'),1.0)
-        self.assertEqual(properties.get('dy'),1.0)
-        self.assertEqual(properties.get('x0'),0.0)
-        self.assertEqual(properties.get('y0'),0.0)
-        self.assertEqual(properties.get('rot'),0.0)
-        self.assertEqual(properties.get('nx'),3)
-        self.assertEqual(properties.get('ny'),8)
-        self.assertEqual(str(properties.get('ipj')),'*unknown')
-        del grd
+        with gxgrd.GXgrd.from_data_array(data, filename) as grd:
+            grd.deleteFiles()
+            properties = grd.properties()
+            self.assertEqual(properties.get('dx'),1.0)
+            self.assertEqual(properties.get('dy'),1.0)
+            self.assertEqual(properties.get('x0'),0.0)
+            self.assertEqual(properties.get('y0'),0.0)
+            self.assertEqual(properties.get('rot'),0.0)
+            self.assertEqual(properties.get('nx'),3)
+            self.assertEqual(properties.get('ny'),8)
+            self.assertEqual(str(properties.get('ipj')),'*unknown')
 
-        grd = gxgrd.GXgrd.from_data_array(data, filename, properties={'x0':575268, 'dx':2.0, 'dy':1.5, 'rot':15, 'ipj':'WGS 84'})
-        grd.deleteFiles()
-        properties = grd.properties()
-        self.assertEqual(properties.get('dx'),2.0)
-        self.assertEqual(properties.get('dy'),1.5)
-        self.assertEqual(properties.get('x0'),575268.0)
-        self.assertEqual(properties.get('y0'),0.0)
-        self.assertEqual(properties.get('rot'),15.0)
-        self.assertEqual(properties.get('nx'),3)
-        self.assertEqual(properties.get('ny'),8)
-        self.assertEqual(str(properties.get('ipj')),'WGS 84')
-        del grd
-
+        with gxgrd.GXgrd.from_data_array(data, filename,
+                                         properties={'x0':575268, 'dx':2.0, 'dy':1.5, 'rot':15, 'ipj':'WGS 84'}) as grd:
+            grd.deleteFiles()
+            properties = grd.properties()
+            self.assertEqual(properties.get('dx'),2.0)
+            self.assertEqual(properties.get('dy'),1.5)
+            self.assertEqual(properties.get('x0'),575268.0)
+            self.assertEqual(properties.get('y0'),0.0)
+            self.assertEqual(properties.get('rot'),15.0)
+            self.assertEqual(properties.get('nx'),3)
+            self.assertEqual(properties.get('ny'),8)
+            self.assertEqual(str(properties.get('ipj')),'WGS 84')
 
     def test_array_locations(self):
         self.start(gsys.func_name())
