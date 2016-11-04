@@ -51,7 +51,7 @@ def gen_version_history(j2env, output_dir):
         f.write(template.render(modules=modules))
 
 
-def main():
+def generate():
     from jinja2 import Environment, FileSystemLoader
     global __global_collection
 
@@ -62,7 +62,3 @@ def main():
 						lstrip_blocks = True)
 
     gen_version_history(j2env, dir)
-
-
-if __name__ == '__main__':
-    main()

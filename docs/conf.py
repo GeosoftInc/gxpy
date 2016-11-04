@@ -24,6 +24,9 @@ from datetime import date
 sys.path.insert(0, os.path.abspath('..'))
 
 import geosoft
+import docs.generate_rsts as gen
+
+gen.generate()
 
 # -- General configuration ------------------------------------------------
 
