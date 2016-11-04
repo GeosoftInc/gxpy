@@ -57,21 +57,6 @@ class GXpy():
         # create a shared string ref for the convenience of Geosoft modules
         self._sr = gxapi.str_ref()
 
-    def display_message(self, title, message):
-        '''
-        Display a message to the user.
-
-        :param title:   dialog title
-        :param message: message
-
-        .. versionadded:: 9.1
-        '''
-
-        try:
-            gxapi.GXSYS.display_message(title, message)
-        except geosoft.gxapi.GXAPIError:
-            print('Title: {}\nMessage: {}'.format(title, message))
-
     def main_wind_id(self):
         '''
         :returns: The main window ID (HWND cast to unsigned for Windows).

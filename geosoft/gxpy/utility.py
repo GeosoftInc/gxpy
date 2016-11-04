@@ -314,6 +314,22 @@ def decode(s, f):
     return int(round(r))
 
 
+def display_message(title, message):
+    '''
+    Display a message to the user.
+
+    :param title:   message title
+    :param message: message
+
+    .. versionadded:: 9.1
+    '''
+
+    try:
+        gxapi.GXSYS.display_message(title, message)
+    except geosoft.gxapi.GXAPIError:
+        print('Title: {}\nMessage: {}'.format(title, message))
+
+
 def gxType(dtype):
     """
     :return:    GX type for a numpy dtype

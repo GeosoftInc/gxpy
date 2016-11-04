@@ -13,9 +13,11 @@ Follwoing are the basic steps:
    4. Process the data
 '''
 
-import os,sys
+import os
+import sys
 import argparse as argp
 import geosoft.gxpy as gxpy
+
 
 def process_database(db, channel_name, add_value):
     '''
@@ -47,9 +49,8 @@ def process_database(db, channel_name, add_value):
         # write the data back to the database
         db.writeDataChan(l, channel_name, sum, fid)
 
-def main(argv=None):
-    if argv is None:
-        argv = sys.argv
+
+if __name__ == "__main__":
 
     # get (create) a GX context
     gxp = gxpy.gx.GXpy()  # get the current gx context
@@ -63,7 +64,11 @@ def main(argv=None):
     parser = argp.ArgumentParser(description="Add a constant to a Geosoft database channel")
     parser.add_argument("sDB", help="Geosoft database")
     parser.add_argument("sCh", help="channel to process")
-    parser.add_argument("-v","--value", type=float, default=1.0, help="value to add, default is 1.0")
+    parser.add_argument("-v",
+                        "--value",
+                        type=float,
+                        default=1.0,
+                        help="value to add, default is 1.0")
     args = parser.parse_args()
 
     # echo parameters
@@ -76,9 +81,3 @@ def main(argv=None):
 
     # process the data
     process_database(db, args.sCh, args.value)
-    
-if __name__ == "__main__":
-    sys.exit(main())
-    # Creating a separate main() function supports the ability for the main() method to be called
-    # by some other Python script, which can also pass arguments.
-    # http://stackoverflow.com/a/287548

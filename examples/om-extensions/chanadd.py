@@ -21,14 +21,9 @@ the following basic steps:
 import geosoft.gxpy as gxpy
 import geosoft.gxpy.om as gxom
 import geosoft.gxpy.utility as gxu
-import pydevd
+
 
 def rungx():
-
-    # pydevd supports remote debugging - see Debugging Python Extensions in the GX Developer documentation
-    # this sets a break-point after this line when this script is run from Oasis montaj.
-    # un-comment the follwoing like to activate remote debugging:
-    # pydevd.settrace('localhost', port=34765, stdoutToServer=True, stderrToServer=True)
 
     # get the current database
     db = gxpy.gdb.GXdb.open()
@@ -39,26 +34,26 @@ def rungx():
     p_addval = 'ADDVAL'
 
     # get parameters from the parameter block, initializing to start-up defaults '' and 0.0
-    parms = gxu.get_parameters(group, {p_chan:'', p_addval:0.0})
+    parms = gxu.get_parameters(group, {p_chan: '', p_addval: 0.0})
 
     # if interactive, get user input
     if not gxom.running_script():
 
         try:
-            # ask for a channel to process from list of channels in the database
+            # get channel to process from list of database channels
             chan = gxom.get_user_input(
-                                    'Channel to process',
-                                    'Channel:',
-                                    kind='list',
-                                    default=parms.get(p_chan),
-                                    items=sorted([k for k in db.channels().keys()]))
+                    'Channel to process',
+                    'Channel:',
+                    kind='list',
+                    default=parms.get(p_chan),
+                    items=sorted([k for k in db.channels().keys()]))
 
             # value to add to the channel
             addval = gxom.get_user_input(
-                                    'Value to add to the data',
-                                    'value to add:',
-                                    kind='float',
-                                    default=parms.get(p_addval))
+                    'Value to add to the data',
+                    'value to add:',
+                    kind='float',
+                    default=parms.get(p_addval))
         except gxom.OMException:
             exit()
 
@@ -66,8 +61,6 @@ def rungx():
         parms[p_chan] = chan
         parms[p_addval] = addval
         gxu.save_parameters(group, parms)
-
-
 
     # work through the data a line at a time - get a list of selected lines
     lines = db.lines()
@@ -92,5 +85,5 @@ def rungx():
         # write the data back to the database
         db.writeDataChan(l, chan, sum, fid)
 
-    # pause hold the console so user can review
-    input("Press return to exit...")
+    # pause the console so user can review
+    input("Press return to continue...")

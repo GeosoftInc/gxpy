@@ -221,6 +221,11 @@ class Test(unittest.TestCase):
         temp = gxu.temp_path()
         self.assertTrue(os.path.isdir(temp))
 
+    def test_display_message(self):
+        self.start(gsys.func_name())
+
+        gxu.display_message('test title', 'test message')
+
 ###############################################################################################
 
 if __name__ == '__main__':

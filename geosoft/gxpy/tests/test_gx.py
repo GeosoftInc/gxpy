@@ -61,11 +61,6 @@ class Test(unittest.TestCase):
         ent = self.gxp.entitlements()
         self.assertTrue(ent.get('1000'), 'Oasis montaj™ Base')
 
-    def test_display_message(self):
-        self.start(gsys.func_name())
-
-        self.gxp.display_message('test title', 'test message')
-
 ###############################################################################################
 
 if __name__ == '__main__':
