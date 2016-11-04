@@ -1,8 +1,8 @@
-'''
+"""
 
    Geosoft Desktop dependent functions.
 
-'''
+"""
 
 import os
 import geosoft
@@ -11,54 +11,60 @@ from .utility import dictFromLst
 
 __version__ = geosoft.__version__
 
+
 class OMException(Exception):
-    '''
+    """
     Exceptions from this module.
 
     .. versionadded:: 9.1
-    '''
+    """
     pass
+
 
 def _(s): return s
 
+
 def running_script():
-    '''
+    """
     :return: 1 if running from a script, 0 if running interactively.
 
     .. versionadded:: 9.1
-    '''
+    """
 
     return not gxapi.GXSYS.interactive()
 
-def message(title, message):
-    '''
+
+def user_message(title, message):
+    """
     Display a message to the user
     :param title:   message box title
     :param message: message
 
     .. versionadded:: 9.1
-    '''
+    """
     gxapi.GXSYS.display_message(title, message)
 
+
 def _user_input_gx(kind):
-    ''' resolve and run the user_input GX'''
+    """Resolve and run the user_input GX"""
     gxapi.GXSYS.set_string("USER_INPUT", "TYPE", str(kind))
     dir = os.path.split(__file__)[0]
-    user_input = os.path.join(os.path.join(dir,'user_input'), 'user_input.gx')
+    user_input = os.path.join(os.path.join(dir, 'user_input'), 'user_input.gx')
     ret = gxapi.GXSYS.run_gx(user_input)
     if ret == -1:
         gxapi.GXSYS.cancel()
     return ret
 
+
 def pause(title='Pause...', cancel=False):
-    '''
+    """
     Display a pause dialog, wait for user to press continue or cancel
     :param title:   The pause dialog title, default is "Pause..."
     :param cancel:  If True, show a cancel button
     :raises:        :py:ex:GXCancel if the user cancels the dialog
 
     .. versionadded:: 9.1
-    '''
+    """
 
     gxapi.GXSYS.filter_parm_group("USER_INPUT", 1)
     try:
@@ -72,7 +78,7 @@ def pause(title='Pause...', cancel=False):
 
 
 def get_user_input(title="Input required...", prompt='?', kind='string', default='', items='', filemask=''):
-    '''
+    """
     Display a dialog prompt on the Geosoft Desktop and wait for user input.
     This method depends on "user_input.gx" and can only be used from an extension running
     inside a Geosoft Desktop application.
@@ -89,7 +95,7 @@ def get_user_input(title="Input required...", prompt='?', kind='string', default
     :raise:         :py:ex:GXCancel if the user cancels the dialog
 
     .. versionadded:: 9.1
-    '''
+    """
 
     gxapi.GXSYS.filter_parm_group("USER_INPUT", 1)
     try:
@@ -103,7 +109,7 @@ def get_user_input(title="Input required...", prompt='?', kind='string', default
                      'colour':  4,
                      'file':    5,
                      'newfile': 6,
-                     'oldfile': 7,}
+                     'oldfile': 7}
         kind = kind_list[kind]
 
         gxapi.GXSYS.set_string("USER_INPUT", "TITLE", str(title))
@@ -115,7 +121,7 @@ def get_user_input(title="Input required...", prompt='?', kind='string', default
                 filemask = ';'.join(filemask)
             else:
                 filemask = ''
-        filemask = filemask.replace(',',';')
+        filemask = filemask.replace(',', ';')
         if filemask == '**':
             filemask = '**;*.*'
         gxapi.GXSYS.set_string("USER_INPUT", "FILEMASK", filemask)
@@ -136,7 +142,7 @@ def get_user_input(title="Input required...", prompt='?', kind='string', default
         # resolve default string
         if kind == kind_list['file']:
             if isinstance(default, str):
-               default = default.replace(',','|').replace(';', '|')
+                default = default.replace(',', '|').replace(';', '|')
             else:
                 if len(default) > 0:
                     default = '|'.join(default)
@@ -165,7 +171,7 @@ def get_user_input(title="Input required...", prompt='?', kind='string', default
 
 
 def menus():
-    ''' Returns Oasis montaj menu information as a dictionary:
+    """ Returns Oasis montaj menu information as a dictionary:
     {
         'default'
         'loaded'
@@ -173,7 +179,7 @@ def menus():
     }
 
     .. versionadded:: 9.1
-    '''
+    """
 
     def_menus = gxapi.GXLST.create(512)
     loaded_menus = gxapi.GXLST.create(512)
@@ -182,13 +188,13 @@ def menus():
 
     info = {'menu_default': list(dictFromLst(def_menus).keys()),
             'menu_loaded': list(dictFromLst(loaded_menus).keys()),
-            'menu_user': list(dictFromLst(user_menus).keys()) }
+            'menu_user': list(dictFromLst(user_menus).keys())}
 
     return info
 
 
 def state():
-    '''
+    """
     Return a dictionary that contains the current Oasis montaj state:
 
     {
@@ -219,7 +225,7 @@ def state():
     }
 
     .. versionadded:: 9.1
-    '''
+    """
 
     s = gxapi.str_ref()
     glst = gxapi.GXLST.create(4096)
@@ -249,9 +255,9 @@ def state():
         if sln.value == '[All]':
             sln.value = '*'
         if sfd.value == '[All]':
-            fd = ('*','*')
+            fd = ('*', '*')
         elif sfd.value == "[None]":
-            fd = ('','')
+            fd = ('', '')
         else:
             fd = sfd.value.split(' to ')
             fd = (fd[0], fd[1])

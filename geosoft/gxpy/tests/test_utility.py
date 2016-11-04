@@ -40,8 +40,8 @@ class Test(unittest.TestCase):
         self.assertEqual(gxu.dtypeGX(gxapi.GS_ULONG64), np.uint64)
 
         self.assertEqual(gxu.gxDummy(np.float),gxapi.rDUMMY)
-        self.assertEqual(gxu.gxDummy(np.int64),gxapi.iDUMMY)
-        self.assertEqual(gxu.gxDummy("<U1000"),'*')
+        self.assertEqual(gxu.gxDummy(np.int32),gxapi.iDUMMY)
+        self.assertEqual(gxu.gxDummy(np.int64),gxapi.GS_S8DM)
 
         npd = np.array([[1,1],[2,2],[-127,1],[3,3]],dtype=gxu.dtypeGX(gxapi.GS_BYTE))
         self.assertEqual(list(gxu.dummyMask(npd)),[False,False,True,False])

@@ -9,6 +9,7 @@ from . import utility as gxu
 
 __version__ = geosoft.__version__
 
+
 class GXException(Exception):
     '''
     Exceptions from this module.
@@ -17,12 +18,13 @@ class GXException(Exception):
     '''
     pass
 
+
 class GXpy():
     '''
     Geosoft GX context.
 
     :param app:             application name, default is the script name
-    :param version:         application version number, default this module version.
+    :param version:         application version number, default geosoft version
     :param parent_window:   ID of the parent window if needed, default 0.
 
     :members:
@@ -35,9 +37,8 @@ class GXpy():
     .. versionadded:: 9.1
     '''
 
-
     def __repr__(self):
-        return "{}({})".format(self.__class__,self.__dict__)
+        return "{}({})".format(self.__class__, self.__dict__)
 
     def __init__(self, name=__name__, version=__version__, parent_window=0):
 
@@ -50,7 +51,7 @@ class GXpy():
 
         user = gxapi.str_ref()
         company = gxapi.str_ref()
-        gxapi.GXSYS.get_licensed_user( user, company)
+        gxapi.GXSYS.get_licensed_user(user, company)
         self.gid = user.value
 
         # create a shared string ref for the convenience of Geosoft modules
@@ -69,7 +70,7 @@ class GXpy():
         try:
             gxapi.GXSYS.display_message(title, message)
         except geosoft.gxapi.GXAPIError:
-            print('Title: {}\nMessage: {}'.format(title,message))
+            print('Title: {}\nMessage: {}'.format(title, message))
 
     def main_wind_id(self):
         '''
@@ -79,7 +80,6 @@ class GXpy():
         '''
 
         return self.gxapi.get_main_wnd_id()
-
 
     def active_wind_id(self):
         '''
@@ -92,7 +92,8 @@ class GXpy():
 
     def disable_app(self):
         '''
-        Disables application windows to allow modal Python UI.  Call before opening your own UI window.
+        Disables application windows to allow modal Python UI.
+        Call before opening your own UI window.
 
         .. versionadded:: 9.1
         '''
@@ -100,7 +101,8 @@ class GXpy():
 
     def enable_app(self):
         '''
-        Enables application windows to allow modal Python UI.  Call before returning control to OM.
+        Enables application windows to allow modal Python UI.
+        Call before returning control to OM.
 
         .. versionadded:: 9.1
         '''
@@ -184,4 +186,3 @@ class GXpy():
             return pp.pformat(info)
         else:
             return info
-

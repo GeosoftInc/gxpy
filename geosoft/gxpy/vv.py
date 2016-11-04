@@ -26,6 +26,12 @@ class GXvv():
     .. versionadded:: 9.1
     '''
 
+    def __enter__(self):
+        return self
+
+    def __exit__(self, type, value, traceback):
+        pass
+
     def __init__(self, dtype=np.float, fid=(0.0,1.0)):
         self._gxtype = gxu.gxType(dtype)
         self._dtype = gxu.dtypeGX(self._gxtype)

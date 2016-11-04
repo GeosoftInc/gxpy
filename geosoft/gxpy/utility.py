@@ -1,10 +1,10 @@
-'''
+"""
 
    Utility functions to support Geosoft Python scripts and modules.
 
-'''
+"""
 
-import sys, os
+import os
 import json
 import subprocess
 from time import gmtime, strftime
@@ -15,13 +15,56 @@ import geosoft.gxapi as gxapi
 
 __version__ = geosoft.__version__
 
+# cached lookup tables
+_dummy_map = {
+    np.dtype(np.float): gxapi.rDUMMY,
+    np.dtype(np.float64): gxapi.rDUMMY,
+    np.dtype(np.float32): gxapi.rDUMMY,
+    np.dtype(np.int): gxapi.iDUMMY,
+    np.dtype(np.int64): gxapi.iDUMMY,
+    np.dtype(np.int8): gxapi.GS_S1DM,
+    np.dtype(np.int16): gxapi.GS_S2DM,
+    np.dtype(np.int32): gxapi.GS_S4DM,
+    np.dtype(np.int64): gxapi.GS_S8DM,
+    np.dtype(np.str_): '*'}
+
+_gx2np_type = {
+    gxapi.GS_TYPE_DEFAULT: None,
+    gxapi.GS_DOUBLE: np.dtype(np.float),
+    gxapi.GS_FLOAT: np.dtype(np.float32),
+    gxapi.GS_LONG64: np.dtype(np.int64),
+    gxapi.GS_LONG: np.dtype(np.int32),
+    gxapi.GS_BYTE: np.dtype(np.byte),
+    gxapi.GS_SHORT: np.dtype(np.int16),
+    gxapi.GS_UBYTE: np.dtype(np.uint8),
+    gxapi.GS_USHORT: np.dtype(np.uint16),
+    gxapi.GS_ULONG: np.dtype(np.uint32),
+    gxapi.GS_ULONG64: np.dtype(np.uint64)}
+
+_np2gx_type = {
+    str(np.dtype(np.float)): gxapi.GS_DOUBLE,
+    str(np.dtype(np.int)): gxapi.GS_LONG,
+    str(np.dtype(np.byte)): gxapi.GS_BYTE,
+    str(np.dtype(np.float64)): gxapi.GS_DOUBLE,
+    str(np.dtype(np.float32)): gxapi.GS_FLOAT,
+    str(np.dtype(np.int64)): gxapi.GS_LONG64,
+    str(np.dtype(np.int32)): gxapi.GS_LONG,
+    str(np.dtype(np.int16)): gxapi.GS_SHORT,
+    str(np.dtype(np.int8)): gxapi.GS_BYTE,
+    str(np.dtype(np.uint8)): gxapi.GS_UBYTE,
+    str(np.dtype(np.uint16)): gxapi.GS_USHORT,
+    str(np.dtype(np.uint32)): gxapi.GS_ULONG,
+    str(np.dtype(np.uint64)): gxapi.GS_ULONG64}
+
+
 class UtilityException(Exception):
-    '''
+    """
     Exceptions from this module.
 
     .. versionadded:: 9.1
-    '''
+    """
     pass
+
 
 # translation hook
 def _(s): return s
@@ -29,38 +72,42 @@ def _(s): return s
 ###############
 # static
 
+
 def dictFromLst(lst):
-    '''
+    """
     :return:    python dictionary from a Geosoft GXLST
 
     .. versionadded:: 9.1
-    '''
+    """
     key = gxapi.str_ref()
     val = gxapi.str_ref()
     dct = {}
     for item in range(lst.size()):
-        lst.gt_item(0,item,key)
-        lst.gt_item(1,item,val)
+        lst.gt_item(0, item, key)
+        lst.gt_item(1, item, val)
         dct[key.value] = val.value
     del key
     del val
     return dct
 
+
 def timeStamp():
     return strftime("%Y-%m-%d %H:%M:%S", gmtime())
 
-def yearFromJulianDay2(jd1,jd2):
-    '''
+
+def yearFromJulianDay2(jd1, jd2):
+    """
     :param jd1: part 1 Julian date (https://pypi.python.org/pypi/jdcal)
     :param jd2: part 2 Julian date
     :return: decimal Gregorian year (Western calendar year)
 
     .. versionadded:: 9.1
-    '''
+    """
     y, m, d, f = jd2gcal(jd1, jd2)
     jdt_1, jdt_2 = gcal2jd(y, 1, 1)
     day_diff = (jd1 - jdt_1) + (jd2 - jdt_2)
     return y + (day_diff / (366 if is_leap(y) else 365))
+
 
 def rdecode_err(s):
     """
@@ -106,17 +153,17 @@ def rdecode_err(s):
     .. versionadded:: 9.1
     """
 
-    #nothing there, or a dummy
+    # nothing there, or a dummy
     if (not s) or (s[0] == '*'):
         return gxapi.rDUMMY
 
-    #try floating point
+    # try floating point
     try:
-        return(float(s))
+        return float(s)
 
     except ValueError:
 
-        #date
+        # date
         if (len(s) >= 8) and (s[4:5] in '/-'):
             s = s[0:10]
             try:
@@ -126,59 +173,60 @@ def rdecode_err(s):
                     sday = s[7:]
                 else:
                     sday = s[8:10]
-                j1,j2 = gcal2jd(s[:4],smonth,sday)
-                return yearFromJulianDay2(j1,j2)
+                j1, j2 = gcal2jd(s[:4], smonth, sday)
+                return yearFromJulianDay2(j1, j2)
             except:
                 raise ValueError
 
-        #tabs are spaces, trim leading white space
-        ss = s.replace("\t"," ")
+        # tabs are spaces, trim leading white space
+        ss = s.replace("\t", " ")
         ss = ss.lstrip()
         ss = ss.rstrip()
 
-        #replace mistyped "o", "O"
-        ss = ss.replace("o","0")
-        ss = ss.replace("O","0")
+        # replace mistyped "o", "O"
+        ss = ss.replace("o", "0")
+        ss = ss.replace("O", "0")
 
-        #nothing there, or a dummy
+        # nothing there, or a dummy
         if (not ss) or (ss[0] == '*'):
             return gxapi.rDUMMY
 
         try:
 
-            return(float(ss))
+            return float(ss)
 
         except ValueError:
 
-            #look for time or geographic format - two spaces become dots
-            sg = ss.replace(' ','.',2)
-            sg = sg.replace(':','.',2)
-            if (' ' in sg): #ok, this string is messed up
+            # look for time or geographic format - two spaces become dots
+            sg = ss.replace(' ', '.', 2)
+            sg = sg.replace(':', '.', 2)
+            if ' ' in sg:  # ok, this string is messed up
                 raise ValueError
-            sg = sg.upper();
+            sg = sg.upper()
             twelve = 0.0
             negsuf = negpre = 1.0
             suf = sg[len(sg)-1]
-            if ((suf == 'S') or (suf == 'W')):
+            if (suf == 'S') or (suf == 'W'):
                 negsuf = -1.0
             if sg[0] == '-':
                 negpre = -1.0
                 sg = sg[1:]
             else:
-                if ('PM' in sg):
+                if 'PM' in sg:
                     twelve = 12.0
             sg = sg.rstrip("NSEWAMP")
-            dms = sg.split('.',2)
+            dms = sg.split('.', 2)
             degrees = float(dms[0])
-            if (len(dms)>1):
+            if len(dms) > 1:
                 minutes = float(dms[1])
             else:
-                minutes=0.0
-            if (len(dms)>2):
+                minutes = 0.0
+            if len(dms) > 2:
                 seconds = float(dms[2])
             else:
-                seconds=0.0
+                seconds = 0.0
             return (degrees + (minutes + seconds/60.0)/60.0) * negpre * negsuf + twelve
+
 
 def rdecode(s):
     """
@@ -198,21 +246,21 @@ def rdecode(s):
         return(gxapi.rDUMMY)
 
 
-def decode(s,f):
-    '''
+def decode(s, f):
+    """
     Decode a string (s) to a numpy format defined by string (f).
 
     :param s:   string to decode
     :param f:   format string:
 
         === ================================================
-        b	Boolean                                           
-        i	(signed) integer                                  
-        u	unsigned integer                                  
-        f	floating-point                                    
-        S   string, interpreted as 'U' unicode                
-        a	string, interpreted as 'U' unicode                
-        U	unicode, requires length suffix, ie 'U1', 'U14'   
+        b	Boolean
+        i	(signed) integer
+        u	unsigned integer
+        f	floating-point
+        S   string, interpreted as 'U' unicode
+        a	string, interpreted as 'U' unicode
+        U	unicode, requires length suffix, ie 'U1', 'U14'
         === ================================================
 
     :times:
@@ -229,110 +277,83 @@ def decode(s,f):
         ========== ======================================
 
     .. versionadded:: 9.1
-    '''
+    """
 
-    #always use Unicode for strings
+    # always use Unicode for strings
     if f[0] in "Sa":
         f = 'U'+f[1:]
 
-    #handle strings
+    # handle strings
     if f[:1] == 'U':
         if len(f) < 2:
             raise TypeError
-        type(f) #to insure valid type
+        type(f)  # to insure valid type
         return s[0:int(f[1:])]
 
-    #not currently supporting complex
+    # not currently supporting complex
     if f[0] == 'c':
         raise TypeError
 
-    type(f) #raises error if unknown type
+    type(f)  # raises error if unknown type
 
     r = rdecode_err(s)
     if f[0] == 'f':
         return r
 
-    #boolean
+    # boolean
     if f[0] == 'b':
         if r == gxapi.rDUMMY:
             return False
         else:
             return not (int(round(r)) == 0)
 
-    #everything else is returned as an int
+    # everything else is returned as an int
     if r == gxapi.rDUMMY:
         return gxapi.GS_S4DM
     return int(round(r))
 
+
 def gxType(dtype):
-    '''
+    """
     :return:    GX type for a numpy dtype
 
     .. versionadded:: 9.1
-    '''
+    """
     if dtype is None:
         return gxapi.GS_TYPE_DEFAULT
     dtype = np.dtype(dtype)
-    if dtype == np.float:   return gxapi.GS_DOUBLE
-    if dtype == np.int:     return gxapi.GS_LONG
-    if dtype.type is np.str_:
-       return -(int(dtype.str[2:]))
-    if dtype == np.byte:    return gxapi.GS_BYTE
-    if dtype == np.float64: return gxapi.GS_DOUBLE
-    if dtype == np.float32: return gxapi.GS_FLOAT
-    if dtype == np.int64:   return gxapi.GS_LONG64
-    if dtype == np.int32:   return gxapi.GS_LONG
-    if dtype == np.int16:   return gxapi.GS_SHORT
-    if dtype == np.int8:    return gxapi.GS_BYTE
-    if dtype == np.uint8:   return gxapi.GS_UBYTE
-    if dtype == np.uint16:  return gxapi.GS_USHORT
-    if dtype == np.uint32:  return gxapi.GS_ULONG
-    if dtype == np.uint64:  return gxapi.GS_ULONG64
+    try:
+        return(_np2gx_type[str(dtype)])
+    except KeyError:
+        if dtype.type is np.str_:
+            return -(int(dtype.str[2:]))
 
-    raise UtilityException(_("Unsupported numpy type {}").format(dtype))
 
 def dtypeGX(gtype):
-    '''
+    """
     :return:    numpy dtype from a GX type
 
     .. versionadded:: 9.1
-    '''
-    if gtype == gxapi.GS_TYPE_DEFAULT: return None
-    if gtype == gxapi.GS_DOUBLE:   return np.dtype(np.float)
-    if gtype == gxapi.GS_FLOAT:    return np.dtype(np.float32)
-    if gtype == gxapi.GS_LONG64:   return np.dtype(np.int64)
-    if gtype == gxapi.GS_LONG:     return np.dtype(np.int32)
-    if gtype < 0:
-        return np.dtype('<U{}'.format(-gtype))
-    if gtype == gxapi.GS_BYTE:     return np.dtype(np.byte)
-    if gtype == gxapi.GS_SHORT:    return np.dtype(np.int16)
-    if gtype == gxapi.GS_UBYTE:    return np.dtype(np.uint8)
-    if gtype == gxapi.GS_USHORT:   return np.dtype(np.uint16)
-    if gtype == gxapi.GS_ULONG:    return np.dtype(np.uint32)
-    if gtype == gxapi.GS_ULONG64:  return np.dtype(np.uint64)
-    raise UtilityException(_("Unsupported GX type {}").format(gtype))
+    """
+
+    try:
+        return _gx2np_type[gtype]
+    except KeyError:
+        if gtype < 0:
+            return np.dtype('<U{}'.format(-gtype))
+
 
 def gxDummy(dtype):
-    '''
+    """
     :return:    GX dummy for this dtype
 
     .. versionadded:: 9.1
-    '''
-    dtype = np.dtype(dtype)
-    if dtype == np.float: return gxapi.rDUMMY
-    if dtype == np.float64: return gxapi.rDUMMY
-    if dtype == np.float32: return gxapi.rDUMMY
-    if dtype == np.int: return gxapi.iDUMMY
-    if dtype == np.int64: return gxapi.iDUMMY
-    if dtype == np.int8: return gxapi.GS_S1DM
-    if dtype == np.int16: return gxapi.GS_S2DM
-    if dtype == np.int32: return gxapi.GS_S4DM
-    if dtype == np.int64: return gxapi.GS_S8DM
-    if dtype.type is np.str_: return '*'
-    raise UtilityException(_("Unsupported dummy for numpy type {}").format(dtype))
+    """
+    return(_dummy_map[np.dtype(dtype)])
+
 
 def dummyMask(npd):
-    '''
+    """
     Return a 1-D dummy mask that is True for all rows  in a 2D numpy array that
     have a Geosoft dummy value.
 
@@ -340,28 +361,30 @@ def dummyMask(npd):
     :return:    numpy 1D array, True for any row that had a dummy in any data field
 
     .. versionadded:: 9.1
-    '''
+    """
 
     if len(npd.shape) != 2:
         raise UtilityException(_('Must be a 2D array'))
     dummy = gxDummy(npd.dtype)
     return np.apply_along_axis(lambda a: dummy in a, 1, npd)
 
+
 def save_parameters(group='_', parms={}):
-    '''
+    """
     Save parameters to the Project Parameter Block.
 
     :param group:   parameter block group name
     :param parms:   dict containing named parameter settings
 
     .. versionadded:: 9.1
-    '''
+    """
 
-    for k,v in parms.items():
+    for k, v in parms.items():
         gxapi.GXSYS.set_string(group, k, str(v))
 
+
 def get_parameters(group='_', parms=None):
-    '''
+    """
     Get parameters from the Project Parameter Block.
 
     :param group:   name in the parameter block group name
@@ -369,7 +392,7 @@ def get_parameters(group='_', parms=None):
     :return:        dictionary containing group parameters
 
     .. versionadded:: 9.1
-    '''
+    """
 
     sv = gxapi.str_ref()
     p = {}
@@ -392,51 +415,55 @@ def get_parameters(group='_', parms=None):
 
 
 def project_path():
-    '''
+    """
     Return the Geosoft project folder path.
 
     .. versionadded:: 9.1
-    '''
+    """
     path = gxapi.str_ref()
     gxapi.GXSYS.get_path(gxapi.SYS_PATH_LOCAL, path)
     return path.value.replace('\\', '/')
 
+
 def user_path():
-    '''
+    """
     Return the Geosoft user configurations folder path.
 
     .. versionadded:: 9.1
-    '''
+    """
     path = gxapi.str_ref()
     gxapi.GXSYS.get_path(gxapi.SYS_PATH_GEOSOFT_USER, path)
     return path.value.replace('\\', '/')
 
+
 def temp_path():
-    '''
+    """
     Return the Geosoft temporary folder path.
 
     .. versionadded:: 9.1
-    '''
+    """
     path = gxapi.str_ref()
     gxapi.GXSYS.get_path(gxapi.SYS_PATH_GEOTEMP, path)
     return path.value.replace('\\', '/')
 
+
 def _temp_dict_file_name():
-    '''Name of the expected python dictionary as a json file from run_external_python().
+    """Name of the expected python dictionary as a json file from run_external_python().
 
     .. versionadded:: 9.1
-    '''
+    """
     return '__shared_dictionary__'
 
+
 def set_shared_dict(dict=None):
-    ''' 
+    """
     Save a dictionary to be shared by an separate application.
     This is a companion file to run_external_python().
-    
+
     :param dict:  dictionary of parameters to save
 
     .. versionadded:: 9.1
-    '''
+    """
 
     # if no ditionary, pop the existing one if it is there
     if dict is None:
@@ -447,12 +474,12 @@ def set_shared_dict(dict=None):
 
 
 def get_shared_dict():
-    ''' 
+    """
     Get a dictionary shared by an external application.
     The shared dictionary is cleared (popped) so a subsequent call will return an empty dictionary.
 
     .. versionadded:: 9.1
-    '''
+    """
 
     try:
         with open(_temp_dict_file_name(), 'r') as f:
@@ -465,7 +492,7 @@ def get_shared_dict():
 
 
 def run_external_python(script, script_args='', python_args='', dict=None, console=True):
-    '''
+    """
     Run a python script as an external program, returning results as a dictionary.
     External program can call gxpy.utility.run_return(dict) to pass a dictionary back to caller.
 
@@ -479,7 +506,7 @@ def run_external_python(script, script_args='', python_args='', dict=None, conso
     :return:            dictionary registered gxpy.utility.run_return(dict)
 
     .. versionadded:: 9.1
-    '''
+    """
 
     if not os.path.isfile(script):
         raise UtilityException('Cannot find script: {}'.format(script))

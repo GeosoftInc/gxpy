@@ -2,7 +2,6 @@
 # pydevd.settrace('localhost', port=34765, stdoutToServer=True, stderrToServer=True)
 
 import json
-import geosoft.gxapi as gxapi
 import geosoft.gxpy.om as gxom
 
 
@@ -10,7 +9,7 @@ import geosoft.gxpy.om as gxom
 
 def test_get_user_input():
 
-    gxom.pause('Starting get_user_info test')
+    gxom.user_message('TEST', 'Starting get_user_info test')
     gxom.pause('Testing pause\nSome descriptive text\nLine 2\nLine 3\nThis tests the ability for DGW to properly resize a a dialog..........')
     gxom.pause('Testing pause with cancel',cancel=True)
 
@@ -70,9 +69,9 @@ def test_menus():
     print(json.dumps(env, indent=4))
 
 def rungx():
-    test_multifile()
-    test_file()
     test_get_user_input()
+    test_file()
+    test_multifile()
     test_state()
     test_menus()
     input("Finished testing om API - success...")

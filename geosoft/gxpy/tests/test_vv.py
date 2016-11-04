@@ -26,20 +26,20 @@ class Test(unittest.TestCase):
 
         self.assertEqual(gxvv.__version__, geosoft.__version__)
 
-        vv = gxvv.GXvv(np.float)
-        self.assertEqual(vv.fid(),(0.0,1.0))
+        with gxvv.GXvv(np.float) as vv:
+            self.assertEqual(vv.fid(),(0.0,1.0))
 
         fid = (10.1,0.99)
-        vv = gxvv.GXvv(np.float,fid=fid)
-        self.assertEqual(vv.fid(),fid)
+        with gxvv.GXvv(np.float,fid=fid) as vv:
+            self.assertEqual(vv.fid(),fid)
 
-        fid = (-45,7)
-        vv.setFid(fid)
-        self.assertEqual(vv.fid(),fid)
+            fid = (-45,7)
+            vv.setFid(fid)
+            self.assertEqual(vv.fid(),fid)
 
-        vv.reFid((-40,8),4)
-        self.assertEqual(vv.fid(),(-40,8))
-        self.assertEqual(vv.length(),4)
+            vv.reFid((-40,8),4)
+            self.assertEqual(vv.fid(),(-40,8))
+            self.assertEqual(vv.length(),4)
 
     def test_np(self):
         self.start(gsys.func_name())
