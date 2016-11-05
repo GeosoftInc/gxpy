@@ -26,7 +26,7 @@ _dummy_map = {
     np.dtype(np.int16): gxapi.GS_S2DM,
     np.dtype(np.int32): gxapi.GS_S4DM,
     np.dtype(np.int64): gxapi.GS_S8DM,
-    np.dtype(np.str_): '*'}
+    np.dtype(np.str_): ''}
 
 _gx2np_type = {
     gxapi.GS_TYPE_DEFAULT: None,
@@ -366,7 +366,11 @@ def gxDummy(dtype):
 
     .. versionadded:: 9.1
     """
-    return(_dummy_map[np.dtype(dtype)])
+    try:
+        return(_dummy_map[np.dtype(dtype)])
+    except KeyError:
+        if str(dtype)[:2] == '<U':
+            return ''
 
 
 def dummyMask(npd):

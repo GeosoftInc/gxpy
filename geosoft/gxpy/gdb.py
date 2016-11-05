@@ -1,10 +1,12 @@
 
 import os
+import math
 import numpy as np
 
 import geosoft
 import geosoft.gxapi as gxapi
 from . import vv as gxvv
+from . import va as gxva
 from . import utility as gxu
 
 __version__ = geosoft.__version__
@@ -95,7 +97,7 @@ class GXdb():
         lines = gdb.lines()
         for line in lines:
 
-            npd,ch,fid = gdb.readLine(line)
+            npd,ch,fid = gdb.read_line(line)
             # npd is a 2D numpy array to all data in this line.
             # ch is a list of the channels, one channel for each column in npd.
             # Array channels are expanded with channel names "name[0]", "name[1]" ...
@@ -120,7 +122,7 @@ class GXdb():
         lines = gdb.lines()
         for line in lines:
 
-            npd,ch,fid = gdb.readLine(line)
+            npd,ch,fid = gdb.read_line(line)
             # npd is a 2D numpy array to all data in this line.
             # ch is a list of the channels, one channel for each column in npd.
             # Array channels are expanded with channel names "name[0]", "name[1]" ...
@@ -139,12 +141,12 @@ class GXdb():
         lines = gdb.lines()
         for line in lines:
 
-            npd,ch,fid = gdb.readLine(line, channels=['X','Y','Z'])
+            npd,ch,fid = gdb.read_line(line, channels=['X','Y','Z'])
 
             squares = npd.square(npd)
             dist = np.sqrt(npd[0] + npd[1] + npd[2])
 
-            gdb.writeDataChan(line, 'distance', dist, fid)
+            gdb.write_channel(line, 'distance', dist, fid)
 
     Create a distance channel (as in previous example), with dummy handling:
 
@@ -155,9 +157,9 @@ class GXdb():
         lines = gdb.lines()
         for l in lines:
 
-            ln, lsymb = gdb.lineNameSymb(l)
+            ln, lsymb = gdb.line_name_symb(l)
 
-            data, ch, fid = gdb.readLine(lsymb, channels=['X','Y','Z'])
+            data, ch, fid = gdb.read_line(lsymb, channels=['X','Y','Z'])
             dummy = gxu.gxDummy(data.dtype)
 
             # get a dummy mask, True for all rows with a dummy
@@ -168,14 +170,14 @@ class GXdb():
 
             # insert dummies using the dummy mask, then write
             dist[dummyMask] = dummy
-            gdb.writeDataChan(lsymb, 'distance', dist)
+            gdb.write_channel(lsymb, 'distance', dist)
 
     .. versionadded:: 9.1
     '''
 
     _edb = None
     _db = None
-    _fileName = None
+    _file_name = None
 
     def __enter__(self):
         return self
@@ -187,7 +189,7 @@ class GXdb():
         return "{}({})".format(self.__class__, self.__dict__)
 
     def __str__(self):
-        return os.path.basename(self._fileName)
+        return os.path.basename(self._file_name)
 
     def __init__(self):
         self._lst = gxapi.GXLST.create(2000)
@@ -220,7 +222,7 @@ class GXdb():
             gdb._db = gxapi.GXDB.open(name, 'SUPER', '')
 
         gxapi.GXDB.get_name(gdb._db, gxapi.DB_NAME_FILE, gdb._sr)
-        gdb._fileName = gdb._sr.value
+        gdb._file_name = gdb._sr.value
 
         return gdb
 
@@ -249,7 +251,7 @@ class GXdb():
             comp = COMP_SPEED
 
         gdb = cls()
-        name = gdb._gdbname(name)
+        name = gdb._gdb_name(name)
         gxapi.GXDB.create_comp(name,
                                maxLines, maxChannels, maxBlobs, 10, 100,
                                'SUPER', '',
@@ -257,7 +259,7 @@ class GXdb():
         return(gdb.open(name))
 
     @staticmethod
-    def _gdbname(name):
+    def _gdb_name(name):
         name = name.strip()
         nameExt = os.path.splitext(name)
         if nameExt[1].lower() == '.gdb':
@@ -301,15 +303,15 @@ class GXdb():
     # ============================================================================
     # Information
 
-    def fileName(self):
+    def file_name(self):
         '''
         :return: database file name
 
         .. versionadded:: 9.1
         '''
-        return os.path.abspath(self._fileName)
+        return os.path.abspath(self._file_name)
 
-    def lineNameSymb(self, line, create=False):
+    def line_name_symb(self, line, create=False):
         '''
         Return line name, symbol
 
@@ -329,11 +331,11 @@ class GXdb():
                 self._db.get_symb_name(line, self._sr)
                 return self._sr.value, line
         if create:
-            return line, self.newLine(line)
+            return line, self.new_line(line)
 
         raise GDBException('Line \'{}\' not found'.format(line))
 
-    def chanNameSymb(self, chan):
+    def channel_name_symb(self, chan):
         '''
         Return channel name, symbol
 
@@ -354,18 +356,18 @@ class GXdb():
 
         raise GDBException('Channel \'{}\' not found'.format(chan))
 
-    def chanArray(self, channel):
+    def channel_width(self, channel):
         '''
-        Channel array dimension.
+        Channel array width, 1 for normal channels, >1 for VA channels.
 
         :param channel: channel symbol or name
         :return:        array dimension, 1 for non-array channels
 
         .. versionadded:: 9.1
         '''
-        return self._db.get_col_va(self.chanNameSymb(channel)[1])
+        return self._db.get_col_va(self.channel_name_symb(channel)[1])
 
-    def channels(self, chan=None):
+    def list_channels(self, chan=None):
         '''
         Return a dict of channels in the database.
 
@@ -375,7 +377,6 @@ class GXdb():
             CHAN_ALL        all channels, normal and VA
             CHAN_NORMAL     normal channels only
             CHAN_ARRAY      VA channels only
-            CHAN_DISPLAYED  displayed channels
             =============== ============================
 
         :return: dictionary {channel_names: channel_symbols}
@@ -393,14 +394,6 @@ class GXdb():
                     continue
                 dct[k] = _dct.get(k)
             return dct
-
-        if chan == CHAN_DISPLAYED:
-            # TODO need channel functions
-            dc = []
-            dct = {}
-            for c in dc:
-                dct[c] = self._db.find_chan(c)
-            return {}
 
         if chan == CHAN_ALL:
             dct = cleanChannelsDct()
@@ -425,7 +418,7 @@ class GXdb():
 
         return dct
 
-    def lines(self, select=True):
+    def list_lines(self, select=True):
         '''
         List of lines in the database
         :param select=True:  True to return selected lines, false to return all lines
@@ -442,7 +435,7 @@ class GXdb():
             dct[k] = int(dct.get(k))
         return dct
 
-    def lineDetails(self, line):
+    def line_details(self, line):
         '''
         Return dictionary of line details
 
@@ -466,16 +459,16 @@ class GXdb():
         .. versionadded:: 9.1
         '''
 
-        def getDetail(fn):
+        def get_detail(fn):
             try:
                 fn(ls, self._sr)
                 return self._sr.value
             except geosoft.gxapi.GXAPIError:
                 return ''
 
-        ln, ls = self.lineNameSymb(line)
+        ln, ls = self.line_name_symb(line)
         detail = {}
-        self._lockRead(ls)
+        self._lock_read(ls)
         try:
             detail['name'] = ln
             detail['symbol'] = ls
@@ -485,7 +478,7 @@ class GXdb():
             detail['number'] = self._db.line_number(ls)
             detail['version'] = self._db.line_version(ls)
             detail['type'] = self._db.line_type(ls)
-            detail['groupclass'] = getDetail(self._db.get_group_class)
+            detail['groupclass'] = get_detail(self._db.get_group_class)
 
         except:
             self._unlock(ls)
@@ -493,7 +486,7 @@ class GXdb():
 
         return detail
 
-    def chanDetails(self, channel):
+    def channel_details(self, channel):
         '''
         Return dictionary of channel details
 
@@ -519,24 +512,24 @@ class GXdb():
         .. versionadded:: 9.1
         '''
 
-        def getDetail(fn):
+        def get_detail(fn):
             fn(cs, self._sr)
             return self._sr.value
 
-        cn, cs = self.chanNameSymb(channel)
+        cn, cs = self.channel_name_symb(channel)
         detail = {}
-        self._lockRead(cs)
+        self._lock_read(cs)
         try:
             detail['name'] = cn
             detail['symbol'] = cs
-            detail['class'] = getDetail(self._db.get_chan_class)
+            detail['class'] = get_detail(self._db.get_chan_class)
             detail['format'] = self._db.get_chan_format(cs)
             detail['width'] = self._db.get_chan_width(cs)
             detail['decimal'] = self._db.get_chan_decimal(cs)
-            detail['unit'] = getDetail(self._db.get_chan_unit)
-            detail['label'] = getDetail(self._db.get_chan_label)
+            detail['unit'] = get_detail(self._db.get_chan_unit)
+            detail['label'] = get_detail(self._db.get_chan_label)
             detail['protect'] = self._db.get_chan_protect(cs)
-            detail['array'] = self._db.get_col_va(cs)
+            detail['array'] = self.channel_width(cs)
             detail['type'] = self._db.get_chan_type(cs)
         except:
             self._unlock(cs)
@@ -544,30 +537,30 @@ class GXdb():
 
         return detail
 
-    def chanSetDetails(self, channel, detail):
+    def set_channel_details(self, channel, detail):
         '''
         Set/change channel details from dictionary
 
         :param channel: channel name or symbol
-        :param detail:  dictionary, see chanDetails
+        :param detail:  dictionary, see chan_details
 
         .. versionadded:: 9.1
         '''
 
-        def setDetail(what, fn):
+        def set_detail(what, fn):
             det = detail.get(what)
             if det is not None:
                 fn(cs, det)
 
-        cs = self.chanNameSymb(channel)[1]
-        self._lockWrite(cs)
+        cs = self.channel_name_symb(channel)[1]
+        self._lock_write(cs)
         try:
-            setDetail('class', self._db.set_chan_class)
-            setDetail('format', self._db.set_chan_format)
-            setDetail('width', self._db.set_chan_width)
-            setDetail('decimal', self._db.set_chan_decimal)
-            setDetail('unit', self._db.set_chan_unit)
-            setDetail('label', self._db.set_chan_label)
+            set_detail('class', self._db.set_chan_class)
+            set_detail('format', self._db.set_chan_format)
+            set_detail('width', self._db.set_chan_width)
+            set_detail('decimal', self._db.set_chan_decimal)
+            set_detail('unit', self._db.set_chan_unit)
+            set_detail('label', self._db.set_chan_label)
 
             protect = detail.get('protect')
             if protect is not None:
@@ -577,7 +570,7 @@ class GXdb():
             self._unlock(cs)
             raise
 
-    def chanDtype(self, channel):
+    def channel_dtype(self, channel):
         '''
         Returns channel numpy dtype
 
@@ -586,9 +579,9 @@ class GXdb():
 
         .. versionadded:: 9.1
         '''
-        return gxu.dtypeGX(self._db.get_chan_type(self.chanNameSymb(channel)[1]))
+        return gxu.dtypeGX(self._db.get_chan_type(self.channel_name_symb(channel)[1]))
 
-    def chanFid(self, line, channel):
+    def channel_fid(self, line, channel):
         '''
         Return the fiducial of a line, channel
 
@@ -596,9 +589,9 @@ class GXdb():
         :param channel: channel name or symbol
         :return:        (start,increment)
         '''
-        ls = self.lineNameSymb(line)[1]
-        cs = self.chanNameSymb(channel)[1]
-        self._lockRead(cs)
+        ls = self.line_name_symb(line)[1]
+        cs = self.channel_name_symb(channel)[1]
+        self._lock_read(cs)
         try:
             fidStart = self._db.get_fid_start(ls, cs)
             fidIncr = self._db.get_fid_incr(ls, cs)
@@ -612,14 +605,14 @@ class GXdb():
     # ========================================================================================
     # management
 
-    def newChannel(self, name, dtype=np.float64, array=1, details={'width': 12, 'decimal': 2}):
+    def new_channel(self, name, dtype=np.float64, array=1, details={'width': 12, 'decimal': 2}):
         '''
         Return a channel symbol, create if it does not exist.
 
         :param name:        channel name
         :param dtype:       numpy dtype (ie. np.int64)
         :param array:       array columns (default is 1)
-        :param details:     dictionary containing channel details, see chanDetails()
+        :param details:     dictionary containing channel details, see channel_details()
 
         :return:            channel symbol
 
@@ -642,11 +635,11 @@ class GXdb():
                                            array)
 
         if details:
-            self.chanSetDetails(symb, details)
+            self.set_channel_details(symb, details)
 
         return symb
 
-    def newLine(self, line, linetype=None, group=''):
+    def new_line(self, line, linetype=None, group=''):
         '''
         Get a line symbol.  If line exists an error is raised.
 
@@ -683,7 +676,7 @@ class GXdb():
                                        linetype,
                                        0)
         if len(group) > 0:
-            self._lockWrite(symb)
+            self._lock_write(symb)
             try:
                 self._db.set_group_class(symb, group)
             except geosoft.gxapi.GXAPIError:
@@ -694,7 +687,7 @@ class GXdb():
 
         return symb
 
-    def delChan(self, channels):
+    def delete_channel(self, channels):
         '''
         Delete channel(s) by name or symbol.
 
@@ -703,19 +696,19 @@ class GXdb():
         .. versionadded:: 9.1
         '''
 
-        if not(type(channels) is list):
+        if type(channels) is str:
             channels = [channels]
 
         self._db.un_lock_all_symb()
         for s in channels:
             try:
-                cn, cs = self.chanNameSymb(s)
-                self._lockWrite(cs)
+                cn, cs = self.channel_name_symb(s)
+                self._lock_write(cs)
                 self._db.delete_symb(cs)
             except GDBException:
                 continue
 
-    def delLine(self, s):
+    def delete_line(self, s):
         '''
         Delete a line by name or symbol.
 
@@ -727,10 +720,10 @@ class GXdb():
             s = self._db.find_symb(s, gxapi.DB_SYMB_LINE)
             if s == gxapi.NULLSYMB:
                 return
-        self._lockWrite(s)
+        self._lock_write(s)
         self._db.delete_symb(s)
 
-    def selectLines(self, selection='', select=True):
+    def select_lines(self, selection='', select=True):
         '''
         Change selected state of a line, or group of lines
         :param selection:   string representing selection, comma-delimit multiple selections
@@ -755,13 +748,13 @@ class GXdb():
     # =====================================================================================
     # reading and writing
 
-    def _lockRead(self, s):
+    def _lock_read(self, s):
         try:
             self._db.lock_symb(s, gxapi.DB_LOCK_READONLY, gxapi.DB_WAIT_INFINITY)
         except GDBException:
             raise GDBException('Cannot read lock symbol {}'.format(s))
 
-    def _lockWrite(self, s):
+    def _lock_write(self, s):
         try:
             self._db.lock_symb(s, gxapi.DB_LOCK_READWRITE, gxapi.DB_WAIT_INFINITY)
         except GDBException:
@@ -773,7 +766,7 @@ class GXdb():
         except GDBException:
             pass
 
-    def _vvNp(self, npdata, fid=(0.0, 1.0)):
+    def vv_np(self, npdata, fid=(0.0, 1.0)):
         ''' return a VV copy of the numpy data.'''
         vv = gxapi.GXVV.create_ext(gxu.gxType(npdata.dtype), 0)
         try:
@@ -797,29 +790,123 @@ class GXdb():
         va.set_fid_incr(fid[1])
         return va
 
-    def _vvCh(self, ls, cs, dtype):
+    def _vv_ch(self, ls, cs, dtype=None):
         ''' return a VV of data from channel cs.'''
 
+        if dtype == None:
+            dtype = self.channel_dtype(cs)
         vv = gxvv.GXvv(dtype)
-        self._lockRead(cs)
+        self._lock_read(cs)
         try:
             self._db.get_chan_vv(ls, cs, vv._vv)
         except:
             self._unlock(cs)
             raise
         self._unlock(cs)
-
         return vv
 
-    def readLine(self, line, channels=None, dtype=np.float64, fid=None, dummy=None):
+    def _va_ch(self, ls, cs, dtype=None):
+        ''' return a VA of data from channel cs.'''
+
+        if dtype == None:
+            dtype = self.channel_dtype(cs)
+        w = self.channel_width(cs)
+        va = gxva.GXva(w, dtype)
+        self._lock_read(cs)
+        try:
+            self._db.get_chan_va(ls, cs, va._va)
+        except:
+            self._unlock(cs)
+            raise
+        self._unlock(cs)
+        return va
+
+    def _sorted_chan_list(self):
+
+        ch = list(self.list_channels())
+        ch.sort(key=str.lower)
+        channels = []
+
+        # put x,y,z at the front
+        try:
+            nX, sX = self.channel_name_symb(self._db.get_xyz_chan_symb(gxapi.DB_CHAN_X))
+            channels.append(nX)
+        except GDBException:
+            nX = ''
+        try:
+            nY, sY = self.channel_name_symb(self._db.get_xyz_chan_symb(gxapi.DB_CHAN_Y))
+            channels.append(nY)
+        except GDBException:
+            nY = ''
+        try:
+            nZ, sZ = self.channel_name_symb(self._db.get_xyz_chan_symb(gxapi.DB_CHAN_Z))
+            channels.append(nZ)
+        except GDBException:
+            nZ = ''
+
+        for c in ch:
+            if (c == nX) or (c == nY) or (c == nZ):
+                continue
+            channels.append(c)
+
+        return channels
+
+    def _expand_chan_list(self, channels):
+        """ expand VA channels and return lists of names, symbols and types"""
+
+        chNames = []
+        chSymbs = []
+        cType = []
+        for c in channels:
+            cn, cs = self.channel_name_symb(c)
+            w = self.channel_width(cs)
+            if w == 1:
+                chNames.append(cn)
+                chSymbs.append(cs)
+                cType.append(self._db.get_chan_type(cs))
+            else:
+                for i in range(w):
+                    ccn, ccs = self.channel_name_symb("{}[{}]".format(cn, i))
+                    chNames.append(ccn)
+                    chSymbs.append(ccs)
+                    cType.append(self._db.get_chan_type(cs))
+
+        return chNames, chSymbs, cType
+
+    def read_channel(self, line, channel, dtype=None):
+        '''
+        Read data from a single channel.
+
+        :param line:    line name or symbol
+        :param channel: channel name or symbol
+        :param dtype:   type wanted, default same as the channel data
+
+        :return:        numpy data, fid (start, increment)
+
+        .. versionadded:: 9.1
+        '''
+
+        ln, ls = self.line_name_symb(line, create=True)
+        cn, cs = self.channel_name_symb(channel)
+
+        if self.channel_width(cs) == 1:
+            vv = self._vv_ch(ls, cs, dtype)
+            return vv.np(vv.dtype())[0], vv.fid()
+
+        else:
+            va = self._va_ch(ls, cs, dtype)
+            return va.np(va.dtype())[0], va.fid()
+
+    def read_line(self, line, channels=None, dtype=None, fid=None, dummy=None):
         '''
         Read a line of data into a numpy array.
 
         :param line:        line to read, string or symbol number
         :param channels:    list of channels, strings or symbol number.  If empty, read all channels
-        :param dtype:       numpy data type for the array, default np.float64.  This can be a string type "<Unnn"
+        :param dtype:       numpy data type for the array, default np.float64 for multi-channel data,
+                            data type for single channel data. Use "<Unnn" for string type.
         :param fid:         required fiducial as tuple (start,incr), default smallest in data
-        :param dummy:       dummy_handling, default leaves dummies in place:
+        :param dummy:       dummy_handling for multi-channel read, default leaves dummies in place:
 
             ======================== ===================================================
             READ_REMOVE_DUMMYROWS    remove rows with dummies, fiducials lose meaning
@@ -839,107 +926,88 @@ class GXdb():
             # ch  - list of returned channels names, array channels expanded to array[0], array[1], ...
             # fid - tuple (fidStart,fidIncrement), channels resampled as necessary
 
-            npd,ch,fid = gdb.readLine('L100')                           # read all channels in line "L100"
-            npd,ch,fid = gdb.readLine(681)                              # read all channels in line symbol 681
-            npd,ch,fid = gdb.readLine('L100','X')                       # read channel 'X' from line 'L100'
-            npd,ch,fid = gdb.readLine('L100',2135)                      # read channel symbol 2135 from 'L100"
-            npd,ch,fid = gdb.readLine('L100',channels=['X','Y','Z'])    # read a list of channels to (n,3) array
-            npd,ch,fid = gdb.readLine('L100','X',np.int32)              # read channel 'X' into integer array
+            npd,ch,fid = gdb.read_line('L100')                           # read all channels in line "L100"
+            npd,ch,fid = gdb.read_line(681)                              # read all channels in line symbol 681
+            npd,ch,fid = gdb.read_line('L100','X')                       # read channel 'X' from line 'L100'
+            npd,ch,fid = gdb.read_line('L100',2135)                      # read channel symbol 2135 from 'L100"
+            npd,ch,fid = gdb.read_line('L100',channels=['X','Y','Z'])    # read a list of channels to (n,3) array
+            npd,ch,fid = gdb.read_line('L100','X',np.int32)              # read channel 'X' into integer array
 
         .. versionadded:: 9.1
         '''
 
-        ln, ls = self.lineNameSymb(line)
-
-        # data type wanted
-        dtype = np.dtype(dtype)
+        ln, ls = self.line_name_symb(line)
 
         # default all channels, sorted, X,Y,Z first
         if channels is None:
-            ch = list(self.channels())
-            ch.sort(key=str.lower)
-            channels = []
-
-            # put x,y,z at the front
-            try:
-                nX, sX = self.chanNameSymb(self._db.get_xyz_chan_symb(gxapi.DB_CHAN_X))
-                channels.append(nX)
-            except GDBException:
-                nX = ''
-            try:
-                nY, sY = self.chanNameSymb(self._db.get_xyz_chan_symb(gxapi.DB_CHAN_Y))
-                channels.append(nY)
-            except GDBException:
-                nY = ''
-            try:
-                nZ, sZ = self.chanNameSymb(self._db.get_xyz_chan_symb(gxapi.DB_CHAN_Z))
-                channels.append(nZ)
-            except GDBException:
-                nZ = ''
-
-            for c in ch:
-                if (c == nX) or (c == nY) or (c == nZ):
-                    continue
-                channels.append(c)
+            channels = self._sorted_chan_list()
 
         else:
-            if not(type(channels) in (list, tuple)):
-                channels = (channels,)
+            if (type(channels) is str) or (type(channels) is int):
+                channels = [channels,]
 
-        # make up channel list, expanding VA channels
-        chNames = []
-        chSymbs = []
-        cType = []
-        for c in channels:
-            cn, cs = self.chanNameSymb(c)
-            w = self._db.get_col_va(cs)
-            if w == 1:
-                chNames.append(cn)
-                chSymbs.append(cs)
-                cType.append(self._db.get_chan_type(cs))
+        # just one channel
+        if len(channels) == 1:
+            npd, fid = self.read_channel(ls, channels[0], dtype)
+            if self.channel_width(channels[0]) == 1:
+                npd = npd.reshape(npd.shape[0], 1)  # make it a 2D array
             else:
-                for i in range(w):
-                    ccn, ccs = self.chanNameSymb("{}[{}]".format(cn, i))
-                    chNames.append(ccn)
-                    chSymbs.append(ccs)
-                    cType.append(self._db.get_chan_type(cs))
+                channels = self._expand_chan_list(channels)[0]
+            return npd, channels, fid
 
+        # multiple channels
+        # make up channel list, expanding VA channels
+        chNames, chSymb, cType = self._expand_chan_list(channels)
+
+        if dtype == None:
+            dtype = np.float64
         vvs = []
         for c in chNames:
             cs = self._db.find_symb(c, gxapi.DB_SYMB_CHAN)
-            vv = self._vvCh(ls, cs, dtype=dtype)
+            vv = self._vv_ch(ls, cs, dtype=dtype)
             vvs.append(vv)
 
-        # determine fiducial
+        # determine fiducial range from data
+        start = gxapi.GS_R8MX
+        incr = gxapi.GS_R8MX
+        fend = gxapi.GS_R8MN
+        for vv in vvs:
+            fd = vv.fid()
+            if fd[0] != gxapi.rDUMMY:
+                if fd[0] < start:
+                    start = fd[0]
+                if fd[1] < incr:
+                    incr = fd[1]
+                dend = start + incr * (vv.length() - 1)
+                if dend > fend:
+                    fend = dend
         if fid is None:
-            start = gxapi.GS_R8MX
-            incr = gxapi.GS_R8MX
-            for c in chNames:
-                fidC = self.chanFid(ls, c)
-                if fidC[0] != gxapi.rDUMMY:
-                    if fidC[0] < start:
-                        start = fidC[0]
-                    if fidC[1] < incr:
-                        incr = fidC[1]
             fid = (start, incr)
+
+        # there has to be some data
+        nvd = math.ceil((fend - start) / incr) + 1
+        if (fend == gxapi.GS_R8MN) or (nvd == 0):
+            raise GDBException(_("Line {} is empty for channels {}").format(ln, chNames[0]))
 
         # refid everything
         nCh = len(chNames)
-        nvd = vvs[0].length()
-        if (nvd == 0) or (fid[0] == gxapi.GS_R8MX):
-            raise GDBException(_("\'{}\' on line \'{}\' is empty").format(chNames[0], ln))
-        for j in range(1, nCh):
-            vvs[j].reFid(fid, nvd)
+        for vv in vvs:
+            vv.reFid(fid, nvd)
+            vv.reFid(fid, nvd)
 
         # move data to numpy array
         npd = np.empty((nvd, nCh), dtype=dtype)
+        dummy_value = gxu.gxDummy(npd.dtype)
         for j in range(nCh):
-            npd[:, j] = vvs[j].np(dtype=npd.dtype)[0]
+            vv = vvs[j]
+            if vv.length() > 0:
+                npd[:, j] = vv.np(dtype=npd.dtype)[0]
+            else:
+                npd[:, j].fill(dummy_value)
 
         # dummy handling
         if dummy:
             dummy_value = gxu.gxDummy(npd.dtype)
-
             if dummy == READ_REMOVE_DUMMYCOLUMNS:
                 n_ok = 0
 
@@ -966,9 +1034,9 @@ class GXdb():
 
         return npd, chNames, fid
 
-    def writeDataChan(self, line, channel, data, fid=(0.0, 1.0)):
+    def write_channel(self, line, channel, data, fid=(0.0, 1.0)):
         '''
-        Write data to a channel.
+        Write data to a single channel.
 
         :param line:    line name or symbol
         :param channel: channel name or symbol
@@ -981,17 +1049,17 @@ class GXdb():
         def cleanup():
             self._unlock(cs)
 
-        ln, ls = self.lineNameSymb(line, create=True)
-        
+        ln, ls = self.line_name_symb(line, create=True)
+
         try:
-            cn, cs = self.chanNameSymb(channel)
+            cn, cs = self.channel_name_symb(channel)
 
         except GDBException:
             if type(channel) is str:
                 cn = channel
-                cs = self.newChannel(channel, data.dtype, array=_va_width(data))
+                cs = self.new_channel(channel, data.dtype, array=_va_width(data))
 
-        w = self._db.get_col_va(cs)
+        w = self.channel_width(cs)
         if w != _va_width(data):
             raise GDBException(
                 _("Array data width {} does not fit into VA channel '{}' with width {}").
@@ -1001,9 +1069,9 @@ class GXdb():
         if w == 1:
 
             # get a VV of the data
-            vv = self._vvNp(data, fid)
+            vv = self.vv_np(data, fid)
 
-            self._lockWrite(cs)
+            self._lock_write(cs)
             try:
                 self._db.put_chan_vv(ls, cs, vv)
             except:
@@ -1015,7 +1083,7 @@ class GXdb():
             # get a VA of the data
             va = self._vaNp(data, fid)
 
-            self._lockWrite(cs)
+            self._lock_write(cs)
             try:
                 self._db.put_chan_va(ls, cs, va)
             except:
@@ -1024,9 +1092,10 @@ class GXdb():
 
         cleanup()
 
-    def writeDataLine(self, line, data, channels=None, name=None, fid=(0.0, 1.0)):
+    def write_line(self, line, data, channels=None, fid=(0.0, 1.0)):
         '''
-        Write data to a line.
+        Write data to a multiple channels in a line.  If no channel list is provided it assumes that the
+        data is for all channels from the line, the compliment of readDataLine().
 
         :param line:        line to write to, name or symbol
         :param data:        numpy array shape (records,channels).  If single dimension, one channel
@@ -1037,28 +1106,29 @@ class GXdb():
         .. versionadded:: 9.1
         '''
 
-        nch = _va_width(data)
-
-        # create channel names
-        if channels is None:
-            raise GDBException(_('Channel name(s) not specified'))
-
-        # single channel, which can be an array channel
         if type(channels) is str:
-            s = self.newChannel(channels, data.dtype, array=nch)
-            self.writeDataChan(line, s, data, fid)
+            self.write_channel(line, channels, data, fid=fid)
 
         else:
-            if len(channels) != nch:
-                raise GDBException(_('Data has {} columns, {} channels defined').format(nch, len(channels)))
+            if channels is None:
+                channels = self._sorted_chan_list()
 
-            n = 0
-            for c in channels:
-                s = self.newChannel(c, data.dtype)
-                self.writeDataChan(line, s, data[:, n], fid)
-                n += 1
+            np_index = 0
+            for chan in channels:
+                try:
+                    ch, cs = self.channel_name_symb(chan)
+                    w = self.channel_width(cs)
+                except GDBException:
+                    w = 1
+                    cs = chan
+                self.write_channel(line, cs, data[:, np_index: np_index + w], fid=fid)
+                np_index += w
 
-    def listValues(self, chan, max=1000, selected=True, dupl=50, progress=None, stop=None):
+            # error if there is any data left
+            if np_index - data.shape[1] != 0:
+                raise GDBException(_('More data than channels, but data up to channels was written out.'))
+
+    def list_values(self, chan, max=1000, selected=True, dupl=50, progress=None, stop=None):
         '''
         Build a list of unique values in a channel.  Uniqueness depends on the current display format for
         the field.
@@ -1074,9 +1144,10 @@ class GXdb():
         .. versionadded:: 9.1
         '''
 
-        lines = list(self.lines(select=selected))
-        cn, cs = self.chanNameSymb(chan)
-        details = self.chanDetails(cs)
+        lines = list(self.list_lines(select=selected))
+        cn, cs = self.channel_name_symb(chan)
+        details = self.channel_details(cs)
+        dtype = np.dtype('<U{}'.format(details.get('width')))
         lines.sort(key=str.lower)
         set = []
         n = 0
@@ -1085,7 +1156,7 @@ class GXdb():
         for l in lines:
 
             try:
-                d, c, f = self.readLine(l, cs, dtype='<U{}'.format(details.get('width')))
+                d, c, f = self.read_line(l, cs, dtype=dtype)
             except GDBException:
                 continue
 

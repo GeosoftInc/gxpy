@@ -42,6 +42,8 @@ class Test(unittest.TestCase):
         self.assertEqual(gxu.gxDummy(np.float),gxapi.rDUMMY)
         self.assertEqual(gxu.gxDummy(np.int32),gxapi.iDUMMY)
         self.assertEqual(gxu.gxDummy(np.int64),gxapi.GS_S8DM)
+        self.assertEqual(gxu.gxDummy(np.str_), '')
+        self.assertEqual(gxu.gxDummy('<U48'), '')
 
         npd = np.array([[1,1],[2,2],[-127,1],[3,3]],dtype=gxu.dtypeGX(gxapi.GS_BYTE))
         self.assertEqual(list(gxu.dummyMask(npd)),[False,False,True,False])

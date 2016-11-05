@@ -42,7 +42,7 @@ class GXvv():
         self._sr = None
 
     @classmethod
-    def vvNp(cls, npdata, fid=(0.0, 1.0)):
+    def vv_np(cls, npdata, fid=(0.0, 1.0)):
         """
         Create a VV from numpy data.
 
@@ -180,11 +180,10 @@ class GXvv():
 
     def vv(self, npdata, fid=(0.0, 1.0)):
         """
-        Return existing vv with numpy data.
+        Copy numpy data to the vv.
 
         :param npdata:  numpy data array
         :param fid:     fid tuple (start,increment), default (0.0,1.0)
-        :return:        GXvv
 
         .. versionadded:: 9.1
         """
@@ -203,5 +202,3 @@ class GXvv():
 
         self._vv.set_len(npdata.shape[0])
         self.setFid(fid)
-
-        return self

@@ -1,6 +1,5 @@
 #TODO review fiducials reading/writing with respect to VV
 #TODO can read compound line with VA, but what about writing?
-#TODO write VA channel
 
 import unittest
 import os
@@ -45,25 +44,61 @@ class Test(unittest.TestCase):
         self.start(gsys.func_name())
         self.assertEqual(gxgdb.__version__, geosoft.__version__)
 
-
-
     def test_noprops_GDB(self):
         self.start(gsys.func_name())
 
         gdb = self.gdb
-        self.assertEqual(gdb.fileName(),self.gdb_name)
+        self.assertEqual(gdb.file_name(),self.gdb_name)
         self.assertEqual(str(gdb),os.path.basename(self.gdb_name))
-        gdb.readLine('D578625',channels=['x','y','z','vector']) #to force creation of VA slices
+        self.assertTrue(len(gdb.list_channels())>=6)
+        self.assertTrue('X' in gdb.list_channels())
+        self.assertTrue('dx' in gdb.list_channels(chan=gxgdb.CHAN_ALL))
+        self.assertTrue('vector' in gdb.list_channels(chan=gxgdb.CHAN_ARRAY))
+        self.assertFalse('vector' in gdb.list_channels(chan=gxgdb.CHAN_NORMAL))
 
-        self.assertTrue(len(gdb.channels())>=6)
-        self.assertTrue('X' in gdb.channels())
-        self.assertTrue('dx' in gdb.channels(chan=gxgdb.CHAN_ALL))
-        self.assertTrue(list(gdb.channels(chan=gxgdb.CHAN_DISPLAYED)) == [])
-        self.assertTrue('vector' in gdb.channels(chan=gxgdb.CHAN_ARRAY))
-        self.assertFalse('vector' in gdb.channels(chan=gxgdb.CHAN_NORMAL))
+        self.assertEqual(gdb.channel_width('vector'),3)
+        self.assertEqual(gdb.channel_width('x'),1)
 
-        self.assertEqual(gdb.chanArray('vector'),3)
-        self.assertEqual(gdb.chanArray('x'),1)
+        gdb.discard()
+
+    def test_group_VA_read_write(self):
+        self.start(gsys.func_name())
+
+        gdb = self.gdb
+        self.assertEqual(gdb.file_name(),self.gdb_name)
+        self.assertEqual(str(gdb),os.path.basename(self.gdb_name))
+        data, ch, fid = gdb.read_line('D578625')
+        self.assertEqual(data.shape, (832, 8))
+
+        gdb.write_line('T45', data, fid=(99, 0.5))
+        data, ch, fid = gdb.read_line('T45')
+        self.assertEqual(data.shape, (832, 8))
+        self.assertEqual(len(ch), 8)
+        self.assertEqual(ch[0], 'X')
+        self.assertEqual(fid, (99.0, 0.5))
+
+        gdb.write_channel('T46', 'wva', data, fid=(-10, 2.5))
+        data, fid = gdb.read_channel('T46', 'wva')
+        self.assertEqual(data.shape, (832, 8))
+        self.assertEqual(fid, (-10.0, 2.5))
+        gdb.delete_channel('wva')
+
+        gdb.write_line('T46', data, channels='wideva', fid=(-10, 2.5))
+        data, ch, fid = gdb.read_line('T46', 'wideva')
+        self.assertEqual(data.shape, (832, 8))
+        self.assertEqual(len(ch), 8)
+        self.assertEqual(ch[0], 'wideva[0]')
+        self.assertEqual(fid, (-10.0, 2.5))
+
+        data, ch, fid = gdb.read_line('T46')
+        self.assertEqual(data.shape, (832, 16))
+        self.assertEqual(len(ch), 16)
+        self.assertEqual(ch[0], 'X')
+        self.assertEqual(fid, (-10.0, 2.5))
+
+        data, fid = gdb.read_channel('T46', 'wideva')
+        self.assertEqual(data.shape, (832, 8))
+        self.assertEqual(fid, (-10.0, 2.5))
 
         gdb.discard()
 
@@ -72,17 +107,17 @@ class Test(unittest.TestCase):
 
         gdb = self.gdb
 
-        gdb.delChan('ian')
-        gdb.newChannel('ian')
-        self.assertTrue('ian' in gdb.channels())
-        gdb.delChan('ian')
-        self.assertFalse('ian' in gdb.channels())
+        gdb.delete_channel('ian')
+        gdb.new_channel('ian')
+        self.assertTrue('ian' in gdb.list_channels())
+        gdb.delete_channel('ian')
+        self.assertFalse('ian' in gdb.list_channels())
 
-        gdb.delChan('ian2')
-        gdb.newChannel('ian2', np.int32, array =3)
-        self.assertTrue('ian2' in gdb.channels(chan=gxgdb.CHAN_ARRAY))
-        gdb.delChan('ian2')
-        self.assertFalse('ian2' in gdb.channels())
+        gdb.delete_channel('ian2')
+        gdb.new_channel('ian2', np.int32, array =3)
+        self.assertTrue('ian2' in gdb.list_channels(chan=gxgdb.CHAN_ARRAY))
+        gdb.delete_channel('ian2')
+        self.assertFalse('ian2' in gdb.list_channels())
 
 
     def test_properties_GDB(self):
@@ -90,61 +125,61 @@ class Test(unittest.TestCase):
 
         gdb = self.gdb
 
-        ch = gdb.channels()
+        ch = gdb.list_channels()
         self.assertTrue('X' in ch)
         self.assertTrue('vector' in ch)
         self.assertEqual(ch.get('dx'),1153)
 
         try:
-            gdb.lineNameSymb(8456712552)
+            gdb.line_name_symb(8456712552)
             self.assertTrue(False)
         except: pass
 
-        ln,ls = gdb.lineNameSymb('bogus',create=True)
+        ln,ls = gdb.line_name_symb('bogus',create=True)
         self.assertEqual(ln,'bogus')
-        gdb.delLine('bogus')
-        ls = gdb.lineNameSymb('bogus2',create=True)[1]
-        gdb.delLine(ls)
+        gdb.delete_line('bogus')
+        ls = gdb.line_name_symb('bogus2',create=True)[1]
+        gdb.delete_line(ls)
 
-        ln,ls = gdb.lineNameSymb('D578625')
+        ln,ls = gdb.line_name_symb('D578625')
         self.assertEqual(ln,'D578625')
-        ln,ls = gdb.lineNameSymb('Dwonk')
+        ln,ls = gdb.line_name_symb('Dwonk')
         self.assertEqual(ln,'Dwonk')
-        ln,ls = gdb.lineNameSymb(ls)
+        ln,ls = gdb.line_name_symb(ls)
         self.assertEqual(ln,'Dwonk')
 
-        gdb.delChan('ccva')
-        gdb.newChannel('ccva',array=8)
-        cn,cs = gdb.chanNameSymb('ccva')
+        gdb.delete_channel('ccva')
+        gdb.new_channel('ccva',array=8)
+        cn,cs = gdb.channel_name_symb('ccva')
         self.assertEqual(cn,'ccva')
-        cn,cs = gdb.chanNameSymb('ccva[4]')
+        cn,cs = gdb.channel_name_symb('ccva[4]')
         self.assertEqual(cn,'ccva[4]')
 
         gdb.discard()
-        cs = gdb.newChannel('cava',dtype=np.int64)
-        self.assertTrue(gdb.chanDtype(cs).type is np.int64)
+        cs = gdb.new_channel('cava',dtype=np.int64)
+        self.assertTrue(gdb.channel_dtype(cs).type is np.int64)
 
-        gdb.selectLines(select=False)
-        ln = gdb.lines()
+        gdb.select_lines(select=False)
+        ln = gdb.list_lines()
         self.assertEqual(len(ln),0)
 
-        gdb.selectLines('bogus')
-        ln = gdb.lines()
+        gdb.select_lines('bogus')
+        ln = gdb.list_lines()
         self.assertEqual(len(ln), 0)
 
-        gdb.selectLines('D2')
-        ln = gdb.lines()
+        gdb.select_lines('D2')
+        ln = gdb.list_lines()
         self.assertEqual(len(ln), 1)
 
-        gdb.selectLines('D')
-        ln = gdb.lines()
+        gdb.select_lines('D')
+        ln = gdb.list_lines()
         self.assertEqual(len(ln), 3)
         self.assertTrue('D2' in ln)
         self.assertTrue('Dwonk' in ln)
         self.assertTrue('D578625' in ln)
 
-        gdb.selectLines('D578625',select=False)
-        ln = gdb.lines()
+        gdb.select_lines('D578625',select=False)
+        ln = gdb.list_lines()
         self.assertFalse('D578625' in ln)
         self.assertEqual(len(ln), 2)
 
@@ -155,21 +190,21 @@ class Test(unittest.TestCase):
 
         gdb = self.gdb
 
-        npd,ch,fid = gdb.readLine('D578625')
+        npd,ch,fid = gdb.read_line('D578625')
         self.assertEqual(npd.shape[0],832)
         self.assertEqual(fid[0],0.0)
         self.assertEqual(fid[1],1.0)
 
-        ln,ls = gdb.lineNameSymb('D578625')
-        npd,ch,fid = gdb.readLine(ls,channels=['X','Y','Z','dx','dy'])
+        ln,ls = gdb.line_name_symb('D578625')
+        npd,ch,fid = gdb.read_line(ls,channels=['X','Y','Z','dx','dy'])
         self.assertEqual(npd.shape,(832,5))
         self.assertEqual(npd[10,:3].tolist(),[578625.0, 7773625.0, -1195.7531280517615])
 
-        npd,ch,fid = gdb.readLine(ls,'X')
+        npd,ch,fid = gdb.read_line(ls,'X')
         self.assertEqual(npd.shape,(832,1))
         self.assertEqual(npd[10],578625.0)
 
-        npd,ch,fid = gdb.readLine(ls,channels=['X','Y','Z'], dtype='<U32')
+        npd,ch,fid = gdb.read_line(ls,channels=['X','Y','Z'], dtype='<U32')
         self.assertEqual(npd.shape,(832,3))
         self.assertEqual(npd[10,:3].tolist(),['578625.0', '7773625.0', '-1195.8'])
 
@@ -180,18 +215,18 @@ class Test(unittest.TestCase):
 
         gdb = self.gdb
 
-        npd,ch,fid = gdb.readLine('D2',dummy=gxgdb.READ_REMOVE_DUMMYROWS)
-        self.assertEqual(npd.shape[0],825)
-        self.assertEqual(npd.shape[1],8)
-        self.assertEqual(npd.shape[1],len(ch))
+        npd,ch,fid = gdb.read_line('D2', dummy=gxgdb.READ_REMOVE_DUMMYROWS)
+        self.assertEqual(npd.shape, (825, 8))
+        self.assertEqual(npd.shape[1], 8)
+        self.assertEqual(npd.shape[1], len(ch))
 
-        npd,ch,fid = gdb.readLine('D2',dummy=gxgdb.READ_REMOVE_DUMMYCOLUMNS)
-        self.assertEqual(npd.shape,(832,2))
-        self.assertEqual(npd.shape[1],len(ch))
+        npd,ch,fid = gdb.read_line('D2',dummy=gxgdb.READ_REMOVE_DUMMYCOLUMNS)
+        self.assertEqual(npd.shape, (832,2))
+        self.assertEqual(npd.shape[1], len(ch))
 
-        npd,ch,fid = gdb.readLine('D2', channels=('x','y'), dummy=gxgdb.READ_REMOVE_DUMMYCOLUMNS)
-        self.assertEqual(npd.shape,(832,1))
-        self.assertEqual(npd.shape[1],len(ch))
+        npd,ch,fid = gdb.read_line('D2', channels=('x','y'), dummy=gxgdb.READ_REMOVE_DUMMYCOLUMNS)
+        self.assertEqual(npd.shape, (832,1))
+        self.assertEqual(npd.shape[1], len(ch))
 
         gdb.discard()
 
@@ -200,45 +235,43 @@ class Test(unittest.TestCase):
 
         gdb = self.gdb
 
-        gdb.delChan('test')
-        gdb.newChannel('test')
-        gdb.writeDataChan('D590875','test',np.array([1.0,2.0,3.0,4.0]))
-        npd,ch,fid = gdb.readLine('D590875',channels=['test'])
+        gdb.delete_channel('test')
+        gdb.new_channel('test')
+        gdb.write_channel('D590875','test',np.array([1.0,2.0,3.0,4.0]))
+        npd, ch, fid = gdb.read_line('D590875', channels=['test'])
         self.assertEqual(npd.shape,(4,1))
         self.assertEqual(npd[:,0].tolist(),[1.0,2.0,3.0,4.0])
 
-        gdb.delChan('test')
-        gdb.newChannel('test', np.float64)
-        gdb.writeDataChan('D590875','test',np.array([1,2,3,4],dtype=np.int))
-        npd,ch,fid = gdb.readLine('D590875',channels=['test'],dtype=np.int)
+        gdb.delete_channel('test')
+        gdb.new_channel('test', np.float64)
+        gdb.write_channel('D590875','test',np.array([1,2,3,4],dtype=np.int))
+        npd,ch,fid = gdb.read_line('D590875',channels=['test'],dtype=np.int)
         self.assertEqual(npd.shape,(4,1))
         self.assertEqual(npd[:,0].tolist(),[1,2,3,4])
 
-        gdb.delChan('test')
-        gdb.newChannel('test', np.int32)
-        gdb.writeDataChan('D590875','test',np.array([1,2,3,4],dtype=np.int))
-        npd,ch,fid = gdb.readLine('D590875',channels=['test'])
+        gdb.delete_channel('test')
+        gdb.new_channel('test', np.int32)
+        gdb.write_channel('D590875','test',np.array([1,2,3,4],dtype=np.int))
+        npd,ch,fid = gdb.read_line('D590875',channels=['test'])
         self.assertEqual(npd.shape,(4,1))
         self.assertEqual(npd[:,0].tolist(),[1.0,2.0,3.0,4.0])
 
-        gdb.delChan('test')
-        gdb.newChannel('test', dtype=np.int32)
-        gdb.writeDataChan('D590875','test',np.array([1,2,3,4],dtype=np.int),fid=(3,2))
-        npd,ch,fid = gdb.readLine('D590875',channels=['test'])
+        gdb.delete_channel('test')
+        gdb.new_channel('test', dtype=np.int32)
+        gdb.write_channel('D590875','test',np.array([1,2,3,4],dtype=np.int),fid=(3,2))
+        npd,ch,fid = gdb.read_line('D590875',channels=['test'])
         self.assertEqual(npd.shape,(4,1))
         self.assertEqual(npd[:,0].tolist(),[1.0,2.0,3.0,4.0])
         self.assertEqual(fid[0],3.0)
         self.assertEqual(fid[1],2.0)
 
-        gdb.newChannel('test', np.int32)
-        gdb.writeDataChan('D590875','test',np.array([1,2,3,4],dtype=np.int),fid=(2.50,0.33))
-        npd,ch,fid = gdb.readLine('D590875',channels=['test'])
+        gdb.new_channel('test', np.int32)
+        gdb.write_channel('D590875', 'test', np.array([1,2,3,4], dtype=np.int), fid=(2.50,0.33))
+        npd,ch,fid = gdb.read_line('D590875', channels=['test'])
         self.assertEqual(npd.shape,(4,1))
         self.assertEqual(npd[:,0].tolist(),[1.0,2.0,3.0,4.0])
         self.assertEqual(fid[0], 2.5)
         self.assertEqual(fid[1], 0.33)
-
-        gdb.delChan('test')
 
         gdb.discard()
 
@@ -247,25 +280,24 @@ class Test(unittest.TestCase):
 
         gdb = self.gdb
 
-        gdb.delChan('testVA')
-        gdb.newChannel('testVA')
+        gdb.delete_channel('testVA')
+        gdb.new_channel('testVA')
         try:
-            gdb.writeDataChan('D590875', 'testVA',
+            gdb.write_channel('D590875', 'testVA',
                               np.array([[1.0, 2.0, 3.0, 4.0], [10.0, 20.0, 30.0, 40.0], [15.0, 25.0, 35.0, 45.0]]))
             self.assertTrue(False)
         except gxgdb.GDBException:
             pass
 
-        gdb.delChan('testVA')
-        gdb.writeDataChan('D590875', 'testVA',
+        gdb.delete_channel('testVA')
+        gdb.write_channel('D590875', 'testVA',
                           np.array([[1.0, 2.0, 3.0, 4.0], [10.0, 20.0, 30.0, 40.0], [15.0, 25.0, 35.0, 45.0]]))
-        npd,ch,fid = gdb.readLine('D590875', channels=['testVA'])
+        npd,ch,fid = gdb.read_line('D590875', channels=['testVA'])
         self.assertEqual(npd.shape,(3, 4))
         self.assertEqual(npd[0, :].tolist(), [1.0, 2.0, 3.0, 4.0])
         self.assertEqual(npd[1, :].tolist(), [10.0, 20.0, 30.0, 40.0])
         self.assertEqual(npd[2, :].tolist(), [15.0, 25.0, 35.0, 45.0])
 
-        gdb.delChan('testVA')
         gdb.discard()
 
     def test_dummy_GDB(self):
@@ -273,11 +305,11 @@ class Test(unittest.TestCase):
 
         gdb = self.gdb
 
-        gdb.delChan('test')
-        gdb.newChannel('test',dtype=np.int)
+        gdb.delete_channel('test')
+        gdb.new_channel('test',dtype=np.int)
         dummy = gxu.gxDummy(np.int)
-        gdb.writeDataChan('D590875','test',np.array([1,2,dummy,4]))
-        npd,ch,fid = gdb.readLine('D590875',channels=['test'],dtype=np.int)
+        gdb.write_channel('D590875','test',np.array([1,2,dummy,4]))
+        npd,ch,fid = gdb.read_line('D590875',channels=['test'],dtype=np.int)
         self.assertEqual(npd.shape,(4,1))
         self.assertEqual(npd[:,0].tolist(),[1,2,dummy,4])
 
@@ -291,65 +323,65 @@ class Test(unittest.TestCase):
         self.start(gsys.func_name())
 
         gdb = self.gdb
-        npd,ch,fid = gdb.readLine('D578625',channels=['dx','dy','vector'])
+        npd,ch,fid = gdb.read_line('D578625',channels=['dx','dy','vector'])
 
         try:
-            gdb.newLine("&$#@**")
+            gdb.new_line("&$#@**")
             self.assertTrue(False)
         except gxgdb.GDBException: pass
 
         try:
-            gdb.newLine("D578625")
+            gdb.new_line("D578625")
             self.assertTrue(False)
         except gxgdb.GDBException: pass
 
-        gdb.delLine('wonk')
-        gdb.newLine('wonk',group="wink")
+        gdb.delete_line('wonk')
+        gdb.new_line('wonk',group="wink")
         try:
-            gdb.newLine('wonk')
+            gdb.new_line('wonk')
             self.assertTrue(False)
         except gxgdb.GDBException: pass
-        gdb.delLine('wonk')
+        gdb.delete_line('wonk')
 
-        gdb.delLine('testline')
-        gdb.newLine('testline')
-        gdb.writeDataLine('testline',npd,channels=ch)
-        npd2,ch2,fid2 = gdb.readLine('testline',channels=ch)
+        gdb.delete_line('testline')
+        gdb.new_line('testline')
+        gdb.write_line('testline',npd,channels=ch)
+        npd2,ch2,fid2 = gdb.read_line('testline',channels=ch)
         self.assertEqual(npd.shape,npd2.shape)
 
-        gdb.delLine('testline')
-        gdb.newLine('testline',gxgdb.SYMB_LINE_NORMAL)
-        gdb.writeDataLine('testline',npd[:,0],"single")
-        npd2,ch2,fid2 = gdb.readLine('testline',"single")
+        gdb.delete_line('testline')
+        gdb.new_line('testline',gxgdb.SYMB_LINE_NORMAL)
+        gdb.write_line('testline',npd[:,0],"single")
+        npd2,ch2,fid2 = gdb.read_line('testline',"single")
         self.assertEqual(npd2.shape,(npd.shape[0],1))
 
-        gdb.delLine('testline')
-        gdb.newLine('testline',gxgdb.SYMB_LINE_GROUP)
-        gdb.writeDataLine('testline',npd[:,0],"single")
-        npd2,ch2,fid2 = gdb.readLine('testline',"single")
+        gdb.delete_line('testline')
+        gdb.new_line('testline',gxgdb.SYMB_LINE_GROUP)
+        gdb.write_line('testline',npd[:,0],"single")
+        npd2,ch2,fid2 = gdb.read_line('testline',"single")
         self.assertEqual(npd2.shape,(npd.shape[0],1))
 
-        gdb.delLine('testline')
-        gdb.newLine('testline',linetype=gxgdb.SYMB_LINE_FLIGHT)
+        gdb.delete_line('testline')
+        gdb.new_line('testline',linetype=gxgdb.SYMB_LINE_FLIGHT)
         ch = ['a','b','c','d']
         try:
-            gdb.writeDataLine('testline',npd,channels=ch)
+            gdb.write_line('testline', npd, channels=ch)
             self.assertTrue(False)
         except gxgdb.GDBException:
             pass
 
         ch = ['a','b','c','d','e']
-        gdb.writeDataLine('testline',npd,channels=ch)
-        npd2,ch2,fid2 = gdb.readLine('testline',channels=ch)
+        gdb.write_line('testline',npd,channels=ch)
+        npd2, ch2, fid2 = gdb.read_line('testline',channels=ch)
         self.assertEqual(npd.shape,npd2.shape)
-        self.assertEqual(ch2,ch)
-        gdb.delChan(ch)
+        self.assertEqual(ch2, ch)
+        gdb.delete_channel(ch)
 
-        gdb.delLine('testline')
-        gdb.newLine('testline')
-        gdb.delChan("bopper")
-        gdb.writeDataLine('testline',npd,channels="bopper")
-        npd2,ch2,fid2 = gdb.readLine('testline',"bopper")
+        gdb.delete_line('testline')
+        gdb.new_line('testline')
+        gdb.delete_channel("bopper")
+        gdb.write_line('testline',npd,channels="bopper")
+        npd2,ch2,fid2 = gdb.read_line('testline',"bopper")
         self.assertEqual(npd.shape,npd2.shape)
         self.assertEqual(ch2[0],"bopper[0]")
         self.assertEqual(ch2[4],"bopper[4]")
@@ -357,7 +389,7 @@ class Test(unittest.TestCase):
         gdb.discard()
 
 
-    def test_listValues_GDB(self):
+    def test_list_values_GDB(self):
         self.start(gsys.func_name())
 
         def progress(txt,pct):
@@ -371,24 +403,24 @@ class Test(unittest.TestCase):
             else: return False
 
         gdb = self.gdb
-        gdb.selectLines(select=False)
-        gdb.selectLines('D578625,D2',select=True)
+        gdb.select_lines(select=False)
+        gdb.select_lines('D578625,D2',select=True)
         self.nl = 0
         self.stp = 2
 
-        gdb.delChan('testlist')
-        gdb.newChannel('testlist',dtype=np.int)
-        gdb.writeDataChan('D578625', 'testlist', np.array([1,2,3,4,4,4,5,6,7,7,7,6,5,4], dtype=np.int))
-        gdb.writeDataChan('D2', 'testlist', np.array([12,12,12,13,13,13], dtype=np.int))
+        gdb.delete_channel('testlist')
+        gdb.new_channel('testlist',dtype=np.int)
+        gdb.write_channel('D578625', 'testlist', np.array([1,2,3,4,4,4,5,6,7,7,7,6,5,4], dtype=np.int))
+        gdb.write_channel('D2', 'testlist', np.array([12,12,12,13,13,13], dtype=np.int))
 
-        listVal = gdb.listValues('testlist', max=100, progress=progress, stop=enough)
+        listVal = gdb.list_values('testlist', max=100, progress=progress, stop=enough)
         listVal.sort()
         self.assertEqual(listVal, ['1','12','13','2','3','4','5','6','7'])
         self.nl = 0
         self.stp = 1
-        listVal = gdb.listValues('dx', max=10000, progress=progress)
+        listVal = gdb.list_values('dx', max=10000, progress=progress)
         self.assertEqual(len(listVal),29)
-        listVal = gdb.listValues('dx')
+        listVal = gdb.list_values('dx')
         self.assertEqual(len(listVal),29)
 
         gdb.discard()
@@ -403,16 +435,16 @@ class Test(unittest.TestCase):
                 im = Image.open(im_handle)
                 im.thumbnail( (20,20), Image.ANTIALIAS)
                 imageIn = np.asarray(im,dtype=np.float32)
-            gdb.newChannel('R',dtype=np.int)
-            gdb.newChannel('G',dtype=np.int)
-            gdb.newChannel('B', dtype=np.int)
-            gdb.newChannel('A', dtype=np.int)
+            gdb.new_channel('R',dtype=np.int)
+            gdb.new_channel('G',dtype=np.int)
+            gdb.new_channel('B', dtype=np.int)
+            gdb.new_channel('A', dtype=np.int)
             for l in range(imageIn.shape[0]):
-                gdb.writeDataLine('L{}'.format(l),imageIn[l,:,:],channels=['R','G','B','A'])
+                gdb.write_line('L{}'.format(l),imageIn[l,:,:],channels=['R','G','B','A'])
 
-            self.assertEqual(len(gdb.lines()),imageIn.shape[0])
-            self.assertEqual(len(gdb.channels()),4)
-            d,c,f = gdb.readLine('L5')
+            self.assertEqual(len(gdb.list_lines()),imageIn.shape[0])
+            self.assertEqual(len(gdb.list_channels()),4)
+            d,c,f = gdb.read_line('L5')
             self.assertEqual(d.shape[0],imageIn.shape[1])
             self.assertEqual(d.shape[1],imageIn.shape[2])
 
@@ -420,8 +452,8 @@ class Test(unittest.TestCase):
         self.start(gsys.func_name())
 
         gdb = self.gdb
-        cs = gdb.newChannel("detailtest")
-        det = gdb.chanDetails(cs)
+        cs = gdb.new_channel("detailtest")
+        det = gdb.channel_details(cs)
         self.assertEqual(det.get('name'),"detailtest")
         self.assertEqual(det.get('array'),1)
         self.assertEqual(det.get('decimal'),2)
@@ -433,19 +465,19 @@ class Test(unittest.TestCase):
         self.assertEqual(det.get('unit'),'')
         self.assertEqual(det.get('width'),12)
 
-        gdb.chanSetDetails(cs,{'protect':1, 'decimal':6, 'unit':'ft'})
-        det2 = gdb.chanDetails(cs)
+        gdb.set_channel_details(cs,{'protect':1, 'decimal':6, 'unit':'ft'})
+        det2 = gdb.channel_details(cs)
         self.assertEqual(det2.get('protect'),1)
         self.assertEqual(det2.get('decimal'),6)
         self.assertEqual(det2.get('unit'),'ft')
 
-        gdb.chanSetDetails(cs,det)
-        det2 = gdb.chanDetails(cs)
+        gdb.set_channel_details(cs,det)
+        det2 = gdb.channel_details(cs)
         self.assertEqual(det2.get('protect'),0)
         self.assertEqual(det2.get('decimal'),2)
         self.assertEqual(det2.get('unit'),'')
 
-        det = gdb.lineDetails('D578625')
+        det = gdb.line_details('D578625')
         self.assertEqual(det.get('category'),gxgdb.SYMB_LINE_NORMAL)
         self.assertEqual(det.get('number'),578625)
         self.assertEqual(det.get('name'),'D578625')
@@ -454,14 +486,14 @@ class Test(unittest.TestCase):
         self.assertEqual(det.get('type'),gxapi.DB_LINE_TYPE_RANDOM)
         self.assertEqual(det.get('groupclass'),'')
 
-        gdb.delLine('testgroup')
-        ls = gdb.newLine('testgroup',group="TeSt")
-        det = gdb.lineDetails(ls)
+        gdb.delete_line('testgroup')
+        ls = gdb.new_line('testgroup', group="TeSt")
+        det = gdb.line_details(ls)
         self.assertEqual(det.get('category'),gxgdb.SYMB_LINE_GROUP)
         self.assertEqual(det.get('name'),'testgroup')
         self.assertEqual(det.get('symbol'),ls)
         self.assertEqual(det.get('groupclass'),'TeSt')
-        gdb.delLine('testgroup')
+        gdb.delete_line('testgroup')
 
         gdb.discard()
 
@@ -469,13 +501,13 @@ class Test(unittest.TestCase):
         self.start(gsys.func_name())
 
         gdb = self.gdb
-        gdb.selectLines('',select=False)
-        gdb.selectLines('Testline,D578625,P3',select=True)
-        lines = gdb.lines()
+        gdb.select_lines('',select=False)
+        gdb.select_lines('Testline,D578625,P3',select=True)
+        lines = gdb.list_lines()
         for line in lines:
 
             try:
-                npd,ch,fid = gdb.readLine(line)
+                npd,ch,fid = gdb.read_line(line)
                 # npd is a 2D numpy array to all data in this line; ch is a list of the channels;
                 # fid is the (start,increment) fiducial.
 

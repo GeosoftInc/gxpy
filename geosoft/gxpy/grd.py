@@ -459,7 +459,7 @@ class GXgrd():
         vv = gxvv.GXvv(self.dtype())
         iy = iy0
         for i in range(ny):
-            self._img.write_y(iy, ix0, 0, vv.vv(data[i, :])._vv)
+            self._img.write_y(iy, ix0, 0, vv.vv_np(data[i, :])._vv)
             iy += order
 
     def read_rows(self, ix0=0, iy0=0):
