@@ -1,6 +1,3 @@
-#TODO review fiducials reading/writing with respect to VV
-#TODO can read compound line with VA, but what about writing?
-
 import unittest
 import os
 import numpy as np

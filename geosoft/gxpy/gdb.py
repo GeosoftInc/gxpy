@@ -61,6 +61,7 @@ class GDBException(Exception):
 def _(s):
     return s
 
+
 def _va_width(data):
     if len(data.shape) == 1:
         width = 1
@@ -793,7 +794,7 @@ class GXdb():
     def _vv_ch(self, ls, cs, dtype=None):
         ''' return a VV of data from channel cs.'''
 
-        if dtype == None:
+        if dtype is None:
             dtype = self.channel_dtype(cs)
         vv = gxvv.GXvv(dtype)
         self._lock_read(cs)
@@ -808,7 +809,7 @@ class GXdb():
     def _va_ch(self, ls, cs, dtype=None):
         ''' return a VA of data from channel cs.'''
 
-        if dtype == None:
+        if dtype is None:
             dtype = self.channel_dtype(cs)
         w = self.channel_width(cs)
         va = gxva.GXva(w, dtype)
@@ -944,7 +945,7 @@ class GXdb():
 
         else:
             if (type(channels) is str) or (type(channels) is int):
-                channels = [channels,]
+                channels = [channels]
 
         # just one channel
         if len(channels) == 1:
@@ -959,7 +960,7 @@ class GXdb():
         # make up channel list, expanding VA channels
         chNames, chSymb, cType = self._expand_chan_list(channels)
 
-        if dtype == None:
+        if dtype is None:
             dtype = np.float64
         vvs = []
         for c in chNames:
@@ -1063,7 +1064,7 @@ class GXdb():
         if w != _va_width(data):
             raise GDBException(
                 _("Array data width {} does not fit into VA channel '{}' with width {}").
-                    format(_va_width(data), cn, w))
+                format(_va_width(data), cn, w))
 
         # 1D channel
         if w == 1:

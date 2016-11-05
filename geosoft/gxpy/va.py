@@ -19,6 +19,7 @@ class VAException(Exception):
 def _(s):
     return s
 
+
 class GXva():
     '''
     VA class wrapper.
