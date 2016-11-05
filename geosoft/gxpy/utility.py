@@ -16,46 +16,9 @@ import geosoft.gxapi as gxapi
 __version__ = geosoft.__version__
 
 # cached lookup tables
-_dummy_map = {
-    np.dtype(np.float): gxapi.rDUMMY,
-    np.dtype(np.float64): gxapi.rDUMMY,
-    np.dtype(np.float32): gxapi.rDUMMY,
-    np.dtype(np.int): gxapi.iDUMMY,
-    np.dtype(np.int64): gxapi.iDUMMY,
-    np.dtype(np.int8): gxapi.GS_S1DM,
-    np.dtype(np.int16): gxapi.GS_S2DM,
-    np.dtype(np.int32): gxapi.GS_S4DM,
-    np.dtype(np.int64): gxapi.GS_S8DM,
-    np.dtype(np.str_): ''}
-
-_gx2np_type = {
-    gxapi.GS_TYPE_DEFAULT: None,
-    gxapi.GS_DOUBLE: np.dtype(np.float),
-    gxapi.GS_FLOAT: np.dtype(np.float32),
-    gxapi.GS_LONG64: np.dtype(np.int64),
-    gxapi.GS_LONG: np.dtype(np.int32),
-    gxapi.GS_BYTE: np.dtype(np.byte),
-    gxapi.GS_SHORT: np.dtype(np.int16),
-    gxapi.GS_UBYTE: np.dtype(np.uint8),
-    gxapi.GS_USHORT: np.dtype(np.uint16),
-    gxapi.GS_ULONG: np.dtype(np.uint32),
-    gxapi.GS_ULONG64: np.dtype(np.uint64)}
-
-_np2gx_type = {
-    str(np.dtype(np.float)): gxapi.GS_DOUBLE,
-    str(np.dtype(np.int)): gxapi.GS_LONG,
-    str(np.dtype(np.byte)): gxapi.GS_BYTE,
-    str(np.dtype(np.float64)): gxapi.GS_DOUBLE,
-    str(np.dtype(np.float32)): gxapi.GS_FLOAT,
-    str(np.dtype(np.int64)): gxapi.GS_LONG64,
-    str(np.dtype(np.int32)): gxapi.GS_LONG,
-    str(np.dtype(np.int16)): gxapi.GS_SHORT,
-    str(np.dtype(np.int8)): gxapi.GS_BYTE,
-    str(np.dtype(np.uint8)): gxapi.GS_UBYTE,
-    str(np.dtype(np.uint16)): gxapi.GS_USHORT,
-    str(np.dtype(np.uint32)): gxapi.GS_ULONG,
-    str(np.dtype(np.uint64)): gxapi.GS_ULONG64}
-
+_dummy_map = {}
+_gx2np_type = {}
+_np2gx_type = {}
 
 class UtilityException(Exception):
     """
@@ -336,6 +299,24 @@ def gxType(dtype):
 
     .. versionadded:: 9.1
     """
+
+    global _np2gx_type
+    if not bool(_np2gx_type):
+        _np2gx_type = {
+            str(np.dtype(np.float)): gxapi.GS_DOUBLE,
+            str(np.dtype(np.int)): gxapi.GS_LONG,
+            str(np.dtype(np.byte)): gxapi.GS_BYTE,
+            str(np.dtype(np.float64)): gxapi.GS_DOUBLE,
+            str(np.dtype(np.float32)): gxapi.GS_FLOAT,
+            str(np.dtype(np.int64)): gxapi.GS_LONG64,
+            str(np.dtype(np.int32)): gxapi.GS_LONG,
+            str(np.dtype(np.int16)): gxapi.GS_SHORT,
+            str(np.dtype(np.int8)): gxapi.GS_BYTE,
+            str(np.dtype(np.uint8)): gxapi.GS_UBYTE,
+            str(np.dtype(np.uint16)): gxapi.GS_USHORT,
+            str(np.dtype(np.uint32)): gxapi.GS_ULONG,
+            str(np.dtype(np.uint64)): gxapi.GS_ULONG64}
+
     if dtype is None:
         return gxapi.GS_TYPE_DEFAULT
     dtype = np.dtype(dtype)
@@ -352,7 +333,21 @@ def dtypeGX(gtype):
 
     .. versionadded:: 9.1
     """
-
+    
+    global _gx2np_type
+    if not bool(_gx2np_type):
+        _gx2np_type = {
+            gxapi.GS_TYPE_DEFAULT: None,
+            gxapi.GS_DOUBLE: np.dtype(np.float),
+            gxapi.GS_FLOAT: np.dtype(np.float32),
+            gxapi.GS_LONG64: np.dtype(np.int64),
+            gxapi.GS_LONG: np.dtype(np.int32),
+            gxapi.GS_BYTE: np.dtype(np.byte),
+            gxapi.GS_SHORT: np.dtype(np.int16),
+            gxapi.GS_UBYTE: np.dtype(np.uint8),
+            gxapi.GS_USHORT: np.dtype(np.uint16),
+            gxapi.GS_ULONG: np.dtype(np.uint32),
+            gxapi.GS_ULONG64: np.dtype(np.uint64)}
     try:
         return _gx2np_type[gtype]
     except KeyError:
@@ -366,6 +361,19 @@ def gxDummy(dtype):
 
     .. versionadded:: 9.1
     """
+    global _dummy_map
+    if not bool(_dummy_map):
+        _dummy_map = {
+            np.dtype(np.float): gxapi.rDUMMY,
+            np.dtype(np.float64): gxapi.rDUMMY,
+            np.dtype(np.float32): gxapi.rDUMMY,
+            np.dtype(np.int): gxapi.iDUMMY,
+            np.dtype(np.int64): gxapi.iDUMMY,
+            np.dtype(np.int8): gxapi.GS_S1DM,
+            np.dtype(np.int16): gxapi.GS_S2DM,
+            np.dtype(np.int32): gxapi.GS_S4DM,
+            np.dtype(np.int64): gxapi.GS_S8DM,
+            np.dtype(np.str_): ''}
     try:
         return(_dummy_map[np.dtype(dtype)])
     except KeyError:
