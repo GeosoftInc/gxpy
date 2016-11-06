@@ -213,6 +213,24 @@ class Test(unittest.TestCase):
         except:
             raise
 
+    def test_run_external_bad_python(self):
+        self.start(gsys.func_name())
+
+        testpy = os.path.join(os.getcwd(), 'test_python.py')
+        with open(testpy, 'w') as py:
+            py.write("import this_module_not_there\n")
+
+        try:
+            gxu.run_external_python(testpy, script_args='test1 test2')
+            os.remove(testpy)
+            self.assertTrue(False)
+        except gxu.UtilityException as e:
+            self.assertTrue('External python error' in str(e))
+        except:
+            os.remove(testpy)
+            raise
+        os.remove(testpy)
+
     def test_paths(self):
         self.start(gsys.func_name())
 
