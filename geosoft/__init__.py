@@ -124,6 +124,8 @@ The :class:`geosoft.gxapi.GXEMAP` digitization methods.
 '''
 
 gxapi.GXContext.clear_ui_console.__doc__ = '''clear_ui_console() -> None:
+Clears the console owned by UI applications. Has no effect on consoles owning standalone scripts.
+
 :returns: Nothing
 :rtype: None
 
@@ -132,6 +134,9 @@ gxapi.GXContext.clear_ui_console.__doc__ = '''clear_ui_console() -> None:
 '''
 
 gxapi.GXContext.show_ui_console.__doc__ = '''show_ui_console((bool)show) -> None:
+Shows or hides console owned by UI applications. Showing the console Will also bring the window to the front if behind 
+other application windows. Has no effect on consoles owning standalone scripts.
+
 :param show: True to show False to Hide
 :type show: bool
 :returns: Nothing
@@ -142,14 +147,8 @@ gxapi.GXContext.show_ui_console.__doc__ = '''show_ui_console((bool)show) -> None
 '''
 
 gxapi.GXContext.has_ui_console.__doc__ = '''has_ui_console() -> bool:
-:returns: Window handle as an int (HWND cast to unsigned on Windows)
-:rtype: bool
+Checks if a console owned by UI applications is available
 
-.. versionadded:: 9.1
-
-'''
-
-gxapi.GXContext.has_ui_console.__doc__ = '''has_ui_console() -> bool:
 :returns: Window handle as an int (HWND cast to unsigned on Windows)
 :rtype: bool
 
