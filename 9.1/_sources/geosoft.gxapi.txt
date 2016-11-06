@@ -26,6 +26,11 @@ The GXContext class
 	public standalone API that is shipped with *GX Developer* then this should be set to wherever
 	the :code:`GeosoftFiles` redistributable folder is copied or installed.
 
+	The UI console functions are inteded for extension scripts or scripts running in Oasis montaj or other UI applications
+	and are launched with :func:`geosoft.gxapi.GXSYS.run_gx`. The GX execution engine will detect if it is not running
+	in a console and create a console for that can be shown or hidden by default with a setting. 
+
+
 Helper classes to pass immutable values by reference
 ----------------------------------------------------
 
