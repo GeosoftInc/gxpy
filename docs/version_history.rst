@@ -40,55 +40,57 @@ New Classes
 New Functions
 ^^^^^^^^^^^^^
 
-:func:`geosoft.gxpy.gdb.GXdb.chanArray`
+:func:`geosoft.gxpy.gdb.GXdb.channel_details`
 
-:func:`geosoft.gxpy.gdb.GXdb.chanDetails`
+:func:`geosoft.gxpy.gdb.GXdb.channel_dtype`
 
-:func:`geosoft.gxpy.gdb.GXdb.chanDtype`
+:func:`geosoft.gxpy.gdb.GXdb.channel_name_symb`
 
-:func:`geosoft.gxpy.gdb.GXdb.chanNameSymb`
-
-:func:`geosoft.gxpy.gdb.GXdb.chanSetDetails`
-
-:func:`geosoft.gxpy.gdb.GXdb.channels`
+:func:`geosoft.gxpy.gdb.GXdb.channel_width`
 
 :func:`geosoft.gxpy.gdb.GXdb.commit`
 
-:func:`geosoft.gxpy.gdb.GXdb.delChan`
+:func:`geosoft.gxpy.gdb.GXdb.delete_channel`
 
-:func:`geosoft.gxpy.gdb.GXdb.delLine`
+:func:`geosoft.gxpy.gdb.GXdb.delete_line`
 
 :func:`geosoft.gxpy.gdb.GXdb.discard`
 
-:func:`geosoft.gxpy.gdb.GXdb.fileName`
+:func:`geosoft.gxpy.gdb.GXdb.file_name`
 
-:func:`geosoft.gxpy.gdb.GXdb.lineDetails`
+:func:`geosoft.gxpy.gdb.GXdb.line_details`
 
-:func:`geosoft.gxpy.gdb.GXdb.lineNameSymb`
+:func:`geosoft.gxpy.gdb.GXdb.line_name_symb`
 
-:func:`geosoft.gxpy.gdb.GXdb.lines`
+:func:`geosoft.gxpy.gdb.GXdb.list_channels`
 
-:func:`geosoft.gxpy.gdb.GXdb.listValues`
+:func:`geosoft.gxpy.gdb.GXdb.list_lines`
 
-:func:`geosoft.gxpy.gdb.GXdb.newChannel`
+:func:`geosoft.gxpy.gdb.GXdb.list_values`
 
-:func:`geosoft.gxpy.gdb.GXdb.newLine`
+:func:`geosoft.gxpy.gdb.GXdb.new_channel`
+
+:func:`geosoft.gxpy.gdb.GXdb.new_line`
 
 :func:`geosoft.gxpy.gdb.GXdb.new`
 
 :func:`geosoft.gxpy.gdb.GXdb.open`
 
-:func:`geosoft.gxpy.gdb.GXdb.readLine`
+:func:`geosoft.gxpy.gdb.GXdb.read_channel`
 
-:func:`geosoft.gxpy.gdb.GXdb.selectLines`
+:func:`geosoft.gxpy.gdb.GXdb.read_line`
 
-:func:`geosoft.gxpy.gdb.GXdb.writeDataChan`
+:func:`geosoft.gxpy.gdb.GXdb.select_lines`
 
-:func:`geosoft.gxpy.gdb.GXdb.writeDataLine`
+:func:`geosoft.gxpy.gdb.GXdb.set_channel_details`
 
-:func:`geosoft.gxpy.grd.GXgrd.decorateName`
+:func:`geosoft.gxpy.gdb.GXdb.write_channel`
 
-:func:`geosoft.gxpy.grd.GXgrd.deleteFiles`
+:func:`geosoft.gxpy.gdb.GXdb.write_line`
+
+:func:`geosoft.gxpy.grd.GXgrd.decorate_name`
+
+:func:`geosoft.gxpy.grd.GXgrd.delete_files`
 
 :func:`geosoft.gxpy.grd.GXgrd.dtype`
 
@@ -96,7 +98,7 @@ New Functions
 
 :func:`geosoft.gxpy.grd.GXgrd.indexWindow`
 
-:func:`geosoft.gxpy.grd.GXgrd.nameParts`
+:func:`geosoft.gxpy.grd.GXgrd.name_parts`
 
 :func:`geosoft.gxpy.grd.GXgrd.new`
 
@@ -106,9 +108,9 @@ New Functions
 
 :func:`geosoft.gxpy.grd.GXgrd.read_rows`
 
-:func:`geosoft.gxpy.grd.GXgrd.saveAs`
+:func:`geosoft.gxpy.grd.GXgrd.save_as`
 
-:func:`geosoft.gxpy.grd.GXgrd.setProperties`
+:func:`geosoft.gxpy.grd.GXgrd.set_properties`
 
 :func:`geosoft.gxpy.grd.GXgrd.write_rows`
 
@@ -164,7 +166,7 @@ New Functions
 
 :func:`geosoft.gxpy.ipj.GXpj.convert`
 
-:func:`geosoft.gxpy.om.dictFromLst`
+:func:`geosoft.gxpy.om.dict_from_lst`
 
 :func:`geosoft.gxpy.om.get_user_input`
 
@@ -192,21 +194,21 @@ New Functions
 
 :func:`geosoft.gxpy.utility.decode`
 
-:func:`geosoft.gxpy.utility.dictFromLst`
+:func:`geosoft.gxpy.utility.dict_from_lst`
 
 :func:`geosoft.gxpy.utility.display_message`
 
-:func:`geosoft.gxpy.utility.dtypeGX`
+:func:`geosoft.gxpy.utility.dtype_gx`
 
-:func:`geosoft.gxpy.utility.dummyMask`
+:func:`geosoft.gxpy.utility.dummy_mask`
 
 :func:`geosoft.gxpy.utility.get_parameters`
 
 :func:`geosoft.gxpy.utility.get_shared_dict`
 
-:func:`geosoft.gxpy.utility.gxDummy`
+:func:`geosoft.gxpy.utility.gx_dtype`
 
-:func:`geosoft.gxpy.utility.gxType`
+:func:`geosoft.gxpy.utility.gx_dummy`
 
 :func:`geosoft.gxpy.utility.project_path`
 
@@ -240,7 +242,7 @@ New Functions
 
 :func:`geosoft.gxpy.vv.GXvv.setFid`
 
-:func:`geosoft.gxpy.vv.GXvv.vvNp`
+:func:`geosoft.gxpy.vv.GXvv.vv_np`
 
 :func:`geosoft.gxpy.vv.GXvv.vv`
 
