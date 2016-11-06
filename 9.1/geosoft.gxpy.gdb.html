@@ -107,7 +107,7 @@
 <span class="n">lines</span> <span class="o">=</span> <span class="n">gdb</span><span class="o">.</span><span class="n">lines</span><span class="p">()</span>
 <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">:</span>
 
-    <span class="n">npd</span><span class="p">,</span><span class="n">ch</span><span class="p">,</span><span class="n">fid</span> <span class="o">=</span> <span class="n">gdb</span><span class="o">.</span><span class="n">readLine</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+    <span class="n">npd</span><span class="p">,</span><span class="n">ch</span><span class="p">,</span><span class="n">fid</span> <span class="o">=</span> <span class="n">gdb</span><span class="o">.</span><span class="n">read_line</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
     <span class="c1"># npd is a 2D numpy array to all data in this line.</span>
     <span class="c1"># ch is a list of the channels, one channel for each column in npd.</span>
     <span class="c1"># Array channels are expanded with channel names &quot;name[0]&quot;, &quot;name[1]&quot; ...</span>
@@ -130,7 +130,7 @@
 <span class="n">lines</span> <span class="o">=</span> <span class="n">gdb</span><span class="o">.</span><span class="n">lines</span><span class="p">()</span>
 <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">:</span>
 
-    <span class="n">npd</span><span class="p">,</span><span class="n">ch</span><span class="p">,</span><span class="n">fid</span> <span class="o">=</span> <span class="n">gdb</span><span class="o">.</span><span class="n">readLine</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+    <span class="n">npd</span><span class="p">,</span><span class="n">ch</span><span class="p">,</span><span class="n">fid</span> <span class="o">=</span> <span class="n">gdb</span><span class="o">.</span><span class="n">read_line</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
     <span class="c1"># npd is a 2D numpy array to all data in this line.</span>
     <span class="c1"># ch is a list of the channels, one channel for each column in npd.</span>
     <span class="c1"># Array channels are expanded with channel names &quot;name[0]&quot;, &quot;name[1]&quot; ...</span>
@@ -147,12 +147,12 @@ deal with dummies).</p>
 <span class="n">lines</span> <span class="o">=</span> <span class="n">gdb</span><span class="o">.</span><span class="n">lines</span><span class="p">()</span>
 <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">:</span>
 
-    <span class="n">npd</span><span class="p">,</span><span class="n">ch</span><span class="p">,</span><span class="n">fid</span> <span class="o">=</span> <span class="n">gdb</span><span class="o">.</span><span class="n">readLine</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="n">channels</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;X&#39;</span><span class="p">,</span><span class="s1">&#39;Y&#39;</span><span class="p">,</span><span class="s1">&#39;Z&#39;</span><span class="p">])</span>
+    <span class="n">npd</span><span class="p">,</span><span class="n">ch</span><span class="p">,</span><span class="n">fid</span> <span class="o">=</span> <span class="n">gdb</span><span class="o">.</span><span class="n">read_line</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="n">channels</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;X&#39;</span><span class="p">,</span><span class="s1">&#39;Y&#39;</span><span class="p">,</span><span class="s1">&#39;Z&#39;</span><span class="p">])</span>
 
     <span class="n">squares</span> <span class="o">=</span> <span class="n">npd</span><span class="o">.</span><span class="n">square</span><span class="p">(</span><span class="n">npd</span><span class="p">)</span>
     <span class="n">dist</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">npd</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">npd</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">npd</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
 
-    <span class="n">gdb</span><span class="o">.</span><span class="n">writeDataChan</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="s1">&#39;distance&#39;</span><span class="p">,</span> <span class="n">dist</span><span class="p">,</span> <span class="n">fid</span><span class="p">)</span>
+    <span class="n">gdb</span><span class="o">.</span><span class="n">write_channel</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="s1">&#39;distance&#39;</span><span class="p">,</span> <span class="n">dist</span><span class="p">,</span> <span class="n">fid</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Create a distance channel (as in previous example), with dummy handling:</p>
@@ -161,47 +161,28 @@ deal with dummies).</p>
 <span class="n">lines</span> <span class="o">=</span> <span class="n">gdb</span><span class="o">.</span><span class="n">lines</span><span class="p">()</span>
 <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">:</span>
 
-    <span class="n">ln</span><span class="p">,</span> <span class="n">lsymb</span> <span class="o">=</span> <span class="n">gdb</span><span class="o">.</span><span class="n">lineNameSymb</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+    <span class="n">ln</span><span class="p">,</span> <span class="n">lsymb</span> <span class="o">=</span> <span class="n">gdb</span><span class="o">.</span><span class="n">line_name_symb</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
 
-    <span class="n">data</span><span class="p">,</span> <span class="n">ch</span><span class="p">,</span> <span class="n">fid</span> <span class="o">=</span> <span class="n">gdb</span><span class="o">.</span><span class="n">readLine</span><span class="p">(</span><span class="n">lsymb</span><span class="p">,</span> <span class="n">channels</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;X&#39;</span><span class="p">,</span><span class="s1">&#39;Y&#39;</span><span class="p">,</span><span class="s1">&#39;Z&#39;</span><span class="p">])</span>
-    <span class="n">dummy</span> <span class="o">=</span> <span class="n">gxu</span><span class="o">.</span><span class="n">gxDummy</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
+    <span class="n">data</span><span class="p">,</span> <span class="n">ch</span><span class="p">,</span> <span class="n">fid</span> <span class="o">=</span> <span class="n">gdb</span><span class="o">.</span><span class="n">read_line</span><span class="p">(</span><span class="n">lsymb</span><span class="p">,</span> <span class="n">channels</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;X&#39;</span><span class="p">,</span><span class="s1">&#39;Y&#39;</span><span class="p">,</span><span class="s1">&#39;Z&#39;</span><span class="p">])</span>
+    <span class="n">dummy</span> <span class="o">=</span> <span class="n">gxu</span><span class="o">.</span><span class="n">gx_dummy</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
 
     <span class="c1"># get a dummy mask, True for all rows with a dummy</span>
-    <span class="n">dummyMask</span> <span class="o">=</span> <span class="n">gxu</span><span class="o">.</span><span class="n">dummyMask</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+    <span class="n">dummy_mask</span> <span class="o">=</span> <span class="n">gxu</span><span class="o">.</span><span class="n">dummy_mask</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 
     <span class="n">squares</span> <span class="o">=</span> <span class="n">npd</span><span class="o">.</span><span class="n">square</span><span class="p">(</span><span class="n">npd</span><span class="p">)</span>
     <span class="n">dist</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">npd</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">npd</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">npd</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
 
     <span class="c1"># insert dummies using the dummy mask, then write</span>
-    <span class="n">dist</span><span class="p">[</span><span class="n">dummyMask</span><span class="p">]</span> <span class="o">=</span> <span class="n">dummy</span>
-    <span class="n">gdb</span><span class="o">.</span><span class="n">writeDataChan</span><span class="p">(</span><span class="n">lsymb</span><span class="p">,</span> <span class="s1">&#39;distance&#39;</span><span class="p">,</span> <span class="n">dist</span><span class="p">)</span>
+    <span class="n">dist</span><span class="p">[</span><span class="n">dummy_mask</span><span class="p">]</span> <span class="o">=</span> <span class="n">dummy</span>
+    <span class="n">gdb</span><span class="o">.</span><span class="n">write_channel</span><span class="p">(</span><span class="n">lsymb</span><span class="p">,</span> <span class="s1">&#39;distance&#39;</span><span class="p">,</span> <span class="n">dist</span><span class="p">)</span>
 </pre></div>
 </div>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.1.</span></p>
 </div>
 <dl class="method">
-<dt id="geosoft.gxpy.gdb.GXdb.chanArray">
-<code class="descname">chanArray</code><span class="sig-paren">(</span><em>channel</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.gdb.GXdb.chanArray" title="Permalink to this definition">¶</a></dt>
-<dd><p>Channel array dimension.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>channel</strong> &#8211; channel symbol or name</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">array dimension, 1 for non-array channels</td>
-</tr>
-</tbody>
-</table>
-<div class="versionadded">
-<p><span class="versionmodified">New in version 9.1.</span></p>
-</div>
-</dd></dl>
-
-<dl class="method">
-<dt id="geosoft.gxpy.gdb.GXdb.chanDetails">
-<code class="descname">chanDetails</code><span class="sig-paren">(</span><em>channel</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.gdb.GXdb.chanDetails" title="Permalink to this definition">¶</a></dt>
+<dt id="geosoft.gxpy.gdb.GXdb.channel_details">
+<code class="descname">channel_details</code><span class="sig-paren">(</span><em>channel</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.gdb.GXdb.channel_details" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return dictionary of channel details</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -265,8 +246,8 @@ deal with dummies).</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="geosoft.gxpy.gdb.GXdb.chanDtype">
-<code class="descname">chanDtype</code><span class="sig-paren">(</span><em>channel</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.gdb.GXdb.chanDtype" title="Permalink to this definition">¶</a></dt>
+<dt id="geosoft.gxpy.gdb.GXdb.channel_dtype">
+<code class="descname">channel_dtype</code><span class="sig-paren">(</span><em>channel</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.gdb.GXdb.channel_dtype" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns channel numpy dtype</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -284,8 +265,8 @@ deal with dummies).</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="geosoft.gxpy.gdb.GXdb.chanFid">
-<code class="descname">chanFid</code><span class="sig-paren">(</span><em>line</em>, <em>channel</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.gdb.GXdb.chanFid" title="Permalink to this definition">¶</a></dt>
+<dt id="geosoft.gxpy.gdb.GXdb.channel_fid">
+<code class="descname">channel_fid</code><span class="sig-paren">(</span><em>line</em>, <em>channel</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.gdb.GXdb.channel_fid" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the fiducial of a line, channel</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -305,8 +286,8 @@ deal with dummies).</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="geosoft.gxpy.gdb.GXdb.chanNameSymb">
-<code class="descname">chanNameSymb</code><span class="sig-paren">(</span><em>chan</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.gdb.GXdb.chanNameSymb" title="Permalink to this definition">¶</a></dt>
+<dt id="geosoft.gxpy.gdb.GXdb.channel_name_symb">
+<code class="descname">channel_name_symb</code><span class="sig-paren">(</span><em>chan</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.gdb.GXdb.channel_name_symb" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return channel name, symbol</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -326,58 +307,16 @@ deal with dummies).</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="geosoft.gxpy.gdb.GXdb.chanSetDetails">
-<code class="descname">chanSetDetails</code><span class="sig-paren">(</span><em>channel</em>, <em>detail</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.gdb.GXdb.chanSetDetails" title="Permalink to this definition">¶</a></dt>
-<dd><p>Set/change channel details from dictionary</p>
+<dt id="geosoft.gxpy.gdb.GXdb.channel_width">
+<code class="descname">channel_width</code><span class="sig-paren">(</span><em>channel</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.gdb.GXdb.channel_width" title="Permalink to this definition">¶</a></dt>
+<dd><p>Channel array width, 1 for normal channels, &gt;1 for VA channels.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>channel</strong> &#8211; channel name or symbol</li>
-<li><strong>detail</strong> &#8211; dictionary, see chanDetails</li>
-</ul>
-</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>channel</strong> &#8211; channel symbol or name</td>
 </tr>
-</tbody>
-</table>
-<div class="versionadded">
-<p><span class="versionmodified">New in version 9.1.</span></p>
-</div>
-</dd></dl>
-
-<dl class="method">
-<dt id="geosoft.gxpy.gdb.GXdb.channels">
-<code class="descname">channels</code><span class="sig-paren">(</span><em>chan=None</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.gdb.GXdb.channels" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return a dict of channels in the database.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>chan</strong> &#8211; <p>channel filter, default returns all channels</p>
-<table border="1" class="docutils">
-<colgroup>
-<col width="35%" />
-<col width="65%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td>CHAN_ALL</td>
-<td>all channels, normal and VA</td>
-</tr>
-<tr class="row-even"><td>CHAN_NORMAL</td>
-<td>normal channels only</td>
-</tr>
-<tr class="row-odd"><td>CHAN_ARRAY</td>
-<td>VA channels only</td>
-</tr>
-<tr class="row-even"><td>CHAN_DISPLAYED</td>
-<td>displayed channels</td>
-</tr>
-</tbody>
-</table>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">dictionary {channel_names: channel_symbols}</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">array dimension, 1 for non-array channels</td>
 </tr>
 </tbody>
 </table>
@@ -396,8 +335,8 @@ deal with dummies).</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="geosoft.gxpy.gdb.GXdb.delChan">
-<code class="descname">delChan</code><span class="sig-paren">(</span><em>channels</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.gdb.GXdb.delChan" title="Permalink to this definition">¶</a></dt>
+<dt id="geosoft.gxpy.gdb.GXdb.delete_channel">
+<code class="descname">delete_channel</code><span class="sig-paren">(</span><em>channels</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.gdb.GXdb.delete_channel" title="Permalink to this definition">¶</a></dt>
 <dd><p>Delete channel(s) by name or symbol.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -413,8 +352,8 @@ deal with dummies).</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="geosoft.gxpy.gdb.GXdb.delLine">
-<code class="descname">delLine</code><span class="sig-paren">(</span><em>s</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.gdb.GXdb.delLine" title="Permalink to this definition">¶</a></dt>
+<dt id="geosoft.gxpy.gdb.GXdb.delete_line">
+<code class="descname">delete_line</code><span class="sig-paren">(</span><em>s</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.gdb.GXdb.delete_line" title="Permalink to this definition">¶</a></dt>
 <dd><p>Delete a line by name or symbol.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -439,8 +378,8 @@ deal with dummies).</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="geosoft.gxpy.gdb.GXdb.fileName">
-<code class="descname">fileName</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.gdb.GXdb.fileName" title="Permalink to this definition">¶</a></dt>
+<dt id="geosoft.gxpy.gdb.GXdb.file_name">
+<code class="descname">file_name</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.gdb.GXdb.file_name" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -455,8 +394,8 @@ deal with dummies).</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="geosoft.gxpy.gdb.GXdb.lineDetails">
-<code class="descname">lineDetails</code><span class="sig-paren">(</span><em>line</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.gdb.GXdb.lineDetails" title="Permalink to this definition">¶</a></dt>
+<dt id="geosoft.gxpy.gdb.GXdb.line_details">
+<code class="descname">line_details</code><span class="sig-paren">(</span><em>line</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.gdb.GXdb.line_details" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return dictionary of line details</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -514,8 +453,8 @@ deal with dummies).</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="geosoft.gxpy.gdb.GXdb.lineNameSymb">
-<code class="descname">lineNameSymb</code><span class="sig-paren">(</span><em>line</em>, <em>create=False</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.gdb.GXdb.lineNameSymb" title="Permalink to this definition">¶</a></dt>
+<dt id="geosoft.gxpy.gdb.GXdb.line_name_symb">
+<code class="descname">line_name_symb</code><span class="sig-paren">(</span><em>line</em>, <em>create=False</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.gdb.GXdb.line_name_symb" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return line name, symbol</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -541,8 +480,45 @@ deal with dummies).</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="geosoft.gxpy.gdb.GXdb.lines">
-<code class="descname">lines</code><span class="sig-paren">(</span><em>select=True</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.gdb.GXdb.lines" title="Permalink to this definition">¶</a></dt>
+<dt id="geosoft.gxpy.gdb.GXdb.list_channels">
+<code class="descname">list_channels</code><span class="sig-paren">(</span><em>chan=None</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.gdb.GXdb.list_channels" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a dict of channels in the database.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>chan</strong> &#8211; <p>channel filter, default returns all channels</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="35%" />
+<col width="65%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>CHAN_ALL</td>
+<td>all channels, normal and VA</td>
+</tr>
+<tr class="row-even"><td>CHAN_NORMAL</td>
+<td>normal channels only</td>
+</tr>
+<tr class="row-odd"><td>CHAN_ARRAY</td>
+<td>VA channels only</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">dictionary {channel_names: channel_symbols}</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.1.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxpy.gdb.GXdb.list_lines">
+<code class="descname">list_lines</code><span class="sig-paren">(</span><em>select=True</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.gdb.GXdb.list_lines" title="Permalink to this definition">¶</a></dt>
 <dd><p>List of lines in the database
 :param select=True:  True to return selected lines, false to return all lines
 :return: dictionary (line name: symbol)</p>
@@ -552,8 +528,8 @@ deal with dummies).</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="geosoft.gxpy.gdb.GXdb.listValues">
-<code class="descname">listValues</code><span class="sig-paren">(</span><em>chan</em>, <em>max=1000</em>, <em>selected=True</em>, <em>dupl=50</em>, <em>progress=None</em>, <em>stop=None</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.gdb.GXdb.listValues" title="Permalink to this definition">¶</a></dt>
+<dt id="geosoft.gxpy.gdb.GXdb.list_values">
+<code class="descname">list_values</code><span class="sig-paren">(</span><em>chan</em>, <em>max=1000</em>, <em>selected=True</em>, <em>dupl=50</em>, <em>progress=None</em>, <em>stop=None</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.gdb.GXdb.list_values" title="Permalink to this definition">¶</a></dt>
 <dd><p>Build a list of unique values in a channel.  Uniqueness depends on the current display format for
 the field.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -608,8 +584,8 @@ the field.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="geosoft.gxpy.gdb.GXdb.newChannel">
-<code class="descname">newChannel</code><span class="sig-paren">(</span><em>name</em>, <em>dtype=&lt;class 'numpy.float64'&gt;</em>, <em>array=1</em>, <em>details={'decimal': 2</em>, <em>'width': 12}</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.gdb.GXdb.newChannel" title="Permalink to this definition">¶</a></dt>
+<dt id="geosoft.gxpy.gdb.GXdb.new_channel">
+<code class="descname">new_channel</code><span class="sig-paren">(</span><em>name</em>, <em>dtype=&lt;class 'numpy.float64'&gt;</em>, <em>array=1</em>, <em>details={'decimal': 2</em>, <em>'width': 12}</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.gdb.GXdb.new_channel" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return a channel symbol, create if it does not exist.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -619,7 +595,7 @@ the field.</p>
 <li><strong>name</strong> &#8211; channel name</li>
 <li><strong>dtype</strong> &#8211; numpy dtype (ie. np.int64)</li>
 <li><strong>array</strong> &#8211; array columns (default is 1)</li>
-<li><strong>details</strong> &#8211; dictionary containing channel details, see chanDetails()</li>
+<li><strong>details</strong> &#8211; dictionary containing channel details, see channel_details()</li>
 </ul>
 </td>
 </tr>
@@ -640,8 +616,8 @@ the field.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="geosoft.gxpy.gdb.GXdb.newLine">
-<code class="descname">newLine</code><span class="sig-paren">(</span><em>line</em>, <em>linetype=None</em>, <em>group=''</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.gdb.GXdb.newLine" title="Permalink to this definition">¶</a></dt>
+<dt id="geosoft.gxpy.gdb.GXdb.new_line">
+<code class="descname">new_line</code><span class="sig-paren">(</span><em>line</em>, <em>linetype=None</em>, <em>group=''</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.gdb.GXdb.new_line" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get a line symbol.  If line exists an error is raised.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -699,8 +675,33 @@ the field.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="geosoft.gxpy.gdb.GXdb.readLine">
-<code class="descname">readLine</code><span class="sig-paren">(</span><em>line</em>, <em>channels=None</em>, <em>dtype=&lt;class 'numpy.float64'&gt;</em>, <em>fid=None</em>, <em>dummy=None</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.gdb.GXdb.readLine" title="Permalink to this definition">¶</a></dt>
+<dt id="geosoft.gxpy.gdb.GXdb.read_channel">
+<code class="descname">read_channel</code><span class="sig-paren">(</span><em>line</em>, <em>channel</em>, <em>dtype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.gdb.GXdb.read_channel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read data from a single channel.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>line</strong> &#8211; line name or symbol</li>
+<li><strong>channel</strong> &#8211; channel name or symbol</li>
+<li><strong>dtype</strong> &#8211; type wanted, default same as the channel data</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">numpy data, fid (start, increment)</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.1.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxpy.gdb.GXdb.read_line">
+<code class="descname">read_line</code><span class="sig-paren">(</span><em>line</em>, <em>channels=None</em>, <em>dtype=None</em>, <em>fid=None</em>, <em>dummy=None</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.gdb.GXdb.read_line" title="Permalink to this definition">¶</a></dt>
 <dd><p>Read a line of data into a numpy array.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -709,9 +710,10 @@ the field.</p>
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>line</strong> &#8211; line to read, string or symbol number</li>
 <li><strong>channels</strong> &#8211; list of channels, strings or symbol number.  If empty, read all channels</li>
-<li><strong>dtype</strong> &#8211; numpy data type for the array, default np.float64.  This can be a string type &#8220;&lt;Unnn&#8221;</li>
+<li><strong>dtype</strong> &#8211; numpy data type for the array, default np.float64 for multi-channel data,
+data type for single channel data. Use &#8220;&lt;Unnn&#8221; for string type.</li>
 <li><strong>fid</strong> &#8211; required fiducial as tuple (start,incr), default smallest in data</li>
-<li><strong>dummy</strong> &#8211; <p>dummy_handling, default leaves dummies in place:</p>
+<li><strong>dummy</strong> &#8211; <p>dummy_handling for multi-channel read, default leaves dummies in place:</p>
 <table border="1" class="docutils">
 <colgroup>
 <col width="32%" />
@@ -744,12 +746,12 @@ the field.</p>
 <span class="c1"># ch  - list of returned channels names, array channels expanded to array[0], array[1], ...</span>
 <span class="c1"># fid - tuple (fidStart,fidIncrement), channels resampled as necessary</span>
 
-<span class="n">npd</span><span class="p">,</span><span class="n">ch</span><span class="p">,</span><span class="n">fid</span> <span class="o">=</span> <span class="n">gdb</span><span class="o">.</span><span class="n">readLine</span><span class="p">(</span><span class="s1">&#39;L100&#39;</span><span class="p">)</span>                           <span class="c1"># read all channels in line &quot;L100&quot;</span>
-<span class="n">npd</span><span class="p">,</span><span class="n">ch</span><span class="p">,</span><span class="n">fid</span> <span class="o">=</span> <span class="n">gdb</span><span class="o">.</span><span class="n">readLine</span><span class="p">(</span><span class="mi">681</span><span class="p">)</span>                              <span class="c1"># read all channels in line symbol 681</span>
-<span class="n">npd</span><span class="p">,</span><span class="n">ch</span><span class="p">,</span><span class="n">fid</span> <span class="o">=</span> <span class="n">gdb</span><span class="o">.</span><span class="n">readLine</span><span class="p">(</span><span class="s1">&#39;L100&#39;</span><span class="p">,</span><span class="s1">&#39;X&#39;</span><span class="p">)</span>                       <span class="c1"># read channel &#39;X&#39; from line &#39;L100&#39;</span>
-<span class="n">npd</span><span class="p">,</span><span class="n">ch</span><span class="p">,</span><span class="n">fid</span> <span class="o">=</span> <span class="n">gdb</span><span class="o">.</span><span class="n">readLine</span><span class="p">(</span><span class="s1">&#39;L100&#39;</span><span class="p">,</span><span class="mi">2135</span><span class="p">)</span>                      <span class="c1"># read channel symbol 2135 from &#39;L100&quot;</span>
-<span class="n">npd</span><span class="p">,</span><span class="n">ch</span><span class="p">,</span><span class="n">fid</span> <span class="o">=</span> <span class="n">gdb</span><span class="o">.</span><span class="n">readLine</span><span class="p">(</span><span class="s1">&#39;L100&#39;</span><span class="p">,</span><span class="n">channels</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;X&#39;</span><span class="p">,</span><span class="s1">&#39;Y&#39;</span><span class="p">,</span><span class="s1">&#39;Z&#39;</span><span class="p">])</span>    <span class="c1"># read a list of channels to (n,3) array</span>
-<span class="n">npd</span><span class="p">,</span><span class="n">ch</span><span class="p">,</span><span class="n">fid</span> <span class="o">=</span> <span class="n">gdb</span><span class="o">.</span><span class="n">readLine</span><span class="p">(</span><span class="s1">&#39;L100&#39;</span><span class="p">,</span><span class="s1">&#39;X&#39;</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">)</span>              <span class="c1"># read channel &#39;X&#39; into integer array</span>
+<span class="n">npd</span><span class="p">,</span><span class="n">ch</span><span class="p">,</span><span class="n">fid</span> <span class="o">=</span> <span class="n">gdb</span><span class="o">.</span><span class="n">read_line</span><span class="p">(</span><span class="s1">&#39;L100&#39;</span><span class="p">)</span>                           <span class="c1"># read all channels in line &quot;L100&quot;</span>
+<span class="n">npd</span><span class="p">,</span><span class="n">ch</span><span class="p">,</span><span class="n">fid</span> <span class="o">=</span> <span class="n">gdb</span><span class="o">.</span><span class="n">read_line</span><span class="p">(</span><span class="mi">681</span><span class="p">)</span>                              <span class="c1"># read all channels in line symbol 681</span>
+<span class="n">npd</span><span class="p">,</span><span class="n">ch</span><span class="p">,</span><span class="n">fid</span> <span class="o">=</span> <span class="n">gdb</span><span class="o">.</span><span class="n">read_line</span><span class="p">(</span><span class="s1">&#39;L100&#39;</span><span class="p">,</span><span class="s1">&#39;X&#39;</span><span class="p">)</span>                       <span class="c1"># read channel &#39;X&#39; from line &#39;L100&#39;</span>
+<span class="n">npd</span><span class="p">,</span><span class="n">ch</span><span class="p">,</span><span class="n">fid</span> <span class="o">=</span> <span class="n">gdb</span><span class="o">.</span><span class="n">read_line</span><span class="p">(</span><span class="s1">&#39;L100&#39;</span><span class="p">,</span><span class="mi">2135</span><span class="p">)</span>                      <span class="c1"># read channel symbol 2135 from &#39;L100&quot;</span>
+<span class="n">npd</span><span class="p">,</span><span class="n">ch</span><span class="p">,</span><span class="n">fid</span> <span class="o">=</span> <span class="n">gdb</span><span class="o">.</span><span class="n">read_line</span><span class="p">(</span><span class="s1">&#39;L100&#39;</span><span class="p">,</span><span class="n">channels</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;X&#39;</span><span class="p">,</span><span class="s1">&#39;Y&#39;</span><span class="p">,</span><span class="s1">&#39;Z&#39;</span><span class="p">])</span>    <span class="c1"># read a list of channels to (n,3) array</span>
+<span class="n">npd</span><span class="p">,</span><span class="n">ch</span><span class="p">,</span><span class="n">fid</span> <span class="o">=</span> <span class="n">gdb</span><span class="o">.</span><span class="n">read_line</span><span class="p">(</span><span class="s1">&#39;L100&#39;</span><span class="p">,</span><span class="s1">&#39;X&#39;</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">)</span>              <span class="c1"># read channel &#39;X&#39; into integer array</span>
 </pre></div>
 </div>
 <div class="versionadded">
@@ -758,8 +760,8 @@ the field.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="geosoft.gxpy.gdb.GXdb.selectLines">
-<code class="descname">selectLines</code><span class="sig-paren">(</span><em>selection=''</em>, <em>select=True</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.gdb.GXdb.selectLines" title="Permalink to this definition">¶</a></dt>
+<dt id="geosoft.gxpy.gdb.GXdb.select_lines">
+<code class="descname">select_lines</code><span class="sig-paren">(</span><em>selection=''</em>, <em>select=True</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.gdb.GXdb.select_lines" title="Permalink to this definition">¶</a></dt>
 <dd><p>Change selected state of a line, or group of lines
 :param selection:   string representing selection, comma-delimit multiple selections
 :param select=True: True to select, False to deselect</p>
@@ -778,9 +780,36 @@ the field.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="geosoft.gxpy.gdb.GXdb.writeDataChan">
-<code class="descname">writeDataChan</code><span class="sig-paren">(</span><em>line</em>, <em>channel</em>, <em>data</em>, <em>fid=(0.0</em>, <em>1.0)</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.gdb.GXdb.writeDataChan" title="Permalink to this definition">¶</a></dt>
-<dd><p>Write data to a channel.</p>
+<dt id="geosoft.gxpy.gdb.GXdb.set_channel_details">
+<code class="descname">set_channel_details</code><span class="sig-paren">(</span><em>channel</em>, <em>detail</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.gdb.GXdb.set_channel_details" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set/change channel details from dictionary</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>channel</strong> &#8211; channel name or symbol</li>
+<li><strong>detail</strong> &#8211; dictionary, see chan_details</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.1.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxpy.gdb.GXdb.vv_np">
+<code class="descname">vv_np</code><span class="sig-paren">(</span><em>npdata</em>, <em>fid=(0.0</em>, <em>1.0)</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.gdb.GXdb.vv_np" title="Permalink to this definition">¶</a></dt>
+<dd><p>return a VV copy of the numpy data.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxpy.gdb.GXdb.write_channel">
+<code class="descname">write_channel</code><span class="sig-paren">(</span><em>line</em>, <em>channel</em>, <em>data</em>, <em>fid=(0.0</em>, <em>1.0)</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.gdb.GXdb.write_channel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write data to a single channel.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -801,9 +830,10 @@ the field.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="geosoft.gxpy.gdb.GXdb.writeDataLine">
-<code class="descname">writeDataLine</code><span class="sig-paren">(</span><em>line</em>, <em>data</em>, <em>channels=None</em>, <em>name=None</em>, <em>fid=(0.0</em>, <em>1.0)</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.gdb.GXdb.writeDataLine" title="Permalink to this definition">¶</a></dt>
-<dd><p>Write data to a line.</p>
+<dt id="geosoft.gxpy.gdb.GXdb.write_line">
+<code class="descname">write_line</code><span class="sig-paren">(</span><em>line</em>, <em>data</em>, <em>channels=None</em>, <em>fid=(0.0</em>, <em>1.0)</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.gdb.GXdb.write_line" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write data to a multiple channels in a line.  If no channel list is provided it assumes that the
+data is for all channels from the line, the compliment of readDataLine().</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />

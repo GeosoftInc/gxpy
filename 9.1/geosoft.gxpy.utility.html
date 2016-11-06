@@ -153,8 +153,8 @@ and return a decimal Gregorian year. Other date formats will raise a ValueErr.</
 </dd></dl>
 
 <dl class="function">
-<dt id="geosoft.gxpy.utility.dictFromLst">
-<code class="descclassname">geosoft.gxpy.utility.</code><code class="descname">dictFromLst</code><span class="sig-paren">(</span><em>lst</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.utility.dictFromLst" title="Permalink to this definition">¶</a></dt>
+<dt id="geosoft.gxpy.utility.dict_from_lst">
+<code class="descclassname">geosoft.gxpy.utility.</code><code class="descname">dict_from_lst</code><span class="sig-paren">(</span><em>lst</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.utility.dict_from_lst" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -190,8 +190,8 @@ and return a decimal Gregorian year. Other date formats will raise a ValueErr.</
 </dd></dl>
 
 <dl class="function">
-<dt id="geosoft.gxpy.utility.dtypeGX">
-<code class="descclassname">geosoft.gxpy.utility.</code><code class="descname">dtypeGX</code><span class="sig-paren">(</span><em>gtype</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.utility.dtypeGX" title="Permalink to this definition">¶</a></dt>
+<dt id="geosoft.gxpy.utility.dtype_gx">
+<code class="descclassname">geosoft.gxpy.utility.</code><code class="descname">dtype_gx</code><span class="sig-paren">(</span><em>gtype</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.utility.dtype_gx" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -206,8 +206,8 @@ and return a decimal Gregorian year. Other date formats will raise a ValueErr.</
 </dd></dl>
 
 <dl class="function">
-<dt id="geosoft.gxpy.utility.dummyMask">
-<code class="descclassname">geosoft.gxpy.utility.</code><code class="descname">dummyMask</code><span class="sig-paren">(</span><em>npd</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.utility.dummyMask" title="Permalink to this definition">¶</a></dt>
+<dt id="geosoft.gxpy.utility.dummy_mask">
+<code class="descclassname">geosoft.gxpy.utility.</code><code class="descname">dummy_mask</code><span class="sig-paren">(</span><em>npd</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.utility.dummy_mask" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return a 1-D dummy mask that is True for all rows  in a 2D numpy array that
 have a Geosoft dummy value.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -260,13 +260,13 @@ The shared dictionary is cleared (popped) so a subsequent call will return an em
 </dd></dl>
 
 <dl class="function">
-<dt id="geosoft.gxpy.utility.gxDummy">
-<code class="descclassname">geosoft.gxpy.utility.</code><code class="descname">gxDummy</code><span class="sig-paren">(</span><em>dtype</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.utility.gxDummy" title="Permalink to this definition">¶</a></dt>
+<dt id="geosoft.gxpy.utility.gx_dtype">
+<code class="descclassname">geosoft.gxpy.utility.</code><code class="descname">gx_dtype</code><span class="sig-paren">(</span><em>dtype</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.utility.gx_dtype" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">GX dummy for this dtype</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">GX type for a numpy dtype</td>
 </tr>
 </tbody>
 </table>
@@ -276,13 +276,13 @@ The shared dictionary is cleared (popped) so a subsequent call will return an em
 </dd></dl>
 
 <dl class="function">
-<dt id="geosoft.gxpy.utility.gxType">
-<code class="descclassname">geosoft.gxpy.utility.</code><code class="descname">gxType</code><span class="sig-paren">(</span><em>dtype</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.utility.gxType" title="Permalink to this definition">¶</a></dt>
+<dt id="geosoft.gxpy.utility.gx_dummy">
+<code class="descclassname">geosoft.gxpy.utility.</code><code class="descname">gx_dummy</code><span class="sig-paren">(</span><em>dtype</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.utility.gx_dummy" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">GX type for a numpy dtype</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">GX dummy for this dtype</td>
 </tr>
 </tbody>
 </table>
@@ -463,8 +463,8 @@ This is a companion file to run_external_python().</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="geosoft.gxpy.utility.timeStamp">
-<code class="descclassname">geosoft.gxpy.utility.</code><code class="descname">timeStamp</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.utility.timeStamp" title="Permalink to this definition">¶</a></dt>
+<dt id="geosoft.gxpy.utility.time_stamp">
+<code class="descclassname">geosoft.gxpy.utility.</code><code class="descname">time_stamp</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.utility.time_stamp" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
