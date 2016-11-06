@@ -387,7 +387,7 @@ class GXipj():
 
         lst = gxapi.GXLST.create(1000)
         gxapi.GXIPJ.get_list(what, datum_filter, lst)
-        namelist = list(gxu.dictFromLst(lst).keys())
+        namelist = list(gxu.dict_from_lst(lst).keys())
         namelist.sort(key=str.lower)
         del lst
         return namelist

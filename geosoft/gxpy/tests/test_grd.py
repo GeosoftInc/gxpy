@@ -54,8 +54,8 @@ class Test(unittest.TestCase):
 
         #create a grids
         outGrid = os.path.join(self.folder, 'testNew.grd(GRD)')
-        grd = self.g1.saveAs(outGrid)
-        grd.deleteFiles()
+        grd = self.g1.save_as(outGrid)
+        grd.delete_files()
         properties = grd.properties()
         self.assertEqual(properties.get('dx'),0.01)
         self.assertEqual(properties.get('dy'),0.01)
@@ -69,7 +69,7 @@ class Test(unittest.TestCase):
         del grd
         gc.collect()
 
-    def test_setProperties(self):
+    def test_set_properties(self):
         self.start(gsys.func_name())
 
         properties = self.g1.properties()
@@ -80,13 +80,13 @@ class Test(unittest.TestCase):
         properties['rot'] = -33.333333
         properties['ipj'] = gxipj.GXipj.from_name('NAD27 / UTM zone 18N')
         try:
-            self.g1.setProperties(properties)
+            self.g1.set_properties(properties)
             self.assertTrue(False) #should not be able to set properties of a read-only grid
         except: pass
 
         outGrid = os.path.join(self.folder, 'testNew.grd(GRD;TYPE=SHORT;COMP=SPEED)')
-        grd = self.g1.saveAs(outGrid)
-        grd.setProperties(properties) #this should now work
+        grd = self.g1.save_as(outGrid)
+        grd.set_properties(properties) #this should now work
         del grd
 
         grd = gxgrd.GXgrd.open(outGrid)
@@ -127,9 +127,9 @@ class Test(unittest.TestCase):
         self.start(gsys.func_name())
 
         m1s = os.path.join(self.folder, 'm1.grd(GRD)')
-        m1 = self.g1.saveAs(m1s)
+        m1 = self.g1.save_as(m1s)
         m2s = os.path.join(self.folder, 'm2.grd(GRD)')
-        m2 = self.g2.saveAs(m2s)
+        m2 = self.g2.save_as(m2s)
         del m1, m2
         gc.collect()
 
@@ -154,7 +154,7 @@ class Test(unittest.TestCase):
         gc.collect()
 
         with gxgrd.GXgrd.open(m) as grd:
-            grd.deleteFiles()
+            grd.delete_files()
             properties = grd.properties()
             self.assertAlmostEqual(properties.get('dx'),0.01)
             self.assertAlmostEqual(properties.get('dy'),0.01)
@@ -169,7 +169,7 @@ class Test(unittest.TestCase):
         self.start(gsys.func_name())
 
         grd = gxgrd.gridBool(self.g1, self.g2, os.path.join(self.folder, 'testBool.grd(GRD;TYPE=SHORT)'), size=3)
-        grd.deleteFiles()
+        grd.delete_files()
         properties = grd.properties()
         self.assertAlmostEqual(properties.get('dx'),0.01)
         self.assertAlmostEqual(properties.get('dy'),0.01)
@@ -188,8 +188,8 @@ class Test(unittest.TestCase):
         self.start(gsys.func_name())
 
         def makefile(): #to force garbage collection on exit
-            g2 = self.g1.saveAs(os.path.join(self.folder,'testDelete.grd'))
-            g2.deleteFiles()
+            g2 = self.g1.save_as(os.path.join(self.folder,'testDelete.grd'))
+            g2.delete_files()
             s = str(g2).split('(')[0]
             del g2
             gc.collect()
@@ -204,8 +204,8 @@ class Test(unittest.TestCase):
         self.start(gsys.func_name())
 
         g = self.g1
-        ofile = gxgrd.GXgrd.decorateName(os.path.join(self.folder, 'test.hgd'), 'HGD')
-        g2 = g.saveAs(ofile)
+        ofile = gxgrd.GXgrd.decorate_name(os.path.join(self.folder, 'test.hgd'), 'HGD')
+        g2 = g.save_as(ofile)
         properties = g2.properties()
         self.assertEqual(properties.get('filename'),os.path.abspath(ofile.split('(')[0]))
         self.assertEqual(properties.get('decoration'),'HGD')
@@ -222,32 +222,32 @@ class Test(unittest.TestCase):
         del g,g2
         gc.collect()
 
-    def test_nameParts(self):
+    def test_name_parts(self):
         self.start(gsys.func_name())
 
-        namep = gxgrd.GXgrd.nameParts("f:/someFolder/name.grd(GRD;TYPE=SHORT)")
+        namep = gxgrd.GXgrd.name_parts("f:/someFolder/name.grd(GRD;TYPE=SHORT)")
         self.assertEqual(namep,('f:\\someFolder', 'name.grd', 'name', '.grd', 'GRD;TYPE=SHORT'))
 
-        namep = gxgrd.GXgrd.nameParts(".\\name.grd(GRD;TYPE=SHORT)")
+        namep = gxgrd.GXgrd.name_parts(".\\name.grd(GRD;TYPE=SHORT)")
         self.assertEqual(namep[0],os.getcwd())
         self.assertEqual(namep[1:],('name.grd', 'name', '.grd', 'GRD;TYPE=SHORT'))
 
-        namep = gxgrd.GXgrd.nameParts(".\\name.grd")
+        namep = gxgrd.GXgrd.name_parts(".\\name.grd")
         self.assertEqual(namep[0],os.getcwd())
         self.assertEqual(namep[1:],('name.grd', 'name', '.grd', ''))
 
         ref = 'billybob(decs;more)'
-        name = gxgrd.GXgrd.decorateName('billybob','(decs;more)')
+        name = gxgrd.GXgrd.decorate_name('billybob','(decs;more)')
         self.assertEqual(name,ref)
-        name = gxgrd.GXgrd.decorateName('billybob','decs;more')
+        name = gxgrd.GXgrd.decorate_name('billybob','decs;more')
         self.assertEqual(name,ref)
-        name = gxgrd.GXgrd.decorateName('billybob','(decs;more')
+        name = gxgrd.GXgrd.decorate_name('billybob','(decs;more')
         self.assertEqual(name,ref)
-        name = gxgrd.GXgrd.decorateName('billybob','decs;more)')
+        name = gxgrd.GXgrd.decorate_name('billybob','decs;more)')
         self.assertEqual(name,ref)
-        name = gxgrd.GXgrd.decorateName('billybob','decs;more)(and more)')
+        name = gxgrd.GXgrd.decorate_name('billybob','decs;more)(and more)')
         self.assertEqual(name,ref)
-        name = gxgrd.GXgrd.decorateName(ref)
+        name = gxgrd.GXgrd.decorate_name(ref)
         self.assertEqual(name,ref)
 
     def test_indexWindow(self):
@@ -307,7 +307,7 @@ class Test(unittest.TestCase):
 
         data = np.arange(24).reshape((8,3))
         with gxgrd.GXgrd.from_data_array(data, filename) as grd:
-            grd.deleteFiles()
+            grd.delete_files()
             properties = grd.properties()
             self.assertEqual(properties.get('dx'),1.0)
             self.assertEqual(properties.get('dy'),1.0)
@@ -320,7 +320,7 @@ class Test(unittest.TestCase):
 
         with gxgrd.GXgrd.from_data_array(data, filename,
                                          properties={'x0':575268, 'dx':2.0, 'dy':1.5, 'rot':15, 'ipj':'WGS 84'}) as grd:
-            grd.deleteFiles()
+            grd.delete_files()
             properties = grd.properties()
             self.assertEqual(properties.get('dx'),2.0)
             self.assertEqual(properties.get('dy'),1.5)

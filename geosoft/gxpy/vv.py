@@ -34,8 +34,8 @@ class GXvv():
         pass
 
     def __init__(self, dtype=np.float, fid=(0.0, 1.0)):
-        self._gxtype = gxu.gxType(dtype)
-        self._dtype = gxu.dtypeGX(self._gxtype)
+        self._gxtype = gxu.gx_dtype(dtype)
+        self._dtype = gxu.dtype_gx(self._gxtype)
         self._vv = gxapi.GXVV.create_ext(self._gxtype, 0)
         self._vv.set_fid_start(fid[0])
         self._vv.set_fid_incr(fid[1])

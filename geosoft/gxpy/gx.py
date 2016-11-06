@@ -102,7 +102,7 @@ class GXpy():
 
         lst = gxapi.GXLST.create(1000)
         gxapi.GXSYS.get_entitlement_rights(lst)
-        return gxu.dictFromLst(lst)
+        return gxu.dict_from_lst(lst)
 
     def license_class(self):
         '''

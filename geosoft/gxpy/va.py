@@ -39,8 +39,8 @@ class GXva():
         pass
 
     def __init__(self, width, dtype=np.float, fid=(0.0, 1.0)):
-        self._gxtype = gxu.gxType(dtype)
-        self._dtype = gxu.dtypeGX(self._gxtype)
+        self._gxtype = gxu.gx_dtype(dtype)
+        self._dtype = gxu.dtype_gx(self._gxtype)
         self._width = width
         self._va = gxapi.GXVA.create_ext(self._gxtype, 0, width)
         self._va.set_fid_start(fid[0])
@@ -163,7 +163,7 @@ class GXva():
             dtype = np.dtype(dtype)
 
         # strings not supported
-        if gxu.gxType(dtype) < 0:
+        if gxu.gx_dtype(dtype) < 0:
             raise VAException(_('VA string elements are not supported.'))
 
         if n is None:

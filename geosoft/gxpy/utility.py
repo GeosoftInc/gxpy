@@ -37,7 +37,7 @@ def _(s):
 # static
 
 
-def dictFromLst(lst):
+def dict_from_lst(lst):
     """
     :return:    python dictionary from a Geosoft GXLST
 
@@ -55,7 +55,7 @@ def dictFromLst(lst):
     return dct
 
 
-def timeStamp():
+def time_stamp():
     return strftime("%Y-%m-%d %H:%M:%S", gmtime())
 
 
@@ -293,7 +293,7 @@ def display_message(title, message):
         print('Title: {}\nMessage: {}'.format(title, message))
 
 
-def gxType(dtype):
+def gx_dtype(dtype):
     """
     :return:    GX type for a numpy dtype
 
@@ -327,7 +327,7 @@ def gxType(dtype):
             return -(int(dtype.str[2:]))
 
 
-def dtypeGX(gtype):
+def dtype_gx(gtype):
     """
     :return:    numpy dtype from a GX type
 
@@ -355,7 +355,7 @@ def dtypeGX(gtype):
             return np.dtype('<U{}'.format(-gtype))
 
 
-def gxDummy(dtype):
+def gx_dummy(dtype):
     """
     :return:    GX dummy for this dtype
 
@@ -381,7 +381,7 @@ def gxDummy(dtype):
             return ''
 
 
-def dummyMask(npd):
+def dummy_mask(npd):
     """
     Return a 1-D dummy mask that is True for all rows  in a 2D numpy array that
     have a Geosoft dummy value.
@@ -394,7 +394,7 @@ def dummyMask(npd):
 
     if len(npd.shape) != 2:
         raise UtilityException(_('Must be a 2D array'))
-    dummy = gxDummy(npd.dtype)
+    dummy = gx_dummy(npd.dtype)
     return np.apply_along_axis(lambda a: dummy in a, 1, npd)
 
 

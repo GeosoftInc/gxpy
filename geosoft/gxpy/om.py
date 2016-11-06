@@ -7,7 +7,7 @@
 import os
 import geosoft
 import geosoft.gxapi as gxapi
-from .utility import dictFromLst
+from .utility import dict_from_lst
 
 __version__ = geosoft.__version__
 
@@ -186,9 +186,9 @@ def menus():
     user_menus = gxapi.GXLST.create(512)
     gxapi.GXSYS.get_loaded_menus(def_menus, loaded_menus, user_menus)
 
-    info = {'menu_default': list(dictFromLst(def_menus).keys()),
-            'menu_loaded': list(dictFromLst(loaded_menus).keys()),
-            'menu_user': list(dictFromLst(user_menus).keys())}
+    info = {'menu_default': list(dict_from_lst(def_menus).keys()),
+            'menu_loaded': list(dict_from_lst(loaded_menus).keys()),
+            'menu_user': list(dict_from_lst(user_menus).keys())}
 
     return info
 
@@ -238,11 +238,11 @@ def state():
         edb = gxapi.GXEDB.current_no_activate()
         edb.get_name(s)
         sdb['current'] = s.value
-        sdb['open_list'] = list(dictFromLst(glst).keys())
+        sdb['open_list'] = list(dict_from_lst(glst).keys())
 
         n = edb.disp_chan_lst(glst)
         if n > 0:
-            sdb['disp_chan_list'] = list(dictFromLst(glst).keys())
+            sdb['disp_chan_list'] = list(dict_from_lst(glst).keys())
         else:
             sdb['disp_chan_list'] = []
 
@@ -276,7 +276,7 @@ def state():
         emap = gxapi.GXEMAP.current_no_activate()
         emap.get_name(s)
         smap['current'] = s.value
-        smap['open_list'] = list(dictFromLst(glst).keys())
+        smap['open_list'] = list(dict_from_lst(glst).keys())
 
         emap.get_display_area(fx, fy, fx2, fy2)
         smap['display_area'] = (fx.value, fy.value, fx2.value, fy2.value)

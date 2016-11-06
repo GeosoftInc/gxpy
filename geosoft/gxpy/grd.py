@@ -41,7 +41,7 @@ class GXgrd():
     """
 
     gc = None
-    _deleteFiles = False
+    _delete_files = False
     _filename = None
 
     def __enter__(self):
@@ -61,7 +61,7 @@ class GXgrd():
 
     def __init__(self, fileName=None, dtype=None, mode=None, kx=1, dim=None):
 
-        self._deleteFiles = False
+        self._delete_files = False
         self._readonly = False
         self._np = None
         self._hpg = None
@@ -76,8 +76,8 @@ class GXgrd():
         if (fileName is None) or (len(fileName.strip()) == 0):
             self._filename = None
         else:
-            self._np = GXgrd.nameParts(fileName)
-            self._filename = GXgrd.decorateName(os.path.join(self._np[0], self._np[1]), self._np[4])
+            self._np = GXgrd.name_parts(fileName)
+            self._filename = GXgrd.decorate_name(os.path.join(self._np[0], self._np[1]), self._np[4])
 
             if mode == FILE_NEW:
                 # special case - HGD file, must work with a memory grid, save to HGD at end
@@ -95,21 +95,21 @@ class GXgrd():
 
             try:
                 if (self._filename is None):
-                    self._img = gxapi.GXIMG.create(gxu.gxType(dtype), kx, dim[0], dim[1])
+                    self._img = gxapi.GXIMG.create(gxu.gx_dtype(dtype), kx, dim[0], dim[1])
 
                 elif mode == FILE_NEW:
                     if self._hgd:
                         # for HGD grids, make a memory grid, which will be saved to an HGD on closing
-                        self._img = gxapi.GXIMG.create(gxu.gxType(dtype), kx, dim[0], dim[1])
+                        self._img = gxapi.GXIMG.create(gxu.gx_dtype(dtype), kx, dim[0], dim[1])
                     else:
-                        self._img = gxapi.GXIMG.create_new_file(gxu.gxType(dtype), kx, dim[0], dim[1], self._filename)
+                        self._img = gxapi.GXIMG.create_new_file(gxu.gx_dtype(dtype), kx, dim[0], dim[1], self._filename)
 
                 elif mode == FILE_READ:
-                    self._img = gxapi.GXIMG.create_file(gxu.gxType(dtype), self._filename, gxapi.IMG_FILE_READONLY)
+                    self._img = gxapi.GXIMG.create_file(gxu.gx_dtype(dtype), self._filename, gxapi.IMG_FILE_READONLY)
                     self._readonly = True
 
                 else:
-                    self._img = gxapi.GXIMG.create_file(gxu.gxType(dtype), self._filename, gxapi.IMG_FILE_READORWRITE)
+                    self._img = gxapi.GXIMG.create_file(gxu.gx_dtype(dtype), self._filename, gxapi.IMG_FILE_READORWRITE)
 
             except geosoft.gxapi.GXError as e:
                 time.sleep(0.1)
@@ -126,7 +126,7 @@ class GXgrd():
             except OSError as e:
                 pass
 
-        if self._deleteFiles:
+        if self._delete_files:
 
             img = self._img
             self._img = None
@@ -135,7 +135,7 @@ class GXgrd():
             # delete files
             if self._filename is not None:
 
-                fn = GXgrd.nameParts(self._filename)
+                fn = GXgrd.name_parts(self._filename)
                 filename = os.path.join(fn[0], fn[1])
                 ext = fn[3]
                 df(filename)
@@ -149,7 +149,7 @@ class GXgrd():
 
         elif self._hgd:
             # an HGD memory grid was made, save it to an HGD file
-            gxapi.GXHGD.h_create_img(self._img, GXgrd.decorateName(self._filename, 'HGD'))
+            gxapi.GXHGD.h_create_img(self._img, GXgrd.decorate_name(self._filename, 'HGD'))
             gc.collect()
 
     @classmethod
@@ -196,7 +196,7 @@ class GXgrd():
             raise ValueError('Grid dimension ({},{}) must be > 0'.format(nx, ny))
 
         grd = cls(fileName, dtype=dtype, mode=FILE_NEW, dim=(nx, ny))
-        grd.setProperties(properties)
+        grd.set_properties(properties)
 
         return grd
 
@@ -221,7 +221,7 @@ class GXgrd():
         grd.write_rows(data)
         return grd
 
-    def deleteFiles(self, delete=True):
+    def delete_files(self, delete=True):
         """
         Delete the files associated with this grid when deleting the grid object.
         Note that files are not deleted until all references to this object are
@@ -231,10 +231,10 @@ class GXgrd():
 
         .. versionadded:: 9.1
         """
-        self._deleteFiles = delete
+        self._delete_files = delete
 
     @staticmethod
-    def nameParts(name):
+    def name_parts(name):
         """
         Return folder, undecorated file name + ext, file root, ext, decorations.
 
@@ -245,7 +245,7 @@ class GXgrd():
         .. code::
 
             >>> import geosoftpy.grd as grd
-            >>> namep = grd.GXgrd.nameParts("f:/someFolder/name.grd(GRD;TYPE=SHORT)")
+            >>> namep = grd.GXgrd.name_parts("f:/someFolder/name.grd(GRD;TYPE=SHORT)")
             >>> print(namep)
             ('f:/someFolder/','name.grd','name','.grd','(GRD;TYPE=SHORT)')
 
@@ -271,7 +271,7 @@ class GXgrd():
         return fn, name, root, ext, dec
 
     @staticmethod
-    def decorateName(name, decorations=''):
+    def decorate_name(name, decorations=''):
         """
         Properly decorate a grid name.
 
@@ -304,7 +304,7 @@ class GXgrd():
 
         .. versionadded:: 9.1
         """
-        return gxu.dtypeGX(self._img.e_type())
+        return gxu.dtype_gx(self._img.e_type())
 
     def properties(self):
         """
@@ -323,7 +323,7 @@ class GXgrd():
         properties['dy'] = self._img.query_double(gxapi.IMG_QUERY_rDY)
         properties['rot'] = self._img.query_double(gxapi.IMG_QUERY_rROT)
         properties['dtype'] = self.dtype()
-        np = GXgrd.nameParts(self._filename)
+        np = GXgrd.name_parts(self._filename)
         properties['filename'] = os.path.join(np[0], np[1])
         if len(np[4]) > 0:
             properties['gridtype'] = np[4].split(';')[0]
@@ -338,7 +338,7 @@ class GXgrd():
 
         return properties
 
-    def setProperties(self, properties):
+    def set_properties(self, properties):
         """
         Set grid properties from a properties dict.  Settable property keys are:
 
@@ -374,7 +374,7 @@ class GXgrd():
                 ipj = gxipj.GXipj.from_name(ipj)
             self._img.set_ipj(ipj._ipj)
 
-    def saveAs(self, fileName, dtype=None):
+    def save_as(self, fileName, dtype=None):
         """
         Save a grid to a new file.  File is overwritten if it exists.
 
@@ -576,7 +576,7 @@ def gridMosaic(mosaic, gridList, typeDecoration='', report=None):
     # create list of grids, all matching on coordinate system of first grid
     grids = []
     for i in range(len(gridList)):
-        grids.append(GXgrd.decorateName(gridList[i], typeDecoration))
+        grids.append(GXgrd.decorate_name(gridList[i], typeDecoration))
 
     # output grid
     x0, y0, nX, nY, xm, ym = dimension(grids)

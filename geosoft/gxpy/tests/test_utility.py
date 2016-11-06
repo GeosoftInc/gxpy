@@ -27,30 +27,30 @@ class Test(unittest.TestCase):
 
         self.assertEqual(gxu.__version__, geosoft.__version__)
 
-        self.assertEqual(gxu.gxType('float'),gxapi.GS_DOUBLE)
-        self.assertEqual(gxu.gxType('int'),gxapi.GS_LONG)
-        self.assertEqual(gxu.gxType("<U18"),-18)
-        self.assertEqual(gxu.gxType('uint64'),gxapi.GS_ULONG64)
+        self.assertEqual(gxu.gx_dtype('float'),gxapi.GS_DOUBLE)
+        self.assertEqual(gxu.gx_dtype('int'),gxapi.GS_LONG)
+        self.assertEqual(gxu.gx_dtype("<U18"),-18)
+        self.assertEqual(gxu.gx_dtype('uint64'),gxapi.GS_ULONG64)
 
-        self.assertEqual(gxu.dtypeGX(gxapi.GS_DOUBLE), np.float)
-        self.assertEqual(gxu.dtypeGX(gxapi.GS_FLOAT), np.float32)
-        self.assertEqual(gxu.dtypeGX(gxapi.GS_LONG), np.int32)
-        self.assertEqual(gxu.dtypeGX(-2000).str, "<U2000")
-        self.assertEqual(gxu.dtypeGX(gxapi.GS_TYPE_DEFAULT), None)
-        self.assertEqual(gxu.dtypeGX(gxapi.GS_ULONG64), np.uint64)
+        self.assertEqual(gxu.dtype_gx(gxapi.GS_DOUBLE), np.float)
+        self.assertEqual(gxu.dtype_gx(gxapi.GS_FLOAT), np.float32)
+        self.assertEqual(gxu.dtype_gx(gxapi.GS_LONG), np.int32)
+        self.assertEqual(gxu.dtype_gx(-2000).str, "<U2000")
+        self.assertEqual(gxu.dtype_gx(gxapi.GS_TYPE_DEFAULT), None)
+        self.assertEqual(gxu.dtype_gx(gxapi.GS_ULONG64), np.uint64)
 
-        self.assertEqual(gxu.gxDummy(np.float),gxapi.rDUMMY)
-        self.assertEqual(gxu.gxDummy(np.int32),gxapi.iDUMMY)
-        self.assertEqual(gxu.gxDummy(np.int64),gxapi.GS_S8DM)
-        self.assertEqual(gxu.gxDummy(np.str_), '')
-        self.assertEqual(gxu.gxDummy('<U48'), '')
+        self.assertEqual(gxu.gx_dummy(np.float),gxapi.rDUMMY)
+        self.assertEqual(gxu.gx_dummy(np.int32),gxapi.iDUMMY)
+        self.assertEqual(gxu.gx_dummy(np.int64),gxapi.GS_S8DM)
+        self.assertEqual(gxu.gx_dummy(np.str_), '')
+        self.assertEqual(gxu.gx_dummy('<U48'), '')
 
-        npd = np.array([[1,1],[2,2],[-127,1],[3,3]],dtype=gxu.dtypeGX(gxapi.GS_BYTE))
-        self.assertEqual(list(gxu.dummyMask(npd)),[False,False,True,False])
+        npd = np.array([[1,1],[2,2],[-127,1],[3,3]],dtype=gxu.dtype_gx(gxapi.GS_BYTE))
+        self.assertEqual(list(gxu.dummy_mask(npd)),[False,False,True,False])
 
-        npd = np.array([1,2,3,4],dtype=gxu.dtypeGX(gxapi.GS_BYTE))
+        npd = np.array([1,2,3,4],dtype=gxu.dtype_gx(gxapi.GS_BYTE))
         try:
-            gxu.dummyMask(npd)
+            gxu.dummy_mask(npd)
             self.assertTrue(False)
         except: pass
 
@@ -61,7 +61,7 @@ class Test(unittest.TestCase):
         lst.add_item("a","aa")
         lst.add_item("b","bb")
         lst.add_item("c","cc")
-        d = gxu.dictFromLst(lst)
+        d = gxu.dict_from_lst(lst)
         self.assertEqual(len(d),lst.size())
         self.assertEqual(d.get('b'),'bb')
 

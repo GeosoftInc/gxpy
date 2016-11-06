@@ -161,16 +161,16 @@ class GXdb():
             ln, lsymb = gdb.line_name_symb(l)
 
             data, ch, fid = gdb.read_line(lsymb, channels=['X','Y','Z'])
-            dummy = gxu.gxDummy(data.dtype)
+            dummy = gxu.gx_dummy(data.dtype)
 
             # get a dummy mask, True for all rows with a dummy
-            dummyMask = gxu.dummyMask(data)
+            dummy_mask = gxu.dummy_mask(data)
 
             squares = npd.square(npd)
             dist = np.sqrt(npd[0] + npd[1] + npd[2])
 
             # insert dummies using the dummy mask, then write
-            dist[dummyMask] = dummy
+            dist[dummy_mask] = dummy
             gdb.write_channel(lsymb, 'distance', dist)
 
     .. versionadded:: 9.1
@@ -388,7 +388,7 @@ class GXdb():
         def cleanChannelsDct():
             ''' returns list without any temporaty VA sliced channels '''
             self._db.chan_lst(self._lst)
-            _dct = gxu.dictFromLst(self._lst)
+            _dct = gxu.dict_from_lst(self._lst)
             dct = {}
             for k in _dct:
                 if '[' in k:
@@ -401,7 +401,7 @@ class GXdb():
 
         else:
             self._db.array_lst(self._lst)
-            va = gxu.dictFromLst(self._lst)
+            va = gxu.dict_from_lst(self._lst)
             if chan == CHAN_ARRAY:
                 dct = va
             else:
@@ -431,7 +431,7 @@ class GXdb():
             self._db.selected_line_lst(self._lst)
         else:
             self._db.line_lst(self._lst)
-        dct = gxu.dictFromLst(self._lst)
+        dct = gxu.dict_from_lst(self._lst)
         for k in dct:
             dct[k] = int(dct.get(k))
         return dct
@@ -580,7 +580,7 @@ class GXdb():
 
         .. versionadded:: 9.1
         '''
-        return gxu.dtypeGX(self._db.get_chan_type(self.channel_name_symb(channel)[1]))
+        return gxu.dtype_gx(self._db.get_chan_type(self.channel_name_symb(channel)[1]))
 
     def channel_fid(self, line, channel):
         '''
@@ -632,7 +632,7 @@ class GXdb():
             symb = self._db.create_symb_ex(name,
                                            gxapi.DB_SYMB_CHAN,
                                            gxapi.DB_OWN_SHARED,
-                                           gxu.gxType(dtype),
+                                           gxu.gx_dtype(dtype),
                                            array)
 
         if details:
@@ -769,7 +769,7 @@ class GXdb():
 
     def vv_np(self, npdata, fid=(0.0, 1.0)):
         ''' return a VV copy of the numpy data.'''
-        vv = gxapi.GXVV.create_ext(gxu.gxType(npdata.dtype), 0)
+        vv = gxapi.GXVV.create_ext(gxu.gx_dtype(npdata.dtype), 0)
         try:
             vv.set_data_np(0, npdata)
         except:
@@ -781,7 +781,7 @@ class GXdb():
 
     def _vaNp(self, npdata, fid=(0.0, 1.0)):
         ''' return a VA copy of data in a 2D numpy array.'''
-        va = gxapi.GXVA.create_ext(gxu.gxType(npdata.dtype), npdata.shape[0], npdata.shape[1])
+        va = gxapi.GXVA.create_ext(gxu.gx_dtype(npdata.dtype), npdata.shape[0], npdata.shape[1])
         try:
             va.set_array_np(0, 0, npdata)
         except:
@@ -998,7 +998,7 @@ class GXdb():
 
         # move data to numpy array
         npd = np.empty((nvd, nCh), dtype=dtype)
-        dummy_value = gxu.gxDummy(npd.dtype)
+        dummy_value = gxu.gx_dummy(npd.dtype)
         for j in range(nCh):
             vv = vvs[j]
             if vv.length() > 0:
@@ -1008,7 +1008,7 @@ class GXdb():
 
         # dummy handling
         if dummy:
-            dummy_value = gxu.gxDummy(npd.dtype)
+            dummy_value = gxu.gx_dummy(npd.dtype)
             if dummy == READ_REMOVE_DUMMYCOLUMNS:
                 n_ok = 0
 

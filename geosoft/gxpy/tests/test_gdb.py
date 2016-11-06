@@ -304,13 +304,13 @@ class Test(unittest.TestCase):
 
         gdb.delete_channel('test')
         gdb.new_channel('test',dtype=np.int)
-        dummy = gxu.gxDummy(np.int)
+        dummy = gxu.gx_dummy(np.int)
         gdb.write_channel('D590875','test',np.array([1,2,dummy,4]))
         npd,ch,fid = gdb.read_line('D590875',channels=['test'],dtype=np.int)
         self.assertEqual(npd.shape,(4,1))
         self.assertEqual(npd[:,0].tolist(),[1,2,dummy,4])
 
-        dm = gxu.dummyMask(npd)
+        dm = gxu.dummy_mask(npd)
         self.assertEqual(dm.tolist(),[False,False,True,False])
 
         gdb.discard()
