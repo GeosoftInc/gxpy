@@ -520,18 +520,21 @@ def get_shared_dict():
         return {}
 
 
-def run_external_python(script, script_args='', python_args='', dict=None, console=True):
+def run_external_python(script, script_args='',
+                        python_args='',
+                        dict=None,
+                        console=True,
+                        catcherr=True):
     """
     Run a python script as an external program, returning results as a dictionary.
     External program can call gxpy.utility.run_return(dict) to pass a dictionary back to caller.
 
-    NOTE: DO NOT call sys.exit() from an external program as this will kill Oasis montaj.
-
     :param script:      full path of the python script
-    :param dict:        dictionary to pass to child via get_run_dict()
+    :param dict:        dictionary to pass to child via set/get_run_dict()
     :param script_args: command line arguments as a string
     :param python_args: command line arguments as a string
     :param console:     True (default) will create a separate console for the process.
+    :param catcherr:    True (default) Catch and re-raise errors from the sub-process.
     :return:            dictionary registered gxpy.utility.run_return(dict)
 
     .. versionadded:: 9.1
@@ -548,14 +551,20 @@ def run_external_python(script, script_args='', python_args='', dict=None, conso
 
     set_shared_dict(dict)
 
-    try:
-        if console:
-            err = subprocess.call(command, creationflags=subprocess.CREATE_NEW_CONSOLE)
-        else:
-            err = subprocess.call(command)
-        if err != 0:
-            raise UtilityException(_('\n\nError({}) running: {}').format(err, command))
-    except:
-        raise
+    kwargs = {}
+    if console:
+        kwargs['creationflags'] = subprocess.CREATE_NEW_CONSOLE
+
+    if hasattr(subprocess, 'run'):
+        if catcherr:
+            kwargs['stderr'] = subprocess.PIPE
+        cp = subprocess.run(command, **kwargs)
+        if catcherr and cp.returncode != 0:
+            raise UtilityException(_('\n\nExternal python error:\n\n{}').format(cp.stderr.decode("utf-8")))
+
+    else:  # use call, python 3.4...
+        err = subprocess.call(command, **kwargs)
+        if catcherr and err != 0:
+            raise UtilityException(_('\n\nExternal python error({}) running: {}').format(err, command))
 
     return get_shared_dict()
