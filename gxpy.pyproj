@@ -31,6 +31,7 @@
     <Content Include="docs\geosoft.gxpy.rst" />
     <Content Include="docs\geosoft.gxpy.system.rst" />
     <Content Include="docs\geosoft.gxpy.utility.rst" />
+    <Content Include="docs\geosoft.gxpy.va.rst" />
     <Content Include="docs\geosoft.gxpy.vv.rst" />
     <Content Include="docs\GX3DN.rst" />
     <Content Include="docs\GX3DV.rst" />

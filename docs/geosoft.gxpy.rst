@@ -18,6 +18,7 @@ Submodules
     geosoft.gxpy.om
     geosoft.gxpy.system
     geosoft.gxpy.utility
+    geosoft.gxpy.va
     geosoft.gxpy.vv
 
 .. automodule:: geosoft.gxpy
