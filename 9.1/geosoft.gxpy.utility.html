@@ -387,20 +387,20 @@ as presented. For example, &#8220;20 90 0.00&#8221; will return 21.5.</p>
 
 <dl class="function">
 <dt id="geosoft.gxpy.utility.run_external_python">
-<code class="descclassname">geosoft.gxpy.utility.</code><code class="descname">run_external_python</code><span class="sig-paren">(</span><em>script</em>, <em>script_args=''</em>, <em>python_args=''</em>, <em>dict=None</em>, <em>console=True</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.utility.run_external_python" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">geosoft.gxpy.utility.</code><code class="descname">run_external_python</code><span class="sig-paren">(</span><em>script</em>, <em>script_args=''</em>, <em>python_args=''</em>, <em>dict=None</em>, <em>console=True</em>, <em>catcherr=True</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.utility.run_external_python" title="Permalink to this definition">¶</a></dt>
 <dd><p>Run a python script as an external program, returning results as a dictionary.
 External program can call gxpy.utility.run_return(dict) to pass a dictionary back to caller.</p>
-<p>NOTE: DO NOT call sys.exit() from an external program as this will kill Oasis montaj.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>script</strong> &#8211; full path of the python script</li>
-<li><strong>dict</strong> &#8211; dictionary to pass to child via get_run_dict()</li>
+<li><strong>dict</strong> &#8211; dictionary to pass to child via set/get_run_dict()</li>
 <li><strong>script_args</strong> &#8211; command line arguments as a string</li>
 <li><strong>python_args</strong> &#8211; command line arguments as a string</li>
 <li><strong>console</strong> &#8211; True (default) will create a separate console for the process.</li>
+<li><strong>catcherr</strong> &#8211; True (default) Catch and re-raise errors from the sub-process.</li>
 </ul>
 </td>
 </tr>
