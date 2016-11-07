@@ -29,6 +29,7 @@ def running_script():
     :return: 1 if running from a script, 0 if running interactively.
 
     .. versionadded:: 9.1
+
     """
 
     return not gxapi.GXSYS.interactive()
@@ -41,6 +42,7 @@ def user_message(title, message):
     :param message: message
 
     .. versionadded:: 9.1
+
     """
     gxapi.GXSYS.display_message(title, message)
 
@@ -64,6 +66,7 @@ def pause(title='Pause...', cancel=False):
     :raises:        :py:ex:GXCancel if the user cancels the dialog
 
     .. versionadded:: 9.1
+
     """
 
     gxapi.GXSYS.filter_parm_group("USER_INPUT", 1)
@@ -89,12 +92,13 @@ def get_user_input(title="Input required...", prompt='?', kind='string', default
     :param kind:        kind of response required: 'string', 'int', 'float', 'file', 'colour' or 'list'
     :param items:       comma-separated string or list/tupple of items for a list
     :param default:     default value.  For multifile can be a string ('|' delimiter) or list/tupple.
-    :param filemask:    File type mask "*.dat", "*.dat,*.grd", "**,*.grd" for multiple files
+    :param filemask:    File type mask '.dat', '*.dat,*.grd', '\*\*,*.grd' for multiple files
                         Comma delimited, or a list/tupple
     :return:        user response
     :raise:         :py:ex:GXCancel if the user cancels the dialog
 
     .. versionadded:: 9.1
+
     """
 
     gxapi.GXSYS.filter_parm_group("USER_INPUT", 1)
@@ -171,14 +175,19 @@ def get_user_input(title="Input required...", prompt='?', kind='string', default
 
 
 def menus():
-    """ Returns Oasis montaj menu information as a dictionary:
-    {
-        'default'
-        'loaded'
-        'user'
-    }
+    """
+    Returns Oasis montaj menu information as a dictionary:
+
+    .. code::
+
+        {
+            'default': [list of default menus]
+            'loaded': [list of loaded menus]
+            'user': [list of user menus]
+        }
 
     .. versionadded:: 9.1
+
     """
 
     def_menus = gxapi.GXLST.create(512)
@@ -197,34 +206,30 @@ def state():
     """
     Return a dictionary that contains the current Oasis montaj state:
 
-    {
-        'gdb' {
-            'open_list'
-            'current'
-            'disp_chan_list'
-            'selection' [
-                line, channel, start_fid, end_fid       # channel is '' if no channel selected
-                                                        # start_fid is '' if no fiducials selected
-                                                        # start_fid is '*' is all fiducials selected
-                                                        # line is "*" is all lines selected
-            ]
+    .. code::
+
+        {
+            'gdb' {
+                'open_list': [list of open databases]
+                'current': current database name
+                'disp_chan_list': [ list of channels in the database
+                'selection': [ line, channel, start_fid, end_fid]
+                    # line is "*" if all lines selected
+                    # channel is '' if no channel selected
+                    # start_fid is '' if no fiducials selected
+                    # start_fid is '*' is all fiducials selected
+            }
+            'map' {
+                'open_list': [list of open maps]
+                'current': current map name
+                'point': [ x, y, z]
+                'cursor': [ x, y, z]
+                'display_area':[ xmin, ymin, xmax, ymax]
+            }
         }
-        'map' {
-            'open_list'
-            'current'
-            'point' [
-                x, y, z
-            ]
-            'cursor' [
-                x, y, z
-            ]
-            'display_area' [
-                xmin, ymin, xmax, ymax
-            ]
-        }
-    }
 
     .. versionadded:: 9.1
+
     """
 
     s = gxapi.str_ref()
