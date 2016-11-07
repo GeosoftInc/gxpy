@@ -400,7 +400,8 @@ def dummy_mask(npd):
 
 def save_parameters(group='_', parms={}):
     """
-    Save parameters to the Project Parameter Block.
+    Save parameters to the Project Parameter Block.  Parameter group names and member names
+    are converted to upper-case.
 
     :param group:   parameter block group name
     :param parms:   dict containing named parameter settings
@@ -409,15 +410,18 @@ def save_parameters(group='_', parms={}):
     """
 
     for k, v in parms.items():
-        gxapi.GXSYS.set_string(group, k, str(v))
+        gxapi.GXSYS.set_string(group, k, json.dumps(v))
 
 
-def get_parameters(group='_', parms=None):
+def get_parameters(group='_', parms=None, default=None):
     """
-    Get parameters from the Project Parameter Block.
+    Get parameters from the Project Parameter Block.  Note that parameter names
+    will always be upper-case.
 
     :param group:   name in the parameter block group name
     :param parms:   if specified only these items are found and returned, otherwise all are found and returned
+    :param parms:   default parameter setting returned for parameters not found, otherwise dict will
+                    not have the parameter.
     :return:        dictionary containing group parameters
 
     .. versionadded:: 9.1
@@ -430,7 +434,13 @@ def get_parameters(group='_', parms=None):
         for k in parms:
             if gxapi.GXSYS.exist_string(group, k):
                 gxapi.GXSYS.gt_string(group, k, sv)
-                p[k] = sv.value
+                try:
+                    p[k.upper()] = json.loads(sv.value)
+                except ValueError:
+                    p[k.upper()] = sv.value
+
+            elif default is not None:
+                p[k.upper()] = default
 
     else:
         hREG = gxapi.GXREG.create(4096)
@@ -438,7 +448,11 @@ def get_parameters(group='_', parms=None):
         k = gxapi.str_ref()
         for i in range(hREG.entries()):
             hREG.get_one(i, k, sv)
-            p[k.value.split('.')[1]] = sv.value
+            key = k.value.split('.')[1]
+            try:
+                p[key] = json.loads(sv.value)
+            except ValueError:
+                p[key] = sv.value
 
     return p
 

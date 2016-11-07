@@ -65,6 +65,25 @@ class Test(unittest.TestCase):
         self.assertEqual(len(d),lst.size())
         self.assertEqual(d.get('b'),'bb')
 
+    def test_parameters(self):
+        self.start(gsys.func_name())
+
+        p = {'a': 'string', 'list': [1,2,3], 'tup': (['a','b'], {'q': 1.5})}
+        gxu.save_parameters('param_test', p)
+        r = gxu.get_parameters('param_test')
+        self.assertEqual(r['A'], p['a'])
+        self.assertEqual(r['LIST'], p['list'])
+        self.assertEqual(r['TUP'][0][1], 'b')
+        self.assertEqual(r['TUP'][1]['q'], 1.5)
+
+        s = gxu.get_parameters('param_test', ['a', 'tup', 'not_there'])
+        self.assertEqual(s['A'], 'string')
+        self.assertEqual(s['TUP'][1]['q'], 1.5)
+        self.assertEqual(s.get('NOT_THERE', None), None)
+
+        q = gxu.get_parameters('param_test', ['not_there'], default="yes I am")
+        self.assertEqual(q['NOT_THERE'], "yes I am")
+
     def test_rdecode(self):
         self.start(gsys.func_name())
 
