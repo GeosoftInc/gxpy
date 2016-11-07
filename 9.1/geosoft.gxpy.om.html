@@ -95,7 +95,7 @@ example: &#8220;Your title/nDescriptive help&#8221;</li>
 <li><strong>kind</strong> &#8211; kind of response required: &#8216;string&#8217;, &#8216;int&#8217;, &#8216;float&#8217;, &#8216;file&#8217;, &#8216;colour&#8217; or &#8216;list&#8217;</li>
 <li><strong>items</strong> &#8211; comma-separated string or list/tupple of items for a list</li>
 <li><strong>default</strong> &#8211; default value.  For multifile can be a string (&#8216;|&#8217; delimiter) or list/tupple.</li>
-<li><strong>filemask</strong> &#8211; File type mask &#8220;<em>.dat&#8221;, &#8220;</em>.dat,*.grd&#8221;, &#8220;<a href="#id1"><span class="problematic" id="id2">**</span></a>,*.grd&#8221; for multiple files
+<li><strong>filemask</strong> &#8211; File type mask &#8216;.dat&#8217;, &#8216;<em>.dat,</em>.grd&#8217;, &#8216;**,*.grd&#8217; for multiple files
 Comma delimited, or a list/tupple</li>
 </ul>
 </td>
@@ -116,13 +116,14 @@ Comma delimited, or a list/tupple</li>
 <dl class="function">
 <dt id="geosoft.gxpy.om.menus">
 <code class="descclassname">geosoft.gxpy.om.</code><code class="descname">menus</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.om.menus" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns Oasis montaj menu information as a dictionary:
-{</p>
-<blockquote>
-<div>&#8216;default&#8217;
-&#8216;loaded&#8217;
-&#8216;user&#8217;</div></blockquote>
-<p>}</p>
+<dd><p>Returns Oasis montaj menu information as a dictionary:</p>
+<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s1">&#39;default&#39;</span><span class="p">:</span> <span class="p">[</span><span class="nb">list</span> <span class="n">of</span> <span class="n">default</span> <span class="n">menus</span><span class="p">]</span>
+    <span class="s1">&#39;loaded&#39;</span><span class="p">:</span> <span class="p">[</span><span class="nb">list</span> <span class="n">of</span> <span class="n">loaded</span> <span class="n">menus</span><span class="p">]</span>
+    <span class="s1">&#39;user&#39;</span><span class="p">:</span> <span class="p">[</span><span class="nb">list</span> <span class="n">of</span> <span class="n">user</span> <span class="n">menus</span><span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.1.</span></p>
 </div>
@@ -160,47 +161,27 @@ Comma delimited, or a list/tupple</li>
 <dt id="geosoft.gxpy.om.state">
 <code class="descclassname">geosoft.gxpy.om.</code><code class="descname">state</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.om.state" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return a dictionary that contains the current Oasis montaj state:</p>
-<dl class="docutils">
-<dt>{</dt>
-<dd><dl class="first docutils">
-<dt>&#8216;gdb&#8217; {</dt>
-<dd><p class="first">&#8216;open_list&#8217;
-&#8216;current&#8217;
-&#8216;disp_chan_list&#8217;
-&#8216;selection&#8217; [</p>
-<blockquote>
-<div><dl class="docutils">
-<dt>line, channel, start_fid, end_fid       # channel is &#8216;&#8217; if no channel selected</dt>
-<dd># start_fid is &#8216;&#8217; if no fiducials selected
-# start_fid is &#8216;*&#8217; is all fiducials selected
-# line is &#8220;*&#8221; is all lines selected</dd>
-</dl>
-</div></blockquote>
-<p class="last">]</p>
-</dd>
-</dl>
-<p>}
-&#8216;map&#8217; {</p>
-<blockquote>
-<div><p>&#8216;open_list&#8217;
-&#8216;current&#8217;
-&#8216;point&#8217; [</p>
-<blockquote>
-<div>x, y, z</div></blockquote>
-<p>]
-&#8216;cursor&#8217; [</p>
-<blockquote>
-<div>x, y, z</div></blockquote>
-<p>]
-&#8216;display_area&#8217; [</p>
-<blockquote>
-<div>xmin, ymin, xmax, ymax</div></blockquote>
-<p>]</p>
-</div></blockquote>
-<p class="last">}</p>
-</dd>
-</dl>
-<p>}</p>
+<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s1">&#39;gdb&#39;</span> <span class="p">{</span>
+        <span class="s1">&#39;open_list&#39;</span><span class="p">:</span> <span class="p">[</span><span class="nb">list</span> <span class="n">of</span> <span class="nb">open</span> <span class="n">databases</span><span class="p">]</span>
+        <span class="s1">&#39;current&#39;</span><span class="p">:</span> <span class="n">current</span> <span class="n">database</span> <span class="n">name</span>
+        <span class="s1">&#39;disp_chan_list&#39;</span><span class="p">:</span> <span class="p">[</span> <span class="nb">list</span> <span class="n">of</span> <span class="n">channels</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">database</span>
+        <span class="s1">&#39;selection&#39;</span><span class="p">:</span> <span class="p">[</span> <span class="n">line</span><span class="p">,</span> <span class="n">channel</span><span class="p">,</span> <span class="n">start_fid</span><span class="p">,</span> <span class="n">end_fid</span><span class="p">]</span>
+            <span class="c1"># line is &quot;*&quot; if all lines selected</span>
+            <span class="c1"># channel is &#39;&#39; if no channel selected</span>
+            <span class="c1"># start_fid is &#39;&#39; if no fiducials selected</span>
+            <span class="c1"># start_fid is &#39;*&#39; is all fiducials selected</span>
+    <span class="p">}</span>
+    <span class="s1">&#39;map&#39;</span> <span class="p">{</span>
+        <span class="s1">&#39;open_list&#39;</span><span class="p">:</span> <span class="p">[</span><span class="nb">list</span> <span class="n">of</span> <span class="nb">open</span> <span class="n">maps</span><span class="p">]</span>
+        <span class="s1">&#39;current&#39;</span><span class="p">:</span> <span class="n">current</span> <span class="nb">map</span> <span class="n">name</span>
+        <span class="s1">&#39;point&#39;</span><span class="p">:</span> <span class="p">[</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">]</span>
+        <span class="s1">&#39;cursor&#39;</span><span class="p">:</span> <span class="p">[</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">]</span>
+        <span class="s1">&#39;display_area&#39;</span><span class="p">:[</span> <span class="n">xmin</span><span class="p">,</span> <span class="n">ymin</span><span class="p">,</span> <span class="n">xmax</span><span class="p">,</span> <span class="n">ymax</span><span class="p">]</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.1.</span></p>
 </div>
