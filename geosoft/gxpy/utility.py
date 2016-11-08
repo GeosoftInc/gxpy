@@ -410,7 +410,9 @@ def save_parameters(group='_', parms={}):
     """
 
     for k, v in parms.items():
-        gxapi.GXSYS.set_string(group, k, json.dumps(v))
+        # remove escaped characters because set_str() puts them back in
+        s = json.dumps(v).replace('\\\\', '\\')
+        gxapi.GXSYS.set_string(group, k, s)
 
 
 def get_parameters(group='_', parms=None, default=None):

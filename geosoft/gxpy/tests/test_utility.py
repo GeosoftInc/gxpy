@@ -84,6 +84,11 @@ class Test(unittest.TestCase):
         q = gxu.get_parameters('param_test', ['not_there'], default="yes I am")
         self.assertEqual(q['NOT_THERE'], "yes I am")
 
+        t = {'1': '\\', '2': '\\\\', '3': '\\\\\\', '4': '\\\\\\\\', '5': '\\\\\\\\\\'}
+        gxu.save_parameters('escape', t)
+        tt = gxu.get_parameters('escape')
+        self.assertEqual(t, tt)
+
     def test_rdecode(self):
         self.start(gsys.func_name())
 

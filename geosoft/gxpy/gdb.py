@@ -223,7 +223,7 @@ class GXdb():
             gdb._db = gxapi.GXDB.open(name, 'SUPER', '')
 
         gxapi.GXDB.get_name(gdb._db, gxapi.DB_NAME_FILE, gdb._sr)
-        gdb._file_name = gdb._sr.value
+        gdb._file_name = os.path.normpath(gdb._sr.value)
 
         return gdb
 
@@ -266,7 +266,7 @@ class GXdb():
         if nameExt[1].lower() == '.gdb':
             return name
         else:
-            return name + ".gdb"
+            return os.path.normpath(name + ".gdb")
 
     def commit(self):
         '''

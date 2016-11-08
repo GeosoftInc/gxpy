@@ -242,8 +242,8 @@ def state():
         sdb = {}
         edb = gxapi.GXEDB.current_no_activate()
         edb.get_name(s)
-        sdb['current'] = s.value
-        sdb['open_list'] = list(dict_from_lst(glst).keys())
+        sdb['current'] = os.path.normpath(s.value)
+        sdb['open_list'] = [os.path.normpath(f) for f in list(dict_from_lst(glst).keys())]
 
         n = edb.disp_chan_lst(glst)
         if n > 0:
@@ -280,8 +280,8 @@ def state():
         smap = {}
         emap = gxapi.GXEMAP.current_no_activate()
         emap.get_name(s)
-        smap['current'] = s.value
-        smap['open_list'] = list(dict_from_lst(glst).keys())
+        smap['current'] = os.path.normpath(s.value)
+        smap['open_list'] = [os.path.normpath(f) for f in list(dict_from_lst(glst).keys())]
 
         emap.get_display_area(fx, fy, fx2, fy2)
         smap['display_area'] = (fx.value, fy.value, fx2.value, fy2.value)
