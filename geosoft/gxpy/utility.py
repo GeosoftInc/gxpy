@@ -9,6 +9,7 @@ import json
 import subprocess
 from time import gmtime, strftime
 from jdcal import is_leap, gcal2jd, jd2gcal
+from distutils.version import LooseVersion
 import numpy as np
 import geosoft
 import geosoft.gxapi as gxapi
@@ -33,8 +34,22 @@ class UtilityException(Exception):
 def _(s):
     return s
 
-###############
-# static
+
+def check_version(v, raise_on_fail=True):
+    """
+    Check the minimum API version.
+    :param v:               minimum version string required (ie "9.1" or "9.2.4")
+    :param raise_on_fail:   if True, raises an error if the version check fails, returns Falss otherwise
+    :return:                True if version is OK, False otherwise(unless raise_on_fail is False)
+
+    .. versionadded:: 9.1
+
+    """
+    if LooseVersion(__version__) >= LooseVersion(str(v)):
+        return True
+    if raise_on_fail:
+        raise Exception(_("GX API version {} or higher is required.").format(v))
+    return False
 
 
 def dict_from_lst(lst):
@@ -42,6 +57,7 @@ def dict_from_lst(lst):
     :return:    python dictionary from a Geosoft GXLST
 
     .. versionadded:: 9.1
+
     """
     key = gxapi.str_ref()
     val = gxapi.str_ref()

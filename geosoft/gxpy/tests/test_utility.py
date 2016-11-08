@@ -270,6 +270,17 @@ class Test(unittest.TestCase):
 
         gxu.display_message('test title', 'test message')
 
+    def test_version(self):
+        self.start(gsys.func_name())
+
+        self.assertTrue(gxu.check_version("9.1"))
+        self.assertFalse(gxu.check_version("999.999", raise_on_fail=False))
+        try:
+            self.assertFalse(gxu.check_version("999.999"))
+            self.assertTrue(False)
+        except:
+            pass
+
 ###############################################################################################
 
 if __name__ == '__main__':
