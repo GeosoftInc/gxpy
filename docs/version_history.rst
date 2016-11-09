@@ -192,6 +192,8 @@ New Functions
 
 :func:`geosoft.gxpy.system.wait_on_file`
 
+:func:`geosoft.gxpy.utility.check_version`
+
 :func:`geosoft.gxpy.utility.decode`
 
 :func:`geosoft.gxpy.utility.dict_from_lst`
