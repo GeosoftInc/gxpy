@@ -81,22 +81,33 @@
 <dl class="function">
 <dt id="geosoft.gxpy.utility.check_version">
 <code class="descclassname">geosoft.gxpy.utility.</code><code class="descname">check_version</code><span class="sig-paren">(</span><em>v</em>, <em>raise_on_fail=True</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.utility.check_version" title="Permalink to this definition">¶</a></dt>
-<dd><p>Check the minimum API version.
-:param v:               minimum version string required (ie &#8220;9.1&#8221; or &#8220;9.2.4&#8221;)
-:param raise_on_fail:   if True, raises an error if the version check fails, returns False otherwise
-:return:                True if version is OK, False otherwise(unless raise_on_fail is False)</p>
+<dd><p>Check the minimum API version.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>v</strong> &#8211; minimum version string required (ie &#8220;9.1&#8221; or &#8220;9.2.4&#8221;)</li>
+<li><strong>raise_on_fail</strong> &#8211; if True, raises an error if the version check fails, returns False otherwise</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">True if version is OK, False otherwise(unless raise_on_fail is False)</p>
+</td>
+</tr>
+</tbody>
+</table>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p>A valid version consists of two or three dot-separated numeric components, with an optional development version tag
 on the end.  The development version tag consists of the letter &#8216;b&#8217; (for beta) followed by a number.  If the numeric components 
 of two version numbers are equal, then a development version will always be deemed earlier (lesser) than one without.</p>
-<p>The following are valid version numbers (shown in the order that
-would be obtained by sorting according to the supplied cmp function):</p>
+<p>The following are valid version numbers (shown in order of used for meeting minimum requirements):</p>
 <blockquote>
 <div><ul class="simple">
 <li>9.1 or 9.1.0  (they are equivalent)</li>
-<li>9.1.1</li>
 <li>9.1.1b0 (development version)</li>
+<li>9.1.1</li>
 <li>9.2</li>
 </ul>
 </div></blockquote>
