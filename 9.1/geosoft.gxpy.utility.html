@@ -79,6 +79,18 @@
 </dd></dl>
 
 <dl class="function">
+<dt id="geosoft.gxpy.utility.check_version">
+<code class="descclassname">geosoft.gxpy.utility.</code><code class="descname">check_version</code><span class="sig-paren">(</span><em>v</em>, <em>raise_on_fail=True</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.utility.check_version" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check the minimum API version.
+:param v:               minimum version string required (ie &#8220;9.1&#8221; or &#8220;9.2.4&#8221;)
+:param raise_on_fail:   if True, raises an error if the version check fails, returns Falss otherwise
+:return:                True if version is OK, False otherwise(unless raise_on_fail is False)</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.1.</span></p>
+</div>
+</dd></dl>
+
+<dl class="function">
 <dt id="geosoft.gxpy.utility.decode">
 <code class="descclassname">geosoft.gxpy.utility.</code><code class="descname">decode</code><span class="sig-paren">(</span><em>s</em>, <em>f</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.utility.decode" title="Permalink to this definition">¶</a></dt>
 <dd><p>Decode a string (s) to a numpy format defined by string (f).</p>
@@ -227,8 +239,9 @@ have a Geosoft dummy value.</p>
 
 <dl class="function">
 <dt id="geosoft.gxpy.utility.get_parameters">
-<code class="descclassname">geosoft.gxpy.utility.</code><code class="descname">get_parameters</code><span class="sig-paren">(</span><em>group='_'</em>, <em>parms=None</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.utility.get_parameters" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get parameters from the Project Parameter Block.</p>
+<code class="descclassname">geosoft.gxpy.utility.</code><code class="descname">get_parameters</code><span class="sig-paren">(</span><em>group='_'</em>, <em>parms=None</em>, <em>default=None</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.utility.get_parameters" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get parameters from the Project Parameter Block.  Note that parameter names
+will always be upper-case.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -236,6 +249,8 @@ have a Geosoft dummy value.</p>
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>group</strong> &#8211; name in the parameter block group name</li>
 <li><strong>parms</strong> &#8211; if specified only these items are found and returned, otherwise all are found and returned</li>
+<li><strong>parms</strong> &#8211; default parameter setting returned for parameters not found, otherwise dict will
+not have the parameter.</li>
 </ul>
 </td>
 </tr>
@@ -417,7 +432,8 @@ External program can call gxpy.utility.run_return(dict) to pass a dictionary bac
 <dl class="function">
 <dt id="geosoft.gxpy.utility.save_parameters">
 <code class="descclassname">geosoft.gxpy.utility.</code><code class="descname">save_parameters</code><span class="sig-paren">(</span><em>group='_'</em>, <em>parms={}</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.utility.save_parameters" title="Permalink to this definition">¶</a></dt>
-<dd><p>Save parameters to the Project Parameter Block.</p>
+<dd><p>Save parameters to the Project Parameter Block.  Parameter group names and member names
+are converted to upper-case.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
