@@ -10,12 +10,12 @@ with open('geosoft/pkg_info.json') as fp:
 def read(fname):
     return open(join(dirname(__file__), fname)).read()
 
-if _info['branch'] == 'release':
+version_tag = "{}{}".format(_info['version'], _info['pre-release'])
+
+if _info['pre-release'] == '':
     dev_status_classifier = "Development Status :: 5 - Production/Stable"
-    version_tag = _info['version']
 else:
     dev_status_classifier = "Development Status :: 4 - Beta"
-    version_tag = "{}.{}".format(_info['version'], _info['branch'])
 
 setup(
     name='geosoft',
