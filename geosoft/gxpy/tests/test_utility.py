@@ -1,6 +1,7 @@
 import unittest
 import numpy as np
 import os
+from distutils.version import StrictVersion
 
 import geosoft
 import geosoft.gxapi as gxapi
@@ -273,13 +274,40 @@ class Test(unittest.TestCase):
     def test_version(self):
         self.start(gsys.func_name())
 
-        self.assertTrue(gxu.check_version("9.1"))
-        self.assertFalse(gxu.check_version("999.999", raise_on_fail=False))
+        with self.assertRaises(ValueError):
+            gxu.check_version("x.y.z")
+
+        version_backup = gxu.__version__
         try:
-            self.assertFalse(gxu.check_version("999.999"))
-            self.assertTrue(False)
-        except:
-            pass
+            gxu.__version__ = "9.1"
+        
+            self.assertTrue(gxu.check_version("8.5.9"))
+            self.assertTrue(gxu.check_version("9.0"))
+            self.assertTrue(gxu.check_version("9.1"))
+            self.assertTrue(gxu.check_version("9.1.0"))
+            self.assertTrue(gxu.check_version("9.1a0"))
+            self.assertTrue(gxu.check_version("9.1b0"))
+            self.assertTrue(gxu.check_version("9.1a1"))
+            self.assertTrue(gxu.check_version("9.1b1"))
+
+            with self.assertRaises(gxu.UtilityException):
+                gxu.check_version("9.1.1")
+            with self.assertRaises(gxu.UtilityException):
+                gxu.check_version("9.2")
+            with self.assertRaises(gxu.UtilityException):
+                gxu.check_version("999.999")
+
+            self.assertFalse(gxu.check_version("9.1.1", raise_on_fail=False)) 
+            self.assertFalse(gxu.check_version("9.2", raise_on_fail=False)) 
+            self.assertFalse(gxu.check_version("999.999", raise_on_fail=False))
+
+            gxu.__version__ = "9.1a1"
+
+            self.assertTrue(gxu.check_version("9.0"))
+            self.assertTrue(gxu.check_version("9.0a0"))
+            self.assertFalse(gxu.check_version("9.1", raise_on_fail=False)) 
+        finally:
+            gxu.__version__ = version_backup
 
 ###############################################################################################
 

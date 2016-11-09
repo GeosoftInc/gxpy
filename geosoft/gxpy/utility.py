@@ -9,7 +9,7 @@ import json
 import subprocess
 from time import gmtime, strftime
 from jdcal import is_leap, gcal2jd, jd2gcal
-from distutils.version import LooseVersion
+from distutils.version import StrictVersion
 import numpy as np
 import geosoft
 import geosoft.gxapi as gxapi
@@ -39,16 +39,47 @@ def check_version(v, raise_on_fail=True):
     """
     Check the minimum API version.
     :param v:               minimum version string required (ie "9.1" or "9.2.4")
-    :param raise_on_fail:   if True, raises an error if the version check fails, returns Falss otherwise
+    :param raise_on_fail:   if True, raises an error if the version check fails, returns False otherwise
     :return:                True if version is OK, False otherwise(unless raise_on_fail is False)
+
+    .. note::  
+        A valid version consists of two or three dot-separated numeric components, with an optional "pre-release" tag
+        on the end.  The pre-release tag consists of the letter 'a' or 'b' followed by a number.  If the numeric components 
+        of two version numbers are equal, then one with a pre-release tag will always be deemed earlier (lesser) than one without.
+
+        The following are valid version numbers (shown in the order that
+        would be obtained by sorting according to the supplied cmp function):
+
+            * 0.4 or 0.4.0  (they are equivalent)
+            * 0.4.1
+            * 0.5a1
+            * 0.5b3
+            * 0.5
+            * 0.9.6
+            * 1.0
+            * 1.0.4a3
+            * 1.0.4b1
+            * 1.0.4
+
+        The following are examples of invalid version numbers:
+
+            * 1
+            * 2.7.2.2
+            * 1.3.a4
+            * 1.3pl1
+            * 1.3c4
+
+        The rationale for this version numbering system is explained
+        in the `distutils <https://docs.python.org/3/distutils/>`_ documentation.
 
     .. versionadded:: 9.1
 
     """
-    if LooseVersion(__version__) >= LooseVersion(str(v)):
+
+    if StrictVersion(__version__) >= StrictVersion(str(v)):
         return True
     if raise_on_fail:
-        raise Exception(_("GX API version {} or higher is required.").format(v))
+        raise UtilityException(_("GX API version {} or higher is required.").format(v))
     return False
 
 

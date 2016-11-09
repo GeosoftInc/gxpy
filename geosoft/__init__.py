@@ -8,12 +8,7 @@ import geosoft.__check_deps__
 with open(join(dirname(__file__), 'pkg_info.json')) as fp:
     _info = json.load(fp)
 
-__branch__ = _info['branch']
-
-if __branch__ == 'release':
-    __version__ = _info['version']
-else:
-    __version__ = "{}.{}".format(_info['version'], _info['branch'])
+__version__ = "{}{}".format(_info['version'], _info['pre-release'])
 
 __all__ = ['gxapi', 'gxpy']
 
@@ -23,32 +18,34 @@ __all__ = ['gxapi', 'gxpy']
 import geosoft.gxapi as gxapi
 
 gxapi.GXCancel.__doc__ = '''
-A subclass of :exc:`SystemExit` which is raised when a script should cleanly exit due to a cancellation condition. 
-Generally not caught since it will have the same effect as :exc:`SystemExit` for both standalone and Oasis montaj 
-extension scripts. Raised from within API by :func:`geosoft.gxapi.GXSYS.cancel()`
+A subclass of `SystemExit <https://docs.python.org/3/library/exceptions.html#SystemExit>`_ which is raised when a 
+script should cleanly exit due to a cancellation condition. Generally not caught since it will have the same effect 
+as :exc:`SystemExit` for both standalone and Oasis montaj extension scripts. Raised from within API by 
+:func:`geosoft.gxapi.GXSYS.cancel()`
 
 .. versionadded:: 9.1
 '''
 
 gxapi.GXExit.__doc__ = '''
-A subclass of :exc:`SystemExit` which is raised when a script should cleanly exit due to a completion condition. 
-Generally not caught since it will have the same effect as :exc:`SystemExit` for both standalone and Oasis montaj 
-extension scripts. Raised from within API by :func:`geosoft.gxapi.GXSYS.exit()`
+A subclass of `SystemExit <https://docs.python.org/3/library/exceptions.html#SystemExit>`_ which is raised when a script 
+should cleanly exit due to a completion condition. Generally not caught since it will have the same effect as 
+:exc:`SystemExit` for both standalone and Oasis montaj extension scripts. Raised from within API by 
+:func:`geosoft.gxapi.GXSYS.exit()`
 
 .. versionadded:: 9.1
 '''
 
 gxapi.GXAPIError.__doc__ = '''
-   A subclass of :exc:`RuntimeError` which is raised whenever the GX Python API
-   encounters initialization issues or other API violations. It generally indicates a bug in Python code.
+   A subclass of `RuntimeError <https://docs.python.org/3/library/exceptions.html#RuntimeError>`_ which is raised whenever 
+   the GX Python API encounters initialization issues or other API violations. It generally indicates a bug in Python code.
 
    .. versionadded:: 9.1
 '''
 
 gxapi.GXError.__doc__ = '''
-A subclass of :exc:`RuntimeError` which is raised whenever a GX Python API call encounters an 
-error. Often the message string of these errors are informative to the user (e.g. File 'x' is locked in another
-application) but there could be cases where this is not the case. In most cases an :code:`int` attribute,
+A subclass of `RuntimeError <https://docs.python.org/3/library/exceptions.html#RuntimeError>`_ which is raised whenever 
+a GX Python API call encounters an error. Often the message string of these errors are informative to the user (e.g. File 
+'x' is locked in another application) but there could be cases where this is not the case. In most cases an attribute, 
 :attr:`number`, is also available on the exception object that matches the number in the :code:`geosoft.ger` file.
 These numbers instead of the string (which could change or even be translated) should be used to identify and handle
 very specific exceptions.
