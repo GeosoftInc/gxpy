@@ -331,9 +331,10 @@ to the <code class="code docutils literal"><span class="pre">value</span></code>
 <dl class="exception">
 <dt id="geosoft.gxapi.GXCancel">
 <em class="property">exception </em><code class="descclassname">geosoft.gxapi.</code><code class="descname">GXCancel</code><a class="headerlink" href="#geosoft.gxapi.GXCancel" title="Permalink to this definition">¶</a></dt>
-<dd><p>A subclass of <code class="xref py py-exc docutils literal"><span class="pre">SystemExit</span></code> which is raised when a script should cleanly exit due to a cancellation condition. 
-Generally not caught since it will have the same effect as <code class="xref py py-exc docutils literal"><span class="pre">SystemExit</span></code> for both standalone and Oasis montaj 
-extension scripts. Raised from within API by <a class="reference internal" href="GXSYS.html#geosoft.gxapi.GXSYS.cancel" title="geosoft.gxapi.GXSYS.cancel"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXSYS.cancel()</span></code></a></p>
+<dd><p>A subclass of <a class="reference external" href="https://docs.python.org/3/library/exceptions.html#SystemExit">SystemExit</a> which is raised when a 
+script should cleanly exit due to a cancellation condition. Generally not caught since it will have the same effect 
+as <code class="xref py py-exc docutils literal"><span class="pre">SystemExit</span></code> for both standalone and Oasis montaj extension scripts. Raised from within API by 
+<a class="reference internal" href="GXSYS.html#geosoft.gxapi.GXSYS.cancel" title="geosoft.gxapi.GXSYS.cancel"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXSYS.cancel()</span></code></a></p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.1.</span></p>
 </div>
@@ -342,9 +343,10 @@ extension scripts. Raised from within API by <a class="reference internal" href=
 <dl class="exception">
 <dt id="geosoft.gxapi.GXExit">
 <em class="property">exception </em><code class="descclassname">geosoft.gxapi.</code><code class="descname">GXExit</code><a class="headerlink" href="#geosoft.gxapi.GXExit" title="Permalink to this definition">¶</a></dt>
-<dd><p>A subclass of <code class="xref py py-exc docutils literal"><span class="pre">SystemExit</span></code> which is raised when a script should cleanly exit due to a completion condition. 
-Generally not caught since it will have the same effect as <code class="xref py py-exc docutils literal"><span class="pre">SystemExit</span></code> for both standalone and Oasis montaj 
-extension scripts. Raised from within API by <a class="reference internal" href="GXSYS.html#geosoft.gxapi.GXSYS.exit" title="geosoft.gxapi.GXSYS.exit"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXSYS.exit()</span></code></a></p>
+<dd><p>A subclass of <a class="reference external" href="https://docs.python.org/3/library/exceptions.html#SystemExit">SystemExit</a> which is raised when a script 
+should cleanly exit due to a completion condition. Generally not caught since it will have the same effect as 
+<code class="xref py py-exc docutils literal"><span class="pre">SystemExit</span></code> for both standalone and Oasis montaj extension scripts. Raised from within API by 
+<a class="reference internal" href="GXSYS.html#geosoft.gxapi.GXSYS.exit" title="geosoft.gxapi.GXSYS.exit"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXSYS.exit()</span></code></a></p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.1.</span></p>
 </div>
@@ -353,8 +355,8 @@ extension scripts. Raised from within API by <a class="reference internal" href=
 <dl class="exception">
 <dt id="geosoft.gxapi.GXAPIError">
 <em class="property">exception </em><code class="descclassname">geosoft.gxapi.</code><code class="descname">GXAPIError</code><a class="headerlink" href="#geosoft.gxapi.GXAPIError" title="Permalink to this definition">¶</a></dt>
-<dd><p>A subclass of <code class="xref py py-exc docutils literal"><span class="pre">RuntimeError</span></code> which is raised whenever the GX Python API
-encounters initialization issues or other API violations. It generally indicates a bug in Python code.</p>
+<dd><p>A subclass of <a class="reference external" href="https://docs.python.org/3/library/exceptions.html#RuntimeError">RuntimeError</a> which is raised whenever 
+the GX Python API encounters initialization issues or other API violations. It generally indicates a bug in Python code.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.1.</span></p>
 </div>
@@ -363,9 +365,9 @@ encounters initialization issues or other API violations. It generally indicates
 <dl class="exception">
 <dt id="geosoft.gxapi.GXError">
 <em class="property">exception </em><code class="descclassname">geosoft.gxapi.</code><code class="descname">GXError</code><a class="headerlink" href="#geosoft.gxapi.GXError" title="Permalink to this definition">¶</a></dt>
-<dd><p>A subclass of <code class="xref py py-exc docutils literal"><span class="pre">RuntimeError</span></code> which is raised whenever a GX Python API call encounters an 
-error. Often the message string of these errors are informative to the user (e.g. File &#8216;x&#8217; is locked in another
-application) but there could be cases where this is not the case. In most cases an <code class="code docutils literal"><span class="pre">int</span></code> attribute,
+<dd><p>A subclass of <a class="reference external" href="https://docs.python.org/3/library/exceptions.html#RuntimeError">RuntimeError</a> which is raised whenever 
+a GX Python API call encounters an error. Often the message string of these errors are informative to the user (e.g. File 
+&#8216;x&#8217; is locked in another application) but there could be cases where this is not the case. In most cases an attribute, 
 <code class="xref py py-attr docutils literal"><span class="pre">number</span></code>, is also available on the exception object that matches the number in the <code class="code docutils literal"><span class="pre">geosoft.ger</span></code> file.
 These numbers instead of the string (which could change or even be translated) should be used to identify and handle
 very specific exceptions.</p>
