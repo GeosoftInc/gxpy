@@ -27,7 +27,7 @@ setup(
     url='https://github.com/GeosoftInc/gxpy',
     license='BSD',
     install_requires=[
-        'numpy>=1.7',
+        'numpy>=1.11',
         'jdcal'
     ],
     packages=[

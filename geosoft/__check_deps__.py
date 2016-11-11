@@ -14,10 +14,10 @@ if py_ver_major_minor < (3,4) or py_ver_major_minor > (3,6):
 try:
     import numpy
 except ImportError:
-    raise ImportError("Sorry: The Geosoft GX module requires numpy version 1.7 or greater (yours 'not installed').")
+    raise ImportError("Sorry: The Geosoft GX module requires numpy version 1.11 or greater (yours 'not installed').")
 else:
-    needver = [1, 7, 0]
+    needver = [1, 11, 0]
     havever = list(map(int, numpy.__version__.split('.'))) + [0] * len(needver)
     for a, b in zip(needver, havever):
         if a > b:
-            raise ImportError("Sorry: The Geosoft GX module requires numpy version 1.7 or greater (yours '{}')".format(numpy.__version__))
+            raise ImportError("Sorry: The Geosoft GX module requires numpy version 1.11 or greater (yours '{}')".format(numpy.__version__))
