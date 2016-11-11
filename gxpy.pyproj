@@ -456,10 +456,10 @@
     <Content Include="geosoft\geodist.dll" />
     <Content Include="geosoft\geoengine.core.gx_u.dll" />
     <Content Include="geosoft\geogx_u.dll" />
-    <Content Include="geosoft\geosoft.key" />
-    <Content Include="geosoft\gxapi.cp35-win_amd64.pyd" />
-    <Content Include="geosoft\gxapi.cp36-win_amd64.pyd" />
-    <Content Include="geosoft\gxapi.pyd" />
+    <Content Include="gxapi.cp34-win_amd64.pyd" />
+    <Content Include="gxapi.cp35-win_amd64.pyd" />
+    <Content Include="gxapi.cp36-win_amd64.pyd" />
+    <Content Include="gxapi_arcpy.pyd" />
     <Content Include="geosoft\gxpy\tests\little.zip" />
     <Content Include="geosoft\gxpy\tests\testgrids.zip" />
     <Content Include="geosoft\gxpy\tests\test_database.zip" />
