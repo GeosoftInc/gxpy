@@ -24,6 +24,7 @@ setup(
     long_description=read('README.rst'),
     author='Geosoft Inc.',
     author_email='support@geosoft.com',
+    platforms=["win_amd64"],
     url='https://github.com/GeosoftInc/gxpy',
     license='BSD',
     install_requires=[
