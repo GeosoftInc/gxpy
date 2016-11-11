@@ -1,21 +1,9 @@
 '''
 Add a constant value to a channel on all selected lines.
 
-This is a sample Python program that illustrates how to connect to the GX
-developer environment from a stand-alone program.  In this case, there
-the following basic steps:
+This is a sample Python extension that shows how to work with saved parameters
+and a Geosoft database.
 
-   1. Get (create) a GX Object handle.
-
-   2. Open existing database
-
-   3. Save the list of database channels to a file
-
-   4. Get the channel data
-
-   5. Increase the data by a given amount
-
-   6. Save the changed data back to the channel
 '''
 
 import geosoft.gxpy as gxpy
@@ -28,12 +16,12 @@ def rungx():
     # get the current database
     db = gxpy.gdb.GXdb.open()
 
-    # parameters
+    # project parameters
     group = 'CHANADD'
     p_chan = 'CHANNEL'
     p_addval = 'ADDVAL'
 
-    # get parameters from the parameter block, initializing to start-up defaults '' and 0.0
+    # get previous parameters from the parameter block, initializing to start-up defaults '' and 0.0
     parms = gxu.get_parameters(group, {p_chan: '', p_addval: 0.0})
 
     # if interactive, get user input
