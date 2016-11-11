@@ -6,4 +6,4 @@ documentation for installation and developer information.
 
 `GX Developer documentation <https://geosoftgxdev.atlassian.net/wiki/spaces/GXDEV91/overview>`__
 
-`GX Developer API Reference <https://geosoftinc.github.io/gxpy/9.1/index.html>`__
+`GX Developer API Reference <https://geosoftinc.github.io/gxpy/python/index.html>`__
