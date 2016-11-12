@@ -4,7 +4,7 @@ import json
 import sys
 import tempfile
 import shutil
-from os import path, remove
+from os import path, remove, environ
 from glob import glob
 from setuptools import setup
 
@@ -24,11 +24,20 @@ else:
 
 for f in glob("geosoft/*.pyd"):
     remove(f)
-if '--arcpy_build' in sys.argv:
-    index = sys.argv.index('--arcpy_build')
-    sys.argv.pop(index)  # Removes the '--arcpy_build'
+
+
+def is_arcgispro_py3_env():
+    conda_default_env = environ['CONDA_DEFAULT_ENV']
+    if conda_default_env:
+        return conda_default_env.endswith('arcgispro-py3')
+    else:
+        return False
+
+if is_arcgispro_py3_env():
+    numpy_require = 'numpy>=1.9'
     shutil.copyfile('gxapi_arcpy.pyd', 'geosoft/gxapi.pyd')
 else:
+    numpy_require = 'numpy>=1.11'
     if 'bdist_wheel' in sys.argv:
         # Have to specify python-tag to specify which module
         for arg in sys.argv:
@@ -50,6 +59,7 @@ else:
             shutil.copyfile('gxapi.cp35-win_amd64.pyd', 'geosoft/gxapi.pyd')
         elif py_ver_major_minor == (3,6):
             shutil.copyfile('gxapi.cp36-win_amd64.pyd', 'geosoft/gxapi.pyd')
+exit()
 
 key_file = path.join('geosoft', 'geosoft.key')
 with open(key_file, 'w') as f:
@@ -71,7 +81,7 @@ setup(
     url='https://github.com/GeosoftInc/gxpy',
     license='BSD',
     install_requires=[
-        'numpy>=1.11',
+        numpy_require,
         'jdcal'
     ],
     packages=[
