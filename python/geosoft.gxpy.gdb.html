@@ -5,7 +5,18 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-87443115-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
     <title>geosoft.gxpy.gdb submodule &#8212; Geosoft GX Python API 9.1 documentation</title>
     
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
@@ -585,7 +596,7 @@ the field.</p>
 
 <dl class="method">
 <dt id="geosoft.gxpy.gdb.GXdb.new_channel">
-<code class="descname">new_channel</code><span class="sig-paren">(</span><em>name</em>, <em>dtype=&lt;class 'numpy.float64'&gt;</em>, <em>array=1</em>, <em>details={'decimal': 2</em>, <em>'width': 12}</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.gdb.GXdb.new_channel" title="Permalink to this definition">¶</a></dt>
+<code class="descname">new_channel</code><span class="sig-paren">(</span><em>name</em>, <em>dtype=&lt;class 'numpy.float64'&gt;</em>, <em>array=1</em>, <em>details={'width': 12</em>, <em>'decimal': 2}</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.gdb.GXdb.new_channel" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return a channel symbol, create if it does not exist.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
