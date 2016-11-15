@@ -501,7 +501,6 @@
     <Compile Include="geosoft\gxpy\va.py" />
     <Compile Include="geosoft\gxpy\vv.py" />
     <Compile Include="geosoft\gxpy\__init__.py" />
-    <Compile Include="geosoft\__check_deps__.py" />
     <Compile Include="geosoft\__init__.py" />
     <Compile Include="setup.py" />
   </ItemGroup>
@@ -518,6 +517,7 @@
     <Folder Include="docs\_build\html\_sources\templates" />
     <Folder Include="docs\_build\html\_static" />
     <Folder Include="examples\" />
+    <Folder Include="examples\arcpy\" />
     <Folder Include="examples\om-extensions" />
     <Folder Include="examples\stand-alone" />
     <Folder Include="geosoft" />

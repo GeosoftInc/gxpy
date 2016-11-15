@@ -3,8 +3,6 @@
 import json
 from os.path import dirname, join
 
-import geosoft.__check_deps__
-
 with open(join(dirname(__file__), 'pkg_info.json')) as fp:
     _info = json.load(fp)
 
