@@ -584,15 +584,12 @@ def run_external_python(script, script_args='',
                         catcherr=True):
     """
     Run a python script as an external program, returning results as a dictionary.
-    External program can call gxpy.utility.run_return(dict) to pass a dictionary back to caller.
 
     :param script:      full path of the python script
-    :param dict:        dictionary to pass to child via set/get_run_dict()
     :param script_args: command line arguments as a string
     :param python_args: command line arguments as a string
     :param console:     True (default) will create a separate console for the process.
     :param catcherr:    True (default) Catch and re-raise errors from the sub-process.
-    :return:            dictionary registered gxpy.utility.run_return(dict)
 
     .. versionadded:: 9.1
     """
