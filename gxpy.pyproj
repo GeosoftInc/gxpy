@@ -459,7 +459,6 @@
     <Content Include="gxapi.cp34-win_amd64.pyd" />
     <Content Include="gxapi.cp35-win_amd64.pyd" />
     <Content Include="gxapi.cp36-win_amd64.pyd" />
-    <Content Include="gxapi_arcpy.pyd" />
     <Content Include="geosoft\gxpy\tests\little.zip" />
     <Content Include="geosoft\gxpy\tests\testgrids.zip" />
     <Content Include="geosoft\gxpy\tests\test_database.zip" />
@@ -517,7 +516,6 @@
     <Folder Include="docs\_build\html\_sources\templates" />
     <Folder Include="docs\_build\html\_static" />
     <Folder Include="examples\" />
-    <Folder Include="examples\arcpy\" />
     <Folder Include="examples\om-extensions" />
     <Folder Include="examples\stand-alone" />
     <Folder Include="geosoft" />
