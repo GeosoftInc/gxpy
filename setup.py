@@ -58,6 +58,7 @@ with open(key_file, 'w') as f:
             sys.argv.pop(index)  # Removes the arg
             geosoft_key = arg[18:]
             f.write(geosoft_key)
+            use_default_key = False
             break
     if use_default_key:
         f.write("Core")
