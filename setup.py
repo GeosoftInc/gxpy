@@ -33,7 +33,7 @@ def is_arcgispro_build():
         sys.argv.pop(index)  # Removes the '--arcpy_build'
         return True
 
-    conda_default_env = environ['CONDA_DEFAULT_ENV']
+    conda_default_env = environ.get('CONDA_DEFAULT_ENV', None)
     if conda_default_env:
         return conda_default_env.endswith('arcgispro-py3')
     else:
