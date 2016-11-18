@@ -68,12 +68,17 @@ else:
 
 key_file = path.join('geosoft', 'geosoft.key')
 with open(key_file, 'w') as f:
-    if '--testing_build' in sys.argv:
-        index = sys.argv.index('--testing_build')
-        sys.argv.pop(index)  # Removes the '--testing_build'
-        f.write("Core - Testing")
-    else:
+    use_default_key = True
+    for arg in sys.argv:
+        if arg.startswith('--use_geosoft_key='):
+            index = sys.argv.index(arg)
+            sys.argv.pop(index)  # Removes the arg
+            geosoft_key = arg[18:]
+            f.write(geosoft_key)
+            break
+    if use_default_key:
         f.write("Core")
+
 
 setup(
     name='geosoft',
