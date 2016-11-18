@@ -26,45 +26,28 @@ for f in glob("geosoft/*.pyd"):
     remove(f)
 
 
-def is_arcgispro_build():
-    if '--arcpy_build' in sys.argv:
-        print("arcpy")
-        index = sys.argv.index('--arcpy_build')
-        sys.argv.pop(index)  # Removes the '--arcpy_build'
-        return True
-
-    conda_default_env = environ.get('CONDA_DEFAULT_ENV', None)
-    if conda_default_env:
-        return conda_default_env.endswith('arcgispro-py3')
-    else:
-        return False
-
-if is_arcgispro_build():
-    deps = [ 'jdcal' ]
-    shutil.copyfile('gxapi_arcpy.pyd', 'geosoft/gxapi.pyd')
+deps = [ 'jdcal', 'numpy>=1.11' ]
+if 'bdist_wheel' in sys.argv:
+    # Have to specify python-tag to specify which module
+    for arg in sys.argv:
+        if arg.startswith('--python-tag='):
+            pythontag = arg[13:]
+            if pythontag == "cp34":
+                shutil.copyfile('gxapi.cp34-win_amd64.pyd', 'geosoft/gxapi.pyd')
+            elif pythontag == "cp35":
+                shutil.copyfile('gxapi.cp35-win_amd64.pyd', 'geosoft/gxapi.pyd')
+            elif pythontag == "cp36":
+                shutil.copyfile('gxapi.cp36-win_amd64.pyd', 'geosoft/gxapi.pyd')
+            break
 else:
-    deps = [ 'jdcal', 'numpy>=1.11' ]
-    if 'bdist_wheel' in sys.argv:
-        # Have to specify python-tag to specify which module
-        for arg in sys.argv:
-            if arg.startswith('--python-tag='):
-                pythontag = arg[13:]
-                if pythontag == "cp34":
-                    shutil.copyfile('gxapi.cp34-win_amd64.pyd', 'geosoft/gxapi.pyd')
-                elif pythontag == "cp35":
-                    shutil.copyfile('gxapi.cp35-win_amd64.pyd', 'geosoft/gxapi.pyd')
-                elif pythontag == "cp36":
-                    shutil.copyfile('gxapi.cp36-win_amd64.pyd', 'geosoft/gxapi.pyd')
-                break
-    else:
-        # Copy the version we are building for
-        py_ver_major_minor = sys.version_info[:2]
-        if py_ver_major_minor == (3,4):
-            shutil.copyfile('gxapi.cp34-win_amd64.pyd', 'geosoft/gxapi.pyd')
-        elif py_ver_major_minor == (3,5):
-            shutil.copyfile('gxapi.cp35-win_amd64.pyd', 'geosoft/gxapi.pyd')
-        elif py_ver_major_minor == (3,6):
-            shutil.copyfile('gxapi.cp36-win_amd64.pyd', 'geosoft/gxapi.pyd')
+    # Copy the version we are building for
+    py_ver_major_minor = sys.version_info[:2]
+    if py_ver_major_minor == (3,4):
+        shutil.copyfile('gxapi.cp34-win_amd64.pyd', 'geosoft/gxapi.pyd')
+    elif py_ver_major_minor == (3,5):
+        shutil.copyfile('gxapi.cp35-win_amd64.pyd', 'geosoft/gxapi.pyd')
+    elif py_ver_major_minor == (3,6):
+        shutil.copyfile('gxapi.cp36-win_amd64.pyd', 'geosoft/gxapi.pyd')
 
 key_file = path.join('geosoft', 'geosoft.key')
 with open(key_file, 'w') as f:
