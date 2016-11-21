@@ -584,12 +584,16 @@ def run_external_python(script, script_args='',
                         catcherr=True):
     """
     Run a python script as an external program, returning results as a dictionary.
+    External program calls gxpy.utility.get_shared_dict() to get the caller's dictionary,
+    and gxpy.utility.set_shared_dict(return_dictionary) to return a dictionary back to caller.
 
     :param script:      full path of the python script
+    :param dict:        dictionary passed to the external script (get_shared_dict() to retrieve)
     :param script_args: command line arguments as a string
     :param python_args: command line arguments as a string
     :param console:     True (default) will create a separate console for the process.
     :param catcherr:    True (default) Catch and re-raise errors from the sub-process.
+    :return:            dictionary passed back from caller via set_shared_dict(dict)
 
     .. versionadded:: 9.1
     """

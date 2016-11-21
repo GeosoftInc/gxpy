@@ -203,9 +203,8 @@ class GXipj():
 
             .. note::
 
-                Only orientations of "<0, 0, 0, 0, 0, 0>" are supported in version 9.1.  Oriented coordinate
-                systems will be added at some point in the future.  Oriented coordinates can be achieved using
-                Oblique Stereographic.
+                Only orientations of "<0, 0, 0, 0, 0, 0>" are currently supported.  Oriented coordinate
+                systems will be added at some point in the future.
 
             *FUTURE:* In Geosoft coordinate systems, a cartesian system can be oriented arbitrarily
             in three dimensions relative to a base coordinate system.  This requires the definition
