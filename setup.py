@@ -40,10 +40,10 @@ def is_arcgispro_build():
         return False
 
 if is_arcgispro_build():
-    deps = [ 'jdcal' ]
+    deps = [ ]
     shutil.copyfile('gxapi_arcpy.pyd', 'geosoft/gxapi.pyd')
 else:
-    deps = [ 'jdcal', 'numpy>=1.11' ]
+    deps = [ 'numpy>=1.11' ]
     if 'bdist_wheel' in sys.argv:
         # Have to specify python-tag to specify which module
         for arg in sys.argv:

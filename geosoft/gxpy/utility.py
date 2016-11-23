@@ -8,7 +8,7 @@ import os
 import json
 import subprocess
 from time import gmtime, strftime
-from jdcal import is_leap, gcal2jd, jd2gcal
+from ._jdcal.jdcal import is_leap, gcal2jd, jd2gcal
 from distutils.version import StrictVersion
 import numpy as np
 import geosoft
