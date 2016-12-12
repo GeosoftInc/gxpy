@@ -207,6 +207,7 @@ class Test(unittest.TestCase):
 
         gdb.discard()
 
+    def test_read_vv_GDB(self):
         self.start(gsys.func_name())
 
         gdb = self.gdb
