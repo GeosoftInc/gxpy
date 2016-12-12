@@ -126,11 +126,12 @@ class GXvv():
 
     def np(self, dtype=None, start=0, n=None):
         '''
-        Return a numpy array of data from a vv.
+        Return (numpy_data, fid) from a vv.
 
         :param start:   index of first value, must be >=0
         :param n:       number of values wanted
         :param dtype:   numpy data type wanted
+        :returns:       (data, (fid_start, fid_incr))
 
         .. versionadded:: 9.1
         '''

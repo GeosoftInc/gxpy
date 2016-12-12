@@ -207,6 +207,64 @@ class Test(unittest.TestCase):
 
         gdb.discard()
 
+        self.start(gsys.func_name())
+
+        gdb = self.gdb
+
+        data = gdb.read_line_vv('D578625')
+        for chvv in data:
+            self.assertEqual(len(data), 8)
+            vv = chvv[1]
+            fid = vv.fid()
+            self.assertEqual(vv.length(), 832)
+            self.assertEqual(fid[0], 0.0)
+            self.assertEqual(fid[1], 1.0)
+
+        data = gdb.read_line_vv('D578625', common_fid=True)
+        for chvv in data:
+            self.assertEqual(len(data), 8)
+            vv = chvv[1]
+            fid = vv.fid()
+            self.assertEqual(vv.length(), 832)
+            self.assertEqual(fid[0], 0.0)
+            self.assertEqual(fid[1], 1.0)
+
+        data = gdb.read_line_vv('D578625', common_fid=True, fid=(0.1,4.8))
+        for chvv in data:
+            self.assertEqual(len(data), 8)
+            vv = chvv[1]
+            fid = vv.fid()
+            self.assertEqual(vv.length(), 175)
+            self.assertEqual(fid[0], 0.1)
+            self.assertEqual(fid[1], 4.8)
+
+        ln,ls = gdb.line_name_symb('D578625')
+        data = gdb.read_line_vv(ls,channels=['X','Y','Z','dx','dy'])
+        self.assertEqual(len(data), 5)
+        self.assertEqual(data[0][0], 'X')
+        self.assertEqual(data[4][0], 'dy')
+        npd = data[0][1].np()[0]
+        self.assertEqual(npd[10], 578625.0)
+        npd = data[1][1].np()[0]
+        self.assertEqual(npd[10], 7773625.0)
+        npd = data[2][1].np()[0]
+        self.assertEqual(npd[10], -1195.7531280517615)
+
+        data = gdb.read_line_vv(ls, 'X')
+        self.assertEqual(data[0][0], 'X')
+        npd = data[0][1].np()[0]
+        self.assertEqual(npd[10],578625.0)
+
+        data = gdb.read_line_vv(ls,channels=['X','Y','Z'], dtype='<U32')
+        npd = data[0][1].np()[0]
+        self.assertEqual(npd[10], '578625.0')
+        npd = data[1][1].np()[0]
+        self.assertEqual(npd[10], '7773625.0')
+        npd = data[2][1].np()[0]
+        self.assertEqual(npd[10], '-1195.8')
+
+        gdb.discard()
+
     def test_read_masked_GDB(self):
         self.start(gsys.func_name())
 
@@ -305,8 +363,8 @@ class Test(unittest.TestCase):
         gdb.delete_channel('test')
         gdb.new_channel('test',dtype=np.int)
         dummy = gxu.gx_dummy(np.int)
-        gdb.write_channel('D590875','test',np.array([1,2,dummy,4]))
-        npd,ch,fid = gdb.read_line('D590875',channels=['test'],dtype=np.int)
+        gdb.write_channel('D590875', 'test', np.array([1, 2, dummy, 4]))
+        npd,ch,fid = gdb.read_line('D590875', channels=['test'], dtype=np.int)
         self.assertEqual(npd.shape,(4,1))
         self.assertEqual(npd[:,0].tolist(),[1,2,dummy,4])
 
