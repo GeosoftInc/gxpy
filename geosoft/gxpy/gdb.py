@@ -893,10 +893,12 @@ class GXdb():
 
         if self.channel_width(cs) == 1:
             return self._vv_ch(ls, cs, dtype)
+        else:
+            raise GDBException("Cannot read a VA channel into a VV.")
 
     def read_channel_va(self, line, channel, dtype=None):
         '''
-        Read va data from a single channel, return in a va.
+        Read VA data from a single channel, return in a va.
 
         :param line:    line name or symbol
         :param channel: channel name or symbol
@@ -909,7 +911,6 @@ class GXdb():
 
         ln, ls = self.line_name_symb(line, create=True)
         cn, cs = self.channel_name_symb(channel)
-
         return self._va_ch(ls, cs, dtype)
 
     def read_channel(self, line, channel, dtype=None):
@@ -1125,7 +1126,6 @@ class GXdb():
 
         except GDBException:
             if type(channel) is str:
-                cn = channel
                 cs = self.new_channel(channel, vv.dtype())
             else:
                 raise
@@ -1139,6 +1139,39 @@ class GXdb():
 
         cleanup()
 
+    def write_channel_va(self, line, channel, va):
+        '''
+        Write VA data to a single channel.
+
+        :param line:    line name or symbol
+        :param channel: channel name or symbol
+        :param va:      va data to write
+
+        .. versionadded:: 9.2
+        '''
+
+        def cleanup():
+            self._unlock(cs)
+
+        ln, ls = self.line_name_symb(line, create=True)
+
+        try:
+            cn, cs = self.channel_name_symb(channel)
+
+        except GDBException:
+            if type(channel) is str:
+                cs = self.new_channel(channel, va.dtype(), array=va.width())
+            else:
+                raise
+
+        self._lock_write(cs)
+        try:
+            self._db.put_chan_va(ls, cs, va._va)
+        except:
+            cleanup()
+            raise
+
+        cleanup()
 
     def write_channel(self, line, channel, data, fid=(0.0, 1.0)):
         '''
@@ -1200,12 +1233,18 @@ class GXdb():
 
     def write_line_vv(self, line, chan_data):
         '''
-        Write data to a multiple channels in a line.  If no channel list is provided it assumes that the
+        Write data to multiple channels in a line.  If no channel list is provided it assumes that the
         data is for all channels from the line, the compliment of read_line().
 
         :param line:        line to write to, name or symbol
-        :param data:        numpy array shape (records,channels).  If single dimension, one channel
+        :param data:        numpy array shape (records,channels).  If single dimension, one channel.
+                            Channels are created if they do not exist.  VA channels must exist.
         :param chan_data:   list of tuples [(channel_name, vv), ]
+
+        ..note::
+
+            chan_data may contain VA data, which is defined by slice (ie. name[0], name[4]...).
+            If VA data is included the VA channels must already exist.
 
         .. versionadded:: 9.2
         '''

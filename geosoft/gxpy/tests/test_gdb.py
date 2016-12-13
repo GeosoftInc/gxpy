@@ -11,6 +11,7 @@ import geosoft.gxpy.utility as gxu
 import geosoft.gxpy.system as gsys
 import geosoft.gxpy.gdb as gxgdb
 import geosoft.gxpy.vv as gxvv
+import geosoft.gxpy.va as gxva
 
 class Test(unittest.TestCase):
 
@@ -58,6 +59,31 @@ class Test(unittest.TestCase):
         self.assertEqual(gdb.channel_width('x'),1)
 
         gdb.discard()
+
+    def test_read_write_channel_vv_va(self):
+        self.start(gsys.func_name())
+
+        gdb = self.gdb
+        gdb.delete_channel('test_chan_vv')
+        vv = gxvv.GXvv.vv_np(np.array([1.,2.,3.]), fid=(-10, 2.5))
+        gdb.write_channel_vv('T46', 'test_chan_vv', vv)
+        vv = gdb.read_channel_vv('T46', 'test_chan_vv')
+        self.assertEqual(vv.length(), 3)
+        self.assertEqual(vv.fid(), (-10.0, 2.5))
+        va = gdb.read_channel_va('T46', 'test_chan_vv')
+        self.assertEqual(va.width(), 1)
+        self.assertEqual(va.length(), 3)
+        self.assertEqual(va.fid(), (-10.0, 2.5))
+        gdb.delete_channel('test_chan_vv')
+
+        va = gxva.GXva.vaNp(np.array([[1., 2., 3.],[8,9,10]]), fid=(-10, 2.5))
+        gdb.write_channel_va('T46', 'test_chan_va', va)
+        self.assertRaises(gxgdb.GDBException, gdb.read_channel_vv, 'T46', 'test_chan_va')
+        va = gdb.read_channel_va('T46', 'test_chan_va')
+        self.assertEqual(va.width(), 3)
+        self.assertEqual(va.length(), 2)
+        self.assertEqual(va.fid(), (-10.0, 2.5))
+        gdb.delete_channel('test_chan_va')
 
     def test_group_VA_read_write(self):
         self.start(gsys.func_name())
