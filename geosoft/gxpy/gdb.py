@@ -1,5 +1,6 @@
 
 import os
+import sys
 import math
 import numpy as np
 
@@ -874,6 +875,44 @@ class GXdb():
 
         return chNames, chSymbs, cType
 
+    def read_channel_vv(self, line, channel, dtype=None):
+        '''
+        Read data from a single channel, return in a vv.
+
+        :param line:    line name or symbol
+        :param channel: channel name or symbol
+        :param dtype:   type wanted, default same as the channel data
+
+        :return:        vv
+
+        .. versionadded:: 9.2
+        '''
+
+        ln, ls = self.line_name_symb(line, create=True)
+        cn, cs = self.channel_name_symb(channel)
+
+        if self.channel_width(cs) == 1:
+            return self._vv_ch(ls, cs, dtype)
+        else:
+            raise GDBException("Cannot read a VA channel into a VV.")
+
+    def read_channel_va(self, line, channel, dtype=None):
+        '''
+        Read VA data from a single channel, return in a va.
+
+        :param line:    line name or symbol
+        :param channel: channel name or symbol
+        :param dtype:   type wanted, default same as the channel data
+
+        :return:        va
+
+        .. versionadded:: 9.2
+        '''
+
+        ln, ls = self.line_name_symb(line, create=True)
+        cn, cs = self.channel_name_symb(channel)
+        return self._va_ch(ls, cs, dtype)
+
     def read_channel(self, line, channel, dtype=None):
         '''
         Read data from a single channel.
@@ -887,16 +926,98 @@ class GXdb():
         .. versionadded:: 9.1
         '''
 
-        ln, ls = self.line_name_symb(line, create=True)
-        cn, cs = self.channel_name_symb(channel)
-
-        if self.channel_width(cs) == 1:
-            vv = self._vv_ch(ls, cs, dtype)
+        if self.channel_width(channel) == 1:
+            vv = self.read_channel_vv(line, channel, dtype)
             return vv.np(vv.dtype())[0], vv.fid()
 
         else:
-            va = self._va_ch(ls, cs, dtype)
+            va = self.read_channel_va(line, channel, dtype)
             return va.np(va.dtype())[0], va.fid()
+
+    def read_line_vv(self, line, channels=None, dtype=None, fid=None, common_fid=False):
+        '''
+        Read a line of data into VVs stored in a dictionary by channel.
+
+        :param line:        line to read, string or symbol number
+        :param channels:    list of channels, strings or symbol number.  If empty, read all channels
+        :param dtype:       numpy data type for the array, default np.float64 for multi-channel data,
+                            data type for single channel data. Use "<Unnn" for string type.
+        :param common_fid:  True to resample all channels to a common fiducial
+        :param fid:         required fid (start, increment), ignored if common_fid=False.
+                            if common_fid=True and fid= is not defined, use the smallest common fid.
+        :return: list of tuples [(channel_name, vv), ...]
+
+        If a requested channel is a VA, it is with channel names 'name[0]', 'name[1]', etc.
+
+        Examples:
+
+        .. code::
+
+            # npd - returned numpy array shape (n, number of channels)
+            # ch  - list of returned channels names, array channels expanded to array[0], array[1], ...
+            # fid - tuple (fidStart,fidIncrement), channels resampled as necessary
+
+            data = gdb.read_line_vv('L100')                           # read all channels in line "L100"
+            data = gdb.read_line_vv(681)                              # read all channels in line symbol 681
+            data = gdb.read_line_vv('L100','X')                       # read channel 'X' from line 'L100'
+            data = gdb.read_line_vv('L100',2135)                      # read channel symbol 2135 from 'L100"
+            data = gdb.read_line_vv('L100',channels=['X','Y','Z'])    # read a list of channels to (n,3) array
+            data = gdb.read_line_vv('L100','X',np.int32)              # read channel 'X' into integer array
+
+        .. versionadded:: 9.2
+        '''
+
+        ln, ls = self.line_name_symb(line)
+
+        # default all channels, sorted, X,Y,Z first
+        if channels is None:
+            channels = self._sorted_chan_list()
+
+        else:
+            if (type(channels) is str) or (type(channels) is int):
+                channels = [channels]
+
+        # make up channel list, expanding VA channels
+        chNames, chSymb, cType = self._expand_chan_list(channels)
+
+        if dtype is None:
+            dtype = np.float64
+
+        # read the data into vv
+        chvv = []
+        for c in chNames:
+            cs = self._db.find_symb(c, gxapi.DB_SYMB_CHAN)
+            vv = self._vv_ch(ls, cs, dtype=dtype)
+            chvv.append((c, vv))
+
+        # resample?
+        if common_fid:
+
+            # determine fiducial range from data
+            start = gxapi.GS_R8MX
+            incr = gxapi.GS_R8MX
+            fend = gxapi.GS_R8MN
+
+            for vv in chvv:
+                fd = vv[1].fid()
+                if fd[0] != gxapi.rDUMMY:
+                    if fd[0] < start:
+                        start = fd[0]
+                    if fd[1] < incr:
+                        incr = fd[1]
+                    dend = start + incr * (vv[1].length() - 1)
+                    if dend > fend:
+                        fend = dend
+            if fid is None:
+                fid = (start, incr)
+
+            # refid if there is some data
+            nvd = math.ceil(max((fend - fid[0] - sys.float_info.epsilon), 0) / fid[1]) + 1
+            if fend != gxapi.GS_R8MN:
+                for vv in chvv:
+                    vv[1].reFid(fid, nvd)
+
+        return chvv
 
     def read_line(self, line, channels=None, dtype=None, fid=None, dummy=None):
         '''
@@ -937,74 +1058,23 @@ class GXdb():
         .. versionadded:: 9.1
         '''
 
-        ln, ls = self.line_name_symb(line)
-
-        # default all channels, sorted, X,Y,Z first
-        if channels is None:
-            channels = self._sorted_chan_list()
-
-        else:
-            if (type(channels) is str) or (type(channels) is int):
-                channels = [channels]
-
-        # just one channel
-        if len(channels) == 1:
-            npd, fid = self.read_channel(ls, channels[0], dtype)
-            if self.channel_width(channels[0]) == 1:
-                npd = npd.reshape(npd.shape[0], 1)  # make it a 2D array
-            else:
-                channels = self._expand_chan_list(channels)[0]
-            return npd, channels, fid
-
-        # multiple channels
-        # make up channel list, expanding VA channels
-        chNames, chSymb, cType = self._expand_chan_list(channels)
-
-        if dtype is None:
-            dtype = np.float64
-        vvs = []
-        for c in chNames:
-            cs = self._db.find_symb(c, gxapi.DB_SYMB_CHAN)
-            vv = self._vv_ch(ls, cs, dtype=dtype)
-            vvs.append(vv)
-
-        # determine fiducial range from data
-        start = gxapi.GS_R8MX
-        incr = gxapi.GS_R8MX
-        fend = gxapi.GS_R8MN
-        for vv in vvs:
-            fd = vv.fid()
-            if fd[0] != gxapi.rDUMMY:
-                if fd[0] < start:
-                    start = fd[0]
-                if fd[1] < incr:
-                    incr = fd[1]
-                dend = start + incr * (vv.length() - 1)
-                if dend > fend:
-                    fend = dend
-        if fid is None:
-            fid = (start, incr)
-
-        # there has to be some data
-        nvd = math.ceil((fend - start) / incr) + 1
-        if (fend == gxapi.GS_R8MN) or (nvd == 0):
-            raise GDBException(_("Line {} is empty for channels {}").format(ln, chNames[0]))
-
-        # refid everything
-        nCh = len(chNames)
-        for vv in vvs:
-            vv.reFid(fid, nvd)
-            vv.reFid(fid, nvd)
+        # get VVs of data, resampled to a common fid
+        data = self.read_line_vv(line, channels, dtype, fid, common_fid=True)
+        nvd = data[0][1].length()
+        fid = data[0][1].fid()
+        nCh = len(data)
 
         # move data to numpy array
         npd = np.empty((nvd, nCh), dtype=dtype)
         dummy_value = gxu.gx_dummy(npd.dtype)
-        for j in range(nCh):
-            vv = vvs[j]
+        chNames = []
+        for chvv in data:
+            vv = chvv[1]
             if vv.length() > 0:
-                npd[:, j] = vv.np(dtype=npd.dtype)[0]
+                npd[:, len(chNames)] = vv.np(dtype=npd.dtype)[0]
             else:
-                npd[:, j].fill(dummy_value)
+                npd[:, len(chNames)].fill(dummy_value)
+            chNames.append(chvv[0])
 
         # dummy handling
         if dummy:
@@ -1034,6 +1104,74 @@ class GXdb():
                 raise GDBException(_('Unrecognized dummy={}').format(dummy))
 
         return npd, chNames, fid
+
+    def write_channel_vv(self, line, channel, vv):
+        '''
+        Write data to a single channel.
+
+        :param line:    line name or symbol
+        :param channel: channel name or symbol
+        :param vv:      vv data to write
+
+        .. versionadded:: 9.2
+        '''
+
+        def cleanup():
+            self._unlock(cs)
+
+        ln, ls = self.line_name_symb(line, create=True)
+
+        try:
+            cn, cs = self.channel_name_symb(channel)
+
+        except GDBException:
+            if type(channel) is str:
+                cs = self.new_channel(channel, vv.dtype())
+            else:
+                raise
+
+        self._lock_write(cs)
+        try:
+            self._db.put_chan_vv(ls, cs, vv._vv)
+        except:
+            cleanup()
+            raise
+
+        cleanup()
+
+    def write_channel_va(self, line, channel, va):
+        '''
+        Write VA data to a single channel.
+
+        :param line:    line name or symbol
+        :param channel: channel name or symbol
+        :param va:      va data to write
+
+        .. versionadded:: 9.2
+        '''
+
+        def cleanup():
+            self._unlock(cs)
+
+        ln, ls = self.line_name_symb(line, create=True)
+
+        try:
+            cn, cs = self.channel_name_symb(channel)
+
+        except GDBException:
+            if type(channel) is str:
+                cs = self.new_channel(channel, va.dtype(), array=va.width())
+            else:
+                raise
+
+        self._lock_write(cs)
+        try:
+            self._db.put_chan_va(ls, cs, va._va)
+        except:
+            cleanup()
+            raise
+
+        cleanup()
 
     def write_channel(self, line, channel, data, fid=(0.0, 1.0)):
         '''
@@ -1093,10 +1231,33 @@ class GXdb():
 
         cleanup()
 
+    def write_line_vv(self, line, chan_data):
+        '''
+        Write data to multiple channels in a line.  If no channel list is provided it assumes that the
+        data is for all channels from the line, the compliment of read_line().
+
+        :param line:        line to write to, name or symbol
+        :param data:        numpy array shape (records,channels).  If single dimension, one channel.
+                            Channels are created if they do not exist.  VA channels must exist.
+        :param chan_data:   list of tuples [(channel_name, vv), ]
+
+        ..note::
+
+            chan_data may contain VA data, which is defined by slice (ie. name[0], name[4]...).
+            If VA data is included the VA channels must already exist.
+
+        .. versionadded:: 9.2
+        '''
+
+        for chvv in chan_data:
+            ch = chvv[0]
+            vv = chvv[1]
+            self.write_channel_vv(line, ch, vv)
+
     def write_line(self, line, data, channels=None, fid=(0.0, 1.0)):
         '''
         Write data to a multiple channels in a line.  If no channel list is provided it assumes that the
-        data is for all channels from the line, the compliment of readDataLine().
+        data is for all channels from the line, the compliment of read_line().
 
         :param line:        line to write to, name or symbol
         :param data:        numpy array shape (records,channels).  If single dimension, one channel
