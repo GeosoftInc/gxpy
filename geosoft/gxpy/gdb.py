@@ -875,6 +875,43 @@ class GXdb():
 
         return chNames, chSymbs, cType
 
+    def read_channel_vv(self, line, channel, dtype=None):
+        '''
+        Read data from a single channel, return in a vv.
+
+        :param line:    line name or symbol
+        :param channel: channel name or symbol
+        :param dtype:   type wanted, default same as the channel data
+
+        :return:        vv
+
+        .. versionadded:: 9.2
+        '''
+
+        ln, ls = self.line_name_symb(line, create=True)
+        cn, cs = self.channel_name_symb(channel)
+
+        if self.channel_width(cs) == 1:
+            return self._vv_ch(ls, cs, dtype)
+
+    def read_channel_va(self, line, channel, dtype=None):
+        '''
+        Read va data from a single channel, return in a va.
+
+        :param line:    line name or symbol
+        :param channel: channel name or symbol
+        :param dtype:   type wanted, default same as the channel data
+
+        :return:        va
+
+        .. versionadded:: 9.2
+        '''
+
+        ln, ls = self.line_name_symb(line, create=True)
+        cn, cs = self.channel_name_symb(channel)
+
+        return self._va_ch(ls, cs, dtype)
+
     def read_channel(self, line, channel, dtype=None):
         '''
         Read data from a single channel.
@@ -888,15 +925,12 @@ class GXdb():
         .. versionadded:: 9.1
         '''
 
-        ln, ls = self.line_name_symb(line, create=True)
-        cn, cs = self.channel_name_symb(channel)
-
-        if self.channel_width(cs) == 1:
-            vv = self._vv_ch(ls, cs, dtype)
+        if self.channel_width(channel) == 1:
+            vv = self.read_channel_vv(line, channel, dtype)
             return vv.np(vv.dtype())[0], vv.fid()
 
         else:
-            va = self._va_ch(ls, cs, dtype)
+            va = self.read_channel_va(line, channel, dtype)
             return va.np(va.dtype())[0], va.fid()
 
     def read_line_vv(self, line, channels=None, dtype=None, fid=None, common_fid=False):
@@ -1070,6 +1104,42 @@ class GXdb():
 
         return npd, chNames, fid
 
+    def write_channel_vv(self, line, channel, vv):
+        '''
+        Write data to a single channel.
+
+        :param line:    line name or symbol
+        :param channel: channel name or symbol
+        :param vv:      vv data to write
+
+        .. versionadded:: 9.2
+        '''
+
+        def cleanup():
+            self._unlock(cs)
+
+        ln, ls = self.line_name_symb(line, create=True)
+
+        try:
+            cn, cs = self.channel_name_symb(channel)
+
+        except GDBException:
+            if type(channel) is str:
+                cn = channel
+                cs = self.new_channel(channel, vv.dtype())
+            else:
+                raise
+
+        self._lock_write(cs)
+        try:
+            self._db.put_chan_vv(ls, cs, vv._vv)
+        except:
+            cleanup()
+            raise
+
+        cleanup()
+
+
     def write_channel(self, line, channel, data, fid=(0.0, 1.0)):
         '''
         Write data to a single channel.
@@ -1128,10 +1198,27 @@ class GXdb():
 
         cleanup()
 
+    def write_line_vv(self, line, chan_data):
+        '''
+        Write data to a multiple channels in a line.  If no channel list is provided it assumes that the
+        data is for all channels from the line, the compliment of read_line().
+
+        :param line:        line to write to, name or symbol
+        :param data:        numpy array shape (records,channels).  If single dimension, one channel
+        :param chan_data:   list of tuples [(channel_name, vv), ]
+
+        .. versionadded:: 9.2
+        '''
+
+        for chvv in chan_data:
+            ch = chvv[0]
+            vv = chvv[1]
+            self.write_channel_vv(line, ch, vv)
+
     def write_line(self, line, data, channels=None, fid=(0.0, 1.0)):
         '''
         Write data to a multiple channels in a line.  If no channel list is provided it assumes that the
-        data is for all channels from the line, the compliment of readDataLine().
+        data is for all channels from the line, the compliment of read_line().
 
         :param line:        line to write to, name or symbol
         :param data:        numpy array shape (records,channels).  If single dimension, one channel

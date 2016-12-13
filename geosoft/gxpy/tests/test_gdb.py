@@ -10,6 +10,7 @@ import geosoft.gxpy.gx as gx
 import geosoft.gxpy.utility as gxu
 import geosoft.gxpy.system as gsys
 import geosoft.gxpy.gdb as gxgdb
+import geosoft.gxpy.vv as gxvv
 
 class Test(unittest.TestCase):
 
@@ -286,6 +287,56 @@ class Test(unittest.TestCase):
 
         gdb.discard()
 
+    def test_write_vv_GDB(self):
+        self.start(gsys.func_name())
+
+        gdb = self.gdb
+
+        gdb.delete_channel('test')
+        gdb.new_channel('test')
+        vv = gxvv.GXvv.vv_np(np.array([1.0,2.0,3.0,4.0]))
+        gdb.write_channel_vv('D590875', 'test', vv)
+        npd, ch, fid = gdb.read_line('D590875', channels=['test'])
+        self.assertEqual(npd.shape,(4,1))
+        self.assertEqual(npd[:,0].tolist(),[1.0,2.0,3.0,4.0])
+
+        gdb.delete_channel('test')
+        gdb.new_channel('test', np.float64)
+        vv = gxvv.GXvv(dtype=np.float64)
+        vv.vv(np.array([1,2,3,4], dtype=np.int64))
+        gdb.write_channel_vv('D590875', 'test', vv)
+        npd,ch,fid = gdb.read_line('D590875', channels=['test'], dtype=np.int)
+        self.assertEqual(npd.shape,(4,1))
+        self.assertEqual(npd[:,0].tolist(),[1,2,3,4])
+
+        gdb.delete_channel('test')
+        gdb.new_channel('test', np.int32)
+        gdb.write_channel_vv('D590875', 'test', vv)
+        npd,ch,fid = gdb.read_line('D590875', 'test')
+        self.assertEqual(npd.shape,(4,1))
+        self.assertEqual(npd[:,0].tolist(),[1.0,2.0,3.0,4.0])
+
+        gdb.delete_channel('test')
+        gdb.new_channel('test', dtype=np.int32)
+        vv.setFid((3,2))
+        gdb.write_channel_vv('D590875', 'test', vv)
+        npd,ch,fid = gdb.read_line('D590875', 'test', dtype=int)
+        self.assertEqual(npd.shape,(4,1))
+        self.assertEqual(npd[:,0].tolist(),[1,2,3,4])
+        self.assertEqual(fid[0],3.0)
+        self.assertEqual(fid[1],2.0)
+
+        gdb.new_channel('test', np.int32)
+        vv = gxvv.GXvv.vv_np(np.array([1, 2, 3, 4], dtype=np.int32), fid=(2.5,0.33))
+        gdb.write_channel_vv('D590875', 'test', vv)
+        npd,ch,fid = gdb.read_line('D590875', channels=['test'])
+        self.assertEqual(npd.shape,(4,1))
+        self.assertEqual(npd[:,0].tolist(),[1,2,3,4])
+        self.assertEqual(fid[0], 2.5)
+        self.assertEqual(fid[1], 0.33)
+
+        gdb.discard()
+
     def test_write_GDB(self):
         self.start(gsys.func_name())
 
@@ -375,6 +426,34 @@ class Test(unittest.TestCase):
         gdb.discard()
 
 
+    def test_newline_vv_GDB(self):
+        self.start(gsys.func_name())
+
+        gdb = self.gdb
+        data = gdb.read_line_vv('D578625',channels=['dx','dy','vector'])
+        ch = [c[0] for c in data]
+        datalen = data[0][1].length()
+
+        gdb.delete_line('testline')
+        gdb.new_line('testline')
+        gdb.write_line_vv('testline', data)
+        npd2,ch2,fid2 = gdb.read_line('testline', channels=ch)
+        self.assertEqual(npd2.shape, (datalen, len(data)))
+
+        gdb.delete_line('testline')
+        gdb.new_line('testline', gxgdb.SYMB_LINE_NORMAL)
+        gdb.write_line_vv('testline', (("single", data[0][1]),))
+        npd2,ch2,fid2 = gdb.read_line('testline',"single")
+        self.assertEqual(npd2.shape,(datalen, 1))
+
+        gdb.delete_line('testline')
+        gdb.new_line('testline', gxgdb.SYMB_LINE_GROUP)
+        gdb.write_line_vv('testline', [("single", data[0][1])])
+        npd2,ch2,fid2 = gdb.read_line('testline',"single")
+        self.assertEqual(npd2.shape, (datalen, 1))
+
+        gdb.discard()
+
     def test_newline_GDB(self):
         self.start(gsys.func_name())
 
@@ -443,7 +522,6 @@ class Test(unittest.TestCase):
         self.assertEqual(ch2[4],"bopper[4]")
 
         gdb.discard()
-
 
     def test_list_values_GDB(self):
         self.start(gsys.func_name())
