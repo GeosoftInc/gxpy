@@ -2,7 +2,6 @@ import numpy as np
 import unittest
 
 import geosoft
-import geosoft.gxapi as gxapi
 import geosoft.gxpy.gx as gx
 import geosoft.gxpy.system as gsys
 import geosoft.gxpy.va as gxva
@@ -48,7 +47,7 @@ class Test(unittest.TestCase):
 
         fid = (99,0.1)
         npdata = np.array(range(45)).reshape((9,5))
-        with gxva.GXva.vaNp(npdata, fid=fid) as va:
+        with gxva.GXva.va_np(npdata, fid=fid) as va:
             self.assertEqual(va.fid(), fid)
             self.assertEqual(va.length(), npdata.shape[0])
             self.assertEqual(va.width(), npdata.shape[1])
@@ -76,7 +75,7 @@ class Test(unittest.TestCase):
             self.assertEqual(np3[1, 4], 9.0)
 
         npdata = np.array(range(64), dtype=np.int).reshape(4, 16)
-        with gxva.GXva.vaNp(npdata, fid=fid) as va:
+        with gxva.GXva.va_np(npdata, fid=fid) as va:
             np3, fid = va.np(dtype=np.int64)
             self.assertEqual(np3[0, 0], 0.)
             self.assertEqual(np3[2, 11], 43)
@@ -96,7 +95,7 @@ class Test(unittest.TestCase):
         fidva = (99,0.1)
         npdata = np.array(["name","maki","neil","macleod"]).reshape(2,2)
         try:
-            va = gxva.GXva.vaNp(npdata, fid=fidva)
+            va = gxva.GXva.va_np(npdata, fid=fidva)
             self.assertTrue(False)
         except gxva.VAException:
             pass

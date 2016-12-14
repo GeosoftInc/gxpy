@@ -1,10 +1,16 @@
 
-import geosoft
+import warnings
 import numpy as np
+import geosoft
 import geosoft.gxapi as gxapi
 from . import utility as gxu
 
 __version__ = geosoft.__version__
+
+# translation hook
+
+def _(s):
+    return s
 
 
 class VAException(Exception):
@@ -14,10 +20,6 @@ class VAException(Exception):
     .. versionadded:: 9.1
     '''
     pass
-
-
-def _(s):
-    return s
 
 
 class GXva():
@@ -73,12 +75,12 @@ class GXva():
         return va
 
     @classmethod
-    @geosoft.deprecated
     def vaNp(cls, npdata, fid=(0.0, 1.0)):
         '''
         .. deprecated: 9.2
             Use :method:`va_np` instead
         '''
+        warnings.warn("deprecated", DeprecationWarning)
         return cls.va_np(npdata, fid)
 
     def fid(self):
