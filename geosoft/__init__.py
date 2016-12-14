@@ -11,10 +11,12 @@ __version__ = "{}{}".format(_info['version'], _info['pre-release'])
 
 __all__ = ['gxapi', 'gxpy']
 
+# deprecation decorator function
 
 show_deprecation=False
 def deprecated(func):
     '''This is a decorator which can be used to mark functions
+    as deprecated. set `geosoft.show_deprecation = True` to emit a warning
     when the function is used.'''
     def new_func(*args, **kwargs):
         if show_deprecation:
