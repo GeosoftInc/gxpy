@@ -85,13 +85,6 @@ class Test(unittest.TestCase):
         self.assertEqual(va.fid(), (-10.0, 2.5))
         gdb.delete_channel('test_chan_va')
 
-        # deprecation test
-        va = gxva.GXva.vaNp(np.array([[1., 2., 3.],[8,9,10]]), fid=(-10, 2.5))
-        geosoft.show_deprecation = True
-        va = gxva.GXva.vaNp(np.array([[1., 2., 3.],[8,9,10]]), fid=(-10, 2.5))
-        geosoft.show_deprecation = False
-
-
     def test_group_VA_read_write(self):
         self.start(gsys.func_name())
 
