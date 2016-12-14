@@ -76,7 +76,7 @@ class Test(unittest.TestCase):
         self.assertEqual(va.fid(), (-10.0, 2.5))
         gdb.delete_channel('test_chan_vv')
 
-        va = gxva.GXva.vaNp(np.array([[1., 2., 3.],[8,9,10]]), fid=(-10, 2.5))
+        va = gxva.GXva.va_np(np.array([[1., 2., 3.],[8,9,10]]), fid=(-10, 2.5))
         gdb.write_channel_va('T46', 'test_chan_va', va)
         self.assertRaises(gxgdb.GDBException, gdb.read_channel_vv, 'T46', 'test_chan_va')
         va = gdb.read_channel_va('T46', 'test_chan_va')
@@ -84,6 +84,13 @@ class Test(unittest.TestCase):
         self.assertEqual(va.length(), 2)
         self.assertEqual(va.fid(), (-10.0, 2.5))
         gdb.delete_channel('test_chan_va')
+
+        # deprecation test
+        va = gxva.GXva.vaNp(np.array([[1., 2., 3.],[8,9,10]]), fid=(-10, 2.5))
+        geosoft.show_deprecation = True
+        va = gxva.GXva.vaNp(np.array([[1., 2., 3.],[8,9,10]]), fid=(-10, 2.5))
+        geosoft.show_deprecation = False
+
 
     def test_group_VA_read_write(self):
         self.start(gsys.func_name())

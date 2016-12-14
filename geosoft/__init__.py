@@ -1,6 +1,7 @@
 # coding = utf-8
 
 import json
+import warnings
 from os.path import dirname, join
 
 with open(join(dirname(__file__), 'pkg_info.json')) as fp:
@@ -10,6 +11,20 @@ __version__ = "{}{}".format(_info['version'], _info['pre-release'])
 
 __all__ = ['gxapi', 'gxpy']
 
+
+show_deprecation=False
+def deprecated(func):
+    '''This is a decorator which can be used to mark functions
+    when the function is used.'''
+    def new_func(*args, **kwargs):
+        if show_deprecation:
+            warnings.warn("Call to deprecated function {}.".format(func.__name__),
+                          category=DeprecationWarning)
+        return func(*args, **kwargs)
+    new_func.__name__ = func.__name__
+    new_func.__doc__ = func.__doc__
+    new_func.__dict__.update(func.__dict__)
+    return new_func
 
 # docstring overrides for C++ classes inside gxapi module
 

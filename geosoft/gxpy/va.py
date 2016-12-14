@@ -48,7 +48,7 @@ class GXva():
         self._sr = None
 
     @classmethod
-    def vaNp(cls, npdata, fid=(0.0, 1.0)):
+    def va_np(cls, npdata, fid=(0.0, 1.0)):
         """
         Create a VA from numpy data.
 
@@ -71,6 +71,15 @@ class GXva():
             raise VAException(_("VA of strings is not supported."))
 
         return va
+
+    @classmethod
+    @geosoft.deprecated
+    def vaNp(cls, npdata, fid=(0.0, 1.0)):
+        '''
+        .. deprecated: 9.2
+            Use :method:`va_np` instead
+        '''
+        return cls.va_np(npdata, fid)
 
     def fid(self):
         '''
