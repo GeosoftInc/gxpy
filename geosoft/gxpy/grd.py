@@ -157,7 +157,6 @@ class GXgrd():
         """
         Open an existing grid file.
 
-        :param gxPy:        GX context
         :param fileName:    name of the grid file
         :param dtype:       numpy data type
         :param mode:        open mode:
@@ -181,7 +180,6 @@ class GXgrd():
         """
         Create a new grid file.
 
-        :param gxPy:        GX context
         :param fileName:    name of the grid file, None or '' for a memory grid
         :param properties:  dictionary of grid properties
 
@@ -205,7 +203,6 @@ class GXgrd():
         """
         Create grid from a 2D numpy array.
 
-        :param gxPy:        GXpy
         :param data:        2D numpy data array, must be 2D
         :param filename:    name of the file
         :return:            GXgrd instance
