@@ -46,9 +46,15 @@ def delete_files(filename):
     .. versionadded:: 9.2
     """
 
+    def remove(fn):
+        try:
+            os.remove(fn)
+        except FileNotFoundError:
+            pass
+
     filename = map_file_name(filename)
-    os.remove(filename + '.xml')
-    os.remove(filename)
+    remove(filename + '.xml')
+    remove(filename)
 
 
 class GXmap:
@@ -149,3 +155,7 @@ class GXmap:
         :param remove:  if True (the default), remove the map file when finished.
         """
         self._remove = remove
+
+    def commit_changes(self):
+        """Commit changes to the map."""
+        self._map.commit()

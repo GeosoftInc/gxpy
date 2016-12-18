@@ -30,16 +30,14 @@ class Test(unittest.TestCase):
 
         # temp map
         with gxmap.GXmap.new() as gmap:
+            gmap.commit_changes()
             mapfile = gmap.filename()
             self.assertTrue(os.path.isfile(mapfile))
         self.assertFalse(os.path.isfile(mapfile))
 
         # test map
         map_name = 'test_newmap'
-        try:
-            os.remove(map_name + '.map')
-        except FileNotFoundError:
-            pass
+        gxmap.delete_files(map_name)
         with gxmap.GXmap.new(map_name) as gmap:
             mapfile = gmap.filename()
             self.assertEqual(mapfile, os.path.abspath((map_name + '.map')))
@@ -58,6 +56,7 @@ class Test(unittest.TestCase):
             pass
 
         gxmap.delete_files(mapfile)
+        self.assertFalse(os.path.isfile(mapfile))
 
 
 if __name__ == '__main__':

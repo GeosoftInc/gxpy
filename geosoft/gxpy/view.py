@@ -1,13 +1,11 @@
 #TODO review grd class to clean-up files like map class does.
 
-import os
-import gc
-import uuid
-import collections
+import numpy as np
 
 import geosoft
 import geosoft.gxapi as gxapi
 from . import map as gxmap
+from . import vv as gxvv
 from . import ipj as gxipj
 from . import utility as gxu
 
@@ -84,12 +82,33 @@ class Point:
             return Point(self.x * v, self.y * v, self.z * v)
 
     def xy(self):
-        """ Return (x, y, z) of a point"""
+        """ Return (x, y) of a point"""
         return (self.x, self.y)
 
     def xyz(self):
         """ Return (x, y, z) of a point"""
         return (self.x, self.y, self.z)
+
+
+class PPoint:
+    """
+    Poly-Point class.
+    """
+
+    def __init__(self, x, y, z=0.0):
+
+        if len(x) != len(y):
+            raise VIEWException('X and Y vector lengths must be equal.')
+
+        if type(z) is np.ndarray:
+            if len(x) != len(z):
+                raise VIEWException('X, Y and Z vector lengths must be equal.')
+            else:
+                z = np.ndarray.empty(len(x)).fill(float(z))
+
+        self.vvx = gxvv.vv_np(x)
+        self.vvy = gxvv.vv_np(y)
+        self.vvz = gxvv.vv_np(z)
 
 
 class GXview:
@@ -226,7 +245,7 @@ class GXview:
 
     # drawing to a plane
 
-    def line(self, p1, p2):
+    def xy_line(self, p1, p2):
         """
         Draw a line on the current plane
         :param p1:  Point starting
@@ -235,7 +254,17 @@ class GXview:
         .. versionadded:: 9.2
         """
 
-        self._view.line( p1.x, p1.y, p2.x, p2.y)
+        self._view.line(p1.x, p1.y, p2.x, p2.y)
+
+    def xy_poly_line(self, pline):
+        """
+        Draw a polyline the current plane
+        :param pline: polyline
+
+        .. versionadded:: 9.2
+        """
+
+        self._view.poly_line(pline.vvx(), pline.vvy)
 
     def rectangle(self, p1, p2):
         """
@@ -246,4 +275,4 @@ class GXview:
         .. versionadded:: 9.2
         """
 
-        self._view.rectangle( p1.x, p1.y, p2.x, p2.y)
+        self._view.rectangle(p1.x, p1.y, p2.x, p2.y)

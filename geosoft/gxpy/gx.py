@@ -2,7 +2,10 @@
 GX Context and related methods to with Geosoft Python.
 '''
 
+import tkinter.ttk as ttk
+import pythoncom
 import pprint
+
 import geosoft
 import geosoft.gxapi as gxapi
 from . import utility as gxu
@@ -25,7 +28,7 @@ class GXpy():
 
     :param app:             application name, default is the script name
     :param version:         application version number, default geosoft version
-    :param parent_window:   ID of the parent window if needed, default 0.
+    :param parent_window:   ID of the parent window if needed, default None.
 
     :members:
         :gxapi:             GX context to be used to call geosoft.gxapi methods
@@ -35,12 +38,23 @@ class GXpy():
         :GXException():  if unable to create context
 
     .. versionadded:: 9.1
+
+    .. versionchanged:: 9.2
+        If parent window is not defined (None), create a Tkinter frame as a parent.
+
     '''
 
     def __repr__(self):
         return "{}({})".format(self.__class__, self.__dict__)
 
-    def __init__(self, name=__name__, version=__version__, parent_window=0):
+    def __init__(self, name=__name__, version=__version__, parent_window=None):
+
+        # if no parent window, create a Tkinter parent frame for the viewers
+
+        self.tkf = None
+        if parent_window is None:
+            self.tkf = ttk.Frame(master=None)
+            parent_window = self.tkf.winfo_id()
 
         try:
             self.gxapi = gxapi.GXContext.create(name, version, parent_window)
