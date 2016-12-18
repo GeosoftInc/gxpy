@@ -81,6 +81,13 @@ class Point:
             v = float(p)
             return Point(self.x * v, self.y * v, self.z * v)
 
+    def __truediv__(self, p):
+        if type(p) is Point:
+            return Point(self.x / p.x, self.y / p.y, self.z / p.z)
+        else:
+            v = float(p)
+            return Point(self.x / v, self.y / v, self.z / v)
+
     def xy(self):
         """ Return (x, y) of a point"""
         return (self.x, self.y)
@@ -95,21 +102,55 @@ class PPoint:
     Poly-Point class.
     """
 
-    def __init__(self, x, y, z=0.0):
+    def __init__(self, xyznp, z=0.0):
+        """
+        Create a PPoint from numpy array
+        :param xyz: numpy array shape (n, 2) or (n, 3)
+        :param z:   constant z value for (n, 2) data, ignored for (n, 3) data
+        """
 
-        if len(x) != len(y):
-            raise VIEWException('X and Y vector lengths must be equal.')
+        self.xyz = np.zeros(xyznp.shape[0]*3, dtype=np.float).reshape((xyznp.shape[0], 3))
+        self.xyz[:, 0] = xyznp[:,0]
+        self.xyz[:, 1] = xyznp[:,1]
+        if xyznp.shape[1] > 2:
+            self.xyz[:, 2] = xyznp[:, 2]
+        else:
+            self.xyz[:, 2] = z
 
-        if type(z) is np.ndarray:
-            if len(x) != len(z):
-                raise VIEWException('X, Y and Z vector lengths must be equal.')
-            else:
-                z = np.ndarray.empty(len(x)).fill(float(z))
+    @classmethod
+    def from_list(cls, xyzlist, z=0.0):
+        return cls(np.array(xyzlist, dtype=np.float), z)
 
-        self.vvx = gxvv.vv_np(x)
-        self.vvy = gxvv.vv_np(y)
-        self.vvz = gxvv.vv_np(z)
+    def __add__(self, p):
+        if type(p) is PPoint:
+            return PPoint(self.xyz + p.xyz)
+        if type(p) is Point:
+            return PPoint(self.xyz + (p.x, p.y, p.z))
+        return PPoint(self.xyz + p)
 
+    def __sub__(self, p):
+        if type(p) is PPoint:
+            return PPoint(self.xyz - p.xyz)
+        if type(p) is Point:
+            return PPoint(self.xyz - (p.x, p.y, p.z))
+        return PPoint(self.xyz - p)
+
+    def __neg__(self):
+        return PPoint(self.xyz * -1.0)
+
+    def __mul__(self, p):
+        if type(p) is PPoint:
+            return PPoint(self.xyz * p.xyz)
+        if type(p) is Point:
+            return PPoint(self.xyz * (p.x, p.y, p.z))
+        return PPoint(self.xyz * p)
+
+    def __truediv__(self, p):
+        if type(p) is PPoint:
+            return PPoint(self.xyz / p.xyz)
+        if type(p) is Point:
+            return PPoint(self.xyz / (p.x, p.y, p.z))
+        return PPoint(self.xyz / p)
 
 class GXview:
     """
@@ -256,17 +297,25 @@ class GXview:
 
         self._view.line(p1.x, p1.y, p2.x, p2.y)
 
-    def xy_poly_line(self, pline):
+    def xy_poly_line(self, pp, close=False):
         """
         Draw a polyline the current plane
-        :param pline: polyline
+        :param pline: PPoint
+        :param close: if True, draw a polygon, default is a polyline
 
         .. versionadded:: 9.2
         """
 
-        self._view.poly_line(pline.vvx(), pline.vvy)
+        if close:
+            self._view.poly_line(gxapi.MVIEW_DRAW_POLYGON,
+                                 gxvv.GXvv.vv_np(pp.xyz[:,0])._vv,
+                                 gxvv.GXvv.vv_np(pp.xyz[:,1])._vv)
+        else:
+            self._view.poly_line(gxapi.MVIEW_DRAW_POLYLINE,
+                                 gxvv.GXvv.vv_np(pp.xyz[:, 0])._vv,
+                                 gxvv.GXvv.vv_np(pp.xyz[:, 1])._vv)
 
-    def rectangle(self, p1, p2):
+    def xy_rectangle(self, p1, p2):
         """
         Draw a 2D rectangle on the current plane
         :param p1:  Point starting

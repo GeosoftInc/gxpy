@@ -1,5 +1,6 @@
 import unittest
 import os
+import numpy as np
 
 import geosoft
 import geosoft.gxpy.gx as gx
@@ -49,31 +50,56 @@ class Test(unittest.TestCase):
             self.assertEqual(vw.mapname(), mapname)
 
 
-    def test_line_box(self):
+    def test_line_drawing(self):
         self.start(gsys.func_name())
 
-        with gxv.GXview() as view:
-
-            view.rectangle(gxv.Point(0,0), gxv.Point(15,10))
-            self.assertTrue(os.path.isfile(view.map().filename()))
-
-        with gxmap.GXmap.new("test_rectangle", overwrite=True) as gmap:
+        with gxmap.GXmap.new("test", overwrite=True) as gmap:
             mapfile = gmap.filename()
             with gxv.GXview("rectangle_test", gmap) as view:
                 p1 = gxv.Point(0,0)
-                p2 = gxv.Point(150,100)
+                p2 = gxv.Point(100,100)
                 poff = gxv.Point(10,5)
                 view.set_pen({'fill_color': gxapi.C_LT_GREEN})
                 pen = view.get_pen()
                 self.assertEqual(pen['fill_color'], gxapi.C_LT_GREEN)
-                view.rectangle(p1, p2)
+                view.xy_rectangle(p1, p2)
 
                 view.set_pen({'line_style': (2, 2.0)})
                 view.xy_line(p1 + poff, p2 - poff)
 
+            plinelist = [[110,5],
+                         [120,20],
+                         [130,15],
+                         [150,50],
+                         [160,70],
+                         [190,50],
+                         [220,50],
+                         [235,18.5]]
+
+            with gxv.GXview("poly", gmap) as view:
+                view.set_pen({'line_style': (2, 2.0)})
+                view.xy_poly_line(gxv.PPoint.from_list(plinelist))
+                view.set_pen({'line_style': (4, 2.0), 'line_smooth': gxv.SMOOTH_AKIMA})
+                view.xy_poly_line(gxv.PPoint.from_list(plinelist))
+
+                ppp = np.array(plinelist)
+                pp = gxv.PPoint(ppp[3:,:])
+                view.set_pen({'line_style': (5, 5.0),
+                              'line_smooth': gxv.SMOOTH_CUBIC,
+                              'line_color': gxapi.C_RED,
+                              'line_thick': 0.25,
+                              'fill_color': gxapi.C_LT_BLUE})
+                view.xy_poly_line(pp, close=True)
+
+                view.set_pen({'fill_color':gxapi.C_LT_GREEN})
+                pp = (pp - (100, 0, 0)) / 2 + (100, 0, 0)
+                view.xy_poly_line(pp, close=True)
+                pp += (0, 25, 0)
+                view.set_pen({'fill_color': gxapi.C_LT_RED})
+                view.xy_poly_line(pp, close=True)
+
         gxvwr.map_viewer(mapfile)
         gxmap.delete_files(mapfile)
-
 
 if __name__ == '__main__':
 
