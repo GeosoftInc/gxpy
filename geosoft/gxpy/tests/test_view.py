@@ -6,6 +6,7 @@ import geosoft
 import geosoft.gxpy.gx as gx
 import geosoft.gxpy.system as gsys
 import geosoft.gxpy.map as gxmap
+import geosoft.gxpy.geometry as gxgm
 import geosoft.gxpy.view as gxv
 import geosoft.gxapi as gxapi
 import geosoft.gxpy.viewer as gxvwr
@@ -29,6 +30,20 @@ class Test(unittest.TestCase):
     def test_version(self):
         self.start(gsys.func_name())
         self.assertEqual(gxmap.__version__, geosoft.__version__)
+
+    def test_geometry(self):
+        self.start(gsys.func_name())
+
+        p = gxgm.Point((5,10))
+        self.assertEqual(p.p.tolist(), [5.0, 10.0, 0.0])
+        self.assertEqual(p.xy(), (5.0,10.0))
+        self.assertEqual(p.xyz(), (5.0, 10.0, 0.0))
+        self.assertEqual(p.x(), 5.0)
+        self.assertEqual(p.y(), 10.0)
+
+        p -= (0, 0, 15)
+        self.assertEqual(p.xyz(), (5.0, 10.0, -15.0))
+
 
     def test_create(self):
         self.start(gsys.func_name())
@@ -56,9 +71,9 @@ class Test(unittest.TestCase):
         with gxmap.GXmap.new("test", overwrite=True) as gmap:
             mapfile = gmap.filename()
             with gxv.GXview("rectangle_test", gmap) as view:
-                p1 = gxv.Point(0,0)
-                p2 = gxv.Point(100,100)
-                poff = gxv.Point(10,5)
+                p1 = gxgm.Point((0, 0))
+                p2 = gxgm.Point((100, 100))
+                poff = gxgm.Point((10, 5))
                 view.set_pen({'fill_color': gxapi.C_LT_GREEN})
                 pen = view.get_pen()
                 self.assertEqual(pen['fill_color'], gxapi.C_LT_GREEN)
@@ -78,12 +93,12 @@ class Test(unittest.TestCase):
 
             with gxv.GXview("poly", gmap) as view:
                 view.set_pen({'line_style': (2, 2.0)})
-                view.xy_poly_line(gxv.PPoint.from_list(plinelist))
+                view.xy_poly_line(gxgm.PPoint.from_list(plinelist))
                 view.set_pen({'line_style': (4, 2.0), 'line_smooth': gxv.SMOOTH_AKIMA})
-                view.xy_poly_line(gxv.PPoint.from_list(plinelist))
+                view.xy_poly_line(gxgm.PPoint.from_list(plinelist))
 
                 ppp = np.array(plinelist)
-                pp = gxv.PPoint(ppp[3:,:])
+                pp = gxgm.PPoint(ppp[3:,:])
                 view.set_pen({'line_style': (5, 5.0),
                               'line_smooth': gxv.SMOOTH_CUBIC,
                               'line_color': gxapi.C_RED,

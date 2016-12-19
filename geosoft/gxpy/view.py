@@ -1,11 +1,13 @@
 #TODO review grd class to clean-up files like map class does.
 
 import numpy as np
+import numbers
 
 import geosoft
 import geosoft.gxapi as gxapi
 from . import map as gxmap
 from . import vv as gxvv
+from . import geometry as gxgm
 from . import ipj as gxipj
 from . import utility as gxu
 
@@ -34,123 +36,6 @@ TILE_TRIANGULAR = gxapi.MVIEW_TILE_TRIANGULAR
 TILE_RANDOM = gxapi.MVIEW_TILE_RANDOM
 
 _def_group = "_default_group_"
-
-# spatial data structures
-class Point:
-    def __enter__(self):
-        return self
-
-    def __exit__(self, xtype, xvalue, xtraceback):
-        self.__del__()
-
-    def __del__(self):
-        pass
-
-    def __repr__(self):
-        return "{}({})".format(self.__class__, self.__dict__)
-
-    def __str__(self):
-        return "({}, {}, {})".format(self.x, self.y, self.z)
-
-    def __init__(self, x, y, z=0.0):
-        self.x = float(x)
-        self.y = float(y)
-        self.z = float(z)
-
-    def __add__(self, p):
-        if type(p) is Point:
-            return Point(self.x + p.x, self.y + p.y, self.z + p.z)
-        else:
-            v = float(p)
-            return Point(self.x + v, self.y + v, self.z + v)
-
-    def __sub__(self, p):
-        if type(p) is Point:
-            return Point(self.x - p.x, self.y - p.y, self.z - p.z)
-        else:
-            v = float(p)
-            return Point(self.x - v, self.y - v, self.z - v)
-
-    def __neg__(self):
-        return Point(-self.x, -self.y, -self.z)
-
-    def __mul__(self, p):
-        if type(p) is Point:
-            return Point(self.x * p.x, self.y * p.y, self.z * p.z)
-        else:
-            v = float(p)
-            return Point(self.x * v, self.y * v, self.z * v)
-
-    def __truediv__(self, p):
-        if type(p) is Point:
-            return Point(self.x / p.x, self.y / p.y, self.z / p.z)
-        else:
-            v = float(p)
-            return Point(self.x / v, self.y / v, self.z / v)
-
-    def xy(self):
-        """ Return (x, y) of a point"""
-        return (self.x, self.y)
-
-    def xyz(self):
-        """ Return (x, y, z) of a point"""
-        return (self.x, self.y, self.z)
-
-
-class PPoint:
-    """
-    Poly-Point class.
-    """
-
-    def __init__(self, xyznp, z=0.0):
-        """
-        Create a PPoint from numpy array
-        :param xyz: numpy array shape (n, 2) or (n, 3)
-        :param z:   constant z value for (n, 2) data, ignored for (n, 3) data
-        """
-
-        self.xyz = np.zeros(xyznp.shape[0]*3, dtype=np.float).reshape((xyznp.shape[0], 3))
-        self.xyz[:, 0] = xyznp[:,0]
-        self.xyz[:, 1] = xyznp[:,1]
-        if xyznp.shape[1] > 2:
-            self.xyz[:, 2] = xyznp[:, 2]
-        else:
-            self.xyz[:, 2] = z
-
-    @classmethod
-    def from_list(cls, xyzlist, z=0.0):
-        return cls(np.array(xyzlist, dtype=np.float), z)
-
-    def __add__(self, p):
-        if type(p) is PPoint:
-            return PPoint(self.xyz + p.xyz)
-        if type(p) is Point:
-            return PPoint(self.xyz + (p.x, p.y, p.z))
-        return PPoint(self.xyz + p)
-
-    def __sub__(self, p):
-        if type(p) is PPoint:
-            return PPoint(self.xyz - p.xyz)
-        if type(p) is Point:
-            return PPoint(self.xyz - (p.x, p.y, p.z))
-        return PPoint(self.xyz - p)
-
-    def __neg__(self):
-        return PPoint(self.xyz * -1.0)
-
-    def __mul__(self, p):
-        if type(p) is PPoint:
-            return PPoint(self.xyz * p.xyz)
-        if type(p) is Point:
-            return PPoint(self.xyz * (p.x, p.y, p.z))
-        return PPoint(self.xyz * p)
-
-    def __truediv__(self, p):
-        if type(p) is PPoint:
-            return PPoint(self.xyz / p.xyz)
-        if type(p) is Point:
-            return PPoint(self.xyz / (p.x, p.y, p.z))
-        return PPoint(self.xyz / p)
 
 class GXview:
     """
@@ -289,18 +174,18 @@ class GXview:
     def xy_line(self, p1, p2):
         """
         Draw a line on the current plane
-        :param p1:  Point starting
-        :param p2:  Point end
+        :param p1:  gxpy.geometry.Point starting
+        :param p2:  gxpy.geometry.Point end
 
         .. versionadded:: 9.2
         """
 
-        self._view.line(p1.x, p1.y, p2.x, p2.y)
+        self._view.line(p1.x(), p1.y(), p2.x(), p2.y())
 
     def xy_poly_line(self, pp, close=False):
         """
         Draw a polyline the current plane
-        :param pline: PPoint
+        :param pline: gxpy.geometry.PPoint
         :param close: if True, draw a polygon, default is a polyline
 
         .. versionadded:: 9.2
@@ -308,12 +193,12 @@ class GXview:
 
         if close:
             self._view.poly_line(gxapi.MVIEW_DRAW_POLYGON,
-                                 gxvv.GXvv.vv_np(pp.xyz[:,0])._vv,
-                                 gxvv.GXvv.vv_np(pp.xyz[:,1])._vv)
+                                 gxvv.GXvv.vv_np(pp.x())._vv,
+                                 gxvv.GXvv.vv_np(pp.y())._vv)
         else:
             self._view.poly_line(gxapi.MVIEW_DRAW_POLYLINE,
-                                 gxvv.GXvv.vv_np(pp.xyz[:, 0])._vv,
-                                 gxvv.GXvv.vv_np(pp.xyz[:, 1])._vv)
+                                 gxvv.GXvv.vv_np(pp.x())._vv,
+                                 gxvv.GXvv.vv_np(pp.y())._vv)
 
     def xy_rectangle(self, p1, p2):
         """
@@ -324,4 +209,4 @@ class GXview:
         .. versionadded:: 9.2
         """
 
-        self._view.rectangle(p1.x, p1.y, p2.x, p2.y)
+        self._view.rectangle(p1.x(), p1.y(), p2.x(), p2.y())
