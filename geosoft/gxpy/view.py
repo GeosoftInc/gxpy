@@ -83,6 +83,7 @@ class GXview:
 
         # intitialize pen
         self._init_pen_attributes()
+        self._pen_stack = []
 
     def _line_style(self, ls):
         self._view.line_style(ls[0], ls[1])
@@ -93,11 +94,11 @@ class GXview:
 
         def setpen(att, fn, setting):
             fn(setting)
-            self.pen[att] = setting
-            self.pen_fn[att] = fn
+            self._pen[att] = setting
+            self._pen_fn[att] = fn
 
-        self.pen = {}
-        self.pen_fn = {}
+        self._pen = {}
+        self._pen_fn = {}
         setpen('line_color', self._view.line_color, gxapi.C_BLACK)
         setpen('line_thick', self._view.line_thick, 0.1)
         setpen('line_smooth',self._view.line_smooth, SMOOTH_NONE)
@@ -134,6 +135,28 @@ class GXview:
         """
         return self._map.filename()
 
+    def color(self, cstr):
+        """
+        Return a color from a color string.
+        :param cstr:    color string (see below)
+        :return:        color
+
+        Colour strings may be "R","G","B","C","M","Y",
+        "H","S","V", or "K" or a combination of these
+        characters, each followed by up to three digits
+        specifying a number between 0 and 255.
+        An empty string will produce C_ANY_NONE.
+
+        You must stay in the same colour model, RGB, CMY,
+        HSV or K.
+
+        For example "R", "R127G22", "H255S127V32"
+
+        Characters are not case sensitive.
+        """
+
+        return self._view.color(str)
+
     def set_pen(self, pen=None):
         """
         Set the current drawing pen attributes
@@ -147,9 +170,9 @@ class GXview:
 
         else:
             for att, setting in pen.items():
-                if self.pen[att] != setting:
-                    self.pen_fn[att](setting)
-                    self.pen[att] = setting
+                if self._pen[att] != setting:
+                    self._pen_fn[att](setting)
+                    self._pen[att] = setting
 
     def get_pen(self):
         """
@@ -157,14 +180,30 @@ class GXview:
 
         .. versionadded:: 9.2
         """
-        return self.pen
+        return self._pen.copy()
+
+    def push_pen(self, pen=None):
+        """Push current pen attributes on the pen stack. If pen not specified, all pen attributes are pushed."""
+        if pen is None:
+            self._pen_stack.append(self._pen.copy())
+        else:
+            oldpen = {}
+            for key in pen:
+                oldpen[key] = self._pen[key]
+            self._pen_stack.append(oldpen)
+
+    def pop_pen(self):
+        """Pop the last pen off the pen stack."""
+        if len(self._pen_stack) > 0:
+            self.set_pen(self._pen_stack[-1])
+            del self._pen_stack[-1:]
 
     def group(self, name, append=False):
         """
         Start a new named group in a view.  Drawing functions that follow will be rendered into this group.
 
         :param name:    name of the group
-        :param append:  True to append to the group should it exist
+        :param append:  True to append to an existing group
 
         .. versionadded:: 9.2
         """
@@ -188,6 +227,10 @@ class GXview:
         :param pline: gxpy.geometry.PPoint
         :param close: if True, draw a polygon, default is a polyline
 
+        .. note::
+            Smooth-line polygons must have at least 6 points for the closure to
+            appear continuous.
+
         .. versionadded:: 9.2
         """
 
@@ -200,13 +243,21 @@ class GXview:
                                  gxvv.GXvv.vv_np(pp.x())._vv,
                                  gxvv.GXvv.vv_np(pp.y())._vv)
 
-    def xy_rectangle(self, p1, p2):
+    def xy_rectangle(self, p1, p2, pen=None):
         """
         Draw a 2D rectangle on the current plane
         :param p1:  Point starting
         :param p2:  Point diagonal
+        :param pen: pen to use, attribtutes modify current pen for the rectangle only
 
         .. versionadded:: 9.2
         """
 
+        if pen is not None:
+            self.push_pen(pen)
+            self.set_pen(pen)
+
         self._view.rectangle(p1.x(), p1.y(), p2.x(), p2.y())
+
+        if pen is not None:
+            self.pop_pen()

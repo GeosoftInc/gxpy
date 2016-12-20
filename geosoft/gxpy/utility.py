@@ -7,6 +7,7 @@
 import os
 import json
 import subprocess
+import binascii
 from time import gmtime, strftime
 from ._jdcal.jdcal import is_leap, gcal2jd, jd2gcal
 from distutils.version import StrictVersion
@@ -91,8 +92,6 @@ def dict_from_lst(lst):
         lst.gt_item(0, item, key)
         lst.gt_item(1, item, val)
         dct[key.value] = val.value
-    del key
-    del val
     return dct
 
 
@@ -626,3 +625,9 @@ def run_external_python(script, script_args='',
             raise UtilityException(_('\n\nExternal python error({}) running: {}').format(err, command))
 
     return get_shared_dict()
+
+def crc32_file(filename):
+    """ Return 32-bit CRC of a file."""
+    buf = open(filename, 'rb').read()
+    crc = (binascii.crc32(buf) & 0xFFFFFFFF)
+    return crc

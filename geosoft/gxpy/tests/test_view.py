@@ -4,6 +4,7 @@ import numpy as np
 
 import geosoft
 import geosoft.gxpy.gx as gx
+import geosoft.gxpy.utility as gxu
 import geosoft.gxpy.system as gsys
 import geosoft.gxpy.map as gxmap
 import geosoft.gxpy.geometry as gxgm
@@ -60,9 +61,31 @@ class Test(unittest.TestCase):
         gmap = gxmap.GXmap.new("test_map")
         gmap.remove_on_close(True)
         mapname = gmap.filename()
-        with gxv.GXview("test", gmap) as vw:
-            self.assertEqual(vw.viewname(), "test")
-            self.assertEqual(vw.mapname(), mapname)
+        with gxv.GXview("test", gmap) as view:
+            self.assertEqual(view.viewname(), "test")
+            self.assertEqual(view.mapname(), mapname)
+
+            def_pen = view.get_pen()
+            pn = {"line_thick": 99, "pat_number": 88}
+            view.push_pen()
+            view.set_pen(pn)
+            new_pen = view.get_pen()
+            self.assertEqual(new_pen["line_thick"], 99)
+            self.assertEqual(new_pen["pat_number"], 88)
+
+            view.pop_pen()
+            pen = view.get_pen()
+            self.assertEqual(pen, def_pen)
+
+            view.push_pen(pn)
+            view.set_pen(pn)
+            new_pen = view.get_pen()
+            self.assertEqual(new_pen["line_thick"], 99)
+            self.assertEqual(new_pen["pat_number"], 88)
+
+            view.pop_pen()
+            pen = view.get_pen()
+            self.assertEqual(pen, def_pen)
 
 
     def test_line_drawing(self):
@@ -71,7 +94,10 @@ class Test(unittest.TestCase):
         with gxmap.GXmap.new("test", overwrite=True) as gmap:
             mapfile = gmap.filename()
             with gxv.GXview("rectangle_test", gmap) as view:
-                p1 = gxgm.Point((0, 0))
+
+                view.xy_rectangle(gxgm.Point((0,0)), gxgm.Point((250,110)), pen={'line_thick': 1})
+
+                p1 = gxgm.Point((5, 5))
                 p2 = gxgm.Point((100, 100))
                 poff = gxgm.Point((10, 5))
                 view.set_pen({'fill_color': gxapi.C_LT_GREEN})
@@ -82,16 +108,18 @@ class Test(unittest.TestCase):
                 view.set_pen({'line_style': (2, 2.0)})
                 view.xy_line(p1 + poff, p2 - poff)
 
-            plinelist = [[110,5],
-                         [120,20],
-                         [130,15],
-                         [150,50],
-                         [160,70],
-                         [190,50],
-                         [220,50],
-                         [235,18.5]]
-
             with gxv.GXview("poly", gmap) as view:
+
+                plinelist = [[110,5],
+                             [120,20],
+                             [130,15],
+                             [150,50],
+                             [160,70],
+                             [175,35],
+                             [190,65],
+                             [220,50],
+                             [235,18.5]]
+
                 view.set_pen({'line_style': (2, 2.0)})
                 view.xy_poly_line(gxgm.PPoint.from_list(plinelist))
                 view.set_pen({'line_style': (4, 2.0), 'line_smooth': gxv.SMOOTH_AKIMA})
@@ -113,6 +141,7 @@ class Test(unittest.TestCase):
                 view.set_pen({'fill_color': gxapi.C_LT_RED})
                 view.xy_poly_line(pp, close=True)
 
+        self.assertEqual(gxmap.crc_map(mapfile), 242616022)
         gxvwr.map_viewer(mapfile)
         gxmap.delete_files(mapfile)
 

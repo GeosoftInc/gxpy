@@ -56,6 +56,44 @@ def delete_files(filename):
     remove(filename + '.xml')
     remove(filename)
 
+def export(mapfile, rasterfile, type="PNG", pix_width=1000):
+    """
+    Save a map to an image file
+    :param mapfile:     mapfile name
+    :param rasterfile:  name of the output raster file
+    :param type:        one of type list below
+    :param pix_width:   image pixel width
+    :return:
+
+    .. versionadded:: 9.2
+    """
+
+    GXmap.open(mapfile)._map.export_all_raster(rasterfile, '',
+                                               pix_width, 0, gxapi.rDUMMY,
+                                               gxapi.MAP_EXPORT_BITS_24,
+                                               gxapi.MAP_EXPORT_METHOD_NONE,
+                                               type,
+                                               '')
+
+def crc_map(mapfile, pix_width=1000):
+    """
+    Return the CRC of a map based on the output bitmap image.
+    :param mapfile:     name of the map file
+    :param pix_width:   image pixel width
+    :return:            CRC as an int
+
+    .. versionadded:: 9.2
+    """
+    crc_image = "__crc_image__.bmp"
+    export(mapfile, crc_image, type='BMP', pix_width=pix_width)
+    crc = gxu.crc32_file(crc_image)
+    try:
+        os.remove(crc_image)
+        os.remove(crc_image + '.gi')
+        os.remove(crc_image + '.xml')
+    except FileNotFoundError:
+        pass
+    return crc
 
 class GXmap:
     """

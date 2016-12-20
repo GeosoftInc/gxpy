@@ -5,9 +5,9 @@
 			<title>sample_map</title>
 			<file_format>Geosoft Map</file_format>
 			<data_created_by>IAN-OFFICE\Ian</data_created_by>
-			<data_creation_date>2016-12-18</data_creation_date>
+			<data_creation_date>2016-12-19</data_creation_date>
 			<metadata_created_by>IAN-OFFICE\Ian</metadata_created_by>
-			<metadata_creation_date>2016-12-18</metadata_creation_date>
+			<metadata_creation_date>2016-12-19</metadata_creation_date>
 		</dataset>
 	</geosoft>
 	<gmd:identificationInfo>
@@ -20,7 +20,7 @@
 					<gmd:date>
 						<gmd:CI_Date>
 							<gmd:date>
-								<gco:Date>2016-12-18</gco:Date>
+								<gco:Date>2016-12-19</gco:Date>
 							</gmd:date>
 						</gmd:CI_Date>
 					</gmd:date>
@@ -50,6 +50,6 @@
 		</gmd:CI_ResponsibleParty>
 	</gmd:contact>
 	<gmd:dateStamp>
-		<gco:Date>2016-12-18</gco:Date>
+		<gco:Date>2016-12-19</gco:Date>
 	</gmd:dateStamp>
 </gmd:MD_Metadata>
