@@ -13,7 +13,8 @@ class Test(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
-        cls.gxp = gx.GXpy()
+        global logfile
+        cls.gxc = gx.GXpy(parent_window=0, log_file="test_utility.log")
 
     @classmethod
     def tearDownClass(cls):
@@ -21,7 +22,7 @@ class Test(unittest.TestCase):
     
     @classmethod
     def start(cls,test):
-        print("\n*** {} *** - {}".format(test, geosoft.__version__))
+        cls.gxc.log("*** {} *** - {}".format(test, geosoft.__version__))
 
     def test_misc(self):
         self.start(gsys.func_name())
@@ -98,7 +99,7 @@ class Test(unittest.TestCase):
         
         def test(s):
             r = gxu.rdecode(s)
-            print('\'{}\' -> {}'.format(s,r))
+            self.gxc.log('\'{}\' -> {}'.format(s,r))
             return r
             
         self.assertEqual(test("1.9"),1.9)
@@ -160,7 +161,7 @@ class Test(unittest.TestCase):
 
         def test(s,f):
             r = gxu.decode(s,f)
-            print('\'{},{}\' -> {}'.format(s,f,r))
+            self.gxc.log('\'{},{}\' -> {}'.format(s,f,r))
             return r
 
         self.assertEqual(test("1.9",'f8'),1.9)
@@ -259,11 +260,11 @@ class Test(unittest.TestCase):
     def test_paths(self):
         self.start(gsys.func_name())
 
-        local = gxu.project_path()
+        local = gxu.folder_workspace()
         self.assertEqual(os.path.normpath(local), os.getcwd())
-        user = gxu.user_path()
+        user = gxu.folder_user()
         self.assertTrue(os.path.isdir(user))
-        temp = gxu.temp_path()
+        temp = gxu.folder_temp()
         self.assertTrue(os.path.isdir(temp))
 
     def test_display_message(self):

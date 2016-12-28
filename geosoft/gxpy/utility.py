@@ -5,6 +5,7 @@
 """
 
 import os
+import uuid as uid
 import json
 import subprocess
 import binascii
@@ -499,9 +500,9 @@ def get_parameters(group='_', parms=None, default=None):
     return p
 
 
-def project_path():
+def folder_workspace():
     """
-    Return the Geosoft project folder path.
+    Return the Geosoft project folder name.
 
     .. versionadded:: 9.1
     """
@@ -510,9 +511,9 @@ def project_path():
     return path.value.replace('\\', '/')
 
 
-def user_path():
+def folder_user():
     """
-    Return the Geosoft user configurations folder path.
+    Return the Geosoft user configurations folder name.
 
     .. versionadded:: 9.1
     """
@@ -520,23 +521,34 @@ def user_path():
     gxapi.GXSYS.get_path(gxapi.SYS_PATH_GEOSOFT_USER, path)
     return path.value.replace('\\', '/')
 
-
-def temp_path():
+def folder_temp():
     """
-    Return the Geosoft temporary folder path.
+    Return the Geosoft temporary folder name.
+
+    .. Note::
+        If creating temporary files, better to use gx method :meth:`~gx.GXpy.temp_file`, which will
+        create the temporary file in the GX-specific folder :mod:`~gx.GXpy.temp_folder`.
 
     .. versionadded:: 9.1
     """
     path = gxapi.str_ref()
     gxapi.GXSYS.get_path(gxapi.SYS_PATH_GEOTEMP, path)
-    return path.value.replace('\\', '/')
+    return path.value.replace('\\', os.pathsep)
 
+def uuid():
+    """
+    :return: a uuid as a string
+
+    .. versionadded:: 9.2
+    """
+    return str(str(uid.uuid1()))
 
 def _temp_dict_file_name():
     """Name of the expected python dictionary as a json file from run_external_python().
 
     .. versionadded:: 9.1
     """
+    #TODO - use a guid ang global name
     return '__shared_dictionary__'
 
 
@@ -550,7 +562,7 @@ def set_shared_dict(dict=None):
     .. versionadded:: 9.1
     """
 
-    # if no ditionary, pop the existing one if it is there
+    # if no dictionary, pop the existing one if it is there
     if dict is None:
         get_shared_dict()
     else:

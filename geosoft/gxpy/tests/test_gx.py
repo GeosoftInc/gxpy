@@ -10,8 +10,7 @@ class Test(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
-        cls.gxp = gxp.GXpy()
-        cls.pp = pprint.PrettyPrinter(indent=3)
+        cls.gxp = gxp.GXpy(log_file="test_gx.log")
 
     @classmethod
     def tearDownClass(cls):
@@ -19,7 +18,7 @@ class Test(unittest.TestCase):
         
     @classmethod
     def start(cls,test):
-        print("\n*** {} ***".format(test))
+        cls.gxp.log("\n*** {} ***".format(test))
 
     def test_gxpy(self):
         self.start(gsys.func_name())
@@ -52,8 +51,7 @@ class Test(unittest.TestCase):
 
         env = self.gxp.environment(2)
         self.assertTrue(isinstance(env,str))
-        print(env)
-
+        self.gxp.log(env)
 
     def test_entitlements(self):
         self.start(gsys.func_name())
