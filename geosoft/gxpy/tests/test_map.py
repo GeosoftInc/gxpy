@@ -9,7 +9,7 @@ class Test(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
-        cls.gx = gx.GXpy()
+        cls.gx = gx.GXpy(log=print)
         os.chdir(os.path.dirname(os.path.realpath(__file__)))
         pass
 
@@ -19,7 +19,7 @@ class Test(unittest.TestCase):
     
     @classmethod
     def start(cls,test):
-        print("\n*** {} *** - {}".format(test, geosoft.__version__))
+        cls.gx.log("\n*** {} *** - {}".format(test, geosoft.__version__))
 
     def test_version(self):
         self.start(gsys.func_name())

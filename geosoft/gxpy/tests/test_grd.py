@@ -12,7 +12,7 @@ class Test(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
-        cls.gx = gx.GXpy()
+        cls.gx = gx.GXpy(log=print)
         os.chdir(os.path.dirname(os.path.realpath(__file__)))
         cls.folder, files = gsys.unzip(os.path.join(os.path.dirname(__file__), 'testgrids.zip'))
         cls.g1 = gxgrd.GXgrd.open(os.path.join(cls.folder, files[0]))
@@ -30,7 +30,7 @@ class Test(unittest.TestCase):
     
     @classmethod
     def start(cls,test):
-        print("\n*** {} *** - {}".format(test, geosoft.__version__))
+        cls.gx.log("*** {} *** - {}".format(test, geosoft.__version__))
 
     def test_grc(self):
         self.start(gsys.func_name())
@@ -126,6 +126,9 @@ class Test(unittest.TestCase):
     def test_gridMosaic(self):
         self.start(gsys.func_name())
 
+        def log(log_str):
+            self.gx.log(log_str)
+
         m1s = os.path.join(self.folder, 'm1.grd(GRD)')
         m1 = self.g1.save_as(m1s)
         m2s = os.path.join(self.folder, 'm2.grd(GRD)')
@@ -136,7 +139,7 @@ class Test(unittest.TestCase):
         glist = [m1s, m2s]
 
         mosaicGrid = os.path.join(self.folder, 'testMozaic.grd')
-        grd = gxgrd.gridMosaic(mosaicGrid, glist, report=print)
+        grd = gxgrd.gridMosaic(mosaicGrid, glist, report=log)
 
         properties = grd.properties()
         self.assertAlmostEqual(properties.get('dx'),0.01)
@@ -149,7 +152,7 @@ class Test(unittest.TestCase):
         self.assertEqual(str(properties.get('ipj')),'WGS 84')
 
         m= os.path.join(self.folder, 'testMosaic.hgd(HGD)')
-        grd = gxgrd.gridMosaic(m, glist, report=print)
+        grd = gxgrd.gridMosaic(m, glist, report=log)
         del grd
         gc.collect()
 

@@ -14,7 +14,7 @@ class Test(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         global logfile
-        cls.gxc = gx.GXpy(parent_window=0, log_file="test_utility.log")
+        cls.gxc = gx.GXpy(parent_window=0, log=print)
 
     @classmethod
     def tearDownClass(cls):

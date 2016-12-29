@@ -56,20 +56,21 @@ def delete_files(filename):
     remove(filename + '.xml')
     remove(filename)
 
-def export(mapfile, rasterfile, type="PNG", pix_width=1000):
+def save_as_image(mapfile, imagefile, type="PNG", pix_width=1000, pix_height=0):
     """
     Save a map to an image file
     :param mapfile:     mapfile name
-    :param rasterfile:  name of the output raster file
+    :param imagefile:   name of the output raster file
     :param type:        one of type list below
-    :param pix_width:   image pixel width
+    :param pix_width:   image pixel width, if 0 use pix_height only
+    :param pix_height:  image pixel height, if 0 use pix_width only
     :return:
 
     .. versionadded:: 9.2
     """
 
-    GXmap.open(mapfile)._map.export_all_raster(rasterfile, '',
-                                               pix_width, 0, gxapi.rDUMMY,
+    GXmap.open(mapfile)._map.export_all_raster(imagefile, '',
+                                               pix_width, pix_height, gxapi.rDUMMY,
                                                gxapi.MAP_EXPORT_BITS_24,
                                                gxapi.MAP_EXPORT_METHOD_NONE,
                                                type,
@@ -79,16 +80,16 @@ def crc_map(mapfile, pix_width=1000):
     """
     Return the CRC of a map based on the output bitmap image.
     :param mapfile:     name of the map file
-    :param pix_width:   image pixel width
+    :param pix_width:   image pixel width - use a higher resolution to test more detail
     :return:            CRC as an int
 
     .. versionadded:: 9.2
     """
     crc_image = "__crc_image__.bmp"
-    export(mapfile, crc_image, type='BMP', pix_width=pix_width)
+    save_as_image(mapfile, crc_image, type='BMP', pix_width=pix_width)
     crc = gxu.crc32_file(crc_image)
+    os.remove(crc_image)
     try:
-        os.remove(crc_image)
         os.remove(crc_image + '.gi')
         os.remove(crc_image + '.xml')
     except FileNotFoundError:

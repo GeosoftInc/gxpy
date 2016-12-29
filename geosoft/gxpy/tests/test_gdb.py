@@ -17,7 +17,7 @@ class Test(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
-        cls.gx = gx.GXpy()
+        cls.gx = gx.GXpy(log=print)
         cls.folder, files = gsys.unzip(os.path.join(os.path.dirname(__file__), 'test_database.zip'))
         cls.gdb_name = os.path.join(cls.folder, files[0])
         cls.gdb = gxgdb.GXdb.open(cls.gdb_name)
@@ -34,7 +34,7 @@ class Test(unittest.TestCase):
 
     @classmethod
     def start(cls,test):
-        print("\n*** {} *** - {}".format(test, geosoft.__version__))
+        cls.gx.log("*** {} *** - {}".format(test, geosoft.__version__))
         
     def tf(f):
         return os.path.join(os.path.dirname(__file__), f)
@@ -553,7 +553,7 @@ class Test(unittest.TestCase):
         self.start(gsys.func_name())
 
         def progress(txt,pct):
-            print(txt,pct)
+            self.gx.log(txt + str(pct))
 
         self.nl = 0
         self.stp = 100
@@ -672,7 +672,7 @@ class Test(unittest.TestCase):
                 # fid is the (start,increment) fiducial.
 
                 # do something with the data in npd ...
-                print('{}: {}'.format(line,npd.shape))
+                self.gx.log('{}: {}'.format(line,npd.shape))
 
 
             except gxgdb.GDBException as err:

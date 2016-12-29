@@ -30,7 +30,7 @@ def test_mapviewer():
 
 if __name__ == '__main__':
 
-    gx = gx.GXpy()
+    gx = gx.GXpy(parent_window=-1, log=print)
     os.chdir(os.path.dirname(os.path.realpath(__file__)))
 
     test_mapviewer()

@@ -27,21 +27,27 @@ class GXException(Exception):
     '''
     pass
 
+#: gxcontext holds global context once created
+gxcontext = None
 
 class GXpy:
     '''
-    Geosoft GX context.
+    Geosoft GX context.  This can only be created once.  Once created, gxpy.gxcontext will
+    contain the GX context.  gxpy.gxcontext will be None if the context has not been created.
 
     :param app:             application name, default is the script name
     :param version:         application version number, default geosoft version
     :param parent_window:   ID of the parent window.  If -1 a Tkinter window
                             is created for GUI/Viewer functions to work.
-    :param: log_file        name of a file to record logging information, '' for a default name
-                            based on the current date and time.  If not provided (log_file=None),
-                            no log file is created.
+    :param log:             name of a file to record logging information, or a call-back that
+                            accepts a string.  Specifying '' logs to a default file named
+                            using the current date and time.  If not provided calls to log()
+                            are ignored.
+                            
     :members:
         :gxapi:             GX context to be used to call geosoft.gxapi methods
         :gid:               User's Geosoft ID
+        :gxcontext:         Class instance for this session, `None` if not created, or deleted.
 
     :raises:
         :GXException():  if unable to create context
@@ -49,7 +55,9 @@ class GXpy:
     .. versionadded:: 9.1
 
     .. versionchanged:: 9.2
-        If parent window is not defined (None), create a Tkinter frame as a parent.
+        If parent window is -1, create a Tkinter frame as a parent.
+        
+        Added `log` argument to support log().
 
     '''
 
@@ -80,7 +88,11 @@ class GXpy:
         if self._logf:
             self._logf.close()
 
-    def __init__(self, name=__name__, version=__version__, parent_window=0, log_file=None):
+    def __init__(self, name=__name__, version=__version__, parent_window=0, log=None):
+
+        global gxcontext
+        if gxcontext is not None:
+            raise GXException('GXpy cannot be created twice.  Use gxpy.gxcontext instead.')
 
         now = datetime.datetime.now()
         self._start = now
@@ -118,24 +130,31 @@ class GXpy:
 
         # create a log file
 
-        if log_file is None:
+        if log is None:
             self._logf = None
+            self._log_it = None
 
         else:
 
-            if len(log_file) == 0:
-
-                dts = "{}-{}-{}({}_{}_{}_{})".format(now.year,
-                                                     str(now.month).zfill(2),
-                                                     str(now.day).zfill(2),
-                                                     str(now.hour).zfill(2),
-                                                     str(now.minute).zfill(2),
-                                                     str(now.second).zfill(2),
-                                                     str(now.microsecond//1000).zfill(3))
-                log_file = "_gx_" + dts + ".log"
-
-            self._log_file_name = log_file
-            self._logf = open(self._log_file_name, "wb+")
+            if callable(log):
+                self._log_it = log
+                self._logf = None
+                
+            else:
+    
+                if len(log) == 0:
+    
+                    dts = "{}-{}-{}({}_{}_{}_{})".format(now.year,
+                                                         str(now.month).zfill(2),
+                                                         str(now.day).zfill(2),
+                                                         str(now.hour).zfill(2),
+                                                         str(now.minute).zfill(2),
+                                                         str(now.second).zfill(2),
+                                                         str(now.microsecond//1000).zfill(3))
+                    log = "_gx_" + dts + ".log"
+    
+                self._logf = open(log, "wb")
+                self._log_it = self._log_to_file
 
             self.log('starting')
             self.log('UTC date: {}'.format(gxapi.GXSYS.utc_date()))
@@ -154,8 +173,25 @@ class GXpy:
 
         atexit.register(self._cleanup_files)
 
+        gxcontext = self
+
     def __del__(self):
-        pass
+        global gxcontext
+        gxcontext = None
+
+    def _log_to_file(self, log_str):
+
+        now = datetime.datetime.now()
+        dts = "{}-{}-{} {}:{}:{}:{} ".format(now.year,
+                                             str(now.month).zfill(2),
+                                             str(now.day).zfill(2),
+                                             str(now.hour).zfill(2),
+                                             str(now.minute).zfill(2),
+                                             str(now.second).zfill(2),
+                                             str(now.microsecond // 1000).zfill(3))
+        for l in str(log_str).split('\n'):
+            logstr = dts + l + os.linesep
+            self._logf.write(logstr.encode('utf-8'))
 
     def main_wind_id(self):
         '''
@@ -244,12 +280,12 @@ class GXpy:
         Return a unique temporary file name as a full path.
 
         :param ext: optional extension, including "." separator
-        :return:    uuid-based file name in the Geosoft temporary folder.
+        :return:    uuid-based file name in the instance temporary folder.
 
         .. versionadded:: 9.2
         """
 
-        return os.path.join(self._temp_file_folder, gxu.uuid() + ext)
+        return os.path.join(self.temp_folder(), gxu.uuid() + ext)
 
     def environment(self, formated_indent=-1):
         '''
@@ -277,32 +313,21 @@ class GXpy:
 
     def log(self, log_str):
         """
-        Log a string in the log file.  A log file must be defined when the GX context
-        is created, otherwise logging is ignored.
+        Log a string to the log file or log call-back as defined when creating :class:`~gx.GXpy` instance.
 
-        :param log_str: string to log.  This should not contain a new-line
+        :param log_str: string to log.
 
-        Logging format is:
+        If logging to a file each line is preceded by the date and time:
 
         .. code::
-            2016-12-25 12:34:16.175 log_str
+         2016-12-25 12:34:16.175 log_str_line_1
+         2016-12-25 12:34:16.175 log_str_line_2
 
         .. versionadded:: 9.2
         """
 
-        if self._logf:
-            now = datetime.datetime.now()
-            dts = "{}-{}-{} {}:{}:{}:{} ".format(now.year,
-                                                 str(now.month).zfill(2),
-                                                 str(now.day).zfill(2),
-                                                 str(now.hour).zfill(2),
-                                                 str(now.minute).zfill(2),
-                                                 str(now.second).zfill(2),
-                                                 str(now.microsecond//1000).zfill(3))
-
-            self._logf.write(dts.encode('utf-8'))
-            self._logf.write(str(log_str).encode('utf-8'))
-            self._logf.write(os.linesep.encode('utf-8'))
+        if self._log_it:
+            self._log_it(log_str)
 
 ####################################################
 # deprecated

@@ -1,6 +1,6 @@
 ﻿import unittest
 
-import pprint
+import os
 
 import geosoft
 import geosoft.gxpy.system as gsys
@@ -10,7 +10,7 @@ class Test(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
-        cls.gxp = gxp.GXpy(log_file="test_gx.log")
+        cls.gxp = gxp.GXpy(log=print)
 
     @classmethod
     def tearDownClass(cls):
@@ -18,7 +18,7 @@ class Test(unittest.TestCase):
         
     @classmethod
     def start(cls,test):
-        cls.gxp.log("\n*** {} ***".format(test))
+        cls.gxp.log("*** {} ***".format(test))
 
     def test_gxpy(self):
         self.start(gsys.func_name())
@@ -58,6 +58,31 @@ class Test(unittest.TestCase):
 
         ent = self.gxp.entitlements()
         self.assertTrue(ent.get('1000'), 'Oasis montaj™ Base')
+
+    def test_onegxc(self):
+        self.start(gsys.func_name())
+
+        gxcontext = gxp.gxcontext
+        self.assertEqual(self.gxp, gxcontext)
+        self.assertRaises(gxp.GXException, gxp.GXpy)
+
+    def test_temp(self):
+        self.start(gsys.func_name())
+
+        tf = self.gxp.temp_folder()
+        self.assertTrue(os.path.isdir(tf))
+
+        tf = self.gxp.temp_file()
+        self.assertFalse(os.path.exists(tf))
+
+        tf = self.gxp.temp_file(ext=".dummy")
+        self.assertFalse(os.path.exists(tf))
+        self.assertEqual(tf[-6:], ".dummy")
+        try:
+            with open(tf, 'x'):
+                pass
+        except:
+            self.assertTrue(False)
 
 ###############################################################################################
 

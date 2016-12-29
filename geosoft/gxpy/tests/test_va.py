@@ -10,7 +10,7 @@ class Test(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
-        cls.gxp = gx.GXpy()
+        cls.gxp = gx.GXpy(log=print)
 
     @classmethod
     def tearDownClass(cls):
@@ -18,7 +18,7 @@ class Test(unittest.TestCase):
 
     @classmethod
     def start(cls,test):
-        print("\n*** {} *** - {}".format(test, geosoft.__version__))
+        cls.gxp.log("*** {} *** - {}".format(test, geosoft.__version__))
 
     def test_va(self):
         self.start(gsys.func_name())

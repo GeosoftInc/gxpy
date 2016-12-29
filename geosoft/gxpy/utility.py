@@ -533,7 +533,8 @@ def folder_temp():
     """
     path = gxapi.str_ref()
     gxapi.GXSYS.get_path(gxapi.SYS_PATH_GEOTEMP, path)
-    return path.value.replace('\\', os.pathsep)
+    path = path.value.replace('\\', os.sep)
+    return os.path.normpath(path)
 
 def uuid():
     """
@@ -548,7 +549,6 @@ def _temp_dict_file_name():
 
     .. versionadded:: 9.1
     """
-    #TODO - use a guid ang global name
     return '__shared_dictionary__'
 
 
@@ -640,6 +640,15 @@ def run_external_python(script, script_args='',
 
 def crc32_file(filename):
     """ Return 32-bit CRC of a file."""
-    buf = open(filename, 'rb').read()
-    crc = (binascii.crc32(buf) & 0xFFFFFFFF)
-    return crc
+    def readbuff(f, bsize=16384):
+        while True:
+            buff = f.read(bsize)
+            if not buff:
+                break
+            yield buff
+
+    with open(filename, 'rb') as f:
+        crc = 0
+        for b in readbuff(f):
+            crc = binascii.crc32(b, crc)
+    return crc  & 0xFFFFFFFF
