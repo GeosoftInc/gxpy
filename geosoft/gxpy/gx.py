@@ -1,12 +1,12 @@
 '''
-GX Context and related methods to with Geosoft Python.
+GX Context and related methods required for Geosoft Python.
 '''
 
 import tkinter.ttk as ttk
 import pythoncom
 import pprint
 import os
-import sys
+import json
 import shutil
 import datetime
 import atexit
@@ -27,20 +27,27 @@ class GXException(Exception):
     '''
     pass
 
-#: gxcontext holds global context once created
+#: `geosoft.gxpy.gxcontext` references the global Geosoft Python GX (gxpy) context instance
+#: once created. This can be accessed by any method that requires the global Python GX context.
+#: `geosoft.gxpy.context.gxapi` is the GX context for the `gxapi`.
 gxcontext = None
 
 class GXpy:
     '''
-    Geosoft GX context.  This can only be created once.  Once created, gxpy.gxcontext will
-    contain the GX context.  gxpy.gxcontext will be None if the context has not been created.
+    Geosoft GX context.  This can only be created once.
+
+    Once created, `gxpy.gxcontext` will hold the GX context, which can be used where the application
+    does not have access to the initial context instance.
+
+    `gxpy.gxcontext` will be `None` if the context has not been created, or has been destroyed.
 
     :param app:             application name, default is the script name
-    :param version:         application version number, default geosoft version
-    :param parent_window:   ID of the parent window.  If -1 a Tkinter window
-                            is created for GUI/Viewer functions to work.
+    :param version:         application version number, default Geosoft version
+    :param parent_window:   ID of the parent window.  A parent window is required for GUI-dependent
+                            functions to work.  Set `parent_window=-1` to create a Tkinter frame that
+                            provides a default parent window handle for GUI/Viewer functions.
     :param log:             name of a file to record logging information, or a call-back that
-                            accepts a string.  Specifying '' logs to a default file named
+                            accepts a string.  Specifying `log=''` will log to a default file named
                             using the current date and time.  If not provided calls to log()
                             are ignored.
                             
@@ -52,12 +59,13 @@ class GXpy:
     :raises:
         :GXException():  if unable to create context
 
-    .. versionadded:: 9.1
+    .. versionchanged:: 9.2
+        `parent_window=-1` creates a Tkinter frame as a parent.
 
     .. versionchanged:: 9.2
-        If parent window is -1, create a Tkinter frame as a parent.
-        
-        Added `log` argument to support log().
+        Added `log` argument to support `log()`.
+
+    .. versionadded:: 9.1
 
     '''
 
@@ -79,11 +87,10 @@ class GXpy:
         def file_error(fnc, path, excinfo):
             self.log("error removing temporary file \"{}\": function \"{}\": exception\"{}\"".format(path, str(fnc), str(excinfo)))
 
-        elapsed = datetime.datetime.now() - self._start
-        self.log('shutting down after {} minutes, {}.{} seconds'.format(elapsed.seconds//60, elapsed.seconds%60, str(elapsed.microseconds).zfill(6)))
-
         if not self._keep_temp_files:
-            shutil.rmtree(self._temp_file_folder, ignore_errors=False, onerror=file_error)
+            if self._temp_file_folder != gxu.folder_temp():
+                shutil.rmtree(self._temp_file_folder, ignore_errors=False, onerror=file_error)
+            self._temp_file_folder = None
 
         if self._logf:
             self._logf.close()
@@ -94,9 +101,6 @@ class GXpy:
         if gxcontext is not None:
             raise GXException('GXpy cannot be created twice.  Use gxpy.gxcontext instead.')
 
-        now = datetime.datetime.now()
-        self._start = now
-
         # create a Tkinter parent frame for the viewers
 
         self.tkf = None
@@ -104,8 +108,9 @@ class GXpy:
             self.tkf = ttk.Frame(master=None)
             parent_window = self.tkf.winfo_id()
 
+        self.parent_window = parent_window
         try:
-            self.gxapi = gxapi.GXContext.create(name, version, parent_window)
+            self.gxapi = gxapi.GXContext.create(name, version, self.parent_window)
 
         except:
             self.gxapi = None
@@ -115,18 +120,11 @@ class GXpy:
         company = gxapi.str_ref()
         gxapi.GXSYS.get_licensed_user(user, company)
         self.gid = user.value
+        self._temp_file_folder = None
+        self._keep_temp_files = True
 
-        # create a temporary folder for this GX instance
-
-        path = gxu.folder_temp()
-        uuid = "_gx_" + gxu.uuid()
-        self._temp_file_folder = os.path.join(path, uuid)
-        try:
-            os.makedirs(self._temp_file_folder, exist_ok=True)
-            self._keep_temp_files = False
-        except OSError:
-            self._temp_file_folder = path
-            self._keep_temp_files = True
+        now = datetime.datetime.now()
+        self._start = now
 
         # create a log file
 
@@ -156,12 +154,12 @@ class GXpy:
                 self._logf = open(log, "wb")
                 self._log_it = self._log_to_file
 
-            self.log('starting')
+            self.log('\nGX start')
             self.log('UTC date: {}'.format(gxapi.GXSYS.utc_date()))
             self.log('UTC time: {}'.format(gxapi.GXSYS.utc_time()))
             self.log('API: {}'.format(__version__))
             self.log('GID: {}'.format(self.gid))
-            self.log('rights: {}'.format(self.entitlements()))
+            self.log('rights: {}'.format(json.dumps(self.entitlements())))
             self.log('script: {}'.format(gxs.app_name()))
             self.log('project path: {}'.format(gxu.folder_workspace()))
             self.log('user path: {}'.format(gxu.folder_workspace()))
@@ -200,7 +198,10 @@ class GXpy:
         .. versionadded:: 9.1
         '''
 
-        return self.gxapi.get_main_wnd_id()
+        if self.parent_window == 0:
+            return self.gxapi.get_main_wnd_id()
+        else:
+            return self.parent_window
 
     def active_wind_id(self):
         '''
@@ -253,17 +254,34 @@ class GXpy:
 
     def temp_folder(self):
         '''
-        Return the GX temporary folder path.  Each GX instance will create an instance-specific
+        Return the GX temporary folder path.
+
+        Each GX instance will create an instance-specific
         temporary folder as a child in the Geosoft temporary folder.  Placing temporary files in
         the GX-specific temporary folder will ensure temporary file names will not collide with
-        other running GX-based programs, and that all temporarty files are cleaned-up on termination
+        other running GX-based programs, and that all temporarty files are removed on termination
         of this GX.
         
         Call `keep_temp_folder` to prevent deletion of the temporary files, which can be useful
         when debugging.
         
-        .. versionadded: 9.2
+        .. versionadded:: 9.2
         '''
+
+        if self._temp_file_folder is None:
+
+            # create a temporary folder for this GX instance
+
+            path = gxu.folder_temp()
+            uuid = "_gx_" + gxu.uuid()
+            self._temp_file_folder = os.path.join(path, uuid)
+            try:
+                os.makedirs(self._temp_file_folder, exist_ok=True)
+                self._keep_temp_files = False
+            except OSError:
+                self._temp_file_folder = path
+                self._keep_temp_files = True
+
         return self._temp_file_folder
 
     def keep_temp_folder(self, keep=True):
@@ -271,13 +289,14 @@ class GXpy:
         Keep temporary file folder setting.
         :param keep: True to keep the temporary file folder, False to remove
 
-        .. versionadded: 9.2
+        .. versionadded:: 9.2
         """
         self._keep_temp_files = keep
 
     def temp_file(self, ext=''):
         """
-        Return a unique temporary file name as a full path.
+        Return a unique temporary file name as a full path.  The temporary file is created in
+        the instance temporary folder and will be deleted when this GXpy instance is deleted.
 
         :param ext: optional extension, including "." separator
         :return:    uuid-based file name in the instance temporary folder.
@@ -328,6 +347,30 @@ class GXpy:
 
         if self._log_it:
             self._log_it(log_str)
+
+
+    def elapsed_seconds(self, tag=''):
+        """
+        Return the elapsed seconds since this GX instance started.
+        The elapsed time is logged if logging is on.
+
+        :param tag:     optional string to add to the log
+        :return:        elapsed time in seconds
+
+        .. versionadded:: 9.2
+        """
+
+        elapsed = datetime.datetime.now() - self._start
+        elapsed_seconds = elapsed.seconds + elapsed.microseconds / 1000000.0
+        if tag:
+            tag = '{}> '.format(tag)
+        self.log('{}Elapsed seconds: {} ({} minutes, {}.{} seconds)'.
+                 format(tag,
+                        elapsed_seconds,
+                        elapsed.seconds // 60,
+                        elapsed.seconds % 60,
+                        str(elapsed.microseconds).zfill(6)))
+        return elapsed_seconds
 
 ####################################################
 # deprecated
