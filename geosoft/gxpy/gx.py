@@ -50,7 +50,7 @@ class GXpy:
                             accepts a string.  Specifying `log=''` will log to a default file named
                             using the current date and time.  If not provided calls to log()
                             are ignored.
-                            
+
     :members:
         :gxapi:             GX context to be used to call geosoft.gxapi methods
         :gid:               User's Geosoft ID
@@ -85,7 +85,8 @@ class GXpy:
     def _cleanup_files(self):
 
         def file_error(fnc, path, excinfo):
-            self.log("error removing temporary file \"{}\": function \"{}\": exception\"{}\"".format(path, str(fnc), str(excinfo)))
+            self.log("error removing temporary file \"{}\": function \"{}\": exception\"{}\""
+                     .format(path, str(fnc), str(excinfo)))
 
         if not self._keep_temp_files:
             if self._temp_file_folder != gxu.folder_temp():
@@ -123,8 +124,8 @@ class GXpy:
         self._temp_file_folder = None
         self._keep_temp_files = True
 
-        now = datetime.datetime.now()
-        self._start = now
+        self._start = datetime.datetime.utcnow()
+        self._gxid = gxu.uuid()
 
         # create a log file
 
@@ -142,28 +143,28 @@ class GXpy:
     
                 if len(log) == 0:
     
-                    dts = "{}-{}-{}({}_{}_{}_{})".format(now.year,
-                                                         str(now.month).zfill(2),
-                                                         str(now.day).zfill(2),
-                                                         str(now.hour).zfill(2),
-                                                         str(now.minute).zfill(2),
-                                                         str(now.second).zfill(2),
-                                                         str(now.microsecond//1000).zfill(3))
+                    dts = "{}-{}-{}({}_{}_{}_{})"\
+                        .format(self._start.year,
+                                                         str(self._start.month).zfill(2),
+                                                         str(self._start.day).zfill(2),
+                                                         str(self._start.hour).zfill(2),
+                                                         str(self._start.minute).zfill(2),
+                                                         str(self._start.second).zfill(2),
+                                                         str(self._start.microsecond//1000).zfill(3))
                     log = "_gx_" + dts + ".log"
     
                 self._logf = open(log, "wb")
                 self._log_it = self._log_to_file
 
             self.log('\nGX start')
-            self.log('UTC date: {}'.format(gxapi.GXSYS.utc_date()))
-            self.log('UTC time: {}'.format(gxapi.GXSYS.utc_time()))
+            self.log('GX id: {}'.format(self._gxid))
+            self.log('UTC: {}'.format(self._start))
             self.log('API: {}'.format(__version__))
             self.log('GID: {}'.format(self.gid))
             self.log('rights: {}'.format(json.dumps(self.entitlements())))
             self.log('script: {}'.format(gxs.app_name()))
             self.log('project path: {}'.format(gxu.folder_workspace()))
             self.log('user path: {}'.format(gxu.folder_workspace()))
-            self.log('gx_temp_folder: {}'.format(self._temp_file_folder))
 
         # create a shared string ref for the convenience of Geosoft modules
 
@@ -273,7 +274,7 @@ class GXpy:
             # create a temporary folder for this GX instance
 
             path = gxu.folder_temp()
-            uuid = "_gx_" + gxu.uuid()
+            uuid = "_gx_" + self._gxid
             self._temp_file_folder = os.path.join(path, uuid)
             try:
                 os.makedirs(self._temp_file_folder, exist_ok=True)

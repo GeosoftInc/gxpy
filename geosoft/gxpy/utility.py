@@ -7,6 +7,7 @@
 import os
 import uuid as uid
 import json
+import datetime
 import subprocess
 import binascii
 from time import gmtime, strftime
@@ -508,7 +509,7 @@ def folder_workspace():
     """
     path = gxapi.str_ref()
     gxapi.GXSYS.get_path(gxapi.SYS_PATH_LOCAL, path)
-    return path.value.replace('\\', '/')
+    return path.value.replace('\\', os.sep)
 
 
 def folder_user():
@@ -519,7 +520,7 @@ def folder_user():
     """
     path = gxapi.str_ref()
     gxapi.GXSYS.get_path(gxapi.SYS_PATH_GEOSOFT_USER, path)
-    return path.value.replace('\\', '/')
+    return path.value.replace('\\', os.sep)
 
 def folder_temp():
     """
@@ -639,7 +640,11 @@ def run_external_python(script, script_args='',
     return get_shared_dict()
 
 def crc32_file(filename):
-    """ Return 32-bit CRC of a file."""
+    """
+    Return 32-bit CRC of a file.
+
+    .. versionadded:: 9.2
+    """
     def readbuff(f, bsize=16384):
         while True:
             buff = f.read(bsize)
@@ -652,3 +657,35 @@ def crc32_file(filename):
         for b in readbuff(f):
             crc = binascii.crc32(b, crc)
     return crc  & 0xFFFFFFFF
+
+def year_from_datetime(dt):
+    """
+    Return a decimal Gregorian calendar year from a Python datetime.
+    :param dt: datetime
+    :return: decimal Gregorian year to an accuracy of 1 millisecond
+
+    .. versionadded:: 9.2
+    """
+
+    y_start = datetime.datetime(dt.year, 1, 1)
+    y_end = y_start.replace(year=dt.year+1)
+    return dt.year + (dt - y_start)/(y_end - y_start)
+
+def datetime_from_year(year):
+    """
+    Return the Python datetime from a decimal Gregorian year.
+    :param year: decimal year on the Gregorian calendar.
+    :return: datetime (resolved to 1 millisecond)
+
+    .. versionadded:: 9.2
+    """
+    yr = int(year)
+    remainder = year - yr
+    y_start = datetime.datetime(yr, 1, 1)
+    y_end = y_start.replace(yr + 1)
+    milliseconds = round(remainder * (y_end - y_start).total_seconds() * 1000.0)
+    return y_start + datetime.timedelta(seconds=milliseconds/1000.0)
+
+
+
+
