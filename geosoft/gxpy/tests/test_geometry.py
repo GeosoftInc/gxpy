@@ -13,7 +13,7 @@ class Test(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
-        cls.gx = gx.GXpy(log='test_geometry.log')
+        cls.gx = gx.GXpy(log=print)
         os.chdir(os.path.dirname(os.path.realpath(__file__)))
         pass
 
@@ -27,6 +27,23 @@ class Test(unittest.TestCase):
 
     def test_version(self):
         self.assertEqual(gxmap.__version__, geosoft.__version__)
+
+    def test_exception(self):
+        self.start(gsys.func_name())
+
+        self.assertRaises(ValueError, gxgm.Point, [1, 'yada', 2])
+
+    def test_cs(self):
+        self.start(gsys.func_name())
+
+        s = "WGS 84 / UTM zone 32N <0, 0, 0, 10, 15, 32>"
+        p = gxgm.Point((5,10), ipj=s)
+        self.gx.log(str(p.ipj()), " vcs:", str(p.vcs()))
+        self.assertEqual(str(p.ipj()), "WGS 84 / UTM zone 32N (0,0,0) <32 deg,15 deg,10 deg>")
+
+        pp = gxgm.PPoint(((8, 12), (5, 10)), ipj=s, vcs="geoid")
+        self.gx.log(str(pp.ipj()), " vcs:", str(pp.vcs()))
+        self.assertEqual(str(pp.ipj()), "WGS 84 / UTM zone 32N (0,0,0) <32 deg,15 deg,10 deg>")
 
     def test_point(self):
         self.start(gsys.func_name())

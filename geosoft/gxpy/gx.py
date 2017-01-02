@@ -166,7 +166,7 @@ class GXpy(_Singleton):
                 self.log('rights: {}'.format(json.dumps(self.entitlements())))
                 self.log('script: {}'.format(gxs.app_name()))
                 self.log('project path: {}'.format(gxu.folder_workspace()))
-                self.log('user path: {}'.format(gxu.folder_workspace()))
+                self.log('user path: {}'.format(gxu.folder_user()))
 
             # create a shared string ref for the convenience of Geosoft modules
 
@@ -174,7 +174,7 @@ class GXpy(_Singleton):
 
             atexit.register(self._cleanup_files)
 
-    def _log_to_file(self, log_str):
+    def _log_to_file(self, *args):
 
         now = datetime.datetime.now()
         dts = "{}-{}-{} {}:{}:{}:{} ".format(now.year,
@@ -184,9 +184,10 @@ class GXpy(_Singleton):
                                              str(now.minute).zfill(2),
                                              str(now.second).zfill(2),
                                              str(now.microsecond // 1000).zfill(3))
-        for l in str(log_str).split('\n'):
-            logstr = dts + l + os.linesep
-            self._logf.write(logstr.encode('utf-8'))
+        for log_str in args:
+            for l in str(log_str).split('\n'):
+                logstr = dts + l + os.linesep
+                self._logf.write(logstr.encode('utf-8'))
 
     def main_wind_id(self):
         '''
@@ -327,11 +328,11 @@ class GXpy(_Singleton):
         else:
             return info
 
-    def log(self, log_str):
+    def log(self, *args):
         """
         Log a string to the log file or log call-back as defined when creating :class:`~gx.GXpy` instance.
 
-        :param log_str: string to log.
+        :param *args: arguments to log, each will be converted to a str()
 
         If logging to a file each line is preceded by the date and time:
 
@@ -343,7 +344,7 @@ class GXpy(_Singleton):
         """
 
         if self._log_it:
-            self._log_it(log_str)
+            self._log_it(*args)
 
 
     def elapsed_seconds(self, tag=''):

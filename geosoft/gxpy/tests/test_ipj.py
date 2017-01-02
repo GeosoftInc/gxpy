@@ -50,6 +50,48 @@ class Test(unittest.TestCase):
 
         return
 
+    def test_any(self):
+        self.start(gsys.func_name())
+
+        stref = gxapi.str_ref()
+
+        with gxipj.GXipj.from_any( 'DHDN / Okarito 2000') as ipj:
+            self.gx.log(ipj)
+            gxfs = ipj.to_gxf()
+            self.assertEqual(gxfs[0],'DHDN / Okarito 2000')
+            self.assertEqual(gxfs[1],'DHDN,6377397.155,0.0816968312225275,0')
+            self.assertEqual(gxfs[2],'"Transverse Mercator",-43.11,170.260833333333,1,400000,800000')
+            self.assertEqual(gxfs[3],'m,1')
+            self.assertEqual(gxfs[4],'"DHDN to WGS 84 (1)",582,105,414,1.04,0.35,-3.08,8.29999999996112')
+            self.assertEqual(ipj.name(),'DHDN / Okarito 2000')
+            self.assertEqual(ipj.name(what=gxipj.NAME),'DHDN / Okarito 2000')
+            self.assertEqual(ipj.name(what=gxipj.NAME_PCS),'DHDN / Okarito 2000')
+            self.assertEqual(ipj.name(what=gxipj.NAME_DATUM),'DHDN')
+            self.assertEqual(ipj.name(what=gxipj.NAME_PROJECTION),'Okarito 2000')
+            self.assertEqual(ipj.name(what=gxipj.NAME_ORIENTATION),'0,0,0,0,0,0')
+            self.assertEqual(ipj.name(what=gxipj.NAME_UNIT),'m')
+            self.assertEqual(ipj.name(what=gxipj.NAME_UNIT_FULL),'metre')
+
+        #test IPJ creation using GXF strings
+        with gxipj.GXipj.from_any(['','DHDN','Okarito 2000','','']) as ipj:
+            self.gx.log(ipj)
+            gxfs = ipj.to_gxf()
+            self.assertEqual(gxfs[0],'DHDN / Okarito 2000')
+            self.assertEqual(gxfs[1],'DHDN,6377397.155,0.0816968312225275,0')
+            self.assertEqual(gxfs[2],'"Transverse Mercator",-43.11,170.260833333333,1,400000,800000')
+            self.assertEqual(gxfs[3],'m,1')
+            self.assertEqual(gxfs[4],'"DHDN to WGS 84 (1)",582,105,414,1.04,0.35,-3.08,8.29999999996112')
+            dct = ipj.dict()
+
+        with gxipj.GXipj.from_any(dct) as ipj:
+            self.gx.log(ipj)
+            gxfs = ipj.to_gxf()
+            self.assertEqual(gxfs[0],'DHDN / Okarito 2000')
+            self.assertEqual(gxfs[1],'DHDN,6377397.155,0.0816968312225275,0')
+            self.assertEqual(gxfs[2],'"Transverse Mercator",-43.11,170.260833333333,1,400000,800000')
+            self.assertEqual(gxfs[3],'m,1')
+            self.assertEqual(gxfs[4],'"DHDN to WGS 84 (1)",582,105,414,1.04,0.35,-3.08,8.29999999996112')
+
     def test_name_IPJ(self):
         self.start(gsys.func_name())
 
@@ -69,36 +111,6 @@ class Test(unittest.TestCase):
             self.assertEqual(ipj.name(what=gxipj.NAME_ORIENTATION),'0,0,0,0,0,0')
             self.assertEqual(ipj.name(what=gxipj.NAME_UNIT),'m')
             self.assertEqual(ipj.name(what=gxipj.NAME_UNIT_FULL),'metre')
-
-        with gxipj.GXipj.from_name( 'DHDN / Okarito 2000 <1,2,3,4,5,6>') as ipj:
-            self.gx.log(ipj)
-            gxfs = ipj.to_gxf()
-            self.assertEqual(gxfs[0],'DHDN / Okarito 2000 <1,2,3,4,5,6>')
-            self.assertEqual(gxfs[1],'DHDN,6377397.155,0.0816968312225275,0')
-            self.assertEqual(gxfs[2],'"Transverse Mercator",-43.11,170.260833333333,1,400000,800000')
-            self.assertEqual(gxfs[3],'m,1')
-            self.assertEqual(gxfs[4],'"DHDN to WGS 84 (1)",582,105,414,1.04,0.35,-3.08,8.29999999996112')
-            self.assertEqual(ipj.name(),'DHDN / Okarito 2000 (1,2,3) <6 deg,5 deg,4 deg>')
-            self.assertEqual(ipj.name(what=gxipj.NAME),'DHDN / Okarito 2000 (1,2,3) <6 deg,5 deg,4 deg>')
-            self.assertEqual(ipj.name(what=gxipj.NAME_PCS),'DHDN / Okarito 2000')
-            self.assertEqual(ipj.name(what=gxipj.NAME_DATUM),'DHDN')
-            self.assertEqual(ipj.name(what=gxipj.NAME_PROJECTION),'Okarito 2000')
-            self.assertEqual(ipj.name(what=gxipj.NAME_ORIENTATION),'1,2,3,4,5,6')
-
-        with gxipj.GXipj.from_name( 'WGS 84') as ipj:
-            self.gx.log(ipj)
-            gxfs = ipj.to_gxf()
-            self.assertEqual(gxfs[0],'WGS 84')
-            self.assertEqual(gxfs[1],'"WGS 84",6378137,0.0818191908426215,0')
-            self.assertEqual(gxfs[2],'')
-            self.assertEqual(gxfs[3],'dega,1')
-            self.assertEqual(gxfs[4],'"WGS 84",0,0,0,0,0,0,0')
-            self.assertEqual(ipj.name(),'WGS 84')
-            self.assertEqual(ipj.name(what=gxipj.NAME),'WGS 84')
-            self.assertEqual(ipj.name(what=gxipj.NAME_PCS),'WGS 84')
-            self.assertEqual(ipj.name(what=gxipj.NAME_DATUM),'WGS 84')
-            self.assertEqual(ipj.name(what=gxipj.NAME_PROJECTION),'')
-            self.assertEqual(ipj.name(what=gxipj.NAME_ORIENTATION),'0,0,0,0,0,0')
 
     def test_GXF_IPJ(self):
         self.start(gsys.func_name())
@@ -533,6 +545,25 @@ class Test(unittest.TestCase):
         for u in unitset:
             self.gx.log(' "{}":{},\\'.format(u[1],u[0]))
 
+    def test_orientation(self):
+        self.start(gsys.func_name())
+
+        s = "WGS 84 / UTM zone 32N <0, 0, 0, 10, 15, 32>"
+        with gxipj.GXipj.from_any(s) as ipj:
+            self.gx.log(s)
+            self.assertEqual(str(ipj), "WGS 84 / UTM zone 32N (0,0,0) <32 deg,15 deg,10 deg>")
+
+        s = "WGS 84 / UTM zone 32N <0, 0, 0, 0, 0, 0>"
+        with gxipj.GXipj.from_any(s) as ipj:
+            self.gx.log(s)
+            self.assertEqual(str(ipj), "WGS 84 / UTM zone 32N")
+
+        s = "WGS 84 / UTM zone 32N <150, 8.5, 0, 0, 0, 32>"
+        with gxipj.GXipj.from_any(s) as ipj:
+            self.gx.log(s)
+            self.assertEqual(str(ipj), "WGS 84 / UTM zone 32N (150,8.5,0) <32 deg>")
+
+        #TODO talk to Stephen about testing of orientation interface
 
 ###############################################################################################
 
