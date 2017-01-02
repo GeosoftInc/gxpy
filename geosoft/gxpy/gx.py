@@ -27,19 +27,21 @@ class GXException(Exception):
     '''
     pass
 
-#: `geosoft.gxpy.gxcontext` references the global Geosoft Python GX (gxpy) context instance
-#: once created. This can be accessed by any method that requires the global Python GX context.
-#: `geosoft.gxpy.context.gxapi` is the GX context for the `gxapi`.
-gxcontext = None
+class _Singleton:
+    """
+    Used internally to create a singleton instance of GXpy.
+    See http://www.aleax.it/Python/5ep.html
+    """
+    _shared_state = {}
+    gxapi = None
+    def __init__(self):
+        self.__dict__ = self._shared_state
 
-class GXpy:
+class GXpy(_Singleton):
     '''
-    Geosoft GX context.  This can only be created once.
-
-    Once created, `gxpy.gxcontext` will hold the GX context, which can be used where the application
-    does not have access to the initial context instance.
-
-    `gxpy.gxcontext` will be `None` if the context has not been created, or has been destroyed.
+    Geosoft GX context.  This is a singleton class, so subsequent creation returns an instance
+    identical to the initial creation. This also means that initialization arguments are ignored
+    for subsequent initializations.
 
     :param app:             application name, default is the script name
     :param version:         application version number, default Geosoft version
@@ -79,7 +81,6 @@ class GXpy:
         return self
 
     def __exit__(self, type, value, traceback):
-        self.__del__()
         return False
 
     def _cleanup_files(self):
@@ -98,85 +99,80 @@ class GXpy:
 
     def __init__(self, name=__name__, version=__version__, parent_window=0, log=None):
 
-        global gxcontext
-        if gxcontext is not None:
-            raise GXException('GXpy cannot be created twice.  Use gxpy.gxcontext instead.')
+        # singleton class
 
-        # create a Tkinter parent frame for the viewers
+        _Singleton.__init__(self)
 
-        self.tkf = None
-        if parent_window == -1:
-            self.tkf = ttk.Frame(master=None)
-            parent_window = self.tkf.winfo_id()
+        if self.gxapi is None:
 
-        self.parent_window = parent_window
-        try:
-            self.gxapi = gxapi.GXContext.create(name, version, self.parent_window)
+            # create a Tkinter parent frame for the viewers
 
-        except:
-            self.gxapi = None
-            raise GXException('GX services are not available.')
+            if parent_window == -1:
+                self.tkframe = ttk.Frame(master=None)
+                parent_window = self.tkframe.winfo_id()
 
-        user = gxapi.str_ref()
-        company = gxapi.str_ref()
-        gxapi.GXSYS.get_licensed_user(user, company)
-        self.gid = user.value
-        self._temp_file_folder = None
-        self._keep_temp_files = True
+            self.parent_window = parent_window
+            try:
+                self.gxapi = gxapi.GXContext.create(name, version, self.parent_window)
 
-        self._start = datetime.datetime.utcnow()
-        self._gxid = gxu.uuid()
+            except:
+                self.gxapi = None
+                raise GXException('GX services are not available.')
 
-        # create a log file
+            user = gxapi.str_ref()
+            company = gxapi.str_ref()
+            gxapi.GXSYS.get_licensed_user(user, company)
+            self.gid = user.value
+            self._temp_file_folder = None
+            self._keep_temp_files = True
 
-        if log is None:
-            self._logf = None
-            self._log_it = None
+            self._start = datetime.datetime.utcnow()
+            self._gxid = gxu.uuid()
 
-        else:
+            # create a log file
 
-            if callable(log):
-                self._log_it = log
+            if log is None:
                 self._logf = None
-                
+                self._log_it = None
+
             else:
-    
-                if len(log) == 0:
-    
-                    dts = "{}-{}-{}({}_{}_{}_{})"\
-                        .format(self._start.year,
-                                                         str(self._start.month).zfill(2),
-                                                         str(self._start.day).zfill(2),
-                                                         str(self._start.hour).zfill(2),
-                                                         str(self._start.minute).zfill(2),
-                                                         str(self._start.second).zfill(2),
-                                                         str(self._start.microsecond//1000).zfill(3))
-                    log = "_gx_" + dts + ".log"
-    
-                self._logf = open(log, "wb")
-                self._log_it = self._log_to_file
 
-            self.log('\nGX start')
-            self.log('GX id: {}'.format(self._gxid))
-            self.log('UTC: {}'.format(self._start))
-            self.log('API: {}'.format(__version__))
-            self.log('GID: {}'.format(self.gid))
-            self.log('rights: {}'.format(json.dumps(self.entitlements())))
-            self.log('script: {}'.format(gxs.app_name()))
-            self.log('project path: {}'.format(gxu.folder_workspace()))
-            self.log('user path: {}'.format(gxu.folder_workspace()))
+                if callable(log):
+                    self._log_it = log
+                    self._logf = None
 
-        # create a shared string ref for the convenience of Geosoft modules
+                else:
 
-        self._sr = gxapi.str_ref()
+                    if len(log) == 0:
 
-        atexit.register(self._cleanup_files)
+                        dts = "{}-{}-{}({}_{}_{}_{})"\
+                            .format(self._start.year,
+                                                             str(self._start.month).zfill(2),
+                                                             str(self._start.day).zfill(2),
+                                                             str(self._start.hour).zfill(2),
+                                                             str(self._start.minute).zfill(2),
+                                                             str(self._start.second).zfill(2),
+                                                             str(self._start.microsecond//1000).zfill(3))
+                        log = "_gx_" + dts + ".log"
 
-        gxcontext = self
+                    self._logf = open(log, "wb")
+                    self._log_it = self._log_to_file
 
-    def __del__(self):
-        global gxcontext
-        gxcontext = None
+                self.log('\nGX start')
+                self.log('GX id: {}'.format(self._gxid))
+                self.log('UTC: {}'.format(self._start))
+                self.log('API: {}'.format(__version__))
+                self.log('GID: {}'.format(self.gid))
+                self.log('rights: {}'.format(json.dumps(self.entitlements())))
+                self.log('script: {}'.format(gxs.app_name()))
+                self.log('project path: {}'.format(gxu.folder_workspace()))
+                self.log('user path: {}'.format(gxu.folder_workspace()))
+
+            # create a shared string ref for the convenience of Geosoft modules
+
+            self._sr = gxapi.str_ref()
+
+            atexit.register(self._cleanup_files)
 
     def _log_to_file(self, log_str):
 
@@ -379,21 +375,21 @@ class GXpy:
     def folder_workspace(self):
         '''
         .. deprecated: 9.2
-            Use :method:`utility.project_path`
+            Use :method:`utility.folder_workspace`
         '''
-        return gxu.project_path()
+        return gxu.folder_workspace()
 
     def folder_temp(self):
         '''
         .. deprecated: 9.2
-            Use :method:`utility.temp_folder`
+            Use :method:`utility.folder_temp`
         '''
-        return gxu.temp_folder()
+        return gxu.folder_temp()
 
     def folder_user(self):
         '''
         .. deprecated: 9.2
-            Use :method:`utility.user_path`
+            Use :method:`utility.folder_user`
         '''
-        return gxu.user_path()
+        return gxu.folder_user()
 

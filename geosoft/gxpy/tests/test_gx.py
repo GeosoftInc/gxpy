@@ -18,27 +18,10 @@ class Test(unittest.TestCase):
     def test_gxpy(self):
 
         with gx.GXpy(log=print) as gxc:
-
             self.assertTrue(gxc.gid.find('@') > 0)
             self.assertEqual(gxc.main_wind_id(),0)
             self.assertEqual(gxc.active_wind_id(), 0)
             self.assertEqual(gx.__version__, geosoft.__version__)
-            self.assertTrue(gx.gxcontext is not None)
-
-            gxcontext = gx.gxcontext
-            self.assertEqual(gxc, gxcontext)
-            self.assertRaises(gx.GXException, gx.GXpy)
-
-        self.assertTrue(gx.gxcontext is None)
-
-        with gx.GXpy(parent_window=-1, log=print) as gxc:
-            gxc.log("\n\ngxc window ID: {}\n\n".format(gxc.main_wind_id()))
-            self.assertNotEqual(gxc.main_wind_id(), 0)
-
-    def test_ui_onoff(self):
-        with gx.GXpy(log=print) as gxc:
-            gxc.disable_app()
-            gxc.enable_app()
 
     def test_env(self):
 

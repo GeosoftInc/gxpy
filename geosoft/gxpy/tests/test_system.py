@@ -29,7 +29,7 @@ class Test(unittest.TestCase):
         self.start(gsys.func_name())
 
         app = gsys.app_name()
-        self.assertTrue(os.path.isfile(app))
+        self.assertTrue(len(app) > 0)
         func = gsys.func_name()
         self.assertEqual(func, 'test_statics')
 
