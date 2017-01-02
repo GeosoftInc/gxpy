@@ -11,8 +11,8 @@ import geosoft.gxpy.viewer as gxvwr
 
 ###############################################################################################
 
-def sample_map():
-    sample = os.path.join(gx.gxcontext.temp_folder(), "sample_map")
+def sample_map(gxp):
+    sample = os.path.join(gxp.temp_folder(), "sample_map")
     with gxmap.GXmap.new(sample, overwrite=True) as gmap:
         with gxv.GXview("rectangle_test", gmap) as view:
             p1 = gxgm.Point((0,0))
@@ -25,12 +25,12 @@ def sample_map():
             view.xy_line(p1 + poff, p2 - poff)
         return gmap.filename()
 
-def test_mapviewer():
+def test_mapviewer(gxp):
     
-    gxvwr.map_viewer(sample_map())
+    gxvwr.map_viewer(sample_map(gxp))
 
 if __name__ == '__main__':
 
     os.chdir(os.path.dirname(os.path.realpath(__file__)))
-    with gx.GXpy(parent_window=-1) as gxp:
-        test_mapviewer()
+    with gx.GXpy(parent_window=-1, log=print) as gxp:
+        test_mapviewer(gxp)
