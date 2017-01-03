@@ -2,11 +2,10 @@
 
 import os
 import gc
-import uuid
 
 import geosoft
 import geosoft.gxapi as gxapi
-from . import ipj as gxipj
+from . import gx as gx
 from . import utility as gxu
 
 __version__ = geosoft.__version__
@@ -174,7 +173,7 @@ class GXmap:
         if filename is None:
             
             # get a temporary map file name
-            filename = str(uuid.uuid1())
+            filename = map_file_name(os.path.join(gx.GXpy().temp_folder(), str(gxu.uuid())))
             delete = True
 
         else:

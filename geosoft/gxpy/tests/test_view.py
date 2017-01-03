@@ -53,7 +53,7 @@ class Test(unittest.TestCase):
             pass
 
         with gxv.GXview() as vw:
-            self.assertEqual(vw.viewname(), "_default_view_")
+            self.assertEqual(vw.viewname(), "_default_view")
 
         with gxv.GXview("test") as vw:
             self.assertEqual(vw.viewname(), "test")

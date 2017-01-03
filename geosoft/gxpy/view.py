@@ -41,6 +41,9 @@ class GXview:
     """
     Geosoft view class.
 
+    :param viewname:    view name, default is "_default_view"
+    :param gmap:        map instance, if not specified a new default map is created and deleted on closing
+
     .. versionadded:: 9.2
     """
 
@@ -68,7 +71,7 @@ class GXview:
     def __str__(self):
         return self._filename
 
-    def __init__(self, viewname="_default_view_", gmap=None, mode=MODE_WRITENEW):
+    def __init__(self, viewname="_default_view", gmap=None, mode=MODE_WRITENEW):
 
         # temporary map for the view
         if gmap is None:
