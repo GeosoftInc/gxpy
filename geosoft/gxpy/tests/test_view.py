@@ -58,8 +58,8 @@ class Test(unittest.TestCase):
         with gxv.GXview("test") as vw:
             self.assertEqual(vw.viewname(), "test")
 
-        gmap = gxmap.GXmap.new("test_map")
-        gmap.remove_on_close(True)
+        test_map = os.path.join(self.gx.temp_folder(),"test_map")
+        gmap = gxmap.GXmap.new(test_map)
         mapname = gmap.filename()
         with gxv.GXview("test", gmap) as view:
             self.assertEqual(view.viewname(), "test")
@@ -91,7 +91,8 @@ class Test(unittest.TestCase):
     def test_line_drawing(self):
         self.start(gsys.func_name())
 
-        with gxmap.GXmap.new("test", overwrite=True) as gmap:
+        testmap = os.path.join(self.gx.temp_folder(), "test")
+        with gxmap.GXmap.new(testmap, overwrite=True) as gmap:
             mapfile = gmap.filename()
             with gxv.GXview("rectangle_test", gmap) as view:
 

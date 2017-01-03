@@ -25,6 +25,12 @@ class MAPException(Exception):
 MAP_WRITENEW = 1
 MAP_WRITEOLD = 2
 
+LIST_ALL = gxapi.MAP_LIST_MODE_ALL
+LIST_3D = gxapi.MAP_LIST_MODE_3D
+LIST_2D = gxapi.MAP_LIST_MODE_NOT3D
+
+VIEW_NAME_SIZE = 2080
+
 def map_file_name(filename):
     """
     Return a fully resolved map file path using the filename, with .map extyension
@@ -198,3 +204,13 @@ class GXmap:
     def commit_changes(self):
         """Commit changes to the map."""
         self._map.commit()
+
+    def view_list(self, view_type=LIST_ALL):
+        """
+        Return dictionary of view names.
+        :param view_type: `gxmap.LIST_ALL`, `gxapi.LIST_2D` or `gxapi.LIST_3D`
+        :return: list of views
+        """
+        gxlst = gxapi.GXLST.create(VIEW_NAME_SIZE)
+        self._map.view_list_ex(gxlst, view_type)
+        return gxu.dict_from_lst(gxlst).keys()
