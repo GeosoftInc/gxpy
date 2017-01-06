@@ -768,61 +768,6 @@ class GXdb():
         except GDBException:
             pass
 
-    def vv_np(self, npdata, fid=(0.0, 1.0)):
-        ''' return a VV copy of the numpy data.'''
-        vv = gxapi.GXVV.create_ext(gxu.gx_dtype(npdata.dtype), 0)
-        try:
-            vv.set_data_np(0, npdata)
-        except:
-            vv.destroy()
-            raise
-        vv.set_fid_start(fid[0])
-        vv.set_fid_incr(fid[1])
-        return vv
-
-    def _vaNp(self, npdata, fid=(0.0, 1.0)):
-        ''' return a VA copy of data in a 2D numpy array.'''
-        va = gxapi.GXVA.create_ext(gxu.gx_dtype(npdata.dtype), npdata.shape[0], npdata.shape[1])
-        try:
-            va.set_array_np(0, 0, npdata)
-        except:
-            va.destroy()
-            raise
-        va.set_fid_start(fid[0])
-        va.set_fid_incr(fid[1])
-        return va
-
-    def _vv_ch(self, ls, cs, dtype=None):
-        ''' return a VV of data from channel cs.'''
-
-        if dtype is None:
-            dtype = self.channel_dtype(cs)
-        vv = gxvv.GXvv(dtype)
-        self._lock_read(cs)
-        try:
-            self._db.get_chan_vv(ls, cs, vv._vv)
-        except:
-            self._unlock(cs)
-            raise
-        self._unlock(cs)
-        return vv
-
-    def _va_ch(self, ls, cs, dtype=None):
-        ''' return a VA of data from channel cs.'''
-
-        if dtype is None:
-            dtype = self.channel_dtype(cs)
-        w = self.channel_width(cs)
-        va = gxva.GXva(w, dtype)
-        self._lock_read(cs)
-        try:
-            self._db.get_chan_va(ls, cs, va._va)
-        except:
-            self._unlock(cs)
-            raise
-        self._unlock(cs)
-        return va
-
     def _sorted_chan_list(self):
 
         ch = list(self.list_channels())
@@ -891,10 +836,22 @@ class GXdb():
         ln, ls = self.line_name_symb(line, create=True)
         cn, cs = self.channel_name_symb(channel)
 
-        if self.channel_width(cs) == 1:
-            return self._vv_ch(ls, cs, dtype)
-        else:
+        if self.channel_width(cs) != 1:
             raise GDBException("Cannot read a VA channel into a VV.")
+
+        if dtype is None:
+            dtype = self.channel_dtype(cs)
+        vv = gxvv.GXvv(dtype)
+        self._lock_read(cs)
+        try:
+            self._db.get_chan_vv(ls, cs, vv._vv)
+        except:
+            self._unlock(cs)
+            raise
+        self._unlock(cs)
+
+        return vv
+
 
     def read_channel_va(self, line, channel, dtype=None):
         '''
@@ -911,7 +868,19 @@ class GXdb():
 
         ln, ls = self.line_name_symb(line, create=True)
         cn, cs = self.channel_name_symb(channel)
-        return self._va_ch(ls, cs, dtype)
+
+        if dtype is None:
+            dtype = self.channel_dtype(cs)
+        w = self.channel_width(cs)
+        va = gxva.GXva(w, dtype)
+        self._lock_read(cs)
+        try:
+            self._db.get_chan_va(ls, cs, va._va)
+        except:
+            self._unlock(cs)
+            raise
+        self._unlock(cs)
+        return va
 
     def read_channel(self, line, channel, dtype=None):
         '''
@@ -987,7 +956,7 @@ class GXdb():
         chvv = []
         for c in chNames:
             cs = self._db.find_symb(c, gxapi.DB_SYMB_CHAN)
-            vv = self._vv_ch(ls, cs, dtype=dtype)
+            vv = self.read_channel_vv(ls, cs, dtype=dtype)
             chvv.append((c, vv))
 
         # resample?
@@ -1208,11 +1177,11 @@ class GXdb():
         if w == 1:
 
             # get a VV of the data
-            vv = self.vv_np(data, fid)
+            vv = gxvv.GXvv.vv_np(data, fid)
 
             self._lock_write(cs)
             try:
-                self._db.put_chan_vv(ls, cs, vv)
+                self._db.put_chan_vv(ls, cs, vv._vv)
             except:
                 cleanup()
                 raise
@@ -1220,11 +1189,11 @@ class GXdb():
         else:
 
             # get a VA of the data
-            va = self._vaNp(data, fid)
+            va = gxva.GXva.va_np(data, fid)
 
             self._lock_write(cs)
             try:
-                self._db.put_chan_va(ls, cs, va)
+                self._db.put_chan_va(ls, cs, va._va)
             except:
                 cleanup()
                 raise
