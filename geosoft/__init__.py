@@ -1,6 +1,7 @@
 # coding = utf-8
 
 import json
+import warnings
 from os.path import dirname, join
 
 with open(join(dirname(__file__), 'pkg_info.json')) as fp:
@@ -9,7 +10,6 @@ with open(join(dirname(__file__), 'pkg_info.json')) as fp:
 __version__ = "{}{}".format(_info['version'], _info['pre-release'])
 
 __all__ = ['gxapi', 'gxpy']
-
 
 # docstring overrides for C++ classes inside gxapi module
 

@@ -15,7 +15,7 @@ def tf(f):
 class Test(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        pass
+        geosoft.gxpy.gx.GXpy(log=print)
 
     @classmethod
     def start(cls, test):
@@ -29,8 +29,10 @@ class Test(unittest.TestCase):
         self.start(gsys.func_name())
 
         app = gsys.app_name()
-        self.assertEqual(app, 'test_system.py')
+        geosoft.gxpy.gx.GXpy().log("App: {}".format(app))
+        self.assertTrue(len(app) > 0)
         func = gsys.func_name()
+        geosoft.gxpy.gx.GXpy().log("Function: {}".format(func))
         self.assertEqual(func, 'test_statics')
 
     def test_unzip(self):

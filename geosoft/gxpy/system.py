@@ -5,6 +5,7 @@ import gc
 import shutil
 import zipfile
 import threading
+import sys
 from itertools import count
 import geosoft
 
@@ -29,9 +30,7 @@ def app_name():
     .. versionadded:: 9.1
 
     """
-    frm = inspect.stack()[1]
-    modfrm = inspect.getmodule(frm[0])
-    return os.path.basename(modfrm.__file__)
+    return os.path.normpath(sys.argv[0])
 
 
 def func_name():

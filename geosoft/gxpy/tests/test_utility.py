@@ -1,6 +1,7 @@
 import unittest
 import numpy as np
 import os
+import datetime
 from distutils.version import StrictVersion
 
 import geosoft
@@ -13,7 +14,8 @@ class Test(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
-        cls.gxp = gx.GXpy()
+        global logfile
+        cls.gxc = gx.GXpy(parent_window=0, log=print)
 
     @classmethod
     def tearDownClass(cls):
@@ -21,7 +23,7 @@ class Test(unittest.TestCase):
     
     @classmethod
     def start(cls,test):
-        print("\n*** {} *** - {}".format(test, geosoft.__version__))
+        cls.gxc.log("*** {} *** - {}".format(test, geosoft.__version__))
 
     def test_misc(self):
         self.start(gsys.func_name())
@@ -98,7 +100,7 @@ class Test(unittest.TestCase):
         
         def test(s):
             r = gxu.rdecode(s)
-            print('\'{}\' -> {}'.format(s,r))
+            self.gxc.log('\'{}\' -> {}'.format(s,r))
             return r
             
         self.assertEqual(test("1.9"),1.9)
@@ -160,7 +162,7 @@ class Test(unittest.TestCase):
 
         def test(s,f):
             r = gxu.decode(s,f)
-            print('\'{},{}\' -> {}'.format(s,f,r))
+            self.gxc.log('\'{},{}\' -> {}'.format(s,f,r))
             return r
 
         self.assertEqual(test("1.9",'f8'),1.9)
@@ -217,10 +219,13 @@ class Test(unittest.TestCase):
             py.write("import geosoft.gxpy.utility as gxu\n")
             py.write("gxc = gxpy.gx.GXpy()\n")
             py.write("d = gxu.get_shared_dict()\n")
-            py.write("gxpy.utility.set_shared_dict({'a':'letter a', 'b':'letter b', 'c':[1,2,3], 'argv': sys.argv, 'input':d})\n")
+            py.write("gxpy.utility.set_shared_dict({'a':'letter a', 'b':'letter b', 'c':[1,2,3], 'argv': sys.argv, 'in_dict':d})\n")
             #py.write("input('RUN_EXTERNAL! Press return to continue...')\n")
 
-        test_result = gxu.run_external_python(testpy, script_args='test1 test2', dict={'howdy':'hey there'}, console=False)
+        test_result = gxu.run_external_python(testpy,
+                                              script_args='test1 test2',
+                                              dict={'howdy':'hey there'},
+                                              console=False)
         os.remove(testpy)
         self.assertEqual(test_result['a'], 'letter a')
         l = test_result['c']
@@ -228,7 +233,7 @@ class Test(unittest.TestCase):
         self.assertEqual(l[1], 2)
         self.assertEqual(test_result['argv'][1], 'test1')
         self.assertEqual(test_result['argv'][2], 'test2')
-        self.assertEqual(test_result['input']['howdy'], 'hey there')
+        self.assertEqual(test_result['in_dict']['howdy'], 'hey there')
 
         try:
             gxu.run_external_python(testpy, script_args='test1 test2')
@@ -247,23 +252,23 @@ class Test(unittest.TestCase):
 
         try:
             gxu.run_external_python(testpy, script_args='test1 test2')
-            os.remove(testpy)
             self.assertTrue(False)
         except gxu.UtilityException as e:
             self.assertTrue('External python error' in str(e))
         except:
             os.remove(testpy)
             raise
-        os.remove(testpy)
+        finally:
+            os.remove(testpy)
 
     def test_paths(self):
         self.start(gsys.func_name())
 
-        local = gxu.project_path()
+        local = gxu.folder_workspace()
         self.assertEqual(os.path.normpath(local), os.getcwd())
-        user = gxu.user_path()
+        user = gxu.folder_user()
         self.assertTrue(os.path.isdir(user))
-        temp = gxu.temp_path()
+        temp = gxu.folder_temp()
         self.assertTrue(os.path.isdir(temp))
 
     def test_display_message(self):
@@ -308,6 +313,30 @@ class Test(unittest.TestCase):
             self.assertFalse(gxu.check_version("9.1", raise_on_fail=False)) 
         finally:
             gxu.__version__ = version_backup
+
+    def test_datetime(self):
+        self.start(gsys.func_name())
+
+        geo_utc = gxu.datetime_from_year(gxapi.GXSYS.utc_date())
+        py_utc = datetime.datetime.utcnow()
+
+        self.assertEqual(geo_utc.year, py_utc.year)
+        self.assertEqual(geo_utc.month, py_utc.month)
+        self.assertEqual(geo_utc.day, py_utc.day)
+        self.assertEqual(geo_utc.hour, 0)
+        self.assertEqual(geo_utc.minute, 0)
+        self.assertEqual(geo_utc.second, 0)
+        self.assertEqual(geo_utc.microsecond, 0)
+
+        dec_year = gxu.year_from_datetime(py_utc)
+        dt = gxu.datetime_from_year(dec_year)
+        self.assertEqual(dt.year, py_utc.year)
+        self.assertEqual(dt.month, py_utc.month)
+        self.assertEqual(dt.day, py_utc.day)
+        self.assertEqual(dt.hour, py_utc.hour)
+        self.assertEqual(dt.minute, py_utc.minute)
+        self.assertEqual(dt.second, py_utc.second)
+        self.assertEqual(dt.microsecond, round(py_utc.microsecond / 1000.0) * 1000)
 
 ###############################################################################################
 

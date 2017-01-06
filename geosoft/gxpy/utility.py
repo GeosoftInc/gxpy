@@ -5,8 +5,11 @@
 """
 
 import os
+import uuid as uid
 import json
+import datetime
 import subprocess
+import binascii
 from time import gmtime, strftime
 from ._jdcal.jdcal import is_leap, gcal2jd, jd2gcal
 from distutils.version import StrictVersion
@@ -91,8 +94,6 @@ def dict_from_lst(lst):
         lst.gt_item(0, item, key)
         lst.gt_item(1, item, val)
         dct[key.value] = val.value
-    del key
-    del val
     return dct
 
 
@@ -500,38 +501,49 @@ def get_parameters(group='_', parms=None, default=None):
     return p
 
 
-def project_path():
+def folder_workspace():
     """
-    Return the Geosoft project folder path.
+    Return the Geosoft project folder name.
 
     .. versionadded:: 9.1
     """
     path = gxapi.str_ref()
     gxapi.GXSYS.get_path(gxapi.SYS_PATH_LOCAL, path)
-    return path.value.replace('\\', '/')
+    return path.value.replace('\\', os.sep)
 
 
-def user_path():
+def folder_user():
     """
-    Return the Geosoft user configurations folder path.
+    Return the Geosoft user configurations folder name.
 
     .. versionadded:: 9.1
     """
     path = gxapi.str_ref()
     gxapi.GXSYS.get_path(gxapi.SYS_PATH_GEOSOFT_USER, path)
-    return path.value.replace('\\', '/')
+    return path.value.replace('\\', os.sep)
 
-
-def temp_path():
+def folder_temp():
     """
-    Return the Geosoft temporary folder path.
+    Return the Geosoft temporary folder name.
+
+    .. Note::
+        If creating temporary files, better to use gx method :meth:`~gx.GXpy.temp_file`, which will
+        create the temporary file in the GX-specific folder :mod:`~gx.GXpy.temp_folder`.
 
     .. versionadded:: 9.1
     """
     path = gxapi.str_ref()
     gxapi.GXSYS.get_path(gxapi.SYS_PATH_GEOTEMP, path)
-    return path.value.replace('\\', '/')
+    path = path.value.replace('\\', os.sep)
+    return os.path.normpath(path)
 
+def uuid():
+    """
+    :return: a uuid as a string
+
+    .. versionadded:: 9.2
+    """
+    return str(str(uid.uuid1()))
 
 def _temp_dict_file_name():
     """Name of the expected python dictionary as a json file from run_external_python().
@@ -551,7 +563,7 @@ def set_shared_dict(dict=None):
     .. versionadded:: 9.1
     """
 
-    # if no ditionary, pop the existing one if it is there
+    # if no dictionary, pop the existing one if it is there
     if dict is None:
         get_shared_dict()
     else:
@@ -626,3 +638,54 @@ def run_external_python(script, script_args='',
             raise UtilityException(_('\n\nExternal python error({}) running: {}').format(err, command))
 
     return get_shared_dict()
+
+def crc32_file(filename):
+    """
+    Return 32-bit CRC of a file.
+
+    .. versionadded:: 9.2
+    """
+    def readbuff(f, bsize=16384):
+        while True:
+            buff = f.read(bsize)
+            if not buff:
+                break
+            yield buff
+
+    with open(filename, 'rb') as f:
+        crc = 0
+        for b in readbuff(f):
+            crc = binascii.crc32(b, crc)
+    return crc  & 0xFFFFFFFF
+
+def year_from_datetime(dt):
+    """
+    Return a decimal Gregorian calendar year from a Python datetime.
+    :param dt: datetime
+    :return: decimal Gregorian year to an accuracy of 1 millisecond
+
+    .. versionadded:: 9.2
+    """
+
+    y_start = datetime.datetime(dt.year, 1, 1)
+    y_end = y_start.replace(year=dt.year+1)
+    return dt.year + (dt - y_start)/(y_end - y_start)
+
+def datetime_from_year(year):
+    """
+    Return the Python datetime from a decimal Gregorian year.
+    :param year: decimal year on the Gregorian calendar.
+    :return: datetime (resolved to 1 millisecond)
+
+    .. versionadded:: 9.2
+    """
+    yr = int(year)
+    remainder = year - yr
+    y_start = datetime.datetime(yr, 1, 1)
+    y_end = y_start.replace(yr + 1)
+    milliseconds = round(remainder * (y_end - y_start).total_seconds() * 1000.0)
+    return y_start + datetime.timedelta(seconds=milliseconds/1000.0)
+
+
+
+

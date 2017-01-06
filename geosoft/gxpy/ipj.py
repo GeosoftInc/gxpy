@@ -80,11 +80,29 @@ class GXipj():
     def __exit__(self, type, value, traceback):
         pass
 
-    def __init__(self):
+    def __init__(self, ipj=None):
         self._ipj = gxapi.GXIPJ.create()
         self._coordinate_dict_()
         self._sr = gxapi.str_ref()
         self._fr = gxapi.float_ref()
+
+    @classmethod
+    def from_any(cls, ipj):
+        """
+        Create an IPJ from a name string, list of GXF strings, or a dictionary.
+        :param ipj: IPJ name string, list of GXF strings or a dictionary.
+        :return: ipj instance
+
+        .. versionadded:: 9.2
+        """
+        if ipj is None:
+            return cls()
+        elif isinstance(ipj, str):
+            return cls.from_name(ipj)
+        elif isinstance(ipj, dict):
+            return cls.from_dict(ipj)
+        else:
+            return cls.from_gxf(ipj)
 
     @classmethod
     def from_gxf(cls, gxfs):
