@@ -20,6 +20,9 @@ Submodules
     geosoft.gxpy.utility
     geosoft.gxpy.va
     geosoft.gxpy.vv
+    geosoft.gxpy.geometry
+    geosoft.gxpy.map
+    geosoft.gxpy.view
 
 .. automodule:: geosoft.gxpy
     :members:

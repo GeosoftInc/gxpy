@@ -65,6 +65,9 @@ def collect_gxpy_version_history():
     parse_module_history(gxpy.system, gxpy._version_history)
     parse_module_history(gxpy.utility, gxpy._version_history)
     parse_module_history(gxpy.vv, gxpy._version_history)
+    parse_module_history(gxpy.geometry, gxpy._version_history)
+    parse_module_history(gxpy.view, gxpy._version_history)
+    parse_module_history(gxpy.map, gxpy._version_history)
     gxpy._versions = reversed(sorted(gxpy._version_history.keys()))
 
 def gen_version_history(j2env, output_dir):
