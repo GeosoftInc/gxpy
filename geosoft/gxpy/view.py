@@ -71,7 +71,7 @@ class GXview:
     def __str__(self):
         return self._filename
 
-    def __init__(self, viewname="_default_view", gmap=None, mode=MODE_WRITENEW):
+    def __init__(self, viewname="_default_view", gmap=None, mode=MODE_WRITENEW, v3d=None):
 
         # temporary map for the view
         if gmap is None:
@@ -87,6 +87,13 @@ class GXview:
         # intitialize pen
         self._init_pen_attributes()
         self._pen_stack = []
+
+        if v3d is not None:
+            if len(v3d) == 0:
+                v3d = (0., 0., 100., 100., 0., 0., 100., 100.)
+            self._view.fit_map_window_3d(v3d[0], v3d[1], v3d[2], v3d[3],
+                                         v3d[4], v3d[5], v3d[6], v3d[7])
+
 
     def _line_style(self, ls):
         self._view.line_style(ls[0], ls[1])
@@ -222,7 +229,7 @@ class GXview:
         .. versionadded:: 9.2
         """
 
-        self._view.line(p1.x(), p1.y(), p2.x(), p2.y())
+        self._view.line(p1.x, p1.y, p2.x, p2.y)
 
     def xy_poly_line(self, pp, close=False):
         """
@@ -239,12 +246,12 @@ class GXview:
 
         if close:
             self._view.poly_line(gxapi.MVIEW_DRAW_POLYGON,
-                                 gxvv.GXvv.vv_np(pp.x())._vv,
-                                 gxvv.GXvv.vv_np(pp.y())._vv)
+                                 gxvv.GXvv.vv_np(pp.x)._vv,
+                                 gxvv.GXvv.vv_np(pp.y)._vv)
         else:
             self._view.poly_line(gxapi.MVIEW_DRAW_POLYLINE,
-                                 gxvv.GXvv.vv_np(pp.x())._vv,
-                                 gxvv.GXvv.vv_np(pp.y())._vv)
+                                 gxvv.GXvv.vv_np(pp.x)._vv,
+                                 gxvv.GXvv.vv_np(pp.y)._vv)
 
     def xy_rectangle(self, p1, p2, pen=None):
         """
@@ -260,7 +267,7 @@ class GXview:
             self.push_pen(pen)
             self.set_pen(pen)
 
-        self._view.rectangle(p1.x(), p1.y(), p2.x(), p2.y())
+        self._view.rectangle(p1.x, p1.y, p2.x, p2.y)
 
         if pen is not None:
             self.pop_pen()

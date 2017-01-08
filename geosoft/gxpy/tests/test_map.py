@@ -64,7 +64,7 @@ class Test(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
-        cls.gx = gx.GXpy(log=print)
+        cls.gx = gx.GXpy(log=print, parent_window=-1)
         os.chdir(os.path.dirname(os.path.realpath(__file__)))
         pass
 

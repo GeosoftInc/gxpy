@@ -1,5 +1,6 @@
 import numpy as np
 import numbers
+from collections.abc import Sequence
 
 import geosoft
 import geosoft.gxapi as gxapi
@@ -21,7 +22,11 @@ class GeometryException(Exception):
 
 class CS:
     """
-    Coordinate System, which includes a horizontal and vertical reference system.
+    Base-class to manage coordinate system for all geometries.
+    A coordinate system defines the horizontal and vertical reference system relative to the Earth.
+
+    :param ipj: IPJ as an IPJ instance or a named string that can be constructred from `gxpy.ipj.from_any()`.
+    :param vcs: Vertical Coordinate System name
     """
 
     def __repr__(self):
@@ -30,27 +35,42 @@ class CS:
     def __str__(self):
         return "({} {})".format(str(self.ipj()), str(self.vcs()))
 
+    def _set_ipj(self, ipj):
+        if isinstance(ipj, gxipj.GXipj):
+            self._init_ipj = str(ipj)
+            self._ipj = ipj
+        else:
+            self._init_ipj = ipj
+            self._ipj = None
+
     def __init__(self, ipj=None, vcs=None):
-        self._init_ipj = ipj
+
+        self._set_ipj(ipj)
         self._init_vcs = vcs
-        self._ipj = None
         self._vcs = None
 
-    def set_ipj(self, ipj):
-        self._ipj = ipj
-
-    def set_vcs(self, vcs):
-        self._ipj = vcs
-
+    @property
     def ipj(self):
+        """IPJ instance"""
         if self._ipj is None:
             self._ipj = gxipj.GXipj.from_any(self._init_ipj)
         return self._ipj
 
+    @ipj.setter
+    def ipj(self, ipj):
+        self._set_ipj(ipj)
+
+    @property
     def vcs(self):
+        """Vertical Coordinate System"""
         if self._vcs is None:
             self._vcs = self._init_vcs
         return self._vcs
+
+    @vcs.setter
+    def vcs(self, vcs):
+        self._ipj = vcs
+
 
 # geometry spatial data structures
 class Point(CS):
@@ -119,28 +139,55 @@ class Point(CS):
             p = Point(p)
         return Point(self.p / p.p)
 
+    @property
     def x(self):
-        """ Return x of a point"""
+        """ X value"""
         return self.p[0]
 
+    @x.setter
+    def x(self, value):
+        self.p[0] = float(value)
+
+    @property
     def y(self):
-        """ Return y of a point"""
+        """ Y value"""
         return self.p[1]
 
+    @y.setter
+    def y(self, value):
+        self.p[1] = float(value)
+
+    @property
     def z(self):
-        """ Return z of a point"""
+        """ z value"""
         return self.p[2]
 
+    @z.setter
+    def z(self, value):
+        self.p[2] = float(value)
+
+    @property
     def xy(self):
-        """ Return (x, y) of a point"""
+        """ (x, y)"""
         return (self.p[0], self.p[1])
 
+    @xy.setter
+    def xy(self, xy):
+        self.p[0] = float(xy[0])
+        self.p[1] = float(xy[1])
+
+    @property
     def xyz(self):
-        """ Return (x, y, z) of a point"""
+        """ (x, y, z) """
         return (self.p[0], self.p[1], self.p[2])
 
+    @xyz.setter
+    def xyz(self, xyz):
+        self.p[0] = float(xyz[0])
+        self.p[1] = float(xyz[1])
+        self.p[2] = float(xyz[2])
 
-class PPoint(CS):
+class PPoint(CS, Sequence):
     """
     Poly-Point class.
 
@@ -226,18 +273,43 @@ class PPoint(CS):
             return PPoint(self.pp / p.p)
         return PPoint(self.pp / Point(p).p)
 
+    @property
     def x(self):
-        """ Return X array slice"""
+        """ X array slice"""
         return self.pp[:,0]
 
+    @x.setter
+    def x(self, v):
+        self.pp[:,0] = v
+
+    @property
     def y(self):
-        """ Return Y array slice"""
+        """ Y array slice"""
         return self.pp[:,1]
 
+    @y.setter
+    def y(self, v):
+        self.pp[:,1] = v
+
+    @property
     def z(self):
-        """ Return Z array slice"""
+        """ Z array slice"""
         return self.pp[:,2]
 
+    @z.setter
+    def z(self, v):
+        self.pp[:,2] = v
+
+    @property
+    def xy(self):
+        """ XY array slice"""
+        return self.pp[:, 0:2]
+
+    @xy.setter
+    def xy(self, v):
+        self.pp[:, 0:2] = v
+
+    @property
     def xyz(self):
-        """ Return xyz point array"""
+        """ XYZ point array"""
         return self.pp

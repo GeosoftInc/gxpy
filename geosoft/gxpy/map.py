@@ -90,7 +90,7 @@ def crc_map(mapfile, pix_width=1000):
 
     .. versionadded:: 9.2
     """
-    crc_image = "__crc_image__.bmp"
+    crc_image = os.path.join(gx.GXpy().temp_folder(), "__crc_image__.bmp")
     save_as_image(mapfile, crc_image, type='BMP', pix_width=pix_width)
     crc = gxu.crc32_file(crc_image)
     os.remove(crc_image)

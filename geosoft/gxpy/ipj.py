@@ -122,7 +122,7 @@ class GXipj():
         # a known coordinate system, otherwise we cannot resolve it.  Users some times
         # combine projections with different datums so copying the values allows for this
 
-        if (gxfs[1] == '') and (gxfs[2] == '') and (gxfs[0].find('/') != -1):
+        if (gxfs[1] == '') and (gxfs[2] == '') and ('/' in gxfs[0]):
             dp = gxfs[0].strip('"').split('/')
             gxfs[1] = dp[0].strip()
             orient = dp[1].find('<')
