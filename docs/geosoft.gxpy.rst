@@ -15,6 +15,7 @@ Submodules
     geosoft.gxpy.grd
     geosoft.gxpy.gx
     geosoft.gxpy.ipj
+    geosoft.gxpy.coordinate_system
     geosoft.gxpy.om
     geosoft.gxpy.system
     geosoft.gxpy.utility

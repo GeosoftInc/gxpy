@@ -440,7 +440,7 @@ def dummy_mask(npd):
     return np.apply_along_axis(lambda a: dummy in a, 1, npd)
 
 
-def save_parameters(group='_', parms={}):
+def save_parameters(group='_', parms=None):
     """
     Save parameters to the Project Parameter Block.  Parameter group names and member names
     are converted to upper-case.
@@ -450,11 +450,11 @@ def save_parameters(group='_', parms={}):
 
     .. versionadded:: 9.1
     """
-
-    for k, v in parms.items():
-        # remove escaped characters because set_str() puts them back in
-        s = json.dumps(v).replace('\\\\', '\\')
-        gxapi.GXSYS.set_string(group, k, s)
+    if parms is not None:
+        for k, v in parms.items():
+            # remove escaped characters because set_str() puts them back in
+            s = json.dumps(v).replace('\\\\', '\\')
+            gxapi.GXSYS.set_string(group, k, s)
 
 
 def get_parameters(group='_', parms=None, default=None):
@@ -639,9 +639,24 @@ def run_external_python(script, script_args='',
 
     return get_shared_dict()
 
-def crc32_file(filename):
+def crc32(bytes, crc=0):
+    """
+    Return 32-bit CRC of a byte buffer.
+
+    :param bytes:   byte buffer (fulfills the Buffer Protocol)
+    :param crc:     seed crc, can be passed along to accumulate the crc
+
+    .. versionadded:: 9.2
+    """
+    crc = binascii.crc32(bytes, crc)
+    return crc
+
+def crc32_file(filename, crc=0):
     """
     Return 32-bit CRC of a file.
+
+    :param filename:    file name
+    :param crc:         seed crc, default 0
 
     .. versionadded:: 9.2
     """
@@ -653,10 +668,22 @@ def crc32_file(filename):
             yield buff
 
     with open(filename, 'rb') as f:
-        crc = 0
         for b in readbuff(f):
-            crc = binascii.crc32(b, crc)
-    return crc  & 0xFFFFFFFF
+            crc = crc32(b, crc)
+
+    return crc
+
+def crc32_str(s, crc=0):
+    """
+    Return 32-bit CRC of a string.
+
+    :param s:    string
+    :param crc:  seed crc, default 0
+
+    .. versionadded:: 9.2
+    """
+    crc = crc32(s.encode(), crc)
+    return crc
 
 def year_from_datetime(dt):
     """

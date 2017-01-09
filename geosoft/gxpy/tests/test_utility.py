@@ -338,6 +338,12 @@ class Test(unittest.TestCase):
         self.assertEqual(dt.second, py_utc.second)
         self.assertEqual(dt.microsecond, round(py_utc.microsecond / 1000.0) * 1000)
 
+    def test_crc(self):
+        self.start(gsys.func_name())
+
+        self.assertEqual(gxu.crc32(b'bunch of bytes'), 3271364337)
+        self.assertEqual(gxu.crc32_str('a string'), 2577552858)
+
 ###############################################################################################
 
 if __name__ == '__main__':

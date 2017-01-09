@@ -42,114 +42,56 @@ LIST_LOCALDATUMDESCRIPTION = gxapi.IPJ_PARM_LST_LOCALDATUMDESCRIPTION
 LIST_LOCALDATUMNAME = gxapi.IPJ_PARM_LST_LOCALDATUMNAME
 
 
-class IPJException(Exception):
+class CSException(Exception):
     '''
     Exceptions from this module.
 
-    .. versionadded:: 9.1
+    .. versionadded:: 9.2
     '''
     pass
 
 
-class GXipj():
+def names(what, datum_filter=''):
     """
-    Class to work with Geosoft coordinate systems.
-    This class wraps many of the functions found in geosoft.gxapi.GXIPJ.
+    Get a list of coordinate system names
 
-    ._ipj is the GXIPJ handle to use when calling GXIPJ methods directly
+    :param what:
+            | gxipj.LIST_COORDINATESYSTEM
+            | gxipj.LIST_DATUM
+            | gxipj.LIST_PROJECTION
+            | gxipj.LIST_UNITS
+            | gxipj.LIST_LOCALDATUMDESCRIPTION
+            | gxipj.LIST_LOCALDATUMNAME
+            | gxipj.LIST_UNITSDESCRIPTION
 
-    :constructors:
-        :from_name:     from a name string
-        :from_gxf:      from a list of GXF strings
-        :from_dict:     from a dictionary
-        :from_json:     from a json string
-        :from_esri:     from an ESRI wkt string
+    :param datum_filter:
+            name of a datum to filter results
 
-    .. versionadded:: 9.1
+    :returns:   sorted list of names
+
+    .. versionadded:: 9.2
     """
 
-    def __repr__(self):
-        return "{}({})".format(self.__class__, self.__dict__)
+    lst = gxapi.GXLST.create(1000)
+    gxapi.GXIPJ.get_list(what, datum_filter, lst)
+    namelist = list(gxu.dict_from_lst(lst).keys())
+    namelist.sort(key=str.lower)
+    del lst
+    return namelist
 
-    def __str__(self):
-        return self.name()
 
-    def __enter__(self):
-        return self
+class GXcs():
+    """
+    Coordinate system class. A coordinate system defines a horizontal and vertical reference
+    system to locate (x, y, z) cartesian coordinates relative to the Earth.
 
-    def __exit__(self, type, value, traceback):
-        pass
+    :param vcs:     The vertical coordinate as a descriptive name.
+    :param hcs:     The horizontal coordinate system as a Geosoft name string (ie. "WGS 84 / UTM zone 32N")
+                    an ESRI WKT string (ie. "PROJCS["WGS_1984_UTM_Zone_35N",GEOGCS[..."), a dictionary that
+                    contains the coordinate system properties, a JSON string that contains the coordinate
+                    system properties, or a list that contains the 5 GXF coordinate system strings.
 
-    def __init__(self, ipj=None):
-        self._ipj = gxapi.GXIPJ.create()
-        self._coordinate_dict_()
-        self._sr = gxapi.str_ref()
-        self._fr = gxapi.float_ref()
-
-    @classmethod
-    def from_any(cls, ipj):
-        """
-        Create an IPJ from a name string, list of GXF strings, or a dictionary.
-        :param ipj: IPJ name string, list of GXF strings or a dictionary.
-        :return: ipj instance
-
-        .. versionadded:: 9.2
-        """
-        if ipj is None:
-            return cls()
-        elif isinstance(ipj, str):
-            return cls.from_name(ipj)
-        elif isinstance(ipj, dict):
-            return cls.from_dict(ipj)
-        else:
-            return cls.from_gxf(ipj)
-
-    @classmethod
-    def from_gxf(cls, gxfs):
-        """
-        Create IPJ from a set of GXF strings.
-
-        :params:
-            gxfs:   list of GXF strings.  See GXFIPJ.set_gxf() reference.
-
-        .. versionadded:: 9.1
-        """
-
-        ipj = cls()
-
-        # if we got a name only, and it has a datum and projection, copy these.
-        # The challenge with a name only is that the "datum / projection" must exist as
-        # a known coordinate system, otherwise we cannot resolve it.  Users some times
-        # combine projections with different datums so copying the values allows for this
-
-        if (gxfs[1] == '') and (gxfs[2] == '') and (gxfs[0].find('/') != -1):
-            dp = gxfs[0].strip('"').split('/')
-            gxfs[1] = dp[0].strip()
-            orient = dp[1].find('<')
-            if orient == -1:
-                gxfs[2] = dp[1].strip()
-            else:
-                gxfs[2] = dp[1][0:orient].strip()
-
-        # get ipj from gxf, error if unknown
-        ipj._ipj.set_gxf(gxfs[0], gxfs[1], gxfs[2], gxfs[3], gxfs[4])
-        ipj._ipj.get_display_name(ipj._sr)
-        if ipj._sr.value == '*unknown':
-            raise IPJException(_('Unknown coordinate system:\n>{}\n>{}\n>{}\n>{}\n>{}').format(
-                gxfs[0],
-                gxfs[1],
-                gxfs[2],
-                gxfs[3],
-                gxfs[4]))
-
-        ipj._coordinate_dict_()
-        return ipj
-
-    @classmethod
-    def from_json(cls, jstr):
-        """
-        Create an IPJ from a string, which can be a valid coordinate system name string or a JSON
-        format string that defines the coordinate system type and properties as follows:
+    Dictionary and JSON string keys are defined as follows:
 
         :LocalGrid:
 
@@ -250,36 +192,134 @@ class GXipj():
                 {"type":"Geosoft","properties":{"name":"WGS 84 / UTM zone 15N"},
                                                 "orientation":"<550000,6250000,0,0,0,15>"}
 
-        .. versionadded:: 9.1
+    .. versionadded:: 9.2
+        supercedes `ipj` module.
+    """
+
+    def __repr__(self):
+        return "{}({})".format(self.__class__, self.__dict__)
+
+    def __str__(self):
+        return self.name()
+
+    def __enter__(self):
+        return self
+
+    def __exit__(self, type, value, traceback):
+        pass
+
+    def __init__(self, hcs=None, vcs=None):
+        self._init_ipj = hcs
+        self._gxapi_ipj = None
+        self._vcs = vcs
+        self._dict = None
+
+    def __eq__(self, cs):
+        if self.gxipj is None:
+            return cs.gxipj is None
+        if cs.gxipj is None:
+            return self.gxipj is None
+        return self.gxipj.coordinate_systems_are_the_same_within_a_small_tolerance(cs.gxipj)
+        
+    @property
+    def gxipj(self):
+        """ gxapi.GXIPJ instance """
+        if self._gxapi_ipj is None:
+            self._setup_ipj()
+        return self._gxapi_ipj
+    
+    def _setup_ipj(self):
+        """ Setup the horizontal coordinate system. """
+        if self._gxapi_ipj is None:
+            self._gxapi_ipj = gxapi.GXIPJ.create()
+            if self._init_ipj is not None:
+                if isinstance(self._init_ipj, str):
+                    self._from_str(self._init_ipj)
+                elif isinstance(self._init_ipj, dict):
+                    self._from_dict(self._init_ipj)
+                else:
+                    self._from_gxf(self._init_ipj)
+
+    @property
+    def hcs(self):
+        """ horizontal coordinate system as a json string """
+        return(self.to_json())
+                
+    @property
+    def vcs(self):
+        """ vertical coordinate system as a string """
+        return(self._vcs)
+
+    def _from_str(self, cstr):
+        """ setup coordinate systems from a string """
+        
+        # json string
+        if cstr[0] == '{':
+            try:
+                jsondict = json.loads(cstr)
+            except ValueError:
+                # try replacing single quotes
+                jstr = cstr.replace('"', '\\"').replace("'", '"')
+                try:
+                    jsondict = json.loads(jstr)
+                except ValueError:
+                    raise ValueError("Invalid JSON coordinate system string <{}>".format(cstr))
+                
+            self._from_dict(jsondict)
+
+        # ESRI WKT
+        elif 'GEOGCS[' in cstr:
+            self.gxipj.set_esri(cstr)
+
+        else:
+            self._from_gxf([cstr.strip(' \t"\''), '', '', '', ''])
+
+            
+
+    def _from_gxf(self, gxfs):
+
+        # if we get a name only, and it has a datum and projection, copy these.
+        # The challenge with a name only is that the "datum / projection" must exist as
+        # a known coordinate system, otherwise we cannot resolve it.  Users some times
+        # combine projections with different datums so copying the values allows for this
+
+        if (gxfs[1] == '') and (gxfs[2] == '') and ('/' in gxfs[0]):
+            dp = gxfs[0].strip('"').split('/')
+            gxfs[1] = dp[0].strip()
+            orient = dp[1].find('<')
+            if orient == -1:
+                gxfs[2] = dp[1].strip()
+            else:
+                gxfs[2] = dp[1][0:orient].strip()
+
+        # get ipj from gxf, error if unknown
+        sref = gxapi.str_ref()
+        self.gxipj.set_gxf(gxfs[0], gxfs[1], gxfs[2], gxfs[3], gxfs[4])
+        self.gxipj.get_display_name(sref)
+        if sref.value == '*unknown':
+            raise CSException(_('Unknown coordinate system:\n>{}\n>{}\n>{}\n>{}\n>{}').format(
+                gxfs[0],
+                gxfs[1],
+                gxfs[2],
+                gxfs[3],
+                gxfs[4]))
+
+    def _from_dict(self, csdict):
+        """
+        Create an IPJ from a string, which can be a valid coordinate system name string or a JSON
+        format string that defines the coordinate system type and properties as follows:
+
+        .. versionadded:: 9.2
         """
 
-        # empty string
-        if jstr is None or jstr == '':
-            raise ValueError("Empty JSON string")
-
-        # if first character not a '{', assume it is a name
-        if jstr[0] != '{':
-            return cls.from_name(jstr)
-
-        # convert single quotes to double quotes
-        try:
-            jsondict = json.loads(jstr)
-        except ValueError:
-            # try replacing single quotes
-            jstr = jstr.replace('"', '\\"').replace("'", '"')
-            try:
-                jsondict = json.loads(jstr)
-            except ValueError:
-                raise ValueError("Invalid JSON coordinate system string <{}>".format(jstr))
-
-        cstype = jsondict.get('type', None)
-        properties = jsondict.get('properties', {})
-        orientation = jsondict.get('orientation', '')
+        cstype = csdict.get('type', None)
+        properties = csdict.get('properties', {})
+        orientation = csdict.get('orientation', '')
         if orientation == '':
             orientation = properties.get('orientation', '')
 
         if cstype is None or properties is None:
-            raise ValueError("'JSON string missing 'type' and/or 'properties' keys.")
+            raise ValueError("Missing 'type' and/or 'properties' keys.")
 
         cstype = cstype.lower()
         if cstype == 'geosoft':
@@ -290,28 +330,29 @@ class GXipj():
             s3 = properties.get('projection', '')
             s4 = properties.get('units', '')
             s5 = properties.get('local_datum', '')
-            ipj = cls.from_gxf([s1, s2, s3, s4, s5])
+            self._from_gxf([s1, s2, s3, s4, s5])
 
         elif cstype == 'esri':
             wkt = properties.get('wkt', None)
             if wkt is None:
                 raise ValueError("'ESRI missing 'wkt' property.")
+
             # clear any existing coordinate system (bug GX does not clear prior orientation)
-            ipj = cls()
-            ipj._ipj.set_gxf('WGS 84 <0,0,0,0,0,0>', '', '', '', '')
-            ipj._ipj.set_esri(wkt)
+
+            self.gxipj.set_gxf('WGS 84 <0,0,0,0,0,0>', '', '', '', '')
+            self.gxipj.set_esri(wkt)
 
             # add orientation
             if len(orientation) > 0:
-                gxfs = ipj.to_gxf()
+                gxfs = self.to_gxf()
                 gxfs[0] = gxfs[0] + orientation
-                ipj = cls.from_gxf(gxfs)
+                self._from_gxf(gxfs)
 
         elif cstype == "epsg":
             code = properties.get('code', None)
             if code is None:
                 raise ValueError("'EPSG JSON string missing 'code' property.")
-            ipj = cls.from_gxf([str(code) + orientation, '', '', '', ''])
+            self._from_gxf([str(code) + orientation, '', '', '', ''])
 
         elif cstype == 'localgrid':
             # must at least have a latitude and longitude
@@ -334,123 +375,58 @@ class GXipj():
 
             # construct a name
             name = datum + ' / *Local grid [' + str(lat) + ',' + str(lon) + ']' + orient
-            ipj = cls.from_gxf([name, datum, proj, units, ldatum])
+            self._from_gxf([name, datum, proj, units, ldatum])
 
         else:
             raise ValueError("Projection type '{}' not supported.".format(cstype))
 
-        ipj._coordinate_dict_()
-        return ipj
 
-    @classmethod
-    def from_esri(cls, esri_str):
+    @property
+    def coordinate_dict(self):
         """
-        Create an IPJ from an ESRI wkt coordinate string
+        Dictionary of coordinate system attributes.
 
-        :param esri_str:   ESRI coordinate definition string
-
-        .. versionadded:: 9.1
-        """
-        ipj = cls()
-        ipj._ipj.set_esri(esri_str)
-
-        ipj._coordinate_dict_()
-        return ipj
-
-    @classmethod
-    def from_name(cls, name):
-        """
-        Create an IPJ from a projection name in the form "datum / projection <orientation>".
-
-        :param name:   coordinate system name in the form "datum / projection <orientation>"
-
-        .. versionadded:: 9.1
-        """
-        ipj = cls.from_gxf([name.strip(' \t"\''), '', '', '', ''])
-        return ipj
-
-    @classmethod
-    def from_dict(cls, ipj_dict):
-        """
-        Create an IPJ from a ipj_dict
-
-        :param ipj_dict:   IPJ dictionary, or a valid name string
-
-        .. versionadded:: 9.1
-        """
-        return cls.from_json(json.dumps(ipj_dict))
-
-    @staticmethod
-    def names(what, datum_filter=''):
-        """
-        Get a list of coordinate system names
-
-        :param what:
-                | gxipj.LIST_COORDINATESYSTEM
-                | gxipj.LIST_DATUM
-                | gxipj.LIST_PROJECTION
-                | gxipj.LIST_UNITS
-                | gxipj.LIST_LOCALDATUMDESCRIPTION
-                | gxipj.LIST_LOCALDATUMNAME
-                | gxipj.LIST_UNITSDESCRIPTION
-
-        :param datum_filter:
-                name of a datum to filter results
-
-        :returns:   sorted list of names
-
-        .. versionadded:: 9.1
+        .. versionadded:: 9.2
         """
 
-        lst = gxapi.GXLST.create(1000)
-        gxapi.GXIPJ.get_list(what, datum_filter, lst)
-        namelist = list(gxu.dict_from_lst(lst).keys())
-        namelist.sort(key=str.lower)
-        del lst
-        return namelist
+        if self._dict is None:
 
-    def _coordinate_dict_(self):
-        """
-        Fill in coordinate system dict self._ipjDict
-        This is a convenience dictionary that makes it easy to get names from a coordinate system
+            # initially from GXF values
+            gxfs = self.to_gxf()
+            gxf_dict = {"type": "Geosoft",
+                        "properties": {
+                            "name": gxfs[0],
+                            "datum": gxfs[1],
+                            "projection": gxfs[2],
+                            "units": gxfs[3],
+                            "local_datum": gxfs[4]}}
 
-        .. versionadded:: 9.1
-        """
+            # break out names
+            name_dict = {'name': gxf_dict['properties']['name'].replace('"', ' ').strip()}
+            parts = name_dict['name'].partition('<')
+            if parts[2] == '':
+                name_dict['orientation'] = '<0,0,0,0,0,0>'
+            else:
+                name_dict['orientation'] = '<' + parts[2].strip()
+            name_dict['baseName'] = parts[0].strip()
+            parts = parts[0].partition('/')
+            name_dict['datumName'] = parts[0].strip()
+            name_dict['projectionName'] = parts[2].strip()
+            name_dict['projectionType'] = gxf_dict['properties']['projection'].split(',', 1)[0].replace('"', '')
+            name_dict['unitName'] = gxf_dict['properties']['units'].split(',', 1)[0].replace('"', '')
+            name_dict['localDatumName'] = gxf_dict['properties']['local_datum'].split(',', 1)[0].replace('"', '')
 
-        # initially from GXF values
-        gxfs = self.to_gxf()
-        gxf_dict = {"type": "Geosoft",
-                    "properties": {
-                        "name": gxfs[0],
-                        "datum": gxfs[1],
-                        "projection": gxfs[2],
-                        "units": gxfs[3],
-                        "local_datum": gxfs[4]}}
+            # merge the dicts
+            self._dict = dict(list(name_dict.items()) + list(gxf_dict.items()))
 
-        # break out names
-        name_dict = {'name': gxf_dict['properties']['name'].replace('"', ' ').strip()}
-        parts = name_dict['name'].partition('<')
-        if parts[2] == '':
-            name_dict['orientation'] = '<0,0,0,0,0,0>'
-        else:
-            name_dict['orientation'] = '<' + parts[2].strip()
-        name_dict['baseName'] = parts[0].strip()
-        parts = parts[0].partition('/')
-        name_dict['datumName'] = parts[0].strip()
-        name_dict['projectionName'] = parts[2].strip()
-        name_dict['projectionType'] = gxf_dict['properties']['projection'].split(',', 1)[0].replace('"', '')
-        name_dict['unitName'] = gxf_dict['properties']['units'].split(',', 1)[0].replace('"', '')
-        name_dict['localDatumName'] = gxf_dict['properties']['local_datum'].split(',', 1)[0].replace('"', '')
-
-        # merge the dicts
-        self._ipjDict = dict(list(name_dict.items()) + list(gxf_dict.items()))
+        return self._dict
 
     def to_gxf(self):
         """
         Get GXF string list from ipj.
         Returns list of 5 GXF strings.
 
-        .. versionadded:: 9.1
+        .. versionadded:: 9.2
         """
 
         s1 = gxapi.str_ref()
@@ -458,7 +434,7 @@ class GXipj():
         s3 = gxapi.str_ref()
         s4 = gxapi.str_ref()
         s5 = gxapi.str_ref()
-        self._ipj.get_gxf(s1, s2, s3, s4, s5)
+        self.gxipj.get_gxf(s1, s2, s3, s4, s5)
         lst = [s1.value.replace('"', ' ').strip(), s2.value, s3.value, s4.value, s5.value]
         return lst
 
@@ -487,17 +463,9 @@ class GXipj():
                "unitName": "m"
             }
 
-        .. versionadded:: 9.1
+        .. versionadded:: 9.2
         """
-        return json.dumps(self._ipjDict)
-
-    def dict(self):
-        """
-        Return IPJ dictionary
-
-        .. versionadded:: 9.1
-        """
-        return self._ipjDict
+        return json.dumps(self.coordinate_dict)
 
     def name(self, what=None):
         """
@@ -528,60 +496,53 @@ class GXipj():
 
         :return: The name requested
 
-        .. versionadded:: 9.1
+        .. versionadded:: 9.2
         """
 
+        sref = gxapi.str_ref()
         if what is None:
-            self._ipj.get_display_name(self._sr)
+            self.gxipj.get_display_name(sref)
         else:
-            self._ipj.get_name(what, self._sr)
-        return self._sr.value
-
-    @staticmethod
-    def compare(ipj1, ipj2):
-        """
-        :return: True if two projections are the same
-        :param ipj1:  GXipj
-        :param ipj2:  GXipj
-
-        .. versionadded:: 9.1
-        """
-        return ipj1._ipj.coordinate_systems_are_the_same_within_a_small_tolerance(ipj2._ipj)
+            self.gxipj.get_name(what, sref)
+        return sref.value
 
     def units(self):
         """
         :return: tuple (factor, abbreviation), where factor is multiplier to convert to metres
 
-        .. versionadded:: 9.1
+        .. versionadded:: 9.2
         """
-        self._ipj.get_units(self._fr, self._sr)
-        return self._fr.value, self._sr.value
+
+        sref = gxapi.str_ref()
+        fref = gxapi.float_ref()
+        self.gxipj.get_units(fref, sref)
+        return fref.value, sref.value
 
 
 class GXpj:
     """
     Class to reproject coordinates.
 
-    :params ipj_from:  GXipj from coordinate system
-    :params ipj_to:    GXipj to coordinate system
+    :params cs_from:  GXcs from coordinate system
+    :params cs_to:    GXcs to coordinate system
 
-    .. versionadded:: 9.1
+    .. versionadded:: 9.2
     """
 
     def __repr__(self):
         return "{}({})".format(self.__class__, self.__dict__)
 
     def __str__(self):
-        return "PJ from \'{}\' to \'{}\'".format(str(self._ipj_from), str(self._ipj_to))
+        return "PJ from \'{}\' to \'{}\'".format(str(self._cs_from), str(self._cs_to))
 
-    _ipj_from = None
-    _ipj_to = None
+    _cs_from = None
+    _cs_to = None
     _sr = gxapi.str_ref()
 
-    def __init__(self, ipj_from, ipj_to):
-        self._ipj_from = ipj_from
-        self._ipj_to = ipj_to
-        self._pj = gxapi.GXPJ.create_ipj(ipj_from._ipj, ipj_to._ipj)
+    def __init__(self, cs_from, cs_to):
+        self._cs_from = cs_from
+        self._cs_to = cs_to
+        self._pj = gxapi.GXPJ.create_ipj(cs_from.gxipj, cs_to.gxipj)
 
     def convert(self, xyz):
         """
@@ -605,7 +566,7 @@ class GXpj:
                 pj.convert(data[:,3])       #transform x,y and z
                 pj.convert(data)            #transform x,y and z (same as previous line)
 
-        .. versionadded:: 9.1
+        .. versionadded:: 9.2
         """
 
         npoints = xyz.shape[0]
@@ -614,7 +575,7 @@ class GXpj:
 
         nd = xyz.shape[1]
         if nd < 2:
-            raise IPJException(_('Data must have minimum dimension 2 (x,y) or 3 for (x,y,z).'))
+            raise CSException(_('Data must have minimum dimension 2 (x,y) or 3 for (x,y,z).'))
 
         vvx = gxapi.GXVV.create_ext(gxapi.GS_DOUBLE, npoints)
         vvy = gxapi.GXVV.create_ext(gxapi.GS_DOUBLE, npoints)
