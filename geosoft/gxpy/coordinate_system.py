@@ -223,7 +223,7 @@ class GXcs():
         
     @property
     def gxipj(self):
-        """ gxapi.GXIPJ instance """
+        """ gxapi.GXIPJ instance"""
         if self._gxapi_ipj is None:
             self._setup_ipj()
         return self._gxapi_ipj
@@ -243,7 +243,7 @@ class GXcs():
     @property
     def hcs(self):
         """ horizontal coordinate system as a json string """
-        return(self.to_json())
+        return(self.json())
                 
     @property
     def vcs(self):
@@ -344,7 +344,7 @@ class GXcs():
 
             # add orientation
             if len(orientation) > 0:
-                gxfs = self.to_gxf()
+                gxfs = self.gxf()
                 gxfs[0] = gxfs[0] + orientation
                 self._from_gxf(gxfs)
 
@@ -392,7 +392,7 @@ class GXcs():
         if self._dict is None:
 
             # initially from GXF values
-            gxfs = self.to_gxf()
+            gxfs = self.gxf()
             gxf_dict = {"type": "Geosoft",
                         "properties": {
                             "name": gxfs[0],
@@ -421,7 +421,7 @@ class GXcs():
 
         return self._dict
 
-    def to_gxf(self):
+    def gxf(self):
         """
         Get GXF string list from ipj.
         Returns list of 5 GXF strings.
@@ -438,7 +438,7 @@ class GXcs():
         lst = [s1.value.replace('"', ' ').strip(), s2.value, s3.value, s4.value, s5.value]
         return lst
 
-    def to_json(self):
+    def json(self):
         """
         Return a JSON formatted projection in the form:
 
