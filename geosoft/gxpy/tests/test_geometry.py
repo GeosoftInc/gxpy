@@ -1,6 +1,7 @@
 import unittest
 import os
 import numpy as np
+import json
 
 import geosoft
 import geosoft.gxpy.gx as gx
@@ -37,13 +38,16 @@ class Test(unittest.TestCase):
         self.start(gsys.func_name())
 
         s = "WGS 84 / UTM zone 32N <0, 0, 0, 10, 15, 32>"
-        p = gxgm.Point((5,10), ipj=s)
-        self.gx.log(str(p.ipj), " vcs:", str(p.vcs))
-        self.assertEqual(str(p.ipj), "WGS 84 / UTM zone 32N (0,0,0) <32 deg,15 deg,10 deg>")
+        p = gxgm.Point((5,10), hcs=s)
+        self.gx.log(p.cs[0], " vcs:", p.cs[1])
+        hcsd = json.loads(p.cs[0])
+        self.assertEqual(hcsd['name'], "WGS 84 / UTM zone 32N <0,0,0,10,15,32>")
 
-        pp = gxgm.PPoint(((8, 12), (5, 10)), ipj=s, vcs="geoid")
-        self.gx.log(str(pp.ipj), " vcs:", str(pp.vcs))
-        self.assertEqual(str(pp.ipj), "WGS 84 / UTM zone 32N (0,0,0) <32 deg,15 deg,10 deg>")
+        pp = gxgm.PPoint(((8, 12), (5, 10)), hcs=s, vcs="geoid")
+        self.gx.log(pp.cs[0], " vcs:", pp.cs[1])
+        hcsd = json.loads(pp.cs[0])
+        self.assertEqual(hcsd['name'], "WGS 84 / UTM zone 32N <0,0,0,10,15,32>")
+        self.assertEqual(pp.cs[1], "geoid")
 
     def test_point(self):
         self.start(gsys.func_name())
@@ -172,6 +176,22 @@ class Test(unittest.TestCase):
 
         pp.xy = [(1, 2), (3,4), (5,6)]
         self.assertEqual(pp.xy.tolist(), [[1., 2.], [3., 4.], [5., 6.]])
+
+    def test_copy(self):
+        self.start(gsys.func_name())
+
+        p1 = gxgm.Point((1,2))
+        p2 = p1
+        self.assertTrue(p1 is p2)
+        p2 = p1.copy()
+        self.assertFalse(p1 is p2)
+        self.assertTrue(p1 == p2)
+
+        p2.cs = ("WGS 84", None)
+        self.assertFalse(p1 == p2)
+        p1.cs = "WGS 84"
+        self.assertTrue(p1 == p2)
+        p1.cs = ("WGS 84", "geoid")
 
 if __name__ == '__main__':
 

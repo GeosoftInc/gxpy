@@ -212,4 +212,4 @@ class GXmap:
         """
         gxlst = gxapi.GXLST.create(VIEW_NAME_SIZE)
         self._map.view_list_ex(gxlst, view_type)
-        return gxu.dict_from_lst(gxlst).keys()
+        return list(gxu.dict_from_lst(gxlst))

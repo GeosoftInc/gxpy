@@ -69,31 +69,31 @@ class GXview:
         return "{}({})".format(self.__class__, self.__dict__)
 
     def __str__(self):
-        return self._filename
+        return self._viewname
 
-    def __init__(self, viewname="_default_view", gmap=None, mode=MODE_WRITENEW, v3d=None):
+    def _mapview(self, gmap, viewname, mode=MODE_WRITENEW, new_group=None):
+
+        if not isinstance(gmap, gxmap.GXmap):
+            gmap = gxmap.GXmap.new(gmap)
 
         # temporary map for the view
-        if gmap is None:
-            self._map = gxmap.GXmap.new()
-        else:
-            self._map = gmap
         self._viewname = viewname
-        self._view = gxapi.GXMVIEW.create(self._map._map, self._viewname, mode)
+        self._view = gxapi.GXMVIEW.create(gmap._map, self._viewname, mode)
 
-        # start a default group
-        self._view.start_group("_default_group_", gxapi.MVIEW_GROUP_NEW)
+        if new_group:
+            self._view.start_group(new_group, gxapi.MVIEW_GROUP_NEW)
+
+
+        return gmap
+
+    def __init__(self, viewname="_default_view", gmap=None, mode=MODE_WRITENEW):
+
+        self._map = self._mapview(gmap, viewname, mode, "_default_group")
+        self._viewname = viewname
 
         # intitialize pen
         self._init_pen_attributes()
         self._pen_stack = []
-
-        if v3d is not None:
-            if len(v3d) == 0:
-                v3d = (0., 0., 100., 100., 0., 0., 100., 100.)
-            self._view.fit_map_window_3d(v3d[0], v3d[1], v3d[2], v3d[3],
-                                         v3d[4], v3d[5], v3d[6], v3d[7])
-
 
     def _line_style(self, ls):
         self._view.line_style(ls[0], ls[1])
@@ -271,3 +271,24 @@ class GXview:
 
         if pen is not None:
             self.pop_pen()
+
+class GXview3d(GXview):
+
+    def __init__(self, **kwds):
+
+        if 'viewname' not in kwds:
+            kwds['viewname'] = '_default_3d'
+        if 'gmap' not in kwds:
+            kwds['gmap'] = None
+        super().__init__(**kwds)
+
+        # construct a 3D view
+
+        h3dn = gxapi.GX3DN.create()
+        pov = (8., 20., 25.)
+        h3dn.set_point_of_view(pov[0], pov[1], pov[2])
+        render = (1, 1, 'x', 'y', 'z')
+        h3dn.set_render_controls(render[0], render[1], render[2], render[3], render[4])
+        self._view.set_h_3dn(h3dn)
+
+

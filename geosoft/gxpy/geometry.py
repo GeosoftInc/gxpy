@@ -1,12 +1,13 @@
 import numpy as np
 import numbers
 from collections.abc import Sequence
+from copy import deepcopy
 
 import geosoft
 import geosoft.gxapi as gxapi
 from . import map as gxmap
 from . import vv as gxvv
-from . import ipj as gxipj
+from . import coordinate_system as gxcs
 from . import utility as gxu
 
 __version__ = geosoft.__version__
@@ -20,67 +21,18 @@ class GeometryException(Exception):
     """
     pass
 
-class CS:
-    """
-    Base-class to manage coordinate system for all geometries.
-    A coordinate system defines the horizontal and vertical reference system relative to the Earth.
-
-    :param ipj: IPJ as an IPJ instance or a named string that can be constructred from `gxpy.ipj.from_any()`.
-    :param vcs: Vertical Coordinate System name
-    """
-
-    def __repr__(self):
-        return "{}({})".format(self.__class__, self.__dict__)
-
-    def __str__(self):
-        return "({} {})".format(str(self.ipj()), str(self.vcs()))
-
-    def _set_ipj(self, ipj):
-        if isinstance(ipj, gxipj.GXipj):
-            self._init_ipj = str(ipj)
-            self._ipj = ipj
-        else:
-            self._init_ipj = ipj
-            self._ipj = None
-
-    def __init__(self, ipj=None, vcs=None):
-
-        self._set_ipj(ipj)
-        self._init_vcs = vcs
-        self._vcs = None
-
-    @property
-    def ipj(self):
-        """IPJ instance"""
-        if self._ipj is None:
-            self._ipj = gxipj.GXipj.from_any(self._init_ipj)
-        return self._ipj
-
-    @ipj.setter
-    def ipj(self, ipj):
-        self._set_ipj(ipj)
-
-    @property
-    def vcs(self):
-        """Vertical Coordinate System"""
-        if self._vcs is None:
-            self._vcs = self._init_vcs
-        return self._vcs
-
-    @vcs.setter
-    def vcs(self, vcs):
-        self._ipj = vcs
-
 
 # geometry spatial data structures
-class Point(CS):
+class Point:
     """
-    Spatial location (x,y,z)
+    Spatial location (x,y,z).
 
     :param p:   array-line (x, y, z) create a Point (x, y, z)
                 if Point, returns a copy.
                 if array-like (x, y), create a Point (x, y, 0.0)
                 if a single value k (integral or float), create a Point (k, k, k)
+    :param hcs, vcs:
+                horizontal and vertical coordinate systems (see :class::`gxpy.coordinate_system.GXcs`)
 
     .. versionadded:: 9.2
     """
@@ -99,8 +51,11 @@ class Point(CS):
     def __str__(self):
         return "({}, {}, {})".format(self.x(), self.y(), self.z())
 
-    def __init__(self, p, **kwds):
-        super().__init__(**kwds)
+    def __init__(self, p, hcs=None, vcs=None):
+
+        self._init_cs = (hcs, vcs)
+        self._cs = None
+
         if hasattr(p, "__len__"):
             if len(p) > 2:
                 self.p = np.array(p[:3], dtype=float)
@@ -114,7 +69,6 @@ class Point(CS):
             elif isinstance(p, numbers.Real) or isinstance(p, numbers.Integral):
                 p = float(p)
                 self.p = np.array((p, p, p))
-
 
     def __add__(self, p):
         if type(p) is not Point:
@@ -138,6 +92,15 @@ class Point(CS):
         if type(p) is not Point:
             p = Point(p)
         return Point(self.p / p.p)
+
+    def __eq__(self, other):
+        return np.array_equal(self.p, other.p) and (self.cs == other.cs)
+
+    def copy(self):
+        cls = self.__class__
+        result = cls.__new__(cls)
+        result.__dict__.update(self.__dict__)
+        return result
 
     @property
     def x(self):
@@ -187,7 +150,21 @@ class Point(CS):
         self.p[1] = float(xyz[1])
         self.p[2] = float(xyz[2])
 
-class PPoint(CS, Sequence):
+    @property
+    def cs(self):
+        if self._cs is None:
+            self._cs = gxcs.GXcs(self._init_cs[0], self._init_cs[1])
+        return (self._cs.hcs, self._cs.vcs)
+
+    @cs.setter
+    def cs(self, cs):
+        if type(cs) is str:
+            self._init_cs = (cs, None)
+        else:
+            self._init_cs = (cs[0], cs[1])
+        self._cs = None
+
+class PPoint(Sequence):
     """
     Poly-Point class.
 
@@ -199,13 +176,20 @@ class PPoint(CS, Sequence):
     .. versionadded:: 9.2
     """
 
-    def __init__(self, xyz, z=0.0, **kwds):
+    def __init__(self, xyz, z=0.0, hcs=None, vcs=None):
         """
         Create a PPoint from a list of (x, y, z) points (array-like)
-        :param xyz: array-line, either (x, y) or (x, y, z) (shape (n, 2) or (n, 3))
+        :param xyz: array-like, either (x, y) or (x, y, z) (shape (n, 2) or (n, 3))
         :param z:   constant z value for (x, y) data, ignored for (x, y, z) data
+        :param hcs, vcs:
+            horizontal and vertical coordinate systems (see :class::`gxpy.coordinate_system.GXcs`)
+
+        .. versionadded:: 9.2
         """
-        super().__init__(**kwds)
+
+        self._init_cs = (hcs, vcs)
+        self._cs = None
+
         if type(xyz) is not np.ndarray:
             xyz = np.array(xyz)
 
@@ -273,6 +257,20 @@ class PPoint(CS, Sequence):
             return PPoint(self.pp / p.p)
         return PPoint(self.pp / Point(p).p)
 
+    def __copy__(self):
+        cls = self.__class__
+        result = cls.__new__(cls)
+        result.__dict__.update(self.__dict__)
+        return result
+
+    def __deepcopy__(self, memo):
+        cls = self.__class__
+        result = cls.__new__(cls)
+        memo[id(self)] = result
+        for k, v in self.__dict__.items():
+            setattr(result, k, deepcopy(v, memo))
+        return result
+
     @property
     def x(self):
         """ X array slice"""
@@ -313,3 +311,17 @@ class PPoint(CS, Sequence):
     def xyz(self):
         """ XYZ point array"""
         return self.pp
+
+    @property
+    def cs(self):
+        if self._cs is None:
+            self._cs = gxcs.GXcs(self._init_cs[0], self._init_cs[1])
+        return (self._cs.hcs, self._cs.vcs)
+
+    @cs.setter
+    def cs(self, cs):
+        if type(cs) is str:
+            self._init_cs = (cs, None)
+        else:
+            self._init_cs = (cs[0], cs[1])
+        self._cs = None

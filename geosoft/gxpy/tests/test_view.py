@@ -122,7 +122,7 @@ class Test(unittest.TestCase):
             self.assertEqual(pen, def_pen)
 
 
-    def test_line_drawing(self):
+    def test_view(self):
         self.start(gsys.func_name())
 
         testmap = os.path.join(self.gx.temp_folder(), "test")
@@ -133,9 +133,22 @@ class Test(unittest.TestCase):
             with gxv.GXview("poly", gmap) as view:
                 draw_stuff(view)
 
-        # gxvwr.map_viewer(mapfile)
+        gxvwr.map(mapfile)
         self.assertEqual(gxmap.crc_map(mapfile), 1477469463)
         gxmap.delete_files(mapfile)
+
+    def test_3D(self):
+        self.start(gsys.func_name())
+
+        testmap = os.path.join(self.gx.temp_folder(), "test")
+        with gxmap.GXmap.new(testmap, overwrite=True) as gmap:
+            mapfile = gmap.filename()
+            with gxv.GXview3d(viewname='v3d_test', gmap=gmap) as view:
+                rect_line(view)
+                draw_stuff(view)
+
+        gxvwr.v3d(mapfile)
+
 
 if __name__ == '__main__':
 
