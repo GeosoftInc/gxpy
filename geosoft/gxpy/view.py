@@ -10,6 +10,7 @@ from . import vv as gxvv
 from . import geometry as gxgm
 from . import ipj as gxipj
 from . import utility as gxu
+from . import coordinate_system as gxcs
 
 __version__ = geosoft.__version__
 
@@ -71,32 +72,36 @@ class GXview:
     def __str__(self):
         return self._viewname
 
-    def _mapview(self, gmap, viewname, mode=MODE_WRITENEW, new_group=None):
+    def __init__(self,
+                 viewname="_default_view",
+                 gmap=None,
+                 mode=MODE_WRITENEW,
+                 hcs=None,
+                 vcs=None):
 
-        if not isinstance(gmap, gxmap.GXmap):
-            gmap = gxmap.GXmap.new(gmap)
+        if isinstance(gmap, gxmap.GXmap):
+            self._gmap = gmap
+        else:
+            self._gmap = gxmap.GXmap.new(gmap)
 
-        # temporary map for the view
         self._viewname = viewname
-        self._view = gxapi.GXMVIEW.create(gmap._map, self._viewname, mode)
-
-        if new_group:
-            self._view.start_group(new_group, gxapi.MVIEW_GROUP_NEW)
-
-
-        return gmap
-
-    def __init__(self, viewname="_default_view", gmap=None, mode=MODE_WRITENEW):
-
-        self._map = self._mapview(gmap, viewname, mode, "_default_group")
-        self._viewname = viewname
+        self.gxview = gxapi.GXMVIEW.create(self._gmap.gxmap, self._viewname, mode)
+        self.gxview.start_group("_default_group", gxapi.MVIEW_GROUP_NEW)
 
         # intitialize pen
         self._init_pen_attributes()
         self._pen_stack = []
 
+        # coordinate system
+        self._cs = gxcs.GXcs(hcs, vcs)
+        self.gxview.set_ipj(self._cs.gxipj)
+
+    @property
+    def cs(self):
+        return self._cs.hcs, self._cs.vcs
+
     def _line_style(self, ls):
-        self._view.line_style(ls[0], ls[1])
+        self.gxview.line_style(ls[0], ls[1])
 
     def _init_pen_attributes(self):
 
@@ -109,41 +114,32 @@ class GXview:
 
         self._pen = {}
         self._pen_fn = {}
-        setpen('line_color', self._view.line_color, gxapi.C_BLACK)
-        setpen('line_thick', self._view.line_thick, 0.1)
-        setpen('line_smooth',self._view.line_smooth, SMOOTH_NONE)
+        setpen('line_color', self.gxview.line_color, gxapi.C_BLACK)
+        setpen('line_thick', self.gxview.line_thick, 0.1)
+        setpen('line_smooth',self.gxview.line_smooth, SMOOTH_NONE)
         setpen('line_style', self._line_style, (0, 1.0))
-        setpen('fill_color', self._view.fill_color, gxapi.C_TRANSPARENT)
-        setpen('pat_number', self._view.pat_number, 0)
-        setpen('pat_angle', self._view.pat_angle, 0.0)
-        setpen('pat_density', self._view.pat_density, 1.0)
-        setpen('pat_size', self._view.pat_size, 5.0)
-        setpen('pat_style', self._view.pat_style, TILE_RECTANGULAR)
-        setpen('pat_thick', self._view.pat_thick, 0.1)
+        setpen('fill_color', self.gxview.fill_color, gxapi.C_TRANSPARENT)
+        setpen('pat_number', self.gxview.pat_number, 0)
+        setpen('pat_angle', self.gxview.pat_angle, 0.0)
+        setpen('pat_density', self.gxview.pat_density, 1.0)
+        setpen('pat_size', self.gxview.pat_size, 5.0)
+        setpen('pat_style', self.gxview.pat_style, TILE_RECTANGULAR)
+        setpen('pat_thick', self.gxview.pat_thick, 0.1)
 
-    def map(self):
-        """
-        :return: name of the map that contains this view
+    @property
+    def gmap(self):
+        """ gxpy.GXmap instance that contains this view."""
+        return self._gmap
 
-        .. versionadded:: 9.2
-        """
-        return self._map
-
+    @property
     def viewname(self):
-        """
-        :return: name of the view contains this view
-
-        .. versionadded:: 9.2
-        """
+        """ Name of the view"""
         return self._viewname
 
-    def mapname(self):
-        """
-        :return: name of the map that contains this view
-
-        .. versionadded:: 9.2
-        """
-        return self._map.filename()
+    @property
+    def mapfilename(self):
+        """ Name of the map file that contains this view. """
+        return self._gmap.mapfilename
 
     def color(self, cstr):
         """
@@ -165,14 +161,19 @@ class GXview:
         Characters are not case sensitive.
         """
 
-        return self._view.color(str)
+        return self.gxview.color(str)
 
-    def set_pen(self, pen=None):
+    @property
+    def pen(self):
         """
-        Set the current drawing pen attributes
-        :param pen: dictionary of pen attrbutes and settings, if None, set to default
+        Dictionary of the current pen settings.
+        """
+        return self._pen.copy()
 
-        .. versionadded:: 9.2
+    @pen.setter
+    def pen(self, pen=None):
+        """
+        Define the current drawing pen attributes based on dictionary of settings.
         """
 
         if pen is None:
@@ -183,14 +184,6 @@ class GXview:
                 if self._pen[att] != setting:
                     self._pen_fn[att](setting)
                     self._pen[att] = setting
-
-    def get_pen(self):
-        """
-        Return a dictionary of the current pen settings.
-
-        .. versionadded:: 9.2
-        """
-        return self._pen.copy()
 
     def push_pen(self, pen=None):
         """Push current pen attributes on the pen stack. If pen not specified, all pen attributes are pushed."""
@@ -205,10 +198,10 @@ class GXview:
     def pop_pen(self):
         """Pop the last pen off the pen stack."""
         if len(self._pen_stack) > 0:
-            self.set_pen(self._pen_stack[-1])
+            self.pen = self._pen_stack[-1]
             del self._pen_stack[-1:]
 
-    def group(self, name, append=False):
+    def start_group(self, name, append=False):
         """
         Start a new named group in a view.  Drawing functions that follow will be rendered into this group.
 
@@ -229,7 +222,7 @@ class GXview:
         .. versionadded:: 9.2
         """
 
-        self._view.line(p1.x, p1.y, p2.x, p2.y)
+        self.gxview.line(p1.x, p1.y, p2.x, p2.y)
 
     def xy_poly_line(self, pp, close=False):
         """
@@ -245,11 +238,11 @@ class GXview:
         """
 
         if close:
-            self._view.poly_line(gxapi.MVIEW_DRAW_POLYGON,
+            self.gxview.poly_line(gxapi.MVIEW_DRAW_POLYGON,
                                  gxvv.GXvv.vv_np(pp.x)._vv,
                                  gxvv.GXvv.vv_np(pp.y)._vv)
         else:
-            self._view.poly_line(gxapi.MVIEW_DRAW_POLYLINE,
+            self.gxview.poly_line(gxapi.MVIEW_DRAW_POLYLINE,
                                  gxvv.GXvv.vv_np(pp.x)._vv,
                                  gxvv.GXvv.vv_np(pp.y)._vv)
 
@@ -265,9 +258,9 @@ class GXview:
 
         if pen is not None:
             self.push_pen(pen)
-            self.set_pen(pen)
+            self.pen = pen
 
-        self._view.rectangle(p1.x, p1.y, p2.x, p2.y)
+        self.gxview.rectangle(p1.x, p1.y, p2.x, p2.y)
 
         if pen is not None:
             self.pop_pen()
@@ -289,6 +282,6 @@ class GXview3d(GXview):
         h3dn.set_point_of_view(pov[0], pov[1], pov[2])
         render = (1, 1, 'x', 'y', 'z')
         h3dn.set_render_controls(render[0], render[1], render[2], render[3], render[4])
-        self._view.set_h_3dn(h3dn)
+        self.gxview.set_h_3dn(h3dn)
 
 

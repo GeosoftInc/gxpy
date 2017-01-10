@@ -18,9 +18,9 @@ def rect_line(view, size=100):
     p1 = gxgm.Point((0.1, 0.1)) * size
     p2 = gxgm.Point((0.9, 0.9)) * size
     poff = gxgm.Point((0.15, 0.05)) * size
-    view.set_pen({'fill_color': gxapi.C_LT_GREEN})
+    view.pen = {'fill_color': gxapi.C_LT_GREEN}
     view.xy_rectangle(p1, p2)
-    view.set_pen({'line_style': (2, 2.0)})
+    view.pen = {'line_style': (2, 2.0)}
     view.xy_line(p1 + poff, p2 - poff)
 
 
@@ -36,27 +36,27 @@ def draw_stuff(view, size = 1.0):
                  [235, 18.5]]
 
     pp = gxgm.PPoint.from_list(plinelist) * size
-    view.set_pen({'line_style': (2, 2.0)})
+    view.pen = {'line_style': (2, 2.0)}
     view.xy_poly_line(pp)
-    view.set_pen({'line_style': (4, 2.0), 'line_smooth': gxv.SMOOTH_AKIMA})
+    view.pen = {'line_style': (4, 2.0), 'line_smooth': gxv.SMOOTH_AKIMA}
     view.xy_poly_line(pp)
 
     ppp = np.array(plinelist)
     pp = gxgm.PPoint(ppp[3:, :]) * size
-    view.set_pen({'line_style': (5, 5.0),
+    view.pen = {'line_style': (5, 5.0),
                   'line_smooth': gxv.SMOOTH_CUBIC,
                   'line_color': gxapi.C_RED,
                   'line_thick': 0.25,
-                  'fill_color': gxapi.C_LT_BLUE})
+                  'fill_color': gxapi.C_LT_BLUE}
     view.xy_poly_line(pp, close=True)
 
-    view.set_pen({'fill_color': gxapi.C_LT_GREEN})
+    view.pen = {'fill_color': gxapi.C_LT_GREEN}
     p1 = gxgm.Point((100, 0, 0)) * size
     p2 = gxgm.Point((100, 0, 0)) * size
     pp = (pp - p1) / 2 + p2
     view.xy_poly_line(pp, close=True)
     pp += gxgm.Point((0, 25, 0)) * size
-    view.set_pen({'fill_color': gxapi.C_LT_RED})
+    view.pen = {'fill_color': gxapi.C_LT_RED}
     view.xy_poly_line(pp, close=True)
 
 
@@ -87,38 +87,38 @@ class Test(unittest.TestCase):
             pass
 
         with gxv.GXview() as vw:
-            self.assertEqual(vw.viewname(), "_default_view")
+            self.assertEqual(vw.viewname, "_default_view")
 
         with gxv.GXview("test") as vw:
-            self.assertEqual(vw.viewname(), "test")
+            self.assertEqual(vw.viewname, "test")
 
         test_map = os.path.join(self.gx.temp_folder(),"test_map")
         gmap = gxmap.GXmap.new(test_map)
-        mapname = gmap.filename()
+        mapname = gmap.mapfilename
         with gxv.GXview("test", gmap) as view:
-            self.assertEqual(view.viewname(), "test")
-            self.assertEqual(view.mapname(), mapname)
+            self.assertEqual(view.viewname, "test")
+            self.assertEqual(view.mapfilename, mapname)
 
-            def_pen = view.get_pen()
+            def_pen = view.pen
             pn = {"line_thick": 99, "pat_number": 88}
             view.push_pen()
-            view.set_pen(pn)
-            new_pen = view.get_pen()
+            view.pen = pn
+            new_pen = view.pen
             self.assertEqual(new_pen["line_thick"], 99)
             self.assertEqual(new_pen["pat_number"], 88)
 
             view.pop_pen()
-            pen = view.get_pen()
+            pen = view.pen
             self.assertEqual(pen, def_pen)
 
             view.push_pen(pn)
-            view.set_pen(pn)
-            new_pen = view.get_pen()
+            view.pen = pn
+            new_pen = view.pen
             self.assertEqual(new_pen["line_thick"], 99)
             self.assertEqual(new_pen["pat_number"], 88)
 
             view.pop_pen()
-            pen = view.get_pen()
+            pen = view.pen
             self.assertEqual(pen, def_pen)
 
 
@@ -127,7 +127,7 @@ class Test(unittest.TestCase):
 
         testmap = os.path.join(self.gx.temp_folder(), "test")
         with gxmap.GXmap.new(testmap, overwrite=True) as gmap:
-            mapfile = gmap.filename()
+            mapfile = gmap.mapfilename
             with gxv.GXview("rectangle_test", gmap) as view:
                 rect_line(view)
             with gxv.GXview("poly", gmap) as view:
@@ -142,13 +142,26 @@ class Test(unittest.TestCase):
 
         testmap = os.path.join(self.gx.temp_folder(), "test")
         with gxmap.GXmap.new(testmap, overwrite=True) as gmap:
-            mapfile = gmap.filename()
-            with gxv.GXview3d(viewname='v3d_test', gmap=gmap) as view:
+            mapfile = gmap.mapfilename
+            with gxv.GXview3d(viewname='v3d_test', gmap=gmap, hcs="wgs 84 / UTM zone 15S") as view:
                 rect_line(view)
                 draw_stuff(view)
 
         gxvwr.v3d(mapfile)
 
+    def test_cs(self):
+        self.start(gsys.func_name())
+
+        testmap = os.path.join(self.gx.temp_folder(), "test")
+        with gxmap.GXmap.new(testmap, overwrite=True) as gmap:
+            with gxv.GXview("rectangle_test", gmap=gmap, hcs="wgs 84") as view:
+                cs = view.cs
+                self.assertTrue("WGS 84" in cs[0])
+                self.assertEqual(cs[1], None)
+            with gxv.GXview("vcs", gmap=gmap, hcs="wgs 84", vcs="special") as view:
+                cs = view.cs
+                self.assertTrue("WGS 84" in cs[0])
+                self.assertEqual(cs[1], "special")
 
 if __name__ == '__main__':
 

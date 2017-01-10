@@ -53,8 +53,7 @@ class IPJException(Exception):
 
 class GXipj():
     """
-    Class to work with Geosoft coordinate systems.
-    This class wraps many of the functions found in geosoft.gxapi.GXIPJ.
+    Class to work with Geosoft IPJ coordinate system inteface.
 
     ._ipj is the GXIPJ handle to use when calling GXIPJ methods directly
 
@@ -64,6 +63,9 @@ class GXipj():
         :from_dict:     from a dictionary
         :from_json:     from a json string
         :from_esri:     from an ESRI wkt string
+
+    .. deprecated: 9.2
+        Replaced by :class:`gxpy.coordinate_system.GXcs`
 
     .. versionadded:: 9.1
     """
@@ -564,6 +566,9 @@ class GXpj:
 
     :params ipj_from:  GXipj from coordinate system
     :params ipj_to:    GXipj to coordinate system
+
+    .. deprecated: 9.2
+        Replaced by :class:`gxpy.coordinate_system.GXpj`
 
     .. versionadded:: 9.1
     """

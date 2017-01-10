@@ -74,12 +74,12 @@ def save_as_image(mapfile, imagefile, type="PNG", pix_width=1000, pix_height=0):
     .. versionadded:: 9.2
     """
 
-    GXmap.open(mapfile)._map.export_all_raster(imagefile, '',
-                                               pix_width, pix_height, gxapi.rDUMMY,
-                                               gxapi.MAP_EXPORT_BITS_24,
-                                               gxapi.MAP_EXPORT_METHOD_NONE,
-                                               type,
-                                               '')
+    GXmap.open(mapfile).gxmap.export_all_raster(imagefile, '',
+                                                pix_width, pix_height, gxapi.rDUMMY,
+                                                gxapi.MAP_EXPORT_BITS_24,
+                                                gxapi.MAP_EXPORT_METHOD_NONE,
+                                                type,
+                                                '')
 
 def crc_map(mapfile, pix_width=1000):
     """
@@ -129,15 +129,15 @@ class GXmap:
 
     def __init__(self, filename, mode=MAP_WRITENEW):
 
-        self._map = None
+        self.gxmap = None
         self._remove = False
         self._filename = map_file_name(filename)
-        self._map = gxapi.GXMAP.create(filename, mode)
+        self.gxmap = gxapi.GXMAP.create(filename, mode)
 
     def __del__(self):
-        if self._map:
-            del self._map
-            self._map = None
+        if self.gxmap:
+            del self.gxmap
+            self.gxmap = None
             gc.collect()
             if self._remove:
                 try:
@@ -188,9 +188,10 @@ class GXmap:
 
         return gmap
 
-    def filename(self):
+    @property
+    def mapfilename(self):
         """
-        Return the full map file path name.
+        Full map file path name.
         """
         return self._filename
     
@@ -202,7 +203,7 @@ class GXmap:
 
     def commit_changes(self):
         """Commit changes to the map."""
-        self._map.commit()
+        self.gxmap.commit()
 
     def view_list(self, view_type=LIST_ALL):
         """
@@ -211,5 +212,5 @@ class GXmap:
         :return: list of views
         """
         gxlst = gxapi.GXLST.create(VIEW_NAME_SIZE)
-        self._map.view_list_ex(gxlst, view_type)
+        self.gxmap.view_list_ex(gxlst, view_type)
         return list(gxu.dict_from_lst(gxlst))
