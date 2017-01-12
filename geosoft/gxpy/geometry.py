@@ -1,14 +1,9 @@
 import numpy as np
 import numbers
 from collections.abc import Sequence
-from copy import deepcopy
 
 import geosoft
-import geosoft.gxapi as gxapi
-from . import map as gxmap
-from . import vv as gxvv
 from . import coordinate_system as gxcs
-from . import utility as gxu
 
 __version__ = geosoft.__version__
 
@@ -20,7 +15,6 @@ class GeometryException(Exception):
     Exceptions from this module.
     """
     pass
-
 
 class Geometry:
     """

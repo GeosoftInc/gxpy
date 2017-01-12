@@ -4,7 +4,6 @@ import json
 
 import geosoft.gxapi as gxapi
 import geosoft.gxpy.gx as gx
-import geosoft.gxpy.utility as gxu
 import geosoft.gxpy.system as gsys
 import geosoft.gxpy.coordinate_system as gxcs
 import geosoft
