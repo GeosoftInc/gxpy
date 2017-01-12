@@ -44,6 +44,8 @@ class GXview:
 
     :param viewname:    view name, default is "_default_view"
     :param gmap:        map instance, if not specified a new default map is created and deleted on closing
+    :param hcs, vcs:    horizontal and vertical coordinate system definition.  See :class:`coordinate_system.GXcs`.
+    :param groupname:   default initial group name
 
     .. versionadded:: 9.2
     """
@@ -77,7 +79,8 @@ class GXview:
                  gmap=None,
                  mode=MODE_WRITENEW,
                  hcs=None,
-                 vcs=None):
+                 vcs=None,
+                 groupname = '_default'):
 
         if isinstance(gmap, gxmap.GXmap):
             self._gmap = gmap
@@ -86,7 +89,7 @@ class GXview:
 
         self._viewname = viewname
         self.gxview = gxapi.GXMVIEW.create(self._gmap.gxmap, self._viewname, mode)
-        self.gxview.start_group("_default_group", gxapi.MVIEW_GROUP_NEW)
+        self.gxview.start_group(groupname, gxapi.MVIEW_GROUP_NEW)
 
         # intitialize pen
         self._init_pen_attributes()
@@ -173,7 +176,7 @@ class GXview:
     @pen.setter
     def pen(self, pen=None):
         """
-        Define the current drawing pen attributes based on dictionary of settings.
+        Set the current drawing pen attributes from a pen dictionary
         """
 
         if pen is None:
@@ -278,9 +281,10 @@ class GXview3d(GXview):
         # construct a 3D view
 
         h3dn = gxapi.GX3DN.create()
-        pov = (8., 20., 25.)
+        pov = (4., 20., 25.)
+        pov = (5., 0., 90.)
         h3dn.set_point_of_view(pov[0], pov[1], pov[2])
-        render = (1, 1, 'x', 'y', 'z')
+        render = (0, 0, 'x', 'y', 'z')
         h3dn.set_render_controls(render[0], render[1], render[2], render[3], render[4])
         self.gxview.set_h_3dn(h3dn)
 

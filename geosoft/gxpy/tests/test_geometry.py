@@ -39,15 +39,15 @@ class Test(unittest.TestCase):
 
         s = "WGS 84 / UTM zone 32N <0, 0, 0, 10, 15, 32>"
         p = gxgm.Point((5,10), hcs=s)
-        self.gx.log(p.cs[0], " vcs:", p.cs[1])
-        hcsd = json.loads(p.cs[0])
+        self.gx.log(p.cs)
+        hcsd = p.cs.coordinate_dict
         self.assertEqual(hcsd['name'], "WGS 84 / UTM zone 32N <0,0,0,10,15,32>")
 
         pp = gxgm.PPoint(((8, 12), (5, 10)), hcs=s, vcs="geoid")
-        self.gx.log(pp.cs[0], " vcs:", pp.cs[1])
-        hcsd = json.loads(pp.cs[0])
+        self.gx.log(pp.cs)
+        hcsd = p.cs.coordinate_dict
         self.assertEqual(hcsd['name'], "WGS 84 / UTM zone 32N <0,0,0,10,15,32>")
-        self.assertEqual(pp.cs[1], "geoid")
+        self.assertEqual(pp.cs.vcs, "geoid")
 
     def test_point(self):
         self.start(gsys.func_name())
@@ -162,7 +162,7 @@ class Test(unittest.TestCase):
         self.assertEqual(pp.z.tolist(), [9., 18., 27.])
 
         points = [(5, 10), (6, 11), (7, 12)]
-        pp = gxgm.PPoint(points, 3.5)
+        pp = gxgm.PPoint(points, z=3.5)
         self.assertEqual(pp.x.tolist(), [5., 6., 7.])
         self.assertEqual(pp.z.tolist(), [3.5, 3.5, 3.5])
         self.assertEqual(pp.xy.tolist(), np.array(points).tolist())
@@ -187,11 +187,32 @@ class Test(unittest.TestCase):
         self.assertFalse(p1 is p2)
         self.assertTrue(p1 == p2)
 
-        p2.cs = ("WGS 84", None)
-        self.assertFalse(p1 == p2)
-        p1.cs = "WGS 84"
+        p2.set_cs(hcs="WGS 84")
         self.assertTrue(p1 == p2)
-        p1.cs = ("WGS 84", "geoid")
+        p1.set_cs("WGS 84")
+        self.assertTrue(p1 == p2)
+        p1.set_cs(hcs="WGS 84", vcs="geoid")
+        self.assertFalse(p1 == p2)
+
+    def test_box(self):
+        self.start(gsys.func_name())
+
+        b1 = gxgm.Box(gxgm.Point((0, 1, -20)),
+                      gxgm.Point((10, 20, -1)))
+        self.assertEqual('box[x(0.0, 10.0) y(1.0, 20.0) z(-20.0, -1.0)]', str(b1))
+        self.assertEqual(b1.x, (0., 10.))
+        self.assertEqual(b1.y, (1., 20.))
+        self.assertEqual(b1.z, (-20., -1.))
+        b2 = gxgm.Box(gxgm.Point((b1.x[0], b1.y[0], b1.z[0])),
+                      gxgm.Point((b1.x[1], b1.y[1], b1.z[1])))
+        self.assertTrue(b1 == b2)
+        b2 = gxgm.Box(gxgm.Point((b1.x[1], b1.y[1], b1.z[1])),
+                      gxgm.Point((b1.x[0], b1.y[0], b1.z[0])), hcs="WGS 84")
+        same = (b1 == b2)
+        self.assertTrue(same)
+        self.assertEqual(b2.x, (10., 0.))
+        self.assertEqual(b2.y, (20., 1.))
+        self.assertEqual(b2.z, (-1., -20.))
 
 if __name__ == '__main__':
 

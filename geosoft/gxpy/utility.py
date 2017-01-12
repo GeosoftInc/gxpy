@@ -714,5 +714,3 @@ def datetime_from_year(year):
     return y_start + datetime.timedelta(seconds=milliseconds/1000.0)
 
 
-
-
