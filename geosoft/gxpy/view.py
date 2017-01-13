@@ -31,18 +31,28 @@ MODE_WRITEOLD = gxapi.MVIEW_WRITEOLD
 SMOOTH_NONE = gxapi.MVIEW_SMOOTH_NEAREST
 SMOOTH_CUBIC = gxapi.MVIEW_SMOOTH_CUBIC
 SMOOTH_AKIMA = gxapi.MVIEW_SMOOTH_AKIMA
+
 TILE_RECTANGULAR = gxapi.MVIEW_TILE_RECTANGULAR
 TILE_DIAGONAL = gxapi.MVIEW_TILE_DIAGONAL
 TILE_TRIANGULAR = gxapi.MVIEW_TILE_TRIANGULAR
 TILE_RANDOM = gxapi.MVIEW_TILE_RANDOM
 
-_def_group = "_default_group_"
+EXTENT_VIEW = 1
+EXTENT_MAP = -1
+
+UNIT_VIEW = 0
+UNIT_MAP = 2
+UNIT_VIEW_UNWARPED = 3
+
+GRATICULE_DOT = 0
+GRATICULE_LINE = 1
+GRATICULE_CROSS = 2
 
 class GXview:
     """
     Geosoft view class.
 
-    :param viewname:    view name, default is "_default_view"
+    :param viewname:    view name, default is "_unnamed_view"
     :param gmap:        map instance, if not specified a new default map is created and deleted on closing
     :param hcs, vcs:    horizontal and vertical coordinate system definition.  See :class:`coordinate_system.GXcs`.
     :param groupname:   default initial group name
@@ -75,12 +85,15 @@ class GXview:
         return self._viewname
 
     def __init__(self,
-                 viewname="_default_view",
+                 viewname="_unnamed_view",
                  gmap=None,
                  mode=MODE_WRITENEW,
                  hcs=None,
                  vcs=None,
-                 groupname = '_default'):
+                 groupname="_unnamed_group",
+                 map_location=(0,0),
+                 area=(0,0,100,100),
+                 scale=500):
 
         if isinstance(gmap, gxmap.GXmap):
             self._gmap = gmap
@@ -96,12 +109,72 @@ class GXview:
         self._pen_stack = []
 
         # coordinate system
-        self._cs = gxcs.GXcs(hcs, vcs)
-        self.gxview.set_ipj(self._cs.gxipj)
+        self.cs = gxcs.GXcs(hcs, vcs)
+        self.gxview.set_ipj(self.cs.gxipj)
+
+        # area and scale
+        if hasattr(scale, "__iter__"):
+            x_scale, y_scale = scale
+        else:
+            x_scale = y_scale = scale
+        a_minx, a_miny, a_maxx, a_maxy = area
+        mm_minx = map_location[0] * 1000.0
+        mm_miny = map_location[1] * 1000.0
+        mm_maxx = mm_minx + (a_maxx - a_minx) * 1000.0/ x_scale
+        mm_maxy = mm_miny + (a_maxy - a_miny) * 1000.0/ y_scale
+        self.gxview.fit_window(mm_minx, mm_miny, mm_maxx, mm_maxy,
+                               a_minx, a_miny, a_maxx, a_maxy)
+        self.gxview.set_window(a_minx, a_miny, a_maxx, a_maxy, UNIT_VIEW)
 
     @property
-    def cs(self):
-        return self._cs.hcs, self._cs.vcs
+    def gmap(self):
+        """ gxpy.GXmap instance that contains this view."""
+        return self._gmap
+
+    @property
+    def viewname(self):
+        """ Name of the view"""
+        return self._viewname
+
+    @property
+    def mapfilename(self):
+        """ Name of the map file that contains this view. """
+        return self._gmap.mapfilename
+
+    @property
+    def pen(self):
+        """
+        Dictionary of the current pen settings.
+        """
+        return self._pen.copy()
+
+    @pen.setter
+    def pen(self, pen):
+        """
+        Set the current drawing pen attributes from a pen dictionary
+        """
+        for att, setting in pen.items():
+            if type(setting) is str:
+                setting = self.gxview.color(setting)
+            if self._pen[att] != setting:
+                self._pen_fn[att](setting)
+                self._pen[att] = setting
+
+    def push_pen(self, pen=None):
+        """Push current pen attributes on the pen stack. If pen not specified, all pen attributes are pushed."""
+        if pen is None:
+            self._pen_stack.append(self._pen.copy())
+        else:
+            oldpen = {}
+            for key in pen:
+                oldpen[key] = self._pen[key]
+            self._pen_stack.append(oldpen)
+
+    def pop_pen(self):
+        """Pop the last pen off the pen stack."""
+        if len(self._pen_stack) > 0:
+            self.pen = self._pen_stack[-1]
+            del self._pen_stack[-1:]
 
     def _line_style(self, ls):
         self.gxview.line_style(ls[0], ls[1])
@@ -129,20 +202,21 @@ class GXview:
         setpen('pat_style', self.gxview.pat_style, TILE_RECTANGULAR)
         setpen('pat_thick', self.gxview.pat_thick, 0.1)
 
-    @property
-    def gmap(self):
-        """ gxpy.GXmap instance that contains this view."""
-        return self._gmap
+    def extent(self, extent=EXTENT_VIEW):
+        xmin = gxapi.float_ref()
+        ymin = gxapi.float_ref()
+        xmax = gxapi.float_ref()
+        ymax = gxapi.float_ref()
+        self.gxview.extent(EXTENT_VIEW, UNIT_VIEW, xmin, ymin, xmax, ymax)
+        if extent == EXTENT_MAP:
+            xmin.value, ymin.value = self.view_to_map(xmin.value, ymin.value)
+            xmax.value, ymax.value = self.view_to_map(xmax.value, ymax.value)
+        return xmin.value, ymin.value, xmax.value, ymax.value
 
-    @property
-    def viewname(self):
-        """ Name of the view"""
-        return self._viewname
-
-    @property
-    def mapfilename(self):
-        """ Name of the map file that contains this view. """
-        return self._gmap.mapfilename
+    def scale(self):
+        x = self.gxview.scale_mm() * 1000.0
+        y = self.gxview.scale_ymm() * 1000.0
+        return x, y
 
     def color(self, cstr):
         """
@@ -166,44 +240,6 @@ class GXview:
 
         return self.gxview.color(str)
 
-    @property
-    def pen(self):
-        """
-        Dictionary of the current pen settings.
-        """
-        return self._pen.copy()
-
-    @pen.setter
-    def pen(self, pen=None):
-        """
-        Set the current drawing pen attributes from a pen dictionary
-        """
-
-        if pen is None:
-            self._init_pen_attributes()
-
-        else:
-            for att, setting in pen.items():
-                if self._pen[att] != setting:
-                    self._pen_fn[att](setting)
-                    self._pen[att] = setting
-
-    def push_pen(self, pen=None):
-        """Push current pen attributes on the pen stack. If pen not specified, all pen attributes are pushed."""
-        if pen is None:
-            self._pen_stack.append(self._pen.copy())
-        else:
-            oldpen = {}
-            for key in pen:
-                oldpen[key] = self._pen[key]
-            self._pen_stack.append(oldpen)
-
-    def pop_pen(self):
-        """Pop the last pen off the pen stack."""
-        if len(self._pen_stack) > 0:
-            self.pen = self._pen_stack[-1]
-            del self._pen_stack[-1:]
-
     def start_group(self, name, append=False):
         """
         Start a new named group in a view.  Drawing functions that follow will be rendered into this group.
@@ -214,9 +250,50 @@ class GXview:
         .. versionadded:: 9.2
         """
 
+    def map_to_view(self, x, y):
+        xr = gxapi.float_ref()
+        xr.value = x * 1000.0
+        yr = gxapi.float_ref()
+        yr.value = y * 1000.0
+        self.gxpy.plot_to_view(xr, yr)
+        return xr.value, yr.value
+
+    def view_to_map(self, x, y):
+        xr = gxapi.float_ref()
+        xr.value = x
+        yr = gxapi.float_ref()
+        yr.value = y
+        self.gxview.view_to_plot(xr, yr)
+        return xr.value / 1000.0, yr.value / 1000.0
+
     # drawing to a plane
 
-    def xy_line(self, p1, p2):
+    def graticule(self, dx=None, dy=None, ddx=None, ddy=None, style=GRATICULE_DOT, pen=None):
+
+        if pen is not None:
+            self.push_pen(pen)
+            self.pen = pen
+
+        if dx is None or dy is None:
+            rx, ry = self.map_to_view(0,0)
+            rxx, ryy = self.map_to_view(0.02, 0.02)
+            if dx is None:
+                dx = rxx - rx
+                ddx = dx * 0.2
+            if dy is None:
+                dy = ryy - ry
+                dyy = dy * 0.2
+        if ddy is None:
+            ddy = dy * 0.2
+        if ddx is None:
+            ddx = dx * 0.2
+        self.gxview.grid(dx, dy, ddx, ddy, style)
+
+        if pen is not None:
+            self.pop_pen()
+
+            
+    def xy_line(self, p1, p2, pen=None):
         """
         Draw a line on the current plane
         :param p1:  gxpy.geometry.Point starting
@@ -225,9 +302,17 @@ class GXview:
         .. versionadded:: 9.2
         """
 
+        if pen is not None:
+            self.push_pen(pen)
+            self.pen = pen
+
         self.gxview.line(p1.x, p1.y, p2.x, p2.y)
 
-    def xy_poly_line(self, pp, close=False):
+        if pen is not None:
+            self.pop_pen()
+
+
+    def xy_poly_line(self, pp, close=False, pen=None):
         """
         Draw a polyline the current plane
         :param pline: gxpy.geometry.PPoint
@@ -240,6 +325,10 @@ class GXview:
         .. versionadded:: 9.2
         """
 
+        if pen is not None:
+            self.push_pen(pen)
+            self.pen = pen
+
         if close:
             self.gxview.poly_line(gxapi.MVIEW_DRAW_POLYGON,
                                  gxvv.GXvv.vv_np(pp.x)._vv,
@@ -248,6 +337,9 @@ class GXview:
             self.gxview.poly_line(gxapi.MVIEW_DRAW_POLYLINE,
                                  gxvv.GXvv.vv_np(pp.x)._vv,
                                  gxvv.GXvv.vv_np(pp.y)._vv)
+
+        if pen is not None:
+            self.pop_pen()
 
     def xy_rectangle(self, p1, p2, pen=None):
         """
@@ -290,11 +382,14 @@ class GXview:
 
 class GXview3d(GXview):
 
-    def __init__(self, viewname='_default_3d', locate=(0,0,100,100), area=None, **kwds):
+    def __init__(self, viewname='_unnamed_3d_view', **kwds):
 
         if 'gmap' not in kwds:
             kwds['gmap'] = None
         super().__init__(viewname, **kwds)
+
+        mminx, mminy, mmaxx, mmaxy = self.extent(EXTENT_MAP)
+        vminx, vminy, vmaxx, vmaxy = self.extent(EXTENT_VIEW)
 
         # construct a 3D view
 
@@ -305,13 +400,7 @@ class GXview3d(GXview):
         render = (0, 0, 'x', 'y', 'z')
         h3dn.set_render_controls(render[0], render[1], render[2], render[3], render[4])
         self.gxview.set_h_3dn(h3dn)
-
-        mminx, mminy, mmaxx, mmaxy = locate
-        if area is None:
-            dminx, dminy, dmaxx, dmaxy = locate
-        else:
-            dminx, dminy, dmaxx, dmaxy = area
         self.gxview.fit_map_window_3d(mminx, mminy, mmaxx, mmaxy,
-                                      dminx, dminy, dmaxx, dmaxy)
+                                      vminx, vminy, vmaxx, vmaxy)
 
 
