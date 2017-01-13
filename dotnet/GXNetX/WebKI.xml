@@ -3568,12 +3568,12 @@
     <HelpKINode Title="CVVU.CondDepthTEM Method " Url="html/M_Geosoft_Desktop_GXNetX_CVVU_CondDepthTEM.htm" />
   </HelpKINode>
   <HelpKINode Title="Constant class">
-    <HelpKINode Title="Constant Class" Url="html/T_GeoEngine_Core_GXNetX_Constant.htm" />
     <HelpKINode Title="Constant Class" Url="html/T_Geosoft_Desktop_GXNetX_Constant.htm" />
+    <HelpKINode Title="Constant Class" Url="html/T_GeoEngine_Core_GXNetX_Constant.htm" />
     <HelpKINode Title="about Constant class" Url="html/T_Geosoft_Desktop_GXNetX_Constant.htm" />
     <HelpKINode Title="about Constant class" Url="html/T_GeoEngine_Core_GXNetX_Constant.htm" />
-    <HelpKINode Title="fields" Url="html/Fields_T_Geosoft_Desktop_GXNetX_Constant.htm" />
     <HelpKINode Title="fields" Url="html/Fields_T_GeoEngine_Core_GXNetX_Constant.htm" />
+    <HelpKINode Title="fields" Url="html/Fields_T_Geosoft_Desktop_GXNetX_Constant.htm" />
   </HelpKINode>
   <HelpKINode Title="Constant.ACQUIRE_SEL_HOLES field" Url="html/F_Geosoft_Desktop_GXNetX_Constant_ACQUIRE_SEL_HOLES.htm" />
   <HelpKINode Title="Constant.ACQUIRE_SEL_POINT field" Url="html/F_Geosoft_Desktop_GXNetX_Constant_ACQUIRE_SEL_POINT.htm" />
@@ -16844,13 +16844,13 @@
   <HelpKINode Title="SetMarkMoveable method" Url="html/M_GeoEngine_Core_GXNetX_CMVIEW_SetMarkMoveable.htm" />
   <HelpKINode Title="SetMask method" Url="html/M_Geosoft_Desktop_GXNetX_CSEMPLOT_SetMask.htm" />
   <HelpKINode Title="SetMETA method">
-    <HelpKINode Title="CDB.SetMETA Method " Url="html/M_GeoEngine_Core_GXNetX_CDB_SetMETA.htm" />
-    <HelpKINode Title="CHGD.SetMETA Method " Url="html/M_GeoEngine_Core_GXNetX_CHGD_SetMETA.htm" />
+    <HelpKINode Title="CDOCU.SetMETA Method " Url="html/M_Geosoft_Desktop_GXNetX_CDOCU_SetMETA.htm" />
     <HelpKINode Title="CIMG.SetMETA Method " Url="html/M_GeoEngine_Core_GXNetX_CIMG_SetMETA.htm" />
     <HelpKINode Title="CMAP.SetMETA Method " Url="html/M_GeoEngine_Core_GXNetX_CMAP_SetMETA.htm" />
     <HelpKINode Title="CVOX.SetMETA Method " Url="html/M_GeoEngine_Core_GXNetX_CVOX_SetMETA.htm" />
-    <HelpKINode Title="CDOCU.SetMETA Method " Url="html/M_Geosoft_Desktop_GXNetX_CDOCU_SetMETA.htm" />
+    <HelpKINode Title="CDB.SetMETA Method " Url="html/M_GeoEngine_Core_GXNetX_CDB_SetMETA.htm" />
     <HelpKINode Title="CGIS.SetMETA Method " Url="html/M_GeoEngine_Core_GXNetX_CGIS_SetMETA.htm" />
+    <HelpKINode Title="CHGD.SetMETA Method " Url="html/M_GeoEngine_Core_GXNetX_CHGD_SetMETA.htm" />
     <HelpKINode Title="CHXYZ.SetMETA Method " Url="html/M_GeoEngine_Core_GXNetX_CHXYZ_SetMETA.htm" />
   </HelpKINode>
   <HelpKINode Title="SetMeta method" Url="html/M_GeoEngine_Core_GXNetX_CMVIEW_SetMeta.htm" />
