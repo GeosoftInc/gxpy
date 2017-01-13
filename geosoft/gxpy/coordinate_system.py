@@ -314,6 +314,9 @@ class GXcs:
             self._setup_ipj()
             self._setup_vcs(vcs)
 
+    def __eq__(self, other):
+        return self.same_as(other)
+
     def _setup_ipj(self):
         """ Setup the horizontal coordinate system. """
         if self._gxapi_ipj is None:

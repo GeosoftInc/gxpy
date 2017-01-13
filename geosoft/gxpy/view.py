@@ -268,15 +268,33 @@ class GXview:
         if pen is not None:
             self.pop_pen()
 
+    def box_3d(self, box, pen=None):
+        """
+        Draw a 3D box on the current plane
+        :param box: geometry.Box
+        :param pen: pen to use
+
+        .. versionadded:: 9.2
+        """
+
+        if pen is not None:
+            self.push_pen(pen)
+            self.pen = pen
+
+        self.gxview.box_3d(box.p1.x, box.p1.y, box.p1.z,
+                           box.p2.x, box.p2.y, box.p2.z)
+
+        if pen is not None:
+            self.pop_pen()
+
+
 class GXview3d(GXview):
 
-    def __init__(self, **kwds):
+    def __init__(self, viewname='_default_3d', locate=(0,0,100,100), area=None, **kwds):
 
-        if 'viewname' not in kwds:
-            kwds['viewname'] = '_default_3d'
         if 'gmap' not in kwds:
             kwds['gmap'] = None
-        super().__init__(**kwds)
+        super().__init__(viewname, **kwds)
 
         # construct a 3D view
 
@@ -287,5 +305,13 @@ class GXview3d(GXview):
         render = (0, 0, 'x', 'y', 'z')
         h3dn.set_render_controls(render[0], render[1], render[2], render[3], render[4])
         self.gxview.set_h_3dn(h3dn)
+
+        mminx, mminy, mmaxx, mmaxy = locate
+        if area is None:
+            dminx, dminy, dmaxx, dmaxy = locate
+        else:
+            dminx, dminy, dmaxx, dmaxy = area
+        self.gxview.fit_map_window_3d(mminx, mminy, mmaxx, mmaxy,
+                                      dminx, dminy, dmaxx, dmaxy)
 
 

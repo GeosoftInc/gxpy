@@ -141,12 +141,18 @@ class Test(unittest.TestCase):
         self.start(gsys.func_name())
 
         testmap = os.path.join(self.gx.temp_folder(), "test")
+        testmap = "test"
         with gxmap.GXmap.new(testmap, overwrite=True) as gmap:
             mapfile = gmap.mapfilename
-            with gxv.GXview3d(viewname='v3d_test', gmap=gmap, hcs="wgs 84 / UTM zone 15S") as view:
+            with gxv.GXview("base", gmap) as view:
+                view.xy_rectangle(gxgm.Point((0,0)), gxgm.Point((100,100)))
+            with gxv.GXview3d(viewname='v3d_test', locate=(0,0,100,100), area=(0,0,10,10),
+                              gmap=gmap, hcs="wgs 84 / UTM zone 15S") as view:
                 rect_line(view)
                 draw_stuff(view)
+                view.box_3d(gxgm.Box(gxgm.Point((0,0,10)), gxgm.Point((120,100,50))))
 
+        gxvwr.map(mapfile)
         gxvwr.v3d(mapfile)
 
     def test_cs(self):

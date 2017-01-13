@@ -27,17 +27,13 @@ class Geometry:
     """
 
     def __init__(self, **kwargs):
-         self._cs = gxcs.GXcs(**kwargs)
+         self.cs = gxcs.GXcs(**kwargs)
 
     def __eq__(self, other):
         return self.cs.same_as(other.cs)
 
-    @property
-    def cs(self):
-        return self._cs
-
     def set_cs(self, *args, **kwargs):
-        self._cs = gxcs.GXcs(*args, **kwargs)
+        self.cs = gxcs.GXcs(*args, **kwargs)
 
 
 class Point(Geometry):
@@ -324,9 +320,9 @@ class Box(Geometry):
         self.p2 = p2
 
     def __eq__(self, other):
-        return self.cs.same_as(other.cs) \
-               and ((self.p1 == other.p1) and (self.p2 == other.p2)
-                    or (self.p1 == other.p2) and (self.p2 == other.p1))
+        return (self.cs == other.cs) and \
+                ((self.p1 == other.p1) and (self.p2 == other.p2)
+                 or (self.p1 == other.p2) and (self.p2 == other.p1))
 
     def copy(self):
         cls = self.__class__
