@@ -65,9 +65,23 @@ class Test(unittest.TestCase):
     def test_raises(self):
         self.start(gsys.func_name())
 
+        self.assertRaises(gxdf.DfException, gxdf.GXdf, initial='bogus')
         self.assertRaises(gxdf.DfException, gxdf.GXdf, initial='datumtrf', columns="NOT_THERE")
-        self.assertRaises(geosoft.gxapi.GXError, gxdf.GXdf, initial='datumtrf', records="NOT_THERE")
+        self.assertRaises(gxdf.DfException, gxdf.GXdf, initial='datumtrf', records="NOT_THERE")
 
+
+    def test_dict(self):
+        self.start(gsys.func_name())
+
+        m = gxdf.table_record('media', 'Unlimited')
+        self.assertEqual(m['SIZE_X'], '300')
+        self.assertEqual(gxdf.table_record('maptmpl', 'portrait A4')['MEDIA'], 'A4')
+        m = gxdf.table_column('media','FULLSIZE_Y')
+        self.assertEqual(m['letter'], '21.59')
+
+        self.assertRaises(gxdf.DfException, gxdf.table_record, 'bogus', 'bogus')
+        self.assertRaises(gxdf.DfException, gxdf.table_record, 'maptmpl', 'bogus')
+        self.assertRaises(gxdf.DfException, gxdf.table_column, 'maptmpl', 'bogus')
 
 if __name__ == '__main__':
 

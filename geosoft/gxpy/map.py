@@ -7,13 +7,14 @@ import geosoft
 import geosoft.gxapi as gxapi
 from . import gx as gx
 from . import utility as gxu
+from . import dataframe as gxdf
 
 __version__ = geosoft.__version__
 
-def _(s):
+def _t(s):
     return s
 
-class MAPException(Exception):
+class MapException(Exception):
     """
     Exceptions from this module.
 
@@ -165,7 +166,8 @@ class GXmap:
         Create a new map file.
 
         :param filename:    name of the map file, None for a temporary map (default)
-        :param overwrite:   True to overwrite an existing map.
+        :param overwrite:   True to overwrite an existing map.  If False and map exists
+                            a MapException is raised.
 
         .. versionadded:: 9.2
         """
@@ -181,10 +183,139 @@ class GXmap:
             if overwrite is False:
                 filename = map_file_name(filename)
                 if os.path.isfile(filename):
-                    raise MAPException(_('Cannot overwrite existing file: "{}"').format(filename))
+                    raise MapException(_t('Cannot overwrite existing file: "{}"').format(filename))
 
         gmap = cls(filename, MAP_WRITENEW)
         gmap.remove_on_close(delete)
+
+        return gmap
+
+    @classmethod
+    def new_standard_geosoft(cls, data_area, scale=None,
+                             map_spec="landscape A3",
+                             hcs=None, vcs=None,
+                             z_scale=1.0,
+                             **kwa):
+        """
+
+        :parameters:
+            :data_area: (min_x, min_y, max_x, max_y) data area for the data view on the map
+            :scale:     required scale, default will fit data to the map media
+            :map_spec:  map template name from the maptmpl table, or a template dictionary (see below)
+            :hcs:       horizontal coordinate system, default unknown
+            :vcs:       vertical coordinate system, default unknown
+            :z_scale:   vertical exaggeration, default no exaggeration
+
+        map_spec dictionary:
+
+        .. code::
+
+            {
+                "media":                                # media name from the media table.
+                "map_margin": (left, right, bottom, top)# map margins in map cm
+                "inside_margin": 0.0                    # additional margin (cm) inside the base view
+                "fixed_size":                           # 0 to reduce size to fit data, 1 for fixed media size
+                "orient":                               # 0 for landscape, 1 for portrait
+            }
+
+
+        """
+
+        def setup_map_layout(data_area, scale, map_spec):
+
+            def map_spec_from_template(template):
+                try:
+                    layout = gxdf.table_record('maptmpl', template)
+
+                except gxdf.DfException:
+                    return {'template': None,
+                            'media': 'Unlimited',
+                            'map_margin': (1., 1., 4., 1.),
+                            'inside_margin': 1.,
+                            'fixed_size': 0,
+                            'orient': int((data_area[3] - data_area[1]) > (data_area[2] - data_area[0]))}
+
+                spec = {'template': template,
+                        'media': layout['MEDIA'],
+                        'map_margin': (float(layout['MARGIN_LEFT']), float(layout['MARGIN_RIGHT']),
+                                       float(layout['MARGIN_BOTTOM']), float(layout['MARGIN_TOP'])),
+                        'inside_margin': float(layout['MARGIN_INSIDE']),
+                        'fixed_size': 1 if layout['FIXED'] == 'fixed' else 0,
+                        'orient': 1 if layout['LAYOUT'] == 'portrait' else 0}
+                
+                return spec
+
+            def media_size(spec):
+                if 'media_size' in spec:
+                    return spec['media_size']
+                try:
+                    media = gxdf.table_record('media', spec['media'])
+                    size = (float(media['SIZE_X']),
+                            float(media['SIZE_Y']),
+                            float(media['FULLSIZE_X']),
+                            float(media['FULLSIZE_Y']))
+                except gxdf.DfException:
+                    size = (300.0, 300.0, 300.0, 300.0)
+                spec['media_size'] = size
+                return size
+
+
+            def data_window_on_map(spec):
+                m = media_size(spec)
+                mm = spec['map_margin']
+                mx = m[0] - spec['inside_margin'] * 2 - mm[0] - mm[1]
+                my = m[1] - spec['inside_margin'] * 2 - mm[2] - mm[3]
+                return mx, my # data window on map cm
+
+            if type(map_spec) is str:
+                map_spec = map_spec_from_template(map_spec)
+
+            if scale is None:
+                # determine largest scale to fit the media
+                mx, my = data_window_on_map(map_spec)
+                sx = (data_area[2] - data_area[0]) / (mx / 100.0)
+                sy = (data_area[3] - data_area[1]) / (my / 100.0)
+                scale = max(sx, sy)
+
+            # ensure the data fits on this media
+            mx, my = data_window_on_map(map_spec)
+            dmx = (data_area[2] - data_area[0]) * 100.0 / scale
+            dmy = (data_area[3] - data_area[1]) * 100.0 / scale
+            excess_x = mx - dmx
+            excess_y = my - dmy
+            if excess_x < -0.01 or excess_y < -0.01:
+                raise MapException(_t('The data does not fit {}cm at a scale of 1:{}')
+                                   .format(map_spec['media_size'][0:2], scale))
+
+            # adjust margins for a fixed map
+            if map_spec['fixed_size']:
+                x_adjust = excess_x * 0.5
+                y_adjust = excess_y * 0.5
+                mm = map_spec['map_margin']
+                map_spec['map_margin'] = (mm[0] + x_adjust, mm[1] + x_adjust,
+                                          mm[2] + y_adjust, mm[3] + y_adjust)
+
+            return map_spec, scale
+
+        def setup_map(gmap, spec, data_area, scale, z_scale):
+            margin = spec['map_margin']
+            gxapi.GXMVU.mapset2(gmap.gxmap,
+                                '*base', '*data',
+                                data_area[0], data_area[2], data_area[1], data_area[3],
+                                spec['media'],
+                                spec['orient'],
+                                spec['fixed_size'],
+                                scale,
+                                z_scale,
+                                gxapi.rDUMMY,
+                                margin[0], margin[1], margin[2], margin[3],
+                                spec['inside_margin'])
+
+        gmap = cls.new(**kwa)
+        map_layout, scale = setup_map_layout(data_area, scale, map_spec)
+        setup_map(gmap, map_layout, data_area, scale, z_scale)
+
+        # TODO seup map registry - see newmap.gx
 
         return gmap
 

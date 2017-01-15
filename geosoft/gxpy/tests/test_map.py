@@ -85,7 +85,6 @@ class Test(unittest.TestCase):
 
         # temp map
         with gxmap.GXmap.new() as gmap:
-            gmap.commit_changes()
             mapfile = gmap.mapfilename
             self.assertTrue(os.path.isfile(mapfile))
         self.assertFalse(os.path.isfile(mapfile))
@@ -99,8 +98,8 @@ class Test(unittest.TestCase):
         self.assertTrue(os.path.isfile(mapfile))
 
         # verify can't write on a new map
-        self.assertRaises(gxmap.MAPException, gxmap.GXmap.new, map_name)
-        self.assertRaises(gxmap.MAPException, gxmap.GXmap.new, mapfile)
+        self.assertRaises(gxmap.MapException, gxmap.GXmap.new, map_name)
+        self.assertRaises(gxmap.MapException, gxmap.GXmap.new, mapfile)
         with gxmap.GXmap.new(map_name, overwrite=True):
             pass
 
@@ -112,6 +111,15 @@ class Test(unittest.TestCase):
 
         gxmap.delete_files(mapfile)
         self.assertFalse(os.path.isfile(mapfile))
+
+    def test_new_geosoft_map(self):
+        self.start(gsys.func_name())
+
+        # temp map
+        with gxmap.GXmap.new_standard_geosoft(data_area=(0, 0, 100, 80)) as gmap:
+            views = gmap.view_list(gxmap.LIST_ALL)
+            self.assertTrue('base' in views)
+            self.assertTrue('data' in views)
 
     def test_lists(self):
         self.start(gsys.func_name())

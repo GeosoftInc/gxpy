@@ -18,6 +18,30 @@ class DfException(Exception):
     '''
     pass
 
+def table_record(table, rec):
+    """
+    Return a dictionary of a record from a table
+    :param table:   table name
+    :param rec:     record wanted
+    :return:        dictionary containing record values as strings
+    """
+
+    t = GXdf(table, records=rec)
+    return t.to_dict(orient='records')[0]
+
+def table_column(table, col):
+    """
+    Return a dictionary of a column from a table
+    :param table:   table name
+    :param col:     column wanted
+    :return:        dictionary containing record values as strings
+    """
+
+    t = GXdf(table, columns=col).to_dict(orient='index')
+    d = {}
+    for rec in t.keys():
+        d[rec] = t[rec][col]
+    return d
 
 class GXdf(pd.DataFrame):
     '''
@@ -26,13 +50,13 @@ class GXdf(pd.DataFrame):
     :parameters:
         :table:     geosoft table name, which is normally an ASCII csv file.  If the table cannot be
                     found in the project folder `user/csv` is searched, then the geosoft `csv` folder.
-        :records:   The names of a record to include, or a list of records to include.  If not specified all
+        :records:   Record name to include, or a list of records to include.  If not specified all
                     records are included.
-        :columns:   Column name to be included, or a list of column names to include.  If not sepecified all
+        :columns:   Column name to be included, or a list of column names to include.  If not specified all
                     columns are included.
 
     :raises:
-        :DfException:    if no fields are found in the table.  If only some fields are found the dataframe is
+        :DfException:    if no columns.records found in the table.  If only some fields are found the dataframe is
                          created with the found fields.
         :raises geosoft.gxapi.GXError:  if a requested record is not found.
 
@@ -56,10 +80,18 @@ class GXdf(pd.DataFrame):
                 sr = gxapi.str_ref()
 
                 if records is None:
-                    ltb = gxapi.GXLTB.create(initial, 0, 1, '')
+                    try:
+                        ltb = gxapi.GXLTB.create(initial, 0, 1, '')
+                    except geosoft.gxapi.GXError as e:
+                        raise DfException(str(e))
                 else:
                     if type(records) is str:
-                        ltb = gxapi.GXLTB.create(initial, 0, 1, records)
+                        try:
+                            ltb = gxapi.GXLTB.create(initial, 0, 1, records)
+                        except geosoft.gxapi.GXError as e:
+                            raise DfException(_t('Invalid table \'{}\' ({})').format(initial, str(e)))
+                        except geosoft.gxapi.GXAPIError as e:
+                            raise DfException(_t('Record \'{}\' not in \'{}\' ({})').format(records, initial, str(e)))
                         records = None
                     else:
                         ltb = gxapi.GXLTB.create(initial, 0, 1, '')

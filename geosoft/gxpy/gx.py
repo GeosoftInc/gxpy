@@ -43,7 +43,7 @@ class GXpy(_Singleton):
     '''
     Geosoft GX context.  This is a singleton class, so subsequent creation returns an instance
     identical to the initial creation. This also means that initialization arguments are ignored
-    for subsequent initializations.
+    on a subsequent instantiation.
 
     :parameters:
         :app:           application name, default is the script name
