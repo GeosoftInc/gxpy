@@ -11,19 +11,19 @@ Submodules
 
 .. toctree::
 
+    geosoft.gxpy.coordinate_system
+    geosoft.gxpy.dataframe
     geosoft.gxpy.gdb
+    geosoft.gxpy.geometry
     geosoft.gxpy.grd
     geosoft.gxpy.gx
-    geosoft.gxpy.ipj
-    geosoft.gxpy.coordinate_system
+    geosoft.gxpy.map
     geosoft.gxpy.om
     geosoft.gxpy.system
     geosoft.gxpy.utility
     geosoft.gxpy.va
-    geosoft.gxpy.vv
-    geosoft.gxpy.geometry
-    geosoft.gxpy.map
     geosoft.gxpy.view
+    geosoft.gxpy.vv
 
 .. automodule:: geosoft.gxpy
     :members:

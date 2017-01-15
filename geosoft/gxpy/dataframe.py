@@ -2,7 +2,6 @@
 import pandas as pd
 
 import geosoft
-import geosoft.gxpy as gxpy
 import geosoft.gxapi as gxapi
 from . import utility as gxu
 
@@ -24,16 +23,18 @@ class GXdf(pd.DataFrame):
     '''
     Pandas DataFrame from a Geosoft table.
 
-    :param table:   geosoft table name, which is normally an ASCII csv file.  If the table cannot be
-                    found in the project folder the `user/csv` file is searched, then the geosoft `csv` folder.
-    :param records: The names of a record to include, or a list of records to include.  If not specified all
+    :parameters:
+        :table:     geosoft table name, which is normally an ASCII csv file.  If the table cannot be
+                    found in the project folder `user/csv` is searched, then the geosoft `csv` folder.
+        :records:   The names of a record to include, or a list of records to include.  If not specified all
                     records are included.
-    :param columns: Column name to be included, or a list of column names to include.  If not sepecified all
+        :columns:   Column name to be included, or a list of column names to include.  If not sepecified all
                     columns are included.
 
-    :raises DfException:    if no fields are found in the table.  If only some fields are found the dataframe is
-                            created with the found fields.
-    :raises geosoft.gxapi.GXError: if a requested record is not found.
+    :raises:
+        :DfException:    if no fields are found in the table.  If only some fields are found the dataframe is
+                         created with the found fields.
+        :raises geosoft.gxapi.GXError:  if a requested record is not found.
 
     .. versionadded:: 9.2
     '''
@@ -51,7 +52,7 @@ class GXdf(pd.DataFrame):
 
             if type(initial) is str:
 
-                lst = gxapi.GXLST.create(gxpy.MAX_LST)
+                lst = gxapi.GXLST.create(geosoft.gxpy.MAX_LST)
                 sr = gxapi.str_ref()
 
                 if records is None:

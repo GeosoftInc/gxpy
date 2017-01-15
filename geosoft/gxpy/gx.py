@@ -45,7 +45,7 @@ class GXpy(_Singleton):
     identical to the initial creation. This also means that initialization arguments are ignored
     for subsequent initializations.
 
-    :param:
+    :parameters:
         :app:           application name, default is the script name
         :version:       application version number, default Geosoft version
         :parent_window: ID of the parent window.  A parent window is required for GUI-dependent
