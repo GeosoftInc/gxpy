@@ -12,6 +12,15 @@ import geosoft
 __version__ = geosoft.__version__
 
 
+def translate(s):
+    """ Translate string to user language."""
+    return s
+
+
+def _t(s):
+    return translate(s)
+
+
 def _logit(fn, *args, **kw):
     """function console printing decorator"""
 
@@ -182,7 +191,7 @@ def wait_on_file(fileName, wait=100, retries=10):
         if os.access(fileName, os.W_OK):
             return
         if tries >= retries:
-            raise GXSysException('Unable to access {}'.format(fileName))
+            raise GXSysException(_t('Unable to access {}').format(fileName))
         tries += 1
         time.sleep(wait / 1000.0)
 
@@ -223,7 +232,7 @@ def unzip(zip_file_name, folder=None, report=None, checkready=25):
         files = _unzip(zip_file_name, folder)
 
     except:
-        raise GXSysException('Cannot process zip file {}'.format(zip_file_name))
+        raise GXSysException(_t('Cannot process zip file {}').format(zip_file_name))
 
     finally:
 

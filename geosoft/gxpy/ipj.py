@@ -7,7 +7,7 @@ __version__ = geosoft.__version__
 
 
 # translation hook
-def _(s):
+def _t(s):
     return s
 
 #############
@@ -137,7 +137,7 @@ class GXipj():
         ipj._ipj.set_gxf(gxfs[0], gxfs[1], gxfs[2], gxfs[3], gxfs[4])
         ipj._ipj.get_display_name(ipj._sr)
         if ipj._sr.value == '*unknown':
-            raise IPJException(_('Unknown coordinate system:\n>{}\n>{}\n>{}\n>{}\n>{}').format(
+            raise IPJException(_t('Unknown coordinate system:\n>{}\n>{}\n>{}\n>{}\n>{}').format(
                 gxfs[0],
                 gxfs[1],
                 gxfs[2],
@@ -619,7 +619,7 @@ class GXpj:
 
         nd = xyz.shape[1]
         if nd < 2:
-            raise IPJException(_('Data must have minimum dimension 2 (x,y) or 3 for (x,y,z).'))
+            raise IPJException(_t('Data must have minimum dimension 2 (x,y) or 3 for (x,y,z).'))
 
         vvx = gxapi.GXVV.create_ext(gxapi.GS_DOUBLE, npoints)
         vvy = gxapi.GXVV.create_ext(gxapi.GS_DOUBLE, npoints)

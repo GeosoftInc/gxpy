@@ -6,15 +6,14 @@ from . import utility as gxu
 __version__ = geosoft.__version__
 
 
-# translation hook
 def _t(s):
-    return s
+    return geosoft.gxpy.system.translate(s)
 
 #############
 # Constants
 
-# 'HCS' - Horizontal Coordinate System
-# 'VCS' - Vertical Reference Datum)
+# 'HCS' and 'hcs' refer to Horizontal Coordinate System
+# 'VCS' and 'vcs' refer to Vertical Coordinate System
 
 NAME = None
 NAME_HCS = gxapi.IPJ_NAME_PCS

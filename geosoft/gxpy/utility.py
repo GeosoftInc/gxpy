@@ -14,10 +14,15 @@ from time import gmtime, strftime
 from ._jdcal.jdcal import is_leap, gcal2jd, jd2gcal
 from distutils.version import StrictVersion
 import numpy as np
+from collections import OrderedDict
+
 import geosoft
 import geosoft.gxapi as gxapi
 
 __version__ = geosoft.__version__
+
+def _t(s):
+    return geosoft.gxpy.system.translate(s)
 
 # cached lookup tables
 _dummy_map = {}
@@ -31,11 +36,6 @@ class UtilityException(Exception):
     .. versionadded:: 9.1
     """
     pass
-
-
-# translation hook
-def _(s):
-    return s
 
 
 def check_version(v, raise_on_fail=True):
@@ -76,12 +76,14 @@ def check_version(v, raise_on_fail=True):
     if StrictVersion(__version__) >= StrictVersion(str(v)):
         return True
     if raise_on_fail:
-        raise UtilityException(_("GX API version {} or higher is required.").format(v))
+        raise UtilityException(_t("GX API version {} or higher is required.").format(v))
     return False
 
 
-def dict_from_lst(lst):
+def dict_from_lst(lst, ordered=False):
     """
+    :param lst:     GXLST instance
+    :param ordered: True to return and OrderedDict
     :return:    python dictionary from a Geosoft GXLST
 
     .. versionadded:: 9.1
@@ -89,7 +91,10 @@ def dict_from_lst(lst):
     """
     key = gxapi.str_ref()
     val = gxapi.str_ref()
-    dct = {}
+    if ordered:
+        dct = OrderedDict()
+    else:
+        dct = {}
     for item in range(lst.size()):
         lst.gt_item(0, item, key)
         lst.gt_item(1, item, val)
@@ -435,7 +440,7 @@ def dummy_mask(npd):
     """
 
     if len(npd.shape) != 2:
-        raise UtilityException(_('Must be a 2D array'))
+        raise UtilityException(_t('Must be a 2D array'))
     dummy = gx_dummy(npd.dtype)
     return np.apply_along_axis(lambda a: dummy in a, 1, npd)
 
@@ -630,12 +635,12 @@ def run_external_python(script, script_args='',
             kwargs['stderr'] = subprocess.PIPE
         cp = subprocess.run(command, **kwargs)
         if catcherr and cp.returncode != 0:
-            raise UtilityException(_('\n\nExternal python error:\n\n{}').format(cp.stderr.decode("utf-8")))
+            raise UtilityException(_t('\n\nExternal python error:\n\n{}').format(cp.stderr.decode("utf-8")))
 
     else:  # use call, python 3.4...
         err = subprocess.call(command, **kwargs)
         if catcherr and err != 0:
-            raise UtilityException(_('\n\nExternal python error({}) running: {}').format(err, command))
+            raise UtilityException(_t('\n\nExternal python error({}) running: {}').format(err, command))
 
     return get_shared_dict()
 

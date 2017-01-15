@@ -18,6 +18,8 @@ from . import system as gxs
 
 __version__ = geosoft.__version__
 
+def _t(s):
+    return geosoft.gxpy.system.translate(s)
 
 class GXException(Exception):
     '''
@@ -43,23 +45,24 @@ class GXpy(_Singleton):
     identical to the initial creation. This also means that initialization arguments are ignored
     for subsequent initializations.
 
-    :param app:             application name, default is the script name
-    :param version:         application version number, default Geosoft version
-    :param parent_window:   ID of the parent window.  A parent window is required for GUI-dependent
-                            functions to work.  Set `parent_window=-1` to create a Tkinter frame that
-                            provides a default parent window handle for GUI/Viewer functions.
-    :param log:             name of a file to record logging information, or a call-back that
-                            accepts a string.  Specifying `log=''` will log to a default file named
-                            using the current date and time.  If not provided calls to log()
-                            are ignored.
+    :param:
+        :app:           application name, default is the script name
+        :version:       application version number, default Geosoft version
+        :parent_window: ID of the parent window.  A parent window is required for GUI-dependent
+                        functions to work.  Set `parent_window=-1` to create a Tkinter frame that
+                        provides a default parent window handle for GUI/Viewer functions.
+        :log:           nme of a file to record logging information, or a call-back that
+                        accepts a string.  Specifying `log=''` will log to a default file named
+                        using the current date and time.  If not provided calls to log()
+                        are ignored.
 
     :members:
-        :gxapi:             GX context to be used to call geosoft.gxapi methods
-        :gid:               User's Geosoft ID
-        :gxcontext:         Class instance for this session, `None` if not created, or deleted.
+        :gxapi:         GX context to be used to call geosoft.gxapi methods
+        :gid:           User's Geosoft ID
+        :gxcontext:     Class instance for this session, `None` if not created, or deleted.
 
     :raises:
-        :GXException():  if unable to create context
+        :GXException(): if unable to create context
 
     .. versionchanged:: 9.2
         `parent_window=-1` creates a Tkinter frame as a parent.
@@ -117,7 +120,7 @@ class GXpy(_Singleton):
 
             except:
                 self.gxapi = None
-                raise GXException('GX services are not available.')
+                raise GXException(_t('GX services are not available.'))
 
             user = gxapi.str_ref()
             company = gxapi.str_ref()

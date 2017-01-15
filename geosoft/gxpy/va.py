@@ -7,10 +7,8 @@ from . import utility as gxu
 
 __version__ = geosoft.__version__
 
-# translation hook
-
-def _(s):
-    return s
+def _t(s):
+    return geosoft.gxpy.system.translate(s)
 
 
 class VAException(Exception):
@@ -70,7 +68,7 @@ class GXva():
 
         # strings
         else:
-            raise VAException(_("VA of strings is not supported."))
+            raise VAException(_t("VA of strings is not supported."))
 
         return va
 
@@ -175,21 +173,21 @@ class GXva():
 
         # strings not supported
         if gxu.gx_dtype(dtype) < 0:
-            raise VAException(_('VA string elements are not supported.'))
+            raise VAException(_t('VA string elements are not supported.'))
 
         if n is None:
             n = self.length() - start
         else:
             n = min((self.length() - start), n)
         if (n <= 0) or (start < 0):
-            raise VAException(_('Cannot get (start,n) ({},{}) from va of length {}').format(start, n, self.length()))
+            raise VAException(_t('Cannot get (start,n) ({},{}) from va of length {}').format(start, n, self.length()))
 
         if n_col is None:
             n_col = self._width - start_col
         else:
             n_col = min((self._width - start_col), n_col)
         if (n_col <= 0) or (start_col < 0):
-            raise VAException(_('Cannot get columns (start,n) ({},{}) from VA of width {}').
+            raise VAException(_t('Cannot get columns (start,n) ({},{}) from VA of width {}').
                               format(start_col, n_col, self._width))
 
         npd = self._va.get_array_np(start, start_col, n, n_col, dtype).reshape(-1, self._width)
@@ -211,7 +209,7 @@ class GXva():
         try:
             npd = npdata.reshape((-1, self._width))
         except ValueError:
-            raise VAException(_('Numpy data does not match VA data width ({}).'
+            raise VAException(_t('Numpy data does not match VA data width ({}).'
                                 .format(self._width)))
 
         self._va.set_array_np(0, 0, npd)

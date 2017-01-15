@@ -14,8 +14,10 @@ from . import coordinate_system as gxcs
 
 __version__ = geosoft.__version__
 
-def _(s):
-    return s
+
+def _t(s):
+    return geosoft.gxpy.system.translate(s)
+
 
 class VIEWException(Exception):
     """

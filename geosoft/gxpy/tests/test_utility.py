@@ -344,22 +344,6 @@ class Test(unittest.TestCase):
         self.assertEqual(gxu.crc32(b'bunch of bytes'), 3271364337)
         self.assertEqual(gxu.crc32_str('a string'), 2577552858)
 
-    def test_wktsrs(self):
-        self.start(gsys.func_name())
-        s = "GEOGCS[\"GCS_WGS_1984\",DATUM[\"D_WGS_1984\",SPHEROID[\"WGS_1984\",6378137,298.257223563]],PRIMEM[\"Greenwich\",0],UNIT[\"Degree\",0.017453292519943295]],VERTCS[\"EGM2008_Geoid\",VDATUM[\"EGM2008_Geoid\"],PARAMETER[\"Vertical_Shift\",0.0],PARAMETER[\"Direction\",1.0],UNIT[\"Meter\",1.0]]"
-        srs = gxu.list_from_wktsrs(s)
-        self.assertEqual(len(srs), 2)
-        self.assertTrue(srs[0]['key'], 'GEOGCS')
-        self.assertTrue(srs[0]['name'], 'GCS_WGS_1984')
-        self.assertTrue(srs[0]['items'][0]['key'], 'DATUM')
-        self.assertTrue(srs[0]['items'][0]['name'], 'D_WGS_1984')
-        self.assertTrue(srs[0]['items'][0]['items'][0]['key'], 'SPHEROID')
-        self.assertTrue(srs[0]['items'][0]['items'][0]['name'], 'WGS_1984')
-        self.assertTrue(srs[0]['items'][0]['items'][0]['items'][0], '6378137')
-        self.assertTrue(srs[0]['items'][0]['items'][0]['items'][1], '298.257223563')
-
-
-        ###############################################################################################
 
 if __name__ == '__main__':
 

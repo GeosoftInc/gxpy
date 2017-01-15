@@ -12,6 +12,9 @@ from . import utility as gxu
 
 __version__ = geosoft.__version__
 
+def _t(s):
+    return geosoft.gxpy.system.translate(s)
+
 # Constants
 
 LINE_TYPE_NORMAL = gxapi.DB_LINE_TYPE_NORMAL
@@ -59,17 +62,13 @@ class GDBException(Exception):
     pass
 
 
-def _(s):
-    return s
-
-
 def _va_width(data):
     if len(data.shape) == 1:
         width = 1
     elif len(data.shape) == 2:
         width = data.shape[1]
     else:
-        raise GDBException(_("Only one or two-dimensional data allowed."))
+        raise GDBException(_t("Only one or two-dimensional data allowed."))
     return width
 
 
@@ -1070,7 +1069,7 @@ class GXdb():
                 fid = (0.0, 1.0)
 
             else:
-                raise GDBException(_('Unrecognized dummy={}').format(dummy))
+                raise GDBException(_t('Unrecognized dummy={}').format(dummy))
 
         return npd, chNames, fid
 
@@ -1170,7 +1169,7 @@ class GXdb():
         w = self.channel_width(cs)
         if w != _va_width(data):
             raise GDBException(
-                _("Array data width {} does not fit into VA channel '{}' with width {}").
+                _t("Array data width {} does not fit into VA channel '{}' with width {}").
                 format(_va_width(data), cn, w))
 
         # 1D channel
@@ -1257,7 +1256,7 @@ class GXdb():
 
             # error if there is any data left
             if np_index - data.shape[1] != 0:
-                raise GDBException(_('More data than channels, but data up to channels was written out.'))
+                raise GDBException(_t('More data than channels, but data up to channels was written out.'))
 
     def list_values(self, chan, max=1000, selected=True, dupl=50, progress=None, stop=None):
         '''

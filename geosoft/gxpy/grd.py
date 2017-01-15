@@ -11,6 +11,9 @@ from . import utility as gxu
 
 __version__ = geosoft.__version__
 
+def _t(s):
+    return geosoft.gxpy.system.translate(s)
+
 
 class GRDException(Exception):
     '''
@@ -116,7 +119,7 @@ class GXgrd():
                 gc.collect()
                 attempt += 1
                 if attempt > 10:
-                    raise GRDException('Cannot open: {}\nBecause: {}'.format(self._filename, str(e)))
+                    raise GRDException(_t('Cannot open: {}\nBecause: {}').format(self._filename, str(e)))
 
     def __del__(self):
 
@@ -191,7 +194,7 @@ class GXgrd():
         nx = properties.get('nx', 0)
         ny = properties.get('ny', 0)
         if (nx <= 0) or (ny <= 0):
-            raise ValueError('Grid dimension ({},{}) must be > 0'.format(nx, ny))
+            raise ValueError(_t('Grid dimension ({},{}) must be > 0').format(nx, ny))
 
         grd = cls(fileName, dtype=dtype, mode=FILE_NEW, dim=(nx, ny))
         grd.set_properties(properties)
@@ -357,7 +360,7 @@ class GXgrd():
         """
 
         if self._readonly:
-            raise ValueError('{} opened as read-only, cannot set properties.'.format(self._filename))
+            raise ValueError(_t('{} opened as read-only, cannot set properties.').format(self._filename))
 
         dx = properties.get('dx', 1.0)
         dy = properties.get('dy', dx)
@@ -423,10 +426,10 @@ class GXgrd():
                 (x0 < 0) or (y0 < 0) or
                 (nx <= 0) or (ny <= 0) or
                 (mx > gnx) or (my > gny)):
-            raise GRDException('Window x0,y0,mx,my({},{},{},{}) out of bounds ({},{})'.format(x0, y0, mx, my, gnx, gny))
+            raise GRDException(_t('Window x0,y0,mx,my({},{},{},{}) out of bounds ({},{})').format(x0, y0, mx, my, gnx, gny))
 
         if p.get('rot') != 0.0:
-            raise ('Cannot window a rotated grid.')
+            raise (_t('Cannot window a rotated grid.'))
 
         # create new grid
         p['nx'] = nx
@@ -568,7 +571,7 @@ def gridMosaic(mosaic, gridList, typeDecoration='', report=None):
         return
 
     if len(gridList) == 0:
-        raise ValueError('At least one grid is required')
+        raise ValueError(_t('At least one grid is required'))
 
     # create list of grids, all matching on coordinate system of first grid
     grids = []

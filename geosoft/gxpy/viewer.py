@@ -9,6 +9,11 @@ from . import map as gxmap
 
 __version__ = geosoft.__version__
 
+
+def _t(s):
+    return geosoft.gxpy.system.translate(s)
+
+
 class ViewerException(Exception):
     """
     Exceptions from this module.
@@ -46,11 +51,11 @@ def v3d(map_file_name, viewname=None, title = None):
 
         vlist = gmap.view_list(gxmap.LIST_3D)
         if len(vlist) == 0:
-            raise ViewerException('\'{}\' has no 3D views.'.format(map_file_name))
+            raise ViewerException(_t('\'{}\' has no 3D views.').format(map_file_name))
         if viewname is None:
             viewname = vlist[0]
         elif viewname not in vlist:
-            raise ViewerException('\'{}\' has no view named \'{}\'.'.format(map_file_name, viewname))
+            raise ViewerException(_t('\'{}\' has no view named \'{}\'.').format(map_file_name, viewname))
 
         if title is None:
             title = viewname
