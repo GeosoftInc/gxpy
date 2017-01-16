@@ -76,6 +76,7 @@ class Test(unittest.TestCase):
         dd = gxu.dict_from_reg(reg)
         for key, value in d.items():
             self.assertEqual(value, dd[key])
+        self.assertRaises(gxu.UtilityException, gxu.reg_from_dict, d, max_size=10)
 
     def test_parameters(self):
         self.start(gsys.func_name())

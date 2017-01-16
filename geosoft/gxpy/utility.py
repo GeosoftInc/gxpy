@@ -475,7 +475,7 @@ def reg_from_dict(rd, max_size=4096):
         if type(value) is not str:
             value = "_JSON:{}".format(json.dumps(value))
         if len(key) + len(value) >= max_size:
-            raise UtilityException(_t("key=value longer than maximum ({}):\n{}={}")
+            raise UtilityException(_t("\'key=value\' longer than maximum ({}):\n{}={}")
                                    .format(max_size, key, value))
         reg.set(key, value)
     return reg
