@@ -57,7 +57,7 @@ class Test(unittest.TestCase):
             self.assertTrue(False)
         except: pass
 
-    def test_dictFromList(self):
+    def test_dictlist(self):
         self.start(gsys.func_name())
 
         lst = gxapi.GXLST.create(1000)
@@ -67,6 +67,15 @@ class Test(unittest.TestCase):
         d = gxu.dict_from_lst(lst)
         self.assertEqual(len(d),lst.size())
         self.assertEqual(d.get('b'),'bb')
+
+    def test_dictreg(self):
+        self.start(gsys.func_name())
+
+        d = {'a':'A', 'b':'BEE', 'c':[1,2,3], 'g':7.123, 'h':{'hh':'name'}}
+        reg = gxu.reg_from_dict(d)
+        dd = gxu.dict_from_reg(reg)
+        for key, value in d.items():
+            self.assertEqual(value, dd[key])
 
     def test_parameters(self):
         self.start(gsys.func_name())

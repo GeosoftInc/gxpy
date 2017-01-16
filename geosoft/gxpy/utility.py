@@ -84,7 +84,7 @@ def dict_from_lst(lst, ordered=False):
     """
     :param lst:     GXLST instance
     :param ordered: True to return and OrderedDict
-    :return:    python dictionary from a Geosoft GXLST
+    :return:        python dictionary from a Geosoft GXLST
 
     .. versionadded:: 9.1
 
@@ -461,6 +461,47 @@ def save_parameters(group='_', parms=None):
             s = json.dumps(v).replace('\\\\', '\\')
             gxapi.GXSYS.set_string(group, k, s)
 
+def reg_from_dict(rd, max_size=4096):
+    """
+    :param rd:          dictionary
+    :param max_size:    maximum "key=value" string size
+    :return:            gxapi.GXREG instance
+
+    Non-string values in the dictionary are converted to JSON strings and stored as
+    "_JSON:json-string}"
+    """
+    reg = gxapi.GXREG.create(max_size)
+    for key, value in rd.items():
+        if type(value) is not str:
+            value = "_JSON:{}".format(json.dumps(value))
+        if len(key) + len(value) >= max_size:
+            raise UtilityException(_t("key=value longer than maximum ({}):\n{}={}")
+                                   .format(max_size, key, value))
+        reg.set(key, value)
+    return reg
+
+def dict_from_reg(reg, ordered=False):
+    """
+    :param reg:     gxapi.GXREG instance
+    :param ordered: True to return and OrderedDict
+    :return:        python dictionary from a Geosoft GXREG
+
+    .. versionadded:: 9.1
+
+    """
+    key = gxapi.str_ref()
+    val = gxapi.str_ref()
+    if ordered:
+        dct = OrderedDict()
+    else:
+        dct = {}
+    for i in range(reg.entries()):
+        reg.get_one(i, key, val)
+        if val.value[:6] == "_JSON:":
+            dct[key.value] = json.loads(val.value[6:])
+        else:
+            dct[key.value] = val.value
+    return dct
 
 def get_parameters(group='_', parms=None, default=None):
     """
