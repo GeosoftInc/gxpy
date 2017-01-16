@@ -20,7 +20,7 @@ class DfException(Exception):
 
 def table_record(table, rec):
     """
-    Return a dictionary of a record from a table
+    Return a dictionary of a single record from a table
     :param table:   table name
     :param rec:     record wanted
     :return:        dictionary containing record values as strings
@@ -51,14 +51,38 @@ class GXdf(pd.DataFrame):
         :table:     geosoft table name, which is normally an ASCII csv file.  If the table cannot be
                     found in the project folder `user/csv` is searched, then the geosoft `csv` folder.
         :records:   Record name to include, or a list of records to include.  If not specified all
-                    records are included.
+                    records are included in the dataframe.
         :columns:   Column name to be included, or a list of column names to include.  If not specified all
-                    columns are included.
+                    columns are included in the dataframe.
 
     :raises:
         :DfException:    if no columns.records found in the table.  If only some fields are found the dataframe is
                          created with the found fields.
         :raises geosoft.gxapi.GXError:  if a requested record is not found.
+
+    This returns a Pandas DataFrame instance, which can be accessed and used with standard Pandas
+    calls.
+
+    Example table file "rockcode.csv":
+
+    .. code::
+
+        / standard Geosoft rock codes
+        CODE,LABEL,__DESCRIPTION,PATTERN,PAT_SIZE,PAT_DENSITY,PAT_THICKNESS,COLOR
+        BAU,BAU,BAUXITE,100,,,,RG49B181
+        BIF,BIF,"BANDED IRON FM",202,,,,R
+        CAL,CAL,CALCRETE,315,,,,B
+        CBT,CBT,CARBONATITE,305,,,,R128G128B192
+
+    .. code::
+        include geosoft.gxpy as gxpy
+        with gxpy.GXpy() as gx:
+            with gxpy.dataframe.GXdf('rockcode') as df:
+                print(len(df))
+                print(df.loc['BIF', 'DESCRIPTION']) # "BANDED IRON FM"
+                print(df.loc['BIF'][1])             # "BANDED IRON FM"
+                print(df.iloc[1,0])                 # "BIF"
+                print(df.loc['CAL', 'PATTERN'])     # "315"
 
     .. versionadded:: 9.2
     '''

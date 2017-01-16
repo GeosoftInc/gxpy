@@ -1,6 +1,7 @@
 import unittest
 
 import geosoft
+import geosoft.gxpy as gxpy
 import geosoft.gxpy.gx as gx
 import geosoft.gxpy.system as gsys
 import geosoft.gxpy.dataframe as gxdf
@@ -82,6 +83,24 @@ class Test(unittest.TestCase):
         self.assertRaises(gxdf.DfException, gxdf.table_record, 'bogus', 'bogus')
         self.assertRaises(gxdf.DfException, gxdf.table_record, 'maptmpl', 'bogus')
         self.assertRaises(gxdf.DfException, gxdf.table_column, 'maptmpl', 'bogus')
+
+    def test_doc_sample(self):
+
+        with open(self.gxp.temp_file()+'.csv', 'w') as f:
+            rcname = f.name
+            f.write('/ standard Geosoft rock codes\n')
+            f.write('CODE,LABEL,__DESCRIPTION,PATTERN,PAT_SIZE,PAT_DENSITY,PAT_THICKNESS,COLOR\n')
+            f.write('BAU,BAU,BAUXITE,100,,,,RG49B181\n')
+            f.write('BIF,BIF,"BANDED IRON FM",202,,,,R\n')
+            f.write('CAL,CAL,CALCRETE,315,,,,B\n')
+            f.write('CBT,CBT,CARBONATITE,305,,,,R128G128B192\n')
+
+        with gxpy.dataframe.GXdf(rcname) as df:
+            self.assertEqual(len(df), 4)
+            self.assertEqual(df.loc['BIF', 'DESCRIPTION'], "BANDED IRON FM")
+            self.assertEqual(df.loc['BIF'][1], "BANDED IRON FM")
+            self.assertEqual(df.iloc[1,0], "BIF")
+            self.assertEqual(df.loc['CAL', 'PATTERN'], "315")
 
 if __name__ == '__main__':
 
