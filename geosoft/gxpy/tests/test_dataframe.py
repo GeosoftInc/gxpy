@@ -86,21 +86,25 @@ class Test(unittest.TestCase):
 
     def test_doc_sample(self):
 
+        def testraise(index, column):
+            df.loc[index, column]
+
         with open(self.gxp.temp_file()+'.csv', 'w') as f:
             rcname = f.name
             f.write('/ standard Geosoft rock codes\n')
-            f.write('CODE,LABEL,__DESCRIPTION,PATTERN,PAT_SIZE,PAT_DENSITY,PAT_THICKNESS,COLOR\n')
-            f.write('BAU,BAU,BAUXITE,100,,,,RG49B181\n')
-            f.write('BIF,BIF,"BANDED IRON FM",202,,,,R\n')
-            f.write('CAL,CAL,CALCRETE,315,,,,B\n')
-            f.write('CBT,CBT,CARBONATITE,305,,,,R128G128B192\n')
+            f.write('code,label,__DESCRIPTION,PATTERN,PAT_SIZE,PAT_DENSITY,PAT_THICKNESS,COLOR\n')
+            f.write('bau,BAU,BAUXITE,100,,,,RG49B181\n')
+            f.write('bif,BIF,"BANDED IRON FM",202,,,,R\n')
+            f.write('cal,CAL,CALCRETE,315,,,,B\n')
+            f.write('cbt,CBT,CARBONATITE,305,,,,R128G128B192\n')
 
         with gxpy.dataframe.GXdf(rcname) as df:
             self.assertEqual(len(df), 4)
-            self.assertEqual(df.loc['BIF', 'DESCRIPTION'], "BANDED IRON FM")
-            self.assertEqual(df.loc['BIF'][1], "BANDED IRON FM")
+            self.assertEqual(df.loc['bif', 'DESCRIPTION'], "BANDED IRON FM")
+            self.assertEqual(df.loc['bif'][1], "BANDED IRON FM")
             self.assertEqual(df.iloc[1,0], "BIF")
-            self.assertEqual(df.loc['CAL', 'PATTERN'], "315")
+            self.assertEqual(df.loc['cal', 'PATTERN'], "315")
+            self.assertRaises(KeyError, testraise, 'cal', 'pattern')
 
 if __name__ == '__main__':
 

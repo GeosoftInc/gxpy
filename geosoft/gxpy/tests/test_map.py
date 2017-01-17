@@ -118,15 +118,15 @@ class Test(unittest.TestCase):
         # temp map
         with gxmap.GXmap.new_standard_geosoft(data_area=(0, 0, 100, 80)) as gmap:
             views = gmap.view_list(gxmap.LIST_ALL)
-            self.assertTrue('base' in views)
-            self.assertTrue('data' in views)
+            self.assertTrue('Base' in views)
+            self.assertTrue('Data' in views)
 
         with gxmap.GXmap.new_standard_geosoft(filename='test_geosoft', overwrite=True,
-                                              data_area=(0, 0, 5000, 2000),
-                                              map_spec='portrait A4') as gmap:
+                                              data_area=(0, 0, 5000, 3000),
+                                              media='A4') as gmap:
             views = gmap.view_list(gxmap.LIST_ALL)
-            self.assertTrue('base' in views)
-            self.assertTrue('data' in views)
+            self.assertTrue('Base' in views)
+            self.assertTrue('Data' in views)
 
 
     def test_lists(self):

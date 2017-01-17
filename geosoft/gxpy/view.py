@@ -27,9 +27,10 @@ class VIEWException(Exception):
     """
     pass
 
-MODE_READ = gxapi.MVIEW_READ
-MODE_WRITENEW = gxapi.MVIEW_WRITENEW
-MODE_WRITEOLD = gxapi.MVIEW_WRITEOLD
+READ = gxapi.MVIEW_READ
+WRITE_NEW = gxapi.MVIEW_WRITENEW
+WRITE_OLD = gxapi.MVIEW_WRITEOLD
+
 SMOOTH_NONE = gxapi.MVIEW_SMOOTH_NEAREST
 SMOOTH_CUBIC = gxapi.MVIEW_SMOOTH_CUBIC
 SMOOTH_AKIMA = gxapi.MVIEW_SMOOTH_AKIMA
@@ -54,10 +55,18 @@ class GXview:
     """
     Geosoft view class.
 
-    :param viewname:    view name, default is "_unnamed_view"
-    :param gmap:        map instance, if not specified a new default map is created and deleted on closing
-    :param hcs, vcs:    horizontal and vertical coordinate system definition.  See :class:`coordinate_system.GXcs`.
-    :param groupname:   default initial group name
+    :parameters:
+        :viewname:      view name, default is "_unnamed_view"
+        :gmap:          map instance, if not specified a new default map is created and deleted on closing
+        :mode:          open view mode:
+                            | view.READ
+                            | view.WRITE_NEW
+                            | view.WRITE_OLD
+        :hcs, vcs:      horizontal and vertical coordinate system definition.  See :class:`coordinate_system.GXcs`.
+        :groupname:     default initial group name
+        :map_location:  (x, y) view location on the map, in map cm
+        :area:          (min_x, min_y, max_x, max_y) area in view units
+        :scale:         view scale in view units per map metre TODO - correct for hcs/vcs
 
     .. versionadded:: 9.2
     """
@@ -74,10 +83,11 @@ class GXview:
 
         if self._view:
 
+            # TODO does this actually work???
             # remove the default group if it is empty
 
-            if self._view.is_group_empty(_def_group):
-                self._view.delete_group(_def_group)
+            if self._view.is_group_empty(self._def_group):
+                self._view.delete_group(self._def_group)
             self._view = None
 
     def __repr__(self):
@@ -89,7 +99,7 @@ class GXview:
     def __init__(self,
                  viewname="_unnamed_view",
                  gmap=None,
-                 mode=MODE_WRITENEW,
+                 mode=WRITE_NEW,
                  hcs=None,
                  vcs=None,
                  groupname="_unnamed_group",
@@ -105,14 +115,11 @@ class GXview:
         self._viewname = viewname
         self.gxview = gxapi.GXMVIEW.create(self._gmap.gxmap, self._viewname, mode)
         self.gxview.start_group(groupname, gxapi.MVIEW_GROUP_NEW)
+        self._def_group = groupname
 
         # intitialize pen
         self._init_pen_attributes()
         self._pen_stack = []
-
-        # coordinate system
-        self.cs = gxcs.GXcs(hcs, vcs)
-        self.gxview.set_ipj(self.cs.gxipj)
 
         # area and scale
         if hasattr(scale, "__iter__"):
@@ -120,13 +127,28 @@ class GXview:
         else:
             x_scale = y_scale = scale
         a_minx, a_miny, a_maxx, a_maxy = area
-        mm_minx = map_location[0] * 1000.0
-        mm_miny = map_location[1] * 1000.0
+        mm_minx = map_location[0] * 10.0
+        mm_miny = map_location[1] * 10.0
         mm_maxx = mm_minx + (a_maxx - a_minx) * 1000.0/ x_scale
         mm_maxy = mm_miny + (a_maxy - a_miny) * 1000.0/ y_scale
         self.gxview.fit_window(mm_minx, mm_miny, mm_maxx, mm_maxy,
                                a_minx, a_miny, a_maxx, a_maxy)
         self.gxview.set_window(a_minx, a_miny, a_maxx, a_maxy, UNIT_VIEW)
+
+        # coordinate system
+        self.set_cs(hcs, vcs)
+
+    def set_cs(self, hcs=None, vcs=None):
+        """
+        Set the coordinate system of the view.
+
+        :param hcs: horizontal coordinate system
+        :param vcs: vertical coordinate system
+
+        Refer to `gxpy.GXcs()` for `hcs`, `vcs` usage.
+        """
+        self.cs = gxcs.GXcs(hcs, vcs)
+        self.gxview.set_ipj(self.cs.gxipj)
 
     @property
     def gmap(self):
@@ -266,7 +288,7 @@ class GXview:
         yr = gxapi.float_ref()
         yr.value = y
         self.gxview.view_to_plot(xr, yr)
-        return xr.value / 1000.0, yr.value / 1000.0
+        return xr.value / 10.0, yr.value / 10.0
 
     # drawing to a plane
 

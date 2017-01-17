@@ -63,23 +63,28 @@ class GXdf(pd.DataFrame):
     This returns a Pandas DataFrame instance, which can be accessed and used with standard Pandas
     calls.
 
+    Column names from Geosoft table files are always upper-case, regardless
+    of case used in the table file.
+
+    Record/index names from Geosoft table files are case-sensitive.
+
     Example table file "rockcode.csv":
 
     .. code::
 
         / standard Geosoft rock codes
         CODE,LABEL,__DESCRIPTION,PATTERN,PAT_SIZE,PAT_DENSITY,PAT_THICKNESS,COLOR
-        BAU,BAU,BAUXITE,100,,,,RG49B181
-        BIF,BIF,"BANDED IRON FM",202,,,,R
-        CAL,CAL,CALCRETE,315,,,,B
-        CBT,CBT,CARBONATITE,305,,,,R128G128B192
+        bau,BAU,BAUXITE,100,,,,RG49B181
+        bif,BIF,"BANDED IRON FM",202,,,,R
+        cal,CAL,CALCRETE,315,,,,B
+        cbt,CBT,CARBONATITE,305,,,,R128G128B192
 
     .. code::
         include geosoft.gxpy as gxpy
         with gxpy.GXpy() as gx:
             with gxpy.dataframe.GXdf('rockcode') as df:
                 print(len(df))
-                print(df.loc['BIF', 'DESCRIPTION']) # "BANDED IRON FM"
+                print(df.loc['bif', 'DESCRIPTION']) # "BANDED IRON FM"
                 print(df.loc['BIF'][1])             # "BANDED IRON FM"
                 print(df.iloc[1,0])                 # "BIF"
                 print(df.loc['CAL', 'PATTERN'])     # "315"

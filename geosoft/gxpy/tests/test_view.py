@@ -93,16 +93,16 @@ class Test(unittest.TestCase):
             self.assertTrue(vw.cs == gxcs.GXcs("WGS 84 / UTM zone 34N"))
 
         with gxv.GXview("test", area=(100, 500, 15100, 10500), scale=20000,
-                        map_location=(0.1, 0.25)) as vw:
+                        map_location=(10, 25)) as vw:
             self.assertEqual(vw.extent(), (100, 500, 15100, 10500))
             self.assertEqual(vw.scale(), (20000, 20000))
-            self.assertEqual(vw.extent(extent=gxv.EXTENT_MAP), (0.1, 0.25, 0.85, 0.75))
+            self.assertEqual(vw.extent(extent=gxv.EXTENT_MAP), (10., 25., 85., 75.))
 
         with gxv.GXview("test", area=(100, 500, 15100, 10500), scale=(50000, 10000),
-                        map_location=(0.1, 0.25)) as vw:
+                        map_location=(10, 25)) as vw:
             self.assertEqual(vw.extent(), (100, 500, 15100, 10500))
             self.assertEqual(vw.scale(), (50000, 10000))
-            self.assertEqual(vw.extent(extent=gxv.EXTENT_MAP), (0.1, 0.25, 0.4, 1.25))
+            self.assertEqual(vw.extent(extent=gxv.EXTENT_MAP), (10., 25., 40., 125.))
             self.assertTrue(vw.cs == gxcs.GXcs("WGS 84 / UTM zone 34N"))
 
         test_map = os.path.join(self.gx.temp_folder(),"test_map")
