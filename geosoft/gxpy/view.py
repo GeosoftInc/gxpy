@@ -1,7 +1,5 @@
-#TODO review grd class to clean-up files like map class does.
-
-import numpy as np
-import numbers
+import gc
+import atexit
 
 import geosoft
 import geosoft.gxapi as gxapi
@@ -19,7 +17,7 @@ def _t(s):
     return geosoft.gxpy.system.translate(s)
 
 
-class VIEWException(Exception):
+class ViewException(Exception):
     """
     Exceptions from this module.
 
@@ -27,7 +25,7 @@ class VIEWException(Exception):
     """
     pass
 
-READ = gxapi.MVIEW_READ
+READ_ONLY = gxapi.MVIEW_READ
 WRITE_NEW = gxapi.MVIEW_WRITENEW
 WRITE_OLD = gxapi.MVIEW_WRITEOLD
 
@@ -59,14 +57,17 @@ class GXview:
         :viewname:      view name, default is "_unnamed_view"
         :gmap:          map instance, if not specified a new default map is created and deleted on closing
         :mode:          open view mode:
-                            | view.READ
+                            | view.READ_ONLY
                             | view.WRITE_NEW
                             | view.WRITE_OLD
+
+        The following are only used if WRITE_NEW.
+        
         :hcs, vcs:      horizontal and vertical coordinate system definition.  See :class:`coordinate_system.GXcs`.
-        :groupname:     default initial group name
         :map_location:  (x, y) view location on the map, in map cm
         :area:          (min_x, min_y, max_x, max_y) area in view units
-        :scale:         view scale in view units per map metre TODO - correct for hcs/vcs
+        :scale:         Map scale if a coordinate system is defined.  If the coordinate system (hcs) is not
+                        defined this is view units per map metre.
 
     .. versionadded:: 9.2
     """
@@ -77,18 +78,13 @@ class GXview:
         return self
 
     def __exit__(self, xtype, xvalue, xtraceback):
-        self.__del__()
+        self._close()
 
-    def __del__(self):
-
-        if self._view:
-
-            # TODO does this actually work???
-            # remove the default group if it is empty
-
-            if self._view.is_group_empty(self._def_group):
-                self._view.delete_group(self._def_group)
-            self._view = None
+    def _close(self):
+        if self._open:
+            self._gmap = None  # release map
+            self.gxview = None # release the view
+            self._open = False
 
     def __repr__(self):
         return "{}({})".format(self.__class__, self.__dict__)
@@ -97,46 +93,30 @@ class GXview:
         return self._viewname
 
     def __init__(self,
+                 gmap,
                  viewname="_unnamed_view",
-                 gmap=None,
                  mode=WRITE_NEW,
                  hcs=None,
                  vcs=None,
-                 groupname="_unnamed_group",
                  map_location=(0,0),
                  area=(0,0,100,100),
                  scale=500):
 
-        if isinstance(gmap, gxmap.GXmap):
-            self._gmap = gmap
-        else:
-            self._gmap = gxmap.GXmap.new(gmap)
-
+        self._gmap = gmap
         self._viewname = viewname
         self.gxview = gxapi.GXMVIEW.create(self._gmap.gxmap, self._viewname, mode)
-        self.gxview.start_group(groupname, gxapi.MVIEW_GROUP_NEW)
-        self._def_group = groupname
+        self._mode = mode
 
-        # intitialize pen
-        self._init_pen_attributes()
-        self._pen_stack = []
-
-        # area and scale
-        if hasattr(scale, "__iter__"):
-            x_scale, y_scale = scale
+        atexit.register(self._close)
+        self._open = True
+        
+        if mode == WRITE_NEW:
+            self.locate(hcs, vcs, map_location, area, scale)
         else:
-            x_scale = y_scale = scale
-        a_minx, a_miny, a_maxx, a_maxy = area
-        mm_minx = map_location[0] * 10.0
-        mm_miny = map_location[1] * 10.0
-        mm_maxx = mm_minx + (a_maxx - a_minx) * 1000.0/ x_scale
-        mm_maxy = mm_miny + (a_maxy - a_miny) * 1000.0/ y_scale
-        self.gxview.fit_window(mm_minx, mm_miny, mm_maxx, mm_maxy,
-                               a_minx, a_miny, a_maxx, a_maxy)
-        self.gxview.set_window(a_minx, a_miny, a_maxx, a_maxy, UNIT_VIEW)
-
-        # coordinate system
-        self.set_cs(hcs, vcs)
+            ipj = gxapi.GXIPJ.create()
+            gxapi.GVMVIEW.get_ipj(ipj)
+            self.cs = gxcs.GXcs(hcs=ipj)
+            self._uname, self._ufac = self.cs.units()
 
     def set_cs(self, hcs=None, vcs=None):
         """
@@ -148,7 +128,55 @@ class GXview:
         Refer to `gxpy.GXcs()` for `hcs`, `vcs` usage.
         """
         self.cs = gxcs.GXcs(hcs, vcs)
+        metres_per, self._uname = self.cs.units()
+        if metres_per <= 0.:
+            raise ViewException('Invalid units {}({})'.format(self._uname, metres_per))
+        self._ufac = 1.0/metres_per
         self.gxview.set_ipj(self.cs.gxipj)
+
+    def locate(self,
+               hcs=None, vcs=None,
+               map_location=None,
+               area=None,
+               scale=None):
+        """
+        Locate and scale the view on the map.
+
+        :parameters:
+            :hcs, vcs:      New horizontal and vertical coordinate system definition.
+                            See :class:`coordinate_system.GXcs`.
+            :map_location:  New (x, y) view location on the map, in map cm.
+            :area:          New (min_x, min_y, max_x, max_y) area in view units
+            :scale:         New scale in view units per map metre, either as a single value or
+                            (x_scale, y_scale)
+
+        .. versionadded:: 9.2
+        """
+
+        if self._mode == READ_ONLY:
+            raise ViewException('Cannot modify a READ_ONLY view.')
+
+        # coordinate system
+        self.set_cs(hcs, vcs)
+        ufac = self.ufac
+
+        if area == None:
+            area = self.extent(EXTENT_VIEW)
+
+        # area and scale
+        if hasattr(scale, "__iter__"):
+            x_scale, y_scale = (scale[0] / ufac, scale[1] / ufac)
+        else:
+            x_scale = y_scale = scale / ufac
+        a_minx, a_miny, a_maxx, a_maxy = area
+        mm_minx = map_location[0] * 10.0
+        mm_miny = map_location[1] * 10.0
+        mm_maxx = mm_minx + (a_maxx - a_minx) * 1000.0 / x_scale
+        mm_maxy = mm_miny + (a_maxy - a_miny) * 1000.0 / y_scale
+        self.gxview.fit_window(mm_minx, mm_miny, mm_maxx, mm_maxy,
+                               a_minx, a_miny, a_maxx, a_maxy)
+        self.gxview.set_window(a_minx, a_miny, a_maxx, a_maxy, UNIT_VIEW)
+
 
     @property
     def gmap(self):
@@ -163,7 +191,15 @@ class GXview:
     @property
     def mapfilename(self):
         """ Name of the map file that contains this view. """
-        return self._gmap.mapfilename
+        return self._gmap.filename
+
+    @property
+    def ufac(self):
+        return self._ufac
+
+    @property
+    def unit_name(self):
+        return self._uname
 
     @property
     def pen(self):
@@ -268,11 +304,22 @@ class GXview:
         """
         Start a new named group in a view.  Drawing functions that follow will be rendered into this group.
 
-        :param name:    name of the group
+        :param name:    name of the group.  If a group name is the same as the view name, '_' is appended
+                        to the group name to make it different.
         :param append:  True to append to an existing group
 
         .. versionadded:: 9.2
         """
+        if append:
+            mode = gxapi.MVIEW_GROUP_APPEND
+        else:
+            mode = gxapi.MVIEW_GROUP_NEW
+
+        if name == self.viewname:
+            name = name + '_'
+        self.gxview.start_group(name, mode)
+        self._init_pen_attributes()
+        self._pen_stack = []
 
     def map_to_view(self, x, y):
         xr = gxapi.float_ref()
@@ -406,11 +453,11 @@ class GXview:
 
 class GXview3d(GXview):
 
-    def __init__(self, viewname='_unnamed_3d_view', **kwds):
+    def __init__(self, *args, **kwds):
 
-        if 'gmap' not in kwds:
-            kwds['gmap'] = None
-        super().__init__(viewname, **kwds)
+        if 'viewname' not in kwds:
+            kwds['viewname'] = "_unnamed_3D_view"
+        super().__init__(*args, **kwds)
 
         mminx, mminy, mmaxx, mmaxy = self.extent(EXTENT_MAP)
         vminx, vminy, vmaxx, vmaxy = self.extent(EXTENT_VIEW)

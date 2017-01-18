@@ -62,6 +62,7 @@ def delete_files(filename):
 
     filename = map_file_name(filename)
     remove(filename + '.xml')
+    remove(os.path.splitext(filename)[0] + '.mdf')
     remove(filename)
 
 def save_as_image(mapfile, imagefile, type="PNG", pix_width=1000, pix_height=0):
@@ -122,7 +123,7 @@ class GXmap:
         return self
 
     def __exit__(self, xtype, xvalue, xtraceback):
-        self.__del__()
+        self._close()
 
     def __repr__(self):
         return "{}({})".format(self.__class__, self.__dict__)
@@ -135,18 +136,29 @@ class GXmap:
         self.gxmap = None
         self._remove = False
         self._filename = map_file_name(filename)
-        self.gxmap = gxapi.GXMAP.create(filename, mode)
+        self.gxmap = gxapi.GXMAP.create(self.filename, mode)
+        self._open = True
 
-    def __del__(self):
-        if self.gxmap:
-            del self.gxmap
-            self.gxmap = None
-            gc.collect()
-            if self._remove:
-                try:
-                    delete_files(self._filename)
-                except OSError: # remove if we can
-                    pass
+    def _close(self):
+        if self._open:
+            if self.gxmap:
+
+                if not self._remove:
+                    if self.has_view("*Base") and self.has_view("*Data"):
+                        # create an MDF file
+                        mdfname = os.path.splitext(self.filename)[0] + '.mdf'
+                        gxapi.GXMVU.map_mdf(self.gxmap, mdfname, "*Data")
+                        self.mdf()
+
+                self.gxmap = None
+
+                if self._remove:
+                    try:
+                        delete_files(self._filename)
+                    except OSError:  # remove if we can
+                        pass
+
+            self._open = False
 
     @classmethod
     def open(cls, filename):
@@ -193,14 +205,15 @@ class GXmap:
         return gmap
 
     @classmethod
-    def new_standard_geosoft(cls, data_area, scale=None,
+    def new_standard_geosoft(cls, filename=None, data_area=(0.,0.,100.,100.), scale=None,
                              hcs=None, vcs=None,
                              media="A3", fixed_size=False, style='figure',
                              margins=None, inside_margin=1.0,
-                             **kwa):
+                             *argv, **kwa):
         """
 
         :parameters:
+            :filename:      Map file name, a temporaty file is create if not specifiec
             :data_area:     (min_x, min_y, max_x, max_y) data area for the data view on the map
             :scale:         required scale, default will fit data to the map media
             :hcs:           horizontal coordinate system, default unknown
@@ -281,8 +294,8 @@ class GXmap:
                 margins = (margins[0] + x_adjust, margins[1] + x_adjust,
                            margins[2] + y_adjust, margins[3] + y_adjust)
 
-            gxapi.GXMVU.mapset(gmap.gxmap,
-                                '*Base', '*Data',
+            gxapi.GXMVU.mapset( gmap.gxmap,
+                                'Base', 'Data',
                                 data_area[0], data_area[2], data_area[1], data_area[3],
                                 media,
                                 int(media_size[1] > media_size[0]),
@@ -300,10 +313,8 @@ class GXmap:
                   'MAP.UP_DIRECTION': 'right',
                   'MAP.UP_ANGLE': '67.5'}
             gmap.gxmap.set_reg(gxu.reg_from_dict(rd))
-            mdf = gmap.mapfilename[:-4] + '.mdf'
-            #gxapi.GXMVU.map_mdf(gmap.gxmap, mdf, '*Data')
 
-        gmap = cls.new(**kwa)
+        gmap = cls.new(filename=filename, **kwa)
         setup_map(gmap, data_area, scale, media, margins)
         set_coordinate_system(gmap, hcs, vcs)
         set_registry(gmap, style, inside_margin)
@@ -311,12 +322,12 @@ class GXmap:
         return gmap
 
     @property
-    def mapfilename(self):
+    def filename(self):
         """
         Full map file path name.
         """
         return self._filename
-    
+
     def remove_on_close(self, remove=True):
         """
         :param remove:  if True (the default), remove the map file when finished.
@@ -336,3 +347,55 @@ class GXmap:
         gxlst = gxapi.GXLST.create(VIEW_NAME_SIZE)
         self.gxmap.view_list_ex(gxlst, view_type)
         return list(gxu.dict_from_lst(gxlst))
+
+    def has_view(self, view):
+        """ Returns True if the map contains this view."""
+        return self.gxmap.exist_view(view)
+
+    def mdf(self):
+        """
+        Returns the Map Description File specification for maps that contain
+        both a base view and a data view.
+
+        ((x_size, y_size, margin_bottom, margin_right, margin_top, margin_left),
+         (scale, units_per_metre, x_origin, y_origin))\
+
+        .. versionadded: 9.2
+        """
+
+        views = self.view_list()
+
+        if not(self.has_view("*Data") and self.has_view("*Base")):
+            raise MapException('The map must have both a "*Base" view and a "*Data" view.')
+
+        xmn = gxapi.float_ref()
+        ymn = gxapi.float_ref()
+        xmx = gxapi.float_ref()
+        ymx = gxapi.float_ref()
+
+        with gxvw.GXview(self, "*Base", gxvw.READ) as v:
+            v.gxview.extent(gxapi.MVIEW_EXTENT_CLIP, gxapi.MVIEW_EXTENT_UNIT_MM,
+                            xmn, ymn, xmx, ymx)
+            mapx = (xmx.value - xmn.value) * 0.1
+            mapy = (ymx.value - ymn.value) * 0.1
+
+        with gxvw.GXview(self, "*Data", gxvw.READ) as v:
+            v.gxview.extent(gxapi.MVIEW_EXTENT_CLIP, gxapi.MVIEW_EXTENT_UNIT_MM,
+                            xmn, ymn, xmx, ymx)
+            view_map = (xmn.value * 0.1,
+                        ymn.value * 0.1,
+                        xmx.value * 0.1,
+                        ymx.value * 0.1)
+
+            v.gxview.extent(gxapi.MVIEW_EXTENT_CLIP, gxapi.MVIEW_EXTENT_UNIT_VIEW,
+                            xmn, ymn, xmx, ymx)
+            view_view = (xmn.value, ymn.value, xmx.value, ymx.value)
+
+        m1 = (mapx, mapy, view_map[1], mapx - view_map[2], mapy - view_map[3], view_map[0])
+        sc = (view_view[2] - view_view[0]) / ((view_map[2] - view_map[0]) / 100.0)
+        ufac = 1.0
+        x0 = view_view[0]
+        y0 = view_view[1]
+        m2 = (sc, ufac, x0, y0)
+
+        return m1, m2

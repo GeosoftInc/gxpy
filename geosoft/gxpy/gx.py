@@ -84,21 +84,23 @@ class GXpy(_Singleton):
         return self
 
     def __exit__(self, type, value, traceback):
-        return False
+        self._close()
 
-    def _cleanup_files(self):
+    def _close(self):
 
         def file_error(fnc, path, excinfo):
             self.log("error removing temporary file \"{}\": function \"{}\": exception\"{}\""
                      .format(path, str(fnc), str(excinfo)))
 
-        if not self._keep_temp_files:
-            if self._temp_file_folder != gxu.folder_temp():
-                shutil.rmtree(self._temp_file_folder, ignore_errors=False, onerror=file_error)
-            self._temp_file_folder = None
+        if self._open:
+            if not self._keep_temp_files:
+                if self._temp_file_folder != gxu.folder_temp():
+                    shutil.rmtree(self._temp_file_folder, ignore_errors=False, onerror=file_error)
+                self._temp_file_folder = None
 
-        if self._logf:
-            self._logf.close()
+            if self._logf:
+                self._logf.close()
+            self._open = False
 
     def __init__(self, name=__name__, version=__version__, parent_window=0, log=None):
 
@@ -174,8 +176,8 @@ class GXpy(_Singleton):
             # create a shared string ref for the convenience of Geosoft modules
 
             self._sr = gxapi.str_ref()
-
-            atexit.register(self._cleanup_files)
+            self._open = True
+            atexit.register(self._close)
 
     def _log_to_file(self, *args):
 

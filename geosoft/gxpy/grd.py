@@ -1,5 +1,5 @@
 import os
-import gc
+import atexit
 import time
 import numpy as np
 
@@ -51,7 +51,46 @@ class GXgrd():
         return self
 
     def __exit__(self, type, value, traceback):
-        self.__del__()
+        self._close()
+
+    def _close(self):
+
+        def df(fn):
+            try:
+                os.remove(fn)
+            except OSError as e:
+                pass
+
+        if self._open:
+
+            if self._delete_files:
+
+
+                img = self._img
+                self._img = None
+                del img
+
+                # delete files
+                if self._filename is not None:
+
+                    fn = GXgrd.name_parts(self._filename)
+                    filename = os.path.join(fn[0], fn[1])
+                    ext = fn[3]
+                    df(filename)
+                    df(filename + '.gi')
+                    df(filename + '.xml')
+
+                    # hgd files
+                    if ext == '.hgd':
+                        for i in range(16):
+                            df(filename + str(i))
+
+            elif self._hgd:
+                # an HGD memory grid was made, save it to an HGD file
+                gxapi.GXHGD.h_create_img(self._img, GXgrd.decorate_name(self._filename, 'HGD'))
+
+        self._img = None
+        self._open = False
 
     def __repr__(self):
         return "{}({})".format(self.__class__, self.__dict__)
@@ -116,44 +155,16 @@ class GXgrd():
 
             except geosoft.gxapi.GXError as e:
                 time.sleep(0.1)
-                gc.collect()
                 attempt += 1
                 if attempt > 10:
                     raise GRDException(_t('Cannot open: {}\nBecause: {}').format(self._filename, str(e)))
 
-    def __del__(self):
+        atexit.register(self._close)
+        self._open = True
 
-        def df(fn):
-            try:
-                os.remove(fn)
-            except OSError as e:
-                pass
-
-        if self._delete_files:
-
-            img = self._img
-            self._img = None
-            del img
-
-            # delete files
-            if self._filename is not None:
-
-                fn = GXgrd.name_parts(self._filename)
-                filename = os.path.join(fn[0], fn[1])
-                ext = fn[3]
-                df(filename)
-                df(filename + '.gi')
-                df(filename + '.xml')
-
-                # hgd files
-                if ext == '.hgd':
-                    for i in range(16):
-                        df(filename + str(i))
-
-        elif self._hgd:
-            # an HGD memory grid was made, save it to an HGD file
-            gxapi.GXHGD.h_create_img(self._img, GXgrd.decorate_name(self._filename, 'HGD'))
-            gc.collect()
+    @property
+    def filename(self):
+        return self._filename.split('(')[0]
 
     @classmethod
     def open(cls, fileName, dtype=None, mode=None):
@@ -233,6 +244,9 @@ class GXgrd():
         """
         self._delete_files = delete
 
+    def close(self):
+        self._close()
+
     @staticmethod
     def name_parts(name):
         """
@@ -244,8 +258,8 @@ class GXgrd():
 
         .. code::
 
-            >>> import geosoftpy.grd as grd
-            >>> namep = grd.GXgrd.name_parts("f:/someFolder/name.grd(GRD;TYPE=SHORT)")
+            >>> import geosoft.gxpy.grd as gxgrd
+            >>> namep = gxgrd.GXgrd.name_parts("f:/someFolder/name.grd(GRD;TYPE=SHORT)")
             >>> print(namep)
             ('f:/someFolder/','name.grd','name','.grd','(GRD;TYPE=SHORT)')
 
@@ -389,10 +403,8 @@ class GXgrd():
         if not (dtype is None):
             p['dtype'] = dtype
 
-        savegrid = GXgrd.new(fileName, p)
-        self._img.copy(savegrid._img)
-        del savegrid
-        gc.collect()
+        with GXgrd.new(fileName, p) as sg:
+            self._img.copy(sg._img)
 
         return GXgrd.open(fileName, mode=FILE_READWRITE)
 
@@ -409,6 +421,8 @@ class GXgrd():
         :param y0:  integer index of the first Y point
         :param nx:  number of points in x
         :param ny:  number of points in y
+
+        :return:    GXgrd instance limited to the window.
 
         .. versionadded:: 9.1
         """

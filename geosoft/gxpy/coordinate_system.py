@@ -246,6 +246,7 @@ class GXcs:
                     an ESRI WKT string (ie. "PROJCS["WGS_1984_UTM_Zone_35N",GEOGCS[..."), a dictionary that
                     contains the coordinate system properties, a JSON string that contains the coordinate
                     system properties, or a list that contains the 5 GXF coordinate system strings.
+                    You can also pass a gxapi.GXIPJ.
     :param init:    `True` to initalize immediated, `False` te delay initialization until used.
 
     Dictionary structure:
@@ -320,13 +321,23 @@ class GXcs:
         """ Setup the horizontal coordinate system. """
         if self._gxapi_ipj is None:
             self._gxapi_ipj = gxapi.GXIPJ.create()
-            if self._init_ipj is not None:
-                if isinstance(self._init_ipj, str):
-                    self._from_str(self._init_ipj)
-                elif isinstance(self._init_ipj, dict):
-                    self._from_dict(self._init_ipj)
-                else:
-                    self._from_gxf(self._init_ipj)
+            if type(self._init_ipj) is gxapi.GXIPJ:
+                s1 = gxapi.str_ref()
+                s2 = gxapi.str_ref()
+                s3 = gxapi.str_ref()
+                s4 = gxapi.str_ref()
+                s5 = gxapi.str_ref()
+                self._init_ipj.get_gxf(s1, s2, s3, s4, s5)
+                self._from_gxf((s1.value, s2.value, s3.value, s4.value, s5.value))
+            else:
+                if self._init_ipj is not None:
+                    if isinstance(self._init_ipj, str):
+                        self._from_str(self._init_ipj)
+                    elif isinstance(self._init_ipj, dict):
+                        self._from_dict(self._init_ipj)
+                    else:
+                        self._from_gxf(self._init_ipj)
+            self._init_ipj = None
 
     def _setup_vcs(self, vcs):
         """ setup the vertical coordinate system """
@@ -407,15 +418,19 @@ class GXcs:
 
         # get ipj from gxf, error if unknown
         sref = gxapi.str_ref()
-        self.gxipj.set_gxf(gxf1, gxf2, gxf3, gxf4, gxf5)
-        self.gxipj.get_display_name(sref)
-        if sref.value == '*unknown':
-            raise CSException(_t('Unknown coordinate system:\n>{}\n>{}\n>{}\n>{}\n>{}').format(
-                gxf1,
-                gxf2,
-                gxf3,
-                gxf4,
-                gxf5))
+        try:
+            self.gxipj.set_gxf(gxf1, gxf2, gxf3, gxf4, gxf5)
+            self.gxipj.get_display_name(sref)
+            if sref.value == '*unknown':
+                raise CSException(_t('Unknown coordinate system:\n>{}\n>{}\n>{}\n>{}\n>{}').format(
+                    gxf1,
+                    gxf2,
+                    gxf3,
+                    gxf4,
+                    gxf5))
+        except geosoft.gxapi.GXError:
+            # try the name as a unit
+            self.gxipj.set_gxf('', '', '', gxf1, '')
 
         if vcs:
             self._setup_vcs(vcs)

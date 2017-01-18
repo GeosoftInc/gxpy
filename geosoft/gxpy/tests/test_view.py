@@ -81,36 +81,47 @@ class Test(unittest.TestCase):
     def test_create(self):
         self.start(gsys.func_name())
 
-        with gxv.GXview() as vw:
-            self.assertEqual(vw.viewname, "_unnamed_view")
+        with gxmap.GXmap.new() as gmap:
+            with gxv.GXview(gmap) as vw:
+                self.assertEqual(vw.viewname, "_unnamed_view")
 
-        with gxv.GXview("test") as vw:
-            self.assertEqual(vw.viewname, "test")
+        with gxmap.GXmap.new() as gmap:
+            with gxv.GXview(gmap, "test") as vw:
+                self.assertEqual(vw.viewname, "test")
 
-        with gxv.GXview("test", area=(100, 500, 15100, 10500), scale=20000, hcs="WGS 84 / UTM zone 34N") as vw:
-            self.assertEqual(vw.extent(), (100, 500, 15100, 10500))
-            self.assertEqual(vw.scale(), (20000, 20000))
-            self.assertTrue(vw.cs == gxcs.GXcs("WGS 84 / UTM zone 34N"))
+        with gxmap.GXmap.new() as gmap:
+            with gxv.GXview(gmap, "test", area=(100, 500, 15100, 10500), scale=20000, hcs="WGS 84 / UTM zone 34N") as vw:
+                self.assertEqual(vw.extent(), (100, 500, 15100, 10500))
+                self.assertEqual(vw.scale(), (20000, 20000))
+                self.assertTrue(vw.cs == gxcs.GXcs("WGS 84 / UTM zone 34N"))
+                self.assertTrue(vw.ufac, 1.0)
+                self.assertTrue(vw.unit_name, 'm')
 
-        with gxv.GXview("test", area=(100, 500, 15100, 10500), scale=20000,
-                        map_location=(10, 25)) as vw:
-            self.assertEqual(vw.extent(), (100, 500, 15100, 10500))
-            self.assertEqual(vw.scale(), (20000, 20000))
-            self.assertEqual(vw.extent(extent=gxv.EXTENT_MAP), (10., 25., 85., 75.))
+        with gxmap.GXmap.new() as gmap:
+            with gxv.GXview(gmap, "test", area=(100, 500, 15100, 10500), scale=20000, hcs='ft',
+                            map_location=(10, 25)) as vw:
+                self.assertEqual(vw.extent(), (100, 500, 15100, 10500))
+                self.assertEqual(vw.scale(), (20000, 20000))
+                self.assertEqual(vw.extent(extent=gxv.EXTENT_MAP), (10., 25., 85., 75.))
+                self.assertEqual(vw.ufac, 3.28084)
+                self.assertEqual(vw.unit_name, 'ft')
 
-        with gxv.GXview("test", area=(100, 500, 15100, 10500), scale=(50000, 10000),
-                        map_location=(10, 25)) as vw:
-            self.assertEqual(vw.extent(), (100, 500, 15100, 10500))
-            self.assertEqual(vw.scale(), (50000, 10000))
-            self.assertEqual(vw.extent(extent=gxv.EXTENT_MAP), (10., 25., 40., 125.))
-            self.assertTrue(vw.cs == gxcs.GXcs("WGS 84 / UTM zone 34N"))
+
+        with gxmap.GXmap.new() as gmap:
+            with gxv.GXview(gmap, "test", area=(100, 500, 15100, 10500), scale=(50000, 10000),
+                            map_location=(10, 25)) as vw:
+                self.assertEqual(vw.extent(), (100, 500, 15100, 10500))
+                self.assertEqual(vw.scale(), (50000, 10000))
+                self.assertEqual(vw.extent(extent=gxv.EXTENT_MAP), (10., 25., 40., 125.))
+                self.assertTrue(vw.cs == gxcs.GXcs("WGS 84 / UTM zone 34N"))
 
         test_map = os.path.join(self.gx.temp_folder(),"test_map")
         gmap = gxmap.GXmap.new(test_map)
-        mapname = gmap.mapfilename
-        with gxv.GXview("test", gmap) as view:
+        mapname = gmap.filename
+        with gxv.GXview(gmap, "test") as view:
             self.assertEqual(view.viewname, "test")
             self.assertEqual(view.mapfilename, mapname)
+            view.start_group('test_group')
 
             def_pen = view.pen
             pn = {"line_thick": 99, "pat_number": 88}
@@ -140,13 +151,15 @@ class Test(unittest.TestCase):
 
         testmap = os.path.join(self.gx.temp_folder(), "test")
         with gxmap.GXmap.new(testmap, overwrite=True) as gmap:
-            mapfile = gmap.mapfilename
-            with gxv.GXview("rectangle_test", gmap, area=(0,0,250, 125)) as view:
+            mapfile = gmap.filename
+            with gxv.GXview(gmap, "rectangle_test", area=(0,0,250, 125)) as view:
+                view.start_group('test_group')
                 rect_line(view)
                 view.graticule(25, 20, style=gxv.GRATICULE_LINE)
                 view.pen = {'line_thick': 0.1}
                 view.xy_rectangle(gxgm.Point((0,0)), gxgm.Point((250,125)), pen={'line_thick': 0.1, 'line_color':'R'})
-            with gxv.GXview("poly", gmap) as view:
+            with gxv.GXview(gmap, "poly") as view:
+                view.start_group('test_group')
                 draw_stuff(view)
 
         gxvwr.map(mapfile)
@@ -159,11 +172,13 @@ class Test(unittest.TestCase):
         testmap = os.path.join(self.gx.temp_folder(), "test")
         testmap = "test"
         with gxmap.GXmap.new(testmap, overwrite=True) as gmap:
-            mapfile = gmap.mapfilename
-            with gxv.GXview("base", gmap, area=(0,0,250, 125), scale=1000) as view:
+            mapfile = gmap.filename
+            with gxv.GXview(gmap, "base", area=(0,0,250, 125), scale=1000) as view:
+                view.start_group('test_group')
                 view.xy_rectangle(gxgm.Point((0,0)), gxgm.Point((100,100)))
-            with gxv.GXview3d(viewname='v3d_test', area=(0,0,300, 300), scale=1000,
-                              gmap=gmap, hcs="wgs 84 / UTM zone 15S") as view:
+            with gxv.GXview3d(gmap, viewname='v3d_test', area=(0,0,300, 300), scale=1000,
+                              hcs="wgs 84 / UTM zone 15S") as view:
+                view.start_group('test_group')
                 rect_line(view)
                 draw_stuff(view)
                 view.box_3d(gxgm.Box(gxgm.Point((0,0,10)), gxgm.Point((120,100,50))))
@@ -176,9 +191,9 @@ class Test(unittest.TestCase):
 
         testmap = os.path.join(self.gx.temp_folder(), "test")
         with gxmap.GXmap.new(testmap, overwrite=True) as gmap:
-            with gxv.GXview("rectangle_test", gmap=gmap, hcs="wgs 84") as view:
+            with gxv.GXview(gmap, "rectangle_test", hcs="wgs 84") as view:
                 self.assertEqual("WGS 84", str(view.cs))
-            with gxv.GXview("vcs", gmap=gmap, hcs="wgs 84", vcs="special") as view:
+            with gxv.GXview(gmap, "vcs", hcs="wgs 84", vcs="special") as view:
                 self.assertTrue("WGS 84 [special]" in str(view.cs))
 
 if __name__ == '__main__':

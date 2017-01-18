@@ -1,6 +1,7 @@
 
 import os
 import sys
+import atexit
 import math
 import numpy as np
 
@@ -184,7 +185,15 @@ class GXdb():
         return self
 
     def __exit__(self, type, value, traceback):
-        self.__del__()
+        self._close()
+
+    def _close(self):
+        if self._open:
+            if self._db:
+                if self._edb is not None:
+                    if self._edb.is_locked():
+                        self._edb.un_lock()
+            self._open = False
 
     def __repr__(self):
         return "{}({})".format(self.__class__, self.__dict__)
@@ -195,12 +204,12 @@ class GXdb():
     def __init__(self):
         self._lst = gxapi.GXLST.create(2000)
         self._sr = gxapi.str_ref()
+        self._db = None
+        self._edb = None
 
-    def __del__(self):
-        if self._db is not None:
-            if self._edb is not None:
-                if self._edb.is_locked():
-                    self._edb.un_lock()
+        atexit.register(self._close)
+        self._open = True
+
 
     @classmethod
     def open(cls, name=None):

@@ -33,7 +33,7 @@ def map(map_file_name, title=None):
 
     with gxmap.GXmap.open(map_file_name) as gmap:
         if title is None:
-            title = gmap.mapfilename
+            title = gmap.filename
         gxapi.GXGUI.simple_map_dialog(gmap.gxmap, title, "")
 
 def v3d(map_file_name, viewname=None, title = None):
@@ -59,7 +59,7 @@ def v3d(map_file_name, viewname=None, title = None):
 
         if title is None:
             title = viewname
-        map_file_name = gmap.mapfilename
+        map_file_name = gmap.filename
 
     #TODO title is not used in the viewer - viewer bug
 

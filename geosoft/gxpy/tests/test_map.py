@@ -14,7 +14,8 @@ def new_test_map(mapname='test', rescale=1.0, locate=None):
 
     test_map = os.path.join(gx.GXpy().temp_folder(), mapname)
     with gxmap.GXmap.new(test_map, overwrite=True) as gmap:
-        with gxv.GXview("rectangle_test", gmap) as view:
+        with gxv.GXview(gmap, "rectangle_test") as view:
+            view.start_group('rectangle')
             view.xy_rectangle(gxgm.Point((0, 0)), gxgm.Point((250, 110)), pen={'line_thick': 1})
 
             p1 = gxgm.Point((5, 5)) * rescale
@@ -26,7 +27,8 @@ def new_test_map(mapname='test', rescale=1.0, locate=None):
             view.pen = {'line_style': (2, 2.0)}
             view.xy_line(p1 + poff, p2 - poff)
 
-        with gxv.GXview("poly", gmap) as view:
+        with gxv.GXview(gmap, "poly") as view:
+            view.start_group('poly')
             plinelist = [[110, 5],
                          [120, 20],
                          [130, 15],
@@ -58,7 +60,7 @@ def new_test_map(mapname='test', rescale=1.0, locate=None):
             view.pen = {'fill_color': gxapi.C_LT_RED}
             view.xy_poly_line(pp, close=True)
 
-        return gmap.mapfilename
+        return gmap.filename
 
 class Test(unittest.TestCase):
 
@@ -85,7 +87,7 @@ class Test(unittest.TestCase):
 
         # temp map
         with gxmap.GXmap.new() as gmap:
-            mapfile = gmap.mapfilename
+            mapfile = gmap.filename
             self.assertTrue(os.path.isfile(mapfile))
         self.assertFalse(os.path.isfile(mapfile))
 
@@ -93,7 +95,7 @@ class Test(unittest.TestCase):
         map_name = 'test_newmap'
         gxmap.delete_files(map_name)
         with gxmap.GXmap.new(map_name) as gmap:
-            mapfile = gmap.mapfilename
+            mapfile = gmap.filename
             self.assertEqual(mapfile, os.path.abspath((map_name + '.map')))
         self.assertTrue(os.path.isfile(mapfile))
 
@@ -146,6 +148,42 @@ class Test(unittest.TestCase):
             views = gmap.view_list(gxmap.LIST_3D)
             self.assertEqual(len(views), 0)
 
+    def test_map_delete(self):
+        self.start(gsys.func_name())
+
+        with gxmap.GXmap.new(filename='test_geosoft', overwrite=True) as gmap:
+            filename = gmap.filename
+            self.assertEqual(len(gmap.view_list()), 0)
+            self.assertFalse(gmap.has_view('*Data'))
+            self.assertFalse(gmap.has_view('*Base'))
+        self.assertTrue(os.path.isfile(filename))
+        with open(filename, 'rb') as f:
+            pass
+
+        with gxmap.GXmap.new_standard_geosoft(filename='test_geosoft',
+                                              overwrite=True,
+                                              data_area=(1000,200,11000,5000)) as gmap:
+            filename = gmap.filename
+            self.assertEqual(len(gmap.view_list()), 2)
+            self.assertTrue(gmap.has_view('*Data'))
+            self.assertTrue(gmap.has_view('*Base'))
+        self.assertTrue(os.path.isfile(filename))
+        with open(filename, 'rb') as f:
+            pass
+
+        with gxmap.GXmap.new(filename='test_geosoft', overwrite=True) as gmap:
+            filename = gmap.filename
+            gmap.remove_on_close(True)
+        self.assertFalse(os.path.isfile(filename))
+
+    def test_mdf(self):
+        self.start(gsys.func_name())
+
+        with gxmap.GXmap.new_standard_geosoft('mdftest',
+                                              data_area=(1000, 200, 110000, 50000),
+                                              media="A3",
+                                              overwrite=True) as gmap:
+            pass
 
 if __name__ == '__main__':
 
