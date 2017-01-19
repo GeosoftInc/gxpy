@@ -24,9 +24,10 @@ class Test(unittest.TestCase):
     
     @classmethod
     def start(cls,test):
-        cls.gx.log("*** {} *** - {}".format(test, geosoft.__version__))
+        cls.gx.log("*** {} > {}".format(os.path.split(__file__)[1], test))
 
     def test_version(self):
+        self.start(gsys.func_name())
         self.assertEqual(gxmap.__version__, geosoft.__version__)
 
     def test_exception(self):
@@ -39,12 +40,10 @@ class Test(unittest.TestCase):
 
         s = "WGS 84 / UTM zone 32N <0, 0, 0, 10, 15, 32>"
         p = gxgm.Point((5,10), hcs=s)
-        self.gx.log(p.cs)
         hcsd = p.cs.coordinate_dict
         self.assertEqual(hcsd['name'], "WGS 84 / UTM zone 32N <0,0,0,10,15,32>")
 
         pp = gxgm.PPoint(((8, 12), (5, 10)), hcs=s, vcs="geoid")
-        self.gx.log(pp.cs)
         hcsd = p.cs.coordinate_dict
         self.assertEqual(hcsd['name'], "WGS 84 / UTM zone 32N <0,0,0,10,15,32>")
         self.assertEqual(pp.cs.vcs, "geoid")

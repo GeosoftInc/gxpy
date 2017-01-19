@@ -40,6 +40,34 @@ class _Singleton:
 
 # global GX handle, None if not valid
 gx = None
+_res_id = 0
+_res_heap = {}
+_max_resource_heap = 1000000
+_stack_depth = 5
+_max_warnings = 10
+
+def track_resource(cl, info):
+    global _res_id
+    global _res_heap
+    global _stack_depth
+    if _res_id < _max_resource_heap:
+        _res_id += 1
+        rs = "{}:".format(cl)
+        for i in range(_stack_depth):
+            f = gxs.func_name(i + 2)
+            if f is None:
+                break
+            rs += '<{}'.format(gxs.func_name(i+2))
+        rs += ' [{}]'.format(info)
+        _res_heap[_res_id] = rs
+        return _res_id
+
+def pop_resource(id):
+    if len(_res_heap):
+        try:
+            del(_res_heap[id])
+        except KeyError:
+            pass
 
 class GXpy(_Singleton):
     '''
@@ -57,6 +85,12 @@ class GXpy(_Singleton):
                         accepts a string.  Specifying `log=''` will log to a default file named
                         using the current date and time.  If not provided calls to log()
                         are ignored.
+        :max_heap:      If logging is on, open gxpy resources (like grids, or databases) are tracked.
+                        This is the maximum size of resource heap for tracking open resources.
+                        Set to 0 to not track resources. On exit, if any resources remain open
+                        a warning is logged together with a list of the open resources, each with a
+                        call, to help find the function that created the resources.
+        :res_stack:     Depth of call-stack to report for open-resource warning.
 
     :members:
         :gxapi:         GX context to be used to call geosoft.gxapi methods
@@ -91,6 +125,8 @@ class GXpy(_Singleton):
     def _close(self):
 
         global gx
+        global _res_heap
+        global _max_warnings
 
         def file_error(fnc, path, excinfo):
             self.log("error removing temporary file \"{}\": function \"{}\": exception\"{}\""
@@ -103,17 +139,42 @@ class GXpy(_Singleton):
                 self._temp_file_folder = None
 
             self.log('GX close')
+            if len(_res_heap):
+                # resources were created but not deleted or removed
+                self.log(_t('Warning - cleaning up resources that are still open:'))
+                i = 0
+                for s in _res_heap.values():
+                    if i == _max_warnings:
+                        self.log(   _t('    and there are {} more (change GXpy(max_warnings=) to see more)...'.format(len(_res_heap) - i)))
+                        break
+                    self.log('   ',s)
+                    i += 1
             if self._logf:
                 self._logf.close()
+
+
             gx = None
 
-    def __init__(self, name=__name__, version=__version__, parent_window=0, log=None):
+    def __init__(self, name=__name__, version=__version__,
+                 parent_window=0, log=None,
+                 max_res_heap=10000000, res_stack=6, max_warnings=10):
 
         # singleton class
 
         _Singleton.__init__(self)
         global gx
+        global _max_resource_heap
+        global _stack_depth
+        global _max_warnings
+
         if not gx:
+
+            if log is None:
+                _max_resource_heap = 0
+            else:
+                _max_resource_heap = max_res_heap
+                _stack_depth = max(0, res_stack)
+                _max_warnings = max(0, max_warnings)
 
             # create a Tkinter parent frame for the viewers
 
@@ -358,11 +419,12 @@ class GXpy(_Singleton):
             self._log_it(*args)
 
 
-    def elapsed_seconds(self, tag=''):
+    def elapsed_seconds(self, tag='', log=False):
         """
         Return the elapsed seconds since this GX instance started.
         The elapsed time is logged if logging is on.
 
+        :param log:     True to log, which also requires logging to be on
         :param tag:     optional string to add to the log
         :return:        elapsed time in seconds
 
@@ -371,14 +433,16 @@ class GXpy(_Singleton):
 
         elapsed = datetime.datetime.now() - self._start
         elapsed_seconds = elapsed.seconds + elapsed.microseconds / 1000000.0
-        if tag:
-            tag = '{}> '.format(tag)
-        self.log('{}Elapsed seconds: {} ({} minutes, {}.{} seconds)'.
-                 format(tag,
-                        elapsed_seconds,
-                        elapsed.seconds // 60,
-                        elapsed.seconds % 60,
-                        str(elapsed.microseconds).zfill(6)))
+        if log:
+            if tag:
+                tag = '{}> '.format(tag)
+
+            self.log('{}Elapsed seconds: {} ({} minutes, {}.{} seconds)'.
+                     format(tag,
+                            elapsed_seconds,
+                            elapsed.seconds // 60,
+                            elapsed.seconds % 60,
+                            str(elapsed.microseconds).zfill(6)))
         return elapsed_seconds
 
 ####################################################

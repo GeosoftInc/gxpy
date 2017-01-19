@@ -42,14 +42,23 @@ def app_name():
     return os.path.normpath(sys.argv[0])
 
 
-def func_name():
+def func_name(stack=0):
     """
     Returns function name.
 
+    :param stack:   depth into the calling stack, o is this function, 1 is parent, etc.
+    :returns:       function name, None if too deep into the stack
+
+    .. versionchanged:: 9.2 added stack
     .. versionadded:: 9.1
 
     """
-    return inspect.stack()[1][3]
+    try:
+        func = inspect.stack()[stack+1][3]
+    except:
+        return None
+    else:
+        return func
 
 
 def _parallel_foreach(f, l, threads=3, return_=False):

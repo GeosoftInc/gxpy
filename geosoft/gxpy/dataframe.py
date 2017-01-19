@@ -165,4 +165,4 @@ class GXdf(pd.DataFrame):
                         self.loc[rec] = vlst
 
             else:
-                raise DfException(_t('Only tables currently supported.'))
+                raise DfException(_t('Only tables are currently supported.'))

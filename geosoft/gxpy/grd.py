@@ -8,6 +8,7 @@ from . import gx as gx
 from . import ipj as gxipj
 from . import vv as gxvv
 from . import utility as gxu
+from . import system as gsys
 
 __version__ = geosoft.__version__
 
@@ -146,7 +147,7 @@ class GXgrd():
     def __exit__(self, type, value, traceback):
         self._close()
 
-    def _close(self):
+    def _close(self, pop=True):
 
         def df(fn):
             try:
@@ -166,8 +167,9 @@ class GXgrd():
                 gxapi.GXHGD.h_create_img(self._img, decorate_name(self._filename, 'HGD'))
 
             self._img = None
-            self._open = False
-            #gx.gx.log('GRD close > {}'.format(self._filename))
+            if pop:
+                gx.pop_resource(self._open)
+            self._open = None
 
     def __repr__(self):
         return "{}({})".format(self.__class__, self.__dict__)
@@ -221,9 +223,8 @@ class GXgrd():
         else:
             self._img = gxapi.GXIMG.create_file(gxu.gx_dtype(dtype), self._filename, gxapi.IMG_FILE_READORWRITE)
 
-        atexit.register(self._close)
-        #gx.gx.log('GRD open> {}'.format(self._filename))
-        self._open = True
+        atexit.register(self._close, pop=False)
+        self._open = gx.track_resource(self.__class__.__name__, self._filename)
 
     @property
     def filename(self):

@@ -1,5 +1,6 @@
 import numpy as np
 import unittest
+import os
 
 import geosoft
 import geosoft.gxpy.gx as gx
@@ -18,7 +19,7 @@ class Test(unittest.TestCase):
 
     @classmethod
     def start(cls,test):
-        cls.gxp.log("*** {} *** - {}".format(test, geosoft.__version__))
+        cls.gxp.log("*** {} > {}".format(os.path.split(__file__)[1], test))
 
     def test_va(self):
         self.start(gsys.func_name())

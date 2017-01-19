@@ -66,7 +66,7 @@ class Test(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
-        cls.gx = gx.GXpy(log=print, parent_window=-1)
+        cls.gx = gx.GXpy(log=print, parent_window=-1, max_warnings=8)
         os.chdir(os.path.dirname(os.path.realpath(__file__)))
         pass
 
@@ -76,7 +76,7 @@ class Test(unittest.TestCase):
     
     @classmethod
     def start(cls,test):
-        cls.gx.log("\n*** {} *** - {}".format(test, geosoft.__version__))
+        cls.gx.log("*** {} > {}".format(os.path.split(__file__)[1], test))
 
     def test_version(self):
         self.start(gsys.func_name())
@@ -168,6 +168,11 @@ class Test(unittest.TestCase):
             filename = gmap.filename
             gmap.remove_on_close(True)
         self.assertFalse(os.path.isfile(filename))
+
+        for i in range(3):
+            gmap = gxmap.GXmap.new(filename='t{}'.format(i), overwrite=True)
+            gmap.remove_on_close(True)
+            gmap.close()
 
 
 if __name__ == '__main__':

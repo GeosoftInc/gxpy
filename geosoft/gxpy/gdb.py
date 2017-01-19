@@ -10,6 +10,7 @@ import geosoft.gxapi as gxapi
 from . import vv as gxvv
 from . import va as gxva
 from . import utility as gxu
+from . import gx as gx
 
 __version__ = geosoft.__version__
 
@@ -61,6 +62,14 @@ class GDBException(Exception):
     .. versionadded:: 9.1
     '''
     pass
+
+def _gdb_name(name):
+    name = name.strip()
+    nameExt = os.path.splitext(name)
+    if nameExt[1].lower() == '.gdb':
+        return name
+    else:
+        return os.path.normpath(name + ".gdb")
 
 
 def _va_width(data):
@@ -183,7 +192,7 @@ class GXdb():
     def __exit__(self, type, value, traceback):
         self._close()
 
-    def _close(self):
+    def _close(self, pop=True):
         if self._open:
             if self._db:
                 if self._edb is not None:
@@ -192,25 +201,28 @@ class GXdb():
                     self._edb = None
                 self._db = None
 
-            self._file_name = None
-            self._open = False
+            self._filename = None
+            if pop:
+                gx.pop_resource(self._open)
+            self._open = None
 
 
     def __repr__(self):
         return "{}({})".format(self.__class__, self.__dict__)
 
     def __str__(self):
-        return os.path.basename(self._file_name)
+        return os.path.basename(self._filename)
 
     def __init__(self):
         self._lst = gxapi.GXLST.create(2000)
         self._sr = gxapi.str_ref()
-        self._file_name = None
+        self._filename = None
         self._db = None
         self._edb = None
 
-        atexit.register(self._close)
-        self._open = True
+        atexit.register(self._close, pop=False)
+        self._open = gx.track_resource(self.__class__.__name__, self._filename)
+
 
     @classmethod
     def open(cls, name=None):
@@ -233,7 +245,7 @@ class GXdb():
             gdb._db = gxapi.GXDB.open(name, 'SUPER', '')
 
         gxapi.GXDB.get_name(gdb._db, gxapi.DB_NAME_FILE, gdb._sr)
-        gdb._file_name = os.path.normpath(gdb._sr.value)
+        gdb._filename = os.path.normpath(gdb._sr.value)
 
         return gdb
 
@@ -261,22 +273,12 @@ class GXdb():
         if not comp:
             comp = COMP_SPEED
 
-        gdb = cls()
-        name = gdb._gdb_name(name)
+        name = _gdb_name(name)
         gxapi.GXDB.create_comp(name,
                                maxLines, maxChannels, maxBlobs, 10, 100,
                                'SUPER', '',
                                pageSize, comp)
-        return(gdb.open(name))
-
-    @staticmethod
-    def _gdb_name(name):
-        name = name.strip()
-        nameExt = os.path.splitext(name)
-        if nameExt[1].lower() == '.gdb':
-            return name
-        else:
-            return os.path.normpath(name + ".gdb")
+        return cls.open(name)
 
     def commit(self):
         '''
@@ -320,7 +322,7 @@ class GXdb():
 
         .. versionadded:: 9.1
         '''
-        return os.path.abspath(self._file_name)
+        return os.path.abspath(self._filename)
 
     def line_name_symb(self, line, create=False):
         '''

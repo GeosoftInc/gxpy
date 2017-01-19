@@ -28,7 +28,7 @@ class Test(unittest.TestCase):
         
     @classmethod
     def start(cls,test):
-        cls.gx.log("*** {} *** - {}".format(test, geosoft.__version__))
+        cls.gx.log("*** {} > {}".format(os.path.split(__file__)[1], test))
         
     def tf(f):
         return os.path.join(os.path.dirname(__file__), f)
@@ -550,9 +550,6 @@ class Test(unittest.TestCase):
     def test_list_values_GDB(self):
         self.start(gsys.func_name())
 
-        def progress(txt,pct):
-            self.gx.log(txt + str(pct))
-
         self.nl = 0
         self.stp = 100
         def enough():
@@ -572,12 +569,12 @@ class Test(unittest.TestCase):
             gdb.write_channel('D578625', 'testlist', np.array([1,2,3,4,4,4,5,6,7,7,7,6,5,4], dtype=np.int))
             gdb.write_channel('D2', 'testlist', np.array([12,12,12,13,13,13], dtype=np.int))
 
-            listVal = gdb.list_values('testlist', max=100, progress=progress, stop=enough)
+            listVal = gdb.list_values('testlist', max=100, stop=enough)
             listVal.sort()
             self.assertEqual(listVal, ['1','12','13','2','3','4','5','6','7'])
             self.nl = 0
             self.stp = 1
-            listVal = gdb.list_values('dx', max=10000, progress=progress)
+            listVal = gdb.list_values('dx', max=10000)
             self.assertEqual(len(listVal),29)
             listVal = gdb.list_values('dx')
             self.assertEqual(len(listVal),29)
@@ -656,29 +653,6 @@ class Test(unittest.TestCase):
             gdb.delete_line('testgroup')
 
             gdb.discard()
-
-    def test_examples(self):
-        self.start(gsys.func_name())
-
-        with gxgdb.GXdb.open(self.gdb_name) as gdb:
-
-            gdb.select_lines('',select=False)
-            gdb.select_lines('Testline,D578625,P3',select=True)
-            lines = gdb.list_lines()
-            for line in lines:
-
-                try:
-                    npd,ch,fid = gdb.read_line(line)
-                    # npd is a 2D numpy array to all data in this line; ch is a list of the channels;
-                    # fid is the (start,increment) fiducial.
-
-                    # do something with the data in npd ...
-                    self.gx.log('{}: {}'.format(line,npd.shape))
-
-
-                except gxgdb.GDBException as err:
-                    print ("Reading line '{}': encountered error: {}".format(line,err))
-
 
 ###############################################################################################
 

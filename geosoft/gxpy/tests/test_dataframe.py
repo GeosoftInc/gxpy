@@ -1,4 +1,5 @@
 import unittest
+import os
 
 import geosoft
 import geosoft.gxpy as gxpy
@@ -18,7 +19,7 @@ class Test(unittest.TestCase):
 
     @classmethod
     def start(cls,test):
-        cls.gxp.log("*** {} *** - {}".format(test, geosoft.__version__))
+        cls.gxp.log("*** {} > {}".format(os.path.split(__file__)[1], test))
 
     def test_df(self):
         self.start(gsys.func_name())
@@ -85,6 +86,7 @@ class Test(unittest.TestCase):
         self.assertRaises(gxdf.DfException, gxdf.table_column, 'maptmpl', 'bogus')
 
     def test_doc_sample(self):
+        self.start(gsys.func_name())
 
         def testraise(index, column):
             df.loc[index, column]

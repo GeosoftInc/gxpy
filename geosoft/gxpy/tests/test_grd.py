@@ -12,7 +12,7 @@ class Test(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
-        cls.gx = gx.GXpy(log=print)
+        cls.gx = gx.GXpy(log=print, res_stack=4)
         os.chdir(os.path.dirname(os.path.realpath(__file__)))
         cls.folder, files = gsys.unzip(os.path.join(os.path.dirname(__file__), 'testgrids.zip'),
                                        folder=cls.gx.temp_folder())
@@ -24,10 +24,9 @@ class Test(unittest.TestCase):
     def tearDownClass(cls):
         pass
 
-    
     @classmethod
     def start(cls,test):
-        cls.gx.log("*** {} *** - {}".format(test, geosoft.__version__))
+        cls.gx.log("*** {} > {}".format(os.path.split(__file__)[1], test))
 
     def test_grc(self):
         self.start(gsys.func_name())
@@ -123,9 +122,6 @@ class Test(unittest.TestCase):
     def test_gridMosaic(self):
         self.start(gsys.func_name())
 
-        def log(log_str):
-            self.gx.log(log_str)
-
         with gxgrd.GXgrd.open(self.g1f) as g:
             m1s = os.path.join(self.folder, 'm1.grd(GRD)')
             g.save_as(m1s).close()
@@ -136,7 +132,7 @@ class Test(unittest.TestCase):
         glist = [m1s, m2s]
 
         mosaicGrid = os.path.join(self.folder, 'testMozaic.grd')
-        with gxgrd.gridMosaic(mosaicGrid, glist, report=log) as grd:
+        with gxgrd.gridMosaic(mosaicGrid, glist) as grd:
 
             properties = grd.properties()
             self.assertAlmostEqual(properties.get('dx'),0.01)
@@ -149,7 +145,7 @@ class Test(unittest.TestCase):
             self.assertEqual(str(properties.get('ipj')),'WGS 84')
 
         m = os.path.join(self.folder, 'testMosaic.hgd(HGD)')
-        gxgrd.gridMosaic(m, glist, report=log).close()
+        gxgrd.gridMosaic(m, glist).close()
 
         with gxgrd.GXgrd.open(m) as grd:
             grd.delete_files()
@@ -370,6 +366,17 @@ class Test(unittest.TestCase):
         self.assertEqual(a[0,1,0]-a[0,0,0], props.get('dx'))
         self.assertEqual(a[1,0,1]-a[0,0,1], props.get('dy'))
         self.assertEqual(a[0,0,2]-a[1,1,2], 0.)
+
+    def test_hanging_resource(self):
+        self.start(gsys.func_name())
+
+        g1 = gxgrd.GXgrd.open(self.g1f)
+        g2 = gxgrd.GXgrd.open(self.g2f)
+        rs = len(gx._res_heap)
+        self.assertTrue(rs >= 2)
+        g1.close()
+        self.assertEqual(len(gx._res_heap), rs-1)
+        g2.close()
 
 
 ###############################################################################################

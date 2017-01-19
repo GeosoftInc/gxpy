@@ -23,7 +23,7 @@ class Test(unittest.TestCase):
     
     @classmethod
     def start(cls,test):
-        cls.gxc.log("*** {} *** - {}".format(test, geosoft.__version__))
+        cls.gxc.log("*** {} > {}".format(os.path.split(__file__)[1], test))
 
     def test_misc(self):
         self.start(gsys.func_name())
@@ -110,7 +110,6 @@ class Test(unittest.TestCase):
         
         def test(s):
             r = gxu.rdecode(s)
-            self.gxc.log('\'{}\' -> {}'.format(s,r))
             return r
             
         self.assertEqual(test("1.9"),1.9)
@@ -172,7 +171,6 @@ class Test(unittest.TestCase):
 
         def test(s,f):
             r = gxu.decode(s,f)
-            self.gxc.log('\'{},{}\' -> {}'.format(s,f,r))
             return r
 
         self.assertEqual(test("1.9",'f8'),1.9)

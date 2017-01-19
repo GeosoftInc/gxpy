@@ -1,5 +1,5 @@
 import os
-import gc
+import atexit
 from math import ceil
 
 import geosoft
@@ -135,9 +135,11 @@ class GXmap:
         self._remove = False
         self._filename = map_file_name(filename)
         self.gxmap = gxapi.GXMAP.create(self.filename, mode)
-        self._open = True
 
-    def _close(self):
+        atexit.register(self._close, pop=False)
+        self._open = gx.track_resource(self.__class__.__name__, self._filename)
+
+    def _close(self, pop=True):
         if self._open:
             if self.gxmap:
 
@@ -155,8 +157,9 @@ class GXmap:
                         delete_files(self._filename)
                     except OSError:  # remove if we can
                         pass
-
-            self._open = False
+            if pop:
+                gx.pop_resource(self._open)
+            self._open = None
 
     @classmethod
     def open(cls, filename):
@@ -325,6 +328,10 @@ class GXmap:
         Full map file path name.
         """
         return self._filename
+
+    def close(self):
+        """ Close the map and release resources. """
+        self._close()
 
     def remove_on_close(self, remove=True):
         """
