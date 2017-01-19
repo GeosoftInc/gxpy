@@ -209,7 +209,6 @@ class Test(unittest.TestCase):
         self.start(gsys.func_name())
 
         testmap = os.path.join(self.gx.temp_folder(), "test")
-        testmap = "test"
         with gxmap.GXmap.new(testmap, overwrite=True) as gmap:
             mapfile = gmap.filename
             with gxv.GXview(gmap, "base", area=(0,0,250, 125), scale=1000) as view:
