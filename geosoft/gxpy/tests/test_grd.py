@@ -16,16 +16,13 @@ class Test(unittest.TestCase):
         os.chdir(os.path.dirname(os.path.realpath(__file__)))
         cls.folder, files = gsys.unzip(os.path.join(os.path.dirname(__file__), 'testgrids.zip'),
                                        folder=cls.gx.temp_folder())
-        cls.g1 = gxgrd.GXgrd.open(os.path.join(cls.folder, files[0]))
-        cls.g2 = gxgrd.GXgrd.open(os.path.join(cls.folder, files[3]))
+        cls.g1f = os.path.join(cls.folder, files[0])
+        cls.g2f = os.path.join(cls.folder, files[3])
         pass
 
     @classmethod
     def tearDownClass(cls):
-        cls.g1.close()
-        cls.g2.close()
-        try: gsys.remove_dir(cls.folder)
-        except: pass
+        pass
 
     
     @classmethod
@@ -39,22 +36,24 @@ class Test(unittest.TestCase):
     def test_gridProperties(self):
         self.start(gsys.func_name())
 
-        properties = self.g1.properties()
-        self.assertEqual(properties.get('dx'),0.01)
-        self.assertEqual(properties.get('dy'),0.01)
-        self.assertEqual(properties.get('x0'),7.0)
-        self.assertEqual(properties.get('y0'),44.0)
-        self.assertEqual(properties.get('rot'),0.0)
-        self.assertEqual(properties.get('nx'),101)
-        self.assertEqual(properties.get('ny'),101)
-        self.assertEqual(str(properties.get('ipj')),'WGS 84')
+        with gxgrd.GXgrd.open(self.g1f) as g1:
+            properties = g1.properties()
+            self.assertEqual(properties.get('dx'),0.01)
+            self.assertEqual(properties.get('dy'),0.01)
+            self.assertEqual(properties.get('x0'),7.0)
+            self.assertEqual(properties.get('y0'),44.0)
+            self.assertEqual(properties.get('rot'),0.0)
+            self.assertEqual(properties.get('nx'),101)
+            self.assertEqual(properties.get('ny'),101)
+            self.assertEqual(str(properties.get('ipj')),'WGS 84')
 
     def test_saveGrid(self):
         self.start(gsys.func_name())
 
         #create a grids
         outGrid = os.path.join(self.folder, 'testNew.grd(GRD)')
-        with self.g1.save_as(outGrid) as grd:
+        with gxgrd.GXgrd.open(self.g1f) as g:
+            grd = g.save_as(outGrid)
             grd.delete_files()
             properties = grd.properties()
             self.assertEqual(properties.get('dx'),0.01)
@@ -65,25 +64,29 @@ class Test(unittest.TestCase):
             self.assertEqual(properties.get('nx'),101)
             self.assertEqual(properties.get('ny'),101)
             self.assertEqual(str(properties.get('ipj')),'WGS 84')
+            grd.close()
 
     def test_set_properties(self):
         self.start(gsys.func_name())
 
-        properties = self.g1.properties()
-        properties['x0'] = 45.0
-        properties['y0'] = -15.0
-        properties['dx'] = 1.5
-        properties['dy'] = 2.5
-        properties['rot'] = -33.333333
-        properties['ipj'] = gxipj.GXipj.from_name('NAD27 / UTM zone 18N')
-        try:
-            self.g1.set_properties(properties)
-            self.assertTrue(False) #should not be able to set properties of a read-only grid
-        except: pass
+        with gxgrd.GXgrd.open(self.g1f) as g1:
+            properties = g1.properties()
+            properties['x0'] = 45.0
+            properties['y0'] = -15.0
+            properties['dx'] = 1.5
+            properties['dy'] = 2.5
+            properties['rot'] = -33.333333
+            properties['ipj'] = gxipj.GXipj.from_name('NAD27 / UTM zone 18N')
+            try:
+                g1.set_properties(properties)
+                self.assertTrue(False) #should not be able to set properties of a read-only grid
+            except: pass
 
         outGrid = os.path.join(self.folder, 'testNew.grd(GRD;TYPE=SHORT;COMP=SPEED)')
-        with self.g1.save_as(outGrid) as grd:
+        with gxgrd.GXgrd.open(self.g1f) as g:
+            grd = g.save_as(outGrid)
             grd.set_properties(properties)
+            grd.close()
 
         with gxgrd.GXgrd.open(outGrid) as grd:
             properties = grd.properties()
@@ -123,12 +126,12 @@ class Test(unittest.TestCase):
         def log(log_str):
             self.gx.log(log_str)
 
-        m1s = os.path.join(self.folder, 'm1.grd(GRD)')
-        m1 = self.g1.save_as(m1s)
-        m2s = os.path.join(self.folder, 'm2.grd(GRD)')
-        m2 = self.g2.save_as(m2s)
-        m1.close()
-        m2.close()
+        with gxgrd.GXgrd.open(self.g1f) as g:
+            m1s = os.path.join(self.folder, 'm1.grd(GRD)')
+            g.save_as(m1s).close()
+        with gxgrd.GXgrd.open(self.g2f) as g:
+            m2s = os.path.join(self.folder, 'm2.grd(GRD)')
+            g.save_as(m2s).close()
 
         glist = [m1s, m2s]
 
@@ -145,9 +148,8 @@ class Test(unittest.TestCase):
             self.assertEqual(properties.get('ny'),101)
             self.assertEqual(str(properties.get('ipj')),'WGS 84')
 
-        m= os.path.join(self.folder, 'testMosaic.hgd(HGD)')
-        grd = gxgrd.gridMosaic(m, glist, report=log)
-        grd.close()
+        m = os.path.join(self.folder, 'testMosaic.hgd(HGD)')
+        gxgrd.gridMosaic(m, glist, report=log).close()
 
         with gxgrd.GXgrd.open(m) as grd:
             grd.delete_files()
@@ -164,28 +166,48 @@ class Test(unittest.TestCase):
     def test_gridBool(self):
         self.start(gsys.func_name())
 
-        with gxgrd.gridBool(self.g1, self.g2,
-                            os.path.join(self.folder, 'testBool.grd(GRD;TYPE=SHORT)'),
-                            size=3) as grd:
-            grd.delete_files()
-            properties = grd.properties()
-            self.assertAlmostEqual(properties.get('dx'),0.01)
-            self.assertAlmostEqual(properties.get('dy'),0.01)
-            self.assertAlmostEqual(properties.get('x0'),7.0)
-            self.assertAlmostEqual(properties.get('y0'),44.0)
-            self.assertEqual(properties.get('rot'),0.0)
-            self.assertEqual(properties.get('nx'),201)
-            self.assertEqual(properties.get('ny'),101)
-            self.assertEqual(str(properties.get('ipj')),'WGS 84')
-            self.assertEqual(properties.get('dtype'),np.int16)
+        g1 = gxgrd.GXgrd.open(self.g1f)
+        g2 = gxgrd.GXgrd.open(self.g2f)
+        grd = gxgrd.gridBool(g1, g2, os.path.join(self.folder, 'testBool.grd(GRD;TYPE=SHORT)'), size=3)
+        grd.delete_files()
+        properties = grd.properties()
+        g1.close()
+        g2.close()
+        grd.close()
+
+        self.assertAlmostEqual(properties.get('dx'),0.01)
+        self.assertAlmostEqual(properties.get('dy'),0.01)
+        self.assertAlmostEqual(properties.get('x0'),7.0)
+        self.assertAlmostEqual(properties.get('y0'),44.0)
+        self.assertEqual(properties.get('rot'),0.0)
+        self.assertEqual(properties.get('nx'),201)
+        self.assertEqual(properties.get('ny'),101)
+        self.assertEqual(str(properties.get('ipj')),'WGS 84')
+        self.assertEqual(properties.get('dtype'),np.int16)
+
+        grd = gxgrd.gridBool(self.g1f, self.g2f, os.path.join(self.folder, 'testBool.grd(GRD;TYPE=SHORT)'), size=3)
+        grd.delete_files()
+        properties = grd.properties()
+        grd.close()
+
+        self.assertAlmostEqual(properties.get('dx'), 0.01)
+        self.assertAlmostEqual(properties.get('dy'), 0.01)
+        self.assertAlmostEqual(properties.get('x0'), 7.0)
+        self.assertAlmostEqual(properties.get('y0'), 44.0)
+        self.assertEqual(properties.get('rot'), 0.0)
+        self.assertEqual(properties.get('nx'), 201)
+        self.assertEqual(properties.get('ny'), 101)
+        self.assertEqual(str(properties.get('ipj')), 'WGS 84')
+        self.assertEqual(properties.get('dtype'), np.int16)
 
     def test_deleteGridFiles(self):
         self.start(gsys.func_name())
 
-        with self.g1.save_as(os.path.join(self.folder,'testDelete.grd')) as g2:
+        with gxgrd.GXgrd.open(self.g1f) as g:
+            g2 = g.save_as(os.path.join(self.folder,'testDelete.grd'))
             filen = g2.filename
             g2.delete_files()
-            s = str(g2).split('(')[0]
+            g2.close()
 
         self.assertFalse(os.path.isfile(filen))
         self.assertFalse(os.path.isfile(filen+'.gi'))
@@ -194,10 +216,11 @@ class Test(unittest.TestCase):
     def test_hgd(self):
         self.start(gsys.func_name())
 
-        g = self.g1
-        ofile = gxgrd.GXgrd.decorate_name(os.path.join(self.folder, 'test.hgd'), 'HGD')
-        with g.save_as(ofile) as g2:
+        with gxgrd.GXgrd.open(self.g1f) as g:
+            ofile = gxgrd.GXgrd.decorate_name(os.path.join(self.folder, 'test.hgd'), 'HGD')
+            g2 = g.save_as(ofile)
             properties = g2.properties()
+            g2.close()
             self.assertEqual(properties.get('filename'),os.path.abspath(ofile.split('(')[0]))
             self.assertEqual(properties.get('decoration'),'HGD')
             self.assertEqual(properties.get('gridtype'),'HGD')
@@ -241,28 +264,29 @@ class Test(unittest.TestCase):
     def test_indexWindow(self):
         self.start(gsys.func_name())
 
-        g = self.g1
-        p = g.properties()
-        window = os.path.join(self.folder,'testwindow.grd(GRD)')
+        with gxgrd.GXgrd.open(self.g1f) as g:
+            p = g.properties()
+            window = os.path.join(self.folder,'testwindow.grd(GRD)')
 
-        gw = g.indexWindow(window,4,2,96,5)
-        pw = gw.properties()
-        dx = p.get('dx')
-        self.assertAlmostEqual(pw.get('x0'),p.get('x0')+(4*dx))
-        dy = p.get('dy')
-        self.assertAlmostEqual(pw.get('y0'),p.get('y0')+(2*dy))
-        self.assertEqual(pw.get('nx'),96)
-        self.assertEqual(pw.get('ny'),5)
-        gw.close()
+            gw = g.indexWindow(window,4,2,96,5)
+            pw = gw.properties()
+            dx = p.get('dx')
+            self.assertAlmostEqual(pw.get('x0'),p.get('x0')+(4*dx))
+            dy = p.get('dy')
+            self.assertAlmostEqual(pw.get('y0'),p.get('y0')+(2*dy))
+            self.assertEqual(pw.get('nx'),96)
+            self.assertEqual(pw.get('ny'),5)
+            gw.close()
 
-        with g.indexWindow(window,nx=20,ny=100) as gw:
+            gw = g.indexWindow(window,nx=20,ny=100)
             pw = gw.properties()
             self.assertAlmostEqual(pw.get('x0'),p.get('x0'))
             self.assertAlmostEqual(pw.get('y0'),p.get('y0'))
             self.assertEqual(pw.get('nx'),20)
             self.assertEqual(pw.get('ny'),100)
+            gw.close()
 
-        with g.indexWindow(window,x0=29,y0=100) as gw:
+            gw = g.indexWindow(window,x0=29,y0=100)
             pw = gw.properties()
             dx = p.get('dx')
             self.assertAlmostEqual(pw.get('x0'),p.get('x0')+(29*dx))
@@ -270,21 +294,22 @@ class Test(unittest.TestCase):
             self.assertAlmostEqual(pw.get('y0'),p.get('y0')+(100*dy))
             self.assertEqual(pw.get('nx'),72)
             self.assertEqual(pw.get('ny'),1)
+            gw.close()
 
-        try:
-            g.indexWindow(window,x0=2900,y0=3600,ny=2)
-            self.assertFalse(True)
-        except: pass
+            try:
+                g.indexWindow(window,x0=2900,y0=3600,ny=2)
+                self.assertFalse(True)
+            except: pass
 
-        try:
-            g.indexWindow(window,-1)
-            self.assertFalse(True)
-        except: pass
+            try:
+                g.indexWindow(window,-1)
+                self.assertFalse(True)
+            except: pass
 
-        try:
-            g.indexWindow(window,y0=-1)
-            self.assertFalse(True)
-        except: pass
+            try:
+                g.indexWindow(window,y0=-1)
+                self.assertFalse(True)
+            except: pass
 
     def test_from_array(self):
         self.start(gsys.func_name())

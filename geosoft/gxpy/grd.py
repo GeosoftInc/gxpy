@@ -1,10 +1,10 @@
 import os
 import atexit
-import time
 import numpy as np
 
 import geosoft
 import geosoft.gxapi as gxapi
+from . import gx as gx
 from . import ipj as gxipj
 from . import vv as gxvv
 from . import utility as gxu
@@ -165,8 +165,9 @@ class GXgrd():
                 # an HGD memory grid was made, save it to an HGD file
                 gxapi.GXHGD.h_create_img(self._img, decorate_name(self._filename, 'HGD'))
 
-        self._img = None
-        self._open = False
+            self._img = None
+            self._open = False
+            #gx.gx.log('GRD close > {}'.format(self._filename))
 
     def __repr__(self):
         return "{}({})".format(self.__class__, self.__dict__)
@@ -202,40 +203,26 @@ class GXgrd():
                 if self._np[4].lower() == 'hgd':
                     self._hgd = True
 
-        # When working with very large grids (gigabyte+), the
-        # file system cannot always keep up with closing/caching and re-opening the
-        # grid. Though this is actually a system problem, we deal with this problem by attempting
-        # to open a grid three times before raising an error.
-
         self._img = None
-        attempt = 0
-        while self._img is None:
+        if (self._filename is None):
+            self._img = gxapi.GXIMG.create(gxu.gx_dtype(dtype), kx, dim[0], dim[1])
 
-            try:
-                if (self._filename is None):
-                    self._img = gxapi.GXIMG.create(gxu.gx_dtype(dtype), kx, dim[0], dim[1])
+        elif mode == FILE_NEW:
+            if self._hgd:
+                # for HGD grids, make a memory grid, which will be saved to an HGD on closing
+                self._img = gxapi.GXIMG.create(gxu.gx_dtype(dtype), kx, dim[0], dim[1])
+            else:
+                self._img = gxapi.GXIMG.create_new_file(gxu.gx_dtype(dtype), kx, dim[0], dim[1], self._filename)
 
-                elif mode == FILE_NEW:
-                    if self._hgd:
-                        # for HGD grids, make a memory grid, which will be saved to an HGD on closing
-                        self._img = gxapi.GXIMG.create(gxu.gx_dtype(dtype), kx, dim[0], dim[1])
-                    else:
-                        self._img = gxapi.GXIMG.create_new_file(gxu.gx_dtype(dtype), kx, dim[0], dim[1], self._filename)
+        elif mode == FILE_READ:
+            self._img = gxapi.GXIMG.create_file(gxu.gx_dtype(dtype), self._filename, gxapi.IMG_FILE_READONLY)
+            self._readonly = True
 
-                elif mode == FILE_READ:
-                    self._img = gxapi.GXIMG.create_file(gxu.gx_dtype(dtype), self._filename, gxapi.IMG_FILE_READONLY)
-                    self._readonly = True
-
-                else:
-                    self._img = gxapi.GXIMG.create_file(gxu.gx_dtype(dtype), self._filename, gxapi.IMG_FILE_READORWRITE)
-
-            except geosoft.gxapi.GXError as e:
-                time.sleep(0.1)
-                attempt += 1
-                if attempt > 10:
-                    raise GRDException(_t('Cannot open: {}\nBecause: {}').format(self._filename, str(e)))
+        else:
+            self._img = gxapi.GXIMG.create_file(gxu.gx_dtype(dtype), self._filename, gxapi.IMG_FILE_READORWRITE)
 
         atexit.register(self._close)
+        #gx.gx.log('GRD open> {}'.format(self._filename))
         self._open = True
 
     @property
@@ -405,7 +392,7 @@ class GXgrd():
 
         :param fileName:    name of the file to save
         :param dtype:       numpy data type, None to use type of the parent grid
-        :return:            GXgrd of saved file
+        :return:            GXgrd instance of saved file, must be closed with a call to close().
 
         .. versionadded:: 9.1
         """
@@ -433,7 +420,7 @@ class GXgrd():
         :param nx:  number of points in x
         :param ny:  number of points in y
 
-        :return:    GXgrd instance limited to the window.
+        :return:    GXgrd instance limited to the window, must be closed with a call to close().
 
         .. versionadded:: 9.1
         """
@@ -544,17 +531,17 @@ def gridMosaic(mosaic, gridList, typeDecoration='', report=None):
     :param gridList:        list of input grid names
     :param typeDecoration:  decoration for input grids if not default
     :param report:          string reporting function, report=print to print progress
-    :return:                GXgrd
+    :return:                GXgrd instance, must be closed with a call to close().
 
     .. versionadded:: 9.1
     """
 
     def props(gn, repro=None):
-        g = GXgrd.open(gn)
-        if repro:
-            g._img.create_projected2(repro[0], repro[1])
-        p = g.properties()
-        return p
+        with GXgrd.open(gn) as g:
+            if repro:
+                g._img.create_projected2(repro[0], repro[1])
+            p = g.properties()
+            return p
 
     def dimension(glist):
 
@@ -600,17 +587,17 @@ def gridMosaic(mosaic, gridList, typeDecoration='', report=None):
         return dsx, dsy
 
     def paste(gn, mpg):
-        g = GXgrd.open(gn)
-        p = g.properties()
-        nX = p.get('nx')
-        nY = p.get('ny')
-        gpg = g._geth_pg()
-        destx, desty = locate(x0, y0, p)
-        if report:
-            report('    +{} nx,ny({},{})'.format(g, nX, nY))
-            report('     Copy ({},{}) -> ({},{}) of ({},{})'.format(nX, nY, destx, desty, mnx, mny))
-        mpg.copy_subset(gpg, desty, destx, 0, 0, nY, nX)
-        return
+        with GXgrd.open(gn) as g:
+            p = g.properties()
+            nX = p.get('nx')
+            nY = p.get('ny')
+            gpg = g._geth_pg()
+            destx, desty = locate(x0, y0, p)
+            if report:
+                report('    +{} nx,ny({},{})'.format(g, nX, nY))
+                report('     Copy ({},{}) -> ({},{}) of ({},{})'.format(nX, nY, destx, desty, mnx, mny))
+            mpg.copy_subset(gpg, desty, destx, 0, 0, nY, nX)
+            return
 
     if len(gridList) == 0:
         raise ValueError(_t('At least one grid is required'))
@@ -683,15 +670,24 @@ def gridBool(g1, g2, joinedGrid, opt=1, size=3, olap=1):
         2   use grid 2
         === ==========================================
 
-    :returns:       GXgrd of the merged output grid
+    :returns:       GXgrd instance of the merged output grid, must be closed with a call to close().
 
     .. versionadded:: 9.1
     """
 
+    close_g1 = close_g2 = False
     if isinstance(g1, str):
         g1 = GXgrd.open(g1)
+        close_g1 = True
     if isinstance(g2, str):
         g2 = GXgrd.open(g2)
+        close_g2 = True
 
     gxapi.GXIMU.grid_bool(g1._img, g2._img, joinedGrid, opt, size, olap)
+
+    if close_g1:
+        g1.close()
+    if close_g2:
+        g2.close()
+
     return GXgrd.open(joinedGrid)
