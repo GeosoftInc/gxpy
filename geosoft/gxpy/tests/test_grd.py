@@ -14,7 +14,8 @@ class Test(unittest.TestCase):
     def setUpClass(cls):
         cls.gx = gx.GXpy(log=print)
         os.chdir(os.path.dirname(os.path.realpath(__file__)))
-        cls.folder, files = gsys.unzip(os.path.join(os.path.dirname(__file__), 'testgrids.zip'))
+        cls.folder, files = gsys.unzip(os.path.join(os.path.dirname(__file__), 'testgrids.zip'),
+                                       folder=cls.gx.temp_folder())
         cls.g1 = gxgrd.GXgrd.open(os.path.join(cls.folder, files[0]))
         cls.g2 = gxgrd.GXgrd.open(os.path.join(cls.folder, files[3]))
         pass

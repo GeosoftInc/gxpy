@@ -203,6 +203,7 @@ def _unzip(zip_file_name, folder):
     return files
 
 
+#TODO replace report with logging
 def unzip(zip_file_name, folder=None, report=None, checkready=25):
     """
     Decompress and write the content of a zip file to a folder.
