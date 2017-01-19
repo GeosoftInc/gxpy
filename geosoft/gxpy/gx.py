@@ -35,9 +35,11 @@ class _Singleton:
     See http://www.aleax.it/Python/5ep.html
     """
     _shared_state = {}
-    gxapi = None
     def __init__(self):
         self.__dict__ = self._shared_state
+
+# global GX handle, None if not valid
+gx = None
 
 class GXpy(_Singleton):
     '''
@@ -84,32 +86,34 @@ class GXpy(_Singleton):
         return self
 
     def __exit__(self, type, value, traceback):
-        self._close()
+        return
 
     def _close(self):
+
+        global gx
 
         def file_error(fnc, path, excinfo):
             self.log("error removing temporary file \"{}\": function \"{}\": exception\"{}\""
                      .format(path, str(fnc), str(excinfo)))
 
-        if self._open:
+        if gx:
             if not self._keep_temp_files:
                 if self._temp_file_folder != gxu.folder_temp():
                     shutil.rmtree(self._temp_file_folder, ignore_errors=False, onerror=file_error)
                 self._temp_file_folder = None
 
+            self.log('GX close')
             if self._logf:
                 self._logf.close()
-            self._open = False
-
+            gx = None
 
     def __init__(self, name=__name__, version=__version__, parent_window=0, log=None):
 
         # singleton class
 
         _Singleton.__init__(self)
-
-        if self.gxapi is None:
+        global gx
+        if not gx:
 
             # create a Tkinter parent frame for the viewers
 
@@ -177,8 +181,9 @@ class GXpy(_Singleton):
             # create a shared string ref for the convenience of Geosoft modules
 
             self._sr = gxapi.str_ref()
-            self._open = True
             atexit.register(self._close)
+            gx = self
+            self.log('GX open')
 
     def _log_to_file(self, *args):
 
