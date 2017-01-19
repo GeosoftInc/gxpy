@@ -76,12 +76,12 @@ def save_as_image(mapfile, imagefile, type="PNG", pix_width=1000, pix_height=0):
     .. versionadded:: 9.2
     """
 
-    GXmap.open(mapfile).gxmap.export_all_raster(imagefile, '',
-                                                pix_width, pix_height, gxapi.rDUMMY,
-                                                gxapi.MAP_EXPORT_BITS_24,
-                                                gxapi.MAP_EXPORT_METHOD_NONE,
-                                                type,
-                                                '')
+    with GXmap.open(mapfile) as g:
+        g.gxmap.export_all_raster(imagefile, '',
+                                  pix_width, pix_height, gxapi.rDUMMY,
+                                  gxapi.MAP_EXPORT_BITS_24,
+                                  gxapi.MAP_EXPORT_METHOD_NONE,
+                                  type, '')
 
 def crc_map(mapfile, pix_width=1000):
     """

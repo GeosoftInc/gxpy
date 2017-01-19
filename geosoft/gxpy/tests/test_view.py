@@ -156,34 +156,34 @@ class Test(unittest.TestCase):
                 self.assertTrue(vw.cs.same_as(gxcs.GXcs()))
 
         test_map = os.path.join(self.gx.temp_folder(),"test_map")
-        gmap = gxmap.GXmap.new(test_map)
-        mapname = gmap.filename
-        with gxv.GXview(gmap, "test") as view:
-            self.assertEqual(view.viewname, "test")
-            self.assertEqual(view.mapfilename, mapname)
-            view.start_group('test_group')
+        with gxmap.GXmap.new(test_map) as gmap:
+            mapname = gmap.filename
+            with gxv.GXview(gmap, "test") as view:
+                self.assertEqual(view.viewname, "test")
+                self.assertEqual(view.mapfilename, mapname)
+                view.start_group('test_group')
 
-            def_pen = view.pen
-            pn = {"line_thick": 99, "pat_number": 88}
-            view.push_pen()
-            view.pen = pn
-            new_pen = view.pen
-            self.assertEqual(new_pen["line_thick"], 99)
-            self.assertEqual(new_pen["pat_number"], 88)
+                def_pen = view.pen
+                pn = {"line_thick": 99, "pat_number": 88}
+                view.push_pen()
+                view.pen = pn
+                new_pen = view.pen
+                self.assertEqual(new_pen["line_thick"], 99)
+                self.assertEqual(new_pen["pat_number"], 88)
 
-            view.pop_pen()
-            pen = view.pen
-            self.assertEqual(pen, def_pen)
+                view.pop_pen()
+                pen = view.pen
+                self.assertEqual(pen, def_pen)
 
-            view.push_pen(pn)
-            view.pen = pn
-            new_pen = view.pen
-            self.assertEqual(new_pen["line_thick"], 99)
-            self.assertEqual(new_pen["pat_number"], 88)
+                view.push_pen(pn)
+                view.pen = pn
+                new_pen = view.pen
+                self.assertEqual(new_pen["line_thick"], 99)
+                self.assertEqual(new_pen["pat_number"], 88)
 
-            view.pop_pen()
-            pen = view.pen
-            self.assertEqual(pen, def_pen)
+                view.pop_pen()
+                pen = view.pen
+                self.assertEqual(pen, def_pen)
 
     def test_view(self):
         self.start(gsys.func_name())

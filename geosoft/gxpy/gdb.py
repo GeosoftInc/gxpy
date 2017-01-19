@@ -491,7 +491,10 @@ class GXdb():
             detail['number'] = self._db.line_number(ls)
             detail['version'] = self._db.line_version(ls)
             detail['type'] = self._db.line_type(ls)
-            detail['groupclass'] = get_detail(self._db.get_group_class)
+            if self._db.line_category(ls) == gxapi.DB_CATEGORY_LINE_GROUP:
+                detail['groupclass'] = get_detail(self._db.get_group_class)
+            else:
+                detail['groupclass'] = ''
 
         except:
             self._unlock(ls)
