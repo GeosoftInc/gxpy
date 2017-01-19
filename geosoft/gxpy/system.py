@@ -203,14 +203,13 @@ def _unzip(zip_file_name, folder):
     return files
 
 
-#TODO replace report with logging
 def unzip(zip_file_name, folder=None, report=None, checkready=25):
     """
     Decompress and write the content of a zip file to a folder.
 
     :param zip_file_name:   zip file name, must have extension
     :param folder:          folder to write results, create it it does not exist
-    :param report:          function report(s) to report file names as they are decompressed
+    :param report:          ignored
     :param checkready:      time in 1/10 second to check completion of each file, default 25
     :return:                (folder that contains unzipped files, list of files)
 
@@ -247,7 +246,9 @@ def unzip(zip_file_name, folder=None, report=None, checkready=25):
 
 def remove_dir(directory, wait=200, tries=10):
     """
-    Robust directory removal, with timed retries to allow for OS timing lags
+    Robust directory removal, with timed retries to allow for OS timing lags.  If you need to use this
+    you may have a coding error in which you are not properly releasing a resource.
+
     :param directory:   directory name, must be a directory
     :param wait :       wait between retries in milliseconds
     :param tries:       number of times to retry

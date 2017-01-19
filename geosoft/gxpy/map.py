@@ -1,5 +1,3 @@
-#TODO review grd class to clean-up files like map class does.
-
 import os
 import gc
 from math import ceil

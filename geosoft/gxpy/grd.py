@@ -23,11 +23,104 @@ class GRDException(Exception):
     '''
     pass
 
+
+def name_parts(name):
+    """
+    Return folder, undecorated file name + ext, file root, ext, decorations.
+
+    If extension is not specified, ".grd" assumed
+
+    For example:
+
+    .. code::
+
+        >>> import geosoft.gxpy.grd as gxgrd
+        >>> namep = gxgrd.name_parts("f:/someFolder/name.grd(GRD;TYPE=SHORT)")
+        >>> print(namep)
+        ('f:/someFolder/','name.grd','name','.grd','(GRD;TYPE=SHORT)')
+
+    .. versionadded:: 9.1
+    """
+
+    path = os.path.abspath(name)
+    fn = os.path.dirname(path)
+    bn = os.path.basename(path).split('(')
+    name = bn[0]
+    root, ext = os.path.splitext(bn[0])
+    if len(bn) > 1:
+        dec = bn[1].split(')')[0]
+    else:
+        dec = ''
+
+    if ext == '':
+        if (dec == '') or (dec[:3].upper() == 'GRD'):
+            # add Geosoft grd extension
+            ext = '.grd'
+            name = name + ext
+
+    return fn, name, root, ext, dec
+
+
+def decorate_name(name, decorations=''):
+    """
+    Properly decorate a grid name.
+
+    :param name:        file name
+    :param decorations: file decorations, semicolon delimited
+    :returns:           decorated file name
+
+    .. versionadded:: 9.1
+    """
+
+    if len(decorations.strip()) > 0:
+        d = decorations.lstrip('(')
+        end = d.find(')')
+        if end != -1:
+            d = d[:end]
+        name = name.split('(')[0]
+    else:
+        name = name.strip()
+        n = name.split('(')
+        if len(name) > len(n[0]):
+            d = n[1].split(')')[0]
+            name = n[0]
+        else:
+            return n[0]
+    return name + '(' + d + ')'
+
+
+def delete_files(filename):
+    """
+    Delete all files associates with this grid name.
+    :param filename:
+
+    .. versionadded:: 9.2
+    """
+
+    def df(fn):
+        try:
+            os.remove(fn)
+        except OSError as e:
+            pass
+
+    if filename is not None:
+
+        fn = name_parts(filename)
+        filename = os.path.join(fn[0], fn[1])
+        ext = fn[3]
+        df(filename)
+        df(filename + '.gi')
+        df(filename + '.xml')
+
+        # hgd files
+        if ext == '.hgd':
+            for i in range(16):
+                df(filename + str(i))
+
 # constants
 FILE_READ = 0
 FILE_READWRITE = 1     # file exists, but can change properties
 FILE_NEW = 2
-
 
 class GXgrd():
     """
@@ -65,29 +158,12 @@ class GXgrd():
 
             if self._delete_files:
 
-
-                img = self._img
                 self._img = None
-                del img
-
-                # delete files
-                if self._filename is not None:
-
-                    fn = GXgrd.name_parts(self._filename)
-                    filename = os.path.join(fn[0], fn[1])
-                    ext = fn[3]
-                    df(filename)
-                    df(filename + '.gi')
-                    df(filename + '.xml')
-
-                    # hgd files
-                    if ext == '.hgd':
-                        for i in range(16):
-                            df(filename + str(i))
+                delete_files(self._filename)
 
             elif self._hgd:
                 # an HGD memory grid was made, save it to an HGD file
-                gxapi.GXHGD.h_create_img(self._img, GXgrd.decorate_name(self._filename, 'HGD'))
+                gxapi.GXHGD.h_create_img(self._img, decorate_name(self._filename, 'HGD'))
 
         self._img = None
         self._open = False
@@ -118,8 +194,8 @@ class GXgrd():
         if (fileName is None) or (len(fileName.strip()) == 0):
             self._filename = None
         else:
-            self._np = GXgrd.name_parts(fileName)
-            self._filename = GXgrd.decorate_name(os.path.join(self._np[0], self._np[1]), self._np[4])
+            self._np = name_parts(fileName)
+            self._filename = decorate_name(os.path.join(self._np[0], self._np[1]), self._np[4])
 
             if mode == FILE_NEW:
                 # special case - HGD file, must work with a memory grid, save to HGD at end
@@ -247,71 +323,6 @@ class GXgrd():
     def close(self):
         self._close()
 
-    @staticmethod
-    def name_parts(name):
-        """
-        Return folder, undecorated file name + ext, file root, ext, decorations.
-
-        If extension is not specified, ".grd" assumed
-
-        For example:
-
-        .. code::
-
-            >>> import geosoft.gxpy.grd as gxgrd
-            >>> namep = gxgrd.GXgrd.name_parts("f:/someFolder/name.grd(GRD;TYPE=SHORT)")
-            >>> print(namep)
-            ('f:/someFolder/','name.grd','name','.grd','(GRD;TYPE=SHORT)')
-
-        .. versionadded:: 9.1
-        """
-
-        path = os.path.abspath(name)
-        fn = os.path.dirname(path)
-        bn = os.path.basename(path).split('(')
-        name = bn[0]
-        root, ext = os.path.splitext(bn[0])
-        if len(bn) > 1:
-            dec = bn[1].split(')')[0]
-        else:
-            dec = ''
-
-        if ext == '':
-            if (dec == '') or (dec[:3].upper() == 'GRD'):
-                # add Geosoft grd extension
-                ext = '.grd'
-                name = name + ext
-
-        return fn, name, root, ext, dec
-
-    @staticmethod
-    def decorate_name(name, decorations=''):
-        """
-        Properly decorate a grid name.
-
-        :param name:        file name
-        :param decorations: file decorations, semicolon delimited
-        :returns:           decorated file name
-
-        .. versionadded:: 9.1
-        """
-
-        if len(decorations.strip()) > 0:
-            d = decorations.lstrip('(')
-            end = d.find(')')
-            if end != -1:
-                d = d[:end]
-            name = name.split('(')[0]
-        else:
-            name = name.strip()
-            n = name.split('(')
-            if len(name) > len(n[0]):
-                d = n[1].split(')')[0]
-                name = n[0]
-            else:
-                return n[0]
-        return name + '(' + d + ')'
-
     def dtype(self):
         """
         :return: numpy data type for the grid
@@ -337,7 +348,7 @@ class GXgrd():
         properties['dy'] = self._img.query_double(gxapi.IMG_QUERY_rDY)
         properties['rot'] = self._img.query_double(gxapi.IMG_QUERY_rROT)
         properties['dtype'] = self.dtype()
-        np = GXgrd.name_parts(self._filename)
+        np = name_parts(self._filename)
         properties['filename'] = os.path.join(np[0], np[1])
         if len(np[4]) > 0:
             properties['gridtype'] = np[4].split(';')[0]
@@ -487,6 +498,23 @@ class GXgrd():
         '''
 
 
+    @staticmethod
+    def name_parts(name):
+        """
+
+        .. deprecated:: call grd.name_parts()
+        """
+        return name_parts(name)
+
+    @staticmethod
+    def decorate_name(name, decorations=''):
+        """
+
+        .. deprecated:: call grd.name_parts()
+        """
+        return decorate_name(name, decorations)
+
+
 # grid utilities
 def array_locations(properties, z=0.):
     '''
@@ -590,7 +618,7 @@ def gridMosaic(mosaic, gridList, typeDecoration='', report=None):
     # create list of grids, all matching on coordinate system of first grid
     grids = []
     for i in range(len(gridList)):
-        grids.append(GXgrd.decorate_name(gridList[i], typeDecoration))
+        grids.append(decorate_name(gridList[i], typeDecoration))
 
     # output grid
     x0, y0, nX, nY, xm, ym = dimension(grids)

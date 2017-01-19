@@ -102,6 +102,7 @@ class GXpy(_Singleton):
                 self._logf.close()
             self._open = False
 
+
     def __init__(self, name=__name__, version=__version__, parent_window=0, log=None):
 
         # singleton class

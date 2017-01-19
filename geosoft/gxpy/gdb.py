@@ -177,10 +177,6 @@ class GXdb():
     .. versionadded:: 9.1
     '''
 
-    _edb = None
-    _db = None
-    _file_name = None
-
     def __enter__(self):
         return self
 
@@ -193,7 +189,12 @@ class GXdb():
                 if self._edb is not None:
                     if self._edb.is_locked():
                         self._edb.un_lock()
+                    self._edb = None
+                self._db = None
+
+            self._file_name = None
             self._open = False
+
 
     def __repr__(self):
         return "{}({})".format(self.__class__, self.__dict__)
@@ -204,12 +205,12 @@ class GXdb():
     def __init__(self):
         self._lst = gxapi.GXLST.create(2000)
         self._sr = gxapi.str_ref()
+        self._file_name = None
         self._db = None
         self._edb = None
 
         atexit.register(self._close)
         self._open = True
-
 
     @classmethod
     def open(cls, name=None):
