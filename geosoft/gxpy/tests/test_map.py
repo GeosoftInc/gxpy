@@ -123,13 +123,6 @@ class Test(unittest.TestCase):
             self.assertTrue('Base' in views)
             self.assertTrue('Data' in views)
 
-        with gxmap.GXmap.new_standard_geosoft(filename='test_geosoft', overwrite=True,
-                                              data_area=(0, 0, 5000, 3000),
-                                              media='A4') as gmap:
-            views = gmap.view_list(gxmap.LIST_ALL)
-            self.assertTrue('Base' in views)
-            self.assertTrue('Data' in views)
-
 
     def test_lists(self):
         self.start(gsys.func_name())
@@ -176,14 +169,6 @@ class Test(unittest.TestCase):
             gmap.remove_on_close(True)
         self.assertFalse(os.path.isfile(filename))
 
-    def test_mdf(self):
-        self.start(gsys.func_name())
-
-        with gxmap.GXmap.new_standard_geosoft('mdftest',
-                                              data_area=(1000, 200, 110000, 50000),
-                                              media="A3",
-                                              overwrite=True) as gmap:
-            pass
 
 if __name__ == '__main__':
 

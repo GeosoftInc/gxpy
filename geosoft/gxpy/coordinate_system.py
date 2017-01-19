@@ -2,6 +2,7 @@ import json
 import geosoft
 import geosoft.gxapi as gxapi
 from . import utility as gxu
+from . import dataframe as gxdf
 
 __version__ = geosoft.__version__
 
@@ -45,6 +46,10 @@ LIST_UNITSDESCRIPTION = gxapi.IPJ_PARM_LST_UNITSDESCRIPTION
 LIST_LOCALDATUMDESCRIPTION = gxapi.IPJ_PARM_LST_LOCALDATUMDESCRIPTION
 LIST_LOCALDATUMNAME = gxapi.IPJ_PARM_LST_LOCALDATUMNAME
 
+PARM_DATUM = 'datum'
+PARM_PROJECTION = 'transform'
+PARM_UNITS = 'units'
+PARM_LOCAL_DATUM = 'datumtrf'
 
 class CSException(Exception):
     '''
@@ -54,8 +59,23 @@ class CSException(Exception):
     '''
     pass
 
+def parameters(what, item):
+    """
+    Get a dictionary of parameters for a coordinate system item.
 
-def names(what, datum_filter=''):
+    :param what:
+            | gxipj.PARM_DATUM
+            | gxipj.PARM_PROJECTION
+            | gxipj.PARM_UNITS
+            | gxipj.LOCAL_DATUM
+
+    .. versionadded:: 9.2
+    """
+
+    return gxdf.table_record(what, item)
+
+
+def name_list(what, datum_filter=''):
     """
     Get a list of coordinate system names
 
@@ -78,9 +98,8 @@ def names(what, datum_filter=''):
 
     lst = gxapi.GXLST.create(1000)
     gxapi.GXIPJ.get_list(what, datum_filter, lst)
-    namelist = list(gxu.dict_from_lst(lst).keys())
+    namelist = list(gxu.dict_from_lst(lst))
     namelist.sort(key=str.lower)
-    del lst
     return namelist
 
 
@@ -366,13 +385,25 @@ class GXcs:
         return self.name(NAME_VCS)
 
     def same_as(self, other):
+
+        def same_units(a, b):
+            a = a.coordinate_dict['units']
+            b = b.coordinate_dict['units']
+            if not (a and b):
+                return True
+            else:
+                return a == b
+
+        if not same_units(self, other):
+            return False
+
         n1 = self.name(NAME_HCS_VCS)
         if n1 == "*unknown":
             return True
         n2 = other.name(NAME_HCS_VCS)
         if n2 == "*unknown":
             return True
-        return n1 == n2
+        return (n1 == n2)
 
     def _from_str(self, cstr):
         """ setup coordinate systems from a string """
@@ -400,7 +431,16 @@ class GXcs:
             self._from_gxf([cstr, '', '', '', ''])
 
     def _from_gxf(self, gxfs):
-        
+
+        def raise_error():
+            raise CSException(_t('Unknown coordinate system:' +
+                                 '\n       name> {}' +
+                                 '\n      datum> {}' +
+                                 '\n projection> {}' +
+                                 '\n      units> {}' +
+                                 '\nlocal datum> {}')
+                              .format(gxfs[0], gxfs[1], gxfs[2], gxfs[3], gxfs[4]))
+
         gxf1, gxf2, gxf3, gxf4, gxf5 = gxfs
 
         hcs, orient, vcs = hcs_orient_vcs_from_name(gxf1)
@@ -421,16 +461,14 @@ class GXcs:
         try:
             self.gxipj.set_gxf(gxf1, gxf2, gxf3, gxf4, gxf5)
             self.gxipj.get_display_name(sref)
-            if sref.value == '*unknown':
-                raise CSException(_t('Unknown coordinate system:\n>{}\n>{}\n>{}\n>{}\n>{}').format(
-                    gxf1,
-                    gxf2,
-                    gxf3,
-                    gxf4,
-                    gxf5))
+            if (sref.value == '*unknown') and ((gxf1 != sref.value) or gxf2 or gxf3 or gxf5):
+                raise_error()
         except geosoft.gxapi.GXError:
             # try the name as a unit
-            self.gxipj.set_gxf('', '', '', gxf1, '')
+            try:
+                self.gxipj.set_gxf('', '', '', gxf1, '')
+            except geosoft.gxapi.GXError:
+                raise_error()
 
         if vcs:
             self._setup_vcs(vcs)

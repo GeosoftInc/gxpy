@@ -30,25 +30,39 @@ class Test(unittest.TestCase):
         self.start(gsys.func_name())
         
         #name lists
-        dlist = gxcs.names(gxcs.LIST_DATUM)
+        dlist = gxcs.name_list(gxcs.LIST_DATUM)
         self.assertTrue('Arc 1950' in dlist)
-        dlist = gxcs.names(gxcs.LIST_LOCALDATUMNAME)
+        dlist = gxcs.name_list(gxcs.LIST_LOCALDATUMNAME)
         self.assertTrue('SIRGAS to WGS 84 (1)' in dlist)
-        dlist = gxcs.names(gxcs.LIST_COORDINATESYSTEM)
+        dlist = gxcs.name_list(gxcs.LIST_COORDINATESYSTEM)
         self.assertTrue('MGI 1901 / Slovenia Grid' in dlist)
-        dlist = gxcs.names(gxcs.LIST_PROJECTION)
+        dlist = gxcs.name_list(gxcs.LIST_PROJECTION)
         self.assertTrue('Rectified Skew Orthomorphic Malaya Grid (metres)' in dlist)
-        dlist = gxcs.names(gxcs.LIST_UNITS,'')
+        dlist = gxcs.name_list(gxcs.LIST_UNITS,'')
         self.assertTrue('hemisphere degree minute second' in dlist)
-        dlist = gxcs.names(gxcs.LIST_UNITSDESCRIPTION)
+        dlist = gxcs.name_list(gxcs.LIST_UNITSDESCRIPTION)
         self.assertTrue('US survey inch' in dlist)
-        dlist = gxcs.names(gxcs.LIST_LOCALDATUMDESCRIPTION)
+        dlist = gxcs.name_list(gxcs.LIST_LOCALDATUMDESCRIPTION)
         self.assertTrue('[SIRGAS-ROU98] (1m) Uruguay' in dlist)
-        dlist = gxcs.names(gxcs.LIST_LOCALDATUMDESCRIPTION,'AGD66')
+        dlist = gxcs.name_list(gxcs.LIST_LOCALDATUMDESCRIPTION,'AGD66')
         self.assertTrue('[AGD66] Cocos Is Anna 1 ASTRO 1965' in dlist)
         self.assertTrue(dlist[0][:7],'[AGD66]')
 
         return
+
+    def test_parameters(self):
+        self.start(gsys.func_name())
+
+        # name dictionaries
+        pdct = gxcs.parameters(gxcs.PARM_DATUM, 'NAD27')
+        self.assertEqual(pdct['ELLIPSOID'], 'Clarke 1866')
+        pdct = gxcs.parameters(gxcs.PARM_PROJECTION, 'UTM zone 15N')
+        self.assertEqual(pdct['METHOD'], 'Transverse Mercator')
+        pdct = gxcs.parameters(gxcs.PARM_UNITS, 'ftUS')
+        self.assertEqual(pdct['FACTOR'], '0.304800609601219')
+        pdct = gxcs.parameters(gxcs.PARM_LOCAL_DATUM, 'Marshall Islands 1960 to WGS 84 (1)')
+        self.assertEqual(pdct['CODE'], '15822')
+
 
     def test_any(self):
         self.start(gsys.func_name())
@@ -526,6 +540,13 @@ class Test(unittest.TestCase):
         cs = gxcs.GXcs("NAD27 / Arizona Coordinate System Central zone")
         self.assertAlmostEqual(cs.units()[0],0.304800609601219)
         self.assertEqual(cs.units()[1],'ftUS')
+        cs = gxcs.GXcs(('', '', '', 'ftUS', ''))
+        self.assertAlmostEqual(cs.units()[0], 0.304800609601219)
+        self.assertEqual(cs.units()[1], 'ftUS')
+        cs = gxcs.GXcs('ftUS')
+        self.assertAlmostEqual(cs.units()[0], 0.304800609601219)
+        self.assertEqual(cs.units()[1], 'ftUS')
+        self.assertRaises(gxcs.CSException, gxcs.GXcs, 'bogus', init=True)
 
     def test_PJ(self):
         self.start(gsys.func_name())
@@ -594,11 +615,11 @@ class Test(unittest.TestCase):
         self.start(gsys.func_name())
 
         # code skeleton to print lists
-        dlist = gxcs.names(gxcs.LIST_DATUM)
+        dlist = gxcs.name_list(gxcs.LIST_DATUM)
         for d in dlist:
             self.gx.log(' "{}",\\'.format(d))
         return
-        dlist = gxcs.names(gxcs.LIST_PROJECTION)
+        dlist = gxcs.name_list(gxcs.LIST_PROJECTION)
         unitset = set()
         notfound = []
         for d in dlist:

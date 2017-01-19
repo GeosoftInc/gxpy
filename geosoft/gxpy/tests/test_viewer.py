@@ -17,7 +17,8 @@ def sample_map(gxp, mapname='test', rescale=1.0, locate=None):
 
     test_map = os.path.join(gxp.temp_folder(), mapname)
     with gxmap.GXmap.new(test_map, overwrite=True) as gmap:
-        with gxv.GXview("rectangle_test", gmap) as view:
+        with gxv.GXview(gmap, "rectangle_test") as view:
+            view.start_group('rect')
             view.xy_rectangle(gxgm.Point((0, 0)), gxgm.Point((110, 110)) * rescale, pen={'line_thick': 1})
 
             p1 = gxgm.Point((5, 5)) * rescale
@@ -29,7 +30,8 @@ def sample_map(gxp, mapname='test', rescale=1.0, locate=None):
             view.pen = {'line_style': (2, 2.0)}
             view.xy_line(p1 + poff, p2 - poff)
 
-        with gxv.GXview3d(viewname="poly", gmap=gmap) as view:
+        with gxv.GXview3d(gmap, viewname="poly") as view:
+            view.start_group('stuff')
             plinelist = [[110, 5],
                          [120, 20],
                          [130, 15],
@@ -61,7 +63,7 @@ def sample_map(gxp, mapname='test', rescale=1.0, locate=None):
             view.pen = {'fill_color': gxapi.C_LT_RED}
             view.xy_poly_line(pp, close=True)
 
-        return gmap.mapfilename
+        return gmap.filename
 
 def test_mapviewer(gxp):
 

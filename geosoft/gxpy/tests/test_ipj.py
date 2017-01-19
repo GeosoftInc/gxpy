@@ -32,9 +32,9 @@ class Test(unittest.TestCase):
         #name lists
         dlist = gxipj.GXipj.names(gxipj.LIST_DATUM)
         self.assertTrue('Arc 1950' in dlist)
-        dlist = gxipj.GXipj.names(gxipj.LIST_LOCALDATUMNAME)
+        dlist = gxipj.GXipj.names(gxipj.LOCAL_DATUM_NAME)
         self.assertTrue('SIRGAS to WGS 84 (1)' in dlist)
-        dlist = gxipj.GXipj.names(gxipj.LIST_COORDINATESYSTEM)
+        dlist = gxipj.GXipj.names(gxipj.COORDINATE_SYSTEM)
         self.assertTrue('MGI 1901 / Slovenia Grid' in dlist)
         dlist = gxipj.GXipj.names(gxipj.LIST_PROJECTION)
         self.assertTrue('Rectified Skew Orthomorphic Malaya Grid (metres)' in dlist)

@@ -114,9 +114,9 @@ class GXview:
             self.locate(hcs, vcs, map_location, area, scale)
         else:
             ipj = gxapi.GXIPJ.create()
-            gxapi.GVMVIEW.get_ipj(ipj)
+            self.gxview.get_ipj(ipj)
             self.cs = gxcs.GXcs(hcs=ipj)
-            self._uname, self._ufac = self.cs.units()
+            self._uname, self._units_per_m = self.cs.units()
 
     def set_cs(self, hcs=None, vcs=None):
         """
@@ -131,7 +131,7 @@ class GXview:
         metres_per, self._uname = self.cs.units()
         if metres_per <= 0.:
             raise ViewException('Invalid units {}({})'.format(self._uname, metres_per))
-        self._ufac = 1.0/metres_per
+        self._units_per_m = 1.0/metres_per
         self.gxview.set_ipj(self.cs.gxipj)
 
     def locate(self,
@@ -158,21 +158,21 @@ class GXview:
 
         # coordinate system
         self.set_cs(hcs, vcs)
-        ufac = self.ufac
+        upm = self.units_per_m
 
         if area == None:
             area = self.extent(EXTENT_VIEW)
 
         # area and scale
         if hasattr(scale, "__iter__"):
-            x_scale, y_scale = (scale[0] / ufac, scale[1] / ufac)
+            x_scale, y_scale = scale
         else:
-            x_scale = y_scale = scale / ufac
+            x_scale = y_scale = scale
         a_minx, a_miny, a_maxx, a_maxy = area
         mm_minx = map_location[0] * 10.0
         mm_miny = map_location[1] * 10.0
-        mm_maxx = mm_minx + (a_maxx - a_minx) * 1000.0 / x_scale
-        mm_maxy = mm_miny + (a_maxy - a_miny) * 1000.0 / y_scale
+        mm_maxx = mm_minx + (a_maxx - a_minx) * 1000.0 / upm / x_scale
+        mm_maxy = mm_miny + (a_maxy - a_miny) * 1000.0 / upm / y_scale
         self.gxview.fit_window(mm_minx, mm_miny, mm_maxx, mm_maxy,
                                a_minx, a_miny, a_maxx, a_maxy)
         self.gxview.set_window(a_minx, a_miny, a_maxx, a_maxy, UNIT_VIEW)
@@ -194,8 +194,8 @@ class GXview:
         return self._gmap.filename
 
     @property
-    def ufac(self):
-        return self._ufac
+    def units_per_m(self):
+        return self._units_per_m
 
     @property
     def unit_name(self):
@@ -274,8 +274,8 @@ class GXview:
         return xmin.value, ymin.value, xmax.value, ymax.value
 
     def scale(self):
-        x = self.gxview.scale_mm() * 1000.0
-        y = self.gxview.scale_ymm() * 1000.0
+        x = 1000.0 * self.gxview.scale_mm() / self.units_per_m
+        y = 1000.0 * self.gxview.scale_ymm() / self.units_per_m
         return x, y
 
     def color(self, cstr):

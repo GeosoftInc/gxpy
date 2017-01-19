@@ -373,13 +373,13 @@ class GXmap:
         xmx = gxapi.float_ref()
         ymx = gxapi.float_ref()
 
-        with gxvw.GXview(self, "*Base", gxvw.READ) as v:
+        with gxvw.GXview(self, "*Base", gxvw.READ_ONLY) as v:
             v.gxview.extent(gxapi.MVIEW_EXTENT_CLIP, gxapi.MVIEW_EXTENT_UNIT_MM,
                             xmn, ymn, xmx, ymx)
             mapx = (xmx.value - xmn.value) * 0.1
             mapy = (ymx.value - ymn.value) * 0.1
 
-        with gxvw.GXview(self, "*Data", gxvw.READ) as v:
+        with gxvw.GXview(self, "*Data", gxvw.READ_ONLY) as v:
             v.gxview.extent(gxapi.MVIEW_EXTENT_CLIP, gxapi.MVIEW_EXTENT_UNIT_MM,
                             xmn, ymn, xmx, ymx)
             view_map = (xmn.value * 0.1,

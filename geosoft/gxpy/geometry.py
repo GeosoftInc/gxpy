@@ -101,7 +101,9 @@ class Point(Geometry):
         return Point(self.p / p.p)
 
     def __eq__(self, other):
-        return np.array_equal(self.p, other.p) and self.cs.same_as(other.cs)
+        return (self.cs.same_as(other.cs)) and \
+               np.array_equal(self.p, other.p) and \
+               self.cs.same_as(other.cs)
 
     @property
     def x(self):
@@ -241,6 +243,9 @@ class PPoint(Geometry, Sequence):
             return PPoint(self.pp / p.p)
         return PPoint(self.pp / Point(p).p)
 
+    def __eq__(self, other):
+        return (self.cs.same_as(other.cs)) and np.array_equal(self.pp, other.pp)
+
     def copy(self):
         cls = self.__class__
         result = cls.__new__(cls)
@@ -320,7 +325,7 @@ class Box(Geometry):
         self.p2 = p2
 
     def __eq__(self, other):
-        return (self.cs == other.cs) and \
+        return (self.cs.same_as(other.cs)) and \
                 ((self.p1 == other.p1) and (self.p2 == other.p2)
                  or (self.p1 == other.p2) and (self.p2 == other.p1))
 
