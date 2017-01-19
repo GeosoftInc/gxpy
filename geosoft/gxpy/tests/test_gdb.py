@@ -1,3 +1,5 @@
+#TODO figure out why test databases stay open, which prevents deleting _GX temp folder
+
 import unittest
 import os
 import numpy as np
