@@ -59,7 +59,7 @@ class CSException(Exception):
     '''
     pass
 
-def parameters(what, item):
+def parameters(what, key):
     """
     Get a dictionary of parameters for a coordinate system item.
 
@@ -68,12 +68,31 @@ def parameters(what, item):
             | gxipj.PARM_PROJECTION
             | gxipj.PARM_UNITS
             | gxipj.LOCAL_DATUM
+    :param key:     parameter key to find and return
+    :raises CSException: if table or key not found.
 
     .. versionadded:: 9.2
     """
 
-    return gxdf.table_record(what, item)
+    try:
+        dct = gxdf.table_record(what, key)
+    except gxdf.DfException as e:
+        raise CSException(str(e))
+    return dct
 
+def parameter_exists(what, key):
+    """
+    Test if a parameter set exists in a coordinate system table.
+    :param what:    see parameters()
+    :param key:     parameter key
+    :return: True if table/key exists
+    """
+    try:
+        parameters(what, key)
+    except CSException:
+        return False
+    else:
+        return True
 
 def name_list(what, datum_filter=''):
     """
@@ -432,7 +451,7 @@ class GXcs:
 
     def _from_gxf(self, gxfs):
 
-        def raise_error():
+        def raise_gxf_error():
             raise CSException(_t('Unknown coordinate system:' +
                                  '\n       name> {}' +
                                  '\n      datum> {}' +
@@ -458,17 +477,20 @@ class GXcs:
 
         # get ipj from gxf, error if unknown
         sref = gxapi.str_ref()
-        try:
-            self.gxipj.set_gxf(gxf1, gxf2, gxf3, gxf4, gxf5)
-            self.gxipj.get_display_name(sref)
-            if (sref.value == '*unknown') and ((gxf1 != sref.value) or gxf2 or gxf3 or gxf5):
-                raise_error()
-        except geosoft.gxapi.GXError:
-            # try the name as a unit
+
+        if not (gxf2 or gxf3 or gxf4 or gxf5) and parameter_exists(PARM_UNITS, gxf1):
+            # units only
+            self.gxipj.set_gxf('', '', '', gxf1, '')
+        else:
             try:
-                self.gxipj.set_gxf('', '', '', gxf1, '')
-            except geosoft.gxapi.GXError:
-                raise_error()
+                self.gxipj.set_gxf(gxf1, gxf2, gxf3, gxf4, gxf5)
+                self.gxipj.get_display_name(sref)
+            except geosoft.gxapi.GXAPIError:
+                raise_gxf_error()
+            else:
+                if gxf1 != "*unknown":
+                    if (sref.value == '*unknown') and (gxf2 or gxf3 or gxf5):
+                        raise_gxf_error()
 
         if vcs:
             self._setup_vcs(vcs)

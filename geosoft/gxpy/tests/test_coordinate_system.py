@@ -62,6 +62,9 @@ class Test(unittest.TestCase):
         self.assertEqual(pdct['FACTOR'], '0.304800609601219')
         pdct = gxcs.parameters(gxcs.PARM_LOCAL_DATUM, 'Marshall Islands 1960 to WGS 84 (1)')
         self.assertEqual(pdct['CODE'], '15822')
+        pdct = gxcs.parameters(gxcs.PARM_UNITS, 'ftUS')
+        self.assertEqual(pdct['FACTOR'], '0.304800609601219')
+        self.assertRaises(gxcs.CSException, gxcs.parameters, gxcs.PARM_UNITS, 'bogus')
 
 
     def test_any(self):

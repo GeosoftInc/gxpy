@@ -268,5 +268,4 @@ def remove_dir(directory, wait=200, tries=10):
                 t += 1
                 if t >= tries:
                     raise
-                gc.collect()
                 time.sleep(wait / 1000.0)
