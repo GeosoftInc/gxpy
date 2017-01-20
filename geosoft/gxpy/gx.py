@@ -80,7 +80,7 @@ class GXpy(_Singleton):
         :parent_window: ID of the parent window.  A parent window is required for GUI-dependent
                         functions to work.  Set `parent_window=-1` to create a Tkinter frame that
                         provides a default parent window handle for GUI/Viewer functions.
-        :log:           nme of a file to record logging information, or a call-back that
+        :log:           name of a file to record logging information, or a call-back function that
                         accepts a string.  Specifying `log=''` will log to a default file named
                         using the current date and time.  If not provided calls to log()
                         are ignored.
@@ -88,13 +88,14 @@ class GXpy(_Singleton):
                         This is the maximum size of resource heap for tracking open resources.
                         Set to 0 to not track resources. On exit, if any resources remain open
                         a warning is logged together with a list of the open resources, each with a
-                        call, to help find the function that created the resources.
-        :res_stack:     Depth of call-stack to report for open-resource warning.
+                        call stack to help find the function that created the resources.
+        :res_stack:     Depth of the call-stack to report for open-resource warning.
+        :max_warnings:  Maximum number of resource warnings to report.
 
     :members:
         :gxapi:         GX context to be used to call geosoft.gxapi methods
         :gid:           User's Geosoft ID
-        :gxcontext:     Class instance for this session, `None` if not created, or deleted.
+        :global gx:     Global reference to this singleton class instance, None if invalie.
 
     :raises:
         :GXException(): if unable to create context
@@ -128,7 +129,7 @@ class GXpy(_Singleton):
         global _max_warnings
 
         def file_error(fnc, path, excinfo):
-            self.log("error removing temporary file \"{}\": function \"{}\": exception\"{}\""
+            self.log(_t("error removing temporary file \"{}\": function \"{}\": exception\"{}\"")
                      .format(path, str(fnc), str(excinfo)))
 
         if gx:
@@ -144,13 +145,12 @@ class GXpy(_Singleton):
                 i = 0
                 for s in _res_heap.values():
                     if i == _max_warnings:
-                        self.log(   _t('    and there are {} more (change GXpy(max_warnings=) to see more)...'.format(len(_res_heap) - i)))
+                        self.log(_t('    and there are {} more (change GXpy(max_warnings=) to see more)...'.format(len(_res_heap) - i)))
                         break
                     self.log('   ',s)
                     i += 1
             if self._logf:
                 self._logf.close()
-
 
             gx = None
 
