@@ -3,7 +3,6 @@ GX Context and related methods required for Geosoft Python.
 '''
 
 import tkinter.ttk as ttk
-import pythoncom
 import pprint
 import os
 import json
@@ -177,6 +176,13 @@ class GXpy(_Singleton):
                 _max_warnings = max(0, max_warnings)
 
             # create a Tkinter parent frame for the viewers
+
+            if not parent_window == 0:
+                try:
+                    import pythoncom
+                except ImportError:
+                    raise ImportError(_t('Was unable to import the pythoncom module. It is needed for any GUI APIs to work within the Geosoft gxpy module.'))
+
 
             if parent_window == -1:
                 self.tkframe = ttk.Frame(master=None)

@@ -43,7 +43,7 @@ if is_arcgispro_build():
     deps = [ ]
     shutil.copyfile('gxapi_arcpy.pyd', 'geosoft/gxapi.pyd')
 else:
-    deps = [ 'numpy>=1.11' ]
+    deps = [ 'numpy>=1.11', 'pandas' ]
     if 'bdist_wheel' in sys.argv:
         # Have to specify python-tag to specify which module
         for arg in sys.argv:

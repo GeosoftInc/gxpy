@@ -11,14 +11,12 @@
     <OutputPath>.</OutputPath>
     <ProjectTypeGuids>{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
     <LaunchProvider>Standard Python launcher</LaunchProvider>
-    <InterpreterId>{9a7a9026-48c1-4688-9d5d-e5699d47d074}</InterpreterId>
-    <InterpreterVersion>3.5</InterpreterVersion>
+    <InterpreterId>Global|PythonCore|3.5|x64</InterpreterId>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
   <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
   <PropertyGroup>
     <VisualStudioVersion Condition=" '$(VisualStudioVersion)' == '' ">10.0</VisualStudioVersion>
-    <PtvsTargetsFile>$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets</PtvsTargetsFile>
   </PropertyGroup>
   <ItemGroup>
     <Content Include="docs\geosoft.gxapi.classes.rst" />
@@ -480,25 +478,37 @@
     <Compile Include="examples\om-extensions\hello_world.py" />
     <Compile Include="examples\stand-alone\chanadd.py" />
     <Compile Include="examples\stand-alone\hello_world.py" />
+    <Compile Include="geosoft\gxpy\coordinate_system.py" />
+    <Compile Include="geosoft\gxpy\dataframe.py" />
     <Compile Include="geosoft\gxpy\gdb.py" />
+    <Compile Include="geosoft\gxpy\geometry.py" />
     <Compile Include="geosoft\gxpy\grd.py" />
     <Compile Include="geosoft\gxpy\gx.py" />
     <Compile Include="geosoft\gxpy\ipj.py" />
+    <Compile Include="geosoft\gxpy\map.py" />
     <Compile Include="geosoft\gxpy\om.py" />
     <Compile Include="geosoft\gxpy\system.py" />
     <Compile Include="geosoft\gxpy\tests\script_gx.py" />
+    <Compile Include="geosoft\gxpy\tests\test_coordinate_system.py" />
+    <Compile Include="geosoft\gxpy\tests\test_dataframe.py" />
     <Compile Include="geosoft\gxpy\tests\test_gdb.py" />
+    <Compile Include="geosoft\gxpy\tests\test_geometry.py" />
     <Compile Include="geosoft\gxpy\tests\test_grd.py" />
     <Compile Include="geosoft\gxpy\tests\test_gx.py" />
     <Compile Include="geosoft\gxpy\tests\test_ipj.py" />
+    <Compile Include="geosoft\gxpy\tests\test_map.py" />
     <Compile Include="geosoft\gxpy\tests\test_om.py" />
     <Compile Include="geosoft\gxpy\tests\test_system.py" />
     <Compile Include="geosoft\gxpy\tests\test_utility.py" />
     <Compile Include="geosoft\gxpy\tests\test_va.py" />
+    <Compile Include="geosoft\gxpy\tests\test_view.py" />
+    <Compile Include="geosoft\gxpy\tests\test_viewer.py" />
     <Compile Include="geosoft\gxpy\tests\test_vv.py" />
     <Compile Include="geosoft\gxpy\tests\__init__.py" />
     <Compile Include="geosoft\gxpy\utility.py" />
     <Compile Include="geosoft\gxpy\va.py" />
+    <Compile Include="geosoft\gxpy\view.py" />
+    <Compile Include="geosoft\gxpy\viewer.py" />
     <Compile Include="geosoft\gxpy\vv.py" />
     <Compile Include="geosoft\gxpy\__init__.py" />
     <Compile Include="geosoft\__init__.py" />
@@ -526,8 +536,7 @@
     <Folder Include="geosoft\gxpy\user_input" />
   </ItemGroup>
   <ItemGroup>
-    <InterpreterReference Include="{9a7a9026-48c1-4688-9d5d-e5699d47d074}\3.5" />
+    <InterpreterReference Include="Global|PythonCore|3.5|x64" />
   </ItemGroup>
-  <Import Project="$(PtvsTargetsFile)" Condition="Exists($(PtvsTargetsFile))" />
-  <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" Condition="!Exists($(PtvsTargetsFile))" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
 </Project>
