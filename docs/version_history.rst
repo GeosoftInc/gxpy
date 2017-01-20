@@ -2,6 +2,130 @@ geosoft.gxpy module history
 ==========================================
 
   
+Version 9.2
+-----------------
+
+New Classes
+^^^^^^^^^^^
+
+:class:`geosoft.gxpy.coordinate_system.GXcs`
+
+:class:`geosoft.gxpy.coordinate_system.GXpj`
+
+:class:`geosoft.gxpy.geometry.Geometry`
+
+:class:`geosoft.gxpy.geometry.PPoint`
+
+:class:`geosoft.gxpy.geometry.Point2`
+
+:class:`geosoft.gxpy.geometry.Point`
+
+:class:`geosoft.gxpy.map.GXmap`
+
+:class:`geosoft.gxpy.view.GXview`
+
+:exc:`geosoft.gxpy.coordinate_system.CSException`
+
+:exc:`geosoft.gxpy.map.MapException`
+
+:exc:`geosoft.gxpy.view.ViewException`
+
+
+New Functions
+^^^^^^^^^^^^^
+
+:func:`geosoft.gxpy.coordinate_system.GXcs.gxf`
+
+:func:`geosoft.gxpy.coordinate_system.GXcs.name`
+
+:func:`geosoft.gxpy.coordinate_system.GXcs.units`
+
+:func:`geosoft.gxpy.coordinate_system.GXpj.convert`
+
+:func:`geosoft.gxpy.coordinate_system.name_from_hcs_orient_vcs`
+
+:func:`geosoft.gxpy.coordinate_system.name_list`
+
+:func:`geosoft.gxpy.coordinate_system.parameters`
+
+:func:`geosoft.gxpy.gdb.GXdb.read_channel_va`
+
+:func:`geosoft.gxpy.gdb.GXdb.read_channel_vv`
+
+:func:`geosoft.gxpy.gdb.GXdb.read_line_vv`
+
+:func:`geosoft.gxpy.gdb.GXdb.write_channel_va`
+
+:func:`geosoft.gxpy.gdb.GXdb.write_channel_vv`
+
+:func:`geosoft.gxpy.gdb.GXdb.write_line_vv`
+
+:func:`geosoft.gxpy.grd.delete_files`
+
+:func:`geosoft.gxpy.gx.GXpy.elapsed_seconds`
+
+:func:`geosoft.gxpy.gx.GXpy.keep_temp_folder`
+
+:func:`geosoft.gxpy.gx.GXpy.log`
+
+:func:`geosoft.gxpy.gx.GXpy.temp_file`
+
+:func:`geosoft.gxpy.gx.GXpy.temp_folder`
+
+:func:`geosoft.gxpy.ipj.GXipj.from_any`
+
+:func:`geosoft.gxpy.map.GXmap.new_standard_geosoft`
+
+:func:`geosoft.gxpy.map.GXmap.new`
+
+:func:`geosoft.gxpy.map.GXmap.open`
+
+:func:`geosoft.gxpy.map.crc_map`
+
+:func:`geosoft.gxpy.map.delete_files`
+
+:func:`geosoft.gxpy.map.map_file_name`
+
+:func:`geosoft.gxpy.map.save_as_image`
+
+:func:`geosoft.gxpy.utility.crc32_file`
+
+:func:`geosoft.gxpy.utility.crc32_str`
+
+:func:`geosoft.gxpy.utility.crc32`
+
+:func:`geosoft.gxpy.utility.datetime_from_year`
+
+:func:`geosoft.gxpy.utility.uuid`
+
+:func:`geosoft.gxpy.utility.year_from_datetime`
+
+:func:`geosoft.gxpy.view.GXview.box_3d`
+
+:func:`geosoft.gxpy.view.GXview.locate`
+
+:func:`geosoft.gxpy.view.GXview.start_group`
+
+:func:`geosoft.gxpy.view.GXview.xy_line`
+
+:func:`geosoft.gxpy.view.GXview.xy_poly_line`
+
+:func:`geosoft.gxpy.view.GXview.xy_rectangle`
+
+:func:`geosoft.gxpy.view.GXview3d.box_3d`
+
+:func:`geosoft.gxpy.view.GXview3d.locate`
+
+:func:`geosoft.gxpy.view.GXview3d.start_group`
+
+:func:`geosoft.gxpy.view.GXview3d.xy_line`
+
+:func:`geosoft.gxpy.view.GXview3d.xy_poly_line`
+
+:func:`geosoft.gxpy.view.GXview3d.xy_rectangle`
+
+
+  
 Version 9.1
 -----------------
 
@@ -39,6 +163,8 @@ New Classes
 
 New Functions
 ^^^^^^^^^^^^^
+
+:func:`geosoft.gxpy.coordinate_system.hcs_orient_vcs_from_name`
 
 :func:`geosoft.gxpy.gdb.GXdb.channel_details`
 
@@ -88,8 +214,6 @@ New Functions
 
 :func:`geosoft.gxpy.gdb.GXdb.write_line`
 
-:func:`geosoft.gxpy.grd.GXgrd.decorate_name`
-
 :func:`geosoft.gxpy.grd.GXgrd.delete_files`
 
 :func:`geosoft.gxpy.grd.GXgrd.dtype`
@@ -97,8 +221,6 @@ New Functions
 :func:`geosoft.gxpy.grd.GXgrd.from_data_array`
 
 :func:`geosoft.gxpy.grd.GXgrd.indexWindow`
-
-:func:`geosoft.gxpy.grd.GXgrd.name_parts`
 
 :func:`geosoft.gxpy.grd.GXgrd.new`
 
@@ -116,9 +238,13 @@ New Functions
 
 :func:`geosoft.gxpy.grd.array_locations`
 
+:func:`geosoft.gxpy.grd.decorate_name`
+
 :func:`geosoft.gxpy.grd.gridBool`
 
 :func:`geosoft.gxpy.grd.gridMosaic`
+
+:func:`geosoft.gxpy.grd.name_parts`
 
 :func:`geosoft.gxpy.gx.GXpy.active_wind_id`
 
@@ -129,12 +255,6 @@ New Functions
 :func:`geosoft.gxpy.gx.GXpy.entitlements`
 
 :func:`geosoft.gxpy.gx.GXpy.environment`
-
-:func:`geosoft.gxpy.gx.GXpy.folder_temp`
-
-:func:`geosoft.gxpy.gx.GXpy.folder_user`
-
-:func:`geosoft.gxpy.gx.GXpy.folder_workspace`
 
 :func:`geosoft.gxpy.gx.GXpy.license_class`
 
@@ -198,11 +318,19 @@ New Functions
 
 :func:`geosoft.gxpy.utility.dict_from_lst`
 
+:func:`geosoft.gxpy.utility.dict_from_reg`
+
 :func:`geosoft.gxpy.utility.display_message`
 
 :func:`geosoft.gxpy.utility.dtype_gx`
 
 :func:`geosoft.gxpy.utility.dummy_mask`
+
+:func:`geosoft.gxpy.utility.folder_temp`
+
+:func:`geosoft.gxpy.utility.folder_user`
+
+:func:`geosoft.gxpy.utility.folder_workspace`
 
 :func:`geosoft.gxpy.utility.get_parameters`
 
@@ -211,8 +339,6 @@ New Functions
 :func:`geosoft.gxpy.utility.gx_dtype`
 
 :func:`geosoft.gxpy.utility.gx_dummy`
-
-:func:`geosoft.gxpy.utility.project_path`
 
 :func:`geosoft.gxpy.utility.rdecode_err`
 
@@ -223,10 +349,6 @@ New Functions
 :func:`geosoft.gxpy.utility.save_parameters`
 
 :func:`geosoft.gxpy.utility.set_shared_dict`
-
-:func:`geosoft.gxpy.utility.temp_path`
-
-:func:`geosoft.gxpy.utility.user_path`
 
 :func:`geosoft.gxpy.utility.yearFromJulianDay2`
 
@@ -251,6 +373,20 @@ New Functions
 
 geosoft.gxapi module history
 ==========================================
+
+  
+Version 9.2.0
+-----------------
+
+New Classes
+^^^^^^^^^^^
+
+
+New Functions
+^^^^^^^^^^^^^
+
+:func:`geosoft.gxapi.GXTEST.core_class`
+
 
   
 Version 9.1
