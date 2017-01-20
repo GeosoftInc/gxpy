@@ -1,6 +1,7 @@
 import os
 import inspect
 from pkg_resources import parse_version
+
 import geosoft.gxpy as gxpy
 import geosoft.gxapi as gxa
 import re
@@ -57,18 +58,9 @@ def collect_gxa_version_history():
 
 def collect_gxpy_version_history():
     gxpy._version_history = {}
-    parse_module_history(gxpy.gx, gxpy._version_history)
-    parse_module_history(gxpy.gdb, gxpy._version_history)
-    parse_module_history(gxpy.grd, gxpy._version_history)
-    parse_module_history(gxpy.ipj, gxpy._version_history)
-    parse_module_history(gxpy.coordinate_system, gxpy._version_history)
-    parse_module_history(gxpy.om, gxpy._version_history)
-    parse_module_history(gxpy.system, gxpy._version_history)
-    parse_module_history(gxpy.utility, gxpy._version_history)
-    parse_module_history(gxpy.vv, gxpy._version_history)
-    parse_module_history(gxpy.geometry, gxpy._version_history)
-    parse_module_history(gxpy.view, gxpy._version_history)
-    parse_module_history(gxpy.map, gxpy._version_history)
+    for attr, value in gxpy.__dict__.items():
+        if not attr.startswith("_") and inspect.ismodule(value):
+            parse_module_history(value, gxpy._version_history)
     gxpy._versions = reversed(sorted(gxpy._version_history.keys()))
 
 def gen_version_history(j2env, output_dir):
