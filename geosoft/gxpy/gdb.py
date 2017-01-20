@@ -1,6 +1,7 @@
 
 import os
 import sys
+import atexit
 import math
 import numpy as np
 
@@ -9,8 +10,12 @@ import geosoft.gxapi as gxapi
 from . import vv as gxvv
 from . import va as gxva
 from . import utility as gxu
+from . import gx as gx
 
 __version__ = geosoft.__version__
+
+def _t(s):
+    return geosoft.gxpy.system.translate(s)
 
 # Constants
 
@@ -58,9 +63,13 @@ class GDBException(Exception):
     '''
     pass
 
-
-def _(s):
-    return s
+def _gdb_name(name):
+    name = name.strip()
+    nameExt = os.path.splitext(name)
+    if nameExt[1].lower() == '.gdb':
+        return name
+    else:
+        return os.path.normpath(name + ".gdb")
 
 
 def _va_width(data):
@@ -69,7 +78,7 @@ def _va_width(data):
     elif len(data.shape) == 2:
         width = data.shape[1]
     else:
-        raise GDBException(_("Only one or two-dimensional data allowed."))
+        raise GDBException(_t("Only one or two-dimensional data allowed."))
     return width
 
 
@@ -177,31 +186,43 @@ class GXdb():
     .. versionadded:: 9.1
     '''
 
-    _edb = None
-    _db = None
-    _file_name = None
-
     def __enter__(self):
         return self
 
     def __exit__(self, type, value, traceback):
-        self.__del__()
+        self._close()
+
+    def _close(self, pop=True):
+        if self._open:
+            if self._db:
+                if self._edb is not None:
+                    if self._edb.is_locked():
+                        self._edb.un_lock()
+                    self._edb = None
+                self._db = None
+
+            self._filename = None
+            if pop:
+                gx.pop_resource(self._open)
+            self._open = None
+
 
     def __repr__(self):
         return "{}({})".format(self.__class__, self.__dict__)
 
     def __str__(self):
-        return os.path.basename(self._file_name)
+        return os.path.basename(self._filename)
 
     def __init__(self):
         self._lst = gxapi.GXLST.create(2000)
         self._sr = gxapi.str_ref()
+        self._filename = None
+        self._db = None
+        self._edb = None
 
-    def __del__(self):
-        if self._db is not None:
-            if self._edb is not None:
-                if self._edb.is_locked():
-                    self._edb.un_lock()
+        atexit.register(self._close, pop=False)
+        self._open = gx.track_resource(self.__class__.__name__, self._filename)
+
 
     @classmethod
     def open(cls, name=None):
@@ -224,7 +245,7 @@ class GXdb():
             gdb._db = gxapi.GXDB.open(name, 'SUPER', '')
 
         gxapi.GXDB.get_name(gdb._db, gxapi.DB_NAME_FILE, gdb._sr)
-        gdb._file_name = os.path.normpath(gdb._sr.value)
+        gdb._filename = os.path.normpath(gdb._sr.value)
 
         return gdb
 
@@ -252,22 +273,12 @@ class GXdb():
         if not comp:
             comp = COMP_SPEED
 
-        gdb = cls()
-        name = gdb._gdb_name(name)
+        name = _gdb_name(name)
         gxapi.GXDB.create_comp(name,
                                maxLines, maxChannels, maxBlobs, 10, 100,
                                'SUPER', '',
                                pageSize, comp)
-        return(gdb.open(name))
-
-    @staticmethod
-    def _gdb_name(name):
-        name = name.strip()
-        nameExt = os.path.splitext(name)
-        if nameExt[1].lower() == '.gdb':
-            return name
-        else:
-            return os.path.normpath(name + ".gdb")
+        return cls.open(name)
 
     def commit(self):
         '''
@@ -311,7 +322,7 @@ class GXdb():
 
         .. versionadded:: 9.1
         '''
-        return os.path.abspath(self._file_name)
+        return os.path.abspath(self._filename)
 
     def line_name_symb(self, line, create=False):
         '''
@@ -480,7 +491,10 @@ class GXdb():
             detail['number'] = self._db.line_number(ls)
             detail['version'] = self._db.line_version(ls)
             detail['type'] = self._db.line_type(ls)
-            detail['groupclass'] = get_detail(self._db.get_group_class)
+            if self._db.line_category(ls) == gxapi.DB_CATEGORY_LINE_GROUP:
+                detail['groupclass'] = get_detail(self._db.get_group_class)
+            else:
+                detail['groupclass'] = ''
 
         except:
             self._unlock(ls)
@@ -1070,7 +1084,7 @@ class GXdb():
                 fid = (0.0, 1.0)
 
             else:
-                raise GDBException(_('Unrecognized dummy={}').format(dummy))
+                raise GDBException(_t('Unrecognized dummy={}').format(dummy))
 
         return npd, chNames, fid
 
@@ -1170,7 +1184,7 @@ class GXdb():
         w = self.channel_width(cs)
         if w != _va_width(data):
             raise GDBException(
-                _("Array data width {} does not fit into VA channel '{}' with width {}").
+                _t("Array data width {} does not fit into VA channel '{}' with width {}").
                 format(_va_width(data), cn, w))
 
         # 1D channel
@@ -1257,7 +1271,7 @@ class GXdb():
 
             # error if there is any data left
             if np_index - data.shape[1] != 0:
-                raise GDBException(_('More data than channels, but data up to channels was written out.'))
+                raise GDBException(_t('More data than channels, but data up to channels was written out.'))
 
     def list_values(self, chan, max=1000, selected=True, dupl=50, progress=None, stop=None):
         '''

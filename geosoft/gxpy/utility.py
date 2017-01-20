@@ -14,10 +14,15 @@ from time import gmtime, strftime
 from ._jdcal.jdcal import is_leap, gcal2jd, jd2gcal
 from distutils.version import StrictVersion
 import numpy as np
+from collections import OrderedDict
+
 import geosoft
 import geosoft.gxapi as gxapi
 
 __version__ = geosoft.__version__
+
+def _t(s):
+    return geosoft.gxpy.system.translate(s)
 
 # cached lookup tables
 _dummy_map = {}
@@ -31,11 +36,6 @@ class UtilityException(Exception):
     .. versionadded:: 9.1
     """
     pass
-
-
-# translation hook
-def _(s):
-    return s
 
 
 def check_version(v, raise_on_fail=True):
@@ -76,20 +76,25 @@ def check_version(v, raise_on_fail=True):
     if StrictVersion(__version__) >= StrictVersion(str(v)):
         return True
     if raise_on_fail:
-        raise UtilityException(_("GX API version {} or higher is required.").format(v))
+        raise UtilityException(_t("GX API version {} or higher is required.").format(v))
     return False
 
 
-def dict_from_lst(lst):
+def dict_from_lst(lst, ordered=False):
     """
-    :return:    python dictionary from a Geosoft GXLST
+    :param lst:     gxapi.GXLST instance
+    :param ordered: True to return and OrderedDict
+    :return:        python dictionary from a Geosoft GXLST
 
     .. versionadded:: 9.1
 
     """
     key = gxapi.str_ref()
     val = gxapi.str_ref()
-    dct = {}
+    if ordered:
+        dct = OrderedDict()
+    else:
+        dct = {}
     for item in range(lst.size()):
         lst.gt_item(0, item, key)
         lst.gt_item(1, item, val)
@@ -435,12 +440,12 @@ def dummy_mask(npd):
     """
 
     if len(npd.shape) != 2:
-        raise UtilityException(_('Must be a 2D array'))
+        raise UtilityException(_t('Must be a 2D array'))
     dummy = gx_dummy(npd.dtype)
     return np.apply_along_axis(lambda a: dummy in a, 1, npd)
 
 
-def save_parameters(group='_', parms={}):
+def save_parameters(group='_', parms=None):
     """
     Save parameters to the Project Parameter Block.  Parameter group names and member names
     are converted to upper-case.
@@ -450,12 +455,53 @@ def save_parameters(group='_', parms={}):
 
     .. versionadded:: 9.1
     """
+    if parms is not None:
+        for k, v in parms.items():
+            # remove escaped characters because set_str() puts them back in
+            s = json.dumps(v).replace('\\\\', '\\')
+            gxapi.GXSYS.set_string(group, k, s)
 
-    for k, v in parms.items():
-        # remove escaped characters because set_str() puts them back in
-        s = json.dumps(v).replace('\\\\', '\\')
-        gxapi.GXSYS.set_string(group, k, s)
+def reg_from_dict(rd, max_size=4096):
+    """
+    :param rd:          dictionary
+    :param max_size:    maximum "key=value" string size
+    :return:            gxapi.GXREG instance
 
+    Non-string values in the dictionary are converted to JSON strings and stored as
+    "_JSON:json-string}"
+    """
+    reg = gxapi.GXREG.create(max_size)
+    for key, value in rd.items():
+        if type(value) is not str:
+            value = "_JSON:{}".format(json.dumps(value))
+        if len(key) + len(value) >= max_size:
+            raise UtilityException(_t("\'key=value\' longer than maximum ({}):\n{}={}")
+                                   .format(max_size, key, value))
+        reg.set(key, value)
+    return reg
+
+def dict_from_reg(reg, ordered=False):
+    """
+    :param reg:     gxapi.GXREG instance
+    :param ordered: True to return and OrderedDict
+    :return:        python dictionary from a Geosoft GXREG
+
+    .. versionadded:: 9.1
+
+    """
+    key = gxapi.str_ref()
+    val = gxapi.str_ref()
+    if ordered:
+        dct = OrderedDict()
+    else:
+        dct = {}
+    for i in range(reg.entries()):
+        reg.get_one(i, key, val)
+        if val.value[:6] == "_JSON:":
+            dct[key.value] = json.loads(val.value[6:])
+        else:
+            dct[key.value] = val.value
+    return dct
 
 def get_parameters(group='_', parms=None, default=None):
     """
@@ -630,18 +676,33 @@ def run_external_python(script, script_args='',
             kwargs['stderr'] = subprocess.PIPE
         cp = subprocess.run(command, **kwargs)
         if catcherr and cp.returncode != 0:
-            raise UtilityException(_('\n\nExternal python error:\n\n{}').format(cp.stderr.decode("utf-8")))
+            raise UtilityException(_t('\n\nExternal python error:\n\n{}').format(cp.stderr.decode("utf-8")))
 
     else:  # use call, python 3.4...
         err = subprocess.call(command, **kwargs)
         if catcherr and err != 0:
-            raise UtilityException(_('\n\nExternal python error({}) running: {}').format(err, command))
+            raise UtilityException(_t('\n\nExternal python error({}) running: {}').format(err, command))
 
     return get_shared_dict()
 
-def crc32_file(filename):
+def crc32(bytes, crc=0):
+    """
+    Return 32-bit CRC of a byte buffer.
+
+    :param bytes:   byte buffer (fulfills the Buffer Protocol)
+    :param crc:     seed crc, can be passed along to accumulate the crc
+
+    .. versionadded:: 9.2
+    """
+    crc = binascii.crc32(bytes, crc)
+    return crc
+
+def crc32_file(filename, crc=0):
     """
     Return 32-bit CRC of a file.
+
+    :param filename:    file name
+    :param crc:         seed crc, default 0
 
     .. versionadded:: 9.2
     """
@@ -653,10 +714,22 @@ def crc32_file(filename):
             yield buff
 
     with open(filename, 'rb') as f:
-        crc = 0
         for b in readbuff(f):
-            crc = binascii.crc32(b, crc)
-    return crc  & 0xFFFFFFFF
+            crc = crc32(b, crc)
+
+    return crc
+
+def crc32_str(s, crc=0):
+    """
+    Return 32-bit CRC of a string.
+
+    :param s:    string
+    :param crc:  seed crc, default 0
+
+    .. versionadded:: 9.2
+    """
+    crc = crc32(s.encode(), crc)
+    return crc
 
 def year_from_datetime(dt):
     """
@@ -685,7 +758,5 @@ def datetime_from_year(year):
     y_end = y_start.replace(yr + 1)
     milliseconds = round(remainder * (y_end - y_start).total_seconds() * 1000.0)
     return y_start + datetime.timedelta(seconds=milliseconds/1000.0)
-
-
 
 

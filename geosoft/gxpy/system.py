@@ -12,6 +12,15 @@ import geosoft
 __version__ = geosoft.__version__
 
 
+def translate(s):
+    """ Translate string to user language."""
+    return s
+
+
+def _t(s):
+    return translate(s)
+
+
 def _logit(fn, *args, **kw):
     """function console printing decorator"""
 
@@ -33,14 +42,23 @@ def app_name():
     return os.path.normpath(sys.argv[0])
 
 
-def func_name():
+def func_name(stack=0):
     """
     Returns function name.
 
+    :param stack:   depth into the calling stack, o is this function, 1 is parent, etc.
+    :returns:       function name, None if too deep into the stack
+
+    .. versionchanged:: 9.2 added stack
     .. versionadded:: 9.1
 
     """
-    return inspect.stack()[1][3]
+    try:
+        func = inspect.stack()[stack+1][3]
+    except:
+        return None
+    else:
+        return func
 
 
 def _parallel_foreach(f, l, threads=3, return_=False):
@@ -182,7 +200,7 @@ def wait_on_file(fileName, wait=100, retries=10):
         if os.access(fileName, os.W_OK):
             return
         if tries >= retries:
-            raise GXSysException('Unable to access {}'.format(fileName))
+            raise GXSysException(_t('Unable to access {}').format(fileName))
         tries += 1
         time.sleep(wait / 1000.0)
 
@@ -200,7 +218,7 @@ def unzip(zip_file_name, folder=None, report=None, checkready=25):
 
     :param zip_file_name:   zip file name, must have extension
     :param folder:          folder to write results, create it it does not exist
-    :param report:          function report(s) to report file names as they are decompressed
+    :param report:          ignored
     :param checkready:      time in 1/10 second to check completion of each file, default 25
     :return:                (folder that contains unzipped files, list of files)
 
@@ -223,7 +241,7 @@ def unzip(zip_file_name, folder=None, report=None, checkready=25):
         files = _unzip(zip_file_name, folder)
 
     except:
-        raise GXSysException('Cannot process zip file {}'.format(zip_file_name))
+        raise GXSysException(_t('Cannot process zip file {}').format(zip_file_name))
 
     finally:
 
@@ -237,7 +255,9 @@ def unzip(zip_file_name, folder=None, report=None, checkready=25):
 
 def remove_dir(directory, wait=200, tries=10):
     """
-    Robust directory removal, with timed retries to allow for OS timing lags
+    Robust directory removal, with timed retries to allow for OS timing lags.  If you need to use this
+    you may have a coding error in which you are not properly releasing a resource.
+
     :param directory:   directory name, must be a directory
     :param wait :       wait between retries in milliseconds
     :param tries:       number of times to retry
@@ -257,5 +277,4 @@ def remove_dir(directory, wait=200, tries=10):
                 t += 1
                 if t >= tries:
                     raise
-                gc.collect()
                 time.sleep(wait / 1000.0)

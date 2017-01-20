@@ -19,20 +19,26 @@ class Test(unittest.TestCase):
 
     @classmethod
     def start(cls, test):
-        print("\n*** {} *** - {}".format(test, geosoft.__version__))
+        geosoft.gxpy.gx.gx.log("*** {} > {}".format(os.path.split(__file__)[1], test))
 
     def test_system(self):
         self.start(gsys.func_name())
         self.assertEqual(gsys.__version__, geosoft.__version__)
 
+    def test_func(self):
+        self.start(gsys.func_name())
+
+        f = gsys.func_name()
+        p = gsys.func_name(1)
+        self.assertEqual(f, "test_func")
+        self.assertEqual(p, "run")
+
     def test_statics(self):
         self.start(gsys.func_name())
 
         app = gsys.app_name()
-        geosoft.gxpy.gx.GXpy().log("App: {}".format(app))
         self.assertTrue(len(app) > 0)
         func = gsys.func_name()
-        geosoft.gxpy.gx.GXpy().log("Function: {}".format(func))
         self.assertEqual(func, 'test_statics')
 
     def test_unzip(self):
@@ -177,7 +183,7 @@ class Test(unittest.TestCase):
             else:
                 speed_improvement = reference_time / elapsed
 
-            print("{}: time: {} seconds, {} times faster than reference".format(func.__name__, elapsed, speed_improvement))
+            geosoft.gxpy.gx.gx.log("{}: time: {} seconds, {} times faster than reference".format(func.__name__, elapsed, speed_improvement))
             return elapsed
 
         #ref = time_test(reference_range)
@@ -187,7 +193,7 @@ class Test(unittest.TestCase):
 
         # testing documented parallel example
         data = [(1+i, 2+i) for i in range(20)]
-        print('parallel:',gsys.parallel_map(lambda ab: ab[0] + ab[1], data))
+        geosoft.gxpy.gx.gx.log('parallel:',gsys.parallel_map(lambda ab: ab[0] + ab[1], data))
 
 ###############################################################################################
 if __name__ == '__main__':

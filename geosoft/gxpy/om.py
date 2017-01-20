@@ -12,6 +12,10 @@ from .utility import dict_from_lst
 __version__ = geosoft.__version__
 
 
+def _t(s):
+    return s
+
+
 class OMException(Exception):
     """
     Exceptions from this module.
@@ -19,9 +23,6 @@ class OMException(Exception):
     .. versionadded:: 9.1
     """
     pass
-
-
-def _(s): return s
 
 
 def running_script():
@@ -169,7 +170,8 @@ def get_user_input(title="Input required...", prompt='?', kind='string', default
                 return strr.value.split('|')
             return strr.value
 
-        raise OMException('GX Error ({})'.format(ret))
+        raise OMException(_t('GX Error ({})').format(ret))
+
     finally:
         gxapi.GXSYS.filter_parm_group("USER_INPUT", 0)
 

@@ -4,18 +4,25 @@ import time
 
 import geosoft
 import geosoft.gxpy.gx as gx
+import geosoft.gxpy.system as gsys
 
 class Test(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
-        pass
+        gx.GXpy(log=print)
 
     @classmethod
     def tearDownClass(cls):
         pass
-        
+
+    @classmethod
+    def start(cls,test):
+        if gx.gx:
+            gx.gx.log("*** {} > {}".format(os.path.split(__file__)[1], test))
+
     def test_gxpy(self):
+        self.start(gsys.func_name())
 
         with gx.GXpy(log=print) as gxc:
             self.assertTrue(gxc.gid.find('@') > 0)
@@ -24,6 +31,7 @@ class Test(unittest.TestCase):
             self.assertEqual(gx.__version__, geosoft.__version__)
 
     def test_env(self):
+        self.start(gsys.func_name())
 
         with gx.GXpy(log=print) as gxc:
             env = gxc.environment()
@@ -40,15 +48,16 @@ class Test(unittest.TestCase):
 
             env = gxc.environment(2)
             self.assertTrue(isinstance(env,str))
-            gxc.log(env)
 
     def test_entitlements(self):
+        self.start(gsys.func_name())
 
         with gx.GXpy(log=print) as gxc:
             ent = gxc.entitlements()
             self.assertTrue(ent.get('1000'), 'Oasis montaj™ Base')
 
     def test_temp(self):
+        self.start(gsys.func_name())
 
         with gx.GXpy(log=print) as gxc:
             tf = gxc.temp_folder()
@@ -68,8 +77,9 @@ class Test(unittest.TestCase):
 
 
     def test_elapsed_time(self):
-        with gx.GXpy(log=print) as gxc:
-            gxc.log('\n******* test elapsed time **********')
+        self.start(gsys.func_name())
+
+        with gx.GXpy() as gxc:
             self.assertTrue(gxc.elapsed_seconds("startup") > 0.0)
             time.sleep(0.25)
             self.assertTrue(gxc.elapsed_seconds("0.25 seconds later") > 0.25)

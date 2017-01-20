@@ -7,7 +7,7 @@ __version__ = geosoft.__version__
 
 
 # translation hook
-def _(s):
+def _t(s):
     return s
 
 #############
@@ -33,13 +33,13 @@ NAME_LDATUMDESCRIPTION = gxapi.IPJ_NAME_LDATUMDESCRIPTION
 NAME_METHOD_PARMS_NATIVE = gxapi.IPJ_NAME_METHOD_PARMS_NATIVE
 NAME_ORIENTATION = gxapi.IPJ_NAME_ORIENTATION_PARMS
 
-LIST_COORDINATESYSTEM = gxapi.IPJ_PARM_LST_COORDINATESYSTEM
+COORDINATE_SYSTEM = gxapi.IPJ_PARM_LST_COORDINATESYSTEM
 LIST_DATUM = gxapi.IPJ_PARM_LST_DATUM
 LIST_PROJECTION = gxapi.IPJ_PARM_LST_PROJECTION
 LIST_UNITS = gxapi.IPJ_PARM_LST_UNITS
 LIST_UNITSDESCRIPTION = gxapi.IPJ_PARM_LST_UNITSDESCRIPTION
 LIST_LOCALDATUMDESCRIPTION = gxapi.IPJ_PARM_LST_LOCALDATUMDESCRIPTION
-LIST_LOCALDATUMNAME = gxapi.IPJ_PARM_LST_LOCALDATUMNAME
+LOCAL_DATUM_NAME = gxapi.IPJ_PARM_LST_LOCALDATUMNAME
 
 
 class IPJException(Exception):
@@ -53,8 +53,7 @@ class IPJException(Exception):
 
 class GXipj():
     """
-    Class to work with Geosoft coordinate systems.
-    This class wraps many of the functions found in geosoft.gxapi.GXIPJ.
+    Class to work with Geosoft IPJ coordinate system inteface.
 
     ._ipj is the GXIPJ handle to use when calling GXIPJ methods directly
 
@@ -64,6 +63,9 @@ class GXipj():
         :from_dict:     from a dictionary
         :from_json:     from a json string
         :from_esri:     from an ESRI wkt string
+
+    .. deprecated: 9.2
+        Replaced by :class:`gxpy.coordinate_system.GXcs`
 
     .. versionadded:: 9.1
     """
@@ -135,7 +137,7 @@ class GXipj():
         ipj._ipj.set_gxf(gxfs[0], gxfs[1], gxfs[2], gxfs[3], gxfs[4])
         ipj._ipj.get_display_name(ipj._sr)
         if ipj._sr.value == '*unknown':
-            raise IPJException(_('Unknown coordinate system:\n>{}\n>{}\n>{}\n>{}\n>{}').format(
+            raise IPJException(_t('Unknown coordinate system:\n>{}\n>{}\n>{}\n>{}\n>{}').format(
                 gxfs[0],
                 gxfs[1],
                 gxfs[2],
@@ -386,12 +388,12 @@ class GXipj():
         Get a list of coordinate system names
 
         :param what:
-                | gxipj.LIST_COORDINATESYSTEM
+                | gxipj.COORDINATE_SYSTEM
                 | gxipj.LIST_DATUM
                 | gxipj.LIST_PROJECTION
                 | gxipj.LIST_UNITS
                 | gxipj.LIST_LOCALDATUMDESCRIPTION
-                | gxipj.LIST_LOCALDATUMNAME
+                | gxipj.LOCAL_DATUM_NAME
                 | gxipj.LIST_UNITSDESCRIPTION
 
         :param datum_filter:
@@ -565,6 +567,9 @@ class GXpj:
     :params ipj_from:  GXipj from coordinate system
     :params ipj_to:    GXipj to coordinate system
 
+    .. deprecated: 9.2
+        Replaced by :class:`gxpy.coordinate_system.GXpj`
+
     .. versionadded:: 9.1
     """
 
@@ -614,7 +619,7 @@ class GXpj:
 
         nd = xyz.shape[1]
         if nd < 2:
-            raise IPJException(_('Data must have minimum dimension 2 (x,y) or 3 for (x,y,z).'))
+            raise IPJException(_t('Data must have minimum dimension 2 (x,y) or 3 for (x,y,z).'))
 
         vvx = gxapi.GXVV.create_ext(gxapi.GS_DOUBLE, npoints)
         vvy = gxapi.GXVV.create_ext(gxapi.GS_DOUBLE, npoints)

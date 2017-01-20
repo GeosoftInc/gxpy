@@ -1,0 +1,7 @@
+geosoft.gxpy.dataframe submodule
+================================
+
+.. automodule:: geosoft.gxpy.dataframe
+    :members:
+    :undoc-members:
+    :show-inheritance:

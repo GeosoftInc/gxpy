@@ -1,15 +1,19 @@
 import os
-import gc
-import time
+import atexit
 import numpy as np
 
 import geosoft
 import geosoft.gxapi as gxapi
+from . import gx as gx
 from . import ipj as gxipj
 from . import vv as gxvv
 from . import utility as gxu
+from . import system as gsys
 
 __version__ = geosoft.__version__
+
+def _t(s):
+    return geosoft.gxpy.system.translate(s)
 
 
 class GRDException(Exception):
@@ -20,11 +24,104 @@ class GRDException(Exception):
     '''
     pass
 
+
+def name_parts(name):
+    """
+    Return folder, undecorated file name + ext, file root, ext, decorations.
+
+    If extension is not specified, ".grd" assumed
+
+    For example:
+
+    .. code::
+
+        >>> import geosoft.gxpy.grd as gxgrd
+        >>> namep = gxgrd.name_parts("f:/someFolder/name.grd(GRD;TYPE=SHORT)")
+        >>> print(namep)
+        ('f:/someFolder/','name.grd','name','.grd','(GRD;TYPE=SHORT)')
+
+    .. versionadded:: 9.1
+    """
+
+    path = os.path.abspath(name)
+    fn = os.path.dirname(path)
+    bn = os.path.basename(path).split('(')
+    name = bn[0]
+    root, ext = os.path.splitext(bn[0])
+    if len(bn) > 1:
+        dec = bn[1].split(')')[0]
+    else:
+        dec = ''
+
+    if ext == '':
+        if (dec == '') or (dec[:3].upper() == 'GRD'):
+            # add Geosoft grd extension
+            ext = '.grd'
+            name = name + ext
+
+    return fn, name, root, ext, dec
+
+
+def decorate_name(name, decorations=''):
+    """
+    Properly decorate a grid name.
+
+    :param name:        file name
+    :param decorations: file decorations, semicolon delimited
+    :returns:           decorated file name
+
+    .. versionadded:: 9.1
+    """
+
+    if len(decorations.strip()) > 0:
+        d = decorations.lstrip('(')
+        end = d.find(')')
+        if end != -1:
+            d = d[:end]
+        name = name.split('(')[0]
+    else:
+        name = name.strip()
+        n = name.split('(')
+        if len(name) > len(n[0]):
+            d = n[1].split(')')[0]
+            name = n[0]
+        else:
+            return n[0]
+    return name + '(' + d + ')'
+
+
+def delete_files(filename):
+    """
+    Delete all files associates with this grid name.
+    :param filename:
+
+    .. versionadded:: 9.2
+    """
+
+    def df(fn):
+        try:
+            os.remove(fn)
+        except OSError as e:
+            pass
+
+    if filename is not None:
+
+        fn = name_parts(filename)
+        filename = os.path.join(fn[0], fn[1])
+        ext = fn[3]
+        df(filename)
+        df(filename + '.gi')
+        df(filename + '.xml')
+
+        # hgd files
+        if ext == '.hgd':
+            for i in range(16):
+                df(filename + str(i))
+
 # constants
 FILE_READ = 0
 FILE_READWRITE = 1     # file exists, but can change properties
 FILE_NEW = 2
-
 
 class GXgrd():
     """
@@ -48,7 +145,31 @@ class GXgrd():
         return self
 
     def __exit__(self, type, value, traceback):
-        self.__del__()
+        self._close()
+
+    def _close(self, pop=True):
+
+        def df(fn):
+            try:
+                os.remove(fn)
+            except OSError as e:
+                pass
+
+        if self._open:
+
+            if self._delete_files:
+
+                self._img = None
+                delete_files(self._filename)
+
+            elif self._hgd:
+                # an HGD memory grid was made, save it to an HGD file
+                gxapi.GXHGD.h_create_img(self._img, decorate_name(self._filename, 'HGD'))
+
+            self._img = None
+            if pop:
+                gx.pop_resource(self._open)
+            self._open = None
 
     def __repr__(self):
         return "{}({})".format(self.__class__, self.__dict__)
@@ -76,81 +197,38 @@ class GXgrd():
         if (fileName is None) or (len(fileName.strip()) == 0):
             self._filename = None
         else:
-            self._np = GXgrd.name_parts(fileName)
-            self._filename = GXgrd.decorate_name(os.path.join(self._np[0], self._np[1]), self._np[4])
+            self._np = name_parts(fileName)
+            self._filename = decorate_name(os.path.join(self._np[0], self._np[1]), self._np[4])
 
             if mode == FILE_NEW:
                 # special case - HGD file, must work with a memory grid, save to HGD at end
                 if self._np[4].lower() == 'hgd':
                     self._hgd = True
 
-        # When working with very large grids (gigabyte+), the
-        # file system cannot always keep up with closing/caching and re-opening the
-        # grid. Though this is actually a system problem, we deal with this problem by attempting
-        # to open a grid three times before raising an error.
-
         self._img = None
-        attempt = 0
-        while self._img is None:
+        if (self._filename is None):
+            self._img = gxapi.GXIMG.create(gxu.gx_dtype(dtype), kx, dim[0], dim[1])
 
-            try:
-                if (self._filename is None):
-                    self._img = gxapi.GXIMG.create(gxu.gx_dtype(dtype), kx, dim[0], dim[1])
+        elif mode == FILE_NEW:
+            if self._hgd:
+                # for HGD grids, make a memory grid, which will be saved to an HGD on closing
+                self._img = gxapi.GXIMG.create(gxu.gx_dtype(dtype), kx, dim[0], dim[1])
+            else:
+                self._img = gxapi.GXIMG.create_new_file(gxu.gx_dtype(dtype), kx, dim[0], dim[1], self._filename)
 
-                elif mode == FILE_NEW:
-                    if self._hgd:
-                        # for HGD grids, make a memory grid, which will be saved to an HGD on closing
-                        self._img = gxapi.GXIMG.create(gxu.gx_dtype(dtype), kx, dim[0], dim[1])
-                    else:
-                        self._img = gxapi.GXIMG.create_new_file(gxu.gx_dtype(dtype), kx, dim[0], dim[1], self._filename)
+        elif mode == FILE_READ:
+            self._img = gxapi.GXIMG.create_file(gxu.gx_dtype(dtype), self._filename, gxapi.IMG_FILE_READONLY)
+            self._readonly = True
 
-                elif mode == FILE_READ:
-                    self._img = gxapi.GXIMG.create_file(gxu.gx_dtype(dtype), self._filename, gxapi.IMG_FILE_READONLY)
-                    self._readonly = True
+        else:
+            self._img = gxapi.GXIMG.create_file(gxu.gx_dtype(dtype), self._filename, gxapi.IMG_FILE_READORWRITE)
 
-                else:
-                    self._img = gxapi.GXIMG.create_file(gxu.gx_dtype(dtype), self._filename, gxapi.IMG_FILE_READORWRITE)
+        atexit.register(self._close, pop=False)
+        self._open = gx.track_resource(self.__class__.__name__, self._filename)
 
-            except geosoft.gxapi.GXError as e:
-                time.sleep(0.1)
-                gc.collect()
-                attempt += 1
-                if attempt > 10:
-                    raise GRDException('Cannot open: {}\nBecause: {}'.format(self._filename, str(e)))
-
-    def __del__(self):
-
-        def df(fn):
-            try:
-                os.remove(fn)
-            except OSError as e:
-                pass
-
-        if self._delete_files:
-
-            img = self._img
-            self._img = None
-            del img
-
-            # delete files
-            if self._filename is not None:
-
-                fn = GXgrd.name_parts(self._filename)
-                filename = os.path.join(fn[0], fn[1])
-                ext = fn[3]
-                df(filename)
-                df(filename + '.gi')
-                df(filename + '.xml')
-
-                # hgd files
-                if ext == '.hgd':
-                    for i in range(16):
-                        df(filename + str(i))
-
-        elif self._hgd:
-            # an HGD memory grid was made, save it to an HGD file
-            gxapi.GXHGD.h_create_img(self._img, GXgrd.decorate_name(self._filename, 'HGD'))
-            gc.collect()
+    @property
+    def filename(self):
+        return self._filename.split('(')[0]
 
     @classmethod
     def open(cls, fileName, dtype=None, mode=None):
@@ -191,7 +269,7 @@ class GXgrd():
         nx = properties.get('nx', 0)
         ny = properties.get('ny', 0)
         if (nx <= 0) or (ny <= 0):
-            raise ValueError('Grid dimension ({},{}) must be > 0'.format(nx, ny))
+            raise ValueError(_t('Grid dimension ({},{}) must be > 0').format(nx, ny))
 
         grd = cls(fileName, dtype=dtype, mode=FILE_NEW, dim=(nx, ny))
         grd.set_properties(properties)
@@ -230,70 +308,8 @@ class GXgrd():
         """
         self._delete_files = delete
 
-    @staticmethod
-    def name_parts(name):
-        """
-        Return folder, undecorated file name + ext, file root, ext, decorations.
-
-        If extension is not specified, ".grd" assumed
-
-        For example:
-
-        .. code::
-
-            >>> import geosoftpy.grd as grd
-            >>> namep = grd.GXgrd.name_parts("f:/someFolder/name.grd(GRD;TYPE=SHORT)")
-            >>> print(namep)
-            ('f:/someFolder/','name.grd','name','.grd','(GRD;TYPE=SHORT)')
-
-        .. versionadded:: 9.1
-        """
-
-        path = os.path.abspath(name)
-        fn = os.path.dirname(path)
-        bn = os.path.basename(path).split('(')
-        name = bn[0]
-        root, ext = os.path.splitext(bn[0])
-        if len(bn) > 1:
-            dec = bn[1].split(')')[0]
-        else:
-            dec = ''
-
-        if ext == '':
-            if (dec == '') or (dec[:3].upper() == 'GRD'):
-                # add Geosoft grd extension
-                ext = '.grd'
-                name = name + ext
-
-        return fn, name, root, ext, dec
-
-    @staticmethod
-    def decorate_name(name, decorations=''):
-        """
-        Properly decorate a grid name.
-
-        :param name:        file name
-        :param decorations: file decorations, semicolon delimited
-        :returns:           decorated file name
-
-        .. versionadded:: 9.1
-        """
-
-        if len(decorations.strip()) > 0:
-            d = decorations.lstrip('(')
-            end = d.find(')')
-            if end != -1:
-                d = d[:end]
-            name = name.split('(')[0]
-        else:
-            name = name.strip()
-            n = name.split('(')
-            if len(name) > len(n[0]):
-                d = n[1].split(')')[0]
-                name = n[0]
-            else:
-                return n[0]
-        return name + '(' + d + ')'
+    def close(self):
+        self._close()
 
     def dtype(self):
         """
@@ -320,7 +336,7 @@ class GXgrd():
         properties['dy'] = self._img.query_double(gxapi.IMG_QUERY_rDY)
         properties['rot'] = self._img.query_double(gxapi.IMG_QUERY_rROT)
         properties['dtype'] = self.dtype()
-        np = GXgrd.name_parts(self._filename)
+        np = name_parts(self._filename)
         properties['filename'] = os.path.join(np[0], np[1])
         if len(np[4]) > 0:
             properties['gridtype'] = np[4].split(';')[0]
@@ -357,7 +373,7 @@ class GXgrd():
         """
 
         if self._readonly:
-            raise ValueError('{} opened as read-only, cannot set properties.'.format(self._filename))
+            raise ValueError(_t('{} opened as read-only, cannot set properties.').format(self._filename))
 
         dx = properties.get('dx', 1.0)
         dy = properties.get('dy', dx)
@@ -377,7 +393,7 @@ class GXgrd():
 
         :param fileName:    name of the file to save
         :param dtype:       numpy data type, None to use type of the parent grid
-        :return:            GXgrd of saved file
+        :return:            GXgrd instance of saved file, must be closed with a call to close().
 
         .. versionadded:: 9.1
         """
@@ -386,10 +402,8 @@ class GXgrd():
         if not (dtype is None):
             p['dtype'] = dtype
 
-        savegrid = GXgrd.new(fileName, p)
-        self._img.copy(savegrid._img)
-        del savegrid
-        gc.collect()
+        with GXgrd.new(fileName, p) as sg:
+            self._img.copy(sg._img)
 
         return GXgrd.open(fileName, mode=FILE_READWRITE)
 
@@ -407,6 +421,8 @@ class GXgrd():
         :param nx:  number of points in x
         :param ny:  number of points in y
 
+        :return:    GXgrd instance limited to the window, must be closed with a call to close().
+
         .. versionadded:: 9.1
         """
 
@@ -423,10 +439,10 @@ class GXgrd():
                 (x0 < 0) or (y0 < 0) or
                 (nx <= 0) or (ny <= 0) or
                 (mx > gnx) or (my > gny)):
-            raise GRDException('Window x0,y0,mx,my({},{},{},{}) out of bounds ({},{})'.format(x0, y0, mx, my, gnx, gny))
+            raise GRDException(_t('Window x0,y0,mx,my({},{},{},{}) out of bounds ({},{})').format(x0, y0, mx, my, gnx, gny))
 
         if p.get('rot') != 0.0:
-            raise ('Cannot window a rotated grid.')
+            raise (_t('Cannot window a rotated grid.'))
 
         # create new grid
         p['nx'] = nx
@@ -470,6 +486,23 @@ class GXgrd():
         '''
 
 
+    @staticmethod
+    def name_parts(name):
+        """
+
+        .. deprecated:: call grd.name_parts()
+        """
+        return name_parts(name)
+
+    @staticmethod
+    def decorate_name(name, decorations=''):
+        """
+
+        .. deprecated:: call grd.name_parts()
+        """
+        return decorate_name(name, decorations)
+
+
 # grid utilities
 def array_locations(properties, z=0.):
     '''
@@ -499,17 +532,17 @@ def gridMosaic(mosaic, gridList, typeDecoration='', report=None):
     :param gridList:        list of input grid names
     :param typeDecoration:  decoration for input grids if not default
     :param report:          string reporting function, report=print to print progress
-    :return:                GXgrd
+    :return:                GXgrd instance, must be closed with a call to close().
 
     .. versionadded:: 9.1
     """
 
     def props(gn, repro=None):
-        g = GXgrd.open(gn)
-        if repro:
-            g._img.create_projected2(repro[0], repro[1])
-        p = g.properties()
-        return p
+        with GXgrd.open(gn) as g:
+            if repro:
+                g._img.create_projected2(repro[0], repro[1])
+            p = g.properties()
+            return p
 
     def dimension(glist):
 
@@ -555,25 +588,25 @@ def gridMosaic(mosaic, gridList, typeDecoration='', report=None):
         return dsx, dsy
 
     def paste(gn, mpg):
-        g = GXgrd.open(gn)
-        p = g.properties()
-        nX = p.get('nx')
-        nY = p.get('ny')
-        gpg = g._geth_pg()
-        destx, desty = locate(x0, y0, p)
-        if report:
-            report('    +{} nx,ny({},{})'.format(g, nX, nY))
-            report('     Copy ({},{}) -> ({},{}) of ({},{})'.format(nX, nY, destx, desty, mnx, mny))
-        mpg.copy_subset(gpg, desty, destx, 0, 0, nY, nX)
-        return
+        with GXgrd.open(gn) as g:
+            p = g.properties()
+            nX = p.get('nx')
+            nY = p.get('ny')
+            gpg = g._geth_pg()
+            destx, desty = locate(x0, y0, p)
+            if report:
+                report('    +{} nx,ny({},{})'.format(g, nX, nY))
+                report('     Copy ({},{}) -> ({},{}) of ({},{})'.format(nX, nY, destx, desty, mnx, mny))
+            mpg.copy_subset(gpg, desty, destx, 0, 0, nY, nX)
+            return
 
     if len(gridList) == 0:
-        raise ValueError('At least one grid is required')
+        raise ValueError(_t('At least one grid is required'))
 
     # create list of grids, all matching on coordinate system of first grid
     grids = []
     for i in range(len(gridList)):
-        grids.append(GXgrd.decorate_name(gridList[i], typeDecoration))
+        grids.append(decorate_name(gridList[i], typeDecoration))
 
     # output grid
     x0, y0, nX, nY, xm, ym = dimension(grids)
@@ -638,15 +671,24 @@ def gridBool(g1, g2, joinedGrid, opt=1, size=3, olap=1):
         2   use grid 2
         === ==========================================
 
-    :returns:       GXgrd of the merged output grid
+    :returns:       GXgrd instance of the merged output grid, must be closed with a call to close().
 
     .. versionadded:: 9.1
     """
 
+    close_g1 = close_g2 = False
     if isinstance(g1, str):
         g1 = GXgrd.open(g1)
+        close_g1 = True
     if isinstance(g2, str):
         g2 = GXgrd.open(g2)
+        close_g2 = True
 
     gxapi.GXIMU.grid_bool(g1._img, g2._img, joinedGrid, opt, size, olap)
+
+    if close_g1:
+        g1.close()
+    if close_g2:
+        g2.close()
+
     return GXgrd.open(joinedGrid)

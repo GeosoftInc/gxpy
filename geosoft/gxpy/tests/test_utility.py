@@ -23,7 +23,7 @@ class Test(unittest.TestCase):
     
     @classmethod
     def start(cls,test):
-        cls.gxc.log("*** {} *** - {}".format(test, geosoft.__version__))
+        cls.gxc.log("*** {} > {}".format(os.path.split(__file__)[1], test))
 
     def test_misc(self):
         self.start(gsys.func_name())
@@ -57,7 +57,7 @@ class Test(unittest.TestCase):
             self.assertTrue(False)
         except: pass
 
-    def test_dictFromList(self):
+    def test_dictlist(self):
         self.start(gsys.func_name())
 
         lst = gxapi.GXLST.create(1000)
@@ -67,6 +67,16 @@ class Test(unittest.TestCase):
         d = gxu.dict_from_lst(lst)
         self.assertEqual(len(d),lst.size())
         self.assertEqual(d.get('b'),'bb')
+
+    def test_dictreg(self):
+        self.start(gsys.func_name())
+
+        d = {'a':'A', 'b':'BEE', 'c':[1,2,3], 'g':7.123, 'h':{'hh':'name'}}
+        reg = gxu.reg_from_dict(d)
+        dd = gxu.dict_from_reg(reg)
+        for key, value in d.items():
+            self.assertEqual(value, dd[key])
+        self.assertRaises(gxu.UtilityException, gxu.reg_from_dict, d, max_size=10)
 
     def test_parameters(self):
         self.start(gsys.func_name())
@@ -100,7 +110,6 @@ class Test(unittest.TestCase):
         
         def test(s):
             r = gxu.rdecode(s)
-            self.gxc.log('\'{}\' -> {}'.format(s,r))
             return r
             
         self.assertEqual(test("1.9"),1.9)
@@ -162,7 +171,6 @@ class Test(unittest.TestCase):
 
         def test(s,f):
             r = gxu.decode(s,f)
-            self.gxc.log('\'{},{}\' -> {}'.format(s,f,r))
             return r
 
         self.assertEqual(test("1.9",'f8'),1.9)
@@ -338,7 +346,12 @@ class Test(unittest.TestCase):
         self.assertEqual(dt.second, py_utc.second)
         self.assertEqual(dt.microsecond, round(py_utc.microsecond / 1000.0) * 1000)
 
-###############################################################################################
+    def test_crc(self):
+        self.start(gsys.func_name())
+
+        self.assertEqual(gxu.crc32(b'bunch of bytes'), 3271364337)
+        self.assertEqual(gxu.crc32_str('a string'), 2577552858)
+
 
 if __name__ == '__main__':
 

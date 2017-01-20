@@ -34,9 +34,12 @@ import geosoft
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-    'sphinx.ext.autodoc',
-    'sphinxcontrib.googleanalytics'
+    'sphinx.ext.autodoc'
 ]
+#extensions = [
+#    'sphinx.ext.autodoc',
+#    'sphinxcontrib.googleanalytics'
+#]
 #Google analytics for GX-Developer property in GA
 googleanalytics_id = 'UA-87443115-1'
 

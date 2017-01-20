@@ -1,17 +1,14 @@
 import numpy as np
 import numbers
+from collections.abc import Sequence
 
 import geosoft
-import geosoft.gxapi as gxapi
-from . import map as gxmap
-from . import vv as gxvv
-from . import ipj as gxipj
-from . import utility as gxu
+from . import coordinate_system as gxcs
 
 __version__ = geosoft.__version__
 
-def _(s):
-    return s
+def _t(s):
+    return geosoft.gxpy.system.translate(s)
 
 class GeometryException(Exception):
     """
@@ -19,43 +16,29 @@ class GeometryException(Exception):
     """
     pass
 
-class CS:
+class Geometry:
     """
-    Coordinate System, which includes a horizontal and vertical reference system.
+    Geometry base class.
+
+    :param hcs, vcs:
+            horizontal and vertical coordinate systems (see :class::`gxpy.coordinate_system.GXcs`)
+
+    .. versionadded:: 9.2
     """
 
-    def __repr__(self):
-        return "{}({})".format(self.__class__, self.__dict__)
+    def __init__(self, **kwargs):
+         self.cs = gxcs.GXcs(**kwargs)
 
-    def __str__(self):
-        return "({} {})".format(str(self.ipj()), str(self.vcs()))
+    def __eq__(self, other):
+        return self.cs.same_as(other.cs)
 
-    def __init__(self, ipj=None, vcs=None):
-        self._init_ipj = ipj
-        self._init_vcs = vcs
-        self._ipj = None
-        self._vcs = None
+    def set_cs(self, *args, **kwargs):
+        self.cs = gxcs.GXcs(*args, **kwargs)
 
-    def set_ipj(self, ipj):
-        self._ipj = ipj
 
-    def set_vcs(self, vcs):
-        self._ipj = vcs
-
-    def ipj(self):
-        if self._ipj is None:
-            self._ipj = gxipj.GXipj.from_any(self._init_ipj)
-        return self._ipj
-
-    def vcs(self):
-        if self._vcs is None:
-            self._vcs = self._init_vcs
-        return self._vcs
-
-# geometry spatial data structures
-class Point(CS):
+class Point(Geometry):
     """
-    Spatial location (x,y,z)
+    Spatial location (x,y,z).
 
     :param p:   array-line (x, y, z) create a Point (x, y, z)
                 if Point, returns a copy.
@@ -68,9 +51,6 @@ class Point(CS):
         return self
 
     def __exit__(self, xtype, xvalue, xtraceback):
-        self.__del__()
-
-    def __del__(self):
         pass
 
     def __repr__(self):
@@ -79,8 +59,10 @@ class Point(CS):
     def __str__(self):
         return "({}, {}, {})".format(self.x(), self.y(), self.z())
 
-    def __init__(self, p, **kwds):
-        super().__init__(**kwds)
+    def __init__(self, p, **kwargs):
+
+        super().__init__(**kwargs)
+
         if hasattr(p, "__len__"):
             if len(p) > 2:
                 self.p = np.array(p[:3], dtype=float)
@@ -90,11 +72,10 @@ class Point(CS):
                 self.p = np.array((p[0], p[0], p[0]), dtype=float)
         else:
             if type(p) is Point:
-                self.p = Point.p.copy()
+                self.p = p.p.copy()
             elif isinstance(p, numbers.Real) or isinstance(p, numbers.Integral):
                 p = float(p)
                 self.p = np.array((p, p, p))
-
 
     def __add__(self, p):
         if type(p) is not Point:
@@ -119,28 +100,156 @@ class Point(CS):
             p = Point(p)
         return Point(self.p / p.p)
 
+    def __eq__(self, other):
+        return (self.cs.same_as(other.cs)) and \
+               np.array_equal(self.p, other.p) and \
+               self.cs.same_as(other.cs)
+
+    @property
+    def p1(self):
+        """ Point 1"""
+        return self.p1
+
+    @p1.setter
+    def p1(self, p):
+        self.p1 = Point(p)
+
+    @property
+    def p2(self):
+        """ Point 2"""
+        return self.p1
+
+    @p2.setter
+    def p1(self, p):
+        self.p2 = Point(p)
+
+    @property
     def x(self):
-        """ Return x of a point"""
+        """ X value"""
         return self.p[0]
 
+    @x.setter
+    def x(self, value):
+        self.p[0] = float(value)
+
+    @property
     def y(self):
-        """ Return y of a point"""
+        """ Y value"""
         return self.p[1]
 
+    @y.setter
+    def y(self, value):
+        self.p[1] = float(value)
+
+    @property
     def z(self):
-        """ Return z of a point"""
+        """ z value"""
         return self.p[2]
 
+    @z.setter
+    def z(self, value):
+        self.p[2] = float(value)
+
+    @property
     def xy(self):
-        """ Return (x, y) of a point"""
+        """ (x, y)"""
         return (self.p[0], self.p[1])
 
+    @xy.setter
+    def xy(self, xy):
+        self.p[0] = float(xy[0])
+        self.p[1] = float(xy[1])
+
+    @property
     def xyz(self):
-        """ Return (x, y, z) of a point"""
+        """ (x, y, z) """
         return (self.p[0], self.p[1], self.p[2])
 
+    @xyz.setter
+    def xyz(self, xyz):
+        self.p[0] = float(xyz[0])
+        self.p[1] = float(xyz[1])
+        self.p[2] = float(xyz[2])
 
-class PPoint(CS):
+    def copy(self):
+        cls = self.__class__
+        result = cls.__new__(cls)
+        result.__dict__.update(self.__dict__)
+        return result
+
+class Point2(Geometry):
+    """
+    Two points, for a line, or a rectangle, or a cube
+
+    :param minx, maxx:   box extents
+    :param miny, maxy:
+    :param minz, maxz:
+
+    .. versionadded:: 9.2
+    """
+    def __enter__(self):
+        return self
+
+    def __exit__(self, xtype, xvalue, xtraceback):
+        pass
+
+    def __repr__(self):
+        return "{}({})".format(self.__class__, self.__dict__)
+
+    def __str__(self):
+        return "Point2[({}, {}, {}) ({}, {}, {})]".format(self.p1.x, self.p1.y, self.p1.z,
+                                                          self.p2.x, self.p2.y, self.p2.z)
+
+    def __init__(self, p1, p2, **kwargs):
+
+        super().__init__(**kwargs)
+
+        self.p1 = Point(p1)
+        self.p2 = Point(p2)
+
+    def __eq__(self, other):
+        return (self.cs.same_as(other.cs)) and \
+                ((self.p1 == other.p1) and (self.p2 == other.p2)
+                 or (self.p1 == other.p2) and (self.p2 == other.p1))
+
+    def copy(self):
+        cls = self.__class__
+        result = cls.__new__(cls)
+        result.__dict__.update(self.__dict__)
+        return result
+
+    @property
+    def x2(self):
+        """ X extent (min, max)"""
+        return self.p1.x, self.p2.x
+
+    @x2.setter
+    def x2(self, value):
+        self.p1.x = value[0]
+        self.p2.x = value[1]
+
+    @property
+    def y2(self):
+        """ Y extent (min, max)"""
+        return self.p1.y, self.p2.y
+
+    @y2.setter
+    def y2(self, value):
+        self.p1.y = value[0]
+        self.p2.y = value[1]
+
+    @property
+    def z2(self):
+        """ Z extent (min, max)"""
+        return self.p1.z, self.p2.z
+
+    @z2.setter
+    def z2(self, value):
+        self.p1.z = value[0]
+        self.p2.z = value[1]
+
+
+class PPoint(Geometry, Sequence):
     """
     Poly-Point class.
 
@@ -152,13 +261,10 @@ class PPoint(CS):
     .. versionadded:: 9.2
     """
 
-    def __init__(self, xyz, z=0.0, **kwds):
-        """
-        Create a PPoint from a list of (x, y, z) points (array-like)
-        :param xyz: array-line, either (x, y) or (x, y, z) (shape (n, 2) or (n, 3))
-        :param z:   constant z value for (x, y) data, ignored for (x, y, z) data
-        """
-        super().__init__(**kwds)
+    def __init__(self, xyz, z=0.0, **kwargs):
+
+        super().__init__(**kwargs)
+
         if type(xyz) is not np.ndarray:
             xyz = np.array(xyz)
 
@@ -226,18 +332,52 @@ class PPoint(CS):
             return PPoint(self.pp / p.p)
         return PPoint(self.pp / Point(p).p)
 
+    def __eq__(self, other):
+        return (self.cs.same_as(other.cs)) and np.array_equal(self.pp, other.pp)
+
+    def copy(self):
+        cls = self.__class__
+        result = cls.__new__(cls)
+        result.__dict__.update(self.__dict__)
+        return result
+
+    @property
     def x(self):
-        """ Return X array slice"""
+        """ X array slice"""
         return self.pp[:,0]
 
+    @x.setter
+    def x(self, v):
+        self.pp[:,0] = v
+
+    @property
     def y(self):
-        """ Return Y array slice"""
+        """ Y array slice"""
         return self.pp[:,1]
 
+    @y.setter
+    def y(self, v):
+        self.pp[:,1] = v
+
+    @property
     def z(self):
-        """ Return Z array slice"""
+        """ Z array slice"""
         return self.pp[:,2]
 
+    @z.setter
+    def z(self, v):
+        self.pp[:,2] = v
+
+    @property
+    def xy(self):
+        """ XY array slice"""
+        return self.pp[:, 0:2]
+
+    @xy.setter
+    def xy(self, v):
+        self.pp[:, 0:2] = v
+
+    @property
     def xyz(self):
-        """ Return xyz point array"""
+        """ XYZ point array"""
         return self.pp

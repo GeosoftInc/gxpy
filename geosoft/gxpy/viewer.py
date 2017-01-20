@@ -9,22 +9,58 @@ from . import map as gxmap
 
 __version__ = geosoft.__version__
 
-def map_viewer(gmap, title=None):
+
+def _t(s):
+    return geosoft.gxpy.system.translate(s)
+
+
+class ViewerException(Exception):
     """
-    Open this map in a modal map viewer.
-    :param gmap:    map name
-    :param title:   viewer title, default is the map name
+    Exceptions from this module.
+
+    .. versionadded:: 9.2
+    """
+    pass
+
+def map(map_file_name, title=None):
+    """
+    Open map in a modal map viewer.
+    :param map_file_name:   map name
+    :param title:           viewer title, default is the map name
 
     .. versionadded:: 9.2
     """
 
-    gmap = gxmap.GXmap.open(gmap)
-    if title is None:
-        title = gmap.filename()
-    gxapi.GXGUI.simple_map_dialog(gmap._map, title, "")
-
-def viewer(mapfile, view=None, title = None):
-    with gxmap.GXmap.open(mapfile) as gmap:
+    with gxmap.GXmap.open(map_file_name) as gmap:
         if title is None:
-            title = gmap.filename()
-    gxapi.GXGUI.show_3d_viewer_dialog(title, gmap, gmap.filename(), "")
+            title = gmap.filename
+        gxapi.GXGUI.simple_map_dialog(gmap.gxmap, title, "")
+
+def v3d(map_file_name, viewname=None, title = None):
+    """
+    Open 3D view in a modal 3D viewer.
+    :param map_file_name:   map name
+    :param viewname:        3D view name, default is the first 3D view found in the map
+    :param title:           viewer title, default is the view name
+
+    .. versionadded:: 9.2
+
+    """
+
+    with gxmap.GXmap.open(map_file_name) as gmap:
+
+        vlist = gmap.view_list(gxmap.LIST_3D)
+        if len(vlist) == 0:
+            raise ViewerException(_t('\'{}\' has no 3D views.').format(map_file_name))
+        if viewname is None:
+            viewname = vlist[0]
+        elif viewname not in vlist:
+            raise ViewerException(_t('\'{}\' has no view named \'{}\'.').format(map_file_name, viewname))
+
+        if title is None:
+            title = viewname
+        map_file_name = gmap.filename
+
+    #TODO title is not used in the viewer - viewer bug
+
+    gxapi.GXGUI.show_3d_viewer_dialog(title, map_file_name, viewname)
