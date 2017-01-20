@@ -440,6 +440,7 @@ class GXview:
 
 class GXview3d(GXview):
 
+
     def __init__(self, *args, **kwds):
 
         if 'viewname' not in kwds:

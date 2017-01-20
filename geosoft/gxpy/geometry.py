@@ -72,7 +72,7 @@ class Point(Geometry):
                 self.p = np.array((p[0], p[0], p[0]), dtype=float)
         else:
             if type(p) is Point:
-                self.p = Point.p.copy()
+                self.p = p.copy()
             elif isinstance(p, numbers.Real) or isinstance(p, numbers.Integral):
                 p = float(p)
                 self.p = np.array((p, p, p))
@@ -158,6 +158,77 @@ class Point(Geometry):
         result = cls.__new__(cls)
         result.__dict__.update(self.__dict__)
         return result
+
+class Point2(Geometry):
+    """
+    Two points, for a line, or a rectangle, or a cube
+
+    :param minx, maxx:   box extents
+    :param miny, maxy:
+    :param minz, maxz:
+
+    .. versionadded:: 9.2
+    """
+    def __enter__(self):
+        return self
+
+    def __exit__(self, xtype, xvalue, xtraceback):
+        pass
+
+    def __repr__(self):
+        return "{}({})".format(self.__class__, self.__dict__)
+
+    def __str__(self):
+        return "Point2[({}, {}, {}) ({}, {}, {})]".format(self.p1.x, self.p1.y, self.p1.z,
+                                                          self.p2.x, self.p2.y, self.p2.z)
+
+    def __init__(self, p1, p2, **kwargs):
+
+        super().__init__(**kwargs)
+
+        self.p1 = Point(p1)
+        self.p2 = Point(p2)
+
+    def __eq__(self, other):
+        return (self.cs.same_as(other.cs)) and \
+                ((self.p1 == other.p1) and (self.p2 == other.p2)
+                 or (self.p1 == other.p2) and (self.p2 == other.p1))
+
+    def copy(self):
+        cls = self.__class__
+        result = cls.__new__(cls)
+        result.__dict__.update(self.__dict__)
+        return result
+
+    @property
+    def x2(self):
+        """ X extent (min, max)"""
+        return self.p1.x, self.p2.x
+
+    @x2.setter
+    def x2(self, value):
+        self.p1.x = value[0]
+        self.p2.x = value[1]
+
+    @property
+    def y2(self):
+        """ Y extent (min, max)"""
+        return self.p1.y, self.p2.y
+
+    @y2.setter
+    def y2(self, value):
+        self.p1.y = value[0]
+        self.p2.y = value[1]
+
+    @property
+    def z2(self):
+        """ Z extent (min, max)"""
+        return self.p1.z, self.p2.z
+
+    @z2.setter
+    def z2(self, value):
+        self.p1.z = value[0]
+        self.p2.z = value[1]
 
 
 class PPoint(Geometry, Sequence):
@@ -292,75 +363,3 @@ class PPoint(Geometry, Sequence):
     def xyz(self):
         """ XYZ point array"""
         return self.pp
-
-class Box(Geometry):
-    """
-    Box aligned with coordinate system axis
-
-    :param minx, maxx:   box extents
-    :param miny, maxy:
-    :param minz, maxz:
-
-    .. versionadded:: 9.2
-    """
-    def __enter__(self):
-        return self
-
-    def __exit__(self, xtype, xvalue, xtraceback):
-        pass
-
-    def __repr__(self):
-        return "{}({})".format(self.__class__, self.__dict__)
-
-    def __str__(self):
-        return "box[x({}, {}) y({}, {}) z({}, {})]".format(self.p1.x, self.p2.x,
-                                                           self.p1.y, self.p2.y,
-                                                           self.p1.z, self.p2.z)
-
-    def __init__(self, p1, p2, **kwargs):
-
-        super().__init__(**kwargs)
-
-        self.p1 = p1
-        self.p2 = p2
-
-    def __eq__(self, other):
-        return (self.cs.same_as(other.cs)) and \
-                ((self.p1 == other.p1) and (self.p2 == other.p2)
-                 or (self.p1 == other.p2) and (self.p2 == other.p1))
-
-    def copy(self):
-        cls = self.__class__
-        result = cls.__new__(cls)
-        result.__dict__.update(self.__dict__)
-        return result
-
-    @property
-    def x(self):
-        """ X extent (min, max)"""
-        return self.p1.x, self.p2.x
-
-    @x.setter
-    def x(self, value):
-        self.p1.x = value[0]
-        self.p2.x = value[1]
-
-    @property
-    def y(self):
-        """ Y extent (min, max)"""
-        return self.p1.y, self.p2.y
-
-    @y.setter
-    def y(self, value):
-        self.p1.y = value[0]
-        self.p2.y = value[1]
-
-    @property
-    def z(self):
-        """ Z extent (min, max)"""
-        return self.p1.z, self.p2.z
-
-    @z.setter
-    def z(self, value):
-        self.p1.z = value[0]
-        self.p2.z = value[1]

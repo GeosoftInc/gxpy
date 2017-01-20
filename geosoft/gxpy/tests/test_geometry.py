@@ -193,25 +193,22 @@ class Test(unittest.TestCase):
         p1.set_cs(hcs="WGS 84", vcs="geoid")
         self.assertTrue(p1 == p2)
 
-    def test_box(self):
+    def test_p2(self):
         self.start(gsys.func_name())
 
-        b1 = gxgm.Box(gxgm.Point((0, 1, -20)),
-                      gxgm.Point((10, 20, -1)))
+        b1 = gxgm.Point2(gxgm.Point((0, 1, -20)),
+                         (10, 20, -1))
         self.assertEqual('box[x(0.0, 10.0) y(1.0, 20.0) z(-20.0, -1.0)]', str(b1))
-        self.assertEqual(b1.x, (0., 10.))
-        self.assertEqual(b1.y, (1., 20.))
-        self.assertEqual(b1.z, (-20., -1.))
-        b2 = gxgm.Box(gxgm.Point((b1.x[0], b1.y[0], b1.z[0])),
-                      gxgm.Point((b1.x[1], b1.y[1], b1.z[1])))
+        self.assertEqual(b1.x2, (0., 10.))
+        self.assertEqual(b1.y2, (1., 20.))
+        self.assertEqual(b1.z2, (-20., -1.))
+        b2 = gxgm.Point2(gxgm.Point((b1.x2[0], b1.y2[0], b1.z2[0])),
+                         gxgm.Point((b1.x2[1], b1.y2[1], b1.z2[1])))
         self.assertTrue(b1 == b2)
-        b2 = gxgm.Box(gxgm.Point((b1.x[1], b1.y[1], b1.z[1])),
-                      gxgm.Point((b1.x[0], b1.y[0], b1.z[0])), hcs="WGS 84")
+        b2 = gxgm.Point2(gxgm.Point((b1.x2[1], b1.y2[1], b1.z2[1])),
+                         gxgm.Point((b1.x2[0], b1.y2[0], b1.z2[0])), hcs="WGS 84")
         same = (b1 == b2)
         self.assertTrue(same)
-        self.assertEqual(b2.x, (10., 0.))
-        self.assertEqual(b2.y, (20., 1.))
-        self.assertEqual(b2.z, (-1., -20.))
 
 if __name__ == '__main__':
 
