@@ -380,15 +380,18 @@ class GXview:
 
 
     @_draw
-    def xy_line(self, p1, p2):
+    def xy_line(self, p2):
         """
         Draw a line on the current plane
-        :param p1:  gxpy.geometry.Point starting
-        :param p2:  gxpy.geometry.Point end
+        :param p2: geometry.Point2, or (p1, p2)
 
         .. versionadded:: 9.2
         """
-        self.gxview.line(p1.x, p1.y, p2.x, p2.y)
+
+        if hasattr(p2, '__iter__'):
+            p2 = gxgm.Point2(p2[0], p2[1])
+
+        self.gxview.line(p2.p1.x, p2.p1.y, p2.p2.x, p2.p2.y)
 
     @_draw
     def xy_poly_line(self, pp, close=False):
@@ -414,28 +417,33 @@ class GXview:
                                  gxvv.GXvv.vv_np(pp.y)._vv)
 
     @_draw
-    def xy_rectangle(self, p1, p2):
+    def xy_rectangle(self, p2):
         """
         Draw a 2D rectangle on the current plane
-        :param p1:  Point starting
-        :param p2:  Point diagonal
-        :param pen: pen to use, attribtutes modify current pen for the rectangle only
+        :param p2: geometry.Point2, or (p1, p2)
 
         .. versionadded:: 9.2
         """
-        self.gxview.rectangle(p1.x, p1.y, p2.x, p2.y)
+
+        if hasattr(p2, '__iter__'):
+            p2 = gxgm.Point2(p2[0], p2[1])
+
+        self.gxview.rectangle(p2.p1.x, p2.p1.y, p2.p2.x, p2.p2.y)
 
     @_draw
-    def box_3d(self, box, pen=None):
+    def box_3d(self, p2, pen=None):
         """
-        Draw a 3D box on the current plane
-        :param box: geometry.Box
-        :param pen: pen to use
+        Draw a 3D box
+        :param p2: geometry.Point2, or (p1, p2)
 
         .. versionadded:: 9.2
         """
-        self.gxview.box_3d(box.p1.x, box.p1.y, box.p1.z,
-                           box.p2.x, box.p2.y, box.p2.z)
+
+        if hasattr(p2, '__iter__'):
+            p2 = gxgm.Point2(p2[0], p2[1])
+
+        self.gxview.box_3d(p2.p1.x, p2.p1.y, p2.p1.z,
+                           p2.p2.x, p2.p2.y, p2.p2.z)
 
 
 class GXview3d(GXview):

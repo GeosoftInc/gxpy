@@ -198,7 +198,7 @@ class Test(unittest.TestCase):
 
         b1 = gxgm.Point2(gxgm.Point((0, 1, -20)),
                          (10, 20, -1))
-        self.assertEqual('box[x(0.0, 10.0) y(1.0, 20.0) z(-20.0, -1.0)]', str(b1))
+        self.assertEqual('Point2[(0.0, 1.0, -20.0) (10.0, 20.0, -1.0)]', str(b1))
         self.assertEqual(b1.x2, (0., 10.))
         self.assertEqual(b1.y2, (1., 20.))
         self.assertEqual(b1.z2, (-20., -1.))

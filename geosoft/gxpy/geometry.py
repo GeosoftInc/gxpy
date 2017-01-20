@@ -72,7 +72,7 @@ class Point(Geometry):
                 self.p = np.array((p[0], p[0], p[0]), dtype=float)
         else:
             if type(p) is Point:
-                self.p = p.copy()
+                self.p = p.p.copy()
             elif isinstance(p, numbers.Real) or isinstance(p, numbers.Integral):
                 p = float(p)
                 self.p = np.array((p, p, p))
@@ -104,6 +104,24 @@ class Point(Geometry):
         return (self.cs.same_as(other.cs)) and \
                np.array_equal(self.p, other.p) and \
                self.cs.same_as(other.cs)
+
+    @property
+    def p1(self):
+        """ Point 1"""
+        return self.p1
+
+    @p1.setter
+    def p1(self, p):
+        self.p1 = Point(p)
+
+    @property
+    def p2(self):
+        """ Point 2"""
+        return self.p1
+
+    @p2.setter
+    def p1(self, p):
+        self.p2 = Point(p)
 
     @property
     def x(self):

@@ -14,12 +14,12 @@ import geosoft.gxpy.coordinate_system as gxcs
 
 
 def rect_line(view, size=100):
-    view.xy_rectangle(gxgm.Point((0, 0)), gxgm.Point((1, 1)) * size, pen={'line_thick': 1})
+    view.xy_rectangle(((0, 0), (1, 1)) * size, pen={'line_thick': 1})
     p1 = gxgm.Point((0.1, 0.1)) * size
     p2 = gxgm.Point((0.9, 0.9)) * size
     poff = gxgm.Point((0.15, 0.05)) * size
-    view.xy_rectangle(p1, p2, pen={'fill_color': gxapi.C_LT_GREEN})
-    view.xy_line(p1 + poff, p2 - poff, pen={'line_style': (2, 2.0)})
+    view.xy_rectangle((p1, p2), pen={'fill_color': gxapi.C_LT_GREEN})
+    view.xy_line((p1 + poff, p2 - poff), pen={'line_style': (2, 2.0)})
 
 
 def draw_stuff(view, size = 1.0):
@@ -196,13 +196,13 @@ class Test(unittest.TestCase):
                 rect_line(view)
                 view.graticule(25, 20, style=gxv.GRATICULE_LINE)
                 view.pen = {'line_thick': 0.1}
-                view.xy_rectangle(gxgm.Point((0,0)), gxgm.Point((250,125)), pen={'line_thick': 0.1, 'line_color':'R'})
+                view.xy_rectangle(((0,0),(250,125)), pen={'line_thick': 0.1, 'line_color':'R'})
             with gxv.GXview(gmap, "poly") as view:
                 view.start_group('test_group')
                 draw_stuff(view)
 
         #gxvwr.map(mapfile)
-        self.assertEqual(gxmap.crc_map(mapfile), 1690811698)
+        self.assertEqual(gxmap.crc_map(mapfile), 3148511381)
         gxmap.delete_files(mapfile)
 
     def test_3D(self):
@@ -213,13 +213,13 @@ class Test(unittest.TestCase):
             mapfile = gmap.filename
             with gxv.GXview(gmap, "base", area=(0,0,250, 125), scale=1000) as view:
                 view.start_group('test_group')
-                view.xy_rectangle(gxgm.Point((0,0)), gxgm.Point((100,100)))
+                view.xy_rectangle(((0, 0), (100, 100)))
             with gxv.GXview3d(gmap, viewname='v3d_test', area=(0,0,300, 300), scale=1000,
                               hcs="wgs 84 / UTM zone 15S") as view:
                 view.start_group('test_group')
                 rect_line(view)
                 draw_stuff(view)
-                view.box_3d(gxgm.Box(gxgm.Point((0,0,10)), gxgm.Point((120,100,50))))
+                view.box_3d(((0,0,10), (120,100,50)))
 
         #gxvwr.map(mapfile)
         #gxvwr.v3d(mapfile)
@@ -241,11 +241,11 @@ class Test(unittest.TestCase):
         with gxmap.GXmap.new(testmap, overwrite=True) as gmap:
             mapfile = gmap.filename
             with gxv.GXview(gmap, "base", area=(0, 0, 25, 20), scale=100.0) as view:
-                view.xy_rectangle(gxgm.Point((0, 0)), gxgm.Point((25, 20)),
+                view.xy_rectangle((gxgm.Point((0, 0)), gxgm.Point((25, 20))),
                                   pen={'line_thick': 0.1, 'line_color': 'R'})
 
             with gxv.GXview(gmap, "data", map_location=(4,3), area=(0, 0, 1800, 1500), scale=10000) as view:
-                view.xy_rectangle(gxgm.Point((0, 0)), gxgm.Point((1800,1500)),
+                view.xy_rectangle((gxgm.Point((0, 0)), gxgm.Point((1800, 1500))),
                                   pen={'line_thick': 5, 'line_color': 'G'})
 
                 # TODO - the underlying grid function has a bug - it cannot do dotted lines
