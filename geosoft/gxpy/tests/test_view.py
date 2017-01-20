@@ -202,7 +202,7 @@ class Test(unittest.TestCase):
                 draw_stuff(view)
 
         #gxvwr.map(mapfile)
-        self.assertEqual(gxmap.crc_map(mapfile), 745510201)
+        self.assertEqual(gxmap.crc_map(mapfile), 1690811698)
         gxmap.delete_files(mapfile)
 
     def test_3D(self):
@@ -233,6 +233,27 @@ class Test(unittest.TestCase):
                 self.assertEqual("WGS 84", str(view.cs))
             with gxv.GXview(gmap, "vcs", hcs="wgs 84", vcs="special") as view:
                 self.assertTrue("WGS 84 [special]" in str(view.cs))
+
+    def test_basic_drawing(self):
+        self.start(gsys.func_name())
+
+        testmap = os.path.join(self.gx.temp_folder(), "test")
+        with gxmap.GXmap.new(testmap, overwrite=True) as gmap:
+            mapfile = gmap.filename
+            with gxv.GXview(gmap, "base", area=(0, 0, 25, 20), scale=100.0) as view:
+                view.xy_rectangle(gxgm.Point((0, 0)), gxgm.Point((25, 20)),
+                                  pen={'line_thick': 0.1, 'line_color': 'R'})
+
+            with gxv.GXview(gmap, "data", map_location=(4,3), area=(0, 0, 1800, 1500), scale=10000) as view:
+                view.xy_rectangle(gxgm.Point((0, 0)), gxgm.Point((1800,1500)),
+                                  pen={'line_thick': 5, 'line_color': 'G'})
+
+                # TODO - the underlying grid function has a bug - it cannot do dotted lines
+                view.graticule(style=gxv.GRATICULE_CROSS, pen={'line_thick': 5})
+
+        #gxvwr.map(mapfile)
+        self.assertEqual(gxmap.crc_map(mapfile), 4267245561)
+
 
 if __name__ == '__main__':
 

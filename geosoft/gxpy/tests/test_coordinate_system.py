@@ -500,6 +500,20 @@ class Test(unittest.TestCase):
             with gxcs.GXcs("WGS 84", "geoid") as cs2:
                 self.assertFalse(cs1.same_as(cs2))
 
+        self.assertTrue(gxcs.GXcs("nad83").same_as(gxcs.GXcs("NAD83")))
+        self.assertTrue(gxcs.GXcs("nad83", "NAVD92").same_as(gxcs.GXcs("NAD83", "NAVD92")))
+        self.assertTrue(gxcs.GXcs("nad83", "NAVD92").same_as(gxcs.GXcs("NAD83")))
+        self.assertTrue(gxcs.GXcs("nad83").same_as(gxcs.GXcs("NAD83", "NAVD92")))
+        self.assertTrue(gxcs.GXcs("nad83", "NAVD92").same_vcs(gxcs.GXcs("NAD27", "NAVD92")))
+        self.assertTrue(gxcs.GXcs("nad83").same_vcs(gxcs.GXcs("NAD27", "NAVD92")))
+        self.assertTrue(gxcs.GXcs("nad27", "geoid").same_hcs(gxcs.GXcs("NAD27", "NAVD92")))
+
+        self.assertFalse(gxcs.GXcs("nad83 / UTM zone 35N").same_as(gxcs.GXcs("NAD83")))
+        self.assertFalse(gxcs.GXcs("nad83", "NAVD92").same_as(gxcs.GXcs("NAD83", "geodetic")))
+        self.assertFalse(gxcs.GXcs("nad83").same_as(gxcs.GXcs("NAD27")))
+        self.assertFalse(gxcs.GXcs("nad83", "geoid").same_vcs(gxcs.GXcs("NAD27", "NAVD92")))
+
+
     def test_units(self):
         self.start(gsys.func_name())
         cs = gxcs.GXcs("NAD27 / Arizona Coordinate System Central zone")

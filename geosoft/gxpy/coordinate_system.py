@@ -403,8 +403,8 @@ class GXcs:
         """ vertical coordinate system name"""
         return self.name(NAME_VCS)
 
-    def same_as(self, other):
-
+    def same_hcs(self, other):
+        """ Return true if the HCS are the same."""
         def same_units(a, b):
             a = a.coordinate_dict['units']
             b = b.coordinate_dict['units']
@@ -415,14 +415,23 @@ class GXcs:
 
         if not same_units(self, other):
             return False
+        elif (self.hcs == '*unknown') or (other.hcs == '*unknown'):
+            return True
+        else:
+            return bool(self.gxipj.coordinate_systems_are_the_same(other.gxipj))
 
-        n1 = self.name(NAME_HCS_VCS)
-        if n1 == "*unknown":
+    def same_vcs(self, other):
+        """ Return true if the VCS are the same."""
+        svcs = self.vcs
+        ovcs = other.vcs
+        if (svcs == '') or (ovcs == ''):
             return True
-        n2 = other.name(NAME_HCS_VCS)
-        if n2 == "*unknown":
-            return True
-        return (n1 == n2)
+        else:
+            return svcs == ovcs
+
+    def same_as(self, other):
+        """ Return true if both coordinate systems (HCS and VCS) are the same. """
+        return self.same_hcs(other) and self.same_vcs(other)
 
     def _from_str(self, cstr):
         """ setup coordinate systems from a string """
@@ -485,7 +494,7 @@ class GXcs:
             try:
                 self.gxipj.set_gxf(gxf1, gxf2, gxf3, gxf4, gxf5)
                 self.gxipj.get_display_name(sref)
-            except geosoft.gxapi.GXAPIError:
+            except (geosoft.gxapi.GXAPIError, geosoft.gxapi.GXError):
                 raise_gxf_error()
             else:
                 if gxf1 != "*unknown":

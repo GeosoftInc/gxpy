@@ -144,11 +144,18 @@ class GXmap:
             if self.gxmap:
 
                 if not self._remove:
+
+                    # if I have read access to the map, creat an MDF
                     if self.has_view("*Base") and self.has_view("*Data"):
-                        # create an MDF file
+
+                        # close the file to close all views, then re-open to create an mdf
+                        self.gxmap = None
+                        gxmap = gxapi.GXMAP.create(self._filename, WRITE_OLD)
                         mdfname = os.path.splitext(self.filename)[0] + '.mdf'
-                        gxapi.GXMVU.map_mdf(self.gxmap, mdfname, "*Data")
-                        self.mdf()
+                        try:
+                            gxapi.GXMVU.map_mdf(gxmap, mdfname, "*Data")
+                        except:
+                            pass
 
                 self.gxmap = None
 

@@ -1,5 +1,5 @@
-import gc
 import atexit
+from functools import wraps
 
 import geosoft
 import geosoft.gxapi as gxapi
@@ -48,6 +48,21 @@ UNIT_VIEW_UNWARPED = 3
 GRATICULE_DOT = 0
 GRATICULE_LINE = 1
 GRATICULE_CROSS = 2
+
+# decorators
+def _draw(func):
+    @wraps(func)
+    def wrapper(self, *args, **kwargs):
+        if not hasattr(self,'_pen'):
+            self.start_group('_')
+        if 'pen' in kwargs:
+            self.push_pen(kwargs.pop('pen'))
+            func(self, *args, **kwargs)
+            self.pop_pen()
+        else:
+            func(self, *args, **kwargs)
+
+    return wrapper
 
 class GXview:
     """
@@ -99,8 +114,8 @@ class GXview:
                  hcs=None,
                  vcs=None,
                  map_location=(0,0),
-                 area=(0,0,100,100),
-                 scale=500):
+                 area=(0,0,30,20),
+                 scale=100):
 
         self._gmap = gmap
         self._viewname = viewname
@@ -220,22 +235,6 @@ class GXview:
                 self._pen_fn[att](setting)
                 self._pen[att] = setting
 
-    def push_pen(self, pen=None):
-        """Push current pen attributes on the pen stack. If pen not specified, all pen attributes are pushed."""
-        if pen is None:
-            self._pen_stack.append(self._pen.copy())
-        else:
-            oldpen = {}
-            for key in pen:
-                oldpen[key] = self._pen[key]
-            self._pen_stack.append(oldpen)
-
-    def pop_pen(self):
-        """Pop the last pen off the pen stack."""
-        if len(self._pen_stack) > 0:
-            self.pen = self._pen_stack[-1]
-            del self._pen_stack[-1:]
-
     def _line_style(self, ls):
         self.gxview.line_style(ls[0], ls[1])
 
@@ -261,6 +260,51 @@ class GXview:
         setpen('pat_size', self.gxview.pat_size, 5.0)
         setpen('pat_style', self.gxview.pat_style, TILE_RECTANGULAR)
         setpen('pat_thick', self.gxview.pat_thick, 0.1)
+
+    def start_group(self, name, append=False):
+        """
+        Start a new named group in a view.  Drawing functions that follow will be rendered into this group.
+
+        :param name:    name of the group.  If a group name is the same as the view name, '_' is appended
+                        to the group name to make it different.
+        :param append:  True to append to an existing group
+
+        .. versionadded:: 9.2
+        """
+        if append:
+            mode = gxapi.MVIEW_GROUP_APPEND
+        else:
+            mode = gxapi.MVIEW_GROUP_NEW
+
+        if name == self.viewname:
+            name = name + '_'
+        self.gxview.start_group(name, mode)
+        self._init_pen_attributes()
+        self._pen_stack = []
+
+
+    def push_pen(self, pen=None):
+        """
+        Push current pen attributes on the pen stack, and set the pen.
+        If pen not specified, all pen attributes are pushed.  pop_pen recovers
+        last pen pushed.
+
+        :param pen: pen to set after pushing current attributes.
+        """
+        if pen is None:
+            self._pen_stack.append(self._pen.copy())
+        else:
+            oldpen = {}
+            for key in pen:
+                oldpen[key] = self._pen[key]
+            self._pen_stack.append(oldpen)
+            self.pen = pen
+
+    def pop_pen(self):
+        """Pop the last pen off the pen stack."""
+        if len(self._pen_stack) > 0:
+            self.pen = self._pen_stack[-1]
+            del self._pen_stack[-1:]
 
     def extent(self, extent=EXTENT_VIEW):
         xmin = gxapi.float_ref()
@@ -300,33 +344,12 @@ class GXview:
 
         return self.gxview.color(str)
 
-    def start_group(self, name, append=False):
-        """
-        Start a new named group in a view.  Drawing functions that follow will be rendered into this group.
-
-        :param name:    name of the group.  If a group name is the same as the view name, '_' is appended
-                        to the group name to make it different.
-        :param append:  True to append to an existing group
-
-        .. versionadded:: 9.2
-        """
-        if append:
-            mode = gxapi.MVIEW_GROUP_APPEND
-        else:
-            mode = gxapi.MVIEW_GROUP_NEW
-
-        if name == self.viewname:
-            name = name + '_'
-        self.gxview.start_group(name, mode)
-        self._init_pen_attributes()
-        self._pen_stack = []
-
     def map_to_view(self, x, y):
         xr = gxapi.float_ref()
         xr.value = x * 1000.0
         yr = gxapi.float_ref()
         yr.value = y * 1000.0
-        self.gxpy.plot_to_view(xr, yr)
+        self.gxview.plot_to_view(xr, yr)
         return xr.value, yr.value
 
     def view_to_map(self, x, y):
@@ -339,32 +362,25 @@ class GXview:
 
     # drawing to a plane
 
-    def graticule(self, dx=None, dy=None, ddx=None, ddy=None, style=GRATICULE_DOT, pen=None):
+    @_draw
+    def graticule(self, dx=None, dy=None, ddx=None, ddy=None, style=GRATICULE_DOT):
 
-        if pen is not None:
-            self.push_pen(pen)
-            self.pen = pen
-
-        if dx is None or dy is None:
-            rx, ry = self.map_to_view(0,0)
-            rxx, ryy = self.map_to_view(0.02, 0.02)
-            if dx is None:
-                dx = rxx - rx
-                ddx = dx * 0.2
-            if dy is None:
-                dy = ryy - ry
-                dyy = dy * 0.2
+        ext = self.extent()
+        if dx is None:
+            dx = (ext[2] - ext[0]) * 0.2
+            ddx = dx * 0.25
+        if dy is None:
+            dy = (ext[3] - ext[1]) * 0.2
+            ddy = dy * 0.25
         if ddy is None:
-            ddy = dy * 0.2
+            ddy = dy * 0.25
         if ddx is None:
-            ddx = dx * 0.2
+            ddx = dx * 0.25
         self.gxview.grid(dx, dy, ddx, ddy, style)
 
-        if pen is not None:
-            self.pop_pen()
 
-            
-    def xy_line(self, p1, p2, pen=None):
+    @_draw
+    def xy_line(self, p1, p2):
         """
         Draw a line on the current plane
         :param p1:  gxpy.geometry.Point starting
@@ -372,18 +388,10 @@ class GXview:
 
         .. versionadded:: 9.2
         """
-
-        if pen is not None:
-            self.push_pen(pen)
-            self.pen = pen
-
         self.gxview.line(p1.x, p1.y, p2.x, p2.y)
 
-        if pen is not None:
-            self.pop_pen()
-
-
-    def xy_poly_line(self, pp, close=False, pen=None):
+    @_draw
+    def xy_poly_line(self, pp, close=False):
         """
         Draw a polyline the current plane
         :param pline: gxpy.geometry.PPoint
@@ -396,10 +404,6 @@ class GXview:
         .. versionadded:: 9.2
         """
 
-        if pen is not None:
-            self.push_pen(pen)
-            self.pen = pen
-
         if close:
             self.gxview.poly_line(gxapi.MVIEW_DRAW_POLYGON,
                                  gxvv.GXvv.vv_np(pp.x)._vv,
@@ -409,10 +413,8 @@ class GXview:
                                  gxvv.GXvv.vv_np(pp.x)._vv,
                                  gxvv.GXvv.vv_np(pp.y)._vv)
 
-        if pen is not None:
-            self.pop_pen()
-
-    def xy_rectangle(self, p1, p2, pen=None):
+    @_draw
+    def xy_rectangle(self, p1, p2):
         """
         Draw a 2D rectangle on the current plane
         :param p1:  Point starting
@@ -421,16 +423,9 @@ class GXview:
 
         .. versionadded:: 9.2
         """
-
-        if pen is not None:
-            self.push_pen(pen)
-            self.pen = pen
-
         self.gxview.rectangle(p1.x, p1.y, p2.x, p2.y)
 
-        if pen is not None:
-            self.pop_pen()
-
+    @_draw
     def box_3d(self, box, pen=None):
         """
         Draw a 3D box on the current plane
@@ -439,16 +434,8 @@ class GXview:
 
         .. versionadded:: 9.2
         """
-
-        if pen is not None:
-            self.push_pen(pen)
-            self.pen = pen
-
         self.gxview.box_3d(box.p1.x, box.p1.y, box.p1.z,
                            box.p2.x, box.p2.y, box.p2.z)
-
-        if pen is not None:
-            self.pop_pen()
 
 
 class GXview3d(GXview):

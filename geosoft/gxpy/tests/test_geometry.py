@@ -191,7 +191,7 @@ class Test(unittest.TestCase):
         p1.set_cs("WGS 84")
         self.assertTrue(p1 == p2)
         p1.set_cs(hcs="WGS 84", vcs="geoid")
-        self.assertFalse(p1 == p2)
+        self.assertTrue(p1 == p2)
 
     def test_box(self):
         self.start(gsys.func_name())
