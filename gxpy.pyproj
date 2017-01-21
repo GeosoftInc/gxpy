@@ -151,6 +151,7 @@
     <Content Include="docs\GXWA.rst" />
     <Content Include="docs\helloworld.rst" />
     <Content Include="docs\index.rst" />
+    <Content Include="docs\templates\gxapi_class.rst" />
     <Content Include="docs\templates\version_history.rst" />
     <Content Include="docs\themes\maki\layout.html" />
     <Content Include="docs\themes\maki\static\contents.png" />
@@ -516,6 +517,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="docs" />
+    <Folder Include="docs\generated\" />
     <Folder Include="docs\templates" />
     <Folder Include="docs\themes\" />
     <Folder Include="docs\themes\maki" />
