@@ -61,7 +61,7 @@ def collect_gxpy_version_history():
     parse_module_history(gxpy.gdb, gxpy._version_history)
     parse_module_history(gxpy.grd, gxpy._version_history)
     parse_module_history(gxpy.ipj, gxpy._version_history)
-    parse_module_history(gxpy.coordinate_system._version_history)
+    parse_module_history(gxpy.coordinate_system, gxpy._version_history)
     parse_module_history(gxpy.om, gxpy._version_history)
     parse_module_history(gxpy.system, gxpy._version_history)
     parse_module_history(gxpy.utility, gxpy._version_history)

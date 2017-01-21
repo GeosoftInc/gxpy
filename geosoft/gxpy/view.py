@@ -3,7 +3,6 @@ from functools import wraps
 
 import geosoft
 import geosoft.gxapi as gxapi
-from . import map as gxmap
 from . import vv as gxvv
 from . import geometry as gxgm
 from . import ipj as gxipj
