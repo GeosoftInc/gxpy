@@ -12,7 +12,7 @@ from collections import namedtuple, OrderedDict, Hashable
 from geosoft_api import gxapi
 
 GXApiCollectionInfo = namedtuple('GXApiCollectionInfo', ['classes', 'known_classes', 'known_class_handles', 'known_methods', 'known_definitions', 'known_definition_values'])
-__global_collection = 0
+global_collection = 0
 
 class memoized(object):
 	'''Decorator. Caches a function's return value each time it is called.
@@ -46,19 +46,19 @@ def convert_camel_case(name):
 	return s2.replace("3_d", "_3d")
 
 def is_class(type_name):
-	return type_name in __global_collection.known_classes or type_name in __global_collection.known_class_handles
+	return type_name in global_collection.known_classes or type_name in global_collection.known_class_handles
 	
 def get_class(type_name):
-	if type_name in __global_collection.known_classes:
-		return __global_collection.known_classes[type_name]
-	elif type_name in __global_collection.known_class_handles:
-		return __global_collection.known_class_handles[type_name]
+	if type_name in global_collection.known_classes:
+		return global_collection.known_classes[type_name]
+	elif type_name in global_collection.known_class_handles:
+		return global_collection.known_class_handles[type_name]
 	else:
 		return None
 
 def get_python_defintion_value(defintion_value):
-	if defintion_value.val in __global_collection.known_definition_values:
-		return __global_collection.known_definition_values[defintion_value.val]['defined_value'].get_python_value()
+	if defintion_value.val in global_collection.known_definition_values:
+		return global_collection.known_definition_values[defintion_value.val]['defined_value'].get_python_value()
 	else:
 		if defintion_value.type == 'System.String':
 			return '"' + defintion_value.val + '"'
@@ -66,15 +66,15 @@ def get_python_defintion_value(defintion_value):
 			return "(" + defintion_value.get_cpp_const_type() + ")" + defintion_value.get_value_without_casts()
 
 def parse_type(type_name):
-	if type_name in __global_collection.known_class_handles:
-		return __global_collection.known_class_handles[type_name].name
+	if type_name in global_collection.known_class_handles:
+		return global_collection.known_class_handles[type_name].name
 	else:
 		return type_name
 
 def get_cpp_return_cast(type_name):
 	if type_name == "bool":
 		return "0 != "
-	elif type_name in __global_collection.known_definitions:
+	elif type_name in global_collection.known_definitions:
 		return "(" + type_name + ")"
 	else:
 		return ""
@@ -82,8 +82,8 @@ def get_cpp_return_cast(type_name):
 def get_is_cpp_long_equivalent(type_name):
 	if type_name == 'int32_t': 
 		return True
-	elif type_name in __global_collection.known_definitions:
-		return not __global_collection.known_definitions[type_name].constant
+	elif type_name in global_collection.known_definitions:
+		return not global_collection.known_definitions[type_name].constant
 	return False
 	
 def get_cpp_type(type_name, no_pointer=False):
@@ -119,10 +119,10 @@ def restructured_directive(start, contents):
 	return start + " " + indent.join(contents.strip().split('\n')) + "\n"
 
 def word_to_ref(word, allow_classes):
-	if allow_classes and word in __global_collection.known_classes:
+	if allow_classes and word in global_collection.known_classes:
 		return "\\ :class:`geosoft.gxapi.GX" + word + "`\\ "
-	elif word in __global_collection.known_methods:
-		method_info = __global_collection.known_methods[word]
+	elif word in global_collection.known_methods:
+		method_info = global_collection.known_methods[word]
 		method = method_info['method']
 		gxclass = method_info['gxclass']
 		return "\\ :func:`geosoft.gxapi.GX" + gxclass.name + "." + gxclass.py_method_name(method) + "`\\ "
@@ -146,8 +146,8 @@ def define_refs_repl(matchobj):
 		return "bool"
 	else:
 		definition_name = matchobj.group(1)
-		if definition_name in __global_collection.known_definitions:
-			definition = __global_collection.known_definitions[definition_name]
+		if definition_name in global_collection.known_definitions:
+			definition = global_collection.known_definitions[definition_name]
 			if definition.null_handle:
 				return "\\ :func:`geosoft.gxapi.GX" + definition_name.replace("_NULL", "") + ".null()`\\ "
 		return "\\ :ref:`" + matchobj.group(1) + "`\\ "
@@ -255,7 +255,7 @@ def resolve_enum_type_from_description(type_name, description):
 	if description and type_name == "int":
 		defines = re.findall("<define>(.+?)</define>", description)
 		if len(defines) == 1:
-			if not defines[0] in __global_collection.known_definitions:
+			if not defines[0] in global_collection.known_definitions:
 				raise Exception('Unknown definition indicated for parameter or return value: ' + defines[0])
 			return defines[0]
 	return type_name
@@ -645,13 +645,13 @@ def render_template(j2env, namespace_parts, build_version, output_dir, template_
 	output_file = os.path.join(output_dir, template_name)
 	print('Rendering: ' + output_file)
 	template = j2env.get_template(template_name)
-	open(output_file, 'w+').write(template.render(build_version=build_version, classes=sorted(__global_collection.classes , key=lambda gxclass: gxclass.name) if sort_classes else __global_collection.classes, namespace_parts=namespace_parts))
+	open(output_file, 'w+').write(template.render(build_version=build_version, classes=sorted(global_collection.classes , key=lambda gxclass: gxclass.name) if sort_classes else global_collection.classes, namespace_parts=namespace_parts))
 	
 
 def render_python_imports(j2env, namespace_parts, output_dir):
 	template = j2env.get_template('python_import.cpp')
 	
-	for gxclass in __global_collection.classes:
+	for gxclass in global_collection.classes:
 		# TODO Expose CGEO::GetPtrVM and CGEO::GetPtrVV the way we do in C# (remove
 		# comments from python_module.cpp when completed)
 		# TODO expose void * and callback methods in PG class in a sensible way and
@@ -665,7 +665,7 @@ def render_python_imports(j2env, namespace_parts, output_dir):
 def render_sphinx_rsts(j2env, namespace_parts, output_dir):
 	template = j2env.get_template('class.rst')
 	
-	for gxclass in __global_collection.classes:
+	for gxclass in global_collection.classes:
 		# TODO Expose CGEO::GetPtrVM and CGEO::GetPtrVV the way we do in C# (remove
 		# comments from python_module.cpp when completed)
 		# TODO expose void * and callback methods in PG class in a sensible way and
@@ -677,7 +677,7 @@ def render_sphinx_rsts(j2env, namespace_parts, output_dir):
 
 def generate_code(pickled_collection_file, namespace, build_version, output_dir):
 	from jinja2 import Environment, FileSystemLoader
-	global __global_collection
+	global global_collection
 	global __j2env
 	
 	if not os.path.exists(output_dir):
@@ -693,7 +693,7 @@ def generate_code(pickled_collection_file, namespace, build_version, output_dir)
 						trim_blocks = True,
 						lstrip_blocks = True)
 						
-	__global_collection = object_from_pickled_file(pickled_collection_file)
+	global_collection = object_from_pickled_file(pickled_collection_file)
 
 	start = time.perf_counter()
 	render_template(j2env, namespace_parts, build_version, output_dir, 'gxcpp_geogx.h')
