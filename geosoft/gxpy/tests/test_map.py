@@ -16,16 +16,16 @@ def new_test_map(mapname='test', rescale=1.0, locate=None):
     with gxmap.GXmap.new(test_map, overwrite=True) as gmap:
         with gxv.GXview(gmap, "rectangle_test") as view:
             view.start_group('rectangle')
-            view.xy_rectangle(gxgm.Point((0, 0)), gxgm.Point((250, 110)), pen={'line_thick': 1})
+            view.xy_rectangle((gxgm.Point((0, 0)), gxgm.Point((250, 110))), pen={'line_thick': 1})
 
             p1 = gxgm.Point((5, 5)) * rescale
             p2 = gxgm.Point((100, 100)) * rescale
             poff = gxgm.Point((10, 5)) * rescale
             view.pen = {'fill_color': gxapi.C_LT_GREEN}
-            view.xy_rectangle(p1, p2)
+            view.xy_rectangle((p1, p2))
 
             view.pen = {'line_style': (2, 2.0)}
-            view.xy_line(p1 + poff, p2 - poff)
+            view.xy_line((p1 + poff, p2 - poff))
 
         with gxv.GXview(gmap, "poly") as view:
             view.start_group('poly')
@@ -123,8 +123,6 @@ class Test(unittest.TestCase):
             self.assertTrue('Base' in views)
             self.assertTrue('Data' in views)
 
-
-    @unittest.skip("new_test_map fails with TypeError: xy_rectangle() takes 2 positional arguments but 3 were given") # TODO
     def test_lists(self):
         self.start(gsys.func_name())
 
