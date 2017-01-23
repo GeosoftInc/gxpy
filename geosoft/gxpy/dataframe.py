@@ -21,9 +21,13 @@ class DfException(Exception):
 def table_record(table, rec):
     """
     Return a dictionary of a single record from a table
+
     :param table:   table name
     :param rec:     record wanted
     :return:        dictionary containing record values as strings
+
+    .. versionadded:: 9.2
+    '''
     """
 
     t = GXdf(table, records=rec)
@@ -32,9 +36,13 @@ def table_record(table, rec):
 def table_column(table, col):
     """
     Return a dictionary of a column from a table
+
     :param table:   table name
     :param col:     column wanted
     :return:        dictionary containing record values as strings
+
+    .. versionadded:: 9.2
+    '''
     """
 
     t = GXdf(table, columns=col).to_dict(orient='index')
@@ -80,14 +88,15 @@ class GXdf(pd.DataFrame):
         cbt,CBT,CARBONATITE,305,,,,R128G128B192
 
     .. code::
+
         include geosoft.gxpy as gxpy
         with gxpy.GXpy() as gx:
             with gxpy.dataframe.GXdf('rockcode') as df:
                 print(len(df))
                 print(df.loc['bif', 'DESCRIPTION']) # "BANDED IRON FM"
-                print(df.loc['BIF'][1])             # "BANDED IRON FM"
+                print(df.loc['bif'][1])             # "BANDED IRON FM"
                 print(df.iloc[1,0])                 # "BIF"
-                print(df.loc['CAL', 'PATTERN'])     # "315"
+                print(df.loc['cal', 'PATTERN'])     # "315"
 
     .. versionadded:: 9.2
     '''
