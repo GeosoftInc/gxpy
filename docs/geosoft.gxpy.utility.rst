@@ -1,5 +1,5 @@
 geosoft.gxpy.utility submodule
-==============================
+====================================
 
 .. automodule:: geosoft.gxpy.utility
     :members:

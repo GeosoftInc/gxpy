@@ -12,6 +12,8 @@ New Classes
 
 :class:`geosoft.gxpy.coordinate_system.GXpj`
 
+:class:`geosoft.gxpy.dataframe.GXdf`
+
 :class:`geosoft.gxpy.geometry.Geometry`
 
 :class:`geosoft.gxpy.geometry.PPoint`
@@ -26,9 +28,13 @@ New Classes
 
 :exc:`geosoft.gxpy.coordinate_system.CSException`
 
+:exc:`geosoft.gxpy.dataframe.DfException`
+
 :exc:`geosoft.gxpy.map.MapException`
 
 :exc:`geosoft.gxpy.view.ViewException`
+
+:exc:`geosoft.gxpy.viewer.ViewerException`
 
 
 New Functions
@@ -124,6 +130,10 @@ New Functions
 
 :func:`geosoft.gxpy.view.GXview3d.xy_rectangle`
 
+:func:`geosoft.gxpy.viewer.map`
+
+:func:`geosoft.gxpy.viewer.v3d`
+
 
   
 Version 9.1
@@ -142,6 +152,8 @@ New Classes
 
 :class:`geosoft.gxpy.ipj.GXpj`
 
+:class:`geosoft.gxpy.va.GXva`
+
 :class:`geosoft.gxpy.vv.GXvv`
 
 :exc:`geosoft.gxpy.gdb.GDBException`
@@ -157,6 +169,8 @@ New Classes
 :exc:`geosoft.gxpy.system.GXSysException`
 
 :exc:`geosoft.gxpy.utility.UtilityException`
+
+:exc:`geosoft.gxpy.va.VAException`
 
 :exc:`geosoft.gxpy.vv.VVException`
 
@@ -351,6 +365,28 @@ New Functions
 :func:`geosoft.gxpy.utility.set_shared_dict`
 
 :func:`geosoft.gxpy.utility.yearFromJulianDay2`
+
+:func:`geosoft.gxpy.va.GXva.dtype`
+
+:func:`geosoft.gxpy.va.GXva.fid`
+
+:func:`geosoft.gxpy.va.GXva.gxtype`
+
+:func:`geosoft.gxpy.va.GXva.length`
+
+:func:`geosoft.gxpy.va.GXva.np`
+
+:func:`geosoft.gxpy.va.GXva.reFid`
+
+:func:`geosoft.gxpy.va.GXva.setFid`
+
+:func:`geosoft.gxpy.va.GXva.size`
+
+:func:`geosoft.gxpy.va.GXva.va_np`
+
+:func:`geosoft.gxpy.va.GXva.va`
+
+:func:`geosoft.gxpy.va.GXva.width`
 
 :func:`geosoft.gxpy.vv.GXvv.dtype`
 

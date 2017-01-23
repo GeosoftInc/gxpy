@@ -1,6 +1,7 @@
 import os
 import inspect
 from pkg_resources import parse_version
+
 import geosoft.gxpy as gxpy
 import geosoft.gxapi as gxa
 import re
@@ -57,18 +58,9 @@ def collect_gxa_version_history():
 
 def collect_gxpy_version_history():
     gxpy._version_history = {}
-    parse_module_history(gxpy.gx, gxpy._version_history)
-    parse_module_history(gxpy.gdb, gxpy._version_history)
-    parse_module_history(gxpy.grd, gxpy._version_history)
-    parse_module_history(gxpy.ipj, gxpy._version_history)
-    parse_module_history(gxpy.coordinate_system, gxpy._version_history)
-    parse_module_history(gxpy.om, gxpy._version_history)
-    parse_module_history(gxpy.system, gxpy._version_history)
-    parse_module_history(gxpy.utility, gxpy._version_history)
-    parse_module_history(gxpy.vv, gxpy._version_history)
-    parse_module_history(gxpy.geometry, gxpy._version_history)
-    parse_module_history(gxpy.view, gxpy._version_history)
-    parse_module_history(gxpy.map, gxpy._version_history)
+    for attr, value in gxpy.__dict__.items():
+        if not attr.startswith("_") and inspect.ismodule(value):
+            parse_module_history(value, gxpy._version_history)
     gxpy._versions = reversed(sorted(gxpy._version_history.keys()))
 
 def gen_version_history(j2env, output_dir):
@@ -80,6 +72,45 @@ def gen_version_history(j2env, output_dir):
     with open(output_file, 'w+') as f:
         f.write(template.render(modules=modules))
 
+def gen_version_history(j2env, output_dir):
+    collect_gxpy_version_history()
+    collect_gxa_version_history()
+    modules = [gxpy, gxa]
+    template = j2env.get_template('version_history.rst')
+    output_file = os.path.join(output_dir, 'version_history.rst')
+    with open(output_file, 'w+') as f:
+        f.write(template.render(modules=modules))
+
+
+def gen_gxapi_rsts(j2env, output_dir):
+    template = j2env.get_template('gxapi_class.rst')
+    classes = inspect.getmembers(gxa, inspect.isclass)
+    for cl_key, cl_value in classes:
+        if (cl_key.startswith("GX") 
+            and not cl_key == "GXContext"
+            and not cl_key == "GXCancel" 
+            and not cl_key == "GXExit" 
+            and not cl_key == "GXError" 
+            and not cl_key == "GXAPIError"): 
+             with open(cl_key + '.rst', 'w+') as f:
+                 f.write(template.render(class_name=cl_key, definitions = {}))
+
+def gen_gxapi_toc(j2env, output_dir):
+    template = j2env.get_template('geosoft.gxapi.classes.rst')
+    gxa_classes = inspect.getmembers(gxa, inspect.isclass)
+    classes = [c for c, _ in gxa_classes if not c.startswith('_')]
+    with open('geosoft.gxapi.classes.rst', 'w+') as f:
+        f.write(template.render(classes=classes))
+
+def gen_gxpy_rsts(j2env, output_dir):
+    modules = sorted([k for k, v in gxpy.__dict__.items() if not k.startswith("_") and inspect.ismodule(v)])
+    with open('geosoft.gxpy.rst', 'w+') as f:
+        template = j2env.get_template('geosoft.gxpy.rst')
+        f.write(template.render(modules=modules))
+    template = j2env.get_template('geosoft.gxpy.mod.rst')
+    for module in modules:
+        with open('geosoft.gxpy.' + module + '.rst', 'w+') as f:
+            f.write(template.render(module=module))
 
 def generate():
     from jinja2 import Environment, FileSystemLoader
@@ -91,6 +122,10 @@ def generate():
 						trim_blocks = True,
 						lstrip_blocks = True)
 
+
+    gen_gxpy_rsts(j2env, dir)
+    #gen_gxapi_rsts(j2env, dir)
+    gen_gxapi_toc(j2env, dir)
     gen_version_history(j2env, dir)
 
 if __name__ == "__main__":
