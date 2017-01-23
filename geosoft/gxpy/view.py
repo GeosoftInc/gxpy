@@ -408,12 +408,12 @@ class GXview:
 
         if close:
             self.gxview.poly_line(gxapi.MVIEW_DRAW_POLYGON,
-                                 gxvv.GXvv.vv_np(pp.x)._vv,
-                                 gxvv.GXvv.vv_np(pp.y)._vv)
+                                 gxvv.GXvv(pp.x)._vv,
+                                 gxvv.GXvv(pp.y)._vv)
         else:
             self.gxview.poly_line(gxapi.MVIEW_DRAW_POLYLINE,
-                                 gxvv.GXvv.vv_np(pp.x)._vv,
-                                 gxvv.GXvv.vv_np(pp.y)._vv)
+                                 gxvv.GXvv(pp.x)._vv,
+                                 gxvv.GXvv(pp.y)._vv)
 
     @_draw
     def xy_rectangle(self, p2):

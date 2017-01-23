@@ -4,6 +4,7 @@ from collections.abc import Sequence
 
 import geosoft
 from . import coordinate_system as gxcs
+from . import vv as gxvv
 
 __version__ = geosoft.__version__
 
@@ -253,7 +254,8 @@ class PPoint(Geometry, Sequence):
     """
     Poly-Point class.
 
-    :param xyz: array-like, either (x, y) or (x, y, z) (shape (n, 2) or (n, 3))
+    :param xyz: array-like, either ((x, y), ...), ((x, y, z), ...) or (vv_x, vv_y, [vv_z]).
+                vv data is resampled to match the first vv.
     :param z:   constant z value for (x, y) data, ignored for (x, y, z) data
 
     :member pp: nparray shape (n,3)
@@ -265,16 +267,37 @@ class PPoint(Geometry, Sequence):
 
         super().__init__(**kwargs)
 
-        if type(xyz) is not np.ndarray:
-            xyz = np.array(xyz)
+        def blankpp(length):
+            self.pp = np.zeros(length * 3, dtype=np.float).reshape((length, 3))
 
-        self.pp = np.zeros(xyz.shape[0]*3, dtype=np.float).reshape((xyz.shape[0], 3))
-        self.pp[:, 0] = xyz[:, 0]
-        self.pp[:, 1] = xyz[:, 1]
-        if xyz.shape[1] > 2:
-            self.pp[:, 2] = xyz[:, 2]
+        def np_setup(xyz):
+            blankpp(xyz.shape[0])
+            self.pp[:, 0] = xyz[:, 0]
+            self.pp[:, 1] = xyz[:, 1]
+            if xyz.shape[1] > 2:
+                self.pp[:, 2] = xyz[:, 2]
+            else:
+                self.pp[:, 2] = z
+
+        def vv_setup(xyz):
+            blankpp(xyz[0].length)
+            self.pp[:, 0] = xyz[0].get_np()[0][:]
+            xyz[1].reFid(xyz[0].fid, self.pp.shape[0])
+            self.pp[:, 1] = xyz[1].get_np()[0][:]
+            if len(xyz) > 2:
+                xyz[2].reFid(xyz[0].fid, self.pp.shape[0])
+                self.pp[:, 2] = xyz[2].get_np()[0][:]
+            else:
+                self.pp[:, 2] = z
+
+        t = type(xyz[0])
+        if t is np.ndarray:
+            np_setup(xyz)
+        elif t is gxvv.GXvv:
+            vv_setup(xyz)
         else:
-            self.pp[:, 2] = z
+            np_setup(np.array(xyz))
+
         self._next = 0
 
     @classmethod
