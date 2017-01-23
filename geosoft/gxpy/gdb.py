@@ -855,7 +855,7 @@ class GXdb():
 
         if dtype is None:
             dtype = self.channel_dtype(cs)
-        vv = gxvv.GXvv(dtype)
+        vv = gxvv.GXvv(dtype=dtype)
         self._lock_read(cs)
         try:
             self._db.get_chan_vv(ls, cs, vv._vv)
@@ -886,7 +886,7 @@ class GXdb():
         if dtype is None:
             dtype = self.channel_dtype(cs)
         w = self.channel_width(cs)
-        va = gxva.GXva(w, dtype)
+        va = gxva.GXva(width=w, dtype=dtype)
         self._lock_read(cs)
         try:
             self._db.get_chan_va(ls, cs, va._va)
@@ -911,11 +911,11 @@ class GXdb():
 
         if self.channel_width(channel) == 1:
             vv = self.read_channel_vv(line, channel, dtype)
-            return vv.np(vv.dtype())[0], vv.fid()
+            return vv.get_np(vv.dtype)[0], vv.fid
 
         else:
             va = self.read_channel_va(line, channel, dtype)
-            return va.np(va.dtype())[0], va.fid()
+            return va.get_np(va.dtype)[0], va.fid
 
     def read_line_vv(self, line, channels=None, dtype=None, fid=None, common_fid=False):
         '''
@@ -982,13 +982,13 @@ class GXdb():
             fend = gxapi.GS_R8MN
 
             for vv in chvv:
-                fd = vv[1].fid()
+                fd = vv[1].fid
                 if fd[0] != gxapi.rDUMMY:
                     if fd[0] < start:
                         start = fd[0]
                     if fd[1] < incr:
                         incr = fd[1]
-                    dend = start + incr * (vv[1].length() - 1)
+                    dend = start + incr * (vv[1].length - 1)
                     if dend > fend:
                         fend = dend
             if fid is None:
@@ -1043,8 +1043,8 @@ class GXdb():
 
         # get VVs of data, resampled to a common fid
         data = self.read_line_vv(line, channels, dtype, fid, common_fid=True)
-        nvd = data[0][1].length()
-        fid = data[0][1].fid()
+        nvd = data[0][1].length
+        fid = data[0][1].fid
         nCh = len(data)
 
         # move data to numpy array
@@ -1053,8 +1053,8 @@ class GXdb():
         chNames = []
         for chvv in data:
             vv = chvv[1]
-            if vv.length() > 0:
-                npd[:, len(chNames)] = vv.np(dtype=npd.dtype)[0]
+            if vv.length > 0:
+                npd[:, len(chNames)] = vv.get_np(dtype=npd.dtype)[0]
             else:
                 npd[:, len(chNames)].fill(dummy_value)
             chNames.append(chvv[0])
@@ -1109,7 +1109,7 @@ class GXdb():
 
         except GDBException:
             if type(channel) is str:
-                cs = self.new_channel(channel, vv.dtype())
+                cs = self.new_channel(channel, vv.dtype)
             else:
                 raise
 
@@ -1143,7 +1143,7 @@ class GXdb():
 
         except GDBException:
             if type(channel) is str:
-                cs = self.new_channel(channel, va.dtype(), array=va.width())
+                cs = self.new_channel(channel, va.dtype, array=va.width)
             else:
                 raise
 
@@ -1191,7 +1191,7 @@ class GXdb():
         if w == 1:
 
             # get a VV of the data
-            vv = gxvv.GXvv.vv_np(data, fid)
+            vv = gxvv.GXvv(data, fid=fid)
 
             self._lock_write(cs)
             try:
@@ -1203,7 +1203,7 @@ class GXdb():
         else:
 
             # get a VA of the data
-            va = gxva.GXva.va_np(data, fid)
+            va = gxva.GXva(data, fid=fid)
 
             self._lock_write(cs)
             try:

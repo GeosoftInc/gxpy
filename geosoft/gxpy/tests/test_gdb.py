@@ -59,24 +59,24 @@ class Test(unittest.TestCase):
 
         with gxgdb.GXdb.open(self.gdb_name) as gdb:
             gdb.delete_channel('test_chan_vv')
-            vv = gxvv.GXvv.vv_np(np.array([1.,2.,3.]), fid=(-10, 2.5))
+            vv = gxvv.GXvv(np.array([1.,2.,3.]), fid=(-10, 2.5))
             gdb.write_channel_vv('T46', 'test_chan_vv', vv)
             vv = gdb.read_channel_vv('T46', 'test_chan_vv')
-            self.assertEqual(vv.length(), 3)
-            self.assertEqual(vv.fid(), (-10.0, 2.5))
+            self.assertEqual(vv.length, 3)
+            self.assertEqual(vv.fid, (-10.0, 2.5))
             va = gdb.read_channel_va('T46', 'test_chan_vv')
-            self.assertEqual(va.width(), 1)
-            self.assertEqual(va.length(), 3)
-            self.assertEqual(va.fid(), (-10.0, 2.5))
+            self.assertEqual(va.width, 1)
+            self.assertEqual(va.length, 3)
+            self.assertEqual(va.fid, (-10.0, 2.5))
             gdb.delete_channel('test_chan_vv')
     
-            va = gxva.GXva.va_np(np.array([[1., 2., 3.],[8,9,10]]), fid=(-10, 2.5))
+            va = gxva.GXva(np.array([[1., 2., 3.],[8,9,10]]), fid=(-10, 2.5))
             gdb.write_channel_va('T46', 'test_chan_va', va)
             self.assertRaises(gxgdb.GDBException, gdb.read_channel_vv, 'T46', 'test_chan_va')
             va = gdb.read_channel_va('T46', 'test_chan_va')
-            self.assertEqual(va.width(), 3)
-            self.assertEqual(va.length(), 2)
-            self.assertEqual(va.fid(), (-10.0, 2.5))
+            self.assertEqual(va.width, 3)
+            self.assertEqual(va.length, 2)
+            self.assertEqual(va.fid, (-10.0, 2.5))
             gdb.delete_channel('test_chan_va')
 
     def test_group_VA_read_write(self):
@@ -238,8 +238,8 @@ class Test(unittest.TestCase):
             for chvv in data:
                 self.assertEqual(len(data), 8)
                 vv = chvv[1]
-                fid = vv.fid()
-                self.assertEqual(vv.length(), 832)
+                fid = vv.fid
+                self.assertEqual(vv.length, 832)
                 self.assertEqual(fid[0], 0.0)
                 self.assertEqual(fid[1], 1.0)
 
@@ -247,8 +247,8 @@ class Test(unittest.TestCase):
             for chvv in data:
                 self.assertEqual(len(data), 8)
                 vv = chvv[1]
-                fid = vv.fid()
-                self.assertEqual(vv.length(), 832)
+                fid = vv.fid
+                self.assertEqual(vv.length, 832)
                 self.assertEqual(fid[0], 0.0)
                 self.assertEqual(fid[1], 1.0)
 
@@ -256,8 +256,8 @@ class Test(unittest.TestCase):
             for chvv in data:
                 self.assertEqual(len(data), 8)
                 vv = chvv[1]
-                fid = vv.fid()
-                self.assertEqual(vv.length(), 175)
+                fid = vv.fid
+                self.assertEqual(vv.length, 175)
                 self.assertEqual(fid[0], 0.1)
                 self.assertEqual(fid[1], 4.8)
 
@@ -266,24 +266,24 @@ class Test(unittest.TestCase):
             self.assertEqual(len(data), 5)
             self.assertEqual(data[0][0], 'X')
             self.assertEqual(data[4][0], 'dy')
-            npd = data[0][1].np()[0]
+            npd = data[0][1].get_np()[0]
             self.assertEqual(npd[10], 578625.0)
-            npd = data[1][1].np()[0]
+            npd = data[1][1].get_np()[0]
             self.assertEqual(npd[10], 7773625.0)
-            npd = data[2][1].np()[0]
+            npd = data[2][1].get_np()[0]
             self.assertEqual(npd[10], -1195.7531280517615)
 
             data = gdb.read_line_vv(ls, 'X')
             self.assertEqual(data[0][0], 'X')
-            npd = data[0][1].np()[0]
+            npd = data[0][1].get_np()[0]
             self.assertEqual(npd[10],578625.0)
 
             data = gdb.read_line_vv(ls,channels=['X','Y','Z'], dtype='<U32')
-            npd = data[0][1].np()[0]
+            npd = data[0][1].get_np()[0]
             self.assertEqual(npd[10], '578625.0')
-            npd = data[1][1].np()[0]
+            npd = data[1][1].get_np()[0]
             self.assertEqual(npd[10], '7773625.0')
-            npd = data[2][1].np()[0]
+            npd = data[2][1].get_np()[0]
             self.assertEqual(npd[10], '-1195.8')
 
             gdb.discard()
@@ -315,7 +315,7 @@ class Test(unittest.TestCase):
 
             gdb.delete_channel('test')
             gdb.new_channel('test')
-            vv = gxvv.GXvv.vv_np(np.array([1.0,2.0,3.0,4.0]))
+            vv = gxvv.GXvv(np.array([1.0,2.0,3.0,4.0]))
             gdb.write_channel_vv('D590875', 'test', vv)
             npd, ch, fid = gdb.read_line('D590875', channels=['test'])
             self.assertEqual(npd.shape,(4,1))
@@ -324,7 +324,7 @@ class Test(unittest.TestCase):
             gdb.delete_channel('test')
             gdb.new_channel('test', np.float64)
             vv = gxvv.GXvv(dtype=np.float64)
-            vv.vv(np.array([1,2,3,4], dtype=np.int64))
+            vv.set_np(np.array([1,2,3,4], dtype=np.int64))
             gdb.write_channel_vv('D590875', 'test', vv)
             npd,ch,fid = gdb.read_line('D590875', channels=['test'], dtype=np.int)
             self.assertEqual(npd.shape,(4,1))
@@ -339,7 +339,7 @@ class Test(unittest.TestCase):
 
             gdb.delete_channel('test')
             gdb.new_channel('test', dtype=np.int32)
-            vv.setFid((3,2))
+            vv.fid = (3,2)
             gdb.write_channel_vv('D590875', 'test', vv)
             npd,ch,fid = gdb.read_line('D590875', 'test', dtype=int)
             self.assertEqual(npd.shape,(4,1))
@@ -348,7 +348,7 @@ class Test(unittest.TestCase):
             self.assertEqual(fid[1],2.0)
 
             gdb.new_channel('test', np.int32)
-            vv = gxvv.GXvv.vv_np(np.array([1, 2, 3, 4], dtype=np.int32), fid=(2.5,0.33))
+            vv = gxvv.GXvv(np.array([1, 2, 3, 4], dtype=np.int32), fid=(2.5,0.33))
             gdb.write_channel_vv('D590875', 'test', vv)
             npd,ch,fid = gdb.read_line('D590875', channels=['test'])
             self.assertEqual(npd.shape,(4,1))
@@ -455,7 +455,7 @@ class Test(unittest.TestCase):
 
             data = gdb.read_line_vv('D578625',channels=['dx','dy','vector'])
             ch = [c[0] for c in data]
-            datalen = data[0][1].length()
+            datalen = data[0][1].length
 
             gdb.delete_line('testline')
             gdb.new_line('testline')

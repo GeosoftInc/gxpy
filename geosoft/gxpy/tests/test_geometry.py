@@ -9,6 +9,7 @@ import geosoft.gxpy.system as gsys
 import geosoft.gxpy.map as gxmap
 import geosoft.gxpy.view as gxgm
 import geosoft.gxpy.geometry as gxgm
+import geosoft.gxpy.vv as gxvv
 
 class Test(unittest.TestCase):
 
@@ -175,6 +176,30 @@ class Test(unittest.TestCase):
 
         pp.xy = [(1, 2), (3,4), (5,6)]
         self.assertEqual(pp.xy.tolist(), [[1., 2.], [3., 4.], [5., 6.]])
+
+    def test_ppoint_constructors(self):
+        self.start(gsys.func_name())
+
+        def verify():
+            self.assertEqual(pp.x.tolist(), [1., 4., 7., 10., 13.])
+            self.assertEqual(pp.z.tolist(), [3., 6., 9., 12., 15.])
+            self.assertEqual(pp.xy.tolist(), nppp[:, :2].tolist())
+
+        lpp = ((1, 2, 3), (4, 5, 6), (7, 8, 9), (10, 11, 12), (13, 14, 15))
+        nppp = np.array(lpp)
+        pp = gxgm.PPoint(lpp)
+        verify()
+
+        nppp = np.array(lpp)
+        pp = gxgm.PPoint(nppp)
+        verify()
+
+        vvx = gxvv.GXvv(nppp[:, 0])
+        vvy = gxvv.GXvv(nppp[:, 1])
+        vvz = gxvv.GXvv(nppp[:, 2])
+        pp = gxgm.PPoint((vvx, vvy, vvz))
+        verify()
+
 
     def test_copy(self):
         self.start(gsys.func_name())

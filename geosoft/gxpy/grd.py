@@ -311,6 +311,7 @@ class GXgrd():
     def close(self):
         self._close()
 
+    @property
     def dtype(self):
         """
         :return: numpy data type for the grid
@@ -335,7 +336,7 @@ class GXgrd():
         properties['dx'] = self._img.query_double(gxapi.IMG_QUERY_rDX)
         properties['dy'] = self._img.query_double(gxapi.IMG_QUERY_rDY)
         properties['rot'] = self._img.query_double(gxapi.IMG_QUERY_rROT)
-        properties['dtype'] = self.dtype()
+        properties['dtype'] = self.dtype
         np = name_parts(self._filename)
         properties['filename'] = os.path.join(np[0], np[1])
         if len(np[4]) > 0:
@@ -469,10 +470,9 @@ class GXgrd():
         """
 
         ny, nx = data.shape
-        vv = gxvv.GXvv(self.dtype())
         iy = iy0
         for i in range(ny):
-            self._img.write_y(iy, ix0, 0, vv.vv_np(data[i, :])._vv)
+            self._img.write_y(iy, ix0, 0, gxvv.GXvv(data[i, :], dtype=self.dtype)._vv)
             iy += order
 
     def read_rows(self, ix0=0, iy0=0):

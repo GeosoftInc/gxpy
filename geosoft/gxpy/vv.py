@@ -24,9 +24,14 @@ class GXvv():
     '''
     VV class wrapper.
 
-    :param dtype:   numpy data type, or 'str#', where # is a string length, default np.float
+    :param array:   array-like, None to create an empty VV
+    :param dtype:   numpy data type, or 'str#', where # is a string length. If not specified
+                    the type is taken from datadefault np.float
     :param fid:     fid tuple (start,increment), default (0.0,1.0)
-    :constructor vvNP:  create from a numpy array
+    :constructor vv_np:  create from a numpy array
+
+    .. versionchanged:: 9.2
+        allow construction directly from arrays
 
     .. versionadded:: 9.1
     '''
@@ -37,7 +42,16 @@ class GXvv():
     def __exit__(self, type, value, traceback):
         pass
 
-    def __init__(self, dtype=np.float, fid=(0.0, 1.0)):
+    def __init__(self, array=None, dtype=None, fid=(0.0, 1.0)):
+
+        if (array is not None) and (type(array) is not np.ndarray):
+            if dtype is None:
+                dtype = np.dtype(type(array[1]))
+            array = np.array(array, dtype=dtype)
+
+        if dtype is None:
+            dtype = array.dtype
+
         self._gxtype = gxu.gx_dtype(dtype)
         self._dtype = gxu.dtype_gx(self._gxtype)
         self._vv = gxapi.GXVV.create_ext(self._gxtype, 0)
@@ -45,33 +59,17 @@ class GXvv():
         self._vv.set_fid_incr(fid[1])
         self._sr = None
 
-    @classmethod
-    def vv_np(cls, npdata, fid=(0.0, 1.0)):
-        """
-        Create a VV from numpy data.
+        if array is not None:
+            if self._gxtype >= 0:
+                self._vv.set_data_np(0, array.flatten())
+            else:
+                # strings
+                array = array.flatten()
+                ne = array.shape[0]
+                for i in range(ne):
+                    self._vv.set_string(i, str(array[i]))
 
-        :param npdata:  numpy data array
-        :param fid:     fid tuple (start,increment), default (0.0,1.0)
-        :return:        GXvv
-
-        .. versionadded:: 9.1
-        """
-
-        vv = cls(dtype=npdata.dtype, fid=fid)
-
-        # numerical data
-        if vv._gxtype >= 0:
-            vv._vv.set_data_np(0, npdata.flatten())
-
-        # strings
-        else:
-            npdata = npdata.flatten()
-            ne = npdata.shape[0]
-            for i in range(ne):
-                vv._vv.set_string(i, str(npdata[i]))
-
-        return vv
-
+    @property
     def fid(self):
         '''
         :return:    fid tuple (start,increment)
@@ -82,16 +80,44 @@ class GXvv():
         incr = self._vv.get_fid_incr()
         return (start, incr)
 
-    def setFid(self, fid):
+    @fid.setter
+    def fid(self, fid):
         '''
         Set the fiducial of the vv.
 
         :param fid: (fidStart,fidIncrement)
 
-        .. versionadded:: 9.1
+        .. versionadded:: 9.2
         '''
         self._vv.set_fid_start(fid[0])
         self._vv.set_fid_incr(fid[1])
+
+    @property
+    def length(self):
+        '''
+        :return:    number of elements in the VV
+
+        .. versionadded:: 9.1
+        '''
+        return self._vv.length()
+
+    @property
+    def gxtype(self):
+        '''
+        :return: GX data type
+
+        .. versionadded:: 9.1
+        '''
+        return self._gxtype
+
+    @property
+    def dtype(self):
+        '''
+        :return: numpy data type
+
+        .. versionadded:: 9.1
+        '''
+        return self._dtype
 
     def reFid(self, fid, length):
         '''
@@ -104,33 +130,9 @@ class GXvv():
         '''
         self._vv.re_fid(fid[0], fid[1], length)
 
-    def length(self):
+    def get_np(self, dtype=None, start=0, n=None):
         '''
-        :return:    number of elements in the VV
-
-        .. versionadded:: 9.1
-        '''
-        return self._vv.length()
-
-    def gxtype(self):
-        '''
-        :return: GX data type
-
-        .. versionadded:: 9.1
-        '''
-        return self._gxtype
-
-    def dtype(self):
-        '''
-        :return: numpy data type
-
-        .. versionadded:: 9.1
-        '''
-        return self._dtype
-
-    def np(self, dtype=None, start=0, n=None):
-        '''
-        Return (numpy_data, fid) from a vv.
+        Return vv data in a numpy array
 
         :param start:   index of first value, must be >=0
         :param n:       number of values wanted
@@ -146,12 +148,12 @@ class GXvv():
             dtype = np.dtype(dtype)
 
         if n is None:
-            n = self.length() - start
+            n = self.length - start
         else:
-            n = min((self.length() - start), n)
+            n = min((self.length - start), n)
 
         if (n <= 0) or (start < 0):
-            raise VVException(_t('Cannot get (start,n) ({},{}) from vv of length {}').format(start, n, self.length()))
+            raise VVException(_t('Cannot get (start,n) ({},{}) from vv of length {}').format(start, n, self.length))
 
         # strings wanted
         if dtype.type is np.str_:
@@ -179,13 +181,13 @@ class GXvv():
             else:
                 npd = self._vv.get_data_np(start, n, dtype)
 
-        fid = self.fid()
+        fid = self.fid
         start = fid[0] + start * fid[1]
         return npd, (start, fid[1])
 
-    def vv(self, npdata, fid=(0.0, 1.0)):
+    def set_np(self, npdata, fid=(0.0, 1.0)):
         """
-        Copy numpy data to the vv.
+        Set vv data from a numpy array
 
         :param npdata:  numpy data array
         :param fid:     fid tuple (start,increment), default (0.0,1.0)
@@ -206,4 +208,4 @@ class GXvv():
                 self._vv.set_string(i, str(npdata[i]))
 
         self._vv.set_len(npdata.shape[0])
-        self.setFid(fid)
+        self.fid = fid
