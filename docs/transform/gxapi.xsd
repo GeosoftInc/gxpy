@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema
+	targetNamespace='http://www.geosoft.com/gxapi'
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:gxapi="http://www.geosoft.com/gxapi">
+	<xs:element name="gxclass">
+		<xs:complexType>
+			<xs:all>
+				<xs:element ref="gxapi:notes" minOccurs="0"/>
+				<xs:element ref="gxapi:verbatim_defines" minOccurs="0"/>
+				<xs:element ref="gxapi:description" minOccurs="0"/>
+				<xs:element ref="gxapi:definitions" minOccurs="0"/>
+				<xs:element ref="gxapi:methodgroups" minOccurs="0"/>
+			</xs:all>
+			<xs:attribute name="name" type="xs:string"/>
+			<xs:attribute name="handlename" type="xs:string"/>
+			<xs:attribute name="nogxh" type="xs:boolean"/>
+			<xs:attribute name="nocsharp" type="xs:boolean"/>
+			<xs:attribute name="nocpp" type="xs:boolean"/>
+		</xs:complexType>
+	</xs:element>
+  <xs:element name="definitions">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="gxapi:definition" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="definition">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="gxapi:description" minOccurs="0" maxOccurs="1"/>
+        <xs:element ref="gxapi:defined_value" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+      <xs:attribute name="name" type="xs:string"/>
+      <xs:attribute name="constant" type="xs:boolean"/>
+      <xs:attribute name="single_constant" type="xs:boolean"/>
+      <xs:attribute name="null_handle" type="xs:boolean"/>
+      <xs:attribute name="cpp_prefix" type="xs:string"/>
+    </xs:complexType>
+  </xs:element>
+	<xs:element name="defined_value">
+		<xs:complexType>
+			<xs:all>
+				<xs:element ref="gxapi:description" minOccurs="0" maxOccurs="1"/>
+			</xs:all>
+			<xs:attribute name="val" type="xs:string"/>
+			<xs:attribute name="type" type="xs:string"/>
+			<xs:attribute name="name" type="xs:string"/>
+			<xs:attribute name="cpp_type" type="xs:string"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="parameter">
+		<xs:complexType>
+      <xs:all>
+				<xs:element ref="gxapi:description" minOccurs="0" maxOccurs="1"/>
+			</xs:all>
+			<xs:attribute name="size_of_param" type="xs:int"/>
+			<xs:attribute name="size_of_param_intval" type="xs:boolean"/>
+			<xs:attribute name="type" type="xs:string"/>
+			<xs:attribute name="cstype" type="xs:string"/>
+			<xs:attribute name="defaultlength" type="xs:string"/>
+			<xs:attribute name="novariable" type="xs:boolean"/>
+		</xs:complexType>
+	</xs:element>
+  <xs:element name="methodgroups">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="gxapi:methodgroup" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="methodgroup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="gxapi:method" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+      <xs:attribute name="name" type="xs:string"/>
+    </xs:complexType>
+  </xs:element>
+	<xs:element name="method">
+		<xs:complexType>
+      <xs:all>
+				<xs:element ref="gxapi:see_also" minOccurs="0"/>
+				<xs:element ref="gxapi:notes" minOccurs="0"/>
+				<xs:element ref="gxapi:description"/>
+				<xs:element ref="gxapi:returnval"/>
+				<xs:element ref="gxapi:parameters"/>
+				<xs:element ref="gxapi:cpp_decl" minOccurs="0"/>
+				<xs:element ref="gxapi:cpp_impl" minOccurs="0"/>
+				<xs:element ref="gxapi:python_impl" minOccurs="0"/>
+				<xs:element ref="gxapi:python_import" minOccurs="0"/>
+				<xs:element ref="gxapi:dbus_xml" minOccurs="0"/>
+				<xs:element ref="gxapi:dbus_impl" minOccurs="0"/>
+				<xs:element ref="gxapi:dbus_callback" minOccurs="0"/>
+			</xs:all>
+			<xs:attribute name="name" type="xs:string"/>
+			<xs:attribute name="module" type="xs:string"/>
+			<xs:attribute name="license" type="xs:string"/>
+			<xs:attribute name="available" type="xs:string"/>
+			<xs:attribute name="externalname" type="xs:string"/>
+			<xs:attribute name="obsolete" type="xs:boolean"/>
+			<xs:attribute name="nogxh" type="xs:boolean"/>
+			<xs:attribute name="nocsharp" type="xs:boolean"/>
+			<xs:attribute name="guicall" type="xs:boolean"/>
+			<xs:attribute name="nocpp" type="xs:boolean"/>
+			<xs:attribute name="cpp_pre" type="xs:string"/>
+			<xs:attribute name="cpp_post" type="xs:string"/>
+			<xs:attribute name="dbus_exp_name" type="xs:string"/>
+		</xs:complexType>
+	</xs:element>
+  <xs:element name="parameters">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="gxapi:parameter" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="returnval">
+    <xs:complexType>
+      <xs:all>
+        <xs:element ref="gxapi:description" minOccurs="0" maxOccurs="1"/>
+      </xs:all>
+      <xs:attribute name="type" type="xs:string"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="see_also" type="xs:string"/>
+	<xs:element name="description" type="xs:string"/>
+	<xs:element name="notes" type="xs:string"/>
+	<xs:element name="verbatim_defines" type="xs:string"/>
+	<xs:element name="cpp_decl" type="xs:string"/>
+	<xs:element name="cpp_impl" type="xs:string"/>
+	<xs:element name="python_impl" type="xs:string"/>
+	<xs:element name="python_import" type="xs:string"/>
+	<xs:element name="dbus_xml" type="xs:string"/>
+	<xs:element name="dbus_impl" type="xs:string"/>
+	<xs:element name="dbus_callback" type="xs:string"/>
+
+</xs:schema>

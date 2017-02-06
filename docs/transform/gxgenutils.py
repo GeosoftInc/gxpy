@@ -180,6 +180,9 @@ def docstring_literal_seealso(description):
 def docstring_literal_version(version):
 	return '\n"\\n.. versionadded:: ' + version + '\\n\\n"\n'
 
+def multi_line_fixup(description):
+	return description.replace("\\", "\\\\").replace("\"", "\\\"")
+
 def docstring_multi_line(description):
 	description = docstring_fixes(description)
 	return '\n"' + '\\n"\n"'.join(description.replace("\\", "\\\\").replace("\"", "\\\"").split('\n')) + '\\n"\n'
@@ -215,7 +218,22 @@ class defined_value_class(gxapi.defined_value.typeDefinition()):
 			return "float"
 		if self.type == 'System.Double':
 			return "double"
-	
+
+	@memoized
+	def get_spec_type(self):
+		if self.cpp_type:
+			return self.cpp_type
+		elif self.type == 'System.String':
+			return "string"
+		elif self.type == 'System.Int32':
+			return "int32_t"
+		elif self.type == 'System.Single':
+			return "float"
+		elif self.type == 'System.Double':
+			return "double"
+		else:
+			return self.type
+
 	@memoized
 	def get_sphinx_docstring(self):
 		return docstring_fixes(subst_non_class_refs(self.description))
