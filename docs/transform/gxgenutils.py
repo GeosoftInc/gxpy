@@ -284,8 +284,24 @@ class parameter_class(gxapi.parameter.typeDefinition()):
         return is_class(self.type)
 
     @memoized
+    def is_var(self):
+        return self.type.startswith("var ")
+
+    @memoized
     def is_var_type(self):
-        return self.type != "var string" and self.type.startswith("var ")
+        return self.type != "var string" and self.is_var()
+
+    @memoized
+    def get_spec_type(self):
+        type = self.type[4:] if self.is_var() else self.type
+        if type == 'string':
+            return "Type.STRING"
+        elif type == 'int' or type == "intval":
+            return 'Type.INT_32'
+        elif self.type == 'real':
+            return 'Type.DOUBLE'
+        else:
+            return '"{}"'.format(self.type)
 
     @memoized
     def get_type(self):

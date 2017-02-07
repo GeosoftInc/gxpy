@@ -49,11 +49,14 @@ class Define:
 
 
 class Parameter:
-    def __init__(self, name, type=Type.UNKNOWN, is_ref=False, is_val=False, doc=False):
+    def __init__(self, name, type=Type.UNKNOWN, is_ref=False, is_val=False,
+                 size_of_param=None, default_length=None, doc=None):
         self.name = name
         self.type = type
         self.is_ref = is_ref
         self.is_val = is_val
+        self.size_of_param = size_of_param
+        self.default_length = default_length
         self.doc = doc
 
 
@@ -145,9 +148,15 @@ gx_methods = {
                return_doc="""
 {{ method.returnval.description | clean_doc | indent(15, True)  }}
                """{% endif %}{% for param in method.parameters.parameter %}{% if loop.first %},
-               
+               parameters = [
+{% endif %}
+                   Parameter('p{{ loop.index }}', type={{ param.get_spec_type() }}{% if param.is_var() %}, is_ref=True{% endif %}{% if param.is_val_type() %}, is_val=True{% endif %}{% if param.defaultlength %}, default_length='{{ param.defaultlength }}'{% endif %}{% if param.size_of_param %}, size_of_param='{{ param.size_of_param }}'{% endif %}{% if param.description %},
+                             doc="""
+{{ param.description | clean_doc | indent(29, True) }}
+                             """{% endif %}){% if not loop.last %},
+{% else %}
 
-){% if not loop.last %},
+               ]{% endif %}{% endfor %}){% if not loop.last %},
 {% endif %}
 
 {% endfor %}
