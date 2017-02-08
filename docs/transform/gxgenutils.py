@@ -226,7 +226,7 @@ class defined_value_class(gxapi.defined_value.typeDefinition()):
         elif self.type == 'System.String':
             return "Type.STRING"
         elif self.type == 'System.Int32':
-            return 'Type.INT_32'
+            return 'Type.INT32_T'
         elif self.type == 'System.Single':
             return 'Type.FLOAT'
         elif self.type == 'System.Double':
@@ -297,8 +297,8 @@ class parameter_class(gxapi.parameter.typeDefinition()):
         if type == 'string':
             return "Type.STRING"
         elif type == 'int' or type == "intval":
-            return 'Type.INT_32'
-        elif self.type == 'real':
+            return 'Type.INT32_T'
+        elif type == 'real':
             return 'Type.DOUBLE'
         else:
             return '"{}"'.format(self.type)
@@ -456,8 +456,8 @@ class method_class(gxapi.method.typeDefinition()):
 
     def get_spec_ret_type(self):
         if self.returnval.type == 'int':
-            return 'Type.INT_32'
-        elif self.returnval.type == 'System.real':
+            return 'Type.INT32_T'
+        elif self.returnval.type == 'real':
             return 'Type.DOUBLE'
         elif self.returnval.type == 'void':
             return 'Type.VOID'

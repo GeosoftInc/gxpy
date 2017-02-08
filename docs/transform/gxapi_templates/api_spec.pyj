@@ -1,109 +1,12 @@
-from enum import Enum
-
-
-class Type(Enum):
-    UNKNOWN = 0
-    FLOAT = 1
-    DOUBLE = 2
-    INT8_T = 3
-    UINT8_T = 4
-    INT16_T = 5
-    UINT16_T = 6
-    INT32_T = 7
-    UINT32_T = 8
-    INT64_T = 9
-    UINT64_T = 10
-    STRING = 11
-    VOID = 11
-
-
-class Class:
-    def __init__(self, name, handle_name=None, no_gxh=False, no_csharp=False, no_cpp=False,
-                 doc=None, notes=None):
-        self.name = name
-        self.handle_name = handle_name
-        self.no_gxh = no_gxh
-        self.no_csharp = no_csharp
-        self.no_cpp = no_cpp
-        self.doc = doc
-        self.notes = notes
-
-
-class Constant:
-    def __init__(self, name, value, type=Type.UNKNOWN, doc=None):
-        self.name = name
-        self.value = value
-        self.type = type
-        self.doc = doc
-
-
-class Define:
-    def __init__(self, name, is_constant=False, is_single_constant=False,
-                 is_null_handle=False, doc=None, constants=[]):
-        self.name = name
-        self.is_constant = is_constant
-        self.is_single_constant = is_single_constant
-        self.is_null_handle = is_null_handle
-        self.doc = doc
-        self.constants = constants
-
-
-class Parameter:
-    def __init__(self, name, type=Type.UNKNOWN, is_ref=False, is_val=False,
-                 size_of_param=None, default_length=None, doc=None):
-        self.name = name
-        self.type = type
-        self.is_ref = is_ref
-        self.is_val = is_val
-        self.size_of_param = size_of_param
-        self.default_length = default_length
-        self.doc = doc
-
-
-class Availability(Enum):
-    UNKNOWN = 0
-    PUBLIC = 1
-    LICENSED = 2
-    EXTENSION = 3
-
-
-class Method:
-    def __init__(self, name, module=None, version=None, external_name=None, availability=Availability.UNKNOWN,
-                 is_obsolete=False, is_app=False, is_gui=False, no_gxh=False, no_csharp=False, no_cpp=False,
-                 return_type=Type.UNKNOWN, return_doc=None,
-                 doc=None, parameters=[]):
-        self.name = name
-        self.module = module
-        self.version = version
-        self.external_name = external_name
-        self.availability = availability
-        self.is_obsolete = is_obsolete
-        self.is_app = is_app
-        self.is_gui = is_gui
-        self.no_gxh = no_gxh
-        self.no_csharp = no_csharp
-        self.no_cpp = no_cpp
-        self.doc = doc
-        self.return_type = return_type
-        self.return_doc = return_doc
-        self.parameters = parameters
-
+from .. import Availability, Class, Constant, Define, Method, Parameter, Type
 
 gx_class = Class('{{ cl.name }}'{% if cl.handlename %},
                  handle_name='{{ cl.handlename }}'{% endif %}{% if cl.nogxh %},
                  no_gxh=True{% endif %}{% if cl.nocsharp %},
                  no_csharp=True{% endif %}{% if cl.nocpp %},
                  no_cpp=True{% endif %}{% if cl.description %},
-                 doc="""
-
-{{ cl.description | clean_doc }}
-
-                 """{% endif %}{% if cl.notes and not cl.notes == 'None' %},
-                 notes="""
-
-{{ cl.notes | clean_doc }}
-
-                 """{% endif %})
+                 doc={{ cl.description | clean_doc }}{% endif %}{% if cl.notes and not cl.notes == 'None' %},
+                 notes={{ cl.notes | clean_doc }}{% endif %})
 
 
 {% for definition in cl.definitions.definition %}
@@ -114,15 +17,11 @@ gx_defines = [
            is_constant=True{% endif %}{% if definition.single_constant %},
            is_single_constant=True{% endif %}{% if definition.null_handle %},
            is_null_handle=True{% endif %}{% if definition.description %},
-           doc="""
-{{ definition.description | clean_doc | indent(11, True) }}
-           """{% endif %}{% if definition.null_handle %}){% else %},
+           doc={{ definition.description | clean_doc(11) }}{% endif %}{% if definition.null_handle %}){% else %},
            constants=[
 {% for defined_value in definition.defined_value %}
                Constant('{{ defined_value.name }}', value='{{ defined_value.val }}', type={{ defined_value.get_spec_type() }}{% if defined_value.description %},
-                        doc="""
-{{ defined_value.description | clean_doc | indent(24, True) }}
-                        """{% endif %}){% if not loop.last %},
+                        doc={{ defined_value.description | clean_doc(24) }}{% endif %})                        {% if not loop.last %},
 {% else %}
 
            ]){% endif %}{% endfor %}{% endif %}{% if not loop.last %},
@@ -141,19 +40,13 @@ gx_methods = {
         Method('{{ method.name }}'{% if cl.externalname %}, external_name='{{ cl.externalname }}'{% endif %}, module='{{ method.module }}', version='{{ method.available }}',
                availability={{ method.get_spec_lic() }}, {% if method.obsolete %}is_obsolete=True, {% endif %}{% if method.is_app() %}is_app=True, {% endif %}{% if method.guicall %}is_gui=True, {% endif %}{% if method.nogxh %}no_gxh=True, {% endif %}{% if method.nocsharp %}no_csharp=True, {% endif %}{% if method.nocpp %}no_cpp=True, {% endif %}
 
-               doc="""
-{{ method.description | clean_doc | indent(15, True) }}
-               """,
-               return_type={{ method.get_spec_ret_type() }}{% if method.returnval.description %},
-               return_doc="""
-{{ method.returnval.description | clean_doc | indent(15, True)  }}
-               """{% endif %}{% for param in method.parameters.parameter %}{% if loop.first %},
+               doc={{ method.description | clean_doc(15) }},
+               return_type={{ method.get_spec_ret_type() }}{% if method.returnval.description and not method.returnval.description == method.returnval.type and not method.returnval.description == 'Nothing' %},
+               return_doc={{ method.returnval.description | clean_doc(15) }}{% endif %}{% for param in method.parameters.parameter %}{% if loop.first %},
                parameters = [
 {% endif %}
-                   Parameter('p{{ loop.index }}', type={{ param.get_spec_type() }}{% if param.is_var() %}, is_ref=True{% endif %}{% if param.is_val_type() %}, is_val=True{% endif %}{% if param.defaultlength %}, default_length='{{ param.defaultlength }}'{% endif %}{% if param.size_of_param %}, size_of_param='{{ param.size_of_param }}'{% endif %}{% if param.description %},
-                             doc="""
-{{ param.description | clean_doc | indent(29, True) }}
-                             """{% endif %}){% if not loop.last %},
+                   Parameter('p{{ loop.index }}', type={{ param.get_spec_type() }}{% if param.is_var() %}, is_ref=True{% endif %}{% if param.is_val_type() %}, is_val=True{% endif %}{% if param.defaultlength %}, default_length='{{ param.defaultlength }}'{% endif %}{% if param.size_of_param %}, size_of_param='{{ param.size_of_param }}'{% endif %}{% if param.description and not param.description == param.type %},
+                             doc={{ param.description | clean_doc(29) }}{% endif %}){% if not loop.last %},
 {% else %}
 
                ]{% endif %}{% endfor %}){% if not loop.last %},
