@@ -191,6 +191,9 @@ class GXview:
                                a_minx, a_miny, a_maxx, a_maxy)
         self.gxview.set_window(a_minx, a_miny, a_maxx, a_maxy, UNIT_VIEW)
 
+    def _invalid_pen(self, key):
+        raise ViewException(_t('Invalid pen attribute \'{}\'. Valid attibutes are {}')
+                            .format(key, list(self._pen)))
 
     @property
     def gmap(self):
@@ -230,9 +233,12 @@ class GXview:
         for att, setting in pen.items():
             if type(setting) is str:
                 setting = self.gxview.color(setting)
-            if self._pen[att] != setting:
-                self._pen_fn[att](setting)
-                self._pen[att] = setting
+            try:
+                if self._pen[att] != setting:
+                    self._pen_fn[att](setting)
+                    self._pen[att] = setting
+            except:
+                self._invalid_pen(att)
 
     def _line_style(self, ls):
         self.gxview.line_style(ls[0], ls[1])
@@ -295,7 +301,10 @@ class GXview:
         else:
             oldpen = {}
             for key in pen:
-                oldpen[key] = self._pen[key]
+                try:
+                    oldpen[key] = self._pen[key]
+                except KeyError:
+                    self._invalid_pen(key)
             self._pen_stack.append(oldpen)
             self.pen = pen
 
