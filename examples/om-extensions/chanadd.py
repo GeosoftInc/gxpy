@@ -34,7 +34,7 @@ def rungx():
                     'Channel:',
                     kind='list',
                     default=parms.get(p_chan),
-                    items=sorted([k for k in db.channels().keys()]))
+                    items=sorted([k for k in db.list_channels().keys()]))
 
             # value to add to the channel
             addval = gxom.get_user_input(
@@ -51,7 +51,7 @@ def rungx():
         gxu.save_parameters(group, parms)
 
     # work through the data a line at a time - get a list of selected lines
-    lines = db.lines()
+    lines = db.list_lines()
 
     # for each line, get the data, add a value, return the data to the line
     for l in lines:
@@ -60,18 +60,18 @@ def rungx():
         print('line {}...'.format(str(l)))
 
         # get the data and determine the dummy to the data type
-        data, ch, fid = db.readLine(l, channels=chan)
-        dummy = gxu.gxDummy(data.dtype)
+        data, ch, fid = db.read_line(l, channels=chan)
+        dummy = gxu.gx_dummy(data.dtype)
 
         # make a dummy mask so we can replace dummies after processing
-        dMask = gxu.dummyMask(data)
+        dMask = gxu.dummy_mask(data)
 
         # process - add the value, then replace the dummies
         sum = data + addval
         sum[dMask] = dummy
 
         # write the data back to the database
-        db.writeDataChan(l, chan, sum, fid)
+        db.write_channel(l, chan, sum, fid)
 
     # pause the console so user can review
     input("Press return to continue...")

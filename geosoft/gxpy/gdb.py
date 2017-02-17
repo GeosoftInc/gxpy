@@ -384,7 +384,7 @@ class GXdb():
         '''
         Return a dict of channels in the database.
 
-        :param chan: channel filter, default returns all channels
+        :param chan: channel filter, default CHAN_ALL:
 
             =============== ============================
             CHAN_ALL        all channels, normal and VA
