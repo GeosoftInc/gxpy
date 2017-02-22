@@ -77,8 +77,6 @@ class Test(unittest.TestCase):
             self.assertEqual(fid3,fid)
             self.assertEqual(np3[0], 1)
             self.assertEqual(np3[6], 7)
-            self.assertEqual(np3[0], vv.np[0])
-            self.assertEqual(np3[6], vv.np[6])
 
             self.assertEqual(vv.get_float(6), 7.0)
             self.assertEqual(vv.get_int(6), 7)

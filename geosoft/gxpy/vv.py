@@ -130,11 +130,6 @@ class GXvv():
         '''
         self._vv.re_fid(fid[0], fid[1], length)
 
-    @property
-    def np(self):
-        """ Numpy array of the VV data. """
-        return self.get_np()[0]
-
     def get_np(self, dtype=None, start=0, n=None):
         '''
         Return vv data in a numpy array
