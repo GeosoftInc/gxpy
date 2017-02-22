@@ -662,9 +662,22 @@ class Test(unittest.TestCase):
 
         s = "WGS 84 / UTM zone 32N <150, 8.5, 0, 0, 0, 32>"
         with gxcs.GXcs(s) as cs:
-            self.assertEqual(str(cs), "WGS 84 / UTM zone 32N <150, 8.5, 0, 0, 0, 32>")
+            self.assertEqual(str(cs), 'WGS 84 / UTM zone 32N (150,8.5,0) <32 deg>')
 
-        #TODO talk to Stephen about testing of orientation interface
+        gxfs = ('"*AMMP/SAMMP grid"<-4933250,0,0,-90,0,-90>',
+                '"*AMMP/SAMMP grid",6378249.145,0,0',
+                '"Mercator (1SP)",0,0,1,0,0',
+                '', '')
+        with gxcs.GXcs(gxfs) as cs:
+            self.assertEqual(str(cs), '*AMMP/SAMMP grid (-4933250,0,0) <-90 deg,0 deg,-90 deg>')
+            self.assertEqual(cs.name(), '*AMMP/SAMMP grid (-4933250,0,0) <-90 deg,0 deg,-90 deg>')
+
+            grid_xyz = (-2359492.188, -27936.43719, 0.0)
+            xyz = cs.xyz_from_oriented(grid_xyz)
+            xyz = cs.oriented_from_xyz(xyz)
+            self.assertAlmostEqual(xyz, grid_xyz)
+
+
 
 ###############################################################################################
 

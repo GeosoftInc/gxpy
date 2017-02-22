@@ -3,6 +3,7 @@ import geosoft
 import geosoft.gxapi as gxapi
 from . import utility as gxu
 from . import dataframe as gxdf
+from . import vv as gxvv
 
 __version__ = geosoft.__version__
 
@@ -332,10 +333,7 @@ class GXcs:
         return "{}({})".format(self.__class__, self.__dict__)
 
     def __str__(self):
-        if self._gxapi_ipj:
-            return self.name(NAME_HCS_VCS)
-        else:
-            return str(self._init_ipj)
+        return self.name(NAME_HCS_VCS)
 
     def __enter__(self):
         return self
@@ -697,6 +695,42 @@ class GXcs:
         fref = gxapi.float_ref()
         self.gxipj.get_units(fref, sref)
         return fref.value, sref.value
+
+    def oriented_from_xyz(self, xyz):
+        """
+        Return oriented (x, y, z) coordinates from true base (x, y, z) coordinates.
+
+        :param xyz: (x, y, z) list-like
+        :return: (x, y, z) in un-oriented space
+
+        .. versionadded:: 9.2
+        """
+
+        x = gxvv.GXvv((xyz[0],))
+        y = gxvv.GXvv((xyz[1],))
+        z = gxvv.GXvv((xyz[2],))
+
+        self.gxipj.convert_orientation_warp_vv(x._vv, y._vv, z._vv, 0)
+
+        return x.get_np()[0][0], y.get_np()[0][0], z.get_np()[0][0]
+
+    def xyz_from_oriented(self, xyz):
+        """
+        Return true base (x, y, z) coordinates from oriented (x, y, z) coordinates.
+
+        :param xyz: (x, y, z) list-like
+        :return: (x, y, z) in oriented space
+
+        .. versionadded:: 9.2
+        """
+
+        x = gxvv.GXvv((xyz[0],))
+        y = gxvv.GXvv((xyz[1],))
+        z = gxvv.GXvv((xyz[2],))
+
+        self.gxipj.convert_orientation_warp_vv(x._vv, y._vv, z._vv, 1)
+
+        return x.get_np()[0][0], y.get_np()[0][0], z.get_np()[0][0]
 
 
 class GXpj:
