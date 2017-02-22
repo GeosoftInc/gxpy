@@ -147,6 +147,28 @@ class Test(unittest.TestCase):
             self.assertEqual(cs.name(what=gxcs.NAME_UNIT),'m')
             self.assertEqual(cs.name(what=gxcs.NAME_UNIT_FULL),'metre')
 
+        with gxcs.GXcs(gxcs.GXcs(ipj)) as cs:
+            self.assertEqual(cs.vcs, '')
+            gxfs = cs.gxf()
+            self.assertEqual(gxfs[0],'DHDN / Okarito 2000')
+            self.assertEqual(gxfs[1],'DHDN,6377397.155,0.0816968312225275,0')
+            self.assertEqual(gxfs[2],'"Transverse Mercator",-43.11,170.260833333333,1,400000,800000')
+            self.assertEqual(gxfs[3],'m,1')
+            self.assertEqual(gxfs[4],'"DHDN to WGS 84 (1)",582,105,414,1.04,0.35,-3.08,8.29999999996112')
+            self.assertEqual(cs.name(),'DHDN / Okarito 2000')
+            self.assertEqual(cs.name(what=gxcs.NAME),'DHDN / Okarito 2000')
+            self.assertEqual(cs.name(what=gxcs.NAME_HCS),'DHDN / Okarito 2000')
+            self.assertEqual(cs.name(what=gxcs.NAME_VCS), '')
+            self.assertEqual(cs.name(what=gxcs.NAME_HCS_VCS), 'DHDN / Okarito 2000')
+            self.assertEqual(cs.name(what=gxcs.NAME_DATUM),'DHDN')
+            self.assertEqual(cs.name(what=gxcs.NAME_PROJECTION),'Okarito 2000')
+            self.assertEqual(cs.name(what=gxcs.NAME_ORIENTATION),'0,0,0,0,0,0')
+            self.assertEqual(cs.name(what=gxcs.NAME_UNIT),'m')
+            self.assertEqual(cs.name(what=gxcs.NAME_UNIT_FULL),'metre')
+
+        with gxcs.GXcs(gxcs.GXcs(ipj, vcs="NAVD92")) as cs:
+            self.assertEqual(cs.vcs, 'NAVD92')
+
     def test_name_cs(self):
         self.start(gsys.func_name())
 
@@ -176,7 +198,7 @@ class Test(unittest.TestCase):
 
         with gxcs.GXcs( 'DHDN / Okarito 2000 [geodetic]') as cs:
             gxfs = cs.gxf()
-            self.assertEqual(gxfs[0],'DHDN / Okarito 2000')
+            self.assertEqual(gxfs[0],'DHDN / Okarito 2000 [geodetic]')
             self.assertEqual(gxfs[1],'DHDN,6377397.155,0.0816968312225275,0')
             self.assertEqual(gxfs[2],'"Transverse Mercator",-43.11,170.260833333333,1,400000,800000')
             self.assertEqual(gxfs[3],'m,1')
@@ -621,12 +643,10 @@ class Test(unittest.TestCase):
 
         with gxcs.GXcs("wgs 84", "geoid") as cs:
             hcsdict = cs.coordinate_dict
-            self.assertEqual(hcsdict['name'], "WGS 84") # TODO fix this once we have orientation fixed in gxapi
-            #self.assertEqual(hcsdict['name'], "WGS 84 [geoid]")
+            self.assertEqual(hcsdict['name'], "WGS 84 [geoid]")
             self.assertEqual(hcsdict['datum'], '"WGS 84",6378137,0.0818191908426215,0')
             self.assertEqual(hcsdict['projection'], "")
-            self.assertEqual(hcsdict['vcs'], '') # TODO fix this once we have orientation fixed in gxapi
-            #self.assertEqual(hcsdict['vcs'], "geoid")
+            self.assertEqual(hcsdict['vcs'], "geoid")
             self.assertEqual(cs.vcs, 'geoid')
 
     def test_orientation(self):

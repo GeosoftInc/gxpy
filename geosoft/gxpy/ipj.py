@@ -53,7 +53,9 @@ class IPJException(Exception):
 
 class GXipj():
     """
-    Class to work with Geosoft IPJ coordinate system inteface.
+    SUPERCEDED: by GXcs in the gxpy.coordinate_system module.
+
+    Class to work with Geosoft IPJ coordinate system interface.
 
     ._ipj is the GXIPJ handle to use when calling GXIPJ methods directly
 
@@ -67,7 +69,6 @@ class GXipj():
     .. deprecated: 9.2
         Replaced by :class:`gxpy.coordinate_system.GXcs`
 
-    .. versionadded:: 9.1
     """
 
     def __repr__(self):

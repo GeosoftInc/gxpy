@@ -4,7 +4,7 @@ import numpy as np
 
 import geosoft.gxpy.gx as gx
 import geosoft.gxpy.system as gsys
-import geosoft.gxpy.ipj as gxipj
+import geosoft.gxpy.coordinate_system as gxcs
 import geosoft.gxpy.grd as gxgrd
 import geosoft
 
@@ -44,7 +44,17 @@ class Test(unittest.TestCase):
             self.assertEqual(properties.get('rot'),0.0)
             self.assertEqual(properties.get('nx'),101)
             self.assertEqual(properties.get('ny'),101)
-            self.assertEqual(str(properties.get('ipj')),'WGS 84')
+            self.assertEqual(str(properties.get('cs')),'WGS 84')
+
+            self.assertEqual(g1.dx, 0.01)
+            self.assertEqual(g1.dy, 0.01)
+            self.assertEqual(g1.x0, 7.0)
+            self.assertEqual(g1.y0, 44.0)
+            self.assertEqual(g1.rot, 0.0)
+            self.assertEqual(g1.nx, 101)
+            self.assertEqual(g1.ny, 101)
+            self.assertEqual(str(g1.cs), 'WGS 84')
+
 
     def test_saveGrid(self):
         self.start(gsys.func_name())
@@ -62,7 +72,7 @@ class Test(unittest.TestCase):
             self.assertEqual(properties.get('rot'),0.0)
             self.assertEqual(properties.get('nx'),101)
             self.assertEqual(properties.get('ny'),101)
-            self.assertEqual(str(properties.get('ipj')),'WGS 84')
+            self.assertEqual(str(properties.get('cs')),'WGS 84')
             grd.close()
 
     def test_set_properties(self):
@@ -75,11 +85,31 @@ class Test(unittest.TestCase):
             properties['dx'] = 1.5
             properties['dy'] = 2.5
             properties['rot'] = -33.333333
-            properties['ipj'] = gxipj.GXipj.from_name('NAD27 / UTM zone 18N')
-            try:
-                g1.set_properties(properties)
-                self.assertTrue(False) #should not be able to set properties of a read-only grid
-            except: pass
+            properties['cs'] = gxcs.GXcs('NAD27 / UTM zone 18N')
+            self.assertRaises( gxgrd.GRDException, g1.set_properties, properties)
+
+        outGrid = os.path.join(self.folder, 'testNew.grd(GRD;TYPE=SHORT;COMP=SPEED)')
+        with gxgrd.GXgrd.open(self.g1f) as g:
+            grd = g.save_as(outGrid)
+            grd.dx = 1.5
+            grd.dy = 2.5
+            grd.x0 = 45.0
+            grd.y0 = -15.0
+            grd.rot = -33.333333
+            grd.cs = gxcs.GXcs('NAD27 / UTM zone 18N')
+            grd.close()
+
+        with gxgrd.GXgrd.open(outGrid) as grd:
+            properties = grd.properties()
+            self.assertEqual(properties.get('dx'),1.5)
+            self.assertEqual(properties.get('dy'),2.5)
+            self.assertEqual(properties.get('x0'),45.0)
+            self.assertEqual(properties.get('y0'),-15.0)
+            self.assertEqual(properties.get('rot'),-33.333333)
+            self.assertEqual(properties.get('nx'),101)
+            self.assertEqual(properties.get('ny'),101)
+            self.assertEqual(str(properties.get('cs')),'NAD27 / UTM zone 18N')
+            self.assertEqual(properties.get('dtype'),np.int16)
 
         outGrid = os.path.join(self.folder, 'testNew.grd(GRD;TYPE=SHORT;COMP=SPEED)')
         with gxgrd.GXgrd.open(self.g1f) as g:
@@ -96,9 +126,8 @@ class Test(unittest.TestCase):
             self.assertEqual(properties.get('rot'),-33.333333)
             self.assertEqual(properties.get('nx'),101)
             self.assertEqual(properties.get('ny'),101)
-            self.assertEqual(str(properties.get('ipj')),'NAD27 / UTM zone 18N')
+            self.assertEqual(str(properties.get('cs')),'NAD27 / UTM zone 18N')
             self.assertEqual(properties.get('dtype'),np.int16)
-
 
     def test_memoryGrid(self):
         self.start(gsys.func_name())
@@ -107,7 +136,8 @@ class Test(unittest.TestCase):
                                          'nx': 100, 'ny': 50,
                                          'x0':4, 'y0':8,
                                          'dx': 0.1, 'dy':0.2,
-                                         'rot': 5, 'ipj': gxipj.GXipj.from_name('NAD27 / UTM zone 18N')}) as grd:
+                                         'rot': 5,
+                                         'cs': gxcs.GXcs('NAD27 / UTM zone 18N')}) as grd:
             properties = grd.properties()
             self.assertEqual(properties.get('dx'),0.1)
             self.assertEqual(properties.get('dy'),0.2)
@@ -116,7 +146,7 @@ class Test(unittest.TestCase):
             self.assertEqual(properties.get('rot'),5.0)
             self.assertEqual(properties.get('nx'),100)
             self.assertEqual(properties.get('ny'),50)
-            self.assertEqual(str(properties.get('ipj')),'NAD27 / UTM zone 18N')
+            self.assertEqual(str(properties.get('cs')),'NAD27 / UTM zone 18N')
             self.assertEqual(properties.get('dtype'),np.int16)
 
     def test_gridMosaic(self):
@@ -142,7 +172,7 @@ class Test(unittest.TestCase):
             self.assertEqual(properties.get('rot'),0.0)
             self.assertEqual(properties.get('nx'),201)
             self.assertEqual(properties.get('ny'),101)
-            self.assertEqual(str(properties.get('ipj')),'WGS 84')
+            self.assertEqual(str(properties.get('cs')),'WGS 84')
 
         m = os.path.join(self.folder, 'testMosaic.hgd(HGD)')
         gxgrd.gridMosaic(m, glist).close()
@@ -157,7 +187,7 @@ class Test(unittest.TestCase):
             self.assertEqual(properties.get('rot'),0.0)
             self.assertEqual(properties.get('nx'),201)
             self.assertEqual(properties.get('ny'),101)
-            self.assertEqual(str(properties.get('ipj')),'WGS 84')
+            self.assertEqual(str(properties.get('cs')),'WGS 84')
 
     def test_gridBool(self):
         self.start(gsys.func_name())
@@ -178,7 +208,7 @@ class Test(unittest.TestCase):
         self.assertEqual(properties.get('rot'),0.0)
         self.assertEqual(properties.get('nx'),201)
         self.assertEqual(properties.get('ny'),101)
-        self.assertEqual(str(properties.get('ipj')),'WGS 84')
+        self.assertEqual(str(properties.get('cs')),'WGS 84')
         self.assertEqual(properties.get('dtype'),np.int16)
 
         grd = gxgrd.gridBool(self.g1f, self.g2f, os.path.join(self.folder, 'testBool.grd(GRD;TYPE=SHORT)'), size=3)
@@ -193,7 +223,7 @@ class Test(unittest.TestCase):
         self.assertEqual(properties.get('rot'), 0.0)
         self.assertEqual(properties.get('nx'), 201)
         self.assertEqual(properties.get('ny'), 101)
-        self.assertEqual(str(properties.get('ipj')), 'WGS 84')
+        self.assertEqual(str(properties.get('cs')), 'WGS 84')
         self.assertEqual(properties.get('dtype'), np.int16)
 
     def test_deleteGridFiles(self):
@@ -227,7 +257,7 @@ class Test(unittest.TestCase):
             self.assertEqual(properties.get('rot'),0.0)
             self.assertEqual(properties.get('nx'),101)
             self.assertEqual(properties.get('ny'),101)
-            self.assertEqual(str(properties.get('ipj')),'WGS 84')
+            self.assertEqual(str(properties.get('cs')),'WGS 84')
 
     def test_name_parts(self):
         self.start(gsys.func_name())
@@ -257,14 +287,14 @@ class Test(unittest.TestCase):
         name = gxgrd.GXgrd.decorate_name(ref)
         self.assertEqual(name,ref)
 
-    def test_indexWindow(self):
+    def test_index_window(self):
         self.start(gsys.func_name())
 
         with gxgrd.GXgrd.open(self.g1f) as g:
             p = g.properties()
             window = os.path.join(self.folder,'testwindow.grd(GRD)')
 
-            gw = g.indexWindow(window,4,2,96,5)
+            gw = g.index_window(window,4,2,96,5)
             pw = gw.properties()
             dx = p.get('dx')
             self.assertAlmostEqual(pw.get('x0'),p.get('x0')+(4*dx))
@@ -274,7 +304,7 @@ class Test(unittest.TestCase):
             self.assertEqual(pw.get('ny'),5)
             gw.close()
 
-            gw = g.indexWindow(window,nx=20,ny=100)
+            gw = g.index_window(window,nx=20,ny=100)
             pw = gw.properties()
             self.assertAlmostEqual(pw.get('x0'),p.get('x0'))
             self.assertAlmostEqual(pw.get('y0'),p.get('y0'))
@@ -282,7 +312,7 @@ class Test(unittest.TestCase):
             self.assertEqual(pw.get('ny'),100)
             gw.close()
 
-            gw = g.indexWindow(window,x0=29,y0=100)
+            gw = g.index_window(window,x0=29,y0=100)
             pw = gw.properties()
             dx = p.get('dx')
             self.assertAlmostEqual(pw.get('x0'),p.get('x0')+(29*dx))
@@ -292,20 +322,9 @@ class Test(unittest.TestCase):
             self.assertEqual(pw.get('ny'),1)
             gw.close()
 
-            try:
-                g.indexWindow(window,x0=2900,y0=3600,ny=2)
-                self.assertFalse(True)
-            except: pass
-
-            try:
-                g.indexWindow(window,-1)
-                self.assertFalse(True)
-            except: pass
-
-            try:
-                g.indexWindow(window,y0=-1)
-                self.assertFalse(True)
-            except: pass
+            self.assertRaises(gxgrd.GRDException, g.index_window, window, x0=2900, y0=3600, ny=2)
+            self.assertRaises(gxgrd.GRDException, g.index_window, window,-1)
+            self.assertRaises(gxgrd.GRDException, g.index_window, window, y0=-1)
 
     def test_from_array(self):
         self.start(gsys.func_name())
@@ -323,10 +342,10 @@ class Test(unittest.TestCase):
             self.assertEqual(properties.get('rot'),0.0)
             self.assertEqual(properties.get('nx'),3)
             self.assertEqual(properties.get('ny'),8)
-            self.assertEqual(str(properties.get('ipj')),'*unknown')
+            self.assertEqual(str(properties.get('cs')),'*unknown')
 
         with gxgrd.GXgrd.from_data_array(data, filename,
-                                         properties={'x0':575268, 'dx':2.0, 'dy':1.5, 'rot':15, 'ipj':'WGS 84'}) as grd:
+                                         properties={'x0':575268, 'dx':2.0, 'dy':1.5, 'rot':15, 'cs':'WGS 84'}) as grd:
             grd.delete_files()
             properties = grd.properties()
             self.assertEqual(properties.get('dx'),2.0)
@@ -336,7 +355,7 @@ class Test(unittest.TestCase):
             self.assertEqual(properties.get('rot'),15.0)
             self.assertEqual(properties.get('nx'),3)
             self.assertEqual(properties.get('ny'),8)
-            self.assertEqual(str(properties.get('ipj')),'WGS 84')
+            self.assertEqual(str(properties.get('cs')),'WGS 84')
 
     def test_array_locations(self):
         self.start(gsys.func_name())

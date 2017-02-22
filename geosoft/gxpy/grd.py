@@ -5,7 +5,7 @@ import numpy as np
 import geosoft
 import geosoft.gxapi as gxapi
 from . import gx as gx
-from . import ipj as gxipj
+from . import coordinate_system as gxcs
 from . import vv as gxvv
 from . import utility as gxu
 from . import system as gsys
@@ -269,7 +269,7 @@ class GXgrd():
         nx = properties.get('nx', 0)
         ny = properties.get('ny', 0)
         if (nx <= 0) or (ny <= 0):
-            raise ValueError(_t('Grid dimension ({},{}) must be > 0').format(nx, ny))
+            raise GRDException(_t('Grid dimension ({},{}) must be > 0').format(nx, ny))
 
         grd = cls(fileName, dtype=dtype, mode=FILE_NEW, dim=(nx, ny))
         grd.set_properties(properties)
@@ -316,41 +316,166 @@ class GXgrd():
         """
         :return: numpy data type for the grid
 
-        .. versionadded:: 9.1
+        .. versionadded:: 9.2
         """
         return gxu.dtype_gx(self._img.e_type())
+
+    @property
+    def nx(self):
+        """
+        :return: grid x dimension
+
+        .. versionadded:: 9.2
+        """
+        return self._img.nx()
+
+    @property
+    def ny(self):
+        """
+        :return: grid y dimension
+
+        .. versionadded:: 9.2
+        """
+        return self._img.ny()
+
+    @property
+    def x0(self):
+        """
+        :return: grid origin x location
+
+        .. versionadded:: 9.2
+        """
+        return self._img.query_double(gxapi.IMG_QUERY_rXO)
+
+    @property
+    def y0(self):
+        """
+        :return: grid origin y location
+
+        .. versionadded:: 9.2
+        """
+        return self._img.query_double(gxapi.IMG_QUERY_rYO)
+
+    @property
+    def dx(self):
+        """
+        :return: separation between grid points in the grid x direction
+
+        .. versionadded:: 9.2
+        """
+        return self._img.query_double(gxapi.IMG_QUERY_rDX)
+
+    @property
+    def dy(self):
+        """
+        :return: separation between grid points in the grid y direction
+
+        .. versionadded:: 9.2
+        """
+        return self._img.query_double(gxapi.IMG_QUERY_rDY)
+
+    @property
+    def rot(self):
+        """
+        :return: grid rotation angle, degrees clockwise
+
+        .. versionadded:: 9.2
+        """
+        return self._img.query_double(gxapi.IMG_QUERY_rROT)
+
+    @property
+    def filename(self):
+        """
+        :return: grid rotation angle, degrees clockwise
+
+        .. versionadded:: 9.2
+        """
+        np = name_parts(self._filename)
+        return os.path.join(np[0], np[1])
+
+    @property
+    def gridtype(self):
+        """
+        :return: grid type (ie. 'GRD" or 'HGD')
+
+        .. versionadded:: 9.2
+        """
+        np = name_parts(self._filename)
+        if len(np[4]) > 0:
+            return np[4].split(';')[0]
+        else:
+            return np[3][1:]
+
+    @property
+    def decoration(self):
+        """
+        :return: grid descriptive decoration
+
+        .. versionadded:: 9.2
+        """
+        return name_parts(self._filename)[4]
+
+    @property
+    def cs(self):
+        """
+        :return: grid coordinate system as a GXcs.
+
+        .. versionadded:: 9.2
+        """
+        cs = gxcs.GXcs()
+        self._img.get_ipj(cs.gxipj)
+        return gxcs.GXcs(cs)
 
     def properties(self):
         """
         Get the grid properties dictionary
-        :return: properties dictionary
+
+        :return: dictionary of all grid properties
 
         .. versionadded:: 9.1
         """
 
         properties = {}
-        properties['nx'] = self._img.nx()
-        properties['ny'] = self._img.ny()
-        properties['x0'] = self._img.query_double(gxapi.IMG_QUERY_rXO)
-        properties['y0'] = self._img.query_double(gxapi.IMG_QUERY_rYO)
-        properties['dx'] = self._img.query_double(gxapi.IMG_QUERY_rDX)
-        properties['dy'] = self._img.query_double(gxapi.IMG_QUERY_rDY)
-        properties['rot'] = self._img.query_double(gxapi.IMG_QUERY_rROT)
+        properties['nx'] = self.nx
+        properties['ny'] = self.ny
+        properties['x0'] = self.x0
+        properties['y0'] = self.y0
+        properties['dx'] = self.dx
+        properties['dy'] = self.dy
+        properties['rot'] = self.rot
         properties['dtype'] = self.dtype
-        np = name_parts(self._filename)
-        properties['filename'] = os.path.join(np[0], np[1])
-        if len(np[4]) > 0:
-            properties['gridtype'] = np[4].split(';')[0]
-        else:
-            properties['gridtype'] = np[3][1:]
-        properties['decoration'] = np[4]
-
-        # get coordinate system
-        ipj = gxipj.GXipj()
-        self._img.get_ipj(ipj._ipj)
-        properties['ipj'] = ipj
+        properties['filename'] = self.filename
+        properties['gridtype'] = self.gridtype
+        properties['decoration'] = self.decoration
+        properties['cs'] = self.cs
 
         return properties
+
+    @x0.setter
+    def x0(self, v):
+        self._img.set_info(self.dx, self.dy, v, self.y0, self.rot)
+
+    @y0.setter
+    def y0(self, v):
+        self._img.set_info(self.dx, self.dy, self.x0, v, self.rot)
+
+    @dx.setter
+    def dx(self, v):
+        self._img.set_info(v, self.dy, self.x0, self.y0, self.rot)
+
+    @dy.setter
+    def dy(self, v):
+        self._img.set_info(self.dx, v, self.x0, self.y0, self.rot)
+
+    @rot.setter
+    def rot(self, v):
+        self._img.set_info(self.dx, self.dy, self.x0, self.y0, v)
+
+    @cs.setter
+    def cs(self, cs):
+        if not isinstance(cs, gxcs.GXcs):
+            cs = gxcs.GXcs(cs)
+        self._img.set_ipj(cs.gxipj)
 
     def set_properties(self, properties):
         """
@@ -362,10 +487,10 @@ class GXgrd():
             'dx'  grid X point separation (1.0)
             'dy'  grid Y point separation (1.0)
             'rot' grid counter-clockwise rotation angle (0.0)
-            'ipj' coordinate system object (unchanged)
+            'cs'  coordinate system (unchanged)
             ===== ============================================
 
-        Not all keys need be passed, though best practice it to get the properties from
+        Not all keys need be passed, though typically one will get the properties from
         the grid and modify those that need to change and pass the properties back.
 
         :param properties: properties dictionary
@@ -374,7 +499,7 @@ class GXgrd():
         """
 
         if self._readonly:
-            raise ValueError(_t('{} opened as read-only, cannot set properties.').format(self._filename))
+            raise GRDException(_t('{} opened as read-only, cannot set properties.').format(self._filename))
 
         dx = properties.get('dx', 1.0)
         dy = properties.get('dy', dx)
@@ -382,11 +507,18 @@ class GXgrd():
                            properties.get('x0', 0.0),
                            properties.get('y0', 0.0),
                            properties.get('rot', 0.0))
-        ipj = properties.get('ipj', None)
-        if ipj is not None:
-            if isinstance(ipj, str):
-                ipj = gxipj.GXipj.from_name(ipj)
-            self._img.set_ipj(ipj._ipj)
+        cs = properties.get('cs', None)
+        if cs is not None:
+            if not isinstance(cs, gxcs.GXcs):
+                cs = gxcs.GXcs(cs)
+            self._img.set_ipj(cs.gxipj)
+
+    def extent(self):
+        """
+        Return grid extent in the grid coordinate system.
+
+        :return: (min_x, min_y, min_z, max_x, max_y, max_z)
+        """
 
     def save_as(self, fileName, dtype=None):
         """
@@ -414,7 +546,7 @@ class GXgrd():
             self._hpg = self._img.geth_pg()
         return self._hpg
 
-    def indexWindow(self, name, x0=0, y0=0, nx=None, ny=None):
+    def index_window(self, name, x0=0, y0=0, nx=None, ny=None):
         """
         Window a grid based on index.
         :param x0:  integer index of the first X point
@@ -424,12 +556,11 @@ class GXgrd():
 
         :return:    GXgrd instance limited to the window, must be closed with a call to close().
 
-        .. versionadded:: 9.1
+        .. versionadded:: 9.2
         """
 
-        p = self.properties()
-        gnx = p.get('nx')
-        gny = p.get('ny')
+        gnx = self.nx
+        gny = self.ny
         if nx is None:
             nx = gnx - x0
         if ny is None:
@@ -442,10 +573,11 @@ class GXgrd():
                 (mx > gnx) or (my > gny)):
             raise GRDException(_t('Window x0,y0,mx,my({},{},{},{}) out of bounds ({},{})').format(x0, y0, mx, my, gnx, gny))
 
-        if p.get('rot') != 0.0:
-            raise (_t('Cannot window a rotated grid.'))
+        if self.rot != 0.0:
+            raise (_t('Cannot window a rotated grid.'))  # TODO support for windowing rotated grids
 
         # create new grid
+        p = self.properties()
         p['nx'] = nx
         p['ny'] = ny
         p['x0'] = p.get('x0') + p.get('dx') * x0
@@ -471,8 +603,9 @@ class GXgrd():
 
         ny, nx = data.shape
         iy = iy0
+        dtype = self.dtype
         for i in range(ny):
-            self._img.write_y(iy, ix0, 0, gxvv.GXvv(data[i, :], dtype=self.dtype)._vv)
+            self._img.write_y(iy, ix0, 0, gxvv.GXvv(data[i, :], dtype=dtype)._vv)
             iy += order
 
     def read_rows(self, ix0=0, iy0=0):
@@ -485,12 +618,11 @@ class GXgrd():
         .. versionadded:: 9.1
         '''
 
-
     @staticmethod
     def name_parts(name):
         """
 
-        .. deprecated:: call grd.name_parts()
+        .. deprecated:: use name_parts()
         """
         return name_parts(name)
 
@@ -498,9 +630,16 @@ class GXgrd():
     def decorate_name(name, decorations=''):
         """
 
-        .. deprecated:: call grd.name_parts()
+        .. deprecated:: ise name_parts()
         """
         return decorate_name(name, decorations)
+
+    def indexWindow(self, name, x0=0, y0=0, nx=None, ny=None):
+        """
+
+         .. deprecated:: use index_window()
+        """
+        return self.index_window(name, x0, y0, nx, ny)
 
 
 # grid utilities
@@ -552,7 +691,7 @@ def gridMosaic(mosaic, gridList, typeDecoration='', report=None):
             y0 = p.get('y0')
             xM = x0 + (p.get('nx') - 1) * p.get('dx')
             yM = y0 + (p.get('ny') - 1) * p.get('dy')
-            ipj = p.get('ipj')._ipj
+            ipj = p.get('cs').gxipj
             cell = p.get('dx')
             return x0, y0, xM, yM, (ipj, cell)
 
@@ -601,7 +740,7 @@ def gridMosaic(mosaic, gridList, typeDecoration='', report=None):
             return
 
     if len(gridList) == 0:
-        raise ValueError(_t('At least one grid is required'))
+        raise GRDException(_t('At least one grid is required'))
 
     # create list of grids, all matching on coordinate system of first grid
     grids = []
@@ -620,17 +759,12 @@ def gridMosaic(mosaic, gridList, typeDecoration='', report=None):
         report('Mosaic: dim({},{}) x({},{}) y({},{}), cell({})...'.format(nX, nY, x0, xm, y0, ym, p.get('dx')))
     master = GXgrd.new(mosaic, p)
     if report:
-        p = master.properties()
-        x0 = p.get('x0')
-        y0 = p.get('y0')
-        nx = p.get('nx')
-        ny = p.get('ny')
-        report('Memory image ready ({}) dim({},{}) x0,y0({},{})'.format(master, nx, ny, x0, y0))
+        report('Memory image ready ({}) dim({},{}) x0,y0({},{})'.format(master, master.nx, master.ny,
+                                                                        master.x0, master.y0))
 
     # paste grids onto master
-    pm = master.properties()
-    mnx = pm.get('nx')
-    mny = pm.get('ny')
+    mnx = master.nx
+    mny = master.ny
     mpg = master._geth_pg()
     for g in grids:
         paste(g, mpg)

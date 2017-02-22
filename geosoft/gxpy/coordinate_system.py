@@ -284,7 +284,7 @@ class GXcs:
                     an ESRI WKT string (ie. "PROJCS["WGS_1984_UTM_Zone_35N",GEOGCS[..."), a dictionary that
                     contains the coordinate system properties, a JSON string that contains the coordinate
                     system properties, or a list that contains the 5 GXF coordinate system strings.
-                    You can also pass a gxapi.GXIPJ.
+                    You can also pass a gxapi.GXIPJ, or another GXcs.
     :param init:    `True` to initalize immediated, `False` te delay initialization until used.
 
     Dictionary structure:
@@ -348,9 +348,9 @@ class GXcs:
         self._gxapi_ipj = None
         self._dict = None
         self._vcs = vcs
-        if init:
+        if init or isinstance(hcs, GXcs) or isinstance(hcs, gxapi.GXIPJ):
             self._setup_ipj()
-            self._setup_vcs(vcs)
+            self._setup_vcs(self._vcs)
 
     def __eq__(self, other):
         return self.same_as(other)
@@ -358,8 +358,9 @@ class GXcs:
     def _setup_ipj(self):
         """ Setup the horizontal coordinate system. """
         if self._gxapi_ipj is None:
+
             self._gxapi_ipj = gxapi.GXIPJ.create()
-            if type(self._init_ipj) is gxapi.GXIPJ:
+            if isinstance(self._init_ipj, gxapi.GXIPJ):
                 s1 = gxapi.str_ref()
                 s2 = gxapi.str_ref()
                 s3 = gxapi.str_ref()
@@ -367,6 +368,12 @@ class GXcs:
                 s5 = gxapi.str_ref()
                 self._init_ipj.get_gxf(s1, s2, s3, s4, s5)
                 self._from_gxf((s1.value, s2.value, s3.value, s4.value, s5.value))
+
+            elif isinstance(self._init_ipj, GXcs):
+                self._from_gxf(self._init_ipj.gxf())
+                if self._vcs is None:
+                    self._vcs = self._init_ipj.vcs
+
             else:
                 if self._init_ipj is not None:
                     if isinstance(self._init_ipj, str):
@@ -621,6 +628,8 @@ class GXcs:
         s5 = gxapi.str_ref()
         self.gxipj.get_gxf(s1, s2, s3, s4, s5)
         lst = [s1.value.replace('"', ' ').strip(), s2.value, s3.value, s4.value, s5.value]
+        if self._vcs:
+            lst[0] = "{} [{}]".format(lst[0], self._vcs)
         return lst
 
     def name(self, what=None):
