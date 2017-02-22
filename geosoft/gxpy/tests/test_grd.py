@@ -46,6 +46,16 @@ class Test(unittest.TestCase):
             self.assertEqual(properties.get('ny'),101)
             self.assertEqual(str(properties.get('cs')),'WGS 84')
 
+            self.assertEqual(g1.dx, 0.01)
+            self.assertEqual(g1.dy, 0.01)
+            self.assertEqual(g1.x0, 7.0)
+            self.assertEqual(g1.y0, 44.0)
+            self.assertEqual(g1.rot, 0.0)
+            self.assertEqual(g1.nx, 101)
+            self.assertEqual(g1.ny, 101)
+            self.assertEqual(str(g1.cs), 'WGS 84')
+
+
     def test_saveGrid(self):
         self.start(gsys.func_name())
 
@@ -76,10 +86,30 @@ class Test(unittest.TestCase):
             properties['dy'] = 2.5
             properties['rot'] = -33.333333
             properties['cs'] = gxcs.GXcs('NAD27 / UTM zone 18N')
-            try:
-                g1.set_properties(properties)
-                self.assertTrue(False) #should not be able to set properties of a read-only grid
-            except: pass
+            self.assertRaises( gxgrd.GRDException, g1.set_properties, properties)
+
+        outGrid = os.path.join(self.folder, 'testNew.grd(GRD;TYPE=SHORT;COMP=SPEED)')
+        with gxgrd.GXgrd.open(self.g1f) as g:
+            grd = g.save_as(outGrid)
+            grd.dx = 1.5
+            grd.dy = 2.5
+            grd.x0 = 45.0
+            grd.y0 = -15.0
+            grd.rot = -33.333333
+            grd.cs = gxcs.GXcs('NAD27 / UTM zone 18N')
+            grd.close()
+
+        with gxgrd.GXgrd.open(outGrid) as grd:
+            properties = grd.properties()
+            self.assertEqual(properties.get('dx'),1.5)
+            self.assertEqual(properties.get('dy'),2.5)
+            self.assertEqual(properties.get('x0'),45.0)
+            self.assertEqual(properties.get('y0'),-15.0)
+            self.assertEqual(properties.get('rot'),-33.333333)
+            self.assertEqual(properties.get('nx'),101)
+            self.assertEqual(properties.get('ny'),101)
+            self.assertEqual(str(properties.get('cs')),'NAD27 / UTM zone 18N')
+            self.assertEqual(properties.get('dtype'),np.int16)
 
         outGrid = os.path.join(self.folder, 'testNew.grd(GRD;TYPE=SHORT;COMP=SPEED)')
         with gxgrd.GXgrd.open(self.g1f) as g:
@@ -98,7 +128,6 @@ class Test(unittest.TestCase):
             self.assertEqual(properties.get('ny'),101)
             self.assertEqual(str(properties.get('cs')),'NAD27 / UTM zone 18N')
             self.assertEqual(properties.get('dtype'),np.int16)
-
 
     def test_memoryGrid(self):
         self.start(gsys.func_name())
@@ -293,20 +322,9 @@ class Test(unittest.TestCase):
             self.assertEqual(pw.get('ny'),1)
             gw.close()
 
-            try:
-                g.index_window(window,x0=2900,y0=3600,ny=2)
-                self.assertFalse(True)
-            except: pass
-
-            try:
-                g.index_window(window,-1)
-                self.assertFalse(True)
-            except: pass
-
-            try:
-                g.index_window(window,y0=-1)
-                self.assertFalse(True)
-            except: pass
+            self.assertRaises(gxgrd.GRDException, g.index_window, window, x0=2900, y0=3600, ny=2)
+            self.assertRaises(gxgrd.GRDException, g.index_window, window,-1)
+            self.assertRaises(gxgrd.GRDException, g.index_window, window, y0=-1)
 
     def test_from_array(self):
         self.start(gsys.func_name())
