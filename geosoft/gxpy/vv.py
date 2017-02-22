@@ -46,7 +46,7 @@ class GXvv():
 
         if (array is not None) and (type(array) is not np.ndarray):
             if dtype is None:
-                dtype = np.dtype(type(array[1]))
+                dtype = np.dtype(type(array[0]))
             array = np.array(array, dtype=dtype)
 
         if dtype is None:
