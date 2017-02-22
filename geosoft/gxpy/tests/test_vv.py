@@ -71,15 +71,18 @@ class Test(unittest.TestCase):
             self.assertEqual(fid2,(99.1,.1))
             self.assertEqual(np2.shape,(6,))
             self.assertEqual(vv.get_np(vv.dtype,start=6)[0].shape,(1,))
-            try:
-                self.assertEqual(vv.get_np(vv.dtype,start=7)[0].shape,(0,))
-                self.assertTrue(False)
-            except: pass
+            self.assertRaises(gxvv.VVException, vv.get_np, vv.dtype, start=7)
 
             np3,fid3 = vv.get_np(np.int)
             self.assertEqual(fid3,fid)
-            self.assertEqual(np3[0],1)
-            self.assertEqual(np3[6],7)
+            self.assertEqual(np3[0], 1)
+            self.assertEqual(np3[6], 7)
+            self.assertEqual(np3[0], vv.np[0])
+            self.assertEqual(np3[6], vv.np[6])
+
+            self.assertEqual(vv.get_float(6), 7.0)
+            self.assertEqual(vv.get_int(6), 7)
+            self.assertEqual(vv.get_string(6), "7")
 
         npdata = np.array([1,2,3,4,5,6,7],dtype=np.int)
         with gxvv.GXvv(npdata, fid=fid) as vv:

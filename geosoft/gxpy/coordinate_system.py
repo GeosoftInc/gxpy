@@ -712,7 +712,7 @@ class GXcs:
 
         self.gxipj.convert_orientation_warp_vv(x._vv, y._vv, z._vv, 0)
 
-        return x.get_np()[0][0], y.get_np()[0][0], z.get_np()[0][0]
+        return x.get_float(0), y.get_float(0), z.get_float(0)
 
     def xyz_from_oriented(self, xyz):
         """
@@ -730,7 +730,7 @@ class GXcs:
 
         self.gxipj.convert_orientation_warp_vv(x._vv, y._vv, z._vv, 1)
 
-        return x.get_np()[0][0], y.get_np()[0][0], z.get_np()[0][0]
+        return x.get_float(0), y.get_float(0), z.get_float(0)
 
 
 class GXpj:

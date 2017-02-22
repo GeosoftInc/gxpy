@@ -130,6 +130,11 @@ class GXvv():
         '''
         self._vv.re_fid(fid[0], fid[1], length)
 
+    @property
+    def np(self):
+        """ Numpy array of the VV data. """
+        return self.get_np()[0]
+
     def get_np(self, dtype=None, start=0, n=None):
         '''
         Return vv data in a numpy array
@@ -209,3 +214,17 @@ class GXvv():
 
         self._vv.set_len(npdata.shape[0])
         self.fid = fid
+
+    def get_float(self, index):
+        """ return float value """
+        return self._vv.get_double(index)
+
+    def get_int(self, index):
+        """ return integer value """
+        return self._vv.get_int(index)
+
+    def get_string(self, index):
+        """ return string value """
+        s = gxapi.str_ref()
+        self._vv.get_string(index, s)
+        return s.value
