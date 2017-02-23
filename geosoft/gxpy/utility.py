@@ -399,7 +399,31 @@ def dtype_gx(gtype):
         return _gx2np_type[gtype]
     except KeyError:
         if gtype < 0:
-            return np.dtype('<U{}'.format(-gtype))
+            return np.dtype('U{}'.format(-gtype))
+
+
+def is_float(gxtype):
+    """ Return True of gxtype can be stored in a 64-bit float"""
+    if gxtype >= 0 and gxtype in {gxapi.GS_DOUBLE, gxapi.GS_FLOAT}:
+        return True
+    else:
+        return False
+
+
+def is_int(gxtype):
+    """ Return True of gxtype can be stored in a 64-bit integer"""
+    if gxtype >= 0 and not is_float(gxtype):
+        return True
+    else:
+        return False
+
+
+def is_string(gxtype):
+    """ Return length of a gxtype string, 0 (False) if not a string."""
+    if gxtype < 0:
+        return -gxtype
+    else:
+        return False
 
 
 def gx_dummy(dtype):
@@ -424,7 +448,8 @@ def gx_dummy(dtype):
     try:
         return(_dummy_map[np.dtype(dtype)])
     except KeyError:
-        if str(dtype)[:2] == '<U':
+        s = str(dtype)
+        if s[0] == 'U' or s[1] == 'U':
             return ''
 
 

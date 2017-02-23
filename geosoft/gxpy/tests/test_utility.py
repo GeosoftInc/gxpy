@@ -46,7 +46,16 @@ class Test(unittest.TestCase):
         self.assertEqual(gxu.gx_dummy(np.int32),gxapi.iDUMMY)
         self.assertEqual(gxu.gx_dummy(np.int64),gxapi.GS_S8DM)
         self.assertEqual(gxu.gx_dummy(np.str_), '')
-        self.assertEqual(gxu.gx_dummy('<U48'), '')
+        self.assertEqual(gxu.gx_dummy('U48'), '')
+
+        self.assertTrue(gxu.is_float(gxu.gx_dtype('float')))
+        self.assertFalse(gxu.is_int(gxu.gx_dtype('float')))
+        self.assertTrue(gxu.is_int(gxu.gx_dtype('uint64')))
+        self.assertFalse(gxu.is_float(gxu.gx_dtype('uint64')))
+        self.assertTrue(gxu.is_string(gxu.gx_dtype('U18')))
+        self.assertFalse(gxu.is_int(gxu.gx_dtype('U18')))
+        self.assertFalse(gxu.is_float(gxu.gx_dtype('U18')))
+        self.assertEqual(gxu.is_string(gxu.gx_dtype('U18')), 18)
 
         npd = np.array([[1,1],[2,2],[-127,1],[3,3]],dtype=gxu.dtype_gx(gxapi.GS_BYTE))
         self.assertEqual(list(gxu.dummy_mask(npd)),[False,False,True,False])

@@ -16,8 +16,8 @@ class Test(unittest.TestCase):
         os.chdir(os.path.dirname(os.path.realpath(__file__)))
         cls.folder, files = gsys.unzip(os.path.join(os.path.dirname(__file__), 'testgrids.zip'),
                                        folder=cls.gx.temp_folder())
-        cls.g1f = os.path.join(cls.folder, files[0])
-        cls.g2f = os.path.join(cls.folder, files[3])
+        cls.g1f = os.path.join(cls.folder, 'test_grid_1.grd')
+        cls.g2f = os.path.join(cls.folder, 'test_grid_2.grd')
         pass
 
     @classmethod
@@ -396,6 +396,37 @@ class Test(unittest.TestCase):
         g1.close()
         self.assertEqual(len(gx._res_heap), rs-1)
         g2.close()
+
+    def test_extent(self):
+        self.start(gsys.func_name())
+
+        with gxgrd.GXgrd.open(self.g1f) as g:
+            grd = g.save_as(os.path.join(self.folder, 'test_extent.grd(GRD)'))
+            grd.delete_files()
+            grd.x0 = grd.y0 = 0.0
+            grd.dx = grd.dy = 0.1
+            grd.rot = 30.0
+
+            mn, mx = grd.extent_2d()
+            self.assertAlmostEqual(mn[0], -5.0)
+            self.assertAlmostEqual(mn[1], 0.0)
+            self.assertAlmostEqual(mx[0], 8.66025404)
+            self.assertAlmostEqual(mx[1], 13.66025404)
+
+            cs = grd.cs
+            cs_name = cs.name(gxcs.NAME_HCS_VCS) + ' <0,0,0,-90,0,45>'
+            grd.cs = gxcs.GXcs(cs_name)
+            grd.x0 = grd.y0 = 0.0
+            grd.dx = grd.dy = 0.1
+            grd.rot = 0.0
+            mn, mx = grd.extent_3d()
+            self.assertAlmostEqual(mx[0], 7.0710678118654755)
+            self.assertAlmostEqual(mx[1], 0.0)
+            self.assertAlmostEqual(mx[2], 10.0)
+            self.assertAlmostEqual(mn[0], 0.0)
+            self.assertAlmostEqual(mn[1], -7.0710678118654755)
+            self.assertAlmostEqual(mn[2], 0.0)
+            grd.close()
 
 
 ###############################################################################################

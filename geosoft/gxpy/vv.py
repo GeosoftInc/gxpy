@@ -25,8 +25,8 @@ class GXvv():
     VV class wrapper.
 
     :param array:   array-like, None to create an empty VV
-    :param dtype:   numpy data type, or 'str#', where # is a string length. If not specified
-                    the type is taken from datadefault np.float
+    :param dtype:   numpy data type.  For unicode strings 'U#', where # is a string length. If not specified
+                    the type is taken from first element in array, of if no array the default is 'float'.
     :param fid:     fid tuple (start,increment), default (0.0,1.0)
     :constructor vv_np:  create from a numpy array
 
@@ -46,8 +46,9 @@ class GXvv():
 
         if (array is not None) and (type(array) is not np.ndarray):
             if dtype is None:
-                dtype = np.dtype(type(array[1]))
+                dtype = np.dtype(type(array[0]))
             array = np.array(array, dtype=dtype)
+            dtype = array.dtype # if strings, type will change to the longest string
 
         if dtype is None:
             dtype = array.dtype
@@ -209,3 +210,36 @@ class GXvv():
 
         self._vv.set_len(npdata.shape[0])
         self.fid = fid
+
+    def get_float(self, index):
+        """ return float value """
+        return self._vv.get_double(index)
+
+    def get_int(self, index):
+        """ return integer value """
+        return self._vv.get_int(index)
+
+    def get_string(self, index):
+        """ return string value """
+        s = gxapi.str_ref()
+        self._vv.get_string(index, s)
+        return s.value
+
+    def list(self):
+        """
+        Return the content of a VV as a Python list.  Only use this when you know
+        a VV is short.  This function is not efficient.
+
+        :return: list containing the content of a VV.
+
+        .. versionadded:: 9.2
+        """
+
+        if gxu.is_string(self._gxtype):
+            getter = self.get_string
+        elif gxu.is_float(self._gxtype):
+            getter = self.get_float
+        else:
+            getter = self.get_int
+
+        return [getter(i) for i in range(self.length)]
