@@ -182,6 +182,31 @@ class Test(unittest.TestCase):
             self.assertEqual(npd[2], "-30.0")
             self.assertEqual(npd[3], "-87.66662")
 
+    def test_list(self):
+        self.start(gsys.func_name())
+
+        l = [1, 2, 3]
+        with gxvv.GXvv(l) as vv:
+            self.assertEqual(vv.list(), l)
+        l = [1., 2., 3.]
+        with gxvv.GXvv(l) as vv:
+            self.assertEqual(vv.list(), l)
+        l = ["a", "b", "abc"]
+        with gxvv.GXvv(l) as vv:
+            self.assertEqual(vv.list(), l)
+
+    def test_string(self):
+        self.start(gsys.func_name())
+
+        l = [1, 2, 3]
+        with gxvv.GXvv(l, dtype='U45') as vv:
+            self.assertEqual(vv.list(), ['1', '2', '3'])
+
+        l = [1, 2, "abcdefg"]
+        with gxvv.GXvv(l, dtype='U4') as vv:
+            self.assertEqual(vv.list(), ['1', '2', 'abcd'])
+
+
 ##############################################################################################
 if __name__ == '__main__':
 

@@ -16,8 +16,8 @@ class Test(unittest.TestCase):
         os.chdir(os.path.dirname(os.path.realpath(__file__)))
         cls.folder, files = gsys.unzip(os.path.join(os.path.dirname(__file__), 'testgrids.zip'),
                                        folder=cls.gx.temp_folder())
-        cls.g1f = os.path.join(cls.folder, files[0])
-        cls.g2f = os.path.join(cls.folder, files[3])
+        cls.g1f = os.path.join(cls.folder, 'test_grid_1.grd')
+        cls.g2f = os.path.join(cls.folder, 'test_grid_2.grd')
         pass
 
     @classmethod

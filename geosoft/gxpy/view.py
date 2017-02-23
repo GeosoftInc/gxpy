@@ -453,6 +453,19 @@ class GXview:
         self.gxview.box_3d(p2.p1.x, p2.p1.y, p2.p1.z,
                            p2.p2.x, p2.p2.y, p2.p2.z)
 
+    def aggregate(self, agg, name=None):
+        """
+        Add an aggregate to a view
+        :param agg:     GXagg instance
+        :param name:    group name, default is the aggregate string
+        :return:
+        """
+
+        if name is None:
+            name = str(agg)
+
+        self.gxview.aggregate(agg.gxagg, name)
+
 
 class GXview3d(GXview):
 

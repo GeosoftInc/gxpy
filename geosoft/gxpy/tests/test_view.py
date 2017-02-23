@@ -11,6 +11,8 @@ import geosoft.gxpy.view as gxv
 import geosoft.gxapi as gxapi
 import geosoft.gxpy.viewer as gxvwr
 import geosoft.gxpy.coordinate_system as gxcs
+import geosoft.gxpy.grd as gxgrd
+import geosoft.gxpy.agg as gxagg
 
 
 def rect_line(view, size=100):
@@ -253,6 +255,34 @@ class Test(unittest.TestCase):
 
         #gxvwr.map(mapfile)
         self.assertEqual(gxmap.crc_map(mapfile), 2258658382) # TODO replace with correct crc once fixed
+
+    def test_basic_grid(self):
+        self.start(gsys.func_name())
+
+        # test grid file
+        folder, files = gsys.unzip(os.path.join(os.path.dirname(__file__), 'testgrids.zip'),
+                                   folder=self.gx.temp_folder())
+        grid_file = os.path.join(folder, 'test_agg_utm.grd')
+        map_file = os.path.join(self.gx.temp_folder(), "test_agg")
+
+        with gxmap.GXmap.new(map_file, overwrite=True) as gmap:
+            with gxgrd.GXgrd(grid_file) as grd:
+                mn, mx = grd.extent_2d()
+            mapfile = gmap.filename
+            with gxv.GXview(gmap, "base",
+                            area=(mn[0], mn[1], mx[0], mx[1]),
+                            scale=(mx[0] - mn[0])/0.2) as view:
+                view.xy_rectangle((mn, mx),
+                                  pen={'line_thick': 0.1, 'line_color': 'R'})
+
+                with gxagg.GXagg(grid_file) as agg:
+                    view.aggregate(agg)
+
+                #self.assertEqual(gxmap.crc_map(mapfile), 2258658382)
+
+        gxvwr.map(mapfile)
+
+
 
 
 if __name__ == '__main__':
