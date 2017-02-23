@@ -281,6 +281,39 @@ class Test(unittest.TestCase):
         self.assertEqual(gxmap.crc_map(mapfile), 3752814683)
         #gxvwr.map(mapfile)
 
+    def test_zone_grid(self):
+        self.start(gsys.func_name())
+
+        def test_zone(zone, crc, shade=False):
+            with gxmap.GXmap.new(map_file, overwrite=True) as gmap:
+                mapfile = gmap.filename
+                with gxv.GXview(gmap, "base",
+                                area=(mn[0], mn[1], mx[0], mx[1]),
+                                scale=(mx[0] - mn[0]) / 0.2) as view:
+                    with gxagg.GXagg(grid_file, zone=zone, shade=shade) as agg:
+                        view.aggregate(agg)
+
+            #gxvwr.map(mapfile)
+            self.assertEqual(gxmap.crc_map(mapfile), crc)
+
+
+        # test grid file
+        folder, files = gsys.unzip(os.path.join(os.path.dirname(__file__), 'testgrids.zip'),
+                                   folder=self.gx.temp_folder())
+        grid_file = os.path.join(folder, 'test_agg_utm.grd')
+        with gxgrd.GXgrd(grid_file) as grd:
+            mn, mx = grd.extent_2d()
+        map_file = os.path.join(self.gx.temp_folder(), "test_agg")
+
+        test_zone(gxagg.ZONE_LINEAR, 3720728838, shade=True)
+        test_zone(gxagg.ZONE_EQUALAREA, 1656439979)
+        test_zone(gxagg.ZONE_DEFAULT, 1656439979)
+        test_zone(gxagg.ZONE_LAST, 1656439979)
+        test_zone(gxagg.ZONE_LINEAR, 1901089024)
+        test_zone(gxagg.ZONE_NORMAL, 2691213422)
+        test_zone(gxagg.ZONE_SHADE, 4087607233)
+        test_zone(gxagg.ZONE_LOGLINEAR, 353055968)
+
 
 if __name__ == '__main__':
 

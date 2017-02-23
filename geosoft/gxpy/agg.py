@@ -23,7 +23,7 @@ ZONE_DEFAULT = 0
 ZONE_LINEAR = 1
 ZONE_NORMAL = 2
 ZONE_EQUALAREA = 3
-ZONE_SHARE = 4
+ZONE_SHADE = 4
 ZONE_LOGLINEAR = 5
 ZONE_LAST = 6
 
@@ -32,7 +32,16 @@ class GXagg():
     The AGG class supports the creation of images from one or more grid data sets.
     AGGs can be placed into map views.
 
-    :param grid_file:     None, or the name of a grid file to create a default AGG with a single grid.
+    :param grid_file:   None, or the name of a grid file to create a default AGG with a single grid.
+    :param shade:       if True, add shading effect
+    :param zone:        Colour distribution method:
+                        |ZONE_DEFAULT       as set by user global default
+                        |ZONE_LINEAR
+                        |ZONE_NORMAL
+                        |ZONE_EQUALAREA
+                        |ZONE_SHADE         will create a shaded grid with "_s" appended
+                        |ZONE_LOGLINEAR
+                        |ZONE_LAST          last used colouring
 
     .. versionadded:: 9.2
     '''
@@ -52,11 +61,15 @@ class GXagg():
     def __exit__(self, type, value, traceback):
         pass
 
-    def __init__(self, grid_file=None):
+    def __init__(self, grid_file=None, shade=False, zone=None):
 
         self.gxagg = gxapi.GXAGG.create()
         if grid_file is not None:
-            self.gxagg.layer_img(grid_file, ZONE_DEFAULT, '', gxapi.rDUMMY)
+            if zone is None:
+                zone = ZONE_DEFAULT
+            self.gxagg.layer_img(grid_file, zone, '', gxapi.rDUMMY)
+            if shade and zone != ZONE_SHADE:
+                self.gxagg.layer_img(grid_file, ZONE_SHADE, 'lgray.tbl', gxapi.rDUMMY)
 
     def list_files(self):
         '''
