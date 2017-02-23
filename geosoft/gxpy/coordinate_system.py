@@ -65,10 +65,10 @@ def parameters(what, key):
     Get a dictionary of parameters for a coordinate system item.
 
     :param what:
-            | gxipj.PARM_DATUM
-            | gxipj.PARM_PROJECTION
-            | gxipj.PARM_UNITS
-            | gxipj.LOCAL_DATUM
+            | PARM_DATUM
+            | PARM_PROJECTION
+            | PARM_UNITS
+            | LOCAL_DATUM
     :param key:     parameter key to find and return
     :raises CSException: if table or key not found.
 
@@ -98,15 +98,14 @@ def parameter_exists(what, key):
 def name_list(what, datum_filter=''):
     """
     Get a list of coordinate system names
-
     :param what:
-            | gxipj.LIST_COORDINATESYSTEM
-            | gxipj.LIST_DATUM
-            | gxipj.LIST_PROJECTION
-            | gxipj.LIST_UNITS
-            | gxipj.LIST_LOCALDATUMDESCRIPTION
-            | gxipj.LIST_LOCALDATUMNAME
-            | gxipj.LIST_UNITSDESCRIPTION
+            | LIST_COORDINATESYSTEM
+            | LIST_DATUM
+            | LIST_PROJECTION
+            | LIST_UNITS
+            | LIST_LOCALDATUMDESCRIPTION
+            | LIST_LOCALDATUMNAME
+            | LIST_UNITSDESCRIPTION
 
     :param datum_filter:
             name of a datum to filter results
@@ -635,27 +634,27 @@ class GXcs:
         Return requested name.
 
         :param what:
-                | gxipj.NAME
-                | gxipj.NAME_HCS
-                | gxapi.NAME_VCS
-                | gxapi.NAME_HCS_VCS
-                | gxipj.NAME_PROJECTION
-                | gxipj.NAME_METHOD
-                | gxipj.NAME_DATUM
-                | gxipj.NAME_ELLIPSOID
-                | gxipj.NAME_LDATUM
-                | gxipj.NAME_UNIT
-                | gxipj.NAME_UNIT_FULL
-                | gxipj.NAME_TYPE
-                | gxipj.NAME_LLDATUM
-                | gxipj.NAME_METHOD_PARMS
-                | gxipj.NAME_METHOD_LABEL
-                | gxipj.NAME_DATUM_PARMS
-                | gxipj.NAME_LDATUM_PARMS
-                | gxipj.NAME_GEOID
-                | gxipj.NAME_LDATUMDESCRIPTION
-                | gxipj.NAME_METHOD_PARMS_NATIVE
-                | gxipj.NAME_ORIENTATION
+                | NAME
+                | NAME_HCS
+                | NAME_VCS
+                | NAME_HCS_VCS
+                | NAME_PROJECTION
+                | NAME_METHOD
+                | NAME_DATUM
+                | NAME_ELLIPSOID
+                | NAME_LDATUM
+                | NAME_UNIT
+                | NAME_UNIT_FULL
+                | NAME_TYPE
+                | NAME_LLDATUM
+                | NAME_METHOD_PARMS
+                | NAME_METHOD_LABEL
+                | NAME_DATUM_PARMS
+                | NAME_LDATUM_PARMS
+                | NAME_GEOID
+                | NAME_LDATUMDESCRIPTION
+                | NAME_METHOD_PARMS_NATIVE
+                | NAME_ORIENTATION
 
         If 'what' is not specified, gxipj.NAME assumed, which returns the coordinate system display name.
 

@@ -1,6 +1,7 @@
 import os
 import atexit
 import numpy as np
+import math
 
 import geosoft
 import geosoft.gxapi as gxapi
@@ -640,6 +641,56 @@ class GXgrd():
          .. deprecated:: use index_window()
         """
         return self.index_window(name, x0, y0, nx, ny)
+
+    def extent_2d(self):
+        """
+        :return: ((min_x, min_y), (max_x, max_y))
+
+        .. versionadded:: 9.2
+        """
+        cosine = math.cos(math.radians(self.rot))
+        sine = math.sin(math.radians(self.rot))
+        width = (self.nx - 1) * self.dx
+        height = (self.ny - 1) * self.dy
+        xy0 = (self.x0, self.y0)
+        xy1 = (self.x0 + width * cosine, self.y0 + width * sine)
+        xy2 = (self.x0 + width * cosine - height * sine, self.y0 + width * sine + height * cosine)
+        xy3 = (self.x0 - height * sine, self.y0 + height * cosine)
+
+        minxy = (min(xy0[0], xy1[0], xy2[0], xy3[0]),
+                 min(xy0[1], xy1[1], xy2[1], xy3[1]))
+        maxxy = (max(xy0[0], xy1[0], xy2[0], xy3[0]),
+                 max(xy0[1], xy1[1], xy2[1], xy3[1]))
+
+        return minxy, maxxy
+
+
+    def extent_3d(self):
+        """
+        Return the 3D extent of the grid in the base coordinate system.
+        :return: ((min_x, min_y, min_z), (max_x, max_y, max_z))
+
+        .. versionadded:: 9.2
+        """
+        cs = self.cs
+        xyz0 = cs.xyz_from_oriented((self.x0, self.y0, 0.0))
+        xyz1 = cs.xyz_from_oriented((self.x0 + (self.nx - 1) * self.dx,
+                                     self.y0,
+                                     0.0))
+        xyz2 = cs.xyz_from_oriented((self.x0 + (self.nx - 1) * self.dx,
+                                     self.y0 + (self.ny - 1) * self.dy, 0.0))
+        xyz3 = cs.xyz_from_oriented((self.x0,
+                                     self.y0 + (self.ny - 1) * self.dy,
+                                     0.0))
+
+        minxyz = (min(xyz0[0], xyz1[0], xyz2[0], xyz3[0]),
+                  min(xyz0[1], xyz1[1], xyz2[1], xyz3[1]),
+                  min(xyz0[2], xyz1[2], xyz2[2], xyz3[2]))
+        maxxyz = (max(xyz0[0], xyz1[0], xyz2[0], xyz3[0]),
+                  max(xyz0[1], xyz1[1], xyz2[1], xyz3[1]),
+                  max(xyz0[2], xyz1[2], xyz2[2], xyz3[2]))
+
+        return minxyz, maxxyz
 
 
 # grid utilities
