@@ -644,6 +644,7 @@ class GXgrd():
 
     def extent_2d(self):
         """
+        Return the 2D extent of the grid on the grid plane
         :return: ((min_x, min_y), (max_x, max_y))
 
         .. versionadded:: 9.2
