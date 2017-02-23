@@ -98,7 +98,7 @@ class Test(unittest.TestCase):
             xcm = (area[2] - area[0])*100.0/scale
             ycm = (area[3] - area[1])*100.0/scale
             with gxv.GXview(gmap, "test", map_location=location, area=area,
-                            scale=scale, hcs="WGS 84 / UTM zone 34N") as vw:
+                            scale=scale, cs="WGS 84 / UTM zone 34N") as vw:
                 self.assertEqual(vw.extent(), area)
                 self.assertEqual(vw.extent(gxv.EXTENT_MAP), (0, 0, xcm, ycm))
                 self.assertEqual(vw.scale(), (scale, scale))
@@ -114,7 +114,7 @@ class Test(unittest.TestCase):
             xcm = 100.0 * ((area[2] - area[0]) / scale) / mpu
             ycm = 100.0 * ((area[3] - area[1]) / scale) / mpu
             with gxv.GXview(gmap, "test", map_location=loc, area=area,
-                            scale=scale, hcs=("WGS 84 / UTM zone 34N", '', '', 'ftUS', '')) as vw:
+                            scale=scale, cs=("WGS 84 / UTM zone 34N", '', '', 'ftUS', '')) as vw:
                 self.assertEqual(vw.extent(), area)
                 mx = vw.extent(gxv.EXTENT_MAP)
                 self.assertAlmostEqual(mx[0], loc[0])
@@ -136,7 +136,7 @@ class Test(unittest.TestCase):
             xcm = 100.0 * ((area[2] - area[0]) / scale) / mpu
             ycm = 100.0 * ((area[3] - area[1]) / scale) / mpu
             with gxv.GXview(gmap, "test", map_location=loc, area=area,
-                            scale=scale, hcs='ftUS') as vw:
+                            scale=scale, cs='ftUS') as vw:
                 self.assertEqual(vw.extent(), area)
                 mx = vw.extent(gxv.EXTENT_MAP)
                 self.assertAlmostEqual(mx[0], loc[0])
@@ -217,7 +217,7 @@ class Test(unittest.TestCase):
                 view.start_group('test_group')
                 view.xy_rectangle(((0, 0), (100, 100)))
             with gxv.GXview3d(gmap, viewname='v3d_test', area=(0,0,300, 300), scale=1000,
-                              hcs="wgs 84 / UTM zone 15S") as view:
+                              cs="wgs 84 / UTM zone 15S") as view:
                 view.start_group('test_group')
                 rect_line(view)
                 draw_stuff(view)
@@ -231,9 +231,9 @@ class Test(unittest.TestCase):
 
         testmap = os.path.join(self.gx.temp_folder(), "test")
         with gxmap.GXmap.new(testmap, overwrite=True) as gmap:
-            with gxv.GXview(gmap, "rectangle_test", hcs="wgs 84") as view:
+            with gxv.GXview(gmap, "rectangle_test", cs="wgs 84") as view:
                 self.assertEqual("WGS 84", str(view.cs))
-            with gxv.GXview(gmap, "vcs", hcs="wgs 84", vcs="special") as view:
+            with gxv.GXview(gmap, "vcs", cs="wgs 84 [special]") as view:
                 self.assertTrue("WGS 84 [special]" in str(view.cs))
 
     def test_basic_drawing(self):
@@ -263,13 +263,14 @@ class Test(unittest.TestCase):
         folder, files = gsys.unzip(os.path.join(os.path.dirname(__file__), 'testgrids.zip'),
                                    folder=self.gx.temp_folder())
         grid_file = os.path.join(folder, 'test_agg_utm.grd')
-        map_file = os.path.join(self.gx.temp_folder(), "test_agg")
+        map_file = os.path.join(self.gx.temp_folder(), "test_agg_utm")
 
         with gxmap.GXmap.new(map_file, overwrite=True) as gmap:
             with gxgrd.GXgrd(grid_file) as grd:
                 mn, mx = grd.extent_2d()
+                cs = grd.cs
             mapfile = gmap.filename
-            with gxv.GXview(gmap, "base",
+            with gxv.GXview(gmap, "data", cs=cs,
                             area=(mn[0], mn[1], mx[0], mx[1]),
                             scale=(mx[0] - mn[0])/0.2) as view:
                 view.xy_rectangle((mn, mx),
@@ -280,6 +281,59 @@ class Test(unittest.TestCase):
 
         self.assertEqual(gxmap.crc_map(mapfile), 3752814683)
         #gxvwr.map(mapfile)
+
+        with gxmap.GXmap.new(map_file, overwrite=True) as gmap:
+            mapfile = gmap.filename
+            with gxv.GXview(gmap, "data", cs="AGD66 / AMG zone 53",
+                        area=(mn[0], mn[1], mx[0], mx[1]),
+                        scale=(mx[0] - mn[0]) / 0.2) as view:
+
+                with gxgrd.GXgrd(grid_file) as grd:
+                    mn, mx = grd.extent_2d()
+                    view.set_drawing_cs(grd.cs)
+
+                view.xy_rectangle((mn, mx),
+                                  pen={'line_thick': 0.1, 'line_color': 'R'})
+
+                with gxagg.GXagg(grid_file) as agg:
+                    view.aggregate(agg)
+
+        #gxvwr.map(mapfile)
+        self.assertEqual(gxmap.crc_map(mapfile), 4001381093)
+
+
+    def test_zone_grid(self):
+        self.start(gsys.func_name())
+
+        def test_zone(zone, crc, shade=False):
+            with gxmap.GXmap.new(map_file, overwrite=True) as gmap:
+                mapfile = gmap.filename
+                with gxv.GXview(gmap, "data",
+                                area=(mn[0], mn[1], mx[0], mx[1]),
+                                scale=(mx[0] - mn[0]) / 0.2) as view:
+                    with gxagg.GXagg(grid_file, zone=zone, shade=shade) as agg:
+                        view.aggregate(agg)
+
+            #gxvwr.map(mapfile)
+            self.assertEqual(gxmap.crc_map(mapfile), crc)
+
+
+        # test grid file
+        folder, files = gsys.unzip(os.path.join(os.path.dirname(__file__), 'testgrids.zip'),
+                                   folder=self.gx.temp_folder())
+        grid_file = os.path.join(folder, 'test_agg_utm.grd')
+        with gxgrd.GXgrd(grid_file) as grd:
+            mn, mx = grd.extent_2d()
+        map_file = os.path.join(self.gx.temp_folder(), "test_agg")
+
+        test_zone(gxagg.ZONE_LINEAR, 3720728838, shade=True)
+        test_zone(gxagg.ZONE_EQUALAREA, 1656439979)
+        test_zone(gxagg.ZONE_DEFAULT, 1656439979)
+        test_zone(gxagg.ZONE_LAST, 1656439979)
+        test_zone(gxagg.ZONE_LINEAR, 1901089024)
+        test_zone(gxagg.ZONE_NORMAL, 2691213422)
+        test_zone(gxagg.ZONE_SHADE, 4087607233)
+        test_zone(gxagg.ZONE_LOGLINEAR, 353055968)
 
 
 if __name__ == '__main__':
