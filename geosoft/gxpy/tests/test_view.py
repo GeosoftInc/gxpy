@@ -278,11 +278,8 @@ class Test(unittest.TestCase):
                 with gxagg.GXagg(grid_file) as agg:
                     view.aggregate(agg)
 
-                #self.assertEqual(gxmap.crc_map(mapfile), 2258658382)
-
-        gxvwr.map(mapfile)
-
-
+        self.assertEqual(gxmap.crc_map(mapfile), 3752814683)
+        #gxvwr.map(mapfile)
 
 
 if __name__ == '__main__':
