@@ -77,7 +77,8 @@ class GXview:
 
         The following are only used if WRITE_NEW.
         
-        :hcs, vcs:      horizontal and vertical coordinate system definition.  See :class:`coordinate_system.GXcs`.
+        :cs:            coordinate system as a gxpy.coordinate_system.GXcs instance, or one of the GXcs
+                        constructor types.
         :map_location:  (x, y) view location on the map, in map cm
         :area:          (min_x, min_y, max_x, max_y) area in view units
         :scale:         Map scale if a coordinate system is defined.  If the coordinate system (hcs) is not
@@ -110,8 +111,7 @@ class GXview:
                  gmap,
                  viewname="_unnamed_view",
                  mode=WRITE_NEW,
-                 hcs=None,
-                 vcs=None,
+                 cs=None,
                  map_location=(0,0),
                  area=(0,0,30,20),
                  scale=100):
@@ -125,31 +125,54 @@ class GXview:
         self._open = True
         
         if mode == WRITE_NEW:
-            self.locate(hcs, vcs, map_location, area, scale)
+            self.locate(cs, map_location, area, scale)
         else:
             ipj = gxapi.GXIPJ.create()
             self.gxview.get_ipj(ipj)
-            self.cs = gxcs.GXcs(hcs=ipj)
-            self._uname, self._units_per_m = self.cs.units()
+            self.cs = self.drawing_cs = gxcs.GXcs(hcs=ipj)
+            metres_per, self._uname = self.cs.units()
+            if metres_per <= 0.:
+                raise ViewException('Invalid units {}({})'.format(self._uname, metres_per))
+            self._units_per_m = 1.0/metres_per
 
-    def set_cs(self, hcs=None, vcs=None):
+    def set_cs(self, cs):
         """
         Set the coordinate system of the view.
 
-        :param hcs: horizontal coordinate system
-        :param vcs: vertical coordinate system
+        :param cs:  coordinate system as a gxpy.coordinate_system.GXcs instance, or one of the GXcs
+                    constructor types.
 
-        Refer to `gxpy.GXcs()` for `hcs`, `vcs` usage.
+        .. versionadded:: 9.2
         """
-        self.cs = gxcs.GXcs(hcs, vcs)
+        self.cs = self.drawing_cs = gxcs.GXcs(cs)
         metres_per, self._uname = self.cs.units()
         if metres_per <= 0.:
             raise ViewException('Invalid units {}({})'.format(self._uname, metres_per))
         self._units_per_m = 1.0/metres_per
         self.gxview.set_ipj(self.cs.gxipj)
 
+    def set_drawing_cs(self, cs=None):
+        """
+        Set the coordinate system of drawing coordinates.  Subsequent drawing methods are assumed to be in this
+        coordinate system and will be re-projected to the view coordinate system.
+
+        If called with no defined coordinate system the drawing coordinate system is reset to the
+        view coordinate system.
+
+        :param cs:  coordinate system as a gxpy.coordinate_system.GXcs instance, or one of the GXcs
+                    constructor types.
+
+        .. versionadded:: 9.2
+        """
+        if cs is None:
+            self.gxview.set_user_ipj(self.cs.gxipj)
+            self.drawing_cs = self.cs
+        else:
+            self.drawing_cs = gxcs.GXcs(cs).gxipj
+            self.gxview.set_user_ipj(self.drawing_cs)
+
     def locate(self,
-               hcs=None, vcs=None,
+               cs=None,
                map_location=None,
                area=None,
                scale=None):
@@ -157,8 +180,8 @@ class GXview:
         Locate and scale the view on the map.
 
         :parameters:
-            :hcs, vcs:      New horizontal and vertical coordinate system definition.
-                            See :class:`coordinate_system.GXcs`.
+            :cs:            coordinate system as a gxpy.coordinate_system.GXcs instance, or one of the GXcs
+                            constructor types.
             :map_location:  New (x, y) view location on the map, in map cm.
             :area:          New (min_x, min_y, max_x, max_y) area in view units
             :scale:         New scale in view units per map metre, either as a single value or
@@ -171,7 +194,7 @@ class GXview:
             raise ViewException('Cannot modify a READ_ONLY view.')
 
         # coordinate system
-        self.set_cs(hcs, vcs)
+        self.set_cs(cs)
         upm = self.units_per_m
 
         if area == None:
