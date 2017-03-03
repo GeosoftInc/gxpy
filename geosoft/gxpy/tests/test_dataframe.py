@@ -70,6 +70,7 @@ class Test(unittest.TestCase):
         self.assertRaises(gxdf.DfException, gxdf.GXdf, initial='bogus')
         self.assertRaises(gxdf.DfException, gxdf.GXdf, initial='datumtrf', columns="NOT_THERE")
         self.assertRaises(gxdf.DfException, gxdf.GXdf, initial='datumtrf', records="NOT_THERE")
+        self.assertRaises(gxdf.DfException, gxdf.GXdf, initial='datumtrf', records="")
 
 
     def test_dict(self):

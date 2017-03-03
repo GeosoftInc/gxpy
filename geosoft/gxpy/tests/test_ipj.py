@@ -497,8 +497,6 @@ class Test(unittest.TestCase):
         with gxipj.GXipj.from_any(s) as ipj:
             self.assertEqual(str(ipj), "WGS 84 / UTM zone 32N (150,8.5,0) <32 deg>")
 
-        #TODO talk to Stephen about testing of orientation interface
-
 ###############################################################################################
 
 if __name__ == '__main__':
