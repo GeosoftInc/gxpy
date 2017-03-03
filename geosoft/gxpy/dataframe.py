@@ -125,7 +125,7 @@ class GXdf(pd.DataFrame):
                 else:
                     if type(records) is str:
                         if not records:
-                            raise DfException(_t('Empty record string.'))
+                            raise DfException(_t('Empty records string.'))
                         try:
                             ltb = gxapi.GXLTB.create(initial, 0, 1, records)
                         except geosoft.gxapi.GXError as e:
@@ -176,4 +176,4 @@ class GXdf(pd.DataFrame):
                         self.loc[rec] = vlst
 
             else:
-                raise DfException(_t('Only tables are currently supported.'))
+                raise DfException(_t('Only Geosoft tables are supported.'))

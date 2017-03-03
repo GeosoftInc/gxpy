@@ -438,7 +438,7 @@ class Test(unittest.TestCase):
             self.assertEqual(gxfs[3],'m,1')
             self.assertEqual(gxfs[4],'"AGD66 to WGS 84 (12)",-129.193,-41.212,130.73,0.246,0.374,0.329,-2.95500000002669')
 
-    def _test_OBLIQUESTEREO_cs(self): #TODO change to a local coordinate system test
+    def _test_OBLIQUESTEREO_cs(self):
         self.start(gsys.func_name())
 
         stref = gxapi.str_ref()

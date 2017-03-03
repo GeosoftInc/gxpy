@@ -296,12 +296,10 @@ class Test(unittest.TestCase):
 
             gw = g.index_window(window,4,2,96,5)
             pw = gw.properties()
-            dx = p.get('dx')
-            self.assertAlmostEqual(pw.get('x0'),p.get('x0')+(4*dx))
-            dy = p.get('dy')
-            self.assertAlmostEqual(pw.get('y0'),p.get('y0')+(2*dy))
-            self.assertEqual(pw.get('nx'),96)
-            self.assertEqual(pw.get('ny'),5)
+            self.assertAlmostEqual(gw.x0, g.x0+(4*g.dx))
+            self.assertAlmostEqual(gw.y0, g.y0+(2*g.dy))
+            self.assertEqual(gw.nx, 96)
+            self.assertEqual(gw.ny, 5)
             gw.close()
 
             gw = g.index_window(window,nx=20,ny=100)
@@ -325,6 +323,27 @@ class Test(unittest.TestCase):
             self.assertRaises(gxgrd.GRDException, g.index_window, window, x0=2900, y0=3600, ny=2)
             self.assertRaises(gxgrd.GRDException, g.index_window, window,-1)
             self.assertRaises(gxgrd.GRDException, g.index_window, window, y0=-1)
+
+        with gxgrd.GXgrd.open(self.g1f) as g:
+            window = os.path.join(self.folder, 'testwindow.grd(GRD)')
+            gw = g.index_window(window, 4, 2, 96, 5)
+            exmin, exmax = gw.extent_2d()
+            self.assertAlmostEqual(exmin[0], 7.04)
+            self.assertAlmostEqual(exmin[1], 44.02)
+            self.assertAlmostEqual(exmax[0], 7.99)
+            self.assertAlmostEqual(exmax[1], 44.06)
+            gw.close()
+
+            g.rot = 10.0
+            window = os.path.join(self.folder, 'testwindow.grd(GRD)')
+            gw = g.index_window(window, 4, 2, 96, 5)
+            exmin, exmax = gw.extent_2d()
+            self.assertAlmostEqual(exmin[0], 7.028973419460472)
+            self.assertAlmostEqual(exmin[1], 44.02664208216692)
+            self.assertAlmostEqual(exmax[0], 7.971486711928748)
+            self.assertAlmostEqual(exmax[1], 44.231000161070995)
+            gw.close()
+
 
     def test_from_array(self):
         self.start(gsys.func_name())
@@ -426,6 +445,16 @@ class Test(unittest.TestCase):
             self.assertAlmostEqual(mn[0], 0.0)
             self.assertAlmostEqual(mn[1], -7.0710678118654755)
             self.assertAlmostEqual(mn[2], 0.0)
+
+            grd.rot = 30.0
+            mn, mx = grd.extent_3d()
+            self.assertAlmostEqual(mx[0], 6.123724356957947)
+            self.assertAlmostEqual(mx[1], 3.5355339059327378)
+            self.assertAlmostEqual(mx[2], 13.660254037844386)
+            self.assertAlmostEqual(mn[0], -3.5355339059327373)
+            self.assertAlmostEqual(mn[1], -6.123724356957946)
+            self.assertAlmostEqual(mn[2], 0.0)
+
             grd.close()
 
 

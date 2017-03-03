@@ -574,15 +574,20 @@ class GXgrd():
                 (mx > gnx) or (my > gny)):
             raise GRDException(_t('Window x0,y0,mx,my({},{},{},{}) out of bounds ({},{})').format(x0, y0, mx, my, gnx, gny))
 
-        if self.rot != 0.0:
-            raise (_t('Cannot window a rotated grid.'))  # TODO support for windowing rotated grids
-
         # create new grid
         p = self.properties()
         p['nx'] = nx
         p['ny'] = ny
-        p['x0'] = p.get('x0') + p.get('dx') * x0
-        p['y0'] = p.get('y0') + p.get('dy') * y0
+        if self.rot == 0.0:
+            p['x0'] = self.x0 + self.dx * x0
+            p['y0'] = self.y0 + self.dy * y0
+        else:
+            dx = self.dx * x0
+            dy = self.dy * y0
+            cos = math.cos(math.radians(self.rot))
+            sin = math.sin(math.radians(self.rot))
+            p['x0'] = self.x0 + dx * cos - dy * sin
+            p['y0'] = self.y0 + dy * cos + dx * sin
         wgd = self.new(name, p)
         wpg = wgd._geth_pg()
         gpg = self._geth_pg()
@@ -673,7 +678,15 @@ class GXgrd():
 
         .. versionadded:: 9.2
         """
+
+        minxy, maxxy = self.extent_2d()
         cs = self.cs
+        xyz0 = cs.xyz_from_oriented((minxy[0], minxy[1], 0.0))
+        xyz1 = cs.xyz_from_oriented((maxxy[0], minxy[1], 0.0))
+        xyz2 = cs.xyz_from_oriented((maxxy[0], maxxy[1], 0.0))
+        xyz3 = cs.xyz_from_oriented((minxy[0], maxxy[1], 0.0))
+
+        """
         xyz0 = cs.xyz_from_oriented((self.x0, self.y0, 0.0))
         xyz1 = cs.xyz_from_oriented((self.x0 + (self.nx - 1) * self.dx,
                                      self.y0,
@@ -683,6 +696,7 @@ class GXgrd():
         xyz3 = cs.xyz_from_oriented((self.x0,
                                      self.y0 + (self.ny - 1) * self.dy,
                                      0.0))
+        """
 
         minxyz = (min(xyz0[0], xyz1[0], xyz2[0], xyz3[0]),
                   min(xyz0[1], xyz1[1], xyz2[1], xyz3[1]),
