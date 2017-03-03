@@ -214,8 +214,7 @@ class GXmap:
 
     @classmethod
     def new_standard_geosoft(cls, filename=None, data_area=(0.,0.,100.,100.), scale=None,
-                             hcs=None, vcs=None,
-                             media="A3", fixed_size=False, style='figure',
+                             cs=None, media="A3", fixed_size=False, style='figure',
                              margins=None, inside_margin=1.0,
                              *argv, **kwa):
         """
@@ -224,8 +223,7 @@ class GXmap:
             :filename:      Map file name, a temporaty file is create if not specifiec
             :data_area:     (min_x, min_y, max_x, max_y) data area for the data view on the map
             :scale:         required scale, default will fit data to the map media
-            :hcs:           horizontal coordinate system, default unknown
-            :vcs:           vertical coordinate system, default unknown
+            :cs:            coordinate system, default unknown
             :media:         media name and optional 'portrait' suffix.  Named media sizes are read
                             from media.csv.  For example `media='A4 portrait'`.
             :fixed_size:    True for fixed media size
@@ -311,9 +309,9 @@ class GXmap:
                                 margins[0], margins[1], margins[2], margins[3],
                                 inside_margin)
 
-        def set_coordinate_system(gmap, hcs, vcs):
+        def set_coordinate_system(gmap, cs):
             with gxvw.GXview(gmap=gmap, viewname='*Data', mode=gxvw.WRITE_OLD) as view:
-                view.set_cs(hcs, vcs)
+                view.set_cs(cs)
 
         def set_registry(gmap, style, inside_margin):
             rd = {'MAP.STYLE': style,
@@ -324,7 +322,7 @@ class GXmap:
 
         gmap = cls.new(filename=filename, **kwa)
         setup_map(gmap, data_area, scale, media, margins)
-        set_coordinate_system(gmap, hcs, vcs)
+        set_coordinate_system(gmap, cs)
         set_registry(gmap, style, inside_margin)
 
         return gmap
