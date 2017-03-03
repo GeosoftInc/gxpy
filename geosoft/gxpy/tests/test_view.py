@@ -233,8 +233,8 @@ class Test(unittest.TestCase):
         with gxmap.GXmap.new(testmap, overwrite=True) as gmap:
             with gxv.GXview(gmap, "rectangle_test", cs="wgs 84") as view:
                 self.assertEqual("WGS 84", str(view.cs))
-            with gxv.GXview(gmap, "vcs", cs="wgs 84 [special]") as view:
-                self.assertTrue("WGS 84 [special]" in str(view.cs))
+            with gxv.GXview(gmap, "vcs", cs="wgs 84 / UTM zone 15N [special]") as view:
+                self.assertTrue("WGS 84 / UTM zone 15N [special]" in str(view.cs))
 
     def test_basic_drawing(self):
         self.start(gsys.func_name())

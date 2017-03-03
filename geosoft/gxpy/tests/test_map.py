@@ -9,6 +9,7 @@ import geosoft.gxpy.system as gsys
 import geosoft.gxpy.map as gxmap
 import geosoft.gxpy.view as gxv
 import geosoft.gxpy.geometry as gxgm
+import geosoft.gxpy.coordinate_system as gxcs
 
 def new_test_map(mapname='test', rescale=1.0, locate=None):
 
@@ -122,6 +123,11 @@ class Test(unittest.TestCase):
             views = gmap.view_list(gxmap.LIST_ALL)
             self.assertTrue('Base' in views)
             self.assertTrue('Data' in views)
+
+        with gxmap.GXmap.new_standard_geosoft(data_area=(0, 0, 100, 80),
+                                              cs=gxcs.GXcs("DHDN / Okarito 2000 [geodetic]", init=True)) as gmap:
+            with gxv.GXview(gmap, 'Data', mode=gxv.WRITE_OLD) as v:
+                self.assertEqual("DHDN / Okarito 2000 [geodetic]", str(v.cs))
 
     def test_lists(self):
         self.start(gsys.func_name())

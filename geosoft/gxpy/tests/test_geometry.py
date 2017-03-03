@@ -40,11 +40,12 @@ class Test(unittest.TestCase):
         self.start(gsys.func_name())
 
         s = "WGS 84 / UTM zone 32N <0, 0, 0, 10, 15, 32>"
-        p = gxgm.Point((5,10), hcs=s)
+        p = gxgm.Point((5,10), cs=s)
         hcsd = p.cs.coordinate_dict
         self.assertEqual(hcsd['name'], "WGS 84 / UTM zone 32N <0,0,0,10,15,32>")
 
-        pp = gxgm.PPoint(((8, 12), (5, 10)), hcs=s, vcs="geoid")
+        s = s + ' [geoid]'
+        pp = gxgm.PPoint(((8, 12), (5, 10)), cs=s)
         hcsd = p.cs.coordinate_dict
         self.assertEqual(hcsd['name'], "WGS 84 / UTM zone 32N <0,0,0,10,15,32>")
         self.assertEqual(pp.cs.vcs, "geoid")
@@ -211,11 +212,11 @@ class Test(unittest.TestCase):
         self.assertFalse(p1 is p2)
         self.assertTrue(p1 == p2)
 
-        p2.set_cs(hcs="WGS 84")
+        p2.set_cs(cs="WGS 84")
         self.assertTrue(p1 == p2)
         p1.set_cs("WGS 84")
         self.assertTrue(p1 == p2)
-        p1.set_cs(hcs="WGS 84", vcs="geoid")
+        p1.set_cs(cs="WGS 84 [geoid]")
         self.assertTrue(p1 == p2)
 
     def test_p2(self):
@@ -231,7 +232,7 @@ class Test(unittest.TestCase):
                          gxgm.Point((b1.x2[1], b1.y2[1], b1.z2[1])))
         self.assertTrue(b1 == b2)
         b2 = gxgm.Point2(gxgm.Point((b1.x2[1], b1.y2[1], b1.z2[1])),
-                         gxgm.Point((b1.x2[0], b1.y2[0], b1.z2[0])), hcs="WGS 84")
+                         gxgm.Point((b1.x2[0], b1.y2[0], b1.z2[0])), cs="WGS 84")
         same = (b1 == b2)
         self.assertTrue(same)
 

@@ -81,7 +81,7 @@ class GXview:
                         constructor types.
         :map_location:  (x, y) view location on the map, in map cm
         :area:          (min_x, min_y, max_x, max_y) area in view units
-        :scale:         Map scale if a coordinate system is defined.  If the coordinate system (hcs) is not
+        :scale:         Map scale if a coordinate system is defined.  If the coordinate system is not
                         defined this is view units per map metre.
 
     .. versionadded:: 9.2
@@ -129,7 +129,7 @@ class GXview:
         else:
             ipj = gxapi.GXIPJ.create()
             self.gxview.get_ipj(ipj)
-            self.cs = self.drawing_cs = gxcs.GXcs(hcs=ipj)
+            self.cs = self.drawing_cs = gxcs.GXcs(ipj)
             metres_per, self._uname = self.cs.units()
             if metres_per <= 0.:
                 raise ViewException('Invalid units {}({})'.format(self._uname, metres_per))

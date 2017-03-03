@@ -124,6 +124,8 @@ class GXdf(pd.DataFrame):
                         raise DfException(str(e))
                 else:
                     if type(records) is str:
+                        if not records:
+                            raise DfException(_t('Empty record string.'))
                         try:
                             ltb = gxapi.GXLTB.create(initial, 0, 1, records)
                         except geosoft.gxapi.GXError as e:
