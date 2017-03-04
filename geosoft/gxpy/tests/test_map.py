@@ -125,7 +125,7 @@ class Test(unittest.TestCase):
             self.assertTrue('Data' in views)
 
         with gxmap.GXmap.new_standard_geosoft(data_area=(0, 0, 100, 80),
-                                              cs=gxcs.GXcs("DHDN / Okarito 2000 [geodetic]", init=True)) as gmap:
+                                              cs=gxcs.GXcs("DHDN / Okarito 2000 [geodetic]")) as gmap:
             with gxv.GXview(gmap, 'Data', mode=gxv.WRITE_OLD) as v:
                 self.assertEqual("DHDN / Okarito 2000 [geodetic]", str(v.cs))
 
