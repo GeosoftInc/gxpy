@@ -433,7 +433,7 @@ class Test(unittest.TestCase):
             self.assertAlmostEqual(mx[1], 13.66025404)
 
             cs = grd.cs
-            cs_name = cs.name(gxcs.NAME_HCS_VCS) + ' <0,0,0,-90,0,45>'
+            cs_name = cs.cs_name(gxcs.NAME_HCS_VCS) + ' <0,0,0,-90,0,45>'
             grd.cs = gxcs.GXcs(cs_name)
             grd.x0 = grd.y0 = 0.0
             grd.dx = grd.dy = 0.1

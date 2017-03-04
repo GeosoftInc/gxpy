@@ -239,7 +239,7 @@ class Wkt:
         return "{}({})".format(self.__class__, self.__dict__)
 
     def __str__(self):
-        return self.name()
+        return self.display_name
 
     def __enter__(self):
         return self
@@ -255,6 +255,7 @@ class Wkt:
         self.gcs, _ = find_key(self._wkt, 'GEOGCS')
         self.vcs, _ = find_key(self._wkt, 'VERTCS')
 
+    @property
     def name(self):
         """ return the ESRI name for the coordinate system"""
 
@@ -285,11 +286,18 @@ class GXcs:
                     contains the coordinate system properties, a JSON string that contains the coordinate
                     system properties, or a list that contains the 5 GXF coordinate system strings.
                     You can also pass a gxapi.GXIPJ, or another GXcs.
-    :param init:    `True` to initialize immediately, `False` to delay initialization until used.
+
+    :properties:
+
+        :display_name:      Display name to present to a user
+        :name:              Coordinate system name, ie: 'WGS 84 / UTM zone 15N <450000,7000000,0,0,0,15> [geodetic]'
+        :hcs:               Horizontal coordinate system name, ie: 'WGS 84 / UTM zone 15N <450000,7000000,0,0,0,15>'
+        :vcs:               Vertical coordinate system name, ie: 'geodetic'
+        :gxipj:             GXAPI.GXIPJ instance for use with GXAPI
 
     Dictionary structure:
     
-        :Geosoft: (http://www.geosoft.com/resources/goto/GXF-Grid-eXchange-File)
+        :Geosoft:
 
         .. code::
 
@@ -303,7 +311,7 @@ class GXcs:
                 "vcs": "vertical coordinate system"
             }
 
-        See see http://www.geosoft.com/resources/goto/GXF-Grid-eXchange-File for GXF string reference
+            See see http://www.geosoft.com/resources/goto/GXF-Grid-eXchange-File for GXF string reference
 
         :EPSG: (http://spatialreference.org/)
 
@@ -332,7 +340,7 @@ class GXcs:
         return "{}({})".format(self.__class__, self.__dict__)
 
     def __str__(self):
-        return self.name(NAME_HCS_VCS)
+        return self.display_name
 
     def __enter__(self):
         return self
@@ -340,28 +348,16 @@ class GXcs:
     def __exit__(self, type, value, traceback):
         pass
 
-    def __init__(self, cs=None, init=False):
+    def __init__(self, cs=None):
 
-        self._init_ipj = None
-        self._cs = cs
         self._dict = None
-        self._gxapi_ipj = None
+        self._gxapi_ipj = gxapi.GXIPJ.create()
 
-        if init or isinstance(cs, GXcs) or isinstance(cs, gxapi.GXIPJ):
-            self._setup_ipj(cs)
-        else:
-            self._init_ipj = cs
+        if cs:
+            if isinstance(cs, str):
+                self._from_str(cs)
 
-    def __eq__(self, other):
-        return self.same_as(other)
-
-    def _setup_ipj(self, cs):
-        """ Setup the coordinate system. """
-
-        if cs is not None:
-
-            self._gxapi_ipj = gxapi.GXIPJ.create()
-            if isinstance(cs, gxapi.GXIPJ):
+            elif isinstance(cs, gxapi.GXIPJ):
                 s1 = gxapi.str_ref()
                 s2 = gxapi.str_ref()
                 s3 = gxapi.str_ref()
@@ -371,45 +367,45 @@ class GXcs:
                 self._from_gxf((s1.value, s2.value, s3.value, s4.value, s5.value))
 
             elif isinstance(cs, GXcs):
-                self._from_gxf(cs.gxf())
+                self._from_gxf(cs.get_gxf())
 
+            elif isinstance(cs, dict):
+                self._from_dict(cs)
             else:
-                if isinstance(cs, str):
-                    self._from_str(cs)
-                elif isinstance(cs, dict):
-                    self._from_dict(cs)
-                else:
-                    self._from_gxf(cs)
+                self._from_gxf(cs)
 
-        elif self._gxapi_ipj is None:
-            self._gxapi_ipj = gxapi.GXIPJ.create()
-
-        # initialized
-        self._init_ipj = None
+    def __eq__(self, other):
+        return self.same_as(other)
 
     @property
     def gxipj(self):
         """ gxapi.GXIPJ instance"""
-        if self._gxapi_ipj is None:
-            self._setup_ipj(self._init_ipj)
         return self._gxapi_ipj
 
     @property
-    def cs_name(self):
+    def name(self):
         """ coordinate system name as 'datum / projection <orientation> [vcs]' """
-        return self.name(NAME_HCS_VCS)
+        return self.cs_name(NAME_HCS_VCS)
+
+    @property
+    def display_name(self):
+        """ coordinate system name as 'datum / projection <orientation> [vcs]' """
+        sref = gxapi.str_ref()
+        self.gxipj.get_display_name(sref)
+        return sref.value
 
     @property
     def hcs(self):
         """ horizontal coordinate system name"""
-        return self.name(NAME_HCS)
+        return self.cs_name(NAME_HCS)
                 
     @property
     def vcs(self):
         """ vertical coordinate system name"""
-        return self.name(NAME_VCS)
+        return self.cs_name(NAME_VCS)
 
-    def set_vcs(self, vcs):
+    @vcs.setter
+    def vcs(self, vcs):
         """
         Set the vertical coordinate system.
 
@@ -423,16 +419,38 @@ class GXcs:
         self.gxipj.get_gxf(s1, s2, s3, s4, s5)
         hcs, orient, current_vcs = hcs_orient_vcs_from_name(s1.value)
         if current_vcs != vcs:
-            name = name_from_hcs_orient_vcs(hcs, orient, vcs)
-            self.gxipj.set_gxf(name, s2.value, s3.value, s4.value, s5.value)
-            # self.gxipj.get_gxf(s1, s2, s3, s4, s5) #TODO remove once debugged
-            # pass
+            gxf_name = name_from_hcs_orient_vcs(name_from_hcs_orient_vcs(hcs, vcs=vcs), orient=orient)
+            self.gxipj.set_gxf(gxf_name, s2.value, s3.value, s4.value, s5.value)
+
+    def coordinate_dict(self):
+        """
+        Dictionary of coordinate system attributes.
+
+        .. versionadded:: 9.2
+        """
+
+        if self._dict is None:
+
+            # initially from GXF values
+            gxf1, gxf2, gxf3, gxf4, gxf5 = self.get_gxf()
+            hcs, orient, vcs = hcs_orient_vcs_from_name(gxf1)
+            self._dict = {"type": "Geosoft",
+                          "name": self.name,
+                          "datum": gxf2,
+                          "projection": gxf3,
+                          "units": gxf4,
+                          "local_datum": gxf5,
+                          "orientation": orient,
+                          "vcs": vcs
+                          }
+
+        return self._dict
 
     def same_hcs(self, other):
         """ Return true if the HCS are the same."""
         def same_units(a, b):
-            a = a.coordinate_dict['units']
-            b = b.coordinate_dict['units']
+            a = a.coordinate_dict()['units']
+            b = b.coordinate_dict()['units']
             if not (a and b):
                 return True
             else:
@@ -480,7 +498,7 @@ class GXcs:
             self.gxipj.set_esri(cstr)
             vcs, _ = Wkt(cstr).find_key('VERTCS')
             if vcs:
-                self.set_vcs(vcs)
+                self.vcs = vcs
 
         else:
             self._from_gxf([cstr, '', '', '', ''])
@@ -499,7 +517,7 @@ class GXcs:
         gxf1, gxf2, gxf3, gxf4, gxf5 = gxfs
 
         hcs, orient, vcs = hcs_orient_vcs_from_name(gxf1)
-        gxf1 = name_from_hcs_orient_vcs(hcs, orient, '')
+        gxf1 = name_from_hcs_orient_vcs(hcs, orient=orient)
         
         # if we get a name only, and it has a datum and projection, copy these.
         # The challenge with a name only is that the "datum / projection" must exist as
@@ -507,30 +525,27 @@ class GXcs:
         # combine projections with different datums so copying the values allows for this
 
         if (gxf2 == '') and (gxf3 == ''):
-            if '/' in gxf1:
-                datum, projection, *_ = gxf1.strip('"').split('/')
+            if '/' in hcs:
+                datum, projection, *_ = hcs.strip('"').split('/')
                 gxf2 = datum.strip()
-                gxf3, orient, _ = hcs_orient_vcs_from_name(projection)
+                gxf3 = projection.strip()
             else:
                 gxf2 = hcs
 
-        # get ipj from gxf, error if unknown
-        sref = gxapi.str_ref()
-
+        # units only
         if not (gxf3 or gxf4 or gxf5) and parameter_exists(PARM_UNITS, gxf1):
-            # units only
             self.gxipj.set_gxf('', '', '', gxf1, '')
+
         else:
             try:
-                self.gxipj.set_gxf(gxfs[0], gxf2, gxf3, gxf4, gxf5)
-                self.set_vcs(vcs)
-                self.gxipj.get_display_name(sref)
+                self.gxipj.set_gxf(gxf1, gxf2, gxf3, gxf4, gxf5)
+                self.vcs = vcs
 
             except (geosoft.gxapi.GXAPIError, geosoft.gxapi.GXError):
                 raise_gxf_error()
             else:
                 if gxf1 != "*unknown":
-                    if ('*unknown' in sref.value) and (gxf2 or gxf3 or gxf5):
+                    if ('*unknown' in self.display_name) and (gxf2 or gxf3 or gxf5):
                         raise_gxf_error()
 
     def _from_dict(self, csdict):
@@ -570,7 +585,7 @@ class GXcs:
             # add orientation and vcs
             orient = csdict.get('orientation', '')
             if orient or vcs:
-                gxfs = self.gxf()
+                gxfs = self.get_gxf()
                 gxfs[0] = name_from_hcs_orient_vcs(gxfs[0], orient, vcs)
                 self._from_gxf(gxfs)
 
@@ -609,32 +624,7 @@ class GXcs:
         else:
             raise ValueError("Projection type '{}' not supported.".format(cstype))
 
-    @property
-    def coordinate_dict(self):
-        """
-        Dictionary of coordinate system attributes.
-
-        .. versionadded:: 9.2
-        """
-
-        if self._dict is None:
-
-            # initially from GXF values
-            gxf1, gxf2, gxf3, gxf4, gxf5 = self.gxf()
-            hcs, orient, vcs = hcs_orient_vcs_from_name(gxf1)
-            self._dict = {"type": "Geosoft",
-                         "name": gxf1,
-                         "datum": gxf2,
-                         "projection": gxf3,
-                         "units": gxf4,
-                         "local_datum": gxf5,
-                         "orientation": orient,
-                         "vcs": vcs
-                         }
-
-        return self._dict
-
-    def gxf(self):
+    def get_gxf(self):
         """
         Get GXF string list from ipj.
         Returns list of 5 GXF strings.
@@ -651,7 +641,7 @@ class GXcs:
         lst = [s1.value.replace('"', ' ').strip(), s2.value, s3.value, s4.value, s5.value]
         return lst
 
-    def name(self, what=None):
+    def cs_name(self, what=NAME):
         """
         Return requested name.
 
@@ -685,17 +675,19 @@ class GXcs:
         .. versionadded:: 9.2
         """
 
-        sref = gxapi.str_ref()
-        self.gxipj.get_display_name(sref)
-        if (what is None) or (what == NAME_HCS_VCS):
-            return sref.value
+        s = gxapi.str_ref()
+        if what == NAME:
+            self.gxipj.get_display_name(s)
+            return s.value
         else:
-
-            hcs, orient, vcs = hcs_orient_vcs_from_name(sref.value)
-            if what == NAME_VCS:
-                return vcs
+            csname, *_ = self.get_gxf()
+            hcs, orient, vcs = hcs_orient_vcs_from_name(csname)
+            if what == NAME_HCS_VCS:
+                return name_from_hcs_orient_vcs(hcs, orient, vcs)
             if what == NAME_HCS:
                 return name_from_hcs_orient_vcs(hcs, orient, None)
+            if what == NAME_VCS:
+                return vcs
             if what == NAME_DATUM:
                 return hcs.split('/')[0].strip()
             if what == NAME_PROJECTION:
@@ -704,8 +696,8 @@ class GXcs:
                 else:
                     return ''
 
-            self.gxipj.get_name(what, sref)
-            return sref.value
+            self.gxipj.get_name(what, s)
+            return s.value
 
     def units(self):
         """
