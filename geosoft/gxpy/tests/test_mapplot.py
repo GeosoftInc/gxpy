@@ -38,12 +38,13 @@ class Test(unittest.TestCase):
             mapfile = map.filename
             with gxmapl.GXmapplot(map) as mapl:
                 #mapl.surround(outer_pen="G128R128", inner_pen="B128", gap=0.2)
-                mapl.surround(gap=0.1)
+                mapl.surround(gap=0.5)
                 mapl.text("Bottom left corner")
-                mapl.text("One cm higher", ref_point=(1, 0, 1), pen=("R255", 50))
-                mapl.text("Times Roman", ref_point=(1, 0, 2), font=(1, True, "Times New Roman"))
-                mapl.text("Curlz MT", ref_point=(1, 0, 4), font=(0.8, False, "Curlz MT"))
-                mapl.text("Big Curlz MT", ref_point=(1, 0, 5.5), font=[2.5, True])
+                mapl.text("One cm higher", ref_point=(1, 0, 1), pen=("R", 50))
+                mapl.text("Times Roman", ref_point=(1, 0, 2), text_style=(1, True), font="Times New Roman")
+                mapl.text("Curlz MT", ref_point=(1, 0, 4), text_style=(0.8, False), font="Curlz MT")
+                mapl.set_drawing_attributes(font="tr.gfn")
+                mapl.text("Big Geosoft GFN", ref_point=(1, 0, 6), text_style=(2.5, True), pen=("g", 2000))
 
         gxvwr.map(mapfile)
         #self.assertEqual(gxmap.crc_map(mapfile), 4001381093)

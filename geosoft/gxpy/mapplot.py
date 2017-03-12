@@ -39,28 +39,26 @@ def _attrib(func):
         style_changed = False
         if 'ref_point' in kwargs:
             self.ref_point = kwargs.pop('ref_point')
-        if 'line_style' in kwargs:
-            self.line_style = kwargs.pop('line_style')
-            style_changed = True
         if 'pen' in kwargs:
             self.pen = kwargs.pop('pen')
             style_changed = True
+        if 'line_style' in kwargs:
+            self.line_style = kwargs.pop('line_style')
+            style_changed = True
         if 'font' in kwargs:
-            font = kwargs.pop('font')
-            if len(font) == 3:
-                self.font = font
+            f = kwargs.pop('font')
+            if ".gfn" in f.lower():
+                self.font = f.split('.gfn')[0]
             else:
-                self.font = list(self.font)
-                if len(font) == 1:
-                    self.font[0] = font[0]
-                else:
-                    self.font[0:2] = font
+                self.font = f + "(TT)"
+            style_changed = True
+        if 'text_style' in kwargs:
+            self.text_style = kwargs.pop('text_style')
             style_changed = True
 
-        if style_changed:
-            self._maplfile.write("DATT a={},{},{}\n".format(self._a_pen(),
-                                                            self._a_line_style(),
-                                                            self._a_font()))
+        if style_changed and not ("set_drawing_attributes" in str(func)):
+            self._set_attributes()
+
         func(self, *args, **kwargs)
 
     return wrapper
@@ -98,20 +96,21 @@ class GXmapplot:
         self._ref_pre = ref_prefix
 
         # create an mdf file
-        mdf1, mdf2 = map.mdf()
-        self._mdffilename = os.path.join(gx.GXpy().temp_folder(), gxu.uuid() + ".mdf")
-        with open(self._mdffilename, "w") as f:
-            f.write("{}\n{}\n".format(str(mdf1)[1:-1], str(mdf2)[1:-1]))
+        # mdf1, mdf2 = map.mdf()
+        # self._mdffilename = os.path.join(gx.GXpy().temp_folder(), gxu.uuid() + ".mdf")
+        # with open(self._mdffilename, "w") as f:
+        #    f.write("{}\n{}\n".format(str(mdf1)[1:-1], str(mdf2)[1:-1]))
 
         # mapplot control file
         self._maplfilename = os.path.join(gx.GXpy().temp_folder(), 'mapl_' + gxu.uuid() + ".con")
         self._maplfile = open(self._maplfilename, "w")
-        self._maplfile.write('MDFF \"{}\"\n'.format(gxu.normalize_file_name(self._mdffilename)))
+        #self._maplfile.write('MDFF \"{}\"\n'.format(gxu.normalize_file_name(self._mdffilename)))
 
         self._refp = (1,0,0)
-        self._pen = ("K255", 1)
+        self._pen = ("k", 1)
         self._line_style = (1, 0.5)
-        self._font = (0.3, 0.3, 0.3, 0, "DEFAULT")
+        self._text_style = (0.3, False)
+        self._font = "DEFAULT"
 
         atexit.register(self._process, pop=False)
         self._open = gx.track_resource(self.__class__.__name__, self._maplfilename)
@@ -124,9 +123,15 @@ class GXmapplot:
             gxmapl = gxapi.GXMAPL.create(self._maplfilename, self._ref_pre, 0)
             gxmapl.process(self._map.gxmap)
             os.remove(self._maplfilename)
-            os.remove(self._mdffilename)
+            #os.remove(self._mdffilename)
         if pop:
             gx.pop_resource(self._open)
+
+    def _set_attributes(self, name='def'):
+        self._maplfile.write("DATT {}={},{},{}\n".format(name,
+                                                         self._a_pen(),
+                                                         self._a_line_style(),
+                                                         self._a_text()))
 
     @property
     def ref_point(self):
@@ -148,7 +153,7 @@ class GXmapplot:
         self._pen = pen
 
     def _a_pen(self):
-        return "{}t{}".format(self._pen[0], self._pen[1])
+        return "{}t{}".format(self._pen[0].lower(), self._pen[1])
 
     @property
     def line_style(self):
@@ -169,13 +174,22 @@ class GXmapplot:
     def font(self, font):
         self._font = font
 
-    def _a_font(self):
-        return "{},{},{},{},\"{}(TT)\"".format(self._font[0], self._font[0], self._font[0],
-                                               10 if self.font[1] else 0, self.font[2])
+    @property
+    def text_style(self):
+        return self._text_style
+
+    @text_style.setter
+    def text_style(self, ts):
+        self._text_style = ts
+
+    def _a_text(self):
+        th = self._text_style[0]
+        return "{},{},{},{},\"{}\"".format(th, th, th,
+                                               10 if self.text_style[1] else 0, self.font)
 
     def surround(self, outer_pen=3, inner_pen=1, gap=0):
         if type(outer_pen) is str:
-            outer_pen = '3:'+outer_pen
+            outer_pen = '3:' + outer_pen
         if gap <= 0:
             self._maplfile.write("SURR {}\n".format(outer_pen))
         else:
@@ -183,6 +197,9 @@ class GXmapplot:
                 inner_pen = '1:' + inner_pen
             self._maplfile.write("SURR {},{},{}\n".format(outer_pen, gap, inner_pen))
 
+    @_attrib
+    def set_drawing_attributes(self, name='default'):
+        self._set_attributes(name)
 
     @_attrib
     def text(self, text, just=BOTTOM_LEFT):
