@@ -179,6 +179,36 @@ class Test(unittest.TestCase):
             gmap.remove_on_close(True)
             gmap.close()
 
+    def test_map_classes(self):
+        self.start(gsys.func_name())
+
+        with gxmap.GXmap.new(filename='test_geosoft', overwrite=True) as gmap:
+            self.assertEqual(gmap.get_class_view_name('Data'), 'Data')
+            self.assertEqual(gmap.get_class_view_name('data'), 'Data')
+            self.assertEqual(gmap.get_class_view_name('Base'), 'Base')
+            self.assertEqual(gmap.get_class_view_name('base'), 'Base')
+            self.assertEqual(gmap.get_class_view_name('Section'), 'Section')
+            self.assertEqual(gmap.get_class_view_name('section'), 'Section')
+            self.assertEqual(gmap.get_class_view_name('some_class_name'), 'some_class_name')
+
+            gmap.set_class_view_name('Base', 'bogus')
+            self.assertEqual(gmap.get_class_view_name('Base'), 'bogus')
+            gmap.set_class_view_name('Data', 'bogus_Data')
+            #self.assertEqual(gmap.get_class_view_name('Data'), 'bogus_Data')
+            gmap.set_class_view_name('Section', 'yeah')
+            self.assertEqual(gmap.get_class_view_name('Section'), 'yeah')
+            gmap.set_class_view_name('mine', 'boom')
+            self.assertEqual(gmap.get_class_view_name('mine'), 'boom')
+
+        with gxmap.GXmap.new_standard_geosoft(data_area=(0, 0, 100, 80),
+                                              cs=gxcs.GXcs("DHDN / Okarito 2000 [geodetic]")) as gmap:
+
+            self.assertEqual(gmap.get_class_view_name('Base'), 'Base')
+            self.assertEqual(gmap.get_class_view_name('Data'), 'Data')
+
+            gxv.GXview(gmap, "copy_data", mode=gxv.WRITE_NEW, copy="*Data")
+            gmap.set_class_view_name('Data', 'copy_data')
+            self.assertEqual(gmap.get_class_view_name('Data'), 'copy_data')
 
 if __name__ == '__main__':
 

@@ -5,8 +5,6 @@ import geosoft
 import geosoft.gxapi as gxapi
 from . import vv as gxvv
 from . import geometry as gxgm
-from . import ipj as gxipj
-from . import utility as gxu
 from . import coordinate_system as gxcs
 
 __version__ = geosoft.__version__
@@ -68,14 +66,19 @@ class GXview:
     Geosoft view class.
 
     :parameters:
-        :viewname:      view name, default is "_unnamed_view"
+        :viewname:      view name, default is "_unnamed_view". Use "\*Base", "\*Data" or "\*Section" to open
+                        the defined "Base", "Data" or "Section" views.  The '*' prefix causes the view associated
+                        with the class name to be opened.
         :gmap:          map instance, if not specified a new default map is created and deleted on closing
         :mode:          open view mode:
-                            | view.READ_ONLY
-                            | view.WRITE_NEW
-                            | view.WRITE_OLD
 
-        The following are only used if WRITE_NEW.
+                        ::
+
+                            gxpy.view.READ_ONLY
+                            gxpy.view.WRITE_NEW
+                            gxpy.view.WRITE_OLD
+
+        The following are used with ``mode=gxpy.view.WRITE_NEW``:
         
         :cs:            coordinate system as a gxpy.coordinate_system.GXcs instance, or one of the GXcs
                         constructor types.
@@ -83,11 +86,10 @@ class GXview:
         :area:          (min_x, min_y, max_x, max_y) area in view units
         :scale:         Map scale if a coordinate system is defined.  If the coordinate system is not
                         defined this is view units per map metre.
+        :copy:          name of a view to copy into the new view.
 
     .. versionadded:: 9.2
     """
-
-    _view = None
 
     def __enter__(self):
         return self
@@ -114,7 +116,8 @@ class GXview:
                  cs=None,
                  map_location=(0,0),
                  area=(0,0,30,20),
-                 scale=100):
+                 scale=100,
+                 copy=None):
 
         self._gmap = gmap
         self._viewname = viewname
@@ -126,6 +129,12 @@ class GXview:
         
         if mode == WRITE_NEW:
             self.locate(cs, map_location, area, scale)
+
+            if copy:
+                with GXview(gmap, viewname=copy, mode=READ_ONLY) as v:
+                    v.gxview.mark_all_groups(1)
+                    v.gxview.copy_marked_groups(self.gxview)
+
         else:
             ipj = gxapi.GXIPJ.create()
             self.gxview.get_ipj(ipj)
@@ -338,6 +347,21 @@ class GXview:
             del self._pen_stack[-1:]
 
     def extent(self, extent=EXTENT_VIEW):
+        """
+        Return the extent of the view.
+
+        :param extent: extent units are in view or map units:
+
+            ::
+
+                EXTENT_VIEW     extent in view units (default)
+                EXTENT_MAP      extent in map units
+
+        :return: (x_min, y_min, x_max, y_max)
+
+        .. versionadded:: 9.2
+        """
+
         xmin = gxapi.float_ref()
         ymin = gxapi.float_ref()
         xmax = gxapi.float_ref()
@@ -356,6 +380,7 @@ class GXview:
     def color(self, cstr):
         """
         Return a color from a color string.
+
         :param cstr:    color string (see below)
         :return:        color
 

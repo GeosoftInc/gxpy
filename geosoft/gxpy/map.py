@@ -302,7 +302,7 @@ class GXmap:
                            margins[2] + y_adjust, margins[3] + y_adjust)
 
             gxapi.GXMVU.mapset( gmap.gxmap,
-                                'Base', 'Data',
+                                '*Base', '*Data',
                                 data_area[0], data_area[2], data_area[1], data_area[3],
                                 media,
                                 int(media_size[1] > media_size[0]),
@@ -410,3 +410,42 @@ class GXmap:
         m2 = (sc, ufac, x0, y0)
 
         return m1, m2
+
+    def get_class_view_name(self, view_class):
+        """
+        Get the view name associated with a class.
+
+        :param view_class:  desired class
+
+        Common view class names are::
+
+            'Base'      the base map/figure view, uses map cm
+            'Data'      the default data view for drawing spatial data.
+            'Section'   the default section view for things drawn in section
+
+        Other class names may be defined, though they are not used by Geosoft.
+
+        :return: view name associated with the class, '' if not defined.
+
+        .. versionadded:: 9.2
+        """
+        sr = gxapi.str_ref()
+        self.gxmap.get_class_name(view_class, sr)
+        return sr.value
+
+    def set_class_view_name(self, view_class, view_name):
+        """
+        Set the view name associated with a class.
+
+        :param view_class:  class name
+        :param view_name:   name of the view associated with this class.
+
+        Common view class names are::
+
+            'Base'      the base map/figure view, uses map cm
+            'Data'      the default data view for drawing spatial data.
+            'Section'   the default section view for things drawn in section
+
+        .. versionadded:: 9.2
+        """
+        self.gxmap.set_class_name(view_class, view_name)

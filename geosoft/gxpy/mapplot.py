@@ -23,6 +23,9 @@ BASE_ALL_CENTER = 6
 BASE_FIT_BY_CHARACTER_WIDTH = 7
 BASE_FIT_BY_CHARACTER_SIZE = 8
 
+RECTANGLE_EXTENT_BASE = -1
+RECTANGLE_EXTENT_DATA = -2
+
 class MapplotException(Exception):
     """
     Exceptions from this module.
@@ -176,7 +179,7 @@ class GXmapplot:
         self._pen_def = ("k", 1)
         self._line_def = (1, 0.5)
         self._text_def = (0.3, 0)
-        self._font = "DEFAULT"
+        self._font = "DEFAULT.gfn"
 
         atexit.register(self._process, pop=False)
         self._open = gx.track_resource(self.__class__.__name__, self._maplfilename)
@@ -221,7 +224,7 @@ class GXmapplot:
         self._pen_def = pen
 
     def _a_pen(self):
-        return "{}t{}".format(self._pen_def[0].lower(), self._pen_def[1])
+        return "{}t{}".format(self._pen_def[0], self._pen_def[1])
 
     @property
     def line_def(self):
@@ -261,16 +264,6 @@ class GXmapplot:
         th = self._text_def[0]
         return "{},{},{},{},\"{}\"".format(th, th, th, self.text_def[1], f)
 
-    def surround(self, outer_pen=3, inner_pen=1, gap=0):
-        if type(outer_pen) is str:
-            outer_pen = '3:' + outer_pen
-        if gap <= 0:
-            self.command("SURR {}\n".format(outer_pen))
-        else:
-            if type(inner_pen) is str:
-                inner_pen = '1:' + inner_pen
-            self.command("SURR {},{},{}\n".format(outer_pen, gap, inner_pen))
-
     @_attrib
     def set_drawing_attributes(self, name=None):
         """
@@ -281,25 +274,6 @@ class GXmapplot:
         .. versionadded:: 9.2
         """
         self._set_attributes(name)
-
-    @_attrib
-    def text(self, text, just=BOTTOM_LEFT):
-        """
-        Add text to the map.
-
-        :param text:    Text string.
-        :param just:    Justification relative to the reference point:
-
-                        ::
-
-                            BOTTOM_LEFT
-                            BOTTOM_CENTER
-                            BOTTOM_RIGHT
-                            ALL_CENTER
-
-        .. versionadded:: 9.2
-        """
-        self.command("TEXT {},{},\"{}\"\n".format(self._a_ref_point(), just, text))
 
     def refp(self, ref_point):
         """
@@ -329,5 +303,84 @@ class GXmapplot:
         """
         self._maplfile.write(command)
 
-    def annotate_data_view(self):
-        pass
+    def surround(self, outer_pen=3, inner_pen=1, gap=0):
+        if type(outer_pen) is not int:
+            self.set_drawing_attributes('outer', pen_def=outer_pen)
+            outer_pen = 'outer'
+        if gap <= 0:
+            self.command("SURR {}\n".format(outer_pen))
+        else:
+            if type(inner_pen) is not int:
+                self.set_drawing_attributes('inner', pen_def=inner_pen)
+                inner_pen = 'inner'
+            self.command("SURR {},{},{}\n".format(outer_pen, gap, inner_pen))
+
+
+    @_attrib
+    def text(self, text, just=BOTTOM_LEFT):
+        """
+        Add text to the map.
+
+        :param text:    Text string.
+        :param just:    Justification relative to the reference point:
+
+                        ::
+
+                            BOTTOM_LEFT
+                            BOTTOM_CENTER
+                            BOTTOM_RIGHT
+                            ALL_CENTER
+
+        .. versionadded:: 9.2
+        """
+        self.command("TEXT {},{},\"{}\"\n".format(self._a_ref_point(), just, text))
+
+    @_attrib
+    def rectangle(self, extent):
+        """
+        Draw a rectangle.
+
+        :param rect:    (x_min, y_min, x_max, y_max) rectangle extent relative to the reference point or:
+
+                        ::
+
+                            RECTANGLE_EXTENT_BASE   base view edge
+                            RECTANGLE_EXTENT_DATA   data view window
+
+
+        .. versionadded:: 9.2
+        """
+
+        if extent == RECTANGLE_EXTENT_BASE:
+            self.command('RECT -1\n')
+        elif extent == RECTANGLE_EXTENT_DATA:
+            self.command('RECT -2\n')
+        else:
+            self.command("RECT {},{},{},{},{}\n".format(self._refp[0],
+                                                        extent[0], extent[1],extent[2], extent[3]))
+
+
+    @_attrib
+    def annotate_data_view(self, tick=0.15, postoff=0.07,
+                           x_sep='', x_dec='',
+                           y_sep='', y_dec='',
+                           compass=True):
+        """
+        Annotate the date view axis
+
+        :param tick:    inner tick size in cm
+        :param postoff: posting offset from the edge in cm
+        :param x_sep:   separation between X annotations, default is calculated from data
+        :param x_dec:   X axis label decimals, default is 0
+        :param y_sep:   separation between Y annotations, default is calculated from data
+        :param y_dec:   Y axis label decimals, default is 0
+        :param compass: True (default) to append compas direction to annotations
+
+        .. versionadded:: 9.2
+        """
+        self.command("ANOX ,,,,,{},{},,{},,,,{},{},1\n".format(x_sep, tick,
+                                                               0 if compass else -1,
+                                                               postoff, x_dec))
+        self.command("ANOY ,,,,,{},{},,{},1,,,{},{},1\n".format(y_sep, tick,
+                                                                0 if compass else -1,
+                                                                postoff, y_dec))
