@@ -39,24 +39,23 @@ def _attrib(func):
         style_changed = False
         if 'ref_point' in kwargs:
             self.ref_point = kwargs.pop('ref_point')
-        if 'pen' in kwargs:
-            self.pen = kwargs.pop('pen')
+        if 'pen_def' in kwargs:
+            self.pen_def = kwargs.pop('pen_def')
             style_changed = True
-        if 'line_style' in kwargs:
-            self.line_style = kwargs.pop('line_style')
+        if 'line_def' in kwargs:
+            self.line_def = kwargs.pop('line_def')
+            style_changed = True
+        if 'text_def' in kwargs:
+            self.text_def = kwargs.pop('text_def')
             style_changed = True
         if 'font' in kwargs:
-            f = kwargs.pop('font')
-            if ".gfn" in f.lower():
-                self.font = f.split('.gfn')[0]
-            else:
-                self.font = f + "(TT)"
-            style_changed = True
-        if 'text_style' in kwargs:
-            self.text_style = kwargs.pop('text_style')
+            self._font = kwargs.pop('font')
             style_changed = True
 
-        if style_changed and not ("set_drawing_attributes" in str(func)):
+        if 'att' in kwargs:
+            self.command("DATT {}\n".format(kwargs.pop('font')))
+
+        elif style_changed and not ("set_drawing_attributes" in str(func)):
             self._set_attributes()
 
         func(self, *args, **kwargs)
@@ -65,12 +64,79 @@ def _attrib(func):
 
 class GXmapplot:
     """
-    Draw on a Geosoft map.
+    Annotate a Geosoft map that contains a "base" view and a "data" view.  This class provides
+    a number of drawing capabilities intended for base-map or figure annotations.  This wraps
+    the GXAPI GXMAPL class and uses the concepts of the Geosoft MAPPLOT system.
 
-    :param map:        gxpy.map.GXmap instance
+    :param map:        gxpy.map.GXmap instance, which must contain a "*Base" and "*Data" view.
     :param ref_prefix: reference prefix for map groups
 
-    The map must contain a "*Base" and "*Data" view.
+    Drawing functions share the following keyword parameters:
+
+    :param pen_def:     (colour, thickness) colour is a string and thickness is the line thickness
+                        in microns.  A colour string identifies a colour by colour letters optionally
+                        followed by an intensity between 0 and 255.  Colour letters can be any one of
+                        'rgbcmyk' for red, green, blue, cyan, magenta, yellow, black.  Examples::
+
+                            'k'         black
+                            'k64'       light grey
+                            'k0'        white (which will be a white line on a coloured background)
+                            'r128b255'  purple
+
+    :param line_def:    (pattern, pitch) line pattern and pitch in cm.  Patterns::
+
+                            1   solid
+                            2   long dashes
+                            3   dotted
+                            4   short dashes
+                            5   long/short/long dashes
+
+                        If pattern is negative a smooth line is used.
+
+    :param text_def:    (size, slant), text character size in cm, slant in degrees.  For true-type fonts
+                        any slant above 10 degrees is taken as italics, and for Geosoft stroke fonts the
+                        slant is the slant angle.
+
+    :param font:        True-Type font name, or a Geosoft stroke font name::
+
+                            'sr.gfn'         simplex roman
+                            'ss.gfn'         simplex script
+                            'cr.gfn'         complex roman
+                            'ci.gfn'         complex italic
+                            'tr.gfn'         triplex roman
+                            'ti.gfn'         triplex italic
+                            'dr.gfn'         duplex roman
+                            'cs.gfn'         complex script
+                            'sg.gfn'         simplex greek
+                            'cg.gfn'         complex greek
+                            'es.gfn'         equal-spaced simplex roman
+                            'russian.gfn'    simple Cyrillic
+
+    :param ref_point:   (refp, x_off, y_off) a reference point and offset from that point::
+
+        Drawing commands use reference points to define the positions at which to plot objects.
+        This allows the user to work either relative to a ground coordinate system, relative to
+        any one of the map corners, or relative to a user specified point.
+
+        The 'refp' parameter identifies the reference point relative to the map layout as follows::
+
+            7, 8, 9     Top left, center and right
+            4, 5, 6     Horizontal center line left, middle and right.
+            1, 2, 3     Bottom left, center and right of map surround.
+            10          Plot origin (lowest-left plottable point on the media)
+            11          Movable reference point (see the refp() function)
+            12          Bottom left of the "*data" view clip window
+            0           Data view origin, offsets are in data view coordinates.
+
+        All offset and relative units for referents point 1 through 10, and reference point 12
+        are centimetres on the map.  Offsets using reference point 0 are are in the units of the
+        data view.  The movable reference point 11 will be in data view units if defined
+        relative to reference point 0, otherwise using are map centimetres.
+
+        For example, if we are creating a series of maps on which we want to place the title block
+        and legends in the top right hand corner and along the right side of a map, we define
+        the locations of these objects relative to the top right hand corner of the map (reference
+        point 9).
 
     .. versionadded:: 9.2
     """
@@ -104,12 +170,12 @@ class GXmapplot:
         # mapplot control file
         self._maplfilename = os.path.join(gx.GXpy().temp_folder(), 'mapl_' + gxu.uuid() + ".con")
         self._maplfile = open(self._maplfilename, "w")
-        #self._maplfile.write('MDFF \"{}\"\n'.format(gxu.normalize_file_name(self._mdffilename)))
+        #self.command('MDFF \"{}\"\n'.format(gxu.normalize_file_name(self._mdffilename)))
 
-        self._refp = (1,0,0)
-        self._pen = ("k", 1)
-        self._line_style = (1, 0.5)
-        self._text_style = (0.3, False)
+        self._refp = (1, 0, 0)
+        self._pen_def = ("k", 1)
+        self._line_def = (1, 0.5)
+        self._text_def = (0.3, 0)
         self._font = "DEFAULT"
 
         atexit.register(self._process, pop=False)
@@ -127,14 +193,15 @@ class GXmapplot:
         if pop:
             gx.pop_resource(self._open)
 
-    def _set_attributes(self, name='def'):
-        self._maplfile.write("DATT {}={},{},{}\n".format(name,
-                                                         self._a_pen(),
-                                                         self._a_line_style(),
-                                                         self._a_text()))
+    def _set_attributes(self, name='_'):
+        self.command("DATT {}={},{},{}\n".format(name, self._a_pen(),
+                                                 self._a_line_def(),
+                                                 self._a_text()))
+
 
     @property
     def ref_point(self):
+        """(refp, x_off, y_off)"""
         return self._refp
 
     @ref_point.setter
@@ -145,29 +212,32 @@ class GXmapplot:
         return "{},{},{}".format(self._refp[0], self._refp[1], self._refp[2])
 
     @property
-    def pen(self):
-        return self._pen
+    def pen_def(self):
+        """(character_size, slant) in (cm, degrees)"""
+        return self._pen_def
 
-    @pen.setter
-    def pen(self, pen):
-        self._pen = pen
+    @pen_def.setter
+    def pen_def(self, pen):
+        self._pen_def = pen
 
     def _a_pen(self):
-        return "{}t{}".format(self._pen[0].lower(), self._pen[1])
+        return "{}t{}".format(self._pen_def[0].lower(), self._pen_def[1])
 
     @property
-    def line_style(self):
-        return self._line_style
+    def line_def(self):
+        """(line_style, pitch)"""
+        return self._line_def
 
-    @line_style.setter
-    def line_style(self, ls):
-        self._line_style = ls
+    @line_def.setter
+    def line_def(self, ls):
+        self._line_def = ls
 
-    def _a_line_style(self):
-        return "{},{}".format(self._line_style[0], self._line_style[1])
+    def _a_line_def(self):
+        return "{},{}".format(self._line_def[0], self._line_def[1])
 
     @property
     def font(self):
+        """font name"""
         return self._font
 
     @font.setter
@@ -175,35 +245,89 @@ class GXmapplot:
         self._font = font
 
     @property
-    def text_style(self):
-        return self._text_style
+    def text_def(self):
+        return self._text_def
 
-    @text_style.setter
-    def text_style(self, ts):
-        self._text_style = ts
+    @text_def.setter
+    def text_def(self, ts):
+        self._text_def = ts
 
     def _a_text(self):
-        th = self._text_style[0]
-        return "{},{},{},{},\"{}\"".format(th, th, th,
-                                               10 if self.text_style[1] else 0, self.font)
+        if ".gfn" in self._font.lower():
+            f = self._font.lower().split('.gfn')[0]
+        else:
+            f = self._font + "(TT)"
+
+        th = self._text_def[0]
+        return "{},{},{},{},\"{}\"".format(th, th, th, self.text_def[1], f)
 
     def surround(self, outer_pen=3, inner_pen=1, gap=0):
         if type(outer_pen) is str:
             outer_pen = '3:' + outer_pen
         if gap <= 0:
-            self._maplfile.write("SURR {}\n".format(outer_pen))
+            self.command("SURR {}\n".format(outer_pen))
         else:
             if type(inner_pen) is str:
                 inner_pen = '1:' + inner_pen
-            self._maplfile.write("SURR {},{},{}\n".format(outer_pen, gap, inner_pen))
+            self.command("SURR {},{},{}\n".format(outer_pen, gap, inner_pen))
 
     @_attrib
-    def set_drawing_attributes(self, name='default'):
+    def set_drawing_attributes(self, name=None):
+        """
+        Create a named set of drawing attributes.
+
+        :param name:    attribute set name, None to change the current drawing attributes
+
+        .. versionadded:: 9.2
+        """
         self._set_attributes(name)
 
     @_attrib
     def text(self, text, just=BOTTOM_LEFT):
-        self._maplfile.write("TEXT {},{},\"{}\"\n".format(self._a_ref_point(), just, text))
+        """
+        Add text to the map.
 
-    def annotate_data_view(self, *titles):
+        :param text:    Text string.
+        :param just:    Justification relative to the reference point:
+
+                        ::
+
+                            BOTTOM_LEFT
+                            BOTTOM_CENTER
+                            BOTTOM_RIGHT
+                            ALL_CENTER
+
+        .. versionadded:: 9.2
+        """
+        self.command("TEXT {},{},\"{}\"\n".format(self._a_ref_point(), just, text))
+
+    def refp(self, ref_point):
+        """
+        Define the movable reference point (11) location.
+
+        :param ref_point: (refp, x_off, y_off)
+
+        The moveaple reference point is point 11.  This can be defined relative to any of
+        the map reference points or reference point 0.  If defined relative to reference
+        point 0 then offsets use the data coordinate system units.
+
+        .. versionadded:: 9.2
+        """
+
+        self._refp = ref_point
+        self.command("REFP {},{}\n".format(self._refp[0], self.refp[1]))
+        
+    def command(self, command):
+        """
+        Add MAPPLOT commands to the command list.  See the MAPPLOT reference in the 
+        Geosoft Desktop help system for command usage and syntax.
+        
+        :param command:     text string containing one or more MAPPLOT command
+                            lines, each new-line terminated.
+        
+        .. versionadded:: 9.2
+        """
+        self._maplfile.write(command)
+
+    def annotate_data_view(self):
         pass
