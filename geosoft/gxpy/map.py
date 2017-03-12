@@ -105,14 +105,15 @@ def crc_map(mapfile, pix_width=1000):
 
 class GXmap:
     """
-    Geosoft map class.
+    Geosoft map files.
 
     Creation options:
 
-        ====== =============================
-        open() open an existing map
-        new()  create a new map
-        ====== =============================
+        ====================== ==============================================================
+        open()                 open an existing map
+        new()                  create a new empty map
+        new_standard_geosoft() create a new standard Geosoft map with "base" and "data" view.
+        ====================== ==============================================================
 
     .. versionadded:: 9.2
     """
