@@ -26,6 +26,9 @@ BASE_FIT_BY_CHARACTER_SIZE = 8
 RECTANGLE_EXTENT_BASE = -1
 RECTANGLE_EXTENT_DATA = -2
 
+TOP_IN = 1
+TOP_OUT = -1
+
 GRID_NONE = 0
 GRID_DOTTED = 1
 GRID_CROSSES = 2
@@ -61,7 +64,7 @@ def _attrib(func):
             style_changed = True
 
         if 'att' in kwargs:
-            self.command("DATT {}\n".format(kwargs.pop('font')))
+            self.command("DATT {}\n".format(kwargs.pop('att')))  #TODO need a test
 
         elif style_changed and not ("set_drawing_attributes" in str(func)):
             self._set_attributes()
@@ -81,17 +84,20 @@ class GXmapplot:
 
     All drawing functions share the following keyword parameters:
 
-    :param pen_def:     (colour, thickness) colour is a string and thickness is the line thickness
-                        in microns.  A colour string identifies a colour by letters optionally
+    :param pen_def:     string that describes the colour-thickness of a line and fill colour.
+                        Colours are defined by a colour letter from "rgbcmy" optionally
                         followed by an intensity between 0 and 255.  Lower-case colour letters
-                        define the line colout and upper-case colour letters define the fill colour.
-                        Colour letters can be any one of 'rgbcmyk' for red, green, blue, cyan,
-                        magenta, yellow, black, of "RGBCMYK" for fill colours.  Examples::
+                        define the line colour and upper-case colour letters define the fill colour.
+                        Line thickness is defined by a letter "t" followed by the desired line
+                        thickness in microns.
+
+                        Examples::
 
                             'k'             black
                             'k64'           light grey
+                            'k128t200'      medium grey line 200 microns thick
                             'k0'            white (which will be a white line on a coloured background)
-                            'r128b255'      purple
+                            'r128b255t50'   purple, 50 microns thick
                             'r128b255K15'   purple with light-grey fill
 
     :param line_def:    (pattern, pitch) line pattern and pitch in cm.  Patterns::
@@ -184,7 +190,7 @@ class GXmapplot:
         #self.command('MDFF \"{}\"\n'.format(gxu.normalize_file_name(self._mdffilename)))
 
         self._refp = (1, 0, 0)
-        self._pen_def = ("k", 1)
+        self._pen_def = 'kt50'
         self._line_def = (1, 0.5)
         self._text_def = (0.3, 0)
         self._font = "DEFAULT.gfn"
@@ -232,7 +238,7 @@ class GXmapplot:
         self._pen_def = pen
 
     def _a_pen(self):
-        return "{}t{}".format(self._pen_def[0], self._pen_def[1])
+        return self._pen_def
 
     @property
     def line_def(self):
@@ -274,7 +280,7 @@ class GXmapplot:
         return "{},{},{},{},\"{}\"".format(th, th, th, self.text_def[1], f)
 
     @_attrib
-    def set_drawing_attributes(self, name=None):
+    def set_drawing_attributes(self, name='_'):
         """
         Create a named set of drawing attributes.
 
@@ -372,21 +378,22 @@ class GXmapplot:
 
 
     @_attrib
-    def annotate_data_xy(self, tick=0.15, postoff=0.07,
+    def annotate_data_xy(self, tick=0.15, offset=0.07,
                          x_sep='', x_dec='',
                          y_sep='', y_dec='',
-                         compass=True,
+                         compass=True, top=TOP_OUT,
                          grid=0, grid_pen=''):
         """
         Annotate the date view axis
 
         :param tick:    inner tick size in cm
-        :param postoff: posting offset from the edge in cm
+        :param offset:  posting offset from the edge in cm
+        :param top:     TOP_IN or TOP_OUT (default) for vertical annotations
         :param x_sep:   separation between X annotations, default is calculated from data
         :param x_dec:   X axis label decimals, default is 0
         :param y_sep:   separation between Y annotations, default is calculated from data
         :param y_dec:   Y axis label decimals, default is 0
-        :param compass: True (default) to append compas direction to annotations
+        :param compass: True (default) to append compass direction to annotations
         :param grid:    Plot grid lines:
 
                         ::
@@ -402,13 +409,43 @@ class GXmapplot:
         """
         self.command("ANOX ,,,,,{},{},,{},,,,{},{},1\n".format(x_sep, tick,
                                                                0 if compass else -1,
-                                                               postoff, x_dec))
+                                                               offset, x_dec))
         self.command("ANOY ,,,,,{},{},,{},1,,,{},{},1\n".format(y_sep, tick,
                                                                 0 if compass else -1,
-                                                                postoff, y_dec))
+                                                                offset, y_dec))
         if grid:
             if grid_pen:
                 self.set_drawing_attributes('grid', pen_def=grid_pen)
                 grid_pen = 'grid'
             self.command("GRID {},,,,,{}".format(grid, grid_pen))
 
+    @_attrib
+    def annotate_data_ll(self, tick=0.15, offset=0.07, sep='', top=TOP_OUT,
+                         grid=0, grid_pen=''):
+        """
+        Annotate the date view axis
+
+        :param tick:    inner tick size in cm
+        :param offset:  posting offset from the edge in cm
+        :param sep:     separation between annotations, default is calculated from data
+        :param top:     TOP_IN or TOP_OUT (default) for vertical annotations
+        :param grid:    Plot grid lines:
+
+                        ::
+
+                            GRID_NONE       no grid
+                            GRID_DOTTED     dotted lines
+                            GRID_CROSSES    crosses at intersections
+                            GRID_LINES      lines
+
+        :param grid_pen: colour-thickness string
+
+        .. versionadded:: 9.2
+        """
+        self.command("ALON {},{},{},,1\n".format(sep, tick, offset))
+        self.command("ALAT {},{},{},,,{}\n".format(sep, tick, offset, top))
+        if grid:
+            if grid_pen:
+                self.set_drawing_attributes('grid', pen_def=grid_pen)
+                grid_pen = 'grid'
+            self.command("GRID -{},,,,,{}".format(grid, grid_pen))

@@ -11,10 +11,11 @@ import geosoft.gxpy.view as gxv
 import geosoft.gxpy.geometry as gxgm
 import geosoft.gxpy.coordinate_system as gxcs
 
-def new_test_map(mapname='test', rescale=1.0, locate=None):
+def new_test_map(mapname=None, rescale=1.0):
 
-    test_map = os.path.join(gx.GXpy().temp_folder(), mapname)
-    with gxmap.GXmap.new(test_map, overwrite=True) as gmap:
+    if mapname is None:
+        mapname = os.path.join(gx.GXpy().temp_folder(), 'test')
+    with gxmap.GXmap.new(mapname, overwrite=True) as gmap:
         with gxv.GXview(gmap, "rectangle_test") as view:
             view.start_group('rectangle')
             view.xy_rectangle((gxgm.Point((0, 0)), gxgm.Point((250, 110))), pen={'line_thick': 1})
