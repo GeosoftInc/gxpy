@@ -148,6 +148,22 @@ class Test(unittest.TestCase):
         #gxvwr.map(mapfile)
         self.assertEqual(gxmap.crc_map(mapfile), 1462075135)
 
+    def test_command(self):
+        self.start(gsys.func_name())
+
+        with test_map() as map:
+            mapfile = map.filename
+            with gxmapl.GXmapplot(map) as mapl:
+                mapl.set_drawing_attributes(font="Arial")
+                mapl.surround()
+                mapl.rectangle(gxmapl.RECTANGLE_EXTENT_DATA, pen_def=("k", 200))
+                mapl.annotate_data_xy(x_sep=1500, tick=0.1)
+                mapl.set_drawing_attributes('gridpen', pen_def=("b", 100))
+                mapl.command("GRID 3,,,,,gridpen\n")
+
+        # gxvwr.map(mapfile)
+        self.assertEqual(gxmap.crc_map(mapfile), 1462075135)
+
 if __name__ == '__main__':
 
     unittest.main()
