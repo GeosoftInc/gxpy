@@ -169,18 +169,20 @@ class Test(unittest.TestCase):
     def test_annotate_ll(self):
         self.start(gsys.func_name())
 
-        with test_map(name='ll_test', data_area=(350000,7000000,400000,7030000)) as map:
+        with test_map(data_area=(350000,7000000,400000,7030000)) as map:
             mapfile = map.filename
             with gxmapl.GXmapplot(map) as mapl:
                 mapl.set_drawing_attributes(font="Arial")
                 mapl.surround()
                 mapl.rectangle(gxmapl.RECTANGLE_EXTENT_DATA, pen_def="kt1")
-                mapl.annotate_data_ll(grid=gxmapl.GRID_LINES, grid_pen="bt250")
+                mapl.annotate_data_ll(grid=gxmapl.GRID_LINES,
+                                      text_def = (0.18, 15),
+                                      grid_pen="bt250")
 
         gxvwr.map(mapfile)
         #self.assertEqual(gxmap.crc_map(mapfile), 1636874010)
 
-        with test_map(name='ll_test', data_area=(350000,7000000,400000,7030000)) as map:
+        with test_map(data_area=(350000,7000000,400000,7030000)) as map:
             mapfile = map.filename
             with gxmapl.GXmapplot(map) as mapl:
                 mapl.set_drawing_attributes(font="Arial", pen_def='kt50')
