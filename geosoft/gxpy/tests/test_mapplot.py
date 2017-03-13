@@ -42,15 +42,15 @@ class Test(unittest.TestCase):
         with test_map() as map:
             mapfile = map.filename
             with gxmapl.GXmapplot(map) as mapl:
-                mapl.set_drawing_attributes(font="Arial")
+                mapl.define_named_attribute(font="Arial")
                 mapl.surround()
                 mapl.rectangle(gxmapl.RECTANGLE_EXTENT_DATA, pen_def="kt200")
                 mapl.annotate_data_xy(x_sep=1500, tick=0.1)
-                mapl.set_drawing_attributes('gridpen', pen_def="bt200")
+                mapl.define_named_attribute('gridpen', pen_def="bt200")
                 mapl.command("GRID 3,,,,,gridpen\n")
 
-        # gxvwr.map(mapfile)
-        self.assertEqual(gxmap.crc_map(mapfile), 1462075135)
+        #gxvwr.map(mapfile)
+        self.assertEqual(gxmap.crc_map(mapfile), 1145267206)
 
     def test_text(self):
         self.start(gsys.func_name())
@@ -59,12 +59,12 @@ class Test(unittest.TestCase):
             mapfile = map.filename
             with gxmapl.GXmapplot(map) as mapl:
                 mapl.surround(gap=0.5)
-                mapl.set_drawing_attributes(font="Arial")
+                mapl.define_named_attribute(font="Arial")
                 mapl.text("Bottom left corner")
                 mapl.text("One cm higher", ref_point=(1, 0, 1), pen_def="Rt50")
                 mapl.text("Times Roman", ref_point=(1, 0, 2), text_def=(1, 15), font="Times New Roman")
                 mapl.text("Curlz MT", ref_point=(1, 0, 4), text_def=(0.8, 0), font="Curlz MT")
-                mapl.set_drawing_attributes(font="tr.gfn")
+                mapl.define_named_attribute(font="tr.gfn")
                 mapl.text("Big Geosoft GFN", ref_point=(1, 0, 6), text_def=(1.8, 15), pen_def="gt1000")
 
         # gxvwr.map(mapfile)
@@ -125,46 +125,46 @@ class Test(unittest.TestCase):
         with test_map() as map:
             mapfile = map.filename
             with gxmapl.GXmapplot(map) as mapl:
-                mapl.set_drawing_attributes(font="Arial")
-                mapl.surround()
-                mapl.rectangle(gxmapl.RECTANGLE_EXTENT_DATA, pen_def="kt200")
-                mapl.annotate_data_xy(x_sep=1500)
+                mapl.define_named_attribute(font="Arial")
+                mapl.surround(outer_pen="rt10")
+                mapl.rectangle(gxmapl.RECTANGLE_EXTENT_DATA, pen_def="gt200")
+                mapl.annotate_data_xy(x_sep=1500, pen_def="kt10")
 
-        # gxvwr.map(mapfile)
-        self.assertEqual(gxmap.crc_map(mapfile), 3712184528)
+        #gxvwr.map(mapfile)
+        self.assertEqual(gxmap.crc_map(mapfile), 449148037)
 
         with test_map() as map:
             mapfile = map.filename
             with gxmapl.GXmapplot(map) as mapl:
-                mapl.set_drawing_attributes(font="Arial")
+                mapl.define_named_attribute(font="Arial")
                 mapl.surround()
                 mapl.rectangle(gxmapl.RECTANGLE_EXTENT_DATA, pen_def="kt200")
                 mapl.annotate_data_xy(x_sep=1500, grid=gxmapl.GRID_DOTTED)
 
         #gxvwr.map(mapfile)
-        self.assertEqual(gxmap.crc_map(mapfile), 3868122829)
+        self.assertEqual(gxmap.crc_map(mapfile), 4125672500)
 
         with test_map() as map:
             mapfile = map.filename
             with gxmapl.GXmapplot(map) as mapl:
-                mapl.set_drawing_attributes(font="Arial")
+                mapl.define_named_attribute(font="Arial")
                 mapl.surround()
                 mapl.rectangle(gxmapl.RECTANGLE_EXTENT_DATA, pen_def="kt200")
                 mapl.annotate_data_xy(x_sep=1500, tick=0.1, grid=gxmapl.GRID_CROSSES, grid_pen="bt100")
 
-        # gxvwr.map(mapfile)
-        self.assertEqual(gxmap.crc_map(mapfile), 4148971246)
+        #gxvwr.map(mapfile)
+        self.assertEqual(gxmap.crc_map(mapfile), 3827981335)
 
         with test_map() as map:
             mapfile = map.filename
             with gxmapl.GXmapplot(map) as mapl:
-                mapl.set_drawing_attributes(font="Arial")
+                mapl.define_named_attribute(font="Arial")
                 mapl.surround()
                 mapl.rectangle(gxmapl.RECTANGLE_EXTENT_DATA, pen_def="kt200")
                 mapl.annotate_data_xy(x_sep=1500, tick=0.1, grid=gxmapl.GRID_LINES, grid_pen="bt100")
 
         #gxvwr.map(mapfile)
-        self.assertEqual(gxmap.crc_map(mapfile), 1462075135)
+        self.assertEqual(gxmap.crc_map(mapfile), 1145267206)
 
     def test_annotate_ll(self):
         self.start(gsys.func_name())
@@ -172,20 +172,20 @@ class Test(unittest.TestCase):
         with test_map(data_area=(350000,7000000,400000,7030000)) as map:
             mapfile = map.filename
             with gxmapl.GXmapplot(map) as mapl:
-                mapl.set_drawing_attributes(font="Arial")
+                mapl.define_named_attribute(font="Arial")
                 mapl.surround()
                 mapl.rectangle(gxmapl.RECTANGLE_EXTENT_DATA, pen_def="kt1")
                 mapl.annotate_data_ll(grid=gxmapl.GRID_LINES,
                                       text_def = (0.18, 15),
                                       grid_pen="bt250")
 
-        gxvwr.map(mapfile)
-        #self.assertEqual(gxmap.crc_map(mapfile), 1636874010)
+        #gxvwr.map(mapfile)
+        self.assertEqual(gxmap.crc_map(mapfile), 1911276164)
 
         with test_map(data_area=(350000,7000000,400000,7030000)) as map:
             mapfile = map.filename
             with gxmapl.GXmapplot(map) as mapl:
-                mapl.set_drawing_attributes(font="Arial", pen_def='kt50')
+                mapl.define_named_attribute(font="Arial", pen_def='kt50')
                 mapl.surround()
                 mapl.rectangle(gxmapl.RECTANGLE_EXTENT_DATA, pen_def="kt200")
                 mapl.annotate_data_ll(grid=gxmapl.GRID_LINES,
@@ -193,8 +193,8 @@ class Test(unittest.TestCase):
                                       pen_def="kt1", text_def=(0.18, 15),
                                       top=gxmapl.TOP_IN)
 
-        gxvwr.map(mapfile)
-        #self.assertEqual(gxmap.crc_map(mapfile), 1636874010)
+        #gxvwr.map(mapfile)
+        self.assertEqual(gxmap.crc_map(mapfile), 610738257)
 
 
 if __name__ == '__main__':
