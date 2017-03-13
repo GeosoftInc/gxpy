@@ -311,7 +311,7 @@ class GXmapplot:
         .. versionadded:: 9.2
         """
         self._maplfile.write(command)
-        if command[-1] != '\n':
+        if command and command[-1] != '\n':
             self._maplfile.write('\n')
 
     def surround(self, outer_pen=3, inner_pen=1, gap=0):
