@@ -101,7 +101,7 @@ class Test(unittest.TestCase):
         # gxvwr.map(mapfile)
         self.assertEqual(gxmap.crc_map(mapfile), crc1)
 
-    def test_annotate(self):
+    def test_annotate_xy(self):
         self.start(gsys.func_name())
 
         with test_map() as map:
@@ -110,10 +110,43 @@ class Test(unittest.TestCase):
                 mapl.set_drawing_attributes(font="Arial")
                 mapl.surround()
                 mapl.rectangle(gxmapl.RECTANGLE_EXTENT_DATA, pen_def=("k", 200))
-                mapl.annotate_data_view(x_sep=1500)
+                mapl.annotate_data_xy(x_sep=1500)
 
         # gxvwr.map(mapfile)
         self.assertEqual(gxmap.crc_map(mapfile), 3712184528)
+
+        with test_map() as map:
+            mapfile = map.filename
+            with gxmapl.GXmapplot(map) as mapl:
+                mapl.set_drawing_attributes(font="Arial")
+                mapl.surround()
+                mapl.rectangle(gxmapl.RECTANGLE_EXTENT_DATA, pen_def=("k", 200))
+                mapl.annotate_data_xy(x_sep=1500, grid=gxmapl.GRID_DOTTED)
+
+        #gxvwr.map(mapfile)
+        self.assertEqual(gxmap.crc_map(mapfile), 3868122829)
+
+        with test_map() as map:
+            mapfile = map.filename
+            with gxmapl.GXmapplot(map) as mapl:
+                mapl.set_drawing_attributes(font="Arial")
+                mapl.surround()
+                mapl.rectangle(gxmapl.RECTANGLE_EXTENT_DATA, pen_def=("k", 200))
+                mapl.annotate_data_xy(x_sep=1500, tick=0.1, grid=gxmapl.GRID_CROSSES, grid_pen=("b", 100))
+
+        # gxvwr.map(mapfile)
+        self.assertEqual(gxmap.crc_map(mapfile), 4148971246)
+
+        with test_map() as map:
+            mapfile = map.filename
+            with gxmapl.GXmapplot(map) as mapl:
+                mapl.set_drawing_attributes(font="Arial")
+                mapl.surround()
+                mapl.rectangle(gxmapl.RECTANGLE_EXTENT_DATA, pen_def=("k", 200))
+                mapl.annotate_data_xy(x_sep=1500, tick=0.1, grid=gxmapl.GRID_LINES, grid_pen=("b", 100))
+
+        #gxvwr.map(mapfile)
+        self.assertEqual(gxmap.crc_map(mapfile), 1462075135)
 
 if __name__ == '__main__':
 

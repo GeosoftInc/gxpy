@@ -26,6 +26,11 @@ BASE_FIT_BY_CHARACTER_SIZE = 8
 RECTANGLE_EXTENT_BASE = -1
 RECTANGLE_EXTENT_DATA = -2
 
+GRID_NONE = 0
+GRID_DOTTED = 1
+GRID_CROSSES = 2
+GRID_LINES = 3
+
 class MapplotException(Exception):
     """
     Exceptions from this module.
@@ -361,10 +366,11 @@ class GXmapplot:
 
 
     @_attrib
-    def annotate_data_view(self, tick=0.15, postoff=0.07,
-                           x_sep='', x_dec='',
-                           y_sep='', y_dec='',
-                           compass=True):
+    def annotate_data_xy(self, tick=0.15, postoff=0.07,
+                         x_sep='', x_dec='',
+                         y_sep='', y_dec='',
+                         compass=True,
+                         grid=0, grid_pen=''):
         """
         Annotate the date view axis
 
@@ -375,6 +381,16 @@ class GXmapplot:
         :param y_sep:   separation between Y annotations, default is calculated from data
         :param y_dec:   Y axis label decimals, default is 0
         :param compass: True (default) to append compas direction to annotations
+        :param grid:    Plot grid lines:
+
+                        ::
+
+                            GRID_NONE       no grid
+                            GRID_DOTTED     dotted lines
+                            GRID_CROSSES    crosses at intersections
+                            GRID_LINES      lines
+
+        :param grid_pen:    (colour, thickness) for grid detail
 
         .. versionadded:: 9.2
         """
@@ -384,3 +400,9 @@ class GXmapplot:
         self.command("ANOY ,,,,,{},{},,{},1,,,{},{},1\n".format(y_sep, tick,
                                                                 0 if compass else -1,
                                                                 postoff, y_dec))
+        if grid:
+            if grid_pen:
+                self.set_drawing_attributes('grid', pen_def=grid_pen)
+                grid_pen = 'grid'
+            self.command("GRID {},,,,,{}".format(grid, grid_pen))
+
