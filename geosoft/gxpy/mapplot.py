@@ -79,17 +79,20 @@ class GXmapplot:
     :param map:        gxpy.map.GXmap instance, which must contain a "*Base" and "*Data" view.
     :param ref_prefix: reference prefix for map groups
 
-    Drawing functions share the following keyword parameters:
+    All drawing functions share the following keyword parameters:
 
     :param pen_def:     (colour, thickness) colour is a string and thickness is the line thickness
-                        in microns.  A colour string identifies a colour by colour letters optionally
-                        followed by an intensity between 0 and 255.  Colour letters can be any one of
-                        'rgbcmyk' for red, green, blue, cyan, magenta, yellow, black.  Examples::
+                        in microns.  A colour string identifies a colour by letters optionally
+                        followed by an intensity between 0 and 255.  Lower-case colour letters
+                        define the line colout and upper-case colour letters define the fill colour.
+                        Colour letters can be any one of 'rgbcmyk' for red, green, blue, cyan,
+                        magenta, yellow, black, of "RGBCMYK" for fill colours.  Examples::
 
-                            'k'         black
-                            'k64'       light grey
-                            'k0'        white (which will be a white line on a coloured background)
-                            'r128b255'  purple
+                            'k'             black
+                            'k64'           light grey
+                            'k0'            white (which will be a white line on a coloured background)
+                            'r128b255'      purple
+                            'r128b255K15'   purple with light-grey fill
 
     :param line_def:    (pattern, pitch) line pattern and pitch in cm.  Patterns::
 
@@ -221,7 +224,7 @@ class GXmapplot:
 
     @property
     def pen_def(self):
-        """(character_size, slant) in (cm, degrees)"""
+        """(colour, thickness) colour is a colour string, line thickness in microns"""
         return self._pen_def
 
     @pen_def.setter
@@ -254,6 +257,7 @@ class GXmapplot:
 
     @property
     def text_def(self):
+        """(character_size, slant) in (cm, degrees)"""
         return self._text_def
 
     @text_def.setter
@@ -307,6 +311,8 @@ class GXmapplot:
         .. versionadded:: 9.2
         """
         self._maplfile.write(command)
+        if command[-1] != '\n':
+            self._maplfile.write('\n')
 
     def surround(self, outer_pen=3, inner_pen=1, gap=0):
         if type(outer_pen) is not int:
