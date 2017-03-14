@@ -61,14 +61,14 @@ class Test(unittest.TestCase):
                 mapl.surround(gap=0.5)
                 mapl.define_named_attribute(font="Arial")
                 mapl.text("Bottom left corner")
-                mapl.text("One cm higher", ref_point=(1, 0, 1), pen_def="Rt50")
+                mapl.text("One cm higher", ref_point=(1, 0, 1), pen_def="rt50")
                 mapl.text("Times Roman", ref_point=(1, 0, 2), text_def=(1, 15), font="Times New Roman")
                 mapl.text("Curlz MT", ref_point=(1, 0, 4), text_def=(0.8, 0), font="Curlz MT")
                 mapl.define_named_attribute(font="tr.gfn")
                 mapl.text("Big Geosoft GFN", ref_point=(1, 0, 6), text_def=(1.8, 15), pen_def="gt1000")
 
-        # gxvwr.map(mapfile)
-        self.assertEqual(gxmap.crc_map(mapfile), 2384488690)
+        #gxvwr.map(mapfile)
+        self.assertEqual(gxmap.crc_map(mapfile), 3942171818)
 
     def test_surround(self):
         self.start(gsys.func_name())
@@ -97,6 +97,25 @@ class Test(unittest.TestCase):
         # gxvwr.map(mapfile)
         self.assertEqual(gxmap.crc_map(mapfile), 3763029646)
 
+    def test_att(self):
+        self.start(gsys.func_name())
+
+        with test_map() as map:
+            mapfile = map.filename
+            with gxv.GXview(map, viewname='*Data', mode=gxv.READ_ONLY) as v:
+                extent = v.extent(extent=gxv.EXTENT_MAP)
+            with gxmapl.GXmapplot(map) as mapl:
+                mapl.define_named_attribute('Red', pen_def='Rkt100')
+                mapl.define_named_attribute('Blue', pen_def='bGt1000')
+                mapl.rectangle(extent, ref_point=(1, 0, 0), att='Red')
+                extent = (extent[0]+1, extent[1]+1, extent[2]-1, extent[3]-1)
+                mapl.rectangle(extent, ref_point=(1, 0, 0), att='Blue')
+                extent = (extent[0] + 1, extent[1] + 1, extent[2] - 1, extent[3] - 1)
+                mapl.rectangle(extent, ref_point=(1, 0, 0), pen_def="yt2000")
+
+        #gxvwr.map(mapfile)
+        self.assertEqual(gxmap.crc_map(mapfile), 3472166003)
+
     def test_rectangle(self):
         self.start(gsys.func_name())
 
@@ -116,7 +135,7 @@ class Test(unittest.TestCase):
                 mapl.rectangle(gxmapl.RECTANGLE_EXTENT_BASE, pen_def="rt1000")
                 mapl.rectangle(gxmapl.RECTANGLE_EXTENT_DATA, pen_def="bRG200B200t2000")
 
-        # gxvwr.map(mapfile)
+        #gxvwr.map(mapfile)
         self.assertEqual(gxmap.crc_map(mapfile), crc1)
 
     def test_annotate_xy(self):

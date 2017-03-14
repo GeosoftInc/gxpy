@@ -42,24 +42,33 @@ class MapplotException(Exception):
     """
     pass
 
+_DEF_ATT = '_'
+
 # decorators
 def _attrib(func):
     @wraps(func)
     def wrapper(self, *args, **kwargs):
 
+        changed = False
+        self._att = _DEF_ATT
         if 'ref_point' in kwargs:
             self.ref_point = kwargs.pop('ref_point')
         if 'pen_def' in kwargs:
             self.pen_def = kwargs.pop('pen_def')
+            changed = False
         if 'line_def' in kwargs:
             self.line_def = kwargs.pop('line_def')
+            changed = False
         if 'text_def' in kwargs:
             self.text_def = kwargs.pop('text_def')
+            changed = False
         if 'font' in kwargs:
             self.font = kwargs.pop('font')
-
+            changed = False
         if 'att' in kwargs:
-            self._att = kwargs.pop('att') #TODO need a test
+            self._att = kwargs.pop('att')
+            if changed:
+                self._define_named_attribute(self.att)
 
         func(self, *args, **kwargs)
 
@@ -186,7 +195,7 @@ class GXmapplot:
         self._line_def = (1, 0.5)
         self._text_def = (0.3, 0)
         self._font = "DEFAULT.gfn"
-        self._att = '_'
+        self._att = _DEF_ATT
         self.define_named_attribute(self._att)
 
         atexit.register(self._process, pop=False)
@@ -268,20 +277,22 @@ class GXmapplot:
         self.command('     {}\n'.format(att))
 
     def _define_named_attribute(self, name=None):
-        """
-        Create a named set of drawing attributes.
+        def datt(name):
+            self.command("DATT {}={},{},{}".format(name,
+                                                     self._pen_def,
+                                                     self._a_line_def(),
+                                                     self._a_text()))
+        if name is not None :
+            datt(name)
+            return name
+        elif self._att == _DEF_ATT:
+            datt(self._att)
+        return self._att
 
-        :param name:    attribute set name, None to change the current drawing attributes
-
-        .. versionadded:: 9.2
-        """
-        name = self._att if name is None else name
-        self.command("DATT {}={},{},{}\n".format(name,
-                                                 self._pen_def,
-                                                 self._a_line_def(),
-                                                 self._a_text()))
-        self._att = '_'
-        return name
+    def _define_default_attribute(self, default):
+        if self._att == _DEF_ATT:
+            self._define_named_attribute(default)
+        return default
 
     @_attrib
     def define_named_attribute(self, name=None):
@@ -308,7 +319,7 @@ class GXmapplot:
         """
 
         self._refp = ref_point
-        self.command("REFP {},{}\n".format(self._refp[0], self._refp[1]))
+        self.command("REFP {},{}".format(self._refp[0], self._refp[1]))
         
     def command(self, command):
         """
@@ -329,12 +340,12 @@ class GXmapplot:
             self.define_named_attribute('outer', pen_def=outer_pen)
             outer_pen = 'outer'
         if gap <= 0:
-            self.command("SURR {}\n".format(outer_pen))
+            self.command("SURR {}".format(outer_pen))
         else:
             if type(inner_pen) is not int:
                 self.define_named_attribute('inner', pen_def=inner_pen)
                 inner_pen = 'inner'
-            self.command("SURR {},{},{}\n".format(outer_pen, gap, inner_pen))
+            self.command("SURR {},{},{}".format(outer_pen, gap, inner_pen))
 
 
     @_attrib
@@ -355,7 +366,7 @@ class GXmapplot:
         .. versionadded:: 9.2
         """
         att = self._define_named_attribute()
-        self.command("TEXT {},{},\"{}\"\n".format(self._a_ref_point(), just, text))
+        self.command("TEXT {},{},\"{}\"".format(self._a_ref_point(), just, text))
         self._add_att(att)
 
     @_attrib
@@ -374,14 +385,15 @@ class GXmapplot:
         .. versionadded:: 9.2
         """
 
-        self.define_named_attribute(name='rect')
+        att = self._define_named_attribute()
         if extent == RECTANGLE_EXTENT_BASE:
-            self.command('RECT -1,,,,,rect\n')
+            self.command('RECT -1,,,,,{}'.format(att))
         elif extent == RECTANGLE_EXTENT_DATA:
-            self.command('RECT -2,,,,,rect')
+            self.command('RECT -2,,,,,{}'.format(att))
         else:
-            self.command("RECT {},{},{},{},{},rect\n".format(self._refp[0],
-                                                        extent[0], extent[1],extent[2], extent[3]))
+            self.command('RECT {},{},{},{},{},{}'.format(self._refp[0],
+                                                           extent[0], extent[1],
+                                                           extent[2], extent[3], att))
 
 
     @_attrib
@@ -415,9 +427,9 @@ class GXmapplot:
         .. versionadded:: 9.2
         """
         att = self._define_named_attribute()
-        self.command("ANOX ,,,,,{},{},,{},,,,{},{},1\n".format(x_sep, tick, 0 if compass else -1, offset, x_dec))
+        self.command("ANOX ,,,,,{},{},,{},,,,{},{},1".format(x_sep, tick, 0 if compass else -1, offset, x_dec))
         self._add_att(att)
-        self.command("ANOY ,,,,,{},{},,{},1,,,{},{},1\n".format(y_sep, tick, 0 if compass else -1, offset, y_dec))
+        self.command("ANOY ,,,,,{},{},,{},1,,,{},{},1".format(y_sep, tick, 0 if compass else -1, offset, y_dec))
         self._add_att(att)
 
         if grid:
@@ -451,9 +463,9 @@ class GXmapplot:
         """
 
         att = self._define_named_attribute()
-        self.command("ALON {},{},{},,1\n".format(sep, tick, offset))
+        self.command("ALON {},{},{},,1".format(sep, tick, offset))
         self._add_att(att)
-        self.command("ALAT {},{},{},,,{}\n".format(sep, tick, offset, top))
+        self.command("ALAT {},{},{},,,{}".format(sep, tick, offset, top))
         self._add_att(att)
         if grid:
             if grid_pen:
