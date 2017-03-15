@@ -68,7 +68,7 @@ class Test(unittest.TestCase):
                 mapl.text("Big Geosoft GFN", ref_point=(1, 0, 6), text_def=(1.8, 15), pen_def="gt1000")
 
         #gxvwr.map(mapfile)
-        self.assertEqual(gxmap.crc_map(mapfile), 3942171818)
+        self.assertEqual(gxmap.crc_map(mapfile), 3088761699)
 
     def test_surround(self):
         self.start(gsys.func_name())
@@ -137,6 +137,41 @@ class Test(unittest.TestCase):
 
         #gxvwr.map(mapfile)
         self.assertEqual(gxmap.crc_map(mapfile), crc1)
+
+    def test_narr(self):
+        self.start(gsys.func_name())
+
+        with test_map(data_area=(350000,7000000,400000,7030000)) as map:
+            mapfile = map.filename
+            with gxmapl.GXmapplot(map) as mapl:
+                mapl.surround(outer_pen="rt1000")
+                mapl.rectangle(gxmapl.RECTANGLE_EXTENT_DATA, pen_def="kt200")
+                mapl.annotate_data_ll(grid=gxmapl.GRID_LINES,
+                                      text_def=(0.18, 15),
+                                      grid_pen="bt250")
+                mapl.north_arrow(ref_point=(5, 0, 0), pen_def="kt500")
+
+        #gxvwr.map(mapfile)
+        self.assertEqual(gxmap.crc_map(mapfile), 230327851)
+
+        with test_map(data_area=(350000,7000000,400000,7030000)) as map:
+            mapfile = map.filename
+            with gxmapl.GXmapplot(map) as mapl:
+                mapl.surround(outer_pen="rt1000")
+                mapl.rectangle(gxmapl.RECTANGLE_EXTENT_DATA, pen_def="kt200")
+                mapl.annotate_data_ll(grid=gxmapl.GRID_LINES,
+                                      text_def=(0.18, 15),
+                                      grid_pen="bt250")
+                mapl.north_arrow(ref_point=(5, 0, 0),
+                                 pen_def="kt500",
+                                 inclination=68.5,
+                                 declination=3.55,
+                                 length=3.5,
+                                 text_def=(0.3,0))
+
+        #gxvwr.map(mapfile)
+        self.assertEqual(gxmap.crc_map(mapfile), 1369198836)
+
 
     def test_annotate_xy(self):
         self.start(gsys.func_name())

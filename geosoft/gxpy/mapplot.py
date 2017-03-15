@@ -6,6 +6,7 @@ import geosoft
 import geosoft.gxapi as gxapi
 from . import gx as gx
 from . import utility as gxu
+from . import view as gxv
 
 __version__ = geosoft.__version__
 
@@ -295,11 +296,11 @@ class GXmapplot:
         return default
 
     @_attrib
-    def define_named_attribute(self, name=None):
+    def define_named_attribute(self, name='_'):
         """
         Create a named set of drawing attributes.
 
-        :param name:    attribute set name, None to change the current drawing attributes
+        :param name:    attribute set name, default is the default attribute '_'
 
         .. versionadded:: 9.2
         """
@@ -320,15 +321,15 @@ class GXmapplot:
 
         self._refp = ref_point
         self.command("REFP {},{}".format(self._refp[0], self._refp[1]))
-        
+
     def command(self, command):
         """
-        Add MAPPLOT commands to the command list.  See the MAPPLOT reference in the 
+        Add MAPPLOT commands to the command list.  See the MAPPLOT reference in the
         Geosoft Desktop help system for command usage and syntax.
-        
+
         :param command:     text string containing one or more MAPPLOT command
                             lines, each new-line terminated.
-        
+
         .. versionadded:: 9.2
         """
         self._maplfile.write(command)
@@ -395,6 +396,37 @@ class GXmapplot:
                                                            extent[0], extent[1],
                                                            extent[2], extent[3], att))
 
+    @_attrib
+    def north_arrow(self,
+                    direction='',
+                    length='6',
+                    inclination='',
+                    declination=''):
+        """
+        Draw a North arrow.
+
+        :param direction:   North direction in degrees azimuth (clockwize from
+                            map Y axis).  Default is calculated from the center of
+                            the data area based on the coordinate system.
+        :param length:      arrow length in cm
+        :param inclination: magnetic inclination
+        :param declination: magnetic declination
+
+        .. versionadded:: 9.2
+        """
+
+        if not direction:
+            with gxv.GXview(self._map, '*Data', mode=gxv.WRITE_OLD) as v:
+                direction = round(v.gxview.north(), 1)
+
+        att = self._define_named_attribute()
+        self.command("NARR {},{},{},{},{},{}".format(self._a_ref_point(),
+                                                     direction,
+                                                     length,
+                                                     att,
+                                                     inclination,
+                                                     declination))
+        self._add_att(att)
 
     @_attrib
     def annotate_data_xy(self, tick=0.15, offset=0.07,
