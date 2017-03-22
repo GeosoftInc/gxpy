@@ -35,6 +35,12 @@ GRID_DOTTED = 1
 GRID_CROSSES = 2
 GRID_LINES = 3
 
+GROUP_NEW = 0
+GROUP_APPEND = 1
+
+VIEW_BASE = 0
+VIEW_DATA = 1
+
 class MapplotException(Exception):
     """
     Exceptions from this module.
@@ -81,10 +87,14 @@ class GXmapplot:
     a number of drawing capabilities intended for base-map or figure annotations.  This wraps
     the GXAPI GXMAPL class and uses the concepts of the Geosoft MAPPLOT system.
 
-    :param map:        gxpy.map.GXmap instance, which must contain a "*Base" and "*Data" view.
-    :param ref_prefix: reference prefix for map groups
+    :param map:         gxpy.map.GXmap instance, which must contain a "*Base" and "*Data" view.
+    :param ref_prefix:  A prefix to add to the default group in the "BASE" and "DATA" groups.  The
+                        default is "MAPL_", which will create a group named "MAPL_BASE" in the
+                        base view and "MAPL_DATA" in the data view.  Use the start_group method
+                        to create new view groups.
 
-    All drawing functions share the following keyword parameters:
+    Drawing functions share the following keyword parameters, which can be defined on instance
+    creation or together with any drawing function.
 
     :param pen_def:     string that describes the colour-thickness of a line and fill colour.
                         Colours are defined by a colour letter from "rgbcmy" optionally
@@ -172,19 +182,13 @@ class GXmapplot:
     def __str__(self):
         return "mapplot({})".format(self._maplfilename)
 
-    def __init__(self, map, ref_prefix="_mpl"):
+    def __init__(self, map, ref_prefix='', **kwargs):
 
         if not (map.has_view("*Base") and map.has_view("*Data")):
             raise MapplotException("Map must have a '*Base' and '*Data' view.")
 
         self._map = map
         self._ref_pre = ref_prefix
-
-        # create an mdf file
-        # mdf1, mdf2 = map.mdf()
-        # self._mdffilename = os.path.join(gx.GXpy().temp_folder(), gxu.uuid() + ".mdf")
-        # with open(self._mdffilename, "w") as f:
-        #    f.write("{}\n{}\n".format(str(mdf1)[1:-1], str(mdf2)[1:-1]))
 
         # mapplot control file
         self._maplfilename = os.path.join(gx.GXpy().temp_folder(), 'mapl_' + gxu.uuid() + ".con")
@@ -197,7 +201,7 @@ class GXmapplot:
         self._text_def = (0.3, 0)
         self._font = "DEFAULT.gfn"
         self._att = _DEF_ATT
-        self.define_named_attribute(self._att)
+        self.define_named_attribute(self._att, **kwargs)
 
         atexit.register(self._process, pop=False)
         self._open = gx.track_resource(self.__class__.__name__, self._maplfilename)
@@ -504,3 +508,21 @@ class GXmapplot:
                 self.define_named_attribute('grid', pen_def=grid_pen)
                 grid_pen = 'grid'
             self.command("GRID -{},,,,,{}".format(grid, grid_pen))
+
+    @_attrib
+    def start_group(self, name, mode=GROUP_NEW, view=VIEW_BASE):
+        """
+        Start a view group, or append to an existing group.  Graphic entities can be organized
+        into named groups, which appear as separate components that can be managed within a
+        Geosoft viewer.
+
+        :param name:    Group name (required).
+        :param mode:    GROUP_NEW (default) or GROUP_APPEND.  GROUP_NEW relaces an existing group, and the
+                        content of an existing group will be deleted.
+        :param view:    VIEW_BASE or VIEW_DATA.  Coordinates in the base view are map cm, and coordionates
+                        in the data view are in data view units.
+
+        .. versionadded:: 9.2
+        """
+
+        self.command('MGRP {},{},{}'.format(name, mode, view))
