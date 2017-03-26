@@ -42,7 +42,8 @@ UNIT_VIEW = 0
 UNIT_MAP = 2
 UNIT_VIEW_UNWARPED = 3
 
-GRATICULE_DOT = 0
+#TODO - add and test once bug if fixed
+# GRATICULE_DOT = 0 # disabled due to a bug
 GRATICULE_LINE = 1
 GRATICULE_CROSS = 2
 
@@ -429,7 +430,18 @@ class GXview:
     # drawing to a plane
 
     @_draw
-    def graticule(self, dx=None, dy=None, ddx=None, ddy=None, style=GRATICULE_DOT):
+    def graticule(self, dx=None, dy=None, ddx=None, ddy=None, style=GRATICULE_LINE):
+        """
+        Draw a graticule reference on a view.
+        
+        :param style:   ``GRATICULE_LINE`` or ``GRATICULE_CROSS``
+        :param dx:      vertical line separation
+        :param dy:      horizontal line separation
+        :param ddh:     horizontal cross size for ``GRATICULE_CROSS``
+        :param ddv:     vertical cross size for ``GRATICULE_CROSS``
+        
+        .. versionadded:: 9.2
+        """
 
         ext = self.extent()
         if dx is None:

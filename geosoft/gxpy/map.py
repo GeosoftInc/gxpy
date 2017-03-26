@@ -208,7 +208,7 @@ class GXmap:
 
     @classmethod
     def new(cls, filename=None, data_area=(0.,0.,100.,100.), scale=None,
-            cs=None, media="A0", fixed_size=None, map_style='figure',
+            cs=None, media=None, layout=None, fixed_size=None, map_style='figure',
             margins=None, inside_margin=1.0, overwrite=False):
 
         """
@@ -223,17 +223,20 @@ class GXmap:
                             `WGS 84 / UTM zone 15N`, or another valid constructor supported by
                             ``coordinate_system.GXcs``.
             :media:         media name and optional 'portrait' suffix.  Named media sizes are read
-                            from media.csv.  The default is 'Unlimited', which allows for a map size of
-                            up to 300 x 300 cm.  For example `media='A4 portrait'`.
+                            from media.csv, which includes A4, A3, A2, A1, A0, letter, legal, ledger, 
+                            A, B, C, D, E and Unlimited. For example `media='A4 portrait'`.
+            :layout:        'portrait' or 'landscape', overrides media setting.  If the layout is not 
+                            defined by media or this parameter, the layout is determined by the aspect
+                            ratio of the data area.
             :map_style:     'map' or 'figure' (default).  A 'map' style is intended for A3 or larger
                             media with a larger right or left margin for map annotations.  A 'figure'
                             style is intended for smaller media with a larger bottom margin for a
                             title and limited annotations.
-            :fixed_size:    True for fixed media size. The default is True for 'figure' map_style, and
-                            False for 'map' map_style. If False, the base view boundary will be reduced
-                            to the data view plus margins.  Tf True, the base view boundary is fixed to
-                            the media size and margins are adjusted to locate the data view proportionally
-                            relative to the requested margins.
+            :fixed_size:    True for fixed media size, if, and only if, a media size is defined.
+                            The default is True for 'figure' map_style, and False for 'map' map_style. 
+                            If False, the base view boundary will be reduced to the data view plus margins.  
+                            Tf True, the base view boundary is fixed to the media size and margins are 
+                            adjusted to locate the data view proportionally relative to the requested margins.
             :margins:       (left, right, bottom, top) map margins in map cm.  The default for 'map'
                             style is (3, 14, 6, 3), and for figure (1, 4, 1, 1).
             :inside_margin: additional margin (cm) inside the base view.  This margin effectively
@@ -245,22 +248,38 @@ class GXmap:
         .. versionadded:: 9.2
         """
 
-        def setup_map(gmap, data_area, scale, media, margins, fixed_size):
+        def size_from_media(media, layout, data_aspect):
 
-            def set_media_size(media):
-                m = media.split(' ')[0]
-                try:
-                    spec = gxdf.table_record('media', m)
-                    size = (float(spec['SIZE_X']),
-                            float(spec['SIZE_Y']))
-                except:
-                    m = 'A3'
-                    size = (37.94, 26.85)
+            if type(media) is not str:
+                return media
 
-                if 'portrait' in media:
-                    if size[0] > size[1]:
-                        return m, (size[1], size[0])
-                return m, size
+            media = media.lower()
+            if 'portrait' in media:
+                if layout is None:
+                    layout = 'portrait'
+                media = media.replace('portrait', '').strip()
+            elif 'landscape' in media:
+                if layout is None:
+                    layout = 'landscape'
+                media = media.replace('landscape', '').strip()
+
+            try:
+
+                spec = gxdf.table_record('media', media.upper())
+                size = (float(spec['SIZE_X']), float(spec['SIZE_Y']))
+
+            except:
+                size = None
+
+            if layout is None:
+                layout = data_aspect
+
+            if (layout.lower() == 'portrait') and (size[0] > size[1]):
+                size = (size[1], size[0])
+
+            return size
+
+        def setup_map(gmap, data_area, scale, media_size, margins, fixed_size):
 
             def data_window_on_map(media_size, margins, inside_margin, inside=True):
                 mx = media_size[0] - margins[0] - margins[1]
@@ -271,21 +290,35 @@ class GXmap:
                     my -= im
                 return mx, my # data window on map cm
 
-            media, media_size = set_media_size(media)
+            min_map_margins = (1.5, 14.0, 5.0, 1.5)
+            min_fig_margins = (1.0, 1.0, 4.0, 1.5)
+
+            if media_size is None:
+                fixed_size = False
+                if scale:
+                    media_size = (300., 300.) # crazy large, will be trimmed to scale
+                    if margins is None:
+                        if map_style == 'map':
+                            margins = min_map_margins
+                        else:
+                            margins = min_fig_margins
+                else:
+                    media_size = (40, 30)
+
             if margins is None:
                 mx, my = media_size
                 if map_style == 'map':
                     if mx <= 30.0:
                         raise MapException('\'map\' style requires minimum 30cm media. Yours is {}cm'.format(mx))
-                    margins = (max(1.5, mx * 0.025),
-                               max(14.0, mx * 0.15),
-                               max(5.0, my * 0.1),
-                               max(1.5, mx * 0.025))
+                    margins = (max(min_map_margins[0], mx * 0.025),
+                               max(min_map_margins[1], mx * 0.15),
+                               max(min_map_margins[2], my * 0.1),
+                               max(min_map_margins[3], mx * 0.025))
                 else:
-                    margins = (max(1.0, mx * 0.04),
-                               max(1.0, mx * 0.04),
-                               max(4.0, my * 0.15),
-                               max(1.5, mx * 0.04))
+                    margins = (max(min_fig_margins[0], mx * 0.04),
+                               max(min_fig_margins[1], mx * 0.04),
+                               max(min_fig_margins[2], my * 0.15),
+                               max(min_fig_margins[3], mx * 0.04))
 
             if scale is None:
                 # determine largest scale to fit the media
@@ -293,6 +326,8 @@ class GXmap:
                 sx = (data_area[2] - data_area[0]) * 100.0 / mx
                 sy = (data_area[3] - data_area[1]) * 100.0 / my
                 scale = max(sx, sy)
+
+                #TODO - add a round_to_precision() function with option to round up or down.
                 if scale > 100:
                     scale = float(ceil(scale))
 
@@ -305,8 +340,8 @@ class GXmap:
 
             if fixed_size:
                 mx, my = data_window_on_map(media_size, margins, inside_margin)
-                x_adjust = max(0, (mx - ((data_area[2] - data_area[0]) * 100.0 / scale)) * 0.5)
-                y_adjust = max(0, (my - ((data_area[3] - data_area[1]) * 100.0 / scale)) * 0.5)
+                x_adjust = max(0., (mx - ((data_area[2] - data_area[0]) * 100.0 / scale)) * 0.5)
+                y_adjust = max(0., (my - ((data_area[3] - data_area[1]) * 100.0 / scale)) * 0.5)
                 margins = (margins[0] + x_adjust, margins[1] + x_adjust,
                            margins[2] + y_adjust, margins[3] + y_adjust)
 
@@ -321,7 +356,7 @@ class GXmap:
             gxapi.GXMVU.mapset( gmap.gxmap,
                                 '*Base', '*Data',
                                 data_area[0], data_area[2], data_area[1], data_area[3],
-                                media,
+                                '{},{}'.format(media_size[0], media_size[1]),
                                 int(media_size[1] > media_size[0]),
                                 0, scale, gxapi.rDUMMY,
                                 margins[0], margins[1], margins[2], margins[3],
@@ -338,6 +373,14 @@ class GXmap:
                   'MAP.UP_ANGLE': '67.5'}
             gmap.gxmap.set_reg(gxu.reg_from_dict(rd))
 
+        if ((data_area[2] - data_area[0]) <= 0.0) or ((data_area[3] - data_area[1]) <= 0.0):
+            raise MapException(_t('Invalid data area {}'.format(data_area)))
+
+        if (data_area[2] - data_area[0]) < (data_area[3] - data_area[1]):
+            data_aspect = 'portrait'
+        else:
+            data_aspect = 'landscape'
+
         if filename is None:
 
             # get a temporary map file name
@@ -351,10 +394,11 @@ class GXmap:
                 if os.path.isfile(filename):
                     raise MapException(_t('Cannot overwrite existing file: "{}"').format(filename))
 
+        size = size_from_media(media, layout, data_aspect)
         gmap = cls(filename, WRITE_NEW)
         gmap.remove_on_close(delete)
 
-        setup_map(gmap, data_area, scale, media, margins, fixed_size)
+        setup_map(gmap, data_area, scale, size, margins, fixed_size)
         set_coordinate_system(gmap, cs)
         set_registry(gmap, map_style, inside_margin)
 

@@ -10,6 +10,8 @@ import geosoft.gxpy.map as gxmap
 import geosoft.gxpy.view as gxv
 import geosoft.gxpy.geometry as gxgm
 import geosoft.gxpy.coordinate_system as gxcs
+import geosoft.gxpy.viewer as gxvwr
+
 
 def new_test_map(mapname=None, rescale=1.0):
 
@@ -210,6 +212,67 @@ class Test(unittest.TestCase):
             gxv.GXview(gmap, "copy_data", mode=gxv.WRITE_NEW, copy="*Data")
             gmap.set_class_view_name('Data', 'copy_data')
             self.assertEqual(gmap.get_class_view_name('Data'), 'copy_data')
+
+    def test_media(self):
+        self.start(gsys.func_name())
+
+        def test_crc(mapfile, crc=None, display=False):
+            with gxmap.GXmap.open(mapfile) as map:
+                with gxv.GXview(map, "*Base") as view:
+                    view.xy_rectangle(view.extent(), pen={'line_thick': 0.2, 'line_color': 'K'})
+                with gxv.GXview(map, "*Data") as view:
+                    view.xy_rectangle(view.extent(), pen={'line_thick': 0.2, 'line_color': 'R'})
+            if display:
+                gxvwr.map(mapfile)
+            if crc:
+                self.assertEqual(gxmap.crc_map(mapfile), crc)
+
+        test_media_map = os.path.join(gx.GXpy().temp_folder(), 'test_media')
+
+        with gxmap.GXmap.new(test_media_map, overwrite=True, scale=800,
+                             data_area=(5, 10, 50, 100)) as map:
+            filename = map.filename
+        test_crc(filename, 1043288043)
+
+        with gxmap.GXmap.new(test_media_map, overwrite=True, scale=100,
+                             data_area=(5, 10, 50, 100)) as map:
+            filename = map.filename
+        test_crc(filename, 1535590917)
+
+        with gxmap.GXmap.new(test_media_map, overwrite=True, media='A4 portrait') as map:
+            filename = map.filename
+        test_crc(filename, 2682492121)
+
+        with gxmap.GXmap.new(test_media_map, overwrite=True, media='Portraita4') as map:
+            filename = map.filename
+        test_crc(filename, 2682492121)
+
+        with gxmap.GXmap.new(test_media_map, overwrite=True, media='A4 landscape') as map:
+            filename = map.filename
+        test_crc(filename, 2828292428)
+
+        with gxmap.GXmap.new(test_media_map, overwrite=True, media='A4', data_area=(10, 5, 100, 50)) as map:
+            filename = map.filename
+        test_crc(filename, 1741315204)
+
+        with gxmap.GXmap.new(test_media_map, overwrite=True, media='A4',
+                             data_area=(5, 10, 50, 100), layout='landscape') as map:
+            filename = map.filename
+        test_crc(filename, 1539773502)
+
+        with gxmap.GXmap.new(test_media_map, overwrite=True, media='A4',
+                             data_area=(5, 10, 50, 100)) as map:
+            filename = map.filename
+        test_crc(filename, 211035832)
+
+        for m in (None, (60, 50), 'unlimited', 'bogus', 'A4', 'A3', 'A2', 'A1', 'A0',
+                  'A', 'B', 'C', 'D', 'E'):
+            with gxmap.GXmap.new(media=m) as map: pass
+
+        self.assertRaises(gxmap.MapException,
+                          gxmap.GXmap.new,
+                          test_media_map, overwrite=True, media='A4',
+                          data_area=(100, 50, 10, 5), layout='landscape')
 
 if __name__ == '__main__':
 
