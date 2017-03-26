@@ -128,12 +128,12 @@ class GXgrd():
     """
     Grid and image class.
 
-    Creation options:
+    Instance constructors:
 
-        ====== =============================
-        open() open an existing grid/image
-        new()  create a new grid/image
-        ====== =============================
+        ======== =============================
+        'open()' open an existing grid/image
+        'new()'  create a new grid/image
+        ======== =============================
 
     .. versionadded:: 9.1
     """
@@ -378,16 +378,20 @@ class GXgrd():
     @property
     def rot(self):
         """
-        :return: grid rotation angle, degrees clockwise
+        :return: grid rotation angle, degrees azimuth
+        
+        Note that grid rotations in the gxapi GXIMG are degrees clockwise, which is the opposite of
+        degree azimuth, used here.  All horizontal plane anles in the Python gxpy module are degrees
+        azimuth for consistency.
 
         .. versionadded:: 9.2
         """
-        return self._img.query_double(gxapi.IMG_QUERY_rROT)
+        return -self._img.query_double(gxapi.IMG_QUERY_rROT)
 
     @property
     def filename(self):
         """
-        :return: grid rotation angle, degrees clockwise
+        :return: grid file name, without decorations
 
         .. versionadded:: 9.2
         """
@@ -454,23 +458,23 @@ class GXgrd():
 
     @x0.setter
     def x0(self, v):
-        self._img.set_info(self.dx, self.dy, v, self.y0, self.rot)
+        self._img.set_info(self.dx, self.dy, v, self.y0, -self.rot)
 
     @y0.setter
     def y0(self, v):
-        self._img.set_info(self.dx, self.dy, self.x0, v, self.rot)
+        self._img.set_info(self.dx, self.dy, self.x0, v, -self.rot)
 
     @dx.setter
     def dx(self, v):
-        self._img.set_info(v, self.dy, self.x0, self.y0, self.rot)
+        self._img.set_info(v, self.dy, self.x0, self.y0, -self.rot)
 
     @dy.setter
     def dy(self, v):
-        self._img.set_info(self.dx, v, self.x0, self.y0, self.rot)
+        self._img.set_info(self.dx, v, self.x0, self.y0, -self.rot)
 
     @rot.setter
     def rot(self, v):
-        self._img.set_info(self.dx, self.dy, self.x0, self.y0, v)
+        self._img.set_info(self.dx, self.dy, self.x0, self.y0, -v)
 
     @cs.setter
     def cs(self, cs):
@@ -487,7 +491,7 @@ class GXgrd():
             'y0'  grid Y origin location (0.0)
             'dx'  grid X point separation (1.0)
             'dy'  grid Y point separation (1.0)
-            'rot' grid counter-clockwise rotation angle (0.0)
+            'rot' grid rotation angle in degrees azimuth (0.0)
             'cs'  coordinate system (unchanged)
             ===== ============================================
 
@@ -507,19 +511,12 @@ class GXgrd():
         self._img.set_info(dx, dy,
                            properties.get('x0', 0.0),
                            properties.get('y0', 0.0),
-                           properties.get('rot', 0.0))
+                           -properties.get('rot', 0.0))
         cs = properties.get('cs', None)
         if cs is not None:
             if not isinstance(cs, gxcs.GXcs):
                 cs = gxcs.GXcs(cs)
             self._img.set_ipj(cs.gxipj)
-
-    def extent(self):
-        """
-        Return grid extent in the grid coordinate system.
-
-        :return: (min_x, min_y, min_z, max_x, max_y, max_z)
-        """
 
     def save_as(self, fileName, dtype=None):
         """
@@ -586,8 +583,8 @@ class GXgrd():
             dy = self.dy * y0
             cos = math.cos(math.radians(self.rot))
             sin = math.sin(math.radians(self.rot))
-            p['x0'] = self.x0 + dx * cos - dy * sin
-            p['y0'] = self.y0 + dy * cos + dx * sin
+            p['x0'] = self.x0 - dx * cos - dy * sin
+            p['y0'] = self.y0 - dy * cos + dx * sin
         wgd = self.new(name, p)
         wpg = wgd._geth_pg()
         gpg = self._geth_pg()
@@ -650,7 +647,7 @@ class GXgrd():
     def extent_2d(self):
         """
         Return the 2D extent of the grid on the grid plane
-        :return: ((min_x, min_y), (max_x, max_y))
+        :return: (min_x, min_y, max_x, max_y)
 
         .. versionadded:: 9.2
         """
@@ -659,17 +656,14 @@ class GXgrd():
         width = (self.nx - 1) * self.dx
         height = (self.ny - 1) * self.dy
         xy0 = (self.x0, self.y0)
-        xy1 = (self.x0 + width * cosine, self.y0 + width * sine)
-        xy2 = (self.x0 + width * cosine - height * sine, self.y0 + width * sine + height * cosine)
-        xy3 = (self.x0 - height * sine, self.y0 + height * cosine)
+        xy1 = (self.x0 + width * cosine, self.y0 - width * sine)
+        xy2 = (xy1[0] + height * sine, xy1[1] + height * cosine)
+        xy3 = (self.x0 + height * sine, self.y0 + height * cosine)
 
-        minxy = (min(xy0[0], xy1[0], xy2[0], xy3[0]),
-                 min(xy0[1], xy1[1], xy2[1], xy3[1]))
-        maxxy = (max(xy0[0], xy1[0], xy2[0], xy3[0]),
-                 max(xy0[1], xy1[1], xy2[1], xy3[1]))
-
-        return minxy, maxxy
-
+        return min(xy0[0], xy1[0], xy2[0], xy3[0]),\
+               min(xy0[1], xy1[1], xy2[1], xy3[1]),\
+               max(xy0[0], xy1[0], xy2[0], xy3[0]),\
+               max(xy0[1], xy1[1], xy2[1], xy3[1])
 
     def extent_3d(self):
         """
@@ -679,33 +673,19 @@ class GXgrd():
         .. versionadded:: 9.2
         """
 
-        minxy, maxxy = self.extent_2d()
+        ex2d = self.extent_2d()
         cs = self.cs
-        xyz0 = cs.xyz_from_oriented((minxy[0], minxy[1], 0.0))
-        xyz1 = cs.xyz_from_oriented((maxxy[0], minxy[1], 0.0))
-        xyz2 = cs.xyz_from_oriented((maxxy[0], maxxy[1], 0.0))
-        xyz3 = cs.xyz_from_oriented((minxy[0], maxxy[1], 0.0))
+        xyz0 = cs.xyz_from_oriented((ex2d[0], ex2d[1], 0.0))
+        xyz1 = cs.xyz_from_oriented((ex2d[2], ex2d[1], 0.0))
+        xyz2 = cs.xyz_from_oriented((ex2d[2], ex2d[3], 0.0))
+        xyz3 = cs.xyz_from_oriented((ex2d[0], ex2d[3], 0.0))
 
-        """
-        xyz0 = cs.xyz_from_oriented((self.x0, self.y0, 0.0))
-        xyz1 = cs.xyz_from_oriented((self.x0 + (self.nx - 1) * self.dx,
-                                     self.y0,
-                                     0.0))
-        xyz2 = cs.xyz_from_oriented((self.x0 + (self.nx - 1) * self.dx,
-                                     self.y0 + (self.ny - 1) * self.dy, 0.0))
-        xyz3 = cs.xyz_from_oriented((self.x0,
-                                     self.y0 + (self.ny - 1) * self.dy,
-                                     0.0))
-        """
-
-        minxyz = (min(xyz0[0], xyz1[0], xyz2[0], xyz3[0]),
-                  min(xyz0[1], xyz1[1], xyz2[1], xyz3[1]),
-                  min(xyz0[2], xyz1[2], xyz2[2], xyz3[2]))
-        maxxyz = (max(xyz0[0], xyz1[0], xyz2[0], xyz3[0]),
-                  max(xyz0[1], xyz1[1], xyz2[1], xyz3[1]),
-                  max(xyz0[2], xyz1[2], xyz2[2], xyz3[2]))
-
-        return minxyz, maxxyz
+        return min(xyz0[0], xyz1[0], xyz2[0], xyz3[0]),\
+               min(xyz0[1], xyz1[1], xyz2[1], xyz3[1]),\
+               min(xyz0[2], xyz1[2], xyz2[2], xyz3[2]),\
+               max(xyz0[0], xyz1[0], xyz2[0], xyz3[0]),\
+               max(xyz0[1], xyz1[1], xyz2[1], xyz3[1]),\
+               max(xyz0[2], xyz1[2], xyz2[2], xyz3[2])
 
 
 # grid utilities

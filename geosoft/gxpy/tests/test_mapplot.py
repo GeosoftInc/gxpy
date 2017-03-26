@@ -1,5 +1,6 @@
 import unittest
 import os
+import geosoft.gxapi as gxapi
 import geosoft.gxpy.gx as gx
 import geosoft.gxpy.system as gsys
 import geosoft.gxpy.map as gxmap
@@ -7,6 +8,8 @@ import geosoft.gxpy.mapplot as gxmapl
 import geosoft.gxpy.coordinate_system as gxcs
 import geosoft.gxpy.view as gxv
 import geosoft.gxpy.viewer as gxvwr
+import geosoft.gxpy.grd as gxgrd
+import geosoft.gxpy.agg as gxagg
 
 def test_map(name=None, data_area=(1000,0,11000,5000)):
 
@@ -292,6 +295,54 @@ class Test(unittest.TestCase):
 
         #gxvwr.map(mapfile)
         self.assertEqual(gxmap.crc_map(mapfile), 2887459246)
+
+    def test_aggregate(self):
+        self.start(gsys.func_name())
+
+    def test_basic_agg(self):
+        self.start(gsys.func_name())
+
+        # test grid file
+        folder, files = gsys.unzip(os.path.join(os.path.dirname(__file__), 'testgrids.zip'),
+                                   folder=self.gx.temp_folder())
+        grid_file = os.path.join(folder, 'test_agg_utm.grd')
+        map_file = os.path.join(self.gx.temp_folder(), "test_agg_utm")
+
+        with gxmap.GXmap.new(map_file, overwrite=True) as gmap:
+            with gxgrd.GXgrd(grid_file) as grd:
+                mn, mx = grd.extent_2d()
+                cs = grd.cs
+            mapfile = gmap.filename
+            area = (mn[0], mn[1], mx[0], mx[1])
+            scale = (mx[0] - mn[0]) / 0.2
+            with gxv.GXview(gmap, "*Data",
+                            map_location = (5,3),
+                            cs=cs,
+                            area=area,
+                            scale=scale) as view:
+                view.xy_rectangle((mn, mx),
+                                  pen={'line_thick': 0.1, 'line_color': 'R'})
+
+                with gxagg.GXagg(grid_file) as agg:
+                    view.aggregate(agg)
+
+                data_extent = view.extent(gxv.EXTENT_MAP)
+
+            area = (0, 0, data_extent[2] + 2, data_extent[3] + 2)
+            with gxv.GXview(gmap, "*Base", scale=100.0, area=area) as view:
+                view.xy_rectangle(area, pen={'line_thick': 0.1, 'line_color': 'B'})
+
+        with gxmap.GXmap.open(mapfile) as map:
+            gxapi.GXMVU.map_mdf(map.gxmap, 'test.mdf', '*Data')
+            with gxmapl.GXmapplot(map, font='Arial', pen_def='kt50') as mapl:
+                mapl.rectangle(gxmapl.RECTANGLE_EXTENT_DATA, pen_def="kt200")
+                mapl.annotate_data_ll(grid=gxmapl.GRID_LINES,
+                                      grid_pen="bt250",
+                                      pen_def="kt1", text_def=(0.18, 15),
+                                      top=gxmapl.TOP_IN)
+
+        #self.assertEqual(gxmap.crc_map(mapfile), 3752814683)
+        gxvwr.map(mapfile)
 
 if __name__ == '__main__':
 

@@ -41,10 +41,13 @@ class Point(Geometry):
     """
     Spatial location (x,y,z).
 
-    :param p:   array-line (x, y, z) create a Point (x, y, z)
-                if Point, returns a copy.
-                if array-like (x, y), create a Point (x, y, 0.0)
-                if a single value k (integral or float), create a Point (k, k, k)
+    :param p:   point in one of the following forms:
+
+                ::
+
+                    Point   makes a copy
+                    (x, y [,z]) implied z is 0.0 if not provided
+                    k makes a point (k, k, k)
 
     .. versionadded:: 9.2
     """
@@ -74,8 +77,7 @@ class Point(Geometry):
         else:
             if type(p) is Point:
                 self.p = p.p.copy()
-            elif isinstance(p, numbers.Real) or isinstance(p, numbers.Integral):
-                p = float(p)
+            else:
                 self.p = np.array((p, p, p))
 
     def __add__(self, p):
@@ -182,9 +184,14 @@ class Point2(Geometry):
     """
     Two points, for a line, or a rectangle, or a cube
 
-    :param minx, maxx:   box extents
-    :param miny, maxy:
-    :param minz, maxz:
+    :param p:       Points in one of the following forms:
+
+                    ::
+
+                        (Point, Point)
+                        ((x, y [,z]), (x, y [,z])) implied z is 0 if not specified
+                        (x0, y0, x1, y1) implied z is 0
+                        (x0, y0, z0, x1, y1, z1)
 
     .. versionadded:: 9.2
     """
@@ -201,12 +208,21 @@ class Point2(Geometry):
         return "Point2[({}, {}, {}) ({}, {}, {})]".format(self.p1.x, self.p1.y, self.p1.z,
                                                           self.p2.x, self.p2.y, self.p2.z)
 
-    def __init__(self, p1, p2, **kwargs):
+    def __init__(self, p, **kwargs):
 
         super().__init__(**kwargs)
 
-        self.p1 = Point(p1)
-        self.p2 = Point(p2)
+        if len(p) == 2:
+            self.p1 = Point(p[0])
+            self.p2 = Point(p[1])
+        elif len(p) == 4:
+            self.p1 = Point((p[0], p[1]))
+            self.p2 = Point((p[2], p[3]))
+        elif len(p) == 6:
+            self.p1 = Point((p[0], p[1], p[2]))
+            self.p2 = Point((p[3], p[4], p[5]))
+        else:
+            raise GeometryException(_t('Invalid points: {}').format(p))
 
     def __eq__(self, other):
         return (self.cs.same_as(other.cs)) and \

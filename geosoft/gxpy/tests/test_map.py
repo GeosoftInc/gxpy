@@ -120,13 +120,13 @@ class Test(unittest.TestCase):
         self.start(gsys.func_name())
 
         # temp map
-        with gxmap.GXmap.new_standard_geosoft(data_area=(0, 0, 100, 80)) as gmap:
+        with gxmap.GXmap.new(data_area=(0, 0, 100, 80)) as gmap:
             views = gmap.view_list(gxmap.LIST_ALL)
             self.assertTrue('Base' in views)
             self.assertTrue('Data' in views)
 
-        with gxmap.GXmap.new_standard_geosoft(data_area=(0, 0, 100, 80),
-                                              cs=gxcs.GXcs("DHDN / Okarito 2000 [geodetic]")) as gmap:
+        with gxmap.GXmap.new(data_area=(0, 0, 100, 80),
+                             cs=gxcs.GXcs("DHDN / Okarito 2000 [geodetic]")) as gmap:
             with gxv.GXview(gmap, 'Data', mode=gxv.WRITE_OLD) as v:
                 self.assertEqual("DHDN / Okarito 2000 [geodetic]", str(v.cs))
 
@@ -152,16 +152,16 @@ class Test(unittest.TestCase):
 
         with gxmap.GXmap.new(filename='test_geosoft', overwrite=True) as gmap:
             filename = gmap.filename
-            self.assertEqual(len(gmap.view_list()), 0)
-            self.assertFalse(gmap.has_view('*Data'))
-            self.assertFalse(gmap.has_view('*Base'))
+            self.assertEqual(len(gmap.view_list()), 2)
+            self.assertTrue(gmap.has_view('*Data'))
+            self.assertTrue(gmap.has_view('*Base'))
         self.assertTrue(os.path.isfile(filename))
         with open(filename, 'rb') as f:
             pass
 
-        with gxmap.GXmap.new_standard_geosoft(filename='test_geosoft',
-                                              overwrite=True,
-                                              data_area=(1000,200,11000,5000)) as gmap:
+        with gxmap.GXmap.new(filename='test_geosoft',
+                             overwrite=True,
+                             data_area=(1000,200,11000,5000)) as gmap:
             filename = gmap.filename
             self.assertEqual(len(gmap.view_list()), 2)
             self.assertTrue(gmap.has_view('*Data'))
@@ -201,8 +201,8 @@ class Test(unittest.TestCase):
             gmap.set_class_view_name('mine', 'boom')
             self.assertEqual(gmap.get_class_view_name('mine'), 'boom')
 
-        with gxmap.GXmap.new_standard_geosoft(data_area=(0, 0, 100, 80),
-                                              cs=gxcs.GXcs("DHDN / Okarito 2000 [geodetic]")) as gmap:
+        with gxmap.GXmap.new(data_area=(0, 0, 100, 80),
+                             cs=gxcs.GXcs("DHDN / Okarito 2000 [geodetic]")) as gmap:
 
             self.assertEqual(gmap.get_class_view_name('Base'), 'Base')
             self.assertEqual(gmap.get_class_view_name('Data'), 'Data')

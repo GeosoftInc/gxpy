@@ -107,13 +107,36 @@ class GXmap:
     """
     Geosoft map files.
 
-    Creation options:
+    A Geosoft map is a container for views.  A view has a defined coordinate system (2D or 3D) and
+    contains graphical elements defined relative to the coordinate system of the view.  The
+    ``geosoft.gxpy.view`` module provides classes and methods for working with individual 2D or
+     3D views.
 
-        ====================== ==============================================================
-        open()                 open an existing map
-        new()                  create a new empty map
-        new_standard_geosoft() create a new standard Geosoft map with "base" and "data" view.
-        ====================== ==============================================================
+    Geosoft maps will always have a 2D 'base' view, which uses map cm as the coordinate system and is
+    intended for drawing map annotations, such as titles, a scale bar, North arrow and legends.  The
+    lower-left corner of the base view at location (0, 0) and the upper-right corner is defined by the
+    media size and may be adjusted to fit the data view.
+
+    Geosoft maps will also have one or more 'data' views, each with it's own defined coordinate system
+    and graphical content.  Creating a new map will always create one data view, which will become
+    the map's `default data view`, within which any spatial data presented by Geosoft 2D drawing applications
+    will be placed.  Maps may have more than one data view, including 3D data views, and the `default
+    data view` can be changed to any 2D or 3D view such that subsequent drawing will occur in the so-identified
+    view.  See ``set_default_data_view`` for more information.
+
+    3D views define a 3D spatial volume and accept both 2D and 3D drawing elements.  A 3D view will always
+    contain a plane or surface on which 2D elements are drawn, and when a 3D view is the
+    `default data view`, 2D elements will be drawn to the identified plane or surface.  When a 3D view is
+    rendered on a map, which is a flat surface, the view is rendered from the last use point of view.  Geosoft
+    map viewing applications allow a user to open a 3D view in a 3D viewer, which provides for 3D viewing,
+    3D navigation and 3D drawing capabilities.
+
+    Map constructors:
+
+        ======== =============================
+        `open()` open an existing map
+        `new()`  create a new map
+        ======== =============================
 
     .. versionadded:: 9.2
     """
@@ -184,59 +207,45 @@ class GXmap:
         return gmap
 
     @classmethod
-    def new(cls, filename=None, overwrite=False):
+    def new(cls, filename=None, data_area=(0.,0.,100.,100.), scale=None,
+            cs=None, media="A0", fixed_size=None, map_style='figure',
+            margins=None, inside_margin=1.0, overwrite=False):
+
         """
-        Create a new map file.
-
-        :param filename:    name of the map file, None for a temporary map (default)
-        :param overwrite:   True to overwrite an existing map.  If False and map exists
-                            a MapException is raised.
-
-        .. versionadded:: 9.2
-        """
-        
-        if filename is None:
-            
-            # get a temporary map file name
-            filename = map_file_name(os.path.join(gx.GXpy().temp_folder(), str(gxu.uuid())))
-            delete = True
-
-        else:
-            delete = False
-            if overwrite is False:
-                filename = map_file_name(filename)
-                if os.path.isfile(filename):
-                    raise MapException(_t('Cannot overwrite existing file: "{}"').format(filename))
-
-        gmap = cls(filename, WRITE_NEW)
-        gmap.remove_on_close(delete)
-
-        return gmap
-
-    @classmethod
-    def new_standard_geosoft(cls, filename=None, data_area=(0.,0.,100.,100.), scale=None,
-                             cs=None, media="A3", fixed_size=False, style='figure',
-                             margins=None, inside_margin=1.0,
-                             *argv, **kwa):
-        """
+        Create and open a new Geosoft map.
 
         :parameters:
-            :filename:      Map file name, a temporaty file is create if not specifiec
-            :data_area:     (min_x, min_y, max_x, max_y) data area for the data view on the map
+            :filename:      Map file name.  If not specified a temporary file is created.
+            :data_area:     (min_x, min_y, max_x, max_y) data area for a 2D data view on the map
             :scale:         required scale, default will fit data to the map media
-            :cs:            coordinate system, default unknown
+            :cs:            coordinate system, default is an unknown coordinate system.  You may pass
+                            a ``coordinate_system.GXcs`` instance, a string descriptor, such as
+                            `WGS 84 / UTM zone 15N`, or another valid constructor supported by
+                            ``coordinate_system.GXcs``.
             :media:         media name and optional 'portrait' suffix.  Named media sizes are read
-                            from media.csv.  For example `media='A4 portrait'`.
-            :fixed_size:    True for fixed media size
-            :map_style:     'map' or 'figure'
-            :margins:       (left, right, bottom, top) map margins in map cm
+                            from media.csv.  The default is 'Unlimited', which allows for a map size of
+                            up to 300 x 300 cm.  For example `media='A4 portrait'`.
+            :map_style:     'map' or 'figure' (default).  A 'map' style is intended for A3 or larger
+                            media with a larger right or left margin for map annotations.  A 'figure'
+                            style is intended for smaller media with a larger bottom margin for a
+                            title and limited annotations.
+            :fixed_size:    True for fixed media size. The default is True for 'figure' map_style, and
+                            False for 'map' map_style. If False, the base view boundary will be reduced
+                            to the data view plus margins.  Tf True, the base view boundary is fixed to
+                            the media size and margins are adjusted to locate the data view proportionally
+                            relative to the requested margins.
+            :margins:       (left, right, bottom, top) map margins in map cm.  The default for 'map'
+                            style is (3, 14, 6, 3), and for figure (1, 4, 1, 1).
             :inside_margin: additional margin (cm) inside the base view.  This margin effectively
-                            expands the data_area.
+                            expands the data_area to allow room for graphical elements related to
+                            spatial data near the edge of the defined data area.
+            :overwrite:     True to overwrite an existing map.  If False and map exists, raises
+                            ``MapException``.
 
         .. versionadded:: 9.2
         """
 
-        def setup_map(gmap, data_area, scale, media, margins):
+        def setup_map(gmap, data_area, scale, media, margins, fixed_size):
 
             def set_media_size(media):
                 m = media.split(' ')[0]
@@ -244,12 +253,14 @@ class GXmap:
                     spec = gxdf.table_record('media', m)
                     size = (float(spec['SIZE_X']),
                             float(spec['SIZE_Y']))
-                    if 'portrait' in media:
-                        if size[0] > size[1]:
-                            return m, (size[1], size[0])
-                    return m, size
                 except:
-                    return 'A3', (37.94, 26.85) # default A3
+                    m = 'A3'
+                    size = (37.94, 26.85)
+
+                if 'portrait' in media:
+                    if size[0] > size[1]:
+                        return m, (size[1], size[0])
+                return m, size
 
             def data_window_on_map(media_size, margins, inside_margin, inside=True):
                 mx = media_size[0] - margins[0] - margins[1]
@@ -263,7 +274,7 @@ class GXmap:
             media, media_size = set_media_size(media)
             if margins is None:
                 mx, my = media_size
-                if style == 'map':
+                if map_style == 'map':
                     if mx <= 30.0:
                         raise MapException('\'map\' style requires minimum 30cm media. Yours is {}cm'.format(mx))
                     margins = (max(1.5, mx * 0.025),
@@ -285,6 +296,20 @@ class GXmap:
                 if scale > 100:
                     scale = float(ceil(scale))
 
+            # adjust margins for a fixed map
+            if fixed_size is None:
+                if map_style == 'figure':
+                    fixed_size = True
+                else:
+                    fixed_size = False
+
+            if fixed_size:
+                mx, my = data_window_on_map(media_size, margins, inside_margin)
+                x_adjust = max(0, (mx - ((data_area[2] - data_area[0]) * 100.0 / scale)) * 0.5)
+                y_adjust = max(0, (my - ((data_area[3] - data_area[1]) * 100.0 / scale)) * 0.5)
+                margins = (margins[0] + x_adjust, margins[1] + x_adjust,
+                           margins[2] + y_adjust, margins[3] + y_adjust)
+
             # ensure the data fits on this media
             mx, my = data_window_on_map(media_size, margins, inside_margin, inside=False)
             dmx = (data_area[2] - data_area[0]) * 100.0 / scale
@@ -292,14 +317,6 @@ class GXmap:
             if (mx - dmx) < -0.01 or (my - dmy) < -0.01:
                 raise MapException(_t('The data does not fit media ({},{})cm at a scale of 1:{}')
                                    .format(media_size[0], media_size[1], scale))
-
-            # adjust margins for a fixed map
-            if fixed_size:
-                mx, my = data_window_on_map(media_size, margins, inside_margin)
-                x_adjust = max(0, (mx - ((data_area[2] - data_area[0]) * 100.0 / scale)) * 0.5)
-                y_adjust = max(0, (my - ((data_area[3] - data_area[1]) * 100.0 / scale)) * 0.5)
-                margins = (margins[0] + x_adjust, margins[1] + x_adjust,
-                           margins[2] + y_adjust, margins[3] + y_adjust)
 
             gxapi.GXMVU.mapset( gmap.gxmap,
                                 '*Base', '*Data',
@@ -321,10 +338,25 @@ class GXmap:
                   'MAP.UP_ANGLE': '67.5'}
             gmap.gxmap.set_reg(gxu.reg_from_dict(rd))
 
-        gmap = cls.new(filename=filename, **kwa)
-        setup_map(gmap, data_area, scale, media, margins)
+        if filename is None:
+
+            # get a temporary map file name
+            filename = map_file_name(os.path.join(gx.GXpy().temp_folder(), str(gxu.uuid())))
+            delete = True
+
+        else:
+            delete = False
+            if not overwrite:
+                filename = map_file_name(filename)
+                if os.path.isfile(filename):
+                    raise MapException(_t('Cannot overwrite existing file: "{}"').format(filename))
+
+        gmap = cls(filename, WRITE_NEW)
+        gmap.remove_on_close(delete)
+
+        setup_map(gmap, data_area, scale, media, margins, fixed_size)
         set_coordinate_system(gmap, cs)
-        set_registry(gmap, style, inside_margin)
+        set_registry(gmap, map_style, inside_margin)
 
         return gmap
 

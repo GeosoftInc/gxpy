@@ -11,6 +11,7 @@ Submodules
 
 .. toctree::
 
+    geosoft.gxpy.agg
     geosoft.gxpy.coordinate_system
     geosoft.gxpy.dataframe
     geosoft.gxpy.gdb

@@ -61,6 +61,13 @@ def _draw(func):
 
     return wrapper
 
+
+def _make_Point2(p2):
+    if type(p2) is gxgm.Point2:
+        return p2
+    else:
+        return gxgm.Point2(p2)
+
 class GXview:
     """
     Geosoft view class.
@@ -112,7 +119,7 @@ class GXview:
     def __init__(self,
                  gmap,
                  viewname="_unnamed_view",
-                 mode=WRITE_NEW,
+                 mode=WRITE_OLD,
                  cs=None,
                  map_location=(0,0),
                  area=(0,0,30,20),
@@ -121,6 +128,8 @@ class GXview:
 
         self._gmap = gmap
         self._viewname = viewname
+        if mode == WRITE_OLD and not gmap.has_view(self._viewname):
+            mode = WRITE_NEW
         self.gxview = gxapi.GXMVIEW.create(self._gmap.gxmap, self._viewname, mode)
         self._mode = mode
 
@@ -222,6 +231,7 @@ class GXview:
         self.gxview.fit_window(mm_minx, mm_miny, mm_maxx, mm_maxy,
                                a_minx, a_miny, a_maxx, a_maxy)
         self.gxview.set_window(a_minx, a_miny, a_maxx, a_maxy, UNIT_VIEW)
+        #self.gxview.set_u_fac(1.0 / x_scale)
 
     def _invalid_pen(self, key):
         raise ViewException(_t('Invalid pen attribute \'{}\'. Valid attibutes are {}')
@@ -444,9 +454,7 @@ class GXview:
         .. versionadded:: 9.2
         """
 
-        if hasattr(p2, '__iter__'):
-            p2 = gxgm.Point2(p2[0], p2[1])
-
+        p2 = _make_Point2(p2)
         self.gxview.line(p2.p1.x, p2.p1.y, p2.p2.x, p2.p2.y)
 
     @_draw
@@ -476,28 +484,24 @@ class GXview:
     def xy_rectangle(self, p2):
         """
         Draw a 2D rectangle on the current plane
-        :param p2: geometry.Point2, or (p1, p2)
+        :param p2: geometry.Point2, or (p1, p2), or (x0, y0, x2, y2)
 
         .. versionadded:: 9.2
         """
 
-        if hasattr(p2, '__iter__'):
-            p2 = gxgm.Point2(p2[0], p2[1])
-
+        p2 = _make_Point2(p2)
         self.gxview.rectangle(p2.p1.x, p2.p1.y, p2.p2.x, p2.p2.y)
 
     @_draw
     def box_3d(self, p2, pen=None):
         """
         Draw a 3D box
-        :param p2: geometry.Point2, or (p1, p2)
+        :param p2: geometry.Point2, or (p1, p2), or (x0, y0, x1, y1)
 
         .. versionadded:: 9.2
         """
 
-        if hasattr(p2, '__iter__'):
-            p2 = gxgm.Point2(p2[0], p2[1])
-
+        p2 = _make_Point2(p2)
         self.gxview.box_3d(p2.p1.x, p2.p1.y, p2.p1.z,
                            p2.p2.x, p2.p2.y, p2.p2.z)
 

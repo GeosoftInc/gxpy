@@ -81,6 +81,7 @@ def _attrib(func):
 
     return wrapper
 
+#TODO change init create from a file, new or old.
 class GXmapplot:
     """
     Annotate a Geosoft map that contains a "base" view and a "data" view.  This class provides
@@ -433,7 +434,7 @@ class GXmapplot:
         self._add_att(att)
 
     @_attrib
-    def annotate_data_xy(self, tick=0.15, offset=0.07,
+    def annotate_data_xy(self, tick='', offset='',
                          x_sep='', x_dec='',
                          y_sep='', y_dec='',
                          compass=True, top=TOP_OUT,
@@ -475,7 +476,7 @@ class GXmapplot:
             self.command("GRID {},,,,,{}".format(grid, grid_pen))
 
     @_attrib
-    def annotate_data_ll(self, tick=0.15, offset=0.07, sep='', top=TOP_OUT,
+    def annotate_data_ll(self, tick='', offset='', sep='', top=TOP_OUT,
                          grid=0, grid_pen=''):
         """
         Annotate the date view axis
