@@ -222,19 +222,31 @@ class Test(unittest.TestCase):
     def test_p2(self):
         self.start(gsys.func_name())
 
-        b1 = gxgm.Point2(gxgm.Point((0, 1, -20)),
-                         (10, 20, -1))
+        b1 = gxgm.Point2((gxgm.Point((0, 1)), (10, 20, -1)))
+        self.assertEqual('Point2[(0.0, 1.0, 0.0) (10.0, 20.0, -1.0)]', str(b1))
+        self.assertEqual(b1.x2, (0., 10.))
+        self.assertEqual(b1.y2, (1., 20.))
+        self.assertEqual(b1.z2, (0, -1.))
+
+        b2 = gxgm.Point2(((0, 1), (10, 20, -1)))
+        self.assertTrue(b1 == b2)
+
+        b1 = gxgm.Point2((gxgm.Point((0, 1, -20)),(10, 20, -1)))
         self.assertEqual('Point2[(0.0, 1.0, -20.0) (10.0, 20.0, -1.0)]', str(b1))
         self.assertEqual(b1.x2, (0., 10.))
         self.assertEqual(b1.y2, (1., 20.))
         self.assertEqual(b1.z2, (-20., -1.))
-        b2 = gxgm.Point2(gxgm.Point((b1.x2[0], b1.y2[0], b1.z2[0])),
-                         gxgm.Point((b1.x2[1], b1.y2[1], b1.z2[1])))
+        b2 = gxgm.Point2((gxgm.Point((b1.x2[0], b1.y2[0], b1.z2[0])),
+                         gxgm.Point((b1.x2[1], b1.y2[1], b1.z2[1]))))
         self.assertTrue(b1 == b2)
-        b2 = gxgm.Point2(gxgm.Point((b1.x2[1], b1.y2[1], b1.z2[1])),
-                         gxgm.Point((b1.x2[0], b1.y2[0], b1.z2[0])), cs="WGS 84")
-        same = (b1 == b2)
-        self.assertTrue(same)
+        b2 = gxgm.Point2((gxgm.Point((b1.x2[1], b1.y2[1], b1.z2[1])),
+                         gxgm.Point((b1.x2[0], b1.y2[0], b1.z2[0]))), cs="WGS 84")
+        self.assertTrue(b1 == b2)
+        b2 = gxgm.Point2(((b1.x2[1], b1.y2[1], b1.z2[1]), (b1.x2[0], b1.y2[0], b1.z2[0])), cs="WGS 84")
+        self.assertTrue(b1 == b2)
+        b2 = gxgm.Point2((b1.x2[1], b1.y2[1], b1.z2[1], b1.x2[0], b1.y2[0], b1.z2[0]), cs="WGS 84")
+        self.assertTrue(b1 == b2)
+
 
 if __name__ == '__main__':
 

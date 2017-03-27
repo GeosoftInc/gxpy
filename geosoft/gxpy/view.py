@@ -5,8 +5,6 @@ import geosoft
 import geosoft.gxapi as gxapi
 from . import vv as gxvv
 from . import geometry as gxgm
-from . import ipj as gxipj
-from . import utility as gxu
 from . import coordinate_system as gxcs
 
 __version__ = geosoft.__version__
@@ -44,7 +42,8 @@ UNIT_VIEW = 0
 UNIT_MAP = 2
 UNIT_VIEW_UNWARPED = 3
 
-GRATICULE_DOT = 0
+#TODO - add and test once bug if fixed
+# GRATICULE_DOT = 0 # disabled due to a bug
 GRATICULE_LINE = 1
 GRATICULE_CROSS = 2
 
@@ -63,19 +62,31 @@ def _draw(func):
 
     return wrapper
 
+
+def _make_Point2(p2):
+    if type(p2) is gxgm.Point2:
+        return p2
+    else:
+        return gxgm.Point2(p2)
+
 class GXview:
     """
     Geosoft view class.
 
     :parameters:
-        :viewname:      view name, default is "_unnamed_view"
+        :viewname:      view name, default is "_unnamed_view". Use "\*Base", "\*Data" or "\*Section" to open
+                        the defined "Base", "Data" or "Section" views.  The '*' prefix causes the view associated
+                        with the class name to be opened.
         :gmap:          map instance, if not specified a new default map is created and deleted on closing
         :mode:          open view mode:
-                            | view.READ_ONLY
-                            | view.WRITE_NEW
-                            | view.WRITE_OLD
 
-        The following are only used if WRITE_NEW.
+                        ::
+
+                            gxpy.view.READ_ONLY
+                            gxpy.view.WRITE_NEW
+                            gxpy.view.WRITE_OLD
+
+        The following are used with ``mode=gxpy.view.WRITE_NEW``:
         
         :cs:            coordinate system as a gxpy.coordinate_system.GXcs instance, or one of the GXcs
                         constructor types.
@@ -83,11 +94,10 @@ class GXview:
         :area:          (min_x, min_y, max_x, max_y) area in view units
         :scale:         Map scale if a coordinate system is defined.  If the coordinate system is not
                         defined this is view units per map metre.
+        :copy:          name of a view to copy into the new view.
 
     .. versionadded:: 9.2
     """
-
-    _view = None
 
     def __enter__(self):
         return self
@@ -110,14 +120,17 @@ class GXview:
     def __init__(self,
                  gmap,
                  viewname="_unnamed_view",
-                 mode=WRITE_NEW,
+                 mode=WRITE_OLD,
                  cs=None,
                  map_location=(0,0),
                  area=(0,0,30,20),
-                 scale=100):
+                 scale=100,
+                 copy=None):
 
         self._gmap = gmap
         self._viewname = viewname
+        if mode == WRITE_OLD and not gmap.has_view(self._viewname):
+            mode = WRITE_NEW
         self.gxview = gxapi.GXMVIEW.create(self._gmap.gxmap, self._viewname, mode)
         self._mode = mode
 
@@ -126,6 +139,12 @@ class GXview:
         
         if mode == WRITE_NEW:
             self.locate(cs, map_location, area, scale)
+
+            if copy:
+                with GXview(gmap, viewname=copy, mode=READ_ONLY) as v:
+                    v.gxview.mark_all_groups(1)
+                    v.gxview.copy_marked_groups(self.gxview)
+
         else:
             ipj = gxapi.GXIPJ.create()
             self.gxview.get_ipj(ipj)
@@ -213,6 +232,7 @@ class GXview:
         self.gxview.fit_window(mm_minx, mm_miny, mm_maxx, mm_maxy,
                                a_minx, a_miny, a_maxx, a_maxy)
         self.gxview.set_window(a_minx, a_miny, a_maxx, a_maxy, UNIT_VIEW)
+        #self.gxview.set_u_fac(1.0 / x_scale)
 
     def _invalid_pen(self, key):
         raise ViewException(_t('Invalid pen attribute \'{}\'. Valid attibutes are {}')
@@ -338,6 +358,21 @@ class GXview:
             del self._pen_stack[-1:]
 
     def extent(self, extent=EXTENT_VIEW):
+        """
+        Return the extent of the view.
+
+        :param extent: extent units are in view or map units:
+
+            ::
+
+                EXTENT_VIEW     extent in view units (default)
+                EXTENT_MAP      extent in map units
+
+        :return: (x_min, y_min, x_max, y_max)
+
+        .. versionadded:: 9.2
+        """
+
         xmin = gxapi.float_ref()
         ymin = gxapi.float_ref()
         xmax = gxapi.float_ref()
@@ -356,6 +391,7 @@ class GXview:
     def color(self, cstr):
         """
         Return a color from a color string.
+
         :param cstr:    color string (see below)
         :return:        color
 
@@ -394,7 +430,18 @@ class GXview:
     # drawing to a plane
 
     @_draw
-    def graticule(self, dx=None, dy=None, ddx=None, ddy=None, style=GRATICULE_DOT):
+    def graticule(self, dx=None, dy=None, ddx=None, ddy=None, style=GRATICULE_LINE):
+        """
+        Draw a graticule reference on a view.
+        
+        :param style:   ``GRATICULE_LINE`` or ``GRATICULE_CROSS``
+        :param dx:      vertical line separation
+        :param dy:      horizontal line separation
+        :param ddh:     horizontal cross size for ``GRATICULE_CROSS``
+        :param ddv:     vertical cross size for ``GRATICULE_CROSS``
+        
+        .. versionadded:: 9.2
+        """
 
         ext = self.extent()
         if dx is None:
@@ -419,9 +466,7 @@ class GXview:
         .. versionadded:: 9.2
         """
 
-        if hasattr(p2, '__iter__'):
-            p2 = gxgm.Point2(p2[0], p2[1])
-
+        p2 = _make_Point2(p2)
         self.gxview.line(p2.p1.x, p2.p1.y, p2.p2.x, p2.p2.y)
 
     @_draw
@@ -451,28 +496,24 @@ class GXview:
     def xy_rectangle(self, p2):
         """
         Draw a 2D rectangle on the current plane
-        :param p2: geometry.Point2, or (p1, p2)
+        :param p2: geometry.Point2, or (p1, p2), or (x0, y0, x2, y2)
 
         .. versionadded:: 9.2
         """
 
-        if hasattr(p2, '__iter__'):
-            p2 = gxgm.Point2(p2[0], p2[1])
-
+        p2 = _make_Point2(p2)
         self.gxview.rectangle(p2.p1.x, p2.p1.y, p2.p2.x, p2.p2.y)
 
     @_draw
     def box_3d(self, p2, pen=None):
         """
         Draw a 3D box
-        :param p2: geometry.Point2, or (p1, p2)
+        :param p2: geometry.Point2, or (p1, p2), or (x0, y0, x1, y1)
 
         .. versionadded:: 9.2
         """
 
-        if hasattr(p2, '__iter__'):
-            p2 = gxgm.Point2(p2[0], p2[1])
-
+        p2 = _make_Point2(p2)
         self.gxview.box_3d(p2.p1.x, p2.p1.y, p2.p1.z,
                            p2.p2.x, p2.p2.y, p2.p2.z)
 

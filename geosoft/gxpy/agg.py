@@ -35,16 +35,23 @@ class GXagg():
     :param grid_file:   None, or the name of a grid file to create a default AGG with a single grid.
     :param shade:       if True, add shading effect
     :param zone:        Colour distribution method:
-                        |ZONE_DEFAULT       as set by user global default
-                        |ZONE_LINEAR
-                        |ZONE_NORMAL
-                        |ZONE_EQUALAREA
-                        |ZONE_SHADE         will create a shaded grid with "_s" appended
-                        |ZONE_LOGLINEAR
-                        |ZONE_LAST          last used colouring
+
+        ::
+
+            ZONE_DEFAULT        as set by user global default settings
+            ZONE_LINEAR         linearly distributed
+            ZONE_NORMAL         normal (Gaussian) distribution
+            ZONE_EQUALAREA      each colour will occupy an equal area on the image
+            ZONE_LOGLINEAR      logarithmic linear distribution
+            ZONE_LAST           last used colouring for this grid file
+            ZONE_SHADE          Displays the shaded image version of the grid. The shaded image is
+                                a grid file will with '_s' appended to the file name.  If it does not
+                                exist, a shaded image with illumination inclination and declination
+                                both set to 45 degrees is automatically created.
 
     .. versionadded:: 9.2
     '''
+    #TODO add shaded image to grd
 
     def __repr__(self):
         return "{}({})".format(self.__class__, self.__dict__)

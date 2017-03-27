@@ -608,6 +608,18 @@ def folder_temp():
     path = path.value.replace('\\', os.sep)
     return os.path.normpath(path)
 
+def normalize_file_name(fn):
+    """
+    Normalize a file name string by replacing '\' with '/'.  This is useful for writing
+    file names to control files.
+
+    :param fn: file name
+    :return: normalized file name
+
+    .. versionadded:: 9.2
+    """
+    return fn.replace('\\', '/')
+
 def uuid():
     """
     :return: a uuid as a string

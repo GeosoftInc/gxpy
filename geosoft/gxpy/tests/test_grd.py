@@ -84,7 +84,7 @@ class Test(unittest.TestCase):
             properties['y0'] = -15.0
             properties['dx'] = 1.5
             properties['dy'] = 2.5
-            properties['rot'] = -33.333333
+            properties['rot'] = 33.333333
             properties['cs'] = gxcs.GXcs('NAD27 / UTM zone 18N')
             self.assertRaises( gxgrd.GRDException, g1.set_properties, properties)
 
@@ -95,7 +95,7 @@ class Test(unittest.TestCase):
             grd.dy = 2.5
             grd.x0 = 45.0
             grd.y0 = -15.0
-            grd.rot = -33.333333
+            grd.rot = 33.333333
             grd.cs = gxcs.GXcs('NAD27 / UTM zone 18N')
             grd.close()
 
@@ -105,7 +105,7 @@ class Test(unittest.TestCase):
             self.assertEqual(properties.get('dy'),2.5)
             self.assertEqual(properties.get('x0'),45.0)
             self.assertEqual(properties.get('y0'),-15.0)
-            self.assertEqual(properties.get('rot'),-33.333333)
+            self.assertEqual(properties.get('rot'),33.333333)
             self.assertEqual(properties.get('nx'),101)
             self.assertEqual(properties.get('ny'),101)
             self.assertEqual(str(properties.get('cs')),'NAD27 / UTM zone 18N')
@@ -123,7 +123,7 @@ class Test(unittest.TestCase):
             self.assertEqual(properties.get('dy'),2.5)
             self.assertEqual(properties.get('x0'),45.0)
             self.assertEqual(properties.get('y0'),-15.0)
-            self.assertEqual(properties.get('rot'),-33.333333)
+            self.assertEqual(properties.get('rot'),33.333333)
             self.assertEqual(properties.get('nx'),101)
             self.assertEqual(properties.get('ny'),101)
             self.assertEqual(str(properties.get('cs')),'NAD27 / UTM zone 18N')
@@ -327,21 +327,21 @@ class Test(unittest.TestCase):
         with gxgrd.GXgrd.open(self.g1f) as g:
             window = os.path.join(self.folder, 'testwindow.grd(GRD)')
             gw = g.index_window(window, 4, 2, 96, 5)
-            exmin, exmax = gw.extent_2d()
-            self.assertAlmostEqual(exmin[0], 7.04)
-            self.assertAlmostEqual(exmin[1], 44.02)
-            self.assertAlmostEqual(exmax[0], 7.99)
-            self.assertAlmostEqual(exmax[1], 44.06)
+            ex = gw.extent_2d()
+            self.assertAlmostEqual(ex[0], 7.04)
+            self.assertAlmostEqual(ex[1], 44.02)
+            self.assertAlmostEqual(ex[2], 7.99)
+            self.assertAlmostEqual(ex[3], 44.06)
             gw.close()
 
             g.rot = 10.0
             window = os.path.join(self.folder, 'testwindow.grd(GRD)')
             gw = g.index_window(window, 4, 2, 96, 5)
-            exmin, exmax = gw.extent_2d()
-            self.assertAlmostEqual(exmin[0], 7.028973419460472)
-            self.assertAlmostEqual(exmin[1], 44.02664208216692)
-            self.assertAlmostEqual(exmax[0], 7.971486711928748)
-            self.assertAlmostEqual(exmax[1], 44.231000161070995)
+            ex = gw.extent_2d()
+            self.assertAlmostEqual(ex[0], 6.95713471)
+            self.assertAlmostEqual(ex[1], 43.822284)
+            self.assertAlmostEqual(ex[2], 7.8996480)
+            self.assertAlmostEqual(ex[3], 44.0266421)
             gw.close()
 
 
@@ -424,36 +424,67 @@ class Test(unittest.TestCase):
             grd.delete_files()
             grd.x0 = grd.y0 = 0.0
             grd.dx = grd.dy = 0.1
-            grd.rot = 30.0
+            grd.rot = 0.0
 
-            mn, mx = grd.extent_2d()
-            self.assertAlmostEqual(mn[0], -5.0)
-            self.assertAlmostEqual(mn[1], 0.0)
-            self.assertAlmostEqual(mx[0], 8.66025404)
-            self.assertAlmostEqual(mx[1], 13.66025404)
+            ex = grd.extent_2d()
+            self.assertAlmostEqual(ex[0], 0.0)
+            self.assertAlmostEqual(ex[1], 0.0)
+            self.assertAlmostEqual(ex[2], 10.0)
+            self.assertAlmostEqual(ex[3], 10.0)
+
+            grd.rot = 30.0
+            ex = grd.extent_2d()
+            self.assertAlmostEqual(ex[0], 0)
+            self.assertAlmostEqual(ex[1], -5)
+            self.assertAlmostEqual(ex[2], 13.66025404)
+            self.assertAlmostEqual(ex[3], 8.66025404)
 
             cs = grd.cs
-            cs_name = cs.cs_name(gxcs.NAME_HCS_VCS) + ' <0,0,0,-90,0,45>'
+            cs_name = cs.cs_name(gxcs.NAME_HCS_VCS) + ' <0,0,0,0,0,30>'
             grd.cs = gxcs.GXcs(cs_name)
-            grd.x0 = grd.y0 = 0.0
-            grd.dx = grd.dy = 0.1
-            grd.rot = 0.0
-            mn, mx = grd.extent_3d()
-            self.assertAlmostEqual(mx[0], 7.0710678118654755)
-            self.assertAlmostEqual(mx[1], 0.0)
-            self.assertAlmostEqual(mx[2], 10.0)
-            self.assertAlmostEqual(mn[0], 0.0)
-            self.assertAlmostEqual(mn[1], -7.0710678118654755)
-            self.assertAlmostEqual(mn[2], 0.0)
+            ex = grd.extent_2d()
+            self.assertAlmostEqual(ex[0], 0)
+            self.assertAlmostEqual(ex[1], -5)
+            self.assertAlmostEqual(ex[2], 13.66025404)
+            self.assertAlmostEqual(ex[3], 8.66025404)
+
+            grd.rot = 0
+            ex = grd.extent_2d()
+            self.assertAlmostEqual(ex[0], 0.0)
+            self.assertAlmostEqual(ex[1], 0.0)
+            self.assertAlmostEqual(ex[2], 10.0)
+            self.assertAlmostEqual(ex[3], 10.0)
+            ex = grd.extent_3d()
+            self.assertAlmostEqual(ex[0], 0.0)
+            self.assertAlmostEqual(ex[1], -5)
+            self.assertAlmostEqual(ex[2], 0.0)
+            self.assertAlmostEqual(ex[3], 13.66025404)
+            self.assertAlmostEqual(ex[4], 8.66025404)
+            self.assertAlmostEqual(ex[5], 0)
+
+            cs_name = cs.cs_name(gxcs.NAME_HCS_VCS) + ' <0,0,0,90,0,30>'
+            grd.cs = gxcs.GXcs(cs_name)
+            ex = grd.extent_3d()
+            self.assertAlmostEqual(ex[0], 0.0)
+            self.assertAlmostEqual(ex[1], -5)
+            self.assertAlmostEqual(ex[2], -10.0)
+            self.assertAlmostEqual(ex[3], 8.66025404)
+            self.assertAlmostEqual(ex[4], 0)
+            self.assertAlmostEqual(ex[5], 0)
 
             grd.rot = 30.0
-            mn, mx = grd.extent_3d()
-            self.assertAlmostEqual(mx[0], 6.123724356957947)
-            self.assertAlmostEqual(mx[1], 3.5355339059327378)
-            self.assertAlmostEqual(mx[2], 13.660254037844386)
-            self.assertAlmostEqual(mn[0], -3.5355339059327373)
-            self.assertAlmostEqual(mn[1], -6.123724356957946)
-            self.assertAlmostEqual(mn[2], 0.0)
+            ex = grd.extent_2d()
+            self.assertAlmostEqual(ex[0], 0)
+            self.assertAlmostEqual(ex[1], -5)
+            self.assertAlmostEqual(ex[2], 13.66025404)
+            self.assertAlmostEqual(ex[3], 8.66025404)
+            ex = grd.extent_3d()
+            self.assertAlmostEqual(ex[0], 0)
+            self.assertAlmostEqual(ex[1], -6.83012701892219)
+            self.assertAlmostEqual(ex[2], -8.66025403784439)
+            self.assertAlmostEqual(ex[3], 11.830127018922193)
+            self.assertAlmostEqual(ex[4], 0)
+            self.assertAlmostEqual(ex[5], 5)
 
             grd.close()
 

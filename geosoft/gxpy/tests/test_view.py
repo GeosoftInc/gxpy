@@ -16,12 +16,14 @@ import geosoft.gxpy.agg as gxagg
 
 
 def rect_line(view, size=100):
-    view.xy_rectangle(((0, 0), (1, 1)) * size, pen={'line_thick': 1})
+    view.xy_rectangle(gxgm.Point2((0, 0, size, size)), pen={'line_thick': 1})
     p1 = gxgm.Point((0.1, 0.1)) * size
     p2 = gxgm.Point((0.9, 0.9)) * size
     poff = gxgm.Point((0.15, 0.05)) * size
     view.xy_rectangle((p1, p2), pen={'fill_color': gxapi.C_LT_GREEN})
-    view.xy_line((p1 + poff, p2 - poff), pen={'line_style': (2, 2.0)})
+    p12 = gxgm.Point2((p1 + poff, p2 - poff))
+    #view.xy_line(p12, pen={'line_style': (2, 2.0)}) # following form tests p2 construction from 4 values
+    view.xy_line((p12.p1.x, p12.p1.y, p12.p2.x, p12.p2.y), pen={'line_style': (2, 2.0)})
 
 
 def draw_stuff(view, size = 1.0):
@@ -75,6 +77,12 @@ class Test(unittest.TestCase):
     @classmethod
     def start(cls,test):
         cls.gx.log("*** {} > {}".format(os.path.split(__file__)[1], test))
+
+    def view_crc(self, mapfile, crc=None, display=False):
+        if display:
+            gxvwr.map(mapfile)
+        if crc:
+            self.assertEqual(gxmap.crc_map(mapfile), crc)
 
     def test_version(self):
         self.start(gsys.func_name())
@@ -204,7 +212,7 @@ class Test(unittest.TestCase):
                 draw_stuff(view)
 
         #gxvwr.map(mapfile)
-        self.assertEqual(gxmap.crc_map(mapfile), 3148511381)
+        self.assertEqual(gxmap.crc_map(mapfile), 1690811698)
         gxmap.delete_files(mapfile)
 
     def test_3D(self):
@@ -223,6 +231,7 @@ class Test(unittest.TestCase):
                 draw_stuff(view)
                 view.box_3d(((0,0,10), (120,100,50)))
 
+        #TODO resolve this with Jacques once 3D viewer works
         #gxvwr.map(mapfile)
         #gxvwr.v3d(mapfile)
 
@@ -242,19 +251,16 @@ class Test(unittest.TestCase):
         testmap = os.path.join(self.gx.temp_folder(), "test")
         with gxmap.GXmap.new(testmap, overwrite=True) as gmap:
             mapfile = gmap.filename
-            with gxv.GXview(gmap, "base", area=(0, 0, 25, 20), scale=100.0) as view:
-                view.xy_rectangle(((0, 0), (25, 20)),
-                                  pen={'line_thick': 0.1, 'line_color': 'R'})
+            with gxv.GXview(gmap, "my_base_view", area=(0, 0, 25, 20), scale=100.0) as view:
+                view.xy_rectangle(view.extent(), pen={'line_thick': 0.1, 'line_color': 'R'})
 
-            with gxv.GXview(gmap, "data", map_location=(4,3), area=(0, 0, 1800, 1500), scale=10000) as view:
+            with gxv.GXview(gmap, "my_data_area", map_location=(4,3), area=(0, 0, 1800, 1500), scale=10000) as view:
                 view.xy_rectangle(((0, 0), (1800, 1500)),
                                   pen={'line_thick': 5, 'line_color': 'G'})
 
-                # TODO - the underlying grid function has a bug - it cannot do dotted lines
-                view.graticule(style=gxv.GRATICULE_DOT, pen={'line_thick': 50})
+                view.graticule(style=gxv.GRATICULE_LINE, pen={'line_thick': 5})
 
-        #gxvwr.map(mapfile)
-        self.assertEqual(gxmap.crc_map(mapfile), 2258658382) # TODO replace with correct crc once fixed
+        self.view_crc(mapfile, 3565975558)
 
     def test_basic_grid(self):
         self.start(gsys.func_name())
@@ -265,75 +271,70 @@ class Test(unittest.TestCase):
         grid_file = os.path.join(folder, 'test_agg_utm.grd')
         map_file = os.path.join(self.gx.temp_folder(), "test_agg_utm")
 
-        with gxmap.GXmap.new(map_file, overwrite=True) as gmap:
-            with gxgrd.GXgrd(grid_file) as grd:
-                mn, mx = grd.extent_2d()
-                cs = grd.cs
+        with gxgrd.GXgrd(grid_file) as grd:
+            cs = grd.cs
+            area = grd.extent_2d()
+        with gxmap.GXmap.new(map_file,
+                             data_area=area, media="A4", margins=(0,0,0,0),
+                             cs=cs, overwrite=True) as gmap:
             mapfile = gmap.filename
-            with gxv.GXview(gmap, "data", cs=cs,
-                            area=(mn[0], mn[1], mx[0], mx[1]),
-                            scale=(mx[0] - mn[0])/0.2) as view:
-                view.xy_rectangle((mn, mx),
-                                  pen={'line_thick': 0.1, 'line_color': 'R'})
+            with gxv.GXview(gmap, "*Base") as view:
+                view.xy_rectangle(view.extent(), pen={'line_thick': 0.2, 'line_color': 'K'})
+            with gxv.GXview(gmap, "*Data") as view:
+                view.xy_rectangle(area, pen={'line_thick': 0.1, 'line_color': 'R'})
 
                 with gxagg.GXagg(grid_file) as agg:
                     view.aggregate(agg)
 
-        self.assertEqual(gxmap.crc_map(mapfile), 3752814683)
-        #gxvwr.map(mapfile)
+        self.view_crc(mapfile, 2610023726)
 
-        with gxmap.GXmap.new(map_file, overwrite=True) as gmap:
+        with gxgrd.GXgrd(grid_file) as grd:
+            cs = grd.cs
+            area = grd.extent_2d()
+        with gxmap.GXmap.new(map_file,
+                             data_area=area, media="A3", margins=(0,0,0,0),
+                             scale=(area[2] - area[0])/0.2,
+                             cs=cs, overwrite=True) as gmap:
             mapfile = gmap.filename
-            with gxv.GXview(gmap, "data", cs="AGD66 / AMG zone 53",
-                        area=(mn[0], mn[1], mx[0], mx[1]),
-                        scale=(mx[0] - mn[0]) / 0.2) as view:
-
-                with gxgrd.GXgrd(grid_file) as grd:
-                    mn, mx = grd.extent_2d()
-                    view.set_drawing_cs(grd.cs)
-
-                view.xy_rectangle((mn, mx),
-                                  pen={'line_thick': 0.1, 'line_color': 'R'})
-
+            with gxv.GXview(gmap, "*Base") as view:
+                view.xy_rectangle(view.extent(), pen={'line_thick': 0.2, 'line_color': 'K'})
+            with gxv.GXview(gmap, "*Data") as view:
+                view.xy_rectangle(area, pen={'line_thick': 0.1, 'line_color': 'G'})
                 with gxagg.GXagg(grid_file) as agg:
                     view.aggregate(agg)
 
-        #gxvwr.map(mapfile)
-        self.assertEqual(gxmap.crc_map(mapfile), 4001381093)
-
+        self.view_crc(mapfile, 3402162077)
 
     def test_zone_grid(self):
         self.start(gsys.func_name())
 
-        def test_zone(zone, crc, shade=False):
-            with gxmap.GXmap.new(map_file, overwrite=True) as gmap:
+        def test_zone(zone, crc, shade=False, display=False):
+            with gxmap.GXmap.new(map_file, overwrite=True,
+                                 data_area=(ex[0], ex[1], ex[2], ex[3]),
+                                 scale=(ex[2] - ex[0]) / 0.2) as gmap:
                 mapfile = gmap.filename
-                with gxv.GXview(gmap, "data",
-                                area=(mn[0], mn[1], mx[0], mx[1]),
-                                scale=(mx[0] - mn[0]) / 0.2) as view:
+                with gxv.GXview(gmap, "data") as view:
                     with gxagg.GXagg(grid_file, zone=zone, shade=shade) as agg:
                         view.aggregate(agg)
 
-            #gxvwr.map(mapfile)
-            self.assertEqual(gxmap.crc_map(mapfile), crc)
-
+            self.view_crc(mapfile, crc, display)
 
         # test grid file
         folder, files = gsys.unzip(os.path.join(os.path.dirname(__file__), 'testgrids.zip'),
                                    folder=self.gx.temp_folder())
         grid_file = os.path.join(folder, 'test_agg_utm.grd')
         with gxgrd.GXgrd(grid_file) as grd:
-            mn, mx = grd.extent_2d()
+            ex = grd.extent_2d()
         map_file = os.path.join(self.gx.temp_folder(), "test_agg")
 
-        test_zone(gxagg.ZONE_LINEAR, 3720728838, shade=True)
-        test_zone(gxagg.ZONE_EQUALAREA, 1656439979)
-        test_zone(gxagg.ZONE_DEFAULT, 1656439979)
-        test_zone(gxagg.ZONE_LAST, 1656439979)
-        test_zone(gxagg.ZONE_LINEAR, 1901089024)
-        test_zone(gxagg.ZONE_NORMAL, 2691213422)
-        test_zone(gxagg.ZONE_SHADE, 4087607233)
-        test_zone(gxagg.ZONE_LOGLINEAR, 353055968)
+        test_zone(gxagg.ZONE_LINEAR, 3417239441, shade=True)
+        test_zone(gxagg.ZONE_EQUALAREA, 2492050454)
+        test_zone(gxagg.ZONE_DEFAULT, 2492050454)
+        test_zone(gxagg.ZONE_LAST, 2492050454)
+        test_zone(gxagg.ZONE_LINEAR, 4101718860)
+        test_zone(gxagg.ZONE_NORMAL, 2111320705)
+        test_zone(gxagg.ZONE_SHADE, 2447325492)
+        test_zone(gxagg.ZONE_LOGLINEAR, 2976995354)
 
 
 if __name__ == '__main__':
