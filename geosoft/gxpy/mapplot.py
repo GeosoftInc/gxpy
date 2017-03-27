@@ -89,6 +89,10 @@ class GXmapplot:
     the GXAPI GXMAPL class and uses the concepts of the Geosoft MAPPLOT system.
 
     :param map:         gxpy.map.GXmap instance, which must contain a "*Base" and "*Data" view.
+    :param data_view:   name of the default data view.  If not specified the current default is assumed.
+                        All drawing commands that reference the data view will be applied to the default 
+                        data view.  On closing of the GXmapplot instance the default data view is
+                        reset to the previous default.
     :param ref_prefix:  A prefix to add to the default group in the "BASE" and "DATA" groups.  The
                         default is "MAPL_", which will create a group named "MAPL_BASE" in the
                         base view and "MAPL_DATA" in the data view.  Use the start_group method
@@ -183,13 +187,19 @@ class GXmapplot:
     def __str__(self):
         return "mapplot({})".format(self._maplfilename)
 
-    def __init__(self, map, ref_prefix='', **kwargs):
+    def __init__(self, map, data_view=None, ref_prefix='', **kwargs):
 
         if not (map.has_view("*Base") and map.has_view("*Data")):
             raise MapplotException("Map must have a '*Base' and '*Data' view.")
 
         self._map = map
         self._ref_pre = ref_prefix
+
+        if data_view:
+            self.prior_data_view = map.current_data_view
+            map.current_data_view = data_view
+        else:
+            self.prior_data_view = None
 
         # mapplot control file
         self._maplfilename = os.path.join(gx.GXpy().temp_folder(), 'mapl_' + gxu.uuid() + ".con")
@@ -202,6 +212,7 @@ class GXmapplot:
         self._text_def = (0.3, 0)
         self._font = "DEFAULT.gfn"
         self._att = _DEF_ATT
+        self._annotation_outer_edge = 0.0
         self.define_named_attribute(self._att, **kwargs)
 
         atexit.register(self._process, pop=False)
@@ -215,9 +226,20 @@ class GXmapplot:
             gxmapl = gxapi.GXMAPL.create(self._maplfilename, self._ref_pre, 0)
             gxmapl.process(self._map.gxmap)
             os.remove(self._maplfilename)
-            #os.remove(self._mdffilename)
+            if self.prior_data_view:
+                self.map.current_data_view = self.prior_data_view
         if pop:
             gx.pop_resource(self._open)
+
+    def _adjusted_offset(self, offset):
+
+        inside = self._text_def[0] * 0.2
+        if offset:
+            offset = offset + inside
+        else:
+            offset = self._annotation_outer_edge + inside
+        self._annotation_outer_edge = offset + self._text_def[0]
+        return offset
 
     @property
     def ref_point(self):
@@ -463,6 +485,9 @@ class GXmapplot:
 
         .. versionadded:: 9.2
         """
+
+        offset = self._adjusted_offset(offset)
+
         att = self._define_named_attribute()
         self.command("ANOX ,,,,,{},{},,{},,,,{},{},1".format(x_sep, tick, 0 if compass else -1, offset, x_dec))
         self._add_att(att)
@@ -499,11 +524,14 @@ class GXmapplot:
         .. versionadded:: 9.2
         """
 
+        offset = self._adjusted_offset(offset)
+
         att = self._define_named_attribute()
         self.command("ALON {},{},{},,1".format(sep, tick, offset))
         self._add_att(att)
         self.command("ALAT {},{},{},,,{}".format(sep, tick, offset, top))
         self._add_att(att)
+
         if grid:
             if grid_pen:
                 self.define_named_attribute('grid', pen_def=grid_pen)

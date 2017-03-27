@@ -117,12 +117,12 @@ class GXmap:
     lower-left corner of the base view at location (0, 0) and the upper-right corner is defined by the
     media size and may be adjusted to fit the data view.
 
-    Geosoft maps will also have one or more 'data' views, each with it's own defined coordinate system
-    and graphical content.  Creating a new map will always create one data view, which will become
-    the map's `default data view`, within which any spatial data presented by Geosoft 2D drawing applications
-    will be placed.  Maps may have more than one data view, including 3D data views, and the `default
-    data view` can be changed to any 2D or 3D view such that subsequent drawing will occur in the so-identified
-    view.  See ``set_default_data_view`` for more information.
+    Geosoft maps will also have one or more data views, each with it's own defined coordinate system
+    and graphical content.  Creating a new map will create one data view, which will become the map's 
+    ``current_data_view``, within which any spatial data drawn by Geosoft 2D drawing applications
+    will be placed.  Maps may have more than one data view, including 3D data views, and the 
+    ``current_data_view`` can be changed to any 2D or 3D view, and subsequent drawing will be placed
+    in that view.
 
     3D views define a 3D spatial volume and accept both 2D and 3D drawing elements.  A 3D view will always
     contain a plane or surface on which 2D elements are drawn, and when a 3D view is the
@@ -411,6 +411,19 @@ class GXmap:
         """
         return self._filename
 
+    @property
+    def current_data_view(self):
+        """ The current default data view which accepts drawing commands from Geosoft methods."""
+        s = gxapi.str_ref()
+        self.gxmap.get_class_name('Data', s)
+        return s.value
+
+    @current_data_view.setter
+    def current_data_view(self, s):
+        if not self.has_view(s):
+            raise MapException(_t('Map does not contain a view named "{}"').format(s))
+        self.gxmap.set_class_name('Data', s)
+
     def close(self):
         """ Close the map and release resources. """
         self._close()
@@ -438,6 +451,34 @@ class GXmap:
     def has_view(self, view):
         """ Returns True if the map contains this view."""
         return self.gxmap.exist_view(view)
+
+    def copy_view(self, old, new, overwrite=False, copy_all=True):
+        """
+        Copy an existing view into a new view.
+        
+        :param old:         name of the existing view
+        :param new:         name for the new view
+        :param overwrite:   True to overwrite an existing view if it exists
+        :param copy_all:    True to copy content of old to new, false to create an empty new view
+                            with the same coordinate system, scale and clipping as the old view.
+        """
+
+        if not self.has_view(old):
+            raise MapException(_t('"{}" view does not exist.').format(old))
+        if self.has_view(new):
+            if overwrite:
+                self.gxmap.delete_view(new)
+            else:
+                raise MapException(_t('Cannot overwtite existing view "{}"').format(new))
+
+        s = gxapi.str_ref()
+        s.value = new
+
+        self.gxmap.duplicate_view(old, s, copy_all)
+
+        if s.value != new:
+            self.gxmap.delete_view(new)
+            raise MapException(_t('Invalud view name "{}", suggest "{}"').format(new, s.value ))
 
     def mdf(self):
         """

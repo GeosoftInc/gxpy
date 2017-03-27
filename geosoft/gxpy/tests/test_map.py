@@ -213,6 +213,30 @@ class Test(unittest.TestCase):
             gmap.set_class_view_name('Data', 'copy_data')
             self.assertEqual(gmap.get_class_view_name('Data'), 'copy_data')
 
+    def test_current_view(self):
+        self.start(gsys.func_name())
+
+        with gxmap.GXmap.new() as map:
+            self.assertEqual(map.current_data_view, 'Data')
+            map.current_data_view = 'Base'
+            self.assertEqual(map.current_data_view, 'Base')
+            self.assertEqual(map.get_class_view_name('Data'), 'Base')
+            map.current_data_view = 'Data'
+            self.assertEqual(map.current_data_view, 'Data')
+            try:
+                map.current_data_view = 'Bogus'
+                self.assertTrue(False)
+            except gxmap.MapException:
+                pass
+
+            map.copy_view('Data', 'Bogus')
+            map.current_data_view = 'Bogus'
+            self.assertEqual(map.current_data_view, 'Bogus')
+            self.assertRaises(gxmap.MapException, map.copy_view, 'Data', 'Bogus')
+            self.assertRaises(gxmap.MapException, map.copy_view, 'Data', 'bogus')
+            map.copy_view('Data', 'bogus', overwrite=True)
+            self.assertEqual(map.current_data_view, 'Bogus')
+
     def test_media(self):
         self.start(gsys.func_name())
 

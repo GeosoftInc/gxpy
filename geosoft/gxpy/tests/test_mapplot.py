@@ -185,7 +185,7 @@ class Test(unittest.TestCase):
                 mapl.rectangle(gxmapl.RECTANGLE_EXTENT_DATA, pen_def="gt200")
                 mapl.annotate_data_xy(x_sep=1500, pen_def="kt10")
 
-        self.view_crc(mapfile, 2023633742)
+        self.view_crc(mapfile, 4203014599)
 
         with test_map() as map:
             mapfile = map.filename
@@ -193,9 +193,9 @@ class Test(unittest.TestCase):
                 mapl.define_named_attribute(font="Arial")
                 mapl.surround()
                 mapl.rectangle(gxmapl.RECTANGLE_EXTENT_DATA, pen_def="kt200")
-                mapl.annotate_data_xy(x_sep=1500, grid=gxmapl.GRID_DOTTED)
+                mapl.annotate_data_xy(x_sep=1500, grid=gxmapl.GRID_DOTTED, offset=0.5)
 
-        self.view_crc(mapfile, 1767583053)
+        self.view_crc(mapfile, 3630697555)
 
         with test_map() as map:
             mapfile = map.filename
@@ -205,7 +205,7 @@ class Test(unittest.TestCase):
                 mapl.rectangle(gxmapl.RECTANGLE_EXTENT_DATA, pen_def="kt200")
                 mapl.annotate_data_xy(x_sep=1500, tick=0.1, grid=gxmapl.GRID_CROSSES, grid_pen="bt100")
 
-        self.view_crc(mapfile, 624163647)
+        self.view_crc(mapfile, 1444941703)
 
         with test_map() as map:
             mapfile = map.filename
@@ -215,7 +215,7 @@ class Test(unittest.TestCase):
                 mapl.rectangle(gxmapl.RECTANGLE_EXTENT_DATA, pen_def="kt200")
                 mapl.annotate_data_xy(x_sep=1500, tick=0.1, grid=gxmapl.GRID_LINES, grid_pen="bt100")
 
-        self.view_crc(mapfile, 1921599453)
+        self.view_crc(mapfile, 26915685)
 
     def test_annotate_ll(self):
         self.start(gsys.func_name())
@@ -230,7 +230,7 @@ class Test(unittest.TestCase):
                                       text_def = (0.18, 15),
                                       grid_pen="bt250")
 
-        self.view_crc(mapfile, 660403614)
+        self.view_crc(mapfile, 3400672043)
 
         with test_map(data_area=(350000,7000000,400000,7030000)) as map:
             mapfile = map.filename
@@ -243,7 +243,38 @@ class Test(unittest.TestCase):
                                       pen_def="kt1", text_def=(0.18, 15),
                                       top=gxmapl.TOP_IN)
 
-        self.view_crc(mapfile, 3524491446)
+        self.view_crc(mapfile, 3016375560)
+
+        with test_map(data_area=(350000,7000000,400000,7030000)) as map:
+            mapfile = map.filename
+            with gxmapl.GXmapplot(map, font='Arial') as mapl:
+                mapl.define_named_attribute(font="Arial", pen_def='kt5', text_def=(0.2, 0))
+                mapl.surround()
+                mapl.rectangle(gxmapl.RECTANGLE_EXTENT_DATA, pen_def="kt200")
+                mapl.annotate_data_xy(tick=0.1, grid=gxmapl.GRID_LINES, grid_pen="kt100")
+                mapl.annotate_data_ll(grid=gxmapl.GRID_LINES,
+                                      grid_pen="bt250",
+                                      pen_def="kt1", text_def=(0.18, 15))
+
+        self.view_crc(mapfile, 2020390839, True)
+
+        with test_map(data_area=(350000,7000000,400000,7030000)) as map:
+            mapfile = map.filename
+            with gxmapl.GXmapplot(map, font='Arial') as mapl:
+                mapl.define_named_attribute(font="Arial", pen_def='kt5', text_def=(0.2, 0))
+                mapl.surround()
+                mapl.rectangle(gxmapl.RECTANGLE_EXTENT_DATA, pen_def="kt200")
+                mapl.annotate_data_ll(grid=gxmapl.GRID_LINES,
+                                      grid_pen="bt250",
+                                      pen_def="kt1", text_def=(0.3, 15))
+                mapl.annotate_data_xy(tick=0.1, grid=gxmapl.GRID_LINES,
+                                      grid_pen="kt100",
+                                      pen_def="kt20",
+                                      text_def=(0.15, 0))
+
+        self.view_crc(mapfile, 3969349299, True)
+
+
 
     def test_start_group(self):
         self.start(gsys.func_name())
