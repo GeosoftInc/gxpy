@@ -423,6 +423,33 @@ class GXmapplot:
                                                            extent[0], extent[1],
                                                            extent[2], extent[3], att))
 
+    def scale_bar(self,
+                  length=5,
+                  sections='',
+                  post_scale=False,
+                  ref_point=(1, 5, 2),
+                  text_def=(0.25, 15),
+                  pen_def='kt50'):
+        """
+        
+        :param length:      maximum scale bar length, default is 5 cm. scale=0.0 will suppress drawing of the bar.
+        :param sections:    number of major sections in the bar, default is determined automatically.
+        :param post_scale:  True to post the actual scale as a string, e.g. '1:50,000'.  Note that a posted
+                            scale is only relevant for printed maps.  The default does not post the scale.
+        
+        .. versionadded:: 9.2
+        """
+
+        if post_scale:
+            option = 2
+        else:
+            option = 1
+
+        att = 'scale_bar'
+        self.define_named_attribute(att, ref_point=ref_point, pen_def=pen_def, text_def=text_def)
+        self.command("SCAL {},,,{},{},,{},".format(self._a_ref_point(), length, sections, option))
+        self._add_att(att)
+
     def north_arrow(self,
                     ref_point=(3, -2, 3),
                     direction='',

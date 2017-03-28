@@ -234,6 +234,14 @@ class Test(unittest.TestCase):
     def test_annotate_ll(self):
         self.start(gsys.func_name())
 
+        #with gxmap.GXmap.new() as map:
+        #with test_map(data_area=(350000, 7000000, 400000, 7030000)) as map:
+        #    mapfile = map.filename
+        #    with gxmapl.GXmapplot(map) as mapl:
+        #        mapl.surround()
+        #        mapl.annotate_data_ll()
+        #self.view_crc(mapfile, 4060220680, True)
+
         with test_map(data_area=(350000,7000000,400000,7030000)) as map:
             mapfile = map.filename
             with gxmapl.GXmapplot(map, font='Arial') as mapl:
