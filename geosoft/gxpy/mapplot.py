@@ -238,7 +238,7 @@ class GXmapplot:
             offset = offset + inside
         else:
             offset = self._annotation_outer_edge + inside
-        self._annotation_outer_edge = offset + self._text_def[0]
+        self._annotation_outer_edge += offset + self._text_def[0] + inside * 0.5
         return offset
 
     @property
@@ -307,9 +307,9 @@ class GXmapplot:
     def _define_named_attribute(self, name=None):
         def datt(name):
             self.command("DATT {}={},{},{}".format(name,
-                                                     self._pen_def,
-                                                     self._a_line_def(),
-                                                     self._a_text()))
+                                                   self._pen_def,
+                                                   self._a_line_def(),
+                                                   self._a_text()))
         if name is not None :
             datt(name)
             return name
@@ -423,10 +423,12 @@ class GXmapplot:
                                                            extent[0], extent[1],
                                                            extent[2], extent[3], att))
 
-    @_attrib
     def north_arrow(self,
+                    ref_point=(3, -2, 3),
                     direction='',
                     length='6',
+                    text_def=(0.25, 15),
+                    pen_def='kt200',
                     inclination='',
                     declination=''):
         """
@@ -442,30 +444,36 @@ class GXmapplot:
         .. versionadded:: 9.2
         """
 
+        #TODO add IGRF calculation from a date, igrfdate=
+
         if not direction:
             with gxv.GXview(self._map, '*Data', mode=gxv.WRITE_OLD) as v:
                 direction = round(v.gxview.north(), 1)
 
-        att = self._define_named_attribute()
-        self.command("NARR {},{},{},{},{},{}".format(self._a_ref_point(),
+        self.define_named_attribute('arrow', pen_def=pen_def)
+        self.define_named_attribute('annot', text_def=text_def, pen_def='kt50')
+        self.command("NARR {},{},{},{},{},{},{},{}".format(ref_point[0], ref_point[1], ref_point[2],
                                                      direction,
                                                      length,
-                                                     att,
+                                                     'arrow',
                                                      inclination,
                                                      declination))
-        self._add_att(att)
+        self._add_att('annot')
 
-    @_attrib
     def annotate_data_xy(self, tick='', offset='',
                          x_sep='', x_dec='',
                          y_sep='', y_dec='',
                          compass=True, top=TOP_OUT,
+                         text_def=(0.18, 0),
+                         pen_def='kt1',
                          grid=0, grid_pen=''):
         """
         Annotate the date view axis
 
         :param tick:    inner tick size in cm
-        :param offset:  posting offset from the edge in cm
+        :param offset:  posting offset from the edge in cm. The posting edge is adjusted to be outside
+                        character height for a subsequent call to an edge annotation.  This allows one to
+                        annotate both geographic and projected coordinates.
         :param top:     TOP_IN or TOP_OUT (default) for vertical annotations
         :param x_sep:   separation between X annotations, default is calculated from data
         :param x_dec:   X axis label decimals, default is 0
@@ -486,13 +494,16 @@ class GXmapplot:
         .. versionadded:: 9.2
         """
 
+        if not tick and grid == GRID_LINES:
+            tick = 0.0
+
+        self.define_named_attribute(text_def=text_def, pen_def=pen_def)
         offset = self._adjusted_offset(offset)
 
-        att = self._define_named_attribute()
         self.command("ANOX ,,,,,{},{},,{},,,,{},{},1".format(x_sep, tick, 0 if compass else -1, offset, x_dec))
-        self._add_att(att)
-        self.command("ANOY ,,,,,{},{},,{},1,,,{},{},1".format(y_sep, tick, 0 if compass else -1, offset, y_dec))
-        self._add_att(att)
+        self._add_att('_')
+        self.command("ANOY ,,,,,{},{},,{},{},,,{},{},1".format(y_sep, tick, 0 if compass else -1, top, offset, y_dec))
+        self._add_att('_')
 
         if grid:
             if grid_pen:
@@ -500,9 +511,9 @@ class GXmapplot:
                 grid_pen = 'grid'
             self.command("GRID {},,,,,{}".format(grid, grid_pen))
 
-    @_attrib
     def annotate_data_ll(self, tick='', offset='', sep='', top=TOP_OUT,
-                         grid=0, grid_pen=''):
+                         text_def=(0.2, 15), pen_def='kt1',
+                         grid=GRID_LINES, grid_pen='bt1'):
         """
         Annotate the date view axis
 
@@ -524,13 +535,16 @@ class GXmapplot:
         .. versionadded:: 9.2
         """
 
+        if not tick and grid == GRID_LINES:
+            tick = 0.0
+
+        self.define_named_attribute(text_def=text_def, pen_def=pen_def)
         offset = self._adjusted_offset(offset)
 
-        att = self._define_named_attribute()
         self.command("ALON {},{},{},,1".format(sep, tick, offset))
-        self._add_att(att)
+        self._add_att('_')
         self.command("ALAT {},{},{},,,{}".format(sep, tick, offset, top))
-        self._add_att(att)
+        self._add_att('_')
 
         if grid:
             if grid_pen:
