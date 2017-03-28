@@ -141,6 +141,21 @@ class Test(unittest.TestCase):
         #gxvwr.map(mapfile)
         self.assertEqual(gxmap.crc_map(mapfile), crc1)
 
+    def test_scale(self):
+        self.start(gsys.func_name())
+
+        with test_map(data_area=(350000,7000000,400000,7030000)) as map:
+            mapfile = map.filename
+            with gxmapl.GXmapplot(map, font='Arial') as mapl:
+                mapl.surround(outer_pen="rt1000")
+                mapl.rectangle(gxmapl.RECTANGLE_EXTENT_DATA, pen_def="kt200")
+                mapl.scale_bar()
+                mapl.scale_bar(ref_point=(2, 0, 2), length=3, sections=2)
+                mapl.scale_bar(ref_point=(5, 0, 0), length=8, sections=2, post_scale=True)
+                mapl.scale_bar(ref_point=(3, -3, 1.5), length=4, text_def=(0.2, 15), post_scale=True)
+
+        self.view_crc(mapfile, 1613593573)
+
     def test_narr(self):
         self.start(gsys.func_name())
 
