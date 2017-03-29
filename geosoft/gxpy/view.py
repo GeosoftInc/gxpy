@@ -330,6 +330,16 @@ class GXview:
         self._init_pen_attributes()
         self._pen_stack = []
 
+    def delete_group(self, group_name):
+        """
+        Delete a group from a map. Nothing happens if the view does not contain this group.
+        
+        :param group_name: Name of the group to delete.
+
+        .. versionadded:: 9.2
+        """
+
+        self.gxview.delete_group(group_name)
 
     def push_pen(self, pen=None):
         """

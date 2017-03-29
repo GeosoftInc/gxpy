@@ -156,6 +156,20 @@ class Test(unittest.TestCase):
 
         self.view_crc(mapfile, 1613593573)
 
+    def text_group(self):
+        with test_map(data_area=(350000,7000000,400000,7030000)) as map:
+            mapfile = map.filename
+            with gxmapl.GXmapplot(map, font='Arial') as mapl:
+                mapl.surround(outer_pen="rt1000")
+                mapl.rectangle(gxmapl.RECTANGLE_EXTENT_DATA, pen_def="kt200")
+                mapl.annotate_data_ll(grid=gxmapl.GRID_LINES,
+                                      text_def=(0.18, 15),
+                                      grid_pen="bt250")
+                mapl.north_arrow(ref_point=(6, -1.5, 0), pen_def="kt500", length=3)
+
+        self.view_crc(mapfile, 582402369, True)
+
+
     def test_narr(self):
         self.start(gsys.func_name())
 
@@ -169,7 +183,7 @@ class Test(unittest.TestCase):
                                       grid_pen="bt250")
                 mapl.north_arrow(ref_point=(6, -1.5, 0), pen_def="kt500", length=3)
 
-        self.view_crc(mapfile, 582402369)
+        self.view_crc(mapfile, 582402369, True)
 
         with test_map(data_area=(350000,7000000,400000,7030000)) as map:
             mapfile = map.filename
