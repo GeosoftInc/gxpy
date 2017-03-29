@@ -89,6 +89,10 @@ class GXmapplot:
     the GXAPI GXMAPL class and uses the concepts of the Geosoft MAPPLOT system.
 
     :param map:         gxpy.map.GXmap instance, which must contain a "*Base" and "*Data" view.
+    :param data_view:   name of the default data view.  If not specified the current default is assumed.
+                        All drawing commands that reference the data view will be applied to the default 
+                        data view.  On closing of the GXmapplot instance the default data view is
+                        reset to the previous default.
     :param ref_prefix:  A prefix to add to the default group in the "BASE" and "DATA" groups.  The
                         default is "MAPL_", which will create a group named "MAPL_BASE" in the
                         base view and "MAPL_DATA" in the data view.  Use the start_group method
@@ -183,13 +187,19 @@ class GXmapplot:
     def __str__(self):
         return "mapplot({})".format(self._maplfilename)
 
-    def __init__(self, map, ref_prefix='', **kwargs):
+    def __init__(self, map, data_view=None, ref_prefix='', **kwargs):
 
         if not (map.has_view("*Base") and map.has_view("*Data")):
             raise MapplotException("Map must have a '*Base' and '*Data' view.")
 
         self._map = map
         self._ref_pre = ref_prefix
+
+        if data_view:
+            self.prior_data_view = map.current_data_view
+            map.current_data_view = data_view
+        else:
+            self.prior_data_view = None
 
         # mapplot control file
         self._maplfilename = os.path.join(gx.GXpy().temp_folder(), 'mapl_' + gxu.uuid() + ".con")
@@ -202,6 +212,7 @@ class GXmapplot:
         self._text_def = (0.3, 0)
         self._font = "DEFAULT.gfn"
         self._att = _DEF_ATT
+        self._annotation_outer_edge = 0.0
         self.define_named_attribute(self._att, **kwargs)
 
         atexit.register(self._process, pop=False)
@@ -215,9 +226,20 @@ class GXmapplot:
             gxmapl = gxapi.GXMAPL.create(self._maplfilename, self._ref_pre, 0)
             gxmapl.process(self._map.gxmap)
             os.remove(self._maplfilename)
-            #os.remove(self._mdffilename)
+            if self.prior_data_view:
+                self.map.current_data_view = self.prior_data_view
         if pop:
             gx.pop_resource(self._open)
+
+    def _adjusted_offset(self, offset):
+
+        inside = self._text_def[0] * 0.2
+        if offset:
+            offset = offset + inside
+        else:
+            offset = self._annotation_outer_edge + inside
+        self._annotation_outer_edge += offset + self._text_def[0] + inside * 0.5
+        return offset
 
     @property
     def ref_point(self):
@@ -285,9 +307,9 @@ class GXmapplot:
     def _define_named_attribute(self, name=None):
         def datt(name):
             self.command("DATT {}={},{},{}".format(name,
-                                                     self._pen_def,
-                                                     self._a_line_def(),
-                                                     self._a_text()))
+                                                   self._pen_def,
+                                                   self._a_line_def(),
+                                                   self._a_text()))
         if name is not None :
             datt(name)
             return name
@@ -401,10 +423,39 @@ class GXmapplot:
                                                            extent[0], extent[1],
                                                            extent[2], extent[3], att))
 
-    @_attrib
+    def scale_bar(self,
+                  length=5,
+                  sections='',
+                  post_scale=False,
+                  ref_point=(1, 5, 2),
+                  text_def=(0.25, 15),
+                  pen_def='kt50'):
+        """
+        
+        :param length:      maximum scale bar length, default is 5 cm. scale=0.0 will suppress drawing of the bar.
+        :param sections:    number of major sections in the bar, default is determined automatically.
+        :param post_scale:  True to post the actual scale as a string, e.g. '1:50,000'.  Note that a posted
+                            scale is only relevant for printed maps.  The default does not post the scale.
+        
+        .. versionadded:: 9.2
+        """
+
+        if post_scale:
+            option = 2
+        else:
+            option = 1
+
+        att = 'scale_bar'
+        self.define_named_attribute(att, ref_point=ref_point, pen_def=pen_def, text_def=text_def)
+        self.command("SCAL {},,,{},{},,{},".format(self._a_ref_point(), length, sections, option))
+        self._add_att(att)
+
     def north_arrow(self,
+                    ref_point=(3, -2, 3),
                     direction='',
                     length='6',
+                    text_def=(0.25, 15),
+                    pen_def='kt200',
                     inclination='',
                     declination=''):
         """
@@ -420,30 +471,36 @@ class GXmapplot:
         .. versionadded:: 9.2
         """
 
+        #TODO add IGRF calculation from a date, igrfdate=
+
         if not direction:
             with gxv.GXview(self._map, '*Data', mode=gxv.WRITE_OLD) as v:
                 direction = round(v.gxview.north(), 1)
 
-        att = self._define_named_attribute()
-        self.command("NARR {},{},{},{},{},{}".format(self._a_ref_point(),
+        self.define_named_attribute('arrow', pen_def=pen_def)
+        self.define_named_attribute('annot', text_def=text_def, pen_def='kt50')
+        self.command("NARR {},{},{},{},{},{},{},{}".format(ref_point[0], ref_point[1], ref_point[2],
                                                      direction,
                                                      length,
-                                                     att,
+                                                     'arrow',
                                                      inclination,
                                                      declination))
-        self._add_att(att)
+        self._add_att('annot')
 
-    @_attrib
     def annotate_data_xy(self, tick='', offset='',
                          x_sep='', x_dec='',
                          y_sep='', y_dec='',
                          compass=True, top=TOP_OUT,
+                         text_def=(0.18, 0),
+                         pen_def='kt1',
                          grid=0, grid_pen=''):
         """
         Annotate the date view axis
 
         :param tick:    inner tick size in cm
-        :param offset:  posting offset from the edge in cm
+        :param offset:  posting offset from the edge in cm. The posting edge is adjusted to be outside
+                        character height for a subsequent call to an edge annotation.  This allows one to
+                        annotate both geographic and projected coordinates.
         :param top:     TOP_IN or TOP_OUT (default) for vertical annotations
         :param x_sep:   separation between X annotations, default is calculated from data
         :param x_dec:   X axis label decimals, default is 0
@@ -463,11 +520,17 @@ class GXmapplot:
 
         .. versionadded:: 9.2
         """
-        att = self._define_named_attribute()
+
+        if not tick and grid == GRID_LINES:
+            tick = 0.0
+
+        self.define_named_attribute(text_def=text_def, pen_def=pen_def)
+        offset = self._adjusted_offset(offset)
+
         self.command("ANOX ,,,,,{},{},,{},,,,{},{},1".format(x_sep, tick, 0 if compass else -1, offset, x_dec))
-        self._add_att(att)
-        self.command("ANOY ,,,,,{},{},,{},1,,,{},{},1".format(y_sep, tick, 0 if compass else -1, offset, y_dec))
-        self._add_att(att)
+        self._add_att('_')
+        self.command("ANOY ,,,,,{},{},,{},{},,,{},{},1".format(y_sep, tick, 0 if compass else -1, top, offset, y_dec))
+        self._add_att('_')
 
         if grid:
             if grid_pen:
@@ -475,9 +538,9 @@ class GXmapplot:
                 grid_pen = 'grid'
             self.command("GRID {},,,,,{}".format(grid, grid_pen))
 
-    @_attrib
     def annotate_data_ll(self, tick='', offset='', sep='', top=TOP_OUT,
-                         grid=0, grid_pen=''):
+                         text_def=(0.2, 15), pen_def='kt1',
+                         grid=GRID_LINES, grid_pen='bt1'):
         """
         Annotate the date view axis
 
@@ -499,11 +562,17 @@ class GXmapplot:
         .. versionadded:: 9.2
         """
 
-        att = self._define_named_attribute()
+        if not tick and grid == GRID_LINES:
+            tick = 0.0
+
+        self.define_named_attribute(text_def=text_def, pen_def=pen_def)
+        offset = self._adjusted_offset(offset)
+
         self.command("ALON {},{},{},,1".format(sep, tick, offset))
-        self._add_att(att)
+        self._add_att('_')
         self.command("ALAT {},{},{},,,{}".format(sep, tick, offset, top))
-        self._add_att(att)
+        self._add_att('_')
+
         if grid:
             if grid_pen:
                 self.define_named_attribute('grid', pen_def=grid_pen)

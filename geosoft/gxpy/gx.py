@@ -17,6 +17,8 @@ from . import system as gxs
 
 __version__ = geosoft.__version__
 
+GX_WARNING_FILE = '_gx_warning_'
+
 def _t(s):
     return geosoft.gxpy.system.translate(s)
 
@@ -129,16 +131,28 @@ class GXpy(_Singleton):
         global _max_warnings
 
         def file_error(fnc, path, excinfo):
-            self.log(_t("error removing temporary file \"{}\": function \"{}\": exception\"{}\"")
+            self.log(_t("error removing temporary file\n   \"{}\"\nfunction \"{}\"\nexception\"{}\"\n")
                      .format(path, str(fnc), str(excinfo)))
 
         if gx:
-            if not self._keep_temp_files:
-                if self._temp_file_folder != gxu.folder_temp():
-                    shutil.rmtree(self._temp_file_folder, ignore_errors=False, onerror=file_error)
-                self._temp_file_folder = None
 
             self.log('GX close')
+
+            if self._temp_file_folder != gxu.folder_temp():
+
+                for filename in os.listdir(gxu.folder_temp()):
+                    folder = os.path.join(gxu.folder_temp(), filename)
+                    if os.path.isdir(folder) and (filename[0:4] == '_gx_'):
+                        warning_file = os.path.join(folder, GX_WARNING_FILE)
+                        if not (folder == self._temp_file_folder and self._keep_temp_files):
+                            if not os.path.exists(warning_file):
+                                shutil.rmtree(folder, ignore_errors=False, onerror=file_error)
+                        else:
+                            if os.path.isfile(warning_file):
+                                os.remove(warning_file)
+    
+                self._temp_file_folder = None
+
             if len(_res_heap):
                 # resources were created but not deleted or removed
                 self.log(_t('Warning - cleaning up resources that are still open:'))
@@ -332,11 +346,10 @@ class GXpy(_Singleton):
         '''
         Return the GX temporary folder path.
 
-        Each GX instance will create an instance-specific
-        temporary folder as a child in the Geosoft temporary folder.  Placing temporary files in
-        the GX-specific temporary folder will ensure temporary file names will not collide with
-        other running GX-based programs, and that all temporarty files are removed on termination
-        of this GX.
+        Each GX instance will create an instance-specific temporary folder as a child in the Geosoft 
+        temporary folder.  Placing temporary files in the GX-specific temporary folder will ensure 
+        temporary file names will not collide with other running GX-based programs, and that all 
+        temporarty files are removed on termination of this GX.
         
         Call `keep_temp_folder` to prevent deletion of the temporary files, which can be useful
         when debugging.
@@ -354,6 +367,10 @@ class GXpy(_Singleton):
             try:
                 os.makedirs(self._temp_file_folder, exist_ok=True)
                 self._keep_temp_files = False
+                warning_file = os.path.join(self._temp_file_folder, GX_WARNING_FILE)
+                with open(warning_file, 'w') as active:
+                    active.write('This Geosoft temporary folder may be in use.\n')
+                    active.write('Modifying or deleting content may may cause a dependant process to fail.')
             except OSError:
                 self._temp_file_folder = path
                 self._keep_temp_files = True

@@ -195,7 +195,7 @@ class Test(unittest.TestCase):
                 pen = view.pen
                 self.assertEqual(pen, def_pen)
 
-    def test_view(self):
+    def test_view_groups(self):
         self.start(gsys.func_name())
 
         testmap = os.path.join(self.gx.temp_folder(), "test")
@@ -211,8 +211,41 @@ class Test(unittest.TestCase):
                 view.start_group('test_group')
                 draw_stuff(view)
 
-        #gxvwr.map(mapfile)
-        self.assertEqual(gxmap.crc_map(mapfile), 1690811698)
+        self.view_crc(mapfile, 1690811698)
+
+        with gxmap.GXmap.new(testmap, overwrite=True) as gmap:
+            mapfile = gmap.filename
+            with gxv.GXview(gmap, "rectangle_test", area=(0,0,250, 125)) as view:
+                view.start_group('line')
+                rect_line(view)
+                view.start_group('graticule')
+                view.graticule(25, 20, style=gxv.GRATICULE_LINE)
+                view.pen = {'line_thick': 0.1}
+                view.start_group('test_rectangles')
+                view.xy_rectangle(((0,0),(250,125)), pen={'line_thick': 0.1, 'line_color':'R'})
+                view.xy_rectangle(((10, 5), (240, 120)), pen={'line_thick': 2, 'line_color': 'B'})
+                view.delete_group('graticule')
+            with gxv.GXview(gmap, "poly") as view:
+                view.start_group('test_group')
+                draw_stuff(view)
+
+        self.view_crc(mapfile, 4245134056)
+
+        gxmap.delete_files(mapfile)
+
+    def test_reopen_map_view(self):
+        self.start(gsys.func_name())
+
+        #REMOVE THIS LINE TO DEMONSTRATE TEST FAILURE
+        return
+
+        testmap = os.path.join(self.gx.temp_folder(), "test")
+        with gxmap.GXmap.new(testmap, overwrite=True) as gmap:
+            mapfile = gmap.filename
+            with gxv.GXview(gmap, "test_view") as view:
+                rect_line(view)
+            with gxv.GXview(gmap, "test_view") as view:
+                pass
         gxmap.delete_files(mapfile)
 
     def test_3D(self):
