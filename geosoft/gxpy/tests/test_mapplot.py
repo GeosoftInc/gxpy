@@ -167,7 +167,7 @@ class Test(unittest.TestCase):
                                       grid_pen="bt250")
                 mapl.north_arrow(ref_point=(6, -1.5, 0), pen_def="kt500", length=3)
 
-        self.view_crc(mapfile, 582402369, True)
+        self.view_crc(mapfile, 582402369)
 
 
     def test_narr(self):
@@ -183,7 +183,7 @@ class Test(unittest.TestCase):
                                       grid_pen="bt250")
                 mapl.north_arrow(ref_point=(6, -1.5, 0), pen_def="kt500", length=3)
 
-        self.view_crc(mapfile, 582402369, True)
+        self.view_crc(mapfile, 582402369)
 
         with test_map(data_area=(350000,7000000,400000,7030000)) as map:
             mapfile = map.filename

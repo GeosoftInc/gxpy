@@ -75,6 +75,7 @@ class Test(unittest.TestCase):
             except:
                 self.assertTrue(False)
 
+            #gxc.keep_temp_folder(True)
 
     def test_elapsed_time(self):
         self.start(gsys.func_name())
