@@ -40,7 +40,7 @@ def sample_map(gxp, mapname='test', rescale=1.0, locate=None):
 
         p2 = gxgm.Point((250, 110)) * rescale
         with gxv.GXview3d(gmap, viewname="poly", area=(0, 0, p2.x, p2.y), scale=100.0) as view:
-            view.start_group('2d_stuff')
+            view.start_group('stuff')
             view.xy_rectangle(((0, 0), p2), pen={'line_thick': 3, 'line_color':'B'})
             plinelist = [[110, 5],
                          [120, 20],
@@ -73,7 +73,7 @@ def sample_map(gxp, mapname='test', rescale=1.0, locate=None):
             view.pen = {'fill_color': "B"}
             view.xy_poly_line(pp, close=True)
 
-            view.start_group('3d_stuff')
+            #TODO - viewer does not properly disply items on the plane if the box_3d is called
             view.box_3d(((20, 10, 30), (80,50,50)), pen={'fill_color': 'R255G100B50'})
 
         return gmap.filename

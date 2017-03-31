@@ -107,9 +107,8 @@ class GXview:
 
     def _close(self):
         if self._open:
-            # TODO: Figure out why releasing the view here does not actually work (test_reopen_map_view failure)
-            self.gxview = None # release the view
             self._gmap = None  # release map
+            self.gxview = None # release the view
             self._open = False
 
     def __repr__(self):
