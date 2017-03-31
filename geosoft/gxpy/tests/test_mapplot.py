@@ -16,11 +16,12 @@ def test_map(name=None, data_area=(1000,0,11000,5000)):
     if name is None:
         name = os.path.join(gx.GXpy().temp_folder(), "test")
     gxmap.delete_files(name)
+    cs = gxcs.GXcs("WGS 84 / UTM zone 15N")
     return gxmap.GXmap.new(filename=name,
                            data_area=data_area,
-                           cs=gxcs.GXcs("WGS 84 / UTM zone 15N"),
+                           cs=cs,
                            media="A4",
-                           margins=(1.5,3,1.5,1),
+                           margins=(1.5, 3, 1.5, 1),
                            inside_margin=0.5)
 
 class Test(unittest.TestCase):
@@ -248,14 +249,6 @@ class Test(unittest.TestCase):
     def test_annotate_ll(self):
         self.start(gsys.func_name())
 
-        #with gxmap.GXmap.new() as map:
-        #with test_map(data_area=(350000, 7000000, 400000, 7030000)) as map:
-        #    mapfile = map.filename
-        #    with gxmapl.GXmapplot(map) as mapl:
-        #        mapl.surround()
-        #        mapl.annotate_data_ll()
-        #self.view_crc(mapfile, 4060220680, True)
-
         with test_map(data_area=(350000,7000000,400000,7030000)) as map:
             mapfile = map.filename
             with gxmapl.GXmapplot(map, font='Arial') as mapl:
@@ -372,43 +365,6 @@ class Test(unittest.TestCase):
                 mapl.north_arrow(ref_point=(4, 1.5, 0), pen_def="kt500", length=3)
 
         self.view_crc(mapfile, 3404043798)
-
-    def test_aggregate(self):
-        self.start(gsys.func_name())
-
-    def test_basic_agg(self):
-        self.start(gsys.func_name())
-
-        # test grid file
-        folder, files = gsys.unzip(os.path.join(os.path.dirname(__file__), 'testgrids.zip'),
-                                   folder=self.gx.temp_folder())
-        grid_file = os.path.join(folder, 'test_agg_utm.grd')
-        map_file = os.path.join(self.gx.temp_folder(), "test_agg_utm")
-
-        with gxgrd.GXgrd(grid_file) as grd:
-            ex = grd.extent_2d()
-            cs = grd.cs
-        with gxmap.GXmap.new(map_file, overwrite=True,
-                             data_area=ex, margins=(1,6,3,1)) as gmap:
-            mapfile = gmap.filename
-            with gxv.GXview(gmap, "*Data") as view:
-                view.xy_rectangle(view.extent(), pen={'line_thick': 0.1, 'line_color': 'R'})
-
-                with gxagg.GXagg(grid_file) as agg:
-                    view.aggregate(agg)
-
-            with gxv.GXview(gmap, "*Base") as view:
-                view.xy_rectangle(view.extent(), pen={'line_thick': 0.1, 'line_color': 'B'})
-
-        with gxmap.GXmap.open(mapfile) as map:
-            with gxmapl.GXmapplot(map, font='Arial', pen_def='kt50') as mapl:
-                mapl.rectangle(gxmapl.RECTANGLE_EXTENT_DATA, pen_def="kt200")
-                mapl.annotate_data_ll(grid=gxmapl.GRID_LINES,
-                                      grid_pen="bt250",
-                                      pen_def="kt1", text_def=(0.25, 15),
-                                      top=gxmapl.TOP_IN)
-
-        self.view_crc(mapfile, 3741372207)
 
 if __name__ == '__main__':
 
