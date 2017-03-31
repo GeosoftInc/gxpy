@@ -623,5 +623,4 @@ class GXmap:
         .. versionadded:: 9.2
         """
 
-        if refp <= 9:
-            with gx
+        pass

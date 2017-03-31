@@ -291,7 +291,7 @@ class Test(unittest.TestCase):
 
                 view.graticule(style=gxv.GRATICULE_LINE, pen={'line_thick': 5})
 
-        self.view_crc(mapfile, 3565975558)
+        self.view_crc(mapfile, 2285305227)
 
     def test_basic_grid(self):
         self.start(gsys.func_name())
@@ -310,14 +310,14 @@ class Test(unittest.TestCase):
                              cs=cs, overwrite=True) as gmap:
             mapfile = gmap.filename
             with gxv.GXview(gmap, "*Base") as view:
-                view.xy_rectangle(view.extent(), pen={'line_thick': 0.2, 'line_color': 'K'})
+                view.xy_rectangle(view.extent(), pen={'line_thick': 1, 'line_color': 'K'})
             with gxv.GXview(gmap, "*Data") as view:
                 view.xy_rectangle(area, pen={'line_thick': 0.1, 'line_color': 'R'})
 
                 with gxagg.GXagg(grid_file) as agg:
                     view.aggregate(agg)
 
-        self.view_crc(mapfile, 2610023726)
+        self.view_crc(mapfile, 1232358915)
 
         with gxgrd.GXgrd(grid_file) as grd:
             cs = grd.cs
@@ -328,13 +328,13 @@ class Test(unittest.TestCase):
                              cs=cs, overwrite=True) as gmap:
             mapfile = gmap.filename
             with gxv.GXview(gmap, "*Base") as view:
-                view.xy_rectangle(view.extent(), pen={'line_thick': 0.2, 'line_color': 'K'})
+                view.xy_rectangle(view.extent(), pen={'line_thick': 2, 'line_color': 'K'})
             with gxv.GXview(gmap, "*Data") as view:
                 view.xy_rectangle(area, pen={'line_thick': 0.1, 'line_color': 'G'})
                 with gxagg.GXagg(grid_file) as agg:
                     view.aggregate(agg)
 
-        self.view_crc(mapfile, 3402162077)
+        self.view_crc(mapfile, 1139234781)
 
     def test_zone_grid(self):
         self.start(gsys.func_name())
@@ -358,14 +358,14 @@ class Test(unittest.TestCase):
             ex = grd.extent_2d()
         map_file = os.path.join(self.gx.temp_folder(), "test_agg")
 
-        test_zone(gxagg.ZONE_LINEAR, 3417239441, shade=True)
-        test_zone(gxagg.ZONE_EQUALAREA, 2492050454)
-        test_zone(gxagg.ZONE_DEFAULT, 2492050454)
-        test_zone(gxagg.ZONE_LAST, 2492050454)
-        test_zone(gxagg.ZONE_LINEAR, 4101718860)
-        test_zone(gxagg.ZONE_NORMAL, 2111320705)
-        test_zone(gxagg.ZONE_SHADE, 2447325492)
-        test_zone(gxagg.ZONE_LOGLINEAR, 2976995354)
+        test_zone(gxagg.ZONE_LINEAR, 3200671014, shade=True)
+        test_zone(gxagg.ZONE_EQUALAREA, 1850146409)
+        test_zone(gxagg.ZONE_DEFAULT, 1850146409)
+        test_zone(gxagg.ZONE_LAST, 1850146409)
+        test_zone(gxagg.ZONE_LINEAR, 3722308507)
+        test_zone(gxagg.ZONE_NORMAL, 515656061)
+        test_zone(gxagg.ZONE_SHADE, 523259810)
+        test_zone(gxagg.ZONE_LOGLINEAR, 1247792183)
 
     def test_color_bar(self):
         self.start(gsys.func_name())
@@ -399,7 +399,7 @@ class Test(unittest.TestCase):
                                       pen_def="kt1", text_def=(0.25, 15),
                                       top=gxmapl.TOP_IN)
 
-        self.view_crc(mapfile, 1407997278, True)
+        self.view_crc(mapfile, 1939928483)
 
 if __name__ == '__main__':
 
