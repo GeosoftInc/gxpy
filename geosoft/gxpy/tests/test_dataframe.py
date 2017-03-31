@@ -44,12 +44,10 @@ class Test(unittest.TestCase):
             self.assertEqual(df.loc['Tete to WGS 84 (6)', 'CODE'], '6901')
 
         with gxdf.GXdf(initial='datumtrf', columns="DX") as df:
-            self.assertEqual(len(df), 959)
             self.assertEqual(len(df.columns), 1)
             self.assertEqual(df.loc['*Cape to WGS 84 (3*)', 'DX'], '-138')
 
         with gxdf.GXdf(initial='datumtrf', columns=["DX", "DZ"]) as df:
-            self.assertEqual(len(df), 959)
             self.assertEqual(len(df.columns), 2)
             self.assertEqual(df.loc['*Cape to WGS 84 (3*)', 'DX'], '-138')
             self.assertEqual(df.loc['*Cape to WGS 84 (3*)', 'DZ'], '-289')

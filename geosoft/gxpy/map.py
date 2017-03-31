@@ -31,6 +31,27 @@ LIST_2D = gxapi.MAP_LIST_MODE_NOT3D
 
 VIEW_NAME_SIZE = 2080
 
+# 2D map reference points
+REF_BOTTOM_LEFT = 1
+REF_BOTTOM_CENTER = 2
+REF_BOTTOM_RIGHT = 3
+REF_CENTER_LEFT = 4
+REF_MAP_CENTER = 5
+REF_CENTER_RIGHT = 6
+REF_TOP_LEFT = 7
+REF_TOP_CENTER = 8
+REF_TOP_RIGHT = 9
+REF_DATA_ORIGIN = 10
+REF_DATA_BOTTOM_LEFT = 11
+REF_DATA_BOTTOM_CENTER = 12
+REF_DATA_BOTTOM_RIGHT = 13
+REF_DATA_CENTER_LEFT = 14
+REF_DATA_MAP_CENTER = 15
+REF_DATA_CENTER_RIGHT = 16
+REF_DATA_TOP_LEFT = 17
+REF_DATA_TOP_CENTER = 18
+REF_DATA_TOP_RIGHT = 19
+
 def map_file_name(filename):
     """
     Return a fully resolved map file path using the filename, with .map extyension
@@ -566,3 +587,40 @@ class GXmap:
         .. versionadded:: 9.2
         """
         self.gxmap.set_class_name(view_class, view_name)
+
+    def reference_point(self, refp):
+        """
+        Return the location of a map reference point.  Locations are determined by the extend of the
+        base view and the current default data view.  Base map locations, including the data location
+        on the map, are in map cm, and data units are in the coordinate system of the 2D data view.
+        
+        :param refp: One of:
+        
+            ::
+            
+                REF_BOTTOM_LEFT = 1
+                REF_BOTTOM_CENTER = 2
+                REF_BOTTOM_RIGHT = 3
+                REF_CENTER_LEFT = 4
+                REF_MAP_CENTER = 5
+                REF_CENTER_RIGHT = 6
+                REF_TOP_LEFT = 7
+                REF_TOP_CENTER = 8
+                REF_TOP_RIGHT = 9
+                REF_DATA_LOCATION_ON_MAP = 10
+                REF_DATA_BOTTOM_LEFT = 11
+                REF_DATA_BOTTOM_CENTER = 12
+                REF_DATA_BOTTOM_RIGHT = 13
+                REF_DATA_CENTER_LEFT = 14
+                REF_DATA_MAP_CENTER = 15
+                REF_DATA_CENTER_RIGHT = 16
+                REF_DATA_TOP_LEFT = 17
+                REF_DATA_TOP_CENTER = 18
+                REF_DATA_TOP_RIGHT = 19
+ 
+        :return:    (x, y)
+        
+        .. versionadded:: 9.2
+        """
+
+        pass
