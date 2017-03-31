@@ -13,6 +13,7 @@ import geosoft.gxpy.viewer as gxvwr
 import geosoft.gxpy.coordinate_system as gxcs
 import geosoft.gxpy.grd as gxgrd
 import geosoft.gxpy.agg as gxagg
+import geosoft.gxpy.mapplot as gxmapl
 
 
 def rect_line(view, size=100):
@@ -290,7 +291,7 @@ class Test(unittest.TestCase):
 
                 view.graticule(style=gxv.GRATICULE_LINE, pen={'line_thick': 5})
 
-        self.view_crc(mapfile, 3565975558)
+        self.view_crc(mapfile, 2285305227)
 
     def test_basic_grid(self):
         self.start(gsys.func_name())
@@ -309,14 +310,14 @@ class Test(unittest.TestCase):
                              cs=cs, overwrite=True) as gmap:
             mapfile = gmap.filename
             with gxv.GXview(gmap, "*Base") as view:
-                view.xy_rectangle(view.extent(), pen={'line_thick': 0.2, 'line_color': 'K'})
+                view.xy_rectangle(view.extent(), pen={'line_thick': 1, 'line_color': 'K'})
             with gxv.GXview(gmap, "*Data") as view:
                 view.xy_rectangle(area, pen={'line_thick': 0.1, 'line_color': 'R'})
 
                 with gxagg.GXagg(grid_file) as agg:
                     view.aggregate(agg)
 
-        self.view_crc(mapfile, 2610023726)
+        self.view_crc(mapfile, 1232358915)
 
         with gxgrd.GXgrd(grid_file) as grd:
             cs = grd.cs
@@ -327,13 +328,13 @@ class Test(unittest.TestCase):
                              cs=cs, overwrite=True) as gmap:
             mapfile = gmap.filename
             with gxv.GXview(gmap, "*Base") as view:
-                view.xy_rectangle(view.extent(), pen={'line_thick': 0.2, 'line_color': 'K'})
+                view.xy_rectangle(view.extent(), pen={'line_thick': 2, 'line_color': 'K'})
             with gxv.GXview(gmap, "*Data") as view:
                 view.xy_rectangle(area, pen={'line_thick': 0.1, 'line_color': 'G'})
                 with gxagg.GXagg(grid_file) as agg:
                     view.aggregate(agg)
 
-        self.view_crc(mapfile, 3402162077)
+        self.view_crc(mapfile, 1139234781)
 
     def test_zone_grid(self):
         self.start(gsys.func_name())
@@ -357,15 +358,48 @@ class Test(unittest.TestCase):
             ex = grd.extent_2d()
         map_file = os.path.join(self.gx.temp_folder(), "test_agg")
 
-        test_zone(gxagg.ZONE_LINEAR, 3417239441, shade=True)
-        test_zone(gxagg.ZONE_EQUALAREA, 2492050454)
-        test_zone(gxagg.ZONE_DEFAULT, 2492050454)
-        test_zone(gxagg.ZONE_LAST, 2492050454)
-        test_zone(gxagg.ZONE_LINEAR, 4101718860)
-        test_zone(gxagg.ZONE_NORMAL, 2111320705)
-        test_zone(gxagg.ZONE_SHADE, 2447325492)
-        test_zone(gxagg.ZONE_LOGLINEAR, 2976995354)
+        test_zone(gxagg.ZONE_LINEAR, 3200671014, shade=True)
+        test_zone(gxagg.ZONE_EQUALAREA, 1850146409)
+        test_zone(gxagg.ZONE_DEFAULT, 1850146409)
+        test_zone(gxagg.ZONE_LAST, 1850146409)
+        test_zone(gxagg.ZONE_LINEAR, 3722308507)
+        test_zone(gxagg.ZONE_NORMAL, 515656061)
+        test_zone(gxagg.ZONE_SHADE, 523259810)
+        test_zone(gxagg.ZONE_LOGLINEAR, 1247792183)
 
+    def test_color_bar(self):
+        self.start(gsys.func_name())
+
+        # test grid file
+        folder, files = gsys.unzip(os.path.join(os.path.dirname(__file__), 'testgrids.zip'),
+                                   folder=self.gx.temp_folder())
+        grid_file = os.path.join(folder, 'test_agg_utm.grd')
+        map_file = os.path.join(self.gx.temp_folder(), "test_agg_utm")
+
+        with gxgrd.GXgrd(grid_file) as grd:
+            ex = grd.extent_2d()
+            cs = grd.cs
+        with gxmap.GXmap.new(map_file, overwrite=True,
+                             data_area=ex, margins=(1,6,3,1)) as gmap:
+            mapfile = gmap.filename
+            with gxv.GXview(gmap, "*Data") as view:
+                view.xy_rectangle(view.extent(), pen={'line_thick': 0.1, 'line_color': 'R'})
+
+                with gxagg.GXagg(grid_file, shade=True) as agg:
+                    view.aggregate(agg)
+
+            with gxv.GXview(gmap, "*Base") as view:
+                view.xy_rectangle(view.extent(), pen={'line_thick': 0.1, 'line_color': 'B'})
+
+        with gxmap.GXmap.open(mapfile) as map:
+            with gxmapl.GXmapplot(map, font='Arial', pen_def='kt50') as mapl:
+                mapl.rectangle(gxmapl.RECTANGLE_EXTENT_DATA, pen_def="kt200")
+                mapl.annotate_data_ll(grid=gxmapl.GRID_LINES,
+                                      grid_pen="bt250",
+                                      pen_def="kt1", text_def=(0.25, 15),
+                                      top=gxmapl.TOP_IN)
+
+        self.view_crc(mapfile, 1939928483)
 
 if __name__ == '__main__':
 
