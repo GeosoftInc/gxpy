@@ -107,11 +107,12 @@ class GXview:
 
     def _close(self):
         if self._open:
+            #TODO revisit why failing to free _pen, _pen_fn and _pen_stack fails once we have cython interface.  Jacques suspects boost.
             self.gxview = None
-            self._gmap = None
             self._pen = None
             self._pen_fn = None
             self._pen_stack = None
+            self._gmap = None
             self._open = False
 
     def __repr__(self):
