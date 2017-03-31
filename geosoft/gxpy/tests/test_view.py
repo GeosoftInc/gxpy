@@ -237,9 +237,6 @@ class Test(unittest.TestCase):
     def test_reopen_map_view(self):
         self.start(gsys.func_name())
 
-        #REMOVE THIS LINE TO DEMONSTRATE TEST FAILURE
-        return
-
         testmap = os.path.join(self.gx.temp_folder(), "test")
         with gxmap.GXmap.new(testmap, overwrite=True) as gmap:
             mapfile = gmap.filename
