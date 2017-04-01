@@ -226,6 +226,15 @@ class Test(unittest.TestCase):
             #TODO self.assertEqual(cs.cs_name(what=gxcs.NAME_VCS), 'geodetic')
             #TODO self.assertEqual(cs.cs_name(what=gxcs.NAME_HCS_VCS), 'DHDN [geodetic]')
 
+    def test_vcs(self):
+        self.start(gsys.func_name())
+
+        self.assertEqual(gxcs.GXcs("nad83 / UTM zone 15N [NAVD92]").name, 'NAD83 / UTM zone 15N [NAVD92]')
+        #TODO self.assertEqual(gxcs.GXcs("nad83 [NAVD92]").name, 'NAD83 [NAVD92]')
+        #TODO self.assertFalse(gxcs.GXcs("nad83 [NAVD92]").same_as(gxcs.GXcs("NAD83 [geodetic]")))
+        #TODO self.assertFalse(gxcs.GXcs("nad83 [geoid]").same_vcs(gxcs.GXcs("NAD27 [NAVD92]")))
+
+
     def test_GXF_cs(self):
         self.start(gsys.func_name())
 
