@@ -36,31 +36,16 @@ def map(map_file_name, title=None):
             title = gmap.filename
         gxapi.GXGUI.simple_map_dialog(gmap.gxmap, title, "")
 
-def v3d(map_file_name, viewname=None, title = None):
+def v3d(map_file_name, title = None):
     """
     Open 3D view in a modal 3D viewer.
-    :param map_file_name:   map name
-    :param viewname:        3D view name, default is the first 3D view found in the map
-    :param title:           viewer title, default is the view name
+    :param file_name:   3D View file name (.geosoft_3dv)
+    :param title:       viewer title, default is file_name
 
     .. versionadded:: 9.2
 
     """
 
-    with gxmap.GXmap.open(map_file_name) as gmap:
-
-        vlist = gmap.view_list(gxmap.LIST_3D)
-        if len(vlist) == 0:
-            raise ViewerException(_t('\'{}\' has no 3D views.').format(map_file_name))
-        if viewname is None:
-            viewname = vlist[0]
-        elif viewname not in vlist:
-            raise ViewerException(_t('\'{}\' has no view named \'{}\'.').format(map_file_name, viewname))
-
-        if title is None:
-            title = viewname
-        map_file_name = gmap.filename
-
-    #TODO title is not used in the viewer - viewer bug
-
-    gxapi.GXGUI.show_3d_viewer_dialog(title, map_file_name, viewname)
+    if title is None:
+        title = file_name
+    gxapi.GXGUI.show_3d_viewer_dialog(title, file_name)

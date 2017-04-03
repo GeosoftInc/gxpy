@@ -81,7 +81,10 @@ class Test(unittest.TestCase):
 
     def view_crc(self, mapfile, crc=None, display=False):
         if display:
-            gxvwr.map(mapfile)
+            if mapfile.lower().endswith('.geosoft_3dv'):
+                gxvwr.v3d(mapfile)
+            else:
+                gxvwr.map(mapfile)
         if crc:
             self.assertEqual(gxmap.crc_map(mapfile), crc)
 
@@ -249,22 +252,28 @@ class Test(unittest.TestCase):
     def test_3D(self):
         self.start(gsys.func_name())
 
-        testmap = os.path.join(self.gx.temp_folder(), "test")
-        with gxmap.GXmap.new(testmap, overwrite=True) as gmap:
-            mapfile = gmap.filename
-            with gxv.GXview(gmap, "base", area=(0,0,250, 125), scale=1000) as view:
-                view.start_group('test_group')
-                view.xy_rectangle(((0, 0), (100, 100)))
-            with gxv.GXview3d(gmap, viewname='v3d_test', area=(0,0,300, 300), scale=1000,
-                              cs="wgs 84 / UTM zone 15S") as view:
-                view.start_group('test_group')
-                rect_line(view)
-                draw_stuff(view)
-                view.box_3d(((0,0,10), (120,100,50)))
+        test3dv = os.path.join(self.gx.temp_folder(), "test.geosoft_3dv")
+        testmap = os.path.join(self.gx.temp_folder(), "test.map")
+        with gxmap.GXmap.new(test3dv, overwrite=True, no_data_view=True) as g3dv:
+            with gxv.GXview3d(g3dv, mode=gxv.WRITE_NEW) as view_3d:
+                view_3d.start_group('2d_group')
+                rect_line(view_3d)
+                draw_stuff(view_3d)
+                view_3d.start_group('3d_group')
+                view_3d.box_3d(((20, 10, 30), (80,50,50)), pen={'fill_color': 'R255G100B50'})
 
-        #TODO resolve this with Jacques once 3D viewer works
-        #gxvwr.map(mapfile)
+                with gxmap.GXmap.new(testmap, overwrite=True) as gmap:
+                    with gxv.GXview(gmap, "base") as view_base:
+                        view_base.start_group('Surround')
+                        view_base.xy_rectangle(((0, 0), (280, 260)))
+                    gmap.create_linked_3d_view(view_3d, area=(10,10,270,250))
+
+
+        #TODO Add CRCs
+        #gxvwr.map(testmap)
         #gxvwr.v3d(mapfile)
+
+
 
     def test_cs(self):
         self.start(gsys.func_name())

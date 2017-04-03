@@ -51,7 +51,7 @@ GRATICULE_CROSS = 2
 def _draw(func):
     @wraps(func)
     def wrapper(self, *args, **kwargs):
-        if not self._pen:
+        if not hasattr(self,'_pen'):
             self.start_group('_')
         if 'pen' in kwargs:
             self.push_pen(kwargs.pop('pen'))
@@ -107,12 +107,9 @@ class GXview:
 
     def _close(self):
         if self._open:
-            #TODO revisit why failing to free _pen, _pen_fn and _pen_stack fails once we have cython interface.  Jacques suspects boost.
-            self.gxview = None
-            self._pen = None
-            self._pen_fn = None
-            self._pen_stack = None
-            self._gmap = None
+            # TODO: Figure out why releasing the view here does not actually work (test_reopen_map_view failure)
+            self.gxview = None # release the view
+            self._gmap = None  # release map
             self._open = False
 
     def __repr__(self):
@@ -137,9 +134,6 @@ class GXview:
             mode = WRITE_NEW
         self.gxview = gxapi.GXMVIEW.create(self._gmap.gxmap, self._viewname, mode)
         self._mode = mode
-        self._pen = {}
-        self._pen_fn = {}
-        self._pen_stack = []
 
         atexit.register(self._close)
         self._open = True
@@ -302,7 +296,6 @@ class GXview:
             self._pen[att] = setting
             self._pen_fn[att] = fn
 
-        self._pen_stack = []
         self._pen = {}
         self._pen_fn = {}
         setpen('line_color', self.gxview.line_color, gxapi.C_BLACK)
@@ -336,6 +329,7 @@ class GXview:
             name = name + '_'
         self.gxview.start_group(name, mode)
         self._init_pen_attributes()
+        self._pen_stack = []
 
     def delete_group(self, group_name):
         """
@@ -552,9 +546,8 @@ class GXview3d(GXview):
 
 
     def __init__(self, *args, **kwds):
-
-        if 'viewname' not in kwds:
-            kwds['viewname'] = "_unnamed_3D_view"
+        kwds['viewname'] = '3D' # Always 3D
+        kwds['area'] = (0,0,300,300) # Since we are never rendering in 2D we can always default this to 30x30 cm
         super().__init__(*args, **kwds)
 
         mminx, mminy, mmaxx, mmaxy = self.extent(EXTENT_MAP)
@@ -563,13 +556,7 @@ class GXview3d(GXview):
         # construct a 3D view
 
         h3dn = gxapi.GX3DN.create()
-        pov = (4., 20., 25.)
-        pov = (5., 0., 90.)
-        h3dn.set_point_of_view(pov[0], pov[1], pov[2])
-        render = (0, 0, 'x', 'y', 'z')
-        h3dn.set_render_controls(render[0], render[1], render[2], render[3], render[4])
         self.gxview.set_h_3dn(h3dn)
         self.gxview.fit_map_window_3d(mminx, mminy, mmaxx, mmaxy,
                                       vminx, vminy, vmaxx, vmaxy)
-
 

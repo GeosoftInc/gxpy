@@ -230,7 +230,7 @@ class GXmap:
     @classmethod
     def new(cls, filename=None, data_area=(0.,0.,100.,100.), scale=None,
             cs=None, media=None, layout=None, fixed_size=None, map_style='figure',
-            margins=None, inside_margin=1.0, overwrite=False):
+            margins=None, inside_margin=1.0, overwrite=False, no_data_view=False):
 
         """
         Create and open a new Geosoft map.
@@ -419,9 +419,10 @@ class GXmap:
         gmap = cls(filename, WRITE_NEW)
         gmap.remove_on_close(delete)
 
-        setup_map(gmap, data_area, scale, size, margins, fixed_size)
-        set_coordinate_system(gmap, cs)
-        set_registry(gmap, map_style, inside_margin)
+        if not no_data_view:
+            setup_map(gmap, data_area, scale, size, margins, fixed_size)
+            set_coordinate_system(gmap, cs)
+            set_registry(gmap, map_style, inside_margin)
 
         return gmap
 
@@ -624,3 +625,15 @@ class GXmap:
         """
 
         pass
+
+    def create_linked_3d_view(self, view, view_name = '3D', area=(0,0,30,30)):
+        """
+        Create a linked 3D view inside a 2D map to a `gxpy.view.GXview3d` in a 3DV
+
+        :param view: A `gxpy.view.GXview3d` instance
+        :param view_name:   name of the linked view to create
+        :param area: (min_x, min_y, max_x, max_y) placement of view on map in mm
+
+        .. versionadded:: 9.2
+        """
+        self.gxmap.create_linked_3d_view(view.gxview, view_name, area[0], area[1], area[2], area[3])
