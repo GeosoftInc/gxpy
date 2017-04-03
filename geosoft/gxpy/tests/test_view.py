@@ -93,8 +93,33 @@ class Test(unittest.TestCase):
         self.start(gsys.func_name())
 
         with gxmap.GXmap.new() as gmap:
+            vlist = gmap.view_list()
+            self.assertEqual(len(vlist), 2)
+            self.assertTrue('base' in vlist)
+            self.assertTrue('data' in vlist)
+            with gxv.GXview(gmap, 'base') as v:
+                self.assertEqual(v.viewname, "base")
+                self.assertEqual(v.scale, 1000.0)
+                self.assertEqual(v.aspect, 1.0)
+                self.assertEqual(v.units_name, 'unknown')
+                self.assertEqual(v.units_per_metre, 1.0)
+                self.assertEqual(v.units_per_map_cm, 10.0)
+
+            with gxv.GXview(gmap, 'ft12000', cs='ft', scale=12000,
+                            area=(0, 0, 50000, 40000)) as v:
+                self.assertEqual(v.viewname, "ft12000")
+                self.assertAlmostEqual(v.scale, 12000.0)
+                self.assertAlmostEqual(v.aspect, 1.0)
+                self.assertEqual(v.units_name, 'ft')
+                self.assertAlmostEqual(v.units_per_metre, 3.280839895)
+                self.assertAlmostEqual(v.units_per_map_cm, 393.7007874)
+
             with gxv.GXview(gmap) as vw:
                 self.assertEqual(vw.viewname, "_unnamed_view")
+                self.assertEqual(vw.scale, 100.0)
+                self.assertEqual(vw.aspect, 1.0)
+                self.assertEqual(vw.units_name, 'unknown')
+                self.assertEqual(vw.units_per_metre, 1.0)
 
         with gxmap.GXmap.new() as gmap:
             with gxv.GXview(gmap, "test") as vw:
@@ -108,12 +133,12 @@ class Test(unittest.TestCase):
             ycm = (area[3] - area[1])*100.0/scale
             with gxv.GXview(gmap, "test", map_location=location, area=area,
                             scale=scale, cs="WGS 84 / UTM zone 34N") as vw:
-                self.assertEqual(vw.extent(), area)
-                self.assertEqual(vw.extent(gxv.EXTENT_MAP), (0, 0, xcm, ycm))
-                self.assertEqual(vw.scale(), (scale, scale))
+                self.assertEqual(vw.extent, area)
+                self.assertEqual(vw.extent_map_cm, (0, 0, xcm, ycm))
+                self.assertEqual(vw.scale, scale, scale)
                 self.assertTrue(vw.cs.same_as(gxcs.GXcs("WGS 84 / UTM zone 34N")))
-                self.assertEqual(vw.units_per_m, 1.0)
-                self.assertEqual(vw.unit_name, 'm')
+                self.assertEqual(vw.units_per_metre, 1.0)
+                self.assertEqual(vw.units_name, 'm')
 
         with gxmap.GXmap.new() as gmap:
             area = (100, 500, 15100, 10500)
@@ -124,18 +149,18 @@ class Test(unittest.TestCase):
             ycm = 100.0 * ((area[3] - area[1]) / scale) / mpu
             with gxv.GXview(gmap, "test", map_location=loc, area=area,
                             scale=scale, cs=("WGS 84 / UTM zone 34N", '', '', 'ftUS', '')) as vw:
-                self.assertEqual(vw.extent(), area)
-                mx = vw.extent(gxv.EXTENT_MAP)
+                self.assertEqual(vw.extent, area)
+                mx = vw.extent_map_cm
                 self.assertAlmostEqual(mx[0], loc[0])
                 self.assertAlmostEqual(mx[1], loc[1])
                 self.assertAlmostEqual(mx[2], loc[0] + xcm)
                 self.assertAlmostEqual(mx[3], loc[1] + ycm)
-                self.assertAlmostEqual(vw.scale()[0], scale)
-                self.assertAlmostEqual(vw.scale()[1], scale)
+                self.assertAlmostEqual(vw.scale, scale)
+                self.assertAlmostEqual(vw.aspect, 1.0)
                 self.assertFalse(vw.cs.same_as(gxcs.GXcs("WGS 84 / UTM zone 34N")))
                 self.assertTrue(vw.cs.same_as(gxcs.GXcs(("WGS 84 / UTM zone 34N", '', '', 'ftUS', ''))))
-                self.assertAlmostEqual(vw.units_per_m, 3.28083333333334)
-                self.assertEqual(vw.unit_name, 'ftUS')
+                self.assertAlmostEqual(vw.units_per_metre, 3.28083333333334)
+                self.assertEqual(vw.units_name, 'ftUS')
 
         with gxmap.GXmap.new() as gmap:
             area = (100, 500, 15100, 10500)
@@ -146,24 +171,25 @@ class Test(unittest.TestCase):
             ycm = 100.0 * ((area[3] - area[1]) / scale) / mpu
             with gxv.GXview(gmap, "test", map_location=loc, area=area,
                             scale=scale, cs='ftUS') as vw:
-                self.assertEqual(vw.extent(), area)
-                mx = vw.extent(gxv.EXTENT_MAP)
+                self.assertEqual(vw.extent, area)
+                mx = vw.extent_map_cm
                 self.assertAlmostEqual(mx[0], loc[0])
                 self.assertAlmostEqual(mx[1], loc[1])
                 self.assertAlmostEqual(mx[2], loc[0] + xcm)
                 self.assertAlmostEqual(mx[3], loc[1] + ycm)
-                self.assertAlmostEqual(vw.scale()[0], scale)
-                self.assertAlmostEqual(vw.scale()[1], scale)
+                self.assertAlmostEqual(vw.scale, scale)
+                self.assertAlmostEqual(vw.aspect, 1.0)
                 self.assertTrue(vw.cs.same_as(gxcs.GXcs(('', '', '', 'ftUS', ''))))
-                self.assertAlmostEqual(vw.units_per_m, 3.28083333333334)
-                self.assertEqual(vw.unit_name, 'ftUS')
+                self.assertAlmostEqual(vw.units_per_metre, 3.28083333333334)
+                self.assertEqual(vw.units_name, 'ftUS')
 
         with gxmap.GXmap.new() as gmap:
             with gxv.GXview(gmap, "test", area=(100, 500, 15100, 10500), scale=(50000, 10000),
                             map_location=(10, 25)) as vw:
-                self.assertEqual(vw.extent(), (100, 500, 15100, 10500))
-                self.assertEqual(vw.scale(), (50000, 10000))
-                self.assertEqual(vw.extent(extent=gxv.EXTENT_MAP), (10., 25., 40., 125.))
+                self.assertEqual(vw.extent, (100, 500, 15100, 10500))
+                self.assertEqual(vw.scale, 50000)
+                self.assertEqual(vw.aspect, 0.2)
+                self.assertEqual(vw.extent_map_cm, (10., 25., 40., 125.))
                 self.assertTrue(vw.cs.same_as(gxcs.GXcs()))
 
         test_map = os.path.join(self.gx.temp_folder(),"test_map")
@@ -171,7 +197,7 @@ class Test(unittest.TestCase):
             mapname = gmap.filename
             with gxv.GXview(gmap, "test") as view:
                 self.assertEqual(view.viewname, "test")
-                self.assertEqual(view.mapfilename, mapname)
+                self.assertEqual(view.gmap.filename, mapname)
                 view.start_group('test_group')
 
                 def_pen = view.pen
@@ -280,10 +306,10 @@ class Test(unittest.TestCase):
         self.start(gsys.func_name())
 
         testmap = os.path.join(self.gx.temp_folder(), "test")
-        with gxmap.GXmap.new(testmap, overwrite=True) as gmap:
+        with gxmap.GXmap.new(testmap, overwrite=True, data_area=(0, 0, 25, 20), scale=100.0) as gmap:
             mapfile = gmap.filename
             with gxv.GXview(gmap, "my_base_view", area=(0, 0, 25, 20), scale=100.0) as view:
-                view.xy_rectangle(view.extent(), pen={'line_thick': 0.1, 'line_color': 'R'})
+                view.xy_rectangle(view.extent, pen={'line_thick': 0.1, 'line_color': 'R'})
 
             with gxv.GXview(gmap, "my_data_area", map_location=(4,3), area=(0, 0, 1800, 1500), scale=10000) as view:
                 view.xy_rectangle(((0, 0), (1800, 1500)),
@@ -291,7 +317,10 @@ class Test(unittest.TestCase):
 
                 view.graticule(style=gxv.GRATICULE_LINE, pen={'line_thick': 5})
 
-        self.view_crc(mapfile, 2285305227)
+            gmap.delete_view('*data')
+            gmap.delete_view('*base')
+
+        self.view_crc(mapfile, 2457606645)
 
     def test_basic_grid(self):
         self.start(gsys.func_name())
@@ -309,9 +338,9 @@ class Test(unittest.TestCase):
                              data_area=area, media="A4", margins=(0,0,0,0),
                              cs=cs, overwrite=True) as gmap:
             mapfile = gmap.filename
-            with gxv.GXview(gmap, "*Base") as view:
-                view.xy_rectangle(view.extent(), pen={'line_thick': 1, 'line_color': 'K'})
-            with gxv.GXview(gmap, "*Data") as view:
+            with gxv.GXview(gmap, "base") as view:
+                view.xy_rectangle(view.extent, pen={'line_thick': 1, 'line_color': 'K'})
+            with gxv.GXview(gmap, "data") as view:
                 view.xy_rectangle(area, pen={'line_thick': 0.1, 'line_color': 'R'})
 
                 with gxagg.GXagg(grid_file) as agg:
@@ -327,9 +356,9 @@ class Test(unittest.TestCase):
                              scale=(area[2] - area[0])/0.2,
                              cs=cs, overwrite=True) as gmap:
             mapfile = gmap.filename
-            with gxv.GXview(gmap, "*Base") as view:
-                view.xy_rectangle(view.extent(), pen={'line_thick': 2, 'line_color': 'K'})
-            with gxv.GXview(gmap, "*Data") as view:
+            with gxv.GXview(gmap, "base") as view:
+                view.xy_rectangle(view.extent, pen={'line_thick': 2, 'line_color': 'K'})
+            with gxv.GXview(gmap, "data") as view:
                 view.xy_rectangle(area, pen={'line_thick': 0.1, 'line_color': 'G'})
                 with gxagg.GXagg(grid_file) as agg:
                     view.aggregate(agg)
@@ -347,6 +376,7 @@ class Test(unittest.TestCase):
                 with gxv.GXview(gmap, "data") as view:
                     with gxagg.GXagg(grid_file, zone=zone, shade=shade) as agg:
                         view.aggregate(agg)
+                gmap.delete_view('base')
 
             self.view_crc(mapfile, crc, display)
 
@@ -358,14 +388,14 @@ class Test(unittest.TestCase):
             ex = grd.extent_2d()
         map_file = os.path.join(self.gx.temp_folder(), "test_agg")
 
-        test_zone(gxagg.ZONE_LINEAR, 3200671014, shade=True)
-        test_zone(gxagg.ZONE_EQUALAREA, 1850146409)
-        test_zone(gxagg.ZONE_DEFAULT, 1850146409)
-        test_zone(gxagg.ZONE_LAST, 1850146409)
-        test_zone(gxagg.ZONE_LINEAR, 3722308507)
-        test_zone(gxagg.ZONE_NORMAL, 515656061)
-        test_zone(gxagg.ZONE_SHADE, 523259810)
-        test_zone(gxagg.ZONE_LOGLINEAR, 1247792183)
+        test_zone(gxagg.ZONE_LINEAR, 2521996509, shade=True)
+        test_zone(gxagg.ZONE_EQUALAREA, 1246636862)
+        test_zone(gxagg.ZONE_DEFAULT, 1246636862)
+        test_zone(gxagg.ZONE_LAST, 1246636862)
+        test_zone(gxagg.ZONE_LINEAR, 2299502801)
+        test_zone(gxagg.ZONE_NORMAL, 1363683293)
+        test_zone(gxagg.ZONE_SHADE, 1269009350)
+        test_zone(gxagg.ZONE_LOGLINEAR, 1055719756)
 
     def test_color_bar(self):
         self.start(gsys.func_name())
@@ -382,24 +412,22 @@ class Test(unittest.TestCase):
         with gxmap.GXmap.new(map_file, overwrite=True,
                              data_area=ex, margins=(1,6,3,1)) as gmap:
             mapfile = gmap.filename
-            with gxv.GXview(gmap, "*Data") as view:
-                view.xy_rectangle(view.extent(), pen={'line_thick': 0.1, 'line_color': 'R'})
+            with gxv.GXview(gmap, "data") as view:
+                view.xy_rectangle(view.extent, pen={'line_thick': 0.1, 'line_color': 'R'})
 
                 with gxagg.GXagg(grid_file, shade=True) as agg:
                     view.aggregate(agg)
 
-            with gxv.GXview(gmap, "*Base") as view:
-                view.xy_rectangle(view.extent(), pen={'line_thick': 0.1, 'line_color': 'B'})
+            with gxv.GXview(gmap, "base") as view:
+                view.xy_rectangle(view.extent, pen={'line_thick': 0.1, 'line_color': 'B'})
 
-        with gxmap.GXmap.open(mapfile) as map:
-            with gxmapl.GXmapplot(map, font='Arial', pen_def='kt50') as mapl:
-                mapl.rectangle(gxmapl.RECTANGLE_EXTENT_DATA, pen_def="kt200")
+            with gxmapl.GXmapplot(gmap, font='Arial', pen_def='kt50') as mapl:
                 mapl.annotate_data_ll(grid=gxmapl.GRID_LINES,
                                       grid_pen="bt250",
                                       pen_def="kt1", text_def=(0.25, 15),
                                       top=gxmapl.TOP_IN)
 
-        self.view_crc(mapfile, 1939928483)
+        #self.view_crc(mapfile, 1939928483)
 
 if __name__ == '__main__':
 

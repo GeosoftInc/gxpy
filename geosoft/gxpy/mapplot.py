@@ -13,17 +13,6 @@ __version__ = geosoft.__version__
 def _t(s):
     return s
 
-BOTTOM_LEFT = -1
-BOTTOM_CENTER = 0
-BOTTOM_RIGHT = 1
-ALL_CENTER = 1
-BASE_LEFT= 3
-BASE_CENTER = 4
-BASE_RIGHT = 5
-BASE_ALL_CENTER = 6
-BASE_FIT_BY_CHARACTER_WIDTH = 7
-BASE_FIT_BY_CHARACTER_SIZE = 8
-
 RECTANGLE_EXTENT_BASE = -1
 RECTANGLE_EXTENT_DATA = -2
 
@@ -88,7 +77,7 @@ class GXmapplot:
     a number of drawing capabilities intended for base-map or figure annotations.  This wraps
     the GXAPI GXMAPL class and uses the concepts of the Geosoft MAPPLOT system.
 
-    :param map:         gxpy.map.GXmap instance, which must contain a "*Base" and "*Data" view.
+    :param map:         gxpy.map.GXmap instance, which must contain a base and a data view.
     :param data_view:   name of the default data view.  If not specified the current default is assumed.
                         All drawing commands that reference the data view will be applied to the default 
                         data view.  On closing of the GXmapplot instance the default data view is
@@ -96,7 +85,7 @@ class GXmapplot:
     :param ref_prefix:  A prefix to add to the default group in the "BASE" and "DATA" groups.  The
                         default is "MAPL_", which will create a group named "MAPL_BASE" in the
                         base view and "MAPL_DATA" in the data view.  Use the start_group method
-                        to create new view groups.
+                        to create new view groups.   
 
     Drawing functions share the following keyword parameters, which can be defined on instance
     creation or together with any drawing function.
@@ -189,7 +178,7 @@ class GXmapplot:
 
     def __init__(self, map, data_view=None, ref_prefix='', **kwargs):
 
-        if not (map.has_view("*Base") and map.has_view("*Data")):
+        if not (map.has_view(map.current_base_view) and map.has_view(map.current_data_view)):
             raise MapplotException("Map must have a '*Base' and '*Data' view.")
 
         self._map = map
@@ -213,10 +202,11 @@ class GXmapplot:
         self._font = "DEFAULT.gfn"
         self._att = _DEF_ATT
         self._annotation_outer_edge = 0.0
-        self.define_named_attribute(self._att, **kwargs)
 
         atexit.register(self._process, pop=False)
         self._open = gx.track_resource(self.__class__.__name__, self._maplfilename)
+
+        self.define_named_attribute(self._att, **kwargs)
 
     def _process(self, pop=True):
 
@@ -362,130 +352,6 @@ class GXmapplot:
         self._maplfile.write(command)
         if command and command[-1] != '\n':
             self._maplfile.write('\n')
-
-    def surround(self, outer_pen=3, inner_pen=1, gap=0):
-        if type(outer_pen) is not int:
-            self.define_named_attribute('outer', pen_def=outer_pen)
-            outer_pen = 'outer'
-        if gap <= 0:
-            self.command("SURR {}".format(outer_pen))
-        else:
-            if type(inner_pen) is not int:
-                self.define_named_attribute('inner', pen_def=inner_pen)
-                inner_pen = 'inner'
-            self.command("SURR {},{},{}".format(outer_pen, gap, inner_pen))
-
-
-    @_attrib
-    def text(self, text, just=BOTTOM_LEFT):
-        """
-        Add text to the map.
-
-        :param text:    Text string.
-        :param just:    Justification relative to the reference point:
-
-                        ::
-
-                            BOTTOM_LEFT
-                            BOTTOM_CENTER
-                            BOTTOM_RIGHT
-                            ALL_CENTER
-
-        .. versionadded:: 9.2
-        """
-        att = self._define_named_attribute()
-        self.command("TEXT {},{},\"{}\"".format(self._a_ref_point(), just, text))
-        self._add_att(att)
-
-    @_attrib
-    def rectangle(self, extent):
-        """
-        Draw a rectangle.
-
-        :param rect:    (x_min, y_min, x_max, y_max) rectangle extent relative to the reference point or:
-
-                        ::
-
-                            RECTANGLE_EXTENT_BASE   base view edge
-                            RECTANGLE_EXTENT_DATA   data view window
-
-
-        .. versionadded:: 9.2
-        """
-
-        att = self._define_named_attribute()
-        if extent == RECTANGLE_EXTENT_BASE:
-            self.command('RECT -1,,,,,{}'.format(att))
-        elif extent == RECTANGLE_EXTENT_DATA:
-            self.command('RECT -2,,,,,{}'.format(att))
-        else:
-            self.command('RECT {},{},{},{},{},{}'.format(self._refp[0],
-                                                           extent[0], extent[1],
-                                                           extent[2], extent[3], att))
-
-    def scale_bar(self,
-                  length=5,
-                  sections='',
-                  post_scale=False,
-                  ref_point=(1, 5, 2),
-                  text_def=(0.25, 15),
-                  pen_def='kt50'):
-        """
-        
-        :param length:      maximum scale bar length, default is 5 cm. scale=0.0 will suppress drawing of the bar.
-        :param sections:    number of major sections in the bar, default is determined automatically.
-        :param post_scale:  True to post the actual scale as a string, e.g. '1:50,000'.  Note that a posted
-                            scale is only relevant for printed maps.  The default does not post the scale.
-        
-        .. versionadded:: 9.2
-        """
-
-        if post_scale:
-            option = 2
-        else:
-            option = 1
-
-        att = 'scale_bar'
-        self.define_named_attribute(att, ref_point=ref_point, pen_def=pen_def, text_def=text_def)
-        self.command("SCAL {},,,{},{},,{},".format(self._a_ref_point(), length, sections, option))
-        self._add_att(att)
-
-    def north_arrow(self,
-                    ref_point=(3, -2, 3),
-                    direction='',
-                    length='6',
-                    text_def=(0.25, 15),
-                    pen_def='kt200',
-                    inclination='',
-                    declination=''):
-        """
-        Draw a North arrow.
-
-        :param direction:   North direction in degrees azimuth (clockwize from
-                            map Y axis).  Default is calculated from the center of
-                            the data area based on the coordinate system.
-        :param length:      arrow length in cm
-        :param inclination: magnetic inclination
-        :param declination: magnetic declination
-
-        .. versionadded:: 9.2
-        """
-
-        #TODO add IGRF calculation from a date, igrfdate=
-
-        if not direction:
-            with gxv.GXview(self._map, '*Data', mode=gxv.WRITE_OLD) as v:
-                direction = round(v.gxview.north(), 1)
-
-        self.define_named_attribute('arrow', pen_def=pen_def)
-        self.define_named_attribute('annot', text_def=text_def, pen_def='kt50')
-        self.command("NARR {},{},{},{},{},{},{},{}".format(ref_point[0], ref_point[1], ref_point[2],
-                                                     direction,
-                                                     length,
-                                                     'arrow',
-                                                     inclination,
-                                                     declination))
-        self._add_att('annot')
 
     def annotate_data_xy(self, tick='', offset='',
                          x_sep='', x_dec='',

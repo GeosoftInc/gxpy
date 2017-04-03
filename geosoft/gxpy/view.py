@@ -35,9 +35,6 @@ TILE_DIAGONAL = gxapi.MVIEW_TILE_DIAGONAL
 TILE_TRIANGULAR = gxapi.MVIEW_TILE_TRIANGULAR
 TILE_RANDOM = gxapi.MVIEW_TILE_RANDOM
 
-EXTENT_VIEW = 1
-EXTENT_MAP = -1
-
 UNIT_VIEW = 0
 UNIT_MAP = 2
 UNIT_VIEW_UNWARPED = 3
@@ -74,9 +71,8 @@ class GXview:
     Geosoft view class.
 
     :parameters:
-        :viewname:      view name, default is "_unnamed_view". Use "\*Base", "\*Data" or "\*Section" to open
-                        the defined "Base", "Data" or "Section" views.  The '*' prefix causes the view associated
-                        with the class name to be opened.
+    
+        :viewname:      view name, default is "_unnamed_view".
         :gmap:          map instance, if not specified a new default map is created and deleted on closing
         :mode:          open view mode:
 
@@ -96,6 +92,18 @@ class GXview:
                         defined this is view units per map metre.
         :copy:          name of a view to copy into the new view.
 
+    :properties:
+    
+        :gmap:              the GXmap instance that contains this view
+        :viewname:          the name of the view
+        :units_per_metre:   view units per view metres (eg. a view in 'ft' will be 3.28084).
+        :units_per_map_cm:  view units per map cm. (eg. a view in ft, with a scale of 1:12000 returns 393.7 ft/cm)
+        :unit_name:         view units name.
+        :scale:             view scale, which is the # of view units per  unit on the printed map.
+        :aspect:            ratio of the view x units to y units (x/y).  Usually this is 1.0.
+        :extent:            extent of the visible (clipped) view in view units.
+        :extent_map_cm:     extent of the visible view in map cm.
+        
     .. versionadded:: 9.2
     """
 
@@ -156,10 +164,11 @@ class GXview:
             ipj = gxapi.GXIPJ.create()
             self.gxview.get_ipj(ipj)
             self.cs = self.drawing_cs = gxcs.GXcs(ipj)
-            metres_per, self._uname = self.cs.units()
+            metres_per = self.cs.units_to_metres
+            self._uname = self.cs.units_name
             if metres_per <= 0.:
                 raise ViewException('Invalid units {}({})'.format(self._uname, metres_per))
-            self._units_per_m = 1.0/metres_per
+            self._units_to_metres = 1.0/metres_per
 
     def set_cs(self, cs):
         """
@@ -171,10 +180,11 @@ class GXview:
         .. versionadded:: 9.2
         """
         self.cs = self.drawing_cs = gxcs.GXcs(cs)
-        metres_per, self._uname = self.cs.units()
+        metres_per = self.cs.units_to_metres
+        self._uname = self.cs.units_name
         if metres_per <= 0.:
             raise ViewException('Invalid units {}({})'.format(self._uname, metres_per))
-        self._units_per_m = 1.0/metres_per
+        self._units_to_metres = 1.0/metres_per
         self.gxview.set_ipj(self.cs.gxipj)
 
     def set_drawing_cs(self, cs=None):
@@ -221,10 +231,10 @@ class GXview:
 
         # coordinate system
         self.set_cs(cs)
-        upm = self.units_per_m
+        upm = 1.0 / self.cs.units_to_metres
 
         if area == None:
-            area = self.extent(EXTENT_VIEW)
+            area = self.extent
 
         # area and scale
         if hasattr(scale, "__iter__"):
@@ -256,16 +266,15 @@ class GXview:
         return self._viewname
 
     @property
-    def mapfilename(self):
-        """ Name of the map file that contains this view. """
-        return self._gmap.filename
+    def units_per_metre(self):
+        return self._units_to_metres
 
     @property
-    def units_per_m(self):
-        return self._units_per_m
+    def units_per_map_cm(self):
+        return self.gxview.scale_mm() * 10.0
 
     @property
-    def unit_name(self):
+    def units_name(self):
         return self._uname
 
     @property
@@ -289,6 +298,31 @@ class GXview:
                     self._pen[att] = setting
             except:
                 self._invalid_pen(att)
+
+    @property
+    def extent(self):
+        xmin = gxapi.float_ref()
+        ymin = gxapi.float_ref()
+        xmax = gxapi.float_ref()
+        ymax = gxapi.float_ref()
+        self.gxview.extent(gxapi.MVIEW_EXTENT_UNIT_VIEW, UNIT_VIEW, xmin, ymin, xmax, ymax)
+        return xmin.value, ymin.value, xmax.value, ymax.value
+
+    @property
+    def extent_map_cm(self):
+
+        ex = self.extent
+        xmin, ymin = self.view_to_map(ex[0], ex[1])
+        xmax, ymax = self.view_to_map(ex[2], ex[3])
+        return xmin, ymin, xmax, ymax
+
+    @property
+    def scale(self):
+        return 1000.0 * self.gxview.scale_mm() * self.cs.units_to_metres
+
+    @property
+    def aspect(self):
+        return self.gxview.scale_ymm() / self.gxview.scale_mm()
 
     def _line_style(self, ls):
         self.gxview.line_style(ls[0], ls[1])
@@ -374,37 +408,6 @@ class GXview:
             self.pen = self._pen_stack[-1]
             del self._pen_stack[-1:]
 
-    def extent(self, extent=EXTENT_VIEW):
-        """
-        Return the extent of the view.
-
-        :param extent: extent units are in view or map units:
-
-            ::
-
-                EXTENT_VIEW     extent in view units (default)
-                EXTENT_MAP      extent in map units
-
-        :return: (x_min, y_min, x_max, y_max)
-
-        .. versionadded:: 9.2
-        """
-
-        xmin = gxapi.float_ref()
-        ymin = gxapi.float_ref()
-        xmax = gxapi.float_ref()
-        ymax = gxapi.float_ref()
-        self.gxview.extent(EXTENT_VIEW, UNIT_VIEW, xmin, ymin, xmax, ymax)
-        if extent == EXTENT_MAP:
-            xmin.value, ymin.value = self.view_to_map(xmin.value, ymin.value)
-            xmax.value, ymax.value = self.view_to_map(xmax.value, ymax.value)
-        return xmin.value, ymin.value, xmax.value, ymax.value
-
-    def scale(self):
-        x = 1000.0 * self.gxview.scale_mm() / self.units_per_m
-        y = 1000.0 * self.gxview.scale_ymm() / self.units_per_m
-        return x, y
-
     def color(self, cstr):
         """
         Return a color from a color string.
@@ -460,7 +463,7 @@ class GXview:
         .. versionadded:: 9.2
         """
 
-        ext = self.extent()
+        ext = self.extent
         if dx is None:
             dx = (ext[2] - ext[0]) * 0.2
             ddx = dx * 0.25
@@ -557,8 +560,8 @@ class GXview3d(GXview):
             kwds['viewname'] = "_unnamed_3D_view"
         super().__init__(*args, **kwds)
 
-        mminx, mminy, mmaxx, mmaxy = self.extent(EXTENT_MAP)
-        vminx, vminy, vmaxx, vmaxy = self.extent(EXTENT_VIEW)
+        mminx, mminy, mmaxx, mmaxy = self.extent_map_cm
+        vminx, vminy, vmaxx, vmaxy = self.extent
 
         # construct a 3D view
 
