@@ -44,6 +44,313 @@ UNIT_VIEW_UNWARPED = 3
 GRATICULE_LINE = 1
 GRATICULE_CROSS = 2
 
+_weight_factor = (1.0 / 48.0, 1.0 / 24.0, 1.0 / 16.0, 1.0 / 12.0, 0.145, 1.0 / 4.0)
+FONT_WEIGHT_ULTRALIGHT = 1
+FONT_WEIGHT_LIGHT = 2
+FONT_WEIGHT_MEDIUM = 3
+FONT_WEIGHT_BOLD = 4
+FONT_WEIGHT_XBOLD = 5
+FONT_WEIGHT_XXBOLD = 6
+
+C_RGB = 0
+C_CMY = 1
+C_HSV = 2
+
+C_BLACK = 33554432
+C_RED = 33554687
+C_GREEN = 33619712
+C_BLUE = 50266112
+C_CYAN = 50331903
+C_MAGENTA = 50396928
+C_YELLOW = 67043328
+C_GREY = 41975936
+C_LT_RED = 54542336
+C_LT_GREEN = 54526016
+C_LT_BLUE = 50348096
+C_LT_CYAN = 50331712
+C_LT_MAGENTA = 50348032
+C_LT_YELLOW = 54525952
+C_LT_GREY = 54542400
+C_GREY10 = 51910680
+C_GREY25 = 54542400
+C_GREY50 = 41975936
+C_WHITE = 50331648
+C_TRANSPARENT = 0
+
+class Color:
+    """
+    Colours, which are stored in a Windows-compatible 24-bit colour integer.
+    
+    :param color:   string descriptor, tuple (r, g, b), (c, m, y) or (h, s, v), each item defined in the range
+                    0 to 255, or a 24-bit color number, which can be an item selected from the following list:
+                    
+                    ::
+                    
+                        C_BLACK
+                        C_RED
+                        C_GREEN
+                        C_BLUE
+                        C_CYAN
+                        C_MAGENTA
+                        C_YELLOW
+                        C_GREY
+                        C_LT_RED
+                        C_LT_GREEN
+                        C_LT_BLUE
+                        C_LT_CYAN
+                        C_LT_MAGENTA
+                        C_LT_YELLOW
+                        C_LT_GREY
+                        C_GREY10
+                        C_GREY25
+                        C_GREY50
+                        C_WHITE
+                        C_TRANSPARENT
+                        
+    :param model:   model of the tuple: C_RGB, C_CMY or C_HSV.  Default is C_RGB
+    
+    .. versionadded:: 9.2
+    """
+
+    def __init__(self, color, model=C_RGB):
+
+        def get_part(cstr, c, default=255):
+            if c not in cstr:
+                return default, cstr
+            start = cstr.index(c)
+            end = start + 1
+            for c in cstr[end:]:
+                if not (c in '0123456789'):
+                    break
+                end += 1
+            return_cstr = cstr[:start] + cstr[end:]
+            if end == start+1:
+                return default, return_cstr
+            return int(cstr[start+1:end]), return_cstr
+
+        if type(color) is str:
+
+            #self.thickness, color = get_part(color, 't', default=0)
+            self._color = gxapi.GXMVIEW.color(color)
+
+        elif type(color) is int:
+            self._color = color
+
+        elif model == C_RGB:
+            self.rgb = color
+
+        elif model == C_CMY:
+            self.cmy = color
+
+        elif model == C_HSV:
+            hue = max(0, min(255, color[0]))
+            sat = max(0, min(255, color[1]))
+            val = max(0, min(255, color[2]))
+            self._color = gxapi.GXMVIEW.color_hsv(hue, sat, val)
+
+    @property
+    def int(self):
+        return self._color
+
+    @int.setter
+    def int(self, color):
+        self.color = int(color)
+
+    @property
+    def rgb(self):
+        r = gxapi.int_ref()
+        g = gxapi.int_ref()
+        b = gxapi.int_ref()
+        gxapi.GXMVIEW.color2_rgb(self._color, r, g, b)
+        return (r.value, g.value, b.value)
+
+    @rgb.setter
+    def rgb(self, rgb):
+        r = max(min(255, rgb[0]), 0)
+        g = max(min(255, rgb[1]), 0)
+        b = max(min(255, rgb[2]), 0)
+        self._color = gxapi.GXMVIEW.color_rgb(r, g, b)
+
+    @property
+    def cmy(self):
+        red, green, blue = self.rgb
+        return 255 - red, 255 - green, 255 - blue
+
+    @cmy.setter
+    def cmy(self, cmy):
+        self.rgb = (255 - cmy[0], 255 - cmy[1], 255 - cmy[2])
+
+
+def font_weight_from_line_thickness(thickness, height):
+    """
+    Returns font weight from the defined text height and line thickness.
+    :param thickness: line thickness in same units as the text height
+    :param height: text height
+    
+    :returns: one of:
+    
+            ::
+            
+                FONT_WEIGHT_ULTRALIGHT
+                FONT_WEIGHT_LIGHT
+                FONT_WEIGHT_MEDIUM
+                FONT_WEIGHT_BOLD
+                FONT_WEIGHT_XBOLD
+                FONT_WEIGHT_XXBOLD
+
+    .. versionadded:: 9.2
+    """
+    if height <= 0.:
+        return FONT_WEIGHT_ULTRALIGHT
+    ratio = thickness / height
+    fw = 1
+    for f in _weight_factor:
+        if ratio <= f:
+            return fw
+        fw += 1
+    return FONT_WEIGHT_MEDIUM
+
+def thickness_from_font_weight(weight, height):
+    """ Returns line thickness appropriate for a text weight."""
+    return height * _weight_factor[weight - 1]
+
+class Text_def:
+    """
+    Text definition:
+    
+    :param font:        font name.  TrueType fonts are assumed unless the name ends with '.gfn',
+                        which is a Geosoft gfn font.
+    :param weight:      one of:
+    
+                        ::
+                        
+                            FONT_WEIGHT_ULTRALIGHT
+                            FONT_WEIGHT_LIGHT
+                            FONT_WEIGHT_MEDIUM
+                            FONT_WEIGHT_BOLD
+                            FONT_WEIGHT_XBOLD
+                            FONT_WEIGHT_XXBOLD
+                    
+    :param thickness:   line thickness from which to determine a weight, which is calculated from the 
+                        ration of line thickness to height.
+    :param italics:     True for italics fonts
+    :param height:      text height in map mm.
+    
+    :properties:
+    
+        :height:        font height in 
+        :font:          font name
+        :weight:        font weight, one of FONT_WEIGHT_
+        :thickness:     font line thickness for gfn stroke fonts
+        :italics:       True for italics
+        :slant:         Slant angle for stroke fonts, 0 if normal, 15 for italics
+        :mapplot_text:  mapplot compatible text definition string
+    """
+    def __init__(self,
+                 height=2.5,
+                 font='DEFAULT',
+                 weight=None,
+                 thickness=None,
+                 italics=False):
+        self._font = font
+        self._weight = weight
+        self._thickness = thickness
+        if type(italics) is bool:
+            self._italics = italics
+        elif italics > 5:
+            self.italics = True
+        else:
+            italics = False
+        self._height = height
+
+        if weight is None:
+            if thickness is None:
+                self._weight = FONT_WEIGHT_MEDIUM
+            else:
+                self._weight = font_weight_from_line_thickness(thickness, height)
+
+    @property
+    def font(self):
+        return self._font
+
+    @font.setter
+    def font(self, font):
+        if font:
+            self._font = font
+        else:
+            self._font = 'DEFAULT'
+
+    @property
+    def weight(self):
+        return self._weight
+
+    @weight.setter
+    def weight(self, weight):
+        self._weight = weight
+
+    @property
+    def thickness(self):
+        return thickness_from_font_weight(self._weight, self._height)
+
+    @thickness.setter
+    def thickness(self, thickness):
+        self._weight = font_weight_from_line_thickness(thickness, self._height)
+
+    @property
+    def italics(self):
+        return self._italics
+
+    @italics.setter
+    def italics(self, italics):
+        if type(italics) is bool:
+            self._italics = italics
+        elif italics > 5:
+            self._italics = True
+        else:
+            self._italics = False
+
+    @property
+    def height(self):
+        return self._height
+
+    @height.setter
+    def height(self, height):
+        self._height = height
+
+    @property
+    def slant(self):
+        if self._italics:
+            return 15
+        else:
+            return 0
+
+    @slant.setter
+    def slant(self, slant):
+        if slant > 5:
+            self._italics = True
+        else:
+            self._italics = False
+
+    @property
+    def mapplot_text(self):
+        if '.gfn' in self._font.lower():
+            font = self._font.lower().replace('.gfn','')
+        elif 'default' in self._font.lower():
+            font = 'DEFAULT'
+        else:
+            font = self._font.strip() + '(TT)'
+        return '{},,,{},{}'.format(self.height, self.slant, font)
+
+class Pen:
+
+    def __init__(self,
+                 color,
+                 thickness,
+                 line_style,
+                 line_pitch,
+                 fill_color):
+        pass
+
 # decorators
 def _draw(func):
     @wraps(func)

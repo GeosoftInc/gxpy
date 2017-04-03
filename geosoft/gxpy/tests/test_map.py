@@ -331,7 +331,7 @@ class Test(unittest.TestCase):
 
             map.north_arrow()
 
-        self.view_test_crc(mapfile, 3987110299)
+        self.view_test_crc(mapfile, 1153322258)
 
         with gxmap.GXmap.new(cs='m') as map:
             mapfile = map.filename
@@ -343,7 +343,7 @@ class Test(unittest.TestCase):
 
             map.north_arrow(inclination=-12, declination=74.5)
 
-        self.view_test_crc(mapfile, 4149064694)
+        self.view_test_crc(mapfile, 0)
 
     def test_scale(self):
         self.start(gsys.func_name())
@@ -385,7 +385,7 @@ class Test(unittest.TestCase):
             mapfile = map.filename
             map.annotate_data_xy(x_sep=1500, text_pen="kt10")
 
-        self.view_test_crc(mapfile, 0, True)
+        self.view_test_crc(mapfile, 0)
 
         with test_data_map() as map:
             mapfile = map.filename
@@ -413,14 +413,14 @@ class Test(unittest.TestCase):
             map.annotate_data_xy()
             map.annotate_data_ll()
 
-        self.view_test_crc(mapfile, 0, True)
+        self.view_test_crc(mapfile, 0)
 
         with test_data_map(data_area=(350000,7000000,400000,7030000)) as map:
             mapfile = map.filename
             map.annotate_data_ll(grid=gxmap.GRID_LINES,
                                   grid_pen="bt500")
 
-        self.view_test_crc(mapfile, 0, True)
+        self.view_test_crc(mapfile, 0)
 
         with test_data_map(data_area=(350000,7000000,400000,7030000)) as map:
             mapfile = map.filename
@@ -429,7 +429,7 @@ class Test(unittest.TestCase):
                                   text_pen="rt1", text=(0.25, 15),
                                   top=gxmap.TOP_IN)
 
-        self.view_test_crc(mapfile, 0, True)
+        self.view_test_crc(mapfile, 0)
 
         with test_data_map(data_area=(350000,7000000,400000,7030000)) as map:
             mapfile = map.filename
@@ -438,7 +438,7 @@ class Test(unittest.TestCase):
                                   grid_pen="bt250",
                                   text_pen="kt1", text=(0.18, 15))
 
-        self.view_test_crc(mapfile, 0, True)
+        self.view_test_crc(mapfile, 0)
 
         with test_data_map(data_area=(350000,7000000,400000,7030000)) as map:
             mapfile = map.filename
@@ -453,7 +453,7 @@ class Test(unittest.TestCase):
                                   top=gxmap.TOP_IN,
                                   text=(0.2, 0))
 
-        self.view_test_crc(mapfile, 0, True)
+        self.view_test_crc(mapfile, 0)
 
 
         

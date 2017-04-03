@@ -81,6 +81,15 @@ GROUP_APPEND = 1
 VIEW_BASE = 0
 VIEW_DATA = 1
 
+class Line_def:
+    def __init__(self,
+                 line_colour='k',
+                 fill_colour=None,
+                 thickness=100):
+        self._line_colour = line_colour
+        self._fill_colour = fill_colour
+        self._thickness = thickness
+
 def map_file_name(filename):
     """
     Return a fully resolved map file path using the filename, with .map extyension
@@ -1175,54 +1184,6 @@ class _GXmapplot:
         th = self._text_def[0]
         return "{},{},{},{},\"{}\"".format(th, th, th, self.text_def[1], f)
 
-    def _add_att(self, att):
-        self.command('     {}\n'.format(att))
-
-    def _define_named_attribute(self, name=None):
-        def datt(name):
-            self.command("DATT {}={},{},{}".format(name,
-                                                   self._pen_def,
-                                                   self._a_line_def(),
-                                                   self._a_text()))
-        if name is not None :
-            datt(name)
-            return name
-        elif self._att == _DEF_ATT:
-            datt(self._att)
-        return self._att
-
-    def _define_default_attribute(self, default):
-        if self._att == _DEF_ATT:
-            self._define_named_attribute(default)
-        return default
-
-    @_attrib
-    def define_named_attribute(self, name='_'):
-        """
-        Create a named set of drawing attributes.
-
-        :param name:    attribute set name, default is the default attribute '_'
-
-        .. versionadded:: 9.2
-        """
-        return self._define_named_attribute(name)
-
-    def refp(self, ref_point):
-        """
-        Define the movable reference point (11) location.
-
-        :param ref_point: (refp, x_off, y_off)
-
-        The moveaple reference point is point 11.  This can be defined relative to any of
-        the map reference points or reference point 0.  If defined relative to reference
-        point 0 then offsets use the data coordinate system units.
-
-        .. versionadded:: 9.2
-        """
-
-        self._refp = ref_point
-        self.command("REFP {},{}".format(self._refp[0], self._refp[1]))
-
     def command(self, command):
         """
         Add MAPPLOT commands to the command list.  See the MAPPLOT reference in the
@@ -1237,7 +1198,26 @@ class _GXmapplot:
         if command and command[-1] != '\n':
             self._maplfile.write('\n')
 
-    @_attrib
+
+    """
+    def define_named_attribute(self, name='_',
+                               line_def=('kt100', gxv.LINE_SOLID, 0.5),
+                               text_def=('kt100', 0.25, 0)):
+        
+        Create a named set of drawing attributes.
+
+        :param name:    attribute set name, default is the default attribute '_'
+
+        .. versionadded:: 9.2
+       
+
+        self.command("DATT {}={},{},{}".format(name,
+                                               pen_def,
+                                               line_def,
+                                               text_def))
+                                               
+    """
+
     def start_group(self, name, mode=GROUP_NEW, view=VIEW_BASE):
         """
         Start a view group, or append to an existing group.  Graphic entities can be organized

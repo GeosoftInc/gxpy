@@ -427,6 +427,65 @@ class Test(unittest.TestCase):
 
         self.view_crc(mapfile, 0)
 
+    def test_text_definition(self):
+        self.start(gsys.func_name())
+
+        t = gxv.Text_def()
+        self.assertEqual(t.slant, 0)
+        self.assertEqual(t.height, 2.5)
+        self.assertEqual(t.weight, gxv.FONT_WEIGHT_MEDIUM)
+        self.assertEqual(t.font, 'DEFAULT')
+        t.font="Arial"
+        self.assertEqual(t.font, 'Arial')
+        self.assertEqual(t.mapplot_text, '2.5,,,0,Arial(TT)')
+        t.font = 'sr.gfn'
+        self.assertEqual(t.mapplot_text, '2.5,,,0,sr')
+        t.font = ''
+        self.assertEqual(t.mapplot_text, '2.5,,,0,DEFAULT')
+        t.italics = True
+        self.assertTrue(t.italics)
+        self.assertEqual(t.slant, 15)
+        t.italics = 0
+        self.assertFalse(t.italics)
+        self.assertEqual(t.slant, 0)
+
+        t.weight = gxv.FONT_WEIGHT_ULTRALIGHT
+        self.assertAlmostEqual(t.thickness, 0.05208333333333333)
+        t.weight = gxv.FONT_WEIGHT_BOLD
+        self.assertAlmostEqual(t.thickness, 0.20833333333333331)
+        thick = t.thickness
+        t.weight = gxv.FONT_WEIGHT_XXBOLD
+        self.assertAlmostEqual(t.thickness, 0.625)
+        t.thickness = thick
+        self.assertEqual(t.weight, gxv.FONT_WEIGHT_BOLD)
+        t.height = 10.
+        self.assertEqual(t.weight, gxv.FONT_WEIGHT_BOLD)
+        self.assertAlmostEqual(t.thickness, 0.8333333333333333)
+        t.thickness = t.thickness
+        self.assertEqual(t.weight, gxv.FONT_WEIGHT_BOLD)
+
+    def test_colours(self):
+        self.start(gsys.func_name())
+
+        c = gxv.Color((150, 200, 500))
+        self.assertEqual(c.rgb, (150, 200, 255))
+        c = gxv.Color((150, 200, 500), model=gxv.C_CMY)
+        self.assertEqual(c.cmy, (150, 200, 255))
+
+        c = gxv.Color('r255g128b56')
+        self.assertEqual(c.rgb, (255, 128, 56))
+        self.assertEqual(c.cmy, (0, 127, 199))
+        c.rgb = (64, 32, 16)
+        self.assertEqual(c.rgb, (64, 32, 16))
+        c.cmy = (100, 200, 300)
+        self.assertEqual(c.cmy, (100, 200, 255))
+
+        c = gxv.Color((0,127,64), gxv.C_HSV)
+        self.assertEqual(c.rgb, (191, 96, 96))
+
+        c = gxv.Color(gxv.C_GREEN)
+        self.assertEqual(c.rgb, (0, 255, 0))
+
 if __name__ == '__main__':
 
     unittest.main()
