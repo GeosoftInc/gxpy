@@ -13,7 +13,7 @@ import geosoft.gxpy.coordinate_system as gxcs
 import geosoft.gxpy.viewer as gxvwr
 
 
-def new_test_map(mapname=None, rescale=1.0):
+def new_test_data_map(mapname=None, rescale=1.0):
 
     if mapname is None:
         mapname = os.path.join(gx.GXpy().temp_folder(), 'test')
@@ -65,6 +65,19 @@ def new_test_map(mapname=None, rescale=1.0):
             view.xy_poly_line(pp, close=True)
 
         return gmap.filename
+
+def test_data_map(name=None, data_area=(1000,0,11000,5000)):
+
+    if name is None:
+        name = os.path.join(gx.GXpy().temp_folder(), "test")
+    gxmap.delete_files(name)
+    cs = gxcs.GXcs("WGS 84 / UTM zone 15N")
+    return gxmap.GXmap.new(filename=name,
+                           data_area=data_area,
+                           cs=cs,
+                           media="A4",
+                           margins=(1.5, 3, 1.5, 1),
+                           inside_margin=0.5)
 
 class Test(unittest.TestCase):
 
@@ -135,7 +148,7 @@ class Test(unittest.TestCase):
     def test_lists(self):
         self.start(gsys.func_name())
 
-        mapname = new_test_map()
+        mapname = new_test_data_map()
         with gxmap.GXmap.open(mapname) as gmap:
 
             views = gmap.view_list(gxmap.LIST_ALL)
@@ -365,7 +378,85 @@ class Test(unittest.TestCase):
             map.surround(gap=0.1, outer_pen='rt500')
         self.view_test_crc(mapfile, 201790397)
 
+    def test_annotate_xy(self):
+        self.start(gsys.func_name())
 
+        with test_data_map() as map:
+            mapfile = map.filename
+            map.annotate_data_xy(x_sep=1500, text_pen="kt10")
+
+        self.view_test_crc(mapfile, 0, True)
+
+        with test_data_map() as map:
+            mapfile = map.filename
+            map.annotate_data_xy(x_sep=1500, grid=gxmap.GRID_DOTTED, offset=0.5)
+
+        self.view_test_crc(mapfile, 0)
+
+        with test_data_map() as map:
+            mapfile = map.filename
+            map.annotate_data_xy(x_sep=1500, tick=0.1, grid=gxmap.GRID_CROSSES, grid_pen="bt100")
+
+        self.view_test_crc(mapfile, 0)
+
+        with test_data_map() as map:
+            mapfile = map.filename
+            map.annotate_data_xy(x_sep=1500, tick=0.1, grid=gxmap.GRID_LINES, grid_pen="bt100")
+
+        self.view_test_crc(mapfile, 0)
+
+    def test_annotate_ll(self):
+        self.start(gsys.func_name())
+
+        with test_data_map(data_area=(350000,7000000,400000,7030000)) as map:
+            mapfile = map.filename
+            map.annotate_data_xy()
+            map.annotate_data_ll()
+
+        self.view_test_crc(mapfile, 0, True)
+
+        with test_data_map(data_area=(350000,7000000,400000,7030000)) as map:
+            mapfile = map.filename
+            map.annotate_data_ll(grid=gxmap.GRID_LINES,
+                                  grid_pen="bt500")
+
+        self.view_test_crc(mapfile, 0, True)
+
+        with test_data_map(data_area=(350000,7000000,400000,7030000)) as map:
+            mapfile = map.filename
+            map.annotate_data_ll(grid=gxmap.GRID_LINES,
+                                  grid_pen="bt250",
+                                  text_pen="rt1", text=(0.25, 15),
+                                  top=gxmap.TOP_IN)
+
+        self.view_test_crc(mapfile, 0, True)
+
+        with test_data_map(data_area=(350000,7000000,400000,7030000)) as map:
+            mapfile = map.filename
+            map.annotate_data_xy(tick=0.1, grid=gxmap.GRID_LINES, text_pen="kt10", grid_pen="kt100")
+            map.annotate_data_ll(grid=gxmap.GRID_LINES,
+                                  grid_pen="bt250",
+                                  text_pen="kt1", text=(0.18, 15))
+
+        self.view_test_crc(mapfile, 0, True)
+
+        with test_data_map(data_area=(350000,7000000,400000,7030000)) as map:
+            mapfile = map.filename
+            map.annotate_data_ll(grid=gxmap.GRID_LINES,
+                                  grid_pen="bt250",
+                                  text_pen="kt1",
+                                  top=gxmap.TOP_IN,
+                                  text=(0.15, 15))
+            map.annotate_data_xy(tick=0.1, grid=gxmap.GRID_LINES,
+                                  grid_pen="kt100",
+                                  text_pen="kt20",
+                                  top=gxmap.TOP_IN,
+                                  text=(0.2, 0))
+
+        self.view_test_crc(mapfile, 0, True)
+
+
+        
 if __name__ == '__main__':
 
     unittest.main()

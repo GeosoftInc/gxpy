@@ -13,9 +13,6 @@ __version__ = geosoft.__version__
 def _t(s):
     return s
 
-RECTANGLE_EXTENT_BASE = -1
-RECTANGLE_EXTENT_DATA = -2
-
 TOP_IN = 1
 TOP_OUT = -1
 

@@ -104,65 +104,6 @@ class Test(unittest.TestCase):
 
         self.view_crc(mapfile, 0)
 
-    def test_annotate_ll(self):
-        self.start(gsys.func_name())
-
-        with test_map(data_area=(350000,7000000,400000,7030000)) as map:
-            mapfile = map.filename
-            with gxmapl.GXmapplot(map, font='Arial') as mapl:
-                mapl.annotate_data_xy()
-                mapl.annotate_data_ll()
-
-        self.view_crc(mapfile, 0)
-
-        with test_map(data_area=(350000,7000000,400000,7030000)) as map:
-            mapfile = map.filename
-            with gxmapl.GXmapplot(map, font='Arial') as mapl:
-                mapl.define_named_attribute(font="Arial")
-                mapl.annotate_data_ll(grid=gxmapl.GRID_LINES,
-                                      grid_pen="bt500")
-
-        self.view_crc(mapfile, 0)
-
-        with test_map(data_area=(350000,7000000,400000,7030000)) as map:
-            mapfile = map.filename
-            with gxmapl.GXmapplot(map, font='Arial') as mapl:
-                mapl.define_named_attribute(font="Arial", pen_def='kt50')
-                mapl.annotate_data_ll(grid=gxmapl.GRID_LINES,
-                                      grid_pen="bt250",
-                                      pen_def="rt1", text_def=(0.25, 15),
-                                      top=gxmapl.TOP_IN)
-
-        self.view_crc(mapfile, 0)
-
-        with test_map(data_area=(350000,7000000,400000,7030000)) as map:
-            mapfile = map.filename
-            with gxmapl.GXmapplot(map, font='Arial') as mapl:
-                mapl.define_named_attribute(font="Arial", pen_def='kt5', text_def=(0.2, 0))
-                mapl.annotate_data_xy(tick=0.1, grid=gxmapl.GRID_LINES, pen_def="kt10", grid_pen="kt100")
-                mapl.annotate_data_ll(grid=gxmapl.GRID_LINES,
-                                      grid_pen="bt250",
-                                      pen_def="kt1", text_def=(0.18, 15))
-
-        self.view_crc(mapfile, 0)
-
-        with test_map(data_area=(350000,7000000,400000,7030000)) as map:
-            mapfile = map.filename
-            with gxmapl.GXmapplot(map, font='Arial') as mapl:
-                mapl.define_named_attribute(font="Arial", pen_def='kt5', text_def=(0.2, 0))
-                mapl.annotate_data_ll(grid=gxmapl.GRID_LINES,
-                                      grid_pen="bt250",
-                                      pen_def="kt1",
-                                      top=gxmapl.TOP_IN,
-                                      text_def=(0.15, 15))
-                mapl.annotate_data_xy(tick=0.1, grid=gxmapl.GRID_LINES,
-                                      grid_pen="kt100",
-                                      pen_def="kt20",
-                                      top=gxmapl.TOP_IN,
-                                      text_def=(0.2, 0))
-
-        self.view_crc(mapfile, 0)
-
     def test_ll_no_projection(self):
         self.start(gsys.func_name())
 
