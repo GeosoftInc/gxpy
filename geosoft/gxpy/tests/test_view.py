@@ -13,7 +13,6 @@ import geosoft.gxpy.viewer as gxvwr
 import geosoft.gxpy.coordinate_system as gxcs
 import geosoft.gxpy.grd as gxgrd
 import geosoft.gxpy.agg as gxagg
-import geosoft.gxpy.mapplot as gxmapl
 
 
 def rect_line(view, size=100):
@@ -421,13 +420,12 @@ class Test(unittest.TestCase):
             with gxv.GXview(gmap, "base") as view:
                 view.xy_rectangle(view.extent, pen={'line_thick': 0.1, 'line_color': 'B'})
 
-            with gxmapl.GXmapplot(gmap, font='Arial', pen_def='kt50') as mapl:
-                mapl.annotate_data_ll(grid=gxmapl.GRID_LINES,
-                                      grid_pen="bt250",
-                                      pen_def="kt1", text_def=(0.25, 15),
-                                      top=gxmapl.TOP_IN)
+            gmap.annotate_data_ll(grid=gxmap.GRID_LINES,
+                                  grid_pen="bt250",
+                                  text_pen="kt1", text=(0.25, 15),
+                                  top=gxmap.TOP_IN)
 
-        #self.view_crc(mapfile, 1939928483)
+        self.view_crc(mapfile, 0)
 
 if __name__ == '__main__':
 
