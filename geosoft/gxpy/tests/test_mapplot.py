@@ -8,7 +8,7 @@ import geosoft.gxpy.mapplot as gxmapl
 import geosoft.gxpy.coordinate_system as gxcs
 import geosoft.gxpy.view as gxv
 
-from geosoft.gxpy.tests import TestWithCRC
+from geosoft.gxpy.tests import GXPYTest
 
 
 def test_map(name=None, data_area=(1000,0,11000,5000)):
@@ -25,15 +25,15 @@ def test_map(name=None, data_area=(1000,0,11000,5000)):
                            inside_margin=0.5)
 
 
-class Test(unittest.TestCase, TestWithCRC):
+class Test(unittest.TestCase, GXPYTest):
 
     @classmethod
     def setUpClass(cls):
-        TestWithCRC.setUpClass(__file__)
+        GXPYTest.setUpClass(cls, __file__)
 
     @classmethod
     def tearDownClass(cls):
-        TestWithCRC.tearDownClass()
+        GXPYTest.tearDownClass(cls)
 
     @classmethod
     def start(cls, test, test_name):

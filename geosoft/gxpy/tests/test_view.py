@@ -3,7 +3,6 @@ import os
 import numpy as np
 
 import geosoft
-import geosoft.gxpy.gx as gx
 import geosoft.gxpy.system as gsys
 import geosoft.gxpy.map as gxmap
 import geosoft.gxpy.geometry as gxgm
@@ -15,6 +14,7 @@ import geosoft.gxpy.grd as gxgrd
 import geosoft.gxpy.agg as gxagg
 import geosoft.gxpy.mapplot as gxmapl
 
+from geosoft.gxpy.tests import GXPYTest
 
 def rect_line(view, size=100):
     view.xy_rectangle(gxgm.Point2((0, 0, size, size)), pen={'line_thick': 1})
@@ -63,18 +63,16 @@ def draw_stuff(view, size = 1.0):
     view.xy_poly_line(pp, close=True)
 
 
-class Test(unittest.TestCase):
-
+class Test(unittest.TestCase, GXPYTest):
     @classmethod
     def setUpClass(cls):
-        cls.gx = gx.GXpy(log=print, parent_window=-1)
-        os.chdir(os.path.dirname(os.path.realpath(__file__)))
-        pass
+        GXPYTest.setUpClass(cls, __file__)
 
     @classmethod
     def tearDownClass(cls):
-        pass
-    
+        GXPYTest.tearDownClass(cls)
+
+
     @classmethod
     def start(cls,test):
         cls.gx.log("*** {} > {}".format(os.path.split(__file__)[1], test))
@@ -345,7 +343,7 @@ class Test(unittest.TestCase):
                 with gxagg.GXagg(grid_file) as agg:
                     view.aggregate(agg)
 
-        self.view_crc(mapfile, 1139234781)
+        self.view_crc(mapfile, 3316556354)
 
     def test_zone_grid(self):
         self.start(gsys.func_name())
@@ -369,14 +367,14 @@ class Test(unittest.TestCase):
             ex = grd.extent_2d()
         map_file = os.path.join(self.gx.temp_folder(), "test_agg")
 
-        test_zone(gxagg.ZONE_LINEAR, 3200671014, shade=True)
-        test_zone(gxagg.ZONE_EQUALAREA, 1850146409)
-        test_zone(gxagg.ZONE_DEFAULT, 1850146409)
-        test_zone(gxagg.ZONE_LAST, 1850146409)
-        test_zone(gxagg.ZONE_LINEAR, 3722308507)
-        test_zone(gxagg.ZONE_NORMAL, 515656061)
-        test_zone(gxagg.ZONE_SHADE, 523259810)
-        test_zone(gxagg.ZONE_LOGLINEAR, 1247792183)
+        test_zone(gxagg.ZONE_LINEAR, 4191553255, shade=True)
+        test_zone(gxagg.ZONE_EQUALAREA, 444409506)
+        test_zone(gxagg.ZONE_DEFAULT, 444409506)
+        test_zone(gxagg.ZONE_LAST, 444409506)
+        test_zone(gxagg.ZONE_LINEAR, 3638253686)
+        test_zone(gxagg.ZONE_NORMAL, 770435956)
+        test_zone(gxagg.ZONE_SHADE, 2708910885)
+        test_zone(gxagg.ZONE_LOGLINEAR, 2567537973)
 
     def test_color_bar(self):
         self.start(gsys.func_name())

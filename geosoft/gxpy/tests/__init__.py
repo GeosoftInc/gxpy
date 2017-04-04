@@ -11,21 +11,21 @@ import geosoft.gxpy.utility as gxu
 global_update_result = False
 
 
-class TestWithCRC(object):
+class GXPYTest(object):
     def __init__(self):
         self._result_dir = None
 
     @classmethod
-    def setUpClass(cls, test_py_file):
+    def setUpClass(cls, sub_class, test_py_file):
         os.environ['GEOSOFT_TEST_MODE'] = '1'
         os.environ['GEOSOFT_TESTSYSTEM_MODE'] = '1'
-        cls.gx = gx.GXpy(log=print, parent_window=-1, max_warnings=8)
+        sub_class.gx = gx.GXpy(log=print, parent_window=-1, max_warnings=8)
         os.chdir(os.path.dirname(os.path.realpath(test_py_file)))
         pass
 
     @classmethod
-    def tearDownClass(cls):
-        del cls.gx
+    def tearDownClass(cls, sub_class):
+        del sub_class.gx
 
     @classmethod
     def _map_to_xml_and_bmp(cls, map_file, xml_file, bmp_file, pix_width):
@@ -84,7 +84,7 @@ class TestWithCRC(object):
         file_part = os.path.split(map_file)[1]
         bmp_result_file = os.path.join(result_dir, "{}.bmp".format(file_part))
         xml_result_file = os.path.join(result_dir, "{}.xml".format(file_part))
-        TestWithCRC._map_to_xml_and_bmp(map_file, xml_result_file, bmp_result_file, pix_width)
+        GXPYTest._map_to_xml_and_bmp(map_file, xml_result_file, bmp_result_file, pix_width)
 
         bmp_master_file = os.path.join(master_dir, "{}.bmp".format(file_part))
         xml_master_file = os.path.join(master_dir, "{}.xml".format(file_part))
@@ -99,10 +99,10 @@ class TestWithCRC(object):
                     xml_master = xml_result.replace(xml_result_part, xml_master_part)
                     shutil.copyfile(xml_result, xml_master)
         else:
-            report = TestWithCRC.report_mismatch_files(bmp_result_file, bmp_master_file)
+            report = GXPYTest.report_mismatch_files(bmp_result_file, bmp_master_file)
             for xml_result in xml_result_files:
                 if not xml_result.endswith('.catalog.xml'):
                     xml_master = xml_result.replace(xml_result_part, xml_master_part)
-                    report += TestWithCRC.report_mismatch_files(xml_result, xml_master)
+                    report += GXPYTest.report_mismatch_files(xml_result, xml_master)
             if len(report) > 0:
                 self.fail(report)

@@ -777,9 +777,10 @@ def year_from_datetime(dt):
     .. versionadded:: 9.2
     """
 
-    y_start = datetime.datetime(dt.year, 1, 1)
-    y_end = y_start.replace(year=dt.year+1)
-    return dt.year + (dt - y_start)/(y_end - y_start)
+    naive_dt = dt.replace(tzinfo=None)
+    y_start = datetime.datetime(naive_dt.year, 1, 1)
+    y_end = y_start.replace(year=naive_dt.year+1)
+    return dt.year + (naive_dt - y_start)/(y_end - y_start)
 
 def datetime_from_year(year):
     """

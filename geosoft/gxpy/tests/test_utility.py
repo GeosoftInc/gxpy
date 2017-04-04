@@ -2,28 +2,28 @@ import unittest
 import numpy as np
 import os
 import datetime
-from distutils.version import StrictVersion
+from datetime import timezone, datetime
 
 import geosoft
 import geosoft.gxapi as gxapi
 import geosoft.gxpy.system as gsys
-import geosoft.gxpy.gx as gx
 import geosoft.gxpy.utility as gxu
 
-class Test(unittest.TestCase):
+from geosoft.gxpy.tests import GXPYTest
 
+
+class Test(unittest.TestCase, GXPYTest):
     @classmethod
     def setUpClass(cls):
-        global logfile
-        cls.gxc = gx.GXpy(parent_window=0, log=print)
+        GXPYTest.setUpClass(cls, __file__)
 
     @classmethod
     def tearDownClass(cls):
-        pass
-    
+        GXPYTest.tearDownClass(cls)
+
     @classmethod
     def start(cls,test):
-        cls.gxc.log("*** {} > {}".format(os.path.split(__file__)[1], test))
+        cls.gx.log("*** {} > {}".format(os.path.split(__file__)[1], test))
 
     def test_misc(self):
         self.start(gsys.func_name())
@@ -335,7 +335,9 @@ class Test(unittest.TestCase):
         self.start(gsys.func_name())
 
         geo_utc = gxu.datetime_from_year(gxapi.GXSYS.utc_date())
-        py_utc = datetime.datetime.utcnow()
+
+        # Due to testing environment variables the above would always be 2003-01-01
+        py_utc = datetime(2003, 1, 1, tzinfo=timezone.utc)
 
         self.assertEqual(geo_utc.year, py_utc.year)
         self.assertEqual(geo_utc.month, py_utc.month)

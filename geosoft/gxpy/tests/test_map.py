@@ -11,7 +11,7 @@ import geosoft.gxpy.view as gxv
 import geosoft.gxpy.geometry as gxgm
 import geosoft.gxpy.coordinate_system as gxcs
 
-from geosoft.gxpy.tests import TestWithCRC
+from geosoft.gxpy.tests import GXPYTest
 
 def new_test_map(mapname=None, rescale=1.0):
     if mapname is None:
@@ -66,14 +66,14 @@ def new_test_map(mapname=None, rescale=1.0):
         return gmap.filename
 
 
-class Test(unittest.TestCase, TestWithCRC):
+class Test(unittest.TestCase, GXPYTest):
     @classmethod
     def setUpClass(cls):
-        TestWithCRC.setUpClass(__file__)
+        GXPYTest.setUpClass(cls, __file__)
 
     @classmethod
     def tearDownClass(cls):
-        TestWithCRC.tearDownClass()
+        GXPYTest.tearDownClass(cls)
 
     @classmethod
     def start(cls, test, test_name):
