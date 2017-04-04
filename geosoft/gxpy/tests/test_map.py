@@ -234,6 +234,8 @@ class Test(unittest.TestCase, GXPYTest):
             map.copy_view('Data', 'bogus', overwrite=True)
             self.assertEqual(map.current_data_view, 'Bogus')
 
+    @unittest.skip('Skipping due to stability issues. Seems like view pen mechanism could result in order swaps for '
+                   'attribute setting (iterating dict?)')  # TODO
     def test_media(self):
         Test.start(self, gsys.func_name())
 
