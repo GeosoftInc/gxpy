@@ -36,7 +36,7 @@ def map(map_file_name, title=None):
             title = gmap.filename
         gxapi.GXGUI.simple_map_dialog(gmap.gxmap, title, "")
 
-def v3d(map_file_name, title = None):
+def v3d(file_name, title = None):
     """
     Open 3D view in a modal 3D viewer.
     :param file_name:   3D View file name (.geosoft_3dv)

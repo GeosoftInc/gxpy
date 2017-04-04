@@ -61,7 +61,8 @@ def map_file_name(filename):
 
     .. versionadded:: 9.2
     """
-    if os.path.splitext(filename)[1].lower() != '.map':
+    ext = os.path.splitext(filename)[1].lower()
+    if ext != '.map' and ext != '.geosoft_3dv':
         filename += '.map'
     return os.path.abspath(filename)
 

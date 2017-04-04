@@ -267,12 +267,8 @@ class Test(unittest.TestCase):
                         view_base.start_group('Surround')
                         view_base.xy_rectangle(((0, 0), (280, 260)))
                     gmap.create_linked_3d_view(view_3d, area=(10,10,270,250))
-
-
-        #TODO Add CRCs
-        #gxvwr.map(testmap)
-        #gxvwr.v3d(mapfile)
-
+        self.view_crc(test3dv, 4053418295)
+        self.view_crc(testmap, 1428035791)
 
 
     def test_cs(self):
