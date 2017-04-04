@@ -4,10 +4,10 @@
 		<dataset version="1">
 			<title>test_mediascale_800</title>
 			<file_format>Geosoft Map</file_format>
-			<data_created_by>Jacques Beaurain</data_created_by>
-			<data_creation_date>2017-04-04</data_creation_date>
-			<metadata_created_by>Jacques Beaurain</metadata_created_by>
-			<metadata_creation_date>2017-04-04</metadata_creation_date>
+			<data_created_by>TestingSystem\Tester</data_created_by>
+			<data_creation_date>2003-01-01</data_creation_date>
+			<metadata_created_by>TestingSystem\Tester</metadata_created_by>
+			<metadata_creation_date>2003-01-01</metadata_creation_date>
 		</dataset>
 	</geosoft>
 	<gmd:identificationInfo>
@@ -20,7 +20,7 @@
 					<gmd:date>
 						<gmd:CI_Date>
 							<gmd:date>
-								<gco:Date>2017-4-4</gco:Date>
+								<gco:Date>2003-1-1</gco:Date>
 							</gmd:date>
 						</gmd:CI_Date>
 					</gmd:date>
@@ -36,7 +36,7 @@
 			<gmd:pointOfContact>
 				<gmd:CI_ResponsibleParty>
 					<gmd:individualName>
-						<gco:CharacterString>Jacques Beaurain</gco:CharacterString>
+						<gco:CharacterString>TestingSystem\Tester</gco:CharacterString>
 					</gmd:individualName>
 				</gmd:CI_ResponsibleParty>
 			</gmd:pointOfContact>
@@ -45,11 +45,11 @@
 	<gmd:contact>
 		<gmd:CI_ResponsibleParty>
 			<gmd:individualName>
-				<gco:CharacterString>Jacques Beaurain</gco:CharacterString>
+				<gco:CharacterString>TestingSystem\Tester</gco:CharacterString>
 			</gmd:individualName>
 		</gmd:CI_ResponsibleParty>
 	</gmd:contact>
 	<gmd:dateStamp>
-		<gco:Date>2017-4-4</gco:Date>
+		<gco:Date>2003-1-1</gco:Date>
 	</gmd:dateStamp>
 </gmd:MD_Metadata>

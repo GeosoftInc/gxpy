@@ -69,6 +69,8 @@ def new_test_map(mapname=None, rescale=1.0):
 class Test(unittest.TestCase, TestWithCRC):
     @classmethod
     def setUpClass(cls):
+        os.environ['GEOSOFT_TEST_MODE'] = '1'
+        os.environ['GEOSOFT_TESTSYSTEM_MODE'] = '1'
         cls.gx = gx.GXpy(log=print, parent_window=-1, max_warnings=8)
         os.chdir(os.path.dirname(os.path.realpath(__file__)))
         pass

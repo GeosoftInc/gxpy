@@ -62,6 +62,7 @@ class Test(unittest.TestCase, TestWithCRC):
 
         self.view_crc(mapfile)
 
+    @unittest.skip('This test does not produce stable results')  # TODO
     def test_text(self):
         Test.start(self, gsys.func_name())
 
