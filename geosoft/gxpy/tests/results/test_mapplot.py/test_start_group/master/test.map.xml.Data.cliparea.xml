@@ -1,0 +1,26 @@
+<cliparea>
+   <Polygon Inclusive="True">
+      <Points>
+         <Point>
+            <Item name="X" value="348758.685"/>
+            <Item name="Y" value="6998758.685"/>
+         </Point>
+         <Point>
+            <Item name="X" value="348758.685"/>
+            <Item name="Y" value="7031241.315"/>
+         </Point>
+         <Point>
+            <Item name="X" value="401241.315"/>
+            <Item name="Y" value="7031241.315"/>
+         </Point>
+         <Point>
+            <Item name="X" value="401241.315"/>
+            <Item name="Y" value="6998758.685"/>
+         </Point>
+         <Point>
+            <Item name="X" value="348758.685"/>
+            <Item name="Y" value="6998758.685"/>
+         </Point>
+      </Points>
+   </Polygon>
+</cliparea>

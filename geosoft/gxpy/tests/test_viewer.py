@@ -14,7 +14,6 @@ import geosoft.gxpy.viewer as gxvwr
 ###############################################################################################
 
 def sample_map(gxp, mapname='test', rescale=1.0, locate=None):
-
     with gxmap.GXmap.new(mapname, overwrite=True) as gmap:
 
         """

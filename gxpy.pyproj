@@ -818,6 +818,7 @@
     <Compile Include="geosoft\gxpy\om.py" />
     <Compile Include="geosoft\gxpy\system.py" />
     <Compile Include="geosoft\gxpy\tests\script_gx.py" />
+    <Compile Include="geosoft\gxpy\tests\test_agg.py" />
     <Compile Include="geosoft\gxpy\tests\test_coordinate_system.py" />
     <Compile Include="geosoft\gxpy\tests\test_dataframe.py" />
     <Compile Include="geosoft\gxpy\tests\test_gdb.py" />
@@ -826,6 +827,7 @@
     <Compile Include="geosoft\gxpy\tests\test_gx.py" />
     <Compile Include="geosoft\gxpy\tests\test_ipj.py" />
     <Compile Include="geosoft\gxpy\tests\test_map.py" />
+    <Compile Include="geosoft\gxpy\tests\test_mapplot.py" />
     <Compile Include="geosoft\gxpy\tests\test_om.py" />
     <Compile Include="geosoft\gxpy\tests\test_system.py" />
     <Compile Include="geosoft\gxpy\tests\test_utility.py" />

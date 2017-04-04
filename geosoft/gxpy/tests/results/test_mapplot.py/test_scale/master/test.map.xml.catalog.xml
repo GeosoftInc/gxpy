@@ -1,0 +1,17 @@
+<catalog>
+   <Result file="E:/GithubRepos/gxpy/geosoft/gxpy/tests\results\test_mapplot.py\test_scale\result\test.map.xml.header.xml" category="Map" type="header"/>
+   <Result file="E:/GithubRepos/gxpy/geosoft/gxpy/tests\results\test_mapplot.py\test_scale\result\test.map.xml.meta.xml" category="Map" type="meta"/>
+   <Result file="E:/GithubRepos/gxpy/geosoft/gxpy/tests\results\test_mapplot.py\test_scale\result\test.map.xml.metadata.xml" category="Map" type="metadata"/>
+   <Result file="E:/GithubRepos/gxpy/geosoft/gxpy/tests\results\test_mapplot.py\test_scale\result\test.map.xml.Base.header.xml" category="View" type="header"/>
+   <Result file="E:/GithubRepos/gxpy/geosoft/gxpy/tests\results\test_mapplot.py\test_scale\result\test.map.xml.Base.viewprojection.xml" category="View" type="ipj"/>
+   <Result file="E:/GithubRepos/gxpy/geosoft/gxpy/tests\results\test_mapplot.py\test_scale\result\test.map.xml.Base.userprojection.xml" category="View" type="ipj"/>
+   <Result file="E:/GithubRepos/gxpy/geosoft/gxpy/tests\results\test_mapplot.py\test_scale\result\test.map.xml.Base.cliparea.xml" category="View" type="cliparea"/>
+   <Result file="E:/GithubRepos/gxpy/geosoft/gxpy/tests\results\test_mapplot.py\test_scale\result\test.map.xml.Base.MAPL_Base.header.xml" category="Group" type="header"/>
+   <Result file="E:/GithubRepos/gxpy/geosoft/gxpy/tests\results\test_mapplot.py\test_scale\result\test.map.xml.Base.MAPL_Base.data.xml" category="Group" type="data"/>
+   <Result file="E:/GithubRepos/gxpy/geosoft/gxpy/tests\results\test_mapplot.py\test_scale\result\test.map.xml.Data.header.xml" category="View" type="header"/>
+   <Result file="E:/GithubRepos/gxpy/geosoft/gxpy/tests\results\test_mapplot.py\test_scale\result\test.map.xml.Data.viewprojection.xml" category="View" type="ipj"/>
+   <Result file="E:/GithubRepos/gxpy/geosoft/gxpy/tests\results\test_mapplot.py\test_scale\result\test.map.xml.Data.userprojection.xml" category="View" type="ipj"/>
+   <Result file="E:/GithubRepos/gxpy/geosoft/gxpy/tests\results\test_mapplot.py\test_scale\result\test.map.xml.Data.cliparea.xml" category="View" type="cliparea"/>
+   <Result file="E:/GithubRepos/gxpy/geosoft/gxpy/tests\results\test_mapplot.py\test_scale\result\test.map.xml.Data.MAPL_Data.header.xml" category="Group" type="header"/>
+   <Result file="E:/GithubRepos/gxpy/geosoft/gxpy/tests\results\test_mapplot.py\test_scale\result\test.map.xml.Data.MAPL_Data.data.xml" category="Group" type="data"/>
+</catalog>

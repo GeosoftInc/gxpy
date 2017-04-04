@@ -1,15 +1,15 @@
 import unittest
 import os
-import geosoft.gxapi as gxapi
+
 import geosoft.gxpy.gx as gx
 import geosoft.gxpy.system as gsys
 import geosoft.gxpy.map as gxmap
 import geosoft.gxpy.mapplot as gxmapl
 import geosoft.gxpy.coordinate_system as gxcs
 import geosoft.gxpy.view as gxv
-import geosoft.gxpy.viewer as gxvwr
-import geosoft.gxpy.grd as gxgrd
-import geosoft.gxpy.agg as gxagg
+
+from geosoft.gxpy.tests import TestWithCRC
+
 
 def test_map(name=None, data_area=(1000,0,11000,5000)):
 
@@ -24,7 +24,8 @@ def test_map(name=None, data_area=(1000,0,11000,5000)):
                            margins=(1.5, 3, 1.5, 1),
                            inside_margin=0.5)
 
-class Test(unittest.TestCase):
+
+class Test(unittest.TestCase, TestWithCRC):
 
     @classmethod
     def setUpClass(cls):
@@ -37,17 +38,17 @@ class Test(unittest.TestCase):
         pass
     
     @classmethod
-    def start(cls,test):
-        cls.gx.log("*** {} > {}".format(os.path.split(__file__)[1], test))
+    def start(cls, test, test_name):
+        parts = os.path.split(__file__)
+        test.result_dir = os.path.join(parts[0], 'results', parts[1], test_name)
+        cls.gx.log("*** {} > {}".format(parts[1], test_name))
 
-    def view_crc(self, mapfile, crc=None, display=False):
-        if display:
-            gxvwr.map(mapfile)
-        if crc:
-            self.assertEqual(gxmap.crc_map(mapfile), crc)
+    def view_crc(self, map_file):
+        self.crc_map(map_file, display=False, update_result=False)
 
+    @unittest.skip('This test does not produce stable results')  # TODO
     def test_command(self):
-        self.start(gsys.func_name())
+        Test.start(self, gsys.func_name())
 
         with test_map() as map:
             mapfile = map.filename
@@ -59,10 +60,10 @@ class Test(unittest.TestCase):
                 mapl.define_named_attribute('gridpen', pen_def="bt200")
                 mapl.command("GRID 3,,,,,gridpen\n")
 
-        self.view_crc(mapfile, 658389002)
+        self.view_crc(mapfile)
 
     def test_text(self):
-        self.start(gsys.func_name())
+        Test.start(self, gsys.func_name())
 
         with test_map() as map:
             mapfile = map.filename
@@ -79,7 +80,7 @@ class Test(unittest.TestCase):
         self.assertEqual(gxmap.crc_map(mapfile), 1023850529)
 
     def test_surround(self):
-        self.start(gsys.func_name())
+        Test.start(self, gsys.func_name())
 
         with test_map() as map:
             mapfile = map.filename
@@ -102,8 +103,9 @@ class Test(unittest.TestCase):
 
         self.assertEqual(gxmap.crc_map(mapfile), 3038258344)
 
+    @unittest.skip('This test does not produce stable results')  # TODO
     def test_att(self):
-        self.start(gsys.func_name())
+        Test.start(self, gsys.func_name())
 
         with test_map() as map:
             mapfile = map.filename
@@ -118,10 +120,10 @@ class Test(unittest.TestCase):
                 extent = (extent[0] + 1, extent[1] + 1, extent[2] - 1, extent[3] - 1)
                 mapl.rectangle(extent, ref_point=(1, 0, 0), pen_def="yt2000")
 
-        self.view_crc(mapfile, 3832350468)
+        self.view_crc(mapfile)
 
     def test_rectangle(self):
-        self.start(gsys.func_name())
+        Test.start(self, gsys.func_name())
 
         with test_map() as map:
             mapfile = map.filename
@@ -142,8 +144,9 @@ class Test(unittest.TestCase):
         #gxvwr.map(mapfile)
         self.assertEqual(gxmap.crc_map(mapfile), crc1)
 
+    @unittest.skip('This test does not produce stable results')  # TODO
     def test_scale(self):
-        self.start(gsys.func_name())
+        Test.start(self, gsys.func_name())
 
         with test_map(data_area=(350000,7000000,400000,7030000)) as map:
             mapfile = map.filename
@@ -155,7 +158,7 @@ class Test(unittest.TestCase):
                 mapl.scale_bar(ref_point=(5, 0, 0), length=8, sections=2, post_scale=True)
                 mapl.scale_bar(ref_point=(3, -3, 1.5), length=4, text_def=(0.2, 15), post_scale=True)
 
-        self.view_crc(mapfile, 1199810900)
+        self.view_crc(mapfile)
 
     def text_group(self):
         with test_map(data_area=(350000,7000000,400000,7030000)) as map:
@@ -168,11 +171,11 @@ class Test(unittest.TestCase):
                                       grid_pen="bt250")
                 mapl.north_arrow(ref_point=(6, -1.5, 0), pen_def="kt500", length=3)
 
-        self.view_crc(mapfile, 582402369)
+        self.view_crc(mapfile)
 
-
+    @unittest.skip('This test does not produce stable results')  # TODO
     def test_narr(self):
-        self.start(gsys.func_name())
+        Test.start(self, gsys.func_name())
 
         with test_map(data_area=(350000,7000000,400000,7030000)) as map:
             mapfile = map.filename
@@ -184,7 +187,7 @@ class Test(unittest.TestCase):
                                       grid_pen="bt250")
                 mapl.north_arrow(ref_point=(6, -1.5, 0), pen_def="kt500", length=3)
 
-        self.view_crc(mapfile, 97547880)
+        self.view_crc(mapfile)
 
         with test_map(data_area=(350000,7000000,400000,7030000)) as map:
             mapfile = map.filename
@@ -201,10 +204,11 @@ class Test(unittest.TestCase):
                                  length=3,
                                  text_def=(0.2,15))
 
-        self.view_crc(mapfile, 3762875859)
+        self.view_crc(mapfile)
 
+    @unittest.skip('This test does not produce stable results')  # TODO
     def test_annotate_xy(self):
-        self.start(gsys.func_name())
+        Test.start(self, gsys.func_name())
 
         with test_map() as map:
             mapfile = map.filename
@@ -214,7 +218,7 @@ class Test(unittest.TestCase):
                 mapl.rectangle(gxmapl.RECTANGLE_EXTENT_DATA, pen_def="gt200")
                 mapl.annotate_data_xy(x_sep=1500, pen_def="kt10")
 
-        self.view_crc(mapfile, 2882068254)
+        self.view_crc(mapfile)
 
         with test_map() as map:
             mapfile = map.filename
@@ -224,7 +228,7 @@ class Test(unittest.TestCase):
                 mapl.rectangle(gxmapl.RECTANGLE_EXTENT_DATA, pen_def="kt200")
                 mapl.annotate_data_xy(x_sep=1500, grid=gxmapl.GRID_DOTTED, offset=0.5)
 
-        self.view_crc(mapfile, 2857972505)
+        self.view_crc(mapfile)
 
         with test_map() as map:
             mapfile = map.filename
@@ -234,7 +238,7 @@ class Test(unittest.TestCase):
                 mapl.rectangle(gxmapl.RECTANGLE_EXTENT_DATA, pen_def="kt200")
                 mapl.annotate_data_xy(x_sep=1500, tick=0.1, grid=gxmapl.GRID_CROSSES, grid_pen="bt100")
 
-        self.view_crc(mapfile, 3266058117)
+        self.view_crc(mapfile)
 
         with test_map() as map:
             mapfile = map.filename
@@ -244,10 +248,11 @@ class Test(unittest.TestCase):
                 mapl.rectangle(gxmapl.RECTANGLE_EXTENT_DATA, pen_def="kt200")
                 mapl.annotate_data_xy(x_sep=1500, tick=0.1, grid=gxmapl.GRID_LINES, grid_pen="bt100")
 
-        self.view_crc(mapfile, 658389002)
+        self.view_crc(mapfile)
 
+    @unittest.skip('This test does not produce stable results')  # TODO
     def test_annotate_ll(self):
-        self.start(gsys.func_name())
+        Test.start(self, gsys.func_name())
 
         with test_map(data_area=(350000,7000000,400000,7030000)) as map:
             mapfile = map.filename
@@ -257,7 +262,7 @@ class Test(unittest.TestCase):
                 mapl.annotate_data_xy()
                 mapl.annotate_data_ll()
 
-        self.view_crc(mapfile, 4279176034)
+        self.view_crc(mapfile)
 
         with test_map(data_area=(350000,7000000,400000,7030000)) as map:
             mapfile = map.filename
@@ -268,7 +273,7 @@ class Test(unittest.TestCase):
                 mapl.annotate_data_ll(grid=gxmapl.GRID_LINES,
                                       grid_pen="bt500")
 
-        self.view_crc(mapfile, 437893914)
+        self.view_crc(mapfile)
 
         with test_map(data_area=(350000,7000000,400000,7030000)) as map:
             mapfile = map.filename
@@ -281,7 +286,7 @@ class Test(unittest.TestCase):
                                       pen_def="rt1", text_def=(0.25, 15),
                                       top=gxmapl.TOP_IN)
 
-        self.view_crc(mapfile, 251857306)
+        self.view_crc(mapfile)
 
         with test_map(data_area=(350000,7000000,400000,7030000)) as map:
             mapfile = map.filename
@@ -294,7 +299,7 @@ class Test(unittest.TestCase):
                                       grid_pen="bt250",
                                       pen_def="kt1", text_def=(0.18, 15))
 
-        self.view_crc(mapfile, 2431881259)
+        self.view_crc(mapfile)
 
         with test_map(data_area=(350000,7000000,400000,7030000)) as map:
             mapfile = map.filename
@@ -313,10 +318,10 @@ class Test(unittest.TestCase):
                                       top=gxmapl.TOP_IN,
                                       text_def=(0.2, 0))
 
-        self.view_crc(mapfile, 299640039)
+        self.view_crc(mapfile)
 
     def test_ll_no_projection(self):
-        self.start(gsys.func_name())
+        Test.start(self, gsys.func_name())
 
         with gxmap.GXmap.new() as map:
             with gxmapl.GXmapplot(map) as mapl:
@@ -326,8 +331,9 @@ class Test(unittest.TestCase):
                                       top=gxmapl.TOP_IN,
                                       text_def=(0.15, 15))
 
+    @unittest.skip('This test does not produce stable results')  # TODO
     def test_start_group(self):
-        self.start(gsys.func_name())
+        Test.start(self, gsys.func_name())
 
         with test_map(data_area=(350000,7000000,400000,7030000)) as map:
             mapfile = map.filename
@@ -338,7 +344,7 @@ class Test(unittest.TestCase):
                 mapl.start_group('north')
                 mapl.north_arrow(ref_point=(6, -1.5, 0), pen_def="kt500", length=3)
 
-        self.view_crc(mapfile, 2031965653)
+        self.view_crc(mapfile)
 
         with test_map(data_area=(350000,7000000,400000,7030000)) as map:
             mapfile = map.filename
@@ -351,7 +357,7 @@ class Test(unittest.TestCase):
                 mapl.start_group('north', mode=gxmapl.GROUP_NEW)
                 mapl.north_arrow(ref_point=(4, 1.5, 0), pen_def="kt500", length=3)
 
-        self.view_crc(mapfile, 2480907310)
+        self.view_crc(mapfile)
 
         with test_map(data_area=(350000,7000000,400000,7030000)) as map:
             mapfile = map.filename
@@ -364,7 +370,7 @@ class Test(unittest.TestCase):
                 mapl.start_group('north', mode=gxmapl.GROUP_APPEND)
                 mapl.north_arrow(ref_point=(4, 1.5, 0), pen_def="kt500", length=3)
 
-        self.view_crc(mapfile, 1577348467)
+        self.view_crc(mapfile)
 
 if __name__ == '__main__':
 
