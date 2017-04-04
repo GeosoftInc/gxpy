@@ -29,14 +29,12 @@ class Test(unittest.TestCase, TestWithCRC):
 
     @classmethod
     def setUpClass(cls):
-        cls.gx = gx.GXpy(log=print, parent_window=-1, max_warnings=8)
-        os.chdir(os.path.dirname(os.path.realpath(__file__)))
-        pass
+        TestWithCRC.setUpClass(__file__)
 
     @classmethod
     def tearDownClass(cls):
-        pass
-    
+        TestWithCRC.tearDownClass()
+
     @classmethod
     def start(cls, test, test_name):
         parts = os.path.split(__file__)

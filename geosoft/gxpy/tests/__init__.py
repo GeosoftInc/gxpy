@@ -2,6 +2,7 @@ import os
 import shutil
 import glob
 
+import geosoft.gxpy.gx as gx
 import geosoft.gxapi as gxapi
 import geosoft.gxpy.map as gxmap
 import geosoft.gxpy.viewer as gxvwr
@@ -13,6 +14,18 @@ global_update_result = False
 class TestWithCRC(object):
     def __init__(self):
         self._result_dir = None
+
+    @classmethod
+    def setUpClass(cls, test_py_file):
+        os.environ['GEOSOFT_TEST_MODE'] = '1'
+        os.environ['GEOSOFT_TESTSYSTEM_MODE'] = '1'
+        cls.gx = gx.GXpy(log=print, parent_window=-1, max_warnings=8)
+        os.chdir(os.path.dirname(os.path.realpath(test_py_file)))
+        pass
+
+    @classmethod
+    def tearDownClass(cls):
+        del cls.gx
 
     @classmethod
     def _map_to_xml_and_bmp(cls, map_file, xml_file, bmp_file, pix_width):
