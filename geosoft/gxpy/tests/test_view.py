@@ -144,8 +144,8 @@ class Test(unittest.TestCase):
             ycm = (area[3] - area[1])*100.0/scale
             with gxv.GXview(gmap, "test", map_location=location, area=area,
                             scale=scale, cs="WGS 84 / UTM zone 34N") as vw:
-                self.assertEqual(vw.extent, area)
-                self.assertEqual(vw.extent_map_cm, (0, 0, xcm, ycm))
+                self.assertEqual(vw.extent_clip,area)
+                self.assertEqual(vw.extent_map_cm(vw.extent_clip), (0, 0, xcm, ycm))
                 self.assertEqual(vw.scale, scale, scale)
                 self.assertTrue(vw.cs.same_as(gxcs.GXcs("WGS 84 / UTM zone 34N")))
                 self.assertEqual(vw.units_per_metre, 1.0)
@@ -160,8 +160,8 @@ class Test(unittest.TestCase):
             ycm = 100.0 * ((area[3] - area[1]) / scale) / mpu
             with gxv.GXview(gmap, "test", map_location=loc, area=area,
                             scale=scale, cs=("WGS 84 / UTM zone 34N", '', '', 'ftUS', '')) as vw:
-                self.assertEqual(vw.extent, area)
-                mx = vw.extent_map_cm
+                self.assertEqual(vw.extent_clip,area)
+                mx = vw.extent_map_cm(vw.extent_clip)
                 self.assertAlmostEqual(mx[0], loc[0])
                 self.assertAlmostEqual(mx[1], loc[1])
                 self.assertAlmostEqual(mx[2], loc[0] + xcm)
@@ -182,8 +182,8 @@ class Test(unittest.TestCase):
             ycm = 100.0 * ((area[3] - area[1]) / scale) / mpu
             with gxv.GXview(gmap, "test", map_location=loc, area=area,
                             scale=scale, cs='ftUS') as vw:
-                self.assertEqual(vw.extent, area)
-                mx = vw.extent_map_cm
+                self.assertEqual(vw.extent_clip,area)
+                mx = vw.extent_map_cm(vw.extent_clip)
                 self.assertAlmostEqual(mx[0], loc[0])
                 self.assertAlmostEqual(mx[1], loc[1])
                 self.assertAlmostEqual(mx[2], loc[0] + xcm)
@@ -197,10 +197,10 @@ class Test(unittest.TestCase):
         with gxmap.GXmap.new() as gmap:
             with gxv.GXview(gmap, "test", area=(100, 500, 15100, 10500), scale=(50000, 10000),
                             map_location=(10, 25)) as vw:
-                self.assertEqual(vw.extent, (100, 500, 15100, 10500))
+                self.assertEqual(vw.extent_clip,(100, 500, 15100, 10500))
                 self.assertEqual(vw.scale, 50000)
                 self.assertEqual(vw.aspect, 0.2)
-                self.assertEqual(vw.extent_map_cm, (10., 25., 40., 125.))
+                self.assertEqual(vw.extent_map_cm(vw.extent_clip), (10., 25., 40., 125.))
                 self.assertTrue(vw.cs.same_as(gxcs.GXcs()))
 
     def test_rectangle(self):
@@ -209,7 +209,7 @@ class Test(unittest.TestCase):
         with gxmap.GXmap.new(data_area=(0,0,50,40), cs='cm') as map:
             mapfile = map.filename
             with gxv.GXview(map, 'data') as v:
-                v.xy_rectangle(v.extent, pen=v.new_pen(line_thick=0.5, line_color='B'))
+                v.xy_rectangle(v.extent_clip, pen=v.new_pen(line_thick=0.5, line_color='B'))
                 v.xy_rectangle((2,2,48,38), pen=v.new_pen(line_thick=0.25, line_color='R', line_style=gxv.LINE_STYLE_LONG, line_pitch=5))
 
         self.view_crc(mapfile, 3553607000)
@@ -223,7 +223,7 @@ class Test(unittest.TestCase):
         with gxmap.GXmap.new() as map:
             mapfile = map.filename
             with gxv.GXview(map, 'data', area=area, cs='mm') as v:
-                v.xy_rectangle(v.extent)
+                v.xy_rectangle(v.extent_clip)
                 v.xy_poly_line(pp, pen=v.new_pen(line_smooth=gxv.SMOOTH_AKIMA, line_color='r', line_thick=1))
                 v.xy_poly_line(pp, pen=v.new_pen(line_smooth=gxv.SMOOTH_CUBIC, line_color='b', line_thick=2))
                 v.xy_poly_line(pp)
@@ -317,7 +317,7 @@ class Test(unittest.TestCase):
         with gxmap.GXmap.new(testmap, overwrite=True, data_area=(0, 0, 25, 20), scale=100.0) as gmap:
             mapfile = gmap.filename
             with gxv.GXview(gmap, "my_base_view", area=(0, 0, 25, 20), scale=100.0) as v:
-                v.xy_rectangle(v.extent, pen=v.new_pen(line_thick=0.1, line_color='R'))
+                v.xy_rectangle(v.extent_clip, pen=v.new_pen(line_thick=0.1, line_color='R'))
 
             with gxv.GXview(gmap, "my_data_area", map_location=(4,3), area=(0, 0, 1800, 1500), scale=10000) as v:
                 v.xy_rectangle(((0, 0), (1800, 1500)),
@@ -347,7 +347,7 @@ class Test(unittest.TestCase):
                              cs=cs, overwrite=True) as gmap:
             mapfile = gmap.filename
             with gxv.GXview(gmap, "base") as v:
-                v.xy_rectangle(v.extent, pen=v.new_pen(line_thick = 1, line_color = 'K'))
+                v.xy_rectangle(v.extent_clip, pen=v.new_pen(line_thick = 1, line_color = 'K'))
             with gxv.GXview(gmap, "data") as v:
                 v.xy_rectangle(area, pen=v.new_pen(line_thick = 0.1, line_color = 'R'))
 
@@ -365,7 +365,7 @@ class Test(unittest.TestCase):
                              cs=cs, overwrite=True) as gmap:
             mapfile = gmap.filename
             with gxv.GXview(gmap, "base") as v:
-                v.xy_rectangle(v.extent, pen=v.new_pen(line_thick = 2, line_color = 'K'))
+                v.xy_rectangle(v.extent_clip, pen=v.new_pen(line_thick = 2, line_color = 'K'))
             with gxv.GXview(gmap, "data") as v:
                 v.xy_rectangle(area, pen=v.new_pen(line_thick = 0.1, line_color = 'G'))
                 with gxagg.GXagg(grid_file) as agg:
@@ -421,21 +421,20 @@ class Test(unittest.TestCase):
                              data_area=ex, margins=(1,6,3,1)) as gmap:
             mapfile = gmap.filename
             with gxv.GXview(gmap, "data") as v:
-                v.xy_rectangle(v.extent, pen=v.new_pen(line_thick = 0.1, line_color = 'R'))
+                v.xy_rectangle(v.extent_clip, pen=v.new_pen(line_thick = 0.1, line_color = 'R'))
 
                 with gxagg.GXagg(grid_file, shade=True) as agg:
                     v.aggregate(agg)
 
             with gxv.GXview(gmap, "data") as v:
-                v.xy_rectangle(v.extent, pen=v.new_pen(line_thick=0.1, line_color='R'))
+                v.xy_rectangle(v.extent_clip, pen=v.new_pen(line_thick=0.1, line_color='R'))
 
             with gxv.GXview(gmap, "base") as v:
-                v.xy_rectangle(v.extent, pen=v.new_pen(line_thick = 0.1, line_color = 'B'))
+                v.xy_rectangle(v.extent_clip, pen=v.new_pen(line_thick = 0.1, line_color = 'B'))
 
             gmap.annotate_data_ll(grid=gxmap.GRID_LINES,
                                   grid_pen=gxv.Pen.from_mapplot_string("bt250"),
-                                  text_pen=gxv.Pen.from_mapplot_string("kt1"),
-                                  text=gxv.Text_def(height=0.25, italics=True),
+                                  text_def=gxv.Text_def(height=0.25, italics=True),
                                   top=gxmap.TOP_IN)
 
         self.view_crc(mapfile, 0, True)
@@ -445,16 +444,16 @@ class Test(unittest.TestCase):
 
         t = gxv.Text_def()
         self.assertEqual(t.slant, 0)
-        self.assertEqual(t.height, 2.5)
+        self.assertEqual(t.height, 0.25)
         self.assertEqual(t.weight, gxv.FONT_WEIGHT_MEDIUM)
         self.assertEqual(t.font, 'DEFAULT')
         t.font="Arial"
         self.assertEqual(t.font, 'Arial')
-        self.assertEqual(t.mapplot_string, '2.5,,,0,Arial(TT)')
+        self.assertEqual(t.mapplot_string, '0.25,,,0,Arial(TT)')
         t.font = 'sr.gfn'
-        self.assertEqual(t.mapplot_string, '2.5,,,0,sr')
+        self.assertEqual(t.mapplot_string, '0.25,,,0,sr')
         t.font = ''
-        self.assertEqual(t.mapplot_string, '2.5,,,0,DEFAULT')
+        self.assertEqual(t.mapplot_string, '0.25,,,0,DEFAULT')
         t.italics = True
         self.assertTrue(t.italics)
         self.assertEqual(t.slant, 15)
@@ -463,12 +462,12 @@ class Test(unittest.TestCase):
         self.assertEqual(t.slant, 0)
 
         t.weight = gxv.FONT_WEIGHT_ULTRALIGHT
-        self.assertAlmostEqual(t.line_thick, 0.05208333333333333)
+        self.assertAlmostEqual(t.line_thick, 0.005208333333333333)
         t.weight = gxv.FONT_WEIGHT_BOLD
-        self.assertAlmostEqual(t.line_thick, 0.20833333333333331)
+        self.assertAlmostEqual(t.line_thick, 0.020833333333333331)
         thick = t.line_thick
         t.weight = gxv.FONT_WEIGHT_XXBOLD
-        self.assertAlmostEqual(t.line_thick, 0.625)
+        self.assertAlmostEqual(t.line_thick, 0.0625)
         t.line_thick = thick
         self.assertEqual(t.weight, gxv.FONT_WEIGHT_BOLD)
         t.height = 10.
@@ -516,7 +515,7 @@ class Test(unittest.TestCase):
         self.assertEqual(p.line_style, gxv.LINE_STYLE_SOLID)
 
         p.line_color = (255,127,64)
-        self.assertEqual(p.mapplot_string, 'r255g127b64t1')
+        self.assertEqual(p.mapplot_string, 'r255g127b64t100')
 
         p = gxv.Pen.from_mapplot_string('r20b100k16R64K16')
         ms = p.mapplot_string
@@ -533,15 +532,31 @@ class Test(unittest.TestCase):
         self.assertTrue(p.line_color == gxv.Color(gxv.C_WHITE))
 
         p = gxv.Pen.from_mapplot_string('r20b100k16R64K16')
-        p = gxv.Pen(default=p, line_thick=50, fill_color=('K'))
+        p = gxv.Pen(default=p, line_thick=0.05, fill_color='K')
         ms = p.mapplot_string
-        self.assertEqual(ms, 'r4g0b84R0G0B0t50')
+        self.assertEqual(ms, 'r4g0b84R0G0B0t500')
         p = gxv.Pen.from_mapplot_string(ms)
         self.assertEqual(p.mapplot_string, ms)
 
         self.assertRaises(gxv.ViewException, gxv.Pen, bad=1)
 
+    def test_scaled(self):
+        self.start(gsys.func_name())
 
+        p = gxv.Pen(factor=10)
+        self.assertEqual(p.line_thick, 0.1)
+        self.assertEqual(p.line_pitch, 5.0)
+        self.assertEqual(p.pat_thick, 0.1)
+        self.assertEqual(p.pat_size, 10.0)
+
+        p = gxv.Pen(default=p, factor=5)
+        self.assertEqual(p.line_thick, 0.5)
+        self.assertEqual(p.line_pitch, 25.0)
+        self.assertEqual(p.pat_thick, 0.5)
+        self.assertEqual(p.pat_size, 50.0)
+
+        t = gxv.Text_def(factor=0.2)
+        self.assertEqual(t.height, 0.05)
 
 if __name__ == '__main__':
 

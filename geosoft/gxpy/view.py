@@ -198,7 +198,6 @@ class Color:
     def cmy(self, cmy):
         self.rgb = (255 - cmy[0], 255 - cmy[1], 255 - cmy[2])
 
-
 def font_weight_from_line_thickness(line_thick, height):
     """
     Returns font weight for a text height and line thickness.
@@ -270,7 +269,10 @@ class Text_def:
     :param line_thick:  line thickness from which to determine a weight, which is calculated from the 
                         ratio of line thickness to height.
     :param italics:     True for italics fonts
-    :param height:      text height in map mm.
+    :param height:      text height, default 0.25
+    :param factor:      default spatial properties are multiplied by this factor.  This is useful
+                        for creating text scaled to the units of a view.  The default text properties
+                        are scaled to cm.
     
     :properties:
     
@@ -291,10 +293,14 @@ class Text_def:
             self.__dict__ = def_pen.__dict__.copy()
         else:
             self.color = Color(C_BLACK)
-            self.height = 2.5
+            self.height = 0.25
             self.font = 'DEFAULT'
             self.weight = None
             self.italics = False
+
+        factor = kwargs.pop('factor', 1.)
+        if factor != 1.0:
+            self.height *= factor
 
         line_thick = None
         for k in kwargs:
@@ -302,6 +308,8 @@ class Text_def:
                 self.color = kwargs[k]
             elif k == 'line_thick':
                 line_thick = kwargs[k]
+            elif k == 'font':
+                self.font = kwargs[k]
             elif k in self.__dict__:
                 self.__dict__[k] = kwargs[k]
             else:
@@ -374,11 +382,14 @@ class Text_def:
 
 class Pen:
     """
-    Geosoft Pen:
+    Geosoft Pen class.  Default dimensioned proprties (line_thick, line_pitch,
+    pat_size and pat_thick) are scaled assuming scale units are cm.  To scale
+    a pen to view units, use Pen.scaled(units_per_cm) to create a default
+    pen scaled to the units of a view.
     
     :param line_color:  line Color instance, default is black
     :param fill_color:  fill Color instance, default is transparent
-    :param line_thick:  line thickness, default is 1
+    :param line_thick:  line thickness, default is 0.01
     :param line_style:  line pattern style
     
                         ::
@@ -390,7 +401,7 @@ class Pen:
                             LINE_STYLE_LONG_SHORT_LONG
                             LINE_STYLE_LONG_DOT_LONG
                         
-    :param line_pitch:  line style pitch, default is 1
+    :param line_pitch:  line style pitch, default is 0.5
     :param line_smooth: smooth line:
     
                         ::
@@ -402,7 +413,7 @@ class Pen:
     :param pat_number:  pattern number for filled patterns (refer to ``etc/default.pat``) default 0, flood fill
     :param pat_angle:   pattern angle, default 0
     :param pat_density: pattern density, default 1
-    :param pat_size:    pattern size, default 1
+    :param pat_size:    pattern size, default 1.0
     :param pat_style:   pattern style:
     
                         ::
@@ -412,8 +423,11 @@ class Pen:
                             TILE_TRIANGULAR
                             TILE_RANDOM
 
-    :param pat_thick:   pattern line thickness, default 1
+    :param pat_thick:   pattern line thickness, default 0.01
     :param default:     default Pen instance, if specified defaults are established from this
+    :param factor:      default spatial properties are multiplied by this factor.  This is useful
+                        for creating pens scaled to the units of a view.  The default pen properties
+                        are scaled to cm.
 
     .. versionadded: 9.2
     """
@@ -425,9 +439,9 @@ class Pen:
             self.__dict__ = def_pen.__dict__.copy()
         else:
             self.line_color = Color(C_BLACK)
-            self.line_thick = 1
+            self.line_thick = 0.01
             self.line_style = LINE_STYLE_SOLID
-            self.line_pitch = 1
+            self.line_pitch = 0.5
             self.line_smooth = SMOOTH_NONE
             self.fill_color = Color(C_TRANSPARENT)
             self.pat_number = 0
@@ -435,7 +449,14 @@ class Pen:
             self.pat_density = 1
             self.pat_size = 1
             self.pat_style = TILE_RECTANGULAR
-            self.pat_thick = 1
+            self.pat_thick = self.line_thick
+
+        factor = kwargs.pop('factor', 1.)
+        if factor != 1.0:
+            self.line_thick *= factor
+            self.line_pitch *= factor
+            self.pat_size *= factor
+            self.pat_thick *= factor
 
         for k in kwargs:
             if k == 'line_color':
@@ -490,7 +511,7 @@ class Pen:
 
         line_color = color(cstr, 'rgbk')
         fill_color = color(cstr, 'RGBK')
-        line_thick = max(1, get_part(cstr, 't', 1))
+        line_thick = max(1, get_part(cstr, 't', 1)) * 0.0001
 
         return cls(line_color=line_color, fill_color=fill_color, line_thick=line_thick)
 
@@ -532,7 +553,7 @@ class Pen:
                 c = self._fill_color.rgb
                 s += 'R{}G{}B{}'.format(c[0], c[1], c[2])
 
-        return s + 't{}'.format(int(self.line_thick))
+        return s + 't{}'.format(int(self.line_thick*10000.))
 
 # decorator
 def _draw(func):
@@ -635,7 +656,7 @@ class GXview:
                  copy=None):
 
         self._gmap = gmap
-        self._viewname = viewname
+        self._viewname = gmap.classview(viewname)
         if mode == WRITE_OLD and not gmap.has_view(self._viewname):
             mode = WRITE_NEW
         self.gxview = gxapi.GXMVIEW.create(self._gmap.gxmap, self._viewname, mode)
@@ -804,21 +825,36 @@ class GXview:
 
         self._pen = pen
 
-    @property
-    def extent(self):
+    def _extent(self, what):
         xmin = gxapi.float_ref()
         ymin = gxapi.float_ref()
         xmax = gxapi.float_ref()
         ymax = gxapi.float_ref()
-        self.gxview.extent(gxapi.MVIEW_EXTENT_UNIT_VIEW, UNIT_VIEW, xmin, ymin, xmax, ymax)
+        self.gxview.extent(what, UNIT_VIEW, xmin, ymin, xmax, ymax)
         return xmin.value, ymin.value, xmax.value, ymax.value
 
     @property
-    def extent_map_cm(self):
+    def extent_clip(self):
+        return self._extent(gxapi.MVIEW_EXTENT_CLIP)
 
-        ex = self.extent
-        xmin, ymin = self.view_to_map(ex[0], ex[1])
-        xmax, ymax = self.view_to_map(ex[2], ex[3])
+    @property
+    def extent_all(self):
+        return self._extent(gxapi.MVIEW_EXTENT_ALL)
+
+    @property
+    def extent_visible(self):
+        return self._extent(gxapi.MVIEW_EXTENT_VISIBLE)
+
+    def extent_map_cm(self, extent):
+        """
+        Return a view extent in map cm.
+        
+        :param extent: tuple returned an extent property.
+        
+        .. versionadded:: 9.2
+        """
+        xmin, ymin = self.view_to_map(extent[0], extent[1])
+        xmax, ymax = self.view_to_map(extent[2], extent[3])
         return xmin, ymin, xmax, ymax
 
     @property
@@ -957,7 +993,7 @@ class GXview:
         .. versionadded:: 9.2
         """
 
-        ext = self.extent
+        ext = self.extent_clip
         if dx is None:
             dx = (ext[2] - ext[0]) * 0.2
             ddx = dx * 0.25
@@ -1054,8 +1090,8 @@ class GXview3d(GXview):
             kwds['viewname'] = "_unnamed_3D_view"
         super().__init__(*args, **kwds)
 
-        mminx, mminy, mmaxx, mmaxy = self.extent_map_cm
-        vminx, vminy, vmaxx, vmaxy = self.extent
+        mminx, mminy, mmaxx, mmaxy = self.extent_map_cm(self.extent_clip)
+        vminx, vminy, vmaxx, vmaxy = self.extent_clip
 
         # construct a 3D view
 

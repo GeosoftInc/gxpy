@@ -98,8 +98,8 @@ class Test(unittest.TestCase):
     def start(cls,test):
         cls.gx.log("*** {} > {}".format(os.path.split(__file__)[1], test))
 
-    def view_test_crc(self, mapfile, crc=None, display=False):
-        if SHOW_TEST_IMAGES and display:
+    def view_test_crc(self, mapfile, crc=None):
+        if SHOW_TEST_IMAGES:
             gxvwr.map(mapfile)
         if crc:
             self.assertEqual(gxmap.crc_map(mapfile), crc)
@@ -253,13 +253,13 @@ class Test(unittest.TestCase):
     def test_media(self):
         self.start(gsys.func_name())
 
-        def test_crc(mapfile, crc=None, display=False):
+        def test_crc(mapfile, crc=None):
             with gxmap.GXmap.open(mapfile) as map:
                 with gxv.GXview(map, "base") as view:
-                    view.xy_rectangle(view.extent, pen=gxv.Pen(line_thick=0.2, line_color='K'))
+                    view.xy_rectangle(view.extent_clip, pen=gxv.Pen(line_thick=0.2, line_color='K'))
                 with gxv.GXview(map, "data") as view:
-                    view.xy_rectangle(view.extent, pen=gxv.Pen(line_thick=0.2, line_color='R'))
-            self.view_test_crc(mapfile, crc, display)
+                    view.xy_rectangle(view.extent_clip, pen=gxv.Pen(line_thick=0.2, line_color='R'))
+            self.view_test_crc(mapfile, crc)
 
         test_media_map = os.path.join(gx.GXpy().temp_folder(), 'test_media')
 
@@ -316,7 +316,7 @@ class Test(unittest.TestCase):
             with gxmap.GXmap.new() as map:
                 mapfiles.append(map.filename)
                 with gxv.GXview(map, 'data') as v:
-                    v.xy_rectangle(v.extent)
+                    v.xy_rectangle(v.extent_clip)
 
         for fn in mapfiles:
             self.assertTrue(os.path.isfile(fn))
@@ -328,23 +328,26 @@ class Test(unittest.TestCase):
             mapfile = map.filename
 
             with gxv.GXview(map, 'base') as v:
-                v.xy_rectangle(v.extent)
+                v.xy_rectangle(v.extent_clip)
             with gxv.GXview(map, 'data') as v:
-                v.xy_rectangle(v.extent)
+                v.xy_rectangle(v.extent_clip)
 
             map.north_arrow()
 
         self.view_test_crc(mapfile, 0)
 
-        with gxmap.GXmap.new(cs='m') as map:
+    def test_north_arrow1(self):
+        self.start(gsys.func_name())
+
+        with gxmap.GXmap.new(cs='m', data_area=(0,0,20,10), scale=100) as map:
             mapfile = map.filename
 
             with gxv.GXview(map, 'base') as v:
-                v.xy_rectangle(v.extent)
+                v.xy_rectangle(v.extent_clip)
             with gxv.GXview(map, 'data') as v:
-                v.xy_rectangle(v.extent)
+                v.xy_rectangle(v.extent_clip)
 
-            map.north_arrow(inclination=-12, declination=74.5)
+            map.north_arrow(location=(2, 0, 3), inclination=-12, declination=74.5)
 
         self.view_test_crc(mapfile, 0)
 
@@ -354,9 +357,9 @@ class Test(unittest.TestCase):
         with gxmap.GXmap.new(data_area=(350000,7000000,400000,7030000), cs='ft') as map:
             mapfile = map.filename
             with gxv.GXview(map, 'base') as v:
-                v.xy_rectangle(v.extent)
+                v.xy_rectangle(v.extent_clip)
             with gxv.GXview(map, 'data') as v:
-                v.xy_rectangle(v.extent)
+                v.xy_rectangle(v.extent_clip)
             map.scale_bar()
             map.scale_bar(location=(2, 0, 2), length=10, sections=12)
             map.scale_bar(location=(5, 0, 0), length=8, sections=2, post_scale=True)
@@ -368,9 +371,9 @@ class Test(unittest.TestCase):
         with gxmap.GXmap.new(data_area=(350000,7000000,400000,7030000), cs='NAD83 / UTM zone 15N') as map:
             mapfile = map.filename
             with gxv.GXview(map, 'base') as v:
-                v.xy_rectangle(v.extent)
+                v.xy_rectangle(v.extent_clip)
             with gxv.GXview(map, 'data') as v:
-                v.xy_rectangle(v.extent)
+                v.xy_rectangle(v.extent_clip)
             map.scale_bar()
             map.scale_bar(location=(2, 0, 2), length=10, sections=12)
 
@@ -384,21 +387,28 @@ class Test(unittest.TestCase):
         with gxmap.GXmap.new(data_area=(350000, 7000000, 400000, 7030000), cs=cs) as map:
             mapfile = map.filename
             with gxv.GXview(map, 'data') as v:
-                v.xy_rectangle(v.extent)
+                v.xy_rectangle(v.extent_clip)
             map.surround()
         self.view_test_crc(mapfile, 0)
 
+    def test_surround1(self):
+        self.start(gsys.func_name())
+
+        cs = gxcs.GXcs('NAD83 / UTM zone 15N')
         with gxmap.GXmap.new(data_area=(350000, 7000000, 400000, 7030000), cs=cs) as map:
             mapfile = map.filename
             with gxv.GXview(map, 'data') as v:
-                v.xy_rectangle(v.extent)
+                v.xy_rectangle(v.extent_clip)
             map.surround(gap=0.2)
         self.view_test_crc(mapfile, 0)
+
+    def test_surround2(self):
+        self.start(gsys.func_name())
 
         with gxmap.GXmap.new(data_area=(350000, 7000000, 400000, 7030000)) as map:
             mapfile = map.filename
             with gxv.GXview(map, 'data') as v:
-                v.xy_rectangle(v.extent)
+                v.xy_rectangle(v.extent_clip)
             map.surround(gap=0.2,
                          outer_pen=gxv.Pen.from_mapplot_string('rt500'),
                          inner_pen=gxv.Pen.from_mapplot_string('K16'))
@@ -409,79 +419,108 @@ class Test(unittest.TestCase):
 
         with test_data_map() as map:
             mapfile = map.filename
-            map.annotate_data_xy(x_sep=1500, text_pen=gxv.Pen(line_thick=10))
+            map.annotate_data_xy(x_sep=1500)
 
         self.view_test_crc(mapfile, 0)
 
+    def test_annotate_xy1(self):
+        self.start(gsys.func_name())
+
         with test_data_map() as map:
             mapfile = map.filename
-            map.annotate_data_xy(x_sep=1500, grid=gxmap.GRID_DOTTED, offset=0.5)
+            map.annotate_data_xy(x_sep=1500,
+                                 grid=gxmap.GRID_DOTTED,
+                                 offset=0.5,
+                                 text_def=gxv.Text_def(color='R', weight=gxv.FONT_WEIGHT_BOLD))
 
         self.view_test_crc(mapfile, 0)
 
+    def test_annotate_xy2(self):
+        self.start(gsys.func_name())
+
         with test_data_map() as map:
             mapfile = map.filename
-            map.annotate_data_xy(x_sep=1500, tick=0.1, grid=gxmap.GRID_CROSSES,
-                                 grid_pen=gxv.Pen(line_color='b', line_thick=150))
+            map.annotate_data_xy(x_sep=1500,
+                                 tick=0.1,
+                                 text_def=gxv.Text_def(color='G', weight=gxv.FONT_WEIGHT_ULTRALIGHT),
+                                 grid=gxmap.GRID_CROSSES,
+                                 grid_pen=gxv.Pen(line_color='b', line_thick=0.015))
 
         self.view_test_crc(mapfile, 0)
 
+    def test_annotate_xy3(self):
+        self.start(gsys.func_name())
+
         with test_data_map() as map:
             mapfile = map.filename
-            map.annotate_data_xy(x_sep=1500, tick=0.1, grid=gxmap.GRID_LINES,
-                                 grid_pen=gxv.Pen(line_color='b', line_thick=150))
+            map.annotate_data_xy(x_sep=1500,
+                                 tick=0.1,
+                                 grid=gxmap.GRID_LINES,
+                                 offset=0.2,
+                                 edge_pen=gxv.Pen(line_color='k64', line_thick=0.3),
+                                 grid_pen=gxv.Pen(line_color='b', line_thick=0.015))
 
         self.view_test_crc(mapfile, 0)
 
     def test_annotate_ll(self):
         self.start(gsys.func_name())
 
-        display=True
+        with test_data_map(data_area=(350000,7000000,400000,7030000)) as map:
+            mapfile = map.filename
+            map.annotate_data_ll()
+        self.view_test_crc(mapfile, 0)
+
+    def test_annotate_ll1(self):
+        self.start(gsys.func_name())
+
+        with test_data_map(data_area=(350000,7000000,400000,7030000)) as map:
+            mapfile = map.filename
+            map.annotate_data_ll(grid=gxmap.GRID_LINES,
+                                 grid_pen=gxv.Pen(line_color='b'),
+                                 text_def=gxv.Text_def(color='K127',
+                                                       font='cr.gfn',
+                                                       weight=gxv.FONT_WEIGHT_BOLD,
+                                                       italics=True))
+        self.view_test_crc(mapfile, 0)
+
+    def test_annotate_ll2(self):
+        self.start(gsys.func_name())
 
         with test_data_map(data_area=(350000,7000000,400000,7030000)) as map:
             mapfile = map.filename
             map.annotate_data_xy()
-            map.annotate_data_ll()
-        self.view_test_crc(mapfile, 0, display)
-
-        with test_data_map(data_area=(350000,7000000,400000,7030000)) as map:
-            mapfile = map.filename
             map.annotate_data_ll(grid=gxmap.GRID_LINES,
-                                  grid_pen=gxv.Pen(line_color='b', line_thick=500))
-        self.view_test_crc(mapfile, 0, display)
-
-        with test_data_map(data_area=(350000,7000000,400000,7030000)) as map:
-            mapfile = map.filename
-            map.annotate_data_ll(grid=gxmap.GRID_LINES,
-                                  grid_pen=gxv.Pen(line_color='b', line_thick=150),
-                                  text_pen=gxv.Pen(line_color='r', line_thick=1),
-                                  text=gxv.Text_def(height=0.25, italics=True),
+                                  grid_pen=gxv.Pen(line_color='b', line_thick=0.015),
+                                  text_def=gxv.Text_def(color='r', height=0.2, italics=True),
                                   top=gxmap.TOP_IN)
-        self.view_test_crc(mapfile, 0, display)
+        self.view_test_crc(mapfile, 0)
+
+    def test_annotate_ll3(self):
+        self.start(gsys.func_name())
 
         with test_data_map(data_area=(350000,7000000,400000,7030000)) as map:
             mapfile = map.filename
             map.annotate_data_xy(tick=0.1, grid=gxmap.GRID_LINES,
-                                 text_pen=gxv.Pen(line_thick=10),
-                                 grid_pen=gxv.Pen(line_thick=100))
+                                 text_def=gxv.Text_def(weight=gxv.FONT_WEIGHT_ULTRALIGHT),
+                                 grid_pen=gxv.Pen(line_thick=0.01))
             map.annotate_data_ll(grid=gxmap.GRID_LINES,
-                                 grid_pen=gxv.Pen(line_color='b', line_thick=250),
-                                 text_pen=gxv.Pen(line_color='b', line_thick=1),
-                                 text=gxv.Text_def(height=0.18, italics=True))
-        self.view_test_crc(mapfile, 0, display)
+                                 grid_pen=gxv.Pen(line_color='b', line_thick=0.025),
+                                 text_def=gxv.Text_def(height=0.18, italics=True, color='g'))
+        self.view_test_crc(mapfile, 0)
+
+    def test_annotate_ll4(self):
+        self.start(gsys.func_name())
 
         with test_data_map(data_area=(350000,7000000,400000,7030000)) as map:
             mapfile = map.filename
             map.annotate_data_xy(tick=0.1, grid=gxmap.GRID_LINES,
-                                 text_pen=gxv.Pen(line_thick=10),
-                                 grid_pen=gxv.Pen(line_thick=100),
+                                 text_def=gxv.Text_def(weight=gxv.FONT_WEIGHT_BOLD),
                                  top=gxmap.TOP_IN)
             map.annotate_data_ll(grid=gxmap.GRID_LINES,
-                                 grid_pen=gxv.Pen(line_color='b', line_thick=250),
-                                 text_pen=gxv.Pen(line_color='b', line_thick=1),
-                                 text=gxv.Text_def(height=0.18, italics=True),
+                                 grid_pen=gxv.Pen(line_color='b', line_thick=0.025),
+                                 text_def=gxv.Text_def(height=0.18, italics=True),
                                  top=gxmap.TOP_IN)
-        self.view_test_crc(mapfile, 0, display)
+        self.view_test_crc(mapfile, 0)
 
         
 if __name__ == '__main__':

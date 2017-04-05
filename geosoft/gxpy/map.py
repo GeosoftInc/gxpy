@@ -217,6 +217,7 @@ class GXmap:
         self.gxmap = None
         self._remove = False
         self._filename = map_file_name(filename)
+        self._annotation_outer_edge = 0.0
         self.gxmap = gxapi.GXMAP.create(self.filename, mode)
 
         atexit.register(self._close, pop=False)
@@ -490,7 +491,18 @@ class GXmap:
         """Commit changes to the map."""
         self.gxmap.commit()
 
-    def _classview(self, name):
+    def classview(self, name):
+        """
+        Given a view name that may be a class name ('*' prefix), return the view name for that class.  if not
+        class decorated, the name passed is returned. 
+        that 
+        :param name:    view name: '*data' will return the name associated with the 'data' class, while
+                        'my_view' will return 'my_view'.
+        
+        :return:        the name, or if a class name, the view name associated with that class.
+        
+        .. versionadded: 9.2
+        """
         if name[0] != '*':
             return name
         return self.get_class_view_name(name[1:])
@@ -507,7 +519,7 @@ class GXmap:
 
     def has_view(self, view):
         """ Returns True if the map contains this view."""
-        return self.gxmap.exist_view(self._classview(view))
+        return self.gxmap.exist_view(self.classview(view))
 
     def copy_view(self, old, new, overwrite=False, copy_all=True):
         """
@@ -520,8 +532,8 @@ class GXmap:
                             with the same coordinate system, scale and clipping as the old view.
         """
 
-        old = self._classview(old)
-        new = self._classview(new)
+        old = self.classview(old)
+        new = self.classview(new)
 
         if not self.has_view(old):
             raise MapException(_t('"{}" view does not exist.').format(old))
@@ -548,7 +560,7 @@ class GXmap:
         
         .. versionadded:: 9.2
         """
-        self.gxmap.delete_view(self._classview(viewname))
+        self.gxmap.delete_view(self.classview(viewname))
 
     def mdf(self):
         """
@@ -664,14 +676,14 @@ class GXmap:
         .. versionadded:: 9.2
         """
 
-        viewname = self._classview(viewname)
+        viewname = self.classview(viewname)
 
         if not viewname:
             with gxv.GXview(self, self.current_base_view) as v:
-                extent = v.extent_map_cm
+                extent = v.extent_map_cm(v.extent_clip)
         else:
             with gxv.GXview(self, viewname) as v:
-                extent = v.extent
+                extent = v.extent_clip
 
         xc = extent[0] + (extent[2] - extent[0]) * 0.5
         yc = extent[1] + (extent[3] - extent[1]) * 0.5
@@ -700,7 +712,7 @@ class GXmap:
         """
 
         if outer_pen is None:
-            outer_pen = gxv.Pen(line_thick=500)
+            outer_pen = gxv.Pen(line_thick=0.0500)
 
         with _Mapplot(self) as mpl:
 
@@ -711,7 +723,7 @@ class GXmap:
                 gap = ''
             else:
                 if inner_pen is None:
-                    inner_pen = gxv.Pen(line_thick=1)
+                    inner_pen = gxv.Pen(line_thick=0.01)
                 inner = 'inner'
                 mpl.define_named_attribute(inner, pen=inner_pen)
 
@@ -757,15 +769,15 @@ class GXmap:
             declination = ''
 
         if pen is None:
-            pen = gxv.Pen(line_thick=150)
+            pen = gxv.Pen(line_thick=0.015)
 
         if text is None:
-            text = gxv.Text_def(height=2.5, italics=True)
+            text = gxv.Text_def(height=0.25, italics=True, weight=gxv.FONT_WEIGHT_LIGHT)
 
         with _Mapplot(self) as mpl:
             mpl.start_group('north_arrow', view=VIEW_BASE, mode=GROUP_APPEND)
             mpl.define_named_attribute('arrow', pen=pen)
-            mpl.define_named_attribute('annot', text=text, pen=pen)
+            mpl.define_named_attribute('annot', text=text)
             mpl.command("NARR {},{},{},{},{},{},{},{}".format(location[0], location[1], location[2],
                                                               direction,
                                                               length,
@@ -806,7 +818,7 @@ class GXmap:
             text = gxv.Text_def(height=0.25, italics=True)
 
         if pen is None:
-            pen = gxv.Pen(line_thick=50)
+            pen = gxv.Pen(line_thick=0.050)
 
         with _Mapplot(self) as mpl:
             mpl.start_group('scale_bar', view=VIEW_BASE, mode=GROUP_APPEND)
@@ -816,14 +828,24 @@ class GXmap:
                                                             length, sections, option))
             mpl.command('     {}'.format(att))
 
+    def _annotation_offset(self, offset, text_height):
+        inside = text_height * 0.25
+        if offset:
+            offset = offset + inside
+        else:
+            offset = self._annotation_outer_edge + inside
+        self._annotation_outer_edge += offset + text_height + inside * 0.5
+        return offset
+
     def annotate_data_xy(self, viewname='*data',
                          tick='', offset='',
                          x_sep='', x_dec='',
                          y_sep='', y_dec='',
-                         compass=True, top=TOP_OUT,
-                         text=None,
-                         text_pen=None,
-                         grid=0,
+                         compass=True,
+                         top=TOP_OUT,
+                         text_def=None,
+                         edge_pen=None,
+                         grid=GRID_NONE,
                          grid_pen=None):
         """
         Annotate a data view axis
@@ -848,40 +870,50 @@ class GXmap:
                                 GRID_CROSSES    crosses at intersections
                                 GRID_LINES      lines
        
-        :param grid_pen:    ``gxv.Pen``
-        :param text:        ``gxv.Text_def``
-        :param text_pen:    ``gxv.Pen``
-        
+        :param text_def:    ``gxv.Text_def``
+        :param edge_pen:    ``gxv.Pen``
+        :param grid_pen:    ``gxv.Pen``        
 
         .. versionadded:: 9.2
         """
 
-        if text is None:
-            text = gxv.Text_def(height=0.18)
-        if text_pen is None:
-            text_pen = gxv.Pen()
+        if text_def is None:
+            text_def = gxv.Text_def(height=0.18)
+        if edge_pen is None:
+            edge_pen = gxv.Pen()
         if grid_pen is None:
-            grid_pen = gxv.Pen()
+            grid_pen = edge_pen
 
         current_view = self.current_data_view
-        self.current_data_view = self._classview(viewname)
+        viewname = self.classview(viewname)
+        self.current_data_view = viewname
+
+        offset = self._annotation_offset(offset, text_def.height)
+
+        with gxv.GXview(self, viewname) as v:
+            v.xy_rectangle(v.extent_clip, pen=gxv.Pen(default=edge_pen, factor=v.units_per_map_cm))
 
         try:
 
             with _Mapplot(self) as mpl:
+
+                mpl.start_group(viewname + '_edge', 1, viewname)
+
                 if not tick and grid == GRID_LINES:
                     tick = 0.0
 
-                mpl.define_named_attribute(text=text, pen=text_pen)
-                offset = mpl._adjusted_offset(offset, text.height)
+                mpl.define_named_attribute('annot', text=text_def,
+                                           pen=gxv.Pen(line_color=text_def.color, line_thick=text_def.line_thick))
+                mpl.define_named_attribute(pen=edge_pen)
 
                 mpl.command("ANOX ,,,,,{},{},,{},,,,{},{},1".format(x_sep, tick, 0 if compass else -1, offset, x_dec))
-                mpl.command('     _')
+                mpl.command('     annot')
                 mpl.command("ANOY ,,,,,{},{},,{},{},,,{},{},1".format(y_sep, tick, 0 if compass else -1, top, offset, y_dec))
-                mpl.command('     _')
+                mpl.command('     annot')
 
                 if grid:
-                    mpl.command("GRID {},,,,,{}".format(grid, grid_pen.mapplot_string))
+                    mpl.define_named_attribute(pen=grid_pen)
+                    mpl.command("GRID {},,,,,_".format(grid))
 
         except:
             raise
@@ -890,9 +922,15 @@ class GXmap:
             self.current_data_view = current_view
 
     def annotate_data_ll(self, viewname='*data',
-                         tick='', offset='', sep='', top=TOP_OUT,
-                         text=None, text_pen=None,
-                         grid=GRID_LINES, grid_pen=None):
+                         tick='',
+                         offset='',
+                         sep='',
+                         top=TOP_OUT,
+                         text_def=None,
+                         edge_pen=None,
+                         grid=GRID_LINES,
+                         grid_pen=None):
+
         """
         Annotate the date view axis
 
@@ -914,39 +952,49 @@ class GXmap:
         .. versionadded:: 9.2
         """
 
-        if text is None:
-            text = gxv.Text_def(height=0.18)
-        if text_pen is None:
-            text_pen = gxv.Pen()
+        if text_def is None:
+            text_def = gxv.Text_def(height=0.18)
+        if edge_pen is None:
+            edge_pen = gxv.Pen()
         if grid_pen is None:
-            grid_pen = gxv.Pen()
+            grid_pen = edge_pen
 
         current_view = self.current_data_view
-        self.current_data_view = self._classview(viewname)
+        viewname = self.classview(viewname)
+        self.current_data_view = viewname
+
+        offset = self._annotation_offset(offset, text_def.height)
+
+        with gxv.GXview(self, viewname) as v:
+            v.xy_rectangle(v.extent_clip, pen=gxv.Pen(default=edge_pen, factor=v.units_per_map_cm))
 
         try:
 
             with _Mapplot(self) as mpl:
 
+                mpl.start_group(viewname + '_edge', 1, viewname)
                 if not tick and grid == GRID_LINES:
                     tick = 0.0
 
-                mpl.define_named_attribute(text=text, pen=text_pen)
-                offset = mpl._adjusted_offset(offset, text.height)
+                mpl.define_named_attribute('annot', text=text_def,
+                                           pen=gxv.Pen(line_color=text_def.color, line_thick=text_def.line_thick))
+                mpl.define_named_attribute(pen=edge_pen)
 
                 mpl.command("ALON {},{},{},,1".format(sep, tick, offset))
-                mpl.command('    _')
+                mpl.command('    annot')
                 mpl.command("ALAT {},{},{},,,{}".format(sep, tick, offset, top))
-                mpl.command('    _')
+                mpl.command('    annot')
 
                 if grid:
-                    mpl.command("GRID -{},,,,,grid".format(grid, grid_pen.mapplot_string))
+                    mpl.define_named_attribute(pen=grid_pen)
+                    mpl.command("GRID -{},,,,,_".format(grid))
 
         except:
             raise
 
         finally:
             self.current_data_view = current_view
+
 
 class MapplotException(Exception):
     """
@@ -1007,37 +1055,30 @@ class _Mapplot:
         if pop:
             gx.pop_resource(self._open)
 
-    def _adjusted_offset(self, offset, text_height):
-
-        inside = text_height * 0.2
-        if offset:
-            offset = offset + inside
-        else:
-            offset = self._annotation_outer_edge + inside
-        self._annotation_outer_edge += offset + text_height + inside * 0.5
-        return offset
-
     def command(self, command):
         self._maplfile.write(command)
         if command and command[-1] != '\n':
             self._maplfile.write('\n')
+        #geosoft.gxpy.gx.GXpy().log(command)
 
     def define_named_attribute(self, name='_', pen=None, text=None):
-        
-        if pen is None:
-            pen = ''
-            ls = ''
-            lp = ''
+
+        if (pen is None) and (text is None):
+            self.command("DATT {}".format(name))
+
         else:
+            if pen is None:
+                pen = gxv.Pen(line_color=text.color, line_thick=text.line_thick)
             ls = pen.line_style
             lp = pen.line_pitch
             pen = pen.mapplot_string
-        if text is None:
-            text = ''
-        else:
-            text = text.mapplot_string
-            
-        self.command("DATT {}={},{},{}".format(name, pen, ls, lp, text))
+
+            if text is None:
+                text = ''
+            else:
+                text = text.mapplot_string
+
+            self.command("DATT {}={},{},{},{}".format(name, pen, ls, lp, text))
 
     def start_group(self, name, mode=GROUP_NEW, view=VIEW_BASE):
         """
@@ -1054,4 +1095,9 @@ class _Mapplot:
         .. versionadded:: 9.2
         """
 
+        if type(view) is str:
+            if view.lower() == 'base':
+                view = VIEW_BASE
+            else:
+                view = VIEW_DATA
         self.command('MGRP {},{},{}'.format(name, mode, view))
