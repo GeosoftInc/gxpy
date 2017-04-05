@@ -44,6 +44,24 @@ UNIT_VIEW_UNWARPED = 3
 GRATICULE_LINE = 1
 GRATICULE_CROSS = 2
 
+LINE_STYLE_SOLID = 1
+LINE_STYLE_LONG = 2
+LINE_STYLE_DOTTED = 3
+LINE_STYLE_SHORT = 4
+LINE_STYLE_LONG_SHORT_LONG = 5
+LINE_STYLE_LONG_DOT_LONG = 6
+
+SYMBOL_NONE = 0
+SYMBOL_DOT = 1
+SYMBOL_PLUS = 2
+SYMBOL_X = 3
+SYMBOL_BOX = 4
+SYMBOL_TRIANGLE = 5
+SYMBOL_INVERTED_TRIANGLE = 6
+SYMBOL_HEXAGON = 7
+SYMBOL_SMALL_BOX = 8
+SYMBOL_SMALL_DIAMOND = 9
+
 _weight_factor = (1.0 / 48.0, 1.0 / 24.0, 1.0 / 16.0, 1.0 / 12.0, 0.145, 1.0 / 4.0)
 FONT_WEIGHT_ULTRALIGHT = 1
 FONT_WEIGHT_LIGHT = 2
@@ -56,7 +74,7 @@ C_RGB = 0
 C_CMY = 1
 C_HSV = 2
 
-C_BLACK = 33554432
+C_BLACK = 67108863
 C_RED = 33554687
 C_GREEN = 33619712
 C_BLUE = 50266112
@@ -77,13 +95,19 @@ C_GREY50 = 41975936
 C_WHITE = 50331648
 C_TRANSPARENT = 0
 
+TILE_RECTANGULAR = 0
+TILE_DIAGONAL = 1
+TILE_TRIANGULAR = 2
+TILE_RANDOM = 3
+
 class Color:
     """
-    Colours, which are stored in a Windows-compatible 24-bit colour integer.
+    Colours, which are stored as a 24-bit color integer.
     
-    :param color:   string descriptor, tuple (r, g, b), (c, m, y) or (h, s, v), each item defined in the range
-                    0 to 255, or a 24-bit color number, which can be an item selected from the following list:
-                    
+    :param color:   string descriptor (eg. 'R255G0B125'), color letter R, G, B, C, M, Y, H, S or V.;
+                    tuple (r, g, b), (c, m, y) or (h, s, v), each item defined in the range 0 to 255;
+                    24-bit color number, which can be an item selected from the following list:
+                                       
                     ::
                     
                         C_BLACK
@@ -114,27 +138,14 @@ class Color:
 
     def __init__(self, color, model=C_RGB):
 
-        def get_part(cstr, c, default=255):
-            if c not in cstr:
-                return default, cstr
-            start = cstr.index(c)
-            end = start + 1
-            for c in cstr[end:]:
-                if not (c in '0123456789'):
-                    break
-                end += 1
-            return_cstr = cstr[:start] + cstr[end:]
-            if end == start+1:
-                return default, return_cstr
-            return int(cstr[start+1:end]), return_cstr
-
-        if type(color) is str:
-
-            #self.thickness, color = get_part(color, 't', default=0)
-            self._color = gxapi.GXMVIEW.color(color)
+        if type(color) is Color:
+            self._color = color.int
 
         elif type(color) is int:
             self._color = color
+
+        elif type(color) is str:
+            self._color = gxapi.GXMVIEW.color(color)
 
         elif model == C_RGB:
             self.rgb = color
@@ -148,6 +159,9 @@ class Color:
             val = max(0, min(255, color[2]))
             self._color = gxapi.GXMVIEW.color_hsv(hue, sat, val)
 
+    def __eq__(self, other):
+        return self._color == other._color
+
     @property
     def int(self):
         return self._color
@@ -158,6 +172,8 @@ class Color:
 
     @property
     def rgb(self):
+        if self.int == 0:
+            return None
         r = gxapi.int_ref()
         g = gxapi.int_ref()
         b = gxapi.int_ref()
@@ -173,6 +189,8 @@ class Color:
 
     @property
     def cmy(self):
+        if self.int == 0:
+            return None
         red, green, blue = self.rgb
         return 255 - red, 255 - green, 255 - blue
 
@@ -181,11 +199,12 @@ class Color:
         self.rgb = (255 - cmy[0], 255 - cmy[1], 255 - cmy[2])
 
 
-def font_weight_from_line_thickness(thickness, height):
+def font_weight_from_line_thickness(line_thick, height):
     """
     Returns font weight from the defined text height and line thickness.
-    :param thickness: line thickness in same units as the text height
-    :param height: text height
+    
+    :param line_thick:  line thickness in same units as the text height
+    :param height:      text height
     
     :returns: one of:
     
@@ -202,7 +221,7 @@ def font_weight_from_line_thickness(thickness, height):
     """
     if height <= 0.:
         return FONT_WEIGHT_ULTRALIGHT
-    ratio = thickness / height
+    ratio = line_thick / height
     fw = 1
     for f in _weight_factor:
         if ratio <= f:
@@ -231,8 +250,8 @@ class Text_def:
                             FONT_WEIGHT_XBOLD
                             FONT_WEIGHT_XXBOLD
                     
-    :param thickness:   line thickness from which to determine a weight, which is calculated from the 
-                        ration of line thickness to height.
+    :param line_thick:  line thickness from which to determine a weight, which is calculated from the 
+                        ratio of line thickness to height.
     :param italics:     True for italics fonts
     :param height:      text height in map mm.
     
@@ -241,33 +260,52 @@ class Text_def:
         :height:        font height in 
         :font:          font name
         :weight:        font weight, one of FONT_WEIGHT_
-        :thickness:     font line thickness for gfn stroke fonts
+        :line_thick:    font line thickness for gfn stroke fonts
         :italics:       True for italics
         :slant:         Slant angle for stroke fonts, 0 if normal, 15 for italics
-        :mapplot_text:  mapplot compatible text definition string
+        :mapplot_string:  mapplot compatible text definition string
+        
+    .. versionadded:: 9.2
     """
-    def __init__(self,
-                 height=2.5,
-                 font='DEFAULT',
-                 weight=None,
-                 thickness=None,
-                 italics=False):
-        self._font = font
-        self._weight = weight
-        self._thickness = thickness
-        if type(italics) is bool:
-            self._italics = italics
-        elif italics > 5:
-            self.italics = True
-        else:
-            italics = False
-        self._height = height
+    def __init__(self, **kwargs):
 
-        if weight is None:
-            if thickness is None:
+        if 'default' in kwargs:
+            def_pen = kwargs.pop('default')
+            self.__dict__ = def_pen.__dict__.copy()
+        else:
+            self.color = Color(C_BLACK)
+            self.height = 2.5
+            self.font = 'DEFAULT'
+            self.weight = None
+            self.italics = False
+
+        line_thick = None
+        for k in kwargs:
+            if k == 'color':
+                self.color = kwargs[k]
+            elif k == 'line_thick':
+                line_thick = kwargs[k]
+            elif k in self.__dict__:
+                self.__dict__[k] = kwargs[k]
+            else:
+                raise ViewException('Invalid text definition parameter ({})'.format(k))
+
+        if self.weight is None:
+            if line_thick is None:
                 self._weight = FONT_WEIGHT_MEDIUM
             else:
-                self._weight = font_weight_from_line_thickness(thickness, height)
+                self._weight = font_weight_from_line_thickness(line_thick, self.height)
+
+    @property
+    def color(self):
+        return self._color
+
+    @color.setter
+    def color(self, color):
+        if type(color) is Color:
+            self._color = color
+        else:
+            self._color = Color(color)
 
     @property
     def font(self):
@@ -281,45 +319,16 @@ class Text_def:
             self._font = 'DEFAULT'
 
     @property
-    def weight(self):
-        return self._weight
-
-    @weight.setter
-    def weight(self, weight):
-        self._weight = weight
-
-    @property
-    def thickness(self):
+    def line_thick(self):
         return thickness_from_font_weight(self._weight, self._height)
 
-    @thickness.setter
-    def thickness(self, thickness):
-        self._weight = font_weight_from_line_thickness(thickness, self._height)
-
-    @property
-    def italics(self):
-        return self._italics
-
-    @italics.setter
-    def italics(self, italics):
-        if type(italics) is bool:
-            self._italics = italics
-        elif italics > 5:
-            self._italics = True
-        else:
-            self._italics = False
-
-    @property
-    def height(self):
-        return self._height
-
-    @height.setter
-    def height(self, height):
-        self._height = height
+    @line_thick.setter
+    def line_thick(self, line_thick):
+        self._weight = font_weight_from_line_thickness(line_thick, self._height)
 
     @property
     def slant(self):
-        if self._italics:
+        if self.italics:
             return 15
         else:
             return 0
@@ -327,12 +336,16 @@ class Text_def:
     @slant.setter
     def slant(self, slant):
         if slant > 5:
-            self._italics = True
+            self.italics = True
         else:
-            self._italics = False
+            self.italics = False
 
     @property
-    def mapplot_text(self):
+    def mapplot_string(self):
+        """
+        Return a text definition for mapplot.
+        :return: 
+        """
         if '.gfn' in self._font.lower():
             font = self._font.lower().replace('.gfn','')
         elif 'default' in self._font.lower():
@@ -341,26 +354,186 @@ class Text_def:
             font = self._font.strip() + '(TT)'
         return '{},,,{},{}'.format(self.height, self.slant, font)
 
+
 class Pen:
+    """
+    Geosoft Pen:
+    
+    :param line_color:  line Color instance, default is black
+    :param fill_color:  fill Color instance, default is transparent
+    :param line_thick:  line thickness, default is 1
+    :param line_style:  line pattern style
+    
+                        ::
+                        
+                            LINE_STYLE_SOLID (default)
+                            LINE_STYLE_LONG
+                            LINE_STYLE_DOTTED
+                            LINE_STYLE_SHORT
+                            LINE_STYLE_LONG_SHORT_LONG
+                            LINE_STYLE_LONG_DOT_LONG
+                        
+    :param line_pitch:  line style pitch, default is 1
+    :param line_smooth: smooth line:
+    
+                        ::
+                        
+                            SMOOTH_NONE (default)
+                            SMOOTH_AKIMA
+                            SMOOTH_CUBIC
+                            
+    :param pat_number:  pattern number for filled patterns (refer to ``etc/default.pat``) default 0, flood fill
+    :param pat_angle:   pattern angle, default 0
+    :param pat_density: pattern density, default 1
+    :param pat_size:    pattern size, default 1
+    :param pat_style:   pattern style:
+    
+                        ::
+                        
+                            TILE_RECTANGULAR (default)
+                            TILE_DIAGONAL
+                            TILE_TRIANGULAR
+                            TILE_RANDOM
 
-    def __init__(self,
-                 color,
-                 thickness,
-                 line_style,
-                 line_pitch,
-                 fill_color):
-        pass
+    :param pat_thick:   pattern line thickness, default 1
+    :param default:     default Pen instance, if specified defaults are established from this
 
-# decorators
+    .. versionadded: 9.2
+    """
+
+    def __init__(self, **kwargs):
+
+        if 'default' in kwargs:
+            def_pen = kwargs.pop('default')
+            self.__dict__ = def_pen.__dict__.copy()
+        else:
+            self.line_color = Color(C_BLACK)
+            self.line_thick = 1
+            self.line_style = LINE_STYLE_SOLID
+            self.line_pitch = 1
+            self.line_smooth = SMOOTH_NONE
+            self.fill_color = Color(C_TRANSPARENT)
+            self.pat_number = 0
+            self.pat_angle = 0
+            self.pat_density = 1
+            self.pat_size = 1
+            self.pat_style = TILE_RECTANGULAR
+            self.pat_thick = 1
+
+        for k in kwargs:
+            if k == 'line_color':
+                self.line_color = kwargs[k]
+            elif k == 'fill_color':
+                self.fill_color = kwargs[k]
+            elif k in self.__dict__:
+                self.__dict__[k]= kwargs[k]
+            else:
+                raise ViewException('Invalid pen parameter ({})'.format(k))
+
+    @classmethod
+    def from_mapplot_string(cls, cstr):
+        """
+        Create a Pen instance from a mapplot-style string descriptor.
+        
+        :param cstr:                example 'r45g255t500B'
+        
+        .. versionadded:: 9.2
+        """
+        def get_part(cstr, c, default=255):
+            if c not in cstr:
+                return 0
+            start = cstr.index(c)
+            end = start + 1
+            for c in cstr[end:]:
+                if not (c in '0123456789'):
+                    break
+                end += 1
+            if end == start+1:
+                return default
+            return int(cstr[start+1:end])
+
+        def add_k(c, k):
+            return max(c[0] - k, 0), max(c[1] - k, 0), max(c[2] - k, 0)
+
+        def has_color(cstr, cc):
+            for c in cc:
+                if c in cstr:
+                    return True
+            return False
+
+        def color(cstr, cc):
+            if has_color(cstr, cc):
+                k = get_part(cstr, cc[3])
+                if has_color(cstr, cc[:3]):
+                    return add_k((get_part(cstr, cc[0]), get_part(cstr, cc[1]), get_part(cstr, cc[2])), k)
+                else:
+                    return add_k((255, 255, 255), k)
+            else:
+                return C_TRANSPARENT
+
+        line_color = color(cstr, 'rgbk')
+        fill_color = color(cstr, 'RGBK')
+        line_thick = max(1, get_part(cstr, 't', 1))
+
+        return cls(line_color=line_color, fill_color=fill_color, line_thick=line_thick)
+
+    @property
+    def line_color(self):
+        return self._line_color
+
+    @line_color.setter
+    def line_color(self, color):
+        if type(color) is Color:
+            self._line_color = color
+        else:
+            self._line_color = Color(color)
+
+    @property
+    def fill_color(self):
+        return self._fill_color
+
+    @fill_color.setter
+    def fill_color(self, color):
+        if type(color) is Color:
+            self._fill_color = color
+        else:
+            self._fill_color = Color(color)
+
+    @property
+    def mapplot_string(self):
+        s = ''
+        if self._line_color.int != C_TRANSPARENT:
+            if self._line_color.int == C_BLACK:
+                s += 'k'
+            else:
+                c = self._line_color.rgb
+                s += 'r{}g{}b{}'.format(c[0],c[1],c[2])
+        if self._fill_color.int != C_TRANSPARENT:
+            if self._line_color.int == C_BLACK:
+                s += 'K'
+            else:
+                c = self._fill_color.rgb
+                s += 'R{}G{}B{}'.format(c[0], c[1], c[2])
+
+        return s + 't{}'.format(int(self.line_thick))
+
+# decorator
 def _draw(func):
     @wraps(func)
     def wrapper(self, *args, **kwargs):
+        if not self._group:
+            self.start_group()
         if not self._pen:
-            self.start_group('_')
+            self._init_pen()
         if 'pen' in kwargs:
-            self.push_pen(kwargs.pop('pen'))
-            func(self, *args, **kwargs)
-            self.pop_pen()
+            cur_pen = self.pen
+            self.pen = kwargs.pop('pen')
+            try:
+                func(self, *args, **kwargs)
+            except:
+                raise
+            finally:
+                self.pen = cur_pen
         else:
             func(self, *args, **kwargs)
 
@@ -422,11 +595,9 @@ class GXview:
 
     def _close(self):
         if self._open:
-            #TODO revisit why failing to free _pen, _pen_fn and _pen_stack fails once we have cython interface.  Jacques suspects boost.
+            #TODO revisit resource cleaning once we have cython interface.  Jacques suspects boost.
             self.gxview = None
             self._pen = None
-            self._pen_fn = None
-            self._pen_stack = None
             self._gmap = None
             self._open = False
 
@@ -452,9 +623,8 @@ class GXview:
             mode = WRITE_NEW
         self.gxview = gxapi.GXMVIEW.create(self._gmap.gxmap, self._viewname, mode)
         self._mode = mode
-        self._pen = {}
-        self._pen_fn = {}
-        self._pen_stack = []
+        self._pen = None
+        self._group = None
 
         atexit.register(self._close)
         self._open = True
@@ -558,10 +728,6 @@ class GXview:
         self.gxview.set_window(a_minx, a_miny, a_maxx, a_maxy, UNIT_VIEW)
         #self.gxview.set_u_fac(1.0 / x_scale)
 
-    def _invalid_pen(self, key):
-        raise ViewException(_t('Invalid pen attribute \'{}\'. Valid attibutes are {}')
-                            .format(key, list(self._pen)))
-
     @property
     def gmap(self):
         """ gxpy.GXmap instance that contains this view."""
@@ -586,25 +752,40 @@ class GXview:
 
     @property
     def pen(self):
-        """
-        Dictionary of the current pen settings.
-        """
-        return self._pen.copy()
+        if self._pen is None:
+            self._init_pen()
+        return self._pen
 
     @pen.setter
     def pen(self, pen):
-        """
-        Set the current drawing pen attributes from a pen dictionary
-        """
-        for att, setting in pen.items():
-            if type(setting) is str:
-                setting = self.gxview.color(setting)
-            try:
-                if self._pen[att] != setting:
-                    self._pen_fn[att](setting)
-                    self._pen[att] = setting
-            except:
-                self._invalid_pen(att)
+
+        if self._pen is None:
+            self._init_pen()
+
+        if self._pen.line_color != pen.line_color:
+            self.gxview.line_color(pen._line_color.int)
+        if self._pen.line_thick!= pen.line_thick:
+            self.gxview.line_thick(pen.line_thick)
+        if self._pen.line_smooth != pen.line_smooth:
+            self.gxview.line_smooth(pen.line_smooth)
+        if (self._pen.line_style != pen.line_style) or (self._pen.line_pitch != pen.line_pitch):
+            self.gxview.line_style(pen.line_style, pen.line_pitch)
+        if self._pen.fill_color != pen.fill_color:
+            self.gxview.fill_color(pen._fill_color.int)
+        if self._pen.pat_number != pen.pat_number:
+            self.gxview.pat_number(pen.pat_number)
+        if self._pen.pat_angle != pen.pat_angle:
+            self.gxview.pat_angle(pen.pat_angle)
+        if self._pen.pat_density != pen.pat_density:
+            self.gxview.pat_density(pen.pat_density)
+        if self._pen.pat_size != pen.pat_size:
+            self.gxview.pat_size(pen.pat_size)
+        if self._pen.pat_style != pen.pat_style:
+            self.gxview.pat_style(pen.pat_style)
+        if self._pen.pat_thick!= pen.pat_thick:
+            self.gxview.pat_thick(pen.pat_thick)
+
+        self._pen = pen
 
     @property
     def extent(self):
@@ -631,43 +812,58 @@ class GXview:
     def aspect(self):
         return self.gxview.scale_ymm() / self.gxview.scale_mm()
 
-    def _line_style(self, ls):
-        self.gxview.line_style(ls[0], ls[1])
+    def _init_pen(self):
 
-    def _init_pen_attributes(self):
+        scm = self.units_per_map_cm
+        pen = Pen(line_thick = 0.02 * scm,
+                  line_pitch = 0.5 * scm,
+                  pat_size = 0.25 * scm,
+                  pat_thick = 0.02 * scm)
 
-        # set the default pen characteristics, initializes pen dictionaries
+        if self._group is None:
+            self.start_group()
+        self.gxview.line_color(pen.line_color.int)
+        self.gxview.line_thick(pen.line_thick)
+        self.gxview.line_smooth(pen.line_smooth)
+        self.gxview.line_style(pen.line_style, pen.line_pitch)
+        self.gxview.fill_color(pen.fill_color.int)
+        self.gxview.pat_number(pen.pat_number)
+        self.gxview.pat_angle(pen.pat_angle)
+        self.gxview.pat_density(pen.pat_density)
+        self.gxview.pat_size(pen.pat_size)
+        self.gxview.pat_style(pen.pat_style)
+        self.gxview.pat_thick(pen.pat_thick)
 
-        def setpen(att, fn, setting):
-            fn(setting)
-            self._pen[att] = setting
-            self._pen_fn[att] = fn
+        self._pen = pen
 
-        self._pen_stack = []
-        self._pen = {}
-        self._pen_fn = {}
-        setpen('line_color', self.gxview.line_color, gxapi.C_BLACK)
-        setpen('line_thick', self.gxview.line_thick, 0.1)
-        setpen('line_smooth',self.gxview.line_smooth, SMOOTH_NONE)
-        setpen('line_style', self._line_style, (0, 1.0))
-        setpen('fill_color', self.gxview.fill_color, gxapi.C_TRANSPARENT)
-        setpen('pat_number', self.gxview.pat_number, 0)
-        setpen('pat_angle', self.gxview.pat_angle, 0.0)
-        setpen('pat_density', self.gxview.pat_density, 1.0)
-        setpen('pat_size', self.gxview.pat_size, 5.0)
-        setpen('pat_style', self.gxview.pat_style, TILE_RECTANGULAR)
-        setpen('pat_thick', self.gxview.pat_thick, 0.1)
+    def new_pen(self, **kwargs):
+        """
+        Returns a pen that inherits default from the current view pen.  Arguments are the same
+        as the ``Pen`` constructor.  This using this ensures that default sizing of view unit-based
+        dimensions (such as ``line_thick``) are not lost when new pens are created.
+        
+        :param kwargs: see ``Pen``
+        :return: Pen instance
+        
+        .. versionadded:: 9.2
+        """
+        return Pen(default=self.pen, **kwargs)
 
-    def start_group(self, name, append=False):
+    def start_group(self, name=None, append=False):
         """
         Start a new named group in a view.  Drawing functions that follow will be rendered into this group.
 
         :param name:    name of the group.  If a group name is the same as the view name, '_' is appended
-                        to the group name to make it different.
+                        to the group name to make it different. If no group name is specified the default
+                        group name '_' is assumed with append=True.
         :param append:  True to append to an existing group
 
         .. versionadded:: 9.2
         """
+
+        if name is None:
+            name = '_'
+            append = True
         if append:
             mode = gxapi.MVIEW_GROUP_APPEND
         else:
@@ -675,8 +871,8 @@ class GXview:
 
         if name == self.viewname:
             name = name + '_'
+        self._group = name
         self.gxview.start_group(name, mode)
-        self._init_pen_attributes()
 
     def delete_group(self, group_name):
         """
@@ -688,32 +884,6 @@ class GXview:
         """
 
         self.gxview.delete_group(group_name)
-
-    def push_pen(self, pen=None):
-        """
-        Push current pen attributes on the pen stack, and set the pen.
-        If pen not specified, all pen attributes are pushed.  pop_pen recovers
-        last pen pushed.
-
-        :param pen: pen to set after pushing current attributes.
-        """
-        if pen is None:
-            self._pen_stack.append(self._pen.copy())
-        else:
-            oldpen = {}
-            for key in pen:
-                try:
-                    oldpen[key] = self._pen[key]
-                except KeyError:
-                    self._invalid_pen(key)
-            self._pen_stack.append(oldpen)
-            self.pen = pen
-
-    def pop_pen(self):
-        """Pop the last pen off the pen stack."""
-        if len(self._pen_stack) > 0:
-            self.pen = self._pen_stack[-1]
-            del self._pen_stack[-1:]
 
     def color(self, cstr):
         """
@@ -728,7 +898,7 @@ class GXview:
         specifying a number between 0 and 255.
         An empty string will produce C_ANY_NONE.
 
-        You must stay in the same colour model, RGB, CMY,
+        You must stay in the same color model, RGB, CMY,
         HSV or K.
 
         For example "R", "R127G22", "H255S127V32"

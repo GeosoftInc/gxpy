@@ -420,3 +420,13 @@ class PPoint(Geometry, Sequence):
     def xyz(self):
         """ XYZ point array"""
         return self.pp
+
+    def extent(self):
+        """
+        Returns extent of the polyline.
+        
+        :returns:   (P_minimum, P_maximum)
+        """
+        p1 = Point((np.amin(self.x), np.amin(self.y), np.amin(self.z)))
+        p2 = Point((np.amax(self.x), np.amax(self.y), np.amax(self.z)))
+        return p1, p2

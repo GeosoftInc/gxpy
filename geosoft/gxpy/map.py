@@ -8,7 +8,7 @@ import geosoft.gxapi as gxapi
 from . import gx as gx
 from . import utility as gxu
 from . import dataframe as gxdf
-from . import view as gxvw
+from . import view as gxv
 
 __version__ = geosoft.__version__
 
@@ -309,7 +309,7 @@ class GXmap:
             return mx - im, my - im  # data window on map cm
 
         def set_coordinate_system(gmap, cs):
-            with gxvw.GXview(gmap=gmap, viewname='data', mode=gxvw.WRITE_OLD) as view:
+            with gxv.GXview(gmap=gmap, viewname='data', mode=gxv.WRITE_OLD) as view:
                 view.set_cs(cs)
 
         def set_registry(gmap, style, inside_margin):
@@ -571,13 +571,13 @@ class GXmap:
         xmx = gxapi.float_ref()
         ymx = gxapi.float_ref()
 
-        with gxvw.GXview(self, self.current_base_view, gxvw.READ_ONLY) as v:
+        with gxv.GXview(self, self.current_base_view, gxv.READ_ONLY) as v:
             v.gxview.extent(gxapi.MVIEW_EXTENT_CLIP, gxapi.MVIEW_EXTENT_UNIT_MM,
                             xmn, ymn, xmx, ymx)
             mapx = (xmx.value - xmn.value) * 0.1
             mapy = (ymx.value - ymn.value) * 0.1
 
-        with gxvw.GXview(self, self.current_data_view, gxvw.READ_ONLY) as v:
+        with gxv.GXview(self, self.current_data_view, gxv.READ_ONLY) as v:
             v.gxview.extent(gxapi.MVIEW_EXTENT_CLIP, gxapi.MVIEW_EXTENT_UNIT_MM,
                             xmn, ymn, xmx, ymx)
             view_map = (xmn.value * 0.1,
@@ -667,10 +667,10 @@ class GXmap:
         viewname = self._classview(viewname)
 
         if not viewname:
-            with gxvw.GXview(self, self.current_base_view) as v:
+            with gxv.GXview(self, self.current_base_view) as v:
                 extent = v.extent_map_cm
         else:
-            with gxvw.GXview(self, viewname) as v:
+            with gxv.GXview(self, viewname) as v:
                 extent = v.extent
 
         xc = extent[0] + (extent[2] - extent[0]) * 0.5
@@ -687,7 +687,7 @@ class GXmap:
 
         return rpoints[refp - 1]
 
-    def surround(self, outer_pen='kt250', inner_pen='kt1', gap=0):
+    def surround(self, outer_pen=None, inner_pen=None, gap=0):
         """
         Draw a map surround.  This will draw a single or a double neat-line around the base view of the
         map.
@@ -699,17 +699,21 @@ class GXmap:
         .. versionadded:: 9.2
         """
 
-        with _GXmapplot(self) as mpl:
+        if outer_pen is None:
+            outer_pen = gxv.Pen(line_thick=500)
 
-            mpl.start_group('north_arrow', view=VIEW_BASE, mode=GROUP_APPEND)
+        with _Mapplot(self) as mpl:
 
-            mpl.define_named_attribute('outer', pen_def=outer_pen)
+            mpl.start_group('surround', view=VIEW_BASE, mode=GROUP_APPEND)
+            mpl.define_named_attribute('outer', pen=outer_pen)
             if gap <= 0:
                 inner = ''
                 gap = ''
             else:
+                if inner_pen is None:
+                    inner_pen = gxv.Pen(line_thick=1)
                 inner = 'inner'
-                mpl.define_named_attribute(inner, pen_def=inner_pen)
+                mpl.define_named_attribute(inner, pen=inner_pen)
 
             mpl.command('SURR "{}",{},"{}"'.format('outer', gap, inner))
 
@@ -719,8 +723,8 @@ class GXmap:
                     length=3,
                     inclination=None,
                     declination=None,
-                    text=(0.25, 15),
-                    pen='kt200'):
+                    text=None,
+                    pen=None):
         """
         Add a North arrow to the base view of the map.
 
@@ -732,8 +736,8 @@ class GXmap:
         :param length:      arrow length in cm
         :param inclination: magnetic inclination, not shown if not specified
         :param declination: magnetic declination, not shown if not specified
-        :param text:        (height_cm, slant_deg) text height and slant.
-        :param pen:         pen descriptor string, eg. 'kt200'.
+        :param text:        ``gxpy.view.Text_def`` instance, or ``None`` for the default.
+        :param pen:         ``gxpy.view.Pen`` instance, or ``None`` for the default
 
         .. versionadded:: 9.2
         """
@@ -741,7 +745,7 @@ class GXmap:
         #TODO add IGRF calculation from a date, igrfdate=
 
         if direction is None:
-            with gxvw.GXview(self, '*data', mode=gxvw.WRITE_OLD) as v:
+            with gxv.GXview(self, '*data', mode=gxv.WRITE_OLD) as v:
                 direction = round(v.gxview.north(), 1)
                 if direction == gxapi.rDUMMY:
                     direction = ''
@@ -752,10 +756,16 @@ class GXmap:
         if declination is None:
             declination = ''
 
-        with _GXmapplot(self) as mpl:
+        if pen is None:
+            pen = gxv.Pen(line_thick=150)
+
+        if text is None:
+            text = gxv.Text_def(height=2.5, italics=True)
+
+        with _Mapplot(self) as mpl:
             mpl.start_group('north_arrow', view=VIEW_BASE, mode=GROUP_APPEND)
-            mpl.define_named_attribute('arrow', pen_def=pen)
-            mpl.define_named_attribute('annot', text_def=text, pen_def='kt50')
+            mpl.define_named_attribute('arrow', pen=pen)
+            mpl.define_named_attribute('annot', text=text, pen=pen)
             mpl.command("NARR {},{},{},{},{},{},{},{}".format(location[0], location[1], location[2],
                                                               direction,
                                                               length,
@@ -765,20 +775,20 @@ class GXmap:
             mpl.command('     annot')
 
     def scale_bar(self,
+                  location=(1, 5, 2),
                   length=5,
                   sections=None,
                   post_scale=False,
-                  ref_point=(1, 5, 2),
-                  text=(0.25, 15),
-                  pen='kt50'):
+                  text=None,
+                  pen=None):
         """
 
         :param length:      maximum scale bar length, default is 5 cm. scale=0.0 will suppress drawing of the bar.
         :param sections:    number of major sections in the bar, default is determined automatically.
         :param post_scale:  True to post the actual scale as a string, e.g. '1:50,000'.  Note that a posted
                             scale is only relevant for printed maps.  The default does not post the scale.
-        :param text:        (height_cm, slant_deg) text height and slant.
-        :param pen:         pen descriptor string, eg. 'kt200'.
+        :param text:        ``gxpy.view.Text_def`` instance.
+        :param pen:         ``gxpy.view.Pen`` instance.
 
 
         .. versionadded:: 9.2
@@ -792,11 +802,17 @@ class GXmap:
         else:
             option = 1
 
-        with _GXmapplot(self) as mpl:
+        if text is None:
+            text = gxv.Text_def(height=0.25, italics=True)
+
+        if pen is None:
+            pen = gxv.Pen(line_thick=50)
+
+        with _Mapplot(self) as mpl:
             mpl.start_group('scale_bar', view=VIEW_BASE, mode=GROUP_APPEND)
             att = 'scale_bar'
-            mpl.define_named_attribute(att, ref_point=ref_point, pen_def=pen, text_def=text)
-            mpl.command("SCAL {},{},{},,,{},{},,{},".format(ref_point[0], ref_point[1], ref_point[2],
+            mpl.define_named_attribute(att, pen=pen, text=text)
+            mpl.command("SCAL {},{},{},,,{},{},,{},".format(location[0], location[1], location[2],
                                                             length, sections, option))
             mpl.command('     {}'.format(att))
 
@@ -805,9 +821,10 @@ class GXmap:
                          x_sep='', x_dec='',
                          y_sep='', y_dec='',
                          compass=True, top=TOP_OUT,
-                         text=(0.18, 0),
-                         text_pen='kt1',
-                         grid=0, grid_pen=''):
+                         text=None,
+                         text_pen=None,
+                         grid=0,
+                         grid_pen=None):
         """
         Annotate a data view axis
 
@@ -831,25 +848,32 @@ class GXmap:
                                 GRID_CROSSES    crosses at intersections
                                 GRID_LINES      lines
        
-        :param grid_pen:    (colour, thickness) for grid detail
-        :param text:        (size_cm, slant)
-        :param text_pen:    pen descriptor for text
+        :param grid_pen:    ``gxv.Pen``
+        :param text:        ``gxv.Text_def``
+        :param text_pen:    ``gxv.Pen``
         
 
         .. versionadded:: 9.2
         """
+
+        if text is None:
+            text = gxv.Text_def(height=0.18)
+        if text_pen is None:
+            text_pen = gxv.Pen()
+        if grid_pen is None:
+            grid_pen = gxv.Pen()
 
         current_view = self.current_data_view
         self.current_data_view = self._classview(viewname)
 
         try:
 
-            with _GXmapplot(self) as mpl:
+            with _Mapplot(self) as mpl:
                 if not tick and grid == GRID_LINES:
                     tick = 0.0
 
-                mpl.define_named_attribute(text_def=text, pen_def=text_pen)
-                offset = mpl._adjusted_offset(offset)
+                mpl.define_named_attribute(text=text, pen=text_pen)
+                offset = mpl._adjusted_offset(offset, text.height)
 
                 mpl.command("ANOX ,,,,,{},{},,{},,,,{},{},1".format(x_sep, tick, 0 if compass else -1, offset, x_dec))
                 mpl.command('     _')
@@ -857,10 +881,7 @@ class GXmap:
                 mpl.command('     _')
 
                 if grid:
-                    if grid_pen:
-                        mpl.define_named_attribute('grid', pen_def=grid_pen)
-                        grid_pen = 'grid'
-                    mpl.command("GRID {},,,,,{}".format(grid, grid_pen))
+                    mpl.command("GRID {},,,,,{}".format(grid, grid_pen.mapplot_string))
 
         except:
             raise
@@ -870,8 +891,8 @@ class GXmap:
 
     def annotate_data_ll(self, viewname='*data',
                          tick='', offset='', sep='', top=TOP_OUT,
-                         text=(0.2, 15), text_pen='kt1',
-                         grid=GRID_LINES, grid_pen='bt1'):
+                         text=None, text_pen=None,
+                         grid=GRID_LINES, grid_pen=None):
         """
         Annotate the date view axis
 
@@ -893,18 +914,25 @@ class GXmap:
         .. versionadded:: 9.2
         """
 
+        if text is None:
+            text = gxv.Text_def(height=0.18)
+        if text_pen is None:
+            text_pen = gxv.Pen()
+        if grid_pen is None:
+            grid_pen = gxv.Pen()
+
         current_view = self.current_data_view
         self.current_data_view = self._classview(viewname)
 
         try:
 
-            with _GXmapplot(self) as mpl:
+            with _Mapplot(self) as mpl:
 
                 if not tick and grid == GRID_LINES:
                     tick = 0.0
 
-                mpl.define_named_attribute(text_def=text, pen_def=text_pen)
-                offset = mpl._adjusted_offset(offset)
+                mpl.define_named_attribute(text=text, pen=text_pen)
+                offset = mpl._adjusted_offset(offset, text.height)
 
                 mpl.command("ALON {},{},{},,1".format(sep, tick, offset))
                 mpl.command('    _')
@@ -912,10 +940,7 @@ class GXmap:
                 mpl.command('    _')
 
                 if grid:
-                    if grid_pen:
-                        mpl.define_named_attribute('grid', pen_def=grid_pen)
-                        grid_pen = 'grid'
-                    mpl.command("GRID -{},,,,,{}".format(grid, grid_pen))
+                    mpl.command("GRID -{},,,,,grid".format(grid, grid_pen.mapplot_string))
 
         except:
             raise
@@ -931,131 +956,7 @@ class MapplotException(Exception):
     """
     pass
 
-_DEF_ATT = '_'
-
-# decorators
-def _attrib(func):
-    @wraps(func)
-    def wrapper(self, *args, **kwargs):
-
-        changed = False
-        self._att = _DEF_ATT
-        if 'ref_point' in kwargs:
-            self.ref_point = kwargs.pop('ref_point')
-        if 'pen_def' in kwargs:
-            self.pen_def = kwargs.pop('pen_def')
-            changed = False
-        if 'line_def' in kwargs:
-            self.line_def = kwargs.pop('line_def')
-            changed = False
-        if 'text_def' in kwargs:
-            self.text_def = kwargs.pop('text_def')
-            changed = False
-        if 'font' in kwargs:
-            self.font = kwargs.pop('font')
-            changed = False
-        if 'att' in kwargs:
-            self._att = kwargs.pop('att')
-            if changed:
-                self._define_named_attribute(self.att)
-
-        func(self, *args, **kwargs)
-
-    return wrapper
-
-#TODO change init create from a file, new or old.
-class _GXmapplot:
-    """
-    Annotate a Geosoft map that contains a "base" view and a "data" view.  This class provides
-    a number of drawing capabilities intended for base-map or figure annotations.  This wraps
-    the GXAPI GXMAPL class and uses the concepts of the Geosoft MAPPLOT system.
-
-    :param map:         gxpy.map.GXmap instance, which must contain a base and a data view.
-    :param data_view:   name of the default data view.  If not specified the current default is assumed.
-                        All drawing commands that reference the data view will be applied to the default 
-                        data view.  On closing of the GXmapplot instance the default data view is
-                        reset to the previous default.
-    :param ref_prefix:  A prefix to add to the default group in the "BASE" and "DATA" groups.  The
-                        default is "MAPL_", which will create a group named "MAPL_BASE" in the
-                        base view and "MAPL_DATA" in the data view.  Use the start_group method
-                        to create new view groups.   
-
-    Drawing functions share the following keyword parameters, which can be defined on instance
-    creation or together with any drawing function.
-
-    :param pen_def:     string that describes the colour-thickness of a line and fill colour.
-                        Colours are defined by a colour letter from "rgbcmy" optionally
-                        followed by an intensity between 0 and 255.  Lower-case colour letters
-                        define the line colour and upper-case colour letters define the fill colour.
-                        Line thickness is defined by a letter "t" followed by the desired line
-                        thickness in microns.
-
-                        Examples::
-
-                            'k'             black
-                            'k64'           light grey
-                            'k128t200'      medium grey line 200 microns thick
-                            'k0'            white (which will be a white line on a coloured background)
-                            'r128b255t50'   purple, 50 microns thick
-                            'r128b255K15'   purple with light-grey fill
-
-    :param line_def:    (pattern, pitch) line pattern and pitch in cm.  Patterns::
-
-                            1   solid
-                            2   long dashes
-                            3   dotted
-                            4   short dashes
-                            5   long/short/long dashes
-
-                        If pattern is negative a smooth line is used.
-
-    :param text_def:    (size, slant), text character size in cm, slant in degrees.  For true-type fonts
-                        any slant above 10 degrees is taken as italics, and for Geosoft stroke fonts the
-                        slant is the slant angle.
-
-    :param font:        True-Type font name, or a Geosoft stroke font name::
-
-                            'sr.gfn'         simplex roman
-                            'ss.gfn'         simplex script
-                            'cr.gfn'         complex roman
-                            'ci.gfn'         complex italic
-                            'tr.gfn'         triplex roman
-                            'ti.gfn'         triplex italic
-                            'dr.gfn'         duplex roman
-                            'cs.gfn'         complex script
-                            'sg.gfn'         simplex greek
-                            'cg.gfn'         complex greek
-                            'es.gfn'         equal-spaced simplex roman
-                            'russian.gfn'    simple Cyrillic
-
-    :param ref_point:   (refp, x_off, y_off) a reference point and offset from that point::
-
-        Drawing commands use reference points to define the positions at which to plot objects.
-        This allows the user to work either relative to a ground coordinate system, relative to
-        any one of the map corners, or relative to a user specified point.
-
-        The 'refp' parameter identifies the reference point relative to the map layout as follows::
-
-            7, 8, 9     Top left, center and right
-            4, 5, 6     Horizontal center line left, middle and right.
-            1, 2, 3     Bottom left, center and right of map surround.
-            10          Plot origin (lowest-left plottable point on the media)
-            11          Movable reference point (see the refp() function)
-            12          Bottom left of the "*data" view clip window
-            0           Data view origin, offsets are in data view coordinates.
-
-        All offset and relative units for referents point 1 through 10, and reference point 12
-        are centimetres on the map.  Offsets using reference point 0 are are in the units of the
-        data view.  The movable reference point 11 will be in data view units if defined
-        relative to reference point 0, otherwise using are map centimetres.
-
-        For example, if we are creating a series of maps on which we want to place the title block
-        and legends in the top right hand corner and along the right side of a map, we define
-        the locations of these objects relative to the top right hand corner of the map (reference
-        point 9).
-
-    .. versionadded:: 9.2
-    """
+class _Mapplot:
 
     def __enter__(self):
         return self
@@ -1086,20 +987,12 @@ class _GXmapplot:
         # mapplot control file
         self._maplfilename = os.path.join(gx.GXpy().temp_folder(), 'mapl_' + gxu.uuid() + ".con")
         self._maplfile = open(self._maplfilename, "w")
-        #self.command('MDFF \"{}\"\n'.format(gxu.normalize_file_name(self._mdffilename)))
-
-        self._refp = (1, 0, 0)
-        self._pen_def = 'kt50'
-        self._line_def = (1, 0.5)
-        self._text_def = (0.3, 0)
-        self._font = "DEFAULT.gfn"
-        self._att = _DEF_ATT
         self._annotation_outer_edge = 0.0
 
         atexit.register(self._process, pop=False)
         self._open = gx.track_resource(self.__class__.__name__, self._maplfilename)
 
-        self.define_named_attribute(self._att, **kwargs)
+        self.define_named_attribute()
 
     def _process(self, pop=True):
 
@@ -1114,109 +1007,37 @@ class _GXmapplot:
         if pop:
             gx.pop_resource(self._open)
 
-    def _adjusted_offset(self, offset):
+    def _adjusted_offset(self, offset, text_height):
 
-        inside = self._text_def[0] * 0.2
+        inside = text_height * 0.2
         if offset:
             offset = offset + inside
         else:
             offset = self._annotation_outer_edge + inside
-        self._annotation_outer_edge += offset + self._text_def[0] + inside * 0.5
+        self._annotation_outer_edge += offset + text_height + inside * 0.5
         return offset
 
-    @property
-    def ref_point(self):
-        """(refp, x_off, y_off)"""
-        return self._refp
-
-    @ref_point.setter
-    def ref_point(self, refp):
-        self._refp = refp
-
-    def _a_ref_point(self):
-        return "{},{},{}".format(self._refp[0], self._refp[1], self._refp[2])
-
-    @property
-    def pen_def(self):
-        """(colour, thickness) colour is a colour string, line thickness in microns"""
-        return self._pen_def
-
-    @pen_def.setter
-    def pen_def(self, pen):
-        self._pen_def = pen
-
-    @property
-    def line_def(self):
-        """(line_style, pitch)"""
-        return self._line_def
-
-    @line_def.setter
-    def line_def(self, ls):
-        self._line_def = ls
-
-    def _a_line_def(self):
-        return "{},{}".format(self._line_def[0], self._line_def[1])
-
-    @property
-    def font(self):
-        """font name"""
-        return self._font
-
-    @font.setter
-    def font(self, font):
-        self._font = font
-
-    @property
-    def text_def(self):
-        """(character_size, slant) in (cm, degrees)"""
-        return self._text_def
-
-    @text_def.setter
-    def text_def(self, ts):
-        self._text_def = ts
-
-    def _a_text(self):
-        if ".gfn" in self._font.lower():
-            f = self._font.lower().split('.gfn')[0]
-        else:
-            f = self._font + "(TT)"
-
-        th = self._text_def[0]
-        return "{},{},{},{},\"{}\"".format(th, th, th, self.text_def[1], f)
-
     def command(self, command):
-        """
-        Add MAPPLOT commands to the command list.  See the MAPPLOT reference in the
-        Geosoft Desktop help system for command usage and syntax.
-
-        :param command:     text string containing one or more MAPPLOT command
-                            lines, each new-line terminated.
-
-        .. versionadded:: 9.2
-        """
         self._maplfile.write(command)
         if command and command[-1] != '\n':
             self._maplfile.write('\n')
 
-
-    """
-    def define_named_attribute(self, name='_',
-                               line_def=('kt100', gxv.LINE_SOLID, 0.5),
-                               text_def=('kt100', 0.25, 0)):
+    def define_named_attribute(self, name='_', pen=None, text=None):
         
-        Create a named set of drawing attributes.
-
-        :param name:    attribute set name, default is the default attribute '_'
-
-        .. versionadded:: 9.2
-       
-
-        self.command("DATT {}={},{},{}".format(name,
-                                               pen_def,
-                                               line_def,
-                                               text_def))
-                                               
-    """
+        if pen is None:
+            pen = ''
+            ls = ''
+            lp = ''
+        else:
+            ls = pen.line_style
+            lp = pen.line_pitch
+            pen = pen.mapplot_string
+        if text is None:
+            text = ''
+        else:
+            text = text.mapplot_string
+            
+        self.command("DATT {}={},{},{}".format(name, pen, ls, lp, text))
 
     def start_group(self, name, mode=GROUP_NEW, view=VIEW_BASE):
         """

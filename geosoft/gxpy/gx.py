@@ -17,8 +17,6 @@ from . import system as gxs
 
 __version__ = geosoft.__version__
 
-GX_WARNING_FILE = '_gx_warning_'
-
 def _t(s):
     return geosoft.gxpy.system.translate(s)
 
@@ -69,6 +67,9 @@ def pop_resource(id):
             del(_res_heap[id])
         except KeyError:
             pass
+
+GX_WARNING_FILE = '_gx_warning_'
+
 
 class GXpy(_Singleton):
     '''
@@ -130,27 +131,17 @@ class GXpy(_Singleton):
         global _res_heap
         global _max_warnings
 
-        def file_error(fnc, path, excinfo):
-            self.log(_t("error removing temporary file\n   \"{}\"\nfunction \"{}\"\nexception\"{}\"\n")
-                     .format(path, str(fnc), str(excinfo)))
-
         if gx:
 
             self.log('GX close')
 
-            if self._temp_file_folder != gxu.folder_temp():
+            if self._temp_file_folder and (self._temp_file_folder != gxu.folder_temp()):
 
-                for filename in os.listdir(gxu.folder_temp()):
-                    folder = os.path.join(gxu.folder_temp(), filename)
-                    if os.path.isdir(folder) and (filename[0:4] == '_gx_'):
-                        warning_file = os.path.join(folder, GX_WARNING_FILE)
-                        if not (folder == self._temp_file_folder and self._keep_temp_files):
-                            if not os.path.exists(warning_file):
-                                shutil.rmtree(folder, ignore_errors=False, onerror=file_error)
-                        else:
-                            if os.path.isfile(warning_file):
-                                os.remove(warning_file)
-    
+                warning_file = os.path.join(self._temp_file_folder, GX_WARNING_FILE)
+                if os.path.isfile(warning_file):
+                    os.remove(warning_file)
+
+                self._remove_gx_temporary_folders()
                 self._temp_file_folder = None
 
             if len(_res_heap):
@@ -265,6 +256,18 @@ class GXpy(_Singleton):
             atexit.register(self._close)
             gx = self
             self.log('GX open')
+
+    def _remove_gx_temporary_folders(self):
+        """ removes all GX temporary folders and """
+        def file_error(fnc, path, excinfo):
+            self.log(_t("error removing temporary file\n   \"{}\"\nfunction \"{}\"\nexception\"{}\"\n")
+                     .format(path, str(fnc), str(excinfo)))
+        for filename in os.listdir(gxu.folder_temp()):
+            folder = os.path.join(gxu.folder_temp(), filename)
+            if os.path.isdir(folder) and (len(filename) > 4) and (filename[:4] == '_gx_'):
+                warning_file = os.path.join(folder, GX_WARNING_FILE)
+                if not os.path.exists(warning_file):
+                    shutil.rmtree(folder, ignore_errors=False, onerror=file_error)
 
     def _log_to_file(self, *args):
 
