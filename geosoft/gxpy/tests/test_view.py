@@ -14,6 +14,8 @@ import geosoft.gxpy.coordinate_system as gxcs
 import geosoft.gxpy.grd as gxgrd
 import geosoft.gxpy.agg as gxagg
 
+#set to false for auto-testing
+SHOW_TEST_IMAGES = False
 
 def rect_line(v, size=100):
     v.xy_rectangle(gxgm.Point2((0, 0, size, size), cs="cm"), pen=v.new_pen(line_thick=1))
@@ -89,7 +91,7 @@ class Test(unittest.TestCase):
         cls.gx.log("*** {} > {}".format(os.path.split(__file__)[1], test))
 
     def view_crc(self, mapfile, crc=None, display=False):
-        if display:
+        if SHOW_TEST_IMAGES and display:
             gxvwr.map(mapfile)
         if crc:
             self.assertEqual(gxmap.crc_map(mapfile), crc)
@@ -394,7 +396,7 @@ class Test(unittest.TestCase):
             ex = grd.extent_2d()
         map_file = os.path.join(self.gx.temp_folder(), "test_agg")
 
-        test_zone(gxagg.ZONE_LINEAR, 2521996509, shade=True)
+        test_zone(gxagg.ZONE_LINEAR, 2521996509, shade=True, display=True)
         test_zone(gxagg.ZONE_EQUALAREA, 1246636862)
         test_zone(gxagg.ZONE_DEFAULT, 1246636862)
         test_zone(gxagg.ZONE_LAST, 1246636862)
@@ -424,15 +426,19 @@ class Test(unittest.TestCase):
                 with gxagg.GXagg(grid_file, shade=True) as agg:
                     v.aggregate(agg)
 
+            with gxv.GXview(gmap, "data") as v:
+                v.xy_rectangle(v.extent, pen=v.new_pen(line_thick=0.1, line_color='R'))
+
             with gxv.GXview(gmap, "base") as v:
                 v.xy_rectangle(v.extent, pen=v.new_pen(line_thick = 0.1, line_color = 'B'))
 
             gmap.annotate_data_ll(grid=gxmap.GRID_LINES,
-                                  grid_pen="bt250",
-                                  text_pen="kt1", text=(0.25, 15),
+                                  grid_pen=gxv.Pen.from_mapplot_string("bt250"),
+                                  text_pen=gxv.Pen.from_mapplot_string("kt1"),
+                                  text=gxv.Text_def(height=0.25, italics=True),
                                   top=gxmap.TOP_IN)
 
-        self.view_crc(mapfile, 0)
+        self.view_crc(mapfile, 0, True)
 
     def test_text_definition(self):
         self.start(gsys.func_name())

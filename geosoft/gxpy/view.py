@@ -201,7 +201,7 @@ class Color:
 
 def font_weight_from_line_thickness(line_thick, height):
     """
-    Returns font weight from the defined text height and line thickness.
+    Returns font weight for a text height and line thickness.
     
     :param line_thick:  line thickness in same units as the text height
     :param height:      text height
@@ -230,7 +230,24 @@ def font_weight_from_line_thickness(line_thick, height):
     return FONT_WEIGHT_MEDIUM
 
 def thickness_from_font_weight(weight, height):
-    """ Returns line thickness appropriate for a text weight."""
+    """ 
+    Returns the line thickness appropriate for a text weight.
+    
+    :param weight: one of:
+        
+            ::
+            
+                FONT_WEIGHT_ULTRALIGHT
+                FONT_WEIGHT_LIGHT
+                FONT_WEIGHT_MEDIUM
+                FONT_WEIGHT_BOLD
+                FONT_WEIGHT_XBOLD
+                FONT_WEIGHT_XXBOLD
+                
+    :param height:  font height
+
+    .. versionadded:: 9.2
+    """
     return height * _weight_factor[weight - 1]
 
 class Text_def:
@@ -292,9 +309,9 @@ class Text_def:
 
         if self.weight is None:
             if line_thick is None:
-                self._weight = FONT_WEIGHT_MEDIUM
+                self.weight = FONT_WEIGHT_MEDIUM
             else:
-                self._weight = font_weight_from_line_thickness(line_thick, self.height)
+                self.weight = font_weight_from_line_thickness(line_thick, self.height)
 
     @property
     def color(self):
@@ -320,11 +337,11 @@ class Text_def:
 
     @property
     def line_thick(self):
-        return thickness_from_font_weight(self._weight, self._height)
+        return thickness_from_font_weight(self.weight, self.height)
 
     @line_thick.setter
     def line_thick(self, line_thick):
-        self._weight = font_weight_from_line_thickness(line_thick, self._height)
+        self.weight = font_weight_from_line_thickness(line_thick, self.height)
 
     @property
     def slant(self):

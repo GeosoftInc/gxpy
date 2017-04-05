@@ -12,6 +12,8 @@ import geosoft.gxpy.geometry as gxgm
 import geosoft.gxpy.coordinate_system as gxcs
 import geosoft.gxpy.viewer as gxvwr
 
+#set to false for auto-testing
+SHOW_TEST_IMAGES = False
 
 def new_test_data_map(mapname=None, rescale=1.0):
 
@@ -97,7 +99,7 @@ class Test(unittest.TestCase):
         cls.gx.log("*** {} > {}".format(os.path.split(__file__)[1], test))
 
     def view_test_crc(self, mapfile, crc=None, display=False):
-        if display:
+        if SHOW_TEST_IMAGES and display:
             gxvwr.map(mapfile)
         if crc:
             self.assertEqual(gxmap.crc_map(mapfile), crc)
