@@ -19,7 +19,6 @@ Submodules
     geosoft.gxpy.grd
     geosoft.gxpy.gx
     geosoft.gxpy.map
-    geosoft.gxpy.mapplot
     geosoft.gxpy.om
     geosoft.gxpy.system
     geosoft.gxpy.utility

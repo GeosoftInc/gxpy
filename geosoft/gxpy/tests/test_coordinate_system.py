@@ -226,6 +226,15 @@ class Test(unittest.TestCase):
             #TODO self.assertEqual(cs.cs_name(what=gxcs.NAME_VCS), 'geodetic')
             #TODO self.assertEqual(cs.cs_name(what=gxcs.NAME_HCS_VCS), 'DHDN [geodetic]')
 
+    def test_vcs(self):
+        self.start(gsys.func_name())
+
+        self.assertEqual(gxcs.GXcs("nad83 / UTM zone 15N [NAVD92]").name, 'NAD83 / UTM zone 15N [NAVD92]')
+        #TODO self.assertEqual(gxcs.GXcs("nad83 [NAVD92]").name, 'NAD83 [NAVD92]')
+        #TODO self.assertFalse(gxcs.GXcs("nad83 [NAVD92]").same_as(gxcs.GXcs("NAD83 [geodetic]")))
+        #TODO self.assertFalse(gxcs.GXcs("nad83 [geoid]").same_vcs(gxcs.GXcs("NAD27 [NAVD92]")))
+
+
     def test_GXF_cs(self):
         self.start(gsys.func_name())
 
@@ -536,15 +545,28 @@ class Test(unittest.TestCase):
 
     def test_units(self):
         self.start(gsys.func_name())
+
+        cs = gxcs.GXcs()
+        self.assertEqual(cs.units_name, 'unknown')
+        self.assertEqual(cs.units_to_metres, 1.0)
+
+        cs = gxcs.GXcs({'units': 'km'})
+        self.assertEqual(cs.units_name, 'km')
+        self.assertEqual(cs.units_to_metres, 1000.0)
+
+        cs = gxcs.GXcs({'units': 'ftUS'})
+        self.assertEqual(cs.units_name, 'ftUS')
+        self.assertEqual(cs.units_to_metres, 0.304800609601219)
+
         cs = gxcs.GXcs("NAD27 / Arizona Coordinate System Central zone")
-        self.assertAlmostEqual(cs.units()[0],0.304800609601219)
-        self.assertEqual(cs.units()[1],'ftUS')
+        self.assertAlmostEqual(cs.units_to_metres, 0.304800609601219)
+        self.assertEqual(cs.units_name,'ftUS')
         cs = gxcs.GXcs(('', '', '', 'ftUS', ''))
-        self.assertAlmostEqual(cs.units()[0], 0.304800609601219)
-        self.assertEqual(cs.units()[1], 'ftUS')
+        self.assertAlmostEqual(cs.units_to_metres, 0.304800609601219)
+        self.assertEqual(cs.units_name, 'ftUS')
         cs = gxcs.GXcs('ftUS')
-        self.assertAlmostEqual(cs.units()[0], 0.304800609601219)
-        self.assertEqual(cs.units()[1], 'ftUS')
+        self.assertAlmostEqual(cs.units_to_metres, 0.304800609601219)
+        self.assertEqual(cs.units_name, 'ftUS')
         self.assertRaises(gxcs.CSException, gxcs.GXcs, 'bogus')
 
     def test_PJ(self):
