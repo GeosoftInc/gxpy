@@ -377,7 +377,7 @@ class Text_def:
             font = 'DEFAULT'
         else:
             font = self._font.strip() + '(TT)'
-        return '{},,,{},{}'.format(self.height, self.slant, font)
+        return '{},,,{},"{}"'.format(self.height, self.slant, font)
 
 
 class Pen:

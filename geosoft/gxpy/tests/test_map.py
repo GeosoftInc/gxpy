@@ -347,7 +347,8 @@ class Test(unittest.TestCase):
             with gxv.GXview(map, 'data') as v:
                 v.xy_rectangle(v.extent_clip)
 
-            map.north_arrow(location=(2, 0, 3), inclination=-12, declination=74.5)
+            map.north_arrow(location=(2, 0, 3), inclination=-12, declination=74.5,
+                            text_def=gxv.Text_def(font='Calibri'))
 
         self.view_test_crc(mapfile, 0)
 

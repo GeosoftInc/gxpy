@@ -449,11 +449,11 @@ class Test(unittest.TestCase):
         self.assertEqual(t.font, 'DEFAULT')
         t.font="Arial"
         self.assertEqual(t.font, 'Arial')
-        self.assertEqual(t.mapplot_string, '0.25,,,0,Arial(TT)')
+        self.assertEqual(t.mapplot_string, '0.25,,,0,"Arial(TT)"')
         t.font = 'sr.gfn'
-        self.assertEqual(t.mapplot_string, '0.25,,,0,sr')
+        self.assertEqual(t.mapplot_string, '0.25,,,0,"sr"')
         t.font = ''
-        self.assertEqual(t.mapplot_string, '0.25,,,0,DEFAULT')
+        self.assertEqual(t.mapplot_string, '0.25,,,0,"DEFAULT"')
         t.italics = True
         self.assertTrue(t.italics)
         self.assertEqual(t.slant, 15)

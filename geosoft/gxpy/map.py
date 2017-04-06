@@ -735,7 +735,7 @@ class GXmap:
                     length=3,
                     inclination=None,
                     declination=None,
-                    text=None,
+                    text_def=None,
                     pen=None):
         """
         Add a North arrow to the base view of the map.
@@ -748,7 +748,7 @@ class GXmap:
         :param length:      arrow length in cm
         :param inclination: magnetic inclination, not shown if not specified
         :param declination: magnetic declination, not shown if not specified
-        :param text:        ``gxpy.view.Text_def`` instance, or ``None`` for the default.
+        :param text_def:    ``gxpy.view.Text_def`` instance, or ``None`` for the default.
         :param pen:         ``gxpy.view.Pen`` instance, or ``None`` for the default
 
         .. versionadded:: 9.2
@@ -771,13 +771,13 @@ class GXmap:
         if pen is None:
             pen = gxv.Pen(line_thick=0.015)
 
-        if text is None:
-            text = gxv.Text_def(height=0.25, italics=True, weight=gxv.FONT_WEIGHT_LIGHT)
+        if text_def is None:
+            text_def = gxv.Text_def(height=0.25, italics=True, weight=gxv.FONT_WEIGHT_LIGHT)
 
         with _Mapplot(self) as mpl:
             mpl.start_group('north_arrow', view=VIEW_BASE, mode=GROUP_APPEND)
             mpl.define_named_attribute('arrow', pen=pen)
-            mpl.define_named_attribute('annot', text=text)
+            mpl.define_named_attribute('annot', text_def=text_def)
             mpl.command("NARR {},{},{},{},{},{},{},{}".format(location[0], location[1], location[2],
                                                               direction,
                                                               length,
@@ -823,7 +823,7 @@ class GXmap:
         with _Mapplot(self) as mpl:
             mpl.start_group('scale_bar', view=VIEW_BASE, mode=GROUP_APPEND)
             att = 'scale_bar'
-            mpl.define_named_attribute(att, pen=pen, text=text)
+            mpl.define_named_attribute(att, pen=pen, text_def=text)
             mpl.command("SCAL {},{},{},,,{},{},,{},".format(location[0], location[1], location[2],
                                                             length, sections, option))
             mpl.command('     {}'.format(att))
@@ -902,7 +902,7 @@ class GXmap:
                 if not tick and grid == GRID_LINES:
                     tick = 0.0
 
-                mpl.define_named_attribute('annot', text=text_def,
+                mpl.define_named_attribute('annot', text_def=text_def,
                                            pen=gxv.Pen(line_color=text_def.color, line_thick=text_def.line_thick))
                 mpl.define_named_attribute(pen=edge_pen)
 
@@ -976,7 +976,7 @@ class GXmap:
                 if not tick and grid == GRID_LINES:
                     tick = 0.0
 
-                mpl.define_named_attribute('annot', text=text_def,
+                mpl.define_named_attribute('annot', text_def=text_def,
                                            pen=gxv.Pen(line_color=text_def.color, line_thick=text_def.line_thick))
                 mpl.define_named_attribute(pen=edge_pen)
 
@@ -1059,24 +1059,24 @@ class _Mapplot:
         self._maplfile.write(command)
         if command and command[-1] != '\n':
             self._maplfile.write('\n')
-        #geosoft.gxpy.gx.GXpy().log(command)
+        # geosoft.gxpy.gx.GXpy().log(command)
 
-    def define_named_attribute(self, name='_', pen=None, text=None):
+    def define_named_attribute(self, name='_', pen=None, text_def=None):
 
-        if (pen is None) and (text is None):
+        if (pen is None) and (text_def is None):
             self.command("DATT {}".format(name))
 
         else:
             if pen is None:
-                pen = gxv.Pen(line_color=text.color, line_thick=text.line_thick)
+                pen = gxv.Pen(line_color=text_def.color, line_thick=text_def.line_thick)
             ls = pen.line_style
             lp = pen.line_pitch
             pen = pen.mapplot_string
 
-            if text is None:
+            if text_def is None:
                 text = ''
             else:
-                text = text.mapplot_string
+                text = text_def.mapplot_string
 
             self.command("DATT {}={},{},{},{}".format(name, pen, ls, lp, text))
 
