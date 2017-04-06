@@ -1,13 +1,14 @@
 import os
 import atexit
 from math import ceil
+from functools import wraps
 
 import geosoft
 import geosoft.gxapi as gxapi
 from . import gx as gx
 from . import utility as gxu
 from . import dataframe as gxdf
-from . import view as gxvw
+from . import view as gxv
 
 __version__ = geosoft.__version__
 
@@ -51,6 +52,43 @@ REF_DATA_CENTER_RIGHT = 16
 REF_DATA_TOP_LEFT = 17
 REF_DATA_TOP_CENTER = 18
 REF_DATA_TOP_RIGHT = 19
+
+TEXT_BOTTOM_LEFT = -1
+TEXT_BOTTOM_CENTER = 0
+TEXT_BOTTOM_RIGHT = 1
+TEXT_ALL_CENTER = 2
+TEXT_BASE_LEFT= 3
+TEXT_BASE_CENTER = 4
+TEXT_BASE_RIGHT = 5
+TEXT_BASE_ALL_CENTER = 6
+TEXT_BASE_FIT_BY_CHARACTER_WIDTH = 7
+TEXT_BASE_FIT_BY_CHARACTER_SIZE = 8
+
+MAP_LANDSCAPE = 0
+MAP_PORTRAIT = 1
+
+TOP_IN = 1
+TOP_OUT = -1
+
+GRID_NONE = 0
+GRID_DOTTED = 1
+GRID_CROSSES = 2
+GRID_LINES = 3
+
+GROUP_NEW = 0
+GROUP_APPEND = 1
+
+VIEW_BASE = 0
+VIEW_DATA = 1
+
+class Line_def:
+    def __init__(self,
+                 line_colour='k',
+                 fill_colour=None,
+                 thickness=100):
+        self._line_colour = line_colour
+        self._fill_colour = fill_colour
+        self._thickness = thickness
 
 def map_file_name(filename):
     """
@@ -180,6 +218,7 @@ class GXmap:
         self.gxmap = None
         self._remove = False
         self._filename = map_file_name(filename)
+        self._annotation_outer_edge = 0.0
         self.gxmap = gxapi.GXMAP.create(self.filename, mode)
 
         atexit.register(self._close, pop=False)
@@ -190,18 +229,8 @@ class GXmap:
             if self.gxmap:
 
                 if not self._remove:
-
-                    # if I have read access to the map, creat an MDF
-                    if self.has_view("*Base") and self.has_view("*Data"):
-
-                        # close the file to close all views, then re-open to create an mdf
-                        self.gxmap = None
-                        gxmap = gxapi.GXMAP.create(self._filename, WRITE_OLD)
-                        mdfname = os.path.splitext(self.filename)[0] + '.mdf'
-                        try:
-                            gxapi.GXMVU.map_mdf(gxmap, mdfname, "*Data")
-                        except:
-                            pass
+                    pass
+                    #self.gxmap.clean()
 
                 self.gxmap = None
 
@@ -237,17 +266,22 @@ class GXmap:
         Create and open a new Geosoft map.
 
         :parameters:
-            :filename:      Map file name.  If not specified a temporary file is created.
+            :filename:      Map file name.  If not specified a temporary file is created in the instance
+                            temporary folder.  Use ``filename()`` to get the file name if needed.  The 
+                            temporary map file will be unique and will exist through the life of the
+                            Python GX instance, but will be deleted along with all temporary files
+                            when the GX loses context.
             :data_area:     (min_x, min_y, max_x, max_y) data area for a 2D data view on the map
             :scale:         required scale, default will fit data to the map media
             :cs:            coordinate system, default is an unknown coordinate system.  You may pass
                             a ``coordinate_system.GXcs`` instance, a string descriptor, such as
                             `WGS 84 / UTM zone 15N`, or another valid constructor supported by
                             ``coordinate_system.GXcs``.
-            :media:         media name and optional 'portrait' suffix.  Named media sizes are read
-                            from media.csv, which includes A4, A3, A2, A1, A0, letter, legal, ledger, 
-                            A, B, C, D, E and Unlimited. For example `media='A4 portrait'`.
-            :layout:        'portrait' or 'landscape', overrides media setting.  If the layout is not 
+            :media:         media size as a tuple(x_cm, y_cm), or as a standard media name string.
+                            If the media name contains 'portrait', the media is media aspect will be portrait.
+                            Named media sizes are read from media.csv, which includes A4, A3, A2, A1, A0, 
+                            letter, legal, ledger, A, B, C, D, E. For example `media='A4 portrait'`.
+            :layout:        MAP_PORTRAIT or MAP_LANDSCAPE, overrides media setting.  If the layout is not 
                             defined by media or this parameter, the layout is determined by the aspect
                             ratio of the data area.
             :map_style:     'map' or 'figure' (default).  A 'map' style is intended for A3 or larger
@@ -270,122 +304,14 @@ class GXmap:
         .. versionadded:: 9.2
         """
 
-        def size_from_media(media, layout, data_aspect):
-
-            if type(media) is not str:
-                return media
-
-            media = media.lower()
-            if 'portrait' in media:
-                if layout is None:
-                    layout = 'portrait'
-                media = media.replace('portrait', '').strip()
-            elif 'landscape' in media:
-                if layout is None:
-                    layout = 'landscape'
-                media = media.replace('landscape', '').strip()
-
-            try:
-
-                spec = gxdf.table_record('media', media.upper())
-                size = (float(spec['SIZE_X']), float(spec['SIZE_Y']))
-
-            except:
-                size = None
-
-            if layout is None:
-                layout = data_aspect
-
-            if (layout.lower() == 'portrait') and (size[0] > size[1]):
-                size = (size[1], size[0])
-
-            return size
-
-        def setup_map(gmap, data_area, scale, media_size, margins, fixed_size):
-
-            def data_window_on_map(media_size, margins, inside_margin, inside=True):
-                mx = media_size[0] - margins[0] - margins[1]
-                my = media_size[1] - margins[2] - margins[3]
-                if inside:
-                    im = inside_margin * 2
-                    mx -= im
-                    my -= im
-                return mx, my # data window on map cm
-
-            min_map_margins = (1.5, 14.0, 5.0, 1.5)
-            min_fig_margins = (1.0, 1.0, 4.0, 1.5)
-
-            if media_size is None:
-                fixed_size = False
-                if scale:
-                    media_size = (300., 300.) # crazy large, will be trimmed to scale
-                    if margins is None:
-                        if map_style == 'map':
-                            margins = min_map_margins
-                        else:
-                            margins = min_fig_margins
-                else:
-                    media_size = (40, 30)
-
-            if margins is None:
-                mx, my = media_size
-                if map_style == 'map':
-                    if mx <= 30.0:
-                        raise MapException('\'map\' style requires minimum 30cm media. Yours is {}cm'.format(mx))
-                    margins = (max(min_map_margins[0], mx * 0.025),
-                               max(min_map_margins[1], mx * 0.15),
-                               max(min_map_margins[2], my * 0.1),
-                               max(min_map_margins[3], mx * 0.025))
-                else:
-                    margins = (max(min_fig_margins[0], mx * 0.04),
-                               max(min_fig_margins[1], mx * 0.04),
-                               max(min_fig_margins[2], my * 0.15),
-                               max(min_fig_margins[3], mx * 0.04))
-
-            if scale is None:
-                # determine largest scale to fit the media
-                mx, my = data_window_on_map(media_size, margins, inside_margin)
-                sx = (data_area[2] - data_area[0]) * 100.0 / mx
-                sy = (data_area[3] - data_area[1]) * 100.0 / my
-                scale = max(sx, sy)
-
-                #TODO - add a round_to_precision() function with option to round up or down.
-                if scale > 100:
-                    scale = float(ceil(scale))
-
-            # adjust margins for a fixed map
-            if fixed_size is None:
-                if map_style == 'figure':
-                    fixed_size = True
-                else:
-                    fixed_size = False
-
-            if fixed_size:
-                mx, my = data_window_on_map(media_size, margins, inside_margin)
-                x_adjust = max(0., (mx - ((data_area[2] - data_area[0]) * 100.0 / scale)) * 0.5)
-                y_adjust = max(0., (my - ((data_area[3] - data_area[1]) * 100.0 / scale)) * 0.5)
-                margins = (margins[0] + x_adjust, margins[1] + x_adjust,
-                           margins[2] + y_adjust, margins[3] + y_adjust)
-
-            # ensure the data fits on this media
-            mx, my = data_window_on_map(media_size, margins, inside_margin, inside=False)
-            dmx = (data_area[2] - data_area[0]) * 100.0 / scale
-            dmy = (data_area[3] - data_area[1]) * 100.0 / scale
-            if (mx - dmx) < -0.01 or (my - dmy) < -0.01:
-                raise MapException(_t('The data does not fit media ({},{})cm at a scale of 1:{}')
-                                   .format(media_size[0], media_size[1], scale))
-
-            gxapi.GXMVU.mapset( gmap.gxmap,
-                                '*Base', '*Data',
-                                data_area[0], data_area[2], data_area[1], data_area[3],
-                                '{},{}'.format(media_size[0], media_size[1]),
-                                int(media_size[1] > media_size[0]),
-                                0, scale, gxapi.rDUMMY,
-                                margins[0], margins[1], margins[2], margins[3],
-                                inside_margin)
+        def data_window_on_map():
+            mx = media[0] - m_left - m_right
+            my = media[1] - m_bottom - m_top
+            im = inside_margin * 2
+            return mx - im, my - im  # data window on map cm
 
         def set_coordinate_system(gmap, cs):
-            with gxvw.GXview(gmap=gmap, viewname='*Data', mode=gxvw.WRITE_OLD) as view:
+            with gxv.GXview(gmap=gmap, viewname='data', mode=gxv.WRITE_OLD) as view:
                 view.set_cs(cs)
 
         def set_registry(gmap, style, inside_margin):
@@ -398,32 +324,117 @@ class GXmap:
         if ((data_area[2] - data_area[0]) <= 0.0) or ((data_area[3] - data_area[1]) <= 0.0):
             raise MapException(_t('Invalid data area {}'.format(data_area)))
 
-        if (data_area[2] - data_area[0]) < (data_area[3] - data_area[1]):
-            data_aspect = 'portrait'
-        else:
-            data_aspect = 'landscape'
+        if layout is None:
+            if (data_area[2] - data_area[0]) < (data_area[3] - data_area[1]):
+                layout = MAP_PORTRAIT
+            else:
+                layout = MAP_LANDSCAPE
 
         if filename is None:
 
-            # get a temporary map file name
-            filename = map_file_name(os.path.join(gx.GXpy().temp_folder(), str(gxu.uuid())))
-            delete = True
+            # get a new temporary map file name
+            tempname = "temp_map"
+            i = 0
+            while True:
+                filename = map_file_name(os.path.join(gx.GXpy().temp_folder(), tempname + str(i) + '.map'))
+                if not os.path.isfile(filename):
+                    break
+                i += 1
 
         else:
-            delete = False
             if not overwrite:
                 filename = map_file_name(filename)
                 if os.path.isfile(filename):
                     raise MapException(_t('Cannot overwrite existing file: "{}"').format(filename))
 
-        size = size_from_media(media, layout, data_aspect)
         gmap = cls(filename, WRITE_NEW)
-        gmap.remove_on_close(delete)
 
-        if not no_data_view:
-            setup_map(gmap, data_area, scale, size, margins, fixed_size)
-            set_coordinate_system(gmap, cs)
-            set_registry(gmap, map_style, inside_margin)
+        if type(media) is str:
+            try:
+                spec = gxdf.table_record('media', media.upper())
+                media = (float(spec['SIZE_X']), float(spec['SIZE_Y']))
+            except:
+                media = None
+                fixed_size = False
+
+        if media is None:
+            fixed_size = False
+            if scale:
+                media = (5000., 4000.)  # crazy large, will be trimmed to scale
+                if margins is None:
+                    if map_style == 'map':
+                        margins = (1.5, 14.0, 5.0, 1.5)
+                    else:
+                        margins = (1.0, 1.0, 4.0, 1.0)
+            else:
+                media = (50., 40.)
+
+        if (layout == MAP_PORTRAIT) and (media[0] > media[1]):
+            media = (media[1], media[0])
+
+        if margins:
+            m_left, m_right, m_bottom, m_top = margins
+
+        else:
+            mx, my = media
+            if map_style == 'map':
+                if mx <= 30.0:
+                    raise MapException('\'map\' style requires minimum 30cm media. Yours is {}cm'.format(mx))
+                m_left = max(1.5, mx * 0.025)
+                m_right = max(14.0, mx * 0.15)
+                m_bottom = max(5.0, my * 0.1)
+                m_top = max(1.5, my * 0.025)
+            else:
+                m_left = max(1.0, mx * 0.04)
+                m_right = max(1.0, mx * 0.04)
+                m_bottom = max(4.0, my * 0.15)
+                m_top = max(1.0, my * 0.04)
+
+        if scale is None:
+            # determine largest scale to fit the media
+            mx, my = data_window_on_map()
+            sx = (data_area[2] - data_area[0]) * 100.0 / mx
+            sy = (data_area[3] - data_area[1]) * 100.0 / my
+            scale = max(sx, sy)
+
+            # TODO - add a round_to_precision() function with option to round up or down.
+            if scale > 100:
+                scale = float(ceil(scale))
+
+        if fixed_size is None:
+            if map_style == 'figure':
+                fixed_size = True
+            else:
+                fixed_size = False
+
+        if fixed_size:
+            mx, my = data_window_on_map()
+            x_adjust = max(0., (mx - ((data_area[2] - data_area[0]) * 100.0 / scale)) * 0.5)
+            y_adjust = max(0., (my - ((data_area[3] - data_area[1]) * 100.0 / scale)) * 0.5)
+            m_left += x_adjust
+            m_right += x_adjust
+            m_bottom += y_adjust
+            m_top += y_adjust
+
+        # ensure the data fits on this media
+        mx, my = data_window_on_map()
+        dmx = (data_area[2] - data_area[0]) * 100.0 / scale
+        dmy = (data_area[3] - data_area[1]) * 100.0 / scale
+        if (mx - dmx) < -0.01 or (my - dmy) < -0.01:
+            raise MapException(_t('The data does not fit media ({},{})cm at a scale of 1:{}')
+                               .format(media[0], media[1], scale))
+
+        gxapi.GXMVU.mapset(gmap.gxmap,
+                           'base', 'data',
+                           data_area[0], data_area[2],
+                           data_area[1], data_area[3],
+                           '{},{}'.format(media[0] + 50.0, media[1] + 50.0), layout,
+                           0, scale, gxapi.rDUMMY,
+                           m_left, m_right, m_bottom, m_top,
+                           float(inside_margin))
+
+        set_coordinate_system(gmap, cs)
+        set_registry(gmap, map_style, inside_margin)
 
         return gmap
 
@@ -437,15 +448,35 @@ class GXmap:
     @property
     def current_data_view(self):
         """ The current default data view which accepts drawing commands from Geosoft methods."""
-        s = gxapi.str_ref()
-        self.gxmap.get_class_name('Data', s)
-        return s.value
+        return self.get_class_view_name('data')
 
     @current_data_view.setter
     def current_data_view(self, s):
         if not self.has_view(s):
             raise MapException(_t('Map does not contain a view named "{}"').format(s))
-        self.gxmap.set_class_name('Data', s)
+        self.gxmap.set_class_name('data', s)
+
+    @property
+    def current_base_view(self):
+        """ The current default base view which accepts drawing commands from Geosoft methods."""
+        return self.get_class_view_name('base')
+
+    @current_base_view.setter
+    def current_base_view(self, s):
+        if not self.has_view(s):
+            raise MapException(_t('Map does not contain a view named "{}"').format(s))
+        self.gxmap.set_class_name('base', s)
+
+    @property
+    def current_section_view(self):
+        """ The current default base view which accepts drawing commands from Geosoft methods."""
+        return self.get_class_view_name('section')
+
+    @current_section_view.setter
+    def current_section_view(self, s):
+        if not self.has_view(s):
+            raise MapException(_t('Map does not contain a view named "{}"').format(s))
+        self.gxmap.set_class_name('section', s)
 
     def close(self):
         """ Close the map and release resources. """
@@ -461,6 +492,22 @@ class GXmap:
         """Commit changes to the map."""
         self.gxmap.commit()
 
+    def classview(self, name):
+        """
+        Given a view name that may be a class name ('*' prefix), return the view name for that class.  if not
+        class decorated, the name passed is returned. 
+        that 
+        :param name:    view name: '*data' will return the name associated with the 'data' class, while
+                        'my_view' will return 'my_view'.
+        
+        :return:        the name, or if a class name, the view name associated with that class.
+        
+        .. versionadded: 9.2
+        """
+        if name[0] != '*':
+            return name
+        return self.get_class_view_name(name[1:])
+
     def view_list(self, view_type=LIST_ALL):
         """
         Return dictionary of view names.
@@ -473,7 +520,7 @@ class GXmap:
 
     def has_view(self, view):
         """ Returns True if the map contains this view."""
-        return self.gxmap.exist_view(view)
+        return self.gxmap.exist_view(self.classview(view))
 
     def copy_view(self, old, new, overwrite=False, copy_all=True):
         """
@@ -485,6 +532,9 @@ class GXmap:
         :param copy_all:    True to copy content of old to new, false to create an empty new view
                             with the same coordinate system, scale and clipping as the old view.
         """
+
+        old = self.classview(old)
+        new = self.classview(new)
 
         if not self.has_view(old):
             raise MapException(_t('"{}" view does not exist.').format(old))
@@ -503,6 +553,16 @@ class GXmap:
             self.gxmap.delete_view(new)
             raise MapException(_t('Invalud view name "{}", suggest "{}"').format(new, s.value ))
 
+    def delete_view(self, viewname):
+        """
+        Delete a view from a map. You cannot delete the last view in a mep.
+        
+        :param viewname: name of the view to delete
+        
+        .. versionadded:: 9.2
+        """
+        self.gxmap.delete_view(self.classview(viewname))
+
     def mdf(self):
         """
         Returns the Map Description File specification for maps that contain
@@ -516,21 +576,21 @@ class GXmap:
 
         views = self.view_list()
 
-        if not(self.has_view("*Data") and self.has_view("*Base")):
-            raise MapException('The map must have both a "*Base" view and a "*Data" view.')
+        if not(self.has_view(self.current_data_view) and self.has_view(self.current_base_view)):
+            raise MapException('The map must have both a base view and a data view.')
 
         xmn = gxapi.float_ref()
         ymn = gxapi.float_ref()
         xmx = gxapi.float_ref()
         ymx = gxapi.float_ref()
 
-        with gxvw.GXview(self, "*Base", gxvw.READ_ONLY) as v:
+        with gxv.GXview(self, self.current_base_view, gxv.READ_ONLY) as v:
             v.gxview.extent(gxapi.MVIEW_EXTENT_CLIP, gxapi.MVIEW_EXTENT_UNIT_MM,
                             xmn, ymn, xmx, ymx)
             mapx = (xmx.value - xmn.value) * 0.1
             mapy = (ymx.value - ymn.value) * 0.1
 
-        with gxvw.GXview(self, "*Data", gxvw.READ_ONLY) as v:
+        with gxv.GXview(self, self.current_data_view, gxv.READ_ONLY) as v:
             v.gxview.extent(gxapi.MVIEW_EXTENT_CLIP, gxapi.MVIEW_EXTENT_UNIT_MM,
                             xmn, ymn, xmx, ymx)
             view_map = (xmn.value * 0.1,
@@ -571,7 +631,7 @@ class GXmap:
         """
         sr = gxapi.str_ref()
         self.gxmap.get_class_name(view_class, sr)
-        return sr.value
+        return sr.value.lower()
 
     def set_class_view_name(self, view_class, view_name):
         """
@@ -590,11 +650,10 @@ class GXmap:
         """
         self.gxmap.set_class_name(view_class, view_name)
 
-    def reference_point(self, refp):
+    def map_reference_location(self, refp, viewname='base'):
         """
-        Return the location of a map reference point.  Locations are determined by the extend of the
-        base view and the current default data view.  Base map locations, including the data location
-        on the map, are in map cm, and data units are in the coordinate system of the 2D data view.
+        Return the location of a reference point relative to the current clipping window
+        extent of a view on the map.
         
         :param refp: One of:
         
@@ -604,37 +663,442 @@ class GXmap:
                 REF_BOTTOM_CENTER = 2
                 REF_BOTTOM_RIGHT = 3
                 REF_CENTER_LEFT = 4
-                REF_MAP_CENTER = 5
+                REF_VIEW_CENTER = 5
                 REF_CENTER_RIGHT = 6
                 REF_TOP_LEFT = 7
                 REF_TOP_CENTER = 8
                 REF_TOP_RIGHT = 9
-                REF_DATA_LOCATION_ON_MAP = 10
-                REF_DATA_BOTTOM_LEFT = 11
-                REF_DATA_BOTTOM_CENTER = 12
-                REF_DATA_BOTTOM_RIGHT = 13
-                REF_DATA_CENTER_LEFT = 14
-                REF_DATA_MAP_CENTER = 15
-                REF_DATA_CENTER_RIGHT = 16
-                REF_DATA_TOP_LEFT = 17
-                REF_DATA_TOP_CENTER = 18
-                REF_DATA_TOP_RIGHT = 19
- 
-        :return:    (x, y)
+                
+        :param viewname:    the name of the view, default is the base view which returns the
+                            extent in map cm.
+
+        :return:    (x, y) in view units
         
         .. versionadded:: 9.2
         """
 
-        pass
+        viewname = self.classview(viewname)
 
-    def create_linked_3d_view(self, view, view_name = '3D', area=(0,0,30,30)):
+        if not viewname:
+            with gxv.GXview(self, self.current_base_view) as v:
+                extent = v.extent_map_cm(v.extent_clip)
+        else:
+            with gxv.GXview(self, viewname) as v:
+                extent = v.extent_clip
+
+        xc = extent[0] + (extent[2] - extent[0]) * 0.5
+        yc = extent[1] + (extent[3] - extent[1]) * 0.5
+        rpoints = ((extent[0], extent[1]),
+                   (xc, extent[1]),
+                   (extent[2], extent[1]),
+                   (extent[0], yc),
+                   (xc, yc),
+                   (extent[2], yc),
+                   (extent[0], extent[3]),
+                   (xc, extent[3]),
+                   (extent[2], extent[3]))
+
+        return rpoints[refp - 1]
+
+    def surround(self, outer_pen=None, inner_pen=None, gap=0):
         """
-        Create a linked 3D view inside a 2D map to a `gxpy.view.GXview3d` in a 3DV
+        Draw a map surround.  This will draw a single or a double neat-line around the base view of the
+        map.
+        
+        :param outer_pen:   outer-line pen attributes
+        :param inner_pen:   inner-line pen attributes
+        :param gap:         gap between the outer and inner line in cm.  If 0, only the outer line is drawn.
+         
+        .. versionadded:: 9.2
+        """
 
-        :param view: A `gxpy.view.GXview3d` instance
-        :param view_name:   name of the linked view to create
-        :param area: (min_x, min_y, max_x, max_y) placement of view on map in mm
+        if outer_pen is None:
+            outer_pen = gxv.Pen(line_thick=0.0500)
+
+        with _Mapplot(self) as mpl:
+
+            mpl.start_group('surround', view=VIEW_BASE, mode=GROUP_APPEND)
+            mpl.define_named_attribute('outer', pen=outer_pen)
+            if gap <= 0:
+                inner = ''
+                gap = ''
+            else:
+                if inner_pen is None:
+                    inner_pen = gxv.Pen(line_thick=0.01)
+                inner = 'inner'
+                mpl.define_named_attribute(inner, pen=inner_pen)
+
+            mpl.command('SURR "{}",{},"{}"'.format('outer', gap, inner))
+
+    def north_arrow(self,
+                    location=(1, 2., 2.7),
+                    direction=None,
+                    length=3,
+                    inclination=None,
+                    declination=None,
+                    text_def=None,
+                    pen=None):
+        """
+        Add a North arrow to the base view of the map.
+
+        :param location:    (reference, x_offset, y_offset) reference is a reference point relative to the
+                            base map extents (1 through 9) nd the offsets are the offset from that reference
+                            point in cm.
+        :param direction:   North direction in degrees azimuth (clockwise from map Y axis).  The efault is 
+                            calculated direction of North at the center of the data view.
+        :param length:      arrow length in cm
+        :param inclination: magnetic inclination, not shown if not specified
+        :param declination: magnetic declination, not shown if not specified
+        :param text_def:    ``gxpy.view.Text_def`` instance, or ``None`` for the default.
+        :param pen:         ``gxpy.view.Pen`` instance, or ``None`` for the default
+
+        .. versionadded:: 9.2
+        """
+
+        #TODO add IGRF calculation from a date, igrfdate=
+
+        if direction is None:
+            with gxv.GXview(self, '*data', mode=gxv.WRITE_OLD) as v:
+                direction = round(v.gxview.north(), 1)
+                if direction == gxapi.rDUMMY:
+                    direction = ''
+
+        if inclination is None:
+            inclination = ''
+
+        if declination is None:
+            declination = ''
+
+        if pen is None:
+            pen = gxv.Pen(line_thick=0.015)
+
+        if text_def is None:
+            text_def = gxv.Text_def(height=0.25, italics=True, weight=gxv.FONT_WEIGHT_LIGHT)
+
+        with _Mapplot(self) as mpl:
+            mpl.start_group('north_arrow', view=VIEW_BASE, mode=GROUP_APPEND)
+            mpl.define_named_attribute('arrow', pen=pen)
+            mpl.define_named_attribute('annot', text_def=text_def)
+            mpl.command("NARR {},{},{},{},{},{},{},{}".format(location[0], location[1], location[2],
+                                                              direction,
+                                                              length,
+                                                              'arrow',
+                                                              inclination,
+                                                              declination))
+            mpl.command('     annot')
+
+    def scale_bar(self,
+                  location=(1, 5, 2),
+                  length=5,
+                  sections=None,
+                  post_scale=False,
+                  text=None,
+                  pen=None):
+        """
+
+        :param length:      maximum scale bar length, default is 5 cm. scale=0.0 will suppress drawing of the bar.
+        :param sections:    number of major sections in the bar, default is determined automatically.
+        :param post_scale:  True to post the actual scale as a string, e.g. '1:50,000'.  Note that a posted
+                            scale is only relevant for printed maps.  The default does not post the scale.
+        :param text:        ``gxpy.view.Text_def`` instance.
+        :param pen:         ``gxpy.view.Pen`` instance.
+
+
+        .. versionadded:: 9.2
+        """
+
+        if sections is None:
+            sections = ''
+
+        if post_scale:
+            option = 2
+        else:
+            option = 1
+
+        if text is None:
+            text = gxv.Text_def(height=0.25, italics=True)
+
+        if pen is None:
+            pen = gxv.Pen(line_thick=0.050)
+
+        with _Mapplot(self) as mpl:
+            mpl.start_group('scale_bar', view=VIEW_BASE, mode=GROUP_APPEND)
+            att = 'scale_bar'
+            mpl.define_named_attribute(att, pen=pen, text_def=text)
+            mpl.command("SCAL {},{},{},,,{},{},,{},".format(location[0], location[1], location[2],
+                                                            length, sections, option))
+            mpl.command('     {}'.format(att))
+
+    def _annotation_offset(self, offset, text_height):
+        inside = text_height * 0.25
+        if offset:
+            offset = offset + inside
+        else:
+            offset = self._annotation_outer_edge + inside
+        self._annotation_outer_edge += offset + text_height + inside * 0.5
+        return offset
+
+    def annotate_data_xy(self, viewname='*data',
+                         tick='', offset='',
+                         x_sep='', x_dec='',
+                         y_sep='', y_dec='',
+                         compass=True,
+                         top=TOP_OUT,
+                         text_def=None,
+                         edge_pen=None,
+                         grid=GRID_NONE,
+                         grid_pen=None):
+        """
+        Annotate a data view axis
+
+        :param viewname:    name of the data view to annotate
+        :param tick:        inner tick size in cm
+        :param offset:      posting offset from the edge in cm. The posting edge is adjusted to be outside
+                            character height for a subsequent call to an edge annotation.  This allows one to
+                            annotate both geographic and projected coordinates.
+        :param top:         TOP_IN or TOP_OUT (default) for vertical annotations
+        :param x_sep:       separation between X annotations, default is calculated from data
+        :param x_dec:       X axis label decimals, default is 0
+        :param y_sep:       separation between Y annotations, default is calculated from data
+        :param y_dec:       Y axis label decimals, default is 0
+        :param compass:     True (default) to append compass direction to annotations
+        :param grid:        Plot grid lines:
+
+                            ::
+   
+                                GRID_NONE       no grid
+                                GRID_DOTTED     dotted lines
+                                GRID_CROSSES    crosses at intersections
+                                GRID_LINES      lines
+       
+        :param text_def:    ``gxv.Text_def``
+        :param edge_pen:    ``gxv.Pen``
+        :param grid_pen:    ``gxv.Pen``        
+
+        .. versionadded:: 9.2
+        """
+
+        if text_def is None:
+            text_def = gxv.Text_def(height=0.18)
+        if edge_pen is None:
+            edge_pen = gxv.Pen()
+        if grid_pen is None:
+            grid_pen = edge_pen
+
+        current_view = self.current_data_view
+        viewname = self.classview(viewname)
+        self.current_data_view = viewname
+
+        offset = self._annotation_offset(offset, text_def.height)
+
+        with gxv.GXview(self, viewname) as v:
+            v.xy_rectangle(v.extent_clip, pen=gxv.Pen(default=edge_pen, factor=v.units_per_map_cm))
+
+        try:
+
+            with _Mapplot(self) as mpl:
+
+                mpl.start_group(viewname + '_edge', 1, viewname)
+
+                if not tick and grid == GRID_LINES:
+                    tick = 0.0
+
+                mpl.define_named_attribute('annot', text_def=text_def,
+                                           pen=gxv.Pen(line_color=text_def.color, line_thick=text_def.line_thick))
+                mpl.define_named_attribute(pen=edge_pen)
+
+                mpl.command("ANOX ,,,,,{},{},,{},,,,{},{},1".format(x_sep, tick, 0 if compass else -1, offset, x_dec))
+                mpl.command('     annot')
+                mpl.command("ANOY ,,,,,{},{},,{},{},,,{},{},1".format(y_sep, tick, 0 if compass else -1, top, offset, y_dec))
+                mpl.command('     annot')
+
+                if grid:
+                    mpl.define_named_attribute(pen=grid_pen)
+                    mpl.command("GRID {},,,,,_".format(grid))
+
+        except:
+            raise
+
+        finally:
+            self.current_data_view = current_view
+
+    def annotate_data_ll(self, viewname='*data',
+                         tick='',
+                         offset='',
+                         sep='',
+                         top=TOP_OUT,
+                         text_def=None,
+                         edge_pen=None,
+                         grid=GRID_LINES,
+                         grid_pen=None):
+
+        """
+        Annotate the date view axis
+
+        :param tick:    inner tick size in cm
+        :param offset:  posting offset from the edge in cm
+        :param sep:     separation between annotations, default is calculated from data
+        :param top:     TOP_IN or TOP_OUT (default) for vertical annotations
+        :param grid:    Plot grid lines:
+
+                        ::
+
+                            GRID_NONE       no grid
+                            GRID_DOTTED     dotted lines
+                            GRID_CROSSES    crosses at intersections
+                            GRID_LINES      lines
+
+        :param grid_pen: colour-thickness string
+
+        .. versionadded:: 9.2
+        """
+
+        if text_def is None:
+            text_def = gxv.Text_def(height=0.18)
+        if edge_pen is None:
+            edge_pen = gxv.Pen()
+        if grid_pen is None:
+            grid_pen = edge_pen
+
+        current_view = self.current_data_view
+        viewname = self.classview(viewname)
+        self.current_data_view = viewname
+
+        offset = self._annotation_offset(offset, text_def.height)
+
+        with gxv.GXview(self, viewname) as v:
+            v.xy_rectangle(v.extent_clip, pen=gxv.Pen(default=edge_pen, factor=v.units_per_map_cm))
+
+        try:
+
+            with _Mapplot(self) as mpl:
+
+                mpl.start_group(viewname + '_edge', 1, viewname)
+                if not tick and grid == GRID_LINES:
+                    tick = 0.0
+
+                mpl.define_named_attribute('annot', text_def=text_def,
+                                           pen=gxv.Pen(line_color=text_def.color, line_thick=text_def.line_thick))
+                mpl.define_named_attribute(pen=edge_pen)
+
+                mpl.command("ALON {},{},{},,1".format(sep, tick, offset))
+                mpl.command('    annot')
+                mpl.command("ALAT {},{},{},,,{}".format(sep, tick, offset, top))
+                mpl.command('    annot')
+
+                if grid:
+                    mpl.define_named_attribute(pen=grid_pen)
+                    mpl.command("GRID -{},,,,,_".format(grid))
+
+        except:
+            raise
+
+        finally:
+            self.current_data_view = current_view
+
+
+class MapplotException(Exception):
+    """
+    Exceptions from this module.
+
+    .. versionadded:: 9.2
+    """
+    pass
+
+class _Mapplot:
+
+    def __enter__(self):
+        return self
+
+    def __exit__(self, xtype, xvalue, xtraceback):
+        self._process()
+
+    def __repr__(self):
+        return "{}({})".format(self.__class__, self.__dict__)
+
+    def __str__(self):
+        return "mapplot({})".format(self._map.filename)
+
+    def __init__(self, map, data_view=None, ref_prefix='', **kwargs):
+
+        if not (map.has_view(map.current_base_view) and map.has_view(map.current_data_view)):
+            raise MapplotException("Map must have a '*Base' and '*Data' view.")
+
+        self._map = map
+        self._ref_pre = ref_prefix
+
+        if data_view:
+            self.prior_data_view = map.current_data_view
+            map.current_data_view = data_view
+        else:
+            self.prior_data_view = None
+
+        # mapplot control file
+        self._maplfilename = os.path.join(gx.GXpy().temp_folder(), 'mapl_' + gxu.uuid() + ".con")
+        self._maplfile = open(self._maplfilename, "w")
+        self._annotation_outer_edge = 0.0
+
+        atexit.register(self._process, pop=False)
+        self._open = gx.track_resource(self.__class__.__name__, self._maplfilename)
+
+        self.define_named_attribute()
+
+    def _process(self, pop=True):
+
+        if self._maplfile:
+            self._maplfile.close()
+            self._maplfile = None
+            gxmapl = gxapi.GXMAPL.create(self._maplfilename, self._ref_pre, 0)
+            gxmapl.process(self._map.gxmap)
+            os.remove(self._maplfilename)
+            if self.prior_data_view:
+                self.map.current_data_view = self.prior_data_view
+        if pop:
+            gx.pop_resource(self._open)
+
+    def command(self, command):
+        self._maplfile.write(command)
+        if command and command[-1] != '\n':
+            self._maplfile.write('\n')
+        # geosoft.gxpy.gx.GXpy().log(command)
+
+    def define_named_attribute(self, name='_', pen=None, text_def=None):
+
+        if (pen is None) and (text_def is None):
+            self.command("DATT {}".format(name))
+
+        else:
+            if pen is None:
+                pen = gxv.Pen(line_color=text_def.color, line_thick=text_def.line_thick)
+            ls = pen.line_style
+            lp = pen.line_pitch
+            pen = pen.mapplot_string
+
+            if text_def is None:
+                text = ''
+            else:
+                text = text_def.mapplot_string
+
+            self.command("DATT {}={},{},{},{}".format(name, pen, ls, lp, text))
+
+    def start_group(self, name, mode=GROUP_NEW, view=VIEW_BASE):
+        """
+        Start a view group, or append to an existing group.  Graphic entities can be organized
+        into named groups, which appear as separate components that can be managed within a
+        Geosoft viewer.
+
+        :param name:    Group name (required).
+        :param mode:    GROUP_NEW (default) or GROUP_APPEND.  GROUP_NEW relaces an existing group, and the
+                        content of an existing group will be deleted.
+        :param view:    VIEW_BASE or VIEW_DATA.  Coordinates in the base view are map cm, and coordionates
+                        in the data view are in data view units.
 
         .. versionadded:: 9.2
         """
         self.gxmap.create_linked_3d_view(view.gxview, view_name, area[0], area[1], area[2], area[3])
+        if type(view) is str:
+            if view.lower() == 'base':
+                view = VIEW_BASE
+            else:
+                view = VIEW_DATA
+        self.command('MGRP {},{},{}'.format(name, mode, view))

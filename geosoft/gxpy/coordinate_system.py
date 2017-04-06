@@ -289,11 +289,13 @@ class GXcs:
 
     :properties:
 
+        :gxipj:             GXAPI.GXIPJ instance for use with GXAPI
         :display_name:      Display name to present to a user
         :name:              Coordinate system name, ie: 'WGS 84 / UTM zone 15N <450000,7000000,0,0,0,15> [geodetic]'
         :hcs:               Horizontal coordinate system name, ie: 'WGS 84 / UTM zone 15N <450000,7000000,0,0,0,15>'
         :vcs:               Vertical coordinate system name, ie: 'geodetic'
-        :gxipj:             GXAPI.GXIPJ instance for use with GXAPI
+        :units_name:        the naame of the distance units (EPSG abbreviation)
+        :units_to_metres:   factor to convert CS distance units to metres (eg. for 'km', factor is 1000.0)
 
     Dictionary structure:
     
@@ -393,6 +395,17 @@ class GXcs:
         sref = gxapi.str_ref()
         self.gxipj.get_display_name(sref)
         return sref.value
+
+    @property
+    def units_name(self):
+        return self.cs_name(NAME_UNIT)
+
+    @property
+    def units_to_metres(self):
+        fr = gxapi.float_ref()
+        sr = gxapi.str_ref()
+        self.gxipj.get_units(fr, sr)
+        return fr.value
 
     @property
     def hcs(self):
@@ -698,18 +711,6 @@ class GXcs:
 
             self.gxipj.get_name(what, s)
             return s.value
-
-    def units(self):
-        """
-        :return: tuple (factor, abbreviation), where factor is multiplier to convert to metres
-
-        .. versionadded:: 9.2
-        """
-
-        sref = gxapi.str_ref()
-        fref = gxapi.float_ref()
-        self.gxipj.get_units(fref, sref)
-        return fref.value, sref.value
 
     def oriented_from_xyz(self, xyz):
         """

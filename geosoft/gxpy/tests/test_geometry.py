@@ -201,6 +201,10 @@ class Test(unittest.TestCase):
         pp = gxgm.PPoint((vvx, vvy, vvz))
         verify()
 
+        p1, p2 = pp.extent()
+        self.assertTrue(p1 == gxgm.Point((1, 2, 3)))
+        self.assertTrue(p2 == gxgm.Point((13, 14, 15)))
+
 
     def test_copy(self):
         self.start(gsys.func_name())
