@@ -1,0 +1,9 @@
+<header>
+   <Item name="Name" value="annotate_ll3.map"/>
+   <Item name="Extents" type="L2AREA">
+      <Value name="MinX" value="0"/>
+      <Value name="MinY" value="0"/>
+      <Value name="MaxX" value="25640"/>
+      <Value name="MaxY" value="18251"/>
+   </Item>
+</header>

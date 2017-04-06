@@ -20,7 +20,7 @@
       <Value name="MinX" value="7.105427358e-15"/>
       <Value name="MinY" value="0"/>
       <Value name="MaxX" value="96.25"/>
-      <Value name="MaxY" value="187.5"/>
+      <Value name="MaxY" value="182.5"/>
    </Item>
    <Item name="Matrix" type="D4MATRIX">
       <Value x="0" y="0" value="1"/>

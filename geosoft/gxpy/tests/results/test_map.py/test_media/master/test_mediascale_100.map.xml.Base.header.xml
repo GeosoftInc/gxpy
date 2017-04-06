@@ -1,5 +1,5 @@
 <header>
-   <Item name="Name" value="Base"/>
+   <Item name="Name" value="base"/>
    <Item name="ViewMatrix" type="D4MATRIX">
       <Value x="0" y="0" value="100"/>
       <Value x="1" y="0" value="0"/>

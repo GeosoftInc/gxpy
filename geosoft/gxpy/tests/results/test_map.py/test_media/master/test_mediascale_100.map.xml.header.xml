@@ -4,6 +4,6 @@
       <Value name="MinX" value="0"/>
       <Value name="MinY" value="0"/>
       <Value name="MaxX" value="49000"/>
-      <Value name="MaxY" value="97500"/>
+      <Value name="MaxY" value="97000"/>
    </Item>
 </header>

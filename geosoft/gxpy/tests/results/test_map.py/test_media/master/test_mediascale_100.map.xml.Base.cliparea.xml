@@ -3,23 +3,23 @@
       <Points>
          <Point>
             <Item name="X" value="0"/>
-            <Item name="Y" value="0"/>
+            <Item name="Y" value="5.684341886e-14"/>
          </Point>
          <Point>
             <Item name="X" value="0"/>
-            <Item name="Y" value="975"/>
+            <Item name="Y" value="970"/>
          </Point>
          <Point>
             <Item name="X" value="490"/>
-            <Item name="Y" value="975"/>
+            <Item name="Y" value="970"/>
          </Point>
          <Point>
             <Item name="X" value="490"/>
-            <Item name="Y" value="0"/>
+            <Item name="Y" value="5.684341886e-14"/>
          </Point>
          <Point>
             <Item name="X" value="0"/>
-            <Item name="Y" value="0"/>
+            <Item name="Y" value="5.684341886e-14"/>
          </Point>
       </Points>
    </Polygon>

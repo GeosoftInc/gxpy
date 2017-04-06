@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gmd:MD_Metadata xsi:schemaLocation="http://www.isotc211.org/2005/gmd ../schemas/iso19139fra/gmd/gmd.xsd" xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:map="urn:brgm:mapping" xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:gml="http://www.opengis.net/gml" xmlns:gts="http://www.isotc211.org/2005/gts" xmlns:gmx="http://www.isotc211.org/2005/gmx" xmlns:gfc="http://www.isotc211.org/2005/gfc" xmlns:gco="http://www.isotc211.org/2005/gco">
+	<geosoft xmlns="http://www.geosoft.com/schema/geo">
+		<dataset version="1">
+			<title>annotate_ll4</title>
+			<file_format>Geosoft Map</file_format>
+			<data_created_by>TestingSystem\Tester</data_created_by>
+			<data_creation_date>2003-01-01</data_creation_date>
+			<metadata_created_by>TestingSystem\Tester</metadata_created_by>
+			<metadata_creation_date>2003-01-01</metadata_creation_date>
+		</dataset>
+	</geosoft>
+	<gmd:identificationInfo>
+		<gmd:MD_DataIdentification>
+			<gmd:citation>
+				<gmd:CI_Citation>
+					<gmd:title>
+						<gco:CharacterString>annotate_ll4</gco:CharacterString>
+					</gmd:title>
+					<gmd:date>
+						<gmd:CI_Date>
+							<gmd:date>
+								<gco:Date>2003-1-1</gco:Date>
+							</gmd:date>
+						</gmd:CI_Date>
+					</gmd:date>
+				</gmd:CI_Citation>
+			</gmd:citation>
+			<gmd:resourceFormat>
+				<gmd:MD_Format>
+					<gmd:name>
+						<gco:CharacterString>Geosoft Map</gco:CharacterString>
+					</gmd:name>
+				</gmd:MD_Format>
+			</gmd:resourceFormat>
+			<gmd:pointOfContact>
+				<gmd:CI_ResponsibleParty>
+					<gmd:individualName>
+						<gco:CharacterString>TestingSystem\Tester</gco:CharacterString>
+					</gmd:individualName>
+				</gmd:CI_ResponsibleParty>
+			</gmd:pointOfContact>
+		</gmd:MD_DataIdentification>
+	</gmd:identificationInfo>
+	<gmd:contact>
+		<gmd:CI_ResponsibleParty>
+			<gmd:individualName>
+				<gco:CharacterString>TestingSystem\Tester</gco:CharacterString>
+			</gmd:individualName>
+		</gmd:CI_ResponsibleParty>
+	</gmd:contact>
+	<gmd:dateStamp>
+		<gco:Date>2003-1-1</gco:Date>
+	</gmd:dateStamp>
+</gmd:MD_Metadata>

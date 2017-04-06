@@ -1,0 +1,9 @@
+<header>
+   <Item name="Name" value="view_groups_2.map"/>
+   <Item name="Extents" type="L2AREA">
+      <Value name="MinX" value="0"/>
+      <Value name="MinY" value="0"/>
+      <Value name="MaxX" value="250000"/>
+      <Value name="MaxY" value="125000"/>
+   </Item>
+</header>

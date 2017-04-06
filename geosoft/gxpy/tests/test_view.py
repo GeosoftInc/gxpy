@@ -15,8 +15,6 @@ import geosoft.gxpy.agg as gxagg
 
 from geosoft.gxpy.tests import GXPYTest
 
-#set to false for auto-testing
-SHOW_TEST_IMAGES = False
 
 def rect_line(v, size=100):
     v.xy_rectangle(gxgm.Point2((0, 0, size, size), cs="cm"), pen=v.new_pen(line_thick=1))
@@ -84,26 +82,18 @@ class Test(unittest.TestCase, GXPYTest):
     def tearDownClass(cls):
         GXPYTest.tearDownClass(cls)
 
-
     @classmethod
-    def start(cls,test):
-        cls.gx.log("*** {} > {}".format(os.path.split(__file__)[1], test))
-
-    def view_crc(self, mapfile, crc=None, display=False):
-        if SHOW_TEST_IMAGES and display:
-            if mapfile.lower().endswith('.geosoft_3dv'):
-                gxvwr.v3d(mapfile)
-            else:
-                gxvwr.map(mapfile)
-        if crc:
-            self.assertEqual(gxmap.crc_map(mapfile), crc)
+    def start(cls, test, test_name):
+        parts = os.path.split(__file__)
+        test.result_dir = os.path.join(parts[0], 'results', parts[1], test_name)
+        cls.gx.log("*** {} > {}".format(parts[1], test_name))
 
     def test_version(self):
-        self.start(gsys.func_name())
+        Test.start(self, gsys.func_name())
         self.assertEqual(gxmap.__version__, geosoft.__version__)
 
     def test_create(self):
-        self.start(gsys.func_name())
+        Test.start(self, gsys.func_name())
 
         with gxmap.GXmap.new() as gmap:
             vlist = gmap.view_list()
@@ -206,7 +196,7 @@ class Test(unittest.TestCase, GXPYTest):
                 self.assertTrue(vw.cs.same_as(gxcs.GXcs()))
 
     def test_rectangle(self):
-        self.start(gsys.func_name())
+        Test.start(self, gsys.func_name())
 
         with gxmap.GXmap.new(data_area=(0,0,50,40), cs='cm') as map:
             mapfile = map.filename
@@ -214,10 +204,10 @@ class Test(unittest.TestCase, GXPYTest):
                 v.xy_rectangle(v.extent_clip, pen=v.new_pen(line_thick=0.5, line_color='B'))
                 v.xy_rectangle((2,2,48,38), pen=v.new_pen(line_thick=0.25, line_color='R', line_style=gxv.LINE_STYLE_LONG, line_pitch=5))
 
-        self.view_crc(mapfile, 3553607000)
+        self.crc_map(mapfile, alt_crc_name="rectangle")
 
     def test_smooth_line(self):
-        self.start(gsys.func_name())
+        Test.start(self, gsys.func_name())
 
         pp = pline()
         p1, p2 = pp.extent()
@@ -230,11 +220,10 @@ class Test(unittest.TestCase, GXPYTest):
                 v.xy_poly_line(pp, pen=v.new_pen(line_smooth=gxv.SMOOTH_CUBIC, line_color='b', line_thick=2))
                 v.xy_poly_line(pp)
 
-        self.view_crc(mapfile, 0)
+        self.crc_map(mapfile, alt_crc_name="smooth_line")
 
-    @unittest.skip('Skipping due to: Cannot find key: "*unknown" in table: "units.csv"') # TODO
     def test_view_groups(self):
-        self.start(gsys.func_name())
+        Test.start(self, gsys.func_name())
 
         testmap = os.path.join(self.gx.temp_folder(), "test")
         with gxmap.GXmap.new(testmap, overwrite=True) as gmap:
@@ -249,7 +238,7 @@ class Test(unittest.TestCase, GXPYTest):
                 v.start_group('test_group')
                 draw_stuff(v)
 
-        self.view_crc(mapfile, 0, True)
+        self.crc_map(mapfile, alt_crc_name='view_groups_1')
 
         with gxmap.GXmap.new(testmap, overwrite=True) as gmap:
             mapfile = gmap.filename
@@ -267,13 +256,12 @@ class Test(unittest.TestCase, GXPYTest):
                 v.start_group('test_group')
                 draw_stuff(v)
 
-        self.view_crc(mapfile, 0, True)
+        self.crc_map(mapfile, alt_crc_name='view_groups_2')
 
         gxmap.delete_files(mapfile)
 
-    @unittest.skip("Skipping due to: This test fails, see comment in GXview._close") # TODO
     def test_reopen_map_view(self):
-        self.start(gsys.func_name())
+        Test.start(self, gsys.func_name())
 
         testmap = os.path.join(self.gx.temp_folder(), "test")
         with gxmap.GXmap.new(testmap, overwrite=True) as gmap:
@@ -284,30 +272,29 @@ class Test(unittest.TestCase, GXPYTest):
                 pass
         gxmap.delete_files(mapfile)
 
-
-    @unittest.skip('Skipping due to: Cannot find key: "*unknown" in table: "units.csv"') # TODO
     def test_3D(self):
-        self.start(gsys.func_name())
+        Test.start(self, gsys.func_name())
 
-        testmap = os.path.join(self.gx.temp_folder(), "test")
-        with gxmap.GXmap.new(testmap, overwrite=True) as gmap:
-            mapfile = gmap.filename
-            with gxv.GXview(gmap, "base", area=(0,0,250, 125), scale=1000) as v:
-                v.start_group('test_group')
-                v.xy_rectangle(((0, 0), (100, 100)))
-            with gxv.GXview3d(gmap, viewname='v3d_test', area=(0,0,300, 300), scale=1000,
-                              cs="wgs 84 / UTM zone 15S") as v:
-                v.start_group('test_group')
-                rect_line(v)
-                draw_stuff(v)
-                v.box_3d(((0,0,10), (120,100,50)))
-
-        #TODO resolve this with Jacques once 3D viewer works
-        #gxvwr.map(mapfile)
-        #gxvwr.v3d(mapfile)
+        test3dv = os.path.join(self.gx.temp_folder(), "test.geosoft_3dv")
+        testmap = os.path.join(self.gx.temp_folder(), "test.map")
+        with gxmap.GXmap.new(test3dv, overwrite=True, no_data_view=True) as g3dv:
+            with gxv.GXview3d(g3dv, mode=gxv.WRITE_NEW) as view_3d:
+                view_3d.start_group('2d_group')
+                rect_line(view_3d)
+                draw_stuff(view_3d)
+                view_3d.start_group('3d_group')
+                view_3d.box_3d(((20, 10, 30), (80,50,50)), pen=view_3d.new_pen(fill_color='R255G100B50'))
+                
+                with gxmap.GXmap.new(testmap, overwrite=True) as gmap:
+                    with gxv.GXview(gmap, "base") as view_base:
+                        view_base.start_group('Surround')
+                        view_base.xy_rectangle(((0, 0), (280, 260)))
+                    gmap.create_linked_3d_view(view_3d, area=(10,10,270,250))
+        self.crc_map(test3dv)
+        self.crc_map(testmap)
 
     def test_cs(self):
-        self.start(gsys.func_name())
+        Test.start(self, gsys.func_name())
 
         testmap = os.path.join(self.gx.temp_folder(), "test")
         with gxmap.GXmap.new(testmap, overwrite=True) as gmap:
@@ -317,7 +304,7 @@ class Test(unittest.TestCase, GXPYTest):
                 self.assertTrue("WGS 84 / UTM zone 15N [special]" in str(v.cs))
 
     def test_basic_drawing(self):
-        self.start(gsys.func_name())
+        Test.start(self, gsys.func_name())
 
         testmap = os.path.join(self.gx.temp_folder(), "test")
         with gxmap.GXmap.new(testmap, overwrite=True, data_area=(0, 0, 25, 20), scale=100.0) as gmap:
@@ -334,10 +321,10 @@ class Test(unittest.TestCase, GXPYTest):
             gmap.delete_view('*data')
             gmap.delete_view('*base')
 
-        self.view_crc(mapfile, 2457606645)
+        self.crc_map(mapfile)
 
     def test_basic_grid(self):
-        self.start(gsys.func_name())
+        Test.start(self, gsys.func_name())
 
         # test grid file
         folder, files = gsys.unzip(os.path.join(os.path.dirname(__file__), 'testgrids.zip'),
@@ -360,7 +347,7 @@ class Test(unittest.TestCase, GXPYTest):
                 with gxagg.GXagg(grid_file) as agg:
                     v.aggregate(agg)
 
-        self.view_crc(mapfile, 1232358915)
+        self.crc_map(mapfile, alt_crc_name='basic_grid_1')
 
         with gxgrd.GXgrd(grid_file) as grd:
             cs = grd.cs
@@ -377,12 +364,15 @@ class Test(unittest.TestCase, GXPYTest):
                 with gxagg.GXagg(grid_file) as agg:
                     v.aggregate(agg)
 
-        self.view_crc(mapfile, 1139234781)
+        self.crc_map(mapfile, alt_crc_name='basic_grid_2')
 
+    @unittest.skip("Inconsistent results due to temp folder use...")  #
+    # Complete TODO in GXPYTest._agnosticize_and_ensure_consistent_line_endings
     def test_zone_grid(self):
-        self.start(gsys.func_name())
+        Test.start(self, gsys.func_name())
 
-        def test_zone(zone, crc, shade=False, display=False):
+        def test_zone(zone, suffix, shade=False):
+            map_file = os.path.join(self.gx.temp_folder(), "test_agg_" + suffix)
             with gxmap.GXmap.new(map_file, overwrite=True,
                                  data_area=(ex[0], ex[1], ex[2], ex[3]),
                                  scale=(ex[2] - ex[0]) / 0.2) as gmap:
@@ -392,7 +382,7 @@ class Test(unittest.TestCase, GXPYTest):
                         v.aggregate(agg)
                 gmap.delete_view('base')
 
-            self.view_crc(mapfile, crc, display)
+            self.crc_map(mapfile)
 
         # test grid file
         folder, files = gsys.unzip(os.path.join(os.path.dirname(__file__), 'testgrids.zip'),
@@ -400,19 +390,21 @@ class Test(unittest.TestCase, GXPYTest):
         grid_file = os.path.join(folder, 'test_agg_utm.grd')
         with gxgrd.GXgrd(grid_file) as grd:
             ex = grd.extent_2d()
-        map_file = os.path.join(self.gx.temp_folder(), "test_agg")
+        
 
-        test_zone(gxagg.ZONE_LINEAR, 2521996509, shade=True, display=True)
-        test_zone(gxagg.ZONE_EQUALAREA, 1246636862)
-        test_zone(gxagg.ZONE_DEFAULT, 1246636862)
-        test_zone(gxagg.ZONE_LAST, 1246636862)
-        test_zone(gxagg.ZONE_LINEAR, 2299502801)
-        test_zone(gxagg.ZONE_NORMAL, 1363683293)
-        test_zone(gxagg.ZONE_SHADE, 1269009350)
-        test_zone(gxagg.ZONE_LOGLINEAR, 1055719756)
+        test_zone(gxagg.ZONE_LINEAR, "linear_shade", shade=True)
+        test_zone(gxagg.ZONE_EQUALAREA, "eq_area")
+        test_zone(gxagg.ZONE_DEFAULT, "default")
+        test_zone(gxagg.ZONE_LAST, "last")
+        test_zone(gxagg.ZONE_LINEAR, "linear")
+        test_zone(gxagg.ZONE_NORMAL, "normal")
+        test_zone(gxagg.ZONE_SHADE, "shade")
+        test_zone(gxagg.ZONE_LOGLINEAR, "log_linear")
 
+    @unittest.skip("Inconsistent results due to temp folder use...")
+    # Complete TODO in GXPYTest._agnosticize_and_ensure_consistent_line_endings
     def test_color_bar(self):
-        self.start(gsys.func_name())
+        Test.start(self, gsys.func_name())
 
         # test grid file
         folder, files = gsys.unzip(os.path.join(os.path.dirname(__file__), 'testgrids.zip'),
@@ -443,10 +435,10 @@ class Test(unittest.TestCase, GXPYTest):
                                   text_def=gxv.Text_def(height=0.25, italics=True),
                                   top=gxmap.TOP_IN)
 
-        self.view_crc(mapfile, 0, True)
+        self.crc_map(mapfile)
 
     def test_text_definition(self):
-        self.start(gsys.func_name())
+        Test.start(self, gsys.func_name())
 
         t = gxv.Text_def()
         self.assertEqual(t.slant, 0)
@@ -483,7 +475,7 @@ class Test(unittest.TestCase, GXPYTest):
         self.assertEqual(t.weight, gxv.FONT_WEIGHT_BOLD)
 
     def test_colours(self):
-        self.start(gsys.func_name())
+        Test.start(self, gsys.func_name())
 
         c = gxv.Color((150, 200, 500))
         self.assertEqual(c.rgb, (150, 200, 255))
@@ -513,7 +505,7 @@ class Test(unittest.TestCase, GXPYTest):
         self.assertTrue(c == gxv.Color(gxv.C_TRANSPARENT))
 
     def test_pen(self):
-        self.start(gsys.func_name())
+        Test.start(self, gsys.func_name())
 
         p = gxv.Pen()
         self.assertEqual(p.line_color.int, gxv.C_BLACK)
@@ -547,7 +539,7 @@ class Test(unittest.TestCase, GXPYTest):
         self.assertRaises(gxv.ViewException, gxv.Pen, bad=1)
 
     def test_scaled(self):
-        self.start(gsys.func_name())
+        Test.start(self, gsys.func_name())
 
         p = gxv.Pen(factor=10)
         self.assertEqual(p.line_thick, 0.1)

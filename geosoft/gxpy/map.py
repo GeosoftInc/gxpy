@@ -300,6 +300,7 @@ class GXmap:
                             spatial data near the edge of the defined data area.
             :overwrite:     True to overwrite an existing map.  If False and map exists, raises
                             ``MapException``.
+            :no_data_view:  True to omit data view during map creation.
 
         .. versionadded:: 9.2
         """
@@ -321,6 +322,7 @@ class GXmap:
                   'MAP.UP_ANGLE': '67.5'}
             gmap.gxmap.set_reg(gxu.reg_from_dict(rd))
 
+        
         if ((data_area[2] - data_area[0]) <= 0.0) or ((data_area[3] - data_area[1]) <= 0.0):
             raise MapException(_t('Invalid data area {}'.format(data_area)))
 
@@ -425,7 +427,8 @@ class GXmap:
                                .format(media[0], media[1], scale))
 
         gxapi.GXMVU.mapset(gmap.gxmap,
-                           'base', 'data',
+                           'base', 
+                           '' if no_data_view else 'data',
                            data_area[0], data_area[2],
                            data_area[1], data_area[3],
                            '{},{}'.format(media[0] + 50.0, media[1] + 50.0), layout,
@@ -649,6 +652,18 @@ class GXmap:
         .. versionadded:: 9.2
         """
         self.gxmap.set_class_name(view_class, view_name)
+
+    def create_linked_3d_view(self, view, view_name = '3D', area=(0,0,30,30)):
+        """
+        Create a linked 3D view inside a 2D map to a `gxpy.view.GXview3d` in a 3DV
+
+        :param view: A `gxpy.view.GXview3d` instance
+        :param view_name:   name of the linked view to create
+        :param area: (min_x, min_y, max_x, max_y) placement of view on map in mm
+
+        .. versionadded:: 9.2
+        """
+        self.gxmap.create_linked_3d_view(view.gxview, view_name, area[0], area[1], area[2], area[3])
 
     def map_reference_location(self, refp, viewname='base'):
         """
@@ -1095,7 +1110,6 @@ class _Mapplot:
 
         .. versionadded:: 9.2
         """
-        self.gxmap.create_linked_3d_view(view.gxview, view_name, area[0], area[1], area[2], area[3])
         if type(view) is str:
             if view.lower() == 'base':
                 view = VIEW_BASE
