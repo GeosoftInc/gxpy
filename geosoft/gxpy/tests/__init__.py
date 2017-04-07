@@ -7,6 +7,7 @@ import geosoft.gxapi as gxapi
 import geosoft.gxpy.map as gxmap
 import geosoft.gxpy.viewer as gxvwr
 import geosoft.gxpy.utility as gxu
+import geosoft.gxpy.system as gxsys
 
 #set to True to update all results
 UPDATE_ALL_RESULTS = False
@@ -87,6 +88,16 @@ class GXPYTest(object):
 
 
     def crc_map(self, map_file, *, pix_width=1024, update_result=False, alt_crc_name=None):
+        """ 
+        Run Geosoft crc testing protocol on Geosoft maps.
+        
+        :param pix_width:       pixel width, increase if achieve higher fidelity in the bitmap test
+        :param update_result:   True to update the reference test to the current results
+        :param alt_crc_name:    test name.  The default is the name of the calling function.  The name
+                                must be unique within this test suite, which it will be if there is
+                                only one test per test function.  If you have more than one test in a single
+                                testing function use this parameter to create unique names.
+        """
 
         if SHOW_TEST_VIEWERS:
             if map_file.lower().endswith('.geosoft_3dv'):
@@ -109,8 +120,9 @@ class GXPYTest(object):
         file_name_part = file_part.split('.')[0]
 
         replacement_dict = {}
-        if alt_crc_name:
-            replacement_dict[file_name_part] = alt_crc_name
+        if alt_crc_name is None:
+            alt_crc_name = gxsys.func_name(1)
+        replacement_dict[file_name_part] = alt_crc_name
 
         result_files = glob.glob(xml_result_file + '*')
         for result in result_files:

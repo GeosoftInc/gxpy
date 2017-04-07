@@ -12,6 +12,7 @@ import geosoft.gxpy.viewer as gxvwr
 import geosoft.gxpy.coordinate_system as gxcs
 import geosoft.gxpy.grd as gxgrd
 import geosoft.gxpy.agg as gxagg
+import geosoft.gxpy.system as gxsys
 
 from geosoft.gxpy.tests import GXPYTest
 
@@ -204,7 +205,7 @@ class Test(unittest.TestCase, GXPYTest):
                 v.xy_rectangle(v.extent_clip, pen=v.new_pen(line_thick=0.5, line_color='B'))
                 v.xy_rectangle((2,2,48,38), pen=v.new_pen(line_thick=0.25, line_color='R', line_style=gxv.LINE_STYLE_LONG, line_pitch=5))
 
-        self.crc_map(mapfile, alt_crc_name="rectangle")
+        self.crc_map(mapfile)
 
     def test_smooth_line(self):
         Test.start(self, gsys.func_name())
@@ -220,9 +221,9 @@ class Test(unittest.TestCase, GXPYTest):
                 v.xy_poly_line(pp, pen=v.new_pen(line_smooth=gxv.SMOOTH_CUBIC, line_color='b', line_thick=2))
                 v.xy_poly_line(pp)
 
-        self.crc_map(mapfile, alt_crc_name="smooth_line")
+        self.crc_map(mapfile)
 
-    def test_view_groups(self):
+    def test_view_groups_1(self):
         Test.start(self, gsys.func_name())
 
         testmap = os.path.join(self.gx.temp_folder(), "test")
@@ -238,8 +239,13 @@ class Test(unittest.TestCase, GXPYTest):
                 v.start_group('test_group')
                 draw_stuff(v)
 
-        self.crc_map(mapfile, alt_crc_name='view_groups_1')
+        self.crc_map(mapfile)
+        gxmap.delete_files(mapfile)
 
+    def test_view_groups_2(self):
+        Test.start(self, gsys.func_name())
+
+        testmap = os.path.join(self.gx.temp_folder(), "test")
         with gxmap.GXmap.new(testmap, overwrite=True) as gmap:
             mapfile = gmap.filename
             with gxv.GXview(gmap, "rectangle_test", area=(0,0,250, 125)) as v:
@@ -256,8 +262,7 @@ class Test(unittest.TestCase, GXPYTest):
                 v.start_group('test_group')
                 draw_stuff(v)
 
-        self.crc_map(mapfile, alt_crc_name='view_groups_2')
-
+        self.crc_map(mapfile)
         gxmap.delete_files(mapfile)
 
     def test_reopen_map_view(self):
@@ -290,8 +295,9 @@ class Test(unittest.TestCase, GXPYTest):
                         view_base.start_group('Surround')
                         view_base.xy_rectangle(((0, 0), (280, 260)))
                     gmap.create_linked_3d_view(view_3d, area=(10,10,270,250))
-        self.crc_map(test3dv)
-        self.crc_map(testmap)
+
+        self.crc_map(test3dv, alt_crc_name=gxsys.func_name()+'_3dv')
+        self.crc_map(testmap, alt_crc_name=gxsys.func_name()+'_map')
 
     def test_cs(self):
         Test.start(self, gsys.func_name())
@@ -323,7 +329,7 @@ class Test(unittest.TestCase, GXPYTest):
 
         self.crc_map(mapfile)
 
-    def test_basic_grid(self):
+    def test_basic_grid_1(self):
         Test.start(self, gsys.func_name())
 
         # test grid file
@@ -347,7 +353,16 @@ class Test(unittest.TestCase, GXPYTest):
                 with gxagg.GXagg(grid_file) as agg:
                     v.aggregate(agg)
 
-        self.crc_map(mapfile, alt_crc_name='basic_grid_1')
+        self.crc_map(mapfile)
+
+    def test_basic_grid_2(self):
+        Test.start(self, gsys.func_name())
+
+        # test grid file
+        folder, files = gsys.unzip(os.path.join(os.path.dirname(__file__), 'testgrids.zip'),
+                                   folder=self.gx.temp_folder())
+        grid_file = os.path.join(folder, 'test_agg_utm.grd')
+        map_file = os.path.join(self.gx.temp_folder(), "test_agg_utm")
 
         with gxgrd.GXgrd(grid_file) as grd:
             cs = grd.cs
@@ -364,7 +379,7 @@ class Test(unittest.TestCase, GXPYTest):
                 with gxagg.GXagg(grid_file) as agg:
                     v.aggregate(agg)
 
-        self.crc_map(mapfile, alt_crc_name='basic_grid_2')
+        self.crc_map(mapfile)
 
     @unittest.skip("Inconsistent results due to temp folder use...")  #
     # Complete TODO in GXPYTest._agnosticize_and_ensure_consistent_line_endings
@@ -382,7 +397,7 @@ class Test(unittest.TestCase, GXPYTest):
                         v.aggregate(agg)
                 gmap.delete_view('base')
 
-            self.crc_map(mapfile)
+            self.crc_map(mapfile, alt_crc_name='{}_{}'.format(gxsys.func_name(1), suffix))
 
         # test grid file
         folder, files = gsys.unzip(os.path.join(os.path.dirname(__file__), 'testgrids.zip'),
@@ -555,6 +570,25 @@ class Test(unittest.TestCase, GXPYTest):
 
         t = gxv.Text_def(factor=0.2)
         self.assertEqual(t.height, 0.05)
+
+    def test_text(self):
+        Test.start(self, gsys.func_name())
+
+        with gxmap.GXmap.new(data_area=(400000, 5000000, 500000, 5150000),
+                         cs='WGS 84 / UTM zone 15N [geoid]') as map:
+            mapfile = map.filename
+            map.surround()
+            with gxv.GXview(map, 'base') as v:
+                v.text('Text on base view')
+                v.text('Bigger, blue, higher',
+                       (v.units_per_map_cm, v.units_per_map_cm),
+                       text_def=gxv.Text_def(height=20, color='B', font='Times New Roman'))
+                v.text('Bigger, blue, angled, italics',
+                       (10, 25),
+                       angle=60,
+                       text_def=gxv.Text_def(height=20, color='B', font='Calibri', italics=True))
+
+        self.crc_map(mapfile)
 
 if __name__ == '__main__':
 

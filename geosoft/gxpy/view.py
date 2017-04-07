@@ -22,6 +22,7 @@ class ViewException(Exception):
     """
     pass
 
+
 READ_ONLY = gxapi.MVIEW_READ
 WRITE_NEW = gxapi.MVIEW_WRITENEW
 WRITE_OLD = gxapi.MVIEW_WRITEOLD
@@ -39,7 +40,7 @@ UNIT_VIEW = 0
 UNIT_MAP = 2
 UNIT_VIEW_UNWARPED = 3
 
-#TODO - add and test once bug if fixed
+# TODO - add and test once bug if fixed
 # GRATICULE_DOT = 0 # disabled due to a bug
 GRATICULE_LINE = 1
 GRATICULE_CROSS = 2
@@ -100,16 +101,27 @@ TILE_DIAGONAL = 1
 TILE_TRIANGULAR = 2
 TILE_RANDOM = 3
 
+TEXT_REF_BOTTOM_LEFT = 0
+TEXT_REF_BOTTOM_CENTER = 1
+TEXT_REF_BOTTOM_RIGHT = 2
+TEXT_REF_MIDDLE_LEFT = 3
+TEXT_REF_MIDDLE_CENTER = 4
+TEXT_REF_MIDDLE_RIGHT = 5
+TEXT_REF_TOP_LEFT = 6
+TEXT_REF_TOP_CENTER = 7
+TEXT_REF_TOP_RIGHT = 8
+
+
 class Color:
     """
     Colours, which are stored as a 24-bit color integer.
-    
+
     :param color:   string descriptor (eg. 'R255G0B125'), color letter R, G, B, C, M, Y, H, S or V.;
                     tuple (r, g, b), (c, m, y) or (h, s, v), each item defined in the range 0 to 255;
                     24-bit color number, which can be an item selected from the following list:
-                                       
+
                     ::
-                    
+
                         C_BLACK
                         C_RED
                         C_GREEN
@@ -130,9 +142,9 @@ class Color:
                         C_GREY50
                         C_WHITE
                         C_TRANSPARENT
-                        
+
     :param model:   model of the tuple: C_RGB, C_CMY or C_HSV.  Default is C_RGB
-    
+
     .. versionadded:: 9.2
     """
 
@@ -147,9 +159,6 @@ class Color:
         elif type(color) is str:
             self._color = gxapi.GXMVIEW.color(color)
 
-        elif model == C_RGB:
-            self.rgb = color
-
         elif model == C_CMY:
             self.cmy = color
 
@@ -159,8 +168,14 @@ class Color:
             val = max(0, min(255, color[2]))
             self._color = gxapi.GXMVIEW.color_hsv(hue, sat, val)
 
+        else:
+            self.rgb = color
+
     def __eq__(self, other):
-        return self._color == other._color
+        return self.__dict__ == other.__dict__
+
+    def __ne__(self, other):
+        return self.__dict__ != other.__dict__
 
     @property
     def int(self):
@@ -198,17 +213,18 @@ class Color:
     def cmy(self, cmy):
         self.rgb = (255 - cmy[0], 255 - cmy[1], 255 - cmy[2])
 
+
 def font_weight_from_line_thickness(line_thick, height):
     """
     Returns font weight for a text height and line thickness.
-    
+
     :param line_thick:  line thickness in same units as the text height
     :param height:      text height
-    
+
     :returns: one of:
-    
+
             ::
-            
+
                 FONT_WEIGHT_ULTRALIGHT
                 FONT_WEIGHT_LIGHT
                 FONT_WEIGHT_MEDIUM
@@ -228,44 +244,46 @@ def font_weight_from_line_thickness(line_thick, height):
         fw += 1
     return FONT_WEIGHT_MEDIUM
 
+
 def thickness_from_font_weight(weight, height):
     """ 
     Returns the line thickness appropriate for a text weight.
-    
+
     :param weight: one of:
-        
+
             ::
-            
+
                 FONT_WEIGHT_ULTRALIGHT
                 FONT_WEIGHT_LIGHT
                 FONT_WEIGHT_MEDIUM
                 FONT_WEIGHT_BOLD
                 FONT_WEIGHT_XBOLD
                 FONT_WEIGHT_XXBOLD
-                
+
     :param height:  font height
 
     .. versionadded:: 9.2
     """
     return height * _weight_factor[weight - 1]
 
+
 class Text_def:
     """
     Text definition:
-    
+
     :param font:        font name.  TrueType fonts are assumed unless the name ends with '.gfn',
                         which is a Geosoft gfn font.
     :param weight:      one of:
-    
+
                         ::
-                        
+
                             FONT_WEIGHT_ULTRALIGHT
                             FONT_WEIGHT_LIGHT
                             FONT_WEIGHT_MEDIUM
                             FONT_WEIGHT_BOLD
                             FONT_WEIGHT_XBOLD
                             FONT_WEIGHT_XXBOLD
-                    
+
     :param line_thick:  line thickness from which to determine a weight, which is calculated from the 
                         ratio of line thickness to height.
     :param italics:     True for italics fonts
@@ -273,9 +291,9 @@ class Text_def:
     :param factor:      default spatial properties are multiplied by this factor.  This is useful
                         for creating text scaled to the units of a view.  The default text properties
                         are scaled to cm.
-    
+
     :properties:
-    
+
         :height:        font height in 
         :font:          font name
         :weight:        font weight, one of FONT_WEIGHT_
@@ -283,9 +301,10 @@ class Text_def:
         :italics:       True for italics
         :slant:         Slant angle for stroke fonts, 0 if normal, 15 for italics
         :mapplot_string:  mapplot compatible text definition string
-        
+
     .. versionadded:: 9.2
     """
+
     def __init__(self, **kwargs):
 
         if 'default' in kwargs:
@@ -295,6 +314,7 @@ class Text_def:
             self.color = Color(C_BLACK)
             self.height = 0.25
             self.font = 'DEFAULT'
+            self.gfn = True
             self.weight = None
             self.italics = False
 
@@ -321,6 +341,12 @@ class Text_def:
             else:
                 self.weight = font_weight_from_line_thickness(line_thick, self.height)
 
+    def __eq__(self, other):
+        return self.__dict__ == other.__dict__
+
+    def __ne__(self, other):
+        return self.__dict__ != other.__dict__
+
     @property
     def color(self):
         return self._color
@@ -339,9 +365,15 @@ class Text_def:
     @font.setter
     def font(self, font):
         if font:
-            self._font = font
+            if '.gfn' in font.lower():
+                self.gfn = True
+                self._font = font.lower().replace('.gfn', '')
+            else:
+                self.gfn = False
+                self._font = font.replace('(TT)', '')
         else:
             self._font = 'DEFAULT'
+            self.gfn = True
 
     @property
     def line_thick(self):
@@ -371,12 +403,12 @@ class Text_def:
         Return a text definition for mapplot.
         :return: 
         """
-        if '.gfn' in self._font.lower():
-            font = self._font.lower().replace('.gfn','')
-        elif 'default' in self._font.lower():
+        if 'default' in self._font.lower():
             font = 'DEFAULT'
-        else:
+        elif not self.gfn:
             font = self._font.strip() + '(TT)'
+        else:
+            font = self._font
         return '{},,,{},"{}"'.format(self.height, self.slant, font)
 
 
@@ -386,38 +418,38 @@ class Pen:
     pat_size and pat_thick) are scaled assuming scale units are cm.  To scale
     a pen to view units, use Pen.scaled(units_per_cm) to create a default
     pen scaled to the units of a view.
-    
+
     :param line_color:  line Color instance, default is black
     :param fill_color:  fill Color instance, default is transparent
     :param line_thick:  line thickness, default is 0.01
     :param line_style:  line pattern style
-    
+
                         ::
-                        
+
                             LINE_STYLE_SOLID (default)
                             LINE_STYLE_LONG
                             LINE_STYLE_DOTTED
                             LINE_STYLE_SHORT
                             LINE_STYLE_LONG_SHORT_LONG
                             LINE_STYLE_LONG_DOT_LONG
-                        
+
     :param line_pitch:  line style pitch, default is 0.5
     :param line_smooth: smooth line:
-    
+
                         ::
-                        
+
                             SMOOTH_NONE (default)
                             SMOOTH_AKIMA
                             SMOOTH_CUBIC
-                            
+
     :param pat_number:  pattern number for filled patterns (refer to ``etc/default.pat``) default 0, flood fill
     :param pat_angle:   pattern angle, default 0
     :param pat_density: pattern density, default 1
     :param pat_size:    pattern size, default 1.0
     :param pat_style:   pattern style:
-    
+
                         ::
-                        
+
                             TILE_RECTANGULAR (default)
                             TILE_DIAGONAL
                             TILE_TRIANGULAR
@@ -464,7 +496,7 @@ class Pen:
             elif k == 'fill_color':
                 self.fill_color = kwargs[k]
             elif k in self.__dict__:
-                self.__dict__[k]= kwargs[k]
+                self.__dict__[k] = kwargs[k]
             else:
                 raise ViewException('Invalid pen parameter ({})'.format(k))
 
@@ -472,11 +504,12 @@ class Pen:
     def from_mapplot_string(cls, cstr):
         """
         Create a Pen instance from a mapplot-style string descriptor.
-        
+
         :param cstr:                example 'r45g255t500B'
-        
+
         .. versionadded:: 9.2
         """
+
         def get_part(cstr, c, default=255):
             if c not in cstr:
                 return 0
@@ -486,9 +519,9 @@ class Pen:
                 if not (c in '0123456789'):
                     break
                 end += 1
-            if end == start+1:
+            if end == start + 1:
                 return default
-            return int(cstr[start+1:end])
+            return int(cstr[start + 1:end])
 
         def add_k(c, k):
             return max(c[0] - k, 0), max(c[1] - k, 0), max(c[2] - k, 0)
@@ -514,6 +547,12 @@ class Pen:
         line_thick = max(1, get_part(cstr, 't', 1)) * 0.0001
 
         return cls(line_color=line_color, fill_color=fill_color, line_thick=line_thick)
+
+    def __eq__(self, other):
+        for k, v in self.__dict__:
+            if other[k] != v:
+                return False
+        return True
 
     @property
     def line_color(self):
@@ -545,7 +584,7 @@ class Pen:
                 s += 'k'
             else:
                 c = self._line_color.rgb
-                s += 'r{}g{}b{}'.format(c[0],c[1],c[2])
+                s += 'r{}g{}b{}'.format(c[0], c[1], c[2])
         if self._fill_color.int != C_TRANSPARENT:
             if self._line_color.int == C_BLACK:
                 s += 'K'
@@ -553,7 +592,8 @@ class Pen:
                 c = self._fill_color.rgb
                 s += 'R{}G{}B{}'.format(c[0], c[1], c[2])
 
-        return s + 't{}'.format(int(self.line_thick*10000.))
+        return s + 't{}'.format(int(self.line_thick * 10000.))
+
 
 # decorator
 def _draw(func):
@@ -584,12 +624,13 @@ def _make_Point2(p2):
     else:
         return gxgm.Point2(p2)
 
+
 class GXview:
     """
     Geosoft view class.
 
     :parameters:
-    
+
         :viewname:      view name, default is "_unnamed_view".
         :gmap:          map instance, if not specified a new default map is created and deleted on closing
         :mode:          open view mode:
@@ -601,7 +642,7 @@ class GXview:
                             gxpy.view.WRITE_OLD
 
         The following are used with ``mode=gxpy.view.WRITE_NEW``:
-        
+
         :cs:            coordinate system as a gxpy.coordinate_system.GXcs instance, or one of the GXcs
                         constructor types.
         :map_location:  (x, y) view location on the map, in map cm
@@ -611,7 +652,7 @@ class GXview:
         :copy:          name of a view to copy into the new view.
 
     :properties:
-    
+
         :gmap:              the GXmap instance that contains this view
         :viewname:          the name of the view
         :units_per_metre:   view units per view metres (eg. a view in 'ft' will be 3.28084).
@@ -621,7 +662,7 @@ class GXview:
         :aspect:            ratio of the view x units to y units (x/y).  Usually this is 1.0.
         :extent:            extent of the visible (clipped) view in view units.
         :extent_map_cm:     extent of the visible view in map cm.
-        
+
     .. versionadded:: 9.2
     """
 
@@ -633,7 +674,7 @@ class GXview:
 
     def _close(self):
         if self._open:
-            #TODO revisit resource cleaning once we have cython interface.  Jacques suspects boost.
+            # TODO revisit resource cleaning once we have cython interface.  Jacques suspects boost.
             self.gxview = None
             self._pen = None
             self._gmap = None  # release map
@@ -650,8 +691,8 @@ class GXview:
                  viewname="_unnamed_view",
                  mode=WRITE_OLD,
                  cs=None,
-                 map_location=(0,0),
-                 area=(0,0,30,20),
+                 map_location=(0, 0),
+                 area=(0, 0, 30, 20),
                  scale=100,
                  copy=None):
 
@@ -666,7 +707,7 @@ class GXview:
 
         atexit.register(self._close)
         self._open = True
-        
+
         if mode == WRITE_NEW:
             self.locate(cs, map_location, area, scale)
 
@@ -683,7 +724,30 @@ class GXview:
             self._uname = self.cs.units_name
             if metres_per <= 0.:
                 raise ViewException('Invalid units {}({})'.format(self._uname, metres_per))
-            self._units_to_metres = 1.0/metres_per
+            self._units_to_metres = 1.0 / metres_per
+
+        self._text_def = None
+        if self._mode != READ_ONLY:
+            self.text_def = Text_def(factor=self.units_per_map_cm)
+
+    @property
+    def text_def(self):
+        return self._text_def
+
+    @text_def.setter
+    def text_def(self, text_def):
+        if self._mode == READ_ONLY:
+            raise _t('This view is read-only.')
+        if (self._text_def is None) or (self.text_def != text_def):
+            if self._group is None:
+                self.start_group()
+            self._text_def = text_def
+            self.gxview.text_font(text_def.font,
+                                  text_def.gfn,
+                                  text_def.weight,
+                                  text_def.italics)
+            self.gxview.text_size(text_def.height)
+            self.gxview.text_color(text_def.color.int)
 
     def set_cs(self, cs):
         """
@@ -699,7 +763,7 @@ class GXview:
         self._uname = self.cs.units_name
         if metres_per <= 0.:
             raise ViewException('Invalid units {}({})'.format(self._uname, metres_per))
-        self._units_to_metres = 1.0/metres_per
+        self._units_to_metres = 1.0 / metres_per
         self.gxview.set_ipj(self.cs.gxipj)
 
     def set_drawing_cs(self, cs=None):
@@ -764,7 +828,7 @@ class GXview:
         self.gxview.fit_window(mm_minx, mm_miny, mm_maxx, mm_maxy,
                                a_minx, a_miny, a_maxx, a_maxy)
         self.gxview.set_window(a_minx, a_miny, a_maxx, a_maxy, UNIT_VIEW)
-        #self.gxview.set_u_fac(1.0 / x_scale)
+        # self.gxview.set_u_fac(1.0 / x_scale)
 
     @property
     def gmap(self):
@@ -802,7 +866,7 @@ class GXview:
 
         if self._pen.line_color != pen.line_color:
             self.gxview.line_color(pen._line_color.int)
-        if self._pen.line_thick!= pen.line_thick:
+        if self._pen.line_thick != pen.line_thick:
             self.gxview.line_thick(pen.line_thick)
         if self._pen.line_smooth != pen.line_smooth:
             self.gxview.line_smooth(pen.line_smooth)
@@ -820,7 +884,7 @@ class GXview:
             self.gxview.pat_size(pen.pat_size)
         if self._pen.pat_style != pen.pat_style:
             self.gxview.pat_style(pen.pat_style)
-        if self._pen.pat_thick!= pen.pat_thick:
+        if self._pen.pat_thick != pen.pat_thick:
             self.gxview.pat_thick(pen.pat_thick)
 
         self._pen = pen
@@ -848,13 +912,13 @@ class GXview:
     def extent_map_cm(self, extent):
         """
         Return a view extent in map cm.
-        
+
         :param extent: tuple returned an extent property.
-        
+
         .. versionadded:: 9.2
         """
-        xmin, ymin = self.view_to_map(extent[0], extent[1])
-        xmax, ymax = self.view_to_map(extent[2], extent[3])
+        xmin, ymin = self.view_to_map_cm(extent[0], extent[1])
+        xmax, ymax = self.view_to_map_cm(extent[2], extent[3])
         return xmin, ymin, xmax, ymax
 
     @property
@@ -868,10 +932,10 @@ class GXview:
     def _init_pen(self):
 
         scm = self.units_per_map_cm
-        pen = Pen(line_thick = 0.02 * scm,
-                  line_pitch = 0.5 * scm,
-                  pat_size = 0.25 * scm,
-                  pat_thick = 0.02 * scm)
+        pen = Pen(line_thick=0.02 * scm,
+                  line_pitch=0.5 * scm,
+                  pat_size=0.25 * scm,
+                  pat_thick=0.02 * scm)
 
         if self._group is None:
             self.start_group()
@@ -894,10 +958,10 @@ class GXview:
         Returns a pen that inherits default from the current view pen.  Arguments are the same
         as the ``Pen`` constructor.  This using this ensures that default sizing of view unit-based
         dimensions (such as ``line_thick``) are not lost when new pens are created.
-        
+
         :param kwargs: see ``Pen``
         :return: Pen instance
-        
+
         .. versionadded:: 9.2
         """
         return Pen(default=self.pen, **kwargs)
@@ -930,7 +994,7 @@ class GXview:
     def delete_group(self, group_name):
         """
         Delete a group from a map. Nothing happens if the view does not contain this group.
-        
+
         :param group_name: Name of the group to delete.
 
         .. versionadded:: 9.2
@@ -961,7 +1025,8 @@ class GXview:
 
         return self.gxview.color(str)
 
-    def map_to_view(self, x, y):
+    def map_cm_to_view(self, x, y):
+        """Returns the location of this point in a view on the map in map cm."""
         xr = gxapi.float_ref()
         xr.value = x * 1000.0
         yr = gxapi.float_ref()
@@ -969,7 +1034,8 @@ class GXview:
         self.gxview.plot_to_view(xr, yr)
         return xr.value, yr.value
 
-    def view_to_map(self, x, y):
+    def view_to_map_cm(self, x, y):
+        """ Returns the location of this point on the map in the view."""
         xr = gxapi.float_ref()
         xr.value = x
         yr = gxapi.float_ref()
@@ -977,19 +1043,17 @@ class GXview:
         self.gxview.view_to_plot(xr, yr)
         return xr.value / 10.0, yr.value / 10.0
 
-    # drawing to a plane
-
     @_draw
     def graticule(self, dx=None, dy=None, ddx=None, ddy=None, style=GRATICULE_LINE):
         """
         Draw a graticule reference on a view.
-        
+
         :param style:   ``GRATICULE_LINE`` or ``GRATICULE_CROSS``
         :param dx:      vertical line separation
         :param dy:      horizontal line separation
         :param ddh:     horizontal cross size for ``GRATICULE_CROSS``
         :param ddv:     vertical cross size for ``GRATICULE_CROSS``
-        
+
         .. versionadded:: 9.2
         """
 
@@ -1005,7 +1069,6 @@ class GXview:
         if ddx is None:
             ddx = dx * 0.25
         self.gxview.grid(dx, dy, ddx, ddy, style)
-
 
     @_draw
     def xy_line(self, p2):
@@ -1035,12 +1098,12 @@ class GXview:
 
         if close:
             self.gxview.poly_line(gxapi.MVIEW_DRAW_POLYGON,
-                                 gxvv.GXvv(pp.x)._vv,
-                                 gxvv.GXvv(pp.y)._vv)
+                                  gxvv.GXvv(pp.x)._vv,
+                                  gxvv.GXvv(pp.y)._vv)
         else:
             self.gxview.poly_line(gxapi.MVIEW_DRAW_POLYLINE,
-                                 gxvv.GXvv(pp.x)._vv,
-                                 gxvv.GXvv(pp.y)._vv)
+                                  gxvv.GXvv(pp.x)._vv,
+                                  gxvv.GXvv(pp.y)._vv)
 
     @_draw
     def xy_rectangle(self, p2):
@@ -1080,13 +1143,24 @@ class GXview:
 
         self.gxview.aggregate(agg.gxagg, name)
 
+    def text(self,
+             text: object,
+             location: object = (0, 0),
+             reference: object = TEXT_REF_BOTTOM_LEFT,
+             angle: object = 0.,
+             text_def: object = None) -> object:
+
+        if text_def:
+            self.text_def = text_def
+        self.gxview.text_ref(reference)
+        self.gxview.text_angle(angle)
+        self.gxview.text(text, location[0], location[1])
+
 
 class GXview3d(GXview):
-
-
     def __init__(self, *args, **kwds):
-        kwds['viewname'] = '3D' # Always 3D
-        kwds['area'] = (0,0,300,300) # Since we are never rendering in 2D we can always default this to 30x30 cm
+        kwds['viewname'] = '3D'  # Always 3D
+        kwds['area'] = (0, 0, 300, 300)  # Since we are never rendering in 2D we can always default this to 30x30 cm
         super().__init__(*args, **kwds)
 
         mminx, mminy, mmaxx, mmaxy = self.extent_map_cm(self.extent_clip)
@@ -1098,4 +1172,5 @@ class GXview3d(GXview):
         self.gxview.set_h_3dn(h3dn)
         self.gxview.fit_map_window_3d(mminx, mminy, mmaxx, mmaxy,
                                       vminx, vminy, vmaxx, vmaxy)
+
 

@@ -10,6 +10,7 @@ import geosoft.gxpy.map as gxmap
 import geosoft.gxpy.view as gxv
 import geosoft.gxpy.geometry as gxgm
 import geosoft.gxpy.coordinate_system as gxcs
+import geosoft.gxpy.system as gxsys
 
 from geosoft.gxpy.tests import GXPYTest
 
@@ -245,51 +246,62 @@ class Test(unittest.TestCase, GXPYTest):
     def test_media(self):
         Test.start(self, gsys.func_name())
 
-        def crc_media(map_file):
+        def crc_media(map_file, test_number):
             with gxmap.GXmap.open(map_file) as map:
                 with gxv.GXview(map, "base") as view:
                     view.xy_rectangle(view.extent_clip, pen=gxv.Pen(line_thick=0.2, line_color='K'))
                 with gxv.GXview(map, "data") as view:
                     view.xy_rectangle(view.extent_clip, pen=gxv.Pen(line_thick=0.2, line_color='R'))
-            self.crc_map(map_file)
+            self.crc_map(map_file,
+                         pix_width=256,
+                         alt_crc_name='{}_{}'.format(gxsys.func_name(1), test_number))
 
         test_media_map = os.path.join(gx.GXpy().temp_folder(), 'test_media')
 
+        test_number = 0
         with gxmap.GXmap.new(test_media_map + 'scale_800', overwrite=True, scale=800,
                              data_area=(5, 10, 50, 100)) as map:
             filename = map.filename
-        crc_media(filename)
+        crc_media(filename, test_number)
+        test_number += 1
 
         with gxmap.GXmap.new(test_media_map + 'scale_100', overwrite=True, scale=100,
                              data_area=(5, 10, 50, 100)) as map:
             filename = map.filename
-        crc_media(filename)
+        crc_media(filename, test_number)
+        test_number += 1
 
         with gxmap.GXmap.new(test_media_map + 'a4_portrait', overwrite=True, media='A4', layout=gxmap.MAP_PORTRAIT) as map:
             filename = map.filename
-        crc_media(filename)
+        crc_media(filename, test_number)
+        test_number += 1
 
         with gxmap.GXmap.new(test_media_map + 'portrait_a4', overwrite=True, media='a4', layout=gxmap.MAP_PORTRAIT) as map:
             filename = map.filename
-        crc_media(filename)
+        crc_media(filename, test_number)
+        test_number += 1
 
         with gxmap.GXmap.new(test_media_map + 'a4_landscape', overwrite=True, media='A4', layout=gxmap.MAP_LANDSCAPE) as map:
             filename = map.filename
-        crc_media(filename)
+        crc_media(filename, test_number)
+        test_number += 1
 
         with gxmap.GXmap.new(test_media_map + 'A4_1', overwrite=True, media='A4', data_area=(10, 5, 100, 50)) as map:
             filename = map.filename
-        crc_media(filename)
+        crc_media(filename, test_number)
+        test_number += 1
 
         with gxmap.GXmap.new(test_media_map + 'A4_2', overwrite=True, media='A4',
                              data_area=(5, 10, 50, 100), layout=gxmap.MAP_LANDSCAPE) as map:
             filename = map.filename
-        crc_media(filename)
+        crc_media(filename, test_number)
+        test_number += 1
 
         with gxmap.GXmap.new(test_media_map + 'A4_3', overwrite=True, media='A4',
                              data_area=(5, 10, 50, 100)) as map:
             filename = map.filename
-        crc_media(filename)
+        crc_media(filename, test_number)
+        test_number += 1
 
         for m in (None, (60, 50), 'unlimited', 'bogus', 'A4', 'A3', 'A2', 'A1', 'A0',
                   'A', 'B', 'C', 'D', 'E'):
@@ -313,7 +325,7 @@ class Test(unittest.TestCase, GXPYTest):
         for fn in mapfiles:
             self.assertTrue(os.path.isfile(fn))
 
-    def test_north_arrow(self):
+    def test_north_arrow_0(self):
         Test.start(self, gsys.func_name())
 
         with gxmap.GXmap.new(cs='ft') as map:
@@ -328,7 +340,7 @@ class Test(unittest.TestCase, GXPYTest):
 
         self.crc_map(mapfile)
 
-    def test_north_arrow1(self):
+    def test_north_arrow_1(self):
         Test.start(self, gsys.func_name())
 
         with gxmap.GXmap.new(cs='m', data_area=(0,0,20,10), scale=100) as map:
@@ -345,7 +357,7 @@ class Test(unittest.TestCase, GXPYTest):
         self.crc_map(mapfile)
 
 
-    def test_scale(self):
+    def test_scale_1(self):
         Test.start(self, gsys.func_name())
 
         with gxmap.GXmap.new(data_area=(350000,7000000,400000,7030000), cs='ft') as map:
@@ -362,6 +374,9 @@ class Test(unittest.TestCase, GXPYTest):
 
         self.crc_map(mapfile)
 
+    def test_scale_2(self):
+        Test.start(self, gsys.func_name())
+
         with gxmap.GXmap.new(data_area=(350000,7000000,400000,7030000), cs='NAD83 / UTM zone 15N') as map:
             mapfile = map.filename
             with gxv.GXview(map, 'base') as v:
@@ -374,7 +389,7 @@ class Test(unittest.TestCase, GXPYTest):
         self.crc_map(mapfile)
 
 
-    def test_surround(self):
+    def test_surround_1(self):
         Test.start(self, gsys.func_name())
 
         cs = gxcs.GXcs('NAD83 / UTM zone 15N')
@@ -383,9 +398,9 @@ class Test(unittest.TestCase, GXPYTest):
             with gxv.GXview(map, 'data') as v:
                 v.xy_rectangle(v.extent_clip)
             map.surround()
-        self.crc_map(mapfile, alt_crc_name='surround')
+        self.crc_map(mapfile)
 
-    def test_surround1(self):
+    def test_surround_2(self):
         Test.start(self, gsys.func_name())
 
         cs = gxcs.GXcs('NAD83 / UTM zone 15N')
@@ -394,9 +409,9 @@ class Test(unittest.TestCase, GXPYTest):
             with gxv.GXview(map, 'data') as v:
                 v.xy_rectangle(v.extent_clip)
             map.surround(gap=0.2)
-        self.crc_map(mapfile, alt_crc_name='surround1')
+        self.crc_map(mapfile)
 
-    def test_surround2(self):
+    def test_surround_3(self):
         Test.start(self, gsys.func_name())
 
         with gxmap.GXmap.new(data_area=(350000, 7000000, 400000, 7030000)) as map:
@@ -406,18 +421,18 @@ class Test(unittest.TestCase, GXPYTest):
             map.surround(gap=0.2,
                          outer_pen=gxv.Pen.from_mapplot_string('rt500'),
                          inner_pen=gxv.Pen.from_mapplot_string('K16'))
-        self.crc_map(mapfile, alt_crc_name='surround2')
+        self.crc_map(mapfile)
 
-    def test_annotate_xy(self):
+    def test_annotate_xy_0(self):
         Test.start(self, gsys.func_name())
 
         with test_data_map() as map:
             mapfile = map.filename
             map.annotate_data_xy(x_sep=1500)
 
-        self.crc_map(mapfile, alt_crc_name='annotate_xy')
+        self.crc_map(mapfile)
 
-    def test_annotate_xy1(self):
+    def test_annotate_xy_1(self):
         Test.start(self, gsys.func_name())
 
         with test_data_map() as map:
@@ -427,9 +442,9 @@ class Test(unittest.TestCase, GXPYTest):
                                  offset=0.5,
                                  text_def=gxv.Text_def(color='R', weight=gxv.FONT_WEIGHT_BOLD))
 
-        self.crc_map(mapfile, alt_crc_name='annotate_xy1')
+        self.crc_map(mapfile)
 
-    def test_annotate_xy2(self):
+    def test_annotate_xy_2(self):
         Test.start(self, gsys.func_name())
 
         with test_data_map() as map:
@@ -440,9 +455,9 @@ class Test(unittest.TestCase, GXPYTest):
                                  grid=gxmap.GRID_CROSSES,
                                  grid_pen=gxv.Pen(line_color='b', line_thick=0.015))
 
-        self.crc_map(mapfile, alt_crc_name='annotate_xy2')
+        self.crc_map(mapfile)
 
-    def test_annotate_xy3(self):
+    def test_annotate_xy_3(self):
         Test.start(self, gsys.func_name())
 
         with test_data_map() as map:
@@ -454,17 +469,17 @@ class Test(unittest.TestCase, GXPYTest):
                                  edge_pen=gxv.Pen(line_color='k64', line_thick=0.3),
                                  grid_pen=gxv.Pen(line_color='b', line_thick=0.015))
 
-        self.crc_map(mapfile, alt_crc_name='annotate_xy3')
+        self.crc_map(mapfile)
 
-    def test_annotate_ll(self):
+    def test_annotate_ll_0(self):
         Test.start(self, gsys.func_name())
 
         with test_data_map(data_area=(350000,7000000,400000,7030000)) as map:
             mapfile = map.filename
             map.annotate_data_ll()
-        self.crc_map(mapfile, alt_crc_name='annotate_ll')
+        self.crc_map(mapfile)
 
-    def test_annotate_ll1(self):
+    def test_annotate_ll_1(self):
         Test.start(self, gsys.func_name())
 
         with test_data_map(data_area=(350000,7000000,400000,7030000)) as map:
@@ -475,9 +490,9 @@ class Test(unittest.TestCase, GXPYTest):
                                                        font='cr.gfn',
                                                        weight=gxv.FONT_WEIGHT_BOLD,
                                                        italics=True))
-        self.crc_map(mapfile, alt_crc_name='annotate_ll1')
+        self.crc_map(mapfile)
 
-    def test_annotate_ll2(self):
+    def test_annotate_ll_2(self):
         Test.start(self, gsys.func_name())
 
         with test_data_map(data_area=(350000,7000000,400000,7030000)) as map:
@@ -487,9 +502,9 @@ class Test(unittest.TestCase, GXPYTest):
                                   grid_pen=gxv.Pen(line_color='b', line_thick=0.015),
                                   text_def=gxv.Text_def(color='r', height=0.2, italics=True),
                                   top=gxmap.TOP_IN)
-        self.crc_map(mapfile, alt_crc_name='annotate_ll2')
+        self.crc_map(mapfile)
 
-    def test_annotate_ll3(self):
+    def test_annotate_ll_3(self):
         Test.start(self, gsys.func_name())
 
         with test_data_map(data_area=(350000,7000000,400000,7030000)) as map:
@@ -500,9 +515,9 @@ class Test(unittest.TestCase, GXPYTest):
             map.annotate_data_ll(grid=gxmap.GRID_LINES,
                                  grid_pen=gxv.Pen(line_color='b', line_thick=0.025),
                                  text_def=gxv.Text_def(height=0.18, italics=True, color='g'))
-        self.crc_map(mapfile, alt_crc_name='annotate_ll3')
+        self.crc_map(mapfile)
 
-    def test_annotate_ll4(self):
+    def test_annotate_ll_4(self):
         Test.start(self, gsys.func_name())
 
         with test_data_map(data_area=(350000,7000000,400000,7030000)) as map:
@@ -514,7 +529,7 @@ class Test(unittest.TestCase, GXPYTest):
                                  grid_pen=gxv.Pen(line_color='b', line_thick=0.025),
                                  text_def=gxv.Text_def(height=0.18, italics=True),
                                  top=gxmap.TOP_IN)
-        self.crc_map(mapfile, alt_crc_name='annotate_ll4')
+        self.crc_map(mapfile)
 
 
 if __name__ == '__main__':

@@ -1,9 +1,0 @@
-<header>
-   <Item name="Name" value="rectangle.map"/>
-   <Item name="Extents" type="L2AREA">
-      <Value name="MinX" value="0"/>
-      <Value name="MinY" value="0"/>
-      <Value name="MaxX" value="43879"/>
-      <Value name="MaxY" value="39904"/>
-   </Item>
-</header>

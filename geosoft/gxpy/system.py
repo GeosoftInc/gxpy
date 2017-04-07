@@ -46,7 +46,7 @@ def func_name(stack=0):
     """
     Returns function name.
 
-    :param stack:   depth into the calling stack, o is this function, 1 is parent, etc.
+    :param stack:   depth into the calling stack, 0 (default) is this function, 1 is parent, etc.
     :returns:       function name, None if too deep into the stack
 
     .. versionchanged:: 9.2 added stack
@@ -55,10 +55,9 @@ def func_name(stack=0):
     """
     try:
         func = inspect.stack()[stack+1][3]
+        return func
     except:
         return None
-    else:
-        return func
 
 
 def _parallel_foreach(f, l, threads=3, return_=False):
