@@ -590,6 +590,67 @@ class Test(unittest.TestCase, GXPYTest):
 
         self.crc_map(mapfile)
 
+    def test_text(self):
+        Test.start(self, gsys.func_name())
+
+        with gxmap.GXmap.new(data_area=(400000, 5000000, 500000, 5150000),
+                         cs='WGS 84 / UTM zone 15N [geoid]') as map:
+            mapfile = map.filename
+            map.surround()
+            with gxv.GXview(map, 'base') as v:
+                v.text('Text on base view')
+                v.text('Bigger, blue, higher',
+                       (v.units_per_map_cm, v.units_per_map_cm),
+                       text_def=gxv.Text_def(height=20, color='B', font='Times New Roman'))
+                v.text('Bigger, blue, angled, italics',
+                       (10, 25),
+                       angle=60,
+                       text_def=gxv.Text_def(height=20, color='B', font='Calibri', italics=True))
+
+        self.crc_map(mapfile)
+
+    def test_text_1(self):
+        Test.start(self, gsys.func_name())
+
+        with gxmap.GXmap.new(data_area=(400000, 5000000, 500000, 5050000),
+                         cs='WGS 84 / UTM zone 15N [geoid]') as map:
+            mapfile = map.filename
+            map.surround()
+            with gxv.GXview(map, '*data') as v:
+                ex = v.extent_clip
+                width = ex[2] - ex[0]
+                height = ex[3] - ex[1]
+                cxy = (ex[0] + width / 2, ex[1] + height / 2)
+                td = gxv.Text_def(height=width / 20, color='K128', font='sr.gfn', weight=gxv.FONT_WEIGHT_XBOLD)
+                v.xy_rectangle(ex)
+                v.xy_line((ex[0], cxy[1], ex[2], cxy[1]))
+                v.xy_line((cxy[0], ex[1], cxy[0], ex[3]))
+                v.text('Centered',
+                       cxy,
+                       text_def=td,
+                       reference=gxv.TEXT_REF_MIDDLE_CENTER)
+                v.text('Bottom',
+                       (cxy[0], ex[1]),
+                       text_def=td,
+                       reference=gxv.TEXT_REF_BOTTOM_CENTER)
+                v.text('Top',
+                       (cxy[0], ex[3]),
+                       text_def=td,
+                       reference=gxv.TEXT_REF_TOP_CENTER)
+                v.text('Left',
+                       (ex[0], cxy[1]),
+                       text_def=td,
+                       angle=90,
+                       reference=gxv.TEXT_REF_TOP_CENTER)
+                v.text('Right',
+                       (ex[2], cxy[1]),
+                       text_def=td,
+                       angle=-90,
+                       reference=gxv.TEXT_REF_TOP_CENTER)
+
+        self.crc_map(mapfile)
+
+
 if __name__ == '__main__':
 
     unittest.main()
