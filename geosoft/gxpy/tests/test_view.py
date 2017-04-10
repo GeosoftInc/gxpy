@@ -399,7 +399,6 @@ class Test(unittest.TestCase, GXPYTest):
 
         self.crc_map(mapfile)
 
-    @unittest.skip("Inconsistent results due to temp folder use...")  #
     # Complete TODO in GXPYTest._agnosticize_and_ensure_consistent_line_endings
     def test_zone_grid(self):
         Test.start(self, gsys.func_name())
@@ -420,9 +419,14 @@ class Test(unittest.TestCase, GXPYTest):
         # test grid file
         folder, files = gsys.unzip(os.path.join(os.path.dirname(__file__), 'testgrids.zip'),
                                    folder=self.gx.temp_folder())
-        grid_file = os.path.join(folder, 'test_agg_utm.grd')
-        with gxgrd.GXgrd(grid_file) as grd:
+
+        with gxgrd.GXgrd( os.path.join(folder, 'test_agg_utm.grd')) as grd:
             ex = grd.extent_2d()
+            grid_file = 'test_zone'
+            gxgrd.delete_files(grid_file)
+            test = grd.save_as(grid_file)
+            grid_file = test.filename
+            test.close()
 
         test_zone(gxagg.ZONE_LINEAR, "linear_shade", shade=True)
         test_zone(gxagg.ZONE_EQUALAREA, "eq_area")
@@ -432,6 +436,8 @@ class Test(unittest.TestCase, GXPYTest):
         test_zone(gxagg.ZONE_NORMAL, "normal")
         test_zone(gxagg.ZONE_SHADE, "shade")
         test_zone(gxagg.ZONE_LOGLINEAR, "log_linear")
+
+        gxgrd.delete_files(grid_file)
 
     def test_text_definition(self):
         Test.start(self, gsys.func_name())
