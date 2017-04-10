@@ -114,6 +114,13 @@ def delete_files(filename):
         df(filename + '.gi')
         df(filename + '.xml')
 
+        # remove shaded files associated with this grid
+        file_s = os.path.join(fn[0], fn[1].replace('.', '_')) + '_s.grd'
+        df(file_s)
+        df(file_s + '.gi')
+        df(file_s + '.xml')
+
+
         # hgd files
         if ext == '.hgd':
             for i in range(16):
