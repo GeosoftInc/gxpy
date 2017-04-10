@@ -97,7 +97,7 @@ class Test(unittest.TestCase, GXPYTest):
         Test.start(self, gsys.func_name())
 
         with gxmap.GXmap.new() as gmap:
-            vlist = gmap.view_list()
+            vlist = gmap.view_list
             self.assertEqual(len(vlist), 2)
             self.assertTrue('base' in vlist)
             self.assertTrue('data' in vlist)
@@ -195,6 +195,22 @@ class Test(unittest.TestCase, GXPYTest):
                 self.assertEqual(vw.aspect, 0.2)
                 self.assertEqual(vw.extent_map_cm(vw.extent_clip), (10., 25., 40., 125.))
                 self.assertTrue(vw.cs.same_as(gxcs.GXcs()))
+
+    def test_scale(self):
+        Test.start(self, gsys.func_name())
+
+        with gxmap.GXmap.new() as gmap:
+            with gxv.GXview(gmap, 'ft12000',
+                            cs='ft', scale=12000,
+                            map_location=(10, 5),
+                            area=(0, 0, 50000, 40000)) as v:
+
+                vmin = (v.extent_clip[0], v.extent_clip[1])
+                self.assertEqual(v.view_to_map_cm(vmin), (10.0, 5.0))
+
+                vmax = v.view_to_map_cm(v.extent_clip[2], v.extent_clip[3])
+                mmax = v.map_cm_to_view(vmax)
+                self.assertEqual(mmax, (50000.0, 40000.0))
 
     def test_rectangle(self):
         Test.start(self, gsys.func_name())
@@ -353,6 +369,8 @@ class Test(unittest.TestCase, GXPYTest):
                 with gxagg.GXagg(grid_file) as agg:
                     v.aggregate(agg)
 
+                self.assertEqual(len(v.group_list_agg), 1)
+
         self.crc_map(mapfile)
 
     def test_basic_grid_2(self):
@@ -405,7 +423,6 @@ class Test(unittest.TestCase, GXPYTest):
         grid_file = os.path.join(folder, 'test_agg_utm.grd')
         with gxgrd.GXgrd(grid_file) as grd:
             ex = grd.extent_2d()
-        
 
         test_zone(gxagg.ZONE_LINEAR, "linear_shade", shade=True)
         test_zone(gxagg.ZONE_EQUALAREA, "eq_area")
@@ -415,42 +432,6 @@ class Test(unittest.TestCase, GXPYTest):
         test_zone(gxagg.ZONE_NORMAL, "normal")
         test_zone(gxagg.ZONE_SHADE, "shade")
         test_zone(gxagg.ZONE_LOGLINEAR, "log_linear")
-
-    @unittest.skip("Inconsistent results due to temp folder use...")
-    # Complete TODO in GXPYTest._agnosticize_and_ensure_consistent_line_endings
-    def test_color_bar(self):
-        Test.start(self, gsys.func_name())
-
-        # test grid file
-        folder, files = gsys.unzip(os.path.join(os.path.dirname(__file__), 'testgrids.zip'),
-                                   folder=self.gx.temp_folder())
-        grid_file = os.path.join(folder, 'test_agg_utm.grd')
-        map_file = os.path.join(self.gx.temp_folder(), "test_agg_utm")
-
-        with gxgrd.GXgrd(grid_file) as grd:
-            ex = grd.extent_2d()
-            cs = grd.cs
-        with gxmap.GXmap.new(map_file, overwrite=True,
-                             data_area=ex, margins=(1,6,3,1)) as gmap:
-            mapfile = gmap.filename
-            with gxv.GXview(gmap, "data") as v:
-                v.xy_rectangle(v.extent_clip, pen=v.new_pen(line_thick = 0.1, line_color = 'R'))
-
-                with gxagg.GXagg(grid_file, shade=True) as agg:
-                    v.aggregate(agg)
-
-            with gxv.GXview(gmap, "data") as v:
-                v.xy_rectangle(v.extent_clip, pen=v.new_pen(line_thick=0.1, line_color='R'))
-
-            with gxv.GXview(gmap, "base") as v:
-                v.xy_rectangle(v.extent_clip, pen=v.new_pen(line_thick = 0.1, line_color = 'B'))
-
-            gmap.annotate_data_ll(grid=gxmap.GRID_LINES,
-                                  grid_pen=gxv.Pen.from_mapplot_string("bt250"),
-                                  text_def=gxv.Text_def(height=0.25, italics=True),
-                                  top=gxmap.TOP_IN)
-
-        self.crc_map(mapfile)
 
     def test_text_definition(self):
         Test.start(self, gsys.func_name())
@@ -628,28 +609,70 @@ class Test(unittest.TestCase, GXPYTest):
                 v.text('Centered',
                        cxy,
                        text_def=td,
-                       reference=gxv.TEXT_REF_MIDDLE_CENTER)
+                       reference=gxv.REF_CENTER)
                 v.text('Bottom',
                        (cxy[0], ex[1]),
                        text_def=td,
-                       reference=gxv.TEXT_REF_BOTTOM_CENTER)
+                       reference=gxv.REF_BOTTOM_CENTER)
                 v.text('Top',
                        (cxy[0], ex[3]),
                        text_def=td,
-                       reference=gxv.TEXT_REF_TOP_CENTER)
+                       reference=gxv.REF_TOP_CENTER)
                 v.text('Left',
                        (ex[0], cxy[1]),
                        text_def=td,
                        angle=90,
-                       reference=gxv.TEXT_REF_TOP_CENTER)
+                       reference=gxv.REF_TOP_CENTER)
                 v.text('Right',
                        (ex[2], cxy[1]),
                        text_def=td,
                        angle=-90,
-                       reference=gxv.TEXT_REF_TOP_CENTER)
+                       reference=gxv.REF_TOP_CENTER)
 
         self.crc_map(mapfile)
 
+    def test_text_multiline(self):
+        Test.start(self, gsys.func_name())
+
+        with gxmap.GXmap.new(data_area=(400000, 5000000, 500000, 5050000),
+                         cs='WGS 84 / UTM zone 15N [geoid]') as map:
+            mapfile = map.filename
+            map.surround()
+            with gxv.GXview(map, '*data') as v:
+                ex = v.extent_clip
+                width = ex[2] - ex[0]
+                height = ex[3] - ex[1]
+                cxy = (ex[0] + width / 2, ex[1] + height / 2)
+                td = gxv.Text_def(height=width / 20, color='K128', font='sr.gfn', weight=gxv.FONT_WEIGHT_XBOLD)
+                v.xy_rectangle(ex)
+                v.xy_line((ex[0], cxy[1], ex[2], cxy[1]))
+                v.xy_line((cxy[0], ex[1], cxy[0], ex[3]))
+                v.text('Centered\nline2\nand another',
+                       cxy,
+                       text_def=td,
+                       reference=gxv.REF_CENTER)
+
+        self.crc_map(mapfile)
+
+    def test_locate_group(self):
+        Test.start(self, gsys.func_name())
+
+        with gxmap.GXmap.new(data_area=(400000, 5000000, 500000, 5050000),
+                         cs='WGS 84 / UTM zone 15N [geoid]') as map:
+            mapfile = map.filename
+            with gxv.GXview(map, '*data') as v:
+                v.xy_rectangle(v.extent_clip)
+                rect = gxgm.Point2((v.extent_clip[0], v.extent_clip[1],
+                                    (v.extent_clip[2] + v.extent_clip[0]) * 0.5,
+                                    (v.extent_clip[3] + v.extent_clip[1]) * 0.5))
+                v.start_group('a')
+                v.xy_rectangle(rect)
+                v.start_group('b')
+                v.xy_rectangle(rect, pen="b")
+                v.locate_group('b', (450000, 5025000),
+                               ref=gxv.REF_TOP_CENTER)
+
+        self.crc_map(mapfile)
 
 if __name__ == '__main__':
 

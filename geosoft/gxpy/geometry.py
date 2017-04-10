@@ -109,24 +109,6 @@ class Point(Geometry):
                self.cs.same_as(other.cs)
 
     @property
-    def p1(self):
-        """ Point 1"""
-        return self.p1
-
-    @p1.setter
-    def p1(self, p):
-        self.p1 = Point(p)
-
-    @property
-    def p2(self):
-        """ Point 2"""
-        return self.p1
-
-    @p2.setter
-    def p1(self, p):
-        self.p2 = Point(p)
-
-    @property
     def x(self):
         """ X value"""
         return self.p[0]
@@ -212,6 +194,8 @@ class Point2(Geometry):
 
         super().__init__(**kwargs)
 
+        if not hasattr(p, '__iter__'):
+            self.p1 = self.p2 = Point(p)
         if len(p) == 2:
             self.p1 = Point(p[0])
             self.p2 = Point(p[1])
@@ -228,6 +212,40 @@ class Point2(Geometry):
         return (self.cs.same_as(other.cs)) and \
                 ((self.p1 == other.p1) and (self.p2 == other.p2)
                  or (self.p1 == other.p2) and (self.p2 == other.p1))
+
+    def __add__(self, p):
+        if type(p) is Point2:
+            return Point2((self.p1 + p.p1, self.p2 + p.p2))
+        else:
+            if type(p) is not Point:
+                p = Point(p)
+            return Point2((self.p1 + p, self.p2 + p))
+
+    def __sub__(self, p):
+        if type(p) is Point2:
+            return Point2((self.p1 - p.p1, self.p2 - p.p2))
+        else:
+            if type(p) is not Point:
+                p = Point(p)
+            return Point2((self.p1 - p, self.p2 - p))
+
+    def __neg__(self):
+        return Point2((-self.p1, -self.p2))
+
+    def __mul__(self, p):
+        if type(p) is Point2:
+            return Point2((self.p1 * p.p1, self.p2 * p.p2))
+        else:
+            if type(p) is not Point:
+                p = Point(p)
+            return Point2((self.p1 * p, self.p2 * p))
+
+    def __truediv__(self, p):
+        if type(p) is Point2:
+            return Point2((self.p1 / p.p1, self.p2 / p.p2))
+        if type(p) is not Point:
+            p = Point(p)
+            return Point2((self.p1 / p, self.p2 / p))
 
     def copy(self):
         cls = self.__class__
@@ -264,6 +282,21 @@ class Point2(Geometry):
     def z2(self, value):
         self.p1.z = value[0]
         self.p2.z = value[1]
+
+
+    @property
+    def centroid(self):
+        cx = (self.p2.x + self.p1.x) * 0.5
+        cy = (self.p2.y + self.p1.y) * 0.5
+        cz = (self.p2.z + self.p1.z) * 0.5
+        return Point((cx, cy, cz))
+
+    @property
+    def dimension(self):
+        dx = abs(self.p2.x - self.p1.x)
+        dy = abs(self.p2.y - self.p1.y)
+        dz = abs(self.p2.z - self.p1.z)
+        return (dx, dy, dz)
 
 
 class PPoint(Geometry, Sequence):

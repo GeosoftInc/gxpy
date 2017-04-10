@@ -9,10 +9,13 @@ import geosoft.gxpy.viewer as gxvwr
 import geosoft.gxpy.utility as gxu
 import geosoft.gxpy.system as gxsys
 
-#set to True to update all results
+# set to True to update all results
 UPDATE_ALL_RESULTS = False
 
-#set to True to show viewer for each CRC call
+# set to true to only update the first test.
+UPDATE_ONE_TEST = False
+
+# set to True to show viewer for each CRC call
 SHOW_TEST_VIEWERS = False
 
 
@@ -72,7 +75,7 @@ class GXPYTest(object):
     def result_dir(self, value):
         # Do something if you want
         self._result_dir = value
-        if self._result_dir and UPDATE_ALL_RESULTS and os.path.exists(self._result_dir):
+        if self._result_dir and (UPDATE_ALL_RESULTS or UPDATE_ONE_TEST) and os.path.exists(self._result_dir):
             shutil.rmtree(self._result_dir)
 
     def _agnosticize_and_ensure_consistent_line_endings(self, xml_file, replacement_dict):
@@ -98,6 +101,8 @@ class GXPYTest(object):
                                 only one test per test function.  If you have more than one test in a single
                                 testing function use this parameter to create unique names.
         """
+
+        global UPDATE_ONE_TEST
 
         if SHOW_TEST_VIEWERS:
             if map_file.lower().endswith('.geosoft_3dv'):
@@ -152,7 +157,7 @@ class GXPYTest(object):
         xml_result_part = os.path.join('result', os.path.split(xml_result_file)[1])
         xml_master_part = os.path.join('master', os.path.split(xml_master_file)[1])
         xml_result_files = glob.glob(xml_result_file + '*')
-        if update_result or UPDATE_ALL_RESULTS:
+        if update_result or (UPDATE_ALL_RESULTS or UPDATE_ONE_TEST):
             shutil.copyfile(bmp_result_file, bmp_master_file)
             for xml_result in xml_result_files:
                 if not xml_result.endswith('.catalog.xml'):
@@ -166,3 +171,5 @@ class GXPYTest(object):
                     report += GXPYTest.report_mismatch_files(xml_result, xml_master)
             if len(report) > 0:
                 self.fail(report)
+
+        UPDATE_ONE_TEST = False

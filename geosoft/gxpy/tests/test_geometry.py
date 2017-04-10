@@ -251,6 +251,11 @@ class Test(unittest.TestCase):
         b2 = gxgm.Point2((b1.x2[1], b1.y2[1], b1.z2[1], b1.x2[0], b1.y2[0], b1.z2[0]), cs="WGS 84")
         self.assertTrue(b1 == b2)
 
+        c = gxgm.Point(((b2.p1.x + b2.p2.x) * 0.5,
+                        (b2.p1.y + b2.p2.y) * 0.5,
+                        (b2.p1.z + b2.p2.z) * 0.5))
+        self.assertEqual(b2.centroid, c)
+        self.assertEqual(b2.dimension, (abs(b2.p2.x - b2.p1.x), abs(b2.p2.y - b2.p1.y), abs(b2.p2.z - b2.p1.z)))
 
 if __name__ == '__main__':
 

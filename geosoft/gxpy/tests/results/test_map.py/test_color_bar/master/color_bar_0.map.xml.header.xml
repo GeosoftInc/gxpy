@@ -1,0 +1,9 @@
+<header>
+   <Item name="Name" value="color_bar_0.map"/>
+   <Item name="Extents" type="L2AREA">
+      <Value name="MinX" value="0"/>
+      <Value name="MinY" value="0"/>
+      <Value name="MaxX" value="46973"/>
+      <Value name="MaxY" value="40000"/>
+   </Item>
+</header>

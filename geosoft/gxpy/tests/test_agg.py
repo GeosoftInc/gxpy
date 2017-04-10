@@ -35,10 +35,34 @@ class Test(unittest.TestCase):
         self.start(gsys.func_name())
 
         with gxagg.GXagg() as agg:
-            self.assertEqual(str(agg), 'GXagg')
+            self.assertEqual(str(agg), '')
+            self.assertEqual(agg.layer_count, 0)
 
         with gxagg.GXagg(self.g3f) as agg:
-            self.assertEqual(str(agg), 'GXagg> test_agg_utm')
+            self.assertEqual(str(agg), 'test_agg_utm')
+            self.assertEqual(agg.layer_count, 1)
+
+        with gxagg.GXagg(self.g3f, shade=True) as agg:
+            self.assertEqual(str(agg), 'test_agg_utm')
+            self.assertEqual(agg.layer_count, 2)
+
+            agg.add_layer(self.g2f)
+            self.assertEqual(str(agg), 'test_agg_utm, test_grid_2')
+            self.assertEqual(agg.layer_count, 3)
+
+            agg.add_layer(self.g1f, shade=True)
+            self.assertEqual(str(agg), 'test_agg_utm, test_grid_2, test_grid_1')
+            self.assertEqual(agg.layer_count, 5)
+
+    def test_settings(self):
+        self.start(gsys.func_name())
+
+        with gxagg.GXagg(self.g3f, shade=True) as agg:
+            self.assertEqual(agg.layer_count, 2)
+            self.assertEqual(agg.brightness, 0.0)
+            agg.brightness = -0.5
+            self.assertEqual(agg.brightness, -0.5)
+
 
 
 if __name__ == '__main__':

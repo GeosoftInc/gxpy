@@ -9,6 +9,7 @@ from . import gx as gx
 from . import utility as gxu
 from . import dataframe as gxdf
 from . import view as gxv
+from . import geometry as gxgm
 
 __version__ = geosoft.__version__
 
@@ -33,25 +34,15 @@ LIST_2D = gxapi.MAP_LIST_MODE_NOT3D
 VIEW_NAME_SIZE = 2080
 
 # 2D map reference points
-REF_BOTTOM_LEFT = 1
-REF_BOTTOM_CENTER = 2
-REF_BOTTOM_RIGHT = 3
-REF_CENTER_LEFT = 4
-REF_MAP_CENTER = 5
-REF_CENTER_RIGHT = 6
-REF_TOP_LEFT = 7
-REF_TOP_CENTER = 8
-REF_TOP_RIGHT = 9
-REF_DATA_ORIGIN = 10
-REF_DATA_BOTTOM_LEFT = 11
-REF_DATA_BOTTOM_CENTER = 12
-REF_DATA_BOTTOM_RIGHT = 13
-REF_DATA_CENTER_LEFT = 14
-REF_DATA_MAP_CENTER = 15
-REF_DATA_CENTER_RIGHT = 16
-REF_DATA_TOP_LEFT = 17
-REF_DATA_TOP_CENTER = 18
-REF_DATA_TOP_RIGHT = 19
+REF_BOTTOM_LEFT = 0
+REF_BOTTOM_CENTER = 1
+REF_BOTTOM_RIGHT = 2
+REF_CENTER_LEFT = 3
+REF_CENTER = 4
+REF_CENTER_RIGHT = 5
+REF_TOP_LEFT = 6
+REF_TOP_CENTER = 7
+REF_TOP_RIGHT = 8
 
 TEXT_BOTTOM_LEFT = -1
 TEXT_BOTTOM_CENTER = 0
@@ -80,6 +71,16 @@ GROUP_APPEND = 1
 
 VIEW_BASE = 0
 VIEW_DATA = 1
+
+COLOR_BAR_RIGHT = 0
+COLOR_BAR_LEFT = 1
+COLOR_BAR_BOTTOM = 2
+COLOR_BAR_TOP = 3
+
+COLOR_BAR_ANNOTATE_RIGHT = 1
+COLOR_BAR_ANNOTATE_LEFT = -1
+COLOR_BAR_ANNOTATE_TOP = 1
+COLOR_BAR_ANNOTATE_BOTTOM = -1
 
 class Line_def:
     def __init__(self,
@@ -213,7 +214,10 @@ class GXmap:
     def __str__(self):
         return self._filename
 
-    def __init__(self, filename, mode=WRITE_NEW):
+    def __init__(self, filename, mode=WRITE_NEW, _internal=False):
+
+        if not _internal:
+            raise MapException(_t("GXmap must be created from GXmap.new(), or GXmap.open()."))
 
         self.gxmap = None
         self._remove = False
@@ -253,7 +257,7 @@ class GXmap:
         .. versionadded:: 9.2
         """
 
-        gmap = cls(filename, mode=WRITE_OLD)
+        gmap = cls(filename, mode=WRITE_OLD, _internal=True)
 
         return gmap
 
@@ -311,10 +315,6 @@ class GXmap:
             im = inside_margin * 2
             return mx - im, my - im  # data window on map cm
 
-        def set_coordinate_system(gmap, cs):
-            with gxv.GXview(gmap=gmap, viewname='data', mode=gxv.WRITE_OLD) as view:
-                view.set_cs(cs)
-
         def set_registry(gmap, style, inside_margin):
             rd = {'MAP.STYLE': style,
                   'MAP.MARGIN_INSIDE': str(inside_margin),
@@ -349,7 +349,7 @@ class GXmap:
                 if os.path.isfile(filename):
                     raise MapException(_t('Cannot overwrite existing file: "{}"').format(filename))
 
-        gmap = cls(filename, WRITE_NEW)
+        gmap = cls(filename, WRITE_NEW, _internal=True)
 
         if type(media) is str:
             try:
@@ -436,7 +436,8 @@ class GXmap:
                            m_left, m_right, m_bottom, m_top,
                            float(inside_margin))
 
-        set_coordinate_system(gmap, cs)
+        with gxv.GXview(gmap=gmap, viewname='*data', mode=gxv.WRITE_OLD) as view:
+            view.set_cs(cs)
         set_registry(gmap, map_style, inside_margin)
 
         return gmap
@@ -511,15 +512,33 @@ class GXmap:
             return name
         return self.get_class_view_name(name[1:])
 
-    def view_list(self, view_type=LIST_ALL):
+
+    def _views(self, view_type=LIST_ALL):
         """
         Return dictionary of view names.
         :param view_type: `gxmap.LIST_ALL`, `gxapi.LIST_2D` or `gxapi.LIST_3D`
         :return: list of views
         """
-        gxlst = gxapi.GXLST.create(VIEW_NAME_SIZE)
-        self.gxmap.view_list_ex(gxlst, view_type)
-        return list(gxu.dict_from_lst(gxlst))
+        glst = gxapi.GXLST.create(VIEW_NAME_SIZE)
+        self.gxmap.view_list_ex(glst, view_type)
+        return list(gxu.dict_from_lst(glst))
+
+    @property
+    def view_list(self):
+        return self._views()
+
+    @property
+    def view_list_2D(self):
+        return self._views(LIST_2D)
+
+    @property
+    def view_list_3D(self):
+        return self._views(LIST_3D)
+
+    def aggregate_list(self, mode=0):
+        glst = gxapi.GXLST.create(gxv.GROUP_NAME_SIZE)
+        self.gxmap.agg_list_ex(glst, mode, 0)
+        return list(gxu.dict_from_lst(glst))
 
     def has_view(self, view):
         """ Returns True if the map contains this view."""
@@ -577,7 +596,7 @@ class GXmap:
         .. versionadded: 9.2
         """
 
-        views = self.view_list()
+        views = self.view_list_2D
 
         if not(self.has_view(self.current_data_view) and self.has_view(self.current_base_view)):
             raise MapException('The map must have both a base view and a data view.')
@@ -674,15 +693,15 @@ class GXmap:
         
             ::
             
-                REF_BOTTOM_LEFT = 1
-                REF_BOTTOM_CENTER = 2
-                REF_BOTTOM_RIGHT = 3
-                REF_CENTER_LEFT = 4
-                REF_VIEW_CENTER = 5
-                REF_CENTER_RIGHT = 6
-                REF_TOP_LEFT = 7
-                REF_TOP_CENTER = 8
-                REF_TOP_RIGHT = 9
+                REF_BOTTOM_LEFT
+                REF_BOTTOM_CENTER
+                REF_BOTTOM_RIGHT
+                REF_CENTER_LEFT
+                REF_CENTER
+                REF_CENTER_RIGHT
+                REF_TOP_LEFT
+                REF_TOP_CENTER
+                REF_TOP_RIGHT
                 
         :param viewname:    the name of the view, default is the base view which returns the
                             extent in map cm.
@@ -713,7 +732,7 @@ class GXmap:
                    (xc, extent[3]),
                    (extent[2], extent[3]))
 
-        return rpoints[refp - 1]
+        return rpoints[refp]
 
     def surround(self, outer_pen=None, inner_pen=None, gap=0):
         """
@@ -1011,14 +1030,227 @@ class GXmap:
         finally:
             self.current_data_view = current_view
 
+    def color_bar(self):
+        pass
 
-class MapplotException(Exception):
-    """
-    Exceptions from this module.
+    def agg_legend(self,
+                   view_name='*data',
+                   agg_name=None,
+                   bar_location = COLOR_BAR_RIGHT,
+                   location=None,
+                   decimals = 1,
+                   annotation_height = 0.2,
+                   annotation_offset = None,
+                   annotation_side = COLOR_BAR_ANNOTATE_RIGHT,
+                   box_size = None,
+                   bar_width = None,
+                   max_bar_size = None,
+                   minimum_gap = 0,
+                   post_end_values = False,
+                   annotate_vertical = False,
+                   division_line = 1,
+                   interval_1 = None,
+                   interval_2 = None,
+                   title=''):
+        """
+        Draw an aggregate legend.
+        
+        :param view_name:           view name, default is '*data'
+        :param agg_name:            aggregate name, default is the first aggregate found
+        :param bar_location:        one of:
+        
+            ::
+            
+                COLOR_BAR_RIGHT = 0
+                COLOR_BAR_LEFT = 1
+                COLOR_BAR_BOTTOM = 2
+                COLOR_BAR_TOP = 3
+                
+        :param location:            offset or (x, y) offset from view reference point, in cm.
+        :param decimals:            annotation decimal places
+        :param annotation_height:   annotation number height
+        :param annotation_offset:   offset of annotations from the bar (cm)
+        :param annotation_side:     side of the bar for annotations
+        
+            ::
+            
+                COLOR_BAR_ANNOTATE_RIGHT = 1
+                COLOR_BAR_ANNOTATE_LEFT = -1
+                COLOR_BAR_ANNOTATE_TOP = 1
+                COLOR_BAR_ANNOTATE_BOTTOM = -1
 
-    .. versionadded:: 9.2
-    """
-    pass
+        :param box_size:            box size, height for vertical bars, width for horizontal bars
+        :param bar_width:           width of the colour boxes
+        :param max_bar_size:        maximum bar size, default is the size of the view edge
+        :param minimum_gap:         minimum gap to between annotations.  Annotations are dropped in necessary.
+        :param post_end_values:     post the maximum and minimum values
+        :param annotate_vertical:   True to orient labels vertically 
+        :param division_line:       0, no division lines, 1 - line, 2 - tick
+        :param interval_1:          annotation increment, default annotates everything
+        :param interval_2:          secondary smaller annotations, 1/10, 1/ 5, 1/4 or 1/2 interval_1
+        :param title:               bar title, use new-lines for sub-titles.
+        
+        .. versionadded:: 9.2
+        """
+
+        def layers_in_agg(view, agg_name):
+            layers = []
+            for val in self.aggregate_list(1):
+                if val[:val.index('\\')] == view:
+                    al = val[val.index('\\') + 1:]
+                    if agg_name is None:
+                        agg_name = al[:al.index('\\')]
+                    if al[:al.index('\\')] == agg_name:
+                        layers.append(val)
+
+            layers.sort()
+            return layers, agg_name
+
+        def center_w_h(rect):
+            w = v_extent[2] - v_extent[0]
+            h = v_extent[3] - v_extent[1]
+            c = (v_extent[0] +  w * 0.5, v_extent[1] + h * 0.5)
+            return c, w, h
+
+        view_name = self.classview(view_name)
+        layers, agg_name = layers_in_agg(view_name, agg_name)
+        if not layers:
+            return
+
+        itr1 = gxapi.GXITR.create_map(self.gxmap, layers[0])
+        if len(layers) >= 2:
+            itr2 = gxapi.GXITR.create_map(self.gxmap, layers[1])
+        else:
+            itr2 = gxapi.GXITR.null()
+
+
+        with gxv.GXview(self, view_name) as v:
+
+            v_extent = v.extent_clip
+            center, v_width, v_height = center_w_h(v_extent)
+
+            if (bar_location == COLOR_BAR_LEFT) or (bar_location == COLOR_BAR_RIGHT):
+                bar_orient = 0
+                default_bar_size = v_height * 0.8
+                if max_bar_size is None:
+                    max_bar_size = v_height
+
+            else:
+                bar_orient = 1
+                default_bar_size = v_width * 0.8
+                if max_bar_size is None:
+                    max_bar_size = v_width * 0.8
+
+            # bar cell sizing
+            def_size = default_bar_size / itr1.get_size()
+            if box_size is None:
+                box_size = max(0.4 * v.units_per_map_cm, def_size)
+            else:
+                box_size *= v.units_per_map_cm
+            if bar_width is None:
+                if bar_location in (COLOR_BAR_LEFT, COLOR_BAR_RIGHT):
+                    bar_width = max(0.4 * v.units_per_map_cm, box_size * 2.0)
+                else:
+                    bar_width = max(0.4 * v.units_per_map_cm, box_size)
+            else:
+                bar_width *= v.units_per_map_cm
+            if max_bar_size is not None:
+                box_size = min(box_size, (max_bar_size * v.units_per_map_cm) / itr1.get_size())
+
+            annotation_height *= v.units_per_map_cm
+            if annotation_offset is None:
+                annotation_offset = annotation_height * 0.5
+            else:
+                annotation_offset *= v.units_per_map_cm
+            annotation_offset *= annotation_side
+            minimum_gap *= v.units_per_map_cm
+
+            cdict = {
+                "BAR_ORIENTATION": bar_orient,
+                "DECIMALS": decimals,
+                'ANNOFF': annotation_offset,
+                'BOX_SIZE': box_size,
+                'BAR_WIDTH': bar_width,
+                'MINIMUM_GAP': minimum_gap,
+                "X": center[0],
+                "Y": center[1],
+                "POST_MAXMIN": 1 if post_end_values else 0,
+                "LABEL_ORIENTATION": 0 if annotate_vertical else 1,
+                "DIVISION_STYLE": division_line,
+            }
+
+            if interval_1:
+                if interval_2 is None:
+                    interval_2 = gxapi.rDUMMY
+                if interval_2 <= interval_1 / 10.:
+                    interval_2 = interval_1 / 10.
+                elif interval_2 <= interval_1 / 5.:
+                    interval_2 = interval_1 / 5.
+                elif interval_2 <= interval_1 / 4.:
+                    interval_2 = interval_1 / 4.
+                elif interval_2 <= interval_1 / 2.:
+                    interval_2 = interval_1 / 2.
+                else:
+                    interval_2 = gxapi.rDUMMY
+                cdict["FIXED_INTERVAL"] = interval_1
+                cdict["FIXED_MINOR_INTERVAL"] = interval_2
+
+            gname = 'COLORBAR_' + agg_name
+            v.start_group(gname)
+            v.text_def = gxv.Text_def(height=annotation_height)
+            gxapi.GXMVU.color_bar_reg(v.gxview, itr1, itr2, gxu.reg_from_dict(cdict, 100, json_encode=False))
+
+            if title:
+
+                title_height = annotation_height * 1.5
+                v.text_def = gxv.Text_def(height=title_height, weight=gxv.FONT_WEIGHT_BOLD)
+                p = gxgm.Point(v.reference_point(gxv.REF_BOTTOM_CENTER, v.extent_group(gname)))
+                p -= (0, title_height * 0.5)
+                try:
+                    tline = title[:title.index('\n')]
+                    title = title[title.index('\n')+1:]
+                except:
+                    tline = title
+                    title = ''
+                v.text(tline, p, reference=gxv.REF_TOP_CENTER)
+
+                if title:
+                    v.text_def = gxv.Text_def(height=title_height * 0.8, weight=gxv.FONT_WEIGHT_LIGHT)
+                    p -= (0, title_height * 1.5)
+                    v.text(title, p, reference=gxv.REF_TOP_CENTER)
+
+            # locate the bar
+            default_offset = 1.5 * v.units_per_map_cm
+            if location and (not hasattr(location, '__iter__')):
+                default_offset = location * v.units_per_map_cm
+                location = None
+            if location is not None:
+                location = location[0] * v.units_per_map_cm, location[1]*v.units_per_map_cm
+
+            if bar_location == COLOR_BAR_RIGHT:
+                if location is None:
+                    location = (default_offset, 0)
+                xy = v.reference_point(REF_CENTER_RIGHT)
+                ref = gxv.REF_CENTER_LEFT
+            elif bar_location == COLOR_BAR_LEFT:
+                if location is None:
+                    location = (-default_offset, 0)
+                xy = v.reference_point(REF_CENTER_LEFT)
+                ref = gxv.REF_CENTER_RIGHT
+            elif bar_location == COLOR_BAR_BOTTOM:
+                if location is None:
+                    location = (0, -default_offset)
+                xy = v.reference_point(REF_BOTTOM_CENTER)
+                ref = gxv.REF_TOP_CENTER
+            elif bar_location == COLOR_BAR_TOP:
+                if location is None:
+                    location = (0, default_offset)
+                xy = v.reference_point(REF_TOP_CENTER)
+                ref = gxv.REF_BOTTOM_CENTER
+
+            location = xy[0] + location[0], xy[1] + location[1]
+            v.locate_group(gname, location, ref)
+
 
 class _Mapplot:
 
@@ -1037,7 +1269,7 @@ class _Mapplot:
     def __init__(self, map, data_view=None, ref_prefix='', **kwargs):
 
         if not (map.has_view(map.current_base_view) and map.has_view(map.current_data_view)):
-            raise MapplotException("Map must have a '*Base' and '*Data' view.")
+            raise MapException("Map must have a '*Base' and '*Data' view.")
 
         self._map = map
         self._ref_pre = ref_prefix

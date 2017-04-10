@@ -11,6 +11,8 @@ import geosoft.gxpy.view as gxv
 import geosoft.gxpy.geometry as gxgm
 import geosoft.gxpy.coordinate_system as gxcs
 import geosoft.gxpy.system as gxsys
+import geosoft.gxpy.grd as gxgrd
+import geosoft.gxpy.agg as gxagg
 
 from geosoft.gxpy.tests import GXPYTest
 
@@ -128,12 +130,14 @@ class Test(unittest.TestCase, GXPYTest):
         gxmap.delete_files(mapfile)
         self.assertFalse(os.path.isfile(mapfile))
 
+        self.assertRaises(gxmap.MapException, gxmap.GXmap, 'bogus')
+
     def test_new_geosoft_map(self):
         Test.start(self, gsys.func_name())
 
         # temp map
         with gxmap.GXmap.new(data_area=(0, 0, 100, 80)) as gmap:
-            views = gmap.view_list(gxmap.LIST_ALL)
+            views = gmap.view_list
             self.assertTrue('base' in views)
             self.assertTrue('data' in views)
 
@@ -147,15 +151,15 @@ class Test(unittest.TestCase, GXPYTest):
 
         mapname = new_test_data_map()
         with gxmap.GXmap.open(mapname) as gmap:
-            views = gmap.view_list(gxmap.LIST_ALL)
+            views = gmap.view_list
             self.assertTrue('rectangle_test' in views)
             self.assertTrue('poly' in views)
 
-            views = gmap.view_list(gxmap.LIST_2D)
+            views = gmap.view_list_2D
             self.assertTrue('rectangle_test' in views)
             self.assertTrue('poly' in views)
 
-            views = gmap.view_list(gxmap.LIST_3D)
+            views = gmap.view_list_3D
             self.assertEqual(len(views), 0)
 
     def test_map_delete(self):
@@ -163,7 +167,7 @@ class Test(unittest.TestCase, GXPYTest):
 
         with gxmap.GXmap.new(filename='test_geosoft', overwrite=True) as gmap:
             filename = gmap.filename
-            self.assertEqual(len(gmap.view_list()), 2)
+            self.assertEqual(len(gmap.view_list), 2)
             self.assertTrue(gmap.has_view('data'))
             self.assertTrue(gmap.has_view('base'))
         self.assertTrue(os.path.isfile(filename))
@@ -174,7 +178,7 @@ class Test(unittest.TestCase, GXPYTest):
                              overwrite=True,
                              data_area=(1000, 200, 11000, 5000)) as gmap:
             filename = gmap.filename
-            self.assertEqual(len(gmap.view_list()), 2)
+            self.assertEqual(len(gmap.view_list), 2)
             self.assertTrue(gmap.has_view('data'))
             self.assertTrue(gmap.has_view('base'))
         self.assertTrue(os.path.isfile(filename))
@@ -530,6 +534,76 @@ class Test(unittest.TestCase, GXPYTest):
                                  text_def=gxv.Text_def(height=0.18, italics=True),
                                  top=gxmap.TOP_IN)
         self.crc_map(mapfile)
+
+    def test_color_bar(self):
+        Test.start(self, gsys.func_name())
+
+        def test_agg_map():
+
+            # test grid file
+            folder, files = gsys.unzip(os.path.join(os.path.dirname(__file__), 'testgrids.zip'),
+                                       folder=self.gx.temp_folder())
+            grid_file = os.path.join(folder, 'test_agg_utm.grd')
+            map_file = os.path.join(self.gx.temp_folder(), "test_agg_utm")
+
+            with gxgrd.GXgrd(grid_file) as grd:
+                ex = grd.extent_2d()
+                cs = grd.cs
+            with gxmap.GXmap.new(map_file, overwrite=True, cs=cs,
+                                 data_area=ex, margins=(6,6,5,5)) as gmap:
+                mapfile = gmap.filename
+                with gxv.GXview(gmap, "data") as v:
+                    v.xy_rectangle(v.extent_clip, pen=v.new_pen(line_thick = 0.1, line_color = 'R'))
+
+                    with gxagg.GXagg(grid_file, shade=True) as agg:
+                        v.aggregate(agg, name='temp_agg')
+
+                with gxv.GXview(gmap, "data") as v:
+                    v.xy_rectangle(v.extent_clip, pen=v.new_pen(line_thick=0.1, line_color='R'))
+
+                with gxv.GXview(gmap, "base") as v:
+                    v.xy_rectangle(v.extent_clip, pen=v.new_pen(line_thick = 0.1, line_color = 'B'))
+
+                gmap.annotate_data_ll(grid=gxmap.GRID_LINES,
+                                      grid_pen=gxv.Pen.from_mapplot_string("bt250"),
+                                      text_def=gxv.Text_def(height=0.25, italics=True),
+                                      top=gxmap.TOP_IN)
+            return mapfile
+
+        mapfile = test_agg_map()
+        with gxmap.GXmap.open(mapfile) as map:
+            map.agg_legend()
+            with gxv.GXview(map, '*data') as v:
+                v.delete_group('temp_agg')
+        self.crc_map(mapfile, alt_crc_name='color_bar_0')
+
+        mapfile = test_agg_map()
+        with gxmap.GXmap.open(mapfile) as map:
+            map.agg_legend(bar_location=gxmap.COLOR_BAR_LEFT,
+                           annotation_side=gxmap.COLOR_BAR_ANNOTATE_LEFT,
+                           title="Left Bar\nsub_title\n(nano-things)")
+            with gxv.GXview(map, '*data') as v:
+                v.delete_group('temp_agg')
+        self.crc_map(mapfile, alt_crc_name='color_bar_1')
+
+        mapfile = test_agg_map()
+        with gxmap.GXmap.open(mapfile) as map:
+            map.agg_legend(bar_location=gxmap.COLOR_BAR_BOTTOM,
+                           annotation_height=0.5,
+                           title='Bottom')
+            with gxv.GXview(map, '*data') as v:
+                v.delete_group('temp_agg')
+        self.crc_map(mapfile, alt_crc_name='color_bar_2')
+
+        mapfile = test_agg_map()
+        with gxmap.GXmap.open(mapfile) as map:
+            map.agg_legend(bar_location=gxmap.COLOR_BAR_TOP,
+                           annotation_side=gxmap.COLOR_BAR_ANNOTATE_BOTTOM,
+                           title='This is a Top Centred Bar')
+            with gxv.GXview(map, '*data') as v:
+                v.delete_group('temp_agg')
+        self.crc_map(mapfile, alt_crc_name='color_bar_3')
+
 
 
 if __name__ == '__main__':

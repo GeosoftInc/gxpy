@@ -6,6 +6,7 @@ import geosoft.gxapi as gxapi
 from . import vv as gxvv
 from . import geometry as gxgm
 from . import coordinate_system as gxcs
+from . import utility as gxu
 
 __version__ = geosoft.__version__
 
@@ -22,6 +23,7 @@ class ViewException(Exception):
     """
     pass
 
+GROUP_NAME_SIZE = 2080
 
 READ_ONLY = gxapi.MVIEW_READ
 WRITE_NEW = gxapi.MVIEW_WRITENEW
@@ -101,16 +103,30 @@ TILE_DIAGONAL = 1
 TILE_TRIANGULAR = 2
 TILE_RANDOM = 3
 
-TEXT_REF_BOTTOM_LEFT = 0
-TEXT_REF_BOTTOM_CENTER = 1
-TEXT_REF_BOTTOM_RIGHT = 2
-TEXT_REF_MIDDLE_LEFT = 3
-TEXT_REF_MIDDLE_CENTER = 4
-TEXT_REF_MIDDLE_RIGHT = 5
-TEXT_REF_TOP_LEFT = 6
-TEXT_REF_TOP_CENTER = 7
-TEXT_REF_TOP_RIGHT = 8
+REF_BOTTOM_LEFT = 0
+REF_BOTTOM_CENTER = 1
+REF_BOTTOM_RIGHT = 2
+REF_CENTER_LEFT = 3
+REF_CENTER = 4
+REF_CENTER_RIGHT = 5
+REF_TOP_LEFT = 6
+REF_TOP_CENTER = 7
+REF_TOP_RIGHT = 8
 
+GROUP_ALL = 0
+GROUP_MARKED = 1
+GROUP_VISIBLE = 2
+GROUP_AGG = 3
+GROUP_CSYMB = 4
+GROUP_VOXD = 5
+
+EXTENT_ALL = gxapi.MVIEW_EXTENT_ALL
+EXTENT_VISIBLE = gxapi.MVIEW_EXTENT_VISIBLE
+EXTENT_CLIPPED = gxapi.MVIEW_EXTENT_CLIP
+
+LOCATE_FIT = gxapi.MVIEW_RELOCATE_FIT
+LOCATE_FIT_KEEP_ASPECT = gxapi.MVIEW_RELOCATE_ASPECT
+LOCATE_CENTER = gxapi.MVIEW_RELOCATE_ASPECT_CENTER
 
 class Color:
     """
@@ -696,6 +712,9 @@ class GXview:
                  scale=100,
                  copy=None):
 
+        if type(gmap) is not geosoft.gxpy.map.GXmap:
+            raise ViewException('First parameter is not a GXmap instance.')
+
         self._gmap = gmap
         self._viewname = gmap.classview(viewname)
         if mode == WRITE_OLD and not gmap.has_view(self._viewname):
@@ -864,6 +883,8 @@ class GXview:
         if self._pen is None:
             self._init_pen()
 
+        if type(pen) is str:
+            pen = Pen.from_mapplot_string(pen)
         if self._pen.line_color != pen.line_color:
             self.gxview.line_color(pen._line_color.int)
         if self._pen.line_thick != pen.line_thick:
@@ -888,6 +909,62 @@ class GXview:
             self.gxview.pat_thick(pen.pat_thick)
 
         self._pen = pen
+
+    def _groups(self, gtype=GROUP_ALL):
+
+        def gdict(what):
+            self.gxview.list_groups(gxlst, what)
+            return gxu.dict_from_lst(gxlst)
+
+        gxlst = gxapi.GXLST.create(GROUP_NAME_SIZE)
+
+        if gtype == GROUP_ALL:
+            return list(gdict(gxapi.MVIEW_GROUP_LIST_ALL))
+
+        elif gtype == GROUP_MARKED:
+            return list(gdict(gxapi.MVIEW_GROUP_LIST_MARKED))
+
+        elif gtype == GROUP_VISIBLE:
+            return list(gdict(gxapi.MVIEW_GROUP_LIST_VISIBLE))
+
+        gd = gdict(gxapi.MVIEW_GROUP_LIST_ALL)
+        aggs = []
+
+        # gxapi mappings from local GROUP_NAME manifest
+        isg = (None, None, None, gxapi.MVIEW_IS_AGG, gxapi.MVIEW_IS_CSYMB, gxapi.MVIEW_IS_VOXD)[gtype]
+
+        for g in gd:
+            if self.gxview.is_group(g, isg):
+                aggs.append(g)
+        return aggs
+
+    @property
+    def group_list(self):
+        return self._groups()
+
+    @property
+    def group_list_marked(self):
+        return self._groups(GROUP_MARKED)
+
+    @property
+    def group_list_visible(self):
+        return self._groups(GROUP_VISIBLE)
+
+    @property
+    def group_list_agg(self):
+        return self._groups(GROUP_AGG)
+
+    @property
+    def group_list_csymb(self):
+        return self._groups(GROUP_CSYMB)
+
+    @property
+    def group_list_voxel(self):
+        return self._groups(GROUP_VOXD)
+
+    def has_group(self, group):
+        """ Returns True if the map contains this group."""
+        return self.gxview.exist_group(group)
 
     def _extent(self, what):
         xmin = gxapi.float_ref()
@@ -952,6 +1029,14 @@ class GXview:
         self.gxview.pat_thick(pen.pat_thick)
 
         self._pen = pen
+
+    def extent_group(self, group, unit=UNIT_VIEW):
+        xmin = gxapi.float_ref()
+        ymin = gxapi.float_ref()
+        xmax = gxapi.float_ref()
+        ymax = gxapi.float_ref()
+        self.gxview.get_group_extent(group, xmin, ymin, xmax, ymax, unit)
+        return xmin.value, ymin.value, xmax.value, ymax.value
 
     def new_pen(self, **kwargs):
         """
@@ -1025,17 +1110,38 @@ class GXview:
 
         return self.gxview.color(str)
 
-    def map_cm_to_view(self, x, y):
-        """Returns the location of this point in a view on the map in map cm."""
+    def map_cm_to_view(self, x, y=None):
+        """
+        Returns the location of this point on the map (in cm) to the view location in view units.
+            
+        :param x:   x, or a tupple (x,y), in map cm
+        :param y:   y if x is not a tupple
+        
+        .. versionadded:: 9.2
+        """
+
+        if y is None:
+            y = x[1]
+            x = x[0]
         xr = gxapi.float_ref()
-        xr.value = x * 1000.0
+        xr.value = x * 10.0
         yr = gxapi.float_ref()
-        yr.value = y * 1000.0
+        yr.value = y * 10.0
         self.gxview.plot_to_view(xr, yr)
         return xr.value, yr.value
 
-    def view_to_map_cm(self, x, y):
-        """ Returns the location of this point on the map in the view."""
+    def view_to_map_cm(self, x, y=None):
+        """ 
+        Returns the location of this point on the map in the view.
+        
+        :param x:   x, or a tupple (x,y), in view units
+        :param y:   y if x is not a tupple
+        
+        .. versionadded:: 9.2
+        """
+        if y is None:
+            y = x[1]
+            x = x[0]
         xr = gxapi.float_ref()
         xr.value = x
         yr = gxapi.float_ref()
@@ -1146,15 +1252,89 @@ class GXview:
     def text(self,
              text: object,
              location: object = (0, 0),
-             reference: object = TEXT_REF_BOTTOM_LEFT,
+             reference: object = REF_BOTTOM_LEFT,
              angle: object = 0.,
-             text_def: object = None) -> object:
+             text_def: object = None,
+             line_spacing = 1.5) -> object:
+        """
+        Draw text in the view.
+        
+        :param text:        test string.  Use line-feed characters for multi-line text.
+        :param location:    (x, y) or a ``gxpy.geomerty.Point`` location
+        :param reference:   one of TEXT_REF_ defines that locates txt reative to the location
+        :param angle:       baseline angle in degrees clockwise
+        :param text_def:    text definition, if not set current definition is used
+        :param line_spacing: the line spacing for multi-line text as a factor of the text height, default is 1.5
+
+        .. versionadded:: 9.2
+        """
 
         if text_def:
             self.text_def = text_def
         self.gxview.text_ref(reference)
         self.gxview.text_angle(angle)
-        self.gxview.text(text, location[0], location[1])
+
+        if type(location) is not gxgm.Point:
+            location = gxgm.Point(location)
+
+        self.gxview.text(text, location.x, location.y)
+
+    def reference_point(self, ref, area=None):
+        """
+        Return the x,y location of a reference point oof an area.
+        
+        :param ref:     one of REF_ definitions
+        :param area:    2-D area, default is the view clip limits
+        
+        :return: (x, y) in view units
+        
+        .. versionadded:: 9.2
+        """
+
+        if area is None:
+            area = self.extent_clip
+        center = gxgm.Point2(area).centroid
+        x = center.x
+        y = center.y
+        if ref in (0, 1, 2):
+            y = area[1]
+        elif ref in (6, 7, 8):
+            y = area[3]
+        if ref in (0, 3, 6):
+            x = area[0]
+        elif ref in (2, 5, 8):
+            x = area[2]
+        return x, y
+
+    def locate_group(self, group, location, ref=REF_CENTER):
+        """
+        Locate an existing group.
+        
+        :param group:       group name 
+        :param location:    location (x, y) or a ``gxpy.geometry.Point``
+        :param ref:         locate the REF_ define group corner at this location.
+        
+        .. versionadded:: 9.2
+        """
+        if type(location) is not gxgm.Point:
+            location = gxgm.Point(location)
+        area = gxgm.Point2(self.extent_group(group))
+        area -= area.centroid
+        half_dim = gxgm.Point(area.dimension) * 0.5
+        xoff = yoff = 0.0
+        if ref in (0, 1, 2):
+            yoff = half_dim.y
+        elif ref in (6, 7, 8):
+            yoff = -half_dim.y
+        if ref in (0, 3, 6):
+            xoff = half_dim.x
+        elif ref in (2, 5, 8):
+            xoff = -half_dim.x
+        off = gxgm.Point((xoff, yoff))
+        location += off
+        area += gxgm.Point(location)
+        self.gxview.relocate_group(group, area.p1.x, area.p1.y, area.p2.x, area.p2.y,
+                                   gxapi.MVIEW_RELOCATE_ASPECT_CENTER)
 
 
 class GXview3d(GXview):

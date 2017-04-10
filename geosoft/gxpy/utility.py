@@ -486,10 +486,12 @@ def save_parameters(group='_', parms=None):
             s = json.dumps(v).replace('\\\\', '\\')
             gxapi.GXSYS.set_string(group, k, s)
 
-def reg_from_dict(rd, max_size=4096):
+def reg_from_dict(rd, max_size=4096, json_encode = True):
     """
     :param rd:          dictionary
     :param max_size:    maximum "key=value" string size
+    :param json:        True to encode non-string values as sas json strings (prefix '_JSON:')
+                        False will encode non-string values as ``str(value)``
     :return:            gxapi.GXREG instance
 
     Non-string values in the dictionary are converted to JSON strings and stored as
@@ -498,7 +500,10 @@ def reg_from_dict(rd, max_size=4096):
     reg = gxapi.GXREG.create(max_size)
     for key, value in rd.items():
         if type(value) is not str:
-            value = "_JSON:{}".format(json.dumps(value))
+            if json_encode:
+                value = "_JSON:{}".format(json.dumps(value))
+            else:
+                value = str(value)
         if len(key) + len(value) >= max_size:
             raise UtilityException(_t("\'key=value\' longer than maximum ({}):\n{}={}")
                                    .format(max_size, key, value))
