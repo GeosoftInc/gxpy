@@ -64,17 +64,6 @@ GROUP_APPEND = 1
 VIEW_BASE = 0
 VIEW_DATA = 1
 
-COLOR_BAR_RIGHT = 0
-COLOR_BAR_LEFT = 1
-COLOR_BAR_BOTTOM = 2
-COLOR_BAR_TOP = 3
-
-COLOR_BAR_ANNOTATE_RIGHT = 1
-COLOR_BAR_ANNOTATE_LEFT = -1
-COLOR_BAR_ANNOTATE_TOP = 1
-COLOR_BAR_ANNOTATE_BOTTOM = -1
-
-
 class Line_def:
     def __init__(self,
                  line_colour='k',
@@ -262,7 +251,7 @@ class GXmap:
 
     @classmethod
     def new(cls, file_name=None, data_area=(0., 0., 100., 100.), scale=None,
-            cs=None, media=None, layout=None, fixed_size=None, map_style='figure',
+            cs=None, media=None, layout=None, fixed_size=False, map_style='figure',
             margins=None, inside_margin=1.0, overwrite=False, no_data_view=False):
 
         """
@@ -292,9 +281,8 @@ class GXmap:
                             style is intended for smaller media with a larger bottom margin for a
                             title and limited annotations.
             :fixed_size:    True for fixed media size, if, and only if, a media size is defined.
-                            The default is True for 'figure' map_style, and False for 'map' map_style. 
                             If False, the base view boundary will be reduced to the data view plus margins.  
-                            Tf True, the base view boundary is fixed to the media size and margins are 
+                            If True, the base view boundary is fixed to the media size and margins are 
                             adjusted to locate the data view proportionally relative to the requested margins.
             :margins:       (left, right, bottom, top) map margins in map cm.  The default for 'map'
                             style is (3, 14, 6, 3), and for figure (1, 4, 1, 1).
@@ -400,12 +388,6 @@ class GXmap:
             # TODO - add a round_to_precision() function with option to round up or down.
             if scale > 100:
                 scale = float(ceil(scale))
-
-        if fixed_size is None:
-            if map_style == 'figure':
-                fixed_size = True
-            else:
-                fixed_size = False
 
         if fixed_size:
             mx, my = data_window_on_map()
@@ -1036,62 +1018,16 @@ class GXmap:
         finally:
             self.current_data_view = current_view
 
+    #TODO remove once we have ability to get an agg out of a view group
     def agg_legend(self,
                    view_name='*data',
                    agg_name=None,
-                   bar_location=COLOR_BAR_RIGHT,
-                   location=None,
-                   decimals=1,
-                   annotation_height=0.2,
-                   annotation_offset=None,
-                   annotation_side=COLOR_BAR_ANNOTATE_RIGHT,
-                   box_size=None,
-                   bar_width=None,
-                   max_bar_size=None,
-                   minimum_gap=0,
-                   post_end_values=False,
-                   annotate_vertical=False,
-                   division_line=1,
-                   interval_1=None,
-                   interval_2=None,
-                   title=''):
+                   **kwargs):
         """
         Draw an aggregate legend.
 
         :param view_name:           view name, default is '*data'
         :param agg_name:            aggregate name, default is the first aggregate found
-        :param bar_location:        one of:
-
-            ::
-
-                COLOR_BAR_RIGHT = 0
-                COLOR_BAR_LEFT = 1
-                COLOR_BAR_BOTTOM = 2
-                COLOR_BAR_TOP = 3
-
-        :param location:            offset or (x, y) offset from view reference point, in cm.
-        :param decimals:            annotation decimal places
-        :param annotation_height:   annotation number height
-        :param annotation_offset:   offset of annotations from the bar (cm)
-        :param annotation_side:     side of the bar for annotations
-
-            ::
-
-                COLOR_BAR_ANNOTATE_RIGHT = 1
-                COLOR_BAR_ANNOTATE_LEFT = -1
-                COLOR_BAR_ANNOTATE_TOP = 1
-                COLOR_BAR_ANNOTATE_BOTTOM = -1
-
-        :param box_size:            box size, height for vertical bars, width for horizontal bars
-        :param bar_width:           width of the colour boxes
-        :param max_bar_size:        maximum bar size, default is the size of the view edge
-        :param minimum_gap:         minimum gap to between annotations.  Annotations are dropped in necessary.
-        :param post_end_values:     post the maximum and minimum values
-        :param annotate_vertical:   True to orient labels vertically 
-        :param division_line:       0, no division lines, 1 - line, 2 - tick
-        :param interval_1:          annotation increment, default annotates everything
-        :param interval_2:          secondary smaller annotations, 1/10, 1/ 5, 1/4 or 1/2 interval_1
-        :param title:               bar title, use new-lines for sub-titles.
 
         .. versionadded:: 9.2
         """
@@ -1109,12 +1045,6 @@ class GXmap:
             layers.sort()
             return layers, agg_name
 
-        def center_w_h(rect):
-            w = v_extent[2] - v_extent[0]
-            h = v_extent[3] - v_extent[1]
-            c = (v_extent[0] + w * 0.5, v_extent[1] + h * 0.5)
-            return c, w, h
-
         view_name = self.classview(view_name)
         layers, agg_name = layers_in_agg(view_name, agg_name)
         if not layers:
@@ -1127,133 +1057,8 @@ class GXmap:
             itr2 = gxapi.GXITR.null()
 
         with gxv.GXview(self, view_name) as v:
-
-            v_extent = v.extent_clip
-            center, v_width, v_height = center_w_h(v_extent)
-
-            if (bar_location == COLOR_BAR_LEFT) or (bar_location == COLOR_BAR_RIGHT):
-                bar_orient = 0
-                default_bar_size = v_height * 0.8
-                if max_bar_size is None:
-                    max_bar_size = v_height
-
-            else:
-                bar_orient = 1
-                default_bar_size = v_width * 0.8
-                if max_bar_size is None:
-                    max_bar_size = v_width * 0.8
-
-            # bar cell sizing
-            def_size = default_bar_size / itr1.get_size()
-            if box_size is None:
-                box_size = max(0.4 * v.units_per_map_cm, def_size)
-            else:
-                box_size *= v.units_per_map_cm
-            if bar_width is None:
-                if bar_location in (COLOR_BAR_LEFT, COLOR_BAR_RIGHT):
-                    bar_width = max(0.4 * v.units_per_map_cm, box_size * 2.0)
-                else:
-                    bar_width = max(0.4 * v.units_per_map_cm, box_size)
-            else:
-                bar_width *= v.units_per_map_cm
-            if max_bar_size is not None:
-                box_size = min(box_size, (max_bar_size * v.units_per_map_cm) / itr1.get_size())
-
-            annotation_height *= v.units_per_map_cm
-            if annotation_offset is None:
-                annotation_offset = annotation_height * 0.5
-            else:
-                annotation_offset *= v.units_per_map_cm
-            annotation_offset *= annotation_side
-            minimum_gap *= v.units_per_map_cm
-
-            cdict = {
-                "BAR_ORIENTATION": bar_orient,
-                "DECIMALS": decimals,
-                'ANNOFF': annotation_offset,
-                'BOX_SIZE': box_size,
-                'BAR_WIDTH': bar_width,
-                'MINIMUM_GAP': minimum_gap,
-                "X": center[0],
-                "Y": center[1],
-                "POST_MAXMIN": 1 if post_end_values else 0,
-                "LABEL_ORIENTATION": 0 if annotate_vertical else 1,
-                "DIVISION_STYLE": division_line,
-            }
-
-            if interval_1:
-                if interval_2 is None:
-                    interval_2 = gxapi.rDUMMY
-                if interval_2 <= interval_1 / 10.:
-                    interval_2 = interval_1 / 10.
-                elif interval_2 <= interval_1 / 5.:
-                    interval_2 = interval_1 / 5.
-                elif interval_2 <= interval_1 / 4.:
-                    interval_2 = interval_1 / 4.
-                elif interval_2 <= interval_1 / 2.:
-                    interval_2 = interval_1 / 2.
-                else:
-                    interval_2 = gxapi.rDUMMY
-                cdict["FIXED_INTERVAL"] = interval_1
-                cdict["FIXED_MINOR_INTERVAL"] = interval_2
-
-            gname = 'COLORBAR_' + agg_name
-            with gxg.GXdraw(v, gname) as g:
-
-                g.text_def = gxg.Text_def(height=annotation_height)
-                gxapi.GXMVU.color_bar_reg(v.gxview, itr1, itr2, gxu.reg_from_dict(cdict, 100, json_encode=False))
-
-                if title:
-
-                    title_height = annotation_height * 1.5
-                    g.text_def = gxg.Text_def(height=title_height, weight=gxg.FONT_WEIGHT_BOLD)
-                    p = gxgm.Point(gxg.edge_reference(g.extent, gxg.REF_BOTTOM_CENTER))
-                    p -= (0, title_height * 0.5)
-                    try:
-                        tline = title[:title.index('\n')]
-                        title = title[title.index('\n') + 1:]
-                    except:
-                        tline = title
-                        title = ''
-                    g.text(tline, p, reference=gxg.REF_TOP_CENTER)
-
-                    if title:
-                        g.text_def = gxg.Text_def(height=title_height * 0.8, weight=gxg.FONT_WEIGHT_LIGHT)
-                        p -= (0, title_height * 1.5)
-                        g.text(title, p, reference=gxg.REF_TOP_CENTER)
-
-                # locate the bar
-                default_offset = 1.5 * v.units_per_map_cm
-                if location and (not hasattr(location, '__iter__')):
-                    default_offset = location * v.units_per_map_cm
-                    location = None
-                if location is not None:
-                    location = location[0] * v.units_per_map_cm, location[1] * v.units_per_map_cm
-
-                area = v.extent_clip
-                if bar_location == COLOR_BAR_LEFT:
-                    if location is None:
-                        location = (-default_offset, 0)
-                    xy = gxg.edge_reference(area, gxg.REF_CENTER_LEFT)
-                    ref = gxg.REF_CENTER_RIGHT
-                elif bar_location == COLOR_BAR_BOTTOM:
-                    if location is None:
-                        location = (0, -default_offset)
-                    xy = gxg.edge_reference(area, gxg.REF_BOTTOM_CENTER)
-                    ref = gxg.REF_TOP_CENTER
-                elif bar_location == COLOR_BAR_TOP:
-                    if location is None:
-                        location = (0, default_offset)
-                    xy = gxg.edge_reference(area, gxg.REF_TOP_CENTER)
-                    ref = gxg.REF_BOTTOM_CENTER
-                else: #BAR_RIGHT
-                    if location is None:
-                        location = (default_offset, 0)
-                    xy = gxg.edge_reference(area, gxg.REF_CENTER_RIGHT)
-                    ref = gxg.REF_CENTER_LEFT
-
-                location = xy + location
-                g.locate(location, ref)
+            with gxg.GXdraw(v, 'COLORBAR_' + agg_name) as g:
+                g.legend_color_bar(itr1, itr2, **kwargs)
 
 
 class _Mapplot:

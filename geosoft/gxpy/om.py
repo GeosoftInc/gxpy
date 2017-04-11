@@ -234,6 +234,8 @@ def state():
 
     """
 
+    #TODO refactor to always have a 3D location for gdb and maps
+
     s = gxapi.str_ref()
     glst = gxapi.GXLST.create(4096)
     state = {}

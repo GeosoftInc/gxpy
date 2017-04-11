@@ -8,6 +8,7 @@ from . import vv as gxvv
 from . import geometry as gxgm
 from . import coordinate_system as gxcs
 from . import view as gxv
+from . import utility as gxu
 
 __version__ = geosoft.__version__
 
@@ -24,7 +25,8 @@ class GroupException(Exception):
     """
     pass
 
-GROUP_NAME_SIZE = 2080
+GROUP_NAME_SIZE = gxv.VIEW_NAME_SIZE
+
 NEW = gxapi.MVIEW_GROUP_NEW
 APPEND = gxapi.MVIEW_GROUP_APPEND
 READ_ONLY = max(NEW, APPEND) + 1
@@ -118,6 +120,17 @@ GROUP_VOXD = 5
 LOCATE_FIT = gxapi.MVIEW_RELOCATE_FIT
 LOCATE_FIT_KEEP_ASPECT = gxapi.MVIEW_RELOCATE_ASPECT
 LOCATE_CENTER = gxapi.MVIEW_RELOCATE_ASPECT_CENTER
+
+COLOR_BAR_RIGHT = 0
+COLOR_BAR_LEFT = 1
+COLOR_BAR_BOTTOM = 2
+COLOR_BAR_TOP = 3
+
+COLOR_BAR_ANNOTATE_RIGHT = 1
+COLOR_BAR_ANNOTATE_LEFT = -1
+COLOR_BAR_ANNOTATE_TOP = 1
+COLOR_BAR_ANNOTATE_BOTTOM = -1
+
 
 def edge_reference(area, ref):
     """
@@ -238,6 +251,25 @@ class GXgroup:
     def extent(self):
         return self._extent(UNIT_VIEW)
 
+    @property
+    def visible(self):
+        return self.name in self.view.group_list_visible
+
+    @visible.setter
+    def visible(self, visibility):
+        if self.visible != visibility:
+            marked = self.view.group_list_marked
+            self.view.gxview.mark_all_groups(0)
+            self.view.gxview.mark_group(self.name, 1)
+            if visibility is True:
+                self.view.gxview.hide_marked_groups(0)
+            else:
+                self.view.gxview.hide_marked_groups(1)
+            self.view.gxview.mark_all_groups(0)
+            for g in marked:
+                self.view.gxview.mark_group(g, 1)
+
+
     def extent_map_cm(self, extent=None):
         """
         Return a view extent in map cm.
@@ -269,6 +301,7 @@ class GXgroup:
         self.view.gxview.relocate_group(self.name,
                                         area.p1.x, area.p1.y, area.p2.x, area.p2.y,
                                         gxapi.MVIEW_RELOCATE_ASPECT_CENTER)
+
 
 def _draw(func):
     @wraps(func)
@@ -558,6 +591,7 @@ class GXdraw(GXgroup):
         if cur_text:
             self.text_def = cur_text
 
+
 class GXdraw_3d(GXdraw):
 
     def __init__(self, view, *args, **kwargs):
@@ -580,6 +614,201 @@ class GXdraw_3d(GXdraw):
         self.view.gxview.box_3d(p2.p1.x, p2.p1.y, p2.p1.z,
                                 p2.p2.x, p2.p2.y, p2.p2.z)
 
+
+def legend_color_bar(view,
+                     group_name,
+                     itr,
+                     itr2=None,
+                     bar_location=COLOR_BAR_RIGHT,
+                     location=None,
+                     decimals=1,
+                     annotation_height=0.2,
+                     annotation_offset=None,
+                     annotation_side=COLOR_BAR_ANNOTATE_RIGHT,
+                     box_size=None,
+                     bar_width=None,
+                     max_bar_size=None,
+                     minimum_gap=0,
+                     post_end_values=False,
+                     annotate_vertical=False,
+                     division_line=1,
+                     interval_1=None,
+                     interval_2=None,
+                     title=''):
+    """
+    Draw an color bar legend from itr colouring definitions.
+
+    :param view:                ``gxpy.GXview`` instance in which to place the bar
+    :param group_name:          name for the colour_bar group, overwrites group if it exists.
+    :param itr:                 gxapi.GXITR instance
+    :param itr2:                optional orthogonal blended itr as a gxapi.GXITR instance.  If making
+                                a shaded-colour legend, provide the shaded itr here.
+    :param bar_location:        one of:
+
+        ::
+
+            COLOR_BAR_RIGHT = 0
+            COLOR_BAR_LEFT = 1
+            COLOR_BAR_BOTTOM = 2
+            COLOR_BAR_TOP = 3
+
+    :param location:            offset or (x, y) offset from view reference point, in cm.
+    :param decimals:            annotation decimal places
+    :param annotation_height:   annotation number height
+    :param annotation_offset:   offset of annotations from the bar (cm)
+    :param annotation_side:     side of the bar for annotations
+
+        ::
+
+            COLOR_BAR_ANNOTATE_RIGHT = 1
+            COLOR_BAR_ANNOTATE_LEFT = -1
+            COLOR_BAR_ANNOTATE_TOP = 1
+            COLOR_BAR_ANNOTATE_BOTTOM = -1
+
+    :param box_size:            box size, height for vertical bars, width for horizontal bars
+    :param bar_width:           width of the colour boxes
+    :param max_bar_size:        maximum bar size, default is the size of the view edge
+    :param minimum_gap:         minimum gap to between annotations.  Annotations are dropped in necessary.
+    :param post_end_values:     post the maximum and minimum values
+    :param annotate_vertical:   True to orient labels vertically 
+    :param division_line:       0, no division lines, 1 - line, 2 - tick
+    :param interval_1:          annotation increment, default annotates everything
+    :param interval_2:          secondary smaller annotations, 1/10, 1/ 5, 1/4 or 1/2 interval_1
+    :param title:               bar title, use new-lines for sub-titles.
+
+    .. versionadded:: 9.2
+    """
+
+    with GXdraw(view, group_name) as g:
+
+        v_area = gxgm.Point2(view.extent_clip)
+        v_width = v_area.dimension[0]
+        v_height = v_area.dimension[1]
+
+        if (bar_location == COLOR_BAR_LEFT) or (bar_location == COLOR_BAR_RIGHT):
+            bar_orient = 0
+            default_bar_size = v_height * 0.8
+            if max_bar_size is None:
+                max_bar_size = v_height
+
+        else:
+            bar_orient = 1
+            default_bar_size = v_width * 0.8
+            if max_bar_size is None:
+                max_bar_size = v_width * 0.8
+
+        # bar cell sizing
+        def_box_size = default_bar_size / itr.get_size()
+        if box_size is None:
+            box_size = min(0.4 * view.units_per_map_cm, def_box_size)
+        else:
+            box_size *= view.units_per_map_cm
+        if bar_width is None:
+            if bar_location in (COLOR_BAR_LEFT, COLOR_BAR_RIGHT):
+                bar_width = max(0.4 * view.units_per_map_cm, box_size * 2.0)
+            else:
+                bar_width = max(0.4 * view.units_per_map_cm, box_size)
+        else:
+            bar_width *= view.units_per_map_cm
+        if max_bar_size is not None:
+            box_size = min(box_size, (max_bar_size * view.units_per_map_cm) / itr.get_size())
+
+        annotation_height *= view.units_per_map_cm
+        if annotation_offset is None:
+            annotation_offset = annotation_height * 0.5
+        else:
+            annotation_offset *= view.units_per_map_cm
+        annotation_offset *= annotation_side
+        minimum_gap *= view.units_per_map_cm
+
+        cdict = {
+            "BAR_ORIENTATION": bar_orient,
+            "DECIMALS": decimals,
+            'ANNOFF': annotation_offset,
+            'BOX_SIZE': box_size,
+            'BAR_WIDTH': bar_width,
+            'MINIMUM_GAP': minimum_gap,
+            "X": v_area.centroid.x,
+            "Y": v_area.centroid.y,
+            "POST_MAXMIN": 1 if post_end_values else 0,
+            "LABEL_ORIENTATION": 0 if annotate_vertical else 1,
+            "DIVISION_STYLE": division_line,
+        }
+
+        if interval_1:
+            if interval_2 is None:
+                interval_2 = gxapi.rDUMMY
+            if interval_2 <= interval_1 / 10.:
+                interval_2 = interval_1 / 10.
+            elif interval_2 <= interval_1 / 5.:
+                interval_2 = interval_1 / 5.
+            elif interval_2 <= interval_1 / 4.:
+                interval_2 = interval_1 / 4.
+            elif interval_2 <= interval_1 / 2.:
+                interval_2 = interval_1 / 2.
+            else:
+                interval_2 = gxapi.rDUMMY
+            cdict["FIXED_INTERVAL"] = interval_1
+            cdict["FIXED_MINOR_INTERVAL"] = interval_2
+
+        g.text_def = Text_def(height=annotation_height)
+        if itr2 is None:
+            itr2 = gxapi.GXITR.null()
+        gxapi.GXMVU.color_bar_reg(view.gxview, itr, itr2, gxu.reg_from_dict(cdict, 100, json_encode=False))
+
+        if title:
+
+            title_height = annotation_height * 1.5
+            g.text_def = Text_def(height=title_height, weight=FONT_WEIGHT_BOLD)
+            p = gxgm.Point(edge_reference(g.extent, REF_BOTTOM_CENTER))
+            p -= (0, title_height * 0.5)
+            try:
+                tline = title[:title.index('\n')]
+                title = title[title.index('\n') + 1:]
+            except:
+                tline = title
+                title = ''
+            g.text(tline, p, reference=REF_TOP_CENTER)
+
+            if title:
+                g.text_def = Text_def(height=title_height * 0.8, weight=FONT_WEIGHT_LIGHT)
+                p -= (0, title_height * 1.5)
+                g.text(title, p, reference=REF_TOP_CENTER)
+
+        # locate the bar
+        default_offset = 1.5 * view.units_per_map_cm
+        if location and (not hasattr(location, '__iter__')):
+            default_offset = location * view.units_per_map_cm
+            location = None
+        if location is not None:
+            location = location[0] * view.units_per_map_cm, location[1] * view.units_per_map_cm
+
+        area = gxgm.Point2(view.extent_clip)
+        if bar_location == COLOR_BAR_LEFT:
+            if location is None:
+                location = (-default_offset, 0)
+            xy = edge_reference(area, REF_CENTER_LEFT)
+            ref = REF_CENTER_RIGHT
+        elif bar_location == COLOR_BAR_BOTTOM:
+            if location is None:
+                location = (0, -default_offset)
+            xy = edge_reference(area, REF_BOTTOM_CENTER)
+            ref = REF_TOP_CENTER
+        elif bar_location == COLOR_BAR_TOP:
+            if location is None:
+                location = (0, default_offset)
+            xy = edge_reference(area, REF_TOP_CENTER)
+            ref = REF_BOTTOM_CENTER
+        else: #BAR_RIGHT
+            if location is None:
+                location = (default_offset, 0)
+            xy = edge_reference(area, REF_CENTER_RIGHT)
+            ref = REF_CENTER_LEFT
+
+        location = xy + location
+        g.locate(location, ref)
+            
+                
 class Color:
     """
     Colours, which are stored as a 24-bit color integer.

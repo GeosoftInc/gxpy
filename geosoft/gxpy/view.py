@@ -3,8 +3,6 @@ from functools import wraps
 
 import geosoft
 import geosoft.gxapi as gxapi
-from . import vv as gxvv
-from . import geometry as gxgm
 from . import coordinate_system as gxcs
 from . import utility as gxu
 
@@ -23,7 +21,7 @@ class ViewException(Exception):
     """
     pass
 
-GROUP_NAME_SIZE = 2080
+VIEW_NAME_SIZE = 2080
 
 READ_ONLY = gxapi.MVIEW_READ
 WRITE_NEW = gxapi.MVIEW_WRITENEW
@@ -246,7 +244,7 @@ class GXview:
             self.gxview.list_groups(gxlst, what)
             return gxu.dict_from_lst(gxlst)
 
-        gxlst = gxapi.GXLST.create(GROUP_NAME_SIZE)
+        gxlst = gxapi.GXLST.create(VIEW_NAME_SIZE)
 
         if gtype == GROUP_ALL:
             return list(gdict(gxapi.MVIEW_GROUP_LIST_ALL))

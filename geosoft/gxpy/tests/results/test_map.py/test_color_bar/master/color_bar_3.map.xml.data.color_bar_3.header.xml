@@ -1,6 +1,6 @@
 <header>
-   <Item name="Name" value="COLORBAR_temp_agg"/>
-   <Item name="AGG" value="False"/>
+   <Item name="Name" value="color_bar_3"/>
+   <Item name="AGG" value="True"/>
    <Item name="PAGG" value="False"/>
    <Item name="CSYMB" value="False"/>
    <Item name="SUR" value="False"/>
@@ -17,20 +17,20 @@
    <Item name="Transparency" value="GS_R8DM"/>
    <Item name="ExtClipRegion" value="-1"/>
    <Item name="Extents" type="D2AREA">
-      <Value name="MinX" value="337877.7707"/>
-      <Value name="MinY" value="6161645.194"/>
-      <Value name="MaxX" value="338208.588"/>
-      <Value name="MaxY" value="6165515.064"/>
+      <Value name="MinX" value="335481.3"/>
+      <Value name="MinY" value="6159683.7"/>
+      <Value name="MaxX" value="340557.3"/>
+      <Value name="MaxY" value="6163998.3"/>
    </Item>
    <Item name="Matrix" type="D4MATRIX">
       <Value x="0" y="0" value="1"/>
       <Value x="1" y="0" value="0"/>
       <Value x="2" y="0" value="0"/>
-      <Value x="3" y="0" value="-3095.913029"/>
+      <Value x="3" y="0" value="0"/>
       <Value x="0" y="1" value="0"/>
       <Value x="1" y="1" value="1"/>
       <Value x="2" y="1" value="0"/>
-      <Value x="3" y="1" value="-1739.129097"/>
+      <Value x="3" y="1" value="0"/>
       <Value x="0" y="2" value="0"/>
       <Value x="1" y="2" value="0"/>
       <Value x="2" y="2" value="1"/>

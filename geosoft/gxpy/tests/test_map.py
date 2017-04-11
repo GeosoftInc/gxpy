@@ -601,8 +601,8 @@ class Test(unittest.TestCase, GXPYTest):
 
         mapfile = test_agg_map()
         with gxmap.GXmap.open(mapfile) as map:
-            map.agg_legend(bar_location=gxmap.COLOR_BAR_LEFT,
-                           annotation_side=gxmap.COLOR_BAR_ANNOTATE_LEFT,
+            map.agg_legend(bar_location=gxg.COLOR_BAR_LEFT,
+                           annotation_side=gxg.COLOR_BAR_ANNOTATE_LEFT,
                            title="Left Bar\nsub_title\n(nano-things)")
             with gxv.GXview(map, '*data') as v:
                 v.delete_group('temp_agg')
@@ -610,7 +610,7 @@ class Test(unittest.TestCase, GXPYTest):
 
         mapfile = test_agg_map()
         with gxmap.GXmap.open(mapfile) as map:
-            map.agg_legend(bar_location=gxmap.COLOR_BAR_BOTTOM,
+            map.agg_legend(bar_location=gxg.COLOR_BAR_BOTTOM,
                            annotation_height=0.5,
                            title='Bottom')
             with gxv.GXview(map, '*data') as v:
@@ -619,8 +619,8 @@ class Test(unittest.TestCase, GXPYTest):
 
         mapfile = test_agg_map()
         with gxmap.GXmap.open(mapfile) as map:
-            map.agg_legend(bar_location=gxmap.COLOR_BAR_TOP,
-                           annotation_side=gxmap.COLOR_BAR_ANNOTATE_BOTTOM,
+            map.agg_legend(bar_location=gxg.COLOR_BAR_TOP,
+                           annotation_side=gxg.COLOR_BAR_ANNOTATE_BOTTOM,
                            title='This is a Top Centred Bar')
             with gxv.GXview(map, '*data') as v:
                 v.delete_group('temp_agg')

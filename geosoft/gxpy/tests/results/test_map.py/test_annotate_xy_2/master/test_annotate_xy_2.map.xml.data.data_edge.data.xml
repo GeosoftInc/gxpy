@@ -1480,11 +1480,11 @@
    <Item type="Line" size="32">
       <Item name="From" type="D2POINT">
          <Value name="X" value="1425"/>
-         <Value name="Y" value="0"/>
+         <Value name="Y" value="-1.136868377e-13"/>
       </Item>
       <Item name="To" type="D2POINT">
          <Value name="X" value="1575"/>
-         <Value name="Y" value="0"/>
+         <Value name="Y" value="-1.136868377e-13"/>
       </Item>
    </Item>
    <Item type="Line" size="32">
@@ -1600,11 +1600,11 @@
    <Item type="Line" size="32">
       <Item name="From" type="D2POINT">
          <Value name="X" value="2925"/>
-         <Value name="Y" value="0"/>
+         <Value name="Y" value="-1.136868377e-13"/>
       </Item>
       <Item name="To" type="D2POINT">
          <Value name="X" value="3075"/>
-         <Value name="Y" value="0"/>
+         <Value name="Y" value="-1.136868377e-13"/>
       </Item>
    </Item>
    <Item type="Line" size="32">
@@ -1840,11 +1840,11 @@
    <Item type="Line" size="32">
       <Item name="From" type="D2POINT">
          <Value name="X" value="5925"/>
-         <Value name="Y" value="1.136868377e-13"/>
+         <Value name="Y" value="0"/>
       </Item>
       <Item name="To" type="D2POINT">
          <Value name="X" value="6075"/>
-         <Value name="Y" value="1.136868377e-13"/>
+         <Value name="Y" value="0"/>
       </Item>
    </Item>
    <Item type="Line" size="32">
@@ -1960,11 +1960,11 @@
    <Item type="Line" size="32">
       <Item name="From" type="D2POINT">
          <Value name="X" value="7425"/>
-         <Value name="Y" value="1.136868377e-13"/>
+         <Value name="Y" value="0"/>
       </Item>
       <Item name="To" type="D2POINT">
          <Value name="X" value="7575"/>
-         <Value name="Y" value="1.136868377e-13"/>
+         <Value name="Y" value="0"/>
       </Item>
    </Item>
    <Item type="Line" size="32">

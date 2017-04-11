@@ -82,7 +82,7 @@ def _va_width(data):
     return width
 
 
-class GXdb():
+class GXdb:
     '''
     Class to work with Geosoft databases. This class wraps many of the functions found in geosoft.gxapi.GXDB.
 
@@ -241,7 +241,7 @@ class GXdb():
             gdb._edb = gxapi.GXEDB.current()
             gdb._db = gxapi.GXEDB.lock(gdb._edb)
         else:
-            gdb._eDB = None
+            gdb._edb = None
             gdb._db = gxapi.GXDB.open(name, 'SUPER', '')
 
         gxapi.GXDB.get_name(gdb._db, gxapi.DB_NAME_FILE, gdb._sr)
