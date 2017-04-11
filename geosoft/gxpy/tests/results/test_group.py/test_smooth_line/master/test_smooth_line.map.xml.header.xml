@@ -1,0 +1,9 @@
+<header>
+   <Item name="Name" value="test_smooth_line.map"/>
+   <Item name="Extents" type="L2AREA">
+      <Value name="MinX" value="0"/>
+      <Value name="MinY" value="0"/>
+      <Value name="MaxX" value="36396"/>
+      <Value name="MaxY" value="39996"/>
+   </Item>
+</header>
