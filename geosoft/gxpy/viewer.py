@@ -33,7 +33,7 @@ def map(map_file_name, title=None):
 
     with gxmap.GXmap.open(map_file_name) as gmap:
         if title is None:
-            title = gmap.filename
+            title = gmap.file_name
         gxapi.GXGUI.simple_map_dialog(gmap.gxmap, title, "")
 
 def v3d(file_name, title = None):

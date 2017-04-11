@@ -10,6 +10,7 @@ import geosoft.gxpy.map as gxmap
 import geosoft.gxpy.view as gxgm
 import geosoft.gxpy.geometry as gxgm
 import geosoft.gxpy.vv as gxvv
+import geosoft.gxpy.coordinate_system as gxcs
 
 class Test(unittest.TestCase):
 
@@ -216,11 +217,11 @@ class Test(unittest.TestCase):
         self.assertFalse(p1 is p2)
         self.assertTrue(p1 == p2)
 
-        p2.set_cs(cs="WGS 84")
+        p2.cs = "WGS 84"
         self.assertTrue(p1 == p2)
-        p1.set_cs("WGS 84")
+        p1.cs = "WGS 84"
         self.assertTrue(p1 == p2)
-        p1.set_cs(cs="WGS 84 [geoid]")
+        p1.cs = gxcs.GXcs("WGS 84 [geoid]")
         self.assertTrue(p1 == p2)
 
     def test_p2(self):

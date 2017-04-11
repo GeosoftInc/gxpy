@@ -24,6 +24,7 @@ Submodules
     geosoft.gxpy.utility
     geosoft.gxpy.va
     geosoft.gxpy.view
+    geosoft.gxpy.group
     geosoft.gxpy.viewer
     geosoft.gxpy.vv
 

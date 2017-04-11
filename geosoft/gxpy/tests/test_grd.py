@@ -231,7 +231,7 @@ class Test(unittest.TestCase):
 
         with gxgrd.GXgrd.open(self.g1f) as g:
             g2 = g.save_as(os.path.join(self.folder,'testDelete.grd'))
-            filen = g2.filename
+            filen = g2.file_name
             g2.delete_files()
             g2.close()
 
@@ -247,7 +247,7 @@ class Test(unittest.TestCase):
             g2 = g.save_as(ofile)
             properties = g2.properties()
             g2.close()
-            self.assertEqual(properties.get('filename'),os.path.abspath(ofile.split('(')[0]))
+            self.assertEqual(properties.get('file_name'),os.path.abspath(ofile.split('(')[0]))
             self.assertEqual(properties.get('decoration'),'HGD')
             self.assertEqual(properties.get('gridtype'),'HGD')
             self.assertAlmostEqual(properties.get('dx'),0.01)
@@ -348,10 +348,10 @@ class Test(unittest.TestCase):
     def test_from_array(self):
         self.start(gsys.func_name())
 
-        filename = os.path.join(self.folder, "test_array.grd")
+        file_name = os.path.join(self.folder, "test_array.grd")
 
         data = np.arange(24).reshape((8,3))
-        with gxgrd.GXgrd.from_data_array(data, filename) as grd:
+        with gxgrd.GXgrd.from_data_array(data, file_name) as grd:
             grd.delete_files()
             properties = grd.properties()
             self.assertEqual(properties.get('dx'),1.0)
@@ -363,7 +363,7 @@ class Test(unittest.TestCase):
             self.assertEqual(properties.get('ny'),8)
             self.assertEqual(str(properties.get('cs')),'*unknown')
 
-        with gxgrd.GXgrd.from_data_array(data, filename,
+        with gxgrd.GXgrd.from_data_array(data, file_name,
                                          properties={'x0':575268, 'dx':2.0, 'dy':1.5, 'rot':15, 'cs':'WGS 84'}) as grd:
             grd.delete_files()
             properties = grd.properties()

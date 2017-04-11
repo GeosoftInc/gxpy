@@ -27,14 +27,28 @@ class Geometry:
     .. versionadded:: 9.2
     """
 
+    def __enter__(self):
+        return self
+
+    def __exit__(self, xtype, xvalue, xtraceback):
+        pass
+
+    def __repr__(self):
+        return "{}({})".format(self.__class__, self.__dict__)
+
     def __init__(self, **kwargs):
-         self.cs = gxcs.GXcs(**kwargs)
+         self._cs = gxcs.GXcs(**kwargs)
 
     def __eq__(self, other):
-        return self.cs.same_as(other.cs)
+        return self._cs.same_as(other._cs)
 
-    def set_cs(self, *args, **kwargs):
-        self.cs = gxcs.GXcs(*args, **kwargs)
+    @property
+    def cs(self):
+        return self._cs
+
+    @cs.setter
+    def cs(self, cs):
+        self._cs = gxcs.GXcs(cs)
 
 
 class Point(Geometry):
@@ -51,14 +65,6 @@ class Point(Geometry):
 
     .. versionadded:: 9.2
     """
-    def __enter__(self):
-        return self
-
-    def __exit__(self, xtype, xvalue, xtraceback):
-        pass
-
-    def __repr__(self):
-        return "{}({})".format(self.__class__, self.__dict__)
 
     def __str__(self):
         return "({}, {}, {})".format(self.x(), self.y(), self.z())
@@ -177,14 +183,6 @@ class Point2(Geometry):
 
     .. versionadded:: 9.2
     """
-    def __enter__(self):
-        return self
-
-    def __exit__(self, xtype, xvalue, xtraceback):
-        pass
-
-    def __repr__(self):
-        return "{}({})".format(self.__class__, self.__dict__)
 
     def __str__(self):
         return "Point2[({}, {}, {}) ({}, {}, {})]".format(self.p1.x, self.p1.y, self.p1.z,

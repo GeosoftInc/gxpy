@@ -49,23 +49,7 @@ class GXagg():
         return "{}({})".format(self.__class__, self.__dict__)
 
     def __str__(self):
-        s = ''
-        layernames = self.layer_file_names()
-        if not layernames:
-            return s
-        names = []
-        for fn in layernames:
-            names.append(os.path.basename(fn).split('.')[0])
-        for fn in names:
-            # ignore shaded layers if parent is here.
-            if fn[-2:] == '_s':
-                if fn[:-2] in names:
-                    continue
-                i = str.rfind(fn[:-2], '_')
-                if i > 1 and fn[:i] in names:
-                    continue
-            s = s + fn + ', '
-        return s[:-2]
+        return self._create_name()
 
     def __enter__(self):
         return self
@@ -92,6 +76,28 @@ class GXagg():
         a = max(-1.0, min(adjustment, 1.0))
         self.gxagg.change_brightness(a)
 
+    @property
+    def name(self):
+        return self._create_name()
+
+    def _create_name(self):
+        s = ''
+        layernames = self.layer_file_names()
+        if not layernames:
+            return s
+        names = []
+        for fn in layernames:
+            names.append(os.path.basename(fn).split('.')[0])
+        for fn in names:
+            # ignore shaded layers if parent is here.
+            if fn[-2:] == '_s':
+                if fn[:-2] in names:
+                    continue
+                i = str.rfind(fn[:-2], '_')
+                if i > 1 and fn[:i] in names:
+                    continue
+            s = s + fn + ', '
+        return s[:-2]
 
     def add_layer(self,
                   grid_file,

@@ -11,6 +11,7 @@ __all__ = ['system',
            'agg',
            'map',
            'view',
+           'group'
            'viewer']
 
 #: global constants not defined in GXAPI
@@ -29,4 +30,5 @@ from . import gdb
 from . import agg
 from . import map
 from . import view
+from . import group
 from . import viewer

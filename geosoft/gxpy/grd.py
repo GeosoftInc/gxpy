@@ -91,10 +91,10 @@ def decorate_name(name, decorations=''):
     return name + '(' + d + ')'
 
 
-def delete_files(filename):
+def delete_files(file_name):
     """
     Delete all files associates with this grid name.
-    :param filename:
+    :param file_name:
 
     .. versionadded:: 9.2
     """
@@ -105,14 +105,14 @@ def delete_files(filename):
         except OSError as e:
             pass
 
-    if filename is not None:
+    if file_name is not None:
 
-        fn = name_parts(filename)
-        filename = os.path.join(fn[0], fn[1])
+        fn = name_parts(file_name)
+        file_name = os.path.join(fn[0], fn[1])
         ext = fn[3]
-        df(filename)
-        df(filename + '.gi')
-        df(filename + '.xml')
+        df(file_name)
+        df(file_name + '.gi')
+        df(file_name + '.xml')
 
         # remove shaded files associated with this grid
         file_s = os.path.join(fn[0], fn[1].replace('.', '_')) + '_s.grd'
@@ -124,7 +124,7 @@ def delete_files(filename):
         # hgd files
         if ext == '.hgd':
             for i in range(16):
-                df(filename + str(i))
+                df(file_name + str(i))
 
 # constants
 FILE_READ = 0
@@ -147,7 +147,7 @@ class GXgrd():
 
     gc = None
     _delete_files = False
-    _filename = None
+    _file_name = None
 
     def __enter__(self):
         return self
@@ -168,11 +168,11 @@ class GXgrd():
             if self._delete_files:
 
                 self._img = None
-                delete_files(self._filename)
+                delete_files(self._file_name)
 
             elif self._hgd:
                 # an HGD memory grid was made, save it to an HGD file
-                gxapi.GXHGD.h_create_img(self._img, decorate_name(self._filename, 'HGD'))
+                gxapi.GXHGD.h_create_img(self._img, decorate_name(self._file_name, 'HGD'))
 
             self._img = None
             if pop:
@@ -183,12 +183,12 @@ class GXgrd():
         return "{}({})".format(self.__class__, self.__dict__)
 
     def __str__(self):
-        if self._filename is None:
+        if self._file_name is None:
             return '__memory__'
         else:
-            return self._filename
+            return self._file_name
 
-    def __init__(self, fileName=None, dtype=None, mode=None, kx=1, dim=None):
+    def __init__(self, file_name=None, dtype=None, mode=None, kx=1, dim=None):
 
         self._delete_files = False
         self._readonly = False
@@ -202,11 +202,11 @@ class GXgrd():
 
         # rebuild a clean file name
         self._hgd = False
-        if (fileName is None) or (len(fileName.strip()) == 0):
-            self._filename = None
+        if (file_name is None) or (len(file_name.strip()) == 0):
+            self._file_name = None
         else:
-            self._np = name_parts(fileName)
-            self._filename = decorate_name(os.path.join(self._np[0], self._np[1]), self._np[4])
+            self._np = name_parts(file_name)
+            self._file_name = decorate_name(os.path.join(self._np[0], self._np[1]), self._np[4])
 
             if mode == FILE_NEW:
                 # special case - HGD file, must work with a memory grid, save to HGD at end
@@ -214,7 +214,7 @@ class GXgrd():
                     self._hgd = True
 
         self._img = None
-        if (self._filename is None):
+        if (self._file_name is None):
             self._img = gxapi.GXIMG.create(gxu.gx_dtype(dtype), kx, dim[0], dim[1])
 
         elif mode == FILE_NEW:
@@ -222,28 +222,28 @@ class GXgrd():
                 # for HGD grids, make a memory grid, which will be saved to an HGD on closing
                 self._img = gxapi.GXIMG.create(gxu.gx_dtype(dtype), kx, dim[0], dim[1])
             else:
-                self._img = gxapi.GXIMG.create_new_file(gxu.gx_dtype(dtype), kx, dim[0], dim[1], self._filename)
+                self._img = gxapi.GXIMG.create_new_file(gxu.gx_dtype(dtype), kx, dim[0], dim[1], self._file_name)
 
         elif mode == FILE_READ:
-            self._img = gxapi.GXIMG.create_file(gxu.gx_dtype(dtype), self._filename, gxapi.IMG_FILE_READONLY)
+            self._img = gxapi.GXIMG.create_file(gxu.gx_dtype(dtype), self._file_name, gxapi.IMG_FILE_READONLY)
             self._readonly = True
 
         else:
-            self._img = gxapi.GXIMG.create_file(gxu.gx_dtype(dtype), self._filename, gxapi.IMG_FILE_READORWRITE)
+            self._img = gxapi.GXIMG.create_file(gxu.gx_dtype(dtype), self._file_name, gxapi.IMG_FILE_READORWRITE)
 
         atexit.register(self._close, pop=False)
-        self._open = gx.track_resource(self.__class__.__name__, self._filename)
+        self._open = gx.track_resource(self.__class__.__name__, self._file_name)
 
     @property
-    def filename(self):
-        return self._filename.split('(')[0]
+    def file_name(self):
+        return self._file_name.split('(')[0]
 
     @classmethod
-    def open(cls, fileName, dtype=None, mode=None):
+    def open(cls, file_name, dtype=None, mode=None):
         """
         Open an existing grid file.
 
-        :param fileName:    name of the grid file
+        :param file_name:    name of the grid file
         :param dtype:       numpy data type
         :param mode:        open mode:
 
@@ -257,16 +257,16 @@ class GXgrd():
 
         if mode is None:
             mode = FILE_READ
-        grd = cls(fileName, dtype=dtype, mode=mode)
+        grd = cls(file_name, dtype=dtype, mode=mode)
 
         return grd
 
     @classmethod
-    def new(cls, fileName=None, properties={}):
+    def new(cls, file_name=None, properties={}):
         """
         Create a new grid file.
 
-        :param fileName:    name of the grid file, None or '' for a memory grid
+        :param file_name:    name of the grid file, None or '' for a memory grid
         :param properties:  dictionary of grid properties
 
         .. versionadded:: 9.1
@@ -279,18 +279,18 @@ class GXgrd():
         if (nx <= 0) or (ny <= 0):
             raise GRDException(_t('Grid dimension ({},{}) must be > 0').format(nx, ny))
 
-        grd = cls(fileName, dtype=dtype, mode=FILE_NEW, dim=(nx, ny))
+        grd = cls(file_name, dtype=dtype, mode=FILE_NEW, dim=(nx, ny))
         grd.set_properties(properties)
 
         return grd
 
     @classmethod
-    def from_data_array(cls, data, filename, properties={}):
+    def from_data_array(cls, data, file_name, properties={}):
         """
         Create grid from a 2D numpy array.
 
         :param data:        2D numpy data array, must be 2D
-        :param filename:    name of the file
+        :param file_name:    name of the file
         :return:            GXgrd instance
 
         .. versionadded:: 9.1
@@ -300,7 +300,7 @@ class GXgrd():
         properties['nx'] = nx
         properties['ny'] = ny
         properties['dtype'] = data.dtype
-        grd = cls.new(filename, properties=properties)
+        grd = cls.new(file_name, properties=properties)
         grd.write_rows(data)
         return grd
 
@@ -396,13 +396,13 @@ class GXgrd():
         return -self._img.query_double(gxapi.IMG_QUERY_rROT)
 
     @property
-    def filename(self):
+    def file_name(self):
         """
         :return: grid file name, without decorations
 
         .. versionadded:: 9.2
         """
-        np = name_parts(self._filename)
+        np = name_parts(self._file_name)
         return os.path.join(np[0], np[1])
 
     @property
@@ -412,7 +412,7 @@ class GXgrd():
 
         .. versionadded:: 9.2
         """
-        np = name_parts(self._filename)
+        np = name_parts(self._file_name)
         if len(np[4]) > 0:
             return np[4].split(';')[0]
         else:
@@ -425,7 +425,7 @@ class GXgrd():
 
         .. versionadded:: 9.2
         """
-        return name_parts(self._filename)[4]
+        return name_parts(self._file_name)[4]
 
     @property
     def cs(self):
@@ -456,7 +456,7 @@ class GXgrd():
         properties['dy'] = self.dy
         properties['rot'] = self.rot
         properties['dtype'] = self.dtype
-        properties['filename'] = self.filename
+        properties['file_name'] = self.file_name
         properties['gridtype'] = self.gridtype
         properties['decoration'] = self.decoration
         properties['cs'] = self.cs
@@ -511,7 +511,7 @@ class GXgrd():
         """
 
         if self._readonly:
-            raise GRDException(_t('{} opened as read-only, cannot set properties.').format(self._filename))
+            raise GRDException(_t('{} opened as read-only, cannot set properties.').format(self._file_name))
 
         dx = properties.get('dx', 1.0)
         dy = properties.get('dy', dx)
@@ -525,11 +525,11 @@ class GXgrd():
                 cs = gxcs.GXcs(cs)
             self._img.set_ipj(cs.gxipj)
 
-    def save_as(self, fileName, dtype=None):
+    def save_as(self, file_name, dtype=None):
         """
         Save a grid to a new file.  File is overwritten if it exists.
 
-        :param fileName:    name of the file to save
+        :param file_name:    name of the file to save
         :param dtype:       numpy data type, None to use type of the parent grid
         :return:            GXgrd instance of saved file, must be closed with a call to close().
 
@@ -540,10 +540,10 @@ class GXgrd():
         if not (dtype is None):
             p['dtype'] = dtype
 
-        with GXgrd.new(fileName, p) as sg:
+        with GXgrd.new(file_name, p) as sg:
             self._img.copy(sg._img)
 
-        return GXgrd.open(fileName, mode=FILE_READWRITE)
+        return GXgrd.open(file_name, mode=FILE_READWRITE)
 
     def _geth_pg(self):
         '''Get an hpg for the grid, adding the handle to the class so it does not get destroyed.'''

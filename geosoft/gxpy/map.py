@@ -1,7 +1,6 @@
 import os
 import atexit
 from math import ceil
-from functools import wraps
 
 import geosoft
 import geosoft.gxapi as gxapi
@@ -10,11 +9,14 @@ from . import utility as gxu
 from . import dataframe as gxdf
 from . import view as gxv
 from . import geometry as gxgm
+from . import group as gxg
 
 __version__ = geosoft.__version__
 
+
 def _t(s):
     return s
+
 
 class MapException(Exception):
     """
@@ -23,6 +25,7 @@ class MapException(Exception):
     .. versionadded:: 9.2
     """
     pass
+
 
 WRITE_NEW = 1
 WRITE_OLD = 2
@@ -33,22 +36,11 @@ LIST_2D = gxapi.MAP_LIST_MODE_NOT3D
 
 VIEW_NAME_SIZE = 2080
 
-# 2D map reference points
-REF_BOTTOM_LEFT = 0
-REF_BOTTOM_CENTER = 1
-REF_BOTTOM_RIGHT = 2
-REF_CENTER_LEFT = 3
-REF_CENTER = 4
-REF_CENTER_RIGHT = 5
-REF_TOP_LEFT = 6
-REF_TOP_CENTER = 7
-REF_TOP_RIGHT = 8
-
 TEXT_BOTTOM_LEFT = -1
 TEXT_BOTTOM_CENTER = 0
 TEXT_BOTTOM_RIGHT = 1
 TEXT_ALL_CENTER = 2
-TEXT_BASE_LEFT= 3
+TEXT_BASE_LEFT = 3
 TEXT_BASE_CENTER = 4
 TEXT_BASE_RIGHT = 5
 TEXT_BASE_ALL_CENTER = 6
@@ -82,6 +74,7 @@ COLOR_BAR_ANNOTATE_LEFT = -1
 COLOR_BAR_ANNOTATE_TOP = 1
 COLOR_BAR_ANNOTATE_BOTTOM = -1
 
+
 class Line_def:
     def __init__(self,
                  line_colour='k',
@@ -91,24 +84,26 @@ class Line_def:
         self._fill_colour = fill_colour
         self._thickness = thickness
 
-def map_file_name(filename):
-    """
-    Return a fully resolved map file path using the filename, with .map extyension
 
-    :param filename:    file name, with ot without path and/or extension
+def map_file_name(file_name):
+    """
+    Return a fully resolved map file path using the file name, with .map extyension
+
+    :param file_name:    file name, with ot without path and/or extension
     :return:            file name path with extension .map
 
     .. versionadded:: 9.2
     """
-    ext = os.path.splitext(filename)[1].lower()
+    ext = os.path.splitext(file_name)[1].lower()
     if ext != '.map' and ext != '.geosoft_3dv':
-        filename += '.map'
-    return os.path.abspath(filename)
+        file_name += '.map'
+    return os.path.abspath(file_name)
 
-def delete_files(filename):
+
+def delete_files(file_name):
     """
     Delete all files associates with this map name.
-    :param filename:
+    :param file_name:
 
     .. versionadded:: 9.2
     """
@@ -119,10 +114,11 @@ def delete_files(filename):
         except FileNotFoundError:
             pass
 
-    filename = map_file_name(filename)
-    remove(filename + '.xml')
-    remove(os.path.splitext(filename)[0] + '.mdf')
-    remove(filename)
+    file_name = map_file_name(file_name)
+    remove(file_name + '.xml')
+    remove(os.path.splitext(file_name)[0] + '.mdf')
+    remove(file_name)
+
 
 def save_as_image(mapfile, imagefile, type="PNG", pix_width=1000, pix_height=0):
     """
@@ -144,6 +140,7 @@ def save_as_image(mapfile, imagefile, type="PNG", pix_width=1000, pix_height=0):
                                   gxapi.MAP_EXPORT_METHOD_NONE,
                                   type, '')
 
+
 def crc_map(mapfile, pix_width=1000):
     """
     Return the CRC of a map based on the output bitmap image.
@@ -163,6 +160,7 @@ def crc_map(mapfile, pix_width=1000):
     except FileNotFoundError:
         pass
     return crc
+
 
 class GXmap:
     """
@@ -212,21 +210,22 @@ class GXmap:
         return "{}({})".format(self.__class__, self.__dict__)
 
     def __str__(self):
-        return self._filename
+        return self._file_name
 
-    def __init__(self, filename, mode=WRITE_NEW, _internal=False):
+    def __init__(self, file_name, mode=WRITE_NEW, _internal=False):
 
         if not _internal:
             raise MapException(_t("GXmap must be created from GXmap.new(), or GXmap.open()."))
 
         self.gxmap = None
         self._remove = False
-        self._filename = map_file_name(filename)
+        self._file_name = map_file_name(file_name)
+        self._name = os.path.splitext(os.path.split(self._file_name)[1])[0]
         self._annotation_outer_edge = 0.0
-        self.gxmap = gxapi.GXMAP.create(self.filename, mode)
+        self.gxmap = gxapi.GXMAP.create(self.file_name, mode)
 
         atexit.register(self._close, pop=False)
-        self._open = gx.track_resource(self.__class__.__name__, self._filename)
+        self._open = gx.track_resource(self.__class__.__name__, self._file_name)
 
     def _close(self, pop=True):
         if self._open:
@@ -234,13 +233,13 @@ class GXmap:
 
                 if not self._remove:
                     pass
-                    #self.gxmap.clean()
+                    # self.gxmap.clean()
 
                 self.gxmap = None
 
                 if self._remove:
                     try:
-                        delete_files(self._filename)
+                        delete_files(self._file_name)
                     except OSError:  # remove if we can
                         pass
             if pop:
@@ -248,21 +247,21 @@ class GXmap:
             self._open = None
 
     @classmethod
-    def open(cls, filename):
+    def open(cls, file_name):
         """
         Open an existing map file.
 
-        :param filename:    name of the map file
+        :param file_name:    name of the map file
 
         .. versionadded:: 9.2
         """
 
-        gmap = cls(filename, mode=WRITE_OLD, _internal=True)
+        map = cls(file_name, mode=WRITE_OLD, _internal=True)
 
-        return gmap
+        return map
 
     @classmethod
-    def new(cls, filename=None, data_area=(0.,0.,100.,100.), scale=None,
+    def new(cls, file_name=None, data_area=(0., 0., 100., 100.), scale=None,
             cs=None, media=None, layout=None, fixed_size=None, map_style='figure',
             margins=None, inside_margin=1.0, overwrite=False, no_data_view=False):
 
@@ -270,8 +269,8 @@ class GXmap:
         Create and open a new Geosoft map.
 
         :parameters:
-            :filename:      Map file name.  If not specified a temporary file is created in the instance
-                            temporary folder.  Use ``filename()`` to get the file name if needed.  The 
+            :file_name:      Map file name.  If not specified a temporary file is created in the instance
+                            temporary folder.  Use ``file_name()`` to get the file name if needed.  The 
                             temporary map file will be unique and will exist through the life of the
                             Python GX instance, but will be deleted along with all temporary files
                             when the GX loses context.
@@ -315,14 +314,13 @@ class GXmap:
             im = inside_margin * 2
             return mx - im, my - im  # data window on map cm
 
-        def set_registry(gmap, style, inside_margin):
+        def set_registry(map, style, inside_margin):
             rd = {'MAP.STYLE': style,
                   'MAP.MARGIN_INSIDE': str(inside_margin),
                   'MAP.UP_DIRECTION': 'right',
                   'MAP.UP_ANGLE': '67.5'}
-            gmap.gxmap.set_reg(gxu.reg_from_dict(rd))
+            map.gxmap.set_reg(gxu.reg_from_dict(rd))
 
-        
         if ((data_area[2] - data_area[0]) <= 0.0) or ((data_area[3] - data_area[1]) <= 0.0):
             raise MapException(_t('Invalid data area {}'.format(data_area)))
 
@@ -332,24 +330,24 @@ class GXmap:
             else:
                 layout = MAP_LANDSCAPE
 
-        if filename is None:
+        if file_name is None:
 
             # get a new temporary map file name
             tempname = "temp_map"
             i = 0
             while True:
-                filename = map_file_name(os.path.join(gx.GXpy().temp_folder(), tempname + str(i) + '.map'))
-                if not os.path.isfile(filename):
+                file_name = map_file_name(os.path.join(gx.GXpy().temp_folder(), tempname + str(i) + '.map'))
+                if not os.path.isfile(file_name):
                     break
                 i += 1
 
         else:
             if not overwrite:
-                filename = map_file_name(filename)
-                if os.path.isfile(filename):
-                    raise MapException(_t('Cannot overwrite existing file: "{}"').format(filename))
+                file_name = map_file_name(file_name)
+                if os.path.isfile(file_name):
+                    raise MapException(_t('Cannot overwrite existing file: "{}"').format(file_name))
 
-        gmap = cls(filename, WRITE_NEW, _internal=True)
+        map = cls(file_name, WRITE_NEW, _internal=True)
 
         if type(media) is str:
             try:
@@ -426,8 +424,8 @@ class GXmap:
             raise MapException(_t('The data does not fit media ({},{})cm at a scale of 1:{}')
                                .format(media[0], media[1], scale))
 
-        gxapi.GXMVU.mapset(gmap.gxmap,
-                           'base', 
+        gxapi.GXMVU.mapset(map.gxmap,
+                           'base',
                            '' if no_data_view else 'data',
                            data_area[0], data_area[2],
                            data_area[1], data_area[3],
@@ -436,18 +434,22 @@ class GXmap:
                            m_left, m_right, m_bottom, m_top,
                            float(inside_margin))
 
-        with gxv.GXview(gmap=gmap, viewname='*data', mode=gxv.WRITE_OLD) as view:
-            view.set_cs(cs)
-        set_registry(gmap, map_style, inside_margin)
+        with gxv.GXview(map=map, name='*data', mode=gxv.WRITE_OLD) as view:
+            view.cs = cs
+        set_registry(map, map_style, inside_margin)
 
-        return gmap
+        return map
 
     @property
-    def filename(self):
+    def name(self):
+        return self._name
+
+    @property
+    def file_name(self):
         """
         Full map file path name.
         """
-        return self._filename
+        return self._file_name
 
     @property
     def current_data_view(self):
@@ -503,15 +505,14 @@ class GXmap:
         that 
         :param name:    view name: '*data' will return the name associated with the 'data' class, while
                         'my_view' will return 'my_view'.
-        
+
         :return:        the name, or if a class name, the view name associated with that class.
-        
+
         .. versionadded: 9.2
         """
         if name[0] != '*':
             return name
         return self.get_class_view_name(name[1:])
-
 
     def _views(self, view_type=LIST_ALL):
         """
@@ -536,7 +537,7 @@ class GXmap:
         return self._views(LIST_3D)
 
     def aggregate_list(self, mode=0):
-        glst = gxapi.GXLST.create(gxv.GROUP_NAME_SIZE)
+        glst = gxapi.GXLST.create(gxg.GROUP_NAME_SIZE)
         self.gxmap.agg_list_ex(glst, mode, 0)
         return list(gxu.dict_from_lst(glst))
 
@@ -547,7 +548,7 @@ class GXmap:
     def copy_view(self, old, new, overwrite=False, copy_all=True):
         """
         Copy an existing view into a new view.
-        
+
         :param old:         name of the existing view
         :param new:         name for the new view
         :param overwrite:   True to overwrite an existing view if it exists
@@ -573,17 +574,17 @@ class GXmap:
 
         if s.value != new:
             self.gxmap.delete_view(new)
-            raise MapException(_t('Invalud view name "{}", suggest "{}"').format(new, s.value ))
+            raise MapException(_t('Invalud view name "{}", suggest "{}"').format(new, s.value))
 
-    def delete_view(self, viewname):
+    def delete_view(self, name):
         """
         Delete a view from a map. You cannot delete the last view in a mep.
-        
-        :param viewname: name of the view to delete
-        
+
+        :param name: name of the view to delete
+
         .. versionadded:: 9.2
         """
-        self.gxmap.delete_view(self.classview(viewname))
+        self.gxmap.delete_view(self.classview(name))
 
     def mdf(self):
         """
@@ -598,7 +599,7 @@ class GXmap:
 
         views = self.view_list_2D
 
-        if not(self.has_view(self.current_data_view) and self.has_view(self.current_base_view)):
+        if not (self.has_view(self.current_data_view) and self.has_view(self.current_base_view)):
             raise MapException('The map must have both a base view and a data view.')
 
         xmn = gxapi.float_ref()
@@ -606,13 +607,13 @@ class GXmap:
         xmx = gxapi.float_ref()
         ymx = gxapi.float_ref()
 
-        with gxv.GXview(self, self.current_base_view, gxv.READ_ONLY) as v:
+        with gxv.GXview(self, self.current_base_view, gxg.READ_ONLY) as v:
             v.gxview.extent(gxapi.MVIEW_EXTENT_CLIP, gxapi.MVIEW_EXTENT_UNIT_MM,
                             xmn, ymn, xmx, ymx)
             mapx = (xmx.value - xmn.value) * 0.1
             mapy = (ymx.value - ymn.value) * 0.1
 
-        with gxv.GXview(self, self.current_data_view, gxv.READ_ONLY) as v:
+        with gxv.GXview(self, self.current_data_view, gxg.READ_ONLY) as v:
             v.gxview.extent(gxapi.MVIEW_EXTENT_CLIP, gxapi.MVIEW_EXTENT_UNIT_MM,
                             xmn, ymn, xmx, ymx)
             view_map = (xmn.value * 0.1,
@@ -655,12 +656,12 @@ class GXmap:
         self.gxmap.get_class_name(view_class, sr)
         return sr.value.lower()
 
-    def set_class_view_name(self, view_class, view_name):
+    def set_class_view_name(self, view_class, name):
         """
         Set the view name associated with a class.
 
         :param view_class:  class name
-        :param view_name:   name of the view associated with this class.
+        :param name:   name of the view associated with this class.
 
         Common view class names are::
 
@@ -670,29 +671,29 @@ class GXmap:
 
         .. versionadded:: 9.2
         """
-        self.gxmap.set_class_name(view_class, view_name)
+        self.gxmap.set_class_name(view_class, name)
 
-    def create_linked_3d_view(self, view, view_name = '3D', area=(0,0,30,30)):
+    def create_linked_3d_view(self, view, name='3D', area=(0, 0, 30, 30)):
         """
         Create a linked 3D view inside a 2D map to a `gxpy.view.GXview3d` in a 3DV
 
         :param view: A `gxpy.view.GXview3d` instance
-        :param view_name:   name of the linked view to create
+        :param name:   name of the linked view to create
         :param area: (min_x, min_y, max_x, max_y) placement of view on map in mm
 
         .. versionadded:: 9.2
         """
-        self.gxmap.create_linked_3d_view(view.gxview, view_name, area[0], area[1], area[2], area[3])
+        self.gxmap.create_linked_3d_view(view.gxview, name, area[0], area[1], area[2], area[3])
 
-    def map_reference_location(self, refp, viewname='base'):
+    def map_reference_location(self, refp, view_name='base'):
         """
         Return the location of a reference point relative to the current clipping window
         extent of a view on the map.
-        
+
         :param refp: One of:
-        
+
             ::
-            
+
                 REF_BOTTOM_LEFT
                 REF_BOTTOM_CENTER
                 REF_BOTTOM_RIGHT
@@ -702,22 +703,22 @@ class GXmap:
                 REF_TOP_LEFT
                 REF_TOP_CENTER
                 REF_TOP_RIGHT
-                
-        :param viewname:    the name of the view, default is the base view which returns the
+
+        :param view_name:    the name of the view, default is the base view which returns the
                             extent in map cm.
 
         :return:    (x, y) in view units
-        
+
         .. versionadded:: 9.2
         """
 
-        viewname = self.classview(viewname)
+        view_name = self.classview(view_name)
 
-        if not viewname:
+        if not view_name:
             with gxv.GXview(self, self.current_base_view) as v:
                 extent = v.extent_map_cm(v.extent_clip)
         else:
-            with gxv.GXview(self, viewname) as v:
+            with gxv.GXview(self, view_name) as v:
                 extent = v.extent_clip
 
         xc = extent[0] + (extent[2] - extent[0]) * 0.5
@@ -738,16 +739,16 @@ class GXmap:
         """
         Draw a map surround.  This will draw a single or a double neat-line around the base view of the
         map.
-        
+
         :param outer_pen:   outer-line pen attributes
         :param inner_pen:   inner-line pen attributes
         :param gap:         gap between the outer and inner line in cm.  If 0, only the outer line is drawn.
-         
+
         .. versionadded:: 9.2
         """
 
         if outer_pen is None:
-            outer_pen = gxv.Pen(line_thick=0.0500)
+            outer_pen = gxg.Pen(line_thick=0.0500)
 
         with _Mapplot(self) as mpl:
 
@@ -758,7 +759,7 @@ class GXmap:
                 gap = ''
             else:
                 if inner_pen is None:
-                    inner_pen = gxv.Pen(line_thick=0.01)
+                    inner_pen = gxg.Pen(line_thick=0.01)
                 inner = 'inner'
                 mpl.define_named_attribute(inner, pen=inner_pen)
 
@@ -789,7 +790,7 @@ class GXmap:
         .. versionadded:: 9.2
         """
 
-        #TODO add IGRF calculation from a date, igrfdate=
+        # TODO add IGRF calculation from a date, igrfdate=
 
         if direction is None:
             with gxv.GXview(self, '*data', mode=gxv.WRITE_OLD) as v:
@@ -804,10 +805,10 @@ class GXmap:
             declination = ''
 
         if pen is None:
-            pen = gxv.Pen(line_thick=0.015)
+            pen = gxg.Pen(line_thick=0.015)
 
         if text_def is None:
-            text_def = gxv.Text_def(height=0.25, italics=True, weight=gxv.FONT_WEIGHT_LIGHT)
+            text_def = gxg.Text_def(height=0.25, italics=True, weight=gxg.FONT_WEIGHT_LIGHT)
 
         with _Mapplot(self) as mpl:
             mpl.start_group('north_arrow', view=VIEW_BASE, mode=GROUP_APPEND)
@@ -850,10 +851,10 @@ class GXmap:
             option = 1
 
         if text is None:
-            text = gxv.Text_def(height=0.25, italics=True)
+            text = gxg.Text_def(height=0.25, italics=True)
 
         if pen is None:
-            pen = gxv.Pen(line_thick=0.050)
+            pen = gxg.Pen(line_thick=0.050)
 
         with _Mapplot(self) as mpl:
             mpl.start_group('scale_bar', view=VIEW_BASE, mode=GROUP_APPEND)
@@ -872,7 +873,8 @@ class GXmap:
         self._annotation_outer_edge += offset + text_height + inside * 0.5
         return offset
 
-    def annotate_data_xy(self, viewname='*data',
+    def annotate_data_xy(self,
+                         view_name='*data',
                          tick='', offset='',
                          x_sep='', x_dec='',
                          y_sep='', y_dec='',
@@ -885,7 +887,7 @@ class GXmap:
         """
         Annotate a data view axis
 
-        :param viewname:    name of the data view to annotate
+        :param view_name:    name of the data view to annotate
         :param tick:        inner tick size in cm
         :param offset:      posting offset from the edge in cm. The posting edge is adjusted to be outside
                             character height for a subsequent call to an edge annotation.  This allows one to
@@ -899,51 +901,53 @@ class GXmap:
         :param grid:        Plot grid lines:
 
                             ::
-   
+
                                 GRID_NONE       no grid
                                 GRID_DOTTED     dotted lines
                                 GRID_CROSSES    crosses at intersections
                                 GRID_LINES      lines
-       
-        :param text_def:    ``gxv.Text_def``
-        :param edge_pen:    ``gxv.Pen``
-        :param grid_pen:    ``gxv.Pen``        
+
+        :param text_def:    ``gxg.Text_def``
+        :param edge_pen:    ``gxg.Pen``
+        :param grid_pen:    ``gxg.Pen``        
 
         .. versionadded:: 9.2
         """
 
         if text_def is None:
-            text_def = gxv.Text_def(height=0.18)
+            text_def = gxg.Text_def(height=0.18)
         if edge_pen is None:
-            edge_pen = gxv.Pen()
+            edge_pen = gxg.Pen()
         if grid_pen is None:
             grid_pen = edge_pen
 
         current_view = self.current_data_view
-        viewname = self.classview(viewname)
-        self.current_data_view = viewname
-
-        offset = self._annotation_offset(offset, text_def.height)
-
-        with gxv.GXview(self, viewname) as v:
-            v.xy_rectangle(v.extent_clip, pen=gxv.Pen(default=edge_pen, factor=v.units_per_map_cm))
+        view_name = self.classview(view_name)
+        self.current_data_view = view_name
 
         try:
 
+            offset = self._annotation_offset(offset, text_def.height)
+
+            with gxv.GXview(self, view_name) as v:
+                with gxg.GXdraw(v) as g:
+                    g.xy_rectangle(v.extent_clip, pen=gxg.Pen(default=edge_pen, factor=v.units_per_map_cm))
+
             with _Mapplot(self) as mpl:
 
-                mpl.start_group(viewname + '_edge', 1, viewname)
+                mpl.start_group(view_name + '_edge', 1, view_name)
 
                 if not tick and grid == GRID_LINES:
                     tick = 0.0
 
                 mpl.define_named_attribute('annot', text_def=text_def,
-                                           pen=gxv.Pen(line_color=text_def.color, line_thick=text_def.line_thick))
+                                           pen=gxg.Pen(line_color=text_def.color, line_thick=text_def.line_thick))
                 mpl.define_named_attribute(pen=edge_pen)
 
                 mpl.command("ANOX ,,,,,{},{},,{},,,,{},{},1".format(x_sep, tick, 0 if compass else -1, offset, x_dec))
                 mpl.command('     annot')
-                mpl.command("ANOY ,,,,,{},{},,{},{},,,{},{},1".format(y_sep, tick, 0 if compass else -1, top, offset, y_dec))
+                mpl.command(
+                    "ANOY ,,,,,{},{},,{},{},,,{},{},1".format(y_sep, tick, 0 if compass else -1, top, offset, y_dec))
                 mpl.command('     annot')
 
                 if grid:
@@ -956,7 +960,8 @@ class GXmap:
         finally:
             self.current_data_view = current_view
 
-    def annotate_data_ll(self, viewname='*data',
+    def annotate_data_ll(self,
+                         view_name='*data',
                          tick='',
                          offset='',
                          sep='',
@@ -988,31 +993,32 @@ class GXmap:
         """
 
         if text_def is None:
-            text_def = gxv.Text_def(height=0.18)
+            text_def = gxg.Text_def(height=0.18)
         if edge_pen is None:
-            edge_pen = gxv.Pen()
+            edge_pen = gxg.Pen()
         if grid_pen is None:
             grid_pen = edge_pen
 
         current_view = self.current_data_view
-        viewname = self.classview(viewname)
-        self.current_data_view = viewname
-
-        offset = self._annotation_offset(offset, text_def.height)
-
-        with gxv.GXview(self, viewname) as v:
-            v.xy_rectangle(v.extent_clip, pen=gxv.Pen(default=edge_pen, factor=v.units_per_map_cm))
+        view_name = self.classview(view_name)
+        self.current_data_view = view_name
 
         try:
 
+            offset = self._annotation_offset(offset, text_def.height)
+
+            with gxv.GXview(self, view_name) as v:
+                with gxg.GXdraw(v) as g:
+                    g.xy_rectangle(v.extent_clip, pen=gxg.Pen(default=edge_pen, factor=v.units_per_map_cm))
+
             with _Mapplot(self) as mpl:
 
-                mpl.start_group(viewname + '_edge', 1, viewname)
+                mpl.start_group(view_name + '_edge', 1, view_name)
                 if not tick and grid == GRID_LINES:
                     tick = 0.0
 
                 mpl.define_named_attribute('annot', text_def=text_def,
-                                           pen=gxv.Pen(line_color=text_def.color, line_thick=text_def.line_thick))
+                                           pen=gxg.Pen(line_color=text_def.color, line_thick=text_def.line_thick))
                 mpl.define_named_attribute(pen=edge_pen)
 
                 mpl.command("ALON {},{},{},,1".format(sep, tick, offset))
@@ -1030,50 +1036,47 @@ class GXmap:
         finally:
             self.current_data_view = current_view
 
-    def color_bar(self):
-        pass
-
     def agg_legend(self,
                    view_name='*data',
                    agg_name=None,
-                   bar_location = COLOR_BAR_RIGHT,
+                   bar_location=COLOR_BAR_RIGHT,
                    location=None,
-                   decimals = 1,
-                   annotation_height = 0.2,
-                   annotation_offset = None,
-                   annotation_side = COLOR_BAR_ANNOTATE_RIGHT,
-                   box_size = None,
-                   bar_width = None,
-                   max_bar_size = None,
-                   minimum_gap = 0,
-                   post_end_values = False,
-                   annotate_vertical = False,
-                   division_line = 1,
-                   interval_1 = None,
-                   interval_2 = None,
+                   decimals=1,
+                   annotation_height=0.2,
+                   annotation_offset=None,
+                   annotation_side=COLOR_BAR_ANNOTATE_RIGHT,
+                   box_size=None,
+                   bar_width=None,
+                   max_bar_size=None,
+                   minimum_gap=0,
+                   post_end_values=False,
+                   annotate_vertical=False,
+                   division_line=1,
+                   interval_1=None,
+                   interval_2=None,
                    title=''):
         """
         Draw an aggregate legend.
-        
+
         :param view_name:           view name, default is '*data'
         :param agg_name:            aggregate name, default is the first aggregate found
         :param bar_location:        one of:
-        
+
             ::
-            
+
                 COLOR_BAR_RIGHT = 0
                 COLOR_BAR_LEFT = 1
                 COLOR_BAR_BOTTOM = 2
                 COLOR_BAR_TOP = 3
-                
+
         :param location:            offset or (x, y) offset from view reference point, in cm.
         :param decimals:            annotation decimal places
         :param annotation_height:   annotation number height
         :param annotation_offset:   offset of annotations from the bar (cm)
         :param annotation_side:     side of the bar for annotations
-        
+
             ::
-            
+
                 COLOR_BAR_ANNOTATE_RIGHT = 1
                 COLOR_BAR_ANNOTATE_LEFT = -1
                 COLOR_BAR_ANNOTATE_TOP = 1
@@ -1089,7 +1092,7 @@ class GXmap:
         :param interval_1:          annotation increment, default annotates everything
         :param interval_2:          secondary smaller annotations, 1/10, 1/ 5, 1/4 or 1/2 interval_1
         :param title:               bar title, use new-lines for sub-titles.
-        
+
         .. versionadded:: 9.2
         """
 
@@ -1109,7 +1112,7 @@ class GXmap:
         def center_w_h(rect):
             w = v_extent[2] - v_extent[0]
             h = v_extent[3] - v_extent[1]
-            c = (v_extent[0] +  w * 0.5, v_extent[1] + h * 0.5)
+            c = (v_extent[0] + w * 0.5, v_extent[1] + h * 0.5)
             return c, w, h
 
         view_name = self.classview(view_name)
@@ -1122,7 +1125,6 @@ class GXmap:
             itr2 = gxapi.GXITR.create_map(self.gxmap, layers[1])
         else:
             itr2 = gxapi.GXITR.null()
-
 
         with gxv.GXview(self, view_name) as v:
 
@@ -1196,64 +1198,65 @@ class GXmap:
                 cdict["FIXED_MINOR_INTERVAL"] = interval_2
 
             gname = 'COLORBAR_' + agg_name
-            v.start_group(gname)
-            v.text_def = gxv.Text_def(height=annotation_height)
-            gxapi.GXMVU.color_bar_reg(v.gxview, itr1, itr2, gxu.reg_from_dict(cdict, 100, json_encode=False))
+            with gxg.GXdraw(v, gname) as g:
 
-            if title:
-
-                title_height = annotation_height * 1.5
-                v.text_def = gxv.Text_def(height=title_height, weight=gxv.FONT_WEIGHT_BOLD)
-                p = gxgm.Point(v.reference_point(gxv.REF_BOTTOM_CENTER, v.extent_group(gname)))
-                p -= (0, title_height * 0.5)
-                try:
-                    tline = title[:title.index('\n')]
-                    title = title[title.index('\n')+1:]
-                except:
-                    tline = title
-                    title = ''
-                v.text(tline, p, reference=gxv.REF_TOP_CENTER)
+                g.text_def = gxg.Text_def(height=annotation_height)
+                gxapi.GXMVU.color_bar_reg(v.gxview, itr1, itr2, gxu.reg_from_dict(cdict, 100, json_encode=False))
 
                 if title:
-                    v.text_def = gxv.Text_def(height=title_height * 0.8, weight=gxv.FONT_WEIGHT_LIGHT)
-                    p -= (0, title_height * 1.5)
-                    v.text(title, p, reference=gxv.REF_TOP_CENTER)
 
-            # locate the bar
-            default_offset = 1.5 * v.units_per_map_cm
-            if location and (not hasattr(location, '__iter__')):
-                default_offset = location * v.units_per_map_cm
-                location = None
-            if location is not None:
-                location = location[0] * v.units_per_map_cm, location[1]*v.units_per_map_cm
+                    title_height = annotation_height * 1.5
+                    g.text_def = gxg.Text_def(height=title_height, weight=gxg.FONT_WEIGHT_BOLD)
+                    p = gxgm.Point(gxg.edge_reference(g.extent, gxg.REF_BOTTOM_CENTER))
+                    p -= (0, title_height * 0.5)
+                    try:
+                        tline = title[:title.index('\n')]
+                        title = title[title.index('\n') + 1:]
+                    except:
+                        tline = title
+                        title = ''
+                    g.text(tline, p, reference=gxg.REF_TOP_CENTER)
 
-            if bar_location == COLOR_BAR_RIGHT:
-                if location is None:
-                    location = (default_offset, 0)
-                xy = v.reference_point(REF_CENTER_RIGHT)
-                ref = gxv.REF_CENTER_LEFT
-            elif bar_location == COLOR_BAR_LEFT:
-                if location is None:
-                    location = (-default_offset, 0)
-                xy = v.reference_point(REF_CENTER_LEFT)
-                ref = gxv.REF_CENTER_RIGHT
-            elif bar_location == COLOR_BAR_BOTTOM:
-                if location is None:
-                    location = (0, -default_offset)
-                xy = v.reference_point(REF_BOTTOM_CENTER)
-                ref = gxv.REF_TOP_CENTER
-            elif bar_location == COLOR_BAR_TOP:
-                if location is None:
-                    location = (0, default_offset)
-                xy = v.reference_point(REF_TOP_CENTER)
-                ref = gxv.REF_BOTTOM_CENTER
+                    if title:
+                        g.text_def = gxg.Text_def(height=title_height * 0.8, weight=gxg.FONT_WEIGHT_LIGHT)
+                        p -= (0, title_height * 1.5)
+                        g.text(title, p, reference=gxg.REF_TOP_CENTER)
 
-            location = xy[0] + location[0], xy[1] + location[1]
-            v.locate_group(gname, location, ref)
+                # locate the bar
+                default_offset = 1.5 * v.units_per_map_cm
+                if location and (not hasattr(location, '__iter__')):
+                    default_offset = location * v.units_per_map_cm
+                    location = None
+                if location is not None:
+                    location = location[0] * v.units_per_map_cm, location[1] * v.units_per_map_cm
+
+                area = v.extent_clip
+                if bar_location == COLOR_BAR_LEFT:
+                    if location is None:
+                        location = (-default_offset, 0)
+                    xy = gxg.edge_reference(area, gxg.REF_CENTER_LEFT)
+                    ref = gxg.REF_CENTER_RIGHT
+                elif bar_location == COLOR_BAR_BOTTOM:
+                    if location is None:
+                        location = (0, -default_offset)
+                    xy = gxg.edge_reference(area, gxg.REF_BOTTOM_CENTER)
+                    ref = gxg.REF_TOP_CENTER
+                elif bar_location == COLOR_BAR_TOP:
+                    if location is None:
+                        location = (0, default_offset)
+                    xy = gxg.edge_reference(area, gxg.REF_TOP_CENTER)
+                    ref = gxg.REF_BOTTOM_CENTER
+                else: #BAR_RIGHT
+                    if location is None:
+                        location = (default_offset, 0)
+                    xy = gxg.edge_reference(area, gxg.REF_CENTER_RIGHT)
+                    ref = gxg.REF_CENTER_LEFT
+
+                location = xy + location
+                g.locate(location, ref)
 
 
 class _Mapplot:
-
     def __enter__(self):
         return self
 
@@ -1264,7 +1267,7 @@ class _Mapplot:
         return "{}({})".format(self.__class__, self.__dict__)
 
     def __str__(self):
-        return "mapplot({})".format(self._map.filename)
+        return "mapplot({})".format(self._map.file_name)
 
     def __init__(self, map, data_view=None, ref_prefix='', **kwargs):
 
@@ -1281,12 +1284,12 @@ class _Mapplot:
             self.prior_data_view = None
 
         # mapplot control file
-        self._maplfilename = os.path.join(gx.GXpy().temp_folder(), 'mapl_' + gxu.uuid() + ".con")
-        self._maplfile = open(self._maplfilename, "w")
+        self._maplfile_name = os.path.join(gx.GXpy().temp_folder(), 'mapl_' + gxu.uuid() + ".con")
+        self._maplfile = open(self._maplfile_name, "w")
         self._annotation_outer_edge = 0.0
 
         atexit.register(self._process, pop=False)
-        self._open = gx.track_resource(self.__class__.__name__, self._maplfilename)
+        self._open = gx.track_resource(self.__class__.__name__, self._maplfile_name)
 
         self.define_named_attribute()
 
@@ -1295,9 +1298,9 @@ class _Mapplot:
         if self._maplfile:
             self._maplfile.close()
             self._maplfile = None
-            gxmapl = gxapi.GXMAPL.create(self._maplfilename, self._ref_pre, 0)
+            gxmapl = gxapi.GXMAPL.create(self._maplfile_name, self._ref_pre, 0)
             gxmapl.process(self._map.gxmap)
-            os.remove(self._maplfilename)
+            os.remove(self._maplfile_name)
             if self.prior_data_view:
                 self.map.current_data_view = self.prior_data_view
         if pop:
@@ -1307,7 +1310,7 @@ class _Mapplot:
         self._maplfile.write(command)
         if command and command[-1] != '\n':
             self._maplfile.write('\n')
-        # geosoft.gxpy.gx.GXpy().log(command)
+            # geosoft.gxpy.gx.GXpy().log(command)
 
     def define_named_attribute(self, name='_', pen=None, text_def=None):
 
@@ -1316,7 +1319,7 @@ class _Mapplot:
 
         else:
             if pen is None:
-                pen = gxv.Pen(line_color=text_def.color, line_thick=text_def.line_thick)
+                pen = gxg.Pen(line_color=text_def.color, line_thick=text_def.line_thick)
             ls = pen.line_style
             lp = pen.line_pitch
             pen = pen.mapplot_string

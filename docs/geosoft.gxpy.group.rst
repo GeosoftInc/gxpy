@@ -1,7 +1,7 @@
-geosoft.gxpy.ipj submodule
+geosoft.gxpy.group submodule
 ====================================
 
-.. automodule:: geosoft.gxpy.ipj
+.. automodule:: geosoft.gxpy.group
     :members:
     :undoc-members:
     :show-inheritance:
