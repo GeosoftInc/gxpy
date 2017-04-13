@@ -17,6 +17,7 @@ Submodules
     geosoft.gxpy.gdb
     geosoft.gxpy.geometry
     geosoft.gxpy.grd
+    geosoft.gxpy.group
     geosoft.gxpy.gx
     geosoft.gxpy.map
     geosoft.gxpy.om
@@ -24,7 +25,6 @@ Submodules
     geosoft.gxpy.utility
     geosoft.gxpy.va
     geosoft.gxpy.view
-    geosoft.gxpy.group
     geosoft.gxpy.viewer
     geosoft.gxpy.vv
 

@@ -8,6 +8,8 @@ Version 9.2
 New Classes
 ^^^^^^^^^^^
 
+:class:`geosoft.gxpy.agg.GXagg`
+
 :class:`geosoft.gxpy.coordinate_system.GXcs`
 
 :class:`geosoft.gxpy.coordinate_system.GXpj`
@@ -22,13 +24,23 @@ New Classes
 
 :class:`geosoft.gxpy.geometry.Point`
 
+:class:`geosoft.gxpy.group.Color`
+
+:class:`geosoft.gxpy.group.GXgroup`
+
+:class:`geosoft.gxpy.group.Text_def`
+
 :class:`geosoft.gxpy.map.GXmap`
 
 :class:`geosoft.gxpy.view.GXview`
 
+:exc:`geosoft.gxpy.agg.AGGException`
+
 :exc:`geosoft.gxpy.coordinate_system.CSException`
 
 :exc:`geosoft.gxpy.dataframe.DfException`
+
+:exc:`geosoft.gxpy.group.GroupException`
 
 :exc:`geosoft.gxpy.map.MapException`
 
@@ -40,11 +52,19 @@ New Classes
 New Functions
 ^^^^^^^^^^^^^
 
-:func:`geosoft.gxpy.coordinate_system.GXcs.gxf`
+:func:`geosoft.gxpy.agg.GXagg.add_layer`
 
-:func:`geosoft.gxpy.coordinate_system.GXcs.name`
+:func:`geosoft.gxpy.agg.GXagg.layer_file_names`
 
-:func:`geosoft.gxpy.coordinate_system.GXcs.units`
+:func:`geosoft.gxpy.coordinate_system.GXcs.coordinate_dict`
+
+:func:`geosoft.gxpy.coordinate_system.GXcs.cs_name`
+
+:func:`geosoft.gxpy.coordinate_system.GXcs.get_gxf`
+
+:func:`geosoft.gxpy.coordinate_system.GXcs.oriented_from_xyz`
+
+:func:`geosoft.gxpy.coordinate_system.GXcs.xyz_from_oriented`
 
 :func:`geosoft.gxpy.coordinate_system.GXpj.convert`
 
@@ -53,6 +73,10 @@ New Functions
 :func:`geosoft.gxpy.coordinate_system.name_list`
 
 :func:`geosoft.gxpy.coordinate_system.parameters`
+
+:func:`geosoft.gxpy.dataframe.table_column`
+
+:func:`geosoft.gxpy.dataframe.table_record`
 
 :func:`geosoft.gxpy.gdb.GXdb.read_channel_va`
 
@@ -66,7 +90,65 @@ New Functions
 
 :func:`geosoft.gxpy.gdb.GXdb.write_line_vv`
 
+:func:`geosoft.gxpy.grd.GXgrd.extent_2d`
+
+:func:`geosoft.gxpy.grd.GXgrd.extent_3d`
+
+:func:`geosoft.gxpy.grd.GXgrd.index_window`
+
 :func:`geosoft.gxpy.grd.delete_files`
+
+:func:`geosoft.gxpy.group.GXaggregate.extent_map_cm`
+
+:func:`geosoft.gxpy.group.GXaggregate.locate`
+
+:func:`geosoft.gxpy.group.GXdraw.extent_map_cm`
+
+:func:`geosoft.gxpy.group.GXdraw.graticule`
+
+:func:`geosoft.gxpy.group.GXdraw.locate`
+
+:func:`geosoft.gxpy.group.GXdraw.new_pen`
+
+:func:`geosoft.gxpy.group.GXdraw.text`
+
+:func:`geosoft.gxpy.group.GXdraw.xy_line`
+
+:func:`geosoft.gxpy.group.GXdraw.xy_poly_line`
+
+:func:`geosoft.gxpy.group.GXdraw.xy_rectangle`
+
+:func:`geosoft.gxpy.group.GXdraw_3d.box_3d`
+
+:func:`geosoft.gxpy.group.GXdraw_3d.extent_map_cm`
+
+:func:`geosoft.gxpy.group.GXdraw_3d.graticule`
+
+:func:`geosoft.gxpy.group.GXdraw_3d.locate`
+
+:func:`geosoft.gxpy.group.GXdraw_3d.new_pen`
+
+:func:`geosoft.gxpy.group.GXdraw_3d.text`
+
+:func:`geosoft.gxpy.group.GXdraw_3d.xy_line`
+
+:func:`geosoft.gxpy.group.GXdraw_3d.xy_poly_line`
+
+:func:`geosoft.gxpy.group.GXdraw_3d.xy_rectangle`
+
+:func:`geosoft.gxpy.group.GXgroup.extent_map_cm`
+
+:func:`geosoft.gxpy.group.GXgroup.locate`
+
+:func:`geosoft.gxpy.group.Pen.from_mapplot_string`
+
+:func:`geosoft.gxpy.group.edge_reference`
+
+:func:`geosoft.gxpy.group.font_weight_from_line_thickness`
+
+:func:`geosoft.gxpy.group.legend_color_bar`
+
+:func:`geosoft.gxpy.group.thickness_from_font_weight`
 
 :func:`geosoft.gxpy.gx.GXpy.elapsed_seconds`
 
@@ -78,13 +160,33 @@ New Functions
 
 :func:`geosoft.gxpy.gx.GXpy.temp_folder`
 
-:func:`geosoft.gxpy.ipj.GXipj.from_any`
+:func:`geosoft.gxpy.map.GXmap.agg_legend`
 
-:func:`geosoft.gxpy.map.GXmap.new_standard_geosoft`
+:func:`geosoft.gxpy.map.GXmap.annotate_data_ll`
+
+:func:`geosoft.gxpy.map.GXmap.annotate_data_xy`
+
+:func:`geosoft.gxpy.map.GXmap.create_linked_3d_view`
+
+:func:`geosoft.gxpy.map.GXmap.delete_view`
+
+:func:`geosoft.gxpy.map.GXmap.get_class_view_name`
+
+:func:`geosoft.gxpy.map.GXmap.map_reference_location`
 
 :func:`geosoft.gxpy.map.GXmap.new`
 
+:func:`geosoft.gxpy.map.GXmap.north_arrow`
+
 :func:`geosoft.gxpy.map.GXmap.open`
+
+:func:`geosoft.gxpy.map.GXmap.scale_bar`
+
+:func:`geosoft.gxpy.map.GXmap.set_class_view_name`
+
+:func:`geosoft.gxpy.map.GXmap.surround`
+
+:func:`geosoft.gxpy.map._Mapplot.start_group`
 
 :func:`geosoft.gxpy.map.crc_map`
 
@@ -102,37 +204,37 @@ New Functions
 
 :func:`geosoft.gxpy.utility.datetime_from_year`
 
+:func:`geosoft.gxpy.utility.normalize_file_name`
+
 :func:`geosoft.gxpy.utility.uuid`
 
 :func:`geosoft.gxpy.utility.year_from_datetime`
 
-:func:`geosoft.gxpy.view.GXview.box_3d`
+:func:`geosoft.gxpy.view.GXview.delete_group`
+
+:func:`geosoft.gxpy.view.GXview.extent_map_cm`
 
 :func:`geosoft.gxpy.view.GXview.locate`
 
-:func:`geosoft.gxpy.view.GXview.start_group`
+:func:`geosoft.gxpy.view.GXview.map_cm_to_view`
 
-:func:`geosoft.gxpy.view.GXview.xy_line`
+:func:`geosoft.gxpy.view.GXview.view_to_map_cm`
 
-:func:`geosoft.gxpy.view.GXview.xy_poly_line`
+:func:`geosoft.gxpy.view.GXview3d.delete_group`
 
-:func:`geosoft.gxpy.view.GXview.xy_rectangle`
-
-:func:`geosoft.gxpy.view.GXview3d.box_3d`
+:func:`geosoft.gxpy.view.GXview3d.extent_map_cm`
 
 :func:`geosoft.gxpy.view.GXview3d.locate`
 
-:func:`geosoft.gxpy.view.GXview3d.start_group`
+:func:`geosoft.gxpy.view.GXview3d.map_cm_to_view`
 
-:func:`geosoft.gxpy.view.GXview3d.xy_line`
-
-:func:`geosoft.gxpy.view.GXview3d.xy_poly_line`
-
-:func:`geosoft.gxpy.view.GXview3d.xy_rectangle`
+:func:`geosoft.gxpy.view.GXview3d.view_to_map_cm`
 
 :func:`geosoft.gxpy.viewer.map`
 
 :func:`geosoft.gxpy.viewer.v3d`
+
+:func:`geosoft.gxpy.vv.GXvv.list`
 
 
   
@@ -148,10 +250,6 @@ New Classes
 
 :class:`geosoft.gxpy.gx.GXpy`
 
-:class:`geosoft.gxpy.ipj.GXipj`
-
-:class:`geosoft.gxpy.ipj.GXpj`
-
 :class:`geosoft.gxpy.va.GXva`
 
 :class:`geosoft.gxpy.vv.GXvv`
@@ -161,8 +259,6 @@ New Classes
 :exc:`geosoft.gxpy.grd.GRDException`
 
 :exc:`geosoft.gxpy.gx.GXException`
-
-:exc:`geosoft.gxpy.ipj.IPJException`
 
 :exc:`geosoft.gxpy.om.OMException`
 
@@ -230,11 +326,7 @@ New Functions
 
 :func:`geosoft.gxpy.grd.GXgrd.delete_files`
 
-:func:`geosoft.gxpy.grd.GXgrd.dtype`
-
 :func:`geosoft.gxpy.grd.GXgrd.from_data_array`
-
-:func:`geosoft.gxpy.grd.GXgrd.indexWindow`
 
 :func:`geosoft.gxpy.grd.GXgrd.new`
 
@@ -273,32 +365,6 @@ New Functions
 :func:`geosoft.gxpy.gx.GXpy.license_class`
 
 :func:`geosoft.gxpy.gx.GXpy.main_wind_id`
-
-:func:`geosoft.gxpy.ipj.GXipj.compare`
-
-:func:`geosoft.gxpy.ipj.GXipj.dict`
-
-:func:`geosoft.gxpy.ipj.GXipj.from_dict`
-
-:func:`geosoft.gxpy.ipj.GXipj.from_esri`
-
-:func:`geosoft.gxpy.ipj.GXipj.from_gxf`
-
-:func:`geosoft.gxpy.ipj.GXipj.from_json`
-
-:func:`geosoft.gxpy.ipj.GXipj.from_name`
-
-:func:`geosoft.gxpy.ipj.GXipj.name`
-
-:func:`geosoft.gxpy.ipj.GXipj.names`
-
-:func:`geosoft.gxpy.ipj.GXipj.to_gxf`
-
-:func:`geosoft.gxpy.ipj.GXipj.to_json`
-
-:func:`geosoft.gxpy.ipj.GXipj.units`
-
-:func:`geosoft.gxpy.ipj.GXpj.convert`
 
 :func:`geosoft.gxpy.om.dict_from_lst`
 
@@ -366,45 +432,17 @@ New Functions
 
 :func:`geosoft.gxpy.utility.yearFromJulianDay2`
 
-:func:`geosoft.gxpy.va.GXva.dtype`
-
-:func:`geosoft.gxpy.va.GXva.fid`
-
-:func:`geosoft.gxpy.va.GXva.gxtype`
-
-:func:`geosoft.gxpy.va.GXva.length`
-
-:func:`geosoft.gxpy.va.GXva.np`
+:func:`geosoft.gxpy.va.GXva.get_np`
 
 :func:`geosoft.gxpy.va.GXva.reFid`
 
-:func:`geosoft.gxpy.va.GXva.setFid`
+:func:`geosoft.gxpy.va.GXva.set_np`
 
-:func:`geosoft.gxpy.va.GXva.size`
-
-:func:`geosoft.gxpy.va.GXva.va_np`
-
-:func:`geosoft.gxpy.va.GXva.va`
-
-:func:`geosoft.gxpy.va.GXva.width`
-
-:func:`geosoft.gxpy.vv.GXvv.dtype`
-
-:func:`geosoft.gxpy.vv.GXvv.fid`
-
-:func:`geosoft.gxpy.vv.GXvv.gxtype`
-
-:func:`geosoft.gxpy.vv.GXvv.length`
-
-:func:`geosoft.gxpy.vv.GXvv.np`
+:func:`geosoft.gxpy.vv.GXvv.get_np`
 
 :func:`geosoft.gxpy.vv.GXvv.reFid`
 
-:func:`geosoft.gxpy.vv.GXvv.setFid`
-
-:func:`geosoft.gxpy.vv.GXvv.vv_np`
-
-:func:`geosoft.gxpy.vv.GXvv.vv`
+:func:`geosoft.gxpy.vv.GXvv.set_np`
 
 
 geosoft.gxapi module history
@@ -420,6 +458,36 @@ New Classes
 
 New Functions
 ^^^^^^^^^^^^^
+
+:func:`geosoft.gxapi.GX3DV.from_map`
+
+:func:`geosoft.gxapi.GXEDB.get_cur_point`
+
+:func:`geosoft.gxapi.GXEMAP.packed_files`
+
+:func:`geosoft.gxapi.GXGUI.show_3d_viewer_dialog`
+
+:func:`geosoft.gxapi.GXIP.export_data_to_ubc_3d`
+
+:func:`geosoft.gxapi.GXIP.get_electrode_locations_and_mask_values2`
+
+:func:`geosoft.gxapi.GXIP.get_qc_channel`
+
+:func:`geosoft.gxapi.GXIP.set_electrode_mask_values_single_qc_channel`
+
+:func:`geosoft.gxapi.GXIPJ.set_vcs`
+
+:func:`geosoft.gxapi.GXMAP.create_linked_3d_view`
+
+:func:`geosoft.gxapi.GXMVIEW.get_3d_point_of_view`
+
+:func:`geosoft.gxapi.GXMVIEW.get_aggregate`
+
+:func:`geosoft.gxapi.GXMVIEW.get_col_symbol`
+
+:func:`geosoft.gxapi.GXMVIEW.get_datalinkd`
+
+:func:`geosoft.gxapi.GXMVIEW.set_3d_point_of_view`
 
 :func:`geosoft.gxapi.GXTEST.core_class`
 

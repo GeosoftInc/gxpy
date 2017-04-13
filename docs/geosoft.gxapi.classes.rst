@@ -47,7 +47,6 @@ These are the low-level library classes and functions that make up the GX API.
    GXFFT2
    GXFLT
    GXGD
-   GXGEOSOFT
    GXGEOSTRING
    GXGER
    GXGIS
