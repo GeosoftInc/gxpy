@@ -1,5 +1,5 @@
 <header>
-   <Item name="Name" value="data"/>
+   <Item name="Name" value="linked_view"/>
    <Item name="ViewMatrix" type="D4MATRIX">
       <Value x="0" y="0" value="1000"/>
       <Value x="1" y="0" value="0"/>

@@ -352,21 +352,5 @@
          <Value name="Y" value="50"/>
       </Item>
    </Item>
-   <Item type="FillColor" size="8">
-      <Item name="Color" type="COL_ANY" colortype="RGB" red="255" green="100" blue="50"/>
-   </Item>
-   <Item type="Box3D" size="48">
-      <Item name="Box" type="D3VOLUME">
-         <Value name="MinX" value="20"/>
-         <Value name="MinY" value="10"/>
-         <Value name="MinZ" value="30"/>
-         <Value name="MaxX" value="80"/>
-         <Value name="MaxY" value="50"/>
-         <Value name="MaxZ" value="50"/>
-      </Item>
-   </Item>
-   <Item type="FillColor" size="8">
-      <Item name="Color" type="COL_ANY" colortype="CMY" cyan="0" magenta="64" yellow="64"/>
-   </Item>
    <Item type="End" size="8"></Item>
 </data>
