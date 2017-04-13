@@ -83,7 +83,7 @@ def check_version(v, raise_on_fail=True):
 def dict_from_lst(lst, ordered=False):
     """
     :param lst:     gxapi.GXLST instance
-    :param ordered: True to return and OrderedDict
+    :param ordered: True to return an OrderedDict
     :return:        python dictionary from a Geosoft GXLST
 
     .. versionadded:: 9.1

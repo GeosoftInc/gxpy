@@ -3,6 +3,7 @@ import os
 import numpy as np
 
 import geosoft
+import geosoft
 import geosoft.gxapi as gxapi
 import geosoft.gxpy.system as gsys
 import geosoft.gxpy.map as gxmap
@@ -198,21 +199,22 @@ class Test(unittest.TestCase, GXPYTest):
     def test_3D(self):
         Test.start(self, gsys.func_name())
 
-        test3dv = os.path.join(self.gx.temp_folder(), "test.geosoft_3dv")
         testmap = os.path.join(self.gx.temp_folder(), "test.map")
-        with gxmap.GXmap.new(test3dv, overwrite=True, no_data_view=True) as g3dv:
-            with gxv.GXview3d(g3dv, mode=gxv.WRITE_NEW) as view_3d:
-                with gxg.GXdraw_3d(view_3d, '2d_group') as g:
-                    rect_line(g)
-                    draw_stuff(g)
-                    g.box_3d(((20, 10, 30), (80, 50, 50)), pen=g.new_pen(fill_color='R255G100B50'))
+        with gxmap.GXmap.new(testmap, overwrite=True) as gmap:
+            with gxv.GXview(gmap, "base") as view_base:
+                with gxg.GXdraw(view_base, 'Surround') as g:
+                    g.xy_rectangle(((0, 0), (280, 260)))
 
-                with gxmap.GXmap.new(testmap, overwrite=True) as gmap:
-                    with gxv.GXview(gmap, "base") as view_base:
-                        with gxg.GXdraw(view_base, 'Surround') as g:
-                            g.xy_rectangle(((0, 0), (280, 260)))
+        test3dv = os.path.join(self.gx.temp_folder(), "test.geosoft_3dv")
+        with gxv.GXview3d.new(test3dv, overwrite=True) as view_3d:
+            with gxg.GXdraw(view_3d, '2d_group') as g:
+                rect_line(g)
+                draw_stuff(g)
+            with gxg.GXdraw3d(view_3d, '3d_group') as g:
+                g.box_3d(((20, 10, 30), (80, 50, 50)), pen=g.new_pen(fill_color='R255G100B50'))
 
-                    gmap.create_linked_3d_view(view_3d, area=(10, 10, 270, 250))
+            with gxmap.GXmap.open(testmap) as gmap:
+                gmap.create_linked_3d_view(view_3d, area_on_map=(10, 10, 270, 250))
 
         self.crc_map(test3dv, alt_crc_name=gxsys.func_name() + '_3dv')
         self.crc_map(testmap, alt_crc_name=gxsys.func_name() + '_map')

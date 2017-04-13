@@ -1,10 +1,12 @@
 import atexit
+import os
 from functools import wraps
 
 import geosoft
 import geosoft.gxapi as gxapi
 from . import coordinate_system as gxcs
 from . import utility as gxu
+from . import map as gxmap
 
 __version__ = geosoft.__version__
 
@@ -20,6 +22,9 @@ class ViewException(Exception):
     .. versionadded:: 9.2
     """
     pass
+
+def _plane_err(plane, view):
+    raise ViewException(_t('Plane "{}" does not exist in view "{}"'.format(plane,view)))
 
 VIEW_NAME_SIZE = 2080
 
@@ -48,7 +53,7 @@ class GXview:
 
     :parameters:
 
-        :name:     view name, default is "_unnamed_view".
+        :name:          view name, default is "_unnamed_view".
         :map:           map instance, if not specified a new default map is created and deleted on closing
         :mode:          open view mode:
 
@@ -101,7 +106,7 @@ class GXview:
         return "{}({})".format(self.__class__, self.__dict__)
 
     def __str__(self):
-        return self._name
+        return self.name
 
     def __init__(self,
                  map,
@@ -225,6 +230,10 @@ class GXview:
     def name(self):
         """ Name of the view"""
         return self._name
+
+    @property
+    def is_3d(self):
+        return bool(self.gxview.is_view_3d())
 
     @property
     def units_per_metre(self):
@@ -392,20 +401,214 @@ class GXview:
         self.gxview.view_to_plot(xr, yr)
         return xr.value / 10.0, yr.value / 10.0
 
+    def get_class_name(self, view_class):
+        """
+        Get the name associated with a view class.
+
+        :param view_class:  desired class in this view
+
+        Common view class names are::
+
+            'Plane'     the name of the default 2D drawing plane
+
+        Other class names may be defined, though they are not used by Geosoft.
+
+        :return: name associated with the class, '' if not defined.
+
+        .. versionadded:: 9.2
+        """
+        sr = gxapi.str_ref()
+        self.gxview.get_class_name(view_class, sr)
+        return sr.value.lower()
+
+    def set_class_name(self, view_class, name):
+        """
+        Set the name associated with a class.
+
+        :param view_class:  class name in this view
+        :param name:        name of the view associated with this class.
+
+        Common view class names are::
+
+            'Plane'     the name of the default 2D drawing plane
+
+        .. versionadded:: 9.2
+        """
+        self.gxview.set_class_name(view_class, name)
+
 class GXview3d(GXview):
-    def __init__(self, *args, **kwds):
-        kwds['name'] = '3D'  # Always 3D
-        kwds['area'] = (0, 0, 300, 300)  # Since we are never rendering in 2D we can always default this to 30x30 cm
-        super().__init__(*args, **kwds)
+    """
+    Geosoft 3D views are stored in a file with extension `.geosoft_3dv`.  A 3d view is required
+    to draw 3D elements using gxpy.group.GXdraw3d, which must be created from a GXview3d instance.
+    
+    3D views also contain 2D drawing planes on which gxpy.group.GXdraw groups are placed.  A default 
+    horizontal plane at elevation 0, named 'plane_0' is created when a new 3d view is created.
+    
+    Planes are flat by default, but can be provided a grid that defines the plane surface relief,
+    which is intended for creating tinkgs like terrain surfaces on which 2d graphics are rendered.
+    
+    Planes can also be oriented within the 3D space to create sections, or for other more esoteric
+    purposes.
+    
+    Constructors:
 
-        mminx, mminy, mmaxx, mmaxy = self.extent_map_cm(self.extent_clip)
-        vminx, vminy, vmaxx, vmaxy = self.extent_clip
+        ======== =============================
+        `open()` open an existing geosoft_3dv
+        `new()`  create a new geosoft_3dv
+        ======== =============================
+    
+    Properties:
+    
+        TODO - complete...
+        
+    .. versionadded:: 9.2    
+    """
 
-        # construct a 3D view
+    def __init__(self, file_name, mode, _internal=False, **kwargs):
 
+        if not _internal:
+            raise ViewException(_t("Must be called by a class constructor 'open' or 'new'"))
+
+        file_name = gxmap.map_file_name(file_name, g_3d=True)
+        map = gxmap.GXmap(file_name=file_name,
+                          mode=mode,
+                          _internal=True)
+        super().__init__(map, '3D', **kwargs)
+
+
+    @classmethod
+    def new(cls, file_name, area_2d=(0, 0, 100, 100), overwrite=False):
+        """
+        Createa a new 3D view.
+        
+        :param file_name:   name for the new 3D view file (.geosoft_3dv added)
+        :param area_2d:     2D drawing extent for the default 2D drawing plane
+        :param overwrite:   True to overwrite an existing 3DV
+
+        .. versionadded:: 9.2
+        """
+
+        file_name = gxmap.map_file_name(file_name, g_3d=True)
+        if not overwrite:
+            if os.path.isfile(file_name):
+                raise ViewException(_t('Cannot overwrite existing file: {}').format(file_name))
+
+        g_3dv = cls(file_name, gxmap.WRITE_NEW, area=area_2d, _internal=True)
+
+        mminx, mminy, mmaxx, mmaxy = g_3dv.extent_map_cm(g_3dv.extent_clip)
+        vminx, vminy, vmaxx, vmaxy = g_3dv.extent_clip
+
+        # make this a 3D view
         h3dn = gxapi.GX3DN.create()
-        self.gxview.set_h_3dn(h3dn)
-        self.gxview.fit_map_window_3d(mminx, mminy, mmaxx, mmaxy,
-                                      vminx, vminy, vmaxx, vmaxy)
+        g_3dv.gxview.set_h_3dn(h3dn)
+        g_3dv.gxview.fit_map_window_3d(mminx, mminy, mmaxx, mmaxy,
+                                       vminx, vminy, vmaxx, vmaxy)
 
+        g_3dv.new_drawing_plane('plane_0')
 
+        return g_3dv
+
+    @classmethod
+    def open(cls, file_name):
+        """
+        Open an existing geosoft_3dv file.
+        
+        :param file_name: name of the geosoft_3dv file
+        
+        .. versionadded:: 9.2
+        """
+
+        file_name = gxmap.map_file_name(file_name, g_3d=True)
+        if not os.path.isfile(file_name):
+            raise ViewException(_t('geosoft_3dv file not found: {}').format(file_name))
+
+        g_3dv = cls(file_name, gxmap.WRITE_OLD, _internal=True)
+
+        return g_3dv
+
+    def __exit__(self, xtype, xvalue, xtraceback):
+        self.close()
+
+    def close(self):
+        self.map.close()
+        self._close()
+
+    @property
+    def name(self):
+        return self.map.name
+
+    @property
+    def current_3d_drawing_plane(self):
+        s = gxapi.str_ref()
+        try:
+            self.gxview.get_def_plane(s)
+            return s.value
+        except gxapi.GXError:
+            return None
+
+    @current_3d_drawing_plane.setter
+    def current_3d_drawing_plane(self, plane):
+        if isinstance(plane, int):
+            plane = self.plane_name(plane)
+        self.gxview.set_def_plane(plane)
+
+    @property
+    def plane_list(self):
+        gxlst = gxapi.GXLST.create(VIEW_NAME_SIZE)
+        self.gxview.list_planes(gxlst)
+        return list(gxu.dict_from_lst(gxlst))
+
+    def plane_name(self, plane):
+        """Return the name of a numbered plane"""
+        if isinstance(plane, str):
+            if self.gxview.find_plane(plane) == -1:
+                _plane_err(plane, self.name)
+            return plane
+        gxlst = gxapi.GXLST.create(VIEW_NAME_SIZE)
+        self.gxview.list_planes(gxlst)
+        item = gxlst.find_item(gxapi.LST_ITEM_VALUE, str(plane))
+        if item == -1:
+            _plane_err(plane, self.name)
+        sr = gxapi.str_ref()
+        gxlst.gt_item(gxapi.LST_ITEM_NAME, item, sr)
+        return sr.value
+
+    def plane_number(self, plane):
+        """Return the plane number of a plane, or None if plane does not exist."""
+        if isinstance(plane, int):
+            self.plane_name(plane)
+            return plane
+        plane_number = self.gxview.find_plane(plane)
+        if plane_number == -1:
+            _plane_err(plane, self.name)
+        else:
+            return plane_number
+
+    def has_plane(self, plane):
+        try:
+            n = self.plane_number(plane)
+            return True
+        except ViewException:
+            return False
+
+    def groups_on_plane_list(self, plane):
+        gxlst = gxapi.GXLST.create(VIEW_NAME_SIZE)
+        if isinstance(plane, str):
+            plane = self.plane_number(plane)
+        self.gxview.list_plane_groups(plane, gxlst)
+        return list(gxu.dict_from_lst(gxlst))
+
+    def new_drawing_plane(self,
+                          name,
+                          rotation=(0., 0., 0.),
+                          offset=(0., 0., 0.),
+                          scale=(1., 1., 1.)):
+
+        if self.has_plane(name):
+            raise ViewException(_t('3D drawing plane "{}" exists.'.format(name)))
+
+        self.gxview.create_plane(str(name))
+        self.gxview.set_plane_equation(self.plane_number(name),
+                                       rotation[0], rotation[1], rotation[2],
+                                       offset[0], offset[1], offset[2],
+                                       scale[0], scale[1], scale[2])

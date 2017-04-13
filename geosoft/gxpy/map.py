@@ -64,6 +64,9 @@ GROUP_APPEND = 1
 VIEW_BASE = 0
 VIEW_DATA = 1
 
+STYLE_FIGURE = 0
+STYLE_MAP = 1
+
 class Line_def:
     def __init__(self,
                  line_colour='k',
@@ -74,18 +77,24 @@ class Line_def:
         self._thickness = thickness
 
 
-def map_file_name(file_name):
+def map_file_name(file_name, g_3d=False):
     """
     Return a fully resolved map file path using the file name, with .map extyension
 
-    :param file_name:    file name, with ot without path and/or extension
+    :param file_name:   file name, with ot without path and/or extension
+    :param _3d:         geosoft_3dv file.    
     :return:            file name path with extension .map
 
     .. versionadded:: 9.2
     """
+
+    if g_3d:
+        gext = '.geosoft_3dv'
+    else:
+        gext = '.map'
     ext = os.path.splitext(file_name)[1].lower()
-    if ext != '.map' and ext != '.geosoft_3dv':
-        file_name += '.map'
+    if ext not in ('.map', '.geosoft_3dv'):
+        file_name += gext
     return os.path.abspath(file_name)
 
 
@@ -179,13 +188,17 @@ class GXmap:
     map viewing applications allow a user to open a 3D view in a 3D viewer, which provides for 3D viewing,
     3D navigation and 3D drawing capabilities.
 
-    Map constructors:
+    Constructors:
 
         ======== =============================
         `open()` open an existing map
         `new()`  create a new map
         ======== =============================
 
+    Properties:
+    
+        TODO - complete
+        
     .. versionadded:: 9.2
     """
 
@@ -250,15 +263,22 @@ class GXmap:
         return map
 
     @classmethod
-    def new(cls, file_name=None, data_area=(0., 0., 100., 100.), scale=None,
-            cs=None, media=None, layout=None, fixed_size=False, map_style='figure',
+    def new(cls, 
+            file_name=None, 
+            data_area=(0., 0., 100., 100.), 
+            scale=None,
+            cs=None, 
+            media=None, 
+            layout=None, 
+            fixed_size=False, 
+            map_style=None,
             margins=None, inside_margin=1.0, overwrite=False, no_data_view=False):
 
         """
         Create and open a new Geosoft map.
 
         :parameters:
-            :file_name:      Map file name.  If not specified a temporary file is created in the instance
+            :file_name:     Map file name.  If not specified a temporary file is created in the instance
                             temporary folder.  Use ``file_name()`` to get the file name if needed.  The 
                             temporary map file will be unique and will exist through the life of the
                             Python GX instance, but will be deleted along with all temporary files
@@ -276,16 +296,16 @@ class GXmap:
             :layout:        MAP_PORTRAIT or MAP_LANDSCAPE, overrides media setting.  If the layout is not 
                             defined by media or this parameter, the layout is determined by the aspect
                             ratio of the data area.
-            :map_style:     'map' or 'figure' (default).  A 'map' style is intended for A3 or larger
-                            media with a larger right or left margin for map annotations.  A 'figure'
+            :map_style:     STYLE_FIGURE or STYLE_MAP (default).  A MAP style is intended for A3 or larger
+                            media with a larger right or left margin for map annotations.  A FIGURE
                             style is intended for smaller media with a larger bottom margin for a
                             title and limited annotations.
             :fixed_size:    True for fixed media size, if, and only if, a media size is defined.
                             If False, the base view boundary will be reduced to the data view plus margins.  
                             If True, the base view boundary is fixed to the media size and margins are 
                             adjusted to locate the data view proportionally relative to the requested margins.
-            :margins:       (left, right, bottom, top) map margins in map cm.  The default for 'map'
-                            style is (3, 14, 6, 3), and for figure (1, 4, 1, 1).
+            :margins:       (left, right, bottom, top) map margins in map cm.  The default for STYLE_MAP
+                            is (3, 14, 6, 3), and for figure (1, 4, 1, 1).
             :inside_margin: additional margin (cm) inside the base view.  This margin effectively
                             expands the data_area to allow room for graphical elements related to
                             spatial data near the edge of the defined data area.
@@ -345,12 +365,15 @@ class GXmap:
                 media = None
                 fixed_size = False
 
+        if map_style is None:
+            map_style = STYLE_FIGURE
+
         if media is None:
             fixed_size = False
             if scale:
                 media = (5000., 4000.)  # crazy large, will be trimmed to scale
                 if margins is None:
-                    if map_style == 'map':
+                    if map_style == STYLE_MAP:
                         margins = (1.5, 14.0, 5.0, 1.5)
                     else:
                         margins = (1.0, 1.0, 4.0, 1.0)
@@ -365,7 +388,7 @@ class GXmap:
 
         else:
             mx, my = media
-            if map_style == 'map':
+            if map_style == STYLE_MAP:
                 if mx <= 30.0:
                     raise MapException('\'map\' style requires minimum 30cm media. Yours is {}cm'.format(mx))
                 m_left = max(1.5, mx * 0.025)
@@ -418,7 +441,9 @@ class GXmap:
 
         with gxv.GXview(map=map, name='*data', mode=gxv.WRITE_OLD) as view:
             view.cs = cs
-        set_registry(map, map_style, inside_margin)
+        set_registry(map,
+                     'figure' if (map_style == STYLE_FIGURE) else 'map',
+                     inside_margin)
 
         return map
 
@@ -436,7 +461,7 @@ class GXmap:
     @property
     def current_data_view(self):
         """ The current default data view which accepts drawing commands from Geosoft methods."""
-        return self.get_class_view_name('data')
+        return self.get_class_name('data')
 
     @current_data_view.setter
     def current_data_view(self, s):
@@ -447,7 +472,7 @@ class GXmap:
     @property
     def current_base_view(self):
         """ The current default base view which accepts drawing commands from Geosoft methods."""
-        return self.get_class_view_name('base')
+        return self.get_class_name('base')
 
     @current_base_view.setter
     def current_base_view(self, s):
@@ -458,7 +483,7 @@ class GXmap:
     @property
     def current_section_view(self):
         """ The current default base view which accepts drawing commands from Geosoft methods."""
-        return self.get_class_view_name('section')
+        return self.get_class_name('section')
 
     @current_section_view.setter
     def current_section_view(self, s):
@@ -494,7 +519,7 @@ class GXmap:
         """
         if name[0] != '*':
             return name
-        return self.get_class_view_name(name[1:])
+        return self.get_class_name(name[1:])
 
     def _views(self, view_type=LIST_ALL):
         """
@@ -616,7 +641,7 @@ class GXmap:
 
         return m1, m2
 
-    def get_class_view_name(self, view_class):
+    def get_class_name(self, view_class):
         """
         Get the view name associated with a class.
 
@@ -638,7 +663,7 @@ class GXmap:
         self.gxmap.get_class_name(view_class, sr)
         return sr.value.lower()
 
-    def set_class_view_name(self, view_class, name):
+    def set_class_name(self, view_class, name):
         """
         Set the view name associated with a class.
 
@@ -655,17 +680,20 @@ class GXmap:
         """
         self.gxmap.set_class_name(view_class, name)
 
-    def create_linked_3d_view(self, view, name='3D', area=(0, 0, 30, 30)):
+    def create_linked_3d_view(self, view, name='3D', area_on_map=(0, 0, 300, 300)):
         """
         Create a linked 3D view inside a 2D map to a `gxpy.view.GXview3d` in a 3DV
 
-        :param view: A `gxpy.view.GXview3d` instance
-        :param name:   name of the linked view to create
-        :param area: (min_x, min_y, max_x, max_y) placement of view on map in mm
+        :param view:        A `gxpy.view.GXview3d` instance
+        :param name:        name of the linked view to create
+        :param area_on_map: min_x, min_y, max_x, max_y) placement of view on map in mm
 
         .. versionadded:: 9.2
         """
-        self.gxmap.create_linked_3d_view(view.gxview, name, area[0], area[1], area[2], area[3])
+
+        self.gxmap.create_linked_3d_view(view.gxview, name,
+                                         area_on_map[0], area_on_map[1],
+                                         area_on_map[2], area_on_map[3])
 
     def map_reference_location(self, refp, view_name='base'):
         """

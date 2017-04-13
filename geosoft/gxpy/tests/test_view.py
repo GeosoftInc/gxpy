@@ -1,5 +1,6 @@
 import unittest
 import os
+import numpy as np
 
 import geosoft
 import geosoft.gxpy.system as gsys
@@ -7,10 +8,44 @@ import geosoft.gxpy.map as gxmap
 import geosoft.gxpy.view as gxv
 import geosoft.gxpy.coordinate_system as gxcs
 import geosoft.gxpy.group as gxg
+import geosoft.gxpy.geometry as gxgm
 
 from geosoft.gxpy.tests import GXPYTest
 
+def draw_2d_stuff(g, size=1.0):
+    plinelist = [[110, 5],
+                 [120, 20],
+                 [130, 15],
+                 [150, 50],
+                 [160, 70],
+                 [175, 35],
+                 [190, 65],
+                 [220, 50],
+                 [235, 18.5]]
 
+    pp = gxgm.PPoint.from_list(plinelist) * size
+    g.pen = g.new_pen(line_style=2, line_pitch=2.0)
+    g.xy_poly_line(pp)
+    g.pen = g.new_pen(line_style=4, line_pitch=2.0, line_smooth=gxg.SMOOTH_AKIMA)
+    g.xy_poly_line(pp)
+
+    ppp = np.array(plinelist)
+    pp = gxgm.PPoint(ppp[3:, :]) * size
+    g.pen = g.new_pen(line_style=5, line_pitch=5.0,
+                      line_smooth=gxg.SMOOTH_CUBIC,
+                      line_color=gxg.C_RED,
+                      line_thick=0.25,
+                      fill_color=gxg.C_LT_BLUE)
+    g.xy_poly_line(pp, close=True)
+
+    g.pen = g.new_pen(fill_color=gxg.C_LT_GREEN)
+    p1 = gxgm.Point((100, 0, 0)) * size
+    p2 = gxgm.Point((100, 0, 0)) * size
+    pp = (pp - p1) / 2 + p2
+    g.xy_poly_line(pp, close=True)
+    pp += gxgm.Point((0, 25, 0)) * size
+    g.pen = g.new_pen(fill_color=gxg.C_LT_RED)
+    g.xy_poly_line(pp, close=True)
 
 
 
@@ -175,6 +210,119 @@ class Test(unittest.TestCase, GXPYTest):
             with gxv.GXview(gmap, "vcs", cs="wgs 84 / UTM zone 15N [special]") as v:
                 self.assertTrue("WGS 84 / UTM zone 15N [special]" in str(v.cs))
 
+    def test_3dview(self):
+        Test.start(self, gsys.func_name())
+
+        v3d_file = None
+
+        try:
+
+            with gxv.GXview3d.new('test_3d', overwrite=True) as v:
+                v3d_file = v.map.file_name
+                self.assertTrue(v3d_file.lower().endswith('.geosoft_3dv'))
+                self.assertEqual(v.name, 'test_3d')
+                self.assertEqual(v.map.name, 'test_3d')
+
+                with gxg.GXdraw(v, '2D stuff') as g:
+                    g.xy_rectangle(v.extent_clip)
+                    draw_2d_stuff(g)
+
+                self.assertRaises(gxv.ViewException, v.new_drawing_plane, 0)
+                v.new_drawing_plane('vertical', rotation=(90.0, 0, 0))
+                with gxg.GXdraw(v, '2D stuff vertical', plane='vertical') as g:
+                    g.xy_rectangle(v.extent_clip)
+                    draw_2d_stuff(g)
+
+                self.assertEqual(v.current_3d_drawing_plane, 'vertical')
+                with gxg.GXdraw3d(v, '3D stuff') as g:
+                    g.box_3d(((20, 10, -10), (80, 50, 30)), pen=g.new_pen(fill_color='R255G100B50'))
+                self.assertEqual(v.current_3d_drawing_plane, 'plane_0')
+
+                self.assertEqual(len(v.plane_list), 2)
+                self.assertEqual(v.plane_number('plane_0'), 0)
+                self.assertEqual(v.plane_number('vertical'), 1)
+                self.assertEqual(v.plane_name('vertical'), 'vertical')
+                self.assertEqual(v.plane_name(1), 'vertical')
+                self.assertRaises(gxv.ViewException, v.plane_number, 'bogus')
+                self.assertRaises(gxv.ViewException, v.plane_number, -1)
+                self.assertRaises(gxv.ViewException, v.plane_name, 2)
+                self.assertRaises(gxv.ViewException, v.plane_name, 'bogus')
+
+            self.crc_map(v3d_file)
+
+        except:
+            raise
+
+        finally:
+            if v3d_file:
+                gxmap.delete_files(v3d_file)
+
+    def test_3d_map(self):
+        Test.start(self, gsys.func_name())
+
+        v3d_file = None
+        try:
+
+            with gxmap.GXmap.new() as map:
+                mapfile = map.file_name
+                with gxv.GXview(map, '*base') as v:
+                    with gxg.GXdraw(v, 'edge') as g:
+                        g.xy_rectangle(v.extent_clip)
+
+            with gxv.GXview3d.new('test_3d', overwrite=True) as v:
+                v3d_file = v.map.file_name
+                with gxg.GXdraw(v, '2D stuff') as g:
+                    draw_2d_stuff(g)
+                v.new_drawing_plane('vertical', rotation=(90.0, 0, 0))
+                with gxg.GXdraw(v, '2D stuff vertical', plane='vertical') as g:
+                    g.xy_rectangle(v.extent_clip)
+                    draw_2d_stuff(g)
+
+                with gxg.GXdraw3d(v, '3D stuff') as g:
+                    g.box_3d(((20, 10, -10), (80, 50, 30)), pen=g.new_pen(fill_color='R255G100B50'))
+
+                with gxmap.GXmap.open(mapfile) as map:
+                    map.create_linked_3d_view(v, 'linked_view')
+
+            self.crc_map(mapfile)
+
+        except:
+            raise
+
+        finally:
+            if v3d_file:
+                gxmap.delete_files(v3d_file)
+
+    def test_3d_open(self):
+        Test.start(self, gsys.func_name())
+
+        v3d_file = None
+        try:
+
+            with gxv.GXview3d.new('test_3d', overwrite=True) as v:
+                v3d_file = v.map.file_name
+                with gxg.GXdraw(v, '2D stuff') as g:
+                    draw_2d_stuff(g)
+
+            self.assertRaises(gxv.ViewException, gxv.GXview3d.open, 'bogus')
+
+            with gxv.GXview3d.open(v3d_file) as v:
+                v.new_drawing_plane('vertical', rotation=(90.0, 0, 0))
+                with gxg.GXdraw(v, '2D stuff vertical', plane='vertical') as g:
+                    g.xy_rectangle(v.extent_clip)
+                    draw_2d_stuff(g)
+
+                with gxg.GXdraw3d(v, '3D stuff') as g:
+                    g.box_3d(((20, 10, -10), (80, 50, 30)), pen=g.new_pen(fill_color='R255G100B50'))
+
+            self.crc_map(v3d_file)
+
+        except:
+            raise
+
+        finally:
+            if v3d_file:
+                gxmap.delete_files(v3d_file)
 
 if __name__ == '__main__':
 

@@ -165,7 +165,8 @@ class GXgroup:
     :parameters:
 
         :view:          gxpy.GXview
-        :groupname:     group name, default is "_".
+        :name:          group name, default is "_".
+        :plane:         plane number, or plane name if drawing to a 3D view.  Default is plane number 0.
         :view_lock:     True to lock the view for a single-stream drawwing group.  Default is False.
 
     :properties:
@@ -206,6 +207,7 @@ class GXgroup:
     def __init__(self,
                  view,
                  name='_',
+                 plane=0,
                  view_lock=False,
                  mode=APPEND):
 
@@ -221,6 +223,9 @@ class GXgroup:
                 view.lock = name
         finally:
             _lock.release()
+
+        if view.is_3d:
+            view.current_3d_drawing_plane = plane
 
         self._view = view
         self._name = name
@@ -592,7 +597,7 @@ class GXdraw(GXgroup):
             self.text_def = cur_text
 
 
-class GXdraw_3d(GXdraw):
+class GXdraw3d(GXdraw):
 
     def __init__(self, view, *args, **kwargs):
 
