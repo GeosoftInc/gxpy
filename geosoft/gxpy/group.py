@@ -528,7 +528,7 @@ class GXdraw(GXgroup):
         self.view.gxview.line(p2.p1.x, p2.p1.y, p2.p2.x, p2.p2.y)
 
     @_draw
-    def xy_poly_line(self, pp, close=False):
+    def xy_polyline(self, pp, close=False):
         """
         Draw a polyline the current plane
         :param pline: gxpy.geometry.PPoint
@@ -543,12 +543,26 @@ class GXdraw(GXgroup):
 
         if close:
             self.view.gxview.poly_line(gxapi.MVIEW_DRAW_POLYGON,
-                                  gxvv.GXvv(pp.x)._vv,
-                                  gxvv.GXvv(pp.y)._vv)
+                                       gxvv.GXvv(pp.x)._vv,
+                                       gxvv.GXvv(pp.y)._vv)
         else:
             self.view.gxview.poly_line(gxapi.MVIEW_DRAW_POLYLINE,
-                                  gxvv.GXvv(pp.x)._vv,
-                                  gxvv.GXvv(pp.y)._vv)
+                                       gxvv.GXvv(pp.x)._vv,
+                                       gxvv.GXvv(pp.y)._vv)
+
+    @_draw
+    def xy_polygon(self, pp, close=False):
+        """
+        Draw a polygon on the current plane
+        :param pline: gxpy.geometry.PPoint
+
+        .. note::
+            Smooth-line polygons must have at least 6 points for the closure to
+            appear continuous.
+
+        .. versionadded:: 9.2
+        """
+        self.xy_polyline(pp, True)
 
     @_draw
     def xy_rectangle(self, p2):

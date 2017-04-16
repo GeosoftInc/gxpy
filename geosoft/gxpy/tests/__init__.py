@@ -86,7 +86,7 @@ class GXPYTest(object):
             for line in lines:
                 # TODO Also replace known folder matches e.g. temp_folder with '<temp>' etc.
                 for k, v in replacement_dict.items():
-                    line = line.replace(k, v);
+                    line = line.replace(k, v)
                 f.write('{}\r\n'.format(line).encode('UTF-8'))
 
 

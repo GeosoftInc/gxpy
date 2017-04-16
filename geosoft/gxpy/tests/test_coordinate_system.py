@@ -72,7 +72,7 @@ class Test(unittest.TestCase):
 
         # name
         with gxcs.GXcs( 'DHDN / Okarito 2000') as cs:
-            gxfs = cs.get_gxf()
+            gxfs = cs.gxf
             self.assertEqual(gxfs[0],'DHDN / Okarito 2000')
             self.assertEqual(gxfs[1],'DHDN,6377397.155,0.0816968312225275,0')
             self.assertEqual(gxfs[2],'"Transverse Mercator",-43.11,170.260833333333,1,400000,800000')
@@ -91,7 +91,7 @@ class Test(unittest.TestCase):
 
         # GXF strings
         with gxcs.GXcs(['','DHDN','Okarito 2000','','']) as cs:
-            gxfs = cs.get_gxf()
+            gxfs = cs.gxf
             self.assertEqual(gxfs[0],'DHDN / Okarito 2000')
             self.assertEqual(gxfs[1],'DHDN,6377397.155,0.0816968312225275,0')
             self.assertEqual(gxfs[2],'"Transverse Mercator",-43.11,170.260833333333,1,400000,800000')
@@ -101,7 +101,7 @@ class Test(unittest.TestCase):
 
         # dictionary
         with gxcs.GXcs(dct) as cs:
-            gxfs = cs.get_gxf()
+            gxfs = cs.gxf
             self.assertEqual(gxfs[0],'DHDN / Okarito 2000')
             self.assertEqual(gxfs[1],'DHDN,6377397.155,0.0816968312225275,0')
             self.assertEqual(gxfs[2],'"Transverse Mercator",-43.11,170.260833333333,1,400000,800000')
@@ -130,7 +130,7 @@ class Test(unittest.TestCase):
         ipj = gxapi.GXIPJ.create()
         ipj.set_gxf('', 'DHDN', 'Okarito 2000', '', '')
         with gxcs.GXcs(ipj) as cs:
-            gxfs = cs.get_gxf()
+            gxfs = cs.gxf
             self.assertEqual(gxfs[0],'DHDN / Okarito 2000')
             self.assertEqual(gxfs[1],'DHDN,6377397.155,0.0816968312225275,0')
             self.assertEqual(gxfs[2],'"Transverse Mercator",-43.11,170.260833333333,1,400000,800000')
@@ -149,7 +149,7 @@ class Test(unittest.TestCase):
 
         with gxcs.GXcs(gxcs.GXcs(ipj)) as cs:
             self.assertEqual(cs.vcs, '')
-            gxfs = cs.get_gxf()
+            gxfs = cs.gxf
             self.assertEqual(gxfs[0],'DHDN / Okarito 2000')
             self.assertEqual(gxfs[1],'DHDN,6377397.155,0.0816968312225275,0')
             self.assertEqual(gxfs[2],'"Transverse Mercator",-43.11,170.260833333333,1,400000,800000')
@@ -194,7 +194,7 @@ class Test(unittest.TestCase):
         self.assertEqual(gxcs.name_from_hcs_orient_vcs(hcs, orient, vcs), "DHDN / Okarito 2000")
 
         with gxcs.GXcs( 'DHDN / Okarito 2000 [geodetic]') as cs:
-            gxfs = cs.get_gxf()
+            gxfs = cs.gxf
             self.assertEqual(gxfs[0],'DHDN / Okarito 2000 [geodetic]')
             self.assertEqual(gxfs[1],'DHDN,6377397.155,0.0816968312225275,0')
             self.assertEqual(gxfs[2],'"Transverse Mercator",-43.11,170.260833333333,1,400000,800000')
@@ -215,24 +215,24 @@ class Test(unittest.TestCase):
             self.assertEqual(cs.cs_name(what=gxcs.NAME_HCS), cs.hcs)
             self.assertEqual(cs.cs_name(what=gxcs.NAME_VCS), cs.vcs)
             self.assertEqual(cs.cs_name(what=gxcs.NAME_HCS), 'DHDN')
-            #TODO self.assertEqual(cs.cs_name(what=gxcs.NAME_VCS), 'geoid')
-            #TODO self.assertEqual(cs.cs_name(what=gxcs.NAME_HCS_VCS), 'DHDN [geoid]')
+            self.assertEqual(cs.cs_name(what=gxcs.NAME_VCS), 'geoid')
+            self.assertEqual(cs.cs_name(what=gxcs.NAME_HCS_VCS), 'DHDN [geoid]')
 
         with gxcs.GXcs('DHDN [geodetic]') as cs:
             self.assertEqual(cs.cs_name(what=gxcs.NAME_HCS_VCS), cs.name)
             self.assertEqual(cs.cs_name(what=gxcs.NAME_HCS), cs.hcs)
             self.assertEqual(cs.cs_name(what=gxcs.NAME_VCS), cs.vcs)
             self.assertEqual(cs.cs_name(what=gxcs.NAME_HCS), 'DHDN')
-            #TODO self.assertEqual(cs.cs_name(what=gxcs.NAME_VCS), 'geodetic')
-            #TODO self.assertEqual(cs.cs_name(what=gxcs.NAME_HCS_VCS), 'DHDN [geodetic]')
+            self.assertEqual(cs.cs_name(what=gxcs.NAME_VCS), 'geodetic')
+            self.assertEqual(cs.cs_name(what=gxcs.NAME_HCS_VCS), 'DHDN [geodetic]')
 
     def test_vcs(self):
         self.start(gsys.func_name())
 
         self.assertEqual(gxcs.GXcs("nad83 / UTM zone 15N [NAVD92]").name, 'NAD83 / UTM zone 15N [NAVD92]')
-        #TODO self.assertEqual(gxcs.GXcs("nad83 [NAVD92]").name, 'NAD83 [NAVD92]')
-        #TODO self.assertFalse(gxcs.GXcs("nad83 [NAVD92]").same_as(gxcs.GXcs("NAD83 [geodetic]")))
-        #TODO self.assertFalse(gxcs.GXcs("nad83 [geoid]").same_vcs(gxcs.GXcs("NAD27 [NAVD92]")))
+        self.assertEqual(gxcs.GXcs("nad83 [NAVD92]").name, 'NAD83 [NAVD92]')
+        self.assertFalse(gxcs.GXcs("nad83 [NAVD92]").same_as(gxcs.GXcs("NAD83 [geodetic]")))
+        self.assertFalse(gxcs.GXcs("nad83 [geoid]").same_vcs(gxcs.GXcs("NAD27 [NAVD92]")))
 
 
     def test_GXF_cs(self):
@@ -242,7 +242,7 @@ class Test(unittest.TestCase):
 
         #test IPJ creation using GXF strings
         cs = gxcs.GXcs( ['','DHDN','Okarito 2000','',''])
-        gxfs = cs.get_gxf()
+        gxfs = cs.gxf
         self.assertEqual(gxfs[0],'DHDN / Okarito 2000')
         self.assertEqual(gxfs[1],'DHDN,6377397.155,0.0816968312225275,0')
         self.assertEqual(gxfs[2],'"Transverse Mercator",-43.11,170.260833333333,1,400000,800000')
@@ -250,7 +250,7 @@ class Test(unittest.TestCase):
         self.assertEqual(gxfs[4],'"DHDN to WGS 84 (1)",582,105,414,1.04,0.35,-3.08,8.29999999996112')
 
         cs = gxcs.GXcs( gxfs)
-        gxfs = cs.get_gxf()
+        gxfs = cs.gxf
         self.assertEqual(gxfs[0],'DHDN / Okarito 2000')
         self.assertEqual(gxfs[1],'DHDN,6377397.155,0.0816968312225275,0')
         self.assertEqual(gxfs[2],'"Transverse Mercator",-43.11,170.260833333333,1,400000,800000')
@@ -264,7 +264,7 @@ class Test(unittest.TestCase):
 
         #test IPJ creation using GXF strings
         cs = gxcs.GXcs( ['','DHDN','"Transverse Mercator",0,39,0.9996,500000,99999','m,1',''])
-        gxfs = cs.get_gxf()
+        gxfs = cs.gxf
         self.assertEqual(gxfs[0],'DHDN / *Transverse Mercator')
         self.assertEqual(gxfs[1],'DHDN,6377397.155,0.0816968312225275,0')
         self.assertEqual(gxfs[2],'"Transverse Mercator",0,39,0.9996,500000,99999')
@@ -273,7 +273,7 @@ class Test(unittest.TestCase):
 
         #test minimum with local rotation
         cs = gxcs.GXcs( [',500000,6000000,0,0,0,15','NAD83','"Transverse Mercator",0,-69,0.9996,500000,0','m,1',''])
-        gxfs = cs.get_gxf()
+        gxfs = cs.gxf
         self.assertEqual(gxfs[0],'NAD83 / UTM zone 19N')
         self.assertEqual(gxfs[1],'NAD83,6378137,0.0818191910428158,0')
         self.assertEqual(gxfs[2],'"Transverse Mercator",0,-69,0.9996,500000,0')
@@ -281,7 +281,7 @@ class Test(unittest.TestCase):
         self.assertEqual(gxfs[4],'"NAD83 to WGS 84 (1)",0,0,0,0,0,0,0')
 
         cs = gxcs.GXcs( ['','NAD83','UTM zone 19N','m,1',''])
-        gxfs = cs.get_gxf()
+        gxfs = cs.gxf
         self.assertEqual(gxfs[0],'NAD83 / UTM zone 19N')
         self.assertEqual(gxfs[1],'NAD83,6378137,0.0818191910428158,0')
         self.assertEqual(gxfs[2],'"Transverse Mercator",0,-69,0.9996,500000,0')
@@ -290,7 +290,7 @@ class Test(unittest.TestCase):
 
         #test EPSG numbers
         cs = gxcs.GXcs( ['','4193','','',''])
-        gxfs = cs.get_gxf()
+        gxfs = cs.gxf
         self.assertEqual(gxfs[0],'Manoca 1962')
         self.assertEqual(gxfs[1],'"Manoca 1962",6378249.2,0.0824832567634178,0')
         self.assertEqual(gxfs[2],'')
@@ -298,16 +298,16 @@ class Test(unittest.TestCase):
         self.assertEqual(gxfs[4],'"Manoca 1962 to WGS 84 (1)",-70.9,-151.8,-41.4,0,0,0,0')
 
         cs = gxcs.GXcs( ['4210','','','',''])
-        gxfs = cs.get_gxf()
+        gxfs = cs.gxf
         self.assertEqual(gxfs[1],'"Arc 1960",6378249.145,0.082483400044185,0')
 
         cs = gxcs.GXcs( ['21037','','','',''])
-        gxfs = cs.get_gxf()
+        gxfs = cs.gxf
         self.assertEqual(gxfs[1],'"Arc 1960",6378249.145,0.082483400044185,0')
         self.assertEqual(gxfs[2],'"Transverse Mercator",0,39,0.9996,500000,10000000')
 
         cs = gxcs.GXcs( ['','4210','16137','',''])
-        gxfs = cs.get_gxf()
+        gxfs = cs.gxf
         self.assertEqual(gxfs[1],'"Arc 1960",6378249.145,0.082483400044185,0')
 
     def test_ESRI_cs(self):
@@ -325,7 +325,7 @@ class Test(unittest.TestCase):
         self.assertEqual(wkt.name, 'Okarito_2000')
 
         cs = gxcs.GXcs(stref.value)
-        gxfs = cs.get_gxf()
+        gxfs = cs.gxf
         self.assertEqual(gxfs[0],'DHDN / *Okarito 2000')
         self.assertEqual(gxfs[1],'DHDN,6377397.155,0.0816968312225274,0')
         self.assertEqual(gxfs[2],'"Transverse Mercator",-43.11,170.260833333333,1,400000,800000')
@@ -353,7 +353,7 @@ class Test(unittest.TestCase):
         self.assertEqual(stref2.value,'Units "m"')
 
         cs.gxipj.set_mi_coord_sys(stref1.value,stref2.value)
-        gxfs = cs.get_gxf()
+        gxfs = cs.gxf
         self.assertEqual(gxfs[0],'DHDN / Okarito 2000')
         self.assertEqual(gxfs[1],'DHDN,6377397.155,0.0816968312225275,0')
         self.assertEqual(gxfs[2],'"Transverse Mercator",-43.11,170.2608333333,1,400000,800000')
@@ -369,7 +369,7 @@ class Test(unittest.TestCase):
         cs = gxcs.GXcs( ['<525000,6000000,0,0,0,15>','DHDN','Okarito 2000','',''])
         cs.gxipj.get_name(gxapi.IPJ_NAME_ORIENTATION_PARMS,stref)
         self.assertEqual(stref.value,'525000,6000000,0,0,0,15')
-        gxfs = cs.get_gxf()
+        gxfs = cs.gxf
         self.assertEqual(gxfs[0],'DHDN / Okarito 2000 <525000,6000000,0,0,0,15>')
         self.assertEqual(gxfs[1],'DHDN,6377397.155,0.0816968312225275,0')
         self.assertEqual(gxfs[2],'"Transverse Mercator",-43.11,170.260833333333,1,400000,800000')
@@ -380,7 +380,7 @@ class Test(unittest.TestCase):
         cs = gxcs.GXcs( ['DRUKREF 03 / Bumthang TM <525000,6000000,0,0,0,15>','','','',''])
         cs.gxipj.get_display_name(stref)
         cs.gxipj.get_name(gxapi.IPJ_NAME_ORIENTATION_PARMS,stref)
-        gxfs = cs.get_gxf()
+        gxfs = cs.gxf
         self.assertEqual(gxfs[0],'DRUKREF 03 / Bumthang TM <525000,6000000,0,0,0,15>')
         self.assertEqual(gxfs[1],'"Bhutan National Geodetic Datum",6378137,0.0818191910428158,0')
         self.assertEqual(gxfs[2],'"Transverse Mercator",0,90.7333333333333,1,250000,-2500000')
@@ -394,7 +394,7 @@ class Test(unittest.TestCase):
 
         stref = gxapi.str_ref()
         cs = gxcs.GXcs( "{'type': 'EPSG', 'code': 20250}")
-        gxfs = cs.get_gxf()
+        gxfs = cs.gxf
         self.assertEqual(gxfs[0],'AGD66 / AMG zone 50')
         self.assertEqual(gxfs[1],'AGD66,6378160,0.0818201799960599,0')
         self.assertEqual(gxfs[2],'"Transverse Mercator",0,117,0.9996,500000,10000000')
@@ -402,7 +402,7 @@ class Test(unittest.TestCase):
         self.assertEqual(gxfs[4],'"AGD66 to WGS 84 (12)",-129.193,-41.212,130.73,0.246,0.374,0.329,-2.95500000002669')
 
         cs = gxcs.GXcs( "{'type': 'EPSG', 'code': '20250 <1000,500,20,0,0,25>'}")
-        gxfs = cs.get_gxf()
+        gxfs = cs.gxf
         self.assertEqual(gxfs[0],'AGD66 / AMG zone 50 <1000,500,20,0,0,25>')
         self.assertEqual(gxfs[1],'AGD66,6378160,0.0818201799960599,0')
         self.assertEqual(gxfs[2],'"Transverse Mercator",0,117,0.9996,500000,10000000')
@@ -414,7 +414,7 @@ class Test(unittest.TestCase):
         orientation = '"35000,55555,0,0,0,33"'
         cs = gxcs.GXcs( '{"type":"ESRI","orientation":'+orientation+',"wkt":"' + wkt + '"}')
         cs.gxipj.get_display_name(stref)
-        gxfs = cs.get_gxf()
+        gxfs = cs.gxf
         self.assertEqual(gxfs[0],'DHDN / *Okarito 2000 <35000,55555,0,0,0,33>')
         self.assertEqual(gxfs[1],'DHDN,6377397.155,0.0816968312225275,0')
         self.assertEqual(gxfs[2],'"Transverse Mercator",-43.11,170.260833333333,1,400000,800000')
@@ -422,14 +422,14 @@ class Test(unittest.TestCase):
         self.assertEqual(gxfs[4],'"DHDN to WGS 84 (1)",582,105,414,1.04,0.35,-3.08,8.29999999996112')
 
         cs = gxcs.GXcs( '{"type":"Geosoft","name":"<25000,1000000,50,90,0,15>","datum":"DHDN","projection":"Okarito 2000"}')
-        gxfs = cs.get_gxf()
+        gxfs = cs.gxf
         self.assertEqual(gxfs[0],'DHDN / Okarito 2000 <25000,1000000,50,90,0,15>')
         self.assertEqual(gxfs[1],'DHDN,6377397.155,0.0816968312225275,0')
         self.assertEqual(gxfs[2],'"Transverse Mercator",-43.11,170.260833333333,1,400000,800000')
         self.assertEqual(gxfs[3],'m,1')
         self.assertEqual(gxfs[4],'"DHDN to WGS 84 (1)",582,105,414,1.04,0.35,-3.08,8.29999999996112')
 
-        gxfs = cs.get_gxf()
+        gxfs = cs.gxf
         self.assertEqual(gxfs[0],'DHDN / Okarito 2000 <25000,1000000,50,90,0,15>')
         self.assertEqual(gxfs[1],'DHDN,6377397.155,0.0816968312225275,0')
         self.assertEqual(gxfs[2],'"Transverse Mercator",-43.11,170.260833333333,1,400000,800000')
@@ -440,7 +440,7 @@ class Test(unittest.TestCase):
         self.start(gsys.func_name())
 
         with gxcs.GXcs({'type': 'EPSG', 'code': 20250}) as cs:
-            gxfs = cs.get_gxf()
+            gxfs = cs.gxf
             self.assertEqual(gxfs[0],'AGD66 / AMG zone 50')
             self.assertEqual(gxfs[1],'AGD66,6378160,0.0818201799960599,0')
             self.assertEqual(gxfs[2],'"Transverse Mercator",0,117,0.9996,500000,10000000')
@@ -454,7 +454,7 @@ class Test(unittest.TestCase):
 
         cs = gxcs.GXcs( '{"type": "Geosoft", "datum":"NAD83,6378137,0.0818191910428158,0","projection":"\\"Oblique Stereographic\\",61.40.00,-128.10.00,1,0,0","units":"m,1","gxf5":"\\"NAD83 to WGS 84 (1)\\",0,0,0,0,0,0,0"}')
         cs.gxipj.get_display_name(stref)
-        gxfs = cs.get_gxf()
+        gxfs = cs.gxf
         self.assertEqual(gxfs[0],'NAD83 / *Oblique Stereographic')
         self.assertEqual(gxfs[1],'NAD83,6378137,0.0818191910428158,0')
         self.assertEqual(gxfs[2],'"Oblique Stereographic",61.6666666666667,-128.166666666667,1,0,0')
@@ -463,7 +463,7 @@ class Test(unittest.TestCase):
 
         cs = gxcs.GXcs( '{"type": "Localgrid", "longitude":"-128.10.00","latitude":"61.40.00","azimuth":-15,"units":"ft"}')
         cs.gxipj.get_display_name(stref)
-        gxfs = cs.get_gxf()
+        gxfs = cs.gxf
         self.assertEqual(gxfs[0],'WGS 84 / *Local grid (61.40.00,-128.10.00) <0,0,0,0,0,-15>')
         self.assertEqual(gxfs[1],'"WGS 84",6378137,0.0818191908426215,0')
         self.assertEqual(gxfs[2],'"Oblique Stereographic",61.6666666666667,-128.166666666667,0.9996,0,0')
@@ -472,7 +472,7 @@ class Test(unittest.TestCase):
 
         cs = gxcs.GXcs( '{"type": "Localgrid", "longitude":"-128.10.00","latitude":"61.40.00","azimuth":-15,"units":"ft","elevation":133.1567}')
         cs.gxipj.get_display_name(stref)
-        gxfs = cs.get_gxf()
+        gxfs = cs.gxf
         self.assertEqual(gxfs[0],'WGS 84 / *Local grid [61.40.00,-128.10.00] <0,0,133.1567,0,0,-15>')
         self.assertEqual(gxfs[1],'"WGS 84",6378137,0.0818191908426215,0')
         self.assertEqual(gxfs[2],'"Oblique Stereographic",61.6666666666667,-128.166666666667,0.9996,0,0')
@@ -481,7 +481,7 @@ class Test(unittest.TestCase):
 
         cs = gxcs.GXcs( '{"type": "Localgrid", "longitude":0,"latitude":0}')
         cs.gxipj.get_display_name(stref)
-        gxfs = cs.get_gxf()
+        gxfs = cs.gxf
         self.assertEqual(gxfs[0],'WGS 84 / *Local grid [0,0]')
         self.assertEqual(gxfs[1],'"WGS 84",6378137,0.0818191908426215,0')
         self.assertEqual(gxfs[2],'"Oblique Stereographic",0,0,0.9996,0,0')
@@ -538,10 +538,9 @@ class Test(unittest.TestCase):
         self.assertTrue(gxcs.GXcs("nad27 [geoid]").same_hcs(gxcs.GXcs("NAD27 [NAVD92]")))
 
         self.assertFalse(gxcs.GXcs("nad83 / UTM zone 35N").same_as(gxcs.GXcs("NAD83")))
-        #TODO self.assertFalse(gxcs.GXcs("nad83 [NAVD92]").same_as(gxcs.GXcs("NAD83 [geodetic]")))
+        self.assertFalse(gxcs.GXcs("nad83 [NAVD92]").same_as(gxcs.GXcs("NAD83 [geodetic]")))
         self.assertFalse(gxcs.GXcs("nad83").same_as(gxcs.GXcs("NAD27")))
-        #TODO self.assertFalse(gxcs.GXcs("nad83 [geoid]").same_vcs(gxcs.GXcs("NAD27 [NAVD92]")))
-
+        self.assertFalse(gxcs.GXcs("nad83 [geoid]").same_vcs(gxcs.GXcs("NAD27 [NAVD92]")))
 
     def test_units(self):
         self.start(gsys.func_name())
@@ -661,13 +660,23 @@ class Test(unittest.TestCase):
     def test_hcs_vcs(self):
         self.start(gsys.func_name())
 
+        with gxcs.GXcs('NAD27 / UTM zone 18N') as cs:
+            self.assertEqual(cs.name, 'NAD27 / UTM zone 18N')
+            self.assertEqual(cs.vcs, '')
+            self.assertEqual(cs.hcs, 'NAD27 / UTM zone 18N')
+
+        with gxcs.GXcs('NAD27 / UTM zone 18N [NAVD92]') as cs:
+            self.assertEqual(cs.name, 'NAD27 / UTM zone 18N [NAVD92]')
+            self.assertEqual(cs.vcs, 'NAVD92')
+            self.assertEqual(cs.hcs, 'NAD27 / UTM zone 18N')
+
         with gxcs.GXcs("wgs 84 [geoid]") as cs:
             hcsdict = cs.coordinate_dict()
-            #TODO self.assertEqual(hcsdict['name'], "WGS 84 [geoid]")
+            self.assertEqual(hcsdict['name'], "WGS 84 [geoid]")
             self.assertEqual(hcsdict['datum'], '"WGS 84",6378137,0.0818191908426215,0')
             self.assertEqual(hcsdict['projection'], "")
-            #TODO self.assertEqual(hcsdict['vcs'], "geoid")
-            #TODO self.assertEqual(cs.vcs, 'geoid')
+            self.assertEqual(hcsdict['vcs'], "geoid")
+            self.assertEqual(cs.vcs, 'geoid')
 
     def test_orientation(self):
         self.start(gsys.func_name())
@@ -700,17 +709,23 @@ class Test(unittest.TestCase):
     def test_init_from_names(self):
         self.start(gsys.func_name())
 
-        def validate(cs):
-            self.assertEqual(cs.display_name, 'DHDN / Okarito 2000 [geodetic] (150,8.5,0) <32 deg>')
-            self.assertEqual(cs.name, "DHDN / Okarito 2000 <150,8.5,0,0,0,32> [geodetic]")
+        with gxcs.GXcs("DHDN / Okarito 2000 <150,8.5,0,0,0,32>") as cs:
+            self.assertEqual(cs.name, "DHDN / Okarito 2000 <150,8.5,0,0,0,32>")
+            self.assertEqual(cs.hcs, "DHDN / Okarito 2000 <150,8.5,0,0,0,32>")
+            self.assertEqual(cs.vcs, "")
+            self.assertEqual(cs.display_name, 'DHDN / Okarito 2000 (150,8.5,0) <32 deg>')
+
+        with gxcs.GXcs("DHDN / Okarito 2000 [geodetic] <150, 8.5, 0, 0, 0, 32> ") as cs:
+            self.assertEqual(cs.name, "DHDN / Okarito 2000 [geodetic] <150,8.5,0,0,0,32>")
             self.assertEqual(cs.hcs, "DHDN / Okarito 2000 <150,8.5,0,0,0,32>")
             self.assertEqual(cs.vcs, "geodetic")
+            self.assertEqual(cs.display_name, 'DHDN / Okarito 2000 [geodetic] (150,8.5,0) <32 deg>')
 
-        validate(gxcs.GXcs("DHDN / Okarito 2000 <150,8.5,0,0,0,32> [geodetic]"))
-        validate(gxcs.GXcs("DHDN / Okarito 2000 [geodetic] <150, 8.5, 0, 0, 0, 32> "))
-        with gxcs.GXcs("DHDN / Okarito 2000 <150, 8.5, 0, 0, 0, 32>") as cs:
-            cs.vcs = 'geodetic'
-            validate(cs)
+    def test_localgrid(self):
+        self.start(gsys.func_name())
+
+        #TODO complete a test
+        pass
 
 ###############################################################################################
 

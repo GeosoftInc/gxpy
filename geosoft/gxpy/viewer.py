@@ -1,7 +1,7 @@
 """
 Geosoft Viewers
 """
-#TODO work out a way to satisfy help_ID
+#TODO work out a way to satisfy help_ID - added to http://confluence.geosoft.com/display/PM/One-liners
 
 import geosoft
 import geosoft.gxapi as gxapi

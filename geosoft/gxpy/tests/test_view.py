@@ -25,9 +25,9 @@ def draw_2d_stuff(g, size=1.0):
 
     pp = gxgm.PPoint.from_list(plinelist) * size
     g.pen = g.new_pen(line_style=2, line_pitch=2.0)
-    g.xy_poly_line(pp)
+    g.xy_polyline(pp)
     g.pen = g.new_pen(line_style=4, line_pitch=2.0, line_smooth=gxg.SMOOTH_AKIMA)
-    g.xy_poly_line(pp)
+    g.xy_polyline(pp)
 
     ppp = np.array(plinelist)
     pp = gxgm.PPoint(ppp[3:, :]) * size
@@ -36,16 +36,16 @@ def draw_2d_stuff(g, size=1.0):
                       line_color=gxg.C_RED,
                       line_thick=0.25,
                       fill_color=gxg.C_LT_BLUE)
-    g.xy_poly_line(pp, close=True)
+    g.xy_polygon(pp)
 
     g.pen = g.new_pen(fill_color=gxg.C_LT_GREEN)
     p1 = gxgm.Point((100, 0, 0)) * size
     p2 = gxgm.Point((100, 0, 0)) * size
     pp = (pp - p1) / 2 + p2
-    g.xy_poly_line(pp, close=True)
+    g.xy_polygon(pp)
     pp += gxgm.Point((0, 25, 0)) * size
     g.pen = g.new_pen(fill_color=gxg.C_LT_RED)
-    g.xy_poly_line(pp, close=True)
+    g.xy_polygon(pp)
 
 
 
