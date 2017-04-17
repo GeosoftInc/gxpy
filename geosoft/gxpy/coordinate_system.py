@@ -531,7 +531,7 @@ class GXcs:
         gxf1, gxf2, gxf3, gxf4, gxf5 = gxfs
 
         hcs, orient, vcs = hcs_orient_vcs_from_name(gxf1)
-        #gxf1 = name_from_hcs_orient_vcs(hcs, orient=orient)
+        gxf1 = name_from_hcs_orient_vcs(hcs, orient=orient)
         
         # if we get a name only, and it has a datum and projection, copy these.
         # The challenge with a name only is that the "datum / projection" must exist as
@@ -551,6 +551,7 @@ class GXcs:
             self.gxipj.set_gxf('', '', '', gxf1, '')
 
         else:
+            #TODO fix with bug-corrected set_vcs()
             try:
                 self.gxipj.set_gxf(gxf1, gxf2, gxf3, gxf4, gxf5)
                 if vcs:
@@ -616,7 +617,7 @@ class GXcs:
             lat = csdict.get('latitude', None)
             lon = csdict.get('longitude', None)
             if (lat is None) or (lon is None):
-                raise ValueError("'Localgrid must define latitude and longitude properties of the local origin.")
+                raise ValueError(_t("'Localgrid must define latitude and longitude properties of the local origin."))
             sf = csdict.get('scalefactor', 0.9996)
 
             #TODO figure this out with Stephen for 9.2
@@ -627,13 +628,14 @@ class GXcs:
             ldatum = csdict.get('ldatum', '')
             azimuth = csdict.get('azimuth', 0.0)
             elevation = csdict.get('elevation', 0.0)
+            vcs = csdict.get('vcs', '')
             if (azimuth == 0.0) and (elevation == 0.0):
                 orient = ''
             else:
                 orient = '0,0,' + str(elevation) + ',0,0,' + str(azimuth)
 
             # construct a name
-            name = name_from_hcs_orient_vcs(datum + ' / *Local (' + str(lat) + ',' + str(lon) + ')', orient, '')
+            name = name_from_hcs_orient_vcs('{} / *Local({},{})'.format(datum, lat, lon), orient, vcs)
             self._from_gxf([name, datum, proj, units, ldatum])
 
         else:

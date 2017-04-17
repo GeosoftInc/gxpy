@@ -1,6 +1,6 @@
 <IPJ>
-   <Item name="Name" value="WGS 84 / UTM zone 15N [geoid]"/>
-   <Item name="Proj" value="UTM zone 15N [geoid]"/>
+   <Item name="Name" value="WGS 84 / UTM zone 15N"/>
+   <Item name="Proj" value="UTM zone 15N"/>
    <Item name="Datum" value="WGS 84"/>
    <Item name="Ellipsoid" value="WGS 84"/>
    <Item name="DatumTrf" value="WGS 84"/>

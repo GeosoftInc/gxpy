@@ -840,7 +840,9 @@ class GXmap:
                   text=None,
                   pen=None):
         """
-
+        Draw a scale bar.
+        
+        :param location:    (ref_point, x_off, y_off) bar location reference point an offset from that point
         :param length:      maximum scale bar length, default is 5 cm. scale=0.0 will suppress drawing of the bar.
         :param sections:    number of major sections in the bar, default is determined automatically.
         :param post_scale:  True to post the actual scale as a string, e.g. '1:50,000'.  Note that a posted
@@ -861,10 +863,10 @@ class GXmap:
             option = 1
 
         if text is None:
-            text = gxg.Text_def(height=0.25, italics=True)
+            text = gxg.Text_def(height=0.25, weight=gxg.FONT_WEIGHT_LIGHT, italics=True)
 
         if pen is None:
-            pen = gxg.Pen(line_thick=0.050)
+            pen = gxg.Pen(line_thick=0.02)
 
         with _Mapplot(self) as mpl:
             mpl.start_group('scale_bar', view=VIEW_BASE, mode=GROUP_APPEND)

@@ -49,9 +49,9 @@ def new_test_data_map(mapname=None, rescale=1.0):
                              [235, 18.5]]
                 pp = gxgm.PPoint.from_list(plinelist) * rescale
                 g.pen = gxg.Pen(line_style=2, line_pitch=2.0)
-                g.xy_poly_line(pp)
+                g.xy_polyline(pp)
                 g.pen = gxg.Pen(line_style=4, line_pitch=2.0, line_smooth=gxg.SMOOTH_AKIMA)
-                g.xy_poly_line(pp)
+                g.xy_polyline(pp)
     
                 ppp = np.array(plinelist)
                 pp = gxgm.PPoint(ppp[3:, :]) * rescale
@@ -60,28 +60,31 @@ def new_test_data_map(mapname=None, rescale=1.0):
                               line_color=gxapi.C_RED,
                               line_thick=0.25,
                               fill_color=gxapi.C_LT_BLUE)
-                g.xy_poly_line(pp, close=True)
+                g.xy_polyline(pp, close=True)
     
                 g.pen = gxg.Pen(fill_color=gxapi.C_LT_GREEN)
                 pp = (pp - (100, 0, 0)) / 2 + (100, 0, 0)
-                g.xy_poly_line(pp, close=True)
+                g.xy_polyline(pp, close=True)
                 pp += (0, 25, 0)
                 g.pen = gxg.Pen(fill_color=gxapi.C_LT_RED)
-                g.xy_poly_line(pp, close=True)
+                g.xy_polyline(pp, close=True)
 
         return map.file_name
 
-def test_data_map(name=None, data_area=(1000,0,11000,5000)):
+def test_data_map(name=None, data_area=(1000,0,11000,5000), margins=None, cs=None):
 
     if name is None:
         name = os.path.join(gx.GXpy().temp_folder(), "test")
     gxmap.delete_files(name)
-    cs = gxcs.GXcs("WGS 84 / UTM zone 15N")
+    if cs is None:
+        cs = gxcs.GXcs("WGS 84 / UTM zone 15N")
+    if margins is None:
+        margins = (1.5, 1.5, 3, 1)
     return gxmap.GXmap.new(file_name=name,
                            data_area=data_area,
                            cs=cs,
                            media="A4",
-                           margins=(1.5, 3, 1.5, 1),
+                           margins=margins,
                            inside_margin=0.5)
 
 class Test(unittest.TestCase, GXPYTest):
@@ -568,6 +571,29 @@ class Test(unittest.TestCase, GXPYTest):
                                  grid_pen=gxg.Pen(line_color='b', line_thick=0.025),
                                  text_def=gxg.Text_def(height=0.18, italics=True),
                                  top=gxmap.TOP_IN)
+        self.crc_map(mapfile)
+
+    def test_annotate_ll_localgrid(self):
+        Test.start(self, gsys.func_name())
+
+        #TODO this is not what I expect - chat with Stephen...
+
+        cs = gxcs.GXcs({'type': 'localgrid',
+                        'latitude': 45,
+                        'longitude': -96,
+                        'datum': 'nad83',
+                        'azimuth': -30})
+        with test_data_map(data_area=(0, 0, 5000, 3500), margins=(3,3,6,3), cs=cs) as map:
+            mapfile = map.file_name
+            map.annotate_data_xy()
+            map.annotate_data_ll(grid=gxmap.GRID_LINES,
+                                 grid_pen=gxg.Pen(line_color='b', line_thick=0.025),
+                                 text_def=gxg.Text_def(height=0.18, italics=True),
+                                 top=gxmap.TOP_IN)
+
+            map.surround()
+            map.scale_bar(location=(2, 0, 2), length=6, sections=5)
+
         self.crc_map(mapfile)
 
     #TODO - JB to fix test framework to pass tests like this

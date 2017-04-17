@@ -724,8 +724,21 @@ class Test(unittest.TestCase):
     def test_localgrid(self):
         self.start(gsys.func_name())
 
-        #TODO complete a test
-        pass
+        with gxcs.GXcs({'type': 'localgrid',
+                        'latitude': 45,
+                        'longitude': -96,
+                        'datum': 'nad83',
+                        'azimuth': -30}) as cs:
+            self.assertEqual(cs.name, 'NAD83 / *Local(45,-96) <0,0,0,0,0,-30>')
+
+        #TODO remove once vcs bug is fixed.
+        with gxcs.GXcs({'type': 'localgrid',
+                        'latitude': 45,
+                        'longitude': -96,
+                        'datum': 'nad83',
+                        #'vcs': 'NAVD92',
+                        'azimuth': -30}) as cs:
+            pass #self.assertEqual(cs.name, 'NAD83 / *Local [NAVD92] (45,-96) <0,0,0,0,0,-30>')
 
 ###############################################################################################
 
