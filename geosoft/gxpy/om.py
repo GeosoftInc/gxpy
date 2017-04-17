@@ -220,13 +220,15 @@ def state():
                     # channel is '' if no channel selected
                     # start_fid is '' if no fiducials selected
                     # start_fid is '*' is all fiducials selected
+                'point': [x, y, z] - the spatial location of the current selection
             }
             'map' {
                 'open_list': [list of open maps]
-                'current': current map name
-                'point': [ x, y, z]
-                'cursor': [ x, y, z]
-                'display_area':[ xmin, ymin, xmax, ymax]
+                'current': current map/3dv name
+                'type': current map/3dv type, '2d' or '3d'
+                'point': [x, y, z] currently 2d maps only, z is always 0
+                'cursor': [x, y, z] currently 2d maps only, z is always 0
+                'display_area_2d': [ xmin, ymin, xmax, ymax]
             }
         }
 
@@ -235,6 +237,12 @@ def state():
     """
 
     #TODO refactor to always have a 3D location for gdb and maps
+
+    def dummy_none(v):
+        if v == gxapi.rDUMMY:
+            return None
+        else:
+            return v
 
     s = gxapi.str_ref()
     glst = gxapi.GXLST.create(4096)
@@ -271,6 +279,16 @@ def state():
             fd = sfd.value.split(' to ')
             fd = (fd[0], fd[1])
         sdb['selection'] = (sln.value, sch.value, fd[0], fd[1])
+
+        x_ref = gxapi.float_ref()
+        y_ref = gxapi.float_ref()
+        z_ref = gxapi.float_ref()
+        edb.get_cur_point(x_ref, y_ref, z_ref)
+        x = dummy_none(x_ref.value)
+        y = dummy_none(y_ref.value)
+        z = dummy_none(z_ref.value)
+        sdb['point'] = (x, y, z)
+
         state['gdb'] = sdb
 
     # maps
@@ -287,21 +305,24 @@ def state():
         smap['current'] = os.path.normpath(s.value)
         smap['open_list'] = [os.path.normpath(f) for f in list(dict_from_lst(glst).keys())]
 
-        emap.get_display_area(fx, fy, fx2, fy2)
-        smap['display_area'] = (fx.value, fy.value, fx2.value, fy2.value)
-
         if emap.is_3d_view():
+
+            smap['map_type'] = '3d'
 
             emap.get_3d_view_name(s)
             smap['3d_view_name'] = s.value
 
-        else:
-            # 2D
+            #TODO - flesh this out once we have more 3D wrapper functions
 
+        else:
+
+            smap['map_type'] = '2d'
+            emap.get_display_area(fx, fy, fx2, fy2)
+            smap['display_area'] = (fx.value, fy.value, fx2.value, fy2.value)
             emap.get_cur_point(fx, fy)
-            smap["point"] = (fx.value, fy.value, None)
+            smap["point"] = (fx.value, fy.value, 0.0)
             emap.get_cursor(fx, fy)
-            smap["cursor"] = (fx.value, fy.value, None)
+            smap["cursor"] = (fx.value, fy.value, 0.0)
 
         state['map'] = smap
 

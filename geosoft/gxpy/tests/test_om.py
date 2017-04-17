@@ -1,5 +1,5 @@
-# import pydevd
-# pydevd.settrace('localhost', port=34765, stdoutToServer=True, stderrToServer=True)
+import pydevd
+pydevd.settrace('localhost', port=34765, stdoutToServer=True, stderrToServer=True)
 
 import json
 import geosoft.gxpy.om as gxom
@@ -95,11 +95,13 @@ def test_scripting():
     gxa.GXSYS.set_interactive(1)
 
 def rungx():
+    test_state()
+    return
+
     test_scripting()
     test_get_user_input()
     test_file()
     test_multifile()
-    test_state()
     test_menus()
     input("Finished testing om API - success...")
 
