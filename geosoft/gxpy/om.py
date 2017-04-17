@@ -293,6 +293,10 @@ def state():
 
     # maps
     nmaps = gxapi.GXEMAP.get_maps_lst(glst, gxapi.EMAP_PATH_FULL)
+    try:
+        emap = gxapi.GXEMAP.current_no_activate()
+    except:
+        raise
     if nmaps > 0:
         fx = gxapi.float_ref()
         fy = gxapi.float_ref()

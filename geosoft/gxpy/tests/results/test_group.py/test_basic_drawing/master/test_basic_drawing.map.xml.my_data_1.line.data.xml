@@ -117,7 +117,7 @@
       <Item name="From" type="D2AREA">
          <Value name="MinX" value="0"/>
          <Value name="MinY" value="0"/>
-         <Value name="MaxX" value="1800"/>
+         <Value name="MaxX" value="1000"/>
          <Value name="MaxY" value="1500"/>
       </Item>
    </Item>
@@ -136,7 +136,7 @@
          <Value name="Y" value="300"/>
       </Item>
       <Item name="To" type="D2POINT">
-         <Value name="X" value="1800"/>
+         <Value name="X" value="1000"/>
          <Value name="Y" value="300"/>
       </Item>
    </Item>
@@ -146,7 +146,7 @@
          <Value name="Y" value="600"/>
       </Item>
       <Item name="To" type="D2POINT">
-         <Value name="X" value="1800"/>
+         <Value name="X" value="1000"/>
          <Value name="Y" value="600"/>
       </Item>
    </Item>
@@ -156,7 +156,7 @@
          <Value name="Y" value="900"/>
       </Item>
       <Item name="To" type="D2POINT">
-         <Value name="X" value="1800"/>
+         <Value name="X" value="1000"/>
          <Value name="Y" value="900"/>
       </Item>
    </Item>
@@ -166,47 +166,47 @@
          <Value name="Y" value="1200"/>
       </Item>
       <Item name="To" type="D2POINT">
-         <Value name="X" value="1800"/>
+         <Value name="X" value="1000"/>
          <Value name="Y" value="1200"/>
       </Item>
    </Item>
    <Item type="Line" size="32">
       <Item name="From" type="D2POINT">
-         <Value name="X" value="360"/>
+         <Value name="X" value="200"/>
          <Value name="Y" value="0"/>
       </Item>
       <Item name="To" type="D2POINT">
-         <Value name="X" value="360"/>
+         <Value name="X" value="200"/>
          <Value name="Y" value="1500"/>
       </Item>
    </Item>
    <Item type="Line" size="32">
       <Item name="From" type="D2POINT">
-         <Value name="X" value="720"/>
+         <Value name="X" value="400"/>
          <Value name="Y" value="0"/>
       </Item>
       <Item name="To" type="D2POINT">
-         <Value name="X" value="720"/>
+         <Value name="X" value="400"/>
          <Value name="Y" value="1500"/>
       </Item>
    </Item>
    <Item type="Line" size="32">
       <Item name="From" type="D2POINT">
-         <Value name="X" value="1080"/>
+         <Value name="X" value="600"/>
          <Value name="Y" value="0"/>
       </Item>
       <Item name="To" type="D2POINT">
-         <Value name="X" value="1080"/>
+         <Value name="X" value="600"/>
          <Value name="Y" value="1500"/>
       </Item>
    </Item>
    <Item type="Line" size="32">
       <Item name="From" type="D2POINT">
-         <Value name="X" value="1440"/>
+         <Value name="X" value="800"/>
          <Value name="Y" value="0"/>
       </Item>
       <Item name="To" type="D2POINT">
-         <Value name="X" value="1440"/>
+         <Value name="X" value="800"/>
          <Value name="Y" value="1500"/>
       </Item>
    </Item>

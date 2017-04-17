@@ -177,6 +177,14 @@ class GXview:
         self._units_to_metres = 1.0 / metres_per
         self.gxview.set_ipj(self._cs.gxipj)
 
+    def close(self):
+        """
+        Close a view.  Use yo close a view outside of a with ... as: construct.
+        
+        .. versionadded:: 9.2
+        """
+        self._close()
+
     def locate(self,
                cs=None,
                map_location=None,

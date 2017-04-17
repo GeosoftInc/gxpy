@@ -683,5 +683,17 @@ class Test(unittest.TestCase, GXPYTest):
                 v.delete_group('temp_agg')
         self.crc_map(mapfile, alt_crc_name='color_bar_3')
 
+    def text_view_extents(self):
+        Test.start(self, gsys.func_name())
+
+        testmap = os.path.join(self.gx.temp_folder(), "test")
+        with gxmap.GXmap.new(testmap, overwrite=True) as gmap:
+
+            gmap.delete_view('data')
+            gxv.GXview(gmap, "my_data_1", map_location=(2, 3), area=(0, 0, 1000, 1500), scale=10000).close()
+            gxv.GXview(gmap, "my_data_2", map_location=(15, 3), area=(0, 0, 1000, 1500), scale=10000).close()
+            ex = gmap.extent_data_views()
+            self.assertEqual(ex, (2, 3, 25, 18))
+
 if __name__ == '__main__':
     unittest.main()

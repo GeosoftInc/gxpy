@@ -219,25 +219,35 @@ class Test(unittest.TestCase, GXPYTest):
         self.crc_map(test3dv, alt_crc_name=gxsys.func_name() + '_3dv')
         self.crc_map(testmap, alt_crc_name=gxsys.func_name() + '_map')
 
-    def test_basic_drawing(self):
+    def test_graticule(self):
         Test.start(self, gsys.func_name())
 
         testmap = os.path.join(self.gx.temp_folder(), "test")
-        with gxmap.GXmap.new(testmap, overwrite=True, data_area=(0, 0, 25, 20), scale=100.0) as gmap:
+        with gxmap.GXmap.new(testmap, overwrite=True) as gmap:
             map_file = gmap.file_name
-            with gxv.GXview(gmap, "my_base_view", area=(0, 0, 25, 20), scale=100.0) as v:
-                with gxg.GXdraw(v, 'line') as g:
-                    g.xy_rectangle(v.extent_clip, pen=g.new_pen(line_thick=0.1, line_color='R'))
+            gmap.delete_view('data')
 
-            with gxv.GXview(gmap, "my_data_area", map_location=(4, 3), area=(0, 0, 1800, 1500), scale=10000) as v:
+            with gxv.GXview(gmap, "my_data_1", map_location=(2, 3), area=(0, 0, 1000, 1500), scale=10000) as v:
                 with gxg.GXdraw(v, 'line') as g:
-                    g.xy_rectangle(((0, 0), (1800, 1500)),
+                    g.xy_rectangle(v.extent_clip,
                                    pen=g.new_pen(line_thick=5, line_color='G'))
 
                     g.graticule(style=gxg.GRATICULE_LINE, pen=g.new_pen(line_thick=5))
 
-            gmap.delete_view('*data')
-            gmap.delete_view('*base')
+            with gxv.GXview(gmap, "my_data_2", map_location=(15, 3), area=(0, 0, 1000, 1500), scale=10000) as v:
+                with gxg.GXdraw(v, 'line') as g:
+                    g.xy_rectangle(v.extent_clip,
+                                   pen=g.new_pen(line_thick=5, line_color='G'))
+
+                    #TODO update test when GRATICULE_DOT is fixed
+                    g.graticule(style=gxg.GRATICULE_DOT, pen=g.new_pen(line_thick=5))
+
+            ex = gmap.extent_data_views()
+            area = (0, 0, ex[2] + 2, ex[3] + 3)
+            with gxv.GXview(gmap, "my_base_view", area=area, scale=100.0) as v:
+                with gxg.GXdraw(v, 'base_edge') as g:
+                    g.xy_rectangle(v.extent_clip, pen=g.new_pen(line_thick=0.1, line_color='R'))
+            gmap.delete_view('base')
 
         self.crc_map(map_file)
 

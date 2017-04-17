@@ -44,8 +44,7 @@ UNIT_VIEW = 0
 UNIT_MAP = 2
 UNIT_VIEW_UNWARPED = 3
 
-# TODO - add and test once bug if fixed
-# GRATICULE_DOT = 0 # disabled due to a bug
+GRATICULE_DOT = 0
 GRATICULE_LINE = 1
 GRATICULE_CROSS = 2
 

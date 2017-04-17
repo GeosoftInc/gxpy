@@ -505,6 +505,31 @@ class GXmap:
         """Commit changes to the map."""
         self.gxmap.commit()
 
+    def extent_data_views(self):
+        """
+        Returns the extent of all data views on the map in map cm.
+        
+        .. versionadded:: 9.2
+        """
+        def extents(ex, ext):
+            ex = (min(ex[0], ext[0]),
+                  min(ex[1], ext[1]),
+                  max(ex[2], ext[2]),
+                  max(ex[3], ext[3]))
+            return ex
+
+        vlist = self.view_list
+        ex = (1.0e10, 1.0e10, -1.0e10, -1.0e10)
+        base_view = self.classview('base').lower()
+        for view_name in vlist:
+            if view_name.lower() != base_view:
+                with gxv.GXview(self, view_name) as v:
+                    ex = extents(ex, v.extent_map_cm(v.extent_clip))
+        if ex[0] == 1.0e10:
+            raise MapException(_t('Map "{}" has no data views.').format(self.name))
+        return ex
+
+
     def classview(self, name):
         """
         Given a view name that may be a class name ('*' prefix), return the view name for that class.  if not

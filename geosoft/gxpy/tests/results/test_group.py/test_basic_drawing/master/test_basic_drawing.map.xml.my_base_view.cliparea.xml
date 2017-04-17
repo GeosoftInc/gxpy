@@ -7,14 +7,14 @@
          </Point>
          <Point>
             <Item name="X" value="0"/>
-            <Item name="Y" value="20"/>
+            <Item name="Y" value="21"/>
          </Point>
          <Point>
-            <Item name="X" value="25"/>
-            <Item name="Y" value="20"/>
+            <Item name="X" value="27"/>
+            <Item name="Y" value="21"/>
          </Point>
          <Point>
-            <Item name="X" value="25"/>
+            <Item name="X" value="27"/>
             <Item name="Y" value="0"/>
          </Point>
          <Point>

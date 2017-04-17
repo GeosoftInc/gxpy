@@ -117,8 +117,8 @@
       <Item name="From" type="D2AREA">
          <Value name="MinX" value="0"/>
          <Value name="MinY" value="0"/>
-         <Value name="MaxX" value="25"/>
-         <Value name="MaxY" value="20"/>
+         <Value name="MaxX" value="27"/>
+         <Value name="MaxY" value="21"/>
       </Item>
    </Item>
    <Item type="LineColor" size="8">

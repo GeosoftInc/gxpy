@@ -95,6 +95,7 @@ def test_scripting():
     gxa.GXSYS.set_interactive(1)
 
 def rungx():
+
     test_state()
     return
 
