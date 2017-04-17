@@ -407,7 +407,7 @@ class Test(unittest.TestCase, GXPYTest):
             map.scale_bar(location=(2, 0, 2), length=10, sections=12)
             map.scale_bar(location=(5, 0, 0), length=8, sections=2, post_scale=True)
             map.scale_bar(location=(3, -3, 1.5), length=4,
-                          text=gxg.Text_def(height=0.2, italics=True), post_scale=True)
+                          text_def=gxg.Text_def(height=0.2, italics=True), post_scale=True)
 
         self.crc_map(mapfile)
 
@@ -423,7 +423,9 @@ class Test(unittest.TestCase, GXPYTest):
                 with gxg.GXdraw(v) as g:
                     g.xy_rectangle(v.extent_clip)
             map.scale_bar()
-            map.scale_bar(location=(2, 0, 2), length=10, sections=12)
+            map.scale_bar(location=(2, 0, 2), length=10, sections=12,
+                          pen=gxg.Pen(line_color='R'),
+                          text_def=gxg.Text_def(color='B', weight=gxg.FONT_WEIGHT_BOLD))
 
         self.crc_map(mapfile)
 
@@ -583,18 +585,29 @@ class Test(unittest.TestCase, GXPYTest):
                         'longitude': -96,
                         'datum': 'nad83',
                         'azimuth': -30})
-        with test_data_map(data_area=(0, 0, 5000, 3500), margins=(3,3,6,3), cs=cs) as map:
+        cs = gxcs.GXcs("NAD27 / UTM zone 15N <425000,6500145,0,0,0,-30>")
+        name = os.path.join(gx.GXpy().temp_folder(), "test")
+        with gxmap.GXmap.new(file_name='mapplot_anoxy_rotated_cs_bug_UTM',
+                             overwrite=True,
+                             data_area=(0, 0, 5000, 3500),
+                             cs=cs,
+                             media="A3",
+                             margins=(3,3,4,3)) as map:
+
             mapfile = map.file_name
-            map.annotate_data_xy()
+
+            map.scale_bar(location=(2, 0, 2), length=6, sections=5)
+            map.surround()
+            map.annotate_data_xy(grid=gxmap.GRID_LINES)
             map.annotate_data_ll(grid=gxmap.GRID_LINES,
                                  grid_pen=gxg.Pen(line_color='b', line_thick=0.025),
                                  text_def=gxg.Text_def(height=0.18, italics=True),
                                  top=gxmap.TOP_IN)
 
             map.surround()
-            map.scale_bar(location=(2, 0, 2), length=6, sections=5)
 
         self.crc_map(mapfile)
+        gxmap.delete_files(mapfile)
 
     #TODO - JB to fix test framework to pass tests like this
     @unittest.skip("test fail due to temp file use - JB to correct in testing framework")

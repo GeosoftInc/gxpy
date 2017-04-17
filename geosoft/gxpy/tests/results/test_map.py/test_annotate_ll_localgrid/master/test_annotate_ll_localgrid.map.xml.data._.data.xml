@@ -7,7 +7,7 @@
       <Item name="Color" type="COL_ANY" colortype="RGB" red="0" green="0" blue="0"/>
    </Item>
    <Item type="LineThick" size="8">
-      <Item name="Value" value="4.2425"/>
+      <Item name="Value" value="1.9608"/>
    </Item>
    <Item type="LineStyle" size="12">
       <Item name="Style" value="0"/>
@@ -20,7 +20,7 @@
       <Item name="Value" value="Arial(TT,MEDIUM)"/>
    </Item>
    <Item type="FontSize" size="8">
-      <Item name="Value" value="106.0625"/>
+      <Item name="Value" value="49.02"/>
    </Item>
    <Item type="FontAngle" size="8">
       <Item name="Value" value="0"/>
@@ -38,7 +38,7 @@
       <Item name="Value" value="0"/>
    </Item>
    <Item type="SymbSize" size="8">
-      <Item name="Value" value="106.0625"/>
+      <Item name="Value" value="49.02"/>
    </Item>
    <Item type="SymbAngle" size="8">
       <Item name="Value" value="0"/>
@@ -56,7 +56,7 @@
       <Item name="Value" value="0"/>
    </Item>
    <Item type="PatSize" size="8">
-      <Item name="Value" value="84.85"/>
+      <Item name="Value" value="39.216"/>
    </Item>
    <Item type="PatAngle" size="8">
       <Item name="Value" value="0"/>
@@ -77,14 +77,14 @@
       <Item name="Color" type="COL_ANY" colortype="CMY" cyan="255" magenta="255" yellow="255"/>
    </Item>
    <Item type="LineThick" size="8">
-      <Item name="Value" value="8.485"/>
+      <Item name="Value" value="3.9216"/>
    </Item>
    <Item type="LineSmooth" size="8">
       <Item name="Value" value="0"/>
    </Item>
    <Item type="LineStyle" size="12">
       <Item name="Style" value="1"/>
-      <Item name="Pitch" value="212.125"/>
+      <Item name="Pitch" value="98.04"/>
    </Item>
    <Item type="FillColor" size="8">
       <Item name="Color" type="COL_ANY" colortype="None"/>
@@ -99,39 +99,39 @@
       <Item name="Value" value="1"/>
    </Item>
    <Item type="PatSize" size="8">
-      <Item name="Value" value="106.0625"/>
+      <Item name="Value" value="49.02"/>
    </Item>
    <Item type="PatStyle" size="8">
       <Item name="Value" value="0"/>
    </Item>
    <Item type="PatThick" size="8">
-      <Item name="Value" value="8.485"/>
+      <Item name="Value" value="3.9216"/>
    </Item>
    <Item type="LineThick" size="8">
-      <Item name="Value" value="4.2425"/>
+      <Item name="Value" value="1.9608"/>
    </Item>
    <Item type="PatSize" size="8">
-      <Item name="Value" value="424.25"/>
+      <Item name="Value" value="196.08"/>
    </Item>
    <Item type="PatThick" size="8">
-      <Item name="Value" value="4.2425"/>
+      <Item name="Value" value="1.9608"/>
    </Item>
    <Item type="Rectangle" size="32">
       <Item name="From" type="D2AREA">
-         <Value name="MinX" value="-212.125"/>
-         <Value name="MinY" value="-212.125"/>
-         <Value name="MaxX" value="5212.125"/>
-         <Value name="MaxY" value="3712.125"/>
+         <Value name="MinX" value="-196.08"/>
+         <Value name="MinY" value="-196.08"/>
+         <Value name="MaxX" value="5196.08"/>
+         <Value name="MaxY" value="3696.08"/>
       </Item>
    </Item>
    <Item type="LineThick" size="8">
-      <Item name="Value" value="8.485"/>
+      <Item name="Value" value="3.9216"/>
    </Item>
    <Item type="PatSize" size="8">
-      <Item name="Value" value="106.0625"/>
+      <Item name="Value" value="49.02"/>
    </Item>
    <Item type="PatThick" size="8">
-      <Item name="Value" value="8.485"/>
+      <Item name="Value" value="3.9216"/>
    </Item>
    <Item type="Version" size="8">
       <Item name="Value" value="Current"/>
@@ -140,14 +140,14 @@
       <Item name="Color" type="COL_ANY" colortype="CMY" cyan="255" magenta="255" yellow="255"/>
    </Item>
    <Item type="LineThick" size="8">
-      <Item name="Value" value="8.485"/>
+      <Item name="Value" value="3.9216"/>
    </Item>
    <Item type="LineSmooth" size="8">
       <Item name="Value" value="0"/>
    </Item>
    <Item type="LineStyle" size="12">
       <Item name="Style" value="1"/>
-      <Item name="Pitch" value="212.125"/>
+      <Item name="Pitch" value="98.04"/>
    </Item>
    <Item type="FillColor" size="8">
       <Item name="Color" type="COL_ANY" colortype="None"/>
@@ -162,39 +162,39 @@
       <Item name="Value" value="1"/>
    </Item>
    <Item type="PatSize" size="8">
-      <Item name="Value" value="106.0625"/>
+      <Item name="Value" value="49.02"/>
    </Item>
    <Item type="PatStyle" size="8">
       <Item name="Value" value="0"/>
    </Item>
    <Item type="PatThick" size="8">
-      <Item name="Value" value="8.485"/>
+      <Item name="Value" value="3.9216"/>
    </Item>
    <Item type="LineThick" size="8">
-      <Item name="Value" value="4.2425"/>
+      <Item name="Value" value="1.9608"/>
    </Item>
    <Item type="PatSize" size="8">
-      <Item name="Value" value="424.25"/>
+      <Item name="Value" value="196.08"/>
    </Item>
    <Item type="PatThick" size="8">
-      <Item name="Value" value="4.2425"/>
+      <Item name="Value" value="1.9608"/>
    </Item>
    <Item type="Rectangle" size="32">
       <Item name="From" type="D2AREA">
-         <Value name="MinX" value="-212.125"/>
-         <Value name="MinY" value="-212.125"/>
-         <Value name="MaxX" value="5212.125"/>
-         <Value name="MaxY" value="3712.125"/>
+         <Value name="MinX" value="-196.08"/>
+         <Value name="MinY" value="-196.08"/>
+         <Value name="MaxX" value="5196.08"/>
+         <Value name="MaxY" value="3696.08"/>
       </Item>
    </Item>
    <Item type="LineThick" size="8">
-      <Item name="Value" value="8.485"/>
+      <Item name="Value" value="3.9216"/>
    </Item>
    <Item type="PatSize" size="8">
-      <Item name="Value" value="106.0625"/>
+      <Item name="Value" value="49.02"/>
    </Item>
    <Item type="PatThick" size="8">
-      <Item name="Value" value="8.485"/>
+      <Item name="Value" value="3.9216"/>
    </Item>
    <Item type="End" size="8"></Item>
 </data>

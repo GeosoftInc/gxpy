@@ -80,7 +80,32 @@
       <Item name="Color" type="COL_ANY" colortype="None"/>
    </Item>
    <Item type="LineThick" size="8">
-      <Item name="Value" value="0.2"/>
+      <Item name="Value" value="0.104"/>
+   </Item>
+   <Item type="LineStyle" size="12">
+      <Item name="Style" value="1"/>
+      <Item name="Pitch" value="5"/>
+   </Item>
+   <Item type="LineSmooth" size="8">
+      <Item name="Value" value="0"/>
+   </Item>
+   <Item type="FontColor" size="8">
+      <Item name="Color" type="COL_ANY" colortype="CMY" cyan="255" magenta="255" yellow="255"/>
+   </Item>
+   <Item type="FontName" size="23">
+      <Item name="Value" value="Arial(TT,LIGHT,ITALIC)"/>
+   </Item>
+   <Item type="FontSize" size="8">
+      <Item name="Value" value="2.5"/>
+   </Item>
+   <Item type="LineColor" size="8">
+      <Item name="Color" type="COL_ANY" colortype="CMY" cyan="255" magenta="255" yellow="255"/>
+   </Item>
+   <Item type="FillColor" size="8">
+      <Item name="Color" type="COL_ANY" colortype="None"/>
+   </Item>
+   <Item type="LineThick" size="8">
+      <Item name="Value" value="0.01"/>
    </Item>
    <Item type="LineStyle" size="12">
       <Item name="Style" value="1"/>
@@ -93,10 +118,10 @@
       <Item name="Color" type="COL_ANY" colortype="CMY" cyan="255" magenta="255" yellow="255"/>
    </Item>
    <Item type="FontName" size="22">
-      <Item name="Value" value="Arial(TT,BOLD,ITALIC)"/>
+      <Item name="Value" value="Arial(TT,ULTRA_LIGHT)"/>
    </Item>
    <Item type="FontSize" size="8">
-      <Item name="Value" value="2.5"/>
+      <Item name="Value" value="3"/>
    </Item>
    <Item type="Rectangle" size="32">
       <Item name="From" type="D2AREA">
@@ -167,7 +192,7 @@
       <Item name="Color" type="COL_ANY" colortype="None"/>
    </Item>
    <Item type="LineThick" size="8">
-      <Item name="Value" value="0.2"/>
+      <Item name="Value" value="0.104"/>
    </Item>
    <Item type="LineStyle" size="12">
       <Item name="Style" value="1"/>
@@ -179,8 +204,8 @@
    <Item type="FontColor" size="8">
       <Item name="Color" type="COL_ANY" colortype="CMY" cyan="255" magenta="255" yellow="255"/>
    </Item>
-   <Item type="FontName" size="22">
-      <Item name="Value" value="Arial(TT,BOLD,ITALIC)"/>
+   <Item type="FontName" size="23">
+      <Item name="Value" value="Arial(TT,LIGHT,ITALIC)"/>
    </Item>
    <Item type="FontSize" size="8">
       <Item name="Value" value="2.5"/>
@@ -228,8 +253,8 @@
    <Item type="FontColor" size="8">
       <Item name="Color" type="COL_ANY" colortype="CMY" cyan="255" magenta="255" yellow="255"/>
    </Item>
-   <Item type="FontName" size="22">
-      <Item name="Value" value="Arial(TT,BOLD,ITALIC)"/>
+   <Item type="FontName" size="23">
+      <Item name="Value" value="Arial(TT,LIGHT,ITALIC)"/>
    </Item>
    <Item type="FontSize" size="8">
       <Item name="Value" value="2"/>
@@ -244,8 +269,8 @@
    <Item type="FontColor" size="8">
       <Item name="Color" type="COL_ANY" colortype="CMY" cyan="255" magenta="255" yellow="255"/>
    </Item>
-   <Item type="FontName" size="15">
-      <Item name="Value" value="Arial(TT,BOLD)"/>
+   <Item type="FontName" size="16">
+      <Item name="Value" value="Arial(TT,LIGHT)"/>
    </Item>
    <Item type="FontSize" size="8">
       <Item name="Value" value="2.5"/>
@@ -254,13 +279,13 @@
       <Item name="Value" value="Current"/>
    </Item>
    <Item type="LineColor" size="8">
-      <Item name="Color" type="COL_ANY" colortype="CMY" cyan="255" magenta="255" yellow="255"/>
+      <Item name="Color" type="COL_ANY" colortype="RGB" red="0" green="0" blue="255"/>
    </Item>
    <Item type="FillColor" size="8">
       <Item name="Color" type="COL_ANY" colortype="None"/>
    </Item>
    <Item type="LineThick" size="8">
-      <Item name="Value" value="0.2"/>
+      <Item name="Value" value="0.208"/>
    </Item>
    <Item type="LineStyle" size="12">
       <Item name="Style" value="1"/>
@@ -270,13 +295,38 @@
       <Item name="Value" value="0"/>
    </Item>
    <Item type="FontColor" size="8">
-      <Item name="Color" type="COL_ANY" colortype="CMY" cyan="255" magenta="255" yellow="255"/>
+      <Item name="Color" type="COL_ANY" colortype="RGB" red="0" green="0" blue="255"/>
    </Item>
-   <Item type="FontName" size="22">
-      <Item name="Value" value="Arial(TT,BOLD,ITALIC)"/>
+   <Item type="FontName" size="15">
+      <Item name="Value" value="Arial(TT,BOLD)"/>
    </Item>
    <Item type="FontSize" size="8">
       <Item name="Value" value="2.5"/>
+   </Item>
+   <Item type="LineColor" size="8">
+      <Item name="Color" type="COL_ANY" colortype="RGB" red="255" green="0" blue="0"/>
+   </Item>
+   <Item type="FillColor" size="8">
+      <Item name="Color" type="COL_ANY" colortype="None"/>
+   </Item>
+   <Item type="LineThick" size="8">
+      <Item name="Value" value="0.1"/>
+   </Item>
+   <Item type="LineStyle" size="12">
+      <Item name="Style" value="1"/>
+      <Item name="Pitch" value="5"/>
+   </Item>
+   <Item type="LineSmooth" size="8">
+      <Item name="Value" value="0"/>
+   </Item>
+   <Item type="FontColor" size="8">
+      <Item name="Color" type="COL_ANY" colortype="RGB" red="255" green="0" blue="0"/>
+   </Item>
+   <Item type="FontName" size="16">
+      <Item name="Value" value="Arial(TT,LIGHT)"/>
+   </Item>
+   <Item type="FontSize" size="8">
+      <Item name="Value" value="3"/>
    </Item>
    <Item type="Rectangle" size="32">
       <Item name="From" type="D2AREA">
@@ -287,7 +337,7 @@
       </Item>
    </Item>
    <Item type="FillColor" size="8">
-      <Item name="Color" type="COL_ANY" colortype="CMY" cyan="255" magenta="255" yellow="255"/>
+      <Item name="Color" type="COL_ANY" colortype="RGB" red="255" green="0" blue="0"/>
    </Item>
    <Item type="Rectangle" size="32">
       <Item name="From" type="D2AREA">
@@ -357,13 +407,13 @@
       <Item name="Color" type="COL_ANY" colortype="None"/>
    </Item>
    <Item type="LineColor" size="8">
-      <Item name="Color" type="COL_ANY" colortype="CMY" cyan="255" magenta="255" yellow="255"/>
+      <Item name="Color" type="COL_ANY" colortype="RGB" red="0" green="0" blue="255"/>
    </Item>
    <Item type="FillColor" size="8">
       <Item name="Color" type="COL_ANY" colortype="None"/>
    </Item>
    <Item type="LineThick" size="8">
-      <Item name="Value" value="0.2"/>
+      <Item name="Value" value="0.208"/>
    </Item>
    <Item type="LineStyle" size="12">
       <Item name="Style" value="1"/>
@@ -373,10 +423,10 @@
       <Item name="Value" value="0"/>
    </Item>
    <Item type="FontColor" size="8">
-      <Item name="Color" type="COL_ANY" colortype="CMY" cyan="255" magenta="255" yellow="255"/>
+      <Item name="Color" type="COL_ANY" colortype="RGB" red="0" green="0" blue="255"/>
    </Item>
-   <Item type="FontName" size="22">
-      <Item name="Value" value="Arial(TT,BOLD,ITALIC)"/>
+   <Item type="FontName" size="15">
+      <Item name="Value" value="Arial(TT,BOLD)"/>
    </Item>
    <Item type="FontSize" size="8">
       <Item name="Value" value="2.5"/>
@@ -442,7 +492,7 @@
       <Item name="UTF-8 Text" value="(meters)"/>
    </Item>
    <Item type="FontColor" size="8">
-      <Item name="Color" type="COL_ANY" colortype="CMY" cyan="255" magenta="255" yellow="255"/>
+      <Item name="Color" type="COL_ANY" colortype="RGB" red="0" green="0" blue="255"/>
    </Item>
    <Item type="FontName" size="22">
       <Item name="Value" value="Arial(TT,BOLD,ITALIC)"/>
@@ -458,7 +508,7 @@
       <Item name="UTF-8 Text" value="NAD83 / UTM zone 15N"/>
    </Item>
    <Item type="FontColor" size="8">
-      <Item name="Color" type="COL_ANY" colortype="CMY" cyan="255" magenta="255" yellow="255"/>
+      <Item name="Color" type="COL_ANY" colortype="RGB" red="0" green="0" blue="255"/>
    </Item>
    <Item type="FontName" size="15">
       <Item name="Value" value="Arial(TT,BOLD)"/>

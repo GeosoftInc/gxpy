@@ -469,7 +469,7 @@ class GXview3d(GXview):
         if not _internal:
             raise ViewException(_t("Must be called by a class constructor 'open' or 'new'"))
 
-        file_name = gxmap.map_file_name(file_name, g_3d=True)
+        file_name = gxmap.map_file_name(file_name, g_3dv=True)
         map = gxmap.GXmap(file_name=file_name,
                           mode=mode,
                           _internal=True)
@@ -488,7 +488,7 @@ class GXview3d(GXview):
         .. versionadded:: 9.2
         """
 
-        file_name = gxmap.map_file_name(file_name, g_3d=True)
+        file_name = gxmap.map_file_name(file_name, g_3dv=True)
         if not overwrite:
             if os.path.isfile(file_name):
                 raise ViewException(_t('Cannot overwrite existing file: {}').format(file_name))
@@ -518,7 +518,7 @@ class GXview3d(GXview):
         .. versionadded:: 9.2
         """
 
-        file_name = gxmap.map_file_name(file_name, g_3d=True)
+        file_name = gxmap.map_file_name(file_name, g_3dv=True)
         if not os.path.isfile(file_name):
             raise ViewException(_t('geosoft_3dv file not found: {}').format(file_name))
 

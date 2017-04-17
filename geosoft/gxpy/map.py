@@ -77,18 +77,18 @@ class Line_def:
         self._thickness = thickness
 
 
-def map_file_name(file_name, g_3d=False):
+def map_file_name(file_name, g_3dv=False):
     """
     Return a fully resolved map file path using the file name, with .map extyension
 
     :param file_name:   file name, with ot without path and/or extension
-    :param _3d:         geosoft_3dv file.    
+    :param g_3dv:       geosoft_3dv file.    
     :return:            file name path with extension .map
 
     .. versionadded:: 9.2
     """
 
-    if g_3d:
+    if g_3dv:
         gext = '.geosoft_3dv'
     else:
         gext = '.map'
@@ -837,7 +837,7 @@ class GXmap:
                   length=5,
                   sections=None,
                   post_scale=False,
-                  text=None,
+                  text_def=None,
                   pen=None):
         """
         Draw a scale bar.
@@ -847,7 +847,7 @@ class GXmap:
         :param sections:    number of major sections in the bar, default is determined automatically.
         :param post_scale:  True to post the actual scale as a string, e.g. '1:50,000'.  Note that a posted
                             scale is only relevant for printed maps.  The default does not post the scale.
-        :param text:        ``gxpy.view.Text_def`` instance.
+        :param text_def:    ``gxpy.view.Text_def`` instance.
         :param pen:         ``gxpy.view.Pen`` instance.
 
 
@@ -862,19 +862,19 @@ class GXmap:
         else:
             option = 1
 
-        if text is None:
-            text = gxg.Text_def(height=0.25, weight=gxg.FONT_WEIGHT_LIGHT, italics=True)
+        if text_def is None:
+            text_def = gxg.Text_def(height=0.25, weight=gxg.FONT_WEIGHT_LIGHT, italics=True)
 
         if pen is None:
-            pen = gxg.Pen(line_thick=0.02)
+            pen = gxg.Pen(line_thick=0.001)
 
         with _Mapplot(self) as mpl:
             mpl.start_group('scale_bar', view=VIEW_BASE, mode=GROUP_APPEND)
-            att = 'scale_bar'
-            mpl.define_named_attribute(att, pen=pen, text_def=text)
+            mpl.define_named_attribute('scale_text', text_def=text_def)
+            mpl.define_named_attribute('scale_bar', pen=pen)
             mpl.command("SCAL {},{},{},,,{},{},,{},".format(location[0], location[1], location[2],
                                                             length, sections, option))
-            mpl.command('     {}'.format(att))
+            mpl.command('     scale_text')
 
     def _annotation_offset(self, offset, text_height):
         inside = text_height * 0.25

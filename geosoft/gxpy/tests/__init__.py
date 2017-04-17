@@ -10,7 +10,7 @@ import geosoft.gxpy.utility as gxu
 import geosoft.gxpy.system as gxsys
 
 # set to True to update all results
-UPDATE_ALL_RESULTS = True
+UPDATE_ALL_RESULTS = False
 
 # set to true to only update the first test.
 UPDATE_ONE_TEST = False

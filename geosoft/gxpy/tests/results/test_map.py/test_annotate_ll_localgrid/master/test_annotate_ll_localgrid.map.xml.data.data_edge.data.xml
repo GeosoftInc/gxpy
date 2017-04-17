@@ -7,7 +7,7 @@
       <Item name="Color" type="COL_ANY" colortype="RGB" red="0" green="0" blue="0"/>
    </Item>
    <Item type="LineThick" size="8">
-      <Item name="Value" value="4.2425"/>
+      <Item name="Value" value="1.9608"/>
    </Item>
    <Item type="LineStyle" size="12">
       <Item name="Style" value="0"/>
@@ -20,7 +20,7 @@
       <Item name="Value" value="Arial(TT,MEDIUM)"/>
    </Item>
    <Item type="FontSize" size="8">
-      <Item name="Value" value="106.0625"/>
+      <Item name="Value" value="49.02"/>
    </Item>
    <Item type="FontAngle" size="8">
       <Item name="Value" value="0"/>
@@ -38,7 +38,7 @@
       <Item name="Value" value="0"/>
    </Item>
    <Item type="SymbSize" size="8">
-      <Item name="Value" value="106.0625"/>
+      <Item name="Value" value="49.02"/>
    </Item>
    <Item type="SymbAngle" size="8">
       <Item name="Value" value="0"/>
@@ -56,7 +56,7 @@
       <Item name="Value" value="0"/>
    </Item>
    <Item type="PatSize" size="8">
-      <Item name="Value" value="84.85"/>
+      <Item name="Value" value="39.216"/>
    </Item>
    <Item type="PatAngle" size="8">
       <Item name="Value" value="0"/>
@@ -80,11 +80,11 @@
       <Item name="Color" type="COL_ANY" colortype="None"/>
    </Item>
    <Item type="LineThick" size="8">
-      <Item name="Value" value="4.7516"/>
+      <Item name="Value" value="2.196096"/>
    </Item>
    <Item type="LineStyle" size="12">
       <Item name="Style" value="1"/>
-      <Item name="Pitch" value="212.125"/>
+      <Item name="Pitch" value="98.04"/>
    </Item>
    <Item type="LineSmooth" size="8">
       <Item name="Value" value="0"/>
@@ -96,33 +96,7 @@
       <Item name="Value" value="Arial(TT,MEDIUM)"/>
    </Item>
    <Item type="FontSize" size="8">
-      <Item name="Value" value="76.365"/>
-   </Item>
-   <Item type="LineColor" size="8">
-      <Item name="Color" type="COL_ANY" colortype="CMY" cyan="255" magenta="255" yellow="255"/>
-   </Item>
-   <Item type="FillColor" size="8">
-      <Item name="Color" type="COL_ANY" colortype="None"/>
-   </Item>
-   <Item type="LineThick" size="8">
-      <Item name="Value" value="4.2425"/>
-   </Item>
-   <Item type="LineStyle" size="12">
-      <Item name="Style" value="1"/>
-      <Item name="Pitch" value="212.125"/>
-   </Item>
-   <Item type="LineSmooth" size="8">
-      <Item name="Value" value="0"/>
-   </Item>
-   <Item type="Line" size="32">
-      <Item name="From" type="D2POINT">
-         <Value name="X" value="-212.1251825"/>
-         <Value name="Y" value="3632.588406"/>
-      </Item>
-      <Item name="To" type="D2POINT">
-         <Value name="X" value="-127.2751825"/>
-         <Value name="Y" value="3779.552917"/>
-      </Item>
+      <Item name="Value" value="35.2944"/>
    </Item>
    <Item type="FontColor" size="8">
       <Item name="Color" type="COL_ANY" colortype="CMY" cyan="255" magenta="255" yellow="255"/>
@@ -131,7 +105,7 @@
       <Item name="Value" value="Arial(TT,MEDIUM)"/>
    </Item>
    <Item type="FontSize" size="8">
-      <Item name="Value" value="76.365"/>
+      <Item name="Value" value="35.2944"/>
    </Item>
    <Item type="FontAngle" size="8">
       <Item name="Value" value="0"/>
@@ -139,38 +113,12 @@
    <Item type="FontRef" size="8">
       <Item name="Value" value="5"/>
    </Item>
-   <Item type="Text" size="25">
+   <Item type="Text" size="27">
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="-231.2164325"/>
-         <Value name="Y" value="3632.588406"/>
+         <Value name="X" value="-204.9028938"/>
+         <Value name="Y" value="3660.380701"/>
       </Item>
-      <Item name="UTF-8 Text" value="2000W"/>
-   </Item>
-   <Item type="LineColor" size="8">
-      <Item name="Color" type="COL_ANY" colortype="CMY" cyan="255" magenta="255" yellow="255"/>
-   </Item>
-   <Item type="FillColor" size="8">
-      <Item name="Color" type="COL_ANY" colortype="None"/>
-   </Item>
-   <Item type="LineThick" size="8">
-      <Item name="Value" value="4.2425"/>
-   </Item>
-   <Item type="LineStyle" size="12">
-      <Item name="Style" value="1"/>
-      <Item name="Pitch" value="212.125"/>
-   </Item>
-   <Item type="LineSmooth" size="8">
-      <Item name="Value" value="0"/>
-   </Item>
-   <Item type="Line" size="32">
-      <Item name="From" type="D2POINT">
-         <Value name="X" value="-212.1242891"/>
-         <Value name="Y" value="1632.589954"/>
-      </Item>
-      <Item name="To" type="D2POINT">
-         <Value name="X" value="-127.2742891"/>
-         <Value name="Y" value="1779.554465"/>
-      </Item>
+      <Item name="UTF-8 Text" value="423000E"/>
    </Item>
    <Item type="FontColor" size="8">
       <Item name="Color" type="COL_ANY" colortype="CMY" cyan="255" magenta="255" yellow="255"/>
@@ -179,7 +127,7 @@
       <Item name="Value" value="Arial(TT,MEDIUM)"/>
    </Item>
    <Item type="FontSize" size="8">
-      <Item name="Value" value="76.365"/>
+      <Item name="Value" value="35.2944"/>
    </Item>
    <Item type="FontAngle" size="8">
       <Item name="Value" value="0"/>
@@ -187,38 +135,12 @@
    <Item type="FontRef" size="8">
       <Item name="Value" value="5"/>
    </Item>
-   <Item type="Text" size="25">
+   <Item type="Text" size="27">
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="-231.2155391"/>
-         <Value name="Y" value="1632.589954"/>
+         <Value name="X" value="-204.9033235"/>
+         <Value name="Y" value="2660.379957"/>
       </Item>
-      <Item name="UTF-8 Text" value="1000W"/>
-   </Item>
-   <Item type="LineColor" size="8">
-      <Item name="Color" type="COL_ANY" colortype="CMY" cyan="255" magenta="255" yellow="255"/>
-   </Item>
-   <Item type="FillColor" size="8">
-      <Item name="Color" type="COL_ANY" colortype="None"/>
-   </Item>
-   <Item type="LineThick" size="8">
-      <Item name="Value" value="4.2425"/>
-   </Item>
-   <Item type="LineStyle" size="12">
-      <Item name="Style" value="1"/>
-      <Item name="Pitch" value="212.125"/>
-   </Item>
-   <Item type="LineSmooth" size="8">
-      <Item name="Value" value="0"/>
-   </Item>
-   <Item type="Line" size="32">
-      <Item name="From" type="D2POINT">
-         <Value name="X" value="-122.4697123"/>
-         <Value name="Y" value="-212.1237641"/>
-      </Item>
-      <Item name="To" type="D2POINT">
-         <Value name="X" value="-37.61971232"/>
-         <Value name="Y" value="-65.15925311"/>
-      </Item>
+      <Item name="UTF-8 Text" value="423500E"/>
    </Item>
    <Item type="FontColor" size="8">
       <Item name="Color" type="COL_ANY" colortype="CMY" cyan="255" magenta="255" yellow="255"/>
@@ -227,7 +149,51 @@
       <Item name="Value" value="Arial(TT,MEDIUM)"/>
    </Item>
    <Item type="FontSize" size="8">
-      <Item name="Value" value="76.365"/>
+      <Item name="Value" value="35.2944"/>
+   </Item>
+   <Item type="FontAngle" size="8">
+      <Item name="Value" value="0"/>
+   </Item>
+   <Item type="FontRef" size="8">
+      <Item name="Value" value="5"/>
+   </Item>
+   <Item type="Text" size="27">
+      <Item name="Point" type="D2POINT">
+         <Value name="X" value="-204.9054386"/>
+         <Value name="Y" value="1660.376293"/>
+      </Item>
+      <Item name="UTF-8 Text" value="424000E"/>
+   </Item>
+   <Item type="FontColor" size="8">
+      <Item name="Color" type="COL_ANY" colortype="CMY" cyan="255" magenta="255" yellow="255"/>
+   </Item>
+   <Item type="FontName" size="17">
+      <Item name="Value" value="Arial(TT,MEDIUM)"/>
+   </Item>
+   <Item type="FontSize" size="8">
+      <Item name="Value" value="35.2944"/>
+   </Item>
+   <Item type="FontAngle" size="8">
+      <Item name="Value" value="0"/>
+   </Item>
+   <Item type="FontRef" size="8">
+      <Item name="Value" value="5"/>
+   </Item>
+   <Item type="Text" size="27">
+      <Item name="Point" type="D2POINT">
+         <Value name="X" value="-204.9041829"/>
+         <Value name="Y" value="660.3784681"/>
+      </Item>
+      <Item name="UTF-8 Text" value="424500E"/>
+   </Item>
+   <Item type="FontColor" size="8">
+      <Item name="Color" type="COL_ANY" colortype="CMY" cyan="255" magenta="255" yellow="255"/>
+   </Item>
+   <Item type="FontName" size="17">
+      <Item name="Value" value="Arial(TT,MEDIUM)"/>
+   </Item>
+   <Item type="FontSize" size="8">
+      <Item name="Value" value="35.2944"/>
    </Item>
    <Item type="FontAngle" size="8">
       <Item name="Value" value="0"/>
@@ -235,38 +201,18 @@
    <Item type="FontRef" size="8">
       <Item name="Value" value="7"/>
    </Item>
-   <Item type="Text" size="21">
+   <Item type="FontRef" size="8">
+      <Item name="Value" value="6"/>
+   </Item>
+   <Item type="Text" size="27">
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="-122.4697123"/>
-         <Value name="Y" value="-231.2150141"/>
+         <Value name="X" value="-196.08"/>
+         <Value name="Y" value="-204.9017207"/>
       </Item>
-      <Item name="UTF-8 Text" value="0"/>
+      <Item name="UTF-8 Text" value="425000E"/>
    </Item>
-   <Item type="LineColor" size="8">
-      <Item name="Color" type="COL_ANY" colortype="CMY" cyan="255" magenta="255" yellow="255"/>
-   </Item>
-   <Item type="FillColor" size="8">
-      <Item name="Color" type="COL_ANY" colortype="None"/>
-   </Item>
-   <Item type="LineThick" size="8">
-      <Item name="Value" value="4.2425"/>
-   </Item>
-   <Item type="LineStyle" size="12">
-      <Item name="Style" value="1"/>
-      <Item name="Pitch" value="212.125"/>
-   </Item>
-   <Item type="LineSmooth" size="8">
-      <Item name="Value" value="0"/>
-   </Item>
-   <Item type="Line" size="32">
-      <Item name="From" type="D2POINT">
-         <Value name="X" value="1032.230208"/>
-         <Value name="Y" value="-212.1248342"/>
-      </Item>
-      <Item name="To" type="D2POINT">
-         <Value name="X" value="1117.080208"/>
-         <Value name="Y" value="-65.16032315"/>
-      </Item>
+   <Item type="FontRef" size="8">
+      <Item name="Value" value="7"/>
    </Item>
    <Item type="FontColor" size="8">
       <Item name="Color" type="COL_ANY" colortype="CMY" cyan="255" magenta="255" yellow="255"/>
@@ -275,7 +221,7 @@
       <Item name="Value" value="Arial(TT,MEDIUM)"/>
    </Item>
    <Item type="FontSize" size="8">
-      <Item name="Value" value="76.365"/>
+      <Item name="Value" value="35.2944"/>
    </Item>
    <Item type="FontAngle" size="8">
       <Item name="Value" value="0"/>
@@ -283,38 +229,12 @@
    <Item type="FontRef" size="8">
       <Item name="Value" value="7"/>
    </Item>
-   <Item type="Text" size="25">
+   <Item type="Text" size="27">
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="1032.230208"/>
-         <Value name="Y" value="-231.2160842"/>
+         <Value name="X" value="464.1429369"/>
+         <Value name="Y" value="-204.9044512"/>
       </Item>
-      <Item name="UTF-8 Text" value="1000E"/>
-   </Item>
-   <Item type="LineColor" size="8">
-      <Item name="Color" type="COL_ANY" colortype="CMY" cyan="255" magenta="255" yellow="255"/>
-   </Item>
-   <Item type="FillColor" size="8">
-      <Item name="Color" type="COL_ANY" colortype="None"/>
-   </Item>
-   <Item type="LineThick" size="8">
-      <Item name="Value" value="4.2425"/>
-   </Item>
-   <Item type="LineStyle" size="12">
-      <Item name="Style" value="1"/>
-      <Item name="Pitch" value="212.125"/>
-   </Item>
-   <Item type="LineSmooth" size="8">
-      <Item name="Value" value="0"/>
-   </Item>
-   <Item type="Line" size="32">
-      <Item name="From" type="D2POINT">
-         <Value name="X" value="2186.930129"/>
-         <Value name="Y" value="-212.1259042"/>
-      </Item>
-      <Item name="To" type="D2POINT">
-         <Value name="X" value="2271.780129"/>
-         <Value name="Y" value="-65.16139318"/>
-      </Item>
+      <Item name="UTF-8 Text" value="425500E"/>
    </Item>
    <Item type="FontColor" size="8">
       <Item name="Color" type="COL_ANY" colortype="CMY" cyan="255" magenta="255" yellow="255"/>
@@ -323,7 +243,7 @@
       <Item name="Value" value="Arial(TT,MEDIUM)"/>
    </Item>
    <Item type="FontSize" size="8">
-      <Item name="Value" value="76.365"/>
+      <Item name="Value" value="35.2944"/>
    </Item>
    <Item type="FontAngle" size="8">
       <Item name="Value" value="0"/>
@@ -331,38 +251,12 @@
    <Item type="FontRef" size="8">
       <Item name="Value" value="7"/>
    </Item>
-   <Item type="Text" size="25">
+   <Item type="Text" size="27">
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="2186.930129"/>
-         <Value name="Y" value="-231.2171542"/>
+         <Value name="X" value="1041.492978"/>
+         <Value name="Y" value="-204.9048469"/>
       </Item>
-      <Item name="UTF-8 Text" value="2000E"/>
-   </Item>
-   <Item type="LineColor" size="8">
-      <Item name="Color" type="COL_ANY" colortype="CMY" cyan="255" magenta="255" yellow="255"/>
-   </Item>
-   <Item type="FillColor" size="8">
-      <Item name="Color" type="COL_ANY" colortype="None"/>
-   </Item>
-   <Item type="LineThick" size="8">
-      <Item name="Value" value="4.2425"/>
-   </Item>
-   <Item type="LineStyle" size="12">
-      <Item name="Style" value="1"/>
-      <Item name="Pitch" value="212.125"/>
-   </Item>
-   <Item type="LineSmooth" size="8">
-      <Item name="Value" value="0"/>
-   </Item>
-   <Item type="Line" size="32">
-      <Item name="From" type="D2POINT">
-         <Value name="X" value="3341.631406"/>
-         <Value name="Y" value="-212.1246255"/>
-      </Item>
-      <Item name="To" type="D2POINT">
-         <Value name="X" value="3426.481406"/>
-         <Value name="Y" value="-65.16011444"/>
-      </Item>
+      <Item name="UTF-8 Text" value="426000E"/>
    </Item>
    <Item type="FontColor" size="8">
       <Item name="Color" type="COL_ANY" colortype="CMY" cyan="255" magenta="255" yellow="255"/>
@@ -371,7 +265,7 @@
       <Item name="Value" value="Arial(TT,MEDIUM)"/>
    </Item>
    <Item type="FontSize" size="8">
-      <Item name="Value" value="76.365"/>
+      <Item name="Value" value="35.2944"/>
    </Item>
    <Item type="FontAngle" size="8">
       <Item name="Value" value="0"/>
@@ -379,38 +273,12 @@
    <Item type="FontRef" size="8">
       <Item name="Value" value="7"/>
    </Item>
-   <Item type="Text" size="25">
+   <Item type="Text" size="27">
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="3341.631406"/>
-         <Value name="Y" value="-231.2158755"/>
+         <Value name="X" value="1618.844367"/>
+         <Value name="Y" value="-204.9029076"/>
       </Item>
-      <Item name="UTF-8 Text" value="3000E"/>
-   </Item>
-   <Item type="LineColor" size="8">
-      <Item name="Color" type="COL_ANY" colortype="CMY" cyan="255" magenta="255" yellow="255"/>
-   </Item>
-   <Item type="FillColor" size="8">
-      <Item name="Color" type="COL_ANY" colortype="None"/>
-   </Item>
-   <Item type="LineThick" size="8">
-      <Item name="Value" value="4.2425"/>
-   </Item>
-   <Item type="LineStyle" size="12">
-      <Item name="Style" value="1"/>
-      <Item name="Pitch" value="212.125"/>
-   </Item>
-   <Item type="LineSmooth" size="8">
-      <Item name="Value" value="0"/>
-   </Item>
-   <Item type="Line" size="32">
-      <Item name="From" type="D2POINT">
-         <Value name="X" value="4496.331326"/>
-         <Value name="Y" value="-212.1256955"/>
-      </Item>
-      <Item name="To" type="D2POINT">
-         <Value name="X" value="4581.181326"/>
-         <Value name="Y" value="-65.16118447"/>
-      </Item>
+      <Item name="UTF-8 Text" value="426500E"/>
    </Item>
    <Item type="FontColor" size="8">
       <Item name="Color" type="COL_ANY" colortype="CMY" cyan="255" magenta="255" yellow="255"/>
@@ -419,7 +287,7 @@
       <Item name="Value" value="Arial(TT,MEDIUM)"/>
    </Item>
    <Item type="FontSize" size="8">
-      <Item name="Value" value="76.365"/>
+      <Item name="Value" value="35.2944"/>
    </Item>
    <Item type="FontAngle" size="8">
       <Item name="Value" value="0"/>
@@ -427,38 +295,12 @@
    <Item type="FontRef" size="8">
       <Item name="Value" value="7"/>
    </Item>
-   <Item type="Text" size="25">
+   <Item type="Text" size="27">
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="4496.331326"/>
-         <Value name="Y" value="-231.2169455"/>
+         <Value name="X" value="2196.193059"/>
+         <Value name="Y" value="-204.9056381"/>
       </Item>
-      <Item name="UTF-8 Text" value="4000E"/>
-   </Item>
-   <Item type="LineColor" size="8">
-      <Item name="Color" type="COL_ANY" colortype="CMY" cyan="255" magenta="255" yellow="255"/>
-   </Item>
-   <Item type="FillColor" size="8">
-      <Item name="Color" type="COL_ANY" colortype="None"/>
-   </Item>
-   <Item type="LineThick" size="8">
-      <Item name="Value" value="4.2425"/>
-   </Item>
-   <Item type="LineStyle" size="12">
-      <Item name="Style" value="1"/>
-      <Item name="Pitch" value="212.125"/>
-   </Item>
-   <Item type="LineSmooth" size="8">
-      <Item name="Value" value="0"/>
-   </Item>
-   <Item type="Line" size="32">
-      <Item name="From" type="D2POINT">
-         <Value name="X" value="-166.2043564"/>
-         <Value name="Y" value="3712.12561"/>
-      </Item>
-      <Item name="To" type="D2POINT">
-         <Value name="X" value="-251.0543564"/>
-         <Value name="Y" value="3565.161099"/>
-      </Item>
+      <Item name="UTF-8 Text" value="427000E"/>
    </Item>
    <Item type="FontColor" size="8">
       <Item name="Color" type="COL_ANY" colortype="CMY" cyan="255" magenta="255" yellow="255"/>
@@ -467,7 +309,117 @@
       <Item name="Value" value="Arial(TT,MEDIUM)"/>
    </Item>
    <Item type="FontSize" size="8">
-      <Item name="Value" value="76.365"/>
+      <Item name="Value" value="35.2944"/>
+   </Item>
+   <Item type="FontAngle" size="8">
+      <Item name="Value" value="0"/>
+   </Item>
+   <Item type="FontRef" size="8">
+      <Item name="Value" value="7"/>
+   </Item>
+   <Item type="Text" size="27">
+      <Item name="Point" type="D2POINT">
+         <Value name="X" value="2773.544448"/>
+         <Value name="Y" value="-204.9036989"/>
+      </Item>
+      <Item name="UTF-8 Text" value="427500E"/>
+   </Item>
+   <Item type="FontColor" size="8">
+      <Item name="Color" type="COL_ANY" colortype="CMY" cyan="255" magenta="255" yellow="255"/>
+   </Item>
+   <Item type="FontName" size="17">
+      <Item name="Value" value="Arial(TT,MEDIUM)"/>
+   </Item>
+   <Item type="FontSize" size="8">
+      <Item name="Value" value="35.2944"/>
+   </Item>
+   <Item type="FontAngle" size="8">
+      <Item name="Value" value="0"/>
+   </Item>
+   <Item type="FontRef" size="8">
+      <Item name="Value" value="7"/>
+   </Item>
+   <Item type="Text" size="27">
+      <Item name="Point" type="D2POINT">
+         <Value name="X" value="3350.895837"/>
+         <Value name="Y" value="-204.9017596"/>
+      </Item>
+      <Item name="UTF-8 Text" value="428000E"/>
+   </Item>
+   <Item type="FontColor" size="8">
+      <Item name="Color" type="COL_ANY" colortype="CMY" cyan="255" magenta="255" yellow="255"/>
+   </Item>
+   <Item type="FontName" size="17">
+      <Item name="Value" value="Arial(TT,MEDIUM)"/>
+   </Item>
+   <Item type="FontSize" size="8">
+      <Item name="Value" value="35.2944"/>
+   </Item>
+   <Item type="FontAngle" size="8">
+      <Item name="Value" value="0"/>
+   </Item>
+   <Item type="FontRef" size="8">
+      <Item name="Value" value="7"/>
+   </Item>
+   <Item type="Text" size="27">
+      <Item name="Point" type="D2POINT">
+         <Value name="X" value="3928.245878"/>
+         <Value name="Y" value="-204.9021553"/>
+      </Item>
+      <Item name="UTF-8 Text" value="428500E"/>
+   </Item>
+   <Item type="FontColor" size="8">
+      <Item name="Color" type="COL_ANY" colortype="CMY" cyan="255" magenta="255" yellow="255"/>
+   </Item>
+   <Item type="FontName" size="17">
+      <Item name="Value" value="Arial(TT,MEDIUM)"/>
+   </Item>
+   <Item type="FontSize" size="8">
+      <Item name="Value" value="35.2944"/>
+   </Item>
+   <Item type="FontAngle" size="8">
+      <Item name="Value" value="0"/>
+   </Item>
+   <Item type="FontRef" size="8">
+      <Item name="Value" value="7"/>
+   </Item>
+   <Item type="Text" size="27">
+      <Item name="Point" type="D2POINT">
+         <Value name="X" value="4505.595918"/>
+         <Value name="Y" value="-204.9025509"/>
+      </Item>
+      <Item name="UTF-8 Text" value="429000E"/>
+   </Item>
+   <Item type="FontColor" size="8">
+      <Item name="Color" type="COL_ANY" colortype="CMY" cyan="255" magenta="255" yellow="255"/>
+   </Item>
+   <Item type="FontName" size="17">
+      <Item name="Value" value="Arial(TT,MEDIUM)"/>
+   </Item>
+   <Item type="FontSize" size="8">
+      <Item name="Value" value="35.2944"/>
+   </Item>
+   <Item type="FontAngle" size="8">
+      <Item name="Value" value="0"/>
+   </Item>
+   <Item type="FontRef" size="8">
+      <Item name="Value" value="7"/>
+   </Item>
+   <Item type="Text" size="27">
+      <Item name="Point" type="D2POINT">
+         <Value name="X" value="5082.945959"/>
+         <Value name="Y" value="-204.9029465"/>
+      </Item>
+      <Item name="UTF-8 Text" value="429500E"/>
+   </Item>
+   <Item type="FontColor" size="8">
+      <Item name="Color" type="COL_ANY" colortype="CMY" cyan="255" magenta="255" yellow="255"/>
+   </Item>
+   <Item type="FontName" size="17">
+      <Item name="Value" value="Arial(TT,MEDIUM)"/>
+   </Item>
+   <Item type="FontSize" size="8">
+      <Item name="Value" value="35.2944"/>
    </Item>
    <Item type="FontAngle" size="8">
       <Item name="Value" value="0"/>
@@ -478,41 +430,15 @@
    <Item type="FontRef" size="8">
       <Item name="Value" value="0"/>
    </Item>
-   <Item type="Text" size="25">
+   <Item type="Text" size="27">
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="-212.125"/>
-         <Value name="Y" value="3731.21686"/>
+         <Value name="X" value="-196.08"/>
+         <Value name="Y" value="3704.902357"/>
       </Item>
-      <Item name="UTF-8 Text" value="2000W"/>
+      <Item name="UTF-8 Text" value="423000E"/>
    </Item>
    <Item type="FontRef" size="8">
       <Item name="Value" value="1"/>
-   </Item>
-   <Item type="LineColor" size="8">
-      <Item name="Color" type="COL_ANY" colortype="CMY" cyan="255" magenta="255" yellow="255"/>
-   </Item>
-   <Item type="FillColor" size="8">
-      <Item name="Color" type="COL_ANY" colortype="None"/>
-   </Item>
-   <Item type="LineThick" size="8">
-      <Item name="Value" value="4.2425"/>
-   </Item>
-   <Item type="LineStyle" size="12">
-      <Item name="Style" value="1"/>
-      <Item name="Pitch" value="212.125"/>
-   </Item>
-   <Item type="LineSmooth" size="8">
-      <Item name="Value" value="0"/>
-   </Item>
-   <Item type="Line" size="32">
-      <Item name="From" type="D2POINT">
-         <Value name="X" value="988.4955642"/>
-         <Value name="Y" value="3712.12454"/>
-      </Item>
-      <Item name="To" type="D2POINT">
-         <Value name="X" value="903.6455642"/>
-         <Value name="Y" value="3565.160029"/>
-      </Item>
    </Item>
    <Item type="FontColor" size="8">
       <Item name="Color" type="COL_ANY" colortype="CMY" cyan="255" magenta="255" yellow="255"/>
@@ -521,7 +447,7 @@
       <Item name="Value" value="Arial(TT,MEDIUM)"/>
    </Item>
    <Item type="FontSize" size="8">
-      <Item name="Value" value="76.365"/>
+      <Item name="Value" value="35.2944"/>
    </Item>
    <Item type="FontAngle" size="8">
       <Item name="Value" value="0"/>
@@ -529,38 +455,12 @@
    <Item type="FontRef" size="8">
       <Item name="Value" value="1"/>
    </Item>
-   <Item type="Text" size="25">
+   <Item type="Text" size="27">
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="988.4955642"/>
-         <Value name="Y" value="3731.21579"/>
+         <Value name="X" value="401.8823773"/>
+         <Value name="Y" value="3704.904296"/>
       </Item>
-      <Item name="UTF-8 Text" value="1000W"/>
-   </Item>
-   <Item type="LineColor" size="8">
-      <Item name="Color" type="COL_ANY" colortype="CMY" cyan="255" magenta="255" yellow="255"/>
-   </Item>
-   <Item type="FillColor" size="8">
-      <Item name="Color" type="COL_ANY" colortype="None"/>
-   </Item>
-   <Item type="LineThick" size="8">
-      <Item name="Value" value="4.2425"/>
-   </Item>
-   <Item type="LineStyle" size="12">
-      <Item name="Style" value="1"/>
-      <Item name="Pitch" value="212.125"/>
-   </Item>
-   <Item type="LineSmooth" size="8">
-      <Item name="Value" value="0"/>
-   </Item>
-   <Item type="Line" size="32">
-      <Item name="From" type="D2POINT">
-         <Value name="X" value="2143.196841"/>
-         <Value name="Y" value="3712.125819"/>
-      </Item>
-      <Item name="To" type="D2POINT">
-         <Value name="X" value="2058.346841"/>
-         <Value name="Y" value="3565.161308"/>
-      </Item>
+      <Item name="UTF-8 Text" value="423500E"/>
    </Item>
    <Item type="FontColor" size="8">
       <Item name="Color" type="COL_ANY" colortype="CMY" cyan="255" magenta="255" yellow="255"/>
@@ -569,7 +469,7 @@
       <Item name="Value" value="Arial(TT,MEDIUM)"/>
    </Item>
    <Item type="FontSize" size="8">
-      <Item name="Value" value="76.365"/>
+      <Item name="Value" value="35.2944"/>
    </Item>
    <Item type="FontAngle" size="8">
       <Item name="Value" value="0"/>
@@ -577,38 +477,12 @@
    <Item type="FontRef" size="8">
       <Item name="Value" value="1"/>
    </Item>
-   <Item type="Text" size="21">
+   <Item type="Text" size="27">
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="2143.196841"/>
-         <Value name="Y" value="3731.217069"/>
+         <Value name="X" value="979.2324181"/>
+         <Value name="Y" value="3704.903901"/>
       </Item>
-      <Item name="UTF-8 Text" value="0"/>
-   </Item>
-   <Item type="LineColor" size="8">
-      <Item name="Color" type="COL_ANY" colortype="CMY" cyan="255" magenta="255" yellow="255"/>
-   </Item>
-   <Item type="FillColor" size="8">
-      <Item name="Color" type="COL_ANY" colortype="None"/>
-   </Item>
-   <Item type="LineThick" size="8">
-      <Item name="Value" value="4.2425"/>
-   </Item>
-   <Item type="LineStyle" size="12">
-      <Item name="Style" value="1"/>
-      <Item name="Pitch" value="212.125"/>
-   </Item>
-   <Item type="LineSmooth" size="8">
-      <Item name="Value" value="0"/>
-   </Item>
-   <Item type="Line" size="32">
-      <Item name="From" type="D2POINT">
-         <Value name="X" value="3297.896761"/>
-         <Value name="Y" value="3712.124749"/>
-      </Item>
-      <Item name="To" type="D2POINT">
-         <Value name="X" value="3213.046761"/>
-         <Value name="Y" value="3565.160238"/>
-      </Item>
+      <Item name="UTF-8 Text" value="424000E"/>
    </Item>
    <Item type="FontColor" size="8">
       <Item name="Color" type="COL_ANY" colortype="CMY" cyan="255" magenta="255" yellow="255"/>
@@ -617,7 +491,7 @@
       <Item name="Value" value="Arial(TT,MEDIUM)"/>
    </Item>
    <Item type="FontSize" size="8">
-      <Item name="Value" value="76.365"/>
+      <Item name="Value" value="35.2944"/>
    </Item>
    <Item type="FontAngle" size="8">
       <Item name="Value" value="0"/>
@@ -625,38 +499,12 @@
    <Item type="FontRef" size="8">
       <Item name="Value" value="1"/>
    </Item>
-   <Item type="Text" size="25">
+   <Item type="Text" size="27">
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="3297.896761"/>
-         <Value name="Y" value="3731.215999"/>
+         <Value name="X" value="1556.582459"/>
+         <Value name="Y" value="3704.903505"/>
       </Item>
-      <Item name="UTF-8 Text" value="1000E"/>
-   </Item>
-   <Item type="LineColor" size="8">
-      <Item name="Color" type="COL_ANY" colortype="CMY" cyan="255" magenta="255" yellow="255"/>
-   </Item>
-   <Item type="FillColor" size="8">
-      <Item name="Color" type="COL_ANY" colortype="None"/>
-   </Item>
-   <Item type="LineThick" size="8">
-      <Item name="Value" value="4.2425"/>
-   </Item>
-   <Item type="LineStyle" size="12">
-      <Item name="Style" value="1"/>
-      <Item name="Pitch" value="212.125"/>
-   </Item>
-   <Item type="LineSmooth" size="8">
-      <Item name="Value" value="0"/>
-   </Item>
-   <Item type="Line" size="32">
-      <Item name="From" type="D2POINT">
-         <Value name="X" value="4452.598038"/>
-         <Value name="Y" value="3712.126028"/>
-      </Item>
-      <Item name="To" type="D2POINT">
-         <Value name="X" value="4367.748038"/>
-         <Value name="Y" value="3565.161517"/>
-      </Item>
+      <Item name="UTF-8 Text" value="424500E"/>
    </Item>
    <Item type="FontColor" size="8">
       <Item name="Color" type="COL_ANY" colortype="CMY" cyan="255" magenta="255" yellow="255"/>
@@ -665,7 +513,7 @@
       <Item name="Value" value="Arial(TT,MEDIUM)"/>
    </Item>
    <Item type="FontSize" size="8">
-      <Item name="Value" value="76.365"/>
+      <Item name="Value" value="35.2944"/>
    </Item>
    <Item type="FontAngle" size="8">
       <Item name="Value" value="0"/>
@@ -673,38 +521,12 @@
    <Item type="FontRef" size="8">
       <Item name="Value" value="1"/>
    </Item>
-   <Item type="Text" size="25">
+   <Item type="Text" size="27">
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="4452.598038"/>
-         <Value name="Y" value="3731.217278"/>
+         <Value name="X" value="2133.933848"/>
+         <Value name="Y" value="3704.905444"/>
       </Item>
-      <Item name="UTF-8 Text" value="2000E"/>
-   </Item>
-   <Item type="LineColor" size="8">
-      <Item name="Color" type="COL_ANY" colortype="CMY" cyan="255" magenta="255" yellow="255"/>
-   </Item>
-   <Item type="FillColor" size="8">
-      <Item name="Color" type="COL_ANY" colortype="None"/>
-   </Item>
-   <Item type="LineThick" size="8">
-      <Item name="Value" value="4.2425"/>
-   </Item>
-   <Item type="LineStyle" size="12">
-      <Item name="Style" value="1"/>
-      <Item name="Pitch" value="212.125"/>
-   </Item>
-   <Item type="LineSmooth" size="8">
-      <Item name="Value" value="0"/>
-   </Item>
-   <Item type="Line" size="32">
-      <Item name="From" type="D2POINT">
-         <Value name="X" value="5212.124934"/>
-         <Value name="Y" value="3027.665201"/>
-      </Item>
-      <Item name="To" type="D2POINT">
-         <Value name="X" value="5127.274934"/>
-         <Value name="Y" value="2880.70069"/>
-      </Item>
+      <Item name="UTF-8 Text" value="425000E"/>
    </Item>
    <Item type="FontColor" size="8">
       <Item name="Color" type="COL_ANY" colortype="CMY" cyan="255" magenta="255" yellow="255"/>
@@ -713,7 +535,117 @@
       <Item name="Value" value="Arial(TT,MEDIUM)"/>
    </Item>
    <Item type="FontSize" size="8">
-      <Item name="Value" value="76.365"/>
+      <Item name="Value" value="35.2944"/>
+   </Item>
+   <Item type="FontAngle" size="8">
+      <Item name="Value" value="0"/>
+   </Item>
+   <Item type="FontRef" size="8">
+      <Item name="Value" value="1"/>
+   </Item>
+   <Item type="Text" size="27">
+      <Item name="Point" type="D2POINT">
+         <Value name="X" value="2711.28254"/>
+         <Value name="Y" value="3704.902714"/>
+      </Item>
+      <Item name="UTF-8 Text" value="425500E"/>
+   </Item>
+   <Item type="FontColor" size="8">
+      <Item name="Color" type="COL_ANY" colortype="CMY" cyan="255" magenta="255" yellow="255"/>
+   </Item>
+   <Item type="FontName" size="17">
+      <Item name="Value" value="Arial(TT,MEDIUM)"/>
+   </Item>
+   <Item type="FontSize" size="8">
+      <Item name="Value" value="35.2944"/>
+   </Item>
+   <Item type="FontAngle" size="8">
+      <Item name="Value" value="0"/>
+   </Item>
+   <Item type="FontRef" size="8">
+      <Item name="Value" value="1"/>
+   </Item>
+   <Item type="Text" size="27">
+      <Item name="Point" type="D2POINT">
+         <Value name="X" value="3288.633929"/>
+         <Value name="Y" value="3704.904653"/>
+      </Item>
+      <Item name="UTF-8 Text" value="426000E"/>
+   </Item>
+   <Item type="FontColor" size="8">
+      <Item name="Color" type="COL_ANY" colortype="CMY" cyan="255" magenta="255" yellow="255"/>
+   </Item>
+   <Item type="FontName" size="17">
+      <Item name="Value" value="Arial(TT,MEDIUM)"/>
+   </Item>
+   <Item type="FontSize" size="8">
+      <Item name="Value" value="35.2944"/>
+   </Item>
+   <Item type="FontAngle" size="8">
+      <Item name="Value" value="0"/>
+   </Item>
+   <Item type="FontRef" size="8">
+      <Item name="Value" value="1"/>
+   </Item>
+   <Item type="Text" size="27">
+      <Item name="Point" type="D2POINT">
+         <Value name="X" value="3865.98397"/>
+         <Value name="Y" value="3704.904257"/>
+      </Item>
+      <Item name="UTF-8 Text" value="426500E"/>
+   </Item>
+   <Item type="FontColor" size="8">
+      <Item name="Color" type="COL_ANY" colortype="CMY" cyan="255" magenta="255" yellow="255"/>
+   </Item>
+   <Item type="FontName" size="17">
+      <Item name="Value" value="Arial(TT,MEDIUM)"/>
+   </Item>
+   <Item type="FontSize" size="8">
+      <Item name="Value" value="35.2944"/>
+   </Item>
+   <Item type="FontAngle" size="8">
+      <Item name="Value" value="0"/>
+   </Item>
+   <Item type="FontRef" size="8">
+      <Item name="Value" value="1"/>
+   </Item>
+   <Item type="Text" size="27">
+      <Item name="Point" type="D2POINT">
+         <Value name="X" value="4443.332663"/>
+         <Value name="Y" value="3704.901527"/>
+      </Item>
+      <Item name="UTF-8 Text" value="427000E"/>
+   </Item>
+   <Item type="FontColor" size="8">
+      <Item name="Color" type="COL_ANY" colortype="CMY" cyan="255" magenta="255" yellow="255"/>
+   </Item>
+   <Item type="FontName" size="17">
+      <Item name="Value" value="Arial(TT,MEDIUM)"/>
+   </Item>
+   <Item type="FontSize" size="8">
+      <Item name="Value" value="35.2944"/>
+   </Item>
+   <Item type="FontAngle" size="8">
+      <Item name="Value" value="0"/>
+   </Item>
+   <Item type="FontRef" size="8">
+      <Item name="Value" value="1"/>
+   </Item>
+   <Item type="Text" size="27">
+      <Item name="Point" type="D2POINT">
+         <Value name="X" value="5020.684052"/>
+         <Value name="Y" value="3704.903466"/>
+      </Item>
+      <Item name="UTF-8 Text" value="427500E"/>
+   </Item>
+   <Item type="FontColor" size="8">
+      <Item name="Color" type="COL_ANY" colortype="CMY" cyan="255" magenta="255" yellow="255"/>
+   </Item>
+   <Item type="FontName" size="17">
+      <Item name="Value" value="Arial(TT,MEDIUM)"/>
+   </Item>
+   <Item type="FontSize" size="8">
+      <Item name="Value" value="35.2944"/>
    </Item>
    <Item type="FontAngle" size="8">
       <Item name="Value" value="0"/>
@@ -721,38 +653,12 @@
    <Item type="FontRef" size="8">
       <Item name="Value" value="3"/>
    </Item>
-   <Item type="Text" size="25">
+   <Item type="Text" size="27">
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="5231.216184"/>
-         <Value name="Y" value="3027.665201"/>
+         <Value name="X" value="5204.901573"/>
+         <Value name="Y" value="2999.87105"/>
       </Item>
-      <Item name="UTF-8 Text" value="3000E"/>
-   </Item>
-   <Item type="LineColor" size="8">
-      <Item name="Color" type="COL_ANY" colortype="CMY" cyan="255" magenta="255" yellow="255"/>
-   </Item>
-   <Item type="FillColor" size="8">
-      <Item name="Color" type="COL_ANY" colortype="None"/>
-   </Item>
-   <Item type="LineThick" size="8">
-      <Item name="Value" value="4.2425"/>
-   </Item>
-   <Item type="LineStyle" size="12">
-      <Item name="Style" value="1"/>
-      <Item name="Pitch" value="212.125"/>
-   </Item>
-   <Item type="LineSmooth" size="8">
-      <Item name="Value" value="0"/>
-   </Item>
-   <Item type="Line" size="32">
-      <Item name="From" type="D2POINT">
-         <Value name="X" value="5212.125828"/>
-         <Value name="Y" value="1027.666749"/>
-      </Item>
-      <Item name="To" type="D2POINT">
-         <Value name="X" value="5127.275828"/>
-         <Value name="Y" value="880.7022379"/>
-      </Item>
+      <Item name="UTF-8 Text" value="428000E"/>
    </Item>
    <Item type="FontColor" size="8">
       <Item name="Color" type="COL_ANY" colortype="CMY" cyan="255" magenta="255" yellow="255"/>
@@ -761,7 +667,7 @@
       <Item name="Value" value="Arial(TT,MEDIUM)"/>
    </Item>
    <Item type="FontSize" size="8">
-      <Item name="Value" value="76.365"/>
+      <Item name="Value" value="35.2944"/>
    </Item>
    <Item type="FontAngle" size="8">
       <Item name="Value" value="0"/>
@@ -769,12 +675,56 @@
    <Item type="FontRef" size="8">
       <Item name="Value" value="3"/>
    </Item>
-   <Item type="Text" size="25">
+   <Item type="Text" size="27">
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="5231.217078"/>
-         <Value name="Y" value="1027.666749"/>
+         <Value name="X" value="5204.902829"/>
+         <Value name="Y" value="1999.873225"/>
       </Item>
-      <Item name="UTF-8 Text" value="4000E"/>
+      <Item name="UTF-8 Text" value="428500E"/>
+   </Item>
+   <Item type="FontColor" size="8">
+      <Item name="Color" type="COL_ANY" colortype="CMY" cyan="255" magenta="255" yellow="255"/>
+   </Item>
+   <Item type="FontName" size="17">
+      <Item name="Value" value="Arial(TT,MEDIUM)"/>
+   </Item>
+   <Item type="FontSize" size="8">
+      <Item name="Value" value="35.2944"/>
+   </Item>
+   <Item type="FontAngle" size="8">
+      <Item name="Value" value="0"/>
+   </Item>
+   <Item type="FontRef" size="8">
+      <Item name="Value" value="3"/>
+   </Item>
+   <Item type="Text" size="27">
+      <Item name="Point" type="D2POINT">
+         <Value name="X" value="5204.902399"/>
+         <Value name="Y" value="999.8724807"/>
+      </Item>
+      <Item name="UTF-8 Text" value="429000E"/>
+   </Item>
+   <Item type="FontColor" size="8">
+      <Item name="Color" type="COL_ANY" colortype="CMY" cyan="255" magenta="255" yellow="255"/>
+   </Item>
+   <Item type="FontName" size="17">
+      <Item name="Value" value="Arial(TT,MEDIUM)"/>
+   </Item>
+   <Item type="FontSize" size="8">
+      <Item name="Value" value="35.2944"/>
+   </Item>
+   <Item type="FontAngle" size="8">
+      <Item name="Value" value="0"/>
+   </Item>
+   <Item type="FontRef" size="8">
+      <Item name="Value" value="3"/>
+   </Item>
+   <Item type="Text" size="27">
+      <Item name="Point" type="D2POINT">
+         <Value name="X" value="5204.903655"/>
+         <Value name="Y" value="-0.1253444318"/>
+      </Item>
+      <Item name="UTF-8 Text" value="429500E"/>
    </Item>
    <Item type="LineColor" size="8">
       <Item name="Color" type="COL_ANY" colortype="CMY" cyan="255" magenta="255" yellow="255"/>
@@ -783,11 +733,11 @@
       <Item name="Color" type="COL_ANY" colortype="None"/>
    </Item>
    <Item type="LineThick" size="8">
-      <Item name="Value" value="4.7516"/>
+      <Item name="Value" value="2.196096"/>
    </Item>
    <Item type="LineStyle" size="12">
       <Item name="Style" value="1"/>
-      <Item name="Pitch" value="212.125"/>
+      <Item name="Pitch" value="98.04"/>
    </Item>
    <Item type="LineSmooth" size="8">
       <Item name="Value" value="0"/>
@@ -799,11 +749,11 @@
       <Item name="Color" type="COL_ANY" colortype="None"/>
    </Item>
    <Item type="LineThick" size="8">
-      <Item name="Value" value="4.7516"/>
+      <Item name="Value" value="2.196096"/>
    </Item>
    <Item type="LineStyle" size="12">
       <Item name="Style" value="1"/>
-      <Item name="Pitch" value="212.125"/>
+      <Item name="Pitch" value="98.04"/>
    </Item>
    <Item type="LineSmooth" size="8">
       <Item name="Value" value="0"/>
@@ -815,33 +765,7 @@
       <Item name="Value" value="Arial(TT,MEDIUM)"/>
    </Item>
    <Item type="FontSize" size="8">
-      <Item name="Value" value="76.365"/>
-   </Item>
-   <Item type="LineColor" size="8">
-      <Item name="Color" type="COL_ANY" colortype="CMY" cyan="255" magenta="255" yellow="255"/>
-   </Item>
-   <Item type="FillColor" size="8">
-      <Item name="Color" type="COL_ANY" colortype="None"/>
-   </Item>
-   <Item type="LineThick" size="8">
-      <Item name="Value" value="4.7516"/>
-   </Item>
-   <Item type="LineStyle" size="12">
-      <Item name="Style" value="1"/>
-      <Item name="Pitch" value="212.125"/>
-   </Item>
-   <Item type="LineSmooth" size="8">
-      <Item name="Value" value="0"/>
-   </Item>
-   <Item type="Line" size="32">
-      <Item name="From" type="D2POINT">
-         <Value name="X" value="-212.1257907"/>
-         <Value name="Y" value="122.4708824"/>
-      </Item>
-      <Item name="To" type="D2POINT">
-         <Value name="X" value="-65.16127972"/>
-         <Value name="Y" value="37.62088239"/>
-      </Item>
+      <Item name="Value" value="35.2944"/>
    </Item>
    <Item type="FontColor" size="8">
       <Item name="Color" type="COL_ANY" colortype="CMY" cyan="255" magenta="255" yellow="255"/>
@@ -850,7 +774,7 @@
       <Item name="Value" value="Arial(TT,MEDIUM)"/>
    </Item>
    <Item type="FontSize" size="8">
-      <Item name="Value" value="76.365"/>
+      <Item name="Value" value="35.2944"/>
    </Item>
    <Item type="FontAngle" size="8">
       <Item name="Value" value="90000"/>
@@ -861,38 +785,12 @@
    <Item type="FontRef" size="8">
       <Item name="Value" value="1"/>
    </Item>
-   <Item type="Text" size="21">
+   <Item type="Text" size="28">
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="-231.2170407"/>
-         <Value name="Y" value="122.4708824"/>
+         <Value name="X" value="-204.9029075"/>
+         <Value name="Y" value="-54.22513712"/>
       </Item>
-      <Item name="UTF-8 Text" value="0"/>
-   </Item>
-   <Item type="LineColor" size="8">
-      <Item name="Color" type="COL_ANY" colortype="CMY" cyan="255" magenta="255" yellow="255"/>
-   </Item>
-   <Item type="FillColor" size="8">
-      <Item name="Color" type="COL_ANY" colortype="None"/>
-   </Item>
-   <Item type="LineThick" size="8">
-      <Item name="Value" value="4.7516"/>
-   </Item>
-   <Item type="LineStyle" size="12">
-      <Item name="Style" value="1"/>
-      <Item name="Pitch" value="212.125"/>
-   </Item>
-   <Item type="LineSmooth" size="8">
-      <Item name="Value" value="0"/>
-   </Item>
-   <Item type="Line" size="32">
-      <Item name="From" type="D2POINT">
-         <Value name="X" value="367.4123583"/>
-         <Value name="Y" value="-212.1256239"/>
-      </Item>
-      <Item name="To" type="D2POINT">
-         <Value name="X" value="220.4478472"/>
-         <Value name="Y" value="-127.2756239"/>
-      </Item>
+      <Item name="UTF-8 Text" value="6500000N"/>
    </Item>
    <Item type="FontColor" size="8">
       <Item name="Color" type="COL_ANY" colortype="CMY" cyan="255" magenta="255" yellow="255"/>
@@ -901,7 +799,7 @@
       <Item name="Value" value="Arial(TT,MEDIUM)"/>
    </Item>
    <Item type="FontSize" size="8">
-      <Item name="Value" value="76.365"/>
+      <Item name="Value" value="35.2944"/>
    </Item>
    <Item type="FontAngle" size="8">
       <Item name="Value" value="90000"/>
@@ -909,38 +807,12 @@
    <Item type="FontRef" size="8">
       <Item name="Value" value="5"/>
    </Item>
-   <Item type="Text" size="21">
+   <Item type="Text" size="28">
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="367.4123583"/>
-         <Value name="Y" value="-231.2168739"/>
+         <Value name="X" value="49.61950251"/>
+         <Value name="Y" value="-204.9030112"/>
       </Item>
-      <Item name="UTF-8 Text" value="0"/>
-   </Item>
-   <Item type="LineColor" size="8">
-      <Item name="Color" type="COL_ANY" colortype="CMY" cyan="255" magenta="255" yellow="255"/>
-   </Item>
-   <Item type="FillColor" size="8">
-      <Item name="Color" type="COL_ANY" colortype="None"/>
-   </Item>
-   <Item type="LineThick" size="8">
-      <Item name="Value" value="4.7516"/>
-   </Item>
-   <Item type="LineStyle" size="12">
-      <Item name="Style" value="1"/>
-      <Item name="Pitch" value="212.125"/>
-   </Item>
-   <Item type="LineSmooth" size="8">
-      <Item name="Value" value="0"/>
-   </Item>
-   <Item type="Line" size="32">
-      <Item name="From" type="D2POINT">
-         <Value name="X" value="-212.1250336"/>
-         <Value name="Y" value="1277.170984"/>
-      </Item>
-      <Item name="To" type="D2POINT">
-         <Value name="X" value="-65.16052254"/>
-         <Value name="Y" value="1192.320984"/>
-      </Item>
+      <Item name="UTF-8 Text" value="6500000N"/>
    </Item>
    <Item type="FontColor" size="8">
       <Item name="Color" type="COL_ANY" colortype="CMY" cyan="255" magenta="255" yellow="255"/>
@@ -949,7 +821,7 @@
       <Item name="Value" value="Arial(TT,MEDIUM)"/>
    </Item>
    <Item type="FontSize" size="8">
-      <Item name="Value" value="76.365"/>
+      <Item name="Value" value="35.2944"/>
    </Item>
    <Item type="FontAngle" size="8">
       <Item name="Value" value="90000"/>
@@ -960,38 +832,12 @@
    <Item type="FontRef" size="8">
       <Item name="Value" value="1"/>
    </Item>
-   <Item type="Text" size="25">
+   <Item type="Text" size="28">
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="-231.2162836"/>
-         <Value name="Y" value="1277.170984"/>
+         <Value name="X" value="-204.9033702"/>
+         <Value name="Y" value="523.1253993"/>
       </Item>
-      <Item name="UTF-8 Text" value="1000N"/>
-   </Item>
-   <Item type="LineColor" size="8">
-      <Item name="Color" type="COL_ANY" colortype="CMY" cyan="255" magenta="255" yellow="255"/>
-   </Item>
-   <Item type="FillColor" size="8">
-      <Item name="Color" type="COL_ANY" colortype="None"/>
-   </Item>
-   <Item type="LineThick" size="8">
-      <Item name="Value" value="4.7516"/>
-   </Item>
-   <Item type="LineStyle" size="12">
-      <Item name="Style" value="1"/>
-      <Item name="Pitch" value="212.125"/>
-   </Item>
-   <Item type="LineSmooth" size="8">
-      <Item name="Value" value="0"/>
-   </Item>
-   <Item type="Line" size="32">
-      <Item name="From" type="D2POINT">
-         <Value name="X" value="2367.410044"/>
-         <Value name="Y" value="-212.1242879"/>
-      </Item>
-      <Item name="To" type="D2POINT">
-         <Value name="X" value="2220.445533"/>
-         <Value name="Y" value="-127.2742879"/>
-      </Item>
+      <Item name="UTF-8 Text" value="6500500N"/>
    </Item>
    <Item type="FontColor" size="8">
       <Item name="Color" type="COL_ANY" colortype="CMY" cyan="255" magenta="255" yellow="255"/>
@@ -1000,7 +846,7 @@
       <Item name="Value" value="Arial(TT,MEDIUM)"/>
    </Item>
    <Item type="FontSize" size="8">
-      <Item name="Value" value="76.365"/>
+      <Item name="Value" value="35.2944"/>
    </Item>
    <Item type="FontAngle" size="8">
       <Item name="Value" value="90000"/>
@@ -1008,38 +854,12 @@
    <Item type="FontRef" size="8">
       <Item name="Value" value="5"/>
    </Item>
-   <Item type="Text" size="25">
+   <Item type="Text" size="28">
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="2367.410044"/>
-         <Value name="Y" value="-231.2155379"/>
+         <Value name="X" value="1049.617733"/>
+         <Value name="Y" value="-204.9019896"/>
       </Item>
-      <Item name="UTF-8 Text" value="1000N"/>
-   </Item>
-   <Item type="LineColor" size="8">
-      <Item name="Color" type="COL_ANY" colortype="CMY" cyan="255" magenta="255" yellow="255"/>
-   </Item>
-   <Item type="FillColor" size="8">
-      <Item name="Color" type="COL_ANY" colortype="None"/>
-   </Item>
-   <Item type="LineThick" size="8">
-      <Item name="Value" value="4.7516"/>
-   </Item>
-   <Item type="LineStyle" size="12">
-      <Item name="Style" value="1"/>
-      <Item name="Pitch" value="212.125"/>
-   </Item>
-   <Item type="LineSmooth" size="8">
-      <Item name="Value" value="0"/>
-   </Item>
-   <Item type="Line" size="32">
-      <Item name="From" type="D2POINT">
-         <Value name="X" value="-212.1259756"/>
-         <Value name="Y" value="2431.872066"/>
-      </Item>
-      <Item name="To" type="D2POINT">
-         <Value name="X" value="-65.16146461"/>
-         <Value name="Y" value="2347.022066"/>
-      </Item>
+      <Item name="UTF-8 Text" value="6500500N"/>
    </Item>
    <Item type="FontColor" size="8">
       <Item name="Color" type="COL_ANY" colortype="CMY" cyan="255" magenta="255" yellow="255"/>
@@ -1048,7 +868,7 @@
       <Item name="Value" value="Arial(TT,MEDIUM)"/>
    </Item>
    <Item type="FontSize" size="8">
-      <Item name="Value" value="76.365"/>
+      <Item name="Value" value="35.2944"/>
    </Item>
    <Item type="FontAngle" size="8">
       <Item name="Value" value="90000"/>
@@ -1059,38 +879,12 @@
    <Item type="FontRef" size="8">
       <Item name="Value" value="1"/>
    </Item>
-   <Item type="Text" size="25">
+   <Item type="Text" size="28">
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="-231.2172256"/>
-         <Value name="Y" value="2431.872066"/>
+         <Value name="X" value="-204.9021476"/>
+         <Value name="Y" value="1100.474963"/>
       </Item>
-      <Item name="UTF-8 Text" value="2000N"/>
-   </Item>
-   <Item type="LineColor" size="8">
-      <Item name="Color" type="COL_ANY" colortype="CMY" cyan="255" magenta="255" yellow="255"/>
-   </Item>
-   <Item type="FillColor" size="8">
-      <Item name="Color" type="COL_ANY" colortype="None"/>
-   </Item>
-   <Item type="LineThick" size="8">
-      <Item name="Value" value="4.7516"/>
-   </Item>
-   <Item type="LineStyle" size="12">
-      <Item name="Style" value="1"/>
-      <Item name="Pitch" value="212.125"/>
-   </Item>
-   <Item type="LineSmooth" size="8">
-      <Item name="Value" value="0"/>
-   </Item>
-   <Item type="Line" size="32">
-      <Item name="From" type="D2POINT">
-         <Value name="X" value="4367.415866"/>
-         <Value name="Y" value="-212.1276494"/>
-      </Item>
-      <Item name="To" type="D2POINT">
-         <Value name="X" value="4220.451355"/>
-         <Value name="Y" value="-127.2776494"/>
-      </Item>
+      <Item name="UTF-8 Text" value="6501000N"/>
    </Item>
    <Item type="FontColor" size="8">
       <Item name="Color" type="COL_ANY" colortype="CMY" cyan="255" magenta="255" yellow="255"/>
@@ -1099,7 +893,7 @@
       <Item name="Value" value="Arial(TT,MEDIUM)"/>
    </Item>
    <Item type="FontSize" size="8">
-      <Item name="Value" value="76.365"/>
+      <Item name="Value" value="35.2944"/>
    </Item>
    <Item type="FontAngle" size="8">
       <Item name="Value" value="90000"/>
@@ -1107,38 +901,12 @@
    <Item type="FontRef" size="8">
       <Item name="Value" value="5"/>
    </Item>
-   <Item type="Text" size="25">
+   <Item type="Text" size="28">
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="4367.415866"/>
-         <Value name="Y" value="-231.2188994"/>
+         <Value name="X" value="2049.620008"/>
+         <Value name="Y" value="-204.9033028"/>
       </Item>
-      <Item name="UTF-8 Text" value="2000N"/>
-   </Item>
-   <Item type="LineColor" size="8">
-      <Item name="Color" type="COL_ANY" colortype="CMY" cyan="255" magenta="255" yellow="255"/>
-   </Item>
-   <Item type="FillColor" size="8">
-      <Item name="Color" type="COL_ANY" colortype="None"/>
-   </Item>
-   <Item type="LineThick" size="8">
-      <Item name="Value" value="4.7516"/>
-   </Item>
-   <Item type="LineStyle" size="12">
-      <Item name="Style" value="1"/>
-      <Item name="Pitch" value="212.125"/>
-   </Item>
-   <Item type="LineSmooth" size="8">
-      <Item name="Value" value="0"/>
-   </Item>
-   <Item type="Line" size="32">
-      <Item name="From" type="D2POINT">
-         <Value name="X" value="-212.1235192"/>
-         <Value name="Y" value="3586.571186"/>
-      </Item>
-      <Item name="To" type="D2POINT">
-         <Value name="X" value="-65.15900818"/>
-         <Value name="Y" value="3501.721186"/>
-      </Item>
+      <Item name="UTF-8 Text" value="6501000N"/>
    </Item>
    <Item type="FontColor" size="8">
       <Item name="Color" type="COL_ANY" colortype="CMY" cyan="255" magenta="255" yellow="255"/>
@@ -1147,7 +915,7 @@
       <Item name="Value" value="Arial(TT,MEDIUM)"/>
    </Item>
    <Item type="FontSize" size="8">
-      <Item name="Value" value="76.365"/>
+      <Item name="Value" value="35.2944"/>
    </Item>
    <Item type="FontAngle" size="8">
       <Item name="Value" value="90000"/>
@@ -1156,44 +924,159 @@
       <Item name="Value" value="1"/>
    </Item>
    <Item type="FontRef" size="8">
-      <Item name="Value" value="2"/>
+      <Item name="Value" value="1"/>
    </Item>
-   <Item type="Text" size="25">
+   <Item type="Text" size="28">
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="-231.2147692"/>
-         <Value name="Y" value="3712.125"/>
+         <Value name="X" value="-204.9042958"/>
+         <Value name="Y" value="1677.826472"/>
       </Item>
-      <Item name="UTF-8 Text" value="3000N"/>
+      <Item name="UTF-8 Text" value="6501500N"/>
+   </Item>
+   <Item type="FontColor" size="8">
+      <Item name="Color" type="COL_ANY" colortype="CMY" cyan="255" magenta="255" yellow="255"/>
+   </Item>
+   <Item type="FontName" size="17">
+      <Item name="Value" value="Arial(TT,MEDIUM)"/>
+   </Item>
+   <Item type="FontSize" size="8">
+      <Item name="Value" value="35.2944"/>
+   </Item>
+   <Item type="FontAngle" size="8">
+      <Item name="Value" value="90000"/>
+   </Item>
+   <Item type="FontRef" size="8">
+      <Item name="Value" value="5"/>
+   </Item>
+   <Item type="Text" size="28">
+      <Item name="Point" type="D2POINT">
+         <Value name="X" value="3049.622282"/>
+         <Value name="Y" value="-204.904616"/>
+      </Item>
+      <Item name="UTF-8 Text" value="6501500N"/>
+   </Item>
+   <Item type="FontColor" size="8">
+      <Item name="Color" type="COL_ANY" colortype="CMY" cyan="255" magenta="255" yellow="255"/>
+   </Item>
+   <Item type="FontName" size="17">
+      <Item name="Value" value="Arial(TT,MEDIUM)"/>
+   </Item>
+   <Item type="FontSize" size="8">
+      <Item name="Value" value="35.2944"/>
+   </Item>
+   <Item type="FontAngle" size="8">
+      <Item name="Value" value="90000"/>
+   </Item>
+   <Item type="FontRef" size="8">
+      <Item name="Value" value="1"/>
+   </Item>
+   <Item type="FontRef" size="8">
+      <Item name="Value" value="1"/>
+   </Item>
+   <Item type="Text" size="28">
+      <Item name="Point" type="D2POINT">
+         <Value name="X" value="-204.9030732"/>
+         <Value name="Y" value="2255.176035"/>
+      </Item>
+      <Item name="UTF-8 Text" value="6502000N"/>
+   </Item>
+   <Item type="FontColor" size="8">
+      <Item name="Color" type="COL_ANY" colortype="CMY" cyan="255" magenta="255" yellow="255"/>
+   </Item>
+   <Item type="FontName" size="17">
+      <Item name="Value" value="Arial(TT,MEDIUM)"/>
+   </Item>
+   <Item type="FontSize" size="8">
+      <Item name="Value" value="35.2944"/>
+   </Item>
+   <Item type="FontAngle" size="8">
+      <Item name="Value" value="90000"/>
+   </Item>
+   <Item type="FontRef" size="8">
+      <Item name="Value" value="5"/>
+   </Item>
+   <Item type="Text" size="28">
+      <Item name="Point" type="D2POINT">
+         <Value name="X" value="4049.620513"/>
+         <Value name="Y" value="-204.9035944"/>
+      </Item>
+      <Item name="UTF-8 Text" value="6502000N"/>
+   </Item>
+   <Item type="FontColor" size="8">
+      <Item name="Color" type="COL_ANY" colortype="CMY" cyan="255" magenta="255" yellow="255"/>
+   </Item>
+   <Item type="FontName" size="17">
+      <Item name="Value" value="Arial(TT,MEDIUM)"/>
+   </Item>
+   <Item type="FontSize" size="8">
+      <Item name="Value" value="35.2944"/>
+   </Item>
+   <Item type="FontAngle" size="8">
+      <Item name="Value" value="90000"/>
+   </Item>
+   <Item type="FontRef" size="8">
+      <Item name="Value" value="1"/>
+   </Item>
+   <Item type="FontRef" size="8">
+      <Item name="Value" value="1"/>
+   </Item>
+   <Item type="Text" size="28">
+      <Item name="Point" type="D2POINT">
+         <Value name="X" value="-204.903536"/>
+         <Value name="Y" value="2832.526572"/>
+      </Item>
+      <Item name="UTF-8 Text" value="6502500N"/>
+   </Item>
+   <Item type="FontColor" size="8">
+      <Item name="Color" type="COL_ANY" colortype="CMY" cyan="255" magenta="255" yellow="255"/>
+   </Item>
+   <Item type="FontName" size="17">
+      <Item name="Value" value="Arial(TT,MEDIUM)"/>
+   </Item>
+   <Item type="FontSize" size="8">
+      <Item name="Value" value="35.2944"/>
+   </Item>
+   <Item type="FontAngle" size="8">
+      <Item name="Value" value="90000"/>
+   </Item>
+   <Item type="FontRef" size="8">
+      <Item name="Value" value="5"/>
+   </Item>
+   <Item type="Text" size="28">
+      <Item name="Point" type="D2POINT">
+         <Value name="X" value="5049.622787"/>
+         <Value name="Y" value="-204.9049077"/>
+      </Item>
+      <Item name="UTF-8 Text" value="6502500N"/>
+   </Item>
+   <Item type="FontColor" size="8">
+      <Item name="Color" type="COL_ANY" colortype="CMY" cyan="255" magenta="255" yellow="255"/>
+   </Item>
+   <Item type="FontName" size="17">
+      <Item name="Value" value="Arial(TT,MEDIUM)"/>
+   </Item>
+   <Item type="FontSize" size="8">
+      <Item name="Value" value="35.2944"/>
+   </Item>
+   <Item type="FontAngle" size="8">
+      <Item name="Value" value="90000"/>
+   </Item>
+   <Item type="FontRef" size="8">
+      <Item name="Value" value="1"/>
+   </Item>
+   <Item type="FontRef" size="8">
+      <Item name="Value" value="1"/>
+   </Item>
+   <Item type="Text" size="28">
+      <Item name="Point" type="D2POINT">
+         <Value name="X" value="-204.9039987"/>
+         <Value name="Y" value="3409.877108"/>
+      </Item>
+      <Item name="UTF-8 Text" value="6503000N"/>
    </Item>
    <Item type="FontAngle" size="8">
       <Item name="Value" value="-90000"/>
    </Item>
-   <Item type="LineColor" size="8">
-      <Item name="Color" type="COL_ANY" colortype="CMY" cyan="255" magenta="255" yellow="255"/>
-   </Item>
-   <Item type="FillColor" size="8">
-      <Item name="Color" type="COL_ANY" colortype="None"/>
-   </Item>
-   <Item type="LineThick" size="8">
-      <Item name="Value" value="4.7516"/>
-   </Item>
-   <Item type="LineStyle" size="12">
-      <Item name="Style" value="1"/>
-      <Item name="Pitch" value="212.125"/>
-   </Item>
-   <Item type="LineSmooth" size="8">
-      <Item name="Value" value="0"/>
-   </Item>
-   <Item type="Line" size="32">
-      <Item name="From" type="D2POINT">
-         <Value name="X" value="5212.125031"/>
-         <Value name="Y" value="454.8798256"/>
-      </Item>
-      <Item name="To" type="D2POINT">
-         <Value name="X" value="5065.16052"/>
-         <Value name="Y" value="539.7298256"/>
-      </Item>
-   </Item>
    <Item type="FontColor" size="8">
       <Item name="Color" type="COL_ANY" colortype="CMY" cyan="255" magenta="255" yellow="255"/>
    </Item>
@@ -1201,7 +1084,7 @@
       <Item name="Value" value="Arial(TT,MEDIUM)"/>
    </Item>
    <Item type="FontSize" size="8">
-      <Item name="Value" value="76.365"/>
+      <Item name="Value" value="35.2944"/>
    </Item>
    <Item type="FontAngle" size="8">
       <Item name="Value" value="-90000"/>
@@ -1212,38 +1095,12 @@
    <Item type="FontRef" size="8">
       <Item name="Value" value="1"/>
    </Item>
-   <Item type="Text" size="25">
+   <Item type="Text" size="28">
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="5231.216281"/>
-         <Value name="Y" value="454.8798256"/>
+         <Value name="X" value="5204.904284"/>
+         <Value name="Y" value="296.7114552"/>
       </Item>
-      <Item name="UTF-8 Text" value="3000N"/>
-   </Item>
-   <Item type="LineColor" size="8">
-      <Item name="Color" type="COL_ANY" colortype="CMY" cyan="255" magenta="255" yellow="255"/>
-   </Item>
-   <Item type="FillColor" size="8">
-      <Item name="Color" type="COL_ANY" colortype="None"/>
-   </Item>
-   <Item type="LineThick" size="8">
-      <Item name="Value" value="4.7516"/>
-   </Item>
-   <Item type="LineStyle" size="12">
-      <Item name="Style" value="1"/>
-      <Item name="Pitch" value="212.125"/>
-   </Item>
-   <Item type="LineSmooth" size="8">
-      <Item name="Value" value="0"/>
-   </Item>
-   <Item type="Line" size="32">
-      <Item name="From" type="D2POINT">
-         <Value name="X" value="1570.413023"/>
-         <Value name="Y" value="3712.123772"/>
-      </Item>
-      <Item name="To" type="D2POINT">
-         <Value name="X" value="1717.377534"/>
-         <Value name="Y" value="3627.273772"/>
-      </Item>
+      <Item name="UTF-8 Text" value="6503000N"/>
    </Item>
    <Item type="FontColor" size="8">
       <Item name="Color" type="COL_ANY" colortype="CMY" cyan="255" magenta="255" yellow="255"/>
@@ -1252,7 +1109,7 @@
       <Item name="Value" value="Arial(TT,MEDIUM)"/>
    </Item>
    <Item type="FontSize" size="8">
-      <Item name="Value" value="76.365"/>
+      <Item name="Value" value="35.2944"/>
    </Item>
    <Item type="FontAngle" size="8">
       <Item name="Value" value="90000"/>
@@ -1260,38 +1117,12 @@
    <Item type="FontRef" size="8">
       <Item name="Value" value="3"/>
    </Item>
-   <Item type="Text" size="25">
+   <Item type="Text" size="28">
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="1570.413023"/>
-         <Value name="Y" value="3731.215022"/>
+         <Value name="X" value="308.2005593"/>
+         <Value name="Y" value="3704.90423"/>
       </Item>
-      <Item name="UTF-8 Text" value="4000N"/>
-   </Item>
-   <Item type="LineColor" size="8">
-      <Item name="Color" type="COL_ANY" colortype="CMY" cyan="255" magenta="255" yellow="255"/>
-   </Item>
-   <Item type="FillColor" size="8">
-      <Item name="Color" type="COL_ANY" colortype="None"/>
-   </Item>
-   <Item type="LineThick" size="8">
-      <Item name="Value" value="4.7516"/>
-   </Item>
-   <Item type="LineStyle" size="12">
-      <Item name="Style" value="1"/>
-      <Item name="Pitch" value="212.125"/>
-   </Item>
-   <Item type="LineSmooth" size="8">
-      <Item name="Value" value="0"/>
-   </Item>
-   <Item type="Line" size="32">
-      <Item name="From" type="D2POINT">
-         <Value name="X" value="5212.124089"/>
-         <Value name="Y" value="1609.580908"/>
-      </Item>
-      <Item name="To" type="D2POINT">
-         <Value name="X" value="5065.159578"/>
-         <Value name="Y" value="1694.430908"/>
-      </Item>
+      <Item name="UTF-8 Text" value="6503500N"/>
    </Item>
    <Item type="FontColor" size="8">
       <Item name="Color" type="COL_ANY" colortype="CMY" cyan="255" magenta="255" yellow="255"/>
@@ -1300,7 +1131,7 @@
       <Item name="Value" value="Arial(TT,MEDIUM)"/>
    </Item>
    <Item type="FontSize" size="8">
-      <Item name="Value" value="76.365"/>
+      <Item name="Value" value="35.2944"/>
    </Item>
    <Item type="FontAngle" size="8">
       <Item name="Value" value="-90000"/>
@@ -1311,38 +1142,12 @@
    <Item type="FontRef" size="8">
       <Item name="Value" value="1"/>
    </Item>
-   <Item type="Text" size="25">
+   <Item type="Text" size="28">
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="5231.215339"/>
-         <Value name="Y" value="1609.580908"/>
+         <Value name="X" value="5204.903822"/>
+         <Value name="Y" value="874.0619916"/>
       </Item>
-      <Item name="UTF-8 Text" value="4000N"/>
-   </Item>
-   <Item type="LineColor" size="8">
-      <Item name="Color" type="COL_ANY" colortype="CMY" cyan="255" magenta="255" yellow="255"/>
-   </Item>
-   <Item type="FillColor" size="8">
-      <Item name="Color" type="COL_ANY" colortype="None"/>
-   </Item>
-   <Item type="LineThick" size="8">
-      <Item name="Value" value="4.7516"/>
-   </Item>
-   <Item type="LineStyle" size="12">
-      <Item name="Style" value="1"/>
-      <Item name="Pitch" value="212.125"/>
-   </Item>
-   <Item type="LineSmooth" size="8">
-      <Item name="Value" value="0"/>
-   </Item>
-   <Item type="Line" size="32">
-      <Item name="From" type="D2POINT">
-         <Value name="X" value="3570.406641"/>
-         <Value name="Y" value="3712.127457"/>
-      </Item>
-      <Item name="To" type="D2POINT">
-         <Value name="X" value="3717.371152"/>
-         <Value name="Y" value="3627.277457"/>
-      </Item>
+      <Item name="UTF-8 Text" value="6503500N"/>
    </Item>
    <Item type="FontColor" size="8">
       <Item name="Color" type="COL_ANY" colortype="CMY" cyan="255" magenta="255" yellow="255"/>
@@ -1351,7 +1156,7 @@
       <Item name="Value" value="Arial(TT,MEDIUM)"/>
    </Item>
    <Item type="FontSize" size="8">
-      <Item name="Value" value="76.365"/>
+      <Item name="Value" value="35.2944"/>
    </Item>
    <Item type="FontAngle" size="8">
       <Item name="Value" value="90000"/>
@@ -1359,38 +1164,12 @@
    <Item type="FontRef" size="8">
       <Item name="Value" value="3"/>
    </Item>
-   <Item type="Text" size="25">
+   <Item type="Text" size="28">
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="3570.406641"/>
-         <Value name="Y" value="3731.218707"/>
+         <Value name="X" value="1308.202834"/>
+         <Value name="Y" value="3704.902917"/>
       </Item>
-      <Item name="UTF-8 Text" value="5000N"/>
-   </Item>
-   <Item type="LineColor" size="8">
-      <Item name="Color" type="COL_ANY" colortype="CMY" cyan="255" magenta="255" yellow="255"/>
-   </Item>
-   <Item type="FillColor" size="8">
-      <Item name="Color" type="COL_ANY" colortype="None"/>
-   </Item>
-   <Item type="LineThick" size="8">
-      <Item name="Value" value="4.7516"/>
-   </Item>
-   <Item type="LineStyle" size="12">
-      <Item name="Style" value="1"/>
-      <Item name="Pitch" value="212.125"/>
-   </Item>
-   <Item type="LineSmooth" size="8">
-      <Item name="Value" value="0"/>
-   </Item>
-   <Item type="Line" size="32">
-      <Item name="From" type="D2POINT">
-         <Value name="X" value="5212.126545"/>
-         <Value name="Y" value="2764.280028"/>
-      </Item>
-      <Item name="To" type="D2POINT">
-         <Value name="X" value="5065.162034"/>
-         <Value name="Y" value="2849.130028"/>
-      </Item>
+      <Item name="UTF-8 Text" value="6504000N"/>
    </Item>
    <Item type="FontColor" size="8">
       <Item name="Color" type="COL_ANY" colortype="CMY" cyan="255" magenta="255" yellow="255"/>
@@ -1399,7 +1178,7 @@
       <Item name="Value" value="Arial(TT,MEDIUM)"/>
    </Item>
    <Item type="FontSize" size="8">
-      <Item name="Value" value="76.365"/>
+      <Item name="Value" value="35.2944"/>
    </Item>
    <Item type="FontAngle" size="8">
       <Item name="Value" value="-90000"/>
@@ -1410,12 +1189,153 @@
    <Item type="FontRef" size="8">
       <Item name="Value" value="1"/>
    </Item>
-   <Item type="Text" size="25">
+   <Item type="Text" size="28">
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="5231.217795"/>
-         <Value name="Y" value="2764.280028"/>
+         <Value name="X" value="5204.903359"/>
+         <Value name="Y" value="1451.412528"/>
       </Item>
-      <Item name="UTF-8 Text" value="5000N"/>
+      <Item name="UTF-8 Text" value="6504000N"/>
+   </Item>
+   <Item type="FontColor" size="8">
+      <Item name="Color" type="COL_ANY" colortype="CMY" cyan="255" magenta="255" yellow="255"/>
+   </Item>
+   <Item type="FontName" size="17">
+      <Item name="Value" value="Arial(TT,MEDIUM)"/>
+   </Item>
+   <Item type="FontSize" size="8">
+      <Item name="Value" value="35.2944"/>
+   </Item>
+   <Item type="FontAngle" size="8">
+      <Item name="Value" value="90000"/>
+   </Item>
+   <Item type="FontRef" size="8">
+      <Item name="Value" value="3"/>
+   </Item>
+   <Item type="Text" size="28">
+      <Item name="Point" type="D2POINT">
+         <Value name="X" value="2308.201064"/>
+         <Value name="Y" value="3704.903939"/>
+      </Item>
+      <Item name="UTF-8 Text" value="6504500N"/>
+   </Item>
+   <Item type="FontColor" size="8">
+      <Item name="Color" type="COL_ANY" colortype="CMY" cyan="255" magenta="255" yellow="255"/>
+   </Item>
+   <Item type="FontName" size="17">
+      <Item name="Value" value="Arial(TT,MEDIUM)"/>
+   </Item>
+   <Item type="FontSize" size="8">
+      <Item name="Value" value="35.2944"/>
+   </Item>
+   <Item type="FontAngle" size="8">
+      <Item name="Value" value="-90000"/>
+   </Item>
+   <Item type="FontRef" size="8">
+      <Item name="Value" value="1"/>
+   </Item>
+   <Item type="FontRef" size="8">
+      <Item name="Value" value="1"/>
+   </Item>
+   <Item type="Text" size="28">
+      <Item name="Point" type="D2POINT">
+         <Value name="X" value="5204.904581"/>
+         <Value name="Y" value="2028.762091"/>
+      </Item>
+      <Item name="UTF-8 Text" value="6504500N"/>
+   </Item>
+   <Item type="FontColor" size="8">
+      <Item name="Color" type="COL_ANY" colortype="CMY" cyan="255" magenta="255" yellow="255"/>
+   </Item>
+   <Item type="FontName" size="17">
+      <Item name="Value" value="Arial(TT,MEDIUM)"/>
+   </Item>
+   <Item type="FontSize" size="8">
+      <Item name="Value" value="35.2944"/>
+   </Item>
+   <Item type="FontAngle" size="8">
+      <Item name="Value" value="90000"/>
+   </Item>
+   <Item type="FontRef" size="8">
+      <Item name="Value" value="3"/>
+   </Item>
+   <Item type="Text" size="28">
+      <Item name="Point" type="D2POINT">
+         <Value name="X" value="3308.203339"/>
+         <Value name="Y" value="3704.902626"/>
+      </Item>
+      <Item name="UTF-8 Text" value="6505000N"/>
+   </Item>
+   <Item type="FontColor" size="8">
+      <Item name="Color" type="COL_ANY" colortype="CMY" cyan="255" magenta="255" yellow="255"/>
+   </Item>
+   <Item type="FontName" size="17">
+      <Item name="Value" value="Arial(TT,MEDIUM)"/>
+   </Item>
+   <Item type="FontSize" size="8">
+      <Item name="Value" value="35.2944"/>
+   </Item>
+   <Item type="FontAngle" size="8">
+      <Item name="Value" value="-90000"/>
+   </Item>
+   <Item type="FontRef" size="8">
+      <Item name="Value" value="1"/>
+   </Item>
+   <Item type="FontRef" size="8">
+      <Item name="Value" value="1"/>
+   </Item>
+   <Item type="Text" size="28">
+      <Item name="Point" type="D2POINT">
+         <Value name="X" value="5204.902433"/>
+         <Value name="Y" value="2606.113601"/>
+      </Item>
+      <Item name="UTF-8 Text" value="6505000N"/>
+   </Item>
+   <Item type="FontColor" size="8">
+      <Item name="Color" type="COL_ANY" colortype="CMY" cyan="255" magenta="255" yellow="255"/>
+   </Item>
+   <Item type="FontName" size="17">
+      <Item name="Value" value="Arial(TT,MEDIUM)"/>
+   </Item>
+   <Item type="FontSize" size="8">
+      <Item name="Value" value="35.2944"/>
+   </Item>
+   <Item type="FontAngle" size="8">
+      <Item name="Value" value="90000"/>
+   </Item>
+   <Item type="FontRef" size="8">
+      <Item name="Value" value="3"/>
+   </Item>
+   <Item type="Text" size="28">
+      <Item name="Point" type="D2POINT">
+         <Value name="X" value="4308.201569"/>
+         <Value name="Y" value="3704.903647"/>
+      </Item>
+      <Item name="UTF-8 Text" value="6505500N"/>
+   </Item>
+   <Item type="FontColor" size="8">
+      <Item name="Color" type="COL_ANY" colortype="CMY" cyan="255" magenta="255" yellow="255"/>
+   </Item>
+   <Item type="FontName" size="17">
+      <Item name="Value" value="Arial(TT,MEDIUM)"/>
+   </Item>
+   <Item type="FontSize" size="8">
+      <Item name="Value" value="35.2944"/>
+   </Item>
+   <Item type="FontAngle" size="8">
+      <Item name="Value" value="-90000"/>
+   </Item>
+   <Item type="FontRef" size="8">
+      <Item name="Value" value="1"/>
+   </Item>
+   <Item type="FontRef" size="8">
+      <Item name="Value" value="1"/>
+   </Item>
+   <Item type="Text" size="28">
+      <Item name="Point" type="D2POINT">
+         <Value name="X" value="5204.903656"/>
+         <Value name="Y" value="3183.463164"/>
+      </Item>
+      <Item name="UTF-8 Text" value="6505500N"/>
    </Item>
    <Item type="LineColor" size="8">
       <Item name="Color" type="COL_ANY" colortype="CMY" cyan="255" magenta="255" yellow="255"/>
@@ -1424,14 +1344,299 @@
       <Item name="Color" type="COL_ANY" colortype="None"/>
    </Item>
    <Item type="LineThick" size="8">
-      <Item name="Value" value="4.7516"/>
+      <Item name="Value" value="2.196096"/>
    </Item>
    <Item type="LineStyle" size="12">
       <Item name="Style" value="1"/>
-      <Item name="Pitch" value="212.125"/>
+      <Item name="Pitch" value="98.04"/>
    </Item>
    <Item type="LineSmooth" size="8">
       <Item name="Value" value="0"/>
+   </Item>
+   <Item type="LineColor" size="8">
+      <Item name="Color" type="COL_ANY" colortype="CMY" cyan="255" magenta="255" yellow="255"/>
+   </Item>
+   <Item type="FillColor" size="8">
+      <Item name="Color" type="COL_ANY" colortype="None"/>
+   </Item>
+   <Item type="LineThick" size="8">
+      <Item name="Value" value="1.9608"/>
+   </Item>
+   <Item type="LineStyle" size="12">
+      <Item name="Style" value="1"/>
+      <Item name="Pitch" value="98.04"/>
+   </Item>
+   <Item type="LineSmooth" size="8">
+      <Item name="Value" value="0"/>
+   </Item>
+   <Item type="FontColor" size="8">
+      <Item name="Color" type="COL_ANY" colortype="CMY" cyan="255" magenta="255" yellow="255"/>
+   </Item>
+   <Item type="FontName" size="16">
+      <Item name="Value" value="Arial(TT,XBOLD)"/>
+   </Item>
+   <Item type="FontSize" size="8">
+      <Item name="Value" value="19.608"/>
+   </Item>
+   <Item type="Line" size="32">
+      <Item name="From" type="D2POINT">
+         <Value name="X" value="-196.0792938"/>
+         <Value name="Y" value="3660.380701"/>
+      </Item>
+      <Item name="To" type="D2POINT">
+         <Value name="X" value="-175.4690115"/>
+         <Value name="Y" value="3696.078757"/>
+      </Item>
+   </Item>
+   <Item type="Line" size="32">
+      <Item name="From" type="D2POINT">
+         <Value name="X" value="-196.0797235"/>
+         <Value name="Y" value="2660.379957"/>
+      </Item>
+      <Item name="To" type="D2POINT">
+         <Value name="X" value="401.8823773"/>
+         <Value name="Y" value="3696.080696"/>
+      </Item>
+   </Item>
+   <Item type="Line" size="32">
+      <Item name="From" type="D2POINT">
+         <Value name="X" value="-196.0801532"/>
+         <Value name="Y" value="1660.379212"/>
+      </Item>
+      <Item name="To" type="D2POINT">
+         <Value name="X" value="979.2324181"/>
+         <Value name="Y" value="3696.080301"/>
+      </Item>
+   </Item>
+   <Item type="Line" size="32">
+      <Item name="From" type="D2POINT">
+         <Value name="X" value="-196.0805829"/>
+         <Value name="Y" value="660.3784681"/>
+      </Item>
+      <Item name="To" type="D2POINT">
+         <Value name="X" value="1556.582459"/>
+         <Value name="Y" value="3696.079905"/>
+      </Item>
+   </Item>
+   <Item type="Line" size="32">
+      <Item name="From" type="D2POINT">
+         <Value name="X" value="-113.2071038"/>
+         <Value name="Y" value="-196.0804556"/>
+      </Item>
+      <Item name="To" type="D2POINT">
+         <Value name="X" value="2133.9325"/>
+         <Value name="Y" value="3696.079509"/>
+      </Item>
+   </Item>
+   <Item type="Line" size="32">
+      <Item name="From" type="D2POINT">
+         <Value name="X" value="464.1429369"/>
+         <Value name="Y" value="-196.0808512"/>
+      </Item>
+      <Item name="To" type="D2POINT">
+         <Value name="X" value="2711.28254"/>
+         <Value name="Y" value="3696.079114"/>
+      </Item>
+   </Item>
+   <Item type="Line" size="32">
+      <Item name="From" type="D2POINT">
+         <Value name="X" value="1041.492978"/>
+         <Value name="Y" value="-196.0812469"/>
+      </Item>
+      <Item name="To" type="D2POINT">
+         <Value name="X" value="3288.632581"/>
+         <Value name="Y" value="3696.078718"/>
+      </Item>
+   </Item>
+   <Item type="Line" size="32">
+      <Item name="From" type="D2POINT">
+         <Value name="X" value="1618.844367"/>
+         <Value name="Y" value="-196.0793076"/>
+      </Item>
+      <Item name="To" type="D2POINT">
+         <Value name="X" value="3865.98397"/>
+         <Value name="Y" value="3696.080657"/>
+      </Item>
+   </Item>
+   <Item type="Line" size="32">
+      <Item name="From" type="D2POINT">
+         <Value name="X" value="2196.194407"/>
+         <Value name="Y" value="-196.0797033"/>
+      </Item>
+      <Item name="To" type="D2POINT">
+         <Value name="X" value="4443.334011"/>
+         <Value name="Y" value="3696.080262"/>
+      </Item>
+   </Item>
+   <Item type="Line" size="32">
+      <Item name="From" type="D2POINT">
+         <Value name="X" value="2773.544448"/>
+         <Value name="Y" value="-196.0800989"/>
+      </Item>
+      <Item name="To" type="D2POINT">
+         <Value name="X" value="5020.684052"/>
+         <Value name="Y" value="3696.079866"/>
+      </Item>
+   </Item>
+   <Item type="Line" size="32">
+      <Item name="From" type="D2POINT">
+         <Value name="X" value="3350.894489"/>
+         <Value name="Y" value="-196.0804945"/>
+      </Item>
+      <Item name="To" type="D2POINT">
+         <Value name="X" value="5196.081344"/>
+         <Value name="Y" value="2999.876888"/>
+      </Item>
+   </Item>
+   <Item type="Line" size="32">
+      <Item name="From" type="D2POINT">
+         <Value name="X" value="3928.245878"/>
+         <Value name="Y" value="-196.0785553"/>
+      </Item>
+      <Item name="To" type="D2POINT">
+         <Value name="X" value="5196.079229"/>
+         <Value name="Y" value="1999.873225"/>
+      </Item>
+   </Item>
+   <Item type="Line" size="32">
+      <Item name="From" type="D2POINT">
+         <Value name="X" value="4505.595918"/>
+         <Value name="Y" value="-196.0789509"/>
+      </Item>
+      <Item name="To" type="D2POINT">
+         <Value name="X" value="5196.08217"/>
+         <Value name="Y" value="999.8783189"/>
+      </Item>
+   </Item>
+   <Item type="Line" size="32">
+      <Item name="From" type="D2POINT">
+         <Value name="X" value="5082.945959"/>
+         <Value name="Y" value="-196.0793465"/>
+      </Item>
+      <Item name="To" type="D2POINT">
+         <Value name="X" value="5196.080055"/>
+         <Value name="Y" value="-0.1253444318"/>
+      </Item>
+   </Item>
+   <Item type="Line" size="32">
+      <Item name="From" type="D2POINT">
+         <Value name="X" value="-196.0809928"/>
+         <Value name="Y" value="-54.22416408"/>
+      </Item>
+      <Item name="To" type="D2POINT">
+         <Value name="X" value="49.61950251"/>
+         <Value name="Y" value="-196.0794112"/>
+      </Item>
+   </Item>
+   <Item type="Line" size="32">
+      <Item name="From" type="D2POINT">
+         <Value name="X" value="-196.0814556"/>
+         <Value name="Y" value="523.1263723"/>
+      </Item>
+      <Item name="To" type="D2POINT">
+         <Value name="X" value="1049.621777"/>
+         <Value name="Y" value="-196.0807244"/>
+      </Item>
+   </Item>
+   <Item type="Line" size="32">
+      <Item name="From" type="D2POINT">
+         <Value name="X" value="-196.080233"/>
+         <Value name="Y" value="1100.475936"/>
+      </Item>
+      <Item name="To" type="D2POINT">
+         <Value name="X" value="2049.624052"/>
+         <Value name="Y" value="-196.0820377"/>
+      </Item>
+   </Item>
+   <Item type="Line" size="32">
+      <Item name="From" type="D2POINT">
+         <Value name="X" value="-196.0806958"/>
+         <Value name="Y" value="1677.826472"/>
+      </Item>
+      <Item name="To" type="D2POINT">
+         <Value name="X" value="3049.622282"/>
+         <Value name="Y" value="-196.081016"/>
+      </Item>
+   </Item>
+   <Item type="Line" size="32">
+      <Item name="From" type="D2POINT">
+         <Value name="X" value="-196.0794732"/>
+         <Value name="Y" value="2255.176035"/>
+      </Item>
+      <Item name="To" type="D2POINT">
+         <Value name="X" value="4049.624557"/>
+         <Value name="Y" value="-196.0823293"/>
+      </Item>
+   </Item>
+   <Item type="Line" size="32">
+      <Item name="From" type="D2POINT">
+         <Value name="X" value="-196.079936"/>
+         <Value name="Y" value="2832.526572"/>
+      </Item>
+      <Item name="To" type="D2POINT">
+         <Value name="X" value="5049.622787"/>
+         <Value name="Y" value="-196.0813077"/>
+      </Item>
+   </Item>
+   <Item type="Line" size="32">
+      <Item name="From" type="D2POINT">
+         <Value name="X" value="-196.0803987"/>
+         <Value name="Y" value="3409.877108"/>
+      </Item>
+      <Item name="To" type="D2POINT">
+         <Value name="X" value="5196.080684"/>
+         <Value name="Y" value="296.7114552"/>
+      </Item>
+   </Item>
+   <Item type="Line" size="32">
+      <Item name="From" type="D2POINT">
+         <Value name="X" value="308.2046034"/>
+         <Value name="Y" value="3696.078296"/>
+      </Item>
+      <Item name="To" type="D2POINT">
+         <Value name="X" value="5196.080222"/>
+         <Value name="Y" value="874.0619916"/>
+      </Item>
+   </Item>
+   <Item type="Line" size="32">
+      <Item name="From" type="D2POINT">
+         <Value name="X" value="1308.202834"/>
+         <Value name="Y" value="3696.079317"/>
+      </Item>
+      <Item name="To" type="D2POINT">
+         <Value name="X" value="5196.079759"/>
+         <Value name="Y" value="1451.412528"/>
+      </Item>
+   </Item>
+   <Item type="Line" size="32">
+      <Item name="From" type="D2POINT">
+         <Value name="X" value="2308.205109"/>
+         <Value name="Y" value="3696.078004"/>
+      </Item>
+      <Item name="To" type="D2POINT">
+         <Value name="X" value="5196.080981"/>
+         <Value name="Y" value="2028.762091"/>
+      </Item>
+   </Item>
+   <Item type="Line" size="32">
+      <Item name="From" type="D2POINT">
+         <Value name="X" value="3308.203339"/>
+         <Value name="Y" value="3696.079026"/>
+      </Item>
+      <Item name="To" type="D2POINT">
+         <Value name="X" value="5196.080519"/>
+         <Value name="Y" value="2606.112628"/>
+      </Item>
+   </Item>
+   <Item type="Line" size="32">
+      <Item name="From" type="D2POINT">
+         <Value name="X" value="4308.201569"/>
+         <Value name="Y" value="3696.080047"/>
+      </Item>
+      <Item name="To" type="D2POINT">
+         <Value name="X" value="5196.080056"/>
+         <Value name="Y" value="3183.463164"/>
+      </Item>
    </Item>
    <Item type="Version" size="8">
       <Item name="Value" value="Current"/>
@@ -1443,11 +1648,11 @@
       <Item name="Color" type="COL_ANY" colortype="None"/>
    </Item>
    <Item type="LineThick" size="8">
-      <Item name="Value" value="4.7516"/>
+      <Item name="Value" value="2.196096"/>
    </Item>
    <Item type="LineStyle" size="12">
       <Item name="Style" value="1"/>
-      <Item name="Pitch" value="212.125"/>
+      <Item name="Pitch" value="98.04"/>
    </Item>
    <Item type="LineSmooth" size="8">
       <Item name="Value" value="0"/>
@@ -1459,7 +1664,7 @@
       <Item name="Value" value="Arial(TT,MEDIUM,ITALIC)"/>
    </Item>
    <Item type="FontSize" size="8">
-      <Item name="Value" value="76.365"/>
+      <Item name="Value" value="35.2944"/>
    </Item>
    <Item type="FontAngle" size="8">
       <Item name="Value" value="0"/>
@@ -1472,10 +1677,10 @@
    </Item>
    <Item type="Text" size="28">
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="528.2925584"/>
-         <Value name="Y" value="3819.580031"/>
+         <Value name="X" value="553.6156478"/>
+         <Value name="Y" value="3745.177048"/>
       </Item>
-      <Item name="UTF-8 Text" value="-96Â°01&apos;"/>
+      <Item name="UTF-8 Text" value="-94Â°19&apos;"/>
    </Item>
    <Item type="FontRef" size="8">
       <Item name="Value" value="1"/>
@@ -1485,20 +1690,30 @@
    </Item>
    <Item type="Text" size="28">
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="2205.242931"/>
-         <Value name="Y" value="3819.592799"/>
+         <Value name="X" value="1708.169043"/>
+         <Value name="Y" value="3745.184382"/>
       </Item>
-      <Item name="UTF-8 Text" value="-96Â°00&apos;"/>
+      <Item name="UTF-8 Text" value="-94Â°18&apos;"/>
    </Item>
    <Item type="FontRef" size="8">
       <Item name="Value" value="1"/>
    </Item>
    <Item type="Text" size="28">
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="3720.823648"/>
-         <Value name="Y" value="3819.605564"/>
+         <Value name="X" value="2837.082512"/>
+         <Value name="Y" value="3745.191714"/>
       </Item>
-      <Item name="UTF-8 Text" value="-95Â°59&apos;"/>
+      <Item name="UTF-8 Text" value="-94Â°17&apos;"/>
+   </Item>
+   <Item type="FontRef" size="8">
+      <Item name="Value" value="1"/>
+   </Item>
+   <Item type="Text" size="28">
+      <Item name="Point" type="D2POINT">
+         <Value name="X" value="3965.65631"/>
+         <Value name="Y" value="3745.199043"/>
+      </Item>
+      <Item name="UTF-8 Text" value="-94Â°16&apos;"/>
    </Item>
    <Item type="FontRef" size="8">
       <Item name="Value" value="1"/>
@@ -1508,10 +1723,10 @@
    </Item>
    <Item type="Text" size="28">
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="4596.641651"/>
-         <Value name="Y" value="3819.618326"/>
+         <Value name="X" value="4507.045826"/>
+         <Value name="Y" value="3745.20637"/>
       </Item>
-      <Item name="UTF-8 Text" value="-95Â°58&apos;"/>
+      <Item name="UTF-8 Text" value="-94Â°15&apos;"/>
    </Item>
    <Item type="FontRef" size="8">
       <Item name="Value" value="1"/>
@@ -1527,10 +1742,10 @@
    </Item>
    <Item type="Text" size="28">
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="403.4553443"/>
-         <Value name="Y" value="-319.5927987"/>
+         <Value name="X" value="493.1015187"/>
+         <Value name="Y" value="-245.191959"/>
       </Item>
-      <Item name="UTF-8 Text" value="-96Â°00&apos;"/>
+      <Item name="UTF-8 Text" value="-94Â°17&apos;"/>
    </Item>
    <Item type="FontRef" size="8">
       <Item name="Value" value="7"/>
@@ -1540,20 +1755,30 @@
    </Item>
    <Item type="Text" size="28">
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="1332.184292"/>
-         <Value name="Y" value="-319.6055592"/>
+         <Value name="X" value="1560.209294"/>
+         <Value name="Y" value="-245.1992848"/>
       </Item>
-      <Item name="UTF-8 Text" value="-95Â°59&apos;"/>
+      <Item name="UTF-8 Text" value="-94Â°16&apos;"/>
    </Item>
    <Item type="FontRef" size="8">
       <Item name="Value" value="7"/>
    </Item>
    <Item type="Text" size="28">
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="2848.525573"/>
-         <Value name="Y" value="-319.6183167"/>
+         <Value name="X" value="2689.780925"/>
+         <Value name="Y" value="-245.2066094"/>
       </Item>
-      <Item name="UTF-8 Text" value="-95Â°58&apos;"/>
+      <Item name="UTF-8 Text" value="-94Â°15&apos;"/>
+   </Item>
+   <Item type="FontRef" size="8">
+      <Item name="Value" value="7"/>
+   </Item>
+   <Item type="Text" size="28">
+      <Item name="Point" type="D2POINT">
+         <Value name="X" value="3819.013223"/>
+         <Value name="Y" value="-245.2139307"/>
+      </Item>
+      <Item name="UTF-8 Text" value="-94Â°14&apos;"/>
    </Item>
    <Item type="FontRef" size="8">
       <Item name="Value" value="7"/>
@@ -1563,10 +1788,10 @@
    </Item>
    <Item type="Text" size="28">
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="4473.380236"/>
-         <Value name="Y" value="-319.6310712"/>
+         <Value name="X" value="4449.120046"/>
+         <Value name="Y" value="-245.2212502"/>
       </Item>
-      <Item name="UTF-8 Text" value="-95Â°57&apos;"/>
+      <Item name="UTF-8 Text" value="-94Â°13&apos;"/>
    </Item>
    <Item type="FontRef" size="8">
       <Item name="Value" value="7"/>
@@ -1578,11 +1803,11 @@
       <Item name="Color" type="COL_ANY" colortype="None"/>
    </Item>
    <Item type="LineThick" size="8">
-      <Item name="Value" value="4.7516"/>
+      <Item name="Value" value="2.196096"/>
    </Item>
    <Item type="LineStyle" size="12">
       <Item name="Style" value="1"/>
-      <Item name="Pitch" value="212.125"/>
+      <Item name="Pitch" value="98.04"/>
    </Item>
    <Item type="LineSmooth" size="8">
       <Item name="Value" value="0"/>
@@ -1594,11 +1819,11 @@
       <Item name="Color" type="COL_ANY" colortype="None"/>
    </Item>
    <Item type="LineThick" size="8">
-      <Item name="Value" value="4.7516"/>
+      <Item name="Value" value="2.196096"/>
    </Item>
    <Item type="LineStyle" size="12">
       <Item name="Style" value="1"/>
-      <Item name="Pitch" value="212.125"/>
+      <Item name="Pitch" value="98.04"/>
    </Item>
    <Item type="LineSmooth" size="8">
       <Item name="Value" value="0"/>
@@ -1610,7 +1835,7 @@
       <Item name="Value" value="Arial(TT,MEDIUM,ITALIC)"/>
    </Item>
    <Item type="FontSize" size="8">
-      <Item name="Value" value="76.365"/>
+      <Item name="Value" value="35.2944"/>
    </Item>
    <Item type="FontAngle" size="8">
       <Item name="Value" value="-90000"/>
@@ -1620,40 +1845,30 @@
    </Item>
    <Item type="Text" size="30">
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="-385.7229838"/>
-         <Value name="Y" value="222.7115715"/>
+         <Value name="X" value="-275.4019137"/>
+         <Value name="Y" value="773.6940704"/>
       </Item>
-      <Item name="UTF-8 Text" value="45Â°00&apos;00&quot;"/>
+      <Item name="UTF-8 Text" value="58Â°38&apos;30&quot;"/>
    </Item>
    <Item type="FontRef" size="8">
       <Item name="Value" value="1"/>
    </Item>
    <Item type="Text" size="30">
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="-385.7145921"/>
-         <Value name="Y" value="1291.714901"/>
+         <Value name="X" value="-275.395041"/>
+         <Value name="Y" value="1857.598816"/>
       </Item>
-      <Item name="UTF-8 Text" value="45Â°00&apos;30&quot;"/>
+      <Item name="UTF-8 Text" value="58Â°39&apos;00&quot;"/>
    </Item>
    <Item type="FontRef" size="8">
       <Item name="Value" value="1"/>
    </Item>
    <Item type="Text" size="30">
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="-385.7061989"/>
-         <Value name="Y" value="2360.771255"/>
+         <Value name="X" value="-275.387964"/>
+         <Value name="Y" value="2941.60158"/>
       </Item>
-      <Item name="UTF-8 Text" value="45Â°01&apos;00&quot;"/>
-   </Item>
-   <Item type="FontRef" size="8">
-      <Item name="Value" value="1"/>
-   </Item>
-   <Item type="Text" size="30">
-      <Item name="Point" type="D2POINT">
-         <Value name="X" value="-385.6977916"/>
-         <Value name="Y" value="3429.880818"/>
-      </Item>
-      <Item name="UTF-8 Text" value="45Â°01&apos;30&quot;"/>
+      <Item name="UTF-8 Text" value="58Â°39&apos;30&quot;"/>
    </Item>
    <Item type="FontAngle" size="8">
       <Item name="Value" value="90000"/>
@@ -1663,40 +1878,30 @@
    </Item>
    <Item type="Text" size="30">
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="5385.796109"/>
-         <Value name="Y" value="99.2538633"/>
+         <Value name="X" value="5275.458405"/>
+         <Value name="Y" value="678.5598469"/>
       </Item>
-      <Item name="UTF-8 Text" value="45Â°01&apos;30&quot;"/>
+      <Item name="UTF-8 Text" value="58Â°40&apos;00&quot;"/>
    </Item>
    <Item type="FontRef" size="8">
       <Item name="Value" value="1"/>
    </Item>
    <Item type="Text" size="30">
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="5385.787732"/>
-         <Value name="Y" value="1167.782756"/>
+         <Value name="X" value="5275.451564"/>
+         <Value name="Y" value="1761.665358"/>
       </Item>
-      <Item name="UTF-8 Text" value="45Â°02&apos;00&quot;"/>
+      <Item name="UTF-8 Text" value="58Â°40&apos;30&quot;"/>
    </Item>
    <Item type="FontRef" size="8">
       <Item name="Value" value="1"/>
    </Item>
    <Item type="Text" size="30">
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="5385.779367"/>
-         <Value name="Y" value="2236.364673"/>
+         <Value name="X" value="5275.444522"/>
+         <Value name="Y" value="2844.867602"/>
       </Item>
-      <Item name="UTF-8 Text" value="45Â°02&apos;30&quot;"/>
-   </Item>
-   <Item type="FontRef" size="8">
-      <Item name="Value" value="1"/>
-   </Item>
-   <Item type="Text" size="30">
-      <Item name="Point" type="D2POINT">
-         <Value name="X" value="5385.770991"/>
-         <Value name="Y" value="3304.999397"/>
-      </Item>
-      <Item name="UTF-8 Text" value="45Â°03&apos;00&quot;"/>
+      <Item name="UTF-8 Text" value="58Â°41&apos;00&quot;"/>
    </Item>
    <Item type="LineColor" size="8">
       <Item name="Color" type="COL_ANY" colortype="CMY" cyan="255" magenta="255" yellow="255"/>
@@ -1705,11 +1910,11 @@
       <Item name="Color" type="COL_ANY" colortype="None"/>
    </Item>
    <Item type="LineThick" size="8">
-      <Item name="Value" value="4.7516"/>
+      <Item name="Value" value="2.196096"/>
    </Item>
    <Item type="LineStyle" size="12">
       <Item name="Style" value="1"/>
-      <Item name="Pitch" value="212.125"/>
+      <Item name="Pitch" value="98.04"/>
    </Item>
    <Item type="LineSmooth" size="8">
       <Item name="Value" value="0"/>
@@ -1721,11 +1926,11 @@
       <Item name="Color" type="COL_ANY" colortype="None"/>
    </Item>
    <Item type="LineThick" size="8">
-      <Item name="Value" value="10.60625"/>
+      <Item name="Value" value="4.902"/>
    </Item>
    <Item type="LineStyle" size="12">
       <Item name="Style" value="1"/>
-      <Item name="Pitch" value="212.125"/>
+      <Item name="Pitch" value="98.04"/>
    </Item>
    <Item type="LineSmooth" size="8">
       <Item name="Value" value="0"/>
@@ -1737,7 +1942,7 @@
       <Item name="Value" value="Arial(TT,XXBOLD)"/>
    </Item>
    <Item type="FontSize" size="8">
-      <Item name="Value" value="42.425"/>
+      <Item name="Value" value="19.608"/>
    </Item>
    <Item type="SymbName" size="20">
       <Item name="Value" value="symbols(GFN,MEDIUM)"/>
@@ -1746,7 +1951,7 @@
       <Item name="Value" value="1"/>
    </Item>
    <Item type="SymbSize" size="8">
-      <Item name="Value" value="127.275"/>
+      <Item name="Value" value="58.824"/>
    </Item>
    <Item type="SymbAngle" size="8">
       <Item name="Value" value="0"/>
@@ -1759,170 +1964,184 @@
    </Item>
    <Item type="PolyLine" size="48">
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="-212.1248775"/>
-         <Value name="Y" value="122.4763884"/>
+         <Value name="X" value="-196.0788829"/>
+         <Value name="Y" value="725.8227608"/>
       </Item>
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="284.4044252"/>
-         <Value name="Y" value="-164.1912218"/>
+         <Value name="X" value="589.0165238"/>
+         <Value name="Y" value="252.1392332"/>
       </Item>
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="367.4400023"/>
-         <Value name="Y" value="-212.1247184"/>
-      </Item>
-   </Item>
-   <Item type="PolyLine" size="48">
-      <Item name="Point" type="D2POINT">
-         <Value name="X" value="-212.125232"/>
-         <Value name="Y" value="1191.46502"/>
-      </Item>
-      <Item name="Point" type="D2POINT">
-         <Value name="X" value="2026.966252"/>
-         <Value name="Y" value="-101.0355397"/>
-      </Item>
-      <Item name="Point" type="D2POINT">
-         <Value name="X" value="2219.512348"/>
-         <Value name="Y" value="-212.1244533"/>
+         <Value name="X" value="1332.294787"/>
+         <Value name="Y" value="-196.0810145"/>
       </Item>
    </Item>
    <Item type="PolyLine" size="48">
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="-212.1247342"/>
-         <Value name="Y" value="2260.506143"/>
+         <Value name="X" value="-196.0803751"/>
+         <Value name="Y" value="1809.71679"/>
       </Item>
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="1920.892888"/>
-         <Value name="Y" value="1028.971099"/>
+         <Value name="X" value="3035.910977"/>
+         <Value name="Y" value="-139.3118265"/>
       </Item>
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="4072.397273"/>
-         <Value name="Y" value="-212.1260222"/>
-      </Item>
-   </Item>
-   <Item type="PolyLine" size="48">
-      <Item name="Point" type="D2POINT">
-         <Value name="X" value="-212.1245372"/>
-         <Value name="Y" value="3329.601684"/>
-      </Item>
-      <Item name="Point" type="D2POINT">
-         <Value name="X" value="4231.781787"/>
-         <Value name="Y" value="764.5763417"/>
-      </Item>
-      <Item name="Point" type="D2POINT">
-         <Value name="X" value="5212.124591"/>
-         <Value name="Y" value="199.3632972"/>
+         <Value name="X" value="3130.150565"/>
+         <Value name="Y" value="-196.0780428"/>
       </Item>
    </Item>
    <Item type="PolyLine" size="48">
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="976.4149809"/>
-         <Value name="Y" value="3712.125031"/>
+         <Value name="X" value="-196.0798832"/>
+         <Value name="Y" value="2893.707517"/>
       </Item>
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="3130.605098"/>
-         <Value name="Y" value="2468.50745"/>
+         <Value name="X" value="3100.536212"/>
+         <Value name="Y" value="905.0970901"/>
       </Item>
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="5212.123632"/>
-         <Value name="Y" value="1267.907439"/>
-      </Item>
-   </Item>
-   <Item type="PolyLine" size="48">
-      <Item name="Point" type="D2POINT">
-         <Value name="X" value="2827.781096"/>
-         <Value name="Y" value="3712.123429"/>
-      </Item>
-      <Item name="Point" type="D2POINT">
-         <Value name="X" value="5014.552028"/>
-         <Value name="Y" value="2450.437843"/>
-      </Item>
-      <Item name="Point" type="D2POINT">
-         <Value name="X" value="5212.125135"/>
-         <Value name="Y" value="2336.502942"/>
+         <Value name="X" value="4929.189526"/>
+         <Value name="Y" value="-196.0802043"/>
       </Item>
    </Item>
    <Item type="PolyLine" size="48">
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="4679.951533"/>
-         <Value name="Y" value="3712.124481"/>
+         <Value name="X" value="270.3316731"/>
+         <Value name="Y" value="3696.081022"/>
       </Item>
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="5192.799118"/>
-         <Value name="Y" value="3416.298423"/>
+         <Value name="X" value="3579.454234"/>
+         <Value name="Y" value="1699.909903"/>
       </Item>
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="5212.124025"/>
-         <Value name="Y" value="3405.152778"/>
-      </Item>
-   </Item>
-   <Item type="PolyLine" size="48">
-      <Item name="Point" type="D2POINT">
-         <Value name="X" value="-212.1256039"/>
-         <Value name="Y" value="2259.003044"/>
-      </Item>
-      <Item name="Point" type="D2POINT">
-         <Value name="X" value="193.6772659"/>
-         <Value name="Y" value="2961.540415"/>
-      </Item>
-      <Item name="Point" type="D2POINT">
-         <Value name="X" value="627.233625"/>
-         <Value name="Y" value="3712.125386"/>
+         <Value name="X" value="5196.079663"/>
+         <Value name="Y" value="726.338007"/>
       </Item>
    </Item>
    <Item type="PolyLine" size="48">
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="-122.4697123"/>
-         <Value name="Y" value="-212.1237641"/>
+         <Value name="X" value="2065.962803"/>
+         <Value name="Y" value="3696.078889"/>
       </Item>
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="1677.885962"/>
-         <Value name="Y" value="2906.183736"/>
+         <Value name="X" value="3644.411468"/>
+         <Value name="Y" value="2744.194498"/>
       </Item>
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="2143.196841"/>
-         <Value name="Y" value="3712.125819"/>
-      </Item>
-   </Item>
-   <Item type="PolyLine" size="48">
-      <Item name="Point" type="D2POINT">
-         <Value name="X" value="1394.208303"/>
-         <Value name="Y" value="-212.125769"/>
-      </Item>
-      <Item name="Point" type="D2POINT">
-         <Value name="X" value="3219.820434"/>
-         <Value name="Y" value="2951.430042"/>
-      </Item>
-      <Item name="Point" type="D2POINT">
-         <Value name="X" value="3658.7991"/>
-         <Value name="Y" value="3712.124827"/>
+         <Value name="X" value="5196.078885"/>
+         <Value name="Y" value="1809.454785"/>
       </Item>
    </Item>
    <Item type="PolyLine" size="48">
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="2910.528171"/>
-         <Value name="Y" value="-212.124558"/>
+         <Value name="X" value="3862.755787"/>
+         <Value name="Y" value="3696.080966"/>
       </Item>
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="4703.784573"/>
-         <Value name="Y" value="2896.840283"/>
+         <Value name="X" value="4640.766747"/>
+         <Value name="Y" value="3227.19111"/>
       </Item>
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="5174.041952"/>
-         <Value name="Y" value="3712.124647"/>
+         <Value name="X" value="5196.080217"/>
+         <Value name="Y" value="2892.668477"/>
       </Item>
    </Item>
    <Item type="PolyLine" size="48">
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="4426.487372"/>
-         <Value name="Y" value="-212.1249384"/>
+         <Value name="X" value="-196.0779275"/>
+         <Value name="Y" value="2461.703558"/>
       </Item>
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="4858.316871"/>
-         <Value name="Y" value="536.8929133"/>
+         <Value name="X" value="234.9062182"/>
+         <Value name="Y" value="3175.461127"/>
       </Item>
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="5212.125678"/>
-         <Value name="Y" value="1150.582195"/>
+         <Value name="X" value="549.2689593"/>
+         <Value name="Y" value="3696.079114"/>
+      </Item>
+   </Item>
+   <Item type="PolyLine" size="48">
+      <Item name="Point" type="D2POINT">
+         <Value name="X" value="-196.0817314"/>
+         <Value name="Y" value="589.7598253"/>
+      </Item>
+      <Item name="Point" type="D2POINT">
+         <Value name="X" value="1662.091976"/>
+         <Value name="Y" value="3668.833291"/>
+      </Item>
+      <Item name="Point" type="D2POINT">
+         <Value name="X" value="1678.53409"/>
+         <Value name="Y" value="3696.078368"/>
+      </Item>
+   </Item>
+   <Item type="PolyLine" size="48">
+      <Item name="Point" type="D2POINT">
+         <Value name="X" value="459.9194407"/>
+         <Value name="Y" value="-196.0800238"/>
+      </Item>
+      <Item name="Point" type="D2POINT">
+         <Value name="X" value="2370.00498"/>
+         <Value name="Y" value="2970.795772"/>
+      </Item>
+      <Item name="Point" type="D2POINT">
+         <Value name="X" value="2807.460768"/>
+         <Value name="Y" value="3696.080118"/>
+      </Item>
+   </Item>
+   <Item type="PolyLine" size="48">
+      <Item name="Point" type="D2POINT">
+         <Value name="X" value="1589.818826"/>
+         <Value name="Y" value="-196.0795525"/>
+      </Item>
+      <Item name="Point" type="D2POINT">
+         <Value name="X" value="3497.325324"/>
+         <Value name="Y" value="2968.29026"/>
+      </Item>
+      <Item name="Point" type="D2POINT">
+         <Value name="X" value="3936.046329"/>
+         <Value name="Y" value="3696.079466"/>
+      </Item>
+   </Item>
+   <Item type="PolyLine" size="48">
+      <Item name="Point" type="D2POINT">
+         <Value name="X" value="2719.377129"/>
+         <Value name="Y" value="-196.081501"/>
+      </Item>
+      <Item name="Point" type="D2POINT">
+         <Value name="X" value="4624.52108"/>
+         <Value name="Y" value="2966.138534"/>
+      </Item>
+      <Item name="Point" type="D2POINT">
+         <Value name="X" value="5064.292423"/>
+         <Value name="Y" value="3696.078671"/>
+      </Item>
+   </Item>
+   <Item type="PolyLine" size="48">
+      <Item name="Point" type="D2POINT">
+         <Value name="X" value="3848.597436"/>
+         <Value name="Y" value="-196.0812302"/>
+      </Item>
+      <Item name="Point" type="D2POINT">
+         <Value name="X" value="4794.244796"/>
+         <Value name="Y" value="1374.419989"/>
+      </Item>
+      <Item name="Point" type="D2POINT">
+         <Value name="X" value="5196.080073"/>
+         <Value name="Y" value="2041.771838"/>
+      </Item>
+   </Item>
+   <Item type="PolyLine" size="48">
+      <Item name="Point" type="D2POINT">
+         <Value name="X" value="4977.478521"/>
+         <Value name="Y" value="-196.0812515"/>
+      </Item>
+      <Item name="Point" type="D2POINT">
+         <Value name="X" value="5084.257905"/>
+         <Value name="Y" value="-18.64551071"/>
+      </Item>
+      <Item name="Point" type="D2POINT">
+         <Value name="X" value="5196.079092"/>
+         <Value name="Y" value="167.1680551"/>
       </Item>
    </Item>
    <Item type="End" size="8"></Item>
