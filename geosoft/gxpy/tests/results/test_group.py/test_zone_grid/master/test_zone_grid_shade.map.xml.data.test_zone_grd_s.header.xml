@@ -8,7 +8,7 @@
    <Item name="Linked" value="False"/>
    <Item name="Maker" value="False"/>
    <Item name="Meta" value="False"/>
-   <Item name="FlagMeta" value="True"/>
+   <Item name="FlagMeta" value="False"/>
    <Item name="Hidden" value="False"/>
    <Item name="Clipped" value="False"/>
    <Item name="Moveable" value="False"/>

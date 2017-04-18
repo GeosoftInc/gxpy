@@ -2,7 +2,7 @@
    <Item type="Version" size="8">
       <Item name="Value" value="Current"/>
    </Item>
-   <Item type="Aggregation" size="1587">
+   <Item type="Aggregation" size="1539">
       <Item name="AGG" type="AGG">
          <AGG>
             <Header>
@@ -30,10 +30,10 @@
                                  </Item>
                                  <Model>
                                     <Item name="Parameters" type="DoubleArray">
-                                       <Value index="0" value="GS_R8DM"/>
-                                       <Value index="1" value="93"/>
-                                       <Value index="2" value="366.9274902"/>
-                                       <Value index="3" value="1"/>
+                                       <Value index="0" value="0"/>
+                                       <Value index="1" value="0"/>
+                                       <Value index="2" value="0"/>
+                                       <Value index="3" value="0"/>
                                     </Item>
                                     <Shade>
                                        <Item name="Inclination" value="GS_R8DM"/>
@@ -86,44 +86,44 @@
                               </Colors>
                               <Levels>
                                  <Item name="Color" value="GS_R8MN"/>
-                                 <Item name="Color" value="96.33131632"/>
-                                 <Item name="Color" value="99.78196241"/>
-                                 <Item name="Color" value="103.3562127"/>
-                                 <Item name="Color" value="107.0584949"/>
-                                 <Item name="Color" value="110.893395"/>
-                                 <Item name="Color" value="114.8656636"/>
-                                 <Item name="Color" value="118.9802212"/>
-                                 <Item name="Color" value="123.2421648"/>
-                                 <Item name="Color" value="127.6567737"/>
-                                 <Item name="Color" value="132.2295167"/>
-                                 <Item name="Color" value="136.9660581"/>
-                                 <Item name="Color" value="141.8722652"/>
-                                 <Item name="Color" value="146.9542157"/>
-                                 <Item name="Color" value="152.2182047"/>
-                                 <Item name="Color" value="157.6707529"/>
-                                 <Item name="Color" value="163.3186148"/>
-                                 <Item name="Color" value="169.1687865"/>
-                                 <Item name="Color" value="175.2285149"/>
-                                 <Item name="Color" value="181.5053064"/>
-                                 <Item name="Color" value="188.0069364"/>
-                                 <Item name="Color" value="194.7414587"/>
-                                 <Item name="Color" value="201.7172157"/>
-                                 <Item name="Color" value="208.9428485"/>
-                                 <Item name="Color" value="216.4273079"/>
-                                 <Item name="Color" value="224.1798651"/>
-                                 <Item name="Color" value="232.2101237"/>
-                                 <Item name="Color" value="240.5280309"/>
-                                 <Item name="Color" value="249.1438907"/>
-                                 <Item name="Color" value="258.0683757"/>
-                                 <Item name="Color" value="267.3125412"/>
-                                 <Item name="Color" value="276.8878383"/>
-                                 <Item name="Color" value="286.8061284"/>
-                                 <Item name="Color" value="297.0796976"/>
-                                 <Item name="Color" value="307.7212723"/>
-                                 <Item name="Color" value="318.7440346"/>
-                                 <Item name="Color" value="330.161639"/>
-                                 <Item name="Color" value="341.9882288"/>
-                                 <Item name="Color" value="354.2384543"/>
+                                 <Item name="Color" value="101.888494"/>
+                                 <Item name="Color" value="105.0693813"/>
+                                 <Item name="Color" value="108.7712398"/>
+                                 <Item name="Color" value="113.6858293"/>
+                                 <Item name="Color" value="116.9462062"/>
+                                 <Item name="Color" value="118.937635"/>
+                                 <Item name="Color" value="121.0007902"/>
+                                 <Item name="Color" value="123.5914811"/>
+                                 <Item name="Color" value="126.9736862"/>
+                                 <Item name="Color" value="129.8808562"/>
+                                 <Item name="Color" value="133.2261266"/>
+                                 <Item name="Color" value="137.4190752"/>
+                                 <Item name="Color" value="141.9655155"/>
+                                 <Item name="Color" value="146.5399232"/>
+                                 <Item name="Color" value="152.2310066"/>
+                                 <Item name="Color" value="160.4701462"/>
+                                 <Item name="Color" value="170.360629"/>
+                                 <Item name="Color" value="178.8338374"/>
+                                 <Item name="Color" value="186.2101039"/>
+                                 <Item name="Color" value="192.9565088"/>
+                                 <Item name="Color" value="199.1213092"/>
+                                 <Item name="Color" value="205.7533533"/>
+                                 <Item name="Color" value="211.7374821"/>
+                                 <Item name="Color" value="218.8776247"/>
+                                 <Item name="Color" value="226.2406492"/>
+                                 <Item name="Color" value="232.9385255"/>
+                                 <Item name="Color" value="240.1849681"/>
+                                 <Item name="Color" value="246.8363035"/>
+                                 <Item name="Color" value="253.5078184"/>
+                                 <Item name="Color" value="259.9978717"/>
+                                 <Item name="Color" value="265.9260193"/>
+                                 <Item name="Color" value="271.9246681"/>
+                                 <Item name="Color" value="278.0018856"/>
+                                 <Item name="Color" value="284.6048578"/>
+                                 <Item name="Color" value="291.7004893"/>
+                                 <Item name="Color" value="299.5413688"/>
+                                 <Item name="Color" value="307.2503809"/>
+                                 <Item name="Color" value="318.1439875"/>
                                  <Item name="Color" value="GS_R8MX"/>
                               </Levels>
                            </ITR>
@@ -134,7 +134,7 @@
                            <BAND>
                               <Header>
                                  <Item name="RenderMode" value="0"/>
-                                 <Item name="Name" value=".\test_zone.grd"/>
+                                 <Item name="Name" value="BAND in GEOTEMP Folder"/>
                               </Header>
                            </BAND>
                         </Item>

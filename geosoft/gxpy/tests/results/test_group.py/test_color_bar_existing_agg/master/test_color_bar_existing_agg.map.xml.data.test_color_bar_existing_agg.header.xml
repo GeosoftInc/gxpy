@@ -1,5 +1,5 @@
 <header>
-   <Item name="Name" value="test_basic_grid_1"/>
+   <Item name="Name" value="test_color_bar_existing_agg"/>
    <Item name="AGG" value="True"/>
    <Item name="PAGG" value="False"/>
    <Item name="CSYMB" value="False"/>

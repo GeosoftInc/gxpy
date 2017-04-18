@@ -1,6 +1,6 @@
 <header>
-   <Item name="Name" value="test_basic_grid_1"/>
-   <Item name="AGG" value="True"/>
+   <Item name="Name" value="line"/>
+   <Item name="AGG" value="False"/>
    <Item name="PAGG" value="False"/>
    <Item name="CSYMB" value="False"/>
    <Item name="SUR" value="False"/>
@@ -8,7 +8,7 @@
    <Item name="Linked" value="False"/>
    <Item name="Maker" value="False"/>
    <Item name="Meta" value="False"/>
-   <Item name="FlagMeta" value="False"/>
+   <Item name="FlagMeta" value="True"/>
    <Item name="Hidden" value="False"/>
    <Item name="Clipped" value="False"/>
    <Item name="Moveable" value="False"/>
@@ -17,10 +17,10 @@
    <Item name="Transparency" value="GS_R8DM"/>
    <Item name="ExtClipRegion" value="-1"/>
    <Item name="Extents" type="D2AREA">
-      <Value name="MinX" value="335481.3"/>
-      <Value name="MinY" value="6159683.7"/>
-      <Value name="MaxX" value="340557.3"/>
-      <Value name="MaxY" value="6163998.3"/>
+      <Value name="MinX" value="335061.74"/>
+      <Value name="MinY" value="6159264.14"/>
+      <Value name="MaxX" value="340976.86"/>
+      <Value name="MaxY" value="6164417.86"/>
    </Item>
    <Item name="Matrix" type="D4MATRIX">
       <Value x="0" y="0" value="1"/>
