@@ -2,11 +2,7 @@
    <Item type="Version" size="8">
       <Item name="Value" value="Current"/>
    </Item>
-<<<<<<< HEAD
-   <Item type="Aggregation" size="1496">
-=======
    <Item type="Aggregation" size="1498">
->>>>>>> TESTS Better location for testing env variables which ensures they are set prior to running the tests in all the ways. Increase default image size to 2048 in crc_map and make PNGs (with time chunks removed for consistent runs) to save space. Update all results.
       <Item name="AGG" type="AGG">
          <AGG>
             <Header>

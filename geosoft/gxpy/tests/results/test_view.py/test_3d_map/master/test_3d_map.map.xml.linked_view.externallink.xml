@@ -1,7 +1,3 @@
 <externallink>
-<<<<<<< HEAD
-   <ExternalLinkSource guid="{ABCDEF00-2345-6789-6745-2301DEBC0A89}" file="c:\development\github\master\gxpy\geosoft\gxpy\tests\test_3d.geosoft_3dv" view="3D"/>
-=======
    <ExternalLinkSource guid="{ABCDEF02-2345-6789-6945-2301E0BC0A89}" file="..\..\..\..\..\..\githubrepos\gxpy\geosoft\gxpy\tests\test_3d.geosoft_3dv" view="3D"/>
->>>>>>> TESTS Better location for testing env variables which ensures they are set prior to running the tests in all the ways. Increase default image size to 2048 in crc_map and make PNGs (with time chunks removed for consistent runs) to save space. Update all results.
 </externallink>

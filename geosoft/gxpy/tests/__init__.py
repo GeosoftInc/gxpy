@@ -16,7 +16,7 @@ import geosoft.gxpy.system as gxsys
 UPDATE_ALL_RESULTS = False
 
 # set to true to only update the first test.
-UPDATE_ONE_TEST = True
+UPDATE_ONE_TEST = False
 
 # set to True to show viewer for each CRC call
 SHOW_TEST_VIEWERS = False
