@@ -48,7 +48,7 @@ class Test(GXPYTest):
             self.assertEqual(agg.layer_count, 5)
 
     def test_open(self):
-        self.start(gsys.func_name())
+        self.start()
 
         with gxagg.GXagg.new(self.g3f) as agg:
             self.assertEqual(str(agg), 'test_agg_utm')

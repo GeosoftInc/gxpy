@@ -599,7 +599,7 @@ class Test(GXPYTest):
         self.crc_map(map_file)
 
     def test_color_bar_existing_agg(self):
-        Test.start(self, gsys.func_name())
+        self.start()
 
         # test grid file
         folder, files = gsys.unzip(os.path.join(os.path.dirname(__file__), 'testgrids.zip'),
