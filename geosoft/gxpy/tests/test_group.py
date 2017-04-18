@@ -267,18 +267,18 @@ class Test(unittest.TestCase, GXPYTest):
                              data_area=area, media="A4", margins=(0, 10, 0, 0),
                              cs=cs, overwrite=True) as gmap:
             map_file = gmap.file_name
+
             with gxv.GXview(gmap, "base") as v:
                 with gxg.GXdraw(v, 'line') as g:
                     g.xy_rectangle(v.extent_clip, pen=g.new_pen(line_thick=1, line_color='K'))
+
             with gxv.GXview(gmap, "data") as v:
                 with gxg.GXdraw(v, 'line') as g:
                     g.xy_rectangle(area, pen=g.new_pen(line_thick=0.1, line_color='R'))
 
-                with gxagg.GXagg(grid_file) as agg:
-                    with gxg.GXaggregate(v, agg) as g:
-                        self.assertEqual(g.name, str(agg))
-                    itr = gxapi.GXITR.create()
-                    agg.gxagg.get_layer_itr(0, itr)
+                with gxagg.GXagg.new(grid_file) as agg:
+                    with gxg.GXagg_group.new(v, agg) as gagg:
+                        self.assertEqual(gagg.name, str(agg))
 
                 self.assertEqual(len(v.group_list_agg), 1)
 
@@ -308,8 +308,8 @@ class Test(unittest.TestCase, GXPYTest):
                 with gxg.GXdraw(v, 'line') as g:
                     g.xy_rectangle(area, pen=g.new_pen(line_thick=0.1, line_color='G'))
 
-                with gxagg.GXagg(grid_file) as agg:
-                    gxg.GXaggregate(v, agg)
+                with gxagg.GXagg.new(grid_file) as agg:
+                    gxg.GXagg_group.new(v, agg)
 
         self.crc_map(map_file)
 
@@ -323,8 +323,8 @@ class Test(unittest.TestCase, GXPYTest):
                                  scale=(ex[2] - ex[0]) / 0.2) as gmap:
                 map_file = gmap.file_name
                 with gxv.GXview(gmap, "data") as v:
-                    with gxagg.GXagg(grid_file, zone=zone, shade=shade) as agg:
-                        gxg.GXaggregate(v, agg)
+                    with gxagg.GXagg.new(grid_file, zone=zone, shade=shade) as agg:
+                        gxg.GXagg_group.new(v, agg)
                 gmap.delete_view('base')
 
             self.crc_map(map_file, alt_crc_name='{}_{}'.format(gxsys.func_name(1), suffix))
@@ -604,12 +604,51 @@ class Test(unittest.TestCase, GXPYTest):
                     g.xy_rectangle(v.extent_clip, pen=g.new_pen(line_thick=0.1, line_color='G'))
                     g.xy_rectangle(v.extent_all, pen=g.new_pen(line_thick=0.1, line_color='B'))
 
-                with gxagg.GXagg(grid_file) as agg:
+                with gxagg.GXagg.new(grid_file) as agg:
                     itr = gxapi.GXITR.create()
                     agg.gxagg.get_layer_itr(0, itr)
                     gxg.legend_color_bar(v, 'color_legend', itr)
 
         self.crc_map(map_file)
+
+    def test_color_bar_existing_agg(self):
+        Test.start(self, gsys.func_name())
+
+        # test grid file
+        folder, files = gsys.unzip(os.path.join(os.path.dirname(__file__), 'testgrids.zip'),
+                                   folder=self.gx.temp_folder())
+        grid_file = os.path.join(folder, 'test_agg_utm.grd')
+        map_file = os.path.join(self.gx.temp_folder(), "test_agg_utm")
+
+        with gxgrd.GXgrd(grid_file) as grd:
+            cs = grd.cs
+            area = grd.extent_2d()
+        with gxmap.GXmap.new(map_file, fixed_size=False,
+                             data_area=area, media="A4", margins=(2, 10, 2, 1),
+                             cs=cs, overwrite=True) as gmap:
+            map_file = gmap.file_name
+            with gxv.GXview(gmap, "base") as v:
+                with gxg.GXdraw(v, 'line') as g:
+                    g.xy_rectangle(v.extent_clip, pen=g.new_pen(line_thick=1, line_color='K'))
+
+            with gxv.GXview(gmap, "data") as v:
+                with gxg.GXdraw(v, 'line') as g:
+                    g.xy_rectangle(v.extent_clip, pen=g.new_pen(line_thick=0.1, line_color='G'))
+                    g.xy_rectangle(v.extent_all, pen=g.new_pen(line_thick=0.1, line_color='B'))
+
+                with gxagg.GXagg.new(grid_file) as agg:
+                    with gxg.GXagg_group.new(v, agg) as g:
+                        agg_group_name = g.name
+
+            with gxv.GXview(gmap, "data") as v:
+                with gxg.GXagg_group.open(v, agg_group_name) as g:
+                    itr = gxapi.GXITR.create()
+                    g.agg.gxagg.get_layer_itr(0, itr)
+                    gxg.legend_color_bar(v, 'color_legend', itr)
+
+
+        self.crc_map(map_file)
+
 
     def test_properties(self):
         Test.start(self, gsys.func_name())

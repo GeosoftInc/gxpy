@@ -13,9 +13,14 @@ if NOT "%PAPER%" == "" (
 	set I18NSPHINXOPTS=-D latex_paper_size=%PAPER% %I18NSPHINXOPTS%
 )
 
-if "%1" == "" goto help
+if "%1" == "" goto default
+set target=%1
+goto continue
+:default
+set target="html"
+:continue
 
-if "%1" == "help" (
+if %target% == "help" (
 	:help
 	echo.Please use `make ^<target^>` where ^<target^> is one of
 	echo.  html       to make standalone HTML files
@@ -41,12 +46,16 @@ if "%1" == "help" (
 	goto end
 )
 
-if "%1" == "clean" (
+if %target% == "clean" (
 	for /d %%i in (%BUILDDIR%\*) do rmdir /q /s %%i
 	del /q /s %BUILDDIR%\*
 	goto end
 )
 
+goto continue
+:default
+set target="html"
+:continue
 
 REM Check if sphinx-build is available and fallback to Python version if any
 %SPHINXBUILD% 2> nul
@@ -72,7 +81,7 @@ if errorlevel 9009 (
 :sphinx_ok
 
 
-if "%1" == "html" (
+if %target% == "html" (
 	%SPHINXBUILD% -b html %ALLSPHINXOPTS% %BUILDDIR%/html
 	if errorlevel 1 exit /b 1
 	echo.
@@ -80,7 +89,7 @@ if "%1" == "html" (
 	goto end
 )
 
-if "%1" == "dirhtml" (
+if %target% == "dirhtml" (
 	%SPHINXBUILD% -b dirhtml %ALLSPHINXOPTS% %BUILDDIR%/dirhtml
 	if errorlevel 1 exit /b 1
 	echo.
@@ -88,7 +97,7 @@ if "%1" == "dirhtml" (
 	goto end
 )
 
-if "%1" == "singlehtml" (
+if %target% == "singlehtml" (
 	%SPHINXBUILD% -b singlehtml %ALLSPHINXOPTS% %BUILDDIR%/singlehtml
 	if errorlevel 1 exit /b 1
 	echo.
@@ -96,7 +105,7 @@ if "%1" == "singlehtml" (
 	goto end
 )
 
-if "%1" == "pickle" (
+if %target% == "pickle" (
 	%SPHINXBUILD% -b pickle %ALLSPHINXOPTS% %BUILDDIR%/pickle
 	if errorlevel 1 exit /b 1
 	echo.
@@ -104,7 +113,7 @@ if "%1" == "pickle" (
 	goto end
 )
 
-if "%1" == "json" (
+if %target% == "json" (
 	%SPHINXBUILD% -b json %ALLSPHINXOPTS% %BUILDDIR%/json
 	if errorlevel 1 exit /b 1
 	echo.
@@ -112,7 +121,7 @@ if "%1" == "json" (
 	goto end
 )
 
-if "%1" == "htmlhelp" (
+if %target% == "htmlhelp" (
 	%SPHINXBUILD% -b htmlhelp %ALLSPHINXOPTS% %BUILDDIR%/htmlhelp
 	if errorlevel 1 exit /b 1
 	echo.
@@ -121,7 +130,7 @@ if "%1" == "htmlhelp" (
 	goto end
 )
 
-if "%1" == "qthelp" (
+if %target% == "qthelp" (
 	%SPHINXBUILD% -b qthelp %ALLSPHINXOPTS% %BUILDDIR%/qthelp
 	if errorlevel 1 exit /b 1
 	echo.
@@ -133,7 +142,7 @@ if "%1" == "qthelp" (
 	goto end
 )
 
-if "%1" == "devhelp" (
+if %target% == "devhelp" (
 	%SPHINXBUILD% -b devhelp %ALLSPHINXOPTS% %BUILDDIR%/devhelp
 	if errorlevel 1 exit /b 1
 	echo.
@@ -141,7 +150,7 @@ if "%1" == "devhelp" (
 	goto end
 )
 
-if "%1" == "epub" (
+if %target% == "epub" (
 	%SPHINXBUILD% -b epub %ALLSPHINXOPTS% %BUILDDIR%/epub
 	if errorlevel 1 exit /b 1
 	echo.
@@ -149,7 +158,7 @@ if "%1" == "epub" (
 	goto end
 )
 
-if "%1" == "latex" (
+if %target% == "latex" (
 	%SPHINXBUILD% -b latex %ALLSPHINXOPTS% %BUILDDIR%/latex
 	if errorlevel 1 exit /b 1
 	echo.
@@ -157,7 +166,7 @@ if "%1" == "latex" (
 	goto end
 )
 
-if "%1" == "latexpdf" (
+if %target% == "latexpdf" (
 	%SPHINXBUILD% -b latex %ALLSPHINXOPTS% %BUILDDIR%/latex
 	cd %BUILDDIR%/latex
 	make all-pdf
@@ -167,7 +176,7 @@ if "%1" == "latexpdf" (
 	goto end
 )
 
-if "%1" == "latexpdfja" (
+if %target% == "latexpdfja" (
 	%SPHINXBUILD% -b latex %ALLSPHINXOPTS% %BUILDDIR%/latex
 	cd %BUILDDIR%/latex
 	make all-pdf-ja
@@ -177,7 +186,7 @@ if "%1" == "latexpdfja" (
 	goto end
 )
 
-if "%1" == "text" (
+if %target% == "text" (
 	%SPHINXBUILD% -b text %ALLSPHINXOPTS% %BUILDDIR%/text
 	if errorlevel 1 exit /b 1
 	echo.
@@ -185,7 +194,7 @@ if "%1" == "text" (
 	goto end
 )
 
-if "%1" == "man" (
+if %target% == "man" (
 	%SPHINXBUILD% -b man %ALLSPHINXOPTS% %BUILDDIR%/man
 	if errorlevel 1 exit /b 1
 	echo.
@@ -193,7 +202,7 @@ if "%1" == "man" (
 	goto end
 )
 
-if "%1" == "texinfo" (
+if %target% == "texinfo" (
 	%SPHINXBUILD% -b texinfo %ALLSPHINXOPTS% %BUILDDIR%/texinfo
 	if errorlevel 1 exit /b 1
 	echo.
@@ -201,7 +210,7 @@ if "%1" == "texinfo" (
 	goto end
 )
 
-if "%1" == "gettext" (
+if %target% == "gettext" (
 	%SPHINXBUILD% -b gettext %I18NSPHINXOPTS% %BUILDDIR%/locale
 	if errorlevel 1 exit /b 1
 	echo.
@@ -209,7 +218,7 @@ if "%1" == "gettext" (
 	goto end
 )
 
-if "%1" == "changes" (
+if %target% == "changes" (
 	%SPHINXBUILD% -b changes %ALLSPHINXOPTS% %BUILDDIR%/changes
 	if errorlevel 1 exit /b 1
 	echo.
@@ -217,7 +226,7 @@ if "%1" == "changes" (
 	goto end
 )
 
-if "%1" == "linkcheck" (
+if %target% == "linkcheck" (
 	%SPHINXBUILD% -b linkcheck %ALLSPHINXOPTS% %BUILDDIR%/linkcheck
 	if errorlevel 1 exit /b 1
 	echo.
@@ -226,7 +235,7 @@ or in %BUILDDIR%/linkcheck/output.txt.
 	goto end
 )
 
-if "%1" == "doctest" (
+if %target% == "doctest" (
 	%SPHINXBUILD% -b doctest %ALLSPHINXOPTS% %BUILDDIR%/doctest
 	if errorlevel 1 exit /b 1
 	echo.
@@ -235,7 +244,7 @@ results in %BUILDDIR%/doctest/output.txt.
 	goto end
 )
 
-if "%1" == "coverage" (
+if %target% == "coverage" (
 	%SPHINXBUILD% -b coverage %ALLSPHINXOPTS% %BUILDDIR%/coverage
 	if errorlevel 1 exit /b 1
 	echo.
@@ -244,7 +253,7 @@ results in %BUILDDIR%/coverage/python.txt.
 	goto end
 )
 
-if "%1" == "xml" (
+if %target% == "xml" (
 	%SPHINXBUILD% -b xml %ALLSPHINXOPTS% %BUILDDIR%/xml
 	if errorlevel 1 exit /b 1
 	echo.
@@ -252,7 +261,7 @@ if "%1" == "xml" (
 	goto end
 )
 
-if "%1" == "pseudoxml" (
+if %target% == "pseudoxml" (
 	%SPHINXBUILD% -b pseudoxml %ALLSPHINXOPTS% %BUILDDIR%/pseudoxml
 	if errorlevel 1 exit /b 1
 	echo.

@@ -9,6 +9,7 @@ from . import geometry as gxgm
 from . import coordinate_system as gxcs
 from . import view as gxv
 from . import utility as gxu
+from . import agg as gxagg
 
 __version__ = geosoft.__version__
 
@@ -234,6 +235,10 @@ class GXgroup:
 
         atexit.register(self._close)
         self._open = True
+
+    def close(self):
+        """ Close the group, unlocks the view"""
+        self._close()
 
     @property
     def view(self):
@@ -1312,21 +1317,55 @@ class Pen:
 
         return s + 't{}'.format(int(self.line_thick * 10000.))
 
-class GXaggregate(GXgroup):
+class GXagg_group(GXgroup):
     """
-    Create an aggregate group
+    Aggregate groups on a map
     
     :param view:        gxpy.GXview instance
     :param name:        group name, default uses the aggregate name
     :param agg:         GXagg instance
     
+    Constructors:
+
+        ======== ================================
+        `open()` open an existing aggregate group
+        `new()`  create a new aggregate group
+        ======== ================================
+
+    Properties:
+    
+        :name:  aggregate group name
+        :agg:   gxpy.GXagg instance
+    
+    .. versionadded:: 9.2
     """
 
-    def __init__(self, view, agg, name=None):
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        self.agg.close()
+        self.agg = None
+        self._close()
+
+    def __init__(self, view, group_name, mode):
+
+        self.agg = None
+        super().__init__(view, group_name, mode=mode)
+
+
+    @classmethod
+    def new(cls, view, agg, name=None):
 
         if name is None:
             name = agg.name
+        agg_group = cls(view, name, mode=NEW)
+        agg_group.agg = agg
         view.gxview.aggregate(agg.gxagg, name)
+        return agg_group
 
-        #TODO think about mode, and openign an existing agg in a view
-        super().__init__(view, name, mode=READ_ONLY)
+    @classmethod
+    def open(cls,
+             view,
+             group_name):
+        agg_group = cls(view, group_name, mode=READ_ONLY)
+        group_number = view.gxview.find_group(group_name)
+        agg_group.agg = gxagg.GXagg.open(view.gxview.get_aggregate(group_number))
+        return agg_group

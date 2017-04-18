@@ -42,6 +42,20 @@ class GXagg():
         :brightness:    the brightness setting relative to the original colouring.  This ranges from
                         -1.0 (black) to 1.0 (white).
  
+    Constructors:
+
+        ======== ================================
+        `open()` open an existing aggregate
+        `new()`  create a new aggregate
+        ======== ================================
+
+    Properties:
+    
+        :name:          aggregate group name
+        :gxagg:         gxapi.GXAGG instance
+        :layer_count:   number of layers
+        :brightness:    image brightness, -1 (black) to +1 (white). 0 is full colour.
+
     .. versionadded:: 9.2
     '''
 
@@ -55,13 +69,33 @@ class GXagg():
         return self
 
     def __exit__(self, type, value, traceback):
+        self.gxagg = None
         pass
 
-    def __init__(self, grid_file=None, **kwargs):
+    def __init__(self):
+        self.gxagg = None
 
-        self.gxagg = gxapi.GXAGG.create()
+    @classmethod
+    def new(cls, grid_file=None, **kwargs):
+
+        agg = cls()
+        agg.gxagg = gxapi.GXAGG.create()
         if grid_file is not None:
-            self.add_layer(grid_file, **kwargs)
+            agg.add_layer(grid_file, **kwargs)
+        return agg
+
+    @classmethod
+    def open(cls, gxagg):
+
+        agg = cls()
+        if not isinstance(gxagg, gxapi.GXAGG):
+            raise AGGException(_t('A gxapi.GXAGG isstance is required.'))
+        agg.gxagg = gxagg
+        return agg
+
+    def close(self):
+        """Close an agg."""
+        self.gxagg = None
 
     @property
     def layer_count(self):
