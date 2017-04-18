@@ -547,7 +547,7 @@ class GXcs:
                 gxf2 = hcs
 
         # units only
-        if not (gxf3 or gxf4 or gxf5) and parameter_exists(PARM_UNITS, gxf1):
+        if (gxf1 != '*unknown') and not (gxf3 or gxf4 or gxf5) and parameter_exists(PARM_UNITS, gxf1):
             self.gxipj.set_gxf('', '', '', gxf1, '')
 
         else:

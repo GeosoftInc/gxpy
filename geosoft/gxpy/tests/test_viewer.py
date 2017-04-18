@@ -12,7 +12,7 @@ import geosoft.gxpy.view as gxv
 import geosoft.gxpy.map as gxmap
 import geosoft.gxpy.viewer as gxvr
 import geosoft.gxpy.group as gxg
-import geosoft.gxpy.system as gsys
+import geosoft.gxpy.system as gxsys
 from geosoft.gxpy.tests import GXPYTest
 
 ###############################################################################################
@@ -97,13 +97,13 @@ class Test(unittest.TestCase, GXPYTest):
         cls.gx.log("*** {} > {}".format(parts[1], test_name))
 
     def test_mapviewer(self):
-        Test.start(self, gsys.func_name())
+        Test.start(self, gxsys.func_name())
 
         map_file = os.path.join(self.gx.temp_folder(), 'test_map')
         v3d_file = os.path.join(self.gx.temp_folder(), 'test_3dv')
         map_file, v3d_file = sample_map(map_file, v3d_file)
-        gxvr.map(map_file)
-        gxvr.v3d(v3d_file)
+        self.crc_map(map_file, alt_crc_name=gxsys.func_name() + '_map')
+        self.crc_map(v3d_file, alt_crc_name=gxsys.func_name() + '_3dv')
 
 if __name__ == '__main__':
     unittest.main()
