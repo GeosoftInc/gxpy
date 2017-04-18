@@ -9,24 +9,20 @@ import numpy as np
 import geosoft
 import geosoft.gxpy.system as gsys
 
+from geosoft.gxpy.tests import GXPYTest
+
+
 def tf(f):
     return os.path.join(os.path.dirname(__file__), f)
 
-class Test(unittest.TestCase):
-    @classmethod
-    def setUpClass(cls):
-        geosoft.gxpy.gx.GXpy(log=print)
 
-    @classmethod
-    def start(cls, test):
-        geosoft.gxpy.gx.gx.log("*** {} > {}".format(os.path.split(__file__)[1], test))
-
+class Test(GXPYTest):
     def test_system(self):
-        self.start(gsys.func_name())
+        self.start()
         self.assertEqual(gsys.__version__, geosoft.__version__)
 
     def test_func(self):
-        self.start(gsys.func_name())
+        self.start()
 
         f = gsys.func_name()
         p = gsys.func_name(1)
@@ -34,7 +30,7 @@ class Test(unittest.TestCase):
         self.assertEqual(p, "run")
 
     def test_statics(self):
-        self.start(gsys.func_name())
+        self.start()
 
         app = gsys.app_name()
         self.assertTrue(len(app) > 0)
@@ -42,7 +38,7 @@ class Test(unittest.TestCase):
         self.assertEqual(func, 'test_statics')
 
     def test_unzip(self):
-        self.start(gsys.func_name())
+        self.start()
 
         folder, files = gsys.unzip(tf('little.zip'), tf('_test'), checkready=1)
         self.assertEqual(len(files), 3)
@@ -52,7 +48,7 @@ class Test(unittest.TestCase):
         gsys.remove_dir(folder, tries=0)
 
     def test_task_range(self):
-        self.start(gsys.func_name())
+        self.start()
 
         nrecords = 200000000
         nfields = 1

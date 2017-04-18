@@ -8,26 +8,16 @@ import geosoft.gxpy.system as gsys
 import geosoft.gxpy.coordinate_system as gxcs
 import geosoft
 
-class Test(unittest.TestCase):
+from geosoft.gxpy.tests import GXPYTest
 
-    @classmethod
-    def setUpClass(cls):
-        cls.gx = gx.GXpy(log=print)
 
-    @classmethod
-    def tearDownClass(cls):
-        pass
-
-    @classmethod
-    def start(cls,test):
-        cls.gx.log("*** {} > {}".format(os.path.split(__file__)[1], test))
-
+class Test(GXPYTest):
     def test_cs(self):
-        self.start(gsys.func_name())
+        self.start()
         self.assertEqual(gxcs.__version__, geosoft.__version__)
 
     def test_lists_cs(self):
-        self.start(gsys.func_name())
+        self.start()
         
         #name lists
         dlist = gxcs.name_list(gxcs.LIST_DATUM)
@@ -51,7 +41,7 @@ class Test(unittest.TestCase):
         return
 
     def test_parameters(self):
-        self.start(gsys.func_name())
+        self.start()
 
         # name dictionaries
         pdct = gxcs.parameters(gxcs.PARM_DATUM, 'NAD27')
@@ -68,7 +58,7 @@ class Test(unittest.TestCase):
 
 
     def test_any(self):
-        self.start(gsys.func_name())
+        self.start()
 
         # name
         with gxcs.GXcs( 'DHDN / Okarito 2000') as cs:
@@ -167,7 +157,7 @@ class Test(unittest.TestCase):
             self.assertEqual(cs.cs_name(what=gxcs.NAME_UNIT_FULL),'metre')
 
     def test_name_cs(self):
-        self.start(gsys.func_name())
+        self.start()
 
         hcs, orient, vcs = gxcs.hcs_orient_vcs_from_name("DHDN / Okarito 2000 [geoid]")
         self.assertEqual(hcs, "DHDN / Okarito 2000")
@@ -227,7 +217,7 @@ class Test(unittest.TestCase):
             self.assertEqual(cs.cs_name(what=gxcs.NAME_HCS_VCS), 'DHDN [geodetic]')
 
     def test_vcs(self):
-        self.start(gsys.func_name())
+        self.start()
 
         self.assertEqual(gxcs.GXcs("nad83 / UTM zone 15N [NAVD92]").name, 'NAD83 / UTM zone 15N [NAVD92]')
         self.assertEqual(gxcs.GXcs("nad83 [NAVD92]").name, 'NAD83 [NAVD92]')
@@ -236,7 +226,7 @@ class Test(unittest.TestCase):
 
 
     def test_GXF_cs(self):
-        self.start(gsys.func_name())
+        self.start()
 
         stref = gxapi.str_ref()
 
@@ -311,7 +301,7 @@ class Test(unittest.TestCase):
         self.assertEqual(gxfs[1],'"Arc 1960",6378249.145,0.082483400044185,0')
 
     def test_ESRI_cs(self):
-        self.start(gsys.func_name())
+        self.start()
 
         stref = gxapi.str_ref()
 
@@ -341,7 +331,7 @@ class Test(unittest.TestCase):
         self.assertEqual(wkt.name, 'GCS_WGS_1984')
 
     def test_MAPINFO_cs(self):
-        self.start(gsys.func_name())
+        self.start()
 
         stref1 = gxapi.str_ref()
         stref2 = gxapi.str_ref()
@@ -361,7 +351,7 @@ class Test(unittest.TestCase):
         self.assertEqual(gxfs[4],'"DHDN to WGS 84 (1)",582,105,414,1.04,0.35,-3.08,8.29999999996112')
 
     def test_ORIENTATION_cs(self):
-        self.start(gsys.func_name())
+        self.start()
 
         stref = gxapi.str_ref()
 
@@ -390,7 +380,7 @@ class Test(unittest.TestCase):
         del(cs)
 
     def test_JSON_cs(self):
-        self.start(gsys.func_name())
+        self.start()
 
         stref = gxapi.str_ref()
         cs = gxcs.GXcs( "{'type': 'EPSG', 'code': 20250}")
@@ -437,7 +427,7 @@ class Test(unittest.TestCase):
         self.assertEqual(gxfs[4],'"DHDN to WGS 84 (1)",582,105,414,1.04,0.35,-3.08,8.29999999996112')
 
     def test_DICT_cs(self):
-        self.start(gsys.func_name())
+        self.start()
 
         with gxcs.GXcs({'type': 'EPSG', 'code': 20250}) as cs:
             gxfs = cs.gxf
@@ -448,7 +438,7 @@ class Test(unittest.TestCase):
             self.assertEqual(gxfs[4],'"AGD66 to WGS 84 (12)",-129.193,-41.212,130.73,0.246,0.374,0.329,-2.95500000002669')
 
     def _test_OBLIQUESTEREO_cs(self):
-        self.start(gsys.func_name())
+        self.start()
 
         stref = gxapi.str_ref()
 
@@ -489,7 +479,7 @@ class Test(unittest.TestCase):
         self.assertEqual(gxfs[4],'"WGS 84",0,0,0,0,0,0,0')
 
     def test_names_cs(self):
-        self.start(gsys.func_name())
+        self.start()
 
         with gxcs.GXcs( '{"type": "Geosoft", "name":"NAD83 / UTM zone 26N", "orientation":"1000,500,0,0,0,15"}') as cs:
             csd = cs.coordinate_dict()
@@ -513,7 +503,7 @@ class Test(unittest.TestCase):
             self.assertEqual(csd["vcs"], '')
 
     def test_compare(self):
-        self.start(gsys.func_name())
+        self.start()
 
         cs = gxcs.GXcs('NAD27 / UTM zone 18N')
         cs2 = gxcs.GXcs('NAD27 / UTM zone 18N')
@@ -543,7 +533,7 @@ class Test(unittest.TestCase):
         self.assertFalse(gxcs.GXcs("nad83 [geoid]").same_vcs(gxcs.GXcs("NAD27 [NAVD92]")))
 
     def test_units(self):
-        self.start(gsys.func_name())
+        self.start()
 
         cs = gxcs.GXcs()
         self.assertEqual(cs.units_name, 'unknown')
@@ -569,7 +559,7 @@ class Test(unittest.TestCase):
         self.assertRaises(gxcs.CSException, gxcs.GXcs, 'bogus')
 
     def test_PJ(self):
-        self.start(gsys.func_name())
+        self.start()
 
         data = np.zeros((10,5),dtype='float')
         for i in range(data.shape[0]):
@@ -632,7 +622,7 @@ class Test(unittest.TestCase):
 
 
     def test_lists(self):
-        self.start(gsys.func_name())
+        self.start()
 
         self.assertTrue(len(gxcs.name_list(gxcs.LIST_DATUM)))
         self.assertTrue(len(gxcs.name_list(gxcs.LIST_COORDINATESYSTEM)))
@@ -644,7 +634,7 @@ class Test(unittest.TestCase):
         self.assertTrue(len(gxcs.name_list(gxcs.LIST_LOCALDATUMNAME)))
 
     def test_gcs(self):
-        self.start(gsys.func_name())
+        self.start()
 
         with gxcs.GXcs("wgs 84") as cs1:
             self.assertEqual(str(cs1), "WGS 84")
@@ -658,7 +648,7 @@ class Test(unittest.TestCase):
                 self.assertEqual(str(cs2), "WGS 84")
 
     def test_hcs_vcs(self):
-        self.start(gsys.func_name())
+        self.start()
 
         with gxcs.GXcs('NAD27 / UTM zone 18N') as cs:
             self.assertEqual(cs.name, 'NAD27 / UTM zone 18N')
@@ -679,7 +669,7 @@ class Test(unittest.TestCase):
             self.assertEqual(cs.vcs, 'geoid')
 
     def test_orientation(self):
-        self.start(gsys.func_name())
+        self.start()
 
         s = "WGS 84 / UTM zone 32N <0, 0, 0, 10, 15, 32>"
         with gxcs.GXcs(s) as cs:
@@ -707,7 +697,7 @@ class Test(unittest.TestCase):
             self.assertAlmostEqual(xyz, grid_xyz)
 
     def test_init_from_names(self):
-        self.start(gsys.func_name())
+        self.start()
 
         with gxcs.GXcs("DHDN / Okarito 2000 <150,8.5,0,0,0,32>") as cs:
             self.assertEqual(cs.name, "DHDN / Okarito 2000 <150,8.5,0,0,0,32>")
@@ -722,7 +712,7 @@ class Test(unittest.TestCase):
             self.assertEqual(cs.display_name, 'DHDN / Okarito 2000 [geodetic] (150,8.5,0) <32 deg>')
 
     def test_localgrid(self):
-        self.start(gsys.func_name())
+        self.start()
 
         with gxcs.GXcs({'type': 'localgrid',
                         'latitude': 45,

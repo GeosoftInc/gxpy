@@ -17,6 +17,9 @@ import geosoft.gxpy.grd as gxgrd
 
 from geosoft.gxpy.tests import GXPYTest
 
+from geosoft.gxpy.tests import GXPYTest
+
+
 def new_test_data_map(mapname=None, rescale=1.0):
 
     if mapname is None:
@@ -87,29 +90,13 @@ def test_data_map(name=None, data_area=(1000,0,11000,5000), margins=None, cs=Non
                            margins=margins,
                            inside_margin=0.5)
 
-class Test(unittest.TestCase, GXPYTest):
-
-    @classmethod
-    def setUpClass(cls):
-        GXPYTest.setUpClass(cls, __file__)
-
-    @classmethod
-    def tearDownClass(cls):
-        GXPYTest.tearDownClass(cls)
-
-    
-    @classmethod
-    def start(cls, test, test_name):
-        parts = os.path.split(__file__)
-        test.result_dir = os.path.join(parts[0], 'results', parts[1], test_name)
-        cls.gx.log("*** {} > {}".format(parts[1], test_name))
-
+class Test(GXPYTest):
     def test_version(self):
-        Test.start(self, gsys.func_name())
+        self.start()
         self.assertEqual(gxmap.__version__, geosoft.__version__)
 
     def test_newmap(self):
-        Test.start(self, gsys.func_name())
+        self.start()
 
         # test map
         name = 'test_newmap'
@@ -138,7 +125,7 @@ class Test(unittest.TestCase, GXPYTest):
         self.assertRaises(gxmap.MapException, gxmap.GXmap, 'bogus')
 
     def test_new_geosoft_map(self):
-        Test.start(self, gsys.func_name())
+        self.start()
 
         # temp map
         with gxmap.GXmap.new(data_area=(0, 0, 100, 80)) as map:
@@ -152,7 +139,7 @@ class Test(unittest.TestCase, GXPYTest):
                 self.assertEqual("DHDN / Okarito 2000 [geodetic]", str(v.cs))
 
     def test_lists(self):
-        Test.start(self, gsys.func_name())
+        self.start()
 
         mapname = new_test_data_map()
         with gxmap.GXmap.open(mapname) as map:
@@ -168,7 +155,7 @@ class Test(unittest.TestCase, GXPYTest):
             self.assertEqual(len(views), 0)
 
     def test_map_delete(self):
-        Test.start(self, gsys.func_name())
+        self.start()
 
         with gxmap.GXmap.new(file_name='test_geosoft', overwrite=True) as map:
             file_name = map.file_name
@@ -201,7 +188,7 @@ class Test(unittest.TestCase, GXPYTest):
             map.close()
 
     def test_map_classes(self):
-        Test.start(self, gsys.func_name())
+        self.start()
 
         with gxmap.GXmap.new(file_name='test_geosoft', overwrite=True) as map:
             self.assertEqual(map.get_class_name('data'), 'data')
@@ -229,7 +216,7 @@ class Test(unittest.TestCase, GXPYTest):
             self.assertEqual(map.get_class_name('data'), 'copy_data')
 
     def test_current_view(self):
-        Test.start(self, gsys.func_name())
+        self.start()
 
         with gxmap.GXmap.new() as map:
             self.assertEqual(map.current_data_view, 'data')
@@ -253,7 +240,7 @@ class Test(unittest.TestCase, GXPYTest):
             self.assertEqual(map.current_data_view, 'bogus')
 
     def test_media(self):
-        Test.start(self, gsys.func_name())
+        self.start()
 
         def crc_media(map_file, test_number):
             with gxmap.GXmap.open(map_file) as map:
@@ -342,7 +329,7 @@ class Test(unittest.TestCase, GXPYTest):
                           data_area=(100, 50, 10, 5), layout='landscape')
 
     def test_multiple_temp_maps(self):
-        Test.start(self, gsys.func_name())
+        self.start()
 
         mapfiles = []
         for i in range(3):
@@ -357,7 +344,7 @@ class Test(unittest.TestCase, GXPYTest):
 
 
     def test_north_arrow_0(self):
-        Test.start(self, gsys.func_name())
+        self.start()
 
         with gxmap.GXmap.new(cs='ft') as map:
             mapfile = map.file_name
@@ -374,7 +361,7 @@ class Test(unittest.TestCase, GXPYTest):
         self.crc_map(mapfile)
 
     def test_north_arrow_1(self):
-        Test.start(self, gsys.func_name())
+        self.start()
 
         with gxmap.GXmap.new(cs='m', data_area=(0,0,20,10), scale=100) as map:
             mapfile = map.file_name
@@ -393,7 +380,7 @@ class Test(unittest.TestCase, GXPYTest):
 
 
     def test_scale_1(self):
-        Test.start(self, gsys.func_name())
+        self.start()
 
         with gxmap.GXmap.new(data_area=(350000,7000000,400000,7030000), cs='ft') as map:
             mapfile = map.file_name
@@ -412,7 +399,7 @@ class Test(unittest.TestCase, GXPYTest):
         self.crc_map(mapfile)
 
     def test_scale_2(self):
-        Test.start(self, gsys.func_name())
+        self.start()
 
         with gxmap.GXmap.new(data_area=(350000,7000000,400000,7030000), cs='NAD83 / UTM zone 15N') as map:
             mapfile = map.file_name
@@ -431,7 +418,7 @@ class Test(unittest.TestCase, GXPYTest):
 
 
     def test_surround_1(self):
-        Test.start(self, gsys.func_name())
+        self.start()
 
         cs = gxcs.GXcs('NAD83 / UTM zone 15N')
         with gxmap.GXmap.new(data_area=(350000, 7000000, 400000, 7030000), cs=cs) as map:
@@ -443,7 +430,7 @@ class Test(unittest.TestCase, GXPYTest):
         self.crc_map(mapfile)
 
     def test_surround_2(self):
-        Test.start(self, gsys.func_name())
+        self.start()
 
         cs = gxcs.GXcs('NAD83 / UTM zone 15N')
         with gxmap.GXmap.new(data_area=(350000, 7000000, 400000, 7030000), cs=cs) as map:
@@ -455,7 +442,7 @@ class Test(unittest.TestCase, GXPYTest):
         self.crc_map(mapfile)
 
     def test_surround_3(self):
-        Test.start(self, gsys.func_name())
+        self.start()
 
         with gxmap.GXmap.new(data_area=(350000, 7000000, 400000, 7030000)) as map:
             mapfile = map.file_name
@@ -468,7 +455,7 @@ class Test(unittest.TestCase, GXPYTest):
         self.crc_map(mapfile)
 
     def test_annotate_xy_0(self):
-        Test.start(self, gsys.func_name())
+        self.start()
 
         with test_data_map() as map:
             mapfile = map.file_name
@@ -477,7 +464,7 @@ class Test(unittest.TestCase, GXPYTest):
         self.crc_map(mapfile)
 
     def test_annotate_xy_1(self):
-        Test.start(self, gsys.func_name())
+        self.start()
 
         with test_data_map() as map:
             mapfile = map.file_name
@@ -489,7 +476,7 @@ class Test(unittest.TestCase, GXPYTest):
         self.crc_map(mapfile)
 
     def test_annotate_xy_2(self):
-        Test.start(self, gsys.func_name())
+        self.start()
 
         with test_data_map() as map:
             mapfile = map.file_name
@@ -502,7 +489,7 @@ class Test(unittest.TestCase, GXPYTest):
         self.crc_map(mapfile)
 
     def test_annotate_xy_3(self):
-        Test.start(self, gsys.func_name())
+        self.start()
 
         with test_data_map() as map:
             mapfile = map.file_name
@@ -516,7 +503,7 @@ class Test(unittest.TestCase, GXPYTest):
         self.crc_map(mapfile)
 
     def test_annotate_ll_0(self):
-        Test.start(self, gsys.func_name())
+        self.start()
 
         with test_data_map(data_area=(350000,7000000,400000,7030000)) as map:
             mapfile = map.file_name
@@ -524,7 +511,7 @@ class Test(unittest.TestCase, GXPYTest):
         self.crc_map(mapfile)
 
     def test_annotate_ll_1(self):
-        Test.start(self, gsys.func_name())
+        self.start()
 
         with test_data_map(data_area=(350000,7000000,400000,7030000)) as map:
             mapfile = map.file_name
@@ -537,7 +524,7 @@ class Test(unittest.TestCase, GXPYTest):
         self.crc_map(mapfile)
 
     def test_annotate_ll_2(self):
-        Test.start(self, gsys.func_name())
+        self.start()
 
         with test_data_map(data_area=(350000,7000000,400000,7030000)) as map:
             mapfile = map.file_name
@@ -549,7 +536,7 @@ class Test(unittest.TestCase, GXPYTest):
         self.crc_map(mapfile)
 
     def test_annotate_ll_3(self):
-        Test.start(self, gsys.func_name())
+        self.start()
 
         with test_data_map(data_area=(350000,7000000,400000,7030000)) as map:
             mapfile = map.file_name
@@ -562,7 +549,7 @@ class Test(unittest.TestCase, GXPYTest):
         self.crc_map(mapfile)
 
     def test_annotate_ll_4(self):
-        Test.start(self, gsys.func_name())
+        self.start()
 
         with test_data_map(data_area=(350000,7000000,400000,7030000)) as map:
             mapfile = map.file_name
@@ -576,7 +563,7 @@ class Test(unittest.TestCase, GXPYTest):
         self.crc_map(mapfile)
 
     def test_annotate_ll_localgrid(self):
-        Test.start(self, gsys.func_name())
+        self.start()
 
         #TODO this is not what I expect - chat with Stephen...
 
@@ -610,7 +597,7 @@ class Test(unittest.TestCase, GXPYTest):
         gxmap.delete_files(mapfile)
 
     def text_view_extents(self):
-        Test.start(self, gsys.func_name())
+        self.start()
 
         testmap = os.path.join(self.gx.temp_folder(), "test")
         with gxmap.GXmap.new(testmap, overwrite=True) as gmap:

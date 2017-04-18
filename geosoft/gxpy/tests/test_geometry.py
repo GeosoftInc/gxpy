@@ -12,33 +12,21 @@ import geosoft.gxpy.geometry as gxgm
 import geosoft.gxpy.vv as gxvv
 import geosoft.gxpy.coordinate_system as gxcs
 
-class Test(unittest.TestCase):
+from geosoft.gxpy.tests import GXPYTest
 
-    @classmethod
-    def setUpClass(cls):
-        cls.gx = gx.GXpy(log=print)
-        os.chdir(os.path.dirname(os.path.realpath(__file__)))
-        pass
 
-    @classmethod
-    def tearDownClass(cls):
-        pass
-    
-    @classmethod
-    def start(cls,test):
-        cls.gx.log("*** {} > {}".format(os.path.split(__file__)[1], test))
-
+class Test(GXPYTest):
     def test_version(self):
-        self.start(gsys.func_name())
+        self.start()
         self.assertEqual(gxmap.__version__, geosoft.__version__)
 
     def test_exception(self):
-        self.start(gsys.func_name())
+        self.start()
 
         self.assertRaises(ValueError, gxgm.Point, [1, 'yada', 2])
 
     def test_cs(self):
-        self.start(gsys.func_name())
+        self.start()
 
         s = "WGS 84 / UTM zone 32N <0, 0, 0, 10, 15, 32>"
         p = gxgm.Point((5,10), cs=s)
@@ -52,7 +40,7 @@ class Test(unittest.TestCase):
         self.assertEqual(pp.cs.vcs, "geoid")
 
     def test_point(self):
-        self.start(gsys.func_name())
+        self.start()
 
         p = gxgm.Point((5,10))
         self.assertEqual(p.p.tolist(), [5.0, 10.0, 0.0])
@@ -108,7 +96,7 @@ class Test(unittest.TestCase):
         self.assertEqual(p.xyz, (0., 1., 45.))
 
     def test_ppoint(self):
-        self.start(gsys.func_name())
+        self.start()
 
         points = [(5, 10), (6, 11), (7, 12)]
         pp = gxgm.PPoint(points)
@@ -180,7 +168,7 @@ class Test(unittest.TestCase):
         self.assertEqual(pp.xy.tolist(), [[1., 2.], [3., 4.], [5., 6.]])
 
     def test_ppoint_constructors(self):
-        self.start(gsys.func_name())
+        self.start()
 
         def verify():
             self.assertEqual(pp.x.tolist(), [1., 4., 7., 10., 13.])
@@ -208,7 +196,7 @@ class Test(unittest.TestCase):
 
 
     def test_copy(self):
-        self.start(gsys.func_name())
+        self.start()
 
         p1 = gxgm.Point((1,2))
         p2 = p1
@@ -225,7 +213,7 @@ class Test(unittest.TestCase):
         self.assertTrue(p1 == p2)
 
     def test_p2(self):
-        self.start(gsys.func_name())
+        self.start()
 
         b1 = gxgm.Point2((gxgm.Point((0, 1)), (10, 20, -1)))
         self.assertEqual('Point2[(0.0, 1.0, 0.0) (10.0, 20.0, -1.0)]', str(b1))

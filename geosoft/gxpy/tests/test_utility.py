@@ -12,21 +12,9 @@ import geosoft.gxpy.utility as gxu
 from geosoft.gxpy.tests import GXPYTest
 
 
-class Test(unittest.TestCase, GXPYTest):
-    @classmethod
-    def setUpClass(cls):
-        GXPYTest.setUpClass(cls, __file__)
-
-    @classmethod
-    def tearDownClass(cls):
-        GXPYTest.tearDownClass(cls)
-
-    @classmethod
-    def start(cls,test):
-        cls.gx.log("*** {} > {}".format(os.path.split(__file__)[1], test))
-
+class Test(GXPYTest):
     def test_misc(self):
-        self.start(gsys.func_name())
+        self.start()
 
         self.assertEqual(gxu.__version__, geosoft.__version__)
 
@@ -67,7 +55,7 @@ class Test(unittest.TestCase, GXPYTest):
         except: pass
 
     def test_dictlist(self):
-        self.start(gsys.func_name())
+        self.start()
 
         lst = gxapi.GXLST.create(1000)
         lst.add_item("a","aa")
@@ -78,7 +66,7 @@ class Test(unittest.TestCase, GXPYTest):
         self.assertEqual(d.get('b'),'bb')
 
     def test_dictreg(self):
-        self.start(gsys.func_name())
+        self.start()
 
         d = {'a':'A', 'b':'BEE', 'c':[1,2,3], 'g':7.123, 'h':{'hh':'name'}}
         reg = gxu.reg_from_dict(d)
@@ -88,7 +76,7 @@ class Test(unittest.TestCase, GXPYTest):
         self.assertRaises(gxu.UtilityException, gxu.reg_from_dict, d, max_size=10)
 
     def test_parameters(self):
-        self.start(gsys.func_name())
+        self.start()
 
         p = {'a': 'string', 'list': [1,2,3], 'tup': (['a','b'], {'q': 1.5})}
         gxu.save_parameters('param_test', p)
@@ -112,7 +100,7 @@ class Test(unittest.TestCase, GXPYTest):
         self.assertEqual(t, tt)
 
     def test_rdecode(self):
-        self.start(gsys.func_name())
+        self.start()
 
         cDUMMY="*"
         rDUMMY=gxu.rdecode(cDUMMY)
@@ -172,7 +160,7 @@ class Test(unittest.TestCase, GXPYTest):
             self.assertTrue(True)
 
     def test_decode(self):
-        self.start(gsys.func_name())
+        self.start()
 
         cDUMMY="*"
         rDUMMY=gxapi.GS_R8DM
@@ -212,7 +200,7 @@ class Test(unittest.TestCase, GXPYTest):
         self.assertEqual(test("62N12345",'a5'),"62N12")
 
     def test_shared_dict(self):
-        self.start(gsys.func_name())
+        self.start()
 
         gxu.set_shared_dict()
         d = gxu.get_shared_dict()
@@ -227,7 +215,7 @@ class Test(unittest.TestCase, GXPYTest):
         self.assertEqual(len(d), 0)
 
     def test_run_external_python(self):
-        self.start(gsys.func_name())
+        self.start()
 
         testpy = os.path.join(os.getcwd(),'test_python.py')
         with open(testpy, 'w') as py:
@@ -261,7 +249,7 @@ class Test(unittest.TestCase, GXPYTest):
             raise
 
     def test_run_external_bad_python(self):
-        self.start(gsys.func_name())
+        self.start()
 
         testpy = os.path.join(os.getcwd(), 'test_python.py')
         with open(testpy, 'w') as py:
@@ -279,7 +267,7 @@ class Test(unittest.TestCase, GXPYTest):
             os.remove(testpy)
 
     def test_paths(self):
-        self.start(gsys.func_name())
+        self.start()
 
         local = gxu.folder_workspace()
         self.assertEqual(os.path.normpath(local), os.getcwd())
@@ -289,12 +277,13 @@ class Test(unittest.TestCase, GXPYTest):
         self.assertTrue(os.path.isdir(temp))
 
     def test_display_message(self):
-        self.start(gsys.func_name())
+        self.start()
 
-        gxu.display_message('test title', 'test message')
+        #TODO This appears to hang, investigate
+        # gxu.display_message('test title', 'test message')
 
     def test_version(self):
-        self.start(gsys.func_name())
+        self.start()
 
         with self.assertRaises(ValueError):
             gxu.check_version("x.y.z")
@@ -332,7 +321,7 @@ class Test(unittest.TestCase, GXPYTest):
             gxu.__version__ = version_backup
 
     def test_datetime(self):
-        self.start(gsys.func_name())
+        self.start()
 
         geo_utc = gxu.datetime_from_year(gxapi.GXSYS.utc_date())
 
@@ -358,7 +347,7 @@ class Test(unittest.TestCase, GXPYTest):
         self.assertEqual(dt.microsecond, round(py_utc.microsecond / 1000.0) * 1000)
 
     def test_crc(self):
-        self.start(gsys.func_name())
+        self.start()
 
         self.assertEqual(gxu.crc32(b'bunch of bytes'), 3271364337)
         self.assertEqual(gxu.crc32_str('a string'), 2577552858)

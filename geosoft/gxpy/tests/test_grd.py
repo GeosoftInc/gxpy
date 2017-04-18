@@ -8,32 +8,24 @@ import geosoft.gxpy.coordinate_system as gxcs
 import geosoft.gxpy.grd as gxgrd
 import geosoft
 
-class Test(unittest.TestCase):
+from geosoft.gxpy.tests import GXPYTest
 
+
+class Test(GXPYTest):
     @classmethod
     def setUpClass(cls):
-        cls.gx = gx.GXpy(log=print, res_stack=4)
-        os.chdir(os.path.dirname(os.path.realpath(__file__)))
+        GXPYTest.setUpGXPYTest()
         cls.folder, files = gsys.unzip(os.path.join(os.path.dirname(__file__), 'testgrids.zip'),
-                                       folder=cls.gx.temp_folder())
+                                       folder=cls._gx.temp_folder())
         cls.g1f = os.path.join(cls.folder, 'test_grid_1.grd')
         cls.g2f = os.path.join(cls.folder, 'test_grid_2.grd')
-        pass
-
-    @classmethod
-    def tearDownClass(cls):
-        pass
-
-    @classmethod
-    def start(cls,test):
-        cls.gx.log("*** {} > {}".format(os.path.split(__file__)[1], test))
 
     def test_grc(self):
-        self.start(gsys.func_name())
+        self.start()
         self.assertEqual(gxgrd.__version__, geosoft.__version__)
 
     def test_gridProperties(self):
-        self.start(gsys.func_name())
+        self.start()
 
         with gxgrd.GXgrd.open(self.g1f) as g1:
             properties = g1.properties()
@@ -57,7 +49,7 @@ class Test(unittest.TestCase):
 
 
     def test_saveGrid(self):
-        self.start(gsys.func_name())
+        self.start()
 
         #create a grids
         outGrid = os.path.join(self.folder, 'testNew.grd(GRD)')
@@ -76,7 +68,7 @@ class Test(unittest.TestCase):
             grd.close()
 
     def test_set_properties(self):
-        self.start(gsys.func_name())
+        self.start()
 
         with gxgrd.GXgrd.open(self.g1f) as g1:
             properties = g1.properties()
@@ -130,7 +122,7 @@ class Test(unittest.TestCase):
             self.assertEqual(properties.get('dtype'),np.int16)
 
     def test_memoryGrid(self):
-        self.start(gsys.func_name())
+        self.start()
 
         with gxgrd.GXgrd.new(properties={'dtype': np.int16,
                                          'nx': 100, 'ny': 50,
@@ -150,7 +142,7 @@ class Test(unittest.TestCase):
             self.assertEqual(properties.get('dtype'),np.int16)
 
     def test_gridMosaic(self):
-        self.start(gsys.func_name())
+        self.start()
 
         with gxgrd.GXgrd.open(self.g1f) as g:
             m1s = os.path.join(self.folder, 'm1.grd(GRD)')
@@ -190,7 +182,7 @@ class Test(unittest.TestCase):
             self.assertEqual(str(properties.get('cs')),'WGS 84')
 
     def test_gridBool(self):
-        self.start(gsys.func_name())
+        self.start()
 
         g1 = gxgrd.GXgrd.open(self.g1f)
         g2 = gxgrd.GXgrd.open(self.g2f)
@@ -227,7 +219,7 @@ class Test(unittest.TestCase):
         self.assertEqual(properties.get('dtype'), np.int16)
 
     def test_deleteGridFiles(self):
-        self.start(gsys.func_name())
+        self.start()
 
         with gxgrd.GXgrd.open(self.g1f) as g:
             g2 = g.save_as(os.path.join(self.folder,'testDelete.grd'))
@@ -240,7 +232,7 @@ class Test(unittest.TestCase):
         self.assertFalse(os.path.isfile(filen+'.xml'))
 
     def test_hgd(self):
-        self.start(gsys.func_name())
+        self.start()
 
         with gxgrd.GXgrd.open(self.g1f) as g:
             ofile = gxgrd.GXgrd.decorate_name(os.path.join(self.folder, 'test.hgd'), 'HGD')
@@ -260,7 +252,7 @@ class Test(unittest.TestCase):
             self.assertEqual(str(properties.get('cs')),'WGS 84')
 
     def test_name_parts(self):
-        self.start(gsys.func_name())
+        self.start()
 
         namep = gxgrd.GXgrd.name_parts("f:/someFolder/name.grd(GRD;TYPE=SHORT)")
         self.assertEqual(namep,('f:\\someFolder', 'name.grd', 'name', '.grd', 'GRD;TYPE=SHORT'))
@@ -288,7 +280,7 @@ class Test(unittest.TestCase):
         self.assertEqual(name,ref)
 
     def test_index_window(self):
-        self.start(gsys.func_name())
+        self.start()
 
         with gxgrd.GXgrd.open(self.g1f) as g:
             p = g.properties()
@@ -346,7 +338,7 @@ class Test(unittest.TestCase):
 
 
     def test_from_array(self):
-        self.start(gsys.func_name())
+        self.start()
 
         file_name = os.path.join(self.folder, "test_array.grd")
 
@@ -377,7 +369,7 @@ class Test(unittest.TestCase):
             self.assertEqual(str(properties.get('cs')),'WGS 84')
 
     def test_array_locations(self):
-        self.start(gsys.func_name())
+        self.start()
 
         props = {'x0':100, 'y0':-25.25, 'dx': 5, 'nx':101, 'ny':501}
         a = gxgrd.array_locations(props)
@@ -406,7 +398,7 @@ class Test(unittest.TestCase):
         self.assertEqual(a[0,0,2]-a[1,1,2], 0.)
 
     def test_hanging_resource(self):
-        self.start(gsys.func_name())
+        self.start()
 
         g1 = gxgrd.GXgrd.open(self.g1f)
         g2 = gxgrd.GXgrd.open(self.g2f)
@@ -417,7 +409,7 @@ class Test(unittest.TestCase):
         g2.close()
 
     def test_extent(self):
-        self.start(gsys.func_name())
+        self.start()
 
         with gxgrd.GXgrd.open(self.g1f) as g:
             grd = g.save_as(os.path.join(self.folder, 'test_extent.grd(GRD)'))

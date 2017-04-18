@@ -76,30 +76,16 @@ def draw_stuff(g, size=1.0):
     g.xy_polygon(pp)
 
 
-class Test(unittest.TestCase, GXPYTest):
-    @classmethod
-    def setUpClass(cls):
-        GXPYTest.setUpClass(cls, __file__)
-
-    @classmethod
-    def tearDownClass(cls):
-        GXPYTest.tearDownClass(cls)
-
-    @classmethod
-    def start(cls, test, test_name):
-        parts = os.path.split(__file__)
-        test.result_dir = os.path.join(parts[0], 'results', parts[1], test_name)
-        cls.gx.log("*** {} > {}".format(parts[1], test_name))
-
+class Test(GXPYTest):
     def test_version(self):
-        Test.start(self, gsys.func_name())
+        self.start()
         self.assertEqual(gxmap.__version__, geosoft.__version__)
 
     def test_create(self):
-        Test.start(self, gsys.func_name())
+        self.start()
 
     def test_lock(self):
-        Test.start(self, gsys.func_name())
+        self.start()
 
         with gxmap.GXmap.new(data_area=(0, 0, 50, 40), cs='cm') as map:
             with gxv.GXview(map, 'data') as v:
@@ -111,7 +97,7 @@ class Test(unittest.TestCase, GXPYTest):
                 self.assertFalse(bool(v.lock))
 
     def test_rectangle(self):
-        Test.start(self, gsys.func_name())
+        self.start()
 
         with gxmap.GXmap.new(data_area=(0, 0, 50, 40), cs='cm') as map:
             map_file = map.file_name
@@ -125,7 +111,7 @@ class Test(unittest.TestCase, GXPYTest):
         self.crc_map(map_file)
 
     def test_smooth_line(self):
-        Test.start(self, gsys.func_name())
+        self.start()
 
         pp = pline()
         p1, p2 = pp.extent()
@@ -142,7 +128,7 @@ class Test(unittest.TestCase, GXPYTest):
         self.crc_map(map_file)
 
     def test_view_groups_1(self):
-        Test.start(self, gsys.func_name())
+        self.start()
 
         testmap = os.path.join(self.gx.temp_folder(), "test")
         with gxmap.GXmap.new(testmap, overwrite=True) as gmap:
@@ -161,7 +147,7 @@ class Test(unittest.TestCase, GXPYTest):
         gxmap.delete_files(map_file)
 
     def test_view_groups_2(self):
-        Test.start(self, gsys.func_name())
+        self.start()
 
         testmap = os.path.join(self.gx.temp_folder(), "test")
         with gxmap.GXmap.new(testmap, overwrite=True) as gmap:
@@ -184,7 +170,7 @@ class Test(unittest.TestCase, GXPYTest):
         gxmap.delete_files(map_file)
 
     def test_reopen_map_view(self):
-        Test.start(self, gsys.func_name())
+        self.start()
 
         testmap = os.path.join(self.gx.temp_folder(), "test")
         with gxmap.GXmap.new(testmap, overwrite=True) as gmap:
@@ -197,7 +183,7 @@ class Test(unittest.TestCase, GXPYTest):
         gxmap.delete_files(map_file)
 
     def test_3D(self):
-        Test.start(self, gsys.func_name())
+        self.start()
 
         testmap = os.path.join(self.gx.temp_folder(), "test.map")
         with gxmap.GXmap.new(testmap, overwrite=True) as gmap:
@@ -220,7 +206,7 @@ class Test(unittest.TestCase, GXPYTest):
         self.crc_map(testmap, alt_crc_name=gxsys.func_name() + '_map')
 
     def test_graticule(self):
-        Test.start(self, gsys.func_name())
+        self.start()
 
         testmap = os.path.join(self.gx.temp_folder(), "test")
         with gxmap.GXmap.new(testmap, overwrite=True) as gmap:
@@ -249,10 +235,11 @@ class Test(unittest.TestCase, GXPYTest):
                     g.xy_rectangle(v.extent_clip, pen=g.new_pen(line_thick=0.1, line_color='R'))
             gmap.delete_view('base')
 
+        print(map_file)
         self.crc_map(map_file)
 
     def test_basic_grid_1(self):
-        Test.start(self, gsys.func_name())
+        self.start()
 
         # test grid file
         folder, files = gsys.unzip(os.path.join(os.path.dirname(__file__), 'testgrids.zip'),
@@ -285,7 +272,7 @@ class Test(unittest.TestCase, GXPYTest):
         self.crc_map(map_file)
 
     def test_basic_grid_2(self):
-        Test.start(self, gsys.func_name())
+        self.start()
 
         # test grid file
         folder, files = gsys.unzip(os.path.join(os.path.dirname(__file__), 'testgrids.zip'),
@@ -314,7 +301,7 @@ class Test(unittest.TestCase, GXPYTest):
         self.crc_map(map_file)
 
     def test_zone_grid(self):
-        Test.start(self, gsys.func_name())
+        self.start()
 
         def test_zone(zone, suffix, shade=False):
             map_file = os.path.join(self.gx.temp_folder(), "test_agg_" + suffix)
@@ -353,7 +340,7 @@ class Test(unittest.TestCase, GXPYTest):
         gxgrd.delete_files(grid_file)
 
     def test_text_definition(self):
-        Test.start(self, gsys.func_name())
+        self.start()
 
         t = gxg.Text_def()
         self.assertEqual(t.slant, 0)
@@ -390,7 +377,7 @@ class Test(unittest.TestCase, GXPYTest):
         self.assertEqual(t.weight, gxg.FONT_WEIGHT_BOLD)
 
     def test_colours(self):
-        Test.start(self, gsys.func_name())
+        self.start()
 
         c = gxg.Color((150, 200, 500))
         self.assertEqual(c.rgb, (150, 200, 255))
@@ -420,7 +407,7 @@ class Test(unittest.TestCase, GXPYTest):
         self.assertTrue(c == gxg.Color(gxg.C_TRANSPARENT))
 
     def test_pen(self):
-        Test.start(self, gsys.func_name())
+        self.start()
 
         p = gxg.Pen()
         self.assertEqual(p.line_color.int, gxg.C_BLACK)
@@ -454,7 +441,7 @@ class Test(unittest.TestCase, GXPYTest):
         self.assertRaises(gxg.GroupException, gxg.Pen, bad=1)
 
     def test_scaled(self):
-        Test.start(self, gsys.func_name())
+        self.start()
 
         p = gxg.Pen(factor=10)
         self.assertEqual(p.line_thick, 0.1)
@@ -472,7 +459,7 @@ class Test(unittest.TestCase, GXPYTest):
         self.assertEqual(t.height, 0.05)
 
     def test_text(self):
-        Test.start(self, gsys.func_name())
+        self.start()
 
         with gxmap.GXmap.new(data_area=(400000, 5000000, 500000, 5150000),
                              cs='WGS 84 / UTM zone 15N [geoid]') as map:
@@ -492,7 +479,7 @@ class Test(unittest.TestCase, GXPYTest):
         self.crc_map(map_file)
 
     def test_text_1(self):
-        Test.start(self, gsys.func_name())
+        self.start()
 
         with gxmap.GXmap.new(data_area=(400000, 5000000, 500000, 5050000),
                              cs='WGS 84 / UTM zone 15N [geoid]') as map:
@@ -534,7 +521,7 @@ class Test(unittest.TestCase, GXPYTest):
         self.crc_map(map_file)
 
     def test_text_multiline(self):
-        Test.start(self, gsys.func_name())
+        self.start()
 
         with gxmap.GXmap.new(data_area=(400000, 5000000, 500000, 5050000),
                              cs='WGS 84 / UTM zone 15N [geoid]') as map:
@@ -558,7 +545,7 @@ class Test(unittest.TestCase, GXPYTest):
         self.crc_map(map_file)
 
     def test_locate_group(self):
-        Test.start(self, gsys.func_name())
+        self.start()
 
         with gxmap.GXmap.new(data_area=(400000, 5000000, 500000, 5050000),
                              cs='WGS 84 / UTM zone 15N [geoid]') as map:
@@ -579,7 +566,7 @@ class Test(unittest.TestCase, GXPYTest):
         self.crc_map(map_file)
 
     def test_color_bar(self):
-        Test.start(self, gsys.func_name())
+        self.start()
 
         # test grid file
         folder, files = gsys.unzip(os.path.join(os.path.dirname(__file__), 'testgrids.zip'),
@@ -651,7 +638,7 @@ class Test(unittest.TestCase, GXPYTest):
 
 
     def test_properties(self):
-        Test.start(self, gsys.func_name())
+        self.start()
 
         with gxmap.GXmap.new() as map:
             with gxv.GXview(map, "base") as v:
@@ -665,7 +652,7 @@ class Test(unittest.TestCase, GXPYTest):
                     self.assertFalse(g.visible)
 
     def test_graticule(self):
-        Test.start(self, gsys.func_name())
+        self.start()
 
         test_map = os.path.join(self.gx.temp_folder(), "test")
         with gxmap.GXmap.new(test_map, overwrite=True) as map:
@@ -688,8 +675,16 @@ class Test(unittest.TestCase, GXPYTest):
                     g.graticule(style=gxg.GRATICULE_DOT, pen=g.new_pen(line_thick=5))
                 ex2 = v.extent_group('line', unit=gxv.UNIT_MAP)
 
-            area = (min(ex1[0], ex2[0])/10.0 - 2, max(ex1[1], ex2[1])/10.0 - 2,
-                    max(ex1[2], ex2[2])/10.0 + 2, max(ex1[3], ex2[3])/10.0 + 2)
+            with gxv.GXview(map, "my_data_3", map_location=(28, 3), area=(0, 0, 1000, 1500), scale=10000) as v:
+                with gxg.GXdraw(v, 'line') as g:
+                    g.xy_rectangle(v.extent_clip,
+                                   pen=g.new_pen(line_thick=5, line_color='G'))
+
+                    g.graticule(style=gxg.GRATICULE_CROSS, pen=g.new_pen(line_thick=5))
+                ex3 = v.extent_group('line', unit=gxv.UNIT_MAP)
+
+            area = (min(ex1[0], ex2[0], ex3[0])/10.0 - 2, max(ex1[1], ex2[1], ex3[1])/10.0 - 2,
+                    max(ex1[2], ex2[2], ex3[2])/10.0 + 2, max(ex1[3], ex2[3], ex3[3])/10.0 + 2)
             with gxv.GXview(map, "my_base_view", area=area, scale=100.0) as v:
                 with gxg.GXdraw(v, 'base_edge') as g:
                     g.xy_rectangle(v.extent_clip, pen=g.new_pen(line_thick=0.1, line_color='R'))

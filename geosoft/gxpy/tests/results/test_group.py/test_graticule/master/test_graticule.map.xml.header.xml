@@ -3,7 +3,7 @@
    <Item name="Extents" type="L2AREA">
       <Value name="MinX" value="0"/>
       <Value name="MinY" value="0"/>
-      <Value name="MaxX" value="27000"/>
+      <Value name="MaxX" value="40000"/>
       <Value name="MaxY" value="19000"/>
    </Item>
 </header>

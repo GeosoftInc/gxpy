@@ -497,7 +497,7 @@ class GXdraw(GXgroup):
         """
         Draw a graticule reference on a view.
 
-        :param style:   ``GRATICULE_LINE`` or ``GRATICULE_CROSS``
+        :param style:   ``GRATICULE_LINE``, ``GRATICULE_CROSS`` or ``GRATICULE_DOT``
         :param dx:      vertical line separation
         :param dy:      horizontal line separation
         :param ddh:     horizontal cross size for ``GRATICULE_CROSS``

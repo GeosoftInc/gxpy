@@ -1,6 +1,7 @@
 import os
 import shutil
 import glob
+import unittest
 
 os.environ['GEOSOFT_TEST_MODE'] = '1'
 os.environ['GEOSOFT_TESTSYSTEM_MODE'] = '1'
@@ -22,23 +23,49 @@ UPDATE_ONE_TEST = False
 SHOW_TEST_VIEWERS = False
 
 
-class GXPYTest(object):
-    def __init__(self):
-        self._result_dir = None
+class GXPYTest(unittest.TestCase):
+    _gx = None
 
     @classmethod
-    def setUpClass(cls, sub_class, test_py_file):
-        # These 2 variables ensure consistent test results (rendering, date/times, usernames in lineage etc.)
-        # This works for single test or suites run from within IDEs but when the entire suite is run it
-        # helps to ensure these environment variables are set prior to starting the Python process
-        sub_class.gx = gx.GXpy(log=print, parent_window=-1, max_warnings=8)
-        sub_class.gx.temp_folder()
-        os.chdir(os.path.dirname(os.path.realpath(test_py_file)))
-        pass
+    def setUpGXPYTest(cls, res_stack=6):
+        os.chdir(os.path.dirname(os.path.realpath(__file__)))
+        cls._gx = gx.GXpy(log=print, res_stack=res_stack, parent_window=-1, max_warnings=8)
 
     @classmethod
-    def tearDownClass(cls, sub_class):
-        del sub_class.gx
+    def tearDownGXPYTest(cls):
+        cls._gx = None
+
+    @classmethod
+    def setUpClass(cls, res_stack=6):
+        if cls is GXPYTest:
+            raise unittest.SkipTest("Skip GXPYTest tests, it's a base class")
+        cls.setUpGXPYTest()
+
+    @classmethod
+    def tearDownClass(cls):
+        cls.tearDownGXPYTest()
+
+    def start(self):
+        parts = self.id().split('.')
+        self._result_dir = os.path.join('results', parts[-3] + '.py', parts[-1])
+        self.gx.log("*** {}.py > {}".format(parts[-3], parts[-1]))
+
+    @property
+    def gx(self):
+        return self.__class__._gx
+
+    @property
+    def result_dir(self):
+        # Do something if you want
+        return self._result_dir
+
+    @result_dir.setter
+    def result_dir(self, value):
+        # Do something if you want
+        self._result_dir = value
+        if self._result_dir and (UPDATE_ALL_RESULTS or UPDATE_ONE_TEST) and os.path.exists(self._result_dir):
+            shutil.rmtree(self._result_dir)
+
 
     @classmethod
     def _remove_time_chunk_from_png(cls, png_file):
@@ -61,8 +88,13 @@ class GXPYTest(object):
                 pos = pos + length + 12
 
     @classmethod
-    def _map_to_xml_and_image(cls, map_file, xml_file, image_file, format, pix_width):
+    def _map_to_results(cls, map_file, xml_file, image_file, map_result, format, pix_width):
         m = gxapi.GXMAP.create(map_file, gxmap.WRITE_OLD)
+        m_res = gxapi.GXMAP.create(map_result, gxmap.WRITE_NEW)
+        m.dup_map(m_res, gxapi.DUPMAP_COPY)
+        m_res.pack_files()
+        m_res = None
+        os.remove(map_result + '.xml')
         m.export_all_raster(image_file, '',
                             pix_width, 0, gxapi.rDUMMY,
                             gxapi.MAP_EXPORT_BITS_24,
@@ -90,18 +122,6 @@ class GXPYTest(object):
             return '{} and {} differ\r\n'.format(result, master)
         else:
             return ''
-
-    @property
-    def result_dir(self):
-        # Do something if you want
-        return self._result_dir
-
-    @result_dir.setter
-    def result_dir(self, value):
-        # Do something if you want
-        self._result_dir = value
-        if self._result_dir and (UPDATE_ALL_RESULTS or UPDATE_ONE_TEST) and os.path.exists(self._result_dir):
-            shutil.rmtree(self._result_dir)
 
     def _agnosticize_and_ensure_consistent_line_endings(self, xml_file, replacement_dict):
         with open(xml_file) as f:
@@ -145,7 +165,8 @@ class GXPYTest(object):
         file_part = os.path.split(map_file)[1]
         image_result_file = os.path.join(result_dir, "{}.png".format(file_part))
         xml_result_file = os.path.join(result_dir, "{}.xml".format(file_part))
-        GXPYTest._map_to_xml_and_image(map_file, xml_result_file, image_result_file, format, pix_width)
+        map_result_file = os.path.join(result_dir, "{}".format(file_part))
+        GXPYTest._map_to_results(map_file, xml_result_file, image_result_file, map_result_file, format, pix_width)
 
         file_name_part = file_part.split('.')[0]
 
@@ -162,8 +183,10 @@ class GXPYTest(object):
             alt_file_part = file_part.replace(file_name_part, alt_crc_name)
             alt_image_result_file = os.path.join(result_dir, "{}.png".format(alt_file_part))
             alt_xml_result_file = os.path.join(result_dir, "{}.xml".format(alt_file_part))
+            alt_map_result_file = os.path.join(result_dir, "{}".format(alt_file_part))
 
             shutil.move(image_result_file, alt_image_result_file)
+            shutil.move(map_result_file, alt_map_result_file)
 
             result_files = glob.glob(xml_result_file + '*')
             for result in result_files:
@@ -172,11 +195,14 @@ class GXPYTest(object):
                 shutil.move(result, alt_result)
 
             image_result_file = alt_image_result_file
+            map_result_file = alt_map_result_file
             xml_result_file = alt_xml_result_file
             image_master_file = os.path.join(master_dir, "{}.png".format(alt_file_part))
+            map_master_file = os.path.join(master_dir, "{}".format(alt_file_part))
             xml_master_file = os.path.join(master_dir, "{}.xml".format(alt_file_part))
         else:
             image_master_file = os.path.join(master_dir, "{}.png".format(file_part))
+            map_master_file = os.path.join(master_dir, "{}".format(file_part))
             xml_master_file = os.path.join(master_dir, "{}.xml".format(file_part))
 
         xml_result_part = os.path.join('result', os.path.split(xml_result_file)[1])
@@ -184,6 +210,7 @@ class GXPYTest(object):
         xml_result_files = glob.glob(xml_result_file + '*')
         if update_result or (UPDATE_ALL_RESULTS or UPDATE_ONE_TEST):
             shutil.copyfile(image_result_file, image_master_file)
+            shutil.copyfile(map_result_file, map_master_file)
             for xml_result in xml_result_files:
                 if not xml_result.endswith('.catalog.xml'):
                     xml_master = xml_result.replace(xml_result_part, xml_master_part)

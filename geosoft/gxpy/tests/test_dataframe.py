@@ -7,22 +7,13 @@ import geosoft.gxpy.gx as gx
 import geosoft.gxpy.system as gsys
 import geosoft.gxpy.dataframe as gxdf
 
-class Test(unittest.TestCase):
+from geosoft.gxpy.tests import GXPYTest
 
-    @classmethod
-    def setUpClass(cls):
-        cls.gxp = gx.GXpy(log=print)
 
-    @classmethod
-    def tearDownClass(cls):
-        pass
-
-    @classmethod
-    def start(cls,test):
-        cls.gxp.log("*** {} > {}".format(os.path.split(__file__)[1], test))
+class Test(GXPYTest):
 
     def test_df(self):
-        self.start(gsys.func_name())
+        self.start()
 
         self.assertEqual(gxdf.__version__, geosoft.__version__)
 
@@ -63,7 +54,7 @@ class Test(unittest.TestCase):
             self.assertEqual(df.loc['Tete to WGS 84 (6)', 'CODE'], '6901')
 
     def test_raises(self):
-        self.start(gsys.func_name())
+        self.start()
 
         self.assertRaises(gxdf.DfException, gxdf.GXdf, initial='bogus')
         self.assertRaises(gxdf.DfException, gxdf.GXdf, initial='datumtrf', columns="NOT_THERE")
@@ -72,7 +63,7 @@ class Test(unittest.TestCase):
 
 
     def test_dict(self):
-        self.start(gsys.func_name())
+        self.start()
 
         m = gxdf.table_record('media', 'Unlimited')
         self.assertEqual(m['SIZE_X'], '300')
@@ -85,12 +76,12 @@ class Test(unittest.TestCase):
         self.assertRaises(gxdf.DfException, gxdf.table_column, 'maptmpl', 'bogus')
 
     def test_doc_sample(self):
-        self.start(gsys.func_name())
+        self.start()
 
         def testraise(index, column):
             df.loc[index, column]
 
-        with open(self.gxp.temp_file()+'.csv', 'w') as f:
+        with open(self.gx.temp_file()+'.csv', 'w') as f:
             rcname = f.name
             f.write('/ standard Geosoft rock codes\n')
             f.write('code,label,__DESCRIPTION,PATTERN,PAT_SIZE,PAT_DENSITY,PAT_THICKNESS,COLOR\n')

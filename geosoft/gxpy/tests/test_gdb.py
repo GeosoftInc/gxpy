@@ -13,32 +13,27 @@ import geosoft.gxpy.gdb as gxgdb
 import geosoft.gxpy.vv as gxvv
 import geosoft.gxpy.va as gxva
 
-class Test(unittest.TestCase):
+from geosoft.gxpy.tests import GXPYTest
+
+
+class Test(GXPYTest):
 
     @classmethod
     def setUpClass(cls):
-        cls.gx = gx.GXpy(log=print)
+        GXPYTest.setUpGXPYTest()
         cls.folder, files = gsys.unzip(os.path.join(os.path.dirname(__file__), 'test_database.zip'),
-                                       folder=cls.gx.temp_folder())
+                                       folder=cls._gx.temp_folder())
         cls.gdb_name = os.path.join(cls.folder, files[0])
 
-    @classmethod
-    def tearDownClass(cls):
-        pass
-        
-    @classmethod
-    def start(cls,test):
-        cls.gx.log("*** {} > {}".format(os.path.split(__file__)[1], test))
-        
     def tf(f):
         return os.path.join(os.path.dirname(__file__), f)
 
     def test_gdb(self):
-        self.start(gsys.func_name())
+        self.start()
         self.assertEqual(gxgdb.__version__, geosoft.__version__)
 
     def test_noprops_GDB(self):
-        self.start(gsys.func_name())
+        self.start()
 
         with gxgdb.GXdb.open(self.gdb_name) as gdb:
             self.assertEqual(gdb.file_name().lower(),self.gdb_name.lower())
@@ -55,7 +50,7 @@ class Test(unittest.TestCase):
             gdb.discard()
 
     def test_read_write_channel_vv_va(self):
-        self.start(gsys.func_name())
+        self.start()
 
         with gxgdb.GXdb.open(self.gdb_name) as gdb:
             gdb.delete_channel('test_chan_vv')
@@ -80,7 +75,7 @@ class Test(unittest.TestCase):
             gdb.delete_channel('test_chan_va')
 
     def test_group_VA_read_write(self):
-        self.start(gsys.func_name())
+        self.start()
 
         with gxgdb.GXdb.open(self.gdb_name) as gdb:
             
@@ -122,7 +117,7 @@ class Test(unittest.TestCase):
             gdb.discard()
 
     def test_create_del_GDB(self):
-        self.start(gsys.func_name())
+        self.start()
 
         with gxgdb.GXdb.open(self.gdb_name) as gdb:
                 
@@ -140,7 +135,7 @@ class Test(unittest.TestCase):
             self.assertFalse('ian2' in gdb.list_channels())
 
     def test_properties_GDB(self):
-        self.start(gsys.func_name())
+        self.start()
 
         with gxgdb.GXdb.open(self.gdb_name) as gdb:
 
@@ -205,7 +200,7 @@ class Test(unittest.TestCase):
             gdb.discard()
 
     def test_read_GDB(self):
-        self.start(gsys.func_name())
+        self.start()
 
         with gxgdb.GXdb.open(self.gdb_name) as gdb:
 
@@ -230,7 +225,7 @@ class Test(unittest.TestCase):
             gdb.discard()
 
     def test_read_vv_GDB(self):
-        self.start(gsys.func_name())
+        self.start()
 
         with gxgdb.GXdb.open(self.gdb_name) as gdb:
 
@@ -289,7 +284,7 @@ class Test(unittest.TestCase):
             gdb.discard()
 
     def test_read_masked_GDB(self):
-        self.start(gsys.func_name())
+        self.start()
 
         with gxgdb.GXdb.open(self.gdb_name) as gdb:
 
@@ -309,7 +304,7 @@ class Test(unittest.TestCase):
             gdb.discard()
 
     def test_write_vv_GDB(self):
-        self.start(gsys.func_name())
+        self.start()
 
         with gxgdb.GXdb.open(self.gdb_name) as gdb:
 
@@ -359,7 +354,7 @@ class Test(unittest.TestCase):
             gdb.discard()
 
     def test_write_GDB(self):
-        self.start(gsys.func_name())
+        self.start()
 
         with gxgdb.GXdb.open(self.gdb_name) as gdb:
 
@@ -404,7 +399,7 @@ class Test(unittest.TestCase):
             gdb.discard()
 
     def test_write_VA_GDB(self):
-        self.start(gsys.func_name())
+        self.start()
 
         with gxgdb.GXdb.open(self.gdb_name) as gdb:
 
@@ -429,7 +424,7 @@ class Test(unittest.TestCase):
             gdb.discard()
 
     def test_dummy_GDB(self):
-        self.start(gsys.func_name())
+        self.start()
 
         with gxgdb.GXdb.open(self.gdb_name) as gdb:
 
@@ -449,7 +444,7 @@ class Test(unittest.TestCase):
 
 
     def test_newline_vv_GDB(self):
-        self.start(gsys.func_name())
+        self.start()
 
         with gxgdb.GXdb.open(self.gdb_name) as gdb:
 
@@ -478,7 +473,7 @@ class Test(unittest.TestCase):
             gdb.discard()
 
     def test_newline_GDB(self):
-        self.start(gsys.func_name())
+        self.start()
 
         with gxgdb.GXdb.open(self.gdb_name) as gdb:
 
@@ -548,7 +543,7 @@ class Test(unittest.TestCase):
             gdb.discard()
 
     def test_list_values_GDB(self):
-        self.start(gsys.func_name())
+        self.start()
 
         self.nl = 0
         self.stp = 100
@@ -582,7 +577,7 @@ class Test(unittest.TestCase):
             gdb.discard()
 
     def test_new(self):
-        self.start(gsys.func_name())
+        self.start()
 
         with gxgdb.GXdb.new( os.path.join(self.folder, 'new.gdb')) as gdb:
 
@@ -605,7 +600,7 @@ class Test(unittest.TestCase):
             self.assertEqual(d.shape[1],imageIn.shape[2])
 
     def test_details(self):
-        self.start(gsys.func_name())
+        self.start()
 
         with gxgdb.GXdb.open(self.gdb_name) as gdb:
 

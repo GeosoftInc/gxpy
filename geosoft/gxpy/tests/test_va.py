@@ -8,22 +8,12 @@ import geosoft.gxpy.system as gsys
 import geosoft.gxpy.va as gxva
 import geosoft.gxpy.utility as gxu
 
-class Test(unittest.TestCase):
+from geosoft.gxpy.tests import GXPYTest
 
-    @classmethod
-    def setUpClass(cls):
-        cls.gxp = gx.GXpy(log=print)
 
-    @classmethod
-    def tearDownClass(cls):
-        pass
-
-    @classmethod
-    def start(cls,test):
-        cls.gxp.log("*** {} > {}".format(os.path.split(__file__)[1], test))
-
+class Test(GXPYTest):
     def test_va(self):
-        self.start(gsys.func_name())
+        self.start()
 
         self.assertEqual(gxva.__version__, geosoft.__version__)
 
@@ -47,7 +37,7 @@ class Test(unittest.TestCase):
             self.assertEqual(va.gxtype, gxu.gx_dtype(np.float))
 
     def test_exceptions(self):
-        self.start(gsys.func_name())
+        self.start()
 
         self.assertRaises(gxva.VAException, gxva.GXva,
                           np.array([["bones", "queens", "geology"], ["a", "b", "c"]]))
@@ -65,7 +55,7 @@ class Test(unittest.TestCase):
             self.assertRaises(gxva.VAException, va.set_np, np.array(range(3)))
 
     def test_np(self):
-        self.start(gsys.func_name())
+        self.start()
 
         fid = (99,0.1)
         npdata = np.array(range(45)).reshape((9,5))
@@ -130,7 +120,7 @@ class Test(unittest.TestCase):
             self.assertEqual(np3[1,15], 31)
 
     def test_strings(self):
-        self.start(gsys.func_name())
+        self.start()
 
         fidva = (99,0.1)
         npdata = np.array(["name","maki","neil","macleod"]).reshape(2,2)

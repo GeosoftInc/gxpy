@@ -9,22 +9,12 @@ import geosoft.gxpy.system as gsys
 import geosoft.gxpy.vv as gxvv
 import geosoft.gxpy.utility as gxu
 
-class Test(unittest.TestCase):
+from geosoft.gxpy.tests import GXPYTest
 
-    @classmethod
-    def setUpClass(cls):
-        cls.gxp = gx.GXpy(log=print)
 
-    @classmethod
-    def tearDownClass(cls):
-        pass
-
-    @classmethod
-    def start(cls,test):
-        cls.gxp.log("*** {} > {}".format(os.path.split(__file__)[1], test))
-
+class Test(GXPYTest):
     def test_vv(self):
-        self.start(gsys.func_name())
+        self.start()
 
         self.assertEqual(gxvv.__version__, geosoft.__version__)
 
@@ -57,7 +47,7 @@ class Test(unittest.TestCase):
             self.assertEqual(vv.gxtype, gxu.gx_dtype(np.int64))
 
     def test_np(self):
-        self.start(gsys.func_name())
+        self.start()
 
         fid = (99,0.1)
         npdata = np.array([1,2,3,4,5,6,7])
@@ -121,7 +111,7 @@ class Test(unittest.TestCase):
         self.assertEqual(np3[3], -70.)
 
     def test_strings(self):
-        self.start(gsys.func_name())
+        self.start()
 
         fidvv = (99,0.1)
         npdata = np.array(["name", "maki", "neil", "rider"])
@@ -183,7 +173,7 @@ class Test(unittest.TestCase):
             self.assertEqual(npd[3], "-87.66662")
 
     def test_list(self):
-        self.start(gsys.func_name())
+        self.start()
 
         l = [1, 2, 3]
         with gxvv.GXvv(l) as vv:
@@ -196,7 +186,7 @@ class Test(unittest.TestCase):
             self.assertEqual(vv.list(), l)
 
     def test_string(self):
-        self.start(gsys.func_name())
+        self.start()
 
         l = [1, 2, 3]
         with gxvv.GXvv(l, dtype='U45') as vv:
