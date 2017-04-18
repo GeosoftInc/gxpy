@@ -313,7 +313,6 @@ class Test(unittest.TestCase, GXPYTest):
 
         self.crc_map(map_file)
 
-    # Complete TODO in GXPYTest._agnosticize_and_ensure_consistent_line_endings
     def test_zone_grid(self):
         Test.start(self, gsys.func_name())
 
@@ -625,6 +624,39 @@ class Test(unittest.TestCase, GXPYTest):
                     self.assertTrue(g.visible)
                     g.visible = False
                     self.assertFalse(g.visible)
+
+    def test_graticule(self):
+        Test.start(self, gsys.func_name())
+
+        test_map = os.path.join(self.gx.temp_folder(), "test")
+        with gxmap.GXmap.new(test_map, overwrite=True) as map:
+            map_file = map.file_name
+            map.delete_view('data')
+
+            with gxv.GXview(map, "my_data_1", map_location=(2, 3), area=(0, 0, 1000, 1500), scale=10000) as v:
+                with gxg.GXdraw(v, 'line') as g:
+                    g.xy_rectangle(v.extent_clip,
+                                   pen=g.new_pen(line_thick=5, line_color='G'))
+
+                    g.graticule(style=gxg.GRATICULE_LINE, pen=g.new_pen(line_thick=5))
+                ex1 = v.extent_group('line', unit=gxv.UNIT_MAP)
+
+            with gxv.GXview(map, "my_data_2", map_location=(15, 3), area=(0, 0, 1000, 1500), scale=10000) as v:
+                with gxg.GXdraw(v, 'line') as g:
+                    g.xy_rectangle(v.extent_clip,
+                                   pen=g.new_pen(line_thick=5, line_color='G'))
+
+                    g.graticule(style=gxg.GRATICULE_DOT, pen=g.new_pen(line_thick=5))
+                ex2 = v.extent_group('line', unit=gxv.UNIT_MAP)
+
+            area = (min(ex1[0], ex2[0])/10.0 - 2, max(ex1[1], ex2[1])/10.0 - 2,
+                    max(ex1[2], ex2[2])/10.0 + 2, max(ex1[3], ex2[3])/10.0 + 2)
+            with gxv.GXview(map, "my_base_view", area=area, scale=100.0) as v:
+                with gxg.GXdraw(v, 'base_edge') as g:
+                    g.xy_rectangle(v.extent_clip, pen=g.new_pen(line_thick=0.1, line_color='R'))
+            map.delete_view('base')
+
+        self.crc_map(map_file)
 
 if __name__ == '__main__':
     unittest.main()

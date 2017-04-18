@@ -41,8 +41,8 @@ class Test(unittest.TestCase):
         self.start(gsys.func_name())
 
         with gxgdb.GXdb.open(self.gdb_name) as gdb:
-            self.assertEqual(gdb.file_name(),self.gdb_name)
-            self.assertEqual(str(gdb),os.path.basename(self.gdb_name))
+            self.assertEqual(gdb.file_name().lower(),self.gdb_name.lower())
+            self.assertEqual(str(gdb).lower(),os.path.basename(self.gdb_name).lower())
             self.assertTrue(len(gdb.list_channels())>=6)
             self.assertTrue('X' in gdb.list_channels())
             self.assertTrue('dx' in gdb.list_channels(chan=gxgdb.CHAN_ALL))
@@ -84,8 +84,8 @@ class Test(unittest.TestCase):
 
         with gxgdb.GXdb.open(self.gdb_name) as gdb:
             
-            self.assertEqual(gdb.file_name(),self.gdb_name)
-            self.assertEqual(str(gdb),os.path.basename(self.gdb_name))
+            self.assertEqual(gdb.file_name().lower(),self.gdb_name.lower())
+            self.assertEqual(str(gdb).lower(),os.path.basename(self.gdb_name).lower())
             data, ch, fid = gdb.read_line('D578625')
             self.assertEqual(data.shape, (832, 8))
     

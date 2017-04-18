@@ -609,8 +609,8 @@ class Test(unittest.TestCase, GXPYTest):
         self.crc_map(mapfile)
         gxmap.delete_files(mapfile)
 
-    #TODO - JB to fix test framework to pass tests like this
-    @unittest.skip("test fail due to temp file use - JB to correct in testing framework")
+    #TODO - Relies on GXmap.agg_legend which is top be removed (see TODO there)
+    @unittest.skip("Failing due to legend_color_bar refactor")
     def test_color_bar(self):
         Test.start(self, gsys.func_name())
 

@@ -2,6 +2,9 @@ import os
 import shutil
 import glob
 
+os.environ['GEOSOFT_TEST_MODE'] = '1'
+os.environ['GEOSOFT_TESTSYSTEM_MODE'] = '1'
+
 import geosoft.gxpy.gx as gx
 import geosoft.gxapi as gxapi
 import geosoft.gxpy.map as gxmap
@@ -10,7 +13,7 @@ import geosoft.gxpy.utility as gxu
 import geosoft.gxpy.system as gxsys
 
 # set to True to update all results
-UPDATE_ALL_RESULTS = True
+UPDATE_ALL_RESULTS = False
 
 # set to true to only update the first test.
 UPDATE_ONE_TEST = True
@@ -28,8 +31,6 @@ class GXPYTest(object):
         # These 2 variables ensure consistent test results (rendering, date/times, usernames in lineage etc.)
         # This works for single test or suites run from within IDEs but when the entire suite is run it
         # helps to ensure these environment variables are set prior to starting the Python process
-        os.environ['GEOSOFT_TEST_MODE'] = '1'
-        os.environ['GEOSOFT_TESTSYSTEM_MODE'] = '1'
         sub_class.gx = gx.GXpy(log=print, parent_window=-1, max_warnings=8)
         sub_class.gx.temp_folder()
         os.chdir(os.path.dirname(os.path.realpath(test_py_file)))
@@ -40,18 +41,42 @@ class GXPYTest(object):
         del sub_class.gx
 
     @classmethod
-    def _map_to_xml_and_bmp(cls, map_file, xml_file, bmp_file, pix_width):
+    def _remove_time_chunk_from_png(cls, png_file):
+        file_length = os.stat(png_file).st_size
+        with open(png_file, 'rb') as f:
+            bytes = f.read(file_length)
+        with open(png_file, 'wb') as f:
+            f.write(bytes[:8])
+
+            pos = 8
+            while pos < len(bytes):
+                buf_length = bytes[pos:pos+4]
+                length = buf_length[0] * 256 * 256 * 256 + \
+                         buf_length[1] * 256 * 256 + \
+                         buf_length[2] * 256 + buf_length[3]
+                buf_type = bytes[pos+4:pos+12]
+                chunk_type = buf_type.decode('ascii', 'ignore')
+                if not (chunk_type.startswith('tIME') or chunk_type.startswith('tEXtdate')):
+                    f.write(bytes[pos:pos+length+12])
+                pos = pos + length + 12
+
+    @classmethod
+    def _map_to_xml_and_image(cls, map_file, xml_file, image_file, format, pix_width):
         m = gxapi.GXMAP.create(map_file, gxmap.WRITE_OLD)
-        m.export_all_raster(bmp_file, '',
+        m.export_all_raster(image_file, '',
                             pix_width, 0, gxapi.rDUMMY,
                             gxapi.MAP_EXPORT_BITS_24,
                             gxapi.MAP_EXPORT_METHOD_NONE,
-                            'BMP', '')
+                            format, '')
+
+        if format == 'PNG':
+            GXPYTest._remove_time_chunk_from_png(image_file)
+
         crc = gxapi.int_ref()
         m.crc_map(crc, xml_file)
         try:
-            os.remove(bmp_file + '.gi')
-            os.remove(bmp_file + '.xml')
+            os.remove(image_file + '.gi')
+            os.remove(image_file + '.xml')
         except FileNotFoundError:
             pass
 
@@ -90,7 +115,7 @@ class GXPYTest(object):
                 f.write('{}\r\n'.format(line).encode('UTF-8'))
 
 
-    def crc_map(self, map_file, *, pix_width=1024, update_result=False, alt_crc_name=None):
+    def crc_map(self, map_file, *, format='PNG', pix_width=2048, update_result=False, alt_crc_name=None):
         """ 
         Run Geosoft crc testing protocol on Geosoft maps.
         
@@ -118,9 +143,9 @@ class GXPYTest(object):
             os.makedirs(master_dir)
 
         file_part = os.path.split(map_file)[1]
-        bmp_result_file = os.path.join(result_dir, "{}.bmp".format(file_part))
+        image_result_file = os.path.join(result_dir, "{}.png".format(file_part))
         xml_result_file = os.path.join(result_dir, "{}.xml".format(file_part))
-        GXPYTest._map_to_xml_and_bmp(map_file, xml_result_file, bmp_result_file, pix_width)
+        GXPYTest._map_to_xml_and_image(map_file, xml_result_file, image_result_file, format, pix_width)
 
         file_name_part = file_part.split('.')[0]
 
@@ -135,10 +160,10 @@ class GXPYTest(object):
 
         if alt_crc_name:
             alt_file_part = file_part.replace(file_name_part, alt_crc_name)
-            alt_bmp_result_file = os.path.join(result_dir, "{}.bmp".format(alt_file_part))
+            alt_image_result_file = os.path.join(result_dir, "{}.png".format(alt_file_part))
             alt_xml_result_file = os.path.join(result_dir, "{}.xml".format(alt_file_part))
 
-            shutil.move(bmp_result_file, alt_bmp_result_file)
+            shutil.move(image_result_file, alt_image_result_file)
 
             result_files = glob.glob(xml_result_file + '*')
             for result in result_files:
@@ -146,25 +171,25 @@ class GXPYTest(object):
                 alt_result = os.path.join(result_dir, result_file_part.replace(file_name_part, alt_crc_name))
                 shutil.move(result, alt_result)
 
-            bmp_result_file = alt_bmp_result_file
+            image_result_file = alt_image_result_file
             xml_result_file = alt_xml_result_file
-            bmp_master_file = os.path.join(master_dir, "{}.bmp".format(alt_file_part))
+            image_master_file = os.path.join(master_dir, "{}.png".format(alt_file_part))
             xml_master_file = os.path.join(master_dir, "{}.xml".format(alt_file_part))
         else:
-            bmp_master_file = os.path.join(master_dir, "{}.bmp".format(file_part))
+            image_master_file = os.path.join(master_dir, "{}.png".format(file_part))
             xml_master_file = os.path.join(master_dir, "{}.xml".format(file_part))
 
         xml_result_part = os.path.join('result', os.path.split(xml_result_file)[1])
         xml_master_part = os.path.join('master', os.path.split(xml_master_file)[1])
         xml_result_files = glob.glob(xml_result_file + '*')
         if update_result or (UPDATE_ALL_RESULTS or UPDATE_ONE_TEST):
-            shutil.copyfile(bmp_result_file, bmp_master_file)
+            shutil.copyfile(image_result_file, image_master_file)
             for xml_result in xml_result_files:
                 if not xml_result.endswith('.catalog.xml'):
                     xml_master = xml_result.replace(xml_result_part, xml_master_part)
                     shutil.copyfile(xml_result, xml_master)
         else:
-            report = GXPYTest.report_mismatch_files(bmp_result_file, bmp_master_file)
+            report = GXPYTest.report_mismatch_files(image_result_file, image_master_file)
             for xml_result in xml_result_files:
                 if not xml_result.endswith('.catalog.xml'):
                     xml_master = xml_result.replace(xml_result_part, xml_master_part)
