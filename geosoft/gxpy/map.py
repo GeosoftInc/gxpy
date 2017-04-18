@@ -1073,50 +1073,10 @@ class GXmap:
         finally:
             self.current_data_view = current_view
 
-    #TODO remove once we have ability to get an agg out of a view group
-    def agg_legend(self,
-                   view_name='*data',
-                   agg_name=None,
-                   **kwargs):
-        """
-        Draw an aggregate legend.
-
-        :param view_name:           view name, default is '*data'
-        :param agg_name:            aggregate name, default is the first aggregate found
-
-        .. versionadded:: 9.2
-        """
-
-        def layers_in_agg(view, agg_name):
-            layers = []
-            for val in self.aggregate_list(1):
-                if val[:val.index('\\')] == view:
-                    al = val[val.index('\\') + 1:]
-                    if agg_name is None:
-                        agg_name = al[:al.index('\\')]
-                    if al[:al.index('\\')] == agg_name:
-                        layers.append(val)
-
-            layers.sort()
-            return layers, agg_name
-
-        view_name = self.classview(view_name)
-        layers, agg_name = layers_in_agg(view_name, agg_name)
-        if not layers:
-            return
-
-        itr1 = gxapi.GXITR.create_map(self.gxmap, layers[0])
-        if len(layers) >= 2:
-            itr2 = gxapi.GXITR.create_map(self.gxmap, layers[1])
-        else:
-            itr2 = gxapi.GXITR.null()
-
-        with gxv.GXview(self, view_name) as v:
-            with gxg.GXdraw(v, 'COLORBAR_' + agg_name) as g:
-                g.legend_color_bar(itr1, itr2, **kwargs)
-
 
 class _Mapplot:
+    """Internal class to marshall MAPPLOT commands that support basic map annotations."""
+
     def __enter__(self):
         return self
 
