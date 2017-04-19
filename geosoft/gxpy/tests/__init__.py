@@ -20,7 +20,7 @@ UPDATE_ALL_RESULTS = False
 UPDATE_ONE_TEST = False
 
 # set to True to show viewer for each CRC call
-SHOW_TEST_VIEWERS = True #SPRINGBOK#
+SHOW_TEST_VIEWERS = False
 
 
 class GXPYTest(unittest.TestCase):
