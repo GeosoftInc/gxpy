@@ -7,7 +7,7 @@ and a Geosoft database.
 '''
 
 import geosoft.gxpy as gxpy
-import geosoft.gxpy.om as gxom
+import geosoft.gxpy.project as gxprj
 import geosoft.gxpy.utility as gxu
 
 
@@ -25,11 +25,11 @@ def rungx():
     parms = gxu.get_parameters(group, {p_chan: '', p_addval: 0.0})
 
     # if interactive, get user input
-    if not gxom.running_script():
+    if not gxprj.running_script():
 
         try:
             # get channel to process from list of database channels
-            chan = gxom.get_user_input(
+            chan = gxprj.get_user_input(
                     'Channel to process',
                     'Channel:',
                     kind='list',
@@ -37,12 +37,12 @@ def rungx():
                     items=sorted([k for k in db.list_channels().keys()]))
 
             # value to add to the channel
-            addval = gxom.get_user_input(
+            addval = gxprj.get_user_input(
                     'Value to add to the data',
                     'value to add:',
                     kind='float',
                     default=parms.get(p_addval))
-        except gxom.OMException:
+        except gxprj.ProjectException:
             exit()
 
         # save parameters to new user settings

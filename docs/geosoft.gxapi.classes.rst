@@ -5,11 +5,11 @@ These are the low-level library classes and functions that make up the GX API.
 
 .. toctree::
 
+   GXGEOSOFT
    GX3DN
    GX3DV
    GXACQUIRE
    GXAGG
-   GXAPIError
    GXARCDB
    GXARCDH
    GXARCMAP
@@ -19,8 +19,6 @@ These are the low-level library classes and functions that make up the GX API.
    GXCHIMERA
    GXCOM
    GXCSYMB
-   GXCancel
-   GXContext
    GXDAT
    GXDATALINKD
    GXDATAMINE
@@ -41,8 +39,6 @@ These are the low-level library classes and functions that make up the GX API.
    GXEUL3
    GXEXP
    GXEXT
-   GXError
-   GXExit
    GXFFT
    GXFFT2
    GXFLT
@@ -127,7 +123,3 @@ These are the low-level library classes and functions that make up the GX API.
    GXVVEXP
    GXVVU
    GXWA
-   bool_ref
-   float_ref
-   int_ref
-   str_ref

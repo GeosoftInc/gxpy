@@ -24,11 +24,22 @@ class GXvv():
     '''
     VV class wrapper.
 
-    :param array:   array-like, None to create an empty VV
-    :param dtype:   numpy data type.  For unicode strings 'U#', where # is a string length. If not specified
-                    the type is taken from first element in array, of if no array the default is 'float'.
-    :param fid:     fid tuple (start,increment), default (0.0,1.0)
-    :constructor vv_np:  create from a numpy array
+    :param array:       array-like, None to create an empty VV
+    :param dtype:       numpy data type.  For unicode strings 'U#', where # is a string length. If not specified
+                        the type is taken from first element in array, of if no array the default is 'float'.
+    :param fid:         (start, increment) fiducial
+    
+    :constructors:
+     
+        ``GXvv.vv_np`` create from a numpy array
+        
+    :properties:
+    
+        ``vv``          gxapi.GXvv instance
+        ``fid``         (start, increment) fiducial
+        ``length``      number of elements in the VV
+        ``gxtype``      GX data type
+        ``dtype``       numpy data type
 
     .. versionchanged:: 9.2
         allow construction directly from arrays
@@ -69,6 +80,10 @@ class GXvv():
                 ne = array.shape[0]
                 for i in range(ne):
                     self._vv.set_string(i, str(array[i]))
+
+    @property
+    def gxvv(self):
+        return self._vv
 
     @property
     def fid(self):

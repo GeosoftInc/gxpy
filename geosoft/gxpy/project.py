@@ -7,7 +7,8 @@
 import os
 import geosoft
 import geosoft.gxapi as gxapi
-from .utility import dict_from_lst
+from .utility import dict_from_lst, dummy_none
+from . import vv as gxvv
 
 __version__ = geosoft.__version__
 
@@ -16,7 +17,7 @@ def _t(s):
     return s
 
 
-class OMException(Exception):
+class ProjectException(Exception):
     """
     Exceptions from this module.
 
@@ -34,6 +35,58 @@ def running_script():
     """
 
     return not gxapi.GXSYS.interactive()
+
+class GXproject:
+
+    def __init__(self):
+
+        def list_docs(dtype):
+            gxapi.GXPROJ.list_documents(vv.gxvv, dtype)
+            return vv.list()
+
+        vv = gxvv.GXvv(None, 'U2048')
+        s = gxapi.str_ref()
+
+        gxapi.GXPROJ.get_name(s)
+        self.project_file = os.path.normpath(s.value)
+        self.name = os.path.basename(self.project_file).split('.')[0]
+
+        self.project_databases = list_docs('Database')
+        self.project_grids = list_docs('Grid')
+        self.project_maps = list_docs('Map')
+        self.project_3dv = list_docs('3DView')
+        self.project_voxels = list_docs('Voxel')
+        self.project_voxi_models = list_docs('VoxelInversion')
+        self.project_gmsys_3d = list_docs('GMS3D')
+        self.project_gmsys_2d = list_docs('GMS2D')
+
+        return
+
+        #TODO refactor once we have the open docs methods (JB)
+        if self.project_databases:
+            edb = gxapi.GXEDB.current_no_activate()
+            edb.get_name(s)
+            self.current_database = os.path.normpath(s.value)
+        else:
+            self.current_database = None
+        if self.project_maps:
+            emap = gxapi.GXEMAP.current_no_activate()
+            emap.get_name(s)
+            self.current_map = os.path.normpath(s.value)
+        else:
+            self.current_map = None
+        if self.project_voxels:
+            emap = gxapi.GXEDOC.current_no_activate(gxapi.EDOC_TYPE_VOXEL)
+            emap.get_name(s)
+            self.current_voxel = os.path.normpath(s.value)
+        else:
+            self.current_voxel = None
+        if self.project_voxels:
+            emap = gxapi.GXEDOC.current_no_activate(gxapi.EDOC_TYPE_VOXEL_INVERSION)
+            emap.get_name(s)
+            self.current_voxi_model = os.path.normpath(s.value)
+        else:
+            self.current_voxi_model = None
 
 
 def user_message(title, message):
@@ -170,7 +223,7 @@ def get_user_input(title="Input required...", prompt='?', kind='string', default
                 return strr.value.split('|')
             return strr.value
 
-        raise OMException(_t('GX Error ({})').format(ret))
+        raise ProjectException(_t('GX Error ({})').format(ret))
 
     finally:
         gxapi.GXSYS.filter_parm_group("USER_INPUT", 0)
@@ -202,7 +255,6 @@ def menus():
             'menu_user': list(dict_from_lst(user_menus).keys())}
 
     return info
-
 
 def state():
     """
@@ -237,12 +289,6 @@ def state():
     """
 
     #TODO refactor to always have a 3D location for gdb and maps
-
-    def dummy_none(v):
-        if v == gxapi.rDUMMY:
-            return None
-        else:
-            return v
 
     s = gxapi.str_ref()
     glst = gxapi.GXLST.create(4096)

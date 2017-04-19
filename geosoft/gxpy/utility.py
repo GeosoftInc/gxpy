@@ -452,6 +452,18 @@ def gx_dummy(dtype):
         if s[0] == 'U' or s[1] == 'U':
             return ''
 
+def dummy_none(v):
+    """ 
+    Returns None if dummy, otherwise the value.
+    
+    .. versionadded:: 9.2
+    """
+
+    dummy = gx_dummy(np.dtype(type(v)))
+    if v == dummy:
+        return None
+    else:
+        return v
 
 def dummy_mask(npd):
     """

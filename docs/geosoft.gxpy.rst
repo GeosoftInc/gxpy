@@ -20,7 +20,7 @@ Submodules
     geosoft.gxpy.group
     geosoft.gxpy.gx
     geosoft.gxpy.map
-    geosoft.gxpy.om
+    geosoft.gxpy.project
     geosoft.gxpy.system
     geosoft.gxpy.utility
     geosoft.gxpy.va

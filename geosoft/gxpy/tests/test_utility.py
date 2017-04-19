@@ -36,6 +36,11 @@ class Test(GXPYTest):
         self.assertEqual(gxu.gx_dummy(np.str_), '')
         self.assertEqual(gxu.gx_dummy('U48'), '')
 
+        self.assertEqual(gxu.dummy_none(0), 0)
+        self.assertEqual(gxu.dummy_none(1.), 1.)
+        self.assertEqual(gxu.dummy_none(gxapi.iDUMMY), None)
+        self.assertEqual(gxu.dummy_none(gxapi.rDUMMY), None)
+
         self.assertTrue(gxu.is_float(gxu.gx_dtype('float')))
         self.assertFalse(gxu.is_int(gxu.gx_dtype('float')))
         self.assertTrue(gxu.is_int(gxu.gx_dtype('uint64')))

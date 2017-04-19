@@ -3,7 +3,8 @@
 version constant
 ----------------
 
-.. autoattribute:: geosoft.gxapi.version
+#TODO - this is not how we manage version numbers, check with JB
+#.. autoattribute:: geosoft.gxapi.version
 
 
 .. _CRC_INIT_VALUE:

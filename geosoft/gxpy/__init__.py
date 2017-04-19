@@ -1,7 +1,7 @@
 __all__ = ['system',
            'gx',
            'dataframe',
-           'om',
+           'project',
            'utility',
            'vv',
            'va',
@@ -20,7 +20,7 @@ MAX_LST = 4096  #: maximum Geosoft LST entry size
 from . import system
 from . import gx
 from . import dataframe
-from . import om
+from . import project
 from . import utility
 from . import vv
 from . import va
