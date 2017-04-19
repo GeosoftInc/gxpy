@@ -1,7 +1,6 @@
 
 import os
 import sys
-import atexit
 import math
 import numpy as np
 
@@ -220,7 +219,6 @@ class GXdb:
         self._db = None
         self._edb = None
 
-        atexit.register(self._close, pop=False)
         self._open = gx.track_resource(self.__class__.__name__, self._filename)
 
 

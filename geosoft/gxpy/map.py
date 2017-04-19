@@ -1,5 +1,4 @@
 import os
-import atexit
 from math import ceil
 
 import geosoft
@@ -8,7 +7,6 @@ from . import gx as gx
 from . import utility as gxu
 from . import dataframe as gxdf
 from . import view as gxv
-from . import geometry as gxgm
 from . import group as gxg
 
 __version__ = geosoft.__version__
@@ -226,7 +224,6 @@ class GXmap:
         self._annotation_outer_edge = 0.0
         self.gxmap = gxapi.GXMAP.create(self.file_name, mode)
 
-        atexit.register(self._close, pop=False)
         self._open = gx.track_resource(self.__class__.__name__, self._file_name)
 
     def _close(self, pop=True):
@@ -1108,7 +1105,6 @@ class _Mapplot:
         self._maplfile = open(self._maplfile_name, "w")
         self._annotation_outer_edge = 0.0
 
-        atexit.register(self._process, pop=False)
         self._open = gx.track_resource(self.__class__.__name__, self._maplfile_name)
 
         self.define_named_attribute()

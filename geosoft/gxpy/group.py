@@ -1,4 +1,3 @@
-import atexit
 from functools import wraps
 import threading
 
@@ -195,7 +194,8 @@ class GXgroup:
                 self._pen = None
                 self._text_def = None
             finally:
-                self.view.lock = False
+                self._view.lock = False
+                self._view = None
                 self._open = False
 
     def __repr__(self):
@@ -233,7 +233,6 @@ class GXgroup:
         self._mode = mode
         self._view.gxview.start_group(name, mode)
 
-        atexit.register(self._close)
         self._open = True
 
     def close(self):

@@ -10,9 +10,8 @@ class Test(unittest.TestCase):
     def test_gxpy(self):
         with gx.GXpy(log=print) as gxc:
             self.assertTrue(gxc.gid.find('@') > 0)
-            # TODO If another tests inits main wind ID this could be set (but it should be cleared after), investigate
-            # self.assertEqual(gxc.main_wind_id(),0)
-            # self.assertEqual(gxc.active_wind_id(), 0)
+            self.assertEqual(gxc.main_wind_id(),0)
+            self.assertEqual(gxc.active_wind_id(), 0)
             self.assertEqual(gx.__version__, geosoft.__version__)
 
     def test_env(self):

@@ -1,4 +1,3 @@
-import atexit
 import os
 from functools import wraps
 
@@ -128,8 +127,6 @@ class GXview:
         self.gxview = gxapi.GXMVIEW.create(self._map.gxmap, self._name, mode)
         self._mode = mode
         self._lock = None
-
-        atexit.register(self._close)
         self._open = True
 
         if mode == WRITE_NEW:

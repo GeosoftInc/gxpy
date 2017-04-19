@@ -51,7 +51,7 @@ class GXvv():
         return self
 
     def __exit__(self, type, value, traceback):
-        pass
+        self._vv = None
 
     def __init__(self, array=None, dtype=None, fid=(0.0, 1.0)):
 

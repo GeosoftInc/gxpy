@@ -40,7 +40,7 @@ class GXva():
         return self
 
     def __exit__(self, type, value, traceback):
-        pass
+        self._va = None
 
     def __init__(self, array=None, width=None, dtype=None, fid=(0.0, 1.0)):
 
