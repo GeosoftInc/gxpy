@@ -31,7 +31,7 @@ def _verify_no_gx_context():
         loc_gx = None
         pass
     if loc_gx is not None:
-        raise Exception("We still have a GXContext!")
+        raise Exception("We have a GXContext but should not!")
 
 
 class GXPYTest(unittest.TestCase):
@@ -41,11 +41,14 @@ class GXPYTest(unittest.TestCase):
     @classmethod
     def setUpGXPYTest(cls, res_stack=6):
         os.chdir(os.path.dirname(os.path.realpath(__file__)))
-        cls._gx = gx.GXpy(log=print, res_stack=res_stack, parent_window=-1, max_warnings=8)
+        _verify_no_gx_context()
+        parent_window = -1 if SHOW_TEST_VIEWERS else 0
+        cls._gx = gx.GXpy(log=print, res_stack=res_stack, parent_window=parent_window, max_warnings=8)
 
     @classmethod
     def tearDownGXPYTest(cls):
-        cls._gx._close()
+        if cls._gx:
+            cls._gx._close()
         cls._gx = None
         _verify_no_gx_context()
 
@@ -102,8 +105,6 @@ class GXPYTest(unittest.TestCase):
                 pos = pos + length + 12
 
     def _map_to_results(self, map_file, xml_file, image_file, map_result, format, pix_width):
-        print(self.id())
-        print('CRC:{}'.format(map_file))
         m = gxapi.GXMAP.create(map_file, gxmap.WRITE_OLD)
         m_res = gxapi.GXMAP.create(map_result, gxmap.WRITE_NEW)
         m.dup_map(m_res, gxapi.DUPMAP_COPY)

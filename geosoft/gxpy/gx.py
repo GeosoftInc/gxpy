@@ -195,6 +195,7 @@ class GXpy(_Singleton):
                 self._logf.close()
 
             atexit.unregister(self._close)
+            self.tkframe = None
             self.gxapi = None
             self._sr = None
             del self.license_class
