@@ -3,6 +3,7 @@ import shutil
 import glob
 import unittest
 import inspect
+import subprocess
 
 os.environ['GEOSOFT_TEST_MODE'] = '1'
 os.environ['GEOSOFT_TESTSYSTEM_MODE'] = '1'
@@ -14,11 +15,8 @@ import geosoft.gxpy.viewer as gxvwr
 import geosoft.gxpy.utility as gxu
 import geosoft.gxpy.system as gxsys
 
-# set to True to update all results
-UPDATE_ALL_RESULTS = False
-
-# set to true to only update the first test.
-UPDATE_ONE_TEST = False
+# set to True to see master versus results in diff tool (GXPY_DIFF_TOOL env needs to be defined)
+DIFF_RESULTS = True
 
 # set to True to show viewer for each CRC call
 SHOW_TEST_VIEWERS = False
@@ -67,6 +65,10 @@ class GXPYTest(unittest.TestCase):
         file = os.path.split(inspect.getfile(self.__class__))[1]
         func = self.id().split('.')[-1]
         self._result_dir = os.path.join('results', file, func)
+        result_run_dir = os.path.join(self._result_dir, 'result')
+        if os.path.exists(result_run_dir):
+            shutil.rmtree(result_run_dir)
+
         self.gx.log("*** {} > {}".format(file, func))
 
     @property
@@ -82,8 +84,6 @@ class GXPYTest(unittest.TestCase):
     def result_dir(self, value):
         # Do something if you want
         self._result_dir = value
-        if self._result_dir and (UPDATE_ALL_RESULTS or UPDATE_ONE_TEST) and os.path.exists(self._result_dir):
-            shutil.rmtree(self._result_dir)
 
 
     @classmethod
@@ -132,7 +132,7 @@ class GXPYTest(unittest.TestCase):
             pass
 
     @classmethod
-    def report_mismatch_files(cls, result, master):
+    def _report_mismatch_files(cls, result, master):
         if not os.path.exists(result):
             return '{} does not exist\r\n'.format(result)
         if not os.path.exists(master):
@@ -142,7 +142,18 @@ class GXPYTest(unittest.TestCase):
         else:
             return ''
 
-    def _agnosticize_and_ensure_consistent_line_endings(self, xml_file, replacement_dict):
+    @classmethod
+    def _report_master_files_not_in_results(cls, xml_master_files, xml_result_files):
+        report = ''
+        xml_result_file_names = [os.path.split(f)[1] for f in xml_result_files]
+        not_in_results = [f for f in xml_master_files if os.path.split(f)[1] not in xml_result_file_names]
+        for f in not_in_results:
+            report += '{} no longer exists in result dir\r\n'.format(f)
+        return report
+
+
+    @classmethod
+    def _agnosticize_and_ensure_consistent_line_endings(cls, xml_file, replacement_dict):
         with open(xml_file) as f:
             lines = f.read().splitlines()
 
@@ -154,19 +165,17 @@ class GXPYTest(unittest.TestCase):
                 f.write('{}\r\n'.format(line).encode('UTF-8'))
 
 
-    def crc_map(self, map_file, *, format='PNG', pix_width=2048, update_result=False, alt_crc_name=None):
+    def crc_map(self, map_file, *, format='PNG', pix_width=2048, diff_result=False, alt_crc_name=None):
         """ 
         Run Geosoft crc testing protocol on Geosoft maps.
         
         :param pix_width:       pixel width, increase if achieve higher fidelity in the bitmap test
-        :param update_result:   True to update the reference test to the current results
+        :param diff_result:     True to compare differences in diff tool 
         :param alt_crc_name:    test name.  The default is the name of the calling function.  The name
                                 must be unique within this test suite, which it will be if there is
                                 only one test per test function.  If you have more than one test in a single
                                 testing function use this parameter to create unique names.
         """
-
-        global UPDATE_ONE_TEST
 
         if SHOW_TEST_VIEWERS:
             if map_file.lower().endswith('.geosoft_3dv'):
@@ -184,8 +193,13 @@ class GXPYTest(unittest.TestCase):
         file_part = os.path.split(map_file)[1]
         image_result_file = os.path.join(result_dir, "{}.png".format(file_part))
         xml_result_file = os.path.join(result_dir, "{}.xml".format(file_part))
+
         map_result_file = os.path.join(result_dir, "{}".format(file_part))
         self._map_to_results(map_file, xml_result_file, image_result_file, map_result_file, format, pix_width)
+
+        xml_result_file_catalog = xml_result_file + '.catalog.xml'
+        if os.path.exists(xml_result_file_catalog):
+            os.remove(xml_result_file_catalog)
 
         file_name_part = file_part.split('.')[0]
 
@@ -226,21 +240,22 @@ class GXPYTest(unittest.TestCase):
 
         xml_result_part = os.path.join('result', os.path.split(xml_result_file)[1])
         xml_master_part = os.path.join('master', os.path.split(xml_master_file)[1])
-        xml_result_files = glob.glob(xml_result_file + '*')
-        if update_result or (UPDATE_ALL_RESULTS or UPDATE_ONE_TEST):
-            shutil.copyfile(image_result_file, image_master_file)
-            shutil.copyfile(map_result_file, map_master_file)
-            for xml_result in xml_result_files:
-                if not xml_result.endswith('.catalog.xml'):
-                    xml_master = xml_result.replace(xml_result_part, xml_master_part)
-                    shutil.copyfile(xml_result, xml_master)
-        else:
-            report = GXPYTest.report_mismatch_files(image_result_file, image_master_file)
-            for xml_result in xml_result_files:
-                if not xml_result.endswith('.catalog.xml'):
-                    xml_master = xml_result.replace(xml_result_part, xml_master_part)
-                    report += GXPYTest.report_mismatch_files(xml_result, xml_master)
-            if len(report) > 0:
-                self.fail(report)
+        xml_result_files = glob.glob(map_result_file + '*')
+        xml_master_files = glob.glob(map_master_file + '*')
 
-        UPDATE_ONE_TEST = False
+        report = self._report_mismatch_files(image_result_file, image_master_file)
+        report += self._report_master_files_not_in_results(xml_master_files, xml_result_files)
+
+        for xml_result in xml_result_files:
+            xml_master = xml_result.replace(xml_result_part, xml_master_part)
+            report += self._report_mismatch_files(xml_result, xml_master)
+
+        if len(report) > 0:
+            if DIFF_RESULTS or diff_result:
+                diff_tool = os.environ.get('GXPY_DIFF_TOOL', None)
+                if diff_tool:
+                    subprocess.run([diff_tool, result_dir, master_dir], timeout=60*10)
+            self.fail(report)
+
+
+
