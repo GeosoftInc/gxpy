@@ -1,34 +1,33 @@
 Geosoft GX API
 ==============
 
-The Geosoft GX API is exposed to python developers through the :code:`geosoft.gxapi` module.  The API includes the full set of
-low-level function calls that expose almost all Geosoft functionality to developer.
-
-GX API Reference
-----------------
-
-   :doc:`GX API Class/Library Reference... </geosoft.gxapi.classes>`
+The complete Geosoft GX API is exposed to python developers through the :doc:`geosoft.gxapi </geosoft.gxapi.classes>`
+module.  This includes all low-level classes and function calls that expose almost all Geosoft functionality to
+a developer.
 
 The GXContext class
 -------------------
 
+Before calling any other API function from a stand-alone script (a script that is not run as an extension from
+Geosoft Desktop), a GX Context must be created and held.  This can be done by creating an instance of
+:py:class:`.gxapi.GXContext` or an instance of :py:class:`.gxpy.gx.GXpy` which handles the details of
+``GXContext`` for you.  We recommend using :py:class:`.gxpy.gx.GXpy` unless you have chosen to work only with the
+low-level :py:mod:`gxapi`.
+
+Creating a GX context requires **Geosoft Desktop** installed on the target system, from which the
+library dll's are located and loaded. **Geosoft Desktop** can be downloaded from
+`Geosoft Downloads <https://my.geosoft.com/downloads>`_.
+
+It is possible to redirect the location of dlls used by setting the
+**GX_GEOSOFT_BIN_PATH** environment variable to point to the location of the Geosoft binary files.
+Refer to the `GX Developer Guide <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/overview>`_ for more
+information.
+
 .. autoclass:: geosoft.gxapi.GXContext
    :members:
 
-.. note::
-	There should be a single instance of this class constructed in a global location prior to using any other GX API
-	classes and their methods. By default the module will only function if an installed *Oasis montaj* product is found since
-	it loads the dlls that are shipped with *Oasis montaj* for the actual functionality.
+_sources/config.rst.txt
 
-	It is possible to redirect the location of dlls used by setting the :code:`GX_GEOSOFT_BIN_PATH` environment variable.
-	This can be done either using the normal *Windows* mechanisms (i.e. via :code:`set` command line or *Advanced System Settings->Environment Variables*)
-	or directly in Python code by using :code:`os.putenv("GX_GEOSOFT_BIN_PATH", ...)`. If your intention is to use the
-	public standalone API that is shipped with *GX Developer* then this should be set to wherever
-	the :code:`GeosoftFiles` redistributable folder is copied or installed.
-
-	The UI console functions are inteded for extension scripts or scripts running in Oasis montaj or other UI applications
-	and are launched with :func:`geosoft.gxapi.GXSYS.run_gx`. The GX execution engine will detect if it is not running
-	in a console and create a console for that can be shown or hidden by default with a setting. 
 
 
 Helper classes to pass immutable values by reference

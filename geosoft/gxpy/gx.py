@@ -1,6 +1,11 @@
-'''
+"""
 GX Context and related methods required for Geosoft Python.
-'''
+
+.. note::
+
+    Regression tests provide usage examples: `Tests <https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_gx.py>`_
+
+"""
 
 import tkinter.ttk as ttk
 import pprint
@@ -17,16 +22,19 @@ from . import system as gxs
 
 __version__ = geosoft.__version__
 
+
 def _t(s):
     return geosoft.gxpy.system.translate(s)
 
+
 class GXException(Exception):
-    '''
+    """
     Exceptions from this module.
 
     .. versionadded:: 9.1
-    '''
+    """
     pass
+
 
 class _Singleton:
     """
@@ -34,8 +42,10 @@ class _Singleton:
     See http://www.aleax.it/Python/5ep.html
     """
     _shared_state = {}
+
     def __init__(self):
         self.__dict__ = self._shared_state
+
 
 # global GX handle, None if not valid
 gx = None
@@ -44,6 +54,7 @@ _res_heap = {}
 _max_resource_heap = 1000000
 _stack_depth = 5
 _max_warnings = 10
+
 
 def track_resource(cl, info):
     global _res_id
@@ -56,23 +67,25 @@ def track_resource(cl, info):
             f = gxs.func_name(i + 2)
             if f is None:
                 break
-            rs += '<{}'.format(gxs.func_name(i+2))
+            rs += '<{}'.format(gxs.func_name(i + 2))
         rs += ' [{}]'.format(info)
         _res_heap[_res_id] = rs
         return _res_id
 
+
 def pop_resource(id):
     if len(_res_heap):
         try:
-            del(_res_heap[id])
+            del (_res_heap[id])
         except KeyError:
             pass
+
 
 GX_WARNING_FILE = '_gx_warning_'
 
 
 class GXpy(_Singleton):
-    '''
+    """
     Geosoft GX context.  This is a singleton class, so subsequent creation returns an instance
     identical to the initial creation. This also means that initialization arguments are ignored
     on a subsequent instantiation.
@@ -95,23 +108,33 @@ class GXpy(_Singleton):
         :res_stack:     Depth of the call-stack to report for open-resource warning.
         :max_warnings:  Maximum number of resource warnings to report.
 
-    :members:
-        :gxapi:         GX context to be used to call geosoft.gxapi methods
-        :gid:           User's Geosoft ID
-        :global gx:     Global reference to this singleton class instance, None if invalie.
+    :Properties:
+        :gxapi:             GX context to be used to call geosoft.gxapi methods
+        :gid:               User's Geosoft ID
+        :global gx:         Global reference to this singleton class instance, None if invalid.
+        :current_date:      date at start-up
+        :current_utc_date:  UTC date at start-up
+        :current_time:      time at start-up
+        :current_utc_time:  UTC time at start-up
+        :license_class:     Geosoft license class
+        :folder_workspace:  Geosoft workspace folder
+        :folder_temp:       Geosoft temporary folder
+        :folder_user:       Geosoft Desktop installation 'user' folder
 
     :raises:
         :GXException(): if unable to create context
 
     .. versionchanged:: 9.2
-        `parent_window=-1` creates a Tkinter frame as a parent.
 
-    .. versionchanged:: 9.2
+        `parent_window=-1` creates a Tkinter frame as a parent for scripts that call UI functions.
+
         Added `log` argument to support `log()`.
+
+        Made environment dictionary properties, deprecated environment.
 
     .. versionadded:: 9.1
 
-    '''
+    """
 
     def __repr__(self):
         return "{}({})".format(self.__class__, self.__dict__)
@@ -150,9 +173,10 @@ class GXpy(_Singleton):
                 i = 0
                 for s in _res_heap.values():
                     if i == _max_warnings:
-                        self.log(_t('    and there are {} more (change GXpy(max_warnings=) to see more)...'.format(len(_res_heap) - i)))
+                        self.log(_t('    and there are {} more (change GXpy(max_warnings=) to see more)...'.format(
+                            len(_res_heap) - i)))
                         break
-                    self.log('   ',s)
+                    self.log('   ', s)
                     i += 1
             if self._logf:
                 self._logf.close()
@@ -186,8 +210,8 @@ class GXpy(_Singleton):
                 try:
                     import pythoncom
                 except ImportError:
-                    raise ImportError(_t('Was unable to import the pythoncom module. It is needed for any GUI APIs to work within the Geosoft gxpy module.'))
-
+                    raise ImportError(_t(
+                        'Was unable to import the pythoncom module. It is needed for any GUI APIs to work within the Geosoft gxpy module.'))
 
             if parent_window == -1:
                 self.tkframe = ttk.Frame(master=None)
@@ -226,15 +250,14 @@ class GXpy(_Singleton):
                 else:
 
                     if len(log) == 0:
-
-                        dts = "{}-{}-{}({}_{}_{}_{})"\
+                        dts = "{}-{}-{}({}_{}_{}_{})" \
                             .format(self._start.year,
-                                                             str(self._start.month).zfill(2),
-                                                             str(self._start.day).zfill(2),
-                                                             str(self._start.hour).zfill(2),
-                                                             str(self._start.minute).zfill(2),
-                                                             str(self._start.second).zfill(2),
-                                                             str(self._start.microsecond//1000).zfill(3))
+                                    str(self._start.month).zfill(2),
+                                    str(self._start.day).zfill(2),
+                                    str(self._start.hour).zfill(2),
+                                    str(self._start.minute).zfill(2),
+                                    str(self._start.second).zfill(2),
+                                    str(self._start.microsecond // 1000).zfill(3))
                         log = "_gx_" + dts + ".log"
 
                     self._logf = open(log, "wb")
@@ -257,11 +280,23 @@ class GXpy(_Singleton):
             gx = self
             self.log('GX open')
 
+            # general properties
+            self.current_date = gxapi.GXSYS.date()
+            self.current_utc_date = gxapi.GXSYS.utc_date()
+            self.current_time = gxapi.GXSYS.time()
+            self.current_utc_time = gxapi.GXSYS.utc_time()
+            self.license_class = self.license_class()
+            self.folder_workspace = gxu.folder_workspace()
+            self.folder_temp = gxu.folder_temp()
+            self.folder_user = gxu.folder_user()
+
     def _remove_gx_temporary_folders(self):
         """ removes all GX temporary folders and """
+
         def file_error(fnc, path, excinfo):
             self.log(_t("error removing temporary file\n   \"{}\"\nfunction \"{}\"\nexception\"{}\"\n")
                      .format(path, str(fnc), str(excinfo)))
+
         for filename in os.listdir(gxu.folder_temp()):
             folder = os.path.join(gxu.folder_temp(), filename)
             if os.path.isdir(folder) and (len(filename) > 4) and (filename[:4] == '_gx_'):
@@ -285,11 +320,11 @@ class GXpy(_Singleton):
                 self._logf.write(logstr.encode('utf-8'))
 
     def main_wind_id(self):
-        '''
+        """
         :returns: The main window ID (HWND cast to unsigned for Windows).
 
         .. versionadded:: 9.1
-        '''
+        """
 
         if self.parent_window == 0:
             return self.gxapi.get_main_wnd_id()
@@ -297,68 +332,68 @@ class GXpy(_Singleton):
             return self.parent_window
 
     def active_wind_id(self):
-        '''
+        """
         :returns: The active window ID (HWND cast to unsigned for Windows).
 
         .. versionadded:: 9.1
-        '''
+        """
 
         return self.gxapi.get_active_wnd_id()
 
     def disable_app(self):
-        '''
+        """
         Disables application windows to allow modal Python UI.
         Call before opening your own UI window.
 
         .. versionadded:: 9.1
-        '''
+        """
         self.gxapi.enable_application_windows(False)
 
     def enable_app(self):
-        '''
+        """
         Enables application windows to allow modal Python UI.
         Call before returning control to OM.
 
         .. versionadded:: 9.1
-        '''
+        """
         self.gxapi.enable_application_windows(True)
 
     def entitlements(self):
-        '''
+        """
         :return: The current user entitlements as a dictionary.
 
         .. versionadded:: 9.1
-        '''
+        """
 
         lst = gxapi.GXLST.create(1000)
         gxapi.GXSYS.get_entitlement_rights(lst)
         return gxu.dict_from_lst(lst)
 
     def license_class(self):
-        '''
+        """
         :return: The current license class.
 
         .. versionadded:: 9.1
-        '''
+        """
 
         lc = gxapi.str_ref()
         gxapi.GXSYS.get_license_class(lc)
         return lc.value
 
     def temp_folder(self):
-        '''
+        """
         Return the GX temporary folder path.
 
         Each GX instance will create an instance-specific temporary folder as a child in the Geosoft 
         temporary folder.  Placing temporary files in the GX-specific temporary folder will ensure 
         temporary file names will not collide with other running GX-based programs, and that all 
         temporarty files are removed on termination of this GX.
-        
+
         Call `keep_temp_folder` to prevent deletion of the temporary files, which can be useful
         when debugging.
-        
+
         .. versionadded:: 9.2
-        '''
+        """
 
         if self._temp_file_folder is None:
 
@@ -403,11 +438,14 @@ class GXpy(_Singleton):
         return os.path.join(self.temp_folder(), gxu.uuid() + ext)
 
     def environment(self, formated_indent=-1):
-        '''
+        """
         :returns: Geosoft environment information as a dictionary.
 
+        .. deprecated:: 9.2       
+            Replaced by properties.
+
         .. versionadded:: 9.1
-        '''
+        """
 
         info = {'gid': self.gid,
                 'current_date': gxapi.GXSYS.date(),
@@ -444,7 +482,6 @@ class GXpy(_Singleton):
         if self._log_it:
             self._log_it(*args)
 
-
     def elapsed_seconds(self, tag='', log=False):
         """
         Return the elapsed seconds since this GX instance started.
@@ -471,27 +508,26 @@ class GXpy(_Singleton):
                             str(elapsed.microseconds).zfill(6)))
         return elapsed_seconds
 
-####################################################
-# deprecated
+    ####################################################
+    # deprecated
 
     def folder_workspace(self):
-        '''
+        """
         .. deprecated: 9.2
             Use :method:`utility.folder_workspace`
-        '''
+        """
         return gxu.folder_workspace()
 
     def folder_temp(self):
-        '''
+        """
         .. deprecated: 9.2
             Use :method:`utility.folder_temp`
-        '''
+        """
         return gxu.folder_temp()
 
     def folder_user(self):
-        '''
+        """
         .. deprecated: 9.2
             Use :method:`utility.folder_user`
-        '''
+        """
         return gxu.folder_user()
-
