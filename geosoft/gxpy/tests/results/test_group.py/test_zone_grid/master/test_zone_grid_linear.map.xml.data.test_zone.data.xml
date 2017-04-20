@@ -2,7 +2,7 @@
    <Item type="Version" size="8">
       <Item name="Value" value="Current"/>
    </Item>
-   <Item type="Aggregation" size="1580">
+   <Item type="Aggregation" size="1588">
       <Item name="AGG" type="AGG">
          <AGG>
             <Header>

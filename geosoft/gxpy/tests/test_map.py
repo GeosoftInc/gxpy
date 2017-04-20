@@ -20,77 +20,76 @@ from geosoft.gxpy.tests import GXPYTest
 from geosoft.gxpy.tests import GXPYTest
 
 
-def new_test_data_map(mapname=None, rescale=1.0):
-
-    if mapname is None:
-        mapname = os.path.join(gx.GXpy().temp_folder(), 'test')
-
-    with gxmap.GXmap.new(mapname, overwrite=True) as map:
-        with gxv.GXview(map, "rectangle_test") as v:
-            with gxg.GXdraw(v, 'rectangle') as g:
-                g.xy_rectangle((gxgm.Point((0, 0)), gxgm.Point((250, 110))), pen=gxg.Pen(line_thick=1))
-    
-                p1 = gxgm.Point((5, 5)) * rescale
-                p2 = gxgm.Point((100, 100)) * rescale
-                poff = gxgm.Point((10, 5)) * rescale
-                g.pen = gxg.Pen(fill_color=gxg.C_LT_GREEN)
-                g.xy_rectangle((p1, p2))
-    
-                g.pen = gxg.Pen(line_style=2, line_pitch=2.0)
-                g.xy_line((p1 + poff, p2 - poff))
-
-        with gxv.GXview(map, "poly") as v:
-            with gxg.GXdraw(v, 'poly') as g:
-                plinelist = [[110, 5],
-                             [120, 20],
-                             [130, 15],
-                             [150, 50],
-                             [160, 70],
-                             [175, 35],
-                             [190, 65],
-                             [220, 50],
-                             [235, 18.5]]
-                pp = gxgm.PPoint.from_list(plinelist) * rescale
-                g.pen = gxg.Pen(line_style=2, line_pitch=2.0)
-                g.xy_polyline(pp)
-                g.pen = gxg.Pen(line_style=4, line_pitch=2.0, line_smooth=gxg.SMOOTH_AKIMA)
-                g.xy_polyline(pp)
-    
-                ppp = np.array(plinelist)
-                pp = gxgm.PPoint(ppp[3:, :]) * rescale
-                g.pen = gxg.Pen(line_style=5, line_pitch=5.0,
-                              line_smooth=gxg.SMOOTH_CUBIC,
-                              line_color=gxapi.C_RED,
-                              line_thick=0.25,
-                              fill_color=gxapi.C_LT_BLUE)
-                g.xy_polyline(pp, close=True)
-    
-                g.pen = gxg.Pen(fill_color=gxapi.C_LT_GREEN)
-                pp = (pp - (100, 0, 0)) / 2 + (100, 0, 0)
-                g.xy_polyline(pp, close=True)
-                pp += (0, 25, 0)
-                g.pen = gxg.Pen(fill_color=gxapi.C_LT_RED)
-                g.xy_polyline(pp, close=True)
-
-        return map.file_name
-
-def test_data_map(name=None, data_area=(1000,0,11000,5000), margins=None, cs=None):
-
-    if name is None:
-        name = os.path.join(gx.GXpy().temp_folder(), "test")
-    gxmap.delete_files(name)
-    if cs is None:
-        cs = gxcs.GXcs("WGS 84 / UTM zone 15N")
-    if margins is None:
-        margins = (1.5, 1.5, 3, 1)
-    return gxmap.GXmap.new(file_name=name,
-                           data_area=data_area,
-                           cs=cs,
-                           media="A4",
-                           margins=margins,
-                           inside_margin=0.5)
-
 class Test(GXPYTest):
+    def _new_data_map(self, mapname=None, rescale=1.0):
+
+        if mapname is None:
+            mapname = os.path.join(self.gx.temp_folder(), 'test')
+
+        with gxmap.GXmap.new(mapname, overwrite=True) as map:
+            with gxv.GXview(map, "rectangle_test") as v:
+                with gxg.GXdraw(v, 'rectangle') as g:
+                    g.xy_rectangle((gxgm.Point((0, 0)), gxgm.Point((250, 110))), pen=gxg.Pen(line_thick=1))
+
+                    p1 = gxgm.Point((5, 5)) * rescale
+                    p2 = gxgm.Point((100, 100)) * rescale
+                    poff = gxgm.Point((10, 5)) * rescale
+                    g.pen = gxg.Pen(fill_color=gxg.C_LT_GREEN)
+                    g.xy_rectangle((p1, p2))
+
+                    g.pen = gxg.Pen(line_style=2, line_pitch=2.0)
+                    g.xy_line((p1 + poff, p2 - poff))
+
+            with gxv.GXview(map, "poly") as v:
+                with gxg.GXdraw(v, 'poly') as g:
+                    plinelist = [[110, 5],
+                                 [120, 20],
+                                 [130, 15],
+                                 [150, 50],
+                                 [160, 70],
+                                 [175, 35],
+                                 [190, 65],
+                                 [220, 50],
+                                 [235, 18.5]]
+                    pp = gxgm.PPoint.from_list(plinelist) * rescale
+                    g.pen = gxg.Pen(line_style=2, line_pitch=2.0)
+                    g.xy_polyline(pp)
+                    g.pen = gxg.Pen(line_style=4, line_pitch=2.0, line_smooth=gxg.SMOOTH_AKIMA)
+                    g.xy_polyline(pp)
+
+                    ppp = np.array(plinelist)
+                    pp = gxgm.PPoint(ppp[3:, :]) * rescale
+                    g.pen = gxg.Pen(line_style=5, line_pitch=5.0,
+                                    line_smooth=gxg.SMOOTH_CUBIC,
+                                    line_color=gxapi.C_RED,
+                                    line_thick=0.25,
+                                    fill_color=gxapi.C_LT_BLUE)
+                    g.xy_polyline(pp, close=True)
+
+                    g.pen = gxg.Pen(fill_color=gxapi.C_LT_GREEN)
+                    pp = (pp - (100, 0, 0)) / 2 + (100, 0, 0)
+                    g.xy_polyline(pp, close=True)
+                    pp += (0, 25, 0)
+                    g.pen = gxg.Pen(fill_color=gxapi.C_LT_RED)
+                    g.xy_polyline(pp, close=True)
+
+            return map.file_name
+
+    def _data_map(self, name=None, data_area=(1000, 0, 11000, 5000), margins=None, cs=None):
+
+        if name is None:
+            name = os.path.join(self.gx.temp_folder(), "test")
+        gxmap.delete_files(name)
+        if cs is None:
+            cs = gxcs.GXcs("WGS 84 / UTM zone 15N")
+        if margins is None:
+            margins = (1.5, 1.5, 3, 1)
+        return gxmap.GXmap.new(file_name=name,
+                               data_area=data_area,
+                               cs=cs,
+                               media="A4",
+                               margins=margins,
+                               inside_margin=0.5)
     def test_version(self):
         self.start()
         self.assertEqual(gxmap.__version__, geosoft.__version__)
@@ -141,7 +140,7 @@ class Test(GXPYTest):
     def test_lists(self):
         self.start()
 
-        mapname = new_test_data_map()
+        mapname = self._new_data_map()
         with gxmap.GXmap.open(mapname) as map:
             views = map.view_list
             self.assertTrue('rectangle_test' in views)
@@ -457,7 +456,7 @@ class Test(GXPYTest):
     def test_annotate_xy_0(self):
         self.start()
 
-        with test_data_map() as map:
+        with self._data_map() as map:
             mapfile = map.file_name
             map.annotate_data_xy(x_sep=1500)
 
@@ -466,7 +465,7 @@ class Test(GXPYTest):
     def test_annotate_xy_1(self):
         self.start()
 
-        with test_data_map() as map:
+        with self._data_map() as map:
             mapfile = map.file_name
             map.annotate_data_xy(x_sep=1500,
                                  grid=gxmap.GRID_DOTTED,
@@ -478,7 +477,7 @@ class Test(GXPYTest):
     def test_annotate_xy_2(self):
         self.start()
 
-        with test_data_map() as map:
+        with self._data_map() as map:
             mapfile = map.file_name
             map.annotate_data_xy(x_sep=1500,
                                  tick=0.1,
@@ -491,7 +490,7 @@ class Test(GXPYTest):
     def test_annotate_xy_3(self):
         self.start()
 
-        with test_data_map() as map:
+        with self._data_map() as map:
             mapfile = map.file_name
             map.annotate_data_xy(x_sep=1500,
                                  tick=0.1,
@@ -505,7 +504,7 @@ class Test(GXPYTest):
     def test_annotate_ll_0(self):
         self.start()
 
-        with test_data_map(data_area=(350000,7000000,400000,7030000)) as map:
+        with self._data_map(data_area=(350000,7000000,400000,7030000)) as map:
             mapfile = map.file_name
             map.annotate_data_ll()
         self.crc_map(mapfile)
@@ -513,7 +512,7 @@ class Test(GXPYTest):
     def test_annotate_ll_1(self):
         self.start()
 
-        with test_data_map(data_area=(350000,7000000,400000,7030000)) as map:
+        with self._data_map(data_area=(350000,7000000,400000,7030000)) as map:
             mapfile = map.file_name
             map.annotate_data_ll(grid=gxmap.GRID_LINES,
                                  grid_pen=gxg.Pen(line_color='b'),
@@ -525,7 +524,7 @@ class Test(GXPYTest):
 
     def test_annotate_ll_2(self):
         self.start()
-        with test_data_map(data_area=(350000,7000000,400000,7030000)) as map:
+        with self._data_map(data_area=(350000,7000000,400000,7030000)) as map:
             mapfile = map.file_name
             map.annotate_data_xy()
             map.annotate_data_ll(grid=gxmap.GRID_LINES,
@@ -537,7 +536,7 @@ class Test(GXPYTest):
     def test_annotate_ll_3(self):
         self.start()
 
-        with test_data_map(data_area=(350000,7000000,400000,7030000)) as map:
+        with self._data_map(data_area=(350000,7000000,400000,7030000)) as map:
             mapfile = map.file_name
             map.annotate_data_xy(tick=0.1, grid=gxmap.GRID_LINES,
                                  text_def=gxg.Text_def(weight=gxg.FONT_WEIGHT_ULTRALIGHT),
@@ -550,7 +549,7 @@ class Test(GXPYTest):
     def test_annotate_ll_4(self):
         self.start()
 
-        with test_data_map(data_area=(350000,7000000,400000,7030000)) as map:
+        with self._data_map(data_area=(350000,7000000,400000,7030000)) as map:
             mapfile = map.file_name
             map.annotate_data_xy(tick=0.1, grid=gxmap.GRID_LINES,
                                  text_def=gxg.Text_def(weight=gxg.FONT_WEIGHT_BOLD),

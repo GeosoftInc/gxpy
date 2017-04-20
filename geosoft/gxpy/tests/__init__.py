@@ -2,6 +2,7 @@ import os
 import shutil
 import glob
 import unittest
+import inspect
 
 os.environ['GEOSOFT_TEST_MODE'] = '1'
 os.environ['GEOSOFT_TESTSYSTEM_MODE'] = '1'
@@ -63,9 +64,10 @@ class GXPYTest(unittest.TestCase):
         cls.tearDownGXPYTest()
 
     def start(self):
-        parts = self.id().split('.')
-        self._result_dir = os.path.join('results', parts[-3] + '.py', parts[-1])
-        self.gx.log("*** {}.py > {}".format(parts[-3], parts[-1]))
+        file = os.path.split(inspect.getfile(self.__class__))[1]
+        func = self.id().split('.')[-1]
+        self._result_dir = os.path.join('results', file, func)
+        self.gx.log("*** {} > {}".format(file, func))
 
     @property
     def gx(self):
