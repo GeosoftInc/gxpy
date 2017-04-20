@@ -283,9 +283,7 @@ class Test(GXPYTest):
 
     def test_display_message(self):
         self.start()
-
-        #TODO This appears to hang, investigate
-        # gxu.display_message('test title', 'test message')
+        gxu.display_message('test title', 'test message')
 
     def test_version(self):
         self.start()

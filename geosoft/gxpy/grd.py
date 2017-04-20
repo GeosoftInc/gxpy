@@ -7,7 +7,6 @@ Geosoft grids.
 
 """
 import os
-import atexit
 import numpy as np
 import math
 
@@ -17,7 +16,6 @@ from . import gx as gx
 from . import coordinate_system as gxcs
 from . import vv as gxvv
 from . import utility as gxu
-from . import system as gsys
 
 __version__ = geosoft.__version__
 
@@ -239,7 +237,6 @@ class GXgrd():
         else:
             self._img = gxapi.GXIMG.create_file(gxu.gx_dtype(dtype), self._file_name, gxapi.IMG_FILE_READORWRITE)
 
-        atexit.register(self._close, pop=False)
         self._open = gx.track_resource(self.__class__.__name__, self._file_name)
 
     @property

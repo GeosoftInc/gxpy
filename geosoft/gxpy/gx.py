@@ -55,6 +55,19 @@ _max_resource_heap = 1000000
 _stack_depth = 5
 _max_warnings = 10
 
+def _reset_globals():
+    global gx
+    global _res_id
+    global _res_heap
+    global _max_resource_heap
+    global _stack_depth
+    global _max_warnings
+    gx = None
+    _res_id = 0
+    _res_heap = {}
+    _max_resource_heap = 1000000
+    _stack_depth = 5
+    _max_warnings = 10
 
 def track_resource(cl, info):
     global _res_id
@@ -181,7 +194,11 @@ class GXpy(_Singleton):
             if self._logf:
                 self._logf.close()
 
-            gx = None
+            atexit.unregister(self._close)
+            self.gxapi = None
+            self._sr = None
+            self._shared_state = {}
+            _reset_globals()
 
     def __init__(self, name=__name__, version=__version__,
                  parent_window=0, log=None,

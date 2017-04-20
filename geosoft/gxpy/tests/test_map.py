@@ -525,7 +525,6 @@ class Test(GXPYTest):
 
     def test_annotate_ll_2(self):
         self.start()
-
         with test_data_map(data_area=(350000,7000000,400000,7030000)) as map:
             mapfile = map.file_name
             map.annotate_data_xy()

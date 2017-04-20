@@ -242,8 +242,6 @@ class Test(GXPYTest):
             if v3d_file:
                 gxmap.delete_files(v3d_file)
 
-    # TODO - Failing due to inconsistent link GUIDs, investigate
-    @unittest.skip("Failing due to inconsistent link GUIDs")
     def test_3d_map(self):
         self.start()
 
@@ -273,9 +271,6 @@ class Test(GXPYTest):
 
             #TODO this fails in batch, but not in interactive.
             self.crc_map(mapfile)
-
-        except:
-            raise
 
         finally:
             if v3d_file:

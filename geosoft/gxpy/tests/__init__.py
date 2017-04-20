@@ -23,7 +23,19 @@ UPDATE_ONE_TEST = False
 SHOW_TEST_VIEWERS = False
 
 
+def _verify_no_gx_context():
+    loc_gx = None
+    try:
+        loc_gx = gxapi.GXContext.current()
+    except:
+        loc_gx = None
+        pass
+    if loc_gx is not None:
+        raise Exception("We still have a GXContext!")
+
+
 class GXPYTest(unittest.TestCase):
+    _multiprocess_shared_ = True
     _gx = None
 
     @classmethod
@@ -33,7 +45,9 @@ class GXPYTest(unittest.TestCase):
 
     @classmethod
     def tearDownGXPYTest(cls):
+        cls._gx._close()
         cls._gx = None
+        _verify_no_gx_context()
 
     @classmethod
     def setUpClass(cls, res_stack=6):
@@ -87,8 +101,9 @@ class GXPYTest(unittest.TestCase):
                     f.write(bytes[pos:pos+length+12])
                 pos = pos + length + 12
 
-    @classmethod
-    def _map_to_results(cls, map_file, xml_file, image_file, map_result, format, pix_width):
+    def _map_to_results(self, map_file, xml_file, image_file, map_result, format, pix_width):
+        print(self.id())
+        print('CRC:{}'.format(map_file))
         m = gxapi.GXMAP.create(map_file, gxmap.WRITE_OLD)
         m_res = gxapi.GXMAP.create(map_result, gxmap.WRITE_NEW)
         m.dup_map(m_res, gxapi.DUPMAP_COPY)
@@ -106,6 +121,7 @@ class GXPYTest(unittest.TestCase):
 
         crc = gxapi.int_ref()
         m.crc_map(crc, xml_file)
+        m = None
         try:
             os.remove(image_file + '.gi')
             os.remove(image_file + '.xml')
@@ -166,7 +182,7 @@ class GXPYTest(unittest.TestCase):
         image_result_file = os.path.join(result_dir, "{}.png".format(file_part))
         xml_result_file = os.path.join(result_dir, "{}.xml".format(file_part))
         map_result_file = os.path.join(result_dir, "{}".format(file_part))
-        GXPYTest._map_to_results(map_file, xml_result_file, image_result_file, map_result_file, format, pix_width)
+        self._map_to_results(map_file, xml_result_file, image_result_file, map_result_file, format, pix_width)
 
         file_name_part = file_part.split('.')[0]
 

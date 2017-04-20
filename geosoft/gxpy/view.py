@@ -6,7 +6,6 @@ Views, both 2D and 3D.
     Regression tests provide usage examples: `Tests <https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_view.py>`_
 
 """
-import atexit
 import os
 from functools import wraps
 
@@ -136,8 +135,6 @@ class GXview:
         self.gxview = gxapi.GXMVIEW.create(self._map.gxmap, self._name, mode)
         self._mode = mode
         self._lock = None
-
-        atexit.register(self._close)
         self._open = True
 
         if mode == WRITE_NEW:

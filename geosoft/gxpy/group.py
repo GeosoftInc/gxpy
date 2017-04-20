@@ -6,7 +6,6 @@ Drawing elements that are placed in groups in 3d views, or in 2D views on a map.
     Regression tests provide usage examples: `Tests <https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_group.py>`_
 
 """
-import atexit
 from functools import wraps
 import threading
 
@@ -203,7 +202,8 @@ class GXgroup:
                 self._pen = None
                 self._text_def = None
             finally:
-                self.view.lock = False
+                self._view.lock = False
+                self._view = None
                 self._open = False
 
     def __repr__(self):
@@ -241,7 +241,6 @@ class GXgroup:
         self._mode = mode
         self._view.gxview.start_group(name, mode)
 
-        atexit.register(self._close)
         self._open = True
 
     def close(self):

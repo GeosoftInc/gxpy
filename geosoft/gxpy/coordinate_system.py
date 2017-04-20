@@ -367,7 +367,7 @@ class GXcs:
         return self
 
     def __exit__(self, type, value, traceback):
-        pass
+        self._gxapi_ipj = None
 
     def __init__(self, cs=None):
 
