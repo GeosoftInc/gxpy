@@ -197,6 +197,7 @@ class GXpy(_Singleton):
             atexit.unregister(self._close)
             self.gxapi = None
             self._sr = None
+            del self.license_class
             self._shared_state = {}
             _reset_globals()
 

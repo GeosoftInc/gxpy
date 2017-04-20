@@ -5,12 +5,10 @@ import os
 import numpy as np
 import unittest
 
-import geosoft.gxpy.gx as gx
 import geosoft.gxapi as gxapi
 import geosoft.gxpy.geometry as gxgm
 import geosoft.gxpy.view as gxv
 import geosoft.gxpy.map as gxmap
-import geosoft.gxpy.viewer as gxvr
 import geosoft.gxpy.group as gxg
 import geosoft.gxpy.system as gxsys
 from geosoft.gxpy.tests import GXPYTest
@@ -80,24 +78,10 @@ def sample_map(map_file, v3d_file, rescale=1.0):
 
     return map_file, v3d_file 
 
-class Test(unittest.TestCase, GXPYTest):
-
-    @classmethod
-    def setUpClass(cls):
-        GXPYTest.setUpClass(cls, __file__)
-
-    @classmethod
-    def tearDownClass(cls):
-        GXPYTest.tearDownClass(cls)
-
-    @classmethod
-    def start(cls, test, test_name):
-        parts = os.path.split(__file__)
-        test.result_dir = os.path.join(parts[0], 'results', parts[1], test_name)
-        cls.gx.log("*** {} > {}".format(parts[1], test_name))
+class Test(GXPYTest):
 
     def test_mapviewer(self):
-        Test.start(self, gxsys.func_name())
+        self.start()
 
         map_file = os.path.join(self.gx.temp_folder(), 'test_map')
         v3d_file = os.path.join(self.gx.temp_folder(), 'test_3dv')
