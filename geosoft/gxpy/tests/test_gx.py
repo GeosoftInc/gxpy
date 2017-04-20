@@ -17,20 +17,15 @@ class Test(unittest.TestCase):
 
     def test_env(self):
         with gx.GXpy(log=print) as gxc:
-            env = gxc.environment()
-
-            self.assertFalse(env.get('gid') is None)
-            self.assertFalse(env.get('current_date') is None)
-            self.assertFalse(env.get('current_utc_date') is None)
-            self.assertFalse(env.get('current_time') is None)
-            self.assertFalse(env.get('current_utc_time') is None)
-            self.assertFalse(env.get('license_class') is None)
-            self.assertFalse(env.get('folder_workspace') is None)
-            self.assertFalse(env.get('folder_temp') is None)
-            self.assertFalse(env.get('folder_user') is None)
-
-            env = gxc.environment(2)
-            self.assertTrue(isinstance(env,str))
+            self.assertFalse(gxc.gid is None)
+            self.assertFalse(gxc.current_date is None)
+            self.assertFalse(gxc.current_utc_date is None)
+            self.assertFalse(gxc.current_time is None)
+            self.assertFalse(gxc.current_utc_time is None)
+            self.assertFalse(gxc.license_class is None)
+            self.assertFalse(gxc.folder_workspace is None)
+            self.assertFalse(gxc.folder_temp is None)
+            self.assertFalse(gxc.folder_user is None)
 
     def test_entitlements(self):
         with gx.GXpy(log=print) as gxc:

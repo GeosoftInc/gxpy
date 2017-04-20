@@ -1,4 +1,11 @@
+"""
+Geosoft databases for line-oriented spatial data.
 
+.. note::
+
+    Regression tests provide usage examples: `Tests <https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_gdb.py>`_
+
+"""
 import os
 import sys
 import atexit
@@ -56,11 +63,11 @@ READ_REMOVE_DUMMYCOLUMNS = 2
 
 
 class GDBException(Exception):
-    '''
+    """
     Exceptions from this module.
 
     .. versionadded:: 9.1
-    '''
+    """
     pass
 
 def _gdb_name(name):
@@ -83,7 +90,7 @@ def _va_width(data):
 
 
 class GXdb:
-    '''
+    """
     Class to work with Geosoft databases. This class wraps many of the functions found in geosoft.gxapi.GXDB.
 
     Member ._db is the GXDB handle, which can be used to call gxapi methods.
@@ -184,7 +191,7 @@ class GXdb:
             gdb.write_channel(lsymb, 'distance', dist)
 
     .. versionadded:: 9.1
-    '''
+    """
 
     def __enter__(self):
         return self
@@ -226,14 +233,14 @@ class GXdb:
 
     @classmethod
     def open(cls, name=None):
-        '''
+        """
         Open an existing database.
 
         :param name:    name of the database, default is the current database
         :return:        GXdb instance
 
         .. versionadded:: 9.1
-        '''
+        """
 
         gdb = cls()
 
@@ -251,7 +258,7 @@ class GXdb:
 
     @classmethod
     def new(cls, name, maxLines=500, maxChannels=200, maxBlobs=0, pageSize=1024, comp=None):
-        '''
+        """
         Create a new database.
 
         :param name:        database name
@@ -264,7 +271,7 @@ class GXdb:
                             | COMP_SIZE
 
         .. versionadded:: 9.1
-        '''
+        """
         maxLines = max(10, maxLines)
         maxChannels = max(25, maxChannels)
         minBlobs = maxChannels * maxLines + 20
@@ -281,33 +288,33 @@ class GXdb:
         return cls.open(name)
 
     def commit(self):
-        '''
+        """
         Commit database changes.
 
         .. versionadded:: 9.1
-        '''
+        """
         self._db.commit()
 
     def discard(self):
-        '''
+        """
         Discard database changes.
 
         .. versionadded:: 9.1
-        '''
+        """
         self._db.discard()
 
     # ============================================================================
     # internal helper functions
 
     def _exist_symb(self, symb, symb_type):
-        '''
+        """
         Check if a symbol exists of the required type.
         :param symb: symbol name or number
         :param symb_type: one of DB_SYMB_TYPE
         :return: True if the symbol exists and is the expected symbol type, False otherwise
 
         .. versionadded:: 9.1
-        '''
+        """
         if type(symb) is str:
             return self._db.exist_symb(symb, symb_type)
         else:
@@ -317,15 +324,15 @@ class GXdb:
     # Information
 
     def file_name(self):
-        '''
+        """
         :return: database file name
 
         .. versionadded:: 9.1
-        '''
+        """
         return os.path.abspath(self._filename)
 
     def line_name_symb(self, line, create=False):
-        '''
+        """
         Return line name, symbol
 
         :param line:    line name, or symbol number
@@ -334,7 +341,7 @@ class GXdb:
         :raises:        GDBException if line not found or cannot be created
 
         .. versionadded:: 9.1
-        '''
+        """
 
         if (self._exist_symb(line, gxapi.DB_SYMB_LINE)):
             if type(line) is str:
@@ -349,7 +356,7 @@ class GXdb:
         raise GDBException('Line \'{}\' not found'.format(line))
 
     def channel_name_symb(self, chan):
-        '''
+        """
         Return channel name, symbol
 
         :param chan:    channel name, or symbol number
@@ -357,7 +364,7 @@ class GXdb:
         :raises:        GDBException if channel does not exist
 
         .. versionadded:: 9.1
-        '''
+        """
 
         if (self._exist_symb(chan, gxapi.DB_SYMB_CHAN)):
             if type(chan) is str:
@@ -370,18 +377,18 @@ class GXdb:
         raise GDBException('Channel \'{}\' not found'.format(chan))
 
     def channel_width(self, channel):
-        '''
+        """
         Channel array width, 1 for normal channels, >1 for VA channels.
 
         :param channel: channel symbol or name
         :return:        array dimension, 1 for non-array channels
 
         .. versionadded:: 9.1
-        '''
+        """
         return self._db.get_col_va(self.channel_name_symb(channel)[1])
 
     def list_channels(self, chan=None):
-        '''
+        """
         Return a dict of channels in the database.
 
         :param chan: channel filter, default CHAN_ALL:
@@ -395,10 +402,10 @@ class GXdb:
         :return: dictionary {channel_names: channel_symbols}
 
         .. versionadded:: 9.1
-        '''
+        """
 
         def cleanChannelsDct():
-            ''' returns list without any temporaty VA sliced channels '''
+            """ returns list without any temporaty VA sliced channels """
             self._db.chan_lst(self._lst)
             _dct = gxu.dict_from_lst(self._lst)
             dct = {}
@@ -432,13 +439,13 @@ class GXdb:
         return dct
 
     def list_lines(self, select=True):
-        '''
+        """
         List of lines in the database
         :param select=True:  True to return selected lines, false to return all lines
         :return: dictionary (line name: symbol)
 
         .. versionadded:: 9.1
-        '''
+        """
         if select:
             self._db.selected_line_lst(self._lst)
         else:
@@ -449,7 +456,7 @@ class GXdb:
         return dct
 
     def line_details(self, line):
-        '''
+        """
         Return dictionary of line details
 
         :param line: channel name or symbol
@@ -470,7 +477,7 @@ class GXdb:
             =========== ==============================================================
 
         .. versionadded:: 9.1
-        '''
+        """
 
         def get_detail(fn):
             try:
@@ -503,7 +510,7 @@ class GXdb:
         return detail
 
     def channel_details(self, channel):
-        '''
+        """
         Return dictionary of channel details
 
         :param channel: channel name or symbol
@@ -526,7 +533,7 @@ class GXdb:
             ======= ==============================================================
 
         .. versionadded:: 9.1
-        '''
+        """
 
         def get_detail(fn):
             fn(cs, self._sr)
@@ -554,14 +561,14 @@ class GXdb:
         return detail
 
     def set_channel_details(self, channel, detail):
-        '''
+        """
         Set/change channel details from dictionary
 
         :param channel: channel name or symbol
         :param detail:  dictionary, see chan_details
 
         .. versionadded:: 9.1
-        '''
+        """
 
         def set_detail(what, fn):
             det = detail.get(what)
@@ -587,24 +594,24 @@ class GXdb:
             raise
 
     def channel_dtype(self, channel):
-        '''
+        """
         Returns channel numpy dtype
 
         :param channel: channel name or symbol
         :return:        numpy dtype
 
         .. versionadded:: 9.1
-        '''
+        """
         return gxu.dtype_gx(self._db.get_chan_type(self.channel_name_symb(channel)[1]))
 
     def channel_fid(self, line, channel):
-        '''
+        """
         Return the fiducial of a line, channel
 
         :param line:    line name or symbol
         :param channel: channel name or symbol
         :return:        (start,increment)
-        '''
+        """
         ls = self.line_name_symb(line)[1]
         cs = self.channel_name_symb(channel)[1]
         self._lock_read(cs)
@@ -622,7 +629,7 @@ class GXdb:
     # management
 
     def new_channel(self, name, dtype=np.float64, array=1, details={'width': 12, 'decimal': 2}):
-        '''
+        """
         Return a channel symbol, create if it does not exist.
 
         :param name:        channel name
@@ -640,7 +647,7 @@ class GXdb:
             symb = gdb.newChan('X', dtype=np.float64, details={'decimal':4})
 
         .. versionadded:: 9.1
-        '''
+        """
 
         symb = self._db.find_symb(name, gxapi.DB_SYMB_CHAN)
         if symb == gxapi.NULLSYMB:
@@ -656,7 +663,7 @@ class GXdb:
         return symb
 
     def new_line(self, line, linetype=None, group=''):
-        '''
+        """
         Get a line symbol.  If line exists an error is raised.
 
         :param line:        line name
@@ -672,7 +679,7 @@ class GXdb:
         :return:            line symbol
 
         .. versionadded:: 9.1
-        '''
+        """
 
         if not self._db.is_line_name(line):
             raise GDBException('Invalid line name \'{}\''.format(line))
@@ -704,13 +711,13 @@ class GXdb:
         return symb
 
     def delete_channel(self, channels):
-        '''
+        """
         Delete channel(s) by name or symbol.
 
         :param channels: channel name or symbol, or a list of channel names or symbols
 
         .. versionadded:: 9.1
-        '''
+        """
 
         if type(channels) is str:
             channels = [channels]
@@ -725,13 +732,13 @@ class GXdb:
                 continue
 
     def delete_line(self, s):
-        '''
+        """
         Delete a line by name or symbol.
 
         :param s: line name or symbol
 
         .. versionadded:: 9.1
-        '''
+        """
         if type(s) is str:
             s = self._db.find_symb(s, gxapi.DB_SYMB_LINE)
             if s == gxapi.NULLSYMB:
@@ -740,7 +747,7 @@ class GXdb:
         self._db.delete_symb(s)
 
     def select_lines(self, selection='', select=True):
-        '''
+        """
         Change selected state of a line, or group of lines
         :param selection:   string representing selection, comma-delimit multiple selections
         :param select=True: True to select, False to deselect
@@ -753,7 +760,7 @@ class GXdb:
         | Use an empty string ("") to select/deselect ALL lines.
 
         .. versionadded:: 9.1
-        '''
+        """
 
         for s in selection.split(','):
             if select:
@@ -835,7 +842,7 @@ class GXdb:
         return chNames, chSymbs, cType
 
     def read_channel_vv(self, line, channel, dtype=None):
-        '''
+        """
         Read data from a single channel, return in a vv.
 
         :param line:    line name or symbol
@@ -845,7 +852,7 @@ class GXdb:
         :return:        vv
 
         .. versionadded:: 9.2
-        '''
+        """
 
         ln, ls = self.line_name_symb(line, create=True)
         cn, cs = self.channel_name_symb(channel)
@@ -868,7 +875,7 @@ class GXdb:
 
 
     def read_channel_va(self, line, channel, dtype=None):
-        '''
+        """
         Read VA data from a single channel, return in a va.
 
         :param line:    line name or symbol
@@ -878,7 +885,7 @@ class GXdb:
         :return:        va
 
         .. versionadded:: 9.2
-        '''
+        """
 
         ln, ls = self.line_name_symb(line, create=True)
         cn, cs = self.channel_name_symb(channel)
@@ -897,7 +904,7 @@ class GXdb:
         return va
 
     def read_channel(self, line, channel, dtype=None):
-        '''
+        """
         Read data from a single channel.
 
         :param line:    line name or symbol
@@ -907,7 +914,7 @@ class GXdb:
         :return:        numpy data, fid (start, increment)
 
         .. versionadded:: 9.1
-        '''
+        """
 
         if self.channel_width(channel) == 1:
             vv = self.read_channel_vv(line, channel, dtype)
@@ -918,7 +925,7 @@ class GXdb:
             return va.get_np(va.dtype)[0], va.fid
 
     def read_line_vv(self, line, channels=None, dtype=None, fid=None, common_fid=False):
-        '''
+        """
         Read a line of data into VVs stored in a dictionary by channel.
 
         :param line:        line to read, string or symbol number
@@ -948,7 +955,7 @@ class GXdb:
             data = gdb.read_line_vv('L100','X',np.int32)              # read channel 'X' into integer array
 
         .. versionadded:: 9.2
-        '''
+        """
 
         ln, ls = self.line_name_symb(line)
 
@@ -1003,7 +1010,7 @@ class GXdb:
         return chvv
 
     def read_line(self, line, channels=None, dtype=None, fid=None, dummy=None):
-        '''
+        """
         Read a line of data into a numpy array.
 
         :param line:        line to read, string or symbol number
@@ -1039,7 +1046,7 @@ class GXdb:
             npd,ch,fid = gdb.read_line('L100','X',np.int32)              # read channel 'X' into integer array
 
         .. versionadded:: 9.1
-        '''
+        """
 
         # get VVs of data, resampled to a common fid
         data = self.read_line_vv(line, channels, dtype, fid, common_fid=True)
@@ -1089,7 +1096,7 @@ class GXdb:
         return npd, chNames, fid
 
     def write_channel_vv(self, line, channel, vv):
-        '''
+        """
         Write data to a single channel.
 
         :param line:    line name or symbol
@@ -1097,7 +1104,7 @@ class GXdb:
         :param vv:      vv data to write
 
         .. versionadded:: 9.2
-        '''
+        """
 
         def cleanup():
             self._unlock(cs)
@@ -1123,7 +1130,7 @@ class GXdb:
         cleanup()
 
     def write_channel_va(self, line, channel, va):
-        '''
+        """
         Write VA data to a single channel.
 
         :param line:    line name or symbol
@@ -1131,7 +1138,7 @@ class GXdb:
         :param va:      va data to write
 
         .. versionadded:: 9.2
-        '''
+        """
 
         def cleanup():
             self._unlock(cs)
@@ -1157,7 +1164,7 @@ class GXdb:
         cleanup()
 
     def write_channel(self, line, channel, data, fid=(0.0, 1.0)):
-        '''
+        """
         Write data to a single channel.
 
         :param line:    line name or symbol
@@ -1166,7 +1173,7 @@ class GXdb:
         :param fid:     tuple (fid start, increment), default (0.0,1.0)
 
         .. versionadded:: 9.1
-        '''
+        """
 
         def cleanup():
             self._unlock(cs)
@@ -1215,7 +1222,7 @@ class GXdb:
         cleanup()
 
     def write_line_vv(self, line, chan_data):
-        '''
+        """
         Write data to multiple channels in a line.  If no channel list is provided it assumes that the
         data is for all channels from the line, the compliment of read_line().
 
@@ -1230,7 +1237,7 @@ class GXdb:
             If VA data is included the VA channels must already exist.
 
         .. versionadded:: 9.2
-        '''
+        """
 
         for chvv in chan_data:
             ch = chvv[0]
@@ -1238,7 +1245,7 @@ class GXdb:
             self.write_channel_vv(line, ch, vv)
 
     def write_line(self, line, data, channels=None, fid=(0.0, 1.0)):
-        '''
+        """
         Write data to a multiple channels in a line.  If no channel list is provided it assumes that the
         data is for all channels from the line, the compliment of read_line().
 
@@ -1249,7 +1256,7 @@ class GXdb:
         :param fid:         option fid tupple (start, increment), default (0.0,1.0)
 
         .. versionadded:: 9.1
-        '''
+        """
 
         if type(channels) is str:
             self.write_channel(line, channels, data, fid=fid)
@@ -1274,7 +1281,7 @@ class GXdb:
                 raise GDBException(_t('More data than channels, but data up to channels was written out.'))
 
     def list_values(self, chan, max=1000, selected=True, dupl=50, progress=None, stop=None):
-        '''
+        """
         Build a list of unique values in a channel.  Uniqueness depends on the current display format for
         the field.
 
@@ -1287,7 +1294,7 @@ class GXdb:
         :return:                list of values, represented as a string
 
         .. versionadded:: 9.1
-        '''
+        """
 
         lines = list(self.list_lines(select=selected))
         cn, cs = self.channel_name_symb(chan)

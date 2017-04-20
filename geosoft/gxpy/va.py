@@ -1,4 +1,11 @@
+"""
+Geosoft vector arrays (vector of array elements)
 
+.. note::
+
+    Regression tests provide usage examples: `Tests <https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_va.py>`_
+
+"""
 import warnings
 import numpy as np
 import geosoft
@@ -12,16 +19,16 @@ def _t(s):
 
 
 class VAException(Exception):
-    '''
+    """
     Exceptions from this module.
 
     .. versionadded:: 9.1
-    '''
+    """
     pass
 
 
 class GXva():
-    '''
+    """
     VA class wrapper.
 
     :param array:   2D numpy array, None for an empty VA
@@ -34,7 +41,7 @@ class GXva():
         allow construction directly from numpy array
 
     .. versionadded:: 9.1
-    '''
+    """
 
     def __enter__(self):
         return self
@@ -67,85 +74,85 @@ class GXva():
 
     @property
     def fid(self):
-        '''
+        """
         :return:    fid tuple (start,increment)
 
         .. versionadded:: 9.1
-        '''
+        """
         start = self._va.get_fid_start()
         incr = self._va.get_fid_incr()
         return (start, incr)
 
     @fid.setter
     def fid(self, fid):
-        '''
+        """
         Set the fiducial of the va.
 
         :param fid: (fidStart,fidIncrement)
 
         .. versionadded:: 9.1
-        '''
+        """
         self._va.set_fid_start(fid[0])
         self._va.set_fid_incr(fid[1])
 
     def reFid(self, fid, length):
-        '''
+        """
         Resample VA to a new fiducial and length
 
         :param fid: (start,incr)
         :param length: length
 
         .. versionadded:: 9.1
-        '''
+        """
         self._va.re_fid(fid[0], fid[1], length)
 
     @property
     def length(self):
-        '''
+        """
         :return:    number of elements in the VA
 
         .. versionadded:: 9.1
-        '''
+        """
         return self._va.len()
 
     @property
     def width(self):
-        '''
+        """
         :return:    width of each row(element) in the VA
 
         .. versionadded:: 9.1
-        '''
+        """
         return self._width
 
     @property
     def dimensions(self):
-        '''
+        """
         :return:    VA dimensions (length, width)
 
         .. versionadded:: 9.2
-        '''
+        """
         return (self.length, self._width)
 
     @property
     def gxtype(self):
-        '''
+        """
         :return: GX data type
 
         .. versionadded:: 9.1
-        '''
+        """
         return self._gxtype
 
     @property
     def dtype(self):
-        '''
+        """
         :return: numpy data type
 
         .. versionadded:: 9.1
-        '''
+        """
         return self._dtype
 
     def get_np(self, dtype=None, start=0, n=None, start_col=0, n_col=None):
-        '''
+        """
         Return a numpy array of data from a va.
 
         :param start:       index of first value, must be >=0
@@ -155,7 +162,7 @@ class GXva():
         :param dtype:       numpy data type wanted
 
         .. versionadded:: 9.1
-        '''
+        """
 
         if dtype is None:
             dtype = self._dtype

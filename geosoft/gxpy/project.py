@@ -1,9 +1,11 @@
 """
+Geosoft project.
 
-   Geosoft Desktop dependent functions.
+.. note::
+
+    Test example: `Tests <https://github.com/GeosoftInc/gxpy/blob/master/examples/om-extensions/test_project.py>`_
 
 """
-
 import os
 import geosoft
 import geosoft.gxapi as gxapi

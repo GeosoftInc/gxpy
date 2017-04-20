@@ -1,3 +1,11 @@
+"""
+Geosoft system functions..
+
+.. note::
+
+    Regression tests provide usage examples: `Tests <https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_system.py>`_
+
+"""
 import time
 import inspect
 import os
@@ -167,11 +175,11 @@ def parallel_map(f, l, threads=None):
 # classes
 
 class GXSysException(Exception):
-    '''
+    """
     Exceptions from this module.
 
     .. versionadded:: 9.1
-    '''
+    """
     pass
 
 

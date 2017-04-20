@@ -1,3 +1,11 @@
+"""
+Geosoft aggregates are used to compose georeferenced images on maps and in 3D views.
+
+.. note::
+
+    Regression tests provide usage examples: `Tests <https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_agg.py>`_
+
+"""
 import os
 
 import geosoft
@@ -12,11 +20,11 @@ def _t(s):
 
 
 class AGGException(Exception):
-    '''
+    """
     Exceptions from this module.
 
     .. versionadded:: 9.2
-    '''
+    """
     pass
 
 ZONE_DEFAULT = 0
@@ -28,7 +36,7 @@ ZONE_LOGLINEAR = 5
 ZONE_LAST = 6
 
 class GXagg():
-    '''
+    """
     The AGG class supports the creation of aggregate images from one or more grid data sets. Aggergates
     can be placed into a 2D or 3D view for display.
 
@@ -57,7 +65,7 @@ class GXagg():
         :brightness:    image brightness, -1 (black) to +1 (white). 0 is full colour.
 
     .. versionadded:: 9.2
-    '''
+    """
 
     def __repr__(self):
         return "{}({})".format(self.__class__, self.__dict__)
@@ -141,7 +149,7 @@ class GXagg():
                   minimum=None,
                   maximum=None,
                   contour=None):
-        '''
+        """
         Add an image layer to an agg.
 
         :param grid_file:       The name of a grid file (image or data) to add.
@@ -170,7 +178,7 @@ class GXagg():
                                 the data.
 
         .. versionadded:: 9.2
-        '''
+        """
 
         if grid_file is not None:
             if zone is None:
@@ -191,11 +199,11 @@ class GXagg():
                 self.gxagg.layer_img(grid_file, ZONE_SHADE, 'lgray.tbl', gxapi.rDUMMY)
 
     def layer_file_names(self):
-        '''
+        """
         Return list of layer files in the agg.
 
         .. versionadded:: 9.2
-        '''
+        """
 
         vv = gxvv.GXvv(dtype='U1024')
         self.gxagg.list_img(vv._vv)

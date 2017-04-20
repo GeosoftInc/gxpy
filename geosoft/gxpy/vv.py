@@ -1,3 +1,11 @@
+"""
+Geosoft vector.
+
+.. note::
+
+    Regression tests provide usage examples: `Tests <https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_vv.py>`_
+
+"""
 
 import geosoft
 import numpy as np
@@ -12,16 +20,16 @@ def _t(s):
 
 
 class VVException(Exception):
-    '''
+    """
     Exceptions from this module.
 
     .. versionadded:: 9.1
-    '''
+    """
     pass
 
 
 class GXvv():
-    '''
+    """
     VV class wrapper.
 
     :param array:       array-like, None to create an empty VV
@@ -45,7 +53,7 @@ class GXvv():
         allow construction directly from arrays
 
     .. versionadded:: 9.1
-    '''
+    """
 
     def __enter__(self):
         return self
@@ -87,67 +95,67 @@ class GXvv():
 
     @property
     def fid(self):
-        '''
+        """
         :return:    fid tuple (start,increment)
 
         .. versionadded:: 9.1
-        '''
+        """
         start = self._vv.get_fid_start()
         incr = self._vv.get_fid_incr()
         return (start, incr)
 
     @fid.setter
     def fid(self, fid):
-        '''
+        """
         Set the fiducial of the vv.
 
         :param fid: (fidStart,fidIncrement)
 
         .. versionadded:: 9.2
-        '''
+        """
         self._vv.set_fid_start(fid[0])
         self._vv.set_fid_incr(fid[1])
 
     @property
     def length(self):
-        '''
+        """
         :return:    number of elements in the VV
 
         .. versionadded:: 9.1
-        '''
+        """
         return self._vv.length()
 
     @property
     def gxtype(self):
-        '''
+        """
         :return: GX data type
 
         .. versionadded:: 9.1
-        '''
+        """
         return self._gxtype
 
     @property
     def dtype(self):
-        '''
+        """
         :return: numpy data type
 
         .. versionadded:: 9.1
-        '''
+        """
         return self._dtype
 
     def reFid(self, fid, length):
-        '''
+        """
         Resample VV to a new fiducial and length
 
         :param fid: (start,incr)
         :param length: length
 
         .. versionadded:: 9.1
-        '''
+        """
         self._vv.re_fid(fid[0], fid[1], length)
 
     def get_np(self, dtype=None, start=0, n=None):
-        '''
+        """
         Return vv data in a numpy array
 
         :param start:   index of first value, must be >=0
@@ -156,7 +164,7 @@ class GXvv():
         :returns:       (data, (fid_start, fid_incr))
 
         .. versionadded:: 9.1
-        '''
+        """
 
         if dtype is None:
             dtype = self._dtype

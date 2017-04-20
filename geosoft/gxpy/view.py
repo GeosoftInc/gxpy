@@ -1,3 +1,11 @@
+"""
+Views, both 2D and 3D.
+
+.. note::
+
+    Regression tests provide usage examples: `Tests <https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_view.py>`_
+
+"""
 import atexit
 import os
 from functools import wraps

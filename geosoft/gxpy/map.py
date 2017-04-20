@@ -1,3 +1,11 @@
+"""
+Geosoft maps contain 2D and 3D views.
+
+.. note::
+
+    Regression tests provide usage examples: `Tests <https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_map.py>`_
+
+"""
 import os
 import atexit
 from math import ceil

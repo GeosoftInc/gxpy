@@ -1,3 +1,11 @@
+"""
+Drawing elements that are placed in groups in 3d views, or in 2D views on a map.
+
+.. note::
+
+    Regression tests provide usage examples: `Tests <https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_group.py>`_
+
+"""
 import atexit
 from functools import wraps
 import threading

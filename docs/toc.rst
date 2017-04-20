@@ -1,3 +1,5 @@
+:orphan:
+
 .. _toc:
 
 Table of Contents
@@ -7,7 +9,7 @@ Table of Contents
    :maxdepth: 2
 
    index
- 
+
    geosoft.gxapi
    geosoft.gxpy
 

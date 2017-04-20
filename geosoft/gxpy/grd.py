@@ -1,3 +1,11 @@
+"""
+Geosoft grids.
+
+.. note::
+
+    Regression tests provide usage examples: `Tests <https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_grd.py>`_
+
+"""
 import os
 import atexit
 import numpy as np
@@ -18,11 +26,11 @@ def _t(s):
 
 
 class GRDException(Exception):
-    '''
+    """
     Exceptions from this module.
 
     .. versionadded:: 9.1
-    '''
+    """
     pass
 
 
@@ -546,7 +554,7 @@ class GXgrd():
         return GXgrd.open(file_name, mode=FILE_READWRITE)
 
     def _geth_pg(self):
-        '''Get an hpg for the grid, adding the handle to the class so it does not get destroyed.'''
+        """Get an hpg for the grid, adding the handle to the class so it does not get destroyed."""
         if self._hpg is None:
             self._hpg = self._img.geth_pg()
         return self._hpg
@@ -619,14 +627,14 @@ class GXgrd():
             iy += order
 
     def read_rows(self, ix0=0, iy0=0):
-        '''
+        """
 
         :param ix0:
         :param iy0:
         :return:
 
         .. versionadded:: 9.1
-        '''
+        """
 
     @staticmethod
     def name_parts(name):
@@ -697,13 +705,13 @@ class GXgrd():
 
 # grid utilities
 def array_locations(properties, z=0.):
-    '''
+    """
     Create an array of (x,y,z) points for a grid defined by properties
     :param properties:  grid properties
     :return:            array of points, shaped (ny, nx, 3)
 
     .. versionadded:: 9.1
-    '''
+    """
 
     nx = properties.get('nx')
     ny = properties.get('ny')

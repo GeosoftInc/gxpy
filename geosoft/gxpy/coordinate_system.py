@@ -1,3 +1,12 @@
+"""
+Coordinate systems describe how cartesian coordinates are located ralative to the Earth.
+ 
+.. note::
+
+    Regression tests provide usage examples: `Tests <https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_coordinate_system.py>`_
+
+"""
+
 import json
 import geosoft
 import geosoft.gxapi as gxapi
@@ -53,11 +62,11 @@ PARM_UNITS = 'units'
 PARM_LOCAL_DATUM = 'datumtrf'
 
 class CSException(Exception):
-    '''
+    """
     Exceptions from this module.
 
     .. versionadded:: 9.2
-    '''
+    """
     pass
 
 def parameters(what, key):

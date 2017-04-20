@@ -1,4 +1,11 @@
+"""
+Table (records, fields) handling, inherits from Pandas base class.
 
+.. note::
+
+    Regression tests provide usage examples: `Tests <https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_dataframe.py>`_
+
+"""
 import pandas as pd
 
 import geosoft
@@ -11,11 +18,11 @@ def _t(s):
     return geosoft.gxpy.system.translate(s)
 
 class DfException(Exception):
-    '''
+    """
     Exceptions from this module.
 
     .. versionadded:: 9.2
-    '''
+    """
     pass
 
 def table_record(table, rec):
@@ -27,7 +34,6 @@ def table_record(table, rec):
     :return:        dictionary containing record values as strings
 
     .. versionadded:: 9.2
-    '''
     """
 
     t = GXdf(table, records=rec)
@@ -42,7 +48,6 @@ def table_column(table, col):
     :return:        dictionary containing record values as strings
 
     .. versionadded:: 9.2
-    '''
     """
 
     t = GXdf(table, columns=col).to_dict(orient='index')
@@ -52,7 +57,7 @@ def table_column(table, col):
     return d
 
 class GXdf(pd.DataFrame):
-    '''
+    """
     Pandas DataFrame from a Geosoft table.
 
     :parameters:
@@ -99,7 +104,7 @@ class GXdf(pd.DataFrame):
                 print(df.loc['cal', 'PATTERN'])     # "315"
 
     .. versionadded:: 9.2
-    '''
+    """
 
     def __enter__(self):
         return self

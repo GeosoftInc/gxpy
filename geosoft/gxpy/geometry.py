@@ -1,3 +1,11 @@
+"""
+Basic geometric elements.
+
+.. note::
+
+    Regression tests provide usage examples: `Tests <https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_geometry.py>`_
+
+"""
 import numpy as np
 import numbers
 from collections.abc import Sequence

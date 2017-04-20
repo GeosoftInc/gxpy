@@ -1,5 +1,10 @@
 """
-Geosoft Viewers
+Geosoft Viewers.
+
+.. note::
+
+    Test example: `Tests <https://github.com/GeosoftInc/gxpy/blob/master/examples/stand-alone/test_viewer.py>`_
+
 """
 #TODO work out a way to satisfy help_ID - added to http://confluence.geosoft.com/display/PM/One-liners
 

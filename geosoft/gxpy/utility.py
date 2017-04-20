@@ -1,6 +1,9 @@
 """
+Utility functions to support Geosoft Python scripts and modules.
 
-   Utility functions to support Geosoft Python scripts and modules.
+.. note::
+
+    Regression tests provide usage examples: `Tests <https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_utility.py>`_
 
 """
 
@@ -325,14 +328,14 @@ def decode(s, f):
 
 
 def display_message(title, message):
-    '''
+    """
     Display a message to the user.
 
     :param title:   message title
     :param message: message
 
     .. versionadded:: 9.1
-    '''
+    """
 
     try:
         gxapi.GXSYS.display_message(title, message)

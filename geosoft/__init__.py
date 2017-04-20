@@ -34,10 +34,10 @@ should cleanly exit due to a completion condition. Generally not caught since it
 '''
 
 gxapi.GXAPIError.__doc__ = '''
-   A subclass of `RuntimeError <https://docs.python.org/3/library/exceptions.html#RuntimeError>`_ which is raised whenever 
-   the GX Python API encounters initialization issues or other API violations. It generally indicates a bug in Python code.
+A subclass of `RuntimeError <https://docs.python.org/3/library/exceptions.html#RuntimeError>`_ which is raised whenever 
+the GX Python API encounters initialization issues or other API violations. It generally indicates a bug in Python code.
 
-   .. versionadded:: 9.1
+.. versionadded:: 9.1
 '''
 
 gxapi.GXError.__doc__ = '''
@@ -51,24 +51,26 @@ very specific exceptions.
 .. versionadded:: 9.1
 '''
 
-gxapi.GXContext.__doc__ = '''The main GX execution context
+gxapi.GXContext.__doc__ = '''
 
-A single instance of this object needs to be created per thread and persisted before using any other class in the
-geosoft.gxapi module.
+The main GX execution context.
+
+A single instance of this object must be created per thread and persist before using any other class in the
+:py:mod:`.geosoft.gxapi` module.
+
+.. seealso::
+
+    Class :py:class:`.gxpy.gx.GXpy`
 
 '''
 
 gxapi.GXContext.create.__doc__ = '''create((str)application, (str)version, (int)parent_wnd_id = 0) -> GXContext:
 Creates the GX execution context (will return the current one if it exists).
 
-:param application: Calling application name"
-:type application: str
-:param version: Calling application version
-:type version: str
+:param application: Calling application name (str)"
+:param version: Calling application version (str)
 :param parent_wnd_id: Calling application main window handle (HWND cast to unsigned on Windows) as an int (default 0)
-:type parent_wnd_id: int
 :returns: A GX execution context.
-:rtype: geosoft.gxapi.GXContext
 
 .. versionadded:: 9.1
 
@@ -78,7 +80,6 @@ gxapi.GXContext.current.__doc__ = '''current() -> GXContext:
 Get the current thread's GX execution context (throws if not created yet).
 
 :returns: A GX execution context.
-:rtype: geosoft.gxapi.GXContext
 
 .. versionadded:: 9.1
 
@@ -88,7 +89,6 @@ gxapi.GXContext.get_main_wnd_id.__doc__ = '''get_main_wnd_id() -> int:
 Get the main window handle (0 if not available).
 
 :returns: Window handle as an int (HWND cast to unsigned on Windows)
-:rtype: int
 
 .. versionadded:: 9.1
 
@@ -98,7 +98,6 @@ gxapi.GXContext.get_active_wnd_id.__doc__ = '''get_active_wnd_id() -> int:
 Get currently active window (main window, floating document or other popup, 0 if not available).
 
 :returns: Window handle as an int (HWND cast to unsigned on Windows)
-:rtype: int
 
 .. versionadded:: 9.1
 
@@ -111,8 +110,6 @@ The :class:`geosoft.gxapi.GXEMAP` digitization methods.
 
 :param enable: True to enable, False to disable keyboard and mouse interaction
 :type enable: bool
-:returns: Nothing
-:rtype: None
 
 .. versionadded:: 9.1
 
@@ -120,9 +117,6 @@ The :class:`geosoft.gxapi.GXEMAP` digitization methods.
 
 gxapi.GXContext.clear_ui_console.__doc__ = '''clear_ui_console() -> None:
 Clears the console owned by UI applications. Has no effect on consoles owning standalone scripts.
-
-:returns: Nothing
-:rtype: None
 
 .. versionadded:: 9.1
 
@@ -133,9 +127,6 @@ Shows or hides console owned by UI applications. Showing the console Will also b
 other application windows. Has no effect on consoles owning standalone scripts.
 
 :param show: True to show False to Hide
-:type show: bool
-:returns: Nothing
-:rtype: None
 
 .. versionadded:: 9.1
 
@@ -144,8 +135,7 @@ other application windows. Has no effect on consoles owning standalone scripts.
 gxapi.GXContext.has_ui_console.__doc__ = '''has_ui_console() -> bool:
 Checks if a console owned by UI applications is available
 
-:returns: Window handle as an int (HWND cast to unsigned on Windows)
-:rtype: bool
+:returns: True is the parent has UI console.
 
 .. versionadded:: 9.1
 

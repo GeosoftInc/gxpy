@@ -2,21 +2,32 @@
 Introduction
 ============
 
-This is documentation for the Geosoft GX API, which is part of Geosoft GX Developer. The complete GX Developer
-programming guide can be found here: `GX Developer Documentation <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/overview>`__.
-Refer to the documentation version that matches this version of this API.
+This is the Python API reference documentation for the Geosoft GX API (and gxpy), which is part of Geosoft GX Developer.
+The complete GX Developer programming guide can be found in a separate on-line document:
+`GX Developer Guide <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/overview>`__.
+The programming guide is available as a separate version for each released version of GX Developer. Refer to the
+documentation version that matches the API version noted at the top of this page.
 
-The Geosoft gxpy modules provide a Python-oriented set of simplified interfaces.
+The GX API has two parts:
 
-    :doc:`gxpy reference... </geosoft.gxpy>`
+    1.  The **Geosoft GX API** provides the full low-level library of functions available to all languages,
+        including Python.  The Geosoft GX API is exposed to python developers through the
+        :doc:`geosoft.gxapi </geosoft.gxapi.classes>` module.
 
-The Geosoft GX API provides the full low-level library of functions available to all languages.
+    2.  The **Geosoft gxpy API** is a set of :doc:`Python modules... </geosoft.gxpy>` that provides a
+        Pythonic abstraction of key parts of the underlying GX API.  This hides much of the complexity of
+        the low-level GX API, while still providing low-level access where necessary. The coding of the
+        gxpy Python modules also provides an invaluable reference for how to work with the low-level
+        libraries.
 
-    :doc:`GX API reference... </geosoft.gxapi>`
+Reference
+=========
 
-Some sample Python scripts...
-
-    :doc:`Example scripts... </helloworld>`
+    ========================== =================================================================
+    **GX API**                 :doc:`GX API Class/Library Reference... </geosoft.gxapi.classes>`
+    **gxpy Python modules**    :doc:`gxpy reference... </geosoft.gxpy>`
+    **Example Python scripts** :doc:`Example scripts... </helloworld>`
+    ========================== =================================================================
 
 Indices and tables
 ==================
