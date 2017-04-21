@@ -355,6 +355,32 @@ class Test(GXPYTest):
         self.assertEqual(gxu.crc32(b'bunch of bytes'), 3271364337)
         self.assertEqual(gxu.crc32_str('a string'), 2577552858)
 
+    def test_sig_fig(self):
+        self.start()
+
+        self.assertEqual(gxu.str_significant(1.0, 1), '1')
+        self.assertEqual(gxu.str_significant(-1.0, 1), '-1')
+        self.assertEqual(gxu.str_significant(105.1005, 2), '110')
+        self.assertEqual(gxu.str_significant(-105.0, 2), '-100')
+        self.assertEqual(gxu.str_significant(-105.0001000, 2), '-110')
+        self.assertEqual(gxu.str_significant(105.0, 2, mode=-1), '100')
+        self.assertEqual(gxu.str_significant(-105.0, 2, mode=-1), '-100')
+
+        self.assertEqual(gxu.str_significant(0.000456789123, 3), '0.000457')
+        self.assertEqual(gxu.str_significant(-0.000456789123, 3), '-0.000457')
+        self.assertEqual(gxu.str_significant(0.000456789123, 3, 1), '0.000457')
+        self.assertEqual(gxu.str_significant(0.000456789123, 3, -1), '0.000456')
+        self.assertEqual(gxu.str_significant(-0.000456789123, 3, -1), '-0.000456')
+        self.assertEqual(gxu.str_significant(4567800000.0, 3), '4570000000')
+        self.assertEqual(gxu.str_significant(4567800000.0, 3, 1), '4570000000')
+        self.assertEqual(gxu.str_significant(4567800000.0, 3, -1), '4560000000')
+
+        self.assertEqual(gxu.str_significant(0.00045, 3), '0.00045')
+        self.assertEqual(gxu.str_significant(4500000000.0, 3), '4500000000')
+        self.assertEqual(gxu.str_significant(0.000451, 1), '0.0005')
+        self.assertEqual(gxu.str_significant(4510000000.0, 1), '5000000000')
+        self.assertEqual(gxu.str_significant(0.000451, 1, -1), '0.0004')
+        self.assertEqual(gxu.str_significant(4510000000.0, 1, -1), '4000000000')
 
 if __name__ == '__main__':
 

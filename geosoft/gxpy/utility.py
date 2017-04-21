@@ -7,6 +7,8 @@ Utility functions to support Geosoft Python scripts and modules.
 
 """
 
+import math
+import decimal
 import os
 import uuid as uid
 import json
@@ -817,4 +819,48 @@ def datetime_from_year(year):
     milliseconds = round(remainder * (y_end - y_start).total_seconds() * 1000.0)
     return y_start + datetime.timedelta(seconds=milliseconds/1000.0)
 
+def str_significant(value, n, mode=0):
+    """
+    Return a formatted string to n significant figures.
+    :param value:   value to format
+    :param mode:    0 round, 1 ceiling, -1 floor
+    :return:        string to n significant figures
+    """
 
+    if value == 0.0:
+        return '0'
+
+    value = decimal.Decimal(str(value))
+    if value < 0.0:
+        mult = decimal.Decimal(-1)
+        value = value * -1
+    else:
+        mult = decimal.Decimal(1)
+
+    vstr = '{:33.16f}'.format(value).strip(' 0')
+
+    power = vstr.index('.')
+    vstr = vstr[:power] + vstr[power + 1:]
+    for i,c in enumerate(vstr):
+        if c != '0':
+            power -= i
+            break
+    vstr = vstr.strip('0')
+
+    significant = len(vstr)
+    if significant <= n:
+        s = str(value * decimal.Decimal(mult))
+        if s.endswith('.0'):
+            return s[:-2]
+        else:
+            return s
+
+    v = float(vstr[:n] + '.' + vstr[n:])
+    if mode == 0:
+        vstr = str(round(v))
+    elif mode == 1:
+        vstr = str(math.ceil(v))
+    else:
+        vstr = str(math.floor(v))
+
+    return str(decimal.Decimal(vstr) * mult * (10 ** decimal.Decimal(power - n)))

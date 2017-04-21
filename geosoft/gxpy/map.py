@@ -411,11 +411,7 @@ class GXmap:
             mx, my = data_window_on_map()
             sx = (data_area[2] - data_area[0]) * 100.0 / mx
             sy = (data_area[3] - data_area[1]) * 100.0 / my
-            scale = max(sx, sy)
-
-            # TODO - add a round_to_precision() function with option to round up or down.
-            if scale > 100:
-                scale = float(ceil(scale))
+            scale = float(gxu.str_significant(max(sx, sy), 4, 1))
 
         if fixed_size:
             mx, my = data_window_on_map()
@@ -829,8 +825,6 @@ class GXmap:
 
         .. versionadded:: 9.2
         """
-
-        # TODO add IGRF calculation from a date, igrfdate=
 
         if direction is None:
             with gxv.GXview(self, '*data', mode=gxv.WRITE_OLD) as v:

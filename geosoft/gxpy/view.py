@@ -103,7 +103,6 @@ class GXview:
 
     def _close(self):
         if self._open:
-            # TODO revisit resource cleaning once we have cython interface.  Jacques suspects boost.
             self.gxview = None
             self._pen = None
             self._map = None  # release map
