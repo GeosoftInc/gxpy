@@ -546,6 +546,10 @@ class GXview3d(GXview):
         self._close()
 
     @property
+    def file_name(self):
+        return self.map.file_name
+
+    @property
     def name(self):
         return self.map.name
 

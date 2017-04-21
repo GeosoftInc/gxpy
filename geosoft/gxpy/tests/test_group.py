@@ -25,7 +25,7 @@ def rect_line(g, size=100):
     poff = gxgm.Point((0.15, 0.05)) * size
     g.xy_rectangle((p1, p2), pen=g.new_pen(fill_color=gxg.C_LT_GREEN))
     p12 = gxgm.Point2((p1 + poff, p2 - poff))
-    g.xy_line((p12.p1.x, p12.p1.y, p12.p2.x, p12.p2.y), pen=g.new_pen(line_style=2, line_pitch=2.0))
+    g.xy_line((p12.p0.x, p12.p0.y, p12.p1.x, p12.p1.y), pen=g.new_pen(line_style=2, line_pitch=2.0))
 
 
 def pline():
@@ -198,12 +198,70 @@ class Test(GXPYTest):
                 draw_stuff(g)
             with gxg.GXdraw3d(view_3d, '3d_group') as g:
                 g.box_3d(((20, 10, 30), (80, 50, 50)), pen=g.new_pen(fill_color='R255G100B50'))
+                g.cylinder_3d(((20, 10, 60), (80, 50, 80)), 5, pen='B')
+                g.cone_3d(((20, 10, 80), (80, 50, 60)), 8, pen='G')
+                g.cone_3d(((20, 50, 65), (20, 50, 40)), 30, pen='R', close=False)
+                g.sphere((20, 50, 80), 10, pen='C')
 
             with gxmap.GXmap.open(testmap) as gmap:
                 gmap.create_linked_3d_view(view_3d, area_on_map=(10, 10, 270, 250))
 
         self.crc_map(test3dv, alt_crc_name=gxsys.func_name() + '_3dv')
         self.crc_map(testmap, alt_crc_name=gxsys.func_name() + '_map')
+
+    def _test_3D_sergei_1(self):
+        self.start()
+
+        test3dv = "challenge 1 - the caps not as expected"
+        with gxv.GXview3d.new(test3dv, overwrite=True) as view_3d:
+            test3dv = view_3d.file_name
+            with gxg.GXdraw3d(view_3d, '3d_group') as g:
+                g.pen = 'B'
+                g.view.gxview.cylinder_3d(0, 0, 0,
+                                          50, 0, 0,
+                                          10, 10, 3)
+                g.pen = 'G'
+                g.view.gxview.cylinder_3d(0, 0, 20,
+                                          50, 0, 20,
+                                          10, 10, 0)
+                g.pen = 'R'
+                g.view.gxview.cylinder_3d(0, 0, 40,
+                                          50, 0, 40,
+                                          10, 10, 1)
+
+                g.pen = 'K64'
+                g.view.gxview.cylinder_3d(0, 0, 60,
+                                          50, 0, 60,
+                                          10, 10, 2)
+
+        self.crc_map(test3dv)
+
+    def _test_3D_sergei_2(self):
+        self.start()
+
+        test3dv = "challenge 2 - start and end radius not as expected"
+        with gxv.GXview3d.new(test3dv, overwrite=True) as view_3d:
+            test3dv = view_3d.file_name
+            with gxg.GXdraw3d(view_3d, '3d_group') as g:
+                g.pen = 'B'
+                g.view.gxview.cylinder_3d(0, 0, 0,
+                                          50, 0, 0,
+                                          10, 10, 3)
+                g.pen = 'G'
+                g.view.gxview.cylinder_3d(0, 0, 20,
+                                          50, 0, 20,
+                                          15, 5, 3)
+                g.pen = 'R'
+                g.view.gxview.cylinder_3d(0, 0, 40,
+                                          50, 0, 40,
+                                          10, 0, 0)
+
+                g.pen = 'K64'
+                g.view.gxview.cylinder_3d(0, 0, 60,
+                                          50, 0, 60,
+                                          0, 10, 0)
+
+        self.crc_map(test3dv)
 
     def test_graticule(self):
         self.start()
@@ -422,6 +480,10 @@ class Test(GXPYTest):
         self.assertEqual(ms, 'r4g0b84R48G0B0t1')
         p = gxg.Pen.from_mapplot_string(ms)
         self.assertEqual(p.mapplot_string, ms)
+
+        p = gxg.Pen.from_mapplot_string('c64K64')
+        self.assertEqual(p.line_color.rgb, (191, 255, 255))
+        self.assertEqual(p.fill_color.rgb, (191, 191, 191))
 
         p = gxg.Pen(line_color='K')
         self.assertEqual(p.line_color.int, gxg.C_BLACK)

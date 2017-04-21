@@ -203,7 +203,7 @@ class Test(GXPYTest):
         try:
 
             with gxv.GXview3d.new('test_3d', overwrite=True) as v:
-                v3d_file = v.map.file_name
+                v3d_file = v.file_name
                 self.assertTrue(v3d_file.lower().endswith('.geosoft_3dv'))
                 self.assertEqual(v.name, 'test_3d')
                 self.assertEqual(v.map.name, 'test_3d')
@@ -246,10 +246,11 @@ class Test(GXPYTest):
         self.start()
 
         v3d_file = None
+        map_file = None
         try:
 
             with gxmap.GXmap.new() as map:
-                mapfile = map.file_name
+                map_file = map.file_name
                 with gxv.GXview(map, '*base') as v:
                     with gxg.GXdraw(v, 'edge') as g:
                         g.xy_rectangle(v.extent_clip)
@@ -266,15 +267,17 @@ class Test(GXPYTest):
                 with gxg.GXdraw3d(v, '3D stuff') as g:
                     g.box_3d(((20, 10, -10), (80, 50, 30)), pen=g.new_pen(fill_color='R255G100B50'))
 
-                with gxmap.GXmap.open(mapfile) as map:
+                with gxmap.GXmap.open(map_file) as map:
                     map.create_linked_3d_view(v, 'linked_view')
 
             #TODO this fails in batch, but not in interactive.
-            self.crc_map(mapfile)
+            self.crc_map(map_file)
 
         finally:
             if v3d_file:
                 gxmap.delete_files(v3d_file)
+            if map_file:
+                gxmap.delete_files(map_file)
 
     def test_3d_open(self):
         self.start()

@@ -138,6 +138,11 @@ COLOR_BAR_ANNOTATE_LEFT = -1
 COLOR_BAR_ANNOTATE_TOP = 1
 COLOR_BAR_ANNOTATE_BOTTOM = -1
 
+CYLINDER_OPEN = 0
+CYLINDER_CLOSE_START = 1
+CYLINDER_CLOSE_END = 2
+CYLINDER_CLOSE_ALL = 3
+
 
 def edge_reference(area, ref):
     """
@@ -315,7 +320,7 @@ class GXgroup:
         area -= edge_reference(area, ref)
         area += location
         self.view.gxview.relocate_group(self.name,
-                                        area.p1.x, area.p1.y, area.p2.x, area.p2.y,
+                                        area.p0.x, area.p0.y, area.p1.x, area.p1.y,
                                         gxapi.MVIEW_RELOCATE_ASPECT_CENTER)
 
 
@@ -328,8 +333,8 @@ def _draw(func):
             self._init_pen()
         if 'pen' in kwargs:
             cur_pen = self.pen
-            self.pen = kwargs.pop('pen')
             try:
+                self.pen = kwargs.pop('pen')
                 func(self, *args, **kwargs)
             except:
                 raise
@@ -353,8 +358,15 @@ class GXdraw(GXgroup):
     """
 
     @staticmethod
+    def _make_Point(p):
+        if isinstance(p, gxgm.Point):
+            return p
+        else:
+            return gxgm.Point(p)
+
+    @staticmethod
     def _make_Point2(p2):
-        if type(p2) is gxgm.Point2:
+        if isinstance(p2, gxgm.Point2):
             return p2
         else:
             return gxgm.Point2(p2)
@@ -536,7 +548,7 @@ class GXdraw(GXgroup):
         """
 
         p2 = self._make_Point2(p2)
-        self.view.gxview.line(p2.p1.x, p2.p1.y, p2.p2.x, p2.p2.y)
+        self.view.gxview.line(p2.p0.x, p2.p0.y, p2.p1.x, p2.p1.y)
 
     @_draw
     def xy_polyline(self, pp, close=False):
@@ -585,7 +597,7 @@ class GXdraw(GXgroup):
         """
 
         p2 = self._make_Point2(p2)
-        self.view.gxview.rectangle(p2.p1.x, p2.p1.y, p2.p2.x, p2.p2.y)
+        self.view.gxview.rectangle(p2.p0.x, p2.p0.y, p2.p1.x, p2.p1.y)
 
     def text(self,
              text,
@@ -632,17 +644,79 @@ class GXdraw3d(GXdraw):
         super().__init__(view, *args, **kwargs)
 
     @_draw
-    def box_3d(self, p2, pen=None):
+    def sphere(self, p, radius):
+        """
+        Draw a sphere.
+
+        :param p:       location as geometry.Point, or (x, y, z)
+        :param radius:  sphere radius
+        
+        .. versionadded:: 9.2
+        """
+
+        p = self._make_Point(p)
+        self.view.gxview.sphere_3d(p.x, p.y, p.z, radius)
+
+    @_draw
+    def box_3d(self, p2):
         """
         Draw a 3D box
-        :param p2: geometry.Point2, or (p1, p2), or (x0, y0, x1, y1)
+        
+        :param p2: box corners as geometry.Point2, or (p0, p1), or (x0, y0, z0, x1, y1, z1)
 
         .. versionadded:: 9.2
         """
 
         p2 = self._make_Point2(p2)
-        self.view.gxview.box_3d(p2.p1.x, p2.p1.y, p2.p1.z,
-                                p2.p2.x, p2.p2.y, p2.p2.z)
+        self.view.gxview.box_3d(p2.p0.x, p2.p0.y, p2.p0.z,
+                                p2.p1.x, p2.p1.y, p2.p1.z)
+
+
+    @_draw
+    def cylinder_3d(self, p2, radius, r2=None, close=CYLINDER_CLOSE_ALL):
+        """
+        Draw a cylinder.
+        
+        :param p2:      end points as geometry.Point2, or (p0, p1), or (x0, y0, z0, x1, y1, z1)
+        :param radius:  cylinder radius.
+        :param r2:      end radius if different from the start
+        :param close:   one of:
+        
+                            ::
+                
+                                CYLINDER_OPEN
+                                CYLINDER_CLOSE_START
+                                CYLINDER_CLOSE_END
+                                CYLINDER_CLOSE_ALL
+
+        .. versionadded:: 9.2
+        """
+
+        p2 = self._make_Point2(p2)
+        if r2 is None:
+            r2 = radius
+        self.view.gxview.cylinder_3d(p2.p0.x, p2.p0.y, p2.p0.z,
+                                     p2.p1.x, p2.p1.y, p2.p1.z,
+                                     radius, r2,
+                                     close)
+
+    @_draw
+    def cone_3d(self, p2, radius, close=True):
+        """
+        Draw a cone.
+
+        :param p2:      end points as geometry.Point2, or (p0, p1), or (x0, y0, z0, x1, y1, z1)
+        :param radius:  cone base radius, base is as the the first point of p2.
+        :param close:   True to close the base of the cone, False to leave open.
+
+        .. versionadded:: 9.2
+        """
+
+        p2 = self._make_Point2(p2)
+        self.view.gxview.cylinder_3d(p2.p0.x, p2.p0.y, p2.p0.z,
+                                     p2.p1.x, p2.p1.y, p2.p1.z,
+                                     radius, 0,
+                                     int(close))
 
 
 def legend_color_bar(view,
@@ -1233,12 +1307,32 @@ class Pen:
     @classmethod
     def from_mapplot_string(cls, cstr):
         """
-        Create a Pen instance from a mapplot-style string descriptor.
+        Create a Pen instance from a mapplot-style string descriptor using either a
+        rgbRGB or cmyCMY colour model.  Lower case letters indicate line colour, upper-case
+        indicates fill colour, 'k', 'K' for black.  Each letter may be followed by an intensity
+        between 0 and 255.  If an intensity is not specified 255 is assumed.
 
-        :param cstr:                example 'r45g255t500B'
-
+        :param cstr:    mapplot-style colour definition
+                      
+        Examples:
+        
+            =========== ==============================================
+            'r'         red line
+            'R'         red fill
+            'rG64'      red line, light-green fill
+            'c64'       light cyan line, equivalent to 'R191G255B255'
+            'c64K96'    light cyan line, light-grey fill
+            =========== ==============================================
+            
         .. versionadded:: 9.2
         """
+
+        def color_model(cstr):
+            s = cstr.lower()
+            for c in 'cmy':
+                if c in s:
+                    return 'cmyk'
+            return 'rgbk'
 
         def get_part(cstr, c, default=255):
             if c not in cstr:
@@ -1266,14 +1360,24 @@ class Pen:
             if has_color(cstr, cc):
                 k = get_part(cstr, cc[3])
                 if has_color(cstr, cc[:3]):
-                    return add_k((get_part(cstr, cc[0]), get_part(cstr, cc[1]), get_part(cstr, cc[2])), k)
+                    if model[0] == 'c' or model[0] == 'C':
+                        return add_k((255 - get_part(cstr, cc[0]),
+                                      255 - get_part(cstr, cc[1]),
+                                      255 - get_part(cstr, cc[2])),
+                                     k)
+                    else:
+                        return add_k((get_part(cstr, cc[0]),
+                                      get_part(cstr, cc[1]),
+                                      get_part(cstr, cc[2])),
+                                     k)
                 else:
                     return add_k((255, 255, 255), k)
             else:
                 return C_TRANSPARENT
 
-        line_color = color(cstr, 'rgbk')
-        fill_color = color(cstr, 'RGBK')
+        model = color_model(cstr)
+        line_color = color(cstr, model)
+        fill_color = color(cstr, model.upper())
         line_thick = max(1, get_part(cstr, 't', 1)) * 0.0001
 
         return cls(line_color=line_color, fill_color=fill_color, line_thick=line_thick)

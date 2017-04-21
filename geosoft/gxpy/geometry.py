@@ -71,6 +71,12 @@ class Point(Geometry):
                     (x, y [,z]) implied z is 0.0 if not provided
                     k makes a point (k, k, k)
 
+    :properties:
+    
+        :x, y, z:   point ordinate values
+        :xy:        (x, y) tuple
+        :xyz:       (x, y, z) tuple
+
     .. versionadded:: 9.2
     """
 
@@ -188,70 +194,78 @@ class Point2(Geometry):
                         ((x, y [,z]), (x, y [,z])) implied z is 0 if not specified
                         (x0, y0, x1, y1) implied z is 0
                         (x0, y0, z0, x1, y1, z1)
+                        
+    :properties:
+    
+        :p0:            first point as a Point instance
+        :p1:            second point at a Point instance
+        :x2, y2, z2:    tuple pairs for (x0, x1), (y0, y1), (z0, z1)
+        :centroid:      center of the two points
+        :dimension:     (dx, dy, dz) dimension defines by teo points.
 
     .. versionadded:: 9.2
     """
 
     def __str__(self):
-        return "Point2[({}, {}, {}) ({}, {}, {})]".format(self.p1.x, self.p1.y, self.p1.z,
-                                                          self.p2.x, self.p2.y, self.p2.z)
+        return "Point2[({}, {}, {}) ({}, {}, {})]".format(self.p0.x, self.p0.y, self.p0.z,
+                                                          self.p1.x, self.p1.y, self.p1.z)
 
     def __init__(self, p, **kwargs):
 
         super().__init__(**kwargs)
 
         if not hasattr(p, '__iter__'):
-            self.p1 = self.p2 = Point(p)
+            self.p0 = self.p1 = Point(p)
         if len(p) == 2:
-            self.p1 = Point(p[0])
-            self.p2 = Point(p[1])
+            self.p0 = Point(p[0])
+            self.p1 = Point(p[1])
         elif len(p) == 4:
-            self.p1 = Point((p[0], p[1]))
-            self.p2 = Point((p[2], p[3]))
+            self.p0 = Point((p[0], p[1]))
+            self.p1 = Point((p[2], p[3]))
         elif len(p) == 6:
-            self.p1 = Point((p[0], p[1], p[2]))
-            self.p2 = Point((p[3], p[4], p[5]))
+            self.p0 = Point((p[0], p[1], p[2]))
+            self.p1 = Point((p[3], p[4], p[5]))
         else:
             raise GeometryException(_t('Invalid points: {}').format(p))
 
     def __eq__(self, other):
         return (self.cs.same_as(other.cs)) and \
-                ((self.p1 == other.p1) and (self.p2 == other.p2)
-                 or (self.p1 == other.p2) and (self.p2 == other.p1))
+                ((self.p0 == other.p0) and (self.p1 == other.p1)
+                 or (self.p0 == other.p1) and (self.p1 == other.p0))
 
     def __add__(self, p):
         if type(p) is Point2:
-            return Point2((self.p1 + p.p1, self.p2 + p.p2))
+            return Point2((self.p0 + p.p0, self.p1 + p.p1))
         else:
             if type(p) is not Point:
                 p = Point(p)
-            return Point2((self.p1 + p, self.p2 + p))
+            return Point2((self.p0 + p, self.p1 + p))
 
     def __sub__(self, p):
         if type(p) is Point2:
-            return Point2((self.p1 - p.p1, self.p2 - p.p2))
+            return Point2((self.p0 - p.p0, self.p1 - p.p1))
         else:
             if type(p) is not Point:
                 p = Point(p)
-            return Point2((self.p1 - p, self.p2 - p))
+            return Point2((self.p0 - p, self.p1 - p))
 
     def __neg__(self):
-        return Point2((-self.p1, -self.p2))
+        return Point2((-self.p0, -self.p1))
 
     def __mul__(self, p):
         if type(p) is Point2:
-            return Point2((self.p1 * p.p1, self.p2 * p.p2))
+            return Point2((self.p0 * p.p0, self.p1 * p.p1))
         else:
             if type(p) is not Point:
                 p = Point(p)
-            return Point2((self.p1 * p, self.p2 * p))
+            return Point2((self.p0 * p, self.p1 * p))
 
     def __truediv__(self, p):
         if type(p) is Point2:
-            return Point2((self.p1 / p.p1, self.p2 / p.p2))
+            return Point2((self.p0 / p.p0, self.p1 / p.p1))
         if type(p) is not Point:
             p = Point(p)
-            return Point2((self.p1 / p, self.p2 / p))
+            return Point2((self.p0 / p, self.p1 / p))
 
     def copy(self):
         cls = self.__class__
@@ -261,47 +275,46 @@ class Point2(Geometry):
 
     @property
     def x2(self):
-        """ X extent (min, max)"""
-        return self.p1.x, self.p2.x
+        return self.p0.x, self.p1.x
 
     @x2.setter
     def x2(self, value):
-        self.p1.x = value[0]
-        self.p2.x = value[1]
+        self.p0.x = value[0]
+        self.p1.x = value[1]
 
     @property
     def y2(self):
         """ Y extent (min, max)"""
-        return self.p1.y, self.p2.y
+        return self.p0.y, self.p1.y
 
     @y2.setter
     def y2(self, value):
-        self.p1.y = value[0]
-        self.p2.y = value[1]
+        self.p0.y = value[0]
+        self.p1.y = value[1]
 
     @property
     def z2(self):
         """ Z extent (min, max)"""
-        return self.p1.z, self.p2.z
+        return self.p0.z, self.p1.z
 
     @z2.setter
     def z2(self, value):
-        self.p1.z = value[0]
-        self.p2.z = value[1]
+        self.p0.z = value[0]
+        self.p1.z = value[1]
 
 
     @property
     def centroid(self):
-        cx = (self.p2.x + self.p1.x) * 0.5
-        cy = (self.p2.y + self.p1.y) * 0.5
-        cz = (self.p2.z + self.p1.z) * 0.5
+        cx = (self.p1.x + self.p0.x) * 0.5
+        cy = (self.p1.y + self.p0.y) * 0.5
+        cz = (self.p1.z + self.p0.z) * 0.5
         return Point((cx, cy, cz))
 
     @property
     def dimension(self):
-        dx = abs(self.p2.x - self.p1.x)
-        dy = abs(self.p2.y - self.p1.y)
-        dz = abs(self.p2.z - self.p1.z)
+        dx = abs(self.p1.x - self.p0.x)
+        dy = abs(self.p1.y - self.p0.y)
+        dz = abs(self.p1.z - self.p0.z)
         return (dx, dy, dz)
 
 
@@ -313,7 +326,12 @@ class PPoint(Geometry, Sequence):
                 vv data is resampled to match the first vv.
     :param z:   constant z value for (x, y) data, ignored for (x, y, z) data
 
-    :member pp: nparray shape (n,3)
+    :properties:
+     
+        :pp:        np_array shape (n,3)
+        :x, y, z:   np_arrays of each ordinate set
+        :xy:        np_arrays of (x,y) points (n,2)
+        :xyz:       same as pp
 
     .. versionadded:: 9.2
     """
