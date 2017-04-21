@@ -4,6 +4,7 @@ import glob
 import unittest
 import inspect
 import subprocess
+from tkinter import messagebox
 
 os.environ['GEOSOFT_TEST_MODE'] = '1'
 os.environ['GEOSOFT_TESTSYSTEM_MODE'] = '1'
@@ -15,8 +16,10 @@ import geosoft.gxpy.viewer as gxvwr
 import geosoft.gxpy.utility as gxu
 import geosoft.gxpy.system as gxsys
 
-# set to True to see master versus results in diff tool (GXPY_DIFF_TOOL env needs to be defined)
-DIFF_RESULTS = True
+# Set the following to True to enable interactive updating of results.
+# To incorporate a diff tool the GXPY_DIFF_TOOL environment
+# variable should be defined.
+UPDATE_RESULTS = False
 
 # set to True to show viewer for each CRC call
 SHOW_TEST_VIEWERS = False
@@ -41,8 +44,7 @@ class GXPYTest(unittest.TestCase):
     def setUpGXPYTest(cls, res_stack=6):
         os.chdir(os.path.dirname(os.path.realpath(__file__)))
         _verify_no_gx_context()
-        parent_window = -1 if SHOW_TEST_VIEWERS else 0
-        cls._gx = gx.GXpy(log=print, res_stack=res_stack, parent_window=parent_window, max_warnings=8)
+        cls._gx = gx.GXpy(log=print, res_stack=res_stack, max_warnings=8)
 
     @classmethod
     def tearDownGXPYTest(cls):
@@ -85,7 +87,6 @@ class GXPYTest(unittest.TestCase):
         # Do something if you want
         self._result_dir = value
 
-
     @classmethod
     def _remove_time_chunk_from_png(cls, png_file):
         file_length = os.stat(png_file).st_size
@@ -96,14 +97,14 @@ class GXPYTest(unittest.TestCase):
 
             pos = 8
             while pos < len(bytes):
-                buf_length = bytes[pos:pos+4]
+                buf_length = bytes[pos:pos + 4]
                 length = buf_length[0] * 256 * 256 * 256 + \
                          buf_length[1] * 256 * 256 + \
                          buf_length[2] * 256 + buf_length[3]
-                buf_type = bytes[pos+4:pos+12]
+                buf_type = bytes[pos + 4:pos + 12]
                 chunk_type = buf_type.decode('ascii', 'ignore')
                 if not (chunk_type.startswith('tIME') or chunk_type.startswith('tEXtdate')):
-                    f.write(bytes[pos:pos+length+12])
+                    f.write(bytes[pos:pos + length + 12])
                 pos = pos + length + 12
 
     def _map_to_results(self, map_file, xml_file, image_file, map_result, format, pix_width):
@@ -151,7 +152,6 @@ class GXPYTest(unittest.TestCase):
             report += '{} no longer exists in result dir\r\n'.format(f)
         return report
 
-
     @classmethod
     def _agnosticize_and_ensure_consistent_line_endings(cls, xml_file, replacement_dict):
         with open(xml_file) as f:
@@ -164,13 +164,12 @@ class GXPYTest(unittest.TestCase):
                     line = line.replace(k, v)
                 f.write('{}\r\n'.format(line).encode('UTF-8'))
 
-
-    def crc_map(self, map_file, *, format='PNG', pix_width=2048, diff_result=False, alt_crc_name=None):
+    def crc_map(self, map_file, *, format='PNG', pix_width=2048, update_results=False, alt_crc_name=None):
         """ 
         Run Geosoft crc testing protocol on Geosoft maps.
         
         :param pix_width:       pixel width, increase if achieve higher fidelity in the bitmap test
-        :param diff_result:     True to compare differences in diff tool 
+        :param update_results:  True to interactively update failing results 
         :param alt_crc_name:    test name.  The default is the name of the calling function.  The name
                                 must be unique within this test suite, which it will be if there is
                                 only one test per test function.  If you have more than one test in a single
@@ -251,11 +250,33 @@ class GXPYTest(unittest.TestCase):
             report += self._report_mismatch_files(xml_result, xml_master)
 
         if len(report) > 0:
-            if DIFF_RESULTS or diff_result:
+            if UPDATE_RESULTS or update_results:
                 diff_tool = os.environ.get('GXPY_DIFF_TOOL', None)
-                if diff_tool:
-                    subprocess.run([diff_tool, result_dir, master_dir], timeout=60*10)
-            self.fail(report)
+                if diff_tool is not None:
+                    update = messagebox.askyesnocancel('Test differences found ({})'.format(self.id()),
+                                                       'The following files are different\n\n{}\n\n'
+                                                       'Press Yes to update master result.\n'
+                                                       'Press No to launch launch diff tool.\n'
+                                                       'Press Cancel to ignore and continue.'.format(report))
+                else:
+                    update = True if messagebox.askokcancel(
+                        'Test differences found ({})'.format(self.id()),
+                        'The following files are different\n\n{}\n\n'
+                        'Press Ok to update master result.\n'
+                        'Press Cancel to ignore and continue.\n\n'
+                        'Set GXPY_DIFF_TOOL environment variable to get option\n'
+                        'to view differences in a diff tool.'.format(report)) else None
 
+                if update is None:
+                    self.fail(report)
 
+                if update:
+                    for xml_result in xml_result_files:
+                        xml_master = xml_result.replace(os.path.splitext(xml_result_part)[0],
+                                                        os.path.splitext(xml_master_part)[0])
+                        shutil.copyfile(xml_result, xml_master)
+                else:
+                    subprocess.run([diff_tool, result_dir, master_dir], timeout=60 * 10)
 
+            else:
+                self.fail(report)
