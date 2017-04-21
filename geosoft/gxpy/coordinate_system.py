@@ -665,7 +665,7 @@ class GXcs:
         s4 = gxapi.str_ref()
         s5 = gxapi.str_ref()
         self.gxipj.get_gxf(s1, s2, s3, s4, s5)
-        lst = [s1.value.replace('"', ' ').strip(), s2.value, s3.value, s4.value, s5.value]
+        lst = [s1.value.replace('"', '').strip(), s2.value, s3.value, s4.value, s5.value]
         return lst
 
     def cs_name(self, what=NAME):

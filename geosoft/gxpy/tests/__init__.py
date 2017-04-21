@@ -5,9 +5,13 @@ import unittest
 import inspect
 import subprocess
 from tkinter import Tk, messagebox
+import atexit
+#import win32con
+#import win32gui
 
 os.environ['GEOSOFT_TEST_MODE'] = '1'
 os.environ['GEOSOFT_TESTSYSTEM_MODE'] = '1'
+os.environ['GEOTEMP'] = 'E:\\GithubRepos\\gxpy\\geosoft\\gxpy\\tests\\tmp'
 
 import geosoft.gxpy.gx as gx
 import geosoft.gxapi as gxapi
@@ -24,10 +28,20 @@ UPDATE_RESULTS = False
 # set to True to show viewer for each CRC call
 SHOW_TEST_VIEWERS = False
 
+#TODO Investigate stable font smoothing in results via the following
+#startup_system_font_smoothing_val = win32gui.SystemParametersInfo(win32con.SPI_GETFONTSMOOTHING)
+#win32gui.SystemParametersInfo(win32con.SPI_SETFONTSMOOTHING, True)
 
-#Make hidden root window for UI methods
+
+#def _restore_font_smoothing():
+#    global startup_system_font_smoothing_val
+#    win32gui.SystemParametersInfo(win32con.SPI_SETFONTSMOOTHING, startup_system_font_smoothing_val)
+
+#atexit.unregister(_restore_font_smoothing)
+
+# Make root window for UI methods
 root_window = None
-if UPDATE_RESULTS or SHOW_TEST_VIEWERS:
+if UPDATE_RESULTS:
     root_window = Tk()
     root_window.overrideredirect(1)
     root_window.withdraw()
@@ -49,10 +63,10 @@ class GXPYTest(unittest.TestCase):
 
     @classmethod
     def setUpGXPYTest(cls, res_stack=6):
+
         os.chdir(os.path.dirname(os.path.realpath(__file__)))
         _verify_no_gx_context()
-        parent = root_window.winfo_id() if root_window else 0
-        cls._gx = gx.GXpy(log=print, res_stack=res_stack, parent_window=parent, max_warnings=8)
+        cls._gx = gx.GXpy(log=print, res_stack=res_stack, max_warnings=8)
 
     @classmethod
     def tearDownGXPYTest(cls):
@@ -252,10 +266,8 @@ class GXPYTest(unittest.TestCase):
             report += self._report_mismatch_files(xml_result, xml_master)
 
         if SHOW_TEST_VIEWERS:
-            if map_file.lower().endswith('.geosoft_3dv'):
-                gxvwr.v3d(map_file)
-            else:
-                gxvwr.map(map_file)
+            subprocess.run(['c:\\Program Files\\Geosoft\\Desktop Applications 9 - Testing\\bin\\omcore.exe',
+                            '-doc={}'.format(map_file)])
 
         if len(report) > 0:
             if UPDATE_RESULTS or update_results:
@@ -284,7 +296,7 @@ class GXPYTest(unittest.TestCase):
                                                         os.path.splitext(xml_master_part)[0])
                         shutil.copyfile(xml_result, xml_master)
                 else:
-                    subprocess.run([diff_tool, result_dir, master_dir], timeout=60 * 10)
+                    subprocess.run([diff_tool, result_dir, master_dir])
 
             else:
                 self.fail(report)
