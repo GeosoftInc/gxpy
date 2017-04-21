@@ -4,7 +4,7 @@ import glob
 import unittest
 import inspect
 import subprocess
-from tkinter import messagebox
+from tkinter import Tk, messagebox
 
 os.environ['GEOSOFT_TEST_MODE'] = '1'
 os.environ['GEOSOFT_TESTSYSTEM_MODE'] = '1'
@@ -25,6 +25,13 @@ UPDATE_RESULTS = False
 SHOW_TEST_VIEWERS = False
 
 
+#Make hidden root window for UI methods
+root_window = None
+if UPDATE_RESULTS or SHOW_TEST_VIEWERS:
+    root_window = Tk()
+    root_window.overrideredirect(1)
+    root_window.withdraw()
+
 def _verify_no_gx_context():
     loc_gx = None
     try:
@@ -44,7 +51,8 @@ class GXPYTest(unittest.TestCase):
     def setUpGXPYTest(cls, res_stack=6):
         os.chdir(os.path.dirname(os.path.realpath(__file__)))
         _verify_no_gx_context()
-        cls._gx = gx.GXpy(log=print, res_stack=res_stack, max_warnings=8)
+        parent = root_window.winfo_id() if root_window else 0
+        cls._gx = gx.GXpy(log=print, res_stack=res_stack, parent_window=parent, max_warnings=8)
 
     @classmethod
     def tearDownGXPYTest(cls):
@@ -176,12 +184,6 @@ class GXPYTest(unittest.TestCase):
                                 testing function use this parameter to create unique names.
         """
 
-        if SHOW_TEST_VIEWERS:
-            if map_file.lower().endswith('.geosoft_3dv'):
-                gxvwr.v3d(map_file)
-            else:
-                gxvwr.map(map_file)
-
         result_dir = os.path.join(self.result_dir, 'result')
         master_dir = os.path.join(self.result_dir, 'master')
         if not os.path.exists(result_dir):
@@ -248,6 +250,12 @@ class GXPYTest(unittest.TestCase):
         for xml_result in xml_result_files:
             xml_master = xml_result.replace(xml_result_part, xml_master_part)
             report += self._report_mismatch_files(xml_result, xml_master)
+
+        if SHOW_TEST_VIEWERS:
+            if map_file.lower().endswith('.geosoft_3dv'):
+                gxvwr.v3d(map_file)
+            else:
+                gxvwr.map(map_file)
 
         if len(report) > 0:
             if UPDATE_RESULTS or update_results:
