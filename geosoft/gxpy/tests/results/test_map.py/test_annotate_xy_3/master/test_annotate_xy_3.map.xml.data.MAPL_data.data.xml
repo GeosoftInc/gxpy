@@ -7,7 +7,7 @@
       <Item name="Color" type="COL_ANY" colortype="RGB" red="0" green="0" blue="0"/>
    </Item>
    <Item type="LineThick" size="8">
-      <Item name="Value" value="4.6211"/>
+      <Item name="Value" value="4.622"/>
    </Item>
    <Item type="LineStyle" size="12">
       <Item name="Style" value="0"/>
@@ -20,7 +20,7 @@
       <Item name="Value" value="Arial(TT,MEDIUM)"/>
    </Item>
    <Item type="FontSize" size="8">
-      <Item name="Value" value="115.5275"/>
+      <Item name="Value" value="115.55"/>
    </Item>
    <Item type="FontAngle" size="8">
       <Item name="Value" value="0"/>
@@ -38,7 +38,7 @@
       <Item name="Value" value="0"/>
    </Item>
    <Item type="SymbSize" size="8">
-      <Item name="Value" value="115.5275"/>
+      <Item name="Value" value="115.55"/>
    </Item>
    <Item type="SymbAngle" size="8">
       <Item name="Value" value="0"/>
@@ -56,7 +56,7 @@
       <Item name="Value" value="0"/>
    </Item>
    <Item type="PatSize" size="8">
-      <Item name="Value" value="92.422"/>
+      <Item name="Value" value="92.44"/>
    </Item>
    <Item type="PatAngle" size="8">
       <Item name="Value" value="0"/>

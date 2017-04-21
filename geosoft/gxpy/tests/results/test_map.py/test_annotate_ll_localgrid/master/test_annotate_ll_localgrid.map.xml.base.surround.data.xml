@@ -118,8 +118,8 @@
       <Item name="From" type="D2AREA">
          <Value name="MinX" value="0"/>
          <Value name="MinY" value="0"/>
-         <Value name="MaxX" value="334.99796"/>
-         <Value name="MaxY" value="268.498572"/>
+         <Value name="MaxX" value="334.9719531"/>
+         <Value name="MaxY" value="268.4803672"/>
       </Item>
    </Item>
    <Item type="Version" size="8">
@@ -170,8 +170,8 @@
       <Item name="From" type="D2AREA">
          <Value name="MinX" value="0"/>
          <Value name="MinY" value="0"/>
-         <Value name="MaxX" value="334.99796"/>
-         <Value name="MaxY" value="268.498572"/>
+         <Value name="MaxX" value="334.9719531"/>
+         <Value name="MaxY" value="268.4803672"/>
       </Item>
    </Item>
    <Item type="End" size="8"></Item>

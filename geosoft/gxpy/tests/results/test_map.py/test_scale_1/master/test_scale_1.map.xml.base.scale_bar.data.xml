@@ -125,9 +125,9 @@
    </Item>
    <Item type="Rectangle" size="32">
       <Item name="From" type="D2AREA">
-         <Value name="MinX" value="28.00012476"/>
+         <Value name="MinX" value="28.01231314"/>
          <Value name="MinY" value="18.2"/>
-         <Value name="MaxX" value="71.99987524"/>
+         <Value name="MaxX" value="71.98768686"/>
          <Value name="MaxY" value="20"/>
       </Item>
    </Item>
@@ -136,39 +136,39 @@
    </Item>
    <Item type="Rectangle" size="32">
       <Item name="From" type="D2AREA">
-         <Value name="MinX" value="28.00012476"/>
+         <Value name="MinX" value="28.01231314"/>
          <Value name="MinY" value="18.2"/>
-         <Value name="MaxX" value="32.40009981"/>
+         <Value name="MaxX" value="32.40985051"/>
          <Value name="MaxY" value="19.1"/>
       </Item>
    </Item>
    <Item type="Rectangle" size="32">
       <Item name="From" type="D2AREA">
-         <Value name="MinX" value="32.40009981"/>
+         <Value name="MinX" value="32.40985051"/>
          <Value name="MinY" value="19.1"/>
-         <Value name="MaxX" value="36.80007485"/>
+         <Value name="MaxX" value="36.80738788"/>
          <Value name="MaxY" value="20"/>
       </Item>
    </Item>
    <Item type="Rectangle" size="32">
       <Item name="From" type="D2AREA">
-         <Value name="MinX" value="36.80007485"/>
+         <Value name="MinX" value="36.80738788"/>
          <Value name="MinY" value="18.2"/>
-         <Value name="MaxX" value="41.2000499"/>
+         <Value name="MaxX" value="41.20492526"/>
          <Value name="MaxY" value="19.1"/>
       </Item>
    </Item>
    <Item type="Rectangle" size="32">
       <Item name="From" type="D2AREA">
-         <Value name="MinX" value="41.2000499"/>
+         <Value name="MinX" value="41.20492526"/>
          <Value name="MinY" value="19.1"/>
-         <Value name="MaxX" value="45.60002495"/>
+         <Value name="MaxX" value="45.60246263"/>
          <Value name="MaxY" value="20"/>
       </Item>
    </Item>
    <Item type="Rectangle" size="32">
       <Item name="From" type="D2AREA">
-         <Value name="MinX" value="45.60002495"/>
+         <Value name="MinX" value="45.60246263"/>
          <Value name="MinY" value="18.2"/>
          <Value name="MaxX" value="50"/>
          <Value name="MaxY" value="19.1"/>
@@ -178,7 +178,7 @@
       <Item name="From" type="D2AREA">
          <Value name="MinX" value="50"/>
          <Value name="MinY" value="19.1"/>
-         <Value name="MaxX" value="71.99987524"/>
+         <Value name="MaxX" value="71.98768686"/>
          <Value name="MaxY" value="20"/>
       </Item>
    </Item>
@@ -215,7 +215,7 @@
    </Item>
    <Item type="Text" size="24">
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="28.00012476"/>
+         <Value name="X" value="28.01231314"/>
          <Value name="Y" value="21.25"/>
       </Item>
       <Item name="UTF-8 Text" value="2500"/>
@@ -235,7 +235,7 @@
    </Item>
    <Item type="Text" size="24">
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="71.99987524"/>
+         <Value name="X" value="71.98768686"/>
          <Value name="Y" value="21.25"/>
       </Item>
       <Item name="UTF-8 Text" value="2500"/>
@@ -305,9 +305,9 @@
    </Item>
    <Item type="Rectangle" size="32">
       <Item name="From" type="D2AREA">
-         <Value name="MinX" value="205.9990175"/>
+         <Value name="MinX" value="205.9014952"/>
          <Value name="MinY" value="18.2"/>
-         <Value name="MaxX" value="293.9985185"/>
+         <Value name="MaxX" value="293.8522427"/>
          <Value name="MaxY" value="20"/>
       </Item>
    </Item>
@@ -316,65 +316,65 @@
    </Item>
    <Item type="Rectangle" size="32">
       <Item name="From" type="D2AREA">
-         <Value name="MinX" value="205.9990175"/>
+         <Value name="MinX" value="205.9014952"/>
          <Value name="MinY" value="18.2"/>
-         <Value name="MaxX" value="210.3989926"/>
+         <Value name="MaxX" value="210.2990326"/>
          <Value name="MaxY" value="19.1"/>
       </Item>
    </Item>
    <Item type="Rectangle" size="32">
       <Item name="From" type="D2AREA">
-         <Value name="MinX" value="210.3989926"/>
+         <Value name="MinX" value="210.2990326"/>
          <Value name="MinY" value="19.1"/>
-         <Value name="MaxX" value="214.7989676"/>
+         <Value name="MaxX" value="214.69657"/>
          <Value name="MaxY" value="20"/>
       </Item>
    </Item>
    <Item type="Rectangle" size="32">
       <Item name="From" type="D2AREA">
-         <Value name="MinX" value="214.7989676"/>
+         <Value name="MinX" value="214.69657"/>
          <Value name="MinY" value="18.2"/>
-         <Value name="MaxX" value="219.1989427"/>
+         <Value name="MaxX" value="219.0941073"/>
          <Value name="MaxY" value="19.1"/>
       </Item>
    </Item>
    <Item type="Rectangle" size="32">
       <Item name="From" type="D2AREA">
-         <Value name="MinX" value="219.1989427"/>
+         <Value name="MinX" value="219.0941073"/>
          <Value name="MinY" value="19.1"/>
-         <Value name="MaxX" value="223.5989177"/>
+         <Value name="MaxX" value="223.4916447"/>
          <Value name="MaxY" value="20"/>
       </Item>
    </Item>
    <Item type="Rectangle" size="32">
       <Item name="From" type="D2AREA">
-         <Value name="MinX" value="223.5989177"/>
+         <Value name="MinX" value="223.4916447"/>
          <Value name="MinY" value="18.2"/>
-         <Value name="MaxX" value="227.9988928"/>
+         <Value name="MaxX" value="227.8891821"/>
          <Value name="MaxY" value="19.1"/>
       </Item>
    </Item>
    <Item type="Rectangle" size="32">
       <Item name="From" type="D2AREA">
-         <Value name="MinX" value="227.9988928"/>
+         <Value name="MinX" value="227.8891821"/>
          <Value name="MinY" value="19.1"/>
-         <Value name="MaxX" value="249.998768"/>
+         <Value name="MaxX" value="249.876869"/>
          <Value name="MaxY" value="20"/>
       </Item>
    </Item>
    <Item type="Rectangle" size="32">
       <Item name="From" type="D2AREA">
-         <Value name="MinX" value="249.998768"/>
+         <Value name="MinX" value="249.876869"/>
          <Value name="MinY" value="18.2"/>
-         <Value name="MaxX" value="271.9986432"/>
+         <Value name="MaxX" value="271.8645558"/>
          <Value name="MaxY" value="19.1"/>
       </Item>
    </Item>
    <Item type="Rectangle" size="32">
       <Item name="From" type="D2AREA">
-         <Value name="MinX" value="271.9986432"/>
+         <Value name="MinX" value="271.8645558"/>
          <Value name="MinY" value="19.1"/>
-         <Value name="MaxX" value="293.9985185"/>
+         <Value name="MaxX" value="293.8522427"/>
          <Value name="MaxY" value="20"/>
       </Item>
    </Item>
@@ -411,7 +411,7 @@
    </Item>
    <Item type="Text" size="24">
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="205.9990175"/>
+         <Value name="X" value="205.9014952"/>
          <Value name="Y" value="21.25"/>
       </Item>
       <Item name="UTF-8 Text" value="2500"/>
@@ -421,7 +421,7 @@
    </Item>
    <Item type="Text" size="21">
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="227.9988928"/>
+         <Value name="X" value="227.8891821"/>
          <Value name="Y" value="21.25"/>
       </Item>
       <Item name="UTF-8 Text" value="0"/>
@@ -431,7 +431,7 @@
    </Item>
    <Item type="Text" size="24">
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="249.998768"/>
+         <Value name="X" value="249.876869"/>
          <Value name="Y" value="21.25"/>
       </Item>
       <Item name="UTF-8 Text" value="2500"/>
@@ -441,7 +441,7 @@
    </Item>
    <Item type="Text" size="24">
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="271.9986432"/>
+         <Value name="X" value="271.8645558"/>
          <Value name="Y" value="21.25"/>
       </Item>
       <Item name="UTF-8 Text" value="5000"/>
@@ -451,7 +451,7 @@
    </Item>
    <Item type="Text" size="24">
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="293.9985185"/>
+         <Value name="X" value="293.8522427"/>
          <Value name="Y" value="21.25"/>
       </Item>
       <Item name="UTF-8 Text" value="7500"/>
@@ -461,7 +461,7 @@
    </Item>
    <Item type="Text" size="26">
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="249.998768"/>
+         <Value name="X" value="249.876869"/>
          <Value name="Y" value="13.825"/>
       </Item>
       <Item name="UTF-8 Text" value="(feet)"/>
@@ -521,10 +521,10 @@
    </Item>
    <Item type="Rectangle" size="32">
       <Item name="From" type="D2AREA">
-         <Value name="MinX" value="216.9989551"/>
-         <Value name="MinY" value="178.1992608"/>
-         <Value name="MaxX" value="282.9985809"/>
-         <Value name="MaxY" value="179.9992608"/>
+         <Value name="MinX" value="216.8953387"/>
+         <Value name="MinY" value="178.1261214"/>
+         <Value name="MaxX" value="282.8583992"/>
+         <Value name="MaxY" value="179.9261214"/>
       </Item>
    </Item>
    <Item type="FillColor" size="8">
@@ -532,58 +532,58 @@
    </Item>
    <Item type="Rectangle" size="32">
       <Item name="From" type="D2AREA">
-         <Value name="MinX" value="216.9989551"/>
-         <Value name="MinY" value="178.1992608"/>
-         <Value name="MaxX" value="221.3989302"/>
-         <Value name="MaxY" value="179.0992608"/>
+         <Value name="MinX" value="216.8953387"/>
+         <Value name="MinY" value="178.1261214"/>
+         <Value name="MaxX" value="221.292876"/>
+         <Value name="MaxY" value="179.0261214"/>
       </Item>
    </Item>
    <Item type="Rectangle" size="32">
       <Item name="From" type="D2AREA">
-         <Value name="MinX" value="221.3989302"/>
-         <Value name="MinY" value="179.0992608"/>
-         <Value name="MaxX" value="225.7989052"/>
-         <Value name="MaxY" value="179.9992608"/>
+         <Value name="MinX" value="221.292876"/>
+         <Value name="MinY" value="179.0261214"/>
+         <Value name="MaxX" value="225.6904134"/>
+         <Value name="MaxY" value="179.9261214"/>
       </Item>
    </Item>
    <Item type="Rectangle" size="32">
       <Item name="From" type="D2AREA">
-         <Value name="MinX" value="225.7989052"/>
-         <Value name="MinY" value="178.1992608"/>
-         <Value name="MaxX" value="230.1988803"/>
-         <Value name="MaxY" value="179.0992608"/>
+         <Value name="MinX" value="225.6904134"/>
+         <Value name="MinY" value="178.1261214"/>
+         <Value name="MaxX" value="230.0879508"/>
+         <Value name="MaxY" value="179.0261214"/>
       </Item>
    </Item>
    <Item type="Rectangle" size="32">
       <Item name="From" type="D2AREA">
-         <Value name="MinX" value="230.1988803"/>
-         <Value name="MinY" value="179.0992608"/>
-         <Value name="MaxX" value="234.5988553"/>
-         <Value name="MaxY" value="179.9992608"/>
+         <Value name="MinX" value="230.0879508"/>
+         <Value name="MinY" value="179.0261214"/>
+         <Value name="MaxX" value="234.4854882"/>
+         <Value name="MaxY" value="179.9261214"/>
       </Item>
    </Item>
    <Item type="Rectangle" size="32">
       <Item name="From" type="D2AREA">
-         <Value name="MinX" value="234.5988553"/>
-         <Value name="MinY" value="178.1992608"/>
-         <Value name="MaxX" value="238.9988304"/>
-         <Value name="MaxY" value="179.0992608"/>
+         <Value name="MinX" value="234.4854882"/>
+         <Value name="MinY" value="178.1261214"/>
+         <Value name="MaxX" value="238.8830255"/>
+         <Value name="MaxY" value="179.0261214"/>
       </Item>
    </Item>
    <Item type="Rectangle" size="32">
       <Item name="From" type="D2AREA">
-         <Value name="MinX" value="238.9988304"/>
-         <Value name="MinY" value="179.0992608"/>
-         <Value name="MaxX" value="260.9987056"/>
-         <Value name="MaxY" value="179.9992608"/>
+         <Value name="MinX" value="238.8830255"/>
+         <Value name="MinY" value="179.0261214"/>
+         <Value name="MaxX" value="260.8707124"/>
+         <Value name="MaxY" value="179.9261214"/>
       </Item>
    </Item>
    <Item type="Rectangle" size="32">
       <Item name="From" type="D2AREA">
-         <Value name="MinX" value="260.9987056"/>
-         <Value name="MinY" value="178.1992608"/>
-         <Value name="MaxX" value="282.9985809"/>
-         <Value name="MaxY" value="179.0992608"/>
+         <Value name="MinX" value="260.8707124"/>
+         <Value name="MinY" value="178.1261214"/>
+         <Value name="MaxX" value="282.8583992"/>
+         <Value name="MaxY" value="179.0261214"/>
       </Item>
    </Item>
    <Item type="FillColor" size="8">
@@ -619,8 +619,8 @@
    </Item>
    <Item type="Text" size="24">
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="216.9989551"/>
-         <Value name="Y" value="181.2492608"/>
+         <Value name="X" value="216.8953387"/>
+         <Value name="Y" value="181.1761214"/>
       </Item>
       <Item name="UTF-8 Text" value="2500"/>
    </Item>
@@ -629,8 +629,8 @@
    </Item>
    <Item type="Text" size="21">
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="238.9988304"/>
-         <Value name="Y" value="181.2492608"/>
+         <Value name="X" value="238.8830255"/>
+         <Value name="Y" value="181.1761214"/>
       </Item>
       <Item name="UTF-8 Text" value="0"/>
    </Item>
@@ -639,8 +639,8 @@
    </Item>
    <Item type="Text" size="24">
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="260.9987056"/>
-         <Value name="Y" value="181.2492608"/>
+         <Value name="X" value="260.8707124"/>
+         <Value name="Y" value="181.1761214"/>
       </Item>
       <Item name="UTF-8 Text" value="2500"/>
    </Item>
@@ -649,8 +649,8 @@
    </Item>
    <Item type="Text" size="24">
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="282.9985809"/>
-         <Value name="Y" value="181.2492608"/>
+         <Value name="X" value="282.8583992"/>
+         <Value name="Y" value="181.1761214"/>
       </Item>
       <Item name="UTF-8 Text" value="5000"/>
    </Item>
@@ -659,8 +659,8 @@
    </Item>
    <Item type="Text" size="26">
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="249.998768"/>
-         <Value name="Y" value="173.8242608"/>
+         <Value name="X" value="249.876869"/>
+         <Value name="Y" value="173.7511214"/>
       </Item>
       <Item name="UTF-8 Text" value="(feet)"/>
    </Item>
@@ -676,12 +676,12 @@
    <Item type="FontRef" size="8">
       <Item name="Value" value="1"/>
    </Item>
-   <Item type="Text" size="36">
+   <Item type="Text" size="33">
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="249.998768"/>
-         <Value name="Y" value="186.9992608"/>
+         <Value name="X" value="249.876869"/>
+         <Value name="Y" value="186.9261214"/>
       </Item>
-      <Item name="UTF-8 Text" value="Scale 1:34636.56"/>
+      <Item name="UTF-8 Text" value="Scale 1:34656"/>
    </Item>
    <Item type="Version" size="8">
       <Item name="Value" value="Current"/>
@@ -738,9 +738,9 @@
    </Item>
    <Item type="Rectangle" size="32">
       <Item name="From" type="D2AREA">
-         <Value name="MinX" value="458.9975984"/>
+         <Value name="MinX" value="458.7598945"/>
          <Value name="MinY" value="13.2"/>
-         <Value name="MaxX" value="480.9974736"/>
+         <Value name="MaxX" value="480.7475813"/>
          <Value name="MaxY" value="15"/>
       </Item>
    </Item>
@@ -749,41 +749,41 @@
    </Item>
    <Item type="Rectangle" size="32">
       <Item name="From" type="D2AREA">
-         <Value name="MinX" value="458.9975984"/>
+         <Value name="MinX" value="458.7598945"/>
          <Value name="MinY" value="13.2"/>
-         <Value name="MaxX" value="463.3975734"/>
+         <Value name="MaxX" value="463.1574318"/>
          <Value name="MaxY" value="14.1"/>
       </Item>
    </Item>
    <Item type="Rectangle" size="32">
       <Item name="From" type="D2AREA">
-         <Value name="MinX" value="463.3975734"/>
+         <Value name="MinX" value="463.1574318"/>
          <Value name="MinY" value="14.1"/>
-         <Value name="MaxX" value="467.7975485"/>
+         <Value name="MaxX" value="467.5549692"/>
          <Value name="MaxY" value="15"/>
       </Item>
    </Item>
    <Item type="Rectangle" size="32">
       <Item name="From" type="D2AREA">
-         <Value name="MinX" value="467.7975485"/>
+         <Value name="MinX" value="467.5549692"/>
          <Value name="MinY" value="13.2"/>
-         <Value name="MaxX" value="472.1975235"/>
+         <Value name="MaxX" value="471.9525066"/>
          <Value name="MaxY" value="14.1"/>
       </Item>
    </Item>
    <Item type="Rectangle" size="32">
       <Item name="From" type="D2AREA">
-         <Value name="MinX" value="472.1975235"/>
+         <Value name="MinX" value="471.9525066"/>
          <Value name="MinY" value="14.1"/>
-         <Value name="MaxX" value="476.5974986"/>
+         <Value name="MaxX" value="476.350044"/>
          <Value name="MaxY" value="15"/>
       </Item>
    </Item>
    <Item type="Rectangle" size="32">
       <Item name="From" type="D2AREA">
-         <Value name="MinX" value="476.5974986"/>
+         <Value name="MinX" value="476.350044"/>
          <Value name="MinY" value="13.2"/>
-         <Value name="MaxX" value="480.9974736"/>
+         <Value name="MaxX" value="480.7475813"/>
          <Value name="MaxY" value="14.1"/>
       </Item>
    </Item>
@@ -820,7 +820,7 @@
    </Item>
    <Item type="Text" size="24">
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="458.9975984"/>
+         <Value name="X" value="458.7598945"/>
          <Value name="Y" value="16"/>
       </Item>
       <Item name="UTF-8 Text" value="2500"/>
@@ -830,7 +830,7 @@
    </Item>
    <Item type="Text" size="21">
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="480.9974736"/>
+         <Value name="X" value="480.7475813"/>
          <Value name="Y" value="16"/>
       </Item>
       <Item name="UTF-8 Text" value="0"/>
@@ -840,7 +840,7 @@
    </Item>
    <Item type="Text" size="26">
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="469.997536"/>
+         <Value name="X" value="469.7537379"/>
          <Value name="Y" value="9.7"/>
       </Item>
       <Item name="UTF-8 Text" value="(feet)"/>
@@ -857,12 +857,12 @@
    <Item type="FontRef" size="8">
       <Item name="Value" value="1"/>
    </Item>
-   <Item type="Text" size="36">
+   <Item type="Text" size="33">
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="469.997536"/>
+         <Value name="X" value="469.7537379"/>
          <Value name="Y" value="20.6"/>
       </Item>
-      <Item name="UTF-8 Text" value="Scale 1:34636.56"/>
+      <Item name="UTF-8 Text" value="Scale 1:34656"/>
    </Item>
    <Item type="End" size="8"></Item>
 </data>

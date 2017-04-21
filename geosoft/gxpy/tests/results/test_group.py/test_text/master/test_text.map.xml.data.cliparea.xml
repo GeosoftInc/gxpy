@@ -2,24 +2,24 @@
    <Polygon Inclusive="True">
       <Points>
          <Point>
-            <Item name="X" value="396103.89"/>
-            <Item name="Y" value="4996103.89"/>
+            <Item name="X" value="396103"/>
+            <Item name="Y" value="4996103"/>
          </Point>
          <Point>
-            <Item name="X" value="396103.89"/>
-            <Item name="Y" value="5153896.11"/>
+            <Item name="X" value="396103"/>
+            <Item name="Y" value="5153897"/>
          </Point>
          <Point>
-            <Item name="X" value="503896.11"/>
-            <Item name="Y" value="5153896.11"/>
+            <Item name="X" value="503897"/>
+            <Item name="Y" value="5153897"/>
          </Point>
          <Point>
-            <Item name="X" value="503896.11"/>
-            <Item name="Y" value="4996103.89"/>
+            <Item name="X" value="503897"/>
+            <Item name="Y" value="4996103"/>
          </Point>
          <Point>
-            <Item name="X" value="396103.89"/>
-            <Item name="Y" value="4996103.89"/>
+            <Item name="X" value="396103"/>
+            <Item name="Y" value="4996103"/>
          </Point>
       </Points>
    </Polygon>

@@ -7,7 +7,7 @@
       <Item name="Color" type="COL_ANY" colortype="RGB" red="0" green="0" blue="0"/>
    </Item>
    <Item type="LineThick" size="8">
-      <Item name="Value" value="23.1054"/>
+      <Item name="Value" value="23.11"/>
    </Item>
    <Item type="LineStyle" size="12">
       <Item name="Style" value="0"/>
@@ -20,7 +20,7 @@
       <Item name="Value" value="Arial(TT,MEDIUM)"/>
    </Item>
    <Item type="FontSize" size="8">
-      <Item name="Value" value="577.635"/>
+      <Item name="Value" value="577.75"/>
    </Item>
    <Item type="FontAngle" size="8">
       <Item name="Value" value="0"/>
@@ -38,7 +38,7 @@
       <Item name="Value" value="0"/>
    </Item>
    <Item type="SymbSize" size="8">
-      <Item name="Value" value="577.635"/>
+      <Item name="Value" value="577.75"/>
    </Item>
    <Item type="SymbAngle" size="8">
       <Item name="Value" value="0"/>
@@ -56,7 +56,7 @@
       <Item name="Value" value="0"/>
    </Item>
    <Item type="PatSize" size="8">
-      <Item name="Value" value="462.108"/>
+      <Item name="Value" value="462.2"/>
    </Item>
    <Item type="PatAngle" size="8">
       <Item name="Value" value="0"/>
@@ -80,11 +80,11 @@
       <Item name="Color" type="COL_ANY" colortype="None"/>
    </Item>
    <Item type="LineThick" size="8">
-      <Item name="Value" value="48.059232"/>
+      <Item name="Value" value="48.0688"/>
    </Item>
    <Item type="LineStyle" size="12">
       <Item name="Style" value="1"/>
-      <Item name="Pitch" value="1155.27"/>
+      <Item name="Pitch" value="1155.5"/>
    </Item>
    <Item type="LineSmooth" size="8">
       <Item name="Value" value="0"/>
@@ -96,7 +96,7 @@
       <Item name="Value" value="Arial(TT,BOLD)"/>
    </Item>
    <Item type="FontSize" size="8">
-      <Item name="Value" value="577.635"/>
+      <Item name="Value" value="577.75"/>
    </Item>
    <Item type="LineColor" size="8">
       <Item name="Color" type="COL_ANY" colortype="CMY" cyan="255" magenta="255" yellow="255"/>
@@ -105,11 +105,11 @@
       <Item name="Color" type="COL_ANY" colortype="None"/>
    </Item>
    <Item type="LineThick" size="8">
-      <Item name="Value" value="23.1054"/>
+      <Item name="Value" value="23.11"/>
    </Item>
    <Item type="LineStyle" size="12">
       <Item name="Style" value="1"/>
-      <Item name="Pitch" value="1155.27"/>
+      <Item name="Pitch" value="1155.5"/>
    </Item>
    <Item type="LineSmooth" size="8">
       <Item name="Value" value="0"/>
@@ -117,11 +117,11 @@
    <Item type="Line" size="32">
       <Item name="From" type="D2POINT">
          <Value name="X" value="350000"/>
-         <Value name="Y" value="6998844.73"/>
+         <Value name="Y" value="6998844.5"/>
       </Item>
       <Item name="To" type="D2POINT">
          <Value name="X" value="350000"/>
-         <Value name="Y" value="6999075.784"/>
+         <Value name="Y" value="6999075.6"/>
       </Item>
    </Item>
    <Item type="FontColor" size="8">
@@ -131,7 +131,7 @@
       <Item name="Value" value="Arial(TT,BOLD)"/>
    </Item>
    <Item type="FontSize" size="8">
-      <Item name="Value" value="577.635"/>
+      <Item name="Value" value="577.75"/>
    </Item>
    <Item type="FontAngle" size="8">
       <Item name="Value" value="0"/>
@@ -144,8 +144,8 @@
    </Item>
    <Item type="Text" size="27">
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="348844.73"/>
-         <Value name="Y" value="6998700.321"/>
+         <Value name="X" value="348844.5"/>
+         <Value name="Y" value="6998700.063"/>
       </Item>
       <Item name="UTF-8 Text" value="350000E"/>
    </Item>
@@ -159,11 +159,11 @@
       <Item name="Color" type="COL_ANY" colortype="None"/>
    </Item>
    <Item type="LineThick" size="8">
-      <Item name="Value" value="23.1054"/>
+      <Item name="Value" value="23.11"/>
    </Item>
    <Item type="LineStyle" size="12">
       <Item name="Style" value="1"/>
-      <Item name="Pitch" value="1155.27"/>
+      <Item name="Pitch" value="1155.5"/>
    </Item>
    <Item type="LineSmooth" size="8">
       <Item name="Value" value="0"/>
@@ -171,11 +171,11 @@
    <Item type="Line" size="32">
       <Item name="From" type="D2POINT">
          <Value name="X" value="355000"/>
-         <Value name="Y" value="6998844.73"/>
+         <Value name="Y" value="6998844.5"/>
       </Item>
       <Item name="To" type="D2POINT">
          <Value name="X" value="355000"/>
-         <Value name="Y" value="6999075.784"/>
+         <Value name="Y" value="6999075.6"/>
       </Item>
    </Item>
    <Item type="FontColor" size="8">
@@ -185,7 +185,7 @@
       <Item name="Value" value="Arial(TT,BOLD)"/>
    </Item>
    <Item type="FontSize" size="8">
-      <Item name="Value" value="577.635"/>
+      <Item name="Value" value="577.75"/>
    </Item>
    <Item type="FontAngle" size="8">
       <Item name="Value" value="0"/>
@@ -196,7 +196,7 @@
    <Item type="Text" size="27">
       <Item name="Point" type="D2POINT">
          <Value name="X" value="355000"/>
-         <Value name="Y" value="6998700.321"/>
+         <Value name="Y" value="6998700.063"/>
       </Item>
       <Item name="UTF-8 Text" value="355000E"/>
    </Item>
@@ -207,11 +207,11 @@
       <Item name="Color" type="COL_ANY" colortype="None"/>
    </Item>
    <Item type="LineThick" size="8">
-      <Item name="Value" value="23.1054"/>
+      <Item name="Value" value="23.11"/>
    </Item>
    <Item type="LineStyle" size="12">
       <Item name="Style" value="1"/>
-      <Item name="Pitch" value="1155.27"/>
+      <Item name="Pitch" value="1155.5"/>
    </Item>
    <Item type="LineSmooth" size="8">
       <Item name="Value" value="0"/>
@@ -219,11 +219,11 @@
    <Item type="Line" size="32">
       <Item name="From" type="D2POINT">
          <Value name="X" value="360000"/>
-         <Value name="Y" value="6998844.73"/>
+         <Value name="Y" value="6998844.5"/>
       </Item>
       <Item name="To" type="D2POINT">
          <Value name="X" value="360000"/>
-         <Value name="Y" value="6999075.784"/>
+         <Value name="Y" value="6999075.6"/>
       </Item>
    </Item>
    <Item type="FontColor" size="8">
@@ -233,7 +233,7 @@
       <Item name="Value" value="Arial(TT,BOLD)"/>
    </Item>
    <Item type="FontSize" size="8">
-      <Item name="Value" value="577.635"/>
+      <Item name="Value" value="577.75"/>
    </Item>
    <Item type="FontAngle" size="8">
       <Item name="Value" value="0"/>
@@ -244,7 +244,7 @@
    <Item type="Text" size="27">
       <Item name="Point" type="D2POINT">
          <Value name="X" value="360000"/>
-         <Value name="Y" value="6998700.321"/>
+         <Value name="Y" value="6998700.063"/>
       </Item>
       <Item name="UTF-8 Text" value="360000E"/>
    </Item>
@@ -255,11 +255,11 @@
       <Item name="Color" type="COL_ANY" colortype="None"/>
    </Item>
    <Item type="LineThick" size="8">
-      <Item name="Value" value="23.1054"/>
+      <Item name="Value" value="23.11"/>
    </Item>
    <Item type="LineStyle" size="12">
       <Item name="Style" value="1"/>
-      <Item name="Pitch" value="1155.27"/>
+      <Item name="Pitch" value="1155.5"/>
    </Item>
    <Item type="LineSmooth" size="8">
       <Item name="Value" value="0"/>
@@ -267,11 +267,11 @@
    <Item type="Line" size="32">
       <Item name="From" type="D2POINT">
          <Value name="X" value="365000"/>
-         <Value name="Y" value="6998844.73"/>
+         <Value name="Y" value="6998844.5"/>
       </Item>
       <Item name="To" type="D2POINT">
          <Value name="X" value="365000"/>
-         <Value name="Y" value="6999075.784"/>
+         <Value name="Y" value="6999075.6"/>
       </Item>
    </Item>
    <Item type="FontColor" size="8">
@@ -281,7 +281,7 @@
       <Item name="Value" value="Arial(TT,BOLD)"/>
    </Item>
    <Item type="FontSize" size="8">
-      <Item name="Value" value="577.635"/>
+      <Item name="Value" value="577.75"/>
    </Item>
    <Item type="FontAngle" size="8">
       <Item name="Value" value="0"/>
@@ -292,7 +292,7 @@
    <Item type="Text" size="27">
       <Item name="Point" type="D2POINT">
          <Value name="X" value="365000"/>
-         <Value name="Y" value="6998700.321"/>
+         <Value name="Y" value="6998700.063"/>
       </Item>
       <Item name="UTF-8 Text" value="365000E"/>
    </Item>
@@ -303,11 +303,11 @@
       <Item name="Color" type="COL_ANY" colortype="None"/>
    </Item>
    <Item type="LineThick" size="8">
-      <Item name="Value" value="23.1054"/>
+      <Item name="Value" value="23.11"/>
    </Item>
    <Item type="LineStyle" size="12">
       <Item name="Style" value="1"/>
-      <Item name="Pitch" value="1155.27"/>
+      <Item name="Pitch" value="1155.5"/>
    </Item>
    <Item type="LineSmooth" size="8">
       <Item name="Value" value="0"/>
@@ -315,11 +315,11 @@
    <Item type="Line" size="32">
       <Item name="From" type="D2POINT">
          <Value name="X" value="370000"/>
-         <Value name="Y" value="6998844.73"/>
+         <Value name="Y" value="6998844.5"/>
       </Item>
       <Item name="To" type="D2POINT">
          <Value name="X" value="370000"/>
-         <Value name="Y" value="6999075.784"/>
+         <Value name="Y" value="6999075.6"/>
       </Item>
    </Item>
    <Item type="FontColor" size="8">
@@ -329,7 +329,7 @@
       <Item name="Value" value="Arial(TT,BOLD)"/>
    </Item>
    <Item type="FontSize" size="8">
-      <Item name="Value" value="577.635"/>
+      <Item name="Value" value="577.75"/>
    </Item>
    <Item type="FontAngle" size="8">
       <Item name="Value" value="0"/>
@@ -340,7 +340,7 @@
    <Item type="Text" size="27">
       <Item name="Point" type="D2POINT">
          <Value name="X" value="370000"/>
-         <Value name="Y" value="6998700.321"/>
+         <Value name="Y" value="6998700.063"/>
       </Item>
       <Item name="UTF-8 Text" value="370000E"/>
    </Item>
@@ -351,11 +351,11 @@
       <Item name="Color" type="COL_ANY" colortype="None"/>
    </Item>
    <Item type="LineThick" size="8">
-      <Item name="Value" value="23.1054"/>
+      <Item name="Value" value="23.11"/>
    </Item>
    <Item type="LineStyle" size="12">
       <Item name="Style" value="1"/>
-      <Item name="Pitch" value="1155.27"/>
+      <Item name="Pitch" value="1155.5"/>
    </Item>
    <Item type="LineSmooth" size="8">
       <Item name="Value" value="0"/>
@@ -363,11 +363,11 @@
    <Item type="Line" size="32">
       <Item name="From" type="D2POINT">
          <Value name="X" value="375000"/>
-         <Value name="Y" value="6998844.73"/>
+         <Value name="Y" value="6998844.5"/>
       </Item>
       <Item name="To" type="D2POINT">
          <Value name="X" value="375000"/>
-         <Value name="Y" value="6999075.784"/>
+         <Value name="Y" value="6999075.6"/>
       </Item>
    </Item>
    <Item type="FontColor" size="8">
@@ -377,7 +377,7 @@
       <Item name="Value" value="Arial(TT,BOLD)"/>
    </Item>
    <Item type="FontSize" size="8">
-      <Item name="Value" value="577.635"/>
+      <Item name="Value" value="577.75"/>
    </Item>
    <Item type="FontAngle" size="8">
       <Item name="Value" value="0"/>
@@ -388,7 +388,7 @@
    <Item type="Text" size="27">
       <Item name="Point" type="D2POINT">
          <Value name="X" value="375000"/>
-         <Value name="Y" value="6998700.321"/>
+         <Value name="Y" value="6998700.063"/>
       </Item>
       <Item name="UTF-8 Text" value="375000E"/>
    </Item>
@@ -399,11 +399,11 @@
       <Item name="Color" type="COL_ANY" colortype="None"/>
    </Item>
    <Item type="LineThick" size="8">
-      <Item name="Value" value="23.1054"/>
+      <Item name="Value" value="23.11"/>
    </Item>
    <Item type="LineStyle" size="12">
       <Item name="Style" value="1"/>
-      <Item name="Pitch" value="1155.27"/>
+      <Item name="Pitch" value="1155.5"/>
    </Item>
    <Item type="LineSmooth" size="8">
       <Item name="Value" value="0"/>
@@ -411,11 +411,11 @@
    <Item type="Line" size="32">
       <Item name="From" type="D2POINT">
          <Value name="X" value="380000"/>
-         <Value name="Y" value="6998844.73"/>
+         <Value name="Y" value="6998844.5"/>
       </Item>
       <Item name="To" type="D2POINT">
          <Value name="X" value="380000"/>
-         <Value name="Y" value="6999075.784"/>
+         <Value name="Y" value="6999075.6"/>
       </Item>
    </Item>
    <Item type="FontColor" size="8">
@@ -425,7 +425,7 @@
       <Item name="Value" value="Arial(TT,BOLD)"/>
    </Item>
    <Item type="FontSize" size="8">
-      <Item name="Value" value="577.635"/>
+      <Item name="Value" value="577.75"/>
    </Item>
    <Item type="FontAngle" size="8">
       <Item name="Value" value="0"/>
@@ -436,7 +436,7 @@
    <Item type="Text" size="27">
       <Item name="Point" type="D2POINT">
          <Value name="X" value="380000"/>
-         <Value name="Y" value="6998700.321"/>
+         <Value name="Y" value="6998700.063"/>
       </Item>
       <Item name="UTF-8 Text" value="380000E"/>
    </Item>
@@ -447,11 +447,11 @@
       <Item name="Color" type="COL_ANY" colortype="None"/>
    </Item>
    <Item type="LineThick" size="8">
-      <Item name="Value" value="23.1054"/>
+      <Item name="Value" value="23.11"/>
    </Item>
    <Item type="LineStyle" size="12">
       <Item name="Style" value="1"/>
-      <Item name="Pitch" value="1155.27"/>
+      <Item name="Pitch" value="1155.5"/>
    </Item>
    <Item type="LineSmooth" size="8">
       <Item name="Value" value="0"/>
@@ -459,11 +459,11 @@
    <Item type="Line" size="32">
       <Item name="From" type="D2POINT">
          <Value name="X" value="385000"/>
-         <Value name="Y" value="6998844.73"/>
+         <Value name="Y" value="6998844.5"/>
       </Item>
       <Item name="To" type="D2POINT">
          <Value name="X" value="385000"/>
-         <Value name="Y" value="6999075.784"/>
+         <Value name="Y" value="6999075.6"/>
       </Item>
    </Item>
    <Item type="FontColor" size="8">
@@ -473,7 +473,7 @@
       <Item name="Value" value="Arial(TT,BOLD)"/>
    </Item>
    <Item type="FontSize" size="8">
-      <Item name="Value" value="577.635"/>
+      <Item name="Value" value="577.75"/>
    </Item>
    <Item type="FontAngle" size="8">
       <Item name="Value" value="0"/>
@@ -484,7 +484,7 @@
    <Item type="Text" size="27">
       <Item name="Point" type="D2POINT">
          <Value name="X" value="385000"/>
-         <Value name="Y" value="6998700.321"/>
+         <Value name="Y" value="6998700.063"/>
       </Item>
       <Item name="UTF-8 Text" value="385000E"/>
    </Item>
@@ -495,11 +495,11 @@
       <Item name="Color" type="COL_ANY" colortype="None"/>
    </Item>
    <Item type="LineThick" size="8">
-      <Item name="Value" value="23.1054"/>
+      <Item name="Value" value="23.11"/>
    </Item>
    <Item type="LineStyle" size="12">
       <Item name="Style" value="1"/>
-      <Item name="Pitch" value="1155.27"/>
+      <Item name="Pitch" value="1155.5"/>
    </Item>
    <Item type="LineSmooth" size="8">
       <Item name="Value" value="0"/>
@@ -507,11 +507,11 @@
    <Item type="Line" size="32">
       <Item name="From" type="D2POINT">
          <Value name="X" value="390000"/>
-         <Value name="Y" value="6998844.73"/>
+         <Value name="Y" value="6998844.5"/>
       </Item>
       <Item name="To" type="D2POINT">
          <Value name="X" value="390000"/>
-         <Value name="Y" value="6999075.784"/>
+         <Value name="Y" value="6999075.6"/>
       </Item>
    </Item>
    <Item type="FontColor" size="8">
@@ -521,7 +521,7 @@
       <Item name="Value" value="Arial(TT,BOLD)"/>
    </Item>
    <Item type="FontSize" size="8">
-      <Item name="Value" value="577.635"/>
+      <Item name="Value" value="577.75"/>
    </Item>
    <Item type="FontAngle" size="8">
       <Item name="Value" value="0"/>
@@ -532,7 +532,7 @@
    <Item type="Text" size="27">
       <Item name="Point" type="D2POINT">
          <Value name="X" value="390000"/>
-         <Value name="Y" value="6998700.321"/>
+         <Value name="Y" value="6998700.063"/>
       </Item>
       <Item name="UTF-8 Text" value="390000E"/>
    </Item>
@@ -543,11 +543,11 @@
       <Item name="Color" type="COL_ANY" colortype="None"/>
    </Item>
    <Item type="LineThick" size="8">
-      <Item name="Value" value="23.1054"/>
+      <Item name="Value" value="23.11"/>
    </Item>
    <Item type="LineStyle" size="12">
       <Item name="Style" value="1"/>
-      <Item name="Pitch" value="1155.27"/>
+      <Item name="Pitch" value="1155.5"/>
    </Item>
    <Item type="LineSmooth" size="8">
       <Item name="Value" value="0"/>
@@ -555,11 +555,11 @@
    <Item type="Line" size="32">
       <Item name="From" type="D2POINT">
          <Value name="X" value="395000"/>
-         <Value name="Y" value="6998844.73"/>
+         <Value name="Y" value="6998844.5"/>
       </Item>
       <Item name="To" type="D2POINT">
          <Value name="X" value="395000"/>
-         <Value name="Y" value="6999075.784"/>
+         <Value name="Y" value="6999075.6"/>
       </Item>
    </Item>
    <Item type="FontColor" size="8">
@@ -569,7 +569,7 @@
       <Item name="Value" value="Arial(TT,BOLD)"/>
    </Item>
    <Item type="FontSize" size="8">
-      <Item name="Value" value="577.635"/>
+      <Item name="Value" value="577.75"/>
    </Item>
    <Item type="FontAngle" size="8">
       <Item name="Value" value="0"/>
@@ -580,7 +580,7 @@
    <Item type="Text" size="27">
       <Item name="Point" type="D2POINT">
          <Value name="X" value="395000"/>
-         <Value name="Y" value="6998700.321"/>
+         <Value name="Y" value="6998700.063"/>
       </Item>
       <Item name="UTF-8 Text" value="395000E"/>
    </Item>
@@ -591,11 +591,11 @@
       <Item name="Color" type="COL_ANY" colortype="None"/>
    </Item>
    <Item type="LineThick" size="8">
-      <Item name="Value" value="23.1054"/>
+      <Item name="Value" value="23.11"/>
    </Item>
    <Item type="LineStyle" size="12">
       <Item name="Style" value="1"/>
-      <Item name="Pitch" value="1155.27"/>
+      <Item name="Pitch" value="1155.5"/>
    </Item>
    <Item type="LineSmooth" size="8">
       <Item name="Value" value="0"/>
@@ -603,11 +603,11 @@
    <Item type="Line" size="32">
       <Item name="From" type="D2POINT">
          <Value name="X" value="400000"/>
-         <Value name="Y" value="6998844.73"/>
+         <Value name="Y" value="6998844.5"/>
       </Item>
       <Item name="To" type="D2POINT">
          <Value name="X" value="400000"/>
-         <Value name="Y" value="6999075.784"/>
+         <Value name="Y" value="6999075.6"/>
       </Item>
    </Item>
    <Item type="FontColor" size="8">
@@ -617,7 +617,7 @@
       <Item name="Value" value="Arial(TT,BOLD)"/>
    </Item>
    <Item type="FontSize" size="8">
-      <Item name="Value" value="577.635"/>
+      <Item name="Value" value="577.75"/>
    </Item>
    <Item type="FontAngle" size="8">
       <Item name="Value" value="0"/>
@@ -630,8 +630,8 @@
    </Item>
    <Item type="Text" size="27">
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="401155.27"/>
-         <Value name="Y" value="6998700.321"/>
+         <Value name="X" value="401155.5"/>
+         <Value name="Y" value="6998700.063"/>
       </Item>
       <Item name="UTF-8 Text" value="400000E"/>
    </Item>
@@ -645,11 +645,11 @@
       <Item name="Color" type="COL_ANY" colortype="None"/>
    </Item>
    <Item type="LineThick" size="8">
-      <Item name="Value" value="23.1054"/>
+      <Item name="Value" value="23.11"/>
    </Item>
    <Item type="LineStyle" size="12">
       <Item name="Style" value="1"/>
-      <Item name="Pitch" value="1155.27"/>
+      <Item name="Pitch" value="1155.5"/>
    </Item>
    <Item type="LineSmooth" size="8">
       <Item name="Value" value="0"/>
@@ -657,11 +657,11 @@
    <Item type="Line" size="32">
       <Item name="From" type="D2POINT">
          <Value name="X" value="350000"/>
-         <Value name="Y" value="7031155.27"/>
+         <Value name="Y" value="7031155.5"/>
       </Item>
       <Item name="To" type="D2POINT">
          <Value name="X" value="350000"/>
-         <Value name="Y" value="7030924.216"/>
+         <Value name="Y" value="7030924.4"/>
       </Item>
    </Item>
    <Item type="FontColor" size="8">
@@ -671,7 +671,7 @@
       <Item name="Value" value="Arial(TT,BOLD)"/>
    </Item>
    <Item type="FontSize" size="8">
-      <Item name="Value" value="577.635"/>
+      <Item name="Value" value="577.75"/>
    </Item>
    <Item type="FontAngle" size="8">
       <Item name="Value" value="0"/>
@@ -684,8 +684,8 @@
    </Item>
    <Item type="Text" size="27">
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="348844.73"/>
-         <Value name="Y" value="7031299.679"/>
+         <Value name="X" value="348844.5"/>
+         <Value name="Y" value="7031299.938"/>
       </Item>
       <Item name="UTF-8 Text" value="350000E"/>
    </Item>
@@ -699,11 +699,11 @@
       <Item name="Color" type="COL_ANY" colortype="None"/>
    </Item>
    <Item type="LineThick" size="8">
-      <Item name="Value" value="23.1054"/>
+      <Item name="Value" value="23.11"/>
    </Item>
    <Item type="LineStyle" size="12">
       <Item name="Style" value="1"/>
-      <Item name="Pitch" value="1155.27"/>
+      <Item name="Pitch" value="1155.5"/>
    </Item>
    <Item type="LineSmooth" size="8">
       <Item name="Value" value="0"/>
@@ -711,11 +711,11 @@
    <Item type="Line" size="32">
       <Item name="From" type="D2POINT">
          <Value name="X" value="355000"/>
-         <Value name="Y" value="7031155.27"/>
+         <Value name="Y" value="7031155.5"/>
       </Item>
       <Item name="To" type="D2POINT">
          <Value name="X" value="355000"/>
-         <Value name="Y" value="7030924.216"/>
+         <Value name="Y" value="7030924.4"/>
       </Item>
    </Item>
    <Item type="FontColor" size="8">
@@ -725,7 +725,7 @@
       <Item name="Value" value="Arial(TT,BOLD)"/>
    </Item>
    <Item type="FontSize" size="8">
-      <Item name="Value" value="577.635"/>
+      <Item name="Value" value="577.75"/>
    </Item>
    <Item type="FontAngle" size="8">
       <Item name="Value" value="0"/>
@@ -736,7 +736,7 @@
    <Item type="Text" size="27">
       <Item name="Point" type="D2POINT">
          <Value name="X" value="355000"/>
-         <Value name="Y" value="7031299.679"/>
+         <Value name="Y" value="7031299.938"/>
       </Item>
       <Item name="UTF-8 Text" value="355000E"/>
    </Item>
@@ -747,11 +747,11 @@
       <Item name="Color" type="COL_ANY" colortype="None"/>
    </Item>
    <Item type="LineThick" size="8">
-      <Item name="Value" value="23.1054"/>
+      <Item name="Value" value="23.11"/>
    </Item>
    <Item type="LineStyle" size="12">
       <Item name="Style" value="1"/>
-      <Item name="Pitch" value="1155.27"/>
+      <Item name="Pitch" value="1155.5"/>
    </Item>
    <Item type="LineSmooth" size="8">
       <Item name="Value" value="0"/>
@@ -759,11 +759,11 @@
    <Item type="Line" size="32">
       <Item name="From" type="D2POINT">
          <Value name="X" value="360000"/>
-         <Value name="Y" value="7031155.27"/>
+         <Value name="Y" value="7031155.5"/>
       </Item>
       <Item name="To" type="D2POINT">
          <Value name="X" value="360000"/>
-         <Value name="Y" value="7030924.216"/>
+         <Value name="Y" value="7030924.4"/>
       </Item>
    </Item>
    <Item type="FontColor" size="8">
@@ -773,7 +773,7 @@
       <Item name="Value" value="Arial(TT,BOLD)"/>
    </Item>
    <Item type="FontSize" size="8">
-      <Item name="Value" value="577.635"/>
+      <Item name="Value" value="577.75"/>
    </Item>
    <Item type="FontAngle" size="8">
       <Item name="Value" value="0"/>
@@ -784,7 +784,7 @@
    <Item type="Text" size="27">
       <Item name="Point" type="D2POINT">
          <Value name="X" value="360000"/>
-         <Value name="Y" value="7031299.679"/>
+         <Value name="Y" value="7031299.938"/>
       </Item>
       <Item name="UTF-8 Text" value="360000E"/>
    </Item>
@@ -795,11 +795,11 @@
       <Item name="Color" type="COL_ANY" colortype="None"/>
    </Item>
    <Item type="LineThick" size="8">
-      <Item name="Value" value="23.1054"/>
+      <Item name="Value" value="23.11"/>
    </Item>
    <Item type="LineStyle" size="12">
       <Item name="Style" value="1"/>
-      <Item name="Pitch" value="1155.27"/>
+      <Item name="Pitch" value="1155.5"/>
    </Item>
    <Item type="LineSmooth" size="8">
       <Item name="Value" value="0"/>
@@ -807,11 +807,11 @@
    <Item type="Line" size="32">
       <Item name="From" type="D2POINT">
          <Value name="X" value="365000"/>
-         <Value name="Y" value="7031155.27"/>
+         <Value name="Y" value="7031155.5"/>
       </Item>
       <Item name="To" type="D2POINT">
          <Value name="X" value="365000"/>
-         <Value name="Y" value="7030924.216"/>
+         <Value name="Y" value="7030924.4"/>
       </Item>
    </Item>
    <Item type="FontColor" size="8">
@@ -821,7 +821,7 @@
       <Item name="Value" value="Arial(TT,BOLD)"/>
    </Item>
    <Item type="FontSize" size="8">
-      <Item name="Value" value="577.635"/>
+      <Item name="Value" value="577.75"/>
    </Item>
    <Item type="FontAngle" size="8">
       <Item name="Value" value="0"/>
@@ -832,7 +832,7 @@
    <Item type="Text" size="27">
       <Item name="Point" type="D2POINT">
          <Value name="X" value="365000"/>
-         <Value name="Y" value="7031299.679"/>
+         <Value name="Y" value="7031299.938"/>
       </Item>
       <Item name="UTF-8 Text" value="365000E"/>
    </Item>
@@ -843,11 +843,11 @@
       <Item name="Color" type="COL_ANY" colortype="None"/>
    </Item>
    <Item type="LineThick" size="8">
-      <Item name="Value" value="23.1054"/>
+      <Item name="Value" value="23.11"/>
    </Item>
    <Item type="LineStyle" size="12">
       <Item name="Style" value="1"/>
-      <Item name="Pitch" value="1155.27"/>
+      <Item name="Pitch" value="1155.5"/>
    </Item>
    <Item type="LineSmooth" size="8">
       <Item name="Value" value="0"/>
@@ -855,11 +855,11 @@
    <Item type="Line" size="32">
       <Item name="From" type="D2POINT">
          <Value name="X" value="370000"/>
-         <Value name="Y" value="7031155.27"/>
+         <Value name="Y" value="7031155.5"/>
       </Item>
       <Item name="To" type="D2POINT">
          <Value name="X" value="370000"/>
-         <Value name="Y" value="7030924.216"/>
+         <Value name="Y" value="7030924.4"/>
       </Item>
    </Item>
    <Item type="FontColor" size="8">
@@ -869,7 +869,7 @@
       <Item name="Value" value="Arial(TT,BOLD)"/>
    </Item>
    <Item type="FontSize" size="8">
-      <Item name="Value" value="577.635"/>
+      <Item name="Value" value="577.75"/>
    </Item>
    <Item type="FontAngle" size="8">
       <Item name="Value" value="0"/>
@@ -880,7 +880,7 @@
    <Item type="Text" size="27">
       <Item name="Point" type="D2POINT">
          <Value name="X" value="370000"/>
-         <Value name="Y" value="7031299.679"/>
+         <Value name="Y" value="7031299.938"/>
       </Item>
       <Item name="UTF-8 Text" value="370000E"/>
    </Item>
@@ -891,11 +891,11 @@
       <Item name="Color" type="COL_ANY" colortype="None"/>
    </Item>
    <Item type="LineThick" size="8">
-      <Item name="Value" value="23.1054"/>
+      <Item name="Value" value="23.11"/>
    </Item>
    <Item type="LineStyle" size="12">
       <Item name="Style" value="1"/>
-      <Item name="Pitch" value="1155.27"/>
+      <Item name="Pitch" value="1155.5"/>
    </Item>
    <Item type="LineSmooth" size="8">
       <Item name="Value" value="0"/>
@@ -903,11 +903,11 @@
    <Item type="Line" size="32">
       <Item name="From" type="D2POINT">
          <Value name="X" value="375000"/>
-         <Value name="Y" value="7031155.27"/>
+         <Value name="Y" value="7031155.5"/>
       </Item>
       <Item name="To" type="D2POINT">
          <Value name="X" value="375000"/>
-         <Value name="Y" value="7030924.216"/>
+         <Value name="Y" value="7030924.4"/>
       </Item>
    </Item>
    <Item type="FontColor" size="8">
@@ -917,7 +917,7 @@
       <Item name="Value" value="Arial(TT,BOLD)"/>
    </Item>
    <Item type="FontSize" size="8">
-      <Item name="Value" value="577.635"/>
+      <Item name="Value" value="577.75"/>
    </Item>
    <Item type="FontAngle" size="8">
       <Item name="Value" value="0"/>
@@ -928,7 +928,7 @@
    <Item type="Text" size="27">
       <Item name="Point" type="D2POINT">
          <Value name="X" value="375000"/>
-         <Value name="Y" value="7031299.679"/>
+         <Value name="Y" value="7031299.938"/>
       </Item>
       <Item name="UTF-8 Text" value="375000E"/>
    </Item>
@@ -939,11 +939,11 @@
       <Item name="Color" type="COL_ANY" colortype="None"/>
    </Item>
    <Item type="LineThick" size="8">
-      <Item name="Value" value="23.1054"/>
+      <Item name="Value" value="23.11"/>
    </Item>
    <Item type="LineStyle" size="12">
       <Item name="Style" value="1"/>
-      <Item name="Pitch" value="1155.27"/>
+      <Item name="Pitch" value="1155.5"/>
    </Item>
    <Item type="LineSmooth" size="8">
       <Item name="Value" value="0"/>
@@ -951,11 +951,11 @@
    <Item type="Line" size="32">
       <Item name="From" type="D2POINT">
          <Value name="X" value="380000"/>
-         <Value name="Y" value="7031155.27"/>
+         <Value name="Y" value="7031155.5"/>
       </Item>
       <Item name="To" type="D2POINT">
          <Value name="X" value="380000"/>
-         <Value name="Y" value="7030924.216"/>
+         <Value name="Y" value="7030924.4"/>
       </Item>
    </Item>
    <Item type="FontColor" size="8">
@@ -965,7 +965,7 @@
       <Item name="Value" value="Arial(TT,BOLD)"/>
    </Item>
    <Item type="FontSize" size="8">
-      <Item name="Value" value="577.635"/>
+      <Item name="Value" value="577.75"/>
    </Item>
    <Item type="FontAngle" size="8">
       <Item name="Value" value="0"/>
@@ -976,7 +976,7 @@
    <Item type="Text" size="27">
       <Item name="Point" type="D2POINT">
          <Value name="X" value="380000"/>
-         <Value name="Y" value="7031299.679"/>
+         <Value name="Y" value="7031299.938"/>
       </Item>
       <Item name="UTF-8 Text" value="380000E"/>
    </Item>
@@ -987,11 +987,11 @@
       <Item name="Color" type="COL_ANY" colortype="None"/>
    </Item>
    <Item type="LineThick" size="8">
-      <Item name="Value" value="23.1054"/>
+      <Item name="Value" value="23.11"/>
    </Item>
    <Item type="LineStyle" size="12">
       <Item name="Style" value="1"/>
-      <Item name="Pitch" value="1155.27"/>
+      <Item name="Pitch" value="1155.5"/>
    </Item>
    <Item type="LineSmooth" size="8">
       <Item name="Value" value="0"/>
@@ -999,11 +999,11 @@
    <Item type="Line" size="32">
       <Item name="From" type="D2POINT">
          <Value name="X" value="385000"/>
-         <Value name="Y" value="7031155.27"/>
+         <Value name="Y" value="7031155.5"/>
       </Item>
       <Item name="To" type="D2POINT">
          <Value name="X" value="385000"/>
-         <Value name="Y" value="7030924.216"/>
+         <Value name="Y" value="7030924.4"/>
       </Item>
    </Item>
    <Item type="FontColor" size="8">
@@ -1013,7 +1013,7 @@
       <Item name="Value" value="Arial(TT,BOLD)"/>
    </Item>
    <Item type="FontSize" size="8">
-      <Item name="Value" value="577.635"/>
+      <Item name="Value" value="577.75"/>
    </Item>
    <Item type="FontAngle" size="8">
       <Item name="Value" value="0"/>
@@ -1024,7 +1024,7 @@
    <Item type="Text" size="27">
       <Item name="Point" type="D2POINT">
          <Value name="X" value="385000"/>
-         <Value name="Y" value="7031299.679"/>
+         <Value name="Y" value="7031299.938"/>
       </Item>
       <Item name="UTF-8 Text" value="385000E"/>
    </Item>
@@ -1035,11 +1035,11 @@
       <Item name="Color" type="COL_ANY" colortype="None"/>
    </Item>
    <Item type="LineThick" size="8">
-      <Item name="Value" value="23.1054"/>
+      <Item name="Value" value="23.11"/>
    </Item>
    <Item type="LineStyle" size="12">
       <Item name="Style" value="1"/>
-      <Item name="Pitch" value="1155.27"/>
+      <Item name="Pitch" value="1155.5"/>
    </Item>
    <Item type="LineSmooth" size="8">
       <Item name="Value" value="0"/>
@@ -1047,11 +1047,11 @@
    <Item type="Line" size="32">
       <Item name="From" type="D2POINT">
          <Value name="X" value="390000"/>
-         <Value name="Y" value="7031155.27"/>
+         <Value name="Y" value="7031155.5"/>
       </Item>
       <Item name="To" type="D2POINT">
          <Value name="X" value="390000"/>
-         <Value name="Y" value="7030924.216"/>
+         <Value name="Y" value="7030924.4"/>
       </Item>
    </Item>
    <Item type="FontColor" size="8">
@@ -1061,7 +1061,7 @@
       <Item name="Value" value="Arial(TT,BOLD)"/>
    </Item>
    <Item type="FontSize" size="8">
-      <Item name="Value" value="577.635"/>
+      <Item name="Value" value="577.75"/>
    </Item>
    <Item type="FontAngle" size="8">
       <Item name="Value" value="0"/>
@@ -1072,7 +1072,7 @@
    <Item type="Text" size="27">
       <Item name="Point" type="D2POINT">
          <Value name="X" value="390000"/>
-         <Value name="Y" value="7031299.679"/>
+         <Value name="Y" value="7031299.938"/>
       </Item>
       <Item name="UTF-8 Text" value="390000E"/>
    </Item>
@@ -1083,11 +1083,11 @@
       <Item name="Color" type="COL_ANY" colortype="None"/>
    </Item>
    <Item type="LineThick" size="8">
-      <Item name="Value" value="23.1054"/>
+      <Item name="Value" value="23.11"/>
    </Item>
    <Item type="LineStyle" size="12">
       <Item name="Style" value="1"/>
-      <Item name="Pitch" value="1155.27"/>
+      <Item name="Pitch" value="1155.5"/>
    </Item>
    <Item type="LineSmooth" size="8">
       <Item name="Value" value="0"/>
@@ -1095,11 +1095,11 @@
    <Item type="Line" size="32">
       <Item name="From" type="D2POINT">
          <Value name="X" value="395000"/>
-         <Value name="Y" value="7031155.27"/>
+         <Value name="Y" value="7031155.5"/>
       </Item>
       <Item name="To" type="D2POINT">
          <Value name="X" value="395000"/>
-         <Value name="Y" value="7030924.216"/>
+         <Value name="Y" value="7030924.4"/>
       </Item>
    </Item>
    <Item type="FontColor" size="8">
@@ -1109,7 +1109,7 @@
       <Item name="Value" value="Arial(TT,BOLD)"/>
    </Item>
    <Item type="FontSize" size="8">
-      <Item name="Value" value="577.635"/>
+      <Item name="Value" value="577.75"/>
    </Item>
    <Item type="FontAngle" size="8">
       <Item name="Value" value="0"/>
@@ -1120,7 +1120,7 @@
    <Item type="Text" size="27">
       <Item name="Point" type="D2POINT">
          <Value name="X" value="395000"/>
-         <Value name="Y" value="7031299.679"/>
+         <Value name="Y" value="7031299.938"/>
       </Item>
       <Item name="UTF-8 Text" value="395000E"/>
    </Item>
@@ -1131,11 +1131,11 @@
       <Item name="Color" type="COL_ANY" colortype="None"/>
    </Item>
    <Item type="LineThick" size="8">
-      <Item name="Value" value="23.1054"/>
+      <Item name="Value" value="23.11"/>
    </Item>
    <Item type="LineStyle" size="12">
       <Item name="Style" value="1"/>
-      <Item name="Pitch" value="1155.27"/>
+      <Item name="Pitch" value="1155.5"/>
    </Item>
    <Item type="LineSmooth" size="8">
       <Item name="Value" value="0"/>
@@ -1143,11 +1143,11 @@
    <Item type="Line" size="32">
       <Item name="From" type="D2POINT">
          <Value name="X" value="400000"/>
-         <Value name="Y" value="7031155.27"/>
+         <Value name="Y" value="7031155.5"/>
       </Item>
       <Item name="To" type="D2POINT">
          <Value name="X" value="400000"/>
-         <Value name="Y" value="7030924.216"/>
+         <Value name="Y" value="7030924.4"/>
       </Item>
    </Item>
    <Item type="FontColor" size="8">
@@ -1157,7 +1157,7 @@
       <Item name="Value" value="Arial(TT,BOLD)"/>
    </Item>
    <Item type="FontSize" size="8">
-      <Item name="Value" value="577.635"/>
+      <Item name="Value" value="577.75"/>
    </Item>
    <Item type="FontAngle" size="8">
       <Item name="Value" value="0"/>
@@ -1170,8 +1170,8 @@
    </Item>
    <Item type="Text" size="27">
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="401155.27"/>
-         <Value name="Y" value="7031299.679"/>
+         <Value name="X" value="401155.5"/>
+         <Value name="Y" value="7031299.938"/>
       </Item>
       <Item name="UTF-8 Text" value="400000E"/>
    </Item>
@@ -1185,11 +1185,11 @@
       <Item name="Color" type="COL_ANY" colortype="None"/>
    </Item>
    <Item type="LineThick" size="8">
-      <Item name="Value" value="48.059232"/>
+      <Item name="Value" value="48.0688"/>
    </Item>
    <Item type="LineStyle" size="12">
       <Item name="Style" value="1"/>
-      <Item name="Pitch" value="1155.27"/>
+      <Item name="Pitch" value="1155.5"/>
    </Item>
    <Item type="LineSmooth" size="8">
       <Item name="Value" value="0"/>
@@ -1201,11 +1201,11 @@
       <Item name="Color" type="COL_ANY" colortype="None"/>
    </Item>
    <Item type="LineThick" size="8">
-      <Item name="Value" value="48.059232"/>
+      <Item name="Value" value="48.0688"/>
    </Item>
    <Item type="LineStyle" size="12">
       <Item name="Style" value="1"/>
-      <Item name="Pitch" value="1155.27"/>
+      <Item name="Pitch" value="1155.5"/>
    </Item>
    <Item type="LineSmooth" size="8">
       <Item name="Value" value="0"/>
@@ -1217,7 +1217,7 @@
       <Item name="Value" value="Arial(TT,BOLD)"/>
    </Item>
    <Item type="FontSize" size="8">
-      <Item name="Value" value="577.635"/>
+      <Item name="Value" value="577.75"/>
    </Item>
    <Item type="LineColor" size="8">
       <Item name="Color" type="COL_ANY" colortype="CMY" cyan="255" magenta="255" yellow="255"/>
@@ -1226,22 +1226,22 @@
       <Item name="Color" type="COL_ANY" colortype="None"/>
    </Item>
    <Item type="LineThick" size="8">
-      <Item name="Value" value="48.059232"/>
+      <Item name="Value" value="48.0688"/>
    </Item>
    <Item type="LineStyle" size="12">
       <Item name="Style" value="1"/>
-      <Item name="Pitch" value="1155.27"/>
+      <Item name="Pitch" value="1155.5"/>
    </Item>
    <Item type="LineSmooth" size="8">
       <Item name="Value" value="0"/>
    </Item>
    <Item type="Line" size="32">
       <Item name="From" type="D2POINT">
-         <Value name="X" value="348844.73"/>
+         <Value name="X" value="348844.5"/>
          <Value name="Y" value="7000000"/>
       </Item>
       <Item name="To" type="D2POINT">
-         <Value name="X" value="349075.784"/>
+         <Value name="X" value="349075.6"/>
          <Value name="Y" value="7000000"/>
       </Item>
    </Item>
@@ -1252,7 +1252,7 @@
       <Item name="Value" value="Arial(TT,BOLD)"/>
    </Item>
    <Item type="FontSize" size="8">
-      <Item name="Value" value="577.635"/>
+      <Item name="Value" value="577.75"/>
    </Item>
    <Item type="FontAngle" size="8">
       <Item name="Value" value="-90000"/>
@@ -1265,8 +1265,8 @@
    </Item>
    <Item type="Text" size="28">
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="348700.3213"/>
-         <Value name="Y" value="6998844.73"/>
+         <Value name="X" value="348700.0625"/>
+         <Value name="Y" value="6998844.5"/>
       </Item>
       <Item name="UTF-8 Text" value="7000000N"/>
    </Item>
@@ -1277,22 +1277,22 @@
       <Item name="Color" type="COL_ANY" colortype="None"/>
    </Item>
    <Item type="LineThick" size="8">
-      <Item name="Value" value="48.059232"/>
+      <Item name="Value" value="48.0688"/>
    </Item>
    <Item type="LineStyle" size="12">
       <Item name="Style" value="1"/>
-      <Item name="Pitch" value="1155.27"/>
+      <Item name="Pitch" value="1155.5"/>
    </Item>
    <Item type="LineSmooth" size="8">
       <Item name="Value" value="0"/>
    </Item>
    <Item type="Line" size="32">
       <Item name="From" type="D2POINT">
-         <Value name="X" value="348844.73"/>
+         <Value name="X" value="348844.5"/>
          <Value name="Y" value="7005000"/>
       </Item>
       <Item name="To" type="D2POINT">
-         <Value name="X" value="349075.784"/>
+         <Value name="X" value="349075.6"/>
          <Value name="Y" value="7005000"/>
       </Item>
    </Item>
@@ -1303,7 +1303,7 @@
       <Item name="Value" value="Arial(TT,BOLD)"/>
    </Item>
    <Item type="FontSize" size="8">
-      <Item name="Value" value="577.635"/>
+      <Item name="Value" value="577.75"/>
    </Item>
    <Item type="FontAngle" size="8">
       <Item name="Value" value="-90000"/>
@@ -1316,7 +1316,7 @@
    </Item>
    <Item type="Text" size="28">
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="348700.3213"/>
+         <Value name="X" value="348700.0625"/>
          <Value name="Y" value="7005000"/>
       </Item>
       <Item name="UTF-8 Text" value="7005000N"/>
@@ -1328,22 +1328,22 @@
       <Item name="Color" type="COL_ANY" colortype="None"/>
    </Item>
    <Item type="LineThick" size="8">
-      <Item name="Value" value="48.059232"/>
+      <Item name="Value" value="48.0688"/>
    </Item>
    <Item type="LineStyle" size="12">
       <Item name="Style" value="1"/>
-      <Item name="Pitch" value="1155.27"/>
+      <Item name="Pitch" value="1155.5"/>
    </Item>
    <Item type="LineSmooth" size="8">
       <Item name="Value" value="0"/>
    </Item>
    <Item type="Line" size="32">
       <Item name="From" type="D2POINT">
-         <Value name="X" value="348844.73"/>
+         <Value name="X" value="348844.5"/>
          <Value name="Y" value="7010000"/>
       </Item>
       <Item name="To" type="D2POINT">
-         <Value name="X" value="349075.784"/>
+         <Value name="X" value="349075.6"/>
          <Value name="Y" value="7010000"/>
       </Item>
    </Item>
@@ -1354,7 +1354,7 @@
       <Item name="Value" value="Arial(TT,BOLD)"/>
    </Item>
    <Item type="FontSize" size="8">
-      <Item name="Value" value="577.635"/>
+      <Item name="Value" value="577.75"/>
    </Item>
    <Item type="FontAngle" size="8">
       <Item name="Value" value="-90000"/>
@@ -1367,7 +1367,7 @@
    </Item>
    <Item type="Text" size="28">
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="348700.3213"/>
+         <Value name="X" value="348700.0625"/>
          <Value name="Y" value="7010000"/>
       </Item>
       <Item name="UTF-8 Text" value="7010000N"/>
@@ -1379,22 +1379,22 @@
       <Item name="Color" type="COL_ANY" colortype="None"/>
    </Item>
    <Item type="LineThick" size="8">
-      <Item name="Value" value="48.059232"/>
+      <Item name="Value" value="48.0688"/>
    </Item>
    <Item type="LineStyle" size="12">
       <Item name="Style" value="1"/>
-      <Item name="Pitch" value="1155.27"/>
+      <Item name="Pitch" value="1155.5"/>
    </Item>
    <Item type="LineSmooth" size="8">
       <Item name="Value" value="0"/>
    </Item>
    <Item type="Line" size="32">
       <Item name="From" type="D2POINT">
-         <Value name="X" value="348844.73"/>
+         <Value name="X" value="348844.5"/>
          <Value name="Y" value="7015000"/>
       </Item>
       <Item name="To" type="D2POINT">
-         <Value name="X" value="349075.784"/>
+         <Value name="X" value="349075.6"/>
          <Value name="Y" value="7015000"/>
       </Item>
    </Item>
@@ -1405,7 +1405,7 @@
       <Item name="Value" value="Arial(TT,BOLD)"/>
    </Item>
    <Item type="FontSize" size="8">
-      <Item name="Value" value="577.635"/>
+      <Item name="Value" value="577.75"/>
    </Item>
    <Item type="FontAngle" size="8">
       <Item name="Value" value="-90000"/>
@@ -1418,7 +1418,7 @@
    </Item>
    <Item type="Text" size="28">
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="348700.3212"/>
+         <Value name="X" value="348700.0625"/>
          <Value name="Y" value="7015000"/>
       </Item>
       <Item name="UTF-8 Text" value="7015000N"/>
@@ -1430,22 +1430,22 @@
       <Item name="Color" type="COL_ANY" colortype="None"/>
    </Item>
    <Item type="LineThick" size="8">
-      <Item name="Value" value="48.059232"/>
+      <Item name="Value" value="48.0688"/>
    </Item>
    <Item type="LineStyle" size="12">
       <Item name="Style" value="1"/>
-      <Item name="Pitch" value="1155.27"/>
+      <Item name="Pitch" value="1155.5"/>
    </Item>
    <Item type="LineSmooth" size="8">
       <Item name="Value" value="0"/>
    </Item>
    <Item type="Line" size="32">
       <Item name="From" type="D2POINT">
-         <Value name="X" value="348844.73"/>
+         <Value name="X" value="348844.5"/>
          <Value name="Y" value="7020000"/>
       </Item>
       <Item name="To" type="D2POINT">
-         <Value name="X" value="349075.784"/>
+         <Value name="X" value="349075.6"/>
          <Value name="Y" value="7020000"/>
       </Item>
    </Item>
@@ -1456,7 +1456,7 @@
       <Item name="Value" value="Arial(TT,BOLD)"/>
    </Item>
    <Item type="FontSize" size="8">
-      <Item name="Value" value="577.635"/>
+      <Item name="Value" value="577.75"/>
    </Item>
    <Item type="FontAngle" size="8">
       <Item name="Value" value="-90000"/>
@@ -1469,7 +1469,7 @@
    </Item>
    <Item type="Text" size="28">
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="348700.3213"/>
+         <Value name="X" value="348700.0625"/>
          <Value name="Y" value="7020000"/>
       </Item>
       <Item name="UTF-8 Text" value="7020000N"/>
@@ -1481,22 +1481,22 @@
       <Item name="Color" type="COL_ANY" colortype="None"/>
    </Item>
    <Item type="LineThick" size="8">
-      <Item name="Value" value="48.059232"/>
+      <Item name="Value" value="48.0688"/>
    </Item>
    <Item type="LineStyle" size="12">
       <Item name="Style" value="1"/>
-      <Item name="Pitch" value="1155.27"/>
+      <Item name="Pitch" value="1155.5"/>
    </Item>
    <Item type="LineSmooth" size="8">
       <Item name="Value" value="0"/>
    </Item>
    <Item type="Line" size="32">
       <Item name="From" type="D2POINT">
-         <Value name="X" value="348844.73"/>
+         <Value name="X" value="348844.5"/>
          <Value name="Y" value="7025000"/>
       </Item>
       <Item name="To" type="D2POINT">
-         <Value name="X" value="349075.784"/>
+         <Value name="X" value="349075.6"/>
          <Value name="Y" value="7025000"/>
       </Item>
    </Item>
@@ -1507,7 +1507,7 @@
       <Item name="Value" value="Arial(TT,BOLD)"/>
    </Item>
    <Item type="FontSize" size="8">
-      <Item name="Value" value="577.635"/>
+      <Item name="Value" value="577.75"/>
    </Item>
    <Item type="FontAngle" size="8">
       <Item name="Value" value="-90000"/>
@@ -1520,7 +1520,7 @@
    </Item>
    <Item type="Text" size="28">
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="348700.3213"/>
+         <Value name="X" value="348700.0625"/>
          <Value name="Y" value="7025000"/>
       </Item>
       <Item name="UTF-8 Text" value="7025000N"/>
@@ -1532,22 +1532,22 @@
       <Item name="Color" type="COL_ANY" colortype="None"/>
    </Item>
    <Item type="LineThick" size="8">
-      <Item name="Value" value="48.059232"/>
+      <Item name="Value" value="48.0688"/>
    </Item>
    <Item type="LineStyle" size="12">
       <Item name="Style" value="1"/>
-      <Item name="Pitch" value="1155.27"/>
+      <Item name="Pitch" value="1155.5"/>
    </Item>
    <Item type="LineSmooth" size="8">
       <Item name="Value" value="0"/>
    </Item>
    <Item type="Line" size="32">
       <Item name="From" type="D2POINT">
-         <Value name="X" value="348844.73"/>
+         <Value name="X" value="348844.5"/>
          <Value name="Y" value="7030000"/>
       </Item>
       <Item name="To" type="D2POINT">
-         <Value name="X" value="349075.784"/>
+         <Value name="X" value="349075.6"/>
          <Value name="Y" value="7030000"/>
       </Item>
    </Item>
@@ -1558,7 +1558,7 @@
       <Item name="Value" value="Arial(TT,BOLD)"/>
    </Item>
    <Item type="FontSize" size="8">
-      <Item name="Value" value="577.635"/>
+      <Item name="Value" value="577.75"/>
    </Item>
    <Item type="FontAngle" size="8">
       <Item name="Value" value="-90000"/>
@@ -1571,8 +1571,8 @@
    </Item>
    <Item type="Text" size="28">
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="348700.3213"/>
-         <Value name="Y" value="7031155.27"/>
+         <Value name="X" value="348700.0625"/>
+         <Value name="Y" value="7031155.5"/>
       </Item>
       <Item name="UTF-8 Text" value="7030000N"/>
    </Item>
@@ -1586,22 +1586,22 @@
       <Item name="Color" type="COL_ANY" colortype="None"/>
    </Item>
    <Item type="LineThick" size="8">
-      <Item name="Value" value="48.059232"/>
+      <Item name="Value" value="48.0688"/>
    </Item>
    <Item type="LineStyle" size="12">
       <Item name="Style" value="1"/>
-      <Item name="Pitch" value="1155.27"/>
+      <Item name="Pitch" value="1155.5"/>
    </Item>
    <Item type="LineSmooth" size="8">
       <Item name="Value" value="0"/>
    </Item>
    <Item type="Line" size="32">
       <Item name="From" type="D2POINT">
-         <Value name="X" value="401155.27"/>
+         <Value name="X" value="401155.5"/>
          <Value name="Y" value="7000000"/>
       </Item>
       <Item name="To" type="D2POINT">
-         <Value name="X" value="400924.216"/>
+         <Value name="X" value="400924.4"/>
          <Value name="Y" value="7000000"/>
       </Item>
    </Item>
@@ -1612,7 +1612,7 @@
       <Item name="Value" value="Arial(TT,BOLD)"/>
    </Item>
    <Item type="FontSize" size="8">
-      <Item name="Value" value="577.635"/>
+      <Item name="Value" value="577.75"/>
    </Item>
    <Item type="FontAngle" size="8">
       <Item name="Value" value="90000"/>
@@ -1625,8 +1625,8 @@
    </Item>
    <Item type="Text" size="28">
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="401299.6788"/>
-         <Value name="Y" value="6998844.73"/>
+         <Value name="X" value="401299.9375"/>
+         <Value name="Y" value="6998844.5"/>
       </Item>
       <Item name="UTF-8 Text" value="7000000N"/>
    </Item>
@@ -1637,22 +1637,22 @@
       <Item name="Color" type="COL_ANY" colortype="None"/>
    </Item>
    <Item type="LineThick" size="8">
-      <Item name="Value" value="48.059232"/>
+      <Item name="Value" value="48.0688"/>
    </Item>
    <Item type="LineStyle" size="12">
       <Item name="Style" value="1"/>
-      <Item name="Pitch" value="1155.27"/>
+      <Item name="Pitch" value="1155.5"/>
    </Item>
    <Item type="LineSmooth" size="8">
       <Item name="Value" value="0"/>
    </Item>
    <Item type="Line" size="32">
       <Item name="From" type="D2POINT">
-         <Value name="X" value="401155.27"/>
+         <Value name="X" value="401155.5"/>
          <Value name="Y" value="7005000"/>
       </Item>
       <Item name="To" type="D2POINT">
-         <Value name="X" value="400924.216"/>
+         <Value name="X" value="400924.4"/>
          <Value name="Y" value="7005000"/>
       </Item>
    </Item>
@@ -1663,7 +1663,7 @@
       <Item name="Value" value="Arial(TT,BOLD)"/>
    </Item>
    <Item type="FontSize" size="8">
-      <Item name="Value" value="577.635"/>
+      <Item name="Value" value="577.75"/>
    </Item>
    <Item type="FontAngle" size="8">
       <Item name="Value" value="90000"/>
@@ -1676,7 +1676,7 @@
    </Item>
    <Item type="Text" size="28">
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="401299.6788"/>
+         <Value name="X" value="401299.9375"/>
          <Value name="Y" value="7005000"/>
       </Item>
       <Item name="UTF-8 Text" value="7005000N"/>
@@ -1688,22 +1688,22 @@
       <Item name="Color" type="COL_ANY" colortype="None"/>
    </Item>
    <Item type="LineThick" size="8">
-      <Item name="Value" value="48.059232"/>
+      <Item name="Value" value="48.0688"/>
    </Item>
    <Item type="LineStyle" size="12">
       <Item name="Style" value="1"/>
-      <Item name="Pitch" value="1155.27"/>
+      <Item name="Pitch" value="1155.5"/>
    </Item>
    <Item type="LineSmooth" size="8">
       <Item name="Value" value="0"/>
    </Item>
    <Item type="Line" size="32">
       <Item name="From" type="D2POINT">
-         <Value name="X" value="401155.27"/>
+         <Value name="X" value="401155.5"/>
          <Value name="Y" value="7010000"/>
       </Item>
       <Item name="To" type="D2POINT">
-         <Value name="X" value="400924.216"/>
+         <Value name="X" value="400924.4"/>
          <Value name="Y" value="7010000"/>
       </Item>
    </Item>
@@ -1714,7 +1714,7 @@
       <Item name="Value" value="Arial(TT,BOLD)"/>
    </Item>
    <Item type="FontSize" size="8">
-      <Item name="Value" value="577.635"/>
+      <Item name="Value" value="577.75"/>
    </Item>
    <Item type="FontAngle" size="8">
       <Item name="Value" value="90000"/>
@@ -1727,7 +1727,7 @@
    </Item>
    <Item type="Text" size="28">
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="401299.6788"/>
+         <Value name="X" value="401299.9375"/>
          <Value name="Y" value="7010000"/>
       </Item>
       <Item name="UTF-8 Text" value="7010000N"/>
@@ -1739,22 +1739,22 @@
       <Item name="Color" type="COL_ANY" colortype="None"/>
    </Item>
    <Item type="LineThick" size="8">
-      <Item name="Value" value="48.059232"/>
+      <Item name="Value" value="48.0688"/>
    </Item>
    <Item type="LineStyle" size="12">
       <Item name="Style" value="1"/>
-      <Item name="Pitch" value="1155.27"/>
+      <Item name="Pitch" value="1155.5"/>
    </Item>
    <Item type="LineSmooth" size="8">
       <Item name="Value" value="0"/>
    </Item>
    <Item type="Line" size="32">
       <Item name="From" type="D2POINT">
-         <Value name="X" value="401155.27"/>
+         <Value name="X" value="401155.5"/>
          <Value name="Y" value="7015000"/>
       </Item>
       <Item name="To" type="D2POINT">
-         <Value name="X" value="400924.216"/>
+         <Value name="X" value="400924.4"/>
          <Value name="Y" value="7015000"/>
       </Item>
    </Item>
@@ -1765,7 +1765,7 @@
       <Item name="Value" value="Arial(TT,BOLD)"/>
    </Item>
    <Item type="FontSize" size="8">
-      <Item name="Value" value="577.635"/>
+      <Item name="Value" value="577.75"/>
    </Item>
    <Item type="FontAngle" size="8">
       <Item name="Value" value="90000"/>
@@ -1778,7 +1778,7 @@
    </Item>
    <Item type="Text" size="28">
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="401299.6788"/>
+         <Value name="X" value="401299.9375"/>
          <Value name="Y" value="7015000"/>
       </Item>
       <Item name="UTF-8 Text" value="7015000N"/>
@@ -1790,22 +1790,22 @@
       <Item name="Color" type="COL_ANY" colortype="None"/>
    </Item>
    <Item type="LineThick" size="8">
-      <Item name="Value" value="48.059232"/>
+      <Item name="Value" value="48.0688"/>
    </Item>
    <Item type="LineStyle" size="12">
       <Item name="Style" value="1"/>
-      <Item name="Pitch" value="1155.27"/>
+      <Item name="Pitch" value="1155.5"/>
    </Item>
    <Item type="LineSmooth" size="8">
       <Item name="Value" value="0"/>
    </Item>
    <Item type="Line" size="32">
       <Item name="From" type="D2POINT">
-         <Value name="X" value="401155.27"/>
+         <Value name="X" value="401155.5"/>
          <Value name="Y" value="7020000"/>
       </Item>
       <Item name="To" type="D2POINT">
-         <Value name="X" value="400924.216"/>
+         <Value name="X" value="400924.4"/>
          <Value name="Y" value="7020000"/>
       </Item>
    </Item>
@@ -1816,7 +1816,7 @@
       <Item name="Value" value="Arial(TT,BOLD)"/>
    </Item>
    <Item type="FontSize" size="8">
-      <Item name="Value" value="577.635"/>
+      <Item name="Value" value="577.75"/>
    </Item>
    <Item type="FontAngle" size="8">
       <Item name="Value" value="90000"/>
@@ -1829,7 +1829,7 @@
    </Item>
    <Item type="Text" size="28">
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="401299.6788"/>
+         <Value name="X" value="401299.9375"/>
          <Value name="Y" value="7020000"/>
       </Item>
       <Item name="UTF-8 Text" value="7020000N"/>
@@ -1841,22 +1841,22 @@
       <Item name="Color" type="COL_ANY" colortype="None"/>
    </Item>
    <Item type="LineThick" size="8">
-      <Item name="Value" value="48.059232"/>
+      <Item name="Value" value="48.0688"/>
    </Item>
    <Item type="LineStyle" size="12">
       <Item name="Style" value="1"/>
-      <Item name="Pitch" value="1155.27"/>
+      <Item name="Pitch" value="1155.5"/>
    </Item>
    <Item type="LineSmooth" size="8">
       <Item name="Value" value="0"/>
    </Item>
    <Item type="Line" size="32">
       <Item name="From" type="D2POINT">
-         <Value name="X" value="401155.27"/>
+         <Value name="X" value="401155.5"/>
          <Value name="Y" value="7025000"/>
       </Item>
       <Item name="To" type="D2POINT">
-         <Value name="X" value="400924.216"/>
+         <Value name="X" value="400924.4"/>
          <Value name="Y" value="7025000"/>
       </Item>
    </Item>
@@ -1867,7 +1867,7 @@
       <Item name="Value" value="Arial(TT,BOLD)"/>
    </Item>
    <Item type="FontSize" size="8">
-      <Item name="Value" value="577.635"/>
+      <Item name="Value" value="577.75"/>
    </Item>
    <Item type="FontAngle" size="8">
       <Item name="Value" value="90000"/>
@@ -1880,7 +1880,7 @@
    </Item>
    <Item type="Text" size="28">
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="401299.6788"/>
+         <Value name="X" value="401299.9375"/>
          <Value name="Y" value="7025000"/>
       </Item>
       <Item name="UTF-8 Text" value="7025000N"/>
@@ -1892,22 +1892,22 @@
       <Item name="Color" type="COL_ANY" colortype="None"/>
    </Item>
    <Item type="LineThick" size="8">
-      <Item name="Value" value="48.059232"/>
+      <Item name="Value" value="48.0688"/>
    </Item>
    <Item type="LineStyle" size="12">
       <Item name="Style" value="1"/>
-      <Item name="Pitch" value="1155.27"/>
+      <Item name="Pitch" value="1155.5"/>
    </Item>
    <Item type="LineSmooth" size="8">
       <Item name="Value" value="0"/>
    </Item>
    <Item type="Line" size="32">
       <Item name="From" type="D2POINT">
-         <Value name="X" value="401155.27"/>
+         <Value name="X" value="401155.5"/>
          <Value name="Y" value="7030000"/>
       </Item>
       <Item name="To" type="D2POINT">
-         <Value name="X" value="400924.216"/>
+         <Value name="X" value="400924.4"/>
          <Value name="Y" value="7030000"/>
       </Item>
    </Item>
@@ -1918,7 +1918,7 @@
       <Item name="Value" value="Arial(TT,BOLD)"/>
    </Item>
    <Item type="FontSize" size="8">
-      <Item name="Value" value="577.635"/>
+      <Item name="Value" value="577.75"/>
    </Item>
    <Item type="FontAngle" size="8">
       <Item name="Value" value="90000"/>
@@ -1931,8 +1931,8 @@
    </Item>
    <Item type="Text" size="28">
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="401299.6788"/>
-         <Value name="Y" value="7031155.27"/>
+         <Value name="X" value="401299.9375"/>
+         <Value name="Y" value="7031155.5"/>
       </Item>
       <Item name="UTF-8 Text" value="7030000N"/>
    </Item>
@@ -1943,11 +1943,11 @@
       <Item name="Color" type="COL_ANY" colortype="None"/>
    </Item>
    <Item type="LineThick" size="8">
-      <Item name="Value" value="48.059232"/>
+      <Item name="Value" value="48.0688"/>
    </Item>
    <Item type="LineStyle" size="12">
       <Item name="Style" value="1"/>
-      <Item name="Pitch" value="1155.27"/>
+      <Item name="Pitch" value="1155.5"/>
    </Item>
    <Item type="LineSmooth" size="8">
       <Item name="Value" value="0"/>
@@ -1959,11 +1959,11 @@
       <Item name="Color" type="COL_ANY" colortype="None"/>
    </Item>
    <Item type="LineThick" size="8">
-      <Item name="Value" value="23.1054"/>
+      <Item name="Value" value="23.11"/>
    </Item>
    <Item type="LineStyle" size="12">
       <Item name="Style" value="1"/>
-      <Item name="Pitch" value="1155.27"/>
+      <Item name="Pitch" value="1155.5"/>
    </Item>
    <Item type="LineSmooth" size="8">
       <Item name="Value" value="0"/>
@@ -1975,185 +1975,185 @@
       <Item name="Value" value="Arial(TT,XBOLD)"/>
    </Item>
    <Item type="FontSize" size="8">
-      <Item name="Value" value="231.054"/>
+      <Item name="Value" value="231.1"/>
    </Item>
    <Item type="Line" size="32">
       <Item name="From" type="D2POINT">
          <Value name="X" value="350000"/>
-         <Value name="Y" value="6998844.73"/>
+         <Value name="Y" value="6998844.5"/>
       </Item>
       <Item name="To" type="D2POINT">
          <Value name="X" value="350000"/>
-         <Value name="Y" value="7031155.27"/>
+         <Value name="Y" value="7031155.5"/>
       </Item>
    </Item>
    <Item type="Line" size="32">
       <Item name="From" type="D2POINT">
          <Value name="X" value="355000"/>
-         <Value name="Y" value="6998844.73"/>
+         <Value name="Y" value="6998844.5"/>
       </Item>
       <Item name="To" type="D2POINT">
          <Value name="X" value="355000"/>
-         <Value name="Y" value="7031155.27"/>
+         <Value name="Y" value="7031155.5"/>
       </Item>
    </Item>
    <Item type="Line" size="32">
       <Item name="From" type="D2POINT">
          <Value name="X" value="360000"/>
-         <Value name="Y" value="6998844.73"/>
+         <Value name="Y" value="6998844.5"/>
       </Item>
       <Item name="To" type="D2POINT">
          <Value name="X" value="360000"/>
-         <Value name="Y" value="7031155.27"/>
+         <Value name="Y" value="7031155.5"/>
       </Item>
    </Item>
    <Item type="Line" size="32">
       <Item name="From" type="D2POINT">
          <Value name="X" value="365000"/>
-         <Value name="Y" value="6998844.73"/>
+         <Value name="Y" value="6998844.5"/>
       </Item>
       <Item name="To" type="D2POINT">
          <Value name="X" value="365000"/>
-         <Value name="Y" value="7031155.27"/>
+         <Value name="Y" value="7031155.5"/>
       </Item>
    </Item>
    <Item type="Line" size="32">
       <Item name="From" type="D2POINT">
          <Value name="X" value="370000"/>
-         <Value name="Y" value="6998844.73"/>
+         <Value name="Y" value="6998844.5"/>
       </Item>
       <Item name="To" type="D2POINT">
          <Value name="X" value="370000"/>
-         <Value name="Y" value="7031155.27"/>
+         <Value name="Y" value="7031155.5"/>
       </Item>
    </Item>
    <Item type="Line" size="32">
       <Item name="From" type="D2POINT">
          <Value name="X" value="375000"/>
-         <Value name="Y" value="6998844.73"/>
+         <Value name="Y" value="6998844.5"/>
       </Item>
       <Item name="To" type="D2POINT">
          <Value name="X" value="375000"/>
-         <Value name="Y" value="7031155.27"/>
+         <Value name="Y" value="7031155.5"/>
       </Item>
    </Item>
    <Item type="Line" size="32">
       <Item name="From" type="D2POINT">
          <Value name="X" value="380000"/>
-         <Value name="Y" value="6998844.73"/>
+         <Value name="Y" value="6998844.5"/>
       </Item>
       <Item name="To" type="D2POINT">
          <Value name="X" value="380000"/>
-         <Value name="Y" value="7031155.27"/>
+         <Value name="Y" value="7031155.5"/>
       </Item>
    </Item>
    <Item type="Line" size="32">
       <Item name="From" type="D2POINT">
          <Value name="X" value="385000"/>
-         <Value name="Y" value="6998844.73"/>
+         <Value name="Y" value="6998844.5"/>
       </Item>
       <Item name="To" type="D2POINT">
          <Value name="X" value="385000"/>
-         <Value name="Y" value="7031155.27"/>
+         <Value name="Y" value="7031155.5"/>
       </Item>
    </Item>
    <Item type="Line" size="32">
       <Item name="From" type="D2POINT">
          <Value name="X" value="390000"/>
-         <Value name="Y" value="6998844.73"/>
+         <Value name="Y" value="6998844.5"/>
       </Item>
       <Item name="To" type="D2POINT">
          <Value name="X" value="390000"/>
-         <Value name="Y" value="7031155.27"/>
+         <Value name="Y" value="7031155.5"/>
       </Item>
    </Item>
    <Item type="Line" size="32">
       <Item name="From" type="D2POINT">
          <Value name="X" value="395000"/>
-         <Value name="Y" value="6998844.73"/>
+         <Value name="Y" value="6998844.5"/>
       </Item>
       <Item name="To" type="D2POINT">
          <Value name="X" value="395000"/>
-         <Value name="Y" value="7031155.27"/>
+         <Value name="Y" value="7031155.5"/>
       </Item>
    </Item>
    <Item type="Line" size="32">
       <Item name="From" type="D2POINT">
          <Value name="X" value="400000"/>
-         <Value name="Y" value="6998844.73"/>
+         <Value name="Y" value="6998844.5"/>
       </Item>
       <Item name="To" type="D2POINT">
          <Value name="X" value="400000"/>
-         <Value name="Y" value="7031155.27"/>
+         <Value name="Y" value="7031155.5"/>
       </Item>
    </Item>
    <Item type="Line" size="32">
       <Item name="From" type="D2POINT">
-         <Value name="X" value="348844.73"/>
+         <Value name="X" value="348844.5"/>
          <Value name="Y" value="7000000"/>
       </Item>
       <Item name="To" type="D2POINT">
-         <Value name="X" value="401155.27"/>
+         <Value name="X" value="401155.5"/>
          <Value name="Y" value="7000000"/>
       </Item>
    </Item>
    <Item type="Line" size="32">
       <Item name="From" type="D2POINT">
-         <Value name="X" value="348844.73"/>
+         <Value name="X" value="348844.5"/>
          <Value name="Y" value="7005000"/>
       </Item>
       <Item name="To" type="D2POINT">
-         <Value name="X" value="401155.27"/>
+         <Value name="X" value="401155.5"/>
          <Value name="Y" value="7005000"/>
       </Item>
    </Item>
    <Item type="Line" size="32">
       <Item name="From" type="D2POINT">
-         <Value name="X" value="348844.73"/>
+         <Value name="X" value="348844.5"/>
          <Value name="Y" value="7010000"/>
       </Item>
       <Item name="To" type="D2POINT">
-         <Value name="X" value="401155.27"/>
+         <Value name="X" value="401155.5"/>
          <Value name="Y" value="7010000"/>
       </Item>
    </Item>
    <Item type="Line" size="32">
       <Item name="From" type="D2POINT">
-         <Value name="X" value="348844.73"/>
+         <Value name="X" value="348844.5"/>
          <Value name="Y" value="7015000"/>
       </Item>
       <Item name="To" type="D2POINT">
-         <Value name="X" value="401155.27"/>
+         <Value name="X" value="401155.5"/>
          <Value name="Y" value="7015000"/>
       </Item>
    </Item>
    <Item type="Line" size="32">
       <Item name="From" type="D2POINT">
-         <Value name="X" value="348844.73"/>
+         <Value name="X" value="348844.5"/>
          <Value name="Y" value="7020000"/>
       </Item>
       <Item name="To" type="D2POINT">
-         <Value name="X" value="401155.27"/>
+         <Value name="X" value="401155.5"/>
          <Value name="Y" value="7020000"/>
       </Item>
    </Item>
    <Item type="Line" size="32">
       <Item name="From" type="D2POINT">
-         <Value name="X" value="348844.73"/>
+         <Value name="X" value="348844.5"/>
          <Value name="Y" value="7025000"/>
       </Item>
       <Item name="To" type="D2POINT">
-         <Value name="X" value="401155.27"/>
+         <Value name="X" value="401155.5"/>
          <Value name="Y" value="7025000"/>
       </Item>
    </Item>
    <Item type="Line" size="32">
       <Item name="From" type="D2POINT">
-         <Value name="X" value="348844.73"/>
+         <Value name="X" value="348844.5"/>
          <Value name="Y" value="7030000"/>
       </Item>
       <Item name="To" type="D2POINT">
-         <Value name="X" value="401155.27"/>
+         <Value name="X" value="401155.5"/>
          <Value name="Y" value="7030000"/>
       </Item>
    </Item>
@@ -2167,11 +2167,11 @@
       <Item name="Color" type="COL_ANY" colortype="None"/>
    </Item>
    <Item type="LineThick" size="8">
-      <Item name="Value" value="25.878048"/>
+      <Item name="Value" value="25.8832"/>
    </Item>
    <Item type="LineStyle" size="12">
       <Item name="Style" value="1"/>
-      <Item name="Pitch" value="1155.27"/>
+      <Item name="Pitch" value="1155.5"/>
    </Item>
    <Item type="LineSmooth" size="8">
       <Item name="Value" value="0"/>
@@ -2183,7 +2183,7 @@
       <Item name="Value" value="Arial(TT,MEDIUM,ITALIC)"/>
    </Item>
    <Item type="FontSize" size="8">
-      <Item name="Value" value="415.8972"/>
+      <Item name="Value" value="415.98"/>
    </Item>
    <Item type="FontAngle" size="8">
       <Item name="Value" value="0"/>
@@ -2193,8 +2193,8 @@
    </Item>
    <Item type="Text" size="28">
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="350090.5216"/>
-         <Value name="Y" value="7032052.523"/>
+         <Value name="X" value="350090.5323"/>
+         <Value name="Y" value="7032052.932"/>
       </Item>
       <Item name="UTF-8 Text" value="-96Â°00&apos;"/>
    </Item>
@@ -2203,8 +2203,8 @@
    </Item>
    <Item type="Text" size="28">
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="358431.566"/>
-         <Value name="Y" value="7032052.615"/>
+         <Value name="X" value="358431.584"/>
+         <Value name="Y" value="7032053.023"/>
       </Item>
       <Item name="UTF-8 Text" value="-95Â°50&apos;"/>
    </Item>
@@ -2213,8 +2213,8 @@
    </Item>
    <Item type="Text" size="28">
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="366770.2963"/>
-         <Value name="Y" value="7032052.715"/>
+         <Value name="X" value="366770.3134"/>
+         <Value name="Y" value="7032053.123"/>
       </Item>
       <Item name="UTF-8 Text" value="-95Â°40&apos;"/>
    </Item>
@@ -2223,8 +2223,8 @@
    </Item>
    <Item type="Text" size="28">
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="375106.9929"/>
-         <Value name="Y" value="7032052.809"/>
+         <Value name="X" value="375107.0088"/>
+         <Value name="Y" value="7032053.218"/>
       </Item>
       <Item name="UTF-8 Text" value="-95Â°30&apos;"/>
    </Item>
@@ -2233,8 +2233,8 @@
    </Item>
    <Item type="Text" size="28">
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="383441.7836"/>
-         <Value name="Y" value="7032052.897"/>
+         <Value name="X" value="383441.7985"/>
+         <Value name="Y" value="7032053.306"/>
       </Item>
       <Item name="UTF-8 Text" value="-95Â°20&apos;"/>
    </Item>
@@ -2243,8 +2243,8 @@
    </Item>
    <Item type="Text" size="28">
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="391774.7955"/>
-         <Value name="Y" value="7032052.979"/>
+         <Value name="X" value="391774.8093"/>
+         <Value name="Y" value="7032053.388"/>
       </Item>
       <Item name="UTF-8 Text" value="-95Â°10&apos;"/>
    </Item>
@@ -2256,8 +2256,8 @@
    </Item>
    <Item type="Text" size="28">
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="401151.793"/>
-         <Value name="Y" value="7032053.055"/>
+         <Value name="X" value="401152.0284"/>
+         <Value name="Y" value="7032053.464"/>
       </Item>
       <Item name="UTF-8 Text" value="-95Â°00&apos;"/>
    </Item>
@@ -2272,8 +2272,8 @@
    </Item>
    <Item type="Text" size="28">
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="356924.8738"/>
-         <Value name="Y" value="6997947.368"/>
+         <Value name="X" value="356924.8636"/>
+         <Value name="Y" value="6997946.959"/>
       </Item>
       <Item name="UTF-8 Text" value="-95Â°50&apos;"/>
    </Item>
@@ -2282,8 +2282,8 @@
    </Item>
    <Item type="Text" size="28">
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="365351.9501"/>
-         <Value name="Y" value="6997947.281"/>
+         <Value name="X" value="365351.9331"/>
+         <Value name="Y" value="6997946.873"/>
       </Item>
       <Item name="UTF-8 Text" value="-95Â°40&apos;"/>
    </Item>
@@ -2292,8 +2292,8 @@
    </Item>
    <Item type="Text" size="28">
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="373777.3669"/>
-         <Value name="Y" value="6997947.188"/>
+         <Value name="X" value="373777.351"/>
+         <Value name="Y" value="6997946.779"/>
       </Item>
       <Item name="UTF-8 Text" value="-95Â°30&apos;"/>
    </Item>
@@ -2302,8 +2302,8 @@
    </Item>
    <Item type="Text" size="28">
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="382200.8638"/>
-         <Value name="Y" value="6997947.1"/>
+         <Value name="X" value="382200.8489"/>
+         <Value name="Y" value="6997946.691"/>
       </Item>
       <Item name="UTF-8 Text" value="-95Â°20&apos;"/>
    </Item>
@@ -2312,8 +2312,8 @@
    </Item>
    <Item type="Text" size="28">
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="390622.5684"/>
-         <Value name="Y" value="6997947.018"/>
+         <Value name="X" value="390622.5546"/>
+         <Value name="Y" value="6997946.61"/>
       </Item>
       <Item name="UTF-8 Text" value="-95Â°10&apos;"/>
    </Item>
@@ -2322,8 +2322,8 @@
    </Item>
    <Item type="Text" size="28">
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="399042.6099"/>
-         <Value name="Y" value="6997946.943"/>
+         <Value name="X" value="399042.5972"/>
+         <Value name="Y" value="6997946.534"/>
       </Item>
       <Item name="UTF-8 Text" value="-95Â°00&apos;"/>
    </Item>
@@ -2334,11 +2334,11 @@
       <Item name="Color" type="COL_ANY" colortype="None"/>
    </Item>
    <Item type="LineThick" size="8">
-      <Item name="Value" value="25.878048"/>
+      <Item name="Value" value="25.8832"/>
    </Item>
    <Item type="LineStyle" size="12">
       <Item name="Style" value="1"/>
-      <Item name="Pitch" value="1155.27"/>
+      <Item name="Pitch" value="1155.5"/>
    </Item>
    <Item type="LineSmooth" size="8">
       <Item name="Value" value="0"/>
@@ -2350,11 +2350,11 @@
       <Item name="Color" type="COL_ANY" colortype="None"/>
    </Item>
    <Item type="LineThick" size="8">
-      <Item name="Value" value="25.878048"/>
+      <Item name="Value" value="25.8832"/>
    </Item>
    <Item type="LineStyle" size="12">
       <Item name="Style" value="1"/>
-      <Item name="Pitch" value="1155.27"/>
+      <Item name="Pitch" value="1155.5"/>
    </Item>
    <Item type="LineSmooth" size="8">
       <Item name="Value" value="0"/>
@@ -2366,7 +2366,7 @@
       <Item name="Value" value="Arial(TT,MEDIUM,ITALIC)"/>
    </Item>
    <Item type="FontSize" size="8">
-      <Item name="Value" value="415.8972"/>
+      <Item name="Value" value="415.98"/>
    </Item>
    <Item type="FontAngle" size="8">
       <Item name="Value" value="-90000"/>
@@ -2376,8 +2376,8 @@
    </Item>
    <Item type="Text" size="27">
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="347532.0387"/>
-         <Value name="Y" value="7000316.809"/>
+         <Value name="X" value="347531.5474"/>
+         <Value name="Y" value="7000316.833"/>
       </Item>
       <Item name="UTF-8 Text" value="63Â°06&apos;"/>
    </Item>
@@ -2386,8 +2386,8 @@
    </Item>
    <Item type="Text" size="27">
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="347532.0429"/>
-         <Value name="Y" value="7004035.95"/>
+         <Value name="X" value="347531.5515"/>
+         <Value name="Y" value="7004035.973"/>
       </Item>
       <Item name="UTF-8 Text" value="63Â°08&apos;"/>
    </Item>
@@ -2396,8 +2396,8 @@
    </Item>
    <Item type="Text" size="27">
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="347532.047"/>
-         <Value name="Y" value="7007755.138"/>
+         <Value name="X" value="347531.5557"/>
+         <Value name="Y" value="7007755.162"/>
       </Item>
       <Item name="UTF-8 Text" value="63Â°10&apos;"/>
    </Item>
@@ -2406,8 +2406,8 @@
    </Item>
    <Item type="Text" size="27">
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="347532.0511"/>
-         <Value name="Y" value="7011474.324"/>
+         <Value name="X" value="347531.5598"/>
+         <Value name="Y" value="7011474.347"/>
       </Item>
       <Item name="UTF-8 Text" value="63Â°12&apos;"/>
    </Item>
@@ -2416,8 +2416,8 @@
    </Item>
    <Item type="Text" size="27">
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="347532.0553"/>
-         <Value name="Y" value="7015193.548"/>
+         <Value name="X" value="347531.564"/>
+         <Value name="Y" value="7015193.571"/>
       </Item>
       <Item name="UTF-8 Text" value="63Â°14&apos;"/>
    </Item>
@@ -2426,8 +2426,8 @@
    </Item>
    <Item type="Text" size="27">
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="347532.0595"/>
-         <Value name="Y" value="7018912.811"/>
+         <Value name="X" value="347531.5682"/>
+         <Value name="Y" value="7018912.834"/>
       </Item>
       <Item name="UTF-8 Text" value="63Â°16&apos;"/>
    </Item>
@@ -2436,8 +2436,8 @@
    </Item>
    <Item type="Text" size="27">
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="347532.0637"/>
-         <Value name="Y" value="7022632.113"/>
+         <Value name="X" value="347531.5723"/>
+         <Value name="Y" value="7022632.137"/>
       </Item>
       <Item name="UTF-8 Text" value="63Â°18&apos;"/>
    </Item>
@@ -2446,8 +2446,8 @@
    </Item>
    <Item type="Text" size="27">
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="347532.0679"/>
-         <Value name="Y" value="7026351.413"/>
+         <Value name="X" value="347531.5766"/>
+         <Value name="Y" value="7026351.436"/>
       </Item>
       <Item name="UTF-8 Text" value="63Â°20&apos;"/>
    </Item>
@@ -2456,8 +2456,8 @@
    </Item>
    <Item type="Text" size="27">
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="347532.0722"/>
-         <Value name="Y" value="7030070.76"/>
+         <Value name="X" value="347531.5808"/>
+         <Value name="Y" value="7030070.784"/>
       </Item>
       <Item name="UTF-8 Text" value="63Â°22&apos;"/>
    </Item>
@@ -2469,8 +2469,8 @@
    </Item>
    <Item type="Text" size="27">
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="402468.7773"/>
-         <Value name="Y" value="7001913.723"/>
+         <Value name="X" value="402469.2688"/>
+         <Value name="Y" value="7001913.708"/>
       </Item>
       <Item name="UTF-8 Text" value="63Â°08&apos;"/>
    </Item>
@@ -2479,8 +2479,8 @@
    </Item>
    <Item type="Text" size="27">
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="402468.7756"/>
-         <Value name="Y" value="7005629.813"/>
+         <Value name="X" value="402469.2671"/>
+         <Value name="Y" value="7005629.798"/>
       </Item>
       <Item name="UTF-8 Text" value="63Â°10&apos;"/>
    </Item>
@@ -2489,8 +2489,8 @@
    </Item>
    <Item type="Text" size="27">
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="402468.7738"/>
-         <Value name="Y" value="7009345.93"/>
+         <Value name="X" value="402469.2653"/>
+         <Value name="Y" value="7009345.915"/>
       </Item>
       <Item name="UTF-8 Text" value="63Â°12&apos;"/>
    </Item>
@@ -2499,8 +2499,8 @@
    </Item>
    <Item type="Text" size="27">
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="402468.772"/>
-         <Value name="Y" value="7013062.073"/>
+         <Value name="X" value="402469.2635"/>
+         <Value name="Y" value="7013062.058"/>
       </Item>
       <Item name="UTF-8 Text" value="63Â°14&apos;"/>
    </Item>
@@ -2509,8 +2509,8 @@
    </Item>
    <Item type="Text" size="27">
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="402468.7702"/>
-         <Value name="Y" value="7016778.243"/>
+         <Value name="X" value="402469.2617"/>
+         <Value name="Y" value="7016778.228"/>
       </Item>
       <Item name="UTF-8 Text" value="63Â°16&apos;"/>
    </Item>
@@ -2519,8 +2519,8 @@
    </Item>
    <Item type="Text" size="27">
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="402468.7684"/>
-         <Value name="Y" value="7020494.439"/>
+         <Value name="X" value="402469.2599"/>
+         <Value name="Y" value="7020494.424"/>
       </Item>
       <Item name="UTF-8 Text" value="63Â°18&apos;"/>
    </Item>
@@ -2529,8 +2529,8 @@
    </Item>
    <Item type="Text" size="27">
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="402468.7666"/>
-         <Value name="Y" value="7024210.662"/>
+         <Value name="X" value="402469.2581"/>
+         <Value name="Y" value="7024210.647"/>
       </Item>
       <Item name="UTF-8 Text" value="63Â°20&apos;"/>
    </Item>
@@ -2539,8 +2539,8 @@
    </Item>
    <Item type="Text" size="27">
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="402468.7648"/>
-         <Value name="Y" value="7027926.911"/>
+         <Value name="X" value="402469.2563"/>
+         <Value name="Y" value="7027926.896"/>
       </Item>
       <Item name="UTF-8 Text" value="63Â°22&apos;"/>
    </Item>
@@ -2551,11 +2551,11 @@
       <Item name="Color" type="COL_ANY" colortype="None"/>
    </Item>
    <Item type="LineThick" size="8">
-      <Item name="Value" value="25.878048"/>
+      <Item name="Value" value="25.8832"/>
    </Item>
    <Item type="LineStyle" size="12">
       <Item name="Style" value="1"/>
-      <Item name="Pitch" value="1155.27"/>
+      <Item name="Pitch" value="1155.5"/>
    </Item>
    <Item type="LineSmooth" size="8">
       <Item name="Value" value="0"/>
@@ -2567,11 +2567,11 @@
       <Item name="Color" type="COL_ANY" colortype="None"/>
    </Item>
    <Item type="LineThick" size="8">
-      <Item name="Value" value="57.7635"/>
+      <Item name="Value" value="57.775"/>
    </Item>
    <Item type="LineStyle" size="12">
       <Item name="Style" value="1"/>
-      <Item name="Pitch" value="1155.27"/>
+      <Item name="Pitch" value="1155.5"/>
    </Item>
    <Item type="LineSmooth" size="8">
       <Item name="Value" value="0"/>
@@ -2583,7 +2583,7 @@
       <Item name="Value" value="Arial(TT,XXBOLD)"/>
    </Item>
    <Item type="FontSize" size="8">
-      <Item name="Value" value="231.054"/>
+      <Item name="Value" value="231.1"/>
    </Item>
    <Item type="SymbName" size="20">
       <Item name="Value" value="symbols(GFN,MEDIUM)"/>
@@ -2592,7 +2592,7 @@
       <Item name="Value" value="1"/>
    </Item>
    <Item type="SymbSize" size="8">
-      <Item name="Value" value="693.162"/>
+      <Item name="Value" value="693.3"/>
    </Item>
    <Item type="SymbAngle" size="8">
       <Item name="Value" value="0"/>
@@ -2605,8 +2605,8 @@
    </Item>
    <Item type="PolyLine" size="64">
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="348844.7293"/>
-         <Value name="Y" value="7000255.586"/>
+         <Value name="X" value="348844.5005"/>
+         <Value name="Y" value="7000255.597"/>
       </Item>
       <Item name="Point" type="D2POINT">
          <Value name="X" value="365417.4678"/>
@@ -2617,14 +2617,14 @@
          <Value name="Y" value="6998869.918"/>
       </Item>
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="382930.9575"/>
-         <Value name="Y" value="6998844.72"/>
+         <Value name="X" value="382937.2524"/>
+         <Value name="Y" value="6998844.492"/>
       </Item>
    </Item>
    <Item type="PolyLine" size="64">
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="348844.7304"/>
-         <Value name="Y" value="7003974.618"/>
+         <Value name="X" value="348844.5007"/>
+         <Value name="Y" value="7003974.629"/>
       </Item>
       <Item name="Point" type="D2POINT">
          <Value name="X" value="365571.6555"/>
@@ -2635,14 +2635,14 @@
          <Value name="Y" value="7002582.062"/>
       </Item>
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="401155.2704"/>
-         <Value name="Y" value="7001953.825"/>
+         <Value name="X" value="401155.5"/>
+         <Value name="Y" value="7001953.818"/>
       </Item>
    </Item>
    <Item type="PolyLine" size="64">
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="348844.7311"/>
-         <Value name="Y" value="7007693.705"/>
+         <Value name="X" value="348844.5004"/>
+         <Value name="Y" value="7007693.716"/>
       </Item>
       <Item name="Point" type="D2POINT">
          <Value name="X" value="364677.3271"/>
@@ -2653,14 +2653,14 @@
          <Value name="Y" value="7006332.521"/>
       </Item>
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="401155.2697"/>
-         <Value name="Y" value="7005669.998"/>
+         <Value name="X" value="401155.4996"/>
+         <Value name="Y" value="7005669.991"/>
       </Item>
    </Item>
    <Item type="PolyLine" size="64">
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="348844.7307"/>
-         <Value name="Y" value="7011412.833"/>
+         <Value name="X" value="348844.499"/>
+         <Value name="Y" value="7011412.844"/>
       </Item>
       <Item name="Point" type="D2POINT">
          <Value name="X" value="364832.8124"/>
@@ -2671,14 +2671,14 @@
          <Value name="Y" value="7010044.662"/>
       </Item>
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="401155.2695"/>
-         <Value name="Y" value="7009386.189"/>
+         <Value name="X" value="401155.5008"/>
+         <Value name="Y" value="7009386.182"/>
       </Item>
    </Item>
    <Item type="PolyLine" size="64">
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="348844.7297"/>
-         <Value name="Y" value="7015131.982"/>
+         <Value name="X" value="348844.5001"/>
+         <Value name="Y" value="7015131.993"/>
       </Item>
       <Item name="Point" type="D2POINT">
          <Value name="X" value="364988.344"/>
@@ -2689,14 +2689,14 @@
          <Value name="Y" value="7013756.817"/>
       </Item>
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="401155.2699"/>
-         <Value name="Y" value="7013102.399"/>
+         <Value name="X" value="401155.5005"/>
+         <Value name="Y" value="7013102.392"/>
       </Item>
    </Item>
    <Item type="PolyLine" size="64">
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="348844.7296"/>
-         <Value name="Y" value="7018851.15"/>
+         <Value name="X" value="348844.5006"/>
+         <Value name="Y" value="7018851.161"/>
       </Item>
       <Item name="Point" type="D2POINT">
          <Value name="X" value="365143.9218"/>
@@ -2707,14 +2707,14 @@
          <Value name="Y" value="7017468.986"/>
       </Item>
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="401155.2699"/>
-         <Value name="Y" value="7016818.628"/>
+         <Value name="X" value="401155.4999"/>
+         <Value name="Y" value="7016818.621"/>
       </Item>
    </Item>
    <Item type="PolyLine" size="64">
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="348844.7305"/>
-         <Value name="Y" value="7022570.339"/>
+         <Value name="X" value="348844.5005"/>
+         <Value name="Y" value="7022570.349"/>
       </Item>
       <Item name="Point" type="D2POINT">
          <Value name="X" value="365299.5457"/>
@@ -2725,14 +2725,14 @@
          <Value name="Y" value="7021181.17"/>
       </Item>
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="401155.2695"/>
-         <Value name="Y" value="7020534.875"/>
+         <Value name="X" value="401155.4998"/>
+         <Value name="Y" value="7020534.868"/>
       </Item>
    </Item>
    <Item type="PolyLine" size="64">
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="348844.7309"/>
-         <Value name="Y" value="7026289.547"/>
+         <Value name="X" value="348844.4999"/>
+         <Value name="Y" value="7026289.558"/>
       </Item>
       <Item name="Point" type="D2POINT">
          <Value name="X" value="365455.2158"/>
@@ -2743,14 +2743,14 @@
          <Value name="Y" value="7024893.369"/>
       </Item>
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="401155.2696"/>
-         <Value name="Y" value="7024251.141"/>
+         <Value name="X" value="401155.5003"/>
+         <Value name="Y" value="7024251.133"/>
       </Item>
    </Item>
    <Item type="PolyLine" size="64">
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="348844.7307"/>
-         <Value name="Y" value="7030008.81"/>
+         <Value name="X" value="348844.5003"/>
+         <Value name="Y" value="7030008.821"/>
       </Item>
       <Item name="Point" type="D2POINT">
          <Value name="X" value="364569.6187"/>
@@ -2761,106 +2761,106 @@
          <Value name="Y" value="7028644.025"/>
       </Item>
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="401155.2693"/>
-         <Value name="Y" value="7027967.425"/>
+         <Value name="X" value="401155.5004"/>
+         <Value name="Y" value="7027967.418"/>
       </Item>
    </Item>
    <Item type="PolyLine" size="48">
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="348844.7383"/>
-         <Value name="Y" value="7005433.107"/>
+         <Value name="X" value="348844.4827"/>
+         <Value name="Y" value="7005427.641"/>
       </Item>
       <Item name="Point" type="D2POINT">
          <Value name="X" value="349536.2138"/>
          <Value name="Y" value="7020213.362"/>
       </Item>
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="350048.6374"/>
-         <Value name="Y" value="7031155.271"/>
+         <Value name="X" value="350048.6481"/>
+         <Value name="Y" value="7031155.5"/>
       </Item>
    </Item>
    <Item type="PolyLine" size="48">
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="356964.0865"/>
-         <Value name="Y" value="6998844.729"/>
+         <Value name="X" value="356964.0763"/>
+         <Value name="Y" value="6998844.499"/>
       </Item>
       <Item name="Point" type="D2POINT">
          <Value name="X" value="358260.3992"/>
          <Value name="Y" value="7028183.7"/>
       </Item>
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="358391.8626"/>
-         <Value name="Y" value="7031155.271"/>
+         <Value name="X" value="358391.8728"/>
+         <Value name="Y" value="7031155.501"/>
       </Item>
    </Item>
    <Item type="PolyLine" size="48">
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="365389.2247"/>
-         <Value name="Y" value="6998844.731"/>
+         <Value name="X" value="365389.2151"/>
+         <Value name="Y" value="6998844.5"/>
       </Item>
       <Item name="Point" type="D2POINT">
          <Value name="X" value="366613.6243"/>
          <Value name="Y" value="7028289.868"/>
       </Item>
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="366732.9266"/>
-         <Value name="Y" value="7031155.271"/>
+         <Value name="X" value="366732.9362"/>
+         <Value name="Y" value="7031155.5"/>
       </Item>
    </Item>
    <Item type="PolyLine" size="48">
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="373812.3134"/>
-         <Value name="Y" value="6998844.729"/>
+         <Value name="X" value="373812.3045"/>
+         <Value name="Y" value="6998844.501"/>
       </Item>
       <Item name="Point" type="D2POINT">
          <Value name="X" value="374965.1108"/>
          <Value name="Y" value="7028417.797"/>
       </Item>
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="375071.9572"/>
-         <Value name="Y" value="7031155.269"/>
+         <Value name="X" value="375071.9661"/>
+         <Value name="Y" value="7031155.498"/>
       </Item>
    </Item>
    <Item type="PolyLine" size="48">
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="382233.4816"/>
-         <Value name="Y" value="6998844.731"/>
+         <Value name="X" value="382233.4732"/>
+         <Value name="Y" value="6998844.5"/>
       </Item>
       <Item name="Point" type="D2POINT">
          <Value name="X" value="383297.9151"/>
          <Value name="Y" value="7028103.447"/>
       </Item>
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="383409.0822"/>
-         <Value name="Y" value="7031155.27"/>
+         <Value name="X" value="383409.0905"/>
+         <Value name="Y" value="7031155.498"/>
       </Item>
    </Item>
    <Item type="PolyLine" size="48">
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="390652.8578"/>
-         <Value name="Y" value="6998844.731"/>
+         <Value name="X" value="390652.85"/>
+         <Value name="Y" value="6998844.499"/>
       </Item>
       <Item name="Point" type="D2POINT">
          <Value name="X" value="391647.0042"/>
          <Value name="Y" value="7028274.842"/>
       </Item>
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="391744.4289"/>
-         <Value name="Y" value="7031155.271"/>
+         <Value name="X" value="391744.4367"/>
+         <Value name="Y" value="7031155.5"/>
       </Item>
    </Item>
    <Item type="PolyLine" size="48">
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="399070.5703"/>
-         <Value name="Y" value="6998844.731"/>
+         <Value name="X" value="399070.5631"/>
+         <Value name="Y" value="6998844.499"/>
       </Item>
       <Item name="Point" type="D2POINT">
          <Value name="X" value="399994.2278"/>
          <Value name="Y" value="7028467.977"/>
       </Item>
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="400078.1249"/>
-         <Value name="Y" value="7031155.271"/>
+         <Value name="X" value="400078.132"/>
+         <Value name="Y" value="7031155.499"/>
       </Item>
    </Item>
    <Item type="End" size="8"></Item>

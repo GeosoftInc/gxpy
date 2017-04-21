@@ -17,10 +17,10 @@
    <Item name="Transparency" value="GS_R8DM"/>
    <Item name="ExtClipRegion" value="-1"/>
    <Item name="Extents" type="D2AREA">
-      <Value name="MinX" value="348844.73"/>
-      <Value name="MinY" value="6998844.73"/>
-      <Value name="MaxX" value="401155.27"/>
-      <Value name="MaxY" value="7031155.27"/>
+      <Value name="MinX" value="348844.5"/>
+      <Value name="MinY" value="6998844.5"/>
+      <Value name="MaxX" value="401155.5"/>
+      <Value name="MaxY" value="7031155.5"/>
    </Item>
    <Item name="Matrix" type="D4MATRIX">
       <Value x="0" y="0" value="1"/>
