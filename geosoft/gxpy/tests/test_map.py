@@ -29,16 +29,16 @@ class Test(GXPYTest):
         with gxmap.GXmap.new(mapname, overwrite=True) as map:
             with gxv.GXview(map, "rectangle_test") as v:
                 with gxg.GXdraw(v, 'rectangle') as g:
-                    g.xy_rectangle((gxgm.Point((0, 0)), gxgm.Point((250, 110))), pen=gxg.Pen(line_thick=1))
+                    g.rectangle((gxgm.Point((0, 0)), gxgm.Point((250, 110))), pen=gxg.Pen(line_thick=1))
 
                     p1 = gxgm.Point((5, 5)) * rescale
                     p2 = gxgm.Point((100, 100)) * rescale
                     poff = gxgm.Point((10, 5)) * rescale
                     g.pen = gxg.Pen(fill_color=gxg.C_LT_GREEN)
-                    g.xy_rectangle((p1, p2))
+                    g.rectangle((p1, p2))
 
                     g.pen = gxg.Pen(line_style=2, line_pitch=2.0)
-                    g.xy_line((p1 + poff, p2 - poff))
+                    g.line((p1 + poff, p2 - poff))
 
             with gxv.GXview(map, "poly") as v:
                 with gxg.GXdraw(v, 'poly') as g:
@@ -53,9 +53,9 @@ class Test(GXPYTest):
                                  [235, 18.5]]
                     pp = gxgm.PPoint.from_list(plinelist) * rescale
                     g.pen = gxg.Pen(line_style=2, line_pitch=2.0)
-                    g.xy_polyline(pp)
+                    g.polyline(pp)
                     g.pen = gxg.Pen(line_style=4, line_pitch=2.0, line_smooth=gxg.SMOOTH_AKIMA)
-                    g.xy_polyline(pp)
+                    g.polyline(pp)
 
                     ppp = np.array(plinelist)
                     pp = gxgm.PPoint(ppp[3:, :]) * rescale
@@ -64,14 +64,14 @@ class Test(GXPYTest):
                                     line_color=gxapi.C_RED,
                                     line_thick=0.25,
                                     fill_color=gxapi.C_LT_BLUE)
-                    g.xy_polyline(pp, close=True)
+                    g.polyline(pp, close=True)
 
                     g.pen = gxg.Pen(fill_color=gxapi.C_LT_GREEN)
                     pp = (pp - (100, 0, 0)) / 2 + (100, 0, 0)
-                    g.xy_polyline(pp, close=True)
+                    g.polyline(pp, close=True)
                     pp += (0, 25, 0)
                     g.pen = gxg.Pen(fill_color=gxapi.C_LT_RED)
-                    g.xy_polyline(pp, close=True)
+                    g.polyline(pp, close=True)
 
             return map.file_name
 
@@ -245,10 +245,10 @@ class Test(GXPYTest):
             with gxmap.GXmap.open(map_file) as map:
                 with gxv.GXview(map, "base") as v:
                     with gxg.GXdraw(v) as g:
-                        g.xy_rectangle(v.extent_clip, pen=gxg.Pen(line_thick=0.2, line_color='K'))
+                        g.rectangle(v.extent_clip, pen=gxg.Pen(line_thick=0.2, line_color='K'))
                 with gxv.GXview(map, "data") as v:
                     with gxg.GXdraw(v) as g:
-                        g.xy_rectangle(v.extent_clip, pen=gxg.Pen(line_thick=0.2, line_color='R'))
+                        g.rectangle(v.extent_clip, pen=gxg.Pen(line_thick=0.2, line_color='R'))
             self.crc_map(map_file,
                          pix_width=256,
                          alt_crc_name='{}_{}'.format(gxsys.func_name(1), test_number))
@@ -336,7 +336,7 @@ class Test(GXPYTest):
                 mapfiles.append(map.file_name)
                 with gxv.GXview(map, 'data') as v:
                     with gxg.GXdraw(v) as g:
-                        g.xy_rectangle(v.extent_clip)
+                        g.rectangle(v.extent_clip)
 
         for fn in mapfiles:
             self.assertTrue(os.path.isfile(fn))
@@ -350,10 +350,10 @@ class Test(GXPYTest):
 
             with gxv.GXview(map, 'base') as v:
                 with gxg.GXdraw(v) as g:
-                    g.xy_rectangle(v.extent_clip)
+                    g.rectangle(v.extent_clip)
             with gxv.GXview(map, 'data') as v:
                 with gxg.GXdraw(v) as g:
-                    g.xy_rectangle(v.extent_clip)
+                    g.rectangle(v.extent_clip)
 
             map.north_arrow()
 
@@ -367,10 +367,10 @@ class Test(GXPYTest):
 
             with gxv.GXview(map, 'base') as v:
                 with gxg.GXdraw(v) as g:
-                    g.xy_rectangle(v.extent_clip)
+                    g.rectangle(v.extent_clip)
             with gxv.GXview(map, 'data') as v:
                 with gxg.GXdraw(v) as g:
-                    g.xy_rectangle(v.extent_clip)
+                    g.rectangle(v.extent_clip)
 
             map.north_arrow(location=(2, 0, 3), inclination=-12, declination=74.5,
                             text_def=gxg.Text_def(font='Calibri'))
@@ -385,10 +385,10 @@ class Test(GXPYTest):
             mapfile = map.file_name
             with gxv.GXview(map, 'base') as v:
                 with gxg.GXdraw(v) as g:
-                    g.xy_rectangle(v.extent_clip)
+                    g.rectangle(v.extent_clip)
             with gxv.GXview(map, 'data') as v:
                 with gxg.GXdraw(v) as g:
-                    g.xy_rectangle(v.extent_clip)
+                    g.rectangle(v.extent_clip)
             map.scale_bar()
             map.scale_bar(location=(2, 0, 2), length=10, sections=12)
             map.scale_bar(location=(5, 0, 0), length=8, sections=2, post_scale=True)
@@ -404,10 +404,10 @@ class Test(GXPYTest):
             mapfile = map.file_name
             with gxv.GXview(map, 'base') as v:
                 with gxg.GXdraw(v) as g:
-                    g.xy_rectangle(v.extent_clip)
+                    g.rectangle(v.extent_clip)
             with gxv.GXview(map, 'data') as v:
                 with gxg.GXdraw(v) as g:
-                    g.xy_rectangle(v.extent_clip)
+                    g.rectangle(v.extent_clip)
             map.scale_bar()
             map.scale_bar(location=(2, 0, 2), length=10, sections=12,
                           pen=gxg.Pen(line_color='R'),
@@ -424,7 +424,7 @@ class Test(GXPYTest):
             mapfile = map.file_name
             with gxv.GXview(map, 'data') as v:
                 with gxg.GXdraw(v) as g:
-                    g.xy_rectangle(v.extent_clip)
+                    g.rectangle(v.extent_clip)
             map.surround()
         self.crc_map(mapfile)
 
@@ -436,7 +436,7 @@ class Test(GXPYTest):
             mapfile = map.file_name
             with gxv.GXview(map, 'data') as v:
                 with gxg.GXdraw(v) as g:
-                    g.xy_rectangle(v.extent_clip)
+                    g.rectangle(v.extent_clip)
             map.surround(gap=0.2)
         self.crc_map(mapfile)
 
@@ -447,7 +447,7 @@ class Test(GXPYTest):
             mapfile = map.file_name
             with gxv.GXview(map, 'data') as v:
                 with gxg.GXdraw(v) as g:
-                    g.xy_rectangle(v.extent_clip)
+                    g.rectangle(v.extent_clip)
             map.surround(gap=0.2,
                          outer_pen=gxg.Pen.from_mapplot_string('rt500'),
                          inner_pen=gxg.Pen.from_mapplot_string('K16'))
@@ -560,14 +560,13 @@ class Test(GXPYTest):
                                  top=gxmap.TOP_IN)
         self.crc_map(mapfile)
 
-    def test_annotate_ll_localgrid(self):
+    def test_annotate_ll_local(self):
         self.start()
 
         #TODO this is not what I expect - chat with Stephen...
 
-        cs = gxcs.GXcs({'type': 'localgrid',
-                        'latitude': 45,
-                        'longitude': -96,
+        cs = gxcs.GXcs({'type': 'local',
+                        'lon_lat': (-96, 45),
                         'datum': 'nad83',
                         'azimuth': -30})
         cs = gxcs.GXcs("NAD27 / UTM zone 15N <425000,6500145,0,0,0,-30>")

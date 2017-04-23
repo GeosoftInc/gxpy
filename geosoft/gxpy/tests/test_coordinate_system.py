@@ -180,6 +180,86 @@ class Test(GXPYTest):
         self.assertFalse(gxcs.GXcs("nad83 [NAVD92]").same_as(gxcs.GXcs("NAD83 [geodetic]")))
         self.assertFalse(gxcs.GXcs("nad83 [geoid]").same_vcs(gxcs.GXcs("NAD27 [NAVD92]")))
 
+    def test_pj(self):
+        self.start()
+
+        with gxcs.GXcs('DHDN / Okarito 2000') as cs:
+            with gxcs.GXcs('DHDN') as csll:
+                with gxcs.GXpj(cs, csll) as pj:
+
+                    lon, lat = pj.convert((500000, 6500000))
+                    self.assertAlmostEqual(lon, 171.168823147)
+                    self.assertAlmostEqual(lat, 8.36948254242)
+
+                    lon, lat, z = pj.convert((500000, 6500000, 50))
+                    self.assertAlmostEqual(lon, 171.168823147)
+                    self.assertAlmostEqual(lat, 8.36948254242)
+                    self.assertAlmostEqual(z, 50)
+
+                    ll = pj.convert([[500000, 6500000], [505000, 6510000]])
+                    self.assertAlmostEqual(ll[0][0], 171.168823147)
+                    self.assertAlmostEqual(ll[0][1], 8.36948254242)
+                    self.assertAlmostEqual(ll[1][0], 171.214439577)
+                    self.assertAlmostEqual(ll[1][1], 8.45978927383)
+
+                    ll = pj.convert(np.array([[500000, 6500000], [505000, 6510000]]))
+                    self.assertTrue(type(ll) is np.ndarray)
+                    self.assertAlmostEqual(ll[0][0], 171.168823147)
+                    self.assertAlmostEqual(ll[0][1], 8.36948254242)
+                    self.assertAlmostEqual(ll[1][0], 171.214439577)
+                    self.assertAlmostEqual(ll[1][1], 8.45978927383)
+
+    def test_localgrid(self):
+        self.start()
+
+        self.assertRaises(gxcs.CSException, gxcs.GXcs, {'type': 'local'})
+
+        csdict = {'type': 'local', 'lon_lat': (-96,43)}
+        csd = gxcs.GXcs(csdict)
+        self.assertEqual(csd.name, 'WGS 84 / *Local(43,-96,0,0)')
+
+        with gxcs.GXpj(csd, gxcs.GXcs('WGS 84')) as pj:
+            # TODO replace with (0,0,0) once Oblique Stereographic bug is fixed.
+            lon, lat, z = pj.convert((0.000001, 0, 0))
+            self.assertAlmostEqual(lat, 43)
+            self.assertAlmostEqual(lon, -96)
+            self.assertAlmostEqual(z, 0)
+
+        csdict['azimuth'] = 25
+        csd = gxcs.GXcs(csdict)
+        self.assertEqual(csd.name, 'WGS 84 / *Local(43,-96,0,0) <0,0,0,0,0,25>')
+        self.assertEqual(csd.gxf[2], '"Oblique Stereographic",43,-96,0.9996,0,0')
+
+        with gxcs.GXpj(gxcs.GXcs('WGS 84'), csd) as pj:
+            x, y, z = pj.convert((-96, 43, 0))
+            self.assertAlmostEqual(x, 0)
+            self.assertAlmostEqual(y, 0)
+            self.assertAlmostEqual(z, 0)
+            x, y, z = pj.convert((-95, 43, 0))
+            self.assertAlmostEqual(x, 73665.899715)
+            self.assertAlmostEqual(y, 34886.2319719)
+            self.assertAlmostEqual(z, 0)
+
+        csdict['origin'] = (1800, 500)
+        csd = gxcs.GXcs(csdict)
+        self.assertEqual(csd.name, 'WGS 84 / *Local(43,-96,1800,500) <0,0,0,0,0,25>')
+        self.assertEqual(csd.gxf[2], '"Oblique Stereographic",43,-96,0.9996,1842.66314753632,-307.558977614934')
+
+        csdict['elevation'] = 800.5
+        csdict['vcs'] = 'geoid'
+        csd = gxcs.GXcs(csdict)
+        self.assertEqual(csd.name, 'WGS 84 / *Local(43,-96,1800,500) <0,0,800.5,0,0,25>')
+        self.assertEqual(csd.gxf[2], '"Oblique Stereographic",43,-96,0.9996,1842.66314753632,-307.558977614934')
+        with gxcs.GXpj(gxcs.GXcs('WGS 84'), csd) as pj:
+            x, y = pj.convert((-96, 43))
+            self.assertAlmostEqual(x, 1800)
+            self.assertAlmostEqual(y, 500)
+        with gxcs.GXpj(csd, gxcs.GXcs('WGS 84')) as pj:
+            # TODO replace with (1800, 500, 0) once Oblique Stereographic bug is fixed.
+            lon, lat, z = pj.convert((1800.00001, 500, 0))
+            self.assertAlmostEqual(lat, 43)
+            self.assertAlmostEqual(lon, -96)
+            self.assertAlmostEqual(z, 800.5)
 
 
 ###############################################################################################

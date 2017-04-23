@@ -1,5 +1,6 @@
 import unittest
 import os
+import sys
 import numpy as np
 
 import geosoft
@@ -19,13 +20,13 @@ from geosoft.gxpy.tests import GXPYTest
 
 
 def rect_line(g, size=100):
-    g.xy_rectangle(gxgm.Point2((0, 0, size, size), cs="cm"), pen=g.new_pen(line_thick=1))
+    g.rectangle(gxgm.Point2((0, 0, size, size), cs="cm"), pen=g.new_pen(line_thick=1))
     p1 = gxgm.Point((0.1, 0.1)) * size
     p2 = gxgm.Point((0.9, 0.9)) * size
     poff = gxgm.Point((0.15, 0.05)) * size
-    g.xy_rectangle((p1, p2), pen=g.new_pen(fill_color=gxg.C_LT_GREEN))
+    g.rectangle((p1, p2), pen=g.new_pen(fill_color=gxg.C_LT_GREEN))
     p12 = gxgm.Point2((p1 + poff, p2 - poff))
-    g.xy_line((p12.p0.x, p12.p0.y, p12.p1.x, p12.p1.y), pen=g.new_pen(line_style=2, line_pitch=2.0))
+    g.line((p12.p0.x, p12.p0.y, p12.p1.x, p12.p1.y), pen=g.new_pen(line_style=2, line_pitch=2.0))
 
 
 def pline():
@@ -53,9 +54,9 @@ def draw_stuff(g, size=1.0):
 
     pp = gxgm.PPoint.from_list(plinelist) * size
     g.pen = g.new_pen(line_style=2, line_pitch=2.0)
-    g.xy_polyline(pp)
+    g.polyline(pp)
     g.pen = g.new_pen(line_style=4, line_pitch=2.0, line_smooth=gxg.SMOOTH_AKIMA)
-    g.xy_polyline(pp)
+    g.polyline(pp)
 
     ppp = np.array(plinelist)
     pp = gxgm.PPoint(ppp[3:, :]) * size
@@ -64,16 +65,16 @@ def draw_stuff(g, size=1.0):
                       line_color=gxg.C_RED,
                       line_thick=0.25,
                       fill_color=gxg.C_LT_BLUE)
-    g.xy_polygon(pp)
+    g.polygon(pp)
 
     g.pen = g.new_pen(fill_color=gxg.C_LT_GREEN)
     p1 = gxgm.Point((100, 0, 0)) * size
     p2 = gxgm.Point((100, 0, 0)) * size
     pp = (pp - p1) / 2 + p2
-    g.xy_polygon(pp)
+    g.polygon(pp)
     pp += gxgm.Point((0, 25, 0)) * size
     g.pen = g.new_pen(fill_color=gxg.C_LT_RED)
-    g.xy_polygon(pp)
+    g.polygon(pp)
 
 
 class Test(GXPYTest):
@@ -103,8 +104,8 @@ class Test(GXPYTest):
             map_file = map.file_name
             with gxv.GXview(map, 'data') as v:
                 with gxg.GXdraw(v, 'rectangle') as g:
-                    g.xy_rectangle(v.extent_clip, pen=g.new_pen(line_thick=0.5, line_color='B'))
-                    g.xy_rectangle((2, 2, 48, 38),
+                    g.rectangle(v.extent_clip, pen=g.new_pen(line_thick=0.5, line_color='B'))
+                    g.rectangle((2, 2, 48, 38),
                                    pen=g.new_pen(line_thick=0.25, line_color='R', line_style=gxg.LINE_STYLE_LONG,
                                                  line_pitch=5))
 
@@ -120,10 +121,10 @@ class Test(GXPYTest):
             map_file = map.file_name
             with gxv.GXview(map, 'data', area=area, cs='mm') as v:
                 with gxg.GXdraw(v) as g:
-                    g.xy_rectangle(v.extent_clip)
-                    g.xy_polyline(pp, pen=g.new_pen(line_smooth=gxg.SMOOTH_AKIMA, line_color='r', line_thick=1))
-                    g.xy_polyline(pp, pen=g.new_pen(line_smooth=gxg.SMOOTH_CUBIC, line_color='b', line_thick=2))
-                    g.xy_polyline(pp)
+                    g.rectangle(v.extent_clip)
+                    g.polyline(pp, pen=g.new_pen(line_smooth=gxg.SMOOTH_AKIMA, line_color='r', line_thick=1))
+                    g.polyline(pp, pen=g.new_pen(line_smooth=gxg.SMOOTH_CUBIC, line_color='b', line_thick=2))
+                    g.polyline(pp)
 
         self.crc_map(map_file)
 
@@ -138,7 +139,7 @@ class Test(GXPYTest):
                     rect_line(g)
                     g.graticule(25, 20, style=gxg.GRATICULE_LINE)
                     g.pen = g.new_pen(line_thick=0.1)
-                    g.xy_rectangle(((0, 0), (250, 125)), pen=g.new_pen(line_thick=0.1, line_color='R'))
+                    g.rectangle(((0, 0), (250, 125)), pen=g.new_pen(line_thick=0.1, line_color='R'))
             with gxv.GXview(gmap, "poly") as v:
                 with gxg.GXdraw(v) as g:
                     draw_stuff(g)
@@ -159,8 +160,8 @@ class Test(GXPYTest):
                     g.graticule(25, 20, style=gxg.GRATICULE_LINE)
                     g.pen = g.new_pen(line_thick=0.1)
                 with gxg.GXdraw(v, 'test_rectangles') as g:
-                    g.xy_rectangle(((0, 0), (250, 125)), pen=g.new_pen(line_thick=0.1, line_color='R'))
-                    g.xy_rectangle(((10, 5), (240, 120)), pen=g.new_pen(line_thick=2, line_color='B'))
+                    g.rectangle(((0, 0), (250, 125)), pen=g.new_pen(line_thick=0.1, line_color='R'))
+                    g.rectangle(((10, 5), (240, 120)), pen=g.new_pen(line_thick=2, line_color='B'))
                 v.delete_group('graticule')
             with gxv.GXview(gmap, "poly") as v:
                 with gxg.GXdraw(v, 'test_group') as g:
@@ -189,19 +190,19 @@ class Test(GXPYTest):
         with gxmap.GXmap.new(testmap, overwrite=True) as gmap:
             with gxv.GXview(gmap, "base") as view_base:
                 with gxg.GXdraw(view_base, 'Surround') as g:
-                    g.xy_rectangle(((0, 0), (280, 260)))
+                    g.rectangle(((0, 0), (280, 260)))
 
         test3dv = os.path.join(self.gx.temp_folder(), "test.geosoft_3dv")
-        with gxv.GXview3d.new(test3dv, overwrite=True) as view_3d:
+        with gxv.GXview_3d.new(test3dv, overwrite=True) as view_3d:
             with gxg.GXdraw(view_3d, '2d_group') as g:
                 rect_line(g)
                 draw_stuff(g)
-            with gxg.GXdraw3d(view_3d, '3d_group') as g:
-                g.box_3d(((20, 10, 30), (80, 50, 50)), pen=g.new_pen(fill_color='R255G100B50'))
-                g.cylinder_3d(((20, 10, 60), (80, 50, 80)), 5, pen='B')
-                g.cone_3d(((20, 10, 80), (80, 50, 60)), 8, pen='G')
-                g.cone_3d(((20, 50, 65), (20, 50, 40)), 30, pen='R', close=False)
-                g.sphere((20, 50, 80), 10, pen='C')
+            with gxg.GXdraw_3d(view_3d, '3d_group') as g:
+                g.box_3d(((20, 10, 30), (80, 50, 50)), pen=g.new_pen(line_color='R255G100B50'))
+                g.cylinder_3d(((20, 10, 60), (80, 50, 80)), 5, pen='b')
+                g.cone_3d(((20, 10, 80), (80, 50, 60)), 8, pen='g')
+                g.cone_3d(((20, 50, 65), (20, 50, 40)), 30, pen='r', close=False)
+                g.sphere((20, 50, 80), 10, pen='c')
 
             with gxmap.GXmap.open(testmap) as gmap:
                 gmap.create_linked_3d_view(view_3d, area_on_map=(10, 10, 270, 250))
@@ -213,9 +214,9 @@ class Test(GXPYTest):
         self.start()
 
         test3dv = "challenge 1 - the caps not as expected"
-        with gxv.GXview3d.new(test3dv, overwrite=True) as view_3d:
+        with gxv.GXview_3d.new(test3dv, overwrite=True) as view_3d:
             test3dv = view_3d.file_name
-            with gxg.GXdraw3d(view_3d, '3d_group') as g:
+            with gxg.GXdraw_3d(view_3d, '3d_group') as g:
                 g.pen = 'B'
                 g.view.gxview.cylinder_3d(0, 0, 0,
                                           50, 0, 0,
@@ -240,9 +241,9 @@ class Test(GXPYTest):
         self.start()
 
         test3dv = "challenge 2 - start and end radius not as expected"
-        with gxv.GXview3d.new(test3dv, overwrite=True) as view_3d:
+        with gxv.GXview_3d.new(test3dv, overwrite=True) as view_3d:
             test3dv = view_3d.file_name
-            with gxg.GXdraw3d(view_3d, '3d_group') as g:
+            with gxg.GXdraw_3d(view_3d, '3d_group') as g:
                 g.pen = 'B'
                 g.view.gxview.cylinder_3d(0, 0, 0,
                                           50, 0, 0,
@@ -273,14 +274,14 @@ class Test(GXPYTest):
 
             with gxv.GXview(gmap, "my_data_1", map_location=(2, 3), area=(0, 0, 1000, 1500), scale=10000) as v:
                 with gxg.GXdraw(v, 'line') as g:
-                    g.xy_rectangle(v.extent_clip,
+                    g.rectangle(v.extent_clip,
                                    pen=g.new_pen(line_thick=5, line_color='G'))
 
                     g.graticule(style=gxg.GRATICULE_LINE, pen=g.new_pen(line_thick=5))
 
             with gxv.GXview(gmap, "my_data_2", map_location=(15, 3), area=(0, 0, 1000, 1500), scale=10000) as v:
                 with gxg.GXdraw(v, 'line') as g:
-                    g.xy_rectangle(v.extent_clip,
+                    g.rectangle(v.extent_clip,
                                    pen=g.new_pen(line_thick=5, line_color='G'))
 
                     #TODO update test when GRATICULE_DOT is fixed
@@ -290,7 +291,7 @@ class Test(GXPYTest):
             area = (0, 0, ex[2] + 2, ex[3] + 3)
             with gxv.GXview(gmap, "my_base_view", area=area, scale=100.0) as v:
                 with gxg.GXdraw(v, 'base_edge') as g:
-                    g.xy_rectangle(v.extent_clip, pen=g.new_pen(line_thick=0.1, line_color='R'))
+                    g.rectangle(v.extent_clip, pen=g.new_pen(line_thick=0.1, line_color='R'))
             gmap.delete_view('base')
 
         print(map_file)
@@ -315,11 +316,11 @@ class Test(GXPYTest):
 
             with gxv.GXview(gmap, "base") as v:
                 with gxg.GXdraw(v, 'line') as g:
-                    g.xy_rectangle(v.extent_clip, pen=g.new_pen(line_thick=1, line_color='K'))
+                    g.rectangle(v.extent_clip, pen=g.new_pen(line_thick=1, line_color='K'))
 
             with gxv.GXview(gmap, "data") as v:
                 with gxg.GXdraw(v, 'line') as g:
-                    g.xy_rectangle(area, pen=g.new_pen(line_thick=0.1, line_color='R'))
+                    g.rectangle(area, pen=g.new_pen(line_thick=0.1, line_color='R'))
 
                 with gxagg.GXagg.new(grid_file) as agg:
                     with gxg.GXagg_group.new(v, agg) as gagg:
@@ -348,10 +349,10 @@ class Test(GXPYTest):
             map_file = gmap.file_name
             with gxv.GXview(gmap, "base") as v:
                 with gxg.GXdraw(v, 'line') as g:
-                    g.xy_rectangle(v.extent_clip, pen=g.new_pen(line_thick=2, line_color='K'))
+                    g.rectangle(v.extent_clip, pen=g.new_pen(line_thick=2, line_color='K'))
             with gxv.GXview(gmap, "data") as v:
                 with gxg.GXdraw(v, 'line') as g:
-                    g.xy_rectangle(area, pen=g.new_pen(line_thick=0.1, line_color='G'))
+                    g.rectangle(area, pen=g.new_pen(line_thick=0.1, line_color='G'))
 
                 with gxagg.GXagg.new(grid_file) as agg:
                     gxg.GXagg_group.new(v, agg)
@@ -528,7 +529,7 @@ class Test(GXPYTest):
             map_file = map.file_name
             with gxv.GXview(map, 'base') as v:
                 with gxg.GXdraw(v) as g:
-                    g.xy_rectangle(g.extent)
+                    g.rectangle(g.extent)
                     g.text('Text on base view')
                     g.text('Bigger, blue, higher',
                            (v.units_per_map_cm, v.units_per_map_cm),
@@ -548,15 +549,15 @@ class Test(GXPYTest):
             map_file = map.file_name
             with gxv.GXview(map, '*data') as v:
                 with gxg.GXdraw(v) as g:
-                    g.xy_rectangle(g.extent)
+                    g.rectangle(g.extent)
                     ex = g.extent
                     width = ex[2] - ex[0]
                     height = ex[3] - ex[1]
                     cxy = (ex[0] + width / 2, ex[1] + height / 2)
                     td = gxg.Text_def(height=width / 20, color='K128', font='sr.gfn', weight=gxg.FONT_WEIGHT_XBOLD)
-                    g.xy_rectangle(ex)
-                    g.xy_line((ex[0], cxy[1], ex[2], cxy[1]))
-                    g.xy_line((cxy[0], ex[1], cxy[0], ex[3]))
+                    g.rectangle(ex)
+                    g.line((ex[0], cxy[1], ex[2], cxy[1]))
+                    g.line((cxy[0], ex[1], cxy[0], ex[3]))
                     g.text('Centered',
                            cxy,
                            text_def=td,
@@ -590,15 +591,15 @@ class Test(GXPYTest):
             map_file = map.file_name
             with gxv.GXview(map, '*data') as v:
                 with gxg.GXdraw(v) as g:
-                    g.xy_rectangle(g.extent)
+                    g.rectangle(g.extent)
                     ex = v.extent_clip
                     width = ex[2] - ex[0]
                     height = ex[3] - ex[1]
                     cxy = (ex[0] + width / 2, ex[1] + height / 2)
                     td = gxg.Text_def(height=width / 20, color='K128', font='sr.gfn', weight=gxg.FONT_WEIGHT_XBOLD)
-                    g.xy_rectangle(ex)
-                    g.xy_line((ex[0], cxy[1], ex[2], cxy[1]))
-                    g.xy_line((cxy[0], ex[1], cxy[0], ex[3]))
+                    g.rectangle(ex)
+                    g.line((ex[0], cxy[1], ex[2], cxy[1]))
+                    g.line((cxy[0], ex[1], cxy[0], ex[3]))
                     g.text('Centered\nline2\nand another',
                            cxy,
                            text_def=td,
@@ -614,14 +615,14 @@ class Test(GXPYTest):
             map_file = map.file_name
             with gxv.GXview(map, '*data') as v:
                 with gxg.GXdraw(v) as g:
-                    g.xy_rectangle(v.extent_clip)
+                    g.rectangle(v.extent_clip)
                     rect = gxgm.Point2((v.extent_clip[0], v.extent_clip[1],
                                         (v.extent_clip[2] + v.extent_clip[0]) * 0.5,
                                         (v.extent_clip[3] + v.extent_clip[1]) * 0.5))
                 with gxg.GXdraw(v, 'a') as g:
-                    g.xy_rectangle(rect)
+                    g.rectangle(rect)
                 with gxg.GXdraw(v, 'b') as g:
-                    g.xy_rectangle(rect, pen="b")
+                    g.rectangle(rect, pen="b")
                     g.locate((450000, 5025000),
                              ref=gxg.REF_TOP_CENTER)
 
@@ -645,13 +646,13 @@ class Test(GXPYTest):
             map_file = gmap.file_name
             with gxv.GXview(gmap, "base") as v:
                 with gxg.GXdraw(v, 'line') as g:
-                    g.xy_rectangle(v.extent_clip, pen=g.new_pen(line_thick=1, line_color='K'))
+                    g.rectangle(v.extent_clip, pen=g.new_pen(line_thick=1, line_color='K'))
 
             with gxv.GXview(gmap, "data") as v:
                 with gxg.GXdraw(v, 'line') as g:
-                    #g.xy_rectangle(area, pen=g.new_pen(line_thick=0.1, line_color='R'))
-                    g.xy_rectangle(v.extent_clip, pen=g.new_pen(line_thick=0.1, line_color='G'))
-                    g.xy_rectangle(v.extent_all, pen=g.new_pen(line_thick=0.1, line_color='B'))
+                    #g.rectangle(area, pen=g.new_pen(line_thick=0.1, line_color='R'))
+                    g.rectangle(v.extent_clip, pen=g.new_pen(line_thick=0.1, line_color='G'))
+                    g.rectangle(v.extent_all, pen=g.new_pen(line_thick=0.1, line_color='B'))
 
                 with gxagg.GXagg.new(grid_file) as agg:
                     itr = gxapi.GXITR.create()
@@ -678,12 +679,12 @@ class Test(GXPYTest):
             map_file = gmap.file_name
             with gxv.GXview(gmap, "base") as v:
                 with gxg.GXdraw(v, 'line') as g:
-                    g.xy_rectangle(v.extent_clip, pen=g.new_pen(line_thick=1, line_color='K'))
+                    g.rectangle(v.extent_clip, pen=g.new_pen(line_thick=1, line_color='K'))
 
             with gxv.GXview(gmap, "data") as v:
                 with gxg.GXdraw(v, 'line') as g:
-                    g.xy_rectangle(v.extent_clip, pen=g.new_pen(line_thick=0.1, line_color='G'))
-                    g.xy_rectangle(v.extent_all, pen=g.new_pen(line_thick=0.1, line_color='B'))
+                    g.rectangle(v.extent_clip, pen=g.new_pen(line_thick=0.1, line_color='G'))
+                    g.rectangle(v.extent_all, pen=g.new_pen(line_thick=0.1, line_color='B'))
 
                 with gxagg.GXagg.new(grid_file) as agg:
                     with gxg.GXagg_group.new(v, agg) as g:
@@ -705,10 +706,10 @@ class Test(GXPYTest):
         with gxmap.GXmap.new() as map:
             with gxv.GXview(map, "base") as v:
                 with gxg.GXdraw(v, 'edge') as g:
-                    g.xy_rectangle(v.extent_clip, pen=g.new_pen(line_thick=1, line_color='K'))
+                    g.rectangle(v.extent_clip, pen=g.new_pen(line_thick=1, line_color='K'))
             with gxv.GXview(map, "data") as v:
                 with gxg.GXdraw(v, 'edge') as g:
-                    g.xy_rectangle(v.extent_clip, pen=g.new_pen(line_thick=1, line_color='B'))
+                    g.rectangle(v.extent_clip, pen=g.new_pen(line_thick=1, line_color='B'))
                     self.assertTrue(g.visible)
                     g.visible = False
                     self.assertFalse(g.visible)
@@ -723,7 +724,7 @@ class Test(GXPYTest):
 
             with gxv.GXview(map, "my_data_1", map_location=(2, 3), area=(0, 0, 1000, 1500), scale=10000) as v:
                 with gxg.GXdraw(v, 'line') as g:
-                    g.xy_rectangle(v.extent_clip,
+                    g.rectangle(v.extent_clip,
                                    pen=g.new_pen(line_thick=5, line_color='G'))
 
                     g.graticule(style=gxg.GRATICULE_LINE, pen=g.new_pen(line_thick=5))
@@ -731,7 +732,7 @@ class Test(GXPYTest):
 
             with gxv.GXview(map, "my_data_2", map_location=(15, 3), area=(0, 0, 1000, 1500), scale=10000) as v:
                 with gxg.GXdraw(v, 'line') as g:
-                    g.xy_rectangle(v.extent_clip,
+                    g.rectangle(v.extent_clip,
                                    pen=g.new_pen(line_thick=5, line_color='G'))
 
                     g.graticule(style=gxg.GRATICULE_DOT, pen=g.new_pen(line_thick=5))
@@ -739,7 +740,7 @@ class Test(GXPYTest):
 
             with gxv.GXview(map, "my_data_3", map_location=(28, 3), area=(0, 0, 1000, 1500), scale=10000) as v:
                 with gxg.GXdraw(v, 'line') as g:
-                    g.xy_rectangle(v.extent_clip,
+                    g.rectangle(v.extent_clip,
                                    pen=g.new_pen(line_thick=5, line_color='G'))
 
                     g.graticule(style=gxg.GRATICULE_CROSS, pen=g.new_pen(line_thick=5))
@@ -749,10 +750,72 @@ class Test(GXPYTest):
                     max(ex1[2], ex2[2], ex3[2])/10.0 + 2, max(ex1[3], ex2[3], ex3[3])/10.0 + 2)
             with gxv.GXview(map, "my_base_view", area=area, scale=100.0) as v:
                 with gxg.GXdraw(v, 'base_edge') as g:
-                    g.xy_rectangle(v.extent_clip, pen=g.new_pen(line_thick=0.1, line_color='R'))
+                    g.rectangle(v.extent_clip, pen=g.new_pen(line_thick=0.1, line_color='R'))
             map.delete_view('base')
 
         self.crc_map(map_file)
+
+    def test_ppoint_3d(self):
+        self.start()
+        
+        plist = [[110, 5, 0],
+                 [120, 20, 10],
+                 [130, 15, 50],
+                 [150, 50, 20],
+                 [160, 70, 0],
+                 [175, 35, 30],
+                 [190, 65, 80],
+                 [220, 50, 90],
+                 [235, 18.5, 100]]
+        pp = gxgm.PPoint(plist)
+        with gxv.GXview_3d.new(gxsys.func_name(), overwrite=True) as v:
+            file_name = v.file_name
+            with gxg.GXdraw_3d(v) as g:
+                g.pen = gxg.Pen(line_color='R')
+                g.polypoint_3d(pp)
+                pp += (0, 0, 20)
+                g.polypoint_3d(pp, style=gxg.POINT_STYLE_SPHERE, pen=gxg.Pen(line_color='G', line_thick=5))
+
+        self.crc_map(file_name)
+        gxmap.delete_files(file_name)
+
+    def test_pp_3d(self):
+        self.start()
+
+        plist = [[110, 5, 0],
+                 [120, 20, 10],
+                 [130, 15, 50],
+                 [150, 50, 20],
+                 [160, 70, 0],
+                 [175, 35, 30],
+                 [190, 65, 80],
+                 [220, 50, 90],
+                 [235, 18.5, 100]]
+        with gxv.GXview_3d.new(gxsys.func_name(), overwrite=True) as v:
+            file_name = v.file_name
+            with gxg.GXdraw_3d(v) as g:
+                pp = gxgm.PPoint(plist)
+
+                g.pen = gxg.Pen(line_color='R')
+                g.polypoint_3d(pp)
+
+                pp += (0, 0, 10)
+                g.polypoint_3d(pp, style=gxg.POINT_STYLE_SPHERE, pen=gxg.Pen(line_color='G', line_thick=4))
+
+                pp += (0, 0, 10)
+                g.pen = gxg.Pen(line_color='R')
+                g.polyline_3d(pp)
+
+                pp += (0, 0, 10)
+                g.pen = gxg.Pen(line_color='C', line_thick=3)
+                g.polyline_3d(pp, style=gxg.LINE3D_STYLE_TUBE)
+
+                pp += (0, 0, 10)
+                g.polyline_3d(pp, style=gxg.LINE3D_STYLE_TUBE_JOINED, pen=gxg.Pen(line_color='K64', line_thick=4))
+
+        self.crc_map(file_name)
+        gxmap.delete_files(file_name)
+
 
 if __name__ == '__main__':
     unittest.main()

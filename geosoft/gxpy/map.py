@@ -83,25 +83,49 @@ class Line_def:
         self._thickness = thickness
 
 
-def map_file_name(file_name, g_3dv=False):
+def map_file_name(file_name, file_type='map'):
     """
     Return a fully resolved map file path using the file name, with .map extyension
 
     :param file_name:   file name, with ot without path and/or extension
-    :param g_3dv:       geosoft_3dv file.    
+    :param file_type:   Geosoft file type, 'map' or 'geosoft_3dv' expected.  Default is 'map'    
     :return:            file name path with extension .map
 
     .. versionadded:: 9.2
     """
 
-    if g_3dv:
-        gext = '.geosoft_3dv'
-    else:
-        gext = '.map'
     ext = os.path.splitext(file_name)[1].lower()
     if ext not in ('.map', '.geosoft_3dv'):
-        file_name += gext
+        if file_type[0] != '.':
+            file_name = file_name + '.' + file_type
+        else:
+            file_name += file_type
     return os.path.abspath(file_name)
+
+
+def unique_temporary_file_name(temproot, file_type='map'):
+    """
+    Create a unique temporary file name.
+    
+    :param temproot:    root base name
+    :param file_type:   Geosoft file type, 'map' or 'geosoft_3dv' expected.  Default is 'map'
+    
+    .. versionadded:: 9.2
+    """
+
+    root, ext = os.path.splitext(temproot)
+    if not ext:
+        if file_type[0] == '.':
+            ext = file_type
+        else:
+            ext = '.' + file_type
+
+    i = 0
+    while True:
+        file_name = map_file_name(os.path.join(gx.GXpy().temp_folder(), root + str(i) + ext))
+        if not os.path.isfile(file_name):
+            return file_name
+        i += 1
 
 
 def delete_files(file_name):
@@ -344,15 +368,7 @@ class GXmap:
                 layout = MAP_LANDSCAPE
 
         if file_name is None:
-
-            # get a new temporary map file name
-            tempname = "temp_map"
-            i = 0
-            while True:
-                file_name = map_file_name(os.path.join(gx.GXpy().temp_folder(), tempname + str(i) + '.map'))
-                if not os.path.isfile(file_name):
-                    break
-                i += 1
+            file_name = unique_temporary_file_name('temp_map')
 
         else:
             if not overwrite:
@@ -708,9 +724,9 @@ class GXmap:
 
     def create_linked_3d_view(self, view, name='3D', area_on_map=(0, 0, 300, 300)):
         """
-        Create a linked 3D view inside a 2D map to a `gxpy.view.GXview3d` in a 3DV
+        Create a linked 3D view inside a 2D map to a `gxpy.view.GXview_3d` in a 3DV
 
-        :param view:        A `gxpy.view.GXview3d` instance
+        :param view:        A `gxpy.view.GXview_3d` instance
         :param name:        name of the linked view to create
         :param area_on_map: min_x, min_y, max_x, max_y) placement of view on map in mm
 
@@ -967,7 +983,7 @@ class GXmap:
 
             with gxv.GXview(self, view_name) as v:
                 with gxg.GXdraw(v) as g:
-                    g.xy_rectangle(v.extent_clip, pen=gxg.Pen(default=edge_pen, factor=v.units_per_map_cm))
+                    g.rectangle(v.extent_clip, pen=gxg.Pen(default=edge_pen, factor=v.units_per_map_cm))
 
             with _Mapplot(self) as mpl:
 
@@ -1045,7 +1061,7 @@ class GXmap:
 
             with gxv.GXview(self, view_name) as v:
                 with gxg.GXdraw(v) as g:
-                    g.xy_rectangle(v.extent_clip, pen=gxg.Pen(default=edge_pen, factor=v.units_per_map_cm))
+                    g.rectangle(v.extent_clip, pen=gxg.Pen(default=edge_pen, factor=v.units_per_map_cm))
 
             with _Mapplot(self) as mpl:
 

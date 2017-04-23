@@ -438,6 +438,10 @@ class PPoint(Geometry, Sequence):
         return result
 
     @property
+    def length(self):
+        return self.__len__()
+
+    @property
     def x(self):
         """ X array slice"""
         return self.pp[:,0]
@@ -487,3 +491,14 @@ class PPoint(Geometry, Sequence):
         p1 = Point((np.amin(self.x), np.amin(self.y), np.amin(self.z)))
         p2 = Point((np.amax(self.x), np.amax(self.y), np.amax(self.z)))
         return p1, p2
+
+    def make_xyz_vv(self):
+        """
+        Return x, y and z as a set of gxpy.vv.GXvv.
+        
+        :return:  (xvv, yvv, zvv)
+        
+        .. versionadded:: 9.2
+        """
+
+        return gxvv.GXvv(self.x), gxvv.GXvv(self.y), gxvv.GXvv(self.z)

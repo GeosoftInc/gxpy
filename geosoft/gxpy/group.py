@@ -143,6 +143,12 @@ CYLINDER_CLOSE_START = 1
 CYLINDER_CLOSE_END = 2
 CYLINDER_CLOSE_ALL = 3
 
+POINT_STYLE_DOT = 0
+POINT_STYLE_SPHERE = 1
+
+LINE3D_STYLE_LINE = 0
+LINE3D_STYLE_TUBE = 1
+LINE3D_STYLE_TUBE_JOINED = 2
 
 def edge_reference(area, ref):
     """
@@ -371,6 +377,13 @@ class GXdraw(GXgroup):
         else:
             return gxgm.Point2(p2)
 
+    @staticmethod
+    def _make_PPoint(p):
+        if isinstance(p, gxgm.PPoint):
+            return p
+        else:
+            return gxgm.PPoint(p)
+
 
     def __init__(self, *args, **kwargs):
 
@@ -539,7 +552,7 @@ class GXdraw(GXgroup):
         self.view.gxview.grid(dx, dy, ddx, ddy, style)
 
     @_draw
-    def xy_line(self, p2):
+    def line(self, p2):
         """
         Draw a line on the current plane
         :param p2: geometry.Point2, or (p1, p2)
@@ -551,7 +564,7 @@ class GXdraw(GXgroup):
         self.view.gxview.line(p2.p0.x, p2.p0.y, p2.p1.x, p2.p1.y)
 
     @_draw
-    def xy_polyline(self, pp, close=False):
+    def polyline(self, pp, close=False):
         """
         Draw a polyline the current plane
         :param pline: gxpy.geometry.PPoint
@@ -574,7 +587,7 @@ class GXdraw(GXgroup):
                                        gxvv.GXvv(pp.y)._vv)
 
     @_draw
-    def xy_polygon(self, pp, close=False):
+    def polygon(self, pp, close=False):
         """
         Draw a polygon on the current plane
         :param pline: gxpy.geometry.PPoint
@@ -585,10 +598,10 @@ class GXdraw(GXgroup):
 
         .. versionadded:: 9.2
         """
-        self.xy_polyline(pp, True)
+        self.polyline(pp, True)
 
     @_draw
-    def xy_rectangle(self, p2):
+    def rectangle(self, p2):
         """
         Draw a 2D rectangle on the current plane
         :param p2: geometry.Point2, or (p1, p2), or (x0, y0, x2, y2)
@@ -634,11 +647,11 @@ class GXdraw(GXgroup):
             self.text_def = cur_text
 
 
-class GXdraw3d(GXdraw):
+class GXdraw_3d(GXdraw):
 
     def __init__(self, view, *args, **kwargs):
 
-        if not isinstance(view, gxv.GXview3d):
+        if not isinstance(view, gxv.GXview_3d):
             raise GroupException(_t('View is not 3D'))
 
         super().__init__(view, *args, **kwargs)
@@ -654,8 +667,17 @@ class GXdraw3d(GXdraw):
         .. versionadded:: 9.2
         """
 
-        p = self._make_Point(p)
-        self.view.gxview.sphere_3d(p.x, p.y, p.z, radius)
+        # solids use the fill colour as the object colour
+        fci = self.pen._fill_color.int
+        self.view.gxview.fill_color(self.pen._line_color.int)
+
+        try:
+            p = self._make_Point(p)
+            self.view.gxview.sphere_3d(p.x, p.y, p.z, radius)
+        except:
+            raise
+        finally:
+            self.view.gxview.fill_color(fci)
 
     @_draw
     def box_3d(self, p2):
@@ -667,9 +689,18 @@ class GXdraw3d(GXdraw):
         .. versionadded:: 9.2
         """
 
-        p2 = self._make_Point2(p2)
-        self.view.gxview.box_3d(p2.p0.x, p2.p0.y, p2.p0.z,
-                                p2.p1.x, p2.p1.y, p2.p1.z)
+        # solids use the fill colour as the object colour
+        fci = self.pen._fill_color.int
+        self.view.gxview.fill_color(self.pen._line_color.int)
+
+        try:
+            p2 = self._make_Point2(p2)
+            self.view.gxview.box_3d(p2.p0.x, p2.p0.y, p2.p0.z,
+                                    p2.p1.x, p2.p1.y, p2.p1.z)
+        except:
+            raise
+        finally:
+            self.view.gxview.fill_color(fci)
 
 
     @_draw
@@ -692,13 +723,23 @@ class GXdraw3d(GXdraw):
         .. versionadded:: 9.2
         """
 
-        p2 = self._make_Point2(p2)
-        if r2 is None:
-            r2 = radius
-        self.view.gxview.cylinder_3d(p2.p0.x, p2.p0.y, p2.p0.z,
-                                     p2.p1.x, p2.p1.y, p2.p1.z,
-                                     radius, r2,
-                                     close)
+        # solids use the fill colour as the object colour
+        fci = self.pen._fill_color.int
+        self.view.gxview.fill_color(self.pen._line_color.int)
+
+        try:
+            p2 = self._make_Point2(p2)
+            if r2 is None:
+                r2 = radius
+            self.view.gxview.cylinder_3d(p2.p0.x, p2.p0.y, p2.p0.z,
+                                         p2.p1.x, p2.p1.y, p2.p1.z,
+                                         radius, r2,
+                                         close)
+        except:
+            raise
+        finally:
+            self.view.gxview.fill_color(fci)
+
 
     @_draw
     def cone_3d(self, p2, radius, close=True):
@@ -711,12 +752,63 @@ class GXdraw3d(GXdraw):
 
         .. versionadded:: 9.2
         """
+        self.cylinder_3d(p2, radius, r2=0.)
 
-        p2 = self._make_Point2(p2)
-        self.view.gxview.cylinder_3d(p2.p0.x, p2.p0.y, p2.p0.z,
-                                     p2.p1.x, p2.p1.y, p2.p1.z,
-                                     radius, 0,
-                                     int(close))
+    def _poly_3d(self, points, ptype, smooth=gxapi.MVIEW_DRAWOBJ3D_MODE_FLAT):
+        points = self._make_PPoint(points)
+        vvx, vvy, vvz = points.make_xyz_vv()
+        null_vv = gxapi.GXVV.null()
+        self.view.gxview.draw_object_3d(ptype, smooth,
+                                        vvx.length, 0,
+                                        vvx.gxvv, vvy.gxvv, vvz.gxvv,
+                                        null_vv, null_vv, null_vv,
+                                        null_vv, null_vv, null_vv)
+    @_draw
+    def polypoint_3d(self, points, style=POINT_STYLE_DOT):
+        """
+        Draw multiple points.
+        
+        :param points:  points to draw, gxpy.geometry.PPoint instance, or array-like [x,y,z]
+        :param style:   POINT_STYLE_DOT or POINT_STYLE_SPHERE.  Dots are fast and intended for point clouds.
+                        The current pen thickness is used as the sphere sizes.
+        
+        .. versionadded:: 9.2
+        """
+
+        if style == POINT_STYLE_DOT:
+            self._poly_3d(points, gxapi.MVIEW_DRAWOBJ3D_ENTITY_POINTS)
+        else:
+            radius = self.pen.line_thick * 0.5
+            for i in range(points.length):
+                self.sphere(points[i], radius=radius)
+
+
+    @_draw
+    def polyline_3d(self, points, style=LINE3D_STYLE_LINE):
+        """
+        Draw a polyline.
+        
+        :param points:  verticies of the polyline, gxpy.geometry.PPoint instance, or array-like [x,y,z]
+        :param style:   LINE3D_STYLE_LINE, LINE3D_STYLE_TUBE or LINE3D_STYLE_TUBE_JOINED.
+                        Lines are single-pixel-wide.  Tubes have width defined by the pen line thickness.
+                        Joined tubes have a joints and rounded ends.
+
+        .. versionadded:: 9.2 
+        """
+        points = self._make_PPoint(points)
+        if points.length < 2:
+            raise GroupException(_t('Need at least two points.'))
+        if style == LINE3D_STYLE_LINE:
+            vvx, vvy, vvz = points.make_xyz_vv()
+            self.view.gxview.poly_line_3d(vvx.gxvv, vvy.gxvv, vvz.gxvv)
+        else:
+            radius = self.pen.line_thick * 0.5
+            self.pen = Pen(fill_color=self.pen.line_color, default=self.pen)
+            for i in range(points.length-1):
+                self.cylinder_3d(gxgm.Point2((points[i], points[i+1])), radius=radius)
+            if style == LINE3D_STYLE_TUBE_JOINED:
+                for i in range(points.length):
+                    self.sphere(points[i], radius=radius)
 
 
 def legend_color_bar(view,

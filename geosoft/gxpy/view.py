@@ -148,11 +148,11 @@ class GXview:
             ipj = gxapi.GXIPJ.create()
             self.gxview.get_ipj(ipj)
             self._cs = gxcs.GXcs(ipj)
-            metres_per = self.cs.units_to_metres
+            metres_per = self.cs.metres_per_unit
             self._uname = self.cs.units_name
             if metres_per <= 0.:
                 raise ViewException('Invalid units {}({})'.format(self._uname, metres_per))
-            self._units_to_metres = 1.0 / metres_per
+            self._metres_per_unit = 1.0 / metres_per
 
     @property
     def lock(self):
@@ -174,11 +174,11 @@ class GXview:
     @cs.setter
     def cs(self, cs):
         self._cs = gxcs.GXcs(cs)
-        metres_per = self._cs.units_to_metres
+        metres_per = self._cs.metres_per_unit
         self._uname = self._cs.units_name
         if metres_per <= 0.:
             raise ViewException('Invalid units {}({})'.format(self._uname, metres_per))
-        self._units_to_metres = 1.0 / metres_per
+        self._metres_per_unit = 1.0 / metres_per
         self.gxview.set_ipj(self._cs.gxipj)
 
     def close(self):
@@ -213,7 +213,7 @@ class GXview:
 
         # coordinate system
         self.cs = cs
-        upm = 1.0 / self.cs.units_to_metres
+        upm = 1.0 / self.cs.metres_per_unit
 
         if area == None:
             area = self.extent_clip
@@ -249,7 +249,7 @@ class GXview:
 
     @property
     def units_per_metre(self):
-        return self._units_to_metres
+        return self._metres_per_unit
 
     @property
     def units_per_map_cm(self):
@@ -349,7 +349,7 @@ class GXview:
 
     @property
     def scale(self):
-        return 1000.0 * self.gxview.scale_mm() * self.cs.units_to_metres
+        return 1000.0 * self.gxview.scale_mm() * self.cs.metres_per_unit
 
     @property
     def aspect(self):
@@ -448,10 +448,10 @@ class GXview:
         """
         self.gxview.set_class_name(view_class, name)
 
-class GXview3d(GXview):
+class GXview_3d(GXview):
     """
     Geosoft 3D views are stored in a file with extension `.geosoft_3dv`.  A 3d view is required
-    to draw 3D elements using gxpy.group.GXdraw3d, which must be created from a GXview3d instance.
+    to draw 3D elements using gxpy.group.GXdraw_3d, which must be created from a GXview_3d instance.
     
     3D views also contain 2D drawing planes on which gxpy.group.GXdraw groups are placed.  A default 
     horizontal plane at elevation 0, named 'plane_0' is created when a new 3d view is created.
@@ -481,7 +481,7 @@ class GXview3d(GXview):
         if not _internal:
             raise ViewException(_t("Must be called by a class constructor 'open' or 'new'"))
 
-        file_name = gxmap.map_file_name(file_name, g_3dv=True)
+        file_name = gxmap.map_file_name(file_name, 'geosoft_3dv')
         map = gxmap.GXmap(file_name=file_name,
                           mode=mode,
                           _internal=True)
@@ -489,18 +489,23 @@ class GXview3d(GXview):
 
 
     @classmethod
-    def new(cls, file_name, area_2d=(0, 0, 100, 100), overwrite=False):
+    def new(cls, file_name=None, area_2d=(0, 0, 100, 100), overwrite=False):
         """
         Createa a new 3D view.
         
-        :param file_name:   name for the new 3D view file (.geosoft_3dv added)
+        :param file_name:   name for the new 3D view file (.geosoft_3dv added).  If not specified a
+                            unique temporary file is created.
         :param area_2d:     2D drawing extent for the default 2D drawing plane
         :param overwrite:   True to overwrite an existing 3DV
 
         .. versionadded:: 9.2
         """
 
-        file_name = gxmap.map_file_name(file_name, g_3dv=True)
+        if file_name is None:
+            file_name = gxmap.unique_temporary_file_name('temp_3dv', 'geosoft_3dv')
+        else:
+            file_name = gxmap.map_file_name(file_name, 'geosoft_3dv')
+
         if not overwrite:
             if os.path.isfile(file_name):
                 raise ViewException(_t('Cannot overwrite existing file: {}').format(file_name))
@@ -530,7 +535,7 @@ class GXview3d(GXview):
         .. versionadded:: 9.2
         """
 
-        file_name = gxmap.map_file_name(file_name, g_3dv=True)
+        file_name = gxmap.map_file_name(file_name, 'geosoft_3dv')
         if not os.path.isfile(file_name):
             raise ViewException(_t('geosoft_3dv file not found: {}').format(file_name))
 

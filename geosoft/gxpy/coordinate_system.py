@@ -8,6 +8,7 @@ Coordinate systems describe how cartesian coordinates are located ralative to th
 """
 
 import json
+import numpy as np
 import geosoft
 import geosoft.gxapi as gxapi
 from . import utility as gxu
@@ -248,7 +249,7 @@ class Wkt:
         return "{}({})".format(self.__class__, self.__dict__)
 
     def __str__(self):
-        return self.display_name
+        return self.name
 
     def __enter__(self):
         return self
@@ -290,49 +291,62 @@ class GXcs:
     Coordinate system class. A coordinate system defines a horizontal and vertical reference
     system to locate (x, y, z) cartesian coordinates relative to the Earth.
 
-    :param cs:      The coordinate system as one of:
-    
-                        a Geosoft name string (ie. "WGS 84 / UTM zone 32N [geodetic]")
-                        
-                        an ESRI WKT string (ie. "PROJCS["WGS_1984_UTM_Zone_35N",GEOGCS[...")
-                        
-                        a dictionary that contains the coordinate system properties
-                         
-                        a JSON string that contains the coordinate system properties
-                         
-                        a list that contains the 5 GXF coordinate system strings
-                        
-                        a geosoft.gxapi.GXipj instance
-                        
-                        a GXcs instance
+    :param cs:  - Geosoft name string (ie. "WGS 84 / UTM zone 32N [geodetic]")
+                 
+                - ESRI WKT string (ie. "PROJCS["WGS_1984_UTM_Zone_35N",GEOGCS[...")
+                 
+                - dictionary that contains the coordinate system properties (see **Dictionary Structure** below.)
+                  
+                - JSON string that contains the coordinate system properties
+                  
+                - list that contains the 5 GXF coordinate system strings (http://www.geosoft.com/resources/goto/GXF-Grid-eXchange-File)
+                  (ie: ['"WGS 84 / UTM zone 32N [geodetic]", "WGS 84", "UTM zone 32N", "", ""])
+                
+                - geosoft.gxapi.GXipj instance
+                 
+                - GXcs instance, returns a copy of the GXcs instance
 
-    :properties:
-
-        :gxipj:             GXAPI.GXIPJ instance for use with GXAPI
-        :display_name:      Display name to present to a user
-        :name:              Coordinate system name, ie: 'WGS 84 / UTM zone 15N <450000,7000000,0,0,0,15> [geodetic]'
-        :hcs:               Horizontal coordinate system name, ie: 'WGS 84 / UTM zone 15N <450000,7000000,0,0,0,15>'
-        :vcs:               Vertical coordinate system name, ie: 'geodetic'
-        :units_name:        the naame of the distance units (EPSG abbreviation)
-        :units_to_metres:   factor to convert CS distance units to metres (eg. for 'km', factor is 1000.0)
-
-    Dictionary structure:
+    :Dictionary Structure:
     
         :Geosoft:
+        
+            
 
-        .. code::
+            .. code::
+    
+                {   "type": "Geosoft",
+                    "name": name
+                    "datum": datum
+                    "method": method
+                    "units": units
+                    "local_datum": local datum transform
+                    "orientation": x0, y0, z0, xR, yR, zR
+                    "vcs": "vertical coordinate system"
+                }
+            
+            
+        :local:
+        
+            type "local" can be used to locate local coordinates in situations where one only has
+            the (longitude, latitude) of a point on local coordinate system and the orientation
+            of the local axis relative to geographic North.  Internally an Oblique Stereographic 
+            projection is created with an origin at the defined origin point.
+        
+            .. code::
+                
+                {   "type": "local",
+                    "lon_lat": (lon, lat) required longitude, latitude of "origin", in degrees
+                    "origin": (x0, y0) location of "lon_lat" on the local coordinate system, default is (0,0)
+                    "elevation": elevation of the origin in the vertical coordinate system, default is 0.
+                    "datum": datum, default is "WGS 84"        
+                    "local_datum": local datum transform, default is the default for the datum
+                    "scale_factor": local scale factor, default is 0.9996 to be similar to UTM locally
+                    "vcs": "vertical coordinate system" default is undefined.
+                }
 
-            {   "type": "Geosoft",
-                "name": name
-                "datum": datum
-                "method": method
-                "units": units
-                "local_datum": local datum transform
-                "orientation": x0, y0, z0, xR, yR, zR
-                "vcs": "vertical coordinate system"
-            }
-
-            See see http://www.geosoft.com/resources/goto/GXF-Grid-eXchange-File for GXF string reference
+            :Example:
+            
+                cs = geosoft.gxpy.GXcs({'type': 'local', 'lon_lat': (-96, 43), 'azimuth': 25})
 
         :EPSG: (http://spatialreference.org/)
 
@@ -361,7 +375,7 @@ class GXcs:
         return "{}({})".format(self.__class__, self.__dict__)
 
     def __str__(self):
-        return self.display_name
+        return self.name
 
     def __enter__(self):
         return self
@@ -409,18 +423,12 @@ class GXcs:
         return self.gxf[0]
 
     @property
-    def display_name(self):
-        """ coordinate system name as 'datum / projection <orientation> [vcs]' """
-        sref = gxapi.str_ref()
-        self.gxipj.get_display_name(sref)
-        return sref.value
-
-    @property
     def units_name(self):
+        """ name of the distance units (abbreviation)"""
         return self.cs_name(NAME_UNIT)
 
     @property
-    def units_to_metres(self):
+    def metres_per_unit(self):
         fr = gxapi.float_ref()
         sr = gxapi.str_ref()
         self.gxipj.get_units(fr, sr)
@@ -447,7 +455,7 @@ class GXcs:
 
     def coordinate_dict(self):
         """
-        Dictionary of coordinate system attributes.
+        Returns "Geosoft" dictionary of coordinate system attributes.
 
         .. versionadded:: 9.2
         """
@@ -539,15 +547,13 @@ class GXcs:
 
         gxf1, gxf2, gxf3, gxf4, gxf5 = gxfs
 
-        hcs, orient, vcs = hcs_orient_vcs_from_name(gxf1)
-        gxf1 = name_from_hcs_orient_vcs(hcs, orient=orient)
-        
         # if we get a name only, and it has a datum and projection, copy these.
         # The challenge with a name only is that the "datum / projection" must exist as
         # a known coordinate system, otherwise we cannot resolve it.  Users some times
         # combine projections with different datums so copying the values allows for this
 
         if (gxf2 == '') and (gxf3 == ''):
+            hcs, *_ = hcs_orient_vcs_from_name(gxf1)
             if '/' in hcs:
                 datum, projection, *_ = hcs.strip('"').split('/')
                 gxf2 = datum.strip()
@@ -560,17 +566,14 @@ class GXcs:
             self.gxipj.set_gxf('', '', '', gxf1, '')
 
         else:
-            #TODO fix with bug-corrected set_vcs()
             try:
                 self.gxipj.set_gxf(gxf1, gxf2, gxf3, gxf4, gxf5)
-                if vcs:
-                    self.gxipj.set_vcs('[{}]'.format(vcs))
 
             except (geosoft.gxapi.GXAPIError, geosoft.gxapi.GXError):
                 raise_gxf_error()
             else:
                 if gxf1 != "*unknown":
-                    if ('*unknown' in self.display_name) and (gxf2 or gxf3 or gxf5):
+                    if ('*unknown' in self.name) and (gxf2 or gxf3 or gxf5):
                         raise_gxf_error()
 
     def _from_dict(self, csdict):
@@ -621,31 +624,36 @@ class GXcs:
             orient = csdict.get('orientation', '')
             self._from_gxf([str(code) + orient, '', '', '', ''])
 
-        elif cstype == 'localgrid':
+        elif cstype == 'local':
             # must at least have a latitude and longitude
-            lat = csdict.get('latitude', None)
-            lon = csdict.get('longitude', None)
+            lon, lat = csdict.get('lon_lat', (None, None))
             if (lat is None) or (lon is None):
-                raise ValueError(_t("'Localgrid must define latitude and longitude properties of the local origin."))
-            sf = csdict.get('scalefactor', 0.9996)
-
-            #TODO figure this out with Stephen for 9.2
-            
-            datum = csdict.get('datum', 'WGS 84')
-            proj = '"Oblique Stereographic",' + str(lat) + ',' + str(lon) + ',' + str(sf) + ',0,0'.replace('"', '\\"')
-            units = csdict.get('units', 'm')
-            ldatum = csdict.get('ldatum', '')
+                raise CSException(_t("Local must define 'lon_lat' of the local origin."))
+            x0, y0 = csdict.get('origin', (0, 0))
             azimuth = csdict.get('azimuth', 0.0)
+
+            sf = csdict.get('scale_factor', 0.9996)
+            units = csdict.get('units', 'm')
+            datum = csdict.get('datum', 'WGS 84')
+            ldatum = csdict.get('ldatum', '')
             elevation = csdict.get('elevation', 0.0)
+
+            proj = '"Oblique Stereographic",{},{},{},0,0'.format(lat, lon, sf)
             vcs = csdict.get('vcs', '')
             if (azimuth == 0.0) and (elevation == 0.0):
                 orient = ''
             else:
-                orient = '0,0,' + str(elevation) + ',0,0,' + str(azimuth)
+                orient = '0,0,{},0,0,{}'.format(elevation, azimuth)
 
-            # construct a name
-            name = name_from_hcs_orient_vcs('{} / *Local({},{})'.format(datum, lat, lon), orient, vcs)
-            self._from_gxf([name, datum, proj, units, ldatum])
+            name = '{} / *Local({},{},{},{})'.format(datum, lat, lon, x0, y0)
+            name_azimuth = name_from_hcs_orient_vcs(name, orient, vcs)
+            self._from_gxf([name_azimuth, datum, proj, units, ldatum])
+
+            if (x0 != 0) or (y0 != 0):
+                xx0, yy0, _ = self.xyz_from_oriented((-x0, -y0, 0))
+                proj = '"Oblique Stereographic",{},{},{},{},{}'.format(lat, lon, sf, -xx0, -yy0)
+                self._from_gxf([name, datum, proj, units, ldatum])
+
 
         else:
             raise ValueError("Projection type '{}' not supported.".format(cstype))
@@ -653,10 +661,16 @@ class GXcs:
     @property
     def gxf(self):
         """
-        Get GXF string list from ipj.
-        Returns list of 5 GXF strings.
-
-        .. versionadded:: 9.2
+        Get GXF string list from ipj. (http://www.geosoft.com/resources/goto/GXF-Grid-eXchange-File)
+    
+        The first string (gxf[0]) is the coordinate system name in the form:
+             
+             "datum / projection <x0,y0,z0,rx,ry,rz> [vcs]'
+             
+        The orientation parameters are between the '<>', and will be omitted if all 0.
+        
+        'vcs' is the vertical coordinate system, and is omitted if the vcs is undefined. 
+    
         """
 
         s1 = gxapi.str_ref()
@@ -704,8 +718,7 @@ class GXcs:
 
         s = gxapi.str_ref()
         if what == NAME:
-            self.gxipj.get_display_name(s)
-            return s.value
+            return self.gxf[0]
         else:
             csname, *_ = self.gxf
             hcs, orient, vcs = hcs_orient_vcs_from_name(csname)
@@ -730,15 +743,15 @@ class GXcs:
         """
         Return oriented (x, y, z) coordinates from true base (x, y, z) coordinates.
 
-        :param xyz: (x, y, z) list-like
+        :param xyz: (x, y, z)
         :return: (x, y, z) in un-oriented space
 
         .. versionadded:: 9.2
         """
 
-        x = gxvv.GXvv((xyz[0],))
-        y = gxvv.GXvv((xyz[1],))
-        z = gxvv.GXvv((xyz[2],))
+        x = gxvv.GXvv((xyz[0],), dtype=float)
+        y = gxvv.GXvv((xyz[1],), dtype=float)
+        z = gxvv.GXvv((xyz[2],), dtype=float)
 
         self.gxipj.convert_orientation_warp_vv(x._vv, y._vv, z._vv, 0)
 
@@ -748,15 +761,15 @@ class GXcs:
         """
         Return true base (x, y, z) coordinates from oriented (x, y, z) coordinates.
 
-        :param xyz: (x, y, z) list-like
+        :param xyz: (x, y, z)
         :return: (x, y, z) in oriented space
 
         .. versionadded:: 9.2
         """
 
-        x = gxvv.GXvv((xyz[0],))
-        y = gxvv.GXvv((xyz[1],))
-        z = gxvv.GXvv((xyz[2],))
+        x = gxvv.GXvv((xyz[0],), dtype=float)
+        y = gxvv.GXvv((xyz[1],), dtype=float)
+        z = gxvv.GXvv((xyz[2],), dtype=float)
 
         self.gxipj.convert_orientation_warp_vv(x._vv, y._vv, z._vv, 1)
 
@@ -779,6 +792,12 @@ class GXpj:
     def __str__(self):
         return "PJ from \'{}\' to \'{}\'".format(str(self._cs_from), str(self._cs_to))
 
+    def __enter__(self):
+        return self
+
+    def __exit__(self, xtype, value, traceback):
+        pass
+
     _cs_from = None
     _cs_to = None
     _sr = gxapi.str_ref()
@@ -788,15 +807,16 @@ class GXpj:
         self._cs_to = cs_to
         self._pj = gxapi.GXPJ.create_ipj(cs_from.gxipj, cs_to.gxipj)
 
-    def convert(self, xyz):
+    def convert(self, xyz, in_place=False):
         """
         Project data in array in which first columns are x,y or x,y,z.
 
         Coordinates are reprojected in-place.
 
-        :param xyz:
-                | numpy array shape (,3+) for (x,y,z) conversion
-                | numpy array shape (,2) for x,y conversion
+        :param xyz: numply shape (n,2) or (n,3+), or list, or a single (x, y, z) tuple.
+                    Array dimension (n,2) for (x, y), (n,3+) for x,y,z.
+                    Only numpy arrays may have dimensions above 3.
+        :param in_place: if True, numpy array data is converted in-place.  Ignored for list or tuple
 
         :example:
             Given an array shape (500,6), which represents 500 data records with 6 columns
@@ -809,17 +829,32 @@ class GXpj:
                 pj.convert(data[:,2])       #transform x,y
                 pj.convert(data[:,3])       #transform x,y and z
                 pj.convert(data)            #transform x,y and z (same as previous line)
+                
+        :returns:   projected data in the same form as passed (numpy array, list, or (x,y,z))
 
         .. versionadded:: 9.2
         """
 
+        xyz_type = type(xyz)
+        if xyz_type is list:
+            xyz = np.array(xyz)
+        elif xyz_type is tuple:
+            xyz = np.array([xyz])
         npoints = xyz.shape[0]
+
         if npoints == 0:
-            return
+            if in_place:
+                return xyz
+            if xyz_type is np.ndarray:
+                return np.array([[]])
+            elif xyz_type is list:
+                return [[]]
+            else:
+                return ()
 
         nd = xyz.shape[1]
         if nd < 2:
-            raise CSException(_t('Data must have minimum dimension 2 (x,y) or 3 for (x,y,z).'))
+            raise CSException(_t('Data must have dimension 2 (x,y) or 3 for (x,y,z).'))
 
         vvx = gxapi.GXVV.create_ext(gxapi.GS_DOUBLE, npoints)
         vvy = gxapi.GXVV.create_ext(gxapi.GS_DOUBLE, npoints)
@@ -830,9 +865,32 @@ class GXpj:
             vvz = gxapi.GXVV.create_ext(gxapi.GS_DOUBLE, npoints)
             vvz.set_data_np(0, xyz[:, 2])
             self._pj.convert_vv3(vvx, vvy, vvz)
-            xyz[:, 2] = vvz.get_data_np(0, npoints, 'f8')
         else:
             self._pj.convert_vv(vvx, vvy)
 
-        xyz[:, 0] = vvx.get_data_np(0, npoints, 'f8')
-        xyz[:, 1] = vvy.get_data_np(0, npoints, 'f8')
+        if in_place:
+            xyz[:, 0] = vvx.get_data_np(0, npoints, 'f8')
+            xyz[:, 1] = vvy.get_data_np(0, npoints, 'f8')
+            if nd == 3:
+                xyz[:, 2] = vvz.get_data_np(0, npoints, 'f8')
+            return xyz
+
+        if nd >= 3:
+            xyz = np.transpose(np.array([vvx.get_data_np(0, npoints, 'f8'),
+                                         vvy.get_data_np(0, npoints, 'f8'),
+                                         vvz.get_data_np(0, npoints, 'f8')]))
+        else:
+            xyz = np.transpose(np.array([vvx.get_data_np(0, npoints, 'f8'),
+                                         vvy.get_data_np(0, npoints, 'f8')]))
+
+        if xyz_type is np.ndarray:
+            return xyz
+
+        elif xyz_type is list:
+            return(list(xyz))
+
+        else:
+            if nd >= 3:
+                return xyz[0, 0], xyz[0, 1], xyz[0, 2]
+            else:
+                return xyz[0, 0], xyz[0, 1]

@@ -25,9 +25,9 @@ def draw_2d_stuff(g, size=1.0):
 
     pp = gxgm.PPoint.from_list(plinelist) * size
     g.pen = g.new_pen(line_style=2, line_pitch=2.0)
-    g.xy_polyline(pp)
+    g.polyline(pp)
     g.pen = g.new_pen(line_style=4, line_pitch=2.0, line_smooth=gxg.SMOOTH_AKIMA)
-    g.xy_polyline(pp)
+    g.polyline(pp)
 
     ppp = np.array(plinelist)
     pp = gxgm.PPoint(ppp[3:, :]) * size
@@ -36,16 +36,16 @@ def draw_2d_stuff(g, size=1.0):
                       line_color=gxg.C_RED,
                       line_thick=0.25,
                       fill_color=gxg.C_LT_BLUE)
-    g.xy_polygon(pp)
+    g.polygon(pp)
 
     g.pen = g.new_pen(fill_color=gxg.C_LT_GREEN)
     p1 = gxgm.Point((100, 0, 0)) * size
     p2 = gxgm.Point((100, 0, 0)) * size
     pp = (pp - p1) / 2 + p2
-    g.xy_polygon(pp)
+    g.polygon(pp)
     pp += gxgm.Point((0, 25, 0)) * size
     g.pen = g.new_pen(fill_color=gxg.C_LT_RED)
-    g.xy_polygon(pp)
+    g.polygon(pp)
 
 
 class Test(GXPYTest):
@@ -180,7 +180,7 @@ class Test(GXPYTest):
             mapfile = gmap.file_name
             with gxv.GXview(gmap, "test_view") as v:
                 with gxg.GXdraw(v) as g:
-                    g.xy_rectangle(v.extent_clip)
+                    g.rectangle(v.extent_clip)
             with gxv.GXview(gmap, "test_view") as v:
                 pass
         gxmap.delete_files(mapfile)
@@ -202,25 +202,25 @@ class Test(GXPYTest):
 
         try:
 
-            with gxv.GXview3d.new('test_3d', overwrite=True) as v:
+            with gxv.GXview_3d.new('test_3d', overwrite=True) as v:
                 v3d_file = v.file_name
                 self.assertTrue(v3d_file.lower().endswith('.geosoft_3dv'))
                 self.assertEqual(v.name, 'test_3d')
                 self.assertEqual(v.map.name, 'test_3d')
 
                 with gxg.GXdraw(v, '2D stuff') as g:
-                    g.xy_rectangle(v.extent_clip)
+                    g.rectangle(v.extent_clip)
                     draw_2d_stuff(g)
 
                 self.assertRaises(gxv.ViewException, v.new_drawing_plane, 0)
                 v.new_drawing_plane('vertical', rotation=(90.0, 0, 0))
                 with gxg.GXdraw(v, '2D stuff vertical', plane='vertical') as g:
-                    g.xy_rectangle(v.extent_clip)
+                    g.rectangle(v.extent_clip)
                     draw_2d_stuff(g)
 
                 self.assertEqual(v.current_3d_drawing_plane, 'vertical')
-                with gxg.GXdraw3d(v, '3D stuff') as g:
-                    g.box_3d(((20, 10, -10), (80, 50, 30)), pen=g.new_pen(fill_color='R255G100B50'))
+                with gxg.GXdraw_3d(v, '3D stuff') as g:
+                    g.box_3d(((20, 10, -10), (80, 50, 30)), pen=g.new_pen(line_color='R255G100B50'))
                 self.assertEqual(v.current_3d_drawing_plane, 'plane_0')
 
                 self.assertEqual(len(v.plane_list), 2)
@@ -253,19 +253,19 @@ class Test(GXPYTest):
                 map_file = map.file_name
                 with gxv.GXview(map, '*base') as v:
                     with gxg.GXdraw(v, 'edge') as g:
-                        g.xy_rectangle(v.extent_clip)
+                        g.rectangle(v.extent_clip)
 
-            with gxv.GXview3d.new('test_3d', overwrite=True) as v:
+            with gxv.GXview_3d.new('test_3d', overwrite=True) as v:
                 v3d_file = v.map.file_name
                 with gxg.GXdraw(v, '2D stuff') as g:
                     draw_2d_stuff(g)
                 v.new_drawing_plane('vertical', rotation=(90.0, 0, 0))
                 with gxg.GXdraw(v, '2D stuff vertical', plane='vertical') as g:
-                    g.xy_rectangle(v.extent_clip)
+                    g.rectangle(v.extent_clip)
                     draw_2d_stuff(g)
 
-                with gxg.GXdraw3d(v, '3D stuff') as g:
-                    g.box_3d(((20, 10, -10), (80, 50, 30)), pen=g.new_pen(fill_color='R255G100B50'))
+                with gxg.GXdraw_3d(v, '3D stuff') as g:
+                    g.box_3d(((20, 10, -10), (80, 50, 30)), pen=g.new_pen(line_color='R255G100B50'))
 
                 with gxmap.GXmap.open(map_file) as map:
                     map.create_linked_3d_view(v, 'linked_view')
@@ -285,21 +285,21 @@ class Test(GXPYTest):
         v3d_file = None
         try:
 
-            with gxv.GXview3d.new('test_3d', overwrite=True) as v:
+            with gxv.GXview_3d.new('test_3d', overwrite=True) as v:
                 v3d_file = v.map.file_name
                 with gxg.GXdraw(v, '2D stuff') as g:
                     draw_2d_stuff(g)
 
-            self.assertRaises(gxv.ViewException, gxv.GXview3d.open, 'bogus')
+            self.assertRaises(gxv.ViewException, gxv.GXview_3d.open, 'bogus')
 
-            with gxv.GXview3d.open(v3d_file) as v:
+            with gxv.GXview_3d.open(v3d_file) as v:
                 v.new_drawing_plane('vertical', rotation=(90.0, 0, 0))
                 with gxg.GXdraw(v, '2D stuff vertical', plane='vertical') as g:
-                    g.xy_rectangle(v.extent_clip)
+                    g.rectangle(v.extent_clip)
                     draw_2d_stuff(g)
 
-                with gxg.GXdraw3d(v, '3D stuff') as g:
-                    g.box_3d(((20, 10, -10), (80, 50, 30)), pen=g.new_pen(fill_color='R255G100B50'))
+                with gxg.GXdraw_3d(v, '3D stuff') as g:
+                    g.box_3d(((20, 10, -10), (80, 50, 30)), pen=g.new_pen(line_color='R255G100B50'))
 
             self.crc_map(v3d_file)
 
