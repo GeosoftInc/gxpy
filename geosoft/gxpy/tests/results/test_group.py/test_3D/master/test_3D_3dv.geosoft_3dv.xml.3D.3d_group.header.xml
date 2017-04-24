@@ -12,16 +12,16 @@
    <Item name="Hidden" value="False"/>
    <Item name="Clipped" value="False"/>
    <Item name="Moveable" value="False"/>
-   <Item name="MinZ" value="30"/>
-   <Item name="MaxZ" value="50"/>
+   <Item name="MinZ" value="-5"/>
+   <Item name="MaxZ" value="95"/>
    <Item name="Transparency" value="GS_R8DM"/>
    <Item name="ExtClipRegion" value="-1"/>
    <Item name="Plane" value="-1"/>
    <Item name="Extents" type="D2AREA">
-      <Value name="MinX" value="20"/>
-      <Value name="MinY" value="10"/>
-      <Value name="MaxX" value="80"/>
-      <Value name="MaxY" value="50"/>
+      <Value name="MinX" value="-10"/>
+      <Value name="MinY" value="2"/>
+      <Value name="MaxX" value="88"/>
+      <Value name="MaxY" value="80"/>
    </Item>
    <Item name="Matrix" type="D4MATRIX">
       <Value x="0" y="0" value="1"/>

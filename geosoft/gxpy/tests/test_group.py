@@ -197,12 +197,24 @@ class Test(GXPYTest):
             with gxg.GXdraw(view_3d, '2d_group') as g:
                 rect_line(g)
                 draw_stuff(g)
+
+            with gxg.GXdraw_3d(view_3d, '3d_group_cylinders') as g:
+                self.assertEqual(g.render_backfaces, False)
+                g.cylinder_3d(((100, 10, 10), (120, 10, 10)), 8, pen='r', close=gxg.CYLINDER_CLOSE_ALL)
+                g.cylinder_3d(((100, 10, 30), (120, 10, 30)), 8, pen='g', close=gxg.CYLINDER_CLOSE_START)
+                g.cylinder_3d(((100, 10, 50), (120, 10, 50)), 8, pen='b', close=gxg.CYLINDER_CLOSE_END)
+                g.cylinder_3d(((100, 10, 70), (120, 10, 70)), 8, pen='c', close=gxg.CYLINDER_OPEN)
+                self.assertEqual(g.render_backfaces, True)
+
             with gxg.GXdraw_3d(view_3d, '3d_group') as g:
-                g.box_3d(((20, 10, 30), (80, 50, 50)), pen=g.new_pen(line_color='R255G100B50'))
                 g.cylinder_3d(((20, 10, 60), (80, 50, 80)), 5, pen='b')
                 g.cone_3d(((20, 10, 80), (80, 50, 60)), 8, pen='g')
-                g.cone_3d(((20, 50, 65), (20, 50, 40)), 30, pen='r', close=False)
+                g.cone_3d(((20, 50, 65), (20, 50, 40)), 30, pen='r')
                 g.sphere((20, 50, 80), 10, pen='c')
+                self.assertEqual(g.render_backfaces, False)
+                g.cylinder_3d(((80, 10, 0), (80, 10, 80)), 5, pen='y', close=gxg.CYLINDER_OPEN)
+                self.assertEqual(g.render_backfaces, True)
+                g.box_3d(((20, 10, 30), (80, 50, 50)), pen=g.new_pen(line_color='R255G100B50'))
 
             with gxmap.GXmap.open(testmap) as gmap:
                 gmap.create_linked_3d_view(view_3d, area_on_map=(10, 10, 270, 250))
@@ -622,9 +634,12 @@ class Test(GXPYTest):
                 with gxg.GXdraw(v, 'a') as g:
                     g.rectangle(rect)
                 with gxg.GXdraw(v, 'b') as g:
+                    self.assertEqual(g.number, 2)
                     g.rectangle(rect, pen="b")
                     g.locate((450000, 5025000),
                              ref=gxg.REF_TOP_CENTER)
+
+
 
         self.crc_map(map_file)
 

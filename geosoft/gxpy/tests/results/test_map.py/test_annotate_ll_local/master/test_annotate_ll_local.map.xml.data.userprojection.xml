@@ -1,0 +1,49 @@
+<IPJ>
+   <Item name="Name" value="NAD27 / UTM zone 15N"/>
+   <Item name="Proj" value="UTM zone 15N"/>
+   <Item name="Datum" value="NAD27"/>
+   <Item name="Ellipsoid" value="Clarke 1866"/>
+   <Item name="DatumTrf" value="NAD27 to WGS 84 (4)"/>
+   <Item name="ProjType" value="11"/>
+   <Item name="Order" value="0"/>
+   <Item name="Radius" value="6378206.4"/>
+   <Item name="Eccentricity" value="0.08227185422"/>
+   <Item name="PrimeMeridian" value="0"/>
+   <Item name="ScaleAdjust" value="1"/>
+   <Item name="Dx" value="-8"/>
+   <Item name="Dy" value="160"/>
+   <Item name="Dz" value="176"/>
+   <Item name="Rx" value="0"/>
+   <Item name="Ry" value="0"/>
+   <Item name="Rz" value="0"/>
+   <Item name="Parameters" type="DoubleArray">
+      <Value index="0" value="0"/>
+      <Value index="1" value="-93"/>
+      <Value index="2" value="GS_R8DM"/>
+      <Value index="3" value="GS_R8DM"/>
+      <Value index="4" value="0.9996"/>
+      <Value index="5" value="500000"/>
+      <Value index="6" value="0"/>
+      <Value index="7" value="GS_R8DM"/>
+   </Item>
+   <Units>
+      <Item name="Name" value="m"/>
+      <Item name="Scale" value="1"/>
+   </Units>
+   <Orientation>
+      <Item name="Type" value="4"/>
+      <Item name="Xo" value="425000"/>
+      <Item name="Yo" value="6500145"/>
+      <Item name="Zo" value="0"/>
+      <Item name="Parameters" type="DoubleArray">
+         <Value index="0" value="0"/>
+         <Value index="1" value="0"/>
+         <Value index="2" value="-30"/>
+         <Value index="3" value="1"/>
+         <Value index="4" value="1"/>
+         <Value index="5" value="1"/>
+         <Value index="6" value="0"/>
+         <Value index="7" value="0"/>
+      </Item>
+   </Orientation>
+</IPJ>

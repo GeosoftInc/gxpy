@@ -266,6 +266,10 @@ class GXgroup:
     def name(self):
         return self._name
 
+    @property
+    def number(self):
+        return self.view.gxview.find_group(self.name)
+
     def _extent(self, unit=UNIT_VIEW):
         xmin = gxapi.float_ref()
         ymin = gxapi.float_ref()
@@ -648,13 +652,50 @@ class GXdraw(GXgroup):
 
 
 class GXdraw_3d(GXdraw):
+    """
+    Create a 3D drawing group within a 3D view.  3D drawing groups accept 3D drawing objects that
+    can be created using methods of this class.  2D objects can also be drawn to a 3D group and will be
+    placed on the default drawing plane. within the 3D view.
+    
+    :param render_backfaces:    True to turn backface rendering on.
+    
+    .. versionadded:: 9.2
+    """
 
-    def __init__(self, view, *args, **kwargs):
+    def __init__(self,
+                 view,
+                 *args,
+                 render_backfaces=False,
+                 **kwargs):
 
         if not isinstance(view, gxv.GXview_3d):
             raise GroupException(_t('View is not 3D'))
 
         super().__init__(view, *args, **kwargs)
+
+        if render_backfaces:
+            self.render_backfaces = True
+
+    @property
+    def render_backfaces(self):
+        """
+        True if backface rendering is on, default is off (False).
+        Backface rendering controls the rendering of parts of solid objects that
+        would normally be hidden from view.  If drawing solid objects that have 
+        an open face, such as cylinders with an open end, backface rendering will be
+        be turned on.   Once on it cannot be turned off for a view.
+
+        .. versionadded:: 9.2
+        """
+        return bool(self.view.gxview.get_3d_group_flags(self.number) & 0b1)
+
+    @render_backfaces.setter
+    def render_backfaces(self, setting):
+        if not setting and self.render_backfaces:
+            raise GroupException(_t('Once backface rendering is on it cannot be turned off.'))
+        if not self.render_backfaces:
+            f3d = (self.view.gxview.get_3d_group_flags(self.number) & 0b11111110) | 0b1
+            self.view.gxview.set_3d_group_flags(self.number, f3d)
 
     @_draw
     def sphere(self, p, radius):
@@ -727,6 +768,9 @@ class GXdraw_3d(GXdraw):
         fci = self.pen._fill_color.int
         self.view.gxview.fill_color(self.pen._line_color.int)
 
+        if close != CYLINDER_CLOSE_ALL:
+            self.render_backfaces = True
+
         try:
             p2 = self._make_Point2(p2)
             if r2 is None:
@@ -742,13 +786,12 @@ class GXdraw_3d(GXdraw):
 
 
     @_draw
-    def cone_3d(self, p2, radius, close=True):
+    def cone_3d(self, p2, radius):
         """
         Draw a cone.
 
-        :param p2:      end points as geometry.Point2, or (p0, p1), or (x0, y0, z0, x1, y1, z1)
+        :param p2:      end points as geometry.Point2, or (p0, p1), or (x0, y0, z0, x1, y1, z1).
         :param radius:  cone base radius, base is as the the first point of p2.
-        :param close:   True to close the base of the cone, False to leave open.
 
         .. versionadded:: 9.2
         """

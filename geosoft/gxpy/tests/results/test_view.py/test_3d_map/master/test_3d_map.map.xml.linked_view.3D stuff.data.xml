@@ -78,6 +78,9 @@
    <Item type="PatThick" size="8">
       <Item name="Value" value="0.02"/>
    </Item>
+   <Item type="LineColor" size="8">
+      <Item name="Color" type="COL_ANY" colortype="RGB" red="255" green="100" blue="50"/>
+   </Item>
    <Item type="FillColor" size="8">
       <Item name="Color" type="COL_ANY" colortype="RGB" red="255" green="100" blue="50"/>
    </Item>
@@ -93,6 +96,9 @@
    </Item>
    <Item type="FillColor" size="8">
       <Item name="Color" type="COL_ANY" colortype="None"/>
+   </Item>
+   <Item type="LineColor" size="8">
+      <Item name="Color" type="COL_ANY" colortype="CMY" cyan="255" magenta="255" yellow="255"/>
    </Item>
    <Item type="End" size="8"></Item>
 </data>
