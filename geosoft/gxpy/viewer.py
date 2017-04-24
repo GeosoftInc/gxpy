@@ -6,11 +6,11 @@ Geosoft Viewers.
     Test example: `Tests <https://github.com/GeosoftInc/gxpy/blob/master/examples/stand-alone/test_viewer.py>`_
 
 """
-#TODO work out a way to satisfy help_ID - added to http://confluence.geosoft.com/display/PM/One-liners
 
+import os
+import subprocess
 import geosoft
 import geosoft.gxapi as gxapi
-from . import map as gxmap
 
 __version__ = geosoft.__version__
 
@@ -27,30 +27,44 @@ class ViewerException(Exception):
     """
     pass
 
-def map(map_file_name, title=None):
+
+def _get_default_om_exe():
+    s = gxapi.str_ref()
+    gxapi.GXSYS.get_directory(gxapi.SYS_DIR_GEOSOFT_BIN, s)
+    bin_dir = s.value
+    om_exe = os.path.join(bin_dir, 'omcore.exe')
+    if os.path.exists(om_exe):
+        return om_exe
+    om_exe = os.path.join(bin_dir, 'omtarget.exe')
+    if os.path.exists(om_exe):
+        return om_exe
+    om_exe = os.path.join(bin_dir, 'omedu.exe')
+    if os.path.exists(om_exe):
+        return om_exe
+    om_exe = os.path.join(bin_dir, 'omv.exe')
+    if os.path.exists(om_exe):
+        return om_exe
+
+    return None
+
+
+def view_document(document_file_name, wait_for_close=True):
     """
-    Open map in a modal map viewer.
-    :param map_file_name:   map name
-    :param title:           viewer title, default is the map name
+    Open Oasis montaj for viewing/editing a single document
+    :param document_file_name: document file name, require decorators for grids, e.g. testgrid.grd(GRD)
+    :param wait_for_close: wait for process to exit
 
     .. versionadded:: 9.2
+   
     """
 
-    with gxmap.GXmap.open(map_file_name) as gmap:
-        if title is None:
-            title = gmap.file_name
-        gxapi.GXGUI.simple_map_dialog(gmap.gxmap, title, "")
-
-def v3d(file_name, title = None):
-    """
-    Open 3D view in a modal 3D viewer.
-    :param file_name:   3D View file name (.geosoft_3dv)
-    :param title:       viewer title, default is file_name
-
-    .. versionadded:: 9.2
-
-    """
-
-    if title is None:
-        title = file_name
-    gxapi.GXGUI.show_3d_viewer_dialog(title, file_name)
+    om_exe = _get_default_om_exe()
+    if not om_exe:
+        gxapi.GXSYS.display_message('Oasis montaj Executable not Found',
+                                    'Geosoft Desktop, Geosoft Target or a Geosoft viewer must be installed '
+                                    'to view a Geosoft document type. Downloads are available from '
+                                    'https://my.geosoft.com/downloads.')
+    else:
+        proc = subprocess.Popen([om_exe, '-doc={}'.format(document_file_name)])
+        if wait_for_close:
+            proc.communicate()

@@ -266,8 +266,7 @@ class GXPYTest(unittest.TestCase):
             report += self._report_mismatch_files(xml_result, xml_master)
 
         if SHOW_TEST_VIEWERS:
-            subprocess.run(['c:\\Program Files\\Geosoft\\Desktop Applications 9 - Testing\\bin\\omcore.exe',
-                            '-doc={}'.format(map_file)])
+            gxvwr.view_document(map_file)
 
         if len(report) > 0:
             if UPDATE_RESULTS or update_results:
