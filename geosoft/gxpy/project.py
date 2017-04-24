@@ -18,6 +18,16 @@ __version__ = geosoft.__version__
 def _t(s):
     return s
 
+DOC_TYPE_DATABASE = "Database"
+DOC_TYPE_GRID = "Grid"
+DOC_TYPE_MAP = "Map"
+DOC_TYPE_3DV = "3DView"
+DOC_TYPE_VOXEL = "Voxel"
+DOC_TYPE_VOXI = "VoxelInversion"
+DOC_TYPE_MXD = "MXD"
+DOC_TYPE_GMS3D = "GMS3D"
+DOC_TYPE_GMS2D = "GMS2D"
+DOC_TYPE_ALL = "All"
 
 class ProjectException(Exception):
     """
@@ -40,55 +50,141 @@ def running_script():
 
 class GXproject:
 
+    def _list_open_docs(self, dtype):
+        gxapi.GXPROJ.list_loaded_documents(self._docvv.gxvv, dtype)
+        return self._docvv.list()
+
+    def _list_project_docs(self, dtype):
+        gxapi.GXPROJ.list_documents(self._docvv.gxvv, dtype)
+        return self._docvv.list()
+
+    def _current_doc(self, dtype):
+        s = gxapi.str_ref()
+        gxapi.GXPROJ.current_document_of_type(s, dtype)
+        return s.value
+
     def __init__(self):
 
-        def list_docs(dtype):
-            gxapi.GXPROJ.list_documents(vv.gxvv, dtype)
-            return vv.list()
-
-        vv = gxvv.GXvv(None, 'U2048')
+        self._docvv = gxvv.GXvv(None, 'U2048')
         s = gxapi.str_ref()
-
         gxapi.GXPROJ.get_name(s)
         self.project_file = os.path.normpath(s.value)
         self.name = os.path.basename(self.project_file).split('.')[0]
 
-        self.project_databases = list_docs('Database')
-        self.project_grids = list_docs('Grid')
-        self.project_maps = list_docs('Map')
-        self.project_3dv = list_docs('3DView')
-        self.project_voxels = list_docs('Voxel')
-        self.project_voxi_models = list_docs('VoxelInversion')
-        self.project_gmsys_3d = list_docs('GMS3D')
-        self.project_gmsys_2d = list_docs('GMS2D')
+    @property
+    def project_databases(self):
+        return self._list_project_docs(DOC_TYPE_DATABASE)
 
-        return
+    @property
+    def project_grids(self):
+        return self._list_project_docs(DOC_TYPE_GRID)
 
-        #TODO refactor once we have the open docs methods (JB)
-        if self.project_databases:
-            edb = gxapi.GXEDB.current_no_activate()
-            edb.get_name(s)
-            self.current_database = os.path.normpath(s.value)
-        else:
-            self.current_database = None
-        if self.project_maps:
-            emap = gxapi.GXEMAP.current_no_activate()
-            emap.get_name(s)
-            self.current_map = os.path.normpath(s.value)
-        else:
-            self.current_map = None
-        if self.project_voxels:
-            emap = gxapi.GXEDOC.current_no_activate(gxapi.EDOC_TYPE_VOXEL)
-            emap.get_name(s)
-            self.current_voxel = os.path.normpath(s.value)
-        else:
-            self.current_voxel = None
-        if self.project_voxels:
-            emap = gxapi.GXEDOC.current_no_activate(gxapi.EDOC_TYPE_VOXEL_INVERSION)
-            emap.get_name(s)
-            self.current_voxi_model = os.path.normpath(s.value)
-        else:
-            self.current_voxi_model = None
+    @property
+    def project_maps(self):
+        return self._list_project_docs(DOC_TYPE_MAP)
+
+    @property
+    def project_3dv(self):
+        return self._list_project_docs(DOC_TYPE_3DV)
+
+    @property
+    def project_voxels(self):
+        return self._list_project_docs(DOC_TYPE_VOXEL)
+
+    @property
+    def project_voxi_models(self):
+        return self._list_project_docs(DOC_TYPE_VOXI)
+
+    @property
+    def project_gmsys_3d(self):
+        return self._list_project_docs(DOC_TYPE_GMS3D)
+
+    @property
+    def project_gmsys_2d(self):
+        return self._list_project_docs(DOC_TYPE_GMS2D)
+
+    @property
+    def open_databases(self):
+        return self._list_open_docs(DOC_TYPE_DATABASE)
+
+    @property
+    def open_grids(self):
+        return self._list_open_docs(DOC_TYPE_GRID)
+
+    @property
+    def open_maps(self):
+        return self._list_open_docs(DOC_TYPE_MAP)
+
+    @property
+    def open_3dv(self):
+        return self._list_open_docs(DOC_TYPE_3DV)
+
+    @property
+    def open_voxels(self):
+        return self._list_open_docs(DOC_TYPE_VOXEL)
+
+    @property
+    def open_voxi_models(self):
+        return self._list_open_docs(DOC_TYPE_VOXI)
+
+    @property
+    def open_gmsys_3d(self):
+        return self._list_open_docs(DOC_TYPE_GMS3D)
+
+    @property
+    def open_gmsys_2d(self):
+        return self._list_open_docs(DOC_TYPE_GMS2D)
+
+    @property
+    def current_database(self):
+        return self._current_doc(DOC_TYPE_DATABASE)
+
+    @property
+    def current_grid(self):
+        return self._current_doc(DOC_TYPE_GRID)
+
+    @property
+    def current_map(self):
+        return self._current_doc(DOC_TYPE_MAP)
+
+    @property
+    def current_3dv(self):
+        return self._current_doc(DOC_TYPE_3DV)
+
+    @property
+    def current_voxel(self):
+        return self._current_doc(DOC_TYPE_VOXEL)
+
+    @property
+    def current_voxi(self):
+        return self._current_doc(DOC_TYPE_VOXI)
+
+    @property
+    def current_gmsys_3d(self):
+        return self._current_doc(DOC_TYPE_GMS3D)
+
+    @property
+    def current_gmsys_2d(self):
+        return self._current_doc(DOC_TYPE_GMS2D)
+
+    @property
+    def menus(self):
+        """
+        Returns Oasis montaj menu information.
+    
+        :returns:   (default_menus, loaded_menus, user_menus)
+    
+       .. versionadded:: 9.2    
+        """
+
+        def_menus = gxapi.GXLST.create(512)
+        loaded_menus = gxapi.GXLST.create(512)
+        user_menus = gxapi.GXLST.create(512)
+        gxapi.GXSYS.get_loaded_menus(def_menus, loaded_menus, user_menus)
+
+        return list(dict_from_lst(def_menus).keys()), \
+               list(dict_from_lst(loaded_menus).keys()), \
+               list(dict_from_lst(user_menus).keys())
 
 
 def user_message(title, message):
@@ -97,7 +193,7 @@ def user_message(title, message):
     :param title:   message box title
     :param message: message
 
-    .. versionadded:: 9.1
+    .. versionadded:: 9.2
 
     """
     gxapi.GXSYS.display_message(title, message)
@@ -121,7 +217,7 @@ def pause(title='Pause...', cancel=False):
     :param cancel:  If True, show a cancel button
     :raises:        :py:ex:GXCancel if the user cancels the dialog
 
-    .. versionadded:: 9.1
+    .. versionadded:: 9.2
 
     """
 
@@ -229,153 +325,3 @@ def get_user_input(title="Input required...", prompt='?', kind='string', default
 
     finally:
         gxapi.GXSYS.filter_parm_group("USER_INPUT", 0)
-
-
-def menus():
-    """
-    Returns Oasis montaj menu information as a dictionary:
-
-    .. code::
-
-        {
-            'default': [list of default menus]
-            'loaded': [list of loaded menus]
-            'user': [list of user menus]
-        }
-
-    .. versionadded:: 9.1
-
-    """
-
-    def_menus = gxapi.GXLST.create(512)
-    loaded_menus = gxapi.GXLST.create(512)
-    user_menus = gxapi.GXLST.create(512)
-    gxapi.GXSYS.get_loaded_menus(def_menus, loaded_menus, user_menus)
-
-    info = {'menu_default': list(dict_from_lst(def_menus).keys()),
-            'menu_loaded': list(dict_from_lst(loaded_menus).keys()),
-            'menu_user': list(dict_from_lst(user_menus).keys())}
-
-    return info
-
-def state():
-    """
-    Return a dictionary that contains the current Oasis montaj state:
-
-    .. code::
-
-        {
-            'gdb' {
-                'open_list': [list of open databases]
-                'current': current database name
-                'disp_chan_list': [ list of channels in the database
-                'selection': [ line, channel, start_fid, end_fid]
-                    # line is "*" if all lines selected
-                    # channel is '' if no channel selected
-                    # start_fid is '' if no fiducials selected
-                    # start_fid is '*' is all fiducials selected
-                'point': [x, y, z] - the spatial location of the current selection
-            }
-            'map' {
-                'open_list': [list of open maps]
-                'current': current map/3dv name
-                'type': current map/3dv type, '2d' or '3d'
-                'point': [x, y, z] currently 2d maps only, z is always 0
-                'cursor': [x, y, z] currently 2d maps only, z is always 0
-                'display_area_2d': [ xmin, ymin, xmax, ymax]
-            }
-        }
-
-    .. versionadded:: 9.1
-
-    """
-
-    #TODO refactor to always have a 3D location for gdb and maps
-
-    s = gxapi.str_ref()
-    glst = gxapi.GXLST.create(4096)
-    state = {}
-
-    # databases
-    ndb = gxapi.GXEDB.get_databases_lst(glst, gxapi.EDB_PATH_FULL)
-    if ndb > 0:
-        sdb = {}
-        edb = gxapi.GXEDB.current_no_activate()
-        edb.get_name(s)
-        sdb['current'] = os.path.normpath(s.value)
-        sdb['open_list'] = [os.path.normpath(f) for f in list(dict_from_lst(glst).keys())]
-
-        n = edb.disp_chan_lst(glst)
-        if n > 0:
-            sdb['disp_chan_list'] = list(dict_from_lst(glst).keys())
-        else:
-            sdb['disp_chan_list'] = []
-
-        sch = gxapi.str_ref()
-        sln = gxapi.str_ref()
-        sfd = gxapi.str_ref()
-        edb.get_current_selection(s, sch, sln, sfd)
-        if sch.value == '[All]':
-            sch.value = '*'
-        if sln.value == '[All]':
-            sln.value = '*'
-        if sfd.value == '[All]':
-            fd = ('*', '*')
-        elif sfd.value == "[None]":
-            fd = ('', '')
-        else:
-            fd = sfd.value.split(' to ')
-            fd = (fd[0], fd[1])
-        sdb['selection'] = (sln.value, sch.value, fd[0], fd[1])
-
-        x_ref = gxapi.float_ref()
-        y_ref = gxapi.float_ref()
-        z_ref = gxapi.float_ref()
-        edb.get_cur_point(x_ref, y_ref, z_ref)
-        x = dummy_none(x_ref.value)
-        y = dummy_none(y_ref.value)
-        z = dummy_none(z_ref.value)
-        sdb['point'] = (x, y, z)
-
-        state['gdb'] = sdb
-
-    # maps
-    nmaps = gxapi.GXEMAP.get_maps_lst(glst, gxapi.EMAP_PATH_FULL)
-    try:
-        emap = gxapi.GXEMAP.current_no_activate()
-    except:
-        raise
-    if nmaps > 0:
-        fx = gxapi.float_ref()
-        fy = gxapi.float_ref()
-        fx2 = gxapi.float_ref()
-        fy2 = gxapi.float_ref()
-
-        smap = {}
-        emap = gxapi.GXEMAP.current_no_activate()
-        emap.get_name(s)
-        smap['current'] = os.path.normpath(s.value)
-        smap['open_list'] = [os.path.normpath(f) for f in list(dict_from_lst(glst).keys())]
-
-        if emap.is_3d_view():
-
-            smap['map_type'] = '3d'
-
-            emap.get_3d_view_name(s)
-            smap['3d_view_name'] = s.value
-
-            #TODO - flesh this out once we have more 3D wrapper functions
-
-        else:
-
-            smap['map_type'] = '2d'
-            emap.get_display_area(fx, fy, fx2, fy2)
-            smap['display_area'] = (fx.value, fy.value, fx2.value, fy2.value)
-            emap.get_cur_point(fx, fy)
-            smap["point"] = (fx.value, fy.value, 0.0)
-            emap.get_cursor(fx, fy)
-            smap["cursor"] = (fx.value, fy.value, 0.0)
-
-        state['map'] = smap
-
-    return state

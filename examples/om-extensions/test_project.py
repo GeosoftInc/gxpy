@@ -96,6 +96,10 @@ def test_scripting():
 
 def test_om():
     project  = gxprj.GXproject()
+
+    dbp = project.project_databases
+    dbo = project.open_databases
+    db = project.current_database
     pass
 
 def rungx():
