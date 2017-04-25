@@ -48,7 +48,7 @@ class Test(GXPYTest):
             self.assertEqual(str(g1.cs), 'WGS 84')
 
 
-    def test_saveGrid(self):
+    def test_copy(self):
         self.start()
 
         #create a grids
@@ -118,7 +118,7 @@ class Test(GXPYTest):
             self.assertEqual(str(properties.get('cs')),'NAD27 / UTM zone 18N')
             self.assertEqual(properties.get('dtype'),np.int16)
 
-    def test_memoryGrid(self):
+    def test_memory(self):
         self.start()
 
         with gxgrd.GXgrd.new(properties={'dtype': np.int16,
@@ -138,7 +138,7 @@ class Test(GXPYTest):
             self.assertEqual(str(properties.get('cs')),'NAD27 / UTM zone 18N')
             self.assertEqual(properties.get('dtype'),np.int16)
 
-    def test_gridMosaic(self):
+    def test_mosaic(self):
         self.start()
 
         with gxgrd.GXgrd.open(self.g1f) as g:
@@ -150,7 +150,7 @@ class Test(GXPYTest):
 
         glist = [m1s, m2s]
 
-        mosaicGrid = os.path.join(self.folder, 'testMozaic.grd')
+        mosaicGrid = os.path.join(self.folder, 'test_mosaic.grd')
         with gxgrd.gridMosaic(mosaicGrid, glist) as grd:
 
             properties = grd.properties()
@@ -163,7 +163,7 @@ class Test(GXPYTest):
             self.assertEqual(properties.get('ny'),101)
             self.assertEqual(str(properties.get('cs')),'WGS 84')
 
-        m = os.path.join(self.folder, 'testMosaic.hgd(HGD)')
+        m = os.path.join(self.folder, 'test_mosaic.hgd(HGD)')
         gxgrd.gridMosaic(m, glist).close()
 
         with gxgrd.GXgrd.open(m) as grd:
@@ -178,7 +178,7 @@ class Test(GXPYTest):
             self.assertEqual(properties.get('ny'),101)
             self.assertEqual(str(properties.get('cs')),'WGS 84')
 
-    def test_gridBool(self):
+    def test_bool(self):
         self.start()
 
         g1 = gxgrd.GXgrd.open(self.g1f)
@@ -215,7 +215,7 @@ class Test(GXPYTest):
         self.assertEqual(str(properties.get('cs')), 'WGS 84')
         self.assertEqual(properties.get('dtype'), np.int16)
 
-    def test_deleteGridFiles(self):
+    def test_delete_grid(self):
         self.start()
 
         self.assertRaises(gxgrd.GRDException, gxgrd.GXgrd.new, self.g1f)
@@ -345,6 +345,18 @@ class Test(GXPYTest):
 
         data = np.arange(24).reshape((8,3))
         with gxgrd.GXgrd.from_data_array(data, file_name) as grd:
+            grd.delete_files()
+            properties = grd.properties()
+            self.assertEqual(properties.get('dx'),1.0)
+            self.assertEqual(properties.get('dy'),1.0)
+            self.assertEqual(properties.get('x0'),0.0)
+            self.assertEqual(properties.get('y0'),0.0)
+            self.assertEqual(properties.get('rot'),0.0)
+            self.assertEqual(properties.get('nx'),3)
+            self.assertEqual(properties.get('ny'),8)
+            self.assertEqual(str(properties.get('cs')),'*unknown')
+
+        with gxgrd.GXgrd.from_data_array(list(data), file_name) as grd:
             grd.delete_files()
             properties = grd.properties()
             self.assertEqual(properties.get('dx'),1.0)

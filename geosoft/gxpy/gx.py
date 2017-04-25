@@ -458,12 +458,7 @@ class GXpy(_Singleton):
 
     def environment(self, formated_indent=-1):
         """
-        :returns: Geosoft environment information as a dictionary.
-
-        .. deprecated:: 9.2       
-            Replaced by properties.
-
-        .. versionadded:: 9.1
+        .. deprecated:: 9.2 replaced by properties.
         """
 
         info = {'gid': self.gid,
@@ -532,21 +527,18 @@ class GXpy(_Singleton):
 
     def folder_workspace(self):
         """
-        .. deprecated: 9.2
-            Use :method:`utility.folder_workspace`
+        .. deprecated:: 9.2 use :method:`utility.folder_workspace`
         """
         return gxu.folder_workspace()
 
     def folder_temp(self):
         """
-        .. deprecated: 9.2
-            Use :method:`utility.folder_temp`
+        .. deprecated: 9.2 use :method:`utility.folder_temp`
         """
         return gxu.folder_temp()
 
     def folder_user(self):
         """
-        .. deprecated: 9.2
-            Use :method:`utility.folder_user`
+        .. deprecated: 9.2 use :method:`utility.folder_user`
         """
         return gxu.folder_user()

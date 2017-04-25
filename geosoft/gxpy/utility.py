@@ -432,8 +432,7 @@ def is_string(gxtype):
 
 def gxDummy(dtype):
     """
-    .. deprecated:: 9.2
-        use gx_dummy()
+    .. deprecated:: 9.2 use gx_dummy()
     """
     return gx_dummy(dtype)
 
@@ -478,8 +477,7 @@ def dummy_none(v):
 
 def dummyMask(npd):
     """
-    .. deprecated:: 9.2
-        use dummy_mask()
+    .. deprecated:: 9.2 use dummy_mask()
     """
     return dummy_mask(npd)
 

@@ -4,6 +4,7 @@ Geosoft grids.
 .. note::
 
     Regression tests provide usage examples: `Tests <https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_grd.py>`_
+    Regression tests provide usage examples: `Tests <https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_grd.py>`_
 
 """
 import os
@@ -142,10 +143,13 @@ class GXgrd():
 
     Instance constructors:
 
-        ======== =============================
-        'open()' open an existing grid/image
-        'new()'  create a new grid/image
-        ======== =============================
+        ================= ============================================
+        `open`            open an existing grid/image
+        `new`             create a new grid/image
+        `copy`            create a copy
+        `index_window`    create a windowed grid based of grid indexes
+        `from_data_array` create a new grid from a 2d data array
+        ================= ============================================
 
     .. versionadded:: 9.1
     """
@@ -380,13 +384,15 @@ class GXgrd():
         """
         Create grid from a 2D numpy array.
 
-        :param data:        2D numpy data array, must be 2D
+        :param data:        2D numpy data array, ot a 2d list.  Must be 2D.
         :param file_name:   name of the file
         :return:            GXgrd instance
 
         .. versionadded:: 9.1
         """
 
+        if type(data) is not np.ndarray:
+            data = np.array(data)
         ny, nx = data.shape
         properties['nx'] = nx
         properties['ny'] = ny
@@ -413,7 +419,7 @@ class GXgrd():
     @property
     def dtype(self):
         """
-        :return: numpy data type for the grid
+        numpy data type for the grid
 
         .. versionadded:: 9.2
         """
@@ -422,7 +428,7 @@ class GXgrd():
     @property
     def nx(self):
         """
-        :return: grid x dimension
+        grid x dimension
 
         .. versionadded:: 9.2
         """
@@ -431,7 +437,7 @@ class GXgrd():
     @property
     def ny(self):
         """
-        :return: grid y dimension
+        grid y dimension
 
         .. versionadded:: 9.2
         """
@@ -440,7 +446,7 @@ class GXgrd():
     @property
     def x0(self):
         """
-        :return: grid origin x location
+        grid origin x location
 
         .. versionadded:: 9.2
         """
@@ -449,7 +455,7 @@ class GXgrd():
     @property
     def y0(self):
         """
-        :return: grid origin y location
+        grid origin y location
 
         .. versionadded:: 9.2
         """
@@ -458,7 +464,7 @@ class GXgrd():
     @property
     def dx(self):
         """
-        :return: separation between grid points in the grid x direction
+        separation between grid points in the grid x direction
 
         .. versionadded:: 9.2
         """
@@ -467,7 +473,7 @@ class GXgrd():
     @property
     def dy(self):
         """
-        :return: separation between grid points in the grid y direction
+        separation between grid points in the grid y direction
 
         .. versionadded:: 9.2
         """
@@ -476,7 +482,7 @@ class GXgrd():
     @property
     def rot(self):
         """
-        :return: grid rotation angle, degrees azimuth
+        grid rotation angle, degrees azimuth
         
         Note that grid rotations in the gxapi GXIMG are degrees clockwise, which is the opposite of
         degree azimuth, used here.  All horizontal plane anles in the Python gxpy module are degrees
@@ -489,7 +495,7 @@ class GXgrd():
     @property
     def file_name(self):
         """
-        :return: grid file name without decorations
+        grid file name without decorations
 
         .. versionadded:: 9.2
         """
@@ -498,7 +504,7 @@ class GXgrd():
     @property
     def file_name_decorated(self):
         """
-        :return: grid file name with decorations
+        grid file name with decorations
 
         .. versionadded:: 9.2
         """
@@ -507,6 +513,11 @@ class GXgrd():
 
     @property
     def name(self):
+        """
+        Grid name, usually the file name without path or extension.
+        
+        .. versionadded:: 9.2
+        """
         basename = os.path.basename(self.file_name)
         return os.path.splitext(basename)[0]
 
@@ -514,7 +525,7 @@ class GXgrd():
     @property
     def gridtype(self):
         """
-        :return: grid type (ie. 'GRD" or 'HGD')
+        grid type (ie. 'GRD' or 'HGD')
 
         .. versionadded:: 9.2
         """
@@ -527,7 +538,7 @@ class GXgrd():
     @property
     def decoration(self):
         """
-        :return: grid descriptive decoration
+        grid descriptive decoration
 
         .. versionadded:: 9.2
         """
@@ -536,7 +547,7 @@ class GXgrd():
     @property
     def cs(self):
         """
-        :return: grid coordinate system as a GXcs.
+        grid coordinate system as a GXcs.
 
         .. versionadded:: 9.2
         """
@@ -669,25 +680,22 @@ class GXgrd():
     @staticmethod
     def name_parts(name):
         """
-
-        .. deprecated:: use name_parts()
+        .. deprecated:: 9.2 use gxpy.grd.name_parts()
         """
         return name_parts(name)
 
     @staticmethod
     def decorate_name(name, decorations=''):
         """
-
-        .. deprecated:: ise name_parts()
+        .. deprecated:: 9.2 use gxpy.grd.name_parts()
         """
         return decorate_name(name, decorations)
 
     def indexWindow(self, name, x0=0, y0=0, nx=None, ny=None):
         """
-
-         .. deprecated:: use index_window()
+        .. deprecated:: 9.2 gxpy.GXgrd.index_window()
         """
-        return self.index_window(name, x0, y0, nx, ny)
+        return self.index_window(self, name, x0, y0, nx, ny, overwrite=True)
 
     def extent_2d(self):
         """

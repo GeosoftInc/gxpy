@@ -438,8 +438,7 @@ class GXdb:
 
     def lines(self, select=True):
         """
-        .. deprecated:: 9.2 
-            use list_lines()
+        .. deprecated:: 9.2 use list_lines()
         """
         return self.list_lines(select)
 
@@ -1016,8 +1015,7 @@ class GXdb:
 
     def readLine(self, *args, **kwargs):
         """
-        .. deprecated:: 9.2
-            use read_line() 
+        .. deprecated:: 9.2 use read_line() 
         """
         return self.read_line(*args, **kwargs)
 
@@ -1177,7 +1175,7 @@ class GXdb:
 
     def writeDataChan(self, *args, **kwargs):
         """
-        .. deprecated:: 9.2
+        .. deprecated:: 9.2 use write_channel
         """
         self.write_channel(*args, **kwargs)
 

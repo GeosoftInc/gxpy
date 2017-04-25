@@ -67,10 +67,9 @@ def CreateFromDocument (xml_text, default_namespace=None, location_base=None):
     return instance
 
 def CreateFromDOM (node, default_namespace=None):
-    """Create a Python instance from the given DOM node.
-    The node tag must correspond to an element declaration in this module.
-
-    @deprecated: Forcing use of DOM interface is unnecessary; use L{CreateFromDocument}."""
+    """
+    .. deprecated:: 9.2 Forcing use of DOM interface is unnecessary; use L{CreateFromDocument}.
+    """
     if default_namespace is None:
         default_namespace = Namespace.fallbackNamespace()
     return pyxb.binding.basis.element.AnyCreateFromDOM(node, default_namespace)
