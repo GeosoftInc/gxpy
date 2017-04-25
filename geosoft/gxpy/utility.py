@@ -430,12 +430,18 @@ def is_string(gxtype):
     else:
         return False
 
+def gxDummy(dtype):
+    """
+    .. deprecated:: 9.2
+        use gx_dummy()
+    """
+    return gx_dummy(dtype)
 
 def gx_dummy(dtype):
     """
     :return:    GX dummy for this dtype
 
-    .. versionadded:: 9.1
+    .. versionadded:: 9.2
     """
     global _dummy_map
     if not bool(_dummy_map):
@@ -470,6 +476,13 @@ def dummy_none(v):
     else:
         return v
 
+def dummyMask(npd):
+    """
+    .. deprecated:: 9.2
+        use dummy_mask()
+    """
+    return dummy_mask(npd)
+
 def dummy_mask(npd):
     """
     Return a 1-D dummy mask that is True for all rows  in a 2D numpy array that
@@ -478,7 +491,7 @@ def dummy_mask(npd):
     :param npd: numpy data array
     :return:    numpy 1D array, True for any row that had a dummy in any data field
 
-    .. versionadded:: 9.1
+    .. versionadded:: 9.2
     """
 
     if len(npd.shape) != 2:

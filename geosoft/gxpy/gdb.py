@@ -436,6 +436,13 @@ class GXdb:
 
         return dct
 
+    def lines(self, select=True):
+        """
+        .. deprecated:: 9.2 
+            use list_lines()
+        """
+        return self.list_lines(select)
+
     def list_lines(self, select=True):
         """
         List of lines in the database
@@ -1007,6 +1014,13 @@ class GXdb:
 
         return chvv
 
+    def readLine(self, *args, **kwargs):
+        """
+        .. deprecated:: 9.2
+            use read_line() 
+        """
+        return self.read_line(*args, **kwargs)
+
     def read_line(self, line, channels=None, dtype=None, fid=None, dummy=None):
         """
         Read a line of data into a numpy array.
@@ -1160,6 +1174,12 @@ class GXdb:
             raise
 
         cleanup()
+
+    def writeDataChan(self, *args, **kwargs):
+        """
+        .. deprecated:: 9.2
+        """
+        self.write_channel(*args, **kwargs)
 
     def write_channel(self, line, channel, data, fid=(0.0, 1.0)):
         """

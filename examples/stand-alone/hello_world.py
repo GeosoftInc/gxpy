@@ -8,12 +8,16 @@ import geosoft.gxpy as gxpy   # gxpy methods
 # running as an extension from Oasis montaj will execute rungx()
 def rungx():
 
+    gxpy.utility.check_version('9.1')
+
     # say hello
     gxpy.utility.display_message("GX Python", "Hello {}".format(gxpy.gx.GXpy().gid))
 
 
 # running as stand-alone program
 if __name__ == "__main__":
+
+    gxpy.utility.check_version('9.1')
 
     # Stand-alone programs must create a GX context before calling Geosoft methods.
     gxc = gxpy.gx.GXpy()

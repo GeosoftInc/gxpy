@@ -27,7 +27,7 @@ def process_database(db, channel_name, add_value):
 
     # work through the data a line at a time - get a list of selected lines
     print('Processing selected lines...')
-    lines = db.lines()
+    lines = db.list_lines()
 
     # for each line, get the data, add a value, return the data to the line
     for l in lines:
@@ -36,21 +36,23 @@ def process_database(db, channel_name, add_value):
         print('line {}...'.format(str(l)))
 
         # get the data and determine the dummy to the data type
-        data, ch, fid = db.readLine(l, channels=channel_name)
-        dummy = gxpy.utility.gxDummy(data.dtype)
+        data, ch, fid = db.read_line(l, channels=channel_name)
+        dummy = gxpy.utility.gx_dummy(data.dtype)
 
         # make a dummy mask so we can replace dummies after processing
-        dMask = gxpy.utility.dummyMask(data)
+        dMask = gxpy.utility.dummy_mask(data)
 
         # process - add the value, then replace the dummies
         sum = data + add_value
         sum[dMask] = dummy
 
         # write the data back to the database
-        db.writeDataChan(l, channel_name, sum, fid)
+        db.write_channel(l, channel_name, sum, fid)
 
 
 if __name__ == "__main__":
+
+    gxpy.utility.check_version('9.2.0b0')
 
     # get (create) a GX context
     gxp = gxpy.gx.GXpy()  # get the current gx context
