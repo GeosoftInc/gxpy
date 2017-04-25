@@ -563,8 +563,6 @@ class Test(GXPYTest):
     def test_annotate_ll_local(self):
         self.start()
 
-        #TODO this is not what I expect - chat with Stephen...
-
         cs = gxcs.GXcs({'type': 'local',
                         'lon_lat': (-96, 45),
                         'datum': 'nad83',
