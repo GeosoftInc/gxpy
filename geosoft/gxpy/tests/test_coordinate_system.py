@@ -219,8 +219,7 @@ class Test(GXPYTest):
         self.assertEqual(csd.name, 'WGS 84 / *Local(43,-96,0,0)')
 
         with gxcs.GXpj(csd, gxcs.GXcs('WGS 84')) as pj:
-            # TODO replace with (0,0,0) once Oblique Stereographic bug is fixed.
-            lon, lat, z = pj.convert((0.000001, 0, 0))
+            lon, lat, z = pj.convert((0, 0, 0))
             self.assertAlmostEqual(lat, 43)
             self.assertAlmostEqual(lon, -96)
             self.assertAlmostEqual(z, 0)
@@ -255,8 +254,7 @@ class Test(GXPYTest):
             self.assertAlmostEqual(x, 1800)
             self.assertAlmostEqual(y, 500)
         with gxcs.GXpj(csd, gxcs.GXcs('WGS 84')) as pj:
-            # TODO replace with (1800, 500, 0) once Oblique Stereographic bug is fixed.
-            lon, lat, z = pj.convert((1800.00001, 500, 0))
+            lon, lat, z = pj.convert((1800, 500, 0))
             self.assertAlmostEqual(lat, 43)
             self.assertAlmostEqual(lon, -96)
             self.assertAlmostEqual(z, 800.5)

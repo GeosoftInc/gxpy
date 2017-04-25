@@ -393,9 +393,8 @@ class Test(GXPYTest):
             ex = grd.extent_2d()
             grid_file = 'test_zone'
             gxgrd.delete_files(grid_file)
-            test = grd.save_as(grid_file)
-            grid_file = test.file_name
-            test.close()
+            with gxgrd.GXgrd.copy(grd, grid_file) as test:
+                grid_file = test.file_name
 
         test_zone(gxagg.ZONE_LINEAR, "linear_shade", shade=True)
         test_zone(gxagg.ZONE_EQUALAREA, "eq_area")

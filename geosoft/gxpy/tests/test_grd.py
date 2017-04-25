@@ -54,18 +54,17 @@ class Test(GXPYTest):
         #create a grids
         outGrid = os.path.join(self.folder, 'testNew.grd(GRD)')
         with gxgrd.GXgrd.open(self.g1f) as g:
-            grd = g.save_as(outGrid)
-            grd.delete_files()
-            properties = grd.properties()
-            self.assertEqual(properties.get('dx'),0.01)
-            self.assertEqual(properties.get('dy'),0.01)
-            self.assertEqual(properties.get('x0'),7.0)
-            self.assertEqual(properties.get('y0'),44.0)
-            self.assertEqual(properties.get('rot'),0.0)
-            self.assertEqual(properties.get('nx'),101)
-            self.assertEqual(properties.get('ny'),101)
-            self.assertEqual(str(properties.get('cs')),'WGS 84')
-            grd.close()
+            with gxgrd.GXgrd.copy(g, outGrid) as grd:
+                grd.delete_files()
+                properties = grd.properties()
+                self.assertEqual(properties.get('dx'),0.01)
+                self.assertEqual(properties.get('dy'),0.01)
+                self.assertEqual(properties.get('x0'),7.0)
+                self.assertEqual(properties.get('y0'),44.0)
+                self.assertEqual(properties.get('rot'),0.0)
+                self.assertEqual(properties.get('nx'),101)
+                self.assertEqual(properties.get('ny'),101)
+                self.assertEqual(str(properties.get('cs')),'WGS 84')
 
     def test_set_properties(self):
         self.start()
@@ -82,14 +81,13 @@ class Test(GXPYTest):
 
         outGrid = os.path.join(self.folder, 'testNew.grd(GRD;TYPE=SHORT;COMP=SPEED)')
         with gxgrd.GXgrd.open(self.g1f) as g:
-            grd = g.save_as(outGrid)
-            grd.dx = 1.5
-            grd.dy = 2.5
-            grd.x0 = 45.0
-            grd.y0 = -15.0
-            grd.rot = 33.333333
-            grd.cs = gxcs.GXcs('NAD27 / UTM zone 18N')
-            grd.close()
+            with gxgrd.GXgrd.copy(g, outGrid) as grd:
+                grd.dx = 1.5
+                grd.dy = 2.5
+                grd.x0 = 45.0
+                grd.y0 = -15.0
+                grd.rot = 33.333333
+                grd.cs = gxcs.GXcs('NAD27 / UTM zone 18N')
 
         with gxgrd.GXgrd.open(outGrid) as grd:
             properties = grd.properties()
@@ -105,9 +103,8 @@ class Test(GXPYTest):
 
         outGrid = os.path.join(self.folder, 'testNew.grd(GRD;TYPE=SHORT;COMP=SPEED)')
         with gxgrd.GXgrd.open(self.g1f) as g:
-            grd = g.save_as(outGrid)
-            grd.set_properties(properties)
-            grd.close()
+            with gxgrd.GXgrd.copy(g, outGrid, overwrite=True) as grd:
+                grd.set_properties(properties)
 
         with gxgrd.GXgrd.open(outGrid) as grd:
             properties = grd.properties()
@@ -146,10 +143,10 @@ class Test(GXPYTest):
 
         with gxgrd.GXgrd.open(self.g1f) as g:
             m1s = os.path.join(self.folder, 'm1.grd(GRD)')
-            g.save_as(m1s).close()
+            gxgrd.GXgrd.copy(g, m1s).close()
         with gxgrd.GXgrd.open(self.g2f) as g:
             m2s = os.path.join(self.folder, 'm2.grd(GRD)')
-            g.save_as(m2s).close()
+            gxgrd.GXgrd.copy(g, m2s).close()
 
         glist = [m1s, m2s]
 
@@ -221,11 +218,11 @@ class Test(GXPYTest):
     def test_deleteGridFiles(self):
         self.start()
 
+        self.assertRaises(gxgrd.GRDException, gxgrd.GXgrd.new, self.g1f)
         with gxgrd.GXgrd.open(self.g1f) as g:
-            g2 = g.save_as(os.path.join(self.folder,'testDelete.grd'))
-            filen = g2.file_name
-            g2.delete_files()
-            g2.close()
+            with gxgrd.GXgrd.copy(g, os.path.join(self.folder,'testDelete.grd'), overwrite=True) as g2:
+                filen = g2.file_name
+                g2.delete_files()
 
         self.assertFalse(os.path.isfile(filen))
         self.assertFalse(os.path.isfile(filen+'.gi'))
@@ -236,9 +233,8 @@ class Test(GXPYTest):
 
         with gxgrd.GXgrd.open(self.g1f) as g:
             ofile = gxgrd.GXgrd.decorate_name(os.path.join(self.folder, 'test.hgd'), 'HGD')
-            g2 = g.save_as(ofile)
-            properties = g2.properties()
-            g2.close()
+            with gxgrd.GXgrd.copy(g, ofile) as g2:
+                properties = g2.properties()
             self.assertEqual(properties.get('file_name'),os.path.abspath(ofile.split('(')[0]))
             self.assertEqual(properties.get('decoration'),'HGD')
             self.assertEqual(properties.get('gridtype'),'HGD')
@@ -274,13 +270,11 @@ class Test(GXPYTest):
         self.assertEqual(name,ref)
         name = gxgrd.GXgrd.decorate_name('billybob','decs;more)')
         self.assertEqual(name,ref)
-        name = gxgrd.GXgrd.decorate_name('billybob','decs;more)(and more)')
-        self.assertEqual(name,ref)
         name = gxgrd.GXgrd.decorate_name(ref)
         self.assertEqual(name,ref)
 
     # TODO - Failing due to GX using deleted or invalid handle., investigate
-    @unittest.skip("Failing due to GX using deleted or invalid handle.")
+    # @unittest.skip("Failing due to GX using deleted or invalid handle.")
     def test_index_window(self):
         self.start()
 
@@ -288,56 +282,63 @@ class Test(GXPYTest):
             p = g.properties()
             window = os.path.join(self.folder,'testwindow.grd(GRD)')
 
-            gw = g.index_window(window,4,2,96,5)
-            pw = gw.properties()
-            self.assertAlmostEqual(gw.x0, g.x0+(4*g.dx))
-            self.assertAlmostEqual(gw.y0, g.y0+(2*g.dy))
-            self.assertEqual(gw.nx, 96)
-            self.assertEqual(gw.ny, 5)
-            gw.close()
+            with gxgrd.GXgrd.index_window(g, window, 4, 2, 96, 5) as gw:
+                pw = gw.properties()
+                self.assertAlmostEqual(gw.x0, g.x0+(4*g.dx))
+                self.assertAlmostEqual(gw.y0, g.y0+(2*g.dy))
+                self.assertEqual(gw.nx, 96)
+                self.assertEqual(gw.ny, 5)
 
-            gw = g.index_window(window,nx=20,ny=100)
-            pw = gw.properties()
-            self.assertAlmostEqual(pw.get('x0'),p.get('x0'))
-            self.assertAlmostEqual(pw.get('y0'),p.get('y0'))
-            self.assertEqual(pw.get('nx'),20)
-            self.assertEqual(pw.get('ny'),100)
-            gw.close()
+            with gxgrd.GXgrd.index_window(g, x0=4, y0=2, nx=96, ny=5, overwrite=True) as gw:
+                gw.delete_files()
+                pw = gw.properties()
+                self.assertAlmostEqual(gw.x0, g.x0+(4*g.dx))
+                self.assertAlmostEqual(gw.y0, g.y0+(2*g.dy))
+                self.assertEqual(gw.nx, 96)
+                self.assertEqual(gw.ny, 5)
+                self.assertEqual(gw.name, 'test_grid_1_(4,2)(96,5)')
 
-            gw = g.index_window(window,x0=29,y0=100)
-            pw = gw.properties()
-            dx = p.get('dx')
-            self.assertAlmostEqual(pw.get('x0'),p.get('x0')+(29*dx))
-            dy = p.get('dy')
-            self.assertAlmostEqual(pw.get('y0'),p.get('y0')+(100*dy))
-            self.assertEqual(pw.get('nx'),72)
-            self.assertEqual(pw.get('ny'),1)
-            gw.close()
+            with gxgrd.GXgrd.index_window(g, window, nx=20, ny=100, overwrite=True) as gw:
+                gw.delete_files()
+                pw = gw.properties()
+                self.assertAlmostEqual(pw.get('x0'),p.get('x0'))
+                self.assertAlmostEqual(pw.get('y0'),p.get('y0'))
+                self.assertEqual(pw.get('nx'),20)
+                self.assertEqual(pw.get('ny'),100)
 
-            self.assertRaises(gxgrd.GRDException, g.index_window, window, x0=2900, y0=3600, ny=2)
-            self.assertRaises(gxgrd.GRDException, g.index_window, window,-1)
-            self.assertRaises(gxgrd.GRDException, g.index_window, window, y0=-1)
+            with gxgrd.GXgrd.index_window(g, window, x0=29, y0=100, overwrite=True) as gw:
+                gw.delete_files()
+                pw = gw.properties()
+                dx = p.get('dx')
+                self.assertAlmostEqual(pw.get('x0'),p.get('x0')+(29*dx))
+                dy = p.get('dy')
+                self.assertAlmostEqual(pw.get('y0'),p.get('y0')+(100*dy))
+                self.assertEqual(pw.get('nx'),72)
+                self.assertEqual(pw.get('ny'),1)
+
+            self.assertRaises(gxgrd.GRDException, gxgrd.GXgrd.index_window, g, window, x0=2900, y0=3600, ny=2)
+            self.assertRaises(gxgrd.GRDException, gxgrd.GXgrd.index_window, g, window, -1)
+            self.assertRaises(gxgrd.GRDException, gxgrd.GXgrd.index_window, g, window, y0=-1)
 
         with gxgrd.GXgrd.open(self.g1f) as g:
             window = os.path.join(self.folder, 'testwindow.grd(GRD)')
-            gw = g.index_window(window, 4, 2, 96, 5)
-            ex = gw.extent_2d()
-            self.assertAlmostEqual(ex[0], 7.04)
-            self.assertAlmostEqual(ex[1], 44.02)
-            self.assertAlmostEqual(ex[2], 7.99)
-            self.assertAlmostEqual(ex[3], 44.06)
-            gw.close()
+            with gxgrd.GXgrd.index_window(g, window, 4, 2, 96, 5, overwrite=True) as gw:
+                gw.delete_files()
+                ex = gw.extent_2d()
+                self.assertAlmostEqual(ex[0], 7.04)
+                self.assertAlmostEqual(ex[1], 44.02)
+                self.assertAlmostEqual(ex[2], 7.99)
+                self.assertAlmostEqual(ex[3], 44.06)
 
             g.rot = 10.0
             window = os.path.join(self.folder, 'testwindow.grd(GRD)')
-            gw = g.index_window(window, 4, 2, 96, 5)
-            ex = gw.extent_2d()
-            self.assertAlmostEqual(ex[0], 6.95713471)
-            self.assertAlmostEqual(ex[1], 43.822284)
-            self.assertAlmostEqual(ex[2], 7.8996480)
-            self.assertAlmostEqual(ex[3], 44.0266421)
-            gw.close()
-
+            with gxgrd.GXgrd.index_window(g, window, 4, 2, 96, 5, overwrite=True) as gw:
+                gw.delete_files()
+                ex = gw.extent_2d()
+                self.assertAlmostEqual(ex[0], 6.95713471)
+                self.assertAlmostEqual(ex[1], 43.822284)
+                self.assertAlmostEqual(ex[2], 7.8996480)
+                self.assertAlmostEqual(ex[3], 44.0266421)
 
     def test_from_array(self):
         self.start()
@@ -414,73 +415,71 @@ class Test(GXPYTest):
         self.start()
 
         with gxgrd.GXgrd.open(self.g1f) as g:
-            grd = g.save_as(os.path.join(self.folder, 'test_extent.grd(GRD)'))
-            grd.delete_files()
-            grd.x0 = grd.y0 = 0.0
-            grd.dx = grd.dy = 0.1
-            grd.rot = 0.0
+            with gxgrd.GXgrd.copy(g, os.path.join(self.folder, 'test_extent.grd(GRD)')) as grd:
+                grd.delete_files()
+                grd.x0 = grd.y0 = 0.0
+                grd.dx = grd.dy = 0.1
+                grd.rot = 0.0
 
-            ex = grd.extent_2d()
-            self.assertAlmostEqual(ex[0], 0.0)
-            self.assertAlmostEqual(ex[1], 0.0)
-            self.assertAlmostEqual(ex[2], 10.0)
-            self.assertAlmostEqual(ex[3], 10.0)
+                ex = grd.extent_2d()
+                self.assertAlmostEqual(ex[0], 0.0)
+                self.assertAlmostEqual(ex[1], 0.0)
+                self.assertAlmostEqual(ex[2], 10.0)
+                self.assertAlmostEqual(ex[3], 10.0)
 
-            grd.rot = 30.0
-            ex = grd.extent_2d()
-            self.assertAlmostEqual(ex[0], 0)
-            self.assertAlmostEqual(ex[1], -5)
-            self.assertAlmostEqual(ex[2], 13.66025404)
-            self.assertAlmostEqual(ex[3], 8.66025404)
+                grd.rot = 30.0
+                ex = grd.extent_2d()
+                self.assertAlmostEqual(ex[0], 0)
+                self.assertAlmostEqual(ex[1], -5)
+                self.assertAlmostEqual(ex[2], 13.66025404)
+                self.assertAlmostEqual(ex[3], 8.66025404)
 
-            cs = grd.cs
-            cs_name = cs.cs_name(gxcs.NAME_HCS_VCS) + ' <0,0,0,0,0,30>'
-            grd.cs = gxcs.GXcs(cs_name)
-            ex = grd.extent_2d()
-            self.assertAlmostEqual(ex[0], 0)
-            self.assertAlmostEqual(ex[1], -5)
-            self.assertAlmostEqual(ex[2], 13.66025404)
-            self.assertAlmostEqual(ex[3], 8.66025404)
+                cs = grd.cs
+                cs_name = cs.cs_name(gxcs.NAME_HCS_VCS) + ' <0,0,0,0,0,30>'
+                grd.cs = gxcs.GXcs(cs_name)
+                ex = grd.extent_2d()
+                self.assertAlmostEqual(ex[0], 0)
+                self.assertAlmostEqual(ex[1], -5)
+                self.assertAlmostEqual(ex[2], 13.66025404)
+                self.assertAlmostEqual(ex[3], 8.66025404)
 
-            grd.rot = 0
-            ex = grd.extent_2d()
-            self.assertAlmostEqual(ex[0], 0.0)
-            self.assertAlmostEqual(ex[1], 0.0)
-            self.assertAlmostEqual(ex[2], 10.0)
-            self.assertAlmostEqual(ex[3], 10.0)
-            ex = grd.extent_3d()
-            self.assertAlmostEqual(ex[0], 0.0)
-            self.assertAlmostEqual(ex[1], -5)
-            self.assertAlmostEqual(ex[2], 0.0)
-            self.assertAlmostEqual(ex[3], 13.66025404)
-            self.assertAlmostEqual(ex[4], 8.66025404)
-            self.assertAlmostEqual(ex[5], 0)
+                grd.rot = 0
+                ex = grd.extent_2d()
+                self.assertAlmostEqual(ex[0], 0.0)
+                self.assertAlmostEqual(ex[1], 0.0)
+                self.assertAlmostEqual(ex[2], 10.0)
+                self.assertAlmostEqual(ex[3], 10.0)
+                ex = grd.extent_3d()
+                self.assertAlmostEqual(ex[0], 0.0)
+                self.assertAlmostEqual(ex[1], -5)
+                self.assertAlmostEqual(ex[2], 0.0)
+                self.assertAlmostEqual(ex[3], 13.66025404)
+                self.assertAlmostEqual(ex[4], 8.66025404)
+                self.assertAlmostEqual(ex[5], 0)
 
-            cs_name = cs.cs_name(gxcs.NAME_HCS_VCS) + ' <0,0,0,90,0,30>'
-            grd.cs = gxcs.GXcs(cs_name)
-            ex = grd.extent_3d()
-            self.assertAlmostEqual(ex[0], 0.0)
-            self.assertAlmostEqual(ex[1], -5)
-            self.assertAlmostEqual(ex[2], -10.0)
-            self.assertAlmostEqual(ex[3], 8.66025404)
-            self.assertAlmostEqual(ex[4], 0)
-            self.assertAlmostEqual(ex[5], 0)
+                cs_name = cs.cs_name(gxcs.NAME_HCS_VCS) + ' <0,0,0,90,0,30>'
+                grd.cs = gxcs.GXcs(cs_name)
+                ex = grd.extent_3d()
+                self.assertAlmostEqual(ex[0], 0.0)
+                self.assertAlmostEqual(ex[1], -5)
+                self.assertAlmostEqual(ex[2], -10.0)
+                self.assertAlmostEqual(ex[3], 8.66025404)
+                self.assertAlmostEqual(ex[4], 0)
+                self.assertAlmostEqual(ex[5], 0)
 
-            grd.rot = 30.0
-            ex = grd.extent_2d()
-            self.assertAlmostEqual(ex[0], 0)
-            self.assertAlmostEqual(ex[1], -5)
-            self.assertAlmostEqual(ex[2], 13.66025404)
-            self.assertAlmostEqual(ex[3], 8.66025404)
-            ex = grd.extent_3d()
-            self.assertAlmostEqual(ex[0], 0)
-            self.assertAlmostEqual(ex[1], -6.83012701892219)
-            self.assertAlmostEqual(ex[2], -8.66025403784439)
-            self.assertAlmostEqual(ex[3], 11.830127018922193)
-            self.assertAlmostEqual(ex[4], 0)
-            self.assertAlmostEqual(ex[5], 5)
-
-            grd.close()
+                grd.rot = 30.0
+                ex = grd.extent_2d()
+                self.assertAlmostEqual(ex[0], 0)
+                self.assertAlmostEqual(ex[1], -5)
+                self.assertAlmostEqual(ex[2], 13.66025404)
+                self.assertAlmostEqual(ex[3], 8.66025404)
+                ex = grd.extent_3d()
+                self.assertAlmostEqual(ex[0], 0)
+                self.assertAlmostEqual(ex[1], -6.83012701892219)
+                self.assertAlmostEqual(ex[2], -8.66025403784439)
+                self.assertAlmostEqual(ex[3], 11.830127018922193)
+                self.assertAlmostEqual(ex[4], 0)
+                self.assertAlmostEqual(ex[5], 5)
 
 
 ###############################################################################################
