@@ -235,14 +235,20 @@ class GXgrd():
                 # for HGD grids, make a memory grid, which will be saved to an HGD on closing
                 self._img = gxapi.GXIMG.create(gxu.gx_dtype(dtype), kx, dim[0], dim[1])
             else:
-                self._img = gxapi.GXIMG.create_new_file(gxu.gx_dtype(dtype), kx, dim[0], dim[1], self.file_name_decorated)
+                self._img = gxapi.GXIMG.create_new_file(gxu.gx_dtype(dtype),
+                                                        kx, dim[0], dim[1],
+                                                        self.file_name_decorated)
 
         elif mode == FILE_READ:
-            self._img = gxapi.GXIMG.create_file(gxu.gx_dtype(dtype), self.file_name_decorated, gxapi.IMG_FILE_READONLY)
+            self._img = gxapi.GXIMG.create_file(gxu.gx_dtype(dtype),
+                                                self.file_name_decorated,
+                                                gxapi.IMG_FILE_READONLY)
             self._readonly = True
 
         else:
-            self._img = gxapi.GXIMG.create_file(gxu.gx_dtype(dtype), self.file_name_decorated, gxapi.IMG_FILE_READORWRITE)
+            self._img = gxapi.GXIMG.create_file(gxu.gx_dtype(dtype),
+                                                self.file_name_decorated,
+                                                gxapi.IMG_FILE_READORWRITE)
 
         self._open = gx.track_resource(self.__class__.__name__, self._file_name)
 
@@ -761,8 +767,13 @@ def array_locations(properties, z=0.):
 
     return loc + offset
 
+def gridMosaic(*args, **kwargs):
+    """
+    .. deprecated:: 9.2 use :py:method: grid_mosaic
+    """
+    return grid_mosaic(*args, **kwargs)
 
-def gridMosaic(mosaic, gridList, typeDecoration='', report=None):
+def grid_mosaic(mosaic, gridList, typeDecoration='', report=None):
     """
     Combine a set of grids into a single grid.  Raises an error if the resulting grid is too large.
 
@@ -874,7 +885,14 @@ def gridMosaic(mosaic, gridList, typeDecoration='', report=None):
     return master
 
 
-def gridBool(g1, g2, joinedGrid, opt=1, size=3, olap=1):
+def gridBool(*args, **kwargs):
+    """
+    .. deprecated:: 9.2 use grid_bool
+    """
+    return grid_bool(*args, **kwargs)
+
+
+def grid_bool(g1, g2, joinedGrid, opt=1, size=3, olap=1):
     """
 
     :param g1,g2:   GXgrd of grids to merge
