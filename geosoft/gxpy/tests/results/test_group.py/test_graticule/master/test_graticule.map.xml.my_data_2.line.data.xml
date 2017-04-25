@@ -893,6 +893,36 @@
    <Item type="Line" size="32">
       <Item name="From" type="D2POINT">
          <Value name="X" value="200"/>
+         <Value name="Y" value="74"/>
+      </Item>
+      <Item name="To" type="D2POINT">
+         <Value name="X" value="200"/>
+         <Value name="Y" value="76"/>
+      </Item>
+   </Item>
+   <Item type="Line" size="32">
+      <Item name="From" type="D2POINT">
+         <Value name="X" value="200"/>
+         <Value name="Y" value="149"/>
+      </Item>
+      <Item name="To" type="D2POINT">
+         <Value name="X" value="200"/>
+         <Value name="Y" value="151"/>
+      </Item>
+   </Item>
+   <Item type="Line" size="32">
+      <Item name="From" type="D2POINT">
+         <Value name="X" value="200"/>
+         <Value name="Y" value="224"/>
+      </Item>
+      <Item name="To" type="D2POINT">
+         <Value name="X" value="200"/>
+         <Value name="Y" value="226"/>
+      </Item>
+   </Item>
+   <Item type="Line" size="32">
+      <Item name="From" type="D2POINT">
+         <Value name="X" value="200"/>
          <Value name="Y" value="299"/>
       </Item>
       <Item name="To" type="D2POINT">
@@ -1053,6 +1083,36 @@
    <Item type="Line" size="32">
       <Item name="From" type="D2POINT">
          <Value name="X" value="400"/>
+         <Value name="Y" value="74"/>
+      </Item>
+      <Item name="To" type="D2POINT">
+         <Value name="X" value="400"/>
+         <Value name="Y" value="76"/>
+      </Item>
+   </Item>
+   <Item type="Line" size="32">
+      <Item name="From" type="D2POINT">
+         <Value name="X" value="400"/>
+         <Value name="Y" value="149"/>
+      </Item>
+      <Item name="To" type="D2POINT">
+         <Value name="X" value="400"/>
+         <Value name="Y" value="151"/>
+      </Item>
+   </Item>
+   <Item type="Line" size="32">
+      <Item name="From" type="D2POINT">
+         <Value name="X" value="400"/>
+         <Value name="Y" value="224"/>
+      </Item>
+      <Item name="To" type="D2POINT">
+         <Value name="X" value="400"/>
+         <Value name="Y" value="226"/>
+      </Item>
+   </Item>
+   <Item type="Line" size="32">
+      <Item name="From" type="D2POINT">
+         <Value name="X" value="400"/>
          <Value name="Y" value="299"/>
       </Item>
       <Item name="To" type="D2POINT">
@@ -1213,6 +1273,36 @@
    <Item type="Line" size="32">
       <Item name="From" type="D2POINT">
          <Value name="X" value="600"/>
+         <Value name="Y" value="74"/>
+      </Item>
+      <Item name="To" type="D2POINT">
+         <Value name="X" value="600"/>
+         <Value name="Y" value="76"/>
+      </Item>
+   </Item>
+   <Item type="Line" size="32">
+      <Item name="From" type="D2POINT">
+         <Value name="X" value="600"/>
+         <Value name="Y" value="149"/>
+      </Item>
+      <Item name="To" type="D2POINT">
+         <Value name="X" value="600"/>
+         <Value name="Y" value="151"/>
+      </Item>
+   </Item>
+   <Item type="Line" size="32">
+      <Item name="From" type="D2POINT">
+         <Value name="X" value="600"/>
+         <Value name="Y" value="224"/>
+      </Item>
+      <Item name="To" type="D2POINT">
+         <Value name="X" value="600"/>
+         <Value name="Y" value="226"/>
+      </Item>
+   </Item>
+   <Item type="Line" size="32">
+      <Item name="From" type="D2POINT">
+         <Value name="X" value="600"/>
          <Value name="Y" value="299"/>
       </Item>
       <Item name="To" type="D2POINT">
@@ -1368,6 +1458,36 @@
       <Item name="To" type="D2POINT">
          <Value name="X" value="600"/>
          <Value name="Y" value="1426"/>
+      </Item>
+   </Item>
+   <Item type="Line" size="32">
+      <Item name="From" type="D2POINT">
+         <Value name="X" value="800"/>
+         <Value name="Y" value="74"/>
+      </Item>
+      <Item name="To" type="D2POINT">
+         <Value name="X" value="800"/>
+         <Value name="Y" value="76"/>
+      </Item>
+   </Item>
+   <Item type="Line" size="32">
+      <Item name="From" type="D2POINT">
+         <Value name="X" value="800"/>
+         <Value name="Y" value="149"/>
+      </Item>
+      <Item name="To" type="D2POINT">
+         <Value name="X" value="800"/>
+         <Value name="Y" value="151"/>
+      </Item>
+   </Item>
+   <Item type="Line" size="32">
+      <Item name="From" type="D2POINT">
+         <Value name="X" value="800"/>
+         <Value name="Y" value="224"/>
+      </Item>
+      <Item name="To" type="D2POINT">
+         <Value name="X" value="800"/>
+         <Value name="Y" value="226"/>
       </Item>
    </Item>
    <Item type="Line" size="32">

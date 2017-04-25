@@ -295,8 +295,6 @@ class Test(GXPYTest):
                 with gxg.GXdraw(v, 'line') as g:
                     g.rectangle(v.extent_clip,
                                    pen=g.new_pen(line_thick=5, line_color='G'))
-
-                    #TODO update test when GRATICULE_DOT is fixed
                     g.graticule(style=gxg.GRATICULE_DOT, pen=g.new_pen(line_thick=5))
 
             ex = gmap.extent_data_views()
