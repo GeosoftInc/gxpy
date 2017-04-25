@@ -5,13 +5,9 @@ import unittest
 import inspect
 import subprocess
 from tkinter import Tk, messagebox
-import atexit
-#import win32con
-#import win32gui
 
 os.environ['GEOSOFT_TEST_MODE'] = '1'
 os.environ['GEOSOFT_TESTSYSTEM_MODE'] = '1'
-os.environ['GEOTEMP'] = 'E:\\GithubRepos\\gxpy\\geosoft\\gxpy\\tests\\tmp'
 
 import geosoft.gxpy.gx as gx
 import geosoft.gxapi as gxapi
@@ -28,16 +24,6 @@ UPDATE_RESULTS = False
 # set to True to show viewer for each CRC call
 SHOW_TEST_VIEWERS = False
 
-#TODO Investigate stable font smoothing in results via the following
-#startup_system_font_smoothing_val = win32gui.SystemParametersInfo(win32con.SPI_GETFONTSMOOTHING)
-#win32gui.SystemParametersInfo(win32con.SPI_SETFONTSMOOTHING, True)
-
-
-#def _restore_font_smoothing():
-#    global startup_system_font_smoothing_val
-#    win32gui.SystemParametersInfo(win32con.SPI_SETFONTSMOOTHING, startup_system_font_smoothing_val)
-
-#atexit.unregister(_restore_font_smoothing)
 
 # Make root window for UI methods
 root_window = None

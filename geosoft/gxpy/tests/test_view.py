@@ -270,7 +270,6 @@ class Test(GXPYTest):
                 with gxmap.GXmap.open(map_file) as map:
                     map.create_linked_3d_view(v, 'linked_view')
 
-            #TODO this fails in batch, but not in interactive.
             self.crc_map(map_file)
 
         finally:
