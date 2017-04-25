@@ -25,7 +25,7 @@ def test_get_user_input():
     ret = gxprj.get_user_input('Testing a list', 'List', kind='list', default='maki', items='maki, rider, explorer')
     print('list return: {}'.format(ret))
 
-    input("Simple inputs test finished...")
+    input("Simple inputs test finished, press enter to continue...")
 
 def test_file():
 
@@ -41,7 +41,7 @@ def test_file():
     ret = gxprj.get_user_input('Testing a file *.grd,*.gdb', 'Some file', kind='file', default='maki.dat', filemask="*.grd,*.gdb")
     print('grid file return: {}'.format(ret))
 
-    input("File inputs test finished...")
+    input("File inputs test finished, press enter to continue...")
 
 def test_multifile():
 
@@ -57,62 +57,48 @@ def test_multifile():
     ret = gxprj.get_user_input('Testing a multi-file *.map,*.gdb', 'Multiple grids:', kind='file', filemask=["**", "*.map", "*.gdb"])
     print('multifile grid return: {}'.format(ret))
 
-    input("File inputs test finished...")
-
-def test_state():
-    state = gxprj.state()
-    print(json.dumps(state, indent=4))
-
-def test_menus():
-    env = gxprj.menus()
-    print(json.dumps(env, indent=4))
+    input("File inputs test finished, press enter to continue...")
 
 def test_scripting():
     import os
     import geosoft.gxapi as gxa
 
-    # record script
-    if os.path.exists("gxpy_om.gs"):
-        os.remove("gxpy_om.gs")
+    py_file = 'py_file.py'
+    gs_file = 'project.gs'
+    
+    with open(py_file, 'w+') as f:
+        f.write('import geosoft\n')
+        f.write('def rungx():\n')
+        f.write('   pass\n')
 
-    gxprj.user_message('SCRIPTING TEST', 'Choose file name as gxpy_om.gs in the browse dialog for this test to succeed')
+    gxprj.user_message('SCRIPTING TEST', 'Enter "project" in the next browse dialog.')
     gxa.GXSYS.do_command("[ID] ID_GX_RECORD")
-    dir = os.path.split(__file__)[0]
-    script_gx = os.path.join(dir, 'script_gx.py')
-    gxa.GXSYS.do_command("[GX] {}".format(script_gx)) # We have to use do_command to record a GXs in script not run_gx
+    gxa.GXSYS.do_command("[GX] {}".format(py_file))
     gxa.GXSYS.do_command("[ID] ID_GX_ENDRECORD")
 
-    with open("gxpy_om.gs", 'r') as f:
+    with open(gs_file, 'r') as f:
         script = f.read()
-
-    # show script
     gxprj.user_message('SCRIPTING TEST RESULT',
-                      'The following should contain one SETINI of the value to SCRIPT_GX.VALUE\n\n{}'.format(script))
+                      'The following should contain "GX py_file.py"\n{}'.format(script))
 
     # run script
     gxa.GXSYS.set_interactive(0)
-    gxa.GXSYS.run_gx(script_gx)
+    gxa.GXSYS.run_gs(os.path.normpath(gs_file))
     gxa.GXSYS.set_interactive(1)
 
-def test_om():
-    project  = gxprj.GXproject()
+    os.remove(gs_file)
+    os.remove(py_file)
 
-    dbp = project.project_databases
-    dbo = project.open_databases
-    db = project.current_database
+def test_project():
+    project  = gxprj.GXproject()
+    # open project in debugger and verify content of properties.
     pass
 
 def rungx():
 
-    test_om()
-    return
-    test_state()
-    return
-
-    test_scripting()
+    test_project()
     test_get_user_input()
     test_file()
     test_multifile()
-    test_menus()
-    input("Finished testing om API - success...")
-
+    test_scripting()
+    gxprj.user_message('Project test', "test finished")

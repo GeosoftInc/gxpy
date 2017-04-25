@@ -153,3 +153,4 @@ $RECYCLE.BIN/
 # Visual Studio
 # =========================
 .vs/
+*.geosoft_3dv
