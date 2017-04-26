@@ -19,7 +19,7 @@ import geosoft.gxpy.system as gxsys
 # Set the following to True to enable interactive updating of results.
 # To incorporate a diff tool the GXPY_DIFF_TOOL environment
 # variable should be defined.
-UPDATE_RESULTS = True
+UPDATE_RESULTS = False
 
 # set to True to show viewer for each CRC call
 SHOW_TEST_VIEWERS = False
@@ -167,7 +167,7 @@ class GXPYTest(unittest.TestCase):
 
         with open(xml_file, 'wb') as f:
             for line in lines:
-                # TODO Also replace known folder matches e.g. temp_folder with '<temp>' etc.
+                # TODO JB Also replace known folder matches e.g. temp_folder with '<temp>' etc.
                 for k, v in replacement_dict.items():
                     line = line.replace(k, v)
                 f.write('{}\r\n'.format(line).encode('UTF-8'))
