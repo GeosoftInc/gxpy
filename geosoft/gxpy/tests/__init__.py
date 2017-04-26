@@ -19,7 +19,7 @@ import geosoft.gxpy.system as gxsys
 # Set the following to True to enable interactive updating of results.
 # To incorporate a diff tool the GXPY_DIFF_TOOL environment
 # variable should be defined.
-UPDATE_RESULTS = False
+UPDATE_RESULTS = True
 
 # set to True to show viewer for each CRC call
 SHOW_TEST_VIEWERS = False

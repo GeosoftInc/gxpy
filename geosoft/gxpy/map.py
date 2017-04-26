@@ -197,7 +197,7 @@ class GXmap:
     A Geosoft map is a container for views.  A view has a defined coordinate system (2D or 3D) and
     contains graphical elements defined relative to the coordinate system of the view.  The
     ``geosoft.gxpy.view`` module provides classes and methods for working with individual 2D or
-     3D views.
+    3D views.
 
     Geosoft maps will always have a 2D 'base' view, which uses map cm as the coordinate system and is
     intended for drawing map annotations, such as titles, a scale bar, North arrow and legends.  The
@@ -550,10 +550,10 @@ class GXmap:
     def classview(self, name):
         """
         Given a view name that may be a class name ('*' prefix), return the view name for that class.  if not
-        class decorated, the name passed is returned. 
-        that 
-        :param name:    view name: '*data' will return the name associated with the 'data' class, while
-                        'my_view' will return 'my_view'.
+        class decorated, the name passed is returned.
+        
+        :param name:    view name, `'*data'` will return the name associated with the `'data'` class, while
+                        `'my_view'` will return `'my_view'`.
 
         :return:        the name, or if a class name, the view name associated with that class.
 
@@ -638,10 +638,10 @@ class GXmap:
     def mdf(self):
         """
         Returns the Map Description File specification for maps that contain
-        both a base view and a data view.
+        both a base view and a data view:
 
         ((x_size, y_size, margin_bottom, margin_right, margin_top, margin_left),
-         (scale, units_per_metre, x_origin, y_origin))\
+        (scale, units_per_metre, x_origin, y_origin))
 
         .. versionadded: 9.2
         """

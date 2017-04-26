@@ -266,12 +266,10 @@ def remove_dir(directory, wait=200, tries=10):
     you may have a coding error in which you are not properly releasing a resource.
 
     :param directory:   directory name, must be a directory
-    :param wait :       wait between retries in milliseconds
+    :param wait:        wait between retries in milliseconds
     :param tries:       number of times to retry
-    :return:
 
     .. versionadded:: 9.1
-
     """
 
     if os.path.isdir(directory):

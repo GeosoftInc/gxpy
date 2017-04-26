@@ -108,6 +108,7 @@ def parameter_exists(what, key):
 def name_list(what, datum_filter=''):
     """
     Get a list of coordinate system names
+    
     :param what:
             | LIST_COORDINATESYSTEM
             | LIST_DATUM
@@ -117,10 +118,9 @@ def name_list(what, datum_filter=''):
             | LIST_LOCALDATUMNAME
             | LIST_UNITSDESCRIPTION
 
-    :param datum_filter:
-            name of a datum to filter results
+    :param datum_filter: name of a datum to filter results
 
-    :returns:   sorted list of names
+    :returns: sorted list of names
 
     .. versionadded:: 9.2
     """

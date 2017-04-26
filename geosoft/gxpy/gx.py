@@ -437,6 +437,7 @@ class GXpy(_Singleton):
     def keep_temp_folder(self, keep=True):
         """
         Keep temporary file folder setting.
+        
         :param keep: True to keep the temporary file folder, False to remove
 
         .. versionadded:: 9.2
@@ -482,13 +483,14 @@ class GXpy(_Singleton):
         """
         Log a string to the log file or log call-back as defined when creating :class:`~gx.GXpy` instance.
 
-        :param *args: arguments to log, each will be converted to a str()
+        :param args: arguments to log, each will be converted to a str()
 
         If logging to a file each line is preceded by the date and time:
 
         .. code::
-         2016-12-25 12:34:16.175 log_str_line_1
-         2016-12-25 12:34:16.175 log_str_line_2
+        
+            2016-12-25 12:34:16.175 log_str_line_1
+            2016-12-25 12:34:16.175 log_str_line_2
 
         .. versionadded:: 9.2
         """
@@ -527,18 +529,18 @@ class GXpy(_Singleton):
 
     def folder_workspace(self):
         """
-        .. deprecated:: 9.2 use :method:`utility.folder_workspace`
+        .. deprecated:: 9.2 use :py:meth:`utility.folder_workspace`
         """
         return gxu.folder_workspace()
 
     def folder_temp(self):
         """
-        .. deprecated: 9.2 use :method:`utility.folder_temp`
+        .. deprecated: 9.2 use :py:meth:`utility.folder_temp`
         """
         return gxu.folder_temp()
 
     def folder_user(self):
         """
-        .. deprecated: 9.2 use :method:`utility.folder_user`
+        .. deprecated: 9.2 use :py:meth:`utility.folder_user`
         """
         return gxu.folder_user()

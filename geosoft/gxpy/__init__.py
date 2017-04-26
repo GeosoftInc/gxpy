@@ -1,18 +1,19 @@
-__all__ = ['system',
-           'gx',
-           'dataframe',
-           'project',
-           'utility',
-           'vv',
-           'va',
+__all__ = ['agg',
            'coordinate_system',
-           'grd',
+           'dataframe',
+           'geometry',
            'gdb',
-           'agg',
+           'grd',
+           'group',
+           'gx',
            'map',
+           'project',
+           'system',
+           'utility',
+           'va',
            'view',
-           'group'
-           'viewer']
+           'viewer',
+           'vv']
 
 #: global constants not defined in GXAPI
 MAX_LST = 4096  #: maximum Geosoft LST entry size

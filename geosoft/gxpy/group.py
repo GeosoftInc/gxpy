@@ -150,13 +150,21 @@ LINE3D_STYLE_LINE = 0
 LINE3D_STYLE_TUBE = 1
 LINE3D_STYLE_TUBE_JOINED = 2
 
-def edge_reference(area, ref):
+def edge_reference(area, reference):
     """
     Location of a reference point of an area.
-    :param area:        Point2 instance, or (x0, y0, x1, y1)
-    :param ref:         reference point from REF_ define group corner at this location.
     
-    :returns: Point     desired reference location as a Point
+    :param area:        Point2 instance, or (x0, y0, x1, y1)
+    :param reference:   reference point relative to the clip limits of the view to
+                        which reference location.  The points are:
+                        
+                            ::
+                                
+                                6 7 8   top left, center, right
+                                3 4 5   middle left, center, right
+                                0 1 2   bottom left, center, right
+    
+    :returns:           Point desired reference location as a Point
 
     .. versionadded:: 9.2
     """
@@ -165,13 +173,13 @@ def edge_reference(area, ref):
     centroid = area.centroid
     half_dim = gxgm.Point(area.dimension) * 0.5
     xoff = yoff = 0.0
-    if ref in (0, 1, 2):
+    if reference in (0, 1, 2):
         yoff = -half_dim.y
-    elif ref in (6, 7, 8):
+    elif reference in (6, 7, 8):
         yoff = half_dim.y
-    if ref in (0, 3, 6):
+    if reference in (0, 3, 6):
         xoff = -half_dim.x
-    elif ref in (2, 5, 8):
+    elif reference in (2, 5, 8):
         xoff = half_dim.x
 
     return centroid + gxgm.Point((xoff, yoff))
@@ -316,18 +324,26 @@ class GXgroup:
 
         return xmin, ymin, xmax, ymax
 
-    def locate(self, location, ref=REF_CENTER):
+    def locate(self, location, reference=REF_CENTER):
         """
         Locate the group relative to a point.
 
         :param location:    location (x, y) or a ``gxpy.geometry.Point``
-        :param ref:         locate the REF_ define group corner at this location.
+        :param reference:   reference point relative to the clip limits of the view to
+                            which reference location.  The points are:
+                            
+                                ::
+                                    
+                                    6 7 8   top left, center, right
+                                    3 4 5   center left, center, right
+                                    0 1 2   bottom left, center, right
+
 
         .. versionadded:: 9.2
         """
         area = gxgm.Point2(self.extent)
         area -= area.centroid
-        area -= edge_reference(area, ref)
+        area -= edge_reference(area, reference)
         area += location
         self.view.gxview.relocate_group(self.name,
                                         area.p0.x, area.p0.y, area.p1.x, area.p1.y,
@@ -627,7 +643,15 @@ class GXdraw(GXgroup):
         
         :param text:        text string.  Use line-feed characters for multi-line text.
         :param location:    (x, y) or a ``gxpy.geomerty.Point`` location
-        :param reference:   one of TEXT_REF_ defines that locates text relative to the location
+        :param reference:   reference point relative to the clip limits of the view to
+                            which reference location.  The points are:
+                            
+                                ::
+                                    
+                                    6 7 8   top left, center, right
+                                    3 4 5   middle left, center, right
+                                    0 1 2   bottom left, center, right
+
         :param angle:       baseline angle in degrees clockwise
         :param text_def:    text definition, if not set the current definition is used
         :param line_spacing: the line spacing for multi-line text as a factor of the text height, default is 1.5
@@ -1027,25 +1051,25 @@ def legend_color_bar(view,
             if location is None:
                 location = (-default_offset, 0)
             xy = edge_reference(area, REF_CENTER_LEFT)
-            ref = REF_CENTER_RIGHT
+            reference = REF_CENTER_RIGHT
         elif bar_location == COLOR_BAR_BOTTOM:
             if location is None:
                 location = (0, -default_offset)
             xy = edge_reference(area, REF_BOTTOM_CENTER)
-            ref = REF_TOP_CENTER
+            reference = REF_TOP_CENTER
         elif bar_location == COLOR_BAR_TOP:
             if location is None:
                 location = (0, default_offset)
             xy = edge_reference(area, REF_TOP_CENTER)
-            ref = REF_BOTTOM_CENTER
+            reference = REF_BOTTOM_CENTER
         else: #BAR_RIGHT
             if location is None:
                 location = (default_offset, 0)
             xy = edge_reference(area, REF_CENTER_RIGHT)
-            ref = REF_CENTER_LEFT
+            reference = REF_CENTER_LEFT
 
         location = xy + location
-        g.locate(location, ref)
+        g.locate(location, reference)
             
                 
 class Color:
@@ -1232,7 +1256,7 @@ class Text_def:
 
         :height:        font height in 
         :font:          font name
-        :weight:        font weight, one of FONT_WEIGHT_
+        :weight:        font weight, one of FONT_WEIGHT
         :line_thick:    font line thickness for gfn stroke fonts
         :italics:       True for italics
         :slant:         Slant angle for stroke fonts, 0 if normal, 15 for italics

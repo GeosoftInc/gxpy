@@ -1,5 +1,5 @@
-import pydevd
-pydevd.settrace('localhost', port=34765, stdoutToServer=True, stderrToServer=True)
+#import pydevd
+#pydevd.settrace('localhost', port=34765, stdoutToServer=True, stderrToServer=True)
 
 import json
 import geosoft.gxpy.project as gxprj
@@ -96,9 +96,12 @@ def test_project():
 
 def rungx():
 
+    gxprj.user_message('Running:', __file__)
+
     test_project()
     test_get_user_input()
     test_file()
     test_multifile()
     test_scripting()
+
     gxprj.user_message('Project test', "test finished")

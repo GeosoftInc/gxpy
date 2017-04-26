@@ -634,7 +634,7 @@ class Test(GXPYTest):
                     self.assertEqual(g.number, 2)
                     g.rectangle(rect, pen="b")
                     g.locate((450000, 5025000),
-                             ref=gxg.REF_TOP_CENTER)
+                             reference=gxg.REF_TOP_CENTER)
 
 
 
