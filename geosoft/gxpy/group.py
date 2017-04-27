@@ -822,7 +822,6 @@ class GXdraw_3d(GXdraw):
         self.cylinder_3d(p2, radius, r2=0.)
 
     def _poly_3d(self, points, ptype, smooth=gxapi.MVIEW_DRAWOBJ3D_MODE_FLAT):
-        points = self._make_PPoint(points)
         vvx, vvy, vvz = points.make_xyz_vv()
         null_vv = gxapi.GXVV.null()
         self.view.gxview.draw_object_3d(ptype, smooth,
@@ -842,6 +841,7 @@ class GXdraw_3d(GXdraw):
         .. versionadded:: 9.2
         """
 
+        points = self._make_PPoint(points)
         if style == POINT_STYLE_DOT:
             self._poly_3d(points, gxapi.MVIEW_DRAWOBJ3D_ENTITY_POINTS)
         else:

@@ -194,6 +194,7 @@ class Test(GXPYTest):
 
         test3dv = os.path.join(self.gx.temp_folder(), "test.geosoft_3dv")
         with gxv.GXview_3d.new(test3dv, overwrite=True) as view_3d:
+
             with gxg.GXdraw(view_3d, '2d_group') as g:
                 rect_line(g)
                 draw_stuff(g)
@@ -221,60 +222,6 @@ class Test(GXPYTest):
 
         self.crc_map(test3dv, alt_crc_name=gxsys.func_name() + '_3dv')
         self.crc_map(testmap, alt_crc_name=gxsys.func_name() + '_map')
-
-    def _test_3D_sergei_1(self):
-        self.start()
-
-        test3dv = "challenge 1 - the caps not as expected"
-        with gxv.GXview_3d.new(test3dv, overwrite=True) as view_3d:
-            test3dv = view_3d.file_name
-            with gxg.GXdraw_3d(view_3d, '3d_group') as g:
-                g.pen = 'B'
-                g.view.gxview.cylinder_3d(0, 0, 0,
-                                          50, 0, 0,
-                                          10, 10, 3)
-                g.pen = 'G'
-                g.view.gxview.cylinder_3d(0, 0, 20,
-                                          50, 0, 20,
-                                          10, 10, 0)
-                g.pen = 'R'
-                g.view.gxview.cylinder_3d(0, 0, 40,
-                                          50, 0, 40,
-                                          10, 10, 1)
-
-                g.pen = 'K64'
-                g.view.gxview.cylinder_3d(0, 0, 60,
-                                          50, 0, 60,
-                                          10, 10, 2)
-
-        self.crc_map(test3dv)
-
-    def _test_3D_sergei_2(self):
-        self.start()
-
-        test3dv = "challenge 2 - start and end radius not as expected"
-        with gxv.GXview_3d.new(test3dv, overwrite=True) as view_3d:
-            test3dv = view_3d.file_name
-            with gxg.GXdraw_3d(view_3d, '3d_group') as g:
-                g.pen = 'B'
-                g.view.gxview.cylinder_3d(0, 0, 0,
-                                          50, 0, 0,
-                                          10, 10, 3)
-                g.pen = 'G'
-                g.view.gxview.cylinder_3d(0, 0, 20,
-                                          50, 0, 20,
-                                          15, 5, 3)
-                g.pen = 'R'
-                g.view.gxview.cylinder_3d(0, 0, 40,
-                                          50, 0, 40,
-                                          10, 0, 0)
-
-                g.pen = 'K64'
-                g.view.gxview.cylinder_3d(0, 0, 60,
-                                          50, 0, 60,
-                                          0, 10, 0)
-
-        self.crc_map(test3dv)
 
     def test_graticule(self):
         self.start()
