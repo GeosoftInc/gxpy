@@ -2,7 +2,7 @@
    <Item type="Version" size="8">
       <Item name="Value" value="Current"/>
    </Item>
-   <Item type="Aggregation" size="1587">
+   <Item type="Aggregation" size="1580">
       <Item name="AGG" type="AGG">
          <AGG>
             <Header>
@@ -24,7 +24,7 @@
                                  <Item name="REG" type="REG">
                                     <REG>
                                        <Attributes>
-                                          <Item name="FILE" value="colour.tbl"/>
+                                          <Item name="FILE" value="ce0ed3ac-2ce2-11e7-a334-240a6403b873.tbl"/>
                                        </Attributes>
                                     </REG>
                                  </Item>
@@ -33,7 +33,7 @@
                                        <Value index="0" value="GS_R8DM"/>
                                        <Value index="1" value="93"/>
                                        <Value index="2" value="366.9274902"/>
-                                       <Value index="3" value="1"/>
+                                       <Value index="3" value="0"/>
                                     </Item>
                                     <Shade>
                                        <Item name="Inclination" value="GS_R8DM"/>

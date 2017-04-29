@@ -2,7 +2,7 @@
    <Item type="Version" size="8">
       <Item name="Value" value="Current"/>
    </Item>
-   <Item type="Aggregation" size="1587">
+   <Item type="Aggregation" size="1580">
       <Item name="AGG" type="AGG">
          <AGG>
             <Header>
@@ -24,15 +24,15 @@
                                  <Item name="REG" type="REG">
                                     <REG>
                                        <Attributes>
-                                          <Item name="FILE" value="colour.tbl"/>
+                                          <Item name="FILE" value="c1dda0f8-2ce2-11e7-9a02-240a6403b873.tbl"/>
                                        </Attributes>
                                     </REG>
                                  </Item>
                                  <Model>
                                     <Item name="Parameters" type="DoubleArray">
                                        <Value index="0" value="0"/>
-                                       <Value index="1" value="93"/>
-                                       <Value index="2" value="366.9274902"/>
+                                       <Value index="1" value="0"/>
+                                       <Value index="2" value="0"/>
                                        <Value index="3" value="0"/>
                                     </Item>
                                     <Shade>

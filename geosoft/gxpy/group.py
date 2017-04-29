@@ -8,9 +8,12 @@ Drawing elements that are placed in groups in 3d views, or in 2D views on a map.
 """
 from functools import wraps
 import threading
+import os
+import math
 
 import geosoft
 import geosoft.gxapi as gxapi
+from . import gx
 from . import vv as gxvv
 from . import geometry as gxgm
 from . import coordinate_system as gxcs
@@ -82,9 +85,9 @@ FONT_WEIGHT_BOLD = 4
 FONT_WEIGHT_XBOLD = 5
 FONT_WEIGHT_XXBOLD = 6
 
-C_RGB = 0
-C_CMY = 1
-C_HSV = 2
+CMODEL_RGB = 0
+CMODEL_CMY = 1
+CMODEL_HSV = 2
 
 C_BLACK = 67108863
 C_RED = 33554687
@@ -850,6 +853,7 @@ class GXdraw_3d(GXdraw):
                 self.sphere(points[i], radius=radius)
 
 
+
     @_draw
     def polyline_3d(self, points, style=LINE3D_STYLE_LINE):
         """
@@ -1103,12 +1107,12 @@ class Color:
                         C_WHITE
                         C_TRANSPARENT
 
-    :param model:   model of the tuple: C_RGB, C_CMY or C_HSV.  Default is C_RGB
+    :param model:   model of the tuple: CMODEL_RGB, CMODEL_CMY or CMODEL_HSV.  Default is CMODEL_RGB
 
     .. versionadded:: 9.2
     """
 
-    def __init__(self, color, model=C_RGB):
+    def __init__(self, color, model=CMODEL_RGB):
 
         if type(color) is Color:
             self._color = color.int
@@ -1119,10 +1123,10 @@ class Color:
         elif type(color) is str:
             self._color = gxapi.GXMVIEW.color(color)
 
-        elif model == C_CMY:
+        elif model == CMODEL_CMY:
             self.cmy = color
 
-        elif model == C_HSV:
+        elif model == CMODEL_HSV:
             hue = max(0, min(255, color[0]))
             sat = max(0, min(255, color[1]))
             val = max(0, min(255, color[2]))
@@ -1132,10 +1136,10 @@ class Color:
             self.rgb = color
 
     def __eq__(self, other):
-        return self.__dict__ == other.__dict__
+        return self.int == other.int
 
     def __ne__(self, other):
-        return self.__dict__ != other.__dict__
+        return not self.__eq__(other)
 
     @property
     def int(self):
@@ -1173,6 +1177,28 @@ class Color:
     def cmy(self, cmy):
         self.rgb = (255 - cmy[0], 255 - cmy[1], 255 - cmy[2])
 
+    def adjust_brightness(self, brightness):
+        """
+        Return a Color instance adjusted for brightness.
+        
+        .. versionadded:: 9.2
+        """
+        if brightness == 0.:
+            return self
+
+        c, m, y = self.rgb
+        if brightness > 0.0:
+            w = round(brightness * 255)
+            c = max(c - w, 0)
+            m = max(m - w, 0)
+            y = max(y - w, 0)
+            return Color((c, m, y), model = CMODEL_CMY)
+        else:
+            k = round(-brightness * 255)
+            c = max(c + k, 255)
+            m = max(m + k, 255)
+            y = max(y + k, 255)
+            return Color((c, m, y), model=CMODEL_CMY)
 
 def font_weight_from_line_thickness(line_thick, height):
     """
@@ -1639,3 +1665,225 @@ class GXagg_group(GXgroup):
         group_number = view.gxview.find_group(group_name)
         agg_group.agg = gxagg.GXagg.open(view.gxview.get_aggregate(group_number))
         return agg_group
+
+class Color_map:
+
+    def __init__(self, cmap=None):
+
+        if cmap is None:
+            # TODO get user's default colour table from global settings
+            cmap = 'colour'
+
+        if isinstance(cmap, str):
+            if cmap == 'color':
+                cmap = 'colour'
+            base, ext = os.path.splitext(cmap)
+            if not ext:
+                cmap = cmap + '.tbl'
+            self.file_name = cmap
+            self.gxitr = gxapi.GXITR.create_file(cmap)
+
+        elif isinstance(cmap, int):
+
+            self.gxitr = gxapi.GXITR.create()
+            self.gxitr.set_size(cmap)
+            for i in range(cmap):
+                self.__setitem__(i, (gxapi.rMAX, C_BLACK))
+            self.file_name = None
+
+        else:
+            raise ValueError('Cannot make a color map from: {}'.format(cmap))
+
+        self._next = 0
+
+    def __iter__(self):
+        return self
+
+    def __next__(self):
+        if self._next >= self.length:
+            self._next = 0
+            raise StopIteration
+        else:
+            self._next += 1
+            return self.__getitem__(self._next - 1)
+
+    def __getitem__(self, item):
+        if item < 0 or item >= self.length:
+            raise IndexError
+        ir = gxapi.int_ref()
+        self.gxitr.get_zone_color(item, ir)
+        color = Color(ir.value)
+        if item < self.length - 1:
+            v = self.gxitr.get_zone_value(item)
+        else:
+            v = None
+        return v, color
+
+    def __setitem__(self, item, setting):
+        if item < 0 or item >= self.length:
+            raise IndexError
+        if not isinstance(setting[1], int):
+            setting = (setting[0], setting[1].int)
+        self.gxitr.set_zone_color(item, setting[1])
+        if item < self.length - 1:
+            self.gxitr.set_zone_value(item, setting[0])
+
+    def __eq__(self, other):
+        if self.length != other.length:
+            return False
+        for i in range(self.length):
+            if self[i] != other[i]:
+                return False
+        return True
+
+    @property
+    def length(self):
+        """ 
+        Number of colour zones in the map.
+        """
+        return self.gxitr.get_size()
+
+    @property
+    def brightness(self):
+        """
+        Brightness is a value between -1 (black) and +1 (white),  The default is 0.
+        :return: brightness, -1 to +1
+        
+        .. versionadded:: 9.2
+        """
+        return self.gxitr.get_brightness()
+
+    @property
+    def color_map(self):
+        return [vc for vc in self]
+
+    @property
+    def color_map_rgb(self):
+        return [(vc[0], vc[1].rgb) for vc in self]
+
+    @brightness.setter
+    def brightness(self, value):
+        self.gxitr.change_brightness(value)
+
+    @property
+    def model_type(self):
+        return self.gxitr.get_zone_model_type()
+
+    @property
+    def initialized(self):
+        """
+        Returns True if the color_map has been initialized to have zone boundaries.
+        
+        .. versionadded:: 9.2
+        """
+        return self[0][0] != gxapi.rMAX
+
+    def set_sequential(self, start=0, increment=1):
+        """
+        Set colour map zones based on a start and increment between each colour zone.
+        
+        :param start:       minimum zone boundary, values <= this value will have the first colour
+        :param increment:   increment between each colour.
+        
+        .. versionadded:: 9.2
+        """
+        if increment <= 0:
+            raise ValueError(_t('increment must be > 0.'))
+        for i in range(self.length - 1):
+            self.gxitr.set_zone_value(i, start + i * increment)
+
+    def set_linear(self, minimum, maximum, inner_limits=True, contour_interval=None):
+        """
+        Set the map boundaries based on a linear distribution between minimum and maximum.
+        
+        :param minimum:             minimum 
+        :param maximum:             maximum
+        :param inner_limits:        True if the range specifies the inner limits of the colour mappings, in which
+                                    case values less than or equal to the minimum are mapped to the first colour
+                                    and colours greater than the maximum are mapped to the last colour.  If False,
+                                    the minimum and maximum are at the outer-edges of the colour map.
+        :param contour_interval:    align colour edges on this interval, which is useful for matching colours
+                                    contour map, for example.  The colour map will be reduced in size by thinning of 
+                                    unneeded colours if necessary.
+                                    
+        .. versionadded:: 9.2
+        """
+
+        if inner_limits:
+            if self.length < 3:
+                raise GroupException(_t("Colour map must have length >= 3 for inner edge linear range."))
+            delta = (maximum - minimum) / (self.length - 2)
+            minimum -= delta
+            maximum += delta
+
+        self.gxitr.linear(minimum, maximum,
+                          gxapi.rDUMMY if contour_interval is None else contour_interval)
+
+    def set_logarithmic(self, minimum, maximum, contour_interval=None):
+        """
+        Set the colour boundaries based on a logarithmic distribution between minimum and maximum.
+
+        :param minimum:             minimum, must be > 0
+        :param maximum:             maximum
+        :param contour_interval:    align colour edges on this interval, 10 for powers of 10.
+                                    unneeded colours if necessary.
+
+        .. versionadded:: 9.2
+        """
+
+        self.gxitr.log_linear(minimum, maximum,
+                              gxapi.rDUMMY if contour_interval is None else contour_interval)
+
+
+    def set_normal(self, standard_deviation, mean, expansion=1.0, contour_interval=None):
+        """
+        Set the colour boundaries using a normal distribution around a mean.
+
+        :param standard_deviation:  the standard deviation of the normal distribution.
+        :param mean:                maximum
+        :param contour_interval:    align colour edges on this interval, 10 for powers of 10.
+                                    unneeded colours if necessary.
+
+        .. versionadded:: 9.2
+        """
+        self.gxitr.normal(standard_deviation,
+                          mean,
+                          expansion,
+                          gxapi.rDUMMY if contour_interval is None else contour_interval)
+
+
+    def color_of_value(self, value):
+        """
+        Return the gxg.Color of a value.  The mapping is determined with exclusive minima, inclusive maxima
+        for each colour level.  Values <= level [0] are assigned the [0] colour, and values greater than the 
+        the [n-2] level are assigned the [n-1] colour.
+        
+        :param value:   data value
+        :return:        gxg.Color instance
+        
+        .. versionadded:: 9.2
+        """
+        return Color(self.gxitr.color_value(value))
+
+    def save_file(self, file_name=None):
+        """
+        Save to a Geosoft file, `.tbl`, `.itr` or `.zon`.  If the file_name does not have an
+        extension and the color_map has not been initialized a `.tbl` file is created (colours only), 
+        otherwise a `.itr` is created, which contains both zone boundaries and colours.
+        
+        :param file_name:   file name, if None a temporary file is created
+        :return: 
+        """
+
+        if file_name is None:
+            file_name = gx.GXpy().temp_file()
+
+        fn, ext = os.path.splitext(file_name)
+        if not ext:
+            if self.initialized:
+                file_name = fn + '.itr'
+            else:
+                file_name = fn + '.tbl'
+        self.gxitr.save_file(file_name)
+
+        return file_name

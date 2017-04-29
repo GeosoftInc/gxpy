@@ -396,7 +396,7 @@ class Test(GXPYTest):
 
         c = gxg.Color((150, 200, 500))
         self.assertEqual(c.rgb, (150, 200, 255))
-        c = gxg.Color((150, 200, 500), model=gxg.C_CMY)
+        c = gxg.Color((150, 200, 500), model=gxg.CMODEL_CMY)
         self.assertEqual(c.cmy, (150, 200, 255))
 
         c = gxg.Color('r255g128b56')
@@ -407,8 +407,12 @@ class Test(GXPYTest):
         c.cmy = (100, 200, 300)
         self.assertEqual(c.cmy, (100, 200, 255))
 
-        c = gxg.Color((0, 127, 64), gxg.C_HSV)
+        c = gxg.Color((0, 127, 64), gxg.CMODEL_HSV)
         self.assertEqual(c.rgb, (191, 96, 96))
+
+        c = gxg.Color((0, 127, 64), gxg.CMODEL_RGB)
+        self.assertEqual(c.rgb, (0, 127, 64))
+
 
         c = gxg.Color(gxg.C_GREEN)
         self.assertEqual(c.rgb, (0, 255, 0))
@@ -775,6 +779,80 @@ class Test(GXPYTest):
         self.crc_map(file_name)
         gxmap.delete_files(file_name)
 
+    def test_color_map(self):
+        self.start()
+
+        cm = gxg.Color_map()
+        self.assertEqual(cm.length, 39)
+        self.assertFalse(cm.initialized)
+
+        cm = gxg.Color_map(16)
+        self.assertEqual(cm.length, 16)
+        self.assertEqual(cm[0][1], gxg.Color(gxg.C_BLACK))
+        self.assertEqual(cm[cm.length-1], (None, gxg.Color(gxg.C_BLACK)))
+        cm[4] = (cm[4][0], gxg.Color(gxg.C_GREEN))
+        self.assertEqual(cm[4][1].rgb, (0, 255, 0))
+        self.assertFalse(cm.initialized)
+
+        self.assertTrue(isinstance(cm.gxitr, gxapi.GXITR))
+
+        cm = gxg.Color_map('grey')
+        self.assertFalse(cm.initialized)
+        cm.set_sequential()
+        self.assertTrue(cm.initialized)
+        self.assertEqual(cm.length, 32)
+        self.assertEqual(cm[0][1].rgb, (31, 31, 31))
+        self.assertEqual(cm[cm.length-1][1].rgb, (255, 255, 255))
+        self.assertEqual(cm.color_of_value(0), cm[0][1])
+        self.assertEqual(cm.color_of_value(7.0), cm[7][1])
+        self.assertEqual(cm.color_of_value(7.000001), cm[8][1])
+
+        self.assertEqual(cm.brightness, 0.)
+        cm.brightness = 0.5
+        self.assertEqual(cm.brightness, 0.5)
+        self.assertEqual(cm[0][1].rgb, (143, 143, 143))
+        self.assertEqual(cm[cm.length - 1][1].rgb, (255, 255, 255))
+        cm.brightness = -0.25
+        self.assertEqual(cm.brightness, -0.25)
+        self.assertEqual(cm[0][1].rgb, (24, 24, 24))
+        self.assertEqual(cm[cm.length - 1][1].rgb, (192, 192, 192))
+        cm.brightness = 0
+        self.assertEqual(cm[0][1].rgb, (31, 31, 31))
+        self.assertEqual(cm[cm.length - 1][1].rgb, (255, 255, 255))
+
+        cm.set_linear(4, 45)
+        self.assertEqual(cm.length, 32)
+        self.assertEqual(cm[0][0], 4)
+        self.assertEqual(cm[30][0], 45)
+
+        cm.set_linear(4, 45, inner_limits=False)
+        self.assertEqual(cm.length, 32)
+        self.assertEqual(cm[0][0], 5.28125)
+        self.assertEqual(cm[30][0], 43.71875)
+
+        cm.set_linear(5, 50, contour_interval=5)
+        self.assertEqual(cm.length, 11)
+
+        cm = gxg.Color_map('grey')
+        cm.set_logarithmic(0.0001,1000)
+        self.assertEqual(cm.length, 32)
+        cm.set_logarithmic(0.0001,1000, contour_interval=10)
+        self.assertEqual(cm.length, 7)
+        cm = gxg.Color_map('grey')
+        cm.set_logarithmic(0.000023,18000, contour_interval=100)
+        self.assertEqual(cm.length, 5)
+
+        cm = gxg.Color_map()
+        cm.set_normal(25, 55000)
+        self.assertAlmostEqual(cm[cm.length//2][0], 55000.811582690316)
+
+        itr = cm.save_file()
+        cm2 = gxg.Color_map(itr)
+        self.assertTrue(cm == cm2)
+        tbl = gxg.Color_map().save_file()
+        self.assertEqual(os.path.splitext(tbl)[1], '.tbl')
+        cm = gxg.Color_map(tbl)
+        self.assertFalse(cm.initialized)
 
 if __name__ == '__main__':
     unittest.main()

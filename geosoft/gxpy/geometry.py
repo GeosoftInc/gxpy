@@ -380,9 +380,6 @@ class PPoint(Geometry, Sequence):
     def __len__(self):
         return self.pp.shape[0]
 
-    def __getitem__(self, item):
-        return Point(self.pp[item])
-
     def __iter__(self):
         return self
 

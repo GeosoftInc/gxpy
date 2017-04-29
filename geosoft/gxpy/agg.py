@@ -10,7 +10,9 @@ import os
 
 import geosoft
 import geosoft.gxapi as gxapi
+from . import gx
 from . import vv as gxvv
+from . import group as gxg
 
 __version__ = geosoft.__version__
 
@@ -143,7 +145,7 @@ class GXagg():
 
     def add_layer(self,
                   grid_file,
-                  color_table='',
+                  color_map=None,
                   zone=None,
                   shade=False,
                   minimum=None,
@@ -153,7 +155,8 @@ class GXagg():
         Add an image layer to an agg.
 
         :param grid_file:       The name of a grid file (image or data) to add.
-        :param colour_table:    Colour definition file, which may be .tbl, .zon, .itr, or .agg.
+        :param color_map:       gxpy.group.Color_map instance, or the name of a file, which may be 
+                                `.tbl`, `.zon`, `.itr`, or `.agg`.
         :param zone:            Colour distribution method:
 
             ::
@@ -180,23 +183,33 @@ class GXagg():
         .. versionadded:: 9.2
         """
 
-        if grid_file is not None:
-            if zone is None:
-                zone = ZONE_DEFAULT
-            if minimum is None:
-                minimum = gxapi.rDUMMY
-            if maximum is None:
-                maximum = gxapi.rDUMMY
-            if contour is None:
-                contour = gxapi.rDUMMY
-            self.gxagg.layer_img_ex(grid_file,
-                                    zone,
-                                    color_table,
-                                    minimum,
-                                    maximum,
-                                    contour)
-            if shade and (zone != ZONE_SHADE):
-                self.gxagg.layer_img(grid_file, ZONE_SHADE, 'lgray.tbl', gxapi.rDUMMY)
+        if (color_map is None):
+            if zone == ZONE_SHADE:
+                color_map = 'lgray.tbl'
+        if (color_map is None) or (isinstance(color_map, str)):
+            color_map = gxg.Color_map(color_map)
+        color_map = color_map.save_file()
+
+        try:
+            if grid_file is not None:
+                if zone is None:
+                    zone = ZONE_DEFAULT
+                if minimum is None:
+                    minimum = gxapi.rDUMMY
+                if maximum is None:
+                    maximum = gxapi.rDUMMY
+                if contour is None:
+                    contour = gxapi.rDUMMY
+                self.gxagg.layer_img_ex(grid_file,
+                                        zone,
+                                        color_map,
+                                        minimum,
+                                        maximum,
+                                        contour)
+                if shade and (zone != ZONE_SHADE):
+                    self.gxagg.layer_img(grid_file, ZONE_SHADE, 'lgray.tbl', gxapi.rDUMMY)
+        finally:
+            os.remove(color_map)
 
     def layer_file_names(self):
         """

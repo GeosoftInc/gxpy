@@ -35,7 +35,7 @@ class Test(GXPYTest):
             self.assertEqual(str(agg), 'test_agg_utm')
             self.assertEqual(agg.layer_count, 1)
 
-        with gxagg.GXagg.new(self.g3f, shade=True) as agg:
+        with gxagg.GXagg.new(self.g3f, shade=True, color_map='cycle') as agg:
             self.assertEqual(str(agg), 'test_agg_utm')
             self.assertEqual(agg.layer_count, 2)
 
@@ -43,7 +43,7 @@ class Test(GXPYTest):
             self.assertEqual(str(agg), 'test_agg_utm, test_grid_2')
             self.assertEqual(agg.layer_count, 3)
 
-            agg.add_layer(self.g1f, shade=True)
+            agg.add_layer(self.g1f, shade=True, color_map='hotcycle')
             self.assertEqual(str(agg), 'test_agg_utm, test_grid_2, test_grid_1')
             self.assertEqual(agg.layer_count, 5)
 

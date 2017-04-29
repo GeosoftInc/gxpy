@@ -2,7 +2,7 @@
    <Item type="Version" size="8">
       <Item name="Value" value="Current"/>
    </Item>
-   <Item type="Aggregation" size="2963">
+   <Item type="Aggregation" size="2942">
       <Item name="AGG" type="AGG">
          <AGG>
             <Header>
@@ -24,7 +24,7 @@
                                  <Item name="REG" type="REG">
                                     <REG>
                                        <Attributes>
-                                          <Item name="FILE" value="colour.tbl"/>
+                                          <Item name="FILE" value="bbebaae8-2ce2-11e7-b575-240a6403b873.tbl"/>
                                        </Attributes>
                                     </REG>
                                  </Item>
@@ -169,7 +169,7 @@
                                     <Shade>
                                        <Item name="Inclination" value="45"/>
                                        <Item name="Declination" value="45"/>
-                                       <Item name="Scale" value="14.99297784"/>
+                                       <Item name="Scale" value="GS_R8DM"/>
                                        <Item name="OriginGrid" value=".\test_zone.grd"/>
                                     </Shade>
                                  </Model>

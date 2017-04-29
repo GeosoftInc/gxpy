@@ -2,7 +2,7 @@
    <Item type="Version" size="8">
       <Item name="Value" value="Current"/>
    </Item>
-   <Item type="Aggregation" size="1496">
+   <Item type="Aggregation" size="1482">
       <Item name="AGG" type="AGG">
          <AGG>
             <Header>
@@ -24,7 +24,7 @@
                                  <Item name="REG" type="REG">
                                     <REG>
                                        <Attributes>
-                                          <Item name="FILE" value="lgray.tbl"/>
+                                          <Item name="FILE" value="c9eb9b54-2ce2-11e7-bcee-240a6403b873.tbl"/>
                                        </Attributes>
                                     </REG>
                                  </Item>
