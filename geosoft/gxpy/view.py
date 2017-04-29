@@ -54,7 +54,7 @@ EXTENT_ALL = gxapi.MVIEW_EXTENT_ALL
 EXTENT_VISIBLE = gxapi.MVIEW_EXTENT_VISIBLE
 EXTENT_CLIPPED = gxapi.MVIEW_EXTENT_CLIP
 
-class GXview:
+class View:
     """
     Geosoft view class.
 
@@ -82,7 +82,7 @@ class GXview:
 
     :properties:
 
-        :map:               the GXmap instance that contains this view
+        :map:               the Map instance that contains this view
         :name:              the name of the view
         :units_per_metre:   view units per view metres (eg. a view in 'ft' will be 3.28084).
         :units_per_map_cm:  view units per map cm. (eg. a view in ft, with a scale of 1:12000 returns 393.7 ft/cm)
@@ -124,8 +124,8 @@ class GXview:
                  scale=100,
                  copy=None):
 
-        if type(map) is not geosoft.gxpy.map.GXmap:
-            raise ViewException('First parameter is not a GXmap instance.')
+        if type(map) is not geosoft.gxpy.map.Map:
+            raise ViewException('First parameter is not a Map instance.')
 
         self._map = map
         self._name = map.classview(name)
@@ -140,7 +140,7 @@ class GXview:
             self.locate(cs, map_location, area, scale)
 
             if copy:
-                with GXview(map, name=copy, mode=READ_ONLY) as v:
+                with View(map, name=copy, mode=READ_ONLY) as v:
                     v.gxview.mark_all_groups(1)
                     v.gxview.copy_marked_groups(self.gxview)
 
@@ -235,7 +235,7 @@ class GXview:
 
     @property
     def map(self):
-        """ gxpy.GXmap instance that contains this view."""
+        """ gxpy.Map instance that contains this view."""
         return self._map
 
     @property
@@ -448,12 +448,12 @@ class GXview:
         """
         self.gxview.set_class_name(view_class, name)
 
-class GXview_3d(GXview):
+class View_3d(View):
     """
     Geosoft 3D views are stored in a file with extension `.geosoft_3dv`.  A 3d view is required
-    to draw 3D elements using gxpy.group.GXdraw_3d, which must be created from a GXview_3d instance.
+    to draw 3D elements using gxpy.group.Draw_3d, which must be created from a View_3d instance.
     
-    3D views also contain 2D drawing planes on which gxpy.group.GXdraw groups are placed.  A default 
+    3D views also contain 2D drawing planes on which gxpy.group.Draw groups are placed.  A default 
     horizontal plane at elevation 0, named 'plane_0' is created when a new 3d view is created.
     
     Planes are flat by default, but can be provided a grid that defines the plane surface relief,
@@ -482,7 +482,7 @@ class GXview_3d(GXview):
             raise ViewException(_t("Must be called by a class constructor 'open' or 'new'"))
 
         file_name = gxmap.map_file_name(file_name, 'geosoft_3dv')
-        map = gxmap.GXmap(file_name=file_name,
+        map = gxmap.Map(file_name=file_name,
                           mode=mode,
                           _internal=True)
         super().__init__(map, '3D', **kwargs)

@@ -161,7 +161,7 @@ def save_as_image(mapfile, imagefile, type="PNG", pix_width=1000, pix_height=0):
     .. versionadded:: 9.2
     """
 
-    with GXmap.open(mapfile) as g:
+    with Map.open(mapfile) as g:
         g.gxmap.export_all_raster(imagefile, '',
                                   pix_width, pix_height, gxapi.rDUMMY,
                                   gxapi.MAP_EXPORT_BITS_24,
@@ -190,7 +190,7 @@ def crc_map(mapfile, pix_width=1000):
     return crc
 
 
-class GXmap:
+class Map:
     """
     Geosoft map files.
 
@@ -247,7 +247,7 @@ class GXmap:
     def __init__(self, file_name, mode=WRITE_NEW, _internal=False):
 
         if not _internal:
-            raise MapException(_t("GXmap must be created from GXmap.new(), or GXmap.open()."))
+            raise MapException(_t("Map must be created from Map.new(), or Map.open()."))
 
         self.gxmap = None
         self._remove = False
@@ -456,7 +456,7 @@ class GXmap:
                            m_left, m_right, m_bottom, m_top,
                            float(inside_margin))
 
-        with gxv.GXview(map=map, name='*data', mode=gxv.WRITE_OLD) as view:
+        with gxv.View(map=map, name='*data', mode=gxv.WRITE_OLD) as view:
             view.cs = cs
         set_registry(map,
                      'figure' if (map_style == STYLE_FIGURE) else 'map',
@@ -540,7 +540,7 @@ class GXmap:
         base_view = self.classview('base').lower()
         for view_name in vlist:
             if view_name.lower() != base_view:
-                with gxv.GXview(self, view_name) as v:
+                with gxv.View(self, view_name) as v:
                     ex = extents(ex, v.extent_map_cm(v.extent_clip))
         if ex[0] == 1.0e10:
             raise MapException(_t('Map "{}" has no data views.').format(self.name))
@@ -656,13 +656,13 @@ class GXmap:
         xmx = gxapi.float_ref()
         ymx = gxapi.float_ref()
 
-        with gxv.GXview(self, self.current_base_view, gxg.READ_ONLY) as v:
+        with gxv.View(self, self.current_base_view, gxg.READ_ONLY) as v:
             v.gxview.extent(gxapi.MVIEW_EXTENT_CLIP, gxapi.MVIEW_EXTENT_UNIT_MM,
                             xmn, ymn, xmx, ymx)
             mapx = (xmx.value - xmn.value) * 0.1
             mapy = (ymx.value - ymn.value) * 0.1
 
-        with gxv.GXview(self, self.current_data_view, gxg.READ_ONLY) as v:
+        with gxv.View(self, self.current_data_view, gxg.READ_ONLY) as v:
             v.gxview.extent(gxapi.MVIEW_EXTENT_CLIP, gxapi.MVIEW_EXTENT_UNIT_MM,
                             xmn, ymn, xmx, ymx)
             view_map = (xmn.value * 0.1,
@@ -724,9 +724,9 @@ class GXmap:
 
     def create_linked_3d_view(self, view, name='3D', area_on_map=(0, 0, 300, 300)):
         """
-        Create a linked 3D view inside a 2D map to a `gxpy.view.GXview_3d` in a 3DV
+        Create a linked 3D view inside a 2D map to a `gxpy.view.View_3d` in a 3DV
 
-        :param view:        A `gxpy.view.GXview_3d` instance
+        :param view:        A `gxpy.view.View_3d` instance
         :param name:        name of the linked view to create
         :param area_on_map: min_x, min_y, max_x, max_y) placement of view on map in mm
 
@@ -767,10 +767,10 @@ class GXmap:
         view_name = self.classview(view_name)
 
         if not view_name:
-            with gxv.GXview(self, self.current_base_view) as v:
+            with gxv.View(self, self.current_base_view) as v:
                 extent = v.extent_map_cm(v.extent_clip)
         else:
-            with gxv.GXview(self, view_name) as v:
+            with gxv.View(self, view_name) as v:
                 extent = v.extent_clip
 
         xc = extent[0] + (extent[2] - extent[0]) * 0.5
@@ -843,7 +843,7 @@ class GXmap:
         """
 
         if direction is None:
-            with gxv.GXview(self, '*data', mode=gxv.WRITE_OLD) as v:
+            with gxv.View(self, '*data', mode=gxv.WRITE_OLD) as v:
                 direction = round(v.gxview.north(), 1)
                 if direction == gxapi.rDUMMY:
                     direction = ''
@@ -981,8 +981,8 @@ class GXmap:
 
             offset = self._annotation_offset(offset, text_def.height)
 
-            with gxv.GXview(self, view_name) as v:
-                with gxg.GXdraw(v) as g:
+            with gxv.View(self, view_name) as v:
+                with gxg.Draw(v) as g:
                     g.rectangle(v.extent_clip, pen=gxg.Pen(default=edge_pen, factor=v.units_per_map_cm))
 
             with _Mapplot(self) as mpl:
@@ -1059,8 +1059,8 @@ class GXmap:
 
             offset = self._annotation_offset(offset, text_def.height)
 
-            with gxv.GXview(self, view_name) as v:
-                with gxg.GXdraw(v) as g:
+            with gxv.View(self, view_name) as v:
+                with gxg.Draw(v) as g:
                     g.rectangle(v.extent_clip, pen=gxg.Pen(default=edge_pen, factor=v.units_per_map_cm))
 
             with _Mapplot(self) as mpl:

@@ -9,7 +9,6 @@ Drawing elements that are placed in groups in 3d views, or in 2D views on a map.
 from functools import wraps
 import threading
 import os
-import math
 
 import geosoft
 import geosoft.gxapi as gxapi
@@ -76,6 +75,10 @@ SYMBOL_INVERTED_TRIANGLE = 6
 SYMBOL_HEXAGON = 7
 SYMBOL_SMALL_BOX = 8
 SYMBOL_SMALL_DIAMOND = 9
+SYMBOL_CIRCLE = 20
+
+SYMBOL_3D_SPHERE = 0
+SYMBOL_3D_CYLINDER = 1
 
 _weight_factor = (1.0 / 48.0, 1.0 / 24.0, 1.0 / 16.0, 1.0 / 12.0, 0.145, 1.0 / 4.0)
 FONT_WEIGHT_ULTRALIGHT = 1
@@ -153,6 +156,7 @@ LINE3D_STYLE_LINE = 0
 LINE3D_STYLE_TUBE = 1
 LINE3D_STYLE_TUBE_JOINED = 2
 
+
 def edge_reference(area, reference):
     """
     Location of a reference point of an area.
@@ -187,20 +191,20 @@ def edge_reference(area, reference):
 
     return centroid + gxgm.Point((xoff, yoff))
 
-class GXgroup:
+class Group:
     """
     Geosoft group class.
 
     :parameters:
 
-        :view:          gxpy.GXview
+        :view:          gxpy.View
         :name:          group name, default is "_".
         :plane:         plane number, or plane name if drawing to a 3D view.  Default is plane number 0.
         :view_lock:     True to lock the view for a single-stream drawwing group.  Default is False.
 
     :properties:
 
-        :view:              the GXview instance that contains this group
+        :view:              the View instance that contains this group
         :name:              the name of the group
         :extent:            extent of the group in view units
         :extent_map_cm:     extent of the group in map cm
@@ -375,15 +379,15 @@ def _draw(func):
     return wrapper
 
 
-class GXdraw(GXgroup):
+class Draw(Group):
     """
     Create (start) a drawing group for 2D drawing elements.  On a 3D view, 2D drawing elements
     are placed on the default drawing plane.  Drawing groups will lock the view such that only one
     drawing group can be instantiated at a time.
     
-    Use ``with GXdraw() as group:`` to ensure correct unlocking when complete.
+    Use ``with Draw() as group:`` to ensure correct unlocking when complete.
     
-    Inherits from the ``GXgroup`` base class.
+    Inherits from the ``Group`` base class.
     """
 
     @staticmethod
@@ -578,7 +582,8 @@ class GXdraw(GXgroup):
     def line(self, p2):
         """
         Draw a line on the current plane
-        :param p2: geometry.Point2, or (p1, p2)
+        
+        :param p2: :py:class:`geometry.Point2`, or (p1, p2)
 
         .. versionadded:: 9.2
         """
@@ -590,8 +595,9 @@ class GXdraw(GXgroup):
     def polyline(self, pp, close=False):
         """
         Draw a polyline the current plane
-        :param pline: gxpy.geometry.PPoint
-        :param close: if True, draw a polygon, default is a polyline
+        
+        :param pp:      :py:class:`gxpy.geometry.PPoint`
+        :param close:   if True, draw a polygon, default is a polyline
 
         .. note::
             Smooth-line polygons must have at least 6 points for the closure to
@@ -612,8 +618,9 @@ class GXdraw(GXgroup):
     @_draw
     def polygon(self, pp, close=False):
         """
-        Draw a polygon on the current plane
-        :param pline: gxpy.geometry.PPoint
+        Draw a polygon on the current plane.
+        
+        :param pp: :py:class:`gxpy.geometry.PPoint`
 
         .. note::
             Smooth-line polygons must have at least 6 points for the closure to
@@ -678,7 +685,7 @@ class GXdraw(GXgroup):
             self.text_def = cur_text
 
 
-class GXdraw_3d(GXdraw):
+class Draw_3d(Draw):
     """
     Create a 3D drawing group within a 3D view.  3D drawing groups accept 3D drawing objects that
     can be created using methods of this class.  2D objects can also be drawn to a 3D group and will be
@@ -695,7 +702,7 @@ class GXdraw_3d(GXdraw):
                  render_backfaces=False,
                  **kwargs):
 
-        if not isinstance(view, gxv.GXview_3d):
+        if not isinstance(view, gxv.View_3d):
             raise GroupException(_t('View is not 3D'))
 
         super().__init__(view, *args, **kwargs)
@@ -852,8 +859,6 @@ class GXdraw_3d(GXdraw):
             for i in range(points.length):
                 self.sphere(points[i], radius=radius)
 
-
-
     @_draw
     def polyline_3d(self, points, style=LINE3D_STYLE_LINE):
         """
@@ -905,7 +910,7 @@ def legend_color_bar(view,
     """
     Draw an color bar legend from itr colouring definitions.
 
-    :param view:                ``gxpy.GXview`` instance in which to place the bar
+    :param view:                ``gxpy.View`` instance in which to place the bar
     :param group_name:          name for the colour_bar group, overwrites group if it exists.
     :param itr:                 gxapi.GXITR instance
     :param itr2:                optional orthogonal blended itr as a gxapi.GXITR instance.  If making
@@ -946,7 +951,7 @@ def legend_color_bar(view,
     .. versionadded:: 9.2
     """
 
-    with GXdraw(view, group_name) as g:
+    with Draw(view, group_name) as g:
 
         v_area = gxgm.Point2(view.extent_clip)
         v_width = v_area.dimension[0]
@@ -1613,11 +1618,147 @@ class Pen:
 
         return s + 't{}'.format(int(self.line_thick * 10000.))
 
-class GXagg_group(GXgroup):
+
+class Color_symbols_group(Group):
+    """
+    Create a colour symbols group with colour mapping.
+
+    :param view:            the view in which to place the group
+    :param name:            group name
+    :param data:            iterable that yields `((x, y), data)`, or `((x, y, z), data, ...)`.  Only `((x,y), data)`
+                            is used.
+    :param color_map:       symbol fill color :class:`Color_map`.
+                            Symbols are filled with the colour lookup using data.
+    :param symbol_def:      :py:class:`gxpy.group.Text_def` defines the symbol font to use, normally
+                            `symbols.gfn` is expected, and if used the symbols defined by the `SYMBOL` manifest
+                            are valid.  For other fonts you will get the symbol requested.  The default is
+                            `Text_def(font='dymbols.gfn', color='k', weight=FONT_WEIGHT_ULTRALIGHT)`
+    :param symbol:          the symbol to plot, normally one of `SYMBOL`.
+
+    .. versionadded:: 9.2
+    """
+
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        self.csymb = None
+        self._close()
+
+    def __init__(self, view, group_name, mode):
+
+        self.csymb = None
+        super().__init__(view, group_name, mode=mode)
+
+    @classmethod
+    def new(cls,
+            view,
+            name,
+            data,
+            color_map,
+            symbol_def=None,
+            symbol=SYMBOL_CIRCLE):
+
+        def valid(xyd):
+            if xyd[0][0] is None or xyd[0][1] is None or xyd[1] is None:
+                return False
+            return True
+
+        cs = cls(view, name, mode=NEW)
+        cs.csymb = gxapi.GXCSYMB.create(color_map.save_file())
+
+        if symbol_def is None:
+            symbol_def = Text_def(font='geosoft.gfn',
+                                  height=(0.25 * view.units_per_map_cm),
+                                  weight=FONT_WEIGHT_ULTRALIGHT,
+                                  color=C_BLACK)
+        cs.csymb.set_font(symbol_def.font, symbol_def.gfn, symbol_def.weight, symbol_def.italics)
+        cs.csymb.set_static_col(symbol_def.color.int, 0)
+        cs.csymb.set_scale(symbol_def.height)
+        cs.csymb.set_number(symbol)
+
+        xy = gxgm.PPoint([xy[0] for xy in data if valid(xy)])
+        cs.csymb.add_data(gxvv.GXvv(xy.x).gxvv,
+                          gxvv.GXvv(xy.y).gxvv,
+                          gxvv.GXvv([d[1] for d in data if valid(d)]).gxvv)
+        view.gxview.col_symbol(name, cs.csymb)
+
+        return cs
+
+    @classmethod
+    def open(cls,
+             view,
+             group_name):
+        cs = cls(view, group_name, mode=READ_ONLY)
+        group_number = view.gxview.find_group(group_name)
+        cs.csymb = view.gxview.get_col_symbol(group_number)
+        return cs
+
+class Color_symbols_group_3d(Group):
+    """
+    Create a 3D spheres coloured by the data with a :class:`Color_map`.
+
+    :param view:            a 3D view in which to place the group
+    :param name:            group name
+    :param data:            iterable that yields `((x, y, z), data, ...)`.
+    :param color_map:       symbol fill color :class:`Color_map`.
+                            Symbols are filled with the colour lookup using data.
+    :param radius:          Sphere/cylinder radius in view units
+    :param symbol:          one of `SYMBOL_3D`:
+    
+        ::
+        
+            SYMBOL_3D_SPHERE
+            SYMBOL_3D_CYLINDER
+
+    .. versionadded:: 9.2
+    """
+
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        self._close()
+
+    def __init__(self, view, group_name, mode):
+        super().__init__(view, group_name, mode=mode)
+
+    @classmethod
+    def new(cls,
+            view,
+            name,
+            data,
+            color_map,
+            radius=None,
+            symbol=SYMBOL_3D_SPHERE):
+
+        def valid(xyzd):
+            if xyzd[0][0] is None or xyzd[0][1]is None or xyzd[0][2] is None or xyzd[1] is None:
+                return False
+            return True
+
+        cs = cls(view, name, mode=NEW)
+
+        if radius is None:
+            radius = 0.25 * view.units_per_map_cm
+
+        with Draw_3d(view, name) as g:
+            for xyzv in data:
+                if valid(xyzv):
+                    xyz, v, *_ = xyzv
+                    view.gxview.fill_color(color_map.color_of_value(v).int)
+                    view.gxview.sphere_3d(xyz[0], xyz[1], xyz[2], radius)
+
+        return cs
+
+    @classmethod
+    def open(cls,
+             view,
+             group_name):
+        cs = cls(view, group_name, mode=READ_ONLY)
+        group_number = view.gxview.find_group(group_name)
+        return cs
+
+
+class Agg_group(Group):
     """
     Aggregate groups on a map
     
-    :param view:        gxpy.GXview instance
+    :param view:        gxpy.View instance
     :param name:        group name, default uses the aggregate name
     :param agg:         GXagg instance
     
@@ -1667,11 +1808,29 @@ class GXagg_group(GXgroup):
         return agg_group
 
 class Color_map:
+    """
+    Color map for establishing data colour mapping for things like aggregates and colour symbols.
+    
+    :param cmap:    the name of a Geosoft colour map file (`.tbl, .zon, .itr, .agg`) from which to
+                    establish the initial colour mapping.  If the file does not have zone values,
+                    which is the case for a `.tbl` file, the Color_map will be uninitialized and you
+                    can use one of the `set` methods to establish zone values.
+                    
+                    You can also provide an `int`, which will create an uninitialized map of the the
+                    specified length.
+                    
+                    If not specified the Geosoft default color table is used.
+                    
+    """
 
     def __init__(self, cmap=None):
 
         if cmap is None:
-            # TODO get user's default colour table from global settings
+            sr = gxapi.str_ref()
+            # TODO JB - cannot have a method named 'global', so this method is not exported from gxapi.GXSYS
+            #if gxapi.GXSYS.global('MONTAJ.DEFAULT_COLOUR', sr) == 0:
+            #    cmap = sr.value
+            #else:
             cmap = 'colour'
 
         if isinstance(cmap, str):

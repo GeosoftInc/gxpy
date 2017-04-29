@@ -56,12 +56,12 @@ class Test(GXPYTest):
     def test_create(self):
         self.start()
 
-        with gxmap.GXmap.new() as gmap:
+        with gxmap.Map.new() as gmap:
             vlist = gmap.view_list
             self.assertEqual(len(vlist), 2)
             self.assertTrue('base' in vlist)
             self.assertTrue('data' in vlist)
-            with gxv.GXview(gmap, 'base') as v:
+            with gxv.View(gmap, 'base') as v:
                 self.assertEqual(v.name, "base")
                 self.assertEqual(v.scale, 1000.0)
                 self.assertEqual(v.aspect, 1.0)
@@ -69,7 +69,7 @@ class Test(GXPYTest):
                 self.assertEqual(v.units_per_metre, 1.0)
                 self.assertEqual(v.units_per_map_cm, 10.0)
 
-            with gxv.GXview(gmap, 'ft12000', cs='ft', scale=12000,
+            with gxv.View(gmap, 'ft12000', cs='ft', scale=12000,
                             area=(0, 0, 50000, 40000)) as v:
                 self.assertEqual(v.name, "ft12000")
                 self.assertAlmostEqual(v.scale, 12000.0)
@@ -78,24 +78,24 @@ class Test(GXPYTest):
                 self.assertAlmostEqual(v.units_per_metre, 3.280839895)
                 self.assertAlmostEqual(v.units_per_map_cm, 393.7007874)
 
-            with gxv.GXview(gmap) as vw:
+            with gxv.View(gmap) as vw:
                 self.assertEqual(vw.name, "_unnamed_view")
                 self.assertEqual(vw.scale, 100.0)
                 self.assertEqual(vw.aspect, 1.0)
                 self.assertEqual(vw.units_name, 'unknown')
                 self.assertEqual(vw.units_per_metre, 1.0)
 
-        with gxmap.GXmap.new() as gmap:
-            with gxv.GXview(gmap, "test") as vw:
+        with gxmap.Map.new() as gmap:
+            with gxv.View(gmap, "test") as vw:
                 self.assertEqual(vw.name, "test")
 
-        with gxmap.GXmap.new() as gmap:
+        with gxmap.Map.new() as gmap:
             area = (100, 500, 15100, 10500)
             scale = 20000
             location = (0,0)
             xcm = (area[2] - area[0])*100.0/scale
             ycm = (area[3] - area[1])*100.0/scale
-            with gxv.GXview(gmap, "test", map_location=location, area=area,
+            with gxv.View(gmap, "test", map_location=location, area=area,
                             scale=scale, cs="WGS 84 / UTM zone 34N") as vw:
                 self.assertEqual(vw.extent_clip,area)
                 self.assertEqual(vw.extent_map_cm(vw.extent_clip), (0, 0, xcm, ycm))
@@ -104,14 +104,14 @@ class Test(GXPYTest):
                 self.assertEqual(vw.units_per_metre, 1.0)
                 self.assertEqual(vw.units_name, 'm')
 
-        with gxmap.GXmap.new() as gmap:
+        with gxmap.Map.new() as gmap:
             area = (100, 500, 15100, 10500)
             scale = 12000
             loc = (7.5, 2.0)
             mpu = 1.0 / float(gxcs.parameters(gxcs.PARM_UNITS, 'ftUS')['FACTOR'])
             xcm = 100.0 * ((area[2] - area[0]) / scale) / mpu
             ycm = 100.0 * ((area[3] - area[1]) / scale) / mpu
-            with gxv.GXview(gmap, "test", map_location=loc, area=area,
+            with gxv.View(gmap, "test", map_location=loc, area=area,
                             scale=scale, cs=("WGS 84 / UTM zone 34N", '', '', 'ftUS', '')) as vw:
                 self.assertEqual(vw.extent_clip,area)
                 mx = vw.extent_map_cm(vw.extent_clip)
@@ -126,14 +126,14 @@ class Test(GXPYTest):
                 self.assertAlmostEqual(vw.units_per_metre, 3.28083333333334)
                 self.assertEqual(vw.units_name, 'ftUS')
 
-        with gxmap.GXmap.new() as gmap:
+        with gxmap.Map.new() as gmap:
             area = (100, 500, 15100, 10500)
             scale = 12000
             loc = (7.5, 2.0)
             mpu = 1.0 / float(gxcs.parameters(gxcs.PARM_UNITS, 'ftUS')['FACTOR'])
             xcm = 100.0 * ((area[2] - area[0]) / scale) / mpu
             ycm = 100.0 * ((area[3] - area[1]) / scale) / mpu
-            with gxv.GXview(gmap, "test", map_location=loc, area=area,
+            with gxv.View(gmap, "test", map_location=loc, area=area,
                             scale=scale, cs='ftUS') as vw:
                 self.assertEqual(vw.extent_clip,area)
                 mx = vw.extent_map_cm(vw.extent_clip)
@@ -147,8 +147,8 @@ class Test(GXPYTest):
                 self.assertAlmostEqual(vw.units_per_metre, 3.28083333333334)
                 self.assertEqual(vw.units_name, 'ftUS')
 
-        with gxmap.GXmap.new() as gmap:
-            with gxv.GXview(gmap, "test", area=(100, 500, 15100, 10500), scale=(50000, 10000),
+        with gxmap.Map.new() as gmap:
+            with gxv.View(gmap, "test", area=(100, 500, 15100, 10500), scale=(50000, 10000),
                             map_location=(10, 25)) as vw:
                 self.assertEqual(vw.extent_clip,(100, 500, 15100, 10500))
                 self.assertEqual(vw.scale, 50000)
@@ -159,8 +159,8 @@ class Test(GXPYTest):
     def test_scale(self):
         self.start()
 
-        with gxmap.GXmap.new() as gmap:
-            with gxv.GXview(gmap, 'ft12000',
+        with gxmap.Map.new() as gmap:
+            with gxv.View(gmap, 'ft12000',
                             cs='ft', scale=12000,
                             map_location=(10, 5),
                             area=(0, 0, 50000, 40000)) as v:
@@ -176,12 +176,12 @@ class Test(GXPYTest):
         self.start()
 
         testmap = os.path.join(self.gx.temp_folder(), "test_view_reopen_map_view")
-        with gxmap.GXmap.new(testmap, overwrite=True) as gmap:
+        with gxmap.Map.new(testmap, overwrite=True) as gmap:
             mapfile = gmap.file_name
-            with gxv.GXview(gmap, "test_view") as v:
-                with gxg.GXdraw(v) as g:
+            with gxv.View(gmap, "test_view") as v:
+                with gxg.Draw(v) as g:
                     g.rectangle(v.extent_clip)
-            with gxv.GXview(gmap, "test_view") as v:
+            with gxv.View(gmap, "test_view") as v:
                 pass
         gxmap.delete_files(mapfile)
 
@@ -189,10 +189,10 @@ class Test(GXPYTest):
         self.start()
 
         testmap = os.path.join(self.gx.temp_folder(), "test_view_cs")
-        with gxmap.GXmap.new(testmap, overwrite=True) as gmap:
-            with gxv.GXview(gmap, "rectangle_test", cs="wgs 84") as v:
+        with gxmap.Map.new(testmap, overwrite=True) as gmap:
+            with gxv.View(gmap, "rectangle_test", cs="wgs 84") as v:
                 self.assertEqual("WGS 84", str(v.cs))
-            with gxv.GXview(gmap, "vcs", cs="wgs 84 / UTM zone 15N [special]") as v:
+            with gxv.View(gmap, "vcs", cs="wgs 84 / UTM zone 15N [special]") as v:
                 self.assertTrue("WGS 84 / UTM zone 15N [special]" in str(v.cs))
 
     def test_3dview(self):
@@ -202,24 +202,24 @@ class Test(GXPYTest):
 
         try:
 
-            with gxv.GXview_3d.new('test_3d', overwrite=True) as v:
+            with gxv.View_3d.new('test_3d', overwrite=True) as v:
                 v3d_file = v.file_name
                 self.assertTrue(v3d_file.lower().endswith('.geosoft_3dv'))
                 self.assertEqual(v.name, 'test_3d')
                 self.assertEqual(v.map.name, 'test_3d')
 
-                with gxg.GXdraw(v, '2D stuff') as g:
+                with gxg.Draw(v, '2D stuff') as g:
                     g.rectangle(v.extent_clip)
                     draw_2d_stuff(g)
 
                 self.assertRaises(gxv.ViewException, v.new_drawing_plane, 0)
                 v.new_drawing_plane('vertical', rotation=(90.0, 0, 0))
-                with gxg.GXdraw(v, '2D stuff vertical', plane='vertical') as g:
+                with gxg.Draw(v, '2D stuff vertical', plane='vertical') as g:
                     g.rectangle(v.extent_clip)
                     draw_2d_stuff(g)
 
                 self.assertEqual(v.current_3d_drawing_plane, 'vertical')
-                with gxg.GXdraw_3d(v, '3D stuff') as g:
+                with gxg.Draw_3d(v, '3D stuff') as g:
                     g.box_3d(((20, 10, -10), (80, 50, 30)), pen=g.new_pen(line_color='R255G100B50'))
                 self.assertEqual(v.current_3d_drawing_plane, 'plane_0')
 
@@ -249,25 +249,25 @@ class Test(GXPYTest):
         map_file = None
         try:
 
-            with gxmap.GXmap.new() as map:
+            with gxmap.Map.new() as map:
                 map_file = map.file_name
-                with gxv.GXview(map, '*base') as v:
-                    with gxg.GXdraw(v, 'edge') as g:
+                with gxv.View(map, '*base') as v:
+                    with gxg.Draw(v, 'edge') as g:
                         g.rectangle(v.extent_clip)
 
-            with gxv.GXview_3d.new('test_3d', overwrite=True) as v:
+            with gxv.View_3d.new('test_3d', overwrite=True) as v:
                 v3d_file = v.map.file_name
-                with gxg.GXdraw(v, '2D stuff') as g:
+                with gxg.Draw(v, '2D stuff') as g:
                     draw_2d_stuff(g)
                 v.new_drawing_plane('vertical', rotation=(90.0, 0, 0))
-                with gxg.GXdraw(v, '2D stuff vertical', plane='vertical') as g:
+                with gxg.Draw(v, '2D stuff vertical', plane='vertical') as g:
                     g.rectangle(v.extent_clip)
                     draw_2d_stuff(g)
 
-                with gxg.GXdraw_3d(v, '3D stuff') as g:
+                with gxg.Draw_3d(v, '3D stuff') as g:
                     g.box_3d(((20, 10, -10), (80, 50, 30)), pen=g.new_pen(line_color='R255G100B50'))
 
-                with gxmap.GXmap.open(map_file) as map:
+                with gxmap.Map.open(map_file) as map:
                     map.create_linked_3d_view(v, 'linked_view')
 
             self.crc_map(map_file)
@@ -284,20 +284,20 @@ class Test(GXPYTest):
         v3d_file = None
         try:
 
-            with gxv.GXview_3d.new('test_3d', overwrite=True) as v:
+            with gxv.View_3d.new('test_3d', overwrite=True) as v:
                 v3d_file = v.map.file_name
-                with gxg.GXdraw(v, '2D stuff') as g:
+                with gxg.Draw(v, '2D stuff') as g:
                     draw_2d_stuff(g)
 
-            self.assertRaises(gxv.ViewException, gxv.GXview_3d.open, 'bogus')
+            self.assertRaises(gxv.ViewException, gxv.View_3d.open, 'bogus')
 
-            with gxv.GXview_3d.open(v3d_file) as v:
+            with gxv.View_3d.open(v3d_file) as v:
                 v.new_drawing_plane('vertical', rotation=(90.0, 0, 0))
-                with gxg.GXdraw(v, '2D stuff vertical', plane='vertical') as g:
+                with gxg.Draw(v, '2D stuff vertical', plane='vertical') as g:
                     g.rectangle(v.extent_clip)
                     draw_2d_stuff(g)
 
-                with gxg.GXdraw_3d(v, '3D stuff') as g:
+                with gxg.Draw_3d(v, '3D stuff') as g:
                     g.box_3d(((20, 10, -10), (80, 50, 30)), pen=g.new_pen(line_color='R255G100B50'))
 
             self.crc_map(v3d_file)

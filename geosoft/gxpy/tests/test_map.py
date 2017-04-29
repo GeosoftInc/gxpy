@@ -26,9 +26,9 @@ class Test(GXPYTest):
         if mapname is None:
             mapname = os.path.join(self.gx.temp_folder(), 'test')
 
-        with gxmap.GXmap.new(mapname, overwrite=True) as map:
-            with gxv.GXview(map, "rectangle_test") as v:
-                with gxg.GXdraw(v, 'rectangle') as g:
+        with gxmap.Map.new(mapname, overwrite=True) as map:
+            with gxv.View(map, "rectangle_test") as v:
+                with gxg.Draw(v, 'rectangle') as g:
                     g.rectangle((gxgm.Point((0, 0)), gxgm.Point((250, 110))), pen=gxg.Pen(line_thick=1))
 
                     p1 = gxgm.Point((5, 5)) * rescale
@@ -40,8 +40,8 @@ class Test(GXPYTest):
                     g.pen = gxg.Pen(line_style=2, line_pitch=2.0)
                     g.line((p1 + poff, p2 - poff))
 
-            with gxv.GXview(map, "poly") as v:
-                with gxg.GXdraw(v, 'poly') as g:
+            with gxv.View(map, "poly") as v:
+                with gxg.Draw(v, 'poly') as g:
                     plinelist = [[110, 5],
                                  [120, 20],
                                  [130, 15],
@@ -84,7 +84,7 @@ class Test(GXPYTest):
             cs = gxcs.GXcs("WGS 84 / UTM zone 15N")
         if margins is None:
             margins = (1.5, 1.5, 3, 1)
-        return gxmap.GXmap.new(file_name=name,
+        return gxmap.Map.new(file_name=name,
                                data_area=data_area,
                                cs=cs,
                                media="A4",
@@ -100,48 +100,48 @@ class Test(GXPYTest):
         # test map
         name = 'test_newmap'
         gxmap.delete_files(name)
-        with gxmap.GXmap.new(name) as map:
+        with gxmap.Map.new(name) as map:
             self.assertEqual(map.name, name)
             mapfile = map.file_name
             self.assertEqual(mapfile, os.path.abspath((name + '.map')))
         self.assertTrue(os.path.isfile(mapfile))
 
         # verify can't write on a new map
-        self.assertRaises(gxmap.MapException, gxmap.GXmap.new, name)
-        self.assertRaises(gxmap.MapException, gxmap.GXmap.new, mapfile)
-        with gxmap.GXmap.new(name, overwrite=True):
+        self.assertRaises(gxmap.MapException, gxmap.Map.new, name)
+        self.assertRaises(gxmap.MapException, gxmap.Map.new, mapfile)
+        with gxmap.Map.new(name, overwrite=True):
             pass
 
         # but I can open it
-        with gxmap.GXmap.open(name):
+        with gxmap.Map.open(name):
             pass
-        with gxmap.GXmap.open(mapfile):
+        with gxmap.Map.open(mapfile):
             pass
 
         gxmap.delete_files(mapfile)
         self.assertFalse(os.path.isfile(mapfile))
 
-        self.assertRaises(gxmap.MapException, gxmap.GXmap, 'bogus')
+        self.assertRaises(gxmap.MapException, gxmap.Map, 'bogus')
 
     def test_new_geosoft_map(self):
         self.start()
 
         # temp map
-        with gxmap.GXmap.new(data_area=(0, 0, 100, 80)) as map:
+        with gxmap.Map.new(data_area=(0, 0, 100, 80)) as map:
             views = map.view_list
             self.assertTrue('base' in views)
             self.assertTrue('data' in views)
 
-        with gxmap.GXmap.new(data_area=(0, 0, 100, 80),
+        with gxmap.Map.new(data_area=(0, 0, 100, 80),
                              cs=gxcs.GXcs("DHDN / Okarito 2000 [geodetic]")) as map:
-            with gxv.GXview(map, 'data', mode=gxv.WRITE_OLD) as v:
+            with gxv.View(map, 'data', mode=gxv.WRITE_OLD) as v:
                 self.assertEqual("DHDN / Okarito 2000 [geodetic]", str(v.cs))
 
     def test_lists(self):
         self.start()
 
         mapname = self._new_data_map()
-        with gxmap.GXmap.open(mapname) as map:
+        with gxmap.Map.open(mapname) as map:
             views = map.view_list
             self.assertTrue('rectangle_test' in views)
             self.assertTrue('poly' in views)
@@ -156,7 +156,7 @@ class Test(GXPYTest):
     def test_map_delete(self):
         self.start()
 
-        with gxmap.GXmap.new(file_name='test_geosoft', overwrite=True) as map:
+        with gxmap.Map.new(file_name='test_geosoft', overwrite=True) as map:
             file_name = map.file_name
             self.assertEqual(len(map.view_list), 2)
             self.assertTrue(map.has_view('data'))
@@ -165,7 +165,7 @@ class Test(GXPYTest):
         with open(file_name, 'rb') as f:
             pass
 
-        with gxmap.GXmap.new(file_name='test_geosoft',
+        with gxmap.Map.new(file_name='test_geosoft',
                              overwrite=True,
                              data_area=(1000, 200, 11000, 5000)) as map:
             file_name = map.file_name
@@ -176,20 +176,20 @@ class Test(GXPYTest):
         with open(file_name, 'rb') as f:
             pass
 
-        with gxmap.GXmap.new(file_name='test_geosoft', overwrite=True) as map:
+        with gxmap.Map.new(file_name='test_geosoft', overwrite=True) as map:
             file_name = map.file_name
             map.remove_on_close(True)
         self.assertFalse(os.path.isfile(file_name))
 
         for i in range(3):
-            map = gxmap.GXmap.new(file_name='t{}'.format(i), overwrite=True)
+            map = gxmap.Map.new(file_name='t{}'.format(i), overwrite=True)
             map.remove_on_close(True)
             map.close()
 
     def test_map_classes(self):
         self.start()
 
-        with gxmap.GXmap.new(file_name='test_geosoft', overwrite=True) as map:
+        with gxmap.Map.new(file_name='test_geosoft', overwrite=True) as map:
             self.assertEqual(map.get_class_name('data'), 'data')
             self.assertEqual(map.get_class_name('base'), 'base')
             self.assertEqual(map.get_class_name('section'), 'section')
@@ -204,20 +204,20 @@ class Test(GXPYTest):
             map.set_class_name('mine', 'boom')
             self.assertEqual(map.get_class_name('mine'), 'boom')
 
-        with gxmap.GXmap.new(data_area=(0, 0, 100, 80),
+        with gxmap.Map.new(data_area=(0, 0, 100, 80),
                              cs=gxcs.GXcs("DHDN / Okarito 2000 [geodetic]")) as map:
 
             self.assertEqual(map.get_class_name('base'), 'base')
             self.assertEqual(map.get_class_name('data'), 'data')
 
-            with gxv.GXview(map, "copy_data", mode=gxv.WRITE_NEW, copy="data"): pass
+            with gxv.View(map, "copy_data", mode=gxv.WRITE_NEW, copy="data"): pass
             map.set_class_name('data', 'copy_data')
             self.assertEqual(map.get_class_name('data'), 'copy_data')
 
     def test_current_view(self):
         self.start()
 
-        with gxmap.GXmap.new() as map:
+        with gxmap.Map.new() as map:
             self.assertEqual(map.current_data_view, 'data')
             map.current_data_view = 'base'
             self.assertEqual(map.current_data_view, 'base')
@@ -242,12 +242,12 @@ class Test(GXPYTest):
         self.start()
 
         def crc_media(map_file, test_number):
-            with gxmap.GXmap.open(map_file) as map:
-                with gxv.GXview(map, "base") as v:
-                    with gxg.GXdraw(v) as g:
+            with gxmap.Map.open(map_file) as map:
+                with gxv.View(map, "base") as v:
+                    with gxg.Draw(v) as g:
                         g.rectangle(v.extent_clip, pen=gxg.Pen(line_thick=0.2, line_color='K'))
-                with gxv.GXview(map, "data") as v:
-                    with gxg.GXdraw(v) as g:
+                with gxv.View(map, "data") as v:
+                    with gxg.Draw(v) as g:
                         g.rectangle(v.extent_clip, pen=gxg.Pen(line_thick=0.2, line_color='R'))
             self.crc_map(map_file,
                          pix_width=256,
@@ -256,19 +256,19 @@ class Test(GXPYTest):
         test_media_map = os.path.join(gx.GXpy().temp_folder(), 'test_media')
 
         test_number = 0
-        with gxmap.GXmap.new(test_media_map + 'scale_800', overwrite=True, scale=800,
+        with gxmap.Map.new(test_media_map + 'scale_800', overwrite=True, scale=800,
                              data_area=(5, 10, 50, 100)) as map:
             file_name = map.file_name
         crc_media(file_name, test_number)
         test_number += 1
 
-        with gxmap.GXmap.new(test_media_map + 'scale_100', overwrite=True, scale=100,
+        with gxmap.Map.new(test_media_map + 'scale_100', overwrite=True, scale=100,
                              data_area=(5, 10, 50, 100)) as map:
             file_name = map.file_name
         crc_media(file_name, test_number)
         test_number += 1
 
-        with gxmap.GXmap.new(test_media_map + 'a4_portrait',
+        with gxmap.Map.new(test_media_map + 'a4_portrait',
                              overwrite=True,
                              media='A4',
                              layout=gxmap.MAP_PORTRAIT) as map:
@@ -276,7 +276,7 @@ class Test(GXPYTest):
         crc_media(file_name, test_number)
         test_number += 1
 
-        with gxmap.GXmap.new(test_media_map + 'portrait_a4',
+        with gxmap.Map.new(test_media_map + 'portrait_a4',
                              overwrite=True,
                              media='a4',
                              fixed_size=True,
@@ -285,7 +285,7 @@ class Test(GXPYTest):
         crc_media(file_name, test_number)
         test_number += 1
 
-        with gxmap.GXmap.new(test_media_map + 'a4_landscape',
+        with gxmap.Map.new(test_media_map + 'a4_landscape',
                              overwrite=True,
                              media='A4',
                              fixed_size=True,
@@ -294,7 +294,7 @@ class Test(GXPYTest):
         crc_media(file_name, test_number)
         test_number += 1
 
-        with gxmap.GXmap.new(test_media_map + 'A4_1',
+        with gxmap.Map.new(test_media_map + 'A4_1',
                              overwrite=True, media='A4',
                              fixed_size=True,
                              data_area=(10, 5, 100, 50)) as map:
@@ -302,7 +302,7 @@ class Test(GXPYTest):
         crc_media(file_name, test_number)
         test_number += 1
 
-        with gxmap.GXmap.new(test_media_map + 'A4_2',
+        with gxmap.Map.new(test_media_map + 'A4_2',
                              overwrite=True, media='A4',
                              fixed_size=True,
                              data_area=(5, 10, 50, 100), layout=gxmap.MAP_LANDSCAPE) as map:
@@ -310,7 +310,7 @@ class Test(GXPYTest):
         crc_media(file_name, test_number)
         test_number += 1
 
-        with gxmap.GXmap.new(test_media_map + 'A4_3',
+        with gxmap.Map.new(test_media_map + 'A4_3',
                              overwrite=True,
                              media='A4',
                              data_area=(5, 10, 50, 100)) as map:
@@ -320,10 +320,10 @@ class Test(GXPYTest):
 
         for m in (None, (60, 50), 'unlimited', 'bogus', 'A4', 'A3', 'A2', 'A1', 'A0',
                   'A', 'B', 'C', 'D', 'E'):
-            with gxmap.GXmap.new(media=m) as map: pass
+            with gxmap.Map.new(media=m) as map: pass
 
         self.assertRaises(gxmap.MapException,
-                          gxmap.GXmap.new,
+                          gxmap.Map.new,
                           test_media_map, overwrite=True, media='A4',
                           data_area=(100, 50, 10, 5), layout='landscape')
 
@@ -332,10 +332,10 @@ class Test(GXPYTest):
 
         mapfiles = []
         for i in range(3):
-            with gxmap.GXmap.new() as map:
+            with gxmap.Map.new() as map:
                 mapfiles.append(map.file_name)
-                with gxv.GXview(map, 'data') as v:
-                    with gxg.GXdraw(v) as g:
+                with gxv.View(map, 'data') as v:
+                    with gxg.Draw(v) as g:
                         g.rectangle(v.extent_clip)
 
         for fn in mapfiles:
@@ -345,14 +345,14 @@ class Test(GXPYTest):
     def test_north_arrow_0(self):
         self.start()
 
-        with gxmap.GXmap.new(cs='ft') as map:
+        with gxmap.Map.new(cs='ft') as map:
             mapfile = map.file_name
 
-            with gxv.GXview(map, 'base') as v:
-                with gxg.GXdraw(v) as g:
+            with gxv.View(map, 'base') as v:
+                with gxg.Draw(v) as g:
                     g.rectangle(v.extent_clip)
-            with gxv.GXview(map, 'data') as v:
-                with gxg.GXdraw(v) as g:
+            with gxv.View(map, 'data') as v:
+                with gxg.Draw(v) as g:
                     g.rectangle(v.extent_clip)
 
             map.north_arrow()
@@ -362,14 +362,14 @@ class Test(GXPYTest):
     def test_north_arrow_1(self):
         self.start()
 
-        with gxmap.GXmap.new(cs='m', data_area=(0,0,20,10), scale=100) as map:
+        with gxmap.Map.new(cs='m', data_area=(0,0,20,10), scale=100) as map:
             mapfile = map.file_name
 
-            with gxv.GXview(map, 'base') as v:
-                with gxg.GXdraw(v) as g:
+            with gxv.View(map, 'base') as v:
+                with gxg.Draw(v) as g:
                     g.rectangle(v.extent_clip)
-            with gxv.GXview(map, 'data') as v:
-                with gxg.GXdraw(v) as g:
+            with gxv.View(map, 'data') as v:
+                with gxg.Draw(v) as g:
                     g.rectangle(v.extent_clip)
 
             map.north_arrow(location=(2, 0, 3), inclination=-12, declination=74.5,
@@ -381,13 +381,13 @@ class Test(GXPYTest):
     def test_scale_1(self):
         self.start()
 
-        with gxmap.GXmap.new(data_area=(350000,7000000,400000,7030000), cs='ft') as map:
+        with gxmap.Map.new(data_area=(350000,7000000,400000,7030000), cs='ft') as map:
             mapfile = map.file_name
-            with gxv.GXview(map, 'base') as v:
-                with gxg.GXdraw(v) as g:
+            with gxv.View(map, 'base') as v:
+                with gxg.Draw(v) as g:
                     g.rectangle(v.extent_clip)
-            with gxv.GXview(map, 'data') as v:
-                with gxg.GXdraw(v) as g:
+            with gxv.View(map, 'data') as v:
+                with gxg.Draw(v) as g:
                     g.rectangle(v.extent_clip)
             map.scale_bar()
             map.scale_bar(location=(2, 0, 2), length=10, sections=12)
@@ -400,13 +400,13 @@ class Test(GXPYTest):
     def test_scale_2(self):
         self.start()
 
-        with gxmap.GXmap.new(data_area=(350000,7000000,400000,7030000), cs='NAD83 / UTM zone 15N') as map:
+        with gxmap.Map.new(data_area=(350000,7000000,400000,7030000), cs='NAD83 / UTM zone 15N') as map:
             mapfile = map.file_name
-            with gxv.GXview(map, 'base') as v:
-                with gxg.GXdraw(v) as g:
+            with gxv.View(map, 'base') as v:
+                with gxg.Draw(v) as g:
                     g.rectangle(v.extent_clip)
-            with gxv.GXview(map, 'data') as v:
-                with gxg.GXdraw(v) as g:
+            with gxv.View(map, 'data') as v:
+                with gxg.Draw(v) as g:
                     g.rectangle(v.extent_clip)
             map.scale_bar()
             map.scale_bar(location=(2, 0, 2), length=10, sections=12,
@@ -420,10 +420,10 @@ class Test(GXPYTest):
         self.start()
 
         cs = gxcs.GXcs('NAD83 / UTM zone 15N')
-        with gxmap.GXmap.new(data_area=(350000, 7000000, 400000, 7030000), cs=cs) as map:
+        with gxmap.Map.new(data_area=(350000, 7000000, 400000, 7030000), cs=cs) as map:
             mapfile = map.file_name
-            with gxv.GXview(map, 'data') as v:
-                with gxg.GXdraw(v) as g:
+            with gxv.View(map, 'data') as v:
+                with gxg.Draw(v) as g:
                     g.rectangle(v.extent_clip)
             map.surround()
         self.crc_map(mapfile)
@@ -432,10 +432,10 @@ class Test(GXPYTest):
         self.start()
 
         cs = gxcs.GXcs('NAD83 / UTM zone 15N')
-        with gxmap.GXmap.new(data_area=(350000, 7000000, 400000, 7030000), cs=cs) as map:
+        with gxmap.Map.new(data_area=(350000, 7000000, 400000, 7030000), cs=cs) as map:
             mapfile = map.file_name
-            with gxv.GXview(map, 'data') as v:
-                with gxg.GXdraw(v) as g:
+            with gxv.View(map, 'data') as v:
+                with gxg.Draw(v) as g:
                     g.rectangle(v.extent_clip)
             map.surround(gap=0.2)
         self.crc_map(mapfile)
@@ -443,10 +443,10 @@ class Test(GXPYTest):
     def test_surround_3(self):
         self.start()
 
-        with gxmap.GXmap.new(data_area=(350000, 7000000, 400000, 7030000)) as map:
+        with gxmap.Map.new(data_area=(350000, 7000000, 400000, 7030000)) as map:
             mapfile = map.file_name
-            with gxv.GXview(map, 'data') as v:
-                with gxg.GXdraw(v) as g:
+            with gxv.View(map, 'data') as v:
+                with gxg.Draw(v) as g:
                     g.rectangle(v.extent_clip)
             map.surround(gap=0.2,
                          outer_pen=gxg.Pen.from_mapplot_string('rt500'),
@@ -569,7 +569,7 @@ class Test(GXPYTest):
                         'azimuth': -30})
         cs = gxcs.GXcs("NAD27 / UTM zone 15N <425000,6500145,0,0,0,-30>")
         name = os.path.join(gx.GXpy().temp_folder(), "test")
-        with gxmap.GXmap.new(file_name='mapplot_anoxy_rotated_cs_bug_UTM',
+        with gxmap.Map.new(file_name='mapplot_anoxy_rotated_cs_bug_UTM',
                              overwrite=True,
                              data_area=(0, 0, 5000, 3500),
                              cs=cs,
@@ -595,11 +595,11 @@ class Test(GXPYTest):
         self.start()
 
         testmap = os.path.join(self.gx.temp_folder(), "test")
-        with gxmap.GXmap.new(testmap, overwrite=True) as gmap:
+        with gxmap.Map.new(testmap, overwrite=True) as gmap:
 
             gmap.delete_view('data')
-            gxv.GXview(gmap, "my_data_1", map_location=(2, 3), area=(0, 0, 1000, 1500), scale=10000).close()
-            gxv.GXview(gmap, "my_data_2", map_location=(15, 3), area=(0, 0, 1000, 1500), scale=10000).close()
+            gxv.View(gmap, "my_data_1", map_location=(2, 3), area=(0, 0, 1000, 1500), scale=10000).close()
+            gxv.View(gmap, "my_data_2", map_location=(15, 3), area=(0, 0, 1000, 1500), scale=10000).close()
             ex = gmap.extent_data_views()
             self.assertEqual(ex, (2, 3, 25, 18))
 
