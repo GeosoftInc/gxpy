@@ -16,7 +16,7 @@ Submodules
     geosoft.gxpy.dataframe
     geosoft.gxpy.gdb
     geosoft.gxpy.geometry
-    geosoft.gxpy.grd
+    geosoft.gxpy.grid
     geosoft.gxpy.group
     geosoft.gxpy.gx
     geosoft.gxpy.map

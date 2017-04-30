@@ -43,7 +43,7 @@ def name_parts(name):
 
     .. code::
 
-        >>> import geosoft.gxpy.grd as gxgrd
+        >>> import geosoft.gxpy.grid as gxgrd
         >>> namep = gxgrd.name_parts("f:/someFolder/name.grd(GRD;TYPE=SHORT)")
         >>> print(namep)
         ('f:/someFolder/','name.grd','name','.grd','(GRD;TYPE=SHORT)')
@@ -334,7 +334,7 @@ class Grid():
         """
         Create a windowed instance of a grid.
         
-        :param grd:         gxpy.grd.Grid instance
+        :param grd:         gxpy.grid.Grid instance
         :param name:        name for the windowed_grid, default is constructed from input grid
         :param x0:          integer index of the first X point
         :param y0:          integer index of the first Y point
@@ -686,14 +686,14 @@ class Grid():
     @staticmethod
     def name_parts(name):
         """
-        .. deprecated:: 9.2 use gxpy.grd.name_parts()
+        .. deprecated:: 9.2 use gxpy.grid.name_parts()
         """
         return name_parts(name)
 
     @staticmethod
     def decorate_name(name, decorations=''):
         """
-        .. deprecated:: 9.2 use gxpy.grd.name_parts()
+        .. deprecated:: 9.2 use gxpy.grid.name_parts()
         """
         return decorate_name(name, decorations)
 

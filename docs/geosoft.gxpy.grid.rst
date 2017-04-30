@@ -1,7 +1,7 @@
-geosoft.gxpy.grd submodule
+geosoft.gxpy.grid submodule
 ====================================
 
-.. automodule:: geosoft.gxpy.grd
+.. automodule:: geosoft.gxpy.grid
     :members:
     :undoc-members:
     :show-inheritance:

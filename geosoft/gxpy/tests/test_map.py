@@ -13,7 +13,7 @@ import geosoft.gxpy.coordinate_system as gxcs
 import geosoft.gxpy.system as gxsys
 import geosoft.gxpy.group as gxg
 import geosoft.gxpy.agg as gxagg
-import geosoft.gxpy.grd as gxgrd
+import geosoft.gxpy.grid as gxgrd
 
 from geosoft.gxpy.tests import GXPYTest
 

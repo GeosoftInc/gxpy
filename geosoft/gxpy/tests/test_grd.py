@@ -5,7 +5,7 @@ import numpy as np
 import geosoft.gxpy.gx as gx
 import geosoft.gxpy.system as gsys
 import geosoft.gxpy.coordinate_system as gxcs
-import geosoft.gxpy.grd as gxgrd
+import geosoft.gxpy.grid as gxgrd
 import geosoft
 
 from geosoft.gxpy.tests import GXPYTest
