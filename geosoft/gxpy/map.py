@@ -315,9 +315,9 @@ class Map:
             :data_area:     (min_x, min_y, max_x, max_y) data area for a 2D data view on the map
             :scale:         required scale, default will fit data to the map media
             :cs:            coordinate system, default is an unknown coordinate system.  You may pass
-                            a ``coordinate_system.GXcs`` instance, a string descriptor, such as
+                            a ``coordinate_system.Coordinate_system`` instance, a string descriptor, such as
                             `WGS 84 / UTM zone 15N`, or another valid constructor supported by
-                            ``coordinate_system.GXcs``.
+                            ``coordinate_system.Coordinate_system``.
             :media:         media size as a tuple(x_cm, y_cm), or as a standard media name string.
                             If the media name contains 'portrait', the media is media aspect will be portrait.
                             Named media sizes are read from media.csv, which includes A4, A3, A2, A1, A0, 

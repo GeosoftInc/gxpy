@@ -286,7 +286,7 @@ class Wkt:
         """
         return find_key(self._wkt, k)
 
-class GXcs:
+class Coordinate_system:
     """
     Coordinate system class. A coordinate system defines a horizontal and vertical reference
     system to locate (x, y, z) cartesian coordinates relative to the Earth.
@@ -304,7 +304,7 @@ class GXcs:
                 
                 - geosoft.gxapi.GXipj instance
                  
-                - GXcs instance, returns a copy of the GXcs instance
+                - Coordinate_system instance, returns a copy of the Coordinate_system instance
 
     :Dictionary Structure:
     
@@ -346,7 +346,7 @@ class GXcs:
 
             :Example:
             
-                cs = geosoft.gxpy.GXcs({'type': 'local', 'lon_lat': (-96, 43), 'azimuth': 25})
+                cs = geosoft.gxpy.Coordinate_system({'type': 'local', 'lon_lat': (-96, 43), 'azimuth': 25})
 
         :EPSG: (http://spatialreference.org/)
 
@@ -401,7 +401,7 @@ class GXcs:
                 cs.get_gxf(s1, s2, s3, s4, s5)
                 self._from_gxf((s1.value, s2.value, s3.value, s4.value, s5.value))
 
-            elif isinstance(cs, GXcs):
+            elif isinstance(cs, Coordinate_system):
                 self._from_gxf(cs.gxf)
 
             elif isinstance(cs, dict):
@@ -780,8 +780,8 @@ class GXpj:
     """
     Class to reproject coordinates.
 
-    :params cs_from:  GXcs from coordinate system
-    :params cs_to:    GXcs to coordinate system
+    :params cs_from:  Coordinate_system from coordinate system
+    :params cs_to:    Coordinate_system to coordinate system
 
     .. versionadded:: 9.2
     """

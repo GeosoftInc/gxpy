@@ -209,7 +209,7 @@ class Test(GXPYTest):
         self.assertTrue(p1 == p2)
         p1.cs = "WGS 84"
         self.assertTrue(p1 == p2)
-        p1.cs = gxcs.GXcs("WGS 84 [geoid]")
+        p1.cs = gxcs.Coordinate_system("WGS 84 [geoid]")
         self.assertTrue(p1 == p2)
 
     def test_p2(self):

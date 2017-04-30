@@ -30,7 +30,7 @@ class Geometry:
     Geometry base class.
 
     :param hcs, vcs:
-            horizontal and vertical coordinate systems (see :class::`gxpy.coordinate_system.GXcs`)
+            horizontal and vertical coordinate systems (see :class::`gxpy.coordinate_system.Coordinate_system`)
 
     .. versionadded:: 9.2
     """
@@ -45,7 +45,7 @@ class Geometry:
         return "{}({})".format(self.__class__, self.__dict__)
 
     def __init__(self, **kwargs):
-         self._cs = gxcs.GXcs(**kwargs)
+         self._cs = gxcs.Coordinate_system(**kwargs)
 
     def __eq__(self, other):
         return self._cs.same_as(other._cs)
@@ -56,7 +56,7 @@ class Geometry:
 
     @cs.setter
     def cs(self, cs):
-        self._cs = gxcs.GXcs(cs)
+        self._cs = gxcs.Coordinate_system(cs)
 
 
 class Point(Geometry):

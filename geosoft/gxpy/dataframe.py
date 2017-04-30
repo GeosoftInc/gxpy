@@ -36,7 +36,7 @@ def table_record(table, rec):
     .. versionadded:: 9.2
     """
 
-    t = GXdf(table, records=rec)
+    t = Data_frame(table, records=rec)
     return t.to_dict(orient='records')[0]
 
 def table_column(table, col):
@@ -50,13 +50,13 @@ def table_column(table, col):
     .. versionadded:: 9.2
     """
 
-    t = GXdf(table, columns=col).to_dict(orient='index')
+    t = Data_frame(table, columns=col).to_dict(orient='index')
     d = {}
     for rec in t.keys():
         d[rec] = t[rec][col]
     return d
 
-class GXdf(pd.DataFrame):
+class Data_frame(pd.DataFrame):
     """
     Pandas DataFrame from a Geosoft table.
 
@@ -96,7 +96,7 @@ class GXdf(pd.DataFrame):
 
         include geosoft.gxpy as gxpy
         with gxpy.GXpy() as gx:
-            with gxpy.dataframe.GXdf('rockcode') as df:
+            with gxpy.dataframe.Data_frame('rockcode') as df:
                 print(len(df))
                 print(df.loc['bif', 'DESCRIPTION']) # "BANDED IRON FM"
                 print(df.loc['bif'][1])             # "BANDED IRON FM"

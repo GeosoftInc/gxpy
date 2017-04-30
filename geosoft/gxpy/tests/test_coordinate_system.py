@@ -17,7 +17,7 @@ class Test(GXPYTest):
         self.start()
 
         # name
-        with gxcs.GXcs( 'DHDN / Okarito 2000') as cs:
+        with gxcs.Coordinate_system( 'DHDN / Okarito 2000') as cs:
             gxfs = cs.gxf
             self.assertEqual(gxfs[0],'DHDN / Okarito 2000')
             self.assertEqual(gxfs[1],'DHDN,6377397.155,0.0816968312225275,0')
@@ -36,7 +36,7 @@ class Test(GXPYTest):
             self.assertEqual(cs.cs_name(what=gxcs.NAME_UNIT_FULL),'metre')
 
         # GXF strings
-        with gxcs.GXcs(['','DHDN','Okarito 2000','','']) as cs:
+        with gxcs.Coordinate_system(['','DHDN','Okarito 2000','','']) as cs:
             gxfs = cs.gxf
             self.assertEqual(gxfs[0],'DHDN / Okarito 2000')
             self.assertEqual(gxfs[1],'DHDN,6377397.155,0.0816968312225275,0')
@@ -46,7 +46,7 @@ class Test(GXPYTest):
             dct = cs.coordinate_dict().copy()
 
         # dictionary
-        with gxcs.GXcs(dct) as cs:
+        with gxcs.Coordinate_system(dct) as cs:
             gxfs = cs.gxf
             self.assertEqual(gxfs[0],'DHDN / Okarito 2000')
             self.assertEqual(gxfs[1],'DHDN,6377397.155,0.0816968312225275,0')
@@ -62,20 +62,20 @@ class Test(GXPYTest):
             self.assertEqual(gxfs[4],'"DHDN to WGS 84 (1)",582,105,414,1.04,0.35,-3.08,8.29999999996112')
 
         # name with a separate vcs
-        with gxcs.GXcs('DHDN / Okarito 2000 [geoid]') as cs:
+        with gxcs.Coordinate_system('DHDN / Okarito 2000 [geoid]') as cs:
             self.assertEqual(cs.cs_name(what=gxcs.NAME_HCS_VCS), str(cs))
             self.assertEqual(cs.cs_name(what=gxcs.NAME_VCS), 'geoid')
             self.assertEqual(cs.cs_name(what=gxcs.NAME_HCS_VCS), 'DHDN / Okarito 2000 [geoid]')
 
         # name with embedded vcs
-        with gxcs.GXcs('DHDN / Okarito 2000 [geoid]') as cs:
+        with gxcs.Coordinate_system('DHDN / Okarito 2000 [geoid]') as cs:
             self.assertEqual(cs.cs_name(what=gxcs.NAME_HCS_VCS), str(cs))
             self.assertEqual(cs.cs_name(what=gxcs.NAME_VCS), 'geoid')
             self.assertEqual(cs.cs_name(what=gxcs.NAME_HCS_VCS), 'DHDN / Okarito 2000 [geoid]')
 
         ipj = gxapi.GXIPJ.create()
         ipj.set_gxf('', 'DHDN', 'Okarito 2000', '', '')
-        with gxcs.GXcs(ipj) as cs:
+        with gxcs.Coordinate_system(ipj) as cs:
             gxfs = cs.gxf
             self.assertEqual(gxfs[0],'DHDN / Okarito 2000')
             self.assertEqual(gxfs[1],'DHDN,6377397.155,0.0816968312225275,0')
@@ -93,7 +93,7 @@ class Test(GXPYTest):
             self.assertEqual(cs.cs_name(what=gxcs.NAME_UNIT),'m')
             self.assertEqual(cs.cs_name(what=gxcs.NAME_UNIT_FULL),'metre')
 
-        with gxcs.GXcs(gxcs.GXcs(ipj)) as cs:
+        with gxcs.Coordinate_system(gxcs.Coordinate_system(ipj)) as cs:
             self.assertEqual(cs.vcs, '')
             gxfs = cs.gxf
             self.assertEqual(gxfs[0],'DHDN / Okarito 2000')
@@ -139,7 +139,7 @@ class Test(GXPYTest):
         self.assertEqual(vcs, "")
         self.assertEqual(gxcs.name_from_hcs_orient_vcs(hcs, orient, vcs), "DHDN / Okarito 2000")
 
-        with gxcs.GXcs( 'DHDN / Okarito 2000 [geodetic]') as cs:
+        with gxcs.Coordinate_system( 'DHDN / Okarito 2000 [geodetic]') as cs:
             gxfs = cs.gxf
             self.assertEqual(gxfs[0],'DHDN / Okarito 2000 [geodetic]')
             self.assertEqual(gxfs[1],'DHDN,6377397.155,0.0816968312225275,0')
@@ -156,7 +156,7 @@ class Test(GXPYTest):
             self.assertEqual(cs.cs_name(what=gxcs.NAME_UNIT),'m')
             self.assertEqual(cs.cs_name(what=gxcs.NAME_UNIT_FULL),'metre')
 
-        with gxcs.GXcs('DHDN [geoid]') as cs:
+        with gxcs.Coordinate_system('DHDN [geoid]') as cs:
             self.assertEqual(cs.cs_name(what=gxcs.NAME_HCS_VCS), cs.name)
             self.assertEqual(cs.cs_name(what=gxcs.NAME_HCS), cs.hcs)
             self.assertEqual(cs.cs_name(what=gxcs.NAME_VCS), cs.vcs)
@@ -164,7 +164,7 @@ class Test(GXPYTest):
             self.assertEqual(cs.cs_name(what=gxcs.NAME_VCS), 'geoid')
             self.assertEqual(cs.cs_name(what=gxcs.NAME_HCS_VCS), 'DHDN [geoid]')
 
-        with gxcs.GXcs('DHDN [geodetic]') as cs:
+        with gxcs.Coordinate_system('DHDN [geodetic]') as cs:
             self.assertEqual(cs.cs_name(what=gxcs.NAME_HCS_VCS), cs.name)
             self.assertEqual(cs.cs_name(what=gxcs.NAME_HCS), cs.hcs)
             self.assertEqual(cs.cs_name(what=gxcs.NAME_VCS), cs.vcs)
@@ -175,16 +175,16 @@ class Test(GXPYTest):
     def test_vcs(self):
         self.start()
 
-        self.assertEqual(gxcs.GXcs("nad83 / UTM zone 15N [NAVD92]").name, 'NAD83 / UTM zone 15N [NAVD92]')
-        self.assertEqual(gxcs.GXcs("nad83 [NAVD92]").name, 'NAD83 [NAVD92]')
-        self.assertFalse(gxcs.GXcs("nad83 [NAVD92]").same_as(gxcs.GXcs("NAD83 [geodetic]")))
-        self.assertFalse(gxcs.GXcs("nad83 [geoid]").same_vcs(gxcs.GXcs("NAD27 [NAVD92]")))
+        self.assertEqual(gxcs.Coordinate_system("nad83 / UTM zone 15N [NAVD92]").name, 'NAD83 / UTM zone 15N [NAVD92]')
+        self.assertEqual(gxcs.Coordinate_system("nad83 [NAVD92]").name, 'NAD83 [NAVD92]')
+        self.assertFalse(gxcs.Coordinate_system("nad83 [NAVD92]").same_as(gxcs.Coordinate_system("NAD83 [geodetic]")))
+        self.assertFalse(gxcs.Coordinate_system("nad83 [geoid]").same_vcs(gxcs.Coordinate_system("NAD27 [NAVD92]")))
 
     def test_pj(self):
         self.start()
 
-        with gxcs.GXcs('DHDN / Okarito 2000') as cs:
-            with gxcs.GXcs('DHDN') as csll:
+        with gxcs.Coordinate_system('DHDN / Okarito 2000') as cs:
+            with gxcs.Coordinate_system('DHDN') as csll:
                 with gxcs.GXpj(cs, csll) as pj:
 
                     lon, lat = pj.convert((500000, 6500000))
@@ -212,24 +212,24 @@ class Test(GXPYTest):
     def test_localgrid(self):
         self.start()
 
-        self.assertRaises(gxcs.CSException, gxcs.GXcs, {'type': 'local'})
+        self.assertRaises(gxcs.CSException, gxcs.Coordinate_system, {'type': 'local'})
 
         csdict = {'type': 'local', 'lon_lat': (-96,43)}
-        csd = gxcs.GXcs(csdict)
+        csd = gxcs.Coordinate_system(csdict)
         self.assertEqual(csd.name, 'WGS 84 / *Local(43,-96,0,0)')
 
-        with gxcs.GXpj(csd, gxcs.GXcs('WGS 84')) as pj:
+        with gxcs.GXpj(csd, gxcs.Coordinate_system('WGS 84')) as pj:
             lon, lat, z = pj.convert((0, 0, 0))
             self.assertAlmostEqual(lat, 43)
             self.assertAlmostEqual(lon, -96)
             self.assertAlmostEqual(z, 0)
 
         csdict['azimuth'] = 25
-        csd = gxcs.GXcs(csdict)
+        csd = gxcs.Coordinate_system(csdict)
         self.assertEqual(csd.name, 'WGS 84 / *Local(43,-96,0,0) <0,0,0,0,0,25>')
         self.assertEqual(csd.gxf[2], '"Oblique Stereographic",43,-96,0.9996,0,0')
 
-        with gxcs.GXpj(gxcs.GXcs('WGS 84'), csd) as pj:
+        with gxcs.GXpj(gxcs.Coordinate_system('WGS 84'), csd) as pj:
             x, y, z = pj.convert((-96, 43, 0))
             self.assertAlmostEqual(x, 0)
             self.assertAlmostEqual(y, 0)
@@ -240,20 +240,20 @@ class Test(GXPYTest):
             self.assertAlmostEqual(z, 0)
 
         csdict['origin'] = (1800, 500)
-        csd = gxcs.GXcs(csdict)
+        csd = gxcs.Coordinate_system(csdict)
         self.assertEqual(csd.name, 'WGS 84 / *Local(43,-96,1800,500) <0,0,0,0,0,25>')
         self.assertEqual(csd.gxf[2], '"Oblique Stereographic",43,-96,0.9996,1842.66314753632,-307.558977614934')
 
         csdict['elevation'] = 800.5
         csdict['vcs'] = 'geoid'
-        csd = gxcs.GXcs(csdict)
+        csd = gxcs.Coordinate_system(csdict)
         self.assertEqual(csd.name, 'WGS 84 / *Local(43,-96,1800,500) <0,0,800.5,0,0,25>')
         self.assertEqual(csd.gxf[2], '"Oblique Stereographic",43,-96,0.9996,1842.66314753632,-307.558977614934')
-        with gxcs.GXpj(gxcs.GXcs('WGS 84'), csd) as pj:
+        with gxcs.GXpj(gxcs.Coordinate_system('WGS 84'), csd) as pj:
             x, y = pj.convert((-96, 43))
             self.assertAlmostEqual(x, 1800)
             self.assertAlmostEqual(y, 500)
-        with gxcs.GXpj(csd, gxcs.GXcs('WGS 84')) as pj:
+        with gxcs.GXpj(csd, gxcs.Coordinate_system('WGS 84')) as pj:
             lon, lat, z = pj.convert((1800, 500, 0))
             self.assertAlmostEqual(lat, 43)
             self.assertAlmostEqual(lon, -96)

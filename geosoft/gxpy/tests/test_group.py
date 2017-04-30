@@ -263,7 +263,7 @@ class Test(GXPYTest):
         grid_file = os.path.join(folder, 'test_agg_utm.grd')
         map_file = os.path.join(self.gx.temp_folder(), "test_agg_utm")
 
-        with gxgrd.GXgrd(grid_file) as grd:
+        with gxgrd.Grid(grid_file) as grd:
             cs = grd.cs
             area = grd.extent_2d()
         with gxmap.Map.new(map_file,
@@ -279,7 +279,7 @@ class Test(GXPYTest):
                 with gxg.Draw(v, 'line') as g:
                     g.rectangle(area, pen=g.new_pen(line_thick=0.1, line_color='R'))
 
-                with gxagg.GXagg.new(grid_file) as agg:
+                with gxagg.Aggregate_image.new(grid_file) as agg:
                     with gxg.Agg_group.new(v, agg) as gagg:
                         self.assertEqual(gagg.name, str(agg))
 
@@ -296,7 +296,7 @@ class Test(GXPYTest):
         grid_file = os.path.join(folder, 'test_agg_utm.grd')
         map_file = os.path.join(self.gx.temp_folder(), "test_agg_utm")
 
-        with gxgrd.GXgrd(grid_file) as grd:
+        with gxgrd.Grid(grid_file) as grd:
             cs = grd.cs
             area = grd.extent_2d()
         with gxmap.Map.new(map_file,
@@ -311,7 +311,7 @@ class Test(GXPYTest):
                 with gxg.Draw(v, 'line') as g:
                     g.rectangle(area, pen=g.new_pen(line_thick=0.1, line_color='G'))
 
-                with gxagg.GXagg.new(grid_file) as agg:
+                with gxagg.Aggregate_image.new(grid_file) as agg:
                     gxg.Agg_group.new(v, agg)
 
         self.crc_map(map_file)
@@ -326,7 +326,7 @@ class Test(GXPYTest):
                                  scale=(ex[2] - ex[0]) / 0.2) as gmap:
                 map_file = gmap.file_name
                 with gxv.View(gmap, "data") as v:
-                    with gxagg.GXagg.new(grid_file, zone=zone, shade=shade) as agg:
+                    with gxagg.Aggregate_image.new(grid_file, zone=zone, shade=shade) as agg:
                         gxg.Agg_group.new(v, agg)
                 gmap.delete_view('base')
 
@@ -336,11 +336,11 @@ class Test(GXPYTest):
         folder, files = gsys.unzip(os.path.join(os.path.dirname(__file__), 'testgrids.zip'),
                                    folder=self.gx.temp_folder())
 
-        with gxgrd.GXgrd(os.path.join(folder, 'test_agg_utm.grd')) as grd:
+        with gxgrd.Grid(os.path.join(folder, 'test_agg_utm.grd')) as grd:
             ex = grd.extent_2d()
             grid_file = 'test_zone'
             gxgrd.delete_files(grid_file)
-            with gxgrd.GXgrd.copy(grd, grid_file) as test:
+            with gxgrd.Grid.copy(grd, grid_file) as test:
                 grid_file = test.file_name
 
         test_zone(gxagg.ZONE_LINEAR, "linear_shade", shade=True)
@@ -600,7 +600,7 @@ class Test(GXPYTest):
         grid_file = os.path.join(folder, 'test_agg_utm.grd')
         map_file = os.path.join(self.gx.temp_folder(), "test_agg_utm")
 
-        with gxgrd.GXgrd(grid_file) as grd:
+        with gxgrd.Grid(grid_file) as grd:
             cs = grd.cs
             area = grd.extent_2d()
         with gxmap.Map.new(map_file, fixed_size=False,
@@ -617,7 +617,7 @@ class Test(GXPYTest):
                     g.rectangle(v.extent_clip, pen=g.new_pen(line_thick=0.1, line_color='G'))
                     g.rectangle(v.extent_all, pen=g.new_pen(line_thick=0.1, line_color='B'))
 
-                with gxagg.GXagg.new(grid_file) as agg:
+                with gxagg.Aggregate_image.new(grid_file) as agg:
                     itr = gxapi.GXITR.create()
                     agg.gxagg.get_layer_itr(0, itr)
                     gxg.legend_color_bar(v, 'color_legend', itr)
@@ -633,7 +633,7 @@ class Test(GXPYTest):
         grid_file = os.path.join(folder, 'test_agg_utm.grd')
         map_file = os.path.join(self.gx.temp_folder(), "test_agg_utm")
 
-        with gxgrd.GXgrd(grid_file) as grd:
+        with gxgrd.Grid(grid_file) as grd:
             cs = grd.cs
             area = grd.extent_2d()
         with gxmap.Map.new(map_file, fixed_size=False,
@@ -649,7 +649,7 @@ class Test(GXPYTest):
                     g.rectangle(v.extent_clip, pen=g.new_pen(line_thick=0.1, line_color='G'))
                     g.rectangle(v.extent_all, pen=g.new_pen(line_thick=0.1, line_color='B'))
 
-                with gxagg.GXagg.new(grid_file) as agg:
+                with gxagg.Aggregate_image.new(grid_file) as agg:
                     with gxg.Agg_group.new(v, agg) as g:
                         agg_group_name = g.name
 

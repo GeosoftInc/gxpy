@@ -48,7 +48,7 @@ def running_script():
 
     return not gxapi.GXSYS.interactive()
 
-class GXproject:
+class Geosoft_project:
 
     def _list_open_docs(self, dtype):
         gxapi.GXPROJ.list_loaded_documents(self._docvv.gxvv, dtype)

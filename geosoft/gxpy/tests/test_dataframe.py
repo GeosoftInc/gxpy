@@ -17,7 +17,7 @@ class Test(GXPYTest):
 
         self.assertEqual(gxdf.__version__, geosoft.__version__)
 
-        with gxdf.GXdf(initial='maptmpl') as df:
+        with gxdf.Data_frame(initial='maptmpl') as df:
             #self.gxp.log(df)
             self.assertTrue(len(df) > 0)
             self.assertTrue('LAYOUT' in df.columns)
@@ -25,26 +25,26 @@ class Test(GXPYTest):
             self.assertTrue('Unlimited figure' in df.index)
             self.assertEqual(df.loc['portrait C', 'MARGIN_LEFT'], '3')
 
-        with gxdf.GXdf(initial='datumtrf', records="*Cape to WGS 84 (3*)") as df:
+        with gxdf.Data_frame(initial='datumtrf', records="*Cape to WGS 84 (3*)") as df:
             self.assertEqual(len(df), 1)
             self.assertEqual(df.loc['*Cape to WGS 84 (3*)', 'DX'], '-138')
 
-        with gxdf.GXdf(initial='datumtrf', records=("*Cape to WGS 84 (3*)","Tete to WGS 84 (6)")) as df:
+        with gxdf.Data_frame(initial='datumtrf', records=("*Cape to WGS 84 (3*)","Tete to WGS 84 (6)")) as df:
             self.assertEqual(len(df), 2)
             self.assertEqual(df.loc['*Cape to WGS 84 (3*)', 'DX'], '-138')
             self.assertEqual(df.loc['Tete to WGS 84 (6)', 'CODE'], '6901')
 
-        with gxdf.GXdf(initial='datumtrf', columns="DX") as df:
+        with gxdf.Data_frame(initial='datumtrf', columns="DX") as df:
             self.assertEqual(len(df.columns), 1)
             self.assertEqual(df.loc['*Cape to WGS 84 (3*)', 'DX'], '-138')
 
-        with gxdf.GXdf(initial='datumtrf', columns=["DX", "DZ"]) as df:
+        with gxdf.Data_frame(initial='datumtrf', columns=["DX", "DZ"]) as df:
             self.assertEqual(len(df.columns), 2)
             self.assertEqual(df.loc['*Cape to WGS 84 (3*)', 'DX'], '-138')
             self.assertEqual(df.loc['*Cape to WGS 84 (3*)', 'DZ'], '-289')
 
 
-        with gxdf.GXdf(initial='datumtrf',
+        with gxdf.Data_frame(initial='datumtrf',
                        columns=("DX", "DZ", "CODE"),
                        records=("*Cape to WGS 84 (3*)","Tete to WGS 84 (6)")) as df:
             self.assertEqual(len(df), 2)
@@ -56,10 +56,10 @@ class Test(GXPYTest):
     def test_raises(self):
         self.start()
 
-        self.assertRaises(gxdf.DfException, gxdf.GXdf, initial='bogus')
-        self.assertRaises(gxdf.DfException, gxdf.GXdf, initial='datumtrf', columns="NOT_THERE")
-        self.assertRaises(gxdf.DfException, gxdf.GXdf, initial='datumtrf', records="NOT_THERE")
-        self.assertRaises(gxdf.DfException, gxdf.GXdf, initial='datumtrf', records="")
+        self.assertRaises(gxdf.DfException, gxdf.Data_frame, initial='bogus')
+        self.assertRaises(gxdf.DfException, gxdf.Data_frame, initial='datumtrf', columns="NOT_THERE")
+        self.assertRaises(gxdf.DfException, gxdf.Data_frame, initial='datumtrf', records="NOT_THERE")
+        self.assertRaises(gxdf.DfException, gxdf.Data_frame, initial='datumtrf', records="")
 
 
     def test_dict(self):
@@ -90,7 +90,7 @@ class Test(GXPYTest):
             f.write('cal,CAL,CALCRETE,315,,,,B\n')
             f.write('cbt,CBT,CARBONATITE,305,,,,R128G128B192\n')
 
-        with gxpy.dataframe.GXdf(rcname) as df:
+        with gxpy.dataframe.Data_frame(rcname) as df:
             self.assertEqual(len(df), 4)
             self.assertEqual(df.loc['bif', 'DESCRIPTION'], "BANDED IRON FM")
             self.assertEqual(df.loc['bif'][1], "BANDED IRON FM")

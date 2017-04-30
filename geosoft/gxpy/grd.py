@@ -137,7 +137,7 @@ FILE_READ = 0
 FILE_READWRITE = 1     # file exists, but can change properties
 FILE_NEW = 2
 
-class GXgrd():
+class Grid():
     """
     Grid and image class.
 
@@ -302,7 +302,7 @@ class GXgrd():
     @classmethod
     def copy(cls, grd, file_name, dtype=None, overwrite=False):
         """
-        Create a new GXgrd instance as a copy of an existing grid.
+        Create a new Grid instance as a copy of an existing grid.
 
         :param grd:         grid instance to save as a new grid
         :param file_name:   name of the new grid (file with optional decorations)
@@ -324,7 +324,7 @@ class GXgrd():
             dec1 = dec0
         file_name = decorate_name(os.path.join(path1, root1) + ext1, dec1)
 
-        copy = GXgrd.new(file_name, p, overwrite=overwrite)
+        copy = Grid.new(file_name, p, overwrite=overwrite)
         grd._img.copy(copy._img)
 
         return copy
@@ -334,7 +334,7 @@ class GXgrd():
         """
         Create a windowed instance of a grid.
         
-        :param grd:         gxpy.grd.GXgrd instance
+        :param grd:         gxpy.grd.Grid instance
         :param name:        name for the windowed_grid, default is constructed from input grid
         :param x0:          integer index of the first X point
         :param y0:          integer index of the first Y point
@@ -392,7 +392,7 @@ class GXgrd():
 
         :param data:        2D numpy data array, ot a 2d list.  Must be 2D.
         :param file_name:   name of the file
-        :return:            GXgrd instance
+        :return:            Grid instance
 
         .. versionadded:: 9.1
         """
@@ -553,13 +553,13 @@ class GXgrd():
     @property
     def cs(self):
         """
-        grid coordinate system as a GXcs.
+        grid coordinate system as a Coordinate_system.
 
         .. versionadded:: 9.2
         """
-        cs = gxcs.GXcs()
+        cs = gxcs.Coordinate_system()
         self._img.get_ipj(cs.gxipj)
-        return gxcs.GXcs(cs)
+        return gxcs.Coordinate_system(cs)
 
     def properties(self):
         """
@@ -608,8 +608,8 @@ class GXgrd():
 
     @cs.setter
     def cs(self, cs):
-        if not isinstance(cs, gxcs.GXcs):
-            cs = gxcs.GXcs(cs)
+        if not isinstance(cs, gxcs.Coordinate_system):
+            cs = gxcs.Coordinate_system(cs)
         self._img.set_ipj(cs.gxipj)
 
     def set_properties(self, properties):
@@ -644,8 +644,8 @@ class GXgrd():
                            -properties.get('rot', 0.0))
         cs = properties.get('cs', None)
         if cs is not None:
-            if not isinstance(cs, gxcs.GXcs):
-                cs = gxcs.GXcs(cs)
+            if not isinstance(cs, gxcs.Coordinate_system):
+                cs = gxcs.Coordinate_system(cs)
             self._img.set_ipj(cs.gxipj)
 
     def _geth_pg(self):
@@ -699,7 +699,7 @@ class GXgrd():
 
     def indexWindow(self, name, x0=0, y0=0, nx=None, ny=None):
         """
-        .. deprecated:: 9.2 gxpy.GXgrd.index_window()
+        .. deprecated:: 9.2 gxpy.Grid.index_window()
         """
         return self.index_window(self, name, x0, y0, nx, ny, overwrite=True)
 
@@ -781,13 +781,13 @@ def grid_mosaic(mosaic, gridList, typeDecoration='', report=None):
     :param gridList:        list of input grid names
     :param typeDecoration:  decoration for input grids if not default
     :param report:          string reporting function, report=print to print progress
-    :return:                GXgrd instance, must be closed with a call to close().
+    :return:                Grid instance, must be closed with a call to close().
 
     .. versionadded:: 9.1
     """
 
     def props(gn, repro=None):
-        with GXgrd.open(gn) as g:
+        with Grid.open(gn) as g:
             if repro:
                 g._img.create_projected2(repro[0], repro[1])
             p = g.properties()
@@ -837,7 +837,7 @@ def grid_mosaic(mosaic, gridList, typeDecoration='', report=None):
         return dsx, dsy
 
     def paste(gn, mpg):
-        with GXgrd.open(gn) as g:
+        with Grid.open(gn) as g:
             p = g.properties()
             nX = p.get('nx')
             nY = p.get('ny')
@@ -867,7 +867,7 @@ def grid_mosaic(mosaic, gridList, typeDecoration='', report=None):
     if report is not None:
         report('')
         report('Mosaic: dim({},{}) x({},{}) y({},{}), cell({})...'.format(nX, nY, x0, xm, y0, ym, p.get('dx')))
-    master = GXgrd.new(mosaic, p)
+    master = Grid.new(mosaic, p)
     if report:
         report('Memory image ready ({}) dim({},{}) x0,y0({},{})'.format(master, master.nx, master.ny,
                                                                         master.x0, master.y0))
@@ -895,7 +895,7 @@ def gridBool(*args, **kwargs):
 def grid_bool(g1, g2, joinedGrid, opt=1, size=3, olap=1):
     """
 
-    :param g1,g2:   GXgrd of grids to merge
+    :param g1,g2:   Grid of grids to merge
     :param new:     new output grid, overwritten if it exists
     :param opt:     logic to use on overlap points, default 1 (OR):
 
@@ -922,17 +922,17 @@ def grid_bool(g1, g2, joinedGrid, opt=1, size=3, olap=1):
         2   use grid 2
         === ==========================================
 
-    :returns:       GXgrd instance of the merged output grid, must be closed with a call to close().
+    :returns:       Grid instance of the merged output grid, must be closed with a call to close().
 
     .. versionadded:: 9.1
     """
 
     close_g1 = close_g2 = False
     if isinstance(g1, str):
-        g1 = GXgrd.open(g1)
+        g1 = Grid.open(g1)
         close_g1 = True
     if isinstance(g2, str):
-        g2 = GXgrd.open(g2)
+        g2 = Grid.open(g2)
         close_g2 = True
 
     gxapi.GXIMU.grid_bool(g1._img, g2._img, joinedGrid, opt, size, olap)
@@ -942,4 +942,4 @@ def grid_bool(g1, g2, joinedGrid, opt=1, size=3, olap=1):
     if close_g2:
         g2.close()
 
-    return GXgrd.open(joinedGrid)
+    return Grid.open(joinedGrid)

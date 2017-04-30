@@ -81,7 +81,7 @@ class Test(GXPYTest):
             name = os.path.join(self.gx.temp_folder(), "test")
         gxmap.delete_files(name)
         if cs is None:
-            cs = gxcs.GXcs("WGS 84 / UTM zone 15N")
+            cs = gxcs.Coordinate_system("WGS 84 / UTM zone 15N")
         if margins is None:
             margins = (1.5, 1.5, 3, 1)
         return gxmap.Map.new(file_name=name,
@@ -133,7 +133,7 @@ class Test(GXPYTest):
             self.assertTrue('data' in views)
 
         with gxmap.Map.new(data_area=(0, 0, 100, 80),
-                             cs=gxcs.GXcs("DHDN / Okarito 2000 [geodetic]")) as map:
+                             cs=gxcs.Coordinate_system("DHDN / Okarito 2000 [geodetic]")) as map:
             with gxv.View(map, 'data', mode=gxv.WRITE_OLD) as v:
                 self.assertEqual("DHDN / Okarito 2000 [geodetic]", str(v.cs))
 
@@ -205,7 +205,7 @@ class Test(GXPYTest):
             self.assertEqual(map.get_class_name('mine'), 'boom')
 
         with gxmap.Map.new(data_area=(0, 0, 100, 80),
-                             cs=gxcs.GXcs("DHDN / Okarito 2000 [geodetic]")) as map:
+                             cs=gxcs.Coordinate_system("DHDN / Okarito 2000 [geodetic]")) as map:
 
             self.assertEqual(map.get_class_name('base'), 'base')
             self.assertEqual(map.get_class_name('data'), 'data')
@@ -419,7 +419,7 @@ class Test(GXPYTest):
     def test_surround_1(self):
         self.start()
 
-        cs = gxcs.GXcs('NAD83 / UTM zone 15N')
+        cs = gxcs.Coordinate_system('NAD83 / UTM zone 15N')
         with gxmap.Map.new(data_area=(350000, 7000000, 400000, 7030000), cs=cs) as map:
             mapfile = map.file_name
             with gxv.View(map, 'data') as v:
@@ -431,7 +431,7 @@ class Test(GXPYTest):
     def test_surround_2(self):
         self.start()
 
-        cs = gxcs.GXcs('NAD83 / UTM zone 15N')
+        cs = gxcs.Coordinate_system('NAD83 / UTM zone 15N')
         with gxmap.Map.new(data_area=(350000, 7000000, 400000, 7030000), cs=cs) as map:
             mapfile = map.file_name
             with gxv.View(map, 'data') as v:
@@ -563,11 +563,11 @@ class Test(GXPYTest):
     def test_annotate_ll_local(self):
         self.start()
 
-        cs = gxcs.GXcs({'type': 'local',
+        cs = gxcs.Coordinate_system({'type': 'local',
                         'lon_lat': (-96, 45),
                         'datum': 'nad83',
                         'azimuth': -30})
-        cs = gxcs.GXcs("NAD27 / UTM zone 15N <425000,6500145,0,0,0,-30>")
+        cs = gxcs.Coordinate_system("NAD27 / UTM zone 15N <425000,6500145,0,0,0,-30>")
         name = os.path.join(gx.GXpy().temp_folder(), "test")
         with gxmap.Map.new(file_name='mapplot_anoxy_rotated_cs_bug_UTM',
                              overwrite=True,

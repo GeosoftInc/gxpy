@@ -100,7 +100,7 @@ class Test(GXPYTest):
                 self.assertEqual(vw.extent_clip,area)
                 self.assertEqual(vw.extent_map_cm(vw.extent_clip), (0, 0, xcm, ycm))
                 self.assertEqual(vw.scale, scale, scale)
-                self.assertTrue(vw.cs.same_as(gxcs.GXcs("WGS 84 / UTM zone 34N")))
+                self.assertTrue(vw.cs.same_as(gxcs.Coordinate_system("WGS 84 / UTM zone 34N")))
                 self.assertEqual(vw.units_per_metre, 1.0)
                 self.assertEqual(vw.units_name, 'm')
 
@@ -121,8 +121,8 @@ class Test(GXPYTest):
                 self.assertAlmostEqual(mx[3], loc[1] + ycm)
                 self.assertAlmostEqual(vw.scale, scale)
                 self.assertAlmostEqual(vw.aspect, 1.0)
-                self.assertFalse(vw.cs.same_as(gxcs.GXcs("WGS 84 / UTM zone 34N")))
-                self.assertTrue(vw.cs.same_as(gxcs.GXcs(("WGS 84 / UTM zone 34N", '', '', 'ftUS', ''))))
+                self.assertFalse(vw.cs.same_as(gxcs.Coordinate_system("WGS 84 / UTM zone 34N")))
+                self.assertTrue(vw.cs.same_as(gxcs.Coordinate_system(("WGS 84 / UTM zone 34N", '', '', 'ftUS', ''))))
                 self.assertAlmostEqual(vw.units_per_metre, 3.28083333333334)
                 self.assertEqual(vw.units_name, 'ftUS')
 
@@ -143,7 +143,7 @@ class Test(GXPYTest):
                 self.assertAlmostEqual(mx[3], loc[1] + ycm)
                 self.assertAlmostEqual(vw.scale, scale)
                 self.assertAlmostEqual(vw.aspect, 1.0)
-                self.assertTrue(vw.cs.same_as(gxcs.GXcs(('', '', '', 'ftUS', ''))))
+                self.assertTrue(vw.cs.same_as(gxcs.Coordinate_system(('', '', '', 'ftUS', ''))))
                 self.assertAlmostEqual(vw.units_per_metre, 3.28083333333334)
                 self.assertEqual(vw.units_name, 'ftUS')
 
@@ -154,7 +154,7 @@ class Test(GXPYTest):
                 self.assertEqual(vw.scale, 50000)
                 self.assertEqual(vw.aspect, 0.2)
                 self.assertEqual(vw.extent_map_cm(vw.extent_clip), (10., 25., 40., 125.))
-                self.assertTrue(vw.cs.same_as(gxcs.GXcs()))
+                self.assertTrue(vw.cs.same_as(gxcs.Coordinate_system()))
 
     def test_scale(self):
         self.start()

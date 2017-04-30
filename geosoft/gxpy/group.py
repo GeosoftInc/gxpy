@@ -435,7 +435,7 @@ class Draw(Group):
             self.view.gxview.set_user_ipj(self.view.cs.gxipj)
             self._drawing_cs = self.view.cs
         else:
-            self._drawing_cs = gxcs.GXcs(cs).gxipj
+            self._drawing_cs = gxcs.Coordinate_system(cs).gxipj
             self.view.gxview.set_user_ipj(self._drawing_cs)
 
     @property
@@ -1760,7 +1760,7 @@ class Agg_group(Group):
     
     :param view:        gxpy.View instance
     :param name:        group name, default uses the aggregate name
-    :param agg:         GXagg instance
+    :param agg:         Aggregate_image instance
     
     Constructors:
 
@@ -1772,7 +1772,7 @@ class Agg_group(Group):
     Properties:
     
         :name:  aggregate group name
-        :agg:   gxpy.GXagg instance
+        :agg:   gxpy.Aggregate_image instance
     
     .. versionadded:: 9.2
     """
@@ -1804,7 +1804,7 @@ class Agg_group(Group):
              group_name):
         agg_group = cls(view, group_name, mode=READ_ONLY)
         group_number = view.gxview.find_group(group_name)
-        agg_group.agg = gxagg.GXagg.open(view.gxview.get_aggregate(group_number))
+        agg_group.agg = gxagg.Aggregate_image.open(view.gxview.get_aggregate(group_number))
         return agg_group
 
 class Color_map:

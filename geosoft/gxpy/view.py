@@ -72,7 +72,7 @@ class View:
 
         The following are used with ``mode=gxpy.view.WRITE_NEW``:
 
-        :cs:            coordinate system as a gxpy.coordinate_system.GXcs instance, or one of the GXcs
+        :cs:            coordinate system as a gxpy.coordinate_system.Coordinate_system instance, or one of the Coordinate_system
                         constructor types.
         :map_location:  (x, y) view location on the map, in map cm
         :area:          (min_x, min_y, max_x, max_y) area in view units
@@ -147,7 +147,7 @@ class View:
         else:
             ipj = gxapi.GXIPJ.create()
             self.gxview.get_ipj(ipj)
-            self._cs = gxcs.GXcs(ipj)
+            self._cs = gxcs.Coordinate_system(ipj)
             metres_per = self.cs.metres_per_unit
             self._uname = self.cs.units_name
             if metres_per <= 0.:
@@ -173,7 +173,7 @@ class View:
 
     @cs.setter
     def cs(self, cs):
-        self._cs = gxcs.GXcs(cs)
+        self._cs = gxcs.Coordinate_system(cs)
         metres_per = self._cs.metres_per_unit
         self._uname = self._cs.units_name
         if metres_per <= 0.:
@@ -198,7 +198,7 @@ class View:
         Locate and scale the view on the map.
 
         :parameters:
-            :cs:            coordinate system as a gxpy.coordinate_system.GXcs instance, or one of the GXcs
+            :cs:            coordinate system as a gxpy.coordinate_system.Coordinate_system instance, or one of the Coordinate_system
                             constructor types.
             :map_location:  New (x, y) view location on the map, in map cm.
             :area:          New (min_x, min_y, max_x, max_y) area in view units

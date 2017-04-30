@@ -88,7 +88,7 @@ def _va_width(data):
     return width
 
 
-class GXdb:
+class Geosoft_gdb:
     """
     Class to work with Geosoft databases. This class wraps many of the functions found in geosoft.gxapi.GXDB.
 
@@ -110,7 +110,7 @@ class GXdb:
         import gxpy.gdb as gxgdb
 
         # open the current database
-        gdb = gxdb.GXdb.open(gxp)
+        gdb = gxdb.Geosoft_gdb.open(gxp)
         lines = gdb.lines()
         for line in lines:
 
@@ -135,7 +135,7 @@ class GXdb:
         gxp = gxu.GXpy()
 
         # open a database
-        gdb = gxdb.GXdb.open(gxp,'test.gdb')
+        gdb = gxdb.Geosoft_gdb.open(gxp,'test.gdb')
         lines = gdb.lines()
         for line in lines:
 
@@ -154,7 +154,7 @@ class GXdb:
     .. code::
 
         ...
-        gdb = gxdb.GXdb.open(gxp,'test.gdb')
+        gdb = gxdb.Geosoft_gdb.open(gxp,'test.gdb')
         lines = gdb.lines()
         for line in lines:
 
@@ -170,7 +170,7 @@ class GXdb:
     .. code::
 
         ...
-        gdb = gxdb.GXdb.open(gxp,'test.gdb')
+        gdb = gxdb.Geosoft_gdb.open(gxp,'test.gdb')
         lines = gdb.lines()
         for l in lines:
 
@@ -235,7 +235,7 @@ class GXdb:
         Open an existing database.
 
         :param name:    name of the database, default is the current database
-        :return:        GXdb instance
+        :return:        Geosoft_gdb instance
 
         .. versionadded:: 9.1
         """
