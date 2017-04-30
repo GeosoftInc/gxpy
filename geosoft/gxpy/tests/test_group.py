@@ -909,6 +909,9 @@ class Test(GXPYTest):
         with gxv.View_3d.new(area_2d=(-1, -1, 11, 11)) as v:
             v3d_file = v.file_name
 
+            def crs(x, y, z, v):
+                return cmap.color_of_value(v), radius, gxg.SYMBOL_3D_SPHERE
+
             with gxg.Draw(v, 'rect') as g:
                 g.rectangle((0,0,10,10),
                             pen=gxg.Pen(line_color=gxg.C_BLACK,
@@ -921,13 +924,25 @@ class Test(GXPYTest):
                               pen=gxg.Pen(line_color=gxg.C_GREY,
                                           line_thick=0.2))
 
-            gxg.Color_symbols_group_3d.new(v, 'outer_symbols', data, cmap)
+            radius = 0.25
+            gxg.Color_symbols_group_3d.new(v, 'outer_symbols', data, crs)
             cmap = gxg.Color_map('hotcycle')
             cmap.set_linear(0, 5, contour_interval=1)
-            gxg.Color_symbols_group_3d.new(v, 'mark', data2, cmap, radius=0.5)
+            radius = 0.5
+            gxg.Color_symbols_group_3d.new(v, 'mark', data2, crs)
 
-            cs = gxg.Color_symbols_group_3d.open(v, 'mark')
-            self.assertEqual(cs.number, 3)
+            data = [((0, 0, 15), 1),
+                    ((10, 0, 15), 2),
+                    ((0, 10, 15), 3),
+                    ((10, 10, 15), 4)]
+            cs = gxg.Color_symbols_group_3d.new(v, 'default', data)
+
+            data = [((0, 0, 18), 1),
+                    ((10, 0, 18), 2),
+                    ((0, 10, 18), 3),
+                    ((10, 10, 18), 4)]
+            cs = gxg.Color_symbols_group_3d.new(v, 'crs', data,
+                                                (gxg.Color(gxg.C_RED), 1, gxg.SYMBOL_3D_SPHERE))
 
         self.crc_map(v3d_file)
 

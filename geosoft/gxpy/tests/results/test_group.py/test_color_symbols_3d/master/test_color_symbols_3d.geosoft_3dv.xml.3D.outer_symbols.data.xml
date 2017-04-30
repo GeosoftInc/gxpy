@@ -73,6 +73,9 @@
    <Item type="ClipMode" size="8">
       <Item name="Value" value="0"/>
    </Item>
+   <Item type="FillColor" size="8">
+      <Item name="Color" type="COL_ANY" colortype="RGB" red="128" green="128" blue="128"/>
+   </Item>
    <Item type="Version" size="8">
       <Item name="Value" value="Current"/>
    </Item>

@@ -114,37 +114,39 @@
       <Item name="Value" value="0.02"/>
    </Item>
    <Item type="FillColor" size="8">
-      <Item name="Color" type="COL_ANY" colortype="CMY" cyan="0" magenta="0" yellow="0"/>
+      <Item name="Color" type="COL_ANY" colortype="RGB" red="0" green="0" blue="255"/>
    </Item>
    <Item type="Sphere3D" size="32">
       <Item name="Center" type="D3POINT">
          <Value name="X" value="0"/>
          <Value name="Y" value="0"/>
-         <Value name="Z" value="12"/>
+         <Value name="Z" value="15"/>
       </Item>
-      <Item name="Radius" value="0.5"/>
-   </Item>
-   <Item type="FillColor" size="8">
-      <Item name="Color" type="COL_ANY" colortype="CMY" cyan="0" magenta="0" yellow="255"/>
+      <Item name="Radius" value="0.25"/>
    </Item>
    <Item type="Sphere3D" size="32">
       <Item name="Center" type="D3POINT">
          <Value name="X" value="10"/>
          <Value name="Y" value="0"/>
-         <Value name="Z" value="12"/>
+         <Value name="Z" value="15"/>
       </Item>
-      <Item name="Radius" value="0.5"/>
-   </Item>
-   <Item type="FillColor" size="8">
-      <Item name="Color" type="COL_ANY" colortype="CMY" cyan="0" magenta="255" yellow="255"/>
+      <Item name="Radius" value="0.25"/>
    </Item>
    <Item type="Sphere3D" size="32">
       <Item name="Center" type="D3POINT">
          <Value name="X" value="0"/>
          <Value name="Y" value="10"/>
-         <Value name="Z" value="12"/>
+         <Value name="Z" value="15"/>
       </Item>
-      <Item name="Radius" value="0.5"/>
+      <Item name="Radius" value="0.25"/>
+   </Item>
+   <Item type="Sphere3D" size="32">
+      <Item name="Center" type="D3POINT">
+         <Value name="X" value="10"/>
+         <Value name="Y" value="10"/>
+         <Value name="Z" value="15"/>
+      </Item>
+      <Item name="Radius" value="0.25"/>
    </Item>
    <Item type="End" size="8"></Item>
 </data>
