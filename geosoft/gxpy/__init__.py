@@ -26,7 +26,7 @@ from . import utility
 from . import vv
 from . import va
 from . import coordinate_system
-from . import grd
+from . import grid
 from . import gdb
 from . import agg
 from . import map
