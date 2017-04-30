@@ -3,8 +3,9 @@ Geosoft grids.
 
 .. note::
 
-    Regression tests provide usage examples: `Tests <https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_grd.py>`_
-    Regression tests provide usage examples: `Tests <https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_grd.py>`_
+    Regression tests provide usage examples: 
+    
+    `Tests <https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_grid.py>`_
 
 """
 import os

@@ -922,11 +922,11 @@ class Geosoft_gdb:
 
         if self.channel_width(channel) == 1:
             vv = self.read_channel_vv(line, channel, dtype)
-            return vv.get_np(vv.dtype)[0], vv.fid
+            return vv.get_data(vv.dtype)[0], vv.fid
 
         else:
             va = self.read_channel_va(line, channel, dtype)
-            return va.get_np(va.dtype)[0], va.fid
+            return va.get_data(va.dtype)[0], va.fid
 
     def read_line_vv(self, line, channels=None, dtype=None, fid=None, common_fid=False):
         """
@@ -1009,7 +1009,7 @@ class Geosoft_gdb:
             nvd = math.ceil(max((fend - fid[0] - sys.float_info.epsilon), 0) / fid[1]) + 1
             if fend != gxapi.GS_R8MN:
                 for vv in chvv:
-                    vv[1].reFid(fid, nvd)
+                    vv[1].refid(fid, nvd)
 
         return chvv
 
@@ -1071,7 +1071,7 @@ class Geosoft_gdb:
         for chvv in data:
             vv = chvv[1]
             if vv.length > 0:
-                npd[:, len(chNames)] = vv.get_np(dtype=npd.dtype)[0]
+                npd[:, len(chNames)] = vv.get_data(dtype=npd.dtype)[0]
             else:
                 npd[:, len(chNames)].fill(dummy_value)
             chNames.append(chvv[0])

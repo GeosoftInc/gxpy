@@ -261,24 +261,24 @@ class Test(GXPYTest):
             self.assertEqual(len(data), 5)
             self.assertEqual(data[0][0], 'X')
             self.assertEqual(data[4][0], 'dy')
-            npd = data[0][1].get_np()[0]
+            npd = data[0][1].get_data()[0]
             self.assertEqual(npd[10], 578625.0)
-            npd = data[1][1].get_np()[0]
+            npd = data[1][1].get_data()[0]
             self.assertEqual(npd[10], 7773625.0)
-            npd = data[2][1].get_np()[0]
+            npd = data[2][1].get_data()[0]
             self.assertEqual(npd[10], -1195.7531280517615)
 
             data = gdb.read_line_vv(ls, 'X')
             self.assertEqual(data[0][0], 'X')
-            npd = data[0][1].get_np()[0]
+            npd = data[0][1].get_data()[0]
             self.assertEqual(npd[10],578625.0)
 
             data = gdb.read_line_vv(ls,channels=['X','Y','Z'], dtype='<U32')
-            npd = data[0][1].get_np()[0]
+            npd = data[0][1].get_data()[0]
             self.assertEqual(npd[10], '578625.0')
-            npd = data[1][1].get_np()[0]
+            npd = data[1][1].get_data()[0]
             self.assertEqual(npd[10], '7773625.0')
-            npd = data[2][1].get_np()[0]
+            npd = data[2][1].get_data()[0]
             self.assertEqual(npd[10], '-1195.8')
 
             gdb.discard()
@@ -319,7 +319,7 @@ class Test(GXPYTest):
             gdb.delete_channel('test')
             gdb.new_channel('test', np.float64)
             vv = gxvv.GXvv(dtype=np.float64)
-            vv.set_np(np.array([1,2,3,4], dtype=np.int64))
+            vv.set_data(np.array([1,2,3,4], dtype=np.int64))
             gdb.write_channel_vv('D590875', 'test', vv)
             npd,ch,fid = gdb.read_line('D590875', channels=['test'], dtype=np.int)
             self.assertEqual(npd.shape,(4,1))

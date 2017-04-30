@@ -30,7 +30,7 @@ class Test(GXPYTest):
             va.fid = fid
             self.assertEqual(va.fid,fid)
 
-            va.reFid((-40,8),4)
+            va.refid((-40,8),4)
             self.assertEqual(va.fid,(-40,8))
             self.assertEqual(va.length,4)
             self.assertEqual(va.dimensions, (4,7))
@@ -43,16 +43,16 @@ class Test(GXPYTest):
                           np.array([["bones", "queens", "geology"], ["a", "b", "c"]]))
 
         with gxva.GXva(width=7, dtype=np.float) as va:
-            self.assertRaises(gxva.VAException, va.get_np, dtype="U7")
+            self.assertRaises(gxva.VAException, va.get_data, dtype="U7")
 
         with gxva.GXva(np.array(range(45)).reshape((9, 5))) as va:
-            self.assertRaises(gxva.VAException, va.get_np, n=0)
+            self.assertRaises(gxva.VAException, va.get_data, n=0)
 
         with gxva.GXva(np.array(range(45)).reshape((9, 5))) as va:
-            self.assertRaises(gxva.VAException, va.get_np, n_col=0)
+            self.assertRaises(gxva.VAException, va.get_data, n_col=0)
 
         with gxva.GXva(np.array(range(40)).reshape((20, 2))) as va:
-            self.assertRaises(gxva.VAException, va.set_np, np.array(range(3)))
+            self.assertRaises(gxva.VAException, va.set_data, np.array(range(3)))
 
     def test_np(self):
         self.start()
@@ -64,60 +64,70 @@ class Test(GXPYTest):
             self.assertEqual(va.length, npdata.shape[0])
             self.assertEqual(va.width, npdata.shape[1])
 
-            np2 = va.get_np(va.dtype)
+            np2 = va.get_data(va.dtype)
             self.assertEqual(np2[0].shape, npdata.shape)
-            np2,fid2 = va.get_np(dtype=va.dtype, start=1)
+            np2,fid2 = va.get_data(dtype=va.dtype, start=1)
             self.assertEqual(fid2,(99.1,.1))
             self.assertEqual(np2.shape, (8, 5))
-            self.assertEqual(va.get_np(start=6)[0].shape, (3, 5))
+            self.assertEqual(va.get_data(start=6)[0].shape, (3, 5))
             try:
-                self.assertEqual(va.get_np(dtype=va.dtype, start=50)[0].shape, (0,))
+                self.assertEqual(va.get_data(dtype=va.dtype, start=50)[0].shape, (0,))
                 self.assertTrue(False)
             except gxva.VAException:
                 pass
 
-            np3,fid3 = va.get_np(np.int)
+            np3,fid3 = va.get_data(np.int)
             self.assertEqual(fid3,fid)
             self.assertEqual(np3[0, 0], 0)
             self.assertEqual(np3[1, 4], 9)
 
-            np3, fid3 = va.get_np(np.float64)
+            np3, fid3 = va.get_data(np.float64)
             self.assertEqual(fid3, fid)
             self.assertEqual(np3[0, 0], 0.0)
             self.assertEqual(np3[1, 4], 9.0)
 
-            np3, fid3 = va.get_np(np.float64, n=2)
+            np3, fid3 = va.get_data(np.float64, n=2)
             self.assertEqual(fid3, fid)
             self.assertEqual(np3.shape[0], 2)
             self.assertEqual(np3[0, 0], 0.0)
             self.assertEqual(np3[1, 4], 9.0)
 
-            np3, fid3 = va.get_np(np.float64, n=99)
+            np3, fid3 = va.get_data(np.float64, n=99)
             self.assertEqual(fid3, fid)
             self.assertEqual(np3.shape[0], va.length)
 
-            np3, fid3 = va.get_np(np.float64, n_col=3)
+            np3, fid3 = va.get_data(np.float64, n_col=3)
             self.assertEqual(fid3, fid)
             self.assertEqual(np3.shape[1], 3)
 
-            np3, fid3 = va.get_np(np.float64, n_col=99)
+            np3, fid3 = va.get_data(np.float64, n_col=99)
             self.assertEqual(fid3, fid)
             self.assertEqual(np3.shape[1], va.width)
 
         npdata = np.array(range(64), dtype=np.int).reshape(4, 16)
         with gxva.GXva(npdata, fid=fid) as va:
-            np3, fid = va.get_np(dtype=np.int64)
+            np3, fid = va.get_data(dtype=np.int64)
             self.assertEqual(np3[0, 0], 0.)
             self.assertEqual(np3[2, 11], 43)
-            np3, fid = va.get_np(np.float)
+            np3, fid = va.get_data(np.float)
             self.assertEqual(np3[0, 0], 0.)
             self.assertEqual(np3[2, 11], 43.)
 
-            va.set_np(np.array(range(32), dtype=np.int))
-            np3, fid = va.get_np(dtype=np.int64)
+            va.set_data(np.array(range(32), dtype=np.int))
+            np3, fid = va.get_data(dtype=np.int64)
             self.assertEqual(np3.shape[0], 2)
             self.assertEqual(np3[0,0], 0)
             self.assertEqual(np3[1,15], 31)
+
+    def test_iterator(self):
+        self.start()
+        npdata = np.array(range(45)).reshape((9, 5))
+        with gxva.GXva(npdata) as va:
+            self.assertEqual(tuple(va[0][0]), (0, 1, 2, 3, 4))
+            self.assertEqual(va[4][1], 4)
+            list2d = [v[0] for v in va]
+            self.assertEqual(tuple(list2d[1]), (5, 6, 7, 8, 9))
+            self.assertEqual(va.np.shape, (9, 5))
 
     def test_strings(self):
         self.start()

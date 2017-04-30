@@ -354,12 +354,12 @@ class PPoint(Geometry, Sequence):
 
         def vv_setup(xyz):
             blankpp(xyz[0].length)
-            self.pp[:, 0] = xyz[0].get_np()[0][:]
-            xyz[1].reFid(xyz[0].fid, self.pp.shape[0])
-            self.pp[:, 1] = xyz[1].get_np()[0][:]
+            self.pp[:, 0] = xyz[0].get_data()[0][:]
+            xyz[1].refid(xyz[0].fid, self.pp.shape[0])
+            self.pp[:, 1] = xyz[1].get_data()[0][:]
             if len(xyz) > 2:
-                xyz[2].reFid(xyz[0].fid, self.pp.shape[0])
-                self.pp[:, 2] = xyz[2].get_np()[0][:]
+                xyz[2].refid(xyz[0].fid, self.pp.shape[0])
+                self.pp[:, 2] = xyz[2].get_data()[0][:]
             else:
                 self.pp[:, 2] = z
 

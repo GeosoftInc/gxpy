@@ -22,7 +22,7 @@ class Test(GXPYTest):
             self.assertEqual(vv.fid, (0.0, 1.0))
 
         fid = (10.1,0.99)
-        with gxvv.GXvv(dtype=np.float,fid=fid) as vv:
+        with gxvv.GXvv(dtype=np.float, fid=fid) as vv:
             self.assertEqual(vv.fid, fid)
             self.assertEqual(vv.length, 0)
 
@@ -30,7 +30,7 @@ class Test(GXPYTest):
             vv.fid = fid
             self.assertEqual(vv.fid, fid)
 
-            vv.reFid((-40,8),4)
+            vv.refid((-40,8),4)
             self.assertEqual(vv.fid, (-40,8))
             self.assertEqual(vv.length, 4)
 
@@ -55,60 +55,60 @@ class Test(GXPYTest):
             self.assertEqual(vv.fid, fid)
             self.assertEqual(vv.length, len(npdata))
 
-            np2 = vv.get_np(vv.dtype)
+            np2 = vv.get_data(vv.dtype)
             self.assertEqual(np2[0].shape,(7,))
-            np2,fid2 = vv.get_np(vv.dtype,start=1)
+            np2,fid2 = vv.get_data(vv.dtype,start=1)
             self.assertEqual(fid2,(99.1,.1))
             self.assertEqual(np2.shape,(6,))
-            self.assertEqual(vv.get_np(vv.dtype,start=6)[0].shape,(1,))
-            self.assertRaises(gxvv.VVException, vv.get_np, vv.dtype, start=7)
+            self.assertEqual(vv.get_data(vv.dtype,start=6)[0].shape,(1,))
+            self.assertRaises(gxvv.VVException, vv.get_data, vv.dtype, start=7)
 
-            np3,fid3 = vv.get_np(np.int)
+            np3,fid3 = vv.get_data(np.int)
             self.assertEqual(fid3,fid)
             self.assertEqual(np3[0], 1)
             self.assertEqual(np3[6], 7)
 
-            self.assertEqual(vv.get_float(6), 7.0)
-            self.assertEqual(vv.get_int(6), 7)
-            self.assertEqual(vv.get_string(6), "7")
+            self.assertEqual(float(vv.np[6]), 7.0)
+            self.assertEqual(int(vv.np[6]), 7)
+            self.assertEqual(str(vv.np[6]), "7")
 
         npdata = np.array([1,2,3,4,5,6,7],dtype=np.int)
         with gxvv.GXvv(npdata, fid=fid) as vv:
-            np3= vv.get_np(dtype=np.int64)
+            np3= vv.get_data(dtype=np.int64)
             self.assertEqual(np3[0][0],1)
             self.assertEqual(np3[0][6],7)
-            np3 = vv.get_np(np.float)
+            np3 = vv.get_data(np.float)
             self.assertEqual(np3[0][0],1.)
             self.assertEqual(np3[0][6],7.)
 
-            vv.set_np(np.array([4,5,6,7], dtype=np.int))
-            np3,fid = vv.get_np(dtype=np.int64)
+            vv.set_data(np.array([4,5,6,7], dtype=np.int))
+            np3,fid = vv.get_data(dtype=np.int64)
             self.assertEqual(len(np3), 4)
             self.assertEqual(np3[0], 4)
             self.assertEqual(np3[3], 7)
-            np3,fid = vv.get_np(np.float)
+            np3,fid = vv.get_data(np.float)
             self.assertEqual(np3[0], 4.)
             self.assertEqual(np3[3], 7.)
 
         npdata = np.array(['4', '5', '6', '7'])
         with gxvv.GXvv(npdata, fid=fid) as vv3:
-            np3, fid = vv3.get_np()
+            np3, fid = vv3.get_data()
             self.assertEqual(len(np3), 4)
             self.assertEqual(np3[0], '4')
             self.assertEqual(np3[3], '7')
-            np3, fid = vv3.get_np(np.float)
+            np3, fid = vv3.get_data(np.float)
             self.assertEqual(np3[0], 4.)
             self.assertEqual(np3[3], 7.)
 
         npdata = np.array(['4000', '50', '60', '-70'])
         with gxvv.GXvv(npdata, fid=fid) as vv3:
-            np3, fid = vv3.get_np()
-            self.assertEqual(len(np3), 4)
-            self.assertEqual(np3[0], '4000')
-            self.assertEqual(np3[3], '-70')
-            np3, fid = vv3.get_np(np.float)
-            self.assertEqual(np3[0], 4000.)
-            self.assertEqual(np3[3], -70.)
+            npf = vv3.np
+            self.assertEqual(len(npf), 4)
+            self.assertEqual(npf[0], '4000')
+            self.assertEqual(npf[3], '-70')
+            npf, fid = vv3.get_data(np.float)
+            self.assertEqual(npf[0], 4000.)
+            self.assertEqual(npf[3], -70.)
 
     def test_strings(self):
         self.start()
@@ -122,20 +122,20 @@ class Test(GXPYTest):
             self.assertTrue(vv.dtype.type is np.str_)
             self.assertEqual(str(vv.dtype),'<U5')
 
-            npd,fid = vv.get_np(vv.dtype)
+            npd,fid = vv.get_data(vv.dtype)
             self.assertEqual(npd[0],"name")
             self.assertEqual(npd[1],"maki")
             self.assertEqual(npd[2],"neil")
             self.assertEqual(npd[3],"rider")
 
-            npd,fid = vv.get_np(vv.dtype,start=2,n=2)
+            npd,fid = vv.get_data(vv.dtype,start=2,n=2)
             self.assertEqual(npd[0],"neil")
             self.assertEqual(npd[1],"rider")
             self.assertEqual(fid,(99.2,0.1))
 
         npdata = np.array(["1","2","3","4000","*"])
         with gxvv.GXvv(npdata, fid=fid) as vv:
-            npd,fid = vv.get_np(np.float)
+            npd,fid = vv.get_data(np.float)
             self.assertEqual(npd[0],1.0)
             self.assertEqual(npd[1],2.0)
             self.assertEqual(npd[2],3.0)
@@ -144,7 +144,7 @@ class Test(GXPYTest):
 
         npdata = np.array(["1","2","3","4000","40000","*"])
         with gxvv.GXvv(npdata, fid=fid) as vv:
-            npd,fid = vv.get_np(np.int)
+            npd,fid = vv.get_data(np.int)
             self.assertEqual(npd[0],1)
             self.assertEqual(npd[1],2)
             self.assertEqual(npd[2],3)
@@ -154,7 +154,7 @@ class Test(GXPYTest):
 
         npdata = np.array(["1","2","3","4000","40000","*"])
         with gxvv.GXvv(npdata, fid=fid) as vv:
-            npd,fid = vv.get_np(np.int,start=2, n=3)
+            npd,fid = vv.get_data(np.int,start=2, n=3)
             self.assertEqual(npd[0],3)
             self.assertEqual(npd[1],4000)
             self.assertEqual(npd[2],40000)
@@ -162,40 +162,34 @@ class Test(GXPYTest):
 
         npdata = np.array(["make_it_big enough"])
         with gxvv.GXvv(npdata, fid=fid) as vv:
-            npd, fid = vv.get_np(np.int, start=0, n=1)
+            npd, fid = vv.get_data(np.int, start=0, n=1)
             self.assertEqual(npd[0], gxapi.iDUMMY)
 
             npdata = np.array([1.,2.,-30.,-87.66662])
-            vv.set_np(npdata)
-            npd, fid = vv.get_np(start=0, n=4)
+            vv.set_data(npdata)
+            npd, fid = vv.get_data(start=0, n=4)
             self.assertEqual(npd[0], "1.0")
             self.assertEqual(npd[2], "-30.0")
             self.assertEqual(npd[3], "-87.66662")
-
-    def test_list(self):
-        self.start()
-
-        l = [1, 2, 3]
-        with gxvv.GXvv(l) as vv:
-            self.assertEqual(vv.list(), l)
-        l = [1., 2., 3.]
-        with gxvv.GXvv(l) as vv:
-            self.assertEqual(vv.list(), l)
-        l = ["a", "b", "abc"]
-        with gxvv.GXvv(l) as vv:
-            self.assertEqual(vv.list(), l)
 
     def test_string(self):
         self.start()
 
         l = [1, 2, 3]
         with gxvv.GXvv(l, dtype='U45') as vv:
-            self.assertEqual(vv.list(), ['1', '2', '3'])
+            self.assertEqual(list(vv.np), ['1', '2', '3'])
 
         l = [1, 2, "abcdefg"]
         with gxvv.GXvv(l, dtype='U4') as vv:
-            self.assertEqual(vv.list(), ['1', '2', 'abcd'])
+            self.assertEqual(list(vv.np), ['1', '2', 'abcd'])
 
+    def test_iterator(self):
+
+        with gxvv.GXvv(range(1000)) as vv:
+            l2 = [v for v in vv]
+            self.assertEqual(len(l2), 1000)
+            self.assertEqual(l2[0], (0., 0))
+            self.assertEqual(l2[999], (999., 999))
 
 ##############################################################################################
 if __name__ == '__main__':

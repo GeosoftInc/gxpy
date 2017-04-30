@@ -220,4 +220,4 @@ class Aggregate_image():
 
         vv = gxvv.GXvv(dtype='U1024')
         self.gxagg.list_img(vv._vv)
-        return vv.list()
+        return list(vv.np)

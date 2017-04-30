@@ -59,6 +59,7 @@ class GXvv():
         return self
 
     def __exit__(self, type, value, traceback):
+        self._np = None
         self._vv = None
 
     def __init__(self, array=None, dtype=None, fid=(0.0, 1.0)):
@@ -75,9 +76,11 @@ class GXvv():
         self._gxtype = gxu.gx_dtype(dtype)
         self._dtype = gxu.dtype_gx(self._gxtype)
         self._vv = gxapi.GXVV.create_ext(self._gxtype, 0)
-        self._vv.set_fid_start(fid[0])
-        self._vv.set_fid_incr(fid[1])
+        self.fid = fid
+        self._start, self._incr = self.fid
         self._sr = None
+        self._np = None
+        self._next = 0
 
         if array is not None:
             if self._gxtype >= 0:
@@ -88,6 +91,26 @@ class GXvv():
                 ne = array.shape[0]
                 for i in range(ne):
                     self._vv.set_string(i, str(array[i]))
+
+    def __len__(self):
+        return self._vv.length()
+
+    def __iter__(self):
+        return self
+
+    def __next__(self):
+        if self._next >= self.length:
+            self._next = 0
+            self._start, self._incr = self.fid
+            raise StopIteration
+        else:
+            i = self._next
+            self._next += 1
+            return self.np[i], self._start + self._incr * i
+
+    def __getitem__(self, item):
+        start, incr = self.fid
+        return self.np[item], start + incr * item
 
     @property
     def gxvv(self):
@@ -100,9 +123,7 @@ class GXvv():
 
         .. versionadded:: 9.1
         """
-        start = self._vv.get_fid_start()
-        incr = self._vv.get_fid_incr()
-        return (start, incr)
+        return (self._vv.get_fid_start(), self._vv.get_fid_incr())
 
     @fid.setter
     def fid(self, fid):
@@ -123,7 +144,7 @@ class GXvv():
 
         .. versionadded:: 9.1
         """
-        return self._vv.length()
+        return self.__len__()
 
     @property
     def gxtype(self):
@@ -143,18 +164,19 @@ class GXvv():
         """
         return self._dtype
 
-    def reFid(self, fid, length):
+    @property
+    def np(self):
         """
-        Resample VV to a new fiducial and length
-
-        :param fid: (start,incr)
-        :param length: length
-
-        .. versionadded:: 9.1
+        Numpy array of VV data, in the data type of the VV.  Use :meth:`get_np` to get a numpy array
+        in another dtype.
+        
+        .. versionadded:: 9.2 
         """
-        self._vv.re_fid(fid[0], fid[1], length)
+        if self._np is None:
+            self._np, *_ = self.get_data()
+        return self._np
 
-    def get_np(self, dtype=None, start=0, n=None):
+    def get_data(self, dtype=None, start=0, n=None):
         """
         Return vv data in a numpy array
 
@@ -171,55 +193,65 @@ class GXvv():
         else:
             dtype = np.dtype(dtype)
 
+        if (self._np is not None) and (dtype == self.dtype) and (start == 0) and (n is None):
+            return self._np
+
         if n is None:
             n = self.length - start
         else:
             n = min((self.length - start), n)
 
-        if (n <= 0) or (start < 0):
-            raise VVException(_t('Cannot get (start,n) ({},{}) from vv of length {}').format(start, n, self.length))
+        if n == 0:
+            npd = np.array([], dtype=dtype)
 
-        # strings wanted
-        if dtype.type is np.str_:
-            if self._sr is None:
-                self._sr = gxapi.str_ref()
-            npd = np.empty((n,), dtype=dtype)
-            for i in range(start, start + n):
-                self._vv.get_string(i, self._sr)
-                npd[i - start] = self._sr.value
-
-        # numeric wanted
         else:
 
-            # strings to numeric
-            if self._gxtype < 0:
-                if np.issubclass_(dtype.type, np.integer):
-                    vvd = gxapi.GXVV.create_ext(gxapi.GS_LONG, n)
-                else:
-                    vvd = gxapi.GXVV.create_ext(gxapi.GS_DOUBLE, n)
+            if (n < 0) or (start < 0):
+                raise VVException(_t('Cannot get (start,n) ({},{}) from vv of length {}').format(start, n, self.length))
 
-                vvd.copy(self._vv)  # this will do the conversion
-                npd = vvd.get_data_np(start, n, dtype)
+            # strings wanted
+            if dtype.type is np.str_:
+                if self._sr is None:
+                    self._sr = gxapi.str_ref()
+                npd = np.empty((n,), dtype=dtype)
+                for i in range(start, start + n):
+                    self._vv.get_string(i, self._sr)
+                    npd[i - start] = self._sr.value
 
-            # numeric to numeric
+            # numeric wanted
             else:
-                npd = self._vv.get_data_np(start, n, dtype)
+
+                # strings to numeric
+                if self._gxtype < 0:
+                    if np.issubclass_(dtype.type, np.integer):
+                        vvd = gxapi.GXVV.create_ext(gxapi.GS_LONG, n)
+                    else:
+                        vvd = gxapi.GXVV.create_ext(gxapi.GS_DOUBLE, n)
+
+                    vvd.copy(self._vv)  # this will do the conversion
+                    npd = vvd.get_data_np(start, n, dtype)
+
+                # numeric to numeric
+                else:
+                    npd = self._vv.get_data_np(start, n, dtype)
 
         fid = self.fid
         start = fid[0] + start * fid[1]
         return npd, (start, fid[1])
 
-    def set_np(self, npdata, fid=(0.0, 1.0)):
+    def set_data(self, data, fid=(0.0, 1.0)):
         """
-        Set vv data from a numpy array
+        Set vv data from an array
 
-        :param npdata:  numpy data array
+        :param data:    data array
         :param fid:     fid tuple (start,increment), default (0.0,1.0)
 
         .. versionadded:: 9.1
         """
 
-        npdata = npdata.flatten()
+        if not isinstance(data, np.ndarray):
+            data = np.array(data)
+        npdata = data.flatten()
 
         # numerical data
         if self._gxtype >= 0:
@@ -234,35 +266,14 @@ class GXvv():
         self._vv.set_len(npdata.shape[0])
         self.fid = fid
 
-    def get_float(self, index):
-        """ return float value """
-        return self._vv.get_double(index)
-
-    def get_int(self, index):
-        """ return integer value """
-        return self._vv.get_int(index)
-
-    def get_string(self, index):
-        """ return string value """
-        s = gxapi.str_ref()
-        self._vv.get_string(index, s)
-        return s.value
-
-    def list(self):
+    def refid(self, fid, length):
         """
-        Return the content of a VV as a Python list.  Only use this when you know
-        a VV is short.  This function is not efficient.
+        Resample VV to a new fiducial and length
 
-        :return: list containing the content of a VV.
+        :param fid: (start,incr)
+        :param length: length
 
-        .. versionadded:: 9.2
+        .. versionadded:: 9.1
         """
-
-        if gxu.is_string(self._gxtype):
-            getter = self.get_string
-        elif gxu.is_float(self._gxtype):
-            getter = self.get_float
-        else:
-            getter = self.get_int
-
-        return [getter(i) for i in range(self.length)]
+        self._vv.re_fid(fid[0], fid[1], length)
+        self.fid = fid

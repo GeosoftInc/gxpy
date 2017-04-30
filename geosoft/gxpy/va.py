@@ -47,7 +47,11 @@ class GXva():
         return self
 
     def __exit__(self, type, value, traceback):
+        self._np = None
         self._va = None
+
+    def __len__(self):
+        return self._va.len()
 
     def __init__(self, array=None, width=None, dtype=None, fid=(0.0, 1.0)):
 
@@ -61,9 +65,11 @@ class GXva():
         self._dtype = gxu.dtype_gx(self._gxtype)
         self._width = width
         self._va = gxapi.GXVA.create_ext(self._gxtype, 0, self._width)
-        self._va.set_fid_start(fid[0])
-        self._va.set_fid_incr(fid[1])
+        self.fid = fid
+        self._start, self._incr = self.fid
         self._sr = None
+        self._next = 0
+        self._np = None
 
         if array is not None:
             if self._gxtype >= 0:
@@ -72,6 +78,23 @@ class GXva():
             else:
                 raise VAException(_t("VA of strings is not supported."))
 
+    def __iter__(self):
+        return self
+
+    def __next__(self):
+        if self._next >= self.length:
+            self._next = 0
+            self._start, self._incr = self.fid
+            raise StopIteration
+        else:
+            i = self._next
+            self._next += 1
+            return self.np[i], self._start + self._incr * i
+
+    def __getitem__(self, item):
+        self._start, self._incr = self.fid
+        return self.np[item], self._start + self._incr * item
+
     @property
     def fid(self):
         """
@@ -79,9 +102,7 @@ class GXva():
 
         .. versionadded:: 9.1
         """
-        start = self._va.get_fid_start()
-        incr = self._va.get_fid_incr()
-        return (start, incr)
+        return self._va.get_fid_start(), self._va.get_fid_incr()
 
     @fid.setter
     def fid(self, fid):
@@ -95,7 +116,8 @@ class GXva():
         self._va.set_fid_start(fid[0])
         self._va.set_fid_incr(fid[1])
 
-    def reFid(self, fid, length):
+
+    def refid(self, fid, length):
         """
         Resample VA to a new fiducial and length
 
@@ -105,6 +127,7 @@ class GXva():
         .. versionadded:: 9.1
         """
         self._va.re_fid(fid[0], fid[1], length)
+        self.fid = fid
 
     @property
     def length(self):
@@ -113,7 +136,7 @@ class GXva():
 
         .. versionadded:: 9.1
         """
-        return self._va.len()
+        return self.__len__()
 
     @property
     def width(self):
@@ -151,7 +174,20 @@ class GXva():
         """
         return self._dtype
 
-    def get_np(self, dtype=None, start=0, n=None, start_col=0, n_col=None):
+    @property
+    def np(self):
+        """
+        Numpy array of VA data, in the data type of the VA.  Use :meth:`get_np` to get a numpy array
+        in another dtype.  Array will be 2-dimensional.
+
+        .. versionadded:: 9.2 
+        """
+
+        if self._np is None:
+            self._np, *_ = self.get_data()
+        return self._np
+
+    def get_data(self, dtype=None, start=0, n=None, start_col=0, n_col=None):
         """
         Return a numpy array of data from a va.
 
@@ -194,7 +230,7 @@ class GXva():
         start = fid[0] + start * fid[1]
         return npd, (start, fid[1])
 
-    def set_np(self, npdata, fid=(0.0, 1.0)):
+    def set_data(self, npdata, fid=(0.0, 1.0)):
         """
         Copy numpy data into a VA.
 
