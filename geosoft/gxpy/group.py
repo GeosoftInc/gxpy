@@ -888,6 +888,44 @@ class Draw_3d(Draw):
                 for i in range(points.length):
                     self.sphere(points[i], radius=radius)
 
+    def polydata_3d(self,
+                    data,
+                    render_info_func=None,
+                    passback=None):
+        """
+        Create a 3D objects rendered by the data..
+
+        :param view:                a 3D view in which to place the group
+        :param data:                iterable that yields items passed to the render_info_func function
+        :param render_info_func:    a callback that given (item, passback) returns ((x,y,z), (render_attributes))
+
+                                ::
+
+                                    SYMBOL_3D_SPHERE = 0
+                                    SYMBOL_3D_CUBE = 1
+                                    SYMBOL_3D_CYLINDER = 2
+                                    SYMBOL_3D_CONE = 3
+
+        :param passback:        something to pass back to the render_info_func function, default None.
+
+        .. versionadded:: 9.2
+        """
+
+        cint = None
+        for item in data:
+            render = render_info_func(item, passback)
+            if render:
+                xyz, symbol, color, attributes = render
+                if color != cint:
+                    self.view.gxview.fill_color(color)
+                    cint = color
+
+                if symbol == SYMBOL_3D_SPHERE:
+                    self.view.gxview.sphere_3d(xyz[0], xyz[1], xyz[2], attributes[0])
+                else:
+                    raise GroupException(_t('Not implemented'))
+                    # TODO make this work, plus box and cone
+
 
 def legend_color_bar(view,
                      group_name,
@@ -1695,91 +1733,6 @@ class Color_symbols_group(Group):
         cs = cls(view, group_name, mode=READ_ONLY)
         group_number = view.gxview.find_group(group_name)
         cs.csymb = view.gxview.get_col_symbol(group_number)
-        return cs
-
-class Color_symbols_group_3d(Group):
-    """
-    Create a 3D symbols defined by the data with a :class:`Color_map`.
-
-    .. versionadded:: 9.2
-    """
-
-    def __exit__(self, exc_type, exc_val, exc_tb):
-        self._close()
-
-    def __init__(self, view, group_name, mode):
-        super().__init__(view, group_name, mode=mode)
-
-    @classmethod
-    def new(cls,
-            view,
-            name,
-            data,
-            crs=None,
-            passback=None):
-        """
-        Create a 3D spheres coloured by the data with a :class:`Color_map`.
-
-        :param view:            a 3D view in which to place the group
-        :param name:            group name
-        :param data:            iterable that yields `((x, y, z), data, ...)`.
-        :param crs:             (color, radius, symbol) as a tuple, or a callback that given
-                                (item, passback) returns (color, radius, symbol), where item is an
-                                item of the data iterable and symbol can be one of:
-
-                                ::
-
-                                    SYMBOL_3D_SPHERE = 0
-                                    SYMBOL_3D_CUBE = 1
-                                    SYMBOL_3D_CYLINDER = 2
-                                    SYMBOL_3D_CONE = 3
-        
-        :param passback:        something to pass back to the crs function, default None.
-
-        .. versionadded:: 9.2
-        """
-
-        def valid(xyzd):
-            if xyzd[0][0] is None or xyzd[0][1]is None or xyzd[0][2] is None or xyzd[1] is None:
-                return False
-            return True
-
-        def get_crs(*args):
-            return _crs
-
-        cs = cls(view, name, mode=NEW)
-
-        if crs is None:
-            _crs = (Color(C_BLUE), 0.25 * view.units_per_map_cm, SYMBOL_3D_SPHERE)
-            crs = get_crs
-        elif isinstance(crs, tuple):
-            _crs = crs
-            crs = get_crs
-
-        cint = C_GREY
-        view.gxview.fill_color(cint)
-        with Draw_3d(view, name) as g:
-            for xyzv in data:
-                if valid(xyzv):
-                    color, radius, symbol = crs(xyzv, passback)
-                    if cint != color.int:
-                        view.gxview.fill_color(color.int)
-                        cint = color.int
-                    xyz = xyzv[0]
-                    if symbol == SYMBOL_3D_SPHERE:
-                        view.gxview.sphere_3d(xyz[0], xyz[1], xyz[2], radius)
-                    else:
-                        raise GroupException(_t('Not implemented'))
-                        # TODO make this work, plus box and cone
-
-        return cs
-
-    @classmethod
-    def open(cls,
-             view,
-             group_name):
-        cs = cls(view, group_name, mode=READ_ONLY)
-        group_number = view.gxview.find_group(group_name)
         return cs
 
 
