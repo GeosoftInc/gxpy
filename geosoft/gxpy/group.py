@@ -78,7 +78,9 @@ SYMBOL_SMALL_DIAMOND = 9
 SYMBOL_CIRCLE = 20
 
 SYMBOL_3D_SPHERE = 0
-SYMBOL_3D_CYLINDER = 1
+SYMBOL_3D_CUBE = 1
+SYMBOL_3D_CYLINDER = 2
+SYMBOL_3D_CONE = 3
 
 _weight_factor = (1.0 / 48.0, 1.0 / 24.0, 1.0 / 16.0, 1.0 / 12.0, 0.145, 1.0 / 4.0)
 FONT_WEIGHT_ULTRALIGHT = 1
@@ -1693,19 +1695,7 @@ class Color_symbols_group(Group):
 
 class Color_symbols_group_3d(Group):
     """
-    Create a 3D spheres coloured by the data with a :class:`Color_map`.
-
-    :param view:            a 3D view in which to place the group
-    :param name:            group name
-    :param data:            iterable that yields `((x, y, z), data, ...)`.
-    :param crs:             (color, radius, symbol) as a tuple, or a callback that given
-                            (x, y, z, value) returns (color, radius, symbol), where symbol
-                            can be one of:
-    
-                            ::
-                            
-                                SYMBOL_3D_SPHERE
-                                SYMBOL_3D_CYLINDER
+    Create a 3D symbols defined by the data with a :class:`Color_map`.
 
     .. versionadded:: 9.2
     """
@@ -1721,19 +1711,41 @@ class Color_symbols_group_3d(Group):
             view,
             name,
             data,
-            crs=None):
+            crs=None,
+            passback=None):
+        """
+        Create a 3D spheres coloured by the data with a :class:`Color_map`.
+
+        :param view:            a 3D view in which to place the group
+        :param name:            group name
+        :param data:            iterable that yields `((x, y, z), data, ...)`.
+        :param crs:             (color, radius, symbol) as a tuple, or a callback that given
+                                (item, passback) returns (color, radius, symbol), where item is an
+                                item of the data iterable and symbol can be one of:
+
+                                ::
+
+                                    SYMBOL_3D_SPHERE = 0
+                                    SYMBOL_3D_CUBE = 1
+                                    SYMBOL_3D_CYLINDER = 2
+                                    SYMBOL_3D_CONE = 3
+        
+        :param passback:        something to pass back to the crs function, default None.
+
+        .. versionadded:: 9.2
+        """
 
         def valid(xyzd):
             if xyzd[0][0] is None or xyzd[0][1]is None or xyzd[0][2] is None or xyzd[1] is None:
                 return False
             return True
 
-        def get_crs(x, y, z, value):
+        def get_crs(*args):
             return _crs
 
         cs = cls(view, name, mode=NEW)
 
-        if crs == None:
+        if crs is None:
             _crs = (Color(C_BLUE), 0.25 * view.units_per_map_cm, SYMBOL_3D_SPHERE)
             crs = get_crs
         elif isinstance(crs, tuple):
@@ -1745,11 +1757,11 @@ class Color_symbols_group_3d(Group):
         with Draw_3d(view, name) as g:
             for xyzv in data:
                 if valid(xyzv):
-                    xyz, v, *_ = xyzv
-                    color, radius, symbol = crs(xyz[0], xyz[1], xyz[2], v)
+                    color, radius, symbol = crs(xyzv, passback)
                     if cint != color.int:
                         view.gxview.fill_color(color.int)
                         cint = color.int
+                    xyz = xyzv[0]
                     if symbol == SYMBOL_3D_SPHERE:
                         view.gxview.sphere_3d(xyz[0], xyz[1], xyz[2], radius)
                     else:

@@ -909,8 +909,8 @@ class Test(GXPYTest):
         with gxv.View_3d.new(area_2d=(-1, -1, 11, 11)) as v:
             v3d_file = v.file_name
 
-            def crs(x, y, z, v):
-                return cmap.color_of_value(v), radius, gxg.SYMBOL_3D_SPHERE
+            def crs(item, cmap):
+                return cmap.color_of_value(item[1]), radius, gxg.SYMBOL_3D_SPHERE
 
             with gxg.Draw(v, 'rect') as g:
                 g.rectangle((0,0,10,10),
@@ -925,11 +925,11 @@ class Test(GXPYTest):
                                           line_thick=0.2))
 
             radius = 0.25
-            gxg.Color_symbols_group_3d.new(v, 'outer_symbols', data, crs)
+            gxg.Color_symbols_group_3d.new(v, 'outer_symbols', data, crs, cmap)
             cmap = gxg.Color_map('hotcycle')
             cmap.set_linear(0, 5, contour_interval=1)
             radius = 0.5
-            gxg.Color_symbols_group_3d.new(v, 'mark', data2, crs)
+            gxg.Color_symbols_group_3d.new(v, 'mark', data2, crs, cmap)
 
             data = [((0, 0, 15), 1),
                     ((10, 0, 15), 2),
