@@ -2,11 +2,11 @@ import unittest
 import os
 import numpy as np
 
+import geosoft
 import geosoft.gxpy.gx as gx
 import geosoft.gxpy.system as gsys
 import geosoft.gxpy.coordinate_system as gxcs
 import geosoft.gxpy.grid as gxgrd
-import geosoft
 
 from geosoft.gxpy.tests import GXPYTest
 
@@ -77,7 +77,7 @@ class Test(GXPYTest):
             properties['dy'] = 2.5
             properties['rot'] = 33.333333
             properties['cs'] = gxcs.Coordinate_system('NAD27 / UTM zone 18N')
-            self.assertRaises( gxgrd.GRDException, g1.set_properties, properties)
+            self.assertRaises( gxgrd.GridException, g1.set_properties, properties)
 
         outGrid = os.path.join(self.folder, 'testNew.grd(GRD;TYPE=SHORT;COMP=SPEED)')
         with gxgrd.Grid.open(self.g1f) as g:
@@ -218,7 +218,7 @@ class Test(GXPYTest):
     def test_delete_grid(self):
         self.start()
 
-        self.assertRaises(gxgrd.GRDException, gxgrd.Grid.new, self.g1f)
+        self.assertRaises(gxgrd.GridException, gxgrd.Grid.new, self.g1f)
         with gxgrd.Grid.open(self.g1f) as g:
             with gxgrd.Grid.copy(g, os.path.join(self.folder,'testDelete.grd'), overwrite=True) as g2:
                 filen = g2.file_name
@@ -314,9 +314,9 @@ class Test(GXPYTest):
                 self.assertEqual(pw.get('nx'),72)
                 self.assertEqual(pw.get('ny'),1)
 
-            self.assertRaises(gxgrd.GRDException, gxgrd.Grid.index_window, g, window, x0=2900, y0=3600, ny=2)
-            self.assertRaises(gxgrd.GRDException, gxgrd.Grid.index_window, g, window, -1)
-            self.assertRaises(gxgrd.GRDException, gxgrd.Grid.index_window, g, window, y0=-1)
+            self.assertRaises(gxgrd.GridException, gxgrd.Grid.index_window, g, window, x0=2900, y0=3600, ny=2)
+            self.assertRaises(gxgrd.GridException, gxgrd.Grid.index_window, g, window, -1)
+            self.assertRaises(gxgrd.GridException, gxgrd.Grid.index_window, g, window, y0=-1)
 
         with gxgrd.Grid.open(self.g1f) as g:
             window = os.path.join(self.folder, 'testwindow.grd(GRD)')
@@ -490,6 +490,43 @@ class Test(GXPYTest):
                 self.assertAlmostEqual(ex[3], 11.830127018922193)
                 self.assertAlmostEqual(ex[4], 0)
                 self.assertAlmostEqual(ex[5], 5)
+
+    def test_read(self):
+        self.start()
+
+        with gxgrd.Grid.open(self.g1f) as g:
+            for row in range(g.ny):
+                vv = g.read_row(row)
+                self.assertEqual(vv.length, g.nx)
+
+            for col in range(g.nx):
+                vv = g.read_column(col)
+                self.assertEqual(vv.length, g.ny)
+
+    def test_getitem(self):
+        self.start()
+
+        with gxgrd.Grid.open(self.g1f) as g:
+            self.assertTrue(isinstance(g[0], float))
+            self.assertEqual(g[0], 771.0)
+            self.assertEqual(g[(0,0)], 771.0)
+            self.assertEqual(g[(g.nx * g.ny) - 1], 243.0)
+            self.assertEqual(g[(g.nx - 1, g.ny - 1)], 243.0)
+
+            with gxgrd.Grid.copy(g, dtype=int) as g:
+                self.assertTrue(isinstance(g[0], int))
+                self.assertEqual(g[0], 771)
+
+        with gxgrd.Grid.copy(self.g1f, dtype=int) as g:
+            self.assertTrue(isinstance(g[0], int))
+            self.assertEqual(g[0], 771)
+
+    def test_open_int(self):
+        self.start()
+
+        with gxgrd.Grid.open(self.g1f, dtype=int) as g:
+            vv = g.read_row(0)
+            self.assertEqual(g[0], 771)
 
 
 ###############################################################################################

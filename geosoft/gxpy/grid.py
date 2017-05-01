@@ -25,7 +25,7 @@ def _t(s):
     return geosoft.gxpy.system.translate(s)
 
 
-class GRDException(Exception):
+class GridException(Exception):
     """
     Exceptions from this module.
 
@@ -225,31 +225,38 @@ class Grid():
                     self._hgd = True
 
         self._img = None
+        gxtype = gxu.gx_dtype(dtype)
         if (self._file_name is None):
-            self._img = gxapi.GXIMG.create(gxu.gx_dtype(dtype), kx, dim[0], dim[1])
+            self._img = gxapi.GXIMG.create(gxtype, kx, dim[0], dim[1])
 
         elif mode == FILE_NEW:
             if not overwrite:
                 if os.path.isfile(self.file_name):
-                    raise GRDException(_t('Cannot overwrite existing grid {}'.format(self.file_name)))
+                    raise GridException(_t('Cannot overwrite existing grid {}'.format(self.file_name)))
             if self._hgd:
                 # for HGD grids, make a memory grid, which will be saved to an HGD on closing
-                self._img = gxapi.GXIMG.create(gxu.gx_dtype(dtype), kx, dim[0], dim[1])
+                self._img = gxapi.GXIMG.create(gxtype, kx, dim[0], dim[1])
             else:
-                self._img = gxapi.GXIMG.create_new_file(gxu.gx_dtype(dtype),
+                self._img = gxapi.GXIMG.create_new_file(gxtype,
                                                         kx, dim[0], dim[1],
                                                         self.file_name_decorated)
 
         elif mode == FILE_READ:
-            self._img = gxapi.GXIMG.create_file(gxu.gx_dtype(dtype),
+            self._img = gxapi.GXIMG.create_file(gxtype,
                                                 self.file_name_decorated,
                                                 gxapi.IMG_FILE_READONLY)
             self._readonly = True
 
         else:
-            self._img = gxapi.GXIMG.create_file(gxu.gx_dtype(dtype),
+            self._img = gxapi.GXIMG.create_file(gxtype,
                                                 self.file_name_decorated,
                                                 gxapi.IMG_FILE_READORWRITE)
+
+        self._next_row = 0
+        self._next_col = 0
+        self._gxtype = self._img.e_type()
+        self._dtype = gxu.dtype_gx(self._gxtype)
+        self._is_int = gxu.is_int(self._gxtype)
 
         self._open = gx.track_resource(self.__class__.__name__, self._file_name)
 
@@ -258,8 +265,9 @@ class Grid():
         """
         Open an existing grid file.
 
-        :param file_name:    name of the grid file
-        :param dtype:       numpy data type
+        :param file_name:   name of the grid file
+        :param dtype:       numpy data type, None for the grid native type.  If not the same as the native
+                            type a memory grid is created in the new type.
         :param mode:        open mode:
 
             =================  ================================================
@@ -272,9 +280,14 @@ class Grid():
 
         if mode is None:
             mode = FILE_READ
-        grd = cls(file_name, dtype=dtype, mode=mode)
+        grd = cls(file_name, dtype=None, mode=mode)
 
-        return grd
+        if (dtype is not None) and (grd.dtype != dtype):
+            grdm = cls.copy(grd, dtype=dtype)
+            grd.close()
+            return grdm
+        else:
+            return grd
 
     @classmethod
     def new(cls, file_name=None, properties={}, overwrite=False):
@@ -293,37 +306,82 @@ class Grid():
         nx = properties.get('nx', 0)
         ny = properties.get('ny', 0)
         if (nx <= 0) or (ny <= 0):
-            raise GRDException(_t('Grid dimension ({},{}) must be > 0').format(nx, ny))
+            raise GridException(_t('Grid dimension ({},{}) must be > 0').format(nx, ny))
 
         grd = cls(file_name, dtype=dtype, mode=FILE_NEW, dim=(nx, ny), overwrite=overwrite)
         grd.set_properties(properties)
 
         return grd
 
+    def __iter__(self):
+        return self
+
+    def __next__(self):
+        if self._next >= self.length:
+            self._next = 0
+            raise StopIteration
+        else:
+            i = self._next
+            self._next += 1
+            return self.np[i], self._start + self._incr * i
+
+    def __getitem__(self, item):
+        if isinstance(item, int):
+            ix = item % self.ny
+            iy = item // self.nx
+        else:
+            ix, iy = item
+        if self._hpg is None:
+            self._hpg = self._img.geth_pg()
+            self._hpg_is_int = gxu.is_int(self._hpg.e_type())
+        v = self._get_pg().get(ix, iy)
+        if self._is_int:
+            return int(v)
+        else:
+            return v
+
+    def get_value(self, x, y):
+        """
+        Return a grid value at a point as a float.  For scalar data the point value will
+        be interpolated between neighbors.  For colour data the dearest value is returned
+        as a color int.
+        
+        :param self: 
+        :param x: 
+        :param y: 
+        :return: 
+        """
+
+        #TODO complete
+
     @classmethod
-    def copy(cls, grd, file_name, dtype=None, overwrite=False):
+    def copy(cls, grd, file_name=None, dtype=None, overwrite=False):
         """
         Create a new Grid instance as a copy of an existing grid.
 
         :param grd:         grid instance to save as a new grid
-        :param file_name:   name of the new grid (file with optional decorations)
+        :param file_name:   name of the new grid (file with optional decorations), default is in memory
         :param dtype:       numpy data type, None to use type of the parent grid
         :param overwrite:   True to overwrite if the file exists, False to no overwrite.
 
         .. versionadded:: 9.2
         """
 
+        if not isinstance(grd, Grid):
+            grd = Grid.open(grd)
+
         p = grd.properties()
         if dtype:
             p['dtype'] = dtype
 
-        path0, base_file0, root0, ext0, dec0 = name_parts(grd.file_name_decorated)
-        path1, base_file1, root1, ext1, dec1 = name_parts(file_name)
-        if not ext1:
-            ext1 = ext0
-        if (ext1 == ext0) and not dec1:
-            dec1 = dec0
-        file_name = decorate_name(os.path.join(path1, root1) + ext1, dec1)
+        if file_name is not None:
+            path0, base_file0, root0, ext0, dec0 = name_parts(grd.file_name_decorated)
+            path1, base_file1, root1, ext1, dec1 = name_parts(file_name)
+            if not ext1:
+                ext1 = ext0
+            if (ext1 == ext0) and not dec1:
+                dec1 = dec0
+            file_name = decorate_name(os.path.join(path1, root1) + ext1, dec1)
 
         copy = Grid.new(file_name, p, overwrite=overwrite)
         grd._img.copy(copy._img)
@@ -358,7 +416,7 @@ class Grid():
                 (x0 < 0) or (y0 < 0) or
                 (nx <= 0) or (ny <= 0) or
                 (mx > gnx) or (my > gny)):
-            raise GRDException(_t('Window x0,y0,mx,my({},{},{},{}) out of bounds ({},{})').format(x0, y0, mx, my, gnx, gny))
+            raise GridException(_t('Window x0,y0,mx,my({},{},{},{}) out of bounds ({},{})').format(x0, y0, mx, my, gnx, gny))
 
         if name is None:
             path, file_name, root, ext, dec = name_parts(grd.file_name_decorated)
@@ -381,8 +439,8 @@ class Grid():
             p['y0'] = grd.y0 - dy * cos + dx * sin
 
         wgd = cls.new(name, p, overwrite=True)
-        wpg = wgd._geth_pg()
-        wpg.copy_subset(grd._geth_pg(), 0, 0, y0, x0, ny, nx)
+        wpg = wgd._get_pg()
+        wpg.copy_subset(grd._get_pg(), 0, 0, y0, x0, ny, nx)
 
         return wgd
 
@@ -430,7 +488,21 @@ class Grid():
 
         .. versionadded:: 9.2
         """
-        return gxu.dtype_gx(self._img.e_type())
+        return self._dtype
+
+    @property
+    def gxtype(self):
+        """
+        Geosoft data type for the grid
+
+        .. versionadded:: 9.2
+        """
+        return self._gxtype
+
+    @property
+    def is_int(self):
+        """ returns True if base grid type is integer, which includes color integers"""
+        return self._is_int
 
     @property
     def nx(self):
@@ -635,7 +707,7 @@ class Grid():
         """
 
         if self._readonly:
-            raise GRDException(_t('{} opened as read-only, cannot set properties.').format(self.file_name_decorated))
+            raise GridException(_t('{} opened as read-only, cannot set properties.').format(self.file_name_decorated))
 
         dx = properties.get('dx', 1.0)
         dy = properties.get('dy', dx)
@@ -649,7 +721,7 @@ class Grid():
                 cs = gxcs.Coordinate_system(cs)
             self._img.set_ipj(cs.gxipj)
 
-    def _geth_pg(self):
+    def _get_pg(self):
         """Get an hpg for the grid, adding the handle to the class so it does not get destroyed."""
         if self._hpg is None:
             self._hpg = self._img.geth_pg()
@@ -669,20 +741,53 @@ class Grid():
 
         ny, nx = data.shape
         iy = iy0
-        dtype = self.dtype
+        dtype = self._dtype
         for i in range(ny):
             self._img.write_y(iy, ix0, 0, gxvv.GXvv(data[i, :], dtype=dtype)._vv)
             iy += order
 
-    def read_rows(self, ix0=0, iy0=0):
+    def read_row(self, row=None, start=0, length=0):
         """
 
-        :param ix0:
-        :param iy0:
+        :param row:     row to read, if not specified the next row is read starting from row 0
+        :param start:   the first point in the row, default is 0
+        :param length:  number of points to read, the default is to the end of the row.
         :return:
 
         .. versionadded:: 9.1
         """
+
+        if row is None:
+            row = self._next_row
+        self._next_row = row + 1
+
+        if row >= self.ny:
+            raise GridException(_t('Attempt to read row {} past the last row {}'.format(row, self.ny)))
+        vv = gxvv.GXvv(dtype=self._dtype)
+        self._img.read_y(row, start, length, vv.gxvv)
+
+        return vv
+
+    def read_column(self, column=None, start=0, length=0):
+        """
+
+        :param column:  column to read, if not specified the next column is read starting from column 0
+        :param start:   the first point in the column, default is 0
+        :param length:  number of points to read, the default is to the end of the col.
+        :return:
+
+        .. versionadded:: 9.1
+        """
+
+        if column is None:
+            column = self._next_col
+        if column >= self.ny:
+            raise GridException(_t('Attempt to read column {} past the last column {}'.format(column, self.ny)))
+        self._next_col = column + 1
+        vv = gxvv.GXvv()
+        self._img.read_y(column, start, length, vv.gxvv)
+
+        return vv
 
     @staticmethod
     def name_parts(name):
@@ -842,7 +947,7 @@ def grid_mosaic(mosaic, gridList, typeDecoration='', report=None):
             p = g.properties()
             nX = p.get('nx')
             nY = p.get('ny')
-            gpg = g._geth_pg()
+            gpg = g._get_pg()
             destx, desty = locate(x0, y0, p)
             if report:
                 report('    +{} nx,ny({},{})'.format(g, nX, nY))
@@ -851,7 +956,7 @@ def grid_mosaic(mosaic, gridList, typeDecoration='', report=None):
             return
 
     if len(gridList) == 0:
-        raise GRDException(_t('At least one grid is required'))
+        raise GridException(_t('At least one grid is required'))
 
     # create list of grids, all matching on coordinate system of first grid
     grids = []
@@ -876,7 +981,7 @@ def grid_mosaic(mosaic, gridList, typeDecoration='', report=None):
     # paste grids onto master
     mnx = master.nx
     mny = master.ny
-    mpg = master._geth_pg()
+    mpg = master._get_pg()
     for g in grids:
         paste(g, mpg)
 

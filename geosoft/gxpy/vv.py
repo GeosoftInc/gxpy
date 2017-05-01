@@ -71,10 +71,14 @@ class GXvv():
             dtype = array.dtype # if strings, type will change to the longest string
 
         if dtype is None:
-            dtype = array.dtype
+            try:
+                dtype = array.dtype
+            except AttributeError:
+                dtype = np.float
 
         self._gxtype = gxu.gx_dtype(dtype)
         self._dtype = gxu.dtype_gx(self._gxtype)
+        self._is_int = gxu.is_int(self._gxtype)
         self._vv = gxapi.GXVV.create_ext(self._gxtype, 0)
         self.fid = fid
         self._start, self._incr = self.fid
@@ -110,7 +114,11 @@ class GXvv():
 
     def __getitem__(self, item):
         start, incr = self.fid
-        return self.np[item], start + incr * item
+        if self._is_int:
+            v = int(self.np[item])
+        else:
+            v = float(self.np[item])
+        return v, start + incr * item
 
     @property
     def gxvv(self):
@@ -163,6 +171,11 @@ class GXvv():
         .. versionadded:: 9.1
         """
         return self._dtype
+
+    @property
+    def is_int(self):
+        """ True if a base integer type"""
+        return self._is_int
 
     @property
     def np(self):

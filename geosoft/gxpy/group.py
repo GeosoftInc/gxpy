@@ -1121,26 +1121,28 @@ class Color:
 
     def __init__(self, color, model=CMODEL_RGB):
 
-        if type(color) is Color:
+        if isinstance(color, Color):
             self._color = color.int
 
-        elif type(color) is int:
-            self._color = color
+        elif isinstance(color, int):
+            self.int = color
 
-        elif type(color) is str:
+        elif isinstance(color, str):
             self._color = gxapi.GXMVIEW.color(color)
 
-        elif model == CMODEL_CMY:
-            self.cmy = color
-
-        elif model == CMODEL_HSV:
-            hue = max(0, min(255, color[0]))
-            sat = max(0, min(255, color[1]))
-            val = max(0, min(255, color[2]))
-            self._color = gxapi.GXMVIEW.color_hsv(hue, sat, val)
-
         else:
-            self.rgb = color
+
+            if model == CMODEL_CMY:
+                self.cmy = color
+
+            elif model == CMODEL_HSV:
+                hue = max(0, min(255, color[0]))
+                sat = max(0, min(255, color[1]))
+                val = max(0, min(255, color[2]))
+                self._color = gxapi.GXMVIEW.color_hsv(hue, sat, val)
+
+            else:
+                self.rgb = color
 
     def __eq__(self, other):
         return self.int == other.int
@@ -1154,7 +1156,9 @@ class Color:
 
     @int.setter
     def int(self, color):
-        self.color = int(color)
+        if color < 0:
+            raise GroupException(_t('Invalid color integer {}, must be >= 0').format(color))
+        self._color = int(color)
 
     @property
     def rgb(self):
