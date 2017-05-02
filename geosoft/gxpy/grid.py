@@ -482,6 +482,11 @@ class Grid():
         self._close()
 
     @property
+    def gximg(self):
+        """ Retrun handle to the underlying GXIMG."""
+        return self._img
+
+    @property
     def dtype(self):
         """
         numpy data type for the grid
@@ -781,11 +786,11 @@ class Grid():
 
         if column is None:
             column = self._next_col
-        if column >= self.ny:
+        if column >= self.nx:
             raise GridException(_t('Attempt to read column {} past the last column {}'.format(column, self.ny)))
         self._next_col = column + 1
         vv = gxvv.GXvv()
-        self._img.read_y(column, start, length, vv.gxvv)
+        self._img.read_x(column, start, length, vv.gxvv)
 
         return vv
 
@@ -852,9 +857,52 @@ class Grid():
                max(xyz0[1], xyz1[1], xyz2[1], xyz3[1]),\
                max(xyz0[2], xyz1[2], xyz2[2], xyz3[2])
 
+    def xyzv(self):
+        """
+        Return a numpy float array of (x,y,z,v) grid points, where (x, y, z) is the
+        location of each grid point in 3D space and v is the grid value at that location.
+        
+        .. versionadded:: 9.2
+        """
+
+        nx = self.nx
+        ny = self.ny
+        dx = self.dx
+        dy = self.dy
+        rot = self.rot
+        cs = self.cs
+        xyzv = np.zeros((ny, nx, 4))
+        xyzv[:, :, 0:2] = np.mgrid[0: (nx - 0.5) * dx: dx, 0: (ny - 0.5) * dy: dy].swapaxes(0, 2)
+
+        if rot != 0.:
+            cosine = math.cos(math.radians(rot))
+            sine = math.sin(math.radians(rot))
+            x = xyzv[:, :, 0]
+            cosx = x * cosine
+            sinx = x * sine
+            y = xyzv[:, :, 1]
+            cosy = y * cosine
+            siny = y * sine
+            xyzv[:, :, 0] = cosx + siny
+            xyzv[:, :, 1] = cosy - sinx
+
+        xyzv += (self.x0, self.y0, 0, 0)
+
+        if cs.is_oriented:
+            xyzv[:, :, :3] = cs.xyz_from_oriented(xyzv[:, :, :3].reshape((-1, 3))).reshape((ny, nx, 3))
+
+        if self.gximg.query_kx() == -1:
+            for i in range(self.nx):
+                xyzv[:, i, 3] = gxu.dummy_to_nan(self.read_column(i).np)
+        else:
+            for i in range(self.ny):
+                xyzv[i, :, 3] = gxu.dummy_to_nan(self.read_row(i).np)
+
+        return xyzv
+
 
 # grid utilities
-def array_locations(properties, z=0.):
+def array_locations(properties):
     """
     Create an array of (x,y,z) points for a grid defined by properties
     :param properties:  grid properties
@@ -863,21 +911,16 @@ def array_locations(properties, z=0.):
     .. versionadded:: 9.1
     """
 
-    nx = properties.get('nx')
-    ny = properties.get('ny')
-    dx = properties.get('dx')
-    dy = properties.get('dy', dx)
-    offset = np.array([properties.get('x0', 0.), properties.get('y0', 0.), z])
-    loc = np.zeros((ny, nx, 3))
-    loc[:, :, 0:2] = np.mgrid[0: (nx - 0.5) * dx: dx, 0: (ny - 0.5) * dy: dy].swapaxes(0, 2)
+    with Grid.new(properties=properties) as g:
+        return g.xyzv()[:,:,:3]
 
-    return loc + offset
 
 def gridMosaic(*args, **kwargs):
     """
     .. deprecated:: 9.2 use :py:method: grid_mosaic
     """
     return grid_mosaic(*args, **kwargs)
+
 
 def grid_mosaic(mosaic, gridList, typeDecoration='', report=None):
     """

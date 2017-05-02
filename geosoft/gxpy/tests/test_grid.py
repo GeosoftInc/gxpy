@@ -7,6 +7,7 @@ import geosoft.gxpy.gx as gx
 import geosoft.gxpy.system as gsys
 import geosoft.gxpy.coordinate_system as gxcs
 import geosoft.gxpy.grid as gxgrd
+import geosoft.gxpy.utility as gxu
 
 from geosoft.gxpy.tests import GXPYTest
 
@@ -384,31 +385,37 @@ class Test(GXPYTest):
     def test_array_locations(self):
         self.start()
 
-        props = {'x0':100, 'y0':-25.25, 'dx': 5, 'nx':101, 'ny':501}
-        a = gxgrd.array_locations(props)
-        self.assertEqual(len(a.shape),3)
-        self.assertEqual(a.shape[0], props.get('ny'))
-        self.assertEqual(a.shape[1], props.get('nx'))
-        self.assertEqual(a.shape[2], 3)
-        self.assertEqual(a[0,0,0], 100.0)
-        self.assertEqual(a[0,0,1], -25.25)
-        self.assertEqual(a[0,0,2], 0.0)
-        self.assertEqual(a[0,1,0]-a[0,0,0], props.get('dx'))
-        self.assertEqual(a[1,0,1]-a[0,0,1], props.get('dx'))
-        self.assertEqual(a[0,0,2]-a[1,1,2], 0.)
+        with gxgrd.Grid.new(properties={'x0':100, 'y0':-25.25, 'dx': 5, 'nx':101, 'ny':501}) as g:
+            a = g.xyzv()
+            self.assertEqual(len(a.shape),3)
+            self.assertEqual(a.shape[0], g.ny)
+            self.assertEqual(a.shape[1], g.nx)
+            self.assertEqual(a.shape[2], 4)
+            self.assertEqual(a[0,0,0], 100.0)
+            self.assertEqual(a[0,0,1], -25.25)
+            self.assertEqual(a[0,0,2], 0.0)
+            self.assertTrue(gxu.is_nan(a[0, 0, 3]))
+            self.assertEqual(a[0,1,0]-a[0,0,0], g.dx)
+            self.assertEqual(a[1,0,1]-a[0,0,1], g.dy)
+            self.assertEqual(a[0,0,2]-a[1,1,2], 0.)
 
-        props = {'x0':100, 'y0':-25.25, 'dx': 5, 'dy': 1, 'nx':101, 'ny':501}
-        a = gxgrd.array_locations(props, z=10.1)
-        self.assertEqual(len(a.shape),3)
-        self.assertEqual(a.shape[0], props.get('ny'))
-        self.assertEqual(a.shape[1], props.get('nx'))
-        self.assertEqual(a.shape[2], 3)
-        self.assertEqual(a[0,0,0], 100.0)
-        self.assertEqual(a[0,0,1], -25.25)
-        self.assertEqual(a[0,0,2], 10.1)
-        self.assertEqual(a[0,1,0]-a[0,0,0], props.get('dx'))
-        self.assertEqual(a[1,0,1]-a[0,0,1], props.get('dy'))
-        self.assertEqual(a[0,0,2]-a[1,1,2], 0.)
+        props = {'x0':100, 'y0':-25.25, 'dx': 5, 'nx':101, 'ny':501, 'rot':10}
+        a = gxgrd.array_locations(props)
+        self.assertEqual((tuple(a[0, 0, :])), (100.0, -25.25, 0.0))
+        self.assertEqual((tuple(a[0, 10, :])), (149.24038765061039, -33.932408883346518, 0.0))
+        self.assertEqual((tuple(a[10, 0, :])), (108.68240888334651, 23.990387650610401, 0.0))
+        self.assertEqual((tuple(a[10, 10, :])), (157.92279653395693, 15.307978767263883, 0.0))
+
+        cs = gxcs.Coordinate_system({'type': 'local',
+                                     'lon_lat': (-96,43),
+                                     'azimuth': 10}).gxf
+        props = {'x0':0, 'y0':0, 'dx': 5, 'nx':101, 'ny':501, 'cs':cs}
+        a = gxgrd.array_locations(props)
+        self.assertEqual((tuple(a[0, 0, :])), (0.0, 0.0, 0.0))
+        self.assertEqual((tuple(a[0, 10, :])), (49.240387650610401, -8.6824088833465165, 0.0))
+        self.assertEqual((tuple(a[10, 0, :])), (8.6824088833465165, 49.240387650610401, 0.0))
+        self.assertEqual((tuple(a[10, 10, :])), (57.92279653395692, 40.557978767263883, 0.0))
+
 
     def test_hanging_resource(self):
         self.start()

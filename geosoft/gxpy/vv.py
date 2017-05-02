@@ -87,14 +87,7 @@ class GXvv():
         self._next = 0
 
         if array is not None:
-            if self._gxtype >= 0:
-                self._vv.set_data_np(0, array.flatten())
-            else:
-                # strings
-                array = array.flatten()
-                ne = array.shape[0]
-                for i in range(ne):
-                    self._vv.set_string(i, str(array[i]))
+            self.set_data(array.flatten(), fid)
 
     def __len__(self):
         return self._vv.length()
@@ -177,7 +170,6 @@ class GXvv():
         """ True if a base integer type"""
         return self._is_int
 
-    #TODO Consider expiry of _np (e.g. during set_data) and mutability of Numpy array
     @property
     def np(self):
         """
@@ -186,10 +178,7 @@ class GXvv():
         
         .. versionadded:: 9.2 
         """
-        if self.length == 0:
-            self._np = np.array([], dtype=self._dtype)
-        else:
-            self._np, *_ = self.get_data()
+        self._np, *_ = self.get_data()
         return self._np
 
     def get_data(self, dtype=None, start=0, n=None):
@@ -210,17 +199,18 @@ class GXvv():
             dtype = np.dtype(dtype)
 
         if (self._np is not None) and (dtype == self.dtype) and (start == 0) and (n is None):
-            return self._np, (start, self.fid[1])
+            return self._np, self.fid
 
         if n is None:
             n = self.length - start
         else:
             n = min((self.length - start), n)
 
-        if (n < 0) or (start < 0) or (start >= self.length):
+        if (n < 0) or (start < 0) or ((start >= self.length) and self.length > 0):
             raise VVException(_t('Cannot get (start,n) ({},{}) from vv of length {}').format(start, n, self.length))
 
-        if n == 0:
+
+        if (n == 0) or (self.length == 0):
             npd = np.array([], dtype=dtype)
 
         else:
@@ -257,7 +247,7 @@ class GXvv():
 
     def set_data(self, data, fid=(0.0, 1.0)):
         """
-        Set vv data from an array
+        Set vv data from an array.  If the array is float type numpy.nan are
 
         :param data:    data array
         :param fid:     fid tuple (start,increment), default (0.0,1.0)
@@ -271,6 +261,8 @@ class GXvv():
 
         # numerical data
         if self._gxtype >= 0:
+            if npdata.dtype == np.float32 or npdata.dtype == np.float64:
+                npdata[npdata == np.nan] = gxu.gx_dummy(npdata.dtype)
             self._vv.set_data_np(0, npdata)
 
         # strings
@@ -278,6 +270,9 @@ class GXvv():
             ne = npdata.shape[0]
             for i in range(ne):
                 self._vv.set_string(i, str(npdata[i]))
+
+        if self._np:
+            self._np[:] = npdata[:]
 
         self._vv.set_len(npdata.shape[0])
         self.fid = fid

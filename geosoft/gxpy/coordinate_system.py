@@ -453,6 +453,10 @@ class Coordinate_system:
         """
         self.gxipj.set_vcs(vcs)
 
+    @property
+    def is_oriented(self):
+        return '<' in self.hcs
+
     def coordinate_dict(self):
         """
         Returns "Geosoft" dictionary of coordinate system attributes.
@@ -806,7 +810,7 @@ class Coordinate_system:
         """
         return self._oriented_xyz(1, xyz, column_ordered=column_ordered)
 
-class GXpj:
+class Coordinate_projection:
     """
     Class to reproject coordinates.
 

@@ -26,19 +26,16 @@ import geosoft.gxapi as gxapi
 
 __version__ = geosoft.__version__
 
+
 def _t(s):
     return geosoft.gxpy.system.translate(s)
+
 
 # cached lookup tables
 _dummy_map = {}
 _gx2np_type = {}
 _np2gx_type = {}
 
-# Assign to valid path to override the Geosoft temporary file folder
-_temp_folder_override = None
-
-# Assign callable to override unique ID generation
-_uuid_callable = None
 
 class UtilityException(Exception):
     """
@@ -263,9 +260,9 @@ def rdecode(s):
     """
 
     try:
-        return(rdecode_err(s))
+        return (rdecode_err(s))
     except ValueError:
-        return(gxapi.rDUMMY)
+        return (gxapi.rDUMMY)
 
 
 def decode(s, f):
@@ -379,7 +376,7 @@ def gx_dtype(dtype):
         return gxapi.GS_TYPE_DEFAULT
     dtype = np.dtype(dtype)
     try:
-        return(_np2gx_type[str(dtype)])
+        return (_np2gx_type[str(dtype)])
     except KeyError:
         if dtype.type is np.str_:
             return -(int(dtype.str[2:]))
@@ -391,7 +388,7 @@ def dtype_gx(gtype):
 
     .. versionadded:: 9.1
     """
-    
+
     global _gx2np_type
     if not bool(_gx2np_type):
         _gx2np_type = {
@@ -436,11 +433,13 @@ def is_string(gxtype):
     else:
         return False
 
+
 def gxDummy(dtype):
     """
     .. deprecated:: 9.2 use gx_dummy()
     """
     return gx_dummy(dtype)
+
 
 def gx_dummy(dtype):
     """
@@ -462,16 +461,17 @@ def gx_dummy(dtype):
             np.dtype(np.int64): gxapi.GS_S8DM,
             np.dtype(np.str_): ''}
     try:
-        return(_dummy_map[np.dtype(dtype)])
+        return (_dummy_map[np.dtype(dtype)])
     except KeyError:
         s = str(dtype)
         if s[0] == 'U' or s[1] == 'U':
             return ''
 
+
 def dummy_none(v):
     """ 
     Returns None if dummy, otherwise the value.
-    
+
     .. versionadded:: 9.2
     """
 
@@ -481,11 +481,13 @@ def dummy_none(v):
     else:
         return v
 
+
 def dummyMask(npd):
     """
     .. deprecated:: 9.2 use dummy_mask()
     """
     return dummy_mask(npd)
+
 
 def dummy_mask(npd):
     """
@@ -498,10 +500,37 @@ def dummy_mask(npd):
     .. versionadded:: 9.2
     """
 
+    dummy = gx_dummy(npd.dtype)
+    if npd.ndim == 1:
+        return npd == dummy
     if len(npd.shape) != 2:
         raise UtilityException(_t('Must be a 2D array'))
-    dummy = gx_dummy(npd.dtype)
     return np.apply_along_axis(lambda a: dummy in a, 1, npd)
+
+
+def is_nan(v):
+    """
+    Returns True is v is a numpy.nan 
+    
+    .. versionadded:: 9.2
+    """
+    return not (v == v)
+
+
+def dummy_to_nan(data):
+    """
+    Replaces dummies in float data to numpy.nan.  All other data types are returned unchanged.
+    
+    .. versionadded:: 9.2
+    """
+
+    if not isinstance(data, np.ndarray):
+        data = np.array(data)
+    if not ((data.dtype == np.float64) or (data.dtype == np.float32)):
+        return data
+    else:
+        gxdummy = gx_dummy(data.dtype)
+        data[data == gxdummy] = np.nan
 
 
 def save_parameters(group='_', parms=None):
@@ -520,7 +549,8 @@ def save_parameters(group='_', parms=None):
             s = json.dumps(v).replace('\\\\', '\\')
             gxapi.GXSYS.set_string(group, k, s)
 
-def reg_from_dict(rd, max_size=4096, json_encode = True):
+
+def reg_from_dict(rd, max_size=4096, json_encode=True):
     """
     :param rd:          dictionary
     :param max_size:    maximum "key=value" string size
@@ -544,6 +574,7 @@ def reg_from_dict(rd, max_size=4096, json_encode = True):
         reg.set(key, value)
     return reg
 
+
 def dict_from_reg(reg, ordered=False):
     """
     :param reg:     gxapi.GXREG instance
@@ -566,6 +597,7 @@ def dict_from_reg(reg, ordered=False):
         else:
             dct[key.value] = val.value
     return dct
+
 
 def get_parameters(group='_', parms=None, default=None):
     """
@@ -632,6 +664,7 @@ def folder_user():
     gxapi.GXSYS.get_path(gxapi.SYS_PATH_GEOSOFT_USER, path)
     return path.value.replace('\\', os.sep)
 
+
 def folder_temp():
     """
     Return the Geosoft temporary folder name.
@@ -642,14 +675,11 @@ def folder_temp():
 
     .. versionadded:: 9.1
     """
-    global _temp_folder_override
-    if _temp_folder_override:
-        return _temp_folder_override
-
     path = gxapi.str_ref()
     gxapi.GXSYS.get_path(gxapi.SYS_PATH_GEOTEMP, path)
     path = path.value.replace('\\', os.sep)
     return os.path.normpath(path)
+
 
 def normalize_file_name(fn):
     """
@@ -663,17 +693,15 @@ def normalize_file_name(fn):
     """
     return fn.replace('\\', '/')
 
+
 def uuid():
     """
     :return: a uuid as a string
 
     .. versionadded:: 9.2
     """
-    global _uuid_callable
-    if _uuid_callable:
-        return _uuid_callable()
-    else:
-        return str(str(uid.uuid1()))
+    return str(str(uid.uuid1()))
+
 
 def _temp_dict_file_name():
     """Name of the expected python dictionary as a json file from run_external_python().
@@ -769,6 +797,7 @@ def run_external_python(script, script_args='',
 
     return get_shared_dict()
 
+
 def crc32(bytes, crc=0):
     """
     Return 32-bit CRC of a byte buffer.
@@ -781,6 +810,7 @@ def crc32(bytes, crc=0):
     crc = binascii.crc32(bytes, crc)
     return crc
 
+
 def crc32_file(filename, crc=0):
     """
     Return 32-bit CRC of a file.
@@ -790,6 +820,7 @@ def crc32_file(filename, crc=0):
 
     .. versionadded:: 9.2
     """
+
     def readbuff(f, bsize=16384):
         while True:
             buff = f.read(bsize)
@@ -803,6 +834,7 @@ def crc32_file(filename, crc=0):
 
     return crc
 
+
 def crc32_str(s, crc=0):
     """
     Return 32-bit CRC of a string.
@@ -815,6 +847,7 @@ def crc32_str(s, crc=0):
     crc = crc32(s.encode(), crc)
     return crc
 
+
 def year_from_datetime(dt):
     """
     Return a decimal Gregorian calendar year from a Python datetime.
@@ -826,8 +859,9 @@ def year_from_datetime(dt):
 
     naive_dt = dt.replace(tzinfo=None)
     y_start = datetime.datetime(naive_dt.year, 1, 1)
-    y_end = y_start.replace(year=naive_dt.year+1)
-    return dt.year + (naive_dt - y_start)/(y_end - y_start)
+    y_end = y_start.replace(year=naive_dt.year + 1)
+    return dt.year + (naive_dt - y_start) / (y_end - y_start)
+
 
 def datetime_from_year(year):
     """
@@ -842,7 +876,8 @@ def datetime_from_year(year):
     y_start = datetime.datetime(yr, 1, 1)
     y_end = y_start.replace(yr + 1)
     milliseconds = round(remainder * (y_end - y_start).total_seconds() * 1000.0)
-    return y_start + datetime.timedelta(seconds=milliseconds/1000.0)
+    return y_start + datetime.timedelta(seconds=milliseconds / 1000.0)
+
 
 def str_significant(value, n, mode=0):
     """
@@ -866,7 +901,7 @@ def str_significant(value, n, mode=0):
 
     power = vstr.index('.')
     vstr = vstr[:power] + vstr[power + 1:]
-    for i,c in enumerate(vstr):
+    for i, c in enumerate(vstr):
         if c != '0':
             power -= i
             break

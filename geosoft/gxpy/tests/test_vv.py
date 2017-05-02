@@ -140,7 +140,7 @@ class Test(GXPYTest):
             self.assertEqual(npd[1],2.0)
             self.assertEqual(npd[2],3.0)
             self.assertEqual(npd[3],4000.0)
-            self.assertEqual(npd[4],gxapi.rDUMMY)
+            self.assertEqual(npd[4], -1.0e32)
 
         npdata = np.array(["1","2","3","4000","40000","*"])
         with gxvv.GXvv(npdata, fid=fid) as vv:

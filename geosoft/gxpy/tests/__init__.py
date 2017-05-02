@@ -23,6 +23,7 @@ import geosoft.gxpy.system as gxsys
 # To incorporate a diff tool the GXPY_DIFF_TOOL environment
 # variable should be defined.
 UPDATE_RESULTS = False
+UPDATE_RESULTS_DONT_ASK = False
 
 # set to True to show viewer for each CRC call
 SHOW_TEST_VIEWERS = False
@@ -229,6 +230,12 @@ class GXPYTest(unittest.TestCase):
                                 testing function use this parameter to create unique names.
         """
 
+        def update_master():
+            for xml_result in xml_result_files:
+                xml_master = xml_result.replace(os.path.splitext(xml_result_part)[0],
+                                                os.path.splitext(xml_master_part)[0])
+                shutil.copyfile(xml_result, xml_master)
+
         result_dir = os.path.join(self.result_dir, 'result')
         master_dir = os.path.join(self.result_dir, 'master')
         if not os.path.exists(result_dir):
@@ -298,7 +305,12 @@ class GXPYTest(unittest.TestCase):
             gxvwr.view_document(map_file)
 
         if len(report) > 0:
-            if UPDATE_RESULTS or update_results:
+
+            if UPDATE_RESULTS_DONT_ASK:
+                update_master()
+
+            elif UPDATE_RESULTS or update_results:
+
                 diff_tool = os.environ.get('GXPY_DIFF_TOOL', None)
                 if diff_tool is not None:
                     update = messagebox.askyesnocancel('Test differences found ({})'.format(self.id()),
@@ -319,10 +331,8 @@ class GXPYTest(unittest.TestCase):
                     self.fail(report)
 
                 if update:
-                    for xml_result in xml_result_files:
-                        xml_master = xml_result.replace(os.path.splitext(xml_result_part)[0],
-                                                        os.path.splitext(xml_master_part)[0])
-                        shutil.copyfile(xml_result, xml_master)
+                    update_master()
+
                 else:
                     subprocess.run([diff_tool, result_dir, master_dir])
 
