@@ -5,9 +5,12 @@ import unittest
 import inspect
 import subprocess
 from tkinter import Tk, messagebox
+import win32con
+import win32gui
 
 os.environ['GEOSOFT_TEST_MODE'] = '1'
 os.environ['GEOSOFT_TESTSYSTEM_MODE'] = '1'
+
 
 import geosoft.gxpy.gx as gx
 import geosoft.gxapi as gxapi
@@ -24,6 +27,12 @@ UPDATE_RESULTS = False
 # set to True to show viewer for each CRC call
 SHOW_TEST_VIEWERS = False
 
+_prevent_interactive = os.environ.get('GEOSOFT_PREVENT_INTERACTIVE', 0) == '1'
+if _prevent_interactive:
+    UPDATE_RESULTS = False
+    SHOW_TEST_VIEWERS = False
+
+win32gui.SystemParametersInfo(win32con.SPI_SETFONTSMOOTHING, True)
 
 # Make root window for UI methods
 root_window = None
@@ -45,13 +54,37 @@ def _verify_no_gx_context():
 
 class GXPYTest(unittest.TestCase):
     _multiprocess_shared_ = True
+    _test_case_py = None
+    _test_case_filename = None
+    _result_base_dir = None
+    _cls_unique_id_count = 0
     _gx = None
 
     @classmethod
-    def setUpGXPYTest(cls, res_stack=6):
+    def _cls_uuid(cls):
+        cls._cls_unique_id_count = cls._cls_unique_id_count + 1
+        return 'uuid_{}_{}'.format(cls._test_case_filename, cls._cls_unique_id_count)
 
-        os.chdir(os.path.dirname(os.path.realpath(__file__)))
+    @classmethod
+    def setUpGXPYTest(cls, res_stack=6):
         _verify_no_gx_context()
+
+        cls._cls_unique_id_count = 0
+        cls._test_case_py = inspect.getfile(cls)
+        cls._test_case_filename = os.path.split(cls._test_case_py)[1]
+        if cls._test_case_filename == os.path.split(__file__)[1]:
+            raise Exception("GXPYTest base class incorrectly detected as test case!")
+
+        cur_dir = os.path.dirname(cls._test_case_py)
+        cls._result_base_dir = os.path.join(cur_dir, 'results', cls._test_case_filename)
+        os.makedirs(cls._result_base_dir, exist_ok=True)
+        os.chdir(cls._result_base_dir)
+
+        gxu._temp_folder_override = os.path.join(cls._result_base_dir, '__tmp__')
+        os.makedirs(gxu._temp_folder_override, exist_ok=True)
+
+        gxu._uuid_callable = cls._cls_uuid
+
         cls._gx = gx.GXpy(log=print, res_stack=res_stack, max_warnings=8)
 
     @classmethod
@@ -59,6 +92,15 @@ class GXPYTest(unittest.TestCase):
         if cls._gx:
             cls._gx._close()
         cls._gx = None
+
+        gxu._temp_folder_override = None
+        gxu._uuid_callable = None
+
+        cls._test_case_py = None
+        cls._test_case_filename = None
+        cls._result_base_dir = None
+        cls._cls_unique_id_count = 0
+
         _verify_no_gx_context()
 
     @classmethod
@@ -71,15 +113,20 @@ class GXPYTest(unittest.TestCase):
     def tearDownClass(cls):
         cls.tearDownGXPYTest()
 
+    def _uuid(self):
+        self._unique_id_count = self._unique_id_count + 1
+        return 'uuid_{}_{}'.format(self._func, self._unique_id_count)
+
     def start(self):
-        file = os.path.split(inspect.getfile(self.__class__))[1]
-        func = self.id().split('.')[-1]
-        self._result_dir = os.path.join('results', file, func)
+        self._func = self.id().split('.')[-1]
+        self._result_dir = os.path.join(self._result_base_dir, self._func)
         result_run_dir = os.path.join(self._result_dir, 'result')
         if os.path.exists(result_run_dir):
             shutil.rmtree(result_run_dir)
 
-        self.gx.log("*** {} > {}".format(file, func))
+        gxu._uuid_callable = self._uuid
+        self._unique_id_count = 0
+        self.gx.log("*** {} > {}".format(self._test_case_filename, self._func))
 
     @property
     def gx(self):
@@ -161,15 +208,13 @@ class GXPYTest(unittest.TestCase):
         return report
 
     @classmethod
-    def _agnosticize_and_ensure_consistent_line_endings(cls, xml_file, replacement_dict):
+    def _agnosticize_and_ensure_consistent_line_endings(cls, xml_file, file_name_part, alt_crc_name):
         with open(xml_file) as f:
             lines = f.read().splitlines()
 
         with open(xml_file, 'wb') as f:
             for line in lines:
-                # TODO JB Also replace known folder matches e.g. temp_folder with '<temp>' etc.
-                for k, v in replacement_dict.items():
-                    line = line.replace(k, v)
+                line = line.replace(file_name_part, alt_crc_name)
                 f.write('{}\r\n'.format(line).encode('UTF-8'))
 
     def crc_map(self, map_file, *, format='PNG', pix_width=2048, update_results=False, alt_crc_name=None):
@@ -204,14 +249,12 @@ class GXPYTest(unittest.TestCase):
 
         file_name_part = file_part.split('.')[0]
 
-        replacement_dict = {}
         if alt_crc_name is None:
             alt_crc_name = gxsys.func_name(1)
-        replacement_dict[file_name_part] = alt_crc_name
 
         result_files = glob.glob(xml_result_file + '*')
         for result in result_files:
-            self._agnosticize_and_ensure_consistent_line_endings(result, replacement_dict)
+            self._agnosticize_and_ensure_consistent_line_endings(result, file_name_part, alt_crc_name)
 
         if alt_crc_name:
             alt_file_part = file_part.replace(file_name_part, alt_crc_name)

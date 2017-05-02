@@ -24,7 +24,7 @@
                                  <Item name="REG" type="REG">
                                     <REG>
                                        <Attributes>
-                                          <Item name="FILE" value="8790b014-2dcc-11e7-b0d6-240a6403b873.tbl"/>
+                                          <Item name="FILE" value="uuid_test_basic_grid_2_1.tbl"/>
                                        </Attributes>
                                     </REG>
                                  </Item>
@@ -134,7 +134,7 @@
                            <BAND>
                               <Header>
                                  <Item name="RenderMode" value="0"/>
-                                 <Item name="Name" value="BAND in GEOTEMP Folder"/>
+                                 <Item name="Name" value=".\__tmp__\_gx_uuid_test_group.py_1\test_basic_grid_2.grd"/>
                               </Header>
                            </BAND>
                         </Item>

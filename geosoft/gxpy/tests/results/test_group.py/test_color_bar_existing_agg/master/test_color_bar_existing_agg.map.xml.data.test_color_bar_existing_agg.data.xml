@@ -24,7 +24,7 @@
                                  <Item name="REG" type="REG">
                                     <REG>
                                        <Attributes>
-                                          <Item name="FILE" value="8948625c-2dcc-11e7-965e-240a6403b873.tbl"/>
+                                          <Item name="FILE" value="uuid_test_color_bar_existing_agg_1.tbl"/>
                                        </Attributes>
                                     </REG>
                                  </Item>
@@ -134,7 +134,7 @@
                            <BAND>
                               <Header>
                                  <Item name="RenderMode" value="0"/>
-                                 <Item name="Name" value="BAND in GEOTEMP Folder"/>
+                                 <Item name="Name" value=".\__tmp__\_gx_uuid_test_group.py_1\test_color_bar_existing_agg.grd"/>
                               </Header>
                            </BAND>
                         </Item>

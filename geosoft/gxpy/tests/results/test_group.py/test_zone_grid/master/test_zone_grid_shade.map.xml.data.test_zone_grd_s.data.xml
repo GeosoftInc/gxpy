@@ -2,7 +2,7 @@
    <Item type="Version" size="8">
       <Item name="Value" value="Current"/>
    </Item>
-   <Item type="Aggregation" size="1482">
+   <Item type="Aggregation" size="1402">
       <Item name="AGG" type="AGG">
          <AGG>
             <Header>
@@ -24,7 +24,7 @@
                                  <Item name="REG" type="REG">
                                     <REG>
                                        <Attributes>
-                                          <Item name="FILE" value="97f2970a-2dcc-11e7-b57b-240a6403b873.tbl"/>
+                                          <Item name="FILE" value="uuid_test_zone_grid_7.tbl"/>
                                        </Attributes>
                                     </REG>
                                  </Item>
