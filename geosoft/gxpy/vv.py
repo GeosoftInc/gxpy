@@ -185,8 +185,10 @@ class GXvv():
         
         .. versionadded:: 9.2 
         """
-        if self._np is None:
-            self._np, *_ = self.get_data()
+        if self.length == 0:
+            return np.array([], dtype=self._dtype)
+
+        self._np, *_ = self.get_data()
         return self._np
 
     def get_data(self, dtype=None, start=0, n=None):
