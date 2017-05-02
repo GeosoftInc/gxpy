@@ -739,42 +739,72 @@ class Coordinate_system:
             self.gxipj.get_name(what, s)
             return s.value
 
-    def oriented_from_xyz(self, xyz):
+    def _oriented_xyz(self, direction, xyz, column_ordered=False):
         """
         Return oriented (x, y, z) coordinates from true base (x, y, z) coordinates.
 
-        :param xyz: (x, y, z)
+        :param xyz:             (x, y, z) or iterable
+        :param column_ordered:  if xyz is iterable, and this is True, the data is assumed to be
+                                column ordered and the results are returned column ordered.
         :return: (x, y, z) in un-oriented space
 
         .. versionadded:: 9.2
         """
 
-        x = gxvv.GXvv((xyz[0],), dtype=float)
-        y = gxvv.GXvv((xyz[1],), dtype=float)
-        z = gxvv.GXvv((xyz[2],), dtype=float)
+        if not isinstance(xyz, np.ndarray):
+            xyz = np.array(xyz)
 
-        self.gxipj.convert_orientation_warp_vv(x._vv, y._vv, z._vv, 0)
+        if xyz.ndim == 1:
+            x = (xyz[0],)
+            y = (xyz[1],)
+            z = (xyz[2],)
+        else:
+            if column_ordered:
+                x, y, z = xyz[0, :], xyz[1, :], xyz[2, :]
+            else:
+                x, y, z = xyz[:, 0], xyz[:, 1], xyz[:, 2]
 
-        return x[0][0], y[0][0], z[0][0]
+        x = gxvv.GXvv(x, dtype=float)
+        y = gxvv.GXvv(y, dtype=float)
+        z = gxvv.GXvv(z, dtype=float)
 
-    def xyz_from_oriented(self, xyz):
+        self.gxipj.convert_orientation_warp_vv(x._vv, y._vv, z._vv, direction)
+
+        if xyz.ndim == 1:
+            return x[0][0], y[0][0], z[0][0]
+        else:
+            xyz_column = np.array([x.np, y.np, z.np])
+            if column_ordered:
+                return xyz_column
+            else:
+                return xyz_column.swapaxes(0, 1)
+
+
+    def oriented_from_xyz(self, xyz, column_ordered=False):
         """
-        Return true base (x, y, z) coordinates from oriented (x, y, z) coordinates.
+        Return oriented (x, y, z) coordinates from true base (x, y, z) coordinates.
 
-        :param xyz: (x, y, z)
-        :return: (x, y, z) in oriented space
+        :param xyz:             (x, y, z) or iterable
+        :param column_ordered:  if xyz is iterable, and this is True, the data is assumed to be
+                                column ordered and the results are returned column ordered.
+        :return: (x, y, z) in un-oriented space
 
         .. versionadded:: 9.2
         """
+        return self._oriented_xyz(0, xyz, column_ordered=column_ordered)
 
-        x = gxvv.GXvv((xyz[0],), dtype=float)
-        y = gxvv.GXvv((xyz[1],), dtype=float)
-        z = gxvv.GXvv((xyz[2],), dtype=float)
+    def xyz_from_oriented(self, xyz, column_ordered=False):
+        """
+        Return true base (x, y, z) coordinates from oriented (x, y, z) coordinates.
 
-        self.gxipj.convert_orientation_warp_vv(x._vv, y._vv, z._vv, 1)
+        :param xyz:             (x, y, z) or irerable
+        :param column_ordered:  if xyz is iterable, and this is True, the data is assumed to be
+                                column ordered and the results are returned column ordered.
+        :return:                (x, y, z) in oriented space
 
-        return x[0][0], y[0][0], z[0][0]
-
+        .. versionadded:: 9.2
+        """
+        return self._oriented_xyz(1, xyz, column_ordered=column_ordered)
 
 class GXpj:
     """

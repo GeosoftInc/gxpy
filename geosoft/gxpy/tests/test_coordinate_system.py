@@ -259,6 +259,38 @@ class Test(GXPYTest):
             self.assertAlmostEqual(lon, -96)
             self.assertAlmostEqual(z, 800.5)
 
+    def test_oriented(self):
+        self.start()
+
+        with gxcs.Coordinate_system({'type': 'local', 'lon_lat': (-96,43), 'azimuth':25}) as cs:
+
+            xyzo = (10, 0, 0)
+            xyz = cs.xyz_from_oriented(xyzo)
+            self.assertEqual(xyz, (9.063077870366499, -4.2261826174069945, 0.0))
+
+            xyz = (9.063077870366499, -4.2261826174069945, 0.0)
+            xyz = cs.oriented_from_xyz(xyz)
+            self.assertAlmostEqual(xyz[0], xyzo[0])
+            self.assertAlmostEqual(xyz[1], xyzo[1])
+            self.assertAlmostEqual(xyz[2], xyzo[2])
+
+            xyzo = ((10, 0, 0), (0, 10,5))
+            xyz = cs.xyz_from_oriented(xyzo)
+            self.assertEqual(tuple(xyz[0]), (9.063077870366499, -4.2261826174069945, 0.0))
+            self.assertEqual(tuple(xyz[1]), (4.2261826174069945, 9.0630778703664987, 5.0))
+
+            xyz = ((9.063077870366499, -4.2261826174069945, 0.0), (4.2261826174069945, 9.0630778703664987, 5.0))
+            xyz = cs.oriented_from_xyz(xyz)
+            self.assertAlmostEqual(xyz[0][0], xyzo[0][0])
+            self.assertAlmostEqual(xyz[0][1], xyzo[0][1])
+            self.assertAlmostEqual(xyz[0][2], xyzo[0][2])
+
+            xyzo = ((10, 0), (0, 10), (0, 5))
+            xyz = cs.xyz_from_oriented(xyzo, column_ordered=True)
+            self.assertEqual(tuple(xyz[0]), (9.063077870366499, 4.2261826174069945))
+            self.assertEqual(tuple(xyz[1]), (-4.2261826174069945, 9.063077870366499))
+            self.assertEqual(tuple(xyz[2]), (0.0, 5.0))
+
 
 ###############################################################################################
 
