@@ -214,13 +214,13 @@ class GXvv():
         else:
             n = min((self.length - start), n)
 
+        if (n < 0) or (start < 0) or (start >= self.length):
+            raise VVException(_t('Cannot get (start,n) ({},{}) from vv of length {}').format(start, n, self.length))
+
         if n == 0:
             npd = np.array([], dtype=dtype)
 
         else:
-
-            if (n < 0) or (start < 0):
-                raise VVException(_t('Cannot get (start,n) ({},{}) from vv of length {}').format(start, n, self.length))
 
             # strings wanted
             if dtype.type is np.str_:

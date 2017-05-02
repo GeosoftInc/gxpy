@@ -891,26 +891,29 @@ class Test(GXPYTest):
 
         self.crc_map(map_file)
 
-    def test_color_symbols_3d(self):
+    def test_polydata_3d(self):
         self.start()
+
+        def render_spheres(item, cmap_radius):
+            xyz, value = item
+            if None in xyz or value is None:
+                return None
+            cmap, radius = cmap_radius
+            cint = cmap.color_of_value(value)
+            return xyz, gxg.SYMBOL_3D_SPHERE, cint.int, (radius,)
 
         data = [((0, 0, 0), 1),
                 ((10, 0, 5), 2),
                 ((0, 10, -5), 3),
+                ((0, None, -5), 99),
+                ((0, 10, -5), None),
                 ((10, 10, 10), 4)]
-        data2 = [((0, 0, 12), 1, 4),
-                 ((10, 0, 12), 2, None),
-                 ((0, 10, 12), 3, 75),
-                 ((None, 10, -22), 4, 7)]
 
         cmap = gxg.Color_map()
         cmap.set_linear(0, 5, contour_interval=1)
 
         with gxv.View_3d.new(area_2d=(-1, -1, 11, 11)) as v:
             v3d_file = v.file_name
-
-            def crs(item, cmap):
-                return cmap.color_of_value(item[1]), radius, gxg.SYMBOL_3D_SPHERE
 
             with gxg.Draw(v, 'rect') as g:
                 g.rectangle((0,0,10,10),
@@ -924,25 +927,8 @@ class Test(GXPYTest):
                               pen=gxg.Pen(line_color=gxg.C_GREY,
                                           line_thick=0.2))
 
-            radius = 0.25
-            gxg.Color_symbols_group_3d.new(v, 'outer_symbols', data, crs, cmap)
-            cmap = gxg.Color_map('hotcycle')
-            cmap.set_linear(0, 5, contour_interval=1)
-            radius = 0.5
-            gxg.Color_symbols_group_3d.new(v, 'mark', data2, crs, cmap)
-
-            data = [((0, 0, 15), 1),
-                    ((10, 0, 15), 2),
-                    ((0, 10, 15), 3),
-                    ((10, 10, 15), 4)]
-            cs = gxg.Color_symbols_group_3d.new(v, 'default', data)
-
-            data = [((0, 0, 18), 1),
-                    ((10, 0, 18), 2),
-                    ((0, 10, 18), 3),
-                    ((10, 10, 18), 4)]
-            cs = gxg.Color_symbols_group_3d.new(v, 'crs', data,
-                                                (gxg.Color(gxg.C_RED), 1, gxg.SYMBOL_3D_SPHERE))
+            with gxg.Draw_3d(v, 'outer') as g:
+                g.polydata_3d(data, render_spheres, (cmap, 0.25))
 
         self.crc_map(v3d_file)
 
