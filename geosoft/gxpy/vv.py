@@ -177,6 +177,7 @@ class GXvv():
         """ True if a base integer type"""
         return self._is_int
 
+    #TODO Consider expiry of _np (e.g. during set_data) and mutability of Numpy array
     @property
     def np(self):
         """
@@ -186,9 +187,9 @@ class GXvv():
         .. versionadded:: 9.2 
         """
         if self.length == 0:
-            return np.array([], dtype=self._dtype)
-
-        self._np, *_ = self.get_data()
+            self._np = np.array([], dtype=self._dtype)
+        else:
+            self._np, *_ = self.get_data()
         return self._np
 
     def get_data(self, dtype=None, start=0, n=None):
@@ -209,7 +210,7 @@ class GXvv():
             dtype = np.dtype(dtype)
 
         if (self._np is not None) and (dtype == self.dtype) and (start == 0) and (n is None):
-            return self._np
+            return self._np, (start, self.fid[1])
 
         if n is None:
             n = self.length - start
