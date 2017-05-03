@@ -15,6 +15,7 @@ import geosoft.gxpy.agg as gxagg
 import geosoft.gxpy.system as gxsys
 import geosoft.gxpy.view as gxv
 import geosoft.gxpy.group as gxg
+import geosoft.gxpy.utility as gxu
 
 from geosoft.gxpy.tests import GXPYTest
 
@@ -929,6 +930,51 @@ class Test(GXPYTest):
 
             with gxg.Draw_3d(v, 'outer') as g:
                 g.polydata_3d(data, render_spheres, (cmap, 0.25))
+
+        self.crc_map(v3d_file)
+
+    def test_polydata_3d_grid(self):
+        self.start()
+
+        def render_spheres(item, cmap_radius):
+            value = item[3]
+            cmap, radius = cmap_radius
+            if gxu.is_nan(value):
+                xyz = (item[0], item[1], item[2])
+                return xyz, gxg.SYMBOL_3D_SPHERE, gxg.Color(gxg.C_GREY10).int, (radius*0.5,)
+            xyz = (item[0], item[1], item[2])
+            cint = cmap.color_of_value(value)
+            return xyz, gxg.SYMBOL_3D_SPHERE, cint.int, (radius,)
+
+        # test grid file
+        folder, files = gsys.unzip(os.path.join(os.path.dirname(__file__), 'testgrids.zip'),
+                                   folder=self.gx.temp_folder())
+
+        grid_file = os.path.join(folder, 'test_agg_utm.grd')
+        with gxgrd.Grid(grid_file) as grd:
+
+            # orient the grid just to make it look interesting
+            gxf = grd.cs.gxf
+            gxf[0] += ' <0,0,0,0,45,25>'
+            grd.x0 = 0
+            grd.y0 = 0
+            grd.cs = gxf
+
+            data = grd.xyzv()
+
+            cmap = gxg.Color_map()
+            try:
+                std = np.nanstd(data[:, :, 3])
+                mean = np.nanmean(data[:, :, 3])
+                cmap.set_normal(std, mean)
+            except:
+                cmap.set_linear(0,1)
+
+            with gxv.View_3d.new(cs=grd.cs) as v:
+                v3d_file = v.file_name
+                with gxg.Draw_3d(v, 'outer') as g:
+                    g.polydata_3d(data.reshape((-1,4)), render_spheres, (cmap, grd.dx * 0.25))
+                    g.box_3d(grd.extent_3d(), wireframe=True, pen=gxg.Pen(line_color='b', line_thick=grd.dx))
 
         self.crc_map(v3d_file)
 

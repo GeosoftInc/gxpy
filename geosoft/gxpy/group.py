@@ -243,7 +243,7 @@ class Group:
     def __init__(self,
                  view,
                  name='_',
-                 plane=0,
+                 plane=None,
                  view_lock=False,
                  mode=APPEND):
 
@@ -260,7 +260,7 @@ class Group:
         finally:
             _lock.release()
 
-        if view.is_3d:
+        if view.is_3d and plane:
             view.current_3d_drawing_plane = plane
 
         self._view = view
@@ -380,6 +380,24 @@ def _draw(func):
 
     return wrapper
 
+def _make_Point(p):
+    if isinstance(p, gxgm.Point):
+        return p
+    else:
+        return gxgm.Point(p)
+
+def _make_Point2(p2):
+    if isinstance(p2, gxgm.Point2):
+        return p2
+    else:
+        return gxgm.Point2(p2)
+
+def _make_PPoint(p):
+    if isinstance(p, gxgm.PPoint):
+        return p
+    else:
+        return gxgm.PPoint(p)
+
 
 class Draw(Group):
     """
@@ -391,28 +409,6 @@ class Draw(Group):
     
     Inherits from the ``Group`` base class.
     """
-
-    @staticmethod
-    def _make_Point(p):
-        if isinstance(p, gxgm.Point):
-            return p
-        else:
-            return gxgm.Point(p)
-
-    @staticmethod
-    def _make_Point2(p2):
-        if isinstance(p2, gxgm.Point2):
-            return p2
-        else:
-            return gxgm.Point2(p2)
-
-    @staticmethod
-    def _make_PPoint(p):
-        if isinstance(p, gxgm.PPoint):
-            return p
-        else:
-            return gxgm.PPoint(p)
-
 
     def __init__(self, *args, **kwargs):
 
@@ -590,7 +586,7 @@ class Draw(Group):
         .. versionadded:: 9.2
         """
 
-        p2 = self._make_Point2(p2)
+        p2 = _make_Point2(p2)
         self.view.gxview.line(p2.p0.x, p2.p0.y, p2.p1.x, p2.p1.y)
 
     @_draw
@@ -641,7 +637,7 @@ class Draw(Group):
         .. versionadded:: 9.2
         """
 
-        p2 = self._make_Point2(p2)
+        p2 = _make_Point2(p2)
         self.view.gxview.rectangle(p2.p0.x, p2.p0.y, p2.p1.x, p2.p1.y)
 
     def text(self,
@@ -749,7 +745,7 @@ class Draw_3d(Draw):
         self.view.gxview.fill_color(self.pen._line_color.int)
 
         try:
-            p = self._make_Point(p)
+            p = _make_Point(p)
             self.view.gxview.sphere_3d(p.x, p.y, p.z, radius)
         except:
             raise
@@ -757,11 +753,12 @@ class Draw_3d(Draw):
             self.view.gxview.fill_color(fci)
 
     @_draw
-    def box_3d(self, p2):
+    def box_3d(self, p2, wireframe=False):
         """
         Draw a 3D box
         
-        :param p2: box corners as geometry.Point2, or (p0, p1), or (x0, y0, z0, x1, y1, z1)
+        :param p2:          box corners as geometry.Point2, or (p0, p1), or (x0, y0, z0, x1, y1, z1)
+        :param wireframe:   True to draw edges only
 
         .. versionadded:: 9.2
         """
@@ -769,11 +766,30 @@ class Draw_3d(Draw):
         # solids use the fill colour as the object colour
         fci = self.pen._fill_color.int
         self.view.gxview.fill_color(self.pen._line_color.int)
+        pp = _make_Point2(p2)
 
         try:
-            p2 = self._make_Point2(p2)
-            self.view.gxview.box_3d(p2.p0.x, p2.p0.y, p2.p0.z,
-                                    p2.p1.x, p2.p1.y, p2.p1.z)
+            if wireframe:
+                sq = gxgm.PPoint(((pp.p0.x, pp.p0.y, pp.p0.z),
+                                  (pp.p0.x, pp.p1.y, pp.p0.z),
+                                  (pp.p1.x, pp.p1.y, pp.p0.z),
+                                  (pp.p1.x, pp.p0.y, pp.p0.z),
+                                  (pp.p0.x, pp.p0.y, pp.p0.z)))
+                self.polyline_3d(sq, style=LINE3D_STYLE_TUBE_JOINED)
+                sq += (0, 0, pp.p1.z - pp.p0.z)
+                self.polyline_3d(sq, style=LINE3D_STYLE_TUBE_JOINED)
+                self.cylinder_3d(gxgm.Point2(((pp.p0.x, pp.p0.y, pp.p0.z), (pp.p0.x, pp.p0.y, pp.p1.z))),
+                                 radius = self.pen.line_thick * 0.5)
+                self.cylinder_3d(gxgm.Point2(((pp.p0.x, pp.p1.y, pp.p0.z), (pp.p0.x, pp.p1.y, pp.p1.z))),
+                                 radius = self.pen.line_thick * 0.5)
+                self.cylinder_3d(gxgm.Point2(((pp.p1.x, pp.p1.y, pp.p0.z), (pp.p1.x, pp.p1.y, pp.p1.z))),
+                                 radius = self.pen.line_thick * 0.5)
+                self.cylinder_3d(gxgm.Point2(((pp.p1.x, pp.p0.y, pp.p0.z), (pp.p1.x, pp.p0.y, pp.p1.z))),
+                                 radius = self.pen.line_thick * 0.5)
+
+            else:
+                self.view.gxview.box_3d(pp.p0.x, pp.p0.y, pp.p0.z,
+                                        pp.p1.x, pp.p1.y, pp.p1.z)
         except:
             raise
         finally:
@@ -808,7 +824,7 @@ class Draw_3d(Draw):
             self.render_backfaces = True
 
         try:
-            p2 = self._make_Point2(p2)
+            p2 = _make_Point2(p2)
             if r2 is None:
                 r2 = radius
             self.view.gxview.cylinder_3d(p2.p0.x, p2.p0.y, p2.p0.z,
@@ -853,7 +869,7 @@ class Draw_3d(Draw):
         .. versionadded:: 9.2
         """
 
-        points = self._make_PPoint(points)
+        points = _make_PPoint(points)
         if style == POINT_STYLE_DOT:
             self._poly_3d(points, gxapi.MVIEW_DRAWOBJ3D_ENTITY_POINTS)
         else:
@@ -873,7 +889,7 @@ class Draw_3d(Draw):
 
         .. versionadded:: 9.2 
         """
-        points = self._make_PPoint(points)
+        points = _make_PPoint(points)
         if points.length < 2:
             raise GroupException(_t('Need at least two points.'))
         if style == LINE3D_STYLE_LINE:

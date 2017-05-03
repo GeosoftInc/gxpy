@@ -531,6 +531,7 @@ def dummy_to_nan(data):
     else:
         gxdummy = gx_dummy(data.dtype)
         data[data == gxdummy] = np.nan
+        return data
 
 
 def save_parameters(group='_', parms=None):

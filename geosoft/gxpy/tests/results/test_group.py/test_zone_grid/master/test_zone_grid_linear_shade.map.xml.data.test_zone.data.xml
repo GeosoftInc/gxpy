@@ -24,7 +24,7 @@
                                  <Item name="REG" type="REG">
                                     <REG>
                                        <Attributes>
-                                          <Item name="FILE" value="dd6619a6-2f6d-11e7-af77-240a6403b873.tbl"/>
+                                          <Item name="FILE" value="0a9ff988-2fa7-11e7-9d8c-240a6403b873.tbl"/>
                                        </Attributes>
                                     </REG>
                                  </Item>
@@ -169,7 +169,7 @@
                                     <Shade>
                                        <Item name="Inclination" value="45"/>
                                        <Item name="Declination" value="45"/>
-                                       <Item name="Scale" value="GS_R8DM"/>
+                                       <Item name="Scale" value="14.99297784"/>
                                        <Item name="OriginGrid" value=".\test_zone.grd"/>
                                     </Shade>
                                  </Model>
