@@ -489,7 +489,7 @@ class View_3d(View):
 
 
     @classmethod
-    def new(cls, file_name=None, area_2d=(0, 0, 100, 100), overwrite=False):
+    def new(cls, file_name=None, area_2d=None, overwrite=False, **kwargs):
         """
         Createa a new 3D view.
         
@@ -510,7 +510,7 @@ class View_3d(View):
             if os.path.isfile(file_name):
                 raise ViewException(_t('Cannot overwrite existing file: {}').format(file_name))
 
-        g_3dv = cls(file_name, gxmap.WRITE_NEW, area=area_2d, _internal=True)
+        g_3dv = cls(file_name, gxmap.WRITE_NEW, area=area_2d, _internal=True, **kwargs)
 
         mminx, mminy, mmaxx, mmaxy = g_3dv.extent_map_cm(g_3dv.extent_clip)
         vminx, vminy, vmaxx, vmaxy = g_3dv.extent_clip
@@ -521,7 +521,8 @@ class View_3d(View):
         g_3dv.gxview.fit_map_window_3d(mminx, mminy, mmaxx, mmaxy,
                                        vminx, vminy, vmaxx, vmaxy)
 
-        g_3dv.new_drawing_plane('plane_0')
+        if area_2d is not None:
+            g_3dv.new_drawing_plane('plane_0')
 
         return g_3dv
 
@@ -569,9 +570,10 @@ class View_3d(View):
 
     @current_3d_drawing_plane.setter
     def current_3d_drawing_plane(self, plane):
-        if isinstance(plane, int):
-            plane = self.plane_name(plane)
-        self.gxview.set_def_plane(plane)
+        if plane:
+            if isinstance(plane, int):
+                plane = self.plane_name(plane)
+            self.gxview.set_def_plane(plane)
 
     @property
     def plane_list(self):
