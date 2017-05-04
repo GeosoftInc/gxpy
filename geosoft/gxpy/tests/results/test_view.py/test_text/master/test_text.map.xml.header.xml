@@ -1,9 +1,0 @@
-<header>
-   <Item name="Name" value="test_text.map"/>
-   <Item name="Extents" type="L2AREA">
-      <Value name="MinX" value="-733"/>
-      <Value name="MinY" value="-83"/>
-      <Value name="MaxX" value="30867"/>
-      <Value name="MaxY" value="50000"/>
-   </Item>
-</header>

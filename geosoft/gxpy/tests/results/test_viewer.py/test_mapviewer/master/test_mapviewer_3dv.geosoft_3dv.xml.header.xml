@@ -1,9 +1,0 @@
-<header>
-   <Item name="Name" value="test_mapviewer_3dv.geosoft_3dv"/>
-   <Item name="Extents" type="L2AREA">
-      <Value name="MinX" value="0"/>
-      <Value name="MinY" value="0"/>
-      <Value name="MaxX" value="100"/>
-      <Value name="MaxY" value="100"/>
-   </Item>
-</header>

@@ -1,9 +1,0 @@
-<header>
-   <Item name="Name" value="test_color_symbols_3d.geosoft_3dv"/>
-   <Item name="Extents" type="L2AREA">
-      <Value name="MinX" value="100"/>
-      <Value name="MinY" value="100"/>
-      <Value name="MaxX" value="200"/>
-      <Value name="MaxY" value="200"/>
-   </Item>
-</header>
