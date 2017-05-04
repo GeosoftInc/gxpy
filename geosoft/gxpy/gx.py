@@ -120,6 +120,7 @@ class GXpy(_Singleton):
                         call stack to help find the function that created the resources.
         :res_stack:     Depth of the call-stack to report for open-resource warning.
         :max_warnings:  Maximum number of resource warnings to report.
+        :suppress_progress: True to suppress progress reporting (default False)
 
     :Properties:
         :gxapi:             GX context to be used to call geosoft.gxapi methods
@@ -204,7 +205,7 @@ class GXpy(_Singleton):
 
     def __init__(self, name=__name__, version=__version__,
                  parent_window=0, log=None,
-                 max_res_heap=10000000, res_stack=6, max_warnings=10):
+                 max_res_heap=10000000, res_stack=6, max_warnings=10, suppress_progress=False):
 
         # singleton class
 
@@ -238,7 +239,13 @@ class GXpy(_Singleton):
 
             self.parent_window = parent_window
             try:
-                self.gxapi = gxapi.GXContext.create(name, version, self.parent_window)
+                flags = 0
+                if suppress_progress:
+                    if self.parent_window:
+                        flags = 128
+                    else:
+                        flags = 64
+                self.gxapi = gxapi.GXContext.create(name, version, self.parent_window, flags)
 
             except:
                 self.gxapi = None

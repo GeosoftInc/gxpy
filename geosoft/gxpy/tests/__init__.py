@@ -27,11 +27,12 @@ UPDATE_RESULTS = False
 UPDATE_RESULTS_DONT_ASK = False
 
 # set to True to show viewer for each CRC call
-SHOW_TEST_VIEWERS = True
+SHOW_TEST_VIEWERS = False
 
 _prevent_interactive = os.environ.get('GEOSOFT_PREVENT_INTERACTIVE', 0) == '1'
 if _prevent_interactive:
     UPDATE_RESULTS = False
+    UPDATE_RESULTS_DONT_ASK = False
     SHOW_TEST_VIEWERS = False
 
 win32gui.SystemParametersInfo(win32con.SPI_SETFONTSMOOTHING, True)
@@ -82,11 +83,14 @@ class GXPYTest(unittest.TestCase):
         os.chdir(cls._result_base_dir)
 
         gxu._temp_folder_override = os.path.join(cls._result_base_dir, '__tmp__')
+        # TODO: For some reason some tests can leave files in temp. Clean up now to keep tests stable,
+        #       but investigate the root of the issue
+        shutil.rmtree(gxu._temp_folder_override)
         os.makedirs(gxu._temp_folder_override, exist_ok=True)
 
         gxu._uuid_callable = cls._cls_uuid
 
-        cls._gx = gx.GXpy(log=print, res_stack=res_stack, max_warnings=8)
+        cls._gx = gx.GXpy(log=print, res_stack=res_stack, max_warnings=8, suppress_progress=True)
 
     @classmethod
     def tearDownGXPYTest(cls):
@@ -127,7 +131,6 @@ class GXPYTest(unittest.TestCase):
 
         gxu._uuid_callable = self._uuid
         self._unique_id_count = 0
-        self.gx.log("*** {} > {}".format(self._test_case_filename, self._func))
 
     @property
     def gx(self):

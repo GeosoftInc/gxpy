@@ -1825,11 +1825,10 @@ class Color_map:
 
         if cmap is None:
             sr = gxapi.str_ref()
-            # TODO JB - cannot have a method named 'global', so this method is not exported from gxapi.GXSYS
-            #if gxapi.GXSYS.global('MONTAJ.DEFAULT_COLOUR', sr) == 0:
-            #    cmap = sr.value
-            #else:
-            cmap = 'colour'
+            if gxapi.GXSYS.global_('MONTAJ.DEFAULT_COLOUR', sr) == 0:
+                cmap = sr.value
+            else:
+                cmap = 'colour'
 
         if isinstance(cmap, str):
             if cmap == 'color':
