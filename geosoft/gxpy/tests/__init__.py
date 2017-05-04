@@ -54,7 +54,6 @@ def _verify_no_gx_context():
 
 
 class GXPYTest(unittest.TestCase):
-    _multiprocess_shared_ = True
     _test_case_py = None
     _test_case_filename = None
     _result_base_dir = None
