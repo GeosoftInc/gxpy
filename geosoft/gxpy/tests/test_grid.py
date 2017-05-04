@@ -53,7 +53,7 @@ class Test(GXPYTest):
         self.start()
 
         #create a grids
-        outGrid = os.path.join(self.folder, 'testNew.grd(GRD)')
+        outGrid = os.path.join(self.folder, 'test_copy.grd(GRD)')
         with gxgrd.Grid.open(self.g1f) as g:
             with gxgrd.Grid.copy(g, outGrid) as grd:
                 grd.delete_files()
@@ -80,7 +80,7 @@ class Test(GXPYTest):
             properties['cs'] = gxcs.Coordinate_system('NAD27 / UTM zone 18N')
             self.assertRaises( gxgrd.GridException, g1.set_properties, properties)
 
-        outGrid = os.path.join(self.folder, 'testNew.grd(GRD;TYPE=SHORT;COMP=SPEED)')
+        outGrid = os.path.join(self.folder, 'test_set_properties.grd(GRD;TYPE=SHORT;COMP=SPEED)')
         with gxgrd.Grid.open(self.g1f) as g:
             with gxgrd.Grid.copy(g, outGrid) as grd:
                 grd.dx = 1.5
@@ -102,7 +102,7 @@ class Test(GXPYTest):
             self.assertEqual(str(properties.get('cs')),'NAD27 / UTM zone 18N')
             self.assertEqual(properties.get('dtype'),np.int16)
 
-        outGrid = os.path.join(self.folder, 'testNew.grd(GRD;TYPE=SHORT;COMP=SPEED)')
+        outGrid = os.path.join(self.folder, 'test_set_properties.grd(GRD;TYPE=SHORT;COMP=SPEED)')
         with gxgrd.Grid.open(self.g1f) as g:
             with gxgrd.Grid.copy(g, outGrid, overwrite=True) as grd:
                 grd.set_properties(properties)
