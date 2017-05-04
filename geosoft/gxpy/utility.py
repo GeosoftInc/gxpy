@@ -36,6 +36,11 @@ _dummy_map = {}
 _gx2np_type = {}
 _np2gx_type = {}
 
+# Assign to valid path to override the Geosoft temporary file folder
+_temp_folder_override = None
+
+# Assign callable to override unique ID generation
+_uuid_callable = None
 
 class UtilityException(Exception):
     """
@@ -676,6 +681,10 @@ def folder_temp():
 
     .. versionadded:: 9.1
     """
+    global _temp_folder_override
+    if _temp_folder_override:
+        return _temp_folder_override
+
     path = gxapi.str_ref()
     gxapi.GXSYS.get_path(gxapi.SYS_PATH_GEOTEMP, path)
     path = path.value.replace('\\', os.sep)
@@ -701,8 +710,11 @@ def uuid():
 
     .. versionadded:: 9.2
     """
-    return str(str(uid.uuid1()))
-
+    global _uuid_callable
+    if _uuid_callable:
+        return _uuid_callable()
+    else:
+        return str(str(uid.uuid1()))
 
 def _temp_dict_file_name():
     """Name of the expected python dictionary as a json file from run_external_python().
