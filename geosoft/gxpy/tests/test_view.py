@@ -212,16 +212,18 @@ class Test(GXPYTest):
                     g.rectangle(v.extent_clip)
                     draw_2d_stuff(g)
 
-                self.assertRaises(gxv.ViewException, v.new_drawing_plane, 0)
+                v.new_drawing_plane('plane_0')
+                self.assertEqual(v.current_3d_drawing_plane, 'plane_0')
+                self.assertRaises(gxv.ViewException, v.new_drawing_plane, 'plane_0')
+
                 v.new_drawing_plane('vertical', rotation=(90.0, 0, 0))
+                self.assertEqual(v.current_3d_drawing_plane, 'vertical')
                 with gxg.Draw(v, '2D stuff vertical', plane='vertical') as g:
                     g.rectangle(v.extent_clip)
                     draw_2d_stuff(g)
 
-                self.assertEqual(v.current_3d_drawing_plane, 'vertical')
                 with gxg.Draw_3d(v, '3D stuff') as g:
                     g.box_3d(((20, 10, -10), (80, 50, 30)), pen=g.new_pen(line_color='R255G100B50'))
-                self.assertEqual(v.current_3d_drawing_plane, 'plane_0')
 
                 self.assertEqual(len(v.plane_list), 2)
                 self.assertEqual(v.plane_number('plane_0'), 0)

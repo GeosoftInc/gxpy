@@ -16,7 +16,7 @@
    <Item name="MaxZ" value="GS_R8DM"/>
    <Item name="Transparency" value="GS_R8DM"/>
    <Item name="ExtClipRegion" value="-1"/>
-   <Item name="Plane" value="0"/>
+   <Item name="Plane" value="2"/>
    <Item name="Extents" type="D2AREA">
       <Value name="MinX" value="0"/>
       <Value name="MinY" value="0"/>
