@@ -207,7 +207,7 @@ class GXPYTest(unittest.TestCase):
     def _report_master_files_not_in_results(cls, xml_master_files, xml_result_files):
         report = ''
         xml_result_file_names = [os.path.split(f)[1].lower() for f in xml_result_files]
-        not_in_results = [f for f in xml_master_files if os.path.split(f)[1].lower() not in xml_result_file_names.lower()]
+        not_in_results = [f for f in xml_master_files if os.path.split(f)[1].lower() not in xml_result_file_names]
         for f in not_in_results:
             report += '{} no longer exists in result dir\r\n'.format(f)
         return report
