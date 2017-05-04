@@ -8,6 +8,7 @@ from tkinter import Tk, messagebox
 import win32con
 import win32gui
 
+os.environ['GEOSOFT_FORCE_MESA_3D'] = '1'
 os.environ['GEOSOFT_TEST_MODE'] = '1'
 os.environ['GEOSOFT_TESTSYSTEM_MODE'] = '1'
 
@@ -26,7 +27,7 @@ UPDATE_RESULTS = False
 UPDATE_RESULTS_DONT_ASK = False
 
 # set to True to show viewer for each CRC call
-SHOW_TEST_VIEWERS = False
+SHOW_TEST_VIEWERS = True
 
 _prevent_interactive = os.environ.get('GEOSOFT_PREVENT_INTERACTIVE', 0) == '1'
 if _prevent_interactive:
@@ -301,7 +302,7 @@ class GXPYTest(unittest.TestCase):
             report += self._report_mismatch_files(xml_result, xml_master)
 
         if SHOW_TEST_VIEWERS:
-            gxvwr.view_document(map_file)
+            gxvwr.view_document(map_file, env={'GEOSOFT_FORCE_MESA_3D': '0'})
 
         if len(report) > 0:
 
