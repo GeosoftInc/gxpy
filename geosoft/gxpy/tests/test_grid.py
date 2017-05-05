@@ -37,7 +37,7 @@ class Test(GXPYTest):
             self.assertEqual(properties.get('rot'),0.0)
             self.assertEqual(properties.get('nx'),101)
             self.assertEqual(properties.get('ny'),101)
-            self.assertEqual(str(properties.get('cs')),'WGS 84')
+            self.assertEqual(str(properties.get('coordinate_system')),'WGS 84')
 
             self.assertEqual(g1.dx, 0.01)
             self.assertEqual(g1.dy, 0.01)
@@ -46,7 +46,7 @@ class Test(GXPYTest):
             self.assertEqual(g1.rot, 0.0)
             self.assertEqual(g1.nx, 101)
             self.assertEqual(g1.ny, 101)
-            self.assertEqual(str(g1.cs), 'WGS 84')
+            self.assertEqual(str(g1.coordinate_system), 'WGS 84')
 
 
     def test_copy(self):
@@ -65,7 +65,7 @@ class Test(GXPYTest):
                 self.assertEqual(properties.get('rot'),0.0)
                 self.assertEqual(properties.get('nx'),101)
                 self.assertEqual(properties.get('ny'),101)
-                self.assertEqual(str(properties.get('cs')),'WGS 84')
+                self.assertEqual(str(properties.get('coordinate_system')),'WGS 84')
 
     def test_set_properties(self):
         self.start()
@@ -77,7 +77,7 @@ class Test(GXPYTest):
             properties['dx'] = 1.5
             properties['dy'] = 2.5
             properties['rot'] = 33.333333
-            properties['cs'] = gxcs.Coordinate_system('NAD27 / UTM zone 18N')
+            properties['coordinate_system'] = gxcs.Coordinate_system('NAD27 / UTM zone 18N')
             self.assertRaises( gxgrd.GridException, g1.set_properties, properties)
 
         outGrid = os.path.join(self.folder, 'test_set_properties.grd(GRD;TYPE=SHORT;COMP=SPEED)')
@@ -88,7 +88,7 @@ class Test(GXPYTest):
                 grd.x0 = 45.0
                 grd.y0 = -15.0
                 grd.rot = 33.333333
-                grd.cs = gxcs.Coordinate_system('NAD27 / UTM zone 18N')
+                grd.coordinate_system = gxcs.Coordinate_system('NAD27 / UTM zone 18N')
 
         with gxgrd.Grid.open(outGrid) as grd:
             properties = grd.properties()
@@ -99,7 +99,7 @@ class Test(GXPYTest):
             self.assertEqual(properties.get('rot'),33.333333)
             self.assertEqual(properties.get('nx'),101)
             self.assertEqual(properties.get('ny'),101)
-            self.assertEqual(str(properties.get('cs')),'NAD27 / UTM zone 18N')
+            self.assertEqual(str(properties.get('coordinate_system')),'NAD27 / UTM zone 18N')
             self.assertEqual(properties.get('dtype'),np.int16)
 
         outGrid = os.path.join(self.folder, 'test_set_properties.grd(GRD;TYPE=SHORT;COMP=SPEED)')
@@ -116,7 +116,7 @@ class Test(GXPYTest):
             self.assertEqual(properties.get('rot'),33.333333)
             self.assertEqual(properties.get('nx'),101)
             self.assertEqual(properties.get('ny'),101)
-            self.assertEqual(str(properties.get('cs')),'NAD27 / UTM zone 18N')
+            self.assertEqual(str(properties.get('coordinate_system')),'NAD27 / UTM zone 18N')
             self.assertEqual(properties.get('dtype'),np.int16)
 
     def test_memory(self):
@@ -127,7 +127,7 @@ class Test(GXPYTest):
                                          'x0':4, 'y0':8,
                                          'dx': 0.1, 'dy':0.2,
                                          'rot': 5,
-                                         'cs': gxcs.Coordinate_system('NAD27 / UTM zone 18N')}) as grd:
+                                         'coordinate_system': gxcs.Coordinate_system('NAD27 / UTM zone 18N')}) as grd:
             properties = grd.properties()
             self.assertEqual(properties.get('dx'),0.1)
             self.assertEqual(properties.get('dy'),0.2)
@@ -136,7 +136,7 @@ class Test(GXPYTest):
             self.assertEqual(properties.get('rot'),5.0)
             self.assertEqual(properties.get('nx'),100)
             self.assertEqual(properties.get('ny'),50)
-            self.assertEqual(str(properties.get('cs')),'NAD27 / UTM zone 18N')
+            self.assertEqual(str(properties.get('coordinate_system')),'NAD27 / UTM zone 18N')
             self.assertEqual(properties.get('dtype'),np.int16)
 
     def test_mosaic(self):
@@ -162,7 +162,7 @@ class Test(GXPYTest):
             self.assertEqual(properties.get('rot'),0.0)
             self.assertEqual(properties.get('nx'),201)
             self.assertEqual(properties.get('ny'),101)
-            self.assertEqual(str(properties.get('cs')),'WGS 84')
+            self.assertEqual(str(properties.get('coordinate_system')),'WGS 84')
 
         m = os.path.join(self.folder, 'test_mosaic.hgd(HGD)')
         gxgrd.gridMosaic(m, glist).close()
@@ -177,7 +177,7 @@ class Test(GXPYTest):
             self.assertEqual(properties.get('rot'),0.0)
             self.assertEqual(properties.get('nx'),201)
             self.assertEqual(properties.get('ny'),101)
-            self.assertEqual(str(properties.get('cs')),'WGS 84')
+            self.assertEqual(str(properties.get('coordinate_system')),'WGS 84')
 
     def test_bool(self):
         self.start()
@@ -198,7 +198,7 @@ class Test(GXPYTest):
         self.assertEqual(properties.get('rot'),0.0)
         self.assertEqual(properties.get('nx'),201)
         self.assertEqual(properties.get('ny'),101)
-        self.assertEqual(str(properties.get('cs')),'WGS 84')
+        self.assertEqual(str(properties.get('coordinate_system')),'WGS 84')
         self.assertEqual(properties.get('dtype'),np.int16)
 
         grd = gxgrd.gridBool(self.g1f, self.g2f, os.path.join(self.folder, 'testBool.grd(GRD;TYPE=SHORT)'), size=3)
@@ -213,7 +213,7 @@ class Test(GXPYTest):
         self.assertEqual(properties.get('rot'), 0.0)
         self.assertEqual(properties.get('nx'), 201)
         self.assertEqual(properties.get('ny'), 101)
-        self.assertEqual(str(properties.get('cs')), 'WGS 84')
+        self.assertEqual(str(properties.get('coordinate_system')), 'WGS 84')
         self.assertEqual(properties.get('dtype'), np.int16)
 
     def test_delete_grid(self):
@@ -246,7 +246,7 @@ class Test(GXPYTest):
             self.assertEqual(properties.get('rot'),0.0)
             self.assertEqual(properties.get('nx'),101)
             self.assertEqual(properties.get('ny'),101)
-            self.assertEqual(str(properties.get('cs')),'WGS 84')
+            self.assertEqual(str(properties.get('coordinate_system')),'WGS 84')
 
     def test_name_parts(self):
         self.start()
@@ -355,7 +355,7 @@ class Test(GXPYTest):
             self.assertEqual(properties.get('rot'),0.0)
             self.assertEqual(properties.get('nx'),3)
             self.assertEqual(properties.get('ny'),8)
-            self.assertEqual(str(properties.get('cs')),'*unknown')
+            self.assertEqual(str(properties.get('coordinate_system')),'*unknown')
 
         with gxgrd.Grid.from_data_array(list(data), file_name) as grd:
             grd.delete_files()
@@ -367,10 +367,10 @@ class Test(GXPYTest):
             self.assertEqual(properties.get('rot'),0.0)
             self.assertEqual(properties.get('nx'),3)
             self.assertEqual(properties.get('ny'),8)
-            self.assertEqual(str(properties.get('cs')),'*unknown')
+            self.assertEqual(str(properties.get('coordinate_system')),'*unknown')
 
         with gxgrd.Grid.from_data_array(data, file_name,
-                                         properties={'x0':575268, 'dx':2.0, 'dy':1.5, 'rot':15, 'cs':'WGS 84'}) as grd:
+                                         properties={'x0':575268, 'dx':2.0, 'dy':1.5, 'rot':15, 'coordinate_system':'WGS 84'}) as grd:
             grd.delete_files()
             properties = grd.properties()
             self.assertEqual(properties.get('dx'),2.0)
@@ -380,7 +380,7 @@ class Test(GXPYTest):
             self.assertEqual(properties.get('rot'),15.0)
             self.assertEqual(properties.get('nx'),3)
             self.assertEqual(properties.get('ny'),8)
-            self.assertEqual(str(properties.get('cs')),'WGS 84')
+            self.assertEqual(str(properties.get('coordinate_system')),'WGS 84')
 
     def test_array_locations(self):
         self.start()
@@ -409,7 +409,7 @@ class Test(GXPYTest):
         cs = gxcs.Coordinate_system({'type': 'local',
                                      'lon_lat': (-96,43),
                                      'azimuth': 10}).gxf
-        props = {'x0':0, 'y0':0, 'dx': 5, 'nx':101, 'ny':501, 'cs':cs}
+        props = {'x0':0, 'y0':0, 'dx': 5, 'nx':101, 'ny':501, 'coordinate_system':cs}
         a = gxgrd.array_locations(props)
         self.assertEqual((tuple(a[0, 0, :])), (0.0, 0.0, 0.0))
         self.assertEqual((tuple(a[0, 10, :])), (49.240387650610401, -8.6824088833465165, 0.0))
@@ -451,9 +451,9 @@ class Test(GXPYTest):
                 self.assertAlmostEqual(ex[2], 13.66025404)
                 self.assertAlmostEqual(ex[3], 8.66025404)
 
-                cs = grd.cs
+                cs = grd.coordinate_system
                 cs_name = cs.cs_name(gxcs.NAME_HCS_VCS) + ' <0,0,0,0,0,30>'
-                grd.cs = gxcs.Coordinate_system(cs_name)
+                grd.coordinate_system = gxcs.Coordinate_system(cs_name)
                 ex = grd.extent_2d()
                 self.assertAlmostEqual(ex[0], 0)
                 self.assertAlmostEqual(ex[1], -5)
@@ -475,7 +475,7 @@ class Test(GXPYTest):
                 self.assertAlmostEqual(ex[5], 0)
 
                 cs_name = cs.cs_name(gxcs.NAME_HCS_VCS) + ' <0,0,0,90,0,30>'
-                grd.cs = gxcs.Coordinate_system(cs_name)
+                grd.coordinate_system = gxcs.Coordinate_system(cs_name)
                 ex = grd.extent_3d()
                 self.assertAlmostEqual(ex[0], 0.0)
                 self.assertAlmostEqual(ex[1], -5)

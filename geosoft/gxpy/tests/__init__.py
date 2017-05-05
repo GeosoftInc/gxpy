@@ -23,11 +23,11 @@ import geosoft.gxpy.system as gxsys
 # Set the following to True to enable interactive updating of results.
 # To incorporate a diff tool the GXPY_DIFF_TOOL environment
 # variable should be defined.
-UPDATE_RESULTS = False
-UPDATE_RESULTS_DONT_ASK = False
+UPDATE_RESULTS = True
+UPDATE_RESULTS_DONT_ASK = True
 
 # set to True to show viewer for each CRC call
-SHOW_TEST_VIEWERS = True
+SHOW_TEST_VIEWERS = False
 
 _prevent_interactive = os.environ.get('GEOSOFT_PREVENT_INTERACTIVE', 0) == '1'
 if _prevent_interactive:

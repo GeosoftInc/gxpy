@@ -244,6 +244,7 @@ def unzip(zip_file_name, folder=None, report=None, checkready=25):
     if not os.path.exists(folder):
         os.makedirs(folder)
 
+    files = None
     try:
         files = _unzip(zip_file_name, folder)
 
@@ -253,7 +254,7 @@ def unzip(zip_file_name, folder=None, report=None, checkready=25):
     finally:
 
         # check that files are ready for access
-        if checkready > 0:
+        if files and checkready > 0:
             for n in files:
                 wait_on_file(os.path.join(folder, n), wait=100, retries=int(checkready * 100))
 

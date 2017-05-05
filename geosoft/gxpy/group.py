@@ -417,7 +417,7 @@ class Draw(Group):
 
         self._pen = None
         self._text_def = None
-        self._drawing_cs = self.view.cs
+        self._drawing_cs = self.view.coordinate_system
 
         if self._mode != READ_ONLY:
             self._init_pen()
@@ -430,8 +430,8 @@ class Draw(Group):
     @drawing_cs.setter
     def drawing_cs(self, cs):
         if cs is None:
-            self.view.gxview.set_user_ipj(self.view.cs.gxipj)
-            self._drawing_cs = self.view.cs
+            self.view.gxview.set_user_ipj(self.view.coordinate_system.gxipj)
+            self._drawing_cs = self.view.coordinate_system
         else:
             self._drawing_cs = gxcs.Coordinate_system(cs).gxipj
             self.view.gxview.set_user_ipj(self._drawing_cs)

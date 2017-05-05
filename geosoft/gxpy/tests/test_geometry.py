@@ -30,14 +30,14 @@ class Test(GXPYTest):
 
         s = "WGS 84 / UTM zone 32N <0, 0, 0, 10, 15, 32>"
         p = gxgm.Point((5,10), cs=s)
-        hcsd = p.cs.coordinate_dict()
+        hcsd = p.coordinate_system.coordinate_dict()
         self.assertEqual(hcsd['name'], "WGS 84 / UTM zone 32N <0,0,0,10,15,32>")
 
         s = s + ' [geoid]'
         pp = gxgm.PPoint(((8, 12), (5, 10)), cs=s)
-        hcsd = p.cs.coordinate_dict()
+        hcsd = p.coordinate_system.coordinate_dict()
         self.assertEqual(hcsd['name'], "WGS 84 / UTM zone 32N <0,0,0,10,15,32>")
-        self.assertEqual(pp.cs.vcs, "geoid")
+        self.assertEqual(pp.coordinate_system.vcs, "geoid")
 
     def test_point(self):
         self.start()

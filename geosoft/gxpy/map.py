@@ -457,7 +457,7 @@ class Map:
                            float(inside_margin))
 
         with gxv.View(map=map, name='*data', mode=gxv.WRITE_OLD) as view:
-            view.cs = cs
+            view.coordinate_system = cs
         set_registry(map,
                      'figure' if (map_style == STYLE_FIGURE) else 'map',
                      inside_margin)

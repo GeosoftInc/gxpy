@@ -147,8 +147,8 @@ class View:
             ipj = gxapi.GXIPJ.create()
             self.gxview.get_ipj(ipj)
             self._cs = gxcs.Coordinate_system(ipj)
-            metres_per = self.cs.metres_per_unit
-            self._uname = self.cs.units_name
+            metres_per = self._cs.metres_per_unit
+            self._uname = self._cs.units_name
             if metres_per <= 0.:
                 raise ViewException('Invalid units {}({})'.format(self._uname, metres_per))
             self._metres_per_unit = 1.0 / metres_per
@@ -189,7 +189,7 @@ class View:
         self._close()
 
     def locate(self,
-               cs=None,
+               coordinate_system=None,
                map_location=None,
                area=None,
                scale=None):
@@ -197,7 +197,7 @@ class View:
         Locate and scale the view on the map.
 
         :parameters:
-            :cs:            coordinate system as a gxpy.coordinate_system.Coordinate_system instance, or one of the Coordinate_system
+            :coordinate_system: coordinate system as a gxpy.coordinate_system.Coordinate_system instance, or one of the Coordinate_system
                             constructor types.
             :map_location:  New (x, y) view location on the map, in map cm.
             :area:          New (min_x, min_y, max_x, max_y) area in view units
@@ -211,8 +211,8 @@ class View:
             raise ViewException('Cannot modify a READ_ONLY view.')
 
         # coordinate system
-        self.cs = cs
-        upm = 1.0 / self.cs.metres_per_unit
+        self.coordinate_system = coordinate_system
+        upm = 1.0 / self.coordinate_system.metres_per_unit
 
         if area == None:
             area = self.extent_clip
@@ -348,7 +348,7 @@ class View:
 
     @property
     def scale(self):
-        return 1000.0 * self.gxview.scale_mm() * self.cs.metres_per_unit
+        return 1000.0 * self.gxview.scale_mm() * self.coordinate_system.metres_per_unit
 
     @property
     def aspect(self):

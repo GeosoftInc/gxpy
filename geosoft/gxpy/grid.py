@@ -660,7 +660,7 @@ class Grid():
         properties['file_name'] = self.file_name
         properties['gridtype'] = self.gridtype
         properties['decoration'] = self._decoration
-        properties['cs'] = self.cs
+        properties['coordinate_system'] = self.coordinate_system
 
         return properties
 
@@ -700,7 +700,7 @@ class Grid():
             'dx'  grid X point separation (1.0)
             'dy'  grid Y point separation (1.0)
             'rot' grid rotation angle in degrees azimuth (0.0)
-            'cs'  coordinate system (unchanged)
+            'coordinate_system'  coordinate system (unchanged)
             ===== ============================================
 
         Not all keys need be passed, though typically one will get the properties from
@@ -720,7 +720,7 @@ class Grid():
                            properties.get('x0', 0.0),
                            properties.get('y0', 0.0),
                            -properties.get('rot', 0.0))
-        cs = properties.get('cs', None)
+        cs = properties.get('coordinate_system', None)
         if cs is not None:
             if not isinstance(cs, gxcs.Coordinate_system):
                 cs = gxcs.Coordinate_system(cs)
@@ -844,7 +844,7 @@ class Grid():
         """
 
         ex2d = self.extent_2d()
-        cs = self.cs
+        cs = self.coordinate_system
         xyz0 = cs.xyz_from_oriented((ex2d[0], ex2d[1], 0.0))
         xyz1 = cs.xyz_from_oriented((ex2d[2], ex2d[1], 0.0))
         xyz2 = cs.xyz_from_oriented((ex2d[2], ex2d[3], 0.0))
@@ -870,7 +870,7 @@ class Grid():
         dx = self.dx
         dy = self.dy
         rot = self.rot
-        cs = self.cs
+        cs = self.coordinate_system
         xyzv = np.zeros((ny, nx, 4))
         xyzv[:, :, 0:2] = np.mgrid[0: (nx - 0.5) * dx: dx, 0: (ny - 0.5) * dy: dy].swapaxes(0, 2)
 
@@ -950,7 +950,7 @@ def grid_mosaic(mosaic, gridList, typeDecoration='', report=None):
             y0 = p.get('y0')
             xM = x0 + (p.get('nx') - 1) * p.get('dx')
             yM = y0 + (p.get('ny') - 1) * p.get('dy')
-            ipj = p.get('cs').gxipj
+            ipj = p.get('coordinate_system').gxipj
             cell = p.get('dx')
             return x0, y0, xM, yM, (ipj, cell)
 

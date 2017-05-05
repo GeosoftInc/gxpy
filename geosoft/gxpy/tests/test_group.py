@@ -266,7 +266,7 @@ class Test(GXPYTest):
         map_file = os.path.join(self.gx.temp_folder(), "test_agg_utm")
 
         with gxgrd.Grid(grid_file) as grd:
-            cs = grd.cs
+            cs = grd.coordinate_system
             area = grd.extent_2d()
         with gxmap.Map.new(map_file,
                              data_area=area, media="A4", margins=(0, 10, 0, 0),
@@ -299,7 +299,7 @@ class Test(GXPYTest):
         map_file = os.path.join(self.gx.temp_folder(), "test_agg_utm")
 
         with gxgrd.Grid(grid_file) as grd:
-            cs = grd.cs
+            cs = grd.coordinate_system
             area = grd.extent_2d()
         with gxmap.Map.new(map_file,
                              data_area=area, media="A3", margins=(0, 0, 0, 0),
@@ -603,7 +603,7 @@ class Test(GXPYTest):
         map_file = os.path.join(self.gx.temp_folder(), "test_agg_utm")
 
         with gxgrd.Grid(grid_file) as grd:
-            cs = grd.cs
+            cs = grd.coordinate_system
             area = grd.extent_2d()
         with gxmap.Map.new(map_file, fixed_size=False,
                              data_area=area, media="A4", margins=(2, 10, 2, 1),
@@ -636,7 +636,7 @@ class Test(GXPYTest):
         map_file = os.path.join(self.gx.temp_folder(), "test_agg_utm")
 
         with gxgrd.Grid(grid_file) as grd:
-            cs = grd.cs
+            cs = grd.coordinate_system
             area = grd.extent_2d()
         with gxmap.Map.new(map_file, fixed_size=False,
                              data_area=area, media="A4", margins=(2, 10, 2, 1),
@@ -955,11 +955,11 @@ class Test(GXPYTest):
         with gxgrd.Grid(grid_file) as grd:
 
             # orient the grid just to make it look interesting
-            gxf = grd.cs.gxf
+            gxf = grd.coordinate_system.gxf
             gxf[0] += ' <0,0,0,0,45,25>'
             grd.x0 = 0
             grd.y0 = 0
-            grd.cs = gxf
+            grd.coordinate_system = gxf
 
             data = grd.xyzv()
 
@@ -971,7 +971,7 @@ class Test(GXPYTest):
             except:
                 cmap.set_linear(0,1)
 
-            with gxv.View_3d.new(cs=grd.cs) as v:
+            with gxv.View_3d.new(cs=grd.coordinate_system) as v:
                 v3d_file = v.file_name
                 with gxg.Draw_3d(v, 'outer') as g:
                     g.polydata_3d(data.reshape((-1,4)), render_spheres, (cmap, grd.dx * 0.25))
@@ -979,6 +979,7 @@ class Test(GXPYTest):
 
         self.crc_map(v3d_file)
 
+    @unittest.skip('dem.zip is missing') # TODO
     def test_polydata_3d_gdb(self):
         self.start()
 

@@ -135,7 +135,7 @@ class Test(GXPYTest):
         with gxmap.Map.new(data_area=(0, 0, 100, 80),
                              cs=gxcs.Coordinate_system("DHDN / Okarito 2000 [geodetic]")) as map:
             with gxv.View(map, 'data', mode=gxv.WRITE_OLD) as v:
-                self.assertEqual("DHDN / Okarito 2000 [geodetic]", str(v.cs))
+                self.assertEqual("DHDN / Okarito 2000 [geodetic]", str(v.coordinate_system))
 
     def test_lists(self):
         self.start()

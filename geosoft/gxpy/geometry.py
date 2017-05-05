@@ -124,9 +124,9 @@ class Point(Geometry):
         return Point(self.p / p.p)
 
     def __eq__(self, other):
-        return (self.cs.same_as(other.cs)) and \
+        return (self.coordinate_system.same_as(other.coordinate_system)) and \
                np.array_equal(self.p, other.p) and \
-               self.cs.same_as(other.cs)
+               self.coordinate_system.same_as(other.coordinate_system)
 
     @property
     def x(self):
@@ -229,7 +229,7 @@ class Point2(Geometry):
             raise GeometryException(_t('Invalid points: {}').format(p))
 
     def __eq__(self, other):
-        return (self.cs.same_as(other.cs)) and \
+        return (self.coordinate_system.same_as(other.coordinate_system)) and \
                 ((self.p0 == other.p0) and (self.p1 == other.p1)
                  or (self.p0 == other.p1) and (self.p1 == other.p0))
 
@@ -426,7 +426,7 @@ class PPoint(Geometry, Sequence):
         return PPoint(self.pp / Point(p).p)
 
     def __eq__(self, other):
-        return (self.cs.same_as(other.cs)) and np.array_equal(self.pp, other.pp)
+        return (self.coordinate_system.same_as(other.cs)) and np.array_equal(self.pp, other.pp)
 
     def copy(self):
         cls = self.__class__
