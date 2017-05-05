@@ -16,9 +16,8 @@ from . import gx
 from . import vv as gxvv
 from . import geometry as gxgm
 from . import coordinate_system as gxcs
-from . import view as gxv
 from . import utility as gxu
-from . import agg as gxagg
+from . import view as gxv
 
 __version__ = geosoft.__version__
 

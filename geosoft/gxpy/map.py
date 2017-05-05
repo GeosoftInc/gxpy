@@ -14,8 +14,8 @@ import geosoft.gxapi as gxapi
 from . import gx as gx
 from . import utility as gxu
 from . import dataframe as gxdf
-from . import view as gxv
 from . import group as gxg
+from . import view as gxv
 
 __version__ = geosoft.__version__
 

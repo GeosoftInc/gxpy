@@ -13,7 +13,6 @@ import geosoft
 import geosoft.gxapi as gxapi
 from . import coordinate_system as gxcs
 from . import utility as gxu
-from . import map as gxmap
 
 __version__ = geosoft.__version__
 

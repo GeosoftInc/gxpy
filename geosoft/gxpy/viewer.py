@@ -66,8 +66,8 @@ def view_document(document_file_name, wait_for_close=True, env={}):
                                     'to view a Geosoft document type. Downloads are available from '
                                     'https://my.geosoft.com/downloads.')
     else:
-        os_env = os.environ.copy()
-        proc_env = {**os_env, **env}
+        proc_env = os.environ.copy()
+        proc_env.update(env)
         proc = subprocess.Popen([om_exe, '-doc={}'.format(document_file_name)], env=proc_env)
         if wait_for_close:
             proc.communicate()
