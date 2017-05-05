@@ -480,8 +480,8 @@ class View_3d(View):
         if not _internal:
             raise ViewException(_t("Must be called by a class constructor 'open' or 'new'"))
 
-        file_name = gxmap.map_file_name(file_name, 'geosoft_3dv')
-        map = gxmap.Map(file_name=file_name,
+        file_name = geosoft.gxpy.map.map_file_name(file_name, 'geosoft_3dv')
+        map = geosoft.gxpy.map.Map(file_name=file_name,
                           mode=mode,
                           _internal=True)
         super().__init__(map, '3D', **kwargs)
@@ -501,15 +501,15 @@ class View_3d(View):
         """
 
         if file_name is None:
-            file_name = gxmap.unique_temporary_file_name('temp_3dv', 'geosoft_3dv')
+            file_name = geosoft.gxpy.map.unique_temporary_file_name('temp_3dv', 'geosoft_3dv')
         else:
-            file_name = gxmap.map_file_name(file_name, 'geosoft_3dv')
+            file_name = geosoft.gxpy.map.map_file_name(file_name, 'geosoft_3dv')
 
         if not overwrite:
             if os.path.isfile(file_name):
                 raise ViewException(_t('Cannot overwrite existing file: {}').format(file_name))
 
-        g_3dv = cls(file_name, gxmap.WRITE_NEW, area=area_2d, _internal=True, **kwargs)
+        g_3dv = cls(file_name, geosoft.gxpy.map.WRITE_NEW, area=area_2d, _internal=True, **kwargs)
 
         mminx, mminy, mmaxx, mmaxy = g_3dv.extent_map_cm(g_3dv.extent_clip)
         vminx, vminy, vmaxx, vmaxy = g_3dv.extent_clip
@@ -535,11 +535,11 @@ class View_3d(View):
         .. versionadded:: 9.2
         """
 
-        file_name = gxmap.map_file_name(file_name, 'geosoft_3dv')
+        file_name = geosoft.gxpy.map.map_file_name(file_name, 'geosoft_3dv')
         if not os.path.isfile(file_name):
             raise ViewException(_t('geosoft_3dv file not found: {}').format(file_name))
 
-        g_3dv = cls(file_name, gxmap.WRITE_OLD, _internal=True)
+        g_3dv = cls(file_name, geosoft.gxpy.map.WRITE_OLD, _internal=True)
 
         return g_3dv
 
