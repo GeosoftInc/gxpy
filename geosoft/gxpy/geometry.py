@@ -51,11 +51,11 @@ class Geometry:
         return self._cs.same_as(other._cs)
 
     @property
-    def cs(self):
+    def coordinate_system(self):
         return self._cs
 
-    @cs.setter
-    def cs(self, cs):
+    @coordinate_system.setter
+    def coordinate_system(self, cs):
         self._cs = gxcs.Coordinate_system(cs)
 
 

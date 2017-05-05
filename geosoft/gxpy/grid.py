@@ -629,7 +629,7 @@ class Grid():
         return self._decoration
 
     @property
-    def cs(self):
+    def coordinate_system(self):
         """
         grid coordinate system as a Coordinate_system.
 
@@ -684,8 +684,8 @@ class Grid():
     def rot(self, v):
         self._img.set_info(self.dx, self.dy, self.x0, self.y0, -v)
 
-    @cs.setter
-    def cs(self, cs):
+    @coordinate_system.setter
+    def coordinate_system(self, cs):
         if not isinstance(cs, gxcs.Coordinate_system):
             cs = gxcs.Coordinate_system(cs)
         self._img.set_ipj(cs.gxipj)

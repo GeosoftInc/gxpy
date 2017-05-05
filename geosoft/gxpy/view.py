@@ -167,11 +167,11 @@ class View:
             self._lock = None
 
     @property
-    def cs(self):
+    def coordinate_system(self):
         return self._cs
 
-    @cs.setter
-    def cs(self, cs):
+    @coordinate_system.setter
+    def coordinate_system(self, cs):
         self._cs = gxcs.Coordinate_system(cs)
         metres_per = self._cs.metres_per_unit
         self._uname = self._cs.units_name

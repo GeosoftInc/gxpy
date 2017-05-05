@@ -16,6 +16,7 @@ import geosoft.gxpy.system as gxsys
 import geosoft.gxpy.view as gxv
 import geosoft.gxpy.group as gxg
 import geosoft.gxpy.utility as gxu
+import geosoft.gxpy.gdb as gxdb
 
 from geosoft.gxpy.tests import GXPYTest
 
@@ -975,6 +976,49 @@ class Test(GXPYTest):
                 with gxg.Draw_3d(v, 'outer') as g:
                     g.polydata_3d(data.reshape((-1,4)), render_spheres, (cmap, grd.dx * 0.25))
                     g.box_3d(grd.extent_3d(), wireframe=True, pen=gxg.Pen(line_color='b', line_thick=grd.dx))
+
+        self.crc_map(v3d_file)
+
+    def test_polydata_3d_gdb(self):
+        self.start()
+
+        def render_spheres(item, cmap_radius):
+            cmap, radius = cmap_radius
+            if not gxu.is_nan(item[2]):
+                cint = cmap.color_of_value(item[2]).int
+                return item, gxg.SYMBOL_3D_SPHERE, cint, (radius,)
+
+        folder, files = gsys.unzip(os.path.join(os.path.dirname(__file__), 'dem.zip'),
+                                   folder=self.gx.temp_folder())
+
+        gdb_file = os.path.join(folder, 'dem')
+        with gxdb.Geosoft_gdb.open(gdb_file) as gdb:
+            gdb.xyz_channels = ('x', 'y', 'elevation')
+
+            data = None
+            for l in gdb.lines():
+                dataline = gxu.dummy_to_nan(gdb.read_line(l, channels=('x', 'y', 'elevation'))[0])
+                if data is None:
+                    data = dataline
+                else:
+                    data = np.append(data, dataline, axis=0)
+
+            data *= (1, 1, 10)
+            cmap = gxg.Color_map()
+            try:
+                std = np.nanstd(data[:, 2])
+                mean = np.nanmean(data[:, 2])
+                cmap.set_normal(std, mean)
+            except:
+                cmap.set_linear(0, 1)
+
+            with gxv.View_3d.new(cs=gdb.coordinate_system) as v:
+                v3d_file = v.file_name
+                with gxg.Draw_3d(v, 'outer') as g:
+                    g.polydata_3d(data.reshape((-1, 3)), render_spheres, (cmap, 50 * v.units_per_map_cm))
+                    g.box_3d(gdb.extent_xyz(),
+                             wireframe=True,
+                             pen=gxg.Pen(line_color='b', line_thick=0.25 * v.units_per_map_cm))
 
         self.crc_map(v3d_file)
 

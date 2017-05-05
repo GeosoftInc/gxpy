@@ -27,7 +27,7 @@ UPDATE_RESULTS = False
 UPDATE_RESULTS_DONT_ASK = False
 
 # set to True to show viewer for each CRC call
-SHOW_TEST_VIEWERS = False
+SHOW_TEST_VIEWERS = True
 
 _prevent_interactive = os.environ.get('GEOSOFT_PREVENT_INTERACTIVE', 0) == '1'
 if _prevent_interactive:

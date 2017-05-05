@@ -17,6 +17,7 @@ from . import vv as gxvv
 from . import va as gxva
 from . import utility as gxu
 from . import gx as gx
+from . import coordinate_system as gxcs
 
 __version__ = geosoft.__version__
 
@@ -61,7 +62,7 @@ READ_REMOVE_DUMMYROWS = 1
 READ_REMOVE_DUMMYCOLUMNS = 2
 
 
-class GDBException(Exception):
+class GdbException(Exception):
     """
     Exceptions from this module.
 
@@ -84,7 +85,7 @@ def _va_width(data):
     elif len(data.shape) == 2:
         width = data.shape[1]
     else:
-        raise GDBException(_t("Only one or two-dimensional data allowed."))
+        raise GdbException(_t("Only one or two-dimensional data allowed."))
     return width
 
 
@@ -107,7 +108,7 @@ class Geosoft_gdb:
         import os,sys
         import numpy as np
         import gxpy.gx as gxp
-        import gxpy.gdb as gxgdb
+        import gxpy.gdb as gxdb
 
         # open the current database
         gdb = gxdb.Geosoft_gdb.open(gxp)
@@ -129,7 +130,7 @@ class Geosoft_gdb:
         import os,sys
         import numpy as np
         import gxpy.gx as gxp
-        import gxpy.gdb as gxgdb
+        import gxpy.gdb as gxdb
 
         # initalize the gx environment - required for external programs.
         gxp = gxu.GXpy()
@@ -321,6 +322,39 @@ class Geosoft_gdb:
     # ============================================================================
     # Information
 
+    @property
+    def gxdb(self):
+        return self._db
+
+    @property
+    def xyz_channels(self):
+        sr = gxapi.str_ref()
+        self.gxdb.get_xyz_chan(0, sr)
+        x = sr.value
+        self.gxdb.get_xyz_chan(1, sr)
+        y = sr.value
+        self.gxdb.get_xyz_chan(2, sr)
+        z = sr.value
+        if not self.exist_chan(x):
+            x = None
+        if not self.exist_chan(y):
+            y = None
+        if not self.exist_chan(z):
+            z = None
+        return (x, y, z)
+
+    @xyz_channels.setter
+    def xyz_channels(self, xyz):
+        if len(xyz) >= 3:
+            x, y, z = xyz
+        else:
+            x, y = xyz
+        self.gxdb.set_xyz_chan(0, x)
+        self.gxdb.set_xyz_chan(1, y)
+        if len(xyz) >= 3:
+            self.gxdb.set_xyz_chan(2, z)
+
+    @property
     def file_name(self):
         """
         :return: database file name
@@ -329,14 +363,77 @@ class Geosoft_gdb:
         """
         return os.path.abspath(self._filename)
 
+    @property
+    def coordinate_system(self):
+        try:
+            x_symb = self.line_name_symb('X')[1]
+            ipj = gxapi.GXIPJ.create()
+            self.gxdb.get_ipj(x_symb, ipj)
+            return gxcs.Coordinate_system(ipj)
+
+        except GdbException:
+            return gxcs.Coordinate_system()
+
+    def exist_line(self, line):
+        """Returns True if the line name exists"""
+        return self.gxdb.is_line_name(line)
+
+    def exist_chan(self, chan):
+        """Returns True if the channel name exists"""
+        return self.gxdb.is_chan_name(chan)
+
+    def extent_xyz(self):
+        """ 
+        Return the spatial extent of all selected data in the database.
+        
+        :returns:   (xmin, ymin, zmin, xmax, ymax, zmax)
+        
+        .. versionadded:: 9.2
+        """
+
+        def expand(_min, _max, data):
+            if np.isnan(data).all:
+                return _min, _max
+            mdata = np.nanmin(data)
+            if _min is None:
+                _min = mdata
+                _max = np.nanmin(data)
+                return _min, _max
+            if mdata < _min:
+                _min = mdata
+                return _min, _max
+            mdata = np.nanmin(data)
+            if mdata > _max:
+                _max = mdata
+            return _min, _max
+
+        lines = self.lines()
+        if len(lines) == 0:
+            return (None, None, None, None, None)
+        xyz = self.xyz_channels
+        if None in xyz:
+            if None in xyz[0:2]:
+               return (None, None, None, None, None)
+            xyz = xyz[0:2]
+
+        xmin = xmax = ymin = ymax = zmin = zmax = None
+        for l in self.lines():
+            data = gxu.dummy_to_nan(self.read_line(l, channels=xyz)[0])
+            xmin, xmax = expand(xmin, xmax, data[:, 0])
+            ymin, ymax = expand(ymin, ymax, data[:, 1])
+            if data.shape[1] > 2:
+                zmin, zmax = expand(zmin, zmax, data[:, 2])
+
+        return (xmin, ymin, zmin, xmax, ymax, zmax)
+
     def line_name_symb(self, line, create=False):
         """
         Return line name, symbol
 
         :param line:    line name, or symbol number
         :param create:  True to create a line if one does not exist
-        :return:        line name, symbol, returns ('',-1) if invalid
-        :raises:        GDBException if line not found or cannot be created
+        :return:        line name, symbol
+        :raises:        GdbException if line not found or cannot be created
 
         .. versionadded:: 9.1
         """
@@ -351,7 +448,7 @@ class Geosoft_gdb:
         if create:
             return line, self.new_line(line)
 
-        raise GDBException('Line \'{}\' not found'.format(line))
+        raise GdbException('Line \'{}\' not found'.format(line))
 
     def channel_name_symb(self, chan):
         """
@@ -359,7 +456,7 @@ class Geosoft_gdb:
 
         :param chan:    channel name, or symbol number
         :return:        line name, symbol, returns ('',-1) if invalid
-        :raises:        GDBException if channel does not exist
+        :raises:        GdbException if channel does not exist
 
         .. versionadded:: 9.1
         """
@@ -372,7 +469,7 @@ class Geosoft_gdb:
                 self._db.get_symb_name(chan, self._sr)
                 return self._sr.value, chan
 
-        raise GDBException('Channel \'{}\' not found'.format(chan))
+        raise GdbException('Channel \'{}\' not found'.format(chan))
 
     def channel_width(self, channel):
         """
@@ -686,11 +783,11 @@ class Geosoft_gdb:
         """
 
         if not self._db.is_line_name(line):
-            raise GDBException('Invalid line name \'{}\''.format(line))
+            raise GdbException('Invalid line name \'{}\''.format(line))
 
         symb = self._db.find_symb(line, gxapi.DB_SYMB_LINE)
         if symb != gxapi.NULLSYMB:
-            raise GDBException('Cannot create existing line \'{}\''.format(line))
+            raise GdbException('Cannot create existing line \'{}\''.format(line))
 
         if len(group) > 0:
             linetype = SYMB_LINE_GROUP
@@ -732,7 +829,7 @@ class Geosoft_gdb:
                 cn, cs = self.channel_name_symb(s)
                 self._lock_write(cs)
                 self._db.delete_symb(cs)
-            except GDBException:
+            except GdbException:
                 continue
 
     def delete_line(self, s):
@@ -778,19 +875,19 @@ class Geosoft_gdb:
     def _lock_read(self, s):
         try:
             self._db.lock_symb(s, gxapi.DB_LOCK_READONLY, gxapi.DB_WAIT_INFINITY)
-        except GDBException:
-            raise GDBException('Cannot read lock symbol {}'.format(s))
+        except GdbException:
+            raise GdbException('Cannot read lock symbol {}'.format(s))
 
     def _lock_write(self, s):
         try:
             self._db.lock_symb(s, gxapi.DB_LOCK_READWRITE, gxapi.DB_WAIT_INFINITY)
-        except GDBException:
-            raise GDBException('Cannot write lock symbol {}'.format(s))
+        except GdbException:
+            raise GdbException('Cannot write lock symbol {}'.format(s))
 
     def _unlock(self, s):
         try:
             self._db.un_lock_symb(s)
-        except GDBException:
+        except GdbException:
             pass
 
     def _sorted_chan_list(self):
@@ -803,17 +900,17 @@ class Geosoft_gdb:
         try:
             nX, sX = self.channel_name_symb(self._db.get_xyz_chan_symb(gxapi.DB_CHAN_X))
             channels.append(nX)
-        except GDBException:
+        except GdbException:
             nX = ''
         try:
             nY, sY = self.channel_name_symb(self._db.get_xyz_chan_symb(gxapi.DB_CHAN_Y))
             channels.append(nY)
-        except GDBException:
+        except GdbException:
             nY = ''
         try:
             nZ, sZ = self.channel_name_symb(self._db.get_xyz_chan_symb(gxapi.DB_CHAN_Z))
             channels.append(nZ)
-        except GDBException:
+        except GdbException:
             nZ = ''
 
         for c in ch:
@@ -862,7 +959,7 @@ class Geosoft_gdb:
         cn, cs = self.channel_name_symb(channel)
 
         if self.channel_width(cs) != 1:
-            raise GDBException("Cannot read a VA channel into a VV.")
+            raise GdbException("Cannot read a VA channel into a VV.")
 
         if dtype is None:
             dtype = self.channel_dtype(cs)
@@ -1037,7 +1134,7 @@ class Geosoft_gdb:
             ======================== ===================================================
 
         :return: 2D numpy array shape(records,channels), list of channel names, (fidStart,fidIncr)
-        :raises: GDBException if first channel requested is empty
+        :raises: GdbException if first channel requested is empty
 
         VA channels are expanded by element with channel names name[0], name[1], etc.
 
@@ -1102,7 +1199,7 @@ class Geosoft_gdb:
                 fid = (0.0, 1.0)
 
             else:
-                raise GDBException(_t('Unrecognized dummy={}').format(dummy))
+                raise GdbException(_t('Unrecognized dummy={}').format(dummy))
 
         return npd, chNames, fid
 
@@ -1125,7 +1222,7 @@ class Geosoft_gdb:
         try:
             cn, cs = self.channel_name_symb(channel)
 
-        except GDBException:
+        except GdbException:
             if type(channel) is str:
                 cs = self.new_channel(channel, vv.dtype)
             else:
@@ -1159,7 +1256,7 @@ class Geosoft_gdb:
         try:
             cn, cs = self.channel_name_symb(channel)
 
-        except GDBException:
+        except GdbException:
             if type(channel) is str:
                 cs = self.new_channel(channel, va.dtype, array=va.width)
             else:
@@ -1200,14 +1297,14 @@ class Geosoft_gdb:
         try:
             cn, cs = self.channel_name_symb(channel)
 
-        except GDBException:
+        except GdbException:
             if type(channel) is str:
                 cn = channel
                 cs = self.new_channel(channel, data.dtype, array=_va_width(data))
 
         w = self.channel_width(cs)
         if w != _va_width(data):
-            raise GDBException(
+            raise GdbException(
                 _t("Array data width {} does not fit into VA channel '{}' with width {}").
                 format(_va_width(data), cn, w))
 
@@ -1287,7 +1384,7 @@ class Geosoft_gdb:
                 try:
                     ch, cs = self.channel_name_symb(chan)
                     w = self.channel_width(cs)
-                except GDBException:
+                except GdbException:
                     w = 1
                     cs = chan
                 self.write_channel(line, cs, data[:, np_index: np_index + w], fid=fid)
@@ -1295,7 +1392,7 @@ class Geosoft_gdb:
 
             # error if there is any data left
             if np_index - data.shape[1] != 0:
-                raise GDBException(_t('More data than channels, but data up to channels was written out.'))
+                raise GdbException(_t('More data than channels, but data up to channels was written out.'))
 
     def list_values(self, chan, max=1000, selected=True, dupl=50, progress=None, stop=None):
         """
@@ -1326,7 +1423,7 @@ class Geosoft_gdb:
 
             try:
                 d, c, f = self.read_line(l, cs, dtype=dtype)
-            except GDBException:
+            except GdbException:
                 continue
 
             if d.shape[0] == 0:
