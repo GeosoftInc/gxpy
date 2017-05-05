@@ -993,15 +993,16 @@ class Geosoft_gdb:
             fend = gxapi.GS_R8MN
 
             for vv in chvv:
-                fd = vv[1].fid
-                if fd[0] != gxapi.rDUMMY:
-                    if fd[0] < start:
-                        start = fd[0]
-                    if fd[1] < incr:
-                        incr = fd[1]
-                    dend = start + incr * (vv[1].length - 1)
-                    if dend > fend:
-                        fend = dend
+                if vv[1].length > 0:
+                    fd = vv[1].fid
+                    if fd[0] != gxapi.rDUMMY:
+                        if fd[0] < start:
+                            start = fd[0]
+                        if fd[1] < incr:
+                            incr = fd[1]
+                        dend = start + incr * (vv[1].length - 1)
+                        if dend > fend:
+                            fend = dend
             if fid is None:
                 fid = (start, incr)
 
