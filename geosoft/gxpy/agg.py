@@ -10,9 +10,7 @@ import os
 
 import geosoft
 import geosoft.gxapi as gxapi
-from . import gx
 from . import vv as gxvv
-from . import group as gxg
 
 __version__ = geosoft.__version__
 
@@ -187,7 +185,7 @@ class Aggregate_image():
             if zone == ZONE_SHADE:
                 color_map = 'lgray.tbl'
         if (color_map is None) or (isinstance(color_map, str)):
-            color_map = gxg.Color_map(color_map)
+            color_map = geosoft.gxpy.group.Color_map(color_map)
         color_map = color_map.save_file()
 
         try:
