@@ -169,7 +169,7 @@
                                     <Shade>
                                        <Item name="Inclination" value="45"/>
                                        <Item name="Declination" value="45"/>
-                                       <Item name="Scale" value="GS_R8DM"/>
+                                       <Item name="Scale" value="14.99297784"/>
                                        <Item name="OriginGrid" value=".\test_zone.grd"/>
                                     </Shade>
                                  </Model>
