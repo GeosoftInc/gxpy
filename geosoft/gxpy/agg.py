@@ -207,7 +207,8 @@ class Aggregate_image():
                 if shade and (zone != ZONE_SHADE):
                     self.gxagg.layer_img(grid_file, ZONE_SHADE, 'lgray.tbl', gxapi.rDUMMY)
         finally:
-            os.remove(color_map)
+            if os.path.exists(color_map):
+                os.remove(color_map)
 
     def layer_file_names(self):
         """

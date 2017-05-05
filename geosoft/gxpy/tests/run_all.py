@@ -2,10 +2,12 @@ import multiprocessing
 import subprocess
 import glob
 import timeit
+import os
 import sys
 
 def work(test):
-    return (test, subprocess.call(['nosetests', '-v', test]))
+    nosetests = os.path.join(os.path.split(sys.executable)[0], 'scripts', 'nosetests')
+    return (test, subprocess.call([nosetests, '-v', test]))
 
 _exit_code = 0
 

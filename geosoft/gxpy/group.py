@@ -1827,7 +1827,7 @@ class Color_map:
             sr = gxapi.str_ref()
             if gxapi.GXSYS.global_('MONTAJ.DEFAULT_COLOUR', sr) == 0:
                 cmap = sr.value
-            else:
+            if not cmap:
                 cmap = 'colour'
 
         if isinstance(cmap, str):
@@ -1932,7 +1932,7 @@ class Color_map:
         
         .. versionadded:: 9.2
         """
-        return self[0][0] != gxapi.rMAX
+        return self.length > 0 and self[0][0] != gxapi.rMAX
 
     def set_sequential(self, start=0, increment=1):
         """
