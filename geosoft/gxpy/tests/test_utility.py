@@ -110,10 +110,6 @@ class Test(GXPYTest):
         cDUMMY="*"
         rDUMMY=gxu.rdecode(cDUMMY)
 
-        self.assertTrue(gxu.is_nan(np.nan))
-        self.assertFalse(gxu.is_nan(1))
-        self.assertFalse(gxu.is_nan(1.))
-        
         def test(s):
             r = gxu.rdecode(s)
             return r

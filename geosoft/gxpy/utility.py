@@ -480,8 +480,7 @@ def dummy_none(v):
     .. versionadded:: 9.2
     """
 
-    dummy = gx_dummy(np.dtype(type(v)))
-    if v == dummy:
+    if v == gx_dummy(np.dtype(type(v))):
         return None
     else:
         return v
@@ -511,15 +510,6 @@ def dummy_mask(npd):
     if len(npd.shape) != 2:
         raise UtilityException(_t('Must be a 2D array'))
     return np.apply_along_axis(lambda a: dummy in a, 1, npd)
-
-
-def is_nan(v):
-    """
-    Returns True is v is a numpy.nan 
-    
-    .. versionadded:: 9.2
-    """
-    return not (v == v)
 
 
 def dummy_to_nan(data):

@@ -966,7 +966,7 @@ class Test(GXPYTest):
         def render_spheres(item, cmap_radius):
             value = item[3]
             cmap, radius = cmap_radius
-            if gxu.is_nan(value):
+            if np.isnan(value):
                 xyz = (item[0], item[1], item[2])
                 return xyz, gxg.SYMBOL_3D_SPHERE, gxg.Color(gxg.C_GREY10).int, (radius*0.5,)
             xyz = (item[0], item[1], item[2])
@@ -1011,7 +1011,7 @@ class Test(GXPYTest):
 
         def render_spheres(item, cmap_radius):
             cmap, radius = cmap_radius
-            if not gxu.is_nan(item[2]):
+            if not np.isnan(item[2]):
                 cint = cmap.color_of_value(item[2]).int
                 return item, gxg.SYMBOL_3D_SPHERE, cint, (radius,)
 
