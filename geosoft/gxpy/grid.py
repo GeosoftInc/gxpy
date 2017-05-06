@@ -343,16 +343,14 @@ class Grid():
     def get_value(self, x, y):
         """
         Return a grid value at a point as a float.  For scalar data the point value will
-        be interpolated between neighbors.  For colour data the dearest value is returned
+        be interpolated between neighbors.  For colour data the nearest value is returned
         as a color int.
         
-        :param self: 
-        :param x: 
-        :param y: 
-        :return: 
+        :param x, y: Location on the grid plane 
+        :return: grid value, or None if outside of grid area
+        
         """
-
-        #TODO complete
+        return gxu.dummy_none(self.gximg.get_z(x, y))
 
     @classmethod
     def copy(cls, grd, file_name=None, dtype=None, overwrite=False):

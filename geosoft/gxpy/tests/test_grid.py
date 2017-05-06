@@ -394,7 +394,7 @@ class Test(GXPYTest):
             self.assertEqual(a[0,0,0], 100.0)
             self.assertEqual(a[0,0,1], -25.25)
             self.assertEqual(a[0,0,2], 0.0)
-            self.assertTrue(gxu.is_nan(a[0, 0, 3]))
+            self.assertTrue(np.isnan(a[0, 0, 3]))
             self.assertEqual(a[0,1,0]-a[0,0,0], g.dx)
             self.assertEqual(a[1,0,1]-a[0,0,1], g.dy)
             self.assertEqual(a[0,0,2]-a[1,1,2], 0.)
@@ -415,7 +415,6 @@ class Test(GXPYTest):
         self.assertEqual((tuple(a[0, 10, :])), (49.240387650610401, -8.6824088833465165, 0.0))
         self.assertEqual((tuple(a[10, 0, :])), (8.6824088833465165, 49.240387650610401, 0.0))
         self.assertEqual((tuple(a[10, 10, :])), (57.92279653395692, 40.557978767263883, 0.0))
-
 
     def test_hanging_resource(self):
         self.start()
@@ -535,6 +534,16 @@ class Test(GXPYTest):
             vv = g.read_row(0)
             self.assertEqual(g[0], 771)
 
+    def test_value(self):
+        self.start()
+
+        with gxgrd.Grid.open(self.g1f) as g:
+            self.assertEqual(g.get_value(7.043, 44.625), 1912.4500000000035)
+            self.assertEqual(g.get_value(0, 0), None)
+
+        with gxgrd.Grid.open(self.g1f, dtype=int) as g:
+            self.assertEqual(g.get_value(7.043, 44.625), 1912.4500000000035)
+            self.assertEqual(g.get_value(0,0), None)
 
 ###############################################################################################
 
