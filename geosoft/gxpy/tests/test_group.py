@@ -979,7 +979,6 @@ class Test(GXPYTest):
 
         self.crc_map(v3d_file)
 
-    @unittest.skip('dem.zip is missing') # TODO
     def test_polydata_3d_gdb(self):
         self.start()
 
@@ -1017,9 +1016,9 @@ class Test(GXPYTest):
                 v3d_file = v.file_name
                 with gxg.Draw_3d(v, 'outer') as g:
                     g.polydata_3d(data.reshape((-1, 3)), render_spheres, (cmap, 50 * v.units_per_map_cm))
-                    g.box_3d(gdb.extent_xyz(),
+                    g.box_3d(gxgm.Point2(gdb.extent_xyz()) * (1.0, 1.0, 10.0),
                              wireframe=True,
-                             pen=gxg.Pen(line_color='b', line_thick=0.25 * v.units_per_map_cm))
+                             pen=gxg.Pen(line_color='c', line_thick=200 * v.units_per_map_cm))
 
         self.crc_map(v3d_file)
 

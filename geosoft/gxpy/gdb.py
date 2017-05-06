@@ -335,20 +335,25 @@ class Geosoft_gdb:
         y = sr.value
         self.gxdb.get_xyz_chan(2, sr)
         z = sr.value
-        if not self.exist_chan(x):
+        if not self.is_channel(x):
             x = None
-        if not self.exist_chan(y):
+        if not self.is_channel(y):
             y = None
-        if not self.exist_chan(z):
+        if not self.is_channel(z):
             z = None
         return (x, y, z)
 
     @xyz_channels.setter
     def xyz_channels(self, xyz):
+
         if len(xyz) >= 3:
             x, y, z = xyz
+            self.is_channel(z, True)
         else:
             x, y = xyz
+            self.is_channel(x, True)
+            self.is_channel(y, True)
+
         self.gxdb.set_xyz_chan(0, x)
         self.gxdb.set_xyz_chan(1, y)
         if len(xyz) >= 3:
@@ -374,13 +379,86 @@ class Geosoft_gdb:
         except GdbException:
             return gxcs.Coordinate_system()
 
-    def exist_line(self, line):
-        """Returns True if the line name exists"""
-        return self.gxdb.is_line_name(line)
+    @property
+    def max_blobs(self):
+        return self._db.get_info(gxapi.DB_INFO_BLOBS_MAX)
 
-    def exist_chan(self, chan):
+    @property
+    def max_lines(self):
+        return self._db.get_info(gxapi.DB_INFO_LINES_MAX)
+
+    @property
+    def max_channels(self):
+        return self._db.get_info(gxapi.DB_INFO_CHANS_MAX)
+
+    @property
+    def used_blob(self):
+        return self._db.get_info(gxapi.DB_INFO_BLOBS_USED)
+
+    @property
+    def usee_lines(self):
+        return self._db.get_info(gxapi.DB_INFO_LINES_USED)
+
+    @property
+    def used_channels(self):
+        return self._db.get_info(gxapi.DB_INFO_CHANS_USED)
+
+    @property
+    def page_size_bytes(self):
+        return self._db.get_info(gxapi.DB_INFO_PAGE_SIZE)
+
+    @property
+    def number_of_blocks(self):
+        return self._db.get_info(gxapi.DB_INFO_DATA_SIZE)
+
+    @property
+    def lost_blocks(self):
+        return self._db.get_info(gxapi.DB_INFO_LOST_SIZE)
+
+    @property
+    def free_blocks(self):
+        return self._db.get_info(gxapi.DB_INFO_FREE_SIZE)
+
+    @property
+    def compression(self):
+        return self._db.get_info(gxapi.DB_INFO_COMP_LEVEL)
+
+    @property
+    def pages_for_blobs(self):
+        try:
+            return self._db.get_info(gxapi.DB_INFO_BLOB_SIZE)
+        except gxapi.GXError:
+            return 0
+
+    @property
+    def db_size_kb(self):
+        return self._db.get_info(gxapi.DB_INFO_FILE_SIZE)
+
+    @property
+    def index_size_kb(self):
+        return self._db.get_info(gxapi.DB_INFO_INDEX_SIZE)
+
+    @property
+    def max_block_size_bytes(self):
+        return self._db.get_info(gxapi.DB_INFO_MAX_BLOCK_SIZE)
+
+    @property
+    def data_has_changed(self):
+        return self._db.get_info(gxapi.DB_INFO_CHANGESLOST)
+
+    def is_line(self, line, raise_err=False):
+        """Returns True if the line name exists"""
+        exist = self._db.find_symb(line, gxapi.DB_SYMB_LINE) != gxapi.NULLSYMB
+        if raise_err and not exist:
+            raise GdbException(_t('"{}" is not a valid line'.format(line)))
+        return exist
+
+    def is_channel(self, chan, raise_err=False):
         """Returns True if the channel name exists"""
-        return self.gxdb.is_chan_name(chan)
+        exist = self._db.find_chan(chan) != gxapi.NULLSYMB
+        if raise_err and not exist:
+            raise GdbException(_t('"{}" is not a valid channel'.format(chan)))
+        return exist
 
     def extent_xyz(self):
         """ 
@@ -392,17 +470,17 @@ class Geosoft_gdb:
         """
 
         def expand(_min, _max, data):
-            if np.isnan(data).all:
+            if np.isnan(data).all():
                 return _min, _max
             mdata = np.nanmin(data)
             if _min is None:
                 _min = mdata
-                _max = np.nanmin(data)
+                _max = np.nanmax(data)
                 return _min, _max
             if mdata < _min:
                 _min = mdata
                 return _min, _max
-            mdata = np.nanmin(data)
+            mdata = np.nanmax(data)
             if mdata > _max:
                 _max = mdata
             return _min, _max
@@ -417,7 +495,7 @@ class Geosoft_gdb:
             xyz = xyz[0:2]
 
         xmin = xmax = ymin = ymax = zmin = zmax = None
-        for l in self.lines():
+        for l in lines:
             data = gxu.dummy_to_nan(self.read_line(l, channels=xyz)[0])
             xmin, xmax = expand(xmin, xmax, data[:, 0])
             ymin, ymax = expand(ymin, ymax, data[:, 1])

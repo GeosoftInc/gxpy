@@ -283,8 +283,23 @@ class Test(GXPYTest):
 
             gdb.discard()
 
+    def test_various(self):
+        self.start()
+
+        def setxyz(xyz):
+            gdb.xyz_channels = xyz
+
+
+        with gxdb.Geosoft_gdb.open(self.gdb_name) as gdb:
+            self.assertRaises(gxdb.GdbException, gdb.is_line, 'nope', True)
+            self.assertRaises(gxdb.GdbException, gdb.is_channel, 'nope', True)
+            self.assertRaises(gxdb.GdbException, setxyz, ('x', 'y', 'crazy_cannot_exist'))
+            gdb.discard()
+
+
     def test_read_masked_GDB(self):
         self.start()
+
 
         with gxdb.Geosoft_gdb.open(self.gdb_name) as gdb:
 
@@ -300,6 +315,9 @@ class Test(GXPYTest):
             npd,ch,fid = gdb.read_line('D2', channels=('x','y'), dummy=gxdb.READ_REMOVE_DUMMYCOLUMNS)
             self.assertEqual(npd.shape, (832,1))
             self.assertEqual(npd.shape[1], len(ch))
+
+            px = geosoft.gxpy.geometry.Point2(gdb.extent_xyz())
+            self.assertEqual(str(px), 'Point2[(578625.0, 7773625.0, -5261.5553894043005) (578625.0, 7782875.0, 1062.4999999999964)]')
 
             gdb.discard()
 
