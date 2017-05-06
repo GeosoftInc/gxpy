@@ -1,15 +1,12 @@
 import unittest
 import os
-import sys
 import numpy as np
 
-import geosoft
 import geosoft
 import geosoft.gxapi as gxapi
 import geosoft.gxpy.system as gsys
 import geosoft.gxpy.map as gxmap
 import geosoft.gxpy.geometry as gxgm
-import geosoft.gxpy.view as gxgrp
 import geosoft.gxpy.grid as gxgrd
 import geosoft.gxpy.agg as gxagg
 import geosoft.gxpy.system as gxsys
@@ -934,6 +931,7 @@ class Test(GXPYTest):
 
         self.crc_map(v3d_file)
 
+    @unittest.skip('not required for regretion tests')
     def test_polydata_3d_grid(self):
         self.start()
 
@@ -979,6 +977,7 @@ class Test(GXPYTest):
 
         self.crc_map(v3d_file)
 
+    @unittest.skip('not required for regretion tests')
     def test_polydata_3d_gdb(self):
         self.start()
 
