@@ -619,7 +619,7 @@ class Test(GXPYTest):
                 with gxagg.Aggregate_image.new(grid_file) as agg:
                     itr = gxapi.GXITR.create()
                     agg.gxagg.get_layer_itr(0, itr)
-                    gxg.legend_color_bar(v, 'color_legend', itr)
+                    gxg.legend_color_bar(v, 'color_legend', gxg.Color_map(itr))
 
         self.crc_map(map_file)
 
@@ -656,7 +656,7 @@ class Test(GXPYTest):
                 with gxg.Agg_group.open(v, agg_group_name) as g:
                     itr = gxapi.GXITR.create()
                     g.agg.gxagg.get_layer_itr(0, itr)
-                    gxg.legend_color_bar(v, 'color_legend', itr)
+                    gxg.legend_color_bar(v, 'color_legend', gxg.Color_map(itr))
 
 
         self.crc_map(map_file)
@@ -899,7 +899,25 @@ class Test(GXPYTest):
                 return None
             cmap, radius = cmap_radius
             cint = cmap.color_of_value(value)
-            return xyz, gxg.SYMBOL_3D_SPHERE, cint.int, (radius,)
+            return gxg.SYMBOL_3D_SPHERE, xyz, cint.int, radius
+
+        def render_cubes(point, size_color):
+            size, cint = size_color
+            half = size * 0.5
+            p2 = gxgm.Point2((point - (half, half, half), point + (half, half, half)))
+            return gxg.SYMBOL_3D_CUBE, p2, cint, None
+
+        def render_cylinders(point, size_color):
+            size, cint = size_color
+            half = size * 0.2
+            p2 = gxgm.Point2((point - (half, half, half), point + (half, half, half)))
+            return gxg.SYMBOL_3D_CYLINDER, p2, cint, size * 0.4
+
+        def render_cones(point, size_color):
+            size, cint = size_color
+            half = size * 0.5
+            p2 = gxgm.Point2((point - (half, half, half), point + (half, half, half)))
+            return gxg.SYMBOL_3D_CONE, p2, cint, size * 0.2
 
         data = [((0, 0, 0), 1),
                 ((10, 0, 5), 2),
@@ -928,6 +946,16 @@ class Test(GXPYTest):
 
             with gxg.Draw_3d(v, 'outer') as g:
                 g.polydata_3d(data, render_spheres, (cmap, 0.25))
+                
+                pp = gxgm.PPoint(((5, 5, 5), (7, 5, 5), (7, 7, 7)))
+                g.polydata_3d(pp, render_cubes, (1, gxg.Color('y').int))
+
+                pp += (0, 0, 2)
+                g.polydata_3d(pp, render_cylinders, (1, gxg.Color('m').int))
+
+                pp += (0, 0, 2)
+                n = 0
+                g.polydata_3d(pp, render_cones, (1, gxg.Color('r255g128b128').int))
 
         self.crc_map(v3d_file)
 

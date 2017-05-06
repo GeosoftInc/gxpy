@@ -13,7 +13,7 @@
    <Item name="Clipped" value="False"/>
    <Item name="Moveable" value="False"/>
    <Item name="MinZ" value="-5.25"/>
-   <Item name="MaxZ" value="10.25"/>
+   <Item name="MaxZ" value="11.7"/>
    <Item name="Transparency" value="GS_R8DM"/>
    <Item name="ExtClipRegion" value="-1"/>
    <Item name="Plane" value="-1"/>

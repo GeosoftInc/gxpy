@@ -909,20 +909,23 @@ class Draw_3d(Draw):
                     render_info_func=None,
                     passback=None):
         """
-        Create a 3D objects rendered by the data..
+        Create a 3D objects rendered by the data.
 
         :param view:                a 3D view in which to place the group
-        :param data:                iterable that yields items passed to the render_info_func function
-        :param render_info_func:    a callback that given (item, passback) returns ((x,y,z), (render_attributes))
+        :param data:                iterable that yields items passed to your `render_info_func` callback
+        :param render_info_func:    a callback that given `(item, passback)` returns the rendering `(symbol_type,
+                                    geometry, color_integer, attibute)`:
+                                    
+                                    ================== ======== ========= ===========
+                                    Symbol             Geometry Color     Attributes
+                                    ================== ======== ========= ===========
+                                    SYMBOL_3D_SPHERE   Point    Color.int radius
+                                    SYMBOL_3D_CUBE     Point2   Color.int None
+                                    SYMBOL_3D_CYLINDER Point2   Color.int radius
+                                    SYMBOL_3D_CONE     Point2   Color.int base_radius
+                                    ================== ======== ========= ===========
 
-                                ::
-
-                                    SYMBOL_3D_SPHERE = 0
-                                    SYMBOL_3D_CUBE = 1
-                                    SYMBOL_3D_CYLINDER = 2
-                                    SYMBOL_3D_CONE = 3
-
-        :param passback:        something to pass back to the render_info_func function, default None.
+        :param passback:            something passed back to your render_info_func function, default None.
 
         .. versionadded:: 9.2
         """
@@ -931,22 +934,36 @@ class Draw_3d(Draw):
         for item in data:
             render = render_info_func(item, passback)
             if render:
-                xyz, symbol, color, attributes = render
+                symbol, geometry, color, attributes = render
                 if color != cint:
                     self.view.gxview.fill_color(color)
                     cint = color
 
                 if symbol == SYMBOL_3D_SPHERE:
-                    self.view.gxview.sphere_3d(xyz[0], xyz[1], xyz[2], attributes[0])
+                    self.view.gxview.sphere_3d(geometry[0], geometry[1], geometry[2], attributes)
+
+                elif symbol == SYMBOL_3D_CUBE:
+                    self.view.gxview.box_3d(geometry.p0.x, geometry.p0.y, geometry.p0.z,
+                                            geometry.p1.x, geometry.p1.y, geometry.p1.z)
+
+                elif symbol == SYMBOL_3D_CYLINDER:
+                    self.view.gxview.cylinder_3d(geometry.p0.x, geometry.p0.y, geometry.p0.z,
+                                                 geometry.p1.x, geometry.p1.y, geometry.p1.z,
+                                                 attributes, attributes, CYLINDER_CLOSE_ALL)
+
+                elif symbol == SYMBOL_3D_CONE:
+                    self.view.gxview.cylinder_3d(geometry.p0.x, geometry.p0.y, geometry.p0.z,
+                                                 geometry.p1.x, geometry.p1.y, geometry.p1.z,
+                                                 attributes, 0, CYLINDER_CLOSE_ALL)
+
                 else:
-                    raise GroupException(_t('Not implemented'))
-                    # TODO make this work, plus box and cone
+                    raise GroupException(_t('Symbol type not implemented'))
 
 
 def legend_color_bar(view,
                      group_name,
-                     itr,
-                     itr2=None,
+                     cmap,
+                     cmap2=None,
                      bar_location=COLOR_BAR_RIGHT,
                      location=None,
                      decimals=1,
@@ -964,13 +981,13 @@ def legend_color_bar(view,
                      interval_2=None,
                      title=''):
     """
-    Draw an color bar legend from itr colouring definitions.
+    Draw a color bar legend from :class:Color_map colouring definitions.
 
-    :param view:                ``gxpy.View`` instance in which to place the bar
+    :param view:                :class:`gxpy.View` instance in which to place the bar
     :param group_name:          name for the colour_bar group, overwrites group if it exists.
-    :param itr:                 gxapi.GXITR instance
-    :param itr2:                optional orthogonal blended itr as a gxapi.GXITR instance.  If making
-                                a shaded-colour legend, provide the shaded itr here.
+    :param cmap:                :class:`Color_map` instance
+    :param cmap2:               optional orthogonal blended :class:`Color_map` instance.  If making
+                                a shaded-colour legend, provide the shaded color map here.
     :param bar_location:        one of:
 
         ::
@@ -1007,6 +1024,7 @@ def legend_color_bar(view,
     .. versionadded:: 9.2
     """
 
+    itr = cmap.gxitr
     with Draw(view, group_name) as g:
 
         v_area = gxgm.Point2(view.extent_clip)
@@ -1080,8 +1098,10 @@ def legend_color_bar(view,
             cdict["FIXED_MINOR_INTERVAL"] = interval_2
 
         g.text_def = Text_def(height=annotation_height)
-        if itr2 is None:
+        if cmap2 is None:
             itr2 = gxapi.GXITR.null()
+        else:
+            itr2 = cmap2.gxitr
         gxapi.GXMVU.color_bar_reg(view.gxview, itr, itr2, gxu.reg_from_dict(cdict, 100, json_encode=False))
 
         if title:
@@ -1815,7 +1835,7 @@ class Color_map:
                     can use one of the `set` methods to establish zone values.
                     
                     You can also provide an `int`, which will create an uninitialized map of the the
-                    specified length.
+                    specified length, or a :class:`geosoft.gxapi.GXITR` instance.
                     
                     If not specified the Geosoft default color table is used.
                     
@@ -1846,6 +1866,9 @@ class Color_map:
             for i in range(cmap):
                 self.__setitem__(i, (gxapi.rMAX, C_BLACK))
             self.file_name = None
+
+        elif isinstance(cmap, gxapi.GXITR):
+            self.gxitr = cmap
 
         else:
             raise ValueError('Cannot make a color map from: {}'.format(cmap))

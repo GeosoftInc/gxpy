@@ -151,5 +151,134 @@
       </Item>
       <Item name="Radius" value="0.25"/>
    </Item>
+   <Item type="FillColor" size="8">
+      <Item name="Color" type="COL_ANY" colortype="CMY" cyan="0" magenta="0" yellow="255"/>
+   </Item>
+   <Item type="Box3D" size="48">
+      <Item name="Box" type="D3VOLUME">
+         <Value name="MinX" value="4.5"/>
+         <Value name="MinY" value="4.5"/>
+         <Value name="MinZ" value="4.5"/>
+         <Value name="MaxX" value="5.5"/>
+         <Value name="MaxY" value="5.5"/>
+         <Value name="MaxZ" value="5.5"/>
+      </Item>
+   </Item>
+   <Item type="Box3D" size="48">
+      <Item name="Box" type="D3VOLUME">
+         <Value name="MinX" value="6.5"/>
+         <Value name="MinY" value="4.5"/>
+         <Value name="MinZ" value="4.5"/>
+         <Value name="MaxX" value="7.5"/>
+         <Value name="MaxY" value="5.5"/>
+         <Value name="MaxZ" value="5.5"/>
+      </Item>
+   </Item>
+   <Item type="Box3D" size="48">
+      <Item name="Box" type="D3VOLUME">
+         <Value name="MinX" value="6.5"/>
+         <Value name="MinY" value="6.5"/>
+         <Value name="MinZ" value="6.5"/>
+         <Value name="MaxX" value="7.5"/>
+         <Value name="MaxY" value="7.5"/>
+         <Value name="MaxZ" value="7.5"/>
+      </Item>
+   </Item>
+   <Item type="FillColor" size="8">
+      <Item name="Color" type="COL_ANY" colortype="CMY" cyan="0" magenta="255" yellow="0"/>
+   </Item>
+   <Item type="Cylinder3D" size="68">
+      <Item name="Start" type="D3POINT">
+         <Value name="X" value="4.8"/>
+         <Value name="Y" value="4.8"/>
+         <Value name="Z" value="6.8"/>
+      </Item>
+      <Item name="End" type="D3POINT">
+         <Value name="X" value="5.2"/>
+         <Value name="Y" value="5.2"/>
+         <Value name="Z" value="7.2"/>
+      </Item>
+      <Item name="StartRadius" value="0.4"/>
+      <Item name="EndRadius" value="0.4"/>
+      <Item name="Flags" value="3"/>
+   </Item>
+   <Item type="Cylinder3D" size="68">
+      <Item name="Start" type="D3POINT">
+         <Value name="X" value="6.8"/>
+         <Value name="Y" value="4.8"/>
+         <Value name="Z" value="6.8"/>
+      </Item>
+      <Item name="End" type="D3POINT">
+         <Value name="X" value="7.2"/>
+         <Value name="Y" value="5.2"/>
+         <Value name="Z" value="7.2"/>
+      </Item>
+      <Item name="StartRadius" value="0.4"/>
+      <Item name="EndRadius" value="0.4"/>
+      <Item name="Flags" value="3"/>
+   </Item>
+   <Item type="Cylinder3D" size="68">
+      <Item name="Start" type="D3POINT">
+         <Value name="X" value="6.8"/>
+         <Value name="Y" value="6.8"/>
+         <Value name="Z" value="8.8"/>
+      </Item>
+      <Item name="End" type="D3POINT">
+         <Value name="X" value="7.2"/>
+         <Value name="Y" value="7.2"/>
+         <Value name="Z" value="9.2"/>
+      </Item>
+      <Item name="StartRadius" value="0.4"/>
+      <Item name="EndRadius" value="0.4"/>
+      <Item name="Flags" value="3"/>
+   </Item>
+   <Item type="FillColor" size="8">
+      <Item name="Color" type="COL_ANY" colortype="RGB" red="255" green="128" blue="128"/>
+   </Item>
+   <Item type="Cylinder3D" size="68">
+      <Item name="Start" type="D3POINT">
+         <Value name="X" value="4.5"/>
+         <Value name="Y" value="4.5"/>
+         <Value name="Z" value="8.5"/>
+      </Item>
+      <Item name="End" type="D3POINT">
+         <Value name="X" value="5.5"/>
+         <Value name="Y" value="5.5"/>
+         <Value name="Z" value="9.5"/>
+      </Item>
+      <Item name="StartRadius" value="0.2"/>
+      <Item name="EndRadius" value="0"/>
+      <Item name="Flags" value="3"/>
+   </Item>
+   <Item type="Cylinder3D" size="68">
+      <Item name="Start" type="D3POINT">
+         <Value name="X" value="6.5"/>
+         <Value name="Y" value="4.5"/>
+         <Value name="Z" value="8.5"/>
+      </Item>
+      <Item name="End" type="D3POINT">
+         <Value name="X" value="7.5"/>
+         <Value name="Y" value="5.5"/>
+         <Value name="Z" value="9.5"/>
+      </Item>
+      <Item name="StartRadius" value="0.2"/>
+      <Item name="EndRadius" value="0"/>
+      <Item name="Flags" value="3"/>
+   </Item>
+   <Item type="Cylinder3D" size="68">
+      <Item name="Start" type="D3POINT">
+         <Value name="X" value="6.5"/>
+         <Value name="Y" value="6.5"/>
+         <Value name="Z" value="10.5"/>
+      </Item>
+      <Item name="End" type="D3POINT">
+         <Value name="X" value="7.5"/>
+         <Value name="Y" value="7.5"/>
+         <Value name="Z" value="11.5"/>
+      </Item>
+      <Item name="StartRadius" value="0.2"/>
+      <Item name="EndRadius" value="0"/>
+      <Item name="Flags" value="3"/>
+   </Item>
    <Item type="End" size="8"></Item>
 </data>
