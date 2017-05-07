@@ -994,7 +994,7 @@ def legend_color_bar(view,
                      division_line=1,
                      interval_1=None,
                      interval_2=None,
-                     title=''):
+                     title=None):
     """
     Draw a color bar legend from :class:Color_map colouring definitions.
 
@@ -1038,6 +1038,11 @@ def legend_color_bar(view,
 
     .. versionadded:: 9.2
     """
+
+    #ensure group name is unique in the view
+
+    while group_name in view.group_list:
+        group_name += '_'
 
     itr = cmap.gxitr
     with Draw(view, group_name) as g:
@@ -1118,6 +1123,9 @@ def legend_color_bar(view,
         else:
             itr2 = cmap2.gxitr
         gxapi.GXMVU.color_bar_reg(view.gxview, itr, itr2, gxu.reg_from_dict(cdict, 100, json_encode=False))
+
+        if title is None:
+            title = cmap.title
 
         if title:
 
@@ -1856,7 +1864,7 @@ class Color_map:
                     
     """
 
-    def __init__(self, cmap=None):
+    def __init__(self, cmap=None, title=None, units=None):
 
         if cmap is None:
             sr = gxapi.str_ref()
@@ -1889,6 +1897,8 @@ class Color_map:
             raise ValueError('Cannot make a color map from: {}'.format(cmap))
 
         self._next = 0
+        self._title = title
+        self._units= units
 
     def __iter__(self):
         return self
@@ -1929,6 +1939,40 @@ class Color_map:
             if self[i] != other[i]:
                 return False
         return True
+
+    @property
+    def title(self):
+        """
+        Title, usually the name of the data from which the color bar was made or is intended. 
+        None if no title
+        
+        .. versionadded:: 9.2
+        """
+        return self._title
+
+    @title.setter
+    def title(self, title):
+        if title:
+            self._title = str(title)
+        else:
+            self._title = None
+
+    @property
+    def units(self):
+        """
+        Data units, expected to be the units of the data from which the color bar was made or is intended. 
+        None if no units
+
+        .. versionadded:: 9.2
+        """
+        return self._units
+
+    @units.setter
+    def units(self, units):
+        if units:
+            self._units = str(units)
+        else:
+            self._units = None
 
     @property
     def length(self):

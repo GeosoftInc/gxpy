@@ -692,14 +692,14 @@ class Grid():
         """
         Set grid properties from a properties dict.  Settable property keys are:
 
-            ===== ============================================
-            'x0'  grid X origin location (default 0.0)
-            'y0'  grid Y origin location (0.0)
-            'dx'  grid X point separation (1.0)
-            'dy'  grid Y point separation (1.0)
-            'rot' grid rotation angle in degrees azimuth (0.0)
+            ==================== ============================================
+            'x0'                 grid X origin location (default 0.0)
+            'y0'                 grid Y origin location (0.0)
+            'dx'                 grid X point separation (1.0)
+            'dy'                 grid Y point separation (1.0)
+            'rot'                grid rotation angle in degrees azimuth (0.0)
             'coordinate_system'  coordinate system (unchanged)
-            ===== ============================================
+            ==================== ============================================
 
         Not all keys need be passed, though typically one will get the properties from
         the grid and modify those that need to change and pass the properties back.

@@ -19,7 +19,7 @@ def _t(s):
     return geosoft.gxpy.system.translate(s)
 
 
-class AGGException(Exception):
+class AggregateException(Exception):
     """
     Exceptions from this module.
 
@@ -52,10 +52,10 @@ class Aggregate_image():
  
     Constructors:
 
-        ======== ================================
-        `open()` open an existing aggregate
-        `new()`  create a new aggregate
-        ======== ================================
+        ============ ================================
+        :meth:`open` open an existing aggregate
+        :meth:`new`  create a new aggregate
+        ============ ================================
 
     Properties:
     
@@ -85,6 +85,15 @@ class Aggregate_image():
 
     @classmethod
     def new(cls, grid_file=None, **kwargs):
+        """
+        Create a new aggregate from a grid.
+        
+        :param grid_file: grid file name
+
+        :meth:`add_layer` is called to add the grid as a layer.
+        
+        .. versionadded:: 9.2
+        """
 
         agg = cls()
         agg.gxagg = gxapi.GXAGG.create()
@@ -94,23 +103,32 @@ class Aggregate_image():
 
     @classmethod
     def open(cls, gxagg):
+        """
+        Create an :class:`Aggregate_image` from a Geosoft gxapi.GXAGG instance.
+        
+        :param gxagg:
+        
+        .. versionadded:: 9.2
+        """
 
         agg = cls()
         if not isinstance(gxagg, gxapi.GXAGG):
-            raise AGGException(_t('A gxapi.GXAGG isstance is required.'))
+            raise AggregateException(_t('A gxapi.GXAGG isstance is required.'))
         agg.gxagg = gxagg
         return agg
 
     def close(self):
-        """Close an agg."""
+        """Close an Aggregate, releases resources."""
         self.gxagg = None
 
     @property
     def layer_count(self):
+        """Number of layers in the aggregate."""
         return self.gxagg.num_layers()
 
     @property
     def brightness(self):
+        """ Aggregate brightness between -1 (black) and +1 (white)."""
         return self.gxagg.get_brightness()
 
     @brightness.setter
@@ -120,11 +138,24 @@ class Aggregate_image():
 
     @property
     def name(self):
+        """Name of the Aggregate_image."""
         return self._create_name()
+
+    @property
+    def layer_file_names(self):
+        """
+        Return list of layer files in the agg.
+
+        .. versionadded:: 9.2
+        """
+
+        vv = gxvv.GXvv(dtype='U1024')
+        self.gxagg.list_img(vv._vv)
+        return list(vv.np)
 
     def _create_name(self):
         s = ''
-        layernames = self.layer_file_names()
+        layernames = self.layer_file_names
         if not layernames:
             return s
         names = []
@@ -177,6 +208,8 @@ class Aggregate_image():
         :param maximum:         Maximum data value.  All grid values greater than or equal to the maximum
                                 will be assigned the last colour in the table.  The default is calculated from
                                 the data.
+        :param contour:         Break colors on this interval, colours will be thinned if necessary.
+                                
 
         .. versionadded:: 9.2
         """
@@ -210,13 +243,37 @@ class Aggregate_image():
             if os.path.exists(color_map):
                 os.remove(color_map)
 
-    def layer_file_names(self):
+    def layer_color_map(self, layer=0):
         """
-        Return list of layer files in the agg.
-
-        .. versionadded:: 9.2
+        Return the :class:`geosoft.gxpy.group.Color_map` of a layer.
+        
+        :param layer: layer number or layer name
+        :return: :class:`geosoft.gxpy.group.Color_map`
         """
 
-        vv = gxvv.GXvv(dtype='U1024')
-        self.gxagg.list_img(vv._vv)
-        return list(vv.np)
+        if isinstance(layer, str):
+            layer = layer.lower()
+            lay = 0
+            for l in self.layer_file_names:
+                if layer == l.lower():
+                    layer = lay
+                    break
+                lay += 1
+            if lay == self.layer_count:
+                lay = 0
+                for l in self.layer_file_names:
+                    base = os.path.basename(l).split('.')[0]
+                    if layer == base.lower():
+                        layer = lay
+                        break
+                    lay += 1
+
+        if isinstance(layer, str) or (layer >= self.layer_count):
+            raise AggregateException(_t('Layer not found.'))
+
+        itr = gxapi.GXITR.create()
+        self.gxagg.get_layer_itr(layer, itr)
+        cmap = geosoft.gxpy.group.Color_map(itr)
+        cmap.title = os.path.basename(self.layer_file_names[layer]).split('.')[0]
+
+        return cmap

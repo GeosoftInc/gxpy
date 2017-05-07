@@ -46,6 +46,20 @@ class Test(GXPYTest):
             agg.add_layer(self.g1f, shade=True, color_map='hotcycle')
             self.assertEqual(str(agg), 'test_agg_utm, test_grid_2, test_grid_1')
             self.assertEqual(agg.layer_count, 5)
+            self.assertEqual(len(agg.layer_file_names), 5)
+
+            cmap = agg.layer_color_map()
+            self.assertEqual(cmap.length, 64)
+            cmap = agg.layer_color_map(4)
+            self.assertEqual(cmap.length, 25)
+            self.assertRaises(gxagg.AggregateException, agg.layer_color_map, 5)
+
+            cmap = agg.layer_color_map(layer=agg.layer_file_names[3])
+            self.assertEqual(cmap.length, 63)
+            name = os.path.basename(agg.layer_file_names[1]).split('.')[0]
+            cmap = agg.layer_color_map(name)
+            self.assertEqual(cmap.length, 25)
+
 
     def test_open(self):
         self.start()
