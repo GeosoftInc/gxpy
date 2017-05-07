@@ -1049,5 +1049,42 @@ class Test(GXPYTest):
 
         self.crc_map(v3d_file)
 
+    def test_contour(self):
+        self.start()
+
+        # test grid file
+        folder, files = gsys.unzip(os.path.join(os.path.dirname(__file__), 'testgrids.zip'),
+                                   folder=self.gx.temp_folder())
+        grid_file = os.path.join(folder, 'test_agg_utm.grd')
+        map_file = os.path.join(self.gx.temp_folder(), "test_agg_utm")
+
+        with gxgrd.Grid(grid_file) as grd:
+            cs = grd.coordinate_system
+            area = grd.extent_2d()
+        with gxmap.Map.new(map_file,
+                             data_area=area, media="A4", margins=(0, 10, 0, 0),
+                             cs=cs, overwrite=True) as gmap:
+            map_file = gmap.file_name
+
+            with gxv.View(gmap, "base") as v:
+                with gxg.Draw(v, 'line') as g:
+                    g.rectangle(v.extent_clip, pen=g.new_pen(line_thick=1, line_color='K'))
+
+            with gxv.View(gmap, "data") as v:
+                with gxg.Draw(v, 'line') as g:
+                    g.rectangle(area, pen=g.new_pen(line_thick=0.1, line_color='R'))
+
+                with gxagg.Aggregate_image.new(grid_file) as agg:
+                    with gxg.Agg_group.new(v, agg) as gagg:
+                        self.assertEqual(gagg.name, str(agg))
+
+                self.assertEqual(len(v.group_list_agg), 1)
+
+                with gxg.Draw(v, 'contour') as g:
+                    g.contour(grid_file)
+
+        self.crc_map(map_file)
+        pass
+
 if __name__ == '__main__':
     unittest.main()

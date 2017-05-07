@@ -258,6 +258,33 @@ class View:
     def units_name(self):
         return self._uname
 
+    def mdf(self, base_view=None):
+        """
+        Returns the Map Description File specification for this view as a data view.
+
+        ((x_size, y_size, margin_bottom, margin_right, margin_top, margin_left),
+        (scale, units_per_metre, x_origin, y_origin))
+
+        .. versionadded: 9.2
+        """
+
+        view_mnx, view_mny, view_mxx, view_mxy = self.extent_clip
+        map_mnx, map_mny = self.view_to_map_cm(view_mnx, view_mny)
+        map_mxx, map_mxy = self.view_to_map_cm(view_mxx, view_mxy)
+
+        if base_view:
+            _, _, mapx, mapy = base_view.extent_clip
+            mapx, mapy = base_view.view_to_map_cm(mapx, mapy)
+        else:
+            mapx, mapy = map_mxx, map_mxy
+
+
+        m1 = (mapx, mapy, map_mny, mapx - map_mxx, mapy - map_mxy, map_mnx)
+        m2 = (self.scale, self.units_per_metre, view_mnx, view_mny)
+        return m1, m2
+
+        return m1, m2
+
     def _groups(self, gtype=GROUP_ALL):
 
         def gdict(what):
@@ -511,14 +538,14 @@ class View_3d(View):
 
         g_3dv = cls(file_name, geosoft.gxpy.map.WRITE_NEW, area=area_2d, _internal=True, **kwargs)
 
-        mminx, mminy, mmaxx, mmaxy = g_3dv.extent_map_cm(g_3dv.extent_clip)
-        vminx, vminy, vmaxx, vmaxy = g_3dv.extent_clip
+        map_minx, map_miny, map_maxx, map_maxy = g_3dv.extent_map_cm(g_3dv.extent_clip)
+        view_minx, view_miny, view_maxx, view_maxy = g_3dv.extent_clip
 
         # make this a 3D view
         h3dn = gxapi.GX3DN.create()
         g_3dv.gxview.set_h_3dn(h3dn)
-        g_3dv.gxview.fit_map_window_3d(mminx, mminy, mmaxx, mmaxy,
-                                       vminx, vminy, vmaxx, vmaxy)
+        g_3dv.gxview.fit_map_window_3d(map_minx, map_miny, map_maxx, map_maxy,
+                                       view_minx, view_miny, view_maxx, view_maxy)
 
         if area_2d is not None:
             g_3dv.new_drawing_plane('plane_0')

@@ -21,6 +21,7 @@ from geosoft.gxpy.tests import GXPYTest
 
 
 class Test(GXPYTest):
+
     def _new_data_map(self, mapname=None, rescale=1.0):
 
         if mapname is None:
@@ -602,6 +603,10 @@ class Test(GXPYTest):
             gxv.View(gmap, "my_data_2", map_location=(15, 3), area=(0, 0, 1000, 1500), scale=10000).close()
             ex = gmap.extent_data_views()
             self.assertEqual(ex, (2, 3, 25, 18))
+
+            mdf = gmap.mdf()
+            self.assertEqual(mdf[0], (36.39513677811551, 39.99513677811551, 3.0, 24.395136778115507, 21.99513677811551, 2.0))
+            self.assertEqual(mdf[1], (10000.0, 1.0, 0.0, 0.0))
 
 if __name__ == '__main__':
     unittest.main()

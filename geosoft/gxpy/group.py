@@ -682,6 +682,21 @@ class Draw(Group):
         if cur_text:
             self.text_def = cur_text
 
+    def contour(self, grid_file_name):
+        """
+        Draw contours for a grid file.  A default contour interval is determined from the grid.
+        
+        :param grid_file_name: Grid file name
+        
+        .. versionadded:: 9.2
+        """
+
+        scale, ufac, x0, y0 = self.view.mdf()[1]
+        control_file = gx.GXpy().temp_file('.con')
+        with open(control_file, 'w+') as f:
+            f.write('{},{},{},{}/\n,,-1/\n'.format(scale, ufac, x0, y0))
+        geosoft.gxapi.GXMVU.contour(self.view.gxview, control_file, grid_file_name)
+
 
 class Draw_3d(Draw):
     """

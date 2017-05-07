@@ -651,37 +651,11 @@ class Map:
         if not (self.has_view(self.current_data_view) and self.has_view(self.current_base_view)):
             raise MapException('The map must have both a base view and a data view.')
 
-        xmn = gxapi.float_ref()
-        ymn = gxapi.float_ref()
-        xmx = gxapi.float_ref()
-        ymx = gxapi.float_ref()
+        with gxv.View(self, self.current_base_view, gxg.READ_ONLY) as base:
+            with gxv.View(self, self.current_data_view, gxg.READ_ONLY) as data:
+                mdf = data.mdf(base_view=base)
 
-        with gxv.View(self, self.current_base_view, gxg.READ_ONLY) as v:
-            v.gxview.extent(gxapi.MVIEW_EXTENT_CLIP, gxapi.MVIEW_EXTENT_UNIT_MM,
-                            xmn, ymn, xmx, ymx)
-            mapx = (xmx.value - xmn.value) * 0.1
-            mapy = (ymx.value - ymn.value) * 0.1
-
-        with gxv.View(self, self.current_data_view, gxg.READ_ONLY) as v:
-            v.gxview.extent(gxapi.MVIEW_EXTENT_CLIP, gxapi.MVIEW_EXTENT_UNIT_MM,
-                            xmn, ymn, xmx, ymx)
-            view_map = (xmn.value * 0.1,
-                        ymn.value * 0.1,
-                        xmx.value * 0.1,
-                        ymx.value * 0.1)
-
-            v.gxview.extent(gxapi.MVIEW_EXTENT_CLIP, gxapi.MVIEW_EXTENT_UNIT_VIEW,
-                            xmn, ymn, xmx, ymx)
-            view_view = (xmn.value, ymn.value, xmx.value, ymx.value)
-
-        m1 = (mapx, mapy, view_map[1], mapx - view_map[2], mapy - view_map[3], view_map[0])
-        sc = (view_view[2] - view_view[0]) / ((view_map[2] - view_map[0]) / 100.0)
-        ufac = 1.0
-        x0 = view_view[0]
-        y0 = view_view[1]
-        m2 = (sc, ufac, x0, y0)
-
-        return m1, m2
+        return mdf
 
     def get_class_name(self, view_class):
         """
