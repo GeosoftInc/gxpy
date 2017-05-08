@@ -17,12 +17,12 @@ from geosoft.gxpy.tests import GXPYTest
 
 def sample_map(map_file, v3d_file, rescale=1.0):
 
-    with gxmap.GXmap.new(map_file, data_area=(0,0,300,250), overwrite=True) as gmap:
+    with gxmap.Map.new(map_file, data_area=(0,0,300,250), overwrite=True) as gmap:
         map_file = gmap.file_name
 
         p2 = gxgm.Point((110, 110)) * rescale
-        with gxv.GXview(gmap, "rectangle_test", area=(0, 0, p2.x, p2.y), scale=100.0) as v:
-            with gxg.GXdraw(v, 'rect') as g:
+        with gxv.View(gmap, "rectangle_test", area=(0, 0, p2.x, p2.y), scale=100.0) as v:
+            with gxg.Draw(v, 'rect') as g:
 
                 g.rectangle(((0, 0), p2), pen=gxg.Pen(line_thick=1))
     
@@ -36,10 +36,10 @@ def sample_map(map_file, v3d_file, rescale=1.0):
                 g.line((p1 + poff, p2 - poff))
 
 
-    with gxv.GXview_3d.new(v3d_file, overwrite=True) as v:
+    with gxv.View_3d.new(v3d_file, overwrite=True) as v:
         v3d_file = v.map.file_name
 
-        with gxg.GXdraw(v, '2D_stuff') as g:
+        with gxg.Draw(v, '2D_stuff') as g:
             p2 = gxgm.Point((250, 110)) * rescale
             g.rectangle(((0, 0), p2), pen = gxg.Pen(line_thick=3, line_color='B'))
             plinelist = [[110, 5],
@@ -75,7 +75,7 @@ def sample_map(map_file, v3d_file, rescale=1.0):
             g.pen = gxg.Pen(fill_color="B")
             g.polygon(pp)
 
-        with gxg.GXdraw_3d(v, '3d_stuff') as g:
+        with gxg.Draw_3d(v, '3d_stuff') as g:
             g.box_3d(((20, 10, 30), (80,50,50)), pen = gxg.Pen(line_color='R255G100B50'))
 
     return map_file, v3d_file 

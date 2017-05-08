@@ -79,7 +79,7 @@ if __name__ == "__main__":
     print("Value to add = {}\n".format(args.value))
 
     # open the database
-    db = gxpy.gdb.GXdb.open(args.sDB)
+    with gxpy.gdb.Geosoft_gdb.open(args.sDB) as db:
 
-    # process the data
-    process_database(db, args.sCh, args.value)
+        # process the data
+        process_database(db, args.sCh, args.value)
