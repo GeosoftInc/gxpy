@@ -52,7 +52,7 @@ def process_database(db, channel_name, add_value):
 
 if __name__ == "__main__":
 
-    gxpy.utility.check_version('9.2.0b0')
+    gxpy.utility.check_version('9.2')
 
     # get (create) a GX context
     with gxpy.gx.GXpy() as gxp:  # get the current gx context

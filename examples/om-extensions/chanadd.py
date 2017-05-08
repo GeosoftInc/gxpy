@@ -14,7 +14,7 @@ import geosoft.gxpy.utility as gxu
 def rungx():
 
     # api version
-    gxpy.utility.check_version('9.2.0b0')
+    gxpy.utility.check_version('9.2')
 
     # get the current database
     db = gxpy.gdb.Geosoft_gdb.open()
