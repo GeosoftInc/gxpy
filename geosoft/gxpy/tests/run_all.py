@@ -7,7 +7,7 @@ import sys
 
 def work(test):
     nosetests = os.path.join(os.path.split(sys.executable)[0], 'scripts', 'nosetests')
-    return (test, subprocess.call([nosetests, '-v', test]))
+    return (test, subprocess.call([nosetests, '-s', '-v', test]))
 
 _exit_code = 0
 
