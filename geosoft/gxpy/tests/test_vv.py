@@ -191,6 +191,12 @@ class Test(GXPYTest):
             self.assertEqual(l2[0], (0., 0))
             self.assertEqual(l2[999], (999., 999))
 
+            vvlist = vv.list()
+            self.assertEqual(len(vvlist), 1000)
+            self.assertEqual(vvlist[0], 0.0)
+            self.assertEqual(vvlist[999], 999.)
+
+
 ##############################################################################################
 if __name__ == '__main__':
 

@@ -81,7 +81,6 @@ class GXvv():
         self._is_int = gxu.is_int(self._gxtype)
         self._vv = gxapi.GXVV.create_ext(self._gxtype, 0)
         self.fid = fid
-        self._start, self._incr = self.fid
         self._sr = None
         self._np = None
         self._next = 0
@@ -98,7 +97,6 @@ class GXvv():
     def __next__(self):
         if self._next >= self.length:
             self._next = 0
-            self._start, self._incr = self.fid
             raise StopIteration
         else:
             i = self._next
