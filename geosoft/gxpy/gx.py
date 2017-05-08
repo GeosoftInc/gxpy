@@ -111,6 +111,7 @@ def _exit_cleanup():
 
     if gx:
         gx.log('Final GX close')
+        atexit.unregister(_exit_cleanup)
 
         if gx._temp_file_folder and (gx._temp_file_folder != gxu.folder_temp()):
 
@@ -147,7 +148,7 @@ def _exit_cleanup():
         del gx.license_class
         gx._shared_state = {}
 
-    atexit.unregister(_exit_cleanup)
+
     _reset_globals()
 
 
