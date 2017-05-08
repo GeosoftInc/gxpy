@@ -12,7 +12,7 @@ def rungx():
 
     # Get the current gx context
     # This is normally not required but in this example we want the gid.
-    gxp = gxpy.gx.GXpy()
+    with gxpy.gx.GXpy() as gxp:
 
-    # say hello to the user identified by gxp.gid.
-    gxpy.utility.display_message("GX Python", "Hello {}".format(gxp.gid))
+        # say hello to the user identified by gxp.gid.
+        gxpy.utility.display_message("GX Python", "Hello {}".format(gxp.gid))

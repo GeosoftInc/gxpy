@@ -55,31 +55,31 @@ if __name__ == "__main__":
     gxpy.utility.check_version('9.2.0b0')
 
     # get (create) a GX context
-    gxp = gxpy.gx.GXpy()  # get the current gx context
+    with gxpy.gx.GXpy() as gxp:  # get the current gx context
 
-    # The GX_GEOSOFT_BIN_PATH Environment variable should contain a path with geodist.dll
-    print("GX_GEOSOFT_BIN_PATH: {}".format(os.getenv("GX_GEOSOFT_BIN_PATH")))
-    print('Working directory: ' + os.path.abspath(os.curdir))
-    print('User: {}'.format(gxp.gid))
+        # The GX_GEOSOFT_BIN_PATH Environment variable should contain a path with geodist.dll
+        print("GX_GEOSOFT_BIN_PATH: {}".format(os.getenv("GX_GEOSOFT_BIN_PATH")))
+        print('Working directory: ' + os.path.abspath(os.curdir))
+        print('User: {}'.format(gxp.gid))
 
-    # get command line parameters
-    parser = argp.ArgumentParser(description="Add a constant to a Geosoft database channel")
-    parser.add_argument("sDB", help="Geosoft database")
-    parser.add_argument("sCh", help="channel to process")
-    parser.add_argument("-v",
-                        "--value",
-                        type=float,
-                        default=1.0,
-                        help="value to add, default is 1.0")
-    args = parser.parse_args()
+        # get command line parameters
+        parser = argp.ArgumentParser(description="Add a constant to a Geosoft database channel")
+        parser.add_argument("sDB", help="Geosoft database")
+        parser.add_argument("sCh", help="channel to process")
+        parser.add_argument("-v",
+                            "--value",
+                            type=float,
+                            default=1.0,
+                            help="value to add, default is 1.0")
+        args = parser.parse_args()
 
-    # echo parameters
-    print("\nDatabase = "+args.sDB)
-    print("Channel = "+args.sCh)
-    print("Value to add = {}\n".format(args.value))
+        # echo parameters
+        print("\nDatabase = "+args.sDB)
+        print("Channel = "+args.sCh)
+        print("Value to add = {}\n".format(args.value))
 
-    # open the database
-    with gxpy.gdb.Geosoft_gdb.open(args.sDB) as db:
+        # open the database
+        with gxpy.gdb.Geosoft_gdb.open(args.sDB) as db:
 
-        # process the data
-        process_database(db, args.sCh, args.value)
+            # process the data
+            process_database(db, args.sCh, args.value)

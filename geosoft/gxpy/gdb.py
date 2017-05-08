@@ -133,20 +133,20 @@ class Geosoft_gdb:
         import gxpy.gdb as gxdb
 
         # initalize the gx environment - required for external programs.
-        gxp = gxu.GXpy()
-
-        # open a database
-        gdb = gxdb.Geosoft_gdb.open(gxp,'test.gdb')
-        lines = gdb.lines()
-        for line in lines:
-
-            npd,ch,fid = gdb.read_line(line)
-            # npd is a 2D numpy array to all data in this line.
-            # ch is a list of the channels, one channel for each column in npd.
-            # Array channels are expanded with channel names "name[0]", "name[1]" ...
-            # fid is a tuple (start,increment) fiducial, which will be the minimum start and smallest increment.
-
-            # ... do something with the data in npd ...
+        with gxu.GXpy() as gxp:
+    
+            # open a database
+            gdb = gxdb.Geosoft_gdb.open(gxp,'test.gdb')
+            lines = gdb.lines()
+            for line in lines:
+    
+                npd,ch,fid = gdb.read_line(line)
+                # npd is a 2D numpy array to all data in this line.
+                # ch is a list of the channels, one channel for each column in npd.
+                # Array channels are expanded with channel names "name[0]", "name[1]" ...
+                # fid is a tuple (start,increment) fiducial, which will be the minimum start and smallest increment.
+    
+                # ... do something with the data in npd ...
 
     The following creates a new channel that is the distance from the origin to the X,Y,Z location of every point.
     This code assumes that there are no dummies in the X, Y or Z channels (the next example shows how to

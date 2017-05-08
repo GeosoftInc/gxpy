@@ -122,7 +122,7 @@ def unique_temporary_file_name(temproot, file_type='map'):
 
     i = 0
     while True:
-        file_name = map_file_name(os.path.join(gx.GXpy().temp_folder(), root + str(i) + ext))
+        file_name = map_file_name(os.path.join(gx.gx.temp_folder(), root + str(i) + ext))
         if not os.path.isfile(file_name):
             return file_name
         i += 1
@@ -178,7 +178,7 @@ def crc_map(mapfile, pix_width=1000):
 
     .. versionadded:: 9.2
     """
-    crc_image = os.path.join(gx.GXpy().temp_folder(), "__crc_image__.bmp")
+    crc_image = os.path.join(gx.gx.temp_folder(), "__crc_image__.bmp")
     save_as_image(mapfile, crc_image, type='BMP', pix_width=pix_width)
     crc = gxu.crc32_file(crc_image)
     os.remove(crc_image)
@@ -1093,7 +1093,7 @@ class _Mapplot:
             self.prior_data_view = None
 
         # mapplot control file
-        self._maplfile_name = os.path.join(gx.GXpy().temp_folder(), 'mapl_' + gxu.uuid() + ".con")
+        self._maplfile_name = os.path.join(gx.gx.temp_folder(), 'mapl_' + gxu.uuid() + ".con")
         self._maplfile = open(self._maplfile_name, "w")
         self._annotation_outer_edge = 0.0
 
@@ -1118,7 +1118,7 @@ class _Mapplot:
         self._maplfile.write(command)
         if command and command[-1] != '\n':
             self._maplfile.write('\n')
-            # geosoft.gxpy.gx.GXpy().log(command)
+            # geosoft.gxpy.gx.gx.log(command)
 
     def define_named_attribute(self, name='_', pen=None, text_def=None):
 

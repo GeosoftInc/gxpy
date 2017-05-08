@@ -227,9 +227,9 @@ class Test(GXPYTest):
             py.write("import sys\n")
             py.write("import geosoft.gxpy as gxpy\n")
             py.write("import geosoft.gxpy.utility as gxu\n")
-            py.write("gxc = gxpy.gx.GXpy()\n")
-            py.write("d = gxu.get_shared_dict()\n")
-            py.write("gxpy.utility.set_shared_dict({'a':'letter a', 'b':'letter b', 'c':[1,2,3], 'argv': sys.argv, 'in_dict':d})\n")
+            py.write("with gxpy.gx.GXpy() as gxc:\n")
+            py.write("    d = gxu.get_shared_dict()\n")
+            py.write("    gxpy.utility.set_shared_dict({'a':'letter a', 'b':'letter b', 'c':[1,2,3], 'argv': sys.argv, 'in_dict':d})\n")
             #py.write("input('RUN_EXTERNAL! Press return to continue...')\n")
 
         test_result = gxu.run_external_python(testpy,

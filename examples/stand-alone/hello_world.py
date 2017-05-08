@@ -11,7 +11,8 @@ def rungx():
     gxpy.utility.check_version('9.1')
 
     # say hello
-    gxpy.utility.display_message("GX Python", "Hello {}".format(gxpy.gx.GXpy().gid))
+    with gxpy.gx.GXpy() as gxc:
+        gxpy.utility.display_message("GX Python", "Hello {}".format(gxc.gid))
 
 
 # running as stand-alone program
@@ -20,8 +21,8 @@ if __name__ == "__main__":
     gxpy.utility.check_version('9.1')
 
     # Stand-alone programs must create a GX context before calling Geosoft methods.
-    gxc = gxpy.gx.GXpy()
+    with gxpy.gx.GXpy() as gxc:
 
-    # The context has a member 'gid' which contains the user's Geosoft ID.
-    # Say hello to the user
-    print("Hello {}".format(gxc.gid))
+        # The context has a member 'gid' which contains the user's Geosoft ID.
+        # Say hello to the user
+        print("Hello {}".format(gxc.gid))
