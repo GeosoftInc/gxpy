@@ -1,0 +1,17 @@
+GX Developer for Python
+ 
+2017-5-8 - python_readme
+ 
+GX Developer provides supports for 64-bit Python extensions and stand-alone scripts.
+ 
+*         Supports for 64-bit Python 3.4, 3.5 and 3.6.
+*         Geosoft Python modules are required and can be downloaded from github: https://github.com/GeosoftInc/gxpy
+*         Geosoft recommends the Anaconda Python distribution: 
+https://www.continuum.io/downloads
+*         Geosoft recommends the PyCharm IDE: 
+https://www.jetbrains.com/pycharm/
+ 
+The GX Developer guide (https://geosoftgxdev.atlassian.net/wiki/spaces/GXDEV92 ) provides full documentation on the installation and use of GX Developer.  
+ 
+Refer to Python Extensions to get started using Python:
+https://geosoftgxdev.atlassian.net/wiki/display/GXDEV92/Python+Extensions
