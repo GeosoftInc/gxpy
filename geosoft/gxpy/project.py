@@ -51,12 +51,14 @@ def running_script():
 class Geosoft_project:
 
     def _list_open_docs(self, dtype):
-        gxapi.GXPROJ.list_loaded_documents(self._docvv.gxvv, dtype)
-        return self._docvv.list()
+        with gxvv.GXvv(None, 'U2048') as docvv:
+            gxapi.GXPROJ.list_loaded_documents(docvv.gxvv, dtype)
+            return docvv.list()
 
     def _list_project_docs(self, dtype):
-        gxapi.GXPROJ.list_documents(self._docvv.gxvv, dtype)
-        return self._docvv.list()
+        with gxvv.GXvv(None, 'U2048') as docvv:
+            gxapi.GXPROJ.list_documents(docvv.gxvv, dtype)
+            return docvv.list()
 
     def _current_doc(self, dtype):
         s = gxapi.str_ref()
@@ -65,7 +67,6 @@ class Geosoft_project:
 
     def __init__(self):
 
-        self._docvv = gxvv.GXvv(None, 'U2048')
         s = gxapi.str_ref()
         gxapi.GXPROJ.get_name(s)
         self.project_file = os.path.normpath(s.value)

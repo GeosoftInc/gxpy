@@ -103,7 +103,7 @@ class GXvv():
         else:
             i = self._next
             self._next += 1
-            return self.np[i], self._start + self._incr * i
+            return self.np[i], self.fid[0] + self.fid[1] * i
 
     def __getitem__(self, item):
         start, incr = self.fid
@@ -288,3 +288,11 @@ class GXvv():
         """
         self._vv.re_fid(fid[0], fid[1], length)
         self.fid = fid
+
+    def list(self):
+        """
+        Return the content of the VV as a list.
+        
+        .. versionadded:: 9.2
+        """
+        return [v[0] for v in self]
