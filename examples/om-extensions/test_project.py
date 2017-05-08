@@ -90,7 +90,7 @@ def test_scripting():
     os.remove(py_file)
 
 def test_project():
-    project  = gxprj.GXproject()
+    project  = gxprj.Geosoft_project()
     # open project in debugger and verify content of properties.
     pass
 
