@@ -8,7 +8,7 @@ import geosoft.gxpy as gxpy
 # a python script must have a rungx()
 def rungx():
 
-    gxpy.utility.check_version('9.1')
+    gxpy.utility.check_version('9.2')
 
     # Get the current gx context
     # This is normally not required but in this example we want the gid.
