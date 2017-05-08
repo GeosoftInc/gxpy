@@ -1,5 +1,5 @@
 geosoft.gxpy.grid submodule
-====================================
+=============================================
 
 .. automodule:: geosoft.gxpy.grid
     :members:

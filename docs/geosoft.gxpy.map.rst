@@ -1,5 +1,5 @@
 geosoft.gxpy.map submodule
-====================================
+=============================================
 
 .. automodule:: geosoft.gxpy.map
     :members:

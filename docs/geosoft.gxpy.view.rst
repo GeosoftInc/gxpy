@@ -1,5 +1,5 @@
 geosoft.gxpy.view submodule
-====================================
+=============================================
 
 .. automodule:: geosoft.gxpy.view
     :members:

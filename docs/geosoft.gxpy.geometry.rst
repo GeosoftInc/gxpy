@@ -1,5 +1,5 @@
 geosoft.gxpy.geometry submodule
-====================================
+=============================================
 
 .. automodule:: geosoft.gxpy.geometry
     :members:

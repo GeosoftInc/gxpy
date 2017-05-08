@@ -1,5 +1,5 @@
 geosoft.gxpy.gdb submodule
-====================================
+=============================================
 
 .. automodule:: geosoft.gxpy.gdb
     :members:
