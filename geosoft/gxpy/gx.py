@@ -49,20 +49,27 @@ class _Singleton:
 
 # global GX handle, None if not valid
 gx = None
+_gx_dict = {}
+_gx_ref_count = 0
 _res_id = 0
 _res_heap = {}
 _max_resource_heap = 1000000
 _stack_depth = 5
 _max_warnings = 10
 
+
 def _reset_globals():
     global gx
+    global _gx_dict
+    global _gx_ref_count
     global _res_id
     global _res_heap
     global _max_resource_heap
     global _stack_depth
     global _max_warnings
     gx = None
+    _gx_dict = {}
+    _gx_ref_count = 0
     _res_id = 0
     _res_heap = {}
     _max_resource_heap = 1000000
@@ -93,8 +100,55 @@ def pop_resource(id):
         except KeyError:
             pass
 
-
 GX_WARNING_FILE = '_gx_warning_'
+
+def _exit_cleanup():
+    global gx
+    global _gx_dict
+    global _res_heap
+    global _max_warnings
+    global _gx_ref_count
+
+    if gx:
+        gx.log('Final GX close')
+
+        if gx._temp_file_folder and (gx._temp_file_folder != gxu.folder_temp()):
+
+            warning_file = os.path.join(gx._temp_file_folder, GX_WARNING_FILE)
+            if os.path.isfile(warning_file):
+                os.remove(warning_file)
+
+            gx._remove_gx_temporary_folders()
+            gx._temp_file_folder = None
+
+        if len(_res_heap):
+            # resources were created but not deleted or removed
+            gx.log(_t('Warning - cleaning up resources that are still open:'))
+            i = 0
+            for s in _res_heap.values():
+                if i == _max_warnings:
+                    gx.log(_t('    and there are {} more (change GXpy(max_warnings=) to see more)...'.format(
+                        len(_res_heap) - i)))
+                    break
+                gx.log('   ', s)
+                i += 1
+
+        if _gx_ref_count > 0:
+            gx.log(_t('Warning - cleaning up with {} distinct GXpy instances held from:').format(_gx_ref_count))
+            for _, location in _gx_dict.items():
+                gx.log('   ', location)
+
+        if gx._logf:
+            gx._logf.close()
+
+        gx.tkframe = None
+        gx.gxapi = None
+        gx._sr = None
+        del gx.license_class
+        gx._shared_state = {}
+
+    atexit.unregister(_exit_cleanup)
+    _reset_globals()
 
 
 class GXpy(_Singleton):
@@ -160,63 +214,40 @@ class GXpy(_Singleton):
         return self
 
     def __exit__(self, type, value, traceback):
-        return
+        self._close()
 
     def _close(self):
-
         global gx
+        global _gx_dict
         global _res_heap
         global _max_warnings
+        global _gx_ref_count
 
-        if gx:
-
+        if id(self) in _gx_dict and gx:
             self.log('GX close')
-
-            if self._temp_file_folder and (self._temp_file_folder != gxu.folder_temp()):
-
-                warning_file = os.path.join(self._temp_file_folder, GX_WARNING_FILE)
-                if os.path.isfile(warning_file):
-                    os.remove(warning_file)
-
-                self._remove_gx_temporary_folders()
-                self._temp_file_folder = None
-
-            if len(_res_heap):
-                # resources were created but not deleted or removed
-                self.log(_t('Warning - cleaning up resources that are still open:'))
-                i = 0
-                for s in _res_heap.values():
-                    if i == _max_warnings:
-                        self.log(_t('    and there are {} more (change GXpy(max_warnings=) to see more)...'.format(
-                            len(_res_heap) - i)))
-                        break
-                    self.log('   ', s)
-                    i += 1
-            if self._logf:
-                self._logf.close()
-
-            atexit.unregister(self._close)
-            self.tkframe = None
-            self.gxapi = None
-            self._sr = None
-            del self.license_class
-            self._shared_state = {}
-            _reset_globals()
+            del _gx_dict[id(self)]
+            _gx_ref_count = _gx_ref_count - 1
+            if _gx_ref_count == 0:
+                _exit_cleanup()
 
     def __init__(self, name=__name__, version=__version__,
                  parent_window=0, log=None,
-                 max_res_heap=10000000, res_stack=6, max_warnings=10, suppress_progress=False):
+                 max_res_heap=10000000, res_stack=6, max_warnings=10,
+                 suppress_progress=False):
 
         # singleton class
 
         _Singleton.__init__(self)
         global gx
+        global _gx_ref_count
         global _max_resource_heap
         global _stack_depth
         global _max_warnings
 
-        if not gx:
-
+        _gx_dict[id(self)] = gxs.call_location(1)
+        if gx:
+            _gx_ref_count = _gx_ref_count + 1
+        else:
             if log is None:
                 _max_resource_heap = 0
             else:
@@ -302,9 +333,11 @@ class GXpy(_Singleton):
             # create a shared string ref for the convenience of Geosoft modules
 
             self._sr = gxapi.str_ref()
-            atexit.register(self._close)
             gx = self
             self.log('GX open')
+
+            _gx_ref_count = 1
+            atexit.register(_exit_cleanup)
 
             # general properties
             self.current_date = gxapi.GXSYS.date()
@@ -551,3 +584,4 @@ class GXpy(_Singleton):
         .. deprecated: 9.2 use :py:meth:`utility.folder_user`
         """
         return gxu.folder_user()
+

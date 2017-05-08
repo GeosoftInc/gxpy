@@ -98,6 +98,7 @@ class GXPYTest(unittest.TestCase):
         if cls._gx:
             cls._gx._close()
         cls._gx = None
+        gx._exit_cleanup()
 
         gxu._temp_folder_override = None
         gxu._uuid_callable = None
