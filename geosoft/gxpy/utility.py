@@ -94,7 +94,7 @@ def check_version(v, raise_on_fail=True):
                 raise UtilityException(_t("GX Requires API {}, only {} installed.").format(v, __version__))
             return False
     except ValueError:
-        raise UtilityException('Invalid version string "{}", expecting something like {}.'.format(v, __version__))
+        raise UtilityException('Invalid version string "{}", expecting something like "{}".'.format(v, __version__))
 
 
 def dict_from_lst(lst, ordered=False):
