@@ -65,6 +65,12 @@ class Geosoft_project:
         gxapi.GXPROJ.current_document_of_type(s, dtype)
         return s.value
 
+    def __enter__(self):
+        return self
+
+    def __exit__(self, type, value, traceback):
+        pass
+
     def __init__(self):
 
         s = gxapi.str_ref()
@@ -186,6 +192,86 @@ class Geosoft_project:
         return list(dict_from_lst(def_menus).keys()), \
                list(dict_from_lst(loaded_menus).keys()), \
                list(dict_from_lst(user_menus).keys())
+
+    def current_db_state(self):
+        """
+        Return the state of the current database.
+        
+        :return: dict of the current database state, {} of there is no current database.
+        
+        .. versionadded:: 9.2
+        """
+
+        sdb = {}
+        if self.current_database:
+
+            glst = gxapi.GXLST.create(4096)
+
+            edb = gxapi.GXEDB.current_no_activate()
+            n = edb.disp_chan_lst(glst)
+            if n > 0:
+                sdb['disp_chan_list'] = list(dict_from_lst(glst).keys())
+            else:
+                sdb['disp_chan_list'] = []
+
+            s = gxapi.str_ref()
+            sch = gxapi.str_ref()
+            sln = gxapi.str_ref()
+            sfd = gxapi.str_ref()
+            edb.get_current_selection(s, sch, sln, sfd)
+
+            if sch.value == '[All]':
+                sch.value = '*'
+            if sln.value == '[All]':
+                sln.value = '*'
+            if sfd.value == '[All]':
+                fd = ('*', '*')
+            elif sfd.value == "[None]":
+                fd = ('', '')
+            else:
+                fd = sfd.value.split(' to ')
+                fd = (fd[0], fd[1])
+            sdb['selection'] = (sln.value, sch.value, fd[0], fd[1])
+
+        return sdb
+
+    def current_map_state(self):
+        """
+        Return the state of the current map.
+        
+        :return: dict of the current map state, {} if no current map.
+        
+        .. versionadded:: 9.2
+        """
+
+        smap = {}
+        if self.current_map:
+
+            fx = gxapi.float_ref()
+            fy = gxapi.float_ref()
+            fx2 = gxapi.float_ref()
+            fy2 = gxapi.float_ref()
+            s = gxapi.str_ref()
+
+            smap = {}
+            emap = gxapi.GXEMAP.current_no_activate()
+            emap.get_display_area(fx, fy, fx2, fy2)
+            smap['display_area'] = (fx.value, fy.value, fx2.value, fy2.value)
+
+            if emap.is_3d_view():
+
+                emap.get_3d_view_name(s)
+                smap['3d_view_name'] = s.value
+
+            else:
+                # 2D
+
+                emap.get_cur_point(fx, fy)
+                smap["point"] = (fx.value, fy.value, None)
+                emap.get_cursor(fx, fy)
+                smap["cursor"] = (fx.value, fy.value, None)
+
+            return smap
 
 
 def user_message(title, message):
