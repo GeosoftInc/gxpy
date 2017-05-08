@@ -13,8 +13,11 @@ import geosoft.gxpy.utility as gxu
 
 def rungx():
 
+    # api version
+    gxpy.utility.check_version('9.2.0b0')
+
     # get the current database
-    db = gxpy.gdb.GXdb.open()
+    db = gxpy.gdb.Geosoft_gdb.open()
 
     # project parameters
     group = 'CHANADD'
