@@ -22,6 +22,17 @@ class Test(GXPYTest):
         self.start()
         self.assertEqual(gsys.__version__, geosoft.__version__)
 
+    def test_call_location(self):
+        self.start()
+
+        f = gsys.call_location()
+        p = gsys.call_location(1)
+        self.assertIn("test_call_location", f)
+        self.assertIn("test_system.py", f)
+        self.assertIn("line 28", f)
+        self.assertIn("run", p)
+
+
     def test_func(self):
         self.start()
 

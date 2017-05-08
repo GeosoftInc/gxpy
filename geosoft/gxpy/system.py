@@ -67,6 +67,22 @@ def func_name(stack=0):
     except:
         return None
 
+def call_location(stack=0):
+    """
+    Returns function call location including file and line number as a string
+
+    :param stack:   depth into the calling stack, 0 (default) is this function, 1 is parent, etc.
+    :returns:       string formatted as '<file>, line XX in <function>', empty string if too deep into the stack
+
+    .. versionadded:: 9.2
+
+    """
+    try:
+        stack_location = inspect.stack()[stack+1]
+        file, line, func = stack_location[1:4]
+        return '{}, line {} in function {}.'.format(file, line, func)
+    except:
+        return ''
 
 def _parallel_foreach(f, l, threads=3, return_=False):
     """
