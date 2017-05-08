@@ -288,7 +288,7 @@ class Test(GXPYTest):
     def test_version(self):
         self.start()
 
-        with self.assertRaises(ValueError):
+        with self.assertRaises(gxu.UtilityException):
             gxu.check_version("x.y.z")
 
         version_backup = gxu.__version__
@@ -303,11 +303,8 @@ class Test(GXPYTest):
             self.assertTrue(gxu.check_version("9.1b0"))
             self.assertTrue(gxu.check_version("9.1a1"))
             self.assertTrue(gxu.check_version("9.1b1"))
-
             with self.assertRaises(gxu.UtilityException):
-                gxu.check_version("9.1.1")
-            with self.assertRaises(gxu.UtilityException):
-                gxu.check_version("9.2")
+                gxu.check_version("9.2.0b")
             with self.assertRaises(gxu.UtilityException):
                 gxu.check_version("999.999")
 

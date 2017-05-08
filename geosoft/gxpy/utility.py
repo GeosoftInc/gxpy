@@ -86,11 +86,15 @@ def check_version(v, raise_on_fail=True):
 
     """
 
-    if StrictVersion(__version__) >= StrictVersion(str(v)):
-        return True
-    if raise_on_fail:
-        raise UtilityException(_t("GX API version {} or higher is required.").format(v))
-    return False
+    try:
+        if StrictVersion(__version__) >= StrictVersion(str(v)):
+            return True
+        else:
+            if raise_on_fail:
+                raise UtilityException(_t("GX Requires API {}, only {} installed.").format(v, __version__))
+            return False
+    except ValueError:
+        raise UtilityException('Invalid version string "{}", expecting something like {}.'.format(v, __version__))
 
 
 def dict_from_lst(lst, ordered=False):
