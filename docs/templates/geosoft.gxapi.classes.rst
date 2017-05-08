@@ -1,3 +1,5 @@
+:orphan:
+
 GX API Class/Library Reference
 ==============================
 

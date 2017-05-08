@@ -10,9 +10,9 @@ New Classes
 
 :class:`geosoft.gxpy.agg.Aggregate_image`
 
-:class:`geosoft.gxpy.coordinate_system.Coordinate_system`
+:class:`geosoft.gxpy.coordinate_system.Coordinate_projection`
 
-:class:`geosoft.gxpy.coordinate_system.GXpj`
+:class:`geosoft.gxpy.coordinate_system.Coordinate_system`
 
 :class:`geosoft.gxpy.dataframe.Data_frame`
 
@@ -25,8 +25,6 @@ New Classes
 :class:`geosoft.gxpy.geometry.Point`
 
 :class:`geosoft.gxpy.group.Agg_group`
-
-:class:`geosoft.gxpy.group.Color_symbols_group_3d`
 
 :class:`geosoft.gxpy.group.Color_symbols_group`
 
@@ -44,7 +42,7 @@ New Classes
 
 :class:`geosoft.gxpy.view.View`
 
-:exc:`geosoft.gxpy.agg.AGGException`
+:exc:`geosoft.gxpy.agg.AggregateException`
 
 :exc:`geosoft.gxpy.coordinate_system.CSException`
 
@@ -64,7 +62,11 @@ New Functions
 
 :func:`geosoft.gxpy.agg.Aggregate_image.add_layer`
 
-:func:`geosoft.gxpy.agg.Aggregate_image.layer_file_names`
+:func:`geosoft.gxpy.agg.Aggregate_image.new`
+
+:func:`geosoft.gxpy.agg.Aggregate_image.open`
+
+:func:`geosoft.gxpy.coordinate_system.Coordinate_projection.convert`
 
 :func:`geosoft.gxpy.coordinate_system.Coordinate_system.coordinate_dict`
 
@@ -73,8 +75,6 @@ New Functions
 :func:`geosoft.gxpy.coordinate_system.Coordinate_system.oriented_from_xyz`
 
 :func:`geosoft.gxpy.coordinate_system.Coordinate_system.xyz_from_oriented`
-
-:func:`geosoft.gxpy.coordinate_system.GXpj.convert`
 
 :func:`geosoft.gxpy.coordinate_system.name_from_hcs_orient_vcs`
 
@@ -85,6 +85,8 @@ New Functions
 :func:`geosoft.gxpy.dataframe.table_column`
 
 :func:`geosoft.gxpy.dataframe.table_record`
+
+:func:`geosoft.gxpy.gdb.Geosoft_gdb.extent_xyz`
 
 :func:`geosoft.gxpy.gdb.Geosoft_gdb.read_channel_va`
 
@@ -108,6 +110,8 @@ New Functions
 
 :func:`geosoft.gxpy.grid.Grid.index_window`
 
+:func:`geosoft.gxpy.grid.Grid.xyzv`
+
 :func:`geosoft.gxpy.grid.delete_files`
 
 :func:`geosoft.gxpy.group.Agg_group.extent_map_cm`
@@ -130,11 +134,7 @@ New Functions
 
 :func:`geosoft.gxpy.group.Color_symbols_group.locate`
 
-:func:`geosoft.gxpy.group.Color_symbols_group_3d.extent_map_cm`
-
-:func:`geosoft.gxpy.group.Color_symbols_group_3d.locate`
-
-:func:`geosoft.gxpy.group.Color_symbols_group_3d.new`
+:func:`geosoft.gxpy.group.Draw.contour`
 
 :func:`geosoft.gxpy.group.Draw.extent_map_cm`
 
@@ -158,6 +158,8 @@ New Functions
 
 :func:`geosoft.gxpy.group.Draw_3d.cone_3d`
 
+:func:`geosoft.gxpy.group.Draw_3d.contour`
+
 :func:`geosoft.gxpy.group.Draw_3d.cylinder_3d`
 
 :func:`geosoft.gxpy.group.Draw_3d.extent_map_cm`
@@ -169,6 +171,8 @@ New Functions
 :func:`geosoft.gxpy.group.Draw_3d.locate`
 
 :func:`geosoft.gxpy.group.Draw_3d.new_pen`
+
+:func:`geosoft.gxpy.group.Draw_3d.polydata_3d`
 
 :func:`geosoft.gxpy.group.Draw_3d.polygon`
 
@@ -246,11 +250,17 @@ New Functions
 
 :func:`geosoft.gxpy.map.unique_temporary_file_name`
 
+:func:`geosoft.gxpy.project.Geosoft_project.current_db_state`
+
+:func:`geosoft.gxpy.project.Geosoft_project.current_map_state`
+
 :func:`geosoft.gxpy.project.dummy_none`
 
 :func:`geosoft.gxpy.project.pause`
 
 :func:`geosoft.gxpy.project.user_message`
+
+:func:`geosoft.gxpy.system.call_location`
 
 :func:`geosoft.gxpy.utility.crc32_file`
 
@@ -263,6 +273,8 @@ New Functions
 :func:`geosoft.gxpy.utility.dummy_mask`
 
 :func:`geosoft.gxpy.utility.dummy_none`
+
+:func:`geosoft.gxpy.utility.dummy_to_nan`
 
 :func:`geosoft.gxpy.utility.gx_dummy`
 
@@ -308,6 +320,8 @@ New Functions
 
 :func:`geosoft.gxpy.viewer.view_document`
 
+:func:`geosoft.gxpy.vv.GXvv.list`
+
 
   
 Version 9.1
@@ -326,7 +340,7 @@ New Classes
 
 :class:`geosoft.gxpy.vv.GXvv`
 
-:exc:`geosoft.gxpy.gdb.GDBException`
+:exc:`geosoft.gxpy.gdb.GdbException`
 
 :exc:`geosoft.gxpy.grid.GridException`
 
@@ -363,8 +377,6 @@ New Functions
 :func:`geosoft.gxpy.gdb.Geosoft_gdb.delete_line`
 
 :func:`geosoft.gxpy.gdb.Geosoft_gdb.discard`
-
-:func:`geosoft.gxpy.gdb.Geosoft_gdb.file_name`
 
 :func:`geosoft.gxpy.gdb.Geosoft_gdb.line_details`
 

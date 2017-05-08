@@ -57,6 +57,8 @@ goto continue
 set target="html"
 :continue
 
+python generate_rsts.py
+
 REM Check if sphinx-build is available and fallback to Python version if any
 %SPHINXBUILD% 2> nul
 if errorlevel 9009 goto sphinx_python

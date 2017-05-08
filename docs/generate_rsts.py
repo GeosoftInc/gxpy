@@ -98,9 +98,10 @@ def gen_gxapi_rsts(j2env, output_dir):
 def gen_gxapi_toc(j2env, output_dir):
     template = j2env.get_template('geosoft.gxapi.classes.rst')
     gxa_classes = inspect.getmembers(gxa, inspect.isclass)
-    classes = [c for c, _ in gxa_classes if not c.startswith('_')]
+    classes = [c for c, _ in gxa_classes if not c.startswith('_') and not c.endswith('_ref') and
+               c != 'GXCancel' and c != 'GXAPIError' and c != 'GXError' and c != 'GXExit' and c != 'GXContext']
     with open('geosoft.gxapi.classes.rst', 'w+') as f:
-        f.write(template.render(classes=classes))
+        f.write(template.render(classes=['geosoft.gxapi', 'GXGEOSOFT'] + classes))
 
 def gen_gxpy_rsts(j2env, output_dir):
     modules = sorted([k for k, v in gxpy.__dict__.items() if not k.startswith("_") and inspect.ismodule(v)])

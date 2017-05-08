@@ -221,6 +221,27 @@ IP_PLOT constants
 .. autoattribute:: geosoft.gxapi.IP_PLOT_STACKEDSECTION
 
 
+.. _IP_QCTYPE:
+
+IP_QCTYPE constants
+-----------------------------------------------------------------------
+
+::
+
+   Type of Measurement 
+
+.. autoattribute:: geosoft.gxapi.IP_QCTYPE_RESISTIVITY
+
+::
+
+   Resistivity 
+
+.. autoattribute:: geosoft.gxapi.IP_QCTYPE_IP
+
+::
+
+   IP 
+
 .. _IP_STACK_TYPE:
 
 IP_STACK_TYPE constants
