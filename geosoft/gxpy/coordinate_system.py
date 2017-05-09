@@ -653,8 +653,6 @@ class Coordinate_system:
                 if gxf1 != "*unknown":
                     if ('*unknown' in self.name) and (gxf2 or gxf3 or gxf5):
                         raise_gxf_error()
-        if vcs:
-            self.vcs = vcs
 
     def _from_dict(self, csdict):
         """

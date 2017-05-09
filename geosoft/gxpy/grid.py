@@ -7,7 +7,7 @@ Geosoft grids and image handling, including all grid types supported by Geosoft.
     
     `Tests <https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_grid.py>`_
     
-.. seealso:: :class:`geosoft.gxapi.GXGRD`, :class:`geosoft.gxapi.GXGU`
+.. seealso:: :class:`geosoft.gxapi.GXIMG`, :class:`geosoft.gxapi.GXIMU`
 
 """
 import os
@@ -291,7 +291,7 @@ class Grid():
             return grd
 
     @classmethod
-    def new(cls, file_name=None, properties={}, overwrite=False):
+    def new(cls, file_name=None, properties=None, overwrite=False):
         """
         Create a new grid file.
 
@@ -301,6 +301,9 @@ class Grid():
 
         .. versionadded:: 9.1
         """
+
+        if properties is None:
+            raise GridException(_t("Missing properties dictionary."))
 
         # set basic grid properties
         dtype = properties.get('dtype', None)
@@ -344,7 +347,7 @@ class Grid():
     def get_value(self, x, y):
         """
         Return a grid value at a point as a float.  For scalar data the point value will
-        be interpolated between neighbors.  For colour data the nearest value is returned
+        be interpolated between neighbors.  For color data the nearest value is returned
         as a color int.
         
         :param x, y: Location on the grid plane 

@@ -60,7 +60,7 @@ class Aggregate_image():
         :name:          aggregate group name
         :gxagg:         gxapi.GXAGG instance
         :layer_count:   number of layers
-        :brightness:    image brightness, -1 (black) to +1 (white). 0 is full colour.
+        :brightness:    image brightness, -1 (black) to +1 (white). 0 is full color.
 
     .. versionadded:: 9.2
     """
@@ -191,9 +191,9 @@ class Aggregate_image():
                 ZONE_DEFAULT        as set by user global default settings
                 ZONE_LINEAR         linearly distributed
                 ZONE_NORMAL         normal (Gaussian) distribution
-                ZONE_EQUALAREA      each colour will occupy an equal area on the image
+                ZONE_EQUALAREA      each color will occupy an equal area on the image
                 ZONE_LOGLINEAR      logarithmic linear distribution
-                ZONE_LAST           last used colouring for this grid file
+                ZONE_LAST           last used coloring for this grid file
                 ZONE_SHADE          Displays the shaded image version of the grid. The shaded image is
                                     a grid file will with '_s' appended to the file name.  If it does not
                                     exist, a shaded image with illumination inclination and declination
@@ -201,12 +201,12 @@ class Aggregate_image():
                                     
         :param shade:           True, to add a shading layer
         :param minimum:         Minimum data value. All grid values less than or equal to the
-                                minimum will be assigned the first colour in the table.  The default is
+                                minimum will be assigned the first color in the table.  The default is
                                 calculated from the data.
         :param maximum:         Maximum data value.  All grid values greater than or equal to the maximum
-                                will be assigned the last colour in the table.  The default is calculated from
+                                will be assigned the last color in the table.  The default is calculated from
                                 the data.
-        :param contour:         Break colors on this interval, colours will be thinned if necessary.
+        :param contour:         Break colors on this interval, colors will be thinned if necessary.
                                 
 
         .. versionadded:: 9.2

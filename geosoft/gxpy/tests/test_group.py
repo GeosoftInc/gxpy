@@ -279,7 +279,7 @@ class Test(GXPYTest):
                     g.rectangle(area, pen=g.new_pen(line_thick=0.1, line_color='R'))
 
                 with gxagg.Aggregate_image.new(grid_file) as agg:
-                    with gxg.Agg_group.new(v, agg) as gagg:
+                    with gxg.Aggregate_group.new(v, agg) as gagg:
                         self.assertEqual(gagg.name, str(agg))
 
                 self.assertEqual(len(v.group_list_agg), 1)
@@ -311,7 +311,7 @@ class Test(GXPYTest):
                     g.rectangle(area, pen=g.new_pen(line_thick=0.1, line_color='G'))
 
                 with gxagg.Aggregate_image.new(grid_file) as agg:
-                    gxg.Agg_group.new(v, agg)
+                    gxg.Aggregate_group.new(v, agg)
 
         self.crc_map(map_file)
 
@@ -326,7 +326,7 @@ class Test(GXPYTest):
                 map_file = gmap.file_name
                 with gxv.View(gmap, "data") as v:
                     with gxagg.Aggregate_image.new(grid_file, zone=zone, shade=shade) as agg:
-                        gxg.Agg_group.new(v, agg)
+                        gxg.Aggregate_group.new(v, agg)
                 gmap.delete_view('base')
 
             self.crc_map(map_file, alt_crc_name='{}_{}'.format(gxsys.func_name(1), suffix))
@@ -647,11 +647,11 @@ class Test(GXPYTest):
                     g.rectangle(v.extent_all, pen=g.new_pen(line_thick=0.1, line_color='B'))
 
                 with gxagg.Aggregate_image.new(grid_file) as agg:
-                    with gxg.Agg_group.new(v, agg) as g:
+                    with gxg.Aggregate_group.new(v, agg) as g:
                         agg_group_name = g.name
 
             with gxv.View(gmap, "data") as v:
-                with gxg.Agg_group.open(v, agg_group_name) as g:
+                with gxg.Aggregate_group.open(v, agg_group_name) as g:
                     gxg.legend_color_bar(v, 'color_legend', g.agg.layer_color_map())
 
 
@@ -1071,7 +1071,7 @@ class Test(GXPYTest):
                     g.rectangle(area, pen=g.new_pen(line_thick=0.1, line_color='R'))
 
                 with gxagg.Aggregate_image.new(grid_file) as agg:
-                    with gxg.Agg_group.new(v, agg) as gagg:
+                    with gxg.Aggregate_group.new(v, agg) as gagg:
                         self.assertEqual(gagg.name, str(agg))
 
                 self.assertEqual(len(v.group_list_agg), 1)
@@ -1109,7 +1109,7 @@ class Test(GXPYTest):
                 with gxagg.Aggregate_image.new(grid_file, contour=10) as agg:
                     cmap = agg.layer_color_map()
                     cname = agg.name
-                    with gxg.Agg_group.new(v, agg) as gagg:
+                    with gxg.Aggregate_group.new(v, agg) as gagg:
                         self.assertEqual(gagg.name, str(agg))
 
                 gxg.legend_color_bar(v, cname, cmap)

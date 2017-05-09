@@ -1,9 +1,13 @@
 """
-Drawing elements that are placed in groups in 3d views, or in 2D views on a map.
+This module handles drawing into groups in 3d views, or in 2D views on a map.
 
 .. note::
 
-    Regression tests provide usage examples: `Tests <https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_group.py>`_
+    Regression tests provide usage examples: 
+    
+    `group drawing tests <https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_group.py>`_
+    
+.. seealso:: :class:`geosoft.gxapi.GXMVIEW`, :class:`geosoft.gxapi.GXMVU`
 
 """
 from functools import wraps
@@ -167,11 +171,11 @@ def edge_reference(area, reference):
     :param reference:   reference point relative to the clip limits of the view to
                         which reference location.  The points are:
                         
-                            ::
-                                
-                                6 7 8   top left, center, right
-                                3 4 5   middle left, center, right
-                                0 1 2   bottom left, center, right
+                        ::
+                            
+                            6 7 8   top left, center, right
+                            3 4 5   middle left, center, right
+                            0 1 2   bottom left, center, right
     
     :returns:           Point desired reference location as a Point
 
@@ -210,8 +214,8 @@ class Group:
         :name:              the name of the group
         :extent:            extent of the group in view units
         :extent_map_cm:     extent of the group in map cm
-        :drawing_cs:        the coordinate system of drawing coordinates. Setting to None will reset drawing
-                            coordinates to the view cs.  If ``drawing_cs`` is set to some other cs the drawing
+        :drawing_coordinate_system:        the coordinate system of drawing coordinates. Setting to None will reset drawing
+                            coordinates to the view cs.  If `drawing_coordinate_system` is set to some other cs the drawing
                             coordinates will be transformed into the view cs.
 
     .. versionadded:: 9.2
@@ -226,7 +230,7 @@ class Group:
     def _close(self):
         if self._open:
             try:
-                self._drawing_cs = None
+                self._drawing_coordinate_system = None
                 self._pen = None
                 self._text_def = None
             finally:
@@ -277,14 +281,17 @@ class Group:
 
     @property
     def view(self):
+        """view that contains this group."""
         return self._view
 
     @property
     def name(self):
+        """group name"""
         return self._name
 
     @property
     def number(self):
+        """group number in the view"""
         return self.view.gxview.find_group(self.name)
 
     def _extent(self, unit=UNIT_VIEW):
@@ -297,10 +304,12 @@ class Group:
 
     @property
     def extent(self):
+        """group extent as (xmin, ymion, xmax, ymax)"""
         return self._extent(UNIT_VIEW)
 
     @property
     def visible(self):
+        """True if group is visible, can be set."""
         return self.name in self.view.group_list_visible
 
     @visible.setter
@@ -337,7 +346,7 @@ class Group:
         """
         Locate the group relative to a point.
 
-        :param location:    location (x, y) or a ``gxpy.geometry.Point``
+        :param location:    location (x, y) or a `gxpy.geometry.Point`
         :param reference:   reference point relative to the clip limits of the view to
                             which reference location.  The points are:
                             
@@ -405,9 +414,9 @@ class Draw(Group):
     are placed on the default drawing plane.  Drawing groups will lock the view such that only one
     drawing group can be instantiated at a time.
     
-    Use ``with Draw() as group:`` to ensure correct unlocking when complete.
+    Use `with Draw() as group:` to ensure correct unlocking when complete.
     
-    Inherits from the ``Group`` base class.
+    Inherits from the `Group` base class.
     """
 
     def __init__(self, *args, **kwargs):
@@ -417,27 +426,32 @@ class Draw(Group):
 
         self._pen = None
         self._text_def = None
-        self._drawing_cs = self.view.coordinate_system
+        self._drawing_coordinate_system = self.view.coordinate_system
 
         if self._mode != READ_ONLY:
             self._init_pen()
             self._text_def = Text_def(factor=self.view.units_per_map_cm)
 
     @property
-    def drawing_cs(self):
-        return self._drawing_cs
+    def drawing_coordinate_system(self):
+        """
+        The coordinate of incoming spatial data, which are converted to the coordinate system of the
+        view.  This is normally the same as the view coordinate system, but it can be set to a different
+        coordinate system to have automatic reprojection occur during drawing.
+        """
 
-    @drawing_cs.setter
-    def drawing_cs(self, cs):
+    @drawing_coordinate_system.setter
+    def drawing_coordinate_system(self, cs):
         if cs is None:
             self.view.gxview.set_user_ipj(self.view.coordinate_system.gxipj)
-            self._drawing_cs = self.view.coordinate_system
+            self._drawing_coordinate_system = self.view.coordinate_system
         else:
-            self._drawing_cs = gxcs.Coordinate_system(cs).gxipj
-            self.view.gxview.set_user_ipj(self._drawing_cs)
+            self._drawing_coordinate_system = gxcs.Coordinate_system(cs).gxipj
+            self.view.gxview.set_user_ipj(self._drawing_coordinate_system)
 
     @property
     def pen(self):
+        """the current drawing pen as a :class:`Pen` instance"""
         return self._pen
 
     @pen.setter
@@ -498,10 +512,10 @@ class Draw(Group):
     def new_pen(self, **kwargs):
         """
         Returns a pen that inherits default from the current view pen.  Arguments are the same
-        as the ``Pen`` constructor.  This using this ensures that default sizing of view unit-based
-        dimensions (such as ``line_thick``) are not lost when new pens are created.
+        as the `Pen` constructor.  This using this ensures that default sizing of view unit-based
+        dimensions (such as `line_thick`) are not lost when new pens are created.
 
-        :param kwargs: see ``Pen``
+        :param kwargs: see `Pen`
         :return: Pen instance
 
         .. versionadded:: 9.2
@@ -510,6 +524,7 @@ class Draw(Group):
 
     @property
     def text_def(self):
+        """the current text definition as a :class:`Text_def` instance, can be set."""
         return self._text_def
 
     @text_def.setter
@@ -554,11 +569,11 @@ class Draw(Group):
         """
         Draw a graticule reference on a view.
 
-        :param style:   ``GRATICULE_LINE``, ``GRATICULE_CROSS`` or ``GRATICULE_DOT``
+        :param style:   `GRATICULE_LINE`, `GRATICULE_CROSS` or `GRATICULE_DOT`
         :param dx:      vertical line separation
         :param dy:      horizontal line separation
-        :param ddh:     horizontal cross size for ``GRATICULE_CROSS``
-        :param ddv:     vertical cross size for ``GRATICULE_CROSS``
+        :param ddh:     horizontal cross size for `GRATICULE_CROSS`
+        :param ddv:     vertical cross size for `GRATICULE_CROSS`
 
         .. versionadded:: 9.2
         """
@@ -650,7 +665,7 @@ class Draw(Group):
         Draw text in the view.
         
         :param text:        text string.  Use line-feed characters for multi-line text.
-        :param location:    (x, y) or a ``gxpy.geomerty.Point`` location
+        :param location:    (x, y) or a `gxpy.geomerty.Point` location
         :param reference:   reference point relative to the clip limits of the view to
                             which reference location.  The points are:
                             
@@ -755,7 +770,7 @@ class Draw_3d(Draw):
         .. versionadded:: 9.2
         """
 
-        # solids use the fill colour as the object colour
+        # solids use the fill color as the object color
         fci = self.pen._fill_color.int
         self.view.gxview.fill_color(self.pen._line_color.int)
 
@@ -778,7 +793,7 @@ class Draw_3d(Draw):
         .. versionadded:: 9.2
         """
 
-        # solids use the fill colour as the object colour
+        # solids use the fill color as the object color
         fci = self.pen._fill_color.int
         self.view.gxview.fill_color(self.pen._line_color.int)
         pp = _make_Point2(p2)
@@ -831,7 +846,7 @@ class Draw_3d(Draw):
         .. versionadded:: 9.2
         """
 
-        # solids use the fill colour as the object colour
+        # solids use the fill color as the object color
         fci = self.pen._fill_color.int
         self.view.gxview.fill_color(self.pen._line_color.int)
 
@@ -924,7 +939,7 @@ class Draw_3d(Draw):
                     render_info_func=None,
                     passback=None):
         """
-        Create a 3D objects rendered by the data.
+        Create 3D objects rendered by the data.
 
         :param view:                a 3D view in which to place the group
         :param data:                iterable that yields items passed to your `render_info_func` callback
@@ -941,6 +956,19 @@ class Draw_3d(Draw):
                                     ================== ======== ========= ===========
 
         :param passback:            something passed back to your render_info_func function, default None.
+        
+        **Example**
+        
+        .. code::
+        
+            def render_spheres(xyz, cmap_radius):
+                color, radius = cmap_radius
+                return gxg.SYMBOL_3D_SPHERE, xyz, color.int, radius
+            
+            data = gxgm.PPoint(((5, 5, 5), (7, 5, 5), (7, 7, 7)))
+            with gxv.View_3d.new('example_polydata') as v:
+                with gxg.Draw_3d(v, 'red_spheres') as g:
+                    g.polydata_3d(data, render_spheres, (gxg.Color('r'), 0.25))
 
         .. versionadded:: 9.2
         """
@@ -996,13 +1024,13 @@ def legend_color_bar(view,
                      interval_2=None,
                      title=None):
     """
-    Draw a color bar legend from :class:Color_map colouring definitions.
+    Draw a color bar legend from :class:Color_map coloring definitions.
 
     :param view:                :class:`gxpy.View` instance in which to place the bar
-    :param group_name:          name for the colour_bar group, overwrites group if it exists.
+    :param group_name:          name for the color_bar group, overwrites group if it exists.
     :param cmap:                :class:`Color_map` instance
     :param cmap2:               optional orthogonal blended :class:`Color_map` instance.  If making
-                                a shaded-colour legend, provide the shaded color map here.
+                                a shaded-color legend, provide the shaded color map here.
     :param bar_location:        one of:
 
         ::
@@ -1012,7 +1040,8 @@ def legend_color_bar(view,
             COLOR_BAR_BOTTOM = 2
             COLOR_BAR_TOP = 3
 
-    :param location:            offset or (x, y) offset from view reference point, in cm.
+    :param location:            offset or (x, y) offset from view reference point, in cm.  The default is
+                                determined to center the bar off the location side specified.
     :param decimals:            annotation decimal places
     :param annotation_height:   annotation number height
     :param annotation_offset:   offset of annotations from the bar (cm)
@@ -1026,7 +1055,7 @@ def legend_color_bar(view,
             COLOR_BAR_ANNOTATE_BOTTOM = -1
 
     :param box_size:            box size, height for vertical bars, width for horizontal bars
-    :param bar_width:           width of the colour boxes
+    :param bar_width:           width of the color boxes
     :param max_bar_size:        maximum bar size, default is the size of the view edge
     :param minimum_gap:         minimum gap to between annotations.  Annotations are dropped in necessary.
     :param post_end_values:     post the maximum and minimum values
@@ -1211,7 +1240,13 @@ class Color:
                         C_WHITE
                         C_TRANSPARENT
 
-    :param model:   model of the tuple: CMODEL_RGB, CMODEL_CMY or CMODEL_HSV.  Default is CMODEL_RGB
+    :param model:   model of the tuple: 
+    
+                    ::
+                    
+                        CMODEL_RGB (default)
+                        CMODEL_CMY
+                        CMODEL_HSV
 
     .. versionadded:: 9.2
     """
@@ -1249,6 +1284,7 @@ class Color:
 
     @property
     def int(self):
+        """ color as a 24-bit color integer, can be set"""
         return self._color
 
     @int.setter
@@ -1259,6 +1295,7 @@ class Color:
 
     @property
     def rgb(self):
+        """color as an (red, green, brue) tuple, can be set"""
         if self.int == 0:
             return None
         r = gxapi.int_ref()
@@ -1276,6 +1313,7 @@ class Color:
 
     @property
     def cmy(self):
+        """color as an (cyan, magenta, yellow) tuple, can be set"""
         if self.int == 0:
             return None
         red, green, blue = self.rgb
@@ -1287,7 +1325,7 @@ class Color:
 
     def adjust_brightness(self, brightness):
         """
-        Return a Color instance adjusted for brightness.
+        Return a :class:`Color` instance adjusted for brightness.
         
         .. versionadded:: 9.2
         """
@@ -1446,6 +1484,7 @@ class Text_def:
 
     @property
     def color(self):
+        """text color as a :class:`Color` instance, can be set"""
         return self._color
 
     @color.setter
@@ -1457,6 +1496,7 @@ class Text_def:
 
     @property
     def font(self):
+        """text font name, can be set."""
         return self._font
 
     @font.setter
@@ -1474,6 +1514,7 @@ class Text_def:
 
     @property
     def line_thick(self):
+        """text line thickness determined from the font weight, can be set."""
         return thickness_from_font_weight(self.weight, self.height)
 
     @line_thick.setter
@@ -1482,6 +1523,7 @@ class Text_def:
 
     @property
     def slant(self):
+        """text slant, 15 for italics, 0 for not italics, can be set."""
         if self.italics:
             return 15
         else:
@@ -1539,7 +1581,7 @@ class Pen:
                             SMOOTH_AKIMA
                             SMOOTH_CUBIC
 
-    :param pat_number:  pattern number for filled patterns (refer to ``etc/default.pat``) default 0, flood fill
+    :param pat_number:  pattern number for filled patterns (refer to `etc/default.pat`) default 0, flood fill
     :param pat_angle:   pattern angle, default 0
     :param pat_density: pattern density, default 1
     :param pat_size:    pattern size, default 1.0
@@ -1601,11 +1643,11 @@ class Pen:
     def from_mapplot_string(cls, cstr):
         """
         Create a Pen instance from a mapplot-style string descriptor using either a
-        rgbRGB or cmyCMY colour model.  Lower case letters indicate line colour, upper-case
-        indicates fill colour, 'k', 'K' for black.  Each letter may be followed by an intensity
+        rgbRGB or cmyCMY color model.  Lower case letters indicate line color, upper-case
+        indicates fill color, 'k', 'K' for black.  Each letter may be followed by an intensity
         between 0 and 255.  If an intensity is not specified 255 is assumed.
 
-        :param cstr:    mapplot-style colour definition
+        :param cstr:    mapplot-style color definition
                       
         Examples:
         
@@ -1683,6 +1725,7 @@ class Pen:
 
     @property
     def line_color(self):
+        """pen line color as a :class:`color` instance, can be set."""
         return self._line_color
 
     @line_color.setter
@@ -1698,6 +1741,7 @@ class Pen:
 
     @fill_color.setter
     def fill_color(self, color):
+        """pen fill color as a :class:`color` instance, can be set."""
         if type(color) is Color:
             self._fill_color = color
         else:
@@ -1705,6 +1749,7 @@ class Pen:
 
     @property
     def mapplot_string(self):
+        """line/fill colour and thickness string suing mapplor format, eg. 'kR125B64t1000'"""
         s = ''
         if self._line_color.int != C_TRANSPARENT:
             if self._line_color.int == C_BLACK:
@@ -1724,14 +1769,14 @@ class Pen:
 
 class Color_symbols_group(Group):
     """
-    Create a colour symbols group with colour mapping.
+    Create a color symbols group with color mapping.
 
     :param view:            the view in which to place the group
     :param name:            group name
     :param data:            iterable that yields `((x, y), data)`, or `((x, y, z), data, ...)`.  Only `((x,y), data)`
                             is used.
     :param color_map:       symbol fill color :class:`Color_map`.
-                            Symbols are filled with the colour lookup using data.
+                            Symbols are filled with the color lookup using data.
     :param symbol_def:      :py:class:`gxpy.group.Text_def` defines the symbol font to use, normally
                             `symbols.gfn` is expected, and if used the symbols defined by the `SYMBOL` manifest
                             are valid.  For other fonts you will get the symbol requested.  The default is
@@ -1795,7 +1840,7 @@ class Color_symbols_group(Group):
         return cs
 
 
-class Agg_group(Group):
+class Aggregate_group(Group):
     """
     Aggregate groups on a map
     
@@ -1850,10 +1895,10 @@ class Agg_group(Group):
 
 class Color_map:
     """
-    Color map for establishing data colour mapping for things like aggregates and colour symbols.
+    Color map for establishing data color mapping for things like aggregates and color symbols.
     
-    :param cmap:    the name of a Geosoft colour map file (`.tbl, .zon, .itr, .agg`) from which to
-                    establish the initial colour mapping.  If the file does not have zone values,
+    :param cmap:    the name of a Geosoft color map file (`.tbl, .zon, .itr, .agg`) from which to
+                    establish the initial colors.  If the file does not have zone values,
                     which is the case for a `.tbl` file, the Color_map will be uninitialized and you
                     can use one of the `set` methods to establish zone values.
                     
@@ -1977,7 +2022,7 @@ class Color_map:
     @property
     def length(self):
         """ 
-        Number of colour zones in the map.
+        Number of color zones in the map.
         """
         return self.gxitr.get_size()
 
@@ -1993,18 +2038,22 @@ class Color_map:
 
     @property
     def color_map(self):
+        """list of zone limts, colours in the color map"""
         return [vc for vc in self]
 
     @property
     def color_map_rgb(self):
+        """list of zone limits and (red, green, blue) colours"""
         return [(vc[0], vc[1].rgb) for vc in self]
 
     @brightness.setter
     def brightness(self, value):
+        """Map brightness between -1 (black ) and +1 (white.  Can be set."""
         self.gxitr.change_brightness(value)
 
     @property
     def model_type(self):
+        """Geosoft colour model used in the Geosoft :class:`geosoft.gxapi.GXITR`"""
         return self.gxitr.get_zone_model_type()
 
     @property
@@ -2018,10 +2067,10 @@ class Color_map:
 
     def set_sequential(self, start=0, increment=1):
         """
-        Set colour map zones based on a start and increment between each colour zone.
+        Set color map zones based on a start and increment between each color zone.
         
-        :param start:       minimum zone boundary, values <= this value will have the first colour
-        :param increment:   increment between each colour.
+        :param start:       minimum zone boundary, values <= this value will have the first color
+        :param increment:   increment between each color.
         
         .. versionadded:: 9.2
         """
@@ -2036,13 +2085,13 @@ class Color_map:
         
         :param minimum:             minimum 
         :param maximum:             maximum
-        :param inner_limits:        True if the range specifies the inner limits of the colour mappings, in which
-                                    case values less than or equal to the minimum are mapped to the first colour
-                                    and colours greater than the maximum are mapped to the last colour.  If False,
-                                    the minimum and maximum are at the outer-edges of the colour map.
-        :param contour_interval:    align colour edges on this interval, which is useful for matching colours
-                                    contour map, for example.  The colour map will be reduced in size by thinning of 
-                                    unneeded colours if necessary.
+        :param inner_limits:        True if the range specifies the inner limits of the color mappings, in which
+                                    case values less than or equal to the minimum are mapped to the first color
+                                    and colors greater than the maximum are mapped to the last color.  If False,
+                                    the minimum and maximum are at the outer-edges of the color map.
+        :param contour_interval:    align color edges on this interval, which is useful for matching colors
+                                    contour map, for example.  The color map will be reduced in size by thinning of 
+                                    unneeded colors if necessary.
                                     
         .. versionadded:: 9.2
         """
@@ -2059,12 +2108,12 @@ class Color_map:
 
     def set_logarithmic(self, minimum, maximum, contour_interval=None):
         """
-        Set the colour boundaries based on a logarithmic distribution between minimum and maximum.
+        Set the color boundaries based on a logarithmic distribution between minimum and maximum.
 
         :param minimum:             minimum, must be > 0
         :param maximum:             maximum
-        :param contour_interval:    align colour edges on this interval, 10 for powers of 10.
-                                    unneeded colours if necessary.
+        :param contour_interval:    align color edges on this interval, 10 for powers of 10.
+                                    unneeded colors if necessary.
 
         .. versionadded:: 9.2
         """
@@ -2075,12 +2124,12 @@ class Color_map:
 
     def set_normal(self, standard_deviation, mean, expansion=1.0, contour_interval=None):
         """
-        Set the colour boundaries using a normal distribution around a mean.
+        Set the color boundaries using a normal distribution around a mean.
 
         :param standard_deviation:  the standard deviation of the normal distribution.
         :param mean:                maximum
-        :param contour_interval:    align colour edges on this interval, 10 for powers of 10.
-                                    unneeded colours if necessary.
+        :param contour_interval:    align color edges on this interval, 10 for powers of 10.
+                                    unneeded colors if necessary.
 
         .. versionadded:: 9.2
         """
@@ -2093,8 +2142,8 @@ class Color_map:
     def color_of_value(self, value):
         """
         Return the gxg.Color of a value.  The mapping is determined with exclusive minima, inclusive maxima
-        for each colour level.  Values <= level [0] are assigned the [0] colour, and values greater than the 
-        the [n-2] level are assigned the [n-1] colour.
+        for each color level.  Values <= level [0] are assigned the [0] color, and values greater than the 
+        the [n-2] level are assigned the [n-1] color.
         
         :param value:   data value
         :return:        gxg.Color instance
@@ -2106,8 +2155,8 @@ class Color_map:
     def save_file(self, file_name=None):
         """
         Save to a Geosoft file, `.tbl`, `.itr` or `.zon`.  If the file_name does not have an
-        extension and the color_map has not been initialized a `.tbl` file is created (colours only), 
-        otherwise a `.itr` is created, which contains both zone boundaries and colours.
+        extension and the color_map has not been initialized a `.tbl` file is created (colors only), 
+        otherwise a `.itr` is created, which contains both zone boundaries and colors.
         
         :param file_name:   file name, if None a temporary file is created
         :return: 

@@ -75,11 +75,11 @@ STYLE_MAP = 1
 
 class Line_def:
     def __init__(self,
-                 line_colour='k',
-                 fill_colour=None,
+                 line_color='k',
+                 fill_color=None,
                  thickness=100):
-        self._line_colour = line_colour
-        self._fill_colour = fill_colour
+        self._line_color = line_color
+        self._fill_color = fill_color
         self._thickness = thickness
 
 
@@ -1013,7 +1013,7 @@ class Map:
                             GRID_CROSSES    crosses at intersections
                             GRID_LINES      lines
 
-        :param grid_pen: colour-thickness string
+        :param grid_pen: color-thickness string
 
         .. versionadded:: 9.2
         """
