@@ -1,3 +1,4 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -5,19 +6,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <script type="text/javascript">
-
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-87443115-1']);
-      _gaq.push(['_trackPageview']);
-
-      (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
-    </script>
-    <title>GXIP class &#8212; Geosoft GX Python API 9.1 documentation</title>
+    
+    <title>GXIP class &#8212; Geosoft GX Python API 9.2.0 documentation</title>
     
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -25,16 +15,25 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '9.1',
+        VERSION:     '9.2.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="Geosoft GX Python API 9.1 documentation" href="index.html" /> 
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+ 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-87443115-1']);
+  _gaq.push(['_trackPageview']);
+</script>
+
   </head>
   <body role="document">
     <div class="related" role="navigation" aria-label="related navigation">
@@ -46,7 +45,7 @@
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.1 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -63,6 +62,7 @@
 <li><a class="reference internal" href="#ip-i2xinv-constants">IP_I2XINV constants</a></li>
 <li><a class="reference internal" href="#ip-lines-constants">IP_LINES constants</a></li>
 <li><a class="reference internal" href="#ip-plot-constants">IP_PLOT constants</a></li>
+<li><a class="reference internal" href="#ip-qctype-constants">IP_QCTYPE constants</a></li>
 <li><a class="reference internal" href="#ip-stack-type-constants">IP_STACK_TYPE constants</a></li>
 <li><a class="reference internal" href="#ip-stnscale-constants">IP_STNSCALE constants</a></li>
 <li><a class="reference internal" href="#ip-sys-constants">IP_SYS constants</a></li>
@@ -75,7 +75,7 @@
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="_sources/GXIP.txt"
+      <li><a href="_sources/GXIP.rst.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
@@ -102,25 +102,25 @@
 <dl class="class">
 <dt id="geosoft.gxapi.GXIP">
 <em class="property">class </em><code class="descclassname">geosoft.gxapi.</code><code class="descname">GXIP</code><a class="headerlink" href="#geosoft.gxapi.GXIP" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="k">class</span> <span class="nc">is</span> <span class="n">used</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">IP</span> <span class="n">System</span> <span class="k">for</span> <span class="n">the</span> <span class="n">import</span><span class="p">,</span> <span class="n">export</span>
-<span class="ow">and</span> <span class="n">processing</span> <span class="n">of</span> <span class="n">Induced</span> <span class="n">Polarization</span> <span class="n">data</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+This class is used in the IP System for the import, export
+and processing of Induced Polarization data.
+</pre>
 <p><strong>Note:</strong></p>
 <pre class="literal-block">
 The following defines are used in GX code but are not
 part of any functions:
 
-<a class="reference internal" href="#ip-array"><span class="std std-ref">IP_ARRAY constants</span></a>
-<a class="reference internal" href="#ip-channels"><span class="std std-ref">IP_CHANNELS constants</span></a>
-<a class="reference internal" href="#ip-lines"><span class="std std-ref">IP_LINES constants</span></a>
+\ :ref:`IP_ARRAY`\ 
+\ :ref:`IP_CHANNELS`\ 
+\ :ref:`IP_LINES`\ 
 </pre>
 <dl class="method">
 <dt id="geosoft.gxapi.GXIP.a_spacing">
 <code class="descname">a_spacing</code><span class="sig-paren">(</span><em>(GXDB)arg1</em>, <em>(str)arg2</em><span class="sig-paren">)</span> &rarr; float:<a class="headerlink" href="#geosoft.gxapi.GXIP.a_spacing" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Return</span> <span class="n">the</span> <span class="n">A</span><span class="o">-</span><span class="n">Spacing</span> <span class="k">for</span> <span class="n">the</span> <span class="nb">input</span> <span class="n">line</span><span class="o">.</span> <span class="n">If</span> <span class="n">necessary</span><span class="p">,</span> <span class="n">first</span> <span class="n">imports</span> <span class="n">the</span> <span class="n">specified</span> <span class="n">line</span> <span class="n">into</span> <span class="n">the</span> <span class="n">IP</span> <span class="nb">object</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Return the A-Spacing for the input line. If necessary, first imports the specified line into the IP object.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -148,9 +148,9 @@ This value could be rDUMMY for some arrays (such as 3D) where no A-Spacing is ex
 <dl class="method">
 <dt id="geosoft.gxapi.GXIP.average_duplicates_qc">
 <code class="descname">average_duplicates_qc</code><span class="sig-paren">(</span><em>(GXDB)arg1</em>, <em>(str)arg2</em>, <em>(str)arg3</em>, <em>(int)arg4</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIP.average_duplicates_qc" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Average</span> <span class="n">duplicate</span> <span class="n">samples</span> <span class="ow">in</span> <span class="n">a</span> <span class="n">database</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Average duplicate samples in a database.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -159,7 +159,7 @@ This value could be rDUMMY for some arrays (such as 3D) where no A-Spacing is ex
 <li><strong>arg1</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXDB</span></code></a>) &#8211; Database to export from</li>
 <li><strong>arg2</strong> (<em>str</em>) &#8211; Mask or reference channel (required)</li>
 <li><strong>arg3</strong> (<em>str</em>) &#8211; QC channel (can be left blank)</li>
-<li><strong>arg4</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#ip-duplicate"><span class="std std-ref">IP_DUPLICATE constants</span></a></li>
+<li><strong>arg4</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#ip-duplicate"><span class="std std-ref">IP_DUPLICATE constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -175,22 +175,22 @@ This value could be rDUMMY for some arrays (such as 3D) where no A-Spacing is ex
 <p><span class="versionmodified">New in version 7.3.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Averages</span> <span class="nb">all</span> <span class="n">values</span> <span class="k">with</span> <span class="n">shared</span> <span class="n">station</span> <span class="ow">and</span> <span class="n">N</span> <span class="n">values</span><span class="p">,</span>
-<span class="k">as</span> <span class="n">long</span> <span class="k">as</span> <span class="n">the</span> <span class="n">mask</span> <span class="n">channel</span> <span class="ow">is</span> <span class="n">defined</span> <span class="n">at</span> <span class="n">that</span> <span class="n">FID</span><span class="o">.</span>
-<span class="n">Previous</span> <span class="n">averaged</span> <span class="n">values</span> <span class="p">(</span><span class="n">IP_DATA_AVG</span><span class="p">)</span> <span class="n">are</span> <span class="n">overwritten</span> <span class="n">according</span> <span class="n">to</span> <span class="n">the</span>
-<span class="n">overwrite</span> <span class="n">flag</span><span class="o">.</span>
-<span class="n">If</span> <span class="n">the</span> <span class="n">QC</span> <span class="n">channel</span> <span class="ow">is</span> <span class="n">selected</span><span class="p">,</span> <span class="n">only</span> <span class="n">those</span> <span class="n">rows</span> <span class="n">of</span> <span class="n">data</span> <span class="n">where</span> <span class="n">the</span> <span class="n">QC</span> <span class="n">channel</span>
-<span class="n">value</span> <span class="ow">is</span> <span class="s2">&quot;1&quot;</span> <span class="n">will</span> <span class="n">be</span> <span class="n">included</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">average</span><span class="o">.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+Averages all values with shared station and N values,
+as long as the mask channel is defined at that FID.
+Previous averaged values (IP_DATA_AVG) are overwritten according to the
+overwrite flag.
+If the QC channel is selected, only those rows of data where the QC channel
+value is &quot;1&quot; will be included in the average.
+</pre>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXIP.convert_ubcip2_d_to_grid">
 <em class="property">static </em><code class="descname">convert_ubcip2_d_to_grid</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(GXPG)arg2</em>, <em>(GXVV)arg3</em>, <em>(GXVV)arg4</em>, <em>(float)arg5</em>, <em>(float)arg6</em>, <em>(float)arg7</em>, <em>(float)arg8</em>, <em>(int)arg9</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIP.convert_ubcip2_d_to_grid" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Convert</span> <span class="n">a</span> <span class="n">UBC</span> <span class="mi">2</span><span class="n">D</span> <span class="n">model</span> <span class="n">to</span> <span class="n">a</span> <span class="n">regular</span> <span class="n">grid</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Convert a UBC 2D model to a regular grid.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -204,7 +204,7 @@ This value could be rDUMMY for some arrays (such as 3D) where no A-Spacing is ex
 <li><strong>arg6</strong> (<em>float</em>) &#8211; Top-left corner Z</li>
 <li><strong>arg7</strong> (<em>float</em>) &#8211; Output grid cell size in X</li>
 <li><strong>arg8</strong> (<em>float</em>) &#8211; Output grid cell size in Z</li>
-<li><strong>arg9</strong> (<em>int</em>) &#8211; Output reciprocal of values (0:No, 1:Yes) for resistivity?</li>
+<li><strong>arg9</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Output reciprocal of values (0:No, 1:Yes) for resistivity?</li>
 </ul>
 </td>
 </tr>
@@ -220,19 +220,19 @@ This value could be rDUMMY for some arrays (such as 3D) where no A-Spacing is ex
 <p><span class="versionmodified">New in version 7.1.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Uses</span> <span class="n">TIN</span> <span class="n">gridding</span> <span class="n">to</span> <span class="n">sample</span> <span class="n">the</span> <span class="n">model</span><span class="o">.</span>
-<span class="n">By</span> <span class="n">setting</span> <span class="n">the</span> <span class="n">final</span> <span class="n">value</span><span class="p">,</span> <span class="n">a</span> <span class="n">resistivity</span> <span class="n">grid</span> <span class="n">can</span> <span class="n">be</span>
-<span class="n">created</span> <span class="kn">from</span> <span class="nn">conductivity</span> <span class="n">data</span><span class="o">.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+Uses TIN gridding to sample the model.
+By setting the final value, a resistivity grid can be
+created from conductivity data.
+</pre>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXIP.create">
 <em class="property">static </em><code class="descname">create</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; GXIP:<a class="headerlink" href="#geosoft.gxapi.GXIP.create" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Create</span> <span class="n">IP</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Create IP.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -251,16 +251,16 @@ This value could be rDUMMY for some arrays (such as 3D) where no A-Spacing is ex
 <dl class="method">
 <dt id="geosoft.gxapi.GXIP.create_default_job">
 <code class="descname">create_default_job</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(int)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIP.create_default_job" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Create</span> <span class="n">a</span> <span class="n">default</span> <span class="n">job</span> <span class="kn">from</span> <span class="nn">scratch.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Create a default job from scratch.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<em>str</em>) &#8211; File name of the INI file to create (forces correct suffix)</li>
-<li><strong>arg2</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#ip-plot"><span class="std std-ref">IP_PLOT constants</span></a></li>
+<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#ip-plot"><span class="std std-ref">IP_PLOT constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -278,11 +278,53 @@ This value could be rDUMMY for some arrays (such as 3D) where no A-Spacing is ex
 </dd></dl>
 
 <dl class="method">
+<dt id="geosoft.gxapi.GXIP.export_data_to_ubc_3d">
+<code class="descname">export_data_to_ubc_3d</code><span class="sig-paren">(</span><em>(GXDB)arg1</em>, <em>(GXLST)arg2</em>, <em>(int)arg3</em>, <em>(int)arg4</em>, <em>(str)arg5</em>, <em>(str)arg6</em>, <em>(str)arg7</em>, <em>(int)arg8</em>, <em>(str)arg9</em>, <em>(str)arg10</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIP.export_data_to_ubc_3d" title="Permalink to this definition">¶</a></dt>
+<dd><pre class="literal-block">
+Export of IP data to UBC 3D IP format.
+</pre>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arg1</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXDB</span></code></a>) &#8211; DB object</li>
+<li><strong>arg2</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXLST</span></code></a>) &#8211; Lines to export (Name, Symbol)</li>
+<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Locations only (0: No, 1: Yes)?</li>
+<li><strong>arg4</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Include Z values (0: No, 1: Yes)?</li>
+<li><strong>arg5</strong> (<em>str</em>) &#8211; IP channel name (can be &#8220;&#8221; if exporting locations only)</li>
+<li><strong>arg6</strong> (<em>str</em>) &#8211; Error channel name (can be &#8220;&#8221; if exporting locations only)</li>
+<li><strong>arg7</strong> (<em>str</em>) &#8211; Mask channel name (can be &#8220;&#8221;)</li>
+<li><strong>arg8</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; IPTYPE (1: Vp, 2: Chargeability)</li>
+<li><strong>arg9</strong> (<em>str</em>) &#8211; Comments (can be &#8220;&#8221;)</li>
+<li><strong>arg10</strong> (<em>str</em>) &#8211; Output OBS file name</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.2.</span></p>
+</div>
+<p><strong>Note:</strong></p>
+<pre class="literal-block">
+Outputs a \ `*`\ .DAT&quot; file of the survey data for use in the
+UBC IP 3D inversion programmes.
+</pre>
+</dd></dl>
+
+<dl class="method">
 <dt id="geosoft.gxapi.GXIP.export_i2_x">
 <code class="descname">export_i2_x</code><span class="sig-paren">(</span><em>(GXDB)arg1</em>, <em>(str)arg2</em>, <em>(str)arg3</em>, <em>(str)arg4</em>, <em>(str)arg5</em>, <em>(str)arg6</em>, <em>(str)arg7</em>, <em>(str)arg8</em>, <em>(str)arg9</em>, <em>(str)arg10</em>, <em>(str)arg11</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIP.export_i2_x" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Export</span> <span class="n">line</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">to</span> <span class="n">an</span> <span class="n">Interpex</span> <span class="n">RESIX</span> <span class="n">I2X</span> <span class="nb">format</span> <span class="n">file</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Export line(s) to an Interpex RESIX I2X format file.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -314,17 +356,17 @@ This value could be rDUMMY for some arrays (such as 3D) where no A-Spacing is ex
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Exports</span> <span class="n">a</span> <span class="n">line</span> <span class="n">to</span> <span class="n">an</span> <span class="s2">&quot;.I2X&quot;</span> <span class="n">file</span><span class="o">.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+Exports a line to an &quot;.I2X&quot; file.
+</pre>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXIP.export_ipdata">
 <code class="descname">export_ipdata</code><span class="sig-paren">(</span><em>(GXDB)arg1</em>, <em>(str)arg2</em>, <em>(str)arg3</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIP.export_ipdata" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Exports</span> <span class="n">data</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">Geosoft</span> <span class="n">IPDATA</span> <span class="nb">format</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Exports data in the Geosoft IPDATA format.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -383,9 +425,9 @@ This value could be rDUMMY for some arrays (such as 3D) where no A-Spacing is ex
 <dl class="method">
 <dt id="geosoft.gxapi.GXIP.export_ipred">
 <code class="descname">export_ipred</code><span class="sig-paren">(</span><em>(GXDB)arg1</em>, <em>(str)arg2</em>, <em>(str)arg3</em>, <em>(str)arg4</em>, <em>(int)arg5</em>, <em>(str)arg6</em>, <em>(float)arg7</em>, <em>(float)arg8</em>, <em>(int)arg9</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIP.export_ipred" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Exports</span> <span class="n">pseudo</span><span class="o">-</span><span class="n">section</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">Geosoft</span> <span class="n">IPRED</span> <span class="nb">format</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Exports pseudo-section in the Geosoft IPRED format.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -395,11 +437,11 @@ This value could be rDUMMY for some arrays (such as 3D) where no A-Spacing is ex
 <li><strong>arg2</strong> (<em>str</em>) &#8211; Title for first line of file</li>
 <li><strong>arg3</strong> (<em>str</em>) &#8211; Channel to process</li>
 <li><strong>arg4</strong> (<em>str</em>) &#8211; File suffix (type)</li>
-<li><strong>arg5</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#ip-filter"><span class="std std-ref">IP_FILTER constants</span></a></li>
+<li><strong>arg5</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#ip-filter"><span class="std std-ref">IP_FILTER constants</span></a></li>
 <li><strong>arg6</strong> (<em>str</em>) &#8211; The Fraser Filter weights</li>
 <li><strong>arg7</strong> (<em>float</em>) &#8211; First Station position (rDUMMY for default)</li>
 <li><strong>arg8</strong> (<em>float</em>) &#8211; Last Station position  (rDUMMY for default)</li>
-<li><strong>arg9</strong> (<em>int</em>) &#8211; Maximum n spacing</li>
+<li><strong>arg9</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Maximum n spacing</li>
 </ul>
 </td>
 </tr>
@@ -415,19 +457,19 @@ This value could be rDUMMY for some arrays (such as 3D) where no A-Spacing is ex
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">Fraser</span> <span class="n">Filter</span> <span class="n">weights</span> <span class="n">apply</span> <span class="n">to</span> <span class="n">each</span> <span class="n">N</span> <span class="n">expansion</span> <span class="n">above</span><span class="p">,</span>
-<span class="ow">and</span> <span class="n">are</span> <span class="n">listed</span> <span class="k">as</span> <span class="n">w1</span><span class="p">,</span><span class="n">w2</span><span class="p">,</span><span class="n">w3</span><span class="p">,</span><span class="o">...</span>   <span class="n">Unspecified</span> <span class="n">values</span> <span class="n">beyond</span>
-<span class="n">the</span> <span class="nb">list</span><span class="s1">&#39;s end are set to 1.0.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+The Fraser Filter weights apply to each N expansion above,
+and are listed as w1,w2,w3,...   Unspecified values beyond
+the list's end are set to 1.0.
+</pre>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXIP.export_ipred_dir">
 <code class="descname">export_ipred_dir</code><span class="sig-paren">(</span><em>(GXDB)arg1</em>, <em>(str)arg2</em>, <em>(str)arg3</em>, <em>(str)arg4</em>, <em>(int)arg5</em>, <em>(str)arg6</em>, <em>(float)arg7</em>, <em>(float)arg8</em>, <em>(int)arg9</em>, <em>(str)arg10</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIP.export_ipred_dir" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Exports</span> <span class="n">pseudo</span><span class="o">-</span><span class="n">section</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">Geosoft</span> <span class="n">IPRED</span> <span class="nb">format</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">specified</span> <span class="n">directory</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Exports pseudo-section in the Geosoft IPRED format in the specified directory
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -437,11 +479,11 @@ This value could be rDUMMY for some arrays (such as 3D) where no A-Spacing is ex
 <li><strong>arg2</strong> (<em>str</em>) &#8211; Title for first line of file</li>
 <li><strong>arg3</strong> (<em>str</em>) &#8211; Channel to process</li>
 <li><strong>arg4</strong> (<em>str</em>) &#8211; File suffix (type)</li>
-<li><strong>arg5</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#ip-filter"><span class="std std-ref">IP_FILTER constants</span></a></li>
+<li><strong>arg5</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#ip-filter"><span class="std std-ref">IP_FILTER constants</span></a></li>
 <li><strong>arg6</strong> (<em>str</em>) &#8211; The Fraser Filter weights</li>
 <li><strong>arg7</strong> (<em>float</em>) &#8211; First Station position (rDUMMY for default)</li>
 <li><strong>arg8</strong> (<em>float</em>) &#8211; Last Station position  (rDUMMY for default)</li>
-<li><strong>arg9</strong> (<em>int</em>) &#8211; Maximum n spacing</li>
+<li><strong>arg9</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Maximum n spacing</li>
 <li><strong>arg10</strong> (<em>str</em>) &#8211; Directory to export to</li>
 </ul>
 </td>
@@ -458,19 +500,19 @@ This value could be rDUMMY for some arrays (such as 3D) where no A-Spacing is ex
 <p><span class="versionmodified">New in version 6.4.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">Fraser</span> <span class="n">Filter</span> <span class="n">weights</span> <span class="n">apply</span> <span class="n">to</span> <span class="n">each</span> <span class="n">N</span> <span class="n">expansion</span> <span class="n">above</span><span class="p">,</span>
-<span class="ow">and</span> <span class="n">are</span> <span class="n">listed</span> <span class="k">as</span> <span class="n">w1</span><span class="p">,</span><span class="n">w2</span><span class="p">,</span><span class="n">w3</span><span class="p">,</span><span class="o">...</span>   <span class="n">Unspecified</span> <span class="n">values</span> <span class="n">beyond</span>
-<span class="n">the</span> <span class="nb">list</span><span class="s1">&#39;s end are set to 1.0.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+The Fraser Filter weights apply to each N expansion above,
+and are listed as w1,w2,w3,...   Unspecified values beyond
+the list's end are set to 1.0.
+</pre>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXIP.export_line_ipdata">
 <code class="descname">export_line_ipdata</code><span class="sig-paren">(</span><em>(GXDB)arg1</em>, <em>(str)arg2</em>, <em>(str)arg3</em>, <em>(str)arg4</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIP.export_line_ipdata" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Exports</span> <span class="n">one</span> <span class="n">line</span> <span class="n">of</span> <span class="n">data</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">Geosoft</span> <span class="n">IPDATA</span> <span class="nb">format</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Exports one line of data in the Geosoft IPDATA format.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -499,9 +541,9 @@ This value could be rDUMMY for some arrays (such as 3D) where no A-Spacing is ex
 <dl class="method">
 <dt id="geosoft.gxapi.GXIP.export_sgdf">
 <code class="descname">export_sgdf</code><span class="sig-paren">(</span><em>(GXDB)arg1</em>, <em>(str)arg2</em>, <em>(str)arg3</em>, <em>(str)arg4</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIP.export_sgdf" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Exports</span> <span class="n">data</span> <span class="n">to</span> <span class="n">a</span> <span class="n">Scintrex</span> <span class="n">Geophysical</span> <span class="n">Data</span> <span class="n">Format</span> <span class="n">file</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Exports data to a Scintrex Geophysical Data Format file.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -530,9 +572,9 @@ This value could be rDUMMY for some arrays (such as 3D) where no A-Spacing is ex
 <dl class="method">
 <dt id="geosoft.gxapi.GXIP.export_ubc_res3">
 <code class="descname">export_ubc_res3</code><span class="sig-paren">(</span><em>(GXDB)arg1</em>, <em>(str)arg2</em>, <em>(str)arg3</em>, <em>(str)arg4</em>, <em>(str)arg5</em>, <em>(str)arg6</em>, <em>(str)arg7</em>, <em>(float)arg8</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIP.export_ubc_res3" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Export</span> <span class="n">of</span> <span class="n">IP</span> <span class="n">Resistivity</span> <span class="n">data</span> <span class="n">to</span> <span class="n">UBC</span> <span class="nb">format</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Export of IP Resistivity data to UBC format.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -562,7 +604,7 @@ This value could be rDUMMY for some arrays (such as 3D) where no A-Spacing is ex
 </div>
 <p><strong>Note:</strong></p>
 <pre class="literal-block">
-Outputs a <cite>*</cite>.DAT&quot; file of the survey data for use in the
+Outputs a \ `*`\ .DAT&quot; file of the survey data for use in the
 UBC 2D inversion programme DCINV2D.
 Voltage and current channels should be in units such that
 V/I gives volts/amp (or mV/mA).
@@ -572,17 +614,17 @@ V/I gives volts/amp (or mV/mA).
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXIP.export_ubc_res_control">
 <em class="property">static </em><code class="descname">export_ubc_res_control</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(int)arg2</em>, <em>(int)arg3</em>, <em>(float)arg4</em>, <em>(str)arg5</em>, <em>(str)arg6</em>, <em>(str)arg7</em>, <em>(str)arg8</em>, <em>(float)arg9</em>, <em>(str)arg10</em>, <em>(str)arg11</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIP.export_ubc_res_control" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Export</span> <span class="n">a</span> <span class="n">control</span> <span class="n">file</span> <span class="k">for</span> <span class="n">using</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">UBC</span> <span class="n">DCINV2D</span> <span class="n">programme</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Export a control file for using in the UBC DCINV2D programme.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<em>str</em>) &#8211; Output control file name</li>
-<li><strong>arg2</strong> (<em>int</em>) &#8211; niter</li>
-<li><strong>arg3</strong> (<em>int</em>) &#8211; irest</li>
+<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; niter</li>
+<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; irest</li>
 <li><strong>arg4</strong> (<em>float</em>) &#8211; chifact</li>
 <li><strong>arg5</strong> (<em>str</em>) &#8211; RES obs file</li>
 <li><strong>arg6</strong> (<em>str</em>) &#8211; mesh file</li>
@@ -606,37 +648,37 @@ V/I gives volts/amp (or mV/mA).
 <p><span class="versionmodified">New in version 6.4.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">UBC</span> <span class="n">Version</span> <span class="mf">3.</span>
-<span class="n">Outputs</span> <span class="n">a</span> <span class="n">control</span> <span class="n">file</span> <span class="k">for</span> <span class="n">use</span> <span class="ow">in</span> <span class="n">the</span>
-<span class="n">UBC</span> <span class="mi">2</span><span class="n">D</span> <span class="n">resistivity</span> <span class="n">inversion</span> <span class="n">programme</span> <span class="n">DCINV2D</span><span class="o">.</span>
-<span class="n">Superceded</span> <span class="n">by</span> <span class="n">ExportUBCResControl2_IP</span><span class="p">,</span> <span class="n">which</span> <span class="n">has</span> <span class="n">a</span> <span class="n">selection</span> <span class="k">for</span> <span class="n">output</span> <span class="n">version</span> <span class="n">number</span><span class="o">.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+UBC Version 3.
+Outputs a control file for use in the
+UBC 2D resistivity inversion programme DCINV2D.
+Superceded by ExportUBCResControl2_IP, which has a selection for output version number.
+</pre>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXIP.export_ubc_res_control_v5">
 <em class="property">static </em><code class="descname">export_ubc_res_control_v5</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(int)arg2</em>, <em>(float)arg3</em>, <em>(str)arg4</em>, <em>(str)arg5</em>, <em>(int)arg6</em>, <em>(str)arg7</em>, <em>(int)arg8</em>, <em>(str)arg9</em>, <em>(int)arg10</em>, <em>(str)arg11</em>, <em>(int)arg12</em>, <em>(str)arg13</em>, <em>(str)arg14</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIP.export_ubc_res_control_v5" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Export</span> <span class="n">a</span> <span class="n">control</span> <span class="n">file</span> <span class="k">for</span> <span class="n">using</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">UBC</span> <span class="n">DCINV2D</span> <span class="n">programme</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Export a control file for using in the UBC DCINV2D programme.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<em>str</em>) &#8211; Output control file name</li>
-<li><strong>arg2</strong> (<em>int</em>) &#8211; niter</li>
+<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; niter</li>
 <li><strong>arg3</strong> (<em>float</em>) &#8211; chifact</li>
 <li><strong>arg4</strong> (<em>str</em>) &#8211; RES obs file</li>
 <li><strong>arg5</strong> (<em>str</em>) &#8211; topography file (required)</li>
-<li><strong>arg6</strong> (<em>int</em>) &#8211; Mesh type <a class="reference internal" href="#ip-ubc-control"><span class="std std-ref">IP_UBC_CONTROL constants</span></a> FILE, VALUE or DEFAULT</li>
+<li><strong>arg6</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Mesh type <a class="reference internal" href="#ip-ubc-control"><span class="std std-ref">IP_UBC_CONTROL constants</span></a> FILE, VALUE or DEFAULT</li>
 <li><strong>arg7</strong> (<em>str</em>) &#8211; mesh file (can be &#8220;&#8221;) or value</li>
-<li><strong>arg8</strong> (<em>int</em>) &#8211; Initial model type <a class="reference internal" href="#ip-ubc-control"><span class="std std-ref">IP_UBC_CONTROL constants</span></a> FILE, VALUE or DEFAULT</li>
+<li><strong>arg8</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Initial model type <a class="reference internal" href="#ip-ubc-control"><span class="std std-ref">IP_UBC_CONTROL constants</span></a> FILE, VALUE or DEFAULT</li>
 <li><strong>arg9</strong> (<em>str</em>) &#8211; initial model file (can be &#8220;&#8221;) or value</li>
-<li><strong>arg10</strong> (<em>int</em>) &#8211; Reference model type <a class="reference internal" href="#ip-ubc-control"><span class="std std-ref">IP_UBC_CONTROL constants</span></a> FILE, VALUE or DEFAULT</li>
+<li><strong>arg10</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Reference model type <a class="reference internal" href="#ip-ubc-control"><span class="std std-ref">IP_UBC_CONTROL constants</span></a> FILE, VALUE or DEFAULT</li>
 <li><strong>arg11</strong> (<em>str</em>) &#8211; reference model file (can be &#8220;&#8221;) or value(</li>
-<li><strong>arg12</strong> (<em>int</em>) &#8211; Alphas type <a class="reference internal" href="#ip-ubc-control"><span class="std std-ref">IP_UBC_CONTROL constants</span></a> FILE, VALUE, LENGTH or DEFAULT</li>
+<li><strong>arg12</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Alphas type <a class="reference internal" href="#ip-ubc-control"><span class="std std-ref">IP_UBC_CONTROL constants</span></a> FILE, VALUE, LENGTH or DEFAULT</li>
 <li><strong>arg13</strong> (<em>str</em>) &#8211; alphas  file (can be &#8220;&#8221;), value or length</li>
 <li><strong>arg14</strong> (<em>str</em>) &#8211; weights file</li>
 </ul>
@@ -654,19 +696,19 @@ V/I gives volts/amp (or mV/mA).
 <p><span class="versionmodified">New in version 8.1.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">UBC</span> <span class="n">Version</span> <span class="mi">5</span>
-                       <span class="n">Outputs</span> <span class="n">a</span> <span class="n">control</span> <span class="n">file</span> <span class="k">for</span> <span class="n">use</span> <span class="ow">in</span> <span class="n">the</span>
-<span class="n">UBC</span> <span class="mi">2</span><span class="n">D</span> <span class="n">resistivity</span> <span class="n">inversion</span> <span class="n">programme</span> <span class="n">DCINV2D</span><span class="o">.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+UBC Version 5
+                       Outputs a control file for use in the
+UBC 2D resistivity inversion programme DCINV2D.
+</pre>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXIP.export_ubcip3">
 <code class="descname">export_ubcip3</code><span class="sig-paren">(</span><em>(GXDB)arg1</em>, <em>(str)arg2</em>, <em>(str)arg3</em>, <em>(str)arg4</em>, <em>(str)arg5</em>, <em>(str)arg6</em>, <em>(float)arg7</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIP.export_ubcip3" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Export</span> <span class="n">of</span> <span class="n">IP</span> <span class="n">data</span> <span class="n">to</span> <span class="n">UBC</span> <span class="nb">format</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Export of IP data to UBC format.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -695,7 +737,7 @@ V/I gives volts/amp (or mV/mA).
 </div>
 <p><strong>Note:</strong></p>
 <pre class="literal-block">
-Outputs a <cite>*</cite>.DAT&quot; file of the survey data for use in the
+Outputs a \ `*`\ .DAT&quot; file of the survey data for use in the
 UBC 2D inversion programme IPINV2D.
 Include error channel output and version-specific formatting.
 </pre>
@@ -704,17 +746,17 @@ Include error channel output and version-specific formatting.
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXIP.export_ubcip_control">
 <em class="property">static </em><code class="descname">export_ubcip_control</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(int)arg2</em>, <em>(int)arg3</em>, <em>(float)arg4</em>, <em>(str)arg5</em>, <em>(str)arg6</em>, <em>(str)arg7</em>, <em>(str)arg8</em>, <em>(str)arg9</em>, <em>(str)arg10</em>, <em>(str)arg11</em>, <em>(str)arg12</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIP.export_ubcip_control" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Export</span> <span class="n">a</span> <span class="n">control</span> <span class="n">file</span> <span class="k">for</span> <span class="n">using</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">UBC</span> <span class="n">IPINV2D</span> <span class="n">programme</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Export a control file for using in the UBC IPINV2D programme.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<em>str</em>) &#8211; Output control file name</li>
-<li><strong>arg2</strong> (<em>int</em>) &#8211; niter</li>
-<li><strong>arg3</strong> (<em>int</em>) &#8211; irest</li>
+<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; niter</li>
+<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; irest</li>
 <li><strong>arg4</strong> (<em>float</em>) &#8211; chifact</li>
 <li><strong>arg5</strong> (<em>str</em>) &#8211; IP obs file</li>
 <li><strong>arg6</strong> (<em>str</em>) &#8211; conductivity file</li>
@@ -739,38 +781,38 @@ Include error channel output and version-specific formatting.
 <p><span class="versionmodified">New in version 6.4.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">UBC</span> <span class="n">Version</span> <span class="mi">3</span> <span class="n">Control</span> <span class="n">file</span><span class="o">.</span>
-<span class="n">Outputs</span> <span class="n">a</span> <span class="n">control</span> <span class="n">file</span> <span class="k">for</span> <span class="n">use</span> <span class="ow">in</span> <span class="n">the</span>
-<span class="n">UBC</span> <span class="mi">2</span><span class="n">D</span> <span class="n">IP</span> <span class="n">inversion</span> <span class="n">programme</span> <span class="n">IPINV2D</span><span class="o">.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+UBC Version 3 Control file.
+Outputs a control file for use in the
+UBC 2D IP inversion programme IPINV2D.
+</pre>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXIP.export_ubcip_control_v5">
 <em class="property">static </em><code class="descname">export_ubcip_control_v5</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(int)arg2</em>, <em>(float)arg3</em>, <em>(str)arg4</em>, <em>(str)arg5</em>, <em>(int)arg6</em>, <em>(str)arg7</em>, <em>(int)arg8</em>, <em>(str)arg9</em>, <em>(int)arg10</em>, <em>(str)arg11</em>, <em>(int)arg12</em>, <em>(str)arg13</em>, <em>(int)arg14</em>, <em>(str)arg15</em>, <em>(str)arg16</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIP.export_ubcip_control_v5" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Export</span> <span class="n">a</span> <span class="n">control</span> <span class="n">file</span> <span class="k">for</span> <span class="n">using</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">UBC</span> <span class="n">IPINV2D</span> <span class="n">programme</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Export a control file for using in the UBC IPINV2D programme.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<em>str</em>) &#8211; Output control file name</li>
-<li><strong>arg2</strong> (<em>int</em>) &#8211; niter</li>
+<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; niter</li>
 <li><strong>arg3</strong> (<em>float</em>) &#8211; chifact</li>
 <li><strong>arg4</strong> (<em>str</em>) &#8211; RES obs file</li>
 <li><strong>arg5</strong> (<em>str</em>) &#8211; topography file (required)</li>
-<li><strong>arg6</strong> (<em>int</em>) &#8211; Conductivity type <a class="reference internal" href="#ip-ubc-control"><span class="std std-ref">IP_UBC_CONTROL constants</span></a> FILE or VALUE</li>
+<li><strong>arg6</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Conductivity type <a class="reference internal" href="#ip-ubc-control"><span class="std std-ref">IP_UBC_CONTROL constants</span></a> FILE or VALUE</li>
 <li><strong>arg7</strong> (<em>str</em>) &#8211; Conductivity file (can be &#8220;&#8221;) or value</li>
-<li><strong>arg8</strong> (<em>int</em>) &#8211; Mesh type <a class="reference internal" href="#ip-ubc-control"><span class="std std-ref">IP_UBC_CONTROL constants</span></a> FILE, VALUE or DEFAULT</li>
+<li><strong>arg8</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Mesh type <a class="reference internal" href="#ip-ubc-control"><span class="std std-ref">IP_UBC_CONTROL constants</span></a> FILE, VALUE or DEFAULT</li>
 <li><strong>arg9</strong> (<em>str</em>) &#8211; mesh file (can be &#8220;&#8221;) or value</li>
-<li><strong>arg10</strong> (<em>int</em>) &#8211; Initial model type <a class="reference internal" href="#ip-ubc-control"><span class="std std-ref">IP_UBC_CONTROL constants</span></a> FILE, VALUE or DEFAULT</li>
+<li><strong>arg10</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Initial model type <a class="reference internal" href="#ip-ubc-control"><span class="std std-ref">IP_UBC_CONTROL constants</span></a> FILE, VALUE or DEFAULT</li>
 <li><strong>arg11</strong> (<em>str</em>) &#8211; initial model file (can be &#8220;&#8221;) or value</li>
-<li><strong>arg12</strong> (<em>int</em>) &#8211; Reference model type <a class="reference internal" href="#ip-ubc-control"><span class="std std-ref">IP_UBC_CONTROL constants</span></a> FILE, VALUE or DEFAULT</li>
+<li><strong>arg12</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Reference model type <a class="reference internal" href="#ip-ubc-control"><span class="std std-ref">IP_UBC_CONTROL constants</span></a> FILE, VALUE or DEFAULT</li>
 <li><strong>arg13</strong> (<em>str</em>) &#8211; reference model file (can be &#8220;&#8221;) or value(</li>
-<li><strong>arg14</strong> (<em>int</em>) &#8211; Alphas type <a class="reference internal" href="#ip-ubc-control"><span class="std std-ref">IP_UBC_CONTROL constants</span></a> FILE, VALUE, LENGTH or DEFAULT</li>
+<li><strong>arg14</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Alphas type <a class="reference internal" href="#ip-ubc-control"><span class="std std-ref">IP_UBC_CONTROL constants</span></a> FILE, VALUE, LENGTH or DEFAULT</li>
 <li><strong>arg15</strong> (<em>str</em>) &#8211; alphas  file (can be &#8220;&#8221;), value or length</li>
 <li><strong>arg16</strong> (<em>str</em>) &#8211; weights file</li>
 </ul>
@@ -788,17 +830,17 @@ Include error channel output and version-specific formatting.
 <p><span class="versionmodified">New in version 8.1.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">UBC</span> <span class="n">Version</span> <span class="mi">5</span> <span class="n">Control</span> <span class="n">file</span><span class="o">.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+UBC Version 5 Control file.
+</pre>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXIP.get_chan_domain">
 <code class="descname">get_chan_domain</code><span class="sig-paren">(</span><em>(GXDB)arg1</em>, <em>(str)arg2</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXIP.get_chan_domain" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span>Is this channel registered as a Time or Frequency domain channel?
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Is this channel registered as a Time or Frequency domain channel?
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -812,7 +854,7 @@ Include error channel output and version-specific formatting.
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><a class="reference internal" href="#ip-domain"><span class="std std-ref">IP_DOMAIN constants</span></a></p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></p>
 </td>
 </tr>
 </tbody>
@@ -825,9 +867,9 @@ Include error channel output and version-specific formatting.
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXIP.get_chan_label">
 <em class="property">static </em><code class="descname">get_chan_label</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(str_ref)arg2</em>, <em>(str_ref)arg3</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIP.get_chan_label" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">the</span> <span class="n">default</span> <span class="n">label</span> <span class="ow">and</span> <span class="n">units</span> <span class="k">for</span> <span class="n">a</span> <span class="n">given</span> <span class="n">channel</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Get the default label and units for a given channel.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -855,9 +897,9 @@ Include error channel output and version-specific formatting.
 <dl class="method">
 <dt id="geosoft.gxapi.GXIP.get_channel_info">
 <code class="descname">get_channel_info</code><span class="sig-paren">(</span><em>(GXDB)arg1</em>, <em>(str)arg2</em>, <em>(int_ref)arg3</em>, <em>(float_ref)arg4</em>, <em>(int_ref)arg5</em>, <em>(GXVV)arg6</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIP.get_channel_info" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Time</span> <span class="n">Windows</span> <span class="ow">or</span> <span class="n">Frequency</span> <span class="n">info</span> <span class="kn">from</span> <span class="nn">a</span> <span class="n">channel</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Time Windows or Frequency info from a channel.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -888,9 +930,9 @@ Include error channel output and version-specific formatting.
 <dl class="method">
 <dt id="geosoft.gxapi.GXIP.get_electrode_locations_and_mask_values">
 <code class="descname">get_electrode_locations_and_mask_values</code><span class="sig-paren">(</span><em>(GXDB)arg1</em>, <em>(str)arg2</em>, <em>(int)arg3</em>, <em>(GXVV)arg4</em>, <em>(GXVV)arg5</em>, <em>(GXVV)arg6</em>, <em>(GXVV)arg7</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIP.get_electrode_locations_and_mask_values" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">unique</span> <span class="n">electrodes</span><span class="p">,</span> <span class="n">along</span> <span class="k">with</span> <span class="n">current</span> <span class="n">mask</span> <span class="n">info</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Get unique electrodes, along with current mask info.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -898,11 +940,11 @@ Include error channel output and version-specific formatting.
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXDB</span></code></a>) &#8211; DB object</li>
 <li><strong>arg2</strong> (<em>str</em>) &#8211; Line name (&#8220;&#8221; for all selected lines)</li>
-<li><strong>arg3</strong> (<em>int</em>) &#8211; Electrode type. 0:Tx, 1:Rx</li>
+<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Electrode type. 0:Tx, 1:Rx</li>
 <li><strong>arg4</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; X locations</li>
 <li><strong>arg5</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Y locations</li>
-<li><strong>arg6</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Off-time QC channel values (&#8220;QC&#8221;)</li>
-<li><strong>arg7</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; On-time QC channel values (&#8220;QC_RES&#8221;)</li>
+<li><strong>arg6</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; IP QC channel values (&#8220;QC&#8221; or &#8220;QC_IP&#8221;)</li>
+<li><strong>arg7</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Resistivity QC channel values (&#8220;QC_RES&#8221;)</li>
 </ul>
 </td>
 </tr>
@@ -918,18 +960,58 @@ Include error channel output and version-specific formatting.
 <p><span class="versionmodified">New in version 9.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">mask</span> <span class="n">values</span> <span class="n">are</span> <span class="n">determined</span> <span class="kn">from</span> <span class="nn">the</span> <span class="n">first</span> <span class="n">row</span> <span class="n">where</span> <span class="n">a</span> <span class="n">given</span> <span class="n">electrode</span> <span class="ow">is</span> <span class="n">found</span><span class="o">.</span>
-<span class="n">Values</span> <span class="n">returned</span> <span class="k">for</span> <span class="nb">all</span> <span class="n">currently</span> <span class="n">selected</span> <span class="n">lines</span><span class="o">.</span>
-</pre></div>
+<pre class="literal-block">
+The mask values are determined from the first row where a given electrode is found.
+Values returned for all currently selected lines.
+</pre>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXIP.get_electrode_locations_and_mask_values2">
+<code class="descname">get_electrode_locations_and_mask_values2</code><span class="sig-paren">(</span><em>(GXDB)arg1</em>, <em>(str)arg2</em>, <em>(int)arg3</em>, <em>(GXVV)arg4</em>, <em>(GXVV)arg5</em>, <em>(GXVV)arg6</em>, <em>(GXVV)arg7</em>, <em>(GXVV)arg8</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIP.get_electrode_locations_and_mask_values2" title="Permalink to this definition">¶</a></dt>
+<dd><pre class="literal-block">
+Get unique electrodes, along with current mask info.
+</pre>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arg1</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXDB</span></code></a>) &#8211; DB object</li>
+<li><strong>arg2</strong> (<em>str</em>) &#8211; Line name (&#8220;&#8221; for all selected lines)</li>
+<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Electrode type. 0:Tx, 1:Rx</li>
+<li><strong>arg4</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; X locations</li>
+<li><strong>arg5</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Y locations</li>
+<li><strong>arg6</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; IP QC channel values (&#8220;QC&#8221; or &#8220;QC_IP&#8221;)</li>
+<li><strong>arg7</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Resistivity QC channel values (&#8220;QC_RES&#8221;)</li>
+<li><strong>arg8</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Line symbol values (GS_INT)</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.2.0.</span></p>
 </div>
+<p><strong>Note:</strong></p>
+<pre class="literal-block">
+The mask values are determined from the first row where a given electrode is found.
+Values returned for all currently selected lines.
+</pre>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXIP.get_n_value_lst">
 <code class="descname">get_n_value_lst</code><span class="sig-paren">(</span><em>(GXDB)arg1</em>, <em>(GXLST)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIP.get_n_value_lst" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Fill</span> <span class="n">a</span> <span class="nb">list</span> <span class="k">with</span> <span class="n">unique</span> <span class="n">N</span> <span class="n">values</span> <span class="ow">in</span> <span class="n">selected</span> <span class="n">lines</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Fill a list with unique N values in selected lines.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -953,12 +1035,47 @@ Include error channel output and version-specific formatting.
 </div>
 </dd></dl>
 
+<dl class="staticmethod">
+<dt id="geosoft.gxapi.GXIP.get_qc_channel">
+<em class="property">static </em><code class="descname">get_qc_channel</code><span class="sig-paren">(</span><em>(GXDB)arg1</em>, <em>(int)arg2</em>, <em>(str_ref)arg3</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXIP.get_qc_channel" title="Permalink to this definition">¶</a></dt>
+<dd><pre class="literal-block">
+Get the QC channel handle, if it exists.
+</pre>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arg1</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXDB</span></code></a>) &#8211; DB object</li>
+<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; QC channel type.  <a class="reference internal" href="#ip-qctype"><span class="std std-ref">IP_QCTYPE constants</span></a></li>
+<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; string to place name into</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Channel handle,  <a class="reference internal" href="GXDB.html#nullsymb"><span class="std std-ref">NULLSYMB constant</span></a> if not found</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.2.0.</span></p>
+</div>
+<p><strong>Note:</strong></p>
+<pre class="literal-block">
+For IP, looks for &quot;QC_IP&quot;, then &quot;QC_OffTime&quot;, then &quot;QC&quot;.
+For Resistivity, looks for &quot;QC_Res&quot;, then &quot;QC_OnTime&quot; (case insensitive).
+</pre>
+</dd></dl>
+
 <dl class="method">
 <dt id="geosoft.gxapi.GXIP.get_topo_line">
 <code class="descname">get_topo_line</code><span class="sig-paren">(</span><em>(GXDB)arg1</em>, <em>(str)arg2</em>, <em>(float)arg3</em>, <em>(float)arg4</em>, <em>(float)arg5</em>, <em>(GXVV)arg6</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIP.get_topo_line" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">topography</span> <span class="n">values</span> <span class="k">for</span> <span class="n">a</span> <span class="n">line</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Get topography values for a line.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -985,26 +1102,26 @@ Include error channel output and version-specific formatting.
 <p><span class="versionmodified">New in version 6.4.2.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">If</span> <span class="n">topography</span> <span class="n">info</span> <span class="ow">is</span> <span class="n">available</span><span class="p">,</span> <span class="n">returns</span> <span class="n">values</span> <span class="n">calculated</span> <span class="k">for</span>
-<span class="n">the</span> <span class="nb">input</span> <span class="n">line</span><span class="o">.</span> <span class="n">If</span> <span class="n">no</span> <span class="n">topography</span> <span class="ow">is</span> <span class="n">available</span><span class="p">,</span> <span class="n">returned</span> <span class="n">values</span>
-<span class="n">will</span> <span class="n">be</span> <span class="n">dummies</span><span class="o">.</span> <span class="n">Values</span> <span class="n">between</span> <span class="n">actual</span> <span class="n">data</span> <span class="n">are</span> <span class="n">interpolated</span> <span class="n">using</span>
-<span class="n">the</span> <span class="n">Akima</span> <span class="n">spline</span><span class="o">.</span> <span class="n">Ends</span> <span class="n">are</span> <span class="n">extrapolated</span> <span class="n">using</span> <span class="n">the</span> <span class="n">end</span> <span class="n">data</span> <span class="n">points</span><span class="o">.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+If topography info is available, returns values calculated for
+the input line. If no topography is available, returned values
+will be dummies. Values between actual data are interpolated using
+the Akima spline. Ends are extrapolated using the end data points.
+</pre>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXIP.import_dump">
 <code class="descname">import_dump</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(GXDB)arg2</em>, <em>(str)arg3</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIP.import_dump" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Imports</span> <span class="n">data</span> <span class="kn">from</span> <span class="nn">an</span> <span class="n">IP</span> <span class="n">instrument</span> <span class="n">dump</span> <span class="n">file</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Imports data from an IP instrument dump file.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#ip-sys"><span class="std std-ref">IP_SYS constants</span></a></li>
+<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#ip-sys"><span class="std std-ref">IP_SYS constants</span></a></li>
 <li><strong>arg2</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXDB</span></code></a>) &#8211; DB Handle</li>
 <li><strong>arg3</strong> (<em>str</em>) &#8211; Dump file name</li>
 </ul>
@@ -1052,19 +1169,19 @@ Include error channel output and version-specific formatting.
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Data</span> <span class="ow">is</span> <span class="n">imported</span> <span class="n">to</span> <span class="n">the</span> <span class="n">specified</span> <span class="n">channel</span><span class="o">.</span>
-<span class="n">The</span> <span class="n">values</span> <span class="n">are</span> <span class="n">interpolated</span> <span class="n">at</span> <span class="n">each</span> <span class="n">row</span><span class="s1">&#39;s X and Y</span>
-<span class="n">positions</span><span class="o">.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+Data is imported to the specified channel.
+The values are interpolated at each row's X and Y
+positions.
+</pre>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXIP.import_i2_x">
 <code class="descname">import_i2_x</code><span class="sig-paren">(</span><em>(GXDB)arg1</em>, <em>(str)arg2</em>, <em>(str)arg3</em>, <em>(str)arg4</em>, <em>(str)arg5</em>, <em>(str)arg6</em>, <em>(str)arg7</em>, <em>(str)arg8</em>, <em>(str)arg9</em>, <em>(str)arg10</em>, <em>(str)arg11</em>, <em>(int)arg12</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIP.import_i2_x" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Imports</span> <span class="n">an</span> <span class="n">Interpex</span> <span class="n">RESIX</span> <span class="n">I2X</span> <span class="nb">format</span> <span class="n">file</span> <span class="n">to</span> <span class="n">a</span> <span class="n">line</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Imports an Interpex RESIX I2X format file to a line.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1081,7 +1198,7 @@ Include error channel output and version-specific formatting.
 <li><strong>arg9</strong> (<em>str</em>) &#8211; Image model synthetic IP channel (can be &#8220;&#8221;)</li>
 <li><strong>arg10</strong> (<em>str</em>) &#8211; Resistivity (polygon) channel (can be &#8220;&#8221;)</li>
 <li><strong>arg11</strong> (<em>str</em>) &#8211; IP (polygon) channel (can be &#8220;&#8221;)</li>
-<li><strong>arg12</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#ip-i2ximpmode"><span class="std std-ref">IP_I2XIMPMODE constants</span></a></li>
+<li><strong>arg12</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#ip-i2ximpmode"><span class="std std-ref">IP_I2XIMPMODE constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -1097,17 +1214,17 @@ Include error channel output and version-specific formatting.
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Imports</span> <span class="n">a</span> <span class="n">single</span> <span class="s2">&quot;.I2X&quot;</span> <span class="n">file</span> <span class="n">to</span> <span class="n">a</span> <span class="n">specified</span> <span class="n">line</span><span class="o">.</span>
-<span class="n">If</span> <span class="n">the</span> <span class="n">line</span> <span class="n">does</span> <span class="ow">not</span> <span class="n">exist</span><span class="p">,</span> <span class="n">it</span> <span class="n">will</span> <span class="n">be</span> <span class="n">created</span><span class="o">.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+Imports a single &quot;.I2X&quot; file to a specified line.
+If the line does not exist, it will be created.
+</pre>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXIP.import_i2_x_ex">
 <code class="descname">import_i2_x_ex</code><span class="sig-paren">(</span><em>(GXDB)arg1</em>, <em>(str)arg2</em>, <em>(str)arg3</em>, <em>(str)arg4</em>, <em>(str)arg5</em>, <em>(str)arg6</em>, <em>(str)arg7</em>, <em>(str)arg8</em>, <em>(str)arg9</em>, <em>(str)arg10</em>, <em>(str)arg11</em>, <em>(str)arg12</em>, <em>(str)arg13</em>, <em>(int)arg14</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIP.import_i2_x_ex" title="Permalink to this definition">¶</a></dt>
 <dd><pre class="literal-block">
-Same as <a class="reference internal" href="#geosoft.gxapi.GXIP.import_i2_x" title="geosoft.gxapi.GXIP.import_i2_x"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXIP.import_i2_x()</span></code></a>, with Zonge data imported as well.
+Same as \ :func:`geosoft.gxapi.GXIP.import_i2_x`\ , with Zonge data imported as well.
 </pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -1127,7 +1244,7 @@ Same as <a class="reference internal" href="#geosoft.gxapi.GXIP.import_i2_x" tit
 <li><strong>arg11</strong> (<em>str</em>) &#8211; IP (polygon) channel (can be &#8220;&#8221;)</li>
 <li><strong>arg12</strong> (<em>str</em>) &#8211; Zonge Resistivity channel (can be &#8220;&#8221;)</li>
 <li><strong>arg13</strong> (<em>str</em>) &#8211; Zonge IP channel (can be &#8220;&#8221;)</li>
-<li><strong>arg14</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#ip-i2ximpmode"><span class="std std-ref">IP_I2XIMPMODE constants</span></a></li>
+<li><strong>arg14</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#ip-i2ximpmode"><span class="std std-ref">IP_I2XIMPMODE constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -1143,18 +1260,18 @@ Same as <a class="reference internal" href="#geosoft.gxapi.GXIP.import_i2_x" tit
 <p><span class="versionmodified">New in version 6.1.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Imports</span> <span class="n">a</span> <span class="n">single</span> <span class="s2">&quot;.I2X&quot;</span> <span class="n">file</span> <span class="n">to</span> <span class="n">a</span> <span class="n">specified</span> <span class="n">line</span><span class="o">.</span>
-<span class="n">If</span> <span class="n">the</span> <span class="n">line</span> <span class="n">does</span> <span class="ow">not</span> <span class="n">exist</span><span class="p">,</span> <span class="n">it</span> <span class="n">will</span> <span class="n">be</span> <span class="n">created</span><span class="o">.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+Imports a single &quot;.I2X&quot; file to a specified line.
+If the line does not exist, it will be created.
+</pre>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXIP.import_instrumentation_gdd">
 <code class="descname">import_instrumentation_gdd</code><span class="sig-paren">(</span><em>(GXDB)arg1</em>, <em>(str)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIP.import_instrumentation_gdd" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Imports</span> <span class="n">an</span> <span class="n">Instrumentation</span> <span class="n">GDD</span> <span class="nb">format</span> <span class="n">file</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Imports an Instrumentation GDD format file.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1181,9 +1298,9 @@ Same as <a class="reference internal" href="#geosoft.gxapi.GXIP.import_i2_x" tit
 <dl class="method">
 <dt id="geosoft.gxapi.GXIP.import_ipdata">
 <code class="descname">import_ipdata</code><span class="sig-paren">(</span><em>(GXDB)arg1</em>, <em>(str)arg2</em>, <em>(str)arg3</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIP.import_ipdata" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Imports</span> <span class="n">data</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">Geosoft</span> <span class="n">IPDATA</span> <span class="nb">format</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Imports data in the Geosoft IPDATA format.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1211,9 +1328,9 @@ Same as <a class="reference internal" href="#geosoft.gxapi.GXIP.import_i2_x" tit
 <dl class="method">
 <dt id="geosoft.gxapi.GXIP.import_ipdata2">
 <code class="descname">import_ipdata2</code><span class="sig-paren">(</span><em>(GXDB)arg1</em>, <em>(str)arg2</em>, <em>(str)arg3</em>, <em>(str)arg4</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIP.import_ipdata2" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Imports</span> <span class="n">data</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">Geosoft</span> <span class="n">IPDATA</span> <span class="nb">format</span> <span class="o">-</span> <span class="n">up</span> <span class="n">to</span> <span class="n">two</span> <span class="n">arrays</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Imports data in the Geosoft IPDATA format - up to two arrays.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1238,22 +1355,22 @@ Same as <a class="reference internal" href="#geosoft.gxapi.GXIP.import_i2_x" tit
 <p><span class="versionmodified">New in version 5.1.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">second</span> <span class="n">channel</span> <span class="n">may</span> <span class="n">be</span> <span class="n">specified</span> <span class="k">for</span> <span class="n">frequency</span> <span class="n">domain</span> <span class="n">data</span> <span class="n">sets</span>
-<span class="k">with</span> <span class="n">two</span> <span class="n">array</span> <span class="n">channels</span><span class="p">;</span> <span class="n">e</span><span class="o">.</span><span class="n">g</span><span class="o">.</span> <span class="n">amplitude</span> <span class="ow">and</span> <span class="n">phase</span><span class="p">,</span> <span class="ow">or</span> <span class="n">real</span> <span class="ow">and</span>
-<span class="n">imaginary</span> <span class="n">parts</span><span class="o">.</span> <span class="n">If</span> <span class="n">the</span> <span class="n">second</span> <span class="n">channel</span> <span class="ow">is</span> <span class="n">specified</span><span class="p">,</span> <span class="ow">and</span> <span class="n">no</span>
-<span class="n">time</span> <span class="ow">or</span> <span class="n">frequncy</span> <span class="n">information</span> <span class="ow">is</span> <span class="n">specified</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">header</span> <span class="p">(</span><span class="n">using</span>
-<span class="n">the</span> <span class="n">T</span><span class="o">=</span> <span class="ow">or</span> <span class="n">F</span><span class="o">=</span> <span class="n">fields</span><span class="p">)</span> <span class="n">then</span> <span class="n">the</span> <span class="kn">import</span> <span class="nn">is</span> <span class="n">assumed</span> <span class="n">to</span> <span class="n">be</span> <span class="n">frequency</span>
-<span class="n">domain</span><span class="o">.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+The second channel may be specified for frequency domain data sets
+with two array channels; e.g. amplitude and phase, or real and
+imaginary parts. If the second channel is specified, and no
+time or frequncy information is specified in the header (using
+the T= or F= fields) then the import is assumed to be frequency
+domain.
+</pre>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXIP.import_ipred">
 <code class="descname">import_ipred</code><span class="sig-paren">(</span><em>(GXDB)arg1</em>, <em>(str)arg2</em>, <em>(str)arg3</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIP.import_ipred" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Imports</span> <span class="n">data</span> <span class="kn">from</span> <span class="nn">the</span> <span class="n">Geosoft</span> <span class="n">IPRED</span> <span class="nb">format</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Imports data from the Geosoft IPRED format.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1277,18 +1394,18 @@ Same as <a class="reference internal" href="#geosoft.gxapi.GXIP.import_i2_x" tit
 <p><span class="versionmodified">New in version 5.1.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="kn">import</span> <span class="nn">produces</span> <span class="n">a</span> <span class="n">limited</span> <span class="n">IP</span> <span class="n">data</span> <span class="nb">set</span> <span class="k">with</span> <span class="n">no</span> <span class="n">Current</span> <span class="s2">&quot;I&quot;</span><span class="p">,</span>
-<span class="n">Voltage</span> <span class="s2">&quot;Vp&quot;</span> <span class="ow">or</span> <span class="n">Apparent</span> <span class="n">Resistivity</span> <span class="s2">&quot;ResApp&quot;</span> <span class="n">values</span><span class="o">.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+This import produces a limited IP data set with no Current &quot;I&quot;,
+Voltage &quot;Vp&quot; or Apparent Resistivity &quot;ResApp&quot; values.
+</pre>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXIP.import_merge_ipred">
 <code class="descname">import_merge_ipred</code><span class="sig-paren">(</span><em>(GXDB)arg1</em>, <em>(str)arg2</em>, <em>(str)arg3</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIP.import_merge_ipred" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Imports</span> <span class="n">IPRED</span> <span class="n">data</span> <span class="n">to</span> <span class="n">an</span> <span class="n">existing</span> <span class="n">line</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Imports IPRED data to an existing line.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1312,18 +1429,18 @@ Same as <a class="reference internal" href="#geosoft.gxapi.GXIP.import_i2_x" tit
 <p><span class="versionmodified">New in version 5.1.8.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Exits</span> <span class="k">with</span> <span class="n">error</span> <span class="k">if</span> <span class="n">the</span> <span class="n">line</span> <span class="n">does</span> <span class="ow">not</span> <span class="n">exist</span><span class="o">.</span>
-<span class="n">Data</span> <span class="ow">is</span> <span class="n">merged</span> <span class="n">on</span> <span class="n">basis</span> <span class="n">of</span> <span class="n">Stn</span> <span class="ow">and</span> <span class="n">N</span> <span class="n">value</span><span class="o">.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+Exits with error if the line does not exist.
+Data is merged on basis of Stn and N value.
+</pre>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXIP.import_sgdf">
 <code class="descname">import_sgdf</code><span class="sig-paren">(</span><em>(GXDB)arg1</em>, <em>(str)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIP.import_sgdf" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Imports</span> <span class="n">data</span> <span class="kn">from</span> <span class="nn">a</span> <span class="n">Scintrex</span> <span class="n">Geophysical</span> <span class="n">Data</span> <span class="n">Format</span> <span class="n">file</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Imports data from a Scintrex Geophysical Data Format file.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1350,9 +1467,9 @@ Same as <a class="reference internal" href="#geosoft.gxapi.GXIP.import_i2_x" tit
 <dl class="method">
 <dt id="geosoft.gxapi.GXIP.import_topo_csv">
 <code class="descname">import_topo_csv</code><span class="sig-paren">(</span><em>(GXDB)arg1</em>, <em>(str)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIP.import_topo_csv" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Imports</span> <span class="n">topography</span> <span class="n">data</span> <span class="kn">from</span> <span class="nn">a</span> <span class="n">CSV</span> <span class="n">line</span><span class="o">-</span><span class="n">station</span> <span class="n">file</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Imports topography data from a CSV line-station file
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1375,10 +1492,10 @@ Same as <a class="reference internal" href="#geosoft.gxapi.GXIP.import_i2_x" tit
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">elevation</span> <span class="n">of</span> <span class="n">each</span> <span class="n">point</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">current</span> <span class="n">database</span>
-<span class="ow">is</span> <span class="n">interpolated</span> <span class="kn">from</span> <span class="nn">the</span> <span class="nb">input</span> <span class="n">topography</span> <span class="n">values</span><span class="o">.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+The elevation of each point in the current database
+is interpolated from the input topography values.
+</pre>
 </dd></dl>
 
 <dl class="method">
@@ -1409,18 +1526,18 @@ Same as <a class="reference internal" href="#geosoft.gxapi.GXIP.import_i2_x" tit
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">elevation</span> <span class="n">of</span> <span class="n">each</span> <span class="n">point</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">current</span> <span class="n">database</span>
-<span class="ow">is</span> <span class="n">interpolated</span> <span class="kn">from</span> <span class="nn">the</span> <span class="nb">input</span> <span class="n">topography</span> <span class="n">grid</span><span class="o">.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+The elevation of each point in the current database
+is interpolated from the input topography grid.
+</pre>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXIP.import_ubc2_d_topo">
 <em class="property">static </em><code class="descname">import_ubc2_d_topo</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(float_ref)arg2</em>, <em>(GXVV)arg3</em>, <em>(GXVV)arg4</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIP.import_ubc2_d_topo" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Import</span> <span class="n">a</span> <span class="n">Topography</span> <span class="n">file</span> <span class="kn">from</span> <span class="nn">the</span> <span class="n">UBC</span> <span class="n">IPINV2D</span> <span class="n">programme</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Import a Topography file from the UBC IPINV2D programme.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1445,25 +1562,25 @@ Same as <a class="reference internal" href="#geosoft.gxapi.GXIP.import_i2_x" tit
 <p><span class="versionmodified">New in version 7.1.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Imports</span> <span class="n">the</span> <span class="n">maximum</span> <span class="n">elevation</span> <span class="p">(</span><span class="n">top</span> <span class="n">of</span> <span class="n">mesh</span><span class="p">)</span>
-<span class="k">as</span> <span class="n">well</span> <span class="k">as</span> <span class="n">the</span> <span class="n">topo</span> <span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Z</span><span class="p">)</span> <span class="n">values</span><span class="o">.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+Imports the maximum elevation (top of mesh)
+as well as the topo (X, Z) values.
+</pre>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXIP.import_ubc2_dmod">
 <em class="property">static </em><code class="descname">import_ubc2_dmod</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(int)arg2</em><span class="sig-paren">)</span> &rarr; GXPG:<a class="headerlink" href="#geosoft.gxapi.GXIP.import_ubc2_dmod" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Import</span> <span class="n">a</span> <span class="n">MOD</span> <span class="n">file</span> <span class="kn">from</span> <span class="nn">the</span> <span class="n">UBC</span> <span class="n">IPINV2D</span> <span class="n">programme</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Import a MOD file from the UBC IPINV2D programme.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<em>str</em>) &#8211; UBC MOD file name to import</li>
-<li><strong>arg2</strong> (<em>int</em>) &#8211; 0 - CON, 1 - CHG</li>
+<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; 0 - CON, 1 - CHG</li>
 </ul>
 </td>
 </tr>
@@ -1479,19 +1596,19 @@ Same as <a class="reference internal" href="#geosoft.gxapi.GXIP.import_i2_x" tit
 <p><span class="versionmodified">New in version 7.1.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Imports</span> <span class="n">the</span> <span class="n">MOD</span> <span class="n">file</span> <span class="n">values</span> <span class="n">to</span> <span class="n">a</span> <span class="n">PG</span> <span class="nb">object</span><span class="o">.</span>
-<span class="n">The</span> <span class="n">CON</span><span class="o">/</span><span class="n">CHG</span> <span class="n">selection</span> <span class="ow">is</span> <span class="n">necessary</span> <span class="n">because</span> <span class="n">the</span> <span class="kn">import</span> <span class="nn">sets</span>
-<span class="n">padding</span> <span class="n">values</span> <span class="n">to</span> <span class="n">dummies</span> <span class="n">based</span> <span class="n">on</span> <span class="n">the</span> <span class="nb">type</span> <span class="n">of</span> <span class="n">file</span><span class="o">.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+Imports the MOD file values to a PG object.
+The CON/CHG selection is necessary because the import sets
+padding values to dummies based on the type of file.
+</pre>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXIP.import_ubc2_dmsh">
 <em class="property">static </em><code class="descname">import_ubc2_dmsh</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(float_ref)arg2</em>, <em>(float_ref)arg3</em>, <em>(GXVV)arg4</em>, <em>(GXVV)arg5</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIP.import_ubc2_dmsh" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Import</span> <span class="n">a</span> <span class="n">MSH</span> <span class="n">file</span> <span class="kn">from</span> <span class="nn">the</span> <span class="n">UBC</span> <span class="n">IPINV2D</span> <span class="n">programme</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Import a MSH file from the UBC IPINV2D programme.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1517,17 +1634,17 @@ Same as <a class="reference internal" href="#geosoft.gxapi.GXIP.import_i2_x" tit
 <p><span class="versionmodified">New in version 7.1.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Imports</span> <span class="n">the</span> <span class="n">MSH</span> <span class="n">file</span> <span class="n">geometry</span><span class="o">.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+Imports the MSH file geometry.
+</pre>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXIP.import_zonge_avg">
 <code class="descname">import_zonge_avg</code><span class="sig-paren">(</span><em>(GXDB)arg1</em>, <em>(str)arg2</em>, <em>(float)arg3</em>, <em>(int)arg4</em>, <em>(float)arg5</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIP.import_zonge_avg" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Imports</span> <span class="n">a</span> <span class="n">Zonge</span> <span class="n">AVG</span> <span class="nb">format</span> <span class="n">file</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Imports a Zonge AVG format file.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1536,7 +1653,7 @@ Same as <a class="reference internal" href="#geosoft.gxapi.GXIP.import_i2_x" tit
 <li><strong>arg1</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXDB</span></code></a>) &#8211; Database to import to</li>
 <li><strong>arg2</strong> (<em>str</em>) &#8211; FLD file name</li>
 <li><strong>arg3</strong> (<em>float</em>) &#8211; Line number (will be scaled if applicable)</li>
-<li><strong>arg4</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#ip-stnscale"><span class="std std-ref">IP_STNSCALE constants</span></a></li>
+<li><strong>arg4</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#ip-stnscale"><span class="std std-ref">IP_STNSCALE constants</span></a></li>
 <li><strong>arg5</strong> (<em>float</em>) &#8211; Line, station multiplier (for IP_STNSCALE_VALUE)</li>
 </ul>
 </td>
@@ -1554,16 +1671,16 @@ Same as <a class="reference internal" href="#geosoft.gxapi.GXIP.import_i2_x" tit
 </div>
 <p><strong>Note:</strong></p>
 <pre class="literal-block">
-See <a class="reference internal" href="#geosoft.gxapi.GXIP.import_zonge_fld" title="geosoft.gxapi.GXIP.import_zonge_fld"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXIP.import_zonge_fld()</span></code></a>
+See \ :func:`geosoft.gxapi.GXIP.import_zonge_fld`\ 
 </pre>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXIP.import_zonge_fld">
 <code class="descname">import_zonge_fld</code><span class="sig-paren">(</span><em>(GXDB)arg1</em>, <em>(str)arg2</em>, <em>(int)arg3</em>, <em>(float)arg4</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIP.import_zonge_fld" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Imports</span> <span class="n">a</span> <span class="n">Zonge</span> <span class="n">FLD</span> <span class="nb">format</span> <span class="n">file</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Imports a Zonge FLD format file.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1571,7 +1688,7 @@ See <a class="reference internal" href="#geosoft.gxapi.GXIP.import_zonge_fld" ti
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXDB</span></code></a>) &#8211; Database to import to</li>
 <li><strong>arg2</strong> (<em>str</em>) &#8211; FLD file name</li>
-<li><strong>arg3</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#ip-stnscale"><span class="std std-ref">IP_STNSCALE constants</span></a></li>
+<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#ip-stnscale"><span class="std std-ref">IP_STNSCALE constants</span></a></li>
 <li><strong>arg4</strong> (<em>float</em>) &#8211; Line, station multiplier (for IP_STNSCALE_VALUE)</li>
 </ul>
 </td>
@@ -1588,11 +1705,11 @@ See <a class="reference internal" href="#geosoft.gxapi.GXIP.import_zonge_fld" ti
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">Zonge</span> <span class="n">Line</span> <span class="ow">and</span> <span class="n">Station</span> <span class="n">numbers</span> <span class="n">may</span> <span class="ow">not</span> <span class="n">be</span> <span class="n">the</span> <span class="n">X</span> <span class="ow">or</span> <span class="n">Y</span> <span class="n">position</span>
-<span class="n">values</span><span class="p">,</span> <span class="ow">and</span> <span class="n">a</span> <span class="n">conversion</span> <span class="ow">is</span> <span class="n">required</span><span class="o">.</span>
-<span class="n">The</span> <span class="n">line</span> <span class="n">direction</span> <span class="ow">is</span> <span class="n">taken</span> <span class="kn">from</span> <span class="nn">the</span> <span class="n">IP</span> <span class="n">setup</span> <span class="n">values</span><span class="o">.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+The Zonge Line and Station numbers may not be the X or Y position
+values, and a conversion is required.
+The line direction is taken from the IP setup values.
+</pre>
 </dd></dl>
 
 <dl class="method">
@@ -1630,7 +1747,7 @@ See <a class="reference internal" href="#geosoft.gxapi.GXIP.import_zonge_fld" ti
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">1 if the line is a valid IP line, 0 if not</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></p>
 </td>
 </tr>
 </tbody>
@@ -1643,9 +1760,9 @@ See <a class="reference internal" href="#geosoft.gxapi.GXIP.import_zonge_fld" ti
 <dl class="method">
 <dt id="geosoft.gxapi.GXIP.line_array_type">
 <code class="descname">line_array_type</code><span class="sig-paren">(</span><em>(GXDB)arg1</em>, <em>(str)arg2</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXIP.line_array_type" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Return</span> <span class="n">the</span> <span class="nb">type</span> <span class="n">of</span> <span class="n">IP</span> <span class="n">array</span> <span class="k">for</span> <span class="n">the</span> <span class="nb">input</span> <span class="n">line</span><span class="o">.</span> <span class="n">If</span> <span class="n">necessary</span><span class="p">,</span> <span class="n">first</span> <span class="n">imports</span> <span class="n">the</span> <span class="n">specified</span> <span class="n">line</span> <span class="n">into</span> <span class="n">the</span> <span class="n">IP</span> <span class="nb">object</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Return the type of IP array for the input line. If necessary, first imports the specified line into the IP object
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1659,7 +1776,7 @@ See <a class="reference internal" href="#geosoft.gxapi.GXIP.import_zonge_fld" ti
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><a class="reference internal" href="#ip-array"><span class="std std-ref">IP_ARRAY constants</span></a></p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></p>
 </td>
 </tr>
 </tbody>
@@ -1672,9 +1789,9 @@ See <a class="reference internal" href="#geosoft.gxapi.GXIP.import_zonge_fld" ti
 <dl class="method">
 <dt id="geosoft.gxapi.GXIP.new_xy_database">
 <code class="descname">new_xy_database</code><span class="sig-paren">(</span><em>(GXDB)arg1</em>, <em>(GXDB)arg2</em>, <em>(GXVV)arg3</em>, <em>(str)arg4</em>, <em>(float)arg5</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIP.new_xy_database" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Create</span> <span class="n">a</span> <span class="n">subset</span> <span class="n">database</span> <span class="n">using</span> <span class="n">a</span> <span class="n">mask</span> <span class="n">channel</span><span class="p">,</span> <span class="s2">&quot;N&quot;</span> <span class="n">value</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Create a subset database using a mask channel, &quot;N&quot; value
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1700,10 +1817,10 @@ See <a class="reference internal" href="#geosoft.gxapi.GXIP.import_zonge_fld" ti
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="n">mask</span> <span class="n">channel</span> <span class="n">can</span> <span class="n">be</span> <span class="n">used</span> <span class="n">to</span> <span class="n">select</span> <span class="n">a</span> <span class="n">subset</span> <span class="n">of</span> <span class="n">the</span> <span class="n">data</span><span class="o">.</span>
-<span class="n">A</span> <span class="n">single</span> <span class="n">N</span> <span class="n">value</span> <span class="n">can</span> <span class="n">also</span> <span class="n">be</span> <span class="n">selected</span> <span class="p">(</span><span class="n">Dummy</span> <span class="k">for</span> <span class="nb">all</span><span class="p">)</span><span class="o">.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+A mask channel can be used to select a subset of the data.
+A single N value can also be selected (Dummy for all).
+</pre>
 </dd></dl>
 
 <dl class="staticmethod">
@@ -1734,7 +1851,7 @@ See <a class="reference internal" href="#geosoft.gxapi.GXIP.import_zonge_fld" ti
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<em>str</em>) &#8211; job file name</li>
-<li><strong>arg2</strong> (<em>int</em>) &#8211; Job type <a class="reference internal" href="#ip-plot"><span class="std std-ref">IP_PLOT constants</span></a></li>
+<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Job type <a class="reference internal" href="#ip-plot"><span class="std std-ref">IP_PLOT constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -1754,16 +1871,16 @@ See <a class="reference internal" href="#geosoft.gxapi.GXIP.import_zonge_fld" ti
 <dl class="method">
 <dt id="geosoft.gxapi.GXIP.pldp_convention">
 <code class="descname">pldp_convention</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXIP.pldp_convention" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Return</span> <span class="n">the</span> <span class="n">user</span><span class="s1">&#39;s plot point convention for pole-dipole arrays.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Return the user's plot point convention for pole-dipole arrays.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The user&#8217;s PLDP plot point convention <a class="reference internal" href="#ip-pldp-conv"><span class="std std-ref">IP_PLDP_CONV constants</span></a></td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></td>
 </tr>
 </tbody>
 </table>
@@ -1775,9 +1892,9 @@ See <a class="reference internal" href="#geosoft.gxapi.GXIP.import_zonge_fld" ti
 <dl class="method">
 <dt id="geosoft.gxapi.GXIP.ps_stack">
 <code class="descname">ps_stack</code><span class="sig-paren">(</span><em>(GXDB)arg1</em>, <em>(str)arg2</em>, <em>(str)arg3</em>, <em>(str)arg4</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIP.ps_stack" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Create</span> <span class="n">a</span> <span class="n">stacked</span> <span class="n">pseudo</span><span class="o">-</span><span class="n">section</span> <span class="n">plot</span> <span class="n">using</span> <span class="n">a</span> <span class="n">control</span> <span class="n">file</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Create a stacked pseudo-section plot using a control file.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1802,17 +1919,17 @@ See <a class="reference internal" href="#geosoft.gxapi.GXIP.import_zonge_fld" ti
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">control</span> <span class="n">file</span> <span class="ow">is</span> <span class="n">created</span> <span class="n">using</span> <span class="n">the</span> <span class="n">IPSTAKCON</span> <span class="n">GX</span><span class="o">.</span> <span class="n">It</span> <span class="n">may</span> <span class="n">then</span>
-<span class="n">be</span> <span class="n">modified</span> <span class="n">by</span> <span class="n">hand</span> <span class="k">as</span> <span class="n">required</span><span class="o">.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+The control file is created using the IPSTAKCON GX. It may then
+be modified by hand as required.
+</pre>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXIP.ps_stack2">
 <code class="descname">ps_stack2</code><span class="sig-paren">(</span><em>(GXDB)arg1</em>, <em>(str)arg2</em>, <em>(str)arg3</em>, <em>(int)arg4</em>, <em>(str)arg5</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIP.ps_stack2" title="Permalink to this definition">¶</a></dt>
 <dd><pre class="literal-block">
-As <a class="reference internal" href="#geosoft.gxapi.GXIP.ps_stack" title="geosoft.gxapi.GXIP.ps_stack"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXIP.ps_stack()</span></code></a>, but select section spacing option.
+As \ :func:`geosoft.gxapi.GXIP.ps_stack`\ , but select section spacing option.
 </pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -1822,7 +1939,7 @@ As <a class="reference internal" href="#geosoft.gxapi.GXIP.ps_stack" title="geos
 <li><strong>arg1</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXDB</span></code></a>) &#8211; DB object</li>
 <li><strong>arg2</strong> (<em>str</em>) &#8211; channel to plot</li>
 <li><strong>arg3</strong> (<em>str</em>) &#8211; &#8220;IPPLOT&#8221; INI file name</li>
-<li><strong>arg4</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#ip-stack-type"><span class="std std-ref">IP_STACK_TYPE constants</span></a></li>
+<li><strong>arg4</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#ip-stack-type"><span class="std std-ref">IP_STACK_TYPE constants</span></a></li>
 <li><strong>arg5</strong> (<em>str</em>) &#8211; map name to create</li>
 </ul>
 </td>
@@ -1844,7 +1961,7 @@ As <a class="reference internal" href="#geosoft.gxapi.GXIP.ps_stack" title="geos
 <dt id="geosoft.gxapi.GXIP.ps_stack2_dir">
 <code class="descname">ps_stack2_dir</code><span class="sig-paren">(</span><em>(GXDB)arg1</em>, <em>(str)arg2</em>, <em>(str)arg3</em>, <em>(int)arg4</em>, <em>(str)arg5</em>, <em>(str)arg6</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIP.ps_stack2_dir" title="Permalink to this definition">¶</a></dt>
 <dd><pre class="literal-block">
-Same as <a class="reference internal" href="#geosoft.gxapi.GXIP.pseudo_plot2" title="geosoft.gxapi.GXIP.pseudo_plot2"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXIP.pseudo_plot2()</span></code></a>, but with directory specified.
+Same as \ :func:`geosoft.gxapi.GXIP.pseudo_plot2`\ , but with directory specified.
 </pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -1854,7 +1971,7 @@ Same as <a class="reference internal" href="#geosoft.gxapi.GXIP.pseudo_plot2" ti
 <li><strong>arg1</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXDB</span></code></a>) &#8211; DB object</li>
 <li><strong>arg2</strong> (<em>str</em>) &#8211; channel to plot</li>
 <li><strong>arg3</strong> (<em>str</em>) &#8211; &#8220;IPPLOT&#8221; INI file name</li>
-<li><strong>arg4</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#ip-stack-type"><span class="std std-ref">IP_STACK_TYPE constants</span></a></li>
+<li><strong>arg4</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#ip-stack-type"><span class="std std-ref">IP_STACK_TYPE constants</span></a></li>
 <li><strong>arg5</strong> (<em>str</em>) &#8211; map name to create</li>
 <li><strong>arg6</strong> (<em>str</em>) &#8211; directory to create files</li>
 </ul>
@@ -1876,9 +1993,9 @@ Same as <a class="reference internal" href="#geosoft.gxapi.GXIP.pseudo_plot2" ti
 <dl class="method">
 <dt id="geosoft.gxapi.GXIP.pseudo_plot">
 <code class="descname">pseudo_plot</code><span class="sig-paren">(</span><em>(GXDB)arg1</em>, <em>(str)arg2</em>, <em>(str)arg3</em>, <em>(str)arg4</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIP.pseudo_plot" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Create</span> <span class="n">pseudo</span><span class="o">-</span><span class="n">sections</span> <span class="n">of</span> <span class="n">a</span> <span class="n">single</span> <span class="n">line</span> <span class="n">using</span> <span class="n">a</span> <span class="n">control</span> <span class="n">file</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Create pseudo-sections of a single line using a control file.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1903,17 +2020,17 @@ Same as <a class="reference internal" href="#geosoft.gxapi.GXIP.pseudo_plot2" ti
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">control</span> <span class="n">file</span> <span class="ow">is</span> <span class="n">created</span> <span class="n">using</span> <span class="n">the</span> <span class="n">IPPLTCON</span> <span class="n">GX</span><span class="o">.</span> <span class="n">It</span> <span class="n">may</span> <span class="n">then</span>
-<span class="n">be</span> <span class="n">modified</span> <span class="n">by</span> <span class="n">hand</span> <span class="k">as</span> <span class="n">required</span><span class="o">.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+The control file is created using the IPPLTCON GX. It may then
+be modified by hand as required.
+</pre>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXIP.pseudo_plot2">
 <code class="descname">pseudo_plot2</code><span class="sig-paren">(</span><em>(GXDB)arg1</em>, <em>(str)arg2</em>, <em>(str)arg3</em>, <em>(str)arg4</em>, <em>(str)arg5</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIP.pseudo_plot2" title="Permalink to this definition">¶</a></dt>
 <dd><pre class="literal-block">
-Same as <a class="reference internal" href="#geosoft.gxapi.GXIP.pseudo_plot" title="geosoft.gxapi.GXIP.pseudo_plot"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXIP.pseudo_plot()</span></code></a>, but specify a tag for grids created.
+Same as \ :func:`geosoft.gxapi.GXIP.pseudo_plot`\ , but specify a tag for grids created.
 </pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -1940,17 +2057,17 @@ Same as <a class="reference internal" href="#geosoft.gxapi.GXIP.pseudo_plot" tit
 <p><span class="versionmodified">New in version 5.1.8.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">control</span> <span class="n">file</span> <span class="ow">is</span> <span class="n">created</span> <span class="n">using</span> <span class="n">the</span> <span class="n">IPPLTCON</span> <span class="n">GX</span><span class="o">.</span> <span class="n">It</span> <span class="n">may</span> <span class="n">then</span>
-<span class="n">be</span> <span class="n">modified</span> <span class="n">by</span> <span class="n">hand</span> <span class="k">as</span> <span class="n">required</span><span class="o">.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+The control file is created using the IPPLTCON GX. It may then
+be modified by hand as required.
+</pre>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXIP.pseudo_plot2_dir">
 <code class="descname">pseudo_plot2_dir</code><span class="sig-paren">(</span><em>(GXDB)arg1</em>, <em>(str)arg2</em>, <em>(str)arg3</em>, <em>(str)arg4</em>, <em>(str)arg5</em>, <em>(str)arg6</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIP.pseudo_plot2_dir" title="Permalink to this definition">¶</a></dt>
 <dd><pre class="literal-block">
-Same as <a class="reference internal" href="#geosoft.gxapi.GXIP.pseudo_plot2" title="geosoft.gxapi.GXIP.pseudo_plot2"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXIP.pseudo_plot2()</span></code></a>, but with directory specified.
+Same as \ :func:`geosoft.gxapi.GXIP.pseudo_plot2`\ , but with directory specified.
 </pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -1978,18 +2095,18 @@ Same as <a class="reference internal" href="#geosoft.gxapi.GXIP.pseudo_plot2" ti
 <p><span class="versionmodified">New in version 6.4.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">control</span> <span class="n">file</span> <span class="ow">is</span> <span class="n">created</span> <span class="n">using</span> <span class="n">the</span> <span class="n">IPPLTCON</span> <span class="n">GX</span><span class="o">.</span> <span class="n">It</span> <span class="n">may</span> <span class="n">then</span>
-<span class="n">be</span> <span class="n">modified</span> <span class="n">by</span> <span class="n">hand</span> <span class="k">as</span> <span class="n">required</span><span class="o">.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+The control file is created using the IPPLTCON GX. It may then
+be modified by hand as required.
+</pre>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXIP.qc_chan_lst">
 <code class="descname">qc_chan_lst</code><span class="sig-paren">(</span><em>(GXDB)arg1</em>, <em>(GXLST)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIP.qc_chan_lst" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Fill</span> <span class="n">a</span> <span class="nb">list</span> <span class="k">with</span> <span class="n">QC</span> <span class="n">channels</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Fill a list with QC channels.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -2012,18 +2129,18 @@ Same as <a class="reference internal" href="#geosoft.gxapi.GXIP.pseudo_plot2" ti
 <p><span class="versionmodified">New in version 7.3.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Searches</span> <span class="k">for</span> <span class="n">the</span> <span class="n">following</span> <span class="n">QC</span> <span class="n">channels</span> <span class="n">existing</span> <span class="ow">in</span> <span class="n">a</span> <span class="n">database</span><span class="p">:</span>
-<span class="n">QC</span><span class="p">,</span> <span class="n">QC_RES</span><span class="o">.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+Searches for the following QC channels existing in a database:
+QC, QC_RES.
+</pre>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXIP.recalculate">
 <code class="descname">recalculate</code><span class="sig-paren">(</span><em>(GXDB)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIP.recalculate" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Recalculate</span> <span class="n">derived</span> <span class="n">channel</span> <span class="n">values</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Recalculate derived channel values.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -2054,25 +2171,25 @@ This function recalculates &quot;derived&quot; channel values from
    channel, and the &quot;N&quot; values.
 
 Warning: If you make a change to an electrode location, you
-would have to call <a class="reference internal" href="#geosoft.gxapi.GXIP.recalculate" title="geosoft.gxapi.GXIP.recalculate"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXIP.recalculate()</span></code></a>, then recalculate &quot;Topo&quot;
+would have to call \ :func:`geosoft.gxapi.GXIP.recalculate`\ , then recalculate &quot;Topo&quot;
 (since the X and Y values would have changed), then call
-<a class="reference internal" href="#geosoft.gxapi.GXIP.recalculate_z" title="geosoft.gxapi.GXIP.recalculate_z"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXIP.recalculate_z()</span></code></a>, since &quot;Z&quot; values are based on &quot;Topo&quot; values.
+\ :func:`geosoft.gxapi.GXIP.recalculate_z`\ , since &quot;Z&quot; values are based on &quot;Topo&quot; values.
 </pre>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXIP.recalculate_ex">
 <code class="descname">recalculate_ex</code><span class="sig-paren">(</span><em>(GXDB)arg1</em>, <em>(int)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIP.recalculate_ex" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Recalculate</span> <span class="n">derived</span> <span class="n">channel</span> <span class="n">values</span><span class="p">,</span> <span class="k">with</span> <span class="n">option</span> <span class="k">for</span> <span class="n">including</span><span class="o">/</span><span class="n">excluding</span> <span class="n">location</span> <span class="n">calculations</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Recalculate derived channel values, with option for including/excluding location calculations.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXDB</span></code></a>) &#8211; Database</li>
-<li><strong>arg2</strong> (<em>int</em>) &#8211; Recalculate XYZ locations (TRUE or FALSE)?</li>
+<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Recalculate XYZ locations (TRUE or FALSE)?</li>
 </ul>
 </td>
 </tr>
@@ -2089,7 +2206,7 @@ would have to call <a class="reference internal" href="#geosoft.gxapi.GXIP.recal
 </div>
 <p><strong>Note:</strong></p>
 <pre class="literal-block">
-See <a class="reference internal" href="#geosoft.gxapi.GXIP.recalculate" title="geosoft.gxapi.GXIP.recalculate"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXIP.recalculate()</span></code></a>. This version allows you to suppress the recalculation of the
+See \ :func:`geosoft.gxapi.GXIP.recalculate`\ . This version allows you to suppress the recalculation of the
 current X, Y and Z channel values from the station locations.
 </pre>
 </dd></dl>
@@ -2097,9 +2214,9 @@ current X, Y and Z channel values from the station locations.
 <dl class="method">
 <dt id="geosoft.gxapi.GXIP.recalculate_z">
 <code class="descname">recalculate_z</code><span class="sig-paren">(</span><em>(GXDB)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIP.recalculate_z" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Recalculate</span> <span class="n">Z</span> <span class="n">channel</span> <span class="n">values</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Recalculate Z channel values.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -2119,13 +2236,13 @@ current X, Y and Z channel values from the station locations.
 <pre class="literal-block">
 The &quot;Z&quot; channel values are calculated as follows:
 If the &quot;Topo&quot; value is defined, then
-Z = Topo - 0.5<cite>*</cite>N<cite>*</cite>A, where &quot;N&quot; is the N-spacing, and
+Z = Topo - 0.5\ `*`\ N\ `*`\ A, where &quot;N&quot; is the N-spacing, and
 A is the A-spacing. If the Topography is not defined, then
 it is assumed to be equal to 0.
 </pre>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="#geosoft.gxapi.GXIP.recalculate" title="geosoft.gxapi.GXIP.recalculate"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXIP.recalculate()</span></code></a></p>
+<p class="last">\ :func:`geosoft.gxapi.GXIP.recalculate`\</p>
 </div>
 </dd></dl>
 
@@ -2141,7 +2258,7 @@ it is assumed to be equal to 0.
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<em>str</em>) &#8211; job file name</li>
-<li><strong>arg2</strong> (<em>int</em>) &#8211; Job type  <a class="reference internal" href="#ip-plot"><span class="std std-ref">IP_PLOT constants</span></a></li>
+<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Job type  <a class="reference internal" href="#ip-plot"><span class="std std-ref">IP_PLOT constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -2161,9 +2278,9 @@ it is assumed to be equal to 0.
 <dl class="method">
 <dt id="geosoft.gxapi.GXIP.set_channel_info">
 <code class="descname">set_channel_info</code><span class="sig-paren">(</span><em>(GXDB)arg1</em>, <em>(str)arg2</em>, <em>(int)arg3</em>, <em>(float)arg4</em>, <em>(int)arg5</em>, <em>(GXVV)arg6</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIP.set_channel_info" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Set</span> <span class="n">Time</span> <span class="n">Windows</span> <span class="ow">or</span> <span class="n">Frequency</span> <span class="n">info</span> <span class="k">for</span> <span class="n">a</span> <span class="n">channel</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Set Time Windows or Frequency info for a channel.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -2171,9 +2288,9 @@ it is assumed to be equal to 0.
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXDB</span></code></a>) &#8211; Database</li>
 <li><strong>arg2</strong> (<em>str</em>) &#8211; channel to check</li>
-<li><strong>arg3</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#ip-domain"><span class="std std-ref">IP_DOMAIN constants</span></a></li>
+<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#ip-domain"><span class="std std-ref">IP_DOMAIN constants</span></a></li>
 <li><strong>arg4</strong> (<em>float</em>) &#8211; Delay or Base Frequency</li>
-<li><strong>arg5</strong> (<em>int</em>) &#8211; Number of time windows or frequencies</li>
+<li><strong>arg5</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Number of time windows or frequencies</li>
 <li><strong>arg6</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Time windows or frequencies</li>
 </ul>
 </td>
@@ -2194,9 +2311,9 @@ it is assumed to be equal to 0.
 <dl class="method">
 <dt id="geosoft.gxapi.GXIP.set_electrode_mask_values">
 <code class="descname">set_electrode_mask_values</code><span class="sig-paren">(</span><em>(GXDB)arg1</em>, <em>(str)arg2</em>, <em>(int)arg3</em>, <em>(GXVV)arg4</em>, <em>(GXVV)arg5</em>, <em>(GXVV)arg6</em>, <em>(GXVV)arg7</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIP.set_electrode_mask_values" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Set</span> <span class="n">unique</span> <span class="n">electrodes</span><span class="p">,</span> <span class="n">along</span> <span class="k">with</span> <span class="n">current</span> <span class="n">mask</span> <span class="n">info</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Set unique electrodes, along with current mask info.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -2204,11 +2321,11 @@ it is assumed to be equal to 0.
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXDB</span></code></a>) &#8211; DB object</li>
 <li><strong>arg2</strong> (<em>str</em>) &#8211; Line name (&#8220;&#8221; for all selected lines)</li>
-<li><strong>arg3</strong> (<em>int</em>) &#8211; Electrode type. 0:Tx, 1:Rx</li>
+<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Electrode type. 0:Tx, 1:Rx</li>
 <li><strong>arg4</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; X locations</li>
 <li><strong>arg5</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Y locations</li>
-<li><strong>arg6</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Off-time QC channel values (&#8220;QC&#8221;)</li>
-<li><strong>arg7</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; On-time QC channel values (&#8220;QC_RES&#8221;)</li>
+<li><strong>arg6</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; IP QC channel values (&#8220;QC&#8221; or &#8220;QC_IP&#8221;)</li>
+<li><strong>arg7</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Resistivity QC channel values (&#8220;QC_RES&#8221;)</li>
 </ul>
 </td>
 </tr>
@@ -2224,22 +2341,60 @@ it is assumed to be equal to 0.
 <p><span class="versionmodified">New in version 9.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Mask</span> <span class="n">values</span> <span class="n">are</span> <span class="nb">set</span> <span class="k">for</span> <span class="nb">all</span> <span class="n">included</span> <span class="n">electrode</span> <span class="n">locations</span><span class="p">,</span> <span class="n">currently</span> <span class="n">selected</span> <span class="n">lines</span><span class="o">.</span>
-</pre></div>
+<pre class="literal-block">
+Mask values are set for all included electrode locations, currently selected lines.
+</pre>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXIP.set_electrode_mask_values_single_qc_channel">
+<code class="descname">set_electrode_mask_values_single_qc_channel</code><span class="sig-paren">(</span><em>(GXDB)arg1</em>, <em>(str)arg2</em>, <em>(int)arg3</em>, <em>(int)arg4</em>, <em>(GXVV)arg5</em>, <em>(GXVV)arg6</em>, <em>(GXVV)arg7</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIP.set_electrode_mask_values_single_qc_channel" title="Permalink to this definition">¶</a></dt>
+<dd><pre class="literal-block">
+Set unique electrodes, along with current mask info.
+</pre>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arg1</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXDB</span></code></a>) &#8211; DB object</li>
+<li><strong>arg2</strong> (<em>str</em>) &#8211; Line name (&#8220;&#8221; for all selected lines)</li>
+<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Electrode type. 0:Tx, 1:Rx</li>
+<li><strong>arg4</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; QC channel type.  <a class="reference internal" href="#ip-qctype"><span class="std std-ref">IP_QCTYPE constants</span></a></li>
+<li><strong>arg5</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; X locations</li>
+<li><strong>arg6</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Y locations</li>
+<li><strong>arg7</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; QC channel values (&#8220;QC&#8221;)</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.2.0.</span></p>
 </div>
+<p><strong>Note:</strong></p>
+<pre class="literal-block">
+Mask values are set for all included electrode locations, currently selected lines.
+</pre>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXIP.set_import_mode">
 <code class="descname">set_import_mode</code><span class="sig-paren">(</span><em>(int)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIP.set_import_mode" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">When</span> <span class="n">importing</span> <span class="n">data</span> <span class="n">to</span> <span class="n">a</span> <span class="n">line</span><span class="p">,</span> <span class="nb">set</span> <span class="n">append</span><span class="o">/</span><span class="n">overwrite</span> <span class="n">mode</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+When importing data to a line, set append/overwrite mode.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>int</em>) &#8211; 0: Overwrite, 1: Append</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; 0: Overwrite, 1: Append</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Nothing</td>
 </tr>
@@ -2251,30 +2406,30 @@ it is assumed to be equal to 0.
 <p><span class="versionmodified">New in version 6.3.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">By</span> <span class="n">default</span><span class="p">,</span> <span class="n">importing</span> <span class="n">data</span> <span class="n">overwrites</span> <span class="n">existing</span> <span class="n">data</span><span class="o">.</span>
-<span class="n">Call</span> <span class="n">this</span> <span class="n">function</span> <span class="n">before</span> <span class="n">doing</span> <span class="n">the</span> <span class="kn">import</span> <span class="nn">in</span> <span class="n">order</span>
-<span class="n">to</span> <span class="n">append</span> <span class="n">imported</span> <span class="n">data</span> <span class="n">to</span> <span class="n">existing</span> <span class="n">data</span><span class="o">.</span>
-<span class="s2">&quot;Short&quot;</span> <span class="n">data</span> <span class="n">channels</span> <span class="n">will</span> <span class="n">be</span> <span class="n">dummied</span> <span class="n">to</span> <span class="n">the</span> <span class="n">existing</span>
-<span class="n">data</span> <span class="n">length</span> <span class="n">before</span> <span class="n">the</span> <span class="n">new</span> <span class="n">data</span> <span class="ow">is</span> <span class="n">appended</span><span class="o">.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+By default, importing data overwrites existing data.
+Call this function before doing the import in order
+to append imported data to existing data.
+&quot;Short&quot; data channels will be dummied to the existing
+data length before the new data is appended.
+</pre>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXIP.trim_ubc2_d_model">
 <em class="property">static </em><code class="descname">trim_ubc2_d_model</code><span class="sig-paren">(</span><em>(GXPG)arg1</em>, <em>(int)arg2</em>, <em>(int)arg3</em>, <em>(int)arg4</em>, <em>(GXVV)arg5</em>, <em>(GXVV)arg6</em>, <em>(float_ref)arg7</em><span class="sig-paren">)</span> &rarr; GXPG:<a class="headerlink" href="#geosoft.gxapi.GXIP.trim_ubc2_d_model" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Trim</span> <span class="n">the</span> <span class="n">padding</span> <span class="n">cells</span> <span class="kn">from</span> <span class="nn">the</span> <span class="n">UBC</span> <span class="n">IPINV2D</span> <span class="n">Model</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Trim the padding cells from the UBC IPINV2D Model.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<a class="reference internal" href="GXPG.html#geosoft.gxapi.GXPG" title="geosoft.gxapi.GXPG"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXPG</span></code></a>) &#8211; Input model (unchanged)</li>
-<li><strong>arg2</strong> (<em>int</em>) &#8211; Cells to remove on left</li>
-<li><strong>arg3</strong> (<em>int</em>) &#8211; Cells to remove on right</li>
-<li><strong>arg4</strong> (<em>int</em>) &#8211; Cells to remove on the bottom</li>
+<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Cells to remove on left</li>
+<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Cells to remove on right</li>
+<li><strong>arg4</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Cells to remove on the bottom</li>
 <li><strong>arg5</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Column widths (modified)</li>
 <li><strong>arg6</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Row heights (modified)</li>
 <li><strong>arg7</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Top left corner X (modified)</li>
@@ -2293,20 +2448,20 @@ it is assumed to be equal to 0.
 <p><span class="versionmodified">New in version 7.1.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">cells</span> <span class="n">are</span> <span class="n">removed</span> <span class="kn">from</span> <span class="nn">the</span> <span class="n">left</span><span class="p">,</span> <span class="n">right</span> <span class="ow">and</span> <span class="n">bottom</span><span class="o">.</span>
-<span class="n">The</span> <span class="n">returned</span> <span class="n">PG</span> <span class="ow">is</span> <span class="n">the</span> <span class="n">trimmed</span> <span class="n">version</span><span class="o">.</span>
-<span class="n">The</span> <span class="nb">input</span> <span class="n">cell</span> <span class="n">size</span> <span class="n">VVs</span> <span class="n">are</span> <span class="n">also</span> <span class="n">trimmed</span> <span class="n">to</span> <span class="n">match</span><span class="p">,</span>
-<span class="ow">and</span> <span class="n">the</span> <span class="n">origin</span> <span class="ow">is</span> <span class="n">updated</span> <span class="p">(</span><span class="n">still</span> <span class="n">upper</span> <span class="n">left</span> <span class="n">corner</span><span class="p">)</span><span class="o">.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+The cells are removed from the left, right and bottom.
+The returned PG is the trimmed version.
+The input cell size VVs are also trimmed to match,
+and the origin is updated (still upper left corner).
+</pre>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXIP.window">
 <code class="descname">window</code><span class="sig-paren">(</span><em>(GXDB)arg1</em>, <em>(str)arg2</em>, <em>(str)arg3</em>, <em>(str)arg4</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIP.window" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Window</span> <span class="n">an</span> <span class="n">IP</span> <span class="n">array</span> <span class="n">channel</span> <span class="n">to</span> <span class="n">produce</span> <span class="n">a</span> <span class="n">normal</span> <span class="n">channel</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Window an IP array channel to produce a normal channel.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -2333,7 +2488,7 @@ it is assumed to be equal to 0.
 <p><strong>Note:</strong></p>
 <pre class="literal-block">
 The array channels cannot be used directly to produce sections.
-<a class="reference internal" href="#geosoft.gxapi.GXIP.window" title="geosoft.gxapi.GXIP.window"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXIP.window()</span></code></a> allows the user to select one or more of the windows
+\ :func:`geosoft.gxapi.GXIP.window`\  allows the user to select one or more of the windows
 and create a new channel. In time domain, if more than one channel
 is selected a weighted sum is performed, according to window widths.
 In frequency domain a simple sum is performed.
@@ -2344,9 +2499,9 @@ Window List Syntax:
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXIP.winnow_chan_list">
 <em class="property">static </em><code class="descname">winnow_chan_list</code><span class="sig-paren">(</span><em>(GXLST)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIP.winnow_chan_list" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Removes</span> <span class="n">obviously</span> <span class="n">non</span><span class="o">-</span><span class="n">pseudo</span><span class="o">-</span><span class="n">section</span> <span class="nb">type</span> <span class="n">channels</span> <span class="kn">from</span> <span class="nn">list.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Removes obviously non-pseudo-section type channels from list.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -2368,7 +2523,7 @@ Window List Syntax:
 <dt id="geosoft.gxapi.GXIP.winnow_chan_list2">
 <em class="property">static </em><code class="descname">winnow_chan_list2</code><span class="sig-paren">(</span><em>(GXLST)arg1</em>, <em>(GXDB)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIP.winnow_chan_list2" title="Permalink to this definition">¶</a></dt>
 <dd><pre class="literal-block">
-Same as <a class="reference internal" href="#geosoft.gxapi.GXIP.winnow_chan_list" title="geosoft.gxapi.GXIP.winnow_chan_list"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXIP.winnow_chan_list()</span></code></a>, but removes current X,Y,Z.
+Same as \ :func:`geosoft.gxapi.GXIP.winnow_chan_list`\ , but removes current X,Y,Z.
 </pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -2415,9 +2570,9 @@ Same as <a class="reference internal" href="#geosoft.gxapi.GXIP.winnow_chan_list
 <p><span class="versionmodified">New in version 6.3.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Writes</span> <span class="n">values</span> <span class="k">for</span> <span class="n">ALL</span> <span class="n">lines</span><span class="o">.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+Writes values for ALL lines.
+</pre>
 </dd></dl>
 
 <dl class="method">
@@ -2448,9 +2603,9 @@ Same as <a class="reference internal" href="#geosoft.gxapi.GXIP.winnow_chan_list
 <p><span class="versionmodified">New in version 6.4.2.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Writes</span> <span class="n">values</span> <span class="k">for</span> <span class="n">lines</span> <span class="ow">in</span> <span class="n">the</span> <span class="nb">input</span> <span class="n">LST</span><span class="o">.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+Writes values for lines in the input LST.
+</pre>
 </dd></dl>
 
 </dd></dl>
@@ -2705,6 +2860,28 @@ with peak on a point:      /\ `*`\ \   n1
 <dd></dd></dl>
 
 </div>
+<div class="section" id="ip-qctype-constants">
+<span id="ip-qctype"></span><h2>IP_QCTYPE constants<a class="headerlink" href="#ip-qctype-constants" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Type</span> <span class="n">of</span> <span class="n">Measurement</span>
+</pre></div>
+</div>
+<dl class="attribute">
+<dt id="geosoft.gxapi.IP_QCTYPE_RESISTIVITY">
+<code class="descclassname">gxapi.</code><code class="descname">IP_QCTYPE_RESISTIVITY</code><em class="property"> = 0</em><a class="headerlink" href="#geosoft.gxapi.IP_QCTYPE_RESISTIVITY" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Resistivity</span>
+</pre></div>
+</div>
+<dl class="attribute">
+<dt id="geosoft.gxapi.IP_QCTYPE_IP">
+<code class="descclassname">gxapi.</code><code class="descname">IP_QCTYPE_IP</code><em class="property"> = 1</em><a class="headerlink" href="#geosoft.gxapi.IP_QCTYPE_IP" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">IP</span>
+</pre></div>
+</div>
+</div>
 <div class="section" id="ip-stack-type-constants">
 <span id="ip-stack-type"></span><h2>IP_STACK_TYPE constants<a class="headerlink" href="#ip-stack-type-constants" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Spacing</span> <span class="n">Types</span>
@@ -2901,12 +3078,27 @@ with peak on a point:      /\ `*`\ \   n1
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.1 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li> 
       </ul>
     </div>
+
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2016, Geosoft Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.6.
+        &#169; Copyright 2017, Geosoft Inc.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
     </div>
+<div class="footer">This page uses <a href="http://analytics.google.com/">
+Google Analytics</a> to collect statistics. You can disable it by blocking
+the JavaScript coming from www.google-analytics.com.
+<script type="text/javascript">
+  (function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ?
+              'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+  })();
+</script>
+</div>
+
   </body>
 </html>

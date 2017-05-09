@@ -1,3 +1,4 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -5,19 +6,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <script type="text/javascript">
-
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-87443115-1']);
-      _gaq.push(['_trackPageview']);
-
-      (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
-    </script>
-    <title>GXLST class &#8212; Geosoft GX Python API 9.1 documentation</title>
+    
+    <title>GXLST class &#8212; Geosoft GX Python API 9.2.0 documentation</title>
     
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -25,16 +15,25 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '9.1',
+        VERSION:     '9.2.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="Geosoft GX Python API 9.1 documentation" href="index.html" /> 
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+ 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-87443115-1']);
+  _gaq.push(['_trackPageview']);
+</script>
+
   </head>
   <body role="document">
     <div class="related" role="navigation" aria-label="related navigation">
@@ -46,7 +45,7 @@
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.1 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -62,7 +61,7 @@
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="_sources/GXLST.txt"
+      <li><a href="_sources/GXLST.rst.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
@@ -89,18 +88,18 @@
 <dl class="class">
 <dt id="geosoft.gxapi.GXLST">
 <em class="property">class </em><code class="descclassname">geosoft.gxapi.</code><code class="descname">GXLST</code><a class="headerlink" href="#geosoft.gxapi.GXLST" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">LST</span> <span class="k">class</span> <span class="nc">is</span> <span class="n">used</span> <span class="n">to</span> <span class="n">create</span> <span class="ow">and</span> <span class="n">retrieve</span> <span class="n">lists</span><span class="p">,</span>
-<span class="ow">and</span> <span class="n">to</span> <span class="n">perform</span> <span class="n">specific</span> <span class="n">actions</span> <span class="n">on</span> <span class="n">lists</span><span class="p">,</span> <span class="n">including</span>
-<span class="n">retrieving</span> <span class="nb">list</span> <span class="n">items</span><span class="p">,</span> <span class="n">sorting</span> <span class="n">lists</span> <span class="ow">and</span> <span class="n">adding</span> <span class="ow">or</span>
-<span class="n">removing</span> <span class="nb">list</span> <span class="n">items</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+The LST class is used to create and retrieve lists,
+and to perform specific actions on lists, including
+retrieving list items, sorting lists and adding or
+removing list items.
+</pre>
 <dl class="method">
 <dt id="geosoft.gxapi.GXLST.add_item">
 <code class="descname">add_item</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(str)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXLST.add_item" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Adds</span> <span class="n">an</span> <span class="n">item</span> <span class="n">to</span> <span class="n">the</span> <span class="n">end</span> <span class="n">of</span> <span class="n">the</span> <span class="nb">list</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Adds an item to the end of the list.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -127,16 +126,16 @@
 <dl class="method">
 <dt id="geosoft.gxapi.GXLST.add_symb_item">
 <code class="descname">add_symb_item</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(int)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXLST.add_symb_item" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Adds</span> <span class="n">a</span> <span class="n">channel</span><span class="o">/</span><span class="n">line</span><span class="o">/</span><span class="n">blob</span> <span class="n">name</span> <span class="ow">and</span> <span class="n">symbol</span> <span class="n">to</span> <span class="n">a</span> <span class="nb">list</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Adds a channel/line/blob name and symbol to a list.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<em>str</em>) &#8211; Name of the channel, line or blob symbol</li>
-<li><strong>arg2</strong> (<em>int</em>) &#8211; symbol handle</li>
+<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; symbol handle</li>
 </ul>
 </td>
 </tr>
@@ -152,21 +151,21 @@
 <p><span class="versionmodified">New in version 6.2.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="n">number</span> <span class="n">of</span> <span class="n">DB</span> <span class="n">functions</span> <span class="k">return</span> <span class="n">LSTs</span> <span class="k">with</span> <span class="n">the</span> <span class="n">channel</span>
-<span class="ow">or</span> <span class="n">line</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">the</span> <span class="s2">&quot;Name&quot;</span> <span class="n">part</span> <span class="n">of</span> <span class="n">a</span> <span class="n">LST</span><span class="p">,</span> <span class="ow">and</span> <span class="n">the</span>
-<span class="n">handle</span> <span class="p">(</span><span class="n">DB_SYMB</span><span class="p">)</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">value</span> <span class="n">part</span><span class="o">.</span> <span class="n">This</span> <span class="n">function</span> <span class="n">lets</span>
-<span class="n">you</span> <span class="n">quickly</span> <span class="n">add</span> <span class="n">a</span> <span class="n">new</span> <span class="n">item</span> <span class="n">without</span> <span class="n">the</span> <span class="n">need</span> <span class="n">of</span> <span class="n">coverting</span>
-<span class="n">the</span> <span class="n">handle</span> <span class="n">into</span> <span class="n">a</span> <span class="n">string</span> <span class="n">value</span><span class="o">.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+A number of DB functions return LSTs with the channel
+or line name in the &quot;Name&quot; part of a LST, and the
+handle (DB_SYMB) in the value part. This function lets
+you quickly add a new item without the need of coverting
+the handle into a string value.
+</pre>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXLST.add_unique_item">
 <code class="descname">add_unique_item</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(str)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXLST.add_unique_item" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Adds</span> <span class="n">a</span> <span class="n">unique</span> <span class="n">item</span> <span class="n">to</span> <span class="n">the</span> <span class="n">end</span> <span class="n">of</span> <span class="n">the</span> <span class="nb">list</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Adds a unique item to the end of the list.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -189,17 +188,17 @@
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Existing</span> <span class="n">items</span> <span class="n">that</span> <span class="n">match</span> <span class="n">the</span> <span class="n">name</span> <span class="n">are</span> <span class="n">first</span> <span class="n">removed</span><span class="o">.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+Existing items that match the name are first removed.
+</pre>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXLST.append">
 <code class="descname">append</code><span class="sig-paren">(</span><em>(GXLST)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXLST.append" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Add</span> <span class="n">the</span> <span class="n">items</span> <span class="ow">in</span> <span class="n">one</span> <span class="nb">list</span> <span class="n">to</span> <span class="n">another</span> <span class="nb">list</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Add the items in one list to another list.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -217,7 +216,7 @@
 </div>
 <p><strong>Note:</strong></p>
 <pre class="literal-block">
-Item names and values are added using &quot;<a class="reference internal" href="#geosoft.gxapi.GXLST.add_unique_item" title="geosoft.gxapi.GXLST.add_unique_item"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXLST.add_unique_item()</span></code></a>&quot;,
+Item names and values are added using &quot;\ :func:`geosoft.gxapi.GXLST.add_unique_item`\ &quot;,
 so that existing items with the same name are replaced, and if
 items are duplicated in the appended LST, the last one will be
 the one to remain after the process is complete.
@@ -227,9 +226,9 @@ the one to remain after the process is complete.
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXLST.assay_channel">
 <em class="property">static </em><code class="descname">assay_channel</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; GXLST:<a class="headerlink" href="#geosoft.gxapi.GXLST.assay_channel" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Create</span> <span class="n">a</span> <span class="n">LST</span> <span class="n">of</span> <span class="n">assay</span> <span class="n">channel</span> <span class="n">mask</span> <span class="n">strings</span> <span class="kn">from</span> <span class="nn">file.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Create a LST of assay channel mask strings from file.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -245,38 +244,38 @@ the one to remain after the process is complete.
 </div>
 <p><strong>Note:</strong></p>
 <pre class="literal-block">
-Searches the local directory, then useretc, then etc to see
+Searches the local directory, then user\etc, then \etc to see
 if the file &quot;assaylist.csv&quot; exists.
 The file contains strings of those channel names which are
 to be interpreted as assay channels for geochemical processes.
 Items can be on the same line, separated by commas, or on
 separate lines (and combinations of both).
 If this function is used in combination with the lFindItemMask_LST
-function, then you can use mask-strings such as &quot;<cite>*</cite>ppm&quot;
+function, then you can use mask-strings such as &quot;\ `*`\ ppm&quot;
 The following is a sample file:
 
-<cite>*</cite>ppm, <cite>*</cite>(ppm), <cite>*</cite>PPM, <cite>*</cite>(PPM), FeCl, MnO2
+\ `*`\ ppm, \ `*`\ (ppm), \ `*`\ PPM, \ `*`\ (PPM), FeCl, MnO2
 &quot;Fe %&quot;
 FeO
 
 If the file is not found, or if no items are parsed, the list
 is returned with zero size.
 
-See the &quot;assaylist.csv&quot; file in the oasismontajetc directory
+See the &quot;assaylist.csv&quot; file in the oasismontaj\etc directory
 for more details.
 </pre>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="#geosoft.gxapi.GXLST.find_item_mask" title="geosoft.gxapi.GXLST.find_item_mask"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXLST.find_item_mask()</span></code></a></p>
+<p class="last">\ :func:`geosoft.gxapi.GXLST.find_item_mask`\</p>
 </div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXLST.clear">
 <code class="descname">clear</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXLST.clear" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Clear</span> <span class="n">a</span> <span class="nb">list</span> <span class="nb">object</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Clear a list object.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -295,9 +294,9 @@ for more details.
 <dl class="method">
 <dt id="geosoft.gxapi.GXLST.convert_from_csv_string">
 <code class="descname">convert_from_csv_string</code><span class="sig-paren">(</span><em>(str)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXLST.convert_from_csv_string" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Load</span> <span class="n">a</span> <span class="n">LST</span> <span class="k">with</span> <span class="n">items</span> <span class="kn">from</span> <span class="nn">a</span> <span class="n">string</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Load a LST with items from a string.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -314,20 +313,20 @@ for more details.
 <p><span class="versionmodified">New in version 5.1.8.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Items</span> <span class="ow">in</span> <span class="n">the</span> <span class="nb">input</span> <span class="n">buffer</span> <span class="n">must</span> <span class="n">be</span> <span class="n">separated</span> <span class="k">with</span>
-<span class="n">commas</span><span class="o">.</span>
-<span class="n">Both</span> <span class="n">the</span> <span class="n">Name</span> <span class="ow">and</span> <span class="n">Value</span> <span class="ow">in</span> <span class="n">the</span> <span class="nb">list</span> <span class="n">are</span> <span class="nb">set</span> <span class="n">to</span> <span class="n">the</span>
-<span class="n">item</span><span class="o">.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+Items in the input buffer must be separated with
+commas.
+Both the Name and Value in the list are set to the
+item.
+</pre>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXLST.convert_to_csv_string">
 <code class="descname">convert_to_csv_string</code><span class="sig-paren">(</span><em>(str_ref)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXLST.convert_to_csv_string" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Load</span> <span class="n">a</span> <span class="n">string</span> <span class="k">with</span> <span class="n">names</span> <span class="kn">from</span> <span class="nn">a</span> <span class="n">LST</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Load a string with names from a LST.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -344,18 +343,18 @@ for more details.
 <p><span class="versionmodified">New in version 5.1.8.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="nb">list</span> <span class="n">name</span> <span class="n">values</span> <span class="n">are</span> <span class="n">put</span> <span class="n">into</span> <span class="n">a</span> <span class="n">string</span><span class="p">,</span>
-<span class="n">items</span> <span class="n">separated</span> <span class="n">by</span> <span class="n">commas</span><span class="o">.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+The list name values are put into a string,
+items separated by commas.
+</pre>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXLST.copy">
 <code class="descname">copy</code><span class="sig-paren">(</span><em>(GXLST)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXLST.copy" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Copy</span> <span class="n">one</span> <span class="n">LST</span> <span class="nb">object</span> <span class="n">to</span> <span class="n">another</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Copy one LST object to another.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -376,15 +375,15 @@ for more details.
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXLST.create">
 <em class="property">static </em><code class="descname">create</code><span class="sig-paren">(</span><em>(int)arg1</em><span class="sig-paren">)</span> &rarr; GXLST:<a class="headerlink" href="#geosoft.gxapi.GXLST.create" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">creates</span> <span class="n">a</span> <span class="n">user</span> <span class="n">controllable</span> <span class="nb">list</span><span class="o">.</span> <span class="n">The</span> <span class="nb">list</span>
-<span class="ow">is</span> <span class="n">empty</span> <span class="n">when</span> <span class="n">created</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+creates a user controllable list. The list
+is empty when created.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>int</em>) &#8211; Width of the list to make. This number should be large enough for both the item name and the item value.  Must be &gt; 2 and &lt;= 4096.</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Width of the list to make. This number should be large enough for both the item name and the item value.  Must be &gt; 2 and &lt;= 4096.</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Handle to the List Object.</td>
 </tr>
@@ -400,9 +399,9 @@ for more details.
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXLST.create_s">
 <em class="property">static </em><code class="descname">create_s</code><span class="sig-paren">(</span><em>(GXBF)arg1</em><span class="sig-paren">)</span> &rarr; GXLST:<a class="headerlink" href="#geosoft.gxapi.GXLST.create_s" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Create</span> <span class="n">LST</span> <span class="kn">from</span> <span class="nn">serialized</span> <span class="n">source</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Create LST from serialized source.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -423,15 +422,15 @@ for more details.
 <dl class="method">
 <dt id="geosoft.gxapi.GXLST.del_item">
 <code class="descname">del_item</code><span class="sig-paren">(</span><em>(int)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXLST.del_item" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Removes</span> <span class="n">an</span> <span class="n">item</span> <span class="kn">from</span> <span class="nn">the</span> <span class="nb">list</span><span class="o">.</span> <span class="n">All</span> <span class="n">items</span> <span class="n">below</span>
-<span class="n">it</span> <span class="n">are</span> <span class="n">shifted</span> <span class="n">up</span> <span class="n">one</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Removes an item from the list. All items below
+it are shifted up one.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>int</em>) &#8211; Item Number to Delete</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Item Number to Delete</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Nothing</td>
 </tr>
@@ -447,15 +446,15 @@ for more details.
 <dl class="method">
 <dt id="geosoft.gxapi.GXLST.find_item">
 <code class="descname">find_item</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(str)arg2</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXLST.find_item" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Searches</span> <span class="n">the</span> <span class="nb">list</span> <span class="k">for</span> <span class="n">a</span> <span class="n">specified</span> <span class="n">item</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Searches the list for a specified item.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#lst-item"><span class="std std-ref">LST_ITEM constants</span></a> data to do the search on</li>
+<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#lst-item"><span class="std std-ref">LST_ITEM constants</span></a> data to do the search on</li>
 <li><strong>arg2</strong> (<em>str</em>) &#8211; String to Search For</li>
 </ul>
 </td>
@@ -464,7 +463,7 @@ for more details.
 -1 - Not Found</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></p>
 </td>
 </tr>
 </tbody>
@@ -473,23 +472,23 @@ for more details.
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Comparisons</span> <span class="n">are</span> <span class="n">case</span><span class="o">-</span><span class="n">tolerant</span><span class="o">.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+Comparisons are case-tolerant.
+</pre>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXLST.find_item_mask">
 <code class="descname">find_item_mask</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(str)arg2</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXLST.find_item_mask" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Searches</span> <span class="n">the</span> <span class="nb">list</span> <span class="k">for</span> <span class="n">a</span> <span class="n">specified</span> <span class="n">item</span><span class="p">,</span> <span class="nb">list</span> <span class="n">contains</span> <span class="n">masks</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Searches the list for a specified item, list contains masks.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#lst-item"><span class="std std-ref">LST_ITEM constants</span></a> data to search</li>
+<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#lst-item"><span class="std std-ref">LST_ITEM constants</span></a> data to search</li>
 <li><strong>arg2</strong> (<em>str</em>) &#8211; String to try LST mask items on Search For</li>
 </ul>
 </td>
@@ -498,7 +497,7 @@ for more details.
 -1 - Not Found</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></p>
 </td>
 </tr>
 </tbody>
@@ -508,11 +507,11 @@ for more details.
 </div>
 <p><strong>Note:</strong></p>
 <pre class="literal-block">
-Comparsions are case-intolerant (unlike <a class="reference internal" href="#geosoft.gxapi.GXLST.find_item" title="geosoft.gxapi.GXLST.find_item"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXLST.find_item()</span></code></a>).
-This means items in the list such as &quot;<cite>*</cite>(ppm)&quot; will be
+Comparsions are case-intolerant (unlike \ :func:`geosoft.gxapi.GXLST.find_item`\ ).
+This means items in the list such as &quot;\ `*`\ (ppm)&quot; will be
 found if the input search string is &quot;Ni (ppm)&quot; or &quot;Ni(ppm)&quot;,
 but not if it is &quot;Ni (PPM)&quot;, so you should include
-both &quot;<cite>*</cite>ppm<cite>*</cite>&quot; and &quot;<cite>*</cite>PPM<cite>*</cite>&quot;.
+both &quot;\ `*`\ ppm\ `*`\ &quot; and &quot;\ `*`\ PPM\ `*`\ &quot;.
 
 It is NOT the input string that should be the mask, but
 the LST items themselves
@@ -523,22 +522,22 @@ indicates that the channel should be given the &quot;Assay&quot; class.
 </pre>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="#geosoft.gxapi.GXLST.assay_channel" title="geosoft.gxapi.GXLST.assay_channel"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXLST.assay_channel()</span></code></a></p>
+<p class="last">\ :func:`geosoft.gxapi.GXLST.assay_channel`\</p>
 </div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXLST.find_items">
 <code class="descname">find_items</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(GXLST)arg2</em>, <em>(GXVV)arg3</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXLST.find_items" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Searches</span> <span class="n">a</span> <span class="n">LST</span> <span class="k">for</span> <span class="n">items</span> <span class="ow">in</span> <span class="n">a</span> <span class="n">second</span> <span class="n">LST</span><span class="p">,</span> <span class="n">returns</span> <span class="n">indices</span> <span class="n">of</span> <span class="n">those</span> <span class="n">found</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Searches a LST for items in a second LST, returns indices of those found.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#lst-item"><span class="std std-ref">LST_ITEM constants</span></a> data to do the search on</li>
+<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#lst-item"><span class="std std-ref">LST_ITEM constants</span></a> data to do the search on</li>
 <li><strong>arg2</strong> (<a class="reference internal" href="#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXLST</span></code></a>) &#8211; Items to search for</li>
 <li><strong>arg3</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; GS_LONG VV of returned indices into the first LST.</li>
 </ul>
@@ -558,7 +557,7 @@ indicates that the channel should be given the &quot;Assay&quot; class.
 <p><strong>Note:</strong></p>
 <pre class="literal-block">
 This is a much more efficient way of determining if items in
-one LST are found in a second, than by calling <a class="reference internal" href="#geosoft.gxapi.GXLST.find_item" title="geosoft.gxapi.GXLST.find_item"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXLST.find_item()</span></code></a>
+one LST are found in a second, than by calling \ :func:`geosoft.gxapi.GXLST.find_item`\ 
 repeatedly in a loop.
 The returned INT VV contains the same number of items as
 the &quot;search items&quot; LST, and contains -1 for items where the
@@ -570,16 +569,16 @@ Comparisons are case-tolerant.
 <dl class="method">
 <dt id="geosoft.gxapi.GXLST.get_double">
 <code class="descname">get_double</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(int)arg2</em><span class="sig-paren">)</span> &rarr; float:<a class="headerlink" href="#geosoft.gxapi.GXLST.get_double" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">a</span> <span class="n">real</span> <span class="n">item</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Get a real item.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#lst-item"><span class="std std-ref">LST_ITEM constants</span></a> data to retrieve</li>
-<li><strong>arg2</strong> (<em>int</em>) &#8211; Item Number to Get</li>
+<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#lst-item"><span class="std std-ref">LST_ITEM constants</span></a> data to retrieve</li>
+<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Item Number to Get</li>
 </ul>
 </td>
 </tr>
@@ -599,23 +598,23 @@ Comparisons are case-tolerant.
 <dl class="method">
 <dt id="geosoft.gxapi.GXLST.get_int">
 <code class="descname">get_int</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(int)arg2</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXLST.get_int" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">an</span> <span class="n">integer</span> <span class="n">item</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Get an integer item.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#lst-item"><span class="std std-ref">LST_ITEM constants</span></a> data to retrieve</li>
-<li><strong>arg2</strong> (<em>int</em>) &#8211; Item Number to Get</li>
+<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#lst-item"><span class="std std-ref">LST_ITEM constants</span></a> data to retrieve</li>
+<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Item Number to Get</li>
 </ul>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">integer, iDUMMY if conversion fails or string is empty.</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></p>
 </td>
 </tr>
 </tbody>
@@ -628,16 +627,16 @@ Comparisons are case-tolerant.
 <dl class="method">
 <dt id="geosoft.gxapi.GXLST.gt_item">
 <code class="descname">gt_item</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(int)arg2</em>, <em>(str_ref)arg3</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXLST.gt_item" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="n">places</span> <span class="n">the</span> <span class="n">specified</span> <span class="n">item</span> <span class="n">into</span> <span class="n">the</span> <span class="n">buffer</span> <span class="n">provided</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+This places the specified item into the buffer provided.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#lst-item"><span class="std std-ref">LST_ITEM constants</span></a> data to retrieve</li>
-<li><strong>arg2</strong> (<em>int</em>) &#8211; Item Number to Get</li>
+<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#lst-item"><span class="std std-ref">LST_ITEM constants</span></a> data to retrieve</li>
+<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Item Number to Get</li>
 <li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; Buffer to Place Item Into</li>
 </ul>
 </td>
@@ -654,23 +653,23 @@ Comparisons are case-tolerant.
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">If</span> <span class="n">item</span> <span class="n">number</span> <span class="ow">is</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">the</span> <span class="nb">list</span><span class="p">,</span> <span class="n">the</span> <span class="n">buffer</span> <span class="n">will</span> <span class="n">be</span> <span class="s2">&quot;&quot;</span><span class="o">.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+If item number is not in the list, the buffer will be &quot;&quot;.
+</pre>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXLST.gt_symb_item">
 <code class="descname">gt_symb_item</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(str_ref)arg2</em>, <em>(int_ref)arg3</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXLST.gt_symb_item" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Returns</span> <span class="n">a</span> <span class="n">channel</span><span class="o">/</span><span class="n">line</span><span class="o">/</span><span class="n">blob</span> <span class="n">name</span> <span class="ow">and</span> <span class="n">symbol</span> <span class="kn">from</span> <span class="nn">a</span> <span class="nb">list</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Returns a channel/line/blob name and symbol from a list.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<em>int</em>) &#8211; Item number to get</li>
+<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Item number to get</li>
 <li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; Buffer to Place Symbol name into</li>
 <li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; Symbol handle</li>
 </ul>
@@ -688,27 +687,27 @@ Comparisons are case-tolerant.
 <p><span class="versionmodified">New in version 6.3.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="n">number</span> <span class="n">of</span> <span class="n">DB</span> <span class="n">functions</span> <span class="k">return</span> <span class="n">LSTs</span> <span class="k">with</span> <span class="n">the</span> <span class="n">channel</span>
-<span class="ow">or</span> <span class="n">line</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">the</span> <span class="s2">&quot;Name&quot;</span> <span class="n">part</span> <span class="n">of</span> <span class="n">a</span> <span class="n">LST</span><span class="p">,</span> <span class="ow">and</span> <span class="n">the</span>
-<span class="n">handle</span> <span class="p">(</span><span class="n">DB_SYMB</span><span class="p">)</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">value</span> <span class="n">part</span><span class="o">.</span> <span class="n">This</span> <span class="n">function</span> <span class="n">lets</span>
-<span class="n">you</span> <span class="n">quickly</span> <span class="n">retrieve</span> <span class="n">both</span> <span class="n">the</span> <span class="n">name</span> <span class="ow">and</span> <span class="n">symbol</span> <span class="n">handle</span>
-<span class="k">for</span> <span class="n">a</span> <span class="n">given</span> <span class="n">item</span><span class="p">,</span> <span class="n">which</span> <span class="n">needing</span> <span class="n">to</span> <span class="n">convert</span> <span class="n">between</span> <span class="n">types</span><span class="o">.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+A number of DB functions return LSTs with the channel
+or line name in the &quot;Name&quot; part of a LST, and the
+handle (DB_SYMB) in the value part. This function lets
+you quickly retrieve both the name and symbol handle
+for a given item, which needing to convert between types.
+</pre>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXLST.insert_item">
 <code class="descname">insert_item</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(str)arg2</em>, <em>(str)arg3</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXLST.insert_item" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Adds</span> <span class="n">an</span> <span class="n">item</span> <span class="n">at</span> <span class="n">a</span> <span class="n">given</span> <span class="n">location</span> <span class="ow">in</span> <span class="n">the</span> <span class="nb">list</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Adds an item at a given location in the list.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<em>int</em>) &#8211; Item index</li>
+<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Item index</li>
 <li><strong>arg2</strong> (<em>str</em>) &#8211; Name of the Item</li>
 <li><strong>arg3</strong> (<em>str</em>) &#8211; Value of the Item</li>
 </ul>
@@ -726,10 +725,10 @@ Comparisons are case-tolerant.
 <p><span class="versionmodified">New in version 5.1.6.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Index</span> <span class="n">must</span> <span class="n">be</span> <span class="mi">0</span> <span class="o">&gt;=</span> <span class="n">index</span> <span class="o">&gt;=</span> <span class="nb">list</span> <span class="n">size</span><span class="o">.</span>
-<span class="n">Items</span> <span class="n">above</span> <span class="n">the</span> <span class="nb">list</span> <span class="n">index</span> <span class="n">are</span> <span class="n">shifted</span> <span class="n">up</span> <span class="n">one</span> <span class="n">index</span> <span class="n">value</span><span class="o">.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+Index must be 0 &gt;= index &gt;= list size.
+Items above the list index are shifted up one index value.
+</pre>
 </dd></dl>
 
 <dl class="method">
@@ -777,20 +776,20 @@ Comparisons are case-tolerant.
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Both</span> <span class="n">the</span> <span class="n">Item</span> <span class="ow">and</span> <span class="n">Value</span> <span class="n">fields</span> <span class="n">must</span> <span class="n">be</span> <span class="n">specified</span><span class="o">.</span>
-<span class="n">The</span> <span class="n">CSV</span> <span class="n">file</span> <span class="n">must</span> <span class="n">be</span> <span class="n">comma</span> <span class="n">delimited</span><span class="p">,</span> <span class="ow">and</span> <span class="n">have</span>
-<span class="n">a</span> <span class="n">header</span> <span class="n">line</span> <span class="k">with</span> <span class="n">the</span> <span class="n">field</span> <span class="n">names</span><span class="o">.</span>
-<span class="n">Leading</span> <span class="ow">and</span> <span class="n">trailing</span> <span class="n">spaces</span> <span class="n">are</span> <span class="n">removed</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">names</span> <span class="ow">and</span> <span class="n">values</span><span class="o">.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+Both the Item and Value fields must be specified.
+The CSV file must be comma delimited, and have
+a header line with the field names.
+Leading and trailing spaces are removed in the names and values.
+</pre>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXLST.load_file">
 <code class="descname">load_file</code><span class="sig-paren">(</span><em>(str)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXLST.load_file" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Set</span> <span class="n">up</span> <span class="n">a</span> <span class="nb">list</span> <span class="kn">from</span> <span class="nn">a</span> <span class="nb">list</span> <span class="n">file</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Set up a list from a list file.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -818,12 +817,12 @@ blank lines and lines that begin with a '/' character are
 ignored.
 
 The default extension is .lst.  If the file cannot
-be found in the local directory, the GEOSOFTetc directory
+be found in the local directory, the GEOSOFT\etc directory
 is searched.
 If it cannot be found, the list will be
 empty.  Not finding a file is not an error.
 
-This function replaces the <a class="reference internal" href="#geosoft.gxapi.GXLST.load_file" title="geosoft.gxapi.GXLST.load_file"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXLST.load_file()</span></code></a> function which
+This function replaces the \ :func:`geosoft.gxapi.GXLST.load_file`\  function which
 actually always returned 0, or terminated on an error.
 </pre>
 </dd></dl>
@@ -847,11 +846,11 @@ actually always returned 0, or terminated on an error.
 <dl class="method">
 <dt id="geosoft.gxapi.GXLST.resource">
 <code class="descname">resource</code><span class="sig-paren">(</span><em>(str)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXLST.resource" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Load</span> <span class="n">a</span> <span class="n">GX</span> <span class="n">List</span> <span class="n">Resource</span> <span class="n">into</span> <span class="n">this</span> <span class="nb">list</span> <span class="nb">object</span><span class="o">.</span>  <span class="n">The</span>
-<span class="n">entries</span> <span class="n">are</span> <span class="n">placed</span> <span class="n">at</span> <span class="n">the</span> <span class="n">end</span> <span class="n">of</span> <span class="n">the</span> <span class="nb">list</span> <span class="ow">and</span> <span class="n">are</span> <span class="ow">not</span>
-<span class="nb">sorted</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Load a GX List Resource into this list object.  The
+entries are placed at the end of the list and are not
+sorted.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -872,9 +871,9 @@ actually always returned 0, or terminated on an error.
 <dl class="method">
 <dt id="geosoft.gxapi.GXLST.save_file">
 <code class="descname">save_file</code><span class="sig-paren">(</span><em>(str)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXLST.save_file" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Save</span> <span class="n">a</span> <span class="nb">list</span> <span class="n">to</span> <span class="n">a</span> <span class="n">file</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Save a list to a file.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -903,17 +902,17 @@ ignored.
 
 The default extension is .lst.  If the file has a full path
 it will be created as specified.  Otherwise we look for the
-file in the local then the GEOSOFTetc directory.  If the file
-does not exist it will be created in the GEOSOFTetc directory.
+file in the local then the GEOSOFT\etc directory.  If the file
+does not exist it will be created in the GEOSOFT\etc directory.
 </pre>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXLST.select_csv_string_items">
 <code class="descname">select_csv_string_items</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(GXLST)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXLST.select_csv_string_items" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Load</span> <span class="n">a</span> <span class="n">LST</span> <span class="k">with</span> <span class="n">items</span> <span class="kn">from</span> <span class="nn">a</span> <span class="n">second</span> <span class="n">LST</span> <span class="n">found</span> <span class="ow">in</span> <span class="n">a</span> <span class="n">CSV</span> <span class="n">string</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Load a LST with items from a second LST found in a CSV string.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -936,25 +935,25 @@ does not exist it will be created in the GEOSOFTetc directory.
 <p><span class="versionmodified">New in version 5.1.8.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Items</span> <span class="ow">in</span> <span class="n">the</span> <span class="nb">input</span> <span class="n">string</span> <span class="n">must</span> <span class="n">be</span> <span class="n">separated</span> <span class="k">with</span>
-<span class="n">commas</span><span class="o">.</span> <span class="n">Parsing</span> <span class="n">uses</span> <span class="n">the</span> <span class="n">sCommaTokens_GS</span> <span class="n">function</span><span class="o">.</span>
-<span class="n">Both</span> <span class="n">the</span> <span class="n">name</span> <span class="ow">and</span> <span class="n">value</span> <span class="n">of</span> <span class="n">the</span> <span class="nb">input</span> <span class="n">LST</span> <span class="n">items</span> <span class="n">whose</span>
-<span class="n">name</span> <span class="n">matches</span> <span class="n">an</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">the</span> <span class="nb">input</span> <span class="n">string</span> <span class="n">are</span>
-<span class="n">copied</span> <span class="n">to</span> <span class="n">the</span> <span class="n">output</span> <span class="n">LST</span><span class="o">.</span>
-<span class="n">Items</span> <span class="n">are</span> <span class="n">copied</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">same</span> <span class="n">order</span> <span class="n">they</span> <span class="n">appear</span> <span class="ow">in</span> <span class="n">the</span>
-<span class="nb">input</span> <span class="n">string</span><span class="o">.</span> <span class="n">Items</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">string</span> <span class="ow">not</span> <span class="n">found</span> <span class="ow">in</span> <span class="n">the</span> <span class="nb">input</span> <span class="n">LST</span>
-<span class="n">are</span> <span class="n">ignored</span><span class="p">,</span> <span class="ow">and</span> <span class="n">no</span> <span class="n">error</span> <span class="ow">is</span> <span class="n">registered</span><span class="o">.</span>
-<span class="n">Item</span> <span class="n">matches</span> <span class="n">are</span> <span class="n">case</span><span class="o">-</span><span class="n">tolerant</span><span class="o">.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+Items in the input string must be separated with
+commas. Parsing uses the sCommaTokens_GS function.
+Both the name and value of the input LST items whose
+name matches an item in the input string are
+copied to the output LST.
+Items are copied in the same order they appear in the
+input string. Items in the string not found in the input LST
+are ignored, and no error is registered.
+Item matches are case-tolerant.
+</pre>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXLST.serial">
 <code class="descname">serial</code><span class="sig-paren">(</span><em>(GXBF)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXLST.serial" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Serialize</span> <span class="n">LST</span> <span class="n">to</span> <span class="n">a</span> <span class="n">BF</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Serialize LST to a BF.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -975,16 +974,16 @@ does not exist it will be created in the GEOSOFTetc directory.
 <dl class="method">
 <dt id="geosoft.gxapi.GXLST.set_item">
 <code class="descname">set_item</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(int)arg2</em>, <em>(str)arg3</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXLST.set_item" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Place</span> <span class="n">an</span> <span class="n">item</span> <span class="n">at</span> <span class="n">a</span> <span class="n">specified</span> <span class="n">point</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">LST</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Place an item at a specified point in the LST.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#lst-item"><span class="std std-ref">LST_ITEM constants</span></a> data to insert</li>
-<li><strong>arg2</strong> (<em>int</em>) &#8211; Item Number to Set</li>
+<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#lst-item"><span class="std std-ref">LST_ITEM constants</span></a> data to insert</li>
+<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Item Number to Set</li>
 <li><strong>arg3</strong> (<em>str</em>) &#8211; Item to Set</li>
 </ul>
 </td>
@@ -1001,24 +1000,24 @@ does not exist it will be created in the GEOSOFTetc directory.
 <p><span class="versionmodified">New in version 5.1.5.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">existing</span> <span class="n">item</span> <span class="n">at</span> <span class="n">the</span> <span class="n">given</span> <span class="n">index</span> <span class="n">will</span> <span class="n">be</span> <span class="n">replaced</span><span class="o">.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+The existing item at the given index will be replaced.
+</pre>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXLST.size">
 <code class="descname">size</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXLST.size" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">the</span> <span class="n">number</span> <span class="n">of</span> <span class="n">items</span> <span class="ow">in</span> <span class="n">the</span> <span class="nb">list</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Get the number of items in the list.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">x - Number of items in the list.</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></td>
 </tr>
 </tbody>
 </table>
@@ -1030,16 +1029,16 @@ does not exist it will be created in the GEOSOFTetc directory.
 <dl class="method">
 <dt id="geosoft.gxapi.GXLST.sort">
 <code class="descname">sort</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(int)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXLST.sort" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Sorts</span> <span class="n">a</span> <span class="nb">list</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Sorts a list.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#lst-item"><span class="std std-ref">LST_ITEM constants</span></a> data to sort on</li>
-<li><strong>arg2</strong> (<em>int</em>) &#8211; 0 - Ascending, 1 - Decending</li>
+<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#lst-item"><span class="std std-ref">LST_ITEM constants</span></a> data to sort on</li>
+<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; 0 - Ascending, 1 - Decending</li>
 </ul>
 </td>
 </tr>
@@ -1097,12 +1096,27 @@ does not exist it will be created in the GEOSOFTetc directory.
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.1 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li> 
       </ul>
     </div>
+
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2016, Geosoft Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.6.
+        &#169; Copyright 2017, Geosoft Inc.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
     </div>
+<div class="footer">This page uses <a href="http://analytics.google.com/">
+Google Analytics</a> to collect statistics. You can disable it by blocking
+the JavaScript coming from www.google-analytics.com.
+<script type="text/javascript">
+  (function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ?
+              'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+  })();
+</script>
+</div>
+
   </body>
 </html>

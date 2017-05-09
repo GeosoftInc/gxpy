@@ -1,3 +1,4 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -5,19 +6,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <script type="text/javascript">
-
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-87443115-1']);
-      _gaq.push(['_trackPageview']);
-
-      (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
-    </script>
-    <title>GXLL2 class &#8212; Geosoft GX Python API 9.1 documentation</title>
+    
+    <title>GXLL2 class &#8212; Geosoft GX Python API 9.2.0 documentation</title>
     
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -25,16 +15,25 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '9.1',
+        VERSION:     '9.2.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="Geosoft GX Python API 9.1 documentation" href="index.html" /> 
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+ 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-87443115-1']);
+  _gaq.push(['_trackPageview']);
+</script>
+
   </head>
   <body role="document">
     <div class="related" role="navigation" aria-label="related navigation">
@@ -46,7 +45,7 @@
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.1 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -54,7 +53,7 @@
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="_sources/GXLL2.txt"
+      <li><a href="_sources/GXLL2.rst.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
@@ -81,11 +80,11 @@
 <dl class="class">
 <dt id="geosoft.gxapi.GXLL2">
 <em class="property">class </em><code class="descclassname">geosoft.gxapi.</code><code class="descname">GXLL2</code><a class="headerlink" href="#geosoft.gxapi.GXLL2" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">local</span> <span class="n">datum</span> <span class="n">lookup</span> <span class="n">creator</span>
-<span class="n">ll2</span> <span class="n">methods</span> <span class="n">are</span> <span class="n">used</span> <span class="n">to</span> <span class="n">create</span> <span class="n">LL2</span> <span class="n">objects</span><span class="o">.</span>  <span class="n">LL2</span> <span class="n">objects</span> <span class="n">contain</span>
-<span class="n">latitude</span><span class="p">,</span> <span class="n">longitude</span> <span class="n">correction</span> <span class="n">lookup</span> <span class="n">tables</span> <span class="n">to</span> <span class="n">convert</span> <span class="n">between</span> <span class="n">datums</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+local datum lookup creator
+ll2 methods are used to create LL2 objects.  LL2 objects contain
+latitude, longitude correction lookup tables to convert between datums.
+</pre>
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXLL2.create">
 <em class="property">static </em><code class="descname">create</code><span class="sig-paren">(</span><em>(float)arg1</em>, <em>(float)arg2</em>, <em>(float)arg3</em>, <em>(float)arg4</em>, <em>(int)arg5</em>, <em>(int)arg6</em>, <em>(GXIPJ)arg7</em>, <em>(GXIPJ)arg8</em><span class="sig-paren">)</span> &rarr; GXLL2:<a class="headerlink" href="#geosoft.gxapi.GXLL2.create" title="Permalink to this definition">¶</a></dt>
@@ -101,8 +100,8 @@
 <li><strong>arg2</strong> (<em>float</em>) &#8211; latitude origin</li>
 <li><strong>arg3</strong> (<em>float</em>) &#8211; longitude increment</li>
 <li><strong>arg4</strong> (<em>float</em>) &#8211; latitude increment</li>
-<li><strong>arg5</strong> (<em>int</em>) &#8211; # longitudes</li>
-<li><strong>arg6</strong> (<em>int</em>) &#8211; # latitudes</li>
+<li><strong>arg5</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; # longitudes</li>
+<li><strong>arg6</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; # latitudes</li>
 <li><strong>arg7</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXIPJ</span></code></a>) &#8211; input projection</li>
 <li><strong>arg8</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXIPJ</span></code></a>) &#8211; output projection</li>
 </ul>
@@ -121,7 +120,7 @@
 </div>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
-<p class="last"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXLL2.destroy()</span></code>, <a class="reference internal" href="#geosoft.gxapi.GXLL2.set_row" title="geosoft.gxapi.GXLL2.set_row"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXLL2.set_row()</span></code></a>, <a class="reference internal" href="#geosoft.gxapi.GXLL2.save" title="geosoft.gxapi.GXLL2.save"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXLL2.save()</span></code></a></p>
+<p class="last">\ :func:`geosoft.gxapi.GXLL2.destroy`\ , \ :func:`geosoft.gxapi.GXLL2.set_row`\ , \ :func:`geosoft.gxapi.GXLL2.save`\</p>
 </div>
 </dd></dl>
 
@@ -179,11 +178,11 @@
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">named</span> <span class="n">resource</span> <span class="ow">is</span> <span class="n">the</span> <span class="n">name</span> <span class="n">of</span> <span class="n">the</span> <span class="n">datum</span> <span class="n">transform</span> <span class="n">define</span>
-<span class="n">inside</span> <span class="n">square</span> <span class="n">brackets</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">datum</span> <span class="n">transform</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">the</span>
-<span class="n">datumtrf</span> <span class="n">table</span><span class="o">.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+The named resource is the name of the datum transform define
+inside square brackets in the datum transform name in the
+datumtrf table.
+</pre>
 </dd></dl>
 
 <dl class="method">
@@ -197,7 +196,7 @@
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<em>int</em>) &#8211; the row to set</li>
+<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; the row to set</li>
 <li><strong>arg2</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; longitude corrections</li>
 <li><strong>arg3</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; latitude corrections</li>
 </ul>
@@ -220,7 +219,7 @@ The correction data is in degrees, added to the input
 datum to product output datum results.
 
 The VV lengths must be equal to #longitudes defined
-by <a class="reference internal" href="#geosoft.gxapi.GXLL2.create" title="geosoft.gxapi.GXLL2.create"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXLL2.create()</span></code></a>.
+by \ :func:`geosoft.gxapi.GXLL2.create`\ .
 </pre>
 </dd></dl>
 
@@ -243,12 +242,27 @@ by <a class="reference internal" href="#geosoft.gxapi.GXLL2.create" title="geoso
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.1 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li> 
       </ul>
     </div>
+
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2016, Geosoft Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.6.
+        &#169; Copyright 2017, Geosoft Inc.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
     </div>
+<div class="footer">This page uses <a href="http://analytics.google.com/">
+Google Analytics</a> to collect statistics. You can disable it by blocking
+the JavaScript coming from www.google-analytics.com.
+<script type="text/javascript">
+  (function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ?
+              'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+  })();
+</script>
+</div>
+
   </body>
 </html>

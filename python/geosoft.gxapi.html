@@ -1,3 +1,4 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -5,19 +6,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <script type="text/javascript">
-
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-87443115-1']);
-      _gaq.push(['_trackPageview']);
-
-      (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
-    </script>
-    <title>Geosoft GX API &#8212; Geosoft GX Python API 9.1 documentation</title>
+    
+    <title>Geosoft GX API &#8212; Geosoft GX Python API 9.2.0 documentation</title>
     
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -25,16 +15,25 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '9.1',
+        VERSION:     '9.2.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="Geosoft GX Python API 9.1 documentation" href="index.html" /> 
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+ 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-87443115-1']);
+  _gaq.push(['_trackPageview']);
+</script>
+
   </head>
   <body role="document">
     <div class="related" role="navigation" aria-label="related navigation">
@@ -46,7 +45,7 @@
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.1 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -54,7 +53,6 @@
   <h3><a href="index.html">Table Of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">Geosoft GX API</a><ul>
-<li><a class="reference internal" href="#gx-api-reference">GX API Reference</a></li>
 <li><a class="reference internal" href="#the-gxcontext-class">The GXContext class</a></li>
 <li><a class="reference internal" href="#helper-classes-to-pass-immutable-values-by-reference">Helper classes to pass immutable values by reference</a></li>
 <li><a class="reference internal" href="#exceptions">Exceptions</a></li>
@@ -65,7 +63,7 @@
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="_sources/geosoft.gxapi.txt"
+      <li><a href="_sources/geosoft.gxapi.rst.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
@@ -89,35 +87,37 @@
             
   <div class="section" id="geosoft-gx-api">
 <h1>Geosoft GX API<a class="headerlink" href="#geosoft-gx-api" title="Permalink to this headline">¶</a></h1>
-<p>The Geosoft GX API is exposed to python developers through the <code class="code docutils literal"><span class="pre">geosoft.gxapi</span></code> module.  The API includes the full set of
-low-level function calls that expose almost all Geosoft functionality to developer.</p>
-<div class="section" id="gx-api-reference">
-<h2>GX API Reference<a class="headerlink" href="#gx-api-reference" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div><a class="reference internal" href="geosoft.gxapi.classes.html"><span class="doc">GX API Class/Library Reference...</span></a></div></blockquote>
-</div>
+<p>The complete Geosoft GX API is exposed to python developers through the <a class="reference internal" href="geosoft.gxapi.classes.html"><span class="doc">geosoft.gxapi</span></a>
+module.  This includes all low-level classes and function calls that expose almost all Geosoft functionality to
+a developer.</p>
 <div class="section" id="the-gxcontext-class">
 <h2>The GXContext class<a class="headerlink" href="#the-gxcontext-class" title="Permalink to this headline">¶</a></h2>
+<p>Before calling any other API function from a stand-alone script (a script that is not run as an extension from
+Geosoft Desktop), a GX Context must be created and held.  This can be done by creating an instance of
+<a class="reference internal" href="#geosoft.gxapi.GXContext" title="geosoft.gxapi.GXContext"><code class="xref py py-class docutils literal"><span class="pre">gxapi.GXContext</span></code></a> or an instance of <a class="reference internal" href="geosoft.gxpy.gx.html#geosoft.gxpy.gx.GXpy" title="geosoft.gxpy.gx.GXpy"><code class="xref py py-class docutils literal"><span class="pre">gxpy.gx.GXpy</span></code></a> which handles the details of
+<code class="docutils literal"><span class="pre">GXContext</span></code> for you.  We recommend using <a class="reference internal" href="geosoft.gxpy.gx.html#geosoft.gxpy.gx.GXpy" title="geosoft.gxpy.gx.GXpy"><code class="xref py py-class docutils literal"><span class="pre">gxpy.gx.GXpy</span></code></a> unless you have chosen to work only with the
+low-level <code class="xref py py-mod docutils literal"><span class="pre">gxapi</span></code>.</p>
+<p>Creating a GX context requires <strong>Geosoft Desktop</strong> installed on the target system, from which the
+library dll&#8217;s are located and loaded. <strong>Geosoft Desktop</strong> can be downloaded from
+<a class="reference external" href="https://my.geosoft.com/downloads">Geosoft Downloads</a>.</p>
+<p>It is possible to redirect the location of dlls used by setting the
+<strong>GX_GEOSOFT_BIN_PATH</strong> environment variable to point to the location of the Geosoft binary files.
+Refer to the <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/overview">GX Developer Guide</a> for more
+information.</p>
 <dl class="class">
 <dt id="geosoft.gxapi.GXContext">
 <em class="property">class </em><code class="descclassname">geosoft.gxapi.</code><code class="descname">GXContext</code><a class="headerlink" href="#geosoft.gxapi.GXContext" title="Permalink to this definition">¶</a></dt>
-<dd><p>The main GX execution context</p>
-<p>A single instance of this object needs to be created per thread and persisted before using any other class in the
-geosoft.gxapi module.</p>
+<dd><p>The main GX execution context.</p>
+<p>A single instance of this object must be created per thread and persist before using any other class in the
+<code class="xref py py-mod docutils literal"><span class="pre">geosoft.gxapi</span></code> module.</p>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last">Class <a class="reference internal" href="geosoft.gxpy.gx.html#geosoft.gxpy.gx.GXpy" title="geosoft.gxpy.gx.GXpy"><code class="xref py py-class docutils literal"><span class="pre">gxpy.gx.GXpy</span></code></a></p>
+</div>
 <dl class="method">
 <dt id="geosoft.gxapi.GXContext.clear_ui_console">
 <code class="descname">clear_ui_console</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXContext.clear_ui_console" title="Permalink to this definition">¶</a></dt>
 <dd><p>Clears the console owned by UI applications. Has no effect on consoles owning standalone scripts.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Nothing</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">None</td>
-</tr>
-</tbody>
-</table>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.1.</span></p>
 </div>
@@ -132,16 +132,14 @@ geosoft.gxapi module.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>application</strong> (<em>str</em>) &#8211; Calling application name&#8221;</li>
-<li><strong>version</strong> (<em>str</em>) &#8211; Calling application version</li>
-<li><strong>parent_wnd_id</strong> (<em>int</em>) &#8211; Calling application main window handle (HWND cast to unsigned on Windows) as an int (default 0)</li>
+<li><strong>application</strong> &#8211; Calling application name (str)&#8221;</li>
+<li><strong>version</strong> &#8211; Calling application version (str)</li>
+<li><strong>parent_wnd_id</strong> &#8211; Calling application main window handle (HWND cast to unsigned on Windows) as an int (default 0)</li>
+<li><strong>flags</strong> &#8211; Two flaggs currently supported (64 suppresses text progress messages and 128 GUI progress windows, default 0)</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">A GX execution context.</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="#geosoft.gxapi.GXContext" title="geosoft.gxapi.GXContext">geosoft.gxapi.GXContext</a></p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A GX execution context.</p>
 </td>
 </tr>
 </tbody>
@@ -160,8 +158,6 @@ geosoft.gxapi module.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A GX execution context.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXContext" title="geosoft.gxapi.GXContext">geosoft.gxapi.GXContext</a></td>
 </tr>
 </tbody>
 </table>
@@ -182,10 +178,6 @@ The <a class="reference internal" href="GXEMAP.html#geosoft.gxapi.GXEMAP" title=
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>enable</strong> (<em>bool</em>) &#8211; True to enable, False to disable keyboard and mouse interaction</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Nothing</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">None</td>
-</tr>
 </tbody>
 </table>
 <div class="versionadded">
@@ -202,8 +194,6 @@ The <a class="reference internal" href="GXEMAP.html#geosoft.gxapi.GXEMAP" title=
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Window handle as an int (HWND cast to unsigned on Windows)</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int</td>
 </tr>
 </tbody>
 </table>
@@ -222,8 +212,6 @@ The <a class="reference internal" href="GXEMAP.html#geosoft.gxapi.GXEMAP" title=
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Window handle as an int (HWND cast to unsigned on Windows)</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int</td>
-</tr>
 </tbody>
 </table>
 <div class="versionadded">
@@ -239,9 +227,7 @@ The <a class="reference internal" href="GXEMAP.html#geosoft.gxapi.GXEMAP" title=
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Window handle as an int (HWND cast to unsigned on Windows)</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True is the parent has UI console.</td>
 </tr>
 </tbody>
 </table>
@@ -259,11 +245,7 @@ other application windows. Has no effect on consoles owning standalone scripts.<
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>show</strong> (<em>bool</em>) &#8211; True to show False to Hide</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Nothing</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">None</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>show</strong> &#8211; True to show False to Hide</td>
 </tr>
 </tbody>
 </table>
@@ -274,20 +256,7 @@ other application windows. Has no effect on consoles owning standalone scripts.<
 
 </dd></dl>
 
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p>There should be a single instance of this class constructed in a global location prior to using any other GX API
-classes and their methods. By default the module will only function if an installed <em>Oasis montaj</em> product is found since
-it loads the dlls that are shipped with <em>Oasis montaj</em> for the actual functionality.</p>
-<p>It is possible to redirect the location of dlls used by setting the <code class="code docutils literal"><span class="pre">GX_GEOSOFT_BIN_PATH</span></code> environment variable.
-This can be done either using the normal <em>Windows</em> mechanisms (i.e. via <code class="code docutils literal"><span class="pre">set</span></code> command line or <em>Advanced System Settings-&gt;Environment Variables</em>)
-or directly in Python code by using <code class="code docutils literal"><span class="pre">os.putenv(&quot;GX_GEOSOFT_BIN_PATH&quot;,</span> <span class="pre">...)</span></code>. If your intention is to use the
-public standalone API that is shipped with <em>GX Developer</em> then this should be set to wherever
-the <code class="code docutils literal"><span class="pre">GeosoftFiles</span></code> redistributable folder is copied or installed.</p>
-<p class="last">The UI console functions are inteded for extension scripts or scripts running in Oasis montaj or other UI applications
-and are launched with <a class="reference internal" href="GXSYS.html#geosoft.gxapi.GXSYS.run_gx" title="geosoft.gxapi.GXSYS.run_gx"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXSYS.run_gx()</span></code></a>. The GX execution engine will detect if it is not running
-in a console and create a console for that can be shown or hidden by default with a setting.</p>
-</div>
+<p>_sources/config.rst.txt</p>
 </div>
 <div class="section" id="helper-classes-to-pass-immutable-values-by-reference">
 <h2>Helper classes to pass immutable values by reference<a class="headerlink" href="#helper-classes-to-pass-immutable-values-by-reference" title="Permalink to this headline">¶</a></h2>
@@ -405,12 +374,27 @@ very specific exceptions.</p>
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.1 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li> 
       </ul>
     </div>
+
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2016, Geosoft Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.6.
+        &#169; Copyright 2017, Geosoft Inc.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
     </div>
+<div class="footer">This page uses <a href="http://analytics.google.com/">
+Google Analytics</a> to collect statistics. You can disable it by blocking
+the JavaScript coming from www.google-analytics.com.
+<script type="text/javascript">
+  (function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ?
+              'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+  })();
+</script>
+</div>
+
   </body>
 </html>

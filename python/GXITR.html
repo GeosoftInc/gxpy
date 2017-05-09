@@ -1,3 +1,4 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -5,19 +6,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <script type="text/javascript">
-
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-87443115-1']);
-      _gaq.push(['_trackPageview']);
-
-      (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
-    </script>
-    <title>GXITR class &#8212; Geosoft GX Python API 9.1 documentation</title>
+    
+    <title>GXITR class &#8212; Geosoft GX Python API 9.2.0 documentation</title>
     
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -25,16 +15,25 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '9.1',
+        VERSION:     '9.2.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="Geosoft GX Python API 9.1 documentation" href="index.html" /> 
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+ 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-87443115-1']);
+  _gaq.push(['_trackPageview']);
+</script>
+
   </head>
   <body role="document">
     <div class="related" role="navigation" aria-label="related navigation">
@@ -46,7 +45,7 @@
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.1 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -65,7 +64,7 @@
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="_sources/GXITR.txt"
+      <li><a href="_sources/GXITR.rst.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
@@ -92,11 +91,11 @@
 <dl class="class">
 <dt id="geosoft.gxapi.GXITR">
 <em class="property">class </em><code class="descclassname">geosoft.gxapi.</code><code class="descname">GXITR</code><a class="headerlink" href="#geosoft.gxapi.GXITR" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">ITR</span> <span class="k">class</span> <span class="nc">provides</span> <span class="n">access</span> <span class="n">to</span> <span class="n">ITR</span> <span class="n">files</span><span class="o">.</span> <span class="n">An</span> <span class="n">ITR</span> <span class="n">file</span> <span class="n">maps</span>
-<span class="n">ranges</span> <span class="n">of</span> <span class="n">values</span> <span class="n">to</span> <span class="n">specific</span> <span class="n">colours</span><span class="o">.</span> <span class="n">The</span> <span class="n">ITR</span> <span class="nb">object</span> <span class="ow">is</span> <span class="n">typically</span>
-<span class="n">used</span> <span class="ow">in</span> <span class="n">conjunction</span> <span class="k">with</span> <span class="n">MVIEW</span> <span class="n">objects</span> <span class="p">(</span><span class="n">see</span> <span class="n">MVIEW</span> <span class="ow">and</span> <span class="n">MVU</span><span class="p">)</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+The ITR class provides access to ITR files. An ITR file maps
+ranges of values to specific colours. The ITR object is typically
+used in conjunction with MVIEW objects (see MVIEW and MVU).
+</pre>
 <p><strong>Note:</strong></p>
 <pre class="literal-block">
 Histogram ranges and colour zone ranges
@@ -116,14 +115,14 @@ when the data values are integers is to define the colour zones using
 0.5 values between the integers. A general work-around is to make the
 number of histogram bins much larger than the number of colour zones.
 
-The <a class="reference internal" href="#geosoft.gxapi.GXITR.null" title="geosoft.gxapi.GXITR.null"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXITR.null()</span></code></a> is used to hold a NULL handle to an ITR class.
+The \ :func:`geosoft.gxapi.GXITR.null()`\  is used to hold a NULL handle to an ITR class.
 </pre>
 <dl class="method">
 <dt id="geosoft.gxapi.GXITR.change_brightness">
 <code class="descname">change_brightness</code><span class="sig-paren">(</span><em>(float)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXITR.change_brightness" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Change</span> <span class="n">the</span> <span class="n">brightness</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Change the brightness.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -140,11 +139,11 @@ The <a class="reference internal" href="#geosoft.gxapi.GXITR.null" title="geosof
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="mf">0.0</span> <span class="n">brightness</span> <span class="n">does</span> <span class="n">nothing</span><span class="o">.</span>
-<span class="o">-</span><span class="mf">1.0</span> <span class="n">to</span> <span class="mf">0.0</span> <span class="n">makes</span> <span class="n">colours</span> <span class="n">darker</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.0</span> <span class="ow">is</span> <span class="n">black</span>
-<span class="mf">0.0</span> <span class="n">to</span> <span class="mf">1.0</span> <span class="n">makes</span> <span class="n">colours</span> <span class="n">lighter</span><span class="p">,</span> <span class="mf">1.0</span> <span class="ow">is</span> <span class="n">white</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+0.0 brightness does nothing.
+-1.0 to 0.0 makes colours darker, -1.0 is black
+0.0 to 1.0 makes colours lighter, 1.0 is white
+</pre>
 </dd></dl>
 
 <dl class="method">
@@ -161,7 +160,7 @@ The <a class="reference internal" href="#geosoft.gxapi.GXITR.null" title="geosof
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><a class="reference internal" href="GXMVIEW.html#mview-color"><span class="std std-ref">MVIEW_COLOR constants</span></a></td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></td>
 </tr>
 </tbody>
 </table>
@@ -173,9 +172,9 @@ The <a class="reference internal" href="#geosoft.gxapi.GXITR.null" title="geosof
 <dl class="method">
 <dt id="geosoft.gxapi.GXITR.color_vv">
 <code class="descname">color_vv</code><span class="sig-paren">(</span><em>(GXVV)arg1</em>, <em>(GXVV)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXITR.color_vv" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">color</span> <span class="n">transform</span> <span class="n">of</span> <span class="n">a</span> <span class="n">VV</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Get color transform of a VV.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -198,10 +197,10 @@ The <a class="reference internal" href="#geosoft.gxapi.GXITR.null" title="geosof
 <p><span class="versionmodified">New in version 5.1.6.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">If</span> <span class="n">the</span> <span class="nb">input</span> <span class="n">value</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">dummy</span><span class="p">,</span> <span class="n">then</span> <span class="n">the</span> <span class="n">output</span> <span class="n">colour</span>
-<span class="ow">is</span> <span class="mi">0</span> <span class="p">(</span><span class="n">no</span> <span class="n">colour</span><span class="p">)</span><span class="o">.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+If the input value is a dummy, then the output colour
+is 0 (no colour).
+</pre>
 </dd></dl>
 
 <dl class="method">
@@ -251,9 +250,9 @@ The <a class="reference internal" href="#geosoft.gxapi.GXITR.null" title="geosof
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXITR.create_file">
 <em class="property">static </em><code class="descname">create_file</code><span class="sig-paren">(</span><em>(str)arg1</em><span class="sig-paren">)</span> &rarr; GXITR:<a class="headerlink" href="#geosoft.gxapi.GXITR.create_file" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Create</span> <span class="n">an</span> <span class="n">ITR</span> <span class="n">Object</span> <span class="kn">from</span> <span class="nn">an</span> <span class="n">itr</span><span class="p">,</span> <span class="n">tbl</span><span class="p">,</span> <span class="n">zon</span><span class="p">,</span> <span class="n">lut</span> <span class="n">file</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Create an ITR Object from an itr, tbl, zon, lut file.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -274,9 +273,9 @@ The <a class="reference internal" href="#geosoft.gxapi.GXITR.null" title="geosof
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXITR.create_img">
 <em class="property">static </em><code class="descname">create_img</code><span class="sig-paren">(</span><em>(GXIMG)arg1</em>, <em>(str)arg2</em>, <em>(int)arg3</em>, <em>(float)arg4</em><span class="sig-paren">)</span> &rarr; GXITR:<a class="headerlink" href="#geosoft.gxapi.GXITR.create_img" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Create</span> <span class="n">an</span> <span class="n">ITR</span> <span class="k">for</span> <span class="n">an</span> <span class="n">image</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Create an ITR for an image.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -284,7 +283,7 @@ The <a class="reference internal" href="#geosoft.gxapi.GXITR.null" title="geosof
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXIMG</span></code></a>) &#8211; </li>
 <li><strong>arg2</strong> (<em>str</em>) &#8211; colour table name, NULL for default</li>
-<li><strong>arg3</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#itr-zone"><span class="std std-ref">ITR_ZONE constants</span></a></li>
+<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#itr-zone"><span class="std std-ref">ITR_ZONE constants</span></a></li>
 <li><strong>arg4</strong> (<em>float</em>) &#8211; colour contour interval or rDUMMY</li>
 </ul>
 </td>
@@ -301,23 +300,23 @@ The <a class="reference internal" href="#geosoft.gxapi.GXITR.null" title="geosof
 <p><span class="versionmodified">New in version 5.1.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">ITR_ZONE_DEFAULT</span> <span class="n">model</span> <span class="n">will</span> <span class="n">ask</span> <span class="n">the</span> <span class="n">IMG</span> <span class="n">to</span> <span class="n">provide</span>
-<span class="n">a</span> <span class="n">model</span> <span class="k">if</span> <span class="n">it</span> <span class="n">can</span><span class="o">.</span>
+<pre class="literal-block">
+The ITR_ZONE_DEFAULT model will ask the IMG to provide
+a model if it can.
 
-<span class="n">If</span> <span class="n">a</span> <span class="n">shaded</span> <span class="n">relief</span> <span class="n">model</span> <span class="ow">is</span> <span class="n">selected</span><span class="p">,</span> <span class="n">a</span> <span class="n">shaded</span> <span class="n">image</span>
-<span class="n">will</span> <span class="n">be</span> <span class="n">created</span> <span class="ow">and</span> <span class="n">a</span> <span class="n">shaded</span> <span class="n">image</span> <span class="n">file</span> <span class="n">will</span> <span class="n">be</span> <span class="n">created</span> <span class="k">with</span>
-<span class="n">the</span> <span class="n">same</span> <span class="n">name</span> <span class="k">as</span> <span class="n">the</span> <span class="n">original</span> <span class="n">grid</span> <span class="n">but</span> <span class="k">with</span> <span class="n">the</span> <span class="n">suffux</span> <span class="s2">&quot;_s&quot;</span>
-<span class="n">added</span> <span class="n">to</span> <span class="n">the</span> <span class="n">name</span> <span class="n">part</span> <span class="n">of</span> <span class="n">the</span> <span class="n">grid</span><span class="o">.</span>
-</pre></div>
-</div>
+If a shaded relief model is selected, a shaded image
+will be created and a shaded image file will be created with
+the same name as the original grid but with the suffux &quot;_s&quot;
+added to the name part of the grid.
+</pre>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXITR.create_map">
 <em class="property">static </em><code class="descname">create_map</code><span class="sig-paren">(</span><em>(GXMAP)arg1</em>, <em>(str)arg2</em><span class="sig-paren">)</span> &rarr; GXITR:<a class="headerlink" href="#geosoft.gxapi.GXITR.create_map" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Create</span> <span class="n">ITR</span> <span class="kn">from</span> <span class="nn">Map</span> <span class="k">with</span> <span class="n">Agg</span> <span class="n">Group</span> <span class="n">name</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Create ITR from Map with Agg Group name.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -367,9 +366,9 @@ The <a class="reference internal" href="#geosoft.gxapi.GXITR.null" title="geosof
 <dl class="method">
 <dt id="geosoft.gxapi.GXITR.equal_area">
 <code class="descname">equal_area</code><span class="sig-paren">(</span><em>(GXST)arg1</em>, <em>(float)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXITR.equal_area" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Calculate</span> <span class="n">an</span> <span class="n">equal</span> <span class="n">area</span> <span class="n">transform</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Calculate an equal area transform.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -413,23 +412,23 @@ The <a class="reference internal" href="#geosoft.gxapi.GXITR.null" title="geosof
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Brightness</span> <span class="n">can</span> <span class="nb">range</span> <span class="kn">from</span> <span class="o">-</span><span class="mf">1.0</span> <span class="p">(</span><span class="n">black</span><span class="p">)</span> <span class="n">to</span> <span class="mf">1.0</span> <span class="p">(</span><span class="n">white</span><span class="p">)</span><span class="o">.</span>
-<span class="n">This</span> <span class="n">brightness</span> <span class="n">control</span> <span class="ow">is</span> <span class="n">relative</span> <span class="n">to</span> <span class="n">the</span> <span class="n">normal</span> <span class="n">colour</span>
-<span class="n">when</span> <span class="n">the</span> <span class="n">ITR</span> <span class="ow">is</span> <span class="n">created</span><span class="o">.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+Brightness can range from -1.0 (black) to 1.0 (white).
+This brightness control is relative to the normal colour
+when the ITR is created.
+</pre>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="#geosoft.gxapi.GXITR.change_brightness" title="geosoft.gxapi.GXITR.change_brightness"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXITR.change_brightness()</span></code></a>, <a class="reference internal" href="GXAGG.html#geosoft.gxapi.GXAGG.get_brightness" title="geosoft.gxapi.GXAGG.get_brightness"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXAGG.get_brightness()</span></code></a>, <a class="reference internal" href="GXAGG.html#geosoft.gxapi.GXAGG.change_brightness" title="geosoft.gxapi.GXAGG.change_brightness"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXAGG.change_brightness()</span></code></a></p>
+<p class="last">\ :func:`geosoft.gxapi.GXITR.change_brightness`\ , \ :func:`geosoft.gxapi.GXAGG.get_brightness`\ , \ :func:`geosoft.gxapi.GXAGG.change_brightness`\</p>
 </div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXITR.get_data_limits">
 <code class="descname">get_data_limits</code><span class="sig-paren">(</span><em>(float_ref)arg1</em>, <em>(float_ref)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXITR.get_data_limits" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">ITR</span> <span class="nb">max</span><span class="o">/</span><span class="nb">min</span> <span class="n">data</span> <span class="n">limits</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Get ITR max/min data limits.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -452,22 +451,22 @@ The <a class="reference internal" href="#geosoft.gxapi.GXITR.null" title="geosof
 <p><span class="versionmodified">New in version 6.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="n">some</span> <span class="n">ITRs</span><span class="p">,</span> <span class="n">especially</span> <span class="n">those</span> <span class="n">defined</span> <span class="ow">and</span>
-<span class="n">embedded</span> <span class="n">inside</span> <span class="n">grid</span> <span class="p">(</span><span class="n">IMG</span><span class="p">)</span> <span class="n">objects</span><span class="p">,</span> <span class="n">the</span>
-<span class="n">actual</span> <span class="n">data</span> <span class="n">minimum</span> <span class="ow">and</span> <span class="n">maximum</span> <span class="n">values</span> <span class="n">are</span>
-<span class="n">stored</span><span class="o">.</span> <span class="n">This</span> <span class="n">function</span> <span class="n">retrieves</span> <span class="n">those</span> <span class="n">values</span><span class="o">.</span>
-<span class="n">This</span> <span class="ow">is</span> <span class="n">NOT</span> <span class="n">true</span> <span class="n">of</span> <span class="nb">all</span> <span class="n">ITR</span> <span class="n">objects</span><span class="p">,</span> <span class="ow">and</span> <span class="ow">in</span>
-<span class="n">those</span> <span class="n">cases</span> <span class="n">dummy</span> <span class="n">values</span> <span class="n">will</span> <span class="n">be</span> <span class="n">returned</span><span class="o">.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+In some ITRs, especially those defined and
+embedded inside grid (IMG) objects, the
+actual data minimum and maximum values are
+stored. This function retrieves those values.
+This is NOT true of all ITR objects, and in
+those cases dummy values will be returned.
+</pre>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXITR.get_reg">
 <code class="descname">get_reg</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; GXREG:<a class="headerlink" href="#geosoft.gxapi.GXITR.get_reg" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">the</span> <span class="n">ITR</span><span class="s1">&#39;s REG</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Get the ITR's REG
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -495,7 +494,7 @@ The <a class="reference internal" href="#geosoft.gxapi.GXITR.null" title="geosof
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The number of zones.</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></td>
 </tr>
 </tbody>
 </table>
@@ -515,7 +514,7 @@ The <a class="reference internal" href="#geosoft.gxapi.GXITR.null" title="geosof
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<em>int</em>) &#8211; Number of the zone to set.</li>
+<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Number of the zone to set.</li>
 <li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; <a class="reference internal" href="GXMVIEW.html#mview-color"><span class="std std-ref">MVIEW_COLOR constants</span></a></li>
 </ul>
 </td>
@@ -532,24 +531,24 @@ The <a class="reference internal" href="#geosoft.gxapi.GXITR.null" title="geosof
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Valid</span> <span class="n">indices</span> <span class="n">are</span> <span class="mi">0</span> <span class="n">to</span> <span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">where</span> <span class="n">N</span> <span class="ow">is</span> <span class="n">the</span> <span class="n">size</span> <span class="n">of</span> <span class="n">the</span> <span class="n">ITR</span><span class="o">.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+Valid indices are 0 to N-1, where N is the size of the ITR.
+</pre>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXITR.get_zone_model_type">
 <code class="descname">get_zone_model_type</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXITR.get_zone_model_type" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">the</span> <span class="n">ITR</span> <span class="n">zone</span> <span class="n">model</span> <span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">g</span><span class="o">.</span> <span class="n">Linear</span><span class="p">,</span> <span class="n">LogLin</span><span class="p">,</span> <span class="n">Equal</span> <span class="n">Area</span><span class="p">)</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Get the ITR zone model (e.g. Linear, LogLin, Equal Area).
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><a class="reference internal" href="#itr-zone-model"><span class="std std-ref">ITR_ZONE_MODEL constants</span></a></td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></td>
 </tr>
 </tbody>
 </table>
@@ -557,10 +556,10 @@ The <a class="reference internal" href="#geosoft.gxapi.GXITR.null" title="geosof
 <p><span class="versionmodified">New in version 6.4.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="n">function</span> <span class="n">may</span> <span class="n">be</span> <span class="n">used</span> <span class="n">to</span> <span class="n">determine</span> <span class="k">if</span> <span class="n">a</span> <span class="n">colour</span>
-<span class="n">transform</span> <span class="ow">is</span> <span class="n">included</span> <span class="ow">in</span> <span class="n">an</span> <span class="n">ITR</span><span class="o">.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+This function may be used to determine if a colour
+transform is included in an ITR.
+</pre>
 </dd></dl>
 
 <dl class="method">
@@ -573,7 +572,7 @@ The <a class="reference internal" href="#geosoft.gxapi.GXITR.null" title="geosof
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>int</em>) &#8211; Number of the zone to set.</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Number of the zone to set.</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">The value of the specified zone.</td>
 </tr>
@@ -585,9 +584,9 @@ The <a class="reference internal" href="#geosoft.gxapi.GXITR.null" title="geosof
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Valid</span> <span class="n">indices</span> <span class="n">are</span> <span class="mi">0</span> <span class="n">to</span> <span class="n">N</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="n">where</span> <span class="n">N</span> <span class="ow">is</span> <span class="n">the</span> <span class="n">size</span> <span class="n">of</span> <span class="n">the</span> <span class="n">ITR</span><span class="o">.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+Valid indices are 0 to N-2, where N is the size of the ITR.
+</pre>
 </dd></dl>
 
 <dl class="method">
@@ -609,9 +608,9 @@ The <a class="reference internal" href="#geosoft.gxapi.GXITR.null" title="geosof
 <dl class="method">
 <dt id="geosoft.gxapi.GXITR.linear">
 <code class="descname">linear</code><span class="sig-paren">(</span><em>(float)arg1</em>, <em>(float)arg2</em>, <em>(float)arg3</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXITR.linear" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Calculate</span> <span class="n">a</span> <span class="n">linear</span> <span class="n">transform</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Calculate a linear transform.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -639,9 +638,9 @@ The <a class="reference internal" href="#geosoft.gxapi.GXITR.null" title="geosof
 <dl class="method">
 <dt id="geosoft.gxapi.GXITR.load_a">
 <code class="descname">load_a</code><span class="sig-paren">(</span><em>(str)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXITR.load_a" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Load</span> <span class="n">to</span> <span class="n">an</span> <span class="n">ASCII</span> <span class="n">file</span><span class="p">,</span> <span class="n">ZON</span><span class="p">,</span> <span class="n">TBL</span> <span class="ow">or</span> <span class="n">ER</span><span class="o">-</span><span class="n">Mapper</span> <span class="n">LUT</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Load to an ASCII file, ZON, TBL or ER-Mapper LUT
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -662,9 +661,9 @@ The <a class="reference internal" href="#geosoft.gxapi.GXITR.null" title="geosof
 <dl class="method">
 <dt id="geosoft.gxapi.GXITR.log_linear">
 <code class="descname">log_linear</code><span class="sig-paren">(</span><em>(float)arg1</em>, <em>(float)arg2</em>, <em>(float)arg3</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXITR.log_linear" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Calculate</span> <span class="n">a</span> <span class="n">log</span> <span class="n">transform</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Calculate a log transform.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -688,17 +687,17 @@ The <a class="reference internal" href="#geosoft.gxapi.GXITR.null" title="geosof
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">function</span> <span class="n">name</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">misnomer</span><span class="o">.</span> <span class="n">This</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">pure</span> <span class="n">log</span> <span class="n">transform</span><span class="o">.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+The function name is a misnomer. This is a pure log transform.
+</pre>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXITR.normal">
 <code class="descname">normal</code><span class="sig-paren">(</span><em>(float)arg1</em>, <em>(float)arg2</em>, <em>(float)arg3</em>, <em>(float)arg4</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXITR.normal" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Calculate</span> <span class="n">a</span> <span class="n">normal</span> <span class="n">distribution</span> <span class="n">transform</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Calculate a normal distribution transform.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -743,14 +742,14 @@ The <a class="reference internal" href="#geosoft.gxapi.GXITR.null" title="geosof
 <dl class="method">
 <dt id="geosoft.gxapi.GXITR.power_zone">
 <code class="descname">power_zone</code><span class="sig-paren">(</span><em>(int)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXITR.power_zone" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Modified</span> <span class="n">ITR</span> <span class="n">zone</span> <span class="n">values</span> <span class="n">to</span> <span class="mi">10</span> <span class="p">(</span><span class="ow">or</span> <span class="n">e</span><span class="p">)</span> <span class="n">raized</span> <span class="n">to</span> <span class="n">the</span> <span class="n">power</span> <span class="n">of</span> <span class="n">the</span> <span class="n">values</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Modified ITR zone values to 10 (or e) raized to the power of the values
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#itr-power"><span class="std std-ref">ITR_POWER constants</span></a></td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#itr-power"><span class="std std-ref">ITR_POWER constants</span></a></td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Nothing</td>
 </tr>
@@ -766,9 +765,9 @@ The <a class="reference internal" href="#geosoft.gxapi.GXITR.null" title="geosof
 <dl class="method">
 <dt id="geosoft.gxapi.GXITR.save_a">
 <code class="descname">save_a</code><span class="sig-paren">(</span><em>(str)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXITR.save_a" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Save</span> <span class="n">to</span> <span class="n">an</span> <span class="n">ASCII</span> <span class="n">file</span><span class="p">,</span> <span class="n">ZON</span><span class="p">,</span> <span class="n">TBL</span> <span class="ow">or</span> <span class="n">ER</span><span class="o">-</span><span class="n">Mapper</span> <span class="n">LUT</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Save to an ASCII file, ZON, TBL or ER-Mapper LUT
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -789,9 +788,9 @@ The <a class="reference internal" href="#geosoft.gxapi.GXITR.null" title="geosof
 <dl class="method">
 <dt id="geosoft.gxapi.GXITR.save_file">
 <code class="descname">save_file</code><span class="sig-paren">(</span><em>(str)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXITR.save_file" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Save</span> <span class="n">to</span> <span class="nb">any</span> <span class="nb">type</span> <span class="p">(</span><span class="n">based</span> <span class="n">on</span> <span class="n">the</span> <span class="n">extension</span> <span class="n">of</span> <span class="n">the</span> <span class="nb">input</span> <span class="n">file</span> <span class="n">name</span><span class="p">)</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Save to any type (based on the extension of the input file name).
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -862,7 +861,7 @@ The <a class="reference internal" href="#geosoft.gxapi.GXITR.null" title="geosof
 </div>
 <p><strong>Note:</strong></p>
 <pre class="literal-block">
-See the <a class="reference internal" href="#geosoft.gxapi.GXITR.create_map" title="geosoft.gxapi.GXITR.create_map"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXITR.create_map()</span></code></a> function
+See the \ :func:`geosoft.gxapi.GXITR.create_map`\  function
 </pre>
 </dd></dl>
 
@@ -894,29 +893,29 @@ See the <a class="reference internal" href="#geosoft.gxapi.GXITR.create_map" tit
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Brightness</span> <span class="n">settings</span><span class="p">:</span>
-<span class="mf">0.0</span>   <span class="o">-</span> <span class="n">black</span>
-<span class="mf">0.5</span>   <span class="o">-</span> <span class="n">normal</span> <span class="p">(</span><span class="n">no</span> <span class="n">change</span><span class="p">)</span>
-<span class="mf">1.0</span>   <span class="o">-</span> <span class="n">white</span>
+<pre class="literal-block">
+Brightness settings:
+0.0   - black
+0.5   - normal (no change)
+1.0   - white
 
-<span class="n">Contrast</span>
-<span class="mf">0.0</span>   <span class="o">-</span> <span class="n">flat</span>
-<span class="mf">1.0</span>   <span class="o">-</span> <span class="n">full</span> <span class="n">contrast</span> <span class="p">(</span><span class="n">normal</span><span class="p">)</span>
-</pre></div>
-</div>
+Contrast
+0.0   - flat
+1.0   - full contrast (normal)
+</pre>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXITR.set_color_model">
 <code class="descname">set_color_model</code><span class="sig-paren">(</span><em>(int)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXITR.set_color_model" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Set</span> <span class="n">the</span> <span class="n">color</span> <span class="n">model</span> <span class="n">of</span> <span class="n">an</span> <span class="n">ITR</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Set the color model of an ITR.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#itr-color-model"><span class="std std-ref">ITR_COLOR_MODEL constants</span></a></td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#itr-color-model"><span class="std std-ref">ITR_COLOR_MODEL constants</span></a></td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Nothing</td>
 </tr>
@@ -932,9 +931,9 @@ See the <a class="reference internal" href="#geosoft.gxapi.GXITR.create_map" tit
 <dl class="method">
 <dt id="geosoft.gxapi.GXITR.set_data_limits">
 <code class="descname">set_data_limits</code><span class="sig-paren">(</span><em>(float)arg1</em>, <em>(float)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXITR.set_data_limits" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Set</span> <span class="n">ITR</span> <span class="nb">max</span><span class="o">/</span><span class="nb">min</span> <span class="n">data</span> <span class="n">limits</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Set ITR max/min data limits.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -968,7 +967,7 @@ See the <a class="reference internal" href="#geosoft.gxapi.GXITR.create_map" tit
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>int</em>) &#8211; Number of zones to set ITR to.</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Number of zones to set ITR to.</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Nothing</td>
 </tr>
@@ -992,8 +991,8 @@ See the <a class="reference internal" href="#geosoft.gxapi.GXITR.create_map" tit
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<em>int</em>) &#8211; Number of the zone to set.</li>
-<li><strong>arg2</strong> (<em>int</em>) &#8211; <a class="reference internal" href="GXMVIEW.html#mview-color"><span class="std std-ref">MVIEW_COLOR constants</span></a></li>
+<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Number of the zone to set.</li>
+<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="GXMVIEW.html#mview-color"><span class="std std-ref">MVIEW_COLOR constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -1009,9 +1008,9 @@ See the <a class="reference internal" href="#geosoft.gxapi.GXITR.create_map" tit
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Valid</span> <span class="n">indices</span> <span class="n">are</span> <span class="mi">0</span> <span class="n">to</span> <span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">where</span> <span class="n">N</span> <span class="ow">is</span> <span class="n">the</span> <span class="n">size</span> <span class="n">of</span> <span class="n">the</span> <span class="n">ITR</span><span class="o">.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+Valid indices are 0 to N-1, where N is the size of the ITR.
+</pre>
 </dd></dl>
 
 <dl class="method">
@@ -1025,7 +1024,7 @@ See the <a class="reference internal" href="#geosoft.gxapi.GXITR.create_map" tit
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<em>int</em>) &#8211; Number of the zone to set.</li>
+<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Number of the zone to set.</li>
 <li><strong>arg2</strong> (<em>float</em>) &#8211; The value to set</li>
 </ul>
 </td>
@@ -1042,9 +1041,9 @@ See the <a class="reference internal" href="#geosoft.gxapi.GXITR.create_map" tit
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Valid</span> <span class="n">indices</span> <span class="n">are</span> <span class="mi">0</span> <span class="n">to</span> <span class="n">N</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="n">where</span> <span class="n">N</span> <span class="ow">is</span> <span class="n">the</span> <span class="n">size</span> <span class="n">of</span> <span class="n">the</span> <span class="n">ITR</span><span class="o">.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+Valid indices are 0 to N-2, where N is the size of the ITR.
+</pre>
 </dd></dl>
 
 </dd></dl>
@@ -1199,12 +1198,27 @@ See the <a class="reference internal" href="#geosoft.gxapi.GXITR.create_map" tit
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.1 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li> 
       </ul>
     </div>
+
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2016, Geosoft Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.6.
+        &#169; Copyright 2017, Geosoft Inc.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
     </div>
+<div class="footer">This page uses <a href="http://analytics.google.com/">
+Google Analytics</a> to collect statistics. You can disable it by blocking
+the JavaScript coming from www.google-analytics.com.
+<script type="text/javascript">
+  (function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ?
+              'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+  })();
+</script>
+</div>
+
   </body>
 </html>

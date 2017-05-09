@@ -1,3 +1,4 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -5,19 +6,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <script type="text/javascript">
-
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-87443115-1']);
-      _gaq.push(['_trackPageview']);
-
-      (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
-    </script>
-    <title>GXREG class &#8212; Geosoft GX Python API 9.1 documentation</title>
+    
+    <title>GXREG class &#8212; Geosoft GX Python API 9.2.0 documentation</title>
     
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -25,16 +15,25 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '9.1',
+        VERSION:     '9.2.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="Geosoft GX Python API 9.1 documentation" href="index.html" /> 
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+ 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-87443115-1']);
+  _gaq.push(['_trackPageview']);
+</script>
+
   </head>
   <body role="document">
     <div class="related" role="navigation" aria-label="related navigation">
@@ -46,7 +45,7 @@
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.1 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -62,7 +61,7 @@
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="_sources/GXREG.txt"
+      <li><a href="_sources/GXREG.rst.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
@@ -89,13 +88,13 @@
 <dl class="class">
 <dt id="geosoft.gxapi.GXREG">
 <em class="property">class </em><code class="descclassname">geosoft.gxapi.</code><code class="descname">GXREG</code><a class="headerlink" href="#geosoft.gxapi.GXREG" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">REG</span> <span class="k">class</span> <span class="nc">is</span> <span class="n">used</span> <span class="k">for</span> <span class="n">storing</span> <span class="ow">and</span> <span class="n">retrieving</span> <span class="n">named</span>
-<span class="n">variables</span><span class="o">.</span> <span class="n">Many</span> <span class="n">classes</span> <span class="n">contain</span> <span class="n">REG</span> <span class="n">objects</span> <span class="k">for</span> <span class="n">storing</span>
-<span class="n">information</span> <span class="n">particular</span> <span class="n">to</span> <span class="n">the</span> <span class="n">class</span><span class="o">.</span>  <span class="n">The</span> <span class="n">META</span> <span class="k">class</span> <span class="nc">supersedes</span>
-<span class="n">the</span> <span class="n">REG</span> <span class="k">class</span> <span class="nc">and</span> <span class="ow">is</span> <span class="n">gradually</span> <span class="n">replacing</span> <span class="n">the</span> <span class="n">use</span> <span class="n">of</span> <span class="n">the</span>
-<span class="n">REG</span> <span class="k">class</span> <span class="nc">in</span> <span class="n">newer</span> <span class="n">applications</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+The REG class is used for storing and retrieving named
+variables. Many classes contain REG objects for storing
+information particular to the class.  The META class supersedes
+the REG class and is gradually replacing the use of the
+REG class in newer applications.
+</pre>
 <dl class="method">
 <dt id="geosoft.gxapi.GXREG.clear">
 <code class="descname">clear</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXREG.clear" title="Permalink to this definition">¶</a></dt>
@@ -150,7 +149,7 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>int</em>) &#8211; maximum size of &#8220;parameter=setting&#8221; string.</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; maximum size of &#8220;parameter=setting&#8221; string.</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">REG Object</td>
 </tr>
@@ -198,7 +197,7 @@
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Number of parms in a REG object.</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></td>
 </tr>
 </tbody>
 </table>
@@ -264,9 +263,9 @@
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">If</span> <span class="n">parameter</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">present</span> <span class="ow">in</span> <span class="n">REG</span><span class="p">,</span> <span class="n">rDUMMY</span> <span class="ow">is</span> <span class="n">returned</span><span class="o">.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+If parameter is not present in REG, rDUMMY is returned.
+</pre>
 </dd></dl>
 
 <dl class="method">
@@ -297,23 +296,23 @@
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">If</span> <span class="n">parameter</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">present</span> <span class="ow">in</span> <span class="n">REG</span><span class="p">,</span> <span class="n">iDUMMY</span> <span class="ow">is</span> <span class="n">returned</span><span class="o">.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+If parameter is not present in REG, iDUMMY is returned.
+</pre>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXREG.get_one">
 <code class="descname">get_one</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(str_ref)arg2</em>, <em>(str_ref)arg3</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXREG.get_one" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Gets</span> <span class="n">n</span><span class="o">-</span><span class="n">th</span> <span class="n">entry</span> <span class="n">of</span> <span class="n">the</span> <span class="n">REG</span> <span class="nb">object</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Gets n-th entry of the REG object
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<em>int</em>) &#8211; sequential number of REG entry</li>
+<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; sequential number of REG entry</li>
 <li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; String to put parameter name</li>
 <li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; String to put data into.</li>
 </ul>
@@ -351,9 +350,9 @@
 <dl class="method">
 <dt id="geosoft.gxapi.GXREG.load_ini">
 <code class="descname">load_ini</code><span class="sig-paren">(</span><em>(str)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXREG.load_ini" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Load</span> <span class="n">a</span> <span class="n">registry</span> <span class="kn">from</span> <span class="nn">an</span> <span class="n">INI</span> <span class="n">file</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Load a registry from an INI file.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -370,17 +369,17 @@
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Items</span> <span class="n">are</span> <span class="n">loaded</span> <span class="n">into</span> <span class="n">the</span> <span class="n">REG</span> <span class="ow">in</span> <span class="n">the</span> <span class="nb">format</span> <span class="s2">&quot;GROUP.ITEM&quot;</span><span class="o">.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+Items are loaded into the REG in the format &quot;GROUP.ITEM&quot;.
+</pre>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXREG.match_string">
 <code class="descname">match_string</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(str_ref)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXREG.match_string" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Replace</span> <span class="n">a</span> <span class="n">string</span> <span class="k">with</span> <span class="n">reg</span> <span class="n">settings</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Replace a string with reg settings.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -416,7 +415,7 @@
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<a class="reference internal" href="#geosoft.gxapi.GXREG" title="geosoft.gxapi.GXREG"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXREG</span></code></a>) &#8211; source</li>
-<li><strong>arg2</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#reg-merge"><span class="std std-ref">REG_MERGE constants</span></a></li>
+<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#reg-merge"><span class="std std-ref">REG_MERGE constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -452,9 +451,9 @@
 <dl class="method">
 <dt id="geosoft.gxapi.GXREG.save_ini">
 <code class="descname">save_ini</code><span class="sig-paren">(</span><em>(str)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXREG.save_ini" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Save</span> <span class="n">a</span> <span class="n">REG</span> <span class="n">to</span> <span class="n">an</span> <span class="n">INI</span> <span class="n">file</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Save a REG to an INI file.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -471,20 +470,20 @@
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Only</span> <span class="n">REG</span> <span class="n">parameters</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">form</span> <span class="s2">&quot;GROUP.ITEM&quot;</span> <span class="n">are</span>
-<span class="n">dumped</span> <span class="n">to</span> <span class="n">the</span> <span class="n">INI</span> <span class="n">file</span><span class="p">,</span> <span class="n">because</span> <span class="n">they</span> <span class="n">match</span> <span class="n">the</span> <span class="n">INI</span> <span class="nb">format</span>
-<span class="n">which</span> <span class="n">groups</span> <span class="n">items</span> <span class="n">under</span> <span class="p">[</span><span class="n">GROUP</span><span class="p">]</span> <span class="n">headings</span><span class="o">.</span>
-<span class="n">Single</span><span class="o">-</span><span class="n">word</span> <span class="n">items</span> <span class="p">(</span><span class="n">without</span> <span class="n">a</span> <span class="n">separating</span> <span class="n">period</span><span class="p">)</span> <span class="n">are</span> <span class="n">skipped</span><span class="o">.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+Only REG parameters in the form &quot;GROUP.ITEM&quot; are
+dumped to the INI file, because they match the INI format
+which groups items under [GROUP] headings.
+Single-word items (without a separating period) are skipped.
+</pre>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXREG.serial">
 <code class="descname">serial</code><span class="sig-paren">(</span><em>(GXBF)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXREG.serial" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Serialize</span> <span class="n">a</span> <span class="n">REG</span> <span class="nb">object</span> <span class="n">into</span> <span class="n">a</span> <span class="n">file</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Serialize a REG object into a file.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -534,9 +533,9 @@
 To remove a parameter completely, use one of the
 following:
 
-<a class="reference internal" href="#geosoft.gxapi.GXREG.set_int" title="geosoft.gxapi.GXREG.set_int"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXREG.set_int()</span></code></a>(Reg, sParam, iDUMMY);
+\ :func:`geosoft.gxapi.GXREG.set_int`\ (Reg, sParam, iDUMMY);
 or
-<a class="reference internal" href="#geosoft.gxapi.GXREG.set_double" title="geosoft.gxapi.GXREG.set_double"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXREG.set_double()</span></code></a>(Reg, sParam, rDUMMY);
+\ :func:`geosoft.gxapi.GXREG.set_double`\ (Reg, sParam, rDUMMY);
 </pre>
 </dd></dl>
 
@@ -581,7 +580,7 @@ or
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<em>str</em>) &#8211; Name of the parameter</li>
-<li><strong>arg2</strong> (<em>int</em>) &#8211; Int to set, iDUMMY to remove the parameter</li>
+<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Int to set, iDUMMY to remove the parameter</li>
 </ul>
 </td>
 </tr>
@@ -639,12 +638,27 @@ or
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.1 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li> 
       </ul>
     </div>
+
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2016, Geosoft Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.6.
+        &#169; Copyright 2017, Geosoft Inc.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
     </div>
+<div class="footer">This page uses <a href="http://analytics.google.com/">
+Google Analytics</a> to collect statistics. You can disable it by blocking
+the JavaScript coming from www.google-analytics.com.
+<script type="text/javascript">
+  (function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ?
+              'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+  })();
+</script>
+</div>
+
   </body>
 </html>

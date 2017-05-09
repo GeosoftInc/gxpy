@@ -1,3 +1,4 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -5,19 +6,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <script type="text/javascript">
-
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-87443115-1']);
-      _gaq.push(['_trackPageview']);
-
-      (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
-    </script>
-    <title>geosoft.gxpy.utility submodule &#8212; Geosoft GX Python API 9.1 documentation</title>
+    
+    <title>geosoft.gxpy.utility submodule &#8212; Geosoft GX Python API 9.2.0 documentation</title>
     
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -25,16 +15,25 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '9.1',
+        VERSION:     '9.2.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="Geosoft GX Python API 9.1 documentation" href="index.html" /> 
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+ 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-87443115-1']);
+  _gaq.push(['_trackPageview']);
+</script>
+
   </head>
   <body role="document">
     <div class="related" role="navigation" aria-label="related navigation">
@@ -46,7 +45,7 @@
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.1 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -54,7 +53,7 @@
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="_sources/geosoft.gxpy.utility.txt"
+      <li><a href="_sources/geosoft.gxpy.utility.rst.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
@@ -79,6 +78,10 @@
   <div class="section" id="module-geosoft.gxpy.utility">
 <span id="geosoft-gxpy-utility-submodule"></span><h1>geosoft.gxpy.utility submodule<a class="headerlink" href="#module-geosoft.gxpy.utility" title="Permalink to this headline">¶</a></h1>
 <p>Utility functions to support Geosoft Python scripts and modules.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Regression tests provide usage examples: <a class="reference external" href="https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_utility.py">Tests</a></p>
+</div>
 <dl class="exception">
 <dt id="geosoft.gxpy.utility.UtilityException">
 <em class="property">exception </em><code class="descclassname">geosoft.gxpy.utility.</code><code class="descname">UtilityException</code><a class="headerlink" href="#geosoft.gxpy.utility.UtilityException" title="Permalink to this definition">¶</a></dt>
@@ -137,6 +140,80 @@ in the <a class="reference external" href="https://docs.python.org/3/distutils/"
 </div>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.1.</span></p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="geosoft.gxpy.utility.crc32">
+<code class="descclassname">geosoft.gxpy.utility.</code><code class="descname">crc32</code><span class="sig-paren">(</span><em>bytes</em>, <em>crc=0</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.utility.crc32" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return 32-bit CRC of a byte buffer.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>bytes</strong> &#8211; byte buffer (fulfills the Buffer Protocol)</li>
+<li><strong>crc</strong> &#8211; seed crc, can be passed along to accumulate the crc</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.2.</span></p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="geosoft.gxpy.utility.crc32_file">
+<code class="descclassname">geosoft.gxpy.utility.</code><code class="descname">crc32_file</code><span class="sig-paren">(</span><em>filename</em>, <em>crc=0</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.utility.crc32_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return 32-bit CRC of a file.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>filename</strong> &#8211; file name</li>
+<li><strong>crc</strong> &#8211; seed crc, default 0</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.2.</span></p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="geosoft.gxpy.utility.crc32_str">
+<code class="descclassname">geosoft.gxpy.utility.</code><code class="descname">crc32_str</code><span class="sig-paren">(</span><em>s</em>, <em>crc=0</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.utility.crc32_str" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return 32-bit CRC of a string.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>s</strong> &#8211; string</li>
+<li><strong>crc</strong> &#8211; seed crc, default 0</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.2.</span></p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="geosoft.gxpy.utility.datetime_from_year">
+<code class="descclassname">geosoft.gxpy.utility.</code><code class="descname">datetime_from_year</code><span class="sig-paren">(</span><em>year</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.utility.datetime_from_year" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the Python datetime from a decimal Gregorian year.
+:param year: decimal year on the Gregorian calendar.
+:return: datetime (resolved to 1 millisecond)</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.2.</span></p>
 </div>
 </dd></dl>
 
@@ -216,12 +293,42 @@ and return a decimal Gregorian year. Other date formats will raise a ValueErr.</
 
 <dl class="function">
 <dt id="geosoft.gxpy.utility.dict_from_lst">
-<code class="descclassname">geosoft.gxpy.utility.</code><code class="descname">dict_from_lst</code><span class="sig-paren">(</span><em>lst</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.utility.dict_from_lst" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">geosoft.gxpy.utility.</code><code class="descname">dict_from_lst</code><span class="sig-paren">(</span><em>lst</em>, <em>ordered=False</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.utility.dict_from_lst" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">python dictionary from a Geosoft GXLST</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>lst</strong> &#8211; gxapi.GXLST instance</li>
+<li><strong>ordered</strong> &#8211; True to return an OrderedDict</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">python dictionary from a Geosoft GXLST</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.1.</span></p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="geosoft.gxpy.utility.dict_from_reg">
+<code class="descclassname">geosoft.gxpy.utility.</code><code class="descname">dict_from_reg</code><span class="sig-paren">(</span><em>reg</em>, <em>ordered=False</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.utility.dict_from_reg" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>reg</strong> &#8211; gxapi.GXREG instance</li>
+<li><strong>ordered</strong> &#8211; True to return and OrderedDict</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">python dictionary from a Geosoft GXREG</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -268,6 +375,14 @@ and return a decimal Gregorian year. Other date formats will raise a ValueErr.</
 </dd></dl>
 
 <dl class="function">
+<dt id="geosoft.gxpy.utility.dummyMask">
+<code class="descclassname">geosoft.gxpy.utility.</code><code class="descname">dummyMask</code><span class="sig-paren">(</span><em>npd</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.utility.dummyMask" title="Permalink to this definition">¶</a></dt>
+<dd><div class="deprecated">
+<p><span class="versionmodified">Deprecated since version 9.2: </span>use dummy_mask()</p>
+</div>
+</dd></dl>
+
+<dl class="function">
 <dt id="geosoft.gxpy.utility.dummy_mask">
 <code class="descclassname">geosoft.gxpy.utility.</code><code class="descname">dummy_mask</code><span class="sig-paren">(</span><em>npd</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.utility.dummy_mask" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return a 1-D dummy mask that is True for all rows  in a 2D numpy array that
@@ -282,6 +397,56 @@ have a Geosoft dummy value.</p>
 </tr>
 </tbody>
 </table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.2.</span></p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="geosoft.gxpy.utility.dummy_none">
+<code class="descclassname">geosoft.gxpy.utility.</code><code class="descname">dummy_none</code><span class="sig-paren">(</span><em>v</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.utility.dummy_none" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns None if dummy, otherwise the value.</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.2.</span></p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="geosoft.gxpy.utility.dummy_to_nan">
+<code class="descclassname">geosoft.gxpy.utility.</code><code class="descname">dummy_to_nan</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.utility.dummy_to_nan" title="Permalink to this definition">¶</a></dt>
+<dd><p>Replaces dummies in float data to numpy.nan.  All other data types are returned unchanged.</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.2.</span></p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="geosoft.gxpy.utility.folder_temp">
+<code class="descclassname">geosoft.gxpy.utility.</code><code class="descname">folder_temp</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.utility.folder_temp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the Geosoft temporary folder name.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If creating temporary files, better to use gx method <code class="xref py py-meth docutils literal"><span class="pre">temp_file()</span></code>, which will
+create the temporary file in the GX-specific folder <code class="xref py py-mod docutils literal"><span class="pre">temp_folder</span></code>.</p>
+</div>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.1.</span></p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="geosoft.gxpy.utility.folder_user">
+<code class="descclassname">geosoft.gxpy.utility.</code><code class="descname">folder_user</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.utility.folder_user" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the Geosoft user configurations folder name.</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.1.</span></p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="geosoft.gxpy.utility.folder_workspace">
+<code class="descclassname">geosoft.gxpy.utility.</code><code class="descname">folder_workspace</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.utility.folder_workspace" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the Geosoft project folder name.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.1.</span></p>
 </div>
@@ -325,6 +490,14 @@ The shared dictionary is cleared (popped) so a subsequent call will return an em
 </dd></dl>
 
 <dl class="function">
+<dt id="geosoft.gxpy.utility.gxDummy">
+<code class="descclassname">geosoft.gxpy.utility.</code><code class="descname">gxDummy</code><span class="sig-paren">(</span><em>dtype</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.utility.gxDummy" title="Permalink to this definition">¶</a></dt>
+<dd><div class="deprecated">
+<p><span class="versionmodified">Deprecated since version 9.2: </span>use gx_dummy()</p>
+</div>
+</dd></dl>
+
+<dl class="function">
 <dt id="geosoft.gxpy.utility.gx_dtype">
 <code class="descclassname">geosoft.gxpy.utility.</code><code class="descname">gx_dtype</code><span class="sig-paren">(</span><em>dtype</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.utility.gx_dtype" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
@@ -352,16 +525,45 @@ The shared dictionary is cleared (popped) so a subsequent call will return an em
 </tbody>
 </table>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 9.1.</span></p>
+<p><span class="versionmodified">New in version 9.2.</span></p>
 </div>
 </dd></dl>
 
 <dl class="function">
-<dt id="geosoft.gxpy.utility.project_path">
-<code class="descclassname">geosoft.gxpy.utility.</code><code class="descname">project_path</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.utility.project_path" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the Geosoft project folder path.</p>
+<dt id="geosoft.gxpy.utility.is_float">
+<code class="descclassname">geosoft.gxpy.utility.</code><code class="descname">is_float</code><span class="sig-paren">(</span><em>gxtype</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.utility.is_float" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return True of gxtype can be stored in a 64-bit float</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="geosoft.gxpy.utility.is_int">
+<code class="descclassname">geosoft.gxpy.utility.</code><code class="descname">is_int</code><span class="sig-paren">(</span><em>gxtype</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.utility.is_int" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return True of gxtype can be stored in a 64-bit integer</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="geosoft.gxpy.utility.is_string">
+<code class="descclassname">geosoft.gxpy.utility.</code><code class="descname">is_string</code><span class="sig-paren">(</span><em>gxtype</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.utility.is_string" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return length of a gxtype string, 0 (False) if not a string.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="geosoft.gxpy.utility.normalize_file_name">
+<code class="descclassname">geosoft.gxpy.utility.</code><code class="descname">normalize_file_name</code><span class="sig-paren">(</span><em>fn</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.utility.normalize_file_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Normalize a file name string by replacing &#8216;&#8217; with &#8216;/&#8217;.  This is useful for writing
+file names to control files.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>fn</strong> &#8211; file name</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">normalized file name</td>
+</tr>
+</tbody>
+</table>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 9.1.</span></p>
+<p><span class="versionmodified">New in version 9.2.</span></p>
 </div>
 </dd></dl>
 
@@ -451,17 +653,42 @@ as presented. For example, &#8220;20 90 0.00&#8221; will return 21.5.</p>
 </dd></dl>
 
 <dl class="function">
+<dt id="geosoft.gxpy.utility.reg_from_dict">
+<code class="descclassname">geosoft.gxpy.utility.</code><code class="descname">reg_from_dict</code><span class="sig-paren">(</span><em>rd</em>, <em>max_size=4096</em>, <em>json_encode=True</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.utility.reg_from_dict" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>rd</strong> &#8211; dictionary</li>
+<li><strong>max_size</strong> &#8211; maximum &#8220;key=value&#8221; string size</li>
+<li><strong>json</strong> &#8211; True to encode non-string values as sas json strings (prefix &#8216;_JSON:&#8217;)
+False will encode non-string values as <code class="docutils literal"><span class="pre">str(value)</span></code></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">gxapi.GXREG instance</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Non-string values in the dictionary are converted to JSON strings and stored as
+&#8220;_JSON:json-string}&#8221;</p>
+</dd></dl>
+
+<dl class="function">
 <dt id="geosoft.gxpy.utility.run_external_python">
 <code class="descclassname">geosoft.gxpy.utility.</code><code class="descname">run_external_python</code><span class="sig-paren">(</span><em>script</em>, <em>script_args=''</em>, <em>python_args=''</em>, <em>dict=None</em>, <em>console=True</em>, <em>catcherr=True</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.utility.run_external_python" title="Permalink to this definition">¶</a></dt>
 <dd><p>Run a python script as an external program, returning results as a dictionary.
-External program can call gxpy.utility.run_return(dict) to pass a dictionary back to caller.</p>
+External program calls gxpy.utility.get_shared_dict() to get the caller&#8217;s dictionary,
+and gxpy.utility.set_shared_dict(return_dictionary) to return a dictionary back to caller.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>script</strong> &#8211; full path of the python script</li>
-<li><strong>dict</strong> &#8211; dictionary to pass to child via set/get_run_dict()</li>
+<li><strong>dict</strong> &#8211; dictionary passed to the external script (get_shared_dict() to retrieve)</li>
 <li><strong>script_args</strong> &#8211; command line arguments as a string</li>
 <li><strong>python_args</strong> &#8211; command line arguments as a string</li>
 <li><strong>console</strong> &#8211; True (default) will create a separate console for the process.</li>
@@ -469,7 +696,7 @@ External program can call gxpy.utility.run_return(dict) to pass a dictionary bac
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">dictionary registered gxpy.utility.run_return(dict)</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">dictionary passed back from caller via set_shared_dict(dict)</p>
 </td>
 </tr>
 </tbody>
@@ -481,7 +708,7 @@ External program can call gxpy.utility.run_return(dict) to pass a dictionary bac
 
 <dl class="function">
 <dt id="geosoft.gxpy.utility.save_parameters">
-<code class="descclassname">geosoft.gxpy.utility.</code><code class="descname">save_parameters</code><span class="sig-paren">(</span><em>group='_'</em>, <em>parms={}</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.utility.save_parameters" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">geosoft.gxpy.utility.</code><code class="descname">save_parameters</code><span class="sig-paren">(</span><em>group='_'</em>, <em>parms=None</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.utility.save_parameters" title="Permalink to this definition">¶</a></dt>
 <dd><p>Save parameters to the Project Parameter Block.  Parameter group names and member names
 are converted to upper-case.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -520,12 +747,12 @@ This is a companion file to run_external_python().</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="geosoft.gxpy.utility.temp_path">
-<code class="descclassname">geosoft.gxpy.utility.</code><code class="descname">temp_path</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.utility.temp_path" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the Geosoft temporary folder path.</p>
-<div class="versionadded">
-<p><span class="versionmodified">New in version 9.1.</span></p>
-</div>
+<dt id="geosoft.gxpy.utility.str_significant">
+<code class="descclassname">geosoft.gxpy.utility.</code><code class="descname">str_significant</code><span class="sig-paren">(</span><em>value</em>, <em>n</em>, <em>mode=0</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.utility.str_significant" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a formatted string to n significant figures.
+:param value:   value to format
+:param mode:    0 round, 1 ceiling, -1 floor
+:return:        string to n significant figures</p>
 </dd></dl>
 
 <dl class="function">
@@ -534,11 +761,18 @@ This is a companion file to run_external_python().</p>
 <dd></dd></dl>
 
 <dl class="function">
-<dt id="geosoft.gxpy.utility.user_path">
-<code class="descclassname">geosoft.gxpy.utility.</code><code class="descname">user_path</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.utility.user_path" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the Geosoft user configurations folder path.</p>
+<dt id="geosoft.gxpy.utility.uuid">
+<code class="descclassname">geosoft.gxpy.utility.</code><code class="descname">uuid</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.utility.uuid" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">a uuid as a string</td>
+</tr>
+</tbody>
+</table>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 9.1.</span></p>
+<p><span class="versionmodified">New in version 9.2.</span></p>
 </div>
 </dd></dl>
 
@@ -565,6 +799,17 @@ This is a companion file to run_external_python().</p>
 </div>
 </dd></dl>
 
+<dl class="function">
+<dt id="geosoft.gxpy.utility.year_from_datetime">
+<code class="descclassname">geosoft.gxpy.utility.</code><code class="descname">year_from_datetime</code><span class="sig-paren">(</span><em>dt</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.utility.year_from_datetime" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a decimal Gregorian calendar year from a Python datetime.
+:param dt: datetime
+:return: decimal Gregorian year to an accuracy of 1 millisecond</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.2.</span></p>
+</div>
+</dd></dl>
+
 </div>
 
 
@@ -582,12 +827,27 @@ This is a companion file to run_external_python().</p>
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.1 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li> 
       </ul>
     </div>
+
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2016, Geosoft Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.6.
+        &#169; Copyright 2017, Geosoft Inc.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
     </div>
+<div class="footer">This page uses <a href="http://analytics.google.com/">
+Google Analytics</a> to collect statistics. You can disable it by blocking
+the JavaScript coming from www.google-analytics.com.
+<script type="text/javascript">
+  (function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ?
+              'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+  })();
+</script>
+</div>
+
   </body>
 </html>

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -5,19 +6,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <script type="text/javascript">
-
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-87443115-1']);
-      _gaq.push(['_trackPageview']);
-
-      (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
-    </script>
-    <title>GXARCMAP class &#8212; Geosoft GX Python API 9.1 documentation</title>
+    
+    <title>GXARCMAP class &#8212; Geosoft GX Python API 9.2.0 documentation</title>
     
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -25,16 +15,25 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '9.1',
+        VERSION:     '9.2.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="Geosoft GX Python API 9.1 documentation" href="index.html" /> 
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+ 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-87443115-1']);
+  _gaq.push(['_trackPageview']);
+</script>
+
   </head>
   <body role="document">
     <div class="related" role="navigation" aria-label="related navigation">
@@ -46,7 +45,7 @@
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.1 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -62,7 +61,7 @@
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="_sources/GXARCMAP.txt"
+      <li><a href="_sources/GXARCMAP.rst.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
@@ -89,16 +88,16 @@
 <dl class="class">
 <dt id="geosoft.gxapi.GXARCMAP">
 <em class="property">class </em><code class="descclassname">geosoft.gxapi.</code><code class="descname">GXARCMAP</code><a class="headerlink" href="#geosoft.gxapi.GXARCMAP" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="n">library</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">a</span> <span class="n">class</span><span class="o">.</span> <span class="n">It</span> <span class="n">contains</span> <span class="n">various</span> <span class="n">utilities</span>
-<span class="n">used</span> <span class="ow">in</span> <span class="n">maps</span> <span class="ow">and</span> <span class="n">layers</span> <span class="n">by</span> <span class="n">the</span> <span class="n">Geosoft</span> <span class="n">extensions</span> <span class="k">for</span> <span class="n">ArcGIS</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+This library is not a class. It contains various utilities
+used in maps and layers by the Geosoft extensions for ArcGIS.
+</pre>
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXARCMAP.change_size">
 <em class="property">static </em><code class="descname">change_size</code><span class="sig-paren">(</span><em>(float)arg1</em>, <em>(float)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXARCMAP.change_size" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Changes</span> <span class="n">the</span> <span class="n">custom</span> <span class="n">page</span> <span class="n">size</span> <span class="n">of</span> <span class="n">the</span> <span class="n">ArcGIS</span> <span class="n">Map</span> <span class="n">document</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Changes the custom page size of the ArcGIS Map document.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -148,9 +147,9 @@
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXARCMAP.export_feature_layer_by_name_to_3d_file">
 <em class="property">static </em><code class="descname">export_feature_layer_by_name_to_3d_file</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(str)arg2</em>, <em>(str)arg3</em>, <em>(str)arg4</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXARCMAP.export_feature_layer_by_name_to_3d_file" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Exports</span> <span class="n">the</span> <span class="n">shapes</span> <span class="kn">from</span> <span class="nn">a</span> <span class="n">feature</span> <span class="n">layer</span> <span class="n">of</span> <span class="n">the</span> <span class="n">ArcMap</span> <span class="n">document</span> <span class="n">to</span> <span class="n">a</span> <span class="mi">3</span><span class="n">D</span> <span class="n">File</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Exports the shapes from a feature layer of the ArcMap document to a 3D File.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -179,9 +178,9 @@
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXARCMAP.export_selected_feature_layer_to_3d_file">
 <em class="property">static </em><code class="descname">export_selected_feature_layer_to_3d_file</code><span class="sig-paren">(</span><em>(str)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXARCMAP.export_selected_feature_layer_to_3d_file" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Exports</span> <span class="n">the</span> <span class="n">shapes</span> <span class="kn">from</span> <span class="nn">the</span> <span class="n">currently</span> <span class="n">selected</span> <span class="n">feature</span> <span class="n">layer</span> <span class="p">(</span><span class="k">if</span> <span class="nb">any</span><span class="p">)</span> <span class="ow">in</span> <span class="n">ArcMap</span> <span class="n">to</span> <span class="n">a</span> <span class="mi">3</span><span class="n">D</span> <span class="n">file</span> <span class="p">(</span><span class="n">only</span> <span class="n">on</span> <span class="n">oriented</span> <span class="n">frames</span> <span class="n">i</span><span class="o">.</span><span class="n">e</span><span class="o">.</span> <span class="n">sections</span><span class="p">)</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Exports the shapes from the currently selected feature layer (if any) in ArcMap to a 3D file (only on oriented frames i.e. sections).
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -202,9 +201,9 @@
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXARCMAP.get_current_document_info">
 <em class="property">static </em><code class="descname">get_current_document_info</code><span class="sig-paren">(</span><em>(str_ref)arg1</em>, <em>(str_ref)arg2</em>, <em>(str_ref)arg3</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXARCMAP.get_current_document_info" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">some</span> <span class="n">info</span> <span class="n">on</span> <span class="n">the</span> <span class="n">current</span> <span class="n">MXD</span> <span class="ow">in</span> <span class="n">ArcMap</span> <span class="ow">and</span> <span class="n">selected</span> <span class="n">layer</span> <span class="p">(</span><span class="k">if</span> <span class="nb">any</span><span class="p">)</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Get some info on the current MXD in ArcMap and selected layer (if any)
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -241,7 +240,7 @@
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXIPJ</span></code></a>) &#8211; IPJ to fill</li>
-<li><strong>arg2</strong> (<em>int</em>) &#8211; Predefined ESRI GCS Code</li>
+<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Predefined ESRI GCS Code</li>
 </ul>
 </td>
 </tr>
@@ -270,7 +269,7 @@
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXIPJ</span></code></a>) &#8211; IPJ to fill</li>
-<li><strong>arg2</strong> (<em>int</em>) &#8211; Predefined ESRI PCS Code</li>
+<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Predefined ESRI PCS Code</li>
 </ul>
 </td>
 </tr>
@@ -290,9 +289,9 @@
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXARCMAP.get_load_map">
 <em class="property">static </em><code class="descname">get_load_map</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(str)arg2</em>, <em>(str)arg3</em>, <em>(int)arg4</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXARCMAP.get_load_map" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Loads</span> <span class="n">a</span> <span class="n">Geosoft</span> <span class="nb">map</span> <span class="n">into</span> <span class="n">the</span> <span class="n">ArcMap</span> <span class="n">document</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Loads a Geosoft map into the ArcMap document.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -301,7 +300,7 @@
 <li><strong>arg1</strong> (<em>str</em>) &#8211; Map File Name</li>
 <li><strong>arg2</strong> (<em>str</em>) &#8211; Optional Extra Datasets CSV Filename (Rasters and shape files to display with layers)</li>
 <li><strong>arg3</strong> (<em>str</em>) &#8211; Optional frame/layer tag (suffix)</li>
-<li><strong>arg4</strong> (<em>int</em>) &#8211; Combination of <a class="reference internal" href="#arcmap-load-flags"><span class="std std-ref">ARCMAP_LOAD_FLAGS constants</span></a></li>
+<li><strong>arg4</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Combination of <a class="reference internal" href="#arcmap-load-flags"><span class="std std-ref">ARCMAP_LOAD_FLAGS constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -310,7 +309,7 @@
 -1 - Canceled</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></p>
 </td>
 </tr>
 </tbody>
@@ -319,38 +318,38 @@
 <p><span class="versionmodified">New in version 8.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">extra</span> <span class="n">datasets</span> <span class="n">CSV</span> <span class="n">should</span> <span class="n">contain</span> <span class="n">the</span> <span class="n">the</span> <span class="n">following</span> <span class="n">fields</span><span class="p">:</span>
+<pre class="literal-block">
+The extra datasets CSV should contain the the following fields:
 
- <span class="n">ID</span>          <span class="o">-</span>  <span class="n">Unique</span> <span class="n">identifier</span>
- <span class="n">DATASOURCE</span>  <span class="o">-</span>  <span class="n">Filename</span>
- <span class="n">TYPE</span>        <span class="o">-</span>  <span class="n">RASTER</span> <span class="ow">and</span> <span class="n">SHAPE</span> <span class="n">supported</span>
- <span class="n">MAPMATCH</span>    <span class="o">-</span>  <span class="n">Map</span> <span class="n">to</span> <span class="n">associate</span> <span class="k">with</span> <span class="p">(</span><span class="n">used</span> <span class="k">for</span> <span class="n">grouping</span> <span class="n">logic</span><span class="p">)</span>
- <span class="n">VIEWMATCH</span>   <span class="o">-</span>  <span class="n">View</span> <span class="n">to</span> <span class="n">match</span> <span class="k">with</span> <span class="ow">in</span> <span class="n">associated</span> <span class="nb">map</span> <span class="p">(</span><span class="n">used</span> <span class="k">for</span> <span class="n">grouping</span> <span class="n">logic</span><span class="p">)</span>
- <span class="n">ZONEFILE</span>    <span class="o">-</span>  <span class="n">Used</span> <span class="k">for</span> <span class="nb">type</span> <span class="n">RASTER</span>
-</pre></div>
-</div>
+ ID          -  Unique identifier
+ DATASOURCE  -  Filename
+ TYPE        -  RASTER and SHAPE supported
+ MAPMATCH    -  Map to associate with (used for grouping logic)
+ VIEWMATCH   -  View to match with in associated map (used for grouping logic)
+ ZONEFILE    -  Used for type RASTER
+</pre>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXARCMAP.get_load_shape">
 <em class="property">static </em><code class="descname">get_load_shape</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(int)arg2</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXARCMAP.get_load_shape" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Load</span> <span class="n">a</span> <span class="n">shape</span> <span class="n">file</span> <span class="n">into</span> <span class="n">ArcMap</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Load a shape file into ArcMap.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<em>str</em>) &#8211; shape file to load</li>
-<li><strong>arg2</strong> (<em>int</em>) &#8211; delete existing layers?</li>
+<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; delete existing layers?</li>
 </ul>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">0- OK, 1 - Error, -1 - Cancel</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></p>
 </td>
 </tr>
 </tbody>
@@ -363,16 +362,16 @@
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXARCMAP.get_number_of_selected_layers">
 <em class="property">static </em><code class="descname">get_number_of_selected_layers</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXARCMAP.get_number_of_selected_layers" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">the</span> <span class="n">number</span> <span class="n">of</span> <span class="n">selected</span> <span class="n">layers</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">TOC</span>
+<dd><pre class="literal-block">
+Get the number of selected layers in the TOC
 
-<span class="n">Returns</span>                                                                       <span class="n">The</span> <span class="n">number</span> <span class="n">of</span> <span class="n">layers</span> <span class="n">selected</span><span class="o">.</span>
-</pre></div>
-</div>
+Returns                                                                       The number of layers selected.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></td>
 </tr>
 </tbody>
 </table>
@@ -392,7 +391,7 @@
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<em>int</em>) &#8211; Selected layer number</li>
+<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Selected layer number</li>
 <li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; Selected Layer name</li>
 <li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; Dataframe name containing selected layer</li>
 </ul>
@@ -467,24 +466,24 @@
 <p><span class="versionmodified">New in version 8.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">extra</span> <span class="n">datasets</span> <span class="n">CSV</span> <span class="n">should</span> <span class="n">contain</span> <span class="n">the</span> <span class="n">the</span> <span class="n">following</span> <span class="n">fields</span><span class="p">:</span>
+<pre class="literal-block">
+The extra datasets CSV should contain the the following fields:
 
-    <span class="n">ID</span>          <span class="o">-</span>  <span class="n">Unique</span> <span class="n">identifier</span>
-    <span class="n">DATASOURCE</span>  <span class="o">-</span>  <span class="n">Filename</span>
-    <span class="n">TYPE</span>        <span class="o">-</span>  <span class="n">RASTER</span> <span class="ow">and</span> <span class="n">SHAPE</span> <span class="n">supported</span>
-    <span class="n">MAPMATCH</span>    <span class="o">-</span>  <span class="n">Map</span> <span class="n">to</span> <span class="n">associate</span> <span class="k">with</span> <span class="p">(</span><span class="n">used</span> <span class="k">for</span> <span class="n">grouping</span> <span class="n">logic</span><span class="p">)</span>
-    <span class="n">VIEWMATCH</span>   <span class="o">-</span>  <span class="n">View</span> <span class="n">to</span> <span class="n">match</span> <span class="k">with</span> <span class="ow">in</span> <span class="n">associated</span> <span class="nb">map</span> <span class="p">(</span><span class="n">used</span> <span class="k">for</span> <span class="n">grouping</span> <span class="n">logic</span><span class="p">)</span>
-    <span class="n">ZONEFILE</span>    <span class="o">-</span>  <span class="n">Used</span> <span class="k">for</span> <span class="nb">type</span> <span class="n">RASTER</span>
-</pre></div>
-</div>
+    ID          -  Unique identifier
+    DATASOURCE  -  Filename
+    TYPE        -  RASTER and SHAPE supported
+    MAPMATCH    -  Map to associate with (used for grouping logic)
+    VIEWMATCH   -  View to match with in associated map (used for grouping logic)
+    ZONEFILE    -  Used for type RASTER
+</pre>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXARCMAP.load_map_ex">
 <em class="property">static </em><code class="descname">load_map_ex</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(str)arg2</em>, <em>(str)arg3</em>, <em>(str)arg4</em>, <em>(int)arg5</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXARCMAP.load_map_ex" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Loads</span> <span class="n">a</span> <span class="n">Geosoft</span> <span class="nb">map</span> <span class="n">into</span> <span class="n">the</span> <span class="n">ArcMap</span> <span class="n">document</span><span class="p">,</span> <span class="n">specifying</span> <span class="n">which</span> <span class="n">View</span> <span class="n">to</span> <span class="n">use</span> <span class="k">as</span> <span class="n">Data</span> <span class="n">view</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Loads a Geosoft map into the ArcMap document, specifying which View to use as Data view.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -494,7 +493,7 @@
 <li><strong>arg2</strong> (<em>str</em>) &#8211; View Name</li>
 <li><strong>arg3</strong> (<em>str</em>) &#8211; Optional Extra Datasets CSV Filename (Rasters and shape files to display with layers)</li>
 <li><strong>arg4</strong> (<em>str</em>) &#8211; Optional frame/layer tag (suffix)</li>
-<li><strong>arg5</strong> (<em>int</em>) &#8211; Combination of <a class="reference internal" href="#arcmap-load-flags"><span class="std std-ref">ARCMAP_LOAD_FLAGS constants</span></a></li>
+<li><strong>arg5</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Combination of <a class="reference internal" href="#arcmap-load-flags"><span class="std std-ref">ARCMAP_LOAD_FLAGS constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -503,7 +502,7 @@
 -1 - Canceled</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></p>
 </td>
 </tr>
 </tbody>
@@ -512,16 +511,16 @@
 <p><span class="versionmodified">New in version 8.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">extra</span> <span class="n">datasets</span> <span class="n">CSV</span> <span class="n">should</span> <span class="n">contain</span> <span class="n">the</span> <span class="n">the</span> <span class="n">following</span> <span class="n">fields</span><span class="p">:</span>
+<pre class="literal-block">
+The extra datasets CSV should contain the the following fields:
 
- <span class="n">ID</span>          <span class="o">-</span>  <span class="n">Unique</span> <span class="n">identifier</span>
- <span class="n">DATASOURCE</span>  <span class="o">-</span>  <span class="n">Filename</span>
- <span class="n">TYPE</span>        <span class="o">-</span>  <span class="n">RASTER</span> <span class="ow">and</span> <span class="n">SHAPE</span> <span class="n">supported</span>
- <span class="n">MAPMATCH</span>    <span class="o">-</span>  <span class="n">Map</span> <span class="n">to</span> <span class="n">associate</span> <span class="k">with</span> <span class="p">(</span><span class="n">used</span> <span class="k">for</span> <span class="n">grouping</span> <span class="n">logic</span><span class="p">)</span>
- <span class="n">VIEWMATCH</span>   <span class="o">-</span>  <span class="n">View</span> <span class="n">to</span> <span class="n">match</span> <span class="k">with</span> <span class="ow">in</span> <span class="n">associated</span> <span class="nb">map</span> <span class="p">(</span><span class="n">used</span> <span class="k">for</span> <span class="n">grouping</span> <span class="n">logic</span><span class="p">)</span>
- <span class="n">ZONEFILE</span>    <span class="o">-</span>  <span class="n">Used</span> <span class="k">for</span> <span class="nb">type</span> <span class="n">RASTER</span>
-</pre></div>
-</div>
+ ID          -  Unique identifier
+ DATASOURCE  -  Filename
+ TYPE        -  RASTER and SHAPE supported
+ MAPMATCH    -  Map to associate with (used for grouping logic)
+ VIEWMATCH   -  View to match with in associated map (used for grouping logic)
+ ZONEFILE    -  Used for type RASTER
+</pre>
 </dd></dl>
 
 <dl class="staticmethod">
@@ -538,7 +537,7 @@
 <li><strong>arg1</strong> (<em>str</em>) &#8211; Map File Name</li>
 <li><strong>arg2</strong> (<em>str</em>) &#8211; View Name</li>
 <li><strong>arg3</strong> (<em>str</em>) &#8211; Layer Name</li>
-<li><strong>arg4</strong> (<em>int</em>) &#8211; Pass TRUE to also render other views in map (Use second parameter view for location)</li>
+<li><strong>arg4</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Pass TRUE to also render other views in map (Use second parameter view for location)</li>
 </ul>
 </td>
 </tr>
@@ -577,10 +576,10 @@
 <p><span class="versionmodified">New in version 8.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Loads</span> <span class="nb">any</span> <span class="n">file</span> <span class="nb">type</span> <span class="n">recognized</span> <span class="k">as</span> <span class="s2">&quot;raster&quot;</span> <span class="n">formats</span> <span class="n">by</span> <span class="n">ARC</span> <span class="n">GIS</span><span class="o">.</span>
-<span class="n">This</span> <span class="n">includes</span> <span class="n">geosoft</span> <span class="n">GRD</span> <span class="n">files</span><span class="o">.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+Loads any file type recognized as &quot;raster&quot; formats by ARC GIS.
+This includes geosoft GRD files.
+</pre>
 </dd></dl>
 
 <dl class="staticmethod">
@@ -612,33 +611,33 @@
 <p><span class="versionmodified">New in version 8.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="nb">input</span> <span class="n">layer</span> <span class="n">name</span> <span class="ow">is</span> <span class="n">created</span> <span class="n">using</span> <span class="n">the</span> <span class="p">(</span><span class="n">optional</span><span class="p">)</span> <span class="n">prefix</span> <span class="ow">and</span> <span class="n">suffix</span> <span class="k">as</span> <span class="n">follows</span><span class="p">:</span>
+<pre class="literal-block">
+The input layer name is created using the (optional) prefix and suffix as follows:
 
-<span class="n">Prefix_NAME_Suffix</span>
-</pre></div>
-</div>
+Prefix_NAME_Suffix
+</pre>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXARCMAP.load_spf">
 <em class="property">static </em><code class="descname">load_spf</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(int)arg2</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXARCMAP.load_spf" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Load</span> <span class="nb">all</span> <span class="n">the</span> <span class="n">shape</span> <span class="n">files</span> <span class="n">generated</span> <span class="n">by</span> <span class="n">importing</span> <span class="n">a</span> <span class="n">SPF</span> <span class="n">into</span> <span class="n">ArcMap</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Load all the shape files generated by importing a SPF into ArcMap.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<em>str</em>) &#8211; list of shape files to load</li>
-<li><strong>arg2</strong> (<em>int</em>) &#8211; number of shape files</li>
+<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; number of shape files</li>
 </ul>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">0- OK, 1 - Error, -1 - Cancel</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></p>
 </td>
 </tr>
 </tbody>
@@ -651,9 +650,9 @@
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXARCMAP.map_view_to_shape">
 <em class="property">static </em><code class="descname">map_view_to_shape</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(str)arg2</em>, <em>(str)arg3</em>, <em>(GXLST)arg4</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXARCMAP.map_view_to_shape" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Create</span> <span class="n">SHP</span> <span class="n">file</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">a</span> <span class="n">Geosoft</span> <span class="n">Map</span> <span class="n">view</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Create SHP file(s) from a Geosoft Map view.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -678,22 +677,22 @@
 <p><span class="versionmodified">New in version 8.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">output</span> <span class="n">SHP</span> <span class="n">file</span> <span class="n">name</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">are</span> <span class="n">made</span> <span class="n">up</span> <span class="k">as</span> <span class="n">follows</span>
-<span class="p">(</span><span class="n">where</span> <span class="n">NAME</span> <span class="ow">is</span> <span class="n">the</span> <span class="nb">input</span> <span class="n">SHP</span> <span class="n">file</span> <span class="n">name</span><span class="p">):</span>
+<pre class="literal-block">
+The output SHP file name(s) are made up as follows
+(where NAME is the input SHP file name):
 
-      <span class="n">NAME_pt</span><span class="o">.</span><span class="n">shp</span>    <span class="p">(</span><span class="n">point</span> <span class="n">objects</span><span class="p">)</span>
-      <span class="n">NAME_ln</span><span class="o">.</span><span class="n">shp</span>    <span class="p">(</span><span class="n">line</span> <span class="ow">or</span> <span class="n">arc</span> <span class="n">objects</span><span class="p">)</span>
-      <span class="n">NAME_pg</span><span class="o">.</span><span class="n">shp</span>    <span class="p">(</span><span class="n">polygon</span> <span class="n">objects</span><span class="p">)</span>
-</pre></div>
-</div>
+      NAME_pt.shp    (point objects)
+      NAME_ln.shp    (line or arc objects)
+      NAME_pg.shp    (polygon objects)
+</pre>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXARCMAP.query_size">
 <em class="property">static </em><code class="descname">query_size</code><span class="sig-paren">(</span><em>(float_ref)arg1</em>, <em>(float_ref)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXARCMAP.query_size" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Querie</span> <span class="n">the</span> <span class="n">page</span> <span class="n">size</span> <span class="ow">in</span> <span class="n">mm</span> <span class="n">of</span> <span class="n">the</span> <span class="n">entire</span> <span class="nb">map</span> <span class="n">page</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Querie the page size in mm of the entire map page.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -897,12 +896,27 @@
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.1 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li> 
       </ul>
     </div>
+
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2016, Geosoft Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.6.
+        &#169; Copyright 2017, Geosoft Inc.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
     </div>
+<div class="footer">This page uses <a href="http://analytics.google.com/">
+Google Analytics</a> to collect statistics. You can disable it by blocking
+the JavaScript coming from www.google-analytics.com.
+<script type="text/javascript">
+  (function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ?
+              'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+  })();
+</script>
+</div>
+
   </body>
 </html>

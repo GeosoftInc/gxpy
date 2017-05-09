@@ -1,3 +1,4 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -5,19 +6,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <script type="text/javascript">
-
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-87443115-1']);
-      _gaq.push(['_trackPageview']);
-
-      (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
-    </script>
-    <title>GXPLY class &#8212; Geosoft GX Python API 9.1 documentation</title>
+    
+    <title>GXPLY class &#8212; Geosoft GX Python API 9.2.0 documentation</title>
     
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -25,16 +15,25 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '9.1',
+        VERSION:     '9.2.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="Geosoft GX Python API 9.1 documentation" href="index.html" /> 
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+ 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-87443115-1']);
+  _gaq.push(['_trackPageview']);
+</script>
+
   </head>
   <body role="document">
     <div class="related" role="navigation" aria-label="related navigation">
@@ -46,7 +45,7 @@
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.1 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -63,7 +62,7 @@
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="_sources/GXPLY.txt"
+      <li><a href="_sources/GXPLY.rst.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
@@ -90,16 +89,16 @@
 <dl class="class">
 <dt id="geosoft.gxapi.GXPLY">
 <em class="property">class </em><code class="descclassname">geosoft.gxapi.</code><code class="descname">GXPLY</code><a class="headerlink" href="#geosoft.gxapi.GXPLY" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">PLY</span> <span class="nb">object</span> <span class="n">contains</span> <span class="n">the</span> <span class="n">definitions</span> <span class="k">for</span> <span class="n">one</span> <span class="ow">or</span> <span class="n">more</span>
-<span class="n">polygons</span><span class="p">,</span> <span class="ow">and</span> <span class="n">does</span> <span class="kn">import</span> <span class="nn">and</span> <span class="n">export</span> <span class="n">of</span> <span class="n">polygon</span> <span class="n">files</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+The PLY object contains the definitions for one or more
+polygons, and does import and export of polygon files.
+</pre>
 <dl class="method">
 <dt id="geosoft.gxapi.GXPLY.add_polygon">
 <code class="descname">add_polygon</code><span class="sig-paren">(</span><em>(GXVV)arg1</em>, <em>(GXVV)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXPLY.add_polygon" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Add</span> <span class="n">a</span> <span class="n">polygon</span> <span class="n">to</span> <span class="n">the</span> <span class="n">polygon</span> <span class="n">file</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Add a polygon to the polygon file.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -126,9 +125,9 @@
 <dl class="method">
 <dt id="geosoft.gxapi.GXPLY.add_polygon_ex">
 <code class="descname">add_polygon_ex</code><span class="sig-paren">(</span><em>(GXVV)arg1</em>, <em>(GXVV)arg2</em>, <em>(int)arg3</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXPLY.add_polygon_ex" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Add</span> <span class="n">a</span> <span class="n">polygon</span> <span class="n">to</span> <span class="n">the</span> <span class="n">polygon</span> <span class="n">file</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Add a polygon to the polygon file.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -136,7 +135,7 @@
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; X VV.</li>
 <li><strong>arg2</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Y VV.</li>
-<li><strong>arg3</strong> (<em>int</em>) &#8211; bExclude</li>
+<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; bExclude</li>
 </ul>
 </td>
 </tr>
@@ -173,17 +172,17 @@
 <p><span class="versionmodified">New in version 5.1.3.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Excluded</span> <span class="n">polygons</span> <span class="n">have</span> <span class="n">negative</span> <span class="n">area</span><span class="o">.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+Excluded polygons have negative area.
+</pre>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXPLY.change_ipj">
 <code class="descname">change_ipj</code><span class="sig-paren">(</span><em>(GXIPJ)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXPLY.change_ipj" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Set</span> <span class="n">the</span> <span class="n">projection</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Set the projection.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -200,17 +199,17 @@
 <p><span class="versionmodified">New in version 5.0.5.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">PLY</span> <span class="ow">is</span> <span class="n">re</span><span class="o">-</span><span class="n">projected</span> <span class="n">to</span> <span class="n">the</span> <span class="n">new</span> <span class="n">projection</span><span class="o">.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+The PLY is re-projected to the new projection.
+</pre>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXPLY.clear">
 <code class="descname">clear</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXPLY.clear" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Clear</span><span class="o">/</span><span class="n">remove</span> <span class="nb">all</span> <span class="n">polygons</span> <span class="kn">from</span> <span class="nn">the</span> <span class="n">PLY</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Clear/remove all polygons from the PLY.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -247,7 +246,7 @@
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><a class="reference internal" href="#ply-clip"><span class="std std-ref">PLY_CLIP constants</span></a></p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></p>
 </td>
 </tr>
 </tbody>
@@ -260,17 +259,17 @@
 <dl class="method">
 <dt id="geosoft.gxapi.GXPLY.clip_line_int">
 <code class="descname">clip_line_int</code><span class="sig-paren">(</span><em>(float)arg1</em>, <em>(float)arg2</em>, <em>(float)arg3</em>, <em>(float)arg4</em>, <em>(GXVV)arg5</em>, <em>(float)arg6</em>, <em>(int_ref)arg7</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXPLY.clip_line_int" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Clips</span> <span class="n">a</span> <span class="n">line</span> <span class="ow">in</span> <span class="ow">or</span> <span class="n">out</span> <span class="n">of</span> <span class="n">the</span> <span class="n">polygons</span> <span class="k">for</span> <span class="n">intersections</span> <span class="p">(</span><span class="n">GS_DOUBLE</span><span class="p">)</span><span class="o">.</span>
-<span class="n">Intersections</span> <span class="n">are</span> <span class="n">returned</span> <span class="k">as</span> <span class="n">fiducials</span> <span class="n">down</span> <span class="n">the</span> <span class="n">line</span> <span class="n">stored</span> <span class="ow">in</span> <span class="n">VV</span>
-<span class="n">starting</span> <span class="n">at</span> <span class="n">the</span> <span class="n">first</span> <span class="n">point</span> <span class="n">of</span> <span class="n">the</span> <span class="n">line</span><span class="o">.</span>
-<span class="n">Examples</span><span class="p">:</span>
-<span class="n">No</span> <span class="n">intersection</span><span class="p">:</span> <span class="n">PLY_LINE_CLIP_OUTSIDE</span><span class="p">,</span> <span class="mi">0</span> <span class="n">intersections</span>
-<span class="n">Starts</span> <span class="n">outside</span><span class="p">,</span> <span class="n">ends</span> <span class="n">inside</span><span class="p">:</span> <span class="n">PLY_LINE_CLIP_OUTSIDE</span><span class="p">,</span> <span class="mi">1</span> <span class="n">intersection</span>
-<span class="n">Starts</span> <span class="n">outside</span><span class="p">,</span> <span class="n">intersects</span> <span class="n">then</span> <span class="n">ends</span> <span class="n">inside</span> <span class="ow">or</span> <span class="n">outside</span><span class="p">:</span> <span class="n">PLY_LINE_CLIP_OUTSIDE</span><span class="p">,</span> <span class="mi">2</span> <span class="n">intersections</span>
-<span class="n">Starts</span> <span class="n">inside</span><span class="p">,</span> <span class="n">ends</span> <span class="n">inside</span> <span class="p">:</span> <span class="n">PLY_LINE_CLIP_INSIDE</span><span class="p">,</span> <span class="mi">1</span> <span class="n">intersection</span> <span class="p">(</span><span class="n">gives</span> <span class="n">end</span><span class="o">-</span><span class="n">of</span><span class="o">-</span><span class="n">line</span><span class="p">)</span>
-<span class="n">Starts</span> <span class="n">inside</span><span class="p">,</span> <span class="n">ends</span> <span class="n">outside</span> <span class="p">:</span> <span class="n">PLY_LINE_CLIP_INSIDE</span><span class="p">,</span> <span class="mi">1</span> <span class="n">intersection</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Clips a line in or out of the polygons for intersections (GS_DOUBLE).
+Intersections are returned as fiducials down the line stored in VV
+starting at the first point of the line.
+Examples:
+No intersection: PLY_LINE_CLIP_OUTSIDE, 0 intersections
+Starts outside, ends inside: PLY_LINE_CLIP_OUTSIDE, 1 intersection
+Starts outside, intersects then ends inside or outside: PLY_LINE_CLIP_OUTSIDE, 2 intersections
+Starts inside, ends inside : PLY_LINE_CLIP_INSIDE, 1 intersection (gives end-of-line)
+Starts inside, ends outside : PLY_LINE_CLIP_INSIDE, 1 intersection
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -289,7 +288,7 @@
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">0, Terminates on error (you can ignore this value)</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></p>
 </td>
 </tr>
 </tbody>
@@ -318,7 +317,7 @@
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><a class="reference internal" href="#ply-clip"><span class="std std-ref">PLY_CLIP constants</span></a></p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></p>
 </td>
 </tr>
 </tbody>
@@ -327,11 +326,11 @@
 <p><span class="versionmodified">New in version 5.1.3.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Resulting</span> <span class="n">clipped</span> <span class="n">polygon</span> <span class="n">only</span> <span class="n">has</span> <span class="n">inclusive</span>
-<span class="n">regions</span> <span class="n">of</span> <span class="n">the</span> <span class="n">clipped</span> <span class="n">area</span><span class="o">.</span>  <span class="n">Exclusion</span> <span class="n">polygons</span>
-<span class="n">are</span> <span class="n">treated</span> <span class="k">as</span> <span class="n">included</span> <span class="n">areas</span><span class="o">.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+Resulting clipped polygon only has inclusive
+regions of the clipped area.  Exclusion polygons
+are treated as included areas.
+</pre>
 </dd></dl>
 
 <dl class="method">
@@ -360,9 +359,9 @@
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXPLY.create">
 <em class="property">static </em><code class="descname">create</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; GXPLY:<a class="headerlink" href="#geosoft.gxapi.GXPLY.create" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Creates</span> <span class="n">a</span> <span class="n">Polygon</span> <span class="n">Object</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Creates a Polygon Object.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -404,9 +403,9 @@
 <dl class="method">
 <dt id="geosoft.gxapi.GXPLY.extent">
 <code class="descname">extent</code><span class="sig-paren">(</span><em>(float_ref)arg1</em>, <em>(float_ref)arg2</em>, <em>(float_ref)arg3</em>, <em>(float_ref)arg4</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXPLY.extent" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">the</span> <span class="n">extent</span> <span class="n">of</span> <span class="n">the</span> <span class="n">current</span> <span class="n">polygon</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Get the extent of the current polygon.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -431,9 +430,9 @@
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">If</span> <span class="n">there</span> <span class="n">are</span> <span class="n">no</span> <span class="n">polygons</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">PLY</span> <span class="nb">object</span><span class="p">,</span> <span class="n">returns</span> <span class="n">dummies</span><span class="o">.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+If there are no polygons in the PLY object, returns dummies.
+</pre>
 </dd></dl>
 
 <dl class="method">
@@ -462,9 +461,9 @@
 <dl class="method">
 <dt id="geosoft.gxapi.GXPLY.get_ipj">
 <code class="descname">get_ipj</code><span class="sig-paren">(</span><em>(GXIPJ)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXPLY.get_ipj" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">the</span> <span class="n">projection</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Get the projection.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -495,7 +494,7 @@
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; X VV.</li>
 <li><strong>arg2</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Y VV.</li>
-<li><strong>arg3</strong> (<em>int</em>) &#8211; polygon number</li>
+<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; polygon number</li>
 </ul>
 </td>
 </tr>
@@ -525,7 +524,7 @@
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; X VV.</li>
 <li><strong>arg2</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Y VV.</li>
-<li><strong>arg3</strong> (<em>int</em>) &#8211; polygon number</li>
+<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; polygon number</li>
 <li><strong>arg4</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; TRUE if exclusion polygon</li>
 </ul>
 </td>
@@ -562,9 +561,9 @@
 <dl class="method">
 <dt id="geosoft.gxapi.GXPLY.load_table">
 <code class="descname">load_table</code><span class="sig-paren">(</span><em>(str)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXPLY.load_table" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Loads</span> <span class="n">Polygons</span> <span class="kn">from</span> <span class="nn">a</span> <span class="n">Polygon</span> <span class="n">file</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Loads Polygons from a Polygon file.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -601,16 +600,16 @@
 <dl class="method">
 <dt id="geosoft.gxapi.GXPLY.num_poly">
 <code class="descname">num_poly</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXPLY.num_poly" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">the</span> <span class="n">number</span> <span class="n">of</span> <span class="n">polygons</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Get the number of polygons.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">number of polygons in the PLY.</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></td>
 </tr>
 </tbody>
 </table>
@@ -622,9 +621,9 @@
 <dl class="method">
 <dt id="geosoft.gxapi.GXPLY.rectangle">
 <code class="descname">rectangle</code><span class="sig-paren">(</span><em>(float)arg1</em>, <em>(float)arg2</em>, <em>(float)arg3</em>, <em>(float)arg4</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXPLY.rectangle" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Creates</span> <span class="n">a</span> <span class="n">polygon</span> <span class="kn">from</span> <span class="nn">a</span> <span class="n">rectangular</span> <span class="n">area</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Creates a polygon from a rectangular area.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -653,9 +652,9 @@
 <dl class="method">
 <dt id="geosoft.gxapi.GXPLY.rotate">
 <code class="descname">rotate</code><span class="sig-paren">(</span><em>(float)arg1</em>, <em>(float)arg2</em>, <em>(float)arg3</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXPLY.rotate" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Rotate</span> <span class="n">a</span> <span class="n">polygon</span> <span class="n">about</span> <span class="n">a</span> <span class="n">point</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Rotate a polygon about a point.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -683,9 +682,9 @@
 <dl class="method">
 <dt id="geosoft.gxapi.GXPLY.save_table">
 <code class="descname">save_table</code><span class="sig-paren">(</span><em>(str)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXPLY.save_table" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Save</span> <span class="n">Polygons</span> <span class="n">to</span> <span class="n">a</span> <span class="n">Polygon</span> <span class="n">file</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Save Polygons to a Polygon file.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -752,9 +751,9 @@
 <dl class="method">
 <dt id="geosoft.gxapi.GXPLY.set_ipj">
 <code class="descname">set_ipj</code><span class="sig-paren">(</span><em>(GXIPJ)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXPLY.set_ipj" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Set</span> <span class="n">the</span> <span class="n">projection</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Set the projection.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -771,9 +770,9 @@
 <p><span class="versionmodified">New in version 5.0.5.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="n">changes</span> <span class="n">the</span> <span class="n">projection</span> <span class="n">information</span> <span class="n">only</span><span class="o">.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+This changes the projection information only.
+</pre>
 </dd></dl>
 
 <dl class="method">
@@ -798,11 +797,11 @@
 <p><span class="versionmodified">New in version 5.1.3.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Points</span> <span class="n">on</span> <span class="n">the</span> <span class="n">polygon</span> <span class="n">that</span> <span class="n">deviate</span> <span class="kn">from</span> <span class="nn">a</span> <span class="n">line</span> <span class="n">drawn</span> <span class="n">between</span>
-<span class="n">neighboring</span> <span class="n">points</span> <span class="n">by</span> <span class="n">more</span> <span class="n">than</span> <span class="n">the</span> <span class="n">thining</span> <span class="n">resolution</span> <span class="n">will</span>
-<span class="n">be</span> <span class="n">removed</span><span class="o">.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+Points on the polygon that deviate from a line drawn between
+neighboring points by more than the thining resolution will
+be removed.
+</pre>
 </dd></dl>
 
 </dd></dl>
@@ -897,12 +896,27 @@
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.1 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li> 
       </ul>
     </div>
+
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2016, Geosoft Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.6.
+        &#169; Copyright 2017, Geosoft Inc.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
     </div>
+<div class="footer">This page uses <a href="http://analytics.google.com/">
+Google Analytics</a> to collect statistics. You can disable it by blocking
+the JavaScript coming from www.google-analytics.com.
+<script type="text/javascript">
+  (function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ?
+              'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+  })();
+</script>
+</div>
+
   </body>
 </html>

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -5,19 +6,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <script type="text/javascript">
-
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-87443115-1']);
-      _gaq.push(['_trackPageview']);
-
-      (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
-    </script>
-    <title>GXIMU class &#8212; Geosoft GX Python API 9.1 documentation</title>
+    
+    <title>GXIMU class &#8212; Geosoft GX Python API 9.2.0 documentation</title>
     
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -25,16 +15,25 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '9.1',
+        VERSION:     '9.2.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="Geosoft GX Python API 9.1 documentation" href="index.html" /> 
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+ 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-87443115-1']);
+  _gaq.push(['_trackPageview']);
+</script>
+
   </head>
   <body role="document">
     <div class="related" role="navigation" aria-label="related navigation">
@@ -46,7 +45,7 @@
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.1 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -79,7 +78,7 @@
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="_sources/GXIMU.txt"
+      <li><a href="_sources/GXIMU.rst.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
@@ -106,17 +105,17 @@
 <dl class="class">
 <dt id="geosoft.gxapi.GXIMU">
 <em class="property">class </em><code class="descclassname">geosoft.gxapi.</code><code class="descname">GXIMU</code><a class="headerlink" href="#geosoft.gxapi.GXIMU" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Not</span> <span class="n">a</span> <span class="n">class</span><span class="o">.</span> <span class="n">This</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">catch</span><span class="o">-</span><span class="nb">all</span> <span class="n">group</span> <span class="n">of</span> <span class="n">functions</span> <span class="n">working</span>
-<span class="n">on</span> <span class="n">IMG</span> <span class="n">objects</span> <span class="p">(</span><span class="n">see</span> <span class="n">IMG</span><span class="p">)</span><span class="o">.</span> <span class="n">Grid</span> <span class="n">operations</span> <span class="n">include</span> <span class="n">masking</span><span class="p">,</span>
-<span class="n">trending</span><span class="p">,</span> <span class="n">windowing</span><span class="p">,</span> <span class="n">expanding</span> <span class="ow">and</span> <span class="n">grid</span> <span class="n">stitching</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Not a class. This is a catch-all group of functions working
+on IMG objects (see IMG). Grid operations include masking,
+trending, windowing, expanding and grid stitching.
+</pre>
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXIMU.agg_to_geo_color">
 <em class="property">static </em><code class="descname">agg_to_geo_color</code><span class="sig-paren">(</span><em>(GXAGG)arg1</em>, <em>(str)arg2</em>, <em>(GXIPJ)arg3</em>, <em>(float)arg4</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIMU.agg_to_geo_color" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Create</span> <span class="n">a</span> <span class="n">geosoft</span> <span class="n">color</span> <span class="n">grid</span> <span class="kn">from</span> <span class="nn">an</span> <span class="n">aggregate</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Create a geosoft color grid from an aggregate.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -149,23 +148,23 @@
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXIMU.crc">
 <em class="property">static </em><code class="descname">crc</code><span class="sig-paren">(</span><em>(GXIMG)arg1</em>, <em>(int)arg2</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXIMU.crc" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Computes</span> <span class="n">a</span> <span class="n">CRC</span> <span class="n">Checksum</span> <span class="n">on</span> <span class="n">an</span> <span class="n">image</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Computes a CRC Checksum on an image.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXIMG</span></code></a>) &#8211; input image</li>
-<li><strong>arg2</strong> (<em>int</em>) &#8211; starting CRC (use <span class="xref std std-ref">CRC_INIT_VALUE</span> if none)</li>
+<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; starting CRC (use <a class="reference internal" href="GXGEOSOFT.html#crc-init-value"><span class="std std-ref">CRC_INIT_VALUE constant</span></a> if none)</li>
 </ul>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">CRC value</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></p>
 </td>
 </tr>
 </tbody>
@@ -178,23 +177,23 @@
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXIMU.crc_grid">
 <em class="property">static </em><code class="descname">crc_grid</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(int)arg2</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXIMU.crc_grid" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Computes</span> <span class="n">a</span> <span class="n">CRC</span> <span class="n">Checksum</span> <span class="n">on</span> <span class="n">a</span> <span class="n">grid</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Computes a CRC Checksum on a grid.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<em>str</em>) &#8211; grid</li>
-<li><strong>arg2</strong> (<em>int</em>) &#8211; starting CRC (use <span class="xref std std-ref">CRC_INIT_VALUE</span> if none)</li>
+<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; starting CRC (use <a class="reference internal" href="GXGEOSOFT.html#crc-init-value"><span class="std std-ref">CRC_INIT_VALUE constant</span></a> if none)</li>
 </ul>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">CRC value</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></p>
 </td>
 </tr>
 </tbody>
@@ -207,27 +206,27 @@
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXIMU.crc_grid_inexact">
 <em class="property">static </em><code class="descname">crc_grid_inexact</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(int)arg2</em>, <em>(int)arg3</em>, <em>(int)arg4</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXIMU.crc_grid_inexact" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Computes</span> <span class="n">a</span> <span class="n">CRC</span> <span class="n">Checksum</span> <span class="n">on</span> <span class="n">a</span> <span class="n">grid</span> <span class="ow">and</span> <span class="n">allows</span> <span class="n">you</span> <span class="n">to</span> <span class="n">specify</span>
-<span class="n">number</span> <span class="n">of</span> <span class="n">bits</span> <span class="n">of</span> <span class="n">floats</span><span class="o">/</span><span class="n">doubles</span> <span class="n">to</span> <span class="n">drop</span> <span class="n">so</span> <span class="n">that</span> <span class="n">the</span> <span class="n">CRC</span>
-<span class="n">will</span> <span class="n">be</span> <span class="n">same</span> <span class="n">even</span> <span class="n">of</span> <span class="n">this</span> <span class="n">are</span> <span class="n">changed</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Computes a CRC Checksum on a grid and allows you to specify
+number of bits of floats/doubles to drop so that the CRC
+will be same even of this are changed.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<em>str</em>) &#8211; grid</li>
-<li><strong>arg2</strong> (<em>int</em>) &#8211; starting CRC (use <span class="xref std std-ref">CRC_INIT_VALUE</span> if none)</li>
-<li><strong>arg3</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#imu-float-crc-bits"><span class="std std-ref">IMU_FLOAT_CRC_BITS constants</span></a></li>
-<li><strong>arg4</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#imu-double-crc-bits"><span class="std std-ref">IMU_DOUBLE_CRC_BITS constants</span></a></li>
+<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; starting CRC (use <a class="reference internal" href="GXGEOSOFT.html#crc-init-value"><span class="std std-ref">CRC_INIT_VALUE constant</span></a> if none)</li>
+<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#imu-float-crc-bits"><span class="std std-ref">IMU_FLOAT_CRC_BITS constants</span></a></li>
+<li><strong>arg4</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#imu-double-crc-bits"><span class="std std-ref">IMU_DOUBLE_CRC_BITS constants</span></a></li>
 </ul>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">CRC value</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></p>
 </td>
 </tr>
 </tbody>
@@ -236,36 +235,36 @@
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Very</span> <span class="n">usefull</span> <span class="k">for</span> <span class="n">testing</span> <span class="n">where</span> <span class="n">the</span> <span class="n">last</span> <span class="n">bits</span> <span class="n">of</span> <span class="n">accuracy</span>
-<span class="n">are</span> <span class="ow">not</span> <span class="k">as</span> <span class="n">important</span><span class="o">.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+Very usefull for testing where the last bits of accuracy
+are not as important.
+</pre>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXIMU.crc_inexact">
 <em class="property">static </em><code class="descname">crc_inexact</code><span class="sig-paren">(</span><em>(GXIMG)arg1</em>, <em>(int)arg2</em>, <em>(int)arg3</em>, <em>(int)arg4</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXIMU.crc_inexact" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Computes</span> <span class="n">a</span> <span class="n">CRC</span> <span class="n">Checksum</span> <span class="n">on</span> <span class="n">an</span> <span class="n">image</span> <span class="ow">and</span> <span class="n">allows</span> <span class="n">you</span> <span class="n">to</span> <span class="n">specify</span>
-<span class="n">number</span> <span class="n">of</span> <span class="n">bits</span> <span class="n">of</span> <span class="n">floats</span><span class="o">/</span><span class="n">doubles</span> <span class="n">to</span> <span class="n">drop</span> <span class="n">so</span> <span class="n">that</span> <span class="n">the</span> <span class="n">CRC</span>
-<span class="n">will</span> <span class="n">be</span> <span class="n">same</span> <span class="n">even</span> <span class="n">of</span> <span class="n">this</span> <span class="n">are</span> <span class="n">changed</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Computes a CRC Checksum on an image and allows you to specify
+number of bits of floats/doubles to drop so that the CRC
+will be same even of this are changed.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXIMG</span></code></a>) &#8211; input image</li>
-<li><strong>arg2</strong> (<em>int</em>) &#8211; starting CRC (use <span class="xref std std-ref">CRC_INIT_VALUE</span> if none)</li>
-<li><strong>arg3</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#imu-float-crc-bits"><span class="std std-ref">IMU_FLOAT_CRC_BITS constants</span></a></li>
-<li><strong>arg4</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#imu-double-crc-bits"><span class="std std-ref">IMU_DOUBLE_CRC_BITS constants</span></a></li>
+<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; starting CRC (use <a class="reference internal" href="GXGEOSOFT.html#crc-init-value"><span class="std std-ref">CRC_INIT_VALUE constant</span></a> if none)</li>
+<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#imu-float-crc-bits"><span class="std std-ref">IMU_FLOAT_CRC_BITS constants</span></a></li>
+<li><strong>arg4</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#imu-double-crc-bits"><span class="std std-ref">IMU_DOUBLE_CRC_BITS constants</span></a></li>
 </ul>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">CRC value</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></p>
 </td>
 </tr>
 </tbody>
@@ -274,18 +273,18 @@
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Very</span> <span class="n">usefull</span> <span class="k">for</span> <span class="n">testing</span> <span class="n">where</span> <span class="n">the</span> <span class="n">last</span> <span class="n">bits</span> <span class="n">of</span> <span class="n">accuracy</span>
-<span class="n">are</span> <span class="ow">not</span> <span class="k">as</span> <span class="n">important</span><span class="o">.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+Very usefull for testing where the last bits of accuracy
+are not as important.
+</pre>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXIMU.export_grid_without_data_section_xml">
 <em class="property">static </em><code class="descname">export_grid_without_data_section_xml</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(int_ref)arg2</em>, <em>(str)arg3</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIMU.export_grid_without_data_section_xml" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Export</span> <span class="n">a</span> <span class="n">Grid</span> <span class="n">minus</span> <span class="n">the</span> <span class="n">data</span> <span class="n">section</span> <span class="k">as</span> <span class="n">an</span> <span class="n">XML</span> <span class="n">file</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Export a Grid minus the data section as an XML file.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -313,9 +312,9 @@
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXIMU.export_grid_xml">
 <em class="property">static </em><code class="descname">export_grid_xml</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(int_ref)arg2</em>, <em>(str)arg3</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIMU.export_grid_xml" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Export</span> <span class="n">a</span> <span class="n">Grid</span> <span class="k">as</span> <span class="n">an</span> <span class="n">XML</span> <span class="n">file</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Export a Grid as an XML file.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -343,9 +342,9 @@
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXIMU.export_raw_xml">
 <em class="property">static </em><code class="descname">export_raw_xml</code><span class="sig-paren">(</span><em>(GXIMG)arg1</em>, <em>(int_ref)arg2</em>, <em>(str)arg3</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIMU.export_raw_xml" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Export</span> <span class="n">a</span> <span class="n">Grid</span> <span class="k">as</span> <span class="n">an</span> <span class="n">XML</span> <span class="n">file</span> <span class="n">using</span> <span class="n">a</span> <span class="n">fast</span> <span class="n">raw</span> <span class="n">output</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Export a Grid as an XML file using a fast raw output.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -373,9 +372,9 @@
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXIMU.export_xml">
 <em class="property">static </em><code class="descname">export_xml</code><span class="sig-paren">(</span><em>(GXIMG)arg1</em>, <em>(int_ref)arg2</em>, <em>(str)arg3</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIMU.export_xml" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Export</span> <span class="n">a</span> <span class="n">Grid</span> <span class="k">as</span> <span class="n">an</span> <span class="n">XML</span> <span class="n">file</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Export a Grid as an XML file.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -404,7 +403,7 @@
 <dt id="geosoft.gxapi.GXIMU.get_z_peaks_vv">
 <em class="property">static </em><code class="descname">get_z_peaks_vv</code><span class="sig-paren">(</span><em>(GXIMG)arg1</em>, <em>(GXVV)arg2</em>, <em>(GXVV)arg3</em>, <em>(GXVV)arg4</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIMU.get_z_peaks_vv" title="Permalink to this definition">¶</a></dt>
 <dd><pre class="literal-block">
-Same as <a class="reference internal" href="#geosoft.gxapi.GXIMU.get_zvv" title="geosoft.gxapi.GXIMU.get_zvv"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXIMU.get_zvv()</span></code></a>, but find the closest peak value to the input locations, and return
+Same as \ :func:`geosoft.gxapi.GXIMU.get_zvv`\ , but find the closest peak value to the input locations, and return
                                           the peak value and peak value location.
 </pre>
 <table class="docutils field-list" frame="void" rules="none">
@@ -431,10 +430,10 @@ Same as <a class="reference internal" href="#geosoft.gxapi.GXIMU.get_zvv" title=
 <p><span class="versionmodified">New in version 9.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">returned</span> <span class="n">locations</span> <span class="n">will</span> <span class="n">always</span> <span class="n">be</span> <span class="n">a</span> <span class="n">grid</span> <span class="n">point</span> <span class="n">location</span><span class="p">;</span> <span class="n">no</span> <span class="n">interpolation</span> <span class="ow">is</span> <span class="n">performed</span> <span class="n">when</span> <span class="n">locating</span> <span class="n">the</span> <span class="n">peaks</span><span class="o">.</span> <span class="n">A</span> <span class="n">simple</span> <span class="n">search</span> <span class="ow">is</span>
-                             <span class="n">done</span> <span class="n">of</span> <span class="nb">all</span> <span class="n">neighbouring</span> <span class="n">points</span> <span class="kn">from</span> <span class="nn">the</span> <span class="n">starting</span> <span class="n">point</span><span class="p">,</span> <span class="ow">and</span> <span class="n">once</span> <span class="n">no</span> <span class="n">neighbours</span> <span class="n">can</span> <span class="n">be</span> <span class="n">located</span> <span class="k">with</span> <span class="n">a</span> <span class="n">higher</span> <span class="n">value</span><span class="p">,</span> <span class="n">the</span> <span class="n">search</span> <span class="n">stops</span><span class="o">.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+The returned locations will always be a grid point location; no interpolation is performed when locating the peaks. A simple search is
+                             done of all neighbouring points from the starting point, and once no neighbours can be located with a higher value, the search stops.
+</pre>
 </dd></dl>
 
 <dl class="staticmethod">
@@ -471,9 +470,9 @@ Same as <a class="reference internal" href="#geosoft.gxapi.GXIMU.get_zvv" title=
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXIMU.grid_add">
 <em class="property">static </em><code class="descname">grid_add</code><span class="sig-paren">(</span><em>(GXIMG)arg1</em>, <em>(float)arg2</em>, <em>(GXIMG)arg3</em>, <em>(float)arg4</em>, <em>(GXIMG)arg5</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIMU.grid_add" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Adds</span> <span class="n">two</span> <span class="n">Grid</span> <span class="n">images</span> <span class="n">together</span> <span class="n">point</span><span class="o">-</span><span class="n">by</span><span class="o">-</span><span class="n">point</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Adds two Grid images together point-by-point.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -499,18 +498,18 @@ Same as <a class="reference internal" href="#geosoft.gxapi.GXIMU.get_zvv" title=
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>The IMG parameters MUST be of type GS_DOUBLE!
+<pre class="literal-block">
+The IMG parameters MUST be of type GS_DOUBLE!
 If not, the method will terminate.
-</pre></div>
-</div>
+</pre>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXIMU.grid_agc">
 <em class="property">static </em><code class="descname">grid_agc</code><span class="sig-paren">(</span><em>(GXIMG)arg1</em>, <em>(GXIMG)arg2</em>, <em>(int)arg3</em>, <em>(float)arg4</em>, <em>(int)arg5</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIMU.grid_agc" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Automatic</span> <span class="n">Gain</span> <span class="n">Compensation</span> <span class="n">of</span> <span class="n">a</span> <span class="n">grid</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Automatic Gain Compensation of a grid.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -518,9 +517,9 @@ If not, the method will terminate.
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXIMG</span></code></a>) &#8211; Image of input grid</li>
 <li><strong>arg2</strong> (<a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXIMG</span></code></a>) &#8211; Image of output grid</li>
-<li><strong>arg3</strong> (<em>int</em>) &#8211; Width of filter to separate signal from background.</li>
+<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Width of filter to separate signal from background.</li>
 <li><strong>arg4</strong> (<em>float</em>) &#8211; Maximum gain applied to the signal.</li>
-<li><strong>arg5</strong> (<em>int</em>) &#8211; Remove background before applying gain?</li>
+<li><strong>arg5</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Remove background before applying gain?</li>
 </ul>
 </td>
 </tr>
@@ -536,19 +535,19 @@ If not, the method will terminate.
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>The IMG parameters MUST be of type GS_FLOAT!
+<pre class="literal-block">
+The IMG parameters MUST be of type GS_FLOAT!
 If not, the method will terminate.
-</pre></div>
-</div>
+</pre>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXIMU.grid_bool">
 <em class="property">static </em><code class="descname">grid_bool</code><span class="sig-paren">(</span><em>(GXIMG)arg1</em>, <em>(GXIMG)arg2</em>, <em>(str)arg3</em>, <em>(int)arg4</em>, <em>(int)arg5</em>, <em>(int)arg6</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIMU.grid_bool" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Mask</span> <span class="n">one</span> <span class="n">grid</span> <span class="n">against</span> <span class="n">another</span> <span class="n">using</span> <span class="n">boolean</span> <span class="n">logic</span>
-<span class="n">operations</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Mask one grid against another using boolean logic
+operations.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -557,9 +556,9 @@ If not, the method will terminate.
 <li><strong>arg1</strong> (<a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXIMG</span></code></a>) &#8211; Image of first input grid</li>
 <li><strong>arg2</strong> (<a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXIMG</span></code></a>) &#8211; Image of second input grid</li>
 <li><strong>arg3</strong> (<em>str</em>) &#8211; File name of output grid</li>
-<li><strong>arg4</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#imu-bool-opt"><span class="std std-ref">IMU_BOOL_OPT constants</span></a></li>
-<li><strong>arg5</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#imu-bool-sizing"><span class="std std-ref">IMU_BOOL_SIZING constants</span></a></li>
-<li><strong>arg6</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#imu-bool-olap"><span class="std std-ref">IMU_BOOL_OLAP constants</span></a></li>
+<li><strong>arg4</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#imu-bool-opt"><span class="std std-ref">IMU_BOOL_OPT constants</span></a></li>
+<li><strong>arg5</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#imu-bool-sizing"><span class="std std-ref">IMU_BOOL_SIZING constants</span></a></li>
+<li><strong>arg6</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#imu-bool-olap"><span class="std std-ref">IMU_BOOL_OLAP constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -575,10 +574,10 @@ If not, the method will terminate.
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>The IMG parameters must be of type GS_DOUBLE!
+<pre class="literal-block">
+The IMG parameters must be of type GS_DOUBLE!
 If not, the method will terminate.
-</pre></div>
-</div>
+</pre>
 </dd></dl>
 
 <dl class="staticmethod">
@@ -624,7 +623,7 @@ If not, the method will terminate.
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXIMG</span></code></a>) &#8211; The Grid</li>
 <li><strong>arg2</strong> (<a class="reference internal" href="GXPLY.html#geosoft.gxapi.GXPLY" title="geosoft.gxapi.GXPLY"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXPLY</span></code></a>) &#8211; PLY containing the edges.</li>
-<li><strong>arg3</strong> (<em>int</em>) &#8211; Minimum number of points in polygons (0 for all)</li>
+<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Minimum number of points in polygons (0 for all)</li>
 </ul>
 </td>
 </tr>
@@ -641,7 +640,7 @@ If not, the method will terminate.
 </div>
 <p><strong>Note:</strong></p>
 <pre class="literal-block">
-Unlike <a class="reference internal" href="#geosoft.gxapi.GXIMU.grid_ply" title="geosoft.gxapi.GXIMU.grid_ply"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXIMU.grid_ply()</span></code></a> and GridPlyEx_IMU, the image is not
+Unlike \ :func:`geosoft.gxapi.GXIMU.grid_ply`\  and GridPlyEx_IMU, the image is not
 altered. It just gives the PLY.
 </pre>
 </dd></dl>
@@ -649,9 +648,9 @@ altered. It just gives the PLY.
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXIMU.grid_exp_fill">
 <em class="property">static </em><code class="descname">grid_exp_fill</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(str)arg2</em>, <em>(float)arg3</em>, <em>(int)arg4</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIMU.grid_exp_fill" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Extends</span> <span class="ow">and</span> <span class="n">fills</span> <span class="n">a</span> <span class="n">grid</span> <span class="k">for</span> <span class="n">FFT2</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Extends and fills a grid for FFT2.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -660,7 +659,7 @@ altered. It just gives the PLY.
 <li><strong>arg1</strong> (<em>str</em>) &#8211; Name of the input grid</li>
 <li><strong>arg2</strong> (<em>str</em>) &#8211; Name of the output grid</li>
 <li><strong>arg3</strong> (<em>float</em>) &#8211; % expansion</li>
-<li><strong>arg4</strong> (<em>int</em>) &#8211; Shape of expansion: 0 - rectangle, 1 - square</li>
+<li><strong>arg4</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Shape of expansion: 0 - rectangle, 1 - square</li>
 </ul>
 </td>
 </tr>
@@ -680,10 +679,10 @@ altered. It just gives the PLY.
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXIMU.grid_expand">
 <em class="property">static </em><code class="descname">grid_expand</code><span class="sig-paren">(</span><em>(GXIMG)arg1</em>, <em>(str)arg2</em>, <em>(float)arg3</em>, <em>(int)arg4</em>, <em>(int)arg5</em>, <em>(int)arg6</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIMU.grid_expand" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Expand</span> <span class="n">a</span> <span class="n">grid</span> <span class="ow">and</span> <span class="n">place</span> <span class="n">dummies</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">area</span>
-<span class="n">beyond</span> <span class="n">the</span> <span class="n">original</span> <span class="n">edges</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Expand a grid and place dummies in the area
+beyond the original edges.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -692,9 +691,9 @@ altered. It just gives the PLY.
 <li><strong>arg1</strong> (<a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXIMG</span></code></a>) &#8211; Image of input grid</li>
 <li><strong>arg2</strong> (<em>str</em>) &#8211; File name of output grid</li>
 <li><strong>arg3</strong> (<em>float</em>) &#8211; Minimum percentage to expand the grid by</li>
-<li><strong>arg4</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#imu-expand-shape"><span class="std std-ref">IMU_EXPAND_SHAPE constants</span></a></li>
-<li><strong>arg5</strong> (<em>int</em>) &#8211; X Dimension the output grid is expanded to</li>
-<li><strong>arg6</strong> (<em>int</em>) &#8211; Y Dimension the output grid is expanded to</li>
+<li><strong>arg4</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#imu-expand-shape"><span class="std std-ref">IMU_EXPAND_SHAPE constants</span></a></li>
+<li><strong>arg5</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; X Dimension the output grid is expanded to</li>
+<li><strong>arg6</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Y Dimension the output grid is expanded to</li>
 </ul>
 </td>
 </tr>
@@ -710,18 +709,18 @@ altered. It just gives the PLY.
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>The IMG parameter MUST be of type GS_FLOAT!
+<pre class="literal-block">
+The IMG parameter MUST be of type GS_FLOAT!
 If not, the method will terminate.
-</pre></div>
-</div>
+</pre>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXIMU.grid_fill">
 <em class="property">static </em><code class="descname">grid_fill</code><span class="sig-paren">(</span><em>(GXIMG)arg1</em>, <em>(GXIMG)arg2</em>, <em>(int)arg3</em>, <em>(int)arg4</em>, <em>(int)arg5</em>, <em>(int)arg6</em>, <em>(float)arg7</em>, <em>(float)arg8</em>, <em>(float)arg9</em>, <em>(int)arg10</em>, <em>(int)arg11</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIMU.grid_fill" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Interpolates</span> <span class="n">to</span> <span class="n">fill</span> <span class="n">dummies</span><span class="p">,</span> <span class="n">generates</span> <span class="n">an</span> <span class="n">output</span> <span class="n">grid</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Interpolates to fill dummies, generates an output grid.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -729,15 +728,15 @@ If not, the method will terminate.
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXIMG</span></code></a>) &#8211; Image of input grid</li>
 <li><strong>arg2</strong> (<a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXIMG</span></code></a>) &#8211; Image of output grid</li>
-<li><strong>arg3</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#imu-fill-rollopt"><span class="std std-ref">IMU_FILL_ROLLOPT constants</span></a></li>
-<li><strong>arg4</strong> (<em>int</em>) &#8211; Distance at which to roll off to 0</li>
-<li><strong>arg5</strong> (<em>int</em>) &#8211; Maximum prediction filter length</li>
-<li><strong>arg6</strong> (<em>int</em>) &#8211; Maximum prediction filter area</li>
+<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#imu-fill-rollopt"><span class="std std-ref">IMU_FILL_ROLLOPT constants</span></a></li>
+<li><strong>arg4</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Distance at which to roll off to 0</li>
+<li><strong>arg5</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Maximum prediction filter length</li>
+<li><strong>arg6</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Maximum prediction filter area</li>
 <li><strong>arg7</strong> (<em>float</em>) &#8211; Base value to roll off to</li>
 <li><strong>arg8</strong> (<em>float</em>) &#8211; Maximum amplitude allowed in grid</li>
 <li><strong>arg9</strong> (<em>float</em>) &#8211; Maximum edge amplitude allowed in grid</li>
-<li><strong>arg10</strong> (<em>int</em>) &#8211; Width from edge to start limiting from</li>
-<li><strong>arg11</strong> (<em>int</em>) &#8211; Number of convolution passes to apply</li>
+<li><strong>arg10</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Width from edge to start limiting from</li>
+<li><strong>arg11</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Number of convolution passes to apply</li>
 </ul>
 </td>
 </tr>
@@ -753,19 +752,19 @@ If not, the method will terminate.
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>The IMG parameters MUST be of type GS_FLOAT!
+<pre class="literal-block">
+The IMG parameters MUST be of type GS_FLOAT!
 If not, the method will terminate.
-</pre></div>
-</div>
+</pre>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXIMU.grid_filt">
 <em class="property">static </em><code class="descname">grid_filt</code><span class="sig-paren">(</span><em>(GXIMG)arg1</em>, <em>(GXIMG)arg2</em>, <em>(int)arg3</em>, <em>(float)arg4</em>, <em>(int)arg5</em>, <em>(int)arg6</em>, <em>(int)arg7</em>, <em>(str)arg8</em>, <em>(GXVV)arg9</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIMU.grid_filt" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Applies</span> <span class="n">a</span> <span class="nb">filter</span> <span class="n">to</span> <span class="n">a</span> <span class="n">grid</span> <span class="nb">any</span> <span class="n">number</span>
-<span class="n">of</span> <span class="n">passes</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Applies a filter to a grid any number
+of passes.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -773,11 +772,11 @@ If not, the method will terminate.
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXIMG</span></code></a>) &#8211; Image of first grid</li>
 <li><strong>arg2</strong> (<a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXIMG</span></code></a>) &#8211; Image of second grid</li>
-<li><strong>arg3</strong> (<em>int</em>) &#8211; Number of passes to apply filter (&gt;0)</li>
+<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Number of passes to apply filter (&gt;0)</li>
 <li><strong>arg4</strong> (<em>float</em>) &#8211; Multiplier to apply to grid values</li>
-<li><strong>arg5</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#imu-filt-dummy"><span class="std std-ref">IMU_FILT_DUMMY constants</span></a></li>
-<li><strong>arg6</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#imu-filt-hzdrv"><span class="std std-ref">IMU_FILT_HZDRV constants</span></a></li>
-<li><strong>arg7</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#imu-filt-file"><span class="std std-ref">IMU_FILT_FILE constants</span></a></li>
+<li><strong>arg5</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#imu-filt-dummy"><span class="std std-ref">IMU_FILT_DUMMY constants</span></a></li>
+<li><strong>arg6</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#imu-filt-hzdrv"><span class="std std-ref">IMU_FILT_HZDRV constants</span></a></li>
+<li><strong>arg7</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#imu-filt-file"><span class="std std-ref">IMU_FILT_FILE constants</span></a></li>
 <li><strong>arg8</strong> (<em>str</em>) &#8211; Name of file containing filter values</li>
 <li><strong>arg9</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; VV containing filter values (if not using a file for the values) MUST BE OF TYPE &#8216;real&#8217;</li>
 </ul>
@@ -795,18 +794,18 @@ If not, the method will terminate.
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>The IMG parameters MUST be of type GS_FLOAT!
+<pre class="literal-block">
+The IMG parameters MUST be of type GS_FLOAT!
 If not, the method will terminate.
-</pre></div>
-</div>
+</pre>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXIMU.grid_head">
 <em class="property">static </em><code class="descname">grid_head</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(float)arg2</em>, <em>(float)arg3</em>, <em>(float)arg4</em>, <em>(float)arg5</em>, <em>(float)arg6</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIMU.grid_head" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Modifies</span> <span class="n">Statistics</span> <span class="n">contained</span> <span class="ow">in</span> <span class="n">a</span> <span class="n">grid</span> <span class="n">header</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Modifies Statistics contained in a grid header.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -847,8 +846,8 @@ If not, the method will terminate.
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXIMG</span></code></a>) &#8211; Image of input grid</li>
 <li><strong>arg2</strong> (<em>str</em>) &#8211; Name of the output grid</li>
-<li><strong>arg3</strong> (<em>int</em>) &#8211; Number of cells to extend ribbon along the edge</li>
-<li><strong>arg4</strong> (<em>int</em>) &#8211; Number of iterations to fill inside hollow areas</li>
+<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Number of cells to extend ribbon along the edge</li>
+<li><strong>arg4</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Number of iterations to fill inside hollow areas</li>
 </ul>
 </td>
 </tr>
@@ -868,11 +867,11 @@ If not, the method will terminate.
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXIMU.grid_mask">
 <em class="property">static </em><code class="descname">grid_mask</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(str)arg2</em>, <em>(GXPLY)arg3</em>, <em>(int)arg4</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIMU.grid_mask" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Create</span> <span class="n">a</span> <span class="n">mask</span> <span class="n">grid</span> <span class="n">using</span> <span class="n">a</span> <span class="nb">set</span> <span class="n">of</span> <span class="n">polygon</span>
-<span class="n">coordinates</span> <span class="n">defined</span> <span class="ow">in</span> <span class="n">a</span> <span class="n">separate</span> <span class="n">file</span><span class="p">,</span> <span class="n">then</span>
-<span class="n">masking</span> <span class="n">the</span> <span class="n">polygon</span> <span class="n">over</span> <span class="n">an</span> <span class="nb">input</span> <span class="n">grid</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Create a mask grid using a set of polygon
+coordinates defined in a separate file, then
+masking the polygon over an input grid.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -881,7 +880,7 @@ If not, the method will terminate.
 <li><strong>arg1</strong> (<em>str</em>) &#8211; Name of input grid</li>
 <li><strong>arg2</strong> (<em>str</em>) &#8211; Name of output mask grid file</li>
 <li><strong>arg3</strong> (<a class="reference internal" href="GXPLY.html#geosoft.gxapi.GXPLY" title="geosoft.gxapi.GXPLY"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXPLY</span></code></a>) &#8211; Polygon containing mask coordinates</li>
-<li><strong>arg4</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#imu-mask"><span class="std std-ref">IMU_MASK constants</span></a></li>
+<li><strong>arg4</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#imu-mask"><span class="std std-ref">IMU_MASK constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -897,29 +896,29 @@ If not, the method will terminate.
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>The IMG parameters MUST be of type GS_DOUBLE!
+<pre class="literal-block">
+The IMG parameters MUST be of type GS_DOUBLE!
 If not, the method will terminate.
 
 The PLY will contain more than one polygon
 if it was loaded from a file containing
 coordinates of more than one polygon.
-</pre></div>
-</div>
+</pre>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXIMU.grid_peak">
 <em class="property">static </em><code class="descname">grid_peak</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(int)arg2</em>, <em>(GXVV)arg3</em>, <em>(GXVV)arg4</em>, <em>(GXVV)arg5</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIMU.grid_peak" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Pick</span> <span class="n">grid</span> <span class="n">peaks</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Pick grid peaks.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<em>str</em>) &#8211; Grid file name</li>
-<li><strong>arg2</strong> (<em>int</em>) &#8211; peak test directions (1 to 4)</li>
+<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; peak test directions (1 to 4)</li>
 <li><strong>arg3</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; X of found peaks</li>
 <li><strong>arg4</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Y of found peaks</li>
 <li><strong>arg5</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Z values of found peaks</li>
@@ -938,12 +937,12 @@ coordinates of more than one polygon.
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Peak</span> <span class="n">test</span> <span class="n">directions</span> <span class="n">defines</span> <span class="n">how</span> <span class="n">grid</span> <span class="n">peaks</span> <span class="n">are</span> <span class="n">to</span> <span class="n">be</span> <span class="n">found</span><span class="o">.</span>
-<span class="n">For</span> <span class="n">example</span><span class="p">,</span> <span class="k">with</span> <span class="n">the</span> <span class="mi">1</span><span class="p">,</span> <span class="n">a</span> <span class="n">grid</span> <span class="n">point</span> <span class="n">will</span> <span class="n">be</span> <span class="n">picked</span> <span class="k">if</span> <span class="n">its</span>
-<span class="n">value</span> <span class="ow">is</span> <span class="n">greater</span> <span class="n">than</span> <span class="n">it</span><span class="s1">&#39;s two neighbors in at least one</span>
-<span class="n">direction</span><span class="o">.</span>  <span class="n">Up</span> <span class="n">to</span> <span class="mi">4</span> <span class="n">directions</span> <span class="n">can</span> <span class="n">be</span> <span class="n">tested</span><span class="o">.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+Peak test directions defines how grid peaks are to be found.
+For example, with the 1, a grid point will be picked if its
+value is greater than it's two neighbors in at least one
+direction.  Up to 4 directions can be tested.
+</pre>
 </dd></dl>
 
 <dl class="staticmethod">
@@ -959,7 +958,7 @@ coordinates of more than one polygon.
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXIMG</span></code></a>) &#8211; the IMG</li>
 <li><strong>arg2</strong> (<a class="reference internal" href="GXPLY.html#geosoft.gxapi.GXPLY" title="geosoft.gxapi.GXPLY"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXPLY</span></code></a>) &#8211; PLY to which the bounding polygons will be added.</li>
-<li><strong>arg3</strong> (<em>int</em>) &#8211; TRUE to force the boundary to be refreshed.</li>
+<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; TRUE to force the boundary to be refreshed.</li>
 </ul>
 </td>
 </tr>
@@ -975,23 +974,23 @@ coordinates of more than one polygon.
 <p><span class="versionmodified">New in version 5.1.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="n">will</span> <span class="n">optionally</span> <span class="n">refresh</span> <span class="n">the</span> <span class="n">grid</span> <span class="n">boundary</span> <span class="n">PLY</span> <span class="ow">and</span> <span class="k">return</span>
-<span class="n">the</span> <span class="n">PLY</span><span class="o">.</span>
+<pre class="literal-block">
+This will optionally refresh the grid boundary PLY and return
+the PLY.
 
-<span class="n">If</span> <span class="n">the</span> <span class="n">boundary</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">refreshed</span> <span class="ow">and</span> <span class="n">has</span> <span class="n">never</span> <span class="n">been</span> <span class="n">calculated</span><span class="p">,</span>
-<span class="n">the</span> <span class="n">boundary</span> <span class="n">will</span> <span class="n">be</span> <span class="n">the</span> <span class="n">bounding</span> <span class="n">rectangle</span> <span class="n">of</span> <span class="n">the</span> <span class="n">grid</span><span class="o">.</span>
+If the boundary is not refreshed and has never been calculated,
+the boundary will be the bounding rectangle of the grid.
 
-<span class="n">The</span> <span class="n">grid</span> <span class="n">PLY</span> <span class="n">will</span> <span class="n">be</span> <span class="n">added</span> <span class="n">to</span> <span class="n">existing</span> <span class="n">ploygons</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">passed</span> <span class="n">PLY</span><span class="o">.</span>
-</pre></div>
-</div>
+The grid PLY will be added to existing ploygons in the passed PLY.
+</pre>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXIMU.grid_ply_ex">
 <em class="property">static </em><code class="descname">grid_ply_ex</code><span class="sig-paren">(</span><em>(GXIMG)arg1</em>, <em>(GXPLY)arg2</em>, <em>(int)arg3</em>, <em>(int)arg4</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIMU.grid_ply_ex" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">the</span> <span class="n">grid</span> <span class="n">edge</span> <span class="ow">in</span> <span class="n">a</span> <span class="n">PLY</span> <span class="p">(</span><span class="k">with</span> <span class="nb">min</span> <span class="n">points</span><span class="p">)</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Get the grid edge in a PLY (with min points)
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -999,8 +998,8 @@ coordinates of more than one polygon.
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXIMG</span></code></a>) &#8211; the IMG</li>
 <li><strong>arg2</strong> (<a class="reference internal" href="GXPLY.html#geosoft.gxapi.GXPLY" title="geosoft.gxapi.GXPLY"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXPLY</span></code></a>) &#8211; PLY to which the bounding polygons will be added.</li>
-<li><strong>arg3</strong> (<em>int</em>) &#8211; TRUE to force the boundary to be refreshed.</li>
-<li><strong>arg4</strong> (<em>int</em>) &#8211; Minimum number of points in polygons refreshed (0 for all)</li>
+<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; TRUE to force the boundary to be refreshed.</li>
+<li><strong>arg4</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Minimum number of points in polygons refreshed (0 for all)</li>
 </ul>
 </td>
 </tr>
@@ -1016,15 +1015,15 @@ coordinates of more than one polygon.
 <p><span class="versionmodified">New in version 5.1.6.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="n">will</span> <span class="n">optionally</span> <span class="n">refresh</span> <span class="n">the</span> <span class="n">grid</span> <span class="n">boundary</span> <span class="n">PLY</span> <span class="ow">and</span> <span class="k">return</span>
-<span class="n">the</span> <span class="n">PLY</span><span class="o">.</span>
+<pre class="literal-block">
+This will optionally refresh the grid boundary PLY and return
+the PLY.
 
-<span class="n">If</span> <span class="n">the</span> <span class="n">boundary</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">refreshed</span> <span class="ow">and</span> <span class="n">has</span> <span class="n">never</span> <span class="n">been</span> <span class="n">calculated</span><span class="p">,</span>
-<span class="n">the</span> <span class="n">boundary</span> <span class="n">will</span> <span class="n">be</span> <span class="n">the</span> <span class="n">bounding</span> <span class="n">rectangle</span> <span class="n">of</span> <span class="n">the</span> <span class="n">grid</span><span class="o">.</span>
+If the boundary is not refreshed and has never been calculated,
+the boundary will be the bounding rectangle of the grid.
 
-<span class="n">The</span> <span class="n">grid</span> <span class="n">PLY</span> <span class="n">will</span> <span class="n">be</span> <span class="n">added</span> <span class="n">to</span> <span class="n">existing</span> <span class="n">ploygons</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">passed</span> <span class="n">PLY</span><span class="o">.</span>
-</pre></div>
-</div>
+The grid PLY will be added to existing ploygons in the passed PLY.
+</pre>
 </dd></dl>
 
 <dl class="staticmethod">
@@ -1078,8 +1077,8 @@ coordinates of more than one polygon.
 <li><strong>arg4</strong> (<em>float</em>) &#8211; Origin Y</li>
 <li><strong>arg5</strong> (<em>float</em>) &#8211; cell spacing X</li>
 <li><strong>arg6</strong> (<em>float</em>) &#8211; cell spacing Y</li>
-<li><strong>arg7</strong> (<em>int</em>) &#8211; elements in X</li>
-<li><strong>arg8</strong> (<em>int</em>) &#8211; elements in Y</li>
+<li><strong>arg7</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; elements in X</li>
+<li><strong>arg8</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; elements in Y</li>
 </ul>
 </td>
 </tr>
@@ -1095,17 +1094,17 @@ coordinates of more than one polygon.
 <p><span class="versionmodified">New in version 7.3.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Works</span> <span class="n">only</span> <span class="k">for</span> <span class="n">un</span> <span class="n">rotated</span> <span class="n">grids</span><span class="o">.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+Works only for un rotated grids.
+</pre>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXIMU.grid_resize">
 <em class="property">static </em><code class="descname">grid_resize</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(str)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIMU.grid_resize" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Resize</span> <span class="n">a</span> <span class="n">grid</span> <span class="n">to</span> <span class="n">reduce</span> <span class="n">the</span> <span class="n">size</span> <span class="ow">not</span> <span class="n">cover</span> <span class="n">the</span> <span class="n">outside</span> <span class="n">dummies</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Resize a grid to reduce the size not cover the outside dummies.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1132,9 +1131,9 @@ coordinates of more than one polygon.
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXIMU.grid_shad">
 <em class="property">static </em><code class="descname">grid_shad</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(str)arg2</em>, <em>(float_ref)arg3</em>, <em>(float_ref)arg4</em>, <em>(float_ref)arg5</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIMU.grid_shad" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Create</span> <span class="n">a</span> <span class="n">shadded</span> <span class="n">relief</span> <span class="n">image</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Create a shadded relief image.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1160,18 +1159,18 @@ coordinates of more than one polygon.
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Pass</span> <span class="n">GS_R8DM</span> <span class="k">as</span> <span class="n">parameters</span> <span class="n">to</span> <span class="n">obtain</span> <span class="n">default</span> <span class="n">values</span><span class="o">.</span>
-<span class="n">The</span> <span class="n">default</span> <span class="n">values</span> <span class="n">are</span> <span class="n">returned</span><span class="o">.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+Pass GS_R8DM as parameters to obtain default values.
+The default values are returned.
+</pre>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXIMU.grid_st">
 <em class="property">static </em><code class="descname">grid_st</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(GXST)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIMU.grid_st" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Update</span> <span class="n">an</span> <span class="n">ST</span> <span class="nb">object</span> <span class="n">using</span> <span class="n">a</span> <span class="n">grid</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Update an ST object using a grid.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1195,7 +1194,7 @@ coordinates of more than one polygon.
 </div>
 <p><strong>Note:</strong></p>
 <pre class="literal-block">
-The input ST object is not initialized by <a class="reference internal" href="#geosoft.gxapi.GXIMU.grid_st" title="geosoft.gxapi.GXIMU.grid_st"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXIMU.grid_st()</span></code></a>,
+The input ST object is not initialized by \ :func:`geosoft.gxapi.GXIMU.grid_st`\ ,
 so this function can be used to accumulate statistical
 info on more than a single grid.
 See ST.GXH.
@@ -1205,9 +1204,9 @@ See ST.GXH.
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXIMU.grid_stat">
 <em class="property">static </em><code class="descname">grid_stat</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(int_ref)arg2</em>, <em>(int_ref)arg3</em>, <em>(int_ref)arg4</em>, <em>(float_ref)arg5</em>, <em>(float_ref)arg6</em>, <em>(int_ref)arg7</em>, <em>(float_ref)arg8</em>, <em>(float_ref)arg9</em>, <em>(float_ref)arg10</em>, <em>(float_ref)arg11</em>, <em>(float_ref)arg12</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIMU.grid_stat" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Reports</span> <span class="n">statistics</span> <span class="n">contained</span> <span class="ow">in</span> <span class="n">a</span> <span class="n">grid</span> <span class="n">header</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Reports statistics contained in a grid header.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1248,9 +1247,9 @@ See ST.GXH.
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXIMU.grid_stat_comp">
 <em class="property">static </em><code class="descname">grid_stat_comp</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(int_ref)arg2</em>, <em>(int_ref)arg3</em>, <em>(int_ref)arg4</em>, <em>(float_ref)arg5</em>, <em>(float_ref)arg6</em>, <em>(int_ref)arg7</em>, <em>(float_ref)arg8</em>, <em>(float_ref)arg9</em>, <em>(float_ref)arg10</em>, <em>(float_ref)arg11</em>, <em>(float_ref)arg12</em>, <em>(float_ref)arg13</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIMU.grid_stat_comp" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Reports</span> <span class="n">statistics</span> <span class="n">contained</span> <span class="ow">in</span> <span class="n">a</span> <span class="n">grid</span> <span class="n">header</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Reports statistics contained in a grid header.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1292,16 +1291,16 @@ See ST.GXH.
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXIMU.grid_stat_ext">
 <em class="property">static </em><code class="descname">grid_stat_ext</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(int)arg2</em>, <em>(int_ref)arg3</em>, <em>(int_ref)arg4</em>, <em>(float_ref)arg5</em>, <em>(float_ref)arg6</em>, <em>(float_ref)arg7</em>, <em>(float_ref)arg8</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIMU.grid_stat_ext" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Reports</span> <span class="n">statistics</span> <span class="n">of</span> <span class="n">a</span> <span class="n">grid</span><span class="s1">&#39;s elements.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Reports statistics of a grid's elements.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<em>str</em>) &#8211; Name of the grid to get stats from</li>
-<li><strong>arg2</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#imu-stat-forced"><span class="std std-ref">IMU_STAT_FORCED constants</span></a></li>
+<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#imu-stat-forced"><span class="std std-ref">IMU_STAT_FORCED constants</span></a></li>
 <li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; Number of valid elements in grid</li>
 <li><strong>arg4</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; Number of dummies in grid</li>
 <li><strong>arg5</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Minimum grid value</li>
@@ -1324,7 +1323,7 @@ See ST.GXH.
 </div>
 <p><strong>Note:</strong></p>
 <pre class="literal-block">
-If the <a class="reference internal" href="#imu-stat-forced"><span class="std std-ref">IMU_STAT_FORCED constants</span></a> value is set, the
+If the \ :ref:`IMU_STAT_FORCED`\  value is set, the
 statistics will be recalculated.
 Statistics are returned in the parameter set.
 </pre>
@@ -1333,9 +1332,9 @@ Statistics are returned in the parameter set.
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXIMU.grid_stat_trend">
 <em class="property">static </em><code class="descname">grid_stat_trend</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(int_ref)arg2</em>, <em>(float_ref)arg3</em>, <em>(float_ref)arg4</em>, <em>(float_ref)arg5</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIMU.grid_stat_trend" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Reports</span> <span class="n">Trend</span> <span class="n">Info</span> <span class="n">of</span> <span class="n">a</span> <span class="n">grid</span> <span class="p">(</span><span class="k">for</span> <span class="n">first</span> <span class="n">order</span> <span class="n">coef</span> <span class="n">only</span><span class="p">)</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Reports Trend Info of a grid (for first order coef only).
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1369,9 +1368,9 @@ Statistics are returned in the parameter set.
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXIMU.grid_stat_trend_ext">
 <em class="property">static </em><code class="descname">grid_stat_trend_ext</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(int_ref)arg2</em>, <em>(int_ref)arg3</em>, <em>(float_ref)arg4</em>, <em>(float_ref)arg5</em>, <em>(GXVM)arg6</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIMU.grid_stat_trend_ext" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Reports</span> <span class="n">Extended</span> <span class="n">Trend</span> <span class="n">Info</span> <span class="n">of</span> <span class="n">a</span> <span class="n">grid</span> <span class="p">(</span><span class="k">for</span> <span class="n">upto</span> <span class="n">third</span> <span class="n">order</span> <span class="n">coef</span><span class="p">)</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Reports Extended Trend Info of a grid (for upto third order coef).
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1417,16 +1416,16 @@ Statistics are returned in the parameter set.
 <li><strong>arg1</strong> (<em>str</em>) &#8211; Input Grid1 Name</li>
 <li><strong>arg2</strong> (<em>str</em>) &#8211; Input Grid2 Name</li>
 <li><strong>arg3</strong> (<em>str</em>) &#8211; Output Grid Name</li>
-<li><strong>arg4</strong> (<em>int</em>) &#8211; Stitching Method</li>
-<li><strong>arg5</strong> (<em>int</em>) &#8211; Grid 1 trend removal order</li>
-<li><strong>arg6</strong> (<em>int</em>) &#8211; Grid 2 trend removal order</li>
-<li><strong>arg7</strong> (<em>int</em>) &#8211; Trend removal type of points to use</li>
+<li><strong>arg4</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Stitching Method</li>
+<li><strong>arg5</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Grid 1 trend removal order</li>
+<li><strong>arg6</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Grid 2 trend removal order</li>
+<li><strong>arg7</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Trend removal type of points to use</li>
 <li><strong>arg8</strong> (<em>float</em>) &#8211; Gap for interpolation</li>
-<li><strong>arg9</strong> (<em>int</em>) &#8211; Interpolation spline method</li>
-<li><strong>arg10</strong> (<em>int</em>) &#8211; Path selection</li>
+<li><strong>arg9</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Interpolation spline method</li>
+<li><strong>arg10</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Path selection</li>
 <li><strong>arg11</strong> (<a class="reference internal" href="GXPLY.html#geosoft.gxapi.GXPLY" title="geosoft.gxapi.GXPLY"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXPLY</span></code></a>) &#8211; PLY object for user path</li>
 <li><strong>arg12</strong> (<em>float</em>) &#8211; Correction weighting</li>
-<li><strong>arg13</strong> (<em>int</em>) &#8211; width of corrections, in grid cells (8 to 256)</li>
+<li><strong>arg13</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; width of corrections, in grid cells (8 to 256)</li>
 </ul>
 </td>
 </tr>
@@ -1446,9 +1445,9 @@ Statistics are returned in the parameter set.
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXIMU.grid_stitch_ctl">
 <em class="property">static </em><code class="descname">grid_stitch_ctl</code><span class="sig-paren">(</span><em>(str)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIMU.grid_stitch_ctl" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Stitches</span> <span class="n">together</span> <span class="n">two</span> <span class="n">grids</span> <span class="o">-</span> <span class="n">control</span> <span class="n">file</span> <span class="k">for</span> <span class="n">options</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Stitches together two grids - control file for options.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1465,19 +1464,19 @@ Statistics are returned in the parameter set.
 <p><span class="versionmodified">New in version 5.1.4.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Data</span> <span class="n">validation</span> <span class="ow">is</span> <span class="n">done</span> <span class="n">internally</span><span class="p">,</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">GX</span><span class="o">.</span>
-<span class="n">This</span> <span class="ow">is</span> <span class="n">simply</span> <span class="n">a</span> <span class="n">way</span> <span class="n">of</span> <span class="n">avoiding</span> <span class="n">writing</span> <span class="n">a</span> <span class="n">new</span> <span class="n">GX</span> <span class="n">wrapper</span>
-<span class="n">every</span> <span class="n">time</span> <span class="n">an</span> <span class="n">option</span> <span class="ow">is</span> <span class="n">added</span><span class="o">.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+Data validation is done internally, not in the GX.
+This is simply a way of avoiding writing a new GX wrapper
+every time an option is added.
+</pre>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXIMU.grid_tiff">
 <em class="property">static </em><code class="descname">grid_tiff</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(str)arg2</em>, <em>(str)arg3</em>, <em>(int)arg4</em>, <em>(int)arg5</em>, <em>(int)arg6</em>, <em>(float)arg7</em>, <em>(int)arg8</em>, <em>(float)arg9</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIMU.grid_tiff" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Generate</span> <span class="n">a</span> <span class="n">Tiff</span> <span class="p">(</span><span class="n">Tagged</span><span class="o">-</span><span class="n">Image</span> <span class="n">file</span> <span class="nb">format</span><span class="p">)</span> <span class="n">file</span> <span class="k">with</span> <span class="n">up</span> <span class="n">to</span> <span class="mi">16</span> <span class="n">grids</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Generate a Tiff (Tagged-Image file format) file with up to 16 grids.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1486,11 +1485,11 @@ Statistics are returned in the parameter set.
 <li><strong>arg1</strong> (<em>str</em>) &#8211; Comma-delimited string containing names of all grids to use in Tiff generation Up to 16 grids allowed.</li>
 <li><strong>arg2</strong> (<em>str</em>) &#8211; Name of Tiff file to create</li>
 <li><strong>arg3</strong> (<em>str</em>) &#8211; Background colour option. One of W (White)  K (Black) C (Cyan) M (Magenta) Y (Yellow) R (Red)  G (Green) B (Blue)</li>
-<li><strong>arg4</strong> (<em>int</em>) &#8211; Background Red value (0-255)</li>
-<li><strong>arg5</strong> (<em>int</em>) &#8211; Background Green (0-255)</li>
-<li><strong>arg6</strong> (<em>int</em>) &#8211; Background Blue  (0-255)</li>
+<li><strong>arg4</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Background Red value (0-255)</li>
+<li><strong>arg5</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Background Green (0-255)</li>
+<li><strong>arg6</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Background Blue  (0-255)</li>
 <li><strong>arg7</strong> (<em>float</em>) &#8211; New cell size</li>
-<li><strong>arg8</strong> (<em>int</em>) &#8211; Pixel size of registration marks</li>
+<li><strong>arg8</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Pixel size of registration marks</li>
 <li><strong>arg9</strong> (<em>float</em>) &#8211; Map Scale</li>
 </ul>
 </td>
@@ -1507,19 +1506,19 @@ Statistics are returned in the parameter set.
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">background</span> <span class="n">colour</span> <span class="n">can</span> <span class="n">be</span> <span class="n">either</span> <span class="n">selected</span>
-<span class="kn">from</span> <span class="nn">one</span> <span class="n">of</span> <span class="mi">8</span> <span class="n">settings</span><span class="p">,</span> <span class="ow">or</span> <span class="n">can</span> <span class="n">be</span> <span class="n">specified</span>
-<span class="k">as</span> <span class="n">a</span> <span class="n">combination</span> <span class="n">of</span> <span class="n">Reg</span><span class="p">,</span><span class="n">Green</span><span class="p">,</span> <span class="ow">and</span> <span class="n">Blue</span> <span class="n">values</span><span class="o">.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+The background colour can be either selected
+from one of 8 settings, or can be specified
+as a combination of Reg,Green, and Blue values.
+</pre>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXIMU.grid_trnd">
 <em class="property">static </em><code class="descname">grid_trnd</code><span class="sig-paren">(</span><em>(GXIMG)arg1</em>, <em>(GXIMG)arg2</em>, <em>(int)arg3</em>, <em>(int)arg4</em>, <em>(int)arg5</em>, <em>(GXVM)arg6</em>, <em>(int)arg7</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIMU.grid_trnd" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Remove</span> <span class="n">a</span> <span class="n">trend</span> <span class="n">surface</span> <span class="kn">from</span> <span class="nn">a</span> <span class="n">grid</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Remove a trend surface from a grid.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1527,11 +1526,11 @@ Statistics are returned in the parameter set.
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXIMG</span></code></a>) &#8211; Handle to input image</li>
 <li><strong>arg2</strong> (<a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXIMG</span></code></a>) &#8211; Handle to output image</li>
-<li><strong>arg3</strong> (<em>int</em>) &#8211; 0-calculate, 1-given, 2-replace</li>
-<li><strong>arg4</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#imu-trend"><span class="std std-ref">IMU_TREND constants</span></a></li>
-<li><strong>arg5</strong> (<em>int</em>) &#8211; Trend order</li>
+<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; 0-calculate, 1-given, 2-replace</li>
+<li><strong>arg4</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#imu-trend"><span class="std std-ref">IMU_TREND constants</span></a></li>
+<li><strong>arg5</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Trend order</li>
 <li><strong>arg6</strong> (<a class="reference internal" href="GXVM.html#geosoft.gxapi.GXVM" title="geosoft.gxapi.GXVM"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVM</span></code></a>) &#8211; VM holds coefficients</li>
-<li><strong>arg7</strong> (<em>int</em>) &#8211; Number of coefficients</li>
+<li><strong>arg7</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Number of coefficients</li>
 </ul>
 </td>
 </tr>
@@ -1547,40 +1546,40 @@ Statistics are returned in the parameter set.
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Both</span> <span class="n">Images</span> <span class="n">must</span> <span class="n">be</span> <span class="n">of</span> <span class="nb">type</span> <span class="n">GS_DOUBLE</span><span class="o">.</span>
-<span class="n">The</span> <span class="n">VM</span> <span class="n">parameter</span> <span class="n">must</span> <span class="n">be</span> <span class="n">of</span> <span class="nb">type</span> <span class="n">REAL</span><span class="p">,</span>
-<span class="ow">and</span> <span class="n">be</span> <span class="n">of</span> <span class="n">size</span> <span class="mi">10</span> <span class="n">at</span> <span class="n">most</span><span class="o">.</span>
+<pre class="literal-block">
+Both Images must be of type GS_DOUBLE.
+The VM parameter must be of type REAL,
+and be of size 10 at most.
 
-<span class="n">The</span> <span class="n">number</span> <span class="n">of</span> <span class="n">coefficients</span> <span class="n">must</span> <span class="n">be</span>
-<span class="n">compatible</span> <span class="k">with</span> <span class="n">the</span> <span class="n">order</span> <span class="n">of</span> <span class="n">the</span>
-<span class="n">trend</span> <span class="n">removed</span><span class="o">.</span> <span class="n">Following</span> <span class="ow">is</span> <span class="n">the</span>
-<span class="n">number</span> <span class="n">of</span> <span class="n">coefficients</span> <span class="n">which</span> <span class="n">should</span>
-<span class="n">be</span> <span class="n">present</span> <span class="k">for</span> <span class="n">a</span> <span class="n">given</span> <span class="n">order</span>
+The number of coefficients must be
+compatible with the order of the
+trend removed. Following is the
+number of coefficients which should
+be present for a given order
 
-<span class="n">Order</span>            <span class="n">Number</span> <span class="n">of</span> <span class="n">Coefficients</span>
-<span class="o">-----</span>            <span class="o">----------------------</span>
-<span class="mi">0</span>                 <span class="mi">1</span>
-<span class="mi">1</span>                 <span class="mi">3</span>
-<span class="mi">2</span>                 <span class="mi">6</span>
-<span class="mi">3</span>                 <span class="mi">10</span>
-</pre></div>
-</div>
+Order            Number of Coefficients
+-----            ----------------------
+0                 1
+1                 3
+2                 6
+3                 10
+</pre>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXIMU.grid_trns">
 <em class="property">static </em><code class="descname">grid_trns</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(int)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIMU.grid_trns" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Transpose</span> <span class="n">a</span> <span class="n">grid</span> <span class="n">by</span> <span class="n">swapping</span> <span class="n">the</span> <span class="n">grid</span> <span class="n">rows</span> <span class="k">with</span>
-<span class="n">the</span> <span class="n">grid</span> <span class="n">columns</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Transpose a grid by swapping the grid rows with
+the grid columns.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<em>str</em>) &#8211; Name of the grid to transpose</li>
-<li><strong>arg2</strong> (<em>int</em>) &#8211; Transpose condition value <a class="reference internal" href="#imu-trans"><span class="std std-ref">IMU_TRANS constants</span></a></li>
+<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Transpose condition value <a class="reference internal" href="#imu-trans"><span class="std std-ref">IMU_TRANS constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -1598,7 +1597,7 @@ Statistics are returned in the parameter set.
 <p><strong>Note:</strong></p>
 <pre class="literal-block">
 If the grid has a line orientation that does NOT
-match the <a class="reference internal" href="#imu-trans"><span class="std std-ref">IMU_TRANS constants</span></a> value, this method will
+match the \ :ref:`IMU_TRANS`\  value, this method will
 not succeed.
 </pre>
 </dd></dl>
@@ -1606,18 +1605,18 @@ not succeed.
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXIMU.grid_type">
 <em class="property">static </em><code class="descname">grid_type</code><span class="sig-paren">(</span><em>(str)arg1</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXIMU.grid_type" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Reports</span> <span class="n">the</span> <span class="n">true</span> <span class="n">data</span> <span class="n">the</span> <span class="n">of</span> <span class="n">a</span> <span class="n">grid</span> <span class="p">(</span><span class="n">geosoft</span> <span class="n">types</span><span class="p">)</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Reports the true data the of a grid (geosoft types)
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>str</em>) &#8211; Name of the Grid</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><span class="xref std std-ref">GS_TYPES</span></td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><a class="reference internal" href="GXGEOSOFT.html#gs-types"><span class="std std-ref">GS_TYPES constants</span></a></td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></td>
 </tr>
 </tbody>
 </table>
@@ -1629,9 +1628,9 @@ not succeed.
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXIMU.grid_vd">
 <em class="property">static </em><code class="descname">grid_vd</code><span class="sig-paren">(</span><em>(GXIMG)arg1</em>, <em>(GXIMG)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIMU.grid_vd" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Apply</span> <span class="n">vertical</span> <span class="n">derivertive</span> <span class="n">convolution</span> <span class="nb">filter</span> <span class="n">to</span> <span class="n">a</span> <span class="n">grid</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Apply vertical derivertive convolution filter to a grid.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1658,10 +1657,10 @@ not succeed.
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXIMU.grid_vol">
 <em class="property">static </em><code class="descname">grid_vol</code><span class="sig-paren">(</span><em>(GXIMG)arg1</em>, <em>(float)arg2</em>, <em>(float)arg3</em>, <em>(float_ref)arg4</em>, <em>(float_ref)arg5</em>, <em>(float_ref)arg6</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIMU.grid_vol" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Calculates</span> <span class="n">the</span> <span class="n">grid</span> <span class="n">volumes</span> <span class="n">above</span> <span class="ow">and</span> <span class="n">below</span> <span class="n">a</span>
-<span class="n">reference</span> <span class="n">base</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Calculates the grid volumes above and below a
+reference base.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1688,24 +1687,24 @@ not succeed.
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>Volumes are calculated above and below a
+<pre class="literal-block">
+Volumes are calculated above and below a
 reference base level, and reported as positive
 integers. A multiplier is applied to the final
 volume (to correct for units).
 
 The IMG parameters MUST be of type GS_FLOAT!
 If not, the method will terminate.
-</pre></div>
-</div>
+</pre>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXIMU.grid_wind">
 <em class="property">static </em><code class="descname">grid_wind</code><span class="sig-paren">(</span><em>(GXIMG)arg1</em>, <em>(str)arg2</em>, <em>(int)arg3</em>, <em>(float)arg4</em>, <em>(float)arg5</em>, <em>(float)arg6</em>, <em>(float)arg7</em>, <em>(float)arg8</em>, <em>(float)arg9</em>, <em>(float)arg10</em>, <em>(int)arg11</em>, <em>(int)arg12</em>, <em>(str)arg13</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIMU.grid_wind" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Create</span> <span class="n">a</span> <span class="n">grid</span> <span class="n">using</span> <span class="n">a</span> <span class="n">defined</span> <span class="n">area</span> <span class="n">window</span>
-<span class="n">within</span> <span class="n">a</span> <span class="n">larger</span> <span class="n">grid</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Create a grid using a defined area window
+within a larger grid.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1713,7 +1712,7 @@ If not, the method will terminate.
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXIMG</span></code></a>) &#8211; Image of input grid</li>
 <li><strong>arg2</strong> (<em>str</em>) &#8211; Name of output grid file</li>
-<li><strong>arg3</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#imu-wind-coord"><span class="std std-ref">IMU_WIND_COORD constants</span></a></li>
+<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#imu-wind-coord"><span class="std std-ref">IMU_WIND_COORD constants</span></a></li>
 <li><strong>arg4</strong> (<em>float</em>) &#8211; Min. limit of window in X direction (can be rDUMMY)</li>
 <li><strong>arg5</strong> (<em>float</em>) &#8211; Max. limit of window in X direction (can be rDUMMY)</li>
 <li><strong>arg6</strong> (<em>float</em>) &#8211; Min. limit of window in Y direction (can be rDUMMY)</li>
@@ -1721,8 +1720,8 @@ If not, the method will terminate.
 <li><strong>arg8</strong> (<em>float</em>) &#8211; Minimum Z data value in output grid (can be rDUMMY)</li>
 <li><strong>arg9</strong> (<em>float</em>) &#8211; Maximum Z data value in output grid (can be rDUMMY)</li>
 <li><strong>arg10</strong> (<em>float</em>) &#8211; New grid cell size</li>
-<li><strong>arg11</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#imu-wind-dummies"><span class="std std-ref">IMU_WIND_DUMMIES constants</span></a></li>
-<li><strong>arg12</strong> (<em>int</em>) &#8211; Decimation factor</li>
+<li><strong>arg11</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#imu-wind-dummies"><span class="std std-ref">IMU_WIND_DUMMIES constants</span></a></li>
+<li><strong>arg12</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Decimation factor</li>
 <li><strong>arg13</strong> (<em>str</em>) &#8211; Name of .MDF file for data clipping</li>
 </ul>
 </td>
@@ -1743,9 +1742,9 @@ If not, the method will terminate.
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXIMU.grid_wind2">
 <em class="property">static </em><code class="descname">grid_wind2</code><span class="sig-paren">(</span><em>(GXIMG)arg1</em>, <em>(str)arg2</em>, <em>(float)arg3</em>, <em>(float)arg4</em>, <em>(float)arg5</em>, <em>(float)arg6</em>, <em>(float)arg7</em>, <em>(float)arg8</em>, <em>(int)arg9</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIMU.grid_wind2" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Window</span> <span class="n">a</span> <span class="n">grid</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Window a grid.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1759,7 +1758,7 @@ If not, the method will terminate.
 <li><strong>arg6</strong> (<em>float</em>) &#8211; Maximum Y (can be rDUMMY)</li>
 <li><strong>arg7</strong> (<em>float</em>) &#8211; Minimum Z (can be rDUMMY)</li>
 <li><strong>arg8</strong> (<em>float</em>) &#8211; Maximum Z (can be rDUMMY)</li>
-<li><strong>arg9</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#imu-wind-dummies"><span class="std std-ref">IMU_WIND_DUMMIES constants</span></a></li>
+<li><strong>arg9</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#imu-wind-dummies"><span class="std std-ref">IMU_WIND_DUMMIES constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -1775,21 +1774,21 @@ If not, the method will terminate.
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">To</span> <span class="n">change</span> <span class="n">the</span> <span class="n">cell</span> <span class="n">size</span> <span class="ow">or</span> <span class="n">work</span> <span class="ow">in</span> <span class="n">a</span> <span class="n">different</span> <span class="n">projection</span><span class="p">,</span>
-<span class="n">first</span> <span class="n">inherit</span> <span class="n">the</span> <span class="n">IMG</span> <span class="n">by</span> <span class="n">calling</span>
+<pre class="literal-block">
+To change the cell size or work in a different projection,
+first inherit the IMG by calling
 
-<span class="n">The</span> <span class="n">windowed</span> <span class="n">grid</span> <span class="n">will</span> <span class="n">be</span> <span class="n">adjusted</span><span class="o">/</span><span class="n">expanded</span> <span class="n">to</span> <span class="n">include</span> <span class="n">the</span>
-<span class="n">defined</span> <span class="n">area</span> <span class="ow">and</span> <span class="n">line</span> <span class="n">up</span> <span class="n">on</span> <span class="n">an</span> <span class="n">even</span> <span class="n">grid</span> <span class="n">cell</span><span class="o">.</span>
-</pre></div>
-</div>
+The windowed grid will be adjusted/expanded to include the
+defined area and line up on an even grid cell.
+</pre>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXIMU.grid_xyz">
 <em class="property">static </em><code class="descname">grid_xyz</code><span class="sig-paren">(</span><em>(GXIMG)arg1</em>, <em>(str)arg2</em>, <em>(int)arg3</em>, <em>(int)arg4</em>, <em>(int)arg5</em>, <em>(int)arg6</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIMU.grid_xyz" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Export</span> <span class="n">a</span> <span class="n">Grid</span> <span class="n">image</span> <span class="n">to</span> <span class="n">an</span> <span class="n">XYZ</span> <span class="n">file</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Export a Grid image to an XYZ file.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1797,10 +1796,10 @@ If not, the method will terminate.
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXIMG</span></code></a>) &#8211; Image of the grid to export</li>
 <li><strong>arg2</strong> (<em>str</em>) &#8211; Name of new XYZ file</li>
-<li><strong>arg3</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#imu-xyz-index"><span class="std std-ref">IMU_XYZ_INDEX constants</span></a></li>
-<li><strong>arg4</strong> (<em>int</em>) &#8211; X direction decimation factor</li>
-<li><strong>arg5</strong> (<em>int</em>) &#8211; Y direction decimation factor</li>
-<li><strong>arg6</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#imu-xyz-label"><span class="std std-ref">IMU_XYZ_LABEL constants</span></a></li>
+<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#imu-xyz-index"><span class="std std-ref">IMU_XYZ_INDEX constants</span></a></li>
+<li><strong>arg4</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; X direction decimation factor</li>
+<li><strong>arg5</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Y direction decimation factor</li>
+<li><strong>arg6</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#imu-xyz-label"><span class="std std-ref">IMU_XYZ_LABEL constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -1816,11 +1815,11 @@ If not, the method will terminate.
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">IMG</span> <span class="p">(</span><span class="n">image</span><span class="p">)</span> <span class="n">of</span> <span class="n">the</span> <span class="n">grid</span> <span class="n">to</span> <span class="n">export</span> <span class="n">must</span>
-<span class="n">be</span> <span class="n">of</span> <span class="nb">type</span> <span class="n">GS_FLOAT</span><span class="o">.</span> <span class="n">If</span> <span class="ow">not</span><span class="p">,</span> <span class="n">this</span> <span class="n">method</span> <span class="n">will</span>
-<span class="n">terminate</span> <span class="k">with</span> <span class="n">an</span> <span class="n">error</span><span class="o">.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+The IMG (image) of the grid to export must
+be of type GS_FLOAT. If not, this method will
+terminate with an error.
+</pre>
 </dd></dl>
 
 <dl class="staticmethod">
@@ -1895,9 +1894,9 @@ If not, the method will terminate.
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXIMU.mosaic">
 <em class="property">static </em><code class="descname">mosaic</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(str)arg2</em>, <em>(GXIPJ)arg3</em>, <em>(float)arg4</em><span class="sig-paren">)</span> &rarr; GXIMG:<a class="headerlink" href="#geosoft.gxapi.GXIMU.mosaic" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Create</span> <span class="n">a</span> <span class="n">mosaic</span> <span class="n">image</span> <span class="n">of</span> <span class="n">an</span> <span class="n">image</span> <span class="nb">list</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Create a mosaic image of an image list.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1922,19 +1921,19 @@ If not, the method will terminate.
 <p><span class="versionmodified">New in version 5.1.8.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">images</span> <span class="n">are</span> <span class="n">simply</span> <span class="n">placed</span> <span class="n">on</span> <span class="n">the</span> <span class="n">output</span> <span class="n">image</span><span class="p">,</span> <span class="n">starting</span> <span class="k">with</span>
-<span class="n">the</span> <span class="n">first</span> <span class="n">image</span><span class="o">.</span> <span class="n">Note</span> <span class="n">that</span> <span class="n">this</span> <span class="n">function</span> <span class="n">may</span> <span class="n">require</span> <span class="n">very</span> <span class="n">large</span>
-<span class="n">amounts</span> <span class="n">of</span> <span class="n">virtual</span> <span class="n">memory</span><span class="o">.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+The images are simply placed on the output image, starting with
+the first image. Note that this function may require very large
+amounts of virtual memory.
+</pre>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXIMU.peak_size">
 <em class="property">static </em><code class="descname">peak_size</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(GXVV)arg2</em>, <em>(GXVV)arg3</em>, <em>(int)arg4</em>, <em>(float)arg5</em>, <em>(GXVV)arg6</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIMU.peak_size" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Define</span> <span class="n">the</span> <span class="n">sizes</span> <span class="n">of</span> <span class="nb">all</span> <span class="n">the</span> <span class="n">peaks</span> <span class="ow">in</span> <span class="n">an</span> <span class="n">image</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Define the sizes of all the peaks in an image.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1943,7 +1942,7 @@ If not, the method will terminate.
 <li><strong>arg1</strong> (<em>str</em>) &#8211; Grid file name</li>
 <li><strong>arg2</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Peaks&#8217; X</li>
 <li><strong>arg3</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Peaks&#8217; Y</li>
-<li><strong>arg4</strong> (<em>int</em>) &#8211; Maximum target diameter (window) in # of cells</li>
+<li><strong>arg4</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Maximum target diameter (window) in # of cells</li>
 <li><strong>arg5</strong> (<em>float</em>) &#8211; Precision factor (see note above)</li>
 <li><strong>arg6</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Returned peak (anomaly) sizes in data units</li>
 </ul>
@@ -1964,24 +1963,24 @@ If not, the method will terminate.
 <pre class="literal-block">
 Extending from the peak location of an anomaly to the inflection
 points of the grid values along each of the 8 directions results in
-8 radii. Anomaly size is defined as the 2<cite>*</cite>mediam of the 8 radii.
+8 radii. Anomaly size is defined as the 2\ `*`\ mediam of the 8 radii.
 
 Precision factor is used to control definition of an inflection point.
 For points A,B, and C, B is an inflection point if (A+C)/2.0 &gt; B. With
 the precision factor, B is an inflection point only when
-(A+C)/2.0 &gt; B<cite>*</cite>(1.0+Precision factor).
+(A+C)/2.0 &gt; B\ `*`\ (1.0+Precision factor).
 This factor must be within (-1.0,1.0).
 
-Note: <a class="reference internal" href="#geosoft.gxapi.GXIMU.peak_size2" title="geosoft.gxapi.GXIMU.peak_size2"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXIMU.peak_size2()</span></code></a> is probably a better routine...
+Note: \ :func:`geosoft.gxapi.GXIMU.peak_size2`\  is probably a better routine...
 </pre>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXIMU.peak_size2">
 <em class="property">static </em><code class="descname">peak_size2</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(GXVV)arg2</em>, <em>(GXVV)arg3</em>, <em>(int)arg4</em>, <em>(GXVV)arg5</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIMU.peak_size2" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Define</span> <span class="n">the</span> <span class="n">sizes</span> <span class="n">of</span> <span class="nb">all</span> <span class="n">the</span> <span class="n">peaks</span> <span class="ow">in</span> <span class="n">an</span> <span class="n">image</span> <span class="o">-</span> <span class="n">new</span> <span class="n">algorithm</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Define the sizes of all the peaks in an image - new algorithm
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1990,7 +1989,7 @@ Note: <a class="reference internal" href="#geosoft.gxapi.GXIMU.peak_size2" title
 <li><strong>arg1</strong> (<em>str</em>) &#8211; Grid file name</li>
 <li><strong>arg2</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Peaks&#8217; X</li>
 <li><strong>arg3</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Peaks&#8217; Y</li>
-<li><strong>arg4</strong> (<em>int</em>) &#8211; Maximum target diameter (window) in # of cells</li>
+<li><strong>arg4</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Maximum target diameter (window) in # of cells</li>
 <li><strong>arg5</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Returned peak (anomaly) sizes in data units</li>
 </ul>
 </td>
@@ -2010,7 +2009,7 @@ Note: <a class="reference internal" href="#geosoft.gxapi.GXIMU.peak_size2" title
 <pre class="literal-block">
 Extending from the peak location of an anomaly to the inflection
 points of the grid values along each of the 8 directions results in
-8 radii. Anomaly size is defined as the 2<cite>*</cite>mediam of the 8 radii.
+8 radii. Anomaly size is defined as the 2\ `*`\ mediam of the 8 radii.
 
 This algorithm uses 4 successive points d1, d2, d3 and d4 in any
 direction. Given slopes m1 = d2-d1, m2 = d3-d2 and m3 = d4-d3,
@@ -2019,16 +2018,16 @@ The location index is given as i3 - s2/(s2-s1), where i3 is the index
 of d3, and s1=m2-m1 and s2=m3-m2.
 
 This algorithm tends to give much smaller (and more reasonable)
-results than <a class="reference internal" href="#geosoft.gxapi.GXIMU.peak_size" title="geosoft.gxapi.GXIMU.peak_size"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXIMU.peak_size()</span></code></a>.
+results than \ :func:`geosoft.gxapi.GXIMU.peak_size`\ .
 </pre>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXIMU.pigeon_hole">
 <em class="property">static </em><code class="descname">pigeon_hole</code><span class="sig-paren">(</span><em>(GXIMG)arg1</em>, <em>(GXVV)arg2</em>, <em>(GXVV)arg3</em>, <em>(int_ref)arg4</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIMU.pigeon_hole" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Pigeon</span><span class="o">-</span><span class="n">hole</span> <span class="ow">and</span> <span class="n">count</span> <span class="n">points</span> <span class="n">by</span> <span class="n">location</span> <span class="n">into</span> <span class="n">a</span> <span class="n">grid</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Pigeon-hole and count points by location into a grid.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -2053,27 +2052,27 @@ results than <a class="reference internal" href="#geosoft.gxapi.GXIMU.peak_size"
 <p><span class="versionmodified">New in version 5.0.8.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="ow">and</span> <span class="n">Y</span> <span class="n">location</span> <span class="n">VVs</span> <span class="n">are</span> <span class="nb">input</span><span class="o">.</span> <span class="n">If</span> <span class="n">a</span> <span class="n">point</span> <span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">)</span> <span class="ow">is</span> <span class="n">located</span> <span class="n">within</span>
-<span class="n">one</span><span class="o">-</span><span class="n">half</span> <span class="n">cell</span> <span class="n">width</span> <span class="kn">from</span> <span class="nn">a</span> <span class="n">location</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">grid</span><span class="p">,</span> <span class="n">then</span> <span class="n">the</span> <span class="n">value</span> <span class="n">of</span>
-<span class="n">the</span> <span class="n">grid</span> <span class="n">at</span> <span class="n">that</span> <span class="n">location</span> <span class="ow">is</span> <span class="n">incremented</span> <span class="n">by</span> <span class="mf">1.</span>
-<span class="n">The</span> <span class="n">cells</span> <span class="n">are</span> <span class="n">inclusive</span> <span class="n">at</span> <span class="n">the</span> <span class="n">minima</span><span class="p">,</span> <span class="ow">and</span> <span class="n">exclusive</span> <span class="n">at</span> <span class="n">the</span> <span class="n">maxima</span><span class="p">:</span>
-<span class="n">e</span><span class="o">.</span><span class="n">g</span><span class="o">.</span> <span class="k">if</span> <span class="n">dDx</span> <span class="o">=</span> <span class="n">dDy</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="ow">and</span> <span class="n">dXo</span> <span class="o">=</span> <span class="n">dYo</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">then</span> <span class="n">the</span> <span class="n">corner</span> <span class="n">cell</span> <span class="n">would</span>
-<span class="n">accept</span> <span class="n">values</span>  <span class="o">-</span><span class="mf">0.5</span> <span class="o">&lt;=</span> <span class="n">X</span> <span class="o">&lt;</span> <span class="mf">0.5</span> <span class="ow">and</span> <span class="o">-</span><span class="mf">0.5</span> <span class="o">&lt;=</span> <span class="n">Y</span> <span class="o">&lt;</span> <span class="mf">0.5</span><span class="o">.</span>
-<span class="n">The</span> <span class="n">grid</span> <span class="n">values</span> <span class="n">should</span> <span class="n">be</span> <span class="nb">set</span> <span class="n">to</span> <span class="mi">0</span> <span class="n">before</span> <span class="n">calling</span> <span class="n">this</span> <span class="n">function</span><span class="o">.</span>
+<pre class="literal-block">
+X and Y location VVs are input. If a point (X, Y) is located within
+one-half cell width from a location in the grid, then the value of
+the grid at that location is incremented by 1.
+The cells are inclusive at the minima, and exclusive at the maxima:
+e.g. if dDx = dDy = 1, and dXo = dYo = 0, then the corner cell would
+accept values  -0.5 &lt;= X &lt; 0.5 and -0.5 &lt;= Y &lt; 0.5.
+The grid values should be set to 0 before calling this function.
 
-<span class="n">The</span> <span class="n">number</span> <span class="n">of</span> <span class="n">points</span> <span class="s2">&quot;pigeon-holed&quot;</span> <span class="ow">is</span> <span class="n">returned</span> <span class="n">to</span> <span class="n">the</span> <span class="n">user</span><span class="o">.</span>
-<span class="n">This</span> <span class="n">function</span> <span class="ow">is</span> <span class="n">useful</span><span class="p">,</span> <span class="k">for</span> <span class="n">instance</span><span class="p">,</span> <span class="ow">in</span> <span class="n">determining</span> <span class="n">the</span> <span class="n">density</span> <span class="n">of</span>
-<span class="n">sample</span> <span class="n">locations</span> <span class="ow">in</span> <span class="n">a</span> <span class="n">survey</span> <span class="n">area</span><span class="o">.</span>
-</pre></div>
-</div>
+The number of points &quot;pigeon-holed&quot; is returned to the user.
+This function is useful, for instance, in determining the density of
+sample locations in a survey area.
+</pre>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXIMU.profile">
 <em class="property">static </em><code class="descname">profile</code><span class="sig-paren">(</span><em>(GXIMG)arg1</em>, <em>(float)arg2</em>, <em>(float)arg3</em>, <em>(float)arg4</em>, <em>(float)arg5</em>, <em>(float)arg6</em>, <em>(GXVV)arg7</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIMU.profile" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Extract</span> <span class="n">a</span> <span class="n">profile</span> <span class="kn">from</span> <span class="nn">a</span> <span class="n">grid</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Extract a profile from a grid.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -2101,18 +2100,18 @@ results than <a class="reference internal" href="#geosoft.gxapi.GXIMU.peak_size"
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Returned</span> <span class="n">VV</span> <span class="n">will</span> <span class="n">start</span> <span class="n">at</span> <span class="n">X1</span><span class="p">,</span><span class="n">Y1</span> <span class="ow">and</span> <span class="n">will</span> <span class="n">sample</span>
-<span class="n">up</span> <span class="n">to</span> <span class="n">X2</span><span class="p">,</span><span class="n">Y2</span> <span class="n">at</span> <span class="n">the</span> <span class="n">specified</span> <span class="n">separation</span><span class="o">.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+Returned VV will start at X1,Y1 and will sample
+up to X2,Y2 at the specified separation.
+</pre>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXIMU.profile_vv">
 <em class="property">static </em><code class="descname">profile_vv</code><span class="sig-paren">(</span><em>(GXIMG)arg1</em>, <em>(GXVV)arg2</em>, <em>(GXVV)arg3</em>, <em>(GXVV)arg4</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIMU.profile_vv" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Extract</span> <span class="n">a</span> <span class="n">VV</span> <span class="n">profile</span> <span class="kn">from</span> <span class="nn">a</span> <span class="n">grid</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Extract a VV profile from a grid.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -2174,21 +2173,21 @@ results than <a class="reference internal" href="#geosoft.gxapi.GXIMU.peak_size"
 <p><span class="versionmodified">New in version 5.1.8.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">If</span> <span class="n">an</span> <span class="n">IPJ</span> <span class="ow">is</span> <span class="n">IPJ_CS_UNKNOWN</span><span class="p">,</span> <span class="n">the</span>
-<span class="n">IPJ</span> <span class="n">of</span> <span class="n">the</span> <span class="n">first</span> <span class="n">grid</span> <span class="ow">in</span> <span class="n">the</span> <span class="nb">list</span> <span class="n">will</span> <span class="n">be</span> <span class="n">used</span> <span class="ow">and</span>
-<span class="n">the</span> <span class="n">IPJ</span> <span class="n">will</span> <span class="n">be</span> <span class="n">returned</span> <span class="ow">in</span> <span class="n">this</span> <span class="n">setting</span><span class="o">.</span>
-<span class="n">Otherwise</span><span class="p">,</span> <span class="n">the</span> <span class="nb">range</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">requested</span> <span class="n">IPJ</span> <span class="n">will</span> <span class="n">be</span>
-<span class="n">determined</span><span class="o">.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+If an IPJ is IPJ_CS_UNKNOWN, the
+IPJ of the first grid in the list will be used and
+the IPJ will be returned in this setting.
+Otherwise, the range in the requested IPJ will be
+determined.
+</pre>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXIMU.range_ll">
 <em class="property">static </em><code class="descname">range_ll</code><span class="sig-paren">(</span><em>(GXIMG)arg1</em>, <em>(float_ref)arg2</em>, <em>(float_ref)arg3</em>, <em>(float_ref)arg4</em>, <em>(float_ref)arg5</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIMU.range_ll" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Determine</span> <span class="n">the</span> <span class="nb">range</span> <span class="ow">in</span> <span class="n">lat</span><span class="o">.</span> <span class="ow">and</span> <span class="n">long</span><span class="o">.</span> <span class="n">of</span> <span class="n">a</span> <span class="n">projected</span> <span class="n">grid</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Determine the range in lat. and long. of a projected grid
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -2214,24 +2213,24 @@ results than <a class="reference internal" href="#geosoft.gxapi.GXIMU.peak_size"
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="n">routine</span> <span class="n">determines</span> <span class="n">the</span> <span class="n">latitude</span> <span class="ow">and</span> <span class="n">longitudes</span> <span class="n">along</span> <span class="n">the</span>
-<span class="n">edge</span> <span class="n">of</span> <span class="n">a</span> <span class="n">grid</span> <span class="ow">and</span> <span class="n">returns</span> <span class="n">the</span> <span class="n">minimal</span> <span class="ow">and</span> <span class="n">maximal</span> <span class="n">values</span><span class="o">.</span>
-<span class="n">It</span> <span class="n">scans</span> <span class="n">each</span> <span class="n">row</span> <span class="ow">and</span> <span class="ow">and</span> <span class="n">column</span> <span class="ow">and</span> <span class="n">finds</span> <span class="n">the</span> <span class="n">first</span> <span class="n">non</span><span class="o">-</span><span class="n">dummy</span>
-<span class="n">position</span> <span class="n">at</span> <span class="n">the</span> <span class="n">start</span> <span class="ow">and</span> <span class="n">end</span><span class="p">,</span> <span class="ow">and</span> <span class="n">then</span> <span class="n">determines</span> <span class="n">the</span> <span class="n">coordinates</span>
-<span class="n">at</span> <span class="n">those</span> <span class="n">points</span><span class="o">.</span>
-<span class="n">If</span> <span class="n">the</span> <span class="n">grid</span> <span class="n">has</span> <span class="n">no</span> <span class="n">data</span><span class="p">,</span> <span class="n">no</span> <span class="n">IPJ</span> <span class="nb">object</span><span class="p">,</span> <span class="ow">or</span> <span class="k">if</span> <span class="n">the</span> <span class="n">Source</span> <span class="n">Type</span> <span class="n">of</span>
-<span class="n">the</span> <span class="n">IPJ</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">IPJ_TYPE_PCS</span> <span class="p">(</span><span class="n">projected</span> <span class="n">coordinate</span> <span class="n">system</span><span class="p">),</span> <span class="n">then</span> <span class="n">the</span>
-<span class="n">returned</span> <span class="n">values</span> <span class="n">are</span> <span class="n">dummies</span> <span class="p">(</span><span class="n">GS_R8DM</span><span class="p">)</span><span class="o">.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+This routine determines the latitude and longitudes along the
+edge of a grid and returns the minimal and maximal values.
+It scans each row and and column and finds the first non-dummy
+position at the start and end, and then determines the coordinates
+at those points.
+If the grid has no data, no IPJ object, or if the Source Type of
+the IPJ is not IPJ_TYPE_PCS (projected coordinate system), then the
+returned values are dummies (GS_R8DM).
+</pre>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXIMU.slope_standard_deviation">
 <em class="property">static </em><code class="descname">slope_standard_deviation</code><span class="sig-paren">(</span><em>(GXIMG)arg1</em><span class="sig-paren">)</span> &rarr; float:<a class="headerlink" href="#geosoft.gxapi.GXIMU.slope_standard_deviation" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Return</span> <span class="n">the</span> <span class="n">standard</span> <span class="n">deviation</span> <span class="n">of</span> <span class="n">the</span> <span class="n">slopes</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Return the standard deviation of the slopes.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -2248,16 +2247,16 @@ results than <a class="reference internal" href="#geosoft.gxapi.GXIMU.peak_size"
 <p><span class="versionmodified">New in version 8.2.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="n">method</span> <span class="n">calculates</span> <span class="n">the</span> <span class="n">standard</span> <span class="n">dev</span><span class="o">.</span> <span class="n">of</span> <span class="n">the</span> <span class="n">horizontal</span>
-<span class="n">differences</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">X</span> <span class="ow">and</span> <span class="n">Y</span> <span class="n">directions</span> <span class="k">for</span> <span class="n">the</span> <span class="n">supplied</span>
-<span class="n">image</span><span class="o">.</span>  <span class="n">This</span> <span class="ow">is</span> <span class="n">useful</span> <span class="k">for</span> <span class="n">shading</span> <span class="n">routines</span><span class="o">.</span>  <span class="n">A</span> <span class="n">good</span>
-<span class="n">default</span> <span class="n">scaling</span> <span class="n">factor</span> <span class="ow">is</span> <span class="mf">2.5</span> <span class="o">/</span> <span class="n">standard</span> <span class="n">deviation</span><span class="o">.</span>
+<pre class="literal-block">
+This method calculates the standard dev. of the horizontal
+differences in the X and Y directions for the supplied
+image.  This is useful for shading routines.  A good
+default scaling factor is 2.5 / standard deviation.
 
-<span class="n">The</span> <span class="n">image</span> <span class="n">will</span> <span class="n">be</span> <span class="n">sub</span><span class="o">-</span><span class="n">sampled</span> <span class="n">to</span> <span class="n">a</span> <span class="n">statistically</span> <span class="n">meaningful</span> <span class="n">number</span><span class="o">.</span>
+The image will be sub-sampled to a statistically meaningful number.
 
-<span class="n">The</span> <span class="n">cell</span> <span class="n">sizes</span> <span class="n">are</span> <span class="n">used</span> <span class="n">to</span> <span class="n">determine</span> <span class="n">the</span> <span class="n">slopes</span><span class="o">.</span>
-</pre></div>
-</div>
+The cell sizes are used to determine the slopes.
+</pre>
 </dd></dl>
 
 <dl class="staticmethod">
@@ -2276,7 +2275,7 @@ results than <a class="reference internal" href="#geosoft.gxapi.GXIMU.peak_size"
 <li><strong>arg3</strong> (<em>float</em>) &#8211; min Y window</li>
 <li><strong>arg4</strong> (<em>float</em>) &#8211; max X window</li>
 <li><strong>arg5</strong> (<em>float</em>) &#8211; max Y window</li>
-<li><strong>arg6</strong> (<em>int</em>) &#8211; maximum values needed, 0 for all</li>
+<li><strong>arg6</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; maximum values needed, 0 for all</li>
 <li><strong>arg7</strong> (<a class="reference internal" href="GXST.html#geosoft.gxapi.GXST" title="geosoft.gxapi.GXST"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXST</span></code></a>) &#8211; ST object, stats are accumulated</li>
 </ul>
 </td>
@@ -2293,13 +2292,13 @@ results than <a class="reference internal" href="#geosoft.gxapi.GXIMU.peak_size"
 <p><span class="versionmodified">New in version 5.0.5.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">maximum</span> <span class="n">values</span> <span class="n">needed</span> <span class="n">will</span> <span class="n">beused</span> <span class="n">to</span>
-<span class="n">decimate</span> <span class="n">the</span> <span class="n">sampling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">grid</span> <span class="ow">in</span> <span class="n">order</span> <span class="n">to</span>
-<span class="n">improve</span> <span class="n">performance</span><span class="o">.</span>  <span class="mi">100000</span> <span class="ow">is</span> <span class="n">often</span> <span class="n">a</span> <span class="n">good</span>
-<span class="n">number</span> <span class="n">when</span> <span class="n">absolute</span> <span class="n">precision</span> <span class="ow">is</span> <span class="ow">not</span>
-<span class="n">required</span><span class="o">.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+The maximum values needed will beused to
+decimate the sampling of the grid in order to
+improve performance.  100000 is often a good
+number when absolute precision is not
+required.
+</pre>
 </dd></dl>
 
 <dl class="staticmethod">
@@ -2330,14 +2329,14 @@ results than <a class="reference internal" href="#geosoft.gxapi.GXIMU.peak_size"
 <p><span class="versionmodified">New in version 6.2.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">You</span> <span class="n">can</span> <span class="n">call</span> <span class="n">the</span> <span class="n">GridEdgePLY</span> <span class="n">function</span> <span class="n">to</span> <span class="n">get</span> <span class="n">an</span> <span class="n">edge</span><span class="p">,</span>
-<span class="n">perhaps</span> <span class="n">alter</span> <span class="n">the</span> <span class="n">edge</span><span class="p">,</span> <span class="n">such</span> <span class="k">as</span> <span class="n">thin</span> <span class="n">it</span> <span class="n">to</span> <span class="n">a</span> <span class="n">reasonable</span>
-<span class="n">resolution</span><span class="p">,</span> <span class="n">then</span> <span class="n">put</span> <span class="nb">set</span> <span class="n">it</span> <span class="k">as</span> <span class="n">the</span> <span class="n">grid</span> <span class="n">boundary</span> <span class="n">by</span>
-<span class="n">calling</span> <span class="n">this</span> <span class="n">funtion</span><span class="o">.</span>  <span class="n">This</span> <span class="ow">is</span> <span class="n">similar</span> <span class="n">to</span> <span class="n">the</span>
-<span class="n">GridPLYEx</span> <span class="n">function</span> <span class="k">except</span> <span class="n">that</span> <span class="n">you</span> <span class="n">get</span> <span class="n">to</span> <span class="n">alter</span> <span class="n">the</span>
-<span class="n">PLY</span> <span class="n">before</span> <span class="n">it</span> <span class="ow">is</span> <span class="n">placed</span> <span class="n">back</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">IMG</span><span class="o">.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+You can call the GridEdgePLY function to get an edge,
+perhaps alter the edge, such as thin it to a reasonable
+resolution, then put set it as the grid boundary by
+calling this funtion.  This is similar to the
+GridPLYEx function except that you get to alter the
+PLY before it is placed back in the IMG.
+</pre>
 </dd></dl>
 
 </dd></dl>
@@ -2749,12 +2748,27 @@ implies original grid lines:
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.1 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li> 
       </ul>
     </div>
+
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2016, Geosoft Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.6.
+        &#169; Copyright 2017, Geosoft Inc.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
     </div>
+<div class="footer">This page uses <a href="http://analytics.google.com/">
+Google Analytics</a> to collect statistics. You can disable it by blocking
+the JavaScript coming from www.google-analytics.com.
+<script type="text/javascript">
+  (function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ?
+              'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+  })();
+</script>
+</div>
+
   </body>
 </html>

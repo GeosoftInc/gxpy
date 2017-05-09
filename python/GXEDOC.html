@@ -1,3 +1,4 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -5,19 +6,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <script type="text/javascript">
-
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-87443115-1']);
-      _gaq.push(['_trackPageview']);
-
-      (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
-    </script>
-    <title>GXEDOC class &#8212; Geosoft GX Python API 9.1 documentation</title>
+    
+    <title>GXEDOC class &#8212; Geosoft GX Python API 9.2.0 documentation</title>
     
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -25,16 +15,25 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '9.1',
+        VERSION:     '9.2.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="Geosoft GX Python API 9.1 documentation" href="index.html" /> 
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+ 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-87443115-1']);
+  _gaq.push(['_trackPageview']);
+</script>
+
   </head>
   <body role="document">
     <div class="related" role="navigation" aria-label="related navigation">
@@ -46,7 +45,7 @@
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.1 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -68,7 +67,7 @@
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="_sources/GXEDOC.txt"
+      <li><a href="_sources/GXEDOC.rst.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
@@ -95,25 +94,25 @@
 <dl class="class">
 <dt id="geosoft.gxapi.GXEDOC">
 <em class="property">class </em><code class="descclassname">geosoft.gxapi.</code><code class="descname">GXEDOC</code><a class="headerlink" href="#geosoft.gxapi.GXEDOC" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">EDOC</span> <span class="k">class</span> <span class="nc">provides</span> <span class="n">access</span> <span class="n">to</span> <span class="n">a</span> <span class="n">generic</span> <span class="n">documents</span> <span class="n">views</span> <span class="k">as</span> <span class="n">loaded</span> <span class="n">within</span>
-<span class="n">Oasis</span> <span class="n">montaj</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+The EDOC class provides access to a generic documents views as loaded within
+Oasis montaj.
+</pre>
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXEDOC.create_new_gms_3d">
 <em class="property">static </em><code class="descname">create_new_gms_3d</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(int)arg2</em>, <em>(int)arg3</em>, <em>(int)arg4</em><span class="sig-paren">)</span> &rarr; GXEDOC:<a class="headerlink" href="#geosoft.gxapi.GXEDOC.create_new_gms_3d" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Creates</span> <span class="n">a</span> <span class="n">new</span> <span class="n">GMSYS</span> <span class="mi">3</span><span class="n">D</span> <span class="n">Model</span> <span class="n">into</span> <span class="n">the</span> <span class="n">workspace</span><span class="p">,</span> <span class="n">flags</span> <span class="k">as</span> <span class="n">new</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Creates a new GMSYS 3D Model into the workspace, flags as new.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<em>str</em>) &#8211; Document to load.</li>
-<li><strong>arg2</strong> (<em>int</em>) &#8211; X Size</li>
-<li><strong>arg3</strong> (<em>int</em>) &#8211; Y Size</li>
-<li><strong>arg4</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#gms3d-modeltype"><span class="std std-ref">GMS3D_MODELTYPE constants</span></a></li>
+<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; X Size</li>
+<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Y Size</li>
+<li><strong>arg4</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#gms3d-modeltype"><span class="std std-ref">GMS3D_MODELTYPE constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -130,7 +129,7 @@
 </div>
 <p><strong>Note:</strong></p>
 <pre class="literal-block">
-See <a class="reference internal" href="#geosoft.gxapi.GXEDOC.load" title="geosoft.gxapi.GXEDOC.load"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXEDOC.load()</span></code></a>. This is used for brand new documents, it also sets
+See \ :func:`geosoft.gxapi.GXEDOC.load`\ . This is used for brand new documents, it also sets
 an internal flag such that if on closing the user chooses
 not to save changes, the document is deleted thus keeping the
 project folders clean.
@@ -140,14 +139,14 @@ project folders clean.
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXEDOC.current">
 <em class="property">static </em><code class="descname">current</code><span class="sig-paren">(</span><em>(int)arg1</em><span class="sig-paren">)</span> &rarr; GXEDOC:<a class="headerlink" href="#geosoft.gxapi.GXEDOC.current" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="n">method</span> <span class="n">returns</span> <span class="n">the</span> <span class="n">Current</span> <span class="n">Edited</span> <span class="n">Document</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+This method returns the Current Edited Document.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#edoc-type"><span class="std std-ref">EDOC_TYPE constants</span></a></td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#edoc-type"><span class="std std-ref">EDOC_TYPE constants</span></a></td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">EDOC Object</td>
 </tr>
@@ -163,14 +162,14 @@ project folders clean.
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXEDOC.current_if_exists">
 <em class="property">static </em><code class="descname">current_if_exists</code><span class="sig-paren">(</span><em>(int)arg1</em><span class="sig-paren">)</span> &rarr; GXEDOC:<a class="headerlink" href="#geosoft.gxapi.GXEDOC.current_if_exists" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="n">method</span> <span class="n">returns</span> <span class="n">the</span> <span class="n">Current</span> <span class="n">Edited</span> <span class="n">Document</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+This method returns the Current Edited Document.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#edoc-type"><span class="std std-ref">EDOC_TYPE constants</span></a></td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#edoc-type"><span class="std std-ref">EDOC_TYPE constants</span></a></td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">EDOC Object to current edited document. If there is no current document,
 the user is not prompted for a document, and 0 is returned.</td>
@@ -187,14 +186,14 @@ the user is not prompted for a document, and 0 is returned.</td>
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXEDOC.current_no_activate">
 <em class="property">static </em><code class="descname">current_no_activate</code><span class="sig-paren">(</span><em>(int)arg1</em><span class="sig-paren">)</span> &rarr; GXEDOC:<a class="headerlink" href="#geosoft.gxapi.GXEDOC.current_no_activate" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="n">method</span> <span class="n">returns</span> <span class="n">the</span> <span class="n">Current</span> <span class="n">Edited</span> <span class="n">Document</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+This method returns the Current Edited Document.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#edoc-type"><span class="std std-ref">EDOC_TYPE constants</span></a></td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#edoc-type"><span class="std std-ref">EDOC_TYPE constants</span></a></td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">EDOC Object</td>
 </tr>
@@ -207,7 +206,7 @@ the user is not prompted for a document, and 0 is returned.</td>
 </div>
 <p><strong>Note:</strong></p>
 <pre class="literal-block">
-This function acts just like <a class="reference internal" href="#geosoft.gxapi.GXEDOC.current" title="geosoft.gxapi.GXEDOC.current"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXEDOC.current()</span></code></a> except that the document is not activated (brought to foreground) and no
+This function acts just like \ :func:`geosoft.gxapi.GXEDOC.current`\  except that the document is not activated (brought to foreground) and no
                              guarantee is given about which document is currently active.
 </pre>
 </dd></dl>
@@ -215,17 +214,17 @@ This function acts just like <a class="reference internal" href="#geosoft.gxapi.
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXEDOC.get_documents_lst">
 <em class="property">static </em><code class="descname">get_documents_lst</code><span class="sig-paren">(</span><em>(GXLST)arg1</em>, <em>(int)arg2</em>, <em>(int)arg3</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXEDOC.get_documents_lst" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Load</span> <span class="n">the</span> <span class="n">file</span> <span class="n">names</span> <span class="n">of</span> <span class="nb">open</span> <span class="n">documents</span> <span class="n">into</span> <span class="n">a</span> <span class="n">LST</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Load the file names of open documents into a LST.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXLST</span></code></a>) &#8211; LST to load</li>
-<li><strong>arg2</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#edoc-path"><span class="std std-ref">EDOC_PATH constants</span></a></li>
-<li><strong>arg3</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#edoc-type"><span class="std std-ref">EDOC_TYPE constants</span></a></li>
+<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#edoc-path"><span class="std std-ref">EDOC_PATH constants</span></a></li>
+<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#edoc-type"><span class="std std-ref">EDOC_TYPE constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -233,7 +232,7 @@ This function acts just like <a class="reference internal" href="#geosoft.gxapi.
 The LST is cleared first.</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></p>
 </td>
 </tr>
 </tbody>
@@ -246,9 +245,9 @@ The LST is cleared first.</p>
 <dl class="method">
 <dt id="geosoft.gxapi.GXEDOC.get_name">
 <code class="descname">get_name</code><span class="sig-paren">(</span><em>(str_ref)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXEDOC.get_name" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">the</span> <span class="n">name</span> <span class="n">of</span> <span class="n">the</span> <span class="n">document</span> <span class="nb">object</span> <span class="n">of</span> <span class="n">this</span> <span class="n">EDOC</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Get the name of the document object of this EDOC.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -269,9 +268,9 @@ The LST is cleared first.</p>
 <dl class="method">
 <dt id="geosoft.gxapi.GXEDOC.get_window_position">
 <code class="descname">get_window_position</code><span class="sig-paren">(</span><em>(int_ref)arg1</em>, <em>(int_ref)arg2</em>, <em>(int_ref)arg3</em>, <em>(int_ref)arg4</em>, <em>(int_ref)arg5</em>, <em>(int_ref)arg6</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXEDOC.get_window_position" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">the</span> <span class="nb">map</span> <span class="n">window</span><span class="s1">&#39;s position and dock state</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Get the map window's position and dock state
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -311,7 +310,7 @@ The LST is cleared first.</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><a class="reference internal" href="#edoc-window-state"><span class="std std-ref">EDOC_WINDOW_STATE constants</span></a></td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></td>
 </tr>
 </tbody>
 </table>
@@ -330,7 +329,7 @@ The LST is cleared first.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#edoc-type"><span class="std std-ref">EDOC_TYPE constants</span></a></td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#edoc-type"><span class="std std-ref">EDOC_TYPE constants</span></a></td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">bool</td>
 </tr>
@@ -371,7 +370,7 @@ The LST is cleared first.</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<em>str</em>) &#8211; list of documents (&#8216;;&#8217; or &#8216;<cite>|</cite>&#8216; delimited) to load.</li>
-<li><strong>arg2</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#edoc-type"><span class="std std-ref">EDOC_TYPE constants</span></a></li>
+<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#edoc-type"><span class="std std-ref">EDOC_TYPE constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -388,13 +387,13 @@ document in the list.</p>
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">last</span> <span class="n">listed</span> <span class="n">document</span> <span class="n">will</span> <span class="n">become</span> <span class="n">the</span> <span class="n">current</span> <span class="n">document</span><span class="o">.</span>
+<pre class="literal-block">
+The last listed document will become the current document.
 
-<span class="n">Only</span> <span class="n">the</span> <span class="n">first</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">the</span> <span class="nb">list</span> <span class="n">may</span> <span class="n">have</span> <span class="n">a</span> <span class="n">directory</span> <span class="n">path</span><span class="o">.</span>
-<span class="n">All</span> <span class="n">other</span> <span class="n">files</span> <span class="ow">in</span> <span class="n">the</span> <span class="nb">list</span> <span class="n">are</span> <span class="n">assumed</span> <span class="n">to</span> <span class="n">be</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">same</span>
-<span class="n">directory</span> <span class="k">as</span> <span class="n">the</span> <span class="n">first</span> <span class="n">file</span><span class="o">.</span>
-</pre></div>
-</div>
+Only the first file in the list may have a directory path.
+All other files in the list are assumed to be in the same
+directory as the first file.
+</pre>
 </dd></dl>
 
 <dl class="staticmethod">
@@ -409,7 +408,7 @@ document in the list.</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<em>str</em>) &#8211; list of documents (&#8216;;&#8217; or &#8216;<cite>|</cite>&#8216; delimited) to load.</li>
-<li><strong>arg2</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#edoc-type"><span class="std std-ref">EDOC_TYPE constants</span></a></li>
+<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#edoc-type"><span class="std std-ref">EDOC_TYPE constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -427,7 +426,7 @@ document in the list.</p>
 </div>
 <p><strong>Note:</strong></p>
 <pre class="literal-block">
-This function acts just like <a class="reference internal" href="#geosoft.gxapi.GXEDOC.load" title="geosoft.gxapi.GXEDOC.load"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXEDOC.load()</span></code></a> except that the document(s) is not activated (brought to foreground) and no
+This function acts just like \ :func:`geosoft.gxapi.GXEDOC.load`\  except that the document(s) is not activated (brought to foreground) and no
                                      guarantee is given about which document is currently active.
 </pre>
 </dd></dl>
@@ -435,23 +434,23 @@ This function acts just like <a class="reference internal" href="#geosoft.gxapi.
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXEDOC.loaded">
 <em class="property">static </em><code class="descname">loaded</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(int)arg2</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXEDOC.loaded" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Returns</span> <span class="mi">1</span> <span class="k">if</span> <span class="n">a</span> <span class="n">document</span> <span class="ow">is</span> <span class="n">loaded</span> <span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Returns 1 if a document is loaded .
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<em>str</em>) &#8211; document name</li>
-<li><strong>arg2</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#edoc-type"><span class="std std-ref">EDOC_TYPE constants</span></a></li>
+<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#edoc-type"><span class="std std-ref">EDOC_TYPE constants</span></a></li>
 </ul>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">1 if document is loaded, 0 otherwise.</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></p>
 </td>
 </tr>
 </tbody>
@@ -464,9 +463,9 @@ This function acts just like <a class="reference internal" href="#geosoft.gxapi.
 <dl class="method">
 <dt id="geosoft.gxapi.GXEDOC.make_current">
 <code class="descname">make_current</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXEDOC.make_current" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Makes</span> <span class="n">this</span> <span class="n">EDOC</span> <span class="nb">object</span> <span class="n">the</span> <span class="n">current</span> <span class="n">active</span> <span class="nb">object</span> <span class="n">to</span> <span class="n">the</span> <span class="n">user</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Makes this EDOC object the current active object to the user.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -501,9 +500,9 @@ This function acts just like <a class="reference internal" href="#geosoft.gxapi.
 <dl class="method">
 <dt id="geosoft.gxapi.GXEDOC.read_only">
 <code class="descname">read_only</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; bool:<a class="headerlink" href="#geosoft.gxapi.GXEDOC.read_only" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Checks</span> <span class="k">if</span> <span class="n">a</span> <span class="n">document</span> <span class="ow">is</span> <span class="n">currently</span> <span class="n">opened</span> <span class="ow">in</span> <span class="n">a</span> <span class="n">read</span><span class="o">-</span><span class="n">only</span> <span class="n">mode</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Checks if a document is currently opened in a read-only mode.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -522,20 +521,20 @@ This function acts just like <a class="reference internal" href="#geosoft.gxapi.
 <dl class="method">
 <dt id="geosoft.gxapi.GXEDOC.set_window_position">
 <code class="descname">set_window_position</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(int)arg2</em>, <em>(int)arg3</em>, <em>(int)arg4</em>, <em>(int)arg5</em>, <em>(int)arg6</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXEDOC.set_window_position" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">the</span> <span class="nb">map</span> <span class="n">window</span><span class="s1">&#39;s position and dock state</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Get the map window's position and dock state
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<em>int</em>) &#8211; Window left position</li>
-<li><strong>arg2</strong> (<em>int</em>) &#8211; Window top position</li>
-<li><strong>arg3</strong> (<em>int</em>) &#8211; Window right position</li>
-<li><strong>arg4</strong> (<em>int</em>) &#8211; Window bottom position</li>
-<li><strong>arg5</strong> (<em>int</em>) &#8211; Window state <a class="reference internal" href="#edoc-window-state"><span class="std std-ref">EDOC_WINDOW_STATE constants</span></a></li>
-<li><strong>arg6</strong> (<em>int</em>) &#8211; Docked or floating <a class="reference internal" href="#edoc-window-position"><span class="std std-ref">EDOC_WINDOW_POSITION constants</span></a></li>
+<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Window left position</li>
+<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Window top position</li>
+<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Window right position</li>
+<li><strong>arg4</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Window bottom position</li>
+<li><strong>arg5</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Window state <a class="reference internal" href="#edoc-window-state"><span class="std std-ref">EDOC_WINDOW_STATE constants</span></a></li>
+<li><strong>arg6</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Docked or floating <a class="reference internal" href="#edoc-window-position"><span class="std std-ref">EDOC_WINDOW_POSITION constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -562,7 +561,7 @@ This function acts just like <a class="reference internal" href="#geosoft.gxapi.
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#edoc-window-state"><span class="std std-ref">EDOC_WINDOW_STATE constants</span></a></td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#edoc-window-state"><span class="std std-ref">EDOC_WINDOW_STATE constants</span></a></td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Nothing</td>
 </tr>
@@ -587,7 +586,7 @@ This function acts just like <a class="reference internal" href="#geosoft.gxapi.
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<em>str</em>) &#8211; Document file name</li>
-<li><strong>arg2</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#edoc-type"><span class="std std-ref">EDOC_TYPE constants</span></a></li>
+<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#edoc-type"><span class="std std-ref">EDOC_TYPE constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -628,16 +627,16 @@ This function acts just like <a class="reference internal" href="#geosoft.gxapi.
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXEDOC.un_load">
 <em class="property">static </em><code class="descname">un_load</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(int)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXEDOC.un_load" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Unloads</span> <span class="n">an</span> <span class="n">edited</span> <span class="n">document</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Unloads an edited document.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<em>str</em>) &#8211; Name of document to unload</li>
-<li><strong>arg2</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#edoc-type"><span class="std std-ref">EDOC_TYPE constants</span></a></li>
+<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#edoc-type"><span class="std std-ref">EDOC_TYPE constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -655,7 +654,7 @@ This function acts just like <a class="reference internal" href="#geosoft.gxapi.
 <p><strong>Note:</strong></p>
 <pre class="literal-block">
 If the document is not loaded, nothing happens.
-Same as <a class="reference internal" href="#geosoft.gxapi.GXEDOC.un_load_verify" title="geosoft.gxapi.GXEDOC.un_load_verify"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXEDOC.un_load_verify()</span></code></a> with FALSE to prompt save.
+Same as \ :func:`geosoft.gxapi.GXEDOC.un_load_verify`\  with FALSE to prompt save.
 </pre>
 </dd></dl>
 
@@ -669,7 +668,7 @@ Same as <a class="reference internal" href="#geosoft.gxapi.GXEDOC.un_load_verify
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#edoc-type"><span class="std std-ref">EDOC_TYPE constants</span></a></td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#edoc-type"><span class="std std-ref">EDOC_TYPE constants</span></a></td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Nothing</td>
 </tr>
@@ -685,16 +684,16 @@ Same as <a class="reference internal" href="#geosoft.gxapi.GXEDOC.un_load_verify
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXEDOC.un_load_discard">
 <em class="property">static </em><code class="descname">un_load_discard</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(int)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXEDOC.un_load_discard" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Unloads</span> <span class="n">a</span> <span class="n">document</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">workspace</span><span class="p">,</span> <span class="n">discards</span> <span class="n">changes</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Unloads a document in the workspace, discards changes.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<em>str</em>) &#8211; Name of document to unload</li>
-<li><strong>arg2</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#edoc-type"><span class="std std-ref">EDOC_TYPE constants</span></a></li>
+<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#edoc-type"><span class="std std-ref">EDOC_TYPE constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -710,25 +709,25 @@ Same as <a class="reference internal" href="#geosoft.gxapi.GXEDOC.un_load_verify
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">If</span> <span class="n">the</span> <span class="n">document</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">loaded</span><span class="p">,</span> <span class="n">nothing</span> <span class="n">happens</span><span class="o">.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+If the document is not loaded, nothing happens.
+</pre>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXEDOC.un_load_verify">
 <em class="property">static </em><code class="descname">un_load_verify</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(int)arg2</em>, <em>(int)arg3</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXEDOC.un_load_verify" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Unloads</span> <span class="n">an</span> <span class="n">edited</span> <span class="n">document</span><span class="p">,</span> <span class="n">optional</span> <span class="n">prompt</span> <span class="n">to</span> <span class="n">save</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Unloads an edited document, optional prompt to save.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<em>str</em>) &#8211; Name of document to unload</li>
-<li><strong>arg2</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#edoc-unload"><span class="std std-ref">EDOC_UNLOAD constants</span></a></li>
-<li><strong>arg3</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#edoc-type"><span class="std std-ref">EDOC_TYPE constants</span></a></li>
+<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#edoc-unload"><span class="std std-ref">EDOC_UNLOAD constants</span></a></li>
+<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#edoc-type"><span class="std std-ref">EDOC_TYPE constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -744,11 +743,11 @@ Same as <a class="reference internal" href="#geosoft.gxapi.GXEDOC.un_load_verify
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">If</span> <span class="n">the</span> <span class="n">document</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">loaded</span><span class="p">,</span> <span class="n">nothing</span> <span class="n">happens</span><span class="o">.</span>
-<span class="n">The</span> <span class="n">user</span> <span class="n">can</span> <span class="n">be</span> <span class="n">prompted</span> <span class="n">to</span> <span class="n">save</span> <span class="n">before</span> <span class="n">unloading</span><span class="o">.</span>
-<span class="n">If</span> <span class="n">EDOC_UNLOAD_NO_PROMPT</span><span class="p">,</span> <span class="n">data</span> <span class="ow">is</span> <span class="n">always</span> <span class="n">saved</span><span class="o">.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+If the document is not loaded, nothing happens.
+The user can be prompted to save before unloading.
+If EDOC_UNLOAD_NO_PROMPT, data is always saved.
+</pre>
 </dd></dl>
 
 </dd></dl>
@@ -943,12 +942,27 @@ Same as <a class="reference internal" href="#geosoft.gxapi.GXEDOC.un_load_verify
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.1 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li> 
       </ul>
     </div>
+
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2016, Geosoft Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.6.
+        &#169; Copyright 2017, Geosoft Inc.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
     </div>
+<div class="footer">This page uses <a href="http://analytics.google.com/">
+Google Analytics</a> to collect statistics. You can disable it by blocking
+the JavaScript coming from www.google-analytics.com.
+<script type="text/javascript">
+  (function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ?
+              'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+  })();
+</script>
+</div>
+
   </body>
 </html>

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -5,19 +6,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <script type="text/javascript">
-
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-87443115-1']);
-      _gaq.push(['_trackPageview']);
-
-      (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
-    </script>
-    <title>GXSTR class &#8212; Geosoft GX Python API 9.1 documentation</title>
+    
+    <title>GXSTR class &#8212; Geosoft GX Python API 9.2.0 documentation</title>
     
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -25,16 +15,25 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '9.1',
+        VERSION:     '9.2.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="Geosoft GX Python API 9.1 documentation" href="index.html" /> 
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+ 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-87443115-1']);
+  _gaq.push(['_trackPageview']);
+</script>
+
   </head>
   <body role="document">
     <div class="related" role="navigation" aria-label="related navigation">
@@ -46,7 +45,7 @@
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.1 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -67,7 +66,7 @@
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="_sources/GXSTR.txt"
+      <li><a href="_sources/GXSTR.rst.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
@@ -94,27 +93,27 @@
 <dl class="class">
 <dt id="geosoft.gxapi.GXSTR">
 <em class="property">class </em><code class="descclassname">geosoft.gxapi.</code><code class="descname">GXSTR</code><a class="headerlink" href="#geosoft.gxapi.GXSTR" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="n">library</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">a</span> <span class="n">class</span><span class="o">.</span> <span class="n">Use</span> <span class="n">the</span> <span class="n">STR</span> <span class="n">library</span> <span class="n">functions</span>
-<span class="n">to</span> <span class="n">work</span> <span class="k">with</span> <span class="ow">and</span> <span class="n">manipulate</span> <span class="n">string</span> <span class="n">variables</span><span class="o">.</span> <span class="n">Since</span> <span class="n">the</span>
-<span class="n">GX</span> <span class="n">Programming</span> <span class="n">Language</span> <span class="n">does</span> <span class="ow">not</span> <span class="n">provide</span> <span class="n">string</span> <span class="n">literal</span>
-<span class="n">tokens</span><span class="p">,</span> <span class="n">you</span> <span class="n">must</span> <span class="n">use</span> <span class="n">these</span> <span class="n">functions</span> <span class="k">for</span> <span class="nb">any</span> <span class="n">string</span> <span class="n">operations</span>
-<span class="n">you</span> <span class="n">want</span> <span class="n">to</span> <span class="n">perform</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+This library is not a class. Use the STR library functions
+to work with and manipulate string variables. Since the
+GX Programming Language does not provide string literal
+tokens, you must use these functions for any string operations
+you want to perform.
+</pre>
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXSTR.char_n">
 <em class="property">static </em><code class="descname">char_n</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(int)arg2</em>, <em>(int)arg3</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXSTR.char_n" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Returns</span> <span class="n">the</span> <span class="n">ASCII</span> <span class="n">value</span> <span class="n">of</span> <span class="n">the</span> <span class="n">n</span><span class="s1">&#39;th character.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Returns the ASCII value of the n'th character.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<em>str</em>) &#8211; string</li>
-<li><strong>arg2</strong> (<em>int</em>) &#8211; character to get</li>
-<li><strong>arg3</strong> (<em>int</em>) &#8211; maximum string length (unused)</li>
+<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; character to get</li>
+<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; maximum string length (unused)</li>
 </ul>
 </td>
 </tr>
@@ -122,7 +121,7 @@
 The first character is 0.</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></p>
 </td>
 </tr>
 </tbody>
@@ -135,9 +134,9 @@ The first character is 0.</p>
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXSTR.count_tokens">
 <em class="property">static </em><code class="descname">count_tokens</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(str)arg2</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXSTR.count_tokens" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Counts</span> <span class="n">number</span> <span class="n">of</span> <span class="n">tokens</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Counts number of tokens.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -151,7 +150,7 @@ The first character is 0.</p>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Number of tokens in the string.</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></p>
 </td>
 </tr>
 </tbody>
@@ -166,23 +165,23 @@ is considered a single delimiter, and preceding and
 trailing delimiters are ignored.
 
 DO NOT use this function except in GXC code. The corresponding
-<a class="reference internal" href="#geosoft.gxapi.GXSTR.get_token" title="geosoft.gxapi.GXSTR.get_token"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXSTR.get_token()</span></code></a> function will not operate correctly in GX.Net code.
+\ :func:`geosoft.gxapi.GXSTR.get_token`\  function will not operate correctly in GX.Net code.
 </pre>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXSTR.escape">
 <em class="property">static </em><code class="descname">escape</code><span class="sig-paren">(</span><em>(str_ref)arg1</em>, <em>(int)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSTR.escape" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Convert</span><span class="o">/</span><span class="n">replace</span> <span class="n">escape</span> <span class="n">sequences</span> <span class="ow">in</span> <span class="n">strings</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Convert/replace escape sequences in strings.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; string to modify</li>
-<li><strong>arg2</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#str-escape"><span class="std std-ref">STR_ESCAPE constants</span></a></li>
+<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#str-escape"><span class="std std-ref">STR_ESCAPE constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -201,21 +200,21 @@ DO NOT use this function except in GXC code. The corresponding
 <pre class="literal-block">
 Escape characters:
 
-a      bell
-b      backspace
-f      formfeed
-n      new line
-r      carriage return
-t      tab
-v      vertical tab
-&quot;      quote character
-x      take 'x' literally
-\      backslash
-ooo    octal up to 3 characters
-xhh    hex up to 2 characters
+\a      bell
+\b      backspace
+\f      formfeed
+\n      new line
+\r      carriage return
+\t      tab
+\v      vertical tab
+\&quot;      quote character
+\x      take 'x' literally
+\\      backslash
+\ooo    octal up to 3 characters
+\xhh    hex up to 2 characters
 
 A common use of this function is to convert double-quote characters in
-a user unput string to &quot; so the string can be placed in a tokenized
+a user unput string to \&quot; so the string can be placed in a tokenized
 string.
 </pre>
 </dd></dl>
@@ -223,9 +222,9 @@ string.
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXSTR.file_combine_parts">
 <em class="property">static </em><code class="descname">file_combine_parts</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(str)arg2</em>, <em>(str)arg3</em>, <em>(str)arg4</em>, <em>(str)arg5</em>, <em>(str_ref)arg6</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSTR.file_combine_parts" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Combine</span> <span class="n">file</span> <span class="n">parts</span> <span class="n">to</span> <span class="n">build</span> <span class="n">a</span> <span class="n">file</span> <span class="n">name</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Combine file parts to build a file name.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -256,9 +255,9 @@ string.
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXSTR.file_ext">
 <em class="property">static </em><code class="descname">file_ext</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(str)arg2</em>, <em>(str_ref)arg3</em>, <em>(int)arg4</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSTR.file_ext" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Add</span> <span class="n">a</span> <span class="n">file</span> <span class="n">extension</span> <span class="n">onto</span> <span class="n">a</span> <span class="n">file</span> <span class="n">name</span> <span class="n">string</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Add a file extension onto a file name string.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -267,7 +266,7 @@ string.
 <li><strong>arg1</strong> (<em>str</em>) &#8211; file name to extend</li>
 <li><strong>arg2</strong> (<em>str</em>) &#8211; extension if &#8220;&#8221;, extenstion and &#8216;.&#8217; are stripped.</li>
 <li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; extended file name (can be same as input)</li>
-<li><strong>arg4</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#file-ext"><span class="std std-ref">FILE_EXT constants</span></a></li>
+<li><strong>arg4</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#file-ext"><span class="std std-ref">FILE_EXT constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -287,9 +286,9 @@ string.
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXSTR.file_name_part">
 <em class="property">static </em><code class="descname">file_name_part</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(str_ref)arg2</em>, <em>(int)arg3</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSTR.file_name_part" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">part</span> <span class="n">of</span> <span class="n">a</span> <span class="n">file</span> <span class="n">name</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Get part of a file name.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -297,7 +296,7 @@ string.
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<em>str</em>) &#8211; file name</li>
 <li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; destination string, can be same as input</li>
-<li><strong>arg3</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#str-file-part"><span class="std std-ref">STR_FILE_PART constants</span></a></li>
+<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#str-file-part"><span class="std std-ref">STR_FILE_PART constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -317,17 +316,17 @@ string.
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXSTR.format_crc">
 <em class="property">static </em><code class="descname">format_crc</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(str_ref)arg2</em>, <em>(int)arg3</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSTR.format_crc" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Convert</span> <span class="n">a</span> <span class="n">GX</span> <span class="n">CRC</span> <span class="n">value</span> <span class="n">to</span> <span class="n">a</span> <span class="n">string</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Convert a GX CRC value to a string.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<em>int</em>) &#8211; CRC value to format</li>
+<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; CRC value to format</li>
 <li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; Resulting string</li>
-<li><strong>arg3</strong> (<em>int</em>) &#8211; Width of the field</li>
+<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Width of the field</li>
 </ul>
 </td>
 </tr>
@@ -347,9 +346,9 @@ string.
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXSTR.format_date">
 <em class="property">static </em><code class="descname">format_date</code><span class="sig-paren">(</span><em>(float)arg1</em>, <em>(str_ref)arg2</em>, <em>(int)arg3</em>, <em>(int)arg4</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSTR.format_date" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Convert</span> <span class="n">a</span> <span class="n">GX</span> <span class="n">real</span> <span class="n">to</span> <span class="n">a</span> <span class="n">date</span> <span class="n">string</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Convert a GX real to a date string.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -357,8 +356,8 @@ string.
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<em>float</em>) &#8211; date value in decimal years to format</li>
 <li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; Resulting string</li>
-<li><strong>arg3</strong> (<em>int</em>) &#8211; Width of the field</li>
-<li><strong>arg4</strong> (<em>int</em>) &#8211; <span class="xref std std-ref">DATE_FORMAT</span></li>
+<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Width of the field</li>
+<li><strong>arg4</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="GXGEOSOFT.html#date-format"><span class="std std-ref">DATE_FORMAT constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -378,9 +377,9 @@ string.
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXSTR.format_double">
 <em class="property">static </em><code class="descname">format_double</code><span class="sig-paren">(</span><em>(float)arg1</em>, <em>(str_ref)arg2</em>, <em>(int)arg3</em>, <em>(int)arg4</em>, <em>(int)arg5</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSTR.format_double" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Convert</span> <span class="n">a</span> <span class="n">GX</span> <span class="n">real</span> <span class="n">to</span> <span class="n">a</span> <span class="n">string</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Convert a GX real to a string.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -388,9 +387,9 @@ string.
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<em>float</em>) &#8211; value to format</li>
 <li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; Resulting string</li>
-<li><strong>arg3</strong> (<em>int</em>) &#8211; <span class="xref std std-ref">GS_FORMATS</span></li>
-<li><strong>arg4</strong> (<em>int</em>) &#8211; Width of the field</li>
-<li><strong>arg5</strong> (<em>int</em>) &#8211; Significant digits/decimals</li>
+<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="GXGEOSOFT.html#gs-formats"><span class="std std-ref">GS_FORMATS constants</span></a></li>
+<li><strong>arg4</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Width of the field</li>
+<li><strong>arg5</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Significant digits/decimals</li>
 </ul>
 </td>
 </tr>
@@ -410,17 +409,17 @@ string.
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXSTR.format_i">
 <em class="property">static </em><code class="descname">format_i</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(str_ref)arg2</em>, <em>(int)arg3</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSTR.format_i" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Convert</span> <span class="n">a</span> <span class="n">GX</span> <span class="nb">int</span> <span class="n">to</span> <span class="n">a</span> <span class="n">string</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Convert a GX int to a string.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<em>int</em>) &#8211; value to format</li>
+<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; value to format</li>
 <li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; Resulting string</li>
-<li><strong>arg3</strong> (<em>int</em>) &#8211; Width of the field</li>
+<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Width of the field</li>
 </ul>
 </td>
 </tr>
@@ -440,9 +439,9 @@ string.
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXSTR.format_r">
 <em class="property">static </em><code class="descname">format_r</code><span class="sig-paren">(</span><em>(float)arg1</em>, <em>(str_ref)arg2</em>, <em>(int)arg3</em>, <em>(int)arg4</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSTR.format_r" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Convert</span> <span class="n">a</span> <span class="n">GX</span> <span class="n">real</span> <span class="n">to</span> <span class="n">a</span> <span class="n">string</span> <span class="k">with</span> <span class="n">significant</span> <span class="n">digits</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Convert a GX real to a string with significant digits.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -450,8 +449,8 @@ string.
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<em>float</em>) &#8211; value to format</li>
 <li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; Resulting string</li>
-<li><strong>arg3</strong> (<em>int</em>) &#8211; Width of the field</li>
-<li><strong>arg4</strong> (<em>int</em>) &#8211; Significant digits</li>
+<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Width of the field</li>
+<li><strong>arg4</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Significant digits</li>
 </ul>
 </td>
 </tr>
@@ -471,9 +470,9 @@ string.
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXSTR.format_r2">
 <em class="property">static </em><code class="descname">format_r2</code><span class="sig-paren">(</span><em>(float)arg1</em>, <em>(str_ref)arg2</em>, <em>(int)arg3</em>, <em>(int)arg4</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSTR.format_r2" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Convert</span> <span class="n">a</span> <span class="n">GX</span> <span class="n">real</span> <span class="n">to</span> <span class="n">a</span> <span class="n">string</span> <span class="k">with</span> <span class="n">given</span> <span class="n">decimals</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Convert a GX real to a string with given decimals.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -481,8 +480,8 @@ string.
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<em>float</em>) &#8211; value to format</li>
 <li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; Resulting string</li>
-<li><strong>arg3</strong> (<em>int</em>) &#8211; Width of the field</li>
-<li><strong>arg4</strong> (<em>int</em>) &#8211; Decimals</li>
+<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Width of the field</li>
+<li><strong>arg4</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Decimals</li>
 </ul>
 </td>
 </tr>
@@ -502,9 +501,9 @@ string.
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXSTR.format_time">
 <em class="property">static </em><code class="descname">format_time</code><span class="sig-paren">(</span><em>(float)arg1</em>, <em>(str_ref)arg2</em>, <em>(int)arg3</em>, <em>(int)arg4</em>, <em>(int)arg5</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSTR.format_time" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Convert</span> <span class="n">a</span> <span class="n">GX</span> <span class="n">real</span> <span class="n">to</span> <span class="n">a</span> <span class="n">time</span> <span class="n">string</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Convert a GX real to a time string.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -512,9 +511,9 @@ string.
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<em>float</em>) &#8211; time value in decimal hours to format</li>
 <li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; Resulting string</li>
-<li><strong>arg3</strong> (<em>int</em>) &#8211; Width of the field</li>
-<li><strong>arg4</strong> (<em>int</em>) &#8211; Decimals to format with</li>
-<li><strong>arg5</strong> (<em>int</em>) &#8211; <span class="xref std std-ref">TIME_FORMAT</span></li>
+<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Width of the field</li>
+<li><strong>arg4</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Decimals to format with</li>
+<li><strong>arg5</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="GXGEOSOFT.html#time-format"><span class="std std-ref">TIME_FORMAT constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -534,10 +533,10 @@ string.
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXSTR.gen_group_name">
 <em class="property">static </em><code class="descname">gen_group_name</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(str)arg2</em>, <em>(str)arg3</em>, <em>(str_ref)arg4</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSTR.gen_group_name" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Generate</span> <span class="n">a</span> <span class="n">group</span> <span class="n">name</span> <span class="n">string</span>
-<span class="kn">from</span> <span class="nn">type</span> <span class="n">string</span><span class="p">,</span> <span class="n">database</span> <span class="ow">and</span> <span class="n">channel</span><span class="p">(</span><span class="n">optional</span><span class="p">)</span> <span class="n">strings</span><span class="o">..</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Generate a group name string
+from type string, database and channel(optional) strings..
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -562,14 +561,14 @@ string.
 <p><span class="versionmodified">New in version 5.1.4.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">output</span> <span class="n">group</span> <span class="n">name</span> <span class="n">string</span> <span class="ow">is</span> <span class="n">formed</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">way</span> <span class="n">of</span> <span class="n">typestr_dbstr_chstr</span><span class="o">.</span>
-<span class="n">If</span> <span class="n">the</span> <span class="n">database</span><span class="o">/</span><span class="n">channel</span> <span class="n">strings</span> <span class="ow">is</span> <span class="n">too</span> <span class="n">long</span> <span class="n">to</span> <span class="n">fit</span> <span class="n">the</span> <span class="n">output</span> <span class="n">string</span>
-<span class="p">(</span><span class="nb">max</span> <span class="n">total</span> <span class="n">length</span> <span class="n">of</span> <span class="mi">1040</span><span class="p">,</span> <span class="n">including</span> <span class="n">the</span> <span class="n">NULL</span> <span class="n">ending</span><span class="p">),</span> <span class="n">then</span>
-<span class="n">the</span> <span class="n">typestr</span> <span class="n">will</span> <span class="n">always</span> <span class="n">be</span> <span class="n">kept</span> <span class="n">the</span> <span class="n">full</span> <span class="n">length</span> <span class="n">to</span> <span class="n">be</span> <span class="n">the</span> <span class="n">first</span> <span class="n">part</span><span class="p">,</span>
-<span class="k">while</span> <span class="n">the</span> <span class="n">dbstr</span> <span class="ow">and</span><span class="o">/</span><span class="ow">or</span> <span class="n">chstr</span> <span class="n">will</span> <span class="n">be</span> <span class="n">shortened</span> <span class="n">to</span> <span class="n">be</span> <span class="n">the</span>
-<span class="n">second</span> <span class="ow">and</span><span class="o">/</span><span class="ow">or</span> <span class="n">third</span> <span class="n">part</span> <span class="n">of</span> <span class="n">the</span> <span class="n">output</span> <span class="n">string</span><span class="o">.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+The output group name string is formed in the way of typestr_dbstr_chstr.
+If the database/channel strings is too long to fit the output string
+(max total length of 1040, including the NULL ending), then
+the typestr will always be kept the full length to be the first part,
+while the dbstr and/or chstr will be shortened to be the
+second and/or third part of the output string.
+</pre>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
 <p class="last">GenNewGroupName_MVIEW</p>
@@ -579,9 +578,9 @@ string.
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXSTR.get_char">
 <em class="property">static </em><code class="descname">get_char</code><span class="sig-paren">(</span><em>(str)arg1</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXSTR.get_char" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Returns</span> <span class="n">the</span> <span class="n">ASCII</span> <span class="n">value</span> <span class="n">of</span> <span class="n">a</span> <span class="n">character</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Returns the ASCII value of a character.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -590,7 +589,7 @@ string.
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">ASCII value of first character in string.</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></td>
 </tr>
 </tbody>
 </table>
@@ -612,7 +611,7 @@ string.
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<em>str</em>) &#8211; input multifile string</li>
 <li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; output filepath string</li>
-<li><strong>arg3</strong> (<em>int</em>) &#8211; index of file</li>
+<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; index of file</li>
 </ul>
 </td>
 </tr>
@@ -629,17 +628,17 @@ string.
 </div>
 <p><strong>Note:</strong></p>
 <pre class="literal-block">
-The multifile string must use '<cite>|</cite>' as a delimiter.
-Do not pass a string after calling <a class="reference internal" href="#geosoft.gxapi.GXSTR.tokenize" title="geosoft.gxapi.GXSTR.tokenize"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXSTR.tokenize()</span></code></a>.
+The multifile string must use '\ `|`\ ' as a delimiter.
+Do not pass a string after calling \ :func:`geosoft.gxapi.GXSTR.tokenize`\ .
 </pre>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXSTR.get_token">
 <em class="property">static </em><code class="descname">get_token</code><span class="sig-paren">(</span><em>(str_ref)arg1</em>, <em>(str)arg2</em>, <em>(int)arg3</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSTR.get_token" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">a</span> <span class="n">token</span> <span class="kn">from</span> <span class="nn">a</span> <span class="n">tokenized</span> <span class="n">string</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Get a token from a tokenized string.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -647,7 +646,7 @@ Do not pass a string after calling <a class="reference internal" href="#geosoft.
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; destination string</li>
 <li><strong>arg2</strong> (<em>str</em>) &#8211; tokenized string</li>
-<li><strong>arg3</strong> (<em>int</em>) &#8211; token number wanted  (0 is the first!)</li>
+<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; token number wanted  (0 is the first!)</li>
 </ul>
 </td>
 </tr>
@@ -664,18 +663,18 @@ Do not pass a string after calling <a class="reference internal" href="#geosoft.
 </div>
 <p><strong>Note:</strong></p>
 <pre class="literal-block">
-Call <a class="reference internal" href="#geosoft.gxapi.GXSTR.tokens" title="geosoft.gxapi.GXSTR.tokens"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXSTR.tokens()</span></code></a>  to prepare the tokenized
+Call \ :func:`geosoft.gxapi.GXSTR.tokens`\   to prepare the tokenized
 string.
 You MUST NOT get tokens beyond number of tokens returned
-by <a class="reference internal" href="#geosoft.gxapi.GXSTR.tokens" title="geosoft.gxapi.GXSTR.tokens"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXSTR.tokens()</span></code></a> or <a class="reference internal" href="#geosoft.gxapi.GXSTR.tokens2" title="geosoft.gxapi.GXSTR.tokens2"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXSTR.tokens2()</span></code></a>.
+by \ :func:`geosoft.gxapi.GXSTR.tokens`\  or \ :func:`geosoft.gxapi.GXSTR.tokens2`\ .
 The first token has index 0.
 
 DO NOT use this function except in GXC code.
-<a class="reference internal" href="#geosoft.gxapi.GXSTR.get_token" title="geosoft.gxapi.GXSTR.get_token"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXSTR.get_token()</span></code></a> function will not operate correctly in GX.Net code.
+\ :func:`geosoft.gxapi.GXSTR.get_token`\  function will not operate correctly in GX.Net code.
 </pre>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="#geosoft.gxapi.GXSTR.tokens" title="geosoft.gxapi.GXSTR.tokens"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXSTR.tokens()</span></code></a>, GetToken_STR</p>
+<p class="last">\ :func:`geosoft.gxapi.GXSTR.tokens`\ , GetToken_STR</p>
 </div>
 </dd></dl>
 
@@ -692,8 +691,8 @@ DO NOT use this function except in GXC code.
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<em>str</em>) &#8211; string to justify</li>
 <li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; result string, can be same as input</li>
-<li><strong>arg3</strong> (<em>int</em>) &#8211; justification width</li>
-<li><strong>arg4</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#str-justify"><span class="std std-ref">STR_JUSTIFY constants</span></a></li>
+<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; justification width</li>
+<li><strong>arg4</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#str-justify"><span class="std std-ref">STR_JUSTIFY constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -711,16 +710,16 @@ DO NOT use this function except in GXC code.
 <p><strong>Note:</strong></p>
 <pre class="literal-block">
 If the string is too big to fit in the number of display characters,
-the output string will be &quot;<cite>*</cite><cite>*</cite>&quot; justified as specified.
+the output string will be &quot;\ `*`\ \ `*`\ &quot; justified as specified.
 </pre>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXSTR.make_alpha">
 <em class="property">static </em><code class="descname">make_alpha</code><span class="sig-paren">(</span><em>(str_ref)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSTR.make_alpha" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Turns</span> <span class="nb">all</span> <span class="n">non</span> <span class="n">alpha</span><span class="o">-</span><span class="n">numeric</span> <span class="n">characters</span> <span class="n">into</span> <span class="n">an</span> <span class="n">_</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Turns all non alpha-numeric characters into an _.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -737,17 +736,17 @@ the output string will be &quot;<cite>*</cite><cite>*</cite>&quot; justified as 
 <p><span class="versionmodified">New in version 5.1.8.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">THE</span> <span class="n">STRING</span> <span class="n">IS</span> <span class="n">MODIFIED</span><span class="o">.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+THE STRING IS MODIFIED.
+</pre>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXSTR.parse_list">
 <em class="property">static </em><code class="descname">parse_list</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(GXVV)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSTR.parse_list" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Parse</span> <span class="n">a</span> <span class="n">tokenized</span> <span class="nb">list</span> <span class="n">to</span> <span class="n">get</span> <span class="n">a</span> <span class="n">selection</span> <span class="nb">list</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Parse a tokenized list to get a selection list.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -770,15 +769,15 @@ the output string will be &quot;<cite>*</cite><cite>*</cite>&quot; justified as 
 <p><span class="versionmodified">New in version 5.0.1.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Given</span> <span class="n">a</span> <span class="nb">list</span> <span class="n">such</span> <span class="k">as</span> <span class="s2">&quot;1,3,4,6-9,12&quot;</span><span class="p">,</span> <span class="n">it</span> <span class="n">fills</span> <span class="n">the</span>
-<span class="nb">input</span> <span class="n">buffer</span> <span class="k">with</span> <span class="mi">1</span> <span class="k">if</span> <span class="n">the</span> <span class="n">number</span> <span class="ow">is</span> <span class="n">selected</span><span class="p">,</span>
-<span class="mi">0</span> <span class="k">if</span> <span class="ow">not</span><span class="o">.</span> <span class="n">The</span> <span class="n">items</span> <span class="n">are</span> <span class="n">delimited</span> <span class="k">with</span> <span class="n">spaces</span>
-<span class="ow">or</span> <span class="n">commas</span><span class="p">,</span> <span class="ow">and</span> <span class="n">ranges</span> <span class="n">are</span> <span class="n">acceptable</span><span class="p">,</span> <span class="n">either</span> <span class="n">using</span>
-<span class="n">a</span> <span class="s2">&quot;-&quot;</span> <span class="ow">or</span> <span class="s2">&quot;:&quot;</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">g</span><span class="o">.</span>  <span class="mi">3</span><span class="o">-</span><span class="mi">6</span> <span class="ow">and</span> <span class="mi">3</span><span class="p">:</span><span class="mi">6</span> <span class="n">both</span> <span class="n">mean</span> <span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span> <span class="ow">and</span> <span class="mf">6.</span>
-<span class="n">Only</span> <span class="n">values</span> <span class="kn">from</span> <span class="mi">0</span> <span class="n">to</span> <span class="n">one</span> <span class="n">less</span> <span class="n">than</span> <span class="n">the</span> <span class="n">buffer</span> <span class="n">length</span>
-<span class="n">are</span> <span class="n">used</span><span class="o">.</span>  <span class="n">Out</span><span class="o">-</span><span class="n">of</span><span class="o">-</span><span class="nb">range</span> <span class="n">values</span> <span class="n">are</span> <span class="n">ignored</span><span class="o">.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+Given a list such as &quot;1,3,4,6-9,12&quot;, it fills the
+input buffer with 1 if the number is selected,
+0 if not. The items are delimited with spaces
+or commas, and ranges are acceptable, either using
+a &quot;-&quot; or &quot;:&quot;, e.g.  3-6 and 3:6 both mean 3,4,5, and 6.
+Only values from 0 to one less than the buffer length
+are used.  Out-of-range values are ignored.
+</pre>
 </dd></dl>
 
 <dl class="staticmethod">
@@ -842,9 +841,9 @@ the output string will be &quot;<cite>*</cite><cite>*</cite>&quot; justified as 
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXSTR.replace_char">
 <em class="property">static </em><code class="descname">replace_char</code><span class="sig-paren">(</span><em>(str_ref)arg1</em>, <em>(str)arg2</em>, <em>(str)arg3</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSTR.replace_char" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Replaces</span> <span class="n">characters</span> <span class="ow">in</span> <span class="n">a</span> <span class="n">string</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Replaces characters in a string.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -868,18 +867,18 @@ the output string will be &quot;<cite>*</cite><cite>*</cite>&quot; justified as 
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">If</span> <span class="n">the</span> <span class="nb">input</span> <span class="n">replacement</span> <span class="n">character</span> <span class="ow">is</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">then</span> <span class="n">the</span>
-<span class="n">string</span> <span class="n">will</span> <span class="n">be</span> <span class="n">truncated</span> <span class="n">at</span> <span class="n">the</span> <span class="n">first</span> <span class="n">character</span> <span class="n">to</span> <span class="n">replace</span><span class="o">.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+If the input replacement character is &quot;&quot;, then the
+string will be truncated at the first character to replace.
+</pre>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXSTR.replace_char2">
 <em class="property">static </em><code class="descname">replace_char2</code><span class="sig-paren">(</span><em>(str_ref)arg1</em>, <em>(str)arg2</em>, <em>(str)arg3</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSTR.replace_char2" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Replaces</span> <span class="n">characters</span> <span class="ow">in</span> <span class="n">a</span> <span class="n">string</span><span class="p">,</span> <span class="n">supports</span> <span class="n">simple</span> <span class="n">removal</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Replaces characters in a string, supports simple removal.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -903,19 +902,19 @@ the output string will be &quot;<cite>*</cite><cite>*</cite>&quot; justified as 
 <p><span class="versionmodified">New in version 6.3.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">If</span> <span class="n">the</span> <span class="n">replacement</span> <span class="n">character</span> <span class="ow">is</span> <span class="s2">&quot;&quot;</span> <span class="p">(</span><span class="n">NULL</span> <span class="n">character</span><span class="p">)</span>
-<span class="n">then</span> <span class="n">the</span> <span class="n">character</span> <span class="n">to</span> <span class="n">replace</span> <span class="ow">is</span> <span class="n">removed</span> <span class="kn">from</span> <span class="nn">the</span>
-<span class="nb">input</span> <span class="n">string</span><span class="p">,</span> <span class="ow">and</span> <span class="n">the</span> <span class="n">string</span> <span class="ow">is</span> <span class="n">shortened</span><span class="o">.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+If the replacement character is &quot;&quot; (NULL character)
+then the character to replace is removed from the
+input string, and the string is shortened.
+</pre>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXSTR.replace_match_string">
 <em class="property">static </em><code class="descname">replace_match_string</code><span class="sig-paren">(</span><em>(str_ref)arg1</em>, <em>(str)arg2</em>, <em>(str)arg3</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSTR.replace_match_string" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Replaces</span> <span class="nb">all</span> <span class="n">occurances</span> <span class="n">of</span> <span class="n">match</span> <span class="n">string</span> <span class="n">by</span> <span class="n">replacement</span> <span class="n">string</span> <span class="k">with</span> <span class="n">case</span> <span class="n">sensitive</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Replaces all occurances of match string by replacement string with case sensitive.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -939,19 +938,19 @@ the output string will be &quot;<cite>*</cite><cite>*</cite>&quot; justified as 
 <p><span class="versionmodified">New in version 7.0.1.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">If</span> <span class="n">the</span> <span class="n">replacement</span> <span class="n">string</span> <span class="ow">is</span> <span class="s2">&quot;&quot;</span> <span class="p">(</span><span class="n">NULL</span> <span class="n">character</span><span class="p">)</span>
-<span class="n">then</span> <span class="n">the</span> <span class="n">string</span> <span class="n">to</span> <span class="n">replace</span> <span class="ow">is</span> <span class="n">removed</span> <span class="kn">from</span> <span class="nn">the</span>
-<span class="nb">input</span> <span class="n">string</span><span class="p">,</span> <span class="ow">and</span> <span class="n">the</span> <span class="n">string</span> <span class="ow">is</span> <span class="n">shortened</span><span class="o">.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+If the replacement string is &quot;&quot; (NULL character)
+then the string to replace is removed from the
+input string, and the string is shortened.
+</pre>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXSTR.replace_multi_char">
 <em class="property">static </em><code class="descname">replace_multi_char</code><span class="sig-paren">(</span><em>(str_ref)arg1</em>, <em>(str)arg2</em>, <em>(str)arg3</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSTR.replace_multi_char" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Replaces</span> <span class="n">multiple</span> <span class="n">characters</span> <span class="ow">in</span> <span class="n">a</span> <span class="n">string</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Replaces multiple characters in a string.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -975,18 +974,18 @@ the output string will be &quot;<cite>*</cite><cite>*</cite>&quot; justified as 
 <p><span class="versionmodified">New in version 5.1.5.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">number</span> <span class="n">of</span> <span class="n">characters</span> <span class="n">to</span> <span class="n">replace</span> <span class="n">must</span> <span class="n">equal</span>
-<span class="n">the</span> <span class="n">number</span> <span class="n">of</span> <span class="n">replacement</span> <span class="n">characters</span><span class="o">.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+The number of characters to replace must equal
+the number of replacement characters.
+</pre>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXSTR.replace_non_ascii">
 <em class="property">static </em><code class="descname">replace_non_ascii</code><span class="sig-paren">(</span><em>(str_ref)arg1</em>, <em>(str)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSTR.replace_non_ascii" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Replace</span> <span class="n">non</span><span class="o">-</span><span class="n">ASCII</span> <span class="n">characters</span> <span class="ow">in</span> <span class="n">a</span> <span class="n">string</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Replace non-ASCII characters in a string.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1009,18 +1008,18 @@ the output string will be &quot;<cite>*</cite><cite>*</cite>&quot; justified as 
 <p><span class="versionmodified">New in version 6.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">All</span> <span class="n">characthers</span> <span class="o">&gt;</span> <span class="mi">127</span> <span class="n">will</span> <span class="n">be</span> <span class="n">replaced</span> <span class="n">by</span> <span class="n">the</span> <span class="n">first</span> <span class="n">character</span>
-<span class="n">of</span> <span class="n">the</span> <span class="n">replacement</span> <span class="n">string</span><span class="o">.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+All characthers &gt; 127 will be replaced by the first character
+of the replacement string.
+</pre>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXSTR.replacei_match_string">
 <em class="property">static </em><code class="descname">replacei_match_string</code><span class="sig-paren">(</span><em>(str_ref)arg1</em>, <em>(str)arg2</em>, <em>(str)arg3</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSTR.replacei_match_string" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Replaces</span> <span class="nb">all</span> <span class="n">occurances</span> <span class="n">of</span> <span class="n">match</span> <span class="n">string</span> <span class="n">by</span> <span class="n">replacement</span> <span class="n">string</span> <span class="k">with</span> <span class="n">case</span> <span class="n">insensitive</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Replaces all occurances of match string by replacement string with case insensitive.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1044,26 +1043,26 @@ the output string will be &quot;<cite>*</cite><cite>*</cite>&quot; justified as 
 <p><span class="versionmodified">New in version 7.0.1.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">If</span> <span class="n">the</span> <span class="n">replacement</span> <span class="n">string</span> <span class="ow">is</span> <span class="s2">&quot;&quot;</span> <span class="p">(</span><span class="n">NULL</span> <span class="n">character</span><span class="p">)</span>
-<span class="n">then</span> <span class="n">the</span> <span class="n">string</span> <span class="n">to</span> <span class="n">replace</span> <span class="ow">is</span> <span class="n">removed</span> <span class="kn">from</span> <span class="nn">the</span>
-<span class="nb">input</span> <span class="n">string</span><span class="p">,</span> <span class="ow">and</span> <span class="n">the</span> <span class="n">string</span> <span class="ow">is</span> <span class="n">shortened</span><span class="o">.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+If the replacement string is &quot;&quot; (NULL character)
+then the string to replace is removed from the
+input string, and the string is shortened.
+</pre>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXSTR.scan_date">
 <em class="property">static </em><code class="descname">scan_date</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(int)arg2</em><span class="sig-paren">)</span> &rarr; float:<a class="headerlink" href="#geosoft.gxapi.GXSTR.scan_date" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Convert</span> <span class="n">a</span> <span class="n">date</span> <span class="n">string</span> <span class="n">to</span> <span class="n">a</span> <span class="n">GX</span> <span class="n">real</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Convert a date string to a GX real.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<em>str</em>) &#8211; Date string</li>
-<li><strong>arg2</strong> (<em>int</em>) &#8211; <span class="xref std std-ref">DATE_FORMAT</span></li>
+<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="GXGEOSOFT.html#date-format"><span class="std std-ref">DATE_FORMAT constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -1079,24 +1078,24 @@ the output string will be &quot;<cite>*</cite><cite>*</cite>&quot; justified as 
 <p><span class="versionmodified">New in version 6.0.1.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">OLD</span> <span class="n">usage</span><span class="p">,</span> <span class="n">use</span> <span class="n">ScanForm_STR</span> <span class="n">instead</span><span class="o">.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+OLD usage, use ScanForm_STR instead.
+</pre>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXSTR.scan_form">
 <em class="property">static </em><code class="descname">scan_form</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(int)arg2</em><span class="sig-paren">)</span> &rarr; float:<a class="headerlink" href="#geosoft.gxapi.GXSTR.scan_form" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Convert</span> <span class="n">a</span> <span class="n">formated</span> <span class="n">string</span> <span class="n">to</span> <span class="n">a</span> <span class="n">real</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Convert a formated string to a real.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<em>str</em>) &#8211; Date string</li>
-<li><strong>arg2</strong> (<em>int</em>) &#8211; <span class="xref std std-ref">GS_FORMATS</span></li>
+<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="GXGEOSOFT.html#gs-formats"><span class="std std-ref">GS_FORMATS constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -1116,9 +1115,9 @@ the output string will be &quot;<cite>*</cite><cite>*</cite>&quot; justified as 
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXSTR.scan_i">
 <em class="property">static </em><code class="descname">scan_i</code><span class="sig-paren">(</span><em>(str)arg1</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXSTR.scan_i" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Convert</span> <span class="n">a</span> <span class="n">string</span> <span class="n">to</span> <span class="n">a</span> <span class="n">GX</span> <span class="nb">int</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Convert a string to a GX int.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1127,7 +1126,7 @@ the output string will be &quot;<cite>*</cite><cite>*</cite>&quot; justified as 
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Resulting Integer, iDUMMY is bad integer</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></td>
 </tr>
 </tbody>
 </table>
@@ -1139,9 +1138,9 @@ the output string will be &quot;<cite>*</cite><cite>*</cite>&quot; justified as 
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXSTR.scan_r">
 <em class="property">static </em><code class="descname">scan_r</code><span class="sig-paren">(</span><em>(str)arg1</em><span class="sig-paren">)</span> &rarr; float:<a class="headerlink" href="#geosoft.gxapi.GXSTR.scan_r" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Convert</span> <span class="n">a</span> <span class="n">string</span> <span class="n">to</span> <span class="n">a</span> <span class="n">GX</span> <span class="n">real</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Convert a string to a GX real.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1162,16 +1161,16 @@ the output string will be &quot;<cite>*</cite><cite>*</cite>&quot; justified as 
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXSTR.scan_time">
 <em class="property">static </em><code class="descname">scan_time</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(int)arg2</em><span class="sig-paren">)</span> &rarr; float:<a class="headerlink" href="#geosoft.gxapi.GXSTR.scan_time" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Convert</span> <span class="n">a</span> <span class="n">time</span> <span class="n">string</span> <span class="n">to</span> <span class="n">a</span> <span class="n">GX</span> <span class="n">real</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Convert a time string to a GX real.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<em>str</em>) &#8211; Date string</li>
-<li><strong>arg2</strong> (<em>int</em>) &#8211; <span class="xref std std-ref">TIME_FORMAT</span></li>
+<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="GXGEOSOFT.html#time-format"><span class="std std-ref">TIME_FORMAT constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -1187,24 +1186,24 @@ the output string will be &quot;<cite>*</cite><cite>*</cite>&quot; justified as 
 <p><span class="versionmodified">New in version 6.0.1.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">OLD</span> <span class="n">usage</span><span class="p">,</span> <span class="n">use</span> <span class="n">ScanForm_STR</span> <span class="n">instead</span><span class="o">.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+OLD usage, use ScanForm_STR instead.
+</pre>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXSTR.set_char">
 <em class="property">static </em><code class="descname">set_char</code><span class="sig-paren">(</span><em>(str_ref)arg1</em>, <em>(int)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSTR.set_char" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Set</span> <span class="n">a</span> <span class="n">string</span><span class="s1">&#39;s first character using an ASCII value of a character.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Set a string's first character using an ASCII value of a character.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; string</li>
-<li><strong>arg2</strong> (<em>int</em>) &#8211; ASCII value</li>
+<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; ASCII value</li>
 </ul>
 </td>
 </tr>
@@ -1224,17 +1223,17 @@ the output string will be &quot;<cite>*</cite><cite>*</cite>&quot; justified as 
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXSTR.set_char_n">
 <em class="property">static </em><code class="descname">set_char_n</code><span class="sig-paren">(</span><em>(str_ref)arg1</em>, <em>(int)arg2</em>, <em>(int)arg3</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSTR.set_char_n" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Set</span> <span class="n">the</span> <span class="n">n</span><span class="s1">&#39;th character of a string using an ASCII value</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Set the n'th character of a string using an ASCII value
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; string</li>
-<li><strong>arg2</strong> (<em>int</em>) &#8211; character to set</li>
-<li><strong>arg3</strong> (<em>int</em>) &#8211; ASCII value</li>
+<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; character to set</li>
+<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; ASCII value</li>
 </ul>
 </td>
 </tr>
@@ -1254,9 +1253,9 @@ the output string will be &quot;<cite>*</cite><cite>*</cite>&quot; justified as 
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXSTR.split_string">
 <em class="property">static </em><code class="descname">split_string</code><span class="sig-paren">(</span><em>(str_ref)arg1</em>, <em>(str)arg2</em>, <em>(str_ref)arg3</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSTR.split_string" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Splits</span> <span class="n">a</span> <span class="n">string</span> <span class="ow">in</span> <span class="n">two</span> <span class="n">on</span> <span class="n">a</span> <span class="n">character</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Splits a string in two on a character.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1280,26 +1279,26 @@ the output string will be &quot;<cite>*</cite><cite>*</cite>&quot; justified as 
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">original</span> <span class="n">string</span> <span class="ow">is</span> <span class="n">modified</span> <span class="n">by</span> <span class="n">terminating</span> <span class="n">it</span>
-<span class="n">at</span> <span class="n">the</span> <span class="n">character</span> <span class="n">split</span><span class="o">.</span>
+<pre class="literal-block">
+The original string is modified by terminating it
+at the character split.
 
-<span class="n">The</span> <span class="n">part</span> <span class="n">of</span> <span class="n">the</span> <span class="n">string</span> <span class="n">past</span> <span class="n">the</span> <span class="n">character</span> <span class="n">split</span> <span class="ow">is</span>
-<span class="n">copied</span> <span class="n">to</span> <span class="n">the</span> <span class="n">split</span> <span class="n">string</span><span class="o">.</span>
+The part of the string past the character split is
+copied to the split string.
 
-<span class="n">Split</span> <span class="n">characters</span> <span class="ow">in</span> <span class="n">quoted</span> <span class="n">strings</span> <span class="n">are</span> <span class="n">ignored</span><span class="o">.</span>
+Split characters in quoted strings are ignored.
 
-<span class="n">This</span> <span class="n">function</span> <span class="ow">is</span> <span class="n">mainly</span> <span class="n">intended</span> <span class="n">to</span> <span class="n">separate</span> <span class="n">comments</span>
-<span class="kn">from</span> <span class="nn">control</span> <span class="n">file</span> <span class="n">strings</span><span class="o">.</span>
-</pre></div>
-</div>
+This function is mainly intended to separate comments
+from control file strings.
+</pre>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXSTR.str_mask">
 <em class="property">static </em><code class="descname">str_mask</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(str)arg2</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXSTR.str_mask" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Case</span> <span class="n">sensitive</span> <span class="n">comparison</span> <span class="n">of</span> <span class="n">two</span> <span class="n">strings</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Case sensitive comparison of two strings.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1314,7 +1313,7 @@ the output string will be &quot;<cite>*</cite><cite>*</cite>&quot; justified as 
 1 if string matches mask.</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></p>
 </td>
 </tr>
 </tbody>
@@ -1324,7 +1323,7 @@ the output string will be &quot;<cite>*</cite><cite>*</cite>&quot; justified as 
 </div>
 <p><strong>Note:</strong></p>
 <pre class="literal-block">
-Mask characters '<cite>*</cite>' - matches any one or more up to
+Mask characters '\ `*`\ ' - matches any one or more up to
 next character
 '?' - matches one character
 
@@ -1346,7 +1345,7 @@ Test is case sensitive
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">String length.</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></td>
 </tr>
 </tbody>
 </table>
@@ -1358,17 +1357,17 @@ Test is case sensitive
 String may be modified. This function should not be
 used to determine if a file name string is defined, because
 a valid file name can contain spaces, and once &quot;tested&quot; the
-name will be altered. Instead, use <a class="reference internal" href="#geosoft.gxapi.GXSTR.str_min2" title="geosoft.gxapi.GXSTR.str_min2"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXSTR.str_min2()</span></code></a>, or use
-<a class="reference internal" href="GXSYS.html#geosoft.gxapi.GXSYS.file_exist" title="geosoft.gxapi.GXSYS.file_exist"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXSYS.file_exist()</span></code></a> to see if the file actually exists.
+name will be altered. Instead, use \ :func:`geosoft.gxapi.GXSTR.str_min2`\ , or use
+\ :func:`geosoft.gxapi.GXSYS.file_exist`\  to see if the file actually exists.
 </pre>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXSTR.str_min2">
 <em class="property">static </em><code class="descname">str_min2</code><span class="sig-paren">(</span><em>(str)arg1</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXSTR.str_min2" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Length</span> <span class="n">less</span> <span class="n">spaces</span> <span class="ow">and</span> <span class="n">tabs</span><span class="p">,</span> <span class="n">string</span> <span class="n">unchanged</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Length less spaces and tabs, string unchanged.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1377,7 +1376,7 @@ name will be altered. Instead, use <a class="reference internal" href="#geosoft.
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">String length.</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></td>
 </tr>
 </tbody>
 </table>
@@ -1389,9 +1388,9 @@ name will be altered. Instead, use <a class="reference internal" href="#geosoft.
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXSTR.str_str">
 <em class="property">static </em><code class="descname">str_str</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(str)arg2</em>, <em>(int)arg3</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXSTR.str_str" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Scan</span> <span class="n">a</span> <span class="n">string</span> <span class="k">for</span> <span class="n">the</span> <span class="n">occurrence</span> <span class="n">of</span> <span class="n">a</span> <span class="n">given</span> <span class="n">substring</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Scan a string for the occurrence of a given substring.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1399,7 +1398,7 @@ name will be altered. Instead, use <a class="reference internal" href="#geosoft.
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<em>str</em>) &#8211; string to scan</li>
 <li><strong>arg2</strong> (<em>str</em>) &#8211; string to look for</li>
-<li><strong>arg3</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#str-case"><span class="std std-ref">STR_CASE constants</span></a></li>
+<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#str-case"><span class="std std-ref">STR_CASE constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -1407,7 +1406,7 @@ name will be altered. Instead, use <a class="reference internal" href="#geosoft.
 Index of first matching location if found</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></p>
 </td>
 </tr>
 </tbody>
@@ -1420,9 +1419,9 @@ Index of first matching location if found</p>
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXSTR.strcat">
 <em class="property">static </em><code class="descname">strcat</code><span class="sig-paren">(</span><em>(str_ref)arg1</em>, <em>(str)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSTR.strcat" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="n">method</span> <span class="n">contatinates</span> <span class="n">a</span> <span class="n">string</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+This method contatinates a string.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1459,7 +1458,7 @@ Index of first matching location if found</p>
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<em>str</em>) &#8211; string A</li>
 <li><strong>arg2</strong> (<em>str</em>) &#8211; string B</li>
-<li><strong>arg3</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#str-case"><span class="std std-ref">STR_CASE constants</span></a></li>
+<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#str-case"><span class="std std-ref">STR_CASE constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -1468,7 +1467,7 @@ A ==  B            0
 A  &gt;  B            1</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></p>
 </td>
 </tr>
 </tbody>
@@ -1481,9 +1480,9 @@ A  &gt;  B            1</p>
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXSTR.strcpy">
 <em class="property">static </em><code class="descname">strcpy</code><span class="sig-paren">(</span><em>(str_ref)arg1</em>, <em>(str)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSTR.strcpy" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="n">method</span> <span class="n">copies</span> <span class="n">a</span> <span class="n">string</span> <span class="n">into</span> <span class="n">another</span> <span class="n">string</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+This method copies a string into another string.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1510,9 +1509,9 @@ A  &gt;  B            1</p>
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXSTR.stri_mask">
 <em class="property">static </em><code class="descname">stri_mask</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(str)arg2</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXSTR.stri_mask" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Case</span> <span class="n">insensitive</span> <span class="n">comparison</span> <span class="n">of</span> <span class="n">two</span> <span class="n">strings</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Case insensitive comparison of two strings.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1527,7 +1526,7 @@ A  &gt;  B            1</p>
 1 if string matches mask.</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></p>
 </td>
 </tr>
 </tbody>
@@ -1537,7 +1536,7 @@ A  &gt;  B            1</p>
 </div>
 <p><strong>Note:</strong></p>
 <pre class="literal-block">
-Mask characters '<cite>*</cite>' - matches any one or more up to
+Mask characters '\ `*`\ ' - matches any one or more up to
 next character
 '?' - matches one character
 
@@ -1548,16 +1547,16 @@ Test is case insensitive
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXSTR.strins">
 <em class="property">static </em><code class="descname">strins</code><span class="sig-paren">(</span><em>(str_ref)arg1</em>, <em>(int)arg2</em>, <em>(str)arg3</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSTR.strins" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="n">method</span> <span class="n">inserts</span> <span class="n">a</span> <span class="n">string</span> <span class="n">at</span> <span class="n">a</span> <span class="n">specified</span> <span class="n">position</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+This method inserts a string at a specified position.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; Destination String</li>
-<li><strong>arg2</strong> (<em>int</em>) &#8211; Insert Position</li>
+<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Insert Position</li>
 <li><strong>arg3</strong> (<em>str</em>) &#8211; String to add</li>
 </ul>
 </td>
@@ -1574,18 +1573,18 @@ Test is case insensitive
 <p><span class="versionmodified">New in version 5.1.8.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">If</span> <span class="n">the</span> <span class="n">specified</span> <span class="n">position</span> <span class="n">does</span> <span class="ow">not</span> <span class="n">fall</span> <span class="n">within</span> <span class="n">the</span> <span class="n">current</span> <span class="n">string</span>
-<span class="n">the</span> <span class="n">source</span> <span class="n">string</span> <span class="n">will</span> <span class="n">simply</span> <span class="n">be</span> <span class="n">Concatenated</span><span class="o">.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+If the specified position does not fall within the current string
+the source string will simply be Concatenated.
+</pre>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXSTR.strlen">
 <em class="property">static </em><code class="descname">strlen</code><span class="sig-paren">(</span><em>(str)arg1</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXSTR.strlen" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Returns</span> <span class="n">the</span> <span class="n">length</span> <span class="n">of</span> <span class="n">a</span> <span class="n">string</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Returns the length of a string.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1594,7 +1593,7 @@ Test is case insensitive
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">String length.</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></td>
 </tr>
 </tbody>
 </table>
@@ -1606,9 +1605,9 @@ Test is case insensitive
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXSTR.strncmp">
 <em class="property">static </em><code class="descname">strncmp</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(str)arg2</em>, <em>(int)arg3</em>, <em>(int)arg4</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXSTR.strncmp" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Compares</span> <span class="n">two</span> <span class="n">strings</span> <span class="n">to</span> <span class="n">a</span> <span class="n">given</span> <span class="n">number</span> <span class="n">of</span> <span class="n">characters</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Compares two strings to a given number of characters.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1616,8 +1615,8 @@ Test is case insensitive
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<em>str</em>) &#8211; string A</li>
 <li><strong>arg2</strong> (<em>str</em>) &#8211; string B</li>
-<li><strong>arg3</strong> (<em>int</em>) &#8211; number of characters to compare</li>
-<li><strong>arg4</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#str-case"><span class="std std-ref">STR_CASE constants</span></a></li>
+<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; number of characters to compare</li>
+<li><strong>arg4</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#str-case"><span class="std std-ref">STR_CASE constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -1626,7 +1625,7 @@ A ==  B            0
 A  &gt;  B            1</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></p>
 </td>
 </tr>
 </tbody>
@@ -1639,9 +1638,9 @@ A  &gt;  B            1</p>
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXSTR.substr">
 <em class="property">static </em><code class="descname">substr</code><span class="sig-paren">(</span><em>(str_ref)arg1</em>, <em>(str)arg2</em>, <em>(int)arg3</em>, <em>(int)arg4</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSTR.substr" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Extract</span> <span class="n">part</span> <span class="n">of</span> <span class="n">a</span> <span class="n">string</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Extract part of a string.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1649,8 +1648,8 @@ A  &gt;  B            1</p>
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; destination string</li>
 <li><strong>arg2</strong> (<em>str</em>) &#8211; origin string</li>
-<li><strong>arg3</strong> (<em>int</em>) &#8211; start location</li>
-<li><strong>arg4</strong> (<em>int</em>) &#8211; number of characters</li>
+<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; start location</li>
+<li><strong>arg4</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; number of characters</li>
 </ul>
 </td>
 </tr>
@@ -1666,19 +1665,19 @@ A  &gt;  B            1</p>
 <p><span class="versionmodified">New in version 6.2.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">destination</span> <span class="n">string</span> <span class="n">length</span> <span class="n">will</span> <span class="n">be</span> <span class="n">less</span> <span class="n">than</span> <span class="n">the</span>
-<span class="n">requested</span> <span class="n">length</span> <span class="k">if</span> <span class="n">the</span> <span class="n">substring</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">fully</span> <span class="n">enclosed</span>
-<span class="ow">in</span> <span class="n">the</span> <span class="n">origin</span> <span class="n">string</span><span class="o">.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+The destination string length will be less than the
+requested length if the substring is not fully enclosed
+in the origin string.
+</pre>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXSTR.to_lower">
 <em class="property">static </em><code class="descname">to_lower</code><span class="sig-paren">(</span><em>(str_ref)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSTR.to_lower" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Convert</span> <span class="n">a</span> <span class="n">string</span> <span class="n">to</span> <span class="n">lower</span> <span class="n">case</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Convert a string to lower case.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1699,9 +1698,9 @@ A  &gt;  B            1</p>
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXSTR.to_upper">
 <em class="property">static </em><code class="descname">to_upper</code><span class="sig-paren">(</span><em>(str_ref)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSTR.to_upper" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Convert</span> <span class="n">a</span> <span class="n">string</span> <span class="n">to</span> <span class="n">upper</span> <span class="n">case</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Convert a string to upper case.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1722,9 +1721,9 @@ A  &gt;  B            1</p>
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXSTR.tokenize">
 <em class="property">static </em><code class="descname">tokenize</code><span class="sig-paren">(</span><em>(str_ref)arg1</em>, <em>(str)arg2</em>, <em>(str)arg3</em>, <em>(str)arg4</em>, <em>(str)arg5</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXSTR.tokenize" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Tokenize</span> <span class="n">a</span> <span class="n">string</span> <span class="n">based</span> <span class="n">on</span> <span class="nb">any</span> <span class="n">characters</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Tokenize a string based on any characters.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1741,7 +1740,7 @@ A  &gt;  B            1</p>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">number of tokens</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></p>
 </td>
 </tr>
 </tbody>
@@ -1769,13 +1768,13 @@ a hard delimiter and are ignored.
 
 EXAMPLE
 
-Soft = [ ]   Hard = [,]   Escape = []    Quote = [&quot;]
+Soft = [ ]   Hard = [,]   Escape = [\]    Quote = [&quot;]
 
-[this is a , , the &quot;test,&quot; of   ,  ,&quot; my delimite  fi,]
+[this is a , , the &quot;test,&quot; of   ,  \,\&quot; my delimite  fi,]
 
 Results in:
 
-[this] [is] [a] [] [the] [&quot;test,&quot;] [of] [,&quot;] [my] [delimite] [fi] []
+[this] [is] [a] [] [the] [&quot;test,&quot;] [of] [\,\&quot;] [my] [delimite] [fi] []
 
 
 NOT use this function except in GXC code. The corresponding
@@ -1806,7 +1805,7 @@ etToken_STR function will not operate correctly in GX.Net code.
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">number of tokens, maximum is 2048</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></p>
 </td>
 </tr>
 </tbody>
@@ -1821,11 +1820,11 @@ Delimiters withing double quoted strings are ignored.
 Use GetToken_STR to extract tokens.
 
 DO NOT use this function except in GXC code. The corresponding
-<a class="reference internal" href="#geosoft.gxapi.GXSTR.get_token" title="geosoft.gxapi.GXSTR.get_token"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXSTR.get_token()</span></code></a> function will not operate correctly in GX.Net code.
+\ :func:`geosoft.gxapi.GXSTR.get_token`\  function will not operate correctly in GX.Net code.
 </pre>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="#geosoft.gxapi.GXSTR.tokens2" title="geosoft.gxapi.GXSTR.tokens2"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXSTR.tokens2()</span></code></a>, GetToken_STR</p>
+<p class="last">\ :func:`geosoft.gxapi.GXSTR.tokens2`\ , GetToken_STR</p>
 </div>
 </dd></dl>
 
@@ -1851,7 +1850,7 @@ DO NOT use this function except in GXC code. The corresponding
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Number of Tokens</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></p>
 </td>
 </tr>
 </tbody>
@@ -1862,19 +1861,19 @@ DO NOT use this function except in GXC code. The corresponding
 <p><strong>Note:</strong></p>
 <pre class="literal-block">
 This function is for old GX compatibility only.
-See <a class="reference internal" href="#geosoft.gxapi.GXSTR.tokenize" title="geosoft.gxapi.GXSTR.tokenize"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXSTR.tokenize()</span></code></a>.
+See \ :func:`geosoft.gxapi.GXSTR.tokenize`\ .
 
 DO NOT use this function except in GXC code. The corresponding
-<a class="reference internal" href="#geosoft.gxapi.GXSTR.get_token" title="geosoft.gxapi.GXSTR.get_token"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXSTR.get_token()</span></code></a> function will not operate correctly in GX.Net code.
+\ :func:`geosoft.gxapi.GXSTR.get_token`\  function will not operate correctly in GX.Net code.
 </pre>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXSTR.trim_quotes">
 <em class="property">static </em><code class="descname">trim_quotes</code><span class="sig-paren">(</span><em>(str_ref)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSTR.trim_quotes" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Remove</span> <span class="n">double</span> <span class="n">quotes</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Remove double quotes.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1891,31 +1890,31 @@ DO NOT use this function except in GXC code. The corresponding
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">THE</span> <span class="n">STRING</span> <span class="n">IS</span> <span class="n">MODIFIED</span><span class="o">.</span>
-<span class="n">This</span> <span class="n">method</span> <span class="n">goes</span> <span class="n">through</span> <span class="n">the</span> <span class="n">string</span> <span class="ow">and</span> <span class="n">removes</span> <span class="nb">all</span> <span class="n">spaces</span> <span class="ow">in</span> <span class="n">a</span>
-<span class="n">string</span> <span class="k">except</span> <span class="n">those</span> <span class="n">enclosed</span> <span class="ow">in</span> <span class="n">quotes</span><span class="o">.</span> <span class="n">It</span> <span class="n">then</span> <span class="n">removes</span>
-<span class="nb">any</span> <span class="n">quotes</span><span class="o">.</span> <span class="n">It</span> <span class="ow">is</span> <span class="n">usfull</span> <span class="k">for</span> <span class="n">trimming</span> <span class="n">unwanted</span> <span class="n">spaces</span> <span class="kn">from</span>
-<span class="nn">an</span> <span class="nb">input</span> <span class="n">string</span> <span class="n">but</span> <span class="n">allows</span> <span class="n">the</span> <span class="n">user</span> <span class="n">to</span> <span class="n">use</span> <span class="n">quotes</span> <span class="k">as</span> <span class="n">well</span><span class="o">.</span>
-<span class="n">If</span> <span class="n">a</span> <span class="n">quote</span> <span class="n">follows</span> <span class="n">a</span> <span class="n">backslash</span><span class="p">,</span> <span class="n">the</span> <span class="n">quote</span> <span class="ow">is</span> <span class="n">retained</span> <span class="ow">and</span>
-<span class="n">the</span> <span class="n">backslash</span> <span class="ow">is</span> <span class="n">deleted</span><span class="o">.</span> <span class="n">These</span> <span class="n">quotes</span> <span class="n">are</span> <span class="n">NOT</span> <span class="n">treated</span> <span class="k">as</span>
-<span class="n">delimiters</span><span class="o">.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+THE STRING IS MODIFIED.
+This method goes through the string and removes all spaces in a
+string except those enclosed in quotes. It then removes
+any quotes. It is usfull for trimming unwanted spaces from
+an input string but allows the user to use quotes as well.
+If a quote follows a backslash, the quote is retained and
+the backslash is deleted. These quotes are NOT treated as
+delimiters.
+</pre>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXSTR.trim_space">
 <em class="property">static </em><code class="descname">trim_space</code><span class="sig-paren">(</span><em>(str_ref)arg1</em>, <em>(int)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSTR.trim_space" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Remove</span> <span class="n">leading</span> <span class="ow">and</span><span class="o">/</span><span class="ow">or</span> <span class="n">trailing</span> <span class="n">whitespace</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Remove leading and/or trailing whitespace.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; String to trim</li>
-<li><strong>arg2</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#str-trim"><span class="std std-ref">STR_TRIM constants</span></a></li>
+<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#str-trim"><span class="std std-ref">STR_TRIM constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -1931,11 +1930,11 @@ DO NOT use this function except in GXC code. The corresponding
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">THE</span> <span class="n">STRING</span> <span class="n">IS</span> <span class="n">MODIFIED</span><span class="o">.</span>
-<span class="n">Whitespace</span> <span class="n">characters</span> <span class="n">are</span> <span class="n">defined</span> <span class="k">as</span> <span class="n">space</span><span class="p">,</span> <span class="n">tab</span><span class="p">,</span> <span class="n">carriage</span> <span class="k">return</span><span class="p">,</span>
-<span class="n">new</span> <span class="n">line</span><span class="p">,</span> <span class="n">vertical</span> <span class="n">tab</span> <span class="ow">or</span> <span class="n">formfeed</span> <span class="p">(</span><span class="mh">0x09</span> <span class="n">to</span> <span class="mh">0x0D</span><span class="p">,</span> <span class="mh">0x20</span><span class="p">)</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+THE STRING IS MODIFIED.
+Whitespace characters are defined as space, tab, carriage return,
+new line, vertical tab or formfeed (0x09 to 0x0D, 0x20)
+</pre>
 </dd></dl>
 
 <dl class="staticmethod">
@@ -1963,7 +1962,7 @@ DO NOT use this function except in GXC code. The corresponding
 <pre class="literal-block">
 THE STRING IS MODIFIED.
 The pointers will be advanced past a first character
-quote and a last character quote will be set to .0'.
+quote and a last character quote will be set to .\0'.
 Both first and last characters must be quotes for the
 triming to take place.
 </pre>
@@ -1972,9 +1971,9 @@ triming to take place.
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXSTR.xyz_line">
 <em class="property">static </em><code class="descname">xyz_line</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(str_ref)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSTR.xyz_line" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Make</span> <span class="n">a</span> <span class="n">valid</span> <span class="n">XYZ</span> <span class="n">line</span> <span class="n">name</span> <span class="kn">from</span> <span class="nn">a</span> <span class="n">valid</span> <span class="n">DB</span> <span class="n">line</span> <span class="n">name</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Make a valid XYZ line name from a valid DB line name.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -2181,12 +2180,27 @@ triming to take place.
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.1 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li> 
       </ul>
     </div>
+
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2016, Geosoft Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.6.
+        &#169; Copyright 2017, Geosoft Inc.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
     </div>
+<div class="footer">This page uses <a href="http://analytics.google.com/">
+Google Analytics</a> to collect statistics. You can disable it by blocking
+the JavaScript coming from www.google-analytics.com.
+<script type="text/javascript">
+  (function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ?
+              'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+  })();
+</script>
+</div>
+
   </body>
 </html>

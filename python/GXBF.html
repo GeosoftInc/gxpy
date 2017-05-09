@@ -1,3 +1,4 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -5,19 +6,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <script type="text/javascript">
-
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-87443115-1']);
-      _gaq.push(['_trackPageview']);
-
-      (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
-    </script>
-    <title>GXBF class &#8212; Geosoft GX Python API 9.1 documentation</title>
+    
+    <title>GXBF class &#8212; Geosoft GX Python API 9.2.0 documentation</title>
     
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -25,16 +15,25 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '9.1',
+        VERSION:     '9.2.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="Geosoft GX Python API 9.1 documentation" href="index.html" /> 
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+ 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-87443115-1']);
+  _gaq.push(['_trackPageview']);
+</script>
+
   </head>
   <body role="document">
     <div class="related" role="navigation" aria-label="related navigation">
@@ -46,7 +45,7 @@
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.1 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -66,7 +65,7 @@
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="_sources/GXBF.txt"
+      <li><a href="_sources/GXBF.rst.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
@@ -93,12 +92,12 @@
 <dl class="class">
 <dt id="geosoft.gxapi.GXBF">
 <em class="property">class </em><code class="descclassname">geosoft.gxapi.</code><code class="descname">GXBF</code><a class="headerlink" href="#geosoft.gxapi.GXBF" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">BF</span> <span class="k">class</span> <span class="nc">is</span> <span class="n">used</span> <span class="n">to</span> <span class="n">access</span> <span class="p">(</span><span class="ow">or</span> <span class="n">create</span><span class="p">)</span> <span class="n">Binary</span> <span class="n">files</span> <span class="ow">and</span> <span class="n">remove</span>
-<span class="p">(</span><span class="ow">or</span> <span class="n">destroy</span><span class="p">)</span> <span class="n">files</span> <span class="kn">from</span> <span class="nn">use.</span> <span class="n">You</span> <span class="n">can</span> <span class="n">also</span> <span class="n">perform</span> <span class="n">a</span> <span class="n">variety</span> <span class="n">of</span>
-<span class="n">additional</span> <span class="n">tasks</span><span class="p">,</span> <span class="n">such</span> <span class="k">as</span> <span class="n">positioning</span> <span class="n">within</span> <span class="n">files</span><span class="p">,</span> <span class="n">reading</span> <span class="kn">from</span>
-<span class="nn">files</span> <span class="ow">and</span> <span class="n">writing</span> <span class="n">to</span> <span class="n">files</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+The BF class is used to access (or create) Binary files and remove
+(or destroy) files from use. You can also perform a variety of
+additional tasks, such as positioning within files, reading from
+files and writing to files.
+</pre>
 <dl class="method">
 <dt id="geosoft.gxapi.GXBF.ch_size">
 <code class="descname">ch_size</code><span class="sig-paren">(</span><em>(int)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXBF.ch_size" title="Permalink to this definition">¶</a></dt>
@@ -109,7 +108,7 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>int</em>) &#8211; new length in bytes</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; new length in bytes</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Nothing</td>
 </tr>
@@ -148,23 +147,23 @@
 <dl class="method">
 <dt id="geosoft.gxapi.GXBF.crc">
 <code class="descname">crc</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(int)arg2</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXBF.crc" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Compute</span> <span class="n">CRC</span> <span class="n">of</span> <span class="n">a</span> <span class="n">file</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Compute CRC of a file.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<em>int</em>) &#8211; number of bytes to CRC</li>
-<li><strong>arg2</strong> (<em>int</em>) &#8211; CRC start (use <span class="xref std std-ref">CRC_INIT_VALUE</span> for new)</li>
+<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; number of bytes to CRC</li>
+<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; CRC start (use <a class="reference internal" href="GXGEOSOFT.html#crc-init-value"><span class="std std-ref">CRC_INIT_VALUE constant</span></a> for new)</li>
 </ul>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">CRC Value</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></p>
 </td>
 </tr>
 </tbody>
@@ -177,16 +176,16 @@
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXBF.create">
 <em class="property">static </em><code class="descname">create</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(int)arg2</em><span class="sig-paren">)</span> &rarr; GXBF:<a class="headerlink" href="#geosoft.gxapi.GXBF.create" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Create</span> <span class="n">BF</span> <span class="nb">object</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Create BF object.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<em>str</em>) &#8211; file name to open (&#8220;&#8221; is a temporary file)</li>
-<li><strong>arg2</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#bf-open-mode"><span class="std std-ref">BF_OPEN_MODE constants</span></a></li>
+<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#bf-open-mode"><span class="std std-ref">BF_OPEN_MODE constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -202,27 +201,27 @@
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Run</span><span class="o">-</span><span class="n">time</span> <span class="n">specific</span> <span class="n">directory</span> <span class="n">paths</span> <span class="n">may</span> <span class="n">be</span> <span class="n">added</span> <span class="n">the</span> <span class="n">the</span> <span class="n">front</span> <span class="n">of</span> <span class="n">file</span> <span class="n">names</span>
-<span class="k">as</span> <span class="n">follows</span><span class="p">:</span>
+<pre class="literal-block">
+Run-time specific directory paths may be added the the front of file names
+as follows:
 
-<span class="o">&lt;</span><span class="n">geosoft</span><span class="o">&gt;</span>      <span class="n">the</span> <span class="n">main</span> <span class="n">Geosoft</span> <span class="n">installation</span> <span class="n">directory</span>
-<span class="o">&lt;</span><span class="n">geosoft2</span><span class="o">&gt;</span>     <span class="n">the</span> <span class="n">secondary</span> <span class="n">Geosoft</span> <span class="n">installation</span> <span class="n">directory</span>
-<span class="o">&lt;</span><span class="n">geotemp</span><span class="o">&gt;</span>      <span class="n">the</span> <span class="n">Geosoft</span> <span class="n">temporary</span> <span class="n">file</span> <span class="n">directory</span>
-<span class="o">&lt;</span><span class="n">windows</span><span class="o">&gt;</span>      <span class="n">the</span> <span class="n">operating</span> <span class="n">system</span> <span class="n">Windows</span> <span class="n">directory</span>
-<span class="o">&lt;</span><span class="n">system</span><span class="o">&gt;</span>       <span class="n">the</span> <span class="n">operating</span> <span class="n">system</span> <span class="n">system</span> <span class="n">directory</span>
-<span class="o">&lt;</span><span class="n">other</span><span class="o">&gt;</span>        <span class="n">other</span> <span class="n">environment</span> <span class="n">variables</span>
+&lt;geosoft&gt;      the main Geosoft installation directory
+&lt;geosoft2&gt;     the secondary Geosoft installation directory
+&lt;geotemp&gt;      the Geosoft temporary file directory
+&lt;windows&gt;      the operating system Windows directory
+&lt;system&gt;       the operating system system directory
+&lt;other&gt;        other environment variables
 
-<span class="n">For</span> <span class="n">example</span> <span class="s2">&quot;&lt;geosoft&gt;/user/csv/datum.csv&quot;</span>
-</pre></div>
-</div>
+For example &quot;&lt;geosoft&gt;/user/csv/datum.csv&quot;
+</pre>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXBF.create_sbf">
 <em class="property">static </em><code class="descname">create_sbf</code><span class="sig-paren">(</span><em>(GXSBF)arg1</em>, <em>(str)arg2</em>, <em>(int)arg3</em><span class="sig-paren">)</span> &rarr; GXBF:<a class="headerlink" href="#geosoft.gxapi.GXBF.create_sbf" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Create</span> <span class="n">BF</span> <span class="nb">object</span> <span class="n">inside</span> <span class="n">an</span> <span class="n">SBF</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Create BF object inside an SBF.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -230,7 +229,7 @@
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<a class="reference internal" href="GXSBF.html#geosoft.gxapi.GXSBF" title="geosoft.gxapi.GXSBF"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXSBF</span></code></a>) &#8211; Storage</li>
 <li><strong>arg2</strong> (<em>str</em>) &#8211; file name to open (&#8220;&#8221; is a temporary file)</li>
-<li><strong>arg3</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#bf-open-mode"><span class="std std-ref">BF_OPEN_MODE constants</span></a></li>
+<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#bf-open-mode"><span class="std std-ref">BF_OPEN_MODE constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -246,9 +245,9 @@
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">see</span> <span class="n">sbf</span><span class="o">.</span><span class="n">gxh</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+see sbf.gxh
+</pre>
 </dd></dl>
 
 <dl class="method">
@@ -264,7 +263,7 @@
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">1 if at the end of the file,
 0 if not at the end of the file</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></td>
 </tr>
 </tbody>
 </table>
@@ -308,9 +307,9 @@
 <dl class="method">
 <dt id="geosoft.gxapi.GXBF.query_write">
 <code class="descname">query_write</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXBF.query_write" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Check</span> <span class="k">if</span> <span class="n">you</span> <span class="n">can</span> <span class="n">write</span> <span class="n">to</span> <span class="n">the</span> <span class="n">BF</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Check if you can write to the BF.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -318,7 +317,7 @@
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">0 - No
 1 - Yes</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></td>
 </tr>
 </tbody>
 </table>
@@ -338,8 +337,8 @@
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<em>int</em>) &#8211; Number of bytes to read</li>
-<li><strong>arg2</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#bf-encode"><span class="std std-ref">BF_ENCODE constants</span></a></li>
+<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Number of bytes to read</li>
+<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#bf-encode"><span class="std std-ref">BF_ENCODE constants</span></a></li>
 <li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; data</li>
 </ul>
 </td>
@@ -368,7 +367,7 @@
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<em>int</em>) &#8211; <span class="xref std std-ref">GS_TYPES</span> and <a class="reference internal" href="#bf-byteorder"><span class="std std-ref">BF_BYTEORDER constants</span></a></li>
+<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="GXGEOSOFT.html#gs-types"><span class="std std-ref">GS_TYPES constants</span></a> and <a class="reference internal" href="#bf-byteorder"><span class="std std-ref">BF_BYTEORDER constants</span></a></li>
 <li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; data</li>
 </ul>
 </td>
@@ -392,7 +391,7 @@ to the BF elelment type.  The byte order will be swapped
 if required.  For example, to write out a real number 3.5
 with Most-Significant_Byte first (Mortorola) convention:
 
-<a class="reference internal" href="#geosoft.gxapi.GXBF.write_double" title="geosoft.gxapi.GXBF.write_double"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXBF.write_double()</span></code></a>(hBF,BF_BYTEORDER_MSB+GS_REAL,3.5).
+\ :func:`geosoft.gxapi.GXBF.write_double`\ (hBF,BF_BYTEORDER_MSB+GS_REAL,3.5).
 
 If a byte order is not specified, the source is assumed to be
 in the native byte order of the reading/writing computer.
@@ -410,7 +409,7 @@ in the native byte order of the reading/writing computer.
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<em>int</em>) &#8211; <span class="xref std std-ref">GS_TYPES</span> and <a class="reference internal" href="#bf-byteorder"><span class="std std-ref">BF_BYTEORDER constants</span></a></li>
+<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="GXGEOSOFT.html#gs-types"><span class="std std-ref">GS_TYPES constants</span></a> and <a class="reference internal" href="#bf-byteorder"><span class="std std-ref">BF_BYTEORDER constants</span></a></li>
 <li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; data</li>
 </ul>
 </td>
@@ -434,7 +433,7 @@ to the BF elelment type.  The byte order will be swapped
 if required.  For example, to write out a real number 3.5
 with Most-Significant_Byte first (Mortorola) convention:
 
-<a class="reference internal" href="#geosoft.gxapi.GXBF.write_double" title="geosoft.gxapi.GXBF.write_double"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXBF.write_double()</span></code></a>(hBF,BF_BYTEORDER_MSB+GS_REAL,3.5).
+\ :func:`geosoft.gxapi.GXBF.write_double`\ (hBF,BF_BYTEORDER_MSB+GS_REAL,3.5).
 
 If a byte order is not specified, the source is assumed to be
 in the native byte order of the reading/writing computer.
@@ -452,7 +451,7 @@ in the native byte order of the reading/writing computer.
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<em>int</em>) &#8211; <span class="xref std std-ref">GS_TYPES</span> and <a class="reference internal" href="#bf-byteorder"><span class="std std-ref">BF_BYTEORDER constants</span></a></li>
+<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="GXGEOSOFT.html#gs-types"><span class="std std-ref">GS_TYPES constants</span></a> and <a class="reference internal" href="#bf-byteorder"><span class="std std-ref">BF_BYTEORDER constants</span></a></li>
 <li><strong>arg2</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; VV data to read, VV length is read</li>
 </ul>
 </td>
@@ -476,7 +475,7 @@ to the BF elelment type.  The byte order will be swapped
 if required.  For example, to write out a real number 3.5
 with Most-Significant_Byte first (Mortorola) convention:
 
-<a class="reference internal" href="#geosoft.gxapi.GXBF.write_double" title="geosoft.gxapi.GXBF.write_double"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXBF.write_double()</span></code></a>(hBF,BF_BYTEORDER_MSB+GS_REAL,3.5).
+\ :func:`geosoft.gxapi.GXBF.write_double`\ (hBF,BF_BYTEORDER_MSB+GS_REAL,3.5).
 
 If a byte order is not specified, the source is assumed to be
 in the native byte order of the reading/writing computer.
@@ -494,8 +493,8 @@ in the native byte order of the reading/writing computer.
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<em>int</em>) &#8211; number of bytes from reference point</li>
-<li><strong>arg2</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#bf-seek"><span class="std std-ref">BF_SEEK constants</span></a></li>
+<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; number of bytes from reference point</li>
+<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#bf-seek"><span class="std std-ref">BF_SEEK constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -511,10 +510,10 @@ in the native byte order of the reading/writing computer.
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Terminates</span> <span class="k">if</span> <span class="n">attempt</span> <span class="n">to</span> <span class="n">move</span> <span class="n">past</span> <span class="n">the</span> <span class="n">end</span> <span class="n">of</span>
-<span class="n">a</span> <span class="n">read</span><span class="o">-</span><span class="n">only</span> <span class="n">file</span><span class="o">.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+Terminates if attempt to move past the end of
+a read-only file.
+</pre>
 </dd></dl>
 
 <dl class="method">
@@ -527,7 +526,7 @@ in the native byte order of the reading/writing computer.
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#bf-close"><span class="std std-ref">BF_CLOSE constants</span></a></td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#bf-close"><span class="std std-ref">BF_CLOSE constants</span></a></td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Nothing</td>
 </tr>
@@ -552,7 +551,7 @@ in the native byte order of the reading/writing computer.
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">File size in bytes.</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></td>
 </tr>
 </tbody>
 </table>
@@ -573,7 +572,7 @@ in the native byte order of the reading/writing computer.
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Current file pointer location</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></td>
 </tr>
 </tbody>
 </table>
@@ -593,7 +592,7 @@ in the native byte order of the reading/writing computer.
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#bf-encode"><span class="std std-ref">BF_ENCODE constants</span></a></li>
+<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#bf-encode"><span class="std std-ref">BF_ENCODE constants</span></a></li>
 <li><strong>arg2</strong> (<em>str</em>) &#8211; string to write out</li>
 </ul>
 </td>
@@ -614,9 +613,9 @@ in the native byte order of the reading/writing computer.
 <dl class="method">
 <dt id="geosoft.gxapi.GXBF.write_data_null">
 <code class="descname">write_data_null</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXBF.write_data_null" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Writes</span> <span class="n">a</span> <span class="n">null</span> <span class="n">byte</span> <span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="n">to</span> <span class="n">BF</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Writes a null byte (0) to BF
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -643,7 +642,7 @@ in the native byte order of the reading/writing computer.
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<em>int</em>) &#8211; <span class="xref std std-ref">GS_TYPES</span> and <a class="reference internal" href="#bf-byteorder"><span class="std std-ref">BF_BYTEORDER constants</span></a></li>
+<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="GXGEOSOFT.html#gs-types"><span class="std std-ref">GS_TYPES constants</span></a> and <a class="reference internal" href="#bf-byteorder"><span class="std std-ref">BF_BYTEORDER constants</span></a></li>
 <li><strong>arg2</strong> (<em>float</em>) &#8211; data</li>
 </ul>
 </td>
@@ -660,13 +659,13 @@ in the native byte order of the reading/writing computer.
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">See</span> <span class="n">comments</span> <span class="n">on</span> <span class="n">byte</span> <span class="n">order</span> <span class="k">for</span> <span class="n">the</span> <span class="n">Read</span><span class="o">..</span> <span class="n">functions</span> <span class="k">if</span> <span class="n">you</span>
-<span class="n">want</span> <span class="n">to</span> <span class="n">enforce</span> <span class="n">a</span> <span class="n">certain</span> <span class="n">byte</span> <span class="n">order</span><span class="o">.</span>
+<pre class="literal-block">
+See comments on byte order for the Read.. functions if you
+want to enforce a certain byte order.
 
-<span class="n">If</span> <span class="n">a</span> <span class="n">byte</span> <span class="n">order</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">specified</span><span class="p">,</span> <span class="n">the</span> <span class="n">data</span> <span class="ow">is</span> <span class="n">written</span>
-<span class="ow">in</span> <span class="n">the</span> <span class="n">native</span> <span class="n">byte</span> <span class="n">order</span> <span class="n">of</span> <span class="n">the</span> <span class="n">writing</span> <span class="n">computer</span><span class="o">.</span>
-</pre></div>
-</div>
+If a byte order is not specified, the data is written
+in the native byte order of the writing computer.
+</pre>
 </dd></dl>
 
 <dl class="method">
@@ -680,8 +679,8 @@ in the native byte order of the reading/writing computer.
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<em>int</em>) &#8211; <span class="xref std std-ref">GS_TYPES</span> and <a class="reference internal" href="#bf-byteorder"><span class="std std-ref">BF_BYTEORDER constants</span></a></li>
-<li><strong>arg2</strong> (<em>int</em>) &#8211; data</li>
+<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="GXGEOSOFT.html#gs-types"><span class="std std-ref">GS_TYPES constants</span></a> and <a class="reference internal" href="#bf-byteorder"><span class="std std-ref">BF_BYTEORDER constants</span></a></li>
+<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; data</li>
 </ul>
 </td>
 </tr>
@@ -697,13 +696,13 @@ in the native byte order of the reading/writing computer.
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">See</span> <span class="n">comments</span> <span class="n">on</span> <span class="n">byte</span> <span class="n">order</span> <span class="k">for</span> <span class="n">the</span> <span class="n">Read</span><span class="o">..</span> <span class="n">functions</span> <span class="k">if</span> <span class="n">you</span>
-<span class="n">want</span> <span class="n">to</span> <span class="n">enforce</span> <span class="n">a</span> <span class="n">certain</span> <span class="n">byte</span> <span class="n">order</span><span class="o">.</span>
+<pre class="literal-block">
+See comments on byte order for the Read.. functions if you
+want to enforce a certain byte order.
 
-<span class="n">If</span> <span class="n">a</span> <span class="n">byte</span> <span class="n">order</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">specified</span><span class="p">,</span> <span class="n">the</span> <span class="n">data</span> <span class="ow">is</span> <span class="n">written</span>
-<span class="ow">in</span> <span class="n">the</span> <span class="n">native</span> <span class="n">byte</span> <span class="n">order</span> <span class="n">of</span> <span class="n">the</span> <span class="n">writing</span> <span class="n">computer</span><span class="o">.</span>
-</pre></div>
-</div>
+If a byte order is not specified, the data is written
+in the native byte order of the writing computer.
+</pre>
 </dd></dl>
 
 <dl class="method">
@@ -717,7 +716,7 @@ in the native byte order of the reading/writing computer.
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<em>int</em>) &#8211; <span class="xref std std-ref">GS_TYPES</span> and <a class="reference internal" href="#bf-byteorder"><span class="std std-ref">BF_BYTEORDER constants</span></a></li>
+<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="GXGEOSOFT.html#gs-types"><span class="std std-ref">GS_TYPES constants</span></a> and <a class="reference internal" href="#bf-byteorder"><span class="std std-ref">BF_BYTEORDER constants</span></a></li>
 <li><strong>arg2</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; data</li>
 </ul>
 </td>
@@ -734,13 +733,13 @@ in the native byte order of the reading/writing computer.
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">See</span> <span class="n">comments</span> <span class="n">on</span> <span class="n">byte</span> <span class="n">order</span> <span class="k">for</span> <span class="n">the</span> <span class="n">Read</span><span class="o">..</span> <span class="n">functions</span> <span class="k">if</span> <span class="n">you</span>
-<span class="n">want</span> <span class="n">to</span> <span class="n">enforce</span> <span class="n">a</span> <span class="n">certain</span> <span class="n">byte</span> <span class="n">order</span><span class="o">.</span>
+<pre class="literal-block">
+See comments on byte order for the Read.. functions if you
+want to enforce a certain byte order.
 
-<span class="n">If</span> <span class="n">a</span> <span class="n">byte</span> <span class="n">order</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">specified</span><span class="p">,</span> <span class="n">the</span> <span class="n">data</span> <span class="ow">is</span> <span class="n">written</span>
-<span class="ow">in</span> <span class="n">the</span> <span class="n">native</span> <span class="n">byte</span> <span class="n">order</span> <span class="n">of</span> <span class="n">the</span> <span class="n">writing</span> <span class="n">computer</span><span class="o">.</span>
-</pre></div>
-</div>
+If a byte order is not specified, the data is written
+in the native byte order of the writing computer.
+</pre>
 </dd></dl>
 
 </dd></dl>
@@ -881,12 +880,27 @@ in the native byte order of the reading/writing computer.
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.1 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li> 
       </ul>
     </div>
+
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2016, Geosoft Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.6.
+        &#169; Copyright 2017, Geosoft Inc.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
     </div>
+<div class="footer">This page uses <a href="http://analytics.google.com/">
+Google Analytics</a> to collect statistics. You can disable it by blocking
+the JavaScript coming from www.google-analytics.com.
+<script type="text/javascript">
+  (function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ?
+              'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+  })();
+</script>
+</div>
+
   </body>
 </html>

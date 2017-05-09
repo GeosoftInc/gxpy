@@ -1,3 +1,4 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -5,19 +6,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <script type="text/javascript">
-
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-87443115-1']);
-      _gaq.push(['_trackPageview']);
-
-      (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
-    </script>
-    <title>GXTIN class &#8212; Geosoft GX Python API 9.1 documentation</title>
+    
+    <title>GXTIN class &#8212; Geosoft GX Python API 9.2.0 documentation</title>
     
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -25,16 +15,25 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '9.1',
+        VERSION:     '9.2.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="Geosoft GX Python API 9.1 documentation" href="index.html" /> 
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+ 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-87443115-1']);
+  _gaq.push(['_trackPageview']);
+</script>
+
   </head>
   <body role="document">
     <div class="related" role="navigation" aria-label="related navigation">
@@ -46,7 +45,7 @@
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.1 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -54,7 +53,7 @@
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="_sources/GXTIN.txt"
+      <li><a href="_sources/GXTIN.rst.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
@@ -81,14 +80,14 @@
 <dl class="class">
 <dt id="geosoft.gxapi.GXTIN">
 <em class="property">class </em><code class="descclassname">geosoft.gxapi.</code><code class="descname">GXTIN</code><a class="headerlink" href="#geosoft.gxapi.GXTIN" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">TIN</span> <span class="k">class</span> <span class="nc">calculates</span> <span class="n">the</span> <span class="n">Delaunay</span> <span class="n">triangulation</span> <span class="n">of</span> <span class="n">the</span>
-<span class="n">positions</span> <span class="ow">in</span> <span class="n">a</span> <span class="n">database</span><span class="o">.</span> <span class="n">This</span> <span class="ow">is</span> <span class="n">the</span> <span class="s2">&quot;best&quot;</span> <span class="nb">set</span> <span class="n">of</span> <span class="n">triangles</span>
-<span class="n">that</span> <span class="n">can</span> <span class="n">be</span> <span class="n">formed</span> <span class="kn">from</span> <span class="nn">irregularly</span> <span class="n">distributed</span> <span class="n">points</span><span class="o">.</span> <span class="n">The</span>
-<span class="n">serialized</span> <span class="n">TIN</span> <span class="n">files</span> <span class="n">can</span> <span class="n">be</span> <span class="n">used</span> <span class="k">for</span> <span class="n">gridding</span> <span class="n">using</span> <span class="n">the</span>
-<span class="n">Tin</span><span class="o">-</span><span class="n">based</span> <span class="n">Nearest</span> <span class="n">Neighbour</span> <span class="n">Algorithm</span><span class="p">,</span> <span class="ow">or</span> <span class="k">for</span> <span class="n">plotting</span> <span class="n">the</span>
-<span class="n">Delaunay</span> <span class="n">triangles</span> <span class="ow">or</span> <span class="n">Voronoi</span> <span class="n">cells</span> <span class="n">to</span> <span class="n">a</span> <span class="nb">map</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+The TIN class calculates the Delaunay triangulation of the
+positions in a database. This is the &quot;best&quot; set of triangles
+that can be formed from irregularly distributed points. The
+serialized TIN files can be used for gridding using the
+Tin-based Nearest Neighbour Algorithm, or for plotting the
+Delaunay triangles or Voronoi cells to a map.
+</pre>
 <dl class="method">
 <dt id="geosoft.gxapi.GXTIN.copy">
 <code class="descname">copy</code><span class="sig-paren">(</span><em>(GXTIN)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXTIN.copy" title="Permalink to this definition">¶</a></dt>
@@ -115,9 +114,9 @@
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXTIN.create">
 <em class="property">static </em><code class="descname">create</code><span class="sig-paren">(</span><em>(GXVV)arg1</em>, <em>(GXVV)arg2</em>, <em>(GXVV)arg3</em><span class="sig-paren">)</span> &rarr; GXTIN:<a class="headerlink" href="#geosoft.gxapi.GXTIN.create" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="n">method</span> <span class="n">creates</span> <span class="n">a</span> <span class="n">TIN</span> <span class="nb">object</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+This method creates a TIN object.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -141,11 +140,11 @@
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">CreateTIN</span> <span class="n">does</span> <span class="n">the</span> <span class="n">TIN</span> <span class="n">calculation</span><span class="o">.</span>
-<span class="n">The</span> <span class="n">Z</span> <span class="n">values</span> <span class="n">are</span> <span class="ow">not</span> <span class="n">required</span><span class="p">,</span> <span class="ow">and</span> <span class="n">a</span> <span class="mi">0</span><span class="o">-</span><span class="n">length</span> <span class="n">VV</span> <span class="n">can</span> <span class="n">be</span> <span class="n">used</span> <span class="n">to</span> <span class="n">indicate</span>
-<span class="n">the</span> <span class="n">values</span> <span class="n">are</span> <span class="ow">not</span> <span class="n">to</span> <span class="n">be</span> <span class="n">used</span><span class="o">.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+CreateTIN does the TIN calculation.
+The Z values are not required, and a 0-length VV can be used to indicate
+the values are not to be used.
+</pre>
 </dd></dl>
 
 <dl class="staticmethod">
@@ -204,9 +203,9 @@
 <dl class="method">
 <dt id="geosoft.gxapi.GXTIN.get_convex_hull">
 <code class="descname">get_convex_hull</code><span class="sig-paren">(</span><em>(GXPLY)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXTIN.get_convex_hull" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">the</span> <span class="n">convex</span> <span class="n">hull</span> <span class="n">of</span> <span class="n">the</span> <span class="n">TIN</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Get the convex hull of the TIN.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -223,18 +222,18 @@
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">convex</span> <span class="n">hull</span> <span class="ow">is</span> <span class="n">the</span> <span class="n">outside</span> <span class="n">boundary</span> <span class="n">of</span> <span class="n">the</span>
-<span class="n">triangulated</span> <span class="n">region</span><span class="o">.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+The convex hull is the outside boundary of the
+triangulated region.
+</pre>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXTIN.get_ipj">
 <code class="descname">get_ipj</code><span class="sig-paren">(</span><em>(GXIPJ)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXTIN.get_ipj" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">the</span> <span class="n">projection</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Get the projection.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -255,9 +254,9 @@
 <dl class="method">
 <dt id="geosoft.gxapi.GXTIN.get_joins">
 <code class="descname">get_joins</code><span class="sig-paren">(</span><em>(GXVV)arg1</em>, <em>(GXVV)arg2</em>, <em>(GXVV)arg3</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXTIN.get_joins" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">joins</span> <span class="kn">from</span> <span class="nn">a</span> <span class="n">TIN</span> <span class="n">mesh</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Get joins from a TIN mesh.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -281,24 +280,24 @@
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">join</span> <span class="n">information</span> <span class="ow">is</span> <span class="n">returned</span> <span class="ow">in</span> <span class="n">three</span> <span class="n">VVs</span><span class="o">.</span>
-<span class="o">-</span> <span class="n">The</span> <span class="n">joins</span> <span class="n">VV</span> <span class="ow">is</span> <span class="n">a</span> <span class="nb">list</span> <span class="n">off</span> <span class="n">the</span> <span class="n">adjacent</span> <span class="n">nodes</span> <span class="k">for</span>
-  <span class="n">each</span> <span class="n">node</span><span class="p">,</span> <span class="n">arranged</span> <span class="k">for</span> <span class="mi">1</span><span class="n">st</span> <span class="n">node</span><span class="p">,</span> <span class="mi">2</span><span class="n">nd</span> <span class="n">node</span> <span class="n">etc</span><span class="o">.</span>
-<span class="o">-</span> <span class="n">The</span> <span class="n">index</span> <span class="n">VV</span> <span class="n">gives</span> <span class="n">the</span> <span class="n">starting</span> <span class="n">index</span> <span class="ow">in</span> <span class="n">the</span>
-  <span class="n">joins</span> <span class="n">VV</span> <span class="k">for</span> <span class="n">the</span> <span class="n">adjacent</span> <span class="n">nodes</span> <span class="n">to</span> <span class="n">each</span> <span class="n">node</span><span class="o">.</span>
-<span class="o">-</span> <span class="n">The</span> <span class="n">number</span> <span class="n">VV</span> <span class="n">gives</span> <span class="n">the</span> <span class="n">number</span> <span class="n">of</span> <span class="n">adjacent</span> <span class="n">nodes</span>
-  <span class="k">for</span> <span class="n">each</span> <span class="n">node</span><span class="o">.</span>
-<span class="n">All</span> <span class="n">VVs</span> <span class="n">must</span> <span class="n">be</span> <span class="nb">type</span> <span class="n">GS_LONG</span><span class="o">.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+The join information is returned in three VVs.
+- The joins VV is a list off the adjacent nodes for
+  each node, arranged for 1st node, 2nd node etc.
+- The index VV gives the starting index in the
+  joins VV for the adjacent nodes to each node.
+- The number VV gives the number of adjacent nodes
+  for each node.
+All VVs must be type GS_LONG.
+</pre>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXTIN.get_mesh">
 <code class="descname">get_mesh</code><span class="sig-paren">(</span><em>(GXVV)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXTIN.get_mesh" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">lines</span> <span class="kn">from</span> <span class="nn">a</span> <span class="n">TIN</span> <span class="n">mesh</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Get lines from a TIN mesh.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -319,9 +318,9 @@
 <dl class="method">
 <dt id="geosoft.gxapi.GXTIN.get_nodes">
 <code class="descname">get_nodes</code><span class="sig-paren">(</span><em>(GXVV)arg1</em>, <em>(GXVV)arg2</em>, <em>(GXVV)arg3</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXTIN.get_nodes" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">the</span> <span class="n">X</span><span class="p">,</span><span class="n">Y</span> <span class="n">locations</span> <span class="ow">and</span> <span class="n">Z</span> <span class="n">values</span> <span class="n">of</span> <span class="n">the</span> <span class="n">TIN</span> <span class="n">nodes</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Get the X,Y locations and Z values of the TIN nodes.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -345,10 +344,10 @@
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">If</span> <span class="n">this</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">a</span> <span class="n">Z</span><span class="o">-</span><span class="n">valued</span> <span class="n">TIN</span><span class="p">,</span> <span class="n">the</span> <span class="n">Z</span> <span class="n">values</span> <span class="n">will</span>
-<span class="n">be</span> <span class="n">dummies</span><span class="o">.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+If this is not a Z-valued TIN, the Z values will
+be dummies.
+</pre>
 </dd></dl>
 
 <dl class="method">
@@ -362,7 +361,7 @@
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<em>int</em>) &#8211; triangle index [0...N-1]</li>
+<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; triangle index [0...N-1]</li>
 <li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; X0</li>
 <li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Y0</li>
 <li><strong>arg4</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; X1</li>
@@ -388,9 +387,9 @@
 <dl class="method">
 <dt id="geosoft.gxapi.GXTIN.get_triangles">
 <code class="descname">get_triangles</code><span class="sig-paren">(</span><em>(GXVV)arg1</em>, <em>(GXVV)arg2</em>, <em>(GXVV)arg3</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXTIN.get_triangles" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">the</span> <span class="n">triangle</span> <span class="n">nodes</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Get the triangle nodes.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -418,9 +417,9 @@
 <dl class="method">
 <dt id="geosoft.gxapi.GXTIN.get_voronoi_edges">
 <code class="descname">get_voronoi_edges</code><span class="sig-paren">(</span><em>(GXVV)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXTIN.get_voronoi_edges" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">line</span> <span class="n">segments</span> <span class="n">defining</span> <span class="n">Voronoi</span> <span class="n">cells</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Get line segments defining Voronoi cells.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -441,9 +440,9 @@
 <dl class="method">
 <dt id="geosoft.gxapi.GXTIN.interp_vv">
 <code class="descname">interp_vv</code><span class="sig-paren">(</span><em>(GXVV)arg1</em>, <em>(GXVV)arg2</em>, <em>(GXVV)arg3</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXTIN.interp_vv" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Interp</span> <span class="n">TINned</span> <span class="n">values</span> <span class="n">using</span> <span class="n">the</span> <span class="n">natural</span> <span class="n">neighbour</span> <span class="n">method</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Interp TINned values using the natural neighbour method.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -467,19 +466,19 @@
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">TIN</span> <span class="n">have</span> <span class="n">been</span> <span class="n">created</span> <span class="n">using</span> <span class="nb">max</span> <span class="n">length</span> <span class="o">=</span> <span class="n">rDUMMY</span> <span class="n">to</span>
-<span class="n">ensure</span> <span class="n">that</span> <span class="n">the</span> <span class="n">TIN</span> <span class="n">has</span> <span class="n">a</span> <span class="n">convex</span> <span class="n">hull</span> <span class="p">(</span><span class="n">otherwise</span> <span class="n">the</span>
-<span class="n">routine</span> <span class="n">that</span> <span class="n">locates</span> <span class="n">the</span> <span class="n">triangle</span> <span class="k">for</span> <span class="n">a</span> <span class="n">given</span> <span class="n">location</span> <span class="n">may</span> <span class="n">fail</span><span class="p">)</span><span class="o">.</span>
-<span class="n">The</span> <span class="n">TIN</span> <span class="n">must</span> <span class="n">also</span> <span class="n">have</span> <span class="n">been</span> <span class="n">created</span> <span class="n">using</span> <span class="n">the</span> <span class="n">Z</span> <span class="n">values</span><span class="o">.</span>
-<span class="n">Values</span> <span class="n">located</span> <span class="n">outside</span> <span class="n">the</span> <span class="n">convex</span> <span class="n">hull</span> <span class="n">are</span> <span class="nb">set</span> <span class="n">to</span> <span class="n">rDUMMY</span><span class="o">.</span>
-<span class="n">The</span> <span class="n">method</span> <span class="ow">is</span> <span class="n">based</span> <span class="n">on</span> <span class="n">the</span> <span class="n">following</span> <span class="n">paper</span><span class="p">:</span>
+<pre class="literal-block">
+The TIN have been created using max length = rDUMMY to
+ensure that the TIN has a convex hull (otherwise the
+routine that locates the triangle for a given location may fail).
+The TIN must also have been created using the Z values.
+Values located outside the convex hull are set to rDUMMY.
+The method is based on the following paper:
 
-<span class="n">Sambridge</span><span class="p">,</span> <span class="n">M</span><span class="o">.</span><span class="p">,</span> <span class="n">Braun</span><span class="p">,</span> <span class="n">J</span><span class="o">.</span><span class="p">,</span> <span class="ow">and</span> <span class="n">McQueen</span><span class="p">,</span> <span class="n">H</span><span class="o">.</span><span class="p">,</span> <span class="mi">1995</span><span class="p">,</span>
-<span class="n">Geophysical</span> <span class="n">parameterization</span> <span class="ow">and</span> <span class="n">interpolation</span> <span class="n">of</span> <span class="n">irregular</span>
-<span class="n">data</span> <span class="n">using</span> <span class="n">natural</span> <span class="n">neighbours</span><span class="p">:</span>
-<span class="n">Geophysical</span> <span class="n">Journal</span> <span class="n">International</span><span class="p">,</span> <span class="mi">122</span> <span class="n">p</span><span class="o">.</span> <span class="mi">837</span><span class="o">-</span><span class="mf">857.</span>
-</pre></div>
-</div>
+Sambridge, M., Braun, J., and McQueen, H., 1995,
+Geophysical parameterization and interpolation of irregular
+data using natural neighbours:
+Geophysical Journal International, 122 p. 837-857.
+</pre>
 </dd></dl>
 
 <dl class="method">
@@ -501,16 +500,16 @@
 <dl class="method">
 <dt id="geosoft.gxapi.GXTIN.is_z_valued">
 <code class="descname">is_z_valued</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXTIN.is_z_valued" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span>Does the TIN contain Z values with each X,Y?
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Does the TIN contain Z values with each X,Y?
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Returns <code class="docutils literal"><span class="pre">True</span></code> if Z values are defined in the TIN</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></td>
 </tr>
 </tbody>
 </table>
@@ -548,30 +547,30 @@
 <p><span class="versionmodified">New in version 5.1.4.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">TIN</span> <span class="n">have</span> <span class="n">been</span> <span class="n">created</span> <span class="n">using</span> <span class="nb">max</span> <span class="n">length</span> <span class="o">=</span> <span class="n">rDUMMY</span> <span class="n">to</span>
-<span class="n">ensure</span> <span class="n">that</span> <span class="n">the</span> <span class="n">TIN</span> <span class="n">has</span> <span class="n">a</span> <span class="n">convex</span> <span class="n">hull</span> <span class="p">(</span><span class="n">otherwise</span> <span class="n">the</span>
-<span class="n">routine</span> <span class="n">that</span> <span class="n">locates</span> <span class="n">the</span> <span class="n">triangle</span> <span class="k">for</span> <span class="n">a</span> <span class="n">given</span> <span class="n">location</span> <span class="n">may</span> <span class="n">fail</span><span class="p">)</span><span class="o">.</span>
-<span class="n">The</span> <span class="n">TIN</span> <span class="n">must</span> <span class="n">also</span> <span class="n">have</span> <span class="n">been</span> <span class="n">created</span> <span class="n">using</span> <span class="n">the</span> <span class="n">Z</span> <span class="n">values</span><span class="o">.</span>
-<span class="n">Values</span> <span class="n">located</span> <span class="n">outside</span> <span class="n">the</span> <span class="n">convex</span> <span class="n">hull</span> <span class="n">are</span> <span class="nb">set</span> <span class="n">to</span> <span class="n">rDUMMY</span><span class="o">.</span>
+<pre class="literal-block">
+The TIN have been created using max length = rDUMMY to
+ensure that the TIN has a convex hull (otherwise the
+routine that locates the triangle for a given location may fail).
+The TIN must also have been created using the Z values.
+Values located outside the convex hull are set to rDUMMY.
 
-<span class="n">The</span> <span class="n">values</span> <span class="n">are</span> <span class="nb">set</span> <span class="n">assuming</span> <span class="n">that</span> <span class="n">each</span> <span class="n">TIN</span> <span class="n">triangle</span> <span class="n">defines</span> <span class="n">a</span>
-<span class="n">plane</span><span class="o">.</span>
-</pre></div>
-</div>
+The values are set assuming that each TIN triangle defines a
+plane.
+</pre>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXTIN.locate_triangle">
 <code class="descname">locate_triangle</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(float)arg2</em>, <em>(float)arg3</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXTIN.locate_triangle" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">the</span> <span class="n">index</span> <span class="n">of</span> <span class="n">the</span> <span class="n">triangle</span> <span class="n">containing</span> <span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Get the index of the triangle containing X, Y.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<em>int</em>) &#8211; seed triangle (can be iDummy or &lt;0)</li>
+<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; seed triangle (can be iDummy or &lt;0)</li>
 <li><strong>arg2</strong> (<em>float</em>) &#8211; target X location</li>
 <li><strong>arg3</strong> (<em>float</em>) &#8211; target Y location</li>
 </ul>
@@ -580,7 +579,7 @@
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">The index of the triangle containing X, Y.</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></p>
 </td>
 </tr>
 </tbody>
@@ -589,28 +588,28 @@
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Index</span> <span class="n">returned</span> <span class="n">begins</span> <span class="n">at</span> <span class="mi">0</span><span class="p">,</span> <span class="n">but</span> <span class="n">could</span> <span class="n">be</span> <span class="n">negative</span><span class="o">.</span>
-<span class="o">-</span><span class="mi">1</span> <span class="n">If</span> <span class="n">X</span><span class="p">,</span><span class="n">Y</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">contained</span> <span class="ow">in</span> <span class="n">a</span> <span class="n">triangle</span> <span class="p">(</span><span class="ow">or</span> <span class="n">triangle</span> <span class="ow">not</span> <span class="n">found</span><span class="p">)</span>
-<span class="o">-</span><span class="mi">2</span> <span class="n">If</span> <span class="n">the</span> <span class="n">location</span> <span class="ow">is</span> <span class="n">on</span> <span class="n">an</span> <span class="n">edge</span>
-   <span class="n">This</span> <span class="ow">is</span> <span class="k">for</span> <span class="s2">&quot;fall-back&quot;</span> <span class="n">purposes</span> <span class="n">only</span><span class="o">.</span>
-     <span class="n">Frequently</span> <span class="n">edge</span> <span class="n">positions</span> <span class="n">are</span> <span class="n">located</span> <span class="k">as</span> <span class="n">being</span> <span class="n">part</span> <span class="n">of</span>
-   <span class="n">a</span> <span class="n">triangle</span><span class="p">,</span> <span class="n">so</span> <span class="n">do</span> <span class="ow">not</span> <span class="n">rely</span> <span class="n">on</span> <span class="n">this</span> <span class="n">result</span> <span class="n">to</span> <span class="n">determine</span>
-   <span class="k">if</span> <span class="n">a</span> <span class="n">node</span> <span class="n">position</span> <span class="ow">is</span> <span class="n">on</span> <span class="n">an</span> <span class="n">edge</span><span class="o">.</span>
-<span class="o">-</span><span class="mi">3</span> <span class="n">If</span> <span class="n">the</span> <span class="n">location</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">vertex</span><span class="o">.</span>
-   <span class="n">This</span> <span class="ow">is</span> <span class="k">for</span> <span class="s2">&quot;fall-back&quot;</span> <span class="n">purposes</span> <span class="n">only</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">code</span><span class="o">.</span>
-   <span class="n">Normal</span> <span class="n">operation</span> <span class="ow">is</span> <span class="n">to</span> <span class="n">include</span> <span class="n">a</span> <span class="n">node</span> <span class="n">position</span>
-   <span class="n">inside</span> <span class="n">a</span> <span class="n">triangle</span><span class="p">,</span> <span class="n">so</span> <span class="n">do</span> <span class="ow">not</span> <span class="n">rely</span> <span class="n">on</span> <span class="n">this</span> <span class="n">result</span> <span class="n">to</span> <span class="n">determine</span>
-   <span class="k">if</span> <span class="n">a</span> <span class="n">node</span> <span class="n">position</span> <span class="ow">is</span> <span class="nb">input</span><span class="o">.</span>                
-</pre></div>
-</div>
+<pre class="literal-block">
+Index returned begins at 0, but could be negative.
+-1 If X,Y is not contained in a triangle (or triangle not found)
+-2 If the location is on an edge
+   This is for &quot;fall-back&quot; purposes only.
+     Frequently edge positions are located as being part of
+   a triangle, so do not rely on this result to determine
+   if a node position is on an edge.
+-3 If the location is a vertex.
+   This is for &quot;fall-back&quot; purposes only in the code.
+   Normal operation is to include a node position
+   inside a triangle, so do not rely on this result to determine
+   if a node position is input.               
+</pre>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXTIN.nearest_vv">
 <code class="descname">nearest_vv</code><span class="sig-paren">(</span><em>(GXVV)arg1</em>, <em>(GXVV)arg2</em>, <em>(GXVV)arg3</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXTIN.nearest_vv" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Interp</span> <span class="n">TINned</span> <span class="n">values</span> <span class="n">using</span> <span class="n">the</span> <span class="n">nearest</span> <span class="n">neighbour</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Interp TINned values using the nearest neighbour.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -634,16 +633,16 @@
 <p><span class="versionmodified">New in version 6.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">TIN</span> <span class="n">have</span> <span class="n">been</span> <span class="n">created</span> <span class="n">using</span> <span class="nb">max</span> <span class="n">length</span> <span class="o">=</span> <span class="n">rDUMMY</span> <span class="n">to</span>
-<span class="n">ensure</span> <span class="n">that</span> <span class="n">the</span> <span class="n">TIN</span> <span class="n">has</span> <span class="n">a</span> <span class="n">convex</span> <span class="n">hull</span> <span class="p">(</span><span class="n">otherwise</span> <span class="n">the</span>
-<span class="n">routine</span> <span class="n">that</span> <span class="n">locates</span> <span class="n">the</span> <span class="n">triangle</span> <span class="k">for</span> <span class="n">a</span> <span class="n">given</span> <span class="n">location</span> <span class="n">may</span> <span class="n">fail</span><span class="p">)</span><span class="o">.</span>
-<span class="n">The</span> <span class="n">TIN</span> <span class="n">must</span> <span class="n">also</span> <span class="n">have</span> <span class="n">been</span> <span class="n">created</span> <span class="n">using</span> <span class="n">the</span> <span class="n">Z</span> <span class="n">values</span><span class="o">.</span>
-<span class="n">Values</span> <span class="n">located</span> <span class="n">outside</span> <span class="n">the</span> <span class="n">convex</span> <span class="n">hull</span> <span class="n">are</span> <span class="nb">set</span> <span class="n">to</span> <span class="n">rDUMMY</span><span class="o">.</span>
+<pre class="literal-block">
+The TIN have been created using max length = rDUMMY to
+ensure that the TIN has a convex hull (otherwise the
+routine that locates the triangle for a given location may fail).
+The TIN must also have been created using the Z values.
+Values located outside the convex hull are set to rDUMMY.
 
-<span class="n">Within</span> <span class="n">each</span> <span class="n">voronoi</span> <span class="n">triangle</span><span class="p">,</span> <span class="n">the</span> <span class="n">Z</span> <span class="n">value</span> <span class="n">of</span> <span class="n">node</span> <span class="n">closest</span> <span class="n">to</span> <span class="n">the</span> <span class="nb">input</span>
-<span class="n">X</span><span class="p">,</span><span class="n">Y</span> <span class="n">location</span> <span class="ow">is</span> <span class="n">returned</span><span class="o">.</span>
-</pre></div>
-</div>
+Within each voronoi triangle, the Z value of node closest to the input
+X,Y location is returned.
+</pre>
 </dd></dl>
 
 <dl class="method">
@@ -658,7 +657,7 @@
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The number of nodes in the TIN</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></td>
 </tr>
 </tbody>
 </table>
@@ -686,9 +685,9 @@
 <dl class="method">
 <dt id="geosoft.gxapi.GXTIN.range_xy">
 <code class="descname">range_xy</code><span class="sig-paren">(</span><em>(float_ref)arg1</em>, <em>(float_ref)arg2</em>, <em>(float_ref)arg3</em>, <em>(float_ref)arg4</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXTIN.range_xy" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Find</span> <span class="n">the</span> <span class="nb">range</span> <span class="ow">in</span> <span class="n">X</span> <span class="ow">and</span> <span class="n">Y</span> <span class="n">of</span> <span class="n">the</span> <span class="n">TINned</span> <span class="n">region</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Find the range in X and Y of the TINned region.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -713,12 +712,12 @@
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">TINned</span> <span class="nb">range</span> <span class="ow">is</span> <span class="n">the</span> <span class="nb">range</span> <span class="n">of</span> <span class="n">X</span> <span class="ow">and</span> <span class="n">Y</span> <span class="n">covered</span> <span class="n">by</span>
-<span class="n">the</span> <span class="n">TIN</span> <span class="n">triangles</span><span class="o">.</span> <span class="n">It</span> <span class="n">can</span> <span class="n">thus</span> <span class="n">be</span> <span class="n">less</span> <span class="n">than</span> <span class="n">the</span> <span class="n">full</span>
-<span class="n">X</span> <span class="ow">and</span> <span class="n">Y</span> <span class="nb">range</span> <span class="n">of</span> <span class="n">the</span> <span class="n">nodes</span> <span class="n">themselves</span><span class="p">,</span> <span class="k">if</span> <span class="n">a</span> <span class="n">full</span>
-<span class="n">convex</span> <span class="n">hull</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">calculated</span><span class="o">.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+The TINned range is the range of X and Y covered by
+the TIN triangles. It can thus be less than the full
+X and Y range of the nodes themselves, if a full
+convex hull is not calculated.
+</pre>
 </dd></dl>
 
 <dl class="method">
@@ -747,9 +746,9 @@
 <dl class="method">
 <dt id="geosoft.gxapi.GXTIN.set_ipj">
 <code class="descname">set_ipj</code><span class="sig-paren">(</span><em>(GXIPJ)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXTIN.set_ipj" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Set</span> <span class="n">the</span> <span class="n">projection</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Set the projection.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -770,16 +769,16 @@
 <dl class="method">
 <dt id="geosoft.gxapi.GXTIN.triangles">
 <code class="descname">triangles</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXTIN.triangles" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Returns</span> <span class="n">the</span> <span class="n">number</span> <span class="n">of</span> <span class="n">triangles</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">TIN</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Returns the number of triangles in the TIN.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The number of triangles in the TIN</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></td>
 </tr>
 </tbody>
 </table>
@@ -807,12 +806,27 @@
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.1 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li> 
       </ul>
     </div>
+
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2016, Geosoft Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.6.
+        &#169; Copyright 2017, Geosoft Inc.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
     </div>
+<div class="footer">This page uses <a href="http://analytics.google.com/">
+Google Analytics</a> to collect statistics. You can disable it by blocking
+the JavaScript coming from www.google-analytics.com.
+<script type="text/javascript">
+  (function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ?
+              'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+  })();
+</script>
+</div>
+
   </body>
 </html>

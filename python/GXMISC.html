@@ -1,3 +1,4 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -5,19 +6,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <script type="text/javascript">
-
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-87443115-1']);
-      _gaq.push(['_trackPageview']);
-
-      (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
-    </script>
-    <title>GXMISC class &#8212; Geosoft GX Python API 9.1 documentation</title>
+    
+    <title>GXMISC class &#8212; Geosoft GX Python API 9.2.0 documentation</title>
     
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -25,16 +15,25 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '9.1',
+        VERSION:     '9.2.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="Geosoft GX Python API 9.1 documentation" href="index.html" /> 
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+ 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-87443115-1']);
+  _gaq.push(['_trackPageview']);
+</script>
+
   </head>
   <body role="document">
     <div class="related" role="navigation" aria-label="related navigation">
@@ -46,7 +45,7 @@
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.1 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -54,7 +53,7 @@
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="_sources/GXMISC.txt"
+      <li><a href="_sources/GXMISC.rst.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
@@ -81,16 +80,16 @@
 <dl class="class">
 <dt id="geosoft.gxapi.GXMISC">
 <em class="property">class </em><code class="descclassname">geosoft.gxapi.</code><code class="descname">GXMISC</code><a class="headerlink" href="#geosoft.gxapi.GXMISC" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Not</span> <span class="n">a</span> <span class="n">class</span><span class="o">.</span> <span class="n">A</span> <span class="n">catch</span><span class="o">-</span><span class="nb">all</span> <span class="k">for</span> <span class="n">miscellaneous</span> <span class="n">geophysical</span>
-<span class="n">methods</span><span class="p">,</span> <span class="n">primarily</span> <span class="n">file</span> <span class="n">conversions</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Not a class. A catch-all for miscellaneous geophysical
+methods, primarily file conversions.
+</pre>
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXMISC.convert_cg3to_raw">
 <em class="property">static </em><code class="descname">convert_cg3to_raw</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(str)arg2</em>, <em>(int)arg3</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXMISC.convert_cg3to_raw" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Convert</span> <span class="n">a</span> <span class="n">CG3</span> <span class="n">dump</span> <span class="n">to</span> <span class="n">RAW</span> <span class="nb">format</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Convert a CG3 dump to RAW format.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -98,7 +97,7 @@
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<em>str</em>) &#8211; name of the CG3 file</li>
 <li><strong>arg2</strong> (<em>str</em>) &#8211; name of the RAW file</li>
-<li><strong>arg3</strong> (<em>int</em>) &#8211; TideCorr Option: 1 - use geosoft, 0 - use CG3/CG5</li>
+<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; TideCorr Option: 1 - use geosoft, 0 - use CG3/CG5</li>
 </ul>
 </td>
 </tr>
@@ -118,9 +117,9 @@
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXMISC.convert_cg5to_raw">
 <em class="property">static </em><code class="descname">convert_cg5to_raw</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(str)arg2</em>, <em>(int)arg3</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXMISC.convert_cg5to_raw" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Convert</span> <span class="n">a</span> <span class="n">CG5</span> <span class="n">dump</span> <span class="n">to</span> <span class="n">RAW</span> <span class="nb">format</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Convert a CG5 dump to RAW format.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -128,7 +127,7 @@
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<em>str</em>) &#8211; name of the CG5 file</li>
 <li><strong>arg2</strong> (<em>str</em>) &#8211; name of the RAW file</li>
-<li><strong>arg3</strong> (<em>int</em>) &#8211; TideCorr Option: 1 - use geosoft, 0 - use CG3/CG5</li>
+<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; TideCorr Option: 1 - use geosoft, 0 - use CG3/CG5</li>
 </ul>
 </td>
 </tr>
@@ -148,9 +147,9 @@
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXMISC.ukoa2_tbl">
 <em class="property">static </em><code class="descname">ukoa2_tbl</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(str)arg2</em>, <em>(str)arg3</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXMISC.ukoa2_tbl" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Convert</span> <span class="n">a</span> <span class="n">UKOA</span> <span class="n">file</span> <span class="n">to</span> <span class="n">a</span> <span class="n">location</span> <span class="n">TBL</span> <span class="n">file</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Convert a UKOA file to a location TBL file.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -174,17 +173,17 @@
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">TBL</span> <span class="n">file</span> <span class="n">will</span> <span class="n">contain</span> <span class="n">the</span> <span class="n">following</span> <span class="n">fields</span><span class="p">:</span>
+<pre class="literal-block">
+The TBL file will contain the following fields:
 
-<span class="o">=</span> <span class="n">Line</span><span class="p">:</span><span class="n">string16</span>
-<span class="o">=</span> <span class="n">Station</span><span class="p">:</span><span class="n">long</span>
-<span class="o">=</span> <span class="n">Latitude</span><span class="p">:</span><span class="n">double</span>
-<span class="o">=</span> <span class="n">Longitude</span><span class="p">:</span><span class="n">double</span>
-<span class="o">=</span> <span class="n">X</span><span class="p">:</span><span class="n">double</span>
-<span class="o">=</span> <span class="n">Y</span><span class="p">:</span><span class="n">double</span>
-<span class="o">=</span> <span class="n">Elevation</span><span class="p">:</span><span class="n">double</span>
-</pre></div>
-</div>
+= Line:string16
+= Station:long
+= Latitude:double
+= Longitude:double
+= X:double
+= Y:double
+= Elevation:double
+</pre>
 </dd></dl>
 
 </dd></dl>
@@ -206,12 +205,27 @@
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.1 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li> 
       </ul>
     </div>
+
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2016, Geosoft Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.6.
+        &#169; Copyright 2017, Geosoft Inc.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
     </div>
+<div class="footer">This page uses <a href="http://analytics.google.com/">
+Google Analytics</a> to collect statistics. You can disable it by blocking
+the JavaScript coming from www.google-analytics.com.
+<script type="text/javascript">
+  (function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ?
+              'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+  })();
+</script>
+</div>
+
   </body>
 </html>

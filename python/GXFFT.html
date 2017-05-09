@@ -1,3 +1,4 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -5,19 +6,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <script type="text/javascript">
-
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-87443115-1']);
-      _gaq.push(['_trackPageview']);
-
-      (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
-    </script>
-    <title>GXFFT class &#8212; Geosoft GX Python API 9.1 documentation</title>
+    
+    <title>GXFFT class &#8212; Geosoft GX Python API 9.2.0 documentation</title>
     
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -25,16 +15,25 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '9.1',
+        VERSION:     '9.2.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="Geosoft GX Python API 9.1 documentation" href="index.html" /> 
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+ 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-87443115-1']);
+  _gaq.push(['_trackPageview']);
+</script>
+
   </head>
   <body role="document">
     <div class="related" role="navigation" aria-label="related navigation">
@@ -46,7 +45,7 @@
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.1 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -62,7 +61,7 @@
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="_sources/GXFFT.txt"
+      <li><a href="_sources/GXFFT.rst.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
@@ -89,12 +88,12 @@
 <dl class="class">
 <dt id="geosoft.gxapi.GXFFT">
 <em class="property">class </em><code class="descclassname">geosoft.gxapi.</code><code class="descname">GXFFT</code><a class="headerlink" href="#geosoft.gxapi.GXFFT" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="k">class</span> <span class="nc">allows</span> <span class="k">for</span> <span class="n">the</span> <span class="n">application</span> <span class="n">of</span> <span class="n">predefined</span>
-<span class="n">filters</span> <span class="n">to</span> <span class="n">data</span> <span class="ow">in</span> <span class="n">an</span> <span class="n">OASIS</span> <span class="n">database</span><span class="o">.</span> <span class="n">The</span> <span class="n">system</span> <span class="n">uses</span>
-<span class="n">the</span> <span class="n">Winograd</span> <span class="n">algorithm</span> <span class="n">to</span> <span class="n">transform</span> <span class="n">data</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">spatial</span>
-<span class="n">domain</span> <span class="n">to</span> <span class="n">the</span> <span class="n">wavenumber</span> <span class="ow">or</span> <span class="n">Fourier</span> <span class="n">domain</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+This class allows for the application of predefined
+filters to data in an OASIS database. The system uses
+the Winograd algorithm to transform data in the spatial
+domain to the wavenumber or Fourier domain.
+</pre>
 <dl class="method">
 <dt id="geosoft.gxapi.GXFFT.app_dens">
 <code class="descname">app_dens</code><span class="sig-paren">(</span><em>(float)arg1</em>, <em>(float)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXFFT.app_dens" title="Permalink to this definition">¶</a></dt>
@@ -147,8 +146,8 @@
 </div>
 <p><strong>Note:</strong></p>
 <pre class="literal-block">
-Reduction to magnetic pole (<a class="reference internal" href="#geosoft.gxapi.GXFFT.red_pol" title="geosoft.gxapi.GXFFT.red_pol"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXFFT.red_pol()</span></code></a>) and downward continuation
-(<a class="reference internal" href="#geosoft.gxapi.GXFFT.contin" title="geosoft.gxapi.GXFFT.contin"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXFFT.contin()</span></code></a>) should be called BEFORE using <a class="reference internal" href="#geosoft.gxapi.GXFFT.app_susc" title="geosoft.gxapi.GXFFT.app_susc"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXFFT.app_susc()</span></code></a>.
+Reduction to magnetic pole (\ :func:`geosoft.gxapi.GXFFT.red_pol`\ ) and downward continuation
+(\ :func:`geosoft.gxapi.GXFFT.contin`\ ) should be called BEFORE using \ :func:`geosoft.gxapi.GXFFT.app_susc`\ .
 </pre>
 </dd></dl>
 
@@ -165,7 +164,7 @@ Reduction to magnetic pole (<a class="reference internal" href="#geosoft.gxapi.G
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<em>float</em>) &#8211; Central cutoff wavelength (meter)</li>
 <li><strong>arg2</strong> (<em>float</em>) &#8211; Degree of the filter function (default = 8.0)</li>
-<li><strong>arg3</strong> (<em>int</em>) &#8211; Filter type: 1= Low-pass (regional) filter (default) 0= High-pass (residual) filter</li>
+<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Filter type: 1= Low-pass (regional) filter (default) 0= High-pass (residual) filter</li>
 </ul>
 </td>
 </tr>
@@ -185,9 +184,9 @@ Reduction to magnetic pole (<a class="reference internal" href="#geosoft.gxapi.G
 <dl class="method">
 <dt id="geosoft.gxapi.GXFFT.band_pass">
 <code class="descname">band_pass</code><span class="sig-paren">(</span><em>(float)arg1</em>, <em>(float)arg2</em>, <em>(int)arg3</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXFFT.band_pass" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Bandpass</span> <span class="nb">filter</span> <span class="p">(</span><span class="n">using</span> <span class="n">low</span> <span class="ow">and</span> <span class="n">high</span> <span class="n">wavelength</span> <span class="n">cutoffs</span><span class="p">)</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Bandpass filter (using low and high wavelength cutoffs)
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -195,7 +194,7 @@ Reduction to magnetic pole (<a class="reference internal" href="#geosoft.gxapi.G
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<em>float</em>) &#8211; Low Cutoff wavelength (meters)</li>
 <li><strong>arg2</strong> (<em>float</em>) &#8211; High Cutoff wavelength (meter)</li>
-<li><strong>arg3</strong> (<em>int</em>) &#8211; 1= Pass the defined band (default); 0= Reject the band</li>
+<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; 1= Pass the defined band (default); 0= Reject the band</li>
 </ul>
 </td>
 </tr>
@@ -215,9 +214,9 @@ Reduction to magnetic pole (<a class="reference internal" href="#geosoft.gxapi.G
 <dl class="method">
 <dt id="geosoft.gxapi.GXFFT.contin">
 <code class="descname">contin</code><span class="sig-paren">(</span><em>(float)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXFFT.contin" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Upward</span><span class="o">/</span><span class="n">Downward</span> <span class="n">continuation</span> <span class="nb">filter</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Upward/Downward continuation filter
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -238,9 +237,9 @@ Reduction to magnetic pole (<a class="reference internal" href="#geosoft.gxapi.G
 <dl class="method">
 <dt id="geosoft.gxapi.GXFFT.cos_roll">
 <code class="descname">cos_roll</code><span class="sig-paren">(</span><em>(float)arg1</em>, <em>(float)arg2</em>, <em>(float)arg3</em>, <em>(int)arg4</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXFFT.cos_roll" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Cosine</span> <span class="n">roll</span><span class="o">-</span><span class="n">off</span> <span class="nb">filter</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Cosine roll-off filter
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -249,7 +248,7 @@ Reduction to magnetic pole (<a class="reference internal" href="#geosoft.gxapi.G
 <li><strong>arg1</strong> (<em>float</em>) &#8211; Low wavelength start point (meters)</li>
 <li><strong>arg2</strong> (<em>float</em>) &#8211; High wavelength end point (meters)</li>
 <li><strong>arg3</strong> (<em>float</em>) &#8211; Degree of the filter function (default = 2.0)</li>
-<li><strong>arg4</strong> (<em>int</em>) &#8211; Filter type: 1= Low-pass (regional) filter (default) 0= High-pass (residual) filter</li>
+<li><strong>arg4</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Filter type: 1= Low-pass (regional) filter (default) 0= High-pass (residual) filter</li>
 </ul>
 </td>
 </tr>
@@ -269,9 +268,9 @@ Reduction to magnetic pole (<a class="reference internal" href="#geosoft.gxapi.G
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXFFT.create">
 <em class="property">static </em><code class="descname">create</code><span class="sig-paren">(</span><em>(GXVV)arg1</em>, <em>(float)arg2</em>, <em>(int)arg3</em><span class="sig-paren">)</span> &rarr; GXFFT:<a class="headerlink" href="#geosoft.gxapi.GXFFT.create" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Create</span> <span class="n">a</span> <span class="n">New</span> <span class="n">FFT</span> <span class="k">with</span> <span class="n">detrend</span> <span class="n">options</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Create a New FFT with detrend options.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -279,7 +278,7 @@ Reduction to magnetic pole (<a class="reference internal" href="#geosoft.gxapi.G
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; VV to transform.</li>
 <li><strong>arg2</strong> (<em>float</em>) &#8211; Element space interval</li>
-<li><strong>arg3</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#fft-detrend"><span class="std std-ref">FFT_DETREND constants</span></a></li>
+<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#fft-detrend"><span class="std std-ref">FFT_DETREND constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -295,18 +294,18 @@ Reduction to magnetic pole (<a class="reference internal" href="#geosoft.gxapi.G
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">detrending</span> <span class="n">options</span> <span class="n">control</span> <span class="n">the</span> <span class="n">removal</span> <span class="n">of</span> <span class="n">a</span> <span class="n">trend</span> <span class="kn">from</span> <span class="nn">the</span> <span class="n">data</span>
-<span class="n">before</span> <span class="n">the</span> <span class="n">FFT</span> <span class="ow">is</span> <span class="n">applied</span><span class="o">.</span> <span class="n">The</span> <span class="n">default</span> <span class="n">data</span> <span class="n">expansion</span> <span class="ow">is</span> <span class="mi">10</span><span class="o">%</span> <span class="n">before</span> <span class="n">FFT</span><span class="o">.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+The detrending options control the removal of a trend from the data
+before the FFT is applied. The default data expansion is 10% before FFT.
+</pre>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXFFT.create_ex">
 <em class="property">static </em><code class="descname">create_ex</code><span class="sig-paren">(</span><em>(GXVV)arg1</em>, <em>(float)arg2</em>, <em>(int)arg3</em>, <em>(float)arg4</em><span class="sig-paren">)</span> &rarr; GXFFT:<a class="headerlink" href="#geosoft.gxapi.GXFFT.create_ex" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Create</span> <span class="n">a</span> <span class="n">New</span> <span class="n">FFT</span> <span class="k">with</span> <span class="n">detrend</span> <span class="ow">and</span> <span class="n">expansion</span> <span class="n">options</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Create a New FFT with detrend and expansion options.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -314,7 +313,7 @@ Reduction to magnetic pole (<a class="reference internal" href="#geosoft.gxapi.G
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; VV to transform.</li>
 <li><strong>arg2</strong> (<em>float</em>) &#8211; Element space interval</li>
-<li><strong>arg3</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#fft-detrend"><span class="std std-ref">FFT_DETREND constants</span></a></li>
+<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#fft-detrend"><span class="std std-ref">FFT_DETREND constants</span></a></li>
 <li><strong>arg4</strong> (<em>float</em>) &#8211; minimum expansion %</li>
 </ul>
 </td>
@@ -331,20 +330,20 @@ Reduction to magnetic pole (<a class="reference internal" href="#geosoft.gxapi.G
 <p><span class="versionmodified">New in version 5.1.8.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">detrending</span> <span class="n">options</span> <span class="n">control</span> <span class="n">the</span> <span class="n">removal</span> <span class="n">of</span> <span class="n">a</span> <span class="n">trend</span> <span class="kn">from</span> <span class="nn">the</span> <span class="n">data</span>
-<span class="n">before</span> <span class="n">the</span> <span class="n">FFT</span> <span class="ow">is</span> <span class="n">applied</span><span class="o">.</span> <span class="n">The</span> <span class="n">expansion</span> <span class="n">options</span> <span class="n">control</span> <span class="n">the</span> <span class="n">minimum</span>
-<span class="n">data</span> <span class="n">expansion</span> <span class="n">before</span> <span class="n">the</span> <span class="n">FFT</span> <span class="ow">is</span> <span class="n">applied</span><span class="o">.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+The detrending options control the removal of a trend from the data
+before the FFT is applied. The expansion options control the minimum
+data expansion before the FFT is applied.
+</pre>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXFFT.create_ref">
 <em class="property">static </em><code class="descname">create_ref</code><span class="sig-paren">(</span><em>(GXVV)arg1</em>, <em>(float)arg2</em>, <em>(int)arg3</em><span class="sig-paren">)</span> &rarr; GXFFT:<a class="headerlink" href="#geosoft.gxapi.GXFFT.create_ref" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Create</span> <span class="n">FFT</span> <span class="nb">object</span> <span class="k">with</span> <span class="n">detrend</span> <span class="n">options</span> <span class="kn">from</span> <span class="nn">reference</span> <span class="p">(</span><span class="n">original</span><span class="p">)</span> <span class="n">channel</span><span class="p">,</span>
-<span class="n">but</span> <span class="n">no</span> <span class="n">FFT</span> <span class="n">process</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Create FFT object with detrend options from reference (original) channel,
+but no FFT process.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -352,7 +351,7 @@ Reduction to magnetic pole (<a class="reference internal" href="#geosoft.gxapi.G
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; VV contains channel data to perform FFT operations upon.</li>
 <li><strong>arg2</strong> (<em>float</em>) &#8211; Element space interval, should be the same as in Create(Ex)_FFT() call</li>
-<li><strong>arg3</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#fft-detrend"><span class="std std-ref">FFT_DETREND constants</span></a></li>
+<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#fft-detrend"><span class="std std-ref">FFT_DETREND constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -370,17 +369,17 @@ Reduction to magnetic pole (<a class="reference internal" href="#geosoft.gxapi.G
 <p><strong>Note:</strong></p>
 <pre class="literal-block">
 This just creates an object.  It is intended to be called
-immediately after with <a class="reference internal" href="#geosoft.gxapi.GXFFT.set_vv" title="geosoft.gxapi.GXFFT.set_vv"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXFFT.set_vv()</span></code></a>.
+immediately after with \ :func:`geosoft.gxapi.GXFFT.set_vv`\ .
 </pre>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXFFT.create_ref_ex">
 <em class="property">static </em><code class="descname">create_ref_ex</code><span class="sig-paren">(</span><em>(GXVV)arg1</em>, <em>(float)arg2</em>, <em>(int)arg3</em>, <em>(float)arg4</em>, <em>(float)arg5</em><span class="sig-paren">)</span> &rarr; GXFFT:<a class="headerlink" href="#geosoft.gxapi.GXFFT.create_ref_ex" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Create</span> <span class="n">FFT</span> <span class="nb">object</span> <span class="k">with</span> <span class="n">detrend</span> <span class="ow">and</span> <span class="n">expansion</span> <span class="n">options</span> <span class="kn">from</span> <span class="nn">reference</span> <span class="p">(</span><span class="n">original</span><span class="p">)</span> <span class="n">channel</span><span class="p">,</span>
-<span class="n">but</span> <span class="n">no</span> <span class="n">FFT</span> <span class="n">process</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Create FFT object with detrend and expansion options from reference (original) channel,
+but no FFT process.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -388,7 +387,7 @@ immediately after with <a class="reference internal" href="#geosoft.gxapi.GXFFT.
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; VV contains channel data to perform FFT operations upon.</li>
 <li><strong>arg2</strong> (<em>float</em>) &#8211; Element space interval, should be the same as in Create(Ex)_FFT() call</li>
-<li><strong>arg3</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#fft-detrend"><span class="std std-ref">FFT_DETREND constants</span></a></li>
+<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#fft-detrend"><span class="std std-ref">FFT_DETREND constants</span></a></li>
 <li><strong>arg4</strong> (<em>float</em>) &#8211; minimum expansion %, should be the same as in CreateEx_FFT() call</li>
 <li><strong>arg5</strong> (<em>float</em>) &#8211; DC level multiple</li>
 </ul>
@@ -408,7 +407,7 @@ immediately after with <a class="reference internal" href="#geosoft.gxapi.GXFFT.
 <p><strong>Note:</strong></p>
 <pre class="literal-block">
 This just creates an object.  It is intended to be called
-immediately after with <a class="reference internal" href="#geosoft.gxapi.GXFFT.set_vv" title="geosoft.gxapi.GXFFT.set_vv"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXFFT.set_vv()</span></code></a>.
+immediately after with \ :func:`geosoft.gxapi.GXFFT.set_vv`\ .
 </pre>
 </dd></dl>
 
@@ -424,7 +423,7 @@ immediately after with <a class="reference internal" href="#geosoft.gxapi.GXFFT.
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<em>float</em>) &#8211; Standard deviation cutoff of function (meters)</li>
-<li><strong>arg2</strong> (<em>int</em>) &#8211; Filter type: 1= Low-pass (residual) filter (default) 0= High-pass (regional) filter</li>
+<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Filter type: 1= Low-pass (residual) filter (default) 0= High-pass (regional) filter</li>
 </ul>
 </td>
 </tr>
@@ -444,9 +443,9 @@ immediately after with <a class="reference internal" href="#geosoft.gxapi.GXFFT.
 <dl class="method">
 <dt id="geosoft.gxapi.GXFFT.get_vv">
 <code class="descname">get_vv</code><span class="sig-paren">(</span><em>(GXVV)arg1</em>, <em>(GXVV)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXFFT.get_vv" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Copies</span> <span class="n">real</span> <span class="ow">and</span> <span class="n">imaginary</span> <span class="n">VV</span><span class="s1">&#39;s to user VV&#39;</span><span class="n">s</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Copies real and imaginary VV's to user VV's.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -630,9 +629,9 @@ immediately after with <a class="reference internal" href="#geosoft.gxapi.GXFFT.
 <dl class="method">
 <dt id="geosoft.gxapi.GXFFT.nyquist">
 <code class="descname">nyquist</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; float:<a class="headerlink" href="#geosoft.gxapi.GXFFT.nyquist" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Gets</span> <span class="n">the</span> <span class="n">Nyquist</span> <span class="n">frequency</span> <span class="p">(</span><span class="n">wavenumbers</span><span class="o">/</span><span class="n">sample</span> <span class="n">unit</span><span class="p">)</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Gets the Nyquist frequency (wavenumbers/sample unit).
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -660,7 +659,7 @@ immediately after with <a class="reference internal" href="#geosoft.gxapi.GXFFT.
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<em>float</em>) &#8211; Central cutoff wavelength (meter)</li>
-<li><strong>arg2</strong> (<em>int</em>) &#8211; Filter type: 1= Low-pass (regional) filter (default) 0= High-pass (residual) filter</li>
+<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Filter type: 1= Low-pass (regional) filter (default) 0= High-pass (residual) filter</li>
 </ul>
 </td>
 </tr>
@@ -711,9 +710,9 @@ immediately after with <a class="reference internal" href="#geosoft.gxapi.GXFFT.
 <dl class="method">
 <dt id="geosoft.gxapi.GXFFT.samp_incr">
 <code class="descname">samp_incr</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; float:<a class="headerlink" href="#geosoft.gxapi.GXFFT.samp_incr" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Gets</span> <span class="n">the</span> <span class="n">original</span> <span class="n">sample</span> <span class="n">increment</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Gets the original sample increment.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -732,9 +731,9 @@ immediately after with <a class="reference internal" href="#geosoft.gxapi.GXFFT.
 <dl class="method">
 <dt id="geosoft.gxapi.GXFFT.set_vv">
 <code class="descname">set_vv</code><span class="sig-paren">(</span><em>(GXVV)arg1</em>, <em>(GXVV)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXFFT.set_vv" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Sets</span> <span class="n">real</span> <span class="ow">and</span> <span class="n">imaginary</span> <span class="n">VVs</span> <span class="ow">in</span> <span class="n">FFT</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Sets real and imaginary VVs in FFT.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -759,7 +758,7 @@ immediately after with <a class="reference internal" href="#geosoft.gxapi.GXFFT.
 <p><strong>Note:</strong></p>
 <pre class="literal-block">
 The VV must have been obtained from the same FFT
-using the <a class="reference internal" href="#geosoft.gxapi.GXFFT.set_vv" title="geosoft.gxapi.GXFFT.set_vv"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXFFT.set_vv()</span></code></a> method.
+using the \ :func:`geosoft.gxapi.GXFFT.set_vv`\  method.
 </pre>
 </dd></dl>
 
@@ -833,9 +832,9 @@ using the <a class="reference internal" href="#geosoft.gxapi.GXFFT.set_vv" title
 <dl class="method">
 <dt id="geosoft.gxapi.GXFFT.wave_incr">
 <code class="descname">wave_incr</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; float:<a class="headerlink" href="#geosoft.gxapi.GXFFT.wave_incr" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">the</span> <span class="n">wave</span> <span class="n">number</span> <span class="n">increment</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Get the wave number increment.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -937,12 +936,27 @@ using the <a class="reference internal" href="#geosoft.gxapi.GXFFT.set_vv" title
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.1 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li> 
       </ul>
     </div>
+
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2016, Geosoft Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.6.
+        &#169; Copyright 2017, Geosoft Inc.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
     </div>
+<div class="footer">This page uses <a href="http://analytics.google.com/">
+Google Analytics</a> to collect statistics. You can disable it by blocking
+the JavaScript coming from www.google-analytics.com.
+<script type="text/javascript">
+  (function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ?
+              'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+  })();
+</script>
+</div>
+
   </body>
 </html>

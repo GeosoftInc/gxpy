@@ -1,3 +1,4 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -5,19 +6,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <script type="text/javascript">
-
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-87443115-1']);
-      _gaq.push(['_trackPageview']);
-
-      (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
-    </script>
-    <title>GXTPAT class &#8212; Geosoft GX Python API 9.1 documentation</title>
+    
+    <title>GXTPAT class &#8212; Geosoft GX Python API 9.2.0 documentation</title>
     
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -25,16 +15,25 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '9.1',
+        VERSION:     '9.2.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="Geosoft GX Python API 9.1 documentation" href="index.html" /> 
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+ 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-87443115-1']);
+  _gaq.push(['_trackPageview']);
+</script>
+
   </head>
   <body role="document">
     <div class="related" role="navigation" aria-label="related navigation">
@@ -46,7 +45,7 @@
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.1 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -62,7 +61,7 @@
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="_sources/GXTPAT.txt"
+      <li><a href="_sources/GXTPAT.rst.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
@@ -101,7 +100,7 @@ The code is CASE-SENSITIVE.
 Label:         Text to use as a short-form in labels, graphs etc.
 By default, this is the same as the code.
 ex: &quot;FVol.&quot;
-Pattern Attributes:  (See DEFAULT.PAT in srcetc for more inforation)
+Pattern Attributes:  (See DEFAULT.PAT in \src\etc for more inforation)
 Pattern:       The Pattern Index; defined in DEFAULT.PAT, or in the user's
 USER.PAT file. If not specified, defaults to 0 (solid fill).
 Size:          The pattern tile size. If not specified, defaults to 2.0mm.
@@ -138,7 +137,7 @@ Symbol Scaling  Additional scale factor to apply to symbol size (Default 1.0)
 <li><strong>arg1</strong> (<em>str</em>) &#8211; Code (required - CASE SENSITIVE)</li>
 <li><strong>arg2</strong> (<em>str</em>) &#8211; Label (optional, can be &#8220;&#8221;)</li>
 <li><strong>arg3</strong> (<em>str</em>) &#8211; Description (optional, can be &#8220;&#8221;)</li>
-<li><strong>arg4</strong> (<em>int</em>) &#8211; Color (use iColor_MVIEW to convert to int).</li>
+<li><strong>arg4</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Color (use iColor_MVIEW to convert to int).</li>
 </ul>
 </td>
 </tr>
@@ -154,9 +153,9 @@ Symbol Scaling  Additional scale factor to apply to symbol size (Default 1.0)
 <p><span class="versionmodified">New in version 7.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">new</span> <span class="n">code</span> <span class="n">must</span> <span class="n">be</span> <span class="n">unique</span><span class="p">;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">existing</span> <span class="nb">list</span><span class="o">.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+The new code must be unique; not in the existing list.
+</pre>
 </dd></dl>
 
 <dl class="method">
@@ -173,7 +172,7 @@ Symbol Scaling  Additional scale factor to apply to symbol size (Default 1.0)
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">The code index, -1 if not found</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></td>
 </tr>
 </tbody>
 </table>
@@ -185,9 +184,9 @@ Symbol Scaling  Additional scale factor to apply to symbol size (Default 1.0)
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXTPAT.create">
 <em class="property">static </em><code class="descname">create</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; GXTPAT:<a class="headerlink" href="#geosoft.gxapi.GXTPAT.create" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Creates</span> <span class="n">an</span> <span class="n">empty</span> <span class="n">thematic</span> <span class="n">pattern</span> <span class="nb">object</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Creates an empty thematic pattern object.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -206,15 +205,15 @@ Symbol Scaling  Additional scale factor to apply to symbol size (Default 1.0)
 <dl class="method">
 <dt id="geosoft.gxapi.GXTPAT.get_solid_pattern">
 <code class="descname">get_solid_pattern</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(str_ref)arg2</em>, <em>(str_ref)arg3</em>, <em>(str_ref)arg4</em>, <em>(int_ref)arg5</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXTPAT.get_solid_pattern" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">solid</span> <span class="n">pattern</span> <span class="n">info</span> <span class="kn">from</span> <span class="nn">the</span> <span class="n">TPAT</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Get solid pattern info from the TPAT.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<em>int</em>) &#8211; index</li>
+<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; index</li>
 <li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; Returned Code</li>
 <li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; Returned Label</li>
 <li><strong>arg4</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; Returned Description</li>
@@ -234,10 +233,10 @@ Symbol Scaling  Additional scale factor to apply to symbol size (Default 1.0)
 <p><span class="versionmodified">New in version 7.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Returns</span> <span class="n">the</span> <span class="n">solid</span> <span class="n">colour</span><span class="p">,</span> <span class="n">pattern</span> <span class="n">foreground</span> <span class="n">color</span><span class="p">,</span> <span class="ow">or</span> <span class="n">symbol</span>
-<span class="n">color</span><span class="p">,</span> <span class="n">along</span> <span class="k">with</span> <span class="n">the</span> <span class="n">code</span><span class="p">,</span> <span class="n">label</span> <span class="ow">and</span> <span class="n">description</span><span class="o">.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+Returns the solid colour, pattern foreground color, or symbol
+color, along with the code, label and description.
+</pre>
 </dd></dl>
 
 <dl class="method">
@@ -278,33 +277,33 @@ Symbol Scaling  Additional scale factor to apply to symbol size (Default 1.0)
 <p><span class="versionmodified">New in version 7.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="nb">type</span> <span class="n">of</span> <span class="n">thematic</span> <span class="n">patterns</span> <span class="n">file</span> <span class="ow">is</span> <span class="n">recognized</span> <span class="kn">from</span> <span class="nn">the</span> <span class="n">types</span>
-<span class="n">of</span> <span class="n">fields</span> <span class="n">found</span> <span class="n">inside</span> <span class="n">it</span><span class="o">.</span>
+<pre class="literal-block">
+The type of thematic patterns file is recognized from the types
+of fields found inside it.
 
-<span class="n">The</span> <span class="n">following</span> <span class="n">fields</span> <span class="n">are</span> <span class="n">identified</span><span class="o">.</span> <span class="n">Only</span> <span class="n">the</span> <span class="s2">&quot;CODE&quot;</span> <span class="n">field</span> <span class="ow">is</span>
-<span class="n">required</span><span class="p">,</span> <span class="k">as</span> <span class="n">the</span> <span class="s2">&quot;default&quot;</span> <span class="n">thematic</span> <span class="n">pattern</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">solid</span> <span class="n">black</span> <span class="n">colour</span><span class="o">.</span>
+The following fields are identified. Only the &quot;CODE&quot; field is
+required, as the &quot;default&quot; thematic pattern is a solid black colour.
 
-<span class="n">CODE</span>   <span class="n">The</span> <span class="n">pattern</span> <span class="n">code</span> <span class="p">(</span><span class="n">required</span> <span class="n">by</span> <span class="nb">all</span> <span class="n">types</span> <span class="o">-</span> <span class="n">CASE</span> <span class="n">SENSITIVE</span><span class="p">)</span>
-<span class="n">LABEL</span>  <span class="n">Longer</span> <span class="n">text</span> <span class="n">identifier</span> <span class="n">to</span> <span class="n">use</span> <span class="ow">in</span> <span class="n">legends</span> <span class="n">etc</span><span class="o">.</span> <span class="p">(</span><span class="n">up</span> <span class="n">to</span> <span class="mi">31</span> <span class="n">characters</span><span class="p">)</span>
-<span class="n">DESCRIPTION</span> <span class="n">Much</span> <span class="n">longer</span> <span class="n">text</span> <span class="n">string</span> <span class="p">(</span><span class="n">up</span> <span class="n">to</span> <span class="mi">127</span> <span class="n">characters</span><span class="p">)</span><span class="o">.</span>
+CODE   The pattern code (required by all types - CASE SENSITIVE)
+LABEL  Longer text identifier to use in legends etc. (up to 31 characters)
+DESCRIPTION Much longer text string (up to 127 characters).
 
-<span class="n">COLOR</span>  <span class="n">Line</span> <span class="n">colour</span> <span class="n">used</span> <span class="ow">in</span> <span class="n">patterns</span><span class="p">,</span> <span class="ow">and</span> <span class="k">for</span> <span class="n">solid</span> <span class="n">colours</span><span class="p">,</span> <span class="n">the</span> <span class="n">colour</span><span class="o">.</span>
-<span class="n">If</span> <span class="n">only</span> <span class="n">this</span> <span class="n">field</span> <span class="ow">is</span> <span class="n">found</span> <span class="p">(</span><span class="ow">and</span> <span class="n">none</span> <span class="n">below</span><span class="p">),</span> <span class="n">the</span> <span class="n">pattern</span> <span class="n">file</span>
-<span class="ow">is</span> <span class="n">assumed</span> <span class="n">to</span> <span class="n">be</span> <span class="nb">type</span> <span class="n">TPAT_TYPE_COLOR</span><span class="o">.</span>
+COLOR  Line colour used in patterns, and for solid colours, the colour.
+If only this field is found (and none below), the pattern file
+is assumed to be type TPAT_TYPE_COLOR.
 
-<span class="n">PATTERN</span>         <span class="n">Geosoft</span> <span class="n">pattern</span> <span class="n">ID</span><span class="o">.</span>
-<span class="n">PAT_SIZE</span>        <span class="n">Pattern</span> <span class="n">tile</span> <span class="n">size</span><span class="p">,</span> <span class="ow">or</span> <span class="n">symbol</span> <span class="n">size</span> <span class="p">(</span><span class="n">default</span> <span class="mi">2</span><span class="n">mm</span><span class="p">)</span>
-<span class="n">PAT_DENSITY</span>     <span class="n">Pattern</span> <span class="n">tile</span> <span class="n">density</span> <span class="p">(</span><span class="n">default</span> <span class="mf">1.0</span><span class="p">)</span>
-<span class="n">PAT_THICKNESS</span>   <span class="n">Pattern</span> <span class="n">line</span> <span class="n">thickness</span> <span class="k">as</span> <span class="o">%</span> <span class="n">of</span> <span class="n">size</span> <span class="p">(</span><span class="n">default</span> <span class="mi">5</span><span class="p">)</span>
-<span class="n">BACK_COLOR</span>      <span class="n">Background</span> <span class="n">color</span> <span class="k">for</span> <span class="n">the</span> <span class="n">pattern</span><span class="o">.</span> <span class="n">Also</span> <span class="n">used</span> <span class="k">for</span> <span class="n">symbols</span>
-<span class="p">(</span><span class="n">Default</span> <span class="n">background</span> <span class="ow">is</span> <span class="n">transparent</span><span class="p">)</span><span class="o">.</span>
+PATTERN         Geosoft pattern ID.
+PAT_SIZE        Pattern tile size, or symbol size (default 2mm)
+PAT_DENSITY     Pattern tile density (default 1.0)
+PAT_THICKNESS   Pattern line thickness as % of size (default 5)
+BACK_COLOR      Background color for the pattern. Also used for symbols
+(Default background is transparent).
 
-<span class="n">SYMBFONT</span>        <span class="n">Symbol</span> <span class="n">font</span> <span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">g</span><span class="o">.</span> <span class="s2">&quot;symbols.gfn&quot;</span><span class="p">)</span>
-<span class="n">SYMBNUM</span>         <span class="n">Symbol</span> <span class="n">number</span> <span class="n">of</span> <span class="n">the</span> <span class="n">current</span> <span class="n">font</span>
-<span class="n">SYMBROT</span>         <span class="n">Symbol</span> <span class="n">rotation</span>
-<span class="n">SYMBSCL</span>         <span class="n">Additional</span> <span class="n">scaling</span> <span class="n">factor</span> <span class="n">applied</span> <span class="n">to</span> <span class="n">the</span> <span class="n">current</span> <span class="n">size</span>
-</pre></div>
-</div>
+SYMBFONT        Symbol font (e.g. &quot;symbols.gfn&quot;)
+SYMBNUM         Symbol number of the current font
+SYMBROT         Symbol rotation
+SYMBSCL         Additional scaling factor applied to the current size
+</pre>
 </dd></dl>
 
 <dl class="staticmethod">
@@ -335,7 +334,7 @@ Symbol Scaling  Additional scale factor to apply to symbol size (Default 1.0)
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<a class="reference internal" href="GXLTB.html#geosoft.gxapi.GXLTB" title="geosoft.gxapi.GXLTB"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXLTB</span></code></a>) &#8211; Table containing TPAT codes as the key</li>
-<li><strong>arg2</strong> (<em>int</em>) &#8211; Field in LTB with the output values (numeric or string)</li>
+<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Field in LTB with the output values (numeric or string)</li>
 <li><strong>arg3</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Returned values for each TPAT index</li>
 </ul>
 </td>
@@ -352,27 +351,27 @@ Symbol Scaling  Additional scale factor to apply to symbol size (Default 1.0)
 <p><span class="versionmodified">New in version 7.3.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="nb">input</span> <span class="n">LTB</span> <span class="nb">object</span> <span class="n">should</span> <span class="n">have</span> <span class="n">key</span> <span class="n">values</span> <span class="n">matching</span> <span class="n">the</span> <span class="n">TPAT</span> <span class="n">codes</span><span class="o">.</span>
-<span class="n">Whether</span> <span class="n">the</span> <span class="n">matches</span> <span class="n">are</span> <span class="n">case</span> <span class="n">sensitive</span> <span class="ow">or</span> <span class="ow">not</span> <span class="ow">is</span> <span class="n">dependent</span> <span class="n">on</span> <span class="n">how</span> <span class="n">the</span>
-<span class="n">LTB</span> <span class="n">oject</span> <span class="n">was</span> <span class="n">created</span> <span class="p">(</span><span class="n">see</span> <span class="n">ltb</span><span class="o">.</span><span class="n">h</span><span class="p">)</span><span class="o">.</span>
-<span class="n">The</span> <span class="n">LTB</span> <span class="n">field</span> <span class="n">values</span> <span class="n">are</span> <span class="n">converted</span> <span class="n">to</span> <span class="n">the</span> <span class="n">output</span> <span class="n">VV</span> <span class="nb">type</span><span class="o">.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+The input LTB object should have key values matching the TPAT codes.
+Whether the matches are case sensitive or not is dependent on how the
+LTB oject was created (see ltb.h).
+The LTB field values are converted to the output VV type.
+</pre>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXTPAT.size">
 <code class="descname">size</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXTPAT.size" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Returns</span> <span class="n">the</span> <span class="n">number</span> <span class="n">of</span> <span class="n">rows</span> <span class="p">(</span><span class="n">items</span><span class="p">)</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">TPAT</span> <span class="nb">object</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Returns the number of rows (items) in the TPAT object.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Number of TPAT items.</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></td>
 </tr>
 </tbody>
 </table>
@@ -426,12 +425,27 @@ Symbol Scaling  Additional scale factor to apply to symbol size (Default 1.0)
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.1 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li> 
       </ul>
     </div>
+
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2016, Geosoft Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.6.
+        &#169; Copyright 2017, Geosoft Inc.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
     </div>
+<div class="footer">This page uses <a href="http://analytics.google.com/">
+Google Analytics</a> to collect statistics. You can disable it by blocking
+the JavaScript coming from www.google-analytics.com.
+<script type="text/javascript">
+  (function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ?
+              'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+  })();
+</script>
+</div>
+
   </body>
 </html>

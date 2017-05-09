@@ -1,3 +1,4 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -5,19 +6,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <script type="text/javascript">
-
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-87443115-1']);
-      _gaq.push(['_trackPageview']);
-
-      (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
-    </script>
-    <title>GX3DN class &#8212; Geosoft GX Python API 9.1 documentation</title>
+    
+    <title>GX3DN class &#8212; Geosoft GX Python API 9.2.0 documentation</title>
     
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -25,16 +15,25 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '9.1',
+        VERSION:     '9.2.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="Geosoft GX Python API 9.1 documentation" href="index.html" /> 
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+ 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-87443115-1']);
+  _gaq.push(['_trackPageview']);
+</script>
+
   </head>
   <body role="document">
     <div class="related" role="navigation" aria-label="related navigation">
@@ -46,7 +45,7 @@
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.1 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -54,7 +53,7 @@
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="_sources/GX3DN.txt"
+      <li><a href="_sources/GX3DN.rst.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
@@ -81,18 +80,18 @@
 <dl class="class">
 <dt id="geosoft.gxapi.GX3DN">
 <em class="property">class </em><code class="descclassname">geosoft.gxapi.</code><code class="descname">GX3DN</code><a class="headerlink" href="#geosoft.gxapi.GX3DN" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="k">class</span> <span class="nc">manages</span> <span class="n">the</span> <span class="n">rendering</span> <span class="n">of</span> <span class="n">a</span> <span class="mi">3</span><span class="n">D</span> <span class="n">view</span><span class="o">.</span> <span class="n">It</span> <span class="n">allows</span>
-<span class="n">the</span> <span class="n">positioning</span> <span class="n">of</span> <span class="n">the</span> <span class="n">camera</span><span class="p">,</span> <span class="n">specification</span> <span class="n">of</span> <span class="n">the</span> <span class="n">zoom</span>
-<span class="k">as</span> <span class="n">well</span> <span class="k">as</span> <span class="n">some</span> <span class="n">rendering</span> <span class="n">controls</span> <span class="k">for</span> <span class="n">the</span> <span class="n">axis</span><span class="o">.</span> <span class="n">It</span> <span class="ow">is</span>
-<span class="n">directly</span> <span class="n">releated</span> <span class="n">to</span> <span class="n">the</span> <span class="n">MVIEW</span> <span class="n">class</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+This class manages the rendering of a 3D view. It allows
+the positioning of the camera, specification of the zoom
+as well as some rendering controls for the axis. It is
+directly releated to the MVIEW class.
+</pre>
 <dl class="method">
 <dt id="geosoft.gxapi.GX3DN.copy">
 <code class="descname">copy</code><span class="sig-paren">(</span><em>(GX3DN)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GX3DN.copy" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Copy</span> <span class="n">one</span> <span class="mi">3</span><span class="n">DN</span> <span class="nb">object</span> <span class="n">to</span> <span class="n">another</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Copy one 3DN object to another.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -113,9 +112,9 @@
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GX3DN.create">
 <em class="property">static </em><code class="descname">create</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; GX3DN:<a class="headerlink" href="#geosoft.gxapi.GX3DN.create" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Creates</span> <span class="n">a</span> <span class="mi">3</span><span class="n">DN</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Creates a 3DN.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -143,7 +142,7 @@
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Axis Color</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></td>
 </tr>
 </tbody>
 </table>
@@ -187,7 +186,7 @@
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Background Color value</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></td>
 </tr>
 </tbody>
 </table>
@@ -261,9 +260,9 @@
 <dl class="method">
 <dt id="geosoft.gxapi.GX3DN.get_scale">
 <code class="descname">get_scale</code><span class="sig-paren">(</span><em>(float_ref)arg1</em>, <em>(float_ref)arg2</em>, <em>(float_ref)arg3</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GX3DN.get_scale" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">the</span> <span class="n">axis</span> <span class="n">relative</span> <span class="n">scales</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Get the axis relative scales.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -300,7 +299,7 @@
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Shading On/Off</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></td>
 </tr>
 </tbody>
 </table>
@@ -351,7 +350,7 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>int</em>) &#8211; Axis Color</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Axis Color</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Nothing</td>
 </tr>
@@ -397,7 +396,7 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>int</em>) &#8211; Background Color</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Background Color</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Nothing</td>
 </tr>
@@ -451,8 +450,8 @@
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<em>int</em>) &#8211; Render Bounding Box (0 or 1)</li>
-<li><strong>arg2</strong> (<em>int</em>) &#8211; Render Axis (0 or 1)</li>
+<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Render Bounding Box (0 or 1)</li>
+<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Render Axis (0 or 1)</li>
 <li><strong>arg3</strong> (<em>str</em>) &#8211; Label for X axis</li>
 <li><strong>arg4</strong> (<em>str</em>) &#8211; Label for Y axis</li>
 <li><strong>arg5</strong> (<em>str</em>) &#8211; Label for Z axis</li>
@@ -475,9 +474,9 @@
 <dl class="method">
 <dt id="geosoft.gxapi.GX3DN.set_scale">
 <code class="descname">set_scale</code><span class="sig-paren">(</span><em>(float)arg1</em>, <em>(float)arg2</em>, <em>(float)arg3</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GX3DN.set_scale" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Set</span> <span class="n">the</span> <span class="n">axis</span> <span class="n">relative</span> <span class="n">scales</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Set the axis relative scales.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -501,14 +500,14 @@
 <p><span class="versionmodified">New in version 6.1.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">By</span> <span class="n">default</span> <span class="nb">all</span> <span class="n">scales</span> <span class="n">are</span> <span class="n">equal</span> <span class="p">(</span><span class="mf">1.0</span><span class="p">)</span><span class="o">.</span> <span class="n">By</span> <span class="n">setting</span>
-<span class="n">these</span> <span class="n">scales</span><span class="p">,</span> <span class="n">relative</span> <span class="n">adjustments</span> <span class="n">to</span> <span class="n">the</span> <span class="n">overall</span>
-<span class="n">view</span> <span class="n">of</span> <span class="n">the</span> <span class="mi">3</span><span class="n">D</span> <span class="n">objects</span> <span class="n">can</span> <span class="n">be</span> <span class="n">made</span><span class="o">.</span> <span class="n">Note</span> <span class="n">that</span> <span class="n">they</span>
-<span class="n">are</span> <span class="n">relative</span> <span class="n">to</span> <span class="n">each</span> <span class="n">other</span><span class="o">.</span> <span class="n">Thus</span><span class="p">,</span> <span class="n">setting</span> <span class="n">the</span> <span class="n">scaling</span>
-<span class="n">to</span> <span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span> <span class="ow">is</span> <span class="n">the</span> <span class="n">same</span> <span class="k">as</span> <span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mf">1.</span> <span class="n">This</span> <span class="ow">is</span> <span class="n">typically</span> <span class="n">used</span>
-<span class="n">to</span> <span class="n">exagerate</span> <span class="n">one</span> <span class="n">scale</span> <span class="n">such</span> <span class="k">as</span> <span class="n">Z</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span><span class="o">.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+By default all scales are equal (1.0). By setting
+these scales, relative adjustments to the overall
+view of the 3D objects can be made. Note that they
+are relative to each other. Thus, setting the scaling
+to 5,5,5 is the same as 1,1,1. This is typically used
+to exagerate one scale such as Z (1,1,5).
+</pre>
 </dd></dl>
 
 <dl class="method">
@@ -521,7 +520,7 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>int</em>) &#8211; 0: Off, 1:  On.</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; 0: Off, 1:  On.</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Nothing</td>
 </tr>
@@ -553,12 +552,27 @@
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.1 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li> 
       </ul>
     </div>
+
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2016, Geosoft Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.6.
+        &#169; Copyright 2017, Geosoft Inc.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
     </div>
+<div class="footer">This page uses <a href="http://analytics.google.com/">
+Google Analytics</a> to collect statistics. You can disable it by blocking
+the JavaScript coming from www.google-analytics.com.
+<script type="text/javascript">
+  (function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ?
+              'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+  })();
+</script>
+</div>
+
   </body>
 </html>

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -5,19 +6,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <script type="text/javascript">
-
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-87443115-1']);
-      _gaq.push(['_trackPageview']);
-
-      (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
-    </script>
-    <title>geosoft.gxpy.gx submodule &#8212; Geosoft GX Python API 9.1 documentation</title>
+    
+    <title>geosoft.gxpy.gx submodule &#8212; Geosoft GX Python API 9.2.0 documentation</title>
     
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -25,16 +15,25 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '9.1',
+        VERSION:     '9.2.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="Geosoft GX Python API 9.1 documentation" href="index.html" /> 
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+ 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-87443115-1']);
+  _gaq.push(['_trackPageview']);
+</script>
+
   </head>
   <body role="document">
     <div class="related" role="navigation" aria-label="related navigation">
@@ -46,7 +45,7 @@
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.1 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -54,7 +53,7 @@
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="_sources/geosoft.gxpy.gx.txt"
+      <li><a href="_sources/geosoft.gxpy.gx.rst.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
@@ -78,7 +77,11 @@
             
   <div class="section" id="module-geosoft.gxpy.gx">
 <span id="geosoft-gxpy-gx-submodule"></span><h1>geosoft.gxpy.gx submodule<a class="headerlink" href="#module-geosoft.gxpy.gx" title="Permalink to this headline">¶</a></h1>
-<p>GX Context and related methods to with Geosoft Python.</p>
+<p>GX Context and related methods required for Geosoft Python.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Regression tests provide usage examples: <a class="reference external" href="https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_gx.py">Tests</a></p>
+</div>
 <dl class="exception">
 <dt id="geosoft.gxpy.gx.GXException">
 <em class="property">exception </em><code class="descclassname">geosoft.gxpy.gx.</code><code class="descname">GXException</code><a class="headerlink" href="#geosoft.gxpy.gx.GXException" title="Permalink to this definition">¶</a></dt>
@@ -91,21 +94,50 @@
 
 <dl class="class">
 <dt id="geosoft.gxpy.gx.GXpy">
-<em class="property">class </em><code class="descclassname">geosoft.gxpy.gx.</code><code class="descname">GXpy</code><span class="sig-paren">(</span><em>name='geosoft.gxpy.gx'</em>, <em>version='9.1'</em>, <em>parent_window=0</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.gx.GXpy" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
-<p>Geosoft GX context.</p>
+<em class="property">class </em><code class="descclassname">geosoft.gxpy.gx.</code><code class="descname">GXpy</code><span class="sig-paren">(</span><em>name='geosoft.gxpy.gx'</em>, <em>version='9.2.0'</em>, <em>parent_window=0</em>, <em>log=None</em>, <em>max_res_heap=10000000</em>, <em>res_stack=6</em>, <em>max_warnings=10</em>, <em>suppress_progress=False</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.gx.GXpy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">geosoft.gxpy.gx._Singleton</span></code></p>
+<p>Geosoft GX context.  This is a singleton class, so subsequent creation returns an instance
+identical to the initial creation. This also means that initialization arguments are ignored
+on a subsequent instantiation.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>app</strong> &#8211; application name, default is the script name</li>
-<li><strong>version</strong> &#8211; application version number, default geosoft version</li>
-<li><strong>parent_window</strong> &#8211; ID of the parent window if needed, default 0.</li>
-</ul>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><table class="first docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">app:</th><td class="field-body">application name, default is the script name</td>
+</tr>
+<tr class="field-even field"><th class="field-name">version:</th><td class="field-body">application version number, default Geosoft version</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">parent_window:</th><td class="field-body">ID of the parent window.  A parent window is required for GUI-dependent
+functions to work.  Set <cite>parent_window=-1</cite> to create a Tkinter frame that
+provides a default parent window handle for GUI/Viewer functions.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">log:</th><td class="field-body">name of a file to record logging information, or a call-back function that
+accepts a string.  Specifying <cite>log=&#8217;&#8216;</cite> will log to a default file named
+using the current date and time.  If not provided calls to log()
+are ignored.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">max_heap:</th><td class="field-body">If logging is on, open gxpy resources (like grids, or databases) are tracked.
+This is the maximum size of resource heap for tracking open resources.
+Set to 0 to not track resources. On exit, if any resources remain open
+a warning is logged together with a list of the open resources, each with a
+call stack to help find the function that created the resources.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">res_stack:</th><td class="field-body">Depth of the call-stack to report for open-resource warning.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">max_warnings:</th><td class="field-body">Maximum number of resource warnings to report.</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">suppress_progress:</th></tr>
+<tr class="field-even field"><td>&nbsp;</td><td class="field-body">True to suppress progress reporting (default False)</td>
+</tr>
+</tbody>
+</table>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Members:</th><td class="field-body"><table class="first docutils field-list" frame="void" rules="none">
+<tr class="field-odd field"><th class="field-name">Properties:</th><td class="field-body"><table class="first docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -113,11 +145,32 @@
 </tr>
 <tr class="field-even field"><th class="field-name">gid:</th><td class="field-body">User&#8217;s Geosoft ID</td>
 </tr>
+<tr class="field-odd field"><th class="field-name">global gx:</th><td class="field-body">Global reference to this singleton class instance, None if invalid.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">current_date:</th><td class="field-body">date at start-up</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">current_utc_date:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">UTC date at start-up</td>
+</tr>
+<tr class="field-even field"><th class="field-name">current_time:</th><td class="field-body">time at start-up</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">current_utc_time:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">UTC time at start-up</td>
+</tr>
+<tr class="field-even field"><th class="field-name">license_class:</th><td class="field-body">Geosoft license class</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">folder_workspace:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">Geosoft workspace folder</td>
+</tr>
+<tr class="field-even field"><th class="field-name">folder_temp:</th><td class="field-body">Geosoft temporary folder</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">folder_user:</th><td class="field-body">Geosoft Desktop installation &#8216;user&#8217; folder</td>
+</tr>
 </tbody>
 </table>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><table class="first last docutils field-list" frame="void" rules="none">
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><table class="first last docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -129,6 +182,11 @@
 </tr>
 </tbody>
 </table>
+<div class="versionchanged">
+<p><span class="versionmodified">Changed in version 9.2: </span><cite>parent_window=-1</cite> creates a Tkinter frame as a parent for scripts that call UI functions.</p>
+<p>Added <cite>log</cite> argument to support <cite>log()</cite>.</p>
+<p>Made environment dictionary properties, deprecated environment.</p>
+</div>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.1.</span></p>
 </div>
@@ -155,6 +213,31 @@
 Call before opening your own UI window.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.1.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxpy.gx.GXpy.elapsed_seconds">
+<code class="descname">elapsed_seconds</code><span class="sig-paren">(</span><em>tag=''</em>, <em>log=False</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.gx.GXpy.elapsed_seconds" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the elapsed seconds since this GX instance started.
+The elapsed time is logged if logging is on.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>log</strong> &#8211; True to log, which also requires logging to be on</li>
+<li><strong>tag</strong> &#8211; optional string to add to the log</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">elapsed time in seconds</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.2.</span></p>
 </div>
 </dd></dl>
 
@@ -187,64 +270,43 @@ Call before returning control to OM.</p>
 <dl class="method">
 <dt id="geosoft.gxpy.gx.GXpy.environment">
 <code class="descname">environment</code><span class="sig-paren">(</span><em>formated_indent=-1</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.gx.GXpy.environment" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Geosoft environment information as a dictionary.</td>
-</tr>
-</tbody>
-</table>
-<div class="versionadded">
-<p><span class="versionmodified">New in version 9.1.</span></p>
+<dd><div class="deprecated">
+<p><span class="versionmodified">Deprecated since version 9.2: </span>replaced by properties.</p>
 </div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxpy.gx.GXpy.folder_temp">
 <code class="descname">folder_temp</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.gx.GXpy.folder_temp" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The Geosoft tempporary folder.</td>
-</tr>
-</tbody>
-</table>
-<div class="versionadded">
-<p><span class="versionmodified">New in version 9.1.</span></p>
-</div>
-</dd></dl>
+<dd></dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxpy.gx.GXpy.folder_user">
 <code class="descname">folder_user</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.gx.GXpy.folder_user" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The Geosoft user configuration files folder.</td>
-</tr>
-</tbody>
-</table>
-<div class="versionadded">
-<p><span class="versionmodified">New in version 9.1.</span></p>
-</div>
-</dd></dl>
+<dd></dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxpy.gx.GXpy.folder_workspace">
 <code class="descname">folder_workspace</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.gx.GXpy.folder_workspace" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><div class="deprecated">
+<p><span class="versionmodified">Deprecated since version 9.2: </span>use <code class="xref py py-meth docutils literal"><span class="pre">utility.folder_workspace()</span></code></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxpy.gx.GXpy.keep_temp_folder">
+<code class="descname">keep_temp_folder</code><span class="sig-paren">(</span><em>keep=True</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.gx.GXpy.keep_temp_folder" title="Permalink to this definition">¶</a></dt>
+<dd><p>Keep temporary file folder setting.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The workspace folder.</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>keep</strong> &#8211; True to keep the temporary file folder, False to remove</td>
 </tr>
 </tbody>
 </table>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 9.1.</span></p>
+<p><span class="versionmodified">New in version 9.2.</span></p>
 </div>
 </dd></dl>
 
@@ -265,6 +327,28 @@ Call before returning control to OM.</p>
 </dd></dl>
 
 <dl class="method">
+<dt id="geosoft.gxpy.gx.GXpy.log">
+<code class="descname">log</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.gx.GXpy.log" title="Permalink to this definition">¶</a></dt>
+<dd><p>Log a string to the log file or log call-back as defined when creating <code class="xref py py-class docutils literal"><span class="pre">GXpy</span></code> instance.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>args</strong> &#8211; arguments to log, each will be converted to a str()</td>
+</tr>
+</tbody>
+</table>
+<p>If logging to a file each line is preceded by the date and time:</p>
+<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="mi">2016</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">25</span> <span class="mi">12</span><span class="p">:</span><span class="mi">34</span><span class="p">:</span><span class="mf">16.175</span> <span class="n">log_str_line_1</span>
+<span class="mi">2016</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">25</span> <span class="mi">12</span><span class="p">:</span><span class="mi">34</span><span class="p">:</span><span class="mf">16.175</span> <span class="n">log_str_line_2</span>
+</pre></div>
+</div>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.2.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
 <dt id="geosoft.gxpy.gx.GXpy.main_wind_id">
 <code class="descname">main_wind_id</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.gx.GXpy.main_wind_id" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
@@ -280,7 +364,52 @@ Call before returning control to OM.</p>
 </div>
 </dd></dl>
 
+<dl class="method">
+<dt id="geosoft.gxpy.gx.GXpy.temp_file">
+<code class="descname">temp_file</code><span class="sig-paren">(</span><em>ext=''</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.gx.GXpy.temp_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a unique temporary file name as a full path.  The temporary file is created in
+the instance temporary folder and will be deleted when this GXpy instance is deleted.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>ext</strong> &#8211; optional extension, including &#8221;.&#8221; separator</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">uuid-based file name in the instance temporary folder.</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.2.</span></p>
+</div>
 </dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxpy.gx.GXpy.temp_folder">
+<code class="descname">temp_folder</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.gx.GXpy.temp_folder" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the GX temporary folder path.</p>
+<p>Each GX instance will create an instance-specific temporary folder as a child in the Geosoft 
+temporary folder.  Placing temporary files in the GX-specific temporary folder will ensure 
+temporary file names will not collide with other running GX-based programs, and that all 
+temporarty files are removed on termination of this GX.</p>
+<p>Call <cite>keep_temp_folder</cite> to prevent deletion of the temporary files, which can be useful
+when debugging.</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.2.</span></p>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="geosoft.gxpy.gx.pop_resource">
+<code class="descclassname">geosoft.gxpy.gx.</code><code class="descname">pop_resource</code><span class="sig-paren">(</span><em>id</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.gx.pop_resource" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="geosoft.gxpy.gx.track_resource">
+<code class="descclassname">geosoft.gxpy.gx.</code><code class="descname">track_resource</code><span class="sig-paren">(</span><em>cl</em>, <em>info</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.gx.track_resource" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 </div>
 
@@ -299,12 +428,27 @@ Call before returning control to OM.</p>
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.1 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li> 
       </ul>
     </div>
+
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2016, Geosoft Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.6.
+        &#169; Copyright 2017, Geosoft Inc.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
     </div>
+<div class="footer">This page uses <a href="http://analytics.google.com/">
+Google Analytics</a> to collect statistics. You can disable it by blocking
+the JavaScript coming from www.google-analytics.com.
+<script type="text/javascript">
+  (function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ?
+              'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+  })();
+</script>
+</div>
+
   </body>
 </html>

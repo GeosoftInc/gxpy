@@ -1,3 +1,4 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -5,19 +6,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <script type="text/javascript">
-
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-87443115-1']);
-      _gaq.push(['_trackPageview']);
-
-      (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
-    </script>
-    <title>GXLAYOUT class &#8212; Geosoft GX Python API 9.1 documentation</title>
+    
+    <title>GXLAYOUT class &#8212; Geosoft GX Python API 9.2.0 documentation</title>
     
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -25,16 +15,25 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '9.1',
+        VERSION:     '9.2.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="Geosoft GX Python API 9.1 documentation" href="index.html" /> 
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+ 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-87443115-1']);
+  _gaq.push(['_trackPageview']);
+</script>
+
   </head>
   <body role="document">
     <div class="related" role="navigation" aria-label="related navigation">
@@ -46,7 +45,7 @@
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.1 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -62,7 +61,7 @@
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="_sources/GXLAYOUT.txt"
+      <li><a href="_sources/GXLAYOUT.rst.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
@@ -89,20 +88,20 @@
 <dl class="class">
 <dt id="geosoft.gxapi.GXLAYOUT">
 <em class="property">class </em><code class="descclassname">geosoft.gxapi.</code><code class="descname">GXLAYOUT</code><a class="headerlink" href="#geosoft.gxapi.GXLAYOUT" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Layout</span> <span class="k">class</span> <span class="nc">for</span> <span class="n">generic</span> <span class="n">relative</span> <span class="n">layout</span> <span class="n">calculation</span>
+<dd><pre class="literal-block">
+Layout class for generic relative layout calculation
 
-<span class="n">The</span> <span class="n">relative</span> <span class="n">layout</span> <span class="n">algorithm</span> <span class="n">allows</span> <span class="n">a</span> <span class="n">logical</span> <span class="n">organization</span> <span class="n">of</span> <span class="n">layout</span> <span class="n">rectangles</span><span class="o">.</span>
-<span class="n">You</span> <span class="n">can</span> <span class="nb">set</span> <span class="n">constraints</span> <span class="k">with</span> <span class="n">English</span><span class="o">-</span><span class="n">like</span> <span class="n">semantics</span><span class="o">.</span> <span class="n">For</span> <span class="n">example</span><span class="p">:</span>
+The relative layout algorithm allows a logical organization of layout rectangles.
+You can set constraints with English-like semantics. For example:
 
-<span class="s2">&quot;Set the left side of rectangle 1 equal to the right side of rectangle 2 plus 10 pixels.&quot;</span>
-<span class="s2">&quot;Set the bottom of rectangle 1 to 25 percent of the height of rectangle 2.&quot;</span>
-<span class="s2">&quot;Move node 1 such that its bottom is equal to the top of rectangle 2 minus 10 pixels.&quot;</span>
+&quot;Set the left side of rectangle 1 equal to the right side of rectangle 2 plus 10 pixels.&quot;
+&quot;Set the bottom of rectangle 1 to 25 percent of the height of rectangle 2.&quot;
+&quot;Move node 1 such that its bottom is equal to the top of rectangle 2 minus 10 pixels.&quot;
 
-<span class="n">The</span> <span class="n">last</span> <span class="n">constraint</span> <span class="nb">set</span> <span class="n">would</span> <span class="n">enjoy</span> <span class="n">priority</span> <span class="n">over</span> <span class="nb">any</span> <span class="n">others</span> <span class="k">as</span> <span class="n">it</span> <span class="n">would</span> <span class="n">be</span>
-<span class="n">the</span> <span class="n">last</span> <span class="n">one</span> <span class="n">that</span> <span class="n">would</span> <span class="n">influence</span> <span class="n">the</span> <span class="n">rectangle</span> <span class="n">calculations</span><span class="o">.</span> <span class="n">See</span> <span class="n">the</span> <span class="n">notes</span> <span class="k">for</span> <span class="n">iSetConstraint</span>
-<span class="k">for</span> <span class="n">more</span> <span class="n">details</span><span class="o">.</span>
-</pre></div>
-</div>
+The last constraint set would enjoy priority over any others as it would be
+the last one that would influence the rectangle calculations. See the notes for iSetConstraint
+for more details.
+</pre>
 <dl class="method">
 <dt id="geosoft.gxapi.GXLAYOUT.add_constraint">
 <code class="descname">add_constraint</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(int)arg2</em>, <em>(int)arg3</em>, <em>(int)arg4</em>, <em>(float)arg5</em>, <em>(float)arg6</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXLAYOUT.add_constraint" title="Permalink to this definition">¶</a></dt>
@@ -114,10 +113,10 @@
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<em>int</em>) &#8211; From rectangle (Or -1 for parent)</li>
-<li><strong>arg2</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#layout-constr"><span class="std std-ref">LAYOUT_CONSTR constants</span></a> From constraint flag</li>
-<li><strong>arg3</strong> (<em>int</em>) &#8211; To rectangle (Or -1 for parent Or -2 for absolute positioning)</li>
-<li><strong>arg4</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#layout-constr"><span class="std std-ref">LAYOUT_CONSTR constants</span></a> To constraint flag</li>
+<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; From rectangle (Or -1 for parent)</li>
+<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#layout-constr"><span class="std std-ref">LAYOUT_CONSTR constants</span></a> From constraint flag</li>
+<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; To rectangle (Or -1 for parent Or -2 for absolute positioning)</li>
+<li><strong>arg4</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#layout-constr"><span class="std std-ref">LAYOUT_CONSTR constants</span></a> To constraint flag</li>
 <li><strong>arg5</strong> (<em>float</em>) &#8211; Offset modifier</li>
 <li><strong>arg6</strong> (<em>float</em>) &#8211; Multiplicative modifier</li>
 </ul>
@@ -127,7 +126,7 @@
 1 - Error</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></p>
 </td>
 </tr>
 </tbody>
@@ -143,30 +142,30 @@ width, height, or centering configurations. Examples:
 
 (ordered as rectangle from, constraint from, rectangle to, constraint to, offset modifier, multiplicative modifier)
 
-A, LAYOUT_CONSTR_LEFT, B, LAYOUT_CONSTR_LEFT, 0, 0, 1.0                                Set left position of A equal to left pos of B
-A, LAYOUT_CONSTR_LEFT, B, LAYOUT_CONSTR_RIGHT, 0, 0, 1.0                               Set left pos of A equal to right of B
+A, LAYOUT_CONSTR_LEFT, B, LAYOUT_CONSTR_LEFT, 0, 0, 1.0                             Set left position of A equal to left pos of B
+A, LAYOUT_CONSTR_LEFT, B, LAYOUT_CONSTR_RIGHT, 0, 0, 1.0                            Set left pos of A equal to right of B
 
 The offset modifier is used for additive manipulation of constraints
-A, LAYOUT_CONSTR_LEFT, B, LAYOUT_CONSTR_LEFT, 10, 0, 1.0                               Set left pos of A equal to left of B, plus 10
-A, LAYOUT_CONSTR_BOTTOM, B, LAYOUT_CONSTR_TOP, -20, 0, 1.0                     Set bottom of A equal to top of B, minus 20
+A, LAYOUT_CONSTR_LEFT, B, LAYOUT_CONSTR_LEFT, 10, 0, 1.0                            Set left pos of A equal to left of B, plus 10
+A, LAYOUT_CONSTR_BOTTOM, B, LAYOUT_CONSTR_TOP, -20, 0, 1.0                 Set bottom of A equal to top of B, minus 20
 
 Multiplicative manipulation of constraints
-A, LAYOUT_CONSTR_WIDTH, B, LAYOUT_CONSTR_WIDTH, 0, 0.5                    Set the width of A equal to 0.5 times the width of B
-A, LAYOUT_CONSTR_HEIGHT, B, LAYOUT_CONSTR_WIDTH, 0, 1.2                   Set the height of A equal to 1.2 times the width of B
+A, LAYOUT_CONSTR_WIDTH, B, LAYOUT_CONSTR_WIDTH, 0, 0.5                          Set the width of A equal to 0.5 times the width of B
+A, LAYOUT_CONSTR_HEIGHT, B, LAYOUT_CONSTR_WIDTH, 0, 1.2                         Set the height of A equal to 1.2 times the width of B
 
 You can use BOTH the multiplicative and offset modifiers in conjunction (multiplicative gets precedence)
-A, LAYOUT_CONSTR_WIDTH, B, LAYOUT_CONSTR_WIDTH, 10, 0.5                           A(width) = (0.5 <cite>*</cite> B(width)) + 10
-A, LAYOUT_CONSTR_LEFT, B, LAYOUT_CONSTR_WIDTH, -20, 0.1                   A(left) = (0.1 <cite>*</cite> B(width)) + (-20)
+A, LAYOUT_CONSTR_WIDTH, B, LAYOUT_CONSTR_WIDTH, 10, 0.5                         A(width) = (0.5 \ `*`\  B(width)) + 10
+A, LAYOUT_CONSTR_LEFT, B, LAYOUT_CONSTR_WIDTH, -20, 0.1                        A(left) = (0.1 \ `*`\  B(width)) + (-20)
 
 If second node is -2, use absolute positioning
-A,LAYOUT_CONSTR_LEFT,-2,&lt;ignored&gt;,25,&lt;ignored&gt;,&lt;ignored&gt;                       Position left of A at position 25
-A,LAYOUT_CONSTR_WIDTH,-2,&lt;ignored&gt;,30,&lt;ignored&gt;,&lt;ignored&gt;                      Set width of A to 30
+A,LAYOUT_CONSTR_LEFT,-2,&lt;ignored&gt;,25,&lt;ignored&gt;,&lt;ignored&gt;                        Position left of A at position 25
+A,LAYOUT_CONSTR_WIDTH,-2,&lt;ignored&gt;,30,&lt;ignored&gt;,&lt;ignored&gt;                       Set width of A to 30
 
 Use the MOVE constraints to move an entire window without resizing
-A, LAYOUT_CONSTR_MOVEL, B, LAYOUT_CONSTR_LEFT, 0, 0, 1.0                          Move node A, align left with left side of B
-A, LAYOUT_CONSTR_MOVEL, B, LAYOUT_CONSTR_RIGHT, 0, 0, 1.0                      Move node A, align left with right side of B
-A, LAYOUT_CONSTR_MOVET, B, LAYOUT_CONSTR_WIDTH, 0, 0, 1.0                      Move node A, align bottom to position equal to width of B
-A, LAYOUT_CONSTR_MOVER, B, LAYOUT_CONSTR_RIGHT, 10, 1.1                   Move node A, align right to 1.1<cite>*</cite>right of B, plus 10
+A, LAYOUT_CONSTR_MOVEL, B, LAYOUT_CONSTR_LEFT, 0, 0, 1.0                       Move node A, align left with left side of B
+A, LAYOUT_CONSTR_MOVEL, B, LAYOUT_CONSTR_RIGHT, 0, 0, 1.0                   Move node A, align left with right side of B
+A, LAYOUT_CONSTR_MOVET, B, LAYOUT_CONSTR_WIDTH, 0, 0, 1.0                   Move node A, align bottom to position equal to width of B
+A, LAYOUT_CONSTR_MOVER, B, LAYOUT_CONSTR_RIGHT, 10, 1.1                         Move node A, align right to 1.1\ `*`\ right of B, plus 10
 A, LAYOUT_CONSTR_MOVEL, NULL, 10, 0, 1.0                                         Move node A, align left at position 10
 </pre>
 </dd></dl>
@@ -174,9 +173,9 @@ A, LAYOUT_CONSTR_MOVEL, NULL, 10, 0, 1.0                                        
 <dl class="method">
 <dt id="geosoft.gxapi.GXLAYOUT.add_rectangle">
 <code class="descname">add_rectangle</code><span class="sig-paren">(</span><em>(float)arg1</em>, <em>(float)arg2</em>, <em>(float)arg3</em>, <em>(float)arg4</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXLAYOUT.add_rectangle" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Adds</span> <span class="n">a</span> <span class="n">rectangle</span> <span class="k">as</span> <span class="n">one</span> <span class="n">of</span> <span class="n">the</span> <span class="n">layout</span><span class="s1">&#39;s children (Higer.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Adds a rectangle as one of the layout's children (Higer.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -192,7 +191,7 @@ A, LAYOUT_CONSTR_MOVEL, NULL, 10, 0, 1.0                                        
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Rectangle number, -1 on error</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></p>
 </td>
 </tr>
 </tbody>
@@ -232,11 +231,11 @@ A, LAYOUT_CONSTR_MOVEL, NULL, 10, 0, 1.0                                        
 <p><span class="versionmodified">New in version 6.3.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Use</span> <span class="n">iGetRectangle</span> <span class="n">to</span> <span class="n">obtain</span> <span class="n">the</span> <span class="n">results</span> <span class="k">for</span> <span class="n">the</span> <span class="n">other</span> <span class="n">rectangles</span><span class="o">.</span> <span class="n">Depending</span>
-<span class="n">on</span> <span class="n">the</span> <span class="n">constraints</span> <span class="nb">set</span> <span class="n">the</span> <span class="n">parent</span> <span class="n">rectangle</span> <span class="n">may</span> <span class="n">also</span> <span class="n">change</span>
-<span class="n">after</span> <span class="n">the</span> <span class="n">calculation</span> <span class="p">(</span><span class="n">returned</span> <span class="n">here</span> <span class="k">for</span> <span class="n">convenience</span><span class="p">)</span><span class="o">.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+Use iGetRectangle to obtain the results for the other rectangles. Depending
+on the constraints set the parent rectangle may also change
+after the calculation (returned here for convenience).
+</pre>
 </dd></dl>
 
 <dl class="method">
@@ -292,7 +291,7 @@ A, LAYOUT_CONSTR_MOVEL, NULL, 10, 0, 1.0                                        
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<em>int</em>) &#8211; Initial number of objects (may be 0)</li>
+<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Initial number of objects (may be 0)</li>
 <li><strong>arg2</strong> (<em>str</em>) &#8211; Optional name of parent layout (may be empty)</li>
 </ul>
 </td>
@@ -321,7 +320,7 @@ A, LAYOUT_CONSTR_MOVEL, NULL, 10, 0, 1.0                                        
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<em>int</em>) &#8211; Rectangle to get info for (-1 for parent)</li>
+<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Rectangle to get info for (-1 for parent)</li>
 <li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; Buffer for name of the rectangle</li>
 </ul>
 </td>
@@ -350,7 +349,7 @@ A, LAYOUT_CONSTR_MOVEL, NULL, 10, 0, 1.0                                        
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<em>int</em>) &#8211; Rectangle to get info for (-1 for parent)</li>
+<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Rectangle to get info for (-1 for parent)</li>
 <li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Rectangle Min X</li>
 <li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Rectangle Min Y</li>
 <li><strong>arg4</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Rectangle Max X</li>
@@ -406,16 +405,16 @@ A, LAYOUT_CONSTR_MOVEL, NULL, 10, 0, 1.0                                        
 <dl class="method">
 <dt id="geosoft.gxapi.GXLAYOUT.num_rectangles">
 <code class="descname">num_rectangles</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXLAYOUT.num_rectangles" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Returns</span> <span class="n">the</span> <span class="n">number</span> <span class="n">of</span> <span class="n">children</span> <span class="ow">in</span> <span class="n">the</span> <span class="nb">list</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Returns the number of children in the list.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Number of rectangles not counting the parent</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></td>
 </tr>
 </tbody>
 </table>
@@ -435,7 +434,7 @@ A, LAYOUT_CONSTR_MOVEL, NULL, 10, 0, 1.0                                        
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<em>int</em>) &#8211; Rectangle to set info for (-1 for parent)</li>
+<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Rectangle to set info for (-1 for parent)</li>
 <li><strong>arg2</strong> (<em>float</em>) &#8211; Rectangle Min X</li>
 <li><strong>arg3</strong> (<em>float</em>) &#8211; Rectangle Min Y</li>
 <li><strong>arg4</strong> (<em>float</em>) &#8211; Rectangle Max X</li>
@@ -467,7 +466,7 @@ A, LAYOUT_CONSTR_MOVEL, NULL, 10, 0, 1.0                                        
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<em>int</em>) &#8211; Rectangle to set info for (-1 for parent)</li>
+<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Rectangle to set info for (-1 for parent)</li>
 <li><strong>arg2</strong> (<em>str</em>) &#8211; Name</li>
 </ul>
 </td>
@@ -606,12 +605,27 @@ A, LAYOUT_CONSTR_MOVEL, NULL, 10, 0, 1.0                                        
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.1 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li> 
       </ul>
     </div>
+
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2016, Geosoft Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.6.
+        &#169; Copyright 2017, Geosoft Inc.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
     </div>
+<div class="footer">This page uses <a href="http://analytics.google.com/">
+Google Analytics</a> to collect statistics. You can disable it by blocking
+the JavaScript coming from www.google-analytics.com.
+<script type="text/javascript">
+  (function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ?
+              'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+  })();
+</script>
+</div>
+
   </body>
 </html>

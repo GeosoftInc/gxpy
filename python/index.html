@@ -1,3 +1,4 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -5,19 +6,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <script type="text/javascript">
-
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-87443115-1']);
-      _gaq.push(['_trackPageview']);
-
-      (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
-    </script>
-    <title>Introduction &#8212; Geosoft GX Python API 9.1 documentation</title>
+    
+    <title>Introduction &#8212; Geosoft GX Python API 9.2.0 documentation</title>
     
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -25,16 +15,25 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '9.1',
+        VERSION:     '9.2.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="Geosoft GX Python API 9.1 documentation" href="#" /> 
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+ 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-87443115-1']);
+  _gaq.push(['_trackPageview']);
+</script>
+
   </head>
   <body role="document">
     <div class="related" role="navigation" aria-label="related navigation">
@@ -46,7 +45,7 @@
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="#">Geosoft GX Python API 9.1 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="#">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -54,13 +53,14 @@
   <h3><a href="#">Table Of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">Introduction</a></li>
+<li><a class="reference internal" href="#reference">Reference</a></li>
 <li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
 </ul>
 
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="_sources/index.txt"
+      <li><a href="_sources/index.rst.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
@@ -84,18 +84,46 @@
             
   <div class="section" id="introduction">
 <h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
-<p>This is documentation for the Geosoft GX API, which is part of Geosoft GX Developer. The complete GX Developer
-programming guide can be found here: <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/overview">GX Developer Documentation</a>.
-Refer to the documentation version that matches this version of this API.</p>
-<p>The Geosoft gxpy modules provide a Python-oriented set of simplified interfaces.</p>
+<p>This is the Python API reference documentation for the Geosoft GX API (and gxpy), which is part of Geosoft GX Developer.
+The complete GX Developer programming guide can be found in a separate on-line document:
+<a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/overview">GX Developer Guide</a>.
+The programming guide is available as a separate version for each released version of GX Developer. Refer to the
+documentation version that matches the API version noted at the top of this page.</p>
+<p>The GX API has two parts:</p>
 <blockquote>
-<div><a class="reference internal" href="geosoft.gxpy.html"><span class="doc">gxpy reference...</span></a></div></blockquote>
-<p>The Geosoft GX API provides the full low-level library of functions available to all languages.</p>
+<div><ol class="arabic simple">
+<li>The <strong>Geosoft GX API</strong> provides the full low-level library of functions available to all languages,
+including Python.  The Geosoft GX API is exposed to python developers through the
+<a class="reference internal" href="geosoft.gxapi.classes.html"><span class="doc">geosoft.gxapi</span></a> module.</li>
+<li>The <strong>Geosoft gxpy API</strong> is a set of <a class="reference internal" href="geosoft.gxpy.html"><span class="doc">Python modules...</span></a> that provides a
+Pythonic abstraction of key parts of the underlying GX API.  This hides much of the complexity of
+the low-level GX API, while still providing low-level access where necessary. The coding of the
+gxpy Python modules also provides an invaluable reference for how to work with the low-level
+libraries.</li>
+</ol>
+</div></blockquote>
+</div>
+<div class="section" id="reference">
+<h1>Reference<a class="headerlink" href="#reference" title="Permalink to this headline">¶</a></h1>
 <blockquote>
-<div><a class="reference internal" href="geosoft.gxapi.html"><span class="doc">GX API reference...</span></a></div></blockquote>
-<p>Some sample Python scripts...</p>
-<blockquote>
-<div><a class="reference internal" href="helloworld.html"><span class="doc">Example scripts...</span></a></div></blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="29%" />
+<col width="71%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>GX API</strong></td>
+<td><a class="reference internal" href="geosoft.gxapi.classes.html"><span class="doc">GX API Class/Library Reference...</span></a></td>
+</tr>
+<tr class="row-even"><td><strong>gxpy Python modules</strong></td>
+<td><a class="reference internal" href="geosoft.gxpy.html"><span class="doc">gxpy reference...</span></a></td>
+</tr>
+<tr class="row-odd"><td><strong>Example Python scripts</strong></td>
+<td><a class="reference internal" href="helloworld.html"><span class="doc">Example scripts...</span></a></td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
 </div>
 <div class="section" id="indices-and-tables">
 <h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
@@ -121,12 +149,27 @@ Refer to the documentation version that matches this version of this API.</p>
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="#">Geosoft GX Python API 9.1 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="#">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li> 
       </ul>
     </div>
+
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2016, Geosoft Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.6.
+        &#169; Copyright 2017, Geosoft Inc.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
     </div>
+<div class="footer">This page uses <a href="http://analytics.google.com/">
+Google Analytics</a> to collect statistics. You can disable it by blocking
+the JavaScript coming from www.google-analytics.com.
+<script type="text/javascript">
+  (function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ?
+              'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+  })();
+</script>
+</div>
+
   </body>
 </html>

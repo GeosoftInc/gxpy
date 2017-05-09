@@ -1,3 +1,4 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -5,19 +6,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <script type="text/javascript">
-
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-87443115-1']);
-      _gaq.push(['_trackPageview']);
-
-      (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
-    </script>
-    <title>GXCOM class &#8212; Geosoft GX Python API 9.1 documentation</title>
+    
+    <title>GXCOM class &#8212; Geosoft GX Python API 9.2.0 documentation</title>
     
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -25,16 +15,25 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '9.1',
+        VERSION:     '9.2.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="Geosoft GX Python API 9.1 documentation" href="index.html" /> 
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+ 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-87443115-1']);
+  _gaq.push(['_trackPageview']);
+</script>
+
   </head>
   <body role="document">
     <div class="related" role="navigation" aria-label="related navigation">
@@ -46,7 +45,7 @@
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.1 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -66,7 +65,7 @@
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="_sources/GXCOM.txt"
+      <li><a href="_sources/GXCOM.rst.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
@@ -93,27 +92,27 @@
 <dl class="class">
 <dt id="geosoft.gxapi.GXCOM">
 <em class="property">class </em><code class="descclassname">geosoft.gxapi.</code><code class="descname">GXCOM</code><a class="headerlink" href="#geosoft.gxapi.GXCOM" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="k">class</span> <span class="nc">is</span> <span class="n">used</span> <span class="n">to</span> <span class="n">communicate</span> <span class="k">with</span> <span class="n">external</span> <span class="n">serial</span> <span class="n">devices</span><span class="o">.</span> <span class="n">It</span> <span class="n">allows</span> <span class="n">the</span> <span class="n">setting</span> <span class="n">of</span> <span class="n">timeouts</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+This class is used to communicate with external serial devices. It allows the setting of timeouts.
+</pre>
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXCOM.create">
 <em class="property">static </em><code class="descname">create</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(int)arg2</em>, <em>(int)arg3</em>, <em>(int)arg4</em>, <em>(int)arg5</em>, <em>(int)arg6</em>, <em>(int)arg7</em><span class="sig-paren">)</span> &rarr; GXCOM:<a class="headerlink" href="#geosoft.gxapi.GXCOM.create" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Create</span> <span class="n">COM</span> <span class="nb">object</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Create COM object.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<em>str</em>) &#8211; port name to open (&#8220;COM1&#8221; is example)</li>
-<li><strong>arg2</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#com-baud"><span class="std std-ref">COM_BAUD constants</span></a></li>
-<li><strong>arg3</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#com-datasize"><span class="std std-ref">COM_DATASIZE constants</span></a></li>
-<li><strong>arg4</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#com-parity"><span class="std std-ref">COM_PARITY constants</span></a></li>
-<li><strong>arg5</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#com-stopbits"><span class="std std-ref">COM_STOPBITS constants</span></a></li>
-<li><strong>arg6</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#com-flowcontrol"><span class="std std-ref">COM_FLOWCONTROL constants</span></a></li>
-<li><strong>arg7</strong> (<em>int</em>) &#8211; Timeout in Ms (500)</li>
+<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#com-baud"><span class="std std-ref">COM_BAUD constants</span></a></li>
+<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#com-datasize"><span class="std std-ref">COM_DATASIZE constants</span></a></li>
+<li><strong>arg4</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#com-parity"><span class="std std-ref">COM_PARITY constants</span></a></li>
+<li><strong>arg5</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#com-stopbits"><span class="std std-ref">COM_STOPBITS constants</span></a></li>
+<li><strong>arg6</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#com-flowcontrol"><span class="std std-ref">COM_FLOWCONTROL constants</span></a></li>
+<li><strong>arg7</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Timeout in Ms (500)</li>
 </ul>
 </td>
 </tr>
@@ -133,21 +132,21 @@
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXCOM.create_no_terminate">
 <em class="property">static </em><code class="descname">create_no_terminate</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(int)arg2</em>, <em>(int)arg3</em>, <em>(int)arg4</em>, <em>(int)arg5</em>, <em>(int)arg6</em>, <em>(int)arg7</em><span class="sig-paren">)</span> &rarr; GXCOM:<a class="headerlink" href="#geosoft.gxapi.GXCOM.create_no_terminate" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Create</span> <span class="n">COM</span> <span class="nb">object</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Create COM object.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<em>str</em>) &#8211; port name to open (&#8220;COM1&#8221; is example)</li>
-<li><strong>arg2</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#com-baud"><span class="std std-ref">COM_BAUD constants</span></a></li>
-<li><strong>arg3</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#com-datasize"><span class="std std-ref">COM_DATASIZE constants</span></a></li>
-<li><strong>arg4</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#com-parity"><span class="std std-ref">COM_PARITY constants</span></a></li>
-<li><strong>arg5</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#com-stopbits"><span class="std std-ref">COM_STOPBITS constants</span></a></li>
-<li><strong>arg6</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#com-flowcontrol"><span class="std std-ref">COM_FLOWCONTROL constants</span></a></li>
-<li><strong>arg7</strong> (<em>int</em>) &#8211; Timeout in Ms (500)</li>
+<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#com-baud"><span class="std std-ref">COM_BAUD constants</span></a></li>
+<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#com-datasize"><span class="std std-ref">COM_DATASIZE constants</span></a></li>
+<li><strong>arg4</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#com-parity"><span class="std std-ref">COM_PARITY constants</span></a></li>
+<li><strong>arg5</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#com-stopbits"><span class="std std-ref">COM_STOPBITS constants</span></a></li>
+<li><strong>arg6</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#com-flowcontrol"><span class="std std-ref">COM_FLOWCONTROL constants</span></a></li>
+<li><strong>arg7</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Timeout in Ms (500)</li>
 </ul>
 </td>
 </tr>
@@ -199,9 +198,9 @@
 <dl class="method">
 <dt id="geosoft.gxapi.GXCOM.purge_comm">
 <code class="descname">purge_comm</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXCOM.purge_comm" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Purges</span> <span class="n">the</span> <span class="nb">input</span> <span class="ow">and</span> <span class="n">output</span> <span class="n">buffers</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Purges the input and output buffers.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -243,9 +242,9 @@
 <dl class="method">
 <dt id="geosoft.gxapi.GXCOM.read_chars_no_terminate">
 <code class="descname">read_chars_no_terminate</code><span class="sig-paren">(</span><em>(str_ref)arg1</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXCOM.read_chars_no_terminate" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Reads</span> <span class="n">characters</span> <span class="kn">from</span> <span class="nn">the</span> <span class="n">COM</span><span class="p">,</span> <span class="n">times</span> <span class="n">out</span> <span class="ow">and</span> <span class="n">does</span> <span class="ow">not</span> <span class="n">terminate</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Reads characters from the COM, times out and does not terminate
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -255,7 +254,7 @@
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">1 - if time out or error
 0 - if successful</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></td>
 </tr>
 </tbody>
 </table>
@@ -267,15 +266,15 @@
 <dl class="method">
 <dt id="geosoft.gxapi.GXCOM.read_em61_lines_wa">
 <code class="descname">read_em61_lines_wa</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(GXWA)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXCOM.read_em61_lines_wa" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Reads</span> <span class="n">Lines</span> <span class="kn">from</span> <span class="nn">the</span> <span class="n">COM</span> <span class="n">to</span> <span class="n">a</span> <span class="n">WA</span><span class="p">:</span> <span class="n">Geonics</span> <span class="n">EM61</span> <span class="n">only</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Reads Lines from the COM to a WA: Geonics EM61 only
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<em>int</em>) &#8211; number of lines</li>
+<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; number of lines</li>
 <li><strong>arg2</strong> (<a class="reference internal" href="GXWA.html#geosoft.gxapi.GXWA" title="geosoft.gxapi.GXWA"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXWA</span></code></a>) &#8211; Where to put lines</li>
 </ul>
 </td>
@@ -354,7 +353,7 @@
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">0 - if successful in reading a line
 1 - if an error was encountered</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></td>
 </tr>
 </tbody>
 </table>
@@ -374,7 +373,7 @@
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<em>int</em>) &#8211; number of lines</li>
+<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; number of lines</li>
 <li><strong>arg2</strong> (<a class="reference internal" href="GXWA.html#geosoft.gxapi.GXWA" title="geosoft.gxapi.GXWA"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXWA</span></code></a>) &#8211; Where to put lines</li>
 </ul>
 </td>
@@ -395,14 +394,14 @@
 <dl class="method">
 <dt id="geosoft.gxapi.GXCOM.set_time_out">
 <code class="descname">set_time_out</code><span class="sig-paren">(</span><em>(int)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXCOM.set_time_out" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Set</span> <span class="n">the</span> <span class="n">timeout</span> <span class="n">value</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Set the timeout value.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>int</em>) &#8211; Timeout in Ms (500)</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Timeout in Ms (500)</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Nothing</td>
 </tr>
@@ -441,9 +440,9 @@
 <dl class="method">
 <dt id="geosoft.gxapi.GXCOM.write_chars_no_terminate">
 <code class="descname">write_chars_no_terminate</code><span class="sig-paren">(</span><em>(str)arg1</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXCOM.write_chars_no_terminate" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Writes</span> <span class="n">characters</span> <span class="n">to</span> <span class="n">the</span> <span class="n">COM</span><span class="o">.</span>  <span class="n">Does</span> <span class="ow">not</span> <span class="n">terminate</span> <span class="n">upon</span> <span class="n">error</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Writes characters to the COM.  Does not terminate upon error
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -453,7 +452,7 @@
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">0 - if successful in writing a string
 1 - if time out or error was encountered</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></td>
 </tr>
 </tbody>
 </table>
@@ -689,12 +688,27 @@
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.1 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li> 
       </ul>
     </div>
+
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2016, Geosoft Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.6.
+        &#169; Copyright 2017, Geosoft Inc.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
     </div>
+<div class="footer">This page uses <a href="http://analytics.google.com/">
+Google Analytics</a> to collect statistics. You can disable it by blocking
+the JavaScript coming from www.google-analytics.com.
+<script type="text/javascript">
+  (function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ?
+              'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+  })();
+</script>
+</div>
+
   </body>
 </html>

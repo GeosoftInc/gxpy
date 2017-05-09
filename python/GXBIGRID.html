@@ -1,3 +1,4 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -5,19 +6,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <script type="text/javascript">
-
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-87443115-1']);
-      _gaq.push(['_trackPageview']);
-
-      (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
-    </script>
-    <title>GXBIGRID class &#8212; Geosoft GX Python API 9.1 documentation</title>
+    
+    <title>GXBIGRID class &#8212; Geosoft GX Python API 9.2.0 documentation</title>
     
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -25,16 +15,25 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '9.1',
+        VERSION:     '9.2.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="Geosoft GX Python API 9.1 documentation" href="index.html" /> 
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+ 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-87443115-1']);
+  _gaq.push(['_trackPageview']);
+</script>
+
   </head>
   <body role="document">
     <div class="related" role="navigation" aria-label="related navigation">
@@ -46,7 +45,7 @@
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.1 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -54,7 +53,7 @@
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="_sources/GXBIGRID.txt"
+      <li><a href="_sources/GXBIGRID.rst.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
@@ -81,10 +80,10 @@
 <dl class="class">
 <dt id="geosoft.gxapi.GXBIGRID">
 <em class="property">class </em><code class="descclassname">geosoft.gxapi.</code><code class="descname">GXBIGRID</code><a class="headerlink" href="#geosoft.gxapi.GXBIGRID" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">Bigrid</span> <span class="k">class</span> <span class="nc">is</span> <span class="n">used</span> <span class="n">to</span> <span class="n">grid</span> <span class="n">data</span> <span class="n">using</span> <span class="n">a</span> <span class="n">optimized</span> <span class="n">algorithm</span> <span class="n">that</span>
-<span class="n">assumes</span> <span class="n">data</span> <span class="ow">is</span> <span class="n">collected</span> <span class="ow">in</span> <span class="n">semi</span><span class="o">-</span><span class="n">straight</span> <span class="n">lines</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+The Bigrid class is used to grid data using a optimized algorithm that
+assumes data is collected in semi-straight lines.
+</pre>
 <dl class="method">
 <dt id="geosoft.gxapi.GXBIGRID.clear">
 <code class="descname">clear</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXBIGRID.clear" title="Permalink to this definition">¶</a></dt>
@@ -126,12 +125,12 @@
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">Bigrid</span> <span class="nb">object</span> <span class="ow">is</span> <span class="n">initially</span> <span class="n">empty</span><span class="o">.</span> <span class="n">It</span> <span class="n">will</span> <span class="n">store</span> <span class="n">the</span>
-<span class="n">control</span> <span class="n">file</span> <span class="n">parameters</span> <span class="n">which</span> <span class="n">the</span> <span class="n">Bigrid</span> <span class="n">program</span> <span class="n">needs</span>
-<span class="n">to</span> <span class="n">execute</span><span class="o">.</span> <span class="n">Use</span> <span class="n">the</span> <span class="n">LoadParms_BIGRID</span> <span class="n">method</span> <span class="n">to</span> <span class="n">get</span> <span class="n">the</span>
-<span class="n">control</span> <span class="n">file</span> <span class="n">parameters</span> <span class="n">into</span> <span class="n">the</span> <span class="n">BIGRID</span> <span class="nb">object</span><span class="o">.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+The Bigrid object is initially empty. It will store the
+control file parameters which the Bigrid program needs
+to execute. Use the LoadParms_BIGRID method to get the
+control file parameters into the BIGRID object.
+</pre>
 </dd></dl>
 
 <dl class="method">
@@ -153,10 +152,10 @@
 <dl class="method">
 <dt id="geosoft.gxapi.GXBIGRID.load_parms">
 <code class="descname">load_parms</code><span class="sig-paren">(</span><em>(str)arg1</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXBIGRID.load_parms" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Retrieves</span> <span class="n">a</span> <span class="n">Bigrid</span> <span class="nb">object</span><span class="s1">&#39;s control parameters from a file,</span>
-<span class="ow">or</span> <span class="n">sets</span> <span class="n">the</span> <span class="n">parameters</span> <span class="n">to</span> <span class="n">default</span> <span class="k">if</span> <span class="n">the</span> <span class="n">file</span> <span class="n">doesn</span><span class="s1">&#39;t exist.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Retrieves a Bigrid object's control parameters from a file,
+or sets the parameters to default if the file doesn't exist.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -166,7 +165,7 @@
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">0 - Ok
 1 - Error</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></td>
 </tr>
 </tbody>
 </table>
@@ -174,21 +173,21 @@
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">If</span> <span class="n">the</span> <span class="n">control</span> <span class="n">file</span> <span class="n">name</span> <span class="n">passed</span> <span class="n">into</span> <span class="n">this</span> <span class="n">function</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">file</span>
-<span class="n">which</span> <span class="n">does</span> <span class="ow">not</span> <span class="n">exist</span><span class="p">,</span> <span class="n">then</span> <span class="n">the</span> <span class="n">defaults</span> <span class="k">for</span> <span class="n">a</span> <span class="n">Bigrid</span> <span class="n">control</span>
-<span class="n">file</span> <span class="n">will</span> <span class="n">be</span> <span class="n">generated</span> <span class="ow">and</span> <span class="n">put</span> <span class="n">into</span> <span class="n">the</span> <span class="n">BIGRID</span> <span class="nb">object</span><span class="o">.</span>
-<span class="n">Otherwise</span><span class="p">,</span> <span class="n">the</span> <span class="n">control</span> <span class="n">file</span><span class="s1">&#39;s settings are retrieved from</span>
-<span class="n">the</span> <span class="n">file</span> <span class="ow">and</span> <span class="n">loaded</span> <span class="n">into</span> <span class="n">the</span> <span class="n">BIGRID</span> <span class="nb">object</span><span class="o">.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+If the control file name passed into this function is a file
+which does not exist, then the defaults for a Bigrid control
+file will be generated and put into the BIGRID object.
+Otherwise, the control file's settings are retrieved from
+the file and loaded into the BIGRID object.
+</pre>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXBIGRID.load_warp">
 <code class="descname">load_warp</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(str)arg2</em>, <em>(str)arg3</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXBIGRID.load_warp" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Load</span> <span class="n">a</span> <span class="n">warp</span> <span class="n">projection</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Load a warp projection.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -204,7 +203,7 @@
 1 - Error</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></p>
 </td>
 </tr>
 </tbody>
@@ -233,10 +232,10 @@
 <dl class="method">
 <dt id="geosoft.gxapi.GXBIGRID.run">
 <code class="descname">run</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(GXDAT)arg2</em>, <em>(GXDAT)arg3</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXBIGRID.run" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Executes</span> <span class="n">the</span> <span class="n">Bigrid</span> <span class="n">program</span><span class="p">,</span> <span class="n">using</span> <span class="n">the</span> <span class="nb">input</span> <span class="n">channel</span> <span class="ow">and</span>
-<span class="n">output</span> <span class="n">file</span> <span class="n">parameters</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Executes the Bigrid program, using the input channel and
+output file parameters.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -264,10 +263,10 @@
 <dl class="method">
 <dt id="geosoft.gxapi.GXBIGRID.run2">
 <code class="descname">run2</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(GXDAT)arg2</em>, <em>(GXDAT)arg3</em>, <em>(GXIPJ)arg4</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXBIGRID.run2" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Executes</span> <span class="n">the</span> <span class="n">Bigrid</span> <span class="n">program</span><span class="p">,</span> <span class="n">using</span> <span class="n">the</span> <span class="nb">input</span> <span class="n">channel</span> <span class="ow">and</span>
-<span class="n">output</span> <span class="n">file</span> <span class="n">parameters</span> <span class="k">with</span> <span class="n">a</span> <span class="n">projection</span> <span class="n">handle</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Executes the Bigrid program, using the input channel and
+output file parameters with a projection handle.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -296,10 +295,10 @@
 <dl class="method">
 <dt id="geosoft.gxapi.GXBIGRID.save_parms">
 <code class="descname">save_parms</code><span class="sig-paren">(</span><em>(str)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXBIGRID.save_parms" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Puts</span> <span class="n">the</span> <span class="n">Bigrid</span> <span class="nb">object</span><span class="s1">&#39;s control parameters back into</span>
-<span class="n">its</span> <span class="n">control</span> <span class="n">file</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Puts the Bigrid object's control parameters back into
+its control file.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -316,10 +315,10 @@
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">If</span> <span class="n">the</span> <span class="n">control</span> <span class="n">file</span> <span class="n">did</span> <span class="ow">not</span> <span class="n">previously</span> <span class="n">exist</span><span class="p">,</span> <span class="n">it</span> <span class="n">will</span> <span class="n">be</span>
-<span class="n">created</span><span class="o">.</span> <span class="n">Otherwise</span><span class="p">,</span> <span class="n">the</span> <span class="n">old</span> <span class="n">file</span> <span class="n">will</span> <span class="n">be</span> <span class="n">overwritten</span><span class="o">.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+If the control file did not previously exist, it will be
+created. Otherwise, the old file will be overwritten.
+</pre>
 </dd></dl>
 
 </dd></dl>
@@ -341,12 +340,27 @@
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.1 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li> 
       </ul>
     </div>
+
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2016, Geosoft Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.6.
+        &#169; Copyright 2017, Geosoft Inc.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
     </div>
+<div class="footer">This page uses <a href="http://analytics.google.com/">
+Google Analytics</a> to collect statistics. You can disable it by blocking
+the JavaScript coming from www.google-analytics.com.
+<script type="text/javascript">
+  (function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ?
+              'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+  })();
+</script>
+</div>
+
   </body>
 </html>

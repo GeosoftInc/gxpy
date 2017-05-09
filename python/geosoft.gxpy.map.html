@@ -1,0 +1,783 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>geosoft.gxpy.map submodule &#8212; Geosoft GX Python API 9.2.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/maki.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '9.2.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+ 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-87443115-1']);
+  _gaq.push(['_trackPageview']);
+</script>
+
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/geosoft.gxpy.map.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-geosoft.gxpy.map">
+<span id="geosoft-gxpy-map-submodule"></span><h1>geosoft.gxpy.map submodule<a class="headerlink" href="#module-geosoft.gxpy.map" title="Permalink to this headline">¶</a></h1>
+<p>Geosoft maps contain 2D and 3D views.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Regression tests provide usage examples: <a class="reference external" href="https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_map.py">Tests</a></p>
+</div>
+<dl class="class">
+<dt id="geosoft.gxpy.map.Line_def">
+<em class="property">class </em><code class="descclassname">geosoft.gxpy.map.</code><code class="descname">Line_def</code><span class="sig-paren">(</span><em>line_color='k'</em>, <em>fill_color=None</em>, <em>thickness=100</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.map.Line_def" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="geosoft.gxpy.map.Map">
+<em class="property">class </em><code class="descclassname">geosoft.gxpy.map.</code><code class="descname">Map</code><span class="sig-paren">(</span><em>file_name</em>, <em>mode=1</em>, <em>_internal=False</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.map.Map" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>Geosoft map files.</p>
+<p>A Geosoft map is a container for views.  A view has a defined coordinate system (2D or 3D) and
+contains graphical elements defined relative to the coordinate system of the view.  The
+<code class="docutils literal"><span class="pre">geosoft.gxpy.view</span></code> module provides classes and methods for working with individual 2D or
+3D views.</p>
+<p>Geosoft maps will always have a 2D &#8216;base&#8217; view, which uses map cm as the coordinate system and is
+intended for drawing map annotations, such as titles, a scale bar, North arrow and legends.  The
+lower-left corner of the base view at location (0, 0) and the upper-right corner is defined by the
+media size and may be adjusted to fit the data view.</p>
+<p>Geosoft maps will also have one or more data views, each with it&#8217;s own defined coordinate system
+and graphical content.  Creating a new map will create one data view, which will become the map&#8217;s 
+<code class="docutils literal"><span class="pre">current_data_view</span></code>, within which any spatial data drawn by Geosoft 2D drawing applications
+will be placed.  Maps may have more than one data view, including 3D data views, and the 
+<code class="docutils literal"><span class="pre">current_data_view</span></code> can be changed to any 2D or 3D view, and subsequent drawing will be placed
+in that view.</p>
+<p>3D views define a 3D spatial volume and accept both 2D and 3D drawing elements.  A 3D view will always
+contain a plane or surface on which 2D elements are drawn, and when a 3D view is the
+<cite>default data view</cite>, 2D elements will be drawn to the identified plane or surface.  When a 3D view is
+rendered on a map, which is a flat surface, the view is rendered from the last use point of view.  Geosoft
+map viewing applications allow a user to open a 3D view in a 3D viewer, which provides for 3D viewing,
+3D navigation and 3D drawing capabilities.</p>
+<p>Constructors:</p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="22%" />
+<col width="78%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><cite>open()</cite></td>
+<td>open an existing map</td>
+</tr>
+<tr class="row-even"><td><cite>new()</cite></td>
+<td>create a new map</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>Properties:</p>
+<blockquote>
+<div>TODO - complete</div></blockquote>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.2.</span></p>
+</div>
+<dl class="method">
+<dt id="geosoft.gxpy.map.Map.aggregate_list">
+<code class="descname">aggregate_list</code><span class="sig-paren">(</span><em>mode=0</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.map.Map.aggregate_list" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxpy.map.Map.annotate_data_ll">
+<code class="descname">annotate_data_ll</code><span class="sig-paren">(</span><em>view_name='*data'</em>, <em>tick=''</em>, <em>offset=''</em>, <em>sep=''</em>, <em>top=-1</em>, <em>text_def=None</em>, <em>edge_pen=None</em>, <em>grid=3</em>, <em>grid_pen=None</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.map.Map.annotate_data_ll" title="Permalink to this definition">¶</a></dt>
+<dd><p>Annotate the date view axis</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>tick</strong> &#8211; inner tick size in cm</li>
+<li><strong>offset</strong> &#8211; posting offset from the edge in cm</li>
+<li><strong>sep</strong> &#8211; separation between annotations, default is calculated from data</li>
+<li><strong>top</strong> &#8211; TOP_IN or TOP_OUT (default) for vertical annotations</li>
+<li><strong>grid</strong> &#8211; <p>Plot grid lines:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">GRID_NONE</span>       <span class="n">no</span> <span class="n">grid</span>
+<span class="n">GRID_DOTTED</span>     <span class="n">dotted</span> <span class="n">lines</span>
+<span class="n">GRID_CROSSES</span>    <span class="n">crosses</span> <span class="n">at</span> <span class="n">intersections</span>
+<span class="n">GRID_LINES</span>      <span class="n">lines</span>
+</pre></div>
+</div>
+</li>
+<li><strong>grid_pen</strong> &#8211; color-thickness string</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.2.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxpy.map.Map.annotate_data_xy">
+<code class="descname">annotate_data_xy</code><span class="sig-paren">(</span><em>view_name='*data'</em>, <em>tick=''</em>, <em>offset=''</em>, <em>x_sep=''</em>, <em>x_dec=''</em>, <em>y_sep=''</em>, <em>y_dec=''</em>, <em>compass=True</em>, <em>top=-1</em>, <em>text_def=None</em>, <em>edge_pen=None</em>, <em>grid=0</em>, <em>grid_pen=None</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.map.Map.annotate_data_xy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Annotate a data view axis</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>view_name</strong> &#8211; name of the data view to annotate</li>
+<li><strong>tick</strong> &#8211; inner tick size in cm</li>
+<li><strong>offset</strong> &#8211; posting offset from the edge in cm. The posting edge is adjusted to be outside
+character height for a subsequent call to an edge annotation.  This allows one to
+annotate both geographic and projected coordinates.</li>
+<li><strong>top</strong> &#8211; TOP_IN or TOP_OUT (default) for vertical annotations</li>
+<li><strong>x_sep</strong> &#8211; separation between X annotations, default is calculated from data</li>
+<li><strong>x_dec</strong> &#8211; X axis label decimals, default is 0</li>
+<li><strong>y_sep</strong> &#8211; separation between Y annotations, default is calculated from data</li>
+<li><strong>y_dec</strong> &#8211; Y axis label decimals, default is 0</li>
+<li><strong>compass</strong> &#8211; True (default) to append compass direction to annotations</li>
+<li><strong>grid</strong> &#8211; <p>Plot grid lines:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">GRID_NONE</span>       <span class="n">no</span> <span class="n">grid</span>
+<span class="n">GRID_DOTTED</span>     <span class="n">dotted</span> <span class="n">lines</span>
+<span class="n">GRID_CROSSES</span>    <span class="n">crosses</span> <span class="n">at</span> <span class="n">intersections</span>
+<span class="n">GRID_LINES</span>      <span class="n">lines</span>
+</pre></div>
+</div>
+</li>
+<li><strong>text_def</strong> &#8211; <code class="docutils literal"><span class="pre">gxg.Text_def</span></code></li>
+<li><strong>edge_pen</strong> &#8211; <code class="docutils literal"><span class="pre">gxg.Pen</span></code></li>
+<li><strong>grid_pen</strong> &#8211; <code class="docutils literal"><span class="pre">gxg.Pen</span></code></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.2.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxpy.map.Map.classview">
+<code class="descname">classview</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.map.Map.classview" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given a view name that may be a class name (&#8216;*&#8217; prefix), return the view name for that class.  if not
+class decorated, the name passed is returned.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> &#8211; view name, <cite>&#8216;*data&#8217;</cite> will return the name associated with the <cite>&#8216;data&#8217;</cite> class, while
+<cite>&#8216;my_view&#8217;</cite> will return <cite>&#8216;my_view&#8217;</cite>.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">the name, or if a class name, the view name associated with that class.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxpy.map.Map.close">
+<code class="descname">close</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.map.Map.close" title="Permalink to this definition">¶</a></dt>
+<dd><p>Close the map and release resources.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxpy.map.Map.commit_changes">
+<code class="descname">commit_changes</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.map.Map.commit_changes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Commit changes to the map.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxpy.map.Map.copy_view">
+<code class="descname">copy_view</code><span class="sig-paren">(</span><em>old</em>, <em>new</em>, <em>overwrite=False</em>, <em>copy_all=True</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.map.Map.copy_view" title="Permalink to this definition">¶</a></dt>
+<dd><p>Copy an existing view into a new view.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>old</strong> &#8211; name of the existing view</li>
+<li><strong>new</strong> &#8211; name for the new view</li>
+<li><strong>overwrite</strong> &#8211; True to overwrite an existing view if it exists</li>
+<li><strong>copy_all</strong> &#8211; True to copy content of old to new, false to create an empty new view
+with the same coordinate system, scale and clipping as the old view.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxpy.map.Map.create_linked_3d_view">
+<code class="descname">create_linked_3d_view</code><span class="sig-paren">(</span><em>view</em>, <em>name='3D'</em>, <em>area_on_map=(0</em>, <em>0</em>, <em>300</em>, <em>300)</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.map.Map.create_linked_3d_view" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a linked 3D view inside a 2D map to a <cite>gxpy.view.View_3d</cite> in a 3DV</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>view</strong> &#8211; A <cite>gxpy.view.View_3d</cite> instance</li>
+<li><strong>name</strong> &#8211; name of the linked view to create</li>
+<li><strong>area_on_map</strong> &#8211; min_x, min_y, max_x, max_y) placement of view on map in mm</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.2.</span></p>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxpy.map.Map.current_base_view">
+<code class="descname">current_base_view</code><a class="headerlink" href="#geosoft.gxpy.map.Map.current_base_view" title="Permalink to this definition">¶</a></dt>
+<dd><p>The current default base view which accepts drawing commands from Geosoft methods.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxpy.map.Map.current_data_view">
+<code class="descname">current_data_view</code><a class="headerlink" href="#geosoft.gxpy.map.Map.current_data_view" title="Permalink to this definition">¶</a></dt>
+<dd><p>The current default data view which accepts drawing commands from Geosoft methods.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxpy.map.Map.current_section_view">
+<code class="descname">current_section_view</code><a class="headerlink" href="#geosoft.gxpy.map.Map.current_section_view" title="Permalink to this definition">¶</a></dt>
+<dd><p>The current default base view which accepts drawing commands from Geosoft methods.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxpy.map.Map.delete_view">
+<code class="descname">delete_view</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.map.Map.delete_view" title="Permalink to this definition">¶</a></dt>
+<dd><p>Delete a view from a map. You cannot delete the last view in a mep.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> &#8211; name of the view to delete</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.2.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxpy.map.Map.extent_data_views">
+<code class="descname">extent_data_views</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.map.Map.extent_data_views" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the extent of all data views on the map in map cm.</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.2.</span></p>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxpy.map.Map.file_name">
+<code class="descname">file_name</code><a class="headerlink" href="#geosoft.gxpy.map.Map.file_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Full map file path name.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxpy.map.Map.get_class_name">
+<code class="descname">get_class_name</code><span class="sig-paren">(</span><em>view_class</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.map.Map.get_class_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the view name associated with a class.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>view_class</strong> &#8211; desired class</td>
+</tr>
+</tbody>
+</table>
+<p>Common view class names are:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="s1">&#39;Base&#39;</span>      <span class="n">the</span> <span class="n">base</span> <span class="nb">map</span><span class="o">/</span><span class="n">figure</span> <span class="n">view</span><span class="p">,</span> <span class="n">uses</span> <span class="nb">map</span> <span class="n">cm</span>
+<span class="s1">&#39;Data&#39;</span>      <span class="n">the</span> <span class="n">default</span> <span class="n">data</span> <span class="n">view</span> <span class="k">for</span> <span class="n">drawing</span> <span class="n">spatial</span> <span class="n">data</span><span class="o">.</span>
+<span class="s1">&#39;Section&#39;</span>   <span class="n">the</span> <span class="n">default</span> <span class="n">section</span> <span class="n">view</span> <span class="k">for</span> <span class="n">things</span> <span class="n">drawn</span> <span class="ow">in</span> <span class="n">section</span>
+</pre></div>
+</div>
+<p>Other class names may be defined, though they are not used by Geosoft.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">view name associated with the class, &#8216;&#8217; if not defined.</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.2.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxpy.map.Map.has_view">
+<code class="descname">has_view</code><span class="sig-paren">(</span><em>view</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.map.Map.has_view" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns True if the map contains this view.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxpy.map.Map.map_reference_location">
+<code class="descname">map_reference_location</code><span class="sig-paren">(</span><em>refp</em>, <em>view_name='base'</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.map.Map.map_reference_location" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the location of a reference point relative to the current clipping window
+extent of a view on the map.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>refp</strong> &#8211; <p>One of:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">REF_BOTTOM_LEFT</span>
+<span class="n">REF_BOTTOM_CENTER</span>
+<span class="n">REF_BOTTOM_RIGHT</span>
+<span class="n">REF_CENTER_LEFT</span>
+<span class="n">REF_CENTER</span>
+<span class="n">REF_CENTER_RIGHT</span>
+<span class="n">REF_TOP_LEFT</span>
+<span class="n">REF_TOP_CENTER</span>
+<span class="n">REF_TOP_RIGHT</span>
+</pre></div>
+</div>
+</li>
+<li><strong>view_name</strong> &#8211; the name of the view, default is the base view which returns the
+extent in map cm.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">(x, y) in view units</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.2.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxpy.map.Map.mdf">
+<code class="descname">mdf</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.map.Map.mdf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the Map Description File specification for maps that contain
+both a base view and a data view:</p>
+<p>((x_size, y_size, margin_bottom, margin_right, margin_top, margin_left),
+(scale, units_per_metre, x_origin, y_origin))</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxpy.map.Map.name">
+<code class="descname">name</code><a class="headerlink" href="#geosoft.gxpy.map.Map.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxpy.map.Map.new">
+<em class="property">classmethod </em><code class="descname">new</code><span class="sig-paren">(</span><em>file_name=None</em>, <em>data_area=(0.0</em>, <em>0.0</em>, <em>100.0</em>, <em>100.0)</em>, <em>scale=None</em>, <em>cs=None</em>, <em>media=None</em>, <em>layout=None</em>, <em>fixed_size=False</em>, <em>map_style=None</em>, <em>margins=None</em>, <em>inside_margin=1.0</em>, <em>overwrite=False</em>, <em>no_data_view=False</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.map.Map.new" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create and open a new Geosoft map.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><table class="first last docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">file_name:</th><td class="field-body">Map file name.  If not specified a temporary file is created in the instance
+temporary folder.  Use <code class="docutils literal"><span class="pre">file_name()</span></code> to get the file name if needed.  The 
+temporary map file will be unique and will exist through the life of the
+Python GX instance, but will be deleted along with all temporary files
+when the GX loses context.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">data_area:</th><td class="field-body">(min_x, min_y, max_x, max_y) data area for a 2D data view on the map</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">scale:</th><td class="field-body">required scale, default will fit data to the map media</td>
+</tr>
+<tr class="field-even field"><th class="field-name">cs:</th><td class="field-body">coordinate system, default is an unknown coordinate system.  You may pass
+a <code class="docutils literal"><span class="pre">coordinate_system.Coordinate_system</span></code> instance, a string descriptor, such as
+<cite>WGS 84 / UTM zone 15N</cite>, or another valid constructor supported by
+<code class="docutils literal"><span class="pre">coordinate_system.Coordinate_system</span></code>.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">media:</th><td class="field-body">media size as a tuple(x_cm, y_cm), or as a standard media name string.
+If the media name contains &#8216;portrait&#8217;, the media is media aspect will be portrait.
+Named media sizes are read from media.csv, which includes A4, A3, A2, A1, A0, 
+letter, legal, ledger, A, B, C, D, E. For example <cite>media=&#8217;A4 portrait&#8217;</cite>.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">layout:</th><td class="field-body">MAP_PORTRAIT or MAP_LANDSCAPE, overrides media setting.  If the layout is not 
+defined by media or this parameter, the layout is determined by the aspect
+ratio of the data area.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">map_style:</th><td class="field-body">STYLE_FIGURE or STYLE_MAP (default).  A MAP style is intended for A3 or larger
+media with a larger right or left margin for map annotations.  A FIGURE
+style is intended for smaller media with a larger bottom margin for a
+title and limited annotations.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">fixed_size:</th><td class="field-body">True for fixed media size, if, and only if, a media size is defined.
+If False, the base view boundary will be reduced to the data view plus margins.  
+If True, the base view boundary is fixed to the media size and margins are 
+adjusted to locate the data view proportionally relative to the requested margins.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">margins:</th><td class="field-body">(left, right, bottom, top) map margins in map cm.  The default for STYLE_MAP
+is (3, 14, 6, 3), and for figure (1, 4, 1, 1).</td>
+</tr>
+<tr class="field-even field"><th class="field-name">inside_margin:</th><td class="field-body">additional margin (cm) inside the base view.  This margin effectively
+expands the data_area to allow room for graphical elements related to
+spatial data near the edge of the defined data area.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">overwrite:</th><td class="field-body">True to overwrite an existing map.  If False and map exists, raises
+<code class="docutils literal"><span class="pre">MapException</span></code>.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">no_data_view:</th><td class="field-body">True to omit data view during map creation.</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.2.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxpy.map.Map.north_arrow">
+<code class="descname">north_arrow</code><span class="sig-paren">(</span><em>location=(1</em>, <em>2.0</em>, <em>2.7)</em>, <em>direction=None</em>, <em>length=3</em>, <em>inclination=None</em>, <em>declination=None</em>, <em>text_def=None</em>, <em>pen=None</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.map.Map.north_arrow" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a North arrow to the base view of the map.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>location</strong> &#8211; (reference, x_offset, y_offset) reference is a reference point relative to the
+base map extents (1 through 9) nd the offsets are the offset from that reference
+point in cm.</li>
+<li><strong>direction</strong> &#8211; North direction in degrees azimuth (clockwise from map Y axis).  The efault is 
+calculated direction of North at the center of the data view.</li>
+<li><strong>length</strong> &#8211; arrow length in cm</li>
+<li><strong>inclination</strong> &#8211; magnetic inclination, not shown if not specified</li>
+<li><strong>declination</strong> &#8211; magnetic declination, not shown if not specified</li>
+<li><strong>text_def</strong> &#8211; <code class="docutils literal"><span class="pre">gxpy.view.Text_def</span></code> instance, or <code class="docutils literal"><span class="pre">None</span></code> for the default.</li>
+<li><strong>pen</strong> &#8211; <code class="docutils literal"><span class="pre">gxpy.view.Pen</span></code> instance, or <code class="docutils literal"><span class="pre">None</span></code> for the default</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.2.</span></p>
+</div>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxpy.map.Map.open">
+<em class="property">classmethod </em><code class="descname">open</code><span class="sig-paren">(</span><em>file_name</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.map.Map.open" title="Permalink to this definition">¶</a></dt>
+<dd><p>Open an existing map file.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>file_name</strong> &#8211; name of the map file</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.2.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxpy.map.Map.remove_on_close">
+<code class="descname">remove_on_close</code><span class="sig-paren">(</span><em>remove=True</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.map.Map.remove_on_close" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>remove</strong> &#8211; if True (the default), remove the map file when finished.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxpy.map.Map.scale_bar">
+<code class="descname">scale_bar</code><span class="sig-paren">(</span><em>location=(1</em>, <em>5</em>, <em>2)</em>, <em>length=5</em>, <em>sections=None</em>, <em>post_scale=False</em>, <em>text_def=None</em>, <em>pen=None</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.map.Map.scale_bar" title="Permalink to this definition">¶</a></dt>
+<dd><p>Draw a scale bar.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>location</strong> &#8211; (ref_point, x_off, y_off) bar location reference point an offset from that point</li>
+<li><strong>length</strong> &#8211; maximum scale bar length, default is 5 cm. scale=0.0 will suppress drawing of the bar.</li>
+<li><strong>sections</strong> &#8211; number of major sections in the bar, default is determined automatically.</li>
+<li><strong>post_scale</strong> &#8211; True to post the actual scale as a string, e.g. &#8216;1:50,000&#8217;.  Note that a posted
+scale is only relevant for printed maps.  The default does not post the scale.</li>
+<li><strong>text_def</strong> &#8211; <code class="docutils literal"><span class="pre">gxpy.view.Text_def</span></code> instance.</li>
+<li><strong>pen</strong> &#8211; <code class="docutils literal"><span class="pre">gxpy.view.Pen</span></code> instance.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.2.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxpy.map.Map.set_class_name">
+<code class="descname">set_class_name</code><span class="sig-paren">(</span><em>view_class</em>, <em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.map.Map.set_class_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the view name associated with a class.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>view_class</strong> &#8211; class name</li>
+<li><strong>name</strong> &#8211; name of the view associated with this class.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Common view class names are:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="s1">&#39;Base&#39;</span>      <span class="n">the</span> <span class="n">base</span> <span class="nb">map</span><span class="o">/</span><span class="n">figure</span> <span class="n">view</span><span class="p">,</span> <span class="n">uses</span> <span class="nb">map</span> <span class="n">cm</span>
+<span class="s1">&#39;Data&#39;</span>      <span class="n">the</span> <span class="n">default</span> <span class="n">data</span> <span class="n">view</span> <span class="k">for</span> <span class="n">drawing</span> <span class="n">spatial</span> <span class="n">data</span><span class="o">.</span>
+<span class="s1">&#39;Section&#39;</span>   <span class="n">the</span> <span class="n">default</span> <span class="n">section</span> <span class="n">view</span> <span class="k">for</span> <span class="n">things</span> <span class="n">drawn</span> <span class="ow">in</span> <span class="n">section</span>
+</pre></div>
+</div>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.2.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxpy.map.Map.surround">
+<code class="descname">surround</code><span class="sig-paren">(</span><em>outer_pen=None</em>, <em>inner_pen=None</em>, <em>gap=0</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.map.Map.surround" title="Permalink to this definition">¶</a></dt>
+<dd><p>Draw a map surround.  This will draw a single or a double neat-line around the base view of the
+map.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>outer_pen</strong> &#8211; outer-line pen attributes</li>
+<li><strong>inner_pen</strong> &#8211; inner-line pen attributes</li>
+<li><strong>gap</strong> &#8211; gap between the outer and inner line in cm.  If 0, only the outer line is drawn.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.2.</span></p>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxpy.map.Map.view_list">
+<code class="descname">view_list</code><a class="headerlink" href="#geosoft.gxpy.map.Map.view_list" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxpy.map.Map.view_list_2D">
+<code class="descname">view_list_2D</code><a class="headerlink" href="#geosoft.gxpy.map.Map.view_list_2D" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxpy.map.Map.view_list_3D">
+<code class="descname">view_list_3D</code><a class="headerlink" href="#geosoft.gxpy.map.Map.view_list_3D" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="geosoft.gxpy.map.MapException">
+<em class="property">exception </em><code class="descclassname">geosoft.gxpy.map.</code><code class="descname">MapException</code><a class="headerlink" href="#geosoft.gxpy.map.MapException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">Exception</span></code></p>
+<p>Exceptions from this module.</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.2.</span></p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="geosoft.gxpy.map.crc_map">
+<code class="descclassname">geosoft.gxpy.map.</code><code class="descname">crc_map</code><span class="sig-paren">(</span><em>mapfile</em>, <em>pix_width=1000</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.map.crc_map" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the CRC of a map based on the output bitmap image.
+:param mapfile:     name of the map file
+:param pix_width:   image pixel width - use a higher resolution to test more detail
+:return:            CRC as an int</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.2.</span></p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="geosoft.gxpy.map.delete_files">
+<code class="descclassname">geosoft.gxpy.map.</code><code class="descname">delete_files</code><span class="sig-paren">(</span><em>file_name</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.map.delete_files" title="Permalink to this definition">¶</a></dt>
+<dd><p>Delete all files associates with this map name.
+:param file_name:</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.2.</span></p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="geosoft.gxpy.map.map_file_name">
+<code class="descclassname">geosoft.gxpy.map.</code><code class="descname">map_file_name</code><span class="sig-paren">(</span><em>file_name</em>, <em>file_type='map'</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.map.map_file_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a fully resolved map file path using the file name, with .map extyension</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>file_name</strong> &#8211; file name, with ot without path and/or extension</li>
+<li><strong>file_type</strong> &#8211; Geosoft file type, &#8216;map&#8217; or &#8216;geosoft_3dv&#8217; expected.  Default is &#8216;map&#8217;</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">file name path with extension .map</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.2.</span></p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="geosoft.gxpy.map.save_as_image">
+<code class="descclassname">geosoft.gxpy.map.</code><code class="descname">save_as_image</code><span class="sig-paren">(</span><em>mapfile</em>, <em>imagefile</em>, <em>type='PNG'</em>, <em>pix_width=1000</em>, <em>pix_height=0</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.map.save_as_image" title="Permalink to this definition">¶</a></dt>
+<dd><p>Save a map to an image file
+:param mapfile:     mapfile name
+:param imagefile:   name of the output raster file
+:param type:        one of type list below
+:param pix_width:   image pixel width, if 0 use pix_height only
+:param pix_height:  image pixel height, if 0 use pix_width only
+:return:</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.2.</span></p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="geosoft.gxpy.map.unique_temporary_file_name">
+<code class="descclassname">geosoft.gxpy.map.</code><code class="descname">unique_temporary_file_name</code><span class="sig-paren">(</span><em>temproot</em>, <em>file_type='map'</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.map.unique_temporary_file_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a unique temporary file name.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>temproot</strong> &#8211; root base name</li>
+<li><strong>file_type</strong> &#8211; Geosoft file type, &#8216;map&#8217; or &#8216;geosoft_3dv&#8217; expected.  Default is &#8216;map&#8217;</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.2.</span></p>
+</div>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2017, Geosoft Inc.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
+    </div>
+<div class="footer">This page uses <a href="http://analytics.google.com/">
+Google Analytics</a> to collect statistics. You can disable it by blocking
+the JavaScript coming from www.google-analytics.com.
+<script type="text/javascript">
+  (function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ?
+              'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+  })();
+</script>
+</div>
+
+  </body>
+</html>

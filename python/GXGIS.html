@@ -1,3 +1,4 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -5,19 +6,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <script type="text/javascript">
-
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-87443115-1']);
-      _gaq.push(['_trackPageview']);
-
-      (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
-    </script>
-    <title>GXGIS class &#8212; Geosoft GX Python API 9.1 documentation</title>
+    
+    <title>GXGIS class &#8212; Geosoft GX Python API 9.2.0 documentation</title>
     
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -25,16 +15,25 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '9.1',
+        VERSION:     '9.2.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="Geosoft GX Python API 9.1 documentation" href="index.html" /> 
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+ 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-87443115-1']);
+  _gaq.push(['_trackPageview']);
+</script>
+
   </head>
   <body role="document">
     <div class="related" role="navigation" aria-label="related navigation">
@@ -46,7 +45,7 @@
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.1 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -63,7 +62,7 @@
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="_sources/GXGIS.txt"
+      <li><a href="_sources/GXGIS.rst.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
@@ -90,11 +89,11 @@
 <dl class="class">
 <dt id="geosoft.gxapi.GXGIS">
 <em class="property">class </em><code class="descclassname">geosoft.gxapi.</code><code class="descname">GXGIS</code><a class="headerlink" href="#geosoft.gxapi.GXGIS" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span>The GIS class is used for the import, export,
+<dd><pre class="literal-block">
+The GIS class is used for the import, export,
 and interrogation of GIS Data stored in external formats,
 such as MapInfo® TAB files.
-</pre></div>
-</div>
+</pre>
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXGIS.create">
 <em class="property">static </em><code class="descname">create</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(str)arg2</em>, <em>(int)arg3</em><span class="sig-paren">)</span> &rarr; GXGIS:<a class="headerlink" href="#geosoft.gxapi.GXGIS.create" title="Permalink to this definition">¶</a></dt>
@@ -108,7 +107,7 @@ such as MapInfo® TAB files.
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<em>str</em>) &#8211; data source (file)</li>
 <li><strong>arg2</strong> (<em>str</em>) &#8211; data qualifying information if required.</li>
-<li><strong>arg3</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#gis-type"><span class="std std-ref">GIS_TYPE constants</span></a></li>
+<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#gis-type"><span class="std std-ref">GIS_TYPE constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -129,7 +128,7 @@ such as MapInfo® TAB files.
 <dt id="geosoft.gxapi.GXGIS.create_map2_d">
 <code class="descname">create_map2_d</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(float)arg2</em>, <em>(GXIPJ)arg3</em>, <em>(int)arg4</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXGIS.create_map2_d" title="Permalink to this definition">¶</a></dt>
 <dd><pre class="literal-block">
-<a class="reference internal" href="#geosoft.gxapi.GXGIS.create_map2_d" title="geosoft.gxapi.GXGIS.create_map2_d"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXGIS.create_map2_d()</span></code></a>   Create a new 2D map for GIS imports.
+\ :func:`geosoft.gxapi.GXGIS.create_map2_d`\    Create a new 2D map for GIS imports.
 </pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -139,7 +138,7 @@ such as MapInfo® TAB files.
 <li><strong>arg1</strong> (<em>str</em>) &#8211; Map name</li>
 <li><strong>arg2</strong> (<em>float</em>) &#8211; Map scale (can be rDUMMY)</li>
 <li><strong>arg3</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXIPJ</span></code></a>) &#8211; Projection (no orientation)</li>
-<li><strong>arg4</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#gis-map2d"><span class="std std-ref">GIS_MAP2D constants</span></a></li>
+<li><strong>arg4</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#gis-map2d"><span class="std std-ref">GIS_MAP2D constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -155,18 +154,18 @@ such as MapInfo® TAB files.
 <p><span class="versionmodified">New in version 7.1.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="n">function</span> <span class="n">was</span> <span class="n">created</span> <span class="n">to</span> <span class="n">minimize</span> <span class="n">duplication</span> <span class="ow">in</span>
-<span class="n">creation</span> <span class="n">of</span> <span class="n">new</span> <span class="n">maps</span> <span class="k">with</span> <span class="mi">2</span><span class="n">D</span> <span class="n">views</span><span class="o">.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+This function was created to minimize duplication in
+creation of new maps with 2D views.
+</pre>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXGIS.datamine_type">
 <em class="property">static </em><code class="descname">datamine_type</code><span class="sig-paren">(</span><em>(str)arg1</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXGIS.datamine_type" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Returns</span> <span class="n">the</span> <span class="nb">type</span> <span class="n">of</span> <span class="n">a</span> <span class="n">Datamine</span> <span class="n">file</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Returns the type of a Datamine file.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -175,7 +174,7 @@ such as MapInfo® TAB files.
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Datamine file types - bitwise AND of types.</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></td>
 </tr>
 </tbody>
 </table>
@@ -186,7 +185,7 @@ such as MapInfo® TAB files.
 <pre class="literal-block">
 Terminates if file is not a Datamine file.
 A datamine file can contain fields from a multitude
-of types, so use <a class="reference internal" href="GXMATH.html#geosoft.gxapi.GXMATH.and" title="geosoft.gxapi.GXMATH.and"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXMATH.and()</span></code></a> or <a class="reference internal" href="GXMATH.html#geosoft.gxapi.GXMATH.or" title="geosoft.gxapi.GXMATH.or"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXMATH.or()</span></code></a> to determine if
+of types, so use \ :func:`geosoft.gxapi.GXMATH.and`\  or \ :func:`geosoft.gxapi.GXMATH.or`\  to determine if
 the file contains the required data.
 </pre>
 </dd></dl>
@@ -226,10 +225,10 @@ Name:  If there is only one sub-directory with models, then only
 the block model name &quot;Rock Type_5&quot; is required to ensure uniqueness.
 If there is more than one sub-directory, then the name is set
 to (.e.g.) &quot;[Standard]Rock Type_5&quot;
-Value: Sub-directory file path  &quot;StandardRock Type_5.BLK&quot;, (includes the extension).
+Value: Sub-directory file path  &quot;Standard\Rock Type_5.BLK&quot;, (includes the extension).
 
 The Gemcom BPR and BPR2 files keep their block models in one
-or more sub-directories, identified in the <cite>*</cite>.CAT file located
+or more sub-directories, identified in the \ `*`\ .CAT file located
 beside the input BPR or BPR2.
 </pre>
 </dd></dl>
@@ -278,11 +277,11 @@ NULL if error</td>
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="ow">is</span> <span class="n">your</span> <span class="n">copy</span><span class="p">,</span> <span class="n">you</span> <span class="n">must</span> <span class="n">destroy</span> <span class="n">it</span><span class="o">.</span>
-<span class="n">If</span> <span class="n">the</span> <span class="n">GIS</span> <span class="n">does</span> <span class="ow">not</span> <span class="n">have</span> <span class="n">an</span> <span class="n">IPJ</span><span class="p">,</span> <span class="n">an</span> <span class="n">IPJ</span> <span class="k">with</span>
-<span class="n">no</span> <span class="n">warp</span> <span class="ow">and</span> <span class="n">UNKNOWN</span> <span class="n">projection</span> <span class="ow">is</span> <span class="n">returned</span><span class="o">.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+This is your copy, you must destroy it.
+If the GIS does not have an IPJ, an IPJ with
+no warp and UNKNOWN projection is returned.
+</pre>
 </dd></dl>
 
 <dl class="method">
@@ -344,9 +343,9 @@ NULL if error</td>
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXGIS.is_mi_map_file">
 <em class="property">static </em><code class="descname">is_mi_map_file</code><span class="sig-paren">(</span><em>(str)arg1</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXGIS.is_mi_map_file" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Returns</span> <span class="n">TRUE</span> <span class="k">if</span> <span class="n">file</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">MapInfo</span> <span class="n">MAP</span> <span class="n">file</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Returns TRUE if file is a MapInfo MAP file.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -356,7 +355,7 @@ NULL if error</td>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">0 if not a MapInfo MAP file
 1 if it is.</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></td>
 </tr>
 </tbody>
 </table>
@@ -364,19 +363,19 @@ NULL if error</td>
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">It</span> <span class="ow">is</span> <span class="n">important</span> <span class="ow">not</span> <span class="n">to</span> <span class="n">overwrite</span> <span class="n">a</span> <span class="n">MapInfo</span> <span class="n">MAP</span> <span class="n">file</span>
-<span class="k">with</span> <span class="n">a</span> <span class="n">GEOSOFT</span> <span class="n">one</span><span class="o">.</span> <span class="n">Use</span> <span class="n">this</span> <span class="n">function</span> <span class="n">to</span> <span class="n">test</span> <span class="n">the</span> <span class="n">MAP</span>
-<span class="n">file</span> <span class="p">(</span><span class="n">looks</span> <span class="n">at</span> <span class="n">the</span> <span class="n">first</span> <span class="n">few</span> <span class="nb">bytes</span><span class="p">)</span><span class="o">.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+It is important not to overwrite a MapInfo MAP file
+with a GEOSOFT one. Use this function to test the MAP
+file (looks at the first few bytes).
+</pre>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXGIS.is_mi_raster_tab_file">
 <em class="property">static </em><code class="descname">is_mi_raster_tab_file</code><span class="sig-paren">(</span><em>(str)arg1</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXGIS.is_mi_raster_tab_file" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Returns</span> <span class="n">TRUE</span> <span class="k">if</span> <span class="n">file</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">MapInfo</span> <span class="n">Raster</span> <span class="n">TAB</span> <span class="n">file</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Returns TRUE if file is a MapInfo Raster TAB file.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -386,7 +385,7 @@ NULL if error</td>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">0 if not a MapInfo Raster TAB file
 1 if it is.</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></td>
 </tr>
 </tbody>
 </table>
@@ -398,9 +397,9 @@ NULL if error</td>
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXGIS.is_mi_rotated_raster_tab_file">
 <em class="property">static </em><code class="descname">is_mi_rotated_raster_tab_file</code><span class="sig-paren">(</span><em>(str)arg1</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXGIS.is_mi_rotated_raster_tab_file" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Returns</span> <span class="n">TRUE</span> <span class="k">if</span> <span class="n">file</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">rotated</span> <span class="n">MapInfo</span> <span class="n">Raster</span> <span class="n">TAB</span> <span class="n">file</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Returns TRUE if file is a rotated MapInfo Raster TAB file.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -410,7 +409,7 @@ NULL if error</td>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">0 if not a rotated MapInfo Raster TAB file
 1 if it is (see conditions below).</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></td>
 </tr>
 </tbody>
 </table>
@@ -418,18 +417,18 @@ NULL if error</td>
 <p><span class="versionmodified">New in version 6.4.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Returns</span> <span class="mi">1</span> <span class="k">if</span><span class="p">:</span>
+<pre class="literal-block">
+Returns 1 if:
 
-<span class="n">a</span><span class="p">)</span> <span class="n">This</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">MapInfo</span> <span class="n">RASTER</span> <span class="n">file</span>
-<span class="n">b</span><span class="p">)</span> <span class="n">A</span> <span class="n">three</span><span class="o">-</span><span class="n">point</span> <span class="n">warp</span> <span class="ow">is</span> <span class="n">defined</span><span class="o">.</span>
-<span class="n">c</span><span class="p">)</span> <span class="n">The</span> <span class="n">warp</span> <span class="n">requires</span> <span class="n">a</span> <span class="n">rotation</span> <span class="ow">in</span> <span class="n">order</span> <span class="n">to</span> <span class="n">exactly</span> <span class="nb">map</span>
-<span class="n">the</span> <span class="nb">input</span> <span class="ow">and</span> <span class="n">output</span> <span class="n">warp</span> <span class="n">points</span><span class="o">.</span> <span class="n">The</span> <span class="n">rotation</span> <span class="n">must</span>
-<span class="n">be</span> <span class="n">at</span> <span class="n">least</span> <span class="mf">1.e-6</span> <span class="n">radians</span><span class="o">.</span>
+a) This is a MapInfo RASTER file
+b) A three-point warp is defined.
+c) The warp requires a rotation in order to exactly map
+the input and output warp points. The rotation must
+be at least 1.e-6 radians.
 
-<span class="n">This</span> <span class="n">function</span> <span class="n">will</span> <span class="n">register</span> <span class="n">an</span> <span class="n">error</span> <span class="p">(</span><span class="ow">and</span> <span class="k">return</span> <span class="mi">0</span><span class="p">)</span>
-<span class="k">if</span> <span class="n">problems</span> <span class="n">are</span> <span class="n">encountered</span> <span class="n">opening</span> <span class="ow">or</span> <span class="n">reading</span> <span class="n">the</span> <span class="n">TAB</span> <span class="n">file</span><span class="o">.</span>
-</pre></div>
-</div>
+This function will register an error (and return 0)
+if problems are encountered opening or reading the TAB file.
+</pre>
 </dd></dl>
 
 <dl class="method">
@@ -451,9 +450,9 @@ NULL if error</td>
 <dl class="method">
 <dt id="geosoft.gxapi.GXGIS.is_shp_file_3d">
 <code class="descname">is_shp_file_3d</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXGIS.is_shp_file_3d" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Returns</span> <span class="n">TRUE</span> <span class="k">if</span> <span class="n">an</span> <span class="n">ArcView</span> <span class="n">SHP</span> <span class="n">file</span> <span class="ow">is</span> <span class="nb">type</span> <span class="n">POINTZ</span><span class="p">,</span> <span class="n">ARCZ</span><span class="p">,</span> <span class="n">POLYGONZ</span> <span class="ow">or</span> <span class="n">MULTIPOINTZ</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Returns TRUE if an ArcView SHP file is type POINTZ, ARCZ, POLYGONZ or MULTIPOINTZ
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -461,7 +460,7 @@ NULL if error</td>
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">0 if the SHP file is 2D
 1 if the SHP file is of type POINTZ, ARCZ, POLYGONZ or MULTIPOINTZ</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></td>
 </tr>
 </tbody>
 </table>
@@ -469,10 +468,10 @@ NULL if error</td>
 <p><span class="versionmodified">New in version 6.3.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">SHP</span> <span class="n">files</span> <span class="n">come</span> <span class="ow">in</span> <span class="mi">2</span><span class="n">D</span> <span class="ow">and</span> <span class="mi">3</span><span class="n">D</span> <span class="n">forms</span><span class="o">.</span>
-<span class="n">Fails</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">GIS_TYPE_ARCVIEW</span><span class="o">.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+SHP files come in 2D and 3D forms.
+Fails if not GIS_TYPE_ARCVIEW.
+</pre>
 </dd></dl>
 
 <dl class="method">
@@ -488,7 +487,7 @@ NULL if error</td>
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">0 if the SHP file is not points
 if the SHP file is of type POINT or POINTZ</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></td>
 </tr>
 </tbody>
 </table>
@@ -496,17 +495,17 @@ if the SHP file is of type POINT or POINTZ</td>
 <p><span class="versionmodified">New in version 7.1.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Fails</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">GIS_TYPE_ARCVIEW</span><span class="o">.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+Fails if not GIS_TYPE_ARCVIEW.
+</pre>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXGIS.load_ascii">
 <code class="descname">load_ascii</code><span class="sig-paren">(</span><em>(GXWA)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXGIS.load_ascii" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Save</span> <span class="n">GIS</span> <span class="n">attribute</span> <span class="n">table</span> <span class="n">information</span> <span class="p">(</span><span class="n">string</span> <span class="n">fields</span><span class="p">)</span> <span class="n">into</span> <span class="n">a</span> <span class="n">WA</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Save GIS attribute table information (string fields) into a WA.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -523,20 +522,20 @@ if the SHP file is of type POINT or POINTZ</td>
 <p><span class="versionmodified">New in version 7.3.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">All</span> <span class="n">string</span> <span class="n">fields</span> <span class="p">(</span><span class="n">excluding</span> <span class="n">X</span><span class="o">/</span><span class="n">Y</span> <span class="ow">and</span> <span class="n">numerical</span> <span class="n">fields</span><span class="p">)</span> <span class="n">will</span> <span class="n">be</span> <span class="n">saved</span> <span class="n">into</span> <span class="n">the</span> <span class="n">WA</span> <span class="n">columns</span><span class="o">.</span>
+<pre class="literal-block">
+All string fields (excluding X/Y and numerical fields) will be saved into the WA columns.
 
-<span class="n">e</span> <span class="n">field</span> <span class="n">names</span> <span class="n">are</span> <span class="n">saved</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">first</span> <span class="n">line</span><span class="p">,</span> <span class="n">followed</span> <span class="n">by</span> <span class="n">a</span> <span class="n">blank</span> <span class="n">line</span><span class="o">.</span>
-<span class="n">e</span> <span class="n">field</span> <span class="n">columns</span> <span class="n">are</span> <span class="n">seperated</span> <span class="n">by</span> <span class="n">a</span> <span class="n">tab</span> <span class="p">(</span><span class="n">delimited</span> <span class="n">character</span><span class="p">)</span><span class="o">.</span>
-</pre></div>
-</div>
+e field names are saved in the first line, followed by a blank line.
+e field columns are seperated by a tab (delimited character).
+</pre>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXGIS.load_gdb">
 <code class="descname">load_gdb</code><span class="sig-paren">(</span><em>(GXDB)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXGIS.load_gdb" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Load</span> <span class="n">GIS</span> <span class="n">table</span> <span class="n">information</span> <span class="n">into</span> <span class="n">a</span> <span class="n">GDB</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Load GIS table information into a GDB.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -553,25 +552,25 @@ if the SHP file is of type POINT or POINTZ</td>
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">All</span> <span class="n">fields</span> <span class="n">of</span> <span class="n">the</span> <span class="n">database</span> <span class="n">will</span> <span class="n">be</span> <span class="n">loaded</span> <span class="n">into</span> <span class="n">the</span> <span class="n">group</span><span class="o">.</span>
+<pre class="literal-block">
+All fields of the database will be loaded into the group.
 
-<span class="n">Channels</span> <span class="n">will</span> <span class="n">use</span> <span class="n">the</span> <span class="n">same</span> <span class="n">name</span> <span class="p">(</span><span class="ow">or</span> <span class="n">a</span> <span class="n">allowable</span> <span class="n">alias</span><span class="p">)</span> <span class="k">as</span>
-<span class="n">the</span> <span class="n">GIS</span> <span class="n">field</span> <span class="n">name</span><span class="o">.</span>
+Channels will use the same name (or a allowable alias) as
+the GIS field name.
 
-<span class="n">If</span> <span class="n">a</span> <span class="n">channel</span> <span class="n">does</span> <span class="ow">not</span> <span class="n">exist</span><span class="p">,</span> <span class="n">it</span> <span class="n">will</span> <span class="n">be</span> <span class="n">created</span> <span class="n">based</span> <span class="n">on</span> <span class="n">the</span>
-<span class="n">characteristics</span> <span class="n">of</span> <span class="n">the</span> <span class="n">GIS</span> <span class="n">field</span><span class="o">.</span>
+If a channel does not exist, it will be created based on the
+characteristics of the GIS field.
 
-<span class="n">If</span> <span class="n">a</span> <span class="n">channel</span> <span class="n">exists</span><span class="p">,</span> <span class="n">it</span> <span class="n">will</span> <span class="n">be</span> <span class="n">used</span> <span class="k">as</span><span class="o">-</span><span class="ow">is</span><span class="o">.</span>
-</pre></div>
-</div>
+If a channel exists, it will be used as-is.
+</pre>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXGIS.load_map">
 <code class="descname">load_map</code><span class="sig-paren">(</span><em>(GXMVIEW)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXGIS.load_map" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Load</span> <span class="n">GIS</span> <span class="n">table</span> <span class="n">drawing</span> <span class="n">into</span> <span class="n">a</span> <span class="n">MAP</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Load GIS table drawing into a MAP.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -588,17 +587,17 @@ if the SHP file is of type POINT or POINTZ</td>
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">GIS</span> <span class="n">drawing</span> <span class="n">will</span> <span class="n">be</span> <span class="n">drawin</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">current</span> <span class="n">group</span><span class="o">.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+The GIS drawing will be drawin in the current group.
+</pre>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXGIS.load_map_ex">
 <code class="descname">load_map_ex</code><span class="sig-paren">(</span><em>(GXMAP)arg1</em>, <em>(str)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXGIS.load_map_ex" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Load</span> <span class="n">GIS</span> <span class="n">table</span> <span class="n">drawing</span> <span class="n">into</span> <span class="n">a</span> <span class="n">MAP</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Load GIS table drawing into a MAP.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -621,17 +620,17 @@ if the SHP file is of type POINT or POINTZ</td>
 <p><span class="versionmodified">New in version 7.1.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">GIS</span> <span class="n">drawing</span> <span class="n">will</span> <span class="n">be</span> <span class="n">drawin</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">current</span> <span class="n">group</span><span class="o">.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+The GIS drawing will be drawin in the current group.
+</pre>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXGIS.load_meta_groups_map">
 <code class="descname">load_meta_groups_map</code><span class="sig-paren">(</span><em>(GXMVIEW)arg1</em>, <em>(GXMETA)arg2</em>, <em>(int)arg3</em>, <em>(str)arg4</em>, <em>(str)arg5</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXGIS.load_meta_groups_map" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Load</span> <span class="n">GIS</span> <span class="n">table</span> <span class="n">drawing</span> <span class="n">into</span> <span class="n">a</span> <span class="n">MAP</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Load GIS table drawing into a MAP.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -639,7 +638,7 @@ if the SHP file is of type POINT or POINTZ</td>
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW" title="geosoft.gxapi.GXMVIEW"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXMVIEW</span></code></a>) &#8211; view in which to place GIS drawing.</li>
 <li><strong>arg2</strong> (<a class="reference internal" href="GXMETA.html#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXMETA</span></code></a>) &#8211; META</li>
-<li><strong>arg3</strong> (<em>int</em>) &#8211; Class</li>
+<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Class</li>
 <li><strong>arg4</strong> (<em>str</em>) &#8211; Group Name prefix</li>
 <li><strong>arg5</strong> (<em>str</em>) &#8211; Name field (Empty to use ID of entity)</li>
 </ul>
@@ -657,21 +656,21 @@ if the SHP file is of type POINT or POINTZ</td>
 <p><span class="versionmodified">New in version 5.1.8.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">GIS</span> <span class="n">drawing</span> <span class="n">will</span> <span class="n">be</span> <span class="n">drawn</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">current</span> <span class="n">group</span><span class="o">.</span>
-<span class="n">A</span> <span class="n">group</span> <span class="n">will</span> <span class="n">be</span> <span class="n">created</span> <span class="k">for</span> <span class="n">every</span> <span class="n">entity</span> <span class="ow">and</span> <span class="n">data</span> <span class="n">items</span>
-<span class="n">containing</span> <span class="n">an</span> <span class="n">entity</span><span class="s1">&#39;s field will be added to the Meta</span>
-<span class="n">information</span> <span class="n">of</span> <span class="n">every</span> <span class="n">group</span> <span class="n">into</span> <span class="n">the</span> <span class="k">class</span> <span class="nc">specified</span><span class="o">.</span>
-<span class="n">Note</span> <span class="n">that</span> <span class="n">the</span> <span class="nb">map</span> <span class="n">may</span> <span class="n">grow</span> <span class="n">very</span> <span class="n">large</span> <span class="k">for</span> <span class="n">big</span> <span class="n">datasets</span><span class="o">.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+The GIS drawing will be drawn in the current group.
+A group will be created for every entity and data items
+containing an entity's field will be added to the Meta
+information of every group into the class specified.
+Note that the map may grow very large for big datasets.
+</pre>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXGIS.load_ply">
 <code class="descname">load_ply</code><span class="sig-paren">(</span><em>(GXPLY)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXGIS.load_ply" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Load</span> <span class="n">GIS</span> <span class="n">table</span> <span class="n">drawing</span> <span class="n">into</span> <span class="n">a</span> <span class="n">Multi</span><span class="o">-</span><span class="n">Polygon</span> <span class="nb">object</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Load GIS table drawing into a Multi-Polygon object.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -692,9 +691,9 @@ if the SHP file is of type POINT or POINTZ</td>
 <dl class="method">
 <dt id="geosoft.gxapi.GXGIS.load_shapes_gdb">
 <code class="descname">load_shapes_gdb</code><span class="sig-paren">(</span><em>(GXDB)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXGIS.load_shapes_gdb" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Load</span> <span class="n">GIS</span> <span class="n">shapes</span> <span class="n">table</span> <span class="n">information</span> <span class="n">into</span> <span class="n">separate</span> <span class="n">lines</span> <span class="ow">in</span> <span class="n">a</span> <span class="n">GDB</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Load GIS shapes table information into separate lines in a GDB.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -711,19 +710,19 @@ if the SHP file is of type POINT or POINTZ</td>
 <p><span class="versionmodified">New in version 7.1.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">All</span> <span class="n">fields</span> <span class="n">of</span> <span class="n">the</span> <span class="n">database</span> <span class="n">will</span> <span class="n">be</span> <span class="n">loaded</span> <span class="n">into</span> <span class="n">the</span> <span class="n">group</span><span class="o">.</span>
+<pre class="literal-block">
+All fields of the database will be loaded into the group.
 
-<span class="n">Channels</span> <span class="n">will</span> <span class="n">use</span> <span class="n">the</span> <span class="n">same</span> <span class="n">name</span> <span class="p">(</span><span class="ow">or</span> <span class="n">a</span> <span class="n">allowable</span> <span class="n">alias</span><span class="p">)</span> <span class="k">as</span>
-<span class="n">the</span> <span class="n">GIS</span> <span class="n">field</span> <span class="n">name</span><span class="o">.</span>
+Channels will use the same name (or a allowable alias) as
+the GIS field name.
 
-<span class="n">If</span> <span class="n">a</span> <span class="n">channel</span> <span class="n">does</span> <span class="ow">not</span> <span class="n">exist</span><span class="p">,</span> <span class="n">it</span> <span class="n">will</span> <span class="n">be</span> <span class="n">created</span> <span class="n">based</span> <span class="n">on</span> <span class="n">the</span>
-<span class="n">characteristics</span> <span class="n">of</span> <span class="n">the</span> <span class="n">GIS</span> <span class="n">field</span><span class="o">.</span>
+If a channel does not exist, it will be created based on the
+characteristics of the GIS field.
 
-<span class="n">If</span> <span class="n">a</span> <span class="n">channel</span> <span class="n">exists</span><span class="p">,</span> <span class="n">it</span> <span class="n">will</span> <span class="n">be</span> <span class="n">used</span> <span class="k">as</span><span class="o">-</span><span class="ow">is</span><span class="o">.</span>
+If a channel exists, it will be used as-is.
 
-<span class="n">The</span> <span class="n">shape</span> <span class="n">ID</span> <span class="n">will</span> <span class="n">be</span> <span class="n">used</span> <span class="k">as</span> <span class="n">the</span> <span class="n">line</span> <span class="n">numbers</span><span class="o">.</span>
-</pre></div>
-</div>
+The shape ID will be used as the line numbers.
+</pre>
 </dd></dl>
 
 <dl class="staticmethod">
@@ -754,7 +753,7 @@ if the SHP file is of type POINT or POINTZ</td>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The number of attribute fields</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></td>
 </tr>
 </tbody>
 </table>
@@ -775,7 +774,7 @@ if the SHP file is of type POINT or POINTZ</td>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The number of shape entities</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></td>
 </tr>
 </tbody>
 </table>
@@ -787,9 +786,9 @@ if the SHP file is of type POINT or POINTZ</td>
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXGIS.scan_mi_raster_tab_file">
 <em class="property">static </em><code class="descname">scan_mi_raster_tab_file</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(str_ref)arg2</em>, <em>(GXIPJ)arg3</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXGIS.scan_mi_raster_tab_file" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Scan</span> <span class="ow">and</span> <span class="nb">set</span> <span class="n">up</span> <span class="n">a</span> <span class="n">MapInf</span> <span class="n">RASTER</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Scan and set up a MapInf RASTER.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -813,17 +812,17 @@ if the SHP file is of type POINT or POINTZ</td>
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="n">will</span> <span class="n">create</span> <span class="n">a</span> <span class="n">GI</span> <span class="n">file</span> <span class="k">for</span> <span class="n">the</span> <span class="n">raster</span> <span class="n">image</span><span class="o">.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+This will create a GI file for the raster image.
+</pre>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXGIS.set_dm_wireframe_pt_file">
 <code class="descname">set_dm_wireframe_pt_file</code><span class="sig-paren">(</span><em>(str)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXGIS.set_dm_wireframe_pt_file" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Specify</span> <span class="n">the</span> <span class="n">wireframe</span> <span class="n">point</span> <span class="n">file</span> <span class="n">corresponding</span> <span class="n">to</span> <span class="n">the</span> <span class="nb">input</span> <span class="n">file</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Specify the wireframe point file corresponding to the input file.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -840,13 +839,13 @@ if the SHP file is of type POINT or POINTZ</td>
 <p><span class="versionmodified">New in version 6.3.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Datamine</span> <span class="n">wireframe</span> <span class="n">models</span> <span class="n">are</span> <span class="n">specified</span> <span class="n">by</span> <span class="n">pairs</span> <span class="n">of</span> <span class="n">files</span><span class="p">,</span>
-<span class="n">the</span> <span class="n">first</span> <span class="ow">is</span> <span class="n">the</span> <span class="n">triangle</span> <span class="n">node</span> <span class="n">file</span><span class="p">,</span> <span class="ow">and</span> <span class="n">the</span> <span class="n">second</span> <span class="n">gives</span>
-<span class="n">the</span> <span class="n">XYZ</span> <span class="n">locations</span> <span class="n">of</span> <span class="n">the</span> <span class="n">node</span> <span class="n">points</span><span class="o">.</span> <span class="n">This</span>
-<span class="n">function</span> <span class="n">allows</span> <span class="n">you</span> <span class="n">to</span> <span class="n">specify</span> <span class="n">the</span> <span class="n">latter</span> <span class="n">when</span> <span class="n">reading</span> <span class="n">the</span>
-<span class="n">first</span><span class="p">,</span> <span class="n">so</span> <span class="n">that</span> <span class="n">the</span> <span class="n">full</span> <span class="n">model</span> <span class="n">can</span> <span class="n">be</span> <span class="n">decoded</span><span class="o">.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+Datamine wireframe models are specified by pairs of files,
+the first is the triangle node file, and the second gives
+the XYZ locations of the node points. This
+function allows you to specify the latter when reading the
+first, so that the full model can be decoded.
+</pre>
 </dd></dl>
 
 <dl class="method">
@@ -875,9 +874,9 @@ if the SHP file is of type POINT or POINTZ</td>
 <dl class="method">
 <dt id="geosoft.gxapi.GXGIS.set_lst">
 <code class="descname">set_lst</code><span class="sig-paren">(</span><em>(GXLST)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXGIS.set_lst" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Save</span> <span class="n">a</span> <span class="n">LST</span> <span class="n">of</span> <span class="n">items</span> <span class="n">inside</span> <span class="n">the</span> <span class="n">GIS</span> <span class="nb">object</span> <span class="k">for</span> <span class="n">special</span> <span class="n">use</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Save a LST of items inside the GIS object for special use.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -894,11 +893,11 @@ if the SHP file is of type POINT or POINTZ</td>
 <p><span class="versionmodified">New in version 7.1.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">If</span> <span class="n">the</span> <span class="n">GIS</span> <span class="n">LST</span> <span class="nb">object</span> <span class="n">already</span> <span class="n">exists</span><span class="p">,</span> <span class="n">it</span> <span class="ow">is</span> <span class="n">destroyed</span> <span class="ow">and</span>
-<span class="n">recreated</span> <span class="n">to</span> <span class="n">match</span> <span class="n">the</span> <span class="n">size</span> <span class="n">of</span> <span class="n">the</span> <span class="nb">input</span> <span class="n">LST</span><span class="p">,</span> <span class="n">before</span> <span class="n">the</span>
-<span class="nb">input</span> <span class="n">LST</span> <span class="ow">is</span> <span class="n">copied</span> <span class="n">to</span> <span class="n">it</span><span class="o">.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+If the GIS LST object already exists, it is destroyed and
+recreated to match the size of the input LST, before the
+input LST is copied to it.
+</pre>
 </dd></dl>
 
 <dl class="method">
@@ -927,14 +926,14 @@ if the SHP file is of type POINT or POINTZ</td>
 <dl class="method">
 <dt id="geosoft.gxapi.GXGIS.set_triangulation_object_index">
 <code class="descname">set_triangulation_object_index</code><span class="sig-paren">(</span><em>(int)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXGIS.set_triangulation_object_index" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Set</span> <span class="n">the</span> <span class="n">triangulation</span> <span class="nb">object</span> <span class="n">index</span> <span class="p">(</span><span class="n">Micromine</span><span class="p">)</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Set the triangulation object index (Micromine)
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>int</em>) &#8211; Triangulation object index</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Triangulation object index</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Nothing</td>
 </tr>
@@ -1066,12 +1065,27 @@ if the SHP file is of type POINT or POINTZ</td>
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.1 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li> 
       </ul>
     </div>
+
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2016, Geosoft Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.6.
+        &#169; Copyright 2017, Geosoft Inc.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
     </div>
+<div class="footer">This page uses <a href="http://analytics.google.com/">
+Google Analytics</a> to collect statistics. You can disable it by blocking
+the JavaScript coming from www.google-analytics.com.
+<script type="text/javascript">
+  (function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ?
+              'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+  })();
+</script>
+</div>
+
   </body>
 </html>

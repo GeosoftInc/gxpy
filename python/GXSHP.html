@@ -1,3 +1,4 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -5,19 +6,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <script type="text/javascript">
-
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-87443115-1']);
-      _gaq.push(['_trackPageview']);
-
-      (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
-    </script>
-    <title>GXSHP class &#8212; Geosoft GX Python API 9.1 documentation</title>
+    
+    <title>GXSHP class &#8212; Geosoft GX Python API 9.2.0 documentation</title>
     
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -25,16 +15,25 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '9.1',
+        VERSION:     '9.2.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="Geosoft GX Python API 9.1 documentation" href="index.html" /> 
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+ 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-87443115-1']);
+  _gaq.push(['_trackPageview']);
+</script>
+
   </head>
   <body role="document">
     <div class="related" role="navigation" aria-label="related navigation">
@@ -46,7 +45,7 @@
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.1 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -62,7 +61,7 @@
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="_sources/GXSHP.txt"
+      <li><a href="_sources/GXSHP.rst.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
@@ -89,15 +88,15 @@
 <dl class="class">
 <dt id="geosoft.gxapi.GXSHP">
 <em class="property">class </em><code class="descclassname">geosoft.gxapi.</code><code class="descname">GXSHP</code><a class="headerlink" href="#geosoft.gxapi.GXSHP" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">SHP</span> <span class="k">class</span> <span class="nc">is</span> <span class="n">used</span> <span class="n">to</span> <span class="n">create</span> <span class="n">ESRI</span> <span class="n">shape</span> <span class="n">files</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+The SHP class is used to create ESRI shape files.
+</pre>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Shape</span> <span class="n">files</span> <span class="n">contain</span> <span class="n">a</span> <span class="n">single</span> <span class="s2">&quot;geometry&quot;</span> <span class="nb">type</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">g</span><span class="o">.</span>
-<span class="n">points</span><span class="p">,</span> <span class="n">arcs</span> <span class="ow">or</span> <span class="n">polygons</span><span class="o">.</span> <span class="n">They</span> <span class="n">may</span> <span class="n">be</span> <span class="n">accompanied</span> <span class="n">by</span>
-<span class="n">a</span> <span class="n">DBF</span> <span class="n">file</span> <span class="n">containing</span> <span class="n">attribute</span> <span class="n">data</span><span class="o">.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+Shape files contain a single &quot;geometry&quot; type, e.g.
+points, arcs or polygons. They may be accompanied by
+a DBF file containing attribute data.
+</pre>
 <dl class="method">
 <dt id="geosoft.gxapi.GXSHP.add_double_field">
 <code class="descname">add_double_field</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(int)arg2</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXSHP.add_double_field" title="Permalink to this definition">¶</a></dt>
@@ -110,14 +109,14 @@
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<em>str</em>) &#8211; field name</li>
-<li><strong>arg2</strong> (<em>int</em>) &#8211; number of decimal places</li>
+<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; number of decimal places</li>
 </ul>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Index of the new field</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></p>
 </td>
 </tr>
 </tbody>
@@ -126,10 +125,10 @@
 <p><span class="versionmodified">New in version 6.3.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">returned</span> <span class="n">field</span> <span class="n">index</span> <span class="n">should</span> <span class="n">be</span> <span class="n">used</span> <span class="k">with</span> <span class="n">the</span> <span class="n">SetXXX_SHP</span>
-<span class="n">functions</span> <span class="n">to</span> <span class="nb">set</span> <span class="n">individual</span> <span class="n">data</span> <span class="n">values</span><span class="o">.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+The returned field index should be used with the SetXXX_SHP
+functions to set individual data values.
+</pre>
 </dd></dl>
 
 <dl class="method">
@@ -146,7 +145,7 @@
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Index of the new field</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></td>
 </tr>
 </tbody>
 </table>
@@ -154,10 +153,10 @@
 <p><span class="versionmodified">New in version 6.3.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">returned</span> <span class="n">field</span> <span class="n">index</span> <span class="n">should</span> <span class="n">be</span> <span class="n">used</span> <span class="k">with</span> <span class="n">the</span> <span class="n">SetXXX_SHP</span>
-<span class="n">functions</span> <span class="n">to</span> <span class="nb">set</span> <span class="n">individual</span> <span class="n">data</span> <span class="n">values</span><span class="o">.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+The returned field index should be used with the SetXXX_SHP
+functions to set individual data values.
+</pre>
 </dd></dl>
 
 <dl class="method">
@@ -172,14 +171,14 @@
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<em>str</em>) &#8211; field name</li>
-<li><strong>arg2</strong> (<em>int</em>) &#8211; Maximum number of characters in the string</li>
+<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Maximum number of characters in the string</li>
 </ul>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Index of the new field</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></p>
 </td>
 </tr>
 </tbody>
@@ -188,18 +187,18 @@
 <p><span class="versionmodified">New in version 6.3.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">returned</span> <span class="n">field</span> <span class="n">index</span> <span class="n">should</span> <span class="n">be</span> <span class="n">used</span> <span class="k">with</span> <span class="n">the</span> <span class="n">SetXXX_SHP</span>
-<span class="n">functions</span> <span class="n">to</span> <span class="nb">set</span> <span class="n">individual</span> <span class="n">data</span> <span class="n">values</span><span class="o">.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+The returned field index should be used with the SetXXX_SHP
+functions to set individual data values.
+</pre>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXSHP.append_item">
 <code class="descname">append_item</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSHP.append_item" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Append</span> <span class="n">the</span> <span class="n">current</span> <span class="n">item</span> <span class="ow">and</span> <span class="n">data</span> <span class="n">to</span> <span class="n">an</span> <span class="n">old</span> <span class="n">SHP</span> <span class="nb">object</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Append the current item and data to an old SHP object.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -214,11 +213,11 @@
 <p><span class="versionmodified">New in version 7.2.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">currently</span> <span class="n">stored</span> <span class="n">SHP</span> <span class="n">item</span> <span class="ow">and</span> <span class="n">data</span> <span class="n">are</span> <span class="n">written</span> <span class="n">to</span> <span class="n">the</span>
-<span class="n">SHP</span> <span class="n">geometry</span> <span class="ow">and</span> <span class="n">data</span> <span class="n">files</span><span class="o">.</span> <span class="p">(</span><span class="n">If</span> <span class="n">no</span> <span class="n">data</span> <span class="n">fields</span> <span class="n">have</span> <span class="n">been</span>
-<span class="n">defined</span><span class="p">,</span> <span class="n">then</span> <span class="n">the</span> <span class="n">data</span> <span class="n">file</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">written</span><span class="p">)</span><span class="o">.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+The currently stored SHP item and data are written to the
+SHP geometry and data files. (If no data fields have been
+defined, then the data file is not written).
+</pre>
 </dd></dl>
 
 <dl class="staticmethod">
@@ -233,7 +232,7 @@
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<em>str</em>) &#8211; File name</li>
-<li><strong>arg2</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#shp-geom-type"><span class="std std-ref">SHP_GEOM_TYPE constants</span></a></li>
+<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#shp-geom-type"><span class="std std-ref">SHP_GEOM_TYPE constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -260,22 +259,22 @@ The following geometry types are currently supported:
 
 Type                    Required geometry function.
 
-SHP_GEOM_TYPE_POINT     <a class="reference internal" href="#geosoft.gxapi.GXSHP.set_point" title="geosoft.gxapi.GXSHP.set_point"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXSHP.set_point()</span></code></a>
-SHP_GEOM_TYPE_ARC       <a class="reference internal" href="#geosoft.gxapi.GXSHP.set_arc" title="geosoft.gxapi.GXSHP.set_arc"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXSHP.set_arc()</span></code></a>
-SHP_GEOM_TYPE_POLYGON   <a class="reference internal" href="#geosoft.gxapi.GXSHP.set_polygon" title="geosoft.gxapi.GXSHP.set_polygon"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXSHP.set_polygon()</span></code></a>
+SHP_GEOM_TYPE_POINT     \ :func:`geosoft.gxapi.GXSHP.set_point`\ 
+SHP_GEOM_TYPE_ARC       \ :func:`geosoft.gxapi.GXSHP.set_arc`\ 
+SHP_GEOM_TYPE_POLYGON   \ :func:`geosoft.gxapi.GXSHP.set_polygon`\ 
 
-SHP_GEOM_TYPE_POINTZ    <a class="reference internal" href="#geosoft.gxapi.GXSHP.set_point_z" title="geosoft.gxapi.GXSHP.set_point_z"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXSHP.set_point_z()</span></code></a>
-SHP_GEOM_TYPE_ARCZ      <a class="reference internal" href="#geosoft.gxapi.GXSHP.set_arc_z" title="geosoft.gxapi.GXSHP.set_arc_z"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXSHP.set_arc_z()</span></code></a>
-SHP_GEOM_TYPE_POLYGONZ  <a class="reference internal" href="#geosoft.gxapi.GXSHP.set_polygon_z" title="geosoft.gxapi.GXSHP.set_polygon_z"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXSHP.set_polygon_z()</span></code></a>
+SHP_GEOM_TYPE_POINTZ    \ :func:`geosoft.gxapi.GXSHP.set_point_z`\ 
+SHP_GEOM_TYPE_ARCZ      \ :func:`geosoft.gxapi.GXSHP.set_arc_z`\ 
+SHP_GEOM_TYPE_POLYGONZ  \ :func:`geosoft.gxapi.GXSHP.set_polygon_z`\ 
 </pre>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXSHP.find_field">
 <code class="descname">find_field</code><span class="sig-paren">(</span><em>(str)arg1</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXSHP.find_field" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Find</span> <span class="n">the</span> <span class="n">index</span> <span class="k">for</span> <span class="n">a</span> <span class="n">data</span> <span class="n">field</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Find the index for a data field.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -284,7 +283,7 @@ SHP_GEOM_TYPE_POLYGONZ  <a class="reference internal" href="#geosoft.gxapi.GXSHP
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">The index, -1 if not found.</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></td>
 </tr>
 </tbody>
 </table>
@@ -312,16 +311,16 @@ SHP_GEOM_TYPE_POLYGONZ  <a class="reference internal" href="#geosoft.gxapi.GXSHP
 <dl class="method">
 <dt id="geosoft.gxapi.GXSHP.max_id_num">
 <code class="descname">max_id_num</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXSHP.max_id_num" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">the</span> <span class="nb">max</span> <span class="n">ID</span> <span class="n">number</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Get the max ID number.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The max ID number.</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></td>
 </tr>
 </tbody>
 </table>
@@ -349,16 +348,16 @@ SHP_GEOM_TYPE_POLYGONZ  <a class="reference internal" href="#geosoft.gxapi.GXSHP
 <dl class="method">
 <dt id="geosoft.gxapi.GXSHP.num_fields">
 <code class="descname">num_fields</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXSHP.num_fields" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">the</span> <span class="n">field</span> <span class="n">number</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Get the field number.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The field number.</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></td>
 </tr>
 </tbody>
 </table>
@@ -370,16 +369,16 @@ SHP_GEOM_TYPE_POLYGONZ  <a class="reference internal" href="#geosoft.gxapi.GXSHP
 <dl class="method">
 <dt id="geosoft.gxapi.GXSHP.num_records">
 <code class="descname">num_records</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXSHP.num_records" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">the</span> <span class="n">record</span> <span class="n">number</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Get the record number.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The record number.</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></td>
 </tr>
 </tbody>
 </table>
@@ -414,9 +413,9 @@ SHP_GEOM_TYPE_POLYGONZ  <a class="reference internal" href="#geosoft.gxapi.GXSHP
 <dl class="method">
 <dt id="geosoft.gxapi.GXSHP.set_arc">
 <code class="descname">set_arc</code><span class="sig-paren">(</span><em>(GXVV)arg1</em>, <em>(GXVV)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSHP.set_arc" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Write</span> <span class="n">an</span> <span class="n">XY</span> <span class="n">arc</span> <span class="p">(</span><span class="n">polyline</span><span class="p">)</span> <span class="n">item</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Write an XY arc (polyline) item.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -439,17 +438,17 @@ SHP_GEOM_TYPE_POLYGONZ  <a class="reference internal" href="#geosoft.gxapi.GXSHP
 <p><span class="versionmodified">New in version 6.3.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Can</span> <span class="n">ONLY</span> <span class="n">be</span> <span class="n">used</span> <span class="k">for</span> <span class="n">SHP_GEOM_TYPE_ARC</span> <span class="n">files</span><span class="o">.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+Can ONLY be used for SHP_GEOM_TYPE_ARC files.
+</pre>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXSHP.set_arc_z">
 <code class="descname">set_arc_z</code><span class="sig-paren">(</span><em>(GXVV)arg1</em>, <em>(GXVV)arg2</em>, <em>(GXVV)arg3</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSHP.set_arc_z" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Write</span> <span class="n">an</span> <span class="n">XYZ</span> <span class="n">arc</span> <span class="p">(</span><span class="n">polyline</span><span class="p">)</span> <span class="n">item</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Write an XYZ arc (polyline) item.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -473,23 +472,23 @@ SHP_GEOM_TYPE_POLYGONZ  <a class="reference internal" href="#geosoft.gxapi.GXSHP
 <p><span class="versionmodified">New in version 6.3.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Can</span> <span class="n">ONLY</span> <span class="n">be</span> <span class="n">used</span> <span class="k">for</span> <span class="n">SHP_GEOM_TYPE_ARCZ</span> <span class="n">files</span><span class="o">.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+Can ONLY be used for SHP_GEOM_TYPE_ARCZ files.
+</pre>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXSHP.set_double">
 <code class="descname">set_double</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(float)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSHP.set_double" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Set</span> <span class="n">a</span> <span class="n">data</span> <span class="n">value</span> <span class="n">to</span> <span class="n">a</span> <span class="n">real</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Set a data value to a real.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<em>int</em>) &#8211; data field index</li>
+<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; data field index</li>
 <li><strong>arg2</strong> (<em>float</em>) &#8211; input real value</li>
 </ul>
 </td>
@@ -506,24 +505,24 @@ SHP_GEOM_TYPE_POLYGONZ  <a class="reference internal" href="#geosoft.gxapi.GXSHP
 <p><span class="versionmodified">New in version 6.3.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="nb">input</span> <span class="n">value</span> <span class="ow">is</span> <span class="n">converted</span> <span class="n">to</span> <span class="n">the</span> <span class="n">field</span><span class="s1">&#39;s data type.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+The input value is converted to the field's data type.
+</pre>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXSHP.set_int">
 <code class="descname">set_int</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(int)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSHP.set_int" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Set</span> <span class="n">a</span> <span class="n">data</span> <span class="n">value</span> <span class="n">to</span> <span class="n">a</span> <span class="nb">int</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Set a data value to a int.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<em>int</em>) &#8211; data field index</li>
-<li><strong>arg2</strong> (<em>int</em>) &#8211; input int value</li>
+<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; data field index</li>
+<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; input int value</li>
 </ul>
 </td>
 </tr>
@@ -539,17 +538,17 @@ SHP_GEOM_TYPE_POLYGONZ  <a class="reference internal" href="#geosoft.gxapi.GXSHP
 <p><span class="versionmodified">New in version 6.3.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="nb">input</span> <span class="n">value</span> <span class="ow">is</span> <span class="n">converted</span> <span class="n">to</span> <span class="n">the</span> <span class="n">field</span><span class="s1">&#39;s data type.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+The input value is converted to the field's data type.
+</pre>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXSHP.set_ipj">
 <code class="descname">set_ipj</code><span class="sig-paren">(</span><em>(GXIPJ)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSHP.set_ipj" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Set</span> <span class="n">a</span> <span class="n">SHP</span> <span class="nb">object</span><span class="s1">&#39;s projection.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Set a SHP object's projection.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -566,22 +565,22 @@ SHP_GEOM_TYPE_POLYGONZ  <a class="reference internal" href="#geosoft.gxapi.GXSHP
 <p><span class="versionmodified">New in version 6.3.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">If</span> <span class="n">the</span> <span class="n">SHP</span> <span class="nb">object</span> <span class="n">has</span> <span class="n">a</span> <span class="n">projection</span><span class="p">,</span> <span class="ow">and</span> <span class="n">it</span>
-<span class="ow">is</span> <span class="ow">not</span> <span class="n">IPJ_TYPE_NONE</span><span class="p">,</span> <span class="n">then</span> <span class="n">it</span> <span class="n">will</span> <span class="n">be</span> <span class="n">output</span>
-<span class="n">to</span> <span class="n">a</span> <span class="n">file</span> <span class="k">with</span> <span class="n">the</span> <span class="o">.</span><span class="n">prj</span> <span class="n">extension</span> <span class="n">when</span> <span class="n">the</span>
-<span class="n">first</span> <span class="nb">object</span> <span class="ow">is</span> <span class="n">output</span><span class="o">.</span>
-<span class="n">This</span> <span class="n">function</span> <span class="n">should</span> <span class="n">be</span> <span class="n">called</span> <span class="n">BEFORE</span> <span class="n">the</span> <span class="n">first</span>
-<span class="nb">object</span> <span class="ow">is</span> <span class="n">written</span><span class="o">.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+If the SHP object has a projection, and it
+is not IPJ_TYPE_NONE, then it will be output
+to a file with the .prj extension when the
+first object is output.
+This function should be called BEFORE the first
+object is written.
+</pre>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXSHP.set_point">
 <code class="descname">set_point</code><span class="sig-paren">(</span><em>(float)arg1</em>, <em>(float)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSHP.set_point" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Write</span> <span class="n">an</span> <span class="n">XY</span> <span class="n">point</span> <span class="n">item</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Write an XY point item.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -604,17 +603,17 @@ SHP_GEOM_TYPE_POLYGONZ  <a class="reference internal" href="#geosoft.gxapi.GXSHP
 <p><span class="versionmodified">New in version 6.3.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Can</span> <span class="n">ONLY</span> <span class="n">be</span> <span class="n">used</span> <span class="k">for</span> <span class="n">SHP_GEOM_TYPE_POINT</span> <span class="n">files</span><span class="o">.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+Can ONLY be used for SHP_GEOM_TYPE_POINT files.
+</pre>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXSHP.set_point_z">
 <code class="descname">set_point_z</code><span class="sig-paren">(</span><em>(float)arg1</em>, <em>(float)arg2</em>, <em>(float)arg3</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSHP.set_point_z" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Write</span> <span class="n">an</span> <span class="n">XYZ</span> <span class="n">point</span> <span class="n">item</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Write an XYZ point item.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -638,17 +637,17 @@ SHP_GEOM_TYPE_POLYGONZ  <a class="reference internal" href="#geosoft.gxapi.GXSHP
 <p><span class="versionmodified">New in version 6.3.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Can</span> <span class="n">ONLY</span> <span class="n">be</span> <span class="n">used</span> <span class="k">for</span> <span class="n">SHP_GEOM_TYPE_POINTZ</span> <span class="n">files</span><span class="o">.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+Can ONLY be used for SHP_GEOM_TYPE_POINTZ files.
+</pre>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXSHP.set_polygon">
 <code class="descname">set_polygon</code><span class="sig-paren">(</span><em>(GXVV)arg1</em>, <em>(GXVV)arg2</em>, <em>(bool)arg3</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSHP.set_polygon" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Write</span> <span class="n">an</span> <span class="n">XY</span> <span class="n">polygon</span> <span class="n">item</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Write an XY polygon item.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -672,17 +671,17 @@ SHP_GEOM_TYPE_POLYGONZ  <a class="reference internal" href="#geosoft.gxapi.GXSHP
 <p><span class="versionmodified">New in version 6.3.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Can</span> <span class="n">ONLY</span> <span class="n">be</span> <span class="n">used</span> <span class="k">for</span> <span class="n">SHP_GEOM_TYPE_POLYGON</span> <span class="n">files</span><span class="o">.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+Can ONLY be used for SHP_GEOM_TYPE_POLYGON files.
+</pre>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXSHP.set_polygon_z">
 <code class="descname">set_polygon_z</code><span class="sig-paren">(</span><em>(GXVV)arg1</em>, <em>(GXVV)arg2</em>, <em>(GXVV)arg3</em>, <em>(bool)arg4</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSHP.set_polygon_z" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Write</span> <span class="n">an</span> <span class="n">XYZ</span> <span class="n">polygon</span> <span class="n">item</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Write an XYZ polygon item.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -707,23 +706,23 @@ SHP_GEOM_TYPE_POLYGONZ  <a class="reference internal" href="#geosoft.gxapi.GXSHP
 <p><span class="versionmodified">New in version 6.3.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Can</span> <span class="n">ONLY</span> <span class="n">be</span> <span class="n">used</span> <span class="k">for</span> <span class="n">SHP_GEOM_TYPE_POLYGONZ</span> <span class="n">files</span><span class="o">.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+Can ONLY be used for SHP_GEOM_TYPE_POLYGONZ files.
+</pre>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXSHP.set_string">
 <code class="descname">set_string</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(str)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSHP.set_string" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Set</span> <span class="n">a</span> <span class="n">data</span> <span class="n">value</span> <span class="n">to</span> <span class="n">a</span> <span class="n">string</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Set a data value to a string.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<em>int</em>) &#8211; data field index</li>
+<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; data field index</li>
 <li><strong>arg2</strong> (<em>str</em>) &#8211; input string value</li>
 </ul>
 </td>
@@ -740,24 +739,24 @@ SHP_GEOM_TYPE_POLYGONZ  <a class="reference internal" href="#geosoft.gxapi.GXSHP
 <p><span class="versionmodified">New in version 6.3.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="nb">input</span> <span class="n">string</span> <span class="ow">is</span> <span class="n">converted</span> <span class="n">to</span> <span class="n">the</span> <span class="n">field</span><span class="s1">&#39;s data type.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+The input string is converted to the field's data type.
+</pre>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXSHP.type">
 <code class="descname">type</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXSHP.type" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">the</span> <span class="n">SHP</span> <span class="nb">object</span><span class="s1">&#39;s geometry type.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Get the SHP object's geometry type.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">the SHP object&#8217;s geometry type (<a class="reference internal" href="#shp-geom-type"><span class="std std-ref">SHP_GEOM_TYPE constants</span></a>)</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></td>
 </tr>
 </tbody>
 </table>
@@ -769,9 +768,9 @@ SHP_GEOM_TYPE_POLYGONZ  <a class="reference internal" href="#geosoft.gxapi.GXSHP
 <dl class="method">
 <dt id="geosoft.gxapi.GXSHP.write_item">
 <code class="descname">write_item</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSHP.write_item" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Output</span> <span class="n">the</span> <span class="n">current</span> <span class="n">item</span> <span class="ow">and</span> <span class="n">data</span><span class="o">.</span>
-</pre></div>
-</div>
+<dd><pre class="literal-block">
+Output the current item and data.
+</pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -786,11 +785,11 @@ SHP_GEOM_TYPE_POLYGONZ  <a class="reference internal" href="#geosoft.gxapi.GXSHP
 <p><span class="versionmodified">New in version 6.3.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">currently</span> <span class="n">stored</span> <span class="n">SHP</span> <span class="n">item</span> <span class="ow">and</span> <span class="n">data</span> <span class="n">are</span> <span class="n">written</span> <span class="n">to</span> <span class="n">the</span>
-<span class="n">SHP</span> <span class="n">geometry</span> <span class="ow">and</span> <span class="n">data</span> <span class="n">files</span><span class="o">.</span> <span class="p">(</span><span class="n">If</span> <span class="n">no</span> <span class="n">data</span> <span class="n">fields</span> <span class="n">have</span> <span class="n">been</span>
-<span class="n">defined</span><span class="p">,</span> <span class="n">then</span> <span class="n">the</span> <span class="n">data</span> <span class="n">file</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">written</span><span class="p">)</span><span class="o">.</span>
-</pre></div>
-</div>
+<pre class="literal-block">
+The currently stored SHP item and data are written to the
+SHP geometry and data files. (If no data fields have been
+defined, then the data file is not written).
+</pre>
 </dd></dl>
 
 </dd></dl>
@@ -866,12 +865,27 @@ SHP_GEOM_TYPE_POLYGONZ  <a class="reference internal" href="#geosoft.gxapi.GXSHP
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.1 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li> 
       </ul>
     </div>
+
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2016, Geosoft Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.6.
+        &#169; Copyright 2017, Geosoft Inc.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
     </div>
+<div class="footer">This page uses <a href="http://analytics.google.com/">
+Google Analytics</a> to collect statistics. You can disable it by blocking
+the JavaScript coming from www.google-analytics.com.
+<script type="text/javascript">
+  (function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ?
+              'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+  })();
+</script>
+</div>
+
   </body>
 </html>
