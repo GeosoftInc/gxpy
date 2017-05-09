@@ -28,16 +28,28 @@ class Test(GXPYTest):
     def test_cs(self):
         self.start()
 
+        p = gxgm.Point((5, 10))
+        self.assertTrue(p == p)
+        self.assertTrue(gxgm.Point((1,2), coordinate_system="huh") == gxgm.Point((1,2), coordinate_system="huh"))
+        self.assertTrue(gxgm.Point((1, 2), coordinate_system="huh") == gxgm.Point((1, 2)))
+        self.assertTrue(gxgm.Point((1, 2)) == gxgm.Point((1, 2)))
+        self.assertFalse(gxgm.Point((1, 2), coordinate_system="huh") == gxgm.Point((1, 2), coordinate_system="huh?"))
+
         s = "WGS 84 / UTM zone 32N <0, 0, 0, 10, 15, 32>"
-        p = gxgm.Point((5,10), cs=s)
+        p = gxgm.Point((5,10), coordinate_system=s)
         hcsd = p.coordinate_system.coordinate_dict()
         self.assertEqual(hcsd['name'], "WGS 84 / UTM zone 32N <0,0,0,10,15,32>")
+        self.assertTrue(p == p)
 
         s = s + ' [geoid]'
-        pp = gxgm.PPoint(((8, 12), (5, 10)), cs=s)
+        pp = gxgm.PPoint(((8, 12), (5, 10)), coordinate_system=s)
         hcsd = p.coordinate_system.coordinate_dict()
         self.assertEqual(hcsd['name'], "WGS 84 / UTM zone 32N <0,0,0,10,15,32>")
         self.assertEqual(pp.coordinate_system.vcs, "geoid")
+        self.assertTrue(pp == pp)
+        self.assertTrue(pp == gxgm.PPoint(((8, 12), (5, 10))))
+        self.assertFalse(pp == gxgm.PPoint(((8, 12), (5, 10)), coordinate_system='WGS 84 [geoid]'))
+        self.assertFalse(gxgm.PPoint(((8, 12), (5, 10)), coordinate_system='WGS 84 [geoid]') == pp)
 
     def test_point(self):
         self.start()
@@ -233,11 +245,11 @@ class Test(GXPYTest):
                          gxgm.Point((b1.x2[1], b1.y2[1], b1.z2[1]))))
         self.assertTrue(b1 == b2)
         b2 = gxgm.Point2((gxgm.Point((b1.x2[1], b1.y2[1], b1.z2[1])),
-                         gxgm.Point((b1.x2[0], b1.y2[0], b1.z2[0]))), cs="WGS 84")
+                         gxgm.Point((b1.x2[0], b1.y2[0], b1.z2[0]))), coordinate_system="WGS 84")
         self.assertTrue(b1 == b2)
-        b2 = gxgm.Point2(((b1.x2[1], b1.y2[1], b1.z2[1]), (b1.x2[0], b1.y2[0], b1.z2[0])), cs="WGS 84")
+        b2 = gxgm.Point2(((b1.x2[1], b1.y2[1], b1.z2[1]), (b1.x2[0], b1.y2[0], b1.z2[0])), coordinate_system="WGS 84")
         self.assertTrue(b1 == b2)
-        b2 = gxgm.Point2((b1.x2[1], b1.y2[1], b1.z2[1], b1.x2[0], b1.y2[0], b1.z2[0]), cs="WGS 84")
+        b2 = gxgm.Point2((b1.x2[1], b1.y2[1], b1.z2[1], b1.x2[0], b1.y2[0], b1.z2[0]), coordinate_system="WGS 84")
         self.assertTrue(b1 == b2)
 
         c = gxgm.Point(((b2.p0.x + b2.p1.x) * 0.5,

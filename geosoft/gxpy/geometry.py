@@ -1,9 +1,11 @@
 """
-Basic geometric elements.
+Spatial geometric elements.
 
 .. note::
 
-    Regression tests provide usage examples: `Tests <https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_geometry.py>`_
+    Regression tests provide usage examples: 
+    
+    `geometry tests <https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_geometry.py>`_
 
 """
 import numpy as np
@@ -19,6 +21,15 @@ __version__ = geosoft.__version__
 def _t(s):
     return geosoft.gxpy.system.translate(s)
 
+def _same_cs(a, b):
+    if (a._cs is None or b._cs is None) or (a._cs == b._cs):
+        return True
+    else:
+        if isinstance(a._cs, gxcs.Coordinate_system) or isinstance(b._cs, gxcs.Coordinate_system):
+            return a.coordinate_system == b.coordinate_system
+        return False
+
+
 class GeometryException(Exception):
     """
     Exceptions from this module.
@@ -27,10 +38,9 @@ class GeometryException(Exception):
 
 class Geometry:
     """
-    Geometry base class.
+    Geometry base class for all geometries.
 
-    :param hcs, vcs:
-            horizontal and vertical coordinate systems (see :class::`gxpy.coordinate_system.Coordinate_system`)
+    :param coordinate_system: :class:`geosoft.gxpy.Coordinate_system` instance.
 
     .. versionadded:: 9.2
     """
@@ -45,23 +55,26 @@ class Geometry:
         return "{}({})".format(self.__class__, self.__dict__)
 
     def __init__(self, **kwargs):
-         self._cs = gxcs.Coordinate_system(**kwargs)
+        self._cs = kwargs.pop('coordinate_system', None)
 
     def __eq__(self, other):
-        return self._cs.same_as(other._cs)
+        return _same_cs(self, other)
 
     @property
     def coordinate_system(self):
+        """:class:`geosoft.gxpy.Coordinate_system` instance.  Can be set."""
+        if (self._cs is not None) and not isinstance(self._cs, gxcs.Coordinate_system):
+            self._cs = gxcs.Coordinate_system(self._cs)
         return self._cs
 
     @coordinate_system.setter
     def coordinate_system(self, cs):
-        self._cs = gxcs.Coordinate_system(cs)
+        self._cs = cs
 
 
 class Point(Geometry):
     """
-    Spatial location (x,y,z).
+    Spatial location (x,y,z).  Basic instance arithmetic and equality testing is supported.
 
     :param p:   point in one of the following forms:
 
@@ -124,13 +137,13 @@ class Point(Geometry):
         return Point(self.p / p.p)
 
     def __eq__(self, other):
-        return (self.coordinate_system.same_as(other.coordinate_system)) and \
-               np.array_equal(self.p, other.p) and \
-               self.coordinate_system.same_as(other.coordinate_system)
+        if not _same_cs(self, other):
+            return False
+        return np.array_equal(self.p, other.p)
 
     @property
     def x(self):
-        """ X value"""
+        """ x value, can be set"""
         return self.p[0]
 
     @x.setter
@@ -139,7 +152,7 @@ class Point(Geometry):
 
     @property
     def y(self):
-        """ Y value"""
+        """ y value, can be set"""
         return self.p[1]
 
     @y.setter
@@ -148,7 +161,7 @@ class Point(Geometry):
 
     @property
     def z(self):
-        """ z value"""
+        """ z value, can be set"""
         return self.p[2]
 
     @z.setter
@@ -157,7 +170,7 @@ class Point(Geometry):
 
     @property
     def xy(self):
-        """ (x, y)"""
+        """ (x, y), can be set"""
         return (self.p[0], self.p[1])
 
     @xy.setter
@@ -167,7 +180,7 @@ class Point(Geometry):
 
     @property
     def xyz(self):
-        """ (x, y, z) """
+        """ (x, y, z), can be set"""
         return (self.p[0], self.p[1], self.p[2])
 
     @xyz.setter
@@ -177,6 +190,7 @@ class Point(Geometry):
         self.p[2] = float(xyz[2])
 
     def copy(self):
+        """ return a copy as a :class:`Point` instance"""
         cls = self.__class__
         result = cls.__new__(cls)
         result.__dict__.update(self.__dict__)
@@ -184,7 +198,7 @@ class Point(Geometry):
 
 class Point2(Geometry):
     """
-    Two points, for a line, or a rectangle, or a cube
+    Two points, for a line, or a rectangle, or a cube.  Basic instance arithmetic and equality testing is supported.
 
     :param p:       Points in one of the following forms:
 
@@ -229,8 +243,9 @@ class Point2(Geometry):
             raise GeometryException(_t('Invalid points: {}').format(p))
 
     def __eq__(self, other):
-        return (self.coordinate_system.same_as(other.coordinate_system)) and \
-                ((self.p0 == other.p0) and (self.p1 == other.p1)
+        if not _same_cs(self, other):
+            return False
+        return ((self.p0 == other.p0) and (self.p1 == other.p1)
                  or (self.p0 == other.p1) and (self.p1 == other.p0))
 
     def __add__(self, p):
@@ -268,6 +283,7 @@ class Point2(Geometry):
             return Point2((self.p0 / p, self.p1 / p))
 
     def copy(self):
+        """return a copy as a :class:`Point2` instance"""
         cls = self.__class__
         result = cls.__new__(cls)
         result.__dict__.update(self.__dict__)
@@ -275,6 +291,7 @@ class Point2(Geometry):
 
     @property
     def x2(self):
+        """(x0, x1), can be set"""
         return self.p0.x, self.p1.x
 
     @x2.setter
@@ -284,7 +301,7 @@ class Point2(Geometry):
 
     @property
     def y2(self):
-        """ Y extent (min, max)"""
+        """ (y0, y1), can be set"""
         return self.p0.y, self.p1.y
 
     @y2.setter
@@ -294,7 +311,7 @@ class Point2(Geometry):
 
     @property
     def z2(self):
-        """ Z extent (min, max)"""
+        """ (z0, z1), can be set"""
         return self.p0.z, self.p1.z
 
     @z2.setter
@@ -305,6 +322,7 @@ class Point2(Geometry):
 
     @property
     def centroid(self):
+        """ centroid on the line as a :class:`Point` instance"""
         cx = (self.p1.x + self.p0.x) * 0.5
         cy = (self.p1.y + self.p0.y) * 0.5
         cz = (self.p1.z + self.p0.z) * 0.5
@@ -312,6 +330,7 @@ class Point2(Geometry):
 
     @property
     def dimension(self):
+        """ dimensions as (dx, dy, dz)"""
         dx = abs(self.p1.x - self.p0.x)
         dy = abs(self.p1.y - self.p0.y)
         dz = abs(self.p1.z - self.p0.z)
@@ -320,7 +339,7 @@ class Point2(Geometry):
 
 class PPoint(Geometry, Sequence):
     """
-    Poly-Point class.
+    Poly-Point class. Basic instance arithmetic and equality testing is supported.
 
     :param xyz: array-like, either ((x, y), ...), ((x, y, z), ...) or (vv_x, vv_y, [vv_z]).
                 vv data is resampled to match the first vv.
@@ -426,9 +445,12 @@ class PPoint(Geometry, Sequence):
         return PPoint(self.pp / Point(p).p)
 
     def __eq__(self, other):
-        return (self.coordinate_system.same_as(other.cs)) and np.array_equal(self.pp, other.pp)
+        if not _same_cs(self, other):
+            return False
+        return np.array_equal(self.pp, other.pp)
 
     def copy(self):
+        """return a copy as a :class:`PPoint` instance"""
         cls = self.__class__
         result = cls.__new__(cls)
         result.__dict__.update(self.__dict__)
@@ -436,11 +458,12 @@ class PPoint(Geometry, Sequence):
 
     @property
     def length(self):
+        """number of points"""
         return self.__len__()
 
     @property
     def x(self):
-        """ X array slice"""
+        """ x array slice, can be set"""
         return self.pp[:,0]
 
     @x.setter
@@ -449,7 +472,7 @@ class PPoint(Geometry, Sequence):
 
     @property
     def y(self):
-        """ Y array slice"""
+        """ y array slice, can be set"""
         return self.pp[:,1]
 
     @y.setter
@@ -458,7 +481,7 @@ class PPoint(Geometry, Sequence):
 
     @property
     def z(self):
-        """ Z array slice"""
+        """ z array slice, can be set"""
         return self.pp[:,2]
 
     @z.setter
@@ -467,7 +490,7 @@ class PPoint(Geometry, Sequence):
 
     @property
     def xy(self):
-        """ XY array slice"""
+        """ (x,y) array slice, can be set"""
         return self.pp[:, 0:2]
 
     @xy.setter
@@ -476,14 +499,14 @@ class PPoint(Geometry, Sequence):
 
     @property
     def xyz(self):
-        """ XYZ point array"""
+        """ xyz point array"""
         return self.pp
 
     def extent(self):
         """
         Returns extent of the polyline.
         
-        :returns:   (P_minimum, P_maximum)
+        :returns:   (min, max) as :class:`Point` instance pair
         """
         p1 = Point((np.amin(self.x), np.amin(self.y), np.amin(self.z)))
         p2 = Point((np.amax(self.x), np.amax(self.y), np.amax(self.z)))
@@ -491,7 +514,7 @@ class PPoint(Geometry, Sequence):
 
     def make_xyz_vv(self):
         """
-        Return x, y and z as a set of gxpy.vv.GXvv.
+        Return x, y and z as a set of :class:`geosoft.gxpy.vv.GXvv`.
         
         :return:  (xvv, yvv, zvv)
         

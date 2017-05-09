@@ -1,11 +1,13 @@
 """
-Geosoft grids.
+Geosoft grids and image handling, including all grid types supported by Geosoft..
 
 .. note::
 
     Regression tests provide usage examples: 
     
     `Tests <https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_grid.py>`_
+    
+.. seealso:: :class:`geosoft.gxapi.GXGRD`, :class:`geosoft.gxapi.GXGU`
 
 """
 import os
@@ -142,20 +144,19 @@ class Grid():
     """
     Grid and image class.
 
-    Instance constructors:
+    :constructors:
 
-        ================= ============================================
-        `open`            open an existing grid/image
-        `new`             create a new grid/image
-        `copy`            create a copy
-        `index_window`    create a windowed grid based of grid indexes
-        `from_data_array` create a new grid from a 2d data array
-        ================= ============================================
+        ======================= ============================================
+        :meth:`open`            open an existing grid/image
+        :meth:`new`             create a new grid/image
+        :meth:`copy`            create a copy
+        :meth:`index_window`    create a windowed grid based of grid indexes
+        :meth:`from_data_array` create a new grid from a 2d data array
+        ======================= ============================================
 
     .. versionadded:: 9.1
     """
 
-    gc = None
     _delete_files = False
     _file_name = None
 
@@ -477,6 +478,7 @@ class Grid():
         self._delete_files = delete
 
     def close(self):
+        """close the grid and release all instance resources."""
         self._close()
 
     @property
@@ -510,7 +512,7 @@ class Grid():
     @property
     def nx(self):
         """
-        grid x dimension
+        grid x dimension (number of columns)
 
         .. versionadded:: 9.2
         """
@@ -519,7 +521,7 @@ class Grid():
     @property
     def ny(self):
         """
-        grid y dimension
+        grid y dimension (number of rows)
 
         .. versionadded:: 9.2
         """
@@ -528,7 +530,7 @@ class Grid():
     @property
     def x0(self):
         """
-        grid origin x location
+        grid origin x location in the plane coordinate system
 
         .. versionadded:: 9.2
         """
@@ -537,7 +539,7 @@ class Grid():
     @property
     def y0(self):
         """
-        grid origin y location
+        grid origin y location in the plane coordinate system
 
         .. versionadded:: 9.2
         """
@@ -629,7 +631,7 @@ class Grid():
     @property
     def coordinate_system(self):
         """
-        grid coordinate system as a Coordinate_system.
+        grid coordinate system as a :class:`geosoft.gxpy.coordinate_system.Coordinate_system` instance
 
         .. versionadded:: 9.2
         """

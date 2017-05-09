@@ -1,10 +1,40 @@
 """
-Coordinate systems describe how cartesian coordinates are located ralative to the Earth.
- 
+Coordinate systems describe how cartesian coordinates are located ralative to the Earth.  Cartesian coordinates
+are right-handed (x, y, z) spatial ordinates that describe locations within a coordinate system frame of reference.
+For coordinates relative to a horizontal plane, positive z is up, usually equivalent to elevation.
+
+Coordinate systems can be oriented in three dimensions using an `orientation` definition, which defines an (x0, y0, z0)
+origin and rotation (rx, ry, rz) around the X, Y and then Z axis relative to a base coordinate system.  
+
+Base coordinate systems are usually defined by "well-known" coordinate system projections on a datum of the earth.
+
+**Coordinate System Name**
+
+A coordinate system will also have a descriptive name that identifies the base system with a datum and "well-known"
+pmap projection description, plus optional orientation and vertical reference datum if defined.  Orientation
+parameters are enclosed is `<>`, for example `<400000, 6200000,0,0,-90,0>` that defined `<x0, y0, z0, rx, ry, rz>`.
+If a vertical referenc datum is defined it appears as a string in quare brackets, for example  `[CGVD28]`.
+
+Examples:
+    
+    .. code::
+    
+        "NAD83 / UTM zone 15N"
+        "NAD83 / UTM zone 15N <450000,6250000,0,0,0,-25>" # oriented system, rotated -25 degrees
+        "NAD83 / UTM zone 15N [NAVD88]"
+        "NAD83 / UTM zone 15N <450000,6250000,0,0,0,-25> [NAVD88]"
+
+The descriptive name for well-known coordinate systems is sufficient to describe the coordinate system from
+the `EPSG Geodetic Registry <http://www.epsg.org/>`_. To fully locate ad-hoc coordinates you will need
+the parameters described in the GXF stings.  See the `gxf` property of :class:`geosoft.gxpy.coordinate_system`.
+
 .. note::
 
-    Regression tests provide usage examples: `Tests <https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_coordinate_system.py>`_
+    Regression tests provide usage examples: 
+    
+    `coordinate_system tests <https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_coordinate_system.py>`_
 
+.. seealso:: :class:`geosoft.gxapi.GXIPJ`
 """
 
 import json
@@ -78,7 +108,7 @@ def parameters(what, key):
             | PARM_DATUM
             | PARM_PROJECTION
             | PARM_UNITS
-            | LOCAL_DATUM
+            | PARM_LOCAL_DATUM
     :param key:     parameter key to find and return
     :raises CSException: if table or key not found.
 
@@ -94,9 +124,12 @@ def parameters(what, key):
 def parameter_exists(what, key):
     """
     Test if a parameter set exists in a coordinate system table.
-    :param what:    see parameters()
+    
+    :param what:    see :meth:`parameters`
     :param key:     parameter key
-    :return: True if table/key exists
+    :return:        True if table/key exists
+    
+    .. versionadded:: 9.2
     """
     try:
         parameters(what, key)
@@ -151,7 +184,7 @@ def hcs_orient_vcs_from_name(name):
     :param name:
     :return: hcs, orient, vcs
 
-    .. versionadded:: 9.1
+    .. versionadded:: 9.2
     """
 
     name, vcs = _extract(name, '[]')
@@ -186,7 +219,11 @@ def name_from_hcs_orient_vcs(hcs, orient=None, vcs=None):
     return hcs + orient + vcs
 
 def list_from_wktsrs(wkt):
-    """ return a list from a wkt spatial reference string """
+    """
+    Return a list from a wkt spatial reference string.
+    
+    .. versionadded:: 9.2
+    """
 
     def first_item(wkt):
         n = 0
@@ -224,7 +261,11 @@ def list_from_wktsrs(wkt):
     return wktlst
 
 def find_key(wkt, k):
-    """ Find a key in the wkt, return it's name and items"""
+    """
+    Find a key in the wkt, return it's name and items.
+    
+    .. versionadded:: 9.2
+    """
 
     for w in wkt:
         if type(w) is dict:
@@ -239,11 +280,21 @@ def find_key(wkt, k):
     return '', []
 
 def wkt_vcs(vcs):
-    """ compose a wkt VERTCS block from a Geosoft vcs string."""
+    """
+    Compose a wkt VERTCS block from a Geosoft vcs string.
+    
+    .. versionadded:: 9.2
+    """
     return 'VERTCS["' + vcs + '"]'
 
 class Wkt:
-    """ Helper class to parse WKT-formatted spatial reference strings"""
+    """
+    Helper class to parse WKT-formatted spatial reference strings.
+    
+    :param wkt: wkt (well-known text) string that describes a coordinate system.
+    
+    .. versionadded:: 9.2
+    """
 
     def __repr__(self):
         return "{}({})".format(self.__class__, self.__dict__)
@@ -267,7 +318,11 @@ class Wkt:
 
     @property
     def name(self):
-        """ return the ESRI coordinate system"""
+        """
+        Return the ESRI coordinate system WKT string
+        
+        .. versionadded:: 9.2
+        """
 
         if self.pcs:
             name = self.pcs
@@ -281,8 +336,11 @@ class Wkt:
     def find_key(self, k):
         """
         Return the name and list of items for a key
+        
         :param k:   the key to look for in the wkt
         :return:    name ('' if not found), list of parameters, ([] if no items)
+        
+        .. versionadded:: 9.2
         """
         return find_key(self._wkt, k)
 
@@ -291,26 +349,26 @@ class Coordinate_system:
     Coordinate system class. A coordinate system defines a horizontal and vertical reference
     system to locate (x, y, z) cartesian coordinates relative to the Earth.
 
-    :param cs:  - Geosoft name string (ie. "WGS 84 / UTM zone 32N [geodetic]")
+    :param cs:  Coordinate systems can be created from a number of different forms:
+    
+                - Geosoft name string (ie. "WGS 84 / UTM zone 32N [geodetic]")
                  
                 - ESRI WKT string (ie. "PROJCS["WGS_1984_UTM_Zone_35N",GEOGCS[...")
                  
-                - dictionary that contains the coordinate system properties (see **Dictionary Structure** below.)
+                - a dictionary that contains the coordinate system properties (see **Dictionary Structure** below.)
                   
-                - JSON string that contains the coordinate system properties
+                - a JSON string that contains the coordinate system properties
                   
-                - list that contains the 5 GXF coordinate system strings (http://www.geosoft.com/resources/goto/GXF-Grid-eXchange-File)
+                - a list that contains the 5 `GXF coordinate system strings <http://www.geosoft.com/resources/goto/GXF-Grid-eXchange-File>`_
                   (ie: ['"WGS 84 / UTM zone 32N [geodetic]", "WGS 84", "UTM zone 32N", "", ""])
                 
-                - geosoft.gxapi.GXipj instance
+                - :class:`geosoft.gxapi.GXIPJ` instance
                  
-                - Coordinate_system instance, returns a copy of the Coordinate_system instance
+                - :class:`Coordinate_system` instance, returns a copy
 
     :Dictionary Structure:
     
-        :Geosoft:
-        
-            
+        :Geosoft:       
 
             .. code::
     
@@ -337,6 +395,7 @@ class Coordinate_system:
                 {   "type": "local",
                     "lon_lat": (lon, lat) required longitude, latitude of "origin", in degrees
                     "origin": (x0, y0) location of "lon_lat" on the local coordinate system, default is (0,0)
+                    "azimuth": azimuth of rotation of local axiz relative to North.
                     "elevation": elevation of the origin in the vertical coordinate system, default is 0.
                     "datum": datum, default is "WGS 84"        
                     "local_datum": local datum transform, default is the default for the datum
@@ -348,7 +407,7 @@ class Coordinate_system:
             
                 cs = geosoft.gxpy.Coordinate_system({'type': 'local', 'lon_lat': (-96, 43), 'azimuth': 25})
 
-        :EPSG: (http://spatialreference.org/)
+        :EPSG: (http://www.epsg.org/)
 
             .. code::
 
@@ -414,7 +473,7 @@ class Coordinate_system:
 
     @property
     def gxipj(self):
-        """ gxapi.GXIPJ instance"""
+        """ :class:`geosoft.gxapi.GXIPJ` instance"""
         return self._gxapi_ipj
 
     @property
@@ -429,6 +488,7 @@ class Coordinate_system:
 
     @property
     def metres_per_unit(self):
+        """ the number metres per distance unit of the coordinate system."""
         fr = gxapi.float_ref()
         sr = gxapi.str_ref()
         self.gxipj.get_units(fr, sr)
@@ -441,20 +501,16 @@ class Coordinate_system:
                 
     @property
     def vcs(self):
-        """ vertical coordinate system name"""
+        """ Vertical coordinate system name.  Can be set too."""
         return self.cs_name(NAME_VCS)
 
     @vcs.setter
     def vcs(self, vcs):
-        """
-        Set the vertical coordinate system.
-
-        :param vcs: vertical coordinate system name
-        """
         self.gxipj.set_vcs(vcs)
 
     @property
     def is_oriented(self):
+        """True if the coordinate system has an orientation."""
         return '<' in self.hcs
 
     def coordinate_dict(self):
@@ -482,7 +538,11 @@ class Coordinate_system:
         return self._dict
 
     def same_hcs(self, other):
-        """ Return true if the HCS are the same."""
+        """
+        Return True if the HCS are the same.
+        
+        .. versionadded:: 9.2
+        """
         def same_units(a, b):
             a = a.coordinate_dict()['units']
             b = b.coordinate_dict()['units']
@@ -499,7 +559,11 @@ class Coordinate_system:
             return bool(self.gxipj.coordinate_systems_are_the_same(other.gxipj))
 
     def same_vcs(self, other):
-        """ Return true if the VCS are the same."""
+        """
+        Return True if the VCS are the same.
+        
+        .. versionadded:: 9.2
+        """
         svcs = self.vcs
         ovcs = other.vcs
         if (svcs == '') or (ovcs == ''):
@@ -508,11 +572,21 @@ class Coordinate_system:
             return svcs == ovcs
 
     def same_as(self, other):
-        """ Return true if both coordinate systems (HCS and VCS) are the same. """
+        """
+        Return True if both coordinate systems (HCS and VCS) are the same. 
+        
+        .. versionadded:: 9.2
+        """
+        if not isinstance(other, Coordinate_system):
+            other = Coordinate_system(other)
         return self.same_hcs(other) and self.same_vcs(other)
 
     def _from_str(self, cstr):
-        """ setup coordinate systems from a string """
+        """
+        Setup coordinate systems from a string.
+        
+        .. versionadded:: 9.2
+        """
         
         # json string
         if cstr[0] == '{':
@@ -550,6 +624,7 @@ class Coordinate_system:
                               .format(gxfs[0], gxfs[1], gxfs[2], gxfs[3], gxfs[4]))
 
         gxf1, gxf2, gxf3, gxf4, gxf5 = gxfs
+        hcs, orient, vcs = hcs_orient_vcs_from_name(gxf1)
 
         # if we get a name only, and it has a datum and projection, copy these.
         # The challenge with a name only is that the "datum / projection" must exist as
@@ -557,7 +632,6 @@ class Coordinate_system:
         # combine projections with different datums so copying the values allows for this
 
         if (gxf2 == '') and (gxf3 == ''):
-            hcs, *_ = hcs_orient_vcs_from_name(gxf1)
             if '/' in hcs:
                 datum, projection, *_ = hcs.strip('"').split('/')
                 gxf2 = datum.strip()
@@ -579,6 +653,8 @@ class Coordinate_system:
                 if gxf1 != "*unknown":
                     if ('*unknown' in self.name) and (gxf2 or gxf3 or gxf5):
                         raise_gxf_error()
+        if vcs:
+            self.vcs = vcs
 
     def _from_dict(self, csdict):
         """
@@ -665,16 +741,17 @@ class Coordinate_system:
     @property
     def gxf(self):
         """
-        Get GXF string list from ipj. (http://www.geosoft.com/resources/goto/GXF-Grid-eXchange-File)
+        The GXF string list from ipj. (http://www.geosoft.com/resources/goto/GXF-Grid-eXchange-File)
     
         The first string (gxf[0]) is the coordinate system name in the form:
              
-             "datum / projection <x0,y0,z0,rx,ry,rz> [vcs]'
+             `datum / projection <x0,y0,z0,rx,ry,rz> [vcs]`
              
         The orientation parameters are between the '<>', and will be omitted if all 0.
         
         'vcs' is the vertical coordinate system, and is omitted if the vcs is undefined. 
     
+        .. versionadded:: 9.2
         """
 
         s1 = gxapi.str_ref()
@@ -812,10 +889,10 @@ class Coordinate_system:
 
 class Coordinate_projection:
     """
-    Class to reproject coordinates.
+    Class to reproject coordinates between different coordinate systems.
 
-    :params cs_from:  Coordinate_system from coordinate system
-    :params cs_to:    Coordinate_system to coordinate system
+    :params cs_from:  from :class:`Coordinate_system`
+    :params cs_to:    to :class:`Coordinate_system`
 
     .. versionadded:: 9.2
     """
@@ -860,9 +937,9 @@ class Coordinate_projection:
 
                 data = np.zeros((10,5), dtype='float') #then fill the array with some data
 
-                pj.convert(data[:,2])       #transform x,y
-                pj.convert(data[:,3])       #transform x,y and z
-                pj.convert(data)            #transform x,y and z (same as previous line)
+                xy_only = pj.convert(data[:,2])     #transform x,y
+                xyz_only = pj.convert(data[:,3])    #transform x,y and z
+                all = pj.convert(data)              #transform x,y and z with data returned
                 
         :returns:   projected data in the same form as passed (numpy array, list, or (x,y,z))
 

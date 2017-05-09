@@ -3,7 +3,11 @@ Table (records, fields) handling, inherits from Pandas base class.
 
 .. note::
 
-    Regression tests provide usage examples: `Tests <https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_dataframe.py>`_
+    Regression tests provide usage examples: 
+    
+    `dataframe tests <https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_dataframe.py>`_
+    
+.. seealso:: :class:`geosoft.gxapi.GXLTB`
 
 """
 import pandas as pd
@@ -61,8 +65,8 @@ class Data_frame(pd.DataFrame):
     Pandas DataFrame from a Geosoft table.
 
     :parameters:
-        :table:     geosoft table name, which is normally an ASCII csv file.  If the table cannot be
-                    found in the project folder `user/csv` is searched, then the geosoft `csv` folder.
+        :initial:   Geosoft table name, which is normally an ASCII csv file.  If the table cannot be
+                    found in the project folder `user/csv` is searched, then the Geosoft `csv` folder.
         :records:   Record name to include, or a list of records to include.  If not specified all
                     records are included in the dataframe.
         :columns:   Column name to be included, or a list of column names to include.  If not specified all

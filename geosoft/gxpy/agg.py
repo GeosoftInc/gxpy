@@ -1,9 +1,14 @@
 """
-Geosoft aggregates are used to compose georeferenced images on maps and in 3D views.
+Geosoft aggregates are "aggregations" of one or more grid layers that together create a
+georeferenced image in a map view or on a plane in a 3D view.
 
 .. note::
 
-    Regression tests provide usage examples: `Tests <https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_agg.py>`_
+    Regression tests provide usage examples: 
+    
+    `aggregate tests <https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_agg.py>`_
+    
+.. seealso:: :class:`geosoft.gxapi.GXAGG`
 
 """
 import os
@@ -43,13 +48,6 @@ class Aggregate_image():
     :param grid_file:   if specified, the ``add_layer()`` method is called with remaining parameters
                         to create a single-image aggregate.  See ``add_layer()``.
 
-    :properties:
-    
-        :gxagg:         gxapi.GXAGG instance
-        :layer_count:   the number of image layers in the aggregate.
-        :brightness:    the brightness setting relative to the original colouring.  This ranges from
-                        -1.0 (black) to 1.0 (white).
- 
     Constructors:
 
         ============ ================================
@@ -144,7 +142,7 @@ class Aggregate_image():
     @property
     def layer_file_names(self):
         """
-        Return list of layer files in the agg.
+        Return list of layer files in the aggregate.
 
         .. versionadded:: 9.2
         """
@@ -181,10 +179,10 @@ class Aggregate_image():
                   maximum=None,
                   contour=None):
         """
-        Add an image layer to an agg.
+        Add an image layer to an aggregate
 
         :param grid_file:       The name of a grid file (image or data) to add.
-        :param color_map:       gxpy.group.Color_map instance, or the name of a file, which may be 
+        :param color_map:       :class:`gxpy.group.Color_map` instance, or the name of a file, which may be 
                                 `.tbl`, `.zon`, `.itr`, or `.agg`.
         :param zone:            Colour distribution method:
 

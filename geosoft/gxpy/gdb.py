@@ -4,6 +4,8 @@ Geosoft databases for line-oriented spatial data.
 .. note::
 
     Regression tests provide usage examples: `Tests <https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_gdb.py>`_
+    
+.. seealso:: :class:`geosoft.gxapi.GXGB`, :class:`geosoft.gxapi.GXEDB`, :class:`geosoft.gxapi.GXDBREAD`, :class:`geosoft.gxapi.GXDBWRITE`
 
 """
 import os
@@ -91,13 +93,15 @@ def _va_width(data):
 
 class Geosoft_gdb:
     """
-    Class to work with Geosoft databases. This class wraps many of the functions found in geosoft.gxapi.GXDB.
+    Class to work with Geosoft databases. This class wraps many of the functions found in 
+    :class:`geosoft.gxapi.GXDB`.
 
-    Member ._db is the GXDB handle, which can be used to call gxapi methods.
-
-    :constructor open: open  open an existing file, or if not specified open/lock the current database.
-
-    :member fileName:  database file name
+    :constructors:
+     
+        =============== =========================================================================
+        :meth:`open`    open an existing file, or if not specified open/lock the current database
+        :meth:`new`     create a new database
+        =============== =========================================================================
 
     **Some typical programming patterns**
 
@@ -235,8 +239,8 @@ class Geosoft_gdb:
         """
         Open an existing database.
 
-        :param name:    name of the database, default is the current database
-        :return:        Geosoft_gdb instance
+        :param name:    name of the database, default is the current project database
+        :return:        :class:`Geosoft_gdb` instance
 
         .. versionadded:: 9.1
         """
@@ -265,9 +269,12 @@ class Geosoft_gdb:
         :param maxChannels: maximum number of channels, default 200
         :param maxBlobs:    maximum number of blobs, default lines*channels+20
         :param comp:        compression:
+        
                             | COMP_NONE
                             | COMP_SPEED (default)
                             | COMP_SIZE
+                            
+        :returns:           :class:`Geosoft_gdb` instance
 
         .. versionadded:: 9.1
         """
@@ -308,6 +315,7 @@ class Geosoft_gdb:
     def _exist_symb(self, symb, symb_type):
         """
         Check if a symbol exists of the required type.
+        
         :param symb: symbol name or number
         :param symb_type: one of DB_SYMB_TYPE
         :return: True if the symbol exists and is the expected symbol type, False otherwise
@@ -324,10 +332,23 @@ class Geosoft_gdb:
 
     @property
     def gxdb(self):
+        """:class:`geosoft.gxapi.GXDB` instance"""
         return self._db
 
     @property
     def xyz_channels(self):
+        """
+        The currently identified (x, y, z) channels.  Methods that work on spatial locations will use these
+        channels for locating the data at each fiducial of the data.  Can be set using a tuple of two or
+        three strings.  For example:
+        
+        .. code::
+        
+            gdb.xyz_channels = ('Easting', 'Northing')
+            gdb.xyz_channels = ('Easting', 'Northing', 'Elevation')
+            
+        .. versionadded:: 9.2
+        """
         sr = gxapi.str_ref()
         self.gxdb.get_xyz_chan(0, sr)
         x = sr.value
@@ -361,15 +382,12 @@ class Geosoft_gdb:
 
     @property
     def file_name(self):
-        """
-        :return: database file name
-
-        .. versionadded:: 9.1
-        """
+        """Database file name."""
         return os.path.abspath(self._filename)
 
     @property
     def coordinate_system(self):
+        """ the coordinate system of the current :meth:`xyz_channels`."""
         try:
             x_symb = self.line_name_symb('X')[1]
             ipj = gxapi.GXIPJ.create()
@@ -381,50 +399,62 @@ class Geosoft_gdb:
 
     @property
     def max_blobs(self):
+        """maximum blobs allowed"""
         return self._db.get_info(gxapi.DB_INFO_BLOBS_MAX)
 
     @property
     def max_lines(self):
+        """maximum number of lines allowed"""
         return self._db.get_info(gxapi.DB_INFO_LINES_MAX)
 
     @property
     def max_channels(self):
+        """maximum number of channels allowed"""
         return self._db.get_info(gxapi.DB_INFO_CHANS_MAX)
 
     @property
     def used_blob(self):
+        """number of blobs used"""
         return self._db.get_info(gxapi.DB_INFO_BLOBS_USED)
 
     @property
-    def usee_lines(self):
+    def used_lines(self):
+        """number of lines used"""
         return self._db.get_info(gxapi.DB_INFO_LINES_USED)
 
     @property
     def used_channels(self):
+        """number of channels used"""
         return self._db.get_info(gxapi.DB_INFO_CHANS_USED)
 
     @property
     def page_size_bytes(self):
+        """blocking page size"""
         return self._db.get_info(gxapi.DB_INFO_PAGE_SIZE)
 
     @property
     def number_of_blocks(self):
+        """number of blocks"""
         return self._db.get_info(gxapi.DB_INFO_DATA_SIZE)
 
     @property
     def lost_blocks(self):
+        """lost blocks that might be freed"""
         return self._db.get_info(gxapi.DB_INFO_LOST_SIZE)
 
     @property
     def free_blocks(self):
+        """number of free blocks"""
         return self._db.get_info(gxapi.DB_INFO_FREE_SIZE)
 
     @property
     def compression(self):
+        """database compression setting"""
         return self._db.get_info(gxapi.DB_INFO_COMP_LEVEL)
 
     @property
     def pages_for_blobs(self):
+        """pages consumed  by blobs"""
         try:
             return self._db.get_info(gxapi.DB_INFO_BLOB_SIZE)
         except gxapi.GXError:
@@ -432,18 +462,22 @@ class Geosoft_gdb:
 
     @property
     def db_size_kb(self):
+        """database size in kb"""
         return self._db.get_info(gxapi.DB_INFO_FILE_SIZE)
 
     @property
     def index_size_kb(self):
+        """index size in kb"""
         return self._db.get_info(gxapi.DB_INFO_INDEX_SIZE)
 
     @property
     def max_block_size_bytes(self):
+        """maximum block size in bytes"""
         return self._db.get_info(gxapi.DB_INFO_MAX_BLOCK_SIZE)
 
     @property
     def data_has_changed(self):
+        """True if data has changed"""
         return self._db.get_info(gxapi.DB_INFO_CHANGESLOST)
 
     def is_line(self, line, raise_err=False):
@@ -620,6 +654,7 @@ class Geosoft_gdb:
     def list_lines(self, select=True):
         """
         List of lines in the database
+        
         :param select=True:  True to return selected lines, false to return all lines
         :return: dictionary (line name: symbol)
 
@@ -820,7 +855,7 @@ class Geosoft_gdb:
 
         Examples:
 
-        ..code::
+        .. code::
 
             symb = gdb.newChan('X')
             symb = gdb.newChan('X', dtype=np.float64, details={'decimal':4})
@@ -928,6 +963,7 @@ class Geosoft_gdb:
     def select_lines(self, selection='', select=True):
         """
         Change selected state of a line, or group of lines
+        
         :param selection:   string representing selection, comma-delimit multiple selections
         :param select=True: True to select, False to deselect
 
@@ -1423,7 +1459,7 @@ class Geosoft_gdb:
                             Channels are created if they do not exist.  VA channels must exist.
         :param chan_data:   list of tuples [(channel_name, vv), ]
 
-        ..note::
+        .. note::
 
             chan_data may contain VA data, which is defined by slice (ie. name[0], name[4]...).
             If VA data is included the VA channels must already exist.
