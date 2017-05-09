@@ -6,6 +6,11 @@ __pycache__/
 # C extensions
 *.so
 
+# Generated documentation
+docs/version_history.rst
+docs/geosoft.gxapi*
+docs/geosoft.gxpy*
+
 # Distribution / packaging
 .Python
 env/
