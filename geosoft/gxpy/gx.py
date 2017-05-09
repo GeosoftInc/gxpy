@@ -79,13 +79,26 @@ def _reset_globals():
     _stack_depth = 5
     _max_warnings = 10
 
-def track_resource(cl, info):
+def track_resource(resource_class, info):
+    """
+    Track a resource.  Resource tracking is useful for debugging resource leaks.  If you create a class
+    or resource that you expect to be removed before your script ends you can track it with this call.
+    When you dispose of your resource call :meth:`pop_resource` to remove it from the tracking heap.
+    On exit, any resource left on the tracked resource heap will be reported together with the call
+    stack for each resource and the information you provided.
+    
+    :param resource_class: the resource class name
+    :param info: some information about the resource
+    :return: resource_id, can be used with :meth:`pop_resource`
+    
+    .. versionadded:: 9.2
+    """
     global _res_id
     global _res_heap
     global _stack_depth
     if _res_id < _max_resource_heap:
         _res_id += 1
-        rs = "{}:".format(cl)
+        rs = "{}:".format(resource_class)
         for i in range(_stack_depth):
             f = gxs.func_name(i + 2)
             if f is None:
@@ -97,6 +110,13 @@ def track_resource(cl, info):
 
 
 def pop_resource(id):
+    """
+    Pop a tracked resource off the resource stack.
+    
+    :param id:  the resource id returned by :meth:`track_resource`
+    
+    .. versionadded:: 9.2
+    """
     if len(_res_heap):
         try:
             del (_res_heap[id])
