@@ -1,11 +1,13 @@
-.. version:
 
-version constant
-----------------
+.. _GXGEOSOFT:
 
-#TODO - this is not how we manage version numbers, check with JB
-#.. autoattribute:: geosoft.gxapi.version
+   
 
+GXGEOSOFT class
+==================================
+
+This is not a class but a collection of global defines. It
+is used by all functions.
 
 .. _CRC_INIT_VALUE:
 
