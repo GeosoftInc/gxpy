@@ -1,14 +1,14 @@
 """
 Table (records, fields) handling, inherits from Pandas base class.
 
+.. seealso:: :class:`geosoft.gxapi.GXLTB`
+
 .. note::
 
     Regression tests provide usage examples: 
     
     `dataframe tests <https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_dataframe.py>`_
     
-.. seealso:: :class:`geosoft.gxapi.GXLTB`
-
 """
 import pandas as pd
 

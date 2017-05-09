@@ -1,5 +1,8 @@
 """
-Views, both 2D and 3D.
+Views, both 2D and 3D.  2D and 3D views can be placed on a :class:`geosoft.gxpy.map.Map`, though 3D views
+are stored in a `geosoft_3dv` file which can be worked with and viewed separately from a map.
+
+.. seealso:: :mod:`geosoft.gxpy.map`, :mod:`geosoft.gxpy.group`, :mod:`geosoft.gxapi.GXMVIEW`
 
 .. note::
 
@@ -53,6 +56,7 @@ EXTENT_ALL = gxapi.MVIEW_EXTENT_ALL
 EXTENT_VISIBLE = gxapi.MVIEW_EXTENT_VISIBLE
 EXTENT_CLIPPED = gxapi.MVIEW_EXTENT_CLIP
 
+
 class View:
     """
     Geosoft view class.
@@ -65,31 +69,19 @@ class View:
 
                         ::
 
-                            gxpy.view.READ_ONLY
-                            gxpy.view.WRITE_NEW
-                            gxpy.view.WRITE_OLD
+                            READ_ONLY
+                            WRITE_NEW
+                            WRITE_OLD
 
-        The following are used with ``mode=gxpy.view.WRITE_NEW``:
+        The following are used with `mode=geosoft.gxpy.view.WRITE_NEW`:
 
-        :cs:            coordinate system as a gxpy.coordinate_system.Coordinate_system instance, or one of the Coordinate_system
-                        constructor types.
-        :map_location:  (x, y) view location on the map, in map cm
-        :area:          (min_x, min_y, max_x, max_y) area in view units
-        :scale:         Map scale if a coordinate system is defined.  If the coordinate system is not
-                        defined this is view units per map metre.
-        :copy:          name of a view to copy into the new view.
-
-    :properties:
-
-        :map:               the Map instance that contains this view
-        :name:              the name of the view
-        :units_per_metre:   view units per view metres (eg. a view in 'ft' will be 3.28084).
-        :units_per_map_cm:  view units per map cm. (eg. a view in ft, with a scale of 1:12000 returns 393.7 ft/cm)
-        :unit_name:         view units name.
-        :scale:             view scale, which is the # of view units per  unit on the printed map.
-        :aspect:            ratio of the view x units to y units (x/y).  Usually this is 1.0.
-        :extent:            extent of the visible (clipped) view in view units.
-        :extent_map_cm:     extent of the visible view in map cm.
+        :coordinate_system: coordinate system as a gxpy.coordinate_system.Coordinate_system instance, or 
+                            one of the Coordinate_system constructor types.
+        :map_location:      (x, y) view location on the map, in map cm
+        :area:              (min_x, min_y, max_x, max_y) area in view units
+        :scale:             Map scale if a coordinate system is defined.  If the coordinate system is not
+                            defined this is view units per map metre.
+        :copy:              name of a view to copy into the new view.
 
     .. versionadded:: 9.2
     """
@@ -117,7 +109,7 @@ class View:
                  map,
                  name="_unnamed_view",
                  mode=WRITE_OLD,
-                 cs=None,
+                 coordinate_system=None,
                  map_location=(0, 0),
                  area=(0, 0, 30, 20),
                  scale=100,
@@ -136,7 +128,7 @@ class View:
         self._open = True
 
         if mode == WRITE_NEW:
-            self.locate(cs, map_location, area, scale)
+            self.locate(coordinate_system, map_location, area, scale)
 
             if copy:
                 with View(map, name=copy, mode=READ_ONLY) as v:
@@ -155,6 +147,11 @@ class View:
 
     @property
     def lock(self):
+        """
+        True if the view is locked by a group.  Only one group may hold a lock on a view at the
+        same time.  When drawing with groups you should use a `with geosoft.gxpy.group.Draw(...) as g:` construct
+        ensure group locks are properly created and released.
+        """
         return self._lock
 
     @lock.setter
@@ -168,6 +165,7 @@ class View:
 
     @property
     def coordinate_system(self):
+        """ :class:`geosoft.gxpy.coordinate_sustem.Coordinate_system` instance of the view."""
         return self._cs
 
     @coordinate_system.setter
@@ -182,7 +180,7 @@ class View:
 
     def close(self):
         """
-        Close a view.  Use yo close a view outside of a with ... as: construct.
+        Close a view.  Use to close a view when working outside of a `with ... as:` construct.
         
         .. versionadded:: 9.2
         """
@@ -197,12 +195,12 @@ class View:
         Locate and scale the view on the map.
 
         :parameters:
-            :coordinate_system: coordinate system as a gxpy.coordinate_system.Coordinate_system instance, or one of the Coordinate_system
-                            constructor types.
-            :map_location:  New (x, y) view location on the map, in map cm.
-            :area:          New (min_x, min_y, max_x, max_y) area in view units
-            :scale:         New scale in view units per map metre, either as a single value or
-                            (x_scale, y_scale)
+            :coordinate_system: coordinate system as a gxpy.coordinate_system.Coordinate_system instance, 
+                                or one of the Coordinate_system constructor types.
+            :map_location:      New (x, y) view location on the map, in map cm.
+            :area:              New (min_x, min_y, max_x, max_y) area in view units
+            :scale:             New scale in view units per map metre, either as a single value or
+                                (x_scale, y_scale)
 
         .. versionadded:: 9.2
         """
@@ -244,26 +242,33 @@ class View:
 
     @property
     def is_3d(self):
+        """True if this is a 3D view"""
         return bool(self.gxview.is_view_3d())
 
     @property
     def units_per_metre(self):
+        """view units per view metres (eg. a view in 'ft' will be 3.28084)"""
         return self._metres_per_unit
 
     @property
     def units_per_map_cm(self):
+        """view units per map cm. (eg. a view in ft, with a scale of 1:12000 returns 393.7 ft/cm)"""
         return self.gxview.scale_mm() * 10.0
 
     @property
     def units_name(self):
+        """name of the view distance units"""
         return self._uname
 
     def mdf(self, base_view=None):
         """
         Returns the Map Description File specification for this view as a data view.
-
-        ((x_size, y_size, margin_bottom, margin_right, margin_top, margin_left),
-        (scale, units_per_metre, x_origin, y_origin))
+        
+        :param base_view:   name of the base view on the map from which to calculate margins.  If not specified
+                            only the left and bottom margin is calculated based on the view clip minimum 
+                            location and the right and top margins will be 0.
+        :returns:           ((x_size, y_size, margin_bottom, margin_right, margin_top, margin_left),
+                             (scale, units_per_metre, x_origin, y_origin))
 
         .. versionadded: 9.2
         """
@@ -281,8 +286,6 @@ class View:
 
         m1 = (mapx, mapy, map_mny, mapx - map_mxx, mapy - map_mxy, map_mnx)
         m2 = (self.scale, self.units_per_metre, view_mnx, view_mny)
-        return m1, m2
-
         return m1, m2
 
     def _groups(self, gtype=GROUP_ALL):
@@ -315,26 +318,32 @@ class View:
 
     @property
     def group_list(self):
+        """list of groups in this view"""
         return self._groups()
 
     @property
     def group_list_marked(self):
+        """list of marked groups in this view"""
         return self._groups(GROUP_MARKED)
 
     @property
     def group_list_visible(self):
+        """list of visible groups in this view"""
         return self._groups(GROUP_VISIBLE)
 
     @property
     def group_list_agg(self):
+        """list of :class:`geosoft.gxapi.GXAGG` groups in this view"""
         return self._groups(GROUP_AGG)
 
     @property
     def group_list_csymb(self):
+        """list of :class:`geosoft.gxapi.GXCSYMB` groups in this view"""
         return self._groups(GROUP_CSYMB)
 
     @property
     def group_list_voxel(self):
+        """list of voxel groups in this view"""
         return self._groups(GROUP_VOXD)
 
     def has_group(self, group):
@@ -351,21 +360,24 @@ class View:
 
     @property
     def extent_clip(self):
+        """clip extent of the view as (x_min, y_min, x_max, y_max)"""
         return self._extent(gxapi.MVIEW_EXTENT_CLIP)
 
     @property
     def extent_all(self):
+        """extent of all groups in the view as (x_min, y_min, x_max, y_max)"""
         return self._extent(gxapi.MVIEW_EXTENT_ALL)
 
     @property
     def extent_visible(self):
+        """extend of visible groups in the view as (x_min, y_min, x_max, y_max)"""
         return self._extent(gxapi.MVIEW_EXTENT_VISIBLE)
 
     def extent_map_cm(self, extent):
         """
-        Return a view extent in map cm.
+        Return an extent in map cm.
 
-        :param extent: tuple returned an extent property.
+        :param extent: tuple returned from one of the extent property.
 
         .. versionadded:: 9.2
         """
@@ -375,13 +387,30 @@ class View:
 
     @property
     def scale(self):
+        """map scale for the view"""
         return 1000.0 * self.gxview.scale_mm() * self.coordinate_system.metres_per_unit
 
     @property
     def aspect(self):
+        """view aspect ratio, usually 1."""
         return self.gxview.scale_ymm() / self.gxview.scale_mm()
 
     def extent_group(self, group, unit=UNIT_VIEW):
+        """
+        Extent of a group
+        
+        :param group:   group name
+        :param unit:    units:
+        
+                        ::
+                        
+                            UNITS_VIEW
+                            UNITS_MAP
+                            
+        :return: extent as (x_min, y_min, x_max, y_max)
+        
+        .. versionadded: 9.2
+        """
         xmin = gxapi.float_ref()
         ymin = gxapi.float_ref()
         xmax = gxapi.float_ref()
@@ -488,17 +517,13 @@ class View_3d(View):
     Planes can also be oriented within the 3D space to create sections, or for other more esoteric
     purposes.
     
-    Constructors:
+    :Constructors:
 
-        ======== =============================
-        `open()` open an existing geosoft_3dv
-        `new()`  create a new geosoft_3dv
-        ======== =============================
+        ============ =============================
+        :meth:`open` open an existing geosoft_3dv
+        :meth:`new`  create a new geosoft_3dv
+        ============ =============================
     
-    Properties:
-    
-        TODO - complete...
-        
     .. versionadded:: 9.2    
     """
 
@@ -574,19 +599,23 @@ class View_3d(View):
         self.close()
 
     def close(self):
+        """close the view, releases resources."""
         self.map.close()
         self._close()
 
     @property
     def file_name(self):
+        """ the `geosoft_3dv` file name"""
         return self.map.file_name
 
     @property
     def name(self):
+        """the view name"""
         return self.map.name
 
     @property
     def current_3d_drawing_plane(self):
+        """Name of the current 2d drawing plane, `None` if not defined.  Can be set to a plane number or a name."""
         s = gxapi.str_ref()
         try:
             self.gxview.get_def_plane(s)
@@ -603,6 +632,7 @@ class View_3d(View):
 
     @property
     def plane_list(self):
+        """list of drawing planes in the view"""
         gxlst = gxapi.GXLST.create(VIEW_NAME_SIZE)
         self.gxview.list_planes(gxlst)
         return list(gxu.dict_from_lst(gxlst))
@@ -634,6 +664,14 @@ class View_3d(View):
             return plane_number
 
     def has_plane(self, plane):
+        """
+        True if the view contains plane
+        
+        :param plane: name of the plane
+        :return: True if the plane exists in the view
+        
+        .. versionadded:: 9.2
+        """
         try:
             n = self.plane_number(plane)
             return True
@@ -641,6 +679,14 @@ class View_3d(View):
             return False
 
     def groups_on_plane_list(self, plane):
+        """
+        List of groups on a plane.
+        
+        :param plane: name of the plane
+        :return: list of groups on the plane
+        
+        .. versionadded:: 9.2
+        """
         gxlst = gxapi.GXLST.create(VIEW_NAME_SIZE)
         if isinstance(plane, str):
             plane = self.plane_number(plane)
@@ -652,7 +698,16 @@ class View_3d(View):
                           rotation=(0., 0., 0.),
                           offset=(0., 0., 0.),
                           scale=(1., 1., 1.)):
-
+        """
+        Create a new drawing plane in a 3d view.
+        
+        :param name:        name of the plane, overwritten if it exists
+        :param rotation:    plane rotation as (rx, ry, rz), default (0, 0, 0)
+        :param offset:      (x, y, z) offset of the plane, default (0, 0, 0)
+        :param scale:       (xs, ys, zs) axis scaling, default (1, 1, 1)
+        
+        .. versionadded::9.2
+        """
         if self.has_plane(name):
             raise ViewException(_t('3D drawing plane "{}" exists.'.format(name)))
 

@@ -28,13 +28,13 @@ The descriptive name for well-known coordinate systems is sufficient to describe
 the `EPSG Geodetic Registry <http://www.epsg.org/>`_. To fully locate ad-hoc coordinates you will need
 the parameters described in the GXF stings.  See the `gxf` property of :class:`geosoft.gxpy.coordinate_system`.
 
+.. seealso:: :class:`geosoft.gxapi.GXIPJ`
+
 .. note::
 
     Regression tests provide usage examples: 
     
     `coordinate_system tests <https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_coordinate_system.py>`_
-
-.. seealso:: :class:`geosoft.gxapi.GXIPJ`
 """
 
 import json
@@ -359,8 +359,9 @@ class Coordinate_system:
                   
                 - a JSON string that contains the coordinate system properties
                   
-                - a list that contains the 5 `GXF coordinate system strings <http://www.geosoft.com/resources/goto/GXF-Grid-eXchange-File>`_
-                  (ie: ['"WGS 84 / UTM zone 32N [geodetic]", "WGS 84", "UTM zone 32N", "", ""])
+                - a list that contains the 5 
+                  `GXF coordinate system strings <http://www.geosoft.com/resources/goto/GXF-Grid-eXchange-File>`_
+                  (eg: ['"WGS 84 / UTM zone 32N [geodetic]", "WGS 84", "UTM zone 32N", "", ""])
                 
                 - :class:`geosoft.gxapi.GXIPJ` instance
                  
@@ -442,31 +443,31 @@ class Coordinate_system:
     def __exit__(self, type, value, traceback):
         self._gxapi_ipj = None
 
-    def __init__(self, cs=None):
+    def __init__(self, coordinate_system=None):
 
         self._dict = None
         self._gxapi_ipj = gxapi.GXIPJ.create()
 
-        if cs:
-            if isinstance(cs, str):
-                self._from_str(cs)
+        if coordinate_system:
+            if isinstance(coordinate_system, str):
+                self._from_str(coordinate_system)
 
-            elif isinstance(cs, gxapi.GXIPJ):
+            elif isinstance(coordinate_system, gxapi.GXIPJ):
                 s1 = gxapi.str_ref()
                 s2 = gxapi.str_ref()
                 s3 = gxapi.str_ref()
                 s4 = gxapi.str_ref()
                 s5 = gxapi.str_ref()
-                cs.get_gxf(s1, s2, s3, s4, s5)
+                coordinate_system.get_gxf(s1, s2, s3, s4, s5)
                 self._from_gxf((s1.value, s2.value, s3.value, s4.value, s5.value))
 
-            elif isinstance(cs, Coordinate_system):
-                self._from_gxf(cs.gxf)
+            elif isinstance(coordinate_system, Coordinate_system):
+                self._from_gxf(coordinate_system.gxf)
 
-            elif isinstance(cs, dict):
-                self._from_dict(cs)
+            elif isinstance(coordinate_system, dict):
+                self._from_dict(coordinate_system)
             else:
-                self._from_gxf(cs)
+                self._from_gxf(coordinate_system)
 
     def __eq__(self, other):
         return self.same_as(other)

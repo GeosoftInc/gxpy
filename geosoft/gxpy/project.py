@@ -1,15 +1,19 @@
 """
-Geosoft project.
+Geosoft desktop project interface, which provides access to an active and open Geosoft desktop project.
+
+.. seealso:: :mod:`geosoft.gxapi.GXPROJ`, :mod:`geosoft.gxapi.GXEDB`, :mod:`geosoft.gxapi.GXEMAP`
 
 .. note::
 
-    Test example: `Tests <https://github.com/GeosoftInc/gxpy/blob/master/examples/om-extensions/test_project.py>`_
+    Test example: 
+    
+    `geosoft project tests <https://github.com/GeosoftInc/gxpy/blob/master/examples/om-extensions/test_project.py>`_
 
 """
 import os
 import geosoft
 import geosoft.gxapi as gxapi
-from .utility import dict_from_lst, dummy_none
+from .utility import dict_from_lst
 from . import vv as gxvv
 
 __version__ = geosoft.__version__
@@ -49,6 +53,11 @@ def running_script():
     return not gxapi.GXSYS.interactive()
 
 class Geosoft_project:
+    """
+    Use this class to interact with an open Geosoft project. This singleton class is available only from an 
+    extension running from an open Geosoft project.  
+    
+    """
 
     def _list_open_docs(self, dtype):
         with gxvv.GXvv(None, 'U2048') as docvv:
@@ -71,6 +80,12 @@ class Geosoft_project:
     def __exit__(self, type, value, traceback):
         pass
 
+    def __repr__(self):
+        return "{}({})".format(self.__class__, self.__dict__)
+
+    def __str__(self):
+        return self.name
+
     def __init__(self):
 
         s = gxapi.str_ref()
@@ -80,108 +95,128 @@ class Geosoft_project:
 
     @property
     def project_databases(self):
+        """list of databases in the project"""
         return self._list_project_docs(DOC_TYPE_DATABASE)
 
     @property
     def project_grids(self):
+        """list of grids in the project"""
         return self._list_project_docs(DOC_TYPE_GRID)
 
     @property
     def project_maps(self):
+        """list of maps in the project"""
         return self._list_project_docs(DOC_TYPE_MAP)
 
     @property
     def project_3dv(self):
+        """list of geosoft_3dv (3D views) in the project"""
         return self._list_project_docs(DOC_TYPE_3DV)
 
     @property
     def project_voxels(self):
+        """list of voxels/voxettes in the project"""
         return self._list_project_docs(DOC_TYPE_VOXEL)
 
     @property
     def project_voxi_models(self):
+        """list of VOXI models in the project"""
         return self._list_project_docs(DOC_TYPE_VOXI)
 
     @property
     def project_gmsys_3d(self):
+        """list of GM-SYS 3D models in the project"""
         return self._list_project_docs(DOC_TYPE_GMS3D)
 
     @property
     def project_gmsys_2d(self):
+        """list of GM-SYS 2D models in the project"""
         return self._list_project_docs(DOC_TYPE_GMS2D)
 
     @property
     def open_databases(self):
+        """list of databases open as a database document"""
         return self._list_open_docs(DOC_TYPE_DATABASE)
 
     @property
     def open_grids(self):
+        """list of grids open as a grid document"""
         return self._list_open_docs(DOC_TYPE_GRID)
 
     @property
     def open_maps(self):
+        """list of maps open as a map document"""
         return self._list_open_docs(DOC_TYPE_MAP)
 
     @property
     def open_3dv(self):
+        """list of geosoft_3dv (3d views) open in a 3D viewer"""
         return self._list_open_docs(DOC_TYPE_3DV)
 
     @property
     def open_voxels(self):
+        """list of voxels/voxettes open as a document"""
         return self._list_open_docs(DOC_TYPE_VOXEL)
 
     @property
     def open_voxi_models(self):
+        """list of VOXI models open as a document"""
         return self._list_open_docs(DOC_TYPE_VOXI)
 
     @property
     def open_gmsys_3d(self):
+        """list of GM-SYS 3D models open as a document"""
         return self._list_open_docs(DOC_TYPE_GMS3D)
 
     @property
     def open_gmsys_2d(self):
+        """list of GM-SYS 2D models open as a document"""
         return self._list_open_docs(DOC_TYPE_GMS2D)
 
     @property
     def current_database(self):
+        """the open database that has current (or most recent) focus"""
         return self._current_doc(DOC_TYPE_DATABASE)
 
     @property
     def current_grid(self):
+        """the open grid that has current (or most recent) focus"""
         return self._current_doc(DOC_TYPE_GRID)
 
     @property
     def current_map(self):
+        """the open map that has current (or most recent) focus"""
         return self._current_doc(DOC_TYPE_MAP)
 
     @property
     def current_3dv(self):
+        """the open geosoft_3dv that has current (or most recent) focus"""
         return self._current_doc(DOC_TYPE_3DV)
 
     @property
     def current_voxel(self):
+        """the open voxel that has current (or most recent) focus"""
         return self._current_doc(DOC_TYPE_VOXEL)
 
     @property
     def current_voxi(self):
+        """the open VOXI model that has current (or most recent) focus"""
         return self._current_doc(DOC_TYPE_VOXI)
 
     @property
     def current_gmsys_3d(self):
+        """the open GM-SYS 3D model that has current (or most recent) focus"""
         return self._current_doc(DOC_TYPE_GMS3D)
 
     @property
     def current_gmsys_2d(self):
+        """the open GM-SYS 2D model that has current (or most recent) focus"""
         return self._current_doc(DOC_TYPE_GMS2D)
 
     @property
     def menus(self):
         """
-        Returns Oasis montaj menu information.
-    
-        :returns:   (default_menus, loaded_menus, user_menus)
-    
-       .. versionadded:: 9.2    
+        Oasis montaj menu information: (default_menus, loaded_menus, user_menus)
         """
 
         def_menus = gxapi.GXLST.create(512)
@@ -199,6 +234,11 @@ class Geosoft_project:
         
         :return: dict of the current database state, {} of there is no current database.
         
+            =================== ========================================================
+            'disp_chan_list'    list of displayed channels
+            'selection'         current selection as (line, channel, start_fid, end_fid)
+            =================== ========================================================
+            
         .. versionadded:: 9.2
         """
 
@@ -240,6 +280,14 @@ class Geosoft_project:
         Return the state of the current map.
         
         :return: dict of the current map state, {} if no current map.
+            
+            =============== =========================================================
+            'current_view'  name of the current view
+            'display_area'  (min_x, min_y, max_x, max_y) in units of the current view
+            '3d_view_name'  if a 3D view, name of the view
+            'point'         (x, y) of the current selection point
+            'cursor'        (x, y) of the current cursor location
+            =============== =========================================================
         
         .. versionadded:: 9.2
         """
@@ -255,16 +303,21 @@ class Geosoft_project:
 
             smap = {}
             emap = gxapi.GXEMAP.current_no_activate()
+
+            emap.get_current_view(s)
+            smap['current_view'] = s.value
+
             emap.get_display_area(fx, fy, fx2, fy2)
             smap['display_area'] = (fx.value, fy.value, fx2.value, fy2.value)
 
             if emap.is_3d_view():
 
                 emap.get_3d_view_name(s)
-                smap['3d_view_name'] = s.value
+                smap['3d_view'] = s.value
 
             else:
                 # 2D
+
 
                 emap.get_cur_point(fx, fy)
                 smap["point"] = (fx.value, fy.value, None)
@@ -277,6 +330,7 @@ class Geosoft_project:
 def user_message(title, message):
     """
     Display a message to the user
+    
     :param title:   message box title
     :param message: message
 
@@ -300,6 +354,7 @@ def _user_input_gx(kind):
 def pause(title='Pause...', cancel=False):
     """
     Display a pause dialog, wait for user to press continue or cancel
+    
     :param title:   The pause dialog title, default is "Pause..."
     :param cancel:  If True, show a cancel button
     :raises:        :py:ex:GXCancel if the user cancels the dialog

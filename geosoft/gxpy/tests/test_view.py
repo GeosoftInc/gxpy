@@ -69,7 +69,7 @@ class Test(GXPYTest):
                 self.assertEqual(v.units_per_metre, 1.0)
                 self.assertEqual(v.units_per_map_cm, 10.0)
 
-            with gxv.View(gmap, 'ft12000', cs='ft', scale=12000,
+            with gxv.View(gmap, 'ft12000', coordinate_system='ft', scale=12000,
                             area=(0, 0, 50000, 40000)) as v:
                 self.assertEqual(v.name, "ft12000")
                 self.assertAlmostEqual(v.scale, 12000.0)
@@ -96,7 +96,7 @@ class Test(GXPYTest):
             xcm = (area[2] - area[0])*100.0/scale
             ycm = (area[3] - area[1])*100.0/scale
             with gxv.View(gmap, "test", map_location=location, area=area,
-                            scale=scale, cs="WGS 84 / UTM zone 34N") as vw:
+                            scale=scale, coordinate_system="WGS 84 / UTM zone 34N") as vw:
                 self.assertEqual(vw.extent_clip,area)
                 self.assertEqual(vw.extent_map_cm(vw.extent_clip), (0, 0, xcm, ycm))
                 self.assertEqual(vw.scale, scale, scale)
@@ -112,7 +112,7 @@ class Test(GXPYTest):
             xcm = 100.0 * ((area[2] - area[0]) / scale) / mpu
             ycm = 100.0 * ((area[3] - area[1]) / scale) / mpu
             with gxv.View(gmap, "test", map_location=loc, area=area,
-                            scale=scale, cs=("WGS 84 / UTM zone 34N", '', '', 'ftUS', '')) as vw:
+                            scale=scale, coordinate_system=("WGS 84 / UTM zone 34N", '', '', 'ftUS', '')) as vw:
                 self.assertEqual(vw.extent_clip,area)
                 mx = vw.extent_map_cm(vw.extent_clip)
                 self.assertAlmostEqual(mx[0], loc[0])
@@ -134,7 +134,7 @@ class Test(GXPYTest):
             xcm = 100.0 * ((area[2] - area[0]) / scale) / mpu
             ycm = 100.0 * ((area[3] - area[1]) / scale) / mpu
             with gxv.View(gmap, "test", map_location=loc, area=area,
-                            scale=scale, cs='ftUS') as vw:
+                            scale=scale, coordinate_system='ftUS') as vw:
                 self.assertEqual(vw.extent_clip,area)
                 mx = vw.extent_map_cm(vw.extent_clip)
                 self.assertAlmostEqual(mx[0], loc[0])
@@ -161,7 +161,7 @@ class Test(GXPYTest):
 
         with gxmap.Map.new() as gmap:
             with gxv.View(gmap, 'ft12000',
-                            cs='ft', scale=12000,
+                            coordinate_system='ft', scale=12000,
                             map_location=(10, 5),
                             area=(0, 0, 50000, 40000)) as v:
 
@@ -190,9 +190,9 @@ class Test(GXPYTest):
 
         testmap = os.path.join(self.gx.temp_folder(), "test_view_cs")
         with gxmap.Map.new(testmap, overwrite=True) as gmap:
-            with gxv.View(gmap, "rectangle_test", cs="wgs 84") as v:
+            with gxv.View(gmap, "rectangle_test", coordinate_system="wgs 84") as v:
                 self.assertEqual("WGS 84", str(v.coordinate_system))
-            with gxv.View(gmap, "vcs", cs="wgs 84 / UTM zone 15N [special]") as v:
+            with gxv.View(gmap, "vcs", coordinate_system="wgs 84 / UTM zone 15N [special]") as v:
                 self.assertTrue("WGS 84 / UTM zone 15N [special]" in str(v.coordinate_system))
 
     def test_3dview(self):

@@ -2,13 +2,13 @@
 Geosoft aggregates are "aggregations" of one or more grid layers that together create a
 georeferenced image in a map view or on a plane in a 3D view.
 
+.. seealso:: :class:`geosoft.gxapi.GXAGG`
+
 .. note::
 
     Regression tests provide usage examples: 
     
     `aggregate tests <https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_agg.py>`_
-    
-.. seealso:: :class:`geosoft.gxapi.GXAGG`
 
 """
 import os

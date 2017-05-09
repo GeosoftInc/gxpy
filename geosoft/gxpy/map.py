@@ -1,10 +1,18 @@
 """
-Geosoft maps contain 2D and 3D views.
+Geosoft maps contain one or more 2D and 3D views.  Each 2D view has a specific coordinate system and clip region.
+Each 3D view is a link to a separate geosoft_3dv file, which is placed in the map as a 2D perspective of the last
+viewing state of the 3D view.
+
+.. seealso:: :mod:`geosoft.gxpy.view`, :mod:`geosoft.gxpy.group`
+ 
+    :mod:`geosoft.gxapi.GXMAP`, :mod:`geosoft.gxapi.GXMVIEW`, :mod:`geosoft.gxapi.GXMVU`
 
 .. note::
 
-    Regression tests provide usage examples: `Tests <https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_map.py>`_
-
+    Regression tests provide usage examples: 
+    
+    `map tests <https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_map.py>`_
+    
 """
 import os
 from math import ceil
@@ -72,15 +80,6 @@ VIEW_DATA = 1
 
 STYLE_FIGURE = 0
 STYLE_MAP = 1
-
-class Line_def:
-    def __init__(self,
-                 line_color='k',
-                 fill_color=None,
-                 thickness=100):
-        self._line_color = line_color
-        self._fill_color = fill_color
-        self._thickness = thickness
 
 
 def map_file_name(file_name, file_type='map'):
@@ -220,15 +219,11 @@ class Map:
 
     Constructors:
 
-        ======== =============================
-        `open()` open an existing map
-        `new()`  create a new map
-        ======== =============================
+        ============ ========================================
+        :meth:`open` open an existing map
+        :meth:`new`  create a new map
+        ============ ========================================
 
-    Properties:
-    
-        TODO - complete
-        
     .. versionadded:: 9.2
     """
 
@@ -296,7 +291,7 @@ class Map:
             file_name=None, 
             data_area=(0., 0., 100., 100.), 
             scale=None,
-            cs=None, 
+            coordinate_system=None,
             media=None, 
             layout=None, 
             fixed_size=False, 
@@ -307,40 +302,40 @@ class Map:
         Create and open a new Geosoft map.
 
         :parameters:
-            :file_name:     Map file name.  If not specified a temporary file is created in the instance
-                            temporary folder.  Use ``file_name()`` to get the file name if needed.  The 
-                            temporary map file will be unique and will exist through the life of the
-                            Python GX instance, but will be deleted along with all temporary files
-                            when the GX loses context.
-            :data_area:     (min_x, min_y, max_x, max_y) data area for a 2D data view on the map
-            :scale:         required scale, default will fit data to the map media
-            :cs:            coordinate system, default is an unknown coordinate system.  You may pass
-                            a ``coordinate_system.Coordinate_system`` instance, a string descriptor, such as
-                            `WGS 84 / UTM zone 15N`, or another valid constructor supported by
-                            ``coordinate_system.Coordinate_system``.
-            :media:         media size as a tuple(x_cm, y_cm), or as a standard media name string.
-                            If the media name contains 'portrait', the media is media aspect will be portrait.
-                            Named media sizes are read from media.csv, which includes A4, A3, A2, A1, A0, 
-                            letter, legal, ledger, A, B, C, D, E. For example `media='A4 portrait'`.
-            :layout:        MAP_PORTRAIT or MAP_LANDSCAPE, overrides media setting.  If the layout is not 
-                            defined by media or this parameter, the layout is determined by the aspect
-                            ratio of the data area.
-            :map_style:     STYLE_FIGURE or STYLE_MAP (default).  A MAP style is intended for A3 or larger
-                            media with a larger right or left margin for map annotations.  A FIGURE
-                            style is intended for smaller media with a larger bottom margin for a
-                            title and limited annotations.
-            :fixed_size:    True for fixed media size, if, and only if, a media size is defined.
-                            If False, the base view boundary will be reduced to the data view plus margins.  
-                            If True, the base view boundary is fixed to the media size and margins are 
-                            adjusted to locate the data view proportionally relative to the requested margins.
-            :margins:       (left, right, bottom, top) map margins in map cm.  The default for STYLE_MAP
-                            is (3, 14, 6, 3), and for figure (1, 4, 1, 1).
-            :inside_margin: additional margin (cm) inside the base view.  This margin effectively
-                            expands the data_area to allow room for graphical elements related to
-                            spatial data near the edge of the defined data area.
-            :overwrite:     True to overwrite an existing map.  If False and map exists, raises
-                            ``MapException``.
-            :no_data_view:  True to omit data view during map creation.
+            :file_name:         Map file name.  If not specified a temporary file is created in the instance
+                                temporary folder.  Use ``file_name()`` to get the file name if needed.  The 
+                                temporary map file will be unique and will exist through the life of the
+                                Python GX instance, but will be deleted along with all temporary files
+                                when the GX loses context.
+            :data_area:         (min_x, min_y, max_x, max_y) data area for a 2D data view on the map
+            :scale:             required scale, default will fit data to the map media
+            :coordinate_system: coordinate system, default is an unknown coordinate system.  You may pass
+                                a ``coordinate_system.Coordinate_system`` instance, a string descriptor, such as
+                                `WGS 84 / UTM zone 15N`, or another valid constructor supported by
+                                ``coordinate_system.Coordinate_system``.
+            :media:             media size as a tuple(x_cm, y_cm), or as a standard media name string.
+                                If the media name contains 'portrait', the media is media aspect will be portrait.
+                                Named media sizes are read from media.csv, which includes A4, A3, A2, A1, A0, 
+                                letter, legal, ledger, A, B, C, D, E. For example `media='A4 portrait'`.
+            :layout:            MAP_PORTRAIT or MAP_LANDSCAPE, overrides media setting.  If the layout is not 
+                                defined by media or this parameter, the layout is determined by the aspect
+                                ratio of the data area.
+            :map_style:         STYLE_FIGURE or STYLE_MAP (default).  A MAP style is intended for A3 or larger
+                                media with a larger right or left margin for map annotations.  A FIGURE
+                                style is intended for smaller media with a larger bottom margin for a
+                                title and limited annotations.
+            :fixed_size:        True for fixed media size, if, and only if, a media size is defined.
+                                If False, the base view boundary will be reduced to the data view plus margins.  
+                                If True, the base view boundary is fixed to the media size and margins are 
+                                adjusted to locate the data view proportionally relative to the requested margins.
+            :margins:           (left, right, bottom, top) map margins in map cm.  The default for STYLE_MAP
+                                is (3, 14, 6, 3), and for figure (1, 4, 1, 1).
+            :inside_margin:     additional margin (cm) inside the base view.  This margin effectively
+                                expands the data_area to allow room for graphical elements related to
+                                spatial data near the edge of the defined data area.
+            :overwrite:         True to overwrite an existing map.  If False and map exists, raises
+                                ``MapException``.
+            :no_data_view:      True to omit data view during map creation.
 
         .. versionadded:: 9.2
         """
@@ -457,7 +452,7 @@ class Map:
                            float(inside_margin))
 
         with gxv.View(map=map, name='*data', mode=gxv.WRITE_OLD) as view:
-            view.coordinate_system = cs
+            view.coordinate_system = coordinate_system
         set_registry(map,
                      'figure' if (map_style == STYLE_FIGURE) else 'map',
                      inside_margin)
@@ -466,18 +461,23 @@ class Map:
 
     @property
     def name(self):
+        """map name, base name of the map file"""
         return self._name
 
     @property
     def file_name(self):
         """
-        Full map file path name.
+        full map file path name.
         """
         return self._file_name
 
     @property
     def current_data_view(self):
-        """ The current default data view which accepts drawing commands from Geosoft methods."""
+        """ 
+        Current default data view which accepts drawing groups from Geosoft methods that do not
+        explicitly identify a view. Set this to a view that should accept default drawing groups.
+        If this is a 3D view, new groups are placed on the default drawing plane of the view.
+        """
         return self.get_class_name('data')
 
     @current_data_view.setter
@@ -488,7 +488,11 @@ class Map:
 
     @property
     def current_base_view(self):
-        """ The current default base view which accepts drawing commands from Geosoft methods."""
+        """ 
+        The current default base view which accepts map annotation drawing groups 
+        (like titles, North arrow, etc.) from Geosoft methods.  This can be set, though
+        Geosoft uses the 'base' view in most standard cases.
+        """
         return self.get_class_name('base')
 
     @current_base_view.setter
@@ -575,17 +579,21 @@ class Map:
 
     @property
     def view_list(self):
+        """list of views in the map, both 2D and 3D"""
         return self._views()
 
     @property
     def view_list_2D(self):
+        """list of 2D views in the map"""
         return self._views(LIST_2D)
 
     @property
     def view_list_3D(self):
+        """list of 3D views in the map"""
         return self._views(LIST_3D)
 
     def aggregate_list(self, mode=0):
+        """list of aggregates on the map as 'view_name/group_name'"""
         glst = gxapi.GXLST.create(gxg.GROUP_NAME_SIZE)
         self.gxmap.agg_list_ex(glst, mode, 0)
         return list(gxu.dict_from_lst(glst))
@@ -998,7 +1006,7 @@ class Map:
                          grid_pen=None):
 
         """
-        Annotate the date view axis
+        Annotate the data view axis
 
         :param tick:    inner tick size in cm
         :param offset:  posting offset from the edge in cm
@@ -1064,7 +1072,7 @@ class Map:
 
 
 class _Mapplot:
-    """Internal class to marshall MAPPLOT commands that support basic map annotations."""
+    """Internal class to marshal MAPPLOT commands that support basic map annotations."""
 
     def __enter__(self):
         return self

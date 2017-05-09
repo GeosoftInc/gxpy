@@ -19,7 +19,7 @@ from geosoft.gxpy.tests import GXPYTest
 
 
 def rect_line(g, size=100):
-    g.rectangle(gxgm.Point2((0, 0, size, size), cs="cm"), pen=g.new_pen(line_thick=1))
+    g.rectangle(gxgm.Point2((0, 0, size, size), coordinate_system="cm"), pen=g.new_pen(line_thick=1))
     p1 = gxgm.Point((0.1, 0.1)) * size
     p2 = gxgm.Point((0.9, 0.9)) * size
     poff = gxgm.Point((0.15, 0.05)) * size
@@ -87,7 +87,7 @@ class Test(GXPYTest):
     def test_lock(self):
         self.start()
 
-        with gxmap.Map.new(data_area=(0, 0, 50, 40), cs='cm') as map:
+        with gxmap.Map.new(data_area=(0, 0, 50, 40), coordinate_system='cm') as map:
             with gxv.View(map, 'data') as v:
                 self.assertFalse(bool(v.lock))
                 with gxg.Draw(v, 'rectangle') as g:
@@ -99,7 +99,7 @@ class Test(GXPYTest):
     def test_rectangle(self):
         self.start()
 
-        with gxmap.Map.new(data_area=(0, 0, 50, 40), cs='cm') as map:
+        with gxmap.Map.new(data_area=(0, 0, 50, 40), coordinate_system='cm') as map:
             map_file = map.file_name
             with gxv.View(map, 'data') as v:
                 with gxg.Draw(v, 'rectangle') as g:
@@ -118,7 +118,7 @@ class Test(GXPYTest):
         area = (p1.x, p1.y, p2.x, p2.y)
         with gxmap.Map.new() as map:
             map_file = map.file_name
-            with gxv.View(map, 'data', area=area, cs='mm') as v:
+            with gxv.View(map, 'data', area=area, coordinate_system='mm') as v:
                 with gxg.Draw(v) as g:
                     g.rectangle(v.extent_clip)
                     g.polyline(pp, pen=g.new_pen(line_smooth=gxg.SMOOTH_AKIMA, line_color='r', line_thick=1))
@@ -267,7 +267,7 @@ class Test(GXPYTest):
             area = grd.extent_2d()
         with gxmap.Map.new(map_file,
                              data_area=area, media="A4", margins=(0, 10, 0, 0),
-                             cs=cs, overwrite=True) as gmap:
+                             coordinate_system=cs, overwrite=True) as gmap:
             map_file = gmap.file_name
 
             with gxv.View(gmap, "base") as v:
@@ -301,7 +301,7 @@ class Test(GXPYTest):
         with gxmap.Map.new(map_file,
                              data_area=area, media="A3", margins=(0, 0, 0, 0),
                              scale=(area[2] - area[0]) / 0.2,
-                             cs=cs, overwrite=True) as gmap:
+                             coordinate_system=cs, overwrite=True) as gmap:
             map_file = gmap.file_name
             with gxv.View(gmap, "base") as v:
                 with gxg.Draw(v, 'line') as g:
@@ -484,7 +484,7 @@ class Test(GXPYTest):
         self.start()
 
         with gxmap.Map.new(data_area=(400000, 5000000, 500000, 5150000),
-                             cs='WGS 84 / UTM zone 15N [geoid]') as map:
+                             coordinate_system='WGS 84 / UTM zone 15N [geoid]') as map:
             map_file = map.file_name
             with gxv.View(map, 'base') as v:
                 with gxg.Draw(v) as g:
@@ -504,7 +504,7 @@ class Test(GXPYTest):
         self.start()
 
         with gxmap.Map.new(data_area=(400000, 5000000, 500000, 5050000),
-                             cs='WGS 84 / UTM zone 15N [geoid]') as map:
+                             coordinate_system='WGS 84 / UTM zone 15N [geoid]') as map:
             map_file = map.file_name
             with gxv.View(map, '*data') as v:
                 with gxg.Draw(v) as g:
@@ -546,7 +546,7 @@ class Test(GXPYTest):
         self.start()
 
         with gxmap.Map.new(data_area=(400000, 5000000, 500000, 5050000),
-                             cs='WGS 84 / UTM zone 15N [geoid]') as map:
+                             coordinate_system='WGS 84 / UTM zone 15N [geoid]') as map:
             map_file = map.file_name
             with gxv.View(map, '*data') as v:
                 with gxg.Draw(v) as g:
@@ -570,7 +570,7 @@ class Test(GXPYTest):
         self.start()
 
         with gxmap.Map.new(data_area=(400000, 5000000, 500000, 5050000),
-                             cs='WGS 84 / UTM zone 15N [geoid]') as map:
+                             coordinate_system='WGS 84 / UTM zone 15N [geoid]') as map:
             map_file = map.file_name
             with gxv.View(map, '*data') as v:
                 with gxg.Draw(v) as g:
@@ -604,7 +604,7 @@ class Test(GXPYTest):
             area = grd.extent_2d()
         with gxmap.Map.new(map_file, fixed_size=False,
                              data_area=area, media="A4", margins=(2, 10, 2, 1),
-                             cs=cs, overwrite=True) as gmap:
+                             coordinate_system=cs, overwrite=True) as gmap:
             map_file = gmap.file_name
             with gxv.View(gmap, "base") as v:
                 with gxg.Draw(v, 'line') as g:
@@ -635,7 +635,7 @@ class Test(GXPYTest):
             area = grd.extent_2d()
         with gxmap.Map.new(map_file, fixed_size=False,
                              data_area=area, media="A4", margins=(2, 10, 2, 1),
-                             cs=cs, overwrite=True) as gmap:
+                             coordinate_system=cs, overwrite=True) as gmap:
             map_file = gmap.file_name
             with gxv.View(gmap, "base") as v:
                 with gxg.Draw(v, 'line') as g:
@@ -993,7 +993,7 @@ class Test(GXPYTest):
             except:
                 cmap.set_linear(0,1)
 
-            with gxv.View_3d.new(cs=grd.coordinate_system) as v:
+            with gxv.View_3d.new(coordinate_system=grd.coordinate_system) as v:
                 v3d_file = v.file_name
                 with gxg.Draw_3d(v, 'outer') as g:
                     g.polydata_3d(data.reshape((-1,4)), render_spheres, (cmap, grd.dx * 0.25))
@@ -1035,7 +1035,7 @@ class Test(GXPYTest):
             except:
                 cmap.set_linear(0, 1)
 
-            with gxv.View_3d.new(cs=gdb.coordinate_system) as v:
+            with gxv.View_3d.new(coordinate_system=gdb.coordinate_system) as v:
                 v3d_file = v.file_name
                 with gxg.Draw_3d(v, 'outer') as g:
                     g.polydata_3d(data.reshape((-1, 3)), render_spheres, (cmap, 50 * v.units_per_map_cm))
@@ -1059,7 +1059,7 @@ class Test(GXPYTest):
             area = grd.extent_2d()
         with gxmap.Map.new(map_file,
                              data_area=area, media="A4", margins=(0, 10, 0, 0),
-                             cs=cs, overwrite=True) as gmap:
+                             coordinate_system=cs, overwrite=True) as gmap:
             map_file = gmap.file_name
 
             with gxv.View(gmap, "base") as v:
@@ -1095,7 +1095,7 @@ class Test(GXPYTest):
             area = grd.extent_2d()
         with gxmap.Map.new(map_file,
                              data_area=area, margins=(2, 10, 2, 2),
-                             cs=cs, overwrite=True, scale=20000) as gmap:
+                             coordinate_system=cs, overwrite=True, scale=20000) as gmap:
             map_file = gmap.file_name
 
             with gxv.View(gmap, "base") as v:

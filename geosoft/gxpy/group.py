@@ -1,14 +1,14 @@
 """
 This module handles drawing into groups in 3d views, or in 2D views on a map.
 
+.. seealso:: :class:`geosoft.gxapi.GXMVIEW`, :class:`geosoft.gxapi.GXMVU`
+
 .. note::
 
     Regression tests provide usage examples: 
     
     `group drawing tests <https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_group.py>`_
     
-.. seealso:: :class:`geosoft.gxapi.GXMVIEW`, :class:`geosoft.gxapi.GXMVU`
-
 """
 from functools import wraps
 import threading

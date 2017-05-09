@@ -76,18 +76,18 @@ class Test(GXPYTest):
 
             return map.file_name
 
-    def _data_map(self, name=None, data_area=(1000, 0, 11000, 5000), margins=None, cs=None):
+    def _data_map(self, name=None, data_area=(1000, 0, 11000, 5000), margins=None, coordinate_system=None):
 
         if name is None:
             name = os.path.join(self.gx.temp_folder(), "test")
         gxmap.delete_files(name)
-        if cs is None:
-            cs = gxcs.Coordinate_system("WGS 84 / UTM zone 15N")
+        if coordinate_system is None:
+            coordinate_system = gxcs.Coordinate_system("WGS 84 / UTM zone 15N")
         if margins is None:
             margins = (1.5, 1.5, 3, 1)
         return gxmap.Map.new(file_name=name,
                                data_area=data_area,
-                               cs=cs,
+                               coordinate_system=coordinate_system,
                                media="A4",
                                margins=margins,
                                inside_margin=0.5)
@@ -134,7 +134,7 @@ class Test(GXPYTest):
             self.assertTrue('data' in views)
 
         with gxmap.Map.new(data_area=(0, 0, 100, 80),
-                             cs=gxcs.Coordinate_system("DHDN / Okarito 2000 [geodetic]")) as map:
+                             coordinate_system=gxcs.Coordinate_system("DHDN / Okarito 2000 [geodetic]")) as map:
             with gxv.View(map, 'data', mode=gxv.WRITE_OLD) as v:
                 self.assertEqual("DHDN / Okarito 2000 [geodetic]", str(v.coordinate_system))
 
@@ -206,7 +206,7 @@ class Test(GXPYTest):
             self.assertEqual(map.get_class_name('mine'), 'boom')
 
         with gxmap.Map.new(data_area=(0, 0, 100, 80),
-                             cs=gxcs.Coordinate_system("DHDN / Okarito 2000 [geodetic]")) as map:
+                             coordinate_system=gxcs.Coordinate_system("DHDN / Okarito 2000 [geodetic]")) as map:
 
             self.assertEqual(map.get_class_name('base'), 'base')
             self.assertEqual(map.get_class_name('data'), 'data')
@@ -346,7 +346,7 @@ class Test(GXPYTest):
     def test_north_arrow_0(self):
         self.start()
 
-        with gxmap.Map.new(cs='ft') as map:
+        with gxmap.Map.new(coordinate_system='ft') as map:
             mapfile = map.file_name
 
             with gxv.View(map, 'base') as v:
@@ -363,7 +363,7 @@ class Test(GXPYTest):
     def test_north_arrow_1(self):
         self.start()
 
-        with gxmap.Map.new(cs='m', data_area=(0,0,20,10), scale=100) as map:
+        with gxmap.Map.new(coordinate_system='m', data_area=(0,0,20,10), scale=100) as map:
             mapfile = map.file_name
 
             with gxv.View(map, 'base') as v:
@@ -382,7 +382,7 @@ class Test(GXPYTest):
     def test_scale_1(self):
         self.start()
 
-        with gxmap.Map.new(data_area=(350000,7000000,400000,7030000), cs='ft') as map:
+        with gxmap.Map.new(data_area=(350000,7000000,400000,7030000), coordinate_system='ft') as map:
             mapfile = map.file_name
             with gxv.View(map, 'base') as v:
                 with gxg.Draw(v) as g:
@@ -401,7 +401,7 @@ class Test(GXPYTest):
     def test_scale_2(self):
         self.start()
 
-        with gxmap.Map.new(data_area=(350000,7000000,400000,7030000), cs='NAD83 / UTM zone 15N') as map:
+        with gxmap.Map.new(data_area=(350000,7000000,400000,7030000), coordinate_system='NAD83 / UTM zone 15N') as map:
             mapfile = map.file_name
             with gxv.View(map, 'base') as v:
                 with gxg.Draw(v) as g:
@@ -421,7 +421,7 @@ class Test(GXPYTest):
         self.start()
 
         cs = gxcs.Coordinate_system('NAD83 / UTM zone 15N')
-        with gxmap.Map.new(data_area=(350000, 7000000, 400000, 7030000), cs=cs) as map:
+        with gxmap.Map.new(data_area=(350000, 7000000, 400000, 7030000), coordinate_system=cs) as map:
             mapfile = map.file_name
             with gxv.View(map, 'data') as v:
                 with gxg.Draw(v) as g:
@@ -433,7 +433,7 @@ class Test(GXPYTest):
         self.start()
 
         cs = gxcs.Coordinate_system('NAD83 / UTM zone 15N')
-        with gxmap.Map.new(data_area=(350000, 7000000, 400000, 7030000), cs=cs) as map:
+        with gxmap.Map.new(data_area=(350000, 7000000, 400000, 7030000), coordinate_system=cs) as map:
             mapfile = map.file_name
             with gxv.View(map, 'data') as v:
                 with gxg.Draw(v) as g:
@@ -573,7 +573,7 @@ class Test(GXPYTest):
         with gxmap.Map.new(file_name='mapplot_anoxy_rotated_cs_bug_UTM',
                              overwrite=True,
                              data_area=(0, 0, 5000, 3500),
-                             cs=cs,
+                             coordinate_system=cs,
                              media="A3",
                              margins=(3,3,4,3)) as map:
 

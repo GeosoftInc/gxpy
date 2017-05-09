@@ -1,14 +1,14 @@
 """
 Geosoft grids and image handling, including all grid types supported by Geosoft..
 
+.. seealso:: :class:`geosoft.gxapi.GXIMG`, :class:`geosoft.gxapi.GXIMU`
+
 .. note::
 
     Regression tests provide usage examples: 
     
     `Tests <https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_grid.py>`_
     
-.. seealso:: :class:`geosoft.gxapi.GXIMG`, :class:`geosoft.gxapi.GXIMU`
-
 """
 import os
 import numpy as np

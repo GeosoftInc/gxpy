@@ -99,6 +99,8 @@ def check_version(v, raise_on_fail=True):
 
 def dict_from_lst(lst, ordered=False):
     """
+    Return a dictionary from a Geosoft :class:`geosoft.gxapi.GXLST` instance.
+    
     :param lst:     gxapi.GXLST instance
     :param ordered: True to return an OrderedDict
     :return:        python dictionary from a Geosoft GXLST
@@ -120,11 +122,14 @@ def dict_from_lst(lst, ordered=False):
 
 
 def time_stamp():
+    """current date-time as a string."""
     return strftime("%Y-%m-%d %H:%M:%S", gmtime())
 
 
 def yearFromJulianDay2(jd1, jd2):
     """
+    Julian year
+    
     :param jd1: part 1 Julian date (https://pypi.python.org/pypi/jdcal)
     :param jd2: part 2 Julian date
     :return: decimal Gregorian year (Western calendar year)
@@ -520,6 +525,9 @@ def dummy_to_nan(data):
     """
     Replaces dummies in float data to numpy.nan.  All other data types are returned unchanged.
     
+    :param data:    float value or a numpy array
+    :return:        data with dummies replaced by numpy.nan
+    
     .. versionadded:: 9.2
     """
 
@@ -552,6 +560,8 @@ def save_parameters(group='_', parms=None):
 
 def reg_from_dict(rd, max_size=4096, json_encode=True):
     """
+    :class:`geosoft.gxapi.GXREG` instance from a dictionary
+    
     :param rd:          dictionary
     :param max_size:    maximum "key=value" string size
     :param json:        True to encode non-string values as sas json strings (prefix '_JSON:')
@@ -577,6 +587,8 @@ def reg_from_dict(rd, max_size=4096, json_encode=True):
 
 def dict_from_reg(reg, ordered=False):
     """
+    dictionary from a :class:`geosoft.gxapi.GXREG` instance
+    
     :param reg:     gxapi.GXREG instance
     :param ordered: True to return and OrderedDict
     :return:        python dictionary from a Geosoft GXREG
@@ -858,6 +870,7 @@ def crc32_str(s, crc=0):
 def year_from_datetime(dt):
     """
     Return a decimal Gregorian calendar year from a Python datetime.
+    
     :param dt: datetime
     :return: decimal Gregorian year to an accuracy of 1 millisecond
 
@@ -873,6 +886,7 @@ def year_from_datetime(dt):
 def datetime_from_year(year):
     """
     Return the Python datetime from a decimal Gregorian year.
+    
     :param year: decimal year on the Gregorian calendar.
     :return: datetime (resolved to 1 millisecond)
 
@@ -889,6 +903,7 @@ def datetime_from_year(year):
 def str_significant(value, n, mode=0):
     """
     Return a formatted string to n significant figures.
+    
     :param value:   value to format
     :param mode:    0 round, 1 ceiling, -1 floor
     :return:        string to n significant figures

@@ -1,11 +1,12 @@
 """
 Geosoft databases for line-oriented spatial data.
 
+.. seealso:: :mod:`geosoft.gxapi.GXGB`, :mod:`geosoft.gxapi.GXEDB`, 
+             :mod:`geosoft.gxapi.GXDBREAD`, :mod:`geosoft.gxapi.GXDBWRITE`
+
 .. note::
 
     Regression tests provide usage examples: `Tests <https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_gdb.py>`_
-    
-.. seealso:: :class:`geosoft.gxapi.GXGB`, :class:`geosoft.gxapi.GXEDB`, :class:`geosoft.gxapi.GXDBREAD`, :class:`geosoft.gxapi.GXDBWRITE`
 
 """
 import os

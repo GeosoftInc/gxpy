@@ -1,9 +1,15 @@
 """
-Geosoft vector arrays (vector of array elements)
+Geosoft vector arrays (vector of array elements). VA and VV classes are related based on a key called a *fiducial*, 
+which has a start value and increment between values.  The :meth:`refid` method can be used to resample vector
+data to the same fiducial so that vector-to-vector operations can be performed.
+
+.. seealso:: :mod:`geosoft.gxpy.vv`, :mod:`geosoft.gxapi.GXVA`, :mod:`geosoft.gxapi.GXVV`
 
 .. note::
 
-    Regression tests provide usage examples: `Tests <https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_va.py>`_
+    Regression tests provide usage examples: 
+    
+    `va tests <https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_va.py>`_
 
 """
 import warnings
@@ -98,7 +104,7 @@ class GXva():
     @property
     def fid(self):
         """
-        :return:    fid tuple (start,increment)
+        fid tuple (start,increment), can be set
 
         .. versionadded:: 9.1
         """
@@ -106,13 +112,6 @@ class GXva():
 
     @fid.setter
     def fid(self, fid):
-        """
-        Set the fiducial of the va.
-
-        :param fid: (fidStart,fidIncrement)
-
-        .. versionadded:: 9.1
-        """
         self._va.set_fid_start(fid[0])
         self._va.set_fid_incr(fid[1])
 
@@ -132,7 +131,7 @@ class GXva():
     @property
     def length(self):
         """
-        :return:    number of elements in the VA
+        number of elements in the VA
 
         .. versionadded:: 9.1
         """
@@ -141,7 +140,7 @@ class GXva():
     @property
     def width(self):
         """
-        :return:    width of each row(element) in the VA
+        width of each row(element) in the VA
 
         .. versionadded:: 9.1
         """
@@ -150,7 +149,7 @@ class GXva():
     @property
     def dimensions(self):
         """
-        :return:    VA dimensions (length, width)
+        VA dimensions (length, width)
 
         .. versionadded:: 9.2
         """
@@ -159,7 +158,7 @@ class GXva():
     @property
     def gxtype(self):
         """
-        :return: GX data type
+        GX data type
 
         .. versionadded:: 9.1
         """
@@ -168,7 +167,7 @@ class GXva():
     @property
     def dtype(self):
         """
-        :return: numpy data type
+        numpy data type
 
         .. versionadded:: 9.1
         """
@@ -177,8 +176,8 @@ class GXva():
     @property
     def np(self):
         """
-        Numpy array of VA data, in the data type of the VA.  Use :meth:`get_np` to get a numpy array
-        in another dtype.  Array will be 2-dimensional.
+        Numpy array of VA data, in the data type of the VA.  Use :meth:`get_data` to get a numpy array
+        in another `dtype`.  Array will be 2-dimensional.
 
         .. versionadded:: 9.2 
         """

@@ -48,12 +48,26 @@ def _get_default_om_exe():
     return None
 
 
-def view_document(document_file_name, wait_for_close=True, env={}):
+def view_document(document_file_name, wait_for_close=True, env=None):
     """
-    Open Oasis montaj for viewing/editing a single document
-    :param document_file_name: document file name, require decorators for grids, e.g. testgrid.grd(GRD)
-    :param wait_for_close: wait for process to exit
-    :param env: environment variables to add to os environment variables 
+    Open Geosoft Desktop application for viewing a supported Geosoft document type.  These include:
+    
+    ::
+    
+        gdb file
+        map files
+        geosoft_3dv files
+        grid files
+        voxel files
+        vector_voxel files
+        VOXI models
+        GM-SYS 2d models
+        GM-SYS 3d models
+    
+    :param document_file_name:  document file name, require decorators for grids, e.g. testgrid.grd(GRD).  
+                                Supports all documents that can be openned by Geosoft Desktop.
+    :param wait_for_close:      wait for process to exit, default `True`
+    :param env:                 environment variables to add to os environment variables 
 
     .. versionadded:: 9.2
    
@@ -67,7 +81,8 @@ def view_document(document_file_name, wait_for_close=True, env={}):
                                     'https://my.geosoft.com/downloads.')
     else:
         proc_env = os.environ.copy()
-        proc_env.update(env)
+        if env:
+            proc_env.update(env)
         proc = subprocess.Popen([om_exe, '-doc={}'.format(document_file_name)], env=proc_env)
         if wait_for_close:
             proc.communicate()

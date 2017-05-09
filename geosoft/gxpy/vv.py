@@ -1,9 +1,15 @@
 """
-Geosoft vector.
+Geosoft vector. VA and VV classes are related based on a key called a *fiducial*, 
+which has a start value and increment between values.  The :meth:`refid` method can be used to resample vector
+data to the same fiducial so that vector-to-vector operations can be performed.
+
+.. seealso:: :mod:`geosoft.gxpy.va`, :mod:`geosoft.gxapi.GXVV`, :mod:`geosoft.gxapi.GXVA`
 
 .. note::
 
-    Regression tests provide usage examples: `Tests <https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_vv.py>`_
+    Regression tests provide usage examples: 
+    
+    `vv tests <https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_vv.py>`_
 
 """
 
@@ -113,12 +119,13 @@ class GXvv():
 
     @property
     def gxvv(self):
+        """:class:`geosoft.gxapi.GXVV` instance"""
         return self._vv
 
     @property
     def fid(self):
         """
-        :return:    fid tuple (start,increment)
+        fid tuple (start,increment), can be set
 
         .. versionadded:: 9.1
         """
@@ -126,20 +133,13 @@ class GXvv():
 
     @fid.setter
     def fid(self, fid):
-        """
-        Set the fiducial of the vv.
-
-        :param fid: (fidStart,fidIncrement)
-
-        .. versionadded:: 9.2
-        """
         self._vv.set_fid_start(fid[0])
         self._vv.set_fid_incr(fid[1])
 
     @property
     def length(self):
         """
-        :return:    number of elements in the VV
+        number of elements in the VV
 
         .. versionadded:: 9.1
         """
@@ -148,7 +148,7 @@ class GXvv():
     @property
     def gxtype(self):
         """
-        :return: GX data type
+        GX data type
 
         .. versionadded:: 9.1
         """
@@ -157,7 +157,7 @@ class GXvv():
     @property
     def dtype(self):
         """
-        :return: numpy data type
+        numpy data type
 
         .. versionadded:: 9.1
         """
@@ -171,7 +171,7 @@ class GXvv():
     @property
     def np(self):
         """
-        Numpy array of VV data, in the data type of the VV.  Use :meth:`get_np` to get a numpy array
+        Numpy array of VV data, in the data type of the VV.  Use :meth:`get_data` to get a numpy array
         in another dtype.
         
         .. versionadded:: 9.2 
@@ -206,7 +206,6 @@ class GXvv():
 
         if (n < 0) or (start < 0) or ((start >= self.length) and self.length > 0):
             raise VVException(_t('Cannot get (start,n) ({},{}) from vv of length {}').format(start, n, self.length))
-
 
         if (n == 0) or (self.length == 0):
             npd = np.array([], dtype=dtype)
