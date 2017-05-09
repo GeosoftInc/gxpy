@@ -1,0 +1,871 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shfbBuild product="Sandcastle Help File Builder" version="2015.1.12.0" projectFile="M:\jobs\FULLBUILD-REL2-GET\api\gx\doc\DotNetReference\DotNetReference.shfbproj" started="05/05/2017 5:51:43 PM">
+<buildStep step="Initializing">
+Finding tools...
+The Sandcastle tools are located in &#39;C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\&#39;
+Locating components in the following folder(s):
+   M:\jobs\FULLBUILD-REL2-GET\api\gx\doc\Geosoft.Sandcastle\Release\
+   M:\jobs\FULLBUILD-REL2-GET\api\gx\doc\DotNetReference
+Using presentation style &#39;VS2013Geosoft&#39; located in &#39;M:\jobs\FULLBUILD-REL2-GET\api\gx\doc\Geosoft.Sandcastle\Release&#39;
+Loading and initializing plug-ins...
+Additional Content Only plug-in is disabled and will not be loaded
+Geosoft DotNetExtraReflectionInfo Plugin Version 1.0.0.0
+Copyright &#169; 2015, , All Rights Reserved.
+Table of Contents Exclusion Version 2015.1.12.0
+Copyright &#169; 2006-2015, Eric Woodruff, All Rights Reserved
+Geosoft GXAPIVersionHistory Plugin Version 1.0.0.0
+Copyright &#169; 2015, , All Rights Reserved.
+Lightweight Website Style Version 2015.1.12.0
+Copyright &#169; 2006-2015, Eric Woodruff, All Rights Reserved
+Portions Copyright &#169; 2014, Sam Harwell, All Rights Reserved
+</buildStep>
+<buildStep step="ValidatingDocumentationSources">
+Validating and copying documentation source information
+Source: M:\jobs\FULLBUILD-REL2-GET\api\gx\doc\Sources\geoengine.core.gxnet.dll
+    Found assembly &#39;M:\jobs\FULLBUILD-REL2-GET\api\gx\doc\Sources\geoengine.core.gxnet.dll&#39;
+Source: M:\jobs\FULLBUILD-REL2-GET\api\gx\doc\Sources\geoengine.core.gxnet.xml
+Source: M:\jobs\FULLBUILD-REL2-GET\api\gx\doc\Sources\geosoft.desktop.gxnet.dll
+    Found assembly &#39;M:\jobs\FULLBUILD-REL2-GET\api\gx\doc\Sources\geosoft.desktop.gxnet.dll&#39;
+Source: M:\jobs\FULLBUILD-REL2-GET\api\gx\doc\Sources\geosoft.desktop.gxnet.xml
+
+Copying XML comments files
+    M:\jobs\FULLBUILD-REL2-GET\api\gx\doc\Sources\geoengine.core.gxnet.xml -&gt; M:\jobs\FULLBUILD-REL2-GET\api\build\gxapi\GXNetReference\Help\Working\geoengine.core.gxnet.xml
+    M:\jobs\FULLBUILD-REL2-GET\api\gx\doc\Sources\geosoft.desktop.gxnet.xml -&gt; M:\jobs\FULLBUILD-REL2-GET\api\build\gxapi\GXNetReference\Help\Working\geosoft.desktop.gxnet.xml
+</buildStep>
+<buildStep step="GenerateSharedContent">
+Generating shared content files (en-US, English (United States))...
+<plugIn name="Lightweight Website Style" behavior="After" priority="1000">
+</plugIn>    Last step completed in 00:00:00.2184
+</buildStep>
+<buildStep step="GenerateApiFilter">
+Generating API filter for MRefBuilder...
+    Last step completed in 00:00:00.2652
+</buildStep>
+<buildStep step="GenerateReflectionInfo">
+Generating reflection information...
+[C:\Program Files (x86)\MSBuild\14.0\bin\amd64\MSBuild.exe]
+Build started 05/05/2017 5:51:49 PM.
+Project &quot;M:\jobs\FULLBUILD-REL2-GET\api\build\gxapi\GXNetReference\Help\Working\GenerateRefInfo.proj&quot; on node 1 (default targets).
+PrepareForBuild:
+  Creating directory &quot;obj\Debug\&quot;.
+GenerateRefInfo:
+  MRefBuilder (v2015.1.12.0)
+  Copyright &#169; 2006-2015, Microsoft Corporation, All Rights Reserved.
+  Portions Copyright &#169; 2006-2014, Eric Woodruff, All Rights Reserved.
+  Loaded 2 assemblies for reflection and 1 dependency assemblies.
+  Wrote information on 2 namespaces, 521 types, and 8451 members
+  Copying file from &quot;reflection.org&quot; to &quot;reflection.all&quot;.
+  XslTransform (v2015.1.12.0)
+  Copyright &#169; 2006-2015, Microsoft Corporation, All Rights Reserved.
+  Portions Copyright &#169; 2006-2014, Eric Woodruff, All Rights Reserved.
+  Applying XSL transformation &#39;C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\ProductionTransforms\MergeDuplicates.xsl&#39;.
+Done Building Project &quot;M:\jobs\FULLBUILD-REL2-GET\api\build\gxapi\GXNetReference\Help\Working\GenerateRefInfo.proj&quot; (default targets).
+
+Build succeeded.
+
+Time Elapsed 00:00:04.39
+<plugIn name="Geosoft DotNetExtraReflectionInfo Plugin" behavior="After" priority="1000">
+In Geosoft.Sandcastle.Plugins.DotNetExtraReflectionInfo Execute() method
+In Geosoft.Sandcastle.Plugins.DotNetExtraReflectionInfo Execute() method
+</plugIn>    Last step completed in 00:00:05.5692
+</buildStep>
+<buildStep step="TransformReflectionInfo">
+Transforming reflection output...
+[C:\Program Files (x86)\MSBuild\14.0\bin\amd64\MSBuild.exe]
+Build started 05/05/2017 5:51:54 PM.
+Project &quot;M:\jobs\FULLBUILD-REL2-GET\api\build\gxapi\GXNetReference\Help\Working\TransformManifest.proj&quot; on node 1 (default targets).
+TransformManifest:
+  XslTransform (v2015.1.12.0)
+  Copyright &#169; 2006-2015, Microsoft Corporation, All Rights Reserved.
+  Portions Copyright &#169; 2006-2014, Eric Woodruff, All Rights Reserved.
+  Applying XSL transformation &#39;C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\\ProductionTransforms\ApplyVSDocModel.xsl&#39;.
+  Copying file from &quot;reflection.xml&quot; to &quot;reflection.nofilenames&quot;.
+  XslTransform (v2015.1.12.0)
+  Copyright &#169; 2006-2015, Microsoft Corporation, All Rights Reserved.
+  Portions Copyright &#169; 2006-2014, Eric Woodruff, All Rights Reserved.
+  Applying XSL transformation &#39;C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\ProductionTransforms\AddFilenames.xsl&#39;.
+    Unique name M_GeoEngine_Core_GXNet_CGXNETCore__ctor_1 generated for M:GeoEngine.Core.GXNet.CGXNETCore.#ctor(System.IntPtr)
+    Unique name M_GeoEngine_Core_GXNet_CGXNETCore_Dispose_1 generated for M:GeoEngine.Core.GXNet.CGXNETCore.Dispose(System.Boolean)
+    Unique name M_GeoEngine_Core_GXNet_CHANDLE__ctor_1 generated for M:GeoEngine.Core.GXNet.CHANDLE.#ctor(System.Int32)
+    Unique name M_GeoEngine_Core_GXNet_CHANDLE__ctor_2 generated for M:GeoEngine.Core.GXNet.CHANDLE.#ctor(System.Int32,System.Boolean)
+    Unique name M_GeoEngine_Core_GXNet_CHANDLE_Dispose_1 generated for M:GeoEngine.Core.GXNet.CHANDLE.Dispose(System.Boolean)
+    Unique name M_GeoEngine_Core_GXNet_CSYS_EnableGXDebugger_1 generated for M:GeoEngine.Core.GXNet.CSYS.EnableGXDebugger(System.Windows.Forms.IWin32Window,System.String,System.String)
+    Unique name M_GeoEngine_Core_GXNet_CSYS_iRunGX_1 generated for M:GeoEngine.Core.GXNet.CSYS.iRunGX(System.Windows.Forms.IWin32Window,System.String)
+    Unique name M_GeoEngine_Core_GXNet_CSYS_iRunGXEx_1 generated for M:GeoEngine.Core.GXNet.CSYS.iRunGXEx(System.Windows.Forms.IWin32Window,System.String,System.Int32@)
+    Unique name M_Geosoft_Desktop_GXNet_CARCDB_iImportChemDatabaseWizard_1 generated for M:Geosoft.Desktop.GXNet.CARCDB.iImportChemDatabaseWizard(System.Windows.Forms.IWin32Window,System.String,System.Int32)
+    Unique name M_Geosoft_Desktop_GXNet_CGUI_Fft2SpecFilter_1 generated for M:Geosoft.Desktop.GXNet.CGUI.Fft2SpecFilter(System.Windows.Forms.IWin32Window,System.String,System.String)
+    Unique name M_Geosoft_Desktop_GXNet_CGUI_GridStatHist_1 generated for M:Geosoft.Desktop.GXNet.CGUI.GridStatHist(System.Windows.Forms.IWin32Window,System.String)
+    Unique name M_Geosoft_Desktop_GXNet_CGUI_iCoordSysWizard_1 generated for M:Geosoft.Desktop.GXNet.CGUI.iCoordSysWizard(System.Windows.Forms.IWin32Window,GeoEngine.Core.GXNet.CIPJ,System.Int32,System.Int32,System.String,System.String)
+    Unique name M_Geosoft_Desktop_GXNet_CGUI_iDatabaseType_1 generated for M:Geosoft.Desktop.GXNet.CGUI.iDatabaseType(System.Windows.Forms.IWin32Window,System.String,System.String@)
+    Unique name M_Geosoft_Desktop_GXNet_CGUI_iExportXYZTemplateEditor_1 generated for M:Geosoft.Desktop.GXNet.CGUI.iExportXYZTemplateEditor(System.Windows.Forms.IWin32Window,GeoEngine.Core.GXNet.CDB,System.String,System.Int32)
+    Unique name M_Geosoft_Desktop_GXNet_CGUI_iExportXYZTemplateEditorEx_1 generated for M:Geosoft.Desktop.GXNet.CGUI.iExportXYZTemplateEditorEx(System.Windows.Forms.IWin32Window,Geosoft.Desktop.GXNet.CEDB,System.String@)
+    Unique name M_Geosoft_Desktop_GXNet_CGUI_iGetAreaOfInterest_1 generated for M:Geosoft.Desktop.GXNet.CGUI.iGetAreaOfInterest(System.Windows.Forms.IWin32Window,System.Double@,System.Double@,System.Double@,System.Double@,GeoEngine.Core.GXNet.CPLY,GeoEngine.Core.GXNet.CIPJ)
+    Unique name M_Geosoft_Desktop_GXNet_CGUI_iGetAreaOfInterest3D_1 generated for M:Geosoft.Desktop.GXNet.CGUI.iGetAreaOfInterest3D(System.Windows.Forms.IWin32Window,System.Double@,System.Double@,System.Double@,System.Double@,System.Double@,System.Double@,GeoEngine.Core.GXNet.CPLY,GeoEngine.Core.GXNet.CIPJ)
+    Unique name M_Geosoft_Desktop_GXNet_CGUI_IiDatFileForm_1 generated for M:Geosoft.Desktop.GXNet.CGUI.IiDatFileForm(System.Windows.Forms.IWin32Window,System.String,System.String,System.String@,System.Int32,System.Int32,System.Int32)
+    Unique name M_Geosoft_Desktop_GXNet_CGUI_IiGenFileForm_1 generated for M:Geosoft.Desktop.GXNet.CGUI.IiGenFileForm(System.Windows.Forms.IWin32Window,System.String,GeoEngine.Core.GXNet.CVV,System.Int32,System.String,System.String@,System.Int32,System.Int32)
+    Unique name M_Geosoft_Desktop_GXNet_CGUI_IiImportDrillDatabaseADO2_1 generated for M:Geosoft.Desktop.GXNet.CGUI.IiImportDrillDatabaseADO2(System.Windows.Forms.IWin32Window,System.String,System.String@,System.String@,System.Int32@,GeoEngine.Core.GXNet.CREG)
+    Unique name M_Geosoft_Desktop_GXNet_CGUI_IiImportDrillDatabaseESRI_1 generated for M:Geosoft.Desktop.GXNet.CGUI.IiImportDrillDatabaseESRI(System.Windows.Forms.IWin32Window,System.String,System.String@,System.String@,System.Int32@,System.Int32,GeoEngine.Core.GXNet.CREG)
+    Unique name M_Geosoft_Desktop_GXNet_CGUI_IiImportDrillDatabaseODBC_1 generated for M:Geosoft.Desktop.GXNet.CGUI.IiImportDrillDatabaseODBC(System.Windows.Forms.IWin32Window,System.String@,System.String@,System.String@,System.Int32@,GeoEngine.Core.GXNet.CREG)
+    Unique name M_Geosoft_Desktop_GXNet_CGUI_IiImportDrillDatabaseODBCMaxwell_1 generated for M:Geosoft.Desktop.GXNet.CGUI.IiImportDrillDatabaseODBCMaxwell(System.Windows.Forms.IWin32Window,System.String@,System.String@,System.String@,System.Int32@,GeoEngine.Core.GXNet.CREG)
+    Unique name M_Geosoft_Desktop_GXNet_CGUI_iImportAsciiWizard_1 generated for M:Geosoft.Desktop.GXNet.CGUI.iImportAsciiWizard(System.Windows.Forms.IWin32Window,System.String,System.String)
+    Unique name M_Geosoft_Desktop_GXNet_CGUI_iImportChemDatabase_1 generated for M:Geosoft.Desktop.GXNet.CGUI.iImportChemDatabase(System.Windows.Forms.IWin32Window,System.String,System.String,System.String@,System.Int32)
+    Unique name M_Geosoft_Desktop_GXNet_CGUI_iImportChemDatabaseADO_1 generated for M:Geosoft.Desktop.GXNet.CGUI.iImportChemDatabaseADO(System.Windows.Forms.IWin32Window,System.String,System.String,System.String@,System.Int32)
+    Unique name M_Geosoft_Desktop_GXNet_CGUI_iImportDatabase_1 generated for M:Geosoft.Desktop.GXNet.CGUI.iImportDatabase(System.Windows.Forms.IWin32Window,System.String,System.String,System.String@)
+    Unique name M_Geosoft_Desktop_GXNet_CGUI_iImportDatabaseADO_1 generated for M:Geosoft.Desktop.GXNet.CGUI.iImportDatabaseADO(System.Windows.Forms.IWin32Window,System.String,System.String,System.String@)
+    Unique name M_Geosoft_Desktop_GXNet_CGUI_iImportDatabaseSQL_1 generated for M:Geosoft.Desktop.GXNet.CGUI.iImportDatabaseSQL(System.Windows.Forms.IWin32Window,System.String,System.String,System.String,System.String@)
+    Unique name M_Geosoft_Desktop_GXNet_CGUI_iImportDatabaseSQLADO_1 generated for M:Geosoft.Desktop.GXNet.CGUI.iImportDatabaseSQLADO(System.Windows.Forms.IWin32Window,System.String,System.String,System.String,System.String@)
+    Unique name M_Geosoft_Desktop_GXNet_CGUI_iImportDrillDatabaseADO_1 generated for M:Geosoft.Desktop.GXNet.CGUI.iImportDrillDatabaseADO(System.Windows.Forms.IWin32Window,System.String,System.String,System.String@,System.Int32@,GeoEngine.Core.GXNet.CREG)
+    Unique name M_Geosoft_Desktop_GXNet_CGUI_iImportTemplateSQL_1 generated for M:Geosoft.Desktop.GXNet.CGUI.iImportTemplateSQL(System.Windows.Forms.IWin32Window,System.String,System.String,System.String,System.String)
+    Unique name M_Geosoft_Desktop_GXNet_CGUI_iImportTemplateSQLADO_1 generated for M:Geosoft.Desktop.GXNet.CGUI.iImportTemplateSQLADO(System.Windows.Forms.IWin32Window,System.String,System.String,System.String,System.String)
+    Unique name M_Geosoft_Desktop_GXNet_CGUI_iImportXYZTemplateEditor_1 generated for M:Geosoft.Desktop.GXNet.CGUI.iImportXYZTemplateEditor(System.Windows.Forms.IWin32Window,GeoEngine.Core.GXNet.CDB,System.String,System.Int32,System.String)
+    Unique name M_Geosoft_Desktop_GXNet_CGUI_IiODBCFileConnect_1 generated for M:Geosoft.Desktop.GXNet.CGUI.IiODBCFileConnect(System.Windows.Forms.IWin32Window,System.String,System.String@,System.Int32,System.String@)
+    Unique name M_Geosoft_Desktop_GXNet_CGUI_iMetaDataTool_1 generated for M:Geosoft.Desktop.GXNet.CGUI.iMetaDataTool(System.Windows.Forms.IWin32Window,GeoEngine.Core.GXNet.CMETA,System.Int32,System.Int32)
+    Unique name M_Geosoft_Desktop_GXNet_CGUI_ImportChemWizard_1 generated for M:Geosoft.Desktop.GXNet.CGUI.ImportChemWizard(System.Windows.Forms.IWin32Window,System.String,System.String,System.Int32)
+    Unique name M_Geosoft_Desktop_GXNet_CGUI_ImportDrillWizard_1 generated for M:Geosoft.Desktop.GXNet.CGUI.ImportDrillWizard(System.Windows.Forms.IWin32Window,System.String,System.String,System.String,System.Int32,System.Int32@,GeoEngine.Core.GXNet.CREG)
+    Unique name M_Geosoft_Desktop_GXNet_CGUI_iTwoPanelSelection_1 generated for M:Geosoft.Desktop.GXNet.CGUI.iTwoPanelSelection(System.Windows.Forms.IWin32Window,GeoEngine.Core.GXNet.CLST,GeoEngine.Core.GXNet.CLST,System.String)
+    Unique name M_Geosoft_Desktop_GXNet_CGUI_iTwoPanelSelection2_1 generated for M:Geosoft.Desktop.GXNet.CGUI.iTwoPanelSelection2(System.Windows.Forms.IWin32Window,GeoEngine.Core.GXNet.CLST,GeoEngine.Core.GXNet.CLST,System.String)
+    Unique name M_Geosoft_Desktop_GXNet_CGUI_iTwoPanelSelectionEx_1 generated for M:Geosoft.Desktop.GXNet.CGUI.iTwoPanelSelectionEx(System.Windows.Forms.IWin32Window,GeoEngine.Core.GXNet.CLST,GeoEngine.Core.GXNet.CLST,System.Int32,System.Int32,System.String)
+    Unique name M_Geosoft_Desktop_GXNet_CGUI_iTwoPanelSelectionEx2_1 generated for M:Geosoft.Desktop.GXNet.CGUI.iTwoPanelSelectionEx2(System.Windows.Forms.IWin32Window,GeoEngine.Core.GXNet.CLST,GeoEngine.Core.GXNet.CLST,System.Int32,System.Int32,System.String,System.String)
+    Unique name M_Geosoft_Desktop_GXNet_CGUI_MetaDataViewer_1 generated for M:Geosoft.Desktop.GXNet.CGUI.MetaDataViewer(System.Windows.Forms.IWin32Window,GeoEngine.Core.GXNet.CMETA,System.Int32,System.Int32)
+    Unique name M_Geosoft_Desktop_GXNet_CGUI_ShowDirectHist_1 generated for M:Geosoft.Desktop.GXNet.CGUI.ShowDirectHist(System.Windows.Forms.IWin32Window,System.Double,System.Double,System.Double,System.Double,System.Double,System.Int32,GeoEngine.Core.GXNet.CVV)
+    Unique name M_Geosoft_Desktop_GXNet_CGUI_ShowHist_1 generated for M:Geosoft.Desktop.GXNet.CGUI.ShowHist(System.Windows.Forms.IWin32Window,GeoEngine.Core.GXNet.CST)
+    Unique name M_Geosoft_Desktop_GXNet_CGUI_SimpleMapDialog_1 generated for M:Geosoft.Desktop.GXNet.CGUI.SimpleMapDialog(System.Windows.Forms.IWin32Window,GeoEngine.Core.GXNet.CMAP,System.String,System.String)
+    Unique name M_Geosoft_Desktop_GXNet_CGUI_VoxelStatHist_1 generated for M:Geosoft.Desktop.GXNet.CGUI.VoxelStatHist(System.Windows.Forms.IWin32Window,System.String)
+    Unique name M_Geosoft_Desktop_GXNet_CGX_NET__ctor_1 generated for M:Geosoft.Desktop.GXNet.CGX_NET.#ctor(System.IntPtr)
+    Unique name M_Geosoft_Desktop_GXNet_CGX_NET__ctor_2 generated for M:Geosoft.Desktop.GXNet.CGX_NET.#ctor(System.String,System.String,System.Int32,System.Windows.Forms.IWin32Window,System.Int32)
+    Unique name M_Geosoft_Desktop_GXNet_CGX_NET__ctor_3 generated for M:Geosoft.Desktop.GXNet.CGX_NET.#ctor(System.String,System.String,System.String,System.Int32,System.Windows.Forms.IWin32Window,System.Int32)
+    Unique name M_Geosoft_Desktop_GXNet_CGX_NET_Initialize_1 generated for M:Geosoft.Desktop.GXNet.CGX_NET.Initialize(System.String,System.String,System.String,System.Int32,System.Windows.Forms.IWin32Window,System.Int32)
+  XslTransform (v2015.1.12.0)
+  Copyright &#169; 2006-2015, Microsoft Corporation, All Rights Reserved.
+  Portions Copyright &#169; 2006-2014, Eric Woodruff, All Rights Reserved.
+  Applying XSL transformation &#39;C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\ProductionTransforms\ReflectionToManifest.xsl&#39;.
+Done Building Project &quot;M:\jobs\FULLBUILD-REL2-GET\api\build\gxapi\GXNetReference\Help\Working\TransformManifest.proj&quot; (default targets).
+
+Build succeeded.
+
+Time Elapsed 00:00:08.01
+<plugIn name="Geosoft DotNetExtraReflectionInfo Plugin" behavior="After" priority="1000">
+In Geosoft.Sandcastle.Plugins.DotNetExtraReflectionInfo Execute() method
+In Geosoft.Sandcastle.Plugins.DotNetExtraReflectionInfo Execute() method
+</plugIn>    Last step completed in 00:00:08.7361
+</buildStep>
+<buildStep step="GenerateNamespaceSummaries">
+Generating namespace summary information...
+    Last step completed in 00:00:00.2652
+</buildStep>
+<buildStep step="CopyConceptualContent">
+Copying conceptual content...
+<plugIn name="Geosoft GXAPIVersionHistory Plugin" behavior="Before" priority="1000">
+In Geosoft.Sandcastle.Plugins.GXAPIVersionHistory Execute() method
+In Geosoft.Sandcastle.Plugins.GXAPIVersionHistory Execute() method
+</plugIn>Copying standard token shared content file...
+Checking for other token files...
+    M:\temp\tmpA3BE.tmp -&gt; M:\jobs\FULLBUILD-REL2-GET\api\build\gxapi\GXNetReference\Help\Working\tmpA3BE.tmp
+Checking for code snippets files...
+Copying images and creating the media map file...
+Generating conceptual topic files
+    Parsing topic file &#39;M:\jobs\FULLBUILD-REL2-GET\api\gx\doc\DotNetReference\Content\Welcome.aml&#39;
+    M:\jobs\FULLBUILD-REL2-GET\api\gx\doc\DotNetReference\Content\Welcome.aml -&gt; M:\jobs\FULLBUILD-REL2-GET\api\build\gxapi\GXNetReference\Help\Working\ddueXml\welcome.xml
+    Parsing topic file &#39;M:\jobs\FULLBUILD-REL2-GET\api\gx\doc\DotNetReference\Content\VersionHistory\VersionHistory.aml&#39;
+    M:\jobs\FULLBUILD-REL2-GET\api\gx\doc\DotNetReference\Content\VersionHistory\VersionHistory.aml -&gt; M:\jobs\FULLBUILD-REL2-GET\api\build\gxapi\GXNetReference\Help\Working\ddueXml\version-history.xml
+    Last step completed in 00:00:00.8268
+</buildStep>
+<buildStep step="CreateConceptualTopicConfigs">
+Creating conceptual topic configuration files...
+    Companion files
+    _ContentMetadata_.xml
+    ConceptualManifest.xml
+    Last step completed in 00:00:00.0468
+</buildStep>
+<buildStep step="CopyAdditionalContent">
+Copying additional content files...
+M:\jobs\FULLBUILD-REL2-GET\api\gx\doc\DotNetReference\icons\Help.png -&gt; M:\jobs\FULLBUILD-REL2-GET\api\build\gxapi\GXNetReference\Help\Working\Output\Website\icons\Help.png
+    Last step completed in 00:00:00.0312
+</buildStep>
+<buildStep step="MergeTablesOfContents">
+Merging conceptual and additional tables of contents...
+    Last step completed in 00:00:00.0156
+</buildStep>
+<buildStep step="GenerateIntermediateTableOfContents">
+Generating intermediate table of contents file...
+[C:\Program Files (x86)\MSBuild\14.0\bin\amd64\MSBuild.exe]
+Build started 05/05/2017 5:52:04 PM.
+Project &quot;M:\jobs\FULLBUILD-REL2-GET\api\build\gxapi\GXNetReference\Help\Working\GenerateIntermediateTOC.proj&quot; on node 1 (default targets).
+GenerateIntermediateTOC:
+  XslTransform (v2015.1.12.0)
+  Copyright &#169; 2006-2015, Microsoft Corporation, All Rights Reserved.
+  Portions Copyright &#169; 2006-2014, Eric Woodruff, All Rights Reserved.
+  Applying XSL transformation &#39;C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\\ProductionTransforms\CreateVSToc.xsl&#39;.
+Done Building Project &quot;M:\jobs\FULLBUILD-REL2-GET\api\build\gxapi\GXNetReference\Help\Working\GenerateIntermediateTOC.proj&quot; (default targets).
+
+Build succeeded.
+
+Time Elapsed 00:00:01.23
+Generating conceptual content intermediate TOC file...
+<plugIn name="Table of Contents Exclusion" behavior="After" priority="1500">
+Searching for comment members containing &lt;tocexclude /&gt;...
+Found 387 members to exclude from the TOC
+Removing members from the TOC
+    Removing &#39;T:GeoEngine.Core.GXNet.IntConstants&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.Constant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.WA_OPENConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.WA_ENCODEConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.VV_WINDOWConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.VV_SORTConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.VV_ORDERConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.VV_MASKConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.VV_LOOKUPConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.VV_LOG_NEGATIVEConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.VV_LOG_BASEConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.VV_FLOAT_CRC_BITSConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.VV_DOUBLE_CRC_BITSConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.BLOCK_MODEL_VARIABLE_TYPEConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.VOXE_EVALConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.VOX_VECTORVOX_IMPORTConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.VOX_SLICE_MODEConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.VOX_ORIGINConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.VOX_GRID_LOGOPTConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.VOX_GOCAD_ORIENTATIONConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.VOX_FILTER3DConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.VOX_DIRECTIONConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.VOX_DIRConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.VA_OBJECTConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.VA_AVERAGEConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.USERMETA_FORMATConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.TPAT_STRING_SIZEConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.TB_SEARCHConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.SYS_ENCRYPTION_KEYConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.SYS_SEARCH_PATHConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.SYS_RUN_WINConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.SYS_RUN_TYPEConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.SYS_RUN_HOLDConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.SYS_RUN_DISPLAYConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.SYS_PATHConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.SYS_MENU_CLEARConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.SYS_LINEAGE_SOURCEConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.SYS_INFOConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.SYS_FONTConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.SYS_DIRConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.SHELL_EXECUTEConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.REG_DOMAINConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.GEO_DIRECTORYConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.ARC_LICENSEConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.SURFACERENDER_MODEConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.SURFACE_OPENConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.STR_TRIMConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.STR_JUSTIFYConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.STR_FILE_PARTConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.STR_ESCAPEConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.STR_CASEConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.FILE_EXTConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.ST2_CORRELATIONConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.ST_INFOConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.SBF_TYPEConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.SBF_OPENConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.REG_MERGEConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.PLY_LINE_CLIPConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.PLY_CLIPConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.PJ_RECTConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.PJ_ELEVATIONConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.PG_BF_CONVConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.PG_3D_DIRConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.MVU_VSTYLEConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.MVU_VSIZEConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.MVU_VPOSConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.MVU_VPOINTConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.MVU_TEXTBOXConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.MVU_VOX_SURFACE_OPTIONConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.MVU_VOX_SURFACE_METHODConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.MVU_FLIGHT_LOCATEConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.MVU_FLIGHT_DUMMIESConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.MVU_FLIGHT_COMPASSConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.MVU_ARROWConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.MVU_DIVISION_STYLEConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.MVU_ORIENTATIONConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.COLORBAR_STYLEConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.COLORBAR_LABELConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.BARCHART_LABELConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.ARROW_ALIGNMENTConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.EMLAY_GEOMETRYConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.MVIEW_3D_RENDERConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.TEXT_REFConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.MVIEW_EXTENT_UNITConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.MVIEW_UNITConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.MVIEW_TILEConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.MVIEW_SMOOTHConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.MVIEW_RELOCATEConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.MVIEW_PJConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.MVIEW_OPENConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.MVIEW_NAME_LENGTHConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.MVIEW_LABEL_ORIENTConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.MVIEW_LABEL_JUSTConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.MVIEW_LABEL_BOUNDConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.MVIEW_ISConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.MVIEW_HIDEConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.MVIEW_GROUP_LISTConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.MVIEW_GROUPConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.MVIEW_GRIDConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.MVIEW_FONT_WEIGHTConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.MVIEW_FITConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.MVIEW_EXTENTConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.MVIEW_DRAWOBJ3D_MODEConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.MVIEW_DRAWOBJ3D_ENTITYConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.MVIEW_DRAWConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.MVIEW_CYLINDER3DConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.MVIEW_COLORConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.MVIEW_CLIPConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.MAKERConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.META_CORE_TYPEConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.META_CORE_CLASSConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.META_CORE_ATTRIBConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.H_META_INVALID_TOKENConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.MAPTEMPLATE_OPENConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.MAP_OPENConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.MAP_LIST_MODEConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.MAP_EXPORT_RASTER_FORMATConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.MAP_EXPORT_METHODConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.MAP_EXPORT_FORMATConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.MAP_EXPORT_BITSConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.DUPMAPConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.LTB_TYPEConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.LTB_DELIMConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.LTB_CONLSTConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.LTB_CASEConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.LST_ITEMConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.LAYOUT_CONSTRConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.ITR_ZONE_MODELConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.ITR_ZONEConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.ITR_POWERConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.ITR_NULLConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.ITR_COLOR_MODELConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.IPJ_WARPConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.IPJ_UNITConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.IPJ_TYPEConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.IPJ_PARM_LSTConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.IPJ_ORIENTConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.IPJ_NAMEConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.IPJ_CSPConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.IPJ_3D_ROTATEConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.IPJ_3D_FLAGConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.IMU_XYZ_LABELConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.IMU_XYZ_INDEXConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.IMU_WIND_DUMMIESConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.IMU_WIND_COORDConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.IMU_TRENDConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.IMU_TRANSConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.IMU_STAT_FORCEDConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.IMU_MASKConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.IMU_FLOAT_CRC_BITSConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.IMU_FILT_HZDRVConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.IMU_FILT_FILEConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.IMU_FILT_DUMMYConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.IMU_FILL_ROLLOPTConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.IMU_EXPAND_SHAPEConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.IMU_DOUBLE_CRC_BITSConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.IMU_BOOL_SIZINGConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.IMU_BOOL_OPTConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.IMU_BOOL_OLAPConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.IMG_RELOCATEConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.IMG_QUERYConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.IMG_FILEConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.IMG_NULLConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.GIS_TYPEConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.GIS_MAP2DConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.SECTION_ORIENTATIONConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.GEOSTRING_OPENConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.TIME_FORMATConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.SYS_CRYPT_KEYConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.GS_TYPESConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.GS_FORMATSConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.GEO_VARConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.GEO_STRING_SIZEConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.GEO_LIMITSConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.GEO_FULL_LIMITSConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.GEO_DUMMYConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.GEO_BOOLConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.DATE_FORMATConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.CRC_INIT_VALUEConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.DSEL_PICTURE_QUALITYConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.NULLSYMBConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.DB_ARRAY_BASETYPEConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.DB_WAITConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.DB_SYMB_NAME_SIZEConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.DB_SYMB_TYPEConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.DB_OWNConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.DB_NULLConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.DB_NAMEConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.DB_LOCKConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.DB_LINE_TYPEConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.DB_LINE_SELECTConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.DB_LINE_LABEL_FORMATConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.DB_INFOConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.DB_GROUP_CLASS_SIZEConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.DB_COORDPAIRConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.DB_COMPConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.DB_CHAN_SYMBOLConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.DB_CHAN_PROTECTIONConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.DB_CHAN_FORMATConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.DB_CATEGORY_USERConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.DB_CATEGORY_LINEConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.DB_CATEGORY_CHANConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.DB_CATEGORY_BLOBConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.DB_ACTIVITY_BLOBConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.GIS_DMTYPEConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.DAT_XGDConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.DAT_FILE_FORMConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.DAT_FILEConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.BF_SEEKConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.BF_OPEN_MODEConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.BF_ENCODEConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.BF_CLOSEConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.BF_BYTEORDERConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.AGG_RENDERConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.AGG_MODELConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.AGG_LAYER_ZONEConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.GEO3DV_OPENConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.IntConstants&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.Constant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.VVU_SRCHREPL_CASEConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.VVU_SPLConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.VVU_PRUNEConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.VVU_OFFSETConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.VVU_MODEConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.VVU_MATCHConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.VVU_MASKConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.VVU_LINEConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.VVU_INTERP_EDGEConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.VVU_INTERPConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.VVU_DUMMYREPEATConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.VVU_CLIPConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.VVU_CASEConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.VV_XYDUPConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.VV_DUPConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.TEM_ARRAYConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.QC_CRITERIONConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.VAU_PRUNEConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.UTF8Constant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.TRND_NODEConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.GG_ELEMENTConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.TC_SURVEYTYPEConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.TC_OPTConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.STK_GRIDConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.STK_FLAGConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.STK_AXISConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.MFCSQL_DRIVERConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.SHP_GEOM_TYPEConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.SEMPLOT_PLOTConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.SEMPLOT_EXTConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.SEMPLOT_EXPORTConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.SEMPLOT_GROUP_CLASSConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.PROJ_DISPLAYConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.TOOL_TYPEConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.COMMAND_ENVConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.PGU_INTERP_ORDERConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.PGU_TRANSConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.PGU_DIRECTIONConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.PGU_DIRECTGRIDConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.PGU_CORRConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.BLAKEY_TESTConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.MVG_WRAPConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.MVG_SCALEConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.MVG_LABEL_ORIENTConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.MVG_LABEL_JUSTConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.MVG_LABEL_BOUNDConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.MVG_GRIDConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.MVG_DRAWConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.IP_PLDP_CONVConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.IP_UBC_CONTROLConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.IP_SYSConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.IP_STNSCALEConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.IP_STACK_TYPEConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.IP_QCTYPEConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.IP_PLOTConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.IP_LINESConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.IP_I2XINVConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.IP_I2XIMPMODEConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.IP_FILTERConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.IP_DUPLICATEConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.IP_DOMAINConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.IP_CHANNELSConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.IP_ARRAYConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.XTOOL_DOCKConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.XTOOL_ALIGNConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.WINDOW_STATEConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.IMPCH_TYPEConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.GS_DIRECTORYConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.FILE_FORMConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.FILE_FILTERConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.DAT_TYPEConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.COORDSYS_MODEConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.AOI_RETURN_STATEConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.PEAKEULER_XYConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.GU_DAARC500_DATATYPEConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.EMPLATE_TXConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.EMPLATE_DOMAINConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.EM_INVConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.EM_ERRConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.GD_STATUSConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.FFT2_PGConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.FFT_DETRENDConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.EUL3_RESULTConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.EMAPTEMPLATE_WINDOW_STATEConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.EMAPTEMPLATE_WINDOW_POSITIONConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.EMAPTEMPLATE_TRACKConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.EMAPTEMPLATE_PATHConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.LAYOUT_VIEW_UNITSConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.EMAP_WINDOW_STATEConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.EMAP_WINDOW_POSITIONConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.EMAP_VIEWPORTConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.EMAP_TRACKConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.EMAP_REMOVEConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.EMAP_REDRAWConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.EMAP_PATHConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.EMAP_FONTConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.GMS2D_MODELTYPEConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.GMS3D_MODELTYPEConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.EDOC_WINDOW_STATEConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.EDOC_WINDOW_POSITIONConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.EDOC_UNLOADConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.EDOC_TYPEConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.EDOC_PATHConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.EDB_YAXIS_DIRECTIONConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.EDB_WINDOW_STATEConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.EDB_WINDOW_POSITIONConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.EDB_UNLOADConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.EDB_REMOVEConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.EDB_PROFILE_SCALEConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.EDB_PROFConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.EDB_PATHConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.MAX_PROF_WNDConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.DU_DIRECTGRID_METHODConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.DU_DISTANCE_CHANNEL_TYPEConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.QC_PLAN_TYPEConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.DU_STORAGEConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.DU_SPLITLINEConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.DU_SORTConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.DU_REFIDConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.DU_MOVEConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.DU_MODFIDConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.DU_MERGEConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.DU_MASKConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.DU_LOOKUPConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.DU_LOADLTBConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.DU_LINESConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.DU_GEODATABASE_EXPORT_TYPEConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.DU_FEATURE_TYPE_OUTPUTConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.DU_LINEOUTConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.DU_LEVELConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.DU_LAB_TYPEConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.DU_INTERP_EDGEConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.DU_INTERPConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.DU_IMPORTConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.DU_FILLConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.DU_EXPORTConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.DU_CHANNELSConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.DB_DUPEDITConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.DB_DUPConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.DOCU_OPENConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.DIP_CONVENTIONConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.DH_SURFACEConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.DH_SECT_PAGEConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.DH_PLOTConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.DH_MASKConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.DH_HOLESConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.DH_EXPConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.DH_DEFINE_SECTConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.DH_DEFINE_PLANConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.DH_DATAConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.DH_COMPSTDB_INTSELConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.DH_COMPSTDB_HOLSELConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.DH_COMP_CHOICEConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.STR_DH_HOLESConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.DH_DEFAULT_FILENAMESConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.DGW_OBJECTConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.CSYMB_COLORConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.COM_STOPBITSConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.COM_PARITYConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.COM_FLOWCONTROLConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.COM_DATASIZEConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.COM_BAUDConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.CHIMERA_PLOTConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.CHIMERA_MAX_CHANConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.ARCMAP_LOAD_FLAGSConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.ARCDB_NULLConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.ARC_SELTBL_TYPEConstant&#39;
+    Removing &#39;T:Geosoft.Desktop.GXNet.ACQUIRE_SELConstant&#39;
+</plugIn>    Last step completed in 00:00:03.6660
+</buildStep>
+<buildStep step="CreateBuildAssemblerConfigs">
+Creating Sandcastle configuration files...
+    sandcastle.config
+    conceptual.config
+    Last step completed in 00:00:01.4196
+</buildStep>
+<buildStep step="MergeCustomConfigs">
+Merging custom build component configurations
+M:\jobs\FULLBUILD-REL2-GET\api\build\gxapi\GXNetReference\Help\Working\sandcastle.config
+M:\jobs\FULLBUILD-REL2-GET\api\build\gxapi\GXNetReference\Help\Working\conceptual.config
+    Removing unused ExampleComponent.
+    Last step completed in 00:00:00.2652
+</buildStep>
+<buildStep step="BuildConceptualTopics">
+Building conceptual help topics...
+[C:\Program Files (x86)\MSBuild\14.0\bin\amd64\MSBuild.exe]
+Build started 05/05/2017 5:52:09 PM.
+Project &quot;M:\jobs\FULLBUILD-REL2-GET\api\build\gxapi\GXNetReference\Help\Working\BuildConceptualTopics.proj&quot; on node 1 (default targets).
+BuildConceptualTopics:
+  BuildAssembler (v2015.1.12.0)
+  Copyright &#169; 2006-2015, Microsoft Corporation, All Rights Reserved.
+  Portions Copyright &#169; 2006-2014, Eric Woodruff, All Rights Reserved.
+  Loading configuration...
+  Processing topics...
+  Processed 2 topic(s)
+  CopyFromIndexComponent: &quot;metadata&quot; in-memory cache entries used: 1 of 15.
+Done Building Project &quot;M:\jobs\FULLBUILD-REL2-GET\api\build\gxapi\GXNetReference\Help\Working\BuildConceptualTopics.proj&quot; (default targets).
+
+Build succeeded.
+
+Time Elapsed 00:00:06.66
+    Last step completed in 00:00:06.9888
+</buildStep>
+<buildStep step="BuildReferenceTopics">
+Building reference help topics...
+[C:\Program Files (x86)\MSBuild\14.0\bin\amd64\MSBuild.exe]
+Build started 05/05/2017 5:52:16 PM.
+Project &quot;M:\jobs\FULLBUILD-REL2-GET\api\build\gxapi\GXNetReference\Help\Working\BuildReferenceTopics.proj&quot; on node 1 (default targets).
+BuildReferenceTopics:
+  BuildAssembler (v2015.1.12.0)
+  Copyright &#169; 2006-2015, Microsoft Corporation, All Rights Reserved.
+  Portions Copyright &#169; 2006-2014, Eric Woodruff, All Rights Reserved.
+  Loading configuration...
+  Processing topics...
+BuildAssembler : warning : ResolveReferenceLinksComponent: [M:GeoEngine.Core.GXNet.CGXNETCore.iCheckError] The target attribute is missing or has no value.  You have most likely omitted a cref attribute or left it blank on an XML comments element such as see, seealso, or exception. [M:\jobs\FULLBUILD-REL2-GET\api\build\gxapi\GXNetReference\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [M:GeoEngine.Core.GXNet.CGXNETCore.sCheckTerminate] The target attribute is missing or has no value.  You have most likely omitted a cref attribute or left it blank on an XML comments element such as see, seealso, or exception. [M:\jobs\FULLBUILD-REL2-GET\api\build\gxapi\GXNetReference\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [M:GeoEngine.Core.GXNet.CGXNETCore.sGetError(System.String@,System.String@,System.Int32@)] The target attribute is missing or has no value.  You have most likely omitted a cref attribute or left it blank on an XML comments element such as see, seealso, or exception. [M:\jobs\FULLBUILD-REL2-GET\api\build\gxapi\GXNetReference\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [M:GeoEngine.Core.GXNet.CGXNETCore.ShowError] The target attribute is missing or has no value.  You have most likely omitted a cref attribute or left it blank on an XML comments element such as see, seealso, or exception. [M:\jobs\FULLBUILD-REL2-GET\api\build\gxapi\GXNetReference\Help\Working\BuildReferenceTopics.proj]
+  Processed 7849 topic(s)
+  4 warning(s)
+  CopyFromIndexComponent: &quot;reflection&quot; in-memory cache entries used: 4 of 15.
+  CopyFromIndexComponent: &quot;comments&quot; in-memory cache entries used: 3 of 30.
+Done Building Project &quot;M:\jobs\FULLBUILD-REL2-GET\api\build\gxapi\GXNetReference\Help\Working\BuildReferenceTopics.proj&quot; (default targets).
+
+Build succeeded.
+
+Time Elapsed 00:01:40.94
+    Last step completed in 00:01:41.2914
+</buildStep>
+<buildStep step="CombiningIntermediateTocFiles">
+Combining conceptual and API intermediate TOC files...
+
+Clearing any prior web output
+    Last step completed in 00:00:00.0780
+</buildStep>
+<buildStep step="ExtractingHtmlInfo">
+Extracting HTML info for HTML Help 1 and/or website...
+[C:\Program Files (x86)\MSBuild\14.0\bin\amd64\MSBuild.exe]
+Sandcastle Help File Builder, version 2015.1.12.0
+Copyright &#169; 2006-2015, Eric Woodruff, All Rights Reserved
+E-Mail: Eric@EWoodruff.us
+
+Using LCID &#39;1033&#39;, code page &#39;65001&#39;, encoding charset &#39;UTF-8&#39;.
+
+Processing website files in M:\jobs\FULLBUILD-REL2-GET\api\build\gxapi\GXNetReference\Help\Working\Output\Website
+Processed 7851 HTML files
+Sorting keywords and generating See Also indices
+Saving website keyword index to M:\jobs\FULLBUILD-REL2-GET\api\build\gxapi\GXNetReference\Help\Working\WebKI.xml
+Saving website table of contents to M:\jobs\FULLBUILD-REL2-GET\api\build\gxapi\GXNetReference\Help\Working\WebTOC.xml
+    Last step completed in 00:00:03.7752
+</buildStep>
+<buildStep step="CopyStandardHelpContent">
+Copying standard help content...
+M:\jobs\FULLBUILD-REL2-GET\api\gx\doc\Geosoft.Sandcastle\Release\icons\AlertCaution.png -&gt; M:\jobs\FULLBUILD-REL2-GET\api\build\gxapi\GXNetReference\Help\Working\Output\Website\icons\AlertCaution.png
+M:\jobs\FULLBUILD-REL2-GET\api\gx\doc\Geosoft.Sandcastle\Release\icons\AlertNote.png -&gt; M:\jobs\FULLBUILD-REL2-GET\api\build\gxapi\GXNetReference\Help\Working\Output\Website\icons\AlertNote.png
+M:\jobs\FULLBUILD-REL2-GET\api\gx\doc\Geosoft.Sandcastle\Release\icons\AlertSecurity.png -&gt; M:\jobs\FULLBUILD-REL2-GET\api\build\gxapi\GXNetReference\Help\Working\Output\Website\icons\AlertSecurity.png
+M:\jobs\FULLBUILD-REL2-GET\api\gx\doc\Geosoft.Sandcastle\Release\icons\app.gif -&gt; M:\jobs\FULLBUILD-REL2-GET\api\build\gxapi\GXNetReference\Help\Working\Output\Website\icons\app.gif
+M:\jobs\FULLBUILD-REL2-GET\api\gx\doc\Geosoft.Sandcastle\Release\icons\CFW.gif -&gt; M:\jobs\FULLBUILD-REL2-GET\api\build\gxapi\GXNetReference\Help\Working\Output\Website\icons\CFW.gif
+M:\jobs\FULLBUILD-REL2-GET\api\gx\doc\Geosoft.Sandcastle\Release\icons\CodeExample.png -&gt; M:\jobs\FULLBUILD-REL2-GET\api\build\gxapi\GXNetReference\Help\Working\Output\Website\icons\CodeExample.png
+M:\jobs\FULLBUILD-REL2-GET\api\gx\doc\Geosoft.Sandcastle\Release\icons\favicon.ico -&gt; M:\jobs\FULLBUILD-REL2-GET\api\build\gxapi\GXNetReference\Help\Working\Output\Website\icons\favicon.ico
+M:\jobs\FULLBUILD-REL2-GET\api\gx\doc\Geosoft.Sandcastle\Release\icons\locked.gif -&gt; M:\jobs\FULLBUILD-REL2-GET\api\build\gxapi\GXNetReference\Help\Working\Output\Website\icons\locked.gif
+M:\jobs\FULLBUILD-REL2-GET\api\gx\doc\Geosoft.Sandcastle\Release\icons\locked_ext.gif -&gt; M:\jobs\FULLBUILD-REL2-GET\api\build\gxapi\GXNetReference\Help\Working\Output\Website\icons\locked_ext.gif
+M:\jobs\FULLBUILD-REL2-GET\api\gx\doc\Geosoft.Sandcastle\Release\icons\privclass.gif -&gt; M:\jobs\FULLBUILD-REL2-GET\api\build\gxapi\GXNetReference\Help\Working\Output\Website\icons\privclass.gif
+M:\jobs\FULLBUILD-REL2-GET\api\gx\doc\Geosoft.Sandcastle\Release\icons\privdelegate.gif -&gt; M:\jobs\FULLBUILD-REL2-GET\api\build\gxapi\GXNetReference\Help\Working\Output\Website\icons\privdelegate.gif
+M:\jobs\FULLBUILD-REL2-GET\api\gx\doc\Geosoft.Sandcastle\Release\icons\privenumeration.gif -&gt; M:\jobs\FULLBUILD-REL2-GET\api\build\gxapi\GXNetReference\Help\Working\Output\Website\icons\privenumeration.gif
+M:\jobs\FULLBUILD-REL2-GET\api\gx\doc\Geosoft.Sandcastle\Release\icons\privevent.gif -&gt; M:\jobs\FULLBUILD-REL2-GET\api\build\gxapi\GXNetReference\Help\Working\Output\Website\icons\privevent.gif
+M:\jobs\FULLBUILD-REL2-GET\api\gx\doc\Geosoft.Sandcastle\Release\icons\privextension.gif -&gt; M:\jobs\FULLBUILD-REL2-GET\api\build\gxapi\GXNetReference\Help\Working\Output\Website\icons\privextension.gif
+M:\jobs\FULLBUILD-REL2-GET\api\gx\doc\Geosoft.Sandcastle\Release\icons\privfield.gif -&gt; M:\jobs\FULLBUILD-REL2-GET\api\build\gxapi\GXNetReference\Help\Working\Output\Website\icons\privfield.gif
+M:\jobs\FULLBUILD-REL2-GET\api\gx\doc\Geosoft.Sandcastle\Release\icons\privinterface.gif -&gt; M:\jobs\FULLBUILD-REL2-GET\api\build\gxapi\GXNetReference\Help\Working\Output\Website\icons\privinterface.gif
+M:\jobs\FULLBUILD-REL2-GET\api\gx\doc\Geosoft.Sandcastle\Release\icons\privmethod.gif -&gt; M:\jobs\FULLBUILD-REL2-GET\api\build\gxapi\GXNetReference\Help\Working\Output\Website\icons\privmethod.gif
+M:\jobs\FULLBUILD-REL2-GET\api\gx\doc\Geosoft.Sandcastle\Release\icons\privproperty.gif -&gt; M:\jobs\FULLBUILD-REL2-GET\api\build\gxapi\GXNetReference\Help\Working\Output\Website\icons\privproperty.gif
+M:\jobs\FULLBUILD-REL2-GET\api\gx\doc\Geosoft.Sandcastle\Release\icons\privstructure.gif -&gt; M:\jobs\FULLBUILD-REL2-GET\api\build\gxapi\GXNetReference\Help\Working\Output\Website\icons\privstructure.gif
+M:\jobs\FULLBUILD-REL2-GET\api\gx\doc\Geosoft.Sandcastle\Release\icons\protclass.gif -&gt; M:\jobs\FULLBUILD-REL2-GET\api\build\gxapi\GXNetReference\Help\Working\Output\Website\icons\protclass.gif
+M:\jobs\FULLBUILD-REL2-GET\api\gx\doc\Geosoft.Sandcastle\Release\icons\protdelegate.gif -&gt; M:\jobs\FULLBUILD-REL2-GET\api\build\gxapi\GXNetReference\Help\Working\Output\Website\icons\protdelegate.gif
+M:\jobs\FULLBUILD-REL2-GET\api\gx\doc\Geosoft.Sandcastle\Release\icons\protenumeration.gif -&gt; M:\jobs\FULLBUILD-REL2-GET\api\build\gxapi\GXNetReference\Help\Working\Output\Website\icons\protenumeration.gif
+M:\jobs\FULLBUILD-REL2-GET\api\gx\doc\Geosoft.Sandcastle\Release\icons\protevent.gif -&gt; M:\jobs\FULLBUILD-REL2-GET\api\build\gxapi\GXNetReference\Help\Working\Output\Website\icons\protevent.gif
+M:\jobs\FULLBUILD-REL2-GET\api\gx\doc\Geosoft.Sandcastle\Release\icons\protextension.gif -&gt; M:\jobs\FULLBUILD-REL2-GET\api\build\gxapi\GXNetReference\Help\Working\Output\Website\icons\protextension.gif
+M:\jobs\FULLBUILD-REL2-GET\api\gx\doc\Geosoft.Sandcastle\Release\icons\protfield.gif -&gt; M:\jobs\FULLBUILD-REL2-GET\api\build\gxapi\GXNetReference\Help\Working\Output\Website\icons\protfield.gif
+M:\jobs\FULLBUILD-REL2-GET\api\gx\doc\Geosoft.Sandcastle\Release\icons\protinterface.gif -&gt; M:\jobs\FULLBUILD-REL2-GET\api\build\gxapi\GXNetReference\Help\Working\Output\Website\icons\protinterface.gif
+M:\jobs\FULLBUILD-REL2-GET\api\gx\doc\Geosoft.Sandcastle\Release\icons\protmethod.gif -&gt; M:\jobs\FULLBUILD-REL2-GET\api\build\gxapi\GXNetReference\Help\Working\Output\Website\icons\protmethod.gif
+M:\jobs\FULLBUILD-REL2-GET\api\gx\doc\Geosoft.Sandcastle\Release\icons\protoperator.gif -&gt; M:\jobs\FULLBUILD-REL2-GET\api\build\gxapi\GXNetReference\Help\Working\Output\Website\icons\protoperator.gif
+M:\jobs\FULLBUILD-REL2-GET\api\gx\doc\Geosoft.Sandcastle\Release\icons\protproperty.gif -&gt; M:\jobs\FULLBUILD-REL2-GET\api\build\gxapi\GXNetReference\Help\Working\Output\Website\icons\protproperty.gif
+M:\jobs\FULLBUILD-REL2-GET\api\gx\doc\Geosoft.Sandcastle\Release\icons\protstructure.gif -&gt; M:\jobs\FULLBUILD-REL2-GET\api\build\gxapi\GXNetReference\Help\Working\Output\Website\icons\protstructure.gif
+M:\jobs\FULLBUILD-REL2-GET\api\gx\doc\Geosoft.Sandcastle\Release\icons\pubclass.gif -&gt; M:\jobs\FULLBUILD-REL2-GET\api\build\gxapi\GXNetReference\Help\Working\Output\Website\icons\pubclass.gif
+M:\jobs\FULLBUILD-REL2-GET\api\gx\doc\Geosoft.Sandcastle\Release\icons\pubdelegate.gif -&gt; M:\jobs\FULLBUILD-REL2-GET\api\build\gxapi\GXNetReference\Help\Working\Output\Website\icons\pubdelegate.gif
+M:\jobs\FULLBUILD-REL2-GET\api\gx\doc\Geosoft.Sandcastle\Release\icons\pubenumeration.gif -&gt; M:\jobs\FULLBUILD-REL2-GET\api\build\gxapi\GXNetReference\Help\Working\Output\Website\icons\pubenumeration.gif
+M:\jobs\FULLBUILD-REL2-GET\api\gx\doc\Geosoft.Sandcastle\Release\icons\pubevent.gif -&gt; M:\jobs\FULLBUILD-REL2-GET\api\build\gxapi\GXNetReference\Help\Working\Output\Website\icons\pubevent.gif
+M:\jobs\FULLBUILD-REL2-GET\api\gx\doc\Geosoft.Sandcastle\Release\icons\pubextension.gif -&gt; M:\jobs\FULLBUILD-REL2-GET\api\build\gxapi\GXNetReference\Help\Working\Output\Website\icons\pubextension.gif
+M:\jobs\FULLBUILD-REL2-GET\api\gx\doc\Geosoft.Sandcastle\Release\icons\pubfield.gif -&gt; M:\jobs\FULLBUILD-REL2-GET\api\build\gxapi\GXNetReference\Help\Working\Output\Website\icons\pubfield.gif
+M:\jobs\FULLBUILD-REL2-GET\api\gx\doc\Geosoft.Sandcastle\Release\icons\pubinterface.gif -&gt; M:\jobs\FULLBUILD-REL2-GET\api\build\gxapi\GXNetReference\Help\Working\Output\Website\icons\pubinterface.gif
+M:\jobs\FULLBUILD-REL2-GET\api\gx\doc\Geosoft.Sandcastle\Release\icons\pubmethod.gif -&gt; M:\jobs\FULLBUILD-REL2-GET\api\build\gxapi\GXNetReference\Help\Working\Output\Website\icons\pubmethod.gif
+M:\jobs\FULLBUILD-REL2-GET\api\gx\doc\Geosoft.Sandcastle\Release\icons\puboperator.gif -&gt; M:\jobs\FULLBUILD-REL2-GET\api\build\gxapi\GXNetReference\Help\Working\Output\Website\icons\puboperator.gif
+M:\jobs\FULLBUILD-REL2-GET\api\gx\doc\Geosoft.Sandcastle\Release\icons\pubproperty.gif -&gt; M:\jobs\FULLBUILD-REL2-GET\api\build\gxapi\GXNetReference\Help\Working\Output\Website\icons\pubproperty.gif
+M:\jobs\FULLBUILD-REL2-GET\api\gx\doc\Geosoft.Sandcastle\Release\icons\pubstructure.gif -&gt; M:\jobs\FULLBUILD-REL2-GET\api\build\gxapi\GXNetReference\Help\Working\Output\Website\icons\pubstructure.gif
+M:\jobs\FULLBUILD-REL2-GET\api\gx\doc\Geosoft.Sandcastle\Release\icons\SectionCollapsed.png -&gt; M:\jobs\FULLBUILD-REL2-GET\api\build\gxapi\GXNetReference\Help\Working\Output\Website\icons\SectionCollapsed.png
+M:\jobs\FULLBUILD-REL2-GET\api\gx\doc\Geosoft.Sandcastle\Release\icons\SectionExpanded.png -&gt; M:\jobs\FULLBUILD-REL2-GET\api\build\gxapi\GXNetReference\Help\Working\Output\Website\icons\SectionExpanded.png
+M:\jobs\FULLBUILD-REL2-GET\api\gx\doc\Geosoft.Sandcastle\Release\icons\slMobile.gif -&gt; M:\jobs\FULLBUILD-REL2-GET\api\build\gxapi\GXNetReference\Help\Working\Output\Website\icons\slMobile.gif
+M:\jobs\FULLBUILD-REL2-GET\api\gx\doc\Geosoft.Sandcastle\Release\icons\static.gif -&gt; M:\jobs\FULLBUILD-REL2-GET\api\build\gxapi\GXNetReference\Help\Working\Output\Website\icons\static.gif
+M:\jobs\FULLBUILD-REL2-GET\api\gx\doc\Geosoft.Sandcastle\Release\icons\unlocked.gif -&gt; M:\jobs\FULLBUILD-REL2-GET\api\build\gxapi\GXNetReference\Help\Working\Output\Website\icons\unlocked.gif
+M:\jobs\FULLBUILD-REL2-GET\api\gx\doc\Geosoft.Sandcastle\Release\icons\xna.gif -&gt; M:\jobs\FULLBUILD-REL2-GET\api\build\gxapi\GXNetReference\Help\Working\Output\Website\icons\xna.gif
+M:\jobs\FULLBUILD-REL2-GET\api\gx\doc\Geosoft.Sandcastle\Release\scripts\branding.js -&gt; M:\jobs\FULLBUILD-REL2-GET\api\build\gxapi\GXNetReference\Help\Working\Output\Website\scripts\branding.js
+M:\jobs\FULLBUILD-REL2-GET\api\gx\doc\Geosoft.Sandcastle\Release\styles\branding-cs-CZ.css -&gt; M:\jobs\FULLBUILD-REL2-GET\api\build\gxapi\GXNetReference\Help\Working\Output\Website\styles\branding-cs-CZ.css
+M:\jobs\FULLBUILD-REL2-GET\api\gx\doc\Geosoft.Sandcastle\Release\styles\branding-de-DE.css -&gt; M:\jobs\FULLBUILD-REL2-GET\api\build\gxapi\GXNetReference\Help\Working\Output\Website\styles\branding-de-DE.css
+M:\jobs\FULLBUILD-REL2-GET\api\gx\doc\Geosoft.Sandcastle\Release\styles\branding-en-US.css -&gt; M:\jobs\FULLBUILD-REL2-GET\api\build\gxapi\GXNetReference\Help\Working\Output\Website\styles\branding-en-US.css
+M:\jobs\FULLBUILD-REL2-GET\api\gx\doc\Geosoft.Sandcastle\Release\styles\branding-es-ES.css -&gt; M:\jobs\FULLBUILD-REL2-GET\api\build\gxapi\GXNetReference\Help\Working\Output\Website\styles\branding-es-ES.css
+M:\jobs\FULLBUILD-REL2-GET\api\gx\doc\Geosoft.Sandcastle\Release\styles\branding-fr-FR.css -&gt; M:\jobs\FULLBUILD-REL2-GET\api\build\gxapi\GXNetReference\Help\Working\Output\Website\styles\branding-fr-FR.css
+M:\jobs\FULLBUILD-REL2-GET\api\gx\doc\Geosoft.Sandcastle\Release\styles\branding-Help1.css -&gt; M:\jobs\FULLBUILD-REL2-GET\api\build\gxapi\GXNetReference\Help\Working\Output\Website\styles\branding-Help1.css
+M:\jobs\FULLBUILD-REL2-GET\api\gx\doc\Geosoft.Sandcastle\Release\styles\branding-Help2.css -&gt; M:\jobs\FULLBUILD-REL2-GET\api\build\gxapi\GXNetReference\Help\Working\Output\Website\styles\branding-Help2.css
+M:\jobs\FULLBUILD-REL2-GET\api\gx\doc\Geosoft.Sandcastle\Release\styles\branding-HelpViewer.css -&gt; M:\jobs\FULLBUILD-REL2-GET\api\build\gxapi\GXNetReference\Help\Working\Output\Website\styles\branding-HelpViewer.css
+M:\jobs\FULLBUILD-REL2-GET\api\gx\doc\Geosoft.Sandcastle\Release\styles\branding-it-IT.css -&gt; M:\jobs\FULLBUILD-REL2-GET\api\build\gxapi\GXNetReference\Help\Working\Output\Website\styles\branding-it-IT.css
+M:\jobs\FULLBUILD-REL2-GET\api\gx\doc\Geosoft.Sandcastle\Release\styles\branding-ja-JP.css -&gt; M:\jobs\FULLBUILD-REL2-GET\api\build\gxapi\GXNetReference\Help\Working\Output\Website\styles\branding-ja-JP.css
+M:\jobs\FULLBUILD-REL2-GET\api\gx\doc\Geosoft.Sandcastle\Release\styles\branding-ko-KR.css -&gt; M:\jobs\FULLBUILD-REL2-GET\api\build\gxapi\GXNetReference\Help\Working\Output\Website\styles\branding-ko-KR.css
+M:\jobs\FULLBUILD-REL2-GET\api\gx\doc\Geosoft.Sandcastle\Release\styles\branding-pl-PL.css -&gt; M:\jobs\FULLBUILD-REL2-GET\api\build\gxapi\GXNetReference\Help\Working\Output\Website\styles\branding-pl-PL.css
+M:\jobs\FULLBUILD-REL2-GET\api\gx\doc\Geosoft.Sandcastle\Release\styles\branding-pt-BR.css -&gt; M:\jobs\FULLBUILD-REL2-GET\api\build\gxapi\GXNetReference\Help\Working\Output\Website\styles\branding-pt-BR.css
+M:\jobs\FULLBUILD-REL2-GET\api\gx\doc\Geosoft.Sandcastle\Release\styles\branding-ru-RU.css -&gt; M:\jobs\FULLBUILD-REL2-GET\api\build\gxapi\GXNetReference\Help\Working\Output\Website\styles\branding-ru-RU.css
+M:\jobs\FULLBUILD-REL2-GET\api\gx\doc\Geosoft.Sandcastle\Release\styles\branding-tr-TR.css -&gt; M:\jobs\FULLBUILD-REL2-GET\api\build\gxapi\GXNetReference\Help\Working\Output\Website\styles\branding-tr-TR.css
+M:\jobs\FULLBUILD-REL2-GET\api\gx\doc\Geosoft.Sandcastle\Release\styles\branding-Website.css -&gt; M:\jobs\FULLBUILD-REL2-GET\api\build\gxapi\GXNetReference\Help\Working\Output\Website\styles\branding-Website.css
+M:\jobs\FULLBUILD-REL2-GET\api\gx\doc\Geosoft.Sandcastle\Release\styles\branding-zh-CN.css -&gt; M:\jobs\FULLBUILD-REL2-GET\api\build\gxapi\GXNetReference\Help\Working\Output\Website\styles\branding-zh-CN.css
+M:\jobs\FULLBUILD-REL2-GET\api\gx\doc\Geosoft.Sandcastle\Release\styles\branding-zh-TW.css -&gt; M:\jobs\FULLBUILD-REL2-GET\api\build\gxapi\GXNetReference\Help\Working\Output\Website\styles\branding-zh-TW.css
+M:\jobs\FULLBUILD-REL2-GET\api\gx\doc\Geosoft.Sandcastle\Release\styles\branding.css -&gt; M:\jobs\FULLBUILD-REL2-GET\api\build\gxapi\GXNetReference\Help\Working\Output\Website\styles\branding.css
+M:\jobs\FULLBUILD-REL2-GET\api\gx\doc\Geosoft.Sandcastle\Release\Web\index.html -&gt; M:\jobs\FULLBUILD-REL2-GET\api\build\gxapi\GXNetReference\Help\Working\Output\Website\index.html
+M:\jobs\FULLBUILD-REL2-GET\api\gx\doc\Geosoft.Sandcastle\Release\Web\search.html -&gt; M:\jobs\FULLBUILD-REL2-GET\api\build\gxapi\GXNetReference\Help\Working\Output\Website\search.html
+M:\jobs\FULLBUILD-REL2-GET\api\gx\doc\Geosoft.Sandcastle\Release\Web\SearchHelp.aspx -&gt; M:\jobs\FULLBUILD-REL2-GET\api\build\gxapi\GXNetReference\Help\Working\Output\Website\SearchHelp.aspx
+M:\jobs\FULLBUILD-REL2-GET\api\gx\doc\Geosoft.Sandcastle\Release\Web\SearchHelp.inc.php -&gt; M:\jobs\FULLBUILD-REL2-GET\api\build\gxapi\GXNetReference\Help\Working\Output\Website\SearchHelp.inc.php
+M:\jobs\FULLBUILD-REL2-GET\api\gx\doc\Geosoft.Sandcastle\Release\Web\SearchHelp.php -&gt; M:\jobs\FULLBUILD-REL2-GET\api\build\gxapi\GXNetReference\Help\Working\Output\Website\SearchHelp.php
+M:\jobs\FULLBUILD-REL2-GET\api\gx\doc\Geosoft.Sandcastle\Release\Web\Web.Config -&gt; M:\jobs\FULLBUILD-REL2-GET\api\build\gxapi\GXNetReference\Help\Working\Output\Website\Web.Config
+M:\jobs\FULLBUILD-REL2-GET\api\gx\doc\Geosoft.Sandcastle\Release\Web\icons\Search.png -&gt; M:\jobs\FULLBUILD-REL2-GET\api\build\gxapi\GXNetReference\Help\Working\Output\Website\icons\Search.png
+M:\jobs\FULLBUILD-REL2-GET\api\gx\doc\Geosoft.Sandcastle\Release\Web\icons\TocClose.gif -&gt; M:\jobs\FULLBUILD-REL2-GET\api\build\gxapi\GXNetReference\Help\Working\Output\Website\icons\TocClose.gif
+M:\jobs\FULLBUILD-REL2-GET\api\gx\doc\Geosoft.Sandcastle\Release\Web\icons\TocCollapsed.gif -&gt; M:\jobs\FULLBUILD-REL2-GET\api\build\gxapi\GXNetReference\Help\Working\Output\Website\icons\TocCollapsed.gif
+M:\jobs\FULLBUILD-REL2-GET\api\gx\doc\Geosoft.Sandcastle\Release\Web\icons\TocExpanded.gif -&gt; M:\jobs\FULLBUILD-REL2-GET\api\build\gxapi\GXNetReference\Help\Working\Output\Website\icons\TocExpanded.gif
+M:\jobs\FULLBUILD-REL2-GET\api\gx\doc\Geosoft.Sandcastle\Release\Web\icons\TocOpen.gif -&gt; M:\jobs\FULLBUILD-REL2-GET\api\build\gxapi\GXNetReference\Help\Working\Output\Website\icons\TocOpen.gif
+M:\jobs\FULLBUILD-REL2-GET\api\gx\doc\Geosoft.Sandcastle\Release\Web\scripts\branding-Website.js -&gt; M:\jobs\FULLBUILD-REL2-GET\api\build\gxapi\GXNetReference\Help\Working\Output\Website\scripts\branding-Website.js
+M:\jobs\FULLBUILD-REL2-GET\api\gx\doc\Geosoft.Sandcastle\Release\Web\scripts\jquery-1.11.0.min.js -&gt; M:\jobs\FULLBUILD-REL2-GET\api\build\gxapi\GXNetReference\Help\Working\Output\Website\scripts\jquery-1.11.0.min.js
+    Last step completed in 00:00:00.8424
+</buildStep>
+<buildStep step="GenerateHelpFormatTableOfContents">
+Generating website table of contents file...
+    Last step completed in 00:00:00.0000
+</buildStep>
+<buildStep step="GenerateFullTextIndex">
+Generating full-text index for the website...
+
+<plugIn name="Lightweight Website Style" behavior="After" priority="1000">
+Adding lightweight search and TOC elements to each topic...
+</plugIn>    Last step completed in 00:00:32.4950
+</buildStep>
+<buildStep step="CopyingWebsiteFiles">
+Copying website files to output folder...
+
+Copied 100 files
+Copied 200 files
+Copied 300 files
+Copied 400 files
+Copied 500 files
+Copied 600 files
+Copied 700 files
+Copied 800 files
+Copied 900 files
+Copied 1000 files
+Copied 1100 files
+Copied 1200 files
+Copied 1300 files
+Copied 1400 files
+Copied 1500 files
+Copied 1600 files
+Copied 1700 files
+Copied 1800 files
+Copied 1900 files
+Copied 2000 files
+Copied 2100 files
+Copied 2200 files
+Copied 2300 files
+Copied 2400 files
+Copied 2500 files
+Copied 2600 files
+Copied 2700 files
+Copied 2800 files
+Copied 2900 files
+Copied 3000 files
+Copied 3100 files
+Copied 3200 files
+Copied 3300 files
+Copied 3400 files
+Copied 3500 files
+Copied 3600 files
+Copied 3700 files
+Copied 3800 files
+Copied 3900 files
+Copied 4000 files
+Copied 4100 files
+Copied 4200 files
+Copied 4300 files
+Copied 4400 files
+Copied 4500 files
+Copied 4600 files
+Copied 4700 files
+Copied 4800 files
+Copied 4900 files
+Copied 5000 files
+Copied 5100 files
+Copied 5200 files
+Copied 5300 files
+Copied 5400 files
+Copied 5500 files
+Copied 5600 files
+Copied 5700 files
+Copied 5800 files
+Copied 5900 files
+Copied 6000 files
+Copied 6100 files
+Copied 6200 files
+Copied 6300 files
+Copied 6400 files
+Copied 6500 files
+Copied 6600 files
+Copied 6700 files
+Copied 6800 files
+Copied 6900 files
+Copied 7000 files
+Copied 7100 files
+Copied 7200 files
+Copied 7300 files
+Copied 7400 files
+Copied 7500 files
+Copied 7600 files
+Copied 7700 files
+Copied 7800 files
+Copied 7900 files
+Copied 8000 files
+Copied 8100 files
+Copied 8200 files
+Copied 8279 files for the website content
+    Last step completed in 00:00:42.7755
+</buildStep>
+<buildStep step="CleanIntermediates">
+Removing intermediate files...
+    Last step completed in 00:00:03.0264
+</buildStep>
+<buildStep step="Completed">
+
+Build completed successfully at 05/05/2017 5:55:20 PM.  Total time: 00:03:37.8242
+
+</buildStep>
+</shfbBuild>
