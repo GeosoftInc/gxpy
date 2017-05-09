@@ -36,12 +36,6 @@ import geosoft
 extensions = [
     'sphinx.ext.autodoc'
 ]
-#extensions = [
-#    'sphinx.ext.autodoc',
-#    'sphinxcontrib.googleanalytics'
-#]
-#Google analytics for GX-Developer property in GA
-googleanalytics_id = 'UA-87443115-1'
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
