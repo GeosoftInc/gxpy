@@ -350,7 +350,8 @@ class Grid():
         be interpolated between neighbors.  For color data the nearest value is returned
         as a color int.
         
-        :param x, y: Location on the grid plane 
+        :param x: X location on the grid plane 
+        :param y: Y location on the grid plane
         :return: grid value, or None if outside of grid area
         
         """
