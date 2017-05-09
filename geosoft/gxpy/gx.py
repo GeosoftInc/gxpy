@@ -1,9 +1,12 @@
 """
-GX Context and related methods required for Geosoft Python.
+GX Context and related methods required for Geosoft Python.  The GX context is a singleton, which is either created for
+stand-alone Python scripts, or is provided to the script for extensions to Geosoft Desktop applications.
 
 .. note::
 
-    Regression tests provide usage examples: `Tests <https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_gx.py>`_
+    Regression tests provide usage examples: 
+    
+    `gx tests <https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_gx.py>`_
 
 """
 
@@ -145,7 +148,6 @@ def _exit_cleanup():
         gx.tkframe = None
         gx.gxapi = None
         gx._sr = None
-        del gx.license_class
         gx._shared_state = {}
 
 
@@ -157,9 +159,12 @@ class GXpy(_Singleton):
     Geosoft GX context.  This is a singleton class, so subsequent creation returns an instance
     identical to the initial creation. This also means that initialization arguments are ignored
     on a subsequent instantiation.
+    
+    This class does not need to be instantiated by desktop extensions as the context is provided
+    by the Geosoft desktop application.  If called, the desktop context is returned.
 
     :parameters:
-        :app:           application name, default is the script name
+        :name:          application name, default is the script name
         :version:       application version number, default Geosoft version
         :parent_window: ID of the parent window.  A parent window is required for GUI-dependent
                         functions to work.  Set `parent_window=-1` to create a Tkinter frame that
@@ -168,7 +173,7 @@ class GXpy(_Singleton):
                         accepts a string.  Specifying `log=''` will log to a default file named
                         using the current date and time.  If not provided calls to log()
                         are ignored.
-        :max_heap:      If logging is on, open gxpy resources (like grids, or databases) are tracked.
+        :max_res_heap:  If logging is on, open gxpy resources (like grids, or databases) are tracked.
                         This is the maximum size of resource heap for tracking open resources.
                         Set to 0 to not track resources. On exit, if any resources remain open
                         a warning is logged together with a list of the open resources, each with a
@@ -180,12 +185,12 @@ class GXpy(_Singleton):
     :Properties:
         :gxapi:             GX context to be used to call geosoft.gxapi methods
         :gid:               User's Geosoft ID
-        :global gx:         Global reference to this singleton class instance, None if invalid.
+        :global gx:         Global reference to this singleton class instance, None if invalid.  The
+                            construct geosoft.gxpy.gx.gx can be accessed anywhere.
         :current_date:      date at start-up
         :current_utc_date:  UTC date at start-up
         :current_time:      time at start-up
         :current_utc_time:  UTC time at start-up
-        :license_class:     Geosoft license class
         :folder_workspace:  Geosoft workspace folder
         :folder_temp:       Geosoft temporary folder
         :folder_user:       Geosoft Desktop installation 'user' folder
@@ -209,7 +214,7 @@ class GXpy(_Singleton):
         return "{}({})".format(self.__class__, self.__dict__)
 
     def __str__(self):
-        return "GID: {}, class: {}".format(self.gid, self.license_class())
+        return "GID: {}, class: {}".format(self.gid, self.license_class)
 
     def __enter__(self):
         return self
@@ -345,7 +350,6 @@ class GXpy(_Singleton):
             self.current_utc_date = gxapi.GXSYS.utc_date()
             self.current_time = gxapi.GXSYS.time()
             self.current_utc_time = gxapi.GXSYS.utc_time()
-            self.license_class = self.license_class()
             self.folder_workspace = gxu.folder_workspace()
             self.folder_temp = gxu.folder_temp()
             self.folder_user = gxu.folder_user()
@@ -379,9 +383,10 @@ class GXpy(_Singleton):
                 logstr = dts + l + os.linesep
                 self._logf.write(logstr.encode('utf-8'))
 
+    @property
     def main_wind_id(self):
         """
-        :returns: The main window ID (HWND cast to unsigned for Windows).
+        The main window ID (HWND cast to unsigned for Windows).
 
         .. versionadded:: 9.1
         """
@@ -391,9 +396,10 @@ class GXpy(_Singleton):
         else:
             return self.parent_window
 
+    @property
     def active_wind_id(self):
         """
-        :returns: The active window ID (HWND cast to unsigned for Windows).
+        The active window ID (HWND cast to unsigned for Windows).
 
         .. versionadded:: 9.1
         """
@@ -429,9 +435,10 @@ class GXpy(_Singleton):
         gxapi.GXSYS.get_entitlement_rights(lst)
         return gxu.dict_from_lst(lst)
 
+    @property
     def license_class(self):
         """
-        :return: The current license class.
+        The user's license class.
 
         .. versionadded:: 9.1
         """
@@ -570,19 +577,19 @@ class GXpy(_Singleton):
 
     def folder_workspace(self):
         """
-        .. deprecated:: 9.2 use :py:meth:`utility.folder_workspace`
+        .. deprecated:: 9.2 use :meth:`geosoft.gxpy.utility.folder_workspace`
         """
         return gxu.folder_workspace()
 
     def folder_temp(self):
         """
-        .. deprecated: 9.2 use :py:meth:`utility.folder_temp`
+        .. deprecated:: 9.2 use :meth:`geosoft.gxpy.utility.folder_temp`
         """
         return gxu.folder_temp()
 
     def folder_user(self):
         """
-        .. deprecated: 9.2 use :py:meth:`utility.folder_user`
+        .. deprecated:: 9.2 use :meth:`geosoft.gxpy.utility.folder_user`
         """
         return gxu.folder_user()
 

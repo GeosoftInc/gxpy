@@ -16,8 +16,8 @@ class Test(GXPYTest):
     def test_gxpy(self):
         with gx.GXpy(log=print) as gxc:
             self.assertTrue(gxc.gid.find('@') > 0)
-            self.assertEqual(gxc.main_wind_id(),0)
-            self.assertEqual(gxc.active_wind_id(), 0)
+            self.assertEqual(gxc.main_wind_id,0)
+            self.assertEqual(gxc.active_wind_id, 0)
             self.assertEqual(gx.__version__, geosoft.__version__)
             gxc._close()
 

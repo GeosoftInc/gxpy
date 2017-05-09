@@ -961,6 +961,9 @@ class Draw_3d(Draw):
         
         .. code::
         
+            import geosof.gxpy.view as gxv
+            import geosogt.gxpy.group as gxg
+            
             def render_spheres(xyz, cmap_radius):
                 color, radius = cmap_radius
                 return gxg.SYMBOL_3D_SPHERE, xyz, color.int, radius
