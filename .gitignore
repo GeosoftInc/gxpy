@@ -8,7 +8,7 @@ __pycache__/
 
 # Generated documentation
 docs/version_history.rst
-docs/geosoft.gxapi*
+docs/geosoft.gxapi.classes.rst
 docs/geosoft.gxpy*
 
 # Distribution / packaging
