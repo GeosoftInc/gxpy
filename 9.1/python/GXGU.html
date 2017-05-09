@@ -1,0 +1,1325 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-87443115-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+    <title>GXGU class &#8212; Geosoft GX Python API 9.1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/maki.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '9.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="Geosoft GX Python API 9.1 documentation" href="index.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.1 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">GXGU class</a><ul>
+<li><a class="reference internal" href="#em-err-constants">EM_ERR constants</a></li>
+<li><a class="reference internal" href="#em-inv-constants">EM_INV constants</a></li>
+<li><a class="reference internal" href="#emplate-domain-constants">EMPLATE_DOMAIN constants</a></li>
+<li><a class="reference internal" href="#emplate-tx-constants">EMPLATE_TX constants</a></li>
+<li><a class="reference internal" href="#gu-daarc500-datatype-constants">GU_DAARC500_DATATYPE constants</a></li>
+<li><a class="reference internal" href="#peakeuler-xy-constants">PEAKEULER_XY constants</a></li>
+</ul>
+</li>
+</ul>
+
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/GXGU.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="gxgu-class">
+<span id="gxgu"></span><h1>GXGU class<a class="headerlink" href="#gxgu-class" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="geosoft.gxapi.GXGU">
+<em class="property">class </em><code class="descclassname">geosoft.gxapi.</code><code class="descname">GXGU</code><a class="headerlink" href="#geosoft.gxapi.GXGU" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Not</span> <span class="n">a</span> <span class="n">class</span><span class="o">.</span> <span class="n">A</span> <span class="n">catch</span><span class="o">-</span><span class="nb">all</span> <span class="n">group</span> <span class="n">of</span> <span class="n">functions</span> <span class="n">performing</span>
+<span class="n">various</span> <span class="n">geophysical</span> <span class="n">processes</span><span class="p">,</span> <span class="n">including</span> <span class="n">the</span> <span class="n">calculation</span>
+<span class="n">of</span> <span class="n">simple</span> <span class="n">EM</span> <span class="n">model</span> <span class="n">responses</span><span class="p">,</span> <span class="n">certain</span> <span class="n">instrument</span> <span class="n">dump</span>
+<span class="n">file</span> <span class="n">imports</span><span class="p">,</span> <span class="ow">and</span> <span class="mi">2</span><span class="n">D</span> <span class="n">Euler</span> <span class="n">deconvolution</span><span class="o">.</span>
+</pre></div>
+</div>
+<dl class="staticmethod">
+<dt id="geosoft.gxapi.GXGU.dipole_mag">
+<em class="property">static </em><code class="descname">dipole_mag</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(float)arg2</em>, <em>(float)arg3</em>, <em>(int)arg4</em>, <em>(int)arg5</em>, <em>(float)arg6</em>, <em>(float)arg7</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXGU.dipole_mag" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Calculate</span> <span class="n">a</span> <span class="n">dipole</span> <span class="n">magnetic</span> <span class="n">field</span> <span class="n">into</span> <span class="n">XYZ</span> <span class="n">file</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arg1</strong> (<em>str</em>) &#8211; sXYZ</li>
+<li><strong>arg2</strong> (<em>float</em>) &#8211; rDepth</li>
+<li><strong>arg3</strong> (<em>float</em>) &#8211; rInc</li>
+<li><strong>arg4</strong> (<em>int</em>) &#8211; iNX</li>
+<li><strong>arg5</strong> (<em>int</em>) &#8211; iNY</li>
+<li><strong>arg6</strong> (<em>float</em>) &#8211; rDX</li>
+<li><strong>arg7</strong> (<em>float</em>) &#8211; rDY</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.1.6.</span></p>
+</div>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="geosoft.gxapi.GXGU.em_half_space_inv">
+<em class="property">static </em><code class="descname">em_half_space_inv</code><span class="sig-paren">(</span><em>(float)arg1</em>, <em>(float)arg2</em>, <em>(int)arg3</em>, <em>(float)arg4</em>, <em>(float)arg5</em>, <em>(GXVV)arg6</em>, <em>(GXVV)arg7</em>, <em>(GXVV)arg8</em>, <em>(GXVV)arg9</em>, <em>(int)arg10</em>, <em>(int)arg11</em>, <em>(float)arg12</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXGU.em_half_space_inv" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Inverts</span> <span class="n">EM</span> <span class="n">responses</span> <span class="n">to</span> <span class="n">the</span> <span class="n">best</span> <span class="n">halfspace</span> <span class="n">model</span><span class="o">.</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arg1</strong> (<em>float</em>) &#8211; coil spacing: error if == 0</li>
+<li><strong>arg2</strong> (<em>float</em>) &#8211; frequency</li>
+<li><strong>arg3</strong> (<em>int</em>) &#8211; <a class="reference internal" href="GXMVU.html#emlay-geometry"><span class="std std-ref">EMLAY_GEOMETRY constants</span></a></li>
+<li><strong>arg4</strong> (<em>float</em>) &#8211; fractional error in best fit resistivity</li>
+<li><strong>arg5</strong> (<em>float</em>) &#8211; don&#8217;t invert values below this</li>
+<li><strong>arg6</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Height above ground</li>
+<li><strong>arg7</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; In-phase part (ppm)</li>
+<li><strong>arg8</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Quadrature part (ppm)</li>
+<li><strong>arg9</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; On return - inverted halfspace resistivities</li>
+<li><strong>arg10</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#em-inv"><span class="std std-ref">EM_INV constants</span></a></li>
+<li><strong>arg11</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#em-err"><span class="std std-ref">EM_ERR constants</span></a></li>
+<li><strong>arg12</strong> (<em>float</em>) &#8211; Starting value for inversion (can be rDUMMY)</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.0.</span></p>
+</div>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="geosoft.gxapi.GXGU.em_half_space_vv">
+<em class="property">static </em><code class="descname">em_half_space_vv</code><span class="sig-paren">(</span><em>(float)arg1</em>, <em>(float)arg2</em>, <em>(int)arg3</em>, <em>(GXVV)arg4</em>, <em>(GXVV)arg5</em>, <em>(GXVV)arg6</em>, <em>(GXVV)arg7</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXGU.em_half_space_vv" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">EM</span> <span class="n">Halfspace</span> <span class="n">forward</span> <span class="n">model</span> <span class="n">response</span><span class="o">.</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arg1</strong> (<em>float</em>) &#8211; Coil separation</li>
+<li><strong>arg2</strong> (<em>float</em>) &#8211; frequency</li>
+<li><strong>arg3</strong> (<em>int</em>) &#8211; <a class="reference internal" href="GXMVU.html#emlay-geometry"><span class="std std-ref">EMLAY_GEOMETRY constants</span></a></li>
+<li><strong>arg4</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Input resistivity values</li>
+<li><strong>arg5</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Input height values</li>
+<li><strong>arg6</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Output In-phase</li>
+<li><strong>arg7</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Output Quadrature-phase</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.0.</span></p>
+</div>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="geosoft.gxapi.GXGU.em_layer">
+<em class="property">static </em><code class="descname">em_layer</code><span class="sig-paren">(</span><em>(float)arg1</em>, <em>(float)arg2</em>, <em>(float)arg3</em>, <em>(int)arg4</em>, <em>(int)arg5</em>, <em>(GXVV)arg6</em>, <em>(GXVV)arg7</em>, <em>(float_ref)arg8</em>, <em>(float_ref)arg9</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXGU.em_layer" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Calculate</span> <span class="n">the</span> <span class="n">EM</span> <span class="n">response</span> <span class="n">of</span> <span class="n">a</span> <span class="n">layered</span> <span class="n">earth</span> <span class="n">model</span><span class="o">.</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arg1</strong> (<em>float</em>) &#8211; coil spacing, error if == 0</li>
+<li><strong>arg2</strong> (<em>float</em>) &#8211; coil frequency</li>
+<li><strong>arg3</strong> (<em>float</em>) &#8211; coil height above layer [0]</li>
+<li><strong>arg4</strong> (<em>int</em>) &#8211; <a class="reference internal" href="GXMVU.html#emlay-geometry"><span class="std std-ref">EMLAY_GEOMETRY constants</span></a></li>
+<li><strong>arg5</strong> (<em>int</em>) &#8211; Number of layers (including lower halfspace)</li>
+<li><strong>arg6</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; sNLayer-1 thicknesses  [0] to [sNLayer-2]</li>
+<li><strong>arg7</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; sNLayer conductivities [0] to [sNLayer-1]</li>
+<li><strong>arg8</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; On return - in-phase part (ppm)</li>
+<li><strong>arg9</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; On return - quadrature part (ppm)</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">0 of OK
+1 if some error</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.0.</span></p>
+</div>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="geosoft.gxapi.GXGU.em_plate">
+<em class="property">static </em><code class="descname">em_plate</code><span class="sig-paren">(</span><em>(float)arg1</em>, <em>(float)arg2</em>, <em>(float)arg3</em>, <em>(float)arg4</em>, <em>(float)arg5</em>, <em>(float)arg6</em>, <em>(float)arg7</em>, <em>(float)arg8</em>, <em>(float)arg9</em>, <em>(int)arg10</em>, <em>(GXVV)arg11</em>, <em>(int)arg12</em>, <em>(float)arg13</em>, <em>(float)arg14</em>, <em>(float)arg15</em>, <em>(GXVV)arg16</em>, <em>(GXVV)arg17</em>, <em>(GXVV)arg18</em>, <em>(GXVV)arg19</em>, <em>(GXVV)arg20</em>, <em>(GXVV)arg21</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXGU.em_plate" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Calculate</span> <span class="n">the</span> <span class="n">conductance</span> <span class="n">of</span> <span class="n">a</span> <span class="n">thin</span> <span class="n">plate</span> <span class="n">model</span><span class="o">.</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arg1</strong> (<em>float</em>) &#8211; plate strike length (m)</li>
+<li><strong>arg2</strong> (<em>float</em>) &#8211; Plate dip length (m)</li>
+<li><strong>arg3</strong> (<em>float</em>) &#8211; Plate strike (degrees) from X axis</li>
+<li><strong>arg4</strong> (<em>float</em>) &#8211; Plate dip (degrees) from horizontal</li>
+<li><strong>arg5</strong> (<em>float</em>) &#8211; plate plunge (degrees) from horizontal</li>
+<li><strong>arg6</strong> (<em>float</em>) &#8211; Rx offset in X from Tx</li>
+<li><strong>arg7</strong> (<em>float</em>) &#8211; Rx offset in Y from Tx</li>
+<li><strong>arg8</strong> (<em>float</em>) &#8211; Rx offset in Z from Tx (+&#8217;ve down)</li>
+<li><strong>arg9</strong> (<em>float</em>) &#8211; Depth below Tx</li>
+<li><strong>arg10</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#emplate-domain"><span class="std std-ref">EMPLATE_DOMAIN constants</span></a></li>
+<li><strong>arg11</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; The plate conductances (VV length &lt;= 100)</li>
+<li><strong>arg12</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#emplate-tx"><span class="std std-ref">EMPLATE_TX constants</span></a></li>
+<li><strong>arg13</strong> (<em>float</em>) &#8211; Tx frequency (for EMPLATE_TIME)</li>
+<li><strong>arg14</strong> (<em>float</em>) &#8211; Tx time window spacing (for EMPLATE_TIME)</li>
+<li><strong>arg15</strong> (<em>float</em>) &#8211; The frequency/time parameters (SI units: f[Hz] or t[s])</li>
+<li><strong>arg16</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; On return - X in-phase part (ppm)</li>
+<li><strong>arg17</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; On return - Y in-phase part (ppm)</li>
+<li><strong>arg18</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; On return - Z in-phase part (ppm)</li>
+<li><strong>arg19</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; On return - X quadrature part (ppm)</li>
+<li><strong>arg20</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; On return - Y quadrature part (ppm)</li>
+<li><strong>arg21</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; On return - Z quadrature part (ppm)</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">0 of OK
+1 if some error</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.0.</span></p>
+</div>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="geosoft.gxapi.GXGU.gen_ux_detect_symbols_group_name">
+<em class="property">static </em><code class="descname">gen_ux_detect_symbols_group_name</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(str)arg2</em>, <em>(str_ref)arg3</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXGU.gen_ux_detect_symbols_group_name" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Generate</span> <span class="n">a</span> <span class="n">group</span> <span class="n">name</span> <span class="n">string</span> <span class="k">for</span> <span class="n">UX</span><span class="o">-</span><span class="n">Detect</span> <span class="n">symbols</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arg1</strong> (<em>str</em>) &#8211; input Targets database name</li>
+<li><strong>arg2</strong> (<em>str</em>) &#8211; input Targets group (line) name</li>
+<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; output group name string</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 6.3.0.</span></p>
+</div>
+<p><strong>Note:</strong></p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Start</span> <span class="n">a</span> <span class="n">new</span> <span class="n">group</span> <span class="k">for</span> <span class="n">the</span> <span class="n">symbols</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">UX</span><span class="o">-</span><span class="n">Detect</span> <span class="n">system</span><span class="o">.</span>
+<span class="n">The</span> <span class="n">Target</span> <span class="n">GDB</span> <span class="ow">is</span> <span class="n">often</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">form</span> <span class="s2">&quot;GDB_Targets&quot;</span><span class="p">,</span> <span class="n">where</span>
+<span class="s2">&quot;GDB&quot;</span> <span class="ow">is</span> <span class="n">the</span> <span class="n">original</span> <span class="n">data</span><span class="o">.</span> <span class="n">Cut</span> <span class="n">off</span> <span class="n">the</span> <span class="n">part</span> <span class="n">including</span> <span class="n">the</span>
+<span class="n">underscore</span> <span class="n">when</span> <span class="n">creating</span> <span class="n">the</span> <span class="nb">map</span><span class="p">,</span> <span class="n">so</span> <span class="n">you</span> <span class="n">don</span><span class="s1">&#39;t get map group</span>
+<span class="n">Names</span> <span class="n">like</span> <span class="s2">&quot;SYMBOLS_UxData_Targets_Targets&quot;</span><span class="o">.</span>
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="GXSTR.html#geosoft.gxapi.GXSTR.gen_group_name" title="geosoft.gxapi.GXSTR.gen_group_name"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXSTR.gen_group_name()</span></code></a></p>
+</div>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="geosoft.gxapi.GXGU.geometrics2_db">
+<em class="property">static </em><code class="descname">geometrics2_db</code><span class="sig-paren">(</span><em>(GXDB)arg1</em>, <em>(GXRA)arg2</em>, <em>(GXWA)arg3</em>, <em>(int)arg4</em>, <em>(int)arg5</em>, <em>(int)arg6</em>, <em>(int)arg7</em>, <em>(float)arg8</em>, <em>(float)arg9</em>, <em>(float)arg10</em>, <em>(float)arg11</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXGU.geometrics2_db" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Convert</span> <span class="n">a</span> <span class="n">Geometrics</span> <span class="n">STN</span> <span class="n">file</span> <span class="n">to</span> <span class="n">a</span> <span class="n">database</span><span class="o">.</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arg1</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXDB</span></code></a>) &#8211; DB handle</li>
+<li><strong>arg2</strong> (<a class="reference internal" href="GXRA.html#geosoft.gxapi.GXRA" title="geosoft.gxapi.GXRA"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXRA</span></code></a>) &#8211; RA handle, STN file</li>
+<li><strong>arg3</strong> (<a class="reference internal" href="GXWA.html#geosoft.gxapi.GXWA" title="geosoft.gxapi.GXWA"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXWA</span></code></a>) &#8211; Log file WA handle</li>
+<li><strong>arg4</strong> (<em>int</em>) &#8211; Simple mode (1) or Mapped mode (2)</li>
+<li><strong>arg5</strong> (<em>int</em>) &#8211; Survey line orientation:  North-south - 0 East-west   - 1</li>
+<li><strong>arg6</strong> (<em>int</em>) &#8211; Starting survey position: SW - 0, NW - 1, SE - 2, NE - 3,</li>
+<li><strong>arg7</strong> (<em>int</em>) &#8211; Bidirectional (0) or Unidirectional (1)</li>
+<li><strong>arg8</strong> (<em>float</em>) &#8211; Starting position X</li>
+<li><strong>arg9</strong> (<em>float</em>) &#8211; Starting position Y</li>
+<li><strong>arg10</strong> (<em>float</em>) &#8211; Mark spacing</li>
+<li><strong>arg11</strong> (<em>float</em>) &#8211; Line spacing</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.0.</span></p>
+</div>
+<p><strong>Note:</strong></p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Assumes</span> <span class="n">that</span> <span class="n">the</span> <span class="n">database</span> <span class="ow">is</span> <span class="n">new</span> <span class="ow">and</span> <span class="n">empty</span><span class="o">.</span> <span class="n">If</span> <span class="ow">not</span><span class="p">,</span> <span class="n">existing</span> <span class="n">channels</span>
+<span class="k">with</span> <span class="n">names</span> <span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">Mag1</span><span class="p">,</span> <span class="n">Mag2</span><span class="p">,</span> <span class="n">Time</span><span class="p">,</span> <span class="n">Date</span><span class="p">,</span>
+<span class="ow">and</span> <span class="n">Mark</span> <span class="n">will</span> <span class="n">deleted</span> <span class="ow">and</span> <span class="n">then</span> <span class="n">created</span><span class="o">.</span>  <span class="n">Existing</span> <span class="n">lines</span> <span class="n">will</span>
+<span class="n">be</span> <span class="n">erased</span> <span class="ow">and</span> <span class="n">then</span> <span class="n">created</span> <span class="k">if</span> <span class="n">they</span> <span class="n">are</span> <span class="n">the</span> <span class="n">same</span> <span class="k">as</span> <span class="n">the</span> <span class="n">new</span> <span class="n">ones</span><span class="o">.</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="geosoft.gxapi.GXGU.geometrics2_tbl">
+<em class="property">static </em><code class="descname">geometrics2_tbl</code><span class="sig-paren">(</span><em>(GXRA)arg1</em>, <em>(GXWA)arg2</em>, <em>(GXWA)arg3</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXGU.geometrics2_tbl" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Convert</span> <span class="n">a</span> <span class="n">Geometrics</span> <span class="n">station</span> <span class="n">file</span> <span class="p">(</span><span class="n">STN</span><span class="p">)</span> <span class="n">to</span> <span class="n">a</span> <span class="n">table</span> <span class="n">file</span> <span class="p">(</span><span class="n">TBL</span><span class="p">)</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arg1</strong> (<a class="reference internal" href="GXRA.html#geosoft.gxapi.GXRA" title="geosoft.gxapi.GXRA"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXRA</span></code></a>) &#8211; RA handle, input station file</li>
+<li><strong>arg2</strong> (<a class="reference internal" href="GXWA.html#geosoft.gxapi.GXWA" title="geosoft.gxapi.GXWA"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXWA</span></code></a>) &#8211; Output TBL file</li>
+<li><strong>arg3</strong> (<a class="reference internal" href="GXWA.html#geosoft.gxapi.GXWA" title="geosoft.gxapi.GXWA"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXWA</span></code></a>) &#8211; Log file WA handle</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.0.</span></p>
+</div>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="geosoft.gxapi.GXGU.geometrics_qc">
+<em class="property">static </em><code class="descname">geometrics_qc</code><span class="sig-paren">(</span><em>(GXWA)arg1</em>, <em>(str)arg2</em>, <em>(GXVV)arg3</em>, <em>(float)arg4</em>, <em>(float)arg5</em>, <em>(float)arg6</em>, <em>(GXVV)arg7</em>, <em>(GXVV)arg8</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXGU.geometrics_qc" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Correct</span> <span class="n">reading</span> <span class="n">positions</span> <span class="ow">in</span> <span class="n">a</span> <span class="n">database</span><span class="o">.</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arg1</strong> (<a class="reference internal" href="GXWA.html#geosoft.gxapi.GXWA" title="geosoft.gxapi.GXWA"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXWA</span></code></a>) &#8211; Output error log file</li>
+<li><strong>arg2</strong> (<em>str</em>) &#8211; Database line number. For output to log file only</li>
+<li><strong>arg3</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Input VV, GS_DOUBLE</li>
+<li><strong>arg4</strong> (<em>float</em>) &#8211; Tolerance defined as percentage, say 50.0 means 50%. Must be &gt;=0.0 Lower bound = (Normal Density) - (Normal Density)<cite>*</cite>Tolerance Upper bound = (Normal Density) + (Normal Density)<cite>*</cite>Tolerance</li>
+<li><strong>arg5</strong> (<em>float</em>) &#8211; Minimum coordinate (X or Y)</li>
+<li><strong>arg6</strong> (<em>float</em>) &#8211; Maximum coordinate (X or Y)</li>
+<li><strong>arg7</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Output VV, GS_DOUBLE</li>
+<li><strong>arg8</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Output Flag VV, GS_LONG</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.0.</span></p>
+</div>
+<p><strong>Note:</strong></p>
+<pre class="literal-block">
+There are six cases to consider:
+
+Case        Flag  Solutions      Symptons
+-------     ----  -------------  -----------------------------
+
+CASE 1A:    0     No correction  Recorded and actual Line lengths same
+                                 Reading densities vary slightly (passed
+                                 the tolerance test)
+
+CASE 1B:    -1    No correction  Line lengths same
+                                 Reading densities vary and cannot
+                                 pass the tolerance test
+
+CASE 2A:    1     Corrected by   Recorded line length too short
+                  extension      Possilble high readings in segment(s)
+                                 Corrected (by extending) and actual
+                                 lengths become the same
+
+CASE 2B:    2     Corrected by   Recorded line length too short
+                  interpolation  Possilble high readings in segment(s)
+                                 Corrected (by extending) and actual
+                                 lengths are not same. Interpolation is
+                                 then applied
+
+CASE 3A:    1     Corrected by   Recorded line length too long
+                  shifting or    Possible low readings in segment(s)
+                  (shrank)       Corrected (by shifting) and actual
+                                 lengths are same
+
+CASE 3B:    2     Corrected by   Recorded line length too long
+                  interpolation  Possible low readings in segment(s)
+                                 Corrected (by shifting) and actual
+                                 lengths are not same. Interpolation
+                                 is then applied
+
+
+TERMINOLOGY:
+
+Segments:         A segment refers to the distance and its contents between
+                  two adjacent fiducial markers
+
+Normal Density:   The density (number of readings) shared by the segments in
+                  in a survey line.
+                  The number of segments with the density is greater than the
+                  number of segments having a different density in a line.
+
+Tolerance and Bound:
+                  Tolerance is defined as a percentage, say 50% (=0.5).
+                  Based on the tolerance, a lower bound and upper bound
+
+                  can be defined:
+
+                  Lower bound = (Normal Density) - (Normal Density)<cite>*</cite>Tolerance
+                  Upper bound = (Normal Density) - (Normal Density)<cite>*</cite>Tolerance
+
+                  Segments will pass the tolerance test if the number of readings
+                  falls within the Lower and Upper Bounds.
+</pre>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="geosoft.gxapi.GXGU.geonics3138_dump2_db">
+<em class="property">static </em><code class="descname">geonics3138_dump2_db</code><span class="sig-paren">(</span><em>(GXDB)arg1</em>, <em>(GXRA)arg2</em>, <em>(GXRA)arg3</em>, <em>(GXWA)arg4</em>, <em>(float)arg5</em>, <em>(float)arg6</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXGU.geonics3138_dump2_db" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Convert</span> <span class="n">a</span> <span class="n">Geonics</span> <span class="n">EM31</span><span class="o">/</span><span class="n">EM38</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">dump</span> <span class="nb">format</span> <span class="n">to</span> <span class="n">a</span> <span class="n">database</span><span class="o">.</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arg1</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXDB</span></code></a>) &#8211; DB handle</li>
+<li><strong>arg2</strong> (<a class="reference internal" href="GXRA.html#geosoft.gxapi.GXRA" title="geosoft.gxapi.GXRA"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXRA</span></code></a>) &#8211; RA handle, Header file</li>
+<li><strong>arg3</strong> (<a class="reference internal" href="GXRA.html#geosoft.gxapi.GXRA" title="geosoft.gxapi.GXRA"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXRA</span></code></a>) &#8211; RA handle, Dump file</li>
+<li><strong>arg4</strong> (<a class="reference internal" href="GXWA.html#geosoft.gxapi.GXWA" title="geosoft.gxapi.GXWA"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXWA</span></code></a>) &#8211; Log file WA handle</li>
+<li><strong>arg5</strong> (<em>float</em>) &#8211; Line multiplier</li>
+<li><strong>arg6</strong> (<em>float</em>) &#8211; Station multiplier</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.0.</span></p>
+</div>
+<p><strong>Note:</strong></p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Assumes</span> <span class="n">that</span> <span class="n">the</span> <span class="n">database</span> <span class="ow">is</span> <span class="n">new</span> <span class="ow">and</span> <span class="n">empty</span><span class="o">.</span> <span class="n">If</span> <span class="ow">not</span><span class="p">,</span> <span class="n">existing</span> <span class="n">channels</span>
+<span class="k">with</span> <span class="n">names</span> <span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">Station</span><span class="p">,</span> <span class="n">Conductivity</span><span class="p">,</span> <span class="n">Inphase</span><span class="p">,</span> <span class="n">Quadrature</span><span class="p">,</span>
+<span class="ow">and</span> <span class="n">Time</span> <span class="n">will</span> <span class="n">deleted</span> <span class="ow">and</span> <span class="n">then</span> <span class="n">created</span><span class="o">.</span>  <span class="n">Existing</span> <span class="n">lines</span> <span class="n">will</span>
+<span class="n">be</span> <span class="n">erased</span> <span class="ow">and</span> <span class="n">then</span> <span class="n">created</span> <span class="k">if</span> <span class="n">they</span> <span class="n">are</span> <span class="n">the</span> <span class="n">same</span> <span class="k">as</span> <span class="n">the</span> <span class="n">new</span> <span class="n">ones</span><span class="o">.</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="geosoft.gxapi.GXGU.geonics61_dump2_db">
+<em class="property">static </em><code class="descname">geonics61_dump2_db</code><span class="sig-paren">(</span><em>(GXDB)arg1</em>, <em>(GXRA)arg2</em>, <em>(GXWA)arg3</em>, <em>(float)arg4</em>, <em>(float)arg5</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXGU.geonics61_dump2_db" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Convert</span> <span class="n">a</span> <span class="n">Geonics</span> <span class="n">EM61</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">dump</span> <span class="nb">format</span> <span class="n">to</span> <span class="n">a</span> <span class="n">database</span><span class="o">.</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arg1</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXDB</span></code></a>) &#8211; DB handle</li>
+<li><strong>arg2</strong> (<a class="reference internal" href="GXRA.html#geosoft.gxapi.GXRA" title="geosoft.gxapi.GXRA"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXRA</span></code></a>) &#8211; RA handle, dump file</li>
+<li><strong>arg3</strong> (<a class="reference internal" href="GXWA.html#geosoft.gxapi.GXWA" title="geosoft.gxapi.GXWA"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXWA</span></code></a>) &#8211; Log file WA handle</li>
+<li><strong>arg4</strong> (<em>float</em>) &#8211; Line multiplier</li>
+<li><strong>arg5</strong> (<em>float</em>) &#8211; Station multiplier - Not used in the calculation</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.0.</span></p>
+</div>
+<p><strong>Note:</strong></p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Assumes</span> <span class="n">that</span> <span class="n">the</span> <span class="n">database</span> <span class="ow">is</span> <span class="n">new</span> <span class="ow">and</span> <span class="n">empty</span><span class="o">.</span> <span class="n">If</span> <span class="ow">not</span><span class="p">,</span> <span class="n">existing</span> <span class="n">channels</span>
+<span class="k">with</span> <span class="n">names</span> <span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">Station</span><span class="p">,</span> <span class="n">Conductivity</span><span class="p">,</span> <span class="n">Inphase</span><span class="p">,</span> <span class="n">Quadrature</span><span class="p">,</span>
+<span class="ow">and</span> <span class="n">Time</span> <span class="n">will</span> <span class="n">deleted</span> <span class="ow">and</span> <span class="n">then</span> <span class="n">created</span><span class="o">.</span>  <span class="n">Existing</span> <span class="n">lines</span> <span class="n">will</span>
+<span class="n">be</span> <span class="n">erased</span> <span class="ow">and</span> <span class="n">then</span> <span class="n">created</span> <span class="k">if</span> <span class="n">they</span> <span class="n">are</span> <span class="n">the</span> <span class="n">same</span> <span class="k">as</span> <span class="n">the</span> <span class="n">new</span> <span class="n">ones</span><span class="o">.</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="geosoft.gxapi.GXGU.geonics_dat2_db">
+<em class="property">static </em><code class="descname">geonics_dat2_db</code><span class="sig-paren">(</span><em>(GXDB)arg1</em>, <em>(GXRA)arg2</em>, <em>(GXWA)arg3</em>, <em>(float)arg4</em>, <em>(float)arg5</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXGU.geonics_dat2_db" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Convert</span> <span class="n">a</span> <span class="n">Geonics</span> <span class="n">EM31</span><span class="o">/</span><span class="n">EM38</span><span class="o">/</span><span class="n">EM61</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">DAT</span> <span class="nb">format</span> <span class="n">to</span> <span class="n">a</span> <span class="n">database</span><span class="o">.</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arg1</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXDB</span></code></a>) &#8211; DB handle</li>
+<li><strong>arg2</strong> (<a class="reference internal" href="GXRA.html#geosoft.gxapi.GXRA" title="geosoft.gxapi.GXRA"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXRA</span></code></a>) &#8211; RA handle</li>
+<li><strong>arg3</strong> (<a class="reference internal" href="GXWA.html#geosoft.gxapi.GXWA" title="geosoft.gxapi.GXWA"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXWA</span></code></a>) &#8211; Log file WA handle</li>
+<li><strong>arg4</strong> (<em>float</em>) &#8211; Line multiplier</li>
+<li><strong>arg5</strong> (<em>float</em>) &#8211; Station multiplier - Not used in the calculation</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.0.</span></p>
+</div>
+<p><strong>Note:</strong></p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Assumes</span> <span class="n">that</span> <span class="n">the</span> <span class="n">database</span> <span class="ow">is</span> <span class="n">new</span> <span class="ow">and</span> <span class="n">empty</span><span class="o">.</span> <span class="n">If</span> <span class="ow">not</span><span class="p">,</span> <span class="n">existing</span> <span class="n">channels</span>
+<span class="k">with</span> <span class="n">names</span> <span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">Station</span><span class="p">,</span> <span class="n">Conductivity</span><span class="p">,</span> <span class="n">Inphase</span><span class="p">,</span> <span class="n">Quadrature</span><span class="p">,</span>
+<span class="ow">and</span> <span class="n">Time</span> <span class="n">will</span> <span class="n">deleted</span> <span class="ow">and</span> <span class="n">then</span> <span class="n">created</span><span class="o">.</span>  <span class="n">Existing</span> <span class="n">lines</span> <span class="n">will</span>
+<span class="n">be</span> <span class="n">erased</span> <span class="ow">and</span> <span class="n">then</span> <span class="n">created</span> <span class="k">if</span> <span class="n">they</span> <span class="n">are</span> <span class="n">the</span> <span class="n">same</span> <span class="k">as</span> <span class="n">the</span> <span class="n">new</span> <span class="n">ones</span><span class="o">.</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="geosoft.gxapi.GXGU.gr_curv_cor">
+<em class="property">static </em><code class="descname">gr_curv_cor</code><span class="sig-paren">(</span><em>(GXVV)arg1</em>, <em>(GXVV)arg2</em>, <em>(GXVV)arg3</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXGU.gr_curv_cor" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Gravity</span> <span class="n">Curvature</span> <span class="p">(</span><span class="n">Bullard</span> <span class="n">B</span><span class="p">)</span> <span class="n">Correction</span> <span class="n">to</span> <span class="n">Bouguer</span> <span class="n">anomaly</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arg1</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Input Elevation VV</li>
+<li><strong>arg2</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Input Latitude VV</li>
+<li><strong>arg3</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Bouguer VV for Curvature Correction</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.0.</span></p>
+</div>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="geosoft.gxapi.GXGU.gr_curv_cor_ex">
+<em class="property">static </em><code class="descname">gr_curv_cor_ex</code><span class="sig-paren">(</span><em>(GXVV)arg1</em>, <em>(GXVV)arg2</em>, <em>(GXVV)arg3</em>, <em>(float)arg4</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXGU.gr_curv_cor_ex" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Gravity</span> <span class="n">Curvature</span> <span class="p">(</span><span class="n">Bullard</span> <span class="n">B</span><span class="p">)</span> <span class="n">Correction</span> <span class="n">to</span> <span class="n">Bouguer</span> <span class="n">anomaly</span><span class="p">,</span> <span class="k">with</span> <span class="n">user</span> <span class="nb">input</span> <span class="n">cap</span> <span class="n">density</span><span class="o">.</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arg1</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Input Elevation VV</li>
+<li><strong>arg2</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Input Latitude VV</li>
+<li><strong>arg3</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Bouguer VV for Curvature Correction</li>
+<li><strong>arg4</strong> (<em>float</em>) &#8211; Cap Density (g/cm^3</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 8.0.1.</span></p>
+</div>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="geosoft.gxapi.GXGU.gr_demvv">
+<em class="property">static </em><code class="descname">gr_demvv</code><span class="sig-paren">(</span><em>(GXIMG)arg1</em>, <em>(GXVV)arg2</em>, <em>(GXVV)arg3</em>, <em>(GXVV)arg4</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXGU.gr_demvv" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">gravity</span> <span class="n">DEM</span> <span class="n">grid</span> <span class="n">VV</span> <span class="k">for</span> <span class="n">Bouguer</span> <span class="n">anomaly</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arg1</strong> (<a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXIMG</span></code></a>) &#8211; DEM grid</li>
+<li><strong>arg2</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Input X VV</li>
+<li><strong>arg3</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Input Y VV</li>
+<li><strong>arg4</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Output DEM VV for Bouguer Correction</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 6.2.0.</span></p>
+</div>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="geosoft.gxapi.GXGU.gr_test">
+<em class="property">static </em><code class="descname">gr_test</code><span class="sig-paren">(</span><em>(float)arg1</em>, <em>(float)arg2</em>, <em>(float)arg3</em>, <em>(GXVV)arg4</em>, <em>(GXVV)arg5</em>, <em>(GXVV)arg6</em>, <em>(GXVV)arg7</em>, <em>(GXVV)arg8</em>, <em>(GXVV)arg9</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXGU.gr_test" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Test</span> <span class="n">triangular</span> <span class="n">prism</span> <span class="n">gravity</span> <span class="n">calculation</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arg1</strong> (<em>float</em>) &#8211; dXm  - model dimension x</li>
+<li><strong>arg2</strong> (<em>float</em>) &#8211; dYm  - model dimension y</li>
+<li><strong>arg3</strong> (<em>float</em>) &#8211; dZm  - model depth</li>
+<li><strong>arg4</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; VVx  - stations x</li>
+<li><strong>arg5</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; VVy  - stations y</li>
+<li><strong>arg6</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; VVg3 - 2 triangular prism gravity results</li>
+<li><strong>arg7</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; VVg4 - regtangular prism gravity results</li>
+<li><strong>arg8</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; VVg1 - lower triangular prism gravity results</li>
+<li><strong>arg9</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; VVg2 - upper triangular prism gravity results</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.1.4.</span></p>
+</div>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="geosoft.gxapi.GXGU.gravity_still_reading_correction">
+<em class="property">static </em><code class="descname">gravity_still_reading_correction</code><span class="sig-paren">(</span><em>(GXDB)arg1</em>, <em>(int)arg2</em>, <em>(int)arg3</em>, <em>(int)arg4</em>, <em>(str)arg5</em>, <em>(int)arg6</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXGU.gravity_still_reading_correction" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Gravity</span> <span class="n">Still</span> <span class="n">Reading</span> <span class="n">Correction</span> <span class="n">on</span> <span class="n">selected</span> <span class="n">lines</span><span class="o">.</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arg1</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXDB</span></code></a>) &#8211; Database</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; Input gravity channel handle [DB_LOCK_READONLY]</li>
+<li><strong>arg3</strong> (<em>int</em>) &#8211; Input date channel handle [DB_LOCK_READONLY]</li>
+<li><strong>arg4</strong> (<em>int</em>) &#8211; Input time channel handle [DB_LOCK_READONLY]</li>
+<li><strong>arg5</strong> (<em>str</em>) &#8211; Still readings file</li>
+<li><strong>arg6</strong> (<em>int</em>) &#8211; Output gravity channel handle [DB_LOCK_READWRITE]</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 8.5.0.</span></p>
+</div>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="geosoft.gxapi.GXGU.import_daarc500_ethernet">
+<em class="property">static </em><code class="descname">import_daarc500_ethernet</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(str)arg2</em>, <em>(int_ref)arg3</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXGU.import_daarc500_ethernet" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Import</span> <span class="n">Ethernet</span> <span class="n">data</span> <span class="kn">from</span> <span class="nn">the</span> <span class="n">RMS</span> <span class="n">Instruments</span> <span class="n">DAARC500</span><span class="o">.</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arg1</strong> (<em>str</em>) &#8211; File to import</li>
+<li><strong>arg2</strong> (<em>str</em>) &#8211; Output binary file</li>
+<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; Returned number of bytes per block</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 7.2.0.</span></p>
+</div>
+<p><strong>Note:</strong></p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Imports</span> <span class="n">Ethernet</span> <span class="n">data</span> <span class="n">recorded</span>
+<span class="n">by</span> <span class="n">the</span> <span class="n">RMS</span> <span class="n">Instruments</span> <span class="n">DAARC500</span> <span class="n">instrument</span><span class="p">,</span> <span class="ow">and</span> <span class="n">outputs</span> <span class="n">the</span> <span class="n">data</span>
+<span class="n">to</span> <span class="n">a</span> <span class="n">new</span> <span class="n">binary</span> <span class="n">file</span><span class="p">,</span> <span class="n">returning</span> <span class="n">the</span> <span class="n">number</span> <span class="n">of</span> <span class="nb">bytes</span> <span class="n">per</span>
+<span class="n">block</span><span class="p">,</span> <span class="n">to</span> <span class="n">make</span> <span class="n">it</span> <span class="n">easier</span> <span class="n">to</span> <span class="kn">import</span> <span class="nn">the</span> <span class="n">data</span> <span class="n">using</span> <span class="n">the</span> <span class="n">regular</span> <span class="n">binary</span> <span class="n">import</span><span class="o">.</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="geosoft.gxapi.GXGU.import_daarc500_serial">
+<em class="property">static </em><code class="descname">import_daarc500_serial</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(int)arg2</em>, <em>(str)arg3</em>, <em>(int_ref)arg4</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXGU.import_daarc500_serial" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Import</span> <span class="n">Serial</span> <span class="n">data</span> <span class="kn">from</span> <span class="nn">the</span> <span class="n">RMS</span> <span class="n">Instruments</span> <span class="n">DAARC500</span><span class="o">.</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arg1</strong> (<em>str</em>) &#8211; File to import</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; Channel to import, 1-8</li>
+<li><strong>arg3</strong> (<em>str</em>) &#8211; Output binary file</li>
+<li><strong>arg4</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; Returned number of bytes per block</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 7.2.0.</span></p>
+</div>
+<p><strong>Note:</strong></p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Imports</span> <span class="n">a</span> <span class="n">single</span> <span class="n">channel</span> <span class="n">of</span> <span class="n">the</span> <span class="n">up</span> <span class="n">to</span> <span class="mi">8</span> <span class="n">serial</span> <span class="n">data</span> <span class="n">channels</span> <span class="n">recorded</span>
+<span class="n">by</span> <span class="n">the</span> <span class="n">RMS</span> <span class="n">Instruments</span> <span class="n">DAARC500</span> <span class="n">instrument</span><span class="p">,</span> <span class="ow">and</span> <span class="n">outputs</span> <span class="n">the</span> <span class="n">data</span> <span class="k">for</span>
+<span class="n">that</span> <span class="n">channel</span> <span class="n">to</span> <span class="n">a</span> <span class="n">new</span> <span class="n">binary</span> <span class="n">file</span><span class="p">,</span> <span class="n">returning</span> <span class="n">the</span> <span class="n">number</span> <span class="n">of</span> <span class="nb">bytes</span> <span class="n">per</span>
+<span class="n">block</span><span class="p">,</span> <span class="n">to</span> <span class="n">make</span> <span class="n">it</span> <span class="n">easier</span> <span class="n">to</span> <span class="kn">import</span> <span class="nn">the</span> <span class="n">data</span> <span class="n">using</span> <span class="n">the</span> <span class="n">regular</span> <span class="n">binary</span> <span class="n">import</span><span class="o">.</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="geosoft.gxapi.GXGU.import_p190">
+<em class="property">static </em><code class="descname">import_p190</code><span class="sig-paren">(</span><em>(GXDB)arg1</em>, <em>(str)arg2</em>, <em>(str)arg3</em>, <em>(GXWA)arg4</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXGU.import_p190" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Import</span> <span class="n">navigation</span> <span class="n">data</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">P190</span> <span class="nb">format</span><span class="o">.</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arg1</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXDB</span></code></a>) &#8211; Database handle</li>
+<li><strong>arg2</strong> (<em>str</em>) &#8211; P190 file name</li>
+<li><strong>arg3</strong> (<em>str</em>) &#8211; Single letter code, e.g. &#8220;C&#8221;, &#8220;E&#8221;, &#8220;S&#8221;, &#8220;T&#8221; or &#8220;V&#8221;, or blank for all records.</li>
+<li><strong>arg4</strong> (<a class="reference internal" href="GXWA.html#geosoft.gxapi.GXWA" title="geosoft.gxapi.GXWA"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXWA</span></code></a>) &#8211; Log file</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 6.3.0.</span></p>
+</div>
+<p><strong>Note:</strong></p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Imports</span> <span class="n">the</span> <span class="n">data</span><span class="p">,</span> <span class="ow">and</span><span class="p">,</span> <span class="k">if</span> <span class="n">projection</span> <span class="n">information</span> <span class="ow">is</span> <span class="n">included</span>
+<span class="nb">set</span> <span class="n">the</span> <span class="s2">&quot;X&quot;</span> <span class="ow">and</span> <span class="s2">&quot;Y&quot;</span> <span class="n">channel</span> <span class="n">projection</span> <span class="n">info</span><span class="o">.</span> <span class="p">(</span><span class="n">Note</span><span class="p">:</span> <span class="n">the</span> <span class="n">last</span> <span class="n">file</span>
+<span class="n">imported</span> <span class="n">always</span> <span class="n">takes</span> <span class="n">precedence</span><span class="p">)</span><span class="o">.</span>
+<span class="n">Different</span> <span class="n">record</span> <span class="n">types</span> <span class="n">are</span> <span class="n">imported</span> <span class="n">to</span> <span class="n">separate</span> <span class="n">lines</span><span class="p">,</span> <span class="n">but</span> <span class="ow">in</span> <span class="n">the</span>
+<span class="n">same</span> <span class="n">order</span> <span class="k">as</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">file</span><span class="o">.</span> <span class="n">Data</span> <span class="ow">in</span> <span class="n">existing</span> <span class="n">lines</span> <span class="ow">is</span> <span class="n">overwritten</span><span class="o">.</span>
+<span class="n">If</span> <span class="n">the</span> <span class="n">record</span> <span class="nb">type</span> <span class="ow">is</span> <span class="n">specified</span><span class="p">,</span> <span class="n">only</span> <span class="n">records</span> <span class="n">beginning</span> <span class="k">with</span> <span class="n">that</span>
+<span class="n">letter</span> <span class="n">are</span> <span class="n">imported</span><span class="p">,</span> <span class="n">otherwise</span> <span class="nb">all</span> <span class="n">records</span> <span class="p">(</span><span class="k">except</span> <span class="k">for</span> <span class="n">the</span> <span class="n">header</span> <span class="s2">&quot;H&quot;</span>
+<span class="n">records</span><span class="p">)</span> <span class="n">are</span> <span class="n">imported</span><span class="o">.</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="geosoft.gxapi.GXGU.lag_daarc500_gps">
+<em class="property">static </em><code class="descname">lag_daarc500_gps</code><span class="sig-paren">(</span><em>(GXVV)arg1</em>, <em>(GXVV)arg2</em>, <em>(GXVV)arg3</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXGU.lag_daarc500_gps" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Lag</span> <span class="n">the</span> <span class="n">GPS</span> <span class="n">fid</span> <span class="n">values</span> <span class="k">for</span> <span class="n">the</span> <span class="n">DAARC500</span> <span class="n">import</span><span class="o">.</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arg1</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Mag fid values   (GS_DOUBLE)</li>
+<li><strong>arg2</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Mag event values (GS_LONG)</li>
+<li><strong>arg3</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; GPS fid values (GS_DOUBLE, altered on return)</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 7.2.0.</span></p>
+</div>
+<p><strong>Note:</strong></p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">fiducial</span> <span class="n">times</span> <span class="n">recorded</span> <span class="k">for</span> <span class="n">the</span> <span class="n">GPS</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">RMS</span> <span class="n">Instrument</span> <span class="n">DAARC500</span>
+<span class="n">are</span> <span class="n">delayed</span><span class="p">,</span> <span class="ow">and</span> <span class="n">associated</span> <span class="k">with</span> <span class="n">the</span> <span class="s2">&quot;wrong&quot;</span> <span class="n">fid</span> <span class="n">value</span><span class="o">.</span> <span class="n">They</span> <span class="n">should</span> <span class="n">actually</span>
+<span class="n">be</span> <span class="n">moved</span> <span class="n">to</span> <span class="n">the</span> <span class="n">previous</span> <span class="n">fid</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">mag</span> <span class="n">data</span> <span class="n">where</span> <span class="n">the</span> <span class="n">event</span> <span class="n">flag</span> <span class="ow">is</span> <span class="n">non</span><span class="o">-</span><span class="n">zero</span><span class="o">.</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="geosoft.gxapi.GXGU.maxwell_plate_corners">
+<em class="property">static </em><code class="descname">maxwell_plate_corners</code><span class="sig-paren">(</span><em>(float)arg1</em>, <em>(float)arg2</em>, <em>(float)arg3</em>, <em>(float)arg4</em>, <em>(float)arg5</em>, <em>(float)arg6</em>, <em>(float)arg7</em>, <em>(float)arg8</em>, <em>(float_ref)arg9</em>, <em>(float_ref)arg10</em>, <em>(float_ref)arg11</em>, <em>(float_ref)arg12</em>, <em>(float_ref)arg13</em>, <em>(float_ref)arg14</em>, <em>(float_ref)arg15</em>, <em>(float_ref)arg16</em>, <em>(float_ref)arg17</em>, <em>(float_ref)arg18</em>, <em>(float_ref)arg19</em>, <em>(float_ref)arg20</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXGU.maxwell_plate_corners" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Calculate</span> <span class="n">the</span> <span class="n">corner</span> <span class="n">point</span> <span class="n">locations</span> <span class="k">for</span> <span class="n">a</span> <span class="n">Maxwell</span> <span class="n">Plate</span><span class="o">.</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arg1</strong> (<em>float</em>) &#8211; Top-center point, X</li>
+<li><strong>arg2</strong> (<em>float</em>) &#8211; Top-center point, Y</li>
+<li><strong>arg3</strong> (<em>float</em>) &#8211; Top-center point, Z</li>
+<li><strong>arg4</strong> (<em>float</em>) &#8211; dip</li>
+<li><strong>arg5</strong> (<em>float</em>) &#8211; dip-direction</li>
+<li><strong>arg6</strong> (<em>float</em>) &#8211; plunge</li>
+<li><strong>arg7</strong> (<em>float</em>) &#8211; length</li>
+<li><strong>arg8</strong> (<em>float</em>) &#8211; width (height)</li>
+<li><strong>arg9</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; [returned] Corner 1 X</li>
+<li><strong>arg10</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; [returned] Corner 1 Y</li>
+<li><strong>arg11</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; [returned] Corner 1 Z</li>
+<li><strong>arg12</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; [returned] Corner 2 X</li>
+<li><strong>arg13</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; [returned] Corner 2 Y</li>
+<li><strong>arg14</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; [returned] Corner 2 Z</li>
+<li><strong>arg15</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; [returned] Corner 3 X</li>
+<li><strong>arg16</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; [returned] Corner 3 Y</li>
+<li><strong>arg17</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; [returned] Corner 3 Z</li>
+<li><strong>arg18</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; [returned] Corner 4 X</li>
+<li><strong>arg19</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; [returned] Corner 4 Y</li>
+<li><strong>arg20</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; [returned] Corner 4 Z</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 6.1.0.</span></p>
+</div>
+<p><strong>Note:</strong></p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="n">routine</span> <span class="n">calculates</span> <span class="n">the</span> <span class="n">corner</span> <span class="n">locations</span> <span class="n">of</span> <span class="n">plates</span> <span class="n">defined</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">Maxwell</span> <span class="n">Plate</span>
+<span class="n">program</span><span class="p">,</span> <span class="n">given</span> <span class="n">the</span> <span class="n">top</span><span class="o">-</span><span class="n">center</span> <span class="n">location</span> <span class="ow">and</span> <span class="n">plate</span> <span class="n">geometry</span> <span class="n">parameters</span><span class="o">.</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="geosoft.gxapi.GXGU.scan_daarc500_ethernet">
+<em class="property">static </em><code class="descname">scan_daarc500_ethernet</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(int_ref)arg2</em>, <em>(int_ref)arg3</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXGU.scan_daarc500_ethernet" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Scan</span> <span class="n">Ethernet</span> <span class="n">data</span> <span class="kn">from</span> <span class="nn">the</span> <span class="n">RMS</span> <span class="n">Instruments</span> <span class="n">DAARC500</span><span class="o">.</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arg1</strong> (<em>str</em>) &#8211; File to import</li>
+<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; Recognized type</li>
+<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; Number of items</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 7.2.0.</span></p>
+</div>
+<p><strong>Note:</strong></p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Scans</span> <span class="n">the</span> <span class="n">file</span> <span class="n">to</span> <span class="n">see</span> <span class="n">what</span> <span class="n">data</span> <span class="nb">type</span> <span class="ow">is</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">Ethernet</span> <span class="n">file</span><span class="o">.</span>
+<span class="n">Currently</span> <span class="n">only</span> <span class="n">detects</span> <span class="n">GR820</span> <span class="n">types</span><span class="o">.</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="geosoft.gxapi.GXGU.scan_daarc500_serial">
+<em class="property">static </em><code class="descname">scan_daarc500_serial</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(GXVV)arg2</em>, <em>(GXVV)arg3</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXGU.scan_daarc500_serial" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Scan</span> <span class="n">Serial</span> <span class="n">data</span> <span class="kn">from</span> <span class="nn">the</span> <span class="n">RMS</span> <span class="n">Instruments</span> <span class="n">DAARC500</span><span class="o">.</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arg1</strong> (<em>str</em>) &#8211; File to import</li>
+<li><strong>arg2</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; 8 Recognized types - GS_LONG</li>
+<li><strong>arg3</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; 8 Numbers of items - GS_LONG</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 7.2.0.</span></p>
+</div>
+<p><strong>Note:</strong></p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Scans</span> <span class="n">the</span> <span class="n">file</span> <span class="n">to</span> <span class="n">see</span> <span class="n">which</span> <span class="n">of</span> <span class="n">the</span> <span class="mi">8</span> <span class="n">serial</span> <span class="n">channels</span> <span class="n">were</span> <span class="n">used</span> <span class="n">to</span> <span class="n">store</span> <span class="n">data</span><span class="o">.</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="geosoft.gxapi.GXGU.vv_euler">
+<em class="property">static </em><code class="descname">vv_euler</code><span class="sig-paren">(</span><em>(GXVV)arg1</em>, <em>(GXVV)arg2</em>, <em>(GXIMG)arg3</em>, <em>(GXIMG)arg4</em>, <em>(GXIMG)arg5</em>, <em>(GXIMG)arg6</em>, <em>(GXVV)arg7</em>, <em>(GXVV)arg8</em>, <em>(GXVV)arg9</em>, <em>(GXVV)arg10</em>, <em>(GXVV)arg11</em>, <em>(GXVV)arg12</em>, <em>(int)arg13</em>, <em>(float)arg14</em>, <em>(float)arg15</em>, <em>(int)arg16</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXGU.vv_euler" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">Euler</span> <span class="n">solutions</span> <span class="n">of</span> <span class="n">depth</span> <span class="kn">from</span> <span class="nn">VVs</span> <span class="ow">and</span> <span class="n">grids</span><span class="o">.</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arg1</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Input X VV</li>
+<li><strong>arg2</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Input Y VV</li>
+<li><strong>arg3</strong> (<a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXIMG</span></code></a>) &#8211; Field grid</li>
+<li><strong>arg4</strong> (<a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXIMG</span></code></a>) &#8211; dF/dX grid</li>
+<li><strong>arg5</strong> (<a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXIMG</span></code></a>) &#8211; dF/dY grid</li>
+<li><strong>arg6</strong> (<a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXIMG</span></code></a>) &#8211; dF/dZ grid</li>
+<li><strong>arg7</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Output X VV</li>
+<li><strong>arg8</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Output Y VV</li>
+<li><strong>arg9</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Output depth VV</li>
+<li><strong>arg10</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Output background field VV</li>
+<li><strong>arg11</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Output depth uncertainty VV</li>
+<li><strong>arg12</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Output XY uncertainty VV</li>
+<li><strong>arg13</strong> (<em>int</em>) &#8211; Window size</li>
+<li><strong>arg14</strong> (<em>float</em>) &#8211; Structure index</li>
+<li><strong>arg15</strong> (<em>float</em>) &#8211; Weighting factor</li>
+<li><strong>arg16</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#peakeuler-xy"><span class="std std-ref">PEAKEULER_XY constants</span></a></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.0.</span></p>
+</div>
+<p><strong>Note:</strong></p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">All</span> <span class="n">VVs</span> <span class="n">must</span> <span class="n">be</span> <span class="n">REAL</span>
+
+<span class="n">The</span> <span class="n">output</span> <span class="n">X</span> <span class="ow">and</span> <span class="n">Y</span> <span class="n">values</span> <span class="n">are</span> <span class="n">the</span> <span class="n">same</span> <span class="k">as</span> <span class="n">the</span> <span class="n">inputs</span><span class="p">,</span>
+<span class="k">except</span> <span class="k">if</span> <span class="n">PEAKEULER_XY_FIT</span> <span class="ow">is</span> <span class="n">selected</span><span class="o">.</span> <span class="n">All</span> <span class="n">other</span>
+<span class="n">output</span> <span class="n">values</span> <span class="n">are</span> <span class="nb">set</span> <span class="n">to</span> <span class="n">dummy</span> <span class="k">if</span><span class="p">:</span>
+     <span class="n">a</span><span class="p">)</span> <span class="n">The</span> <span class="nb">input</span> <span class="n">X</span> <span class="ow">or</span> <span class="n">Y</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">dummy</span>
+     <span class="n">b</span><span class="p">)</span> <span class="n">The</span> <span class="n">derived</span> <span class="n">window</span> <span class="n">size</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">dummy</span><span class="o">.</span>
+     <span class="n">c</span><span class="p">)</span> <span class="n">The</span> <span class="n">derived</span> <span class="n">solution</span> <span class="ow">is</span> <span class="n">outside</span> <span class="n">the</span> <span class="nb">range</span>
+     <span class="n">d</span><span class="p">)</span> <span class="n">The</span> <span class="n">solution</span> <span class="ow">is</span> <span class="n">invalid</span> <span class="p">(</span><span class="n">singular</span> <span class="n">matrix</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="geosoft.gxapi.GXGU.vv_euler2">
+<em class="property">static </em><code class="descname">vv_euler2</code><span class="sig-paren">(</span><em>(GXVV)arg1</em>, <em>(GXVV)arg2</em>, <em>(GXIMG)arg3</em>, <em>(GXIMG)arg4</em>, <em>(GXIMG)arg5</em>, <em>(GXIMG)arg6</em>, <em>(GXVV)arg7</em>, <em>(GXVV)arg8</em>, <em>(GXVV)arg9</em>, <em>(GXVV)arg10</em>, <em>(GXVV)arg11</em>, <em>(GXVV)arg12</em>, <em>(GXVV)arg13</em>, <em>(float)arg14</em>, <em>(float)arg15</em>, <em>(int)arg16</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXGU.vv_euler2" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">Euler</span> <span class="n">solutions</span> <span class="n">of</span> <span class="n">depth</span> <span class="kn">from</span> <span class="nn">VVs</span> <span class="ow">and</span> <span class="n">grids</span> <span class="p">(</span><span class="n">method</span> <span class="mi">2</span><span class="p">)</span><span class="o">.</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arg1</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Input X VV</li>
+<li><strong>arg2</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Input Y VV</li>
+<li><strong>arg3</strong> (<a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXIMG</span></code></a>) &#8211; Field grid</li>
+<li><strong>arg4</strong> (<a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXIMG</span></code></a>) &#8211; dF/dX grid</li>
+<li><strong>arg5</strong> (<a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXIMG</span></code></a>) &#8211; dF/dY grid</li>
+<li><strong>arg6</strong> (<a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXIMG</span></code></a>) &#8211; dF/dZ grid</li>
+<li><strong>arg7</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Output X VV</li>
+<li><strong>arg8</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Output Y VV</li>
+<li><strong>arg9</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Output depth VV</li>
+<li><strong>arg10</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Output background field VV</li>
+<li><strong>arg11</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Output depth uncertainty VV</li>
+<li><strong>arg12</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Output XY uncertainty VV</li>
+<li><strong>arg13</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Window size (diameters of targets)</li>
+<li><strong>arg14</strong> (<em>float</em>) &#8211; Structure index</li>
+<li><strong>arg15</strong> (<em>float</em>) &#8211; Weighting factor</li>
+<li><strong>arg16</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#peakeuler-xy"><span class="std std-ref">PEAKEULER_XY constants</span></a></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.0.</span></p>
+</div>
+<p><strong>Note:</strong></p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">All</span> <span class="n">VVs</span> <span class="n">must</span> <span class="n">be</span> <span class="n">REAL</span>
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="#geosoft.gxapi.GXGU.vv_euler" title="geosoft.gxapi.GXGU.vv_euler"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXGU.vv_euler()</span></code></a></p>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<div class="section" id="em-err-constants">
+<span id="em-err"></span><h2>EM_ERR constants<a class="headerlink" href="#em-err-constants" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Error</span> <span class="n">Scaling</span>
+</pre></div>
+</div>
+<dl class="attribute">
+<dt id="geosoft.gxapi.EM_ERR_UNSCALED">
+<code class="descclassname">gxapi.</code><code class="descname">EM_ERR_UNSCALED</code><em class="property"> = 0</em><a class="headerlink" href="#geosoft.gxapi.EM_ERR_UNSCALED" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxapi.EM_ERR_LOGSCALING">
+<code class="descclassname">gxapi.</code><code class="descname">EM_ERR_LOGSCALING</code><em class="property"> = 1</em><a class="headerlink" href="#geosoft.gxapi.EM_ERR_LOGSCALING" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="em-inv-constants">
+<span id="em-inv"></span><h2>EM_INV constants<a class="headerlink" href="#em-inv-constants" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Type</span> <span class="n">of</span> <span class="n">Inversion</span>
+</pre></div>
+</div>
+<dl class="attribute">
+<dt id="geosoft.gxapi.EM_INV_INPHASE">
+<code class="descclassname">gxapi.</code><code class="descname">EM_INV_INPHASE</code><em class="property"> = 0</em><a class="headerlink" href="#geosoft.gxapi.EM_INV_INPHASE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxapi.EM_INV_QUADRATURE">
+<code class="descclassname">gxapi.</code><code class="descname">EM_INV_QUADRATURE</code><em class="property"> = 1</em><a class="headerlink" href="#geosoft.gxapi.EM_INV_QUADRATURE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxapi.EM_INV_BOTH">
+<code class="descclassname">gxapi.</code><code class="descname">EM_INV_BOTH</code><em class="property"> = 2</em><a class="headerlink" href="#geosoft.gxapi.EM_INV_BOTH" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="emplate-domain-constants">
+<span id="emplate-domain"></span><h2>EMPLATE_DOMAIN constants<a class="headerlink" href="#emplate-domain-constants" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Type</span> <span class="n">of</span> <span class="n">Domain</span>
+</pre></div>
+</div>
+<dl class="attribute">
+<dt id="geosoft.gxapi.EMPLATE_FREQUENCY">
+<code class="descclassname">gxapi.</code><code class="descname">EMPLATE_FREQUENCY</code><em class="property"> = 1</em><a class="headerlink" href="#geosoft.gxapi.EMPLATE_FREQUENCY" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxapi.EMPLATE_TIME">
+<code class="descclassname">gxapi.</code><code class="descname">EMPLATE_TIME</code><em class="property"> = 9</em><a class="headerlink" href="#geosoft.gxapi.EMPLATE_TIME" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="emplate-tx-constants">
+<span id="emplate-tx"></span><h2>EMPLATE_TX constants<a class="headerlink" href="#emplate-tx-constants" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Orientation</span>
+</pre></div>
+</div>
+<dl class="attribute">
+<dt id="geosoft.gxapi.EMPLATE_TX_X">
+<code class="descclassname">gxapi.</code><code class="descname">EMPLATE_TX_X</code><em class="property"> = 1</em><a class="headerlink" href="#geosoft.gxapi.EMPLATE_TX_X" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxapi.EMPLATE_TX_Y">
+<code class="descclassname">gxapi.</code><code class="descname">EMPLATE_TX_Y</code><em class="property"> = 2</em><a class="headerlink" href="#geosoft.gxapi.EMPLATE_TX_Y" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxapi.EMPLATE_TX_Z">
+<code class="descclassname">gxapi.</code><code class="descname">EMPLATE_TX_Z</code><em class="property"> = 3</em><a class="headerlink" href="#geosoft.gxapi.EMPLATE_TX_Z" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="gu-daarc500-datatype-constants">
+<span id="gu-daarc500-datatype"></span><h2>GU_DAARC500_DATATYPE constants<a class="headerlink" href="#gu-daarc500-datatype-constants" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Supported</span> <span class="n">serial</span> <span class="n">data</span> <span class="n">types</span> <span class="k">for</span> <span class="kn">import</span>
+</pre></div>
+</div>
+<dl class="attribute">
+<dt id="geosoft.gxapi.GU_DAARC500_UNKNOWN">
+<code class="descclassname">gxapi.</code><code class="descname">GU_DAARC500_UNKNOWN</code><em class="property"> = 0</em><a class="headerlink" href="#geosoft.gxapi.GU_DAARC500_UNKNOWN" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxapi.GU_DAARC500_GENERIC_ASCII">
+<code class="descclassname">gxapi.</code><code class="descname">GU_DAARC500_GENERIC_ASCII</code><em class="property"> = 1</em><a class="headerlink" href="#geosoft.gxapi.GU_DAARC500_GENERIC_ASCII" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxapi.GU_DAARC500_GPS">
+<code class="descclassname">gxapi.</code><code class="descname">GU_DAARC500_GPS</code><em class="property"> = 2</em><a class="headerlink" href="#geosoft.gxapi.GU_DAARC500_GPS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxapi.GU_DAARC500_GR820_256D">
+<code class="descclassname">gxapi.</code><code class="descname">GU_DAARC500_GR820_256D</code><em class="property"> = 3</em><a class="headerlink" href="#geosoft.gxapi.GU_DAARC500_GR820_256D" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxapi.GU_DAARC500_GR820_256DU">
+<code class="descclassname">gxapi.</code><code class="descname">GU_DAARC500_GR820_256DU</code><em class="property"> = 4</em><a class="headerlink" href="#geosoft.gxapi.GU_DAARC500_GR820_256DU" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxapi.GU_DAARC500_GR820_512DU">
+<code class="descclassname">gxapi.</code><code class="descname">GU_DAARC500_GR820_512DU</code><em class="property"> = 5</em><a class="headerlink" href="#geosoft.gxapi.GU_DAARC500_GR820_512DU" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxapi.GU_DAARC500_NAV">
+<code class="descclassname">gxapi.</code><code class="descname">GU_DAARC500_NAV</code><em class="property"> = 6</em><a class="headerlink" href="#geosoft.gxapi.GU_DAARC500_NAV" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="peakeuler-xy-constants">
+<span id="peakeuler-xy"></span><h2>PEAKEULER_XY constants<a class="headerlink" href="#peakeuler-xy-constants" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Fit</span> <span class="n">Options</span>
+</pre></div>
+</div>
+<dl class="attribute">
+<dt id="geosoft.gxapi.PEAKEULER_XY_NOFIT">
+<code class="descclassname">gxapi.</code><code class="descname">PEAKEULER_XY_NOFIT</code><em class="property"> = 0</em><a class="headerlink" href="#geosoft.gxapi.PEAKEULER_XY_NOFIT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxapi.PEAKEULER_XY_FIT">
+<code class="descclassname">gxapi.</code><code class="descname">PEAKEULER_XY_FIT</code><em class="property"> = 1</em><a class="headerlink" href="#geosoft.gxapi.PEAKEULER_XY_FIT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.1 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016, Geosoft Inc.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.6.
+    </div>
+  </body>
+</html>

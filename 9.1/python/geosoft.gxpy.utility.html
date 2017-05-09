@@ -1,0 +1,593 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-87443115-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+    <title>geosoft.gxpy.utility submodule &#8212; Geosoft GX Python API 9.1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/maki.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '9.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="Geosoft GX Python API 9.1 documentation" href="index.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.1 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/geosoft.gxpy.utility.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-geosoft.gxpy.utility">
+<span id="geosoft-gxpy-utility-submodule"></span><h1>geosoft.gxpy.utility submodule<a class="headerlink" href="#module-geosoft.gxpy.utility" title="Permalink to this headline">¶</a></h1>
+<p>Utility functions to support Geosoft Python scripts and modules.</p>
+<dl class="exception">
+<dt id="geosoft.gxpy.utility.UtilityException">
+<em class="property">exception </em><code class="descclassname">geosoft.gxpy.utility.</code><code class="descname">UtilityException</code><a class="headerlink" href="#geosoft.gxpy.utility.UtilityException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">Exception</span></code></p>
+<p>Exceptions from this module.</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.1.</span></p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="geosoft.gxpy.utility.check_version">
+<code class="descclassname">geosoft.gxpy.utility.</code><code class="descname">check_version</code><span class="sig-paren">(</span><em>v</em>, <em>raise_on_fail=True</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.utility.check_version" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check the minimum API version.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>v</strong> &#8211; minimum version string required (ie &#8220;9.1&#8221; or &#8220;9.2.4&#8221;)</li>
+<li><strong>raise_on_fail</strong> &#8211; if True, raises an error if the version check fails, returns False otherwise</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">True if version is OK, False otherwise(unless raise_on_fail is False)</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>A valid version consists of two or three dot-separated numeric components, with an optional development version tag
+on the end.  The development version tag consists of the letter &#8216;b&#8217; (for beta) followed by a number.  If the numeric components 
+of two version numbers are equal, then a development version will always be deemed earlier (lesser) than one without.</p>
+<p>The following are valid version numbers (shown in order of used for meeting minimum requirements):</p>
+<blockquote>
+<div><ul class="simple">
+<li>9.1 or 9.1.0  (they are equivalent)</li>
+<li>9.1.1b0 (development version)</li>
+<li>9.1.1</li>
+<li>9.2</li>
+</ul>
+</div></blockquote>
+<p>The following are examples of invalid version numbers:</p>
+<blockquote>
+<div><ul class="simple">
+<li>1</li>
+<li>2.7.2.2</li>
+<li>1.3.a4</li>
+<li>1.3pl1</li>
+<li>1.3c4</li>
+</ul>
+</div></blockquote>
+<p class="last">The rationale for this version numbering system is explained
+in the <a class="reference external" href="https://docs.python.org/3/distutils/">distutils</a> documentation.</p>
+</div>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.1.</span></p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="geosoft.gxpy.utility.decode">
+<code class="descclassname">geosoft.gxpy.utility.</code><code class="descname">decode</code><span class="sig-paren">(</span><em>s</em>, <em>f</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.utility.decode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Decode a string (s) to a numpy format defined by string (f).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>s</strong> &#8211; string to decode</li>
+<li><strong>f</strong> &#8211; <p>format string:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="6%" />
+<col width="94%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>b</td>
+<td>Boolean</td>
+</tr>
+<tr class="row-even"><td>i</td>
+<td>(signed) integer</td>
+</tr>
+<tr class="row-odd"><td>u</td>
+<td>unsigned integer</td>
+</tr>
+<tr class="row-even"><td>f</td>
+<td>floating-point</td>
+</tr>
+<tr class="row-odd"><td>S</td>
+<td>string, interpreted as &#8216;U&#8217; unicode</td>
+</tr>
+<tr class="row-even"><td>a</td>
+<td>string, interpreted as &#8216;U&#8217; unicode</td>
+</tr>
+<tr class="row-odd"><td>U</td>
+<td>unicode, requires length suffix, ie &#8216;U1&#8217;, &#8216;U14&#8217;</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Times:</th><td class="field-body"><p class="first">Times in the form hh:mm:ss.sss return a decimal hour.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Dates:</th><td class="field-body"><p class="first">Dates in form yyyy-mm-dd, yyyy-m-d, yy/mm/dd or yyyy/m/d will be decoded naturally
+and return a decimal Gregorian year. Other date formats will raise a ValueErr.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Errors:</th><td class="field-body"><table border="1" class="first last docutils">
+<colgroup>
+<col width="21%" />
+<col width="79%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>TypeError</td>
+<td>if unable to recognize type</td>
+</tr>
+<tr class="row-even"><td>ValueError</td>
+<td>if there is a problem with the string.</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.1.</span></p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="geosoft.gxpy.utility.dict_from_lst">
+<code class="descclassname">geosoft.gxpy.utility.</code><code class="descname">dict_from_lst</code><span class="sig-paren">(</span><em>lst</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.utility.dict_from_lst" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">python dictionary from a Geosoft GXLST</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.1.</span></p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="geosoft.gxpy.utility.display_message">
+<code class="descclassname">geosoft.gxpy.utility.</code><code class="descname">display_message</code><span class="sig-paren">(</span><em>title</em>, <em>message</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.utility.display_message" title="Permalink to this definition">¶</a></dt>
+<dd><p>Display a message to the user.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>title</strong> &#8211; message title</li>
+<li><strong>message</strong> &#8211; message</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.1.</span></p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="geosoft.gxpy.utility.dtype_gx">
+<code class="descclassname">geosoft.gxpy.utility.</code><code class="descname">dtype_gx</code><span class="sig-paren">(</span><em>gtype</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.utility.dtype_gx" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">numpy dtype from a GX type</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.1.</span></p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="geosoft.gxpy.utility.dummy_mask">
+<code class="descclassname">geosoft.gxpy.utility.</code><code class="descname">dummy_mask</code><span class="sig-paren">(</span><em>npd</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.utility.dummy_mask" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a 1-D dummy mask that is True for all rows  in a 2D numpy array that
+have a Geosoft dummy value.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>npd</strong> &#8211; numpy data array</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">numpy 1D array, True for any row that had a dummy in any data field</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.1.</span></p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="geosoft.gxpy.utility.get_parameters">
+<code class="descclassname">geosoft.gxpy.utility.</code><code class="descname">get_parameters</code><span class="sig-paren">(</span><em>group='_'</em>, <em>parms=None</em>, <em>default=None</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.utility.get_parameters" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get parameters from the Project Parameter Block.  Note that parameter names
+will always be upper-case.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>group</strong> &#8211; name in the parameter block group name</li>
+<li><strong>parms</strong> &#8211; if specified only these items are found and returned, otherwise all are found and returned</li>
+<li><strong>parms</strong> &#8211; default parameter setting returned for parameters not found, otherwise dict will
+not have the parameter.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">dictionary containing group parameters</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.1.</span></p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="geosoft.gxpy.utility.get_shared_dict">
+<code class="descclassname">geosoft.gxpy.utility.</code><code class="descname">get_shared_dict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.utility.get_shared_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a dictionary shared by an external application.
+The shared dictionary is cleared (popped) so a subsequent call will return an empty dictionary.</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.1.</span></p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="geosoft.gxpy.utility.gx_dtype">
+<code class="descclassname">geosoft.gxpy.utility.</code><code class="descname">gx_dtype</code><span class="sig-paren">(</span><em>dtype</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.utility.gx_dtype" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">GX type for a numpy dtype</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.1.</span></p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="geosoft.gxpy.utility.gx_dummy">
+<code class="descclassname">geosoft.gxpy.utility.</code><code class="descname">gx_dummy</code><span class="sig-paren">(</span><em>dtype</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.utility.gx_dummy" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">GX dummy for this dtype</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.1.</span></p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="geosoft.gxpy.utility.project_path">
+<code class="descclassname">geosoft.gxpy.utility.</code><code class="descname">project_path</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.utility.project_path" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the Geosoft project folder path.</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.1.</span></p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="geosoft.gxpy.utility.rdecode">
+<code class="descclassname">geosoft.gxpy.utility.</code><code class="descname">rdecode</code><span class="sig-paren">(</span><em>s</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.utility.rdecode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Geosoft string (number, date, time, geographic) conversion to a number, always works.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>s</strong> &#8211; string to decode</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">decoded number, gxapi.rDUMMY if unable to decode the string</td>
+</tr>
+</tbody>
+</table>
+<p>See rdecode_err(string) for more details.</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.1.</span></p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="geosoft.gxpy.utility.rdecode_err">
+<code class="descclassname">geosoft.gxpy.utility.</code><code class="descname">rdecode_err</code><span class="sig-paren">(</span><em>s</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.utility.rdecode_err" title="Permalink to this definition">¶</a></dt>
+<dd><p>Geosoft string conversion to a number, raising ValueError on failure</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>s</strong> &#8211; string to be decoded</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">float of decoded string</td>
+</tr>
+</tbody>
+</table>
+<dl class="docutils">
+<dt>If unable to decode string:</dt>
+<dd><div class="first last line-block">
+<div class="line">rdecode_err()   raises ValueError</div>
+<div class="line">rdecode()       returns gxapi.rDUMMY</div>
+</div>
+</dd>
+</dl>
+<p>Any string that begins with &#8220;*&#8221; character is interpreted as a dummy.</p>
+<p>If unable to directly convert simple string, decoder will clean-up the string by
+removing leading/trailing white space and converting &#8216;o&#8217; or &#8216;O&#8217; to numeral &#8216;0&#8217;.</p>
+<p>If decoder still fails, it will attempt to decode time and geographic formatted
+strings to return decimal hours or decimal degrees respectively:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Date:</th><td class="field-body"><div class="first last line-block">
+<div class="line">yyyy-mm-dd</div>
+<div class="line">yyyy/mm/dd</div>
+<div class="line">date will be fractional Gregorian year</div>
+</div>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Time:</th><td class="field-body"><div class="first last line-block">
+<div class="line">hh:mm:ss.ssAM/am</div>
+<div class="line">hh:mm:ss.ssPM/pm</div>
+<div class="line">PM/pm adds 12 hours (for example 2:30pm returns 14.5)</div>
+</div>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Geographic:</th><td class="field-body"><div class="first last line-block">
+<div class="line">[+/-]deg mm ss.ss[N/S/E/W/n/s/e/w]</div>
+<div class="line">[+/-]deg.mm.ss.ss[N/S/E/W/n/s/e/w]</div>
+<div class="line">S/s and W/w return negative of decoded value</div>
+<div class="line"><br /></div>
+<div class="line">Example:</div>
+<div class="line">&#8220;-90 15 18.0&#8221; = &#8220;90 15 18.0W&#8221; = &#8220;90.15.18w&#8221;, returns -90.255</div>
+<div class="line">&#8220;14&#8221; = &#8220;14N&#8221; = &#8220;14.00.00&#8221; = &#8220;14 00 00&#8221;, returns 14.0</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Note that mm and ss.ss can go over 60.0 and will be decoded as minutes or seconds
+as presented. For example, &#8220;20 90 0.00&#8221; will return 21.5.</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.1.</span></p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="geosoft.gxpy.utility.run_external_python">
+<code class="descclassname">geosoft.gxpy.utility.</code><code class="descname">run_external_python</code><span class="sig-paren">(</span><em>script</em>, <em>script_args=''</em>, <em>python_args=''</em>, <em>dict=None</em>, <em>console=True</em>, <em>catcherr=True</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.utility.run_external_python" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run a python script as an external program, returning results as a dictionary.
+External program can call gxpy.utility.run_return(dict) to pass a dictionary back to caller.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>script</strong> &#8211; full path of the python script</li>
+<li><strong>dict</strong> &#8211; dictionary to pass to child via set/get_run_dict()</li>
+<li><strong>script_args</strong> &#8211; command line arguments as a string</li>
+<li><strong>python_args</strong> &#8211; command line arguments as a string</li>
+<li><strong>console</strong> &#8211; True (default) will create a separate console for the process.</li>
+<li><strong>catcherr</strong> &#8211; True (default) Catch and re-raise errors from the sub-process.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">dictionary registered gxpy.utility.run_return(dict)</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.1.</span></p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="geosoft.gxpy.utility.save_parameters">
+<code class="descclassname">geosoft.gxpy.utility.</code><code class="descname">save_parameters</code><span class="sig-paren">(</span><em>group='_'</em>, <em>parms={}</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.utility.save_parameters" title="Permalink to this definition">¶</a></dt>
+<dd><p>Save parameters to the Project Parameter Block.  Parameter group names and member names
+are converted to upper-case.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>group</strong> &#8211; parameter block group name</li>
+<li><strong>parms</strong> &#8211; dict containing named parameter settings</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.1.</span></p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="geosoft.gxpy.utility.set_shared_dict">
+<code class="descclassname">geosoft.gxpy.utility.</code><code class="descname">set_shared_dict</code><span class="sig-paren">(</span><em>dict=None</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.utility.set_shared_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Save a dictionary to be shared by an separate application.
+This is a companion file to run_external_python().</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>dict</strong> &#8211; dictionary of parameters to save</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.1.</span></p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="geosoft.gxpy.utility.temp_path">
+<code class="descclassname">geosoft.gxpy.utility.</code><code class="descname">temp_path</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.utility.temp_path" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the Geosoft temporary folder path.</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.1.</span></p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="geosoft.gxpy.utility.time_stamp">
+<code class="descclassname">geosoft.gxpy.utility.</code><code class="descname">time_stamp</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.utility.time_stamp" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="geosoft.gxpy.utility.user_path">
+<code class="descclassname">geosoft.gxpy.utility.</code><code class="descname">user_path</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.utility.user_path" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the Geosoft user configurations folder path.</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.1.</span></p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="geosoft.gxpy.utility.yearFromJulianDay2">
+<code class="descclassname">geosoft.gxpy.utility.</code><code class="descname">yearFromJulianDay2</code><span class="sig-paren">(</span><em>jd1</em>, <em>jd2</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.utility.yearFromJulianDay2" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>jd1</strong> &#8211; part 1 Julian date (<a class="reference external" href="https://pypi.python.org/pypi/jdcal">https://pypi.python.org/pypi/jdcal</a>)</li>
+<li><strong>jd2</strong> &#8211; part 2 Julian date</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">decimal Gregorian year (Western calendar year)</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.1.</span></p>
+</div>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.1 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016, Geosoft Inc.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.6.
+    </div>
+  </body>
+</html>

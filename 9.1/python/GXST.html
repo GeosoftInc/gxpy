@@ -1,0 +1,742 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-87443115-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+    <title>GXST class &#8212; Geosoft GX Python API 9.1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/maki.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '9.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="Geosoft GX Python API 9.1 documentation" href="index.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.1 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">GXST class</a><ul>
+<li><a class="reference internal" href="#st-info-constants">ST_INFO constants</a></li>
+</ul>
+</li>
+</ul>
+
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/GXST.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="gxst-class">
+<span id="gxst"></span><h1>GXST class<a class="headerlink" href="#gxst-class" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="geosoft.gxapi.GXST">
+<em class="property">class </em><code class="descclassname">geosoft.gxapi.</code><code class="descname">GXST</code><a class="headerlink" href="#geosoft.gxapi.GXST" title="Permalink to this definition">¶</a></dt>
+<dd><pre class="literal-block">
+Mono-variate statistics. The ST class is used to accumulate statistical
+information about a set of data. This class is usually used in conjunction
+with others. For instance, <a class="reference internal" href="GXDU.html#geosoft.gxapi.GXDU.stat" title="geosoft.gxapi.GXDU.stat"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXDU.stat()</span></code></a> (see DU) will add a channel's
+data to the ST object, and sComputeST_IMG (see IMG) will compute
+statistics for a grid.
+</pre>
+<p><strong>Note:</strong></p>
+<pre class="literal-block">
+<cite>*</cite><cite>*</cite><cite>*</cite> Histogram ranges and colour zone ranges <cite>*</cite><cite>*</cite><cite>*</cite>
+
+Histogram bins are defined with inclusive minima and exclusive maxima;
+for instance if Min = 0 and Inc = 1, then the second bin would include
+all values z such that  0 &gt;= z &gt; 1 (the first bin has all values &lt; 0).
+
+Colour zones used in displaying grids (ITR, ZON etc...) are the
+opposite, with exclusive minima and inclusive maxima.
+For instance, if a zone is defined from 0 to 1, then it would
+contain all values of z such that 0 &gt; z &gt;= 1.
+
+These definitions mean that it is impossible to perfectly assign
+ITR colours to individual bars of a histogram. The best work-around
+when the data values are integers is to define the colour zones using
+0.5 values between the integers. A general work-around is to make the
+number of histogram bins much larger than the number of colour zones.
+
+See also  ST2 (bi-variate statistics)
+</pre>
+<dl class="staticmethod">
+<dt id="geosoft.gxapi.GXST.create">
+<em class="property">static </em><code class="descname">create</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; GXST:<a class="headerlink" href="#geosoft.gxapi.GXST.create" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="n">method</span> <span class="n">creates</span> <span class="n">a</span> <span class="n">statistics</span> <span class="nb">object</span> <span class="n">which</span> <span class="ow">is</span> <span class="n">used</span> <span class="n">to</span>
+<span class="n">accumulate</span> <span class="n">statistics</span><span class="o">.</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">ST Object</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXST" title="geosoft.gxapi.GXST"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXST</span></code></a></td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.0.</span></p>
+</div>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="geosoft.gxapi.GXST.create_exact">
+<em class="property">static </em><code class="descname">create_exact</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; GXST:<a class="headerlink" href="#geosoft.gxapi.GXST.create_exact" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="n">method</span> <span class="n">creates</span> <span class="n">a</span> <span class="n">statistics</span> <span class="nb">object</span> <span class="n">which</span> <span class="n">stores</span>
+<span class="nb">all</span> <span class="n">values</span><span class="o">.</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">ST Object</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXST" title="geosoft.gxapi.GXST"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXST</span></code></a></td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.1.8.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXST.data">
+<code class="descname">data</code><span class="sig-paren">(</span><em>(float)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXST.data" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Add</span> <span class="n">this</span> <span class="n">value</span> <span class="n">to</span> <span class="n">the</span> <span class="n">statistics</span> <span class="nb">object</span><span class="o">.</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>float</em>) &#8211; Value to Add</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Nothing</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">None</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.0.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXST.data_vv">
+<code class="descname">data_vv</code><span class="sig-paren">(</span><em>(GXVV)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXST.data_vv" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Add</span> <span class="nb">all</span> <span class="n">the</span> <span class="n">values</span> <span class="ow">in</span> <span class="n">this</span> <span class="n">VV</span> <span class="n">to</span> <span class="n">the</span> <span class="n">statistics</span> <span class="nb">object</span><span class="o">.</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; VV object</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Nothing</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">None</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.0.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXST.equivalent_percentile">
+<code class="descname">equivalent_percentile</code><span class="sig-paren">(</span><em>(float)arg1</em><span class="sig-paren">)</span> &rarr; float:<a class="headerlink" href="#geosoft.gxapi.GXST.equivalent_percentile" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Return</span> <span class="n">corresponding</span> <span class="n">Percentile</span> <span class="k">for</span> <span class="n">a</span> <span class="n">Value</span><span class="o">.</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>float</em>) &#8211; input value</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">The percentile at the given value (0 - 100)</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">float</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.8.</span></p>
+</div>
+<p><strong>Note:</strong></p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Statistics</span> <span class="ow">and</span> <span class="n">histogram</span> <span class="n">must</span> <span class="n">have</span> <span class="n">been</span> <span class="n">calculated</span> <span class="n">prior</span> <span class="n">to</span>
+<span class="n">calling</span> <span class="n">this</span> <span class="n">method</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXST.equivalent_value">
+<code class="descname">equivalent_value</code><span class="sig-paren">(</span><em>(float)arg1</em><span class="sig-paren">)</span> &rarr; float:<a class="headerlink" href="#geosoft.gxapi.GXST.equivalent_value" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Return</span> <span class="n">corresponding</span> <span class="n">Value</span> <span class="k">for</span> <span class="n">a</span> <span class="n">Percentile</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>float</em>) &#8211; input percentile (0 - 100)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">The value at the given percentile.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">float</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.8.</span></p>
+</div>
+<p><strong>Note:</strong></p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Statistics</span> <span class="ow">and</span> <span class="n">histogram</span> <span class="n">must</span> <span class="n">have</span> <span class="n">been</span> <span class="n">calculated</span> <span class="n">prior</span> <span class="n">to</span>
+<span class="n">calling</span> <span class="n">this</span> <span class="n">method</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXST.get_histogram_bins">
+<code class="descname">get_histogram_bins</code><span class="sig-paren">(</span><em>(GXVV)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXST.get_histogram_bins" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Retrieve</span> <span class="n">number</span> <span class="n">of</span> <span class="n">items</span> <span class="ow">in</span> <span class="n">each</span> <span class="n">hostogram</span> <span class="nb">bin</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; VV for numbers of items</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Nothing</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">None</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 6.1.0.</span></p>
+</div>
+<p><strong>Note:</strong></p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">length</span> <span class="n">of</span> <span class="n">the</span> <span class="n">returned</span> <span class="n">VV</span> <span class="ow">is</span> <span class="nb">set</span> <span class="n">to</span> <span class="n">the</span> <span class="n">total</span>
+<span class="n">number</span> <span class="n">of</span> <span class="n">bins</span><span class="o">.</span> <span class="n">If</span> <span class="n">a</span> <span class="n">histogram</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">defined</span> <span class="ow">in</span>
+<span class="n">the</span> <span class="n">ST</span><span class="p">,</span> <span class="n">then</span> <span class="n">the</span> <span class="n">returned</span> <span class="n">length</span> <span class="ow">is</span> <span class="n">zero</span><span class="o">.</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXST.get_histogram_info">
+<code class="descname">get_histogram_info</code><span class="sig-paren">(</span><em>(int_ref)arg1</em>, <em>(float_ref)arg2</em>, <em>(float_ref)arg3</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXST.get_histogram_info" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Retrieve</span> <span class="n">number</span> <span class="n">of</span> <span class="n">bins</span><span class="p">,</span> <span class="nb">min</span> <span class="ow">and</span> <span class="nb">max</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">histogram</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; # of bins</li>
+<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Min (value at start of 2nd bin)</li>
+<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Max (value at end of 2nd last bin)</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 6.1.0.</span></p>
+</div>
+<p><strong>Note:</strong></p>
+<pre class="literal-block">
+The items correspond to those in <a class="reference internal" href="#geosoft.gxapi.GXST.histogram2" title="geosoft.gxapi.GXST.histogram2"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXST.histogram2()</span></code></a>.
+If a histogram is not defined in
+the ST, then the returned number of bins is zero, and
+the min and max values will be dummies.
+</pre>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXST.get_info">
+<code class="descname">get_info</code><span class="sig-paren">(</span><em>(int)arg1</em><span class="sig-paren">)</span> &rarr; float:<a class="headerlink" href="#geosoft.gxapi.GXST.get_info" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="n">method</span> <span class="n">allows</span> <span class="n">you</span> <span class="n">to</span> <span class="n">retrieve</span> <span class="p">(</span><span class="ow">and</span> <span class="n">compute</span><span class="p">)</span> <span class="n">the</span>
+<span class="n">information</span> <span class="kn">from</span> <span class="nn">the</span> <span class="n">ST</span> <span class="nb">object</span><span class="o">.</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#st-info"><span class="std std-ref">ST_INFO constants</span></a></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Data you asked for
+GS_R8DM for none</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">float</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.0.</span></p>
+</div>
+<p><strong>Note:</strong></p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">following</span> <span class="n">can</span> <span class="n">only</span> <span class="n">be</span> <span class="n">determined</span> <span class="k">if</span> <span class="n">the</span> <span class="n">ST</span> <span class="n">has</span> <span class="n">recorded</span>
+<span class="n">a</span> <span class="n">histogram</span><span class="p">:</span> <span class="n">ST_MEDIAN</span><span class="p">,</span> <span class="n">ST_MODE</span>
+
+<span class="n">ST_MINPOS</span> <span class="n">can</span> <span class="n">be</span> <span class="n">used</span> <span class="n">to</span> <span class="n">retrieve</span> <span class="n">the</span> <span class="n">smallest</span> <span class="n">value</span> <span class="n">greater</span>
+<span class="n">than</span> <span class="n">zero</span><span class="p">,</span> <span class="n">but</span> <span class="ow">not</span> <span class="kn">from</span> <span class="nn">ST</span> <span class="n">objects</span> <span class="n">recovered</span> <span class="kn">from</span> <span class="nn">serialized</span> <span class="nb">object</span><span class="o">.</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="geosoft.gxapi.GXST.get_norm_prob">
+<em class="property">static </em><code class="descname">get_norm_prob</code><span class="sig-paren">(</span><em>(float)arg1</em><span class="sig-paren">)</span> &rarr; float:<a class="headerlink" href="#geosoft.gxapi.GXST.get_norm_prob" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">return</span> <span class="n">percent</span> <span class="n">value</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>float</em>) &#8211; real</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">real<p>Notes                   this function is based on Normal Cumulative distribution function
+mit to about 5 standard deviations</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">float</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 7.1.0.</span></p>
+</div>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="geosoft.gxapi.GXST.get_norm_prob_x">
+<em class="property">static </em><code class="descname">get_norm_prob_x</code><span class="sig-paren">(</span><em>(float)arg1</em><span class="sig-paren">)</span> &rarr; float:<a class="headerlink" href="#geosoft.gxapi.GXST.get_norm_prob_x" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Return</span> <span class="n">number</span> <span class="n">of</span> <span class="n">sigmas</span> <span class="kn">from</span> <span class="mi">50</span><span class="o">%</span> <span class="n">a</span> <span class="n">given</span> <span class="n">percent</span> <span class="ow">is</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>float</em>) &#8211; real</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">real<p>Notes                   this function is based on Normal Cumulative distribution function
+mit to about 5 standard deviations</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">float</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 7.1.0.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXST.histogram">
+<code class="descname">histogram</code><span class="sig-paren">(</span><em>(int)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXST.histogram" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="n">method</span> <span class="n">prepares</span> <span class="n">ST</span> <span class="k">for</span> <span class="n">recording</span> <span class="n">histogram</span><span class="o">.</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>int</em>) &#8211; # of bins</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Nothing</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">None</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.0.</span></p>
+</div>
+<p><strong>Note:</strong></p>
+<pre class="literal-block">
+The Number of bins includes the one before the minimum
+and the one after the maximum, so it must be a value &gt;2.
+
+IMPORTANT: This function gets the histogram minimum and
+maximum from the current min and max values stored in the ST,
+so this is equivalent to calling
+
+<a class="reference internal" href="#geosoft.gxapi.GXST.histogram2" title="geosoft.gxapi.GXST.histogram2"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXST.histogram2()</span></code></a>( #bins, Min, (Max-Min)/(# bins -2));
+
+You should already have the data loaded in order to call this
+function.
+
+See the note above &quot;Histogram ranges and colour zone ranges&quot;
+</pre>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXST.histogram2">
+<code class="descname">histogram2</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(float)arg2</em>, <em>(float)arg3</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXST.histogram2" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="n">method</span> <span class="n">prepares</span> <span class="n">ST</span> <span class="k">for</span> <span class="n">recording</span> <span class="n">histogram</span><span class="o">.</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arg1</strong> (<em>int</em>) &#8211; # of bins</li>
+<li><strong>arg2</strong> (<em>float</em>) &#8211; Min</li>
+<li><strong>arg3</strong> (<em>float</em>) &#8211; Max</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.0.</span></p>
+</div>
+<p><strong>Note:</strong></p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">Number</span> <span class="n">of</span> <span class="n">bins</span> <span class="n">includes</span> <span class="n">the</span> <span class="n">one</span> <span class="n">before</span> <span class="n">the</span> <span class="n">minimum</span>
+<span class="ow">and</span> <span class="n">the</span> <span class="n">one</span> <span class="n">after</span> <span class="n">the</span> <span class="n">maximum</span><span class="p">,</span> <span class="n">so</span> <span class="n">it</span> <span class="n">must</span> <span class="n">be</span> <span class="n">a</span> <span class="n">value</span> <span class="o">&gt;</span><span class="mf">2.</span>
+<span class="n">The</span> <span class="n">width</span> <span class="n">of</span> <span class="n">the</span> <span class="n">individual</span> <span class="n">bins</span> <span class="n">will</span> <span class="n">be</span> <span class="p">(</span><span class="n">Min</span><span class="o">-</span><span class="n">Max</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="c1"># - 2)</span>
+
+<span class="n">See</span> <span class="n">the</span> <span class="n">note</span> <span class="n">above</span> <span class="s2">&quot;Histogram ranges and colour zone ranges&quot;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXST.is_null">
+<code class="descname">is_null</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; bool<a class="headerlink" href="#geosoft.gxapi.GXST.is_null" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if the instance of <code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXST</span> <span class="pre">is</span> <span class="pre">null</span> <span class="pre">(undefined)</span></code></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if this is a null instance of <a class="reference internal" href="#geosoft.gxapi.GXST" title="geosoft.gxapi.GXST"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXST</span></code></a>, False otherwise.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool`</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXST.normal_test">
+<code class="descname">normal_test</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; float:<a class="headerlink" href="#geosoft.gxapi.GXST.normal_test" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Test</span> <span class="n">the</span> <span class="s2">&quot;normality&quot;</span> <span class="n">of</span> <span class="n">the</span> <span class="n">histogram</span> <span class="n">distribution</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The normality statistic.
+Terminates if no histogram in the ST object.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">float</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.0.</span></p>
+</div>
+<p><strong>Note:</strong></p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="n">function</span> <span class="n">compares</span> <span class="n">the</span> <span class="n">histogram</span> <span class="n">to</span> <span class="n">a</span> <span class="n">normal</span> <span class="n">curve</span> <span class="k">with</span> <span class="n">the</span>
+<span class="n">same</span> <span class="n">mean</span> <span class="ow">and</span> <span class="n">standard</span> <span class="n">deviation</span><span class="o">.</span> <span class="n">The</span> <span class="n">individual</span> <span class="n">counts</span> <span class="n">are</span> <span class="n">normalized</span>
+<span class="n">by</span> <span class="n">the</span> <span class="n">total</span> <span class="n">counts</span><span class="p">,</span> <span class="n">the</span> <span class="nb">bin</span> <span class="n">width</span> <span class="ow">and</span> <span class="n">the</span> <span class="n">standard</span> <span class="n">deviation</span><span class="o">.</span>
+<span class="n">For</span> <span class="n">each</span> <span class="nb">bin</span><span class="p">,</span> <span class="n">the</span> <span class="n">rms</span> <span class="n">difference</span> <span class="n">between</span> <span class="n">the</span> <span class="n">expected</span> <span class="n">probability</span> <span class="ow">and</span>
+<span class="n">the</span> <span class="n">normalized</span> <span class="n">count</span> <span class="ow">is</span> <span class="n">summed</span><span class="p">,</span> <span class="ow">and</span> <span class="n">the</span> <span class="n">final</span> <span class="n">result</span> <span class="ow">is</span> <span class="n">normalized</span> <span class="n">by</span>
+<span class="n">the</span> <span class="n">total</span> <span class="n">number</span> <span class="n">of</span> <span class="n">bins</span><span class="o">.</span> <span class="n">In</span> <span class="n">this</span> <span class="n">way</span> <span class="n">histograms</span> <span class="k">with</span> <span class="n">different</span> <span class="n">means</span><span class="p">,</span>
+<span class="n">standard</span> <span class="n">deviations</span><span class="p">,</span> <span class="n">number</span> <span class="n">of</span> <span class="n">bins</span> <span class="ow">and</span> <span class="n">counts</span> <span class="n">can</span> <span class="n">be</span> <span class="n">compared</span><span class="o">.</span>
+<span class="n">If</span> <span class="n">the</span> <span class="n">histogram</span> <span class="n">were</span> <span class="n">perfectly</span> <span class="n">normal</span><span class="p">,</span> <span class="n">then</span> <span class="n">a</span> <span class="n">value</span> <span class="n">of</span> <span class="mi">0</span> <span class="n">would</span> <span class="n">be</span> <span class="n">returned</span><span class="o">.</span>
+<span class="n">The</span> <span class="n">more</span> <span class="s2">&quot;non-normal&quot;</span><span class="p">,</span> <span class="n">the</span> <span class="n">higher</span> <span class="n">the</span> <span class="n">statistic</span><span class="o">.</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="geosoft.gxapi.GXST.null">
+<em class="property">static </em><code class="descname">null</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; GXST<a class="headerlink" href="#geosoft.gxapi.GXST.null" title="Permalink to this definition">¶</a></dt>
+<dd><p>A null (undefined) instance of <a class="reference internal" href="#geosoft.gxapi.GXST" title="geosoft.gxapi.GXST"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXST</span></code></a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A null <a class="reference internal" href="#geosoft.gxapi.GXST" title="geosoft.gxapi.GXST"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXST</span></code></a></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXST" title="geosoft.gxapi.GXST"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXST</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXST.reset">
+<code class="descname">reset</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXST.reset" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Resets</span> <span class="n">the</span> <span class="n">Statistics</span><span class="o">.</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Nothing</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">None</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.0.</span></p>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<div class="section" id="st-info-constants">
+<span id="st-info"></span><h2>ST_INFO constants<a class="headerlink" href="#st-info-constants" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Information</span> <span class="n">to</span> <span class="n">retrieve</span>
+</pre></div>
+</div>
+<dl class="attribute">
+<dt id="geosoft.gxapi.ST_ITEMS">
+<code class="descclassname">gxapi.</code><code class="descname">ST_ITEMS</code><em class="property"> = 0</em><a class="headerlink" href="#geosoft.gxapi.ST_ITEMS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Number</span> <span class="n">of</span> <span class="n">non</span><span class="o">-</span><span class="n">dummy</span> <span class="n">items</span>
+</pre></div>
+</div>
+<dl class="attribute">
+<dt id="geosoft.gxapi.ST_NPOS">
+<code class="descclassname">gxapi.</code><code class="descname">ST_NPOS</code><em class="property"> = 1</em><a class="headerlink" href="#geosoft.gxapi.ST_NPOS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Number</span> <span class="n">of</span> <span class="n">items</span> <span class="n">greater</span> <span class="n">than</span> <span class="n">zero</span>
+</pre></div>
+</div>
+<dl class="attribute">
+<dt id="geosoft.gxapi.ST_NZERO">
+<code class="descclassname">gxapi.</code><code class="descname">ST_NZERO</code><em class="property"> = 22</em><a class="headerlink" href="#geosoft.gxapi.ST_NZERO" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Number</span> <span class="n">of</span> <span class="n">items</span> <span class="n">equal</span> <span class="n">to</span> <span class="n">zero</span>
+</pre></div>
+</div>
+<dl class="attribute">
+<dt id="geosoft.gxapi.ST_DUMMIES">
+<code class="descclassname">gxapi.</code><code class="descname">ST_DUMMIES</code><em class="property"> = 2</em><a class="headerlink" href="#geosoft.gxapi.ST_DUMMIES" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxapi.ST_MIN">
+<code class="descclassname">gxapi.</code><code class="descname">ST_MIN</code><em class="property"> = 3</em><a class="headerlink" href="#geosoft.gxapi.ST_MIN" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxapi.ST_MAX">
+<code class="descclassname">gxapi.</code><code class="descname">ST_MAX</code><em class="property"> = 4</em><a class="headerlink" href="#geosoft.gxapi.ST_MAX" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxapi.ST_RANGE">
+<code class="descclassname">gxapi.</code><code class="descname">ST_RANGE</code><em class="property"> = 5</em><a class="headerlink" href="#geosoft.gxapi.ST_RANGE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxapi.ST_MEAN">
+<code class="descclassname">gxapi.</code><code class="descname">ST_MEAN</code><em class="property"> = 6</em><a class="headerlink" href="#geosoft.gxapi.ST_MEAN" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxapi.ST_MEDIAN">
+<code class="descclassname">gxapi.</code><code class="descname">ST_MEDIAN</code><em class="property"> = 7</em><a class="headerlink" href="#geosoft.gxapi.ST_MEDIAN" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxapi.ST_MODE">
+<code class="descclassname">gxapi.</code><code class="descname">ST_MODE</code><em class="property"> = 8</em><a class="headerlink" href="#geosoft.gxapi.ST_MODE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxapi.ST_GEOMEAN">
+<code class="descclassname">gxapi.</code><code class="descname">ST_GEOMEAN</code><em class="property"> = 9</em><a class="headerlink" href="#geosoft.gxapi.ST_GEOMEAN" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxapi.ST_VARIANCE">
+<code class="descclassname">gxapi.</code><code class="descname">ST_VARIANCE</code><em class="property"> = 10</em><a class="headerlink" href="#geosoft.gxapi.ST_VARIANCE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxapi.ST_STDDEV">
+<code class="descclassname">gxapi.</code><code class="descname">ST_STDDEV</code><em class="property"> = 11</em><a class="headerlink" href="#geosoft.gxapi.ST_STDDEV" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxapi.ST_STDERR">
+<code class="descclassname">gxapi.</code><code class="descname">ST_STDERR</code><em class="property"> = 12</em><a class="headerlink" href="#geosoft.gxapi.ST_STDERR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxapi.ST_SKEW">
+<code class="descclassname">gxapi.</code><code class="descname">ST_SKEW</code><em class="property"> = 13</em><a class="headerlink" href="#geosoft.gxapi.ST_SKEW" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxapi.ST_KURTOSIS">
+<code class="descclassname">gxapi.</code><code class="descname">ST_KURTOSIS</code><em class="property"> = 14</em><a class="headerlink" href="#geosoft.gxapi.ST_KURTOSIS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxapi.ST_BASE">
+<code class="descclassname">gxapi.</code><code class="descname">ST_BASE</code><em class="property"> = 15</em><a class="headerlink" href="#geosoft.gxapi.ST_BASE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxapi.ST_SUM">
+<code class="descclassname">gxapi.</code><code class="descname">ST_SUM</code><em class="property"> = 16</em><a class="headerlink" href="#geosoft.gxapi.ST_SUM" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Sums</span> <span class="ow">and</span> <span class="n">sums</span> <span class="n">of</span> <span class="n">powers</span>
+</pre></div>
+</div>
+<dl class="attribute">
+<dt id="geosoft.gxapi.ST_SUM2">
+<code class="descclassname">gxapi.</code><code class="descname">ST_SUM2</code><em class="property"> = 17</em><a class="headerlink" href="#geosoft.gxapi.ST_SUM2" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxapi.ST_SUM3">
+<code class="descclassname">gxapi.</code><code class="descname">ST_SUM3</code><em class="property"> = 18</em><a class="headerlink" href="#geosoft.gxapi.ST_SUM3" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxapi.ST_SUM4">
+<code class="descclassname">gxapi.</code><code class="descname">ST_SUM4</code><em class="property"> = 19</em><a class="headerlink" href="#geosoft.gxapi.ST_SUM4" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxapi.ST_MINPOS">
+<code class="descclassname">gxapi.</code><code class="descname">ST_MINPOS</code><em class="property"> = 21</em><a class="headerlink" href="#geosoft.gxapi.ST_MINPOS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Smallest</span> <span class="n">value</span> <span class="n">greater</span> <span class="n">than</span> <span class="n">zero</span><span class="o">.</span>
+</pre></div>
+</div>
+<dl class="attribute">
+<dt id="geosoft.gxapi.ST_HIST_MAXCOUNT">
+<code class="descclassname">gxapi.</code><code class="descname">ST_HIST_MAXCOUNT</code><em class="property"> = 100</em><a class="headerlink" href="#geosoft.gxapi.ST_HIST_MAXCOUNT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.1 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016, Geosoft Inc.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.6.
+    </div>
+  </body>
+</html>

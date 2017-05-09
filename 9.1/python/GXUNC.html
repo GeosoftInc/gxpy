@@ -1,0 +1,264 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-87443115-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+    <title>GXUNC class &#8212; Geosoft GX Python API 9.1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/maki.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '9.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="Geosoft GX Python API 9.1 documentation" href="index.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.1 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">GXUNC class</a><ul>
+<li><a class="reference internal" href="#utf8-constants">UTF8 constants</a></li>
+</ul>
+</li>
+</ul>
+
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/GXUNC.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="gxunc-class">
+<span id="gxunc"></span><h1>GXUNC class<a class="headerlink" href="#gxunc-class" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="geosoft.gxapi.GXUNC">
+<em class="property">class </em><code class="descclassname">geosoft.gxapi.</code><code class="descname">GXUNC</code><a class="headerlink" href="#geosoft.gxapi.GXUNC" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="n">library</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">a</span> <span class="n">class</span><span class="o">.</span> <span class="n">Use</span> <span class="n">the</span> <span class="n">UNC</span> <span class="n">library</span> <span class="n">functions</span>
+<span class="n">to</span> <span class="n">work</span> <span class="k">with</span> <span class="n">Unicode</span> <span class="n">characters</span> <span class="ow">and</span> <span class="n">strings</span><span class="o">.</span> <span class="n">Since</span> <span class="n">version</span> <span class="mf">6.2</span>
+<span class="nb">all</span> <span class="n">strings</span> <span class="n">are</span> <span class="n">represented</span> <span class="n">internally</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">the</span> <span class="n">GX</span> <span class="n">engine</span>
+<span class="k">as</span> <span class="n">UTF</span><span class="o">-</span><span class="mf">8.</span> <span class="n">The</span> <span class="n">character</span> <span class="nb">set</span> <span class="n">concept</span> <span class="n">was</span> <span class="n">discarded</span> <span class="k">as</span> <span class="n">a</span> <span class="n">way</span> <span class="n">to</span>
+<span class="n">work</span> <span class="k">with</span> <span class="n">characters</span> <span class="n">that</span> <span class="n">does</span> <span class="ow">not</span> <span class="n">fall</span> <span class="n">within</span> <span class="n">the</span> <span class="n">normal</span>
+<span class="n">ASCII</span> <span class="nb">range</span> <span class="mh">0x01</span><span class="o">-</span><span class="mh">0x7F</span><span class="o">.</span> <span class="n">The</span> <span class="n">utilities</span> <span class="n">here</span> <span class="n">aids</span> <span class="k">with</span> <span class="nb">any</span> <span class="n">new</span>
+<span class="n">functionality</span> <span class="n">that</span> <span class="ow">is</span> <span class="n">now</span> <span class="n">possible</span> <span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">g</span><span class="o">.</span> <span class="n">an</span> <span class="n">expanded</span> <span class="n">symbol</span> <span class="nb">range</span>
+<span class="k">with</span> <span class="n">TrueType</span> <span class="n">fonts</span><span class="p">)</span><span class="o">.</span>
+</pre></div>
+</div>
+<dl class="staticmethod">
+<dt id="geosoft.gxapi.GXUNC.is_valid_utf16_char">
+<em class="property">static </em><code class="descname">is_valid_utf16_char</code><span class="sig-paren">(</span><em>(int)arg1</em><span class="sig-paren">)</span> &rarr; bool:<a class="headerlink" href="#geosoft.gxapi.GXUNC.is_valid_utf16_char" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Check</span> <span class="k">if</span> <span class="n">the</span> <span class="n">UTF</span><span class="o">-</span><span class="mi">16</span> <span class="n">value</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">valid</span> <span class="n">Unicode</span> <span class="n">character</span> <span class="n">code</span> <span class="n">point</span><span class="o">.</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>int</em>) &#8211; UTF-16 value (32-bit int, lower 16 bits used, upper bits reserved for future use)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">bool</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 6.2.0.</span></p>
+</div>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="geosoft.gxapi.GXUNC.utf16_val_to_str">
+<em class="property">static </em><code class="descname">utf16_val_to_str</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(str_ref)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXUNC.utf16_val_to_str" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Convert</span> <span class="n">a</span> <span class="n">UTF</span><span class="o">-</span><span class="mi">16</span> <span class="n">value</span> <span class="n">to</span> <span class="n">a</span> <span class="n">UTF</span><span class="o">-</span><span class="mi">8</span> <span class="n">encoded</span> <span class="n">string</span><span class="o">.</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arg1</strong> (<em>int</em>) &#8211; UTF-16 value (32-bit int, lower 16 bits used, upper bits reserved for future use)</li>
+<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; Converted string</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 6.2.0.</span></p>
+</div>
+<p><strong>Note:</strong></p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">An</span> <span class="n">empty</span> <span class="n">string</span> <span class="n">will</span> <span class="n">be</span> <span class="n">returned</span> <span class="k">for</span> <span class="n">invalid</span> <span class="n">symbols</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="geosoft.gxapi.GXUNC.valid_symbol">
+<em class="property">static </em><code class="descname">valid_symbol</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(bool)arg2</em>, <em>(int)arg3</em><span class="sig-paren">)</span> &rarr; bool:<a class="headerlink" href="#geosoft.gxapi.GXUNC.valid_symbol" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">See</span> <span class="k">if</span> <span class="n">a</span> <span class="n">Symbol</span> <span class="n">number</span> <span class="ow">is</span> <span class="n">valid</span> <span class="ow">in</span> <span class="n">a</span> <span class="n">particular</span> <span class="n">font</span><span class="o">.</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arg1</strong> (<em>str</em>) &#8211; Face name (undecorated)</li>
+<li><strong>arg2</strong> (<em>bool</em>) &#8211; Geosoft font? bool</li>
+<li><strong>arg3</strong> (<em>int</em>) &#8211; symbol number</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">bool</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">bool</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 6.2.0.</span></p>
+</div>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="geosoft.gxapi.GXUNC.validate_symbols">
+<em class="property">static </em><code class="descname">validate_symbols</code><span class="sig-paren">(</span><em>(GXVV)arg1</em>, <em>(str)arg2</em>, <em>(bool)arg3</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXUNC.validate_symbols" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">High</span> <span class="n">performance</span> <span class="n">method</span> <span class="n">to</span> <span class="n">see</span> <span class="k">if</span> <span class="n">a</span> <span class="nb">set</span> <span class="n">of</span> <span class="n">symbols</span>
+<span class="n">are</span> <span class="n">valid</span> <span class="ow">in</span> <span class="n">a</span> <span class="n">particular</span> <span class="n">font</span><span class="o">.</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arg1</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; VV of symbols</li>
+<li><strong>arg2</strong> (<em>str</em>) &#8211; Face name (undecorated)</li>
+<li><strong>arg3</strong> (<em>bool</em>) &#8211; Geosoft font? bool</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 6.2.0.</span></p>
+</div>
+<p><strong>Note:</strong></p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Invalid</span> <span class="n">symbols</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">VV</span> <span class="n">will</span> <span class="n">be</span> <span class="nb">set</span> <span class="n">to</span> <span class="o">-</span><span class="mi">1</span> <span class="n">by</span> <span class="n">this</span> <span class="n">call</span><span class="o">.</span> <span class="n">VV</span> <span class="n">has</span> <span class="n">to</span> <span class="n">be</span> <span class="n">of</span> <span class="nb">type</span> <span class="n">GS_LONG</span><span class="o">.</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<div class="section" id="utf8-constants">
+<span id="utf8"></span><h2>UTF8 constants<a class="headerlink" href="#utf8-constants" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">UTF</span><span class="o">-</span><span class="mi">8</span> <span class="n">Defines</span>
+</pre></div>
+</div>
+<dl class="attribute">
+<dt id="geosoft.gxapi.UTF8_MAX_CHAR">
+<code class="descclassname">gxapi.</code><code class="descname">UTF8_MAX_CHAR</code><em class="property"> = 5</em><a class="headerlink" href="#geosoft.gxapi.UTF8_MAX_CHAR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Maximum</span> <span class="n">width</span> <span class="n">of</span> <span class="n">a</span> <span class="n">single</span> <span class="n">Unicode</span> <span class="n">code</span> <span class="n">point</span> <span class="k">as</span> <span class="n">a</span> <span class="n">UTF8</span> <span class="n">string</span><span class="p">,</span> <span class="n">including</span> <span class="n">terminator</span> <span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.1 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016, Geosoft Inc.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.6.
+    </div>
+  </body>
+</html>

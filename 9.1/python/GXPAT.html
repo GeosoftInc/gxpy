@@ -1,0 +1,210 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-87443115-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+    <title>GXPAT class &#8212; Geosoft GX Python API 9.1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/maki.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '9.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="Geosoft GX Python API 9.1 documentation" href="index.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.1 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/GXPAT.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="gxpat-class">
+<span id="gxpat"></span><h1>GXPAT class<a class="headerlink" href="#gxpat-class" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="geosoft.gxapi.GXPAT">
+<em class="property">class </em><code class="descclassname">geosoft.gxapi.</code><code class="descname">GXPAT</code><a class="headerlink" href="#geosoft.gxapi.GXPAT" title="Permalink to this definition">¶</a></dt>
+<dd><pre class="literal-block">
+A PAT object is created from a Geosoft-format pattern file.
+It contains all the individual patterns listed in the file.
+
+Notes           You may create your own fill patterns should be added to the &quot;user.pat&quot;
+le in the &lt;geosoft&gt;useretc directory.
+
+you wish to add your own fill patterns, create a file named user.pat in
+e &lt;geosoft&gt;/User/ directory and add your own fill patterns in the number
+nge 20000 to 29999.
+</pre>
+<dl class="staticmethod">
+<dt id="geosoft.gxapi.GXPAT.create">
+<em class="property">static </em><code class="descname">create</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; GXPAT:<a class="headerlink" href="#geosoft.gxapi.GXPAT.create" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Creates</span> <span class="n">a</span> <span class="n">pattern</span> <span class="nb">object</span> <span class="k">with</span> <span class="n">current</span> <span class="n">default</span> <span class="n">patterns</span><span class="o">.</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">PAT object</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXPAT" title="geosoft.gxapi.GXPAT"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXPAT</span></code></a></td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.0.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXPAT.get_lst">
+<code class="descname">get_lst</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(GXLST)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXPAT.get_lst" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Copies</span> <span class="nb">all</span> <span class="n">pattern</span> <span class="n">names</span> <span class="n">into</span> <span class="n">a</span> <span class="n">LST</span> <span class="nb">object</span><span class="o">.</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arg1</strong> (<em>str</em>) &#8211; Class name (&#8220;&#8221; for all classes)</li>
+<li><strong>arg2</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXLST</span></code></a>) &#8211; LST Handle</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.0.</span></p>
+</div>
+<p><strong>Note:</strong></p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Returns</span> <span class="n">a</span> <span class="nb">list</span> <span class="n">of</span> <span class="n">the</span> <span class="n">available</span> <span class="n">patterns</span><span class="o">.</span>
+<span class="n">There</span> <span class="n">will</span> <span class="n">always</span> <span class="n">be</span> <span class="n">at</span> <span class="n">least</span> <span class="n">two</span> <span class="n">items</span><span class="p">,</span>
+<span class="s2">&quot;None&quot;</span> <span class="ow">and</span> <span class="s2">&quot;Solid Fill&quot;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXPAT.is_null">
+<code class="descname">is_null</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; bool<a class="headerlink" href="#geosoft.gxapi.GXPAT.is_null" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if the instance of <code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXPAT</span> <span class="pre">is</span> <span class="pre">null</span> <span class="pre">(undefined)</span></code></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if this is a null instance of <a class="reference internal" href="#geosoft.gxapi.GXPAT" title="geosoft.gxapi.GXPAT"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXPAT</span></code></a>, False otherwise.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool`</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="geosoft.gxapi.GXPAT.null">
+<em class="property">static </em><code class="descname">null</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; GXPAT<a class="headerlink" href="#geosoft.gxapi.GXPAT.null" title="Permalink to this definition">¶</a></dt>
+<dd><p>A null (undefined) instance of <a class="reference internal" href="#geosoft.gxapi.GXPAT" title="geosoft.gxapi.GXPAT"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXPAT</span></code></a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A null <a class="reference internal" href="#geosoft.gxapi.GXPAT" title="geosoft.gxapi.GXPAT"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXPAT</span></code></a></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXPAT" title="geosoft.gxapi.GXPAT"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXPAT</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.1 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016, Geosoft Inc.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.6.
+    </div>
+  </body>
+</html>

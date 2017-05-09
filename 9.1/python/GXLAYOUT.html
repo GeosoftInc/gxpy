@@ -1,0 +1,617 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-87443115-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+    <title>GXLAYOUT class &#8212; Geosoft GX Python API 9.1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/maki.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '9.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="Geosoft GX Python API 9.1 documentation" href="index.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.1 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">GXLAYOUT class</a><ul>
+<li><a class="reference internal" href="#layout-constr-constants">LAYOUT_CONSTR constants</a></li>
+</ul>
+</li>
+</ul>
+
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/GXLAYOUT.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="gxlayout-class">
+<span id="gxlayout"></span><h1>GXLAYOUT class<a class="headerlink" href="#gxlayout-class" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="geosoft.gxapi.GXLAYOUT">
+<em class="property">class </em><code class="descclassname">geosoft.gxapi.</code><code class="descname">GXLAYOUT</code><a class="headerlink" href="#geosoft.gxapi.GXLAYOUT" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Layout</span> <span class="k">class</span> <span class="nc">for</span> <span class="n">generic</span> <span class="n">relative</span> <span class="n">layout</span> <span class="n">calculation</span>
+
+<span class="n">The</span> <span class="n">relative</span> <span class="n">layout</span> <span class="n">algorithm</span> <span class="n">allows</span> <span class="n">a</span> <span class="n">logical</span> <span class="n">organization</span> <span class="n">of</span> <span class="n">layout</span> <span class="n">rectangles</span><span class="o">.</span>
+<span class="n">You</span> <span class="n">can</span> <span class="nb">set</span> <span class="n">constraints</span> <span class="k">with</span> <span class="n">English</span><span class="o">-</span><span class="n">like</span> <span class="n">semantics</span><span class="o">.</span> <span class="n">For</span> <span class="n">example</span><span class="p">:</span>
+
+<span class="s2">&quot;Set the left side of rectangle 1 equal to the right side of rectangle 2 plus 10 pixels.&quot;</span>
+<span class="s2">&quot;Set the bottom of rectangle 1 to 25 percent of the height of rectangle 2.&quot;</span>
+<span class="s2">&quot;Move node 1 such that its bottom is equal to the top of rectangle 2 minus 10 pixels.&quot;</span>
+
+<span class="n">The</span> <span class="n">last</span> <span class="n">constraint</span> <span class="nb">set</span> <span class="n">would</span> <span class="n">enjoy</span> <span class="n">priority</span> <span class="n">over</span> <span class="nb">any</span> <span class="n">others</span> <span class="k">as</span> <span class="n">it</span> <span class="n">would</span> <span class="n">be</span>
+<span class="n">the</span> <span class="n">last</span> <span class="n">one</span> <span class="n">that</span> <span class="n">would</span> <span class="n">influence</span> <span class="n">the</span> <span class="n">rectangle</span> <span class="n">calculations</span><span class="o">.</span> <span class="n">See</span> <span class="n">the</span> <span class="n">notes</span> <span class="k">for</span> <span class="n">iSetConstraint</span>
+<span class="k">for</span> <span class="n">more</span> <span class="n">details</span><span class="o">.</span>
+</pre></div>
+</div>
+<dl class="method">
+<dt id="geosoft.gxapi.GXLAYOUT.add_constraint">
+<code class="descname">add_constraint</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(int)arg2</em>, <em>(int)arg3</em>, <em>(int)arg4</em>, <em>(float)arg5</em>, <em>(float)arg6</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXLAYOUT.add_constraint" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Add</span> <span class="n">a</span> <span class="n">constraint</span> <span class="n">between</span> <span class="nb">any</span> <span class="n">two</span> <span class="n">rectangles</span> <span class="ow">or</span> <span class="n">to</span> <span class="n">one</span> <span class="k">with</span> <span class="n">absolute</span> <span class="n">positioning</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arg1</strong> (<em>int</em>) &#8211; From rectangle (Or -1 for parent)</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#layout-constr"><span class="std std-ref">LAYOUT_CONSTR constants</span></a> From constraint flag</li>
+<li><strong>arg3</strong> (<em>int</em>) &#8211; To rectangle (Or -1 for parent Or -2 for absolute positioning)</li>
+<li><strong>arg4</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#layout-constr"><span class="std std-ref">LAYOUT_CONSTR constants</span></a> To constraint flag</li>
+<li><strong>arg5</strong> (<em>float</em>) &#8211; Offset modifier</li>
+<li><strong>arg6</strong> (<em>float</em>) &#8211; Multiplicative modifier</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">0 - OK
+1 - Error</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 6.3.0.</span></p>
+</div>
+<p><strong>Note:</strong></p>
+<pre class="literal-block">
+Constraints can be applied between 2 rectangles in the layout, or to 1 rectangle with
+absolute positioning. Use the constraints to control left, right, bottom, top,
+width, height, or centering configurations. Examples:
+
+(ordered as rectangle from, constraint from, rectangle to, constraint to, offset modifier, multiplicative modifier)
+
+A, LAYOUT_CONSTR_LEFT, B, LAYOUT_CONSTR_LEFT, 0, 0, 1.0                                Set left position of A equal to left pos of B
+A, LAYOUT_CONSTR_LEFT, B, LAYOUT_CONSTR_RIGHT, 0, 0, 1.0                               Set left pos of A equal to right of B
+
+The offset modifier is used for additive manipulation of constraints
+A, LAYOUT_CONSTR_LEFT, B, LAYOUT_CONSTR_LEFT, 10, 0, 1.0                               Set left pos of A equal to left of B, plus 10
+A, LAYOUT_CONSTR_BOTTOM, B, LAYOUT_CONSTR_TOP, -20, 0, 1.0                     Set bottom of A equal to top of B, minus 20
+
+Multiplicative manipulation of constraints
+A, LAYOUT_CONSTR_WIDTH, B, LAYOUT_CONSTR_WIDTH, 0, 0.5                    Set the width of A equal to 0.5 times the width of B
+A, LAYOUT_CONSTR_HEIGHT, B, LAYOUT_CONSTR_WIDTH, 0, 1.2                   Set the height of A equal to 1.2 times the width of B
+
+You can use BOTH the multiplicative and offset modifiers in conjunction (multiplicative gets precedence)
+A, LAYOUT_CONSTR_WIDTH, B, LAYOUT_CONSTR_WIDTH, 10, 0.5                           A(width) = (0.5 <cite>*</cite> B(width)) + 10
+A, LAYOUT_CONSTR_LEFT, B, LAYOUT_CONSTR_WIDTH, -20, 0.1                   A(left) = (0.1 <cite>*</cite> B(width)) + (-20)
+
+If second node is -2, use absolute positioning
+A,LAYOUT_CONSTR_LEFT,-2,&lt;ignored&gt;,25,&lt;ignored&gt;,&lt;ignored&gt;                       Position left of A at position 25
+A,LAYOUT_CONSTR_WIDTH,-2,&lt;ignored&gt;,30,&lt;ignored&gt;,&lt;ignored&gt;                      Set width of A to 30
+
+Use the MOVE constraints to move an entire window without resizing
+A, LAYOUT_CONSTR_MOVEL, B, LAYOUT_CONSTR_LEFT, 0, 0, 1.0                          Move node A, align left with left side of B
+A, LAYOUT_CONSTR_MOVEL, B, LAYOUT_CONSTR_RIGHT, 0, 0, 1.0                      Move node A, align left with right side of B
+A, LAYOUT_CONSTR_MOVET, B, LAYOUT_CONSTR_WIDTH, 0, 0, 1.0                      Move node A, align bottom to position equal to width of B
+A, LAYOUT_CONSTR_MOVER, B, LAYOUT_CONSTR_RIGHT, 10, 1.1                   Move node A, align right to 1.1<cite>*</cite>right of B, plus 10
+A, LAYOUT_CONSTR_MOVEL, NULL, 10, 0, 1.0                                         Move node A, align left at position 10
+</pre>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXLAYOUT.add_rectangle">
+<code class="descname">add_rectangle</code><span class="sig-paren">(</span><em>(float)arg1</em>, <em>(float)arg2</em>, <em>(float)arg3</em>, <em>(float)arg4</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXLAYOUT.add_rectangle" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Adds</span> <span class="n">a</span> <span class="n">rectangle</span> <span class="k">as</span> <span class="n">one</span> <span class="n">of</span> <span class="n">the</span> <span class="n">layout</span><span class="s1">&#39;s children (Higer.</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arg1</strong> (<em>float</em>) &#8211; Rectangle Min X   (All 0&#8217;s for undefined allowed)</li>
+<li><strong>arg2</strong> (<em>float</em>) &#8211; Rectangle Min Y</li>
+<li><strong>arg3</strong> (<em>float</em>) &#8211; Rectangle Max X</li>
+<li><strong>arg4</strong> (<em>float</em>) &#8211; Rectangle Max Y</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Rectangle number, -1 on error</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 6.3.0.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXLAYOUT.calculate_rects">
+<code class="descname">calculate_rects</code><span class="sig-paren">(</span><em>(float_ref)arg1</em>, <em>(float_ref)arg2</em>, <em>(float_ref)arg3</em>, <em>(float_ref)arg4</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXLAYOUT.calculate_rects" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Calculate</span> <span class="n">new</span> <span class="n">positions</span> <span class="n">based</span> <span class="n">on</span> <span class="n">initial</span> <span class="n">conditions</span> <span class="ow">and</span> <span class="n">constraints</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Parent Rectangle Min X after calculation</li>
+<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Parent Rectangle Min Y after calculation</li>
+<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Parent Rectangle Max X after calculation</li>
+<li><strong>arg4</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Parent Rectangle Max Y after calculation</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 6.3.0.</span></p>
+</div>
+<p><strong>Note:</strong></p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Use</span> <span class="n">iGetRectangle</span> <span class="n">to</span> <span class="n">obtain</span> <span class="n">the</span> <span class="n">results</span> <span class="k">for</span> <span class="n">the</span> <span class="n">other</span> <span class="n">rectangles</span><span class="o">.</span> <span class="n">Depending</span>
+<span class="n">on</span> <span class="n">the</span> <span class="n">constraints</span> <span class="nb">set</span> <span class="n">the</span> <span class="n">parent</span> <span class="n">rectangle</span> <span class="n">may</span> <span class="n">also</span> <span class="n">change</span>
+<span class="n">after</span> <span class="n">the</span> <span class="n">calculation</span> <span class="p">(</span><span class="n">returned</span> <span class="n">here</span> <span class="k">for</span> <span class="n">convenience</span><span class="p">)</span><span class="o">.</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXLAYOUT.clear_all">
+<code class="descname">clear_all</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXLAYOUT.clear_all" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Remove</span> <span class="nb">all</span> <span class="n">children</span> <span class="ow">and</span> <span class="n">constraints</span> <span class="kn">from</span> <span class="nn">layout</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Nothing</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">None</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 6.3.0.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXLAYOUT.clear_constraints">
+<code class="descname">clear_constraints</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXLAYOUT.clear_constraints" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Remove</span> <span class="nb">all</span> <span class="n">constraints</span> <span class="kn">from</span> <span class="nn">layout</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Nothing</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">None</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 6.3.0.</span></p>
+</div>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="geosoft.gxapi.GXLAYOUT.create">
+<em class="property">static </em><code class="descname">create</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(str)arg2</em><span class="sig-paren">)</span> &rarr; GXLAYOUT:<a class="headerlink" href="#geosoft.gxapi.GXLAYOUT.create" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Creates</span> <span class="n">a</span> <span class="n">layout</span> <span class="n">calculation</span> <span class="nb">object</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arg1</strong> (<em>int</em>) &#8211; Initial number of objects (may be 0)</li>
+<li><strong>arg2</strong> (<em>str</em>) &#8211; Optional name of parent layout (may be empty)</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">LAYOUT object.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="#geosoft.gxapi.GXLAYOUT" title="geosoft.gxapi.GXLAYOUT"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXLAYOUT</span></code></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 6.3.0.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXLAYOUT.get_rect_name">
+<code class="descname">get_rect_name</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(str_ref)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXLAYOUT.get_rect_name" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Gets</span> <span class="n">an</span> <span class="n">optional</span> <span class="n">name</span> <span class="n">the</span> <span class="n">current</span> <span class="n">info</span> <span class="k">for</span> <span class="n">a</span> <span class="n">rectangle</span> <span class="ow">or</span> <span class="n">the</span> <span class="n">parent</span> <span class="n">layout</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arg1</strong> (<em>int</em>) &#8211; Rectangle to get info for (-1 for parent)</li>
+<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; Buffer for name of the rectangle</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 6.3.0.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXLAYOUT.get_rectangle">
+<code class="descname">get_rectangle</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(float_ref)arg2</em>, <em>(float_ref)arg3</em>, <em>(float_ref)arg4</em>, <em>(float_ref)arg5</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXLAYOUT.get_rectangle" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Gets</span> <span class="n">the</span> <span class="n">current</span> <span class="n">bounds</span> <span class="k">for</span> <span class="n">a</span> <span class="n">rectangle</span> <span class="ow">or</span> <span class="n">the</span> <span class="n">parent</span> <span class="n">layout</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arg1</strong> (<em>int</em>) &#8211; Rectangle to get info for (-1 for parent)</li>
+<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Rectangle Min X</li>
+<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Rectangle Min Y</li>
+<li><strong>arg4</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Rectangle Max X</li>
+<li><strong>arg5</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Rectangle Max Y</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 6.3.0.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXLAYOUT.is_null">
+<code class="descname">is_null</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; bool<a class="headerlink" href="#geosoft.gxapi.GXLAYOUT.is_null" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if the instance of <code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXLAYOUT</span> <span class="pre">is</span> <span class="pre">null</span> <span class="pre">(undefined)</span></code></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if this is a null instance of <a class="reference internal" href="#geosoft.gxapi.GXLAYOUT" title="geosoft.gxapi.GXLAYOUT"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXLAYOUT</span></code></a>, False otherwise.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool`</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="geosoft.gxapi.GXLAYOUT.null">
+<em class="property">static </em><code class="descname">null</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; GXLAYOUT<a class="headerlink" href="#geosoft.gxapi.GXLAYOUT.null" title="Permalink to this definition">¶</a></dt>
+<dd><p>A null (undefined) instance of <a class="reference internal" href="#geosoft.gxapi.GXLAYOUT" title="geosoft.gxapi.GXLAYOUT"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXLAYOUT</span></code></a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A null <a class="reference internal" href="#geosoft.gxapi.GXLAYOUT" title="geosoft.gxapi.GXLAYOUT"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXLAYOUT</span></code></a></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXLAYOUT" title="geosoft.gxapi.GXLAYOUT"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXLAYOUT</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXLAYOUT.num_rectangles">
+<code class="descname">num_rectangles</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXLAYOUT.num_rectangles" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Returns</span> <span class="n">the</span> <span class="n">number</span> <span class="n">of</span> <span class="n">children</span> <span class="ow">in</span> <span class="n">the</span> <span class="nb">list</span><span class="o">.</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Number of rectangles not counting the parent</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 6.3.0.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXLAYOUT.set_rectangle">
+<code class="descname">set_rectangle</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(float)arg2</em>, <em>(float)arg3</em>, <em>(float)arg4</em>, <em>(float)arg5</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXLAYOUT.set_rectangle" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Sets</span> <span class="n">the</span> <span class="n">current</span> <span class="n">bounds</span> <span class="k">for</span> <span class="n">a</span> <span class="n">rectangle</span> <span class="n">previously</span> <span class="n">added</span> <span class="n">to</span> <span class="n">the</span> <span class="n">layout</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arg1</strong> (<em>int</em>) &#8211; Rectangle to set info for (-1 for parent)</li>
+<li><strong>arg2</strong> (<em>float</em>) &#8211; Rectangle Min X</li>
+<li><strong>arg3</strong> (<em>float</em>) &#8211; Rectangle Min Y</li>
+<li><strong>arg4</strong> (<em>float</em>) &#8211; Rectangle Max X</li>
+<li><strong>arg5</strong> (<em>float</em>) &#8211; Rectangle Max Y</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 6.3.0.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXLAYOUT.set_rectangle_name">
+<code class="descname">set_rectangle_name</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(str)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXLAYOUT.set_rectangle_name" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Sets</span> <span class="n">an</span> <span class="n">optional</span> <span class="n">name</span> <span class="n">the</span> <span class="n">current</span> <span class="n">info</span> <span class="k">for</span> <span class="n">a</span> <span class="n">rectangle</span> <span class="ow">or</span> <span class="n">the</span> <span class="n">parent</span> <span class="n">layout</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arg1</strong> (<em>int</em>) &#8211; Rectangle to set info for (-1 for parent)</li>
+<li><strong>arg2</strong> (<em>str</em>) &#8211; Name</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 6.3.0.</span></p>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<div class="section" id="layout-constr-constants">
+<span id="layout-constr"></span><h2>LAYOUT_CONSTR constants<a class="headerlink" href="#layout-constr-constants" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Layout</span> <span class="n">constraint</span> <span class="n">specifiers</span>
+</pre></div>
+</div>
+<dl class="attribute">
+<dt id="geosoft.gxapi.LAYOUT_CONSTR_LEFT">
+<code class="descclassname">gxapi.</code><code class="descname">LAYOUT_CONSTR_LEFT</code><em class="property"> = 0</em><a class="headerlink" href="#geosoft.gxapi.LAYOUT_CONSTR_LEFT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">adjust</span> <span class="n">rectangle</span><span class="s1">&#39;s left side</span>
+</pre></div>
+</div>
+<dl class="attribute">
+<dt id="geosoft.gxapi.LAYOUT_CONSTR_RIGHT">
+<code class="descclassname">gxapi.</code><code class="descname">LAYOUT_CONSTR_RIGHT</code><em class="property"> = 1</em><a class="headerlink" href="#geosoft.gxapi.LAYOUT_CONSTR_RIGHT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">adjust</span> <span class="n">rectangle</span><span class="s1">&#39;s right side</span>
+</pre></div>
+</div>
+<dl class="attribute">
+<dt id="geosoft.gxapi.LAYOUT_CONSTR_TOP">
+<code class="descclassname">gxapi.</code><code class="descname">LAYOUT_CONSTR_TOP</code><em class="property"> = 2</em><a class="headerlink" href="#geosoft.gxapi.LAYOUT_CONSTR_TOP" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">adjust</span> <span class="n">rectangle</span><span class="s1">&#39;s top side</span>
+</pre></div>
+</div>
+<dl class="attribute">
+<dt id="geosoft.gxapi.LAYOUT_CONSTR_BOTTOM">
+<code class="descclassname">gxapi.</code><code class="descname">LAYOUT_CONSTR_BOTTOM</code><em class="property"> = 3</em><a class="headerlink" href="#geosoft.gxapi.LAYOUT_CONSTR_BOTTOM" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">adjust</span> <span class="n">rectangle</span><span class="s1">&#39;s bottom side</span>
+</pre></div>
+</div>
+<dl class="attribute">
+<dt id="geosoft.gxapi.LAYOUT_CONSTR_WIDTH">
+<code class="descclassname">gxapi.</code><code class="descname">LAYOUT_CONSTR_WIDTH</code><em class="property"> = 4</em><a class="headerlink" href="#geosoft.gxapi.LAYOUT_CONSTR_WIDTH" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">adjust</span> <span class="n">rectangle</span><span class="s1">&#39;s width</span>
+</pre></div>
+</div>
+<dl class="attribute">
+<dt id="geosoft.gxapi.LAYOUT_CONSTR_HEIGHT">
+<code class="descclassname">gxapi.</code><code class="descname">LAYOUT_CONSTR_HEIGHT</code><em class="property"> = 5</em><a class="headerlink" href="#geosoft.gxapi.LAYOUT_CONSTR_HEIGHT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">adjust</span> <span class="n">rectangle</span><span class="s1">&#39;s height</span>
+</pre></div>
+</div>
+<dl class="attribute">
+<dt id="geosoft.gxapi.LAYOUT_CONSTR_HCENTER">
+<code class="descclassname">gxapi.</code><code class="descname">LAYOUT_CONSTR_HCENTER</code><em class="property"> = 6</em><a class="headerlink" href="#geosoft.gxapi.LAYOUT_CONSTR_HCENTER" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">center</span> <span class="n">rectangle</span> <span class="k">with</span> <span class="n">respect</span> <span class="n">to</span> <span class="n">width</span>
+</pre></div>
+</div>
+<dl class="attribute">
+<dt id="geosoft.gxapi.LAYOUT_CONSTR_VCENTER">
+<code class="descclassname">gxapi.</code><code class="descname">LAYOUT_CONSTR_VCENTER</code><em class="property"> = 7</em><a class="headerlink" href="#geosoft.gxapi.LAYOUT_CONSTR_VCENTER" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">center</span> <span class="n">rectangle</span> <span class="k">with</span> <span class="n">respect</span> <span class="n">to</span> <span class="n">height</span>
+</pre></div>
+</div>
+<dl class="attribute">
+<dt id="geosoft.gxapi.LAYOUT_CONSTR_MOVEL">
+<code class="descclassname">gxapi.</code><code class="descname">LAYOUT_CONSTR_MOVEL</code><em class="property"> = 8</em><a class="headerlink" href="#geosoft.gxapi.LAYOUT_CONSTR_MOVEL" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">move</span> <span class="n">rectangle</span><span class="p">,</span> <span class="k">with</span> <span class="n">respect</span> <span class="n">to</span> <span class="n">left</span>
+</pre></div>
+</div>
+<dl class="attribute">
+<dt id="geosoft.gxapi.LAYOUT_CONSTR_MOVER">
+<code class="descclassname">gxapi.</code><code class="descname">LAYOUT_CONSTR_MOVER</code><em class="property"> = 9</em><a class="headerlink" href="#geosoft.gxapi.LAYOUT_CONSTR_MOVER" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">move</span> <span class="n">rectangle</span><span class="p">,</span> <span class="k">with</span> <span class="n">respect</span> <span class="n">to</span> <span class="n">right</span>
+</pre></div>
+</div>
+<dl class="attribute">
+<dt id="geosoft.gxapi.LAYOUT_CONSTR_MOVET">
+<code class="descclassname">gxapi.</code><code class="descname">LAYOUT_CONSTR_MOVET</code><em class="property"> = 10</em><a class="headerlink" href="#geosoft.gxapi.LAYOUT_CONSTR_MOVET" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">move</span> <span class="n">rectangle</span><span class="p">,</span> <span class="k">with</span> <span class="n">respect</span> <span class="n">to</span> <span class="n">top</span>
+</pre></div>
+</div>
+<dl class="attribute">
+<dt id="geosoft.gxapi.LAYOUT_CONSTR_MOVEB">
+<code class="descclassname">gxapi.</code><code class="descname">LAYOUT_CONSTR_MOVEB</code><em class="property"> = 11</em><a class="headerlink" href="#geosoft.gxapi.LAYOUT_CONSTR_MOVEB" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">move</span> <span class="n">rectangle</span><span class="p">,</span> <span class="k">with</span> <span class="n">respect</span> <span class="n">to</span> <span class="n">bottom</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.1 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016, Geosoft Inc.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.6.
+    </div>
+  </body>
+</html>

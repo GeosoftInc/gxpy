@@ -1,0 +1,199 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-87443115-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+    <title>GXARCSYS class &#8212; Geosoft GX Python API 9.1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/maki.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '9.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="Geosoft GX Python API 9.1 documentation" href="index.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.1 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/GXARCSYS.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="gxarcsys-class">
+<span id="gxarcsys"></span><h1>GXARCSYS class<a class="headerlink" href="#gxarcsys-class" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="geosoft.gxapi.GXARCSYS">
+<em class="property">class </em><code class="descclassname">geosoft.gxapi.</code><code class="descname">GXARCSYS</code><a class="headerlink" href="#geosoft.gxapi.GXARCSYS" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="n">library</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">a</span> <span class="n">class</span><span class="o">.</span> <span class="n">It</span> <span class="n">contains</span> <span class="n">various</span> <span class="n">general</span>
+<span class="n">system</span> <span class="n">utilities</span> <span class="n">used</span> <span class="n">by</span> <span class="n">the</span> <span class="n">Geosoft</span> <span class="n">extensions</span> <span class="k">for</span> <span class="n">ArcGIS</span><span class="o">.</span>
+</pre></div>
+</div>
+<dl class="staticmethod">
+<dt id="geosoft.gxapi.GXARCSYS.get_browse_loc">
+<em class="property">static </em><code class="descname">get_browse_loc</code><span class="sig-paren">(</span><em>(str_ref)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXARCSYS.get_browse_loc" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">the</span> <span class="n">current</span> <span class="n">catalog</span> <span class="n">browser</span> <span class="n">location</span> <span class="ow">in</span> <span class="n">ArcGIS</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; Path String</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Nothing</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">None</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 8.0.0.</span></p>
+</div>
+<p><strong>Note:</strong></p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Gets</span> <span class="n">the</span> <span class="s2">&quot;local&quot;</span> <span class="n">directory</span> <span class="p">(</span><span class="n">current</span> <span class="n">catalog</span> <span class="n">browser</span> <span class="n">location</span> <span class="ow">in</span> <span class="n">ArcGIS</span> <span class="k">if</span> <span class="nb">map</span> <span class="n">has</span> <span class="ow">not</span> <span class="n">been</span> <span class="n">saved</span><span class="p">,</span>
+<span class="n">otherwise</span> <span class="n">MxD</span> <span class="n">path</span><span class="p">)</span><span class="o">.</span> <span class="n">We</span> <span class="n">cannot</span> <span class="n">mess</span> <span class="k">with</span> <span class="n">the</span> <span class="n">CWD</span> <span class="ow">in</span> <span class="n">ArcGIS</span> <span class="n">because</span> <span class="n">there</span> <span class="n">MxD</span> <span class="n">settings</span> <span class="k">for</span>
+<span class="n">relative</span><span class="o">/</span><span class="n">absolute</span> <span class="n">paths</span> <span class="n">depends</span> <span class="n">on</span> <span class="n">it</span><span class="o">.</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="geosoft.gxapi.GXARCSYS.get_current_doc">
+<em class="property">static </em><code class="descname">get_current_doc</code><span class="sig-paren">(</span><em>(str_ref)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXARCSYS.get_current_doc" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">the</span> <span class="n">current</span> <span class="n">Mx</span> <span class="n">Document</span> <span class="n">file</span> <span class="n">name</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; Path String</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Nothing</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">None</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 8.0.0.</span></p>
+</div>
+<p><strong>Note:</strong></p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">If</span> <span class="n">the</span> <span class="n">current</span> <span class="n">document</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">yet</span> <span class="n">saved</span><span class="p">,</span> <span class="n">this</span> <span class="n">will</span> <span class="k">return</span> <span class="n">an</span> <span class="n">empty</span> <span class="n">string</span><span class="o">.</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="geosoft.gxapi.GXARCSYS.set_browse_loc">
+<em class="property">static </em><code class="descname">set_browse_loc</code><span class="sig-paren">(</span><em>(str)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXARCSYS.set_browse_loc" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Set</span> <span class="n">the</span> <span class="n">current</span> <span class="n">catalog</span> <span class="n">browser</span> <span class="n">location</span> <span class="ow">in</span> <span class="n">ArcGIS</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>str</em>) &#8211; Path String</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Nothing</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">None</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 8.0.0.</span></p>
+</div>
+<p><strong>Note:</strong></p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Will</span> <span class="n">also</span> <span class="nb">set</span> <span class="n">the</span> <span class="n">current</span> <span class="n">working</span> <span class="n">directory</span> <span class="p">(</span><span class="n">CWD</span><span class="p">)</span> <span class="k">if</span> <span class="n">the</span> <span class="n">MxD</span> <span class="n">has</span> <span class="ow">not</span> <span class="n">been</span> <span class="n">saved</span><span class="o">.</span>
+<span class="n">We</span> <span class="n">cannot</span> <span class="n">mess</span> <span class="k">with</span> <span class="n">the</span> <span class="n">CWD</span> <span class="ow">in</span> <span class="n">ArcGIS</span> <span class="n">because</span> <span class="n">their</span> <span class="n">MxD</span> <span class="n">settings</span> <span class="k">for</span> <span class="n">relative</span><span class="o">/</span><span class="n">absolute</span> <span class="n">paths</span> <span class="n">depends</span> <span class="n">on</span> <span class="n">it</span><span class="o">.</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.1 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016, Geosoft Inc.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.6.
+    </div>
+  </body>
+</html>
