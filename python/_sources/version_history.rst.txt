@@ -232,6 +232,10 @@ New Functions
 
 :func:`geosoft.gxpy.gx.GXpy.temp_folder`
 
+:func:`geosoft.gxpy.gx.pop_resource`
+
+:func:`geosoft.gxpy.gx.track_resource`
+
 :func:`geosoft.gxpy.map.Map.annotate_data_ll`
 
 :func:`geosoft.gxpy.map.Map.annotate_data_xy`
@@ -454,17 +458,11 @@ New Functions
 
 :func:`geosoft.gxpy.grid.name_parts`
 
-:func:`geosoft.gxpy.gx.GXpy.active_wind_id`
-
 :func:`geosoft.gxpy.gx.GXpy.disable_app`
 
 :func:`geosoft.gxpy.gx.GXpy.enable_app`
 
 :func:`geosoft.gxpy.gx.GXpy.entitlements`
-
-:func:`geosoft.gxpy.gx.GXpy.license_class`
-
-:func:`geosoft.gxpy.gx.GXpy.main_wind_id`
 
 :func:`geosoft.gxpy.project.dict_from_lst`
 

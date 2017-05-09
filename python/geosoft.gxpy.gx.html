@@ -77,10 +77,12 @@
             
   <div class="section" id="module-geosoft.gxpy.gx">
 <span id="geosoft-gxpy-gx-submodule"></span><h1>geosoft.gxpy.gx submodule<a class="headerlink" href="#module-geosoft.gxpy.gx" title="Permalink to this headline">¶</a></h1>
-<p>GX Context and related methods required for Geosoft Python.</p>
+<p>GX Context and related methods required for Geosoft Python.  The GX context is a singleton, which is either created for
+stand-alone Python scripts, or is provided to the script for extensions to Geosoft Desktop applications.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">Regression tests provide usage examples: <a class="reference external" href="https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_gx.py">Tests</a></p>
+<p>Regression tests provide usage examples:</p>
+<p class="last"><a class="reference external" href="https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_gx.py">gx tests</a></p>
 </div>
 <dl class="exception">
 <dt id="geosoft.gxpy.gx.GXException">
@@ -99,6 +101,8 @@
 <p>Geosoft GX context.  This is a singleton class, so subsequent creation returns an instance
 identical to the initial creation. This also means that initialization arguments are ignored
 on a subsequent instantiation.</p>
+<p>This class does not need to be instantiated by desktop extensions as the context is provided
+by the Geosoft desktop application.  If called, the desktop context is returned.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -107,7 +111,7 @@ on a subsequent instantiation.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">app:</th><td class="field-body">application name, default is the script name</td>
+<tr class="field-odd field"><th class="field-name">name:</th><td class="field-body">application name, default is the script name</td>
 </tr>
 <tr class="field-even field"><th class="field-name">version:</th><td class="field-body">application version number, default Geosoft version</td>
 </tr>
@@ -120,7 +124,7 @@ accepts a string.  Specifying <cite>log=&#8217;&#8216;</cite> will log to a defa
 using the current date and time.  If not provided calls to log()
 are ignored.</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">max_heap:</th><td class="field-body">If logging is on, open gxpy resources (like grids, or databases) are tracked.
+<tr class="field-odd field"><th class="field-name">max_res_heap:</th><td class="field-body">If logging is on, open gxpy resources (like grids, or databases) are tracked.
 This is the maximum size of resource heap for tracking open resources.
 Set to 0 to not track resources. On exit, if any resources remain open
 a warning is logged together with a list of the open resources, each with a
@@ -145,7 +149,8 @@ call stack to help find the function that created the resources.</td>
 </tr>
 <tr class="field-even field"><th class="field-name">gid:</th><td class="field-body">User&#8217;s Geosoft ID</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">global gx:</th><td class="field-body">Global reference to this singleton class instance, None if invalid.</td>
+<tr class="field-odd field"><th class="field-name">global gx:</th><td class="field-body">Global reference to this singleton class instance, None if invalid.  The
+construct geosoft.gxpy.gx.gx can be accessed anywhere.</td>
 </tr>
 <tr class="field-even field"><th class="field-name">current_date:</th><td class="field-body">date at start-up</td>
 </tr>
@@ -157,20 +162,18 @@ call stack to help find the function that created the resources.</td>
 <tr class="field-odd field"><th class="field-name" colspan="2">current_utc_time:</th></tr>
 <tr class="field-odd field"><td>&nbsp;</td><td class="field-body">UTC time at start-up</td>
 </tr>
-<tr class="field-even field"><th class="field-name">license_class:</th><td class="field-body">Geosoft license class</td>
+<tr class="field-even field"><th class="field-name" colspan="2">folder_workspace:</th></tr>
+<tr class="field-even field"><td>&nbsp;</td><td class="field-body">Geosoft workspace folder</td>
 </tr>
-<tr class="field-odd field"><th class="field-name" colspan="2">folder_workspace:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">Geosoft workspace folder</td>
+<tr class="field-odd field"><th class="field-name">folder_temp:</th><td class="field-body">Geosoft temporary folder</td>
 </tr>
-<tr class="field-even field"><th class="field-name">folder_temp:</th><td class="field-body">Geosoft temporary folder</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">folder_user:</th><td class="field-body">Geosoft Desktop installation &#8216;user&#8217; folder</td>
+<tr class="field-even field"><th class="field-name">folder_user:</th><td class="field-body">Geosoft Desktop installation &#8216;user&#8217; folder</td>
 </tr>
 </tbody>
 </table>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><table class="first last docutils field-list" frame="void" rules="none">
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><table class="first last docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -190,17 +193,10 @@ call stack to help find the function that created the resources.</td>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.1.</span></p>
 </div>
-<dl class="method">
+<dl class="attribute">
 <dt id="geosoft.gxpy.gx.GXpy.active_wind_id">
-<code class="descname">active_wind_id</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.gx.GXpy.active_wind_id" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The active window ID (HWND cast to unsigned for Windows).</td>
-</tr>
-</tbody>
-</table>
+<code class="descname">active_wind_id</code><a class="headerlink" href="#geosoft.gxpy.gx.GXpy.active_wind_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>The active window ID (HWND cast to unsigned for Windows).</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.1.</span></p>
 </div>
@@ -278,18 +274,24 @@ Call before returning control to OM.</p>
 <dl class="method">
 <dt id="geosoft.gxpy.gx.GXpy.folder_temp">
 <code class="descname">folder_temp</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.gx.GXpy.folder_temp" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><div class="deprecated">
+<p><span class="versionmodified">Deprecated since version 9.2: </span>use <a class="reference internal" href="geosoft.gxpy.utility.html#geosoft.gxpy.utility.folder_temp" title="geosoft.gxpy.utility.folder_temp"><code class="xref py py-meth docutils literal"><span class="pre">geosoft.gxpy.utility.folder_temp()</span></code></a></p>
+</div>
+</dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxpy.gx.GXpy.folder_user">
 <code class="descname">folder_user</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.gx.GXpy.folder_user" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><div class="deprecated">
+<p><span class="versionmodified">Deprecated since version 9.2: </span>use <a class="reference internal" href="geosoft.gxpy.utility.html#geosoft.gxpy.utility.folder_user" title="geosoft.gxpy.utility.folder_user"><code class="xref py py-meth docutils literal"><span class="pre">geosoft.gxpy.utility.folder_user()</span></code></a></p>
+</div>
+</dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxpy.gx.GXpy.folder_workspace">
 <code class="descname">folder_workspace</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.gx.GXpy.folder_workspace" title="Permalink to this definition">¶</a></dt>
 <dd><div class="deprecated">
-<p><span class="versionmodified">Deprecated since version 9.2: </span>use <code class="xref py py-meth docutils literal"><span class="pre">utility.folder_workspace()</span></code></p>
+<p><span class="versionmodified">Deprecated since version 9.2: </span>use <a class="reference internal" href="geosoft.gxpy.utility.html#geosoft.gxpy.utility.folder_workspace" title="geosoft.gxpy.utility.folder_workspace"><code class="xref py py-meth docutils literal"><span class="pre">geosoft.gxpy.utility.folder_workspace()</span></code></a></p>
 </div>
 </dd></dl>
 
@@ -310,17 +312,10 @@ Call before returning control to OM.</p>
 </div>
 </dd></dl>
 
-<dl class="method">
+<dl class="attribute">
 <dt id="geosoft.gxpy.gx.GXpy.license_class">
-<code class="descname">license_class</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.gx.GXpy.license_class" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The current license class.</td>
-</tr>
-</tbody>
-</table>
+<code class="descname">license_class</code><a class="headerlink" href="#geosoft.gxpy.gx.GXpy.license_class" title="Permalink to this definition">¶</a></dt>
+<dd><p>The user&#8217;s license class.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.1.</span></p>
 </div>
@@ -348,17 +343,10 @@ Call before returning control to OM.</p>
 </div>
 </dd></dl>
 
-<dl class="method">
+<dl class="attribute">
 <dt id="geosoft.gxpy.gx.GXpy.main_wind_id">
-<code class="descname">main_wind_id</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.gx.GXpy.main_wind_id" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The main window ID (HWND cast to unsigned for Windows).</td>
-</tr>
-</tbody>
-</table>
+<code class="descname">main_wind_id</code><a class="headerlink" href="#geosoft.gxpy.gx.GXpy.main_wind_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>The main window ID (HWND cast to unsigned for Windows).</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.1.</span></p>
 </div>
@@ -404,12 +392,47 @@ when debugging.</p>
 <dl class="function">
 <dt id="geosoft.gxpy.gx.pop_resource">
 <code class="descclassname">geosoft.gxpy.gx.</code><code class="descname">pop_resource</code><span class="sig-paren">(</span><em>id</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.gx.pop_resource" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Pop a tracked resource off the resource stack.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>id</strong> &#8211; the resource id returned by <a class="reference internal" href="#geosoft.gxpy.gx.track_resource" title="geosoft.gxpy.gx.track_resource"><code class="xref py py-meth docutils literal"><span class="pre">track_resource()</span></code></a></td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.2.</span></p>
+</div>
+</dd></dl>
 
 <dl class="function">
 <dt id="geosoft.gxpy.gx.track_resource">
-<code class="descclassname">geosoft.gxpy.gx.</code><code class="descname">track_resource</code><span class="sig-paren">(</span><em>cl</em>, <em>info</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.gx.track_resource" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<code class="descclassname">geosoft.gxpy.gx.</code><code class="descname">track_resource</code><span class="sig-paren">(</span><em>resource_class</em>, <em>info</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.gx.track_resource" title="Permalink to this definition">¶</a></dt>
+<dd><p>Track a resource.  Resource tracking is useful for debugging resource leaks.  If you create a class
+or resource that you expect to be removed before your script ends you can track it with this call.
+When you dispose of your resource call <a class="reference internal" href="#geosoft.gxpy.gx.pop_resource" title="geosoft.gxpy.gx.pop_resource"><code class="xref py py-meth docutils literal"><span class="pre">pop_resource()</span></code></a> to remove it from the tracking heap.
+On exit, any resource left on the tracked resource heap will be reported together with the call
+stack for each resource and the information you provided.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>resource_class</strong> &#8211; the resource class name</li>
+<li><strong>info</strong> &#8211; some information about the resource</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">resource_id, can be used with <a class="reference internal" href="#geosoft.gxpy.gx.pop_resource" title="geosoft.gxpy.gx.pop_resource"><code class="xref py py-meth docutils literal"><span class="pre">pop_resource()</span></code></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.2.</span></p>
+</div>
+</dd></dl>
 
 </div>
 
