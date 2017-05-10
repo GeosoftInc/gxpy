@@ -1,4 +1,4 @@
-'''
+"""
 Add a constant value to a channel on all selected lines.
 
 This is a sample Python program that illustrates how to connect to the GX
@@ -10,7 +10,7 @@ Follwoing are the basic steps:
    2. Collect command-line parameters
    3. Open the database
    4. Process the data
-'''
+"""
 
 import os
 import sys
@@ -21,10 +21,10 @@ def rungx():
     raise Exception("This is not an extension.  Please use a python interpreter.")
 
 def process_database(db, channel_name, add_value):
-    '''
+    """
     Process all selected lines in a database by adding a constant
     value to a channel. The data is processed in-place.
-    '''
+    """
 
     # work through the data a line at a time - get a list of selected lines
     print('Processing selected lines...')
