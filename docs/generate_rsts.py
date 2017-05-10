@@ -39,16 +39,38 @@ def sort_version_history(version_history):
         val['classes'].sort()
         val['functions'].sort()
 
+# get_class_that_defined_method implementation from here:
+# http://stackoverflow.com/questions/3589311/get-defining-class-of-unbound-method-object-in-python-3/25959545#25959545
+def get_class_that_defined_method(meth):
+    if inspect.ismethod(meth):
+        for cls in inspect.getmro(meth.__self__.__class__):
+            if cls.__dict__.get(meth.__name__) is meth:
+                return cls
+        meth = meth.__func__ # fallback to __qualname__ parsing
+    if inspect.isfunction(meth):
+        cls = getattr(inspect.getmodule(meth),
+                      meth.__qualname__.split('.<locals>', 1)[0].rsplit('.', 1)[0])
+        if isinstance(cls, type):
+            return cls
+    return None # not required since None would have been implicitly returned anyway
+
+def does_class_implement_method(cls, meth):
+    cls_from_meth = get_class_that_defined_method(meth)
+    return cls_from_meth is None or cls is cls_from_meth
+
 def parse_module_history(mod, version_history):
     functions = inspect.getmembers(mod, _is_some_method)
     for fn_key, fn_value in functions:
-        add_object_to_history(mod, version_history, fn_value, fn_key, 'functions')
+        if does_class_implement_method(mod, fn_value):
+            add_object_to_history(mod, version_history, fn_value, fn_key, 'functions')
     classes = inspect.getmembers(mod, inspect.isclass)
     for cl_key, cl_value in classes:
-        add_object_to_history(mod, version_history, cl_value, cl_key, 'classes')
-        cl_functions = inspect.getmembers(cl_value, _is_some_method)
-        for fn_key, fn_value in cl_functions:
-            add_object_to_history(mod, version_history, fn_value, fn_key, 'functions', parent_name=cl_key)
+        if not cl_key.startswith('_'):
+            add_object_to_history(mod, version_history, cl_value, cl_key, 'classes')
+            cl_functions = inspect.getmembers(cl_value, _is_some_method)
+            for fn_key, fn_value in cl_functions:
+                if does_class_implement_method(cl_value, fn_value):
+                    add_object_to_history(mod, version_history, fn_value, fn_key, 'functions', parent_name=cl_key)
     sort_version_history(version_history)
 
 def collect_gxa_version_history():
