@@ -1,5 +1,5 @@
-#import pydevd
-#pydevd.settrace('localhost', port=34765, stdoutToServer=True, stderrToServer=True)
+import pydevd
+pydevd.settrace('localhost', port=34765, stdoutToServer=True, stderrToServer=True)
 
 import json
 import geosoft.gxpy.project as gxprj

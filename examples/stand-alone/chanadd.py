@@ -18,6 +18,8 @@ import sys
 import argparse as argp
 import geosoft.gxpy as gxpy
 
+def rungx():
+    raise Exception("This is not an extension.  Please use a python interpreter.")
 
 def process_database(db, channel_name, add_value):
     '''

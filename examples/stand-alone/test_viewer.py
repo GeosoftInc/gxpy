@@ -13,7 +13,10 @@ import geosoft.gxpy.group as gxg
 import geosoft.gxpy.system as gxsys
 from geosoft.gxpy.tests import GXPYTest
 
-###############################################################################################
+
+def rungx():
+    raise Exception("This is not an extension.  Please use a python interpreter.")
+
 
 def sample_map(map_file, v3d_file, rescale=1.0):
 

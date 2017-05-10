@@ -8,12 +8,7 @@ import gc
 
 # running as an extension from Oasis montaj will execute rungx()
 def rungx():
-
-    gxpy.utility.check_version('9.2')
-
-    with gxpy.gx.GXpy() as gx:
-        # say hello
-        gxpy.utility.display_message("GX Python", "Hello {}".format(gx.gid))
+    raise Exception("This is not an extension.  Please use a python interpreter.")
 
 # running as stand-alone program
 
