@@ -1,4 +1,3 @@
-#!python3.3
 '''
 Add a constant value to a channel on all selected lines.
 
