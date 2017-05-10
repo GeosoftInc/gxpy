@@ -77,14 +77,19 @@
             
   <div class="section" id="module-geosoft.gxpy.view">
 <span id="geosoft-gxpy-view-submodule"></span><h1>geosoft.gxpy.view submodule<a class="headerlink" href="#module-geosoft.gxpy.view" title="Permalink to this headline">¶</a></h1>
-<p>Views, both 2D and 3D.</p>
+<p>Views, both 2D and 3D.  2D and 3D views can be placed on a <a class="reference internal" href="geosoft.gxpy.map.html#geosoft.gxpy.map.Map" title="geosoft.gxpy.map.Map"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxpy.map.Map</span></code></a>, though 3D views
+are stored in a <cite>geosoft_3dv</cite> file which can be worked with and viewed separately from a map.</p>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="geosoft.gxpy.map.html#module-geosoft.gxpy.map" title="geosoft.gxpy.map"><code class="xref py py-mod docutils literal"><span class="pre">geosoft.gxpy.map</span></code></a>, <a class="reference internal" href="geosoft.gxpy.group.html#module-geosoft.gxpy.group" title="geosoft.gxpy.group"><code class="xref py py-mod docutils literal"><span class="pre">geosoft.gxpy.group</span></code></a>, <a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW" title="geosoft.gxapi.GXMVIEW"><code class="xref py py-mod docutils literal"><span class="pre">geosoft.gxapi.GXMVIEW</span></code></a></p>
+</div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">Regression tests provide usage examples: <a class="reference external" href="https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_view.py">Tests</a></p>
 </div>
 <dl class="class">
 <dt id="geosoft.gxpy.view.View">
-<em class="property">class </em><code class="descclassname">geosoft.gxpy.view.</code><code class="descname">View</code><span class="sig-paren">(</span><em>map</em>, <em>name='_unnamed_view'</em>, <em>mode=2</em>, <em>cs=None</em>, <em>map_location=(0</em>, <em>0)</em>, <em>area=(0</em>, <em>0</em>, <em>30</em>, <em>20)</em>, <em>scale=100</em>, <em>copy=None</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.view.View" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">geosoft.gxpy.view.</code><code class="descname">View</code><span class="sig-paren">(</span><em>map</em>, <em>name='_unnamed_view'</em>, <em>mode=2</em>, <em>coordinate_system=None</em>, <em>map_location=(0</em>, <em>0)</em>, <em>area=(0</em>, <em>0</em>, <em>30</em>, <em>20)</em>, <em>scale=100</em>, <em>copy=None</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.view.View" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
 <p>Geosoft view class.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -102,22 +107,23 @@
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">mode:</th><td class="field-body"><p class="first">open view mode:</p>
-<div class="last highlight-default"><div class="highlight"><pre><span></span><span class="n">gxpy</span><span class="o">.</span><span class="n">view</span><span class="o">.</span><span class="n">READ_ONLY</span>
-<span class="n">gxpy</span><span class="o">.</span><span class="n">view</span><span class="o">.</span><span class="n">WRITE_NEW</span>
-<span class="n">gxpy</span><span class="o">.</span><span class="n">view</span><span class="o">.</span><span class="n">WRITE_OLD</span>
+<div class="last highlight-default"><div class="highlight"><pre><span></span><span class="n">READ_ONLY</span>
+<span class="n">WRITE_NEW</span>
+<span class="n">WRITE_OLD</span>
 </pre></div>
 </div>
 </td>
 </tr>
 </tbody>
 </table>
-<p>The following are used with <code class="docutils literal"><span class="pre">mode=gxpy.view.WRITE_NEW</span></code>:</p>
-<table class="docutils field-list" frame="void" rules="none">
+<p>The following are used with <cite>mode=geosoft.gxpy.view.WRITE_NEW</cite>:</p>
+<table class="last docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">cs:</th><td class="field-body">coordinate system as a gxpy.coordinate_system.Coordinate_system instance, or one of the Coordinate_system
-constructor types.</td>
+<tr class="field-odd field"><th class="field-name" colspan="2">coordinate_system:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">coordinate system as a gxpy.coordinate_system.Coordinate_system instance, or 
+one of the Coordinate_system constructor types.</td>
 </tr>
 <tr class="field-even field"><th class="field-name">map_location:</th><td class="field-body">(x, y) view location on the map, in map cm</td>
 </tr>
@@ -132,34 +138,6 @@ defined this is view units per map metre.</td>
 </table>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Properties:</th><td class="field-body"><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">map:</th><td class="field-body">the Map instance that contains this view</td>
-</tr>
-<tr class="field-even field"><th class="field-name">name:</th><td class="field-body">the name of the view</td>
-</tr>
-<tr class="field-odd field"><th class="field-name" colspan="2">units_per_metre:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">view units per view metres (eg. a view in &#8216;ft&#8217; will be 3.28084).</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">units_per_map_cm:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body">view units per map cm. (eg. a view in ft, with a scale of 1:12000 returns 393.7 ft/cm)</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">unit_name:</th><td class="field-body">view units name.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">scale:</th><td class="field-body">view scale, which is the # of view units per  unit on the printed map.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">aspect:</th><td class="field-body">ratio of the view x units to y units (x/y).  Usually this is 1.0.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">extent:</th><td class="field-body">extent of the visible (clipped) view in view units.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">extent_map_cm:</th><td class="field-body">extent of the visible view in map cm.</td>
-</tr>
-</tbody>
-</table>
-</td>
-</tr>
 </tbody>
 </table>
 <div class="versionadded">
@@ -168,12 +146,13 @@ defined this is view units per map metre.</td>
 <dl class="attribute">
 <dt id="geosoft.gxpy.view.View.aspect">
 <code class="descname">aspect</code><a class="headerlink" href="#geosoft.gxpy.view.View.aspect" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>view aspect ratio, usually 1.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxpy.view.View.close">
 <code class="descname">close</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.view.View.close" title="Permalink to this definition">¶</a></dt>
-<dd><p>Close a view.  Use yo close a view outside of a with ... as: construct.</p>
+<dd><p>Close a view.  Use to close a view when working outside of a <cite>with ... as:</cite> construct.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.2.</span></p>
 </div>
@@ -182,7 +161,8 @@ defined this is view units per map metre.</td>
 <dl class="attribute">
 <dt id="geosoft.gxpy.view.View.coordinate_system">
 <code class="descname">coordinate_system</code><a class="headerlink" href="#geosoft.gxpy.view.View.coordinate_system" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxpy.coordinate_sustem.Coordinate_system</span></code> instance of the view.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxpy.view.View.delete_group">
@@ -204,27 +184,50 @@ defined this is view units per map metre.</td>
 <dl class="attribute">
 <dt id="geosoft.gxpy.view.View.extent_all">
 <code class="descname">extent_all</code><a class="headerlink" href="#geosoft.gxpy.view.View.extent_all" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>extent of all groups in the view as (x_min, y_min, x_max, y_max)</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="geosoft.gxpy.view.View.extent_clip">
 <code class="descname">extent_clip</code><a class="headerlink" href="#geosoft.gxpy.view.View.extent_clip" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>clip extent of the view as (x_min, y_min, x_max, y_max)</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxpy.view.View.extent_group">
 <code class="descname">extent_group</code><span class="sig-paren">(</span><em>group</em>, <em>unit=0</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.view.View.extent_group" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="geosoft.gxpy.view.View.extent_map_cm">
-<code class="descname">extent_map_cm</code><span class="sig-paren">(</span><em>extent</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.view.View.extent_map_cm" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return a view extent in map cm.</p>
+<dd><p>Extent of a group</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>extent</strong> &#8211; tuple returned an extent property.</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>group</strong> &#8211; group name</li>
+<li><strong>unit</strong> &#8211; <p>units:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">UNITS_VIEW</span>
+<span class="n">UNITS_MAP</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">extent as (x_min, y_min, x_max, y_max)</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxpy.view.View.extent_map_cm">
+<code class="descname">extent_map_cm</code><span class="sig-paren">(</span><em>extent</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.view.View.extent_map_cm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return an extent in map cm.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>extent</strong> &#8211; tuple returned from one of the extent property.</td>
 </tr>
 </tbody>
 </table>
@@ -236,7 +239,8 @@ defined this is view units per map metre.</td>
 <dl class="attribute">
 <dt id="geosoft.gxpy.view.View.extent_visible">
 <code class="descname">extent_visible</code><a class="headerlink" href="#geosoft.gxpy.view.View.extent_visible" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>extend of visible groups in the view as (x_min, y_min, x_max, y_max)</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxpy.view.View.get_class_name">
@@ -271,32 +275,38 @@ defined this is view units per map metre.</td>
 <dl class="attribute">
 <dt id="geosoft.gxpy.view.View.group_list">
 <code class="descname">group_list</code><a class="headerlink" href="#geosoft.gxpy.view.View.group_list" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>list of groups in this view</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="geosoft.gxpy.view.View.group_list_agg">
 <code class="descname">group_list_agg</code><a class="headerlink" href="#geosoft.gxpy.view.View.group_list_agg" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>list of <a class="reference internal" href="GXAGG.html#geosoft.gxapi.GXAGG" title="geosoft.gxapi.GXAGG"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXAGG</span></code></a> groups in this view</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="geosoft.gxpy.view.View.group_list_csymb">
 <code class="descname">group_list_csymb</code><a class="headerlink" href="#geosoft.gxpy.view.View.group_list_csymb" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>list of <a class="reference internal" href="GXCSYMB.html#geosoft.gxapi.GXCSYMB" title="geosoft.gxapi.GXCSYMB"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXCSYMB</span></code></a> groups in this view</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="geosoft.gxpy.view.View.group_list_marked">
 <code class="descname">group_list_marked</code><a class="headerlink" href="#geosoft.gxpy.view.View.group_list_marked" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>list of marked groups in this view</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="geosoft.gxpy.view.View.group_list_visible">
 <code class="descname">group_list_visible</code><a class="headerlink" href="#geosoft.gxpy.view.View.group_list_visible" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>list of visible groups in this view</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="geosoft.gxpy.view.View.group_list_voxel">
 <code class="descname">group_list_voxel</code><a class="headerlink" href="#geosoft.gxpy.view.View.group_list_voxel" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>list of voxel groups in this view</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxpy.view.View.has_group">
@@ -307,7 +317,8 @@ defined this is view units per map metre.</td>
 <dl class="attribute">
 <dt id="geosoft.gxpy.view.View.is_3d">
 <code class="descname">is_3d</code><a class="headerlink" href="#geosoft.gxpy.view.View.is_3d" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>True if this is a 3D view</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxpy.view.View.locate">
@@ -322,8 +333,8 @@ defined this is view units per map metre.</td>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name" colspan="2">coordinate_system:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">coordinate system as a gxpy.coordinate_system.Coordinate_system instance, or one of the Coordinate_system
-constructor types.</td>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">coordinate system as a gxpy.coordinate_system.Coordinate_system instance, 
+or one of the Coordinate_system constructor types.</td>
 </tr>
 <tr class="field-even field"><th class="field-name">map_location:</th><td class="field-body">New (x, y) view location on the map, in map cm.</td>
 </tr>
@@ -346,7 +357,10 @@ constructor types.</td>
 <dl class="attribute">
 <dt id="geosoft.gxpy.view.View.lock">
 <code class="descname">lock</code><a class="headerlink" href="#geosoft.gxpy.view.View.lock" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>True if the view is locked by a group.  Only one group may hold a lock on a view at the
+same time.  When drawing with groups you should use a <cite>with geosoft.gxpy.group.Draw(...) as g:</cite> construct
+ensure group locks are properly created and released.</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="geosoft.gxpy.view.View.map">
@@ -379,8 +393,19 @@ constructor types.</td>
 <dt id="geosoft.gxpy.view.View.mdf">
 <code class="descname">mdf</code><span class="sig-paren">(</span><em>base_view=None</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.view.View.mdf" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the Map Description File specification for this view as a data view.</p>
-<p>((x_size, y_size, margin_bottom, margin_right, margin_top, margin_left),
-(scale, units_per_metre, x_origin, y_origin))</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>base_view</strong> &#8211; name of the base view on the map from which to calculate margins.  If not specified
+only the left and bottom margin is calculated based on the view clip minimum 
+location and the right and top margins will be 0.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">((x_size, y_size, margin_bottom, margin_right, margin_top, margin_left),
+(scale, units_per_metre, x_origin, y_origin))</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="attribute">
@@ -392,7 +417,8 @@ constructor types.</td>
 <dl class="attribute">
 <dt id="geosoft.gxpy.view.View.scale">
 <code class="descname">scale</code><a class="headerlink" href="#geosoft.gxpy.view.View.scale" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>map scale for the view</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxpy.view.View.set_class_name">
@@ -422,17 +448,20 @@ constructor types.</td>
 <dl class="attribute">
 <dt id="geosoft.gxpy.view.View.units_name">
 <code class="descname">units_name</code><a class="headerlink" href="#geosoft.gxpy.view.View.units_name" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>name of the view distance units</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="geosoft.gxpy.view.View.units_per_map_cm">
 <code class="descname">units_per_map_cm</code><a class="headerlink" href="#geosoft.gxpy.view.View.units_per_map_cm" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>view units per map cm. (eg. a view in ft, with a scale of 1:12000 returns 393.7 ft/cm)</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="geosoft.gxpy.view.View.units_per_metre">
 <code class="descname">units_per_metre</code><a class="headerlink" href="#geosoft.gxpy.view.View.units_per_metre" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>view units per view metres (eg. a view in &#8216;ft&#8217; will be 3.28084)</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxpy.view.View.view_to_map_cm">
@@ -479,58 +508,92 @@ horizontal plane at elevation 0, named &#8216;plane_0&#8217; is created when a n
 which is intended for creating tinkgs like terrain surfaces on which 2d graphics are rendered.</p>
 <p>Planes can also be oriented within the 3D space to create sections, or for other more esoteric
 purposes.</p>
-<p>Constructors:</p>
-<blockquote>
-<div><table border="1" class="docutils">
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Constructors:</th><td class="field-body"><table border="1" class="first last docutils">
 <colgroup>
-<col width="22%" />
-<col width="78%" />
+<col width="29%" />
+<col width="71%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><cite>open()</cite></td>
+<tr class="row-odd"><td><a class="reference internal" href="#geosoft.gxpy.view.View_3d.open" title="geosoft.gxpy.view.View_3d.open"><code class="xref py py-meth docutils literal"><span class="pre">open()</span></code></a></td>
 <td>open an existing geosoft_3dv</td>
 </tr>
-<tr class="row-even"><td><cite>new()</cite></td>
+<tr class="row-even"><td><a class="reference internal" href="#geosoft.gxpy.view.View_3d.new" title="geosoft.gxpy.view.View_3d.new"><code class="xref py py-meth docutils literal"><span class="pre">new()</span></code></a></td>
 <td>create a new geosoft_3dv</td>
 </tr>
 </tbody>
 </table>
-</div></blockquote>
-<p>Properties:</p>
-<blockquote>
-<div>TODO - complete...</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.2.</span></p>
 </div>
 <dl class="method">
 <dt id="geosoft.gxpy.view.View_3d.close">
 <code class="descname">close</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.view.View_3d.close" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>close the view, releases resources.</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="geosoft.gxpy.view.View_3d.current_3d_drawing_plane">
 <code class="descname">current_3d_drawing_plane</code><a class="headerlink" href="#geosoft.gxpy.view.View_3d.current_3d_drawing_plane" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Name of the current 2d drawing plane, <cite>None</cite> if not defined.  Can be set to a plane number or a name.</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="geosoft.gxpy.view.View_3d.file_name">
 <code class="descname">file_name</code><a class="headerlink" href="#geosoft.gxpy.view.View_3d.file_name" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>the <cite>geosoft_3dv</cite> file name</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxpy.view.View_3d.groups_on_plane_list">
 <code class="descname">groups_on_plane_list</code><span class="sig-paren">(</span><em>plane</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.view.View_3d.groups_on_plane_list" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>List of groups on a plane.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>plane</strong> &#8211; name of the plane</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">list of groups on the plane</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.2.</span></p>
+</div>
+</dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxpy.view.View_3d.has_plane">
 <code class="descname">has_plane</code><span class="sig-paren">(</span><em>plane</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.view.View_3d.has_plane" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>True if the view contains plane</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>plane</strong> &#8211; name of the plane</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">True if the plane exists in the view</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.2.</span></p>
+</div>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="geosoft.gxpy.view.View_3d.name">
 <code class="descname">name</code><a class="headerlink" href="#geosoft.gxpy.view.View_3d.name" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>the view name</p>
+</dd></dl>
 
 <dl class="classmethod">
 <dt id="geosoft.gxpy.view.View_3d.new">
@@ -558,7 +621,22 @@ unique temporary file is created.</li>
 <dl class="method">
 <dt id="geosoft.gxpy.view.View_3d.new_drawing_plane">
 <code class="descname">new_drawing_plane</code><span class="sig-paren">(</span><em>name</em>, <em>rotation=(0.0</em>, <em>0.0</em>, <em>0.0)</em>, <em>offset=(0.0</em>, <em>0.0</em>, <em>0.0)</em>, <em>scale=(1.0</em>, <em>1.0</em>, <em>1.0)</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.view.View_3d.new_drawing_plane" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Create a new drawing plane in a 3d view.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>name</strong> &#8211; name of the plane, overwritten if it exists</li>
+<li><strong>rotation</strong> &#8211; plane rotation as (rx, ry, rz), default (0, 0, 0)</li>
+<li><strong>offset</strong> &#8211; (x, y, z) offset of the plane, default (0, 0, 0)</li>
+<li><strong>scale</strong> &#8211; (xs, ys, zs) axis scaling, default (1, 1, 1)</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
 
 <dl class="classmethod">
 <dt id="geosoft.gxpy.view.View_3d.open">
@@ -580,7 +658,8 @@ unique temporary file is created.</li>
 <dl class="attribute">
 <dt id="geosoft.gxpy.view.View_3d.plane_list">
 <code class="descname">plane_list</code><a class="headerlink" href="#geosoft.gxpy.view.View_3d.plane_list" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>list of drawing planes in the view</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxpy.view.View_3d.plane_name">

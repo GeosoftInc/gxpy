@@ -278,8 +278,6 @@ New Functions
 
 :func:`geosoft.gxpy.project.Geosoft_project.current_map_state`
 
-:func:`geosoft.gxpy.project.dummy_none`
-
 :func:`geosoft.gxpy.project.pause`
 
 :func:`geosoft.gxpy.project.user_message`
@@ -329,6 +327,10 @@ New Functions
 :func:`geosoft.gxpy.view.View_3d.extent_map_cm`
 
 :func:`geosoft.gxpy.view.View_3d.get_class_name`
+
+:func:`geosoft.gxpy.view.View_3d.groups_on_plane_list`
+
+:func:`geosoft.gxpy.view.View_3d.has_plane`
 
 :func:`geosoft.gxpy.view.View_3d.locate`
 

@@ -100,14 +100,14 @@ If a vertical referenc datum is defined it appears as a string in quare brackets
 <p>The descriptive name for well-known coordinate systems is sufficient to describe the coordinate system from
 the <a class="reference external" href="http://www.epsg.org/">EPSG Geodetic Registry</a>. To fully locate ad-hoc coordinates you will need
 the parameters described in the GXF stings.  See the <cite>gxf</cite> property of <a class="reference internal" href="#module-geosoft.gxpy.coordinate_system" title="geosoft.gxpy.coordinate_system"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxpy.coordinate_system</span></code></a>.</p>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXIPJ</span></code></a></p>
+</div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p>Regression tests provide usage examples:</p>
 <p class="last"><a class="reference external" href="https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_coordinate_system.py">coordinate_system tests</a></p>
-</div>
-<div class="admonition seealso">
-<p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXIPJ</span></code></a></p>
 </div>
 <dl class="exception">
 <dt id="geosoft.gxpy.coordinate_system.CSException">
@@ -179,7 +179,7 @@ in which the first 3 columns are coordinates X, Y and Z.</p>
 
 <dl class="class">
 <dt id="geosoft.gxpy.coordinate_system.Coordinate_system">
-<em class="property">class </em><code class="descclassname">geosoft.gxpy.coordinate_system.</code><code class="descname">Coordinate_system</code><span class="sig-paren">(</span><em>cs=None</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.coordinate_system.Coordinate_system" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">geosoft.gxpy.coordinate_system.</code><code class="descname">Coordinate_system</code><span class="sig-paren">(</span><em>coordinate_system=None</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.coordinate_system.Coordinate_system" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
 <p>Coordinate system class. A coordinate system defines a horizontal and vertical reference
 system to locate (x, y, z) cartesian coordinates relative to the Earth.</p>
@@ -193,8 +193,9 @@ system to locate (x, y, z) cartesian coordinates relative to the Earth.</p>
 <li>ESRI WKT string (ie. &#8220;PROJCS[&#8220;WGS_1984_UTM_Zone_35N&#8221;,GEOGCS[...&#8221;)</li>
 <li>a dictionary that contains the coordinate system properties (see <strong>Dictionary Structure</strong> below.)</li>
 <li>a JSON string that contains the coordinate system properties</li>
-<li>a list that contains the 5 <a class="reference external" href="http://www.geosoft.com/resources/goto/GXF-Grid-eXchange-File">GXF coordinate system strings</a>
-(ie: [&#8216;&#8220;WGS 84 / UTM zone 32N [geodetic]&#8221;, &#8220;WGS 84&#8221;, &#8220;UTM zone 32N&#8221;, &#8220;&#8221;, &#8220;&#8221;])</li>
+<li>a list that contains the 5 
+<a class="reference external" href="http://www.geosoft.com/resources/goto/GXF-Grid-eXchange-File">GXF coordinate system strings</a>
+(eg: [&#8216;&#8220;WGS 84 / UTM zone 32N [geodetic]&#8221;, &#8220;WGS 84&#8221;, &#8220;UTM zone 32N&#8221;, &#8220;&#8221;, &#8220;&#8221;])</li>
 <li><a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXIPJ</span></code></a> instance</li>
 <li><a class="reference internal" href="#geosoft.gxpy.coordinate_system.Coordinate_system" title="geosoft.gxpy.coordinate_system.Coordinate_system"><code class="xref py py-class docutils literal"><span class="pre">Coordinate_system</span></code></a> instance, returns a copy</li>
 </ul>

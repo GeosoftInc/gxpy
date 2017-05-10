@@ -77,10 +77,17 @@
             
   <div class="section" id="module-geosoft.gxpy.vv">
 <span id="geosoft-gxpy-vv-submodule"></span><h1>geosoft.gxpy.vv submodule<a class="headerlink" href="#module-geosoft.gxpy.vv" title="Permalink to this headline">¶</a></h1>
-<p>Geosoft vector.</p>
+<p>Geosoft vector. VA and VV classes are related based on a key called a <em>fiducial</em>, 
+which has a start value and increment between values.  The <code class="xref py py-meth docutils literal"><span class="pre">refid()</span></code> method can be used to resample vector
+data to the same fiducial so that vector-to-vector operations can be performed.</p>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="geosoft.gxpy.va.html#module-geosoft.gxpy.va" title="geosoft.gxpy.va"><code class="xref py py-mod docutils literal"><span class="pre">geosoft.gxpy.va</span></code></a>, <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-mod docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>, <a class="reference internal" href="GXVA.html#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-mod docutils literal"><span class="pre">geosoft.gxapi.GXVA</span></code></a></p>
+</div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">Regression tests provide usage examples: <a class="reference external" href="https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_vv.py">Tests</a></p>
+<p>Regression tests provide usage examples:</p>
+<p class="last"><a class="reference external" href="https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_vv.py">vv tests</a></p>
 </div>
 <dl class="class">
 <dt id="geosoft.gxpy.vv.GXvv">
@@ -120,14 +127,7 @@ the type is taken from first element in array, of if no array the default is &#8
 <dl class="attribute">
 <dt id="geosoft.gxpy.vv.GXvv.dtype">
 <code class="descname">dtype</code><a class="headerlink" href="#geosoft.gxpy.vv.GXvv.dtype" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">numpy data type</td>
-</tr>
-</tbody>
-</table>
+<dd><p>numpy data type</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.1.</span></p>
 </div>
@@ -136,14 +136,7 @@ the type is taken from first element in array, of if no array the default is &#8
 <dl class="attribute">
 <dt id="geosoft.gxpy.vv.GXvv.fid">
 <code class="descname">fid</code><a class="headerlink" href="#geosoft.gxpy.vv.GXvv.fid" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">fid tuple (start,increment)</td>
-</tr>
-</tbody>
-</table>
+<dd><p>fid tuple (start,increment), can be set</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.1.</span></p>
 </div>
@@ -177,14 +170,7 @@ the type is taken from first element in array, of if no array the default is &#8
 <dl class="attribute">
 <dt id="geosoft.gxpy.vv.GXvv.gxtype">
 <code class="descname">gxtype</code><a class="headerlink" href="#geosoft.gxpy.vv.GXvv.gxtype" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">GX data type</td>
-</tr>
-</tbody>
-</table>
+<dd><p>GX data type</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.1.</span></p>
 </div>
@@ -193,7 +179,8 @@ the type is taken from first element in array, of if no array the default is &#8
 <dl class="attribute">
 <dt id="geosoft.gxpy.vv.GXvv.gxvv">
 <code class="descname">gxvv</code><a class="headerlink" href="#geosoft.gxpy.vv.GXvv.gxvv" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p><a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a> instance</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="geosoft.gxpy.vv.GXvv.is_int">
@@ -204,14 +191,7 @@ the type is taken from first element in array, of if no array the default is &#8
 <dl class="attribute">
 <dt id="geosoft.gxpy.vv.GXvv.length">
 <code class="descname">length</code><a class="headerlink" href="#geosoft.gxpy.vv.GXvv.length" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">number of elements in the VV</td>
-</tr>
-</tbody>
-</table>
+<dd><p>number of elements in the VV</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.1.</span></p>
 </div>
@@ -229,7 +209,7 @@ the type is taken from first element in array, of if no array the default is &#8
 <dl class="attribute">
 <dt id="geosoft.gxpy.vv.GXvv.np">
 <code class="descname">np</code><a class="headerlink" href="#geosoft.gxpy.vv.GXvv.np" title="Permalink to this definition">¶</a></dt>
-<dd><p>Numpy array of VV data, in the data type of the VV.  Use <code class="xref py py-meth docutils literal"><span class="pre">get_np()</span></code> to get a numpy array
+<dd><p>Numpy array of VV data, in the data type of the VV.  Use <a class="reference internal" href="#geosoft.gxpy.vv.GXvv.get_data" title="geosoft.gxpy.vv.GXvv.get_data"><code class="xref py py-meth docutils literal"><span class="pre">get_data()</span></code></a> to get a numpy array
 in another dtype.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.2.</span></p>

@@ -209,9 +209,17 @@ in the <a class="reference external" href="https://docs.python.org/3/distutils/"
 <dl class="function">
 <dt id="geosoft.gxpy.utility.datetime_from_year">
 <code class="descclassname">geosoft.gxpy.utility.</code><code class="descname">datetime_from_year</code><span class="sig-paren">(</span><em>year</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.utility.datetime_from_year" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the Python datetime from a decimal Gregorian year.
-:param year: decimal year on the Gregorian calendar.
-:return: datetime (resolved to 1 millisecond)</p>
+<dd><p>Return the Python datetime from a decimal Gregorian year.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>year</strong> &#8211; decimal year on the Gregorian calendar.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">datetime (resolved to 1 millisecond)</td>
+</tr>
+</tbody>
+</table>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.2.</span></p>
 </div>
@@ -294,7 +302,8 @@ and return a decimal Gregorian year. Other date formats will raise a ValueErr.</
 <dl class="function">
 <dt id="geosoft.gxpy.utility.dict_from_lst">
 <code class="descclassname">geosoft.gxpy.utility.</code><code class="descname">dict_from_lst</code><span class="sig-paren">(</span><em>lst</em>, <em>ordered=False</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.utility.dict_from_lst" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Return a dictionary from a Geosoft <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXLST</span></code></a> instance.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -317,7 +326,8 @@ and return a decimal Gregorian year. Other date formats will raise a ValueErr.</
 <dl class="function">
 <dt id="geosoft.gxpy.utility.dict_from_reg">
 <code class="descclassname">geosoft.gxpy.utility.</code><code class="descname">dict_from_reg</code><span class="sig-paren">(</span><em>reg</em>, <em>ordered=False</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.utility.dict_from_reg" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>dictionary from a <a class="reference internal" href="GXREG.html#geosoft.gxapi.GXREG" title="geosoft.gxapi.GXREG"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXREG</span></code></a> instance</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -415,6 +425,16 @@ have a Geosoft dummy value.</p>
 <dt id="geosoft.gxpy.utility.dummy_to_nan">
 <code class="descclassname">geosoft.gxpy.utility.</code><code class="descname">dummy_to_nan</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.utility.dummy_to_nan" title="Permalink to this definition">¶</a></dt>
 <dd><p>Replaces dummies in float data to numpy.nan.  All other data types are returned unchanged.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>data</strong> &#8211; float value or a numpy array</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">data with dummies replaced by numpy.nan</td>
+</tr>
+</tbody>
+</table>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.2.</span></p>
 </div>
@@ -655,7 +675,8 @@ as presented. For example, &#8220;20 90 0.00&#8221; will return 21.5.</p>
 <dl class="function">
 <dt id="geosoft.gxpy.utility.reg_from_dict">
 <code class="descclassname">geosoft.gxpy.utility.</code><code class="descname">reg_from_dict</code><span class="sig-paren">(</span><em>rd</em>, <em>max_size=4096</em>, <em>json_encode=True</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.utility.reg_from_dict" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p><a class="reference internal" href="GXREG.html#geosoft.gxapi.GXREG" title="geosoft.gxapi.GXREG"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXREG</span></code></a> instance from a dictionary</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -749,16 +770,29 @@ This is a companion file to run_external_python().</p>
 <dl class="function">
 <dt id="geosoft.gxpy.utility.str_significant">
 <code class="descclassname">geosoft.gxpy.utility.</code><code class="descname">str_significant</code><span class="sig-paren">(</span><em>value</em>, <em>n</em>, <em>mode=0</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.utility.str_significant" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return a formatted string to n significant figures.
-:param value:   value to format
-:param mode:    0 round, 1 ceiling, -1 floor
-:return:        string to n significant figures</p>
+<dd><p>Return a formatted string to n significant figures.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>value</strong> &#8211; value to format</li>
+<li><strong>mode</strong> &#8211; 0 round, 1 ceiling, -1 floor</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">string to n significant figures</p>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="function">
 <dt id="geosoft.gxpy.utility.time_stamp">
 <code class="descclassname">geosoft.gxpy.utility.</code><code class="descname">time_stamp</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.utility.time_stamp" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>current date-time as a string.</p>
+</dd></dl>
 
 <dl class="function">
 <dt id="geosoft.gxpy.utility.uuid">
@@ -779,7 +813,8 @@ This is a companion file to run_external_python().</p>
 <dl class="function">
 <dt id="geosoft.gxpy.utility.yearFromJulianDay2">
 <code class="descclassname">geosoft.gxpy.utility.</code><code class="descname">yearFromJulianDay2</code><span class="sig-paren">(</span><em>jd1</em>, <em>jd2</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.utility.yearFromJulianDay2" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>Julian year</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -802,9 +837,17 @@ This is a companion file to run_external_python().</p>
 <dl class="function">
 <dt id="geosoft.gxpy.utility.year_from_datetime">
 <code class="descclassname">geosoft.gxpy.utility.</code><code class="descname">year_from_datetime</code><span class="sig-paren">(</span><em>dt</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.utility.year_from_datetime" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return a decimal Gregorian calendar year from a Python datetime.
-:param dt: datetime
-:return: decimal Gregorian year to an accuracy of 1 millisecond</p>
+<dd><p>Return a decimal Gregorian calendar year from a Python datetime.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>dt</strong> &#8211; datetime</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">decimal Gregorian year to an accuracy of 1 millisecond</td>
+</tr>
+</tbody>
+</table>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.2.</span></p>
 </div>

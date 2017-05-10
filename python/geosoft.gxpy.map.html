@@ -77,17 +77,19 @@
             
   <div class="section" id="module-geosoft.gxpy.map">
 <span id="geosoft-gxpy-map-submodule"></span><h1>geosoft.gxpy.map submodule<a class="headerlink" href="#module-geosoft.gxpy.map" title="Permalink to this headline">¶</a></h1>
-<p>Geosoft maps contain 2D and 3D views.</p>
+<p>Geosoft maps contain one or more 2D and 3D views.  Each 2D view has a specific coordinate system and clip region.
+Each 3D view is a link to a separate geosoft_3dv file, which is placed in the map as a 2D perspective of the last
+viewing state of the 3D view.</p>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p><a class="reference internal" href="geosoft.gxpy.view.html#module-geosoft.gxpy.view" title="geosoft.gxpy.view"><code class="xref py py-mod docutils literal"><span class="pre">geosoft.gxpy.view</span></code></a>, <a class="reference internal" href="geosoft.gxpy.group.html#module-geosoft.gxpy.group" title="geosoft.gxpy.group"><code class="xref py py-mod docutils literal"><span class="pre">geosoft.gxpy.group</span></code></a></p>
+<p class="last"><a class="reference internal" href="GXMAP.html#geosoft.gxapi.GXMAP" title="geosoft.gxapi.GXMAP"><code class="xref py py-mod docutils literal"><span class="pre">geosoft.gxapi.GXMAP</span></code></a>, <a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW" title="geosoft.gxapi.GXMVIEW"><code class="xref py py-mod docutils literal"><span class="pre">geosoft.gxapi.GXMVIEW</span></code></a>, <a class="reference internal" href="GXMVU.html#geosoft.gxapi.GXMVU" title="geosoft.gxapi.GXMVU"><code class="xref py py-mod docutils literal"><span class="pre">geosoft.gxapi.GXMVU</span></code></a></p>
+</div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">Regression tests provide usage examples: <a class="reference external" href="https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_map.py">Tests</a></p>
+<p>Regression tests provide usage examples:</p>
+<p class="last"><a class="reference external" href="https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_map.py">map tests</a></p>
 </div>
-<dl class="class">
-<dt id="geosoft.gxpy.map.Line_def">
-<em class="property">class </em><code class="descclassname">geosoft.gxpy.map.</code><code class="descname">Line_def</code><span class="sig-paren">(</span><em>line_color='k'</em>, <em>fill_color=None</em>, <em>thickness=100</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.map.Line_def" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
-</dd></dl>
-
 <dl class="class">
 <dt id="geosoft.gxpy.map.Map">
 <em class="property">class </em><code class="descclassname">geosoft.gxpy.map.</code><code class="descname">Map</code><span class="sig-paren">(</span><em>file_name</em>, <em>mode=1</em>, <em>_internal=False</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.map.Map" title="Permalink to this definition">¶</a></dt>
@@ -117,34 +119,32 @@ map viewing applications allow a user to open a 3D view in a 3D viewer, which pr
 <blockquote>
 <div><table border="1" class="docutils">
 <colgroup>
-<col width="22%" />
-<col width="78%" />
+<col width="23%" />
+<col width="77%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><cite>open()</cite></td>
+<tr class="row-odd"><td><a class="reference internal" href="#geosoft.gxpy.map.Map.open" title="geosoft.gxpy.map.Map.open"><code class="xref py py-meth docutils literal"><span class="pre">open()</span></code></a></td>
 <td>open an existing map</td>
 </tr>
-<tr class="row-even"><td><cite>new()</cite></td>
+<tr class="row-even"><td><a class="reference internal" href="#geosoft.gxpy.map.Map.new" title="geosoft.gxpy.map.Map.new"><code class="xref py py-meth docutils literal"><span class="pre">new()</span></code></a></td>
 <td>create a new map</td>
 </tr>
 </tbody>
 </table>
 </div></blockquote>
-<p>Properties:</p>
-<blockquote>
-<div>TODO - complete</div></blockquote>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.2.</span></p>
 </div>
 <dl class="method">
 <dt id="geosoft.gxpy.map.Map.aggregate_list">
 <code class="descname">aggregate_list</code><span class="sig-paren">(</span><em>mode=0</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.map.Map.aggregate_list" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>list of aggregates on the map as &#8216;view_name/group_name&#8217;</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxpy.map.Map.annotate_data_ll">
 <code class="descname">annotate_data_ll</code><span class="sig-paren">(</span><em>view_name='*data'</em>, <em>tick=''</em>, <em>offset=''</em>, <em>sep=''</em>, <em>top=-1</em>, <em>text_def=None</em>, <em>edge_pen=None</em>, <em>grid=3</em>, <em>grid_pen=None</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.map.Map.annotate_data_ll" title="Permalink to this definition">¶</a></dt>
-<dd><p>Annotate the date view axis</p>
+<dd><p>Annotate the data view axis</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -290,13 +290,17 @@ with the same coordinate system, scale and clipping as the old view.</li>
 <dl class="attribute">
 <dt id="geosoft.gxpy.map.Map.current_base_view">
 <code class="descname">current_base_view</code><a class="headerlink" href="#geosoft.gxpy.map.Map.current_base_view" title="Permalink to this definition">¶</a></dt>
-<dd><p>The current default base view which accepts drawing commands from Geosoft methods.</p>
+<dd><p>The current default base view which accepts map annotation drawing groups 
+(like titles, North arrow, etc.) from Geosoft methods.  This can be set, though
+Geosoft uses the &#8216;base&#8217; view in most standard cases.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="geosoft.gxpy.map.Map.current_data_view">
 <code class="descname">current_data_view</code><a class="headerlink" href="#geosoft.gxpy.map.Map.current_data_view" title="Permalink to this definition">¶</a></dt>
-<dd><p>The current default data view which accepts drawing commands from Geosoft methods.</p>
+<dd><p>Current default data view which accepts drawing groups from Geosoft methods that do not
+explicitly identify a view. Set this to a view that should accept default drawing groups.
+If this is a 3D view, new groups are placed on the default drawing plane of the view.</p>
 </dd></dl>
 
 <dl class="attribute">
@@ -334,7 +338,7 @@ with the same coordinate system, scale and clipping as the old view.</li>
 <dl class="attribute">
 <dt id="geosoft.gxpy.map.Map.file_name">
 <code class="descname">file_name</code><a class="headerlink" href="#geosoft.gxpy.map.Map.file_name" title="Permalink to this definition">¶</a></dt>
-<dd><p>Full map file path name.</p>
+<dd><p>full map file path name.</p>
 </dd></dl>
 
 <dl class="method">
@@ -425,11 +429,12 @@ both a base view and a data view:</p>
 <dl class="attribute">
 <dt id="geosoft.gxpy.map.Map.name">
 <code class="descname">name</code><a class="headerlink" href="#geosoft.gxpy.map.Map.name" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>map name, base name of the map file</p>
+</dd></dl>
 
 <dl class="classmethod">
 <dt id="geosoft.gxpy.map.Map.new">
-<em class="property">classmethod </em><code class="descname">new</code><span class="sig-paren">(</span><em>file_name=None</em>, <em>data_area=(0.0</em>, <em>0.0</em>, <em>100.0</em>, <em>100.0)</em>, <em>scale=None</em>, <em>cs=None</em>, <em>media=None</em>, <em>layout=None</em>, <em>fixed_size=False</em>, <em>map_style=None</em>, <em>margins=None</em>, <em>inside_margin=1.0</em>, <em>overwrite=False</em>, <em>no_data_view=False</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.map.Map.new" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="descname">new</code><span class="sig-paren">(</span><em>file_name=None</em>, <em>data_area=(0.0</em>, <em>0.0</em>, <em>100.0</em>, <em>100.0)</em>, <em>scale=None</em>, <em>coordinate_system=None</em>, <em>media=None</em>, <em>layout=None</em>, <em>fixed_size=False</em>, <em>map_style=None</em>, <em>margins=None</em>, <em>inside_margin=1.0</em>, <em>overwrite=False</em>, <em>no_data_view=False</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.map.Map.new" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create and open a new Geosoft map.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -449,7 +454,8 @@ when the GX loses context.</td>
 </tr>
 <tr class="field-odd field"><th class="field-name">scale:</th><td class="field-body">required scale, default will fit data to the map media</td>
 </tr>
-<tr class="field-even field"><th class="field-name">cs:</th><td class="field-body">coordinate system, default is an unknown coordinate system.  You may pass
+<tr class="field-even field"><th class="field-name" colspan="2">coordinate_system:</th></tr>
+<tr class="field-even field"><td>&nbsp;</td><td class="field-body">coordinate system, default is an unknown coordinate system.  You may pass
 a <code class="docutils literal"><span class="pre">coordinate_system.Coordinate_system</span></code> instance, a string descriptor, such as
 <cite>WGS 84 / UTM zone 15N</cite>, or another valid constructor supported by
 <code class="docutils literal"><span class="pre">coordinate_system.Coordinate_system</span></code>.</td>
@@ -634,17 +640,20 @@ map.</p>
 <dl class="attribute">
 <dt id="geosoft.gxpy.map.Map.view_list">
 <code class="descname">view_list</code><a class="headerlink" href="#geosoft.gxpy.map.Map.view_list" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>list of views in the map, both 2D and 3D</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="geosoft.gxpy.map.Map.view_list_2D">
 <code class="descname">view_list_2D</code><a class="headerlink" href="#geosoft.gxpy.map.Map.view_list_2D" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>list of 2D views in the map</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="geosoft.gxpy.map.Map.view_list_3D">
 <code class="descname">view_list_3D</code><a class="headerlink" href="#geosoft.gxpy.map.Map.view_list_3D" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>list of 3D views in the map</p>
+</dd></dl>
 
 </dd></dl>
 
