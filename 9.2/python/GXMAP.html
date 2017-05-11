@@ -27,6 +27,8 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="GXMAPL class" href="GXMAPL.html" />
+    <link rel="prev" title="GXLTB class" href="GXLTB.html" />
  
 <script type="text/javascript">
   var _gaq = _gaq || [];
@@ -43,9 +45,13 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li> 
+          <a href="GXMAPL.html" title="GXMAPL class"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="GXLTB.html" title="GXLTB class"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="geosoft.gxapi.classes.html" accesskey="U">GX API Class/Library Reference</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -64,13 +70,19 @@
 </li>
 </ul>
 
-  <div role="note" aria-label="source link">
-    <h3>This Page</h3>
-    <ul class="this-page-menu">
-      <li><a href="_sources/GXMAP.rst.txt"
-            rel="nofollow">Show Source</a></li>
-    </ul>
-   </div>
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Introduction</a></li>
+    <li><a href="geosoft.gxapi.classes.html">GX API Class/Library Reference</a></li>
+</ul>
+<h3>Previous Topic</h3>
+<ul>
+    <li><a href="GXLTB.html" title="previous chapter">GXLTB class</a></li>
+</ul>
+<h3>Next Topic</h3>
+<ul>
+    <li><a href="GXMAPL.html" title="next chapter">GXMAPL class</a></li>
+</ul>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
@@ -81,6 +93,13 @@
     </form>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/GXMAP.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
         </div>
       </div>
 
@@ -98,22 +117,22 @@
 MAPs are containers for MVIEW objects. A view is a 3-D translation
 and a clip window on a map. Graphic entities can be drawn in an MVIEW.
 It is recommended that the MAP class be instantiated by first creating
-an EMAP object and calling the \ :func:`geosoft.gxapi.GXEMAP.lock`\ () function.
+an EMAP object and calling the <a class="reference internal" href="GXEMAP.html#geosoft.gxapi.GXEMAP.lock" title="geosoft.gxapi.GXEMAP.lock"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXEMAP.lock()</span></code></a>() function.
 (See the explanation on the distinction between the MAP and EMAP classes).
 </pre>
 <dl class="method">
 <dt id="geosoft.gxapi.GXMAP.agg_list">
 <code class="descname">agg_list</code><span class="sig-paren">(</span><em>(GXLST)arg1</em>, <em>(int)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXMAP.agg_list" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Get a list of all aggregates in this map.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">a</span> <span class="nb">list</span> <span class="n">of</span> <span class="nb">all</span> <span class="n">aggregates</span> <span class="ow">in</span> <span class="n">this</span> <span class="nb">map</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXLST</span></code></a>) &#8211; list to hold the views (allow up to 96 characters)</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; 0 - view/agg only 1 - view/agg/layer</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; 0 - view/agg only 1 - view/agg/layer</li>
 </ul>
 </td>
 </tr>
@@ -129,13 +148,13 @@ Get a list of all aggregates in this map.
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-List items are returned as view/agg/layer.
-The layer name is optional
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">List</span> <span class="n">items</span> <span class="n">are</span> <span class="n">returned</span> <span class="k">as</span> <span class="n">view</span><span class="o">/</span><span class="n">agg</span><span class="o">/</span><span class="n">layer</span><span class="o">.</span>
+<span class="n">The</span> <span class="n">layer</span> <span class="n">name</span> <span class="ow">is</span> <span class="n">optional</span>
+</pre></div>
+</div>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
-<p class="last">\ :class:`geosoft.gxapi.GXLST`\  class.</p>
+<p class="last"><a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXLST</span></code></a> class.</p>
 </div>
 </dd></dl>
 
@@ -151,8 +170,8 @@ The layer name is optional
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXLST</span></code></a>) &#8211; list to hold the views (allow up to 96 characters)</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; 0 - view/agg only 1 - view/agg/layer</li>
-<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#map-list-mode"><span class="std std-ref">MAP_LIST_MODE constants</span></a></li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; 0 - view/agg only 1 - view/agg/layer</li>
+<li><strong>arg3</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#map-list-mode"><span class="std std-ref">MAP_LIST_MODE constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -168,22 +187,22 @@ The layer name is optional
 <p><span class="versionmodified">New in version 5.1.2.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-List items are returned as view/agg/layer.
-The layer name is optional
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">List</span> <span class="n">items</span> <span class="n">are</span> <span class="n">returned</span> <span class="k">as</span> <span class="n">view</span><span class="o">/</span><span class="n">agg</span><span class="o">/</span><span class="n">layer</span><span class="o">.</span>
+<span class="n">The</span> <span class="n">layer</span> <span class="n">name</span> <span class="ow">is</span> <span class="n">optional</span>
+</pre></div>
+</div>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
-<p class="last">\ :class:`geosoft.gxapi.GXLST`\  class.</p>
+<p class="last"><a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXLST</span></code></a> class.</p>
 </div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXMAP.clean">
 <code class="descname">clean</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXMAP.clean" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Clean up empty groups in all views in map.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Clean</span> <span class="n">up</span> <span class="n">empty</span> <span class="n">groups</span> <span class="ow">in</span> <span class="nb">all</span> <span class="n">views</span> <span class="ow">in</span> <span class="nb">map</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -202,9 +221,9 @@ Clean up empty groups in all views in map.
 <dl class="method">
 <dt id="geosoft.gxapi.GXMAP.commit">
 <code class="descname">commit</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXMAP.commit" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Commit any changes to a map.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Commit</span> <span class="nb">any</span> <span class="n">changes</span> <span class="n">to</span> <span class="n">a</span> <span class="nb">map</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -223,9 +242,9 @@ Commit any changes to a map.
 <dl class="method">
 <dt id="geosoft.gxapi.GXMAP.copy_map_to_view">
 <code class="descname">copy_map_to_view</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(str)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXMAP.copy_map_to_view" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Copy entire map into one view in output map.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Copy</span> <span class="n">entire</span> <span class="nb">map</span> <span class="n">into</span> <span class="n">one</span> <span class="n">view</span> <span class="ow">in</span> <span class="n">output</span> <span class="nb">map</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -281,16 +300,16 @@ Copy entire map into one view in output map.
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXMAP.create">
 <em class="property">static </em><code class="descname">create</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(int)arg2</em><span class="sig-paren">)</span> &rarr; GXMAP:<a class="headerlink" href="#geosoft.gxapi.GXMAP.create" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Create a MAP.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Create</span> <span class="n">a</span> <span class="n">MAP</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<em>str</em>) &#8211; MAP file name</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#map-open"><span class="std std-ref">MAP_OPEN constants</span></a></li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#map-open"><span class="std std-ref">MAP_OPEN constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -310,9 +329,9 @@ Create a MAP.
 <dl class="method">
 <dt id="geosoft.gxapi.GXMAP.create_linked_3d_view">
 <code class="descname">create_linked_3d_view</code><span class="sig-paren">(</span><em>(GXMVIEW)arg1</em>, <em>(str)arg2</em>, <em>(float)arg3</em>, <em>(float)arg4</em>, <em>(float)arg5</em>, <em>(float)arg6</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXMAP.create_linked_3d_view" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Create a 3D View in this map that is linked to a MVIEW in a 3D View file.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Create</span> <span class="n">a</span> <span class="mi">3</span><span class="n">D</span> <span class="n">View</span> <span class="ow">in</span> <span class="n">this</span> <span class="nb">map</span> <span class="n">that</span> <span class="ow">is</span> <span class="n">linked</span> <span class="n">to</span> <span class="n">a</span> <span class="n">MVIEW</span> <span class="ow">in</span> <span class="n">a</span> <span class="mi">3</span><span class="n">D</span> <span class="n">View</span> <span class="n">file</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -343,9 +362,9 @@ Create a 3D View in this map that is linked to a MVIEW in a 3D View file.
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXMAP.current">
 <em class="property">static </em><code class="descname">current</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; GXMAP:<a class="headerlink" href="#geosoft.gxapi.GXMAP.current" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-This method returns the Current map opened.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="n">method</span> <span class="n">returns</span> <span class="n">the</span> <span class="n">Current</span> <span class="nb">map</span> <span class="n">opened</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -360,18 +379,18 @@ This method returns the Current map opened.
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-If there is no current map, and running interactively,
-the user is prompted to open a map.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">If</span> <span class="n">there</span> <span class="ow">is</span> <span class="n">no</span> <span class="n">current</span> <span class="nb">map</span><span class="p">,</span> <span class="ow">and</span> <span class="n">running</span> <span class="n">interactively</span><span class="p">,</span>
+<span class="n">the</span> <span class="n">user</span> <span class="ow">is</span> <span class="n">prompted</span> <span class="n">to</span> <span class="nb">open</span> <span class="n">a</span> <span class="nb">map</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXMAP.delete_view">
 <code class="descname">delete_view</code><span class="sig-paren">(</span><em>(str)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXMAP.delete_view" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Deletes a view in this map.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Deletes</span> <span class="n">a</span> <span class="n">view</span> <span class="ow">in</span> <span class="n">this</span> <span class="nb">map</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -388,17 +407,17 @@ Deletes a view in this map.
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-If the view does not exist, nothing happens.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">If</span> <span class="n">the</span> <span class="n">view</span> <span class="n">does</span> <span class="ow">not</span> <span class="n">exist</span><span class="p">,</span> <span class="n">nothing</span> <span class="n">happens</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXMAP.discard">
 <code class="descname">discard</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXMAP.discard" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Discard all changes made to the map.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Discard</span> <span class="nb">all</span> <span class="n">changes</span> <span class="n">made</span> <span class="n">to</span> <span class="n">the</span> <span class="nb">map</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -417,16 +436,16 @@ Discard all changes made to the map.
 <dl class="method">
 <dt id="geosoft.gxapi.GXMAP.dup_map">
 <code class="descname">dup_map</code><span class="sig-paren">(</span><em>(GXMAP)arg1</em>, <em>(int)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXMAP.dup_map" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Duplicate copy of current map.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Duplicate</span> <span class="n">copy</span> <span class="n">of</span> <span class="n">current</span> <span class="nb">map</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<a class="reference internal" href="#geosoft.gxapi.GXMAP" title="geosoft.gxapi.GXMAP"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXMAP</span></code></a>) &#8211; Destination MAP object</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#dupmap"><span class="std std-ref">DUPMAP constants</span></a></li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#dupmap"><span class="std std-ref">DUPMAP constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -442,16 +461,16 @@ Duplicate copy of current map.
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-Before version 6.2 text in maps were displayed with a character set
-defining how characters above ASCII 127 would be displayed. 6.2 introduced
-Unicode in the core montaj engine that eliminated the need for such a setting and
-greatly increased the number of symbols that can be used. The only caveat
-of the new system is that text may appear corrupted (especially with GFN fonts) in
-versions prior to 6.2 that render maps created in version 6.2 and later.
-The constant DUPMAP_COPY_PRE62 provides a way to create maps that can be
-distributed to versions prior to 6.2.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Before</span> <span class="n">version</span> <span class="mf">6.2</span> <span class="n">text</span> <span class="ow">in</span> <span class="n">maps</span> <span class="n">were</span> <span class="n">displayed</span> <span class="k">with</span> <span class="n">a</span> <span class="n">character</span> <span class="nb">set</span>
+<span class="n">defining</span> <span class="n">how</span> <span class="n">characters</span> <span class="n">above</span> <span class="n">ASCII</span> <span class="mi">127</span> <span class="n">would</span> <span class="n">be</span> <span class="n">displayed</span><span class="o">.</span> <span class="mf">6.2</span> <span class="n">introduced</span>
+<span class="n">Unicode</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">core</span> <span class="n">montaj</span> <span class="n">engine</span> <span class="n">that</span> <span class="n">eliminated</span> <span class="n">the</span> <span class="n">need</span> <span class="k">for</span> <span class="n">such</span> <span class="n">a</span> <span class="n">setting</span> <span class="ow">and</span>
+<span class="n">greatly</span> <span class="n">increased</span> <span class="n">the</span> <span class="n">number</span> <span class="n">of</span> <span class="n">symbols</span> <span class="n">that</span> <span class="n">can</span> <span class="n">be</span> <span class="n">used</span><span class="o">.</span> <span class="n">The</span> <span class="n">only</span> <span class="n">caveat</span>
+<span class="n">of</span> <span class="n">the</span> <span class="n">new</span> <span class="n">system</span> <span class="ow">is</span> <span class="n">that</span> <span class="n">text</span> <span class="n">may</span> <span class="n">appear</span> <span class="n">corrupted</span> <span class="p">(</span><span class="n">especially</span> <span class="k">with</span> <span class="n">GFN</span> <span class="n">fonts</span><span class="p">)</span> <span class="ow">in</span>
+<span class="n">versions</span> <span class="n">prior</span> <span class="n">to</span> <span class="mf">6.2</span> <span class="n">that</span> <span class="n">render</span> <span class="n">maps</span> <span class="n">created</span> <span class="ow">in</span> <span class="n">version</span> <span class="mf">6.2</span> <span class="ow">and</span> <span class="n">later</span><span class="o">.</span>
+<span class="n">The</span> <span class="n">constant</span> <span class="n">DUPMAP_COPY_PRE62</span> <span class="n">provides</span> <span class="n">a</span> <span class="n">way</span> <span class="n">to</span> <span class="n">create</span> <span class="n">maps</span> <span class="n">that</span> <span class="n">can</span> <span class="n">be</span>
+<span class="n">distributed</span> <span class="n">to</span> <span class="n">versions</span> <span class="n">prior</span> <span class="n">to</span> <span class="mf">6.2</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
@@ -487,9 +506,9 @@ distributed to versions prior to 6.2.
 <dl class="method">
 <dt id="geosoft.gxapi.GXMAP.exist_view">
 <code class="descname">exist_view</code><span class="sig-paren">(</span><em>(str)arg1</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXMAP.exist_view" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Checks to see if a view exists.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Checks</span> <span class="n">to</span> <span class="n">see</span> <span class="k">if</span> <span class="n">a</span> <span class="n">view</span> <span class="n">exists</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -499,7 +518,7 @@ Checks to see if a view exists.
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">0 view does not exist.
 1 view exists.</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
 </tr>
 </tbody>
 </table>
@@ -511,9 +530,9 @@ Checks to see if a view exists.
 <dl class="method">
 <dt id="geosoft.gxapi.GXMAP.export_all_in_view">
 <code class="descname">export_all_in_view</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(str)arg2</em>, <em>(float)arg3</em>, <em>(float)arg4</em>, <em>(int)arg5</em>, <em>(int)arg6</em>, <em>(str)arg7</em>, <em>(str)arg8</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXMAP.export_all_in_view" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Export the entire map in view units to an external format. View and Group names are removed and plane spatial coordinates will be in the units of the map.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Export</span> <span class="n">the</span> <span class="n">entire</span> <span class="nb">map</span> <span class="ow">in</span> <span class="n">view</span> <span class="n">units</span> <span class="n">to</span> <span class="n">an</span> <span class="n">external</span> <span class="nb">format</span><span class="o">.</span> <span class="n">View</span> <span class="ow">and</span> <span class="n">Group</span> <span class="n">names</span> <span class="n">are</span> <span class="n">removed</span> <span class="ow">and</span> <span class="n">plane</span> <span class="n">spatial</span> <span class="n">coordinates</span> <span class="n">will</span> <span class="n">be</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">units</span> <span class="n">of</span> <span class="n">the</span> <span class="nb">map</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -523,8 +542,8 @@ Export the entire map in view units to an external format. View and Group names 
 <li><strong>arg2</strong> (<em>str</em>) &#8211; View to export coordinates in</li>
 <li><strong>arg3</strong> (<em>float</em>) &#8211; Resolution in view units of one pixel (or dummy, will be used if DPI is dummy)</li>
 <li><strong>arg4</strong> (<em>float</em>) &#8211; Resolution in DPI (will override view resolution if not dummy, map page size will be used to determine pixel size of output)</li>
-<li><strong>arg5</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#map-export-bits"><span class="std std-ref">MAP_EXPORT_BITS constants</span></a></li>
-<li><strong>arg6</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#map-export-method"><span class="std std-ref">MAP_EXPORT_METHOD constants</span></a></li>
+<li><strong>arg5</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#map-export-bits"><span class="std std-ref">MAP_EXPORT_BITS constants</span></a></li>
+<li><strong>arg6</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#map-export-method"><span class="std std-ref">MAP_EXPORT_METHOD constants</span></a></li>
 <li><strong>arg7</strong> (<em>str</em>) &#8211; <a class="reference internal" href="#map-export-format"><span class="std std-ref">MAP_EXPORT_FORMAT constants</span></a></li>
 <li><strong>arg8</strong> (<em>str</em>) &#8211; Extended Options String (format specific)</li>
 </ul>
@@ -546,9 +565,9 @@ Export the entire map in view units to an external format. View and Group names 
 <dl class="method">
 <dt id="geosoft.gxapi.GXMAP.export_all_raster">
 <code class="descname">export_all_raster</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(str)arg2</em>, <em>(int)arg3</em>, <em>(int)arg4</em>, <em>(float)arg5</em>, <em>(int)arg6</em>, <em>(int)arg7</em>, <em>(str)arg8</em>, <em>(str)arg9</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXMAP.export_all_raster" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Export the entire map to map to a non-geo raster format.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Export</span> <span class="n">the</span> <span class="n">entire</span> <span class="nb">map</span> <span class="n">to</span> <span class="nb">map</span> <span class="n">to</span> <span class="n">a</span> <span class="n">non</span><span class="o">-</span><span class="n">geo</span> <span class="n">raster</span> <span class="nb">format</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -556,11 +575,11 @@ Export the entire map to map to a non-geo raster format.
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<em>str</em>) &#8211; File Name To Export</li>
 <li><strong>arg2</strong> (<em>str</em>) &#8211; View to export coordinates in</li>
-<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Number of Pixels in X (X or Y should be specified the other should be 0 and computed by export, or both can be 0 and DPI defined)</li>
-<li><strong>arg4</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Number of Pixels in Y (X or Y should be specified the other should be 0 and computed by export, or both can be 0 and DPI defined)</li>
+<li><strong>arg3</strong> (<em>int</em>) &#8211; Number of Pixels in X (X or Y should be specified the other should be 0 and computed by export, or both can be 0 and DPI defined)</li>
+<li><strong>arg4</strong> (<em>int</em>) &#8211; Number of Pixels in Y (X or Y should be specified the other should be 0 and computed by export, or both can be 0 and DPI defined)</li>
 <li><strong>arg5</strong> (<em>float</em>) &#8211; Resolution in DPI (will override X and Y if not dummy, map page size will be used to determine pixel size of output)</li>
-<li><strong>arg6</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#map-export-bits"><span class="std std-ref">MAP_EXPORT_BITS constants</span></a></li>
-<li><strong>arg7</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#map-export-method"><span class="std std-ref">MAP_EXPORT_METHOD constants</span></a></li>
+<li><strong>arg6</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#map-export-bits"><span class="std std-ref">MAP_EXPORT_BITS constants</span></a></li>
+<li><strong>arg7</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#map-export-method"><span class="std std-ref">MAP_EXPORT_METHOD constants</span></a></li>
 <li><strong>arg8</strong> (<em>str</em>) &#8211; <a class="reference internal" href="#map-export-raster-format"><span class="std std-ref">MAP_EXPORT_RASTER_FORMAT constants</span></a></li>
 <li><strong>arg9</strong> (<em>str</em>) &#8211; Extended Options String (format specific)</li>
 </ul>
@@ -594,8 +613,8 @@ Export the entire map to map to a non-geo raster format.
 <li><strong>arg2</strong> (<em>str</em>) &#8211; View to export coordinates in</li>
 <li><strong>arg3</strong> (<em>float</em>) &#8211; Resolution in view units of one pixel (or dummy, will be used if DPI is dummy)</li>
 <li><strong>arg4</strong> (<em>float</em>) &#8211; Resolution in DPI (will override view resolution if not dummy, map page size will be used to determine pixel size of output)</li>
-<li><strong>arg5</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#map-export-bits"><span class="std std-ref">MAP_EXPORT_BITS constants</span></a></li>
-<li><strong>arg6</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#map-export-method"><span class="std std-ref">MAP_EXPORT_METHOD constants</span></a></li>
+<li><strong>arg5</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#map-export-bits"><span class="std std-ref">MAP_EXPORT_BITS constants</span></a></li>
+<li><strong>arg6</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#map-export-method"><span class="std std-ref">MAP_EXPORT_METHOD constants</span></a></li>
 <li><strong>arg7</strong> (<em>float</em>) &#8211; Area To Export Min X location in view units</li>
 <li><strong>arg8</strong> (<em>float</em>) &#8211; Area To Export Min Y location in view units</li>
 <li><strong>arg9</strong> (<em>float</em>) &#8211; Area To Export Max X location in view units</li>
@@ -621,9 +640,9 @@ Export the entire map to map to a non-geo raster format.
 <dl class="method">
 <dt id="geosoft.gxapi.GXMAP.export_area_raster">
 <code class="descname">export_area_raster</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(str)arg2</em>, <em>(float)arg3</em>, <em>(float)arg4</em>, <em>(float)arg5</em>, <em>(float)arg6</em>, <em>(int)arg7</em>, <em>(int)arg8</em>, <em>(float)arg9</em>, <em>(int)arg10</em>, <em>(int)arg11</em>, <em>(str)arg12</em>, <em>(str)arg13</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXMAP.export_area_raster" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Export an area of a map to a non-geo raster format.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Export</span> <span class="n">an</span> <span class="n">area</span> <span class="n">of</span> <span class="n">a</span> <span class="nb">map</span> <span class="n">to</span> <span class="n">a</span> <span class="n">non</span><span class="o">-</span><span class="n">geo</span> <span class="n">raster</span> <span class="nb">format</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -635,11 +654,11 @@ Export an area of a map to a non-geo raster format.
 <li><strong>arg4</strong> (<em>float</em>) &#8211; Area To Export Min Y location in view units</li>
 <li><strong>arg5</strong> (<em>float</em>) &#8211; Area To Export Max X location in view units</li>
 <li><strong>arg6</strong> (<em>float</em>) &#8211; Area To Export Max Y location in view units</li>
-<li><strong>arg7</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Number of Pixels in X (X or Y should be specified the other should be 0 and computed by export, or both can be 0 and DPI defined)</li>
-<li><strong>arg8</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Number of Pixels in Y (X or Y should be specified the other should be 0 and computed by export, or both can be 0 and DPI defined)</li>
+<li><strong>arg7</strong> (<em>int</em>) &#8211; Number of Pixels in X (X or Y should be specified the other should be 0 and computed by export, or both can be 0 and DPI defined)</li>
+<li><strong>arg8</strong> (<em>int</em>) &#8211; Number of Pixels in Y (X or Y should be specified the other should be 0 and computed by export, or both can be 0 and DPI defined)</li>
 <li><strong>arg9</strong> (<em>float</em>) &#8211; Resolution in DPI (will override X and Y if not dummy, map page size will be used to determine pixel size of output)</li>
-<li><strong>arg10</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#map-export-bits"><span class="std std-ref">MAP_EXPORT_BITS constants</span></a></li>
-<li><strong>arg11</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#map-export-method"><span class="std std-ref">MAP_EXPORT_METHOD constants</span></a></li>
+<li><strong>arg10</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#map-export-bits"><span class="std std-ref">MAP_EXPORT_BITS constants</span></a></li>
+<li><strong>arg11</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#map-export-method"><span class="std std-ref">MAP_EXPORT_METHOD constants</span></a></li>
 <li><strong>arg12</strong> (<em>str</em>) &#8211; <a class="reference internal" href="#map-export-raster-format"><span class="std std-ref">MAP_EXPORT_RASTER_FORMAT constants</span></a></li>
 <li><strong>arg13</strong> (<em>str</em>) &#8211; Extended Options String (format specific)</li>
 </ul>
@@ -661,9 +680,9 @@ Export an area of a map to a non-geo raster format.
 <dl class="method">
 <dt id="geosoft.gxapi.GXMAP.get_class_name">
 <code class="descname">get_class_name</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(str_ref)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXMAP.get_class_name" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Get a class name.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">a</span> <span class="k">class</span> <span class="nc">name</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -686,34 +705,34 @@ Get a class name.
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-Map class names are intended to be used to record the
-names of certain view classes in the map, such as the
-&quot;Data&quot;, &quot;Base&quot; and &quot;Section&quot; views.
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Map</span> <span class="k">class</span> <span class="nc">names</span> <span class="n">are</span> <span class="n">intended</span> <span class="n">to</span> <span class="n">be</span> <span class="n">used</span> <span class="n">to</span> <span class="n">record</span> <span class="n">the</span>
+<span class="n">names</span> <span class="n">of</span> <span class="n">certain</span> <span class="n">view</span> <span class="n">classes</span> <span class="ow">in</span> <span class="n">the</span> <span class="nb">map</span><span class="p">,</span> <span class="n">such</span> <span class="k">as</span> <span class="n">the</span>
+<span class="s2">&quot;Data&quot;</span><span class="p">,</span> <span class="s2">&quot;Base&quot;</span> <span class="ow">and</span> <span class="s2">&quot;Section&quot;</span> <span class="n">views</span><span class="o">.</span>
 
-There can only be one name for each class, but it can
-be changed.  This lets the &quot;Data&quot; class name change,
-for example, so plotting can select which class to plot
-to.
+<span class="n">There</span> <span class="n">can</span> <span class="n">only</span> <span class="n">be</span> <span class="n">one</span> <span class="n">name</span> <span class="k">for</span> <span class="n">each</span> <span class="n">class</span><span class="p">,</span> <span class="n">but</span> <span class="n">it</span> <span class="n">can</span>
+<span class="n">be</span> <span class="n">changed</span><span class="o">.</span>  <span class="n">This</span> <span class="n">lets</span> <span class="n">the</span> <span class="s2">&quot;Data&quot;</span> <span class="k">class</span> <span class="nc">name</span> <span class="n">change</span><span class="p">,</span>
+<span class="k">for</span> <span class="n">example</span><span class="p">,</span> <span class="n">so</span> <span class="n">plotting</span> <span class="n">can</span> <span class="n">select</span> <span class="n">which</span> <span class="k">class</span> <span class="nc">to</span> <span class="n">plot</span>
+<span class="n">to</span><span class="o">.</span>
 
-If a name is not set, the class name is set and
-returned.
-</pre>
+<span class="n">If</span> <span class="n">a</span> <span class="n">name</span> <span class="ow">is</span> <span class="ow">not</span> <span class="nb">set</span><span class="p">,</span> <span class="n">the</span> <span class="k">class</span> <span class="nc">name</span> <span class="ow">is</span> <span class="nb">set</span> <span class="ow">and</span>
+<span class="n">returned</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXMAP.get_data_proj">
 <code class="descname">get_data_proj</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXMAP.get_data_proj" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Get the projection type of the Data view of a map.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">the</span> <span class="n">projection</span> <span class="nb">type</span> <span class="n">of</span> <span class="n">the</span> <span class="n">Data</span> <span class="n">view</span> <span class="n">of</span> <span class="n">a</span> <span class="nb">map</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Project type as an integer</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int</td>
 </tr>
 </tbody>
 </table>
@@ -725,9 +744,9 @@ Get the projection type of the Data view of a map.
 <dl class="method">
 <dt id="geosoft.gxapi.GXMAP.get_file_name">
 <code class="descname">get_file_name</code><span class="sig-paren">(</span><em>(str_ref)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXMAP.get_file_name" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Get the name of the map.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">the</span> <span class="n">name</span> <span class="n">of</span> <span class="n">the</span> <span class="nb">map</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -748,9 +767,9 @@ Get the name of the map.
 <dl class="method">
 <dt id="geosoft.gxapi.GXMAP.get_lpt">
 <code class="descname">get_lpt</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; GXLPT:<a class="headerlink" href="#geosoft.gxapi.GXMAP.get_lpt" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Get the LPT Object of a MAP.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">the</span> <span class="n">LPT</span> <span class="n">Object</span> <span class="n">of</span> <span class="n">a</span> <span class="n">MAP</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -769,9 +788,9 @@ Get the LPT Object of a MAP.
 <dl class="method">
 <dt id="geosoft.gxapi.GXMAP.get_map_name">
 <code class="descname">get_map_name</code><span class="sig-paren">(</span><em>(str_ref)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXMAP.get_map_name" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Get the Map Name of the Map.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">the</span> <span class="n">Map</span> <span class="n">Name</span> <span class="n">of</span> <span class="n">the</span> <span class="n">Map</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -809,24 +828,24 @@ Get the Map Name of the Map.
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-If there is a &quot;Data&quot; view, the scale is derived from
-this view.
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">If</span> <span class="n">there</span> <span class="ow">is</span> <span class="n">a</span> <span class="s2">&quot;Data&quot;</span> <span class="n">view</span><span class="p">,</span> <span class="n">the</span> <span class="n">scale</span> <span class="ow">is</span> <span class="n">derived</span> <span class="kn">from</span>
+<span class="nn">this</span> <span class="n">view</span><span class="o">.</span>
 
-If their is no data view, the scale is derived
-from the first view that is not scaled in mm.
-otherwise, the scale is 1000 (mm).
+<span class="n">If</span> <span class="n">their</span> <span class="ow">is</span> <span class="n">no</span> <span class="n">data</span> <span class="n">view</span><span class="p">,</span> <span class="n">the</span> <span class="n">scale</span> <span class="ow">is</span> <span class="n">derived</span>
+<span class="kn">from</span> <span class="nn">the</span> <span class="n">first</span> <span class="n">view</span> <span class="n">that</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">scaled</span> <span class="ow">in</span> <span class="n">mm</span><span class="o">.</span>
+<span class="n">otherwise</span><span class="p">,</span> <span class="n">the</span> <span class="n">scale</span> <span class="ow">is</span> <span class="mi">1000</span> <span class="p">(</span><span class="n">mm</span><span class="p">)</span><span class="o">.</span>
 
-All views must be closed, or open read-only.
-</pre>
+<span class="n">All</span> <span class="n">views</span> <span class="n">must</span> <span class="n">be</span> <span class="n">closed</span><span class="p">,</span> <span class="ow">or</span> <span class="nb">open</span> <span class="n">read</span><span class="o">-</span><span class="n">only</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXMAP.get_map_size">
 <code class="descname">get_map_size</code><span class="sig-paren">(</span><em>(float_ref)arg1</em>, <em>(float_ref)arg2</em>, <em>(float_ref)arg3</em>, <em>(float_ref)arg4</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXMAP.get_map_size" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Get the size of the Map.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">the</span> <span class="n">size</span> <span class="n">of</span> <span class="n">the</span> <span class="n">Map</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -855,9 +874,9 @@ Get the size of the Map.
 <dl class="method">
 <dt id="geosoft.gxapi.GXMAP.get_meta">
 <code class="descname">get_meta</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; GXMETA:<a class="headerlink" href="#geosoft.gxapi.GXMAP.get_meta" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Get the map's META
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">the</span> <span class="nb">map</span><span class="s1">&#39;s META</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -872,17 +891,17 @@ Get the map's META
 <p><span class="versionmodified">New in version 5.1.8.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-If the map has no META, an empty META will be created.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">If</span> <span class="n">the</span> <span class="nb">map</span> <span class="n">has</span> <span class="n">no</span> <span class="n">META</span><span class="p">,</span> <span class="n">an</span> <span class="n">empty</span> <span class="n">META</span> <span class="n">will</span> <span class="n">be</span> <span class="n">created</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXMAP.get_reg">
 <code class="descname">get_reg</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; GXREG:<a class="headerlink" href="#geosoft.gxapi.GXMAP.get_reg" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Get the map's REG
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">the</span> <span class="nb">map</span><span class="s1">&#39;s REG</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -897,17 +916,17 @@ Get the map's REG
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-If the map has no REG, an empty REG will be created.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">If</span> <span class="n">the</span> <span class="nb">map</span> <span class="n">has</span> <span class="n">no</span> <span class="n">REG</span><span class="p">,</span> <span class="n">an</span> <span class="n">empty</span> <span class="n">REG</span> <span class="n">will</span> <span class="n">be</span> <span class="n">created</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXMAP.group_list">
 <code class="descname">group_list</code><span class="sig-paren">(</span><em>(GXLST)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXMAP.group_list" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Get a list of all views/groups in this map.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">a</span> <span class="nb">list</span> <span class="n">of</span> <span class="nb">all</span> <span class="n">views</span><span class="o">/</span><span class="n">groups</span> <span class="ow">in</span> <span class="n">this</span> <span class="nb">map</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -925,30 +944,30 @@ Get a list of all views/groups in this map.
 </div>
 <p><strong>Note:</strong></p>
 <pre class="literal-block">
-Returns all groups in the form &quot;ViewName\GroupName&quot;
+Returns all groups in the form &quot;ViewNameGroupName&quot;
 To get a LST of groups in a specific map view, use
-the \ :func:`geosoft.gxapi.GXMVIEW.list_groups`\  function.
+the <a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW.list_groups" title="geosoft.gxapi.GXMVIEW.list_groups"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXMVIEW.list_groups()</span></code></a> function.
 </pre>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
-<p class="last">\ :class:`geosoft.gxapi.GXLST`\  class.
-\ :func:`geosoft.gxapi.GXMVIEW.list_groups`\</p>
+<p class="last"><a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXLST</span></code></a> class.
+<a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW.list_groups" title="geosoft.gxapi.GXMVIEW.list_groups"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXMVIEW.list_groups()</span></code></a></p>
 </div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXMAP.group_list_ex">
 <code class="descname">group_list_ex</code><span class="sig-paren">(</span><em>(GXLST)arg1</em>, <em>(int)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXMAP.group_list_ex" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Get a list of views/groups in this map for this mode
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">a</span> <span class="nb">list</span> <span class="n">of</span> <span class="n">views</span><span class="o">/</span><span class="n">groups</span> <span class="ow">in</span> <span class="n">this</span> <span class="nb">map</span> <span class="k">for</span> <span class="n">this</span> <span class="n">mode</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXLST</span></code></a>) &#8211; list to hold the views.  View names may be up to 2080 characters in length.</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#map-list-mode"><span class="std std-ref">MAP_LIST_MODE constants</span></a></li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#map-list-mode"><span class="std std-ref">MAP_LIST_MODE constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -965,7 +984,7 @@ Get a list of views/groups in this map for this mode
 </div>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
-<p class="last">\ :class:`geosoft.gxapi.GXLST`\  class.</p>
+<p class="last"><a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXLST</span></code></a> class.</p>
 </div>
 </dd></dl>
 
@@ -1004,9 +1023,9 @@ Get a list of views/groups in this map for this mode
 <dl class="method">
 <dt id="geosoft.gxapi.GXMAP.pack_files">
 <code class="descname">pack_files</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXMAP.pack_files" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Pack all files in the map so that it can be mailed.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Pack</span> <span class="nb">all</span> <span class="n">files</span> <span class="ow">in</span> <span class="n">the</span> <span class="nb">map</span> <span class="n">so</span> <span class="n">that</span> <span class="n">it</span> <span class="n">can</span> <span class="n">be</span> <span class="n">mailed</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1025,16 +1044,16 @@ Pack all files in the map so that it can be mailed.
 <dl class="method">
 <dt id="geosoft.gxapi.GXMAP.packed_files">
 <code class="descname">packed_files</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXMAP.packed_files" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-The number of packed files in the current map.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">number</span> <span class="n">of</span> <span class="n">packed</span> <span class="n">files</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">current</span> <span class="nb">map</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The number of packed files in map.</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int</td>
 </tr>
 </tbody>
 </table>
@@ -1046,9 +1065,9 @@ The number of packed files in the current map.
 <dl class="method">
 <dt id="geosoft.gxapi.GXMAP.render">
 <code class="descname">render</code><span class="sig-paren">(</span><em>(str)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXMAP.render" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Render a map to file/device.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Render</span> <span class="n">a</span> <span class="nb">map</span> <span class="n">to</span> <span class="n">file</span><span class="o">/</span><span class="n">device</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1069,9 +1088,9 @@ Render a map to file/device.
 <dl class="method">
 <dt id="geosoft.gxapi.GXMAP.render_bitmap">
 <code class="descname">render_bitmap</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(float)arg2</em>, <em>(float)arg3</em>, <em>(float)arg4</em>, <em>(float)arg5</em>, <em>(str)arg6</em>, <em>(int)arg7</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXMAP.render_bitmap" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Render a map to a bitmap.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Render</span> <span class="n">a</span> <span class="nb">map</span> <span class="n">to</span> <span class="n">a</span> <span class="n">bitmap</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1083,7 +1102,7 @@ Render a map to a bitmap.
 <li><strong>arg4</strong> (<em>float</em>) &#8211; MaxX</li>
 <li><strong>arg5</strong> (<em>float</em>) &#8211; MaxY</li>
 <li><strong>arg6</strong> (<em>str</em>) &#8211; File to generate (ext forced to BMP)</li>
-<li><strong>arg7</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Maximum resolution in either direction, -1 for none (will change the pixel density of image if exceeded)</li>
+<li><strong>arg7</strong> (<em>int</em>) &#8211; Maximum resolution in either direction, -1 for none (will change the pixel density of image if exceeded)</li>
 </ul>
 </td>
 </tr>
@@ -1103,9 +1122,9 @@ Render a map to a bitmap.
 <dl class="method">
 <dt id="geosoft.gxapi.GXMAP.resize_all">
 <code class="descname">resize_all</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXMAP.resize_all" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Resize a map to the extents of all views.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Resize</span> <span class="n">a</span> <span class="nb">map</span> <span class="n">to</span> <span class="n">the</span> <span class="n">extents</span> <span class="n">of</span> <span class="nb">all</span> <span class="n">views</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1121,7 +1140,7 @@ Resize a map to the extents of all views.
 </div>
 <p><strong>Note:</strong></p>
 <pre class="literal-block">
-This is the same as \ :func:`geosoft.gxapi.GXMAP.resize_all_ex`\  with
+This is the same as <a class="reference internal" href="#geosoft.gxapi.GXMAP.resize_all_ex" title="geosoft.gxapi.GXMAP.resize_all_ex"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXMAP.resize_all_ex()</span></code></a> with
 MVIEW_EXTENT_CLIP.
 </pre>
 </dd></dl>
@@ -1130,13 +1149,13 @@ MVIEW_EXTENT_CLIP.
 <dt id="geosoft.gxapi.GXMAP.resize_all_ex">
 <code class="descname">resize_all_ex</code><span class="sig-paren">(</span><em>(int)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXMAP.resize_all_ex" title="Permalink to this definition">¶</a></dt>
 <dd><pre class="literal-block">
-\ :func:`geosoft.gxapi.GXMAP.resize_all`\  with selection of view extent type selection.
+<a class="reference internal" href="#geosoft.gxapi.GXMAP.resize_all" title="geosoft.gxapi.GXMAP.resize_all"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXMAP.resize_all()</span></code></a> with selection of view extent type selection.
 </pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="GXMVIEW.html#mview-extent"><span class="std std-ref">MVIEW_EXTENT constants</span></a></td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>int</em>) &#8211; <a class="reference internal" href="GXMVIEW.html#mview-extent"><span class="std std-ref">MVIEW_EXTENT constants</span></a></td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Nothing</td>
 </tr>
@@ -1148,10 +1167,10 @@ MVIEW_EXTENT_CLIP.
 <p><span class="versionmodified">New in version 6.3.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-MVIEW_EXTENT_VISIBLE gives a more &quot;reasonable&quot; map size, and won't
-clip off labels outside a graph window.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">MVIEW_EXTENT_VISIBLE</span> <span class="n">gives</span> <span class="n">a</span> <span class="n">more</span> <span class="s2">&quot;reasonable&quot;</span> <span class="nb">map</span> <span class="n">size</span><span class="p">,</span> <span class="ow">and</span> <span class="n">won</span><span class="s1">&#39;t</span>
+<span class="n">clip</span> <span class="n">off</span> <span class="n">labels</span> <span class="n">outside</span> <span class="n">a</span> <span class="n">graph</span> <span class="n">window</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
@@ -1180,9 +1199,9 @@ clip off labels outside a graph window.
 <dl class="method">
 <dt id="geosoft.gxapi.GXMAP.set_class_name">
 <code class="descname">set_class_name</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(str)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXMAP.set_class_name" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Set a class name.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Set</span> <span class="n">a</span> <span class="k">class</span> <span class="nc">name</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1205,27 +1224,27 @@ Set a class name.
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-Map class names are intended to be used to record the
-names of certain view classes in the map, such as the
-&quot;Data&quot;, &quot;Base&quot; and &quot;Section&quot; views.
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Map</span> <span class="k">class</span> <span class="nc">names</span> <span class="n">are</span> <span class="n">intended</span> <span class="n">to</span> <span class="n">be</span> <span class="n">used</span> <span class="n">to</span> <span class="n">record</span> <span class="n">the</span>
+<span class="n">names</span> <span class="n">of</span> <span class="n">certain</span> <span class="n">view</span> <span class="n">classes</span> <span class="ow">in</span> <span class="n">the</span> <span class="nb">map</span><span class="p">,</span> <span class="n">such</span> <span class="k">as</span> <span class="n">the</span>
+<span class="s2">&quot;Data&quot;</span><span class="p">,</span> <span class="s2">&quot;Base&quot;</span> <span class="ow">and</span> <span class="s2">&quot;Section&quot;</span> <span class="n">views</span><span class="o">.</span>
 
-There can only be one name for each class, but it can
-be changed.  This lets the &quot;Data&quot; class name change,
-for example, so plotting can select which class to plot
-to.
+<span class="n">There</span> <span class="n">can</span> <span class="n">only</span> <span class="n">be</span> <span class="n">one</span> <span class="n">name</span> <span class="k">for</span> <span class="n">each</span> <span class="n">class</span><span class="p">,</span> <span class="n">but</span> <span class="n">it</span> <span class="n">can</span>
+<span class="n">be</span> <span class="n">changed</span><span class="o">.</span>  <span class="n">This</span> <span class="n">lets</span> <span class="n">the</span> <span class="s2">&quot;Data&quot;</span> <span class="k">class</span> <span class="nc">name</span> <span class="n">change</span><span class="p">,</span>
+<span class="k">for</span> <span class="n">example</span><span class="p">,</span> <span class="n">so</span> <span class="n">plotting</span> <span class="n">can</span> <span class="n">select</span> <span class="n">which</span> <span class="k">class</span> <span class="nc">to</span> <span class="n">plot</span>
+<span class="n">to</span><span class="o">.</span>
 
-If a name is not set, the class name is set and
-returned.
-</pre>
+<span class="n">If</span> <span class="n">a</span> <span class="n">name</span> <span class="ow">is</span> <span class="ow">not</span> <span class="nb">set</span><span class="p">,</span> <span class="n">the</span> <span class="k">class</span> <span class="nc">name</span> <span class="ow">is</span> <span class="nb">set</span> <span class="ow">and</span>
+<span class="n">returned</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXMAP.set_current">
 <code class="descname">set_current</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXMAP.set_current" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Sets the current map to this map.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Sets</span> <span class="n">the</span> <span class="n">current</span> <span class="nb">map</span> <span class="n">to</span> <span class="n">this</span> <span class="nb">map</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1244,9 +1263,9 @@ Sets the current map to this map.
 <dl class="method">
 <dt id="geosoft.gxapi.GXMAP.set_map_name">
 <code class="descname">set_map_name</code><span class="sig-paren">(</span><em>(str)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXMAP.set_map_name" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Set the Map Name of the Map.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Set</span> <span class="n">the</span> <span class="n">Map</span> <span class="n">Name</span> <span class="n">of</span> <span class="n">the</span> <span class="n">Map</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1286,18 +1305,18 @@ Set the Map Name of the Map.
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-All views in the map will be resized for the new
-map scale.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">All</span> <span class="n">views</span> <span class="ow">in</span> <span class="n">the</span> <span class="nb">map</span> <span class="n">will</span> <span class="n">be</span> <span class="n">resized</span> <span class="k">for</span> <span class="n">the</span> <span class="n">new</span>
+<span class="nb">map</span> <span class="n">scale</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXMAP.set_map_size">
 <code class="descname">set_map_size</code><span class="sig-paren">(</span><em>(float)arg1</em>, <em>(float)arg2</em>, <em>(float)arg3</em>, <em>(float)arg4</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXMAP.set_map_size" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Set the size of the Map.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Set</span> <span class="n">the</span> <span class="n">size</span> <span class="n">of</span> <span class="n">the</span> <span class="n">Map</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1322,12 +1341,12 @@ Set the size of the Map.
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-The map size is area on the MAP that contains graphics
-to be plotted.  The area can be bigger or smaller that
-the current views.  In the absense of any other information
-only the area defined by the map size is plotted.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="nb">map</span> <span class="n">size</span> <span class="ow">is</span> <span class="n">area</span> <span class="n">on</span> <span class="n">the</span> <span class="n">MAP</span> <span class="n">that</span> <span class="n">contains</span> <span class="n">graphics</span>
+<span class="n">to</span> <span class="n">be</span> <span class="n">plotted</span><span class="o">.</span>  <span class="n">The</span> <span class="n">area</span> <span class="n">can</span> <span class="n">be</span> <span class="n">bigger</span> <span class="ow">or</span> <span class="n">smaller</span> <span class="n">that</span>
+<span class="n">the</span> <span class="n">current</span> <span class="n">views</span><span class="o">.</span>  <span class="n">In</span> <span class="n">the</span> <span class="n">absense</span> <span class="n">of</span> <span class="nb">any</span> <span class="n">other</span> <span class="n">information</span>
+<span class="n">only</span> <span class="n">the</span> <span class="n">area</span> <span class="n">defined</span> <span class="n">by</span> <span class="n">the</span> <span class="nb">map</span> <span class="n">size</span> <span class="ow">is</span> <span class="n">plotted</span><span class="o">.</span>
+</pre></div>
+</div>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
 <p class="last">SetSizeViews_MAP</p>
@@ -1337,9 +1356,9 @@ only the area defined by the map size is plotted.
 <dl class="method">
 <dt id="geosoft.gxapi.GXMAP.set_meta">
 <code class="descname">set_meta</code><span class="sig-paren">(</span><em>(GXMETA)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXMAP.set_meta" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Write a META to a map.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Write</span> <span class="n">a</span> <span class="n">META</span> <span class="n">to</span> <span class="n">a</span> <span class="nb">map</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1360,9 +1379,9 @@ Write a META to a map.
 <dl class="method">
 <dt id="geosoft.gxapi.GXMAP.set_reg">
 <code class="descname">set_reg</code><span class="sig-paren">(</span><em>(GXREG)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXMAP.set_reg" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Write a REG to a map.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Write</span> <span class="n">a</span> <span class="n">REG</span> <span class="n">to</span> <span class="n">a</span> <span class="nb">map</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1406,9 +1425,9 @@ Write a REG to a map.
 <dl class="method">
 <dt id="geosoft.gxapi.GXMAP.un_pack_files">
 <code class="descname">un_pack_files</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXMAP.un_pack_files" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-UnPack all files from map to workspace.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">UnPack</span> <span class="nb">all</span> <span class="n">files</span> <span class="kn">from</span> <span class="nn">map</span> <span class="n">to</span> <span class="n">workspace</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1427,15 +1446,15 @@ UnPack all files from map to workspace.
 <dl class="method">
 <dt id="geosoft.gxapi.GXMAP.un_pack_files_ex">
 <code class="descname">un_pack_files_ex</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(str_ref)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXMAP.un_pack_files_ex" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-UnPack all files from map to workspace.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">UnPack</span> <span class="nb">all</span> <span class="n">files</span> <span class="kn">from</span> <span class="nn">map</span> <span class="n">to</span> <span class="n">workspace</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; (0 - Produce errors, 1 - Force overwrites)</li>
+<li><strong>arg1</strong> (<em>int</em>) &#8211; (0 - Produce errors, 1 - Force overwrites)</li>
 <li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; List of files that are problematic returned</li>
 </ul>
 </td>
@@ -1452,26 +1471,26 @@ UnPack all files from map to workspace.
 <p><span class="versionmodified">New in version 6.4.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-The option to force will simply overwrite the files.
-When the non-force option is in effect the method will
-stop if any files are going to be overwritting. These
-file names will end up in the Errors string.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">option</span> <span class="n">to</span> <span class="n">force</span> <span class="n">will</span> <span class="n">simply</span> <span class="n">overwrite</span> <span class="n">the</span> <span class="n">files</span><span class="o">.</span>
+<span class="n">When</span> <span class="n">the</span> <span class="n">non</span><span class="o">-</span><span class="n">force</span> <span class="n">option</span> <span class="ow">is</span> <span class="ow">in</span> <span class="n">effect</span> <span class="n">the</span> <span class="n">method</span> <span class="n">will</span>
+<span class="n">stop</span> <span class="k">if</span> <span class="nb">any</span> <span class="n">files</span> <span class="n">are</span> <span class="n">going</span> <span class="n">to</span> <span class="n">be</span> <span class="n">overwritting</span><span class="o">.</span> <span class="n">These</span>
+<span class="n">file</span> <span class="n">names</span> <span class="n">will</span> <span class="n">end</span> <span class="n">up</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">Errors</span> <span class="n">string</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXMAP.un_pack_files_to_folder">
 <code class="descname">un_pack_files_to_folder</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(str)arg2</em>, <em>(str_ref)arg3</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXMAP.un_pack_files_to_folder" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-UnPack all files from map to workspace.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">UnPack</span> <span class="nb">all</span> <span class="n">files</span> <span class="kn">from</span> <span class="nn">map</span> <span class="n">to</span> <span class="n">workspace</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; (0 - Produce errors, 1 - Force overwrites)</li>
+<li><strong>arg1</strong> (<em>int</em>) &#8211; (0 - Produce errors, 1 - Force overwrites)</li>
 <li><strong>arg2</strong> (<em>str</em>) &#8211; Directory to place unpacked files in.</li>
 <li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; List of files that are problematic returned</li>
 </ul>
@@ -1493,9 +1512,9 @@ UnPack all files from map to workspace.
 <dl class="method">
 <dt id="geosoft.gxapi.GXMAP.view_list">
 <code class="descname">view_list</code><span class="sig-paren">(</span><em>(GXLST)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXMAP.view_list" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Get a list of all views in this map.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">a</span> <span class="nb">list</span> <span class="n">of</span> <span class="nb">all</span> <span class="n">views</span> <span class="ow">in</span> <span class="n">this</span> <span class="nb">map</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1513,7 +1532,7 @@ Get a list of all views in this map.
 </div>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
-<p class="last">\ :class:`geosoft.gxapi.GXLST`\  class.</p>
+<p class="last"><a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXLST</span></code></a> class.</p>
 </div>
 </dd></dl>
 
@@ -1529,7 +1548,7 @@ Get a list of all views in this map.
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXLST</span></code></a>) &#8211; list to hold the views.  View names may be up to 2080 characters in length.</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#map-list-mode"><span class="std std-ref">MAP_LIST_MODE constants</span></a></li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#map-list-mode"><span class="std std-ref">MAP_LIST_MODE constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -1899,9 +1918,13 @@ Get a list of all views in this map.
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li> 
+          <a href="GXMAPL.html" title="GXMAPL class"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="GXLTB.html" title="GXLTB class"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="geosoft.gxapi.classes.html" >GX API Class/Library Reference</a> &#187;</li> 
       </ul>
     </div>
 

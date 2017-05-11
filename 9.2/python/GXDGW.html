@@ -27,6 +27,8 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="GXDH class" href="GXDH.html" />
+    <link rel="prev" title="GXDBWRITE class" href="GXDBWRITE.html" />
  
 <script type="text/javascript">
   var _gaq = _gaq || [];
@@ -43,9 +45,13 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li> 
+          <a href="GXDH.html" title="GXDH class"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="GXDBWRITE.html" title="GXDBWRITE class"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="geosoft.gxapi.classes.html" accesskey="U">GX API Class/Library Reference</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -58,13 +64,19 @@
 </li>
 </ul>
 
-  <div role="note" aria-label="source link">
-    <h3>This Page</h3>
-    <ul class="this-page-menu">
-      <li><a href="_sources/GXDGW.rst.txt"
-            rel="nofollow">Show Source</a></li>
-    </ul>
-   </div>
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Introduction</a></li>
+    <li><a href="geosoft.gxapi.classes.html">GX API Class/Library Reference</a></li>
+</ul>
+<h3>Previous Topic</h3>
+<ul>
+    <li><a href="GXDBWRITE.html" title="previous chapter">GXDBWRITE class</a></li>
+</ul>
+<h3>Next Topic</h3>
+<ul>
+    <li><a href="GXDH.html" title="next chapter">GXDH class</a></li>
+</ul>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
@@ -75,6 +87,13 @@
     </form>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/GXDGW.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
         </div>
       </div>
 
@@ -88,18 +107,18 @@
 <dl class="class">
 <dt id="geosoft.gxapi.GXDGW">
 <em class="property">class </em><code class="descclassname">geosoft.gxapi.</code><code class="descname">GXDGW</code><a class="headerlink" href="#geosoft.gxapi.GXDGW" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Provides access to dialog boxes for user I/O. You can
-use this class to store to, or retrieve information from
-the current workspace parameter block via dialog boxes
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Provides</span> <span class="n">access</span> <span class="n">to</span> <span class="n">dialog</span> <span class="n">boxes</span> <span class="k">for</span> <span class="n">user</span> <span class="n">I</span><span class="o">/</span><span class="n">O</span><span class="o">.</span> <span class="n">You</span> <span class="n">can</span>
+<span class="n">use</span> <span class="n">this</span> <span class="k">class</span> <span class="nc">to</span> <span class="n">store</span> <span class="n">to</span><span class="p">,</span> <span class="ow">or</span> <span class="n">retrieve</span> <span class="n">information</span> <span class="kn">from</span>
+<span class="nn">the</span> <span class="n">current</span> <span class="n">workspace</span> <span class="n">parameter</span> <span class="n">block</span> <span class="n">via</span> <span class="n">dialog</span> <span class="n">boxes</span>
+</pre></div>
+</div>
 <p><strong>Note:</strong></p>
 <pre class="literal-block">
 Setting Fonts in GX dialogs.
 
 By default, &quot;new look&quot; GX dialogs uses the &quot;Tahoma&quot; font. This font can be
 overridden by updating the application settings. This can be done programmatically
-using the \ :func:`geosoft.gxapi.GXSYS.global_set`\  function using the following parameters:
+using the <a class="reference internal" href="GXSYS.html#geosoft.gxapi.GXSYS.global_set" title="geosoft.gxapi.GXSYS.global_set"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXSYS.global_set()</span></code></a> function using the following parameters:
 
 MONTAJ.GX_FONT=&quot;Font_name&quot;
 
@@ -112,7 +131,7 @@ using the following parameters:
 MONTAJ.GX_CAPTION_FONT=&quot;Caption_Font&quot;: Font for the field captions (labels)
 MONTAJ.GX_BUTTON_FONT=&quot;Button_Font&quot;  : Font for buttons, including the &quot;Browse&quot;
                                 button
-MONTAJ.GX_TITLE_FONT=&quot;Title_Font&quot;    : Font for special titles (see \ :func:`geosoft.gxapi.GXDGW.set_title`\ ).
+MONTAJ.GX_TITLE_FONT=&quot;Title_Font&quot;    : Font for special titles (see <a class="reference internal" href="#geosoft.gxapi.GXDGW.set_title" title="geosoft.gxapi.GXDGW.set_title"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXDGW.set_title()</span></code></a>).
 
 The font used for the text in edit windows remains the default, or the
 value specified using MONTAJ.GX_FONT.
@@ -131,10 +150,10 @@ to represent all possible characters without using character sets.
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXDGW.create">
 <em class="property">static </em><code class="descname">create</code><span class="sig-paren">(</span><em>(str)arg1</em><span class="sig-paren">)</span> &rarr; GXDGW:<a class="headerlink" href="#geosoft.gxapi.GXDGW.create" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-This method creates a Dialogue window from a specified
-resource. The Resource is loaded into memory but not displayed.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="n">method</span> <span class="n">creates</span> <span class="n">a</span> <span class="n">Dialogue</span> <span class="n">window</span> <span class="kn">from</span> <span class="nn">a</span> <span class="n">specified</span>
+<span class="n">resource</span><span class="o">.</span> <span class="n">The</span> <span class="n">Resource</span> <span class="ow">is</span> <span class="n">loaded</span> <span class="n">into</span> <span class="n">memory</span> <span class="n">but</span> <span class="ow">not</span> <span class="n">displayed</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -155,19 +174,19 @@ resource. The Resource is loaded into memory but not displayed.
 <dl class="method">
 <dt id="geosoft.gxapi.GXDGW.get_info_meta">
 <code class="descname">get_info_meta</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(int)arg2</em>, <em>(GXMETA)arg3</em>, <em>(int)arg4</em>, <em>(int)arg5</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXDGW.get_info_meta" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Copies the Dialogue information to a META attribute.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Copies</span> <span class="n">the</span> <span class="n">Dialogue</span> <span class="n">information</span> <span class="n">to</span> <span class="n">a</span> <span class="n">META</span> <span class="n">attribute</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Dialogue Object</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#dgw-object"><span class="std std-ref">DGW_OBJECT constants</span></a></li>
+<li><strong>arg1</strong> (<em>int</em>) &#8211; Dialogue Object</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#dgw-object"><span class="std std-ref">DGW_OBJECT constants</span></a></li>
 <li><strong>arg3</strong> (<a class="reference internal" href="GXMETA.html#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXMETA</span></code></a>) &#8211; META</li>
-<li><strong>arg4</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Object</li>
-<li><strong>arg5</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Attribute</li>
+<li><strong>arg4</strong> (<em>int</em>) &#8211; Object</li>
+<li><strong>arg5</strong> (<em>int</em>) &#8211; Attribute</li>
 </ul>
 </td>
 </tr>
@@ -187,17 +206,17 @@ Copies the Dialogue information to a META attribute.
 <dl class="method">
 <dt id="geosoft.gxapi.GXDGW.get_info_sys">
 <code class="descname">get_info_sys</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(int)arg2</em>, <em>(str)arg3</em>, <em>(str)arg4</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXDGW.get_info_sys" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-This method uses the information in a Dialogue box to
-set a SYS variable.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="n">method</span> <span class="n">uses</span> <span class="n">the</span> <span class="n">information</span> <span class="ow">in</span> <span class="n">a</span> <span class="n">Dialogue</span> <span class="n">box</span> <span class="n">to</span>
+<span class="nb">set</span> <span class="n">a</span> <span class="n">SYS</span> <span class="n">variable</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Dialogue Object</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#dgw-object"><span class="std std-ref">DGW_OBJECT constants</span></a></li>
+<li><strong>arg1</strong> (<em>int</em>) &#8211; Dialogue Object</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#dgw-object"><span class="std std-ref">DGW_OBJECT constants</span></a></li>
 <li><strong>arg3</strong> (<em>str</em>) &#8211; Group name of the Variable</li>
 <li><strong>arg4</strong> (<em>str</em>) &#8211; Variable name</li>
 </ul>
@@ -219,15 +238,15 @@ set a SYS variable.
 <dl class="method">
 <dt id="geosoft.gxapi.GXDGW.get_list">
 <code class="descname">get_list</code><span class="sig-paren">(</span><em>(int)arg1</em><span class="sig-paren">)</span> &rarr; GXLST:<a class="headerlink" href="#geosoft.gxapi.GXDGW.get_list" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-This method retrieves the list (LST) object associated
-with a Dialogue object.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="n">method</span> <span class="n">retrieves</span> <span class="n">the</span> <span class="nb">list</span> <span class="p">(</span><span class="n">LST</span><span class="p">)</span> <span class="nb">object</span> <span class="n">associated</span>
+<span class="k">with</span> <span class="n">a</span> <span class="n">Dialogue</span> <span class="nb">object</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Dialogue Object</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>int</em>) &#8211; Dialogue Object</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">The List Object</td>
 </tr>
@@ -243,17 +262,17 @@ with a Dialogue object.
 <dl class="method">
 <dt id="geosoft.gxapi.GXDGW.gt_info">
 <code class="descname">gt_info</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(int)arg2</em>, <em>(str_ref)arg3</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXDGW.gt_info" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-This method fills the specified string with the text from
-the text object specified.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="n">method</span> <span class="n">fills</span> <span class="n">the</span> <span class="n">specified</span> <span class="n">string</span> <span class="k">with</span> <span class="n">the</span> <span class="n">text</span> <span class="kn">from</span>
+<span class="nn">the</span> <span class="n">text</span> <span class="nb">object</span> <span class="n">specified</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Handle to the TEXT Object</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#dgw-object"><span class="std std-ref">DGW_OBJECT constants</span></a></li>
+<li><strong>arg1</strong> (<em>int</em>) &#8211; Handle to the TEXT Object</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#dgw-object"><span class="std std-ref">DGW_OBJECT constants</span></a></li>
 <li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; Where to place the String</li>
 </ul>
 </td>
@@ -306,16 +325,16 @@ the text object specified.
 <dl class="method">
 <dt id="geosoft.gxapi.GXDGW.run_dialogue">
 <code class="descname">run_dialogue</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXDGW.run_dialogue" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-This method runs the Dialogue window.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="n">method</span> <span class="n">runs</span> <span class="n">the</span> <span class="n">Dialogue</span> <span class="n">window</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The Exit Code of the Dialogue window.</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int</td>
 </tr>
 </tbody>
 </table>
@@ -327,17 +346,17 @@ This method runs the Dialogue window.
 <dl class="method">
 <dt id="geosoft.gxapi.GXDGW.set_info">
 <code class="descname">set_info</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(int)arg2</em>, <em>(str)arg3</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXDGW.set_info" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-This method sets the string of a text object. If the string
-is too long it will be truncated.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="n">method</span> <span class="n">sets</span> <span class="n">the</span> <span class="n">string</span> <span class="n">of</span> <span class="n">a</span> <span class="n">text</span> <span class="nb">object</span><span class="o">.</span> <span class="n">If</span> <span class="n">the</span> <span class="n">string</span>
+<span class="ow">is</span> <span class="n">too</span> <span class="n">long</span> <span class="n">it</span> <span class="n">will</span> <span class="n">be</span> <span class="n">truncated</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Handle to the TEXT Object</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#dgw-object"><span class="std std-ref">DGW_OBJECT constants</span></a></li>
+<li><strong>arg1</strong> (<em>int</em>) &#8211; Handle to the TEXT Object</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#dgw-object"><span class="std std-ref">DGW_OBJECT constants</span></a></li>
 <li><strong>arg3</strong> (<em>str</em>) &#8211; String to set the Text To</li>
 </ul>
 </td>
@@ -358,19 +377,19 @@ is too long it will be truncated.
 <dl class="method">
 <dt id="geosoft.gxapi.GXDGW.set_info_meta">
 <code class="descname">set_info_meta</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(int)arg2</em>, <em>(GXMETA)arg3</em>, <em>(int)arg4</em>, <em>(int)arg5</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXDGW.set_info_meta" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-This sets a text object to the text found in a META attribute.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="n">sets</span> <span class="n">a</span> <span class="n">text</span> <span class="nb">object</span> <span class="n">to</span> <span class="n">the</span> <span class="n">text</span> <span class="n">found</span> <span class="ow">in</span> <span class="n">a</span> <span class="n">META</span> <span class="n">attribute</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Dialogue Object</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#dgw-object"><span class="std std-ref">DGW_OBJECT constants</span></a></li>
+<li><strong>arg1</strong> (<em>int</em>) &#8211; Dialogue Object</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#dgw-object"><span class="std std-ref">DGW_OBJECT constants</span></a></li>
 <li><strong>arg3</strong> (<a class="reference internal" href="GXMETA.html#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXMETA</span></code></a>) &#8211; META</li>
-<li><strong>arg4</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Object</li>
-<li><strong>arg5</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Attribute</li>
+<li><strong>arg4</strong> (<em>int</em>) &#8211; Object</li>
+<li><strong>arg5</strong> (<em>int</em>) &#8211; Attribute</li>
 </ul>
 </td>
 </tr>
@@ -390,18 +409,18 @@ This sets a text object to the text found in a META attribute.
 <dl class="method">
 <dt id="geosoft.gxapi.GXDGW.set_info_sys">
 <code class="descname">set_info_sys</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(int)arg2</em>, <em>(str)arg3</em>, <em>(str)arg4</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXDGW.set_info_sys" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-This sets a text object to the text found in a system
-parameter variable. If the variable has not been set,
-the text is not set.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="n">sets</span> <span class="n">a</span> <span class="n">text</span> <span class="nb">object</span> <span class="n">to</span> <span class="n">the</span> <span class="n">text</span> <span class="n">found</span> <span class="ow">in</span> <span class="n">a</span> <span class="n">system</span>
+<span class="n">parameter</span> <span class="n">variable</span><span class="o">.</span> <span class="n">If</span> <span class="n">the</span> <span class="n">variable</span> <span class="n">has</span> <span class="ow">not</span> <span class="n">been</span> <span class="nb">set</span><span class="p">,</span>
+<span class="n">the</span> <span class="n">text</span> <span class="ow">is</span> <span class="ow">not</span> <span class="nb">set</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Dialogue Object</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#dgw-object"><span class="std std-ref">DGW_OBJECT constants</span></a></li>
+<li><strong>arg1</strong> (<em>int</em>) &#8211; Dialogue Object</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#dgw-object"><span class="std std-ref">DGW_OBJECT constants</span></a></li>
 <li><strong>arg3</strong> (<em>str</em>) &#8211; Group name of the Variable</li>
 <li><strong>arg4</strong> (<em>str</em>) &#8211; Variable name</li>
 </ul>
@@ -423,9 +442,9 @@ the text is not set.
 <dl class="method">
 <dt id="geosoft.gxapi.GXDGW.set_title">
 <code class="descname">set_title</code><span class="sig-paren">(</span><em>(str)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXDGW.set_title" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Changes the title of the dialog.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Changes</span> <span class="n">the</span> <span class="n">title</span> <span class="n">of</span> <span class="n">the</span> <span class="n">dialog</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -446,9 +465,9 @@ Changes the title of the dialog.
 A &quot;Special&quot;, additional title can be added to a dialog by using
 the following syntax:
 
-\ :func:`geosoft.gxapi.GXDGW.set_title`\ (Diag, &quot;Window Title\nAdditional Title&quot;);
+<a class="reference internal" href="#geosoft.gxapi.GXDGW.set_title" title="geosoft.gxapi.GXDGW.set_title"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXDGW.set_title()</span></code></a>(Diag, &quot;Window TitlenAdditional Title&quot;);
 
-In the title argument, a line break character '\n' is used to
+In the title argument, a line break character 'n' is used to
 separate the parts.
 
 The window title free_appears as the title in the upper bar of the dialog.
@@ -555,9 +574,13 @@ LISTALIAS   .      .      RW     .      .
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li> 
+          <a href="GXDH.html" title="GXDH class"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="GXDBWRITE.html" title="GXDBWRITE class"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="geosoft.gxapi.classes.html" >GX API Class/Library Reference</a> &#187;</li> 
       </ul>
     </div>
 

@@ -27,6 +27,8 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="GXREG class" href="GXREG.html" />
+    <link rel="prev" title="GXPROJ class" href="GXPROJ.html" />
  
 <script type="text/javascript">
   var _gaq = _gaq || [];
@@ -43,20 +45,30 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li> 
+          <a href="GXREG.html" title="GXREG class"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="GXPROJ.html" title="GXPROJ class"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="geosoft.gxapi.classes.html" accesskey="U">GX API Class/Library Reference</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <div role="note" aria-label="source link">
-    <h3>This Page</h3>
-    <ul class="this-page-menu">
-      <li><a href="_sources/GXRA.rst.txt"
-            rel="nofollow">Show Source</a></li>
-    </ul>
-   </div>
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Introduction</a></li>
+    <li><a href="geosoft.gxapi.classes.html">GX API Class/Library Reference</a></li>
+</ul>
+<h3>Previous Topic</h3>
+<ul>
+    <li><a href="GXPROJ.html" title="previous chapter">GXPROJ class</a></li>
+</ul>
+<h3>Next Topic</h3>
+<ul>
+    <li><a href="GXREG.html" title="next chapter">GXREG class</a></li>
+</ul>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
@@ -67,6 +79,13 @@
     </form>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/GXRA.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
         </div>
       </div>
 
@@ -80,11 +99,11 @@
 <dl class="class">
 <dt id="geosoft.gxapi.GXRA">
 <em class="property">class </em><code class="descclassname">geosoft.gxapi.</code><code class="descname">GXRA</code><a class="headerlink" href="#geosoft.gxapi.GXRA" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-The RA class is used to access ASCII files sequentially or
-by line number. The files are opened in read-only mode, so no
-write operations are defined
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">RA</span> <span class="k">class</span> <span class="nc">is</span> <span class="n">used</span> <span class="n">to</span> <span class="n">access</span> <span class="n">ASCII</span> <span class="n">files</span> <span class="n">sequentially</span> <span class="ow">or</span>
+<span class="n">by</span> <span class="n">line</span> <span class="n">number</span><span class="o">.</span> <span class="n">The</span> <span class="n">files</span> <span class="n">are</span> <span class="n">opened</span> <span class="ow">in</span> <span class="n">read</span><span class="o">-</span><span class="n">only</span> <span class="n">mode</span><span class="p">,</span> <span class="n">so</span> <span class="n">no</span>
+<span class="n">write</span> <span class="n">operations</span> <span class="n">are</span> <span class="n">defined</span>
+</pre></div>
+</div>
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXRA.create">
 <em class="property">static </em><code class="descname">create</code><span class="sig-paren">(</span><em>(str)arg1</em><span class="sig-paren">)</span> &rarr; GXRA:<a class="headerlink" href="#geosoft.gxapi.GXRA.create" title="Permalink to this definition">¶</a></dt>
@@ -136,13 +155,13 @@ write operations are defined
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-This method allows you to open an RA in a structured file
-storage (an SBF).  SBFs can be created inside other data
-containers, such as workspaces, maps, images and databases.
-This lets you store application specific information together
-with the data to which it applies.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="n">method</span> <span class="n">allows</span> <span class="n">you</span> <span class="n">to</span> <span class="nb">open</span> <span class="n">an</span> <span class="n">RA</span> <span class="ow">in</span> <span class="n">a</span> <span class="n">structured</span> <span class="n">file</span>
+<span class="n">storage</span> <span class="p">(</span><span class="n">an</span> <span class="n">SBF</span><span class="p">)</span><span class="o">.</span>  <span class="n">SBFs</span> <span class="n">can</span> <span class="n">be</span> <span class="n">created</span> <span class="n">inside</span> <span class="n">other</span> <span class="n">data</span>
+<span class="n">containers</span><span class="p">,</span> <span class="n">such</span> <span class="k">as</span> <span class="n">workspaces</span><span class="p">,</span> <span class="n">maps</span><span class="p">,</span> <span class="n">images</span> <span class="ow">and</span> <span class="n">databases</span><span class="o">.</span>
+<span class="n">This</span> <span class="n">lets</span> <span class="n">you</span> <span class="n">store</span> <span class="n">application</span> <span class="n">specific</span> <span class="n">information</span> <span class="n">together</span>
+<span class="k">with</span> <span class="n">the</span> <span class="n">data</span> <span class="n">to</span> <span class="n">which</span> <span class="n">it</span> <span class="n">applies</span><span class="o">.</span>
+</pre></div>
+</div>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
 <p class="last">sbf.gxh</p>
@@ -164,7 +183,7 @@ with the data to which it applies.
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">0 - Ok
 1 - End of file</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
 </tr>
 </tbody>
 </table>
@@ -201,7 +220,7 @@ with the data to which it applies.
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"># of lines in the RA.</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int</td>
 </tr>
 </tbody>
 </table>
@@ -213,16 +232,16 @@ with the data to which it applies.
 <dl class="method">
 <dt id="geosoft.gxapi.GXRA.line">
 <code class="descname">line</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXRA.line" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Returns current line #, 0 is the first
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Returns</span> <span class="n">current</span> <span class="n">line</span> <span class="c1">#, 0 is the first</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The current read line location.</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int</td>
 </tr>
 </tbody>
 </table>
@@ -230,9 +249,9 @@ Returns current line #, 0 is the first
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-This will be the next line read.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="n">will</span> <span class="n">be</span> <span class="n">the</span> <span class="nb">next</span> <span class="n">line</span> <span class="n">read</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="staticmethod">
@@ -254,19 +273,19 @@ This will be the next line read.
 <dl class="method">
 <dt id="geosoft.gxapi.GXRA.seek">
 <code class="descname">seek</code><span class="sig-paren">(</span><em>(int)arg1</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXRA.seek" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Position next read to specified line #
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Position</span> <span class="nb">next</span> <span class="n">read</span> <span class="n">to</span> <span class="n">specified</span> <span class="n">line</span> <span class="c1">#</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; line #, 0 is the first.</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>int</em>) &#8211; line #, 0 is the first.</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">0 if seeked line is within the range of lines,
 1 if outside range, line pointer will not be moved.</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
 </tr>
 </tbody>
 </table>
@@ -292,9 +311,13 @@ Position next read to specified line #
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li> 
+          <a href="GXREG.html" title="GXREG class"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="GXPROJ.html" title="GXPROJ class"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="geosoft.gxapi.classes.html" >GX API Class/Library Reference</a> &#187;</li> 
       </ul>
     </div>
 

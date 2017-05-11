@@ -27,6 +27,8 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="geosoft.gxpy.group submodule" href="geosoft.gxpy.group.html" />
+    <link rel="prev" title="geosoft.gxpy.geometry submodule" href="geosoft.gxpy.geometry.html" />
  
 <script type="text/javascript">
   var _gaq = _gaq || [];
@@ -43,20 +45,30 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li> 
+          <a href="geosoft.gxpy.group.html" title="geosoft.gxpy.group submodule"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="geosoft.gxpy.geometry.html" title="geosoft.gxpy.geometry submodule"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="geosoft.gxpy.html" accesskey="U">gxpy modules reference</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <div role="note" aria-label="source link">
-    <h3>This Page</h3>
-    <ul class="this-page-menu">
-      <li><a href="_sources/geosoft.gxpy.grid.rst.txt"
-            rel="nofollow">Show Source</a></li>
-    </ul>
-   </div>
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Introduction</a></li>
+    <li><a href="geosoft.gxpy.html">gxpy modules reference</a></li>
+</ul>
+<h3>Previous Topic</h3>
+<ul>
+    <li><a href="geosoft.gxpy.geometry.html" title="previous chapter">geosoft.gxpy.geometry submodule</a></li>
+</ul>
+<h3>Next Topic</h3>
+<ul>
+    <li><a href="geosoft.gxpy.group.html" title="next chapter">geosoft.gxpy.group submodule</a></li>
+</ul>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
@@ -67,6 +79,13 @@
     </form>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/geosoft.gxpy.grid.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
         </div>
       </div>
 
@@ -77,15 +96,34 @@
             
   <div class="section" id="module-geosoft.gxpy.grid">
 <span id="geosoft-gxpy-grid-submodule"></span><h1>geosoft.gxpy.grid submodule<a class="headerlink" href="#module-geosoft.gxpy.grid" title="Permalink to this headline">¶</a></h1>
-<p>Geosoft grids and image handling, including all grid types supported by Geosoft..</p>
+<p>Geosoft grids and image handling, including all <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/display/GXDEV92/Grid+File+Name+Decorations">supported file formats</a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Classes:</th><td class="field-body"><table border="1" class="first last docutils">
+<colgroup>
+<col width="20%" />
+<col width="80%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#geosoft.gxpy.grid.Grid" title="geosoft.gxpy.grid.Grid"><code class="xref py py-class docutils literal"><span class="pre">Grid</span></code></a></td>
+<td>grid, which can be in memory or created from a file</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
 <p class="last"><a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXIMG</span></code></a>, <a class="reference internal" href="GXIMU.html#geosoft.gxapi.GXIMU" title="geosoft.gxapi.GXIMU"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXIMU</span></code></a></p>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p>Regression tests provide usage examples:</p>
-<p class="last"><a class="reference external" href="https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_grid.py">Tests</a></p>
+<p class="last">Regression tests provide usage examples:     
+<a class="reference external" href="https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_grid.py">Tests</a></p>
 </div>
 <dl class="class">
 <dt id="geosoft.gxpy.grid.Grid">
@@ -150,7 +188,7 @@
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>grd</strong> &#8211; grid instance to save as a new grid</li>
+<li><strong>grd</strong> &#8211; <a class="reference internal" href="#geosoft.gxpy.grid.Grid" title="geosoft.gxpy.grid.Grid"><code class="xref py py-class docutils literal"><span class="pre">Grid</span></code></a> instance to save as a new grid</li>
 <li><strong>file_name</strong> &#8211; name of the new grid (file with optional decorations), default is in memory</li>
 <li><strong>dtype</strong> &#8211; numpy data type, None to use type of the parent grid</li>
 <li><strong>overwrite</strong> &#8211; True to overwrite if the file exists, False to no overwrite.</li>
@@ -231,7 +269,7 @@ deleted and garbage collection is performed.</p>
 <dt id="geosoft.gxpy.grid.Grid.extent_2d">
 <code class="descname">extent_2d</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.grid.Grid.extent_2d" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the 2D extent of the grid on the grid plane
-:return: (min_x, min_y, max_x, max_y)</p>
+:returns:(min_x, min_y, max_x, max_y)</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.2.</span></p>
 </div>
@@ -240,8 +278,15 @@ deleted and garbage collection is performed.</p>
 <dl class="method">
 <dt id="geosoft.gxpy.grid.Grid.extent_3d">
 <code class="descname">extent_3d</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.grid.Grid.extent_3d" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the 3D extent of the grid in the base coordinate system.
-:return: ((min_x, min_y, min_z), (max_x, max_y, max_z))</p>
+<dd><p>Return the 3D extent of the grid in the base coordinate system.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">((min_x, min_y, min_z), (max_x, max_y, max_z))</td>
+</tr>
+</tbody>
+</table>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.2.</span></p>
 </div>
@@ -279,7 +324,7 @@ deleted and garbage collection is performed.</p>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">Grid instance</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><a class="reference internal" href="#geosoft.gxpy.grid.Grid" title="geosoft.gxpy.grid.Grid"><code class="xref py py-class docutils literal"><span class="pre">Grid</span></code></a> instance</p>
 </td>
 </tr>
 </tbody>
@@ -353,7 +398,7 @@ as a color int.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>grd</strong> &#8211; gxpy.grid.Grid instance</li>
+<li><strong>grd</strong> &#8211; <a class="reference internal" href="#geosoft.gxpy.grid.Grid" title="geosoft.gxpy.grid.Grid"><code class="xref py py-class docutils literal"><span class="pre">Grid</span></code></a> instance</li>
 <li><strong>name</strong> &#8211; name for the windowed_grid, default is constructed from input grid</li>
 <li><strong>x0</strong> &#8211; integer index of the first X point</li>
 <li><strong>y0</strong> &#8211; integer index of the first Y point</li>
@@ -402,7 +447,9 @@ as a color int.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>file_name</strong> &#8211; name of the grid file, None or &#8216;&#8217; for a memory grid</li>
+<li><strong>file_name</strong> &#8211; <p>name of the grid file, None or &#8216;&#8217; for a memory grid.
+(see <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/display/GXDEV92/Grid+File+Name+Decorations">supported file formats</a>)</p>
+</li>
 <li><strong>properties</strong> &#8211; dictionary of grid properties</li>
 <li><strong>overwrite</strong> &#8211; True to overwrite existing file</li>
 </ul>
@@ -442,7 +489,8 @@ as a color int.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>file_name</strong> &#8211; name of the grid file</li>
+<li><strong>file_name</strong> &#8211; <p>name of the grid file (see <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/display/GXDEV92/Grid+File+Name+Decorations">supported file formats</a>)</p>
+</li>
 <li><strong>dtype</strong> &#8211; numpy data type, None for the grid native type.  If not the same as the native
 type a memory grid is created in the new type.</li>
 <li><strong>mode</strong> &#8211; <p>open mode:</p>
@@ -475,14 +523,7 @@ type a memory grid is created in the new type.</li>
 <dt id="geosoft.gxpy.grid.Grid.properties">
 <code class="descname">properties</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.grid.Grid.properties" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the grid properties dictionary</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dictionary of all grid properties</td>
-</tr>
-</tbody>
-</table>
+<p>:returns:dictionary of all grid properties</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.1.</span></p>
 </div>
@@ -663,7 +704,7 @@ location of each grid point in 3D space and v is the grid value at that location
 <code class="descclassname">geosoft.gxpy.grid.</code><code class="descname">array_locations</code><span class="sig-paren">(</span><em>properties</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.grid.array_locations" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create an array of (x,y,z) points for a grid defined by properties
 :param properties:  grid properties
-:return:            array of points, shaped (ny, nx, 3)</p>
+:returns:           array of points, shaped (ny, nx, 3)</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.1.</span></p>
 </div>
@@ -792,7 +833,7 @@ location of each grid point in 3D space and v is the grid value at that location
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">Grid instance of the merged output grid, must be closed with a call to close().</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><a class="reference internal" href="#geosoft.gxpy.grid.Grid" title="geosoft.gxpy.grid.Grid"><code class="xref py py-class docutils literal"><span class="pre">Grid</span></code></a> instance of the merged output grid, must be closed with a call to close().</p>
 </td>
 </tr>
 </tbody>
@@ -818,7 +859,7 @@ location of each grid point in 3D space and v is the grid value at that location
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">Grid instance, must be closed with a call to close().</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">:class`Grid` instance, must be closed with a call to close().</p>
 </td>
 </tr>
 </tbody>
@@ -860,9 +901,13 @@ location of each grid point in 3D space and v is the grid value at that location
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li> 
+          <a href="geosoft.gxpy.group.html" title="geosoft.gxpy.group submodule"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="geosoft.gxpy.geometry.html" title="geosoft.gxpy.geometry submodule"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="geosoft.gxpy.html" >gxpy modules reference</a> &#187;</li> 
       </ul>
     </div>
 

@@ -27,6 +27,8 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="GXSHP class" href="GXSHP.html" />
+    <link rel="prev" title="GXSBF class" href="GXSBF.html" />
  
 <script type="text/javascript">
   var _gaq = _gaq || [];
@@ -43,9 +45,13 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li> 
+          <a href="GXSHP.html" title="GXSHP class"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="GXSBF.html" title="GXSBF class"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="geosoft.gxapi.classes.html" accesskey="U">GX API Class/Library Reference</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -61,13 +67,19 @@
 </li>
 </ul>
 
-  <div role="note" aria-label="source link">
-    <h3>This Page</h3>
-    <ul class="this-page-menu">
-      <li><a href="_sources/GXSEMPLOT.rst.txt"
-            rel="nofollow">Show Source</a></li>
-    </ul>
-   </div>
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Introduction</a></li>
+    <li><a href="geosoft.gxapi.classes.html">GX API Class/Library Reference</a></li>
+</ul>
+<h3>Previous Topic</h3>
+<ul>
+    <li><a href="GXSBF.html" title="previous chapter">GXSBF class</a></li>
+</ul>
+<h3>Next Topic</h3>
+<ul>
+    <li><a href="GXSHP.html" title="next chapter">GXSHP class</a></li>
+</ul>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
@@ -78,6 +90,13 @@
     </form>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/GXSEMPLOT.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
         </div>
       </div>
 
@@ -110,7 +129,7 @@
 <li><strong>arg3</strong> (<em>str</em>) &#8211; Mask channel name</li>
 <li><strong>arg4</strong> (<em>str</em>) &#8211; Mineral channel name</li>
 <li><strong>arg5</strong> (<em>str</em>) &#8211; Mineral to use (&#8220;All&#8221; or &#8220;&#8221; for all)</li>
-<li><strong>arg6</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Mask mode (0: Append, 1: New)</li>
+<li><strong>arg6</strong> (<em>int</em>) &#8211; Mask mode (0: Append, 1: New)</li>
 </ul>
 </td>
 </tr>
@@ -126,26 +145,26 @@
 <p><span class="versionmodified">New in version 6.2.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-The mask channel is updated for the current data to reflect
-the actions of the filter. Those values passing get 1, those
-failing get 0.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">mask</span> <span class="n">channel</span> <span class="ow">is</span> <span class="n">updated</span> <span class="k">for</span> <span class="n">the</span> <span class="n">current</span> <span class="n">data</span> <span class="n">to</span> <span class="n">reflect</span>
+<span class="n">the</span> <span class="n">actions</span> <span class="n">of</span> <span class="n">the</span> <span class="nb">filter</span><span class="o">.</span> <span class="n">Those</span> <span class="n">values</span> <span class="n">passing</span> <span class="n">get</span> <span class="mi">1</span><span class="p">,</span> <span class="n">those</span>
+<span class="n">failing</span> <span class="n">get</span> <span class="mf">0.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXSEMPLOT.convert_dummies">
 <em class="property">static </em><code class="descname">convert_dummies</code><span class="sig-paren">(</span><em>(GXDB)arg1</em>, <em>(int)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.convert_dummies" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Convert dummies to zero values for assay channels.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Convert</span> <span class="n">dummies</span> <span class="n">to</span> <span class="n">zero</span> <span class="n">values</span> <span class="k">for</span> <span class="n">assay</span> <span class="n">channels</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXDB</span></code></a>) &#8211; database handle</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Input line to convert</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; Input line to convert</li>
 </ul>
 </td>
 </tr>
@@ -161,21 +180,21 @@ Convert dummies to zero values for assay channels.
 <p><span class="versionmodified">New in version 6.2.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-The is operation is controlled by the Preferences
-&quot;Use dummies to indicate no data?&quot; By default, this option is &quot;yes&quot;
-so this function will return with no changes. However, if
-&quot;no&quot;, then all ASSAY class channels will have dummy values
-converted to 0.0.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="ow">is</span> <span class="n">operation</span> <span class="ow">is</span> <span class="n">controlled</span> <span class="n">by</span> <span class="n">the</span> <span class="n">Preferences</span>
+<span class="s2">&quot;Use dummies to indicate no data?&quot;</span> <span class="n">By</span> <span class="n">default</span><span class="p">,</span> <span class="n">this</span> <span class="n">option</span> <span class="ow">is</span> <span class="s2">&quot;yes&quot;</span>
+<span class="n">so</span> <span class="n">this</span> <span class="n">function</span> <span class="n">will</span> <span class="k">return</span> <span class="k">with</span> <span class="n">no</span> <span class="n">changes</span><span class="o">.</span> <span class="n">However</span><span class="p">,</span> <span class="k">if</span>
+<span class="s2">&quot;no&quot;</span><span class="p">,</span> <span class="n">then</span> <span class="nb">all</span> <span class="n">ASSAY</span> <span class="k">class</span> <span class="nc">channels</span> <span class="n">will</span> <span class="n">have</span> <span class="n">dummy</span> <span class="n">values</span>
+<span class="n">converted</span> <span class="n">to</span> <span class="mf">0.0</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXSEMPLOT.create_ascii_template">
 <em class="property">static </em><code class="descname">create_ascii_template</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(str)arg2</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.create_ascii_template" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-: Generate ASCII import template automatically
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">:</span> <span class="n">Generate</span> <span class="n">ASCII</span> <span class="kn">import</span> <span class="nn">template</span> <span class="n">automatically</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -190,7 +209,7 @@ converted to 0.0.
 0 if it fails.</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></p>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
 </td>
 </tr>
 </tbody>
@@ -220,7 +239,7 @@ converted to 0.0.
 0 if it fails.</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></p>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
 </td>
 </tr>
 </tbody>
@@ -233,9 +252,9 @@ converted to 0.0.
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXSEMPLOT.create_groups">
 <em class="property">static </em><code class="descname">create_groups</code><span class="sig-paren">(</span><em>(GXDB)arg1</em>, <em>(str)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.create_groups" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Group data by anomaly or string channel - Interactive.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Group</span> <span class="n">data</span> <span class="n">by</span> <span class="n">anomaly</span> <span class="ow">or</span> <span class="n">string</span> <span class="n">channel</span> <span class="o">-</span> <span class="n">Interactive</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -262,9 +281,9 @@ Group data by anomaly or string channel - Interactive.
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXSEMPLOT.default_groups">
 <em class="property">static </em><code class="descname">default_groups</code><span class="sig-paren">(</span><em>(GXDB)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.default_groups" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Group data by selected anomalies.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Group</span> <span class="n">data</span> <span class="n">by</span> <span class="n">selected</span> <span class="n">anomalies</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -328,7 +347,7 @@ new filter by that name will be created.</p>
 </p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></p>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
 </td>
 </tr>
 </tbody>
@@ -341,9 +360,9 @@ new filter by that name will be created.</p>
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXSEMPLOT.edit_map_plot_parameters">
 <em class="property">static </em><code class="descname">edit_map_plot_parameters</code><span class="sig-paren">(</span><em>(GXDB)arg1</em>, <em>(str)arg2</em>, <em>(str)arg3</em>, <em>(GXMAP)arg4</em>, <em>(str)arg5</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.edit_map_plot_parameters" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Alter parameters in an XYplot Triplot map.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Alter</span> <span class="n">parameters</span> <span class="ow">in</span> <span class="n">an</span> <span class="n">XYplot</span> <span class="n">Triplot</span> <span class="nb">map</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -369,20 +388,20 @@ Alter parameters in an XYplot Triplot map.
 <p><span class="versionmodified">New in version 6.2.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-The Parameters GUI is loaded based on settings stored in
-the map. The map is then re-plotted, overwriting the old one,
-based on the new settings. Note that the selection of data
-in the current DB is used to replot the map.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">Parameters</span> <span class="n">GUI</span> <span class="ow">is</span> <span class="n">loaded</span> <span class="n">based</span> <span class="n">on</span> <span class="n">settings</span> <span class="n">stored</span> <span class="ow">in</span>
+<span class="n">the</span> <span class="nb">map</span><span class="o">.</span> <span class="n">The</span> <span class="nb">map</span> <span class="ow">is</span> <span class="n">then</span> <span class="n">re</span><span class="o">-</span><span class="n">plotted</span><span class="p">,</span> <span class="n">overwriting</span> <span class="n">the</span> <span class="n">old</span> <span class="n">one</span><span class="p">,</span>
+<span class="n">based</span> <span class="n">on</span> <span class="n">the</span> <span class="n">new</span> <span class="n">settings</span><span class="o">.</span> <span class="n">Note</span> <span class="n">that</span> <span class="n">the</span> <span class="n">selection</span> <span class="n">of</span> <span class="n">data</span>
+<span class="ow">in</span> <span class="n">the</span> <span class="n">current</span> <span class="n">DB</span> <span class="ow">is</span> <span class="n">used</span> <span class="n">to</span> <span class="n">replot</span> <span class="n">the</span> <span class="nb">map</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXSEMPLOT.edit_plot_components">
 <em class="property">static </em><code class="descname">edit_plot_components</code><span class="sig-paren">(</span><em>(GXDB)arg1</em>, <em>(str)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.edit_plot_components" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Set group names and channels to plot in a template.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Set</span> <span class="n">group</span> <span class="n">names</span> <span class="ow">and</span> <span class="n">channels</span> <span class="n">to</span> <span class="n">plot</span> <span class="ow">in</span> <span class="n">a</span> <span class="n">template</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -408,9 +427,9 @@ Set group names and channels to plot in a template.
 <pre class="literal-block">
 The &quot;Components&quot; group in the INI file is edited.
 
-Looks first in user\etc, then in \etc.
+Looks first in useretc, then in etc.
 Looks first for file prefix &quot;semtemplate&quot; then &quot;xyt&quot; or &quot;tri&quot;
-The altered template will be output to the user\etc directory with
+The altered template will be output to the useretc directory with
 the file extension &quot;semtemplate&quot;.
 </pre>
 </dd></dl>
@@ -418,9 +437,9 @@ the file extension &quot;semtemplate&quot;.
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXSEMPLOT.edit_plot_parameters">
 <em class="property">static </em><code class="descname">edit_plot_parameters</code><span class="sig-paren">(</span><em>(GXDB)arg1</em>, <em>(str)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.edit_plot_parameters" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Set TriPlot parameters in a template.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Set</span> <span class="n">TriPlot</span> <span class="n">parameters</span> <span class="ow">in</span> <span class="n">a</span> <span class="n">template</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -446,9 +465,9 @@ Set TriPlot parameters in a template.
 <pre class="literal-block">
 The &quot;Parameters&quot; group in the INI file is edited.
 
-Looks first in user\etc, then in \etc.
+Looks first in useretc, then in etc.
 Looks first for file prefix &quot;semtemplate&quot; then &quot;xyt&quot; or &quot;tri&quot;
-The altered template will be output to the user\etc directory with
+The altered template will be output to the useretc directory with
 the file extension &quot;semtemplate&quot;.
 </pre>
 </dd></dl>
@@ -456,9 +475,9 @@ the file extension &quot;semtemplate&quot;.
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXSEMPLOT.export_overlay">
 <em class="property">static </em><code class="descname">export_overlay</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(str)arg2</em>, <em>(GXMVIEW)arg3</em>, <em>(str)arg4</em>, <em>(int)arg5</em>, <em>(str)arg6</em>, <em>(str)arg7</em>, <em>(str)arg8</em>, <em>(str)arg9</em>, <em>(str)arg10</em>, <em>(str)arg11</em>, <em>(int)arg12</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.export_overlay" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Create overlay map and file from a group.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Create</span> <span class="n">overlay</span> <span class="nb">map</span> <span class="ow">and</span> <span class="n">file</span> <span class="kn">from</span> <span class="nn">a</span> <span class="n">group</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -468,14 +487,14 @@ Create overlay map and file from a group.
 <li><strong>arg2</strong> (<em>str</em>) &#8211; associated map</li>
 <li><strong>arg3</strong> (<a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW" title="geosoft.gxapi.GXMVIEW"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXMVIEW</span></code></a>) &#8211; View with group</li>
 <li><strong>arg4</strong> (<em>str</em>) &#8211; group name</li>
-<li><strong>arg5</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#semplot-plot"><span class="std std-ref">SEMPLOT_PLOT constants</span></a></li>
+<li><strong>arg5</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#semplot-plot"><span class="std std-ref">SEMPLOT_PLOT constants</span></a></li>
 <li><strong>arg6</strong> (<em>str</em>) &#8211; XStage</li>
 <li><strong>arg7</strong> (<em>str</em>) &#8211; XOxide</li>
 <li><strong>arg8</strong> (<em>str</em>) &#8211; YStage</li>
 <li><strong>arg9</strong> (<em>str</em>) &#8211; YOxide</li>
 <li><strong>arg10</strong> (<em>str</em>) &#8211; ZStage</li>
 <li><strong>arg11</strong> (<em>str</em>) &#8211; ZOxide</li>
-<li><strong>arg12</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#semplot-ext"><span class="std std-ref">SEMPLOT_EXT constants</span></a></li>
+<li><strong>arg12</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#semplot-ext"><span class="std std-ref">SEMPLOT_EXT constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -491,18 +510,18 @@ Create overlay map and file from a group.
 <p><span class="versionmodified">New in version 6.2.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-The group is written to a new map, and an overlay file
-is created which points to this map.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">group</span> <span class="ow">is</span> <span class="n">written</span> <span class="n">to</span> <span class="n">a</span> <span class="n">new</span> <span class="nb">map</span><span class="p">,</span> <span class="ow">and</span> <span class="n">an</span> <span class="n">overlay</span> <span class="n">file</span>
+<span class="ow">is</span> <span class="n">created</span> <span class="n">which</span> <span class="n">points</span> <span class="n">to</span> <span class="n">this</span> <span class="nb">map</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXSEMPLOT.export_view">
 <em class="property">static </em><code class="descname">export_view</code><span class="sig-paren">(</span><em>(GXDB)arg1</em>, <em>(GXLST)arg2</em>, <em>(GXDB)arg3</em>, <em>(int)arg4</em>, <em>(str)arg5</em>, <em>(str)arg6</em>, <em>(str)arg7</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.export_view" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Create a &quot;View&quot; database
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Create</span> <span class="n">a</span> <span class="s2">&quot;View&quot;</span> <span class="n">database</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -511,7 +530,7 @@ Create a &quot;View&quot; database
 <li><strong>arg1</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXDB</span></code></a>) &#8211; Original raw data database</li>
 <li><strong>arg2</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXLST</span></code></a>) &#8211; List of lines (anomlies) to export</li>
 <li><strong>arg3</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXDB</span></code></a>) &#8211; Destination database</li>
-<li><strong>arg4</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; View to export - One of SEMPLOT_XXX_STAGE</li>
+<li><strong>arg4</strong> (<em>int</em>) &#8211; View to export - One of SEMPLOT_XXX_STAGE</li>
 <li><strong>arg5</strong> (<em>str</em>) &#8211; Mask channel (&#8220;&#8221; for None)</li>
 <li><strong>arg6</strong> (<em>str</em>) &#8211; Mineral channel</li>
 <li><strong>arg7</strong> (<em>str</em>) &#8211; Mineral to export (&#8220;&#8221; for all)</li>
@@ -534,9 +553,9 @@ Create a &quot;View&quot; database
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXSEMPLOT.export_view2">
 <em class="property">static </em><code class="descname">export_view2</code><span class="sig-paren">(</span><em>(GXDB)arg1</em>, <em>(GXLST)arg2</em>, <em>(GXDB)arg3</em>, <em>(int)arg4</em>, <em>(str)arg5</em>, <em>(str)arg6</em>, <em>(str)arg7</em>, <em>(int)arg8</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.export_view2" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Create a &quot;View&quot; database, with channel selection
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Create</span> <span class="n">a</span> <span class="s2">&quot;View&quot;</span> <span class="n">database</span><span class="p">,</span> <span class="k">with</span> <span class="n">channel</span> <span class="n">selection</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -545,11 +564,11 @@ Create a &quot;View&quot; database, with channel selection
 <li><strong>arg1</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXDB</span></code></a>) &#8211; Original raw data database</li>
 <li><strong>arg2</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXLST</span></code></a>) &#8211; List of lines (anomlies) to export</li>
 <li><strong>arg3</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXDB</span></code></a>) &#8211; Destination database</li>
-<li><strong>arg4</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; View to export - One of SEMPLOT_XXX_STAGE</li>
+<li><strong>arg4</strong> (<em>int</em>) &#8211; View to export - One of SEMPLOT_XXX_STAGE</li>
 <li><strong>arg5</strong> (<em>str</em>) &#8211; Mask channel (&#8220;&#8221; for None)</li>
 <li><strong>arg6</strong> (<em>str</em>) &#8211; Mineral channel</li>
 <li><strong>arg7</strong> (<em>str</em>) &#8211; Mineral to export (&#8220;&#8221; for all)</li>
-<li><strong>arg8</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#semplot-export"><span class="std std-ref">SEMPLOT_EXPORT constants</span></a> Channel selection</li>
+<li><strong>arg8</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#semplot-export"><span class="std std-ref">SEMPLOT_EXPORT constants</span></a> Channel selection</li>
 </ul>
 </td>
 </tr>
@@ -589,9 +608,9 @@ Create a &quot;View&quot; database, with channel selection
 </div>
 <p><strong>Note:</strong></p>
 <pre class="literal-block">
-&quot;Supplied&quot; filters are stored in \etc, while user-edited and new filters
-are stored in user\etc. This function finds all files with the extension
-&quot;.semfilter&quot;, first in user\etc, then in \etc, and adds the file names
+&quot;Supplied&quot; filters are stored in etc, while user-edited and new filters
+are stored in useretc. This function finds all files with the extension
+&quot;.semfilter&quot;, first in useretc, then in etc, and adds the file names
 (without the extension) to the LST. The name with the extension is stored
 as the value.
 The LST is cleared first.
@@ -613,7 +632,7 @@ The LST is cleared first.
 <li><strong>arg2</strong> (<em>str</em>) &#8211; Mask channel</li>
 <li><strong>arg3</strong> (<em>str</em>) &#8211; Mineral channel</li>
 <li><strong>arg4</strong> (<em>str</em>) &#8211; mineral (string) - &#8220;C&#8221;, &#8220;I&#8221; etc.</li>
-<li><strong>arg5</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Grain position</li>
+<li><strong>arg5</strong> (<em>int</em>) &#8211; Grain position</li>
 </ul>
 </td>
 </tr>
@@ -631,7 +650,7 @@ The LST is cleared first.
 <p><strong>Note:</strong></p>
 <pre class="literal-block">
 The Mask channel will be updated so that those data values
-which &quot;pass&quot; get &quot;1&quot; and those that &quot;fail&quot; get dummy &quot;\ `*`\ &quot;
+which &quot;pass&quot; get &quot;1&quot; and those that &quot;fail&quot; get dummy &quot;<cite>*</cite>&quot;
 NO DATA IS REMOVED.
 Works on all selected lines of data.
 </pre>
@@ -649,7 +668,7 @@ Works on all selected lines of data.
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXDB</span></code></a>) &#8211; Database handle</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Data Group handle</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; Data Group handle</li>
 <li><strong>arg3</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXLST</span></code></a>) &#8211; LST to copy channels into</li>
 </ul>
 </td>
@@ -670,9 +689,9 @@ Works on all selected lines of data.
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXSEMPLOT.get_current_mineral_lst">
 <em class="property">static </em><code class="descname">get_current_mineral_lst</code><span class="sig-paren">(</span><em>(GXDB)arg1</em>, <em>(str)arg2</em>, <em>(GXLST)arg3</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.get_current_mineral_lst" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Retrieve LST of minerals in selected lines.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Retrieve</span> <span class="n">LST</span> <span class="n">of</span> <span class="n">minerals</span> <span class="ow">in</span> <span class="n">selected</span> <span class="n">lines</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -696,18 +715,18 @@ Retrieve LST of minerals in selected lines.
 <p><span class="versionmodified">New in version 6.2.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-If the mineral channel name is not specified, it returns
-just the &quot;X&quot; (Unknown) item.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">If</span> <span class="n">the</span> <span class="n">mineral</span> <span class="n">channel</span> <span class="n">name</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">specified</span><span class="p">,</span> <span class="n">it</span> <span class="n">returns</span>
+<span class="n">just</span> <span class="n">the</span> <span class="s2">&quot;X&quot;</span> <span class="p">(</span><span class="n">Unknown</span><span class="p">)</span> <span class="n">item</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXSEMPLOT.get_current_position_lst">
 <em class="property">static </em><code class="descname">get_current_position_lst</code><span class="sig-paren">(</span><em>(GXDB)arg1</em>, <em>(GXLST)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.get_current_position_lst" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Retrieve LST of positions in selected lines.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Retrieve</span> <span class="n">LST</span> <span class="n">of</span> <span class="n">positions</span> <span class="ow">in</span> <span class="n">selected</span> <span class="n">lines</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -734,9 +753,9 @@ Retrieve LST of positions in selected lines.
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXSEMPLOT.get_full_mineral_lst">
 <em class="property">static </em><code class="descname">get_full_mineral_lst</code><span class="sig-paren">(</span><em>(GXLST)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.get_full_mineral_lst" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Retrieve LST of all minerals in Semplot_Minerals.csv
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Retrieve</span> <span class="n">LST</span> <span class="n">of</span> <span class="nb">all</span> <span class="n">minerals</span> <span class="ow">in</span> <span class="n">Semplot_Minerals</span><span class="o">.</span><span class="n">csv</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -757,9 +776,9 @@ Retrieve LST of all minerals in Semplot_Minerals.csv
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXSEMPLOT.get_full_position_lst">
 <em class="property">static </em><code class="descname">get_full_position_lst</code><span class="sig-paren">(</span><em>(GXLST)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.get_full_position_lst" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Retrieve LST of all possible mineral positions.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Retrieve</span> <span class="n">LST</span> <span class="n">of</span> <span class="nb">all</span> <span class="n">possible</span> <span class="n">mineral</span> <span class="n">positions</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -780,9 +799,9 @@ Retrieve LST of all possible mineral positions.
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXSEMPLOT.get_grouping_lst">
 <em class="property">static </em><code class="descname">get_grouping_lst</code><span class="sig-paren">(</span><em>(GXDB)arg1</em>, <em>(GXLST)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.get_grouping_lst" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Get list of items to group symbols by.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="nb">list</span> <span class="n">of</span> <span class="n">items</span> <span class="n">to</span> <span class="n">group</span> <span class="n">symbols</span> <span class="n">by</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -805,21 +824,21 @@ Get list of items to group symbols by.
 <p><span class="versionmodified">New in version 6.2.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-The first item is &quot;Anomaly&quot;, which gives the line names, The second
-item (if the channel exists in the database) is the Sample Number.
-After this are included all string channels which are NOT oxides or
-elements. (The list can include the mineral).
-Channel symbol is the LST value (except for the first item - &quot;Anomaly&quot;)
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">first</span> <span class="n">item</span> <span class="ow">is</span> <span class="s2">&quot;Anomaly&quot;</span><span class="p">,</span> <span class="n">which</span> <span class="n">gives</span> <span class="n">the</span> <span class="n">line</span> <span class="n">names</span><span class="p">,</span> <span class="n">The</span> <span class="n">second</span>
+<span class="n">item</span> <span class="p">(</span><span class="k">if</span> <span class="n">the</span> <span class="n">channel</span> <span class="n">exists</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">database</span><span class="p">)</span> <span class="ow">is</span> <span class="n">the</span> <span class="n">Sample</span> <span class="n">Number</span><span class="o">.</span>
+<span class="n">After</span> <span class="n">this</span> <span class="n">are</span> <span class="n">included</span> <span class="nb">all</span> <span class="n">string</span> <span class="n">channels</span> <span class="n">which</span> <span class="n">are</span> <span class="n">NOT</span> <span class="n">oxides</span> <span class="ow">or</span>
+<span class="n">elements</span><span class="o">.</span> <span class="p">(</span><span class="n">The</span> <span class="nb">list</span> <span class="n">can</span> <span class="n">include</span> <span class="n">the</span> <span class="n">mineral</span><span class="p">)</span><span class="o">.</span>
+<span class="n">Channel</span> <span class="n">symbol</span> <span class="ow">is</span> <span class="n">the</span> <span class="n">LST</span> <span class="n">value</span> <span class="p">(</span><span class="k">except</span> <span class="k">for</span> <span class="n">the</span> <span class="n">first</span> <span class="n">item</span> <span class="o">-</span> <span class="s2">&quot;Anomaly&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXSEMPLOT.get_mineral_channel_name">
 <em class="property">static </em><code class="descname">get_mineral_channel_name</code><span class="sig-paren">(</span><em>(GXDB)arg1</em>, <em>(str_ref)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.get_mineral_channel_name" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Retrieve the mineral channel name.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Retrieve</span> <span class="n">the</span> <span class="n">mineral</span> <span class="n">channel</span> <span class="n">name</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -842,20 +861,20 @@ Retrieve the mineral channel name.
 <p><span class="versionmodified">New in version 6.3.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-First looks at the SEMPLOT.MINERAL_CHANNEL value.
-If not found, returns the first MINERAL class
-channel found. If still not found, returns a
-blank string.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">First</span> <span class="n">looks</span> <span class="n">at</span> <span class="n">the</span> <span class="n">SEMPLOT</span><span class="o">.</span><span class="n">MINERAL_CHANNEL</span> <span class="n">value</span><span class="o">.</span>
+<span class="n">If</span> <span class="ow">not</span> <span class="n">found</span><span class="p">,</span> <span class="n">returns</span> <span class="n">the</span> <span class="n">first</span> <span class="n">MINERAL</span> <span class="k">class</span>
+<span class="nc">channel</span> <span class="n">found</span><span class="o">.</span> <span class="n">If</span> <span class="n">still</span> <span class="ow">not</span> <span class="n">found</span><span class="p">,</span> <span class="n">returns</span> <span class="n">a</span>
+<span class="n">blank</span> <span class="n">string</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXSEMPLOT.import_ascii_wizard">
 <em class="property">static </em><code class="descname">import_ascii_wizard</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(str)arg2</em>, <em>(str_ref)arg3</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.import_ascii_wizard" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Generate a SEMPLOT ASCII import template.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Generate</span> <span class="n">a</span> <span class="n">SEMPLOT</span> <span class="n">ASCII</span> <span class="kn">import</span> <span class="nn">template.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -879,10 +898,10 @@ Generate a SEMPLOT ASCII import template.
 <p><span class="versionmodified">New in version 6.3.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-If the anomaly name is not included, then
-the input data must have an &quot;Anom_Name&quot; field.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">If</span> <span class="n">the</span> <span class="n">anomaly</span> <span class="n">name</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">included</span><span class="p">,</span> <span class="n">then</span>
+<span class="n">the</span> <span class="nb">input</span> <span class="n">data</span> <span class="n">must</span> <span class="n">have</span> <span class="n">an</span> <span class="s2">&quot;Anom_Name&quot;</span> <span class="n">field</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="staticmethod">
@@ -900,7 +919,7 @@ the input data must have an &quot;Anom_Name&quot; field.
 <li><strong>arg2</strong> (<em>str</em>) &#8211; import data file name</li>
 <li><strong>arg3</strong> (<em>str</em>) &#8211; import template name</li>
 <li><strong>arg4</strong> (<em>str</em>) &#8211; Optional Line name (see note 3.)</li>
-<li><strong>arg5</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Optional Flight number</li>
+<li><strong>arg5</strong> (<em>int</em>) &#8211; Optional Flight number</li>
 <li><strong>arg6</strong> (<em>float</em>) &#8211; Optional date</li>
 </ul>
 </td>
@@ -917,33 +936,33 @@ the input data must have an &quot;Anom_Name&quot; field.
 <p><span class="versionmodified">New in version 6.2.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-This wrapper is for SEMPLOT, and does not require the import licence.
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="n">wrapper</span> <span class="ow">is</span> <span class="k">for</span> <span class="n">SEMPLOT</span><span class="p">,</span> <span class="ow">and</span> <span class="n">does</span> <span class="ow">not</span> <span class="n">require</span> <span class="n">the</span> <span class="kn">import</span> <span class="nn">licence.</span>
 
-   1. Binary import templates have extension .I2 by convention.  See
-      BINARY.I2 for a description of the template format.
-      Archive import templates have extension .I3 by convention. See
-      ARCHIVE.I3 for a description of the template format.
+   <span class="mf">1.</span> <span class="n">Binary</span> <span class="kn">import</span> <span class="nn">templates</span> <span class="n">have</span> <span class="n">extension</span> <span class="o">.</span><span class="n">I2</span> <span class="n">by</span> <span class="n">convention</span><span class="o">.</span>  <span class="n">See</span>
+      <span class="n">BINARY</span><span class="o">.</span><span class="n">I2</span> <span class="k">for</span> <span class="n">a</span> <span class="n">description</span> <span class="n">of</span> <span class="n">the</span> <span class="n">template</span> <span class="nb">format</span><span class="o">.</span>
+      <span class="n">Archive</span> <span class="kn">import</span> <span class="nn">templates</span> <span class="n">have</span> <span class="n">extension</span> <span class="o">.</span><span class="n">I3</span> <span class="n">by</span> <span class="n">convention</span><span class="o">.</span> <span class="n">See</span>
+      <span class="n">ARCHIVE</span><span class="o">.</span><span class="n">I3</span> <span class="k">for</span> <span class="n">a</span> <span class="n">description</span> <span class="n">of</span> <span class="n">the</span> <span class="n">template</span> <span class="nb">format</span><span class="o">.</span>
 
-   2. Both the import template and data file must exist.
+   <span class="mf">2.</span> <span class="n">Both</span> <span class="n">the</span> <span class="kn">import</span> <span class="nn">template</span> <span class="ow">and</span> <span class="n">data</span> <span class="n">file</span> <span class="n">must</span> <span class="n">exist</span><span class="o">.</span>
 
-   3. If a line already exists in the database, a new version is created
-      unless a line name is passed in.  In this case, the specified name
-      is used and the imported channels on the previous line will be
-      destroyed.
-</pre>
+   <span class="mf">3.</span> <span class="n">If</span> <span class="n">a</span> <span class="n">line</span> <span class="n">already</span> <span class="n">exists</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">database</span><span class="p">,</span> <span class="n">a</span> <span class="n">new</span> <span class="n">version</span> <span class="ow">is</span> <span class="n">created</span>
+      <span class="n">unless</span> <span class="n">a</span> <span class="n">line</span> <span class="n">name</span> <span class="ow">is</span> <span class="n">passed</span> <span class="ow">in</span><span class="o">.</span>  <span class="n">In</span> <span class="n">this</span> <span class="n">case</span><span class="p">,</span> <span class="n">the</span> <span class="n">specified</span> <span class="n">name</span>
+      <span class="ow">is</span> <span class="n">used</span> <span class="ow">and</span> <span class="n">the</span> <span class="n">imported</span> <span class="n">channels</span> <span class="n">on</span> <span class="n">the</span> <span class="n">previous</span> <span class="n">line</span> <span class="n">will</span> <span class="n">be</span>
+      <span class="n">destroyed</span><span class="o">.</span>
+</pre></div>
+</div>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
-<p class="last">\ :func:`geosoft.gxapi.GXDU.lab_template`\  in du.gxh</p>
+<p class="last"><a class="reference internal" href="GXDU.html#geosoft.gxapi.GXDU.lab_template" title="geosoft.gxapi.GXDU.lab_template"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXDU.lab_template()</span></code></a> in du.gxh</p>
 </div>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXSEMPLOT.import_database_ado">
 <em class="property">static </em><code class="descname">import_database_ado</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(str)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.import_database_ado" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Generate a template file for importing semplot databases.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Generate</span> <span class="n">a</span> <span class="n">template</span> <span class="n">file</span> <span class="k">for</span> <span class="n">importing</span> <span class="n">semplot</span> <span class="n">databases</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -970,9 +989,9 @@ Generate a template file for importing semplot databases.
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXSEMPLOT.import_database_odbc">
 <em class="property">static </em><code class="descname">import_database_odbc</code><span class="sig-paren">(</span><em>(str_ref)arg1</em>, <em>(str_ref)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.import_database_odbc" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Generate a template file for importing ODBC databases.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Generate</span> <span class="n">a</span> <span class="n">template</span> <span class="n">file</span> <span class="k">for</span> <span class="n">importing</span> <span class="n">ODBC</span> <span class="n">databases</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -999,9 +1018,9 @@ Generate a template file for importing ODBC databases.
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXSEMPLOT.init_group_symbols_used">
 <em class="property">static </em><code class="descname">init_group_symbols_used</code><span class="sig-paren">(</span><em>(GXDB)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.init_group_symbols_used" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Initializes memory of symbols used in plotting.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Initializes</span> <span class="n">memory</span> <span class="n">of</span> <span class="n">symbols</span> <span class="n">used</span> <span class="ow">in</span> <span class="n">plotting</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1021,16 +1040,16 @@ Initializes memory of symbols used in plotting.
 <pre class="literal-block">
 Maintains a list of the symbols used in plotting. Call before
 Plotting one or more legends - symbols are accumulated.
-\ :func:`geosoft.gxapi.GXSEMPLOT.plot_symbol_legend`\  uses this information to create a legend.
+<a class="reference internal" href="#geosoft.gxapi.GXSEMPLOT.plot_symbol_legend" title="geosoft.gxapi.GXSEMPLOT.plot_symbol_legend"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXSEMPLOT.plot_symbol_legend()</span></code></a> uses this information to create a legend.
 </pre>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXSEMPLOT.mineral_id">
 <em class="property">static </em><code class="descname">mineral_id</code><span class="sig-paren">(</span><em>(GXDB)arg1</em>, <em>(float)arg2</em>, <em>(int)arg3</em>, <em>(int)arg4</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.mineral_id" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Identify minerals from the oxide channels.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Identify</span> <span class="n">minerals</span> <span class="kn">from</span> <span class="nn">the</span> <span class="n">oxide</span> <span class="n">channels</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1038,8 +1057,8 @@ Identify minerals from the oxide channels.
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXDB</span></code></a>) &#8211; Database</li>
 <li><strong>arg2</strong> (<em>float</em>) &#8211; Maximum residual value (in % of the total oxide)</li>
-<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Mineral channel (Locked RW)</li>
-<li><strong>arg4</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Residual channel (Locked RW)</li>
+<li><strong>arg3</strong> (<em>int</em>) &#8211; Mineral channel (Locked RW)</li>
+<li><strong>arg4</strong> (<em>int</em>) &#8211; Residual channel (Locked RW)</li>
 </ul>
 </td>
 </tr>
@@ -1055,23 +1074,23 @@ Identify minerals from the oxide channels.
 <p><span class="versionmodified">New in version 6.3.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-Finds the best mineral matching the composition for each
-row of oxide values. Works using linear programming and
-the simplex method to maximize the oxides used to create
-each of the possible output minerals. The mineral leaving the
-least leftover is selected, as long as the residual (measured
-as a percent of the total) is less than or equal to the
-input value.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Finds</span> <span class="n">the</span> <span class="n">best</span> <span class="n">mineral</span> <span class="n">matching</span> <span class="n">the</span> <span class="n">composition</span> <span class="k">for</span> <span class="n">each</span>
+<span class="n">row</span> <span class="n">of</span> <span class="n">oxide</span> <span class="n">values</span><span class="o">.</span> <span class="n">Works</span> <span class="n">using</span> <span class="n">linear</span> <span class="n">programming</span> <span class="ow">and</span>
+<span class="n">the</span> <span class="n">simplex</span> <span class="n">method</span> <span class="n">to</span> <span class="n">maximize</span> <span class="n">the</span> <span class="n">oxides</span> <span class="n">used</span> <span class="n">to</span> <span class="n">create</span>
+<span class="n">each</span> <span class="n">of</span> <span class="n">the</span> <span class="n">possible</span> <span class="n">output</span> <span class="n">minerals</span><span class="o">.</span> <span class="n">The</span> <span class="n">mineral</span> <span class="n">leaving</span> <span class="n">the</span>
+<span class="n">least</span> <span class="n">leftover</span> <span class="ow">is</span> <span class="n">selected</span><span class="p">,</span> <span class="k">as</span> <span class="n">long</span> <span class="k">as</span> <span class="n">the</span> <span class="n">residual</span> <span class="p">(</span><span class="n">measured</span>
+<span class="k">as</span> <span class="n">a</span> <span class="n">percent</span> <span class="n">of</span> <span class="n">the</span> <span class="n">total</span><span class="p">)</span> <span class="ow">is</span> <span class="n">less</span> <span class="n">than</span> <span class="ow">or</span> <span class="n">equal</span> <span class="n">to</span> <span class="n">the</span>
+<span class="nb">input</span> <span class="n">value</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXSEMPLOT.new_filter">
 <em class="property">static </em><code class="descname">new_filter</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(str)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.new_filter" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Create a new selection filter.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Create</span> <span class="n">a</span> <span class="n">new</span> <span class="n">selection</span> <span class="nb">filter</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1095,23 +1114,23 @@ Create a new selection filter.
 </div>
 <p><strong>Note:</strong></p>
 <pre class="literal-block">
-Creates a new, empty filter file in the user\etc directory
+Creates a new, empty filter file in the useretc directory
 </pre>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXSEMPLOT.new_template">
 <em class="property">static </em><code class="descname">new_template</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(int)arg2</em>, <em>(str)arg3</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.new_template" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Create a new XYPlot or TriPlot template.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Create</span> <span class="n">a</span> <span class="n">new</span> <span class="n">XYPlot</span> <span class="ow">or</span> <span class="n">TriPlot</span> <span class="n">template</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<em>str</em>) &#8211; New template name</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Unknown</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; Unknown</li>
 <li><strong>arg3</strong> (<em>str</em>) &#8211; Template to use as a model (can be &#8220;&#8221;)</li>
 </ul>
 </td>
@@ -1129,11 +1148,11 @@ Create a new XYPlot or TriPlot template.
 </div>
 <p><strong>Note:</strong></p>
 <pre class="literal-block">
-The new template is written to the user\etc directory, with
+The new template is written to the useretc directory, with
 the file extension &quot;semfilter&quot;. The template contains a parameter
 identifying it as an XY or Triplot.
 
-Model Template: Looks first in user\etc, then in \etc.
+Model Template: Looks first in useretc, then in etc.
 Looks first for file prefix &quot;semtemplate&quot; then &quot;xyt&quot; or &quot;tri&quot;
 
 Because there are so many shared parameters, it is possible to use
@@ -1154,8 +1173,8 @@ few complications.  (e.g. needing to define a &quot;Z&quot; component)
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXLST</span></code></a>) &#8211; Input LST.</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#semplot-ext"><span class="std std-ref">SEMPLOT_EXT constants</span></a></li>
-<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#semplot-plot"><span class="std std-ref">SEMPLOT_PLOT constants</span></a></li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#semplot-ext"><span class="std std-ref">SEMPLOT_EXT constants</span></a></li>
+<li><strong>arg3</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#semplot-plot"><span class="std std-ref">SEMPLOT_PLOT constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -1172,7 +1191,7 @@ few complications.  (e.g. needing to define a &quot;Z&quot; component)
 </div>
 <p><strong>Note:</strong></p>
 <pre class="literal-block">
-Looks first in user\etc, then in \etc.
+Looks first in useretc, then in etc.
 See SEMPLOT_EXT definitions above for which files to look for.
 </pre>
 </dd></dl>
@@ -1180,9 +1199,9 @@ See SEMPLOT_EXT definitions above for which files to look for.
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXSEMPLOT.plot">
 <em class="property">static </em><code class="descname">plot</code><span class="sig-paren">(</span><em>(GXDB)arg1</em>, <em>(str)arg2</em>, <em>(str)arg3</em>, <em>(str)arg4</em>, <em>(str)arg5</em>, <em>(int)arg6</em>, <em>(int)arg7</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.plot" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Plot an XYPlot or TriPlot based on the template.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Plot</span> <span class="n">an</span> <span class="n">XYPlot</span> <span class="ow">or</span> <span class="n">TriPlot</span> <span class="n">based</span> <span class="n">on</span> <span class="n">the</span> <span class="n">template</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1193,8 +1212,8 @@ Plot an XYPlot or TriPlot based on the template.
 <li><strong>arg3</strong> (<em>str</em>) &#8211; Mask channel (can be &#8220;&#8221;)</li>
 <li><strong>arg4</strong> (<em>str</em>) &#8211; Mineral channel (can be &#8220;&#8221; for raw data)</li>
 <li><strong>arg5</strong> (<em>str</em>) &#8211; Map name</li>
-<li><strong>arg6</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Map open mode; one of MAP_WRITEXXX (see map.gxh)</li>
-<li><strong>arg7</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Plot symbols (O: No, 1:Yes) ?</li>
+<li><strong>arg6</strong> (<em>int</em>) &#8211; Map open mode; one of MAP_WRITEXXX (see map.gxh)</li>
+<li><strong>arg7</strong> (<em>int</em>) &#8211; Plot symbols (O: No, 1:Yes) ?</li>
 </ul>
 </td>
 </tr>
@@ -1216,10 +1235,10 @@ are used.
 Only values with mask values of 1 are plotted, if the mask
 channel is specified.
 
-Call &quot;\ :func:`geosoft.gxapi.GXSEMPLOT.reset_used_channel`\ &quot; prior to this function
+Call &quot;<a class="reference internal" href="#geosoft.gxapi.GXSEMPLOT.reset_used_channel" title="geosoft.gxapi.GXSEMPLOT.reset_used_channel"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXSEMPLOT.reset_used_channel()</span></code></a>&quot; prior to this function
 in order to track the values actually plotted.
 
-Call \ :func:`geosoft.gxapi.GXSEMPLOT.init_group_symbols_used`\  prior to this function
+Call <a class="reference internal" href="#geosoft.gxapi.GXSEMPLOT.init_group_symbols_used" title="geosoft.gxapi.GXSEMPLOT.init_group_symbols_used"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXSEMPLOT.init_group_symbols_used()</span></code></a> prior to this function
 to reset recording of the symbols used in plotting (for legends etc).
 </pre>
 </dd></dl>
@@ -1227,9 +1246,9 @@ to reset recording of the symbols used in plotting (for legends etc).
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXSEMPLOT.plot_symbol_legend">
 <em class="property">static </em><code class="descname">plot_symbol_legend</code><span class="sig-paren">(</span><em>(GXDB)arg1</em>, <em>(GXMVIEW)arg2</em>, <em>(float)arg3</em>, <em>(float)arg4</em>, <em>(float)arg5</em>, <em>(float)arg6</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.plot_symbol_legend" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Plot a symbol legend in a view.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Plot</span> <span class="n">a</span> <span class="n">symbol</span> <span class="n">legend</span> <span class="ow">in</span> <span class="n">a</span> <span class="n">view</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1257,7 +1276,7 @@ Plot a symbol legend in a view.
 </div>
 <p><strong>Note:</strong></p>
 <pre class="literal-block">
-This function depends on \ :func:`geosoft.gxapi.GXSEMPLOT.init_group_symbols_used`\ 
+This function depends on <a class="reference internal" href="#geosoft.gxapi.GXSEMPLOT.init_group_symbols_used" title="geosoft.gxapi.GXSEMPLOT.init_group_symbols_used"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXSEMPLOT.init_group_symbols_used()</span></code></a>
 before the plot for which this legend is created is made.
 The symbols and groups to use in the legend are stored to
 a database blob after the plot is made. These values are
@@ -1269,9 +1288,9 @@ specified location.
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXSEMPLOT.prop_symb">
 <em class="property">static </em><code class="descname">prop_symb</code><span class="sig-paren">(</span><em>(GXDB)arg1</em>, <em>(GXMAP)arg2</em>, <em>(str)arg3</em>, <em>(str)arg4</em>, <em>(str)arg5</em>, <em>(str)arg6</em>, <em>(int)arg7</em>, <em>(int)arg8</em>, <em>(float)arg9</em>, <em>(float)arg10</em>, <em>(int)arg11</em>, <em>(int)arg12</em>, <em>(int)arg13</em>, <em>(int)arg14</em>, <em>(int)arg15</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.prop_symb" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Plot a proportional symbol plot.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Plot</span> <span class="n">a</span> <span class="n">proportional</span> <span class="n">symbol</span> <span class="n">plot</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1283,15 +1302,15 @@ Plot a proportional symbol plot.
 <li><strong>arg4</strong> (<em>str</em>) &#8211; channel name</li>
 <li><strong>arg5</strong> (<em>str</em>) &#8211; mask channel (can be &#8220;&#8221;)</li>
 <li><strong>arg6</strong> (<em>str</em>) &#8211; mineral channel (</li>
-<li><strong>arg7</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; linear (0) or logarithmic (1) scaling</li>
-<li><strong>arg8</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; scale by diameter (0) or area (1)</li>
+<li><strong>arg7</strong> (<em>int</em>) &#8211; linear (0) or logarithmic (1) scaling</li>
+<li><strong>arg8</strong> (<em>int</em>) &#8211; scale by diameter (0) or area (1)</li>
 <li><strong>arg9</strong> (<em>float</em>) &#8211; scale base (log) data units</li>
 <li><strong>arg10</strong> (<em>float</em>) &#8211; scale factor (log) data units/mm</li>
-<li><strong>arg11</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; symbol number</li>
-<li><strong>arg12</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; symbol weight</li>
-<li><strong>arg13</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; symbol line color</li>
-<li><strong>arg14</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; symbol fill color</li>
-<li><strong>arg15</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; plot legend?</li>
+<li><strong>arg11</strong> (<em>int</em>) &#8211; symbol number</li>
+<li><strong>arg12</strong> (<em>int</em>) &#8211; symbol weight</li>
+<li><strong>arg13</strong> (<em>int</em>) &#8211; symbol line color</li>
+<li><strong>arg14</strong> (<em>int</em>) &#8211; symbol fill color</li>
+<li><strong>arg15</strong> (<em>int</em>) &#8211; plot legend?</li>
 </ul>
 </td>
 </tr>
@@ -1315,9 +1334,9 @@ Plot a proportional symbol plot.
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXSEMPLOT.re_plot_symbol_legend">
 <em class="property">static </em><code class="descname">re_plot_symbol_legend</code><span class="sig-paren">(</span><em>(GXDB)arg1</em>, <em>(GXMVIEW)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.re_plot_symbol_legend" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Replot a symbol legend in a view.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Replot</span> <span class="n">a</span> <span class="n">symbol</span> <span class="n">legend</span> <span class="ow">in</span> <span class="n">a</span> <span class="n">view</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1340,19 +1359,19 @@ Replot a symbol legend in a view.
 <p><span class="versionmodified">New in version 6.2.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-Searches the VIEW REG for information on a previously
-created legend, and if it finds that info, replots the Legend,
-using the current data, group key etc.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Searches</span> <span class="n">the</span> <span class="n">VIEW</span> <span class="n">REG</span> <span class="k">for</span> <span class="n">information</span> <span class="n">on</span> <span class="n">a</span> <span class="n">previously</span>
+<span class="n">created</span> <span class="n">legend</span><span class="p">,</span> <span class="ow">and</span> <span class="k">if</span> <span class="n">it</span> <span class="n">finds</span> <span class="n">that</span> <span class="n">info</span><span class="p">,</span> <span class="n">replots</span> <span class="n">the</span> <span class="n">Legend</span><span class="p">,</span>
+<span class="n">using</span> <span class="n">the</span> <span class="n">current</span> <span class="n">data</span><span class="p">,</span> <span class="n">group</span> <span class="n">key</span> <span class="n">etc</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXSEMPLOT.replot">
 <em class="property">static </em><code class="descname">replot</code><span class="sig-paren">(</span><em>(GXDB)arg1</em>, <em>(str)arg2</em>, <em>(str)arg3</em>, <em>(GXMAP)arg4</em>, <em>(str)arg5</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.replot" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Replot an existing SEMPLOT plot based on current data.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Replot</span> <span class="n">an</span> <span class="n">existing</span> <span class="n">SEMPLOT</span> <span class="n">plot</span> <span class="n">based</span> <span class="n">on</span> <span class="n">current</span> <span class="n">data</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1382,10 +1401,10 @@ Replot an existing SEMPLOT plot based on current data.
 Note that the selection of data
 in the current DB is used to replot the map.
 
-Call &quot;\ :func:`geosoft.gxapi.GXSEMPLOT.reset_used_channel`\ &quot; prior to this function
+Call &quot;<a class="reference internal" href="#geosoft.gxapi.GXSEMPLOT.reset_used_channel" title="geosoft.gxapi.GXSEMPLOT.reset_used_channel"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXSEMPLOT.reset_used_channel()</span></code></a>&quot; prior to this function
 in order to track the values actually plotted.
 
-Call \ :func:`geosoft.gxapi.GXSEMPLOT.init_group_symbols_used`\  prior to this function
+Call <a class="reference internal" href="#geosoft.gxapi.GXSEMPLOT.init_group_symbols_used" title="geosoft.gxapi.GXSEMPLOT.init_group_symbols_used"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXSEMPLOT.init_group_symbols_used()</span></code></a> prior to this function
 to reset recording of the symbols used in plotting (for legends etc).
 </pre>
 </dd></dl>
@@ -1393,9 +1412,9 @@ to reset recording of the symbols used in plotting (for legends etc).
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXSEMPLOT.reset_groups">
 <em class="property">static </em><code class="descname">reset_groups</code><span class="sig-paren">(</span><em>(GXDB)arg1</em>, <em>(str)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.reset_groups" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Re-group data using current settings.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Re</span><span class="o">-</span><span class="n">group</span> <span class="n">data</span> <span class="n">using</span> <span class="n">current</span> <span class="n">settings</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1422,9 +1441,9 @@ Re-group data using current settings.
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXSEMPLOT.reset_used_channel">
 <em class="property">static </em><code class="descname">reset_used_channel</code><span class="sig-paren">(</span><em>(GXDB)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.reset_used_channel" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Set the &quot;Plotted&quot; channel to dummies
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Set</span> <span class="n">the</span> <span class="s2">&quot;Plotted&quot;</span> <span class="n">channel</span> <span class="n">to</span> <span class="n">dummies</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1441,23 +1460,23 @@ Set the &quot;Plotted&quot; channel to dummies
 <p><span class="versionmodified">New in version 6.2.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-This function is called before one or a series of plots to initialize
-the &quot;Plotted&quot; channel in all the selected lines to dummy values.
-As the plots are created, those points used in the plot are set to 1,
-so that at the end the database records which values have been plotted.
-This information can then be used to make a symbol legend.
-If the &quot;Plotted&quot; channel does not exist, it is created, associated,
-loaded, and filled with dummies.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="n">function</span> <span class="ow">is</span> <span class="n">called</span> <span class="n">before</span> <span class="n">one</span> <span class="ow">or</span> <span class="n">a</span> <span class="n">series</span> <span class="n">of</span> <span class="n">plots</span> <span class="n">to</span> <span class="n">initialize</span>
+<span class="n">the</span> <span class="s2">&quot;Plotted&quot;</span> <span class="n">channel</span> <span class="ow">in</span> <span class="nb">all</span> <span class="n">the</span> <span class="n">selected</span> <span class="n">lines</span> <span class="n">to</span> <span class="n">dummy</span> <span class="n">values</span><span class="o">.</span>
+<span class="n">As</span> <span class="n">the</span> <span class="n">plots</span> <span class="n">are</span> <span class="n">created</span><span class="p">,</span> <span class="n">those</span> <span class="n">points</span> <span class="n">used</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">plot</span> <span class="n">are</span> <span class="nb">set</span> <span class="n">to</span> <span class="mi">1</span><span class="p">,</span>
+<span class="n">so</span> <span class="n">that</span> <span class="n">at</span> <span class="n">the</span> <span class="n">end</span> <span class="n">the</span> <span class="n">database</span> <span class="n">records</span> <span class="n">which</span> <span class="n">values</span> <span class="n">have</span> <span class="n">been</span> <span class="n">plotted</span><span class="o">.</span>
+<span class="n">This</span> <span class="n">information</span> <span class="n">can</span> <span class="n">then</span> <span class="n">be</span> <span class="n">used</span> <span class="n">to</span> <span class="n">make</span> <span class="n">a</span> <span class="n">symbol</span> <span class="n">legend</span><span class="o">.</span>
+<span class="n">If</span> <span class="n">the</span> <span class="s2">&quot;Plotted&quot;</span> <span class="n">channel</span> <span class="n">does</span> <span class="ow">not</span> <span class="n">exist</span><span class="p">,</span> <span class="n">it</span> <span class="ow">is</span> <span class="n">created</span><span class="p">,</span> <span class="n">associated</span><span class="p">,</span>
+<span class="n">loaded</span><span class="p">,</span> <span class="ow">and</span> <span class="n">filled</span> <span class="k">with</span> <span class="n">dummies</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXSEMPLOT.select_poly">
 <em class="property">static </em><code class="descname">select_poly</code><span class="sig-paren">(</span><em>(GXDB)arg1</em>, <em>(GXMVIEW)arg2</em>, <em>(str)arg3</em>, <em>(str)arg4</em>, <em>(GXPLY)arg5</em>, <em>(int)arg6</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.select_poly" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Select data from a polygonal area on a map.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Select</span> <span class="n">data</span> <span class="kn">from</span> <span class="nn">a</span> <span class="n">polygonal</span> <span class="n">area</span> <span class="n">on</span> <span class="n">a</span> <span class="nb">map</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1468,7 +1487,7 @@ Select data from a polygonal area on a map.
 <li><strong>arg3</strong> (<em>str</em>) &#8211; Mask channel to update</li>
 <li><strong>arg4</strong> (<em>str</em>) &#8211; Mineral channel</li>
 <li><strong>arg5</strong> (<a class="reference internal" href="GXPLY.html#geosoft.gxapi.GXPLY" title="geosoft.gxapi.GXPLY"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXPLY</span></code></a>) &#8211; Polygon to select from, in the view coordinates.</li>
-<li><strong>arg6</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Mask mode (0: Append, 1: New)</li>
+<li><strong>arg6</strong> (<em>int</em>) &#8211; Mask mode (0: Append, 1: New)</li>
 </ul>
 </td>
 </tr>
@@ -1488,9 +1507,9 @@ Select data from a polygonal area on a map.
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXSEMPLOT.set_channel_order">
 <em class="property">static </em><code class="descname">set_channel_order</code><span class="sig-paren">(</span><em>(GXDB)arg1</em>, <em>(GXLST)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.set_channel_order" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Sets preset channel order.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Sets</span> <span class="n">preset</span> <span class="n">channel</span> <span class="n">order</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1513,32 +1532,32 @@ Sets preset channel order.
 <p><span class="versionmodified">New in version 6.2.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-Sets channel order as follows:
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Sets</span> <span class="n">channel</span> <span class="n">order</span> <span class="k">as</span> <span class="n">follows</span><span class="p">:</span>
 
-Sample_No
-X and Y Locations
-Mineral
-Grain_No
-Position (e.g. center, edge etc.)
-Grain Morph
-Oxides (in the order they appear in Semplot_Oxides.csv)
-Trace Elements (Ordered as in the periodic table)
-Total
-Mask
-IsPlotted (flag set when a value is plotted)
-Other channels
+<span class="n">Sample_No</span>
+<span class="n">X</span> <span class="ow">and</span> <span class="n">Y</span> <span class="n">Locations</span>
+<span class="n">Mineral</span>
+<span class="n">Grain_No</span>
+<span class="n">Position</span> <span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">g</span><span class="o">.</span> <span class="n">center</span><span class="p">,</span> <span class="n">edge</span> <span class="n">etc</span><span class="o">.</span><span class="p">)</span>
+<span class="n">Grain</span> <span class="n">Morph</span>
+<span class="n">Oxides</span> <span class="p">(</span><span class="ow">in</span> <span class="n">the</span> <span class="n">order</span> <span class="n">they</span> <span class="n">appear</span> <span class="ow">in</span> <span class="n">Semplot_Oxides</span><span class="o">.</span><span class="n">csv</span><span class="p">)</span>
+<span class="n">Trace</span> <span class="n">Elements</span> <span class="p">(</span><span class="n">Ordered</span> <span class="k">as</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">periodic</span> <span class="n">table</span><span class="p">)</span>
+<span class="n">Total</span>
+<span class="n">Mask</span>
+<span class="n">IsPlotted</span> <span class="p">(</span><span class="n">flag</span> <span class="nb">set</span> <span class="n">when</span> <span class="n">a</span> <span class="n">value</span> <span class="ow">is</span> <span class="n">plotted</span><span class="p">)</span>
+<span class="n">Other</span> <span class="n">channels</span>
 
-Channel order is set for all &quot;RawData&quot; groups.
-</pre>
+<span class="n">Channel</span> <span class="n">order</span> <span class="ow">is</span> <span class="nb">set</span> <span class="k">for</span> <span class="nb">all</span> <span class="s2">&quot;RawData&quot;</span> <span class="n">groups</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXSEMPLOT.set_channel_units">
 <em class="property">static </em><code class="descname">set_channel_units</code><span class="sig-paren">(</span><em>(GXDB)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.set_channel_units" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Set units for oxides (%) and elements (ppm)
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Set</span> <span class="n">units</span> <span class="k">for</span> <span class="n">oxides</span> <span class="p">(</span><span class="o">%</span><span class="p">)</span> <span class="ow">and</span> <span class="n">elements</span> <span class="p">(</span><span class="n">ppm</span><span class="p">)</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1555,27 +1574,27 @@ Set units for oxides (%) and elements (ppm)
 <p><span class="versionmodified">New in version 6.2.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-If the channel units are already set, then they are not changed.
-Oxide channels are identified from the Semplot_Oxides.csv file.
-Trace elements are identified from the periodic table of the
-elements, except for &quot;Y&quot;, if it is the current Y channel.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">If</span> <span class="n">the</span> <span class="n">channel</span> <span class="n">units</span> <span class="n">are</span> <span class="n">already</span> <span class="nb">set</span><span class="p">,</span> <span class="n">then</span> <span class="n">they</span> <span class="n">are</span> <span class="ow">not</span> <span class="n">changed</span><span class="o">.</span>
+<span class="n">Oxide</span> <span class="n">channels</span> <span class="n">are</span> <span class="n">identified</span> <span class="kn">from</span> <span class="nn">the</span> <span class="n">Semplot_Oxides</span><span class="o">.</span><span class="n">csv</span> <span class="n">file</span><span class="o">.</span>
+<span class="n">Trace</span> <span class="n">elements</span> <span class="n">are</span> <span class="n">identified</span> <span class="kn">from</span> <span class="nn">the</span> <span class="n">periodic</span> <span class="n">table</span> <span class="n">of</span> <span class="n">the</span>
+<span class="n">elements</span><span class="p">,</span> <span class="k">except</span> <span class="k">for</span> <span class="s2">&quot;Y&quot;</span><span class="p">,</span> <span class="k">if</span> <span class="n">it</span> <span class="ow">is</span> <span class="n">the</span> <span class="n">current</span> <span class="n">Y</span> <span class="n">channel</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXSEMPLOT.set_itr">
 <em class="property">static </em><code class="descname">set_itr</code><span class="sig-paren">(</span><em>(GXDB)arg1</em>, <em>(int)arg2</em>, <em>(GXITR)arg3</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.set_itr" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Put ITR into a channel.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Put</span> <span class="n">ITR</span> <span class="n">into</span> <span class="n">a</span> <span class="n">channel</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXDB</span></code></a>) &#8211; Database handle</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Data channel handle</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; Data channel handle</li>
 <li><strong>arg3</strong> (<a class="reference internal" href="GXITR.html#geosoft.gxapi.GXITR" title="geosoft.gxapi.GXITR"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXITR</span></code></a>) &#8211; ITR</li>
 </ul>
 </td>
@@ -1596,9 +1615,9 @@ Put ITR into a channel.
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXSEMPLOT.set_mask">
 <em class="property">static </em><code class="descname">set_mask</code><span class="sig-paren">(</span><em>(GXDB)arg1</em>, <em>(str)arg2</em>, <em>(str)arg3</em>, <em>(str)arg4</em>, <em>(int)arg5</em>, <em>(int)arg6</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.set_mask" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Set the mask channel ON or OFF.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Set</span> <span class="n">the</span> <span class="n">mask</span> <span class="n">channel</span> <span class="n">ON</span> <span class="ow">or</span> <span class="n">OFF</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1608,8 +1627,8 @@ Set the mask channel ON or OFF.
 <li><strong>arg2</strong> (<em>str</em>) &#8211; Mask channel</li>
 <li><strong>arg3</strong> (<em>str</em>) &#8211; Mineral channel</li>
 <li><strong>arg4</strong> (<em>str</em>) &#8211; Mineral to use (&#8220;All&#8221; or &#8220;&#8221; for all)</li>
-<li><strong>arg5</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; 0 for all lines, 1 for selected lines</li>
-<li><strong>arg6</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; 0 for off, 1 for on.</li>
+<li><strong>arg5</strong> (<em>int</em>) &#8211; 0 for all lines, 1 for selected lines</li>
+<li><strong>arg6</strong> (<em>int</em>) &#8211; 0 for off, 1 for on.</li>
 </ul>
 </td>
 </tr>
@@ -1629,17 +1648,17 @@ Set the mask channel ON or OFF.
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXSEMPLOT.sort_data">
 <em class="property">static </em><code class="descname">sort_data</code><span class="sig-paren">(</span><em>(GXDB)arg1</em>, <em>(int)arg2</em>, <em>(int)arg3</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.sort_data" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Sort data by Sample No, Grain and Position
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Sort</span> <span class="n">data</span> <span class="n">by</span> <span class="n">Sample</span> <span class="n">No</span><span class="p">,</span> <span class="n">Grain</span> <span class="ow">and</span> <span class="n">Position</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXDB</span></code></a>) &#8211; Database handle</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Data Group handle</li>
-<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Use Anomaly channel as primary sort?</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; Data Group handle</li>
+<li><strong>arg3</strong> (<em>int</em>) &#8211; Use Anomaly channel as primary sort?</li>
 </ul>
 </td>
 </tr>
@@ -1668,7 +1687,7 @@ Sort data by Sample No, Grain and Position
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXLST</span></code></a>) &#8211; Input LST.</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#semplot-plot"><span class="std std-ref">SEMPLOT_PLOT constants</span></a></li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#semplot-plot"><span class="std std-ref">SEMPLOT_PLOT constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -1685,7 +1704,7 @@ Sort data by Sample No, Grain and Position
 </div>
 <p><strong>Note:</strong></p>
 <pre class="literal-block">
-Looks first in user\etc, then in \etc.
+Looks first in useretc, then in etc.
 Looks first for file prefix &quot;semtemplate&quot; then &quot;xyt&quot; or &quot;tri&quot;
 (New-style templates with the &quot;semtemplate&quot; extentsion have the
 plot type &quot;triplot&quot; or &quot;xyplot&quot; inside them.)
@@ -1695,9 +1714,9 @@ plot type &quot;triplot&quot; or &quot;xyplot&quot; inside them.)
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXSEMPLOT.template_type">
 <em class="property">static </em><code class="descname">template_type</code><span class="sig-paren">(</span><em>(str)arg1</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.template_type" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Create a new XYPlot or TriPlot template.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Create</span> <span class="n">a</span> <span class="n">new</span> <span class="n">XYPlot</span> <span class="ow">or</span> <span class="n">TriPlot</span> <span class="n">template</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1708,7 +1727,7 @@ Create a new XYPlot or TriPlot template.
 SEMPLOT_PLOT_TRIPLOT
 Terminates if error.</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
 </tr>
 </tbody>
 </table>
@@ -1720,9 +1739,9 @@ Terminates if error.</td>
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXSEMPLOT.tile_windows">
 <em class="property">static </em><code class="descname">tile_windows</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.tile_windows" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Tile currently maximimized windows.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Tile</span> <span class="n">currently</span> <span class="n">maximimized</span> <span class="n">windows</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1741,9 +1760,9 @@ Tile currently maximimized windows.
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXSEMPLOT.total_oxides">
 <em class="property">static </em><code class="descname">total_oxides</code><span class="sig-paren">(</span><em>(GXDB)arg1</em>, <em>(str)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.total_oxides" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Calculate the total oxides channel.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Calculate</span> <span class="n">the</span> <span class="n">total</span> <span class="n">oxides</span> <span class="n">channel</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1766,20 +1785,20 @@ Calculate the total oxides channel.
 <p><span class="versionmodified">New in version 6.2.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-The mineral channel is needed in order to adjust the total
-with the Fe Corrected Ferric and Ferrous values, and these
-require a mineral for their identification. If none is provided,
-mineral &quot;X&quot; (unknown) is assumed.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">mineral</span> <span class="n">channel</span> <span class="ow">is</span> <span class="n">needed</span> <span class="ow">in</span> <span class="n">order</span> <span class="n">to</span> <span class="n">adjust</span> <span class="n">the</span> <span class="n">total</span>
+<span class="k">with</span> <span class="n">the</span> <span class="n">Fe</span> <span class="n">Corrected</span> <span class="n">Ferric</span> <span class="ow">and</span> <span class="n">Ferrous</span> <span class="n">values</span><span class="p">,</span> <span class="ow">and</span> <span class="n">these</span>
+<span class="n">require</span> <span class="n">a</span> <span class="n">mineral</span> <span class="k">for</span> <span class="n">their</span> <span class="n">identification</span><span class="o">.</span> <span class="n">If</span> <span class="n">none</span> <span class="ow">is</span> <span class="n">provided</span><span class="p">,</span>
+<span class="n">mineral</span> <span class="s2">&quot;X&quot;</span> <span class="p">(</span><span class="n">unknown</span><span class="p">)</span> <span class="ow">is</span> <span class="n">assumed</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXSEMPLOT.view_type">
 <em class="property">static </em><code class="descname">view_type</code><span class="sig-paren">(</span><em>(GXMAP)arg1</em>, <em>(str)arg2</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.view_type" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Test to see if a view is an XYPlot or Triplot view.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Test</span> <span class="n">to</span> <span class="n">see</span> <span class="k">if</span> <span class="n">a</span> <span class="n">view</span> <span class="ow">is</span> <span class="n">an</span> <span class="n">XYPlot</span> <span class="ow">or</span> <span class="n">Triplot</span> <span class="n">view</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1793,7 +1812,7 @@ Test to see if a view is an XYPlot or Triplot view.
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><a class="reference internal" href="#semplot-plot"><span class="std std-ref">SEMPLOT_PLOT constants</span></a></p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></p>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
 </td>
 </tr>
 </tbody>
@@ -1934,9 +1953,13 @@ the function returns SEMPLOT_PLOT_UNKNOWN.
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li> 
+          <a href="GXSHP.html" title="GXSHP class"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="GXSBF.html" title="GXSBF class"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="geosoft.gxapi.classes.html" >GX API Class/Library Reference</a> &#187;</li> 
       </ul>
     </div>
 

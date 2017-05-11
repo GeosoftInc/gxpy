@@ -27,6 +27,8 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="GXARCDH class" href="GXARCDH.html" />
+    <link rel="prev" title="GXAGG class" href="GXAGG.html" />
  
 <script type="text/javascript">
   var _gaq = _gaq || [];
@@ -43,9 +45,13 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li> 
+          <a href="GXARCDH.html" title="GXARCDH class"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="GXAGG.html" title="GXAGG class"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="geosoft.gxapi.classes.html" accesskey="U">GX API Class/Library Reference</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -58,13 +64,19 @@
 </li>
 </ul>
 
-  <div role="note" aria-label="source link">
-    <h3>This Page</h3>
-    <ul class="this-page-menu">
-      <li><a href="_sources/GXARCDB.rst.txt"
-            rel="nofollow">Show Source</a></li>
-    </ul>
-   </div>
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Introduction</a></li>
+    <li><a href="geosoft.gxapi.classes.html">GX API Class/Library Reference</a></li>
+</ul>
+<h3>Previous Topic</h3>
+<ul>
+    <li><a href="GXAGG.html" title="previous chapter">GXAGG class</a></li>
+</ul>
+<h3>Next Topic</h3>
+<ul>
+    <li><a href="GXARCDH.html" title="next chapter">GXARCDH class</a></li>
+</ul>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
@@ -75,6 +87,13 @@
     </form>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/GXARCDB.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
         </div>
       </div>
 
@@ -88,10 +107,10 @@
 <dl class="class">
 <dt id="geosoft.gxapi.GXARCDB">
 <em class="property">class </em><code class="descclassname">geosoft.gxapi.</code><code class="descname">GXARCDB</code><a class="headerlink" href="#geosoft.gxapi.GXARCDB" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-The ARCDB class is used in ArcGIS to access table contents from
-data sources and layers.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">ARCDB</span> <span class="k">class</span> <span class="nc">is</span> <span class="n">used</span> <span class="ow">in</span> <span class="n">ArcGIS</span> <span class="n">to</span> <span class="n">access</span> <span class="n">table</span> <span class="n">contents</span> <span class="kn">from</span>
+<span class="nn">data</span> <span class="n">sources</span> <span class="ow">and</span> <span class="n">layers</span><span class="o">.</span>
+</pre></div>
+</div>
 <dl class="method">
 <dt id="geosoft.gxapi.GXARCDB.create_dat">
 <code class="descname">create_dat</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(str)arg2</em>, <em>(str)arg3</em><span class="sig-paren">)</span> &rarr; GXDAT:<a class="headerlink" href="#geosoft.gxapi.GXARCDB.create_dat" title="Permalink to this definition">¶</a></dt>
@@ -177,10 +196,10 @@ data sources and layers.
 <dl class="method">
 <dt id="geosoft.gxapi.GXARCDB.exist_field">
 <code class="descname">exist_field</code><span class="sig-paren">(</span><em>(str)arg1</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXARCDB.exist_field" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-This method checks to see if the specified field exists
-in the table.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="n">method</span> <span class="n">checks</span> <span class="n">to</span> <span class="n">see</span> <span class="k">if</span> <span class="n">the</span> <span class="n">specified</span> <span class="n">field</span> <span class="n">exists</span>
+<span class="ow">in</span> <span class="n">the</span> <span class="n">table</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -190,7 +209,7 @@ in the table.
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">0 - Field does not exist
 1 - Field Exists</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
 </tr>
 </tbody>
 </table>
@@ -202,9 +221,9 @@ in the table.
 <dl class="method">
 <dt id="geosoft.gxapi.GXARCDB.export_to_db">
 <code class="descname">export_to_db</code><span class="sig-paren">(</span><em>(GXDB)arg1</em>, <em>(str)arg2</em>, <em>(str)arg3</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXARCDB.export_to_db" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Export data from an ARCDB table into a group in a Geosoft GDB using a template.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Export</span> <span class="n">data</span> <span class="kn">from</span> <span class="nn">an</span> <span class="n">ARCDB</span> <span class="n">table</span> <span class="n">into</span> <span class="n">a</span> <span class="n">group</span> <span class="ow">in</span> <span class="n">a</span> <span class="n">Geosoft</span> <span class="n">GDB</span> <span class="n">using</span> <span class="n">a</span> <span class="n">template</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -228,20 +247,20 @@ Export data from an ARCDB table into a group in a Geosoft GDB using a template.
 <p><span class="versionmodified">New in version 8.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-1. The import template can be in the local directory or the GEOSOFT
-   directory.
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="mf">1.</span> <span class="n">The</span> <span class="kn">import</span> <span class="nn">template</span> <span class="n">can</span> <span class="n">be</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">local</span> <span class="n">directory</span> <span class="ow">or</span> <span class="n">the</span> <span class="n">GEOSOFT</span>
+   <span class="n">directory</span><span class="o">.</span>
 
-3. If the line already exists, the data will overwrite the existing data.
-</pre>
+<span class="mf">3.</span> <span class="n">If</span> <span class="n">the</span> <span class="n">line</span> <span class="n">already</span> <span class="n">exists</span><span class="p">,</span> <span class="n">the</span> <span class="n">data</span> <span class="n">will</span> <span class="n">overwrite</span> <span class="n">the</span> <span class="n">existing</span> <span class="n">data</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXARCDB.field_lst">
 <code class="descname">field_lst</code><span class="sig-paren">(</span><em>(GXLST)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXARCDB.field_lst" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Place the list of field names in a LST.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Place</span> <span class="n">the</span> <span class="nb">list</span> <span class="n">of</span> <span class="n">field</span> <span class="n">names</span> <span class="ow">in</span> <span class="n">a</span> <span class="n">LST</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -258,10 +277,10 @@ Place the list of field names in a LST.
 <p><span class="versionmodified">New in version 8.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-If Z or M values are supported by the table geometry the strings
-&quot;&lt;Z Values&gt;&quot; and &quot;&lt;M Values&gt;&quot; will be added accordingly.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">If</span> <span class="n">Z</span> <span class="ow">or</span> <span class="n">M</span> <span class="n">values</span> <span class="n">are</span> <span class="n">supported</span> <span class="n">by</span> <span class="n">the</span> <span class="n">table</span> <span class="n">geometry</span> <span class="n">the</span> <span class="n">strings</span>
+<span class="s2">&quot;&lt;Z Values&gt;&quot;</span> <span class="ow">and</span> <span class="s2">&quot;&lt;M Values&gt;&quot;</span> <span class="n">will</span> <span class="n">be</span> <span class="n">added</span> <span class="n">accordingly</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="staticmethod">
@@ -270,13 +289,13 @@ If Z or M values are supported by the table geometry the strings
 <dd><pre class="literal-block">
 This method attempts to make a table handle from an IUnknown pointer
 
-Returns                               ARCDB Handle, \ :func:`geosoft.gxapi.GXARCDB.null()`\  if not successful
+Returns                               ARCDB Handle, <a class="reference internal" href="#geosoft.gxapi.GXARCDB.null" title="geosoft.gxapi.GXARCDB.null"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXARCDB.null()</span></code></a> if not successful
 </pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; IUnknown pointer</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>int</em>) &#8211; IUnknown pointer</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXARCDB" title="geosoft.gxapi.GXARCDB"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXARCDB</span></code></a></td>
 </tr>
@@ -299,7 +318,7 @@ Returns                               ARCDB Handle, \ :func:`geosoft.gxapi.GXARC
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">IUnknown pointer</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int</td>
 </tr>
 </tbody>
 </table>
@@ -311,9 +330,9 @@ Returns                               ARCDB Handle, \ :func:`geosoft.gxapi.GXARC
 <dl class="method">
 <dt id="geosoft.gxapi.GXARCDB.get_ipj">
 <code class="descname">get_ipj</code><span class="sig-paren">(</span><em>(GXIPJ)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXARCDB.get_ipj" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Get georeference information from a table.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">georeference</span> <span class="n">information</span> <span class="kn">from</span> <span class="nn">a</span> <span class="n">table</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -330,32 +349,32 @@ Get georeference information from a table.
 <p><span class="versionmodified">New in version 8.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-If the table does not have an IPJ, the IPJ that is
-returned will have an unknown projection.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">If</span> <span class="n">the</span> <span class="n">table</span> <span class="n">does</span> <span class="ow">not</span> <span class="n">have</span> <span class="n">an</span> <span class="n">IPJ</span><span class="p">,</span> <span class="n">the</span> <span class="n">IPJ</span> <span class="n">that</span> <span class="ow">is</span>
+<span class="n">returned</span> <span class="n">will</span> <span class="n">have</span> <span class="n">an</span> <span class="n">unknown</span> <span class="n">projection</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXARCDB.import_chem_database_wizard">
 <code class="descname">import_chem_database_wizard</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(int)arg2</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXARCDB.import_chem_database_wizard" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Template creation for importing geochem data.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Template</span> <span class="n">creation</span> <span class="k">for</span> <span class="n">importing</span> <span class="n">geochem</span> <span class="n">data</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<em>str</em>) &#8211; template to make</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="GXGUI.html#impch-type"><span class="std std-ref">IMPCH_TYPE constants</span></a></li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; <a class="reference internal" href="GXGUI.html#impch-type"><span class="std std-ref">IMPCH_TYPE constants</span></a></li>
 </ul>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">0-OK 1-Cancel</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></p>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
 </td>
 </tr>
 </tbody>
@@ -400,9 +419,9 @@ Template creation for importing geochem data.
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXARCDB.sel_tbl_ex_gui">
 <em class="property">static </em><code class="descname">sel_tbl_ex_gui</code><span class="sig-paren">(</span><em>(int_ref)arg1</em><span class="sig-paren">)</span> &rarr; GXARCDB:<a class="headerlink" href="#geosoft.gxapi.GXARCDB.sel_tbl_ex_gui" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Select table GUI with table type.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Select</span> <span class="n">table</span> <span class="n">GUI</span> <span class="k">with</span> <span class="n">table</span> <span class="nb">type</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -423,9 +442,9 @@ Select table GUI with table type.
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXARCDB.sel_tbl_gui">
 <em class="property">static </em><code class="descname">sel_tbl_gui</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; GXARCDB:<a class="headerlink" href="#geosoft.gxapi.GXARCDB.sel_tbl_gui" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Select table GUI.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Select</span> <span class="n">table</span> <span class="n">GUI</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -440,9 +459,9 @@ Select table GUI.
 <p><span class="versionmodified">New in version 8.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-Terminates with Cancel on cancel, returns ARCDB_NULL if there are no valid tables in current document.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Terminates</span> <span class="k">with</span> <span class="n">Cancel</span> <span class="n">on</span> <span class="n">cancel</span><span class="p">,</span> <span class="n">returns</span> <span class="n">ARCDB_NULL</span> <span class="k">if</span> <span class="n">there</span> <span class="n">are</span> <span class="n">no</span> <span class="n">valid</span> <span class="n">tables</span> <span class="ow">in</span> <span class="n">current</span> <span class="n">document</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 </dd></dl>
@@ -492,9 +511,13 @@ Terminates with Cancel on cancel, returns ARCDB_NULL if there are no valid table
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li> 
+          <a href="GXARCDH.html" title="GXARCDH class"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="GXAGG.html" title="GXAGG class"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="geosoft.gxapi.classes.html" >GX API Class/Library Reference</a> &#187;</li> 
       </ul>
     </div>
 

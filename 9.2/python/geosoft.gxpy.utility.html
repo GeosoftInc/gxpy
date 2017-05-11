@@ -27,6 +27,8 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="geosoft.gxpy.va submodule" href="geosoft.gxpy.va.html" />
+    <link rel="prev" title="geosoft.gxpy.system submodule" href="geosoft.gxpy.system.html" />
  
 <script type="text/javascript">
   var _gaq = _gaq || [];
@@ -43,20 +45,30 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li> 
+          <a href="geosoft.gxpy.va.html" title="geosoft.gxpy.va submodule"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="geosoft.gxpy.system.html" title="geosoft.gxpy.system submodule"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="geosoft.gxpy.html" accesskey="U">gxpy modules reference</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <div role="note" aria-label="source link">
-    <h3>This Page</h3>
-    <ul class="this-page-menu">
-      <li><a href="_sources/geosoft.gxpy.utility.rst.txt"
-            rel="nofollow">Show Source</a></li>
-    </ul>
-   </div>
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Introduction</a></li>
+    <li><a href="geosoft.gxpy.html">gxpy modules reference</a></li>
+</ul>
+<h3>Previous Topic</h3>
+<ul>
+    <li><a href="geosoft.gxpy.system.html" title="previous chapter">geosoft.gxpy.system submodule</a></li>
+</ul>
+<h3>Next Topic</h3>
+<ul>
+    <li><a href="geosoft.gxpy.va.html" title="next chapter">geosoft.gxpy.va submodule</a></li>
+</ul>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
@@ -67,6 +79,13 @@
     </form>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/geosoft.gxpy.utility.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
         </div>
       </div>
 
@@ -308,7 +327,7 @@ and return a decimal Gregorian year. Other date formats will raise a ValueErr.</
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>lst</strong> &#8211; gxapi.GXLST instance</li>
+<li><strong>lst</strong> &#8211; <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXLST</span></code></a> instance</li>
 <li><strong>ordered</strong> &#8211; True to return an OrderedDict</li>
 </ul>
 </td>
@@ -332,7 +351,7 @@ and return a decimal Gregorian year. Other date formats will raise a ValueErr.</
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>reg</strong> &#8211; gxapi.GXREG instance</li>
+<li><strong>reg</strong> &#8211; <a class="reference internal" href="GXREG.html#geosoft.gxapi.GXREG" title="geosoft.gxapi.GXREG"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXREG</span></code></a> instance</li>
 <li><strong>ordered</strong> &#8211; True to return and OrderedDict</li>
 </ul>
 </td>
@@ -476,7 +495,7 @@ create the temporary file in the GX-specific folder <code class="xref py py-mod 
 <dt id="geosoft.gxpy.utility.get_parameters">
 <code class="descclassname">geosoft.gxpy.utility.</code><code class="descname">get_parameters</code><span class="sig-paren">(</span><em>group='_'</em>, <em>parms=None</em>, <em>default=None</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.utility.get_parameters" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get parameters from the Project Parameter Block.  Note that parameter names
-will always be upper-case.</p>
+will always be uppercase.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -688,7 +707,7 @@ False will encode non-string values as <code class="docutils literal"><span clas
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">gxapi.GXREG instance</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><a class="reference internal" href="GXREG.html#geosoft.gxapi.GXREG" title="geosoft.gxapi.GXREG"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXREG</span></code></a> instance</p>
 </td>
 </tr>
 </tbody>
@@ -731,7 +750,7 @@ and gxpy.utility.set_shared_dict(return_dictionary) to return a dictionary back 
 <dt id="geosoft.gxpy.utility.save_parameters">
 <code class="descclassname">geosoft.gxpy.utility.</code><code class="descname">save_parameters</code><span class="sig-paren">(</span><em>group='_'</em>, <em>parms=None</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.utility.save_parameters" title="Permalink to this definition">¶</a></dt>
 <dd><p>Save parameters to the Project Parameter Block.  Parameter group names and member names
-are converted to upper-case.</p>
+are converted to uppercase.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -868,9 +887,13 @@ This is a companion file to run_external_python().</p>
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li> 
+          <a href="geosoft.gxpy.va.html" title="geosoft.gxpy.va submodule"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="geosoft.gxpy.system.html" title="geosoft.gxpy.system submodule"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="geosoft.gxpy.html" >gxpy modules reference</a> &#187;</li> 
       </ul>
     </div>
 

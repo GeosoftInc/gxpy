@@ -27,6 +27,8 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="GXCOM class" href="GXCOM.html" />
+    <link rel="prev" title="GXBIGRID class" href="GXBIGRID.html" />
  
 <script type="text/javascript">
   var _gaq = _gaq || [];
@@ -43,9 +45,13 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li> 
+          <a href="GXCOM.html" title="GXCOM class"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="GXBIGRID.html" title="GXBIGRID class"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="geosoft.gxapi.classes.html" accesskey="U">GX API Class/Library Reference</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -59,13 +65,19 @@
 </li>
 </ul>
 
-  <div role="note" aria-label="source link">
-    <h3>This Page</h3>
-    <ul class="this-page-menu">
-      <li><a href="_sources/GXCHIMERA.rst.txt"
-            rel="nofollow">Show Source</a></li>
-    </ul>
-   </div>
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Introduction</a></li>
+    <li><a href="geosoft.gxapi.classes.html">GX API Class/Library Reference</a></li>
+</ul>
+<h3>Previous Topic</h3>
+<ul>
+    <li><a href="GXBIGRID.html" title="previous chapter">GXBIGRID class</a></li>
+</ul>
+<h3>Next Topic</h3>
+<ul>
+    <li><a href="GXCOM.html" title="next chapter">GXCOM class</a></li>
+</ul>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
@@ -76,6 +88,13 @@
     </form>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/GXCHIMERA.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
         </div>
       </div>
 
@@ -89,15 +108,15 @@
 <dl class="class">
 <dt id="geosoft.gxapi.GXCHIMERA">
 <em class="property">class </em><code class="descclassname">geosoft.gxapi.</code><code class="descname">GXCHIMERA</code><a class="headerlink" href="#geosoft.gxapi.GXCHIMERA" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-CHIMERA GX function library.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">CHIMERA</span> <span class="n">GX</span> <span class="n">function</span> <span class="n">library</span><span class="o">.</span>
+</pre></div>
+</div>
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXCHIMERA.atomic_weight">
 <em class="property">static </em><code class="descname">atomic_weight</code><span class="sig-paren">(</span><em>(str)arg1</em><span class="sig-paren">)</span> &rarr; float:<a class="headerlink" href="#geosoft.gxapi.GXCHIMERA.atomic_weight" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Return the atomic weight of a particular element.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Return</span> <span class="n">the</span> <span class="n">atomic</span> <span class="n">weight</span> <span class="n">of</span> <span class="n">a</span> <span class="n">particular</span> <span class="n">element</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -114,18 +133,18 @@ Return the atomic weight of a particular element.
 <p><span class="versionmodified">New in version 6.4.2.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-If the input string is not an element symbol (elements in the range
-1-92, &quot;H&quot; to &quot;U&quot;), then returns a dummy (GS_R8DM).
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">If</span> <span class="n">the</span> <span class="nb">input</span> <span class="n">string</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">an</span> <span class="n">element</span> <span class="n">symbol</span> <span class="p">(</span><span class="n">elements</span> <span class="ow">in</span> <span class="n">the</span> <span class="nb">range</span>
+<span class="mi">1</span><span class="o">-</span><span class="mi">92</span><span class="p">,</span> <span class="s2">&quot;H&quot;</span> <span class="n">to</span> <span class="s2">&quot;U&quot;</span><span class="p">),</span> <span class="n">then</span> <span class="n">returns</span> <span class="n">a</span> <span class="n">dummy</span> <span class="p">(</span><span class="n">GS_R8DM</span><span class="p">)</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXCHIMERA.bar_plot">
 <em class="property">static </em><code class="descname">bar_plot</code><span class="sig-paren">(</span><em>(GXMVIEW)arg1</em>, <em>(str)arg2</em>, <em>(str)arg3</em>, <em>(GXVV)arg4</em>, <em>(GXVV)arg5</em>, <em>(GXVV)arg6</em>, <em>(GXVV)arg7</em>, <em>(int)arg8</em>, <em>(int)arg9</em>, <em>(float)arg10</em>, <em>(float)arg11</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXCHIMERA.bar_plot" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Plot a Bar plot of up to 8 channels.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Plot</span> <span class="n">a</span> <span class="n">Bar</span> <span class="n">plot</span> <span class="n">of</span> <span class="n">up</span> <span class="n">to</span> <span class="mi">8</span> <span class="n">channels</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -138,8 +157,8 @@ Plot a Bar plot of up to 8 channels.
 <li><strong>arg5</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Y locations</li>
 <li><strong>arg6</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Data handles, stored as INT values</li>
 <li><strong>arg7</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Colours</li>
-<li><strong>arg8</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Colour for edges</li>
-<li><strong>arg9</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Offset symbols (0: No, 1: Yes)</li>
+<li><strong>arg8</strong> (<em>int</em>) &#8211; Colour for edges</li>
+<li><strong>arg9</strong> (<em>int</em>) &#8211; Offset symbols (0: No, 1: Yes)</li>
 <li><strong>arg10</strong> (<em>float</em>) &#8211; Offset symbol size</li>
 <li><strong>arg11</strong> (<em>float</em>) &#8211; Single bar width in data units.</li>
 </ul>
@@ -160,16 +179,16 @@ Plot a Bar plot of up to 8 channels.
 <pre class="literal-block">
 The number of channels is taken from the Data handles VV.
 Plots a bar plot with the center of the &quot;X&quot; axis at the symbol location.
-See the note on offset symbols in \ :func:`geosoft.gxapi.GXCHIMERA.rose_plot`\ 
+See the note on offset symbols in <a class="reference internal" href="#geosoft.gxapi.GXCHIMERA.rose_plot" title="geosoft.gxapi.GXCHIMERA.rose_plot"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXCHIMERA.rose_plot()</span></code></a>
 </pre>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXCHIMERA.categorize_by_value">
 <em class="property">static </em><code class="descname">categorize_by_value</code><span class="sig-paren">(</span><em>(GXVV)arg1</em>, <em>(GXVV)arg2</em>, <em>(GXVV)arg3</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXCHIMERA.categorize_by_value" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Transform values to the index of input data ranges.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Transform</span> <span class="n">values</span> <span class="n">to</span> <span class="n">the</span> <span class="n">index</span> <span class="n">of</span> <span class="nb">input</span> <span class="n">data</span> <span class="n">ranges</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -193,25 +212,25 @@ Transform values to the index of input data ranges.
 <p><span class="versionmodified">New in version 6.1.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-A list of minima (e.g.  M1, M2, M3, M4, M5) is input.
-A list of values V is input and transformed to outputs N in the following manner:
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="nb">list</span> <span class="n">of</span> <span class="n">minima</span> <span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">g</span><span class="o">.</span>  <span class="n">M1</span><span class="p">,</span> <span class="n">M2</span><span class="p">,</span> <span class="n">M3</span><span class="p">,</span> <span class="n">M4</span><span class="p">,</span> <span class="n">M5</span><span class="p">)</span> <span class="ow">is</span> <span class="nb">input</span><span class="o">.</span>
+<span class="n">A</span> <span class="nb">list</span> <span class="n">of</span> <span class="n">values</span> <span class="n">V</span> <span class="ow">is</span> <span class="nb">input</span> <span class="ow">and</span> <span class="n">transformed</span> <span class="n">to</span> <span class="n">outputs</span> <span class="n">N</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">following</span> <span class="n">manner</span><span class="p">:</span>
 
-if(V) &gt;= M5) N = 5
-else if(V) &gt;= M4) N = 4
-...
-...
-else if(V) &gt;= M1) N = 1
-else N = 0
-</pre>
+<span class="k">if</span><span class="p">(</span><span class="n">V</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="n">M5</span><span class="p">)</span> <span class="n">N</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">V</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="n">M4</span><span class="p">)</span> <span class="n">N</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="o">...</span>
+<span class="o">...</span>
+<span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">V</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="n">M1</span><span class="p">)</span> <span class="n">N</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="k">else</span> <span class="n">N</span> <span class="o">=</span> <span class="mi">0</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXCHIMERA.categorize_by_value_det_limit">
 <em class="property">static </em><code class="descname">categorize_by_value_det_limit</code><span class="sig-paren">(</span><em>(GXVV)arg1</em>, <em>(GXVV)arg2</em>, <em>(float)arg3</em>, <em>(GXVV)arg4</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXCHIMERA.categorize_by_value_det_limit" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Transform values to the index of input data ranges, with detection limit.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Transform</span> <span class="n">values</span> <span class="n">to</span> <span class="n">the</span> <span class="n">index</span> <span class="n">of</span> <span class="nb">input</span> <span class="n">data</span> <span class="n">ranges</span><span class="p">,</span> <span class="k">with</span> <span class="n">detection</span> <span class="n">limit</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -237,7 +256,7 @@ Transform values to the index of input data ranges, with detection limit.
 </div>
 <p><strong>Note:</strong></p>
 <pre class="literal-block">
-Same as \ :func:`geosoft.gxapi.GXCHIMERA.categorize_by_value`\ , but if the
+Same as <a class="reference internal" href="#geosoft.gxapi.GXCHIMERA.categorize_by_value" title="geosoft.gxapi.GXCHIMERA.categorize_by_value"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXCHIMERA.categorize_by_value()</span></code></a>, but if the
 input value is less than the detection limit,
 the output value is set to zero.
 </pre>
@@ -246,9 +265,9 @@ the output value is set to zero.
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXCHIMERA.clip_to_detect_limit">
 <em class="property">static </em><code class="descname">clip_to_detect_limit</code><span class="sig-paren">(</span><em>(GXVV)arg1</em>, <em>(float)arg2</em>, <em>(int)arg3</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXCHIMERA.clip_to_detect_limit" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Apply detection limit clipping of data.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Apply</span> <span class="n">detection</span> <span class="n">limit</span> <span class="n">clipping</span> <span class="n">of</span> <span class="n">data</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -256,7 +275,7 @@ Apply detection limit clipping of data.
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Input data vv (altered).</li>
 <li><strong>arg2</strong> (<em>float</em>) &#8211; Detection limit</li>
-<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Auto-convert negatives?</li>
+<li><strong>arg3</strong> (<em>int</em>) &#8211; Auto-convert negatives?</li>
 </ul>
 </td>
 </tr>
@@ -276,7 +295,7 @@ Apply detection limit clipping of data.
 Flow:
 
 1. If auto-converting negatives, then all negative values
-    are replaced by -0.5\ `*`\ value, and detection limit is ignored.
+    are replaced by -0.5<cite>*</cite>value, and detection limit is ignored.
 
 2. If not auto-converting negatives, and the detection limit is not
    rDUMMY, then values less than the detection limit are converted to
@@ -313,9 +332,9 @@ Flow:
 <p><span class="versionmodified">New in version 5.0.7.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-Draws black filled circle (symbols.gfn #7) and a joining line.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Draws</span> <span class="n">black</span> <span class="n">filled</span> <span class="n">circle</span> <span class="p">(</span><span class="n">symbols</span><span class="o">.</span><span class="n">gfn</span> <span class="c1">#7) and a joining line.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="staticmethod">
@@ -349,17 +368,17 @@ Draws black filled circle (symbols.gfn #7) and a joining line.
 <p><span class="versionmodified">New in version 5.0.7.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-Draws black filled circle (symbols.gfn #7) and a joining line.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Draws</span> <span class="n">black</span> <span class="n">filled</span> <span class="n">circle</span> <span class="p">(</span><span class="n">symbols</span><span class="o">.</span><span class="n">gfn</span> <span class="c1">#7) and a joining line.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXCHIMERA.duplicate_chem">
 <em class="property">static </em><code class="descname">duplicate_chem</code><span class="sig-paren">(</span><em>(GXMVIEW)arg1</em>, <em>(GXVV)arg2</em>, <em>(int)arg3</em>, <em>(float)arg4</em>, <em>(int)arg5</em>, <em>(GXVV)arg6</em>, <em>(str)arg7</em>, <em>(str)arg8</em>, <em>(float)arg9</em>, <em>(float)arg10</em>, <em>(float)arg11</em>, <em>(float)arg12</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXCHIMERA.duplicate_chem" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Plot an ASSAY Duplicate result in a graph window.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Plot</span> <span class="n">an</span> <span class="n">ASSAY</span> <span class="n">Duplicate</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">a</span> <span class="n">graph</span> <span class="n">window</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -367,9 +386,9 @@ Plot an ASSAY Duplicate result in a graph window.
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW" title="geosoft.gxapi.GXMVIEW"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXMVIEW</span></code></a>) &#8211; View</li>
 <li><strong>arg2</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Duplicate data</li>
-<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; log-transform: 0 - linear, 1 - log</li>
+<li><strong>arg3</strong> (<em>int</em>) &#8211; log-transform: 0 - linear, 1 - log</li>
 <li><strong>arg4</strong> (<em>float</em>) &#8211; Detect Limit</li>
-<li><strong>arg5</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; number of old samples in the VV</li>
+<li><strong>arg5</strong> (<em>int</em>) &#8211; number of old samples in the VV</li>
 <li><strong>arg6</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; tolerances (1-5 values)</li>
 <li><strong>arg7</strong> (<em>str</em>) &#8211; Title</li>
 <li><strong>arg8</strong> (<em>str</em>) &#8211; Unit</li>
@@ -396,9 +415,9 @@ Plot an ASSAY Duplicate result in a graph window.
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXCHIMERA.duplicate_chem_view">
 <em class="property">static </em><code class="descname">duplicate_chem_view</code><span class="sig-paren">(</span><em>(GXMAP)arg1</em>, <em>(str)arg2</em>, <em>(str)arg3</em>, <em>(GXIPJ)arg4</em>, <em>(GXVV)arg5</em>, <em>(int)arg6</em>, <em>(float)arg7</em>, <em>(int)arg8</em>, <em>(GXVV)arg9</em>, <em>(str)arg10</em>, <em>(str)arg11</em>, <em>(GXVV)arg12</em>, <em>(GXVV)arg13</em>, <em>(GXVV)arg14</em>, <em>(GXDB)arg15</em>, <em>(float_ref)arg16</em>, <em>(float_ref)arg17</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXCHIMERA.duplicate_chem_view" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Plot an ASSAY Duplicate result in a new view.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Plot</span> <span class="n">an</span> <span class="n">ASSAY</span> <span class="n">Duplicate</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">a</span> <span class="n">new</span> <span class="n">view</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -409,9 +428,9 @@ Plot an ASSAY Duplicate result in a new view.
 <li><strong>arg3</strong> (<em>str</em>) &#8211; New group name</li>
 <li><strong>arg4</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXIPJ</span></code></a>) &#8211; IPJ</li>
 <li><strong>arg5</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Duplicate data</li>
-<li><strong>arg6</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; log-transform: 0 - linear, 1 - log</li>
+<li><strong>arg6</strong> (<em>int</em>) &#8211; log-transform: 0 - linear, 1 - log</li>
 <li><strong>arg7</strong> (<em>float</em>) &#8211; Detect Limit</li>
-<li><strong>arg8</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; number of old samples in the VV</li>
+<li><strong>arg8</strong> (<em>int</em>) &#8211; number of old samples in the VV</li>
 <li><strong>arg9</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; tolerances (1-5 values)</li>
 <li><strong>arg10</strong> (<em>str</em>) &#8211; Title</li>
 <li><strong>arg11</strong> (<em>str</em>) &#8211; Unit</li>
@@ -440,11 +459,11 @@ Plot an ASSAY Duplicate result in a new view.
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXCHIMERA.fixed_symbol_scatter_plot">
 <em class="property">static </em><code class="descname">fixed_symbol_scatter_plot</code><span class="sig-paren">(</span><em>(GXMVIEW)arg1</em>, <em>(str)arg2</em>, <em>(float)arg3</em>, <em>(float)arg4</em>, <em>(float)arg5</em>, <em>(float)arg6</em>, <em>(GXVV)arg7</em>, <em>(GXVV)arg8</em>, <em>(GXVV)arg9</em>, <em>(int)arg10</em>, <em>(str)arg11</em>, <em>(int)arg12</em>, <em>(float)arg13</em>, <em>(float)arg14</em>, <em>(int)arg15</em>, <em>(int)arg16</em>, <em>(GXDB)arg17</em>, <em>(GXVV)arg18</em>, <em>(GXVV)arg19</em>, <em>(int)arg20</em>, <em>(str)arg21</em>, <em>(str)arg22</em>, <em>(str)arg23</em>, <em>(str)arg24</em>, <em>(float)arg25</em>, <em>(float)arg26</em>, <em>(float)arg27</em>, <em>(float)arg28</em>, <em>(int)arg29</em>, <em>(int)arg30</em>, <em>(str)arg31</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXCHIMERA.fixed_symbol_scatter_plot" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Plot a scatter plot using a single fixed symbol.
-Optional data masking with masking colour.
-Optioinal database linking.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Plot</span> <span class="n">a</span> <span class="n">scatter</span> <span class="n">plot</span> <span class="n">using</span> <span class="n">a</span> <span class="n">single</span> <span class="n">fixed</span> <span class="n">symbol</span><span class="o">.</span>
+<span class="n">Optional</span> <span class="n">data</span> <span class="n">masking</span> <span class="k">with</span> <span class="n">masking</span> <span class="n">colour</span><span class="o">.</span>
+<span class="n">Optioinal</span> <span class="n">database</span> <span class="n">linking</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -459,17 +478,17 @@ Optioinal database linking.
 <li><strong>arg7</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Horizontal channel data</li>
 <li><strong>arg8</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Vertical channel data</li>
 <li><strong>arg9</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Mask channel data (can be NULL)</li>
-<li><strong>arg10</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Mask colour; overrides symbol colour where mask data is not dummy. Set to iColor_MVIEW(&#8220;&#8221;) to not plot.</li>
+<li><strong>arg10</strong> (<em>int</em>) &#8211; Mask colour; overrides symbol colour where mask data is not dummy. Set to iColor_MVIEW(&#8220;&#8221;) to not plot.</li>
 <li><strong>arg11</strong> (<em>str</em>) &#8211; decorated font name, &#8220;&#8221; for default symbol font (normally symbols.gfn)</li>
-<li><strong>arg12</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Symbol number (&gt;=0)</li>
+<li><strong>arg12</strong> (<em>int</em>) &#8211; Symbol number (&gt;=0)</li>
 <li><strong>arg13</strong> (<em>float</em>) &#8211; Symbol size ( &gt;=0)</li>
 <li><strong>arg14</strong> (<em>float</em>) &#8211; Symbol angle (-360 to 360)</li>
-<li><strong>arg15</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Symbol colour</li>
-<li><strong>arg16</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Symbol fill colour</li>
+<li><strong>arg15</strong> (<em>int</em>) &#8211; Symbol colour</li>
+<li><strong>arg16</strong> (<em>int</em>) &#8211; Symbol fill colour</li>
 <li><strong>arg17</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXDB</span></code></a>) &#8211; Database (source of data)</li>
 <li><strong>arg18</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Line handles for data</li>
 <li><strong>arg19</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Fid values for data</li>
-<li><strong>arg20</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Annotation style 0 - outside, 1 - inside</li>
+<li><strong>arg20</strong> (<em>int</em>) &#8211; Annotation style 0 - outside, 1 - inside</li>
 <li><strong>arg21</strong> (<em>str</em>) &#8211; Horizontal channel name</li>
 <li><strong>arg22</strong> (<em>str</em>) &#8211; Vertical channel name</li>
 <li><strong>arg23</strong> (<em>str</em>) &#8211; Horizontal channel units</li>
@@ -478,8 +497,8 @@ Optioinal database linking.
 <li><strong>arg26</strong> (<em>float</em>) &#8211; Max. Horizontal value</li>
 <li><strong>arg27</strong> (<em>float</em>) &#8211; Min. Vertical value</li>
 <li><strong>arg28</strong> (<em>float</em>) &#8211; Max. Vertical value</li>
-<li><strong>arg29</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; horizontal axis scaling: 0 - linear, 1 - log</li>
-<li><strong>arg30</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; vertical axis scaling</li>
+<li><strong>arg29</strong> (<em>int</em>) &#8211; horizontal axis scaling: 0 - linear, 1 - log</li>
+<li><strong>arg30</strong> (<em>int</em>) &#8211; vertical axis scaling</li>
 <li><strong>arg31</strong> (<em>str</em>) &#8211; plot overlay (&#8220;&#8221; for none)</li>
 </ul>
 </td>
@@ -496,19 +515,19 @@ Optioinal database linking.
 <p><span class="versionmodified">New in version 8.0.1.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-Plot a scatter plot using a single fixed symbol.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Plot</span> <span class="n">a</span> <span class="n">scatter</span> <span class="n">plot</span> <span class="n">using</span> <span class="n">a</span> <span class="n">single</span> <span class="n">fixed</span> <span class="n">symbol</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXCHIMERA.fixed_symbol_tri_plot">
 <em class="property">static </em><code class="descname">fixed_symbol_tri_plot</code><span class="sig-paren">(</span><em>(GXMVIEW)arg1</em>, <em>(str)arg2</em>, <em>(float)arg3</em>, <em>(float)arg4</em>, <em>(float)arg5</em>, <em>(GXVV)arg6</em>, <em>(GXVV)arg7</em>, <em>(GXVV)arg8</em>, <em>(GXVV)arg9</em>, <em>(int)arg10</em>, <em>(str)arg11</em>, <em>(int)arg12</em>, <em>(float)arg13</em>, <em>(float)arg14</em>, <em>(int)arg15</em>, <em>(int)arg16</em>, <em>(GXDB)arg17</em>, <em>(GXVV)arg18</em>, <em>(GXVV)arg19</em>, <em>(str)arg20</em>, <em>(str)arg21</em>, <em>(str)arg22</em>, <em>(int)arg23</em>, <em>(float)arg24</em>, <em>(float)arg25</em>, <em>(str)arg26</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXCHIMERA.fixed_symbol_tri_plot" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Plot a tri-plot using a single fixed symbol.
-Optional data masking with masking colour.
-Optioinal database linking.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Plot</span> <span class="n">a</span> <span class="n">tri</span><span class="o">-</span><span class="n">plot</span> <span class="n">using</span> <span class="n">a</span> <span class="n">single</span> <span class="n">fixed</span> <span class="n">symbol</span><span class="o">.</span>
+<span class="n">Optional</span> <span class="n">data</span> <span class="n">masking</span> <span class="k">with</span> <span class="n">masking</span> <span class="n">colour</span><span class="o">.</span>
+<span class="n">Optioinal</span> <span class="n">database</span> <span class="n">linking</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -523,20 +542,20 @@ Optioinal database linking.
 <li><strong>arg7</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Y channel data</li>
 <li><strong>arg8</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Z channel data</li>
 <li><strong>arg9</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Mask channel data</li>
-<li><strong>arg10</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Mask colour; overrides symbol colour where mask data is not dummy. Set to iColor_MVIEW(&#8220;&#8221;) to not plot.</li>
+<li><strong>arg10</strong> (<em>int</em>) &#8211; Mask colour; overrides symbol colour where mask data is not dummy. Set to iColor_MVIEW(&#8220;&#8221;) to not plot.</li>
 <li><strong>arg11</strong> (<em>str</em>) &#8211; decorated font name, &#8220;&#8221; for default symbol font (normally symbols.gfn)</li>
-<li><strong>arg12</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Symbol number (&gt;=0)</li>
+<li><strong>arg12</strong> (<em>int</em>) &#8211; Symbol number (&gt;=0)</li>
 <li><strong>arg13</strong> (<em>float</em>) &#8211; Symbol size ( &gt;=0)</li>
 <li><strong>arg14</strong> (<em>float</em>) &#8211; Symbol angle (-360 to 360)</li>
-<li><strong>arg15</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Symbol colour</li>
-<li><strong>arg16</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Symbol fill colour</li>
+<li><strong>arg15</strong> (<em>int</em>) &#8211; Symbol colour</li>
+<li><strong>arg16</strong> (<em>int</em>) &#8211; Symbol fill colour</li>
 <li><strong>arg17</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXDB</span></code></a>) &#8211; Database (source of data)</li>
 <li><strong>arg18</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Line handles for data</li>
 <li><strong>arg19</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Fid values for data</li>
 <li><strong>arg20</strong> (<em>str</em>) &#8211; X channel name</li>
 <li><strong>arg21</strong> (<em>str</em>) &#8211; Y channel name</li>
 <li><strong>arg22</strong> (<em>str</em>) &#8211; Z channel name</li>
-<li><strong>arg23</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Plot Grid lines? (0: Just outside edge tics, 1: Grid lines).</li>
+<li><strong>arg23</strong> (<em>int</em>) &#8211; Plot Grid lines? (0: Just outside edge tics, 1: Grid lines).</li>
 <li><strong>arg24</strong> (<em>float</em>) &#8211; Tic Increment (in percent)</li>
 <li><strong>arg25</strong> (<em>float</em>) &#8211; Grid increment (in percent)</li>
 <li><strong>arg26</strong> (<em>str</em>) &#8211; plot overlay (&#8220;&#8221; for none)</li>
@@ -555,24 +574,24 @@ Optioinal database linking.
 <p><span class="versionmodified">New in version 8.0.1.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-Plot a tri plot using a single fixed symbol.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Plot</span> <span class="n">a</span> <span class="n">tri</span> <span class="n">plot</span> <span class="n">using</span> <span class="n">a</span> <span class="n">single</span> <span class="n">fixed</span> <span class="n">symbol</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXCHIMERA.get_expression_data_vv">
 <em class="property">static </em><code class="descname">get_expression_data_vv</code><span class="sig-paren">(</span><em>(GXDB)arg1</em>, <em>(int)arg2</em>, <em>(str)arg3</em>, <em>(str)arg4</em>, <em>(str)arg5</em>, <em>(GXVV)arg6</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXCHIMERA.get_expression_data_vv" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Get data from a line using a channel expression.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">data</span> <span class="kn">from</span> <span class="nn">a</span> <span class="n">line</span> <span class="n">using</span> <span class="n">a</span> <span class="n">channel</span> <span class="n">expression</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXDB</span></code></a>) &#8211; Database</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Line to read</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; Line to read</li>
 <li><strong>arg3</strong> (<em>str</em>) &#8211; geochem stage (just &#8220;raw data stage&#8221; for now).</li>
 <li><strong>arg4</strong> (<em>str</em>) &#8211; channel expression</li>
 <li><strong>arg5</strong> (<em>str</em>) &#8211; INI file name with required units (e.g. PARAMETER.CU=&#8221;ppm&#8221;) (optional)</li>
@@ -592,19 +611,19 @@ Get data from a line using a channel expression.
 <p><span class="versionmodified">New in version 6.4.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-Input a channel expression. Units for individual channels
-are stored in the input INI. Returns a VV for the given line
-with the calculated expression values.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Input</span> <span class="n">a</span> <span class="n">channel</span> <span class="n">expression</span><span class="o">.</span> <span class="n">Units</span> <span class="k">for</span> <span class="n">individual</span> <span class="n">channels</span>
+<span class="n">are</span> <span class="n">stored</span> <span class="ow">in</span> <span class="n">the</span> <span class="nb">input</span> <span class="n">INI</span><span class="o">.</span> <span class="n">Returns</span> <span class="n">a</span> <span class="n">VV</span> <span class="k">for</span> <span class="n">the</span> <span class="n">given</span> <span class="n">line</span>
+<span class="k">with</span> <span class="n">the</span> <span class="n">calculated</span> <span class="n">expression</span> <span class="n">values</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXCHIMERA.get_lithogeochem_data">
 <em class="property">static </em><code class="descname">get_lithogeochem_data</code><span class="sig-paren">(</span><em>(GXDB)arg1</em>, <em>(GXLST)arg2</em>, <em>(int)arg3</em>, <em>(GXVV)arg4</em>, <em>(int)arg5</em>, <em>(GXVV)arg6</em>, <em>(int)arg7</em>, <em>(GXVV)arg8</em>, <em>(GXVV)arg9</em>, <em>(GXVV)arg10</em>, <em>(GXVV)arg11</em>, <em>(GXVV)arg12</em>, <em>(GXVV)arg13</em>, <em>(GXVV)arg14</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXCHIMERA.get_lithogeochem_data" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Get all rows of non-dummy data in a database.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="nb">all</span> <span class="n">rows</span> <span class="n">of</span> <span class="n">non</span><span class="o">-</span><span class="n">dummy</span> <span class="n">data</span> <span class="ow">in</span> <span class="n">a</span> <span class="n">database</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -612,11 +631,11 @@ Get all rows of non-dummy data in a database.
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXDB</span></code></a>) &#8211; [i] database handle</li>
 <li><strong>arg2</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXLST</span></code></a>) &#8211; [i] channels of data to get</li>
-<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; [i] mask channel (can be NULLSYMB)</li>
+<li><strong>arg3</strong> (<em>int</em>) &#8211; [i] mask channel (can be NULLSYMB)</li>
 <li><strong>arg4</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; [i] transforms to apply</li>
-<li><strong>arg5</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; [i] remove dummy rows?</li>
+<li><strong>arg5</strong> (<em>int</em>) &#8211; [i] remove dummy rows?</li>
 <li><strong>arg6</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; [i] dummy row if this channel value is dummy (0:No, 1:Yes)? Effective only if &#8220;remove dummy rows&#8221; value is TRUE</li>
-<li><strong>arg7</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; [i] warn if rows removed because of dummy data items?</li>
+<li><strong>arg7</strong> (<em>int</em>) &#8211; [i] warn if rows removed because of dummy data items?</li>
 <li><strong>arg8</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; [o] (INT) returned data - one VV handle per channel</li>
 <li><strong>arg9</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; [o] line symbols selected</li>
 <li><strong>arg10</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; [o] number of original data items in each line</li>
@@ -639,31 +658,31 @@ Get all rows of non-dummy data in a database.
 <p><span class="versionmodified">New in version 6.2.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-This function is a quick way to get all rows
-of data, guaranteeing no dummy items.
-Book-keeping VVs returned let you easily
-write back results to new channels in the
-correct locations.
-Set the &quot;Dummy Row&quot; VV to 1 if you wish to
-remove any row where a value for the corresponding
-channel is a dummy.
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="n">function</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">quick</span> <span class="n">way</span> <span class="n">to</span> <span class="n">get</span> <span class="nb">all</span> <span class="n">rows</span>
+<span class="n">of</span> <span class="n">data</span><span class="p">,</span> <span class="n">guaranteeing</span> <span class="n">no</span> <span class="n">dummy</span> <span class="n">items</span><span class="o">.</span>
+<span class="n">Book</span><span class="o">-</span><span class="n">keeping</span> <span class="n">VVs</span> <span class="n">returned</span> <span class="n">let</span> <span class="n">you</span> <span class="n">easily</span>
+<span class="n">write</span> <span class="n">back</span> <span class="n">results</span> <span class="n">to</span> <span class="n">new</span> <span class="n">channels</span> <span class="ow">in</span> <span class="n">the</span>
+<span class="n">correct</span> <span class="n">locations</span><span class="o">.</span>
+<span class="n">Set</span> <span class="n">the</span> <span class="s2">&quot;Dummy Row&quot;</span> <span class="n">VV</span> <span class="n">to</span> <span class="mi">1</span> <span class="k">if</span> <span class="n">you</span> <span class="n">wish</span> <span class="n">to</span>
+<span class="n">remove</span> <span class="nb">any</span> <span class="n">row</span> <span class="n">where</span> <span class="n">a</span> <span class="n">value</span> <span class="k">for</span> <span class="n">the</span> <span class="n">corresponding</span>
+<span class="n">channel</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">dummy</span><span class="o">.</span>
 
-Transforms to apply:
+<span class="n">Transforms</span> <span class="n">to</span> <span class="n">apply</span><span class="p">:</span>
 
--1 - Channel default (will be either raw or log)
-0 - Raw Transform
-1 - Log transform: base e with log min = CHIMERA_LOG_MIN
-2 - Lambda transform
-</pre>
+<span class="o">-</span><span class="mi">1</span> <span class="o">-</span> <span class="n">Channel</span> <span class="n">default</span> <span class="p">(</span><span class="n">will</span> <span class="n">be</span> <span class="n">either</span> <span class="n">raw</span> <span class="ow">or</span> <span class="n">log</span><span class="p">)</span>
+<span class="mi">0</span> <span class="o">-</span> <span class="n">Raw</span> <span class="n">Transform</span>
+<span class="mi">1</span> <span class="o">-</span> <span class="n">Log</span> <span class="n">transform</span><span class="p">:</span> <span class="n">base</span> <span class="n">e</span> <span class="k">with</span> <span class="n">log</span> <span class="nb">min</span> <span class="o">=</span> <span class="n">CHIMERA_LOG_MIN</span>
+<span class="mi">2</span> <span class="o">-</span> <span class="n">Lambda</span> <span class="n">transform</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXCHIMERA.get_transform">
 <em class="property">static </em><code class="descname">get_transform</code><span class="sig-paren">(</span><em>(GXDB)arg1</em>, <em>(str)arg2</em>, <em>(int)arg3</em>, <em>(int_ref)arg4</em>, <em>(float_ref)arg5</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXCHIMERA.get_transform" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Get channel transform options and lambda values.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">channel</span> <span class="n">transform</span> <span class="n">options</span> <span class="ow">and</span> <span class="k">lambda</span> <span class="n">values</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -671,7 +690,7 @@ Get channel transform options and lambda values.
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXDB</span></code></a>) &#8211; DB handle</li>
 <li><strong>arg2</strong> (<em>str</em>) &#8211; Channel name</li>
-<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Transform option: -1, 0, 1 or 2</li>
+<li><strong>arg3</strong> (<em>int</em>) &#8211; Transform option: -1, 0, 1 or 2</li>
 <li><strong>arg4</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; returned transform used</li>
 <li><strong>arg5</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; returned lambda value for option==2</li>
 </ul>
@@ -689,25 +708,25 @@ Get channel transform options and lambda values.
 <p><span class="versionmodified">New in version 6.2.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-If the lambda transform is requested, the channel
-must have the lambda value defined.
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">If</span> <span class="n">the</span> <span class="k">lambda</span> <span class="n">transform</span> <span class="ow">is</span> <span class="n">requested</span><span class="p">,</span> <span class="n">the</span> <span class="n">channel</span>
+<span class="n">must</span> <span class="n">have</span> <span class="n">the</span> <span class="k">lambda</span> <span class="n">value</span> <span class="n">defined</span><span class="o">.</span>
 
-Input Transform options
+<span class="n">Input</span> <span class="n">Transform</span> <span class="n">options</span>
 
--1 - Channel default (will be either raw or log)
-0 - Raw Transform
-1 - Log transform: base e with log min = CHIMERA_LOG_MIN
-2 - Lambda transform
-</pre>
+<span class="o">-</span><span class="mi">1</span> <span class="o">-</span> <span class="n">Channel</span> <span class="n">default</span> <span class="p">(</span><span class="n">will</span> <span class="n">be</span> <span class="n">either</span> <span class="n">raw</span> <span class="ow">or</span> <span class="n">log</span><span class="p">)</span>
+<span class="mi">0</span> <span class="o">-</span> <span class="n">Raw</span> <span class="n">Transform</span>
+<span class="mi">1</span> <span class="o">-</span> <span class="n">Log</span> <span class="n">transform</span><span class="p">:</span> <span class="n">base</span> <span class="n">e</span> <span class="k">with</span> <span class="n">log</span> <span class="nb">min</span> <span class="o">=</span> <span class="n">CHIMERA_LOG_MIN</span>
+<span class="mi">2</span> <span class="o">-</span> <span class="n">Lambda</span> <span class="n">transform</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXCHIMERA.is_acquire_chan">
 <em class="property">static </em><code class="descname">is_acquire_chan</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(str_ref)arg2</em>, <em>(str_ref)arg3</em>, <em>(float_ref)arg4</em>, <em>(bool_ref)arg5</em><span class="sig-paren">)</span> &rarr; bool:<a class="headerlink" href="#geosoft.gxapi.GXCHIMERA.is_acquire_chan" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Is this channel in acQuire format (e.g. &quot;Ag_ppm_4AWR&quot;)
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Is</span> <span class="n">this</span> <span class="n">channel</span> <span class="ow">in</span> <span class="n">acQuire</span> <span class="nb">format</span> <span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">g</span><span class="o">.</span> <span class="s2">&quot;Ag_ppm_4AWR&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -733,12 +752,12 @@ Is this channel in acQuire format (e.g. &quot;Ag_ppm_4AWR&quot;)
 <p><span class="versionmodified">New in version 7.2.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-Expressions can take acQuire-type named channels
-if the exact element/oxide is not found. This function
-extracts the channel name, and units from an acQuire-formatted
-channel name.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Expressions</span> <span class="n">can</span> <span class="n">take</span> <span class="n">acQuire</span><span class="o">-</span><span class="nb">type</span> <span class="n">named</span> <span class="n">channels</span>
+<span class="k">if</span> <span class="n">the</span> <span class="n">exact</span> <span class="n">element</span><span class="o">/</span><span class="n">oxide</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">found</span><span class="o">.</span> <span class="n">This</span> <span class="n">function</span>
+<span class="n">extracts</span> <span class="n">the</span> <span class="n">channel</span> <span class="n">name</span><span class="p">,</span> <span class="ow">and</span> <span class="n">units</span> <span class="kn">from</span> <span class="nn">an</span> <span class="n">acQuire</span><span class="o">-</span><span class="n">formatted</span>
+<span class="n">channel</span> <span class="n">name</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="staticmethod">
@@ -753,7 +772,7 @@ channel name.
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<em>str</em>) &#8211; string to test</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="GXSTR.html#str-case"><span class="std std-ref">STR_CASE constants</span></a></li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; <a class="reference internal" href="GXSTR.html#str-case"><span class="std std-ref">STR_CASE constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -769,18 +788,18 @@ channel name.
 <p><span class="versionmodified">New in version 5.0.7.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-Suggested use - testing to see if a channel name is an
-element so that the &quot;ASSAY&quot; class can be set.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Suggested</span> <span class="n">use</span> <span class="o">-</span> <span class="n">testing</span> <span class="n">to</span> <span class="n">see</span> <span class="k">if</span> <span class="n">a</span> <span class="n">channel</span> <span class="n">name</span> <span class="ow">is</span> <span class="n">an</span>
+<span class="n">element</span> <span class="n">so</span> <span class="n">that</span> <span class="n">the</span> <span class="s2">&quot;ASSAY&quot;</span> <span class="k">class</span> <span class="nc">can</span> <span class="n">be</span> <span class="nb">set</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXCHIMERA.launch_histogram">
 <em class="property">static </em><code class="descname">launch_histogram</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(str)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXCHIMERA.launch_histogram" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Launch histogram tool on a database.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Launch</span> <span class="n">histogram</span> <span class="n">tool</span> <span class="n">on</span> <span class="n">a</span> <span class="n">database</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -805,7 +824,7 @@ Launch histogram tool on a database.
 <p><strong>Note:</strong></p>
 <pre class="literal-block">
 The database should be a currently open database.
-This function supercedes \ :func:`geosoft.gxapi.GXEDB.launch_histogram`\ , (which now
+This function supercedes <a class="reference internal" href="GXEDB.html#geosoft.gxapi.GXEDB.launch_histogram" title="geosoft.gxapi.GXEDB.launch_histogram"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXEDB.launch_histogram()</span></code></a>, (which now
 just gets the name of the EDB and calls this function).
 </pre>
 </dd></dl>
@@ -813,9 +832,9 @@ just gets the name of the EDB and calls this function).
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXCHIMERA.launch_probability">
 <em class="property">static </em><code class="descname">launch_probability</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(str)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXCHIMERA.launch_probability" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Launch probability tool on a database.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Launch</span> <span class="n">probability</span> <span class="n">tool</span> <span class="n">on</span> <span class="n">a</span> <span class="n">database</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -838,17 +857,17 @@ Launch probability tool on a database.
 <p><span class="versionmodified">New in version 5.1.8.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-The database should be a currently open database.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">database</span> <span class="n">should</span> <span class="n">be</span> <span class="n">a</span> <span class="n">currently</span> <span class="nb">open</span> <span class="n">database</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXCHIMERA.launch_scatter">
 <em class="property">static </em><code class="descname">launch_scatter</code><span class="sig-paren">(</span><em>(str)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXCHIMERA.launch_scatter" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Launch scatter tool on a database.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Launch</span> <span class="n">scatter</span> <span class="n">tool</span> <span class="n">on</span> <span class="n">a</span> <span class="n">database</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -875,7 +894,7 @@ SCATTER.Y         name of channel to display in Y
 SCATTER.MASK      name of channel to use for mask
 
 The database should be a currently open database.
-This function supercedes \ :func:`geosoft.gxapi.GXEDB.launch_scatter`\ , (which now
+This function supercedes <a class="reference internal" href="GXEDB.html#geosoft.gxapi.GXEDB.launch_scatter" title="geosoft.gxapi.GXEDB.launch_scatter"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXEDB.launch_scatter()</span></code></a>, (which now
 just gets the name of the EDB and calls this function).
 </pre>
 </dd></dl>
@@ -883,9 +902,9 @@ just gets the name of the EDB and calls this function).
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXCHIMERA.launch_triplot">
 <em class="property">static </em><code class="descname">launch_triplot</code><span class="sig-paren">(</span><em>(str)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXCHIMERA.launch_triplot" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Launch Triplot tool on a database.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Launch</span> <span class="n">Triplot</span> <span class="n">tool</span> <span class="n">on</span> <span class="n">a</span> <span class="n">database</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -902,26 +921,26 @@ Launch Triplot tool on a database.
 <p><span class="versionmodified">New in version 5.0.7.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-The Triplot tool uses the following INI parameters
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">Triplot</span> <span class="n">tool</span> <span class="n">uses</span> <span class="n">the</span> <span class="n">following</span> <span class="n">INI</span> <span class="n">parameters</span>
 
-         TRIPLOT.TTM       name of the triplot template,&quot;none&quot; for none
-         TRIPLOT.TTM_NAME  name of last template section, &quot;&quot; for none.
-         TRIPLOT.X         name of channel to display in X
-         TRIPLOT.Y         name of channel to display in Y
-         TRIPLOT.Z         name of channel to display in Z
-         TRIPLOT.MASK      name of channel to use for mask
+         <span class="n">TRIPLOT</span><span class="o">.</span><span class="n">TTM</span>       <span class="n">name</span> <span class="n">of</span> <span class="n">the</span> <span class="n">triplot</span> <span class="n">template</span><span class="p">,</span><span class="s2">&quot;none&quot;</span> <span class="k">for</span> <span class="n">none</span>
+         <span class="n">TRIPLOT</span><span class="o">.</span><span class="n">TTM_NAME</span>  <span class="n">name</span> <span class="n">of</span> <span class="n">last</span> <span class="n">template</span> <span class="n">section</span><span class="p">,</span> <span class="s2">&quot;&quot;</span> <span class="k">for</span> <span class="n">none</span><span class="o">.</span>
+         <span class="n">TRIPLOT</span><span class="o">.</span><span class="n">X</span>         <span class="n">name</span> <span class="n">of</span> <span class="n">channel</span> <span class="n">to</span> <span class="n">display</span> <span class="ow">in</span> <span class="n">X</span>
+         <span class="n">TRIPLOT</span><span class="o">.</span><span class="n">Y</span>         <span class="n">name</span> <span class="n">of</span> <span class="n">channel</span> <span class="n">to</span> <span class="n">display</span> <span class="ow">in</span> <span class="n">Y</span>
+         <span class="n">TRIPLOT</span><span class="o">.</span><span class="n">Z</span>         <span class="n">name</span> <span class="n">of</span> <span class="n">channel</span> <span class="n">to</span> <span class="n">display</span> <span class="ow">in</span> <span class="n">Z</span>
+         <span class="n">TRIPLOT</span><span class="o">.</span><span class="n">MASK</span>      <span class="n">name</span> <span class="n">of</span> <span class="n">channel</span> <span class="n">to</span> <span class="n">use</span> <span class="k">for</span> <span class="n">mask</span>
 
-The database should be a currently open database.
-</pre>
+<span class="n">The</span> <span class="n">database</span> <span class="n">should</span> <span class="n">be</span> <span class="n">a</span> <span class="n">currently</span> <span class="nb">open</span> <span class="n">database</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXCHIMERA.mask_chan_lst">
 <em class="property">static </em><code class="descname">mask_chan_lst</code><span class="sig-paren">(</span><em>(GXDB)arg1</em>, <em>(GXLST)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXCHIMERA.mask_chan_lst" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Load a LST with mask channels.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Load</span> <span class="n">a</span> <span class="n">LST</span> <span class="k">with</span> <span class="n">mask</span> <span class="n">channels</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -950,7 +969,7 @@ as all channels containing the string &quot;MASK&quot;, as long
 as the CLASS for these channels is not set to something
 other than &quot;&quot; or &quot;MASK&quot;.
 
-This function has been duplicated by \ :func:`geosoft.gxapi.GXDB.mask_chan_lst`\ , which
+This function has been duplicated by <a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB.mask_chan_lst" title="geosoft.gxapi.GXDB.mask_chan_lst"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXDB.mask_chan_lst()</span></code></a>, which
 is safe to use in applications which do not have CHIMERA loaded.
 </pre>
 </dd></dl>
@@ -958,9 +977,9 @@ is safe to use in applications which do not have CHIMERA loaded.
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXCHIMERA.ordered_channel_lst">
 <em class="property">static </em><code class="descname">ordered_channel_lst</code><span class="sig-paren">(</span><em>(GXDB)arg1</em>, <em>(GXLST)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXCHIMERA.ordered_channel_lst" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Fill a list with the channels in the preferred order.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Fill</span> <span class="n">a</span> <span class="nb">list</span> <span class="k">with</span> <span class="n">the</span> <span class="n">channels</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">preferred</span> <span class="n">order</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -983,25 +1002,25 @@ Fill a list with the channels in the preferred order.
 <p><span class="versionmodified">New in version 5.1.8.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-Loads a LST with all channels in the preferred order:
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Loads</span> <span class="n">a</span> <span class="n">LST</span> <span class="k">with</span> <span class="nb">all</span> <span class="n">channels</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">preferred</span> <span class="n">order</span><span class="p">:</span>
 
-First:  Sample, E, N, assay channels,
-Middle: Data from survey (other channels),
-Last:   Duplicate, Standard, Chemmask (and other masks), weight, lab, batch
+<span class="n">First</span><span class="p">:</span>  <span class="n">Sample</span><span class="p">,</span> <span class="n">E</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">assay</span> <span class="n">channels</span><span class="p">,</span>
+<span class="n">Middle</span><span class="p">:</span> <span class="n">Data</span> <span class="kn">from</span> <span class="nn">survey</span> <span class="p">(</span><span class="n">other</span> <span class="n">channels</span><span class="p">),</span>
+<span class="n">Last</span><span class="p">:</span>   <span class="n">Duplicate</span><span class="p">,</span> <span class="n">Standard</span><span class="p">,</span> <span class="n">Chemmask</span> <span class="p">(</span><span class="ow">and</span> <span class="n">other</span> <span class="n">masks</span><span class="p">),</span> <span class="n">weight</span><span class="p">,</span> <span class="n">lab</span><span class="p">,</span> <span class="n">batch</span>
 
-If the input LST object has values, it is used as the channel LST,
-otherwise, get all the database channels. (This allows you to pass in
-the currently displayed channels and only reload those).
-</pre>
+<span class="n">If</span> <span class="n">the</span> <span class="nb">input</span> <span class="n">LST</span> <span class="nb">object</span> <span class="n">has</span> <span class="n">values</span><span class="p">,</span> <span class="n">it</span> <span class="ow">is</span> <span class="n">used</span> <span class="k">as</span> <span class="n">the</span> <span class="n">channel</span> <span class="n">LST</span><span class="p">,</span>
+<span class="n">otherwise</span><span class="p">,</span> <span class="n">get</span> <span class="nb">all</span> <span class="n">the</span> <span class="n">database</span> <span class="n">channels</span><span class="o">.</span> <span class="p">(</span><span class="n">This</span> <span class="n">allows</span> <span class="n">you</span> <span class="n">to</span> <span class="k">pass</span> <span class="ow">in</span>
+<span class="n">the</span> <span class="n">currently</span> <span class="n">displayed</span> <span class="n">channels</span> <span class="ow">and</span> <span class="n">only</span> <span class="n">reload</span> <span class="n">those</span><span class="p">)</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXCHIMERA.pie_plot">
 <em class="property">static </em><code class="descname">pie_plot</code><span class="sig-paren">(</span><em>(GXMVIEW)arg1</em>, <em>(str)arg2</em>, <em>(str)arg3</em>, <em>(GXVV)arg4</em>, <em>(GXVV)arg5</em>, <em>(GXVV)arg6</em>, <em>(GXVV)arg7</em>, <em>(int)arg8</em>, <em>(int)arg9</em>, <em>(float)arg10</em>, <em>(float)arg11</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXCHIMERA.pie_plot" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Plot a Pie plot of up to 8 channels.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Plot</span> <span class="n">a</span> <span class="n">Pie</span> <span class="n">plot</span> <span class="n">of</span> <span class="n">up</span> <span class="n">to</span> <span class="mi">8</span> <span class="n">channels</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1014,8 +1033,8 @@ Plot a Pie plot of up to 8 channels.
 <li><strong>arg5</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Y locations</li>
 <li><strong>arg6</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Data handles, stored as INT values</li>
 <li><strong>arg7</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Colours</li>
-<li><strong>arg8</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Colour for edges</li>
-<li><strong>arg9</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Offset symbols (0: No, 1: Yes)</li>
+<li><strong>arg8</strong> (<em>int</em>) &#8211; Colour for edges</li>
+<li><strong>arg9</strong> (<em>int</em>) &#8211; Offset symbols (0: No, 1: Yes)</li>
 <li><strong>arg10</strong> (<em>float</em>) &#8211; Offset symbol size</li>
 <li><strong>arg11</strong> (<em>float</em>) &#8211; Pie plot radius in data units.</li>
 </ul>
@@ -1037,7 +1056,7 @@ Plot a Pie plot of up to 8 channels.
 The number of channels is taken from the Data handles VV.
 The values in each data VV are summed and the pie arc is
 is given by the percent contribution of each consituent.
-See the note on offset symbols in \ :func:`geosoft.gxapi.GXCHIMERA.rose_plot`\ 
+See the note on offset symbols in <a class="reference internal" href="#geosoft.gxapi.GXCHIMERA.rose_plot" title="geosoft.gxapi.GXCHIMERA.rose_plot"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXCHIMERA.rose_plot()</span></code></a>
 </pre>
 </dd></dl>
 
@@ -1045,7 +1064,7 @@ See the note on offset symbols in \ :func:`geosoft.gxapi.GXCHIMERA.rose_plot`\
 <dt id="geosoft.gxapi.GXCHIMERA.pie_plot2">
 <em class="property">static </em><code class="descname">pie_plot2</code><span class="sig-paren">(</span><em>(GXMVIEW)arg1</em>, <em>(str)arg2</em>, <em>(str)arg3</em>, <em>(GXVV)arg4</em>, <em>(GXVV)arg5</em>, <em>(GXVV)arg6</em>, <em>(GXVV)arg7</em>, <em>(int)arg8</em>, <em>(int)arg9</em>, <em>(float)arg10</em>, <em>(float)arg11</em>, <em>(float)arg12</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXCHIMERA.pie_plot2" title="Permalink to this definition">¶</a></dt>
 <dd><pre class="literal-block">
-Same as \ :func:`geosoft.gxapi.GXCHIMERA.pie_plot`\ , with a starting angle.
+Same as <a class="reference internal" href="#geosoft.gxapi.GXCHIMERA.pie_plot" title="geosoft.gxapi.GXCHIMERA.pie_plot"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXCHIMERA.pie_plot()</span></code></a>, with a starting angle.
 </pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -1059,8 +1078,8 @@ Same as \ :func:`geosoft.gxapi.GXCHIMERA.pie_plot`\ , with a starting angle.
 <li><strong>arg5</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Y locations</li>
 <li><strong>arg6</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Data handles, stored as INT values</li>
 <li><strong>arg7</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Colours</li>
-<li><strong>arg8</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Colour for edges</li>
-<li><strong>arg9</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Offset symbols (0: No, 1: Yes)</li>
+<li><strong>arg8</strong> (<em>int</em>) &#8211; Colour for edges</li>
+<li><strong>arg9</strong> (<em>int</em>) &#8211; Offset symbols (0: No, 1: Yes)</li>
 <li><strong>arg10</strong> (<em>float</em>) &#8211; Offset symbol size</li>
 <li><strong>arg11</strong> (<em>float</em>) &#8211; Pie plot radius in data units.</li>
 <li><strong>arg12</strong> (<em>float</em>) &#8211; Starting angle in degrees CCW from horizontal (rDUMMY gives 0.0)</li>
@@ -1082,7 +1101,7 @@ Same as \ :func:`geosoft.gxapi.GXCHIMERA.pie_plot`\ , with a starting angle.
 <pre class="literal-block">
 The starting angle is the location of the edge of the first pie
 slice, counted in degrees counter-clockwise from horizontal
-(3 o'clock). Zero degrees gives the same plot as \ :func:`geosoft.gxapi.GXCHIMERA.pie_plot`\ .
+(3 o'clock). Zero degrees gives the same plot as <a class="reference internal" href="#geosoft.gxapi.GXCHIMERA.pie_plot" title="geosoft.gxapi.GXCHIMERA.pie_plot"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXCHIMERA.pie_plot()</span></code></a>.
 </pre>
 </dd></dl>
 
@@ -1119,17 +1138,17 @@ slice, counted in degrees counter-clockwise from horizontal
 <p><span class="versionmodified">New in version 8.0.1.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-Plot in a legend the classes in the class file found in the input class indices.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Plot</span> <span class="ow">in</span> <span class="n">a</span> <span class="n">legend</span> <span class="n">the</span> <span class="n">classes</span> <span class="ow">in</span> <span class="n">the</span> <span class="k">class</span> <span class="nc">file</span> <span class="n">found</span> <span class="ow">in</span> <span class="n">the</span> <span class="nb">input</span> <span class="k">class</span> <span class="nc">indices</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXCHIMERA.rose_plot">
 <em class="property">static </em><code class="descname">rose_plot</code><span class="sig-paren">(</span><em>(GXMVIEW)arg1</em>, <em>(str)arg2</em>, <em>(str)arg3</em>, <em>(GXVV)arg4</em>, <em>(GXVV)arg5</em>, <em>(GXVV)arg6</em>, <em>(GXVV)arg7</em>, <em>(int)arg8</em>, <em>(int)arg9</em>, <em>(float)arg10</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXCHIMERA.rose_plot" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Plot a Rose plot of up to 8 channels.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Plot</span> <span class="n">a</span> <span class="n">Rose</span> <span class="n">plot</span> <span class="n">of</span> <span class="n">up</span> <span class="n">to</span> <span class="mi">8</span> <span class="n">channels</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1142,8 +1161,8 @@ Plot a Rose plot of up to 8 channels.
 <li><strong>arg5</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Y locations</li>
 <li><strong>arg6</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Data handles, stored as INT values</li>
 <li><strong>arg7</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Colours</li>
-<li><strong>arg8</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Colour for edges</li>
-<li><strong>arg9</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Offset symbols (0: No, 1: Yes)</li>
+<li><strong>arg8</strong> (<em>int</em>) &#8211; Colour for edges</li>
+<li><strong>arg9</strong> (<em>int</em>) &#8211; Offset symbols (0: No, 1: Yes)</li>
 <li><strong>arg10</strong> (<em>float</em>) &#8211; Offset symbol size</li>
 </ul>
 </td>
@@ -1160,8 +1179,7 @@ Plot a Rose plot of up to 8 channels.
 <p><span class="versionmodified">New in version 5.0.7.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-The number of channels is taken from the Data handles VV.
+<div class="highlight-default"><div class="highlight"><pre><span></span>The number of channels is taken from the Data handles VV.
 The values in each data VV give the radius, in view units,
 of the sector arc to plots. Values &lt;=0 or dummies are not
 plotted.
@@ -1174,14 +1192,15 @@ Care should be taken when choosing the symbol size, because
 if the point density is too high, all the points will get
 pushed to the outside edge and your plot will look like a
 hedgehog (it also takes a lot longer!).
-</pre>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXCHIMERA.rose_plot2">
 <em class="property">static </em><code class="descname">rose_plot2</code><span class="sig-paren">(</span><em>(GXMVIEW)arg1</em>, <em>(str)arg2</em>, <em>(str)arg3</em>, <em>(GXVV)arg4</em>, <em>(GXVV)arg5</em>, <em>(GXVV)arg6</em>, <em>(GXVV)arg7</em>, <em>(int)arg8</em>, <em>(int)arg9</em>, <em>(float)arg10</em>, <em>(float)arg11</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXCHIMERA.rose_plot2" title="Permalink to this definition">¶</a></dt>
 <dd><pre class="literal-block">
-Same as \ :func:`geosoft.gxapi.GXCHIMERA.rose_plot`\ , with a starting angle.
+Same as <a class="reference internal" href="#geosoft.gxapi.GXCHIMERA.rose_plot" title="geosoft.gxapi.GXCHIMERA.rose_plot"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXCHIMERA.rose_plot()</span></code></a>, with a starting angle.
 </pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -1195,8 +1214,8 @@ Same as \ :func:`geosoft.gxapi.GXCHIMERA.rose_plot`\ , with a starting angle.
 <li><strong>arg5</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Y locations</li>
 <li><strong>arg6</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Data handles, stored as INT values</li>
 <li><strong>arg7</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Colours</li>
-<li><strong>arg8</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Colour for edges</li>
-<li><strong>arg9</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Offset symbols (0: No, 1: Yes)</li>
+<li><strong>arg8</strong> (<em>int</em>) &#8211; Colour for edges</li>
+<li><strong>arg9</strong> (<em>int</em>) &#8211; Offset symbols (0: No, 1: Yes)</li>
 <li><strong>arg10</strong> (<em>float</em>) &#8211; Offset symbol size</li>
 <li><strong>arg11</strong> (<em>float</em>) &#8211; Starting angle in degrees CCW from horizontal (rDUMMY gives 0.0)</li>
 </ul>
@@ -1217,16 +1236,16 @@ Same as \ :func:`geosoft.gxapi.GXCHIMERA.rose_plot`\ , with a starting angle.
 <pre class="literal-block">
 The starting angle is the location of the edge of the first pie
 slice, counted in degrees counter-clockwise from horizontal
-(3 o'clock). Zero degrees gives the same plot as \ :func:`geosoft.gxapi.GXCHIMERA.rose_plot`\ .
+(3 o'clock). Zero degrees gives the same plot as <a class="reference internal" href="#geosoft.gxapi.GXCHIMERA.rose_plot" title="geosoft.gxapi.GXCHIMERA.rose_plot"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXCHIMERA.rose_plot()</span></code></a>.
 </pre>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXCHIMERA.scatter2">
 <em class="property">static </em><code class="descname">scatter2</code><span class="sig-paren">(</span><em>(GXMVIEW)arg1</em>, <em>(str)arg2</em>, <em>(float)arg3</em>, <em>(float)arg4</em>, <em>(float)arg5</em>, <em>(float)arg6</em>, <em>(GXVV)arg7</em>, <em>(GXVV)arg8</em>, <em>(str)arg9</em>, <em>(GXVV)arg10</em>, <em>(GXVV)arg11</em>, <em>(GXVV)arg12</em>, <em>(int)arg13</em>, <em>(str)arg14</em>, <em>(str)arg15</em>, <em>(str)arg16</em>, <em>(str)arg17</em>, <em>(float)arg18</em>, <em>(float)arg19</em>, <em>(float)arg20</em>, <em>(float)arg21</em>, <em>(float)arg22</em>, <em>(float)arg23</em>, <em>(float)arg24</em>, <em>(float)arg25</em>, <em>(int)arg26</em>, <em>(int)arg27</em>, <em>(int)arg28</em>, <em>(int)arg29</em>, <em>(int)arg30</em>, <em>(int)arg31</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXCHIMERA.scatter2" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Plot the scatter plot on a map using symbol number, size and color VVs.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Plot</span> <span class="n">the</span> <span class="n">scatter</span> <span class="n">plot</span> <span class="n">on</span> <span class="n">a</span> <span class="nb">map</span> <span class="n">using</span> <span class="n">symbol</span> <span class="n">number</span><span class="p">,</span> <span class="n">size</span> <span class="ow">and</span> <span class="n">color</span> <span class="n">VVs</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1244,7 +1263,7 @@ Plot the scatter plot on a map using symbol number, size and color VVs.
 <li><strong>arg10</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Symbol numbers</li>
 <li><strong>arg11</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Symbol sizes</li>
 <li><strong>arg12</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Colours  if symbol number or colour == 0, do not plot</li>
-<li><strong>arg13</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Annotation style 0 - outside, 1 - inside</li>
+<li><strong>arg13</strong> (<em>int</em>) &#8211; Annotation style 0 - outside, 1 - inside</li>
 <li><strong>arg14</strong> (<em>str</em>) &#8211; Horizontal channel name</li>
 <li><strong>arg15</strong> (<em>str</em>) &#8211; Vertical channel name</li>
 <li><strong>arg16</strong> (<em>str</em>) &#8211; Horizontal channel units</li>
@@ -1257,12 +1276,12 @@ Plot the scatter plot on a map using symbol number, size and color VVs.
 <li><strong>arg23</strong> (<em>float</em>) &#8211; Max. Horizontal range value</li>
 <li><strong>arg24</strong> (<em>float</em>) &#8211; Min. Vertical range value</li>
 <li><strong>arg25</strong> (<em>float</em>) &#8211; Max. Vertical range value</li>
-<li><strong>arg26</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Use Min Horz. Range selection?</li>
-<li><strong>arg27</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Use Max Horz. Range selection?</li>
-<li><strong>arg28</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Use Min Vert. Range selection?</li>
-<li><strong>arg29</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Use Max Vert. Range selection?</li>
-<li><strong>arg30</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; horizontal axis scaling: 0 - linear, 1 - log</li>
-<li><strong>arg31</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; vertical axis scaling</li>
+<li><strong>arg26</strong> (<em>int</em>) &#8211; Use Min Horz. Range selection?</li>
+<li><strong>arg27</strong> (<em>int</em>) &#8211; Use Max Horz. Range selection?</li>
+<li><strong>arg28</strong> (<em>int</em>) &#8211; Use Min Vert. Range selection?</li>
+<li><strong>arg29</strong> (<em>int</em>) &#8211; Use Max Vert. Range selection?</li>
+<li><strong>arg30</strong> (<em>int</em>) &#8211; horizontal axis scaling: 0 - linear, 1 - log</li>
+<li><strong>arg31</strong> (<em>int</em>) &#8211; vertical axis scaling</li>
 </ul>
 </td>
 </tr>
@@ -1278,18 +1297,18 @@ Plot the scatter plot on a map using symbol number, size and color VVs.
 <p><span class="versionmodified">New in version 5.0.7.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-The view scaling is not altered with any projection. The base view
-is best as the input.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">view</span> <span class="n">scaling</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">altered</span> <span class="k">with</span> <span class="nb">any</span> <span class="n">projection</span><span class="o">.</span> <span class="n">The</span> <span class="n">base</span> <span class="n">view</span>
+<span class="ow">is</span> <span class="n">best</span> <span class="k">as</span> <span class="n">the</span> <span class="nb">input</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXCHIMERA.set_lithogeochem_data">
 <em class="property">static </em><code class="descname">set_lithogeochem_data</code><span class="sig-paren">(</span><em>(GXDB)arg1</em>, <em>(GXLST)arg2</em>, <em>(GXVV)arg3</em>, <em>(GXVV)arg4</em>, <em>(GXVV)arg5</em>, <em>(GXVV)arg6</em>, <em>(GXVV)arg7</em>, <em>(GXVV)arg8</em>, <em>(GXVV)arg9</em>, <em>(GXVV)arg10</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXCHIMERA.set_lithogeochem_data" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Set data back into a database.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Set</span> <span class="n">data</span> <span class="n">back</span> <span class="n">into</span> <span class="n">a</span> <span class="n">database</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1320,29 +1339,29 @@ Set data back into a database.
 <p><span class="versionmodified">New in version 6.2.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-This function would normally be called after
-AAGetLithogeochemData_CHIMERA to write processed values
-back into a database, in the correct lines,
-and in the correct fiducial locations wrt the
-other data. The book-keeping VVs would all be
-set up in AAGetLithogeochemData_CHIMERA.
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="n">function</span> <span class="n">would</span> <span class="n">normally</span> <span class="n">be</span> <span class="n">called</span> <span class="n">after</span>
+<span class="n">AAGetLithogeochemData_CHIMERA</span> <span class="n">to</span> <span class="n">write</span> <span class="n">processed</span> <span class="n">values</span>
+<span class="n">back</span> <span class="n">into</span> <span class="n">a</span> <span class="n">database</span><span class="p">,</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">correct</span> <span class="n">lines</span><span class="p">,</span>
+<span class="ow">and</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">correct</span> <span class="n">fiducial</span> <span class="n">locations</span> <span class="n">wrt</span> <span class="n">the</span>
+<span class="n">other</span> <span class="n">data</span><span class="o">.</span> <span class="n">The</span> <span class="n">book</span><span class="o">-</span><span class="n">keeping</span> <span class="n">VVs</span> <span class="n">would</span> <span class="nb">all</span> <span class="n">be</span>
+<span class="nb">set</span> <span class="n">up</span> <span class="ow">in</span> <span class="n">AAGetLithogeochemData_CHIMERA</span><span class="o">.</span>
 
-Values NOT in the data (missing indices) will
-be initialized to dummy if the channel is new,
-or if the value in the last VV below is set to 1.
+<span class="n">Values</span> <span class="n">NOT</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">data</span> <span class="p">(</span><span class="n">missing</span> <span class="n">indices</span><span class="p">)</span> <span class="n">will</span>
+<span class="n">be</span> <span class="n">initialized</span> <span class="n">to</span> <span class="n">dummy</span> <span class="k">if</span> <span class="n">the</span> <span class="n">channel</span> <span class="ow">is</span> <span class="n">new</span><span class="p">,</span>
+<span class="ow">or</span> <span class="k">if</span> <span class="n">the</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">last</span> <span class="n">VV</span> <span class="n">below</span> <span class="ow">is</span> <span class="nb">set</span> <span class="n">to</span> <span class="mf">1.</span>
 
-New channel types will be set using the data VV type.
-Any meta data (CLASS, display formats) should be set separately.
-</pre>
+<span class="n">New</span> <span class="n">channel</span> <span class="n">types</span> <span class="n">will</span> <span class="n">be</span> <span class="nb">set</span> <span class="n">using</span> <span class="n">the</span> <span class="n">data</span> <span class="n">VV</span> <span class="nb">type</span><span class="o">.</span>
+<span class="n">Any</span> <span class="n">meta</span> <span class="n">data</span> <span class="p">(</span><span class="n">CLASS</span><span class="p">,</span> <span class="n">display</span> <span class="n">formats</span><span class="p">)</span> <span class="n">should</span> <span class="n">be</span> <span class="nb">set</span> <span class="n">separately</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXCHIMERA.stacked_bar_plot">
 <em class="property">static </em><code class="descname">stacked_bar_plot</code><span class="sig-paren">(</span><em>(GXMVIEW)arg1</em>, <em>(str)arg2</em>, <em>(str)arg3</em>, <em>(GXVV)arg4</em>, <em>(GXVV)arg5</em>, <em>(GXVV)arg6</em>, <em>(GXVV)arg7</em>, <em>(int)arg8</em>, <em>(int)arg9</em>, <em>(float)arg10</em>, <em>(float)arg11</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXCHIMERA.stacked_bar_plot" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Plot a Bar plot of up to 8 channels, bars stacked on each other
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Plot</span> <span class="n">a</span> <span class="n">Bar</span> <span class="n">plot</span> <span class="n">of</span> <span class="n">up</span> <span class="n">to</span> <span class="mi">8</span> <span class="n">channels</span><span class="p">,</span> <span class="n">bars</span> <span class="n">stacked</span> <span class="n">on</span> <span class="n">each</span> <span class="n">other</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1355,8 +1374,8 @@ Plot a Bar plot of up to 8 channels, bars stacked on each other
 <li><strong>arg5</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Y locations</li>
 <li><strong>arg6</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Data handles, stored as INT values</li>
 <li><strong>arg7</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Colours</li>
-<li><strong>arg8</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Colour for edges</li>
-<li><strong>arg9</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Offset symbols (0: No, 1: Yes)</li>
+<li><strong>arg8</strong> (<em>int</em>) &#8211; Colour for edges</li>
+<li><strong>arg9</strong> (<em>int</em>) &#8211; Offset symbols (0: No, 1: Yes)</li>
 <li><strong>arg10</strong> (<em>float</em>) &#8211; Offset symbol size</li>
 <li><strong>arg11</strong> (<em>float</em>) &#8211; Single bar width in data units.</li>
 </ul>
@@ -1377,16 +1396,16 @@ Plot a Bar plot of up to 8 channels, bars stacked on each other
 <pre class="literal-block">
 The number of channels is taken from the Data handles VV.
 Plots a bar plot with the center of the &quot;X&quot; axis at the symbol location.
-See the note on offset symbols in \ :func:`geosoft.gxapi.GXCHIMERA.rose_plot`\ 
+See the note on offset symbols in <a class="reference internal" href="#geosoft.gxapi.GXCHIMERA.rose_plot" title="geosoft.gxapi.GXCHIMERA.rose_plot"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXCHIMERA.rose_plot()</span></code></a>
 </pre>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXCHIMERA.standard">
 <em class="property">static </em><code class="descname">standard</code><span class="sig-paren">(</span><em>(GXMVIEW)arg1</em>, <em>(GXVV)arg2</em>, <em>(int)arg3</em>, <em>(float)arg4</em>, <em>(float)arg5</em>, <em>(float)arg6</em>, <em>(str)arg7</em>, <em>(str)arg8</em>, <em>(float)arg9</em>, <em>(float)arg10</em>, <em>(float)arg11</em>, <em>(float)arg12</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXCHIMERA.standard" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Plot ASSAY Standard result in a graph window.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Plot</span> <span class="n">ASSAY</span> <span class="n">Standard</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">a</span> <span class="n">graph</span> <span class="n">window</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1394,7 +1413,7 @@ Plot ASSAY Standard result in a graph window.
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW" title="geosoft.gxapi.GXMVIEW"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXMVIEW</span></code></a>) &#8211; View</li>
 <li><strong>arg2</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; standard data</li>
-<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; number of old samples in the VV</li>
+<li><strong>arg3</strong> (<em>int</em>) &#8211; number of old samples in the VV</li>
 <li><strong>arg4</strong> (<em>float</em>) &#8211; tolerance as a function of std dev</li>
 <li><strong>arg5</strong> (<em>float</em>) &#8211; minimum acceptable value</li>
 <li><strong>arg6</strong> (<em>float</em>) &#8211; maximum acceptable value</li>
@@ -1419,18 +1438,18 @@ Plot ASSAY Standard result in a graph window.
 <p><span class="versionmodified">New in version 5.0.7.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-If the tolerance is rDUMMY, then the minimum and maximum
-values are used, and must be specified.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">If</span> <span class="n">the</span> <span class="n">tolerance</span> <span class="ow">is</span> <span class="n">rDUMMY</span><span class="p">,</span> <span class="n">then</span> <span class="n">the</span> <span class="n">minimum</span> <span class="ow">and</span> <span class="n">maximum</span>
+<span class="n">values</span> <span class="n">are</span> <span class="n">used</span><span class="p">,</span> <span class="ow">and</span> <span class="n">must</span> <span class="n">be</span> <span class="n">specified</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXCHIMERA.standard_view">
 <em class="property">static </em><code class="descname">standard_view</code><span class="sig-paren">(</span><em>(GXMAP)arg1</em>, <em>(str)arg2</em>, <em>(str)arg3</em>, <em>(GXIPJ)arg4</em>, <em>(GXVV)arg5</em>, <em>(int)arg6</em>, <em>(float)arg7</em>, <em>(float)arg8</em>, <em>(float)arg9</em>, <em>(str)arg10</em>, <em>(str)arg11</em>, <em>(float)arg12</em>, <em>(GXVV)arg13</em>, <em>(GXVV)arg14</em>, <em>(GXVV)arg15</em>, <em>(GXDB)arg16</em>, <em>(float_ref)arg17</em>, <em>(float_ref)arg18</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXCHIMERA.standard_view" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Plot ASSAY Standard result in a graph window.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Plot</span> <span class="n">ASSAY</span> <span class="n">Standard</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">a</span> <span class="n">graph</span> <span class="n">window</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1441,7 +1460,7 @@ Plot ASSAY Standard result in a graph window.
 <li><strong>arg3</strong> (<em>str</em>) &#8211; New group name</li>
 <li><strong>arg4</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXIPJ</span></code></a>) &#8211; IPJ</li>
 <li><strong>arg5</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; standard data (VV Y)</li>
-<li><strong>arg6</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; number of old samples in the VV</li>
+<li><strong>arg6</strong> (<em>int</em>) &#8211; number of old samples in the VV</li>
 <li><strong>arg7</strong> (<em>float</em>) &#8211; tolerance as a function of std dev</li>
 <li><strong>arg8</strong> (<em>float</em>) &#8211; minimum acceptable value</li>
 <li><strong>arg9</strong> (<em>float</em>) &#8211; maximum acceptable value</li>
@@ -1470,18 +1489,18 @@ Plot ASSAY Standard result in a graph window.
 </div>
 <p><strong>Note:</strong></p>
 <pre class="literal-block">
-Same as \ :func:`geosoft.gxapi.GXCHIMERA.standard`\  but plot in a new view.
+Same as <a class="reference internal" href="#geosoft.gxapi.GXCHIMERA.standard" title="geosoft.gxapi.GXCHIMERA.standard"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXCHIMERA.standard()</span></code></a> but plot in a new view.
 </pre>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXCHIMERA.string_classified_scatter_plot">
 <em class="property">static </em><code class="descname">string_classified_scatter_plot</code><span class="sig-paren">(</span><em>(GXMVIEW)arg1</em>, <em>(str)arg2</em>, <em>(float)arg3</em>, <em>(float)arg4</em>, <em>(float)arg5</em>, <em>(float)arg6</em>, <em>(GXVV)arg7</em>, <em>(GXVV)arg8</em>, <em>(GXVV)arg9</em>, <em>(int)arg10</em>, <em>(GXVV)arg11</em>, <em>(str)arg12</em>, <em>(float)arg13</em>, <em>(GXDB)arg14</em>, <em>(GXVV)arg15</em>, <em>(GXVV)arg16</em>, <em>(int)arg17</em>, <em>(str)arg18</em>, <em>(str)arg19</em>, <em>(str)arg20</em>, <em>(str)arg21</em>, <em>(float)arg22</em>, <em>(float)arg23</em>, <em>(float)arg24</em>, <em>(float)arg25</em>, <em>(int)arg26</em>, <em>(int)arg27</em>, <em>(str)arg28</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXCHIMERA.string_classified_scatter_plot" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Plot a scatter plot using symbols based on a symbol class file.
-Optional data masking with masking colour.
-Optioinal database linking.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Plot</span> <span class="n">a</span> <span class="n">scatter</span> <span class="n">plot</span> <span class="n">using</span> <span class="n">symbols</span> <span class="n">based</span> <span class="n">on</span> <span class="n">a</span> <span class="n">symbol</span> <span class="k">class</span> <span class="nc">file</span><span class="o">.</span>
+<span class="n">Optional</span> <span class="n">data</span> <span class="n">masking</span> <span class="k">with</span> <span class="n">masking</span> <span class="n">colour</span><span class="o">.</span>
+<span class="n">Optioinal</span> <span class="n">database</span> <span class="n">linking</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1496,14 +1515,14 @@ Optioinal database linking.
 <li><strong>arg7</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Horizontal channel data</li>
 <li><strong>arg8</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Vertical channel data</li>
 <li><strong>arg9</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Mask channel data</li>
-<li><strong>arg10</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Mask colour; overrides symbol colour. Set to iColor_MVIEW(&#8220;&#8221;) to not plot.</li>
+<li><strong>arg10</strong> (<em>int</em>) &#8211; Mask colour; overrides symbol colour. Set to iColor_MVIEW(&#8220;&#8221;) to not plot.</li>
 <li><strong>arg11</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Class channel data</li>
 <li><strong>arg12</strong> (<em>str</em>) &#8211; Class file (TPAT) name.</li>
 <li><strong>arg13</strong> (<em>float</em>) &#8211; Symbol size override. Set to 0.0 to use class file symbol sizes.</li>
 <li><strong>arg14</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXDB</span></code></a>) &#8211; Database (source of data)</li>
 <li><strong>arg15</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Line handles for data</li>
 <li><strong>arg16</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Fid values for data</li>
-<li><strong>arg17</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Annotation style 0 - outside, 1 - inside</li>
+<li><strong>arg17</strong> (<em>int</em>) &#8211; Annotation style 0 - outside, 1 - inside</li>
 <li><strong>arg18</strong> (<em>str</em>) &#8211; Horizontal channel name</li>
 <li><strong>arg19</strong> (<em>str</em>) &#8211; Vertical channel name</li>
 <li><strong>arg20</strong> (<em>str</em>) &#8211; Horizontal channel units</li>
@@ -1512,8 +1531,8 @@ Optioinal database linking.
 <li><strong>arg23</strong> (<em>float</em>) &#8211; Max. Horizontal value</li>
 <li><strong>arg24</strong> (<em>float</em>) &#8211; Min. Vertical value</li>
 <li><strong>arg25</strong> (<em>float</em>) &#8211; Max. Vertical value</li>
-<li><strong>arg26</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; horizontal axis scaling: 0 - linear, 1 - log</li>
-<li><strong>arg27</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; vertical axis scaling</li>
+<li><strong>arg26</strong> (<em>int</em>) &#8211; horizontal axis scaling: 0 - linear, 1 - log</li>
+<li><strong>arg27</strong> (<em>int</em>) &#8211; vertical axis scaling</li>
 <li><strong>arg28</strong> (<em>str</em>) &#8211; plot overlay (&#8220;&#8221; for none)</li>
 </ul>
 </td>
@@ -1530,19 +1549,19 @@ Optioinal database linking.
 <p><span class="versionmodified">New in version 8.0.1.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-Plot a scatter plot using symbols based on a symbol class file.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Plot</span> <span class="n">a</span> <span class="n">scatter</span> <span class="n">plot</span> <span class="n">using</span> <span class="n">symbols</span> <span class="n">based</span> <span class="n">on</span> <span class="n">a</span> <span class="n">symbol</span> <span class="k">class</span> <span class="nc">file</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXCHIMERA.string_classified_tri_plot">
 <em class="property">static </em><code class="descname">string_classified_tri_plot</code><span class="sig-paren">(</span><em>(GXMVIEW)arg1</em>, <em>(str)arg2</em>, <em>(float)arg3</em>, <em>(float)arg4</em>, <em>(float)arg5</em>, <em>(GXVV)arg6</em>, <em>(GXVV)arg7</em>, <em>(GXVV)arg8</em>, <em>(GXVV)arg9</em>, <em>(int)arg10</em>, <em>(GXVV)arg11</em>, <em>(str)arg12</em>, <em>(float)arg13</em>, <em>(GXDB)arg14</em>, <em>(GXVV)arg15</em>, <em>(GXVV)arg16</em>, <em>(str)arg17</em>, <em>(str)arg18</em>, <em>(str)arg19</em>, <em>(int)arg20</em>, <em>(float)arg21</em>, <em>(float)arg22</em>, <em>(str)arg23</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXCHIMERA.string_classified_tri_plot" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Plot a tri-plot using symbols based on a symbol class file.
-Optional data masking with masking colour.
-Optioinal database linking.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Plot</span> <span class="n">a</span> <span class="n">tri</span><span class="o">-</span><span class="n">plot</span> <span class="n">using</span> <span class="n">symbols</span> <span class="n">based</span> <span class="n">on</span> <span class="n">a</span> <span class="n">symbol</span> <span class="k">class</span> <span class="nc">file</span><span class="o">.</span>
+<span class="n">Optional</span> <span class="n">data</span> <span class="n">masking</span> <span class="k">with</span> <span class="n">masking</span> <span class="n">colour</span><span class="o">.</span>
+<span class="n">Optioinal</span> <span class="n">database</span> <span class="n">linking</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1557,7 +1576,7 @@ Optioinal database linking.
 <li><strong>arg7</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Y channel data</li>
 <li><strong>arg8</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Z channel data</li>
 <li><strong>arg9</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Mask channel data</li>
-<li><strong>arg10</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Mask colour; overrides symbol colour. Set to iColor_MVIEW(&#8220;&#8221;) to not plot.</li>
+<li><strong>arg10</strong> (<em>int</em>) &#8211; Mask colour; overrides symbol colour. Set to iColor_MVIEW(&#8220;&#8221;) to not plot.</li>
 <li><strong>arg11</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Class channel data</li>
 <li><strong>arg12</strong> (<em>str</em>) &#8211; Class file (TPAT) name.</li>
 <li><strong>arg13</strong> (<em>float</em>) &#8211; Symbol size override. Set to 0.0 to use class file symbol sizes.</li>
@@ -1567,7 +1586,7 @@ Optioinal database linking.
 <li><strong>arg17</strong> (<em>str</em>) &#8211; X channel name</li>
 <li><strong>arg18</strong> (<em>str</em>) &#8211; Y channel name</li>
 <li><strong>arg19</strong> (<em>str</em>) &#8211; Z channel name</li>
-<li><strong>arg20</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Plot Grid lines? (0: Just outside edge tics, 1: Grid lines).</li>
+<li><strong>arg20</strong> (<em>int</em>) &#8211; Plot Grid lines? (0: Just outside edge tics, 1: Grid lines).</li>
 <li><strong>arg21</strong> (<em>float</em>) &#8211; Tic Increment (in percent)</li>
 <li><strong>arg22</strong> (<em>float</em>) &#8211; Grid increment (in percent)</li>
 <li><strong>arg23</strong> (<em>str</em>) &#8211; plot overlay (&#8220;&#8221; for none)</li>
@@ -1586,17 +1605,17 @@ Optioinal database linking.
 <p><span class="versionmodified">New in version 8.0.1.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-Plot a tri-plot using symbols based on a symbol class file.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Plot</span> <span class="n">a</span> <span class="n">tri</span><span class="o">-</span><span class="n">plot</span> <span class="n">using</span> <span class="n">symbols</span> <span class="n">based</span> <span class="n">on</span> <span class="n">a</span> <span class="n">symbol</span> <span class="k">class</span> <span class="nc">file</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXCHIMERA.tri_plot2">
 <em class="property">static </em><code class="descname">tri_plot2</code><span class="sig-paren">(</span><em>(GXMVIEW)arg1</em>, <em>(str)arg2</em>, <em>(float)arg3</em>, <em>(float)arg4</em>, <em>(float)arg5</em>, <em>(float)arg6</em>, <em>(GXVV)arg7</em>, <em>(GXVV)arg8</em>, <em>(GXVV)arg9</em>, <em>(GXVV)arg10</em>, <em>(str)arg11</em>, <em>(GXVV)arg12</em>, <em>(GXVV)arg13</em>, <em>(GXVV)arg14</em>, <em>(str)arg15</em>, <em>(str)arg16</em>, <em>(str)arg17</em>, <em>(float)arg18</em>, <em>(float)arg19</em>, <em>(float)arg20</em>, <em>(float)arg21</em>, <em>(float)arg22</em>, <em>(float)arg23</em>, <em>(int)arg24</em>, <em>(int)arg25</em>, <em>(int)arg26</em>, <em>(int)arg27</em>, <em>(int)arg28</em>, <em>(int)arg29</em>, <em>(int)arg30</em>, <em>(float)arg31</em>, <em>(float)arg32</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXCHIMERA.tri_plot2" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Plot the TriPlot on a map using symbol number, size and color VVs.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Plot</span> <span class="n">the</span> <span class="n">TriPlot</span> <span class="n">on</span> <span class="n">a</span> <span class="nb">map</span> <span class="n">using</span> <span class="n">symbol</span> <span class="n">number</span><span class="p">,</span> <span class="n">size</span> <span class="ow">and</span> <span class="n">color</span> <span class="n">VVs</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1625,13 +1644,13 @@ Plot the TriPlot on a map using symbol number, size and color VVs.
 <li><strong>arg21</strong> (<em>float</em>) &#8211; Max. Y range value</li>
 <li><strong>arg22</strong> (<em>float</em>) &#8211; Min. Z range value</li>
 <li><strong>arg23</strong> (<em>float</em>) &#8211; Max. Z range value</li>
-<li><strong>arg24</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Use Min X Range selection?</li>
-<li><strong>arg25</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Use Max X Range selection?</li>
-<li><strong>arg26</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Use Min Y Range selection?</li>
-<li><strong>arg27</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Use Max Y Range selection?</li>
-<li><strong>arg28</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Use Min Z Range selection?</li>
-<li><strong>arg29</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Use Max Z Range selection?</li>
-<li><strong>arg30</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Plot Grid lines? (0: Just outside edge tics, 1: Grid lines).</li>
+<li><strong>arg24</strong> (<em>int</em>) &#8211; Use Min X Range selection?</li>
+<li><strong>arg25</strong> (<em>int</em>) &#8211; Use Max X Range selection?</li>
+<li><strong>arg26</strong> (<em>int</em>) &#8211; Use Min Y Range selection?</li>
+<li><strong>arg27</strong> (<em>int</em>) &#8211; Use Max Y Range selection?</li>
+<li><strong>arg28</strong> (<em>int</em>) &#8211; Use Min Z Range selection?</li>
+<li><strong>arg29</strong> (<em>int</em>) &#8211; Use Max Z Range selection?</li>
+<li><strong>arg30</strong> (<em>int</em>) &#8211; Plot Grid lines? (0: Just outside edge tics, 1: Grid lines).</li>
 <li><strong>arg31</strong> (<em>float</em>) &#8211; Tic Increment (in percent)</li>
 <li><strong>arg32</strong> (<em>float</em>) &#8211; Grid increment (in percent)</li>
 </ul>
@@ -1649,23 +1668,23 @@ Plot the TriPlot on a map using symbol number, size and color VVs.
 <p><span class="versionmodified">New in version 5.1.6.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-The mask channel VV is used for plotting precedence; those points with
-mask = dummy are plotted first, then overwritten with the non-masked
-values, so you don't get &quot;good&quot; points being covered up by masked values.
-The view scaling is not altered with any projection. The base view
-is best as the input.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">mask</span> <span class="n">channel</span> <span class="n">VV</span> <span class="ow">is</span> <span class="n">used</span> <span class="k">for</span> <span class="n">plotting</span> <span class="n">precedence</span><span class="p">;</span> <span class="n">those</span> <span class="n">points</span> <span class="k">with</span>
+<span class="n">mask</span> <span class="o">=</span> <span class="n">dummy</span> <span class="n">are</span> <span class="n">plotted</span> <span class="n">first</span><span class="p">,</span> <span class="n">then</span> <span class="n">overwritten</span> <span class="k">with</span> <span class="n">the</span> <span class="n">non</span><span class="o">-</span><span class="n">masked</span>
+<span class="n">values</span><span class="p">,</span> <span class="n">so</span> <span class="n">you</span> <span class="n">don</span><span class="s1">&#39;t get &quot;good&quot; points being covered up by masked values.</span>
+<span class="n">The</span> <span class="n">view</span> <span class="n">scaling</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">altered</span> <span class="k">with</span> <span class="nb">any</span> <span class="n">projection</span><span class="o">.</span> <span class="n">The</span> <span class="n">base</span> <span class="n">view</span>
+<span class="ow">is</span> <span class="n">best</span> <span class="k">as</span> <span class="n">the</span> <span class="nb">input</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXCHIMERA.zone_coloured_scatter_plot">
 <em class="property">static </em><code class="descname">zone_coloured_scatter_plot</code><span class="sig-paren">(</span><em>(GXMVIEW)arg1</em>, <em>(str)arg2</em>, <em>(float)arg3</em>, <em>(float)arg4</em>, <em>(float)arg5</em>, <em>(float)arg6</em>, <em>(GXVV)arg7</em>, <em>(GXVV)arg8</em>, <em>(GXVV)arg9</em>, <em>(int)arg10</em>, <em>(GXVV)arg11</em>, <em>(str)arg12</em>, <em>(str)arg13</em>, <em>(int)arg14</em>, <em>(float)arg15</em>, <em>(float)arg16</em>, <em>(int)arg17</em>, <em>(int)arg18</em>, <em>(int)arg19</em>, <em>(GXDB)arg20</em>, <em>(GXVV)arg21</em>, <em>(GXVV)arg22</em>, <em>(int)arg23</em>, <em>(str)arg24</em>, <em>(str)arg25</em>, <em>(str)arg26</em>, <em>(str)arg27</em>, <em>(float)arg28</em>, <em>(float)arg29</em>, <em>(float)arg30</em>, <em>(float)arg31</em>, <em>(int)arg32</em>, <em>(int)arg33</em>, <em>(str)arg34</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXCHIMERA.zone_coloured_scatter_plot" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Plot a scatter plot using colours based on a zone file.
-Optional data masking with masking colour.
-Optioinal database linking.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Plot</span> <span class="n">a</span> <span class="n">scatter</span> <span class="n">plot</span> <span class="n">using</span> <span class="n">colours</span> <span class="n">based</span> <span class="n">on</span> <span class="n">a</span> <span class="n">zone</span> <span class="n">file</span><span class="o">.</span>
+<span class="n">Optional</span> <span class="n">data</span> <span class="n">masking</span> <span class="k">with</span> <span class="n">masking</span> <span class="n">colour</span><span class="o">.</span>
+<span class="n">Optioinal</span> <span class="n">database</span> <span class="n">linking</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1680,20 +1699,20 @@ Optioinal database linking.
 <li><strong>arg7</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Horizontal channel data</li>
 <li><strong>arg8</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Vertical channel data</li>
 <li><strong>arg9</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Mask channel data (can be NULL)</li>
-<li><strong>arg10</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Mask colour; overrides symbol colour where mask data is not dummy. Set to iColor_MVIEW(&#8220;&#8221;) to not plot.</li>
+<li><strong>arg10</strong> (<em>int</em>) &#8211; Mask colour; overrides symbol colour where mask data is not dummy. Set to iColor_MVIEW(&#8220;&#8221;) to not plot.</li>
 <li><strong>arg11</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Zone channel data</li>
 <li><strong>arg12</strong> (<em>str</em>) &#8211; Zone file name</li>
 <li><strong>arg13</strong> (<em>str</em>) &#8211; decorated font name, &#8220;&#8221; for default symbol font (normally symbols.gfn)</li>
-<li><strong>arg14</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Symbol number (&gt;=0)</li>
+<li><strong>arg14</strong> (<em>int</em>) &#8211; Symbol number (&gt;=0)</li>
 <li><strong>arg15</strong> (<em>float</em>) &#8211; Symbol size ( &gt;=0)</li>
 <li><strong>arg16</strong> (<em>float</em>) &#8211; Symbol angle (-360 to 360)</li>
-<li><strong>arg17</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Symbol colour</li>
-<li><strong>arg18</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Symbol fill colour</li>
-<li><strong>arg19</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Fix symbol edge colour?</li>
+<li><strong>arg17</strong> (<em>int</em>) &#8211; Symbol colour</li>
+<li><strong>arg18</strong> (<em>int</em>) &#8211; Symbol fill colour</li>
+<li><strong>arg19</strong> (<em>int</em>) &#8211; Fix symbol edge colour?</li>
 <li><strong>arg20</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXDB</span></code></a>) &#8211; Database (source of data)</li>
 <li><strong>arg21</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Line handles for data</li>
 <li><strong>arg22</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Fid values for data</li>
-<li><strong>arg23</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Annotation style 0 - outside, 1 - inside</li>
+<li><strong>arg23</strong> (<em>int</em>) &#8211; Annotation style 0 - outside, 1 - inside</li>
 <li><strong>arg24</strong> (<em>str</em>) &#8211; Horizontal channel name</li>
 <li><strong>arg25</strong> (<em>str</em>) &#8211; Vertical channel name</li>
 <li><strong>arg26</strong> (<em>str</em>) &#8211; Horizontal channel units</li>
@@ -1702,8 +1721,8 @@ Optioinal database linking.
 <li><strong>arg29</strong> (<em>float</em>) &#8211; Max. Horizontal value</li>
 <li><strong>arg30</strong> (<em>float</em>) &#8211; Min. Vertical value</li>
 <li><strong>arg31</strong> (<em>float</em>) &#8211; Max. Vertical value</li>
-<li><strong>arg32</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; horizontal axis scaling: 0 - linear, 1 - log</li>
-<li><strong>arg33</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; vertical axis scaling</li>
+<li><strong>arg32</strong> (<em>int</em>) &#8211; horizontal axis scaling: 0 - linear, 1 - log</li>
+<li><strong>arg33</strong> (<em>int</em>) &#8211; vertical axis scaling</li>
 <li><strong>arg34</strong> (<em>str</em>) &#8211; plot overlay (&#8220;&#8221; for none)</li>
 </ul>
 </td>
@@ -1720,19 +1739,19 @@ Optioinal database linking.
 <p><span class="versionmodified">New in version 8.0.1.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-Plot a scatter plot using colours based on a zone file.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Plot</span> <span class="n">a</span> <span class="n">scatter</span> <span class="n">plot</span> <span class="n">using</span> <span class="n">colours</span> <span class="n">based</span> <span class="n">on</span> <span class="n">a</span> <span class="n">zone</span> <span class="n">file</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXCHIMERA.zone_coloured_tri_plot">
 <em class="property">static </em><code class="descname">zone_coloured_tri_plot</code><span class="sig-paren">(</span><em>(GXMVIEW)arg1</em>, <em>(str)arg2</em>, <em>(float)arg3</em>, <em>(float)arg4</em>, <em>(float)arg5</em>, <em>(GXVV)arg6</em>, <em>(GXVV)arg7</em>, <em>(GXVV)arg8</em>, <em>(GXVV)arg9</em>, <em>(int)arg10</em>, <em>(GXVV)arg11</em>, <em>(str)arg12</em>, <em>(str)arg13</em>, <em>(int)arg14</em>, <em>(float)arg15</em>, <em>(float)arg16</em>, <em>(int)arg17</em>, <em>(int)arg18</em>, <em>(int)arg19</em>, <em>(GXDB)arg20</em>, <em>(GXVV)arg21</em>, <em>(GXVV)arg22</em>, <em>(str)arg23</em>, <em>(str)arg24</em>, <em>(str)arg25</em>, <em>(int)arg26</em>, <em>(float)arg27</em>, <em>(float)arg28</em>, <em>(str)arg29</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXCHIMERA.zone_coloured_tri_plot" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Plot a tri-plot using colours based on a zone file.
-Optional data masking with masking colour.
-Optioinal database linking.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Plot</span> <span class="n">a</span> <span class="n">tri</span><span class="o">-</span><span class="n">plot</span> <span class="n">using</span> <span class="n">colours</span> <span class="n">based</span> <span class="n">on</span> <span class="n">a</span> <span class="n">zone</span> <span class="n">file</span><span class="o">.</span>
+<span class="n">Optional</span> <span class="n">data</span> <span class="n">masking</span> <span class="k">with</span> <span class="n">masking</span> <span class="n">colour</span><span class="o">.</span>
+<span class="n">Optioinal</span> <span class="n">database</span> <span class="n">linking</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1747,23 +1766,23 @@ Optioinal database linking.
 <li><strong>arg7</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Y channel data</li>
 <li><strong>arg8</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Z channel data</li>
 <li><strong>arg9</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Mask channel data</li>
-<li><strong>arg10</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Mask colour; overrides symbol colour where mask data is not dummy. Set to iColor_MVIEW(&#8220;&#8221;) to not plot.</li>
+<li><strong>arg10</strong> (<em>int</em>) &#8211; Mask colour; overrides symbol colour where mask data is not dummy. Set to iColor_MVIEW(&#8220;&#8221;) to not plot.</li>
 <li><strong>arg11</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Zone channel data</li>
 <li><strong>arg12</strong> (<em>str</em>) &#8211; Zone file name</li>
 <li><strong>arg13</strong> (<em>str</em>) &#8211; decorated font name, &#8220;&#8221; for default symbol font (normally symbols.gfn)</li>
-<li><strong>arg14</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Symbol number (&gt;=0)</li>
+<li><strong>arg14</strong> (<em>int</em>) &#8211; Symbol number (&gt;=0)</li>
 <li><strong>arg15</strong> (<em>float</em>) &#8211; Symbol size ( &gt;=0)</li>
 <li><strong>arg16</strong> (<em>float</em>) &#8211; Symbol angle (-360 to 360)</li>
-<li><strong>arg17</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Symbol colour</li>
-<li><strong>arg18</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Symbol fill colour</li>
-<li><strong>arg19</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Fix symbol edge colour?</li>
+<li><strong>arg17</strong> (<em>int</em>) &#8211; Symbol colour</li>
+<li><strong>arg18</strong> (<em>int</em>) &#8211; Symbol fill colour</li>
+<li><strong>arg19</strong> (<em>int</em>) &#8211; Fix symbol edge colour?</li>
 <li><strong>arg20</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXDB</span></code></a>) &#8211; Database (source of data)</li>
 <li><strong>arg21</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Line handles for data</li>
 <li><strong>arg22</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Fid values for data</li>
 <li><strong>arg23</strong> (<em>str</em>) &#8211; X channel name</li>
 <li><strong>arg24</strong> (<em>str</em>) &#8211; Y channel name</li>
 <li><strong>arg25</strong> (<em>str</em>) &#8211; Z channel name</li>
-<li><strong>arg26</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Plot Grid lines? (0: Just outside edge tics, 1: Grid lines).</li>
+<li><strong>arg26</strong> (<em>int</em>) &#8211; Plot Grid lines? (0: Just outside edge tics, 1: Grid lines).</li>
 <li><strong>arg27</strong> (<em>float</em>) &#8211; Tic Increment (in percent)</li>
 <li><strong>arg28</strong> (<em>float</em>) &#8211; Grid increment (in percent)</li>
 <li><strong>arg29</strong> (<em>str</em>) &#8211; plot overlay (&#8220;&#8221; for none)</li>
@@ -1782,9 +1801,9 @@ Optioinal database linking.
 <p><span class="versionmodified">New in version 8.0.1.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-Plot a tri plot using colours based on a zone file.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Plot</span> <span class="n">a</span> <span class="n">tri</span> <span class="n">plot</span> <span class="n">using</span> <span class="n">colours</span> <span class="n">based</span> <span class="n">on</span> <span class="n">a</span> <span class="n">zone</span> <span class="n">file</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 </dd></dl>
@@ -1836,9 +1855,13 @@ Plot a tri plot using colours based on a zone file.
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li> 
+          <a href="GXCOM.html" title="GXCOM class"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="GXBIGRID.html" title="GXBIGRID class"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="geosoft.gxapi.classes.html" >GX API Class/Library Reference</a> &#187;</li> 
       </ul>
     </div>
 

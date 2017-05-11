@@ -27,6 +27,8 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="GXGEOSOFT class" href="GXGEOSOFT.html" />
+    <link rel="prev" title="GX API Class/Library Reference" href="geosoft.gxapi.classes.html" />
  
 <script type="text/javascript">
   var _gaq = _gaq || [];
@@ -43,9 +45,13 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li> 
+          <a href="GXGEOSOFT.html" title="GXGEOSOFT class"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="geosoft.gxapi.classes.html" title="GX API Class/Library Reference"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="geosoft.gxapi.classes.html" accesskey="U">GX API Class/Library Reference</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -60,13 +66,19 @@
 </li>
 </ul>
 
-  <div role="note" aria-label="source link">
-    <h3>This Page</h3>
-    <ul class="this-page-menu">
-      <li><a href="_sources/geosoft.gxapi.rst.txt"
-            rel="nofollow">Show Source</a></li>
-    </ul>
-   </div>
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Introduction</a></li>
+    <li><a href="geosoft.gxapi.classes.html">GX API Class/Library Reference</a></li>
+</ul>
+<h3>Previous Topic</h3>
+<ul>
+    <li><a href="geosoft.gxapi.classes.html" title="previous chapter">GX API Class/Library Reference</a></li>
+</ul>
+<h3>Next Topic</h3>
+<ul>
+    <li><a href="GXGEOSOFT.html" title="next chapter">GXGEOSOFT class</a></li>
+</ul>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
@@ -77,6 +89,13 @@
     </form>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/geosoft.gxapi.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
         </div>
       </div>
 
@@ -94,8 +113,8 @@ a developer.</p>
 <h2>The GXContext class<a class="headerlink" href="#the-gxcontext-class" title="Permalink to this headline">¶</a></h2>
 <p>Before calling any other API function from a stand-alone script (a script that is not run as an extension from
 Geosoft Desktop), a GX Context must be created and held.  This can be done by creating an instance of
-<a class="reference internal" href="#geosoft.gxapi.GXContext" title="geosoft.gxapi.GXContext"><code class="xref py py-class docutils literal"><span class="pre">gxapi.GXContext</span></code></a> or an instance of <a class="reference internal" href="geosoft.gxpy.gx.html#geosoft.gxpy.gx.GXpy" title="geosoft.gxpy.gx.GXpy"><code class="xref py py-class docutils literal"><span class="pre">gxpy.gx.GXpy</span></code></a> which handles the details of
-<code class="docutils literal"><span class="pre">GXContext</span></code> for you.  We recommend using <a class="reference internal" href="geosoft.gxpy.gx.html#geosoft.gxpy.gx.GXpy" title="geosoft.gxpy.gx.GXpy"><code class="xref py py-class docutils literal"><span class="pre">gxpy.gx.GXpy</span></code></a> unless you have chosen to work only with the
+coordinate_system=:class:<cite>.gxapi.GXContext</cite> or an instance of coordinate_system=:class:<cite>.gxpy.gx.GXpy</cite> which handles the details of
+<code class="docutils literal"><span class="pre">GXContext</span></code> for you.  We recommend using coordinate_system=:class:<cite>.gxpy.gx.GXpy</cite> unless you have chosen to work only with the
 low-level <code class="xref py py-mod docutils literal"><span class="pre">gxapi</span></code>.</p>
 <p>Creating a GX context requires <strong>Geosoft Desktop</strong> installed on the target system, from which the
 library dll&#8217;s are located and loaded. <strong>Geosoft Desktop</strong> can be downloaded from
@@ -112,7 +131,7 @@ information.</p>
 <code class="xref py py-mod docutils literal"><span class="pre">geosoft.gxapi</span></code> module.</p>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
-<p class="last">Class <a class="reference internal" href="geosoft.gxpy.gx.html#geosoft.gxpy.gx.GXpy" title="geosoft.gxpy.gx.GXpy"><code class="xref py py-class docutils literal"><span class="pre">gxpy.gx.GXpy</span></code></a></p>
+<p class="last">Class coordinate_system=:class:<cite>.gxpy.gx.GXpy</cite></p>
 </div>
 <dl class="method">
 <dt id="geosoft.gxapi.GXContext.clear_ui_console">
@@ -372,9 +391,13 @@ very specific exceptions.</p>
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li> 
+          <a href="GXGEOSOFT.html" title="GXGEOSOFT class"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="geosoft.gxapi.classes.html" title="GX API Class/Library Reference"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="geosoft.gxapi.classes.html" >GX API Class/Library Reference</a> &#187;</li> 
       </ul>
     </div>
 

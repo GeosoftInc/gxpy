@@ -27,6 +27,8 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="geosoft.gxpy.project submodule" href="geosoft.gxpy.project.html" />
+    <link rel="prev" title="geosoft.gxpy.gx submodule" href="geosoft.gxpy.gx.html" />
  
 <script type="text/javascript">
   var _gaq = _gaq || [];
@@ -43,20 +45,30 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li> 
+          <a href="geosoft.gxpy.project.html" title="geosoft.gxpy.project submodule"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="geosoft.gxpy.gx.html" title="geosoft.gxpy.gx submodule"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="geosoft.gxpy.html" accesskey="U">gxpy modules reference</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <div role="note" aria-label="source link">
-    <h3>This Page</h3>
-    <ul class="this-page-menu">
-      <li><a href="_sources/geosoft.gxpy.map.rst.txt"
-            rel="nofollow">Show Source</a></li>
-    </ul>
-   </div>
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Introduction</a></li>
+    <li><a href="geosoft.gxpy.html">gxpy modules reference</a></li>
+</ul>
+<h3>Previous Topic</h3>
+<ul>
+    <li><a href="geosoft.gxpy.gx.html" title="previous chapter">geosoft.gxpy.gx submodule</a></li>
+</ul>
+<h3>Next Topic</h3>
+<ul>
+    <li><a href="geosoft.gxpy.project.html" title="next chapter">geosoft.gxpy.project submodule</a></li>
+</ul>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
@@ -67,6 +79,13 @@
     </form>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/geosoft.gxpy.map.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
         </div>
       </div>
 
@@ -77,9 +96,29 @@
             
   <div class="section" id="module-geosoft.gxpy.map">
 <span id="geosoft-gxpy-map-submodule"></span><h1>geosoft.gxpy.map submodule<a class="headerlink" href="#module-geosoft.gxpy.map" title="Permalink to this headline">¶</a></h1>
-<p>Geosoft maps contain one or more 2D and 3D views.  Each 2D view has a specific coordinate system and clip region.
-Each 3D view is a link to a separate geosoft_3dv file, which is placed in the map as a 2D perspective of the last
-viewing state of the 3D view.</p>
+<p>Geosoft maps contain one or more 2D and 3D views.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Classes:</th><td class="field-body"><table border="1" class="first last docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#geosoft.gxpy.map.Map" title="geosoft.gxpy.map.Map"><code class="xref py py-class docutils literal"><span class="pre">Map</span></code></a></td>
+<td>map class</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Each 2D view has a specific coordinate system and clip region.
+Each 3D view is a link to a separate <cite>geosoft_3dv</cite> file, which can be placed in the map 
+as a 2D perspective of the last viewing state of the 3D view.</p>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
 <p><a class="reference internal" href="geosoft.gxpy.view.html#module-geosoft.gxpy.view" title="geosoft.gxpy.view"><code class="xref py py-mod docutils literal"><span class="pre">geosoft.gxpy.view</span></code></a>, <a class="reference internal" href="geosoft.gxpy.group.html#module-geosoft.gxpy.group" title="geosoft.gxpy.group"><code class="xref py py-mod docutils literal"><span class="pre">geosoft.gxpy.group</span></code></a></p>
@@ -87,8 +126,8 @@ viewing state of the 3D view.</p>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p>Regression tests provide usage examples:</p>
-<p class="last"><a class="reference external" href="https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_map.py">map tests</a></p>
+<p class="last">Regression tests provide usage examples:     
+<a class="reference external" href="https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_map.py">map tests</a></p>
 </div>
 <dl class="class">
 <dt id="geosoft.gxpy.map.Map">
@@ -115,9 +154,11 @@ contain a plane or surface on which 2D elements are drawn, and when a 3D view is
 rendered on a map, which is a flat surface, the view is rendered from the last use point of view.  Geosoft
 map viewing applications allow a user to open a 3D view in a 3D viewer, which provides for 3D viewing,
 3D navigation and 3D drawing capabilities.</p>
-<p>Constructors:</p>
-<blockquote>
-<div><table border="1" class="docutils">
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Constructors:</th><td class="field-body"><table border="1" class="first last docutils">
 <colgroup>
 <col width="23%" />
 <col width="77%" />
@@ -131,7 +172,10 @@ map viewing applications allow a user to open a 3D view in a 3D viewer, which pr
 </tr>
 </tbody>
 </table>
-</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.2.</span></p>
 </div>
@@ -274,7 +318,7 @@ with the same coordinate system, scale and clipping as the old view.</li>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>view</strong> &#8211; A <cite>gxpy.view.View_3d</cite> instance</li>
+<li><strong>view</strong> &#8211; <code class="xref py py-class docutils literal"><span class="pre">gxpy.view.View_3d</span></code> instance</li>
 <li><strong>name</strong> &#8211; name of the linked view to create</li>
 <li><strong>area_on_map</strong> &#8211; min_x, min_y, max_x, max_y) placement of view on map in mm</li>
 </ul>
@@ -456,9 +500,9 @@ when the GX loses context.</td>
 </tr>
 <tr class="field-even field"><th class="field-name" colspan="2">coordinate_system:</th></tr>
 <tr class="field-even field"><td>&nbsp;</td><td class="field-body">coordinate system, default is an unknown coordinate system.  You may pass
-a <code class="docutils literal"><span class="pre">coordinate_system.Coordinate_system</span></code> instance, a string descriptor, such as
-<cite>WGS 84 / UTM zone 15N</cite>, or another valid constructor supported by
-<code class="docutils literal"><span class="pre">coordinate_system.Coordinate_system</span></code>.</td>
+a <a class="reference internal" href="geosoft.gxpy.coordinate_system.html#geosoft.gxpy.coordinate_system.Coordinate_system" title="geosoft.gxpy.coordinate_system.Coordinate_system"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxpy.coordinate_system.Coordinate_system</span></code></a> instance, a string 
+descriptor, such as &#8216;<cite>WGS 84 / UTM zone 15N</cite>&#8216;, or another valid constructor supported
+by <a class="reference internal" href="geosoft.gxpy.coordinate_system.html#geosoft.gxpy.coordinate_system.Coordinate_system" title="geosoft.gxpy.coordinate_system.Coordinate_system"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxpy.coordinate_system.Coordinate_system</span></code></a>.</td>
 </tr>
 <tr class="field-odd field"><th class="field-name">media:</th><td class="field-body">media size as a tuple(x_cm, y_cm), or as a standard media name string.
 If the media name contains &#8216;portrait&#8217;, the media is media aspect will be portrait.
@@ -519,8 +563,8 @@ calculated direction of North at the center of the data view.</li>
 <li><strong>length</strong> &#8211; arrow length in cm</li>
 <li><strong>inclination</strong> &#8211; magnetic inclination, not shown if not specified</li>
 <li><strong>declination</strong> &#8211; magnetic declination, not shown if not specified</li>
-<li><strong>text_def</strong> &#8211; <code class="docutils literal"><span class="pre">gxpy.view.Text_def</span></code> instance, or <code class="docutils literal"><span class="pre">None</span></code> for the default.</li>
-<li><strong>pen</strong> &#8211; <code class="docutils literal"><span class="pre">gxpy.view.Pen</span></code> instance, or <code class="docutils literal"><span class="pre">None</span></code> for the default</li>
+<li><strong>text_def</strong> &#8211; <code class="xref py py-class docutils literal"><span class="pre">gxpy.group.Text_def</span></code> instance, or <cite>None</cite> for the default.</li>
+<li><strong>pen</strong> &#8211; <code class="xref py py-class docutils literal"><span class="pre">gxpy.group.Pen</span></code> instance, or <cite>None</cite> for the default</li>
 </ul>
 </td>
 </tr>
@@ -575,8 +619,8 @@ calculated direction of North at the center of the data view.</li>
 <li><strong>sections</strong> &#8211; number of major sections in the bar, default is determined automatically.</li>
 <li><strong>post_scale</strong> &#8211; True to post the actual scale as a string, e.g. &#8216;1:50,000&#8217;.  Note that a posted
 scale is only relevant for printed maps.  The default does not post the scale.</li>
-<li><strong>text_def</strong> &#8211; <code class="docutils literal"><span class="pre">gxpy.view.Text_def</span></code> instance.</li>
-<li><strong>pen</strong> &#8211; <code class="docutils literal"><span class="pre">gxpy.view.Pen</span></code> instance.</li>
+<li><strong>text_def</strong> &#8211; <code class="xref py py-class docutils literal"><span class="pre">gxpy.view.Text_def</span></code> instance.</li>
+<li><strong>pen</strong> &#8211; <code class="xref py py-class docutils literal"><span class="pre">gxpy.view.Pen</span></code> instance.</li>
 </ul>
 </td>
 </tr>
@@ -673,7 +717,7 @@ map.</p>
 <dd><p>Return the CRC of a map based on the output bitmap image.
 :param mapfile:     name of the map file
 :param pix_width:   image pixel width - use a higher resolution to test more detail
-:return:            CRC as an int</p>
+:returns:           CRC as an int</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.2.</span></p>
 </div>
@@ -764,9 +808,13 @@ map.</p>
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li> 
+          <a href="geosoft.gxpy.project.html" title="geosoft.gxpy.project submodule"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="geosoft.gxpy.gx.html" title="geosoft.gxpy.gx submodule"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="geosoft.gxpy.html" >gxpy modules reference</a> &#187;</li> 
       </ul>
     </div>
 

@@ -27,6 +27,8 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="GXDATALINKD class" href="GXDATALINKD.html" />
+    <link rel="prev" title="GXCSYMB class" href="GXCSYMB.html" />
  
 <script type="text/javascript">
   var _gaq = _gaq || [];
@@ -43,9 +45,13 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li> 
+          <a href="GXDATALINKD.html" title="GXDATALINKD class"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="GXCSYMB.html" title="GXCSYMB class"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="geosoft.gxapi.classes.html" accesskey="U">GX API Class/Library Reference</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -60,13 +66,19 @@
 </li>
 </ul>
 
-  <div role="note" aria-label="source link">
-    <h3>This Page</h3>
-    <ul class="this-page-menu">
-      <li><a href="_sources/GXDAT.rst.txt"
-            rel="nofollow">Show Source</a></li>
-    </ul>
-   </div>
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Introduction</a></li>
+    <li><a href="geosoft.gxapi.classes.html">GX API Class/Library Reference</a></li>
+</ul>
+<h3>Previous Topic</h3>
+<ul>
+    <li><a href="GXCSYMB.html" title="previous chapter">GXCSYMB class</a></li>
+</ul>
+<h3>Next Topic</h3>
+<ul>
+    <li><a href="GXDATALINKD.html" title="next chapter">GXDATALINKD class</a></li>
+</ul>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
@@ -77,6 +89,13 @@
     </form>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/GXDAT.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
         </div>
       </div>
 
@@ -94,7 +113,7 @@
 The DAT object is used to access data from an variety of data sources
 using the same access functions. The DAT interface supports data access
 on a point-by-point, of line-by-line basis.  For example,
-the \ :func:`geosoft.gxapi.GXBIGRID.run`\  function uses 2 DAT objects - one DAT associated with the
+the <a class="reference internal" href="GXBIGRID.html#geosoft.gxapi.GXBIGRID.run" title="geosoft.gxapi.GXBIGRID.run"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXBIGRID.run()</span></code></a> function uses 2 DAT objects - one DAT associated with the
 input data source, which is read line-by-line, and a second associated with
 the output grid file output grid file.
 
@@ -145,7 +164,7 @@ by a specific processing function.  The gridding methods all use DATs.
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<em>str</em>) &#8211; Name of grid file to associate DAT with</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#dat-xgd"><span class="std std-ref">DAT_XGD constants</span></a></li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#dat-xgd"><span class="std std-ref">DAT_XGD constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -175,8 +194,8 @@ by a specific processing function.  The gridding methods all use DATs.
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXLST</span></code></a>) &#8211; LST object to populate</li>
 <li><strong>arg2</strong> (<em>str</em>) &#8211; DAT interface name (&#8220;XGD&#8221; only support option currently)</li>
-<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#dat-file"><span class="std std-ref">DAT_FILE constants</span></a></li>
-<li><strong>arg4</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#dat-file-form"><span class="std std-ref">DAT_FILE_FORM constants</span></a></li>
+<li><strong>arg3</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#dat-file"><span class="std std-ref">DAT_FILE constants</span></a></li>
+<li><strong>arg4</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#dat-file-form"><span class="std std-ref">DAT_FILE_FORM constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -192,11 +211,11 @@ by a specific processing function.  The gridding methods all use DATs.
 <p><span class="versionmodified">New in version 5.1.8.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-The filters displayed in the Grid/Image file browse dialog are put
-in the &quot;Name&quot; of the LST, while the file qualifiers are stored in
-the &quot;Value&quot;.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">filters</span> <span class="n">displayed</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">Grid</span><span class="o">/</span><span class="n">Image</span> <span class="n">file</span> <span class="n">browse</span> <span class="n">dialog</span> <span class="n">are</span> <span class="n">put</span>
+<span class="ow">in</span> <span class="n">the</span> <span class="s2">&quot;Name&quot;</span> <span class="n">of</span> <span class="n">the</span> <span class="n">LST</span><span class="p">,</span> <span class="k">while</span> <span class="n">the</span> <span class="n">file</span> <span class="n">qualifiers</span> <span class="n">are</span> <span class="n">stored</span> <span class="ow">in</span>
+<span class="n">the</span> <span class="s2">&quot;Value&quot;</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
@@ -234,9 +253,9 @@ the &quot;Value&quot;.
 <dl class="method">
 <dt id="geosoft.gxapi.GXDAT.range_xyz">
 <code class="descname">range_xyz</code><span class="sig-paren">(</span><em>(float_ref)arg1</em>, <em>(float_ref)arg2</em>, <em>(float_ref)arg3</em>, <em>(float_ref)arg4</em>, <em>(float_ref)arg5</em>, <em>(float_ref)arg6</em>, <em>(int_ref)arg7</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXDAT.range_xyz" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Determine the range in X, Y and Z in the DAT source
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Determine</span> <span class="n">the</span> <span class="nb">range</span> <span class="ow">in</span> <span class="n">X</span><span class="p">,</span> <span class="n">Y</span> <span class="ow">and</span> <span class="n">Z</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">DAT</span> <span class="n">source</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -264,9 +283,9 @@ Determine the range in X, Y and Z in the DAT source
 <p><span class="versionmodified">New in version 7.3.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-Terminates if unable to open an RPT DAT interface.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Terminates</span> <span class="k">if</span> <span class="n">unable</span> <span class="n">to</span> <span class="nb">open</span> <span class="n">an</span> <span class="n">RPT</span> <span class="n">DAT</span> <span class="n">interface</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 </dd></dl>
@@ -339,9 +358,13 @@ Terminates if unable to open an RPT DAT interface.
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li> 
+          <a href="GXDATALINKD.html" title="GXDATALINKD class"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="GXCSYMB.html" title="GXCSYMB class"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="geosoft.gxapi.classes.html" >GX API Class/Library Reference</a> &#187;</li> 
       </ul>
     </div>
 

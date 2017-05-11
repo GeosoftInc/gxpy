@@ -27,6 +27,8 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="GXHXYZ class" href="GXHXYZ.html" />
+    <link rel="prev" title="GXHGD class" href="GXHGD.html" />
  
 <script type="text/javascript">
   var _gaq = _gaq || [];
@@ -43,20 +45,30 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li> 
+          <a href="GXHXYZ.html" title="GXHXYZ class"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="GXHGD.html" title="GXHGD class"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="geosoft.gxapi.classes.html" accesskey="U">GX API Class/Library Reference</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <div role="note" aria-label="source link">
-    <h3>This Page</h3>
-    <ul class="this-page-menu">
-      <li><a href="_sources/GXHTTP.rst.txt"
-            rel="nofollow">Show Source</a></li>
-    </ul>
-   </div>
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Introduction</a></li>
+    <li><a href="geosoft.gxapi.classes.html">GX API Class/Library Reference</a></li>
+</ul>
+<h3>Previous Topic</h3>
+<ul>
+    <li><a href="GXHGD.html" title="previous chapter">GXHGD class</a></li>
+</ul>
+<h3>Next Topic</h3>
+<ul>
+    <li><a href="GXHXYZ.html" title="next chapter">GXHXYZ class</a></li>
+</ul>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
@@ -67,6 +79,13 @@
     </form>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/GXHTTP.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
         </div>
       </div>
 
@@ -80,22 +99,22 @@
 <dl class="class">
 <dt id="geosoft.gxapi.GXHTTP">
 <em class="property">class </em><code class="descclassname">geosoft.gxapi.</code><code class="descname">GXHTTP</code><a class="headerlink" href="#geosoft.gxapi.GXHTTP" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Connect to an Internet Server using HTTP.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Connect</span> <span class="n">to</span> <span class="n">an</span> <span class="n">Internet</span> <span class="n">Server</span> <span class="n">using</span> <span class="n">HTTP</span><span class="o">.</span>
+</pre></div>
+</div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-References:
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">References</span><span class="p">:</span>
 
-1. http://www.w3.org/Protocols/HTTP/HTTP2.html
+<span class="mf">1.</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="o">.</span><span class="n">w3</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">Protocols</span><span class="o">/</span><span class="n">HTTP</span><span class="o">/</span><span class="n">HTTP2</span><span class="o">.</span><span class="n">html</span>
 
-2. http://www.w3.org/Addressing/URL/5_BNF.html
+<span class="mf">2.</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="o">.</span><span class="n">w3</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">Addressing</span><span class="o">/</span><span class="n">URL</span><span class="o">/</span><span class="mi">5</span><span class="n">_BNF</span><span class="o">.</span><span class="n">html</span>
 
-Note that path and search must conform be xalpha string (ref 2.).
-Special characters can be specified with a %xx, where xx is the
-hex ASCII number.  For example, a search string &quot;This one&quot; should
-be  specified as &quot;This%20one&quot;
-</pre>
+<span class="n">Note</span> <span class="n">that</span> <span class="n">path</span> <span class="ow">and</span> <span class="n">search</span> <span class="n">must</span> <span class="n">conform</span> <span class="n">be</span> <span class="n">xalpha</span> <span class="n">string</span> <span class="p">(</span><span class="n">ref</span> <span class="mf">2.</span><span class="p">)</span><span class="o">.</span>
+<span class="n">Special</span> <span class="n">characters</span> <span class="n">can</span> <span class="n">be</span> <span class="n">specified</span> <span class="k">with</span> <span class="n">a</span> <span class="o">%</span><span class="n">xx</span><span class="p">,</span> <span class="n">where</span> <span class="n">xx</span> <span class="ow">is</span> <span class="n">the</span>
+<span class="nb">hex</span> <span class="n">ASCII</span> <span class="n">number</span><span class="o">.</span>  <span class="n">For</span> <span class="n">example</span><span class="p">,</span> <span class="n">a</span> <span class="n">search</span> <span class="n">string</span> <span class="s2">&quot;This one&quot;</span> <span class="n">should</span>
+<span class="n">be</span>  <span class="n">specified</span> <span class="k">as</span> <span class="s2">&quot;This</span><span class="si">%20o</span><span class="s2">ne&quot;</span>
+</pre></div>
+</div>
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXHTTP.create">
 <em class="property">static </em><code class="descname">create</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(str)arg2</em>, <em>(str)arg3</em>, <em>(str)arg4</em><span class="sig-paren">)</span> &rarr; GXHTTP:<a class="headerlink" href="#geosoft.gxapi.GXHTTP.create" title="Permalink to this definition">¶</a></dt>
@@ -126,36 +145,36 @@ be  specified as &quot;This%20one&quot;
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-An OM user has the ability to control access and verification of access
-to servers over the Internet.  A GX Developer has no way to change the
-users choice of access.  This is to prevent the creation of GX's that
-may be dangerous or may be used to collect information without the
-knowledgede of the user.
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">An</span> <span class="n">OM</span> <span class="n">user</span> <span class="n">has</span> <span class="n">the</span> <span class="n">ability</span> <span class="n">to</span> <span class="n">control</span> <span class="n">access</span> <span class="ow">and</span> <span class="n">verification</span> <span class="n">of</span> <span class="n">access</span>
+<span class="n">to</span> <span class="n">servers</span> <span class="n">over</span> <span class="n">the</span> <span class="n">Internet</span><span class="o">.</span>  <span class="n">A</span> <span class="n">GX</span> <span class="n">Developer</span> <span class="n">has</span> <span class="n">no</span> <span class="n">way</span> <span class="n">to</span> <span class="n">change</span> <span class="n">the</span>
+<span class="n">users</span> <span class="n">choice</span> <span class="n">of</span> <span class="n">access</span><span class="o">.</span>  <span class="n">This</span> <span class="ow">is</span> <span class="n">to</span> <span class="n">prevent</span> <span class="n">the</span> <span class="n">creation</span> <span class="n">of</span> <span class="n">GX</span><span class="s1">&#39;s that</span>
+<span class="n">may</span> <span class="n">be</span> <span class="n">dangerous</span> <span class="ow">or</span> <span class="n">may</span> <span class="n">be</span> <span class="n">used</span> <span class="n">to</span> <span class="n">collect</span> <span class="n">information</span> <span class="n">without</span> <span class="n">the</span>
+<span class="n">knowledgede</span> <span class="n">of</span> <span class="n">the</span> <span class="n">user</span><span class="o">.</span>
 
-If the specified URL is restricted from access by the user, the create
-function will fail.
+<span class="n">If</span> <span class="n">the</span> <span class="n">specified</span> <span class="n">URL</span> <span class="ow">is</span> <span class="n">restricted</span> <span class="kn">from</span> <span class="nn">access</span> <span class="n">by</span> <span class="n">the</span> <span class="n">user</span><span class="p">,</span> <span class="n">the</span> <span class="n">create</span>
+<span class="n">function</span> <span class="n">will</span> <span class="n">fail</span><span class="o">.</span>
 
-If the specified URL has not been accessed by this user before, or if
-the user has this site on &quot;Verify&quot;, the user will be presented with a
-dialog requiring verification before communication can begin.  The user
-may choose to change the server site to a full &quot;Trust&quot; relationship, in
-which case the verification message will not reappear unless the site
-is explicitly changed back to verify or is restricted.
+<span class="n">If</span> <span class="n">the</span> <span class="n">specified</span> <span class="n">URL</span> <span class="n">has</span> <span class="ow">not</span> <span class="n">been</span> <span class="n">accessed</span> <span class="n">by</span> <span class="n">this</span> <span class="n">user</span> <span class="n">before</span><span class="p">,</span> <span class="ow">or</span> <span class="k">if</span>
+<span class="n">the</span> <span class="n">user</span> <span class="n">has</span> <span class="n">this</span> <span class="n">site</span> <span class="n">on</span> <span class="s2">&quot;Verify&quot;</span><span class="p">,</span> <span class="n">the</span> <span class="n">user</span> <span class="n">will</span> <span class="n">be</span> <span class="n">presented</span> <span class="k">with</span> <span class="n">a</span>
+<span class="n">dialog</span> <span class="n">requiring</span> <span class="n">verification</span> <span class="n">before</span> <span class="n">communication</span> <span class="n">can</span> <span class="n">begin</span><span class="o">.</span>  <span class="n">The</span> <span class="n">user</span>
+<span class="n">may</span> <span class="n">choose</span> <span class="n">to</span> <span class="n">change</span> <span class="n">the</span> <span class="n">server</span> <span class="n">site</span> <span class="n">to</span> <span class="n">a</span> <span class="n">full</span> <span class="s2">&quot;Trust&quot;</span> <span class="n">relationship</span><span class="p">,</span> <span class="ow">in</span>
+<span class="n">which</span> <span class="n">case</span> <span class="n">the</span> <span class="n">verification</span> <span class="n">message</span> <span class="n">will</span> <span class="ow">not</span> <span class="n">reappear</span> <span class="n">unless</span> <span class="n">the</span> <span class="n">site</span>
+<span class="ow">is</span> <span class="n">explicitly</span> <span class="n">changed</span> <span class="n">back</span> <span class="n">to</span> <span class="n">verify</span> <span class="ow">or</span> <span class="ow">is</span> <span class="n">restricted</span><span class="o">.</span>
 
-If you intend your GX to communicate with a server without
-verification, you must instruct your user to change their trust
-relationship with your server to &quot;Trusted&quot;.  Your user will have the
-opportunity to do so the first time a script is run.
-</pre>
+<span class="n">If</span> <span class="n">you</span> <span class="n">intend</span> <span class="n">your</span> <span class="n">GX</span> <span class="n">to</span> <span class="n">communicate</span> <span class="k">with</span> <span class="n">a</span> <span class="n">server</span> <span class="n">without</span>
+<span class="n">verification</span><span class="p">,</span> <span class="n">you</span> <span class="n">must</span> <span class="n">instruct</span> <span class="n">your</span> <span class="n">user</span> <span class="n">to</span> <span class="n">change</span> <span class="n">their</span> <span class="n">trust</span>
+<span class="n">relationship</span> <span class="k">with</span> <span class="n">your</span> <span class="n">server</span> <span class="n">to</span> <span class="s2">&quot;Trusted&quot;</span><span class="o">.</span>  <span class="n">Your</span> <span class="n">user</span> <span class="n">will</span> <span class="n">have</span> <span class="n">the</span>
+<span class="n">opportunity</span> <span class="n">to</span> <span class="n">do</span> <span class="n">so</span> <span class="n">the</span> <span class="n">first</span> <span class="n">time</span> <span class="n">a</span> <span class="n">script</span> <span class="ow">is</span> <span class="n">run</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXHTTP.download">
 <code class="descname">download</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(GXBF)arg2</em>, <em>(int)arg3</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXHTTP.download" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Download file from the internet to a BF.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Download</span> <span class="n">file</span> <span class="kn">from</span> <span class="nn">the</span> <span class="n">internet</span> <span class="n">to</span> <span class="n">a</span> <span class="n">BF</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -163,7 +182,7 @@ Download file from the internet to a BF.
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<em>str</em>) &#8211; File Name on the HTTP site</li>
 <li><strong>arg2</strong> (<a class="reference internal" href="GXBF.html#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXBF</span></code></a>) &#8211; BF in which to place the file</li>
-<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Dynamic content (0 - no, 1 - yes)</li>
+<li><strong>arg3</strong> (<em>int</em>) &#8211; Dynamic content (0 - no, 1 - yes)</li>
 </ul>
 </td>
 </tr>
@@ -188,9 +207,9 @@ Download file from the internet to a BF.
 <dl class="method">
 <dt id="geosoft.gxapi.GXHTTP.get">
 <code class="descname">get</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(str)arg2</em>, <em>(GXBF)arg3</em>, <em>(GXBF)arg4</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXHTTP.get" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Get data from a server.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">data</span> <span class="kn">from</span> <span class="nn">a</span> <span class="n">server</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -215,13 +234,13 @@ Get data from a server.
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-Full contents of the BF are sent in an HTTP GET message.
+<div class="highlight-default"><div class="highlight"><pre><span></span>Full contents of the BF are sent in an HTTP GET message.
 BF pointer is returned to location before the call.
 
 request URL will be:
 http://server/path?search
-</pre>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
@@ -259,9 +278,9 @@ http://server/path?search
 <dl class="method">
 <dt id="geosoft.gxapi.GXHTTP.post">
 <code class="descname">post</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(str)arg2</em>, <em>(GXBF)arg3</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXHTTP.post" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Post data to the server.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Post</span> <span class="n">data</span> <span class="n">to</span> <span class="n">the</span> <span class="n">server</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -285,12 +304,12 @@ Post data to the server.
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-Full contents of the BF are sent as an HTTP POST message.
+<div class="highlight-default"><div class="highlight"><pre><span></span>Full contents of the BF are sent as an HTTP POST message.
 
 request URL will be:
 http://server/path?search
-</pre>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
@@ -326,9 +345,9 @@ http://server/path?search
 <dl class="method">
 <dt id="geosoft.gxapi.GXHTTP.silent_download">
 <code class="descname">silent_download</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(GXBF)arg2</em>, <em>(int)arg3</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXHTTP.silent_download" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Download file from the internet to a BF with no prompt for proxy authentication.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Download</span> <span class="n">file</span> <span class="kn">from</span> <span class="nn">the</span> <span class="n">internet</span> <span class="n">to</span> <span class="n">a</span> <span class="n">BF</span> <span class="k">with</span> <span class="n">no</span> <span class="n">prompt</span> <span class="k">for</span> <span class="n">proxy</span> <span class="n">authentication</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -336,7 +355,7 @@ Download file from the internet to a BF with no prompt for proxy authentication.
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<em>str</em>) &#8211; File Name on the HTTP site</li>
 <li><strong>arg2</strong> (<a class="reference internal" href="GXBF.html#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXBF</span></code></a>) &#8211; BF in which to place the file</li>
-<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Dynamic content (0 - no, 1 - yes)</li>
+<li><strong>arg3</strong> (<em>int</em>) &#8211; Dynamic content (0 - no, 1 - yes)</li>
 </ul>
 </td>
 </tr>
@@ -352,10 +371,10 @@ Download file from the internet to a BF with no prompt for proxy authentication.
 <p><span class="versionmodified">New in version 8.2.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-The file will be written starting at the current location
-in the BF. No prompt for proxy authentication
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">file</span> <span class="n">will</span> <span class="n">be</span> <span class="n">written</span> <span class="n">starting</span> <span class="n">at</span> <span class="n">the</span> <span class="n">current</span> <span class="n">location</span>
+<span class="ow">in</span> <span class="n">the</span> <span class="n">BF</span><span class="o">.</span> <span class="n">No</span> <span class="n">prompt</span> <span class="k">for</span> <span class="n">proxy</span> <span class="n">authentication</span>
+</pre></div>
+</div>
 </dd></dl>
 
 </dd></dl>
@@ -375,9 +394,13 @@ in the BF. No prompt for proxy authentication
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li> 
+          <a href="GXHXYZ.html" title="GXHXYZ class"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="GXHGD.html" title="GXHGD class"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="geosoft.gxapi.classes.html" >GX API Class/Library Reference</a> &#187;</li> 
       </ul>
     </div>
 

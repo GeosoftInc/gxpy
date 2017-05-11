@@ -27,6 +27,8 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="geosoft.gxpy.grid submodule" href="geosoft.gxpy.grid.html" />
+    <link rel="prev" title="geosoft.gxpy.gdb submodule" href="geosoft.gxpy.gdb.html" />
  
 <script type="text/javascript">
   var _gaq = _gaq || [];
@@ -43,20 +45,30 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li> 
+          <a href="geosoft.gxpy.grid.html" title="geosoft.gxpy.grid submodule"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="geosoft.gxpy.gdb.html" title="geosoft.gxpy.gdb submodule"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="geosoft.gxpy.html" accesskey="U">gxpy modules reference</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <div role="note" aria-label="source link">
-    <h3>This Page</h3>
-    <ul class="this-page-menu">
-      <li><a href="_sources/geosoft.gxpy.geometry.rst.txt"
-            rel="nofollow">Show Source</a></li>
-    </ul>
-   </div>
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Introduction</a></li>
+    <li><a href="geosoft.gxpy.html">gxpy modules reference</a></li>
+</ul>
+<h3>Previous Topic</h3>
+<ul>
+    <li><a href="geosoft.gxpy.gdb.html" title="previous chapter">geosoft.gxpy.gdb submodule</a></li>
+</ul>
+<h3>Next Topic</h3>
+<ul>
+    <li><a href="geosoft.gxpy.grid.html" title="next chapter">geosoft.gxpy.grid submodule</a></li>
+</ul>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
@@ -67,6 +79,13 @@
     </form>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/geosoft.gxpy.geometry.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
         </div>
       </div>
 
@@ -78,10 +97,35 @@
   <div class="section" id="module-geosoft.gxpy.geometry">
 <span id="geosoft-gxpy-geometry-submodule"></span><h1>geosoft.gxpy.geometry submodule<a class="headerlink" href="#module-geosoft.gxpy.geometry" title="Permalink to this headline">¶</a></h1>
 <p>Spatial geometric elements.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Classes:</th><td class="field-body"><table border="1" class="first last docutils">
+<colgroup>
+<col width="19%" />
+<col width="81%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#geosoft.gxpy.geometry.Point" title="geosoft.gxpy.geometry.Point"><code class="xref py py-class docutils literal"><span class="pre">Point</span></code></a></td>
+<td>(x, y, z) point</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#geosoft.gxpy.geometry.Point2" title="geosoft.gxpy.geometry.Point2"><code class="xref py py-class docutils literal"><span class="pre">Point2</span></code></a></td>
+<td>pair of <a class="reference internal" href="#geosoft.gxpy.geometry.Point" title="geosoft.gxpy.geometry.Point"><code class="xref py py-class docutils literal"><span class="pre">Point</span></code></a> instances that define a line, or extent</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#geosoft.gxpy.geometry.PPoint" title="geosoft.gxpy.geometry.PPoint"><code class="xref py py-class docutils literal"><span class="pre">PPoint</span></code></a></td>
+<td>multiple <a class="reference internal" href="#geosoft.gxpy.geometry.Point" title="geosoft.gxpy.geometry.Point"><code class="xref py py-class docutils literal"><span class="pre">Point</span></code></a> instances</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p>Regression tests provide usage examples:</p>
-<p class="last"><a class="reference external" href="https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_geometry.py">geometry tests</a></p>
+<p class="last">Regression tests provide usage examples: 
+<a class="reference external" href="https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_geometry.py">geometry tests</a></p>
 </div>
 <dl class="class">
 <dt id="geosoft.gxpy.geometry.Geometry">
@@ -329,9 +373,9 @@ vv data is resampled to match the first vv.</li>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">p0:</th><td class="field-body">first point as a Point instance</td>
+<tr class="field-odd field"><th class="field-name">p0:</th><td class="field-body">first point as a <a class="reference internal" href="#geosoft.gxpy.geometry.Point" title="geosoft.gxpy.geometry.Point"><code class="xref py py-class docutils literal"><span class="pre">Point</span></code></a> instance</td>
 </tr>
-<tr class="field-even field"><th class="field-name">p1:</th><td class="field-body">second point at a Point instance</td>
+<tr class="field-even field"><th class="field-name">p1:</th><td class="field-body">second point at a <a class="reference internal" href="#geosoft.gxpy.geometry.Point" title="geosoft.gxpy.geometry.Point"><code class="xref py py-class docutils literal"><span class="pre">Point</span></code></a> instance</td>
 </tr>
 <tr class="field-odd field"><th class="field-name">x2, y2, z2:</th><td class="field-body">tuple pairs for (x0, x1), (y0, y1), (z0, z1)</td>
 </tr>
@@ -401,9 +445,13 @@ vv data is resampled to match the first vv.</li>
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li> 
+          <a href="geosoft.gxpy.grid.html" title="geosoft.gxpy.grid submodule"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="geosoft.gxpy.gdb.html" title="geosoft.gxpy.gdb submodule"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="geosoft.gxpy.html" >gxpy modules reference</a> &#187;</li> 
       </ul>
     </div>
 

@@ -27,6 +27,8 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="GXSEMPLOT class" href="GXSEMPLOT.html" />
+    <link rel="prev" title="GXRGRD class" href="GXRGRD.html" />
  
 <script type="text/javascript">
   var _gaq = _gaq || [];
@@ -43,9 +45,13 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li> 
+          <a href="GXSEMPLOT.html" title="GXSEMPLOT class"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="GXRGRD.html" title="GXRGRD class"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="geosoft.gxapi.classes.html" accesskey="U">GX API Class/Library Reference</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -59,13 +65,19 @@
 </li>
 </ul>
 
-  <div role="note" aria-label="source link">
-    <h3>This Page</h3>
-    <ul class="this-page-menu">
-      <li><a href="_sources/GXSBF.rst.txt"
-            rel="nofollow">Show Source</a></li>
-    </ul>
-   </div>
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Introduction</a></li>
+    <li><a href="geosoft.gxapi.classes.html">GX API Class/Library Reference</a></li>
+</ul>
+<h3>Previous Topic</h3>
+<ul>
+    <li><a href="GXRGRD.html" title="previous chapter">GXRGRD class</a></li>
+</ul>
+<h3>Next Topic</h3>
+<ul>
+    <li><a href="GXSEMPLOT.html" title="next chapter">GXSEMPLOT class</a></li>
+</ul>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
@@ -76,6 +88,13 @@
     </form>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/GXSBF.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
         </div>
       </div>
 
@@ -93,24 +112,24 @@
 The SBF class provides a means of storing data in a
 file-type directory structure within a workspace, database
 or map. Each of these three objects contains its own SBF object,
-which may be accessed using the \ :func:`geosoft.gxapi.GXSBF.h_get_sys`\ , \ :func:`geosoft.gxapi.GXSBF.h_get_db`\  and
-\ :func:`geosoft.gxapi.GXSBF.h_get_map`\  functions. To access data in a file, or create a
+which may be accessed using the <a class="reference internal" href="#geosoft.gxapi.GXSBF.h_get_sys" title="geosoft.gxapi.GXSBF.h_get_sys"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXSBF.h_get_sys()</span></code></a>, <a class="reference internal" href="#geosoft.gxapi.GXSBF.h_get_db" title="geosoft.gxapi.GXSBF.h_get_db"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXSBF.h_get_db()</span></code></a> and
+<a class="reference internal" href="#geosoft.gxapi.GXSBF.h_get_map" title="geosoft.gxapi.GXSBF.h_get_map"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXSBF.h_get_map()</span></code></a> functions. To access data in a file, or create a
 new file in the SBF object, call the CreatSBF_BF function (see BF),
 which will return a BF object to use.
 </pre>
 <dl class="method">
 <dt id="geosoft.gxapi.GXSBF.create">
 <code class="descname">create</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(int)arg2</em><span class="sig-paren">)</span> &rarr; GXSBF:<a class="headerlink" href="#geosoft.gxapi.GXSBF.create" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Create a child SBF object inside an SBF.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Create</span> <span class="n">a</span> <span class="n">child</span> <span class="n">SBF</span> <span class="nb">object</span> <span class="n">inside</span> <span class="n">an</span> <span class="n">SBF</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<em>str</em>) &#8211; directory name to open / create</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#sbf-open"><span class="std std-ref">SBF_OPEN constants</span></a></li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#sbf-open"><span class="std std-ref">SBF_OPEN constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -130,16 +149,16 @@ Create a child SBF object inside an SBF.
 <dl class="method">
 <dt id="geosoft.gxapi.GXSBF.create_obj_list">
 <code class="descname">create_obj_list</code><span class="sig-paren">(</span><em>(GXLST)arg1</em>, <em>(int)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSBF.create_obj_list" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Fills an LST with embedded storage names of an SBF.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Fills</span> <span class="n">an</span> <span class="n">LST</span> <span class="k">with</span> <span class="n">embedded</span> <span class="n">storage</span> <span class="n">names</span> <span class="n">of</span> <span class="n">an</span> <span class="n">SBF</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXLST</span></code></a>) &#8211; LST handle</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#sbf-type"><span class="std std-ref">SBF_TYPE constants</span></a></li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#sbf-type"><span class="std std-ref">SBF_TYPE constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -155,20 +174,20 @@ Fills an LST with embedded storage names of an SBF.
 <p><span class="versionmodified">New in version 5.0.7.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-Function will populate an LST object with embedded files (SBF_TYPE_FILES),
-directories (SBF_TYPE_DIRS), or both (pass SBF_TYPE_BOTH) in an SBF.
-Along with the Name of the file or directory, a constant &quot;dir&quot; or &quot;file&quot; string is written
-to the LST also.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Function</span> <span class="n">will</span> <span class="n">populate</span> <span class="n">an</span> <span class="n">LST</span> <span class="nb">object</span> <span class="k">with</span> <span class="n">embedded</span> <span class="n">files</span> <span class="p">(</span><span class="n">SBF_TYPE_FILES</span><span class="p">),</span>
+<span class="n">directories</span> <span class="p">(</span><span class="n">SBF_TYPE_DIRS</span><span class="p">),</span> <span class="ow">or</span> <span class="n">both</span> <span class="p">(</span><span class="k">pass</span> <span class="n">SBF_TYPE_BOTH</span><span class="p">)</span> <span class="ow">in</span> <span class="n">an</span> <span class="n">SBF</span><span class="o">.</span>
+<span class="n">Along</span> <span class="k">with</span> <span class="n">the</span> <span class="n">Name</span> <span class="n">of</span> <span class="n">the</span> <span class="n">file</span> <span class="ow">or</span> <span class="n">directory</span><span class="p">,</span> <span class="n">a</span> <span class="n">constant</span> <span class="s2">&quot;dir&quot;</span> <span class="ow">or</span> <span class="s2">&quot;file&quot;</span> <span class="n">string</span> <span class="ow">is</span> <span class="n">written</span>
+<span class="n">to</span> <span class="n">the</span> <span class="n">LST</span> <span class="n">also</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXSBF.del_dir">
 <code class="descname">del_dir</code><span class="sig-paren">(</span><em>(str)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSBF.del_dir" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Delete a directory (storage) from this storage.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Delete</span> <span class="n">a</span> <span class="n">directory</span> <span class="p">(</span><span class="n">storage</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">this</span> <span class="n">storage</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -189,9 +208,9 @@ Delete a directory (storage) from this storage.
 <dl class="method">
 <dt id="geosoft.gxapi.GXSBF.del_file">
 <code class="descname">del_file</code><span class="sig-paren">(</span><em>(str)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSBF.del_file" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Delete a file from this storage.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Delete</span> <span class="n">a</span> <span class="n">file</span> <span class="kn">from</span> <span class="nn">this</span> <span class="n">storage</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -212,9 +231,9 @@ Delete a file from this storage.
 <dl class="method">
 <dt id="geosoft.gxapi.GXSBF.exist_dir">
 <code class="descname">exist_dir</code><span class="sig-paren">(</span><em>(str)arg1</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXSBF.exist_dir" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Check to see if a directory (storage) exists inside this storage.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Check</span> <span class="n">to</span> <span class="n">see</span> <span class="k">if</span> <span class="n">a</span> <span class="n">directory</span> <span class="p">(</span><span class="n">storage</span><span class="p">)</span> <span class="n">exists</span> <span class="n">inside</span> <span class="n">this</span> <span class="n">storage</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -224,7 +243,7 @@ Check to see if a directory (storage) exists inside this storage.
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">0 - Does not exist
 1 - Exists</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
 </tr>
 </tbody>
 </table>
@@ -236,9 +255,9 @@ Check to see if a directory (storage) exists inside this storage.
 <dl class="method">
 <dt id="geosoft.gxapi.GXSBF.exist_file">
 <code class="descname">exist_file</code><span class="sig-paren">(</span><em>(str)arg1</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXSBF.exist_file" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Check to see if a file exists inside this storage.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Check</span> <span class="n">to</span> <span class="n">see</span> <span class="k">if</span> <span class="n">a</span> <span class="n">file</span> <span class="n">exists</span> <span class="n">inside</span> <span class="n">this</span> <span class="n">storage</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -248,7 +267,7 @@ Check to see if a file exists inside this storage.
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">0 - Does not exist
 1 - Exists</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
 </tr>
 </tbody>
 </table>
@@ -260,9 +279,9 @@ Check to see if a file exists inside this storage.
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXSBF.h_get_db">
 <em class="property">static </em><code class="descname">h_get_db</code><span class="sig-paren">(</span><em>(GXDB)arg1</em><span class="sig-paren">)</span> &rarr; GXSBF:<a class="headerlink" href="#geosoft.gxapi.GXSBF.h_get_db" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Get the embedded file storage from a database.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">the</span> <span class="n">embedded</span> <span class="n">file</span> <span class="n">storage</span> <span class="kn">from</span> <span class="nn">a</span> <span class="n">database</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -283,9 +302,9 @@ Get the embedded file storage from a database.
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXSBF.h_get_map">
 <em class="property">static </em><code class="descname">h_get_map</code><span class="sig-paren">(</span><em>(GXMAP)arg1</em><span class="sig-paren">)</span> &rarr; GXSBF:<a class="headerlink" href="#geosoft.gxapi.GXSBF.h_get_map" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Get the embedded file storage from a map.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">the</span> <span class="n">embedded</span> <span class="n">file</span> <span class="n">storage</span> <span class="kn">from</span> <span class="nn">a</span> <span class="nb">map</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -306,9 +325,9 @@ Get the embedded file storage from a map.
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXSBF.h_get_sys">
 <em class="property">static </em><code class="descname">h_get_sys</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; GXSBF:<a class="headerlink" href="#geosoft.gxapi.GXSBF.h_get_sys" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Get the main embedded file storage (in workspace).
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">the</span> <span class="n">main</span> <span class="n">embedded</span> <span class="n">file</span> <span class="n">storage</span> <span class="p">(</span><span class="ow">in</span> <span class="n">workspace</span><span class="p">)</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -359,9 +378,9 @@ Get the main embedded file storage (in workspace).
 <dl class="method">
 <dt id="geosoft.gxapi.GXSBF.save_log">
 <code class="descname">save_log</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(str)arg2</em>, <em>(str)arg3</em>, <em>(int)arg4</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSBF.save_log" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Save an embedded file to an ASCII file.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Save</span> <span class="n">an</span> <span class="n">embedded</span> <span class="n">file</span> <span class="n">to</span> <span class="n">an</span> <span class="n">ASCII</span> <span class="n">file</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -370,7 +389,7 @@ Save an embedded file to an ASCII file.
 <li><strong>arg1</strong> (<em>str</em>) &#8211; Directory name in the Parent SBF</li>
 <li><strong>arg2</strong> (<em>str</em>) &#8211; File name in the directory</li>
 <li><strong>arg3</strong> (<em>str</em>) &#8211; File to save as (as an ASCII file)</li>
-<li><strong>arg4</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Append Mode: 0 - New file, 1 - Append file</li>
+<li><strong>arg4</strong> (<em>int</em>) &#8211; Append Mode: 0 - New file, 1 - Append file</li>
 </ul>
 </td>
 </tr>
@@ -464,9 +483,13 @@ Save an embedded file to an ASCII file.
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li> 
+          <a href="GXSEMPLOT.html" title="GXSEMPLOT class"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="GXRGRD.html" title="GXRGRD class"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="geosoft.gxapi.classes.html" >GX API Class/Library Reference</a> &#187;</li> 
       </ul>
     </div>
 

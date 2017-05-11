@@ -27,6 +27,8 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="GXDGW class" href="GXDGW.html" />
+    <link rel="prev" title="GXDBREAD class" href="GXDBREAD.html" />
  
 <script type="text/javascript">
   var _gaq = _gaq || [];
@@ -43,20 +45,30 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li> 
+          <a href="GXDGW.html" title="GXDGW class"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="GXDBREAD.html" title="GXDBREAD class"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="geosoft.gxapi.classes.html" accesskey="U">GX API Class/Library Reference</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <div role="note" aria-label="source link">
-    <h3>This Page</h3>
-    <ul class="this-page-menu">
-      <li><a href="_sources/GXDBWRITE.rst.txt"
-            rel="nofollow">Show Source</a></li>
-    </ul>
-   </div>
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Introduction</a></li>
+    <li><a href="geosoft.gxapi.classes.html">GX API Class/Library Reference</a></li>
+</ul>
+<h3>Previous Topic</h3>
+<ul>
+    <li><a href="GXDBREAD.html" title="previous chapter">GXDBREAD class</a></li>
+</ul>
+<h3>Next Topic</h3>
+<ul>
+    <li><a href="GXDGW.html" title="next chapter">GXDGW class</a></li>
+</ul>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
@@ -67,6 +79,13 @@
     </form>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/GXDBWRITE.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
         </div>
       </div>
 
@@ -80,23 +99,23 @@
 <dl class="class">
 <dt id="geosoft.gxapi.GXDBWRITE">
 <em class="property">class </em><code class="descclassname">geosoft.gxapi.</code><code class="descname">GXDBWRITE</code><a class="headerlink" href="#geosoft.gxapi.GXDBWRITE" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-The DBWRITE class is used to open and write to databases. Large blocks of data
-  are split into blocks and served up sequentially to prevent the over-use of virtual memory when VVs or VAs are being written to channels.
-  Individual data blocks are limited by default to 1 MB (which is user-alterable). Data less than the block size
-  are served up whole, one block per line.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">DBWRITE</span> <span class="k">class</span> <span class="nc">is</span> <span class="n">used</span> <span class="n">to</span> <span class="nb">open</span> <span class="ow">and</span> <span class="n">write</span> <span class="n">to</span> <span class="n">databases</span><span class="o">.</span> <span class="n">Large</span> <span class="n">blocks</span> <span class="n">of</span> <span class="n">data</span>
+  <span class="n">are</span> <span class="n">split</span> <span class="n">into</span> <span class="n">blocks</span> <span class="ow">and</span> <span class="n">served</span> <span class="n">up</span> <span class="n">sequentially</span> <span class="n">to</span> <span class="n">prevent</span> <span class="n">the</span> <span class="n">over</span><span class="o">-</span><span class="n">use</span> <span class="n">of</span> <span class="n">virtual</span> <span class="n">memory</span> <span class="n">when</span> <span class="n">VVs</span> <span class="ow">or</span> <span class="n">VAs</span> <span class="n">are</span> <span class="n">being</span> <span class="n">written</span> <span class="n">to</span> <span class="n">channels</span><span class="o">.</span>
+  <span class="n">Individual</span> <span class="n">data</span> <span class="n">blocks</span> <span class="n">are</span> <span class="n">limited</span> <span class="n">by</span> <span class="n">default</span> <span class="n">to</span> <span class="mi">1</span> <span class="n">MB</span> <span class="p">(</span><span class="n">which</span> <span class="ow">is</span> <span class="n">user</span><span class="o">-</span><span class="n">alterable</span><span class="p">)</span><span class="o">.</span> <span class="n">Data</span> <span class="n">less</span> <span class="n">than</span> <span class="n">the</span> <span class="n">block</span> <span class="n">size</span>
+  <span class="n">are</span> <span class="n">served</span> <span class="n">up</span> <span class="n">whole</span><span class="p">,</span> <span class="n">one</span> <span class="n">block</span> <span class="n">per</span> <span class="n">line</span><span class="o">.</span>
+</pre></div>
+</div>
 <dl class="method">
 <dt id="geosoft.gxapi.GXDBWRITE.add_block">
 <code class="descname">add_block</code><span class="sig-paren">(</span><em>(int)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXDBWRITE.add_block" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Add the current block of data.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Add</span> <span class="n">the</span> <span class="n">current</span> <span class="n">block</span> <span class="n">of</span> <span class="n">data</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Line</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>int</em>) &#8211; Line</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">nothing</td>
 </tr>
@@ -108,26 +127,26 @@ Add the current block of data.
 <p><span class="versionmodified">New in version 9.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-First, set up the data for each channel by copying values into the individual channel VVs and VAs.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">First</span><span class="p">,</span> <span class="nb">set</span> <span class="n">up</span> <span class="n">the</span> <span class="n">data</span> <span class="k">for</span> <span class="n">each</span> <span class="n">channel</span> <span class="n">by</span> <span class="n">copying</span> <span class="n">values</span> <span class="n">into</span> <span class="n">the</span> <span class="n">individual</span> <span class="n">channel</span> <span class="n">VVs</span> <span class="ow">and</span> <span class="n">VAs</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXDBWRITE.add_channel">
 <code class="descname">add_channel</code><span class="sig-paren">(</span><em>(int)arg1</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXDBWRITE.add_channel" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Add a data channel to the DBWRITE object.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Add</span> <span class="n">a</span> <span class="n">data</span> <span class="n">channel</span> <span class="n">to</span> <span class="n">the</span> <span class="n">DBWRITE</span> <span class="nb">object</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Channel handle (does not need to be locked, but can be.)</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>int</em>) &#8211; Channel handle (does not need to be locked, but can be.)</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Channel index. Use for getting the correct VV or VA object.</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
 </tr>
 </tbody>
 </table>
@@ -139,9 +158,9 @@ Add a data channel to the DBWRITE object.
 <dl class="method">
 <dt id="geosoft.gxapi.GXDBWRITE.commit">
 <code class="descname">commit</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXDBWRITE.commit" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Commit remaining data to the database.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Commit</span> <span class="n">remaining</span> <span class="n">data</span> <span class="n">to</span> <span class="n">the</span> <span class="n">database</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -162,7 +181,7 @@ Commit remaining data to the database.
 <em class="property">static </em><code class="descname">create</code><span class="sig-paren">(</span><em>(GXDB)arg1</em><span class="sig-paren">)</span> &rarr; GXDBWRITE:<a class="headerlink" href="#geosoft.gxapi.GXDBWRITE.create" title="Permalink to this definition">¶</a></dt>
 <dd><pre class="literal-block">
 Create a DBWRITE object
-Add channels using the \ :func:`geosoft.gxapi.GXDBWRITE.add_channel`\ () method.channel.
+Add channels using the <a class="reference internal" href="#geosoft.gxapi.GXDBWRITE.add_channel" title="geosoft.gxapi.GXDBWRITE.add_channel"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXDBWRITE.add_channel()</span></code></a>() method.channel.
 </pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -186,7 +205,7 @@ Add channels using the \ :func:`geosoft.gxapi.GXDBWRITE.add_channel`\ () method.
 <em class="property">static </em><code class="descname">create_xy</code><span class="sig-paren">(</span><em>(GXDB)arg1</em><span class="sig-paren">)</span> &rarr; GXDBWRITE:<a class="headerlink" href="#geosoft.gxapi.GXDBWRITE.create_xy" title="Permalink to this definition">¶</a></dt>
 <dd><pre class="literal-block">
 Create a DBWRITE object for a XY-located data. Add channels using the
-                            \ :func:`geosoft.gxapi.GXDBWRITE.add_channel`\ () method.
+                            <a class="reference internal" href="#geosoft.gxapi.GXDBWRITE.add_channel" title="geosoft.gxapi.GXDBWRITE.add_channel"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXDBWRITE.add_channel()</span></code></a>() method.
 </pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -210,7 +229,7 @@ Create a DBWRITE object for a XY-located data. Add channels using the
 <em class="property">static </em><code class="descname">create_xyz</code><span class="sig-paren">(</span><em>(GXDB)arg1</em><span class="sig-paren">)</span> &rarr; GXDBWRITE:<a class="headerlink" href="#geosoft.gxapi.GXDBWRITE.create_xyz" title="Permalink to this definition">¶</a></dt>
 <dd><pre class="literal-block">
 Create a DBWRITE object for a XYZ-located data.
-Add channels using the \ :func:`geosoft.gxapi.GXDBWRITE.add_channel`\ () method.channel
+Add channels using the <a class="reference internal" href="#geosoft.gxapi.GXDBWRITE.add_channel" title="geosoft.gxapi.GXDBWRITE.add_channel"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXDBWRITE.add_channel()</span></code></a>() method.channel
 </pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -232,18 +251,18 @@ Add channels using the \ :func:`geosoft.gxapi.GXDBWRITE.add_channel`\ () method.
 <dl class="method">
 <dt id="geosoft.gxapi.GXDBWRITE.get_chan_array_size">
 <code class="descname">get_chan_array_size</code><span class="sig-paren">(</span><em>(int)arg1</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXDBWRITE.get_chan_array_size" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Get the number of columns of data in a channel.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">the</span> <span class="n">number</span> <span class="n">of</span> <span class="n">columns</span> <span class="n">of</span> <span class="n">data</span> <span class="ow">in</span> <span class="n">a</span> <span class="n">channel</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Index of channel to access.</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>int</em>) &#8211; Index of channel to access.</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">The number of columns (array size) for a channel</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
 </tr>
 </tbody>
 </table>
@@ -253,7 +272,7 @@ Get the number of columns of data in a channel.
 <p><strong>Note:</strong></p>
 <pre class="literal-block">
 Regular channels have one column of data. Array channels have more than one column of data.
-This function should be called to determine whether to use \ :func:`geosoft.gxapi.GXDBWRITE.get_vv`\  or \ :func:`geosoft.gxapi.GXDBWRITE.get_va`\  to access data
+This function should be called to determine whether to use <a class="reference internal" href="#geosoft.gxapi.GXDBWRITE.get_vv" title="geosoft.gxapi.GXDBWRITE.get_vv"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXDBWRITE.get_vv()</span></code></a> or <a class="reference internal" href="#geosoft.gxapi.GXDBWRITE.get_va" title="geosoft.gxapi.GXDBWRITE.get_va"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXDBWRITE.get_va()</span></code></a> to access data
 for a channel.
 </pre>
 </dd></dl>
@@ -261,9 +280,9 @@ for a channel.
 <dl class="method">
 <dt id="geosoft.gxapi.GXDBWRITE.get_db">
 <code class="descname">get_db</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; GXDB:<a class="headerlink" href="#geosoft.gxapi.GXDBWRITE.get_db" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Get the output DB handle from the DBWRITE object.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">the</span> <span class="n">output</span> <span class="n">DB</span> <span class="n">handle</span> <span class="kn">from</span> <span class="nn">the</span> <span class="n">DBWRITE</span> <span class="nb">object</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -282,9 +301,9 @@ Get the output DB handle from the DBWRITE object.
 <dl class="method">
 <dt id="geosoft.gxapi.GXDBWRITE.get_v_vx">
 <code class="descname">get_v_vx</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; GXVV:<a class="headerlink" href="#geosoft.gxapi.GXDBWRITE.get_v_vx" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Get the X channel VV handle.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">the</span> <span class="n">X</span> <span class="n">channel</span> <span class="n">VV</span> <span class="n">handle</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -299,18 +318,18 @@ Get the X channel VV handle.
 <p><span class="versionmodified">New in version 9.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-Only available for the CreateXY or CreateXYZ methods.
-The VV is filled anew for each block served up.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Only</span> <span class="n">available</span> <span class="k">for</span> <span class="n">the</span> <span class="n">CreateXY</span> <span class="ow">or</span> <span class="n">CreateXYZ</span> <span class="n">methods</span><span class="o">.</span>
+<span class="n">The</span> <span class="n">VV</span> <span class="ow">is</span> <span class="n">filled</span> <span class="n">anew</span> <span class="k">for</span> <span class="n">each</span> <span class="n">block</span> <span class="n">served</span> <span class="n">up</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXDBWRITE.get_v_vy">
 <code class="descname">get_v_vy</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; GXVV:<a class="headerlink" href="#geosoft.gxapi.GXDBWRITE.get_v_vy" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Get the Y channel VV handle.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">the</span> <span class="n">Y</span> <span class="n">channel</span> <span class="n">VV</span> <span class="n">handle</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -325,18 +344,18 @@ Get the Y channel VV handle.
 <p><span class="versionmodified">New in version 9.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-Only available for the CreateXY or CreateXYZ methods.
-The VV is filled anew for each block served up.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Only</span> <span class="n">available</span> <span class="k">for</span> <span class="n">the</span> <span class="n">CreateXY</span> <span class="ow">or</span> <span class="n">CreateXYZ</span> <span class="n">methods</span><span class="o">.</span>
+<span class="n">The</span> <span class="n">VV</span> <span class="ow">is</span> <span class="n">filled</span> <span class="n">anew</span> <span class="k">for</span> <span class="n">each</span> <span class="n">block</span> <span class="n">served</span> <span class="n">up</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXDBWRITE.get_v_vz">
 <code class="descname">get_v_vz</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; GXVV:<a class="headerlink" href="#geosoft.gxapi.GXDBWRITE.get_v_vz" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Get the Z channel VV handle.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">the</span> <span class="n">Z</span> <span class="n">channel</span> <span class="n">VV</span> <span class="n">handle</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -351,24 +370,24 @@ Get the Z channel VV handle.
 <p><span class="versionmodified">New in version 9.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-Only available for the CreateXY or CreateXYZ methods.
-The VV is filled anew for each block served up.
-If the Z channel is an array channel, the returned VV is the &quot;base&quot; VV of the VA and contains all items sequentially.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Only</span> <span class="n">available</span> <span class="k">for</span> <span class="n">the</span> <span class="n">CreateXY</span> <span class="ow">or</span> <span class="n">CreateXYZ</span> <span class="n">methods</span><span class="o">.</span>
+<span class="n">The</span> <span class="n">VV</span> <span class="ow">is</span> <span class="n">filled</span> <span class="n">anew</span> <span class="k">for</span> <span class="n">each</span> <span class="n">block</span> <span class="n">served</span> <span class="n">up</span><span class="o">.</span>
+<span class="n">If</span> <span class="n">the</span> <span class="n">Z</span> <span class="n">channel</span> <span class="ow">is</span> <span class="n">an</span> <span class="n">array</span> <span class="n">channel</span><span class="p">,</span> <span class="n">the</span> <span class="n">returned</span> <span class="n">VV</span> <span class="ow">is</span> <span class="n">the</span> <span class="s2">&quot;base&quot;</span> <span class="n">VV</span> <span class="n">of</span> <span class="n">the</span> <span class="n">VA</span> <span class="ow">and</span> <span class="n">contains</span> <span class="nb">all</span> <span class="n">items</span> <span class="n">sequentially</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXDBWRITE.get_va">
 <code class="descname">get_va</code><span class="sig-paren">(</span><em>(int)arg1</em><span class="sig-paren">)</span> &rarr; GXVA:<a class="headerlink" href="#geosoft.gxapi.GXDBWRITE.get_va" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Get the VA handle for an array channel.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">the</span> <span class="n">VA</span> <span class="n">handle</span> <span class="k">for</span> <span class="n">an</span> <span class="n">array</span> <span class="n">channel</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Index of channel to access.</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>int</em>) &#8211; Index of channel to access.</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">VA handle</td>
 </tr>
@@ -381,8 +400,8 @@ Get the VA handle for an array channel.
 </div>
 <p><strong>Note:</strong></p>
 <pre class="literal-block">
-Call only for array (multi-column) channels. You can call the \ :func:`geosoft.gxapi.GXDBWRITE.get_chan_array_size`\ 
-function to find the number fo columns in a given channel, or you can call \ :func:`geosoft.gxapi.GXVA.col`\  on the returned VA handle.
+Call only for array (multi-column) channels. You can call the <a class="reference internal" href="#geosoft.gxapi.GXDBWRITE.get_chan_array_size" title="geosoft.gxapi.GXDBWRITE.get_chan_array_size"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXDBWRITE.get_chan_array_size()</span></code></a>
+function to find the number fo columns in a given channel, or you can call <a class="reference internal" href="GXVA.html#geosoft.gxapi.GXVA.col" title="geosoft.gxapi.GXVA.col"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXVA.col()</span></code></a> on the returned VA handle.
 The VA is filled anew for each block served up.
 </pre>
 </dd></dl>
@@ -390,14 +409,14 @@ The VA is filled anew for each block served up.
 <dl class="method">
 <dt id="geosoft.gxapi.GXDBWRITE.get_vv">
 <code class="descname">get_vv</code><span class="sig-paren">(</span><em>(int)arg1</em><span class="sig-paren">)</span> &rarr; GXVV:<a class="headerlink" href="#geosoft.gxapi.GXDBWRITE.get_vv" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Get the VV handle for a channel.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">the</span> <span class="n">VV</span> <span class="n">handle</span> <span class="k">for</span> <span class="n">a</span> <span class="n">channel</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Index of channel to access.</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>int</em>) &#8211; Index of channel to access.</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">VV handle</td>
 </tr>
@@ -410,7 +429,7 @@ Get the VV handle for a channel.
 </div>
 <p><strong>Note:</strong></p>
 <pre class="literal-block">
-Call only for single-column (regular) channels. You can call the \ :func:`geosoft.gxapi.GXDBWRITE.get_chan_array_size`\ 
+Call only for single-column (regular) channels. You can call the <a class="reference internal" href="#geosoft.gxapi.GXDBWRITE.get_chan_array_size" title="geosoft.gxapi.GXDBWRITE.get_chan_array_size"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXDBWRITE.get_chan_array_size()</span></code></a>
                       function to find the number fo columns in a given channel.
                  The VV is filled anew for each block served up.
 </pre>
@@ -451,9 +470,9 @@ Call only for single-column (regular) channels. You can call the \ :func:`geosof
 <dl class="method">
 <dt id="geosoft.gxapi.GXDBWRITE.test_func">
 <code class="descname">test_func</code><span class="sig-paren">(</span><em>(GXRA)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXDBWRITE.test_func" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Temporary test function.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Temporary</span> <span class="n">test</span> <span class="n">function</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -470,9 +489,9 @@ Temporary test function.
 <p><span class="versionmodified">New in version 9.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-Designed to import the &quot;Massive.xyz&quot; file, which has data in the format &quot;X Y Z Data&quot;.                            
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Designed</span> <span class="n">to</span> <span class="kn">import</span> <span class="nn">the</span> <span class="s2">&quot;Massive.xyz&quot;</span> <span class="n">file</span><span class="p">,</span> <span class="n">which</span> <span class="n">has</span> <span class="n">data</span> <span class="ow">in</span> <span class="n">the</span> <span class="nb">format</span> <span class="s2">&quot;X Y Z Data&quot;</span><span class="o">.</span>                           
+</pre></div>
+</div>
 </dd></dl>
 
 </dd></dl>
@@ -492,9 +511,13 @@ Designed to import the &quot;Massive.xyz&quot; file, which has data in the forma
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li> 
+          <a href="GXDGW.html" title="GXDGW class"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="GXDBREAD.html" title="GXDBREAD class"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="geosoft.gxapi.classes.html" >GX API Class/Library Reference</a> &#187;</li> 
       </ul>
     </div>
 

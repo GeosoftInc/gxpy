@@ -27,6 +27,8 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="GXITR class" href="GXITR.html" />
+    <link rel="prev" title="GXIPGUI class" href="GXIPGUI.html" />
  
 <script type="text/javascript">
   var _gaq = _gaq || [];
@@ -43,9 +45,13 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li> 
+          <a href="GXITR.html" title="GXITR class"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="GXIPGUI.html" title="GXIPGUI class"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="geosoft.gxapi.classes.html" accesskey="U">GX API Class/Library Reference</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -66,13 +72,19 @@
 </li>
 </ul>
 
-  <div role="note" aria-label="source link">
-    <h3>This Page</h3>
-    <ul class="this-page-menu">
-      <li><a href="_sources/GXIPJ.rst.txt"
-            rel="nofollow">Show Source</a></li>
-    </ul>
-   </div>
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Introduction</a></li>
+    <li><a href="geosoft.gxapi.classes.html">GX API Class/Library Reference</a></li>
+</ul>
+<h3>Previous Topic</h3>
+<ul>
+    <li><a href="GXIPGUI.html" title="previous chapter">GXIPGUI class</a></li>
+</ul>
+<h3>Next Topic</h3>
+<ul>
+    <li><a href="GXITR.html" title="next chapter">GXITR class</a></li>
+</ul>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
@@ -83,6 +95,13 @@
     </form>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/GXIPJ.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
         </div>
       </div>
 
@@ -96,28 +115,28 @@
 <dl class="class">
 <dt id="geosoft.gxapi.GXIPJ">
 <em class="property">class </em><code class="descclassname">geosoft.gxapi.</code><code class="descname">GXIPJ</code><a class="headerlink" href="#geosoft.gxapi.GXIPJ" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-The IPJ class describes a single spatial reference in the world,
-defined under a coordinate system, an orientation,
-and a warp (which can be used to distort the projected object
-to a particular shape or boundary).
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">IPJ</span> <span class="k">class</span> <span class="nc">describes</span> <span class="n">a</span> <span class="n">single</span> <span class="n">spatial</span> <span class="n">reference</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">world</span><span class="p">,</span>
+<span class="n">defined</span> <span class="n">under</span> <span class="n">a</span> <span class="n">coordinate</span> <span class="n">system</span><span class="p">,</span> <span class="n">an</span> <span class="n">orientation</span><span class="p">,</span>
+<span class="ow">and</span> <span class="n">a</span> <span class="n">warp</span> <span class="p">(</span><span class="n">which</span> <span class="n">can</span> <span class="n">be</span> <span class="n">used</span> <span class="n">to</span> <span class="n">distort</span> <span class="n">the</span> <span class="n">projected</span> <span class="nb">object</span>
+<span class="n">to</span> <span class="n">a</span> <span class="n">particular</span> <span class="n">shape</span> <span class="ow">or</span> <span class="n">boundary</span><span class="p">)</span><span class="o">.</span>
+</pre></div>
+</div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-IPJ objects may be attached to channels or views. Two IPJs taken
-together are used to create a PJ object, which allows for the
-conversion of positions from one projection to the other.
-See also the LL2 class, which creates Datum correction lookups.
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">IPJ</span> <span class="n">objects</span> <span class="n">may</span> <span class="n">be</span> <span class="n">attached</span> <span class="n">to</span> <span class="n">channels</span> <span class="ow">or</span> <span class="n">views</span><span class="o">.</span> <span class="n">Two</span> <span class="n">IPJs</span> <span class="n">taken</span>
+<span class="n">together</span> <span class="n">are</span> <span class="n">used</span> <span class="n">to</span> <span class="n">create</span> <span class="n">a</span> <span class="n">PJ</span> <span class="nb">object</span><span class="p">,</span> <span class="n">which</span> <span class="n">allows</span> <span class="k">for</span> <span class="n">the</span>
+<span class="n">conversion</span> <span class="n">of</span> <span class="n">positions</span> <span class="kn">from</span> <span class="nn">one</span> <span class="n">projection</span> <span class="n">to</span> <span class="n">the</span> <span class="n">other</span><span class="o">.</span>
+<span class="n">See</span> <span class="n">also</span> <span class="n">the</span> <span class="n">LL2</span> <span class="n">class</span><span class="p">,</span> <span class="n">which</span> <span class="n">creates</span> <span class="n">Datum</span> <span class="n">correction</span> <span class="n">lookups</span><span class="o">.</span>
 
-See also          PJ    Converts coordinates between projections
-LL2   Creates Datum correction lookups.
-</pre>
+<span class="n">See</span> <span class="n">also</span>          <span class="n">PJ</span>    <span class="n">Converts</span> <span class="n">coordinates</span> <span class="n">between</span> <span class="n">projections</span>
+<span class="n">LL2</span>   <span class="n">Creates</span> <span class="n">Datum</span> <span class="n">correction</span> <span class="n">lookups</span><span class="o">.</span>
+</pre></div>
+</div>
 <dl class="method">
 <dt id="geosoft.gxapi.GXIPJ.add_exagg_warp">
 <code class="descname">add_exagg_warp</code><span class="sig-paren">(</span><em>(float)arg1</em>, <em>(float)arg2</em>, <em>(float)arg3</em>, <em>(float)arg4</em>, <em>(float)arg5</em>, <em>(float)arg6</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIPJ.add_exagg_warp" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Add a warp to IPJ to exaggerate X, Y and Z.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Add</span> <span class="n">a</span> <span class="n">warp</span> <span class="n">to</span> <span class="n">IPJ</span> <span class="n">to</span> <span class="n">exaggerate</span> <span class="n">X</span><span class="p">,</span> <span class="n">Y</span> <span class="ow">and</span> <span class="n">Z</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -156,8 +175,8 @@ Add a warp to IPJ to exaggerate X, Y and Z.
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Log in X?</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Log in Y?</li>
+<li><strong>arg1</strong> (<em>int</em>) &#8211; Log in X?</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; Log in Y?</li>
 </ul>
 </td>
 </tr>
@@ -220,15 +239,15 @@ Add a warp to IPJ to exaggerate X, Y and Z.
 <dl class="method">
 <dt id="geosoft.gxapi.GXIPJ.add_warp">
 <code class="descname">add_warp</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(GXVV)arg2</em>, <em>(GXVV)arg3</em>, <em>(GXVV)arg4</em>, <em>(GXVV)arg5</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIPJ.add_warp" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Add a warp to IPJ.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Add</span> <span class="n">a</span> <span class="n">warp</span> <span class="n">to</span> <span class="n">IPJ</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#ipj-type"><span class="std std-ref">IPJ_TYPE constants</span></a></li>
+<li><strong>arg1</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#ipj-type"><span class="std std-ref">IPJ_TYPE constants</span></a></li>
 <li><strong>arg2</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Old X VV (real)</li>
 <li><strong>arg3</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Old Y VV (real)</li>
 <li><strong>arg4</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; New X VV (real)</li>
@@ -248,25 +267,25 @@ Add a warp to IPJ.
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-There must be at least &quot;warp type&quot; points in the
-warp point VV's.
-All point VV's must have the same number of points.
-If there are more points than required by the warp,
-the warp will be determined by least-square fitting
-to the warp surface for all but the 4-point warp.
-The 4-point ward requires exactly 4 points.
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">There</span> <span class="n">must</span> <span class="n">be</span> <span class="n">at</span> <span class="n">least</span> <span class="s2">&quot;warp type&quot;</span> <span class="n">points</span> <span class="ow">in</span> <span class="n">the</span>
+<span class="n">warp</span> <span class="n">point</span> <span class="n">VV</span><span class="s1">&#39;s.</span>
+<span class="n">All</span> <span class="n">point</span> <span class="n">VV</span><span class="s1">&#39;s must have the same number of points.</span>
+<span class="n">If</span> <span class="n">there</span> <span class="n">are</span> <span class="n">more</span> <span class="n">points</span> <span class="n">than</span> <span class="n">required</span> <span class="n">by</span> <span class="n">the</span> <span class="n">warp</span><span class="p">,</span>
+<span class="n">the</span> <span class="n">warp</span> <span class="n">will</span> <span class="n">be</span> <span class="n">determined</span> <span class="n">by</span> <span class="n">least</span><span class="o">-</span><span class="n">square</span> <span class="n">fitting</span>
+<span class="n">to</span> <span class="n">the</span> <span class="n">warp</span> <span class="n">surface</span> <span class="k">for</span> <span class="nb">all</span> <span class="n">but</span> <span class="n">the</span> <span class="mi">4</span><span class="o">-</span><span class="n">point</span> <span class="n">warp</span><span class="o">.</span>
+<span class="n">The</span> <span class="mi">4</span><span class="o">-</span><span class="n">point</span> <span class="n">ward</span> <span class="n">requires</span> <span class="n">exactly</span> <span class="mi">4</span> <span class="n">points</span><span class="o">.</span>
 
-Cannot be used with WARP_MATRIX or WARP_LOG
-</pre>
+<span class="n">Cannot</span> <span class="n">be</span> <span class="n">used</span> <span class="k">with</span> <span class="n">WARP_MATRIX</span> <span class="ow">or</span> <span class="n">WARP_LOG</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXIPJ.clear_coordinate_system">
 <code class="descname">clear_coordinate_system</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIPJ.clear_coordinate_system" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Clear coordinate sytsem, except for units
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Clear</span> <span class="n">coordinate</span> <span class="n">sytsem</span><span class="p">,</span> <span class="k">except</span> <span class="k">for</span> <span class="n">units</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -281,18 +300,18 @@ Clear coordinate sytsem, except for units
 <p><span class="versionmodified">New in version 7.2.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-Clears the Datum, Local Datum and Projection info.
-Leaves units, any warp or orientation warp unchanged.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Clears</span> <span class="n">the</span> <span class="n">Datum</span><span class="p">,</span> <span class="n">Local</span> <span class="n">Datum</span> <span class="ow">and</span> <span class="n">Projection</span> <span class="n">info</span><span class="o">.</span>
+<span class="n">Leaves</span> <span class="n">units</span><span class="p">,</span> <span class="nb">any</span> <span class="n">warp</span> <span class="ow">or</span> <span class="n">orientation</span> <span class="n">warp</span> <span class="n">unchanged</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXIPJ.clear_orientation">
 <code class="descname">clear_orientation</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIPJ.clear_orientation" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Clear an orientation warp from an IPJ.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Clear</span> <span class="n">an</span> <span class="n">orientation</span> <span class="n">warp</span> <span class="kn">from</span> <span class="nn">an</span> <span class="n">IPJ</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -311,9 +330,9 @@ Clear an orientation warp from an IPJ.
 <dl class="method">
 <dt id="geosoft.gxapi.GXIPJ.clear_warp">
 <code class="descname">clear_warp</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIPJ.clear_warp" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Clear warp parameters (if any) from an IPJ.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Clear</span> <span class="n">warp</span> <span class="n">parameters</span> <span class="p">(</span><span class="k">if</span> <span class="nb">any</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">an</span> <span class="n">IPJ</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -332,9 +351,9 @@ Clear warp parameters (if any) from an IPJ.
 <dl class="method">
 <dt id="geosoft.gxapi.GXIPJ.compare_datums">
 <code class="descname">compare_datums</code><span class="sig-paren">(</span><em>(GXIPJ)arg1</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXIPJ.compare_datums" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Compare the datums of two coordinate systems?
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span>Compare the datums of two coordinate systems?
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -345,7 +364,7 @@ Compare the datums of two coordinate systems?
 1 - Datums are the same, but different LDT
 2 - Datums and LTD are the same</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
 </tr>
 </tbody>
 </table>
@@ -353,23 +372,23 @@ Compare the datums of two coordinate systems?
 <p><span class="versionmodified">New in version 6.2.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-To transform between different datums requires the use of a local
-datum transform.  The local datum transform can be defined when
-a coordinate system is created, but the definition is optional.
-This function will test that the local datum transforms are defined.
-Note that a coordinate transformation between datums without a
-local datum transform is still possible, but only the effect of
-ellipsoid shape will be modelled in the transform.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">To</span> <span class="n">transform</span> <span class="n">between</span> <span class="n">different</span> <span class="n">datums</span> <span class="n">requires</span> <span class="n">the</span> <span class="n">use</span> <span class="n">of</span> <span class="n">a</span> <span class="n">local</span>
+<span class="n">datum</span> <span class="n">transform</span><span class="o">.</span>  <span class="n">The</span> <span class="n">local</span> <span class="n">datum</span> <span class="n">transform</span> <span class="n">can</span> <span class="n">be</span> <span class="n">defined</span> <span class="n">when</span>
+<span class="n">a</span> <span class="n">coordinate</span> <span class="n">system</span> <span class="ow">is</span> <span class="n">created</span><span class="p">,</span> <span class="n">but</span> <span class="n">the</span> <span class="n">definition</span> <span class="ow">is</span> <span class="n">optional</span><span class="o">.</span>
+<span class="n">This</span> <span class="n">function</span> <span class="n">will</span> <span class="n">test</span> <span class="n">that</span> <span class="n">the</span> <span class="n">local</span> <span class="n">datum</span> <span class="n">transforms</span> <span class="n">are</span> <span class="n">defined</span><span class="o">.</span>
+<span class="n">Note</span> <span class="n">that</span> <span class="n">a</span> <span class="n">coordinate</span> <span class="n">transformation</span> <span class="n">between</span> <span class="n">datums</span> <span class="n">without</span> <span class="n">a</span>
+<span class="n">local</span> <span class="n">datum</span> <span class="n">transform</span> <span class="ow">is</span> <span class="n">still</span> <span class="n">possible</span><span class="p">,</span> <span class="n">but</span> <span class="n">only</span> <span class="n">the</span> <span class="n">effect</span> <span class="n">of</span>
+<span class="n">ellipsoid</span> <span class="n">shape</span> <span class="n">will</span> <span class="n">be</span> <span class="n">modelled</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">transform</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXIPJ.convert_orientation_warp_vv">
 <code class="descname">convert_orientation_warp_vv</code><span class="sig-paren">(</span><em>(GXVV)arg1</em>, <em>(GXVV)arg2</em>, <em>(GXVV)arg3</em>, <em>(int)arg4</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIPJ.convert_orientation_warp_vv" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Convert X,Y and Z VVs using the orientation warp from an IPJ.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Convert</span> <span class="n">X</span><span class="p">,</span><span class="n">Y</span> <span class="ow">and</span> <span class="n">Z</span> <span class="n">VVs</span> <span class="n">using</span> <span class="n">the</span> <span class="n">orientation</span> <span class="n">warp</span> <span class="kn">from</span> <span class="nn">an</span> <span class="n">IPJ</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -378,7 +397,7 @@ Convert X,Y and Z VVs using the orientation warp from an IPJ.
 <li><strong>arg1</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; X VV coordinates converted on output</li>
 <li><strong>arg2</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Y VV coordinates converted on output</li>
 <li><strong>arg3</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Z VV coordinates converted on output</li>
-<li><strong>arg4</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; 1 -  Forward (raw -&gt; coordinate) , 0 - (coordinate -&gt; raw)</li>
+<li><strong>arg4</strong> (<em>int</em>) &#8211; 1 -  Forward (raw -&gt; coordinate) , 0 - (coordinate -&gt; raw)</li>
 </ul>
 </td>
 </tr>
@@ -398,9 +417,9 @@ Convert X,Y and Z VVs using the orientation warp from an IPJ.
 <dl class="method">
 <dt id="geosoft.gxapi.GXIPJ.convert_warp">
 <code class="descname">convert_warp</code><span class="sig-paren">(</span><em>(float_ref)arg1</em>, <em>(float_ref)arg2</em>, <em>(float_ref)arg3</em>, <em>(int)arg4</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXIPJ.convert_warp" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Converts a point X, Y, Z to the new IPJ plane.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Converts</span> <span class="n">a</span> <span class="n">point</span> <span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">Z</span> <span class="n">to</span> <span class="n">the</span> <span class="n">new</span> <span class="n">IPJ</span> <span class="n">plane</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -409,14 +428,14 @@ Converts a point X, Y, Z to the new IPJ plane.
 <li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; X coordinates converted on output</li>
 <li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Y coordinates converted on output</li>
 <li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Z coordinates converted on output</li>
-<li><strong>arg4</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; 1 -  Forward (raw -&gt; coordinate) , 0 - (coordinate -&gt; raw)</li>
+<li><strong>arg4</strong> (<em>int</em>) &#8211; 1 -  Forward (raw -&gt; coordinate) , 0 - (coordinate -&gt; raw)</li>
 </ul>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">0 if ok - 1 otherwise</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></p>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
 </td>
 </tr>
 </tbody>
@@ -429,9 +448,9 @@ Converts a point X, Y, Z to the new IPJ plane.
 <dl class="method">
 <dt id="geosoft.gxapi.GXIPJ.convert_warp_vv">
 <code class="descname">convert_warp_vv</code><span class="sig-paren">(</span><em>(GXVV)arg1</em>, <em>(GXVV)arg2</em>, <em>(int)arg3</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXIPJ.convert_warp_vv" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Converts a set of X &amp; Y VVs to the new IPJ plane. The Z is assumed to be 0
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Converts</span> <span class="n">a</span> <span class="nb">set</span> <span class="n">of</span> <span class="n">X</span> <span class="o">&amp;</span> <span class="n">Y</span> <span class="n">VVs</span> <span class="n">to</span> <span class="n">the</span> <span class="n">new</span> <span class="n">IPJ</span> <span class="n">plane</span><span class="o">.</span> <span class="n">The</span> <span class="n">Z</span> <span class="ow">is</span> <span class="n">assumed</span> <span class="n">to</span> <span class="n">be</span> <span class="mi">0</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -439,14 +458,14 @@ Converts a set of X &amp; Y VVs to the new IPJ plane. The Z is assumed to be 0
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; X VV coordinates converted on output</li>
 <li><strong>arg2</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Y VV coordinates converted on output</li>
-<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; 1 -  Forward (raw -&gt; coordinate) , 0 - (coordinate -&gt; raw)</li>
+<li><strong>arg3</strong> (<em>int</em>) &#8211; 1 -  Forward (raw -&gt; coordinate) , 0 - (coordinate -&gt; raw)</li>
 </ul>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">0 if ok - 1 otherwise</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></p>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
 </td>
 </tr>
 </tbody>
@@ -459,9 +478,9 @@ Converts a set of X &amp; Y VVs to the new IPJ plane. The Z is assumed to be 0
 <dl class="method">
 <dt id="geosoft.gxapi.GXIPJ.coordinate_systems_are_the_same">
 <code class="descname">coordinate_systems_are_the_same</code><span class="sig-paren">(</span><em>(GXIPJ)arg1</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXIPJ.coordinate_systems_are_the_same" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Are these two coordinate systems the same?
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span>Are these two coordinate systems the same?
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -471,7 +490,7 @@ Are these two coordinate systems the same?
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">0 - No
 1 - Yes</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
 </tr>
 </tbody>
 </table>
@@ -480,7 +499,7 @@ Are these two coordinate systems the same?
 </div>
 <p><strong>Note:</strong></p>
 <pre class="literal-block">
-This does not compare LDT information (use \ :func:`geosoft.gxapi.GXIPJ.compare_datums`\  for that).
+This does not compare LDT information (use <a class="reference internal" href="#geosoft.gxapi.GXIPJ.compare_datums" title="geosoft.gxapi.GXIPJ.compare_datums"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXIPJ.compare_datums()</span></code></a> for that).
 </pre>
 </dd></dl>
 
@@ -488,7 +507,7 @@ This does not compare LDT information (use \ :func:`geosoft.gxapi.GXIPJ.compare_
 <dt id="geosoft.gxapi.GXIPJ.coordinate_systems_are_the_same_within_a_small_tolerance">
 <code class="descname">coordinate_systems_are_the_same_within_a_small_tolerance</code><span class="sig-paren">(</span><em>(GXIPJ)arg1</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXIPJ.coordinate_systems_are_the_same_within_a_small_tolerance" title="Permalink to this definition">¶</a></dt>
 <dd><pre class="literal-block">
-Same as \ :func:`geosoft.gxapi.GXIPJ.coordinate_systems_are_the_same`\ , but allows for small numerical differences
+Same as <a class="reference internal" href="#geosoft.gxapi.GXIPJ.coordinate_systems_are_the_same" title="geosoft.gxapi.GXIPJ.coordinate_systems_are_the_same"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXIPJ.coordinate_systems_are_the_same()</span></code></a>, but allows for small numerical differences
 </pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -499,7 +518,7 @@ Same as \ :func:`geosoft.gxapi.GXIPJ.coordinate_systems_are_the_same`\ , but all
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">0 - No
 1 - Yes</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
 </tr>
 </tbody>
 </table>
@@ -553,18 +572,18 @@ Same as \ :func:`geosoft.gxapi.GXIPJ.coordinate_systems_are_the_same`\ , but all
 <p><span class="versionmodified">New in version 7.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-Copies the projection parameters, while leaving the rest
-(e.g. Datum, Local Datum Transform) unchanged.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Copies</span> <span class="n">the</span> <span class="n">projection</span> <span class="n">parameters</span><span class="p">,</span> <span class="k">while</span> <span class="n">leaving</span> <span class="n">the</span> <span class="n">rest</span>
+<span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">g</span><span class="o">.</span> <span class="n">Datum</span><span class="p">,</span> <span class="n">Local</span> <span class="n">Datum</span> <span class="n">Transform</span><span class="p">)</span> <span class="n">unchanged</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXIPJ.create">
 <em class="property">static </em><code class="descname">create</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; GXIPJ:<a class="headerlink" href="#geosoft.gxapi.GXIPJ.create" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-This method creates a projection object.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="n">method</span> <span class="n">creates</span> <span class="n">a</span> <span class="n">projection</span> <span class="nb">object</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -583,9 +602,9 @@ This method creates a projection object.
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXIPJ.create_s">
 <em class="property">static </em><code class="descname">create_s</code><span class="sig-paren">(</span><em>(GXBF)arg1</em><span class="sig-paren">)</span> &rarr; GXIPJ:<a class="headerlink" href="#geosoft.gxapi.GXIPJ.create_s" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Create IPJ from serialized source.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Create</span> <span class="n">IPJ</span> <span class="kn">from</span> <span class="nn">serialized</span> <span class="n">source</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -629,9 +648,9 @@ Create IPJ from serialized source.
 <dl class="method">
 <dt id="geosoft.gxapi.GXIPJ.get_3d_matrix_orientation">
 <code class="descname">get_3d_matrix_orientation</code><span class="sig-paren">(</span><em>(float_ref)arg1</em>, <em>(float_ref)arg2</em>, <em>(float_ref)arg3</em>, <em>(float_ref)arg4</em>, <em>(float_ref)arg5</em>, <em>(float_ref)arg6</em>, <em>(float_ref)arg7</em>, <em>(float_ref)arg8</em>, <em>(float_ref)arg9</em>, <em>(float_ref)arg10</em>, <em>(float_ref)arg11</em>, <em>(float_ref)arg12</em>, <em>(float_ref)arg13</em>, <em>(float_ref)arg14</em>, <em>(float_ref)arg15</em>, <em>(float_ref)arg16</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIPJ.get_3d_matrix_orientation" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Gets the coefficients of a 3D matrix orientation.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Gets</span> <span class="n">the</span> <span class="n">coefficients</span> <span class="n">of</span> <span class="n">a</span> <span class="mi">3</span><span class="n">D</span> <span class="n">matrix</span> <span class="n">orientation</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -754,9 +773,9 @@ Gets the coefficients of a 3D matrix orientation.
 <dl class="method">
 <dt id="geosoft.gxapi.GXIPJ.get_crooked_section_view_v_vs">
 <code class="descname">get_crooked_section_view_v_vs</code><span class="sig-paren">(</span><em>(GXVV)arg1</em>, <em>(GXVV)arg2</em>, <em>(GXVV)arg3</em>, <em>(int_ref)arg4</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIPJ.get_crooked_section_view_v_vs" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Get the crooked section path.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">the</span> <span class="n">crooked</span> <span class="n">section</span> <span class="n">path</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -781,9 +800,9 @@ Get the crooked section path.
 <p><span class="versionmodified">New in version 7.2.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-Returns the orignal VVs used to set up the crooked section path.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Returns</span> <span class="n">the</span> <span class="n">orignal</span> <span class="n">VVs</span> <span class="n">used</span> <span class="n">to</span> <span class="nb">set</span> <span class="n">up</span> <span class="n">the</span> <span class="n">crooked</span> <span class="n">section</span> <span class="n">path</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
@@ -831,18 +850,18 @@ Returns the orignal VVs used to set up the crooked section path.
 <p><span class="versionmodified">New in version 5.1.8.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-If the projection is not supported in ESRI, the projection
-string will be empty.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">If</span> <span class="n">the</span> <span class="n">projection</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">supported</span> <span class="ow">in</span> <span class="n">ESRI</span><span class="p">,</span> <span class="n">the</span> <span class="n">projection</span>
+<span class="n">string</span> <span class="n">will</span> <span class="n">be</span> <span class="n">empty</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXIPJ.get_gxf">
 <code class="descname">get_gxf</code><span class="sig-paren">(</span><em>(str_ref)arg1</em>, <em>(str_ref)arg2</em>, <em>(str_ref)arg3</em>, <em>(str_ref)arg4</em>, <em>(str_ref)arg5</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIPJ.get_gxf" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Store coordinate system in GXF style strings.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Store</span> <span class="n">coordinate</span> <span class="n">system</span> <span class="ow">in</span> <span class="n">GXF</span> <span class="n">style</span> <span class="n">strings</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -868,25 +887,25 @@ Store coordinate system in GXF style strings.
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-See GXF revision 3 for string descriptions
-All strings must be the same length, 160 (STR_GXF) recommended.
-Strings too short will be truncated.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">See</span> <span class="n">GXF</span> <span class="n">revision</span> <span class="mi">3</span> <span class="k">for</span> <span class="n">string</span> <span class="n">descriptions</span>
+<span class="n">All</span> <span class="n">strings</span> <span class="n">must</span> <span class="n">be</span> <span class="n">the</span> <span class="n">same</span> <span class="n">length</span><span class="p">,</span> <span class="mi">160</span> <span class="p">(</span><span class="n">STR_GXF</span><span class="p">)</span> <span class="n">recommended</span><span class="o">.</span>
+<span class="n">Strings</span> <span class="n">too</span> <span class="n">short</span> <span class="n">will</span> <span class="n">be</span> <span class="n">truncated</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXIPJ.get_list">
 <em class="property">static </em><code class="descname">get_list</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(str)arg2</em>, <em>(GXLST)arg3</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIPJ.get_list" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Get a list of parameters.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">a</span> <span class="nb">list</span> <span class="n">of</span> <span class="n">parameters</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#ipj-parm-lst"><span class="std std-ref">IPJ_PARM_LST constants</span></a></li>
+<li><strong>arg1</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#ipj-parm-lst"><span class="std std-ref">IPJ_PARM_LST constants</span></a></li>
 <li><strong>arg2</strong> (<em>str</em>) &#8211; datum filter, &#8220;&#8221; for no filter</li>
 <li><strong>arg3</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXLST</span></code></a>) &#8211; list returned</li>
 </ul>
@@ -904,10 +923,10 @@ Get a list of parameters.
 <p><span class="versionmodified">New in version 6.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-The datum filter string, if specified, will limit the requested
-list to those valid for the spacified datum.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">datum</span> <span class="nb">filter</span> <span class="n">string</span><span class="p">,</span> <span class="k">if</span> <span class="n">specified</span><span class="p">,</span> <span class="n">will</span> <span class="n">limit</span> <span class="n">the</span> <span class="n">requested</span>
+<span class="nb">list</span> <span class="n">to</span> <span class="n">those</span> <span class="n">valid</span> <span class="k">for</span> <span class="n">the</span> <span class="n">spacified</span> <span class="n">datum</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
@@ -920,7 +939,7 @@ list to those valid for the spacified datum.
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#ipj-csp"><span class="std std-ref">IPJ_CSP constants</span></a></td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#ipj-csp"><span class="std std-ref">IPJ_CSP constants</span></a></td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Parameter setting, rDUMMY if dot used</td>
 </tr>
@@ -973,7 +992,7 @@ list to those valid for the spacified datum.
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#ipj-name"><span class="std std-ref">IPJ_NAME constants</span></a></li>
+<li><strong>arg1</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#ipj-name"><span class="std std-ref">IPJ_NAME constants</span></a></li>
 <li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; name returned</li>
 </ul>
 </td>
@@ -994,9 +1013,9 @@ list to those valid for the spacified datum.
 <dl class="method">
 <dt id="geosoft.gxapi.GXIPJ.get_north_azimuth">
 <code class="descname">get_north_azimuth</code><span class="sig-paren">(</span><em>(float)arg1</em>, <em>(float)arg2</em><span class="sig-paren">)</span> &rarr; float:<a class="headerlink" href="#geosoft.gxapi.GXIPJ.get_north_azimuth" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Return the azimuth of geographic North at a point.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Return</span> <span class="n">the</span> <span class="n">azimuth</span> <span class="n">of</span> <span class="n">geographic</span> <span class="n">North</span> <span class="n">at</span> <span class="n">a</span> <span class="n">point</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1019,25 +1038,25 @@ Return the azimuth of geographic North at a point.
 <p><span class="versionmodified">New in version 7.3.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-If the IPJ is not a projected coordinate system
-then the returned azimuth is GS_R8DM;
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">If</span> <span class="n">the</span> <span class="n">IPJ</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">a</span> <span class="n">projected</span> <span class="n">coordinate</span> <span class="n">system</span>
+<span class="n">then</span> <span class="n">the</span> <span class="n">returned</span> <span class="n">azimuth</span> <span class="ow">is</span> <span class="n">GS_R8DM</span><span class="p">;</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXIPJ.get_orientation">
 <code class="descname">get_orientation</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXIPJ.get_orientation" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Get IPJ orientation in space.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">IPJ</span> <span class="n">orientation</span> <span class="ow">in</span> <span class="n">space</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><a class="reference internal" href="#ipj-orient"><span class="std std-ref">IPJ_ORIENT constants</span></a></td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int</td>
 </tr>
 </tbody>
 </table>
@@ -1045,18 +1064,18 @@ Get IPJ orientation in space.
 <p><span class="versionmodified">New in version 5.1.4.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-Projections can be created oriented horizontally (e.g. in plan maps)
-or vertically (in section maps - Wholeplot and IP).
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Projections</span> <span class="n">can</span> <span class="n">be</span> <span class="n">created</span> <span class="n">oriented</span> <span class="n">horizontally</span> <span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">g</span><span class="o">.</span> <span class="ow">in</span> <span class="n">plan</span> <span class="n">maps</span><span class="p">)</span>
+<span class="ow">or</span> <span class="n">vertically</span> <span class="p">(</span><span class="ow">in</span> <span class="n">section</span> <span class="n">maps</span> <span class="o">-</span> <span class="n">Wholeplot</span> <span class="ow">and</span> <span class="n">IP</span><span class="p">)</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXIPJ.get_orientation_info">
 <code class="descname">get_orientation_info</code><span class="sig-paren">(</span><em>(float_ref)arg1</em>, <em>(float_ref)arg2</em>, <em>(float_ref)arg3</em>, <em>(float_ref)arg4</em>, <em>(float_ref)arg5</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIPJ.get_orientation_info" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Get IPJ orientation parameters.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">IPJ</span> <span class="n">orientation</span> <span class="n">parameters</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1082,25 +1101,25 @@ Get IPJ orientation parameters.
 <p><span class="versionmodified">New in version 5.1.6.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-IPJ_ORIENT_TYPE:
-IPJ_ORIENT_DEFAULT - no special orientation - plan view.
-This is equivalent to IPJ_ORIENT_PLAN with
-dXo = dYo = dZo = dRotation = 0.0.
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">IPJ_ORIENT_TYPE</span><span class="p">:</span>
+<span class="n">IPJ_ORIENT_DEFAULT</span> <span class="o">-</span> <span class="n">no</span> <span class="n">special</span> <span class="n">orientation</span> <span class="o">-</span> <span class="n">plan</span> <span class="n">view</span><span class="o">.</span>
+<span class="n">This</span> <span class="ow">is</span> <span class="n">equivalent</span> <span class="n">to</span> <span class="n">IPJ_ORIENT_PLAN</span> <span class="k">with</span>
+<span class="n">dXo</span> <span class="o">=</span> <span class="n">dYo</span> <span class="o">=</span> <span class="n">dZo</span> <span class="o">=</span> <span class="n">dRotation</span> <span class="o">=</span> <span class="mf">0.0</span><span class="o">.</span>
 
-IPJ_ORIENT_PLAN      Azimuth = Rotation CCW degrees
-The plan differs from the default view in that
-a reference level is set, and the axes can be
-rotated and offset from the local X,Y.
+<span class="n">IPJ_ORIENT_PLAN</span>      <span class="n">Azimuth</span> <span class="o">=</span> <span class="n">Rotation</span> <span class="n">CCW</span> <span class="n">degrees</span>
+<span class="n">The</span> <span class="n">plan</span> <span class="n">differs</span> <span class="kn">from</span> <span class="nn">the</span> <span class="n">default</span> <span class="n">view</span> <span class="ow">in</span> <span class="n">that</span>
+<span class="n">a</span> <span class="n">reference</span> <span class="n">level</span> <span class="ow">is</span> <span class="nb">set</span><span class="p">,</span> <span class="ow">and</span> <span class="n">the</span> <span class="n">axes</span> <span class="n">can</span> <span class="n">be</span>
+<span class="n">rotated</span> <span class="ow">and</span> <span class="n">offset</span> <span class="kn">from</span> <span class="nn">the</span> <span class="n">local</span> <span class="n">X</span><span class="p">,</span><span class="n">Y</span><span class="o">.</span>
 
-IPJ_ORIENT_SECTION   Azimuth - CW degrees from North
--360 &lt;= azimuth &lt;= 360
-Swing - degrees bottom towards viewer
--90 &lt; swing &lt; 90
-The section view projects all plotted objects
-HORIZONTALLY onto the viewing plan in order to
-preserve elevations, even if the section has a swing.
-</pre>
+<span class="n">IPJ_ORIENT_SECTION</span>   <span class="n">Azimuth</span> <span class="o">-</span> <span class="n">CW</span> <span class="n">degrees</span> <span class="kn">from</span> <span class="nn">North</span>
+<span class="o">-</span><span class="mi">360</span> <span class="o">&lt;=</span> <span class="n">azimuth</span> <span class="o">&lt;=</span> <span class="mi">360</span>
+<span class="n">Swing</span> <span class="o">-</span> <span class="n">degrees</span> <span class="n">bottom</span> <span class="n">towards</span> <span class="n">viewer</span>
+<span class="o">-</span><span class="mi">90</span> <span class="o">&lt;</span> <span class="n">swing</span> <span class="o">&lt;</span> <span class="mi">90</span>
+<span class="n">The</span> <span class="n">section</span> <span class="n">view</span> <span class="n">projects</span> <span class="nb">all</span> <span class="n">plotted</span> <span class="n">objects</span>
+<span class="n">HORIZONTALLY</span> <span class="n">onto</span> <span class="n">the</span> <span class="n">viewing</span> <span class="n">plan</span> <span class="ow">in</span> <span class="n">order</span> <span class="n">to</span>
+<span class="n">preserve</span> <span class="n">elevations</span><span class="p">,</span> <span class="n">even</span> <span class="k">if</span> <span class="n">the</span> <span class="n">section</span> <span class="n">has</span> <span class="n">a</span> <span class="n">swing</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
@@ -1165,21 +1184,21 @@ preserve elevations, even if the section has a swing.
 <p><span class="versionmodified">New in version 5.1.6.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-Two opposite corners of the plane are required.
-Because the origin of the plane does not necessarily
-have a stable back-projection into true 3d coordinates.
-In practice, use the current view extents, or the corners
-of a grid.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Two</span> <span class="n">opposite</span> <span class="n">corners</span> <span class="n">of</span> <span class="n">the</span> <span class="n">plane</span> <span class="n">are</span> <span class="n">required</span><span class="o">.</span>
+<span class="n">Because</span> <span class="n">the</span> <span class="n">origin</span> <span class="n">of</span> <span class="n">the</span> <span class="n">plane</span> <span class="n">does</span> <span class="ow">not</span> <span class="n">necessarily</span>
+<span class="n">have</span> <span class="n">a</span> <span class="n">stable</span> <span class="n">back</span><span class="o">-</span><span class="n">projection</span> <span class="n">into</span> <span class="n">true</span> <span class="mi">3</span><span class="n">d</span> <span class="n">coordinates</span><span class="o">.</span>
+<span class="n">In</span> <span class="n">practice</span><span class="p">,</span> <span class="n">use</span> <span class="n">the</span> <span class="n">current</span> <span class="n">view</span> <span class="n">extents</span><span class="p">,</span> <span class="ow">or</span> <span class="n">the</span> <span class="n">corners</span>
+<span class="n">of</span> <span class="n">a</span> <span class="n">grid</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXIPJ.get_plane_equation2">
 <code class="descname">get_plane_equation2</code><span class="sig-paren">(</span><em>(GXIPJ)arg1</em>, <em>(float)arg2</em>, <em>(float)arg3</em>, <em>(float)arg4</em>, <em>(float)arg5</em>, <em>(float_ref)arg6</em>, <em>(float_ref)arg7</em>, <em>(float_ref)arg8</em>, <em>(float_ref)arg9</em>, <em>(float_ref)arg10</em>, <em>(float_ref)arg11</em>, <em>(float_ref)arg12</em>, <em>(float_ref)arg13</em>, <em>(float_ref)arg14</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIPJ.get_plane_equation2" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Get the equation of a plane with reprojection.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">the</span> <span class="n">equation</span> <span class="n">of</span> <span class="n">a</span> <span class="n">plane</span> <span class="k">with</span> <span class="n">reprojection</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1215,7 +1234,7 @@ Get the equation of a plane with reprojection.
 </div>
 <p><strong>Note:</strong></p>
 <pre class="literal-block">
-This is the same as \ :func:`geosoft.gxapi.GXIPJ.get_plane_equation`\ , but the
+This is the same as <a class="reference internal" href="#geosoft.gxapi.GXIPJ.get_plane_equation" title="geosoft.gxapi.GXIPJ.get_plane_equation"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXIPJ.get_plane_equation()</span></code></a>, but the
 input projected coordinate system (PCS) may
 be different from that of the IPJ you want the
 plane equation values described in. This may be
@@ -1224,7 +1243,7 @@ in one PCS, and an oriented grid from a different PCS is
 to be displayed in that view.
 
 If the two input IPJs share the same PCS (determined
-using the \ :func:`geosoft.gxapi.GXIPJ.same`\  function), then the \ :func:`geosoft.gxapi.GXIPJ.get_plane_equation`\ 
+using the <code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXIPJ.same()</span></code> function), then the <a class="reference internal" href="#geosoft.gxapi.GXIPJ.get_plane_equation" title="geosoft.gxapi.GXIPJ.get_plane_equation"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXIPJ.get_plane_equation()</span></code></a>
 function is called directly, using the input IPJ.
 </pre>
 </dd></dl>
@@ -1284,9 +1303,9 @@ function is called directly, using the input IPJ.
 <dl class="method">
 <dt id="geosoft.gxapi.GXIPJ.has_projection">
 <code class="descname">has_projection</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXIPJ.has_projection" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Does the IPJ object contain a projection?
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span>Does the IPJ object contain a projection?
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1294,7 +1313,7 @@ Does the IPJ object contain a projection?
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">0 - No
 1 - Yes</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int</td>
 </tr>
 </tbody>
 </table>
@@ -1306,9 +1325,9 @@ Does the IPJ object contain a projection?
 <dl class="method">
 <dt id="geosoft.gxapi.GXIPJ.has_section_orientation">
 <code class="descname">has_section_orientation</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXIPJ.has_section_orientation" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Does this projection contain an orientation used by section plots?
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span>Does this projection contain an orientation used by section plots?
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1316,7 +1335,7 @@ Does this projection contain an orientation used by section plots?
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">0 - No
 1 - Yes</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int</td>
 </tr>
 </tbody>
 </table>
@@ -1324,29 +1343,29 @@ Does this projection contain an orientation used by section plots?
 <p><span class="versionmodified">New in version 8.3.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-Returns     1 if there is a section orientation
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Returns</span>     <span class="mi">1</span> <span class="k">if</span> <span class="n">there</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">section</span> <span class="n">orientation</span>
 
-The following orientations can be used to orient sections or section views:
+<span class="n">The</span> <span class="n">following</span> <span class="n">orientations</span> <span class="n">can</span> <span class="n">be</span> <span class="n">used</span> <span class="n">to</span> <span class="n">orient</span> <span class="n">sections</span> <span class="ow">or</span> <span class="n">section</span> <span class="n">views</span><span class="p">:</span>
 
-IPJ_ORIENT_SECTION - Target-type sections with Z projection horizontally
-IPJ_ORIENT_SECTION_NORMAL - Like IPJ_ORIENT_SECTION, but Z projects
-perpendicular to the secton plane.
-IPJ_ORIENT_SECTION_CROOKED - Crooked sections
-IPJ_ORIENT_3D - Some Sections extracted from a voxel - e.g. VoxelToGrids,
-as the voxel can have any orientation in 3D.
+<span class="n">IPJ_ORIENT_SECTION</span> <span class="o">-</span> <span class="n">Target</span><span class="o">-</span><span class="nb">type</span> <span class="n">sections</span> <span class="k">with</span> <span class="n">Z</span> <span class="n">projection</span> <span class="n">horizontally</span>
+<span class="n">IPJ_ORIENT_SECTION_NORMAL</span> <span class="o">-</span> <span class="n">Like</span> <span class="n">IPJ_ORIENT_SECTION</span><span class="p">,</span> <span class="n">but</span> <span class="n">Z</span> <span class="n">projects</span>
+<span class="n">perpendicular</span> <span class="n">to</span> <span class="n">the</span> <span class="n">secton</span> <span class="n">plane</span><span class="o">.</span>
+<span class="n">IPJ_ORIENT_SECTION_CROOKED</span> <span class="o">-</span> <span class="n">Crooked</span> <span class="n">sections</span>
+<span class="n">IPJ_ORIENT_3D</span> <span class="o">-</span> <span class="n">Some</span> <span class="n">Sections</span> <span class="n">extracted</span> <span class="kn">from</span> <span class="nn">a</span> <span class="n">voxel</span> <span class="o">-</span> <span class="n">e</span><span class="o">.</span><span class="n">g</span><span class="o">.</span> <span class="n">VoxelToGrids</span><span class="p">,</span>
+<span class="k">as</span> <span class="n">the</span> <span class="n">voxel</span> <span class="n">can</span> <span class="n">have</span> <span class="nb">any</span> <span class="n">orientation</span> <span class="ow">in</span> <span class="mi">3</span><span class="n">D</span><span class="o">.</span>
 
-It is sometimes important to ignore the section orientation, for instance
-when rendering a grid in 3D where it has been located on a plane.
-</pre>
+<span class="n">It</span> <span class="ow">is</span> <span class="n">sometimes</span> <span class="n">important</span> <span class="n">to</span> <span class="n">ignore</span> <span class="n">the</span> <span class="n">section</span> <span class="n">orientation</span><span class="p">,</span> <span class="k">for</span> <span class="n">instance</span>
+<span class="n">when</span> <span class="n">rendering</span> <span class="n">a</span> <span class="n">grid</span> <span class="ow">in</span> <span class="mi">3</span><span class="n">D</span> <span class="n">where</span> <span class="n">it</span> <span class="n">has</span> <span class="n">been</span> <span class="n">located</span> <span class="n">on</span> <span class="n">a</span> <span class="n">plane</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXIPJ.is_3d_inverted">
 <code class="descname">is_3d_inverted</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXIPJ.is_3d_inverted" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Is this 3D View inverted ?
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span>Is this 3D View inverted ?
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1354,7 +1373,7 @@ Is this 3D View inverted ?
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">0 - No
 1 - Yes (inverted)</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int</td>
 </tr>
 </tbody>
 </table>
@@ -1366,9 +1385,9 @@ Is this 3D View inverted ?
 <dl class="method">
 <dt id="geosoft.gxapi.GXIPJ.is_3d_inverted_angles">
 <code class="descname">is_3d_inverted_angles</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXIPJ.is_3d_inverted_angles" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Are the angles in this 3D View inverted ?
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span>Are the angles in this 3D View inverted ?
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1376,7 +1395,7 @@ Are the angles in this 3D View inverted ?
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">0 - No
 1 - Yes (inverted)</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int</td>
 </tr>
 </tbody>
 </table>
@@ -1398,7 +1417,7 @@ Are the angles in this 3D View inverted ?
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">0 - No
 1 - Yes</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int</td>
 </tr>
 </tbody>
 </table>
@@ -1443,17 +1462,17 @@ Are the angles in this 3D View inverted ?
 <p><span class="versionmodified">New in version 5.1.5.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-This function does nothing if the IPJ is not a projected coordinate system.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="n">function</span> <span class="n">does</span> <span class="n">nothing</span> <span class="k">if</span> <span class="n">the</span> <span class="n">IPJ</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">a</span> <span class="n">projected</span> <span class="n">coordinate</span> <span class="n">system</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXIPJ.make_projected">
 <code class="descname">make_projected</code><span class="sig-paren">(</span><em>(float)arg1</em>, <em>(float)arg2</em>, <em>(float)arg3</em>, <em>(float)arg4</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIPJ.make_projected" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Create a default projected coordinate system from lat-long ranges.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Create</span> <span class="n">a</span> <span class="n">default</span> <span class="n">projected</span> <span class="n">coordinate</span> <span class="n">system</span> <span class="kn">from</span> <span class="nn">lat</span><span class="o">-</span><span class="n">long</span> <span class="n">ranges</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1478,14 +1497,14 @@ Create a default projected coordinate system from lat-long ranges.
 <p><span class="versionmodified">New in version 5.1.5.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-Terminates with invalid or unsupported ranges.
-If the map crosses the equator, or if map is within 20 degrees of the
-equator, uses an equatorial mercator projection centered at the central
-longitude. Otherwise, uses a Lambert Conic Conformal (1SP) projection
-for the map. Global maps outside of +/- 70 degrees latitude are not
-supported.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Terminates</span> <span class="k">with</span> <span class="n">invalid</span> <span class="ow">or</span> <span class="n">unsupported</span> <span class="n">ranges</span><span class="o">.</span>
+<span class="n">If</span> <span class="n">the</span> <span class="nb">map</span> <span class="n">crosses</span> <span class="n">the</span> <span class="n">equator</span><span class="p">,</span> <span class="ow">or</span> <span class="k">if</span> <span class="nb">map</span> <span class="ow">is</span> <span class="n">within</span> <span class="mi">20</span> <span class="n">degrees</span> <span class="n">of</span> <span class="n">the</span>
+<span class="n">equator</span><span class="p">,</span> <span class="n">uses</span> <span class="n">an</span> <span class="n">equatorial</span> <span class="n">mercator</span> <span class="n">projection</span> <span class="n">centered</span> <span class="n">at</span> <span class="n">the</span> <span class="n">central</span>
+<span class="n">longitude</span><span class="o">.</span> <span class="n">Otherwise</span><span class="p">,</span> <span class="n">uses</span> <span class="n">a</span> <span class="n">Lambert</span> <span class="n">Conic</span> <span class="n">Conformal</span> <span class="p">(</span><span class="mi">1</span><span class="n">SP</span><span class="p">)</span> <span class="n">projection</span>
+<span class="k">for</span> <span class="n">the</span> <span class="nb">map</span><span class="o">.</span> <span class="n">Global</span> <span class="n">maps</span> <span class="n">outside</span> <span class="n">of</span> <span class="o">+/-</span> <span class="mi">70</span> <span class="n">degrees</span> <span class="n">latitude</span> <span class="n">are</span> <span class="ow">not</span>
+<span class="n">supported</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
@@ -1544,11 +1563,11 @@ supported.
 <p><span class="versionmodified">New in version 5.1.5.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-if there are any problems reprojecting, new resolutions will
-dummy.  The conversion to new resolution is based on measurements
-along the four edges and two diagonals.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">there</span> <span class="n">are</span> <span class="nb">any</span> <span class="n">problems</span> <span class="n">reprojecting</span><span class="p">,</span> <span class="n">new</span> <span class="n">resolutions</span> <span class="n">will</span>
+<span class="n">dummy</span><span class="o">.</span>  <span class="n">The</span> <span class="n">conversion</span> <span class="n">to</span> <span class="n">new</span> <span class="n">resolution</span> <span class="ow">is</span> <span class="n">based</span> <span class="n">on</span> <span class="n">measurements</span>
+<span class="n">along</span> <span class="n">the</span> <span class="n">four</span> <span class="n">edges</span> <span class="ow">and</span> <span class="n">two</span> <span class="n">diagonals</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="staticmethod">
@@ -1570,9 +1589,9 @@ along the four edges and two diagonals.
 <dl class="method">
 <dt id="geosoft.gxapi.GXIPJ.orientations_are_the_same">
 <code class="descname">orientations_are_the_same</code><span class="sig-paren">(</span><em>(GXIPJ)arg1</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXIPJ.orientations_are_the_same" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Are these two orientations the same?
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span>Are these two orientations the same?
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1582,7 +1601,7 @@ Are these two orientations the same?
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">0 - No
 1 - Yes</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
 </tr>
 </tbody>
 </table>
@@ -1595,7 +1614,7 @@ Are these two orientations the same?
 <dt id="geosoft.gxapi.GXIPJ.orientations_are_the_same_within_a_small_tolerance">
 <code class="descname">orientations_are_the_same_within_a_small_tolerance</code><span class="sig-paren">(</span><em>(GXIPJ)arg1</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXIPJ.orientations_are_the_same_within_a_small_tolerance" title="Permalink to this definition">¶</a></dt>
 <dd><pre class="literal-block">
-Same as \ :func:`geosoft.gxapi.GXIPJ.orientations_are_the_same`\ , but allows for small numerical differences
+Same as <a class="reference internal" href="#geosoft.gxapi.GXIPJ.orientations_are_the_same" title="geosoft.gxapi.GXIPJ.orientations_are_the_same"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXIPJ.orientations_are_the_same()</span></code></a>, but allows for small numerical differences
 </pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -1606,7 +1625,7 @@ Same as \ :func:`geosoft.gxapi.GXIPJ.orientations_are_the_same`\ , but allows fo
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">0 - No
 1 - Yes</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
 </tr>
 </tbody>
 </table>
@@ -1618,9 +1637,9 @@ Same as \ :func:`geosoft.gxapi.GXIPJ.orientations_are_the_same`\ , but allows fo
 <dl class="method">
 <dt id="geosoft.gxapi.GXIPJ.projection_type_is_fully_supported">
 <code class="descname">projection_type_is_fully_supported</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXIPJ.projection_type_is_fully_supported" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Is the projection type fully supported?
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span>Is the projection type fully supported?
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1628,7 +1647,7 @@ Is the projection type fully supported?
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">0 - No
 1 - Yes</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int</td>
 </tr>
 </tbody>
 </table>
@@ -1636,27 +1655,27 @@ Is the projection type fully supported?
 <p><span class="versionmodified">New in version 7.2.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-This function checks only the projected coordinated system
-in the IPJ object, so should only be used with projections
-of type IPJ_TYPE_PCS.
-This function does not test the validity of datums or local
-datum transforms.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="n">function</span> <span class="n">checks</span> <span class="n">only</span> <span class="n">the</span> <span class="n">projected</span> <span class="n">coordinated</span> <span class="n">system</span>
+<span class="ow">in</span> <span class="n">the</span> <span class="n">IPJ</span> <span class="nb">object</span><span class="p">,</span> <span class="n">so</span> <span class="n">should</span> <span class="n">only</span> <span class="n">be</span> <span class="n">used</span> <span class="k">with</span> <span class="n">projections</span>
+<span class="n">of</span> <span class="nb">type</span> <span class="n">IPJ_TYPE_PCS</span><span class="o">.</span>
+<span class="n">This</span> <span class="n">function</span> <span class="n">does</span> <span class="ow">not</span> <span class="n">test</span> <span class="n">the</span> <span class="n">validity</span> <span class="n">of</span> <span class="n">datums</span> <span class="ow">or</span> <span class="n">local</span>
+<span class="n">datum</span> <span class="n">transforms</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXIPJ.read">
 <code class="descname">read</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(str)arg2</em>, <em>(str)arg3</em>, <em>(str)arg4</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIPJ.read" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Read and define an IPJ from a standard file.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Read</span> <span class="ow">and</span> <span class="n">define</span> <span class="n">an</span> <span class="n">IPJ</span> <span class="kn">from</span> <span class="nn">a</span> <span class="n">standard</span> <span class="n">file</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#ipj-type"><span class="std std-ref">IPJ_TYPE constants</span></a></li>
+<li><strong>arg1</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#ipj-type"><span class="std std-ref">IPJ_TYPE constants</span></a></li>
 <li><strong>arg2</strong> (<em>str</em>) &#8211; string 1</li>
 <li><strong>arg3</strong> (<em>str</em>) &#8211; string 2</li>
 <li><strong>arg4</strong> (<em>str</em>) &#8211; string 3</li>
@@ -1709,18 +1728,18 @@ type of orientation as the initial IPJ, adjusted to be in the same location.</li
 <p><span class="versionmodified">New in version 9.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-Reproject a section grid to a new IPJ, adjusting its orientation and registration so that
-it remains in the same location.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Reproject</span> <span class="n">a</span> <span class="n">section</span> <span class="n">grid</span> <span class="n">to</span> <span class="n">a</span> <span class="n">new</span> <span class="n">IPJ</span><span class="p">,</span> <span class="n">adjusting</span> <span class="n">its</span> <span class="n">orientation</span> <span class="ow">and</span> <span class="n">registration</span> <span class="n">so</span> <span class="n">that</span>
+<span class="n">it</span> <span class="n">remains</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">same</span> <span class="n">location</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXIPJ.serial">
 <code class="descname">serial</code><span class="sig-paren">(</span><em>(GXBF)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIPJ.serial" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Serialize IPJ to a BF.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Serialize</span> <span class="n">IPJ</span> <span class="n">to</span> <span class="n">a</span> <span class="n">BF</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1810,14 +1829,14 @@ Serialize IPJ to a BF.
 <dl class="method">
 <dt id="geosoft.gxapi.GXIPJ.set_3d_inverted">
 <code class="descname">set_3d_inverted</code><span class="sig-paren">(</span><em>(int)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIPJ.set_3d_inverted" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Set whether a view is inverted (must be 3D already)
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Set</span> <span class="n">whether</span> <span class="n">a</span> <span class="n">view</span> <span class="ow">is</span> <span class="n">inverted</span> <span class="p">(</span><span class="n">must</span> <span class="n">be</span> <span class="mi">3</span><span class="n">D</span> <span class="n">already</span><span class="p">)</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Inverted (0 or 1)</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>int</em>) &#8211; Inverted (0 or 1)</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Nothing</td>
 </tr>
@@ -1833,14 +1852,14 @@ Set whether a view is inverted (must be 3D already)
 <dl class="method">
 <dt id="geosoft.gxapi.GXIPJ.set_3d_inverted_angles">
 <code class="descname">set_3d_inverted_angles</code><span class="sig-paren">(</span><em>(int)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIPJ.set_3d_inverted_angles" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Set whether the angles in this view are inverted (must be 3D already)
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Set</span> <span class="n">whether</span> <span class="n">the</span> <span class="n">angles</span> <span class="ow">in</span> <span class="n">this</span> <span class="n">view</span> <span class="n">are</span> <span class="n">inverted</span> <span class="p">(</span><span class="n">must</span> <span class="n">be</span> <span class="mi">3</span><span class="n">D</span> <span class="n">already</span><span class="p">)</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Inverted (0 or 1)</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>int</em>) &#8211; Inverted (0 or 1)</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Nothing</td>
 </tr>
@@ -1856,9 +1875,9 @@ Set whether the angles in this view are inverted (must be 3D already)
 <dl class="method">
 <dt id="geosoft.gxapi.GXIPJ.set_3d_matrix_orientation">
 <code class="descname">set_3d_matrix_orientation</code><span class="sig-paren">(</span><em>(float)arg1</em>, <em>(float)arg2</em>, <em>(float)arg3</em>, <em>(float)arg4</em>, <em>(float)arg5</em>, <em>(float)arg6</em>, <em>(float)arg7</em>, <em>(float)arg8</em>, <em>(float)arg9</em>, <em>(float)arg10</em>, <em>(float)arg11</em>, <em>(float)arg12</em>, <em>(float)arg13</em>, <em>(float)arg14</em>, <em>(float)arg15</em>, <em>(float)arg16</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIPJ.set_3d_matrix_orientation" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Apply a 3D orientation directly using matrix coefficients.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Apply</span> <span class="n">a</span> <span class="mi">3</span><span class="n">D</span> <span class="n">orientation</span> <span class="n">directly</span> <span class="n">using</span> <span class="n">matrix</span> <span class="n">coefficients</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1931,10 +1950,10 @@ Apply a 3D orientation directly using matrix coefficients.
 <p><span class="versionmodified">New in version 6.3.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-Sets up translation, scaling and rotation in all three directions
-for 3D objects.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Sets</span> <span class="n">up</span> <span class="n">translation</span><span class="p">,</span> <span class="n">scaling</span> <span class="ow">and</span> <span class="n">rotation</span> <span class="ow">in</span> <span class="nb">all</span> <span class="n">three</span> <span class="n">directions</span>
+<span class="k">for</span> <span class="mi">3</span><span class="n">D</span> <span class="n">objects</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
@@ -1957,8 +1976,8 @@ for 3D objects.
 <li><strong>arg7</strong> (<em>float</em>) &#8211; Scaling in X</li>
 <li><strong>arg8</strong> (<em>float</em>) &#8211; Scaling in Y</li>
 <li><strong>arg9</strong> (<em>float</em>) &#8211; Scaling in Z</li>
-<li><strong>arg10</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#ipj-3d-rotate"><span class="std std-ref">IPJ_3D_ROTATE constants</span></a></li>
-<li><strong>arg11</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#ipj-3d-flag"><span class="std std-ref">IPJ_3D_FLAG constants</span></a></li>
+<li><strong>arg10</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#ipj-3d-rotate"><span class="std std-ref">IPJ_3D_ROTATE constants</span></a></li>
+<li><strong>arg11</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#ipj-3d-flag"><span class="std std-ref">IPJ_3D_FLAG constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -1974,10 +1993,10 @@ for 3D objects.
 <p><span class="versionmodified">New in version 7.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-Sets up translation, scaling and rotation in all three directions
-for 3D objects.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Sets</span> <span class="n">up</span> <span class="n">translation</span><span class="p">,</span> <span class="n">scaling</span> <span class="ow">and</span> <span class="n">rotation</span> <span class="ow">in</span> <span class="nb">all</span> <span class="n">three</span> <span class="n">directions</span>
+<span class="k">for</span> <span class="mi">3</span><span class="n">D</span> <span class="n">objects</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
@@ -2018,18 +2037,18 @@ for 3D objects.
 <p><span class="versionmodified">New in version 9.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-Sets up translation, scaling and rotation in all three directions
-for 3D objects, based on input origin and X and Y axis vectors.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Sets</span> <span class="n">up</span> <span class="n">translation</span><span class="p">,</span> <span class="n">scaling</span> <span class="ow">and</span> <span class="n">rotation</span> <span class="ow">in</span> <span class="nb">all</span> <span class="n">three</span> <span class="n">directions</span>
+<span class="k">for</span> <span class="mi">3</span><span class="n">D</span> <span class="n">objects</span><span class="p">,</span> <span class="n">based</span> <span class="n">on</span> <span class="nb">input</span> <span class="n">origin</span> <span class="ow">and</span> <span class="n">X</span> <span class="ow">and</span> <span class="n">Y</span> <span class="n">axis</span> <span class="n">vectors</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXIPJ.set_crooked_section_view">
 <code class="descname">set_crooked_section_view</code><span class="sig-paren">(</span><em>(GXVV)arg1</em>, <em>(GXVV)arg2</em>, <em>(GXVV)arg3</em>, <em>(int)arg4</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIPJ.set_crooked_section_view" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Set up the crooked section view.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Set</span> <span class="n">up</span> <span class="n">the</span> <span class="n">crooked</span> <span class="n">section</span> <span class="n">view</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -2038,7 +2057,7 @@ Set up the crooked section view.
 <li><strong>arg1</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Section X locations (e.g. distance along the curve)</li>
 <li><strong>arg2</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; True X</li>
 <li><strong>arg3</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; True Y</li>
-<li><strong>arg4</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Use logarithmic Y-axis (usually for data profiles) 0:No, 1:Yes</li>
+<li><strong>arg4</strong> (<em>int</em>) &#8211; Use logarithmic Y-axis (usually for data profiles) 0:No, 1:Yes</li>
 </ul>
 </td>
 </tr>
@@ -2054,10 +2073,10 @@ Set up the crooked section view.
 <p><span class="versionmodified">New in version 7.2.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-A non-plane section. It is a vertical section which curves along a path in
-(X, Y).
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="n">non</span><span class="o">-</span><span class="n">plane</span> <span class="n">section</span><span class="o">.</span> <span class="n">It</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">vertical</span> <span class="n">section</span> <span class="n">which</span> <span class="n">curves</span> <span class="n">along</span> <span class="n">a</span> <span class="n">path</span> <span class="ow">in</span>
+<span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">)</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
@@ -2105,18 +2124,18 @@ A non-plane section. It is a vertical section which curves along a path in
 <p><span class="versionmodified">New in version 5.1.8.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-If the projection is not supported in Geosoft, the
-IPJ will be unknown.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">If</span> <span class="n">the</span> <span class="n">projection</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">supported</span> <span class="ow">in</span> <span class="n">Geosoft</span><span class="p">,</span> <span class="n">the</span>
+<span class="n">IPJ</span> <span class="n">will</span> <span class="n">be</span> <span class="n">unknown</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXIPJ.set_gxf">
 <code class="descname">set_gxf</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(str)arg2</em>, <em>(str)arg3</em>, <em>(str)arg4</em>, <em>(str)arg5</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIPJ.set_gxf" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Set coordinate system from GXF style strings.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Set</span> <span class="n">coordinate</span> <span class="n">system</span> <span class="kn">from</span> <span class="nn">GXF</span> <span class="n">style</span> <span class="n">strings</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -2189,12 +2208,12 @@ Complete usage:
 A coordinate system can also be fully described by providing an additional
 four strings that define the datum, map projection, length units and
 prefered local datum transform.  Refer to GXF revision 3 for further detail:
-http://www.geosoft.com/resources/goto/GXF-Grid-eXchange-File
+<a class="reference external" href="http://www.geosoft.com/resources/goto/GXF-Grid-eXchange-File">http://www.geosoft.com/resources/goto/GXF-Grid-eXchange-File</a>
 
 Note that coordinate system reference tables sre maintained in csv files
 located in the .../user/csv folder found with the Geosoft installation files,
 which will usually be located here:
-C:\Program Files (x86)\Geosoft\Oasis montaj\user\csv
+C:Program Files (x86)GeosoftOasis montajusercsv
 
 The &quot;datum&quot; string can use a datum name defined in the &quot;datum.csv&quot; file,
 or the local datum name from datumtrf.csv, or the local datum description
@@ -2202,10 +2221,10 @@ from ldatum.csv.
 For a non-EPSG datum, you can define your own datum parameters in the
 Datum stringfield as follows:
 
-&quot;\ `*`\ YourDatumName&quot;,major_axis,flattening(or eccentricity)[,prime_meridian]
+&quot;<cite>*</cite>YourDatumName&quot;,major_axis,flattening(or eccentricity)[,prime_meridian]
 
 where
-The \ `*`\  before &quot;YourDatumName&quot; indicates this is a non-EPSG name.
+The <cite>*</cite> before &quot;YourDatumName&quot; indicates this is a non-EPSG name.
 major_axis is in metres.
 flattening less than 0 is interpreted as eccentricity (0 indicates a sphere).
 prime_meridian is optional, specified in degrees of longitude relative to
@@ -2264,7 +2283,7 @@ Locally oriented coordinate system (origin at 525000,2500000, rotated 15 deg):
 <dt id="geosoft.gxapi.GXIPJ.set_gxf_safe">
 <code class="descname">set_gxf_safe</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(str)arg2</em>, <em>(str)arg3</em>, <em>(str)arg4</em>, <em>(str)arg5</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXIPJ.set_gxf_safe" title="Permalink to this definition">¶</a></dt>
 <dd><pre class="literal-block">
-Same as \ :func:`geosoft.gxapi.GXIPJ.set_gxf`\ , but fails gracefully.
+Same as <a class="reference internal" href="#geosoft.gxapi.GXIPJ.set_gxf" title="geosoft.gxapi.GXIPJ.set_gxf"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXIPJ.set_gxf()</span></code></a>, but fails gracefully.
 </pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -2283,7 +2302,7 @@ Same as \ :func:`geosoft.gxapi.GXIPJ.set_gxf`\ , but fails gracefully.
 1 - success: IPJ set using input values.</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></p>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
 </td>
 </tr>
 </tbody>
@@ -2293,7 +2312,7 @@ Same as \ :func:`geosoft.gxapi.GXIPJ.set_gxf`\ , but fails gracefully.
 </div>
 <p><strong>Note:</strong></p>
 <pre class="literal-block">
-\ :func:`geosoft.gxapi.GXIPJ.set_gxf`\  will fail and terminate the GX if anything goes wrong (e.g. having a wrong
+<a class="reference internal" href="#geosoft.gxapi.GXIPJ.set_gxf" title="geosoft.gxapi.GXIPJ.set_gxf"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXIPJ.set_gxf()</span></code></a> will fail and terminate the GX if anything goes wrong (e.g. having a wrong
 parameter). If this function fails, it simply returns 0 and leaves the
 IPJ unchanged.
 </pre>
@@ -2310,7 +2329,7 @@ IPJ unchanged.
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#ipj-csp"><span class="std std-ref">IPJ_CSP constants</span></a></li>
+<li><strong>arg1</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#ipj-csp"><span class="std std-ref">IPJ_CSP constants</span></a></li>
 <li><strong>arg2</strong> (<em>float</em>) &#8211; parameter value</li>
 </ul>
 </td>
@@ -2327,9 +2346,9 @@ IPJ unchanged.
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-If parameter is not valid, nothing happens.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">If</span> <span class="n">parameter</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">valid</span><span class="p">,</span> <span class="n">nothing</span> <span class="n">happens</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
@@ -2392,19 +2411,19 @@ If parameter is not valid, nothing happens.
 <p><span class="versionmodified">New in version 7.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-This section is the type where values are projected
-normal to the section, and the &quot;Y&quot; values in a grid
-do not necessarily correspond to the elvations for a swung section.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="n">section</span> <span class="ow">is</span> <span class="n">the</span> <span class="nb">type</span> <span class="n">where</span> <span class="n">values</span> <span class="n">are</span> <span class="n">projected</span>
+<span class="n">normal</span> <span class="n">to</span> <span class="n">the</span> <span class="n">section</span><span class="p">,</span> <span class="ow">and</span> <span class="n">the</span> <span class="s2">&quot;Y&quot;</span> <span class="n">values</span> <span class="ow">in</span> <span class="n">a</span> <span class="n">grid</span>
+<span class="n">do</span> <span class="ow">not</span> <span class="n">necessarily</span> <span class="n">correspond</span> <span class="n">to</span> <span class="n">the</span> <span class="n">elvations</span> <span class="k">for</span> <span class="n">a</span> <span class="n">swung</span> <span class="n">section</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXIPJ.set_plan_view">
 <code class="descname">set_plan_view</code><span class="sig-paren">(</span><em>(float)arg1</em>, <em>(float)arg2</em>, <em>(float)arg3</em>, <em>(float)arg4</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIPJ.set_plan_view" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Set plan orientation parameters.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Set</span> <span class="n">plan</span> <span class="n">orientation</span> <span class="n">parameters</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -2429,15 +2448,15 @@ Set plan orientation parameters.
 <p><span class="versionmodified">New in version 5.1.6.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-This sets up the orientation of an IPJ for plan view plots,
-for instance in Wholeplot. These differ from regular plan
-map views in that the elevation of the view plane is set, and
-the view may be rotated. In addition, when viewed in a map,
-a view with this IPJ will give a status bar location (X, Y, Z)
-of the actual location in space, as opposed to just the X, Y of
-the view plane itself.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="n">sets</span> <span class="n">up</span> <span class="n">the</span> <span class="n">orientation</span> <span class="n">of</span> <span class="n">an</span> <span class="n">IPJ</span> <span class="k">for</span> <span class="n">plan</span> <span class="n">view</span> <span class="n">plots</span><span class="p">,</span>
+<span class="k">for</span> <span class="n">instance</span> <span class="ow">in</span> <span class="n">Wholeplot</span><span class="o">.</span> <span class="n">These</span> <span class="n">differ</span> <span class="kn">from</span> <span class="nn">regular</span> <span class="n">plan</span>
+<span class="nb">map</span> <span class="n">views</span> <span class="ow">in</span> <span class="n">that</span> <span class="n">the</span> <span class="n">elevation</span> <span class="n">of</span> <span class="n">the</span> <span class="n">view</span> <span class="n">plane</span> <span class="ow">is</span> <span class="nb">set</span><span class="p">,</span> <span class="ow">and</span>
+<span class="n">the</span> <span class="n">view</span> <span class="n">may</span> <span class="n">be</span> <span class="n">rotated</span><span class="o">.</span> <span class="n">In</span> <span class="n">addition</span><span class="p">,</span> <span class="n">when</span> <span class="n">viewed</span> <span class="ow">in</span> <span class="n">a</span> <span class="nb">map</span><span class="p">,</span>
+<span class="n">a</span> <span class="n">view</span> <span class="k">with</span> <span class="n">this</span> <span class="n">IPJ</span> <span class="n">will</span> <span class="n">give</span> <span class="n">a</span> <span class="n">status</span> <span class="n">bar</span> <span class="n">location</span> <span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">Z</span><span class="p">)</span>
+<span class="n">of</span> <span class="n">the</span> <span class="n">actual</span> <span class="n">location</span> <span class="ow">in</span> <span class="n">space</span><span class="p">,</span> <span class="k">as</span> <span class="n">opposed</span> <span class="n">to</span> <span class="n">just</span> <span class="n">the</span> <span class="n">X</span><span class="p">,</span> <span class="n">Y</span> <span class="n">of</span>
+<span class="n">the</span> <span class="n">view</span> <span class="n">plane</span> <span class="n">itself</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
@@ -2471,20 +2490,20 @@ the view plane itself.
 <p><span class="versionmodified">New in version 5.1.6.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-This sets up the orientation of an IPJ for section view plots,
-for instance in Wholeplot. In addition, when viewed in a map,
-a view with this IPJ will give a status bar location (X, Y, Z)
-of the actual location in space, as opposed to just the X, Y of
-the view plane itself.
-Swung sections are tricky because they are set up for section
-plots in such a way that the vertical axis remains &quot;true&quot;; points
-are projected horizontally to the viewing plane, independent of the
-swing angle. In other words, all locations in 3D space viewed using this
-projection will plot on the same horizontal line in the map view.
-This function is NOT suitable for simply creating
-an orientation for a dipping grid or view.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="n">sets</span> <span class="n">up</span> <span class="n">the</span> <span class="n">orientation</span> <span class="n">of</span> <span class="n">an</span> <span class="n">IPJ</span> <span class="k">for</span> <span class="n">section</span> <span class="n">view</span> <span class="n">plots</span><span class="p">,</span>
+<span class="k">for</span> <span class="n">instance</span> <span class="ow">in</span> <span class="n">Wholeplot</span><span class="o">.</span> <span class="n">In</span> <span class="n">addition</span><span class="p">,</span> <span class="n">when</span> <span class="n">viewed</span> <span class="ow">in</span> <span class="n">a</span> <span class="nb">map</span><span class="p">,</span>
+<span class="n">a</span> <span class="n">view</span> <span class="k">with</span> <span class="n">this</span> <span class="n">IPJ</span> <span class="n">will</span> <span class="n">give</span> <span class="n">a</span> <span class="n">status</span> <span class="n">bar</span> <span class="n">location</span> <span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">Z</span><span class="p">)</span>
+<span class="n">of</span> <span class="n">the</span> <span class="n">actual</span> <span class="n">location</span> <span class="ow">in</span> <span class="n">space</span><span class="p">,</span> <span class="k">as</span> <span class="n">opposed</span> <span class="n">to</span> <span class="n">just</span> <span class="n">the</span> <span class="n">X</span><span class="p">,</span> <span class="n">Y</span> <span class="n">of</span>
+<span class="n">the</span> <span class="n">view</span> <span class="n">plane</span> <span class="n">itself</span><span class="o">.</span>
+<span class="n">Swung</span> <span class="n">sections</span> <span class="n">are</span> <span class="n">tricky</span> <span class="n">because</span> <span class="n">they</span> <span class="n">are</span> <span class="nb">set</span> <span class="n">up</span> <span class="k">for</span> <span class="n">section</span>
+<span class="n">plots</span> <span class="ow">in</span> <span class="n">such</span> <span class="n">a</span> <span class="n">way</span> <span class="n">that</span> <span class="n">the</span> <span class="n">vertical</span> <span class="n">axis</span> <span class="n">remains</span> <span class="s2">&quot;true&quot;</span><span class="p">;</span> <span class="n">points</span>
+<span class="n">are</span> <span class="n">projected</span> <span class="n">horizontally</span> <span class="n">to</span> <span class="n">the</span> <span class="n">viewing</span> <span class="n">plane</span><span class="p">,</span> <span class="n">independent</span> <span class="n">of</span> <span class="n">the</span>
+<span class="n">swing</span> <span class="n">angle</span><span class="o">.</span> <span class="n">In</span> <span class="n">other</span> <span class="n">words</span><span class="p">,</span> <span class="nb">all</span> <span class="n">locations</span> <span class="ow">in</span> <span class="mi">3</span><span class="n">D</span> <span class="n">space</span> <span class="n">viewed</span> <span class="n">using</span> <span class="n">this</span>
+<span class="n">projection</span> <span class="n">will</span> <span class="n">plot</span> <span class="n">on</span> <span class="n">the</span> <span class="n">same</span> <span class="n">horizontal</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">the</span> <span class="nb">map</span> <span class="n">view</span><span class="o">.</span>
+<span class="n">This</span> <span class="n">function</span> <span class="ow">is</span> <span class="n">NOT</span> <span class="n">suitable</span> <span class="k">for</span> <span class="n">simply</span> <span class="n">creating</span>
+<span class="n">an</span> <span class="n">orientation</span> <span class="k">for</span> <span class="n">a</span> <span class="n">dipping</span> <span class="n">grid</span> <span class="ow">or</span> <span class="n">view</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
@@ -2538,24 +2557,27 @@ an orientation for a dipping grid or view.
 <p><span class="versionmodified">New in version 9.2.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-The vertical coordinate system (vcs) describes the datum used for vertical coordinates. &nbsp;It only appears if a vertical coordinate system is known.
-Examples:
-   &quot;WGS 84&nbsp;[geoid]&quot;
-   &quot;WGS 84 / UTM zone 12S&quot; - the vcs is not known.
+<div class="highlight-default"><div class="highlight"><pre><span></span>         <span class="n">The</span> <span class="n">vertical</span> <span class="n">coordinate</span> <span class="n">system</span> <span class="p">(</span><span class="n">vcs</span><span class="p">)</span> <span class="n">describes</span> <span class="n">the</span> <span class="n">datum</span> <span class="n">used</span> <span class="k">for</span> <span class="n">vertical</span> <span class="n">coordinates</span><span class="o">.</span> <span class="n">The</span> <span class="n">vcs</span> <span class="n">name</span><span class="p">,</span> <span class="k">if</span>
+         <span class="n">known</span><span class="p">,</span> <span class="n">will</span> <span class="n">appear</span> <span class="ow">in</span> <span class="n">square</span> <span class="n">brackets</span> <span class="k">as</span> <span class="n">part</span> <span class="n">of</span> <span class="n">the</span> <span class="n">coordinate</span> <span class="n">system</span> <span class="n">name</span><span class="o">.</span>
 
-Valid inputs:
-  &quot;geoid&quot;           - Clears any existing vcs, then sets the VCS name to the input.
-  &quot;&quot;                - Clears the VCS from the name
-</pre>
+         <span class="n">Examples</span><span class="p">:</span>
+   <span class="s2">&quot;WGS 84 [geoid]&quot;</span>
+   <span class="s2">&quot;WGS 84 / UTM zone 12S&quot;</span> <span class="o">-</span> <span class="n">the</span> <span class="n">vcs</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">known</span><span class="o">.</span>
+            <span class="s2">&quot;WGS 84 / UTM zone 12S [NAVD88]&quot;</span>
+
+<span class="n">Valid</span> <span class="n">inputs</span><span class="p">:</span>
+  <span class="s2">&quot;NAVD88&quot;</span>          <span class="o">-</span> <span class="n">Clears</span> <span class="n">existing</span> <span class="n">vcs</span><span class="p">,</span> <span class="k">if</span> <span class="nb">any</span><span class="p">,</span> <span class="ow">and</span> <span class="n">sets</span> <span class="n">the</span> <span class="n">VCS</span> <span class="n">name</span> <span class="n">to</span> <span class="s2">&quot;NAVD88&quot;</span><span class="o">.</span>
+  <span class="s2">&quot;&quot;</span>                <span class="o">-</span> <span class="n">Clears</span> <span class="n">the</span> <span class="n">vcs</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXIPJ.set_wms_coord_sys">
 <code class="descname">set_wms_coord_sys</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(float)arg2</em>, <em>(float)arg3</em>, <em>(float)arg4</em>, <em>(float)arg5</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIPJ.set_wms_coord_sys" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Set coordinate system from a WMS coordsys string.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Set</span> <span class="n">coordinate</span> <span class="n">system</span> <span class="kn">from</span> <span class="nn">a</span> <span class="n">WMS</span> <span class="n">coordsys</span> <span class="n">string</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -2581,30 +2603,30 @@ Set coordinate system from a WMS coordsys string.
 <p><span class="versionmodified">New in version 5.1.5.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-WMS coordinate strings supported:
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">WMS</span> <span class="n">coordinate</span> <span class="n">strings</span> <span class="n">supported</span><span class="p">:</span>
 
 
-EPSG:code
+<span class="n">EPSG</span><span class="p">:</span><span class="n">code</span>
 
-where &quot;code&quot; is the EPSG code number
-&quot;EPSG:4326&quot;  is geographic &quot;WGS 84&quot; (see datum.csv)
-&quot;EPSG:25834&quot; is projected &quot;ETRS89 / UTM zone 34N&quot;
-(see ipj_pcs.csv)
+<span class="n">where</span> <span class="s2">&quot;code&quot;</span> <span class="ow">is</span> <span class="n">the</span> <span class="n">EPSG</span> <span class="n">code</span> <span class="n">number</span>
+<span class="s2">&quot;EPSG:4326&quot;</span>  <span class="ow">is</span> <span class="n">geographic</span> <span class="s2">&quot;WGS 84&quot;</span> <span class="p">(</span><span class="n">see</span> <span class="n">datum</span><span class="o">.</span><span class="n">csv</span><span class="p">)</span>
+<span class="s2">&quot;EPSG:25834&quot;</span> <span class="ow">is</span> <span class="n">projected</span> <span class="s2">&quot;ETRS89 / UTM zone 34N&quot;</span>
+<span class="p">(</span><span class="n">see</span> <span class="n">ipj_pcs</span><span class="o">.</span><span class="n">csv</span><span class="p">)</span>
 
-The bounding box for EPSG systems must be defined in the
-EPSG coordinate system.  If a bounding box is provided,
-it will not be changed.
+<span class="n">The</span> <span class="n">bounding</span> <span class="n">box</span> <span class="k">for</span> <span class="n">EPSG</span> <span class="n">systems</span> <span class="n">must</span> <span class="n">be</span> <span class="n">defined</span> <span class="ow">in</span> <span class="n">the</span>
+<span class="n">EPSG</span> <span class="n">coordinate</span> <span class="n">system</span><span class="o">.</span>  <span class="n">If</span> <span class="n">a</span> <span class="n">bounding</span> <span class="n">box</span> <span class="ow">is</span> <span class="n">provided</span><span class="p">,</span>
+<span class="n">it</span> <span class="n">will</span> <span class="ow">not</span> <span class="n">be</span> <span class="n">changed</span><span class="o">.</span>
 
 
-AUTO:wm_id,epsg_units,lon,lat (see OGC documentation)
+<span class="n">AUTO</span><span class="p">:</span><span class="n">wm_id</span><span class="p">,</span><span class="n">epsg_units</span><span class="p">,</span><span class="n">lon</span><span class="p">,</span><span class="n">lat</span> <span class="p">(</span><span class="n">see</span> <span class="n">OGC</span> <span class="n">documentation</span><span class="p">)</span>
 
-for &quot;AUTO&quot; coordinates, the &quot;epsg_units&quot; is the units
-of the bounding box.  This procedure will transform
-the supplied bounding box from these units to the
-units of the projection.  Normally, this is from
-long/lat (9102) to metres (9001).
-</pre>
+<span class="k">for</span> <span class="s2">&quot;AUTO&quot;</span> <span class="n">coordinates</span><span class="p">,</span> <span class="n">the</span> <span class="s2">&quot;epsg_units&quot;</span> <span class="ow">is</span> <span class="n">the</span> <span class="n">units</span>
+<span class="n">of</span> <span class="n">the</span> <span class="n">bounding</span> <span class="n">box</span><span class="o">.</span>  <span class="n">This</span> <span class="n">procedure</span> <span class="n">will</span> <span class="n">transform</span>
+<span class="n">the</span> <span class="n">supplied</span> <span class="n">bounding</span> <span class="n">box</span> <span class="kn">from</span> <span class="nn">these</span> <span class="n">units</span> <span class="n">to</span> <span class="n">the</span>
+<span class="n">units</span> <span class="n">of</span> <span class="n">the</span> <span class="n">projection</span><span class="o">.</span>  <span class="n">Normally</span><span class="p">,</span> <span class="n">this</span> <span class="ow">is</span> <span class="kn">from</span>
+<span class="nn">long</span><span class="o">/</span><span class="n">lat</span> <span class="p">(</span><span class="mi">9102</span><span class="p">)</span> <span class="n">to</span> <span class="n">metres</span> <span class="p">(</span><span class="mi">9001</span><span class="p">)</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
@@ -2642,7 +2664,7 @@ long/lat (9102) to metres (9001).
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><a class="reference internal" href="#ipj-type"><span class="std std-ref">IPJ_TYPE constants</span></a></td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int</td>
 </tr>
 </tbody>
 </table>
@@ -2654,9 +2676,9 @@ long/lat (9102) to metres (9001).
 <dl class="method">
 <dt id="geosoft.gxapi.GXIPJ.support_datum_transform">
 <code class="descname">support_datum_transform</code><span class="sig-paren">(</span><em>(GXIPJ)arg1</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXIPJ.support_datum_transform" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Can we transform between these two datums?
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span>Can we transform between these two datums?
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -2668,7 +2690,7 @@ Can we transform between these two datums?
 or because a local datum transform is defined
 for each coordinate system.</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
 </tr>
 </tbody>
 </table>
@@ -2676,15 +2698,15 @@ for each coordinate system.</td>
 <p><span class="versionmodified">New in version 6.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-To transform between different datums requires the use of a local
-datum transform.  The local datum transform can be defined when
-a coordinate system is created, but the definition is optional.
-This function will test that the local datum transforms are defined.
-Note that a coordinate transformation between datums without a
-local datum transform is still possible, but only the effect of
-ellipsoid shape will be modelled in the transform.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">To</span> <span class="n">transform</span> <span class="n">between</span> <span class="n">different</span> <span class="n">datums</span> <span class="n">requires</span> <span class="n">the</span> <span class="n">use</span> <span class="n">of</span> <span class="n">a</span> <span class="n">local</span>
+<span class="n">datum</span> <span class="n">transform</span><span class="o">.</span>  <span class="n">The</span> <span class="n">local</span> <span class="n">datum</span> <span class="n">transform</span> <span class="n">can</span> <span class="n">be</span> <span class="n">defined</span> <span class="n">when</span>
+<span class="n">a</span> <span class="n">coordinate</span> <span class="n">system</span> <span class="ow">is</span> <span class="n">created</span><span class="p">,</span> <span class="n">but</span> <span class="n">the</span> <span class="n">definition</span> <span class="ow">is</span> <span class="n">optional</span><span class="o">.</span>
+<span class="n">This</span> <span class="n">function</span> <span class="n">will</span> <span class="n">test</span> <span class="n">that</span> <span class="n">the</span> <span class="n">local</span> <span class="n">datum</span> <span class="n">transforms</span> <span class="n">are</span> <span class="n">defined</span><span class="o">.</span>
+<span class="n">Note</span> <span class="n">that</span> <span class="n">a</span> <span class="n">coordinate</span> <span class="n">transformation</span> <span class="n">between</span> <span class="n">datums</span> <span class="n">without</span> <span class="n">a</span>
+<span class="n">local</span> <span class="n">datum</span> <span class="n">transform</span> <span class="ow">is</span> <span class="n">still</span> <span class="n">possible</span><span class="p">,</span> <span class="n">but</span> <span class="n">only</span> <span class="n">the</span> <span class="n">effect</span> <span class="n">of</span>
+<span class="n">ellipsoid</span> <span class="n">shape</span> <span class="n">will</span> <span class="n">be</span> <span class="n">modelled</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">transform</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="staticmethod">
@@ -2699,7 +2721,7 @@ ellipsoid shape will be modelled in the transform.
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<em>float</em>) &#8211; factor to meters</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#ipj-unit"><span class="std std-ref">IPJ_UNIT constants</span></a></li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#ipj-unit"><span class="std std-ref">IPJ_UNIT constants</span></a></li>
 <li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; name returned, &#8220;&#8221; if cannot find unit</li>
 </ul>
 </td>
@@ -2720,9 +2742,9 @@ ellipsoid shape will be modelled in the transform.
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXIPJ.unit_scale">
 <em class="property">static </em><code class="descname">unit_scale</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(float)arg2</em><span class="sig-paren">)</span> &rarr; float:<a class="headerlink" href="#geosoft.gxapi.GXIPJ.unit_scale" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Get a unit scale (m/unit) given a name
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">a</span> <span class="n">unit</span> <span class="n">scale</span> <span class="p">(</span><span class="n">m</span><span class="o">/</span><span class="n">unit</span><span class="p">)</span> <span class="n">given</span> <span class="n">a</span> <span class="n">name</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -2745,24 +2767,24 @@ Get a unit scale (m/unit) given a name
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-If name cannot be found, returns default.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">If</span> <span class="n">name</span> <span class="n">cannot</span> <span class="n">be</span> <span class="n">found</span><span class="p">,</span> <span class="n">returns</span> <span class="n">default</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXIPJ.warp_type">
 <code class="descname">warp_type</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXIPJ.warp_type" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Obtain the warp type of an IPJ.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Obtain</span> <span class="n">the</span> <span class="n">warp</span> <span class="nb">type</span> <span class="n">of</span> <span class="n">an</span> <span class="n">IPJ</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><a class="reference internal" href="#ipj-warp"><span class="std std-ref">IPJ_WARP constants</span></a></td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int</td>
 </tr>
 </tbody>
 </table>
@@ -2774,9 +2796,9 @@ Obtain the warp type of an IPJ.
 <dl class="method">
 <dt id="geosoft.gxapi.GXIPJ.warped">
 <code class="descname">warped</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; bool:<a class="headerlink" href="#geosoft.gxapi.GXIPJ.warped" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Does IPJ contain a warp?
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span>Does IPJ contain a warp?
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -2795,9 +2817,9 @@ Does IPJ contain a warp?
 <dl class="method">
 <dt id="geosoft.gxapi.GXIPJ.warps_are_the_same">
 <code class="descname">warps_are_the_same</code><span class="sig-paren">(</span><em>(GXIPJ)arg1</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXIPJ.warps_are_the_same" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Are these two warps the same?
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span>Are these two warps the same?
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -2807,7 +2829,7 @@ Are these two warps the same?
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">0 - No
 1 - Yes</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
 </tr>
 </tbody>
 </table>
@@ -2820,7 +2842,7 @@ Are these two warps the same?
 <dt id="geosoft.gxapi.GXIPJ.warps_are_the_same_within_a_small_tolerance">
 <code class="descname">warps_are_the_same_within_a_small_tolerance</code><span class="sig-paren">(</span><em>(GXIPJ)arg1</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXIPJ.warps_are_the_same_within_a_small_tolerance" title="Permalink to this definition">¶</a></dt>
 <dd><pre class="literal-block">
-Same as \ :func:`geosoft.gxapi.GXIPJ.warps_are_the_same`\ , but allows for small numerical differences
+Same as <a class="reference internal" href="#geosoft.gxapi.GXIPJ.warps_are_the_same" title="geosoft.gxapi.GXIPJ.warps_are_the_same"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXIPJ.warps_are_the_same()</span></code></a>, but allows for small numerical differences
 </pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -2831,7 +2853,7 @@ Same as \ :func:`geosoft.gxapi.GXIPJ.warps_are_the_same`\ , but allows for small
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">0 - No
 1 - Yes</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
 </tr>
 </tbody>
 </table>
@@ -3454,9 +3476,13 @@ Same as \ :func:`geosoft.gxapi.GXIPJ.warps_are_the_same`\ , but allows for small
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li> 
+          <a href="GXITR.html" title="GXITR class"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="GXIPGUI.html" title="GXIPGUI class"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="geosoft.gxapi.classes.html" >GX API Class/Library Reference</a> &#187;</li> 
       </ul>
     </div>
 

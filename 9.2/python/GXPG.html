@@ -27,6 +27,8 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="GXPGEXP class" href="GXPGEXP.html" />
+    <link rel="prev" title="GXPDF3D class" href="GXPDF3D.html" />
  
 <script type="text/javascript">
   var _gaq = _gaq || [];
@@ -43,9 +45,13 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li> 
+          <a href="GXPGEXP.html" title="GXPGEXP class"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="GXPDF3D.html" title="GXPDF3D class"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="geosoft.gxapi.classes.html" accesskey="U">GX API Class/Library Reference</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -59,13 +65,19 @@
 </li>
 </ul>
 
-  <div role="note" aria-label="source link">
-    <h3>This Page</h3>
-    <ul class="this-page-menu">
-      <li><a href="_sources/GXPG.rst.txt"
-            rel="nofollow">Show Source</a></li>
-    </ul>
-   </div>
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Introduction</a></li>
+    <li><a href="geosoft.gxapi.classes.html">GX API Class/Library Reference</a></li>
+</ul>
+<h3>Previous Topic</h3>
+<ul>
+    <li><a href="GXPDF3D.html" title="previous chapter">GXPDF3D class</a></li>
+</ul>
+<h3>Next Topic</h3>
+<ul>
+    <li><a href="GXPGEXP.html" title="next chapter">GXPGEXP class</a></li>
+</ul>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
@@ -76,6 +88,13 @@
     </form>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/GXPG.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
         </div>
       </div>
 
@@ -89,24 +108,24 @@
 <dl class="class">
 <dt id="geosoft.gxapi.GXPG">
 <em class="property">class </em><code class="descclassname">geosoft.gxapi.</code><code class="descname">GXPG</code><a class="headerlink" href="#geosoft.gxapi.GXPG" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Pager methods for large 2-D arrays
-This class handles very-large 2-D arrays in which efficient
-access is required along both rows and columns.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Pager</span> <span class="n">methods</span> <span class="k">for</span> <span class="n">large</span> <span class="mi">2</span><span class="o">-</span><span class="n">D</span> <span class="n">arrays</span>
+<span class="n">This</span> <span class="k">class</span> <span class="nc">handles</span> <span class="n">very</span><span class="o">-</span><span class="n">large</span> <span class="mi">2</span><span class="o">-</span><span class="n">D</span> <span class="n">arrays</span> <span class="ow">in</span> <span class="n">which</span> <span class="n">efficient</span>
+<span class="n">access</span> <span class="ow">is</span> <span class="n">required</span> <span class="n">along</span> <span class="n">both</span> <span class="n">rows</span> <span class="ow">and</span> <span class="n">columns</span><span class="o">.</span>
+</pre></div>
+</div>
 <p><strong>Note:</strong></p>
 <pre class="literal-block">
 Typically a grid is accessed using the IMG class, and a PG
-is obtained from the IMG using the \ :func:`geosoft.gxapi.GXIMG.get_pg`\  function.
+is obtained from the IMG using the <a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG.get_pg" title="geosoft.gxapi.GXIMG.get_pg"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXIMG.get_pg()</span></code></a> function.
 Following operations on the PG, it can be written back to
-the IMG using \ :func:`geosoft.gxapi.GXIMG.set_pg`\ .
+the IMG using <a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG.set_pg" title="geosoft.gxapi.GXIMG.set_pg"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXIMG.set_pg()</span></code></a>.
 </pre>
 <dl class="method">
 <dt id="geosoft.gxapi.GXPG.copy">
 <code class="descname">copy</code><span class="sig-paren">(</span><em>(GXPG)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXPG.copy" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Copy the data from one pager to another.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Copy</span> <span class="n">the</span> <span class="n">data</span> <span class="kn">from</span> <span class="nn">one</span> <span class="n">pager</span> <span class="n">to</span> <span class="n">another</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -127,21 +146,21 @@ Copy the data from one pager to another.
 <dl class="method">
 <dt id="geosoft.gxapi.GXPG.copy_subset">
 <code class="descname">copy_subset</code><span class="sig-paren">(</span><em>(GXPG)arg1</em>, <em>(int)arg2</em>, <em>(int)arg3</em>, <em>(int)arg4</em>, <em>(int)arg5</em>, <em>(int)arg6</em>, <em>(int)arg7</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXPG.copy_subset" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Copy a subset of data from one pager to another.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Copy</span> <span class="n">a</span> <span class="n">subset</span> <span class="n">of</span> <span class="n">data</span> <span class="kn">from</span> <span class="nn">one</span> <span class="n">pager</span> <span class="n">to</span> <span class="n">another</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<a class="reference internal" href="#geosoft.gxapi.GXPG" title="geosoft.gxapi.GXPG"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXPG</span></code></a>) &#8211; Source PG object</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Y (row) Origin on destination</li>
-<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; X (col) Origin on destination</li>
-<li><strong>arg4</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Y (row) Origin on source</li>
-<li><strong>arg5</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; X (col) Origin on source</li>
-<li><strong>arg6</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Number of Y (rows) to copy</li>
-<li><strong>arg7</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Number of X (columns) to copy</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; Y (row) Origin on destination</li>
+<li><strong>arg3</strong> (<em>int</em>) &#8211; X (col) Origin on destination</li>
+<li><strong>arg4</strong> (<em>int</em>) &#8211; Y (row) Origin on source</li>
+<li><strong>arg5</strong> (<em>int</em>) &#8211; X (col) Origin on source</li>
+<li><strong>arg6</strong> (<em>int</em>) &#8211; Number of Y (rows) to copy</li>
+<li><strong>arg7</strong> (<em>int</em>) &#8211; Number of X (columns) to copy</li>
 </ul>
 </td>
 </tr>
@@ -165,24 +184,24 @@ Copy a subset of data from one pager to another.
 <dl class="method">
 <dt id="geosoft.gxapi.GXPG.copy_subset_3d">
 <code class="descname">copy_subset_3d</code><span class="sig-paren">(</span><em>(GXPG)arg1</em>, <em>(int)arg2</em>, <em>(int)arg3</em>, <em>(int)arg4</em>, <em>(int)arg5</em>, <em>(int)arg6</em>, <em>(int)arg7</em>, <em>(int)arg8</em>, <em>(int)arg9</em>, <em>(int)arg10</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXPG.copy_subset_3d" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Copy a subset of data from one pager to another.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Copy</span> <span class="n">a</span> <span class="n">subset</span> <span class="n">of</span> <span class="n">data</span> <span class="kn">from</span> <span class="nn">one</span> <span class="n">pager</span> <span class="n">to</span> <span class="n">another</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<a class="reference internal" href="#geosoft.gxapi.GXPG" title="geosoft.gxapi.GXPG"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXPG</span></code></a>) &#8211; Source PG object</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Z (slice) Origin on destination</li>
-<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Y (row) Origin on destination</li>
-<li><strong>arg4</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; X (col) Origin on destination</li>
-<li><strong>arg5</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Z (slice) Origin on source</li>
-<li><strong>arg6</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Y (row) Origin on source</li>
-<li><strong>arg7</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; X (col) Origin on source</li>
-<li><strong>arg8</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Number of Z (slice) to copy</li>
-<li><strong>arg9</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Number of Y (rows) to copy</li>
-<li><strong>arg10</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Number of X (columns) to copy</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; Z (slice) Origin on destination</li>
+<li><strong>arg3</strong> (<em>int</em>) &#8211; Y (row) Origin on destination</li>
+<li><strong>arg4</strong> (<em>int</em>) &#8211; X (col) Origin on destination</li>
+<li><strong>arg5</strong> (<em>int</em>) &#8211; Z (slice) Origin on source</li>
+<li><strong>arg6</strong> (<em>int</em>) &#8211; Y (row) Origin on source</li>
+<li><strong>arg7</strong> (<em>int</em>) &#8211; X (col) Origin on source</li>
+<li><strong>arg8</strong> (<em>int</em>) &#8211; Number of Z (slice) to copy</li>
+<li><strong>arg9</strong> (<em>int</em>) &#8211; Number of Y (rows) to copy</li>
+<li><strong>arg10</strong> (<em>int</em>) &#8211; Number of X (columns) to copy</li>
 </ul>
 </td>
 </tr>
@@ -214,9 +233,9 @@ Copy a subset of data from one pager to another.
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; # elements in y (# of row)</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; # elements in x (# of column)</li>
-<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="GXGEOSOFT.html#gs-types"><span class="std std-ref">GS_TYPES constants</span></a></li>
+<li><strong>arg1</strong> (<em>int</em>) &#8211; # elements in y (# of row)</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; # elements in x (# of column)</li>
+<li><strong>arg3</strong> (<em>int</em>) &#8211; <a class="reference internal" href="GXGEOSOFT.html#gs-types"><span class="std std-ref">GS_TYPES constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -244,10 +263,10 @@ Copy a subset of data from one pager to another.
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; # elements in z (# of slices)</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; # elements in y (# of row)</li>
-<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; # elements in x (# of column)</li>
-<li><strong>arg4</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="GXGEOSOFT.html#gs-types"><span class="std std-ref">GS_TYPES constants</span></a></li>
+<li><strong>arg1</strong> (<em>int</em>) &#8211; # elements in z (# of slices)</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; # elements in y (# of row)</li>
+<li><strong>arg3</strong> (<em>int</em>) &#8211; # elements in x (# of column)</li>
+<li><strong>arg4</strong> (<em>int</em>) &#8211; <a class="reference internal" href="GXGEOSOFT.html#gs-types"><span class="std std-ref">GS_TYPES constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -267,9 +286,9 @@ Copy a subset of data from one pager to another.
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXPG.create_s">
 <em class="property">static </em><code class="descname">create_s</code><span class="sig-paren">(</span><em>(GXBF)arg1</em><span class="sig-paren">)</span> &rarr; GXPG:<a class="headerlink" href="#geosoft.gxapi.GXPG.create_s" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Create a 2D PG from serialized source.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Create</span> <span class="n">a</span> <span class="mi">2</span><span class="n">D</span> <span class="n">PG</span> <span class="kn">from</span> <span class="nn">serialized</span> <span class="n">source</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -286,17 +305,17 @@ Create a 2D PG from serialized source.
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-For 3D pagers, use CreateBF_PG.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">For</span> <span class="mi">3</span><span class="n">D</span> <span class="n">pagers</span><span class="p">,</span> <span class="n">use</span> <span class="n">CreateBF_PG</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXPG.dummy">
 <code class="descname">dummy</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXPG.dummy" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Sets the Entire pager to dummy.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Sets</span> <span class="n">the</span> <span class="n">Entire</span> <span class="n">pager</span> <span class="n">to</span> <span class="n">dummy</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -315,16 +334,16 @@ Sets the Entire pager to dummy.
 <dl class="method">
 <dt id="geosoft.gxapi.GXPG.e_type">
 <code class="descname">e_type</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXPG.e_type" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Gets the type of pager.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Gets</span> <span class="n">the</span> <span class="nb">type</span> <span class="n">of</span> <span class="n">pager</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><a class="reference internal" href="GXGEOSOFT.html#gs-types"><span class="std std-ref">GS_TYPES constants</span></a></td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int</td>
 </tr>
 </tbody>
 </table>
@@ -344,8 +363,8 @@ Gets the type of pager.
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; iBx - element # in x (column #)</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; iBy - element # in y (row #)</li>
+<li><strong>arg1</strong> (<em>int</em>) &#8211; iBx - element # in x (column #)</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; iBy - element # in y (row #)</li>
 </ul>
 </td>
 </tr>
@@ -361,9 +380,9 @@ Gets the type of pager.
 <p><span class="versionmodified">New in version 8.3.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-This is a low-performance method.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">low</span><span class="o">-</span><span class="n">performance</span> <span class="n">method</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
@@ -385,16 +404,16 @@ This is a low-performance method.
 <dl class="method">
 <dt id="geosoft.gxapi.GXPG.n_cols">
 <code class="descname">n_cols</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXPG.n_cols" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Gets the # of columns in pager.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Gets</span> <span class="n">the</span> <span class="c1"># of columns in pager.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"># of columns.</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int</td>
 </tr>
 </tbody>
 </table>
@@ -406,16 +425,16 @@ Gets the # of columns in pager.
 <dl class="method">
 <dt id="geosoft.gxapi.GXPG.n_rows">
 <code class="descname">n_rows</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXPG.n_rows" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Gets the # of rows in pager.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Gets</span> <span class="n">the</span> <span class="c1"># of rows in pager.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"># of rows.</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int</td>
 </tr>
 </tbody>
 </table>
@@ -427,16 +446,16 @@ Gets the # of rows in pager.
 <dl class="method">
 <dt id="geosoft.gxapi.GXPG.n_slices">
 <code class="descname">n_slices</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXPG.n_slices" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Gets the # of slices (z) in pager.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Gets</span> <span class="n">the</span> <span class="c1"># of slices (z) in pager.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"># of rows.</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int</td>
 </tr>
 </tbody>
 </table>
@@ -464,9 +483,9 @@ Gets the # of slices (z) in pager.
 <dl class="method">
 <dt id="geosoft.gxapi.GXPG.range">
 <code class="descname">range</code><span class="sig-paren">(</span><em>(float_ref)arg1</em>, <em>(float_ref)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXPG.range" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Computes the range of the entire pager.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Computes</span> <span class="n">the</span> <span class="nb">range</span> <span class="n">of</span> <span class="n">the</span> <span class="n">entire</span> <span class="n">pager</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -501,8 +520,8 @@ Computes the range of the entire pager.
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Number of Y (rows) to reallocate</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Number of X (columns) to reallocate</li>
+<li><strong>arg1</strong> (<em>int</em>) &#8211; Number of Y (rows) to reallocate</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; Number of X (columns) to reallocate</li>
 </ul>
 </td>
 </tr>
@@ -530,9 +549,9 @@ Computes the range of the entire pager.
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Number of Z (slices) to reallocate</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Number of Y (rows) to reallocate</li>
-<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Number of X (columns) to reallocate</li>
+<li><strong>arg1</strong> (<em>int</em>) &#8211; Number of Z (slices) to reallocate</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; Number of Y (rows) to reallocate</li>
+<li><strong>arg3</strong> (<em>int</em>) &#8211; Number of X (columns) to reallocate</li>
 </ul>
 </td>
 </tr>
@@ -552,20 +571,20 @@ Computes the range of the entire pager.
 <dl class="method">
 <dt id="geosoft.gxapi.GXPG.read_bf">
 <code class="descname">read_bf</code><span class="sig-paren">(</span><em>(GXBF)arg1</em>, <em>(int)arg2</em>, <em>(int)arg3</em>, <em>(int)arg4</em>, <em>(int)arg5</em>, <em>(int)arg6</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXPG.read_bf" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Read the contents of a 2D or 3D pager to from a BF.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Read</span> <span class="n">the</span> <span class="n">contents</span> <span class="n">of</span> <span class="n">a</span> <span class="mi">2</span><span class="n">D</span> <span class="ow">or</span> <span class="mi">3</span><span class="n">D</span> <span class="n">pager</span> <span class="n">to</span> <span class="kn">from</span> <span class="nn">a</span> <span class="n">BF</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<a class="reference internal" href="GXBF.html#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXBF</span></code></a>) &#8211; BF to read from</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#pg-3d-dir"><span class="std std-ref">PG_3D_DIR constants</span></a></li>
-<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#pg-bf-conv"><span class="std std-ref">PG_BF_CONV constants</span></a></li>
-<li><strong>arg4</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Reverse X</li>
-<li><strong>arg5</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Reverse Y</li>
-<li><strong>arg6</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Reverse Z</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#pg-3d-dir"><span class="std std-ref">PG_3D_DIR constants</span></a></li>
+<li><strong>arg3</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#pg-bf-conv"><span class="std std-ref">PG_BF_CONV constants</span></a></li>
+<li><strong>arg4</strong> (<em>int</em>) &#8211; Reverse X</li>
+<li><strong>arg5</strong> (<em>int</em>) &#8211; Reverse Y</li>
+<li><strong>arg6</strong> (<em>int</em>) &#8211; Reverse Z</li>
 </ul>
 </td>
 </tr>
@@ -585,17 +604,17 @@ Read the contents of a 2D or 3D pager to from a BF.
 <dl class="method">
 <dt id="geosoft.gxapi.GXPG.read_col">
 <code class="descname">read_col</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(int)arg2</em>, <em>(int)arg3</em>, <em>(GXVV)arg4</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXPG.read_col" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Read a set of elements in X (column) from pager into vv
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Read</span> <span class="n">a</span> <span class="nb">set</span> <span class="n">of</span> <span class="n">elements</span> <span class="ow">in</span> <span class="n">X</span> <span class="p">(</span><span class="n">column</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">pager</span> <span class="n">into</span> <span class="n">vv</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; iBx - element # in x (column #)</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; iBy - begining element # in y to read (0 is the first)</li>
-<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; iNy - # elements to read (0 for whole vector)</li>
+<li><strong>arg1</strong> (<em>int</em>) &#8211; iBx - element # in x (column #)</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; iBy - begining element # in y to read (0 is the first)</li>
+<li><strong>arg3</strong> (<em>int</em>) &#8211; iNy - # elements to read (0 for whole vector)</li>
 <li><strong>arg4</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; hVV - VV handle</li>
 </ul>
 </td>
@@ -616,18 +635,18 @@ Read a set of elements in X (column) from pager into vv
 <dl class="method">
 <dt id="geosoft.gxapi.GXPG.read_col_3d">
 <code class="descname">read_col_3d</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(int)arg2</em>, <em>(int)arg3</em>, <em>(int)arg4</em>, <em>(GXVV)arg5</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXPG.read_col_3d" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Read a set of elements in X (column) from pager into vv
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Read</span> <span class="n">a</span> <span class="nb">set</span> <span class="n">of</span> <span class="n">elements</span> <span class="ow">in</span> <span class="n">X</span> <span class="p">(</span><span class="n">column</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">pager</span> <span class="n">into</span> <span class="n">vv</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; iBz - element # in z (slice #)</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; iBx - element # in x (column #)</li>
-<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; iBy - begining element # in y to read (0 is the first)</li>
-<li><strong>arg4</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; iNy - # elements to read (0 for whole vector)</li>
+<li><strong>arg1</strong> (<em>int</em>) &#8211; iBz - element # in z (slice #)</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; iBx - element # in x (column #)</li>
+<li><strong>arg3</strong> (<em>int</em>) &#8211; iBy - begining element # in y to read (0 is the first)</li>
+<li><strong>arg4</strong> (<em>int</em>) &#8211; iNy - # elements to read (0 for whole vector)</li>
 <li><strong>arg5</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; hVV - VV handle</li>
 </ul>
 </td>
@@ -648,19 +667,19 @@ Read a set of elements in X (column) from pager into vv
 <dl class="method">
 <dt id="geosoft.gxapi.GXPG.read_ra">
 <code class="descname">read_ra</code><span class="sig-paren">(</span><em>(GXRA)arg1</em>, <em>(int)arg2</em>, <em>(int)arg3</em>, <em>(int)arg4</em>, <em>(int)arg5</em>, <em>(str)arg6</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXPG.read_ra" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Read the contents of a 2D or 3D pager to from an RA.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Read</span> <span class="n">the</span> <span class="n">contents</span> <span class="n">of</span> <span class="n">a</span> <span class="mi">2</span><span class="n">D</span> <span class="ow">or</span> <span class="mi">3</span><span class="n">D</span> <span class="n">pager</span> <span class="n">to</span> <span class="kn">from</span> <span class="nn">an</span> <span class="n">RA</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<a class="reference internal" href="GXRA.html#geosoft.gxapi.GXRA" title="geosoft.gxapi.GXRA"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXRA</span></code></a>) &#8211; RA to read from</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#pg-3d-dir"><span class="std std-ref">PG_3D_DIR constants</span></a></li>
-<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Reverse X</li>
-<li><strong>arg4</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Reverse Y</li>
-<li><strong>arg5</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Reverse Z</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#pg-3d-dir"><span class="std std-ref">PG_3D_DIR constants</span></a></li>
+<li><strong>arg3</strong> (<em>int</em>) &#8211; Reverse X</li>
+<li><strong>arg4</strong> (<em>int</em>) &#8211; Reverse Y</li>
+<li><strong>arg5</strong> (<em>int</em>) &#8211; Reverse Z</li>
 <li><strong>arg6</strong> (<em>str</em>) &#8211; Dummy</li>
 </ul>
 </td>
@@ -685,17 +704,17 @@ Read the contents of a 2D or 3D pager to from an RA.
 <dl class="method">
 <dt id="geosoft.gxapi.GXPG.read_row">
 <code class="descname">read_row</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(int)arg2</em>, <em>(int)arg3</em>, <em>(GXVV)arg4</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXPG.read_row" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Read a set of elements in Y (row) from pager into vv
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Read</span> <span class="n">a</span> <span class="nb">set</span> <span class="n">of</span> <span class="n">elements</span> <span class="ow">in</span> <span class="n">Y</span> <span class="p">(</span><span class="n">row</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">pager</span> <span class="n">into</span> <span class="n">vv</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; iBy - element # in y (row #)</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; iBx - begining element # in x to read (0 is the first)</li>
-<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; iNx - # elements to read (0 for whole vector)</li>
+<li><strong>arg1</strong> (<em>int</em>) &#8211; iBy - element # in y (row #)</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; iBx - begining element # in x to read (0 is the first)</li>
+<li><strong>arg3</strong> (<em>int</em>) &#8211; iNx - # elements to read (0 for whole vector)</li>
 <li><strong>arg4</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; hVV - VV handle</li>
 </ul>
 </td>
@@ -716,18 +735,18 @@ Read a set of elements in Y (row) from pager into vv
 <dl class="method">
 <dt id="geosoft.gxapi.GXPG.read_row_3d">
 <code class="descname">read_row_3d</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(int)arg2</em>, <em>(int)arg3</em>, <em>(int)arg4</em>, <em>(GXVV)arg5</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXPG.read_row_3d" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Read a set of elements in Y (row) from pager into vv
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Read</span> <span class="n">a</span> <span class="nb">set</span> <span class="n">of</span> <span class="n">elements</span> <span class="ow">in</span> <span class="n">Y</span> <span class="p">(</span><span class="n">row</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">pager</span> <span class="n">into</span> <span class="n">vv</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; iBz - element # in z (slice #)</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; iBy - element # in y (row #)</li>
-<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; iBx - begining element # in x to read (0 is the first)</li>
-<li><strong>arg4</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; iNx - # elements to read (0 for whole vector)</li>
+<li><strong>arg1</strong> (<em>int</em>) &#8211; iBz - element # in z (slice #)</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; iBy - element # in y (row #)</li>
+<li><strong>arg3</strong> (<em>int</em>) &#8211; iBx - begining element # in x to read (0 is the first)</li>
+<li><strong>arg4</strong> (<em>int</em>) &#8211; iNx - # elements to read (0 for whole vector)</li>
 <li><strong>arg5</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; hVV - VV handle</li>
 </ul>
 </td>
@@ -748,18 +767,18 @@ Read a set of elements in Y (row) from pager into vv
 <dl class="method">
 <dt id="geosoft.gxapi.GXPG.read_trace_3d">
 <code class="descname">read_trace_3d</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(int)arg2</em>, <em>(int)arg3</em>, <em>(int)arg4</em>, <em>(GXVV)arg5</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXPG.read_trace_3d" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Read a set of elements in Z (trace) from pager into vv
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Read</span> <span class="n">a</span> <span class="nb">set</span> <span class="n">of</span> <span class="n">elements</span> <span class="ow">in</span> <span class="n">Z</span> <span class="p">(</span><span class="n">trace</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">pager</span> <span class="n">into</span> <span class="n">vv</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; iBx - element # in x (column #)</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; iBy - element # in y (row #)</li>
-<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; iBy - begining element # in z to read (0 is the first)</li>
-<li><strong>arg4</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; iNy - # elements to read (0 for whole vector)</li>
+<li><strong>arg1</strong> (<em>int</em>) &#8211; iBx - element # in x (column #)</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; iBy - element # in y (row #)</li>
+<li><strong>arg3</strong> (<em>int</em>) &#8211; iBy - begining element # in z to read (0 is the first)</li>
+<li><strong>arg4</strong> (<em>int</em>) &#8211; iNy - # elements to read (0 for whole vector)</li>
 <li><strong>arg5</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; hVV - VV handle</li>
 </ul>
 </td>
@@ -780,9 +799,9 @@ Read a set of elements in Z (trace) from pager into vv
 <dl class="method">
 <dt id="geosoft.gxapi.GXPG.serial">
 <code class="descname">serial</code><span class="sig-paren">(</span><em>(GXBF)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXPG.serial" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Serialize a 2D PG to a BF.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Serialize</span> <span class="n">a</span> <span class="mi">2</span><span class="n">D</span> <span class="n">PG</span> <span class="n">to</span> <span class="n">a</span> <span class="n">BF</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -800,16 +819,16 @@ Serialize a 2D PG to a BF.
 </div>
 <p><strong>Note:</strong></p>
 <pre class="literal-block">
-For 3D pagers, use \ :func:`geosoft.gxapi.GXPG.write_bf`\ .
+For 3D pagers, use <a class="reference internal" href="#geosoft.gxapi.GXPG.write_bf" title="geosoft.gxapi.GXPG.write_bf"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXPG.write_bf()</span></code></a>.
 </pre>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXPG.statistics">
 <code class="descname">statistics</code><span class="sig-paren">(</span><em>(GXST)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXPG.statistics" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Compute the statistics of a pager object.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Compute</span> <span class="n">the</span> <span class="n">statistics</span> <span class="n">of</span> <span class="n">a</span> <span class="n">pager</span> <span class="nb">object</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -830,20 +849,20 @@ Compute the statistics of a pager object.
 <dl class="method">
 <dt id="geosoft.gxapi.GXPG.write_bf">
 <code class="descname">write_bf</code><span class="sig-paren">(</span><em>(GXBF)arg1</em>, <em>(int)arg2</em>, <em>(int)arg3</em>, <em>(int)arg4</em>, <em>(int)arg5</em>, <em>(int)arg6</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXPG.write_bf" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Write the contents of a 2D or 3D pager to a BF.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Write</span> <span class="n">the</span> <span class="n">contents</span> <span class="n">of</span> <span class="n">a</span> <span class="mi">2</span><span class="n">D</span> <span class="ow">or</span> <span class="mi">3</span><span class="n">D</span> <span class="n">pager</span> <span class="n">to</span> <span class="n">a</span> <span class="n">BF</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<a class="reference internal" href="GXBF.html#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXBF</span></code></a>) &#8211; BF to write to</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#pg-3d-dir"><span class="std std-ref">PG_3D_DIR constants</span></a></li>
-<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#pg-bf-conv"><span class="std std-ref">PG_BF_CONV constants</span></a></li>
-<li><strong>arg4</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Reverse X</li>
-<li><strong>arg5</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Reverse Y</li>
-<li><strong>arg6</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Reverse Z</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#pg-3d-dir"><span class="std std-ref">PG_3D_DIR constants</span></a></li>
+<li><strong>arg3</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#pg-bf-conv"><span class="std std-ref">PG_BF_CONV constants</span></a></li>
+<li><strong>arg4</strong> (<em>int</em>) &#8211; Reverse X</li>
+<li><strong>arg5</strong> (<em>int</em>) &#8211; Reverse Y</li>
+<li><strong>arg6</strong> (<em>int</em>) &#8211; Reverse Z</li>
 </ul>
 </td>
 </tr>
@@ -863,17 +882,17 @@ Write the contents of a 2D or 3D pager to a BF.
 <dl class="method">
 <dt id="geosoft.gxapi.GXPG.write_col">
 <code class="descname">write_col</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(int)arg2</em>, <em>(int)arg3</em>, <em>(GXVV)arg4</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXPG.write_col" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Write a set of elements in X (column) from vv into pager
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Write</span> <span class="n">a</span> <span class="nb">set</span> <span class="n">of</span> <span class="n">elements</span> <span class="ow">in</span> <span class="n">X</span> <span class="p">(</span><span class="n">column</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">vv</span> <span class="n">into</span> <span class="n">pager</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; iBx - element # in x (column #)</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; iBy - begining element # in y to write (0 is the first)</li>
-<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; iNy - # elements to write (0 for whole vector)</li>
+<li><strong>arg1</strong> (<em>int</em>) &#8211; iBx - element # in x (column #)</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; iBy - begining element # in y to write (0 is the first)</li>
+<li><strong>arg3</strong> (<em>int</em>) &#8211; iNy - # elements to write (0 for whole vector)</li>
 <li><strong>arg4</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; hVV - VV handle</li>
 </ul>
 </td>
@@ -894,18 +913,18 @@ Write a set of elements in X (column) from vv into pager
 <dl class="method">
 <dt id="geosoft.gxapi.GXPG.write_col_3d">
 <code class="descname">write_col_3d</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(int)arg2</em>, <em>(int)arg3</em>, <em>(int)arg4</em>, <em>(GXVV)arg5</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXPG.write_col_3d" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Write a set of elements in X (column) from vv into pager
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Write</span> <span class="n">a</span> <span class="nb">set</span> <span class="n">of</span> <span class="n">elements</span> <span class="ow">in</span> <span class="n">X</span> <span class="p">(</span><span class="n">column</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">vv</span> <span class="n">into</span> <span class="n">pager</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; iBz - element # in z (slice #)</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; iBx - element # in x (column #)</li>
-<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; iBy - begining element # in y to write (0 is the first)</li>
-<li><strong>arg4</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; iNy - # elements to write (0 for whole vector)</li>
+<li><strong>arg1</strong> (<em>int</em>) &#8211; iBz - element # in z (slice #)</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; iBx - element # in x (column #)</li>
+<li><strong>arg3</strong> (<em>int</em>) &#8211; iBy - begining element # in y to write (0 is the first)</li>
+<li><strong>arg4</strong> (<em>int</em>) &#8211; iNy - # elements to write (0 for whole vector)</li>
 <li><strong>arg5</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; hVV - VV handle</li>
 </ul>
 </td>
@@ -926,17 +945,17 @@ Write a set of elements in X (column) from vv into pager
 <dl class="method">
 <dt id="geosoft.gxapi.GXPG.write_row">
 <code class="descname">write_row</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(int)arg2</em>, <em>(int)arg3</em>, <em>(GXVV)arg4</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXPG.write_row" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Write a set of elements in Y (row) from vv into pager
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Write</span> <span class="n">a</span> <span class="nb">set</span> <span class="n">of</span> <span class="n">elements</span> <span class="ow">in</span> <span class="n">Y</span> <span class="p">(</span><span class="n">row</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">vv</span> <span class="n">into</span> <span class="n">pager</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; iBy - element # in y (row #)</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; iBx - begining element # in x to write (0 is the first)</li>
-<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; iNx - # elements to write (0 for whole vector)</li>
+<li><strong>arg1</strong> (<em>int</em>) &#8211; iBy - element # in y (row #)</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; iBx - begining element # in x to write (0 is the first)</li>
+<li><strong>arg3</strong> (<em>int</em>) &#8211; iNx - # elements to write (0 for whole vector)</li>
 <li><strong>arg4</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; hVV - VV handle</li>
 </ul>
 </td>
@@ -957,18 +976,18 @@ Write a set of elements in Y (row) from vv into pager
 <dl class="method">
 <dt id="geosoft.gxapi.GXPG.write_row_3d">
 <code class="descname">write_row_3d</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(int)arg2</em>, <em>(int)arg3</em>, <em>(int)arg4</em>, <em>(GXVV)arg5</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXPG.write_row_3d" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Write a set of elements in Y (row) from vv into pager
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Write</span> <span class="n">a</span> <span class="nb">set</span> <span class="n">of</span> <span class="n">elements</span> <span class="ow">in</span> <span class="n">Y</span> <span class="p">(</span><span class="n">row</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">vv</span> <span class="n">into</span> <span class="n">pager</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; iBz - element # in z (slice #)</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; iBy - element # in y (row #)</li>
-<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; iBx - begining element # in x to write (0 is the first)</li>
-<li><strong>arg4</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; iNx - # elements to write (0 for whole vector)</li>
+<li><strong>arg1</strong> (<em>int</em>) &#8211; iBz - element # in z (slice #)</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; iBy - element # in y (row #)</li>
+<li><strong>arg3</strong> (<em>int</em>) &#8211; iBx - begining element # in x to write (0 is the first)</li>
+<li><strong>arg4</strong> (<em>int</em>) &#8211; iNx - # elements to write (0 for whole vector)</li>
 <li><strong>arg5</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; hVV - VV handle</li>
 </ul>
 </td>
@@ -989,18 +1008,18 @@ Write a set of elements in Y (row) from vv into pager
 <dl class="method">
 <dt id="geosoft.gxapi.GXPG.write_trace_3d">
 <code class="descname">write_trace_3d</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(int)arg2</em>, <em>(int)arg3</em>, <em>(int)arg4</em>, <em>(GXVV)arg5</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXPG.write_trace_3d" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Write a set of elements in Z (trace) from pager into vv
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Write</span> <span class="n">a</span> <span class="nb">set</span> <span class="n">of</span> <span class="n">elements</span> <span class="ow">in</span> <span class="n">Z</span> <span class="p">(</span><span class="n">trace</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">pager</span> <span class="n">into</span> <span class="n">vv</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; iBx - element # in x (column #)</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; iBy - element # in y (row #)</li>
-<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; iBy - begining element # in z to read (0 is the first)</li>
-<li><strong>arg4</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; iNy - # elements to read (0 for whole vector)</li>
+<li><strong>arg1</strong> (<em>int</em>) &#8211; iBx - element # in x (column #)</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; iBy - element # in y (row #)</li>
+<li><strong>arg3</strong> (<em>int</em>) &#8211; iBy - begining element # in z to read (0 is the first)</li>
+<li><strong>arg4</strong> (<em>int</em>) &#8211; iNy - # elements to read (0 for whole vector)</li>
 <li><strong>arg5</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; hVV - VV handle</li>
 </ul>
 </td>
@@ -1030,10 +1049,10 @@ Write a set of elements in Z (trace) from pager into vv
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<a class="reference internal" href="GXWA.html#geosoft.gxapi.GXWA" title="geosoft.gxapi.GXWA"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXWA</span></code></a>) &#8211; WA to write to</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#pg-3d-dir"><span class="std std-ref">PG_3D_DIR constants</span></a></li>
-<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Reverse X</li>
-<li><strong>arg4</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Reverse Y</li>
-<li><strong>arg5</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Reverse Z</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#pg-3d-dir"><span class="std std-ref">PG_3D_DIR constants</span></a></li>
+<li><strong>arg3</strong> (<em>int</em>) &#8211; Reverse X</li>
+<li><strong>arg4</strong> (<em>int</em>) &#8211; Reverse Y</li>
+<li><strong>arg5</strong> (<em>int</em>) &#8211; Reverse Z</li>
 <li><strong>arg6</strong> (<em>str</em>) &#8211; Dummy</li>
 </ul>
 </td>
@@ -1130,9 +1149,13 @@ Write a set of elements in Z (trace) from pager into vv
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li> 
+          <a href="GXPGEXP.html" title="GXPGEXP class"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="GXPDF3D.html" title="GXPDF3D class"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="geosoft.gxapi.classes.html" >GX API Class/Library Reference</a> &#187;</li> 
       </ul>
     </div>
 

@@ -27,6 +27,8 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="GXEMAPTEMPLATE class" href="GXEMAPTEMPLATE.html" />
+    <link rel="prev" title="GXEDOC class" href="GXEDOC.html" />
  
 <script type="text/javascript">
   var _gaq = _gaq || [];
@@ -43,9 +45,13 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li> 
+          <a href="GXEMAPTEMPLATE.html" title="GXEMAPTEMPLATE class"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="GXEDOC.html" title="GXEDOC class"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="geosoft.gxapi.classes.html" accesskey="U">GX API Class/Library Reference</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -66,13 +72,19 @@
 </li>
 </ul>
 
-  <div role="note" aria-label="source link">
-    <h3>This Page</h3>
-    <ul class="this-page-menu">
-      <li><a href="_sources/GXEMAP.rst.txt"
-            rel="nofollow">Show Source</a></li>
-    </ul>
-   </div>
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Introduction</a></li>
+    <li><a href="geosoft.gxapi.classes.html">GX API Class/Library Reference</a></li>
+</ul>
+<h3>Previous Topic</h3>
+<ul>
+    <li><a href="GXEDOC.html" title="previous chapter">GXEDOC class</a></li>
+</ul>
+<h3>Next Topic</h3>
+<ul>
+    <li><a href="GXEMAPTEMPLATE.html" title="next chapter">GXEMAPTEMPLATE class</a></li>
+</ul>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
@@ -83,6 +95,13 @@
     </form>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/GXEMAP.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
         </div>
       </div>
 
@@ -96,17 +115,17 @@
 <dl class="class">
 <dt id="geosoft.gxapi.GXEMAP">
 <em class="property">class </em><code class="descclassname">geosoft.gxapi.</code><code class="descname">GXEMAP</code><a class="headerlink" href="#geosoft.gxapi.GXEMAP" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-The EMAP class provides access to a map as displayed within
-Oasis montaj, but (usually) does not change data within the map itself.
-It performs functions such as setting the currently displayed area,
-or drawing &quot;tracking&quot; lines or boxes on the map (which are not
-part of the map itself).
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">EMAP</span> <span class="k">class</span> <span class="nc">provides</span> <span class="n">access</span> <span class="n">to</span> <span class="n">a</span> <span class="nb">map</span> <span class="k">as</span> <span class="n">displayed</span> <span class="n">within</span>
+<span class="n">Oasis</span> <span class="n">montaj</span><span class="p">,</span> <span class="n">but</span> <span class="p">(</span><span class="n">usually</span><span class="p">)</span> <span class="n">does</span> <span class="ow">not</span> <span class="n">change</span> <span class="n">data</span> <span class="n">within</span> <span class="n">the</span> <span class="nb">map</span> <span class="n">itself</span><span class="o">.</span>
+<span class="n">It</span> <span class="n">performs</span> <span class="n">functions</span> <span class="n">such</span> <span class="k">as</span> <span class="n">setting</span> <span class="n">the</span> <span class="n">currently</span> <span class="n">displayed</span> <span class="n">area</span><span class="p">,</span>
+<span class="ow">or</span> <span class="n">drawing</span> <span class="s2">&quot;tracking&quot;</span> <span class="n">lines</span> <span class="ow">or</span> <span class="n">boxes</span> <span class="n">on</span> <span class="n">the</span> <span class="nb">map</span> <span class="p">(</span><span class="n">which</span> <span class="n">are</span> <span class="ow">not</span>
+<span class="n">part</span> <span class="n">of</span> <span class="n">the</span> <span class="nb">map</span> <span class="n">itself</span><span class="p">)</span><span class="o">.</span>
+</pre></div>
+</div>
 <p><strong>Note:</strong></p>
 <pre class="literal-block">
 To obtain access to the map itself, it is recommended practice
-to begin with an EMAP object, and use the \ :func:`geosoft.gxapi.GXEMAP.lock`\  function to
+to begin with an EMAP object, and use the <a class="reference internal" href="#geosoft.gxapi.GXEMAP.lock" title="geosoft.gxapi.GXEMAP.lock"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXEMAP.lock()</span></code></a> function to
 lock the underlying map to prevent external changes. The returned
 MAP object (see MAP.GXH) may then be safely used to make changes to the map itself.
 
@@ -114,57 +133,57 @@ MAP Redraw Rules:
 
 1. Redraws only occur at the end of the proccess (GX or SCRIPT) not during.
 You can safely call other GX's and the map will not redraw. If you need the
-map to redraw immediately use \ :func:`geosoft.gxapi.GXEMAP.redraw`\  instead.
+map to redraw immediately use <a class="reference internal" href="#geosoft.gxapi.GXEMAP.redraw" title="geosoft.gxapi.GXEMAP.redraw"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXEMAP.redraw()</span></code></a> instead.
 
-2. If the final GX calls \ :func:`geosoft.gxapi.GXSYS.cancel`\ , the map redraw is not done. If you
-need to force a redraw when the user hits cancel use the \ :func:`geosoft.gxapi.GXEMAP.redraw`\  function.
+2. If the final GX calls <a class="reference internal" href="GXSYS.html#geosoft.gxapi.GXSYS.cancel" title="geosoft.gxapi.GXSYS.cancel"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXSYS.cancel()</span></code></a>, the map redraw is not done. If you
+need to force a redraw when the user hits cancel use the <a class="reference internal" href="#geosoft.gxapi.GXEMAP.redraw" title="geosoft.gxapi.GXEMAP.redraw"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXEMAP.redraw()</span></code></a> function.
 
 3. You can set the redraw flag to EMAP_REDRAW_YES or EMAP_REDRAW_NO at any
-time using \ :func:`geosoft.gxapi.GXEMAP.set_redraw_flag`\ . This flag will only be looked at, when
-the last call to \ :func:`geosoft.gxapi.GXEMAP.un_lock`\  occurs and is ignored on a \ :func:`geosoft.gxapi.GXSYS.cancel`\ .
+time using <a class="reference internal" href="#geosoft.gxapi.GXEMAP.set_redraw_flag" title="geosoft.gxapi.GXEMAP.set_redraw_flag"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXEMAP.set_redraw_flag()</span></code></a>. This flag will only be looked at, when
+the last call to <a class="reference internal" href="#geosoft.gxapi.GXEMAP.un_lock" title="geosoft.gxapi.GXEMAP.un_lock"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXEMAP.un_lock()</span></code></a> occurs and is ignored on a <a class="reference internal" href="GXSYS.html#geosoft.gxapi.GXSYS.cancel" title="geosoft.gxapi.GXSYS.cancel"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXSYS.cancel()</span></code></a>.
 
-4. \ :func:`geosoft.gxapi.GXEMAP.redraw`\  only works if the current map is not locked. It will do nothing
-if the map is locked.  Issue an \ :func:`geosoft.gxapi.GXEMAP.un_lock`\  before using this function.
+4. <a class="reference internal" href="#geosoft.gxapi.GXEMAP.redraw" title="geosoft.gxapi.GXEMAP.redraw"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXEMAP.redraw()</span></code></a> only works if the current map is not locked. It will do nothing
+if the map is locked.  Issue an <a class="reference internal" href="#geosoft.gxapi.GXEMAP.un_lock" title="geosoft.gxapi.GXEMAP.un_lock"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXEMAP.un_lock()</span></code></a> before using this function.
 
 
 VIRTUAL EMAP SUPPORT
 
 These methods are only available when running in an external application.
 They allow the GX to open a MAP and then create a Virtual EMAP from that
-map. The GX can then call \ :func:`geosoft.gxapi.GXEMAP.make_current`\  and set the current EMAP so
+map. The GX can then call <a class="reference internal" href="#geosoft.gxapi.GXEMAP.make_current" title="geosoft.gxapi.GXEMAP.make_current"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXEMAP.make_current()</span></code></a> and set the current EMAP so
 that code that follows sees this map as the current MAP.
 
 Supported methods on Virtual EMAPS are:
 
-\ :func:`geosoft.gxapi.GXEMAP.current`\ 
-\ :func:`geosoft.gxapi.GXEMAP.current_no_activate`\ 
-\ :func:`geosoft.gxapi.GXEMAP.make_current`\ 
-\ :func:`geosoft.gxapi.GXEMAP.have_current`\ 
-\ :func:`geosoft.gxapi.GXEMAP.current_if_exists`\ 
-\ :func:`geosoft.gxapi.GXMAP.current`\ 
+<a class="reference internal" href="#geosoft.gxapi.GXEMAP.current" title="geosoft.gxapi.GXEMAP.current"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXEMAP.current()</span></code></a>
+<a class="reference internal" href="#geosoft.gxapi.GXEMAP.current_no_activate" title="geosoft.gxapi.GXEMAP.current_no_activate"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXEMAP.current_no_activate()</span></code></a>
+<a class="reference internal" href="#geosoft.gxapi.GXEMAP.make_current" title="geosoft.gxapi.GXEMAP.make_current"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXEMAP.make_current()</span></code></a>
+<a class="reference internal" href="#geosoft.gxapi.GXEMAP.have_current" title="geosoft.gxapi.GXEMAP.have_current"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXEMAP.have_current()</span></code></a>
+<a class="reference internal" href="#geosoft.gxapi.GXEMAP.current_if_exists" title="geosoft.gxapi.GXEMAP.current_if_exists"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXEMAP.current_if_exists()</span></code></a>
+<a class="reference internal" href="GXMAP.html#geosoft.gxapi.GXMAP.current" title="geosoft.gxapi.GXMAP.current"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXMAP.current()</span></code></a>
 
-\ :func:`geosoft.gxapi.GXEMAP.lock`\ 
-\ :func:`geosoft.gxapi.GXEMAP.un_lock`\ 
-\ :func:`geosoft.gxapi.GXEMAP.is_locked`\ 
+<a class="reference internal" href="#geosoft.gxapi.GXEMAP.lock" title="geosoft.gxapi.GXEMAP.lock"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXEMAP.lock()</span></code></a>
+<a class="reference internal" href="#geosoft.gxapi.GXEMAP.un_lock" title="geosoft.gxapi.GXEMAP.un_lock"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXEMAP.un_lock()</span></code></a>
+<a class="reference internal" href="#geosoft.gxapi.GXEMAP.is_locked" title="geosoft.gxapi.GXEMAP.is_locked"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXEMAP.is_locked()</span></code></a>
 
-\ :func:`geosoft.gxapi.GXEMAP.get_name`\ 
-\ :func:`geosoft.gxapi.GXEMAP.set_redraw_flag`\ 
-\ :func:`geosoft.gxapi.GXEMAP.redraw`\ 
+<a class="reference internal" href="#geosoft.gxapi.GXEMAP.get_name" title="geosoft.gxapi.GXEMAP.get_name"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXEMAP.get_name()</span></code></a>
+<a class="reference internal" href="#geosoft.gxapi.GXEMAP.set_redraw_flag" title="geosoft.gxapi.GXEMAP.set_redraw_flag"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXEMAP.set_redraw_flag()</span></code></a>
+<a class="reference internal" href="#geosoft.gxapi.GXEMAP.redraw" title="geosoft.gxapi.GXEMAP.redraw"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXEMAP.redraw()</span></code></a>
 
-\ :func:`geosoft.gxapi.GXEMAP.loaded`\ 
-\ :func:`geosoft.gxapi.GXEMAP.load`\ 
-\ :func:`geosoft.gxapi.GXEMAP.load_no_activate`\ 
-\ :func:`geosoft.gxapi.GXEMAP.un_load_verify`\ 
-\ :func:`geosoft.gxapi.GXEMAP.un_load`\ 
+<a class="reference internal" href="#geosoft.gxapi.GXEMAP.loaded" title="geosoft.gxapi.GXEMAP.loaded"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXEMAP.loaded()</span></code></a>
+<a class="reference internal" href="#geosoft.gxapi.GXEMAP.load" title="geosoft.gxapi.GXEMAP.load"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXEMAP.load()</span></code></a>
+<a class="reference internal" href="#geosoft.gxapi.GXEMAP.load_no_activate" title="geosoft.gxapi.GXEMAP.load_no_activate"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXEMAP.load_no_activate()</span></code></a>
+<a class="reference internal" href="#geosoft.gxapi.GXEMAP.un_load_verify" title="geosoft.gxapi.GXEMAP.un_load_verify"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXEMAP.un_load_verify()</span></code></a>
+<a class="reference internal" href="#geosoft.gxapi.GXEMAP.un_load" title="geosoft.gxapi.GXEMAP.un_load"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXEMAP.un_load()</span></code></a>
 
-\ :func:`geosoft.gxapi.GXEMAP.create_virtual`\ 
+<a class="reference internal" href="#geosoft.gxapi.GXEMAP.create_virtual" title="geosoft.gxapi.GXEMAP.create_virtual"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXEMAP.create_virtual()</span></code></a>
 </pre>
 <dl class="method">
 <dt id="geosoft.gxapi.GXEMAP.activate_group">
 <code class="descname">activate_group</code><span class="sig-paren">(</span><em>(str)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXEMAP.activate_group" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Activates a group and associated tools.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Activates</span> <span class="n">a</span> <span class="n">group</span> <span class="ow">and</span> <span class="n">associated</span> <span class="n">tools</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -186,16 +205,16 @@ Activating a group basically enters the edit mode associated
 with the type of group. E.g. a vector group will enable the
 edit toolbar for that gorup and an AGG will bring up the
 image colour tool. Be sure to pass a combined name containing
-both the view name and the group separated by a &quot;/&quot; or &quot;\&quot;.
+both the view name and the group separated by a &quot;/&quot; or &quot;&quot;.
 </pre>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXEMAP.activate_view">
 <code class="descname">activate_view</code><span class="sig-paren">(</span><em>(str)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXEMAP.activate_view" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Activates a view and associated tools.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Activates</span> <span class="n">a</span> <span class="n">view</span> <span class="ow">and</span> <span class="n">associated</span> <span class="n">tools</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -216,9 +235,9 @@ Activates a view and associated tools.
 <dl class="method">
 <dt id="geosoft.gxapi.GXEMAP.change_current_view">
 <code class="descname">change_current_view</code><span class="sig-paren">(</span><em>(str)arg1</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXEMAP.change_current_view" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Change the current working view.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Change</span> <span class="n">the</span> <span class="n">current</span> <span class="n">working</span> <span class="n">view</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -227,7 +246,7 @@ Change the current working view.
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">0 if view set, 1 if view does not exist.</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
 </tr>
 </tbody>
 </table>
@@ -237,7 +256,7 @@ Change the current working view.
 <p><strong>Note:</strong></p>
 <pre class="literal-block">
 This function operates on the current map.
-Unlike \ :func:`geosoft.gxapi.GXEMAP.set_current_view`\  this function's action
+Unlike <a class="reference internal" href="#geosoft.gxapi.GXEMAP.set_current_view" title="geosoft.gxapi.GXEMAP.set_current_view"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXEMAP.set_current_view()</span></code></a> this function's action
 survive the GX finishing.
 </pre>
 </dd></dl>
@@ -245,9 +264,9 @@ survive the GX finishing.
 <dl class="method">
 <dt id="geosoft.gxapi.GXEMAP.copy_to_clip">
 <code class="descname">copy_to_clip</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXEMAP.copy_to_clip" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Copy entire map to clipboard.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Copy</span> <span class="n">entire</span> <span class="nb">map</span> <span class="n">to</span> <span class="n">clipboard</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -262,26 +281,26 @@ Copy entire map to clipboard.
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-Four objects are placed on the clipboard:
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Four</span> <span class="n">objects</span> <span class="n">are</span> <span class="n">placed</span> <span class="n">on</span> <span class="n">the</span> <span class="n">clipboard</span><span class="p">:</span>
 
-1. Georefernce Text
-2. Bitmap of current window screen resolution
-3. EMF of current window screen resolution
-4. Entire map as a Geosoft View (go to view mode
-and hit paste). The coordinates are placed
-in the current view coordinates.
-</pre>
+<span class="mf">1.</span> <span class="n">Georefernce</span> <span class="n">Text</span>
+<span class="mf">2.</span> <span class="n">Bitmap</span> <span class="n">of</span> <span class="n">current</span> <span class="n">window</span> <span class="n">screen</span> <span class="n">resolution</span>
+<span class="mf">3.</span> <span class="n">EMF</span> <span class="n">of</span> <span class="n">current</span> <span class="n">window</span> <span class="n">screen</span> <span class="n">resolution</span>
+<span class="mf">4.</span> <span class="n">Entire</span> <span class="nb">map</span> <span class="k">as</span> <span class="n">a</span> <span class="n">Geosoft</span> <span class="n">View</span> <span class="p">(</span><span class="n">go</span> <span class="n">to</span> <span class="n">view</span> <span class="n">mode</span>
+<span class="ow">and</span> <span class="n">hit</span> <span class="n">paste</span><span class="p">)</span><span class="o">.</span> <span class="n">The</span> <span class="n">coordinates</span> <span class="n">are</span> <span class="n">placed</span>
+<span class="ow">in</span> <span class="n">the</span> <span class="n">current</span> <span class="n">view</span> <span class="n">coordinates</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXEMAP.create_group_snapshot">
 <code class="descname">create_group_snapshot</code><span class="sig-paren">(</span><em>(GXLST)arg1</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXEMAP.create_group_snapshot" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Loads an LST with the current view/group names
-existing in a map. Typically used to track group
-changes that are about to occur.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Loads</span> <span class="n">an</span> <span class="n">LST</span> <span class="k">with</span> <span class="n">the</span> <span class="n">current</span> <span class="n">view</span><span class="o">/</span><span class="n">group</span> <span class="n">names</span>
+<span class="n">existing</span> <span class="ow">in</span> <span class="n">a</span> <span class="nb">map</span><span class="o">.</span> <span class="n">Typically</span> <span class="n">used</span> <span class="n">to</span> <span class="n">track</span> <span class="n">group</span>
+<span class="n">changes</span> <span class="n">that</span> <span class="n">are</span> <span class="n">about</span> <span class="n">to</span> <span class="n">occur</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -291,7 +310,7 @@ changes that are about to occur.
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">0 if LST filled properly
 1 if not</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
 </tr>
 </tbody>
 </table>
@@ -303,9 +322,9 @@ changes that are about to occur.
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXEMAP.create_virtual">
 <em class="property">static </em><code class="descname">create_virtual</code><span class="sig-paren">(</span><em>(str)arg1</em><span class="sig-paren">)</span> &rarr; GXEMAP:<a class="headerlink" href="#geosoft.gxapi.GXEMAP.create_virtual" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Makes this EMAP object the current active object to the user.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Makes</span> <span class="n">this</span> <span class="n">EMAP</span> <span class="nb">object</span> <span class="n">the</span> <span class="n">current</span> <span class="n">active</span> <span class="nb">object</span> <span class="n">to</span> <span class="n">the</span> <span class="n">user</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -326,9 +345,9 @@ Makes this EMAP object the current active object to the user.
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXEMAP.current">
 <em class="property">static </em><code class="descname">current</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; GXEMAP:<a class="headerlink" href="#geosoft.gxapi.GXEMAP.current" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-This method returns the Current Edited map.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="n">method</span> <span class="n">returns</span> <span class="n">the</span> <span class="n">Current</span> <span class="n">Edited</span> <span class="nb">map</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -347,9 +366,9 @@ This method returns the Current Edited map.
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXEMAP.current_if_exists">
 <em class="property">static </em><code class="descname">current_if_exists</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; GXEMAP:<a class="headerlink" href="#geosoft.gxapi.GXEMAP.current_if_exists" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-This method returns the Current Edited map.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="n">method</span> <span class="n">returns</span> <span class="n">the</span> <span class="n">Current</span> <span class="n">Edited</span> <span class="nb">map</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -369,9 +388,9 @@ the user is not prompted for a map, and 0 is returned.</td>
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXEMAP.current_no_activate">
 <em class="property">static </em><code class="descname">current_no_activate</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; GXEMAP:<a class="headerlink" href="#geosoft.gxapi.GXEMAP.current_no_activate" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-This method returns the Current Edited map.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="n">method</span> <span class="n">returns</span> <span class="n">the</span> <span class="n">Current</span> <span class="n">Edited</span> <span class="nb">map</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -387,7 +406,7 @@ This method returns the Current Edited map.
 </div>
 <p><strong>Note:</strong></p>
 <pre class="literal-block">
-This function acts just like \ :func:`geosoft.gxapi.GXEMAP.current`\  except that the document is not activated (brought to foreground) and no
+This function acts just like <a class="reference internal" href="#geosoft.gxapi.GXEMAP.current" title="geosoft.gxapi.GXEMAP.current"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXEMAP.current()</span></code></a> except that the document is not activated (brought to foreground) and no
 guarantee is given about which document is currently active.
 </pre>
 </dd></dl>
@@ -395,14 +414,14 @@ guarantee is given about which document is currently active.
 <dl class="method">
 <dt id="geosoft.gxapi.GXEMAP.destroy_view">
 <code class="descname">destroy_view</code><span class="sig-paren">(</span><em>(int)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXEMAP.destroy_view" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Removes the view from the workspace.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Removes</span> <span class="n">the</span> <span class="n">view</span> <span class="kn">from</span> <span class="nn">the</span> <span class="n">workspace</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#emap-remove"><span class="std std-ref">EMAP_REMOVE constants</span></a></td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#emap-remove"><span class="std std-ref">EMAP_REMOVE constants</span></a></td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Nothing</td>
 </tr>
@@ -418,7 +437,7 @@ Removes the view from the workspace.
 Can only be run in interactive mode. After this call the
 EMAP object will become invalid. If this is the last view on
 the document and the document has been modified the map will be
-unloaded and optionally saved depending on the \ :ref:`EMAP_REMOVE`\ 
+unloaded and optionally saved depending on the <a class="reference internal" href="#emap-remove"><span class="std std-ref">EMAP_REMOVE constants</span></a>
 parameter.
 </pre>
 </dd></dl>
@@ -426,9 +445,9 @@ parameter.
 <dl class="method">
 <dt id="geosoft.gxapi.GXEMAP.digitize">
 <code class="descname">digitize</code><span class="sig-paren">(</span><em>(GXWA)arg1</em>, <em>(GXIMG)arg2</em>, <em>(int)arg3</em>, <em>(str)arg4</em>, <em>(str)arg5</em>, <em>(str)arg6</em>, <em>(int)arg7</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXEMAP.digitize" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Digitise points from the current map and place in a WA.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Digitise</span> <span class="n">points</span> <span class="kn">from</span> <span class="nn">the</span> <span class="n">current</span> <span class="nb">map</span> <span class="ow">and</span> <span class="n">place</span> <span class="ow">in</span> <span class="n">a</span> <span class="n">WA</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -436,11 +455,11 @@ Digitise points from the current map and place in a WA.
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<a class="reference internal" href="GXWA.html#geosoft.gxapi.GXWA" title="geosoft.gxapi.GXWA"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXWA</span></code></a>) &#8211; WA in which to write digitized points</li>
 <li><strong>arg2</strong> (<a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXIMG</span></code></a>) &#8211; IMG for Z value, or IMG_NULL for no Z.</li>
-<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; number of significant digits to use, 0 for all.</li>
+<li><strong>arg3</strong> (<em>int</em>) &#8211; number of significant digits to use, 0 for all.</li>
 <li><strong>arg4</strong> (<em>str</em>) &#8211; Command line prompt string</li>
 <li><strong>arg5</strong> (<em>str</em>) &#8211; New line prefix string</li>
 <li><strong>arg6</strong> (<em>str</em>) &#8211; Delimiter</li>
-<li><strong>arg7</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; 0 for no newline 1 for automatic newline at each point</li>
+<li><strong>arg7</strong> (<em>int</em>) &#8211; 0 for no newline 1 for automatic newline at each point</li>
 </ul>
 </td>
 </tr>
@@ -448,7 +467,7 @@ Digitise points from the current map and place in a WA.
 1 if user cancelled.</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></p>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
 </td>
 </tr>
 </tbody>
@@ -457,26 +476,26 @@ Digitise points from the current map and place in a WA.
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-The command line will start to recieve digitized points
-from the mouse.  Whenever the left mouse button is
-pressed, the current view X,Y are placed on the workspace
-command line.  If a valid IMG is passed, the Z value is
-also placed on the command line.  If auto-newline is
-specified, the line is immediately placed into WA,
-otherwise the user has the oportunity to enter data
-before pressing Enter.
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">command</span> <span class="n">line</span> <span class="n">will</span> <span class="n">start</span> <span class="n">to</span> <span class="n">recieve</span> <span class="n">digitized</span> <span class="n">points</span>
+<span class="kn">from</span> <span class="nn">the</span> <span class="n">mouse</span><span class="o">.</span>  <span class="n">Whenever</span> <span class="n">the</span> <span class="n">left</span> <span class="n">mouse</span> <span class="n">button</span> <span class="ow">is</span>
+<span class="n">pressed</span><span class="p">,</span> <span class="n">the</span> <span class="n">current</span> <span class="n">view</span> <span class="n">X</span><span class="p">,</span><span class="n">Y</span> <span class="n">are</span> <span class="n">placed</span> <span class="n">on</span> <span class="n">the</span> <span class="n">workspace</span>
+<span class="n">command</span> <span class="n">line</span><span class="o">.</span>  <span class="n">If</span> <span class="n">a</span> <span class="n">valid</span> <span class="n">IMG</span> <span class="ow">is</span> <span class="n">passed</span><span class="p">,</span> <span class="n">the</span> <span class="n">Z</span> <span class="n">value</span> <span class="ow">is</span>
+<span class="n">also</span> <span class="n">placed</span> <span class="n">on</span> <span class="n">the</span> <span class="n">command</span> <span class="n">line</span><span class="o">.</span>  <span class="n">If</span> <span class="n">auto</span><span class="o">-</span><span class="n">newline</span> <span class="ow">is</span>
+<span class="n">specified</span><span class="p">,</span> <span class="n">the</span> <span class="n">line</span> <span class="ow">is</span> <span class="n">immediately</span> <span class="n">placed</span> <span class="n">into</span> <span class="n">WA</span><span class="p">,</span>
+<span class="n">otherwise</span> <span class="n">the</span> <span class="n">user</span> <span class="n">has</span> <span class="n">the</span> <span class="n">oportunity</span> <span class="n">to</span> <span class="n">enter</span> <span class="n">data</span>
+<span class="n">before</span> <span class="n">pressing</span> <span class="n">Enter</span><span class="o">.</span>
 
-Locations are in the current view user units
-</pre>
+<span class="n">Locations</span> <span class="n">are</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">current</span> <span class="n">view</span> <span class="n">user</span> <span class="n">units</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXEMAP.digitize2">
 <code class="descname">digitize2</code><span class="sig-paren">(</span><em>(GXVV)arg1</em>, <em>(GXVV)arg2</em>, <em>(GXVV)arg3</em>, <em>(GXIMG)arg4</em>, <em>(str)arg5</em>, <em>(int)arg6</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXEMAP.digitize2" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Digitise points from the current map and place in VVs.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Digitise</span> <span class="n">points</span> <span class="kn">from</span> <span class="nn">the</span> <span class="n">current</span> <span class="nb">map</span> <span class="ow">and</span> <span class="n">place</span> <span class="ow">in</span> <span class="n">VVs</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -487,7 +506,7 @@ Digitise points from the current map and place in VVs.
 <li><strong>arg3</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; real Z VV</li>
 <li><strong>arg4</strong> (<a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXIMG</span></code></a>) &#8211; IMG for Z value, or IMG_NULL for no Z.</li>
 <li><strong>arg5</strong> (<em>str</em>) &#8211; Command line prompt string</li>
-<li><strong>arg6</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; 0 for no newline 1 for automatic newline at each point</li>
+<li><strong>arg6</strong> (<em>int</em>) &#8211; 0 for no newline 1 for automatic newline at each point</li>
 </ul>
 </td>
 </tr>
@@ -495,7 +514,7 @@ Digitise points from the current map and place in VVs.
 1 if user cancelled.</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></p>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
 </td>
 </tr>
 </tbody>
@@ -504,26 +523,26 @@ Digitise points from the current map and place in VVs.
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-The command line will start to recieve digitized points
-from the mouse.  Whenever the left mouse button is
-pressed, the current view X,Y are placed on the workspace
-command line.  If a valid IMG is passed, the Z value is
-also placed on the command line.  If auto-newline is
-specified, the line is immediately placed into the VVs,
-otherwise the user has the oportunity to enter data
-before pressing Enter.
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">command</span> <span class="n">line</span> <span class="n">will</span> <span class="n">start</span> <span class="n">to</span> <span class="n">recieve</span> <span class="n">digitized</span> <span class="n">points</span>
+<span class="kn">from</span> <span class="nn">the</span> <span class="n">mouse</span><span class="o">.</span>  <span class="n">Whenever</span> <span class="n">the</span> <span class="n">left</span> <span class="n">mouse</span> <span class="n">button</span> <span class="ow">is</span>
+<span class="n">pressed</span><span class="p">,</span> <span class="n">the</span> <span class="n">current</span> <span class="n">view</span> <span class="n">X</span><span class="p">,</span><span class="n">Y</span> <span class="n">are</span> <span class="n">placed</span> <span class="n">on</span> <span class="n">the</span> <span class="n">workspace</span>
+<span class="n">command</span> <span class="n">line</span><span class="o">.</span>  <span class="n">If</span> <span class="n">a</span> <span class="n">valid</span> <span class="n">IMG</span> <span class="ow">is</span> <span class="n">passed</span><span class="p">,</span> <span class="n">the</span> <span class="n">Z</span> <span class="n">value</span> <span class="ow">is</span>
+<span class="n">also</span> <span class="n">placed</span> <span class="n">on</span> <span class="n">the</span> <span class="n">command</span> <span class="n">line</span><span class="o">.</span>  <span class="n">If</span> <span class="n">auto</span><span class="o">-</span><span class="n">newline</span> <span class="ow">is</span>
+<span class="n">specified</span><span class="p">,</span> <span class="n">the</span> <span class="n">line</span> <span class="ow">is</span> <span class="n">immediately</span> <span class="n">placed</span> <span class="n">into</span> <span class="n">the</span> <span class="n">VVs</span><span class="p">,</span>
+<span class="n">otherwise</span> <span class="n">the</span> <span class="n">user</span> <span class="n">has</span> <span class="n">the</span> <span class="n">oportunity</span> <span class="n">to</span> <span class="n">enter</span> <span class="n">data</span>
+<span class="n">before</span> <span class="n">pressing</span> <span class="n">Enter</span><span class="o">.</span>
 
-Locations are in the current view user units
-</pre>
+<span class="n">Locations</span> <span class="n">are</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">current</span> <span class="n">view</span> <span class="n">user</span> <span class="n">units</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXEMAP.digitize_peaks">
 <code class="descname">digitize_peaks</code><span class="sig-paren">(</span><em>(GXVV)arg1</em>, <em>(GXVV)arg2</em>, <em>(GXVV)arg3</em>, <em>(GXIMG)arg4</em>, <em>(str)arg5</em>, <em>(int)arg6</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXEMAP.digitize_peaks" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Digitise points from the current map and place in VVs.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Digitise</span> <span class="n">points</span> <span class="kn">from</span> <span class="nn">the</span> <span class="n">current</span> <span class="nb">map</span> <span class="ow">and</span> <span class="n">place</span> <span class="ow">in</span> <span class="n">VVs</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -534,7 +553,7 @@ Digitise points from the current map and place in VVs.
 <li><strong>arg3</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; real Z VV</li>
 <li><strong>arg4</strong> (<a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXIMG</span></code></a>) &#8211; IMG for Z value, or IMG_NULL for no Z.</li>
 <li><strong>arg5</strong> (<em>str</em>) &#8211; Command line prompt string</li>
-<li><strong>arg6</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; 0 for no newline 1 for automatic newline at each point</li>
+<li><strong>arg6</strong> (<em>int</em>) &#8211; 0 for no newline 1 for automatic newline at each point</li>
 </ul>
 </td>
 </tr>
@@ -542,7 +561,7 @@ Digitise points from the current map and place in VVs.
 1 if user cancelled.</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></p>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
 </td>
 </tr>
 </tbody>
@@ -552,7 +571,7 @@ Digitise points from the current map and place in VVs.
 </div>
 <p><strong>Note:</strong></p>
 <pre class="literal-block">
-Same as \ :func:`geosoft.gxapi.GXEMAP.digitize2`\ , but the closest peaks to the selected locations are
+Same as <a class="reference internal" href="#geosoft.gxapi.GXEMAP.digitize2" title="geosoft.gxapi.GXEMAP.digitize2"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXEMAP.digitize2()</span></code></a>, but the closest peaks to the selected locations are
 returned instead of the selected location. The method chooses the highest value
 of the 8 surrounding points, the repeats this process until no higher value can
 be found in any of the 8 surrounding points. If there are two or more points with
@@ -564,9 +583,9 @@ stall on flat areas as well (since no surrounding point is larger).
 <dl class="method">
 <dt id="geosoft.gxapi.GXEMAP.digitize_polygon">
 <code class="descname">digitize_polygon</code><span class="sig-paren">(</span><em>(GXVV)arg1</em>, <em>(GXVV)arg2</em>, <em>(GXVV)arg3</em>, <em>(GXIMG)arg4</em>, <em>(str)arg5</em>, <em>(int)arg6</em>, <em>(int)arg7</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXEMAP.digitize_polygon" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Same as iDigitze2_EMAP, but automatically close polygons.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Same</span> <span class="k">as</span> <span class="n">iDigitze2_EMAP</span><span class="p">,</span> <span class="n">but</span> <span class="n">automatically</span> <span class="n">close</span> <span class="n">polygons</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -577,8 +596,8 @@ Same as iDigitze2_EMAP, but automatically close polygons.
 <li><strong>arg3</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; real Z VV</li>
 <li><strong>arg4</strong> (<a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXIMG</span></code></a>) &#8211; IMG for Z value, or IMG_NULL for no Z.</li>
 <li><strong>arg5</strong> (<em>str</em>) &#8211; Command line prompt string</li>
-<li><strong>arg6</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; 0 for no newline 1 for automatic newline at each point</li>
-<li><strong>arg7</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; close the polygon if the selected location is within this radius in screen pixels.</li>
+<li><strong>arg6</strong> (<em>int</em>) &#8211; 0 for no newline 1 for automatic newline at each point</li>
+<li><strong>arg7</strong> (<em>int</em>) &#8211; close the polygon if the selected location is within this radius in screen pixels.</li>
 </ul>
 </td>
 </tr>
@@ -586,7 +605,7 @@ Same as iDigitze2_EMAP, but automatically close polygons.
 1 if user cancelled.</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></p>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
 </td>
 </tr>
 </tbody>
@@ -596,7 +615,7 @@ Same as iDigitze2_EMAP, but automatically close polygons.
 </div>
 <p><strong>Note:</strong></p>
 <pre class="literal-block">
-This is the same as \ :func:`geosoft.gxapi.GXEMAP.digitize2`\ , except that it automatically
+This is the same as <a class="reference internal" href="#geosoft.gxapi.GXEMAP.digitize2" title="geosoft.gxapi.GXEMAP.digitize2"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXEMAP.digitize2()</span></code></a>, except that it automatically
 detects, (except for the 2nd and 3rd points) when a selected location
 is within the entered number of pixels from the starting point. If yes,
 the polygon is assumed to be closed, and the operation is the same as
@@ -608,7 +627,7 @@ the RMB &quot;done&quot; command, and the process returns 0.
 <dt id="geosoft.gxapi.GXEMAP.doubleize_group_snapshot">
 <code class="descname">doubleize_group_snapshot</code><span class="sig-paren">(</span><em>(GXLST)arg1</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXEMAP.doubleize_group_snapshot" title="Permalink to this definition">¶</a></dt>
 <dd><pre class="literal-block">
-The LST passed in must contain View\Group strings in
+The LST passed in must contain ViewGroup strings in
 the Name field only. The function will compare with
 a more current LST and zoom the map to the new entry.
 </pre>
@@ -621,7 +640,7 @@ a more current LST and zoom the map to the new entry.
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">0 if zoom proceeded ok
 1 if error</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
 </tr>
 </tbody>
 </table>
@@ -629,18 +648,18 @@ a more current LST and zoom the map to the new entry.
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-Typically this function is used in conjunction with
-CreateSnapshot_EMAP.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Typically</span> <span class="n">this</span> <span class="n">function</span> <span class="ow">is</span> <span class="n">used</span> <span class="ow">in</span> <span class="n">conjunction</span> <span class="k">with</span>
+<span class="n">CreateSnapshot_EMAP</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXEMAP.drag_drop_enabled">
 <code class="descname">drag_drop_enabled</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; bool:<a class="headerlink" href="#geosoft.gxapi.GXEMAP.drag_drop_enabled" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Is drag-and-drop enabled for the map?
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span>Is drag-and-drop enabled for the map?
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -659,9 +678,9 @@ Is drag-and-drop enabled for the map?
 <dl class="method">
 <dt id="geosoft.gxapi.GXEMAP.draw_line">
 <code class="descname">draw_line</code><span class="sig-paren">(</span><em>(float)arg1</em>, <em>(float)arg2</em>, <em>(float)arg3</em>, <em>(float)arg4</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXEMAP.draw_line" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Draws a line on the current map.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Draws</span> <span class="n">a</span> <span class="n">line</span> <span class="n">on</span> <span class="n">the</span> <span class="n">current</span> <span class="nb">map</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -686,21 +705,21 @@ Draws a line on the current map.
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-Locations are in the current view user units.
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Locations</span> <span class="n">are</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">current</span> <span class="n">view</span> <span class="n">user</span> <span class="n">units</span><span class="o">.</span>
 
-The line is temporary and will disappear on the next
-screen refresh.  This function is for you to provide
-interactive screen feedback to your user.
-</pre>
+<span class="n">The</span> <span class="n">line</span> <span class="ow">is</span> <span class="n">temporary</span> <span class="ow">and</span> <span class="n">will</span> <span class="n">disappear</span> <span class="n">on</span> <span class="n">the</span> <span class="nb">next</span>
+<span class="n">screen</span> <span class="n">refresh</span><span class="o">.</span>  <span class="n">This</span> <span class="n">function</span> <span class="ow">is</span> <span class="k">for</span> <span class="n">you</span> <span class="n">to</span> <span class="n">provide</span>
+<span class="n">interactive</span> <span class="n">screen</span> <span class="n">feedback</span> <span class="n">to</span> <span class="n">your</span> <span class="n">user</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXEMAP.draw_rect">
 <code class="descname">draw_rect</code><span class="sig-paren">(</span><em>(float)arg1</em>, <em>(float)arg2</em>, <em>(float)arg3</em>, <em>(float)arg4</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXEMAP.draw_rect" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Draws a rect on the current map.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Draws</span> <span class="n">a</span> <span class="n">rect</span> <span class="n">on</span> <span class="n">the</span> <span class="n">current</span> <span class="nb">map</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -725,21 +744,21 @@ Draws a rect on the current map.
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-Locations are in the current view user units.
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Locations</span> <span class="n">are</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">current</span> <span class="n">view</span> <span class="n">user</span> <span class="n">units</span><span class="o">.</span>
 
-The line is temporary and will disappear on the next
-screen refresh.  This function is for you to provide
-interactive screen feedback to your user.
-</pre>
+<span class="n">The</span> <span class="n">line</span> <span class="ow">is</span> <span class="n">temporary</span> <span class="ow">and</span> <span class="n">will</span> <span class="n">disappear</span> <span class="n">on</span> <span class="n">the</span> <span class="nb">next</span>
+<span class="n">screen</span> <span class="n">refresh</span><span class="o">.</span>  <span class="n">This</span> <span class="n">function</span> <span class="ow">is</span> <span class="k">for</span> <span class="n">you</span> <span class="n">to</span> <span class="n">provide</span>
+<span class="n">interactive</span> <span class="n">screen</span> <span class="n">feedback</span> <span class="n">to</span> <span class="n">your</span> <span class="n">user</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXEMAP.draw_rect_3d">
 <code class="descname">draw_rect_3d</code><span class="sig-paren">(</span><em>(float)arg1</em>, <em>(float)arg2</em>, <em>(float)arg3</em>, <em>(int)arg4</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXEMAP.draw_rect_3d" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Plot a square symbol on a section view.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Plot</span> <span class="n">a</span> <span class="n">square</span> <span class="n">symbol</span> <span class="n">on</span> <span class="n">a</span> <span class="n">section</span> <span class="n">view</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -748,7 +767,7 @@ Plot a square symbol on a section view.
 <li><strong>arg1</strong> (<em>float</em>) &#8211; X - True X location</li>
 <li><strong>arg2</strong> (<em>float</em>) &#8211; Y - True Y location</li>
 <li><strong>arg3</strong> (<em>float</em>) &#8211; Z - True Z location</li>
-<li><strong>arg4</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Size in pixels (&#8220;radius&#8221;)</li>
+<li><strong>arg4</strong> (<em>int</em>) &#8211; Size in pixels (&#8220;radius&#8221;)</li>
 </ul>
 </td>
 </tr>
@@ -764,13 +783,13 @@ Plot a square symbol on a section view.
 <p><span class="versionmodified">New in version 9.1.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-Plot a square symbol on a section view, but input 3D user coordinates
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Plot</span> <span class="n">a</span> <span class="n">square</span> <span class="n">symbol</span> <span class="n">on</span> <span class="n">a</span> <span class="n">section</span> <span class="n">view</span><span class="p">,</span> <span class="n">but</span> <span class="nb">input</span> <span class="mi">3</span><span class="n">D</span> <span class="n">user</span> <span class="n">coordinates</span>
 
-The line is temporary and will disappear on the next
-screen refresh.  This function is for you to provide
-interactive screen feedback to your user.                                      
-</pre>
+<span class="n">The</span> <span class="n">line</span> <span class="ow">is</span> <span class="n">temporary</span> <span class="ow">and</span> <span class="n">will</span> <span class="n">disappear</span> <span class="n">on</span> <span class="n">the</span> <span class="nb">next</span>
+<span class="n">screen</span> <span class="n">refresh</span><span class="o">.</span>  <span class="n">This</span> <span class="n">function</span> <span class="ow">is</span> <span class="k">for</span> <span class="n">you</span> <span class="n">to</span> <span class="n">provide</span>
+<span class="n">interactive</span> <span class="n">screen</span> <span class="n">feedback</span> <span class="n">to</span> <span class="n">your</span> <span class="n">user</span><span class="o">.</span>                                       
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
@@ -783,7 +802,7 @@ interactive screen feedback to your user.
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Handle to Global Clipboard data</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>int</em>) &#8211; Handle to Global Clipboard data</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Nothing</td>
 </tr>
@@ -799,16 +818,16 @@ interactive screen feedback to your user.
 <dl class="method">
 <dt id="geosoft.gxapi.GXEMAP.font_lst">
 <code class="descname">font_lst</code><span class="sig-paren">(</span><em>(GXLST)arg1</em>, <em>(int)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXEMAP.font_lst" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-List all Windows and geosoft fonts.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">List</span> <span class="nb">all</span> <span class="n">Windows</span> <span class="ow">and</span> <span class="n">geosoft</span> <span class="n">fonts</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXLST</span></code></a>) &#8211; List Object</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#emap-font"><span class="std std-ref">EMAP_FONT constants</span></a></li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#emap-font"><span class="std std-ref">EMAP_FONT constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -824,19 +843,19 @@ List all Windows and geosoft fonts.
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-To get TT and GFN fonts, call twice with the same list
-and EMAP_FONT_TT, then EMAP_FONT_GFN, or vice-versa to
-change order of listing.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">To</span> <span class="n">get</span> <span class="n">TT</span> <span class="ow">and</span> <span class="n">GFN</span> <span class="n">fonts</span><span class="p">,</span> <span class="n">call</span> <span class="n">twice</span> <span class="k">with</span> <span class="n">the</span> <span class="n">same</span> <span class="nb">list</span>
+<span class="ow">and</span> <span class="n">EMAP_FONT_TT</span><span class="p">,</span> <span class="n">then</span> <span class="n">EMAP_FONT_GFN</span><span class="p">,</span> <span class="ow">or</span> <span class="n">vice</span><span class="o">-</span><span class="n">versa</span> <span class="n">to</span>
+<span class="n">change</span> <span class="n">order</span> <span class="n">of</span> <span class="n">listing</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXEMAP.get_3d_view_name">
 <code class="descname">get_3d_view_name</code><span class="sig-paren">(</span><em>(str_ref)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXEMAP.get_3d_view_name" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Get the name of a 3D view if the current view is 3D.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">the</span> <span class="n">name</span> <span class="n">of</span> <span class="n">a</span> <span class="mi">3</span><span class="n">D</span> <span class="n">view</span> <span class="k">if</span> <span class="n">the</span> <span class="n">current</span> <span class="n">view</span> <span class="ow">is</span> <span class="mi">3</span><span class="n">D</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -857,9 +876,9 @@ Get the name of a 3D view if the current view is 3D.
 <dl class="method">
 <dt id="geosoft.gxapi.GXEMAP.get_aoi_area">
 <code class="descname">get_aoi_area</code><span class="sig-paren">(</span><em>(float_ref)arg1</em>, <em>(float_ref)arg2</em>, <em>(float_ref)arg3</em>, <em>(float_ref)arg4</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXEMAP.get_aoi_area" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Get the area of interest.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">the</span> <span class="n">area</span> <span class="n">of</span> <span class="n">interest</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -884,17 +903,17 @@ Get the area of interest.
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-Coordinates are based on the current view units.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Coordinates</span> <span class="n">are</span> <span class="n">based</span> <span class="n">on</span> <span class="n">the</span> <span class="n">current</span> <span class="n">view</span> <span class="n">units</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXEMAP.get_box">
 <code class="descname">get_box</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(float_ref)arg2</em>, <em>(float_ref)arg3</em>, <em>(float_ref)arg4</em>, <em>(float_ref)arg5</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXEMAP.get_box" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Returns the coordinates of a user selected box.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Returns</span> <span class="n">the</span> <span class="n">coordinates</span> <span class="n">of</span> <span class="n">a</span> <span class="n">user</span> <span class="n">selected</span> <span class="n">box</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -912,7 +931,7 @@ Returns the coordinates of a user selected box.
 1 if user cancelled.</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></p>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
 </td>
 </tr>
 </tbody>
@@ -925,9 +944,9 @@ Returns the coordinates of a user selected box.
 <dl class="method">
 <dt id="geosoft.gxapi.GXEMAP.get_box2">
 <code class="descname">get_box2</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(float_ref)arg2</em>, <em>(float_ref)arg3</em>, <em>(float_ref)arg4</em>, <em>(float_ref)arg5</em>, <em>(float_ref)arg6</em>, <em>(float_ref)arg7</em>, <em>(float_ref)arg8</em>, <em>(float_ref)arg9</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXEMAP.get_box2" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Returns the coordinates of a user selected box in a warped view.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Returns</span> <span class="n">the</span> <span class="n">coordinates</span> <span class="n">of</span> <span class="n">a</span> <span class="n">user</span> <span class="n">selected</span> <span class="n">box</span> <span class="ow">in</span> <span class="n">a</span> <span class="n">warped</span> <span class="n">view</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -949,7 +968,7 @@ Returns the coordinates of a user selected box in a warped view.
 1 if user cancelled.</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></p>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
 </td>
 </tr>
 </tbody>
@@ -960,7 +979,7 @@ Returns the coordinates of a user selected box in a warped view.
 <p><strong>Note:</strong></p>
 <pre class="literal-block">
 If the data view has a rotational (or other) warp, then the
-\ :func:`geosoft.gxapi.GXEMAP.get_box`\  function returns only opposite diagonal points in the
+<a class="reference internal" href="#geosoft.gxapi.GXEMAP.get_box" title="geosoft.gxapi.GXEMAP.get_box"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXEMAP.get_box()</span></code></a> function returns only opposite diagonal points in the
 box, not enough info to determine the other two corners. This
 function returns the exact coordinates of all four corners, calculated
 from the pixel locations.
@@ -1028,9 +1047,9 @@ from the pixel locations.
 <dl class="method">
 <dt id="geosoft.gxapi.GXEMAP.get_current_group">
 <code class="descname">get_current_group</code><span class="sig-paren">(</span><em>(str_ref)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXEMAP.get_current_group" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Get the current group name.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">the</span> <span class="n">current</span> <span class="n">group</span> <span class="n">name</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1047,17 +1066,17 @@ Get the current group name.
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-This function operates on the current map.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="n">function</span> <span class="n">operates</span> <span class="n">on</span> <span class="n">the</span> <span class="n">current</span> <span class="nb">map</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXEMAP.get_current_view">
 <code class="descname">get_current_view</code><span class="sig-paren">(</span><em>(str_ref)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXEMAP.get_current_view" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Get the current view name.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">the</span> <span class="n">current</span> <span class="n">view</span> <span class="n">name</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1074,9 +1093,9 @@ Get the current view name.
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-This function operates on the current map.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="n">function</span> <span class="n">operates</span> <span class="n">on</span> <span class="n">the</span> <span class="n">current</span> <span class="nb">map</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
@@ -1111,9 +1130,9 @@ This function operates on the current map.
 <dl class="method">
 <dt id="geosoft.gxapi.GXEMAP.get_cursor_mm">
 <code class="descname">get_cursor_mm</code><span class="sig-paren">(</span><em>(float_ref)arg1</em>, <em>(float_ref)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXEMAP.get_cursor_mm" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Returns the coordinates of the last known cursor location in mm on map.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Returns</span> <span class="n">the</span> <span class="n">coordinates</span> <span class="n">of</span> <span class="n">the</span> <span class="n">last</span> <span class="n">known</span> <span class="n">cursor</span> <span class="n">location</span> <span class="ow">in</span> <span class="n">mm</span> <span class="n">on</span> <span class="nb">map</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1140,9 +1159,9 @@ Returns the coordinates of the last known cursor location in mm on map.
 <dl class="method">
 <dt id="geosoft.gxapi.GXEMAP.get_display_area">
 <code class="descname">get_display_area</code><span class="sig-paren">(</span><em>(float_ref)arg1</em>, <em>(float_ref)arg2</em>, <em>(float_ref)arg3</em>, <em>(float_ref)arg4</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXEMAP.get_display_area" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Get the area you are currently looking at.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">the</span> <span class="n">area</span> <span class="n">you</span> <span class="n">are</span> <span class="n">currently</span> <span class="n">looking</span> <span class="n">at</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1167,10 +1186,10 @@ Get the area you are currently looking at.
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-Coordinates are based on the current view units.
-For 3D views this will return the full map extents.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Coordinates</span> <span class="n">are</span> <span class="n">based</span> <span class="n">on</span> <span class="n">the</span> <span class="n">current</span> <span class="n">view</span> <span class="n">units</span><span class="o">.</span>
+<span class="n">For</span> <span class="mi">3</span><span class="n">D</span> <span class="n">views</span> <span class="n">this</span> <span class="n">will</span> <span class="k">return</span> <span class="n">the</span> <span class="n">full</span> <span class="nb">map</span> <span class="n">extents</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
@@ -1203,26 +1222,26 @@ For 3D views this will return the full map extents.
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-Coordinates are in millimeters.
-For 3D views this will return the full map extents.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Coordinates</span> <span class="n">are</span> <span class="ow">in</span> <span class="n">millimeters</span><span class="o">.</span>
+<span class="n">For</span> <span class="mi">3</span><span class="n">D</span> <span class="n">views</span> <span class="n">this</span> <span class="n">will</span> <span class="k">return</span> <span class="n">the</span> <span class="n">full</span> <span class="nb">map</span> <span class="n">extents</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXEMAP.get_grid">
 <code class="descname">get_grid</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(int)arg2</em>, <em>(int)arg3</em>, <em>(float_ref)arg4</em>, <em>(float_ref)arg5</em>, <em>(float_ref)arg6</em>, <em>(float_ref)arg7</em>, <em>(float_ref)arg8</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXEMAP.get_grid" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Position and size a grid on a map.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Position</span> <span class="ow">and</span> <span class="n">size</span> <span class="n">a</span> <span class="n">grid</span> <span class="n">on</span> <span class="n">a</span> <span class="nb">map</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<em>str</em>) &#8211; user prompt string</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Number of elements along primary axis to draw.</li>
-<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Number of elements along secondary axis to draw.</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; Number of elements along primary axis to draw.</li>
+<li><strong>arg3</strong> (<em>int</em>) &#8211; Number of elements along secondary axis to draw.</li>
 <li><strong>arg4</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Angle of primary axis in degrees</li>
 <li><strong>arg5</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Grid origin X</li>
 <li><strong>arg6</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Grid origin Y</li>
@@ -1235,7 +1254,7 @@ Position and size a grid on a map.
 1 if user cancelled.</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></p>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
 </td>
 </tr>
 </tbody>
@@ -1254,16 +1273,16 @@ whichever corner necessary to make this possible, while keeping
 the secondary axis at 90 degrees greater than the primary (
 going counter-clockwise).
 The coordinates are returned in the current User projection
-(See \ :func:`geosoft.gxapi.GXMVIEW.get_user_ipj`\  and \ :func:`geosoft.gxapi.GXMVIEW.set_user_ipj`\ .)
+(See <a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW.get_user_ipj" title="geosoft.gxapi.GXMVIEW.get_user_ipj"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXMVIEW.get_user_ipj()</span></code></a> and <a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW.set_user_ipj" title="geosoft.gxapi.GXMVIEW.set_user_ipj"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXMVIEW.set_user_ipj()</span></code></a>.)
 </pre>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXEMAP.get_line">
 <code class="descname">get_line</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(float_ref)arg2</em>, <em>(float_ref)arg3</em>, <em>(float_ref)arg4</em>, <em>(float_ref)arg5</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXEMAP.get_line" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Returns the end points of a line.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Returns</span> <span class="n">the</span> <span class="n">end</span> <span class="n">points</span> <span class="n">of</span> <span class="n">a</span> <span class="n">line</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1281,7 +1300,7 @@ Returns the end points of a line.
 1 if user cancelled.</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></p>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
 </td>
 </tr>
 </tbody>
@@ -1292,16 +1311,16 @@ Returns the end points of a line.
 <p><strong>Note:</strong></p>
 <pre class="literal-block">
 The coordinates are returned in the current User projection
-(See \ :func:`geosoft.gxapi.GXMVIEW.get_user_ipj`\  and \ :func:`geosoft.gxapi.GXMVIEW.set_user_ipj`\ .)
+(See <a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW.get_user_ipj" title="geosoft.gxapi.GXMVIEW.get_user_ipj"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXMVIEW.get_user_ipj()</span></code></a> and <a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW.set_user_ipj" title="geosoft.gxapi.GXMVIEW.set_user_ipj"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXMVIEW.set_user_ipj()</span></code></a>.)
 </pre>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXEMAP.get_line_ex">
 <code class="descname">get_line_ex</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(float_ref)arg2</em>, <em>(float_ref)arg3</em>, <em>(float_ref)arg4</em>, <em>(float_ref)arg5</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXEMAP.get_line_ex" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Returns the end points of a line.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Returns</span> <span class="n">the</span> <span class="n">end</span> <span class="n">points</span> <span class="n">of</span> <span class="n">a</span> <span class="n">line</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1320,7 +1339,7 @@ Returns the end points of a line.
 2 - Escape/Cancel</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></p>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
 </td>
 </tr>
 </tbody>
@@ -1331,16 +1350,16 @@ Returns the end points of a line.
 <p><strong>Note:</strong></p>
 <pre class="literal-block">
 The coordinates are returned in the current User projection
-(See \ :func:`geosoft.gxapi.GXMVIEW.get_user_ipj`\  and \ :func:`geosoft.gxapi.GXMVIEW.set_user_ipj`\ .)
+(See <a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW.get_user_ipj" title="geosoft.gxapi.GXMVIEW.get_user_ipj"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXMVIEW.get_user_ipj()</span></code></a> and <a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW.set_user_ipj" title="geosoft.gxapi.GXMVIEW.set_user_ipj"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXMVIEW.set_user_ipj()</span></code></a>.)
 </pre>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXEMAP.get_line_xyz">
 <code class="descname">get_line_xyz</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(float_ref)arg2</em>, <em>(float_ref)arg3</em>, <em>(float_ref)arg4</em>, <em>(float_ref)arg5</em>, <em>(float_ref)arg6</em>, <em>(float_ref)arg7</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXEMAP.get_line_xyz" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Returns the end points of a line in X,Y and Z
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Returns</span> <span class="n">the</span> <span class="n">end</span> <span class="n">points</span> <span class="n">of</span> <span class="n">a</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">X</span><span class="p">,</span><span class="n">Y</span> <span class="ow">and</span> <span class="n">Z</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1361,7 +1380,7 @@ Returns the end points of a line in X,Y and Z
 2 - Escape/Cancel</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></p>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
 </td>
 </tr>
 </tbody>
@@ -1372,7 +1391,7 @@ Returns the end points of a line in X,Y and Z
 <p><strong>Note:</strong></p>
 <pre class="literal-block">
 The coordinates are returned in the current User projection
-(See \ :func:`geosoft.gxapi.GXMVIEW.get_user_ipj`\  and \ :func:`geosoft.gxapi.GXMVIEW.set_user_ipj`\ .)
+(See <a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW.get_user_ipj" title="geosoft.gxapi.GXMVIEW.get_user_ipj"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXMVIEW.get_user_ipj()</span></code></a> and <a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW.set_user_ipj" title="geosoft.gxapi.GXMVIEW.set_user_ipj"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXMVIEW.set_user_ipj()</span></code></a>.)
 This is useful for digitizing a line in an oriented view and getting
 the true coordinates in (X, Y, Z) at the selected point on the view plane.
 </pre>
@@ -1381,9 +1400,9 @@ the true coordinates in (X, Y, Z) at the selected point on the view plane.
 <dl class="method">
 <dt id="geosoft.gxapi.GXEMAP.get_map_layout_props">
 <code class="descname">get_map_layout_props</code><span class="sig-paren">(</span><em>(bool_ref)arg1</em>, <em>(float_ref)arg2</em>, <em>(int_ref)arg3</em>, <em>(int_ref)arg4</em>, <em>(int_ref)arg5</em>, <em>(int_ref)arg6</em>, <em>(int_ref)arg7</em>, <em>(int_ref)arg8</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXEMAP.get_map_layout_props" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Get the base layout view properties.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">the</span> <span class="n">base</span> <span class="n">layout</span> <span class="n">view</span> <span class="n">properties</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1412,10 +1431,10 @@ Get the base layout view properties.
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-This affects the display units and other related properties for the base
-view of a map.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="n">affects</span> <span class="n">the</span> <span class="n">display</span> <span class="n">units</span> <span class="ow">and</span> <span class="n">other</span> <span class="n">related</span> <span class="n">properties</span> <span class="k">for</span> <span class="n">the</span> <span class="n">base</span>
+<span class="n">view</span> <span class="n">of</span> <span class="n">a</span> <span class="nb">map</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
@@ -1444,16 +1463,16 @@ view of a map.
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXEMAP.get_maps_lst">
 <em class="property">static </em><code class="descname">get_maps_lst</code><span class="sig-paren">(</span><em>(GXLST)arg1</em>, <em>(int)arg2</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXEMAP.get_maps_lst" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Load the file names of open maps into a LST.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Load</span> <span class="n">the</span> <span class="n">file</span> <span class="n">names</span> <span class="n">of</span> <span class="nb">open</span> <span class="n">maps</span> <span class="n">into</span> <span class="n">a</span> <span class="n">LST</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXLST</span></code></a>) &#8211; LST to load</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#emap-path"><span class="std std-ref">EMAP_PATH constants</span></a></li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#emap-path"><span class="std std-ref">EMAP_PATH constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -1461,7 +1480,7 @@ Load the file names of open maps into a LST.
 The LST is cleared first.</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></p>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
 </td>
 </tr>
 </tbody>
@@ -1474,9 +1493,9 @@ The LST is cleared first.</p>
 <dl class="method">
 <dt id="geosoft.gxapi.GXEMAP.get_name">
 <code class="descname">get_name</code><span class="sig-paren">(</span><em>(str_ref)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXEMAP.get_name" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Get the name of the map object of this EMAP.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">the</span> <span class="n">name</span> <span class="n">of</span> <span class="n">the</span> <span class="nb">map</span> <span class="nb">object</span> <span class="n">of</span> <span class="n">this</span> <span class="n">EMAP</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1497,9 +1516,9 @@ Get the name of the map object of this EMAP.
 <dl class="method">
 <dt id="geosoft.gxapi.GXEMAP.get_point">
 <code class="descname">get_point</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(float_ref)arg2</em>, <em>(float_ref)arg3</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXEMAP.get_point" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Returns the coordinates of a user selected point.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Returns</span> <span class="n">the</span> <span class="n">coordinates</span> <span class="n">of</span> <span class="n">a</span> <span class="n">user</span> <span class="n">selected</span> <span class="n">point</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1515,7 +1534,7 @@ Returns the coordinates of a user selected point.
 1 if user cancelled.</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></p>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
 </td>
 </tr>
 </tbody>
@@ -1524,9 +1543,9 @@ Returns the coordinates of a user selected point.
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-This will wait for user to select a point.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="n">will</span> <span class="n">wait</span> <span class="k">for</span> <span class="n">user</span> <span class="n">to</span> <span class="n">select</span> <span class="n">a</span> <span class="n">point</span><span class="o">.</span>
+</pre></div>
+</div>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
 <p class="last">iTrackPoint, GetCurPoint, GetCursor</p>
@@ -1536,9 +1555,9 @@ This will wait for user to select a point.
 <dl class="method">
 <dt id="geosoft.gxapi.GXEMAP.get_point_3d">
 <code class="descname">get_point_3d</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(float_ref)arg2</em>, <em>(float_ref)arg3</em>, <em>(float_ref)arg4</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXEMAP.get_point_3d" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Returns the coordinates of a user selected point.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Returns</span> <span class="n">the</span> <span class="n">coordinates</span> <span class="n">of</span> <span class="n">a</span> <span class="n">user</span> <span class="n">selected</span> <span class="n">point</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1557,7 +1576,7 @@ Returns the coordinates of a user selected point.
 3 if capture is lost.</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></p>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
 </td>
 </tr>
 </tbody>
@@ -1566,9 +1585,9 @@ Returns the coordinates of a user selected point.
 <p><span class="versionmodified">New in version 9.1.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-This will wait for user to select a point.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="n">will</span> <span class="n">wait</span> <span class="k">for</span> <span class="n">user</span> <span class="n">to</span> <span class="n">select</span> <span class="n">a</span> <span class="n">point</span><span class="o">.</span>
+</pre></div>
+</div>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
 <p class="last">iTrackPoint, GetCurPoint, GetCursor</p>
@@ -1578,9 +1597,9 @@ This will wait for user to select a point.
 <dl class="method">
 <dt id="geosoft.gxapi.GXEMAP.get_point_ex">
 <code class="descname">get_point_ex</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(float_ref)arg2</em>, <em>(float_ref)arg3</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXEMAP.get_point_ex" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Returns the coordinates of a user selected point.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Returns</span> <span class="n">the</span> <span class="n">coordinates</span> <span class="n">of</span> <span class="n">a</span> <span class="n">user</span> <span class="n">selected</span> <span class="n">point</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1598,7 +1617,7 @@ Returns the coordinates of a user selected point.
 3 if capture is lost.</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></p>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
 </td>
 </tr>
 </tbody>
@@ -1607,9 +1626,9 @@ Returns the coordinates of a user selected point.
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-This will wait for user to select a point.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="n">will</span> <span class="n">wait</span> <span class="k">for</span> <span class="n">user</span> <span class="n">to</span> <span class="n">select</span> <span class="n">a</span> <span class="n">point</span><span class="o">.</span>
+</pre></div>
+</div>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
 <p class="last">iTrackPoint, GetCurPoint, GetCursor</p>
@@ -1619,9 +1638,9 @@ This will wait for user to select a point.
 <dl class="method">
 <dt id="geosoft.gxapi.GXEMAP.get_poly_line">
 <code class="descname">get_poly_line</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(GXVV)arg2</em>, <em>(GXVV)arg3</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXEMAP.get_poly_line" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Returns a polyline.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Returns</span> <span class="n">a</span> <span class="n">polyline</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1637,7 +1656,7 @@ Returns a polyline.
 1 if user cancelled.</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></p>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
 </td>
 </tr>
 </tbody>
@@ -1648,16 +1667,16 @@ Returns a polyline.
 <p><strong>Note:</strong></p>
 <pre class="literal-block">
 The coordinates are returned in the current User projection
-(See \ :func:`geosoft.gxapi.GXMVIEW.get_user_ipj`\  and \ :func:`geosoft.gxapi.GXMVIEW.set_user_ipj`\ .)
+(See <a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW.get_user_ipj" title="geosoft.gxapi.GXMVIEW.get_user_ipj"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXMVIEW.get_user_ipj()</span></code></a> and <a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW.set_user_ipj" title="geosoft.gxapi.GXMVIEW.set_user_ipj"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXMVIEW.set_user_ipj()</span></code></a>.)
 </pre>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXEMAP.get_poly_line_xyz">
 <code class="descname">get_poly_line_xyz</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(GXVV)arg2</em>, <em>(GXVV)arg3</em>, <em>(GXVV)arg4</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXEMAP.get_poly_line_xyz" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Returns a polyline.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Returns</span> <span class="n">a</span> <span class="n">polyline</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1674,7 +1693,7 @@ Returns a polyline.
 1 if user cancelled.</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></p>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
 </td>
 </tr>
 </tbody>
@@ -1685,7 +1704,7 @@ Returns a polyline.
 <p><strong>Note:</strong></p>
 <pre class="literal-block">
 The coordinates are returned in the current User projection
-(See \ :func:`geosoft.gxapi.GXMVIEW.get_user_ipj`\  and \ :func:`geosoft.gxapi.GXMVIEW.set_user_ipj`\ .) In this version
+(See <a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW.get_user_ipj" title="geosoft.gxapi.GXMVIEW.get_user_ipj"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXMVIEW.get_user_ipj()</span></code></a> and <a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW.set_user_ipj" title="geosoft.gxapi.GXMVIEW.set_user_ipj"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXMVIEW.set_user_ipj()</span></code></a>.) In this version
 of the method X, Y and Z (depth) are returned. Initially created
 to deal with crooked sections.
 </pre>
@@ -1694,9 +1713,9 @@ to deal with crooked sections.
 <dl class="method">
 <dt id="geosoft.gxapi.GXEMAP.get_rect">
 <code class="descname">get_rect</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(float_ref)arg2</em>, <em>(float_ref)arg3</em>, <em>(float_ref)arg4</em>, <em>(float_ref)arg5</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXEMAP.get_rect" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Returns the coordinates of a user selected box starting at a corner.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Returns</span> <span class="n">the</span> <span class="n">coordinates</span> <span class="n">of</span> <span class="n">a</span> <span class="n">user</span> <span class="n">selected</span> <span class="n">box</span> <span class="n">starting</span> <span class="n">at</span> <span class="n">a</span> <span class="n">corner</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1714,7 +1733,7 @@ Returns the coordinates of a user selected box starting at a corner.
 1 if user cancelled.</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></p>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
 </td>
 </tr>
 </tbody>
@@ -1725,7 +1744,7 @@ Returns the coordinates of a user selected box starting at a corner.
 <p><strong>Note:</strong></p>
 <pre class="literal-block">
 The coordinates are returned in the current User projection
-(See \ :func:`geosoft.gxapi.GXMVIEW.get_user_ipj`\  and \ :func:`geosoft.gxapi.GXMVIEW.set_user_ipj`\ .)
+(See <a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW.get_user_ipj" title="geosoft.gxapi.GXMVIEW.get_user_ipj"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXMVIEW.get_user_ipj()</span></code></a> and <a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW.set_user_ipj" title="geosoft.gxapi.GXMVIEW.set_user_ipj"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXMVIEW.set_user_ipj()</span></code></a>.)
 If the user IPJ distorts the coordinates from being rectilinear
 (e.g. for a TriPlot graph), then care should be taken since the
 (Xmin, Ymin) and (Xmax, Ymax) values returned do not necessarily
@@ -1779,9 +1798,9 @@ necessarily a rectangle in the User coordinates.
 <dl class="method">
 <dt id="geosoft.gxapi.GXEMAP.get_view_ipj">
 <code class="descname">get_view_ipj</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(GXIPJ)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXEMAP.get_view_ipj" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Get a view's IPJ.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">a</span> <span class="n">view</span><span class="s1">&#39;s IPJ.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1806,7 +1825,7 @@ Get a view's IPJ.
 <p><strong>Note:</strong></p>
 <pre class="literal-block">
 This function can be used to obtain a views coordinate system 
-without having to call \ :func:`geosoft.gxapi.GXEMAP.lock`\ . This could be an expensive operation
+without having to call <a class="reference internal" href="#geosoft.gxapi.GXEMAP.lock" title="geosoft.gxapi.GXEMAP.lock"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXEMAP.lock()</span></code></a>. This could be an expensive operation
 that cause undesirable UX.
 </pre>
 </dd></dl>
@@ -1814,9 +1833,9 @@ that cause undesirable UX.
 <dl class="method">
 <dt id="geosoft.gxapi.GXEMAP.get_window_position">
 <code class="descname">get_window_position</code><span class="sig-paren">(</span><em>(int_ref)arg1</em>, <em>(int_ref)arg2</em>, <em>(int_ref)arg3</em>, <em>(int_ref)arg4</em>, <em>(int_ref)arg5</em>, <em>(int_ref)arg6</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXEMAP.get_window_position" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Get the map window's position and dock state
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">the</span> <span class="nb">map</span> <span class="n">window</span><span class="s1">&#39;s position and dock state</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1856,7 +1875,7 @@ Get the map window's position and dock state
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><a class="reference internal" href="#emap-window-state"><span class="std std-ref">EMAP_WINDOW_STATE constants</span></a></td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int</td>
 </tr>
 </tbody>
 </table>
@@ -1878,7 +1897,7 @@ Get the map window's position and dock state
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">0 - no current map.
 1 - current map</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int</td>
 </tr>
 </tbody>
 </table>
@@ -1890,9 +1909,9 @@ Get the map window's position and dock state
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXEMAP.i_get_specified_map_name">
 <em class="property">static </em><code class="descname">i_get_specified_map_name</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(str)arg2</em>, <em>(str_ref)arg3</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXEMAP.i_get_specified_map_name" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Find a loaded map that has a setting in its reg.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Find</span> <span class="n">a</span> <span class="n">loaded</span> <span class="nb">map</span> <span class="n">that</span> <span class="n">has</span> <span class="n">a</span> <span class="n">setting</span> <span class="ow">in</span> <span class="n">its</span> <span class="n">reg</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1908,7 +1927,7 @@ Find a loaded map that has a setting in its reg.
 1 - No Map Found</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></p>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
 </td>
 </tr>
 </tbody>
@@ -1921,16 +1940,16 @@ Find a loaded map that has a setting in its reg.
 <dl class="method">
 <dt id="geosoft.gxapi.GXEMAP.is_3d_view">
 <code class="descname">is_3d_view</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXEMAP.is_3d_view" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Is the current view a 3D view.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Is</span> <span class="n">the</span> <span class="n">current</span> <span class="n">view</span> <span class="n">a</span> <span class="mi">3</span><span class="n">D</span> <span class="n">view</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">1 - Yes, 0 - No</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int</td>
 </tr>
 </tbody>
 </table>
@@ -1942,16 +1961,16 @@ Is the current view a 3D view.
 <dl class="method">
 <dt id="geosoft.gxapi.GXEMAP.is_grid">
 <code class="descname">is_grid</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXEMAP.is_grid" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Is the map a grid map?
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span>Is the map a grid map?
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">1 - Yes, 0 - No</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int</td>
 </tr>
 </tbody>
 </table>
@@ -2000,9 +2019,9 @@ Is the map a grid map?
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXEMAP.load">
 <em class="property">static </em><code class="descname">load</code><span class="sig-paren">(</span><em>(str)arg1</em><span class="sig-paren">)</span> &rarr; GXEMAP:<a class="headerlink" href="#geosoft.gxapi.GXEMAP.load" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Loads maps into the editor.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Loads</span> <span class="n">maps</span> <span class="n">into</span> <span class="n">the</span> <span class="n">editor</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -2019,22 +2038,22 @@ Loads maps into the editor.
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-The last map in the list will be the current map.
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">last</span> <span class="nb">map</span> <span class="ow">in</span> <span class="n">the</span> <span class="nb">list</span> <span class="n">will</span> <span class="n">be</span> <span class="n">the</span> <span class="n">current</span> <span class="nb">map</span><span class="o">.</span>
 
-Maps may already be loaded.
+<span class="n">Maps</span> <span class="n">may</span> <span class="n">already</span> <span class="n">be</span> <span class="n">loaded</span><span class="o">.</span>
 
-Only the first file in the list may have a directory path.
-All other files in the list are assumed to be in the same
-directory as the first file.
-</pre>
+<span class="n">Only</span> <span class="n">the</span> <span class="n">first</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">the</span> <span class="nb">list</span> <span class="n">may</span> <span class="n">have</span> <span class="n">a</span> <span class="n">directory</span> <span class="n">path</span><span class="o">.</span>
+<span class="n">All</span> <span class="n">other</span> <span class="n">files</span> <span class="ow">in</span> <span class="n">the</span> <span class="nb">list</span> <span class="n">are</span> <span class="n">assumed</span> <span class="n">to</span> <span class="n">be</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">same</span>
+<span class="n">directory</span> <span class="k">as</span> <span class="n">the</span> <span class="n">first</span> <span class="n">file</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXEMAP.load_control">
 <em class="property">static </em><code class="descname">load_control</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(HWND)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXEMAP.load_control" title="Permalink to this definition">¶</a></dt>
 <dd><pre class="literal-block">
-Version of \ :func:`geosoft.gxapi.GXEMAP.load`\  that can be used to load a database via subclassing into a Windows control.
+Version of <a class="reference internal" href="#geosoft.gxapi.GXEMAP.load" title="geosoft.gxapi.GXEMAP.load"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXEMAP.load()</span></code></a> that can be used to load a database via subclassing into a Windows control.
 </pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -2083,7 +2102,7 @@ database in the list if multiple files were provided.</td>
 </div>
 <p><strong>Note:</strong></p>
 <pre class="literal-block">
-This function acts just like \ :func:`geosoft.gxapi.GXEMAP.load`\  except that the document(s) is not activated (brought to foreground) and no
+This function acts just like <a class="reference internal" href="#geosoft.gxapi.GXEMAP.load" title="geosoft.gxapi.GXEMAP.load"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXEMAP.load()</span></code></a> except that the document(s) is not activated (brought to foreground) and no
 guarantee is given about which document is currently active.
 </pre>
 </dd></dl>
@@ -2091,9 +2110,9 @@ guarantee is given about which document is currently active.
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXEMAP.load_with_view">
 <em class="property">static </em><code class="descname">load_with_view</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(GXEMAP)arg2</em><span class="sig-paren">)</span> &rarr; GXEMAP:<a class="headerlink" href="#geosoft.gxapi.GXEMAP.load_with_view" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Load an EMAP with the view from a current EMAP.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Load</span> <span class="n">an</span> <span class="n">EMAP</span> <span class="k">with</span> <span class="n">the</span> <span class="n">view</span> <span class="kn">from</span> <span class="nn">a</span> <span class="n">current</span> <span class="n">EMAP</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -2116,18 +2135,18 @@ Load an EMAP with the view from a current EMAP.
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-Can only be run in interactive mode. Is used by
-dbsubset to create a new database with the same
-view as previously.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Can</span> <span class="n">only</span> <span class="n">be</span> <span class="n">run</span> <span class="ow">in</span> <span class="n">interactive</span> <span class="n">mode</span><span class="o">.</span> <span class="n">Is</span> <span class="n">used</span> <span class="n">by</span>
+<span class="n">dbsubset</span> <span class="n">to</span> <span class="n">create</span> <span class="n">a</span> <span class="n">new</span> <span class="n">database</span> <span class="k">with</span> <span class="n">the</span> <span class="n">same</span>
+<span class="n">view</span> <span class="k">as</span> <span class="n">previously</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXEMAP.load_with_view_control">
 <em class="property">static </em><code class="descname">load_with_view_control</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(GXEMAP)arg2</em>, <em>(HWND)arg3</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXEMAP.load_with_view_control" title="Permalink to this definition">¶</a></dt>
 <dd><pre class="literal-block">
-Version of \ :func:`geosoft.gxapi.GXEDB.load_with_view`\  that can be used to load a database via subclassing into a Windows control.
+Version of <a class="reference internal" href="GXEDB.html#geosoft.gxapi.GXEDB.load_with_view" title="geosoft.gxapi.GXEDB.load_with_view"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXEDB.load_with_view()</span></code></a> that can be used to load a database via subclassing into a Windows control.
 </pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -2156,9 +2175,9 @@ Version of \ :func:`geosoft.gxapi.GXEDB.load_with_view`\  that can be used to lo
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXEMAP.loaded">
 <em class="property">static </em><code class="descname">loaded</code><span class="sig-paren">(</span><em>(str)arg1</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXEMAP.loaded" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Returns 1 if a map is loaded .
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Returns</span> <span class="mi">1</span> <span class="k">if</span> <span class="n">a</span> <span class="nb">map</span> <span class="ow">is</span> <span class="n">loaded</span> <span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -2167,7 +2186,7 @@ Returns 1 if a map is loaded .
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">1 if map is loaded, 0 otherwise.</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
 </tr>
 </tbody>
 </table>
@@ -2179,9 +2198,9 @@ Returns 1 if a map is loaded .
 <dl class="method">
 <dt id="geosoft.gxapi.GXEMAP.lock">
 <code class="descname">lock</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; GXMAP:<a class="headerlink" href="#geosoft.gxapi.GXEMAP.lock" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-This method locks the Edited map.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="n">method</span> <span class="n">locks</span> <span class="n">the</span> <span class="n">Edited</span> <span class="nb">map</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -2196,17 +2215,17 @@ This method locks the Edited map.
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-The Redraw flag is set to EMAP_REDRAW_YES when this functions is called.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">Redraw</span> <span class="n">flag</span> <span class="ow">is</span> <span class="nb">set</span> <span class="n">to</span> <span class="n">EMAP_REDRAW_YES</span> <span class="n">when</span> <span class="n">this</span> <span class="n">functions</span> <span class="ow">is</span> <span class="n">called</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXEMAP.make_current">
 <code class="descname">make_current</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXEMAP.make_current" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Makes this EMAP object the current active object to the user.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Makes</span> <span class="n">this</span> <span class="n">EMAP</span> <span class="nb">object</span> <span class="n">the</span> <span class="n">current</span> <span class="n">active</span> <span class="nb">object</span> <span class="n">to</span> <span class="n">the</span> <span class="n">user</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -2241,16 +2260,16 @@ Makes this EMAP object the current active object to the user.
 <dl class="method">
 <dt id="geosoft.gxapi.GXEMAP.packed_files">
 <code class="descname">packed_files</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXEMAP.packed_files" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-The number of packed files in the map.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">number</span> <span class="n">of</span> <span class="n">packed</span> <span class="n">files</span> <span class="ow">in</span> <span class="n">the</span> <span class="nb">map</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The number of packed files in map.</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int</td>
 </tr>
 </tbody>
 </table>
@@ -2262,26 +2281,26 @@ The number of packed files in the map.
 <dl class="method">
 <dt id="geosoft.gxapi.GXEMAP.print">
 <code class="descname">print</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(int)arg2</em>, <em>(int)arg3</em>, <em>(int)arg4</em>, <em>(int)arg5</em>, <em>(int)arg6</em>, <em>(int)arg7</em>, <em>(int)arg8</em>, <em>(float)arg9</em>, <em>(int)arg10</em>, <em>(int)arg11</em>, <em>(int)arg12</em>, <em>(str)arg13</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXEMAP.print" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Print the current map to current printer.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Print</span> <span class="n">the</span> <span class="n">current</span> <span class="nb">map</span> <span class="n">to</span> <span class="n">current</span> <span class="n">printer</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; lEntireMap  (0 or 1)</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; lScaleToFit 0 - use scale factor 1 - fit to media 2 - fit to roll media</li>
-<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; lPrintToFile(0 or 1)</li>
-<li><strong>arg4</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; lAllPages   (0 or 1)</li>
-<li><strong>arg5</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; lCentre     (0 or 1)</li>
-<li><strong>arg6</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; lCopies</li>
-<li><strong>arg7</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; lFirstPage</li>
-<li><strong>arg8</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; lLastPage</li>
+<li><strong>arg1</strong> (<em>int</em>) &#8211; lEntireMap  (0 or 1)</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; lScaleToFit 0 - use scale factor 1 - fit to media 2 - fit to roll media</li>
+<li><strong>arg3</strong> (<em>int</em>) &#8211; lPrintToFile(0 or 1)</li>
+<li><strong>arg4</strong> (<em>int</em>) &#8211; lAllPages   (0 or 1)</li>
+<li><strong>arg5</strong> (<em>int</em>) &#8211; lCentre     (0 or 1)</li>
+<li><strong>arg6</strong> (<em>int</em>) &#8211; lCopies</li>
+<li><strong>arg7</strong> (<em>int</em>) &#8211; lFirstPage</li>
+<li><strong>arg8</strong> (<em>int</em>) &#8211; lLastPage</li>
 <li><strong>arg9</strong> (<em>float</em>) &#8211; dScaleFactor (2.0 doubles plot size)</li>
-<li><strong>arg10</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; lOverlapSize (mm)</li>
-<li><strong>arg11</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; lOffsetX     (mm)</li>
-<li><strong>arg12</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; lOffsetY     (mm)</li>
+<li><strong>arg10</strong> (<em>int</em>) &#8211; lOverlapSize (mm)</li>
+<li><strong>arg11</strong> (<em>int</em>) &#8211; lOffsetX     (mm)</li>
+<li><strong>arg12</strong> (<em>int</em>) &#8211; lOffsetY     (mm)</li>
 <li><strong>arg13</strong> (<em>str</em>) &#8211; szFile       (if lPrintToFile==1)</li>
 </ul>
 </td>
@@ -2302,9 +2321,9 @@ Print the current map to current printer.
 <dl class="method">
 <dt id="geosoft.gxapi.GXEMAP.read_only">
 <code class="descname">read_only</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; bool:<a class="headerlink" href="#geosoft.gxapi.GXEMAP.read_only" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Checks if a map is currently opened in a read-only mode.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Checks</span> <span class="k">if</span> <span class="n">a</span> <span class="nb">map</span> <span class="ow">is</span> <span class="n">currently</span> <span class="n">opened</span> <span class="ow">in</span> <span class="n">a</span> <span class="n">read</span><span class="o">-</span><span class="n">only</span> <span class="n">mode</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -2323,9 +2342,9 @@ Checks if a map is currently opened in a read-only mode.
 <dl class="method">
 <dt id="geosoft.gxapi.GXEMAP.redraw">
 <code class="descname">redraw</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXEMAP.redraw" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Redraw the map immediately.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Redraw</span> <span class="n">the</span> <span class="nb">map</span> <span class="n">immediately</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -2340,17 +2359,17 @@ Redraw the map immediately.
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-Redraws the map immediately. Map must not be locked.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Redraws</span> <span class="n">the</span> <span class="nb">map</span> <span class="n">immediately</span><span class="o">.</span> <span class="n">Map</span> <span class="n">must</span> <span class="ow">not</span> <span class="n">be</span> <span class="n">locked</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXEMAP.reload_grid">
 <em class="property">static </em><code class="descname">reload_grid</code><span class="sig-paren">(</span><em>(str)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXEMAP.reload_grid" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Reloads a grid document.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Reloads</span> <span class="n">a</span> <span class="n">grid</span> <span class="n">document</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -2367,17 +2386,17 @@ Reloads a grid document.
 <p><span class="versionmodified">New in version 9.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-Use this method to reload (if loaded) a grid document if the file on disk changed.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Use</span> <span class="n">this</span> <span class="n">method</span> <span class="n">to</span> <span class="n">reload</span> <span class="p">(</span><span class="k">if</span> <span class="n">loaded</span><span class="p">)</span> <span class="n">a</span> <span class="n">grid</span> <span class="n">document</span> <span class="k">if</span> <span class="n">the</span> <span class="n">file</span> <span class="n">on</span> <span class="n">disk</span> <span class="n">changed</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXEMAP.select_group">
 <code class="descname">select_group</code><span class="sig-paren">(</span><em>(str)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXEMAP.select_group" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Select a group.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Select</span> <span class="n">a</span> <span class="n">group</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -2398,9 +2417,9 @@ Select a group.
 <dl class="method">
 <dt id="geosoft.gxapi.GXEMAP.set_aoi_area">
 <code class="descname">set_aoi_area</code><span class="sig-paren">(</span><em>(float)arg1</em>, <em>(float)arg2</em>, <em>(float)arg3</em>, <em>(float)arg4</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXEMAP.set_aoi_area" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Set the area of interest.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Set</span> <span class="n">the</span> <span class="n">area</span> <span class="n">of</span> <span class="n">interest</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -2425,18 +2444,18 @@ Set the area of interest.
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-Coordinates are based on the current view user units.
-The map is immediatly redrawn.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Coordinates</span> <span class="n">are</span> <span class="n">based</span> <span class="n">on</span> <span class="n">the</span> <span class="n">current</span> <span class="n">view</span> <span class="n">user</span> <span class="n">units</span><span class="o">.</span>
+<span class="n">The</span> <span class="nb">map</span> <span class="ow">is</span> <span class="n">immediatly</span> <span class="n">redrawn</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXEMAP.set_current_view">
 <code class="descname">set_current_view</code><span class="sig-paren">(</span><em>(str)arg1</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXEMAP.set_current_view" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Set the current working view.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Set</span> <span class="n">the</span> <span class="n">current</span> <span class="n">working</span> <span class="n">view</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -2445,7 +2464,7 @@ Set the current working view.
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">0 if view set, 1 if view does not exist.</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
 </tr>
 </tbody>
 </table>
@@ -2453,20 +2472,20 @@ Set the current working view.
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-This function operates on the current map.
-It changes the view only during the execution of the
-GX. As soon as the GX terminates the view will revert
-to the original one.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="n">function</span> <span class="n">operates</span> <span class="n">on</span> <span class="n">the</span> <span class="n">current</span> <span class="nb">map</span><span class="o">.</span>
+<span class="n">It</span> <span class="n">changes</span> <span class="n">the</span> <span class="n">view</span> <span class="n">only</span> <span class="n">during</span> <span class="n">the</span> <span class="n">execution</span> <span class="n">of</span> <span class="n">the</span>
+<span class="n">GX</span><span class="o">.</span> <span class="n">As</span> <span class="n">soon</span> <span class="k">as</span> <span class="n">the</span> <span class="n">GX</span> <span class="n">terminates</span> <span class="n">the</span> <span class="n">view</span> <span class="n">will</span> <span class="n">revert</span>
+<span class="n">to</span> <span class="n">the</span> <span class="n">original</span> <span class="n">one</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXEMAP.set_display_area">
 <code class="descname">set_display_area</code><span class="sig-paren">(</span><em>(float)arg1</em>, <em>(float)arg2</em>, <em>(float)arg3</em>, <em>(float)arg4</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXEMAP.set_display_area" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Set the area you wish to see.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Set</span> <span class="n">the</span> <span class="n">area</span> <span class="n">you</span> <span class="n">wish</span> <span class="n">to</span> <span class="n">see</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -2491,18 +2510,18 @@ Set the area you wish to see.
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-Coordinates are based on the current view user units.
-The map is immediatly redrawn.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Coordinates</span> <span class="n">are</span> <span class="n">based</span> <span class="n">on</span> <span class="n">the</span> <span class="n">current</span> <span class="n">view</span> <span class="n">user</span> <span class="n">units</span><span class="o">.</span>
+<span class="n">The</span> <span class="nb">map</span> <span class="ow">is</span> <span class="n">immediatly</span> <span class="n">redrawn</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXEMAP.set_drag_drop_enabled">
 <code class="descname">set_drag_drop_enabled</code><span class="sig-paren">(</span><em>(bool)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXEMAP.set_drag_drop_enabled" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Set whether drag-and-drop is enabled for the map.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Set</span> <span class="n">whether</span> <span class="n">drag</span><span class="o">-</span><span class="ow">and</span><span class="o">-</span><span class="n">drop</span> <span class="ow">is</span> <span class="n">enabled</span> <span class="k">for</span> <span class="n">the</span> <span class="nb">map</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -2523,9 +2542,9 @@ Set whether drag-and-drop is enabled for the map.
 <dl class="method">
 <dt id="geosoft.gxapi.GXEMAP.set_map_layout_props">
 <code class="descname">set_map_layout_props</code><span class="sig-paren">(</span><em>(bool)arg1</em>, <em>(float)arg2</em>, <em>(int)arg3</em>, <em>(int)arg4</em>, <em>(int)arg5</em>, <em>(int)arg6</em>, <em>(int)arg7</em>, <em>(int)arg8</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXEMAP.set_map_layout_props" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Set the base layout view properties.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Set</span> <span class="n">the</span> <span class="n">base</span> <span class="n">layout</span> <span class="n">view</span> <span class="n">properties</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -2533,12 +2552,12 @@ Set the base layout view properties.
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<em>bool</em>) &#8211; bool Snap to grid</li>
 <li><strong>arg2</strong> (<em>float</em>) &#8211; Snapping distance (always in mm)</li>
-<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; View Grid</li>
-<li><strong>arg4</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; View Rulers</li>
-<li><strong>arg5</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#layout-view-units"><span class="std std-ref">LAYOUT_VIEW_UNITS constants</span></a> View Units</li>
-<li><strong>arg6</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Grid Red Component (0-255)</li>
-<li><strong>arg7</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Grid Green Component (0-255)</li>
-<li><strong>arg8</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Grid Blue Component (0-255)</li>
+<li><strong>arg3</strong> (<em>int</em>) &#8211; View Grid</li>
+<li><strong>arg4</strong> (<em>int</em>) &#8211; View Rulers</li>
+<li><strong>arg5</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#layout-view-units"><span class="std std-ref">LAYOUT_VIEW_UNITS constants</span></a> View Units</li>
+<li><strong>arg6</strong> (<em>int</em>) &#8211; Grid Red Component (0-255)</li>
+<li><strong>arg7</strong> (<em>int</em>) &#8211; Grid Green Component (0-255)</li>
+<li><strong>arg8</strong> (<em>int</em>) &#8211; Grid Blue Component (0-255)</li>
 </ul>
 </td>
 </tr>
@@ -2554,10 +2573,10 @@ Set the base layout view properties.
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-This affects the display units and other related properties for the base
-view of a map.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="n">affects</span> <span class="n">the</span> <span class="n">display</span> <span class="n">units</span> <span class="ow">and</span> <span class="n">other</span> <span class="n">related</span> <span class="n">properties</span> <span class="k">for</span> <span class="n">the</span> <span class="n">base</span>
+<span class="n">view</span> <span class="n">of</span> <span class="n">a</span> <span class="nb">map</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
@@ -2586,14 +2605,14 @@ view of a map.
 <dl class="method">
 <dt id="geosoft.gxapi.GXEMAP.set_redraw_flag">
 <code class="descname">set_redraw_flag</code><span class="sig-paren">(</span><em>(int)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXEMAP.set_redraw_flag" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Set the redraw flag.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Set</span> <span class="n">the</span> <span class="n">redraw</span> <span class="n">flag</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#emap-redraw"><span class="std std-ref">EMAP_REDRAW constants</span></a></td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#emap-redraw"><span class="std std-ref">EMAP_REDRAW constants</span></a></td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Nothing</td>
 </tr>
@@ -2607,32 +2626,32 @@ Set the redraw flag.
 <p><strong>Note:</strong></p>
 <pre class="literal-block">
 This function is generally used to prevent redrawing of
-the map, which normally occurs after the last \ :func:`geosoft.gxapi.GXEMAP.un_lock`\ 
+the map, which normally occurs after the last <a class="reference internal" href="#geosoft.gxapi.GXEMAP.un_lock" title="geosoft.gxapi.GXEMAP.un_lock"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXEMAP.un_lock()</span></code></a>
 call, in cases where it is known that no changes are being
 made to the map.
 
 Typical usage:
 
-ap = \ :func:`geosoft.gxapi.GXEMAP.lock`\ (EMap);
+ap = <a class="reference internal" href="#geosoft.gxapi.GXEMAP.lock" title="geosoft.gxapi.GXEMAP.lock"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXEMAP.lock()</span></code></a>(EMap);
 etRedrawFlag_EMAP(EMap,EMAP_REDRAW_NO);
 
 Stuff....
 
-\ :func:`geosoft.gxapi.GXEMAP.un_lock`\ (Map);
+<a class="reference internal" href="#geosoft.gxapi.GXEMAP.un_lock" title="geosoft.gxapi.GXEMAP.un_lock"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXEMAP.un_lock()</span></code></a>(Map);
 </pre>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXEMAP.set_viewport_mode">
 <code class="descname">set_viewport_mode</code><span class="sig-paren">(</span><em>(int)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXEMAP.set_viewport_mode" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Set the viewport mode.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Set</span> <span class="n">the</span> <span class="n">viewport</span> <span class="n">mode</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#emap-viewport"><span class="std std-ref">EMAP_VIEWPORT constants</span></a></td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#emap-viewport"><span class="std std-ref">EMAP_VIEWPORT constants</span></a></td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Nothing</td>
 </tr>
@@ -2644,30 +2663,30 @@ Set the viewport mode.
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-This is handy for using a map to define an area of interest. Use in conjunction
-with Get/Set AOIArea. If this is used inside montaj it is important to set or provide
-for a method to set the map mode back to normal as this is not exposed in the interface.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="ow">is</span> <span class="n">handy</span> <span class="k">for</span> <span class="n">using</span> <span class="n">a</span> <span class="nb">map</span> <span class="n">to</span> <span class="n">define</span> <span class="n">an</span> <span class="n">area</span> <span class="n">of</span> <span class="n">interest</span><span class="o">.</span> <span class="n">Use</span> <span class="ow">in</span> <span class="n">conjunction</span>
+<span class="k">with</span> <span class="n">Get</span><span class="o">/</span><span class="n">Set</span> <span class="n">AOIArea</span><span class="o">.</span> <span class="n">If</span> <span class="n">this</span> <span class="ow">is</span> <span class="n">used</span> <span class="n">inside</span> <span class="n">montaj</span> <span class="n">it</span> <span class="ow">is</span> <span class="n">important</span> <span class="n">to</span> <span class="nb">set</span> <span class="ow">or</span> <span class="n">provide</span>
+<span class="k">for</span> <span class="n">a</span> <span class="n">method</span> <span class="n">to</span> <span class="nb">set</span> <span class="n">the</span> <span class="nb">map</span> <span class="n">mode</span> <span class="n">back</span> <span class="n">to</span> <span class="n">normal</span> <span class="k">as</span> <span class="n">this</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">exposed</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">interface</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXEMAP.set_window_position">
 <code class="descname">set_window_position</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(int)arg2</em>, <em>(int)arg3</em>, <em>(int)arg4</em>, <em>(int)arg5</em>, <em>(int)arg6</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXEMAP.set_window_position" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Get the map window's position and dock state
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">the</span> <span class="nb">map</span> <span class="n">window</span><span class="s1">&#39;s position and dock state</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Window left position</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Window top position</li>
-<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Window right position</li>
-<li><strong>arg4</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Window bottom position</li>
-<li><strong>arg5</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Window state <a class="reference internal" href="#emap-window-state"><span class="std std-ref">EMAP_WINDOW_STATE constants</span></a></li>
-<li><strong>arg6</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Docked or floating <a class="reference internal" href="#emap-window-position"><span class="std std-ref">EMAP_WINDOW_POSITION constants</span></a></li>
+<li><strong>arg1</strong> (<em>int</em>) &#8211; Window left position</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; Window top position</li>
+<li><strong>arg3</strong> (<em>int</em>) &#8211; Window right position</li>
+<li><strong>arg4</strong> (<em>int</em>) &#8211; Window bottom position</li>
+<li><strong>arg5</strong> (<em>int</em>) &#8211; Window state <a class="reference internal" href="#emap-window-state"><span class="std std-ref">EMAP_WINDOW_STATE constants</span></a></li>
+<li><strong>arg6</strong> (<em>int</em>) &#8211; Docked or floating <a class="reference internal" href="#emap-window-position"><span class="std std-ref">EMAP_WINDOW_POSITION constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -2694,7 +2713,7 @@ Get the map window's position and dock state
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#emap-window-state"><span class="std std-ref">EMAP_WINDOW_STATE constants</span></a></td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#emap-window-state"><span class="std std-ref">EMAP_WINDOW_STATE constants</span></a></td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Nothing</td>
 </tr>
@@ -2718,7 +2737,7 @@ Get the map window's position and dock state
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#emap-track"><span class="std std-ref">EMAP_TRACK constants</span></a></li>
+<li><strong>arg1</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#emap-track"><span class="std std-ref">EMAP_TRACK constants</span></a></li>
 <li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; X coordinate in current view user units.</li>
 <li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Y</li>
 </ul>
@@ -2728,7 +2747,7 @@ Get the map window's position and dock state
 1 if user cancelled.</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></p>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
 </td>
 </tr>
 </tbody>
@@ -2741,9 +2760,9 @@ Get the map window's position and dock state
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXEMAP.un_load">
 <em class="property">static </em><code class="descname">un_load</code><span class="sig-paren">(</span><em>(str)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXEMAP.un_load" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Unloads a MAP.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Unloads</span> <span class="n">a</span> <span class="n">MAP</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -2762,7 +2781,7 @@ Unloads a MAP.
 <p><strong>Note:</strong></p>
 <pre class="literal-block">
 If the MAP is not loaded, nothing happens.
-Same as \ :func:`geosoft.gxapi.GXEMAP.un_load_verify`\  with FALSE to prompt save.
+Same as <a class="reference internal" href="#geosoft.gxapi.GXEMAP.un_load_verify" title="geosoft.gxapi.GXEMAP.un_load_verify"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXEMAP.un_load_verify()</span></code></a> with FALSE to prompt save.
 </pre>
 </dd></dl>
 
@@ -2790,9 +2809,9 @@ Same as \ :func:`geosoft.gxapi.GXEMAP.un_load_verify`\  with FALSE to prompt sav
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXEMAP.un_load_verify">
 <em class="property">static </em><code class="descname">un_load_verify</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(bool)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXEMAP.un_load_verify" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Unloads an edited map, optional prompt to save.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Unloads</span> <span class="n">an</span> <span class="n">edited</span> <span class="nb">map</span><span class="p">,</span> <span class="n">optional</span> <span class="n">prompt</span> <span class="n">to</span> <span class="n">save</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -2815,18 +2834,18 @@ Unloads an edited map, optional prompt to save.
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-If the map is not loaded, nothing happens.
-If &quot;FALSE&quot;, map is saved without a prompt.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">If</span> <span class="n">the</span> <span class="nb">map</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">loaded</span><span class="p">,</span> <span class="n">nothing</span> <span class="n">happens</span><span class="o">.</span>
+<span class="n">If</span> <span class="s2">&quot;FALSE&quot;</span><span class="p">,</span> <span class="nb">map</span> <span class="ow">is</span> <span class="n">saved</span> <span class="n">without</span> <span class="n">a</span> <span class="n">prompt</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXEMAP.un_lock">
 <code class="descname">un_lock</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXEMAP.un_lock" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-This method unlocks the Edited map.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="n">method</span> <span class="n">unlocks</span> <span class="n">the</span> <span class="n">Edited</span> <span class="nb">map</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -3077,9 +3096,13 @@ This method unlocks the Edited map.
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li> 
+          <a href="GXEMAPTEMPLATE.html" title="GXEMAPTEMPLATE class"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="GXEDOC.html" title="GXEDOC class"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="geosoft.gxapi.classes.html" >GX API Class/Library Reference</a> &#187;</li> 
       </ul>
     </div>
 

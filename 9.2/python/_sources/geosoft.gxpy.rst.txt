@@ -1,5 +1,7 @@
-geosoft.gxpy module reference
-=============================
+.. _gxpy:
+
+gxpy modules reference
+======================
 
 The :code:`geosoft.gxpy` modules provide a Python-oriented API that takes advantage of Python to simplify
 much of the complexity of the `low-level GX API <geosoft.gxapi.html>`__.
@@ -9,24 +11,28 @@ Submodules
 
 The following sub-modules organize functions into logical groups.
 
-    ======================================= =========================================================================================================================
-    :mod:`geosoft.gxpy.agg`                 Geosoft aggregates are "aggregations" of one or more grid layers that together create a
-    :mod:`geosoft.gxpy.coordinate_system`   Coordinate systems describe how cartesian coordinates are located ralative to the Earth.  Cartesian coordinates
-    :mod:`geosoft.gxpy.dataframe`           Table (records, fields) handling, inherits from Pandas base class.
-    :mod:`geosoft.gxpy.gdb`                 Geosoft databases for line-oriented spatial data.
-    :mod:`geosoft.gxpy.geometry`            Spatial geometric elements.
-    :mod:`geosoft.gxpy.grid`                Geosoft grids and image handling, including all grid types supported by Geosoft..
-    :mod:`geosoft.gxpy.group`               This module handles drawing into groups in 3d views, or in 2D views on a map.
-    :mod:`geosoft.gxpy.gx`                  GX Context and related methods required for Geosoft Python.  The GX context is a singleton, which is either created for
-    :mod:`geosoft.gxpy.map`                 Geosoft maps contain one or more 2D and 3D views.  Each 2D view has a specific coordinate system and clip region.
-    :mod:`geosoft.gxpy.project`             Geosoft desktop project interface, which provides access to an active and open Geosoft desktop project.
-    :mod:`geosoft.gxpy.system`              Geosoft system functions..
-    :mod:`geosoft.gxpy.utility`             Utility functions to support Geosoft Python scripts and modules.
-    :mod:`geosoft.gxpy.va`                  Geosoft vector arrays (vector of array elements). VA and VV classes are related based on a key called a *fiducial*,
-    :mod:`geosoft.gxpy.view`                Views, both 2D and 3D.  2D and 3D views can be placed on a :class:`geosoft.gxpy.map.Map`, though 3D views
-    :mod:`geosoft.gxpy.viewer`              Geosoft Viewers.
-    :mod:`geosoft.gxpy.vv`                  Geosoft vector. VA and VV classes are related based on a key called a *fiducial*,
-    ======================================= =========================================================================================================================
+.. currentmodule:: geosoft.gxpy
+
+.. autosummary::
+   :toctree:
+
+   geosoft.gxpy.agg
+   geosoft.gxpy.coordinate_system
+   geosoft.gxpy.dataframe
+   geosoft.gxpy.gdb
+   geosoft.gxpy.geometry
+   geosoft.gxpy.grid
+   geosoft.gxpy.group
+   geosoft.gxpy.gx
+   geosoft.gxpy.map
+   geosoft.gxpy.project
+   geosoft.gxpy.system
+   geosoft.gxpy.utility
+   geosoft.gxpy.va
+   geosoft.gxpy.view
+   geosoft.gxpy.viewer
+   geosoft.gxpy.vv
+
 
 See https://github.com/GeosoftInc/gxpy/tree/master/examples for example scripts that use the Python modules.
 

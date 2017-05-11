@@ -27,6 +27,8 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Geosoft GX API" href="geosoft.gxapi.html" />
+    <link rel="prev" title="Introduction" href="index.html" />
  
 <script type="text/javascript">
   var _gaq = _gaq || [];
@@ -43,20 +45,16 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
+          <a href="geosoft.gxapi.html" title="Geosoft GX API"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Introduction"
+             accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <div role="note" aria-label="source link">
-    <h3>This Page</h3>
-    <ul class="this-page-menu">
-      <li><a href="_sources/geosoft.gxapi.classes.rst.txt"
-            rel="nofollow">Show Source</a></li>
-    </ul>
-   </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
@@ -67,6 +65,13 @@
     </form>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/geosoft.gxapi.classes.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
         </div>
       </div>
 
@@ -76,662 +81,129 @@
           <div class="body" role="main">
             
   <div class="section" id="gx-api-class-library-reference">
-<h1>GX API Class/Library Reference<a class="headerlink" href="#gx-api-class-library-reference" title="Permalink to this headline">¶</a></h1>
+<span id="geosoft-gxapi-classes"></span><h1>GX API Class/Library Reference<a class="headerlink" href="#gx-api-class-library-reference" title="Permalink to this headline">¶</a></h1>
 <p>These are the low-level library classes and functions that make up the GX API.</p>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="geosoft.gxapi.html">Geosoft GX API</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="geosoft.gxapi.html#the-gxcontext-class">The GXContext class</a></li>
-<li class="toctree-l2"><a class="reference internal" href="geosoft.gxapi.html#helper-classes-to-pass-immutable-values-by-reference">Helper classes to pass immutable values by reference</a></li>
-<li class="toctree-l2"><a class="reference internal" href="geosoft.gxapi.html#exceptions">Exceptions</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="GXGEOSOFT.html">GXGEOSOFT class</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="GXGEOSOFT.html#crc-init-value-constant">CRC_INIT_VALUE constant</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXGEOSOFT.html#date-format-constants">DATE_FORMAT constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXGEOSOFT.html#geo-dummy-constants">GEO_DUMMY constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXGEOSOFT.html#geo-full-limits-constants">GEO_FULL_LIMITS constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXGEOSOFT.html#geo-limits-constants">GEO_LIMITS constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXGEOSOFT.html#geo-string-size-constants">GEO_STRING_SIZE constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXGEOSOFT.html#geo-var-constants">GEO_VAR constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXGEOSOFT.html#gs-formats-constants">GS_FORMATS constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXGEOSOFT.html#gs-types-constants">GS_TYPES constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXGEOSOFT.html#sys-crypt-key-constants">SYS_CRYPT_KEY constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXGEOSOFT.html#time-format-constants">TIME_FORMAT constants</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="geosoft.gxapi.html">Geosoft GX API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GXGEOSOFT.html">GXGEOSOFT class</a></li>
 <li class="toctree-l1"><a class="reference internal" href="GX3DN.html">GX3DN class</a></li>
-<li class="toctree-l1"><a class="reference internal" href="GX3DV.html">GX3DV class</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="GX3DV.html#geo3dv-open-constants">GEO3DV_OPEN constants</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="GXACQUIRE.html">GXACQUIRE class</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="GXACQUIRE.html#acquire-sel-constants">ACQUIRE_SEL constants</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="GXAGG.html">GXAGG class</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="GXAGG.html#agg-layer-zone-constants">AGG_LAYER_ZONE constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXAGG.html#agg-model-constants">AGG_MODEL constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXAGG.html#agg-render-constants">AGG_RENDER constants</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="GXARCDB.html">GXARCDB class</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="GXARCDB.html#arc-seltbl-type-constants">ARC_SELTBL_TYPE constants</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="GX3DV.html">GX3DV class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GXACQUIRE.html">GXACQUIRE class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GXAGG.html">GXAGG class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GXARCDB.html">GXARCDB class</a></li>
 <li class="toctree-l1"><a class="reference internal" href="GXARCDH.html">GXARCDH class</a></li>
-<li class="toctree-l1"><a class="reference internal" href="GXARCMAP.html">GXARCMAP class</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="GXARCMAP.html#arcmap-load-flags-constants">ARCMAP_LOAD_FLAGS constants</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="GXARCMAP.html">GXARCMAP class</a></li>
 <li class="toctree-l1"><a class="reference internal" href="GXARCSYS.html">GXARCSYS class</a></li>
-<li class="toctree-l1"><a class="reference internal" href="GXBF.html">GXBF class</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="GXBF.html#bf-byteorder-constants">BF_BYTEORDER constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXBF.html#bf-close-constants">BF_CLOSE constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXBF.html#bf-encode-constants">BF_ENCODE constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXBF.html#bf-open-mode-constants">BF_OPEN_MODE constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXBF.html#bf-seek-constants">BF_SEEK constants</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="GXBF.html">GXBF class</a></li>
 <li class="toctree-l1"><a class="reference internal" href="GXBIGRID.html">GXBIGRID class</a></li>
-<li class="toctree-l1"><a class="reference internal" href="GXCHIMERA.html">GXCHIMERA class</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="GXCHIMERA.html#chimera-max-chan-constant">CHIMERA_MAX_CHAN constant</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXCHIMERA.html#chimera-plot-constants">CHIMERA_PLOT constants</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="GXCOM.html">GXCOM class</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="GXCOM.html#com-baud-constants">COM_BAUD constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXCOM.html#com-datasize-constants">COM_DATASIZE constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXCOM.html#com-flowcontrol-constants">COM_FLOWCONTROL constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXCOM.html#com-parity-constants">COM_PARITY constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXCOM.html#com-stopbits-constants">COM_STOPBITS constants</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="GXCSYMB.html">GXCSYMB class</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="GXCSYMB.html#csymb-color-constants">CSYMB_COLOR constants</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="GXDAT.html">GXDAT class</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="GXDAT.html#dat-file-constants">DAT_FILE constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXDAT.html#dat-file-form-constants">DAT_FILE_FORM constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXDAT.html#dat-xgd-constants">DAT_XGD constants</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="GXCHIMERA.html">GXCHIMERA class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GXCOM.html">GXCOM class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GXCSYMB.html">GXCSYMB class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GXDAT.html">GXDAT class</a></li>
 <li class="toctree-l1"><a class="reference internal" href="GXDATALINKD.html">GXDATALINKD class</a></li>
-<li class="toctree-l1"><a class="reference internal" href="GXDATAMINE.html">GXDATAMINE class</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="GXDATAMINE.html#gis-dmtype-constants">GIS_DMTYPE constants</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="GXDB.html">GXDB class</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="GXDB.html#db-activity-blob-constant">DB_ACTIVITY_BLOB constant</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXDB.html#db-category-blob-constants">DB_CATEGORY_BLOB constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXDB.html#db-category-chan-constants">DB_CATEGORY_CHAN constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXDB.html#db-category-line-constants">DB_CATEGORY_LINE constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXDB.html#db-category-user-constants">DB_CATEGORY_USER constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXDB.html#db-chan-format-constants">DB_CHAN_FORMAT constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXDB.html#db-chan-protection-constants">DB_CHAN_PROTECTION constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXDB.html#db-chan-symbol-constants">DB_CHAN_SYMBOL constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXDB.html#db-comp-constants">DB_COMP constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXDB.html#db-coordpair-constants">DB_COORDPAIR constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXDB.html#db-group-class-size-constant">DB_GROUP_CLASS_SIZE constant</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXDB.html#db-info-constants">DB_INFO constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXDB.html#db-line-label-format-constants">DB_LINE_LABEL_FORMAT constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXDB.html#db-line-select-constants">DB_LINE_SELECT constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXDB.html#db-line-type-constants">DB_LINE_TYPE constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXDB.html#db-lock-constants">DB_LOCK constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXDB.html#db-name-constants">DB_NAME constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXDB.html#db-own-constants">DB_OWN constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXDB.html#db-symb-type-constants">DB_SYMB_TYPE constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXDB.html#db-symb-name-size-constant">DB_SYMB_NAME_SIZE constant</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXDB.html#db-wait-constants">DB_WAIT constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXDB.html#db-array-basetype-constants">DB_ARRAY_BASETYPE constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXDB.html#nullsymb-constant">NULLSYMB constant</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="GXDATAMINE.html">GXDATAMINE class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GXDB.html">GXDB class</a></li>
 <li class="toctree-l1"><a class="reference internal" href="GXDBREAD.html">GXDBREAD class</a></li>
 <li class="toctree-l1"><a class="reference internal" href="GXDBWRITE.html">GXDBWRITE class</a></li>
-<li class="toctree-l1"><a class="reference internal" href="GXDGW.html">GXDGW class</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="GXDGW.html#dgw-object-constants">DGW_OBJECT constants</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="GXDH.html">GXDH class</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="GXDH.html#dh-default-filenames-constants">DH_DEFAULT_FILENAMES constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXDH.html#str-dh-holes-constant">STR_DH_HOLES constant</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXDH.html#dh-comp-choice-constants">DH_COMP_CHOICE constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXDH.html#dh-compstdb-holsel-constants">DH_COMPSTDB_HOLSEL constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXDH.html#dh-compstdb-intsel-constants">DH_COMPSTDB_INTSEL constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXDH.html#dh-data-constants">DH_DATA constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXDH.html#dh-define-plan-constant">DH_DEFINE_PLAN constant</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXDH.html#dh-define-sect-constants">DH_DEFINE_SECT constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXDH.html#dh-exp-constants">DH_EXP constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXDH.html#dh-holes-constants">DH_HOLES constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXDH.html#dh-mask-constants">DH_MASK constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXDH.html#dh-plot-constants">DH_PLOT constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXDH.html#dh-sect-page-constants">DH_SECT_PAGE constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXDH.html#dh-surface-constants">DH_SURFACE constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXDH.html#dip-convention-constants">DIP_CONVENTION constants</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="GXDGW.html">GXDGW class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GXDH.html">GXDH class</a></li>
 <li class="toctree-l1"><a class="reference internal" href="GXDMPPLY.html">GXDMPPLY class</a></li>
-<li class="toctree-l1"><a class="reference internal" href="GXDOCU.html">GXDOCU class</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="GXDOCU.html#docu-open-constants">DOCU_OPEN constants</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="GXDSEL.html">GXDSEL class</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="GXDSEL.html#dsel-picture-quality-constants">DSEL_PICTURE_QUALITY constants</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="GXDU.html">GXDU class</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="GXDU.html#db-dup-constants">DB_DUP constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXDU.html#db-dupedit-constants">DB_DUPEDIT constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXDU.html#du-channels-constants">DU_CHANNELS constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXDU.html#du-export-constants">DU_EXPORT constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXDU.html#du-fill-constants">DU_FILL constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXDU.html#du-import-constants">DU_IMPORT constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXDU.html#du-interp-constants">DU_INTERP constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXDU.html#du-interp-edge-constants">DU_INTERP_EDGE constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXDU.html#du-lab-type-constants">DU_LAB_TYPE constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXDU.html#du-level-constants">DU_LEVEL constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXDU.html#du-lineout-constants">DU_LINEOUT constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXDU.html#du-feature-type-output-constants">DU_FEATURE_TYPE_OUTPUT constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXDU.html#du-geodatabase-export-type-constants">DU_GEODATABASE_EXPORT_TYPE constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXDU.html#du-lines-constants">DU_LINES constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXDU.html#du-loadltb-constants">DU_LOADLTB constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXDU.html#du-lookup-constants">DU_LOOKUP constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXDU.html#du-mask-constants">DU_MASK constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXDU.html#du-merge-constants">DU_MERGE constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXDU.html#du-modfid-constants">DU_MODFID constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXDU.html#du-move-constants">DU_MOVE constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXDU.html#du-refid-constants">DU_REFID constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXDU.html#du-sort-constants">DU_SORT constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXDU.html#du-splitline-constants">DU_SPLITLINE constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXDU.html#du-storage-constants">DU_STORAGE constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXDU.html#qc-plan-type-constants">QC_PLAN_TYPE constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXDU.html#du-distance-channel-type-constants">DU_DISTANCE_CHANNEL_TYPE constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXDU.html#du-directgrid-method-constants">DU_DIRECTGRID_METHOD constants</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="GXDOCU.html">GXDOCU class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GXDSEL.html">GXDSEL class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GXDU.html">GXDU class</a></li>
 <li class="toctree-l1"><a class="reference internal" href="GXDXFI.html">GXDXFI class</a></li>
-<li class="toctree-l1"><a class="reference internal" href="GXEDB.html">GXEDB class</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="GXEDB.html#max-prof-wnd-constant">MAX_PROF_WND constant</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXEDB.html#edb-path-constants">EDB_PATH constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXEDB.html#edb-prof-constants">EDB_PROF constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXEDB.html#edb-profile-scale-constants">EDB_PROFILE_SCALE constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXEDB.html#edb-remove-constants">EDB_REMOVE constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXEDB.html#edb-unload-constants">EDB_UNLOAD constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXEDB.html#edb-window-position-constants">EDB_WINDOW_POSITION constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXEDB.html#edb-window-state-constants">EDB_WINDOW_STATE constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXEDB.html#edb-yaxis-direction-constants">EDB_YAXIS_DIRECTION constants</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="GXEDOC.html">GXEDOC class</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="GXEDOC.html#edoc-path-constants">EDOC_PATH constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXEDOC.html#edoc-type-constants">EDOC_TYPE constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXEDOC.html#edoc-unload-constants">EDOC_UNLOAD constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXEDOC.html#edoc-window-position-constants">EDOC_WINDOW_POSITION constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXEDOC.html#edoc-window-state-constants">EDOC_WINDOW_STATE constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXEDOC.html#gms3d-modeltype-constants">GMS3D_MODELTYPE constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXEDOC.html#gms2d-modeltype-constants">GMS2D_MODELTYPE constants</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="GXEMAP.html">GXEMAP class</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="GXEMAP.html#emap-font-constants">EMAP_FONT constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXEMAP.html#emap-path-constants">EMAP_PATH constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXEMAP.html#emap-redraw-constants">EMAP_REDRAW constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXEMAP.html#emap-remove-constants">EMAP_REMOVE constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXEMAP.html#emap-track-constants">EMAP_TRACK constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXEMAP.html#emap-viewport-constants">EMAP_VIEWPORT constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXEMAP.html#emap-window-position-constants">EMAP_WINDOW_POSITION constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXEMAP.html#emap-window-state-constants">EMAP_WINDOW_STATE constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXEMAP.html#layout-view-units-constants">LAYOUT_VIEW_UNITS constants</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="GXEMAPTEMPLATE.html">GXEMAPTEMPLATE class</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="GXEMAPTEMPLATE.html#emaptemplate-path-constants">EMAPTEMPLATE_PATH constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXEMAPTEMPLATE.html#emaptemplate-track-constants">EMAPTEMPLATE_TRACK constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXEMAPTEMPLATE.html#emaptemplate-window-position-constants">EMAPTEMPLATE_WINDOW_POSITION constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXEMAPTEMPLATE.html#emaptemplate-window-state-constants">EMAPTEMPLATE_WINDOW_STATE constants</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="GXEUL3.html">GXEUL3 class</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="GXEUL3.html#eul3-result-constants">EUL3_RESULT constants</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="GXEDB.html">GXEDB class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GXEDOC.html">GXEDOC class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GXEMAP.html">GXEMAP class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GXEMAPTEMPLATE.html">GXEMAPTEMPLATE class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GXEUL3.html">GXEUL3 class</a></li>
 <li class="toctree-l1"><a class="reference internal" href="GXEXP.html">GXEXP class</a></li>
 <li class="toctree-l1"><a class="reference internal" href="GXEXT.html">GXEXT class</a></li>
-<li class="toctree-l1"><a class="reference internal" href="GXFFT.html">GXFFT class</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="GXFFT.html#fft-detrend-constants">FFT_DETREND constants</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="GXFFT2.html">GXFFT2 class</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="GXFFT2.html#fft2-pg-constants">FFT2_PG constants</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="GXFFT.html">GXFFT class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GXFFT2.html">GXFFT2 class</a></li>
 <li class="toctree-l1"><a class="reference internal" href="GXFLT.html">GXFLT class</a></li>
-<li class="toctree-l1"><a class="reference internal" href="GXGD.html">GXGD class</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="GXGD.html#gd-status-constants">GD_STATUS constants</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="GXGEOSTRING.html">GXGEOSTRING class</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="GXGEOSTRING.html#geostring-open-constants">GEOSTRING_OPEN constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXGEOSTRING.html#section-orientation-constants">SECTION_ORIENTATION constants</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="GXGD.html">GXGD class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GXGEOSTRING.html">GXGEOSTRING class</a></li>
 <li class="toctree-l1"><a class="reference internal" href="GXGER.html">GXGER class</a></li>
-<li class="toctree-l1"><a class="reference internal" href="GXGIS.html">GXGIS class</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="GXGIS.html#gis-map2d-constants">GIS_MAP2D constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXGIS.html#gis-type-constants">GIS_TYPE constants</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="GXGIS.html">GXGIS class</a></li>
 <li class="toctree-l1"><a class="reference internal" href="GXGMSYS.html">GXGMSYS class</a></li>
-<li class="toctree-l1"><a class="reference internal" href="GXGU.html">GXGU class</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="GXGU.html#em-err-constants">EM_ERR constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXGU.html#em-inv-constants">EM_INV constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXGU.html#emplate-domain-constants">EMPLATE_DOMAIN constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXGU.html#emplate-tx-constants">EMPLATE_TX constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXGU.html#gu-daarc500-datatype-constants">GU_DAARC500_DATATYPE constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXGU.html#peakeuler-xy-constants">PEAKEULER_XY constants</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="GXGUI.html">GXGUI class</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="GXGUI.html#aoi-return-state-constants">AOI_RETURN_STATE constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXGUI.html#coordsys-mode-constants">COORDSYS_MODE constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXGUI.html#dat-type-constants">DAT_TYPE constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXGUI.html#file-filter-constants">FILE_FILTER constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXGUI.html#file-form-constants">FILE_FORM constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXGUI.html#gs-directory-constants">GS_DIRECTORY constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXGUI.html#impch-type-constants">IMPCH_TYPE constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXGUI.html#window-state-constants">WINDOW_STATE constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXGUI.html#xtool-align-constants">XTOOL_ALIGN constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXGUI.html#xtool-dock-constants">XTOOL_DOCK constants</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="GXGU.html">GXGU class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GXGUI.html">GXGUI class</a></li>
 <li class="toctree-l1"><a class="reference internal" href="GXHGD.html">GXHGD class</a></li>
 <li class="toctree-l1"><a class="reference internal" href="GXHTTP.html">GXHTTP class</a></li>
 <li class="toctree-l1"><a class="reference internal" href="GXHXYZ.html">GXHXYZ class</a></li>
 <li class="toctree-l1"><a class="reference internal" href="GXIEXP.html">GXIEXP class</a></li>
 <li class="toctree-l1"><a class="reference internal" href="GXIGRF.html">GXIGRF class</a></li>
-<li class="toctree-l1"><a class="reference internal" href="GXIMG.html">GXIMG class</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="GXIMG.html#img-file-constants">IMG_FILE constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXIMG.html#img-query-constants">IMG_QUERY constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXIMG.html#img-relocate-constants">IMG_RELOCATE constants</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="GXIMU.html">GXIMU class</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="GXIMU.html#imu-bool-olap-constants">IMU_BOOL_OLAP constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXIMU.html#imu-bool-opt-constants">IMU_BOOL_OPT constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXIMU.html#imu-bool-sizing-constants">IMU_BOOL_SIZING constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXIMU.html#imu-double-crc-bits-constants">IMU_DOUBLE_CRC_BITS constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXIMU.html#imu-expand-shape-constants">IMU_EXPAND_SHAPE constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXIMU.html#imu-fill-rollopt-constants">IMU_FILL_ROLLOPT constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXIMU.html#imu-filt-dummy-constants">IMU_FILT_DUMMY constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXIMU.html#imu-filt-file-constants">IMU_FILT_FILE constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXIMU.html#imu-filt-hzdrv-constants">IMU_FILT_HZDRV constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXIMU.html#imu-float-crc-bits-constants">IMU_FLOAT_CRC_BITS constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXIMU.html#imu-mask-constants">IMU_MASK constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXIMU.html#imu-stat-forced-constants">IMU_STAT_FORCED constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXIMU.html#imu-trans-constants">IMU_TRANS constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXIMU.html#imu-trend-constants">IMU_TREND constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXIMU.html#imu-wind-coord-constants">IMU_WIND_COORD constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXIMU.html#imu-wind-dummies-constants">IMU_WIND_DUMMIES constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXIMU.html#imu-xyz-index-constants">IMU_XYZ_INDEX constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXIMU.html#imu-xyz-label-constants">IMU_XYZ_LABEL constants</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="GXIMG.html">GXIMG class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GXIMU.html">GXIMU class</a></li>
 <li class="toctree-l1"><a class="reference internal" href="GXINTERNET.html">GXINTERNET class</a></li>
-<li class="toctree-l1"><a class="reference internal" href="GXIP.html">GXIP class</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="GXIP.html#ip-array-constants">IP_ARRAY constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXIP.html#ip-channels-constants">IP_CHANNELS constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXIP.html#ip-domain-constants">IP_DOMAIN constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXIP.html#ip-duplicate-constants">IP_DUPLICATE constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXIP.html#ip-filter-constants">IP_FILTER constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXIP.html#ip-i2ximpmode-constants">IP_I2XIMPMODE constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXIP.html#ip-i2xinv-constants">IP_I2XINV constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXIP.html#ip-lines-constants">IP_LINES constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXIP.html#ip-plot-constants">IP_PLOT constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXIP.html#ip-qctype-constants">IP_QCTYPE constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXIP.html#ip-stack-type-constants">IP_STACK_TYPE constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXIP.html#ip-stnscale-constants">IP_STNSCALE constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXIP.html#ip-sys-constants">IP_SYS constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXIP.html#ip-ubc-control-constants">IP_UBC_CONTROL constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXIP.html#ip-pldp-conv-constants">IP_PLDP_CONV constants</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="GXIP.html">GXIP class</a></li>
 <li class="toctree-l1"><a class="reference internal" href="GXIPGUI.html">GXIPGUI class</a></li>
-<li class="toctree-l1"><a class="reference internal" href="GXIPJ.html">GXIPJ class</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="GXIPJ.html#ipj-3d-flag-constants">IPJ_3D_FLAG constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXIPJ.html#ipj-3d-rotate-constants">IPJ_3D_ROTATE constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXIPJ.html#ipj-csp-constants">IPJ_CSP constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXIPJ.html#ipj-name-constants">IPJ_NAME constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXIPJ.html#ipj-orient-constants">IPJ_ORIENT constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXIPJ.html#ipj-parm-lst-constants">IPJ_PARM_LST constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXIPJ.html#ipj-type-constants">IPJ_TYPE constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXIPJ.html#ipj-unit-constants">IPJ_UNIT constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXIPJ.html#ipj-warp-constants">IPJ_WARP constants</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="GXITR.html">GXITR class</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="GXITR.html#itr-color-model-constants">ITR_COLOR_MODEL constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXITR.html#itr-power-constants">ITR_POWER constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXITR.html#itr-zone-constants">ITR_ZONE constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXITR.html#itr-zone-model-constants">ITR_ZONE_MODEL constants</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="GXIPJ.html">GXIPJ class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GXITR.html">GXITR class</a></li>
 <li class="toctree-l1"><a class="reference internal" href="GXKGRD.html">GXKGRD class</a></li>
-<li class="toctree-l1"><a class="reference internal" href="GXLAYOUT.html">GXLAYOUT class</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="GXLAYOUT.html#layout-constr-constants">LAYOUT_CONSTR constants</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="GXLAYOUT.html">GXLAYOUT class</a></li>
 <li class="toctree-l1"><a class="reference internal" href="GXLL2.html">GXLL2 class</a></li>
 <li class="toctree-l1"><a class="reference internal" href="GXLMSG.html">GXLMSG class</a></li>
 <li class="toctree-l1"><a class="reference internal" href="GXLPT.html">GXLPT class</a></li>
-<li class="toctree-l1"><a class="reference internal" href="GXLST.html">GXLST class</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="GXLST.html#lst-item-constants">LST_ITEM constants</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="GXLTB.html">GXLTB class</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="GXLTB.html#ltb-case-constants">LTB_CASE constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXLTB.html#ltb-conlst-constants">LTB_CONLST constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXLTB.html#ltb-delim-constants">LTB_DELIM constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXLTB.html#ltb-type-constants">LTB_TYPE constants</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="GXMAP.html">GXMAP class</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="GXMAP.html#dupmap-constants">DUPMAP constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXMAP.html#map-export-bits-constants">MAP_EXPORT_BITS constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXMAP.html#map-export-format-constants">MAP_EXPORT_FORMAT constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXMAP.html#map-export-method-constants">MAP_EXPORT_METHOD constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXMAP.html#map-export-raster-format-constants">MAP_EXPORT_RASTER_FORMAT constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXMAP.html#map-list-mode-constants">MAP_LIST_MODE constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXMAP.html#map-open-constants">MAP_OPEN constants</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="GXLST.html">GXLST class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GXLTB.html">GXLTB class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GXMAP.html">GXMAP class</a></li>
 <li class="toctree-l1"><a class="reference internal" href="GXMAPL.html">GXMAPL class</a></li>
-<li class="toctree-l1"><a class="reference internal" href="GXMAPTEMPLATE.html">GXMAPTEMPLATE class</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="GXMAPTEMPLATE.html#maptemplate-open-constants">MAPTEMPLATE_OPEN constants</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="GXMAPTEMPLATE.html">GXMAPTEMPLATE class</a></li>
 <li class="toctree-l1"><a class="reference internal" href="GXMATH.html">GXMATH class</a></li>
-<li class="toctree-l1"><a class="reference internal" href="GXMETA.html">GXMETA class</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="GXMETA.html#h-meta-invalid-token-constant">H_META_INVALID_TOKEN constant</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXMETA.html#meta-core-attrib-constants">META_CORE_ATTRIB constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXMETA.html#meta-core-class-constants">META_CORE_CLASS constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXMETA.html#meta-core-type-constants">META_CORE_TYPE constants</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="GXMETA.html">GXMETA class</a></li>
 <li class="toctree-l1"><a class="reference internal" href="GXMISC.html">GXMISC class</a></li>
 <li class="toctree-l1"><a class="reference internal" href="GXMSTK.html">GXMSTK class</a></li>
-<li class="toctree-l1"><a class="reference internal" href="GXMVG.html">GXMVG class</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="GXMVG.html#mvg-draw-constants">MVG_DRAW constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXMVG.html#mvg-grid-constants">MVG_GRID constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXMVG.html#mvg-label-bound-constants">MVG_LABEL_BOUND constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXMVG.html#mvg-label-just-constants">MVG_LABEL_JUST constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXMVG.html#mvg-label-orient-constants">MVG_LABEL_ORIENT constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXMVG.html#mvg-scale-constants">MVG_SCALE constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXMVG.html#mvg-wrap-constants">MVG_WRAP constants</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="GXMVIEW.html">GXMVIEW class</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="GXMVIEW.html#maker-constants">MAKER constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXMVIEW.html#mview-clip-constants">MVIEW_CLIP constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXMVIEW.html#mview-color-constants">MVIEW_COLOR constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXMVIEW.html#mview-cylinder3d-constants">MVIEW_CYLINDER3D constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXMVIEW.html#mview-draw-constants">MVIEW_DRAW constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXMVIEW.html#mview-drawobj3d-entity-constants">MVIEW_DRAWOBJ3D_ENTITY constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXMVIEW.html#mview-drawobj3d-mode-constants">MVIEW_DRAWOBJ3D_MODE constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXMVIEW.html#mview-extent-constants">MVIEW_EXTENT constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXMVIEW.html#mview-fit-constants">MVIEW_FIT constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXMVIEW.html#mview-font-weight-constants">MVIEW_FONT_WEIGHT constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXMVIEW.html#mview-grid-constants">MVIEW_GRID constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXMVIEW.html#mview-group-constants">MVIEW_GROUP constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXMVIEW.html#mview-group-list-constants">MVIEW_GROUP_LIST constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXMVIEW.html#mview-hide-constants">MVIEW_HIDE constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXMVIEW.html#mview-is-constants">MVIEW_IS constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXMVIEW.html#mview-label-bound-constants">MVIEW_LABEL_BOUND constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXMVIEW.html#mview-label-just-constants">MVIEW_LABEL_JUST constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXMVIEW.html#mview-label-orient-constants">MVIEW_LABEL_ORIENT constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXMVIEW.html#mview-name-length-constant">MVIEW_NAME_LENGTH constant</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXMVIEW.html#mview-open-constants">MVIEW_OPEN constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXMVIEW.html#mview-pj-constants">MVIEW_PJ constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXMVIEW.html#mview-relocate-constants">MVIEW_RELOCATE constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXMVIEW.html#mview-smooth-constants">MVIEW_SMOOTH constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXMVIEW.html#mview-tile-constants">MVIEW_TILE constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXMVIEW.html#mview-unit-constants">MVIEW_UNIT constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXMVIEW.html#mview-extent-unit-constants">MVIEW_EXTENT_UNIT constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXMVIEW.html#text-ref-constants">TEXT_REF constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXMVIEW.html#mview-3d-render-constants">MVIEW_3D_RENDER constants</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="GXMVU.html">GXMVU class</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="GXMVU.html#emlay-geometry-constants">EMLAY_GEOMETRY constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXMVU.html#arrow-alignment-constants">ARROW_ALIGNMENT constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXMVU.html#barchart-label-constants">BARCHART_LABEL constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXMVU.html#colorbar-label-constants">COLORBAR_LABEL constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXMVU.html#colorbar-style-constants">COLORBAR_STYLE constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXMVU.html#mvu-orientation-constants">MVU_ORIENTATION constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXMVU.html#mvu-division-style-constants">MVU_DIVISION_STYLE constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXMVU.html#mvu-arrow-constants">MVU_ARROW constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXMVU.html#mvu-flight-compass-constants">MVU_FLIGHT_COMPASS constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXMVU.html#mvu-flight-dummies-constants">MVU_FLIGHT_DUMMIES constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXMVU.html#mvu-flight-locate-constants">MVU_FLIGHT_LOCATE constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXMVU.html#mvu-vox-surface-method-constants">MVU_VOX_SURFACE_METHOD constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXMVU.html#mvu-vox-surface-option-constants">MVU_VOX_SURFACE_OPTION constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXMVU.html#mvu-textbox-constants">MVU_TEXTBOX constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXMVU.html#mvu-vpoint-constants">MVU_VPOINT constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXMVU.html#mvu-vpos-constants">MVU_VPOS constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXMVU.html#mvu-vsize-constants">MVU_VSIZE constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXMVU.html#mvu-vstyle-constants">MVU_VSTYLE constants</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="GXMVG.html">GXMVG class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GXMVIEW.html">GXMVIEW class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GXMVU.html">GXMVU class</a></li>
 <li class="toctree-l1"><a class="reference internal" href="GXMXD.html">GXMXD class</a></li>
 <li class="toctree-l1"><a class="reference internal" href="GXPAT.html">GXPAT class</a></li>
 <li class="toctree-l1"><a class="reference internal" href="GXPDF3D.html">GXPDF3D class</a></li>
-<li class="toctree-l1"><a class="reference internal" href="GXPG.html">GXPG class</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="GXPG.html#pg-3d-dir-constants">PG_3D_DIR constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXPG.html#pg-bf-conv-constants">PG_BF_CONV constants</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="GXPG.html">GXPG class</a></li>
 <li class="toctree-l1"><a class="reference internal" href="GXPGEXP.html">GXPGEXP class</a></li>
-<li class="toctree-l1"><a class="reference internal" href="GXPGU.html">GXPGU class</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="GXPGU.html#blakey-test-constants">BLAKEY_TEST constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXPGU.html#pgu-corr-constants">PGU_CORR constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXPGU.html#pgu-directgrid-constants">PGU_DIRECTGRID constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXPGU.html#pgu-direction-constants">PGU_DIRECTION constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXPGU.html#pgu-trans-constants">PGU_TRANS constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXPGU.html#pgu-interp-order-constants">PGU_INTERP_ORDER constants</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="GXPJ.html">GXPJ class</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="GXPJ.html#pj-elevation-constants">PJ_ELEVATION constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXPJ.html#pj-rect-constants">PJ_RECT constants</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="GXPLY.html">GXPLY class</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="GXPLY.html#ply-clip-constants">PLY_CLIP constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXPLY.html#ply-line-clip-constants">PLY_LINE_CLIP constants</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="GXPGU.html">GXPGU class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GXPJ.html">GXPJ class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GXPLY.html">GXPLY class</a></li>
 <li class="toctree-l1"><a class="reference internal" href="GXPRAGA3.html">GXPRAGA3 class</a></li>
-<li class="toctree-l1"><a class="reference internal" href="GXPROJ.html">GXPROJ class</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="GXPROJ.html#command-env-constants">COMMAND_ENV constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXPROJ.html#tool-type-constants">TOOL_TYPE constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXPROJ.html#proj-display-constants">PROJ_DISPLAY constants</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="GXPROJ.html">GXPROJ class</a></li>
 <li class="toctree-l1"><a class="reference internal" href="GXRA.html">GXRA class</a></li>
-<li class="toctree-l1"><a class="reference internal" href="GXREG.html">GXREG class</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="GXREG.html#reg-merge-constants">REG_MERGE constants</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="GXREG.html">GXREG class</a></li>
 <li class="toctree-l1"><a class="reference internal" href="GXRGRD.html">GXRGRD class</a></li>
-<li class="toctree-l1"><a class="reference internal" href="GXSBF.html">GXSBF class</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="GXSBF.html#sbf-open-constants">SBF_OPEN constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXSBF.html#sbf-type-constants">SBF_TYPE constants</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="GXSEMPLOT.html">GXSEMPLOT class</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="GXSEMPLOT.html#semplot-group-class-constant">SEMPLOT_GROUP_CLASS constant</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXSEMPLOT.html#semplot-export-constants">SEMPLOT_EXPORT constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXSEMPLOT.html#semplot-ext-constants">SEMPLOT_EXT constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXSEMPLOT.html#semplot-plot-constants">SEMPLOT_PLOT constants</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="GXSHP.html">GXSHP class</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="GXSHP.html#shp-geom-type-constants">SHP_GEOM_TYPE constants</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="GXSQLSRV.html">GXSQLSRV class</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="GXSQLSRV.html#mfcsql-driver-constants">MFCSQL_DRIVER constants</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="GXST.html">GXST class</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="GXST.html#st-info-constants">ST_INFO constants</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="GXST2.html">GXST2 class</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="GXST2.html#st2-correlation-constants">ST2_CORRELATION constants</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="GXSTK.html">GXSTK class</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="GXSTK.html#stk-axis-constants">STK_AXIS constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXSTK.html#stk-flag-constants">STK_FLAG constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXSTK.html#stk-grid-constants">STK_GRID constants</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="GXSTR.html">GXSTR class</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="GXSTR.html#file-ext-constants">FILE_EXT constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXSTR.html#str-case-constants">STR_CASE constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXSTR.html#str-escape-constants">STR_ESCAPE constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXSTR.html#str-file-part-constants">STR_FILE_PART constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXSTR.html#str-justify-constants">STR_JUSTIFY constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXSTR.html#str-trim-constants">STR_TRIM constants</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="GXSBF.html">GXSBF class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GXSEMPLOT.html">GXSEMPLOT class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GXSHP.html">GXSHP class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GXSQLSRV.html">GXSQLSRV class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GXST.html">GXST class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GXST2.html">GXST2 class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GXSTK.html">GXSTK class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GXSTR.html">GXSTR class</a></li>
 <li class="toctree-l1"><a class="reference internal" href="GXSTRINGS.html">GXSTRINGS class</a></li>
-<li class="toctree-l1"><a class="reference internal" href="GXSURFACE.html">GXSURFACE class</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="GXSURFACE.html#surface-open-constants">SURFACE_OPEN constants</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="GXSURFACEITEM.html">GXSURFACEITEM class</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="GXSURFACEITEM.html#surfacerender-mode-constants">SURFACERENDER_MODE constants</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="GXSYS.html">GXSYS class</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="GXSYS.html#arc-license-constants">ARC_LICENSE constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXSYS.html#geo-directory-constants">GEO_DIRECTORY constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXSYS.html#reg-domain-constants">REG_DOMAIN constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXSYS.html#shell-execute-constants">SHELL_EXECUTE constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXSYS.html#sys-dir-constants">SYS_DIR constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXSYS.html#sys-font-constants">SYS_FONT constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXSYS.html#sys-info-constants">SYS_INFO constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXSYS.html#sys-lineage-source-constants">SYS_LINEAGE_SOURCE constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXSYS.html#sys-menu-clear-constants">SYS_MENU_CLEAR constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXSYS.html#sys-path-constants">SYS_PATH constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXSYS.html#sys-run-display-constants">SYS_RUN_DISPLAY constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXSYS.html#sys-run-hold-constants">SYS_RUN_HOLD constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXSYS.html#sys-run-type-constants">SYS_RUN_TYPE constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXSYS.html#sys-run-win-constants">SYS_RUN_WIN constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXSYS.html#sys-search-path-constants">SYS_SEARCH_PATH constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXSYS.html#sys-encryption-key-constants">SYS_ENCRYPTION_KEY constants</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="GXTB.html">GXTB class</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="GXTB.html#tb-search-constants">TB_SEARCH constants</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="GXTC.html">GXTC class</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="GXTC.html#tc-opt-constants">TC_OPT constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXTC.html#tc-surveytype-constants">TC_SURVEYTYPE constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXTC.html#gg-element-constants">GG_ELEMENT constants</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="GXSURFACE.html">GXSURFACE class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GXSURFACEITEM.html">GXSURFACEITEM class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GXSYS.html">GXSYS class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GXTB.html">GXTB class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GXTC.html">GXTC class</a></li>
 <li class="toctree-l1"><a class="reference internal" href="GXTEST.html">GXTEST class</a></li>
 <li class="toctree-l1"><a class="reference internal" href="GXTIN.html">GXTIN class</a></li>
-<li class="toctree-l1"><a class="reference internal" href="GXTPAT.html">GXTPAT class</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="GXTPAT.html#tpat-string-size-constants">TPAT_STRING_SIZE constants</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="GXTPAT.html">GXTPAT class</a></li>
 <li class="toctree-l1"><a class="reference internal" href="GXTR.html">GXTR class</a></li>
-<li class="toctree-l1"><a class="reference internal" href="GXTRND.html">GXTRND class</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="GXTRND.html#trnd-node-constants">TRND_NODE constants</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="GXUNC.html">GXUNC class</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="GXUNC.html#utf8-constants">UTF8 constants</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="GXUSERMETA.html">GXUSERMETA class</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="GXUSERMETA.html#usermeta-format-constants">USERMETA_FORMAT constants</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="GXVA.html">GXVA class</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="GXVA.html#va-average-constants">VA_AVERAGE constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXVA.html#va-object-constants">VA_OBJECT constants</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="GXVAU.html">GXVAU class</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="GXVAU.html#vau-prune-constants">VAU_PRUNE constants</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="GXTRND.html">GXTRND class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GXUNC.html">GXUNC class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GXUSERMETA.html">GXUSERMETA class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GXVA.html">GXVA class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GXVAU.html">GXVAU class</a></li>
 <li class="toctree-l1"><a class="reference internal" href="GXVM.html">GXVM class</a></li>
-<li class="toctree-l1"><a class="reference internal" href="GXVOX.html">GXVOX class</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="GXVOX.html#vox-dir-constants">VOX_DIR constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXVOX.html#vox-direction-constants">VOX_DIRECTION constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXVOX.html#vox-filter3d-constants">VOX_FILTER3D constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXVOX.html#vox-gocad-orientation-constants">VOX_GOCAD_ORIENTATION constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXVOX.html#vox-grid-logopt-constants">VOX_GRID_LOGOPT constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXVOX.html#vox-origin-constants">VOX_ORIGIN constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXVOX.html#vox-slice-mode-constants">VOX_SLICE_MODE constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXVOX.html#vox-vectorvox-import-constants">VOX_VECTORVOX_IMPORT constants</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="GXVOX.html">GXVOX class</a></li>
 <li class="toctree-l1"><a class="reference internal" href="GXVOXD.html">GXVOXD class</a></li>
-<li class="toctree-l1"><a class="reference internal" href="GXVOXE.html">GXVOXE class</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="GXVOXE.html#voxe-eval-constants">VOXE_EVAL constants</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="GXVULCAN.html">GXVULCAN class</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="GXVULCAN.html#block-model-variable-type-constants">BLOCK_MODEL_VARIABLE_TYPE constants</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="GXVV.html">GXVV class</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="GXVV.html#vv-double-crc-bits-constants">VV_DOUBLE_CRC_BITS constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXVV.html#vv-float-crc-bits-constants">VV_FLOAT_CRC_BITS constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXVV.html#vv-log-base-constants">VV_LOG_BASE constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXVV.html#vv-log-negative-constants">VV_LOG_NEGATIVE constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXVV.html#vv-lookup-constants">VV_LOOKUP constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXVV.html#vv-mask-constants">VV_MASK constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXVV.html#vv-order-constants">VV_ORDER constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXVV.html#vv-sort-constants">VV_SORT constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXVV.html#vv-window-constants">VV_WINDOW constants</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="GXVOXE.html">GXVOXE class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GXVULCAN.html">GXVULCAN class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GXVV.html">GXVV class</a></li>
 <li class="toctree-l1"><a class="reference internal" href="GXVVEXP.html">GXVVEXP class</a></li>
-<li class="toctree-l1"><a class="reference internal" href="GXVVU.html">GXVVU class</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="GXVVU.html#qc-criterion-constants">QC_CRITERION constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXVVU.html#tem-array-constants">TEM_ARRAY constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXVVU.html#vv-dup-constants">VV_DUP constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXVVU.html#vv-xydup-constants">VV_XYDUP constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXVVU.html#vvu-case-constants">VVU_CASE constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXVVU.html#vvu-clip-constants">VVU_CLIP constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXVVU.html#vvu-dummyrepeat-constants">VVU_DUMMYREPEAT constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXVVU.html#vvu-interp-constants">VVU_INTERP constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXVVU.html#vvu-interp-edge-constants">VVU_INTERP_EDGE constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXVVU.html#vvu-line-constants">VVU_LINE constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXVVU.html#vvu-mask-constants">VVU_MASK constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXVVU.html#vvu-match-constants">VVU_MATCH constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXVVU.html#vvu-mode-constants">VVU_MODE constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXVVU.html#vvu-offset-constants">VVU_OFFSET constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXVVU.html#vvu-prune-constants">VVU_PRUNE constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXVVU.html#vvu-spl-constants">VVU_SPL constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXVVU.html#vvu-srchrepl-case-constants">VVU_SRCHREPL_CASE constants</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="GXWA.html">GXWA class</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="GXWA.html#wa-encode-constants">WA_ENCODE constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GXWA.html#wa-open-constants">WA_OPEN constants</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="GXVVU.html">GXVVU class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GXWA.html">GXWA class</a></li>
 </ul>
 </div>
 </div>
@@ -749,8 +221,11 @@
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
+          <a href="geosoft.gxapi.html" title="Geosoft GX API"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Introduction"
+             >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li> 
       </ul>
     </div>

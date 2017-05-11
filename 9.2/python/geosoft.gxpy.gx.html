@@ -27,6 +27,8 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="geosoft.gxpy.map submodule" href="geosoft.gxpy.map.html" />
+    <link rel="prev" title="geosoft.gxpy.group submodule" href="geosoft.gxpy.group.html" />
  
 <script type="text/javascript">
   var _gaq = _gaq || [];
@@ -43,20 +45,30 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li> 
+          <a href="geosoft.gxpy.map.html" title="geosoft.gxpy.map submodule"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="geosoft.gxpy.group.html" title="geosoft.gxpy.group submodule"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="geosoft.gxpy.html" accesskey="U">gxpy modules reference</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <div role="note" aria-label="source link">
-    <h3>This Page</h3>
-    <ul class="this-page-menu">
-      <li><a href="_sources/geosoft.gxpy.gx.rst.txt"
-            rel="nofollow">Show Source</a></li>
-    </ul>
-   </div>
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Introduction</a></li>
+    <li><a href="geosoft.gxpy.html">gxpy modules reference</a></li>
+</ul>
+<h3>Previous Topic</h3>
+<ul>
+    <li><a href="geosoft.gxpy.group.html" title="previous chapter">geosoft.gxpy.group submodule</a></li>
+</ul>
+<h3>Next Topic</h3>
+<ul>
+    <li><a href="geosoft.gxpy.map.html" title="next chapter">geosoft.gxpy.map submodule</a></li>
+</ul>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
@@ -67,6 +79,13 @@
     </form>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/geosoft.gxpy.gx.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
         </div>
       </div>
 
@@ -77,12 +96,32 @@
             
   <div class="section" id="module-geosoft.gxpy.gx">
 <span id="geosoft-gxpy-gx-submodule"></span><h1>geosoft.gxpy.gx submodule<a class="headerlink" href="#module-geosoft.gxpy.gx" title="Permalink to this headline">¶</a></h1>
-<p>GX Context and related methods required for Geosoft Python.  The GX context is a singleton, which is either created for
+<p>GX Context and related methods required for Geosoft Python.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Classes:</th><td class="field-body"><table border="1" class="first last docutils">
+<colgroup>
+<col width="36%" />
+<col width="64%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#geosoft.gxpy.gx.GXpy" title="geosoft.gxpy.gx.GXpy"><code class="xref py py-class docutils literal"><span class="pre">GXpy</span></code></a></td>
+<td>the Geosoft GX context</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<p>The GX context is a singleton, which is either created for
 stand-alone Python scripts, or is provided to the script for extensions to Geosoft Desktop applications.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p>Regression tests provide usage examples:</p>
-<p class="last"><a class="reference external" href="https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_gx.py">gx tests</a></p>
+<p class="last">Regression tests provide usage examples:     
+<a class="reference external" href="https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_gx.py">gx tests</a></p>
 </div>
 <dl class="exception">
 <dt id="geosoft.gxpy.gx.GXException">
@@ -324,7 +363,7 @@ Call before returning control to OM.</p>
 <dl class="method">
 <dt id="geosoft.gxpy.gx.GXpy.log">
 <code class="descname">log</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.gx.GXpy.log" title="Permalink to this definition">¶</a></dt>
-<dd><p>Log a string to the log file or log call-back as defined when creating <code class="xref py py-class docutils literal"><span class="pre">GXpy</span></code> instance.</p>
+<dd><p>Log a string to the log file or log call-back as defined when creating <a class="reference internal" href="#geosoft.gxpy.gx.GXpy" title="geosoft.gxpy.gx.GXpy"><code class="xref py py-class docutils literal"><span class="pre">GXpy</span></code></a> instance.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -449,9 +488,13 @@ stack for each resource and the information you provided.</p>
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li> 
+          <a href="geosoft.gxpy.map.html" title="geosoft.gxpy.map submodule"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="geosoft.gxpy.group.html" title="geosoft.gxpy.group submodule"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="geosoft.gxpy.html" >gxpy modules reference</a> &#187;</li> 
       </ul>
     </div>
 

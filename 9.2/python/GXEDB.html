@@ -27,6 +27,8 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="GXEDOC class" href="GXEDOC.html" />
+    <link rel="prev" title="GXDXFI class" href="GXDXFI.html" />
  
 <script type="text/javascript">
   var _gaq = _gaq || [];
@@ -43,9 +45,13 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li> 
+          <a href="GXEDOC.html" title="GXEDOC class"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="GXDXFI.html" title="GXDXFI class"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="geosoft.gxapi.classes.html" accesskey="U">GX API Class/Library Reference</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -66,13 +72,19 @@
 </li>
 </ul>
 
-  <div role="note" aria-label="source link">
-    <h3>This Page</h3>
-    <ul class="this-page-menu">
-      <li><a href="_sources/GXEDB.rst.txt"
-            rel="nofollow">Show Source</a></li>
-    </ul>
-   </div>
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Introduction</a></li>
+    <li><a href="geosoft.gxapi.classes.html">GX API Class/Library Reference</a></li>
+</ul>
+<h3>Previous Topic</h3>
+<ul>
+    <li><a href="GXDXFI.html" title="previous chapter">GXDXFI class</a></li>
+</ul>
+<h3>Next Topic</h3>
+<ul>
+    <li><a href="GXEDOC.html" title="next chapter">GXEDOC class</a></li>
+</ul>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
@@ -83,6 +95,13 @@
     </form>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/GXEDB.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
         </div>
       </div>
 
@@ -96,24 +115,24 @@
 <dl class="class">
 <dt id="geosoft.gxapi.GXEDB">
 <em class="property">class </em><code class="descclassname">geosoft.gxapi.</code><code class="descname">GXEDB</code><a class="headerlink" href="#geosoft.gxapi.GXEDB" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-The EDB class provides access to a database as displayed within
-Oasis montaj, but does not change data within the database itself.
-It performs functions such as setting the current line.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">EDB</span> <span class="k">class</span> <span class="nc">provides</span> <span class="n">access</span> <span class="n">to</span> <span class="n">a</span> <span class="n">database</span> <span class="k">as</span> <span class="n">displayed</span> <span class="n">within</span>
+<span class="n">Oasis</span> <span class="n">montaj</span><span class="p">,</span> <span class="n">but</span> <span class="n">does</span> <span class="ow">not</span> <span class="n">change</span> <span class="n">data</span> <span class="n">within</span> <span class="n">the</span> <span class="n">database</span> <span class="n">itself</span><span class="o">.</span>
+<span class="n">It</span> <span class="n">performs</span> <span class="n">functions</span> <span class="n">such</span> <span class="k">as</span> <span class="n">setting</span> <span class="n">the</span> <span class="n">current</span> <span class="n">line</span><span class="o">.</span>
+</pre></div>
+</div>
 <p><strong>Note:</strong></p>
 <pre class="literal-block">
 To obtain access to the database itself, it is recommended practice
-to begin with an EDB object, and use the \ :func:`geosoft.gxapi.GXEDB.lock`\  function to
+to begin with an EDB object, and use the <a class="reference internal" href="#geosoft.gxapi.GXEDB.lock" title="geosoft.gxapi.GXEDB.lock"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXEDB.lock()</span></code></a> function to
 lock the underlying map to prevent external changes. The returned
 DB object (see DB.GXH) may then be safely used to make changes to the map itself.
 </pre>
 <dl class="method">
 <dt id="geosoft.gxapi.GXEDB.all_chan_list">
 <code class="descname">all_chan_list</code><span class="sig-paren">(</span><em>(GXVV)arg1</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXEDB.all_chan_list" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Get a list of the all channels but in the way they are displayed.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">a</span> <span class="nb">list</span> <span class="n">of</span> <span class="n">the</span> <span class="nb">all</span> <span class="n">channels</span> <span class="n">but</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">way</span> <span class="n">they</span> <span class="n">are</span> <span class="n">displayed</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -123,7 +142,7 @@ Get a list of the all channels but in the way they are displayed.
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Number of symbols in the list.
 Terminates GX if there was an error.</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
 </tr>
 </tbody>
 </table>
@@ -131,41 +150,41 @@ Terminates GX if there was an error.</td>
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-The VV elements must be INT.
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">VV</span> <span class="n">elements</span> <span class="n">must</span> <span class="n">be</span> <span class="n">INT</span><span class="o">.</span>
 
-Displayed channel lists are filled in the order the channels
-appear on the display, left to right.
-</pre>
+<span class="n">Displayed</span> <span class="n">channel</span> <span class="n">lists</span> <span class="n">are</span> <span class="n">filled</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">order</span> <span class="n">the</span> <span class="n">channels</span>
+<span class="n">appear</span> <span class="n">on</span> <span class="n">the</span> <span class="n">display</span><span class="p">,</span> <span class="n">left</span> <span class="n">to</span> <span class="n">right</span><span class="o">.</span>
+</pre></div>
+</div>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
-<p class="last">\ :func:`geosoft.gxapi.GXEDB.disp_chan_list`\</p>
+<p class="last"><a class="reference internal" href="#geosoft.gxapi.GXEDB.disp_chan_list" title="geosoft.gxapi.GXEDB.disp_chan_list"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXEDB.disp_chan_list()</span></code></a></p>
 </div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXEDB.apply_formula_internal">
 <code class="descname">apply_formula_internal</code><span class="sig-paren">(</span><em>(str)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXEDB.apply_formula_internal" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Apply a formula to selected cells of the
-current line. (Do not use this wrapper if you
-want to apply a formula across multiple lines)
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Apply</span> <span class="n">a</span> <span class="n">formula</span> <span class="n">to</span> <span class="n">selected</span> <span class="n">cells</span> <span class="n">of</span> <span class="n">the</span>
+<span class="n">current</span> <span class="n">line</span><span class="o">.</span> <span class="p">(</span><span class="n">Do</span> <span class="ow">not</span> <span class="n">use</span> <span class="n">this</span> <span class="n">wrapper</span> <span class="k">if</span> <span class="n">you</span>
+<span class="n">want</span> <span class="n">to</span> <span class="n">apply</span> <span class="n">a</span> <span class="n">formula</span> <span class="n">across</span> <span class="n">multiple</span> <span class="n">lines</span><span class="p">)</span>
 
-Notes:
+<span class="n">Notes</span><span class="p">:</span>
 
-The current selection must be on cell(s) of
-a channel or on the a channel header.
+<span class="n">The</span> <span class="n">current</span> <span class="n">selection</span> <span class="n">must</span> <span class="n">be</span> <span class="n">on</span> <span class="n">cell</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">of</span>
+<span class="n">a</span> <span class="n">channel</span> <span class="ow">or</span> <span class="n">on</span> <span class="n">the</span> <span class="n">a</span> <span class="n">channel</span> <span class="n">header</span><span class="o">.</span>
 
-If the selection is on cell(s) of a channel,
-the formula is applied to only these cells.
+<span class="n">If</span> <span class="n">the</span> <span class="n">selection</span> <span class="ow">is</span> <span class="n">on</span> <span class="n">cell</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">of</span> <span class="n">a</span> <span class="n">channel</span><span class="p">,</span>
+<span class="n">the</span> <span class="n">formula</span> <span class="ow">is</span> <span class="n">applied</span> <span class="n">to</span> <span class="n">only</span> <span class="n">these</span> <span class="n">cells</span><span class="o">.</span>
 
-If the selection is on a channel header, the
-formula is applied to every cell in the channel.
+<span class="n">If</span> <span class="n">the</span> <span class="n">selection</span> <span class="ow">is</span> <span class="n">on</span> <span class="n">a</span> <span class="n">channel</span> <span class="n">header</span><span class="p">,</span> <span class="n">the</span>
+<span class="n">formula</span> <span class="ow">is</span> <span class="n">applied</span> <span class="n">to</span> <span class="n">every</span> <span class="n">cell</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">channel</span><span class="o">.</span>
 
-The given formula string must be of the form:
-&quot;&lt;NameOfCurrentChannel&gt;=&lt;SomeExpression&gt;;&quot;
-e.g. &quot;x=y+1;&quot;
-</pre>
+<span class="n">The</span> <span class="n">given</span> <span class="n">formula</span> <span class="n">string</span> <span class="n">must</span> <span class="n">be</span> <span class="n">of</span> <span class="n">the</span> <span class="n">form</span><span class="p">:</span>
+<span class="s2">&quot;&lt;NameOfCurrentChannel&gt;=&lt;SomeExpression&gt;;&quot;</span>
+<span class="n">e</span><span class="o">.</span><span class="n">g</span><span class="o">.</span> <span class="s2">&quot;x=y+1;&quot;</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -195,7 +214,7 @@ e.g. &quot;x=y+1;&quot;
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">x - number of displayed channels</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int</td>
 </tr>
 </tbody>
 </table>
@@ -207,9 +226,9 @@ e.g. &quot;x=y+1;&quot;
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXEDB.current">
 <em class="property">static </em><code class="descname">current</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; GXEDB:<a class="headerlink" href="#geosoft.gxapi.GXEDB.current" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-This method returns the Current Edited Database.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="n">method</span> <span class="n">returns</span> <span class="n">the</span> <span class="n">Current</span> <span class="n">Edited</span> <span class="n">Database</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -228,9 +247,9 @@ This method returns the Current Edited Database.
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXEDB.current_if_exists">
 <em class="property">static </em><code class="descname">current_if_exists</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; GXEDB:<a class="headerlink" href="#geosoft.gxapi.GXEDB.current_if_exists" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-This method returns the Current Edited Database.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="n">method</span> <span class="n">returns</span> <span class="n">the</span> <span class="n">Current</span> <span class="n">Edited</span> <span class="n">Database</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -250,9 +269,9 @@ the user is not prompted for a database, and 0 is returned.</td>
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXEDB.current_no_activate">
 <em class="property">static </em><code class="descname">current_no_activate</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; GXEDB:<a class="headerlink" href="#geosoft.gxapi.GXEDB.current_no_activate" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-This method returns the Current Edited Database.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="n">method</span> <span class="n">returns</span> <span class="n">the</span> <span class="n">Current</span> <span class="n">Edited</span> <span class="n">Database</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -268,7 +287,7 @@ This method returns the Current Edited Database.
 </div>
 <p><strong>Note:</strong></p>
 <pre class="literal-block">
-This function acts just like \ :func:`geosoft.gxapi.GXEDB.current`\  except that the document is not activated (brought to foreground) and no
+This function acts just like <a class="reference internal" href="#geosoft.gxapi.GXEDB.current" title="geosoft.gxapi.GXEDB.current"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXEDB.current()</span></code></a> except that the document is not activated (brought to foreground) and no
 guarantee is given about which document is currently active.
 </pre>
 </dd></dl>
@@ -276,9 +295,9 @@ guarantee is given about which document is currently active.
 <dl class="method">
 <dt id="geosoft.gxapi.GXEDB.del_line0">
 <code class="descname">del_line0</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXEDB.del_line0" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Delete Line 0.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Delete</span> <span class="n">Line</span> <span class="mf">0.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -293,22 +312,22 @@ Delete Line 0.
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-Deletes an empty line 0 from the database.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Deletes</span> <span class="n">an</span> <span class="n">empty</span> <span class="n">line</span> <span class="mi">0</span> <span class="kn">from</span> <span class="nn">the</span> <span class="n">database</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXEDB.destroy_view">
 <code class="descname">destroy_view</code><span class="sig-paren">(</span><em>(int)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXEDB.destroy_view" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Removes the view from the workspace.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Removes</span> <span class="n">the</span> <span class="n">view</span> <span class="kn">from</span> <span class="nn">the</span> <span class="n">workspace</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#edb-remove"><span class="std std-ref">EDB_REMOVE constants</span></a></td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#edb-remove"><span class="std std-ref">EDB_REMOVE constants</span></a></td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Nothing</td>
 </tr>
@@ -324,7 +343,7 @@ Removes the view from the workspace.
 Can only be run in interactive mode. After this call the
 EDB object will become invalid. If this is the last view on
 the document and the document has been modified the map will be
-unloaded and optionally saved depending on the \ :ref:`EDB_REMOVE`\ 
+unloaded and optionally saved depending on the <a class="reference internal" href="#edb-remove"><span class="std std-ref">EDB_REMOVE constants</span></a>
 parameter.
 </pre>
 </dd></dl>
@@ -332,9 +351,9 @@ parameter.
 <dl class="method">
 <dt id="geosoft.gxapi.GXEDB.disp_chan_list">
 <code class="descname">disp_chan_list</code><span class="sig-paren">(</span><em>(GXVV)arg1</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXEDB.disp_chan_list" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Get a list of the displayed channel symbols.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">a</span> <span class="nb">list</span> <span class="n">of</span> <span class="n">the</span> <span class="n">displayed</span> <span class="n">channel</span> <span class="n">symbols</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -344,7 +363,7 @@ Get a list of the displayed channel symbols.
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Number of symbols in the list.
 Terminates GX if there was an error.</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
 </tr>
 </tbody>
 </table>
@@ -352,24 +371,24 @@ Terminates GX if there was an error.</td>
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-The VV elements must be INT.
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">VV</span> <span class="n">elements</span> <span class="n">must</span> <span class="n">be</span> <span class="n">INT</span><span class="o">.</span>
 
-Displayed channel lists are filled in the order the channels
-appear on the display, left to right.
-</pre>
+<span class="n">Displayed</span> <span class="n">channel</span> <span class="n">lists</span> <span class="n">are</span> <span class="n">filled</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">order</span> <span class="n">the</span> <span class="n">channels</span>
+<span class="n">appear</span> <span class="n">on</span> <span class="n">the</span> <span class="n">display</span><span class="p">,</span> <span class="n">left</span> <span class="n">to</span> <span class="n">right</span><span class="o">.</span>
+</pre></div>
+</div>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
-<p class="last">\ :func:`geosoft.gxapi.GXEDB.disp_chan_lst`\</p>
+<p class="last"><a class="reference internal" href="#geosoft.gxapi.GXEDB.disp_chan_lst" title="geosoft.gxapi.GXEDB.disp_chan_lst"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXEDB.disp_chan_lst()</span></code></a></p>
 </div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXEDB.disp_chan_lst">
 <code class="descname">disp_chan_lst</code><span class="sig-paren">(</span><em>(GXLST)arg1</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXEDB.disp_chan_lst" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Get a list of the displayed channel names.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">a</span> <span class="nb">list</span> <span class="n">of</span> <span class="n">the</span> <span class="n">displayed</span> <span class="n">channel</span> <span class="n">names</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -379,7 +398,7 @@ Get a list of the displayed channel names.
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Number of channels in the list.
 Terminates GX if there was an error.</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
 </tr>
 </tbody>
 </table>
@@ -387,25 +406,25 @@ Terminates GX if there was an error.</td>
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-Displayed channel lists are filled in the order the channels
-appear on the display, left to right.
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Displayed</span> <span class="n">channel</span> <span class="n">lists</span> <span class="n">are</span> <span class="n">filled</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">order</span> <span class="n">the</span> <span class="n">channels</span>
+<span class="n">appear</span> <span class="n">on</span> <span class="n">the</span> <span class="n">display</span><span class="p">,</span> <span class="n">left</span> <span class="n">to</span> <span class="n">right</span><span class="o">.</span>
 
-The channel names will be placed in the &quot;Name&quot; part of
-the list and the values are set to the symbol handle.
-</pre>
+<span class="n">The</span> <span class="n">channel</span> <span class="n">names</span> <span class="n">will</span> <span class="n">be</span> <span class="n">placed</span> <span class="ow">in</span> <span class="n">the</span> <span class="s2">&quot;Name&quot;</span> <span class="n">part</span> <span class="n">of</span>
+<span class="n">the</span> <span class="nb">list</span> <span class="ow">and</span> <span class="n">the</span> <span class="n">values</span> <span class="n">are</span> <span class="nb">set</span> <span class="n">to</span> <span class="n">the</span> <span class="n">symbol</span> <span class="n">handle</span><span class="o">.</span>
+</pre></div>
+</div>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
-<p class="last">\ :func:`geosoft.gxapi.GXEDB.disp_chan_list`\</p>
+<p class="last"><a class="reference internal" href="#geosoft.gxapi.GXEDB.disp_chan_list" title="geosoft.gxapi.GXEDB.disp_chan_list"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXEDB.disp_chan_list()</span></code></a></p>
 </div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXEDB.disp_class_chan_lst">
 <code class="descname">disp_class_chan_lst</code><span class="sig-paren">(</span><em>(GXLST)arg1</em>, <em>(str)arg2</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXEDB.disp_class_chan_lst" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Get a list of the displayed channels in a given channel class.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">a</span> <span class="nb">list</span> <span class="n">of</span> <span class="n">the</span> <span class="n">displayed</span> <span class="n">channels</span> <span class="ow">in</span> <span class="n">a</span> <span class="n">given</span> <span class="n">channel</span> <span class="n">class</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -420,7 +439,7 @@ Get a list of the displayed channels in a given channel class.
 Terminates GX if there was an error.</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></p>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
 </td>
 </tr>
 </tbody>
@@ -429,19 +448,19 @@ Terminates GX if there was an error.</p>
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-Displayed channel lists are filled in the order the channels
-appear on the display, left to right.
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Displayed</span> <span class="n">channel</span> <span class="n">lists</span> <span class="n">are</span> <span class="n">filled</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">order</span> <span class="n">the</span> <span class="n">channels</span>
+<span class="n">appear</span> <span class="n">on</span> <span class="n">the</span> <span class="n">display</span><span class="p">,</span> <span class="n">left</span> <span class="n">to</span> <span class="n">right</span><span class="o">.</span>
 
-The channel names will be placed in the &quot;Name&quot; part of
-the list and the values are set to the symbol handle.
+<span class="n">The</span> <span class="n">channel</span> <span class="n">names</span> <span class="n">will</span> <span class="n">be</span> <span class="n">placed</span> <span class="ow">in</span> <span class="n">the</span> <span class="s2">&quot;Name&quot;</span> <span class="n">part</span> <span class="n">of</span>
+<span class="n">the</span> <span class="nb">list</span> <span class="ow">and</span> <span class="n">the</span> <span class="n">values</span> <span class="n">are</span> <span class="nb">set</span> <span class="n">to</span> <span class="n">the</span> <span class="n">symbol</span> <span class="n">handle</span><span class="o">.</span>
 
-Examples of channel classes in current use are &quot;MASK&quot; and
-&quot;ASSAY&quot;. (Searches are case tolerant).
-</pre>
+<span class="n">Examples</span> <span class="n">of</span> <span class="n">channel</span> <span class="n">classes</span> <span class="ow">in</span> <span class="n">current</span> <span class="n">use</span> <span class="n">are</span> <span class="s2">&quot;MASK&quot;</span> <span class="ow">and</span>
+<span class="s2">&quot;ASSAY&quot;</span><span class="o">.</span> <span class="p">(</span><span class="n">Searches</span> <span class="n">are</span> <span class="n">case</span> <span class="n">tolerant</span><span class="p">)</span><span class="o">.</span>
+</pre></div>
+</div>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
-<p class="last">\ :func:`geosoft.gxapi.GXEDB.disp_chan_list`\</p>
+<p class="last"><a class="reference internal" href="#geosoft.gxapi.GXEDB.disp_chan_list" title="geosoft.gxapi.GXEDB.disp_chan_list"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXEDB.disp_chan_list()</span></code></a></p>
 </div>
 </dd></dl>
 
@@ -460,7 +479,7 @@ Examples of channel classes in current use are &quot;MASK&quot; and
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Column number that contains a specific channel
 iDUMMY of channel not loaded</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
 </tr>
 </tbody>
 </table>
@@ -472,10 +491,10 @@ iDUMMY of channel not loaded</td>
 <dl class="method">
 <dt id="geosoft.gxapi.GXEDB.find_nearest">
 <code class="descname">find_nearest</code><span class="sig-paren">(</span><em>(float_ref)arg1</em>, <em>(float_ref)arg2</em>, <em>(float_ref)arg3</em>, <em>(GXIPJ)arg4</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXEDB.find_nearest" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Find the nearest point on the current line based
-on X,Y and Z and their projection.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Find</span> <span class="n">the</span> <span class="n">nearest</span> <span class="n">point</span> <span class="n">on</span> <span class="n">the</span> <span class="n">current</span> <span class="n">line</span> <span class="n">based</span>
+<span class="n">on</span> <span class="n">X</span><span class="p">,</span><span class="n">Y</span> <span class="ow">and</span> <span class="n">Z</span> <span class="ow">and</span> <span class="n">their</span> <span class="n">projection</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -492,7 +511,7 @@ on X,Y and Z and their projection.
 -1 - Not available</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></p>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
 </td>
 </tr>
 </tbody>
@@ -505,9 +524,9 @@ on X,Y and Z and their projection.
 <dl class="method">
 <dt id="geosoft.gxapi.GXEDB.get_cur_chan">
 <code class="descname">get_cur_chan</code><span class="sig-paren">(</span><em>(str_ref)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXEDB.get_cur_chan" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Get current channel name.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">current</span> <span class="n">channel</span> <span class="n">name</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -524,17 +543,17 @@ Get current channel name.
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-returns &quot;&quot; if mark not currently in a channel.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">returns</span> <span class="s2">&quot;&quot;</span> <span class="k">if</span> <span class="n">mark</span> <span class="ow">not</span> <span class="n">currently</span> <span class="ow">in</span> <span class="n">a</span> <span class="n">channel</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXEDB.get_cur_chan_symb">
 <code class="descname">get_cur_chan_symb</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXEDB.get_cur_chan_symb" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Returns the currently marked channel symbol.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Returns</span> <span class="n">the</span> <span class="n">currently</span> <span class="n">marked</span> <span class="n">channel</span> <span class="n">symbol</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -542,7 +561,7 @@ Returns the currently marked channel symbol.
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Currently channel symbol.
 <a class="reference internal" href="GXDB.html#nullsymb"><span class="std std-ref">NULLSYMB constant</span></a> if the mark is not in a channel.</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int</td>
 </tr>
 </tbody>
 </table>
@@ -554,11 +573,11 @@ Returns the currently marked channel symbol.
 <dl class="method">
 <dt id="geosoft.gxapi.GXEDB.get_cur_fid">
 <code class="descname">get_cur_fid</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; float:<a class="headerlink" href="#geosoft.gxapi.GXEDB.get_cur_fid" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-This method returns the currently selected fiducial if
-the user is selecting a fiducial. If not, it returns
-a dummy.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="n">method</span> <span class="n">returns</span> <span class="n">the</span> <span class="n">currently</span> <span class="n">selected</span> <span class="n">fiducial</span> <span class="k">if</span>
+<span class="n">the</span> <span class="n">user</span> <span class="ow">is</span> <span class="n">selecting</span> <span class="n">a</span> <span class="n">fiducial</span><span class="o">.</span> <span class="n">If</span> <span class="ow">not</span><span class="p">,</span> <span class="n">it</span> <span class="n">returns</span>
+<span class="n">a</span> <span class="n">dummy</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -578,10 +597,10 @@ DUMMY - No Selected Fiducial</td>
 <dl class="method">
 <dt id="geosoft.gxapi.GXEDB.get_cur_fid_string">
 <code class="descname">get_cur_fid_string</code><span class="sig-paren">(</span><em>(str_ref)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXEDB.get_cur_fid_string" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-This method returns the currently selected value
-at the current fid (if available).
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="n">method</span> <span class="n">returns</span> <span class="n">the</span> <span class="n">currently</span> <span class="n">selected</span> <span class="n">value</span>
+<span class="n">at</span> <span class="n">the</span> <span class="n">current</span> <span class="n">fid</span> <span class="p">(</span><span class="k">if</span> <span class="n">available</span><span class="p">)</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -602,9 +621,9 @@ at the current fid (if available).
 <dl class="method">
 <dt id="geosoft.gxapi.GXEDB.get_cur_line">
 <code class="descname">get_cur_line</code><span class="sig-paren">(</span><em>(str_ref)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXEDB.get_cur_line" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Get current line name.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">current</span> <span class="n">line</span> <span class="n">name</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -625,9 +644,9 @@ Get current line name.
 <dl class="method">
 <dt id="geosoft.gxapi.GXEDB.get_cur_line_symb">
 <code class="descname">get_cur_line_symb</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXEDB.get_cur_line_symb" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Get current line symbol.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">current</span> <span class="n">line</span> <span class="n">symbol</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -635,7 +654,7 @@ Get current line symbol.
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Currently displayed line symbol.
 <a class="reference internal" href="GXDB.html#nullsymb"><span class="std std-ref">NULLSYMB constant</span></a> if no line displayed.</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int</td>
 </tr>
 </tbody>
 </table>
@@ -647,9 +666,9 @@ Get current line symbol.
 <dl class="method">
 <dt id="geosoft.gxapi.GXEDB.get_cur_mark">
 <code class="descname">get_cur_mark</code><span class="sig-paren">(</span><em>(float_ref)arg1</em>, <em>(float_ref)arg2</em>, <em>(float_ref)arg3</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXEDB.get_cur_mark" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Returns the current data mark info.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Returns</span> <span class="n">the</span> <span class="n">current</span> <span class="n">data</span> <span class="n">mark</span> <span class="n">info</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -665,7 +684,7 @@ Returns the current data mark info.
 1 - if data is not currently marked.</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></p>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
 </td>
 </tr>
 </tbody>
@@ -678,9 +697,9 @@ Returns the current data mark info.
 <dl class="method">
 <dt id="geosoft.gxapi.GXEDB.get_cur_point">
 <code class="descname">get_cur_point</code><span class="sig-paren">(</span><em>(float_ref)arg1</em>, <em>(float_ref)arg2</em>, <em>(float_ref)arg3</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXEDB.get_cur_point" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Returns the coordinates of the currently selected point in the database (first value if range selected)
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Returns</span> <span class="n">the</span> <span class="n">coordinates</span> <span class="n">of</span> <span class="n">the</span> <span class="n">currently</span> <span class="n">selected</span> <span class="n">point</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">database</span> <span class="p">(</span><span class="n">first</span> <span class="n">value</span> <span class="k">if</span> <span class="nb">range</span> <span class="n">selected</span><span class="p">)</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -708,9 +727,9 @@ Returns the coordinates of the currently selected point in the database (first v
 <dl class="method">
 <dt id="geosoft.gxapi.GXEDB.get_current_selection">
 <code class="descname">get_current_selection</code><span class="sig-paren">(</span><em>(str_ref)arg1</em>, <em>(str_ref)arg2</em>, <em>(str_ref)arg3</em>, <em>(str_ref)arg4</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXEDB.get_current_selection" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Get current selection information.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">current</span> <span class="n">selection</span> <span class="n">information</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -735,28 +754,28 @@ Get current selection information.
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-Channel Name    Empty if no channel
-Line Name       &quot;[All]&quot; if all lines are selected
-Fid Range       &quot;[All]&quot; if all values in all lines are selected
-&quot;[None]&quot;  if no values are selected
-&quot;10 to 20&quot;  giving the range of values.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Channel</span> <span class="n">Name</span>    <span class="n">Empty</span> <span class="k">if</span> <span class="n">no</span> <span class="n">channel</span>
+<span class="n">Line</span> <span class="n">Name</span>       <span class="s2">&quot;[All]&quot;</span> <span class="k">if</span> <span class="nb">all</span> <span class="n">lines</span> <span class="n">are</span> <span class="n">selected</span>
+<span class="n">Fid</span> <span class="n">Range</span>       <span class="s2">&quot;[All]&quot;</span> <span class="k">if</span> <span class="nb">all</span> <span class="n">values</span> <span class="ow">in</span> <span class="nb">all</span> <span class="n">lines</span> <span class="n">are</span> <span class="n">selected</span>
+<span class="s2">&quot;[None]&quot;</span>  <span class="k">if</span> <span class="n">no</span> <span class="n">values</span> <span class="n">are</span> <span class="n">selected</span>
+<span class="s2">&quot;10 to 20&quot;</span>  <span class="n">giving</span> <span class="n">the</span> <span class="nb">range</span> <span class="n">of</span> <span class="n">values</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXEDB.get_databases_lst">
 <em class="property">static </em><code class="descname">get_databases_lst</code><span class="sig-paren">(</span><em>(GXLST)arg1</em>, <em>(int)arg2</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXEDB.get_databases_lst" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Load the file names of open databases into a LST.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Load</span> <span class="n">the</span> <span class="n">file</span> <span class="n">names</span> <span class="n">of</span> <span class="nb">open</span> <span class="n">databases</span> <span class="n">into</span> <span class="n">a</span> <span class="n">LST</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXLST</span></code></a>) &#8211; LST to load</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#edb-path"><span class="std std-ref">EDB_PATH constants</span></a></li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#edb-path"><span class="std std-ref">EDB_PATH constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -764,7 +783,7 @@ Load the file names of open databases into a LST.
 The LST is cleared first.</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></p>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
 </td>
 </tr>
 </tbody>
@@ -777,9 +796,9 @@ The LST is cleared first.</p>
 <dl class="method">
 <dt id="geosoft.gxapi.GXEDB.get_displ_fid_range">
 <code class="descname">get_displ_fid_range</code><span class="sig-paren">(</span><em>(int_ref)arg1</em>, <em>(int_ref)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXEDB.get_displ_fid_range" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Return the displayed fiducial start index &amp; number of cells
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Return</span> <span class="n">the</span> <span class="n">displayed</span> <span class="n">fiducial</span> <span class="n">start</span> <span class="n">index</span> <span class="o">&amp;</span> <span class="n">number</span> <span class="n">of</span> <span class="n">cells</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -836,16 +855,16 @@ Return the displayed fiducial start index &amp; number of cells
 <dl class="method">
 <dt id="geosoft.gxapi.GXEDB.get_mark_chan_va">
 <code class="descname">get_mark_chan_va</code><span class="sig-paren">(</span><em>(GXVA)arg1</em>, <em>(int)arg2</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXEDB.get_mark_chan_va" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Get channel data for the current mark.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">channel</span> <span class="n">data</span> <span class="k">for</span> <span class="n">the</span> <span class="n">current</span> <span class="n">mark</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<a class="reference internal" href="GXVA.html#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVA</span></code></a>) &#8211; VA in which to place the data.</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Channel symbol to retrieve.</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; Channel symbol to retrieve.</li>
 </ul>
 </td>
 </tr>
@@ -853,7 +872,7 @@ Get channel data for the current mark.
 1 if failed, or if entire database is marked.</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></p>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
 </td>
 </tr>
 </tbody>
@@ -862,29 +881,29 @@ Get channel data for the current mark.
 <p><span class="versionmodified">New in version 8.2.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-The current &quot;mark&quot; in this case is the start and
-end fiducials and not the selected channel. You
-can use this method to retrieve the selected range
-from any channel, loaded or not.
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">current</span> <span class="s2">&quot;mark&quot;</span> <span class="ow">in</span> <span class="n">this</span> <span class="n">case</span> <span class="ow">is</span> <span class="n">the</span> <span class="n">start</span> <span class="ow">and</span>
+<span class="n">end</span> <span class="n">fiducials</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">the</span> <span class="n">selected</span> <span class="n">channel</span><span class="o">.</span> <span class="n">You</span>
+<span class="n">can</span> <span class="n">use</span> <span class="n">this</span> <span class="n">method</span> <span class="n">to</span> <span class="n">retrieve</span> <span class="n">the</span> <span class="n">selected</span> <span class="nb">range</span>
+<span class="kn">from</span> <span class="nn">any</span> <span class="n">channel</span><span class="p">,</span> <span class="n">loaded</span> <span class="ow">or</span> <span class="ow">not</span><span class="o">.</span>
 
-The VA will be resized to the length of the data
-</pre>
+<span class="n">The</span> <span class="n">VA</span> <span class="n">will</span> <span class="n">be</span> <span class="n">resized</span> <span class="n">to</span> <span class="n">the</span> <span class="n">length</span> <span class="n">of</span> <span class="n">the</span> <span class="n">data</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXEDB.get_mark_chan_vv">
 <code class="descname">get_mark_chan_vv</code><span class="sig-paren">(</span><em>(GXVV)arg1</em>, <em>(int)arg2</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXEDB.get_mark_chan_vv" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Get channel data for the current mark.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">channel</span> <span class="n">data</span> <span class="k">for</span> <span class="n">the</span> <span class="n">current</span> <span class="n">mark</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; VV in which to place the data.</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Channel symbol to retrieve.</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; Channel symbol to retrieve.</li>
 </ul>
 </td>
 </tr>
@@ -892,7 +911,7 @@ Get channel data for the current mark.
 1 if failed, or if entire database is marked.</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></p>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
 </td>
 </tr>
 </tbody>
@@ -901,22 +920,22 @@ Get channel data for the current mark.
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-The current &quot;mark&quot; in this case is the start and
-end fiducials and not the selected channel. You
-can use this method to retrieve the selected range
-from any channel, loaded or not.
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">current</span> <span class="s2">&quot;mark&quot;</span> <span class="ow">in</span> <span class="n">this</span> <span class="n">case</span> <span class="ow">is</span> <span class="n">the</span> <span class="n">start</span> <span class="ow">and</span>
+<span class="n">end</span> <span class="n">fiducials</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">the</span> <span class="n">selected</span> <span class="n">channel</span><span class="o">.</span> <span class="n">You</span>
+<span class="n">can</span> <span class="n">use</span> <span class="n">this</span> <span class="n">method</span> <span class="n">to</span> <span class="n">retrieve</span> <span class="n">the</span> <span class="n">selected</span> <span class="nb">range</span>
+<span class="kn">from</span> <span class="nn">any</span> <span class="n">channel</span><span class="p">,</span> <span class="n">loaded</span> <span class="ow">or</span> <span class="ow">not</span><span class="o">.</span>
 
-The VV will be resized to the length of the data
-</pre>
+<span class="n">The</span> <span class="n">VV</span> <span class="n">will</span> <span class="n">be</span> <span class="n">resized</span> <span class="n">to</span> <span class="n">the</span> <span class="n">length</span> <span class="n">of</span> <span class="n">the</span> <span class="n">data</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXEDB.get_name">
 <code class="descname">get_name</code><span class="sig-paren">(</span><em>(str_ref)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXEDB.get_name" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Get the name of the database object of this EDB.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">the</span> <span class="n">name</span> <span class="n">of</span> <span class="n">the</span> <span class="n">database</span> <span class="nb">object</span> <span class="n">of</span> <span class="n">this</span> <span class="n">EDB</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -937,9 +956,9 @@ Get the name of the database object of this EDB.
 <dl class="method">
 <dt id="geosoft.gxapi.GXEDB.get_next_line_symb">
 <code class="descname">get_next_line_symb</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXEDB.get_next_line_symb" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Returns the next line symbol.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Returns</span> <span class="n">the</span> <span class="nb">next</span> <span class="n">line</span> <span class="n">symbol</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -947,7 +966,7 @@ Returns the next line symbol.
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The next line symbol of currently displayed line.
 <a class="reference internal" href="GXDB.html#nullsymb"><span class="std std-ref">NULLSYMB constant</span></a> if no line displayed.</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int</td>
 </tr>
 </tbody>
 </table>
@@ -959,9 +978,9 @@ Returns the next line symbol.
 <dl class="method">
 <dt id="geosoft.gxapi.GXEDB.get_prev_line_symb">
 <code class="descname">get_prev_line_symb</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXEDB.get_prev_line_symb" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Returns the previous line symbol.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Returns</span> <span class="n">the</span> <span class="n">previous</span> <span class="n">line</span> <span class="n">symbol</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -969,7 +988,7 @@ Returns the previous line symbol.
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The previous line symbol of currently displayed line.
 <a class="reference internal" href="GXDB.html#nullsymb"><span class="std std-ref">NULLSYMB constant</span></a> if no line displayed.</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int</td>
 </tr>
 </tbody>
 </table>
@@ -989,9 +1008,9 @@ Returns the previous line symbol.
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; profile window number (0 to MAX_PROF_WND-1, see iProfileOpen_EDB)</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; profile number in window (see GetProfileRangeY_EDB)</li>
-<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#edb-prof"><span class="std std-ref">EDB_PROF constants</span></a></li>
+<li><strong>arg1</strong> (<em>int</em>) &#8211; profile window number (0 to MAX_PROF_WND-1, see iProfileOpen_EDB)</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; profile number in window (see GetProfileRangeY_EDB)</li>
+<li><strong>arg3</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#edb-prof"><span class="std std-ref">EDB_PROF constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -1019,16 +1038,16 @@ Returns the previous line symbol.
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; profile window number (0 to MAX_PROF_WND-1, see iProfileOpen_EDB)</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; profile number in window (see GetProfileRangeY_EDB)</li>
-<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#edb-prof"><span class="std std-ref">EDB_PROF constants</span></a></li>
+<li><strong>arg1</strong> (<em>int</em>) &#8211; profile window number (0 to MAX_PROF_WND-1, see iProfileOpen_EDB)</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; profile number in window (see GetProfileRangeY_EDB)</li>
+<li><strong>arg3</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#edb-prof"><span class="std std-ref">EDB_PROF constants</span></a></li>
 </ul>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Data Value (See notes)</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></p>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
 </td>
 </tr>
 </tbody>
@@ -1079,8 +1098,8 @@ Returns the previous line symbol.
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; profile window number (0 to MAX_PROF_WND-1, see iProfileOpen_EDB)</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; profile number in window (see iWindowProfiles_EDB which returns number of profiles in a window)</li>
+<li><strong>arg1</strong> (<em>int</em>) &#8211; profile window number (0 to MAX_PROF_WND-1, see iProfileOpen_EDB)</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; profile number in window (see iWindowProfiles_EDB which returns number of profiles in a window)</li>
 <li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; minimum y</li>
 <li><strong>arg4</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; maximum y</li>
 <li><strong>arg5</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; <a class="reference internal" href="#edb-profile-scale"><span class="std std-ref">EDB_PROFILE_SCALE constants</span></a></li>
@@ -1103,9 +1122,9 @@ Returns the previous line symbol.
 <dl class="method">
 <dt id="geosoft.gxapi.GXEDB.get_profile_split">
 <code class="descname">get_profile_split</code><span class="sig-paren">(</span><em>(float_ref)arg1</em>, <em>(float_ref)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXEDB.get_profile_split" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Get profile split for 3 windows.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">profile</span> <span class="n">split</span> <span class="k">for</span> <span class="mi">3</span> <span class="n">windows</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1132,9 +1151,9 @@ Get profile split for 3 windows.
 <dl class="method">
 <dt id="geosoft.gxapi.GXEDB.get_profile_split5">
 <code class="descname">get_profile_split5</code><span class="sig-paren">(</span><em>(float_ref)arg1</em>, <em>(float_ref)arg2</em>, <em>(float_ref)arg3</em>, <em>(float_ref)arg4</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXEDB.get_profile_split5" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Get profile split for 5 windows.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">profile</span> <span class="n">split</span> <span class="k">for</span> <span class="mi">5</span> <span class="n">windows</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1163,9 +1182,9 @@ Get profile split for 5 windows.
 <dl class="method">
 <dt id="geosoft.gxapi.GXEDB.get_profile_split_vv">
 <code class="descname">get_profile_split_vv</code><span class="sig-paren">(</span><em>(GXVV)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXEDB.get_profile_split_vv" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Get profile window splits.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">profile</span> <span class="n">window</span> <span class="n">splits</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1190,16 +1209,16 @@ is equal to 1.
 
 The profile splits refers to the relative sizes of the individual
 profile windows. To get/set the fraction of the total database window
-devoted to the profiles, use the \ :func:`geosoft.gxapi.GXEDB.set_split`\  and \ :func:`geosoft.gxapi.GXEDB.get_split`\  functions.
+devoted to the profiles, use the <a class="reference internal" href="#geosoft.gxapi.GXEDB.set_split" title="geosoft.gxapi.GXEDB.set_split"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXEDB.set_split()</span></code></a> and <a class="reference internal" href="#geosoft.gxapi.GXEDB.get_split" title="geosoft.gxapi.GXEDB.get_split"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXEDB.get_split()</span></code></a> functions.
 </pre>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXEDB.get_profile_vertical_grid_lines">
 <code class="descname">get_profile_vertical_grid_lines</code><span class="sig-paren">(</span><em>(int_ref)arg1</em>, <em>(float_ref)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXEDB.get_profile_vertical_grid_lines" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Get profile grid vertical line info.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">profile</span> <span class="n">grid</span> <span class="n">vertical</span> <span class="n">line</span> <span class="n">info</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1234,7 +1253,7 @@ Get profile grid vertical line info.
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; profile window number (0 to MAX_PROF_WND-1, see iProfileOpen_EDB)</li>
+<li><strong>arg1</strong> (<em>int</em>) &#8211; profile window number (0 to MAX_PROF_WND-1, see iProfileOpen_EDB)</li>
 <li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; window x size in pixels</li>
 <li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; window y size in pixels</li>
 </ul>
@@ -1256,9 +1275,9 @@ Get profile grid vertical line info.
 <dl class="method">
 <dt id="geosoft.gxapi.GXEDB.get_split">
 <code class="descname">get_split</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; float:<a class="headerlink" href="#geosoft.gxapi.GXEDB.get_split" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Get split ratio between spreadsheet and profile sections.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">split</span> <span class="n">ratio</span> <span class="n">between</span> <span class="n">spreadsheet</span> <span class="ow">and</span> <span class="n">profile</span> <span class="n">sections</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1278,9 +1297,9 @@ Get split ratio between spreadsheet and profile sections.
 <dl class="method">
 <dt id="geosoft.gxapi.GXEDB.get_window_position">
 <code class="descname">get_window_position</code><span class="sig-paren">(</span><em>(int_ref)arg1</em>, <em>(int_ref)arg2</em>, <em>(int_ref)arg3</em>, <em>(int_ref)arg4</em>, <em>(int_ref)arg5</em>, <em>(int_ref)arg6</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXEDB.get_window_position" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Get the map window's position and dock state
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">the</span> <span class="nb">map</span> <span class="n">window</span><span class="s1">&#39;s position and dock state</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1320,7 +1339,7 @@ Get the map window's position and dock state
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><a class="reference internal" href="#edb-window-state"><span class="std std-ref">EDB_WINDOW_STATE constants</span></a></td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int</td>
 </tr>
 </tbody>
 </table>
@@ -1332,18 +1351,18 @@ Get the map window's position and dock state
 <dl class="method">
 <dt id="geosoft.gxapi.GXEDB.get_window_y_axis_direction">
 <code class="descname">get_window_y_axis_direction</code><span class="sig-paren">(</span><em>(int)arg1</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXEDB.get_window_y_axis_direction" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Get the y-axis direction for a window
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">the</span> <span class="n">y</span><span class="o">-</span><span class="n">axis</span> <span class="n">direction</span> <span class="k">for</span> <span class="n">a</span> <span class="n">window</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; profile window number (0 to MAX_PROF_WND-1, see iProfileOpen_EDB)</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>int</em>) &#8211; profile window number (0 to MAX_PROF_WND-1, see iProfileOpen_EDB)</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><a class="reference internal" href="#edb-yaxis-direction"><span class="std std-ref">EDB_YAXIS_DIRECTION constants</span></a></td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
 </tr>
 </tbody>
 </table>
@@ -1355,14 +1374,14 @@ Get the y-axis direction for a window
 <dl class="method">
 <dt id="geosoft.gxapi.GXEDB.goto_column">
 <code class="descname">goto_column</code><span class="sig-paren">(</span><em>(int)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXEDB.goto_column" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Move the channel marker to a specific column.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Move</span> <span class="n">the</span> <span class="n">channel</span> <span class="n">marker</span> <span class="n">to</span> <span class="n">a</span> <span class="n">specific</span> <span class="n">column</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; channel column number, 0 is first -1 for first column without data</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>int</em>) &#8211; channel column number, 0 is first -1 for first column without data</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Nothing</td>
 </tr>
@@ -1378,14 +1397,14 @@ Move the channel marker to a specific column.
 <dl class="method">
 <dt id="geosoft.gxapi.GXEDB.goto_elem">
 <code class="descname">goto_elem</code><span class="sig-paren">(</span><em>(int)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXEDB.goto_elem" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Goto an element in the current line.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Goto</span> <span class="n">an</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">current</span> <span class="n">line</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Element number</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>int</em>) &#8211; Element number</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Nothing</td>
 </tr>
@@ -1401,14 +1420,14 @@ Goto an element in the current line.
 <dl class="method">
 <dt id="geosoft.gxapi.GXEDB.goto_line">
 <code class="descname">goto_line</code><span class="sig-paren">(</span><em>(int)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXEDB.goto_line" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Goto to a line symbol in the editor.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Goto</span> <span class="n">to</span> <span class="n">a</span> <span class="n">line</span> <span class="n">symbol</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">editor</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Line symbol to goto to</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>int</em>) &#8211; Line symbol to goto to</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Nothing</td>
 </tr>
@@ -1445,9 +1464,9 @@ Goto to a line symbol in the editor.
 <dl class="method">
 <dt id="geosoft.gxapi.GXEDB.histogram">
 <code class="descname">histogram</code><span class="sig-paren">(</span><em>(GXST)arg1</em>, <em>(float)arg2</em>, <em>(float)arg3</em>, <em>(int)arg4</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXEDB.histogram" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Create histogram stats.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Create</span> <span class="n">histogram</span> <span class="n">stats</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1456,7 +1475,7 @@ Create histogram stats.
 <li><strong>arg1</strong> (<a class="reference internal" href="GXST.html#geosoft.gxapi.GXST" title="geosoft.gxapi.GXST"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXST</span></code></a>) &#8211; ST handle to update</li>
 <li><strong>arg2</strong> (<em>float</em>) &#8211; histogram minimum</li>
 <li><strong>arg3</strong> (<em>float</em>) &#8211; histogram increment</li>
-<li><strong>arg4</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; number of increments</li>
+<li><strong>arg4</strong> (<em>int</em>) &#8211; number of increments</li>
 </ul>
 </td>
 </tr>
@@ -1513,9 +1532,9 @@ Create histogram stats.
 <dl class="method">
 <dt id="geosoft.gxapi.GXEDB.launch_histogram">
 <code class="descname">launch_histogram</code><span class="sig-paren">(</span><em>(str)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXEDB.launch_histogram" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Launch histogram tool on a database.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Launch</span> <span class="n">histogram</span> <span class="n">tool</span> <span class="n">on</span> <span class="n">a</span> <span class="n">database</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1533,16 +1552,16 @@ Launch histogram tool on a database.
 </div>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
-<p class="last">\ :func:`geosoft.gxapi.GXCHIMERA.launch_histogram`\  in chimera.gxh</p>
+<p class="last"><a class="reference internal" href="GXCHIMERA.html#geosoft.gxapi.GXCHIMERA.launch_histogram" title="geosoft.gxapi.GXCHIMERA.launch_histogram"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXCHIMERA.launch_histogram()</span></code></a> in chimera.gxh</p>
 </div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXEDB.launch_scatter">
 <code class="descname">launch_scatter</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXEDB.launch_scatter" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Launch scatter tool on a database.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Launch</span> <span class="n">scatter</span> <span class="n">tool</span> <span class="n">on</span> <span class="n">a</span> <span class="n">database</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1557,18 +1576,18 @@ Launch scatter tool on a database.
 <p><span class="versionmodified">New in version 5.0.6.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-The scatter tool uses the following INI parameters
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">scatter</span> <span class="n">tool</span> <span class="n">uses</span> <span class="n">the</span> <span class="n">following</span> <span class="n">INI</span> <span class="n">parameters</span>
 
-SCATTER.STM       name of the scatter template,&quot;none&quot; for none
-SCATTER.STM_NAME  name of last template section, &quot;&quot; for none.
-SCATTER.X         name of channel to display in X
-SCATTER.Y         name of channel to display in Y
-SCATTER.MASK      name of channel to use for mask
-</pre>
+<span class="n">SCATTER</span><span class="o">.</span><span class="n">STM</span>       <span class="n">name</span> <span class="n">of</span> <span class="n">the</span> <span class="n">scatter</span> <span class="n">template</span><span class="p">,</span><span class="s2">&quot;none&quot;</span> <span class="k">for</span> <span class="n">none</span>
+<span class="n">SCATTER</span><span class="o">.</span><span class="n">STM_NAME</span>  <span class="n">name</span> <span class="n">of</span> <span class="n">last</span> <span class="n">template</span> <span class="n">section</span><span class="p">,</span> <span class="s2">&quot;&quot;</span> <span class="k">for</span> <span class="n">none</span><span class="o">.</span>
+<span class="n">SCATTER</span><span class="o">.</span><span class="n">X</span>         <span class="n">name</span> <span class="n">of</span> <span class="n">channel</span> <span class="n">to</span> <span class="n">display</span> <span class="ow">in</span> <span class="n">X</span>
+<span class="n">SCATTER</span><span class="o">.</span><span class="n">Y</span>         <span class="n">name</span> <span class="n">of</span> <span class="n">channel</span> <span class="n">to</span> <span class="n">display</span> <span class="ow">in</span> <span class="n">Y</span>
+<span class="n">SCATTER</span><span class="o">.</span><span class="n">MASK</span>      <span class="n">name</span> <span class="n">of</span> <span class="n">channel</span> <span class="n">to</span> <span class="n">use</span> <span class="k">for</span> <span class="n">mask</span>
+</pre></div>
+</div>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
-<p class="last">\ :func:`geosoft.gxapi.GXCHIMERA.launch_scatter`\  in chimera.gxh</p>
+<p class="last"><a class="reference internal" href="GXCHIMERA.html#geosoft.gxapi.GXCHIMERA.launch_scatter" title="geosoft.gxapi.GXCHIMERA.launch_scatter"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXCHIMERA.launch_scatter()</span></code></a> in chimera.gxh</p>
 </div>
 </dd></dl>
 
@@ -1595,15 +1614,15 @@ database in the list.</td>
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-The last listed database will become the current database.
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">last</span> <span class="n">listed</span> <span class="n">database</span> <span class="n">will</span> <span class="n">become</span> <span class="n">the</span> <span class="n">current</span> <span class="n">database</span><span class="o">.</span>
 
-Databases may already be loaded.
+<span class="n">Databases</span> <span class="n">may</span> <span class="n">already</span> <span class="n">be</span> <span class="n">loaded</span><span class="o">.</span>
 
-Only the first file in the list may have a directory path.
-All other files in the list are assumed to be in the same
-directory as the first file.
-</pre>
+<span class="n">Only</span> <span class="n">the</span> <span class="n">first</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">the</span> <span class="nb">list</span> <span class="n">may</span> <span class="n">have</span> <span class="n">a</span> <span class="n">directory</span> <span class="n">path</span><span class="o">.</span>
+<span class="n">All</span> <span class="n">other</span> <span class="n">files</span> <span class="ow">in</span> <span class="n">the</span> <span class="nb">list</span> <span class="n">are</span> <span class="n">assumed</span> <span class="n">to</span> <span class="n">be</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">same</span>
+<span class="n">directory</span> <span class="k">as</span> <span class="n">the</span> <span class="n">first</span> <span class="n">file</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
@@ -1649,17 +1668,17 @@ directory as the first file.
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-If the channel does not exist, or if channel is already
-loaded nothing happens.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">If</span> <span class="n">the</span> <span class="n">channel</span> <span class="n">does</span> <span class="ow">not</span> <span class="n">exist</span><span class="p">,</span> <span class="ow">or</span> <span class="k">if</span> <span class="n">channel</span> <span class="ow">is</span> <span class="n">already</span>
+<span class="n">loaded</span> <span class="n">nothing</span> <span class="n">happens</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXEDB.load_control">
 <em class="property">static </em><code class="descname">load_control</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(HWND)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXEDB.load_control" title="Permalink to this definition">¶</a></dt>
 <dd><pre class="literal-block">
-Version of \ :func:`geosoft.gxapi.GXEDB.load`\  that can be used to load a database via subclassing into a Windows control.
+Version of <a class="reference internal" href="#geosoft.gxapi.GXEDB.load" title="geosoft.gxapi.GXEDB.load"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXEDB.load()</span></code></a> that can be used to load a database via subclassing into a Windows control.
 </pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -1687,9 +1706,9 @@ Version of \ :func:`geosoft.gxapi.GXEDB.load`\  that can be used to load a datab
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXEDB.load_new">
 <em class="property">static </em><code class="descname">load_new</code><span class="sig-paren">(</span><em>(str)arg1</em><span class="sig-paren">)</span> &rarr; GXEDB:<a class="headerlink" href="#geosoft.gxapi.GXEDB.load_new" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Loads a database into the workspace, flags as new.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Loads</span> <span class="n">a</span> <span class="n">database</span> <span class="n">into</span> <span class="n">the</span> <span class="n">workspace</span><span class="p">,</span> <span class="n">flags</span> <span class="k">as</span> <span class="n">new</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1707,7 +1726,7 @@ Loads a database into the workspace, flags as new.
 </div>
 <p><strong>Note:</strong></p>
 <pre class="literal-block">
-See \ :func:`geosoft.gxapi.GXEDB.load`\ . This is used for brand new databases, to set
+See <a class="reference internal" href="#geosoft.gxapi.GXEDB.load" title="geosoft.gxapi.GXEDB.load"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXEDB.load()</span></code></a>. This is used for brand new databases, to set
 an internal flag such that if on closing the user chooses
 not to save changes, the database is deleted.
 </pre>
@@ -1717,7 +1736,7 @@ not to save changes, the database is deleted.
 <dt id="geosoft.gxapi.GXEDB.load_new_control">
 <em class="property">static </em><code class="descname">load_new_control</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(HWND)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXEDB.load_new_control" title="Permalink to this definition">¶</a></dt>
 <dd><pre class="literal-block">
-Version of \ :func:`geosoft.gxapi.GXEDB.load_new`\  that can be used to load a database via subclassing into a Windows control.
+Version of <a class="reference internal" href="#geosoft.gxapi.GXEDB.load_new" title="geosoft.gxapi.GXEDB.load_new"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXEDB.load_new()</span></code></a> that can be used to load a database via subclassing into a Windows control.
 </pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -1766,7 +1785,7 @@ database in the list if multiple files were provided.</td>
 </div>
 <p><strong>Note:</strong></p>
 <pre class="literal-block">
-This function acts just like \ :func:`geosoft.gxapi.GXEDB.load`\  except that the document(s) is not activated (brought to foreground) and no
+This function acts just like <a class="reference internal" href="#geosoft.gxapi.GXEDB.load" title="geosoft.gxapi.GXEDB.load"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXEDB.load()</span></code></a> except that the document(s) is not activated (brought to foreground) and no
 guarantee is given about which document is currently active.
 </pre>
 </dd></dl>
@@ -1774,9 +1793,9 @@ guarantee is given about which document is currently active.
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXEDB.load_pass">
 <em class="property">static </em><code class="descname">load_pass</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(str)arg2</em>, <em>(str)arg3</em><span class="sig-paren">)</span> &rarr; GXEDB:<a class="headerlink" href="#geosoft.gxapi.GXEDB.load_pass" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Loads a database into the editor with login and password.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Loads</span> <span class="n">a</span> <span class="n">database</span> <span class="n">into</span> <span class="n">the</span> <span class="n">editor</span> <span class="k">with</span> <span class="n">login</span> <span class="ow">and</span> <span class="n">password</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1800,19 +1819,19 @@ Loads a database into the editor with login and password.
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-The loaded database will become the current database.
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">loaded</span> <span class="n">database</span> <span class="n">will</span> <span class="n">become</span> <span class="n">the</span> <span class="n">current</span> <span class="n">database</span><span class="o">.</span>
 
-If the database is already loaded, it simply becomes
-the current database.
-</pre>
+<span class="n">If</span> <span class="n">the</span> <span class="n">database</span> <span class="ow">is</span> <span class="n">already</span> <span class="n">loaded</span><span class="p">,</span> <span class="n">it</span> <span class="n">simply</span> <span class="n">becomes</span>
+<span class="n">the</span> <span class="n">current</span> <span class="n">database</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXEDB.load_pass_control">
 <em class="property">static </em><code class="descname">load_pass_control</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(str)arg2</em>, <em>(str)arg3</em>, <em>(HWND)arg4</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXEDB.load_pass_control" title="Permalink to this definition">¶</a></dt>
 <dd><pre class="literal-block">
-Version of \ :func:`geosoft.gxapi.GXEDB.load_pass`\  that can be used to load a database via subclassing into a Windows control.
+Version of <a class="reference internal" href="#geosoft.gxapi.GXEDB.load_pass" title="geosoft.gxapi.GXEDB.load_pass"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXEDB.load_pass()</span></code></a> that can be used to load a database via subclassing into a Windows control.
 </pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -1842,9 +1861,9 @@ Version of \ :func:`geosoft.gxapi.GXEDB.load_pass`\  that can be used to load a 
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXEDB.load_with_view">
 <em class="property">static </em><code class="descname">load_with_view</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(GXEDB)arg2</em><span class="sig-paren">)</span> &rarr; GXEDB:<a class="headerlink" href="#geosoft.gxapi.GXEDB.load_with_view" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Load an EDB with the view from a current EDB.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Load</span> <span class="n">an</span> <span class="n">EDB</span> <span class="k">with</span> <span class="n">the</span> <span class="n">view</span> <span class="kn">from</span> <span class="nn">a</span> <span class="n">current</span> <span class="n">EDB</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1867,18 +1886,18 @@ Load an EDB with the view from a current EDB.
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-Can only be run in interactive mode. Is used by
-dbsubset to create a new database with the same
-view as previously.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Can</span> <span class="n">only</span> <span class="n">be</span> <span class="n">run</span> <span class="ow">in</span> <span class="n">interactive</span> <span class="n">mode</span><span class="o">.</span> <span class="n">Is</span> <span class="n">used</span> <span class="n">by</span>
+<span class="n">dbsubset</span> <span class="n">to</span> <span class="n">create</span> <span class="n">a</span> <span class="n">new</span> <span class="n">database</span> <span class="k">with</span> <span class="n">the</span> <span class="n">same</span>
+<span class="n">view</span> <span class="k">as</span> <span class="n">previously</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXEDB.load_with_view_control">
 <em class="property">static </em><code class="descname">load_with_view_control</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(GXEDB)arg2</em>, <em>(HWND)arg3</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXEDB.load_with_view_control" title="Permalink to this definition">¶</a></dt>
 <dd><pre class="literal-block">
-Version of \ :func:`geosoft.gxapi.GXEDB.load_with_view`\  that can be used to load a database via subclassing into a Windows control.
+Version of <a class="reference internal" href="#geosoft.gxapi.GXEDB.load_with_view" title="geosoft.gxapi.GXEDB.load_with_view"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXEDB.load_with_view()</span></code></a> that can be used to load a database via subclassing into a Windows control.
 </pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -1907,9 +1926,9 @@ Version of \ :func:`geosoft.gxapi.GXEDB.load_with_view`\  that can be used to lo
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXEDB.loaded">
 <em class="property">static </em><code class="descname">loaded</code><span class="sig-paren">(</span><em>(str)arg1</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXEDB.loaded" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Returns 1 if a database is loaded .
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Returns</span> <span class="mi">1</span> <span class="k">if</span> <span class="n">a</span> <span class="n">database</span> <span class="ow">is</span> <span class="n">loaded</span> <span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1918,7 +1937,7 @@ Returns 1 if a database is loaded .
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">1 if database is loaded, 0 otherwise.</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
 </tr>
 </tbody>
 </table>
@@ -1930,9 +1949,9 @@ Returns 1 if a database is loaded .
 <dl class="method">
 <dt id="geosoft.gxapi.GXEDB.lock">
 <code class="descname">lock</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; GXDB:<a class="headerlink" href="#geosoft.gxapi.GXEDB.lock" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-This method locks the Edited Database.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="n">method</span> <span class="n">locks</span> <span class="n">the</span> <span class="n">Edited</span> <span class="n">Database</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1951,9 +1970,9 @@ This method locks the Edited Database.
 <dl class="method">
 <dt id="geosoft.gxapi.GXEDB.make_current">
 <code class="descname">make_current</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXEDB.make_current" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Makes this EDB object the current active object to the user.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Makes</span> <span class="n">this</span> <span class="n">EDB</span> <span class="nb">object</span> <span class="n">the</span> <span class="n">current</span> <span class="n">active</span> <span class="nb">object</span> <span class="n">to</span> <span class="n">the</span> <span class="n">user</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1995,12 +2014,12 @@ Makes this EDB object the current active object to the user.
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; profile window number: 0 is the top window 1 is the middle window 2 is the bottom window</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>int</em>) &#8211; profile window number: 0 is the top window 1 is the middle window 2 is the bottom window</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">TRUE if window is open
 FALSE if window is closed</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
 </tr>
 </tbody>
 </table>
@@ -2008,18 +2027,18 @@ FALSE if window is closed</td>
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-This functions will return FALSE if requested window
-is not supported in current version of Oasis montaj.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="n">functions</span> <span class="n">will</span> <span class="k">return</span> <span class="n">FALSE</span> <span class="k">if</span> <span class="n">requested</span> <span class="n">window</span>
+<span class="ow">is</span> <span class="ow">not</span> <span class="n">supported</span> <span class="ow">in</span> <span class="n">current</span> <span class="n">version</span> <span class="n">of</span> <span class="n">Oasis</span> <span class="n">montaj</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXEDB.read_only">
 <code class="descname">read_only</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; bool:<a class="headerlink" href="#geosoft.gxapi.GXEDB.read_only" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Checks if a database is currently opened in a read-only mode.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Checks</span> <span class="k">if</span> <span class="n">a</span> <span class="n">database</span> <span class="ow">is</span> <span class="n">currently</span> <span class="n">opened</span> <span class="ow">in</span> <span class="n">a</span> <span class="n">read</span><span class="o">-</span><span class="n">only</span> <span class="n">mode</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -2046,8 +2065,8 @@ Checks if a database is currently opened in a read-only mode.
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; profile window number (0 to MAX_PROF_WND-1, see iProfileOpen_EDB)</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; profile number in window (see GetProfileRangeY_EDB)</li>
+<li><strong>arg1</strong> (<em>int</em>) &#8211; profile window number (0 to MAX_PROF_WND-1, see iProfileOpen_EDB)</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; profile number in window (see GetProfileRangeY_EDB)</li>
 </ul>
 </td>
 </tr>
@@ -2067,9 +2086,9 @@ Checks if a database is currently opened in a read-only mode.
 <dl class="method">
 <dt id="geosoft.gxapi.GXEDB.run_channel_maker">
 <code class="descname">run_channel_maker</code><span class="sig-paren">(</span><em>(str)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXEDB.run_channel_maker" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Run the maker for a single channel.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Run</span> <span class="n">the</span> <span class="n">maker</span> <span class="k">for</span> <span class="n">a</span> <span class="n">single</span> <span class="n">channel</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -2086,18 +2105,18 @@ Run the maker for a single channel.
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-Skips channels without makers; will not return an
-error if the channel does not exist.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Skips</span> <span class="n">channels</span> <span class="n">without</span> <span class="n">makers</span><span class="p">;</span> <span class="n">will</span> <span class="ow">not</span> <span class="k">return</span> <span class="n">an</span>
+<span class="n">error</span> <span class="k">if</span> <span class="n">the</span> <span class="n">channel</span> <span class="n">does</span> <span class="ow">not</span> <span class="n">exist</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXEDB.run_channel_makers">
 <code class="descname">run_channel_makers</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXEDB.run_channel_makers" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Recreate channels with makers.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Recreate</span> <span class="n">channels</span> <span class="k">with</span> <span class="n">makers</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -2112,17 +2131,17 @@ Recreate channels with makers.
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-Skips channels without makers.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Skips</span> <span class="n">channels</span> <span class="n">without</span> <span class="n">makers</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXEDB.set_cur_line">
 <code class="descname">set_cur_line</code><span class="sig-paren">(</span><em>(str)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXEDB.set_cur_line" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Set the current line name.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Set</span> <span class="n">the</span> <span class="n">current</span> <span class="n">line</span> <span class="n">name</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -2143,9 +2162,9 @@ Set the current line name.
 <dl class="method">
 <dt id="geosoft.gxapi.GXEDB.set_cur_line_no_message">
 <code class="descname">set_cur_line_no_message</code><span class="sig-paren">(</span><em>(str)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXEDB.set_cur_line_no_message" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Set Line but do not send a message.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Set</span> <span class="n">Line</span> <span class="n">but</span> <span class="n">do</span> <span class="ow">not</span> <span class="n">send</span> <span class="n">a</span> <span class="n">message</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -2166,9 +2185,9 @@ Set Line but do not send a message.
 <dl class="method">
 <dt id="geosoft.gxapi.GXEDB.set_cur_mark">
 <code class="descname">set_cur_mark</code><span class="sig-paren">(</span><em>(float)arg1</em>, <em>(float)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXEDB.set_cur_mark" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Set the current mark.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Set</span> <span class="n">the</span> <span class="n">current</span> <span class="n">mark</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -2203,10 +2222,10 @@ Set the current mark.
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; profile window number (0 to MAX_PROF_WND-1, see iProfileOpen_EDB)</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; profile number in window (see GetProfileRangeY_EDB)</li>
-<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#edb-prof"><span class="std std-ref">EDB_PROF constants</span></a></li>
-<li><strong>arg4</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; setting</li>
+<li><strong>arg1</strong> (<em>int</em>) &#8211; profile window number (0 to MAX_PROF_WND-1, see iProfileOpen_EDB)</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; profile number in window (see GetProfileRangeY_EDB)</li>
+<li><strong>arg3</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#edb-prof"><span class="std std-ref">EDB_PROF constants</span></a></li>
+<li><strong>arg4</strong> (<em>int</em>) &#8211; setting</li>
 </ul>
 </td>
 </tr>
@@ -2234,9 +2253,9 @@ Set the current mark.
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; profile window number (0 to MAX_PROF_WND-1, see iProfileOpen_EDB)</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; profile number in window (see GetProfileRangeY_EDB)</li>
-<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#edb-prof"><span class="std std-ref">EDB_PROF constants</span></a></li>
+<li><strong>arg1</strong> (<em>int</em>) &#8211; profile window number (0 to MAX_PROF_WND-1, see iProfileOpen_EDB)</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; profile number in window (see GetProfileRangeY_EDB)</li>
+<li><strong>arg3</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#edb-prof"><span class="std std-ref">EDB_PROF constants</span></a></li>
 <li><strong>arg4</strong> (<em>float</em>) &#8211; setting</li>
 </ul>
 </td>
@@ -2267,7 +2286,7 @@ Set the current mark.
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<em>float</em>) &#8211; minimum x, rDUMMY for data minimum</li>
 <li><strong>arg2</strong> (<em>float</em>) &#8211; maximum x, rDUMMY for data maximum</li>
-<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; X axis channel, <a class="reference internal" href="GXDB.html#nullsymb"><span class="std std-ref">NULLSYMB constant</span></a> to use fids</li>
+<li><strong>arg3</strong> (<em>int</em>) &#8211; X axis channel, <a class="reference internal" href="GXDB.html#nullsymb"><span class="std std-ref">NULLSYMB constant</span></a> to use fids</li>
 </ul>
 </td>
 </tr>
@@ -2295,11 +2314,11 @@ Set the current mark.
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; profile window number (0 to MAX_PROF_WND-1, see iProfileOpen_EDB)</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; profile number in window (see GetProfileRangeY_EDB)</li>
+<li><strong>arg1</strong> (<em>int</em>) &#8211; profile window number (0 to MAX_PROF_WND-1, see iProfileOpen_EDB)</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; profile number in window (see GetProfileRangeY_EDB)</li>
 <li><strong>arg3</strong> (<em>float</em>) &#8211; minimum y</li>
 <li><strong>arg4</strong> (<em>float</em>) &#8211; maximum y</li>
-<li><strong>arg5</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#edb-profile-scale"><span class="std std-ref">EDB_PROFILE_SCALE constants</span></a></li>
+<li><strong>arg5</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#edb-profile-scale"><span class="std std-ref">EDB_PROFILE_SCALE constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -2315,18 +2334,18 @@ Set the current mark.
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-If channel is not loaded or displayed, it will
-loaded and/or displayed.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">If</span> <span class="n">channel</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">loaded</span> <span class="ow">or</span> <span class="n">displayed</span><span class="p">,</span> <span class="n">it</span> <span class="n">will</span>
+<span class="n">loaded</span> <span class="ow">and</span><span class="o">/</span><span class="ow">or</span> <span class="n">displayed</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXEDB.set_profile_split">
 <code class="descname">set_profile_split</code><span class="sig-paren">(</span><em>(float)arg1</em>, <em>(float)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXEDB.set_profile_split" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Set profile split for 3 windows.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Set</span> <span class="n">profile</span> <span class="n">split</span> <span class="k">for</span> <span class="mi">3</span> <span class="n">windows</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -2353,9 +2372,9 @@ Set profile split for 3 windows.
 <dl class="method">
 <dt id="geosoft.gxapi.GXEDB.set_profile_split5">
 <code class="descname">set_profile_split5</code><span class="sig-paren">(</span><em>(float)arg1</em>, <em>(float)arg2</em>, <em>(float)arg3</em>, <em>(float)arg4</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXEDB.set_profile_split5" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Set profile split for 5 windows.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Set</span> <span class="n">profile</span> <span class="n">split</span> <span class="k">for</span> <span class="mi">5</span> <span class="n">windows</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -2403,22 +2422,22 @@ Set profile split for 5 windows.
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-The input VV values are the fractional heights for each
-profile window. Values are summed, and normalized (so you can
-enter &quot;1,1,1&quot;, with a VV of length 3, if you want 3 equal profile windows).
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="nb">input</span> <span class="n">VV</span> <span class="n">values</span> <span class="n">are</span> <span class="n">the</span> <span class="n">fractional</span> <span class="n">heights</span> <span class="k">for</span> <span class="n">each</span>
+<span class="n">profile</span> <span class="n">window</span><span class="o">.</span> <span class="n">Values</span> <span class="n">are</span> <span class="n">summed</span><span class="p">,</span> <span class="ow">and</span> <span class="n">normalized</span> <span class="p">(</span><span class="n">so</span> <span class="n">you</span> <span class="n">can</span>
+<span class="n">enter</span> <span class="s2">&quot;1,1,1&quot;</span><span class="p">,</span> <span class="k">with</span> <span class="n">a</span> <span class="n">VV</span> <span class="n">of</span> <span class="n">length</span> <span class="mi">3</span><span class="p">,</span> <span class="k">if</span> <span class="n">you</span> <span class="n">want</span> <span class="mi">3</span> <span class="n">equal</span> <span class="n">profile</span> <span class="n">windows</span><span class="p">)</span><span class="o">.</span>
 
-VV values beyond the maximum number of displayable
-profiles (MAX_PROF_WND) are ignored.
-</pre>
+<span class="n">VV</span> <span class="n">values</span> <span class="n">beyond</span> <span class="n">the</span> <span class="n">maximum</span> <span class="n">number</span> <span class="n">of</span> <span class="n">displayable</span>
+<span class="n">profiles</span> <span class="p">(</span><span class="n">MAX_PROF_WND</span><span class="p">)</span> <span class="n">are</span> <span class="n">ignored</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXEDB.set_split">
 <code class="descname">set_split</code><span class="sig-paren">(</span><em>(float)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXEDB.set_split" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Set split ratio between spreadsheet and profile sections.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Set</span> <span class="n">split</span> <span class="n">ratio</span> <span class="n">between</span> <span class="n">spreadsheet</span> <span class="ow">and</span> <span class="n">profile</span> <span class="n">sections</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -2435,29 +2454,29 @@ Set split ratio between spreadsheet and profile sections.
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-d = (spreadsheet window height/
-(spreadsheet window height + entire profile window height))
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="p">(</span><span class="n">spreadsheet</span> <span class="n">window</span> <span class="n">height</span><span class="o">/</span>
+<span class="p">(</span><span class="n">spreadsheet</span> <span class="n">window</span> <span class="n">height</span> <span class="o">+</span> <span class="n">entire</span> <span class="n">profile</span> <span class="n">window</span> <span class="n">height</span><span class="p">))</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXEDB.set_window_position">
 <code class="descname">set_window_position</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(int)arg2</em>, <em>(int)arg3</em>, <em>(int)arg4</em>, <em>(int)arg5</em>, <em>(int)arg6</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXEDB.set_window_position" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Get the map window's position and dock state
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">the</span> <span class="nb">map</span> <span class="n">window</span><span class="s1">&#39;s position and dock state</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Window left position</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Window top position</li>
-<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Window right position</li>
-<li><strong>arg4</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Window bottom position</li>
-<li><strong>arg5</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Window state <a class="reference internal" href="#edb-window-state"><span class="std std-ref">EDB_WINDOW_STATE constants</span></a></li>
-<li><strong>arg6</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Docked or floating <a class="reference internal" href="#edb-window-position"><span class="std std-ref">EDB_WINDOW_POSITION constants</span></a></li>
+<li><strong>arg1</strong> (<em>int</em>) &#8211; Window left position</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; Window top position</li>
+<li><strong>arg3</strong> (<em>int</em>) &#8211; Window right position</li>
+<li><strong>arg4</strong> (<em>int</em>) &#8211; Window bottom position</li>
+<li><strong>arg5</strong> (<em>int</em>) &#8211; Window state <a class="reference internal" href="#edb-window-state"><span class="std std-ref">EDB_WINDOW_STATE constants</span></a></li>
+<li><strong>arg6</strong> (<em>int</em>) &#8211; Docked or floating <a class="reference internal" href="#edb-window-position"><span class="std std-ref">EDB_WINDOW_POSITION constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -2484,7 +2503,7 @@ Get the map window's position and dock state
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#edb-window-state"><span class="std std-ref">EDB_WINDOW_STATE constants</span></a></td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#edb-window-state"><span class="std std-ref">EDB_WINDOW_STATE constants</span></a></td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Nothing</td>
 </tr>
@@ -2508,8 +2527,8 @@ Get the map window's position and dock state
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; profile window number (0 to MAX_PROF_WND-1, see iProfileOpen_EDB)</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; channel symbol</li>
+<li><strong>arg1</strong> (<em>int</em>) &#8211; profile window number (0 to MAX_PROF_WND-1, see iProfileOpen_EDB)</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; channel symbol</li>
 </ul>
 </td>
 </tr>
@@ -2525,9 +2544,9 @@ Get the map window's position and dock state
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-If the symbol is not loaded, it will be loaded.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">If</span> <span class="n">the</span> <span class="n">symbol</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">loaded</span><span class="p">,</span> <span class="n">it</span> <span class="n">will</span> <span class="n">be</span> <span class="n">loaded</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
@@ -2541,7 +2560,7 @@ If the symbol is not loaded, it will be loaded.
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; profile window number (0 to MAX_PROF_WND-1, see iProfileOpen_EDB)</li>
+<li><strong>arg1</strong> (<em>int</em>) &#8211; profile window number (0 to MAX_PROF_WND-1, see iProfileOpen_EDB)</li>
 <li><strong>arg2</strong> (<em>str</em>) &#8211; Name of the channel</li>
 </ul>
 </td>
@@ -2549,7 +2568,7 @@ If the symbol is not loaded, it will be loaded.
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Profile ID if loaded, -1 for error</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></p>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
 </td>
 </tr>
 </tbody>
@@ -2558,17 +2577,17 @@ If the symbol is not loaded, it will be loaded.
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-If the symbol is not loaded, it will be loaded.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">If</span> <span class="n">the</span> <span class="n">symbol</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">loaded</span><span class="p">,</span> <span class="n">it</span> <span class="n">will</span> <span class="n">be</span> <span class="n">loaded</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXEDB.statistics">
 <code class="descname">statistics</code><span class="sig-paren">(</span><em>(GXST)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXEDB.statistics" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Add all currently selected data to the ST.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Add</span> <span class="nb">all</span> <span class="n">currently</span> <span class="n">selected</span> <span class="n">data</span> <span class="n">to</span> <span class="n">the</span> <span class="n">ST</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -2586,16 +2605,16 @@ Add all currently selected data to the ST.
 </div>
 <p><strong>Note:</strong></p>
 <pre class="literal-block">
-Use \ :func:`geosoft.gxapi.GXEDB.histogram`\  to get median or histogram.
+Use <a class="reference internal" href="#geosoft.gxapi.GXEDB.histogram" title="geosoft.gxapi.GXEDB.histogram"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXEDB.histogram()</span></code></a> to get median or histogram.
 </pre>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXEDB.un_load">
 <em class="property">static </em><code class="descname">un_load</code><span class="sig-paren">(</span><em>(str)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXEDB.un_load" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Unloads an edited database.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Unloads</span> <span class="n">an</span> <span class="n">edited</span> <span class="n">database</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -2614,7 +2633,7 @@ Unloads an edited database.
 <p><strong>Note:</strong></p>
 <pre class="literal-block">
 If the database is not loaded, nothing happens.
-Same as \ :func:`geosoft.gxapi.GXEDB.un_load_verify`\  with FALSE to prompt save.
+Same as <a class="reference internal" href="#geosoft.gxapi.GXEDB.un_load_verify" title="geosoft.gxapi.GXEDB.un_load_verify"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXEDB.un_load_verify()</span></code></a> with FALSE to prompt save.
 </pre>
 </dd></dl>
 
@@ -2682,18 +2701,18 @@ Same as \ :func:`geosoft.gxapi.GXEDB.un_load_verify`\  with FALSE to prompt save
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-If the channel does not exist, or if channel is already
-loaded nothing happens.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">If</span> <span class="n">the</span> <span class="n">channel</span> <span class="n">does</span> <span class="ow">not</span> <span class="n">exist</span><span class="p">,</span> <span class="ow">or</span> <span class="k">if</span> <span class="n">channel</span> <span class="ow">is</span> <span class="n">already</span>
+<span class="n">loaded</span> <span class="n">nothing</span> <span class="n">happens</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXEDB.un_load_discard">
 <em class="property">static </em><code class="descname">un_load_discard</code><span class="sig-paren">(</span><em>(str)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXEDB.un_load_discard" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Unloads a database in the workspace, discards changes.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Unloads</span> <span class="n">a</span> <span class="n">database</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">workspace</span><span class="p">,</span> <span class="n">discards</span> <span class="n">changes</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -2710,24 +2729,24 @@ Unloads a database in the workspace, discards changes.
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-If the database is not loaded, nothing happens.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">If</span> <span class="n">the</span> <span class="n">database</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">loaded</span><span class="p">,</span> <span class="n">nothing</span> <span class="n">happens</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXEDB.un_load_verify">
 <em class="property">static </em><code class="descname">un_load_verify</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(int)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXEDB.un_load_verify" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Unloads an edited database, optional prompt to save.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Unloads</span> <span class="n">an</span> <span class="n">edited</span> <span class="n">database</span><span class="p">,</span> <span class="n">optional</span> <span class="n">prompt</span> <span class="n">to</span> <span class="n">save</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<em>str</em>) &#8211; Name of database to unload</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#edb-unload"><span class="std std-ref">EDB_UNLOAD constants</span></a></li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#edb-unload"><span class="std std-ref">EDB_UNLOAD constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -2743,21 +2762,21 @@ Unloads an edited database, optional prompt to save.
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-If the database is not loaded, nothing happens.
-The user can be prompted to save before unloading.
-If EDB_UNLOAD_NO_PROMPT, data is always saved.
-EDB_UNLOAD_MULTIPROMPT is now obsolete and
-is equivalent to EDB_UNLOAD_SINGLE_PROMPT.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">If</span> <span class="n">the</span> <span class="n">database</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">loaded</span><span class="p">,</span> <span class="n">nothing</span> <span class="n">happens</span><span class="o">.</span>
+<span class="n">The</span> <span class="n">user</span> <span class="n">can</span> <span class="n">be</span> <span class="n">prompted</span> <span class="n">to</span> <span class="n">save</span> <span class="n">before</span> <span class="n">unloading</span><span class="o">.</span>
+<span class="n">If</span> <span class="n">EDB_UNLOAD_NO_PROMPT</span><span class="p">,</span> <span class="n">data</span> <span class="ow">is</span> <span class="n">always</span> <span class="n">saved</span><span class="o">.</span>
+<span class="n">EDB_UNLOAD_MULTIPROMPT</span> <span class="ow">is</span> <span class="n">now</span> <span class="n">obsolete</span> <span class="ow">and</span>
+<span class="ow">is</span> <span class="n">equivalent</span> <span class="n">to</span> <span class="n">EDB_UNLOAD_SINGLE_PROMPT</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXEDB.un_lock">
 <code class="descname">un_lock</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXEDB.un_lock" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-This method unlocks the Edited Database.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="n">method</span> <span class="n">unlocks</span> <span class="n">the</span> <span class="n">Edited</span> <span class="n">Database</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -2783,11 +2802,11 @@ This method unlocks the Edited Database.
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; profile window number (0 to MAX_PROF_WND-1, see iProfileOpen_EDB)</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>int</em>) &#8211; profile window number (0 to MAX_PROF_WND-1, see iProfileOpen_EDB)</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Number of profiles in a window</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
 </tr>
 </tbody>
 </table>
@@ -3132,9 +3151,13 @@ This method unlocks the Edited Database.
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li> 
+          <a href="GXEDOC.html" title="GXEDOC class"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="GXDXFI.html" title="GXDXFI class"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="geosoft.gxapi.classes.html" >GX API Class/Library Reference</a> &#187;</li> 
       </ul>
     </div>
 

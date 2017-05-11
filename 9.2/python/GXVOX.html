@@ -27,6 +27,8 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="GXVOXD class" href="GXVOXD.html" />
+    <link rel="prev" title="GXVM class" href="GXVM.html" />
  
 <script type="text/javascript">
   var _gaq = _gaq || [];
@@ -43,9 +45,13 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li> 
+          <a href="GXVOXD.html" title="GXVOXD class"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="GXVM.html" title="GXVM class"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="geosoft.gxapi.classes.html" accesskey="U">GX API Class/Library Reference</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -65,13 +71,19 @@
 </li>
 </ul>
 
-  <div role="note" aria-label="source link">
-    <h3>This Page</h3>
-    <ul class="this-page-menu">
-      <li><a href="_sources/GXVOX.rst.txt"
-            rel="nofollow">Show Source</a></li>
-    </ul>
-   </div>
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Introduction</a></li>
+    <li><a href="geosoft.gxapi.classes.html">GX API Class/Library Reference</a></li>
+</ul>
+<h3>Previous Topic</h3>
+<ul>
+    <li><a href="GXVM.html" title="previous chapter">GXVM class</a></li>
+</ul>
+<h3>Next Topic</h3>
+<ul>
+    <li><a href="GXVOXD.html" title="next chapter">GXVOXD class</a></li>
+</ul>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
@@ -82,6 +94,13 @@
     </form>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/GXVOX.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
         </div>
       </div>
 
@@ -95,27 +114,27 @@
 <dl class="class">
 <dt id="geosoft.gxapi.GXVOX">
 <em class="property">class </em><code class="descclassname">geosoft.gxapi.</code><code class="descname">GXVOX</code><a class="headerlink" href="#geosoft.gxapi.GXVOX" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-High Performance 3D Grid. Designed for accessing
-3D grids quickly using slices. It designed arround
-non-uniform multi-resolution  compressed storage.
-o sample a voxel at specific locations, use the VOXE class.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">High</span> <span class="n">Performance</span> <span class="mi">3</span><span class="n">D</span> <span class="n">Grid</span><span class="o">.</span> <span class="n">Designed</span> <span class="k">for</span> <span class="n">accessing</span>
+<span class="mi">3</span><span class="n">D</span> <span class="n">grids</span> <span class="n">quickly</span> <span class="n">using</span> <span class="n">slices</span><span class="o">.</span> <span class="n">It</span> <span class="n">designed</span> <span class="n">arround</span>
+<span class="n">non</span><span class="o">-</span><span class="n">uniform</span> <span class="n">multi</span><span class="o">-</span><span class="n">resolution</span>  <span class="n">compressed</span> <span class="n">storage</span><span class="o">.</span>
+<span class="n">o</span> <span class="n">sample</span> <span class="n">a</span> <span class="n">voxel</span> <span class="n">at</span> <span class="n">specific</span> <span class="n">locations</span><span class="p">,</span> <span class="n">use</span> <span class="n">the</span> <span class="n">VOXE</span> <span class="n">class</span><span class="o">.</span>
+</pre></div>
+</div>
 <dl class="method">
 <dt id="geosoft.gxapi.GXVOX.add_generate_by_subset_pg">
 <code class="descname">add_generate_by_subset_pg</code><span class="sig-paren">(</span><em>(GXPG)arg1</em>, <em>(int)arg2</em>, <em>(int)arg3</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXVOX.add_generate_by_subset_pg" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Add a subset 3D  pagers. These should be &quot;slabs&quot;, 16 wide in the input direction, and the size of the
-full voxel in the other two directions.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Add</span> <span class="n">a</span> <span class="n">subset</span> <span class="mi">3</span><span class="n">D</span>  <span class="n">pagers</span><span class="o">.</span> <span class="n">These</span> <span class="n">should</span> <span class="n">be</span> <span class="s2">&quot;slabs&quot;</span><span class="p">,</span> <span class="mi">16</span> <span class="n">wide</span> <span class="ow">in</span> <span class="n">the</span> <span class="nb">input</span> <span class="n">direction</span><span class="p">,</span> <span class="ow">and</span> <span class="n">the</span> <span class="n">size</span> <span class="n">of</span> <span class="n">the</span>
+<span class="n">full</span> <span class="n">voxel</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">other</span> <span class="n">two</span> <span class="n">directions</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<a class="reference internal" href="GXPG.html#geosoft.gxapi.GXPG" title="geosoft.gxapi.GXPG"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXPG</span></code></a>) &#8211; Subset pager with the Voxel Data</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Subset orientation - the &#8220;16&#8221; (thin) dimension is in the other axis.<a class="reference internal" href="#vox-dir"><span class="std std-ref">VOX_DIR constants</span></a></li>
-<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Offset of the subset PG corner, along the &#8220;thin&#8221; dimension.</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; Subset orientation - the &#8220;16&#8221; (thin) dimension is in the other axis.<a class="reference internal" href="#vox-dir"><span class="std std-ref">VOX_DIR constants</span></a></li>
+<li><strong>arg3</strong> (<em>int</em>) &#8211; Offset of the subset PG corner, along the &#8220;thin&#8221; dimension.</li>
 </ul>
 </td>
 </tr>
@@ -132,7 +151,7 @@ full voxel in the other two directions.
 </div>
 <p><strong>Note:</strong></p>
 <pre class="literal-block">
-See \ :func:`geosoft.gxapi.GXVOX.init_generate_by_subset_pg`\  and \ :func:`geosoft.gxapi.GXVOX.end_generate_by_subset_pg`\ .
+See <a class="reference internal" href="#geosoft.gxapi.GXVOX.init_generate_by_subset_pg" title="geosoft.gxapi.GXVOX.init_generate_by_subset_pg"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXVOX.init_generate_by_subset_pg()</span></code></a> and <a class="reference internal" href="#geosoft.gxapi.GXVOX.end_generate_by_subset_pg" title="geosoft.gxapi.GXVOX.end_generate_by_subset_pg"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXVOX.end_generate_by_subset_pg()</span></code></a>.
 </pre>
 </dd></dl>
 
@@ -162,9 +181,9 @@ See \ :func:`geosoft.gxapi.GXVOX.init_generate_by_subset_pg`\  and \ :func:`geos
 <dl class="method">
 <dt id="geosoft.gxapi.GXVOX.can_append_to">
 <code class="descname">can_append_to</code><span class="sig-paren">(</span><em>(str)arg1</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXVOX.can_append_to" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Check if this voxel can append to a surface file.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Check</span> <span class="k">if</span> <span class="n">this</span> <span class="n">voxel</span> <span class="n">can</span> <span class="n">append</span> <span class="n">to</span> <span class="n">a</span> <span class="n">surface</span> <span class="n">file</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -173,7 +192,7 @@ Check if this voxel can append to a surface file.
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">1 if can append</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
 </tr>
 </tbody>
 </table>
@@ -218,9 +237,9 @@ Check if this voxel can append to a surface file.
 <dl class="method">
 <dt id="geosoft.gxapi.GXVOX.convert_density_to_velocity">
 <code class="descname">convert_density_to_velocity</code><span class="sig-paren">(</span><em>(float)arg1</em>, <em>(float)arg2</em>, <em>(float)arg3</em>, <em>(float)arg4</em>, <em>(float)arg5</em>, <em>(float)arg6</em>, <em>(float)arg7</em>, <em>(float)arg8</em>, <em>(float)arg9</em>, <em>(float)arg10</em>, <em>(str)arg11</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXVOX.convert_density_to_velocity" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Produces a velocity voxel using the density values in this voxel.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Produces</span> <span class="n">a</span> <span class="n">velocity</span> <span class="n">voxel</span> <span class="n">using</span> <span class="n">the</span> <span class="n">density</span> <span class="n">values</span> <span class="ow">in</span> <span class="n">this</span> <span class="n">voxel</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -256,9 +275,9 @@ Produces a velocity voxel using the density values in this voxel.
 <dl class="method">
 <dt id="geosoft.gxapi.GXVOX.convert_numeric_to_thematic">
 <code class="descname">convert_numeric_to_thematic</code><span class="sig-paren">(</span><em>(GXVV)arg1</em>, <em>(str)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXVOX.convert_numeric_to_thematic" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Convert numeric voxel to thematic (lithology) voxel
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Convert</span> <span class="n">numeric</span> <span class="n">voxel</span> <span class="n">to</span> <span class="n">thematic</span> <span class="p">(</span><span class="n">lithology</span><span class="p">)</span> <span class="n">voxel</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -285,9 +304,9 @@ Convert numeric voxel to thematic (lithology) voxel
 <dl class="method">
 <dt id="geosoft.gxapi.GXVOX.convert_thematic_to_numeric">
 <code class="descname">convert_thematic_to_numeric</code><span class="sig-paren">(</span><em>(GXVV)arg1</em>, <em>(str)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXVOX.convert_thematic_to_numeric" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Convert thematic (lithology) voxel to numeric voxel
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Convert</span> <span class="n">thematic</span> <span class="p">(</span><span class="n">lithology</span><span class="p">)</span> <span class="n">voxel</span> <span class="n">to</span> <span class="n">numeric</span> <span class="n">voxel</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -314,9 +333,9 @@ Convert thematic (lithology) voxel to numeric voxel
 <dl class="method">
 <dt id="geosoft.gxapi.GXVOX.convert_velocity_in_range_to_density">
 <code class="descname">convert_velocity_in_range_to_density</code><span class="sig-paren">(</span><em>(float)arg1</em>, <em>(float)arg2</em>, <em>(float)arg3</em>, <em>(float)arg4</em>, <em>(float)arg5</em>, <em>(float)arg6</em>, <em>(float)arg7</em>, <em>(float)arg8</em>, <em>(float)arg9</em>, <em>(float)arg10</em>, <em>(str)arg11</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXVOX.convert_velocity_in_range_to_density" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Produces a density voxel using the velocity values in this voxel, as long as the velocity values are in range.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Produces</span> <span class="n">a</span> <span class="n">density</span> <span class="n">voxel</span> <span class="n">using</span> <span class="n">the</span> <span class="n">velocity</span> <span class="n">values</span> <span class="ow">in</span> <span class="n">this</span> <span class="n">voxel</span><span class="p">,</span> <span class="k">as</span> <span class="n">long</span> <span class="k">as</span> <span class="n">the</span> <span class="n">velocity</span> <span class="n">values</span> <span class="n">are</span> <span class="ow">in</span> <span class="nb">range</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -352,9 +371,9 @@ Produces a density voxel using the velocity values in this voxel, as long as the
 <dl class="method">
 <dt id="geosoft.gxapi.GXVOX.convert_velocity_to_density">
 <code class="descname">convert_velocity_to_density</code><span class="sig-paren">(</span><em>(float)arg1</em>, <em>(float)arg2</em>, <em>(float)arg3</em>, <em>(float)arg4</em>, <em>(float)arg5</em>, <em>(float)arg6</em>, <em>(float)arg7</em>, <em>(float)arg8</em>, <em>(str)arg9</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXVOX.convert_velocity_to_density" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Produces a density voxel using the velocity values in this voxel.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Produces</span> <span class="n">a</span> <span class="n">density</span> <span class="n">voxel</span> <span class="n">using</span> <span class="n">the</span> <span class="n">velocity</span> <span class="n">values</span> <span class="ow">in</span> <span class="n">this</span> <span class="n">voxel</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -439,7 +458,7 @@ Produces a density voxel using the velocity values in this voxel.
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="GXGEOSOFT.html#gs-types"><span class="std std-ref">GS_TYPES constants</span></a></td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>int</em>) &#8211; <a class="reference internal" href="GXGEOSOFT.html#gs-types"><span class="std std-ref">GS_TYPES constants</span></a></td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">PG Object</td>
 </tr>
@@ -455,9 +474,9 @@ Produces a density voxel using the velocity values in this voxel.
 <dl class="method">
 <dt id="geosoft.gxapi.GXVOX.dump">
 <code class="descname">dump</code><span class="sig-paren">(</span><em>(str)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXVOX.dump" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Export all layers of this VOX in all directions.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Export</span> <span class="nb">all</span> <span class="n">layers</span> <span class="n">of</span> <span class="n">this</span> <span class="n">VOX</span> <span class="ow">in</span> <span class="nb">all</span> <span class="n">directions</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -479,7 +498,7 @@ Export all layers of this VOX in all directions.
 <dt id="geosoft.gxapi.GXVOX.dw_grid_db">
 <em class="property">static </em><code class="descname">dw_grid_db</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(GXDB)arg2</em>, <em>(int)arg3</em>, <em>(int)arg4</em>, <em>(int)arg5</em>, <em>(int)arg6</em>, <em>(GXREG)arg7</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXVOX.dw_grid_db" title="Permalink to this definition">¶</a></dt>
 <dd><pre class="literal-block">
-\ :func:`geosoft.gxapi.GXVOX.dw_grid_db`\      Inverse-distance weighting gridding method, DB version, 3D.
+<a class="reference internal" href="#geosoft.gxapi.GXVOX.dw_grid_db" title="geosoft.gxapi.GXVOX.dw_grid_db"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXVOX.dw_grid_db()</span></code></a>     Inverse-distance weighting gridding method, DB version, 3D.
 </pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -488,10 +507,10 @@ Export all layers of this VOX in all directions.
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<em>str</em>) &#8211; Output voxel name</li>
 <li><strong>arg2</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXDB</span></code></a>) &#8211; Database</li>
-<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; X Channel [READONLY]</li>
-<li><strong>arg4</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Y Channel [READONLY]</li>
-<li><strong>arg5</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Z Channel [READONLY]</li>
-<li><strong>arg6</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Data Channel [READONLY]</li>
+<li><strong>arg3</strong> (<em>int</em>) &#8211; X Channel [READONLY]</li>
+<li><strong>arg4</strong> (<em>int</em>) &#8211; Y Channel [READONLY]</li>
+<li><strong>arg5</strong> (<em>int</em>) &#8211; Z Channel [READONLY]</li>
+<li><strong>arg6</strong> (<em>int</em>) &#8211; Data Channel [READONLY]</li>
 <li><strong>arg7</strong> (<a class="reference internal" href="GXREG.html#geosoft.gxapi.GXREG" title="geosoft.gxapi.GXREG"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXREG</span></code></a>) &#8211; Parameters (see above)</li>
 </ul>
 </td>
@@ -523,8 +542,8 @@ REG Parameters:
 
 X0, Y0, Z0, DX, DY, DZ: Voxel origin, and cell sizes (required)
 WT_POWER (default=2), WT_SLOPE (default=1) Weighting function parameters
-SEARCH_RADIUS: Distance weighting limit (default = 4 \ `*`\  CUBE_ROOT(DX\ `*`\ DY\ `*`\ DZ))
-BLANKING_DISTANCE: Dummy values farther from data than this distance. (default = 4 \ `*`\  CUBE_ROOT(DX\ `*`\ DY\ `*`\ DZ))
+SEARCH_RADIUS: Distance weighting limit (default = 4 <cite>*</cite> CUBE_ROOT(DX<cite>*</cite>DY<cite>*</cite>DZ))
+BLANKING_DISTANCE: Dummy values farther from data than this distance. (default = 4 <cite>*</cite> CUBE_ROOT(DX<cite>*</cite>DY<cite>*</cite>DZ))
 LOG: Apply log transform to input data before gridding (0:No (default), 1:Yes)?
 LOG_BASE: One of VV_LOG_BASE_10 (default) or VV_LOG_BASE_E
 LOG_NEGATIVE: One of VV_LOG_NEGATIVE_NO (default) or VV_LOG_NEGATIVE_YES
@@ -534,9 +553,9 @@ LOG_NEGATIVE: One of VV_LOG_NEGATIVE_NO (default) or VV_LOG_NEGATIVE_YES
 <dl class="method">
 <dt id="geosoft.gxapi.GXVOX.end_generate_by_subset_pg">
 <code class="descname">end_generate_by_subset_pg</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(float)arg2</em>, <em>(float)arg3</em>, <em>(float)arg4</em>, <em>(float)arg5</em>, <em>(float)arg6</em>, <em>(float)arg7</em>, <em>(GXIPJ)arg8</em>, <em>(GXMETA)arg9</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXVOX.end_generate_by_subset_pg" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Output the voxel, after adding all the subset PGs.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Output</span> <span class="n">the</span> <span class="n">voxel</span><span class="p">,</span> <span class="n">after</span> <span class="n">adding</span> <span class="nb">all</span> <span class="n">the</span> <span class="n">subset</span> <span class="n">PGs</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -567,7 +586,7 @@ Output the voxel, after adding all the subset PGs.
 </div>
 <p><strong>Note:</strong></p>
 <pre class="literal-block">
-You must begin by calling \ :func:`geosoft.gxapi.GXVOX.init_generate_by_subset_pg`\  and add data using \ :func:`geosoft.gxapi.GXVOX.add_generate_by_subset_pg`\ .
+You must begin by calling <a class="reference internal" href="#geosoft.gxapi.GXVOX.init_generate_by_subset_pg" title="geosoft.gxapi.GXVOX.init_generate_by_subset_pg"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXVOX.init_generate_by_subset_pg()</span></code></a> and add data using <a class="reference internal" href="#geosoft.gxapi.GXVOX.add_generate_by_subset_pg" title="geosoft.gxapi.GXVOX.add_generate_by_subset_pg"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXVOX.add_generate_by_subset_pg()</span></code></a>.
 </pre>
 </dd></dl>
 
@@ -584,11 +603,11 @@ You must begin by calling \ :func:`geosoft.gxapi.GXVOX.init_generate_by_subset_p
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXDB</span></code></a>) &#8211; Database</li>
 <li><strong>arg2</strong> (<em>str</em>) &#8211; Channel Name</li>
-<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#vox-direction"><span class="std std-ref">VOX_DIRECTION constants</span></a></li>
-<li><strong>arg4</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Reverse X ? (0/1)</li>
-<li><strong>arg5</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Reverse Y ? (0/1)</li>
-<li><strong>arg6</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Reverse Z ? (0/1)</li>
-<li><strong>arg7</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Write Dummies? (0/1)</li>
+<li><strong>arg3</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#vox-direction"><span class="std std-ref">VOX_DIRECTION constants</span></a></li>
+<li><strong>arg4</strong> (<em>int</em>) &#8211; Reverse X ? (0/1)</li>
+<li><strong>arg5</strong> (<em>int</em>) &#8211; Reverse Y ? (0/1)</li>
+<li><strong>arg6</strong> (<em>int</em>) &#8211; Reverse Z ? (0/1)</li>
+<li><strong>arg7</strong> (<em>int</em>) &#8211; Write Dummies? (0/1)</li>
 </ul>
 </td>
 </tr>
@@ -604,24 +623,24 @@ You must begin by calling \ :func:`geosoft.gxapi.GXVOX.init_generate_by_subset_p
 <p><span class="versionmodified">New in version 6.3.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-The database lines contain a slice of the voxel at a time.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">database</span> <span class="n">lines</span> <span class="n">contain</span> <span class="n">a</span> <span class="nb">slice</span> <span class="n">of</span> <span class="n">the</span> <span class="n">voxel</span> <span class="n">at</span> <span class="n">a</span> <span class="n">time</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXVOX.export_img">
 <code class="descname">export_img</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(int)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXVOX.export_img" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Export all layers of this VOX into grid files.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Export</span> <span class="nb">all</span> <span class="n">layers</span> <span class="n">of</span> <span class="n">this</span> <span class="n">VOX</span> <span class="n">into</span> <span class="n">grid</span> <span class="n">files</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<em>str</em>) &#8211; Name of grids (each layers adds _Number to the name)</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#vox-dir"><span class="std std-ref">VOX_DIR constants</span></a></li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#vox-dir"><span class="std std-ref">VOX_DIR constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -641,9 +660,9 @@ Export all layers of this VOX into grid files.
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXVOX.export_ji_gs_xml">
 <em class="property">static </em><code class="descname">export_ji_gs_xml</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(str)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXVOX.export_ji_gs_xml" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Export a VOX to a compressed XML file. Verbose version.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Export</span> <span class="n">a</span> <span class="n">VOX</span> <span class="n">to</span> <span class="n">a</span> <span class="n">compressed</span> <span class="n">XML</span> <span class="n">file</span><span class="o">.</span> <span class="n">Verbose</span> <span class="n">version</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -670,9 +689,9 @@ Export a VOX to a compressed XML file. Verbose version.
 <dl class="method">
 <dt id="geosoft.gxapi.GXVOX.export_seg_y">
 <code class="descname">export_seg_y</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(float)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXVOX.export_seg_y" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Export a voxel to a depth SEG-Y file
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Export</span> <span class="n">a</span> <span class="n">voxel</span> <span class="n">to</span> <span class="n">a</span> <span class="n">depth</span> <span class="n">SEG</span><span class="o">-</span><span class="n">Y</span> <span class="n">file</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -699,21 +718,21 @@ Export a voxel to a depth SEG-Y file
 <dl class="method">
 <dt id="geosoft.gxapi.GXVOX.export_to_grids">
 <code class="descname">export_to_grids</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(int)arg2</em>, <em>(int)arg3</em>, <em>(int)arg4</em>, <em>(int)arg5</em>, <em>(float)arg6</em>, <em>(int)arg7</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXVOX.export_to_grids" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Export all layers of this VOX into grid files, with optional cell size.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Export</span> <span class="nb">all</span> <span class="n">layers</span> <span class="n">of</span> <span class="n">this</span> <span class="n">VOX</span> <span class="n">into</span> <span class="n">grid</span> <span class="n">files</span><span class="p">,</span> <span class="k">with</span> <span class="n">optional</span> <span class="n">cell</span> <span class="n">size</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<em>str</em>) &#8211; Name of grids (each layers adds _Number to the name)</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#vox-dir"><span class="std std-ref">VOX_DIR constants</span></a></li>
-<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Starting index</li>
-<li><strong>arg4</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Increment in index</li>
-<li><strong>arg5</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Total number of grids (-1 or iDUMMY for all)</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#vox-dir"><span class="std std-ref">VOX_DIR constants</span></a></li>
+<li><strong>arg3</strong> (<em>int</em>) &#8211; Starting index</li>
+<li><strong>arg4</strong> (<em>int</em>) &#8211; Increment in index</li>
+<li><strong>arg5</strong> (<em>int</em>) &#8211; Total number of grids (-1 or iDUMMY for all)</li>
 <li><strong>arg6</strong> (<em>float</em>) &#8211; Cell size (can be GS_R8DM)</li>
-<li><strong>arg7</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#vox-slice-mode"><span class="std std-ref">VOX_SLICE_MODE constants</span></a></li>
+<li><strong>arg7</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#vox-slice-mode"><span class="std std-ref">VOX_SLICE_MODE constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -729,11 +748,11 @@ Export all layers of this VOX into grid files, with optional cell size.
 <p><span class="versionmodified">New in version 7.3.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-If the cell size is not specified, then:
-1. If the cell sizes are uniform in a given direction, that size is used
-2. If the cell sizes are variable in a given direction, then the smallest size is used
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">If</span> <span class="n">the</span> <span class="n">cell</span> <span class="n">size</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">specified</span><span class="p">,</span> <span class="n">then</span><span class="p">:</span>
+<span class="mf">1.</span> <span class="n">If</span> <span class="n">the</span> <span class="n">cell</span> <span class="n">sizes</span> <span class="n">are</span> <span class="n">uniform</span> <span class="ow">in</span> <span class="n">a</span> <span class="n">given</span> <span class="n">direction</span><span class="p">,</span> <span class="n">that</span> <span class="n">size</span> <span class="ow">is</span> <span class="n">used</span>
+<span class="mf">2.</span> <span class="n">If</span> <span class="n">the</span> <span class="n">cell</span> <span class="n">sizes</span> <span class="n">are</span> <span class="n">variable</span> <span class="ow">in</span> <span class="n">a</span> <span class="n">given</span> <span class="n">direction</span><span class="p">,</span> <span class="n">then</span> <span class="n">the</span> <span class="n">smallest</span> <span class="n">size</span> <span class="ow">is</span> <span class="n">used</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="staticmethod">
@@ -778,11 +797,11 @@ If the cell size is not specified, then:
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<em>str</em>) &#8211; File Name</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#vox-direction"><span class="std std-ref">VOX_DIRECTION constants</span></a></li>
-<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Reverse X ? (0/1)</li>
-<li><strong>arg4</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Reverse Y ? (0/1)</li>
-<li><strong>arg5</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Reverse Z ? (0/1)</li>
-<li><strong>arg6</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Write Dummies? (0/1)</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#vox-direction"><span class="std std-ref">VOX_DIRECTION constants</span></a></li>
+<li><strong>arg3</strong> (<em>int</em>) &#8211; Reverse X ? (0/1)</li>
+<li><strong>arg4</strong> (<em>int</em>) &#8211; Reverse Y ? (0/1)</li>
+<li><strong>arg5</strong> (<em>int</em>) &#8211; Reverse Z ? (0/1)</li>
+<li><strong>arg6</strong> (<em>int</em>) &#8211; Write Dummies? (0/1)</li>
 </ul>
 </td>
 </tr>
@@ -802,18 +821,18 @@ If the cell size is not specified, then:
 <dl class="method">
 <dt id="geosoft.gxapi.GXVOX.filter">
 <code class="descname">filter</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(str)arg2</em>, <em>(int)arg3</em>, <em>(int)arg4</em>, <em>(str)arg5</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXVOX.filter" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Apply a 3D filter to a voxel.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Apply</span> <span class="n">a</span> <span class="mi">3</span><span class="n">D</span> <span class="nb">filter</span> <span class="n">to</span> <span class="n">a</span> <span class="n">voxel</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#vox-filter3d"><span class="std std-ref">VOX_FILTER3D constants</span></a></li>
+<li><strong>arg1</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#vox-filter3d"><span class="std std-ref">VOX_FILTER3D constants</span></a></li>
 <li><strong>arg2</strong> (<em>str</em>) &#8211; filter file, if filter is VOX_FILTER3D_FILE</li>
-<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; number of filter passes</li>
-<li><strong>arg4</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; (1: interpolate dummies)</li>
+<li><strong>arg3</strong> (<em>int</em>) &#8211; number of filter passes</li>
+<li><strong>arg4</strong> (<em>int</em>) &#8211; (1: interpolate dummies)</li>
 <li><strong>arg5</strong> (<em>str</em>) &#8211; Output voxel file name.</li>
 </ul>
 </td>
@@ -844,16 +863,16 @@ Apply a 3D filter to a voxel.
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<em>str</em>) &#8211; Name of output VOX</li>
 <li><strong>arg2</strong> (<em>float</em>) &#8211; Value to use</li>
-<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="GXGEOSOFT.html#gs-types"><span class="std std-ref">GS_TYPES constants</span></a></li>
+<li><strong>arg3</strong> (<em>int</em>) &#8211; <a class="reference internal" href="GXGEOSOFT.html#gs-types"><span class="std std-ref">GS_TYPES constants</span></a></li>
 <li><strong>arg4</strong> (<em>float</em>) &#8211; Origin X</li>
 <li><strong>arg5</strong> (<em>float</em>) &#8211; Origin Y</li>
 <li><strong>arg6</strong> (<em>float</em>) &#8211; Origin Z</li>
 <li><strong>arg7</strong> (<em>float</em>) &#8211; Cell Size X</li>
 <li><strong>arg8</strong> (<em>float</em>) &#8211; Cell Size Y</li>
 <li><strong>arg9</strong> (<em>float</em>) &#8211; Cell Size Z</li>
-<li><strong>arg10</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Cell Count X</li>
-<li><strong>arg11</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Cell Count Y</li>
-<li><strong>arg12</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Cell Count Z</li>
+<li><strong>arg10</strong> (<em>int</em>) &#8211; Cell Count X</li>
+<li><strong>arg11</strong> (<em>int</em>) &#8211; Cell Count Y</li>
+<li><strong>arg12</strong> (<em>int</em>) &#8211; Cell Count Z</li>
 <li><strong>arg13</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXIPJ</span></code></a>) &#8211; Projection</li>
 <li><strong>arg14</strong> (<a class="reference internal" href="GXMETA.html#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXMETA</span></code></a>) &#8211; META data</li>
 </ul>
@@ -875,9 +894,9 @@ Apply a 3D filter to a voxel.
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXVOX.generate_constant_value_vv">
 <em class="property">static </em><code class="descname">generate_constant_value_vv</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(float)arg2</em>, <em>(int)arg3</em>, <em>(float)arg4</em>, <em>(float)arg5</em>, <em>(float)arg6</em>, <em>(GXVV)arg7</em>, <em>(GXVV)arg8</em>, <em>(GXVV)arg9</em>, <em>(GXIPJ)arg10</em>, <em>(GXMETA)arg11</em><span class="sig-paren">)</span> &rarr; GXVOX:<a class="headerlink" href="#geosoft.gxapi.GXVOX.generate_constant_value_vv" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Generate a VOX with a constant value, cells sizes passed in VVs.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Generate</span> <span class="n">a</span> <span class="n">VOX</span> <span class="k">with</span> <span class="n">a</span> <span class="n">constant</span> <span class="n">value</span><span class="p">,</span> <span class="n">cells</span> <span class="n">sizes</span> <span class="n">passed</span> <span class="ow">in</span> <span class="n">VVs</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -885,7 +904,7 @@ Generate a VOX with a constant value, cells sizes passed in VVs.
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<em>str</em>) &#8211; Name of output VOX</li>
 <li><strong>arg2</strong> (<em>float</em>) &#8211; The Value to use</li>
-<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="GXGEOSOFT.html#gs-types"><span class="std std-ref">GS_TYPES constants</span></a></li>
+<li><strong>arg3</strong> (<em>int</em>) &#8211; <a class="reference internal" href="GXGEOSOFT.html#gs-types"><span class="std std-ref">GS_TYPES constants</span></a></li>
 <li><strong>arg4</strong> (<em>float</em>) &#8211; Origin X</li>
 <li><strong>arg5</strong> (<em>float</em>) &#8211; Origin Y</li>
 <li><strong>arg6</strong> (<em>float</em>) &#8211; Origin Z</li>
@@ -923,7 +942,7 @@ Generate a VOX with a constant value, cells sizes passed in VVs.
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<em>str</em>) &#8211; Voxel Name</li>
 <li><strong>arg2</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXDB</span></code></a>) &#8211; DB To import from</li>
-<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Symbol to import data from</li>
+<li><strong>arg3</strong> (<em>int</em>) &#8211; Symbol to import data from</li>
 </ul>
 </td>
 </tr>
@@ -986,7 +1005,7 @@ Generate a VOX with a constant value, cells sizes passed in VVs.
 <li><strong>arg2</strong> (<em>str</em>) &#8211; Name of GOCAD Voxel file</li>
 <li><strong>arg3</strong> (<em>str</em>) &#8211; Propert name to import</li>
 <li><strong>arg4</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXIPJ</span></code></a>) &#8211; IPJ</li>
-<li><strong>arg5</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#vox-gocad-orientation"><span class="std std-ref">VOX_GOCAD_ORIENTATION constants</span></a></li>
+<li><strong>arg5</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#vox-gocad-orientation"><span class="std std-ref">VOX_GOCAD_ORIENTATION constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -1002,9 +1021,9 @@ Generate a VOX with a constant value, cells sizes passed in VVs.
 <p><span class="versionmodified">New in version 6.3.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-Allows the Orientation flag to be specified.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Allows</span> <span class="n">the</span> <span class="n">Orientation</span> <span class="n">flag</span> <span class="n">to</span> <span class="n">be</span> <span class="n">specified</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="staticmethod">
@@ -1047,9 +1066,9 @@ Allows the Orientation flag to be specified.
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXVOX.generate_pgvv">
 <em class="property">static </em><code class="descname">generate_pgvv</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(GXPG)arg2</em>, <em>(float)arg3</em>, <em>(float)arg4</em>, <em>(float)arg5</em>, <em>(GXVV)arg6</em>, <em>(GXVV)arg7</em>, <em>(GXVV)arg8</em>, <em>(GXIPJ)arg9</em>, <em>(GXMETA)arg10</em><span class="sig-paren">)</span> &rarr; GXVOX:<a class="headerlink" href="#geosoft.gxapi.GXVOX.generate_pgvv" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Generate a VOX from a 3D Pager, cells sizes passed in VVs.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Generate</span> <span class="n">a</span> <span class="n">VOX</span> <span class="kn">from</span> <span class="nn">a</span> <span class="mi">3</span><span class="n">D</span> <span class="n">Pager</span><span class="p">,</span> <span class="n">cells</span> <span class="n">sizes</span> <span class="n">passed</span> <span class="ow">in</span> <span class="n">VVs</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1080,9 +1099,9 @@ Generate a VOX from a 3D Pager, cells sizes passed in VVs.
 <p><span class="versionmodified">New in version 8.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-The input cell size VVs' lengths must match the input PG dimensions.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="nb">input</span> <span class="n">cell</span> <span class="n">size</span> <span class="n">VVs</span><span class="s1">&#39; lengths must match the input PG dimensions.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="staticmethod">
@@ -1130,10 +1149,10 @@ The input cell size VVs' lengths must match the input PG dimensions.
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<em>str</em>) &#8211; Voxel Name</li>
 <li><strong>arg2</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXDB</span></code></a>) &#8211; DB To import from</li>
-<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#vox-vectorvox-import"><span class="std std-ref">VOX_VECTORVOX_IMPORT constants</span></a>Import XYZ, UVW or Amplitude/Inclination/Declination channels</li>
-<li><strong>arg4</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Symbol to import X, U or Amplitude data from</li>
-<li><strong>arg5</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Symbol to import Y, V or Inclination data from</li>
-<li><strong>arg6</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Symbol to import Z, W or Declination data from</li>
+<li><strong>arg3</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#vox-vectorvox-import"><span class="std std-ref">VOX_VECTORVOX_IMPORT constants</span></a>Import XYZ, UVW or Amplitude/Inclination/Declination channels</li>
+<li><strong>arg4</strong> (<em>int</em>) &#8211; Symbol to import X, U or Amplitude data from</li>
+<li><strong>arg5</strong> (<em>int</em>) &#8211; Symbol to import Y, V or Inclination data from</li>
+<li><strong>arg6</strong> (<em>int</em>) &#8211; Symbol to import Z, W or Declination data from</li>
 <li><strong>arg7</strong> (<em>float</em>) &#8211; Inclination value for VOX_VECTORVOX_UVW (-90° to 90°)</li>
 <li><strong>arg8</strong> (<em>float</em>) &#8211; Declination value for VOX_VECTORVOX_UVW (-180° to 180°)</li>
 </ul>
@@ -1165,7 +1184,7 @@ The input cell size VVs' lengths must match the input PG dimensions.
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<em>str</em>) &#8211; Voxel Name</li>
 <li><strong>arg2</strong> (<a class="reference internal" href="GXRA.html#geosoft.gxapi.GXRA" title="geosoft.gxapi.GXRA"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXRA</span></code></a>) &#8211; RA To import from</li>
-<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Data Type <a class="reference internal" href="GXGEOSOFT.html#gs-types"><span class="std std-ref">GS_TYPES constants</span></a></li>
+<li><strong>arg3</strong> (<em>int</em>) &#8211; Data Type <a class="reference internal" href="GXGEOSOFT.html#gs-types"><span class="std std-ref">GS_TYPES constants</span></a></li>
 <li><strong>arg4</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXIPJ</span></code></a>) &#8211; Projection</li>
 </ul>
 </td>
@@ -1186,9 +1205,9 @@ The input cell size VVs' lengths must match the input PG dimensions.
 <dl class="method">
 <dt id="geosoft.gxapi.GXVOX.get_area">
 <code class="descname">get_area</code><span class="sig-paren">(</span><em>(float_ref)arg1</em>, <em>(float_ref)arg2</em>, <em>(float_ref)arg3</em>, <em>(float_ref)arg4</em>, <em>(float_ref)arg5</em>, <em>(float_ref)arg6</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXVOX.get_area" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Get the area of the voxel.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">the</span> <span class="n">area</span> <span class="n">of</span> <span class="n">the</span> <span class="n">voxel</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1291,9 +1310,9 @@ Get the area of the voxel.
 <dl class="method">
 <dt id="geosoft.gxapi.GXVOX.get_gocad_location">
 <code class="descname">get_gocad_location</code><span class="sig-paren">(</span><em>(float_ref)arg1</em>, <em>(float_ref)arg2</em>, <em>(float_ref)arg3</em>, <em>(float_ref)arg4</em>, <em>(float_ref)arg5</em>, <em>(float_ref)arg6</em>, <em>(float_ref)arg7</em>, <em>(float_ref)arg8</em>, <em>(float_ref)arg9</em>, <em>(float_ref)arg10</em>, <em>(float_ref)arg11</em>, <em>(float_ref)arg12</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXVOX.get_gocad_location" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Get the location of a voxel with origin and scaled xyz vectors for use with GOCAD.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">the</span> <span class="n">location</span> <span class="n">of</span> <span class="n">a</span> <span class="n">voxel</span> <span class="k">with</span> <span class="n">origin</span> <span class="ow">and</span> <span class="n">scaled</span> <span class="n">xyz</span> <span class="n">vectors</span> <span class="k">for</span> <span class="n">use</span> <span class="k">with</span> <span class="n">GOCAD</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1326,18 +1345,18 @@ Get the location of a voxel with origin and scaled xyz vectors for use with GOCA
 <p><span class="versionmodified">New in version 7.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-This is used for GOCAD voxel calculations, and begins with the
-origin at (0,0,0), not the actual location of the corner point.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="ow">is</span> <span class="n">used</span> <span class="k">for</span> <span class="n">GOCAD</span> <span class="n">voxel</span> <span class="n">calculations</span><span class="p">,</span> <span class="ow">and</span> <span class="n">begins</span> <span class="k">with</span> <span class="n">the</span>
+<span class="n">origin</span> <span class="n">at</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="ow">not</span> <span class="n">the</span> <span class="n">actual</span> <span class="n">location</span> <span class="n">of</span> <span class="n">the</span> <span class="n">corner</span> <span class="n">point</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXVOX.get_grid_section_cell_sizes">
 <code class="descname">get_grid_section_cell_sizes</code><span class="sig-paren">(</span><em>(float)arg1</em>, <em>(float_ref)arg2</em>, <em>(float_ref)arg3</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXVOX.get_grid_section_cell_sizes" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Get default cell sizes in X and Y for a section grid.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">default</span> <span class="n">cell</span> <span class="n">sizes</span> <span class="ow">in</span> <span class="n">X</span> <span class="ow">and</span> <span class="n">Y</span> <span class="k">for</span> <span class="n">a</span> <span class="n">section</span> <span class="n">grid</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1361,32 +1380,32 @@ Get default cell sizes in X and Y for a section grid.
 <p><span class="versionmodified">New in version 6.4.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-This function determines default cell sizes for a vertical grid
-slicing a voxel. It tries to match the &quot;X&quot; and &quot;Y&quot; sizes (in the grid
-coordinates) with the projection of the voxel's cells onto the grid
-plane. It uses a few simple rules:
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="n">function</span> <span class="n">determines</span> <span class="n">default</span> <span class="n">cell</span> <span class="n">sizes</span> <span class="k">for</span> <span class="n">a</span> <span class="n">vertical</span> <span class="n">grid</span>
+<span class="n">slicing</span> <span class="n">a</span> <span class="n">voxel</span><span class="o">.</span> <span class="n">It</span> <span class="n">tries</span> <span class="n">to</span> <span class="n">match</span> <span class="n">the</span> <span class="s2">&quot;X&quot;</span> <span class="ow">and</span> <span class="s2">&quot;Y&quot;</span> <span class="n">sizes</span> <span class="p">(</span><span class="ow">in</span> <span class="n">the</span> <span class="n">grid</span>
+<span class="n">coordinates</span><span class="p">)</span> <span class="k">with</span> <span class="n">the</span> <span class="n">projection</span> <span class="n">of</span> <span class="n">the</span> <span class="n">voxel</span><span class="s1">&#39;s cells onto the grid</span>
+<span class="n">plane</span><span class="o">.</span> <span class="n">It</span> <span class="n">uses</span> <span class="n">a</span> <span class="n">few</span> <span class="n">simple</span> <span class="n">rules</span><span class="p">:</span>
 
-If the voxel is rotated about a horizontal axis (i.e. if its own &quot;Z&quot; axis
-is not vertical, then both cell sizes are set to the smallest voxel dimension
-(a single volume pixel) in X, Y and Z.
+<span class="n">If</span> <span class="n">the</span> <span class="n">voxel</span> <span class="ow">is</span> <span class="n">rotated</span> <span class="n">about</span> <span class="n">a</span> <span class="n">horizontal</span> <span class="n">axis</span> <span class="p">(</span><span class="n">i</span><span class="o">.</span><span class="n">e</span><span class="o">.</span> <span class="k">if</span> <span class="n">its</span> <span class="n">own</span> <span class="s2">&quot;Z&quot;</span> <span class="n">axis</span>
+<span class="ow">is</span> <span class="ow">not</span> <span class="n">vertical</span><span class="p">,</span> <span class="n">then</span> <span class="n">both</span> <span class="n">cell</span> <span class="n">sizes</span> <span class="n">are</span> <span class="nb">set</span> <span class="n">to</span> <span class="n">the</span> <span class="n">smallest</span> <span class="n">voxel</span> <span class="n">dimension</span>
+<span class="p">(</span><span class="n">a</span> <span class="n">single</span> <span class="n">volume</span> <span class="n">pixel</span><span class="p">)</span> <span class="ow">in</span> <span class="n">X</span><span class="p">,</span> <span class="n">Y</span> <span class="ow">and</span> <span class="n">Z</span><span class="o">.</span>
 
-If the voxel is &quot;horizontal&quot;, then the angle between the
-section azimuth and the voxel's own X and Y axes is used to
-calculate a value which varies between the minimum X size and the
-minimum Y size, and this is used for the grid's &quot;X&quot; cell size.
-(in other words, if the section is parallel to the voxel &quot;X&quot; axis,
-then the returned &quot;X&quot; cells size is equal to the voxel's minimum &quot;Y&quot; cell size.
-The grid's &quot;Y&quot; cell size is set to the voxel's minimum &quot;Z&quot; cell size.
-</pre>
+<span class="n">If</span> <span class="n">the</span> <span class="n">voxel</span> <span class="ow">is</span> <span class="s2">&quot;horizontal&quot;</span><span class="p">,</span> <span class="n">then</span> <span class="n">the</span> <span class="n">angle</span> <span class="n">between</span> <span class="n">the</span>
+<span class="n">section</span> <span class="n">azimuth</span> <span class="ow">and</span> <span class="n">the</span> <span class="n">voxel</span><span class="s1">&#39;s own X and Y axes is used to</span>
+<span class="n">calculate</span> <span class="n">a</span> <span class="n">value</span> <span class="n">which</span> <span class="n">varies</span> <span class="n">between</span> <span class="n">the</span> <span class="n">minimum</span> <span class="n">X</span> <span class="n">size</span> <span class="ow">and</span> <span class="n">the</span>
+<span class="n">minimum</span> <span class="n">Y</span> <span class="n">size</span><span class="p">,</span> <span class="ow">and</span> <span class="n">this</span> <span class="ow">is</span> <span class="n">used</span> <span class="k">for</span> <span class="n">the</span> <span class="n">grid</span><span class="s1">&#39;s &quot;X&quot; cell size.</span>
+<span class="p">(</span><span class="ow">in</span> <span class="n">other</span> <span class="n">words</span><span class="p">,</span> <span class="k">if</span> <span class="n">the</span> <span class="n">section</span> <span class="ow">is</span> <span class="n">parallel</span> <span class="n">to</span> <span class="n">the</span> <span class="n">voxel</span> <span class="s2">&quot;X&quot;</span> <span class="n">axis</span><span class="p">,</span>
+<span class="n">then</span> <span class="n">the</span> <span class="n">returned</span> <span class="s2">&quot;X&quot;</span> <span class="n">cells</span> <span class="n">size</span> <span class="ow">is</span> <span class="n">equal</span> <span class="n">to</span> <span class="n">the</span> <span class="n">voxel</span><span class="s1">&#39;s minimum &quot;Y&quot; cell size.</span>
+<span class="n">The</span> <span class="n">grid</span><span class="s1">&#39;s &quot;Y&quot; cell size is set to the voxel&#39;</span><span class="n">s</span> <span class="n">minimum</span> <span class="s2">&quot;Z&quot;</span> <span class="n">cell</span> <span class="n">size</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXVOX.get_info">
 <code class="descname">get_info</code><span class="sig-paren">(</span><em>(int_ref)arg1</em>, <em>(int_ref)arg2</em>, <em>(int_ref)arg3</em>, <em>(int_ref)arg4</em>, <em>(int_ref)arg5</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXVOX.get_info" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Get information about a voxel.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">information</span> <span class="n">about</span> <span class="n">a</span> <span class="n">voxel</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1416,9 +1435,9 @@ Get information about a voxel.
 <dl class="method">
 <dt id="geosoft.gxapi.GXVOX.get_ipj">
 <code class="descname">get_ipj</code><span class="sig-paren">(</span><em>(GXIPJ)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXVOX.get_ipj" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Get the projection of the voxel.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">the</span> <span class="n">projection</span> <span class="n">of</span> <span class="n">the</span> <span class="n">voxel</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1439,9 +1458,9 @@ Get the projection of the voxel.
 <dl class="method">
 <dt id="geosoft.gxapi.GXVOX.get_limits">
 <code class="descname">get_limits</code><span class="sig-paren">(</span><em>(int_ref)arg1</em>, <em>(int_ref)arg2</em>, <em>(int_ref)arg3</em>, <em>(int_ref)arg4</em>, <em>(int_ref)arg5</em>, <em>(int_ref)arg6</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXVOX.get_limits" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Get the range of indices with non-dummy data.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">the</span> <span class="nb">range</span> <span class="n">of</span> <span class="n">indices</span> <span class="k">with</span> <span class="n">non</span><span class="o">-</span><span class="n">dummy</span> <span class="n">data</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1468,18 +1487,18 @@ Get the range of indices with non-dummy data.
 <p><span class="versionmodified">New in version 6.4.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-Find the non-dummy volume of a VOX object. If the voxel is all dummies,
-returns iMAX for the minima, and iMIN for the maxima.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Find</span> <span class="n">the</span> <span class="n">non</span><span class="o">-</span><span class="n">dummy</span> <span class="n">volume</span> <span class="n">of</span> <span class="n">a</span> <span class="n">VOX</span> <span class="nb">object</span><span class="o">.</span> <span class="n">If</span> <span class="n">the</span> <span class="n">voxel</span> <span class="ow">is</span> <span class="nb">all</span> <span class="n">dummies</span><span class="p">,</span>
+<span class="n">returns</span> <span class="n">iMAX</span> <span class="k">for</span> <span class="n">the</span> <span class="n">minima</span><span class="p">,</span> <span class="ow">and</span> <span class="n">iMIN</span> <span class="k">for</span> <span class="n">the</span> <span class="n">maxima</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXVOX.get_limits_xyz">
 <code class="descname">get_limits_xyz</code><span class="sig-paren">(</span><em>(float_ref)arg1</em>, <em>(float_ref)arg2</em>, <em>(float_ref)arg3</em>, <em>(float_ref)arg4</em>, <em>(float_ref)arg5</em>, <em>(float_ref)arg6</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXVOX.get_limits_xyz" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Get the range in true XYZ of non-dummy data.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">the</span> <span class="nb">range</span> <span class="ow">in</span> <span class="n">true</span> <span class="n">XYZ</span> <span class="n">of</span> <span class="n">non</span><span class="o">-</span><span class="n">dummy</span> <span class="n">data</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1506,14 +1525,14 @@ Get the range in true XYZ of non-dummy data.
 <p><span class="versionmodified">New in version 6.4.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-Find the non-dummy volume of a VOX in true (X, Y, Z). This method
-works for voxels which are rotated or oriented in 3D, and returns
-the true min and max X, Y and Z limits in the data.
-The bounds are the bounds for the voxel
-center points. If the voxel is all dummies,
-returns rMAX for the minima, and rMIN for the maxima.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Find</span> <span class="n">the</span> <span class="n">non</span><span class="o">-</span><span class="n">dummy</span> <span class="n">volume</span> <span class="n">of</span> <span class="n">a</span> <span class="n">VOX</span> <span class="ow">in</span> <span class="n">true</span> <span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">Z</span><span class="p">)</span><span class="o">.</span> <span class="n">This</span> <span class="n">method</span>
+<span class="n">works</span> <span class="k">for</span> <span class="n">voxels</span> <span class="n">which</span> <span class="n">are</span> <span class="n">rotated</span> <span class="ow">or</span> <span class="n">oriented</span> <span class="ow">in</span> <span class="mi">3</span><span class="n">D</span><span class="p">,</span> <span class="ow">and</span> <span class="n">returns</span>
+<span class="n">the</span> <span class="n">true</span> <span class="nb">min</span> <span class="ow">and</span> <span class="nb">max</span> <span class="n">X</span><span class="p">,</span> <span class="n">Y</span> <span class="ow">and</span> <span class="n">Z</span> <span class="n">limits</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">data</span><span class="o">.</span>
+<span class="n">The</span> <span class="n">bounds</span> <span class="n">are</span> <span class="n">the</span> <span class="n">bounds</span> <span class="k">for</span> <span class="n">the</span> <span class="n">voxel</span>
+<span class="n">center</span> <span class="n">points</span><span class="o">.</span> <span class="n">If</span> <span class="n">the</span> <span class="n">voxel</span> <span class="ow">is</span> <span class="nb">all</span> <span class="n">dummies</span><span class="p">,</span>
+<span class="n">returns</span> <span class="n">rMAX</span> <span class="k">for</span> <span class="n">the</span> <span class="n">minima</span><span class="p">,</span> <span class="ow">and</span> <span class="n">rMIN</span> <span class="k">for</span> <span class="n">the</span> <span class="n">maxima</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
@@ -1552,9 +1571,9 @@ returns rMAX for the minima, and rMIN for the maxima.
 <dl class="method">
 <dt id="geosoft.gxapi.GXVOX.get_location_points">
 <code class="descname">get_location_points</code><span class="sig-paren">(</span><em>(GXVV)arg1</em>, <em>(GXVV)arg2</em>, <em>(GXVV)arg3</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXVOX.get_location_points" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Get the computed location points.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">the</span> <span class="n">computed</span> <span class="n">location</span> <span class="n">points</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1582,9 +1601,9 @@ Get the computed location points.
 <dl class="method">
 <dt id="geosoft.gxapi.GXVOX.get_meta">
 <code class="descname">get_meta</code><span class="sig-paren">(</span><em>(GXMETA)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXVOX.get_meta" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Get the metadata of a voxel.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">the</span> <span class="n">metadata</span> <span class="n">of</span> <span class="n">a</span> <span class="n">voxel</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1638,9 +1657,9 @@ Get the metadata of a voxel.
 <dl class="method">
 <dt id="geosoft.gxapi.GXVOX.get_stats">
 <code class="descname">get_stats</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; GXST:<a class="headerlink" href="#geosoft.gxapi.GXVOX.get_stats" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Get precomputed statistics on this object.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">precomputed</span> <span class="n">statistics</span> <span class="n">on</span> <span class="n">this</span> <span class="nb">object</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1659,9 +1678,9 @@ Get precomputed statistics on this object.
 <dl class="method">
 <dt id="geosoft.gxapi.GXVOX.get_tpat">
 <code class="descname">get_tpat</code><span class="sig-paren">(</span><em>(GXTPAT)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXVOX.get_tpat" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Get a copy of a thematic voxel's TPAT object.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">a</span> <span class="n">copy</span> <span class="n">of</span> <span class="n">a</span> <span class="n">thematic</span> <span class="n">voxel</span><span class="s1">&#39;s TPAT object.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1678,22 +1697,22 @@ Get a copy of a thematic voxel's TPAT object.
 <p><span class="versionmodified">New in version 7.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-Each row in the TPAT object corresponds to a stored index
-value in the thematic voxel. The TPAT should NOT be modified
-by the addition or deletion of items, if it is to be
-restored into the VOX object, but the CODE, LABEL, DESCRIPTION
-or COLOR info can be changed.
-The TPAT object is stored inside the VOX META object.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Each</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">TPAT</span> <span class="nb">object</span> <span class="n">corresponds</span> <span class="n">to</span> <span class="n">a</span> <span class="n">stored</span> <span class="n">index</span>
+<span class="n">value</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">thematic</span> <span class="n">voxel</span><span class="o">.</span> <span class="n">The</span> <span class="n">TPAT</span> <span class="n">should</span> <span class="n">NOT</span> <span class="n">be</span> <span class="n">modified</span>
+<span class="n">by</span> <span class="n">the</span> <span class="n">addition</span> <span class="ow">or</span> <span class="n">deletion</span> <span class="n">of</span> <span class="n">items</span><span class="p">,</span> <span class="k">if</span> <span class="n">it</span> <span class="ow">is</span> <span class="n">to</span> <span class="n">be</span>
+<span class="n">restored</span> <span class="n">into</span> <span class="n">the</span> <span class="n">VOX</span> <span class="nb">object</span><span class="p">,</span> <span class="n">but</span> <span class="n">the</span> <span class="n">CODE</span><span class="p">,</span> <span class="n">LABEL</span><span class="p">,</span> <span class="n">DESCRIPTION</span>
+<span class="ow">or</span> <span class="n">COLOR</span> <span class="n">info</span> <span class="n">can</span> <span class="n">be</span> <span class="n">changed</span><span class="o">.</span>
+<span class="n">The</span> <span class="n">TPAT</span> <span class="nb">object</span> <span class="ow">is</span> <span class="n">stored</span> <span class="n">inside</span> <span class="n">the</span> <span class="n">VOX</span> <span class="n">META</span> <span class="nb">object</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXVOX.grid_points">
 <em class="property">static </em><code class="descname">grid_points</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(str)arg2</em>, <em>(float)arg3</em>, <em>(int)arg4</em>, <em>(float)arg5</em>, <em>(float)arg6</em>, <em>(int)arg7</em>, <em>(int)arg8</em>, <em>(int)arg9</em>, <em>(float)arg10</em>, <em>(float)arg11</em>, <em>(float)arg12</em>, <em>(float)arg13</em>, <em>(float)arg14</em>, <em>(int)arg15</em>, <em>(GXVV)arg16</em>, <em>(GXVV)arg17</em>, <em>(GXVV)arg18</em>, <em>(GXVV)arg19</em>, <em>(GXIPJ)arg20</em><span class="sig-paren">)</span> &rarr; GXVOX:<a class="headerlink" href="#geosoft.gxapi.GXVOX.grid_points" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Grid a VOX from point VV's.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Grid</span> <span class="n">a</span> <span class="n">VOX</span> <span class="kn">from</span> <span class="nn">point</span> <span class="n">VV</span><span class="s1">&#39;s.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1702,18 +1721,18 @@ Grid a VOX from point VV's.
 <li><strong>arg1</strong> (<em>str</em>) &#8211; Name of output VOX</li>
 <li><strong>arg2</strong> (<em>str</em>) &#8211; Name of error VOX (&#8220;&#8221; for none)</li>
 <li><strong>arg3</strong> (<em>float</em>) &#8211; Cell size (DUMMY for default)</li>
-<li><strong>arg4</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Variogram Only</li>
+<li><strong>arg4</strong> (<em>int</em>) &#8211; Variogram Only</li>
 <li><strong>arg5</strong> (<em>float</em>) &#8211; Minimum Search Radius (DUMMY for none)</li>
 <li><strong>arg6</strong> (<em>float</em>) &#8211; Maximum Search Radius (DUMMY for none)</li>
-<li><strong>arg7</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Minimum Search Points</li>
-<li><strong>arg8</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Maximum Search Points</li>
-<li><strong>arg9</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Model number 1-power, 2-sperical, 3-gaussian, 4-exponential</li>
+<li><strong>arg7</strong> (<em>int</em>) &#8211; Minimum Search Points</li>
+<li><strong>arg8</strong> (<em>int</em>) &#8211; Maximum Search Points</li>
+<li><strong>arg9</strong> (<em>int</em>) &#8211; Model number 1-power, 2-sperical, 3-gaussian, 4-exponential</li>
 <li><strong>arg10</strong> (<em>float</em>) &#8211; Power</li>
 <li><strong>arg11</strong> (<em>float</em>) &#8211; Slope</li>
 <li><strong>arg12</strong> (<em>float</em>) &#8211; Range</li>
 <li><strong>arg13</strong> (<em>float</em>) &#8211; Nugget</li>
 <li><strong>arg14</strong> (<em>float</em>) &#8211; Sill</li>
-<li><strong>arg15</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="GXGEOSOFT.html#gs-types"><span class="std std-ref">GS_TYPES constants</span></a></li>
+<li><strong>arg15</strong> (<em>int</em>) &#8211; <a class="reference internal" href="GXGEOSOFT.html#gs-types"><span class="std std-ref">GS_TYPES constants</span></a></li>
 <li><strong>arg16</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; X VV</li>
 <li><strong>arg17</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Y VV</li>
 <li><strong>arg18</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Z VV</li>
@@ -1738,9 +1757,9 @@ Grid a VOX from point VV's.
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXVOX.grid_points_z">
 <em class="property">static </em><code class="descname">grid_points_z</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(str)arg2</em>, <em>(float)arg3</em>, <em>(str)arg4</em>, <em>(int)arg5</em>, <em>(float)arg6</em>, <em>(float)arg7</em>, <em>(int)arg8</em>, <em>(int)arg9</em>, <em>(int)arg10</em>, <em>(float)arg11</em>, <em>(float)arg12</em>, <em>(float)arg13</em>, <em>(float)arg14</em>, <em>(float)arg15</em>, <em>(int)arg16</em>, <em>(GXVV)arg17</em>, <em>(GXVV)arg18</em>, <em>(GXVV)arg19</em>, <em>(GXVV)arg20</em>, <em>(GXIPJ)arg21</em><span class="sig-paren">)</span> &rarr; GXVOX:<a class="headerlink" href="#geosoft.gxapi.GXVOX.grid_points_z" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Grid a VOX from point VV's (using variable Z's)
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Grid</span> <span class="n">a</span> <span class="n">VOX</span> <span class="kn">from</span> <span class="nn">point</span> <span class="n">VV</span><span class="s1">&#39;s (using variable Z&#39;</span><span class="n">s</span><span class="p">)</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1750,18 +1769,18 @@ Grid a VOX from point VV's (using variable Z's)
 <li><strong>arg2</strong> (<em>str</em>) &#8211; Name of error VOX (&#8220;&#8221; for none)</li>
 <li><strong>arg3</strong> (<em>float</em>) &#8211; Cell size (DUMMY for default)</li>
 <li><strong>arg4</strong> (<em>str</em>) &#8211; Cell size in Z (&#8220;&#8221; for default)</li>
-<li><strong>arg5</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Variogram Only</li>
+<li><strong>arg5</strong> (<em>int</em>) &#8211; Variogram Only</li>
 <li><strong>arg6</strong> (<em>float</em>) &#8211; Minimum Search Radius (DUMMY for none)</li>
 <li><strong>arg7</strong> (<em>float</em>) &#8211; Maximum Search Radius (DUMMY for none)</li>
-<li><strong>arg8</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Minimum Search Points</li>
-<li><strong>arg9</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Maximum Search Points</li>
-<li><strong>arg10</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Model number 1-power, 2-sperical, 3-gaussian, 4-exponential</li>
+<li><strong>arg8</strong> (<em>int</em>) &#8211; Minimum Search Points</li>
+<li><strong>arg9</strong> (<em>int</em>) &#8211; Maximum Search Points</li>
+<li><strong>arg10</strong> (<em>int</em>) &#8211; Model number 1-power, 2-sperical, 3-gaussian, 4-exponential</li>
 <li><strong>arg11</strong> (<em>float</em>) &#8211; Power</li>
 <li><strong>arg12</strong> (<em>float</em>) &#8211; Slope</li>
 <li><strong>arg13</strong> (<em>float</em>) &#8211; Range</li>
 <li><strong>arg14</strong> (<em>float</em>) &#8211; Nugget</li>
 <li><strong>arg15</strong> (<em>float</em>) &#8211; Sill</li>
-<li><strong>arg16</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="GXGEOSOFT.html#gs-types"><span class="std std-ref">GS_TYPES constants</span></a></li>
+<li><strong>arg16</strong> (<em>int</em>) &#8211; <a class="reference internal" href="GXGEOSOFT.html#gs-types"><span class="std std-ref">GS_TYPES constants</span></a></li>
 <li><strong>arg17</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; X VV</li>
 <li><strong>arg18</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Y VV</li>
 <li><strong>arg19</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Z VV</li>
@@ -1786,9 +1805,9 @@ Grid a VOX from point VV's (using variable Z's)
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXVOX.grid_points_z_ex">
 <em class="property">static </em><code class="descname">grid_points_z_ex</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(str)arg2</em>, <em>(float)arg3</em>, <em>(str)arg4</em>, <em>(int)arg5</em>, <em>(float)arg6</em>, <em>(float)arg7</em>, <em>(int)arg8</em>, <em>(int)arg9</em>, <em>(int)arg10</em>, <em>(float)arg11</em>, <em>(float_ref)arg12</em>, <em>(float_ref)arg13</em>, <em>(float)arg14</em>, <em>(float_ref)arg15</em>, <em>(float)arg16</em>, <em>(float)arg17</em>, <em>(float)arg18</em>, <em>(float)arg19</em>, <em>(float)arg20</em>, <em>(int)arg21</em>, <em>(GXVV)arg22</em>, <em>(GXVV)arg23</em>, <em>(GXVV)arg24</em>, <em>(GXVV)arg25</em>, <em>(GXIPJ)arg26</em><span class="sig-paren">)</span> &rarr; GXVOX:<a class="headerlink" href="#geosoft.gxapi.GXVOX.grid_points_z_ex" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Grid a VOX from point VV's (using variable Z's)
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Grid</span> <span class="n">a</span> <span class="n">VOX</span> <span class="kn">from</span> <span class="nn">point</span> <span class="n">VV</span><span class="s1">&#39;s (using variable Z&#39;</span><span class="n">s</span><span class="p">)</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1798,12 +1817,12 @@ Grid a VOX from point VV's (using variable Z's)
 <li><strong>arg2</strong> (<em>str</em>) &#8211; Name of error VOX (&#8220;&#8221; for none)</li>
 <li><strong>arg3</strong> (<em>float</em>) &#8211; Cell size (DUMMY for default)</li>
 <li><strong>arg4</strong> (<em>str</em>) &#8211; Cell size in Z (&#8220;&#8221; for default)</li>
-<li><strong>arg5</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Variogram Only</li>
+<li><strong>arg5</strong> (<em>int</em>) &#8211; Variogram Only</li>
 <li><strong>arg6</strong> (<em>float</em>) &#8211; Minimum Search Radius (DUMMY for none)</li>
 <li><strong>arg7</strong> (<em>float</em>) &#8211; Maximum Search Radius (DUMMY for none)</li>
-<li><strong>arg8</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Minimum Search Points</li>
-<li><strong>arg9</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Maximum Search Points</li>
-<li><strong>arg10</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Model number 1-power, 2-sperical, 3-gaussian, 4-exponential</li>
+<li><strong>arg8</strong> (<em>int</em>) &#8211; Minimum Search Points</li>
+<li><strong>arg9</strong> (<em>int</em>) &#8211; Maximum Search Points</li>
+<li><strong>arg10</strong> (<em>int</em>) &#8211; Model number 1-power, 2-sperical, 3-gaussian, 4-exponential</li>
 <li><strong>arg11</strong> (<em>float</em>) &#8211; Power</li>
 <li><strong>arg12</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Slope</li>
 <li><strong>arg13</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Range</li>
@@ -1814,7 +1833,7 @@ Grid a VOX from point VV's (using variable Z's)
 <li><strong>arg18</strong> (<em>float</em>) &#8211; Plunge</li>
 <li><strong>arg19</strong> (<em>float</em>) &#8211; Strike Weight</li>
 <li><strong>arg20</strong> (<em>float</em>) &#8211; Dip Plane Weight</li>
-<li><strong>arg21</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="GXGEOSOFT.html#gs-types"><span class="std std-ref">GS_TYPES constants</span></a></li>
+<li><strong>arg21</strong> (<em>int</em>) &#8211; <a class="reference internal" href="GXGEOSOFT.html#gs-types"><span class="std std-ref">GS_TYPES constants</span></a></li>
 <li><strong>arg22</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; X VV</li>
 <li><strong>arg23</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Y VV</li>
 <li><strong>arg24</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Z VV</li>
@@ -1847,10 +1866,10 @@ Grid a VOX from point VV's (using variable Z's)
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="GXGEOSOFT.html#gs-types"><span class="std std-ref">GS_TYPES constants</span></a></li>
-<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Points in X</li>
-<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Points in Y</li>
-<li><strong>arg4</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Points in Z</li>
+<li><strong>arg1</strong> (<em>int</em>) &#8211; <a class="reference internal" href="GXGEOSOFT.html#gs-types"><span class="std std-ref">GS_TYPES constants</span></a></li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; Points in X</li>
+<li><strong>arg3</strong> (<em>int</em>) &#8211; Points in Y</li>
+<li><strong>arg4</strong> (<em>int</em>) &#8211; Points in Z</li>
 </ul>
 </td>
 </tr>
@@ -1867,8 +1886,8 @@ Grid a VOX from point VV's (using variable Z's)
 </div>
 <p><strong>Note:</strong></p>
 <pre class="literal-block">
-Call \ :func:`geosoft.gxapi.GXVOX.init_generate_by_subset_pg`\  first, then add a series of subset PGs using \ :func:`geosoft.gxapi.GXVOX.add_generate_by_subset_pg`\ , and finally
-serialize using \ :func:`geosoft.gxapi.GXVOX.end_generate_by_subset_pg`\ 
+Call <a class="reference internal" href="#geosoft.gxapi.GXVOX.init_generate_by_subset_pg" title="geosoft.gxapi.GXVOX.init_generate_by_subset_pg"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXVOX.init_generate_by_subset_pg()</span></code></a> first, then add a series of subset PGs using <a class="reference internal" href="#geosoft.gxapi.GXVOX.add_generate_by_subset_pg" title="geosoft.gxapi.GXVOX.add_generate_by_subset_pg"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXVOX.add_generate_by_subset_pg()</span></code></a>, and finally
+serialize using <a class="reference internal" href="#geosoft.gxapi.GXVOX.end_generate_by_subset_pg" title="geosoft.gxapi.GXVOX.end_generate_by_subset_pg"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXVOX.end_generate_by_subset_pg()</span></code></a>
 </pre>
 </dd></dl>
 
@@ -1914,16 +1933,16 @@ serialize using \ :func:`geosoft.gxapi.GXVOX.end_generate_by_subset_pg`\
 <dl class="method">
 <dt id="geosoft.gxapi.GXVOX.is_thematic">
 <code class="descname">is_thematic</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXVOX.is_thematic" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Is this a thematic voxel?
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span>Is this a thematic voxel?
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">1 if VOX is thematic</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int</td>
 </tr>
 </tbody>
 </table>
@@ -1931,28 +1950,28 @@ Is this a thematic voxel?
 <p><span class="versionmodified">New in version 7.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-A thematic voxel is one where the stored integer values
-represent indices into an internally stored TPAT object.
-Thematic voxels contain their own color definitions, and
-normal numerical operations, such as applying ITRs for display,
-are not valid.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="n">thematic</span> <span class="n">voxel</span> <span class="ow">is</span> <span class="n">one</span> <span class="n">where</span> <span class="n">the</span> <span class="n">stored</span> <span class="n">integer</span> <span class="n">values</span>
+<span class="n">represent</span> <span class="n">indices</span> <span class="n">into</span> <span class="n">an</span> <span class="n">internally</span> <span class="n">stored</span> <span class="n">TPAT</span> <span class="nb">object</span><span class="o">.</span>
+<span class="n">Thematic</span> <span class="n">voxels</span> <span class="n">contain</span> <span class="n">their</span> <span class="n">own</span> <span class="n">color</span> <span class="n">definitions</span><span class="p">,</span> <span class="ow">and</span>
+<span class="n">normal</span> <span class="n">numerical</span> <span class="n">operations</span><span class="p">,</span> <span class="n">such</span> <span class="k">as</span> <span class="n">applying</span> <span class="n">ITRs</span> <span class="k">for</span> <span class="n">display</span><span class="p">,</span>
+<span class="n">are</span> <span class="ow">not</span> <span class="n">valid</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXVOX.is_vector_voxel">
 <code class="descname">is_vector_voxel</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXVOX.is_vector_voxel" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Is this a vector voxel?
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span>Is this a vector voxel?
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">1 if VOX is a vector voxel</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int</td>
 </tr>
 </tbody>
 </table>
@@ -1960,17 +1979,17 @@ Is this a vector voxel?
 <p><span class="versionmodified">New in version 8.2.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-A vector voxel is one where each data element consists of 3 4-byte float values.
-Vector voxels normally have the file type &quot;geosoft_vectorvoxel&quot;.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="n">vector</span> <span class="n">voxel</span> <span class="ow">is</span> <span class="n">one</span> <span class="n">where</span> <span class="n">each</span> <span class="n">data</span> <span class="n">element</span> <span class="n">consists</span> <span class="n">of</span> <span class="mi">3</span> <span class="mi">4</span><span class="o">-</span><span class="n">byte</span> <span class="nb">float</span> <span class="n">values</span><span class="o">.</span>
+<span class="n">Vector</span> <span class="n">voxels</span> <span class="n">normally</span> <span class="n">have</span> <span class="n">the</span> <span class="n">file</span> <span class="nb">type</span> <span class="s2">&quot;geosoft_vectorvoxel&quot;</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXVOX.krig">
 <em class="property">static </em><code class="descname">krig</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(float)arg2</em>, <em>(int)arg3</em>, <em>(GXVV)arg4</em>, <em>(GXVV)arg5</em>, <em>(GXVV)arg6</em>, <em>(GXVV)arg7</em>, <em>(GXIPJ)arg8</em>, <em>(GXREG)arg9</em><span class="sig-paren">)</span> &rarr; GXVOX:<a class="headerlink" href="#geosoft.gxapi.GXVOX.krig" title="Permalink to this definition">¶</a></dt>
 <dd><pre class="literal-block">
-A more compact and extensible form of \ :func:`geosoft.gxapi.GXVOX.log_grid_points_z_ex`\ .
+A more compact and extensible form of <a class="reference internal" href="#geosoft.gxapi.GXVOX.log_grid_points_z_ex" title="geosoft.gxapi.GXVOX.log_grid_points_z_ex"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXVOX.log_grid_points_z_ex()</span></code></a>.
 </pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -1979,7 +1998,7 @@ A more compact and extensible form of \ :func:`geosoft.gxapi.GXVOX.log_grid_poin
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<em>str</em>) &#8211; Name of output VOX</li>
 <li><strong>arg2</strong> (<em>float</em>) &#8211; Cell size (DUMMY for default)</li>
-<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="GXGEOSOFT.html#gs-types"><span class="std std-ref">GS_TYPES constants</span></a></li>
+<li><strong>arg3</strong> (<em>int</em>) &#8211; <a class="reference internal" href="GXGEOSOFT.html#gs-types"><span class="std std-ref">GS_TYPES constants</span></a></li>
 <li><strong>arg4</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; X VV</li>
 <li><strong>arg5</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Y VV</li>
 <li><strong>arg6</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Z VV</li>
@@ -2006,31 +2025,31 @@ Optional Parameters.
 
 If these values are not set in the REG, then default parameters will be used.
 
-ERROR_VOXEL:          Name of error VOX (&quot;&quot; for none)
+ERROR_VOXEL:            Name of error VOX (&quot;&quot; for none)
 CELLSIZEZ:      Z Cell size string (space delimited, &quot;&quot; for default)
-RADIUS_MIN:           Minimum Search Radius (REAL) (Default = 4) (Blanking Distance)
-RADIUS_MAX:           Maximum Search Radius (REAL) (Default = 16)
-SEARCH_MIN:           Minimum Search Points (INT) (Default = 16)
-SEARCH_MAX:           Maximum Search Points (INT) (Default = 32)
+RADIUS_MIN:             Minimum Search Radius (REAL) (Default = 4) (Blanking Distance)
+RADIUS_MAX:             Maximum Search Radius (REAL) (Default = 16)
+SEARCH_MIN:             Minimum Search Points (INT) (Default = 16)
+SEARCH_MAX:             Maximum Search Points (INT) (Default = 32)
 VARIOGRAM_ONLY: Set to 1 to calculate the variogram only (INT) (Default = 0)
-MODEL:                         Variogram Model number 1-power, 2-sperical, 3-gaussian, 4-exponential  (INT) (Default = 2)
+MODEL:                          Variogram Model number 1-power, 2-sperical, 3-gaussian, 4-exponential  (INT) (Default = 2)
 POWER:          Power (Default = DUMMY)
 SLOPE:          Slope (REAL) (if input is DUMMY, value calculated and set on return)
 RANGE:          Range (REAL) (if input is DUMMY, value calculated and set on return)
 SILL :          Sill (REAL) (if input is DUMMY, value calculated and set on return)
-STRIKE:                                Strike (REAL) (Default = 0)
-DIP:                                   Dip (REAL)    (Default = 90)
-PLUNGE:                                Plunge (REAL) (Default = 0)
-STRIKE WEIGHT: Along-Strike Weight (REAL) (Default = 1)
+STRIKE:                         Strike (REAL) (Default = 0)
+DIP:                                    Dip (REAL)      (Default = 90)
+PLUNGE:                         Plunge (REAL) (Default = 0)
+STRIKE WEIGHT:  Along-Strike Weight (REAL) (Default = 1)
 DIP_WEIGHT:      Down-Dip Weight (REAL) (Default = 1)
-LOG_OPT:                      One of VOX_GRID_LOGOPT (Default = 0)
-MIN_LOG:                      Log Minimum (REAL)    (Default = 1)
-MIN_X:                                Minimum X (REAL) (default = DUMMY to determine from the data. If input, nearest lt. or eq. multiple of cell size chosen)
-MAX_X:                                Maximum X (REAL) (default = DUMMY to determine from the data. If input, nearest gt. or eq. multiple of cell size chosen)
-MIN_Y:                                Minimum Y (REAL) (default = DUMMY to determine from the data. If input, nearest lt. or eq. external multiple of cell size chosen)
-MAX_Y:                                Maximum Y (REAL) (default = DUMMY to determine from the data. If input, nearest gt. or eq. multiple of cell size chosen)
-MIN_Z:                                Minimum Z (REAL) (default = DUMMY to determine from the data. If input, nearest lt. or eq. multiple of cell size chosen)
-MAX_Z:                                Maximum Z (REAL) (default = DUMMY to determine from the data. If input, nearest gt. or eq. multiple of cell size chosen)A more compact and extensible form of \ :func:`geosoft.gxapi.GXVOX.log_grid_points_z_ex`\ . Only the most
+LOG_OPT:                        One of VOX_GRID_LOGOPT (Default = 0)
+MIN_LOG:                        Log Minimum (REAL)      (Default = 1)
+MIN_X:                          Minimum X (REAL) (default = DUMMY to determine from the data. If input, nearest lt. or eq. multiple of cell size chosen)
+MAX_X:                          Maximum X (REAL) (default = DUMMY to determine from the data. If input, nearest gt. or eq. multiple of cell size chosen)
+MIN_Y:                          Minimum Y (REAL) (default = DUMMY to determine from the data. If input, nearest lt. or eq. external multiple of cell size chosen)
+MAX_Y:                          Maximum Y (REAL) (default = DUMMY to determine from the data. If input, nearest gt. or eq. multiple of cell size chosen)
+MIN_Z:                          Minimum Z (REAL) (default = DUMMY to determine from the data. If input, nearest lt. or eq. multiple of cell size chosen)
+MAX_Z:                          Maximum Z (REAL) (default = DUMMY to determine from the data. If input, nearest gt. or eq. multiple of cell size chosen)A more compact and extensible form of <a class="reference internal" href="#geosoft.gxapi.GXVOX.log_grid_points_z_ex" title="geosoft.gxapi.GXVOX.log_grid_points_z_ex"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXVOX.log_grid_points_z_ex()</span></code></a>. Only the most
 basic parameters are entered directly. Optional parameters are passed via a REG object.
 </pre>
 </dd></dl>
@@ -2038,9 +2057,9 @@ basic parameters are entered directly. Optional parameters are passed via a REG 
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXVOX.list_gocad_properties">
 <em class="property">static </em><code class="descname">list_gocad_properties</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(GXLST)arg2</em><span class="sig-paren">)</span> &rarr; GXVOX:<a class="headerlink" href="#geosoft.gxapi.GXVOX.list_gocad_properties" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-List all the properties available in this GOCAD file.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">List</span> <span class="nb">all</span> <span class="n">the</span> <span class="n">properties</span> <span class="n">available</span> <span class="ow">in</span> <span class="n">this</span> <span class="n">GOCAD</span> <span class="n">file</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -2067,9 +2086,9 @@ List all the properties available in this GOCAD file.
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXVOX.log_grid_points_z_ex">
 <em class="property">static </em><code class="descname">log_grid_points_z_ex</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(str)arg2</em>, <em>(float)arg3</em>, <em>(str)arg4</em>, <em>(int)arg5</em>, <em>(float)arg6</em>, <em>(float)arg7</em>, <em>(int)arg8</em>, <em>(int)arg9</em>, <em>(int)arg10</em>, <em>(float)arg11</em>, <em>(float_ref)arg12</em>, <em>(float_ref)arg13</em>, <em>(float)arg14</em>, <em>(float_ref)arg15</em>, <em>(float)arg16</em>, <em>(float)arg17</em>, <em>(float)arg18</em>, <em>(float)arg19</em>, <em>(float)arg20</em>, <em>(int)arg21</em>, <em>(float)arg22</em>, <em>(int)arg23</em>, <em>(GXVV)arg24</em>, <em>(GXVV)arg25</em>, <em>(GXVV)arg26</em>, <em>(GXVV)arg27</em>, <em>(GXIPJ)arg28</em><span class="sig-paren">)</span> &rarr; GXVOX:<a class="headerlink" href="#geosoft.gxapi.GXVOX.log_grid_points_z_ex" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Log grid a VOX from point VV's (using variable Z's)
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Log</span> <span class="n">grid</span> <span class="n">a</span> <span class="n">VOX</span> <span class="kn">from</span> <span class="nn">point</span> <span class="n">VV</span><span class="s1">&#39;s (using variable Z&#39;</span><span class="n">s</span><span class="p">)</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -2079,12 +2098,12 @@ Log grid a VOX from point VV's (using variable Z's)
 <li><strong>arg2</strong> (<em>str</em>) &#8211; Name of error VOX (&#8220;&#8221; for none)</li>
 <li><strong>arg3</strong> (<em>float</em>) &#8211; Cell size (DUMMY for default)</li>
 <li><strong>arg4</strong> (<em>str</em>) &#8211; Cell size in Z (&#8220;&#8221; for default)</li>
-<li><strong>arg5</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Variogram Only</li>
+<li><strong>arg5</strong> (<em>int</em>) &#8211; Variogram Only</li>
 <li><strong>arg6</strong> (<em>float</em>) &#8211; Minimum Search Radius (DUMMY for none)</li>
 <li><strong>arg7</strong> (<em>float</em>) &#8211; Maximum Search Radius (DUMMY for none)</li>
-<li><strong>arg8</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Minimum Search Points</li>
-<li><strong>arg9</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Maximum Search Points</li>
-<li><strong>arg10</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Model number 1-power, 2-sperical, 3-gaussian, 4-exponential</li>
+<li><strong>arg8</strong> (<em>int</em>) &#8211; Minimum Search Points</li>
+<li><strong>arg9</strong> (<em>int</em>) &#8211; Maximum Search Points</li>
+<li><strong>arg10</strong> (<em>int</em>) &#8211; Model number 1-power, 2-sperical, 3-gaussian, 4-exponential</li>
 <li><strong>arg11</strong> (<em>float</em>) &#8211; Power</li>
 <li><strong>arg12</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Slope</li>
 <li><strong>arg13</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Range</li>
@@ -2095,9 +2114,9 @@ Log grid a VOX from point VV's (using variable Z's)
 <li><strong>arg18</strong> (<em>float</em>) &#8211; Plunge</li>
 <li><strong>arg19</strong> (<em>float</em>) &#8211; Strike Weight</li>
 <li><strong>arg20</strong> (<em>float</em>) &#8211; Dip Plane Weight</li>
-<li><strong>arg21</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#vox-grid-logopt"><span class="std std-ref">VOX_GRID_LOGOPT constants</span></a> Log Option</li>
+<li><strong>arg21</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#vox-grid-logopt"><span class="std std-ref">VOX_GRID_LOGOPT constants</span></a> Log Option</li>
 <li><strong>arg22</strong> (<em>float</em>) &#8211; Minimum log</li>
-<li><strong>arg23</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="GXGEOSOFT.html#gs-types"><span class="std std-ref">GS_TYPES constants</span></a></li>
+<li><strong>arg23</strong> (<em>int</em>) &#8211; <a class="reference internal" href="GXGEOSOFT.html#gs-types"><span class="std std-ref">GS_TYPES constants</span></a></li>
 <li><strong>arg24</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; X VV</li>
 <li><strong>arg25</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Y VV</li>
 <li><strong>arg26</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Z VV</li>
@@ -2122,9 +2141,9 @@ Log grid a VOX from point VV's (using variable Z's)
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXVOX.math">
 <em class="property">static </em><code class="descname">math</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(str)arg2</em>, <em>(str)arg3</em>, <em>(str)arg4</em>, <em>(str)arg5</em>, <em>(GXLST)arg6</em><span class="sig-paren">)</span> &rarr; GXVOX:<a class="headerlink" href="#geosoft.gxapi.GXVOX.math" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Produces a new voxes using a formula on existing voxels/Grids
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Produces</span> <span class="n">a</span> <span class="n">new</span> <span class="n">voxes</span> <span class="n">using</span> <span class="n">a</span> <span class="n">formula</span> <span class="n">on</span> <span class="n">existing</span> <span class="n">voxels</span><span class="o">/</span><span class="n">Grids</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -2151,17 +2170,17 @@ Produces a new voxes using a formula on existing voxels/Grids
 <p><span class="versionmodified">New in version 6.3.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-The input voxels must all be of the same type.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="nb">input</span> <span class="n">voxels</span> <span class="n">must</span> <span class="nb">all</span> <span class="n">be</span> <span class="n">of</span> <span class="n">the</span> <span class="n">same</span> <span class="nb">type</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXVOX.merge">
 <code class="descname">merge</code><span class="sig-paren">(</span><em>(GXVOX)arg1</em>, <em>(GXREG)arg2</em>, <em>(str)arg3</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXVOX.merge" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Merge two Voxels.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Merge</span> <span class="n">two</span> <span class="n">Voxels</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -2189,9 +2208,9 @@ Merge two Voxels.
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXVOX.nearest_neighbour_grid">
 <em class="property">static </em><code class="descname">nearest_neighbour_grid</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(float)arg2</em>, <em>(float)arg3</em>, <em>(int)arg4</em>, <em>(GXVV)arg5</em>, <em>(GXVV)arg6</em>, <em>(GXVV)arg7</em>, <em>(GXVV)arg8</em>, <em>(GXIPJ)arg9</em><span class="sig-paren">)</span> &rarr; GXVOX:<a class="headerlink" href="#geosoft.gxapi.GXVOX.nearest_neighbour_grid" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Grid a VOX from point VV's using the Nearest Neighbours method.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Grid</span> <span class="n">a</span> <span class="n">VOX</span> <span class="kn">from</span> <span class="nn">point</span> <span class="n">VV</span><span class="s1">&#39;s using the Nearest Neighbours method.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -2200,7 +2219,7 @@ Grid a VOX from point VV's using the Nearest Neighbours method.
 <li><strong>arg1</strong> (<em>str</em>) &#8211; Name of output VOX</li>
 <li><strong>arg2</strong> (<em>float</em>) &#8211; Cell size (DUMMY for default)</li>
 <li><strong>arg3</strong> (<em>float</em>) &#8211; Maximum radius (DUMMY for none)</li>
-<li><strong>arg4</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="GXGEOSOFT.html#gs-types"><span class="std std-ref">GS_TYPES constants</span></a></li>
+<li><strong>arg4</strong> (<em>int</em>) &#8211; <a class="reference internal" href="GXGEOSOFT.html#gs-types"><span class="std std-ref">GS_TYPES constants</span></a></li>
 <li><strong>arg5</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; X VV</li>
 <li><strong>arg6</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Y VV</li>
 <li><strong>arg7</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Z VV</li>
@@ -2241,9 +2260,9 @@ Grid a VOX from point VV's using the Nearest Neighbours method.
 <dl class="method">
 <dt id="geosoft.gxapi.GXVOX.re_grid">
 <code class="descname">re_grid</code><span class="sig-paren">(</span><em>(GXVOX)arg1</em>, <em>(GXREG)arg2</em>, <em>(str)arg3</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXVOX.re_grid" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Regrid a Voxel.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Regrid</span> <span class="n">a</span> <span class="n">Voxel</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -2271,9 +2290,9 @@ Regrid a Voxel.
 <dl class="method">
 <dt id="geosoft.gxapi.GXVOX.resample_pg">
 <code class="descname">resample_pg</code><span class="sig-paren">(</span><em>(GXIPJ)arg1</em>, <em>(float)arg2</em>, <em>(float)arg3</em>, <em>(float)arg4</em>, <em>(float)arg5</em>, <em>(float)arg6</em>, <em>(float)arg7</em>, <em>(int)arg8</em>, <em>(int)arg9</em>, <em>(int)arg10</em>, <em>(float)arg11</em>, <em>(float)arg12</em>, <em>(int)arg13</em><span class="sig-paren">)</span> &rarr; GXPG:<a class="headerlink" href="#geosoft.gxapi.GXVOX.resample_pg" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Resample a voxel over an input volume to a PG.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Resample</span> <span class="n">a</span> <span class="n">voxel</span> <span class="n">over</span> <span class="n">an</span> <span class="nb">input</span> <span class="n">volume</span> <span class="n">to</span> <span class="n">a</span> <span class="n">PG</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -2286,12 +2305,12 @@ Resample a voxel over an input volume to a PG.
 <li><strong>arg5</strong> (<em>float</em>) &#8211; Spacing in X</li>
 <li><strong>arg6</strong> (<em>float</em>) &#8211; Spacing in Y</li>
 <li><strong>arg7</strong> (<em>float</em>) &#8211; Spacing in Z</li>
-<li><strong>arg8</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Samples in X</li>
-<li><strong>arg9</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Samples in Y</li>
-<li><strong>arg10</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Samples in Z</li>
+<li><strong>arg8</strong> (<em>int</em>) &#8211; Samples in X</li>
+<li><strong>arg9</strong> (<em>int</em>) &#8211; Samples in Y</li>
+<li><strong>arg10</strong> (<em>int</em>) &#8211; Samples in Z</li>
 <li><strong>arg11</strong> (<em>float</em>) &#8211; Minimum Z to resample (can be rDUMMY)</li>
 <li><strong>arg12</strong> (<em>float</em>) &#8211; Maximum Z to resample (can be rDUMMY)</li>
-<li><strong>arg13</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#vox-slice-mode"><span class="std std-ref">VOX_SLICE_MODE constants</span></a></li>
+<li><strong>arg13</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#vox-slice-mode"><span class="std std-ref">VOX_SLICE_MODE constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -2307,19 +2326,19 @@ Resample a voxel over an input volume to a PG.
 <p><span class="versionmodified">New in version 8.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-Creates and dummies a PG object based on the input
-dimensions, then resamples the voxel to the pager
-at the locations determined by input projection, origin and spacings.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Creates</span> <span class="ow">and</span> <span class="n">dummies</span> <span class="n">a</span> <span class="n">PG</span> <span class="nb">object</span> <span class="n">based</span> <span class="n">on</span> <span class="n">the</span> <span class="nb">input</span>
+<span class="n">dimensions</span><span class="p">,</span> <span class="n">then</span> <span class="n">resamples</span> <span class="n">the</span> <span class="n">voxel</span> <span class="n">to</span> <span class="n">the</span> <span class="n">pager</span>
+<span class="n">at</span> <span class="n">the</span> <span class="n">locations</span> <span class="n">determined</span> <span class="n">by</span> <span class="nb">input</span> <span class="n">projection</span><span class="p">,</span> <span class="n">origin</span> <span class="ow">and</span> <span class="n">spacings</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXVOX.rescale_cell_sizes">
 <code class="descname">rescale_cell_sizes</code><span class="sig-paren">(</span><em>(float)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXVOX.rescale_cell_sizes" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Multiply all cell sizes by a fixed factor.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Multiply</span> <span class="nb">all</span> <span class="n">cell</span> <span class="n">sizes</span> <span class="n">by</span> <span class="n">a</span> <span class="n">fixed</span> <span class="n">factor</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -2336,33 +2355,33 @@ Multiply all cell sizes by a fixed factor.
 <p><span class="versionmodified">New in version 7.3.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-This is useful, for instance for converting sizes in one
-unit to sizes in another unit if changing the projection
-and the projection's unit changes, since the voxel inherits
-its projection's units.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="ow">is</span> <span class="n">useful</span><span class="p">,</span> <span class="k">for</span> <span class="n">instance</span> <span class="k">for</span> <span class="n">converting</span> <span class="n">sizes</span> <span class="ow">in</span> <span class="n">one</span>
+<span class="n">unit</span> <span class="n">to</span> <span class="n">sizes</span> <span class="ow">in</span> <span class="n">another</span> <span class="n">unit</span> <span class="k">if</span> <span class="n">changing</span> <span class="n">the</span> <span class="n">projection</span>
+<span class="ow">and</span> <span class="n">the</span> <span class="n">projection</span><span class="s1">&#39;s unit changes, since the voxel inherits</span>
+<span class="n">its</span> <span class="n">projection</span><span class="s1">&#39;s units.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXVOX.sample_cdi">
 <code class="descname">sample_cdi</code><span class="sig-paren">(</span><em>(GXDB)arg1</em>, <em>(int)arg2</em>, <em>(int)arg3</em>, <em>(int)arg4</em>, <em>(int)arg5</em>, <em>(int)arg6</em>, <em>(int)arg7</em>, <em>(int)arg8</em>, <em>(str)arg9</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXVOX.sample_cdi" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Sample a voxel at locations/elevations in a CDI database.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Sample</span> <span class="n">a</span> <span class="n">voxel</span> <span class="n">at</span> <span class="n">locations</span><span class="o">/</span><span class="n">elevations</span> <span class="ow">in</span> <span class="n">a</span> <span class="n">CDI</span> <span class="n">database</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXDB</span></code></a>) &#8211; CDI Database handle</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Line handle</li>
-<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; X channel handle</li>
-<li><strong>arg4</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Y channel handle</li>
-<li><strong>arg5</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; depth array channel handle</li>
-<li><strong>arg6</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; depths sign: 0 - positive down, 1 - negative down</li>
-<li><strong>arg7</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; elevation channel handle (can be NULLSYMB)</li>
-<li><strong>arg8</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; interpolation mode: 0 - linear, 1 - nearest</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; Line handle</li>
+<li><strong>arg3</strong> (<em>int</em>) &#8211; X channel handle</li>
+<li><strong>arg4</strong> (<em>int</em>) &#8211; Y channel handle</li>
+<li><strong>arg5</strong> (<em>int</em>) &#8211; depth array channel handle</li>
+<li><strong>arg6</strong> (<em>int</em>) &#8211; depths sign: 0 - positive down, 1 - negative down</li>
+<li><strong>arg7</strong> (<em>int</em>) &#8211; elevation channel handle (can be NULLSYMB)</li>
+<li><strong>arg8</strong> (<em>int</em>) &#8211; interpolation mode: 0 - linear, 1 - nearest</li>
 <li><strong>arg9</strong> (<em>str</em>) &#8211; Output channel name</li>
 </ul>
 </td>
@@ -2379,36 +2398,36 @@ Sample a voxel at locations/elevations in a CDI database.
 <p><span class="versionmodified">New in version 7.2.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-A &quot;CDI&quot; database does not need to be conductivity/depth.
-It normally contains an array channel of depth values for
-each (X, Y) location, with corresponding data array channels of
-values taken at those (X, Y, Z) locations.
-If the optional elevation channel is used, its value is used as an
-offset to the depth channel values. Depths are positive down by
-default; use the &quot;Negative depths down&quot; parameter if the depths
-become more negative as you go deeper.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="s2">&quot;CDI&quot;</span> <span class="n">database</span> <span class="n">does</span> <span class="ow">not</span> <span class="n">need</span> <span class="n">to</span> <span class="n">be</span> <span class="n">conductivity</span><span class="o">/</span><span class="n">depth</span><span class="o">.</span>
+<span class="n">It</span> <span class="n">normally</span> <span class="n">contains</span> <span class="n">an</span> <span class="n">array</span> <span class="n">channel</span> <span class="n">of</span> <span class="n">depth</span> <span class="n">values</span> <span class="k">for</span>
+<span class="n">each</span> <span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">)</span> <span class="n">location</span><span class="p">,</span> <span class="k">with</span> <span class="n">corresponding</span> <span class="n">data</span> <span class="n">array</span> <span class="n">channels</span> <span class="n">of</span>
+<span class="n">values</span> <span class="n">taken</span> <span class="n">at</span> <span class="n">those</span> <span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">Z</span><span class="p">)</span> <span class="n">locations</span><span class="o">.</span>
+<span class="n">If</span> <span class="n">the</span> <span class="n">optional</span> <span class="n">elevation</span> <span class="n">channel</span> <span class="ow">is</span> <span class="n">used</span><span class="p">,</span> <span class="n">its</span> <span class="n">value</span> <span class="ow">is</span> <span class="n">used</span> <span class="k">as</span> <span class="n">an</span>
+<span class="n">offset</span> <span class="n">to</span> <span class="n">the</span> <span class="n">depth</span> <span class="n">channel</span> <span class="n">values</span><span class="o">.</span> <span class="n">Depths</span> <span class="n">are</span> <span class="n">positive</span> <span class="n">down</span> <span class="n">by</span>
+<span class="n">default</span><span class="p">;</span> <span class="n">use</span> <span class="n">the</span> <span class="s2">&quot;Negative depths down&quot;</span> <span class="n">parameter</span> <span class="k">if</span> <span class="n">the</span> <span class="n">depths</span>
+<span class="n">become</span> <span class="n">more</span> <span class="n">negative</span> <span class="k">as</span> <span class="n">you</span> <span class="n">go</span> <span class="n">deeper</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXVOX.sample_cdi_to_topography">
 <code class="descname">sample_cdi_to_topography</code><span class="sig-paren">(</span><em>(GXDB)arg1</em>, <em>(int)arg2</em>, <em>(int)arg3</em>, <em>(int)arg4</em>, <em>(GXVV)arg5</em>, <em>(int)arg6</em>, <em>(str)arg7</em>, <em>(str)arg8</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXVOX.sample_cdi_to_topography" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Sample a voxel at fixed elevations along a path in a CDI database, and output them to an array channel, deleting leading dummy values, and
-writing the elevation of the first non-dummy item to a topography channel.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Sample</span> <span class="n">a</span> <span class="n">voxel</span> <span class="n">at</span> <span class="n">fixed</span> <span class="n">elevations</span> <span class="n">along</span> <span class="n">a</span> <span class="n">path</span> <span class="ow">in</span> <span class="n">a</span> <span class="n">CDI</span> <span class="n">database</span><span class="p">,</span> <span class="ow">and</span> <span class="n">output</span> <span class="n">them</span> <span class="n">to</span> <span class="n">an</span> <span class="n">array</span> <span class="n">channel</span><span class="p">,</span> <span class="n">deleting</span> <span class="n">leading</span> <span class="n">dummy</span> <span class="n">values</span><span class="p">,</span> <span class="ow">and</span>
+<span class="n">writing</span> <span class="n">the</span> <span class="n">elevation</span> <span class="n">of</span> <span class="n">the</span> <span class="n">first</span> <span class="n">non</span><span class="o">-</span><span class="n">dummy</span> <span class="n">item</span> <span class="n">to</span> <span class="n">a</span> <span class="n">topography</span> <span class="n">channel</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXDB</span></code></a>) &#8211; CDI Database handle</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Line handle</li>
-<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; X channel handle</li>
-<li><strong>arg4</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Y channel handle</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; Line handle</li>
+<li><strong>arg3</strong> (<em>int</em>) &#8211; X channel handle</li>
+<li><strong>arg4</strong> (<em>int</em>) &#8211; Y channel handle</li>
 <li><strong>arg5</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Z values to sample at each X, Y</li>
-<li><strong>arg6</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; interpolation mode: 0 - linear, 1 - nearest</li>
+<li><strong>arg6</strong> (<em>int</em>) &#8211; interpolation mode: 0 - linear, 1 - nearest</li>
 <li><strong>arg7</strong> (<em>str</em>) &#8211; Output data array channel name</li>
 <li><strong>arg8</strong> (<em>str</em>) &#8211; Output topography channel name</li>
 </ul>
@@ -2430,9 +2449,9 @@ writing the elevation of the first non-dummy item to a topography channel.
 <dl class="method">
 <dt id="geosoft.gxapi.GXVOX.sample_vv">
 <code class="descname">sample_vv</code><span class="sig-paren">(</span><em>(GXVV)arg1</em>, <em>(GXVV)arg2</em>, <em>(GXVV)arg3</em>, <em>(int)arg4</em>, <em>(GXVV)arg5</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXVOX.sample_vv" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Sample a voxel at multiple locations.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Sample</span> <span class="n">a</span> <span class="n">voxel</span> <span class="n">at</span> <span class="n">multiple</span> <span class="n">locations</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -2441,7 +2460,7 @@ Sample a voxel at multiple locations.
 <li><strong>arg1</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; X locations (input)</li>
 <li><strong>arg2</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Y locations (input)</li>
 <li><strong>arg3</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Z locations (input)</li>
-<li><strong>arg4</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; interpolation mode: 0 - linear, 1 - nearest</li>
+<li><strong>arg4</strong> (<em>int</em>) &#8211; interpolation mode: 0 - linear, 1 - nearest</li>
 <li><strong>arg5</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; returned values</li>
 </ul>
 </td>
@@ -2458,9 +2477,9 @@ Sample a voxel at multiple locations.
 <p><span class="versionmodified">New in version 8.2.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-Sample at voxel at XYZ locations input in VVs. Values returned in a VV.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Sample</span> <span class="n">at</span> <span class="n">voxel</span> <span class="n">at</span> <span class="n">XYZ</span> <span class="n">locations</span> <span class="nb">input</span> <span class="ow">in</span> <span class="n">VVs</span><span class="o">.</span> <span class="n">Values</span> <span class="n">returned</span> <span class="ow">in</span> <span class="n">a</span> <span class="n">VV</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
@@ -2484,7 +2503,7 @@ Sample at voxel at XYZ locations input in VVs. Values returned in a VV.
 1 - Invalid data</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></p>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
 </td>
 </tr>
 </tbody>
@@ -2497,9 +2516,9 @@ Sample at voxel at XYZ locations input in VVs. Values returned in a VV.
 <dl class="method">
 <dt id="geosoft.gxapi.GXVOX.set_ipj">
 <code class="descname">set_ipj</code><span class="sig-paren">(</span><em>(GXIPJ)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXVOX.set_ipj" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Set the projection of the voxel.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Set</span> <span class="n">the</span> <span class="n">projection</span> <span class="n">of</span> <span class="n">the</span> <span class="n">voxel</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -2553,9 +2572,9 @@ Set the projection of the voxel.
 <dl class="method">
 <dt id="geosoft.gxapi.GXVOX.set_meta">
 <code class="descname">set_meta</code><span class="sig-paren">(</span><em>(GXMETA)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXVOX.set_meta" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Set the metadata of a voxel.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Set</span> <span class="n">the</span> <span class="n">metadata</span> <span class="n">of</span> <span class="n">a</span> <span class="n">voxel</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -2584,7 +2603,7 @@ Set the metadata of a voxel.
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Type of origin being set <a class="reference internal" href="#vox-origin"><span class="std std-ref">VOX_ORIGIN constants</span></a></li>
+<li><strong>arg1</strong> (<em>int</em>) &#8211; Type of origin being set <a class="reference internal" href="#vox-origin"><span class="std std-ref">VOX_ORIGIN constants</span></a></li>
 <li><strong>arg2</strong> (<em>float</em>) &#8211; Origin X</li>
 <li><strong>arg3</strong> (<em>float</em>) &#8211; Origin Y</li>
 <li><strong>arg4</strong> (<em>float</em>) &#8211; Origin Z</li>
@@ -2640,9 +2659,9 @@ Set the metadata of a voxel.
 <dl class="method">
 <dt id="geosoft.gxapi.GXVOX.set_tpat">
 <code class="descname">set_tpat</code><span class="sig-paren">(</span><em>(GXTPAT)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXVOX.set_tpat" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Set a thematic voxel's TPAT object.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Set</span> <span class="n">a</span> <span class="n">thematic</span> <span class="n">voxel</span><span class="s1">&#39;s TPAT object.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -2659,14 +2678,14 @@ Set a thematic voxel's TPAT object.
 <p><span class="versionmodified">New in version 7.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-Each row in the TPAT object corresponds to a stored index
-value in the thematic voxel. The TPAT should NOT be modified
-by the addition or deletion of items, if it is to be
-restored into the VOX object, but the CODE, LABEL, DESCRIPTION
-or COLOR info can be changed.
-The TPAT object is stored inside the VOX META object.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Each</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">TPAT</span> <span class="nb">object</span> <span class="n">corresponds</span> <span class="n">to</span> <span class="n">a</span> <span class="n">stored</span> <span class="n">index</span>
+<span class="n">value</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">thematic</span> <span class="n">voxel</span><span class="o">.</span> <span class="n">The</span> <span class="n">TPAT</span> <span class="n">should</span> <span class="n">NOT</span> <span class="n">be</span> <span class="n">modified</span>
+<span class="n">by</span> <span class="n">the</span> <span class="n">addition</span> <span class="ow">or</span> <span class="n">deletion</span> <span class="n">of</span> <span class="n">items</span><span class="p">,</span> <span class="k">if</span> <span class="n">it</span> <span class="ow">is</span> <span class="n">to</span> <span class="n">be</span>
+<span class="n">restored</span> <span class="n">into</span> <span class="n">the</span> <span class="n">VOX</span> <span class="nb">object</span><span class="p">,</span> <span class="n">but</span> <span class="n">the</span> <span class="n">CODE</span><span class="p">,</span> <span class="n">LABEL</span><span class="p">,</span> <span class="n">DESCRIPTION</span>
+<span class="ow">or</span> <span class="n">COLOR</span> <span class="n">info</span> <span class="n">can</span> <span class="n">be</span> <span class="n">changed</span><span class="o">.</span>
+<span class="n">The</span> <span class="n">TPAT</span> <span class="nb">object</span> <span class="ow">is</span> <span class="n">stored</span> <span class="n">inside</span> <span class="n">the</span> <span class="n">VOX</span> <span class="n">META</span> <span class="nb">object</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
@@ -2682,13 +2701,13 @@ The TPAT object is stored inside the VOX META object.
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<em>str</em>) &#8211; Grid Name</li>
 <li><strong>arg2</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXIPJ</span></code></a>) &#8211; Grid IPJ (includes orientation, etc)</li>
-<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#vox-slice-mode"><span class="std std-ref">VOX_SLICE_MODE constants</span></a></li>
+<li><strong>arg3</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#vox-slice-mode"><span class="std std-ref">VOX_SLICE_MODE constants</span></a></li>
 <li><strong>arg4</strong> (<em>float</em>) &#8211; Grid Origin X</li>
 <li><strong>arg5</strong> (<em>float</em>) &#8211; Grid Origin Y</li>
 <li><strong>arg6</strong> (<em>float</em>) &#8211; Grid Cell Size in X</li>
 <li><strong>arg7</strong> (<em>float</em>) &#8211; Grid Cell Size in Y</li>
-<li><strong>arg8</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Grid cells in X</li>
-<li><strong>arg9</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Grid cells in Y</li>
+<li><strong>arg8</strong> (<em>int</em>) &#8211; Grid cells in X</li>
+<li><strong>arg9</strong> (<em>int</em>) &#8211; Grid cells in Y</li>
 </ul>
 </td>
 </tr>
@@ -2718,14 +2737,14 @@ The TPAT object is stored inside the VOX META object.
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<em>str</em>) &#8211; Grid Name</li>
 <li><strong>arg2</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXIPJ</span></code></a>) &#8211; Grid IPJ (includes orientation, etc)</li>
-<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#vox-slice-mode"><span class="std std-ref">VOX_SLICE_MODE constants</span></a></li>
+<li><strong>arg3</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#vox-slice-mode"><span class="std std-ref">VOX_SLICE_MODE constants</span></a></li>
 <li><strong>arg4</strong> (<em>float</em>) &#8211; Grid Origin X</li>
 <li><strong>arg5</strong> (<em>float</em>) &#8211; Grid Origin Y</li>
 <li><strong>arg6</strong> (<em>float</em>) &#8211; Grid Cell Size in X</li>
 <li><strong>arg7</strong> (<em>float</em>) &#8211; Grid Cell Size in Y</li>
-<li><strong>arg8</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Grid cells in X</li>
-<li><strong>arg9</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Grid cells in Y</li>
-<li><strong>arg10</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Number of layers to extract</li>
+<li><strong>arg8</strong> (<em>int</em>) &#8211; Grid cells in X</li>
+<li><strong>arg9</strong> (<em>int</em>) &#8211; Grid cells in Y</li>
+<li><strong>arg10</strong> (<em>int</em>) &#8211; Number of layers to extract</li>
 <li><strong>arg11</strong> (<em>float</em>) &#8211; Start elevation</li>
 <li><strong>arg12</strong> (<em>float</em>) &#8211; Elevation increment</li>
 </ul>
@@ -2747,9 +2766,9 @@ The TPAT object is stored inside the VOX META object.
 <dl class="method">
 <dt id="geosoft.gxapi.GXVOX.subset_to_double_extents">
 <code class="descname">subset_to_double_extents</code><span class="sig-paren">(</span><em>(str)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXVOX.subset_to_double_extents" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Subset a VOX to real extents.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Subset</span> <span class="n">a</span> <span class="n">VOX</span> <span class="n">to</span> <span class="n">real</span> <span class="n">extents</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -2794,7 +2813,7 @@ Subset a VOX to real extents.
 <dt id="geosoft.gxapi.GXVOX.tin_grid_db">
 <em class="property">static </em><code class="descname">tin_grid_db</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(GXDB)arg2</em>, <em>(int)arg3</em>, <em>(int)arg4</em>, <em>(int)arg5</em>, <em>(int)arg6</em>, <em>(int)arg7</em>, <em>(GXVV)arg8</em>, <em>(GXREG)arg9</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXVOX.tin_grid_db" title="Permalink to this definition">¶</a></dt>
 <dd><pre class="literal-block">
-\ :func:`geosoft.gxapi.GXVOX.tin_grid_db`\    TIN-Gridding, DB version, 3D.
+<a class="reference internal" href="#geosoft.gxapi.GXVOX.tin_grid_db" title="geosoft.gxapi.GXVOX.tin_grid_db"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXVOX.tin_grid_db()</span></code></a>   TIN-Gridding, DB version, 3D.
 </pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -2803,11 +2822,11 @@ Subset a VOX to real extents.
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<em>str</em>) &#8211; Output voxel name</li>
 <li><strong>arg2</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXDB</span></code></a>) &#8211; Database</li>
-<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; X Channel [READONLY]</li>
-<li><strong>arg4</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Y Channel [READONLY]</li>
-<li><strong>arg5</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Z Channel [READONLY]</li>
-<li><strong>arg6</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Data Channel [READONLY]</li>
-<li><strong>arg7</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Gridding method (0: Linear, 1: Natural Neighbour, 2: Nearest Neightbour</li>
+<li><strong>arg3</strong> (<em>int</em>) &#8211; X Channel [READONLY]</li>
+<li><strong>arg4</strong> (<em>int</em>) &#8211; Y Channel [READONLY]</li>
+<li><strong>arg5</strong> (<em>int</em>) &#8211; Z Channel [READONLY]</li>
+<li><strong>arg6</strong> (<em>int</em>) &#8211; Data Channel [READONLY]</li>
+<li><strong>arg7</strong> (<em>int</em>) &#8211; Gridding method (0: Linear, 1: Natural Neighbour, 2: Nearest Neightbour</li>
 <li><strong>arg8</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Z Cell sizes (bottom to top)</li>
 <li><strong>arg9</strong> (<a class="reference internal" href="GXREG.html#geosoft.gxapi.GXREG" title="geosoft.gxapi.GXREG"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXREG</span></code></a>) &#8211; Parameters (see above)</li>
 </ul>
@@ -2825,36 +2844,36 @@ Subset a VOX to real extents.
 <p><span class="versionmodified">New in version 8.5.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-Designed for data in array channels position vertically at single XY locations.
-Creates a TIN using the XY locations and uses the coefficients for the top layer on
-each layer below to make it efficient.
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Designed</span> <span class="k">for</span> <span class="n">data</span> <span class="ow">in</span> <span class="n">array</span> <span class="n">channels</span> <span class="n">position</span> <span class="n">vertically</span> <span class="n">at</span> <span class="n">single</span> <span class="n">XY</span> <span class="n">locations</span><span class="o">.</span>
+<span class="n">Creates</span> <span class="n">a</span> <span class="n">TIN</span> <span class="n">using</span> <span class="n">the</span> <span class="n">XY</span> <span class="n">locations</span> <span class="ow">and</span> <span class="n">uses</span> <span class="n">the</span> <span class="n">coefficients</span> <span class="k">for</span> <span class="n">the</span> <span class="n">top</span> <span class="n">layer</span> <span class="n">on</span>
+<span class="n">each</span> <span class="n">layer</span> <span class="n">below</span> <span class="n">to</span> <span class="n">make</span> <span class="n">it</span> <span class="n">efficient</span><span class="o">.</span>
 
-REG Parameters:
+<span class="n">REG</span> <span class="n">Parameters</span><span class="p">:</span>
 
-X0, Y0, Z0, DX, DY, DZ: Voxel origin, and cell sizes (required)
-NX, NY, NZ: Voxel dimensions.
-DZ and NZ are used only if the input cell sizes VV is of zero length.
-</pre>
+<span class="n">X0</span><span class="p">,</span> <span class="n">Y0</span><span class="p">,</span> <span class="n">Z0</span><span class="p">,</span> <span class="n">DX</span><span class="p">,</span> <span class="n">DY</span><span class="p">,</span> <span class="n">DZ</span><span class="p">:</span> <span class="n">Voxel</span> <span class="n">origin</span><span class="p">,</span> <span class="ow">and</span> <span class="n">cell</span> <span class="n">sizes</span> <span class="p">(</span><span class="n">required</span><span class="p">)</span>
+<span class="n">NX</span><span class="p">,</span> <span class="n">NY</span><span class="p">,</span> <span class="n">NZ</span><span class="p">:</span> <span class="n">Voxel</span> <span class="n">dimensions</span><span class="o">.</span>
+<span class="n">DZ</span> <span class="ow">and</span> <span class="n">NZ</span> <span class="n">are</span> <span class="n">used</span> <span class="n">only</span> <span class="k">if</span> <span class="n">the</span> <span class="nb">input</span> <span class="n">cell</span> <span class="n">sizes</span> <span class="n">VV</span> <span class="ow">is</span> <span class="n">of</span> <span class="n">zero</span> <span class="n">length</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXVOX.window_ply">
 <code class="descname">window_ply</code><span class="sig-paren">(</span><em>(GXPLY)arg1</em>, <em>(int)arg2</em>, <em>(float)arg3</em>, <em>(float)arg4</em>, <em>(str)arg5</em>, <em>(int)arg6</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXVOX.window_ply" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Window a VOX to a PLY file and Z.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Window</span> <span class="n">a</span> <span class="n">VOX</span> <span class="n">to</span> <span class="n">a</span> <span class="n">PLY</span> <span class="n">file</span> <span class="ow">and</span> <span class="n">Z</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<a class="reference internal" href="GXPLY.html#geosoft.gxapi.GXPLY" title="geosoft.gxapi.GXPLY"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXPLY</span></code></a>) &#8211; PLY object</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Mask (0: inside PLY, 1: outside PLY)</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; Mask (0: inside PLY, 1: outside PLY)</li>
 <li><strong>arg3</strong> (<em>float</em>) &#8211; Minimum Z (optional, rDUMMY for no minimum)</li>
 <li><strong>arg4</strong> (<em>float</em>) &#8211; Maximum Z (optional, rDUMMY for no maximun)</li>
 <li><strong>arg5</strong> (<em>str</em>) &#8211; Output voxel file name.</li>
-<li><strong>arg6</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Clip extents to remove dummies (0: no (same size), 1: yes (smaller))</li>
+<li><strong>arg6</strong> (<em>int</em>) &#8211; Clip extents to remove dummies (0: no (same size), 1: yes (smaller))</li>
 </ul>
 </td>
 </tr>
@@ -2870,19 +2889,19 @@ Window a VOX to a PLY file and Z.
 <p><span class="versionmodified">New in version 7.3.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-The voxel is windowed horizontally to the input PLY file.
-Optionally, it will be windowed to the input Z range as well.
-The output can be clipped to the non-dummied cells.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">voxel</span> <span class="ow">is</span> <span class="n">windowed</span> <span class="n">horizontally</span> <span class="n">to</span> <span class="n">the</span> <span class="nb">input</span> <span class="n">PLY</span> <span class="n">file</span><span class="o">.</span>
+<span class="n">Optionally</span><span class="p">,</span> <span class="n">it</span> <span class="n">will</span> <span class="n">be</span> <span class="n">windowed</span> <span class="n">to</span> <span class="n">the</span> <span class="nb">input</span> <span class="n">Z</span> <span class="nb">range</span> <span class="k">as</span> <span class="n">well</span><span class="o">.</span>
+<span class="n">The</span> <span class="n">output</span> <span class="n">can</span> <span class="n">be</span> <span class="n">clipped</span> <span class="n">to</span> <span class="n">the</span> <span class="n">non</span><span class="o">-</span><span class="n">dummied</span> <span class="n">cells</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXVOX.window_xyz">
 <code class="descname">window_xyz</code><span class="sig-paren">(</span><em>(float)arg1</em>, <em>(float)arg2</em>, <em>(float)arg3</em>, <em>(float)arg4</em>, <em>(float)arg5</em>, <em>(float)arg6</em>, <em>(str)arg7</em>, <em>(int)arg8</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXVOX.window_xyz" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Window a VOX to ranges in X, Y and Z.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Window</span> <span class="n">a</span> <span class="n">VOX</span> <span class="n">to</span> <span class="n">ranges</span> <span class="ow">in</span> <span class="n">X</span><span class="p">,</span> <span class="n">Y</span> <span class="ow">and</span> <span class="n">Z</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -2895,7 +2914,7 @@ Window a VOX to ranges in X, Y and Z.
 <li><strong>arg5</strong> (<em>float</em>) &#8211; Maximum Y (optional, rDUMMY for no maximun)</li>
 <li><strong>arg6</strong> (<em>float</em>) &#8211; Maximum Z (optional, rDUMMY for no maximun)</li>
 <li><strong>arg7</strong> (<em>str</em>) &#8211; Output voxel file name.</li>
-<li><strong>arg8</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Clip extents to remove dummies (0: no (same size), 1: yes (smaller))</li>
+<li><strong>arg8</strong> (<em>int</em>) &#8211; Clip extents to remove dummies (0: no (same size), 1: yes (smaller))</li>
 </ul>
 </td>
 </tr>
@@ -2911,10 +2930,10 @@ Window a VOX to ranges in X, Y and Z.
 <p><span class="versionmodified">New in version 7.3.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-The six minima and maxima are optional.
-The output can be clipped to the non-dummied cells.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">six</span> <span class="n">minima</span> <span class="ow">and</span> <span class="n">maxima</span> <span class="n">are</span> <span class="n">optional</span><span class="o">.</span>
+<span class="n">The</span> <span class="n">output</span> <span class="n">can</span> <span class="n">be</span> <span class="n">clipped</span> <span class="n">to</span> <span class="n">the</span> <span class="n">non</span><span class="o">-</span><span class="n">dummied</span> <span class="n">cells</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
@@ -3261,9 +3280,13 @@ The output can be clipped to the non-dummied cells.
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li> 
+          <a href="GXVOXD.html" title="GXVOXD class"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="GXVM.html" title="GXVM class"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="geosoft.gxapi.classes.html" >GX API Class/Library Reference</a> &#187;</li> 
       </ul>
     </div>
 

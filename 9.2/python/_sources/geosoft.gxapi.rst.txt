@@ -10,8 +10,8 @@ The GXContext class
 
 Before calling any other API function from a stand-alone script (a script that is not run as an extension from
 Geosoft Desktop), a GX Context must be created and held.  This can be done by creating an instance of
-:py:class:`.gxapi.GXContext` or an instance of :py:class:`.gxpy.gx.GXpy` which handles the details of
-``GXContext`` for you.  We recommend using :py:class:`.gxpy.gx.GXpy` unless you have chosen to work only with the
+coordinate_system=:class:`.gxapi.GXContext` or an instance of coordinate_system=:class:`.gxpy.gx.GXpy` which handles the details of
+``GXContext`` for you.  We recommend using coordinate_system=:class:`.gxpy.gx.GXpy` unless you have chosen to work only with the
 low-level :py:mod:`gxapi`.
 
 Creating a GX context requires **Geosoft Desktop** installed on the target system, from which the

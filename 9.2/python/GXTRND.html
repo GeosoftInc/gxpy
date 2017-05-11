@@ -27,6 +27,8 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="GXUNC class" href="GXUNC.html" />
+    <link rel="prev" title="GXTR class" href="GXTR.html" />
  
 <script type="text/javascript">
   var _gaq = _gaq || [];
@@ -43,9 +45,13 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li> 
+          <a href="GXUNC.html" title="GXUNC class"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="GXTR.html" title="GXTR class"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="geosoft.gxapi.classes.html" accesskey="U">GX API Class/Library Reference</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -58,13 +64,19 @@
 </li>
 </ul>
 
-  <div role="note" aria-label="source link">
-    <h3>This Page</h3>
-    <ul class="this-page-menu">
-      <li><a href="_sources/GXTRND.rst.txt"
-            rel="nofollow">Show Source</a></li>
-    </ul>
-   </div>
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Introduction</a></li>
+    <li><a href="geosoft.gxapi.classes.html">GX API Class/Library Reference</a></li>
+</ul>
+<h3>Previous Topic</h3>
+<ul>
+    <li><a href="GXTR.html" title="previous chapter">GXTR class</a></li>
+</ul>
+<h3>Next Topic</h3>
+<ul>
+    <li><a href="GXUNC.html" title="next chapter">GXUNC class</a></li>
+</ul>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
@@ -75,6 +87,13 @@
     </form>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/GXTRND.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
         </div>
       </div>
 
@@ -88,18 +107,18 @@
 <dl class="class">
 <dt id="geosoft.gxapi.GXTRND">
 <em class="property">class </em><code class="descclassname">geosoft.gxapi.</code><code class="descname">GXTRND</code><a class="headerlink" href="#geosoft.gxapi.GXTRND" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-The TRND methods are used to determine trend directions in database data by locating
-maxima and minima along lines and joining them in a specified direction.
-The resulting trend lines are appended to the database and used by gridding methods
-such as Bigrid and Rangrid to enforce features in the specified direction.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">TRND</span> <span class="n">methods</span> <span class="n">are</span> <span class="n">used</span> <span class="n">to</span> <span class="n">determine</span> <span class="n">trend</span> <span class="n">directions</span> <span class="ow">in</span> <span class="n">database</span> <span class="n">data</span> <span class="n">by</span> <span class="n">locating</span>
+<span class="n">maxima</span> <span class="ow">and</span> <span class="n">minima</span> <span class="n">along</span> <span class="n">lines</span> <span class="ow">and</span> <span class="n">joining</span> <span class="n">them</span> <span class="ow">in</span> <span class="n">a</span> <span class="n">specified</span> <span class="n">direction</span><span class="o">.</span>
+<span class="n">The</span> <span class="n">resulting</span> <span class="n">trend</span> <span class="n">lines</span> <span class="n">are</span> <span class="n">appended</span> <span class="n">to</span> <span class="n">the</span> <span class="n">database</span> <span class="ow">and</span> <span class="n">used</span> <span class="n">by</span> <span class="n">gridding</span> <span class="n">methods</span>
+<span class="n">such</span> <span class="k">as</span> <span class="n">Bigrid</span> <span class="ow">and</span> <span class="n">Rangrid</span> <span class="n">to</span> <span class="n">enforce</span> <span class="n">features</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">specified</span> <span class="n">direction</span><span class="o">.</span>
+</pre></div>
+</div>
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXTRND.get_max_min">
 <em class="property">static </em><code class="descname">get_max_min</code><span class="sig-paren">(</span><em>(GXVV)arg1</em>, <em>(GXVV)arg2</em>, <em>(GXVV)arg3</em>, <em>(GXVV)arg4</em>, <em>(GXVV)arg5</em>, <em>(GXVV)arg6</em>, <em>(float)arg7</em>, <em>(int)arg8</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXTRND.get_max_min" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Find the max/min nodes in a line.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Find</span> <span class="n">the</span> <span class="nb">max</span><span class="o">/</span><span class="nb">min</span> <span class="n">nodes</span> <span class="ow">in</span> <span class="n">a</span> <span class="n">line</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -112,7 +131,7 @@ Find the max/min nodes in a line.
 <li><strong>arg5</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Y MaxMin (returned)</li>
 <li><strong>arg6</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Data MaxMin (returned)</li>
 <li><strong>arg7</strong> (<em>float</em>) &#8211; MaxMin Window</li>
-<li><strong>arg8</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#trnd-node"><span class="std std-ref">TRND_NODE constants</span></a></li>
+<li><strong>arg8</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#trnd-node"><span class="std std-ref">TRND_NODE constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -136,9 +155,9 @@ Find the max/min nodes in a line.
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXTRND.get_mesh">
 <em class="property">static </em><code class="descname">get_mesh</code><span class="sig-paren">(</span><em>(GXDB)arg1</em>, <em>(str)arg2</em>, <em>(float)arg3</em>, <em>(float)arg4</em>, <em>(GXVV)arg5</em>, <em>(int)arg6</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXTRND.get_mesh" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Get the lines in a trend mesh.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">the</span> <span class="n">lines</span> <span class="ow">in</span> <span class="n">a</span> <span class="n">trend</span> <span class="n">mesh</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -149,7 +168,7 @@ Get the lines in a trend mesh.
 <li><strong>arg3</strong> (<em>float</em>) &#8211; MaxMin Window</li>
 <li><strong>arg4</strong> (<em>float</em>) &#8211; Maximum join length</li>
 <li><strong>arg5</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; VV of type GS_D2POINT (returned)</li>
-<li><strong>arg6</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#trnd-node"><span class="std std-ref">TRND_NODE constants</span></a></li>
+<li><strong>arg6</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#trnd-node"><span class="std std-ref">TRND_NODE constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -169,9 +188,9 @@ Get the lines in a trend mesh.
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXTRND.trnd_db">
 <em class="property">static </em><code class="descname">trnd_db</code><span class="sig-paren">(</span><em>(GXDB)arg1</em>, <em>(str)arg2</em>, <em>(float)arg3</em>, <em>(float)arg4</em>, <em>(float)arg5</em>, <em>(float)arg6</em>, <em>(float)arg7</em>, <em>(float)arg8</em>, <em>(float)arg9</em>, <em>(float)arg10</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXTRND.trnd_db" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Uses a selected channel to find data trends in a database.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Uses</span> <span class="n">a</span> <span class="n">selected</span> <span class="n">channel</span> <span class="n">to</span> <span class="n">find</span> <span class="n">data</span> <span class="n">trends</span> <span class="ow">in</span> <span class="n">a</span> <span class="n">database</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -236,9 +255,13 @@ Uses a selected channel to find data trends in a database.
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li> 
+          <a href="GXUNC.html" title="GXUNC class"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="GXTR.html" title="GXTR class"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="geosoft.gxapi.classes.html" >GX API Class/Library Reference</a> &#187;</li> 
       </ul>
     </div>
 

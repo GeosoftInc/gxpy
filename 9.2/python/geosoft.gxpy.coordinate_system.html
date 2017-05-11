@@ -27,6 +27,8 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="geosoft.gxpy.dataframe submodule" href="geosoft.gxpy.dataframe.html" />
+    <link rel="prev" title="geosoft.gxpy.agg submodule" href="geosoft.gxpy.agg.html" />
  
 <script type="text/javascript">
   var _gaq = _gaq || [];
@@ -43,20 +45,30 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li> 
+          <a href="geosoft.gxpy.dataframe.html" title="geosoft.gxpy.dataframe submodule"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="geosoft.gxpy.agg.html" title="geosoft.gxpy.agg submodule"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="geosoft.gxpy.html" accesskey="U">gxpy modules reference</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <div role="note" aria-label="source link">
-    <h3>This Page</h3>
-    <ul class="this-page-menu">
-      <li><a href="_sources/geosoft.gxpy.coordinate_system.rst.txt"
-            rel="nofollow">Show Source</a></li>
-    </ul>
-   </div>
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Introduction</a></li>
+    <li><a href="geosoft.gxpy.html">gxpy modules reference</a></li>
+</ul>
+<h3>Previous Topic</h3>
+<ul>
+    <li><a href="geosoft.gxpy.agg.html" title="previous chapter">geosoft.gxpy.agg submodule</a></li>
+</ul>
+<h3>Next Topic</h3>
+<ul>
+    <li><a href="geosoft.gxpy.dataframe.html" title="next chapter">geosoft.gxpy.dataframe submodule</a></li>
+</ul>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
@@ -67,6 +79,13 @@
     </form>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/geosoft.gxpy.coordinate_system.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
         </div>
       </div>
 
@@ -77,18 +96,45 @@
             
   <div class="section" id="module-geosoft.gxpy.coordinate_system">
 <span id="geosoft-gxpy-coordinate-system-submodule"></span><h1>geosoft.gxpy.coordinate_system submodule<a class="headerlink" href="#module-geosoft.gxpy.coordinate_system" title="Permalink to this headline">¶</a></h1>
+<p>Coodinate systems</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Classes:</th><td class="field-body"><table border="1" class="first last docutils">
+<colgroup>
+<col width="35%" />
+<col width="65%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#geosoft.gxpy.coordinate_system.Coordinate_system" title="geosoft.gxpy.coordinate_system.Coordinate_system"><code class="xref py py-class docutils literal"><span class="pre">Coordinate_system</span></code></a></td>
+<td>define a coordinate system</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#geosoft.gxpy.coordinate_system.Coordinate_translate" title="geosoft.gxpy.coordinate_system.Coordinate_translate"><code class="xref py py-class docutils literal"><span class="pre">Coordinate_translate</span></code></a></td>
+<td>translate coordinates between coordinate systems</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#geosoft.gxpy.coordinate_system.Wkt" title="geosoft.gxpy.coordinate_system.Wkt"><code class="xref py py-class docutils literal"><span class="pre">Wkt</span></code></a></td>
+<td>well-know coordinate system for ESRI interoperability</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
 <p>Coordinate systems describe how cartesian coordinates are located ralative to the Earth.  Cartesian coordinates
 are right-handed (x, y, z) spatial ordinates that describe locations within a coordinate system frame of reference.
-For coordinates relative to a horizontal plane, positive z is up, usually equivalent to elevation.</p>
+For coordinates relative to a horizontal plane, positive z is up, usually equivalent to elevation relative to
+a vertical datum.</p>
 <p>Coordinate systems can be oriented in three dimensions using an <cite>orientation</cite> definition, which defines an (x0, y0, z0)
 origin and rotation (rx, ry, rz) around the X, Y and then Z axis relative to a base coordinate system.</p>
 <p>Base coordinate systems are usually defined by &#8220;well-known&#8221; coordinate system projections on a datum of the earth.</p>
 <p><strong>Coordinate System Name</strong></p>
 <p>A coordinate system will also have a descriptive name that identifies the base system with a datum and &#8220;well-known&#8221;
-pmap projection description, plus optional orientation and vertical reference datum if defined.  Orientation
+map projection description, plus optional orientation and vertical reference datum if defined.  Orientation
 parameters are enclosed is <cite>&lt;&gt;</cite>, for example <cite>&lt;400000, 6200000,0,0,-90,0&gt;</cite> that defined <cite>&lt;x0, y0, z0, rx, ry, rz&gt;</cite>.
 If a vertical referenc datum is defined it appears as a string in quare brackets, for example  <cite>[CGVD28]</cite>.</p>
-<p>Examples:</p>
+<p>Example coordinate system names:</p>
 <blockquote>
 <div><div class="code highlight-default"><div class="highlight"><pre><span></span><span class="s2">&quot;NAD83 / UTM zone 15N&quot;</span>
 <span class="s2">&quot;NAD83 / UTM zone 15N &lt;450000,6250000,0,0,0,-25&gt;&quot;</span> <span class="c1"># oriented system, rotated -25 degrees</span>
@@ -99,15 +145,15 @@ If a vertical referenc datum is defined it appears as a string in quare brackets
 </div></blockquote>
 <p>The descriptive name for well-known coordinate systems is sufficient to describe the coordinate system from
 the <a class="reference external" href="http://www.epsg.org/">EPSG Geodetic Registry</a>. To fully locate ad-hoc coordinates you will need
-the parameters described in the GXF stings.  See the <cite>gxf</cite> property of <a class="reference internal" href="#module-geosoft.gxpy.coordinate_system" title="geosoft.gxpy.coordinate_system"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxpy.coordinate_system</span></code></a>.</p>
+the parameters described in the GXF stings.  See <a class="reference internal" href="#geosoft.gxpy.coordinate_system.Coordinate_system.gxf" title="geosoft.gxpy.coordinate_system.Coordinate_system.gxf"><code class="xref py py-attr docutils literal"><span class="pre">Coordinate_system.gxf</span></code></a>.</p>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
 <p class="last"><a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXIPJ</span></code></a></p>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p>Regression tests provide usage examples:</p>
-<p class="last"><a class="reference external" href="https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_coordinate_system.py">coordinate_system tests</a></p>
+<p class="last">Regression tests provide usage examples:     
+<a class="reference external" href="https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_coordinate_system.py">coordinate_system tests</a></p>
 </div>
 <dl class="exception">
 <dt id="geosoft.gxpy.coordinate_system.CSException">
@@ -117,64 +163,6 @@ the parameters described in the GXF stings.  See the <cite>gxf</cite> property o
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.2.</span></p>
 </div>
-</dd></dl>
-
-<dl class="class">
-<dt id="geosoft.gxpy.coordinate_system.Coordinate_projection">
-<em class="property">class </em><code class="descclassname">geosoft.gxpy.coordinate_system.</code><code class="descname">Coordinate_projection</code><span class="sig-paren">(</span><em>cs_from</em>, <em>cs_to</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.coordinate_system.Coordinate_projection" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
-<p>Class to reproject coordinates between different coordinate systems.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Params cs_from:</th><td class="field-body">from <a class="reference internal" href="#geosoft.gxpy.coordinate_system.Coordinate_system" title="geosoft.gxpy.coordinate_system.Coordinate_system"><code class="xref py py-class docutils literal"><span class="pre">Coordinate_system</span></code></a></td>
-</tr>
-<tr class="field-even field"><th class="field-name">Params cs_to:</th><td class="field-body">to <a class="reference internal" href="#geosoft.gxpy.coordinate_system.Coordinate_system" title="geosoft.gxpy.coordinate_system.Coordinate_system"><code class="xref py py-class docutils literal"><span class="pre">Coordinate_system</span></code></a></td>
-</tr>
-</tbody>
-</table>
-<div class="versionadded">
-<p><span class="versionmodified">New in version 9.2.</span></p>
-</div>
-<dl class="method">
-<dt id="geosoft.gxpy.coordinate_system.Coordinate_projection.convert">
-<code class="descname">convert</code><span class="sig-paren">(</span><em>xyz</em>, <em>in_place=False</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.coordinate_system.Coordinate_projection.convert" title="Permalink to this definition">¶</a></dt>
-<dd><p>Project data in array in which first columns are x,y or x,y,z.</p>
-<p>Coordinates are reprojected in-place.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>xyz</strong> &#8211; numply shape (n,2) or (n,3+), or list, or a single (x, y, z) tuple.
-Array dimension (n,2) for (x, y), (n,3+) for x,y,z.
-Only numpy arrays may have dimensions above 3.</li>
-<li><strong>in_place</strong> &#8211; if True, numpy array data is converted in-place.  Ignored for list or tuple</li>
-</ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Example:</th><td class="field-body"><p class="first">Given an array shape (500,6), which represents 500 data records with 6 columns
-in which the first 3 columns are coordinates X, Y and Z.</p>
-<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;float&#39;</span><span class="p">)</span> <span class="c1">#then fill the array with some data</span>
-
-<span class="n">xy_only</span> <span class="o">=</span> <span class="n">pj</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="n">data</span><span class="p">[:,</span><span class="mi">2</span><span class="p">])</span>     <span class="c1">#transform x,y</span>
-<span class="n">xyz_only</span> <span class="o">=</span> <span class="n">pj</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="n">data</span><span class="p">[:,</span><span class="mi">3</span><span class="p">])</span>    <span class="c1">#transform x,y and z</span>
-<span class="nb">all</span> <span class="o">=</span> <span class="n">pj</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>              <span class="c1">#transform x,y and z with data returned</span>
-</pre></div>
-</div>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">projected data in the same form as passed (numpy array, list, or (x,y,z))</p>
-</td>
-</tr>
-</tbody>
-</table>
-<div class="versionadded">
-<p><span class="versionmodified">New in version 9.2.</span></p>
-</div>
-</dd></dl>
-
 </dd></dl>
 
 <dl class="class">
@@ -468,6 +456,64 @@ column ordered and the results are returned column ordered.</li>
 </dd></dl>
 
 <dl class="class">
+<dt id="geosoft.gxpy.coordinate_system.Coordinate_translate">
+<em class="property">class </em><code class="descclassname">geosoft.gxpy.coordinate_system.</code><code class="descname">Coordinate_translate</code><span class="sig-paren">(</span><em>cs_from</em>, <em>cs_to</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.coordinate_system.Coordinate_translate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>Class to reproject coordinates between different coordinate systems.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Params cs_from:</th><td class="field-body">from <a class="reference internal" href="#geosoft.gxpy.coordinate_system.Coordinate_system" title="geosoft.gxpy.coordinate_system.Coordinate_system"><code class="xref py py-class docutils literal"><span class="pre">Coordinate_system</span></code></a></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Params cs_to:</th><td class="field-body">to <a class="reference internal" href="#geosoft.gxpy.coordinate_system.Coordinate_system" title="geosoft.gxpy.coordinate_system.Coordinate_system"><code class="xref py py-class docutils literal"><span class="pre">Coordinate_system</span></code></a></td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.2.</span></p>
+</div>
+<dl class="method">
+<dt id="geosoft.gxpy.coordinate_system.Coordinate_translate.convert">
+<code class="descname">convert</code><span class="sig-paren">(</span><em>xyz</em>, <em>in_place=False</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.coordinate_system.Coordinate_translate.convert" title="Permalink to this definition">¶</a></dt>
+<dd><p>Project data in array in which first columns are x,y or x,y,z.</p>
+<p>Coordinates are reprojected in-place.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>xyz</strong> &#8211; numply shape (n,2) or (n,3+), or list, or a single (x, y, z) tuple.
+Array dimension (n,2) for (x, y), (n,3+) for x,y,z.
+Only numpy arrays may have dimensions above 3.</li>
+<li><strong>in_place</strong> &#8211; if True, numpy array data is converted in-place.  Ignored for list or tuple</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Example:</th><td class="field-body"><p class="first">Given an array shape (500,6), which represents 500 data records with 6 columns
+in which the first 3 columns are coordinates X, Y and Z.</p>
+<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;float&#39;</span><span class="p">)</span> <span class="c1">#then fill the array with some data</span>
+
+<span class="n">xy_only</span> <span class="o">=</span> <span class="n">pj</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="n">data</span><span class="p">[:,</span><span class="mi">2</span><span class="p">])</span>     <span class="c1">#transform x,y</span>
+<span class="n">xyz_only</span> <span class="o">=</span> <span class="n">pj</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="n">data</span><span class="p">[:,</span><span class="mi">3</span><span class="p">])</span>    <span class="c1">#transform x,y and z</span>
+<span class="nb">all</span> <span class="o">=</span> <span class="n">pj</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>              <span class="c1">#transform x,y and z with data returned</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">projected data in the same form as passed (numpy array, list, or (x,y,z))</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.2.</span></p>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
 <dt id="geosoft.gxpy.coordinate_system.Wkt">
 <em class="property">class </em><code class="descclassname">geosoft.gxpy.coordinate_system.</code><code class="descname">Wkt</code><span class="sig-paren">(</span><em>wkt</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.coordinate_system.Wkt" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
@@ -527,7 +573,7 @@ column ordered and the results are returned column ordered.</li>
 <code class="descclassname">geosoft.gxpy.coordinate_system.</code><code class="descname">hcs_orient_vcs_from_name</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.coordinate_system.hcs_orient_vcs_from_name" title="Permalink to this definition">¶</a></dt>
 <dd><p>Split a full coordinate system name into its components. A name has the form &#8220;hcs &lt;orient&gt; [vcs]&#8221;
 :param name:
-:return: hcs, orient, vcs</p>
+:returns: hcs, orient, vcs</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.2.</span></p>
 </div>
@@ -610,7 +656,7 @@ empty, the name will not include these parts.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>what</strong> &#8211; see <a class="reference internal" href="#geosoft.gxpy.coordinate_system.parameters" title="geosoft.gxpy.coordinate_system.parameters"><code class="xref py py-meth docutils literal"><span class="pre">parameters()</span></code></a></li>
+<li><strong>what</strong> &#8211; see <a class="reference internal" href="#geosoft.gxpy.coordinate_system.parameters" title="geosoft.gxpy.coordinate_system.parameters"><code class="xref py py-func docutils literal"><span class="pre">parameters()</span></code></a></li>
 <li><strong>key</strong> &#8211; parameter key</li>
 </ul>
 </td>
@@ -679,9 +725,13 @@ empty, the name will not include these parts.</p>
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li> 
+          <a href="geosoft.gxpy.dataframe.html" title="geosoft.gxpy.dataframe submodule"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="geosoft.gxpy.agg.html" title="geosoft.gxpy.agg submodule"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="geosoft.gxpy.html" >gxpy modules reference</a> &#187;</li> 
       </ul>
     </div>
 

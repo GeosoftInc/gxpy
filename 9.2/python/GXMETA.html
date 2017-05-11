@@ -27,6 +27,8 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="GXMISC class" href="GXMISC.html" />
+    <link rel="prev" title="GXMATH class" href="GXMATH.html" />
  
 <script type="text/javascript">
   var _gaq = _gaq || [];
@@ -43,9 +45,13 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li> 
+          <a href="GXMISC.html" title="GXMISC class"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="GXMATH.html" title="GXMATH class"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="geosoft.gxapi.classes.html" accesskey="U">GX API Class/Library Reference</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -61,13 +67,19 @@
 </li>
 </ul>
 
-  <div role="note" aria-label="source link">
-    <h3>This Page</h3>
-    <ul class="this-page-menu">
-      <li><a href="_sources/GXMETA.rst.txt"
-            rel="nofollow">Show Source</a></li>
-    </ul>
-   </div>
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Introduction</a></li>
+    <li><a href="geosoft.gxapi.classes.html">GX API Class/Library Reference</a></li>
+</ul>
+<h3>Previous Topic</h3>
+<ul>
+    <li><a href="GXMATH.html" title="previous chapter">GXMATH class</a></li>
+</ul>
+<h3>Next Topic</h3>
+<ul>
+    <li><a href="GXMISC.html" title="next chapter">GXMISC class</a></li>
+</ul>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
@@ -78,6 +90,13 @@
     </form>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/GXMETA.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
         </div>
       </div>
 
@@ -91,20 +110,20 @@
 <dl class="class">
 <dt id="geosoft.gxapi.GXMETA">
 <em class="property">class </em><code class="descclassname">geosoft.gxapi.</code><code class="descname">GXMETA</code><a class="headerlink" href="#geosoft.gxapi.GXMETA" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-A META object contains hierarchical organized metadata
-of any type, including other objects.  META information
-is organized in an XML-like structure based on a data
-schema that describes the data hierarchy.   META objects
-are used by many entities that need to store metadata
-specific to the entities or to the application.
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="n">META</span> <span class="nb">object</span> <span class="n">contains</span> <span class="n">hierarchical</span> <span class="n">organized</span> <span class="n">metadata</span>
+<span class="n">of</span> <span class="nb">any</span> <span class="nb">type</span><span class="p">,</span> <span class="n">including</span> <span class="n">other</span> <span class="n">objects</span><span class="o">.</span>  <span class="n">META</span> <span class="n">information</span>
+<span class="ow">is</span> <span class="n">organized</span> <span class="ow">in</span> <span class="n">an</span> <span class="n">XML</span><span class="o">-</span><span class="n">like</span> <span class="n">structure</span> <span class="n">based</span> <span class="n">on</span> <span class="n">a</span> <span class="n">data</span>
+<span class="n">schema</span> <span class="n">that</span> <span class="n">describes</span> <span class="n">the</span> <span class="n">data</span> <span class="n">hierarchy</span><span class="o">.</span>   <span class="n">META</span> <span class="n">objects</span>
+<span class="n">are</span> <span class="n">used</span> <span class="n">by</span> <span class="n">many</span> <span class="n">entities</span> <span class="n">that</span> <span class="n">need</span> <span class="n">to</span> <span class="n">store</span> <span class="n">metadata</span>
+<span class="n">specific</span> <span class="n">to</span> <span class="n">the</span> <span class="n">entities</span> <span class="ow">or</span> <span class="n">to</span> <span class="n">the</span> <span class="n">application</span><span class="o">.</span>
 
-Metadata can be saved in databases and maps, as well as in
-channels, lines, views and groups.  Oasis montaj objects
-can be queried for their associated metadata, and if it
-exists, the metadata can be retrieved and utilized by
-other Oasis montaj processes.
-</pre>
+<span class="n">Metadata</span> <span class="n">can</span> <span class="n">be</span> <span class="n">saved</span> <span class="ow">in</span> <span class="n">databases</span> <span class="ow">and</span> <span class="n">maps</span><span class="p">,</span> <span class="k">as</span> <span class="n">well</span> <span class="k">as</span> <span class="ow">in</span>
+<span class="n">channels</span><span class="p">,</span> <span class="n">lines</span><span class="p">,</span> <span class="n">views</span> <span class="ow">and</span> <span class="n">groups</span><span class="o">.</span>  <span class="n">Oasis</span> <span class="n">montaj</span> <span class="n">objects</span>
+<span class="n">can</span> <span class="n">be</span> <span class="n">queried</span> <span class="k">for</span> <span class="n">their</span> <span class="n">associated</span> <span class="n">metadata</span><span class="p">,</span> <span class="ow">and</span> <span class="k">if</span> <span class="n">it</span>
+<span class="n">exists</span><span class="p">,</span> <span class="n">the</span> <span class="n">metadata</span> <span class="n">can</span> <span class="n">be</span> <span class="n">retrieved</span> <span class="ow">and</span> <span class="n">utilized</span> <span class="n">by</span>
+<span class="n">other</span> <span class="n">Oasis</span> <span class="n">montaj</span> <span class="n">processes</span><span class="o">.</span>
+</pre></div>
+</div>
 <dl class="method">
 <dt id="geosoft.gxapi.GXMETA.copy">
 <code class="descname">copy</code><span class="sig-paren">(</span><em>(GXMETA)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXMETA.copy" title="Permalink to this definition">¶</a></dt>
@@ -161,15 +180,15 @@ other Oasis montaj processes.
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<em>str</em>) &#8211; Attribute Name</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Parent class or <a class="reference internal" href="#meta-core-class"><span class="std std-ref">META_CORE_CLASS constants</span></a></li>
-<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Type of Attribute or <a class="reference internal" href="#meta-core-type"><span class="std std-ref">META_CORE_TYPE constants</span></a></li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; Parent class or <a class="reference internal" href="#meta-core-class"><span class="std std-ref">META_CORE_CLASS constants</span></a></li>
+<li><strong>arg3</strong> (<em>int</em>) &#8211; Type of Attribute or <a class="reference internal" href="#meta-core-type"><span class="std std-ref">META_CORE_TYPE constants</span></a></li>
 </ul>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">x - Attribute Token</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></p>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
 </td>
 </tr>
 </tbody>
@@ -191,14 +210,14 @@ other Oasis montaj processes.
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<em>str</em>) &#8211; Class Name</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Parent class or <a class="reference internal" href="#meta-core-class"><span class="std std-ref">META_CORE_CLASS constants</span></a>_Base</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; Parent class or <a class="reference internal" href="#meta-core-class"><span class="std std-ref">META_CORE_CLASS constants</span></a>_Base</li>
 </ul>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">x - Class Token</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></p>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
 </td>
 </tr>
 </tbody>
@@ -243,15 +262,15 @@ other Oasis montaj processes.
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<em>str</em>) &#8211; Attribute Name</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Parent Class or <a class="reference internal" href="#meta-core-class"><span class="std std-ref">META_CORE_CLASS constants</span></a></li>
-<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Parent Type or <a class="reference internal" href="#meta-core-type"><span class="std std-ref">META_CORE_TYPE constants</span></a></li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; Parent Class or <a class="reference internal" href="#meta-core-class"><span class="std std-ref">META_CORE_CLASS constants</span></a></li>
+<li><strong>arg3</strong> (<em>int</em>) &#8211; Parent Type or <a class="reference internal" href="#meta-core-type"><span class="std std-ref">META_CORE_TYPE constants</span></a></li>
 </ul>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">x - Type Token</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></p>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
 </td>
 </tr>
 </tbody>
@@ -264,14 +283,14 @@ other Oasis montaj processes.
 <dl class="method">
 <dt id="geosoft.gxapi.GXMETA.delete_all_items">
 <code class="descname">delete_all_items</code><span class="sig-paren">(</span><em>(int)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXMETA.delete_all_items" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Delete all items in this class.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Delete</span> <span class="nb">all</span> <span class="n">items</span> <span class="ow">in</span> <span class="n">this</span> <span class="n">class</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Class of items to delete</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>int</em>) &#8211; Class of items to delete</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Nothing</td>
 </tr>
@@ -287,14 +306,14 @@ Delete all items in this class.
 <dl class="method">
 <dt id="geosoft.gxapi.GXMETA.delete_attrib">
 <code class="descname">delete_attrib</code><span class="sig-paren">(</span><em>(int)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXMETA.delete_attrib" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Delete Attrib from META.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Delete</span> <span class="n">Attrib</span> <span class="kn">from</span> <span class="nn">META.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Attrib to delete</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>int</em>) &#8211; Attrib to delete</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Nothing</td>
 </tr>
@@ -310,14 +329,14 @@ Delete Attrib from META.
 <dl class="method">
 <dt id="geosoft.gxapi.GXMETA.delete_class">
 <code class="descname">delete_class</code><span class="sig-paren">(</span><em>(int)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXMETA.delete_class" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Delete Class from META.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Delete</span> <span class="n">Class</span> <span class="kn">from</span> <span class="nn">META.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Class to delete</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>int</em>) &#8211; Class to delete</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Nothing</td>
 </tr>
@@ -333,14 +352,14 @@ Delete Class from META.
 <dl class="method">
 <dt id="geosoft.gxapi.GXMETA.delete_data">
 <code class="descname">delete_data</code><span class="sig-paren">(</span><em>(int)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXMETA.delete_data" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Delete Data from META.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Delete</span> <span class="n">Data</span> <span class="kn">from</span> <span class="nn">META.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Data to delete</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>int</em>) &#8211; Data to delete</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Nothing</td>
 </tr>
@@ -356,14 +375,14 @@ Delete Data from META.
 <dl class="method">
 <dt id="geosoft.gxapi.GXMETA.delete_item">
 <code class="descname">delete_item</code><span class="sig-paren">(</span><em>(int)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXMETA.delete_item" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Delete item from META.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Delete</span> <span class="n">item</span> <span class="kn">from</span> <span class="nn">META.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Item to delete</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>int</em>) &#8211; Item to delete</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Nothing</td>
 </tr>
@@ -379,14 +398,14 @@ Delete item from META.
 <dl class="method">
 <dt id="geosoft.gxapi.GXMETA.delete_type">
 <code class="descname">delete_type</code><span class="sig-paren">(</span><em>(int)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXMETA.delete_type" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Delete Type from META.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Delete</span> <span class="n">Type</span> <span class="kn">from</span> <span class="nn">META.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Type to delete</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>int</em>) &#8211; Type to delete</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Nothing</td>
 </tr>
@@ -410,7 +429,7 @@ Delete Type from META.
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Class of items to export</li>
+<li><strong>arg1</strong> (<em>int</em>) &#8211; Class of items to export</li>
 <li><strong>arg2</strong> (<em>str</em>) &#8211; Name of CSV file to produce</li>
 </ul>
 </td>
@@ -431,16 +450,16 @@ Delete Type from META.
 <dl class="method">
 <dt id="geosoft.gxapi.GXMETA.find_data">
 <code class="descname">find_data</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(int)arg2</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXMETA.find_data" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Does this meta/attribute have a value ?
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span>Does this meta/attribute have a value ?
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Object</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Attribute</li>
+<li><strong>arg1</strong> (<em>int</em>) &#8211; Object</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; Attribute</li>
 </ul>
 </td>
 </tr>
@@ -448,7 +467,7 @@ Does this meta/attribute have a value ?
 <a class="reference internal" href="#h-meta-invalid-token"><span class="std std-ref">H_META_INVALID_TOKEN constant</span></a> - No</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></p>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
 </td>
 </tr>
 </tbody>
@@ -469,8 +488,8 @@ Does this meta/attribute have a value ?
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Object</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Attribute</li>
+<li><strong>arg1</strong> (<em>int</em>) &#8211; Object</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; Attribute</li>
 <li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; Value to set</li>
 </ul>
 </td>
@@ -499,8 +518,8 @@ Does this meta/attribute have a value ?
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Object</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Attribute</li>
+<li><strong>arg1</strong> (<em>int</em>) &#8211; Object</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; Attribute</li>
 <li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Value to set</li>
 </ul>
 </td>
@@ -521,16 +540,16 @@ Does this meta/attribute have a value ?
 <dl class="method">
 <dt id="geosoft.gxapi.GXMETA.get_attrib_enum">
 <code class="descname">get_attrib_enum</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(int)arg2</em>, <em>(int_ref)arg3</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXMETA.get_attrib_enum" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Get an enum value to an attribute (as an integer)
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">an</span> <span class="n">enum</span> <span class="n">value</span> <span class="n">to</span> <span class="n">an</span> <span class="n">attribute</span> <span class="p">(</span><span class="k">as</span> <span class="n">an</span> <span class="n">integer</span><span class="p">)</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Object</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Attribute</li>
+<li><strong>arg1</strong> (<em>int</em>) &#8211; Object</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; Attribute</li>
 <li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; Value to set</li>
 </ul>
 </td>
@@ -559,8 +578,8 @@ Get an enum value to an attribute (as an integer)
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Object</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Attribute</li>
+<li><strong>arg1</strong> (<em>int</em>) &#8211; Object</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; Attribute</li>
 <li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; Value to set</li>
 </ul>
 </td>
@@ -589,9 +608,9 @@ Get an enum value to an attribute (as an integer)
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Object</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Attribute</li>
-<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Object to get info into</li>
+<li><strong>arg1</strong> (<em>int</em>) &#8211; Object</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; Attribute</li>
+<li><strong>arg3</strong> (<em>int</em>) &#8211; Object to get info into</li>
 </ul>
 </td>
 </tr>
@@ -619,8 +638,8 @@ Get an enum value to an attribute (as an integer)
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Object</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Attribute</li>
+<li><strong>arg1</strong> (<em>int</em>) &#8211; Object</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; Attribute</li>
 <li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; String value to get</li>
 </ul>
 </td>
@@ -641,15 +660,15 @@ Get an enum value to an attribute (as an integer)
 <dl class="method">
 <dt id="geosoft.gxapi.GXMETA.get_obj_name">
 <code class="descname">get_obj_name</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(str_ref)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXMETA.get_obj_name" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Get the name of this item.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">the</span> <span class="n">name</span> <span class="n">of</span> <span class="n">this</span> <span class="n">item</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Object</li>
+<li><strong>arg1</strong> (<em>int</em>) &#8211; Object</li>
 <li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; Name of object</li>
 </ul>
 </td>
@@ -679,7 +698,7 @@ Get the name of this item.
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<a class="reference internal" href="#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXMETA</span></code></a>) &#8211; Source META object.</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Attribute to copy</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; Attribute to copy</li>
 </ul>
 </td>
 </tr>
@@ -687,7 +706,7 @@ Get the name of this item.
 META_INVALID_TOKEN - No visible data</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></p>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
 </td>
 </tr>
 </tbody>
@@ -709,7 +728,7 @@ META_INVALID_TOKEN - No visible data</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<a class="reference internal" href="#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXMETA</span></code></a>) &#8211; Source META object.</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Class to copy</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; Class to copy</li>
 </ul>
 </td>
 </tr>
@@ -717,7 +736,7 @@ META_INVALID_TOKEN - No visible data</p>
 META_INVALID_TOKEN - No visible data anywhere</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></p>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
 </td>
 </tr>
 </tbody>
@@ -726,9 +745,9 @@ META_INVALID_TOKEN - No visible data anywhere</p>
 <p><span class="versionmodified">New in version 5.1.6.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-This will copy all parent classes as well.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="n">will</span> <span class="n">copy</span> <span class="nb">all</span> <span class="n">parent</span> <span class="n">classes</span> <span class="k">as</span> <span class="n">well</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
@@ -743,7 +762,7 @@ This will copy all parent classes as well.
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<a class="reference internal" href="#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXMETA</span></code></a>) &#8211; Source META object.</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Data value to copy</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; Data value to copy</li>
 </ul>
 </td>
 </tr>
@@ -751,7 +770,7 @@ This will copy all parent classes as well.
 META_INVALID_TOKEN - No visible data</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></p>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
 </td>
 </tr>
 </tbody>
@@ -773,7 +792,7 @@ META_INVALID_TOKEN - No visible data</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<a class="reference internal" href="#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXMETA</span></code></a>) &#8211; Source META object.</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Item to copy</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; Item to copy</li>
 </ul>
 </td>
 </tr>
@@ -781,7 +800,7 @@ META_INVALID_TOKEN - No visible data</p>
 META_INVALID_TOKEN - No visible data</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></p>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
 </td>
 </tr>
 </tbody>
@@ -803,7 +822,7 @@ META_INVALID_TOKEN - No visible data</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<a class="reference internal" href="#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXMETA</span></code></a>) &#8211; Source META object.</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Type to copy</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; Type to copy</li>
 </ul>
 </td>
 </tr>
@@ -811,7 +830,7 @@ META_INVALID_TOKEN - No visible data</p>
 META_INVALID_TOKEN - No visible data anywhere</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></p>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
 </td>
 </tr>
 </tbody>
@@ -820,24 +839,24 @@ META_INVALID_TOKEN - No visible data anywhere</p>
 <p><span class="versionmodified">New in version 5.1.6.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-Classes and parent types will also be copied.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Classes</span> <span class="ow">and</span> <span class="n">parent</span> <span class="n">types</span> <span class="n">will</span> <span class="n">also</span> <span class="n">be</span> <span class="n">copied</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXMETA.h_creat_item">
 <code class="descname">h_creat_item</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(int)arg2</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXMETA.h_creat_item" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Creates item in Class.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Creates</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">Class</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<em>str</em>) &#8211; Unique item Name</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Class (can be root)</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; Class (can be root)</li>
 </ul>
 </td>
 </tr>
@@ -845,7 +864,7 @@ Creates item in Class.
 <a class="reference internal" href="#h-meta-invalid-token"><span class="std std-ref">H_META_INVALID_TOKEN constant</span></a> - Error</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></p>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
 </td>
 </tr>
 </tbody>
@@ -866,8 +885,8 @@ Creates item in Class.
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Class</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Starting Item (must <a class="reference internal" href="#h-meta-invalid-token"><span class="std std-ref">H_META_INVALID_TOKEN constant</span></a> for first item)</li>
+<li><strong>arg1</strong> (<em>int</em>) &#8211; Class</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; Starting Item (must <a class="reference internal" href="#h-meta-invalid-token"><span class="std std-ref">H_META_INVALID_TOKEN constant</span></a> for first item)</li>
 </ul>
 </td>
 </tr>
@@ -875,7 +894,7 @@ Creates item in Class.
 <a class="reference internal" href="#h-meta-invalid-token"><span class="std std-ref">H_META_INVALID_TOKEN constant</span></a> - No more items</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></p>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
 </td>
 </tr>
 </tbody>
@@ -888,16 +907,16 @@ Creates item in Class.
 <dl class="method">
 <dt id="geosoft.gxapi.GXMETA.has_value">
 <code class="descname">has_value</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(int)arg2</em><span class="sig-paren">)</span> &rarr; bool:<a class="headerlink" href="#geosoft.gxapi.GXMETA.has_value" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Does this meta/attribute have a value set?
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span>Does this meta/attribute have a value set?
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Object</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Attribute</li>
+<li><strong>arg1</strong> (<em>int</em>) &#8211; Object</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; Attribute</li>
 </ul>
 </td>
 </tr>
@@ -917,15 +936,15 @@ Does this meta/attribute have a value set?
 <dl class="method">
 <dt id="geosoft.gxapi.GXMETA.import_table_csv">
 <code class="descname">import_table_csv</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(str)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXMETA.import_table_csv" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Import a CSV into a class as items.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Import</span> <span class="n">a</span> <span class="n">CSV</span> <span class="n">into</span> <span class="n">a</span> <span class="k">class</span> <span class="nc">as</span> <span class="n">items</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Class to import into</li>
+<li><strong>arg1</strong> (<em>int</em>) &#8211; Class to import into</li>
 <li><strong>arg2</strong> (<em>str</em>) &#8211; Name of CSV file to load</li>
 </ul>
 </td>
@@ -942,12 +961,12 @@ Import a CSV into a class as items.
 <p><span class="versionmodified">New in version 5.1.5.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-Field names in the CSV file that match attribute names in the class will be
-imported into table entries in the class.  Usually this will be used with
-a class created using the hCreateTable_SCHEMA method so that the contents of
-class can be viewed as a table.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Field</span> <span class="n">names</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">CSV</span> <span class="n">file</span> <span class="n">that</span> <span class="n">match</span> <span class="n">attribute</span> <span class="n">names</span> <span class="ow">in</span> <span class="n">the</span> <span class="k">class</span> <span class="nc">will</span> <span class="n">be</span>
+<span class="n">imported</span> <span class="n">into</span> <span class="n">table</span> <span class="n">entries</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">class</span><span class="o">.</span>  <span class="n">Usually</span> <span class="n">this</span> <span class="n">will</span> <span class="n">be</span> <span class="n">used</span> <span class="k">with</span>
+<span class="n">a</span> <span class="k">class</span> <span class="nc">created</span> <span class="n">using</span> <span class="n">the</span> <span class="n">hCreateTable_SCHEMA</span> <span class="n">method</span> <span class="n">so</span> <span class="n">that</span> <span class="n">the</span> <span class="n">contents</span> <span class="n">of</span>
+<span class="k">class</span> <span class="nc">can</span> <span class="n">be</span> <span class="n">viewed</span> <span class="k">as</span> <span class="n">a</span> <span class="n">table</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
@@ -978,8 +997,8 @@ class can be viewed as a table.
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<a class="reference internal" href="#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXMETA</span></code></a>) &#8211; Source META Object</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Object to copy data from</li>
-<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Object to copy data to</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; Object to copy data from</li>
+<li><strong>arg3</strong> (<em>int</em>) &#8211; Object to copy data to</li>
 </ul>
 </td>
 </tr>
@@ -1015,9 +1034,9 @@ class can be viewed as a table.
 <dl class="method">
 <dt id="geosoft.gxapi.GXMETA.resolve_umn">
 <code class="descname">resolve_umn</code><span class="sig-paren">(</span><em>(str)arg1</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXMETA.resolve_umn" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Resolve a Unique Meta Name (UMN) and find the token
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Resolve</span> <span class="n">a</span> <span class="n">Unique</span> <span class="n">Meta</span> <span class="n">Name</span> <span class="p">(</span><span class="n">UMN</span><span class="p">)</span> <span class="ow">and</span> <span class="n">find</span> <span class="n">the</span> <span class="n">token</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1027,7 +1046,7 @@ Resolve a Unique Meta Name (UMN) and find the token
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">x                    - Token
 <a class="reference internal" href="#h-meta-invalid-token"><span class="std std-ref">H_META_INVALID_TOKEN constant</span></a> - Not found</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
 </tr>
 </tbody>
 </table>
@@ -1070,9 +1089,9 @@ Resolve a Unique Meta Name (UMN) and find the token
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Object</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Attribute</li>
-<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Value to set</li>
+<li><strong>arg1</strong> (<em>int</em>) &#8211; Object</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; Attribute</li>
+<li><strong>arg3</strong> (<em>int</em>) &#8211; Value to set</li>
 </ul>
 </td>
 </tr>
@@ -1100,8 +1119,8 @@ Resolve a Unique Meta Name (UMN) and find the token
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Object</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Attribute</li>
+<li><strong>arg1</strong> (<em>int</em>) &#8211; Object</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; Attribute</li>
 <li><strong>arg3</strong> (<em>float</em>) &#8211; Value to set</li>
 </ul>
 </td>
@@ -1122,17 +1141,17 @@ Resolve a Unique Meta Name (UMN) and find the token
 <dl class="method">
 <dt id="geosoft.gxapi.GXMETA.set_attrib_enum">
 <code class="descname">set_attrib_enum</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(int)arg2</em>, <em>(int)arg3</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXMETA.set_attrib_enum" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Set an enum value to an attribute (as an integer)
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Set</span> <span class="n">an</span> <span class="n">enum</span> <span class="n">value</span> <span class="n">to</span> <span class="n">an</span> <span class="n">attribute</span> <span class="p">(</span><span class="k">as</span> <span class="n">an</span> <span class="n">integer</span><span class="p">)</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Object</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Attribute</li>
-<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Value to set</li>
+<li><strong>arg1</strong> (<em>int</em>) &#8211; Object</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; Attribute</li>
+<li><strong>arg3</strong> (<em>int</em>) &#8211; Value to set</li>
 </ul>
 </td>
 </tr>
@@ -1160,9 +1179,9 @@ Set an enum value to an attribute (as an integer)
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Object</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Attribute</li>
-<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Value to set</li>
+<li><strong>arg1</strong> (<em>int</em>) &#8211; Object</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; Attribute</li>
+<li><strong>arg3</strong> (<em>int</em>) &#8211; Value to set</li>
 </ul>
 </td>
 </tr>
@@ -1190,9 +1209,9 @@ Set an enum value to an attribute (as an integer)
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Object</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Attribute</li>
-<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Object to set</li>
+<li><strong>arg1</strong> (<em>int</em>) &#8211; Object</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; Attribute</li>
+<li><strong>arg3</strong> (<em>int</em>) &#8211; Object to set</li>
 </ul>
 </td>
 </tr>
@@ -1220,8 +1239,8 @@ Set an enum value to an attribute (as an integer)
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Object</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Attribute</li>
+<li><strong>arg1</strong> (<em>int</em>) &#8211; Object</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; Attribute</li>
 <li><strong>arg3</strong> (<em>str</em>) &#8211; String value to set</li>
 </ul>
 </td>
@@ -1242,16 +1261,16 @@ Set an enum value to an attribute (as an integer)
 <dl class="method">
 <dt id="geosoft.gxapi.GXMETA.set_attribute_editable">
 <code class="descname">set_attribute_editable</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(int)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXMETA.set_attribute_editable" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Allow/disallow an attribute to be editable in the browser
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Allow</span><span class="o">/</span><span class="n">disallow</span> <span class="n">an</span> <span class="n">attribute</span> <span class="n">to</span> <span class="n">be</span> <span class="n">editable</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">browser</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Attribute or <a class="reference internal" href="#meta-core-attrib"><span class="std std-ref">META_CORE_ATTRIB constants</span></a></li>
-<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Editable Flag</li>
+<li><strong>arg1</strong> (<em>int</em>) &#8211; Attribute or <a class="reference internal" href="#meta-core-attrib"><span class="std std-ref">META_CORE_ATTRIB constants</span></a></li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; Editable Flag</li>
 </ul>
 </td>
 </tr>
@@ -1271,16 +1290,16 @@ Allow/disallow an attribute to be editable in the browser
 <dl class="method">
 <dt id="geosoft.gxapi.GXMETA.set_attribute_visible">
 <code class="descname">set_attribute_visible</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(int)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXMETA.set_attribute_visible" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Allow/disallow an attribute to be visible in the browser
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Allow</span><span class="o">/</span><span class="n">disallow</span> <span class="n">an</span> <span class="n">attribute</span> <span class="n">to</span> <span class="n">be</span> <span class="n">visible</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">browser</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Attribute or <a class="reference internal" href="#meta-core-attrib"><span class="std std-ref">META_CORE_ATTRIB constants</span></a></li>
-<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Editable Flag</li>
+<li><strong>arg1</strong> (<em>int</em>) &#8211; Attribute or <a class="reference internal" href="#meta-core-attrib"><span class="std std-ref">META_CORE_ATTRIB constants</span></a></li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; Editable Flag</li>
 </ul>
 </td>
 </tr>
@@ -1308,8 +1327,8 @@ Allow/disallow an attribute to be visible in the browser
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; MetaObject to set</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Attribute MetaObject to set</li>
+<li><strong>arg1</strong> (<em>int</em>) &#8211; MetaObject to set</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; Attribute MetaObject to set</li>
 </ul>
 </td>
 </tr>
@@ -1735,9 +1754,13 @@ Allow/disallow an attribute to be visible in the browser
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li> 
+          <a href="GXMISC.html" title="GXMISC class"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="GXMATH.html" title="GXMATH class"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="geosoft.gxapi.classes.html" >GX API Class/Library Reference</a> &#187;</li> 
       </ul>
     </div>
 

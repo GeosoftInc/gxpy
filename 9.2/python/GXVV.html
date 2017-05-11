@@ -27,6 +27,8 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="GXVVEXP class" href="GXVVEXP.html" />
+    <link rel="prev" title="GXVULCAN class" href="GXVULCAN.html" />
  
 <script type="text/javascript">
   var _gaq = _gaq || [];
@@ -43,9 +45,13 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li> 
+          <a href="GXVVEXP.html" title="GXVVEXP class"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="GXVULCAN.html" title="GXVULCAN class"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="geosoft.gxapi.classes.html" accesskey="U">GX API Class/Library Reference</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -66,13 +72,19 @@
 </li>
 </ul>
 
-  <div role="note" aria-label="source link">
-    <h3>This Page</h3>
-    <ul class="this-page-menu">
-      <li><a href="_sources/GXVV.rst.txt"
-            rel="nofollow">Show Source</a></li>
-    </ul>
-   </div>
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Introduction</a></li>
+    <li><a href="geosoft.gxapi.classes.html">GX API Class/Library Reference</a></li>
+</ul>
+<h3>Previous Topic</h3>
+<ul>
+    <li><a href="GXVULCAN.html" title="previous chapter">GXVULCAN class</a></li>
+</ul>
+<h3>Next Topic</h3>
+<ul>
+    <li><a href="GXVVEXP.html" title="next chapter">GXVVEXP class</a></li>
+</ul>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
@@ -83,6 +95,13 @@
     </form>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/GXVV.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
         </div>
       </div>
 
@@ -107,7 +126,7 @@ Dynamic Link Library (DLL) object function.
 
 If you want to pass data to a DLL, you must move a subset
 of the data stored in memory to a small vector object and
-then use the \ :func:`geosoft.gxapi.GXGEO.get_ptr_vm`\  function to pass a pointer to the
+then use the <code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXGEO.get_ptr_vm()</span></code> function to pass a pointer to the
 data on to the external function.
 
 See VVU for more utility methods.
@@ -115,9 +134,9 @@ See VVU for more utility methods.
 <dl class="method">
 <dt id="geosoft.gxapi.GXVV.abs">
 <code class="descname">abs</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXVV.abs" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Take the absolute value of values in a VV.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Take</span> <span class="n">the</span> <span class="n">absolute</span> <span class="n">value</span> <span class="n">of</span> <span class="n">values</span> <span class="ow">in</span> <span class="n">a</span> <span class="n">VV</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -136,9 +155,9 @@ Take the absolute value of values in a VV.
 <dl class="method">
 <dt id="geosoft.gxapi.GXVV.add">
 <code class="descname">add</code><span class="sig-paren">(</span><em>(GXVV)arg1</em>, <em>(GXVV)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXVV.add" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Add two VVs: VV_A + VV_B = VV_C
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Add</span> <span class="n">two</span> <span class="n">VVs</span><span class="p">:</span> <span class="n">VV_A</span> <span class="o">+</span> <span class="n">VV_B</span> <span class="o">=</span> <span class="n">VV_C</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -166,7 +185,7 @@ Add two VVs: VV_A + VV_B = VV_C
 <dt id="geosoft.gxapi.GXVV.add2">
 <code class="descname">add2</code><span class="sig-paren">(</span><em>(float)arg1</em>, <em>(GXVV)arg2</em>, <em>(float)arg3</em>, <em>(GXVV)arg4</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXVV.add2" title="Permalink to this definition">¶</a></dt>
 <dd><pre class="literal-block">
-Add two VVs with linear factors: VV_A\ `*`\ f1 + VV_B\ `*`\ f2 = VV_C
+Add two VVs with linear factors: VV_A<cite>*</cite>f1 + VV_B<cite>*</cite>f2 = VV_C
 </pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -192,9 +211,9 @@ Add two VVs with linear factors: VV_A\ `*`\ f1 + VV_B\ `*`\ f2 = VV_C
 <p><span class="versionmodified">New in version 5.0.8.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-The multipliers must be defined and within the GS_R8MN GS_R8MX range.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">multipliers</span> <span class="n">must</span> <span class="n">be</span> <span class="n">defined</span> <span class="ow">and</span> <span class="n">within</span> <span class="n">the</span> <span class="n">GS_R8MN</span> <span class="n">GS_R8MX</span> <span class="nb">range</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
@@ -230,9 +249,9 @@ The multipliers must be defined and within the GS_R8MN GS_R8MX range.
 <dl class="method">
 <dt id="geosoft.gxapi.GXVV.append">
 <code class="descname">append</code><span class="sig-paren">(</span><em>(GXVV)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXVV.append" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Appends VV's
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Appends</span> <span class="n">VV</span><span class="s1">&#39;s</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -253,9 +272,9 @@ Appends VV's
 <dl class="method">
 <dt id="geosoft.gxapi.GXVV.copy">
 <code class="descname">copy</code><span class="sig-paren">(</span><em>(GXVV)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXVV.copy" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Copy one VV to another.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Copy</span> <span class="n">one</span> <span class="n">VV</span> <span class="n">to</span> <span class="n">another</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -276,18 +295,18 @@ Copy one VV to another.
 <dl class="method">
 <dt id="geosoft.gxapi.GXVV.copy2">
 <code class="descname">copy2</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(GXVV)arg2</em>, <em>(int)arg3</em>, <em>(int)arg4</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXVV.copy2" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Copy part of a vector into part of another vector.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Copy</span> <span class="n">part</span> <span class="n">of</span> <span class="n">a</span> <span class="n">vector</span> <span class="n">into</span> <span class="n">part</span> <span class="n">of</span> <span class="n">another</span> <span class="n">vector</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Destination start element</li>
+<li><strong>arg1</strong> (<em>int</em>) &#8211; Destination start element</li>
 <li><strong>arg2</strong> (<a class="reference internal" href="#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Source VV (can be the same as Destination)</li>
-<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Source start element</li>
-<li><strong>arg4</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Number of points</li>
+<li><strong>arg3</strong> (<em>int</em>) &#8211; Source start element</li>
+<li><strong>arg4</strong> (<em>int</em>) &#8211; Number of points</li>
 </ul>
 </td>
 </tr>
@@ -303,13 +322,13 @@ Copy part of a vector into part of another vector.
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-1. Unlike Copy_VV destination VV is not reallocated, nor is
-the length changed. The caller must make any desired changes.
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="mf">1.</span> <span class="n">Unlike</span> <span class="n">Copy_VV</span> <span class="n">destination</span> <span class="n">VV</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">reallocated</span><span class="p">,</span> <span class="n">nor</span> <span class="ow">is</span>
+<span class="n">the</span> <span class="n">length</span> <span class="n">changed</span><span class="o">.</span> <span class="n">The</span> <span class="n">caller</span> <span class="n">must</span> <span class="n">make</span> <span class="nb">any</span> <span class="n">desired</span> <span class="n">changes</span><span class="o">.</span>
 
-2. All VV types are supported and will be converted using
-Convert_GS if necessary.
-</pre>
+<span class="mf">2.</span> <span class="n">All</span> <span class="n">VV</span> <span class="n">types</span> <span class="n">are</span> <span class="n">supported</span> <span class="ow">and</span> <span class="n">will</span> <span class="n">be</span> <span class="n">converted</span> <span class="n">using</span>
+<span class="n">Convert_GS</span> <span class="k">if</span> <span class="n">necessary</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
@@ -323,15 +342,15 @@ Convert_GS if necessary.
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Starting point in VV (0 for all)</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Number of elements to process (-1 for all)</li>
+<li><strong>arg1</strong> (<em>int</em>) &#8211; Starting point in VV (0 for all)</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; Number of elements to process (-1 for all)</li>
 </ul>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">The count</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></p>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
 </td>
 </tr>
 </tbody>
@@ -344,18 +363,18 @@ Convert_GS if necessary.
 <dl class="method">
 <dt id="geosoft.gxapi.GXVV.crc">
 <code class="descname">crc</code><span class="sig-paren">(</span><em>(int)arg1</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXVV.crc" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Compute the CRC value of a VV.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Compute</span> <span class="n">the</span> <span class="n">CRC</span> <span class="n">value</span> <span class="n">of</span> <span class="n">a</span> <span class="n">VV</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; previous CRC <a class="reference internal" href="GXGEOSOFT.html#crc-init-value"><span class="std std-ref">CRC_INIT_VALUE constant</span></a></td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>int</em>) &#8211; previous CRC <a class="reference internal" href="GXGEOSOFT.html#crc-init-value"><span class="std std-ref">CRC_INIT_VALUE constant</span></a></td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">CRC Value</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
 </tr>
 </tbody>
 </table>
@@ -367,26 +386,26 @@ Compute the CRC value of a VV.
 <dl class="method">
 <dt id="geosoft.gxapi.GXVV.crc_inexact">
 <code class="descname">crc_inexact</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(int)arg2</em>, <em>(int)arg3</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXVV.crc_inexact" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Compute the CRC value of a VV and allows you to specify
-number of bits of floats/doubles to drop so that the CRC
-will be same even of this are changed.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Compute</span> <span class="n">the</span> <span class="n">CRC</span> <span class="n">value</span> <span class="n">of</span> <span class="n">a</span> <span class="n">VV</span> <span class="ow">and</span> <span class="n">allows</span> <span class="n">you</span> <span class="n">to</span> <span class="n">specify</span>
+<span class="n">number</span> <span class="n">of</span> <span class="n">bits</span> <span class="n">of</span> <span class="n">floats</span><span class="o">/</span><span class="n">doubles</span> <span class="n">to</span> <span class="n">drop</span> <span class="n">so</span> <span class="n">that</span> <span class="n">the</span> <span class="n">CRC</span>
+<span class="n">will</span> <span class="n">be</span> <span class="n">same</span> <span class="n">even</span> <span class="n">of</span> <span class="n">this</span> <span class="n">are</span> <span class="n">changed</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; previous CRC <a class="reference internal" href="GXGEOSOFT.html#crc-init-value"><span class="std std-ref">CRC_INIT_VALUE constant</span></a></li>
-<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#vv-float-crc-bits"><span class="std std-ref">VV_FLOAT_CRC_BITS constants</span></a></li>
-<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#vv-double-crc-bits"><span class="std std-ref">VV_DOUBLE_CRC_BITS constants</span></a></li>
+<li><strong>arg1</strong> (<em>int</em>) &#8211; previous CRC <a class="reference internal" href="GXGEOSOFT.html#crc-init-value"><span class="std std-ref">CRC_INIT_VALUE constant</span></a></li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#vv-float-crc-bits"><span class="std std-ref">VV_FLOAT_CRC_BITS constants</span></a></li>
+<li><strong>arg3</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#vv-double-crc-bits"><span class="std std-ref">VV_DOUBLE_CRC_BITS constants</span></a></li>
 </ul>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">CRC Value</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></p>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
 </td>
 </tr>
 </tbody>
@@ -395,25 +414,25 @@ will be same even of this are changed.
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-Very usefull for testing where the last bits of accuracy
-are not as important.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Very</span> <span class="n">usefull</span> <span class="k">for</span> <span class="n">testing</span> <span class="n">where</span> <span class="n">the</span> <span class="n">last</span> <span class="n">bits</span> <span class="n">of</span> <span class="n">accuracy</span>
+<span class="n">are</span> <span class="ow">not</span> <span class="k">as</span> <span class="n">important</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXVV.create">
 <em class="property">static </em><code class="descname">create</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(int)arg2</em><span class="sig-paren">)</span> &rarr; GXVV:<a class="headerlink" href="#geosoft.gxapi.GXVV.create" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Create a VV.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Create</span> <span class="n">a</span> <span class="n">VV</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="GXGEOSOFT.html#geo-var"><span class="std std-ref">GEO_VAR constants</span></a></li>
-<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Maximum number of elements in the VV, &gt;= 0</li>
+<li><strong>arg1</strong> (<em>int</em>) &#8211; <a class="reference internal" href="GXGEOSOFT.html#geo-var"><span class="std std-ref">GEO_VAR constants</span></a></li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; Maximum number of elements in the VV, &gt;= 0</li>
 </ul>
 </td>
 </tr>
@@ -431,7 +450,7 @@ Create a VV.
 <p><strong>Note:</strong></p>
 <pre class="literal-block">
 To set the fiducial start and increment for the data in the VV
-you need to call \ :func:`geosoft.gxapi.GXVV.set_fid_start`\  and \ :func:`geosoft.gxapi.GXVV.set_fid_incr`\ .
+you need to call <a class="reference internal" href="#geosoft.gxapi.GXVV.set_fid_start" title="geosoft.gxapi.GXVV.set_fid_start"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXVV.set_fid_start()</span></code></a> and <a class="reference internal" href="#geosoft.gxapi.GXVV.set_fid_incr" title="geosoft.gxapi.GXVV.set_fid_incr"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXVV.set_fid_incr()</span></code></a>.
 
 If you are basing the VV data on fiducial information from a
 different VV, call GetFidStart_VV and GetFidIncr_VV to obtain
@@ -449,15 +468,15 @@ know it.
 <dt id="geosoft.gxapi.GXVV.create_ext">
 <em class="property">static </em><code class="descname">create_ext</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(int)arg2</em><span class="sig-paren">)</span> &rarr; GXVV:<a class="headerlink" href="#geosoft.gxapi.GXVV.create_ext" title="Permalink to this definition">¶</a></dt>
 <dd><pre class="literal-block">
-Create a VV, using one of the \ :ref:`GS_TYPES`\  special data types.
+Create a VV, using one of the <a class="reference internal" href="GXGEOSOFT.html#gs-types"><span class="std std-ref">GS_TYPES constants</span></a> special data types.
 </pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="GXGEOSOFT.html#gs-types"><span class="std std-ref">GS_TYPES constants</span></a></li>
-<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Maximum number of elements in the VV, &gt;= 0</li>
+<li><strong>arg1</strong> (<em>int</em>) &#8211; <a class="reference internal" href="GXGEOSOFT.html#gs-types"><span class="std std-ref">GS_TYPES constants</span></a></li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; Maximum number of elements in the VV, &gt;= 0</li>
 </ul>
 </td>
 </tr>
@@ -474,7 +493,7 @@ Create a VV, using one of the \ :ref:`GS_TYPES`\  special data types.
 </div>
 <p><strong>Note:</strong></p>
 <pre class="literal-block">
-See \ :func:`geosoft.gxapi.GXVV.create`\ 
+See <a class="reference internal" href="#geosoft.gxapi.GXVV.create" title="geosoft.gxapi.GXVV.create"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXVV.create()</span></code></a>
 
 Do not use data type flags: GS_INT or GS_REAL on CreateExt(),
 this will result in a respective data type of unsigned byte or
@@ -485,9 +504,9 @@ short for the VV.
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXVV.create_s">
 <em class="property">static </em><code class="descname">create_s</code><span class="sig-paren">(</span><em>(GXBF)arg1</em><span class="sig-paren">)</span> &rarr; GXVV:<a class="headerlink" href="#geosoft.gxapi.GXVV.create_s" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Create a VV  from serialized source.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Create</span> <span class="n">a</span> <span class="n">VV</span>  <span class="kn">from</span> <span class="nn">serialized</span> <span class="n">source</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -508,14 +527,14 @@ Create a VV  from serialized source.
 <dl class="method">
 <dt id="geosoft.gxapi.GXVV.diff">
 <code class="descname">diff</code><span class="sig-paren">(</span><em>(int)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXVV.diff" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Calculate differences.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Calculate</span> <span class="n">differences</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Number of differences</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>int</em>) &#8211; Number of differences</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Nothing</td>
 </tr>
@@ -527,20 +546,20 @@ Calculate differences.
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-Differences with dummies result in dummies.
-An even number of differences locates data accurately.
-An odd number of differences locates result 1/2 element lower
-in the VV.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Differences</span> <span class="k">with</span> <span class="n">dummies</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">dummies</span><span class="o">.</span>
+<span class="n">An</span> <span class="n">even</span> <span class="n">number</span> <span class="n">of</span> <span class="n">differences</span> <span class="n">locates</span> <span class="n">data</span> <span class="n">accurately</span><span class="o">.</span>
+<span class="n">An</span> <span class="n">odd</span> <span class="n">number</span> <span class="n">of</span> <span class="n">differences</span> <span class="n">locates</span> <span class="n">result</span> <span class="mi">1</span><span class="o">/</span><span class="mi">2</span> <span class="n">element</span> <span class="n">lower</span>
+<span class="ow">in</span> <span class="n">the</span> <span class="n">VV</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXVV.divide">
 <code class="descname">divide</code><span class="sig-paren">(</span><em>(GXVV)arg1</em>, <em>(GXVV)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXVV.divide" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Divide one VV by another: VV_A / VV_B = VV_C
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Divide</span> <span class="n">one</span> <span class="n">VV</span> <span class="n">by</span> <span class="n">another</span><span class="p">:</span> <span class="n">VV_A</span> <span class="o">/</span> <span class="n">VV_B</span> <span class="o">=</span> <span class="n">VV_C</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -567,9 +586,9 @@ Divide one VV by another: VV_A / VV_B = VV_C
 <dl class="method">
 <dt id="geosoft.gxapi.GXVV.fid_norm">
 <code class="descname">fid_norm</code><span class="sig-paren">(</span><em>(GXVV)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXVV.fid_norm" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Re-sample a pair of VV's to match each other.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Re</span><span class="o">-</span><span class="n">sample</span> <span class="n">a</span> <span class="n">pair</span> <span class="n">of</span> <span class="n">VV</span><span class="s1">&#39;s to match each other.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -586,19 +605,19 @@ Re-sample a pair of VV's to match each other.
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-Both VV's will return with the same start
-fid and fid increment.  The smaller start fid
-and fid increment will be used.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Both</span> <span class="n">VV</span><span class="s1">&#39;s will return with the same start</span>
+<span class="n">fid</span> <span class="ow">and</span> <span class="n">fid</span> <span class="n">increment</span><span class="o">.</span>  <span class="n">The</span> <span class="n">smaller</span> <span class="n">start</span> <span class="n">fid</span>
+<span class="ow">and</span> <span class="n">fid</span> <span class="n">increment</span> <span class="n">will</span> <span class="n">be</span> <span class="n">used</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXVV.fill_double">
 <code class="descname">fill_double</code><span class="sig-paren">(</span><em>(float)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXVV.fill_double" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Fill a VV with a real value.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Fill</span> <span class="n">a</span> <span class="n">VV</span> <span class="k">with</span> <span class="n">a</span> <span class="n">real</span> <span class="n">value</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -619,14 +638,14 @@ Fill a VV with a real value.
 <dl class="method">
 <dt id="geosoft.gxapi.GXVV.fill_int">
 <code class="descname">fill_int</code><span class="sig-paren">(</span><em>(int)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXVV.fill_int" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Fill a VV with an int value.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Fill</span> <span class="n">a</span> <span class="n">VV</span> <span class="k">with</span> <span class="n">an</span> <span class="nb">int</span> <span class="n">value</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Value to fill with</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>int</em>) &#8211; Value to fill with</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Nothing</td>
 </tr>
@@ -642,9 +661,9 @@ Fill a VV with an int value.
 <dl class="method">
 <dt id="geosoft.gxapi.GXVV.fill_string">
 <code class="descname">fill_string</code><span class="sig-paren">(</span><em>(str)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXVV.fill_string" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Fill a VV with a string value.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Fill</span> <span class="n">a</span> <span class="n">VV</span> <span class="k">with</span> <span class="n">a</span> <span class="n">string</span> <span class="n">value</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -665,18 +684,18 @@ Fill a VV with a string value.
 <dl class="method">
 <dt id="geosoft.gxapi.GXVV.find_dum">
 <code class="descname">find_dum</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(int)arg2</em>, <em>(int)arg3</em>, <em>(int)arg4</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXVV.find_dum" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Finds the first dummy or non-dummy value in a VV
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Finds</span> <span class="n">the</span> <span class="n">first</span> <span class="n">dummy</span> <span class="ow">or</span> <span class="n">non</span><span class="o">-</span><span class="n">dummy</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">a</span> <span class="n">VV</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Lowest element in VV element to search</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Highest element in VV to search</li>
-<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; 0 = find first dummy / 1 = find first non-dummy</li>
-<li><strong>arg4</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; 0 = use increasing order / 1 = use decreasing order</li>
+<li><strong>arg1</strong> (<em>int</em>) &#8211; Lowest element in VV element to search</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; Highest element in VV to search</li>
+<li><strong>arg3</strong> (<em>int</em>) &#8211; 0 = find first dummy / 1 = find first non-dummy</li>
+<li><strong>arg4</strong> (<em>int</em>) &#8211; 0 = use increasing order / 1 = use decreasing order</li>
 </ul>
 </td>
 </tr>
@@ -684,7 +703,7 @@ Finds the first dummy or non-dummy value in a VV
 -1 if not found, 0 if the length of the VV is 0.</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></p>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
 </td>
 </tr>
 </tbody>
@@ -693,11 +712,11 @@ Finds the first dummy or non-dummy value in a VV
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-If a decreasing order search is performed, it will start
-at the highest element specified. (Conversely, an increasing
-order starts at the lowest element specified.)
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">If</span> <span class="n">a</span> <span class="n">decreasing</span> <span class="n">order</span> <span class="n">search</span> <span class="ow">is</span> <span class="n">performed</span><span class="p">,</span> <span class="n">it</span> <span class="n">will</span> <span class="n">start</span>
+<span class="n">at</span> <span class="n">the</span> <span class="n">highest</span> <span class="n">element</span> <span class="n">specified</span><span class="o">.</span> <span class="p">(</span><span class="n">Conversely</span><span class="p">,</span> <span class="n">an</span> <span class="n">increasing</span>
+<span class="n">order</span> <span class="n">starts</span> <span class="n">at</span> <span class="n">the</span> <span class="n">lowest</span> <span class="n">element</span> <span class="n">specified</span><span class="o">.</span><span class="p">)</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
@@ -709,8 +728,8 @@ order starts at the lowest element specified.)
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>start</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; starting element</li>
-<li><strong>num_elements</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; number of elements to get</li>
+<li><strong>start</strong> (<em>int</em>) &#8211; starting element</li>
+<li><strong>num_elements</strong> (<em>int</em>) &#8211; number of elements to get</li>
 <li><strong>dtype</strong> (<em>object</em>) &#8211; object that describes the required <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/arrays.dtypes.html">numpy datatype</a> (e.g. np.float64)</li>
 </ul>
 </td>
@@ -725,14 +744,14 @@ order starts at the lowest element specified.)
 <dl class="method">
 <dt id="geosoft.gxapi.GXVV.get_double">
 <code class="descname">get_double</code><span class="sig-paren">(</span><em>(int)arg1</em><span class="sig-paren">)</span> &rarr; float:<a class="headerlink" href="#geosoft.gxapi.GXVV.get_double" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Get a real element from a VV.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">a</span> <span class="n">real</span> <span class="n">element</span> <span class="kn">from</span> <span class="nn">a</span> <span class="n">VV</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; element wanted</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>int</em>) &#8211; element wanted</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Element wanted, or rDUMMY
 if the value is dummy or outside of the range of data.</td>
@@ -747,7 +766,7 @@ if the value is dummy or outside of the range of data.</td>
 <p><strong>Note:</strong></p>
 <pre class="literal-block">
 Type conversions are performed if necessary.  Dummy values
-are converted to &quot;\ `*`\ &quot; string.
+are converted to &quot;<cite>*</cite>&quot; string.
 </pre>
 </dd></dl>
 
@@ -763,7 +782,7 @@ are converted to &quot;\ `*`\ &quot; string.
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Number of expanions for this VV (see ReFidVV_VV)</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int</td>
 </tr>
 </tbody>
 </table>
@@ -817,19 +836,19 @@ are converted to &quot;\ `*`\ &quot; string.
 <dl class="method">
 <dt id="geosoft.gxapi.GXVV.get_int">
 <code class="descname">get_int</code><span class="sig-paren">(</span><em>(int)arg1</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXVV.get_int" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Get an integer element from a VV.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">an</span> <span class="n">integer</span> <span class="n">element</span> <span class="kn">from</span> <span class="nn">a</span> <span class="n">VV</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; element wanted</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>int</em>) &#8211; element wanted</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Element wanted, or iDUMMY
 if the value is dummy or outside of the range of data.</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
 </tr>
 </tbody>
 </table>
@@ -841,15 +860,15 @@ if the value is dummy or outside of the range of data.</td>
 <dl class="method">
 <dt id="geosoft.gxapi.GXVV.get_string">
 <code class="descname">get_string</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(str_ref)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXVV.get_string" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Get a string element from a VV.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">a</span> <span class="n">string</span> <span class="n">element</span> <span class="kn">from</span> <span class="nn">a</span> <span class="n">VV</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; element wanted</li>
+<li><strong>arg1</strong> (<em>int</em>) &#8211; element wanted</li>
 <li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; string in which to place element</li>
 </ul>
 </td>
@@ -871,16 +890,16 @@ Returns Element wanted, or blank string
 if the value is dummy or outside of the range of data.
 
 Type conversions are performed if necessary.  Dummy values
-are converted to &quot;\ `*`\ &quot; string.
+are converted to &quot;<cite>*</cite>&quot; string.
 </pre>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXVV.index_insert">
 <code class="descname">index_insert</code><span class="sig-paren">(</span><em>(GXVV)arg1</em>, <em>(GXVV)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXVV.index_insert" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Insert items into a VV using an index VV.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Insert</span> <span class="n">items</span> <span class="n">into</span> <span class="n">a</span> <span class="n">VV</span> <span class="n">using</span> <span class="n">an</span> <span class="n">index</span> <span class="n">VV</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -914,10 +933,10 @@ error.
 
 This function is useful when working with channel data that include
 dummies, but where the dummies must be removed before processing.
-Create and initialize an index (0, 1, 2...) VV, using the \ :func:`geosoft.gxapi.GXVV.init_index`\ 
+Create and initialize an index (0, 1, 2...) VV, using the <a class="reference internal" href="#geosoft.gxapi.GXVV.init_index" title="geosoft.gxapi.GXVV.init_index"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXVV.init_index()</span></code></a>
 function, and when you remove
 the dummies, remove the corresponding index values as well.
-After processing, init a VV to dummies, then use \ :func:`geosoft.gxapi.GXVV.index_insert`\  to
+After processing, init a VV to dummies, then use <a class="reference internal" href="#geosoft.gxapi.GXVV.index_insert" title="geosoft.gxapi.GXVV.index_insert"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXVV.index_insert()</span></code></a> to
 put the processed values at the correct locations in the data VV
 before you write it back to the channel.
 </pre>
@@ -926,9 +945,9 @@ before you write it back to the channel.
 <dl class="method">
 <dt id="geosoft.gxapi.GXVV.index_max">
 <code class="descname">index_max</code><span class="sig-paren">(</span><em>(float_ref)arg1</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXVV.index_max" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Get the index where the maximum value occurs.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">the</span> <span class="n">index</span> <span class="n">where</span> <span class="n">the</span> <span class="n">maximum</span> <span class="n">value</span> <span class="n">occurs</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -937,7 +956,7 @@ Get the index where the maximum value occurs.
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Index of the maximum value, iDUMMY if no valid data.</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
 </tr>
 </tbody>
 </table>
@@ -945,18 +964,18 @@ Get the index where the maximum value occurs.
 <p><span class="versionmodified">New in version 6.2.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-If more than one value has the same maximum value, the index of the
-first is returned.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">If</span> <span class="n">more</span> <span class="n">than</span> <span class="n">one</span> <span class="n">value</span> <span class="n">has</span> <span class="n">the</span> <span class="n">same</span> <span class="n">maximum</span> <span class="n">value</span><span class="p">,</span> <span class="n">the</span> <span class="n">index</span> <span class="n">of</span> <span class="n">the</span>
+<span class="n">first</span> <span class="ow">is</span> <span class="n">returned</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXVV.index_order">
 <code class="descname">index_order</code><span class="sig-paren">(</span><em>(GXVV)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXVV.index_order" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Reorder a VV.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Reorder</span> <span class="n">a</span> <span class="n">VV</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -973,23 +992,23 @@ Reorder a VV.
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-Given an index VV (of type INT), this method reorders a
-VV. Please make sure that the index holds valid information.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Given</span> <span class="n">an</span> <span class="n">index</span> <span class="n">VV</span> <span class="p">(</span><span class="n">of</span> <span class="nb">type</span> <span class="n">INT</span><span class="p">),</span> <span class="n">this</span> <span class="n">method</span> <span class="n">reorders</span> <span class="n">a</span>
+<span class="n">VV</span><span class="o">.</span> <span class="n">Please</span> <span class="n">make</span> <span class="n">sure</span> <span class="n">that</span> <span class="n">the</span> <span class="n">index</span> <span class="n">holds</span> <span class="n">valid</span> <span class="n">information</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXVV.init_index">
 <code class="descname">init_index</code><span class="sig-paren">(</span><em>(int)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXVV.init_index" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Initialize an index VV to values 0, 1, 2, etc...
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Initialize</span> <span class="n">an</span> <span class="n">index</span> <span class="n">VV</span> <span class="n">to</span> <span class="n">values</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">etc</span><span class="o">...</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Final length of VV (-1 to use current length).</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>int</em>) &#8211; Final length of VV (-1 to use current length).</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Nothing</td>
 </tr>
@@ -1003,24 +1022,24 @@ Initialize an index VV to values 0, 1, 2, etc...
 <p><strong>Note:</strong></p>
 <pre class="literal-block">
 Populates a VV with the values 0, 1, 2, 3, 4 etc., to be
-used for various indexing functions, such as \ :func:`geosoft.gxapi.GXVV.index_insert`\  or
-\ :func:`geosoft.gxapi.GXVV.index_order`\ .
+used for various indexing functions, such as <a class="reference internal" href="#geosoft.gxapi.GXVV.index_insert" title="geosoft.gxapi.GXVV.index_insert"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXVV.index_insert()</span></code></a> or
+<a class="reference internal" href="#geosoft.gxapi.GXVV.index_order" title="geosoft.gxapi.GXVV.index_order"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXVV.index_order()</span></code></a>.
 </pre>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXVV.inv_log">
 <code class="descname">inv_log</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(int)arg2</em>, <em>(float)arg3</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXVV.inv_log" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Inverse of the Log_VV function.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Inverse</span> <span class="n">of</span> <span class="n">the</span> <span class="n">Log_VV</span> <span class="n">function</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#vv-log-base"><span class="std std-ref">VV_LOG_BASE constants</span></a></li>
-<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#vv-log-negative"><span class="std std-ref">VV_LOG_NEGATIVE constants</span></a></li>
+<li><strong>arg1</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#vv-log-base"><span class="std std-ref">VV_LOG_BASE constants</span></a></li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#vv-log-negative"><span class="std std-ref">VV_LOG_NEGATIVE constants</span></a></li>
 <li><strong>arg3</strong> (<em>float</em>) &#8211; minimum value for <a class="reference internal" href="#vv-log-negative"><span class="std std-ref">VV_LOG_NEGATIVE constants</span></a></li>
 </ul>
 </td>
@@ -1037,18 +1056,18 @@ Inverse of the Log_VV function.
 <p><span class="versionmodified">New in version 7.3.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-This is the inverse function for Log_VV, with the same inputs.
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="ow">is</span> <span class="n">the</span> <span class="n">inverse</span> <span class="n">function</span> <span class="k">for</span> <span class="n">Log_VV</span><span class="p">,</span> <span class="k">with</span> <span class="n">the</span> <span class="n">same</span> <span class="n">inputs</span><span class="o">.</span>
 
-NEGATIVE_NO    - will not return values smaller than the input minimum
-NEGATIVE_YES   - if the data is in the range +/- minimum,
-it is left alone.  Otherwise, the sign is removed,
-the minimum is subtracted, the log of the minimum is added,
-and the exponential (base e or base 10) is taken of the
-sum. The sign is then reapplied.
-Minimum value will be defaulted to 1.0 if it is 0.0 or
-less than 0.0
-</pre>
+<span class="n">NEGATIVE_NO</span>    <span class="o">-</span> <span class="n">will</span> <span class="ow">not</span> <span class="k">return</span> <span class="n">values</span> <span class="n">smaller</span> <span class="n">than</span> <span class="n">the</span> <span class="nb">input</span> <span class="n">minimum</span>
+<span class="n">NEGATIVE_YES</span>   <span class="o">-</span> <span class="k">if</span> <span class="n">the</span> <span class="n">data</span> <span class="ow">is</span> <span class="ow">in</span> <span class="n">the</span> <span class="nb">range</span> <span class="o">+/-</span> <span class="n">minimum</span><span class="p">,</span>
+<span class="n">it</span> <span class="ow">is</span> <span class="n">left</span> <span class="n">alone</span><span class="o">.</span>  <span class="n">Otherwise</span><span class="p">,</span> <span class="n">the</span> <span class="n">sign</span> <span class="ow">is</span> <span class="n">removed</span><span class="p">,</span>
+<span class="n">the</span> <span class="n">minimum</span> <span class="ow">is</span> <span class="n">subtracted</span><span class="p">,</span> <span class="n">the</span> <span class="n">log</span> <span class="n">of</span> <span class="n">the</span> <span class="n">minimum</span> <span class="ow">is</span> <span class="n">added</span><span class="p">,</span>
+<span class="ow">and</span> <span class="n">the</span> <span class="n">exponential</span> <span class="p">(</span><span class="n">base</span> <span class="n">e</span> <span class="ow">or</span> <span class="n">base</span> <span class="mi">10</span><span class="p">)</span> <span class="ow">is</span> <span class="n">taken</span> <span class="n">of</span> <span class="n">the</span>
+<span class="nb">sum</span><span class="o">.</span> <span class="n">The</span> <span class="n">sign</span> <span class="ow">is</span> <span class="n">then</span> <span class="n">reapplied</span><span class="o">.</span>
+<span class="n">Minimum</span> <span class="n">value</span> <span class="n">will</span> <span class="n">be</span> <span class="n">defaulted</span> <span class="n">to</span> <span class="mf">1.0</span> <span class="k">if</span> <span class="n">it</span> <span class="ow">is</span> <span class="mf">0.0</span> <span class="ow">or</span>
+<span class="n">less</span> <span class="n">than</span> <span class="mf">0.0</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
@@ -1070,16 +1089,16 @@ less than 0.0
 <dl class="method">
 <dt id="geosoft.gxapi.GXVV.length">
 <code class="descname">length</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXVV.length" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Returns current VV length.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Returns</span> <span class="n">current</span> <span class="n">VV</span> <span class="n">length</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"># of elements in the VV.</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int</td>
 </tr>
 </tbody>
 </table>
@@ -1091,9 +1110,9 @@ Returns current VV length.
 <dl class="method">
 <dt id="geosoft.gxapi.GXVV.lines_to_xy">
 <code class="descname">lines_to_xy</code><span class="sig-paren">(</span><em>(GXVV)arg1</em>, <em>(GXVV)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXVV.lines_to_xy" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Convert a 2D Line segment VV into X and Y VVs.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Convert</span> <span class="n">a</span> <span class="mi">2</span><span class="n">D</span> <span class="n">Line</span> <span class="n">segment</span> <span class="n">VV</span> <span class="n">into</span> <span class="n">X</span> <span class="ow">and</span> <span class="n">Y</span> <span class="n">VVs</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1117,11 +1136,11 @@ Convert a 2D Line segment VV into X and Y VVs.
 </div>
 <p><strong>Note:</strong></p>
 <pre class="literal-block">
-Some GX functions (such as \ :func:`geosoft.gxapi.GXTIN.get_voronoi_edges`\ ) return
+Some GX functions (such as <a class="reference internal" href="GXTIN.html#geosoft.gxapi.GXTIN.get_voronoi_edges" title="geosoft.gxapi.GXTIN.get_voronoi_edges"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXTIN.get_voronoi_edges()</span></code></a>) return
 a special VV where each element contains the start and end
 points of lines, (X_1, Y_1) and (X_2, Y_2).
 This GX dumps the individual X and Y values into individual
-X and Y VVs of type GS_DOUBLE (REAL). N lines produces 2\ `*`\ N
+X and Y VVs of type GS_DOUBLE (REAL). N lines produces 2<cite>*</cite>N
 X and Y values.
 </pre>
 </dd></dl>
@@ -1129,16 +1148,16 @@ X and Y values.
 <dl class="method">
 <dt id="geosoft.gxapi.GXVV.log">
 <code class="descname">log</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(int)arg2</em>, <em>(float)arg3</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXVV.log" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Apply log to the vv.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Apply</span> <span class="n">log</span> <span class="n">to</span> <span class="n">the</span> <span class="n">vv</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#vv-log-base"><span class="std std-ref">VV_LOG_BASE constants</span></a></li>
-<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#vv-log-negative"><span class="std std-ref">VV_LOG_NEGATIVE constants</span></a></li>
+<li><strong>arg1</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#vv-log-base"><span class="std std-ref">VV_LOG_BASE constants</span></a></li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#vv-log-negative"><span class="std std-ref">VV_LOG_NEGATIVE constants</span></a></li>
 <li><strong>arg3</strong> (<em>float</em>) &#8211; minimum value for <a class="reference internal" href="#vv-log-negative"><span class="std std-ref">VV_LOG_NEGATIVE constants</span></a></li>
 </ul>
 </td>
@@ -1155,18 +1174,18 @@ Apply log to the vv.
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-Minimum value will be defaulted to 1.0 if it is 0.0 or
-less than 0.0
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Minimum</span> <span class="n">value</span> <span class="n">will</span> <span class="n">be</span> <span class="n">defaulted</span> <span class="n">to</span> <span class="mf">1.0</span> <span class="k">if</span> <span class="n">it</span> <span class="ow">is</span> <span class="mf">0.0</span> <span class="ow">or</span>
+<span class="n">less</span> <span class="n">than</span> <span class="mf">0.0</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXVV.log_linear">
 <code class="descname">log_linear</code><span class="sig-paren">(</span><em>(float)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXVV.log_linear" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Take the log10 or original value of a VV.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Take</span> <span class="n">the</span> <span class="n">log10</span> <span class="ow">or</span> <span class="n">original</span> <span class="n">value</span> <span class="n">of</span> <span class="n">a</span> <span class="n">VV</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1187,7 +1206,7 @@ Take the log10 or original value of a VV.
 If the data is in the range +/- minimum value,
 it is left alone. Otherwise, the result is calculated as
 
-d = dMin \ `*`\  (log10(fabs(d)/dMin)+1.0)
+d = dMin <cite>*</cite> (log10(fabs(d)/dMin)+1.0)
 
 Sign is reapplied to d.
 
@@ -1199,9 +1218,9 @@ or 0.
 <dl class="method">
 <dt id="geosoft.gxapi.GXVV.lookup_index">
 <code class="descname">lookup_index</code><span class="sig-paren">(</span><em>(GXVV)arg1</em>, <em>(GXVV)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXVV.lookup_index" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Lookup a VV from another VV using an index VV.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Lookup</span> <span class="n">a</span> <span class="n">VV</span> <span class="kn">from</span> <span class="nn">another</span> <span class="n">VV</span> <span class="n">using</span> <span class="n">an</span> <span class="n">index</span> <span class="n">VV</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1232,16 +1251,16 @@ Result VV at the input indices contained in the Index VV.
 If the input Data VV is string type, then only values at the integral index values
 are returned.
 
-See also \ :func:`geosoft.gxapi.GXVV.setup_index`\  for an example of how this can be implemented.
+See also <a class="reference internal" href="#geosoft.gxapi.GXVV.setup_index" title="geosoft.gxapi.GXVV.setup_index"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXVV.setup_index()</span></code></a> for an example of how this can be implemented.
 </pre>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXVV.make_mem_based">
 <code class="descname">make_mem_based</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXVV.make_mem_based" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Make this VV use regular instead of virtual memory.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Make</span> <span class="n">this</span> <span class="n">VV</span> <span class="n">use</span> <span class="n">regular</span> <span class="n">instead</span> <span class="n">of</span> <span class="n">virtual</span> <span class="n">memory</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1258,7 +1277,7 @@ Make this VV use regular instead of virtual memory.
 <p><strong>Note:</strong></p>
 <pre class="literal-block">
 This function should be called immediately aftter
-\ :func:`geosoft.gxapi.GXVV.create`\ .
+<a class="reference internal" href="#geosoft.gxapi.GXVV.create" title="geosoft.gxapi.GXVV.create"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXVV.create()</span></code></a>.
 
 Normal VVs are optimised to prevent thrashing, and to
 efficiently support many extremely large VVs, although
@@ -1271,20 +1290,20 @@ application does not cause the memory manager to &quot;thrash&quot;.
 
 External programs that use the GX API may prefer to use
 memory-based VV's because you can get direct access to
-the VV through the \ :func:`geosoft.gxapi.GXGEO.get_ptr_vv`\  function (see gx_extern.h).
+the VV through the <code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXGEO.get_ptr_vv()</span></code> function (see gx_extern.h).
 </pre>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
-<p class="last">\ :func:`geosoft.gxapi.GXGEO.get_ptr_vv`\  in gx_extern.h</p>
+<p class="last"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXGEO.get_ptr_vv()</span></code> in gx_extern.h</p>
 </div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXVV.mask">
 <code class="descname">mask</code><span class="sig-paren">(</span><em>(GXVV)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXVV.mask" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Mask one VV against another.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Mask</span> <span class="n">one</span> <span class="n">VV</span> <span class="n">against</span> <span class="n">another</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1301,22 +1320,22 @@ Mask one VV against another.
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-All elements in the mask VV that are dummies will replace
-the value in the original VV with a dummy.
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">All</span> <span class="n">elements</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">mask</span> <span class="n">VV</span> <span class="n">that</span> <span class="n">are</span> <span class="n">dummies</span> <span class="n">will</span> <span class="n">replace</span>
+<span class="n">the</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">original</span> <span class="n">VV</span> <span class="k">with</span> <span class="n">a</span> <span class="n">dummy</span><span class="o">.</span>
 
-The modified VV will always be the same length as the mask
-VV after this call.  If the mask is longer than the target,
-the target will be lengthenned with dummies.
-</pre>
+<span class="n">The</span> <span class="n">modified</span> <span class="n">VV</span> <span class="n">will</span> <span class="n">always</span> <span class="n">be</span> <span class="n">the</span> <span class="n">same</span> <span class="n">length</span> <span class="k">as</span> <span class="n">the</span> <span class="n">mask</span>
+<span class="n">VV</span> <span class="n">after</span> <span class="n">this</span> <span class="n">call</span><span class="o">.</span>  <span class="n">If</span> <span class="n">the</span> <span class="n">mask</span> <span class="ow">is</span> <span class="n">longer</span> <span class="n">than</span> <span class="n">the</span> <span class="n">target</span><span class="p">,</span>
+<span class="n">the</span> <span class="n">target</span> <span class="n">will</span> <span class="n">be</span> <span class="n">lengthenned</span> <span class="k">with</span> <span class="n">dummies</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXVV.mask_and">
 <code class="descname">mask_and</code><span class="sig-paren">(</span><em>(GXVV)arg1</em>, <em>(GXVV)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXVV.mask_and" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Create mask from logical AND of two VVs.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Create</span> <span class="n">mask</span> <span class="kn">from</span> <span class="nn">logical</span> <span class="n">AND</span> <span class="n">of</span> <span class="n">two</span> <span class="n">VVs</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1339,17 +1358,17 @@ Create mask from logical AND of two VVs.
 <p><span class="versionmodified">New in version 5.1.2.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-If both values are non-dummies, then result is 1, else dummy.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">If</span> <span class="n">both</span> <span class="n">values</span> <span class="n">are</span> <span class="n">non</span><span class="o">-</span><span class="n">dummies</span><span class="p">,</span> <span class="n">then</span> <span class="n">result</span> <span class="ow">is</span> <span class="mi">1</span><span class="p">,</span> <span class="k">else</span> <span class="n">dummy</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXVV.mask_or">
 <code class="descname">mask_or</code><span class="sig-paren">(</span><em>(GXVV)arg1</em>, <em>(GXVV)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXVV.mask_or" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Create mask from logical OR of two VVs.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Create</span> <span class="n">mask</span> <span class="kn">from</span> <span class="nn">logical</span> <span class="n">OR</span> <span class="n">of</span> <span class="n">two</span> <span class="n">VVs</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1372,17 +1391,17 @@ Create mask from logical OR of two VVs.
 <p><span class="versionmodified">New in version 5.1.2.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-If either values is non-dummy, then result is 1, else dummy.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">If</span> <span class="n">either</span> <span class="n">values</span> <span class="ow">is</span> <span class="n">non</span><span class="o">-</span><span class="n">dummy</span><span class="p">,</span> <span class="n">then</span> <span class="n">result</span> <span class="ow">is</span> <span class="mi">1</span><span class="p">,</span> <span class="k">else</span> <span class="n">dummy</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXVV.mask_str">
 <code class="descname">mask_str</code><span class="sig-paren">(</span><em>(GXVV)arg1</em>, <em>(str)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXVV.mask_str" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Mask one VV against another using a string.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Mask</span> <span class="n">one</span> <span class="n">VV</span> <span class="n">against</span> <span class="n">another</span> <span class="n">using</span> <span class="n">a</span> <span class="n">string</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1405,21 +1424,21 @@ Mask one VV against another using a string.
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-All elements in the mask VV that are same as string will replace
-the original VV with a 1.
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">All</span> <span class="n">elements</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">mask</span> <span class="n">VV</span> <span class="n">that</span> <span class="n">are</span> <span class="n">same</span> <span class="k">as</span> <span class="n">string</span> <span class="n">will</span> <span class="n">replace</span>
+<span class="n">the</span> <span class="n">original</span> <span class="n">VV</span> <span class="k">with</span> <span class="n">a</span> <span class="mf">1.</span>
 
-The modified VV will always be expanded to the MaskVV size but
-not shortened after this call.  If the mask is longer than the target,
-the target will be lengthenned with dummies before applying the mask.
-</pre>
+<span class="n">The</span> <span class="n">modified</span> <span class="n">VV</span> <span class="n">will</span> <span class="n">always</span> <span class="n">be</span> <span class="n">expanded</span> <span class="n">to</span> <span class="n">the</span> <span class="n">MaskVV</span> <span class="n">size</span> <span class="n">but</span>
+<span class="ow">not</span> <span class="n">shortened</span> <span class="n">after</span> <span class="n">this</span> <span class="n">call</span><span class="o">.</span>  <span class="n">If</span> <span class="n">the</span> <span class="n">mask</span> <span class="ow">is</span> <span class="n">longer</span> <span class="n">than</span> <span class="n">the</span> <span class="n">target</span><span class="p">,</span>
+<span class="n">the</span> <span class="n">target</span> <span class="n">will</span> <span class="n">be</span> <span class="n">lengthenned</span> <span class="k">with</span> <span class="n">dummies</span> <span class="n">before</span> <span class="n">applying</span> <span class="n">the</span> <span class="n">mask</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXVV.multiply">
 <code class="descname">multiply</code><span class="sig-paren">(</span><em>(GXVV)arg1</em>, <em>(GXVV)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXVV.multiply" title="Permalink to this definition">¶</a></dt>
 <dd><pre class="literal-block">
-Multiply two VVs: VV_A \ `*`\  VV_B = VV_C
+Multiply two VVs: VV_A <cite>*</cite> VV_B = VV_C
 </pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -1463,9 +1482,9 @@ Multiply two VVs: VV_A \ `*`\  VV_B = VV_C
 <dl class="method">
 <dt id="geosoft.gxapi.GXVV.order">
 <code class="descname">order</code><span class="sig-paren">(</span><em>(int_ref)arg1</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXVV.order" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Identifies the data size order of the elements.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Identifies</span> <span class="n">the</span> <span class="n">data</span> <span class="n">size</span> <span class="n">order</span> <span class="n">of</span> <span class="n">the</span> <span class="n">elements</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1474,7 +1493,7 @@ Identifies the data size order of the elements.
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><a class="reference internal" href="#vv-order"><span class="std std-ref">VV_ORDER constants</span></a></td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
 </tr>
 </tbody>
 </table>
@@ -1497,7 +1516,7 @@ Identifies the data size order of the elements.
 <li><strong>arg1</strong> (<a class="reference internal" href="#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Y VV</li>
 <li><strong>arg2</strong> (<a class="reference internal" href="#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; VV to be masked</li>
 <li><strong>arg3</strong> (<a class="reference internal" href="GXPLY.html#geosoft.gxapi.GXPLY" title="geosoft.gxapi.GXPLY"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXPLY</span></code></a>) &#8211; Polygon Object</li>
-<li><strong>arg4</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#vv-mask"><span class="std std-ref">VV_MASK constants</span></a></li>
+<li><strong>arg4</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#vv-mask"><span class="std std-ref">VV_MASK constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -1521,9 +1540,9 @@ Identifies the data size order of the elements.
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXVV.project">
 <em class="property">static </em><code class="descname">project</code><span class="sig-paren">(</span><em>(GXPJ)arg1</em>, <em>(GXVV)arg2</em>, <em>(GXVV)arg3</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXVV.project" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-This method projects an X and Y VV.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="n">method</span> <span class="n">projects</span> <span class="n">an</span> <span class="n">X</span> <span class="ow">and</span> <span class="n">Y</span> <span class="n">VV</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1548,16 +1567,16 @@ This method projects an X and Y VV.
 </div>
 <p><strong>Note:</strong></p>
 <pre class="literal-block">
-This function is equivalent to \ :func:`geosoft.gxapi.GXPJ.convert_vv`\ .
+This function is equivalent to <a class="reference internal" href="GXPJ.html#geosoft.gxapi.GXPJ.convert_vv" title="geosoft.gxapi.GXPJ.convert_vv"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXPJ.convert_vv()</span></code></a>.
 </pre>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXVV.project_3d">
 <em class="property">static </em><code class="descname">project_3d</code><span class="sig-paren">(</span><em>(GXPJ)arg1</em>, <em>(GXVV)arg2</em>, <em>(GXVV)arg3</em>, <em>(GXVV)arg4</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXVV.project_3d" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-This method projects an X,Y,Z VV.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="n">method</span> <span class="n">projects</span> <span class="n">an</span> <span class="n">X</span><span class="p">,</span><span class="n">Y</span><span class="p">,</span><span class="n">Z</span> <span class="n">VV</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1583,16 +1602,16 @@ This method projects an X,Y,Z VV.
 </div>
 <p><strong>Note:</strong></p>
 <pre class="literal-block">
-This function is equivalent to \ :func:`geosoft.gxapi.GXPJ.convert_vv3`\ .
+This function is equivalent to <a class="reference internal" href="GXPJ.html#geosoft.gxapi.GXPJ.convert_vv3" title="geosoft.gxapi.GXPJ.convert_vv3"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXPJ.convert_vv3()</span></code></a>.
 </pre>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXVV.range_double">
 <code class="descname">range_double</code><span class="sig-paren">(</span><em>(float_ref)arg1</em>, <em>(float_ref)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXVV.range_double" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Get the min. and max. values of a VV while ignoring dummies.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">the</span> <span class="nb">min</span><span class="o">.</span> <span class="ow">and</span> <span class="nb">max</span><span class="o">.</span> <span class="n">values</span> <span class="n">of</span> <span class="n">a</span> <span class="n">VV</span> <span class="k">while</span> <span class="n">ignoring</span> <span class="n">dummies</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1615,17 +1634,17 @@ Get the min. and max. values of a VV while ignoring dummies.
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-Minimum and maximum become GS_R8DM if entire VV is dummy.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Minimum</span> <span class="ow">and</span> <span class="n">maximum</span> <span class="n">become</span> <span class="n">GS_R8DM</span> <span class="k">if</span> <span class="n">entire</span> <span class="n">VV</span> <span class="ow">is</span> <span class="n">dummy</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXVV.re_fid">
 <code class="descname">re_fid</code><span class="sig-paren">(</span><em>(float)arg1</em>, <em>(float)arg2</em>, <em>(int)arg3</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXVV.re_fid" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Re-sample a VV to a new fid start/icrement
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Re</span><span class="o">-</span><span class="n">sample</span> <span class="n">a</span> <span class="n">VV</span> <span class="n">to</span> <span class="n">a</span> <span class="n">new</span> <span class="n">fid</span> <span class="n">start</span><span class="o">/</span><span class="n">icrement</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1633,7 +1652,7 @@ Re-sample a VV to a new fid start/icrement
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<em>float</em>) &#8211; New fid start</li>
 <li><strong>arg2</strong> (<em>float</em>) &#8211; New fid increment</li>
-<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; New length</li>
+<li><strong>arg3</strong> (<em>int</em>) &#8211; New length</li>
 </ul>
 </td>
 </tr>
@@ -1653,9 +1672,9 @@ Re-sample a VV to a new fid start/icrement
 <dl class="method">
 <dt id="geosoft.gxapi.GXVV.re_fid_vv">
 <code class="descname">re_fid_vv</code><span class="sig-paren">(</span><em>(GXVV)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXVV.re_fid_vv" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Re-sample a VV to match another VV.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Re</span><span class="o">-</span><span class="n">sample</span> <span class="n">a</span> <span class="n">VV</span> <span class="n">to</span> <span class="n">match</span> <span class="n">another</span> <span class="n">VV</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1672,18 +1691,18 @@ Re-sample a VV to match another VV.
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-This method will honor the VV FID Expansion and will expand/contract
-VV's based on this flag if it is used.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="n">method</span> <span class="n">will</span> <span class="n">honor</span> <span class="n">the</span> <span class="n">VV</span> <span class="n">FID</span> <span class="n">Expansion</span> <span class="ow">and</span> <span class="n">will</span> <span class="n">expand</span><span class="o">/</span><span class="n">contract</span>
+<span class="n">VV</span><span class="s1">&#39;s based on this flag if it is used.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXVV.re_sample">
 <code class="descname">re_sample</code><span class="sig-paren">(</span><em>(float)arg1</em>, <em>(float)arg2</em>, <em>(float)arg3</em>, <em>(float)arg4</em>, <em>(int)arg5</em>, <em>(int)arg6</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXVV.re_sample" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Resamples a VV from one fid/incr to another fid/incr.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Resamples</span> <span class="n">a</span> <span class="n">VV</span> <span class="kn">from</span> <span class="nn">one</span> <span class="n">fid</span><span class="o">/</span><span class="n">incr</span> <span class="n">to</span> <span class="n">another</span> <span class="n">fid</span><span class="o">/</span><span class="n">incr</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1693,8 +1712,8 @@ Resamples a VV from one fid/incr to another fid/incr.
 <li><strong>arg2</strong> (<em>float</em>) &#8211; Current increment</li>
 <li><strong>arg3</strong> (<em>float</em>) &#8211; New fid start</li>
 <li><strong>arg4</strong> (<em>float</em>) &#8211; New fid increment</li>
-<li><strong>arg5</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; New length</li>
-<li><strong>arg6</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Extrapolate Endpoints (0 - No, 1 - Yes)</li>
+<li><strong>arg5</strong> (<em>int</em>) &#8211; New length</li>
+<li><strong>arg6</strong> (<em>int</em>) &#8211; Extrapolate Endpoints (0 - No, 1 - Yes)</li>
 </ul>
 </td>
 </tr>
@@ -1714,9 +1733,9 @@ Resamples a VV from one fid/incr to another fid/incr.
 <dl class="method">
 <dt id="geosoft.gxapi.GXVV.reverse">
 <code class="descname">reverse</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXVV.reverse" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Reverses the order of the data in a VV.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Reverses</span> <span class="n">the</span> <span class="n">order</span> <span class="n">of</span> <span class="n">the</span> <span class="n">data</span> <span class="ow">in</span> <span class="n">a</span> <span class="n">VV</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1764,7 +1783,7 @@ Reverses the order of the data in a VV.
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>start</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; starting element</li>
+<li><strong>start</strong> (<em>int</em>) &#8211; starting element</li>
 <li><strong>array</strong> (<em>ndarray</em>) &#8211; array of values to set into the VV</li>
 </ul>
 </td>
@@ -1779,15 +1798,15 @@ Reverses the order of the data in a VV.
 <dl class="method">
 <dt id="geosoft.gxapi.GXVV.set_double">
 <code class="descname">set_double</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(float)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXVV.set_double" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Set a real element in a VV.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Set</span> <span class="n">a</span> <span class="n">real</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">a</span> <span class="n">VV</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; element to set</li>
+<li><strong>arg1</strong> (<em>int</em>) &#8211; element to set</li>
 <li><strong>arg2</strong> (<em>float</em>) &#8211; value to set</li>
 </ul>
 </td>
@@ -1804,32 +1823,32 @@ Set a real element in a VV.
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-Element being set cannot be &lt; 0.
-If the element is &gt; current VV length, the VV length is
-increased.
-It is good practice to set the length ahead of time to the
-expected maximum value, as some VV processes rely on the
-current maximum length of the VV when you pass it in as an
-argument, and unexpected results may occur if the length is
-not what you expect it to be because of dynamic allocation at
-an earlier time.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Element</span> <span class="n">being</span> <span class="nb">set</span> <span class="n">cannot</span> <span class="n">be</span> <span class="o">&lt;</span> <span class="mf">0.</span>
+<span class="n">If</span> <span class="n">the</span> <span class="n">element</span> <span class="ow">is</span> <span class="o">&gt;</span> <span class="n">current</span> <span class="n">VV</span> <span class="n">length</span><span class="p">,</span> <span class="n">the</span> <span class="n">VV</span> <span class="n">length</span> <span class="ow">is</span>
+<span class="n">increased</span><span class="o">.</span>
+<span class="n">It</span> <span class="ow">is</span> <span class="n">good</span> <span class="n">practice</span> <span class="n">to</span> <span class="nb">set</span> <span class="n">the</span> <span class="n">length</span> <span class="n">ahead</span> <span class="n">of</span> <span class="n">time</span> <span class="n">to</span> <span class="n">the</span>
+<span class="n">expected</span> <span class="n">maximum</span> <span class="n">value</span><span class="p">,</span> <span class="k">as</span> <span class="n">some</span> <span class="n">VV</span> <span class="n">processes</span> <span class="n">rely</span> <span class="n">on</span> <span class="n">the</span>
+<span class="n">current</span> <span class="n">maximum</span> <span class="n">length</span> <span class="n">of</span> <span class="n">the</span> <span class="n">VV</span> <span class="n">when</span> <span class="n">you</span> <span class="k">pass</span> <span class="n">it</span> <span class="ow">in</span> <span class="k">as</span> <span class="n">an</span>
+<span class="n">argument</span><span class="p">,</span> <span class="ow">and</span> <span class="n">unexpected</span> <span class="n">results</span> <span class="n">may</span> <span class="n">occur</span> <span class="k">if</span> <span class="n">the</span> <span class="n">length</span> <span class="ow">is</span>
+<span class="ow">not</span> <span class="n">what</span> <span class="n">you</span> <span class="n">expect</span> <span class="n">it</span> <span class="n">to</span> <span class="n">be</span> <span class="n">because</span> <span class="n">of</span> <span class="n">dynamic</span> <span class="n">allocation</span> <span class="n">at</span>
+<span class="n">an</span> <span class="n">earlier</span> <span class="n">time</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXVV.set_double_n">
 <code class="descname">set_double_n</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(int)arg2</em>, <em>(float)arg3</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXVV.set_double_n" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Set N real elements in a VV.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Set</span> <span class="n">N</span> <span class="n">real</span> <span class="n">elements</span> <span class="ow">in</span> <span class="n">a</span> <span class="n">VV</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; start element (&gt;= 0)</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; # elements to set (-1 sets all elements to end)</li>
+<li><strong>arg1</strong> (<em>int</em>) &#8211; start element (&gt;= 0)</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; # elements to set (-1 sets all elements to end)</li>
 <li><strong>arg3</strong> (<em>float</em>) &#8211; value to set</li>
 </ul>
 </td>
@@ -1846,11 +1865,11 @@ Set N real elements in a VV.
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-Element being set cannot be &lt; 0.
-If the element is &gt; current VV length, the VV length is
-increased.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Element</span> <span class="n">being</span> <span class="nb">set</span> <span class="n">cannot</span> <span class="n">be</span> <span class="o">&lt;</span> <span class="mf">0.</span>
+<span class="n">If</span> <span class="n">the</span> <span class="n">element</span> <span class="ow">is</span> <span class="o">&gt;</span> <span class="n">current</span> <span class="n">VV</span> <span class="n">length</span><span class="p">,</span> <span class="n">the</span> <span class="n">VV</span> <span class="n">length</span> <span class="ow">is</span>
+<span class="n">increased</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
@@ -1863,7 +1882,7 @@ increased.
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Expansion setting (1 or greater)</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>int</em>) &#8211; Expansion setting (1 or greater)</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Nothing</td>
 </tr>
@@ -1925,16 +1944,16 @@ increased.
 <dl class="method">
 <dt id="geosoft.gxapi.GXVV.set_int">
 <code class="descname">set_int</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(int)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXVV.set_int" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Set an integer element in a VV.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Set</span> <span class="n">an</span> <span class="n">integer</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">a</span> <span class="n">VV</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; element to set</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; value to set</li>
+<li><strong>arg1</strong> (<em>int</em>) &#8211; element to set</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; value to set</li>
 </ul>
 </td>
 </tr>
@@ -1950,33 +1969,33 @@ Set an integer element in a VV.
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-Element being set cannot be &lt; 0.
-If the element is &gt; current VV length, the VV length is
-increased.
-It is good practice to set the length ahead of time to the
-expected maximum value, as some VV processes rely on the
-current maximum length of the VV when you pass it in as an
-argument, and unexpected results may occur if the length is
-not what you expect it to be because of dynamic allocation at
-an earlier time.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Element</span> <span class="n">being</span> <span class="nb">set</span> <span class="n">cannot</span> <span class="n">be</span> <span class="o">&lt;</span> <span class="mf">0.</span>
+<span class="n">If</span> <span class="n">the</span> <span class="n">element</span> <span class="ow">is</span> <span class="o">&gt;</span> <span class="n">current</span> <span class="n">VV</span> <span class="n">length</span><span class="p">,</span> <span class="n">the</span> <span class="n">VV</span> <span class="n">length</span> <span class="ow">is</span>
+<span class="n">increased</span><span class="o">.</span>
+<span class="n">It</span> <span class="ow">is</span> <span class="n">good</span> <span class="n">practice</span> <span class="n">to</span> <span class="nb">set</span> <span class="n">the</span> <span class="n">length</span> <span class="n">ahead</span> <span class="n">of</span> <span class="n">time</span> <span class="n">to</span> <span class="n">the</span>
+<span class="n">expected</span> <span class="n">maximum</span> <span class="n">value</span><span class="p">,</span> <span class="k">as</span> <span class="n">some</span> <span class="n">VV</span> <span class="n">processes</span> <span class="n">rely</span> <span class="n">on</span> <span class="n">the</span>
+<span class="n">current</span> <span class="n">maximum</span> <span class="n">length</span> <span class="n">of</span> <span class="n">the</span> <span class="n">VV</span> <span class="n">when</span> <span class="n">you</span> <span class="k">pass</span> <span class="n">it</span> <span class="ow">in</span> <span class="k">as</span> <span class="n">an</span>
+<span class="n">argument</span><span class="p">,</span> <span class="ow">and</span> <span class="n">unexpected</span> <span class="n">results</span> <span class="n">may</span> <span class="n">occur</span> <span class="k">if</span> <span class="n">the</span> <span class="n">length</span> <span class="ow">is</span>
+<span class="ow">not</span> <span class="n">what</span> <span class="n">you</span> <span class="n">expect</span> <span class="n">it</span> <span class="n">to</span> <span class="n">be</span> <span class="n">because</span> <span class="n">of</span> <span class="n">dynamic</span> <span class="n">allocation</span> <span class="n">at</span>
+<span class="n">an</span> <span class="n">earlier</span> <span class="n">time</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXVV.set_int_n">
 <code class="descname">set_int_n</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(int)arg2</em>, <em>(int)arg3</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXVV.set_int_n" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Set N integer elements in a VV.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Set</span> <span class="n">N</span> <span class="n">integer</span> <span class="n">elements</span> <span class="ow">in</span> <span class="n">a</span> <span class="n">VV</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; start element (&gt;= 0)</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; # elements to set (-1 sets all elements to end)</li>
-<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; value to set</li>
+<li><strong>arg1</strong> (<em>int</em>) &#8211; start element (&gt;= 0)</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; # elements to set (-1 sets all elements to end)</li>
+<li><strong>arg3</strong> (<em>int</em>) &#8211; value to set</li>
 </ul>
 </td>
 </tr>
@@ -1992,24 +2011,24 @@ Set N integer elements in a VV.
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-Element being set cannot be &lt; 0.
-If the element is &gt; current VV length, the VV length is
-increased.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Element</span> <span class="n">being</span> <span class="nb">set</span> <span class="n">cannot</span> <span class="n">be</span> <span class="o">&lt;</span> <span class="mf">0.</span>
+<span class="n">If</span> <span class="n">the</span> <span class="n">element</span> <span class="ow">is</span> <span class="o">&gt;</span> <span class="n">current</span> <span class="n">VV</span> <span class="n">length</span><span class="p">,</span> <span class="n">the</span> <span class="n">VV</span> <span class="n">length</span> <span class="ow">is</span>
+<span class="n">increased</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXVV.set_len">
 <code class="descname">set_len</code><span class="sig-paren">(</span><em>(int)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXVV.set_len" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Set the length of a VV.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Set</span> <span class="n">the</span> <span class="n">length</span> <span class="n">of</span> <span class="n">a</span> <span class="n">VV</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; New length (number of elements)</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>int</em>) &#8211; New length (number of elements)</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Nothing</td>
 </tr>
@@ -2021,30 +2040,30 @@ Set the length of a VV.
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-If increasing the VV size, new elements are set to dummies.
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">If</span> <span class="n">increasing</span> <span class="n">the</span> <span class="n">VV</span> <span class="n">size</span><span class="p">,</span> <span class="n">new</span> <span class="n">elements</span> <span class="n">are</span> <span class="nb">set</span> <span class="n">to</span> <span class="n">dummies</span><span class="o">.</span>
 
-It is good practice to set the length ahead of time to the
-expected maximum value, as some VV processes rely on the
-current maximum length of the VV when you pass it in as an
-argument, and unexpected results may occur if the length is
-not what you expect it to be because of dynamic allocation at
-an earlier time.
-</pre>
+<span class="n">It</span> <span class="ow">is</span> <span class="n">good</span> <span class="n">practice</span> <span class="n">to</span> <span class="nb">set</span> <span class="n">the</span> <span class="n">length</span> <span class="n">ahead</span> <span class="n">of</span> <span class="n">time</span> <span class="n">to</span> <span class="n">the</span>
+<span class="n">expected</span> <span class="n">maximum</span> <span class="n">value</span><span class="p">,</span> <span class="k">as</span> <span class="n">some</span> <span class="n">VV</span> <span class="n">processes</span> <span class="n">rely</span> <span class="n">on</span> <span class="n">the</span>
+<span class="n">current</span> <span class="n">maximum</span> <span class="n">length</span> <span class="n">of</span> <span class="n">the</span> <span class="n">VV</span> <span class="n">when</span> <span class="n">you</span> <span class="k">pass</span> <span class="n">it</span> <span class="ow">in</span> <span class="k">as</span> <span class="n">an</span>
+<span class="n">argument</span><span class="p">,</span> <span class="ow">and</span> <span class="n">unexpected</span> <span class="n">results</span> <span class="n">may</span> <span class="n">occur</span> <span class="k">if</span> <span class="n">the</span> <span class="n">length</span> <span class="ow">is</span>
+<span class="ow">not</span> <span class="n">what</span> <span class="n">you</span> <span class="n">expect</span> <span class="n">it</span> <span class="n">to</span> <span class="n">be</span> <span class="n">because</span> <span class="n">of</span> <span class="n">dynamic</span> <span class="n">allocation</span> <span class="n">at</span>
+<span class="n">an</span> <span class="n">earlier</span> <span class="n">time</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXVV.set_string">
 <code class="descname">set_string</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(str)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXVV.set_string" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Set a string element in a VV.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Set</span> <span class="n">a</span> <span class="n">string</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">a</span> <span class="n">VV</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; element to set</li>
+<li><strong>arg1</strong> (<em>int</em>) &#8211; element to set</li>
 <li><strong>arg2</strong> (<em>str</em>) &#8211; string to set</li>
 </ul>
 </td>
@@ -2061,32 +2080,32 @@ Set a string element in a VV.
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-Element being set cannot be &lt; 0.
-If the element is &gt; current VV length, the VV length is
-increased.
-It is good practice to set the length ahead of time to the
-expected maximum value, as some VV processes rely on the
-current maximum length of the VV when you pass it in as an
-argument, and unexpected results may occur if the length is
-not what you expect it to be because of dynamic allocation at
-an earlier time.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Element</span> <span class="n">being</span> <span class="nb">set</span> <span class="n">cannot</span> <span class="n">be</span> <span class="o">&lt;</span> <span class="mf">0.</span>
+<span class="n">If</span> <span class="n">the</span> <span class="n">element</span> <span class="ow">is</span> <span class="o">&gt;</span> <span class="n">current</span> <span class="n">VV</span> <span class="n">length</span><span class="p">,</span> <span class="n">the</span> <span class="n">VV</span> <span class="n">length</span> <span class="ow">is</span>
+<span class="n">increased</span><span class="o">.</span>
+<span class="n">It</span> <span class="ow">is</span> <span class="n">good</span> <span class="n">practice</span> <span class="n">to</span> <span class="nb">set</span> <span class="n">the</span> <span class="n">length</span> <span class="n">ahead</span> <span class="n">of</span> <span class="n">time</span> <span class="n">to</span> <span class="n">the</span>
+<span class="n">expected</span> <span class="n">maximum</span> <span class="n">value</span><span class="p">,</span> <span class="k">as</span> <span class="n">some</span> <span class="n">VV</span> <span class="n">processes</span> <span class="n">rely</span> <span class="n">on</span> <span class="n">the</span>
+<span class="n">current</span> <span class="n">maximum</span> <span class="n">length</span> <span class="n">of</span> <span class="n">the</span> <span class="n">VV</span> <span class="n">when</span> <span class="n">you</span> <span class="k">pass</span> <span class="n">it</span> <span class="ow">in</span> <span class="k">as</span> <span class="n">an</span>
+<span class="n">argument</span><span class="p">,</span> <span class="ow">and</span> <span class="n">unexpected</span> <span class="n">results</span> <span class="n">may</span> <span class="n">occur</span> <span class="k">if</span> <span class="n">the</span> <span class="n">length</span> <span class="ow">is</span>
+<span class="ow">not</span> <span class="n">what</span> <span class="n">you</span> <span class="n">expect</span> <span class="n">it</span> <span class="n">to</span> <span class="n">be</span> <span class="n">because</span> <span class="n">of</span> <span class="n">dynamic</span> <span class="n">allocation</span> <span class="n">at</span>
+<span class="n">an</span> <span class="n">earlier</span> <span class="n">time</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXVV.set_string_n">
 <code class="descname">set_string_n</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(int)arg2</em>, <em>(str)arg3</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXVV.set_string_n" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Set N string elements in a VV.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Set</span> <span class="n">N</span> <span class="n">string</span> <span class="n">elements</span> <span class="ow">in</span> <span class="n">a</span> <span class="n">VV</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; start element (&gt;= 0)</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; # elements to set (-1 sets all elements to end)</li>
+<li><strong>arg1</strong> (<em>int</em>) &#8211; start element (&gt;= 0)</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; # elements to set (-1 sets all elements to end)</li>
 <li><strong>arg3</strong> (<em>str</em>) &#8211; string to set</li>
 </ul>
 </td>
@@ -2103,19 +2122,19 @@ Set N string elements in a VV.
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-Element being set cannot be &lt; 0.
-If the element is &gt; current VV length, the VV length is
-increased.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Element</span> <span class="n">being</span> <span class="nb">set</span> <span class="n">cannot</span> <span class="n">be</span> <span class="o">&lt;</span> <span class="mf">0.</span>
+<span class="n">If</span> <span class="n">the</span> <span class="n">element</span> <span class="ow">is</span> <span class="o">&gt;</span> <span class="n">current</span> <span class="n">VV</span> <span class="n">length</span><span class="p">,</span> <span class="n">the</span> <span class="n">VV</span> <span class="n">length</span> <span class="ow">is</span>
+<span class="n">increased</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXVV.setup_index">
 <code class="descname">setup_index</code><span class="sig-paren">(</span><em>(GXVV)arg1</em>, <em>(GXVV)arg2</em>, <em>(int)arg3</em>, <em>(float)arg4</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXVV.setup_index" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Setup an index VV from VV1 to VV2.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Setup</span> <span class="n">an</span> <span class="n">index</span> <span class="n">VV</span> <span class="kn">from</span> <span class="nn">VV1</span> <span class="n">to</span> <span class="n">VV2</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -2123,7 +2142,7 @@ Setup an index VV from VV1 to VV2.
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<a class="reference internal" href="#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Query VV (same type as Data VV)</li>
 <li><strong>arg2</strong> (<a class="reference internal" href="#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; VV index VV of type REAL</li>
-<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#vv-lookup"><span class="std std-ref">VV_LOOKUP constants</span></a></li>
+<li><strong>arg3</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#vv-lookup"><span class="std std-ref">VV_LOOKUP constants</span></a></li>
 <li><strong>arg4</strong> (<em>float</em>) &#8211; Spacing for some modes</li>
 </ul>
 </td>
@@ -2143,17 +2162,17 @@ Setup an index VV from VV1 to VV2.
 <pre class="literal-block">
 The input reference VV must be in ascending numerical order.
 If your reference data is NOT ordered, then use the the
-\ :func:`geosoft.gxapi.GXVV.sort_index1`\  function to create an order index, then sort
+<a class="reference internal" href="#geosoft.gxapi.GXVV.sort_index1" title="geosoft.gxapi.GXVV.sort_index1"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXVV.sort_index1()</span></code></a> function to create an order index, then sort
 both the reference and data VVs using this index VV before
-you call \ :func:`geosoft.gxapi.GXVV.setup_index`\ .
+you call <a class="reference internal" href="#geosoft.gxapi.GXVV.setup_index" title="geosoft.gxapi.GXVV.setup_index"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXVV.setup_index()</span></code></a>.
 
 Example: You have a reference data set taken at specific times, hVVt, hVVy
 and you want to calculate/estimate/interpolate the values hVVy2 at a second set
 of times hVVt2
 
-Step 1: Create an index, hVVi, type GS_DOUBLE, and call \ :func:`geosoft.gxapi.GXVV.setup_index`\ .
+Step 1: Create an index, hVVi, type GS_DOUBLE, and call <a class="reference internal" href="#geosoft.gxapi.GXVV.setup_index" title="geosoft.gxapi.GXVV.setup_index"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXVV.setup_index()</span></code></a>.
 
-e.g. : \ :func:`geosoft.gxapi.GXVV.setup_index`\ (hVVt, hVVt2, hVVi, VV_LOOKUP_XXX, rSpacing);
+e.g. : <a class="reference internal" href="#geosoft.gxapi.GXVV.setup_index" title="geosoft.gxapi.GXVV.setup_index"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXVV.setup_index()</span></code></a>(hVVt, hVVt2, hVVi, VV_LOOKUP_XXX, rSpacing);
 
 Internally, this assigns index values of 0.0, 1.0, 2.0 etc. to the individual
 values in hVVt, then, depending on the lookup method chosen, assigns
@@ -2162,7 +2181,7 @@ fractional index values to the input values in hVVt2.
 Step 2: To determine what the lookup values hVVy2 should be at times hVVt2,
 call the sLookupIndex_VV function:
 
-e.g. : \ :func:`geosoft.gxapi.GXVV.lookup_index`\ (hVVy, hVVi, hVVy2);
+e.g. : <a class="reference internal" href="#geosoft.gxapi.GXVV.lookup_index" title="geosoft.gxapi.GXVV.lookup_index"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXVV.lookup_index()</span></code></a>(hVVy, hVVi, hVVy2);
 
 Internally, this assigns index values of 0.0, 1.0, 2.0 etc. to the individual
 values in hVVy, and uses linear interpolation to calculate the values of
@@ -2173,14 +2192,14 @@ hVVy2 at the input indices contained in hVVi.
 <dl class="method">
 <dt id="geosoft.gxapi.GXVV.sort">
 <code class="descname">sort</code><span class="sig-paren">(</span><em>(int)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXVV.sort" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Sort a VV.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Sort</span> <span class="n">a</span> <span class="n">VV</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#vv-sort"><span class="std std-ref">VV_SORT constants</span></a></td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#vv-sort"><span class="std std-ref">VV_SORT constants</span></a></td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Nothing</td>
 </tr>
@@ -2196,9 +2215,9 @@ Sort a VV.
 <dl class="method">
 <dt id="geosoft.gxapi.GXVV.sort_index">
 <code class="descname">sort_index</code><span class="sig-paren">(</span><em>(GXVV)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXVV.sort_index" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Sort index VV based on a data VV.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Sort</span> <span class="n">index</span> <span class="n">VV</span> <span class="n">based</span> <span class="n">on</span> <span class="n">a</span> <span class="n">data</span> <span class="n">VV</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -2215,26 +2234,26 @@ Sort index VV based on a data VV.
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-Create an Index VV (of type GS_LONG) based on a data VV.
-This index vv can then be used by the IndexOrder method
-to order a group of VV's.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Create</span> <span class="n">an</span> <span class="n">Index</span> <span class="n">VV</span> <span class="p">(</span><span class="n">of</span> <span class="nb">type</span> <span class="n">GS_LONG</span><span class="p">)</span> <span class="n">based</span> <span class="n">on</span> <span class="n">a</span> <span class="n">data</span> <span class="n">VV</span><span class="o">.</span>
+<span class="n">This</span> <span class="n">index</span> <span class="n">vv</span> <span class="n">can</span> <span class="n">then</span> <span class="n">be</span> <span class="n">used</span> <span class="n">by</span> <span class="n">the</span> <span class="n">IndexOrder</span> <span class="n">method</span>
+<span class="n">to</span> <span class="n">order</span> <span class="n">a</span> <span class="n">group</span> <span class="n">of</span> <span class="n">VV</span><span class="s1">&#39;s.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXVV.sort_index1">
 <code class="descname">sort_index1</code><span class="sig-paren">(</span><em>(GXVV)arg1</em>, <em>(int)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXVV.sort_index1" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Sort index VV based on 1 data VV - set orders.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Sort</span> <span class="n">index</span> <span class="n">VV</span> <span class="n">based</span> <span class="n">on</span> <span class="mi">1</span> <span class="n">data</span> <span class="n">VV</span> <span class="o">-</span> <span class="nb">set</span> <span class="n">orders</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<a class="reference internal" href="#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Index VV of type INT</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#vv-sort"><span class="std std-ref">VV_SORT constants</span></a></li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#vv-sort"><span class="std std-ref">VV_SORT constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -2250,23 +2269,23 @@ Sort index VV based on 1 data VV - set orders.
 <p><span class="versionmodified">New in version 5.0.2.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-Create an Index VV (of type GS_LONG) based on a data VV.
-This index vv can then be used by the IndexOrder method
-to order a group of VV's. The individual VVs may be ordered
-in ascending or descending order.
-If the primary VV values of two indices are the same, then
-the secondary VV values are compared. If the secondary values
-are the same, the ternary values are compared, etc.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Create</span> <span class="n">an</span> <span class="n">Index</span> <span class="n">VV</span> <span class="p">(</span><span class="n">of</span> <span class="nb">type</span> <span class="n">GS_LONG</span><span class="p">)</span> <span class="n">based</span> <span class="n">on</span> <span class="n">a</span> <span class="n">data</span> <span class="n">VV</span><span class="o">.</span>
+<span class="n">This</span> <span class="n">index</span> <span class="n">vv</span> <span class="n">can</span> <span class="n">then</span> <span class="n">be</span> <span class="n">used</span> <span class="n">by</span> <span class="n">the</span> <span class="n">IndexOrder</span> <span class="n">method</span>
+<span class="n">to</span> <span class="n">order</span> <span class="n">a</span> <span class="n">group</span> <span class="n">of</span> <span class="n">VV</span><span class="s1">&#39;s. The individual VVs may be ordered</span>
+<span class="ow">in</span> <span class="n">ascending</span> <span class="ow">or</span> <span class="n">descending</span> <span class="n">order</span><span class="o">.</span>
+<span class="n">If</span> <span class="n">the</span> <span class="n">primary</span> <span class="n">VV</span> <span class="n">values</span> <span class="n">of</span> <span class="n">two</span> <span class="n">indices</span> <span class="n">are</span> <span class="n">the</span> <span class="n">same</span><span class="p">,</span> <span class="n">then</span>
+<span class="n">the</span> <span class="n">secondary</span> <span class="n">VV</span> <span class="n">values</span> <span class="n">are</span> <span class="n">compared</span><span class="o">.</span> <span class="n">If</span> <span class="n">the</span> <span class="n">secondary</span> <span class="n">values</span>
+<span class="n">are</span> <span class="n">the</span> <span class="n">same</span><span class="p">,</span> <span class="n">the</span> <span class="n">ternary</span> <span class="n">values</span> <span class="n">are</span> <span class="n">compared</span><span class="p">,</span> <span class="n">etc</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXVV.sort_index2">
 <code class="descname">sort_index2</code><span class="sig-paren">(</span><em>(GXVV)arg1</em>, <em>(GXVV)arg2</em>, <em>(int)arg3</em>, <em>(int)arg4</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXVV.sort_index2" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Sort index VV based on 2 data VVs - set orders.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Sort</span> <span class="n">index</span> <span class="n">VV</span> <span class="n">based</span> <span class="n">on</span> <span class="mi">2</span> <span class="n">data</span> <span class="n">VVs</span> <span class="o">-</span> <span class="nb">set</span> <span class="n">orders</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -2274,8 +2293,8 @@ Sort index VV based on 2 data VVs - set orders.
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<a class="reference internal" href="#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Secondary Data VV</li>
 <li><strong>arg2</strong> (<a class="reference internal" href="#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Index VV of type INT</li>
-<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Primary Sort order <a class="reference internal" href="#vv-sort"><span class="std std-ref">VV_SORT constants</span></a></li>
-<li><strong>arg4</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Secondary Sort order <a class="reference internal" href="#vv-sort"><span class="std std-ref">VV_SORT constants</span></a></li>
+<li><strong>arg3</strong> (<em>int</em>) &#8211; Primary Sort order <a class="reference internal" href="#vv-sort"><span class="std std-ref">VV_SORT constants</span></a></li>
+<li><strong>arg4</strong> (<em>int</em>) &#8211; Secondary Sort order <a class="reference internal" href="#vv-sort"><span class="std std-ref">VV_SORT constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -2291,23 +2310,23 @@ Sort index VV based on 2 data VVs - set orders.
 <p><span class="versionmodified">New in version 5.0.2.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-Create an Index VV (of type GS_LONG) based on a data VV.
-This index vv can then be used by the IndexOrder method
-to order a group of VV's. The individual VVs may be ordered
-in ascending or descending order.
-If the primary VV values of two indices are the same, then
-the secondary VV values are compared. If the secondary values
-are the same, the ternary values are compared, etc
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Create</span> <span class="n">an</span> <span class="n">Index</span> <span class="n">VV</span> <span class="p">(</span><span class="n">of</span> <span class="nb">type</span> <span class="n">GS_LONG</span><span class="p">)</span> <span class="n">based</span> <span class="n">on</span> <span class="n">a</span> <span class="n">data</span> <span class="n">VV</span><span class="o">.</span>
+<span class="n">This</span> <span class="n">index</span> <span class="n">vv</span> <span class="n">can</span> <span class="n">then</span> <span class="n">be</span> <span class="n">used</span> <span class="n">by</span> <span class="n">the</span> <span class="n">IndexOrder</span> <span class="n">method</span>
+<span class="n">to</span> <span class="n">order</span> <span class="n">a</span> <span class="n">group</span> <span class="n">of</span> <span class="n">VV</span><span class="s1">&#39;s. The individual VVs may be ordered</span>
+<span class="ow">in</span> <span class="n">ascending</span> <span class="ow">or</span> <span class="n">descending</span> <span class="n">order</span><span class="o">.</span>
+<span class="n">If</span> <span class="n">the</span> <span class="n">primary</span> <span class="n">VV</span> <span class="n">values</span> <span class="n">of</span> <span class="n">two</span> <span class="n">indices</span> <span class="n">are</span> <span class="n">the</span> <span class="n">same</span><span class="p">,</span> <span class="n">then</span>
+<span class="n">the</span> <span class="n">secondary</span> <span class="n">VV</span> <span class="n">values</span> <span class="n">are</span> <span class="n">compared</span><span class="o">.</span> <span class="n">If</span> <span class="n">the</span> <span class="n">secondary</span> <span class="n">values</span>
+<span class="n">are</span> <span class="n">the</span> <span class="n">same</span><span class="p">,</span> <span class="n">the</span> <span class="n">ternary</span> <span class="n">values</span> <span class="n">are</span> <span class="n">compared</span><span class="p">,</span> <span class="n">etc</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXVV.sort_index3">
 <code class="descname">sort_index3</code><span class="sig-paren">(</span><em>(GXVV)arg1</em>, <em>(GXVV)arg2</em>, <em>(GXVV)arg3</em>, <em>(int)arg4</em>, <em>(int)arg5</em>, <em>(int)arg6</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXVV.sort_index3" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Sort index VV based on 3 data VVs - set orders.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Sort</span> <span class="n">index</span> <span class="n">VV</span> <span class="n">based</span> <span class="n">on</span> <span class="mi">3</span> <span class="n">data</span> <span class="n">VVs</span> <span class="o">-</span> <span class="nb">set</span> <span class="n">orders</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -2316,9 +2335,9 @@ Sort index VV based on 3 data VVs - set orders.
 <li><strong>arg1</strong> (<a class="reference internal" href="#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Secondary Data VV</li>
 <li><strong>arg2</strong> (<a class="reference internal" href="#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Ternary Data VV</li>
 <li><strong>arg3</strong> (<a class="reference internal" href="#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Index VV of type INT</li>
-<li><strong>arg4</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Primary Sort order <a class="reference internal" href="#vv-sort"><span class="std std-ref">VV_SORT constants</span></a></li>
-<li><strong>arg5</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Secondary sort order <a class="reference internal" href="#vv-sort"><span class="std std-ref">VV_SORT constants</span></a></li>
-<li><strong>arg6</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Third Sort order <a class="reference internal" href="#vv-sort"><span class="std std-ref">VV_SORT constants</span></a></li>
+<li><strong>arg4</strong> (<em>int</em>) &#8211; Primary Sort order <a class="reference internal" href="#vv-sort"><span class="std std-ref">VV_SORT constants</span></a></li>
+<li><strong>arg5</strong> (<em>int</em>) &#8211; Secondary sort order <a class="reference internal" href="#vv-sort"><span class="std std-ref">VV_SORT constants</span></a></li>
+<li><strong>arg6</strong> (<em>int</em>) &#8211; Third Sort order <a class="reference internal" href="#vv-sort"><span class="std std-ref">VV_SORT constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -2334,23 +2353,23 @@ Sort index VV based on 3 data VVs - set orders.
 <p><span class="versionmodified">New in version 5.0.2.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-Create an Index VV (of type GS_LONG) based on a data VV.
-This index vv can then be used by the IndexOrder method
-to order a group of VV's. The individual VVs may be ordered
-in ascending or descending order.
-If the primary VV values of two indices are the same, then
-the secondary VV values are compared. If the secondary values
-are the same, the third values are compared, etc
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Create</span> <span class="n">an</span> <span class="n">Index</span> <span class="n">VV</span> <span class="p">(</span><span class="n">of</span> <span class="nb">type</span> <span class="n">GS_LONG</span><span class="p">)</span> <span class="n">based</span> <span class="n">on</span> <span class="n">a</span> <span class="n">data</span> <span class="n">VV</span><span class="o">.</span>
+<span class="n">This</span> <span class="n">index</span> <span class="n">vv</span> <span class="n">can</span> <span class="n">then</span> <span class="n">be</span> <span class="n">used</span> <span class="n">by</span> <span class="n">the</span> <span class="n">IndexOrder</span> <span class="n">method</span>
+<span class="n">to</span> <span class="n">order</span> <span class="n">a</span> <span class="n">group</span> <span class="n">of</span> <span class="n">VV</span><span class="s1">&#39;s. The individual VVs may be ordered</span>
+<span class="ow">in</span> <span class="n">ascending</span> <span class="ow">or</span> <span class="n">descending</span> <span class="n">order</span><span class="o">.</span>
+<span class="n">If</span> <span class="n">the</span> <span class="n">primary</span> <span class="n">VV</span> <span class="n">values</span> <span class="n">of</span> <span class="n">two</span> <span class="n">indices</span> <span class="n">are</span> <span class="n">the</span> <span class="n">same</span><span class="p">,</span> <span class="n">then</span>
+<span class="n">the</span> <span class="n">secondary</span> <span class="n">VV</span> <span class="n">values</span> <span class="n">are</span> <span class="n">compared</span><span class="o">.</span> <span class="n">If</span> <span class="n">the</span> <span class="n">secondary</span> <span class="n">values</span>
+<span class="n">are</span> <span class="n">the</span> <span class="n">same</span><span class="p">,</span> <span class="n">the</span> <span class="n">third</span> <span class="n">values</span> <span class="n">are</span> <span class="n">compared</span><span class="p">,</span> <span class="n">etc</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXVV.sort_index4">
 <code class="descname">sort_index4</code><span class="sig-paren">(</span><em>(GXVV)arg1</em>, <em>(GXVV)arg2</em>, <em>(GXVV)arg3</em>, <em>(GXVV)arg4</em>, <em>(int)arg5</em>, <em>(int)arg6</em>, <em>(int)arg7</em>, <em>(int)arg8</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXVV.sort_index4" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Sort index VV based on 4 data VVs - set orders.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Sort</span> <span class="n">index</span> <span class="n">VV</span> <span class="n">based</span> <span class="n">on</span> <span class="mi">4</span> <span class="n">data</span> <span class="n">VVs</span> <span class="o">-</span> <span class="nb">set</span> <span class="n">orders</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -2360,10 +2379,10 @@ Sort index VV based on 4 data VVs - set orders.
 <li><strong>arg2</strong> (<a class="reference internal" href="#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Ternary Data VV</li>
 <li><strong>arg3</strong> (<a class="reference internal" href="#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Quaternary Data VV</li>
 <li><strong>arg4</strong> (<a class="reference internal" href="#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Index VV of type INT</li>
-<li><strong>arg5</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Primary Ssort order <a class="reference internal" href="#vv-sort"><span class="std std-ref">VV_SORT constants</span></a></li>
-<li><strong>arg6</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Secondary Sort order <a class="reference internal" href="#vv-sort"><span class="std std-ref">VV_SORT constants</span></a></li>
-<li><strong>arg7</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Third Sort order <a class="reference internal" href="#vv-sort"><span class="std std-ref">VV_SORT constants</span></a></li>
-<li><strong>arg8</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Fourth Sort order <a class="reference internal" href="#vv-sort"><span class="std std-ref">VV_SORT constants</span></a></li>
+<li><strong>arg5</strong> (<em>int</em>) &#8211; Primary Ssort order <a class="reference internal" href="#vv-sort"><span class="std std-ref">VV_SORT constants</span></a></li>
+<li><strong>arg6</strong> (<em>int</em>) &#8211; Secondary Sort order <a class="reference internal" href="#vv-sort"><span class="std std-ref">VV_SORT constants</span></a></li>
+<li><strong>arg7</strong> (<em>int</em>) &#8211; Third Sort order <a class="reference internal" href="#vv-sort"><span class="std std-ref">VV_SORT constants</span></a></li>
+<li><strong>arg8</strong> (<em>int</em>) &#8211; Fourth Sort order <a class="reference internal" href="#vv-sort"><span class="std std-ref">VV_SORT constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -2379,23 +2398,23 @@ Sort index VV based on 4 data VVs - set orders.
 <p><span class="versionmodified">New in version 5.0.2.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-Create an Index VV (of type GS_LONG) based on a data VV.
-This index vv can then be used by the IndexOrder method
-to order a group of VV's. The individual VVs may be ordered
-in ascending or descending order.
-If the primary VV values of two indices are the same, then
-the secondary VV values are compared. If the secondary values
-are the same, the third values are compared, etc
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Create</span> <span class="n">an</span> <span class="n">Index</span> <span class="n">VV</span> <span class="p">(</span><span class="n">of</span> <span class="nb">type</span> <span class="n">GS_LONG</span><span class="p">)</span> <span class="n">based</span> <span class="n">on</span> <span class="n">a</span> <span class="n">data</span> <span class="n">VV</span><span class="o">.</span>
+<span class="n">This</span> <span class="n">index</span> <span class="n">vv</span> <span class="n">can</span> <span class="n">then</span> <span class="n">be</span> <span class="n">used</span> <span class="n">by</span> <span class="n">the</span> <span class="n">IndexOrder</span> <span class="n">method</span>
+<span class="n">to</span> <span class="n">order</span> <span class="n">a</span> <span class="n">group</span> <span class="n">of</span> <span class="n">VV</span><span class="s1">&#39;s. The individual VVs may be ordered</span>
+<span class="ow">in</span> <span class="n">ascending</span> <span class="ow">or</span> <span class="n">descending</span> <span class="n">order</span><span class="o">.</span>
+<span class="n">If</span> <span class="n">the</span> <span class="n">primary</span> <span class="n">VV</span> <span class="n">values</span> <span class="n">of</span> <span class="n">two</span> <span class="n">indices</span> <span class="n">are</span> <span class="n">the</span> <span class="n">same</span><span class="p">,</span> <span class="n">then</span>
+<span class="n">the</span> <span class="n">secondary</span> <span class="n">VV</span> <span class="n">values</span> <span class="n">are</span> <span class="n">compared</span><span class="o">.</span> <span class="n">If</span> <span class="n">the</span> <span class="n">secondary</span> <span class="n">values</span>
+<span class="n">are</span> <span class="n">the</span> <span class="n">same</span><span class="p">,</span> <span class="n">the</span> <span class="n">third</span> <span class="n">values</span> <span class="n">are</span> <span class="n">compared</span><span class="p">,</span> <span class="n">etc</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXVV.statistics">
 <em class="property">static </em><code class="descname">statistics</code><span class="sig-paren">(</span><em>(GXST)arg1</em>, <em>(GXVV)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXVV.statistics" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Add a VV to a ST.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Add</span> <span class="n">a</span> <span class="n">VV</span> <span class="n">to</span> <span class="n">a</span> <span class="n">ST</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -2422,9 +2441,9 @@ Add a VV to a ST.
 <dl class="method">
 <dt id="geosoft.gxapi.GXVV.subtract">
 <code class="descname">subtract</code><span class="sig-paren">(</span><em>(GXVV)arg1</em>, <em>(GXVV)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXVV.subtract" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Subtract one VV from another: VV_A - VV_B = VV_C
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Subtract</span> <span class="n">one</span> <span class="n">VV</span> <span class="kn">from</span> <span class="nn">another</span><span class="p">:</span> <span class="n">VV_A</span> <span class="o">-</span> <span class="n">VV_B</span> <span class="o">=</span> <span class="n">VV_C</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -2451,9 +2470,9 @@ Subtract one VV from another: VV_A - VV_B = VV_C
 <dl class="method">
 <dt id="geosoft.gxapi.GXVV.sum">
 <code class="descname">sum</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; float:<a class="headerlink" href="#geosoft.gxapi.GXVV.sum" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Calculate the sum of the values in a VV.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Calculate</span> <span class="n">the</span> <span class="nb">sum</span> <span class="n">of</span> <span class="n">the</span> <span class="n">values</span> <span class="ow">in</span> <span class="n">a</span> <span class="n">VV</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -2468,20 +2487,20 @@ Calculate the sum of the values in a VV.
 <p><span class="versionmodified">New in version 7.2.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-Dummy value is treated as Zero(0)
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Dummy</span> <span class="n">value</span> <span class="ow">is</span> <span class="n">treated</span> <span class="k">as</span> <span class="n">Zero</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXVV.swap">
 <code class="descname">swap</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXVV.swap" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Swaps the bytes of the SHORT, USHORT, LONG, FLOAT and DOUBLE vv's.
-Other vv's are not affected by this method. This is used
-primarily with changing the order of bytes for other machine
-created data.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Swaps</span> <span class="n">the</span> <span class="nb">bytes</span> <span class="n">of</span> <span class="n">the</span> <span class="n">SHORT</span><span class="p">,</span> <span class="n">USHORT</span><span class="p">,</span> <span class="n">LONG</span><span class="p">,</span> <span class="n">FLOAT</span> <span class="ow">and</span> <span class="n">DOUBLE</span> <span class="n">vv</span><span class="s1">&#39;s.</span>
+<span class="n">Other</span> <span class="n">vv</span><span class="s1">&#39;s are not affected by this method. This is used</span>
+<span class="n">primarily</span> <span class="k">with</span> <span class="n">changing</span> <span class="n">the</span> <span class="n">order</span> <span class="n">of</span> <span class="nb">bytes</span> <span class="k">for</span> <span class="n">other</span> <span class="n">machine</span>
+<span class="n">created</span> <span class="n">data</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -2501,7 +2520,7 @@ created data.
 <dt id="geosoft.gxapi.GXVV.trans">
 <code class="descname">trans</code><span class="sig-paren">(</span><em>(float)arg1</em>, <em>(float)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXVV.trans" title="Permalink to this definition">¶</a></dt>
 <dd><pre class="literal-block">
-Translate (VV + base ) \ `*`\  mult
+Translate (VV + base ) <cite>*</cite> mult
 </pre>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -2525,17 +2544,17 @@ Translate (VV + base ) \ `*`\  mult
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-All VV types now supported.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">All</span> <span class="n">VV</span> <span class="n">types</span> <span class="n">now</span> <span class="n">supported</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXVV.weighted_mean">
 <code class="descname">weighted_mean</code><span class="sig-paren">(</span><em>(GXVV)arg1</em><span class="sig-paren">)</span> &rarr; float:<a class="headerlink" href="#geosoft.gxapi.GXVV.weighted_mean" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Calculate the weighted average of the values.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Calculate</span> <span class="n">the</span> <span class="n">weighted</span> <span class="n">average</span> <span class="n">of</span> <span class="n">the</span> <span class="n">values</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -2552,17 +2571,17 @@ Calculate the weighted average of the values.
 <p><span class="versionmodified">New in version 7.2.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-Dummy values are ignored.
-</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Dummy</span> <span class="n">values</span> <span class="n">are</span> <span class="n">ignored</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXVV.window">
 <code class="descname">window</code><span class="sig-paren">(</span><em>(float)arg1</em>, <em>(float)arg2</em>, <em>(int)arg3</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXVV.window" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Limit the elements of a vv to a range.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Limit</span> <span class="n">the</span> <span class="n">elements</span> <span class="n">of</span> <span class="n">a</span> <span class="n">vv</span> <span class="n">to</span> <span class="n">a</span> <span class="nb">range</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -2570,7 +2589,7 @@ Limit the elements of a vv to a range.
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<em>float</em>) &#8211; Min Val</li>
 <li><strong>arg2</strong> (<em>float</em>) &#8211; Max Val</li>
-<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#vv-window"><span class="std std-ref">VV_WINDOW constants</span></a></li>
+<li><strong>arg3</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#vv-window"><span class="std std-ref">VV_WINDOW constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -2590,17 +2609,17 @@ Limit the elements of a vv to a range.
 <dl class="method">
 <dt id="geosoft.gxapi.GXVV.write_xml">
 <code class="descname">write_xml</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(int)arg2</em>, <em>(int)arg3</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXVV.write_xml" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Write the VV data as an XML object with bytes and formating.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Write</span> <span class="n">the</span> <span class="n">VV</span> <span class="n">data</span> <span class="k">as</span> <span class="n">an</span> <span class="n">XML</span> <span class="nb">object</span> <span class="k">with</span> <span class="nb">bytes</span> <span class="ow">and</span> <span class="n">formating</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<em>str</em>) &#8211; XML file to create</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; format</li>
-<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; Significant digits/decimals</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; format</li>
+<li><strong>arg3</strong> (<em>int</em>) &#8211; Significant digits/decimals</li>
 </ul>
 </td>
 </tr>
@@ -2873,9 +2892,13 @@ Write the VV data as an XML object with bytes and formating.
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li> 
+          <a href="GXVVEXP.html" title="GXVVEXP class"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="GXVULCAN.html" title="GXVULCAN class"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="geosoft.gxapi.classes.html" >GX API Class/Library Reference</a> &#187;</li> 
       </ul>
     </div>
 

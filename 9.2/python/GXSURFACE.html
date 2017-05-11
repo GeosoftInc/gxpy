@@ -27,6 +27,8 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="GXSURFACEITEM class" href="GXSURFACEITEM.html" />
+    <link rel="prev" title="GXSTRINGS class" href="GXSTRINGS.html" />
  
 <script type="text/javascript">
   var _gaq = _gaq || [];
@@ -43,9 +45,13 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li> 
+          <a href="GXSURFACEITEM.html" title="GXSURFACEITEM class"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="GXSTRINGS.html" title="GXSTRINGS class"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="geosoft.gxapi.classes.html" accesskey="U">GX API Class/Library Reference</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -58,13 +64,19 @@
 </li>
 </ul>
 
-  <div role="note" aria-label="source link">
-    <h3>This Page</h3>
-    <ul class="this-page-menu">
-      <li><a href="_sources/GXSURFACE.rst.txt"
-            rel="nofollow">Show Source</a></li>
-    </ul>
-   </div>
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Introduction</a></li>
+    <li><a href="geosoft.gxapi.classes.html">GX API Class/Library Reference</a></li>
+</ul>
+<h3>Previous Topic</h3>
+<ul>
+    <li><a href="GXSTRINGS.html" title="previous chapter">GXSTRINGS class</a></li>
+</ul>
+<h3>Next Topic</h3>
+<ul>
+    <li><a href="GXSURFACEITEM.html" title="next chapter">GXSURFACEITEM class</a></li>
+</ul>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
@@ -75,6 +87,13 @@
     </form>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/GXSURFACE.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
         </div>
       </div>
 
@@ -89,7 +108,7 @@
 <dt id="geosoft.gxapi.GXSURFACE">
 <em class="property">class </em><code class="descclassname">geosoft.gxapi.</code><code class="descname">GXSURFACE</code><a class="headerlink" href="#geosoft.gxapi.GXSURFACE" title="Permalink to this definition">¶</a></dt>
 <dd><pre class="literal-block">
-The SURFACE class allows you to create, read and alter Geosurface files (\ `*`\ .geosoft_surface).
+The SURFACE class allows you to create, read and alter Geosurface files (<cite>*</cite>.geosoft_surface).
 A Geosurface file can contain one or more surface items (see SURFACEITEM class). In turn each item can
 contains one or more triangular polyhedral meshes.
 </pre>
@@ -119,9 +138,9 @@ contains one or more triangular polyhedral meshes.
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXSURFACE.append_vulcan_triangulation">
 <em class="property">static </em><code class="descname">append_vulcan_triangulation</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(GXIPJ)arg2</em>, <em>(str)arg3</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSURFACE.append_vulcan_triangulation" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Create new surface from a Maptek Vulcan triangulation file and add to an existing geosurface.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Create</span> <span class="n">new</span> <span class="n">surface</span> <span class="kn">from</span> <span class="nn">a</span> <span class="n">Maptek</span> <span class="n">Vulcan</span> <span class="n">triangulation</span> <span class="n">file</span> <span class="ow">and</span> <span class="n">add</span> <span class="n">to</span> <span class="n">an</span> <span class="n">existing</span> <span class="n">geosurface</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -149,9 +168,9 @@ Create new surface from a Maptek Vulcan triangulation file and add to an existin
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXSURFACE.crc">
 <em class="property">static </em><code class="descname">crc</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(str)arg2</em>, <em>(int_ref)arg3</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXSURFACE.crc" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Compute an XML CRC of a Geosurface file.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Compute</span> <span class="n">an</span> <span class="n">XML</span> <span class="n">CRC</span> <span class="n">of</span> <span class="n">a</span> <span class="n">Geosurface</span> <span class="n">file</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -166,7 +185,7 @@ Compute an XML CRC of a Geosurface file.
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">CRC Value (always 0)</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int">int</a></p>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
 </td>
 </tr>
 </tbody>
@@ -208,9 +227,9 @@ Compute an XML CRC of a Geosurface file.
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXSURFACE.create_from_dxf">
 <em class="property">static </em><code class="descname">create_from_dxf</code><span class="sig-paren">(</span><em>(GXIPJ)arg1</em>, <em>(str)arg2</em>, <em>(str)arg3</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSURFACE.create_from_dxf" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Create Geosurface file from DXF file.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Create</span> <span class="n">Geosurface</span> <span class="n">file</span> <span class="kn">from</span> <span class="nn">DXF</span> <span class="n">file</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -238,9 +257,9 @@ Create Geosurface file from DXF file.
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXSURFACE.create_from_vulcan_triangulation">
 <em class="property">static </em><code class="descname">create_from_vulcan_triangulation</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(GXIPJ)arg2</em>, <em>(str)arg3</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSURFACE.create_from_vulcan_triangulation" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Create Geosurface file from a Maptek Vulcan triangulation file.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Create</span> <span class="n">Geosurface</span> <span class="n">file</span> <span class="kn">from</span> <span class="nn">a</span> <span class="n">Maptek</span> <span class="n">Vulcan</span> <span class="n">triangulation</span> <span class="n">file</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -268,9 +287,9 @@ Create Geosurface file from a Maptek Vulcan triangulation file.
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXSURFACE.get_closed_surface_names">
 <em class="property">static </em><code class="descname">get_closed_surface_names</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(GXLST)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSURFACE.get_closed_surface_names" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Get the names of closed surface items in a Geosurface file (may return an empty list)
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">the</span> <span class="n">names</span> <span class="n">of</span> <span class="n">closed</span> <span class="n">surface</span> <span class="n">items</span> <span class="ow">in</span> <span class="n">a</span> <span class="n">Geosurface</span> <span class="n">file</span> <span class="p">(</span><span class="n">may</span> <span class="k">return</span> <span class="n">an</span> <span class="n">empty</span> <span class="nb">list</span><span class="p">)</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -297,9 +316,9 @@ Get the names of closed surface items in a Geosurface file (may return an empty 
 <dl class="method">
 <dt id="geosoft.gxapi.GXSURFACE.get_extents">
 <code class="descname">get_extents</code><span class="sig-paren">(</span><em>(float_ref)arg1</em>, <em>(float_ref)arg2</em>, <em>(float_ref)arg3</em>, <em>(float_ref)arg4</em>, <em>(float_ref)arg5</em>, <em>(float_ref)arg6</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSURFACE.get_extents" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Get the spatial range of all surface items.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">the</span> <span class="n">spatial</span> <span class="nb">range</span> <span class="n">of</span> <span class="nb">all</span> <span class="n">surface</span> <span class="n">items</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -330,9 +349,9 @@ Get the spatial range of all surface items.
 <dl class="method">
 <dt id="geosoft.gxapi.GXSURFACE.get_ipj">
 <code class="descname">get_ipj</code><span class="sig-paren">(</span><em>(GXIPJ)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSURFACE.get_ipj" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Get the coordinate system of the SURFACE.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">the</span> <span class="n">coordinate</span> <span class="n">system</span> <span class="n">of</span> <span class="n">the</span> <span class="n">SURFACE</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -469,7 +488,7 @@ Get the coordinate system of the SURFACE.
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<em>str</em>) &#8211; Geosurface file name</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color.int" title="geosoft.gxpy.group.Color.int"><em>int</em></a>) &#8211; <a class="reference internal" href="#surface-open"><span class="std std-ref">SURFACE_OPEN constants</span></a></li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#surface-open"><span class="std std-ref">SURFACE_OPEN constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -489,9 +508,9 @@ Get the coordinate system of the SURFACE.
 <dl class="method">
 <dt id="geosoft.gxapi.GXSURFACE.set_ipj">
 <code class="descname">set_ipj</code><span class="sig-paren">(</span><em>(GXIPJ)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSURFACE.set_ipj" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Change the coordinate system of the SURFACE.
-</pre>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Change</span> <span class="n">the</span> <span class="n">coordinate</span> <span class="n">system</span> <span class="n">of</span> <span class="n">the</span> <span class="n">SURFACE</span><span class="o">.</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -565,9 +584,13 @@ Change the coordinate system of the SURFACE.
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li> 
+          <a href="GXSURFACEITEM.html" title="GXSURFACEITEM class"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="GXSTRINGS.html" title="GXSTRINGS class"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="geosoft.gxapi.classes.html" >GX API Class/Library Reference</a> &#187;</li> 
       </ul>
     </div>
 

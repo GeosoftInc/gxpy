@@ -27,6 +27,8 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="geosoft.gxpy.gdb submodule" href="geosoft.gxpy.gdb.html" />
+    <link rel="prev" title="geosoft.gxpy.coordinate_system submodule" href="geosoft.gxpy.coordinate_system.html" />
  
 <script type="text/javascript">
   var _gaq = _gaq || [];
@@ -43,20 +45,30 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li> 
+          <a href="geosoft.gxpy.gdb.html" title="geosoft.gxpy.gdb submodule"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="geosoft.gxpy.coordinate_system.html" title="geosoft.gxpy.coordinate_system submodule"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="geosoft.gxpy.html" accesskey="U">gxpy modules reference</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <div role="note" aria-label="source link">
-    <h3>This Page</h3>
-    <ul class="this-page-menu">
-      <li><a href="_sources/geosoft.gxpy.dataframe.rst.txt"
-            rel="nofollow">Show Source</a></li>
-    </ul>
-   </div>
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Introduction</a></li>
+    <li><a href="geosoft.gxpy.html">gxpy modules reference</a></li>
+</ul>
+<h3>Previous Topic</h3>
+<ul>
+    <li><a href="geosoft.gxpy.coordinate_system.html" title="previous chapter">geosoft.gxpy.coordinate_system submodule</a></li>
+</ul>
+<h3>Next Topic</h3>
+<ul>
+    <li><a href="geosoft.gxpy.gdb.html" title="next chapter">geosoft.gxpy.gdb submodule</a></li>
+</ul>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
@@ -67,6 +79,13 @@
     </form>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/geosoft.gxpy.dataframe.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
         </div>
       </div>
 
@@ -77,15 +96,34 @@
             
   <div class="section" id="module-geosoft.gxpy.dataframe">
 <span id="geosoft-gxpy-dataframe-submodule"></span><h1>geosoft.gxpy.dataframe submodule<a class="headerlink" href="#module-geosoft.gxpy.dataframe" title="Permalink to this headline">¶</a></h1>
-<p>Table (records, fields) handling, inherits from Pandas base class.</p>
+<p>Table (records, fields) handling, inherits from Pandas (<a class="reference external" href="http://pandas.pydata.org/">http://pandas.pydata.org/</a>) base class.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Classes:</th><td class="field-body"><table border="1" class="first last docutils">
+<colgroup>
+<col width="40%" />
+<col width="60%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#geosoft.gxpy.dataframe.Data_frame" title="geosoft.gxpy.dataframe.Data_frame"><code class="xref py py-class docutils literal"><span class="pre">Data_frame</span></code></a></td>
+<td>dataframe that holds a table</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
 <p class="last"><a class="reference internal" href="GXLTB.html#geosoft.gxapi.GXLTB" title="geosoft.gxapi.GXLTB"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXLTB</span></code></a></p>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p>Regression tests provide usage examples:</p>
-<p class="last"><a class="reference external" href="https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_dataframe.py">dataframe tests</a></p>
+<p class="last">Regression tests provide usage examples:     
+<a class="reference external" href="https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_dataframe.py">dataframe tests</a></p>
 </div>
 <dl class="class">
 <dt id="geosoft.gxpy.dataframe.Data_frame">
@@ -131,7 +169,7 @@ created with the found fields.</td>
 </table>
 <p>This returns a Pandas DataFrame instance, which can be accessed and used with standard Pandas
 calls.</p>
-<p>Column names from Geosoft table files are always upper-case, regardless
+<p>Column names from Geosoft table files are always uppercase, regardless
 of case used in the table file.</p>
 <p>Record/index names from Geosoft table files are case-sensitive.</p>
 <p>Example table file &#8220;rockcode.csv&#8221;:</p>
@@ -231,9 +269,13 @@ of case used in the table file.</p>
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li> 
+          <a href="geosoft.gxpy.gdb.html" title="geosoft.gxpy.gdb submodule"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="geosoft.gxpy.coordinate_system.html" title="geosoft.gxpy.coordinate_system submodule"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="geosoft.gxpy.html" >gxpy modules reference</a> &#187;</li> 
       </ul>
     </div>
 
