@@ -197,7 +197,7 @@ def crc_map(mapfile, pix_width=1000):
     return crc
 
 
-class Map:
+class Map(object):
     """
     Geosoft map files.
 
@@ -1079,7 +1079,7 @@ class Map:
             self.current_data_view = current_view
 
 
-class _Mapplot:
+class _Mapplot(object):
     """Internal class to marshal MAPPLOT commands that support basic map annotations."""
 
     def __enter__(self):

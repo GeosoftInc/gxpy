@@ -145,7 +145,7 @@ FILE_READ = 0
 FILE_READWRITE = 1     # file exists, but can change properties
 FILE_NEW = 2
 
-class Grid():
+class Grid(object):
     """
     Grid and image class.
 

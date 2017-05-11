@@ -210,7 +210,7 @@ def edge_reference(area, reference):
 
     return centroid + gxgm.Point((xoff, yoff))
 
-class Group:
+class Group(object):
     """
     Geosoft group class.
 
@@ -1225,7 +1225,7 @@ def legend_color_bar(view,
         g.locate(location, reference)
             
                 
-class Color:
+class Color(object):
     """
     Colours, which are stored as a 24-bit color integer.
 
@@ -1415,7 +1415,7 @@ def thickness_from_font_weight(weight, height):
     return height * _weight_factor[weight - 1]
 
 
-class Text_def:
+class Text_def(object):
     """
     Text definition:
 
@@ -1567,7 +1567,7 @@ class Text_def:
         return '{},,,{},"{}"'.format(self.height, self.slant, font)
 
 
-class Pen:
+class Pen(object):
     """
     Geosoft Pen class.  
     
@@ -1912,7 +1912,7 @@ class Aggregate_group(Group):
         agg_group.agg = gxagg.Aggregate_image.open(view.gxview.get_aggregate(group_number))
         return agg_group
 
-class Color_map:
+class Color_map(object):
     """
     Color map for establishing data color mapping for things like aggregates and color symbols.
     

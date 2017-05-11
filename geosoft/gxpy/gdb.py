@@ -98,7 +98,7 @@ def _va_width(data):
     return width
 
 
-class Geosoft_gdb:
+class Geosoft_gdb(object):
     """
     Class to work with Geosoft databases. This class wraps many of the functions found in 
     :class:`geosoft.gxapi.GXDB`.

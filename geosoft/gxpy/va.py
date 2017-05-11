@@ -40,7 +40,7 @@ class VAException(Exception):
     pass
 
 
-class GXva():
+class GXva(object):
     """
     VA class wrapper.
 
