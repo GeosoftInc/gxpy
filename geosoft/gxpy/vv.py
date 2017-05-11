@@ -1,7 +1,7 @@
 """
 Geosoft vector. 
 
-:classes:
+:Classes:
 
     =============== =========================
     :class:`GXvv`   data vector
@@ -50,11 +50,11 @@ class GXvv():
                         the type is taken from first element in array, of if no array the default is 'float'.
     :param fid:         (start, increment) fiducial
     
-    :constructors:
+    :Constructors:
      
         ``GXvv.vv_np`` create from a numpy array
         
-    :properties:
+    :Properties:
     
         ``vv``          gxapi.GXvv instance
         ``fid``         (start, increment) fiducial

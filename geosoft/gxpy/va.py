@@ -1,7 +1,7 @@
 """
 Geosoft vector arrays (vector of array elements)
 
-:classes:
+:Classes:
 
     =============== =========================
     :class:`GXva`   vector of array elements

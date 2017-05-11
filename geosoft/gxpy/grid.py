@@ -1,7 +1,7 @@
 """
 Geosoft grids and image handling, including all `supported file formats <https://geosoftgxdev.atlassian.net/wiki/display/GXDEV92/Grid+File+Name+Decorations>`_
 
-:classes:
+:Classes:
 
     ============= ====================================================
     :class:`Grid` grid, which can be in memory or created from a file 
@@ -149,7 +149,7 @@ class Grid():
     """
     Grid and image class.
 
-    :constructors:
+    :Constructors:
 
         ======================= ============================================
         :meth:`open`            open an existing grid/image

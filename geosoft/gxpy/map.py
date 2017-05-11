@@ -1,7 +1,7 @@
 """
 Geosoft maps contain one or more 2D and 3D views.
 
-:classes:
+:Classes:
 
     ============ ============
     :class:`Map` map class
@@ -225,7 +225,7 @@ class Map:
     map viewing applications allow a user to open a 3D view in a 3D viewer, which provides for 3D viewing,
     3D navigation and 3D drawing capabilities.
 
-    Constructors:
+    :Constructors:
 
         ============ ========================================
         :meth:`open` open an existing map

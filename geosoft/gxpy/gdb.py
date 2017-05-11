@@ -1,7 +1,7 @@
 """
 Geosoft databases for line-oriented spatial data.
 
-:classes:
+:Classes:
 
     ==================== =========================
     :class:`Geosoft_gdb` Geosoft line database
@@ -103,7 +103,7 @@ class Geosoft_gdb:
     Class to work with Geosoft databases. This class wraps many of the functions found in 
     :class:`geosoft.gxapi.GXDB`.
 
-    :constructors:
+    :Constructors:
      
         =============== =========================================================================
         :meth:`open`    open an existing file, or if not specified open/lock the current database

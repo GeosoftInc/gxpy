@@ -1,7 +1,7 @@
 """
 Geosoft aggregate images
 
-:classes:
+:Classes:
 
     ======================== ====================================================
     :class:`Aggregate_image` image constructed from one or more grid/image layers
@@ -52,23 +52,16 @@ class Aggregate_image():
     The AGG class supports the creation of aggregate images from one or more grid data sets. Aggergates
     can be placed into a 2D or 3D view for display.
 
-    :param grid_file:   if specified, the ``add_layer()`` method is called with remaining parameters
-                        to create a single-image aggregate.  See ``add_layer()``.
+    :param grid_file:   if specified, the :meth:`add_layer()` method is called with remaining parameters
+                        to create a single-image aggregate.
 
-    Constructors:
+    :Constructors:
 
-        ============ ================================
-        :meth:`open` open an existing aggregate
-        :meth:`new`  create a new aggregate
-        ============ ================================
-
-    Properties:
-    
-        :name:          aggregate group name
-        :gxagg:         gxapi.GXAGG instance
-        :layer_count:   number of layers
-        :brightness:    image brightness, -1 (black) to +1 (white). 0 is full color.
-
+        ============= ===========================
+        :meth:`open`: open an existing aggregate
+        :meth:`new`:  create a new aggregate
+        ============= ===========================
+        
     .. versionadded:: 9.2
     """
 
@@ -109,9 +102,9 @@ class Aggregate_image():
     @classmethod
     def open(cls, gxagg):
         """
-        Create an :class:`Aggregate_image` from a Geosoft gxapi.GXAGG instance.
+        Create an :class:`Aggregate_image` from a :class:`geosoft.gxapi.GXAGG` instance.
         
-        :param gxagg:
+        :param gxagg: :class:`geosoft.gxapi.GXAGG` instance
         
         .. versionadded:: 9.2
         """

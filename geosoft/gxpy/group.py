@@ -1,7 +1,7 @@
 """
-This module handles rendering into groups in 3D views, or to 2D views on a map.
+Render groups in 3D views, or to 2D views on a map.
 
-:classes:
+:Classes:
 
     ============================ =============================================================================
     :class:`Group`               base class for named rendering groups in 2D and 3D views.
@@ -221,7 +221,7 @@ class Group:
         :plane:         plane number, or plane name if drawing to a 3D view.  Default is plane number 0.
         :view_lock:     True to lock the view for a single-stream drawwing group.  Default is False.
 
-    :properties:
+    :Properties:
 
         :view:              the View instance that contains this group
         :name:              the name of the group
@@ -1440,7 +1440,7 @@ class Text_def:
                         for creating text scaled to the units of a view.  The default text properties
                         are scaled to cm.
 
-    :properties:
+    :Properties:
 
         :height:        font height in 
         :font:          font name
@@ -1864,14 +1864,14 @@ class Aggregate_group(Group):
     :param name:        group name, default uses the aggregate name
     :param agg:         Aggregate_image instance
     
-    Constructors:
+    :Constructors:
 
         ======== ================================
         `open()` open an existing aggregate group
         `new()`  create a new aggregate group
         ======== ================================
 
-    Properties:
+    :Properties:
     
         :name:  aggregate group name
         :agg:   gxpy.Aggregate_image instance

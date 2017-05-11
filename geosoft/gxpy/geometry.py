@@ -1,7 +1,7 @@
 """
 Spatial geometric elements.
 
-:classes:
+:Classes:
 
     =============== ==============================================================
     :class:`Point`  (x, y, z) point
@@ -91,7 +91,7 @@ class Point(Geometry):
                     (x, y [,z]) implied z is 0.0 if not provided
                     k makes a point (k, k, k)
 
-    :properties:
+    :Properties:
     
         :x, y, z:   point ordinate values
         :xy:        (x, y) tuple
@@ -216,7 +216,7 @@ class Point2(Geometry):
                         (x0, y0, x1, y1) implied z is 0
                         (x0, y0, z0, x1, y1, z1)
                         
-    :properties:
+    :Properties:
     
         :p0:            first point as a Point instance
         :p1:            second point at a Point instance
@@ -352,7 +352,7 @@ class PPoint(Geometry, Sequence):
                 vv data is resampled to match the first vv.
     :param z:   constant z value for (x, y) data, ignored for (x, y, z) data
 
-    :properties:
+    :Properties:
      
         :pp:        np_array shape (n,3)
         :x, y, z:   np_arrays of each ordinate set

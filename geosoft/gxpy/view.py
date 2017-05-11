@@ -1,7 +1,7 @@
 """
 Views, both 2D and 3D.  
 
-:classes:
+:Classes:
 
     ================ ==========================================================
     :class:`View`    single view on a 2D map

@@ -1,7 +1,7 @@
 """
 Coodinate systems
 
-:classes:
+:Classes:
 
     ============================= ======================================================
     :class:`Coordinate_system`    define a coordinate system

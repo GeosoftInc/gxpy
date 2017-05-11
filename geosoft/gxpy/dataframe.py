@@ -1,7 +1,7 @@
 """
 Table (records, fields) handling, inherits from Pandas (http://pandas.pydata.org/) base class.
 
-:classes:
+:Classes:
 
     =================== ============================
     :class:`Data_frame` dataframe that holds a table

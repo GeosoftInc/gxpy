@@ -1,7 +1,7 @@
 """
 Geosoft desktop project interface, which provides access to an active and open Geosoft desktop project.
 
-:classes:
+:Classes:
 
     ======================== =====================
     :class:`Geosoft_project` the geosoft project

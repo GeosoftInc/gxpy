@@ -1,7 +1,7 @@
 """
 GX Context and related methods required for Geosoft Python.  
 
-:classes:
+:Classes:
 
     ============= =======================
     :class:`GXpy` the Geosoft GX context
