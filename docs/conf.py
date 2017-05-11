@@ -34,7 +34,8 @@ import geosoft
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-    'sphinx.ext.autodoc'
+    'sphinx.ext.autodoc',
+    'sphinx.ext.autosummary'
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -163,13 +164,14 @@ html_theme_path = [ 'themes' ]
 
 # Custom sidebar templates, maps document names to template names.
 #html_sidebars = {}
+html_sidebars = { '**': ['localtoc.html', 'relations.html', 'searchbox.html', 'sourcelink.html'], }
 
 # Additional templates that should be rendered to pages, maps page names to
 # template names.
 #html_additional_pages = {}
 
 # If false, no module index is generated.
-#html_domain_indices = True
+html_domain_indices = False
 
 # If false, no index is generated.
 #html_use_index = True
@@ -291,3 +293,4 @@ texinfo_documents = [
 
 # If true, do not generate a @detailmenu in the "Top" node's menu.
 #texinfo_no_detailmenu = False
+

@@ -1,5 +1,3 @@
-:orphan:
-
 geosoft.gxpy.{{ module[0] }} submodule
 =============================================
 

@@ -12,9 +12,9 @@ The GX API has two parts:
 
     1.  The **Geosoft GX API** provides the full low-level library of functions available to all languages,
         including Python.  The Geosoft GX API is exposed to python developers through the
-        :doc:`geosoft.gxapi </geosoft.gxapi.classes>` module.
+        :ref:`geosoft.gxapi modules <geosoft.gxapi.classes>`.
 
-    2.  The **Geosoft gxpy API** is a set of :doc:`Python modules... </geosoft.gxpy>` that provides a
+    2.  The **Geosoft gxpy API** is a set of :ref:`Python modules... <gxpy>` that provides a
         Pythonic abstraction of key parts of the underlying GX API.  This hides much of the complexity of
         the low-level GX API, while still providing low-level access where necessary. The coding of the
         gxpy Python modules also provides an invaluable reference for how to work with the low-level
@@ -23,11 +23,12 @@ The GX API has two parts:
 Reference
 =========
 
-    ========================== =================================================================
-    **GX API**                 :doc:`GX API Class/Library Reference... </geosoft.gxapi.classes>`
-    **gxpy Python modules**    :doc:`gxpy reference... </geosoft.gxpy>`
-    **Example Python scripts** :doc:`Example scripts... </helloworld>`
-    ========================== =================================================================
+.. toctree::
+   :maxdepth: 1
+
+   geosoft.gxapi.classes
+   geosoft.gxpy
+   Example scripts... </helloworld>
 
 Indices and tables
 ==================
