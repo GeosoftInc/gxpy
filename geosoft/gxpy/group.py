@@ -476,7 +476,7 @@ class Draw(Group):
         if type(pen) is str:
             pen = Pen.from_mapplot_string(pen)
         if self._pen.line_color != pen.line_color:
-            self.view.gxview.line_color(pen._line_color.int)
+            self.view.gxview.line_color(pen._line_color.int_value)
         if self._pen.line_thick != pen.line_thick:
             self.view.gxview.line_thick(pen.line_thick)
         if self._pen.line_smooth != pen.line_smooth:
@@ -484,7 +484,7 @@ class Draw(Group):
         if (self._pen.line_style != pen.line_style) or (self._pen.line_pitch != pen.line_pitch):
             self.view.gxview.line_style(pen.line_style, pen.line_pitch)
         if self._pen.fill_color != pen.fill_color:
-            self.view.gxview.fill_color(pen._fill_color.int)
+            self.view.gxview.fill_color(pen._fill_color.int_value)
         if self._pen.pat_number != pen.pat_number:
             self.view.gxview.pat_number(pen.pat_number)
         if self._pen.pat_angle != pen.pat_angle:
@@ -508,11 +508,11 @@ class Draw(Group):
                   pat_size=0.25 * scm,
                   pat_thick=0.02 * scm)
 
-        self.view.gxview.line_color(pen.line_color.int)
+        self.view.gxview.line_color(pen.line_color.int_value)
         self.view.gxview.line_thick(pen.line_thick)
         self.view.gxview.line_smooth(pen.line_smooth)
         self.view.gxview.line_style(pen.line_style, pen.line_pitch)
-        self.view.gxview.fill_color(pen.fill_color.int)
+        self.view.gxview.fill_color(pen.fill_color.int_value)
         self.view.gxview.pat_number(pen.pat_number)
         self.view.gxview.pat_angle(pen.pat_angle)
         self.view.gxview.pat_density(pen.pat_density)
@@ -551,7 +551,7 @@ class Draw(Group):
                                   text_def.weight,
                                   text_def.italics)
             self.view.gxview.text_size(text_def.height)
-            self.view.gxview.text_color(text_def.color.int)
+            self.view.gxview.text_color(text_def.color.int_value)
 
 
     def color(self, cstr):
@@ -784,8 +784,8 @@ class Draw_3d(Draw):
         """
 
         # solids use the fill color as the object color
-        fci = self.pen._fill_color.int
-        self.view.gxview.fill_color(self.pen._line_color.int)
+        fci = self.pen._fill_color.int_value
+        self.view.gxview.fill_color(self.pen._line_color.int_value)
 
         try:
             p = _make_Point(p)
@@ -807,8 +807,8 @@ class Draw_3d(Draw):
         """
 
         # solids use the fill color as the object color
-        fci = self.pen._fill_color.int
-        self.view.gxview.fill_color(self.pen._line_color.int)
+        fci = self.pen._fill_color.int_value
+        self.view.gxview.fill_color(self.pen._line_color.int_value)
         pp = _make_Point2(p2)
 
         try:
@@ -860,8 +860,8 @@ class Draw_3d(Draw):
         """
 
         # solids use the fill color as the object color
-        fci = self.pen._fill_color.int
-        self.view.gxview.fill_color(self.pen._line_color.int)
+        fci = self.pen._fill_color.int_value
+        self.view.gxview.fill_color(self.pen._line_color.int_value)
 
         if close != CYLINDER_CLOSE_ALL:
             self.render_backfaces = True
@@ -959,14 +959,14 @@ class Draw_3d(Draw):
         :param render_info_func:    a callback that given `(item, passback)` returns the rendering `(symbol_type,
                                     geometry, color_integer, attibute)`:
                                     
-                                    ================== ======== ========= ===========
-                                    Symbol             Geometry Color     Attributes
-                                    ================== ======== ========= ===========
-                                    SYMBOL_3D_SPHERE   Point    Color.int radius
-                                    SYMBOL_3D_CUBE     Point2   Color.int None
-                                    SYMBOL_3D_CYLINDER Point2   Color.int radius
-                                    SYMBOL_3D_CONE     Point2   Color.int base_radius
-                                    ================== ======== ========= ===========
+                                    ================== ======== =============== ===========
+                                    Symbol             Geometry Color           Attributes
+                                    ================== ======== =============== ===========
+                                    SYMBOL_3D_SPHERE   Point    Color.int_value radius
+                                    SYMBOL_3D_CUBE     Point2   Color.int_value None
+                                    SYMBOL_3D_CYLINDER Point2   Color.int_value radius
+                                    SYMBOL_3D_CONE     Point2   Color.int_value base_radius
+                                    ================== ======== =============== ===========
 
         :param passback:            something passed back to your render_info_func function, default None.
         
@@ -979,7 +979,7 @@ class Draw_3d(Draw):
             
             def render_spheres(xyz, cmap_radius):
                 color, radius = cmap_radius
-                return gxg.SYMBOL_3D_SPHERE, xyz, color.int, radius
+                return gxg.SYMBOL_3D_SPHERE, xyz, color.int_value, radius
             
             data = gxgm.PPoint(((5, 5, 5), (7, 5, 5), (7, 7, 7)))
             with gxv.View_3d.new('example_polydata') as v:
@@ -1270,10 +1270,10 @@ class Color:
     def __init__(self, color, model=CMODEL_RGB):
 
         if isinstance(color, Color):
-            self._color = color.int
+            self._color = color.int_value
 
         elif isinstance(color, int):
-            self.int = color
+            self.int_value = color
 
         elif isinstance(color, str):
             self._color = gxapi.GXMVIEW.color(color)
@@ -1293,18 +1293,18 @@ class Color:
                 self.rgb = color
 
     def __eq__(self, other):
-        return self.int == other.int
+        return self.int_value == other.int_value
 
     def __ne__(self, other):
         return not self.__eq__(other)
 
     @property
-    def int(self):
+    def int_value(self):
         """ color as a 24-bit color integer, can be set"""
         return self._color
 
-    @int.setter
-    def int(self, color):
+    @int_value.setter
+    def int_value(self, color):
         if color < 0:
             raise GroupException(_t('Invalid color integer {}, must be >= 0').format(color))
         self._color = int(color)
@@ -1312,7 +1312,7 @@ class Color:
     @property
     def rgb(self):
         """color as an (red, green, brue) tuple, can be set"""
-        if self.int == 0:
+        if self.int_value == 0:
             return None
         r = gxapi.int_ref()
         g = gxapi.int_ref()
@@ -1330,7 +1330,7 @@ class Color:
     @property
     def cmy(self):
         """color as an (cyan, magenta, yellow) tuple, can be set"""
-        if self.int == 0:
+        if self.int_value == 0:
             return None
         red, green, blue = self.rgb
         return 255 - red, 255 - green, 255 - blue
@@ -1770,14 +1770,14 @@ class Pen:
     def mapplot_string(self):
         """line/fill colour and thickness string suing mapplor format, eg. 'kR125B64t1000'"""
         s = ''
-        if self._line_color.int != C_TRANSPARENT:
-            if self._line_color.int == C_BLACK:
+        if self._line_color.int_value != C_TRANSPARENT:
+            if self._line_color.int_value == C_BLACK:
                 s += 'k'
             else:
                 c = self._line_color.rgb
                 s += 'r{}g{}b{}'.format(c[0], c[1], c[2])
-        if self._fill_color.int != C_TRANSPARENT:
-            if self._line_color.int == C_BLACK:
+        if self._fill_color.int_value != C_TRANSPARENT:
+            if self._line_color.int_value == C_BLACK:
                 s += 'K'
             else:
                 c = self._fill_color.rgb
@@ -1837,7 +1837,7 @@ class Color_symbols_group(Group):
                                   weight=FONT_WEIGHT_ULTRALIGHT,
                                   color=C_BLACK)
         cs.csymb.set_font(symbol_def.font, symbol_def.gfn, symbol_def.weight, symbol_def.italics)
-        cs.csymb.set_static_col(symbol_def.color.int, 0)
+        cs.csymb.set_static_col(symbol_def.color.int_value, 0)
         cs.csymb.set_scale(symbol_def.height)
         cs.csymb.set_number(symbol)
 
@@ -1921,7 +1921,7 @@ class Color_map:
                     which is the case for a `.tbl` file, the Color_map will be uninitialized and you
                     can use one of the `set` methods to establish zone values.
                     
-                    You can also provide an `int`, which will create an uninitialized map of the the
+                    You can also provide an `int_value`, which will create an uninitialized map of the the
                     specified length, or a :class:`geosoft.gxapi.GXITR` instance.
                     
                     If not specified the Geosoft default color table is used.
@@ -1991,7 +1991,7 @@ class Color_map:
         if item < 0 or item >= self.length:
             raise IndexError
         if not isinstance(setting[1], int):
-            setting = (setting[0], setting[1].int)
+            setting = (setting[0], setting[1].int_value)
         self.gxitr.set_zone_color(item, setting[1])
         if item < self.length - 1:
             self.gxitr.set_zone_value(item, setting[0])

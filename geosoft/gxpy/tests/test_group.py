@@ -428,8 +428,8 @@ class Test(GXPYTest):
         self.start()
 
         p = gxg.Pen()
-        self.assertEqual(p.line_color.int, gxg.C_BLACK)
-        self.assertEqual(p.fill_color.int, gxg.C_TRANSPARENT)
+        self.assertEqual(p.line_color.int_value, gxg.C_BLACK)
+        self.assertEqual(p.fill_color.int_value, gxg.C_TRANSPARENT)
         self.assertEqual(p.line_style, gxg.LINE_STYLE_SOLID)
 
         p.line_color = (255, 127, 64)
@@ -446,11 +446,11 @@ class Test(GXPYTest):
         self.assertEqual(p.fill_color.rgb, (191, 191, 191))
 
         p = gxg.Pen(line_color='K')
-        self.assertEqual(p.line_color.int, gxg.C_BLACK)
+        self.assertEqual(p.line_color.int_value, gxg.C_BLACK)
         self.assertTrue(p.line_color == gxg.Color(gxg.C_BLACK))
 
         p = gxg.Pen(line_color=gxg.C_WHITE)
-        self.assertEqual(p.line_color.int, gxg.C_WHITE)
+        self.assertEqual(p.line_color.int_value, gxg.C_WHITE)
         self.assertTrue(p.line_color == gxg.Color(gxg.C_WHITE))
 
         p = gxg.Pen.from_mapplot_string('r20b100k16R64K16')
@@ -895,7 +895,7 @@ class Test(GXPYTest):
                 return None
             cmap, radius = cmap_radius
             cint = cmap.color_of_value(value)
-            return gxg.SYMBOL_3D_SPHERE, xyz, cint.int, radius
+            return gxg.SYMBOL_3D_SPHERE, xyz, cint.int_value, radius
 
         def render_cubes(point, size_color):
             size, cint = size_color
@@ -944,18 +944,18 @@ class Test(GXPYTest):
                 g.polydata_3d(data, render_spheres, (cmap, 0.25))
                 
                 pp = gxgm.PPoint(((5, 5, 5), (7, 5, 5), (7, 7, 7)))
-                g.polydata_3d(pp, render_cubes, (1, gxg.Color('y').int))
+                g.polydata_3d(pp, render_cubes, (1, gxg.Color('y').int_value))
 
                 pp += (0, 0, 2)
-                g.polydata_3d(pp, render_cylinders, (1, gxg.Color('m').int))
+                g.polydata_3d(pp, render_cylinders, (1, gxg.Color('m').int_value))
 
                 pp += (0, 0, 2)
                 n = 0
-                g.polydata_3d(pp, render_cones, (1, gxg.Color('r255g128b128').int))
+                g.polydata_3d(pp, render_cones, (1, gxg.Color('r255g128b128').int_value))
 
         self.crc_map(v3d_file)
 
-    @unittest.skip('not required for regretion tests')
+    @unittest.skip('not required for regression tests')
     def test_polydata_3d_grid(self):
         self.start()
 
@@ -964,10 +964,10 @@ class Test(GXPYTest):
             cmap, radius = cmap_radius
             if np.isnan(value):
                 xyz = (item[0], item[1], item[2])
-                return xyz, gxg.SYMBOL_3D_SPHERE, gxg.Color(gxg.C_GREY10).int, (radius*0.5,)
+                return xyz, gxg.SYMBOL_3D_SPHERE, gxg.Color(gxg.C_GREY10).int_value, (radius * 0.5,)
             xyz = (item[0], item[1], item[2])
             cint = cmap.color_of_value(value)
-            return xyz, gxg.SYMBOL_3D_SPHERE, cint.int, (radius,)
+            return xyz, gxg.SYMBOL_3D_SPHERE, cint.int_value, (radius,)
 
         # test grid file
         folder, files = gsys.unzip(os.path.join(os.path.dirname(__file__), 'testgrids.zip'),
@@ -1001,14 +1001,14 @@ class Test(GXPYTest):
 
         self.crc_map(v3d_file)
 
-    @unittest.skip('not required for regretion tests')
+    @unittest.skip('not required for regression tests')
     def test_polydata_3d_gdb(self):
         self.start()
 
         def render_spheres(item, cmap_radius):
             cmap, radius = cmap_radius
             if not np.isnan(item[2]):
-                cint = cmap.color_of_value(item[2]).int
+                cint = cmap.color_of_value(item[2]).int_value
                 return item, gxg.SYMBOL_3D_SPHERE, cint, (radius,)
 
         folder, files = gsys.unzip(os.path.join(os.path.dirname(__file__), 'dem.zip'),
