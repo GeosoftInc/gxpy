@@ -143,8 +143,9 @@ def amp_squared(classes):
     """
     Returns conditioned amplitudes squared, for use as amp= array in bmu_cosine.
     Note that amplitudes == 0.0 will be replaced with 1.0 to prevent division by 0.
+    
     :param classes: list of class centroid values
-    :return: array of vector amplitudes
+    :returns: array of vector amplitudes
     """
     amp = np.sum(np.square(classes), axis=1)
     amp[amp == 0.0] = 1.0
@@ -192,7 +193,7 @@ _simfunc = {'Euclidean distance': bmu_euclidean,
 
 def similarity_functions():
     """
-    :return: list of available built-in similarity function
+    :returns: list of available built-in similarity function
     """
 
     def sortkey(p):
@@ -248,7 +249,7 @@ def euclidean_distance(class_values, data):
 
     :param class_values: numpy array of class vectors, shaped (-1,vec.shape[0])
     :param data:        data array shaped (len(assigned),classes.shape[1])
-    :return:            numpy 1D array of distances
+    :returns:           numpy 1D array of distances
     """
     return np.sqrt(np.square(data - class_values).sum(1))
 
@@ -258,7 +259,7 @@ def separations(classes):
     Return the average Euclidean separation between neighboring classes in a 2D class(neuron)
     network of vectors.  Returns a 2D distance with dimension will be one less than passed classes.
 
-    :return:    2D array of average separation between class neurons
+    :returns:   2D array of average separation between class neurons
     """
     diff = np.zeros((classes.shape[0] - 1, classes.shape[1] - 1), dtype=float)
     for i in range(classes.shape[0] - 1):
@@ -469,7 +470,7 @@ class SOM:
 
     def density(self):
         """
-        :return: density matrix for the current SOM based on training data
+        :returns: density matrix for the current SOM based on training data
         """
 
         # classify all the training data

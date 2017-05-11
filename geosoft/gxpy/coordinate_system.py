@@ -137,7 +137,7 @@ def parameter_exists(what, key):
     
     :param what:    see :func:`parameters`
     :param key:     parameter key
-    :return:        True if table/key exists
+    :returns:       True if table/key exists
     
     .. versionadded:: 9.2
     """
@@ -192,7 +192,7 @@ def hcs_orient_vcs_from_name(name):
     """
     Split a full coordinate system name into its components. A name has the form "hcs <orient> [vcs]"
     :param name:
-    :return: hcs, orient, vcs
+    :returns: hcs, orient, vcs
 
     .. versionadded:: 9.2
     """
@@ -211,7 +211,7 @@ def name_from_hcs_orient_vcs(hcs, orient=None, vcs=None):
     :param hcs:     horizontal coordinate system string
     :param orient:  orientation string
     :param vcs:     vertical coordinate system string
-    :return: "hcs <orient> [vcs]"
+    :returns: "hcs <orient> [vcs]"
 
     .. versionadded:: 9.2
     """
@@ -348,7 +348,7 @@ class Wkt:
         Return the name and list of items for a key
         
         :param k:   the key to look for in the wkt
-        :return:    name ('' if not found), list of parameters, ([] if no items)
+        :returns:   name ('' if not found), list of parameters, ([] if no items)
         
         .. versionadded:: 9.2
         """
@@ -801,7 +801,7 @@ class Coordinate_system:
 
         If 'what' is not specified, gxipj.NAME assumed, which returns the coordinate system display name.
 
-        :return: The name requested
+        :returns: The name requested
 
         .. versionadded:: 9.2
         """
@@ -836,7 +836,7 @@ class Coordinate_system:
         :param xyz:             (x, y, z) or iterable
         :param column_ordered:  if xyz is iterable, and this is True, the data is assumed to be
                                 column ordered and the results are returned column ordered.
-        :return: (x, y, z) in un-oriented space
+        :returns:               (x, y, z) in un-oriented space
 
         .. versionadded:: 9.2
         """
@@ -877,7 +877,7 @@ class Coordinate_system:
         :param xyz:             (x, y, z) or iterable
         :param column_ordered:  if xyz is iterable, and this is True, the data is assumed to be
                                 column ordered and the results are returned column ordered.
-        :return: (x, y, z) in un-oriented space
+        :returns:               (x, y, z) in un-oriented space
 
         .. versionadded:: 9.2
         """
@@ -890,7 +890,7 @@ class Coordinate_system:
         :param xyz:             (x, y, z) or irerable
         :param column_ordered:  if xyz is iterable, and this is True, the data is assumed to be
                                 column ordered and the results are returned column ordered.
-        :return:                (x, y, z) in oriented space
+        :returns:               (x, y, z) in oriented space
 
         .. versionadded:: 9.2
         """

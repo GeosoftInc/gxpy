@@ -154,7 +154,7 @@ def parallel_map(f, l, threads=None):
     :param l:       iterable list of arguments to pass to each thread.  Use tuples for multiple arguments.
     :param threads: number of threads to use, default is number of cores on computer
 
-    :return:        list of results from each call to f(), in order of iterable l.
+    :returns:       list of results from each call to f(), in order of iterable l.
 
     :example:
 
@@ -165,7 +165,7 @@ def parallel_map(f, l, threads=None):
         def func(ab):
             '''
             :param ab:  tuple (a,b)
-            :return:    a+b
+            :returns:   a+b
             '''
             return ab[0] + ab[1]
 
@@ -243,7 +243,7 @@ def unzip(zip_file_name, folder=None, report=None, checkready=25):
     :param folder:          folder to write results, create it it does not exist
     :param report:          ignored
     :param checkready:      time in 1/10 second to check completion of each file, default 25
-    :return:                (folder that contains unzipped files, list of files)
+    :returns:               (folder that contains unzipped files, list of files)
 
     .. versionadded:: 9.1
 

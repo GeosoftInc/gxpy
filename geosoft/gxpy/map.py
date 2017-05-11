@@ -96,7 +96,7 @@ def map_file_name(file_name, file_type='map'):
 
     :param file_name:   file name, with ot without path and/or extension
     :param file_type:   Geosoft file type, 'map' or 'geosoft_3dv' expected.  Default is 'map'    
-    :return:            file name path with extension .map
+    :returns:           file name path with extension .map
 
     .. versionadded:: 9.2
     """
@@ -181,7 +181,7 @@ def crc_map(mapfile, pix_width=1000):
     Return the CRC of a map based on the output bitmap image.
     :param mapfile:     name of the map file
     :param pix_width:   image pixel width - use a higher resolution to test more detail
-    :return:            CRC as an int
+    :returns:           CRC as an int
 
     .. versionadded:: 9.2
     """
@@ -318,9 +318,9 @@ class Map:
             :data_area:         (min_x, min_y, max_x, max_y) data area for a 2D data view on the map
             :scale:             required scale, default will fit data to the map media
             :coordinate_system: coordinate system, default is an unknown coordinate system.  You may pass
-                                a ``coordinate_system.Coordinate_system`` instance, a string descriptor, such as
-                                `WGS 84 / UTM zone 15N`, or another valid constructor supported by
-                                ``coordinate_system.Coordinate_system``.
+                                a :class:`geosoft.gxpy.coordinate_system.Coordinate_system` instance, a string 
+                                descriptor, such as '`WGS 84 / UTM zone 15N`', or another valid constructor supported
+                                by :class:`geosoft.gxpy.coordinate_system.Coordinate_system`.
             :media:             media size as a tuple(x_cm, y_cm), or as a standard media name string.
                                 If the media name contains 'portrait', the media is media aspect will be portrait.
                                 Named media sizes are read from media.csv, which includes A4, A3, A2, A1, A0, 
@@ -567,7 +567,7 @@ class Map:
         :param name:    view name, `'*data'` will return the name associated with the `'data'` class, while
                         `'my_view'` will return `'my_view'`.
 
-        :return:        the name, or if a class name, the view name associated with that class.
+        :returns:       the name, or if a class name, the view name associated with that class.
 
         .. versionadded: 9.2
         """
@@ -579,7 +579,7 @@ class Map:
         """
         Return dictionary of view names.
         :param view_type: `gxmap.LIST_ALL`, `gxapi.LIST_2D` or `gxapi.LIST_3D`
-        :return: list of views
+        :returns: list of views
         """
         glst = gxapi.GXLST.create(VIEW_NAME_SIZE)
         self.gxmap.view_list_ex(glst, view_type)
@@ -687,7 +687,7 @@ class Map:
 
         Other class names may be defined, though they are not used by Geosoft.
 
-        :return: view name associated with the class, '' if not defined.
+        :returns: view name associated with the class, '' if not defined.
 
         .. versionadded:: 9.2
         """
@@ -716,7 +716,7 @@ class Map:
         """
         Create a linked 3D view inside a 2D map to a `gxpy.view.View_3d` in a 3DV
 
-        :param view:        A `gxpy.view.View_3d` instance
+        :param view:        :class:`gxpy.view.View_3d` instance
         :param name:        name of the linked view to create
         :param area_on_map: min_x, min_y, max_x, max_y) placement of view on map in mm
 
@@ -749,7 +749,7 @@ class Map:
         :param view_name:    the name of the view, default is the base view which returns the
                             extent in map cm.
 
-        :return:    (x, y) in view units
+        :returns:   (x, y) in view units
 
         .. versionadded:: 9.2
         """
@@ -826,8 +826,8 @@ class Map:
         :param length:      arrow length in cm
         :param inclination: magnetic inclination, not shown if not specified
         :param declination: magnetic declination, not shown if not specified
-        :param text_def:    ``gxpy.view.Text_def`` instance, or ``None`` for the default.
-        :param pen:         ``gxpy.view.Pen`` instance, or ``None`` for the default
+        :param text_def:    :class:`gxpy.group.Text_def` instance, or `None` for the default.
+        :param pen:         :class:`gxpy.group.Pen` instance, or `None` for the default
 
         .. versionadded:: 9.2
         """
@@ -877,8 +877,8 @@ class Map:
         :param sections:    number of major sections in the bar, default is determined automatically.
         :param post_scale:  True to post the actual scale as a string, e.g. '1:50,000'.  Note that a posted
                             scale is only relevant for printed maps.  The default does not post the scale.
-        :param text_def:    ``gxpy.view.Text_def`` instance.
-        :param pen:         ``gxpy.view.Pen`` instance.
+        :param text_def:    :class:`gxpy.view.Text_def` instance.
+        :param pen:         :class:`gxpy.view.Pen` instance.
 
 
         .. versionadded:: 9.2

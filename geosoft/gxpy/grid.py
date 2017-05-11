@@ -358,7 +358,7 @@ class Grid():
         
         :param x: X location on the grid plane 
         :param y: Y location on the grid plane
-        :return: grid value, or None if outside of grid area
+        :returns: grid value, or None if outside of grid area
         
         """
         return gxu.dummy_none(self.gximg.get_z(x, y))
@@ -368,7 +368,7 @@ class Grid():
         """
         Create a new Grid instance as a copy of an existing grid.
 
-        :param grd:         grid instance to save as a new grid
+        :param grd:         :class:`Grid` instance to save as a new grid
         :param file_name:   name of the new grid (file with optional decorations), default is in memory
         :param dtype:       numpy data type, None to use type of the parent grid
         :param overwrite:   True to overwrite if the file exists, False to no overwrite.
@@ -402,7 +402,7 @@ class Grid():
         """
         Create a windowed instance of a grid.
         
-        :param grd:         gxpy.grid.Grid instance
+        :param grd:         :class:`Grid` instance
         :param name:        name for the windowed_grid, default is constructed from input grid
         :param x0:          integer index of the first X point
         :param y0:          integer index of the first Y point
@@ -460,7 +460,7 @@ class Grid():
 
         :param data:        2D numpy data array, ot a 2d list.  Must be 2D.
         :param file_name:   name of the file
-        :return:            Grid instance
+        :returns:           :class:`Grid` instance
 
         .. versionadded:: 9.1
         """
@@ -653,7 +653,7 @@ class Grid():
         """
         Get the grid properties dictionary
 
-        :return: dictionary of all grid properties
+        :returns:dictionary of all grid properties
 
         .. versionadded:: 9.1
         """
@@ -827,7 +827,7 @@ class Grid():
     def extent_2d(self):
         """
         Return the 2D extent of the grid on the grid plane
-        :return: (min_x, min_y, max_x, max_y)
+        :returns:(min_x, min_y, max_x, max_y)
 
         .. versionadded:: 9.2
         """
@@ -848,7 +848,8 @@ class Grid():
     def extent_3d(self):
         """
         Return the 3D extent of the grid in the base coordinate system.
-        :return: ((min_x, min_y, min_z), (max_x, max_y, max_z))
+        
+        :returns: ((min_x, min_y, min_z), (max_x, max_y, max_z))
 
         .. versionadded:: 9.2
         """
@@ -916,7 +917,7 @@ def array_locations(properties):
     """
     Create an array of (x,y,z) points for a grid defined by properties
     :param properties:  grid properties
-    :return:            array of points, shaped (ny, nx, 3)
+    :returns:           array of points, shaped (ny, nx, 3)
 
     .. versionadded:: 9.1
     """
@@ -940,7 +941,7 @@ def grid_mosaic(mosaic, gridList, typeDecoration='', report=None):
     :param gridList:        list of input grid names
     :param typeDecoration:  decoration for input grids if not default
     :param report:          string reporting function, report=print to print progress
-    :return:                Grid instance, must be closed with a call to close().
+    :returns:               :class`Grid` instance, must be closed with a call to close().
 
     .. versionadded:: 9.1
     """
@@ -1081,7 +1082,7 @@ def grid_bool(g1, g2, joinedGrid, opt=1, size=3, olap=1):
         2   use grid 2
         === ==========================================
 
-    :returns:       Grid instance of the merged output grid, must be closed with a call to close().
+    :returns:       :class:`Grid` instance of the merged output grid, must be closed with a call to close().
 
     .. versionadded:: 9.1
     """

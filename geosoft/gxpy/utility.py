@@ -57,7 +57,7 @@ def check_version(v, raise_on_fail=True):
 
     :param v:               minimum version string required (ie "9.1" or "9.2.4")
     :param raise_on_fail:   if True, raises an error if the version check fails, returns False otherwise
-    :return:                True if version is OK, False otherwise(unless raise_on_fail is False)
+    :returns:               True if version is OK, False otherwise(unless raise_on_fail is False)
 
     .. note::  
         A valid version consists of two or three dot-separated numeric components, with an optional development version tag
@@ -101,9 +101,9 @@ def dict_from_lst(lst, ordered=False):
     """
     Return a dictionary from a Geosoft :class:`geosoft.gxapi.GXLST` instance.
     
-    :param lst:     gxapi.GXLST instance
+    :param lst:     :class:`geosoft.gxapi.GXLST` instance
     :param ordered: True to return an OrderedDict
-    :return:        python dictionary from a Geosoft GXLST
+    :returns:       python dictionary from a Geosoft GXLST
 
     .. versionadded:: 9.1
 
@@ -132,7 +132,7 @@ def yearFromJulianDay2(jd1, jd2):
     
     :param jd1: part 1 Julian date (https://pypi.python.org/pypi/jdcal)
     :param jd2: part 2 Julian date
-    :return: decimal Gregorian year (Western calendar year)
+    :returns: decimal Gregorian year (Western calendar year)
 
     .. versionadded:: 9.1
     """
@@ -147,7 +147,7 @@ def rdecode_err(s):
     Geosoft string conversion to a number, raising ValueError on failure
 
     :param s: string to be decoded
-    :return: float of decoded string
+    :returns: float of decoded string
 
     If unable to decode string:
         | rdecode_err()   raises ValueError
@@ -266,7 +266,7 @@ def rdecode(s):
     Geosoft string (number, date, time, geographic) conversion to a number, always works.
 
     :param s:   string to decode
-    :return:    decoded number, gxapi.rDUMMY if unable to decode the string
+    :returns:   decoded number, gxapi.rDUMMY if unable to decode the string
 
     See rdecode_err(string) for more details.
 
@@ -364,7 +364,7 @@ def display_message(title, message):
 
 def gx_dtype(dtype):
     """
-    :return:    GX type for a numpy dtype
+    :returns:   GX type for a numpy dtype
 
     .. versionadded:: 9.1
     """
@@ -398,7 +398,7 @@ def gx_dtype(dtype):
 
 def dtype_gx(gtype):
     """
-    :return:    numpy dtype from a GX type
+    :returns:   numpy dtype from a GX type
 
     .. versionadded:: 9.1
     """
@@ -457,7 +457,7 @@ def gxDummy(dtype):
 
 def gx_dummy(dtype):
     """
-    :return:    GX dummy for this dtype
+    :returns:   GX dummy for this dtype
 
     .. versionadded:: 9.2
     """
@@ -508,7 +508,7 @@ def dummy_mask(npd):
     have a Geosoft dummy value.
 
     :param npd: numpy data array
-    :return:    numpy 1D array, True for any row that had a dummy in any data field
+    :returns:   numpy 1D array, True for any row that had a dummy in any data field
 
     .. versionadded:: 9.2
     """
@@ -526,7 +526,7 @@ def dummy_to_nan(data):
     Replaces dummies in float data to numpy.nan.  All other data types are returned unchanged.
     
     :param data:    float value or a numpy array
-    :return:        data with dummies replaced by numpy.nan
+    :returns:       data with dummies replaced by numpy.nan
     
     .. versionadded:: 9.2
     """
@@ -544,7 +544,7 @@ def dummy_to_nan(data):
 def save_parameters(group='_', parms=None):
     """
     Save parameters to the Project Parameter Block.  Parameter group names and member names
-    are converted to upper-case.
+    are converted to uppercase.
 
     :param group:   parameter block group name
     :param parms:   dict containing named parameter settings
@@ -566,7 +566,7 @@ def reg_from_dict(rd, max_size=4096, json_encode=True):
     :param max_size:    maximum "key=value" string size
     :param json:        True to encode non-string values as sas json strings (prefix '_JSON:')
                         False will encode non-string values as ``str(value)``
-    :return:            gxapi.GXREG instance
+    :returns:           :class:`geosoft.gxapi.GXREG` instance
 
     Non-string values in the dictionary are converted to JSON strings and stored as
     "_JSON:json-string}"
@@ -589,9 +589,9 @@ def dict_from_reg(reg, ordered=False):
     """
     dictionary from a :class:`geosoft.gxapi.GXREG` instance
     
-    :param reg:     gxapi.GXREG instance
+    :param reg:     :class:`geosoft.gxapi.GXREG` instance
     :param ordered: True to return and OrderedDict
-    :return:        python dictionary from a Geosoft GXREG
+    :returns:       python dictionary from a Geosoft GXREG
 
     .. versionadded:: 9.1
 
@@ -614,13 +614,13 @@ def dict_from_reg(reg, ordered=False):
 def get_parameters(group='_', parms=None, default=None):
     """
     Get parameters from the Project Parameter Block.  Note that parameter names
-    will always be upper-case.
+    will always be uppercase.
 
     :param group:   name in the parameter block group name
     :param parms:   if specified only these items are found and returned, otherwise all are found and returned
     :param parms:   default parameter setting returned for parameters not found, otherwise dict will
                     not have the parameter.
-    :return:        dictionary containing group parameters
+    :returns:       dictionary containing group parameters
 
     .. versionadded:: 9.1
     """
@@ -703,7 +703,7 @@ def normalize_file_name(fn):
     file names to control files.
 
     :param fn: file name
-    :return: normalized file name
+    :returns: normalized file name
 
     .. versionadded:: 9.2
     """
@@ -712,7 +712,7 @@ def normalize_file_name(fn):
 
 def uuid():
     """
-    :return: a uuid as a string
+    :returns: a uuid as a string
 
     .. versionadded:: 9.2
     """
@@ -782,7 +782,7 @@ def run_external_python(script, script_args='',
     :param python_args: command line arguments as a string
     :param console:     True (default) will create a separate console for the process.
     :param catcherr:    True (default) Catch and re-raise errors from the sub-process.
-    :return:            dictionary passed back from caller via set_shared_dict(dict)
+    :returns:           dictionary passed back from caller via set_shared_dict(dict)
 
     .. versionadded:: 9.1
     """
@@ -871,8 +871,8 @@ def year_from_datetime(dt):
     """
     Return a decimal Gregorian calendar year from a Python datetime.
     
-    :param dt: datetime
-    :return: decimal Gregorian year to an accuracy of 1 millisecond
+    :param dt:  datetime
+    :returns:   decimal Gregorian year to an accuracy of 1 millisecond
 
     .. versionadded:: 9.2
     """
@@ -887,8 +887,8 @@ def datetime_from_year(year):
     """
     Return the Python datetime from a decimal Gregorian year.
     
-    :param year: decimal year on the Gregorian calendar.
-    :return: datetime (resolved to 1 millisecond)
+    :param year:    decimal year on the Gregorian calendar.
+    :returns:       datetime (resolved to 1 millisecond)
 
     .. versionadded:: 9.2
     """
@@ -906,7 +906,7 @@ def str_significant(value, n, mode=0):
     
     :param value:   value to format
     :param mode:    0 round, 1 ceiling, -1 floor
-    :return:        string to n significant figures
+    :returns:       string to n significant figures
     """
 
     if value == 0.0:

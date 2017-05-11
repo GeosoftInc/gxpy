@@ -49,7 +49,7 @@ class ProjectException(Exception):
 
 def running_script():
     """
-    :return: 1 if running from a script, 0 if running interactively.
+    :returns: 1 if running from a script, 0 if running interactively.
 
     .. versionadded:: 9.1
 
@@ -237,7 +237,7 @@ class Geosoft_project:
         """
         Return the state of the current database.
         
-        :return: dict of the current database state, {} of there is no current database.
+        :returns: dict of the current database state, {} of there is no current database.
         
             =================== ========================================================
             'disp_chan_list'    list of displayed channels
@@ -284,7 +284,7 @@ class Geosoft_project:
         """
         Return the state of the current map.
         
-        :return: dict of the current map state, {} if no current map.
+        :returns: dict of the current map state, {} if no current map.
             
             =============== =========================================================
             'current_view'  name of the current view
@@ -382,8 +382,8 @@ def pause(title='Pause...', cancel=False):
 def get_user_input(title="Input required...", prompt='?', kind='string', default='', items='', filemask=''):
     """
     Display a dialog prompt on the Geosoft Desktop and wait for user input.
-    This method depends on "user_input.gx" and can only be used from an extension running
-    inside a Geosoft Desktop application.
+    This method depends on `user_input.gx <https://github.com/GeosoftInc/gxpy/tree/master/geosoft/gxpy/user_input>`_
+    and can only be used from an extension running inside a Geosoft Desktop application.
 
     :param title:       dialog box title.  A description can be added as a second-line using a line-break.
                         example: "Your title/nDescriptive help"
@@ -393,7 +393,7 @@ def get_user_input(title="Input required...", prompt='?', kind='string', default
     :param default:     default value.  For multifile can be a string ('|' delimiter) or list/tupple.
     :param filemask:    File type mask '.dat', '*.dat,*.grd', '\*\*,*.grd' for multiple files
                         Comma delimited, or a list/tupple
-    :return:        user response
+    :returns:       user response
     :raise:         :py:ex:GXCancel if the user cancels the dialog
 
     .. versionadded:: 9.1

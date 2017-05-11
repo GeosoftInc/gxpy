@@ -73,7 +73,8 @@ class View:
     :parameters:
 
         :name:          view name, default is "_unnamed_view".
-        :map:           map instance, if not specified a new default map is created and deleted on closing
+        :map:           :class:`geosoft.gxpy.map.Map` instance, if not specified a new unique default map is 
+                        created and deleted when this session finished.
         :mode:          open view mode:
 
                         ::
@@ -84,7 +85,7 @@ class View:
 
         The following are used with `mode=geosoft.gxpy.view.WRITE_NEW`:
 
-        :coordinate_system: coordinate system as a gxpy.coordinate_system.Coordinate_system instance, or 
+        :coordinate_system: coordinate system as a :class:`gxpy.coordinate_system.Coordinate_system` instance, or 
                             one of the Coordinate_system constructor types.
         :map_location:      (x, y) view location on the map, in map cm
         :area:              (min_x, min_y, max_x, max_y) area in view units
@@ -204,7 +205,7 @@ class View:
         Locate and scale the view on the map.
 
         :parameters:
-            :coordinate_system: coordinate system as a gxpy.coordinate_system.Coordinate_system instance, 
+            :coordinate_system: coordinate system as a class:`gxpy.coordinate_system.Coordinate_system` instance, 
                                 or one of the Coordinate_system constructor types.
             :map_location:      New (x, y) view location on the map, in map cm.
             :area:              New (min_x, min_y, max_x, max_y) area in view units
@@ -241,7 +242,7 @@ class View:
 
     @property
     def map(self):
-        """ gxpy.Map instance that contains this view."""
+        """ :class:`geosoft.gxpy.map.Map` instance that contains this view."""
         return self._map
 
     @property
@@ -416,7 +417,7 @@ class View:
                             UNITS_VIEW
                             UNITS_MAP
                             
-        :return: extent as (x_min, y_min, x_max, y_max)
+        :returns: extent as (x_min, y_min, x_max, y_max)
         
         .. versionadded: 9.2
         """
@@ -489,7 +490,7 @@ class View:
 
         Other class names may be defined, though they are not used by Geosoft.
 
-        :return: name associated with the class, '' if not defined.
+        :returns: name associated with the class, '' if not defined.
 
         .. versionadded:: 9.2
         """
@@ -514,8 +515,11 @@ class View:
 
 class View_3d(View):
     """
+    Geosoft 3D views, which contain 3D drawing groups.
+    
     Geosoft 3D views are stored in a file with extension `.geosoft_3dv`.  A 3d view is required
-    to draw 3D elements using gxpy.group.Draw_3d, which must be created from a View_3d instance.
+    to draw 3D elements using :class:`geosoft.gxpy.group.Draw_3d`, which must be created from a 
+    :class:`geosoft.gxpy.view.View_3d` instance.
     
     3D views also contain 2D drawing planes on which gxpy.group.Draw groups are placed.  A default 
     horizontal plane at elevation 0, named 'plane_0' is created when a new 3d view is created.
@@ -677,7 +681,7 @@ class View_3d(View):
         True if the view contains plane
         
         :param plane: name of the plane
-        :return: True if the plane exists in the view
+        :returns: True if the plane exists in the view
         
         .. versionadded:: 9.2
         """
@@ -692,7 +696,7 @@ class View_3d(View):
         List of groups on a plane.
         
         :param plane: name of the plane
-        :return: list of groups on the plane
+        :returns: list of groups on the plane
         
         .. versionadded:: 9.2
         """

@@ -40,7 +40,7 @@ def table_record(table, rec):
 
     :param table:   table name
     :param rec:     record wanted
-    :return:        dictionary containing record values as strings
+    :returns:       dictionary containing record values as strings
 
     .. versionadded:: 9.2
     """
@@ -54,7 +54,7 @@ def table_column(table, col):
 
     :param table:   table name
     :param col:     column wanted
-    :return:        dictionary containing record values as strings
+    :returns:       dictionary containing record values as strings
 
     .. versionadded:: 9.2
     """
@@ -85,7 +85,7 @@ class Data_frame(pd.DataFrame):
     This returns a Pandas DataFrame instance, which can be accessed and used with standard Pandas
     calls.
 
-    Column names from Geosoft table files are always upper-case, regardless
+    Column names from Geosoft table files are always uppercase, regardless
     of case used in the table file.
 
     Record/index names from Geosoft table files are case-sensitive.

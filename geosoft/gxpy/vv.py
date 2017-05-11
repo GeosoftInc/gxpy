@@ -56,7 +56,7 @@ class GXvv():
         
     :Properties:
     
-        ``vv``          gxapi.GXvv instance
+        ``vv``          :class:`geosoft.gxapi.GXvv` instance
         ``fid``         (start, increment) fiducial
         ``length``      number of elements in the VV
         ``gxtype``      GX data type

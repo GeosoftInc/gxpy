@@ -96,7 +96,7 @@ def track_resource(resource_class, info):
     
     :param resource_class: the resource class name
     :param info: some information about the resource
-    :return: resource_id, can be used with :meth:`pop_resource`
+    :returns: resource_id, can be used with :meth:`pop_resource`
     
     .. versionadded:: 9.2
     """
@@ -453,7 +453,7 @@ class GXpy(_Singleton):
 
     def entitlements(self):
         """
-        :return: The current user entitlements as a dictionary.
+        :returns: The current user entitlements as a dictionary.
 
         .. versionadded:: 9.1
         """
@@ -525,7 +525,7 @@ class GXpy(_Singleton):
         the instance temporary folder and will be deleted when this GXpy instance is deleted.
 
         :param ext: optional extension, including "." separator
-        :return:    uuid-based file name in the instance temporary folder.
+        :returns:   uuid-based file name in the instance temporary folder.
 
         .. versionadded:: 9.2
         """
@@ -580,7 +580,7 @@ class GXpy(_Singleton):
 
         :param log:     True to log, which also requires logging to be on
         :param tag:     optional string to add to the log
-        :return:        elapsed time in seconds
+        :returns:       elapsed time in seconds
 
         .. versionadded:: 9.2
         """

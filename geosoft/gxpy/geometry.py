@@ -218,8 +218,8 @@ class Point2(Geometry):
                         
     :Properties:
     
-        :p0:            first point as a Point instance
-        :p1:            second point at a Point instance
+        :p0:            first point as a :class:`Point` instance
+        :p1:            second point at a :class:`Point` instance
         :x2, y2, z2:    tuple pairs for (x0, x1), (y0, y1), (z0, z1)
         :centroid:      center of the two points
         :dimension:     (dx, dy, dz) dimension defines by teo points.
@@ -523,7 +523,7 @@ class PPoint(Geometry, Sequence):
         """
         Return x, y and z as a set of :class:`geosoft.gxpy.vv.GXvv`.
         
-        :return:  (xvv, yvv, zvv)
+        :returns: (xvv, yvv, zvv)
         
         .. versionadded:: 9.2
         """

@@ -246,7 +246,7 @@ class Aggregate_image():
         Return the :class:`geosoft.gxpy.group.Color_map` of a layer.
         
         :param layer: layer number or layer name
-        :return: :class:`geosoft.gxpy.group.Color_map`
+        :returns: :class:`geosoft.gxpy.group.Color_map`
         """
 
         if isinstance(layer, str):

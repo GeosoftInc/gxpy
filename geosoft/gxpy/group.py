@@ -180,7 +180,7 @@ def edge_reference(area, reference):
     """
     Location of a reference point of an area.
     
-    :param area:        Point2 instance, or (x0, y0, x1, y1)
+    :param area:        :class:`Point2` instance, or (x0, y0, x1, y1)
     :param reference:   reference point relative to the clip limits of the view to
                         which reference location.  The points are:
                         
@@ -223,7 +223,7 @@ class Group:
 
     :Properties:
 
-        :view:              the View instance that contains this group
+        :view:              the :class:`geosoft.gxpy.view.View` instance that contains this group
         :name:              the name of the group
         :extent:            extent of the group in view units
         :extent_map_cm:     extent of the group in map cm
@@ -528,8 +528,8 @@ class Draw(Group):
         as the `Pen` constructor.  This using this ensures that default sizing of view unit-based
         dimensions (such as `line_thick`) are not lost when new pens are created.
 
-        :param kwargs: see `Pen`
-        :return: Pen instance
+        :param kwargs: see :class:`Pen`
+        :returns: :class:`Pen` instance
 
         .. versionadded:: 9.2
         """
@@ -559,7 +559,7 @@ class Draw(Group):
         Return a color from a color string.
 
         :param cstr:    color string (see below)
-        :return:        color
+        :returns:       color
 
         Colour strings may be "R","G","B","C","M","Y",
         "H","S","V", or "K" or a combination of these
@@ -905,7 +905,7 @@ class Draw_3d(Draw):
         """
         Draw multiple points.
         
-        :param points:  points to draw, gxpy.geometry.PPoint instance, or array-like [x,y,z]
+        :param points:  points to draw, :class:`gxpy.geometry.PPoint` instance, or array-like [x,y,z]
         :param style:   POINT_STYLE_DOT or POINT_STYLE_SPHERE.  Dots are fast and intended for point clouds.
                         The current pen thickness is used as the sphere sizes.
         
@@ -925,7 +925,7 @@ class Draw_3d(Draw):
         """
         Draw a polyline.
         
-        :param points:  verticies of the polyline, gxpy.geometry.PPoint instance, or array-like [x,y,z]
+        :param points:  verticies of the polyline, :class:`gxpy.geometry.PPoint` instance, or array-like [x,y,z]
         :param style:   LINE3D_STYLE_LINE, LINE3D_STYLE_TUBE or LINE3D_STYLE_TUBE_JOINED.
                         Lines are single-pixel-wide.  Tubes have width defined by the pen line thickness.
                         Joined tubes have a joints and rounded ends.
@@ -1556,7 +1556,7 @@ class Text_def:
     def mapplot_string(self):
         """
         Return a text definition for mapplot.
-        :return: 
+        :returns: 
         """
         if 'default' in self._font.lower():
             font = 'DEFAULT'
@@ -1569,13 +1569,16 @@ class Text_def:
 
 class Pen:
     """
-    Geosoft Pen class.  Default dimensioned proprties (line_thick, line_pitch,
-    pat_size and pat_thick) are scaled assuming scale units are cm.  To scale
-    a pen to view units, use Pen.scaled(units_per_cm) to create a default
-    pen scaled to the units of a view.
+    Geosoft Pen class.  
+    
+    The default dimensioned properties (`line_thick`, `line_pitch`,
+    `pat_size` and `pat_thick`) assume the view units are cm, and this is usually
+    only the case for the base view.  For views in other units either
+    explicitly define the dimention in view units, or pass `factor` set 
+    the the view :attr:`geosoft.gxpy.view.View.units_per_map_cm`.
 
-    :param line_color:  line Color instance, default is black
-    :param fill_color:  fill Color instance, default is transparent
+    :param line_color:  line :class:`Color` instance, default is black
+    :param fill_color:  fill :class:`Color` instance, default is transparent
     :param line_thick:  line thickness, default is 0.01
     :param line_style:  line pattern style
 
@@ -1611,10 +1614,10 @@ class Pen:
                             TILE_RANDOM
 
     :param pat_thick:   pattern line thickness, default 0.01
-    :param default:     default Pen instance, if specified defaults are established from this
+    :param default:     default :class:`Pen` instance, if specified defaults are established from this
     :param factor:      default spatial properties are multiplied by this factor.  This is useful
                         for creating pens scaled to the units of a view.  The default pen properties
-                        are scaled to cm.
+                        are scaled to cm.  Typically you will pass :attr:`geosoft.gxpy.view.View.units_per_map_cm`.
 
     .. versionadded: 9.2
     """
@@ -1658,8 +1661,8 @@ class Pen:
     @classmethod
     def from_mapplot_string(cls, cstr):
         """
-        Create a Pen instance from a mapplot-style string descriptor using either a
-        rgbRGB or cmyCMY color model.  Lower case letters indicate line color, upper-case
+        Create a :class:`Pen` instance from a mapplot-style string descriptor using either a
+        rgbRGB or cmyCMY color model.  Lower case letters indicate line color, uppercase
         indicates fill color, 'k', 'K' for black.  Each letter may be followed by an intensity
         between 0 and 255.  If an intensity is not specified 255 is assumed.
 
@@ -1860,9 +1863,9 @@ class Aggregate_group(Group):
     """
     Aggregate groups on a map
     
-    :param view:        gxpy.View instance
+    :param view:        :class:`gxpy.view.View` instance
     :param name:        group name, default uses the aggregate name
-    :param agg:         Aggregate_image instance
+    :param agg:         :class:`gxpy.agg.Aggregate_image` instance
     
     :Constructors:
 
@@ -1874,7 +1877,7 @@ class Aggregate_group(Group):
     :Properties:
     
         :name:  aggregate group name
-        :agg:   gxpy.Aggregate_image instance
+        :agg:   :class:`gxpy.agg.Aggregate_image` instance
     
     .. versionadded:: 9.2
     """
@@ -2046,7 +2049,7 @@ class Color_map:
     def brightness(self):
         """
         Brightness is a value between -1 (black) and +1 (white),  The default is 0.
-        :return: brightness, -1 to +1
+        :returns: brightness, -1 to +1
         
         .. versionadded:: 9.2
         """
@@ -2162,7 +2165,7 @@ class Color_map:
         the [n-2] level are assigned the [n-1] color.
         
         :param value:   data value
-        :return:        gxg.Color instance
+        :returns:       :class:`Color` instance
         
         .. versionadded:: 9.2
         """
@@ -2175,7 +2178,7 @@ class Color_map:
         otherwise a `.itr` is created, which contains both zone boundaries and colors.
         
         :param file_name:   file name, if None a temporary file is created
-        :return: 
+        :returns: 
         """
 
         if file_name is None:

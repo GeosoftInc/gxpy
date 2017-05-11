@@ -247,7 +247,7 @@ class Geosoft_gdb:
         Open an existing database.
 
         :param name:    name of the database, default is the current project database
-        :return:        :class:`Geosoft_gdb` instance
+        :returns:       :class:`Geosoft_gdb` instance
 
         .. versionadded:: 9.1
         """
@@ -323,9 +323,9 @@ class Geosoft_gdb:
         """
         Check if a symbol exists of the required type.
         
-        :param symb: symbol name or number
-        :param symb_type: one of DB_SYMB_TYPE
-        :return: True if the symbol exists and is the expected symbol type, False otherwise
+        :param symb:        symbol name or number
+        :param symb_type:   one of DB_SYMB_TYPE
+        :returns:           True if the symbol exists and is the expected symbol type, False otherwise
 
         .. versionadded:: 9.1
         """
@@ -551,7 +551,7 @@ class Geosoft_gdb:
 
         :param line:    line name, or symbol number
         :param create:  True to create a line if one does not exist
-        :return:        line name, symbol
+        :returns:       line name, symbol
         :raises:        GdbException if line not found or cannot be created
 
         .. versionadded:: 9.1
@@ -574,7 +574,7 @@ class Geosoft_gdb:
         Return channel name, symbol
 
         :param chan:    channel name, or symbol number
-        :return:        line name, symbol, returns ('',-1) if invalid
+        :returns:       line name, symbol, returns ('',-1) if invalid
         :raises:        GdbException if channel does not exist
 
         .. versionadded:: 9.1
@@ -595,7 +595,7 @@ class Geosoft_gdb:
         Channel array width, 1 for normal channels, >1 for VA channels.
 
         :param channel: channel symbol or name
-        :return:        array dimension, 1 for non-array channels
+        :returns:       array dimension, 1 for non-array channels
 
         .. versionadded:: 9.1
         """
@@ -613,7 +613,7 @@ class Geosoft_gdb:
             CHAN_ARRAY      VA channels only
             =============== ============================
 
-        :return: dictionary {channel_names: channel_symbols}
+        :returns:   dictionary {channel_names: channel_symbols}
 
         .. versionadded:: 9.1
         """
@@ -662,8 +662,8 @@ class Geosoft_gdb:
         """
         List of lines in the database
         
-        :param select=True:  True to return selected lines, false to return all lines
-        :return: dictionary (line name: symbol)
+        :param select=True: True to return selected lines, false to return all lines
+        :returns:           dictionary (line name: symbol)
 
         .. versionadded:: 9.1
         """
@@ -680,8 +680,8 @@ class Geosoft_gdb:
         """
         Return dictionary of line details
 
-        :param line: channel name or symbol
-        :return: dictionary:
+        :param line:    channel name or symbol
+        :returns:       dictionary:
 
             =========== ==============================================================
             Key         Meaning
@@ -735,7 +735,7 @@ class Geosoft_gdb:
         Return dictionary of channel details
 
         :param channel: channel name or symbol
-        :return:        dictionary:
+        :returns:       dictionary:
 
             ======= ==============================================================
             Key     Meaning
@@ -819,7 +819,7 @@ class Geosoft_gdb:
         Returns channel numpy dtype
 
         :param channel: channel name or symbol
-        :return:        numpy dtype
+        :returns:       numpy dtype
 
         .. versionadded:: 9.1
         """
@@ -831,7 +831,7 @@ class Geosoft_gdb:
 
         :param line:    line name or symbol
         :param channel: channel name or symbol
-        :return:        (start,increment)
+        :returns:       (start,increment)
         """
         ls = self.line_name_symb(line)[1]
         cs = self.channel_name_symb(channel)[1]
@@ -858,7 +858,7 @@ class Geosoft_gdb:
         :param array:       array columns (default is 1)
         :param details:     dictionary containing channel details, see channel_details()
 
-        :return:            channel symbol
+        :returns:           channel symbol
 
         Examples:
 
@@ -897,7 +897,7 @@ class Geosoft_gdb:
 
         :param group:       group name for a grouped class
 
-        :return:            line symbol
+        :returns:           line symbol
 
         .. versionadded:: 9.1
         """
@@ -1071,7 +1071,7 @@ class Geosoft_gdb:
         :param channel: channel name or symbol
         :param dtype:   type wanted, default same as the channel data
 
-        :return:        vv
+        :returns:       vv
 
         .. versionadded:: 9.2
         """
@@ -1104,7 +1104,7 @@ class Geosoft_gdb:
         :param channel: channel name or symbol
         :param dtype:   type wanted, default same as the channel data
 
-        :return:        va
+        :returns:       va
 
         .. versionadded:: 9.2
         """
@@ -1133,7 +1133,7 @@ class Geosoft_gdb:
         :param channel: channel name or symbol
         :param dtype:   type wanted, default same as the channel data
 
-        :return:        numpy data, fid (start, increment)
+        :returns:       numpy data, fid (start, increment)
 
         .. versionadded:: 9.1
         """
@@ -1157,7 +1157,7 @@ class Geosoft_gdb:
         :param common_fid:  True to resample all channels to a common fiducial
         :param fid:         required fid (start, increment), ignored if common_fid=False.
                             if common_fid=True and fid= is not defined, use the smallest common fid.
-        :return: list of tuples [(channel_name, vv), ...]
+        :returns:           list of tuples [(channel_name, vv), ...]
 
         If a requested channel is a VA, it is with channel names 'name[0]', 'name[1]', etc.
 
@@ -1254,8 +1254,8 @@ class Geosoft_gdb:
             READ_REMOVE_DUMMYCOLUMNS remove columns with dummies
             ======================== ===================================================
 
-        :return: 2D numpy array shape(records,channels), list of channel names, (fidStart,fidIncr)
-        :raises: GdbException if first channel requested is empty
+        :returns:   2D numpy array shape(records,channels), list of channel names, (fidStart,fidIncr)
+        :raises:    GdbException if first channel requested is empty
 
         VA channels are expanded by element with channel names name[0], name[1], etc.
 
@@ -1526,7 +1526,7 @@ class Geosoft_gdb:
         :param dupl:            Stop growing list after this many lines fail to grow the list, 0 scans all lines
         :param progress:        progress reporting function
         :param stop:            stop check function
-        :return:                list of values, represented as a string
+        :returns:               list of values, represented as a string
 
         .. versionadded:: 9.1
         """
