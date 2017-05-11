@@ -6,6 +6,8 @@ import geosoft.gxpy as gxpy
 import geosoft.gxapi as gxa
 import re
 
+from docstring_info import parse_docstring
+
 min_version = parse_version("8.5")
 ver_add_re = re.compile(".*versionadded\:\:\s+([0-9\.]+)", re.MULTILINE)
 
@@ -14,6 +16,24 @@ def _is_some_method(obj):
             inspect.ismethod(obj) or
             inspect.isbuiltin(obj) or
             inspect.ismethoddescriptor(obj))
+
+def get_short_desc(str):
+    lines = [str.strip() for str in str.splitlines()]
+    for line in lines:
+        if line and not (
+                (line.endswith(':') and '->' in line) or
+                'parsed-literal' in line):
+            return line
+    return ''
+
+def get_short_desc_from_object(object):
+    if not object.__doc__:
+        return ''
+    info = parse_docstring(object.__doc__)
+    short_desc = get_short_desc(info['short_description'])
+    if not short_desc:
+        short_desc = get_short_desc(info['long_description'])
+    return short_desc
 
 def add_object_to_history(mod, version_history, object, name, collection, parent_name=None):
     if not name.startswith('_') and hasattr(object, '__doc__'):
@@ -24,15 +44,21 @@ def add_object_to_history(mod, version_history, object, name, collection, parent
             version = parse_version(ver_string)
             if version >= min_version:
                 version_history[version] = version_history.get(version, {'classes': [], 'functions': []})
+
+                short_desc = get_short_desc_from_object(object)
                 if parent_name:
-                    version_history[version][collection].append(":func:`{}.{}.{}`".format(mod.__name__, parent_name, name))
+                    version_history[version][collection].append(":func:`{}.{}.{}` {}"\
+                                                                .format(mod.__name__, parent_name, name, short_desc))
                 else:
                     if _is_some_method(object):
-                        version_history[version][collection].append(":func:`{}.{}`".format(mod.__name__, name))
+                        version_history[version][collection].append(":func:`{}.{}` {}"
+                                                                    .format(mod.__name__, name, short_desc))
                     elif inspect.isclass(object) and issubclass(object, BaseException):
-                        version_history[version][collection].append(":exc:`{}.{}`".format(mod.__name__, name))
+                        version_history[version][collection].append(":exc:`{}.{}` {}"
+                                                                    .format(mod.__name__, name, short_desc))
                     else:
-                        version_history[version][collection].append(":class:`{}.{}`".format(mod.__name__, name))
+                        version_history[version][collection].append(":class:`{}.{}` {}"\
+                                                                    .format(mod.__name__, name, short_desc))
 
 def sort_version_history(version_history):
     for key, val in version_history.items():
@@ -126,13 +152,13 @@ def gen_gxapi_toc(j2env, output_dir):
         f.write(template.render(classes=['geosoft.gxapi', 'GXGEOSOFT'] + classes))
 
 def gen_gxpy_rsts(j2env, output_dir):
-    modules = sorted([k for k, v in gxpy.__dict__.items() if not k.startswith("_") and inspect.ismodule(v)])
+    modules = sorted([(k, get_short_desc_from_object(v)) for k, v in gxpy.__dict__.items() if not k.startswith("_") and inspect.ismodule(v)])
     with open('geosoft.gxpy.rst', 'w+') as f:
         template = j2env.get_template('geosoft.gxpy.rst')
         f.write(template.render(modules=modules))
     template = j2env.get_template('geosoft.gxpy.mod.rst')
     for module in modules:
-        with open('geosoft.gxpy.' + module + '.rst', 'w+') as f:
+        with open('geosoft.gxpy.' + module[0] + '.rst', 'w+') as f:
             f.write(template.render(module=module))
 
 def generate():

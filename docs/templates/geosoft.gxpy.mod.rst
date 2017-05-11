@@ -1,9 +1,9 @@
 :orphan:
 
-geosoft.gxpy.{{ module }} submodule
+geosoft.gxpy.{{ module[0] }} submodule
 =============================================
 
-.. automodule:: geosoft.gxpy.{{ module }}
+.. automodule:: geosoft.gxpy.{{ module[0] }}
     :members:
     :undoc-members:
     :show-inheritance:

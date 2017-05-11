@@ -27,7 +27,7 @@ def _t(s):
 
 class VVException(Exception):
     """
-    Exceptions from this module.
+    Exceptions from :mod:`geosoft.gxpy.vv`.
 
     .. versionadded:: 9.1
     """

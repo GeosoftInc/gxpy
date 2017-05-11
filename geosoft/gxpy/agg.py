@@ -26,7 +26,7 @@ def _t(s):
 
 class AggregateException(Exception):
     """
-    Exceptions from this module.
+    Exceptions from :mod:`geosoft.gxpy.agg`.
 
     .. versionadded:: 9.2
     """

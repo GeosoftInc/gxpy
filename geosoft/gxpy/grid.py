@@ -29,7 +29,7 @@ def _t(s):
 
 class GridException(Exception):
     """
-    Exceptions from this module.
+    Exceptions from :mod:`geosoft.gxpy.grid`.
 
     .. versionadded:: 9.1
     """

@@ -192,7 +192,7 @@ def parallel_map(f, l, threads=None):
 
 class GXSysException(Exception):
     """
-    Exceptions from this module.
+    Exceptions from :mod:`geosoft.gxpy.system`.
 
     .. versionadded:: 9.1
     """

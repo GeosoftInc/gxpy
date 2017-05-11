@@ -21,7 +21,7 @@ def _t(s):
 
 class ViewerException(Exception):
     """
-    Exceptions from this module.
+    Exceptions from :mod:`geosoft.gxpy.viewer`.
 
     .. versionadded:: 9.2
     """

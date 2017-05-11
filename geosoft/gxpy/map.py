@@ -34,7 +34,7 @@ def _t(s):
 
 class MapException(Exception):
     """
-    Exceptions from this module.
+    Exceptions from :mod:`geosoft.gxpy.map`.
 
     .. versionadded:: 9.2
     """

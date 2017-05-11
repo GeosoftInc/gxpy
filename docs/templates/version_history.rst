@@ -7,6 +7,7 @@
 Version {{ ver }}
 -----------------
 
+{% if classes %}
 New Classes
 ^^^^^^^^^^^
 
@@ -14,6 +15,7 @@ New Classes
 {{ cl }}
 
 {% endfor %}
+{% endif %}
 
 New Functions
 ^^^^^^^^^^^^^

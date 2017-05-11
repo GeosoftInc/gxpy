@@ -23,7 +23,7 @@ def _t(s):
 
 class DfException(Exception):
     """
-    Exceptions from this module.
+    Exceptions from :mod:`geosoft.gxpy.dataframe`.
 
     .. versionadded:: 9.2
     """

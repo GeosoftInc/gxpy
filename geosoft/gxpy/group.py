@@ -33,7 +33,7 @@ def _t(s):
 
 class GroupException(Exception):
     """
-    Exceptions from this module.
+    Exceptions from :mod:`geosoft.gxpy.group`.
 
     .. versionadded:: 9.2
     """

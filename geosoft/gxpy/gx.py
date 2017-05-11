@@ -32,7 +32,7 @@ def _t(s):
 
 class GXException(Exception):
     """
-    Exceptions from this module.
+    Exceptions from :mod:`geosoft.gxpy.gx`.
 
     .. versionadded:: 9.1
     """

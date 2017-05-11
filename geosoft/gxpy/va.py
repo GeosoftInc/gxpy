@@ -26,7 +26,7 @@ def _t(s):
 
 class VAException(Exception):
     """
-    Exceptions from this module.
+    Exceptions from :mod:`geosoft.gxpy.va`.
 
     .. versionadded:: 9.1
     """

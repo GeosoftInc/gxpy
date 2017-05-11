@@ -67,7 +67,7 @@ READ_REMOVE_DUMMYCOLUMNS = 2
 
 class GdbException(Exception):
     """
-    Exceptions from this module.
+    Exceptions from :mod:`geosoft.gxpy.gdb`.
 
     .. versionadded:: 9.1
     """

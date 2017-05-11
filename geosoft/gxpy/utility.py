@@ -44,7 +44,7 @@ _uuid_callable = None
 
 class UtilityException(Exception):
     """
-    Exceptions from this module.
+    Exceptions from :mod:`geosoft.gxpy.utility`.
 
     .. versionadded:: 9.1
     """

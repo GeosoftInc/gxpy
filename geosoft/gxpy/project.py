@@ -35,7 +35,7 @@ DOC_TYPE_ALL = "All"
 
 class ProjectException(Exception):
     """
-    Exceptions from this module.
+    Exceptions from :mod:`geosoft.gxpy.project`.
 
     .. versionadded:: 9.1
     """

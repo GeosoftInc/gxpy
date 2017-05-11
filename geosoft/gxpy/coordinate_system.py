@@ -94,7 +94,7 @@ PARM_LOCAL_DATUM = 'datumtrf'
 
 class CSException(Exception):
     """
-    Exceptions from this module.
+    Exceptions from :mod:`geosoft.gxpy.coordinate_system`.
 
     .. versionadded:: 9.2
     """

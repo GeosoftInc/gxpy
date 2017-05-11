@@ -32,7 +32,7 @@ def _same_cs(a, b):
 
 class GeometryException(Exception):
     """
-    Exceptions from this module.
+    Exceptions from :mod:`geosoft.gxpy.geometry`.
     """
     pass
 
