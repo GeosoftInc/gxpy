@@ -1,14 +1,27 @@
 """
-This module handles drawing into groups in 3d views, or in 2D views on a map.
+This module handles rendering into groups in 3D views, or to 2D views on a map.
 
-.. seealso:: :class:`geosoft.gxapi.GXMVIEW`, :class:`geosoft.gxapi.GXMVU`
+:classes:
+
+    ============================ =============================================================================
+    :class:`Group`               base class for named rendering groups in 2D and 3D views.
+    :class:`Draw`                2D drawing group, handles 2D drawing to a view or plane in a 3D view
+    :class:`Draw_3d`             3D grawing group for 3D objects placed in a 3d view
+    :class:`Color`               colour definition
+    :class:`Color_map`           maps values to colors
+    :class:`Pen`                 pen definition, includes line colour, thickness and pattern, and fill.
+    :class:`Text_def`            defined text characteristics
+    :class:`Color_symbols_group` group for 2D symbols rendered based on data values
+    :class:`Aggregate_group`     group that contains a :class:`geosoft.gxpy.agg.Aggregate_image` instance
+    ============================ =============================================================================
 
 .. note::
 
-    Regression tests provide usage examples: 
-    
+    Regression tests provide usage examples:     
     `group drawing tests <https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_group.py>`_
     
+.. seealso:: :class:`geosoft.gxapi.GXMVIEW`, :class:`geosoft.gxapi.GXMVU`
+
 """
 from functools import wraps
 import threading
@@ -596,7 +609,7 @@ class Draw(Group):
         """
         Draw a line on the current plane
         
-        :param p2: :py:class:`geometry.Point2`, or (p1, p2)
+        :param p2: :class:`geometry.Point2`, or (p1, p2)
 
         .. versionadded:: 9.2
         """
@@ -609,7 +622,7 @@ class Draw(Group):
         """
         Draw a polyline the current plane
         
-        :param pp:      :py:class:`gxpy.geometry.PPoint`
+        :param pp:      :class:`gxpy.geometry.PPoint`
         :param close:   if True, draw a polygon, default is a polyline
 
         .. note::
@@ -633,7 +646,7 @@ class Draw(Group):
         """
         Draw a polygon on the current plane.
         
-        :param pp: :py:class:`gxpy.geometry.PPoint`
+        :param pp: :class:`gxpy.geometry.PPoint`
 
         .. note::
             Smooth-line polygons must have at least 6 points for the closure to
@@ -1029,7 +1042,7 @@ def legend_color_bar(view,
     """
     Draw a color bar legend from :class:Color_map coloring definitions.
 
-    :param view:                :class:`gxpy.View` instance in which to place the bar
+    :param view:                :class:`gxpy.view.View` instance in which to place the bar
     :param group_name:          name for the color_bar group, overwrites group if it exists.
     :param cmap:                :class:`Color_map` instance
     :param cmap2:               optional orthogonal blended :class:`Color_map` instance.  If making
@@ -1780,7 +1793,7 @@ class Color_symbols_group(Group):
                             is used.
     :param color_map:       symbol fill color :class:`Color_map`.
                             Symbols are filled with the color lookup using data.
-    :param symbol_def:      :py:class:`gxpy.group.Text_def` defines the symbol font to use, normally
+    :param symbol_def:      :class:`Text_def` defines the symbol font to use, normally
                             `symbols.gfn` is expected, and if used the symbols defined by the `SYMBOL` manifest
                             are valid.  For other fonts you will get the symbol requested.  The default is
                             `Text_def(font='dymbols.gfn', color='k', weight=FONT_WEIGHT_ULTRALIGHT)`

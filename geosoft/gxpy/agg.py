@@ -1,13 +1,20 @@
 """
+Geosoft aggregate images
+
+:classes:
+
+    ======================== ====================================================
+    :class:`Aggregate_image` image constructed from one or more grid/image layers
+    ======================== ====================================================
+    
 Geosoft aggregates are "aggregations" of one or more grid layers that together create a
-georeferenced image in a map view or on a plane in a 3D view.
+georeferenced image that can be placed in a map view or rendered on a plane in a 3D view.
 
 .. seealso:: :class:`geosoft.gxapi.GXAGG`
 
 .. note::
 
-    Regression tests provide usage examples: 
-    
+    Regression tests provide usage examples:     
     `aggregate tests <https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_agg.py>`_
 
 """

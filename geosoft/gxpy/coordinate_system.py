@@ -1,7 +1,18 @@
 """
+Coodinate systems
+
+:classes:
+
+    ============================= ======================================================
+    :class:`Coordinate_system`    define a coordinate system
+    :class:`Coordinate_translate` translate coordinates between coordinate systems
+    :class:`Wkt`                  well-know coordinate system for ESRI interoperability
+    ============================= ======================================================
+
 Coordinate systems describe how cartesian coordinates are located ralative to the Earth.  Cartesian coordinates
 are right-handed (x, y, z) spatial ordinates that describe locations within a coordinate system frame of reference.
-For coordinates relative to a horizontal plane, positive z is up, usually equivalent to elevation.
+For coordinates relative to a horizontal plane, positive z is up, usually equivalent to elevation relative to
+a vertical datum.
 
 Coordinate systems can be oriented in three dimensions using an `orientation` definition, which defines an (x0, y0, z0)
 origin and rotation (rx, ry, rz) around the X, Y and then Z axis relative to a base coordinate system.  
@@ -11,11 +22,11 @@ Base coordinate systems are usually defined by "well-known" coordinate system pr
 **Coordinate System Name**
 
 A coordinate system will also have a descriptive name that identifies the base system with a datum and "well-known"
-pmap projection description, plus optional orientation and vertical reference datum if defined.  Orientation
+map projection description, plus optional orientation and vertical reference datum if defined.  Orientation
 parameters are enclosed is `<>`, for example `<400000, 6200000,0,0,-90,0>` that defined `<x0, y0, z0, rx, ry, rz>`.
 If a vertical referenc datum is defined it appears as a string in quare brackets, for example  `[CGVD28]`.
 
-Examples:
+Example coordinate system names:
     
     .. code::
     
@@ -26,14 +37,13 @@ Examples:
 
 The descriptive name for well-known coordinate systems is sufficient to describe the coordinate system from
 the `EPSG Geodetic Registry <http://www.epsg.org/>`_. To fully locate ad-hoc coordinates you will need
-the parameters described in the GXF stings.  See the `gxf` property of :class:`geosoft.gxpy.coordinate_system`.
+the parameters described in the GXF stings.  See :attr:`Coordinate_system.gxf`.
 
 .. seealso:: :class:`geosoft.gxapi.GXIPJ`
 
 .. note::
 
-    Regression tests provide usage examples: 
-    
+    Regression tests provide usage examples:     
     `coordinate_system tests <https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_coordinate_system.py>`_
 """
 
@@ -125,7 +135,7 @@ def parameter_exists(what, key):
     """
     Test if a parameter set exists in a coordinate system table.
     
-    :param what:    see :meth:`parameters`
+    :param what:    see :func:`parameters`
     :param key:     parameter key
     :return:        True if table/key exists
     
@@ -886,7 +896,7 @@ class Coordinate_system:
         """
         return self._oriented_xyz(1, xyz, column_ordered=column_ordered)
 
-class Coordinate_projection:
+class Coordinate_translate:
     """
     Class to reproject coordinates between different coordinate systems.
 

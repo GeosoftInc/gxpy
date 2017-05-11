@@ -1,7 +1,16 @@
 """
-Geosoft maps contain one or more 2D and 3D views.  Each 2D view has a specific coordinate system and clip region.
-Each 3D view is a link to a separate geosoft_3dv file, which is placed in the map as a 2D perspective of the last
-viewing state of the 3D view.
+Geosoft maps contain one or more 2D and 3D views.
+
+:classes:
+
+    ============ ============
+    :class:`Map` map class
+    ============ ============
+
+
+Each 2D view has a specific coordinate system and clip region.
+Each 3D view is a link to a separate `geosoft_3dv` file, which can be placed in the map 
+as a 2D perspective of the last viewing state of the 3D view.
 
 .. seealso:: :mod:`geosoft.gxpy.view`, :mod:`geosoft.gxpy.group`
  
@@ -9,8 +18,7 @@ viewing state of the 3D view.
 
 .. note::
 
-    Regression tests provide usage examples: 
-    
+    Regression tests provide usage examples:     
     `map tests <https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_map.py>`_
     
 """

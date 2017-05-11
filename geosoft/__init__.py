@@ -60,7 +60,7 @@ A single instance of this object must be created per thread and persist before u
 
 .. seealso::
 
-    Class :py:class:`.gxpy.gx.GXpy`
+    Class coordinate_system=:class:`.gxpy.gx.GXpy`
 
 '''
 

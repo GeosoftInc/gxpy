@@ -1,12 +1,17 @@
 """
 Geosoft desktop project interface, which provides access to an active and open Geosoft desktop project.
 
+:classes:
+
+    ======================== =====================
+    :class:`Geosoft_project` the geosoft project
+    ======================== =====================
+
 .. seealso:: :mod:`geosoft.gxapi.GXPROJ`, :mod:`geosoft.gxapi.GXEDB`, :mod:`geosoft.gxapi.GXEMAP`
 
 .. note::
 
-    Test example: 
-    
+    Test example:     
     `geosoft project tests <https://github.com/GeosoftInc/gxpy/blob/master/examples/om-extensions/test_project.py>`_
 
 """

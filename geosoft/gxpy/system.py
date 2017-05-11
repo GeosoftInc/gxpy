@@ -1,5 +1,5 @@
 """
-Geosoft system functions..
+Geosoft system functions.
 
 .. note::
 

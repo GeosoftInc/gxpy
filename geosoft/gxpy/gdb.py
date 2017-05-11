@@ -1,6 +1,12 @@
 """
 Geosoft databases for line-oriented spatial data.
 
+:classes:
+
+    ==================== =========================
+    :class:`Geosoft_gdb` Geosoft line database
+    ==================== =========================
+
 .. seealso:: :mod:`geosoft.gxapi.GXGB`, :mod:`geosoft.gxapi.GXEDB`, 
              :mod:`geosoft.gxapi.GXDBREAD`, :mod:`geosoft.gxapi.GXDBWRITE`
 

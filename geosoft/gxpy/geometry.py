@@ -1,10 +1,17 @@
 """
 Spatial geometric elements.
 
+:classes:
+
+    =============== ==============================================================
+    :class:`Point`  (x, y, z) point
+    :class:`Point2` pair of :class:`Point` instances that define a line, or extent
+    :class:`PPoint` multiple :class:`Point` instances
+    =============== ==============================================================
+
 .. note::
 
     Regression tests provide usage examples: 
-    
     `geometry tests <https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_geometry.py>`_
 
 """

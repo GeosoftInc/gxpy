@@ -28,22 +28,22 @@ class ViewerException(Exception):
     pass
 
 
-def _get_default_om_exe():
+def _get_default_gd_exe():
     s = gxapi.str_ref()
     gxapi.GXSYS.get_directory(gxapi.SYS_DIR_GEOSOFT_BIN, s)
     bin_dir = s.value
-    om_exe = os.path.join(bin_dir, 'omcore.exe')
-    if os.path.exists(om_exe):
-        return om_exe
-    om_exe = os.path.join(bin_dir, 'omtarget.exe')
-    if os.path.exists(om_exe):
-        return om_exe
-    om_exe = os.path.join(bin_dir, 'omedu.exe')
-    if os.path.exists(om_exe):
-        return om_exe
-    om_exe = os.path.join(bin_dir, 'omv.exe')
-    if os.path.exists(om_exe):
-        return om_exe
+    gd_exe = os.path.join(bin_dir, 'omcore.exe')
+    if os.path.exists(gd_exe):
+        return gd_exe
+    gd_exe = os.path.join(bin_dir, 'omtarget.exe')
+    if os.path.exists(gd_exe):
+        return gd_exe
+    gd_exe = os.path.join(bin_dir, 'omedu.exe')
+    if os.path.exists(gd_exe):
+        return gd_exe
+    gd_exe = os.path.join(bin_dir, 'omv.exe')
+    if os.path.exists(gd_exe):
+        return gd_exe
 
     return None
 
@@ -73,9 +73,9 @@ def view_document(document_file_name, wait_for_close=True, env=None):
    
     """
 
-    om_exe = _get_default_om_exe()
-    if not om_exe:
-        gxapi.GXSYS.display_message('Oasis montaj Executable not Found',
+    gd_exe = _get_default_gd_exe()
+    if not gd_exe:
+        gxapi.GXSYS.display_message('Geosoft Desktop application not Found',
                                     'Geosoft Desktop, Geosoft Target or a Geosoft viewer must be installed '
                                     'to view a Geosoft document type. Downloads are available from '
                                     'https://my.geosoft.com/downloads.')
@@ -83,6 +83,6 @@ def view_document(document_file_name, wait_for_close=True, env=None):
         proc_env = os.environ.copy()
         if env:
             proc_env.update(env)
-        proc = subprocess.Popen([om_exe, '-doc={}'.format(document_file_name)], env=proc_env)
+        proc = subprocess.Popen([gd_exe, '-doc={}'.format(document_file_name)], env=proc_env)
         if wait_for_close:
             proc.communicate()

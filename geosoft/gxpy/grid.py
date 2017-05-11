@@ -1,12 +1,17 @@
 """
-Geosoft grids and image handling, including all grid types supported by Geosoft..
+Geosoft grids and image handling, including all `supported file formats <https://geosoftgxdev.atlassian.net/wiki/display/GXDEV92/Grid+File+Name+Decorations>`_
+
+:classes:
+
+    ============= ====================================================
+    :class:`Grid` grid, which can be in memory or created from a file 
+    ============= ====================================================
 
 .. seealso:: :class:`geosoft.gxapi.GXIMG`, :class:`geosoft.gxapi.GXIMU`
 
 .. note::
 
-    Regression tests provide usage examples: 
-    
+    Regression tests provide usage examples:     
     `Tests <https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_grid.py>`_
     
 """
@@ -266,7 +271,7 @@ class Grid():
         """
         Open an existing grid file.
 
-        :param file_name:   name of the grid file
+        :param file_name:   name of the grid file (see `supported file formats <https://geosoftgxdev.atlassian.net/wiki/display/GXDEV92/Grid+File+Name+Decorations>`_)
         :param dtype:       numpy data type, None for the grid native type.  If not the same as the native
                             type a memory grid is created in the new type.
         :param mode:        open mode:
@@ -295,7 +300,8 @@ class Grid():
         """
         Create a new grid file.
 
-        :param file_name:   name of the grid file, None or '' for a memory grid
+        :param file_name:   name of the grid file, None or '' for a memory grid.
+                            (see `supported file formats <https://geosoftgxdev.atlassian.net/wiki/display/GXDEV92/Grid+File+Name+Decorations>`_)
         :param properties:  dictionary of grid properties
         :param overwrite:   True to overwrite existing file
 

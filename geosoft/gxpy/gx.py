@@ -1,11 +1,18 @@
 """
-GX Context and related methods required for Geosoft Python.  The GX context is a singleton, which is either created for
+GX Context and related methods required for Geosoft Python.  
+
+:classes:
+
+    ============= =======================
+    :class:`GXpy` the Geosoft GX context
+    ============= =======================
+    
+The GX context is a singleton, which is either created for
 stand-alone Python scripts, or is provided to the script for extensions to Geosoft Desktop applications.
 
 .. note::
 
-    Regression tests provide usage examples: 
-    
+    Regression tests provide usage examples:     
     `gx tests <https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_gx.py>`_
 
 """
@@ -549,7 +556,7 @@ class GXpy(_Singleton):
 
     def log(self, *args):
         """
-        Log a string to the log file or log call-back as defined when creating :class:`~gx.GXpy` instance.
+        Log a string to the log file or log call-back as defined when creating :class:`GXpy` instance.
 
         :param args: arguments to log, each will be converted to a str()
 

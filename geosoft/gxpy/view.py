@@ -1,5 +1,14 @@
 """
-Views, both 2D and 3D.  2D and 3D views can be placed on a :class:`geosoft.gxpy.map.Map`, though 3D views
+Views, both 2D and 3D.  
+
+:classes:
+
+    ================ ==========================================================
+    :class:`View`    single view on a 2D map
+    :class:`View_3d` 3D view in a `geosoft.3dv` file, or a 3D view on a 2D map.
+    ================ ==========================================================
+
+2D and 3D views can be placed on a :class:`geosoft.gxpy.map.Map`, though 3D views
 are stored in a `geosoft_3dv` file which can be worked with and viewed separately from a map.
 
 .. seealso:: :mod:`geosoft.gxpy.map`, :mod:`geosoft.gxpy.group`, :mod:`geosoft.gxapi.GXMVIEW`
@@ -165,7 +174,7 @@ class View:
 
     @property
     def coordinate_system(self):
-        """ :class:`geosoft.gxpy.coordinate_sustem.Coordinate_system` instance of the view."""
+        """ :class:`geosoft.gxpy.coordinate_system.Coordinate_system` instance of the view."""
         return self._cs
 
     @coordinate_system.setter

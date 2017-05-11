@@ -1,5 +1,13 @@
 """
-Geosoft vector. VA and VV classes are related based on a key called a *fiducial*, 
+Geosoft vector. 
+
+:classes:
+
+    =============== =========================
+    :class:`GXvv`   data vector
+    =============== =========================
+
+VA and VV classes are related based on a key called a *fiducial*, 
 which has a start value and increment between values.  The :meth:`refid` method can be used to resample vector
 data to the same fiducial so that vector-to-vector operations can be performed.
 
@@ -7,8 +15,7 @@ data to the same fiducial so that vector-to-vector operations can be performed.
 
 .. note::
 
-    Regression tests provide usage examples: 
-    
+    Regression tests provide usage examples:    
     `vv tests <https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_vv.py>`_
 
 """

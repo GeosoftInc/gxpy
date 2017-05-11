@@ -1,12 +1,17 @@
 """
-Table (records, fields) handling, inherits from Pandas base class.
+Table (records, fields) handling, inherits from Pandas (http://pandas.pydata.org/) base class.
+
+:classes:
+
+    =================== ============================
+    :class:`Data_frame` dataframe that holds a table
+    =================== ============================
 
 .. seealso:: :class:`geosoft.gxapi.GXLTB`
 
 .. note::
 
-    Regression tests provide usage examples: 
-    
+    Regression tests provide usage examples:     
     `dataframe tests <https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_dataframe.py>`_
     
 """

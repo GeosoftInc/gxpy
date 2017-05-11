@@ -185,7 +185,7 @@ class Test(GXPYTest):
 
         with gxcs.Coordinate_system('DHDN / Okarito 2000') as cs:
             with gxcs.Coordinate_system('DHDN') as csll:
-                with gxcs.Coordinate_projection(cs, csll) as pj:
+                with gxcs.Coordinate_translate(cs, csll) as pj:
 
                     lon, lat = pj.convert((500000, 6500000))
                     self.assertAlmostEqual(lon, 171.168823147)
@@ -218,7 +218,7 @@ class Test(GXPYTest):
         csd = gxcs.Coordinate_system(csdict)
         self.assertEqual(csd.name, 'WGS 84 / *Local(43,-96,0,0)')
 
-        with gxcs.Coordinate_projection(csd, gxcs.Coordinate_system('WGS 84')) as pj:
+        with gxcs.Coordinate_translate(csd, gxcs.Coordinate_system('WGS 84')) as pj:
             lon, lat, z = pj.convert((0, 0, 0))
             self.assertAlmostEqual(lat, 43)
             self.assertAlmostEqual(lon, -96)
@@ -229,7 +229,7 @@ class Test(GXPYTest):
         self.assertEqual(csd.name, 'WGS 84 / *Local(43,-96,0,0) <0,0,0,0,0,25>')
         self.assertEqual(csd.gxf[2], '"Oblique Stereographic",43,-96,0.9996,0,0')
 
-        with gxcs.Coordinate_projection(gxcs.Coordinate_system('WGS 84'), csd) as pj:
+        with gxcs.Coordinate_translate(gxcs.Coordinate_system('WGS 84'), csd) as pj:
             x, y, z = pj.convert((-96, 43, 0))
             self.assertAlmostEqual(x, 0)
             self.assertAlmostEqual(y, 0)
@@ -249,11 +249,11 @@ class Test(GXPYTest):
         csd = gxcs.Coordinate_system(csdict)
         self.assertEqual(csd.name, 'WGS 84 / *Local(43,-96,1800,500) <0,0,800.5,0,0,25>')
         self.assertEqual(csd.gxf[2], '"Oblique Stereographic",43,-96,0.9996,1842.66314753632,-307.558977614934')
-        with gxcs.Coordinate_projection(gxcs.Coordinate_system('WGS 84'), csd) as pj:
+        with gxcs.Coordinate_translate(gxcs.Coordinate_system('WGS 84'), csd) as pj:
             x, y = pj.convert((-96, 43))
             self.assertAlmostEqual(x, 1800)
             self.assertAlmostEqual(y, 500)
-        with gxcs.Coordinate_projection(csd, gxcs.Coordinate_system('WGS 84')) as pj:
+        with gxcs.Coordinate_translate(csd, gxcs.Coordinate_system('WGS 84')) as pj:
             lon, lat, z = pj.convert((1800, 500, 0))
             self.assertAlmostEqual(lat, 43)
             self.assertAlmostEqual(lon, -96)
