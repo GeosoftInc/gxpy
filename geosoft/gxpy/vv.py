@@ -41,7 +41,7 @@ class VVException(Exception):
     pass
 
 
-class GXvv(object):
+class GXvv:
     """
     VV class wrapper.
 

@@ -57,7 +57,7 @@ def running_script():
 
     return not gxapi.GXSYS.interactive()
 
-class Geosoft_project(object):
+class Geosoft_project:
     """
     Use this class to interact with an open Geosoft project. This singleton class is available only from an 
     extension running from an open Geosoft project.  

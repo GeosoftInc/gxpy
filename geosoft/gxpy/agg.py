@@ -47,7 +47,7 @@ ZONE_SHADE = 4
 ZONE_LOGLINEAR = 5
 ZONE_LAST = 6
 
-class Aggregate_image(object):
+class Aggregate_image:
     """
     The AGG class supports the creation of aggregate images from one or more grid data sets. Aggergates
     can be placed into a 2D or 3D view for display.

@@ -14,7 +14,7 @@ from geosoft_api import gxapi
 GXApiCollectionInfo = namedtuple('GXApiCollectionInfo', ['classes', 'known_classes', 'known_class_handles', 'known_methods', 'known_definitions', 'known_definition_values'])
 global_collection = 0
 
-class memoized(object):
+class memoized:
     '''Decorator. Caches a function's return value each time it is called.
     If called later with the same arguments, the cached value is returned
     (not reevaluated).
@@ -469,7 +469,7 @@ class method_class(gxapi.method.typeDefinition()):
         return self.license.endswith('_app')
 gxapi.method.typeDefinition()._SetSupersedingClass(method_class)
 
-class ext_parameter_info(object):
+class ext_parameter_info:
     def __init__(self, index=None, parameter=None, size_parameter=None, size_parameter_index=None, real_index=None):
         self.index = index
         self.parameter = parameter
@@ -477,7 +477,7 @@ class ext_parameter_info(object):
         self.size_parameter = size_parameter
         self.real_index = real_index
 
-class int_parameter_info(object):
+class int_parameter_info:
     def __init__(self, self_handle=False, ext_index=None, parameter=None, size_parameter=None, size_parameter_index=None,gxclass=None):
         self.self_handle = self_handle
         self.parameter = parameter

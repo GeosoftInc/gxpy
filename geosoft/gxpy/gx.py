@@ -46,7 +46,7 @@ class GXException(Exception):
     pass
 
 
-class _Singleton(object):
+class _Singleton:
     """
     Used internally to create a singleton instance of GXpy.
     See http://www.aleax.it/Python/5ep.html

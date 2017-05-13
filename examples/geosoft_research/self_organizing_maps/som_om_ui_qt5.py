@@ -8,7 +8,7 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 
-class Ui_som_om(object):
+class Ui_som_om:
     def setupUi(self, som_om):
         som_om.setObjectName("som_om")
         som_om.resize(438, 777)

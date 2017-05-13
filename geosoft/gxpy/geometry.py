@@ -43,7 +43,7 @@ class GeometryException(Exception):
     """
     pass
 
-class Geometry(object):
+class Geometry:
     """
     Geometry base class for all geometries.
 

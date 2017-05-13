@@ -66,7 +66,7 @@ EXTENT_VISIBLE = gxapi.MVIEW_EXTENT_VISIBLE
 EXTENT_CLIPPED = gxapi.MVIEW_EXTENT_CLIP
 
 
-class View(object):
+class View:
     """
     Geosoft view class.
 
