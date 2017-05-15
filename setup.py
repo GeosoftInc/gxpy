@@ -23,7 +23,10 @@ else:
 
 
 for f in glob("geosoft/*.pyd"):
-    remove(f)
+    try:
+        remove(f)
+    except PermissionError as e:
+        raise Exception("An application is using a file we need to change: \n {}".format(str(e)))
 
 
 deps = [ 'numpy>=1.11', 'pandas' ]
