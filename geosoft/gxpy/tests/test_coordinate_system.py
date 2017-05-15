@@ -1,6 +1,6 @@
 import unittest
 import numpy as np
-import os
+import json
 
 import geosoft.gxapi as gxapi
 import geosoft.gxpy.gx as gx
@@ -43,26 +43,37 @@ class Test(GXPYTest):
             self.assertEqual(gxfs[2],'"Transverse Mercator",-43.11,170.260833333333,1,400000,800000')
             self.assertEqual(gxfs[3],'m,1')
             self.assertEqual(gxfs[4],'"DHDN to WGS 84 (1)",582,105,414,1.04,0.35,-3.08,8.29999999996112')
-            dct = cs.coordinate_dict().copy()
 
-        # dictionary
-        with gxcs.Coordinate_system(dct) as cs:
-            gxfs = cs.gxf
-            self.assertEqual(gxfs[0],'DHDN / Okarito 2000')
-            self.assertEqual(gxfs[1],'DHDN,6377397.155,0.0816968312225275,0')
-            self.assertEqual(gxfs[2],'"Transverse Mercator",-43.11,170.260833333333,1,400000,800000')
-            self.assertEqual(gxfs[3],'m,1')
-            self.assertEqual(gxfs[4],'"DHDN to WGS 84 (1)",582,105,414,1.04,0.35,-3.08,8.29999999996112')
+        # dictionary, json
+        with gxcs.Coordinate_system('DHDN / Okarito 2000') as cs:
+            dct = cs.coordinate_dict()
+            with gxcs.Coordinate_system(dct) as cs:
+                gxfs = cs.gxf
+                self.assertEqual(gxfs[0],'DHDN / Okarito 2000')
+                self.assertEqual(gxfs[1],'DHDN,6377397.155,0.0816968312225275,0')
+                self.assertEqual(gxfs[2],'"Transverse Mercator",-43.11,170.260833333333,1,400000,800000')
+                self.assertEqual(gxfs[3],'m,1')
+                self.assertEqual(gxfs[4],'"DHDN to WGS 84 (1)",582,105,414,1.04,0.35,-3.08,8.29999999996112')
 
-            csd = cs.coordinate_dict()
-            self.assertEqual(csd['name'],'DHDN / Okarito 2000')
-            self.assertEqual(gxfs[1],'DHDN,6377397.155,0.0816968312225275,0')
-            self.assertEqual(gxfs[2],'"Transverse Mercator",-43.11,170.260833333333,1,400000,800000')
-            self.assertEqual(gxfs[3],'m,1')
-            self.assertEqual(gxfs[4],'"DHDN to WGS 84 (1)",582,105,414,1.04,0.35,-3.08,8.29999999996112')
+                csd = cs.coordinate_dict()
+                self.assertEqual(csd['name'],'DHDN / Okarito 2000')
+                self.assertEqual(gxfs[1],'DHDN,6377397.155,0.0816968312225275,0')
+                self.assertEqual(gxfs[2],'"Transverse Mercator",-43.11,170.260833333333,1,400000,800000')
+                self.assertEqual(gxfs[3],'m,1')
+                self.assertEqual(gxfs[4],'"DHDN to WGS 84 (1)",582,105,414,1.04,0.35,-3.08,8.29999999996112')
+
+                js = json.dumps(dct)
+                with gxcs.Coordinate_system(js) as cs:
+                    gxfs = cs.gxf
+                    self.assertEqual(gxfs[0],'DHDN / Okarito 2000')
+                    self.assertEqual(gxfs[1],'DHDN,6377397.155,0.0816968312225275,0')
+                    self.assertEqual(gxfs[2],'"Transverse Mercator",-43.11,170.260833333333,1,400000,800000')
+                    self.assertEqual(gxfs[3],'m,1')
+                    self.assertEqual(gxfs[4],'"DHDN to WGS 84 (1)",582,105,414,1.04,0.35,-3.08,8.29999999996112')
 
         # name with a separate vcs
-        with gxcs.Coordinate_system('DHDN / Okarito 2000 [geoid]') as cs:
+        with gxcs.Coordinate_system('DHDN / Okarito 2000') as cs:
+            cs.vcs = 'geoid'
             self.assertEqual(cs.cs_name(what=gxcs.NAME_HCS_VCS), str(cs))
             self.assertEqual(cs.cs_name(what=gxcs.NAME_VCS), 'geoid')
             self.assertEqual(cs.cs_name(what=gxcs.NAME_HCS_VCS), 'DHDN / Okarito 2000 [geoid]')
@@ -291,6 +302,20 @@ class Test(GXPYTest):
             self.assertEqual(tuple(xyz[1]), (-4.2261826174069945, 9.063077870366499))
             self.assertEqual(tuple(xyz[2]), (0.0, 5.0))
 
+    def test_parameters(self):
+        self.start()
+
+        self.assertTrue(gxcs.parameter_exists(gxcs.PARM_DATUM, 'NAD83'))
+        self.assertTrue(gxcs.parameter_exists(gxcs.PARM_PROJECTION, 'UTM zone 15N'))
+        self.assertTrue(gxcs.parameter_exists(gxcs.PARM_UNITS, 'ftUS'))
+        self.assertTrue(gxcs.parameter_exists(gxcs.PARM_LOCAL_DATUM, gxcs.name_list(gxcs.LIST_LOCALDATUMNAME)[5]))
+        self.assertFalse(gxcs.parameter_exists(gxcs.PARM_UNITS, 'hoofs'))
+
+        params = gxcs.parameters(gxcs.PARM_DATUM, 'WGS 84')
+        self.assertTrue('ELLIPSOID' in params)
+
+        params = gxcs.parameters(gxcs.PARM_PROJECTION, 'UTM zone 15N')
+        self.assertEqual(float(params['P5']), 0.9996)
 
 ###############################################################################################
 

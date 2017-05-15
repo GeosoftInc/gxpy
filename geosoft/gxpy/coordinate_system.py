@@ -23,8 +23,8 @@ Base coordinate systems are usually defined by "well-known" coordinate system pr
 
 A coordinate system will also have a descriptive name that identifies the base system with a datum and "well-known"
 map projection description, plus optional orientation and vertical reference datum if defined.  Orientation
-parameters are enclosed is `<>`, for example `<400000, 6200000,0,0,-90,0>` that defined `<x0, y0, z0, rx, ry, rz>`.
-If a vertical referenc datum is defined it appears as a string in quare brackets, for example  `[CGVD28]`.
+parameters are enclosed in `<>` that define `<x0, y0, z0, rx, ry, rz>` (eg. `<400000, 6200000,0,0,-90,0>`).
+If a vertical reference datum is defined it will appear as a string in square brackets, for example  `[CGVD28]`.
 
 Example coordinate system names:
     
@@ -35,9 +35,9 @@ Example coordinate system names:
         "NAD83 / UTM zone 15N [NAVD88]"
         "NAD83 / UTM zone 15N <450000,6250000,0,0,0,-25> [NAVD88]"
 
-The descriptive name for well-known coordinate systems is sufficient to describe the coordinate system from
+The descriptive name for "well-known" coordinate systems is sufficient to describe the coordinate system from
 the `EPSG Geodetic Registry <http://www.epsg.org/>`_. To fully locate ad-hoc coordinates you will need
-the parameters described in the GXF stings.  See :attr:`Coordinate_system.gxf`.
+the parameters defined in the GXF stings.  See :attr:`Coordinate_system.gxf`.
 
 .. seealso:: :class:`geosoft.gxapi.GXIPJ`
 
@@ -112,13 +112,14 @@ class CSException(Exception):
 
 def parameters(what, key):
     """
-    Get a dictionary of parameters for a coordinate system item.
+    Get a dictionary of parameters for a coordinate system item.  Parameters are maintained in 
+    csv coordinate system table files in the Geosoft Desktop Applications `csv` folder.
 
     :param what:
-            | PARM_DATUM
-            | PARM_PROJECTION
-            | PARM_UNITS
-            | PARM_LOCAL_DATUM
+            | PARM_DATUM (from `datum.csv`)
+            | PARM_PROJECTION (from `transform.csv`)
+            | PARM_UNITS (from `units.csv`)
+            | PARM_LOCAL_DATUM (from `datumtrf.csv`)
     :param key:     parameter key to find and return
     :raises CSException: if table or key not found.
 
@@ -376,6 +377,8 @@ class Coordinate_system:
                 - :class:`geosoft.gxapi.GXIPJ` instance
                  
                 - :class:`Coordinate_system` instance, returns a copy
+                
+                For examples refer to  `coordinate_system tests <https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_coordinate_system.py>`_
 
     :Dictionary Structure:
     
@@ -512,7 +515,7 @@ class Coordinate_system:
                 
     @property
     def vcs(self):
-        """ Vertical coordinate system name.  Can be set too."""
+        """ Vertical coordinate system name.  Can be set."""
         return self.cs_name(NAME_VCS)
 
     @vcs.setter
