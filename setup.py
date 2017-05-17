@@ -29,7 +29,7 @@ for f in glob("geosoft/*.pyd"):
         raise Exception("An application is using a file we need to change: \n {}".format(str(e)))
 
 
-deps = [ 'numpy>=1.11', 'pandas' ]
+dependencies = ['numpy>=1.11', 'pandas', 'pyyaml']
 if 'bdist_wheel' in sys.argv:
     # Have to specify python-tag to specify which module
     for arg in sys.argv:
@@ -77,7 +77,7 @@ setup(
     platforms=["win_amd64"],
     url='https://github.com/GeosoftInc/gxpy',
     license='BSD',
-    install_requires=deps,
+    install_requires=dependencies,
     packages=[
         'geosoft',
         'geosoft.gxpy'
