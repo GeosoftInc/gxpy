@@ -217,9 +217,15 @@ class Geosoft_gdb:
                     if self._edb.is_locked():
                         self._edb.un_lock()
                     self._edb = None
+
+                if self._metadata_changed:
+                    with open(self._file_name + '.xml', 'w+') as f:
+                        f.write(gxu.xml_from_dict(self._metadata, root=None))
+                    self._db.sync()
+
                 self._db = None
 
-            self._filename = None
+            self._file_name = None
             if pop:
                 gx.pop_resource(self._open)
             self._open = None
@@ -229,16 +235,18 @@ class Geosoft_gdb:
         return "{}({})".format(self.__class__, self.__dict__)
 
     def __str__(self):
-        return os.path.basename(self._filename)
+        return os.path.basename(self._file_name)
 
     def __init__(self):
         self._lst = gxapi.GXLST.create(2000)
         self._sr = gxapi.str_ref()
-        self._filename = None
+        self._file_name = None
         self._db = None
         self._edb = None
+        self._metadata = None
+        self._metadata_changed = False
 
-        self._open = gx.track_resource(self.__class__.__name__, self._filename)
+        self._open = gx.track_resource(self.__class__.__name__, self._file_name)
 
 
     @classmethod
@@ -262,7 +270,7 @@ class Geosoft_gdb:
             gdb._db = gxapi.GXDB.open(name, 'SUPER', '')
 
         gxapi.GXDB.get_name(gdb._db, gxapi.DB_NAME_FILE, gdb._sr)
-        gdb._filename = os.path.normpath(gdb._sr.value)
+        gdb._file_name = os.path.normpath(gdb._sr.value)
 
         return gdb
 
@@ -388,9 +396,31 @@ class Geosoft_gdb:
             self.gxdb.set_xyz_chan(2, z)
 
     @property
+    def metadata(self):
+        """
+        Return the database metadata as a dictionary.  Can be set, in which case
+        the dictionary items passed will be added to, or replace existing metadata.
+
+        .. versionadded:: 9.2
+        """
+        if not self._metadata:
+            self._metadata = {}
+            if self._file_name:
+                xml = self._file_name + '.xml'
+                if os.path.isfile(xml):
+                    with open(xml) as f:
+                        self._metadata = gxu.dict_from_xml(f.read())
+        return self._metadata
+
+    @metadata.setter
+    def metadata(self, meta):
+        self._metadata = gxu.merge_dict(self.metadata, meta)
+        self._metadata_changed = True
+
+    @property
     def file_name(self):
         """Database file name."""
-        return os.path.abspath(self._filename)
+        return os.path.abspath(self._file_name)
 
     @property
     def coordinate_system(self):

@@ -506,6 +506,28 @@ class Grid:
         return self._img
 
     @property
+    def metadata(self):
+        """
+        Return the grid metadata as a dictionary.  Can be set, in which case
+        the dictionary items passed will be added to, or replace existing metadata.
+
+        .. versionadded:: 9.2
+        """
+        if not self._metadata:
+            self._metadata = {}
+            if self._file_name:
+                xml = self._file_name + '.xml'
+                if os.path.isfile(xml):
+                    with open(xml) as f:
+                        self._metadata = gxu.dict_from_xml(f.read())
+        return self._metadata
+
+    @metadata.setter
+    def metadata(self, meta):
+        self._metadata = gxu.merge_dict(self.metadata, meta)
+        self._metadata_changed = True
+
+    @property
     def dtype(self):
         """
         numpy data type for the grid
@@ -919,39 +941,6 @@ class Grid:
                 xyzv[i, :, 3] = gxu.dummy_to_nan(self.read_row(i).np)
 
         return xyzv
-
-    @property
-    def metadata(self):
-        """
-        Return the grid metadata as a dictionary.
-        
-        .. versionadded:: 9.2
-        """
-        if not self._metadata:
-            self._metadata = {}
-            if self._file_name:
-                xml = self._file_name + '.xml'
-                if os.path.isfile(xml):
-                    with open(xml) as f:
-                        self._metadata = gxu.dict_from_xml(f.read())
-        return self._metadata
-
-    @metadata.setter
-    def metadata(self, meta):
-
-        def update(old, new):
-            for k, v in new.items():
-                if not k in old:
-                    old[k] = v
-                else:
-                    if isinstance(v, dict):
-                         update(old[k], v)
-                    else:
-                        old[k] = v
-
-        update(self._metadata, meta)
-        self._metadata_changed = True
-
 
 # grid utilities
 def array_locations(properties):

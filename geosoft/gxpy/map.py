@@ -258,6 +258,8 @@ class Map:
         self._name = os.path.splitext(os.path.split(self._file_name)[1])[0]
         self._annotation_outer_edge = 0.0
         self.gxmap = gxapi.GXMAP.create(self.file_name, mode)
+        self._metadata = None
+        self._metadata_changed = False
 
         self._open = gx.track_resource(self.__class__.__name__, self._file_name)
 
@@ -265,11 +267,12 @@ class Map:
         if self._open:
             if self.gxmap:
 
-                if not self._remove:
-                    pass
-                    # self.gxmap.clean()
-
                 self.gxmap = None
+
+                if self._metadata_changed:
+                    with open(self._file_name + '.xml', 'w+') as f:
+                        f.write(gxu.xml_from_dict(self._metadata, root=None))
+                    gxapi.GXMAP.sync(self._file_name)
 
                 if self._remove:
                     try:
@@ -478,6 +481,28 @@ class Map:
         full map file path name.
         """
         return self._file_name
+
+    @property
+    def metadata(self):
+        """
+        Return the map metadata as a dictionary.  Can be set, in which case
+        the dictionary items passed will be added to, or replace existing metadata.
+
+        .. versionadded:: 9.2
+        """
+        if not self._metadata:
+            self._metadata = {}
+            if self._file_name:
+                xml = self._file_name + '.xml'
+                if os.path.isfile(xml):
+                    with open(xml) as f:
+                        self._metadata = gxu.dict_from_xml(f.read())
+        return self._metadata
+
+    @metadata.setter
+    def metadata(self, meta):
+        self._metadata = gxu.merge_dict(self.metadata, meta)
+        self._metadata_changed = True
 
     @property
     def current_data_view(self):

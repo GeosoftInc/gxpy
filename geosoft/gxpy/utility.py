@@ -180,7 +180,7 @@ def dict_from_xml(xml, root='gx_xml', tuple_tag='i'):
     
     Tag attributes will become keys with '@' as the first character, and the key value will be the attribute setting.
     
-    For example XML string:
+    For example, XML string:
     
     .. code::
     
@@ -239,6 +239,31 @@ def dict_from_xml(xml, root='gx_xml', tuple_tag='i'):
 
     return d
 
+def merge_dict(d, d2):
+    """
+    Update a dictionary by adding key-values from second dictionary.  Unlike Python's 
+    update(), this adds new keys to nested dictionaries rather than replace everything
+    in a nested dictionary.
+    
+    :param d:   dictionary to update
+    :param d2:  new items to add or replace
+    :return:    merged dictionary
+    
+    .. versionadded:: 9.2
+    """
+
+    def update(old, new):
+        for k, v in new.items():
+            if not k in old:
+                old[k] = v
+            else:
+                if isinstance(v, dict):
+                    update(old[k], v)
+                else:
+                    old[k] = v
+
+    update(d, d2)
+    return d
 
 def time_stamp():
     """current date-time as a string."""

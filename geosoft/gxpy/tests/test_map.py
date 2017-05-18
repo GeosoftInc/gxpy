@@ -608,5 +608,36 @@ class Test(GXPYTest):
             self.assertEqual(mdf[0], (36.39513677811551, 39.99513677811551, 3.0, 24.395136778115507, 21.99513677811551, 2.0))
             self.assertEqual(mdf[1], (10000.0, 1.0, 0.0, 0.0))
 
+    def test_metadata(self):
+        self.start()
+
+        testmap = os.path.join(self.gx.temp_folder(), "test")
+        with gxmap.Map.new(testmap, overwrite=True) as gmap:
+
+            gmap.delete_view('data')
+            gxv.View(gmap, "my_data_1", map_location=(2, 3), area=(0, 0, 1000, 1500), scale=10000).close()
+            gxv.View(gmap, "my_data_2", map_location=(15, 3), area=(0, 0, 1000, 1500), scale=10000).close()
+
+            m = gmap.metadata
+            self.assertTrue('gmd:MD_Metadata' in m)
+            gm = m['gmd:MD_Metadata']['geosoft']
+            self.assertEqual(len(gm), 2)
+            self.assertTrue('dataset' in gm)
+
+            newstuff = {'gmd:MD_Metadata': {'maki': {'a': 1, 'b': (4, 5, 6), 'units': 'nT'}}}
+            gmap.metadata = newstuff
+
+        with gxmap.Map.open(testmap) as gmap:
+            m = gmap.metadata
+
+            gm = m['gmd:MD_Metadata']['geosoft']
+            self.assertEqual(len(gm), 2)
+            self.assertTrue('dataset' in gm)
+
+            maki = m['gmd:MD_Metadata']['maki']
+            self.assertEqual(maki['b'], ('4', '5', '6'))
+            self.assertEqual(maki['units'], 'nT')
+
+
 if __name__ == '__main__':
     unittest.main()
