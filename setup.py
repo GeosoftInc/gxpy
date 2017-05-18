@@ -29,7 +29,7 @@ for f in glob("geosoft/*.pyd"):
         raise Exception("An application is using a file we need to change: \n {}".format(str(e)))
 
 
-dependencies = ['numpy>=1.11', 'pandas', 'pyyaml']
+dependencies = ['numpy>=1.11', 'pandas', 'xmltodict']
 if 'bdist_wheel' in sys.argv:
     # Have to specify python-tag to specify which module
     for arg in sys.argv:
