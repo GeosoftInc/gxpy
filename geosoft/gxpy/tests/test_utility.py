@@ -396,6 +396,19 @@ class Test(GXPYTest):
         self.assertEqual(dxml['more']['c'], ('1', '2'))
         self.assertEqual(dxml['more']['d'], ('1', '2', 'txt'))
 
+        xml = '<?xml version="1.0" encoding="UTF-8"?>\
+                <gmd:MD_Metadata xsi:schemaLocation="http://www.isotc211.org/2005/gmd ../schemas/iso19139fra/gmd/gmd.xsd">\
+                    <geosoft xmlns="http://www.geosoft.com/schema/geo">\
+                        <dataset version="1" beta="abc">\
+                            <title>test_grid_1</title>\
+                            <file_format>Geosoft Grid</file_format>\
+                        </dataset>\
+                    </geosoft>\
+                </gmd:MD_Metadata>'
+        d = gxu.dict_from_xml(xml)
+        self.assertEqual(d['gmd:MD_Metadata']['geosoft']['dataset']['@version'], "1")
+        xml = gxu.xml_from_dict(d)
+        self.assertTrue('<dataset beta="abc" version="1">' in xml)
 
 if __name__ == '__main__':
 

@@ -138,9 +138,12 @@ def xml_from_dict(d, root='gx_xml'):
 
     def buildxml(r, d):
         if isinstance(d, dict):
+            for k in d:
+                if k[0] == '@':
+                    r.set(k[1:], d[k])
             for k, v in d.items():
-                s = SubElement(r, k.replace(' ', '_'))
-                buildxml(s, v)
+                if k[0] != '@':
+                    buildxml(SubElement(r, k.replace(' ', '_')), v)
         elif isinstance(d, tuple) or isinstance(d, list):
             for v in d:
                 s = SubElement(r, 'i')
@@ -173,7 +176,48 @@ def dict_from_xml(xml, root='gx_xml', tuple_tag='i'):
                         replaced by a tuple, which reverses the expansion of lists and tuples in a dictionary
                         into an XML list as in :func:`xml_from_dict`.                    
                       
-    :return: 
+    :returns: dictionary of the XML content.
+    
+    Tag attributes will become keys with '@' as the first character, and the key value will be the attribute setting.
+    
+    For example XML string:
+    
+    .. code::
+    
+        <?xml version="1.0" encoding="UTF-8"?>
+        <gmd:MD_Metadata xsi:schemaLocation="http://www.isotc211.org/2005/gmd ../schemas/iso19139fra/gmd/gmd.xsd">
+            <geosoft xmlns="http://www.geosoft.com/schema/geo">
+                <dataset version="1" beta="abc">
+                    <title>test_grid_1</title>
+                    <file_format>Geosoft Grid</file_format>
+                </dataset>
+            </geosoft>
+        </gmd:MD_Metadata>
+        
+    returns dictionary:
+    
+    .. code::
+    
+        {'gmd:MD_Metadata': {
+            '@xsi:schemaLocation': "http://www.isotc211.org/2005/gmd ../schemas/iso19139fra/gmd/gmd.xsd",
+            'geosoft': {
+                '@xmlns': "http://www.geosoft.com/schema/geo",
+                'dataset': {
+                    '@beta': "abc",
+                    '@version': "1",
+                    'title': "test_grid_1",
+                    'file_format': "Geosoft Grid"
+                    }
+                }
+            }
+        }
+        
+    .. seealso::
+    
+        :func:`xml_from_dict` 
+        `Geosoft metadata schema <https://geosoftgxdev.atlassian.net/wiki/display/GXDEV92/Geosoft+Metadata+Schema>`_     
+        
+    .. versionadded:: 9.2
     """
 
     def reduce_tuples(dd, tag):

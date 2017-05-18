@@ -138,7 +138,7 @@ class Test(GXPYTest):
             self.assertEqual(str(properties.get('coordinate_system')),'NAD27 / UTM zone 18N')
             self.assertEqual(properties.get('dtype'),np.int16)
 
-            m = grd.get_metadata()
+            m = grd.metadata
             self.assertFalse(bool(m))
 
     def test_mosaic(self):
@@ -551,12 +551,22 @@ class Test(GXPYTest):
         self.start()
 
         with gxgrd.Grid.open(self.g1f) as g:
-            m = g.get_metadata()
+            m = g.metadata
             self.assertTrue('gmd:MD_Metadata' in m)
             gm = m['gmd:MD_Metadata']['geosoft']
             self.assertEqual(len(gm), 2)
             self.assertTrue('dataset' in gm)
             self.assertTrue('georeference' in gm['dataset'])
+
+            newstuff = {'gmd:MD_Metadata':{'maki':{'a':1, 'b':(4, 5, 6), 'units': 'nT'}}}
+            g.metadata = newstuff
+
+        with gxgrd.Grid.open(self.g1f) as g:
+            m = g.metadata
+            maki = m['gmd:MD_Metadata']['maki']
+            self.assertEqual(maki['b'], ('4', '5', '6'))
+            self.assertEqual(maki['units'], 'nT')
+
 
 
 ###############################################################################################

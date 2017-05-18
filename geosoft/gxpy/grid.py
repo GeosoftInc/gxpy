@@ -185,6 +185,7 @@ class Grid:
 
                 self._img = None
                 delete_files(self._file_name)
+                self._metadata_changed = False
 
             elif self._hgd:
                 # an HGD memory grid was made, save it to an HGD file
@@ -192,6 +193,12 @@ class Grid:
 
             self._hpg = None
             self._img = None
+
+            if self._metadata_changed:
+                with open(self._file_name + '.xml', 'w+') as f:
+                    f.write(gxu.xml_from_dict(self._metadata, root=None))
+                gxapi.GXIMG.sync(self._file_name)
+
             if pop:
                 gx.pop_resource(self._open)
             self._open = None
@@ -230,6 +237,8 @@ class Grid:
                 if ext.lower() == '.hgd':
                     self._hgd = True
 
+        self._metadata = None
+        self._metadata_changed = False
         self._img = None
         gxtype = gxu.gx_dtype(dtype)
         if (self._file_name is None):
@@ -911,18 +920,38 @@ class Grid:
 
         return xyzv
 
-    def get_metadata(self):
+    @property
+    def metadata(self):
         """
         Return the grid metadata as a dictionary.
         
         .. versionadded:: 9.2
         """
-        if self._file_name:
-            xml = self._file_name + '.xml'
-            if os.path.isfile(xml):
-                with open(xml) as f:
-                    return gxu.dict_from_xml(f.read())
-        return {}
+        if not self._metadata:
+            self._metadata = {}
+            if self._file_name:
+                xml = self._file_name + '.xml'
+                if os.path.isfile(xml):
+                    with open(xml) as f:
+                        self._metadata = gxu.dict_from_xml(f.read())
+        return self._metadata
+
+    @metadata.setter
+    def metadata(self, meta):
+
+        def update(old, new):
+            for k, v in new.items():
+                if not k in old:
+                    old[k] = v
+                else:
+                    if isinstance(v, dict):
+                         update(old[k], v)
+                    else:
+                        old[k] = v
+
+        update(self._metadata, meta)
+        self._metadata_changed = True
+
 
 # grid utilities
 def array_locations(properties):
