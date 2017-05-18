@@ -911,6 +911,18 @@ class Grid:
 
         return xyzv
 
+    def get_metadata(self):
+        """
+        Return the grid metadata as a dictionary.
+        
+        .. versionadded:: 9.2
+        """
+        if self._file_name:
+            xml = self._file_name + '.xml'
+            if os.path.isfile(xml):
+                with open(xml) as f:
+                    return gxu.dict_from_xml(f.read())
+        return {}
 
 # grid utilities
 def array_locations(properties):

@@ -20,6 +20,9 @@ from ._jdcal.jdcal import is_leap, gcal2jd, jd2gcal
 from distutils.version import StrictVersion
 import numpy as np
 from collections import OrderedDict
+from xml.etree.ElementTree import Element, SubElement, tostring
+import xmltodict
+
 
 import geosoft
 import geosoft.gxapi as gxapi
@@ -119,6 +122,78 @@ def dict_from_lst(lst, ordered=False):
         lst.gt_item(1, item, val)
         dct[key.value] = val.value
     return dct
+
+def xml_from_dict(d, root='gx_xml'):
+    """
+    Return a unicode XML string of a dictionary.
+    
+    :param d: dictionary
+    :param root: name for the root element, '' or None for no root element.  The default is 'gx_xml'
+    
+    .. seealso:: :func:`dict_from_xml`
+    
+    
+    :return: 
+    """
+
+    def buildxml(r, d):
+        if isinstance(d, dict):
+            for k, v in d.items():
+                s = SubElement(r, k.replace(' ', '_'))
+                buildxml(s, v)
+        elif isinstance(d, tuple) or isinstance(d, list):
+            for v in d:
+                s = SubElement(r, 'i')
+                buildxml(s, v)
+        elif isinstance(d, str):
+            r.text = d
+        else:
+            r.text = str(d)
+        return r
+
+    if root:
+        et = buildxml(Element(root.replace(' ', '_')), d)
+    else:
+        if len(d) > 1:
+            raise UtilityException(_t('Dictionary has more than one key.  A root name is required.'))
+        for k, v in d.items():
+            et = buildxml(Element(k.replace(' ', '_')), v)
+
+    return '<?xml version="1.0" encoding="utf-8"?>{}'.format(tostring(et, encoding="utf-8").decode('utf-8'))
+
+
+def dict_from_xml(xml, root='gx_xml', tuple_tag='i'):
+    """
+    Return a dictionary of an xml string.
+    
+    :param xml:         xml string (unicode)
+    :param root:        root name, dictionary above the root is returned.  If the root of the 
+                        xml is not the same as this root, the root and content are returned.
+    :param tuple_tag:   for items that contain a single node named `tuple_tag` the tag and content is
+                        replaced by a tuple, which reverses the expansion of lists and tuples in a dictionary
+                        into an XML list as in :func:`xml_from_dict`.                    
+                      
+    :return: 
+    """
+
+    def reduce_tuples(dd, tag):
+        for k, v in dd.items():
+            if isinstance(v, dict):
+                if (len(v) == 1) and (tag in v):
+                    dd[k] = tuple(v[tag])
+                else:
+                    dd[k] = reduce_tuples(v, tag)
+        return dd
+
+
+    d = xmltodict.parse(xml)
+    if root in d:
+        d = d[root]
+
+    if tuple_tag:
+        d = reduce_tuples(d, tuple_tag)
+
+    return d
 
 
 def time_stamp():

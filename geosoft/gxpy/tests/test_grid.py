@@ -7,7 +7,6 @@ import geosoft.gxpy.gx as gx
 import geosoft.gxpy.system as gsys
 import geosoft.gxpy.coordinate_system as gxcs
 import geosoft.gxpy.grid as gxgrd
-import geosoft.gxpy.utility as gxu
 
 from geosoft.gxpy.tests import GXPYTest
 
@@ -138,6 +137,9 @@ class Test(GXPYTest):
             self.assertEqual(properties.get('ny'),50)
             self.assertEqual(str(properties.get('coordinate_system')),'NAD27 / UTM zone 18N')
             self.assertEqual(properties.get('dtype'),np.int16)
+
+            m = grd.get_metadata()
+            self.assertFalse(bool(m))
 
     def test_mosaic(self):
         self.start()
@@ -544,6 +546,18 @@ class Test(GXPYTest):
         with gxgrd.Grid.open(self.g1f, dtype=int) as g:
             self.assertEqual(g.get_value(7.043, 44.625), 1912.4500000000035)
             self.assertEqual(g.get_value(0,0), None)
+
+    def test_metadata(self):
+        self.start()
+
+        with gxgrd.Grid.open(self.g1f) as g:
+            m = g.get_metadata()
+            self.assertTrue('gmd:MD_Metadata' in m)
+            gm = m['gmd:MD_Metadata']['geosoft']
+            self.assertEqual(len(gm), 2)
+            self.assertTrue('dataset' in gm)
+            self.assertTrue('georeference' in gm['dataset'])
+
 
 ###############################################################################################
 

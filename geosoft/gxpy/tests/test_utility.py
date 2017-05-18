@@ -379,6 +379,24 @@ class Test(GXPYTest):
         self.assertEqual(gxu.str_significant(0.000451, 1, -1), '0.0004')
         self.assertEqual(gxu.str_significant(4510000000.0, 1, -1), '4000000000')
 
+    def test_xml(self):
+        self.start()
+
+        d = {'my_root':{'a':1, 'b':'text_string', 'c':(1, 2), 'd':[1, 2, 'txt']},
+             'more':{'a':1, 'b':'text_string', 'c':(1, 2), 'd':[1, 2, 'txt']}}
+        xml = gxu.xml_from_dict(d)
+        dxml = gxu.dict_from_xml(xml)
+
+        self.assertEqual(len(dxml), 2)
+        self.assertTrue('my_root' in dxml)
+        self.assertEqual(dxml['my_root']['b'], 'text_string')
+        self.assertEqual(dxml['my_root']['c'], ('1', '2'))
+        self.assertEqual(dxml['my_root']['d'], ('1', '2', 'txt'))
+        self.assertEqual(dxml['more']['b'], 'text_string')
+        self.assertEqual(dxml['more']['c'], ('1', '2'))
+        self.assertEqual(dxml['more']['d'], ('1', '2', 'txt'))
+
+
 if __name__ == '__main__':
 
     unittest.main()
