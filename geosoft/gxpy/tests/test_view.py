@@ -311,6 +311,56 @@ class Test(GXPYTest):
             if v3d_file:
                 gxmap.delete_files(v3d_file)
 
+    def test_metadata(self):
+        self.start()
+
+        testmap = os.path.join(self.gx.temp_folder(), "test")
+        with gxmap.Map.new(testmap) as gmap:
+            with gxv.View(gmap, "test", area=(100, 500, 15100, 10500), scale=(50000, 10000),
+                            map_location=(10, 25)) as vw:
+                m = vw.metadata
+                self.assertTrue('gmd:MD_Metadata' in m)
+                gm = m['gmd:MD_Metadata']['geosoft']
+                self.assertEqual(len(gm), 2)
+                self.assertTrue('dataset' in gm)
+
+                newstuff = {'gmd:MD_Metadata': {'maki': {'a': 1, 'b': (4, 5, 6), 'units': 'nT'}}}
+                vw.metadata = newstuff
+
+        with gxmap.Map.open(testmap) as gmap:
+            with gxv.View(gmap, "test") as vw:
+                m = vw.metadata
+
+                gm = m['gmd:MD_Metadata']['geosoft']
+                self.assertEqual(len(gm), 2)
+                self.assertTrue('dataset' in gm)
+
+                maki = m['gmd:MD_Metadata']['maki']
+                self.assertEqual(maki['b'], ('4', '5', '6'))
+                self.assertEqual(maki['units'], 'nT')
+
+        with gxv.View_3d.new(testmap, overwrite=True) as vw:
+            m = vw.metadata
+            self.assertTrue('gmd:MD_Metadata' in m)
+            gm = m['gmd:MD_Metadata']['geosoft']
+            self.assertEqual(len(gm), 2)
+            self.assertTrue('dataset' in gm)
+
+            newstuff = {'gmd:MD_Metadata': {'maki': {'a': 1, 'b': (4, 5, 6), 'units': 'nT'}}}
+            vw.metadata = newstuff
+
+        with gxv.View_3d.open(testmap) as vw:
+            m = vw.metadata
+
+            gm = m['gmd:MD_Metadata']['geosoft']
+            self.assertEqual(len(gm), 2)
+            self.assertTrue('dataset' in gm)
+
+            maki = m['gmd:MD_Metadata']['maki']
+            self.assertEqual(maki['b'], ('4', '5', '6'))
+            self.assertEqual(maki['units'], 'nT')
+
+
 if __name__ == '__main__':
 
     unittest.main()

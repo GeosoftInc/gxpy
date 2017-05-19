@@ -174,6 +174,21 @@ class View:
             self._lock = None
 
     @property
+    def metadata(self):
+        """
+        Return the view/map metadata as a dictionary.  Can be set, in which case
+        the dictionary items passed will be added to, or replace existing metadata.
+        All views on a map share the metadata with the map.
+
+        .. versionadded:: 9.2
+        """
+        return self.map.metadata
+
+    @metadata.setter
+    def metadata(self, meta):
+        self.map.metadata = meta
+
+    @property
     def coordinate_system(self):
         """ :class:`geosoft.gxpy.coordinate_system.Coordinate_system` instance of the view."""
         return self._cs
@@ -550,7 +565,6 @@ class View_3d(View):
                           mode=mode,
                           _internal=True)
         super().__init__(map, '3D', **kwargs)
-
 
     @classmethod
     def new(cls, file_name=None, area_2d=None, overwrite=False, **kwargs):
