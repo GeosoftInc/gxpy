@@ -1170,7 +1170,10 @@ def legend_color_bar(view,
         gxapi.GXMVU.color_bar_reg(view.gxview, itr, itr2, gxu.reg_from_dict(cdict, 100, json_encode=False))
 
         if title is None:
-            title = cmap.title
+            if cmap.units:
+                title = '{}\n({})'.format(cmap.title, cmap.units)
+            else:
+                title = cmap.title
 
         if title:
 

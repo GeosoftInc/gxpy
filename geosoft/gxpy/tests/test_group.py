@@ -599,9 +599,11 @@ class Test(GXPYTest):
         grid_file = os.path.join(folder, 'test_agg_utm.grd')
         map_file = os.path.join(self.gx.temp_folder(), "test_agg_utm")
 
-        with gxgrd.Grid(grid_file) as grd:
+        with gxgrd.Grid.open(grid_file) as grd:
             cs = grd.coordinate_system
             area = grd.extent_2d()
+            grd.unit_of_measure = 'maki'
+
         with gxmap.Map.new(map_file, fixed_size=False,
                              data_area=area, media="A4", margins=(2, 10, 2, 1),
                              coordinate_system=cs, overwrite=True) as gmap:

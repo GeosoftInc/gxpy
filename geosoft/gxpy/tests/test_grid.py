@@ -565,6 +565,18 @@ class Test(GXPYTest):
             self.assertEqual(maki['b'], ['4', '5', '6'])
             self.assertEqual(maki['units'], 'nT')
 
+    def test_units_of_measure(self):
+        self.start()
+
+        with gxgrd.Grid.open(self.g1f) as g:
+
+            uom = g.unit_of_measure
+            self.assertEqual(uom, 'm')
+            g.unit_of_measure = 'metres'
+
+        with gxgrd.Grid.open(self.g1f) as g:
+            uom = g.unit_of_measure
+            self.assertEqual(uom, 'metres')
 
 
 ###############################################################################################

@@ -532,6 +532,24 @@ class Grid:
         self._metadata_changed = True
 
     @property
+    def unit_of_measure(self):
+        """
+        Units of measurement (a string) for the grid data, can be set.
+        
+        .. versionadded:: 9.2
+        """
+        try:
+            uom = self.metadata['geosoft']['dataset']['geo:unitofmeasurement']['#text']
+        except:
+            uom = ''
+        return uom
+
+    @unit_of_measure.setter
+    def unit_of_measure(self, uom):
+        self.metadata = {'geosoft': {'dataset': {'geo:unitofmeasurement': {'#text': str(uom)}}}}
+        self.metadata = {'geosoft': {'dataset': {'geo:unitofmeasurement': {'@xmlns:geo': 'http://www.geosoft.com/schema/geo'}}}}
+
+    @property
     def dtype(self):
         """
         numpy data type for the grid

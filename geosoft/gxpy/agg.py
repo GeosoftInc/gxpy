@@ -23,6 +23,7 @@ import os
 import geosoft
 import geosoft.gxapi as gxapi
 from . import vv as gxvv
+from . import grid as gxgrd
 
 __version__ = geosoft.__version__
 
@@ -217,7 +218,7 @@ class Aggregate_image:
                 color_map = 'lgray.tbl'
         if (color_map is None) or (isinstance(color_map, str)):
             color_map = geosoft.gxpy.group.Color_map(color_map)
-        color_map = color_map.save_file()
+        color_map_file = color_map.save_file()
 
         try:
             if grid_file is not None:
@@ -231,15 +232,17 @@ class Aggregate_image:
                     contour = gxapi.rDUMMY
                 self.gxagg.layer_img_ex(grid_file,
                                         zone,
-                                        color_map,
+                                        color_map_file,
                                         minimum,
                                         maximum,
                                         contour)
                 if shade and (zone != ZONE_SHADE):
                     self.gxagg.layer_img(grid_file, ZONE_SHADE, 'lgray.tbl', gxapi.rDUMMY)
         finally:
-            if os.path.exists(color_map):
-                os.remove(color_map)
+            if os.path.exists(color_map_file):
+                os.remove(color_map_file)
+            with gxgrd.Grid.open(grid_file) as g:
+                color_map.units = g.unit_of_measure
 
     def layer_color_map(self, layer=0):
         """
@@ -273,5 +276,8 @@ class Aggregate_image:
         self.gxagg.get_layer_itr(layer, itr)
         cmap = geosoft.gxpy.group.Color_map(itr)
         cmap.title = os.path.basename(self.layer_file_names[layer]).split('.')[0]
+
+        with gxgrd.Grid.open(self.layer_file_names[layer]) as g:
+            cmap.units = g.unit_of_measure
 
         return cmap
