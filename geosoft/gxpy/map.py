@@ -260,6 +260,7 @@ class Map:
         self.gxmap = gxapi.GXMAP.create(self.file_name, mode)
         self._metadata = None
         self._metadata_changed = False
+        self._metadata_root = ''
 
         self._open = gx.track_resource(self.__class__.__name__, self._file_name)
 
@@ -271,7 +272,7 @@ class Map:
 
                 if self._metadata_changed:
                     with open(self._file_name + '.xml', 'w+') as f:
-                        f.write(gxu.xml_from_dict(self._metadata, root=None))
+                        f.write(gxu.xml_from_dict(self._metadata))
                     gxapi.GXMAP.sync(self._file_name)
 
                 if self._remove:
@@ -482,6 +483,11 @@ class Map:
         """
         return self._file_name
 
+    def _init_metadata(self):
+        if not self._metadata:
+            self._metadata = gxu.geosoft_metadata(self._file_name)
+        self._metadata_root = tuple(self._metadata.items())[0][0]
+
     @property
     def metadata(self):
         """
@@ -490,18 +496,13 @@ class Map:
 
         .. versionadded:: 9.2
         """
-        if not self._metadata:
-            self._metadata = {}
-            if self._file_name:
-                xml = self._file_name + '.xml'
-                if os.path.isfile(xml):
-                    with open(xml) as f:
-                        self._metadata = gxu.dict_from_xml(f.read())
-        return self._metadata
+        self._init_metadata()
+        return self._metadata[self._metadata_root]
 
     @metadata.setter
     def metadata(self, meta):
-        self._metadata = gxu.merge_dict(self.metadata, meta)
+        self._init_metadata()
+        self._metadata[self._metadata_root] = gxu.merge_dict(self._metadata[self._metadata_root], meta)
         self._metadata_changed = True
 
     @property

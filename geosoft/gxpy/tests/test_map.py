@@ -619,22 +619,21 @@ class Test(GXPYTest):
             gxv.View(gmap, "my_data_2", map_location=(15, 3), area=(0, 0, 1000, 1500), scale=10000).close()
 
             m = gmap.metadata
-            self.assertTrue('gmd:MD_Metadata' in m)
-            gm = m['gmd:MD_Metadata']['geosoft']
+            gm = m['geosoft']
             self.assertEqual(len(gm), 2)
             self.assertTrue('dataset' in gm)
 
-            newstuff = {'gmd:MD_Metadata': {'maki': {'a': 1, 'b': (4, 5, 6), 'units': 'nT'}}}
+            newstuff = {'maki': {'a': 1, 'b': (4, 5, 6), 'units': 'nT'}}
             gmap.metadata = newstuff
 
         with gxmap.Map.open(testmap) as gmap:
             m = gmap.metadata
 
-            gm = m['gmd:MD_Metadata']['geosoft']
+            gm = m['geosoft']
             self.assertEqual(len(gm), 2)
             self.assertTrue('dataset' in gm)
 
-            maki = m['gmd:MD_Metadata']['maki']
+            maki = m['maki']
             self.assertEqual(maki['b'], ('4', '5', '6'))
             self.assertEqual(maki['units'], 'nT')
 

@@ -123,16 +123,18 @@ def dict_from_lst(lst, ordered=False):
         dct[key.value] = val.value
     return dct
 
-def xml_from_dict(d, root='gx_xml'):
+def xml_from_dict(d):
     """
     Return a unicode XML string of a dictionary.
     
     :param d: dictionary
-    :param root: name for the root element, '' or None for no root element.  The default is 'gx_xml'
+
+    If the dictionary does not have a single node root, the root XML will be '__gx_xml__'.
+    
+    Lists and tuple values are expanded into XML lists with tag 'i'.
     
     .. seealso:: :func:`dict_from_xml`
-    
-    
+     
     :return: 
     """
 
@@ -154,29 +156,29 @@ def xml_from_dict(d, root='gx_xml'):
             r.text = str(d)
         return r
 
-    if root:
-        et = buildxml(Element(root.replace(' ', '_')), d)
+    if not d:
+        raise UtilityException(_t('Cannot create XML from an empty dictionary.'))
+    if len(d) > 1:
+        et = buildxml(Element('__gx_xml__'), d)
     else:
-        if len(d) > 1:
-            raise UtilityException(_t('Dictionary has more than one key.  A root name is required.'))
         for k, v in d.items():
             et = buildxml(Element(k.replace(' ', '_')), v)
 
     return '<?xml version="1.0" encoding="utf-8"?>{}'.format(tostring(et, encoding="utf-8").decode('utf-8'))
 
 
-def dict_from_xml(xml, root='gx_xml', tuple_tag='i'):
+def dict_from_xml(xml, tuple_tag='i'):
     """
     Return a dictionary of an xml string.
     
     :param xml:         xml string (unicode)
-    :param root:        root name, dictionary above the root is returned.  If the root of the 
-                        xml is not the same as this root, the root and content are returned.
     :param tuple_tag:   for items that contain a single node named `tuple_tag` the tag and content is
                         replaced by a tuple, which reverses the expansion of lists and tuples in a dictionary
                         into an XML list as in :func:`xml_from_dict`.                    
                       
     :returns: dictionary of the XML content.
+    
+    If the XML root is '__gx_xml__', the root is stripped.
     
     Tag attributes will become keys with '@' as the first character, and the key value will be the attribute setting.
     
@@ -215,7 +217,6 @@ def dict_from_xml(xml, root='gx_xml', tuple_tag='i'):
     .. seealso::
     
         :func:`xml_from_dict` 
-        `Geosoft metadata schema <https://geosoftgxdev.atlassian.net/wiki/display/GXDEV92/Geosoft+Metadata+Schema>`_     
         
     .. versionadded:: 9.2
     """
@@ -231,8 +232,10 @@ def dict_from_xml(xml, root='gx_xml', tuple_tag='i'):
 
 
     d = xmltodict.parse(xml)
-    if root in d:
-        d = d[root]
+
+    #strip the generic dictionary root
+    if '__gx_xml__' in d:
+        d = d['__gx_xml__']
 
     if tuple_tag:
         d = reduce_tuples(d, tuple_tag)
@@ -264,6 +267,27 @@ def merge_dict(d, d2):
 
     update(d, d2)
     return d
+
+def geosoft_metadata(geosoft_file_name):
+    """
+    Get the metadata dictionary for a geosoft data file.
+    
+    :param geosoft_file_name:   geosoft supported file name
+    :returns:                   dictionary of the metadata
+    
+    If the metadata for the file does not exist  {'metadata': {}} is returned.
+    
+    .. versionadded:: 9.2
+    """
+    metadata = None
+    if geosoft_file_name:
+        xml = geosoft_file_name + '.xml'
+        if os.path.isfile(xml):
+            with open(xml) as f:
+                metadata = dict_from_xml(f.read())
+    if metadata:
+        return metadata
+    return {'metadata': {}}
 
 def time_stamp():
     """current date-time as a string."""
