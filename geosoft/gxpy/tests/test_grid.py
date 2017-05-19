@@ -553,7 +553,6 @@ class Test(GXPYTest):
         with gxgrd.Grid.open(self.g1f) as g:
             m = g.metadata
             gm = m['geosoft']
-            self.assertEqual(len(gm), 2)
             self.assertTrue('dataset' in gm)
             self.assertTrue('georeference' in gm['dataset'])
 
@@ -563,7 +562,7 @@ class Test(GXPYTest):
         with gxgrd.Grid.open(self.g1f) as g:
             m = g.metadata
             maki = m['maki']
-            self.assertEqual(maki['b'], ('4', '5', '6'))
+            self.assertEqual(maki['b'], ['4', '5', '6'])
             self.assertEqual(maki['units'], 'nT')
 
 

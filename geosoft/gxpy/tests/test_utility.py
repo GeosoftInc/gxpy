@@ -6,6 +6,7 @@ from datetime import timezone, datetime
 
 import geosoft
 import geosoft.gxapi as gxapi
+import geosoft.gxpy.gx as gx
 import geosoft.gxpy.system as gsys
 import geosoft.gxpy.utility as gxu
 
@@ -384,17 +385,17 @@ class Test(GXPYTest):
 
         d = {'my_root':{'a':1, 'b':'text_string', 'c':(1, 2), 'd':[1, 2, 'txt']},
              'more':{'a':1, 'b':'text_string', 'c':(1, 2), 'd':[1, 2, 'txt']}}
-        xml = gxu.xml_from_dict(d)
+        xml = gxu.xml_from_dict(d, pretty=True)
         dxml = gxu.dict_from_xml(xml)
 
         self.assertEqual(len(dxml), 2)
         self.assertTrue('my_root' in dxml)
         self.assertEqual(dxml['my_root']['b'], 'text_string')
-        self.assertEqual(dxml['my_root']['c'], ('1', '2'))
-        self.assertEqual(dxml['my_root']['d'], ('1', '2', 'txt'))
+        self.assertEqual(dxml['my_root']['c'], ['1', '2'])
+        self.assertEqual(dxml['my_root']['d'], ['1', '2', 'txt'])
         self.assertEqual(dxml['more']['b'], 'text_string')
-        self.assertEqual(dxml['more']['c'], ('1', '2'))
-        self.assertEqual(dxml['more']['d'], ('1', '2', 'txt'))
+        self.assertEqual(dxml['more']['c'], ['1', '2'])
+        self.assertEqual(dxml['more']['d'], ['1', '2', 'txt'])
 
         xml = '<?xml version="1.0" encoding="UTF-8"?>\
                 <gmd:MD_Metadata xsi:schemaLocation="http://www.isotc211.org/2005/gmd ../schemas/iso19139fra/gmd/gmd.xsd">\
@@ -407,8 +408,17 @@ class Test(GXPYTest):
                 </gmd:MD_Metadata>'
         d = gxu.dict_from_xml(xml)
         self.assertEqual(d['gmd:MD_Metadata']['geosoft']['dataset']['@version'], "1")
-        xml = gxu.xml_from_dict(d)
-        self.assertTrue('<dataset beta="abc" version="1">' in xml)
+        xml = gxu.xml_from_dict(d, pretty=True)
+        self.assertTrue('<dataset ' in xml)
+
+        folder, files = gsys.unzip(os.path.join(os.path.dirname(__file__), 'testgrids.zip'),
+                                       folder=gx.gx.temp_folder())
+        gxml = os.path.join(folder, 'test_grid_1.grd.xml')
+        with open(gxml) as f:
+            m = gxu.dict_from_xml(f.read())
+        xml = gxu.xml_from_dict(m, pretty=True)
+        m2 = gxu.dict_from_xml(xml)
+        self.assertEqual(m2['gmd:MD_Metadata']['idinfo']['status']['update'], 'None planned')
 
 if __name__ == '__main__':
 

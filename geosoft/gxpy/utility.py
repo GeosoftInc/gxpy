@@ -20,9 +20,7 @@ from ._jdcal.jdcal import is_leap, gcal2jd, jd2gcal
 from distutils.version import StrictVersion
 import numpy as np
 from collections import OrderedDict
-from xml.etree.ElementTree import Element, SubElement, tostring
 import xmltodict
-
 
 import geosoft
 import geosoft.gxapi as gxapi
@@ -123,62 +121,40 @@ def dict_from_lst(lst, ordered=False):
         dct[key.value] = val.value
     return dct
 
-def xml_from_dict(d):
+def xml_from_dict(d, pretty=False):
     """
     Return a unicode XML string of a dictionary.
     
     :param d: dictionary
+    :param pretty: True to indent with line-feeds for pretty-printing
 
     If the dictionary does not have a single node root, the root XML will be '__gx_xml__'.
     
-    Lists and tuple values are expanded into XML lists with tag 'i'.
+    Based on: https://github.com/martinblech/xmltodict
     
     .. seealso:: :func:`dict_from_xml`
      
-    :return: 
+    .. versionadded:: 9.2
     """
-
-    def buildxml(r, d):
-        if isinstance(d, dict):
-            for k in d:
-                if k[0] == '@':
-                    r.set(k[1:], d[k])
-            for k, v in d.items():
-                if k[0] != '@':
-                    buildxml(SubElement(r, k.replace(' ', '_')), v)
-        elif isinstance(d, tuple) or isinstance(d, list):
-            for v in d:
-                s = SubElement(r, 'i')
-                buildxml(s, v)
-        elif isinstance(d, str):
-            r.text = d
-        else:
-            r.text = str(d)
-        return r
 
     if not d:
         raise UtilityException(_t('Cannot create XML from an empty dictionary.'))
     if len(d) > 1:
-        et = buildxml(Element('__gx_xml__'), d)
-    else:
-        for k, v in d.items():
-            et = buildxml(Element(k.replace(' ', '_')), v)
+        d = {'__gx_xml__': d}
 
-    return '<?xml version="1.0" encoding="utf-8"?>{}'.format(tostring(et, encoding="utf-8").decode('utf-8'))
+    xml = xmltodict.unparse(d, pretty=pretty)
+    return xml
 
-
-def dict_from_xml(xml, tuple_tag='i'):
+def dict_from_xml(xml):
     """
     Return a dictionary of an xml string.
     
-    :param xml:         xml string (unicode)
-    :param tuple_tag:   for items that contain a single node named `tuple_tag` the tag and content is
-                        replaced by a tuple, which reverses the expansion of lists and tuples in a dictionary
-                        into an XML list as in :func:`xml_from_dict`.                    
-                      
-    :returns: dictionary of the XML content.
+    :param xml: xml string              
+    :returns:   dictionary of the XML content.
     
     If the XML root is '__gx_xml__', the root is stripped.
+    
+    Based on: https://github.com/martinblech/xmltodict
     
     Tag attributes will become keys with '@' as the first character, and the key value will be the attribute setting.
     
@@ -214,31 +190,16 @@ def dict_from_xml(xml, tuple_tag='i'):
             }
         }
         
-    .. seealso::
-    
-        :func:`xml_from_dict` 
+    .. seealso:: :func:`xml_from_dict` 
         
     .. versionadded:: 9.2
     """
-
-    def reduce_tuples(dd, tag):
-        for k, v in dd.items():
-            if isinstance(v, dict):
-                if (len(v) == 1) and (tag in v):
-                    dd[k] = tuple(v[tag])
-                else:
-                    dd[k] = reduce_tuples(v, tag)
-        return dd
-
 
     d = xmltodict.parse(xml)
 
     #strip the generic dictionary root
     if '__gx_xml__' in d:
         d = d['__gx_xml__']
-
-    if tuple_tag:
-        d = reduce_tuples(d, tuple_tag)
 
     return d
 
@@ -1114,3 +1075,10 @@ def str_significant(value, n, mode=0):
         vstr = str(math.floor(v))
 
     return str(decimal.Decimal(vstr) * mult * (10 ** decimal.Decimal(power - n)))
+
+class Property_tree:
+    """
+    Class to work with property trees, supporting serialization to things
+    like XML.
+    
+    """

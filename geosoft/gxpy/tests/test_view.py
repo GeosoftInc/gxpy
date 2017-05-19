@@ -335,7 +335,7 @@ class Test(GXPYTest):
                 self.assertTrue('dataset' in gm)
 
                 maki = m['maki']
-                self.assertEqual(maki['b'], ('4', '5', '6'))
+                self.assertEqual(maki['b'], ['4', '5', '6'])
                 self.assertEqual(maki['units'], 'nT')
 
         with gxv.View_3d.new(testmap, overwrite=True) as vw:
@@ -355,7 +355,7 @@ class Test(GXPYTest):
             self.assertTrue('dataset' in gm)
 
             maki = m['maki']
-            self.assertEqual(maki['b'], ('4', '5', '6'))
+            self.assertEqual(maki['b'], ['4', '5', '6'])
             self.assertEqual(maki['units'], 'nT')
 
 

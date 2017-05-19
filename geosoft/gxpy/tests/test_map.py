@@ -634,7 +634,7 @@ class Test(GXPYTest):
             self.assertTrue('dataset' in gm)
 
             maki = m['maki']
-            self.assertEqual(maki['b'], ('4', '5', '6'))
+            self.assertEqual(maki['b'], ['4', '5', '6'])
             self.assertEqual(maki['units'], 'nT')
 
 
