@@ -80,7 +80,7 @@ setup(
     install_requires=dependencies,
     packages=[
         'geosoft',
-        'geosoft.gxpy'
+        'geosoft.gxpy',
         'geosoft.gxpy._jdcal'
     ],
     package_data={ 'geosoft': ['geosoft.key', 'gxapi.pyd', '*.dll', '*.json', '*.zip'] },
