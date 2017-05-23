@@ -10,24 +10,24 @@ The GXContext class
 
 Before calling any other API function from a stand-alone script (a script that is not run as an extension from
 Geosoft Desktop), a GX Context must be created and held.  This can be done by creating an instance of
-coordinate_system=:class:`.gxapi.GXContext` or an instance of coordinate_system=:class:`.gxpy.gx.GXpy` which handles the details of
-``GXContext`` for you.  We recommend using coordinate_system=:class:`.gxpy.gx.GXpy` unless you have chosen to work only with the
-low-level :py:mod:`gxapi`.
+:class:`geosoft.gxapi.GXContext` or an instance of :class:`geosoft.gxpy.gx.GXpy`, which handles the details of
+``GXContext`` for you.  We recommend using :class:`geosoft.gxpy.gx.GXpy` unless you have chosen to work only with
+the low-level :mod:`geosoft.gxapi`.  Note that the low-level module :mod:`geosoft.gxapi`, although more complex,
+is more consistent across versions.
 
-Creating a GX context requires **Geosoft Desktop** installed on the target system, from which the
-library dll's are located and loaded. **Geosoft Desktop** can be downloaded from
+Creating a GX context requires any version of **Geosoft Desktop** to be installed on the target system, from which
+the library dll's are located and loaded. **Geosoft Desktop** can be downloaded from
 `Geosoft Downloads <https://my.geosoft.com/downloads>`_.
 
-It is possible to redirect the location of dlls used by setting the
-**GX_GEOSOFT_BIN_PATH** environment variable to point to the location of the Geosoft binary files.
-Refer to the `GX Developer Guide <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/overview>`_ for more
+It is possible to redirect the location of dlls used by setting the **GX_GEOSOFT_BIN_PATH** environment variable
+to reference the location of the Geosoft binary files.  Refer to the
+`GX Developer Guide <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/overview>`_ for more
 information.
 
 .. autoclass:: geosoft.gxapi.GXContext
    :members:
 
 _sources/config.rst.txt
-
 
 
 Helper classes to pass immutable values by reference

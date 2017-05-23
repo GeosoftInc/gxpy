@@ -132,8 +132,8 @@ origin and rotation (rx, ry, rz) around the X, Y and then Z axis relative to a b
 <p><strong>Coordinate System Name</strong></p>
 <p>A coordinate system will also have a descriptive name that identifies the base system with a datum and &#8220;well-known&#8221;
 map projection description, plus optional orientation and vertical reference datum if defined.  Orientation
-parameters are enclosed is <cite>&lt;&gt;</cite>, for example <cite>&lt;400000, 6200000,0,0,-90,0&gt;</cite> that defined <cite>&lt;x0, y0, z0, rx, ry, rz&gt;</cite>.
-If a vertical referenc datum is defined it appears as a string in quare brackets, for example  <cite>[CGVD28]</cite>.</p>
+parameters are enclosed in <cite>&lt;&gt;</cite> that define <cite>&lt;x0, y0, z0, rx, ry, rz&gt;</cite> (eg. <cite>&lt;400000, 6200000,0,0,-90,0&gt;</cite>).
+If a vertical reference datum is defined it will appear as a string in square brackets, for example  <cite>[CGVD28]</cite>.</p>
 <p>Example coordinate system names:</p>
 <blockquote>
 <div><div class="code highlight-default"><div class="highlight"><pre><span></span><span class="s2">&quot;NAD83 / UTM zone 15N&quot;</span>
@@ -143,9 +143,9 @@ If a vertical referenc datum is defined it appears as a string in quare brackets
 </pre></div>
 </div>
 </div></blockquote>
-<p>The descriptive name for well-known coordinate systems is sufficient to describe the coordinate system from
+<p>The descriptive name for &#8220;well-known&#8221; coordinate systems is sufficient to describe the coordinate system from
 the <a class="reference external" href="http://www.epsg.org/">EPSG Geodetic Registry</a>. To fully locate ad-hoc coordinates you will need
-the parameters described in the GXF stings.  See <a class="reference internal" href="#geosoft.gxpy.coordinate_system.Coordinate_system.gxf" title="geosoft.gxpy.coordinate_system.Coordinate_system.gxf"><code class="xref py py-attr docutils literal"><span class="pre">Coordinate_system.gxf</span></code></a>.</p>
+the parameters defined in the GXF stings.  See <a class="reference internal" href="#geosoft.gxpy.coordinate_system.Coordinate_system.gxf" title="geosoft.gxpy.coordinate_system.Coordinate_system.gxf"><code class="xref py py-attr docutils literal"><span class="pre">Coordinate_system.gxf</span></code></a>.</p>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
 <p class="last"><a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXIPJ</span></code></a></p>
@@ -187,6 +187,7 @@ system to locate (x, y, z) cartesian coordinates relative to the Earth.</p>
 <li><a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXIPJ</span></code></a> instance</li>
 <li><a class="reference internal" href="#geosoft.gxpy.coordinate_system.Coordinate_system" title="geosoft.gxpy.coordinate_system.Coordinate_system"><code class="xref py py-class docutils literal"><span class="pre">Coordinate_system</span></code></a> instance, returns a copy</li>
 </ul>
+<p>For examples refer to  <a class="reference external" href="https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_coordinate_system.py">coordinate_system tests</a></p>
 </p>
 </td>
 </tr>
@@ -425,7 +426,7 @@ column ordered and the results are returned column ordered.</li>
 <dl class="attribute">
 <dt id="geosoft.gxpy.coordinate_system.Coordinate_system.vcs">
 <code class="descname">vcs</code><a class="headerlink" href="#geosoft.gxpy.coordinate_system.Coordinate_system.vcs" title="Permalink to this definition">¶</a></dt>
-<dd><p>Vertical coordinate system name.  Can be set too.</p>
+<dd><p>Vertical coordinate system name.  Can be set.</p>
 </dd></dl>
 
 <dl class="method">
@@ -674,17 +675,18 @@ empty, the name will not include these parts.</p>
 <dl class="function">
 <dt id="geosoft.gxpy.coordinate_system.parameters">
 <code class="descclassname">geosoft.gxpy.coordinate_system.</code><code class="descname">parameters</code><span class="sig-paren">(</span><em>what</em>, <em>key</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.coordinate_system.parameters" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get a dictionary of parameters for a coordinate system item.</p>
+<dd><p>Get a dictionary of parameters for a coordinate system item.  Parameters are maintained in 
+csv coordinate system table files in the Geosoft Desktop Applications <cite>csv</cite> folder.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>what</strong> &#8211; <div class="line-block">
-<div class="line">PARM_DATUM</div>
-<div class="line">PARM_PROJECTION</div>
-<div class="line">PARM_UNITS</div>
-<div class="line">PARM_LOCAL_DATUM</div>
+<div class="line">PARM_DATUM (from <cite>datum.csv</cite>)</div>
+<div class="line">PARM_PROJECTION (from <cite>transform.csv</cite>)</div>
+<div class="line">PARM_UNITS (from <cite>units.csv</cite>)</div>
+<div class="line">PARM_LOCAL_DATUM (from <cite>datumtrf.csv</cite>)</div>
 </div>
 </li>
 <li><strong>key</strong> &#8211; parameter key to find and return</li>

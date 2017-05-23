@@ -101,6 +101,14 @@
 <p class="first admonition-title">Note</p>
 <p class="last">Regression tests provide usage examples: <a class="reference external" href="https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_utility.py">Tests</a></p>
 </div>
+<dl class="class">
+<dt id="geosoft.gxpy.utility.Property_tree">
+<em class="property">class </em><code class="descclassname">geosoft.gxpy.utility.</code><code class="descname">Property_tree</code><a class="headerlink" href="#geosoft.gxpy.utility.Property_tree" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>Class to work with property trees, supporting serialization to things
+like XML.</p>
+</dd></dl>
+
 <dl class="exception">
 <dt id="geosoft.gxpy.utility.UtilityException">
 <em class="property">exception </em><code class="descclassname">geosoft.gxpy.utility.</code><code class="descname">UtilityException</code><a class="headerlink" href="#geosoft.gxpy.utility.UtilityException" title="Permalink to this definition">¶</a></dt>
@@ -367,6 +375,60 @@ and return a decimal Gregorian year. Other date formats will raise a ValueErr.</
 </dd></dl>
 
 <dl class="function">
+<dt id="geosoft.gxpy.utility.dict_from_xml">
+<code class="descclassname">geosoft.gxpy.utility.</code><code class="descname">dict_from_xml</code><span class="sig-paren">(</span><em>xml</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.utility.dict_from_xml" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a dictionary of an xml string.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>xml</strong> &#8211; xml string</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">dictionary of the XML content.</td>
+</tr>
+</tbody>
+</table>
+<p>If the XML root is &#8216;__gx_xml__&#8217;, the root is stripped.</p>
+<p>Based on: <a class="reference external" href="https://github.com/martinblech/xmltodict">https://github.com/martinblech/xmltodict</a></p>
+<p>Tag attributes will become keys with &#8216;&#64;&#8217; as the first character, and the key value will be the attribute setting.</p>
+<p>For example, XML string:</p>
+<div class="code highlight-default"><div class="highlight"><pre><span></span>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;gmd:MD_Metadata xsi:schemaLocation=&quot;http://www.isotc211.org/2005/gmd ../schemas/iso19139fra/gmd/gmd.xsd&quot;&gt;
+    &lt;geosoft xmlns=&quot;http://www.geosoft.com/schema/geo&quot;&gt;
+        &lt;dataset version=&quot;1&quot; beta=&quot;abc&quot;&gt;
+            &lt;title&gt;test_grid_1&lt;/title&gt;
+            &lt;file_format&gt;Geosoft Grid&lt;/file_format&gt;
+        &lt;/dataset&gt;
+    &lt;/geosoft&gt;
+&lt;/gmd:MD_Metadata&gt;
+</pre></div>
+</div>
+<p>returns dictionary:</p>
+<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s1">&#39;gmd:MD_Metadata&#39;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s1">&#39;@xsi:schemaLocation&#39;</span><span class="p">:</span> <span class="s2">&quot;http://www.isotc211.org/2005/gmd ../schemas/iso19139fra/gmd/gmd.xsd&quot;</span><span class="p">,</span>
+    <span class="s1">&#39;geosoft&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;@xmlns&#39;</span><span class="p">:</span> <span class="s2">&quot;http://www.geosoft.com/schema/geo&quot;</span><span class="p">,</span>
+        <span class="s1">&#39;dataset&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">&#39;@beta&#39;</span><span class="p">:</span> <span class="s2">&quot;abc&quot;</span><span class="p">,</span>
+            <span class="s1">&#39;@version&#39;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
+            <span class="s1">&#39;title&#39;</span><span class="p">:</span> <span class="s2">&quot;test_grid_1&quot;</span><span class="p">,</span>
+            <span class="s1">&#39;file_format&#39;</span><span class="p">:</span> <span class="s2">&quot;Geosoft Grid&quot;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="#geosoft.gxpy.utility.xml_from_dict" title="geosoft.gxpy.utility.xml_from_dict"><code class="xref py py-func docutils literal"><span class="pre">xml_from_dict()</span></code></a></p>
+</div>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.2.</span></p>
+</div>
+</dd></dl>
+
+<dl class="function">
 <dt id="geosoft.gxpy.utility.display_message">
 <code class="descclassname">geosoft.gxpy.utility.</code><code class="descname">display_message</code><span class="sig-paren">(</span><em>title</em>, <em>message</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.utility.display_message" title="Permalink to this definition">¶</a></dt>
 <dd><p>Display a message to the user.</p>
@@ -492,6 +554,26 @@ create the temporary file in the GX-specific folder <code class="xref py py-mod 
 </dd></dl>
 
 <dl class="function">
+<dt id="geosoft.gxpy.utility.geosoft_metadata">
+<code class="descclassname">geosoft.gxpy.utility.</code><code class="descname">geosoft_metadata</code><span class="sig-paren">(</span><em>geosoft_file_name</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.utility.geosoft_metadata" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the metadata dictionary for a geosoft data file.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>geosoft_file_name</strong> &#8211; geosoft supported file name</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">dictionary of the metadata</td>
+</tr>
+</tbody>
+</table>
+<p>If the metadata for the file does not exist  {&#8216;metadata&#8217;: {}} is returned.</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.2.</span></p>
+</div>
+</dd></dl>
+
+<dl class="function">
 <dt id="geosoft.gxpy.utility.get_parameters">
 <code class="descclassname">geosoft.gxpy.utility.</code><code class="descname">get_parameters</code><span class="sig-paren">(</span><em>group='_'</em>, <em>parms=None</em>, <em>default=None</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.utility.get_parameters" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get parameters from the Project Parameter Block.  Note that parameter names
@@ -584,6 +666,32 @@ The shared dictionary is cleared (popped) so a subsequent call will return an em
 <dt id="geosoft.gxpy.utility.is_string">
 <code class="descclassname">geosoft.gxpy.utility.</code><code class="descname">is_string</code><span class="sig-paren">(</span><em>gxtype</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.utility.is_string" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return length of a gxtype string, 0 (False) if not a string.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="geosoft.gxpy.utility.merge_dict">
+<code class="descclassname">geosoft.gxpy.utility.</code><code class="descname">merge_dict</code><span class="sig-paren">(</span><em>d</em>, <em>d2</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.utility.merge_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update a dictionary by adding key-values from second dictionary.  Unlike Python&#8217;s 
+update(), this adds new keys to nested dictionaries rather than replace everything
+in a nested dictionary.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>d</strong> &#8211; dictionary to update</li>
+<li><strong>d2</strong> &#8211; new items to add or replace</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">merged dictionary</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.2.</span></p>
+</div>
 </dd></dl>
 
 <dl class="function">
@@ -824,6 +932,33 @@ This is a companion file to run_external_python().</p>
 </tr>
 </tbody>
 </table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.2.</span></p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="geosoft.gxpy.utility.xml_from_dict">
+<code class="descclassname">geosoft.gxpy.utility.</code><code class="descname">xml_from_dict</code><span class="sig-paren">(</span><em>d</em>, <em>pretty=False</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.utility.xml_from_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a unicode XML string of a dictionary.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>d</strong> &#8211; dictionary</li>
+<li><strong>pretty</strong> &#8211; True to indent with line-feeds for pretty-printing</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>If the dictionary does not have a single node root, the root XML will be &#8216;__gx_xml__&#8217;.</p>
+<p>Based on: <a class="reference external" href="https://github.com/martinblech/xmltodict">https://github.com/martinblech/xmltodict</a></p>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="#geosoft.gxpy.utility.dict_from_xml" title="geosoft.gxpy.utility.dict_from_xml"><code class="xref py py-func docutils literal"><span class="pre">dict_from_xml()</span></code></a></p>
+</div>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.2.</span></p>
 </div>

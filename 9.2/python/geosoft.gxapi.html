@@ -113,15 +113,16 @@ a developer.</p>
 <h2>The GXContext class<a class="headerlink" href="#the-gxcontext-class" title="Permalink to this headline">¶</a></h2>
 <p>Before calling any other API function from a stand-alone script (a script that is not run as an extension from
 Geosoft Desktop), a GX Context must be created and held.  This can be done by creating an instance of
-coordinate_system=:class:<cite>.gxapi.GXContext</cite> or an instance of coordinate_system=:class:<cite>.gxpy.gx.GXpy</cite> which handles the details of
-<code class="docutils literal"><span class="pre">GXContext</span></code> for you.  We recommend using coordinate_system=:class:<cite>.gxpy.gx.GXpy</cite> unless you have chosen to work only with the
-low-level <code class="xref py py-mod docutils literal"><span class="pre">gxapi</span></code>.</p>
-<p>Creating a GX context requires <strong>Geosoft Desktop</strong> installed on the target system, from which the
-library dll&#8217;s are located and loaded. <strong>Geosoft Desktop</strong> can be downloaded from
+<a class="reference internal" href="#geosoft.gxapi.GXContext" title="geosoft.gxapi.GXContext"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXContext</span></code></a> or an instance of <a class="reference internal" href="geosoft.gxpy.gx.html#geosoft.gxpy.gx.GXpy" title="geosoft.gxpy.gx.GXpy"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxpy.gx.GXpy</span></code></a>, which handles the details of
+<code class="docutils literal"><span class="pre">GXContext</span></code> for you.  We recommend using <a class="reference internal" href="geosoft.gxpy.gx.html#geosoft.gxpy.gx.GXpy" title="geosoft.gxpy.gx.GXpy"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxpy.gx.GXpy</span></code></a> unless you have chosen to work only with
+the low-level <code class="xref py py-mod docutils literal"><span class="pre">geosoft.gxapi</span></code>.  Note that the low-level module <code class="xref py py-mod docutils literal"><span class="pre">geosoft.gxapi</span></code>, although more complex,
+is more consistent across versions.</p>
+<p>Creating a GX context requires any version of <strong>Geosoft Desktop</strong> to be installed on the target system, from which
+the library dll&#8217;s are located and loaded. <strong>Geosoft Desktop</strong> can be downloaded from
 <a class="reference external" href="https://my.geosoft.com/downloads">Geosoft Downloads</a>.</p>
-<p>It is possible to redirect the location of dlls used by setting the
-<strong>GX_GEOSOFT_BIN_PATH</strong> environment variable to point to the location of the Geosoft binary files.
-Refer to the <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/overview">GX Developer Guide</a> for more
+<p>It is possible to redirect the location of dlls used by setting the <strong>GX_GEOSOFT_BIN_PATH</strong> environment variable
+to reference the location of the Geosoft binary files.  Refer to the
+<a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/overview">GX Developer Guide</a> for more
 information.</p>
 <dl class="class">
 <dt id="geosoft.gxapi.GXContext">

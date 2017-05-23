@@ -98,7 +98,7 @@ New Functions
 
 :func:`geosoft.gxpy.coordinate_system.parameter_exists` Test if a parameter set exists in a coordinate system table.
 
-:func:`geosoft.gxpy.coordinate_system.parameters` Get a dictionary of parameters for a coordinate system item.
+:func:`geosoft.gxpy.coordinate_system.parameters` Get a dictionary of parameters for a coordinate system item.  Parameters are maintained in
 
 :func:`geosoft.gxpy.coordinate_system.wkt_vcs` Compose a wkt VERTCS block from a Geosoft vcs string.
 
@@ -258,17 +258,25 @@ New Functions
 
 :func:`geosoft.gxpy.utility.datetime_from_year` Return the Python datetime from a decimal Gregorian year.
 
+:func:`geosoft.gxpy.utility.dict_from_xml` Return a dictionary of an xml string.
+
 :func:`geosoft.gxpy.utility.dummy_mask` Return a 1-D dummy mask that is True for all rows  in a 2D numpy array that
 
 :func:`geosoft.gxpy.utility.dummy_none` Returns None if dummy, otherwise the value.
 
 :func:`geosoft.gxpy.utility.dummy_to_nan` Replaces dummies in float data to numpy.nan.  All other data types are returned unchanged.
 
+:func:`geosoft.gxpy.utility.geosoft_metadata` Get the metadata dictionary for a geosoft data file.
+
 :func:`geosoft.gxpy.utility.gx_dummy` :returns:   GX dummy for this dtype
+
+:func:`geosoft.gxpy.utility.merge_dict` Update a dictionary by adding key-values from second dictionary.  Unlike Python's
 
 :func:`geosoft.gxpy.utility.normalize_file_name` Normalize a file name string by replacing '' with '/'.  This is useful for writing
 
 :func:`geosoft.gxpy.utility.uuid` :returns: a uuid as a string
+
+:func:`geosoft.gxpy.utility.xml_from_dict` Return a unicode XML string of a dictionary.
 
 :func:`geosoft.gxpy.utility.year_from_datetime` Return a decimal Gregorian calendar year from a Python datetime.
 
