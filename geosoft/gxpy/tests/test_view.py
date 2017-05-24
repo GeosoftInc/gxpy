@@ -10,7 +10,7 @@ import geosoft.gxpy.coordinate_system as gxcs
 import geosoft.gxpy.group as gxg
 import geosoft.gxpy.geometry as gxgm
 
-from geosoft.gxpy.tests import GXPYTest
+from base import GXPYTest
 
 def draw_2d_stuff(g, size=1.0):
     plinelist = [[110, 5],

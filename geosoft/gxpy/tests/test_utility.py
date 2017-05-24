@@ -10,7 +10,7 @@ import geosoft.gxpy.gx as gx
 import geosoft.gxpy.system as gsys
 import geosoft.gxpy.utility as gxu
 
-from geosoft.gxpy.tests import GXPYTest
+from base import GXPYTest
 
 
 class Test(GXPYTest):

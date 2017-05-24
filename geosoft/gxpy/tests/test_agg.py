@@ -1,12 +1,11 @@
 import unittest
 import os
 
-import geosoft.gxpy.gx as gx
 import geosoft.gxpy.system as gsys
 import geosoft.gxpy.agg as gxagg
 import geosoft
 
-from geosoft.gxpy.tests import GXPYTest
+from base import GXPYTest
 
 
 class Test(GXPYTest):

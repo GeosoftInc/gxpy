@@ -12,7 +12,7 @@ import geosoft.gxpy.geometry as gxgm
 import geosoft.gxpy.vv as gxvv
 import geosoft.gxpy.coordinate_system as gxcs
 
-from geosoft.gxpy.tests import GXPYTest
+from base import GXPYTest
 
 
 class Test(GXPYTest):

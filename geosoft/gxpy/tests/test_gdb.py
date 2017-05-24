@@ -13,7 +13,7 @@ import geosoft.gxpy.gdb as gxdb
 import geosoft.gxpy.vv as gxvv
 import geosoft.gxpy.va as gxva
 
-from geosoft.gxpy.tests import GXPYTest
+from base import GXPYTest
 
 
 class Test(GXPYTest):

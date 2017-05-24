@@ -5,19 +5,14 @@ import numpy as np
 import geosoft
 import geosoft.gxapi as gxapi
 import geosoft.gxpy.gx as gx
-import geosoft.gxpy.system as gsys
 import geosoft.gxpy.map as gxmap
 import geosoft.gxpy.view as gxv
 import geosoft.gxpy.geometry as gxgm
 import geosoft.gxpy.coordinate_system as gxcs
 import geosoft.gxpy.system as gxsys
 import geosoft.gxpy.group as gxg
-import geosoft.gxpy.agg as gxagg
-import geosoft.gxpy.grid as gxgrd
 
-from geosoft.gxpy.tests import GXPYTest
-
-from geosoft.gxpy.tests import GXPYTest
+from base import GXPYTest
 
 
 class Test(GXPYTest):

@@ -5,7 +5,7 @@ import time
 import geosoft
 import geosoft.gxpy.gx as gx
 
-from geosoft.gxpy.tests import GXPYTest
+from base import GXPYTest
 
 
 class Test(GXPYTest):

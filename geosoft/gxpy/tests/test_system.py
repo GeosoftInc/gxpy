@@ -10,7 +10,7 @@ import geosoft
 import geosoft.gxapi as gxapi
 import geosoft.gxpy.system as gsys
 
-from geosoft.gxpy.tests import GXPYTest
+from base import GXPYTest
 
 
 def tf(f):

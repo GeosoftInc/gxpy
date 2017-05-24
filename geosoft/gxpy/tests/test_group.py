@@ -15,7 +15,7 @@ import geosoft.gxpy.group as gxg
 import geosoft.gxpy.utility as gxu
 import geosoft.gxpy.gdb as gxdb
 
-from geosoft.gxpy.tests import GXPYTest
+from base import GXPYTest
 
 
 def rect_line(g, size=100):
