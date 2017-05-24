@@ -84,7 +84,11 @@ setup(
         'geosoft.gxpy._jdcal',
         'geosoft.gxpy.user_input'
     ],
-    package_data={'geosoft': ['geosoft.key', 'gxapi.pyd', '*.dll', '*.json', '*.txt', '*.rst', '*.gx']},
+    package_data={
+        'geosoft': ['geosoft.key', 'gxapi.pyd', '*.dll', '*.json'],
+        'geosoft.gxpy._jdcal': ['*.txt', '*.rst'],
+        'geosoft.gxpy.user_input': ['*.gx']
+    },
     test_suite="geosoft.gxpy.tests",
     classifiers=[
         dev_status_classifier,
