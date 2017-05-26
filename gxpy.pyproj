@@ -14,6 +14,8 @@
     <InterpreterId>
     </InterpreterId>
     <IsWindowsApplication>False</IsWindowsApplication>
+    <CommandLineArguments>-v</CommandLineArguments>
+    <EnableNativeCodeDebugging>False</EnableNativeCodeDebugging>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
   <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
