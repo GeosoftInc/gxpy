@@ -22,37 +22,64 @@ class Test(GXPYTest):
 
     def test_full(self):
         self.start()
-        """
-        static display_task_dialog_ui((str)arg1, (str)arg2, (str)arg3, (int)arg4, (GXLST)arg5, (int)arg6, (str)arg7, (int)arg8, (str)arg9, (int_ref)arg10, (str)arg11, (str)arg12, (str)arg13) → int:
-Show a Windows TaskDialog UI (see https://msdn.microsoft.com/en-us/library/windows/desktop/bb760441(v=vs.85).aspx).
-Parameters:	
-arg1 (str) – Title
-arg2 (str) – Main instruction (empty string for none)
-arg3 (str) – Content (empty string for none)
-arg4 (int) – Common Buttons, one of TD_BUTTON
-arg5 (geosoft.gxapi.GXLST) – Optional LST of custom buttons. Name in LST will be used for button text, while value should be an int to return. Pass (LST)0 to only use standard button flags.
-arg6 (int) – Icon TD_ICON
-arg7 (str) – Footer (empty string for none)
-arg8 (int) – Footer Icon TD_ICON
-arg9 (str) – Verification checkbox text (empty string for none)
-arg10 (geosoft.gxapi.int_ref) – Verification checkbox checked (in/out)
-arg11 (str) – Expanded information (empty string for none)
-arg12 (str) – Collapsed control text for expanded information (empty string for default; ‘More’)
-arg13 (str) – Expanded control text for expanded information (empty string for default; ‘Less’)
-Returns:	
-Button ID. One of TD_ID or the int value from LST of custom buttons.
-Return type:	
-int
-New in version 9.3.0.
-        """
         verification_checked = gxapi.int_ref()
         verification_checked.value = 1
-        gxapi.GXSYS.display_task_dialog_ui('title', 'Main instruction', 'content <a href="https://google.com">Hyperlink</a>',
+        gxapi.GXSYS.display_task_dialog_ui('Message Title', 'Main Instruction', 'Content, with <a href="https://google.com">link</a>',
                                            gxapi.TD_BUTTON_OK, gxapi.GXLST.null(), gxapi.TD_ICON_ERROR,
-                                           'Footer  <a href="https://google.com">Hyperlink</a>', gxapi.TD_ICON_WARNING,
-                                           "Verification, uncheck this!", verification_checked,
-                                           'Expanded stuff...\n <a href="https://my.geosoft.com/subscriptions#/">My subscriptions</a>', '', '')
+                                           'Footer  with <a href="https://google.com">another link</a>', gxapi.TD_ICON_WARNING,
+                                           'Verification checkbox text (uncheck this!)', verification_checked,
+                                           'Expanded stuff...\n<a href="https://my.geosoft.com/subscriptions#/">My subscriptions</a>', '', '')
         self.assertEqual(verification_checked.value, 0)
+
+    def test_confirm(self):
+        self.start()
+        verification_checked = gxapi.int_ref()
+        answer = gxapi.GXSYS.display_task_dialog_ui('Message Title', '', 'Are you sure (click yes)?',
+                                                    gxapi.TD_BUTTON_YES + gxapi.TD_BUTTON_NO, gxapi.GXLST.null(),
+                                                    gxapi.TD_ICON_CONFIRMATION,
+                                                    '', gxapi.TD_ICON_NONE,
+                                                    '', verification_checked,
+                                                    '', '', '')
+        self.assertEqual(answer, gxapi.TD_ID_YES)
+
+    def test_success(self):
+        self.start()
+        verification_checked = gxapi.int_ref()
+        gxapi.GXSYS.display_task_dialog_ui('Message Title', '', 'Success!',
+                                           gxapi.TD_BUTTON_CLOSE, gxapi.GXLST.null(), gxapi.TD_ICON_SUCCESS,
+                                           '', gxapi.TD_ICON_NONE,
+                                           '', verification_checked,
+                                           '', '', '')
+
+    def test_information(self):
+        self.start()
+        verification_checked = gxapi.int_ref()
+        gxapi.GXSYS.display_task_dialog_ui('Message Title', '', 'Information',
+                                           gxapi.TD_BUTTON_CLOSE, gxapi.GXLST.null(), gxapi.TD_ICON_INFORMATION,
+                                           '', gxapi.TD_ICON_NONE,
+                                           '', verification_checked,
+                                           '', '', '')
+    def test_none(self):
+        self.start()
+        verification_checked = gxapi.int_ref()
+        gxapi.GXSYS.display_task_dialog_ui('Message Title', '', 'No Icon',
+                                           gxapi.TD_BUTTON_CLOSE, gxapi.GXLST.null(), gxapi.TD_ICON_NONE,
+                                           '', gxapi.TD_ICON_NONE,
+                                           '', verification_checked,
+                                           '', '', '')
+
+    def test_custom_buttons(self):
+        self.start()
+        lst = gxapi.GXLST.create(1024);
+        lst.add_item("Don't press this one", "50");
+        lst.add_item("Press this one!", "123");
+        verification_checked = gxapi.int_ref()
+        answer = gxapi.GXSYS.display_task_dialog_ui('Message Title', '', 'Custom Buttons',
+                                                    gxapi.TD_BUTTON_CLOSE, lst, gxapi.TD_ICON_CONFIRMATION,
+                                                    '', gxapi.TD_ICON_NONE,
+                                                    '', verification_checked,
+                                                    '', '', '')
+        self.assertEqual(answer, 123)
 
 if __name__ == '__main__':
     unittest.main()
