@@ -5,7 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{24c32035-61d8-49c0-80c4-47476e29b1bb}</ProjectGuid>
     <ProjectHome />
-    <StartupFile>setup.py</StartupFile>
+    <StartupFile>examples\stand-alone\test_ui_prompts.py</StartupFile>
     <SearchPath />
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
@@ -13,6 +13,7 @@
     <LaunchProvider>Standard Python launcher</LaunchProvider>
     <InterpreterId>
     </InterpreterId>
+    <IsWindowsApplication>False</IsWindowsApplication>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
   <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
@@ -618,6 +619,11 @@
     <Content Include="geosoft.egg-info\requires.txt" />
     <Content Include="geosoft.egg-info\SOURCES.txt" />
     <Content Include="geosoft.egg-info\top_level.txt" />
+    <Content Include="geosoft\concrt140.dll" />
+    <Content Include="geosoft\geodist.dll" />
+    <Content Include="geosoft\geoengine.core.gx_u.dll" />
+    <Content Include="geosoft\geogx_u.dll" />
+    <Content Include="geosoft\geosoft.key" />
     <Content Include="geosoft\gxapi.pyd" />
     <Content Include="geosoft\gxpy\tests\dem.zip" />
     <Content Include="geosoft\gxpy\tests\little.zip" />
@@ -739,7 +745,11 @@
     <Content Include="geosoft\gxpy\tests\test_database.zip" />
     <Content Include="geosoft\gxpy\_jdcal\LICENSE.txt" />
     <Content Include="geosoft\gxpy\_jdcal\README.rst" />
+    <Content Include="geosoft\msvcp140.dll" />
     <Content Include="geosoft\pkg_info.json" />
+    <Content Include="geosoft\vccorlib140.dll" />
+    <Content Include="geosoft\vcomp140.dll" />
+    <Content Include="geosoft\vcruntime140.dll" />
     <Content Include="GX Developer\Python\GX Developer for Python.html" />
     <Content Include="GX Developer\Python\GX Developer for Python.txt" />
     <Content Include="gxapi.cp34-win_amd64.pyd" />
