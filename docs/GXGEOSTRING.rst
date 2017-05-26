@@ -1,7 +1,7 @@
- 
 
 .. _GXGEOSTRING:
 
+ 
 GXGEOSTRING class
 ==================================
 

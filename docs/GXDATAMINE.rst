@@ -1,7 +1,7 @@
- 
 
 .. _GXDATAMINE:
 
+ 
 GXDATAMINE class
 ==================================
 
