@@ -1,7 +1,7 @@
- 
 
 .. _GXCHIMERA:
 
+ 
 GXCHIMERA class
 ==================================
 

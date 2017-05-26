@@ -1,7 +1,7 @@
- 
 
 .. _GXEMAPTEMPLATE:
 
+ 
 GXEMAPTEMPLATE class
 ==================================
 

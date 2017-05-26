@@ -1,7 +1,7 @@
- 
 
 .. _GXMAPTEMPLATE:
 
+ 
 GXMAPTEMPLATE class
 ==================================
 

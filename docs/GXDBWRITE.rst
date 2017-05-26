@@ -1,7 +1,7 @@
- 
 
 .. _GXDBWRITE:
 
+ 
 GXDBWRITE class
 ==================================
 

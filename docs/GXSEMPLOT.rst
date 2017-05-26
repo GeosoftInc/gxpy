@@ -1,7 +1,7 @@
- 
 
 .. _GXSEMPLOT:
 
+ 
 GXSEMPLOT class
 ==================================
 

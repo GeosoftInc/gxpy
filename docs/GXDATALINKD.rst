@@ -1,7 +1,7 @@
- 
 
 .. _GXDATALINKD:
 
+ 
 GXDATALINKD class
 ==================================
 

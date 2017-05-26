@@ -1,7 +1,7 @@
- 
 
 .. _GXSYS:
 
+ 
 GXSYS class
 ==================================
 
@@ -1305,5 +1305,146 @@ SYS_ENCRYPTION_KEY constants
    					Encrypt string to current machine. The string can be decrypted by any
    					user on the same machine.
    				 
+
+.. _TD_ICON:
+
+TD_ICON constants
+-----------------------------------------------------------------------
+
+::
+
+   TaskDialog Icon 
+
+.. autoattribute:: geosoft.gxapi.TD_ICON_NONE
+
+::
+
+   No icon. 
+
+.. autoattribute:: geosoft.gxapi.TD_ICON_WARNING
+
+::
+
+   An exclamation-point icon appears in the task dialog. 
+
+.. autoattribute:: geosoft.gxapi.TD_ICON_ERROR
+
+::
+
+   A stop-sign icon appears in the task dialog. 
+
+.. autoattribute:: geosoft.gxapi.TD_ICON_INFORMATION
+
+::
+
+   An icon consisting of a lowercase letter i in a circle appears in the task dialog. 
+
+.. autoattribute:: geosoft.gxapi.TD_ICON_SUCCESS
+
+::
+
+   A shield icon appears in the task dialog. 
+
+.. autoattribute:: geosoft.gxapi.TD_ICON_CONFIRMATION
+
+::
+
+   A shield icon appears in the task dialog. 
+
+.. _TD_BUTTON:
+
+TD_BUTTON constants
+-----------------------------------------------------------------------
+
+::
+
+   TaskDialog Common Buttons 
+
+.. autoattribute:: geosoft.gxapi.TD_BUTTON_NONE
+
+::
+
+   No common buttons. 
+
+.. autoattribute:: geosoft.gxapi.TD_BUTTON_OK
+
+::
+
+   Button results in TD_ID_OK return value. 
+
+.. autoattribute:: geosoft.gxapi.TD_BUTTON_YES
+
+::
+
+   Button results in TD_ID_YES return value. 
+
+.. autoattribute:: geosoft.gxapi.TD_BUTTON_NO
+
+::
+
+   Button results in TD_ID_NO return value. 
+
+.. autoattribute:: geosoft.gxapi.TD_BUTTON_CANCEL
+
+::
+
+   Button results in TD_ID_CANCEL return value. 
+
+.. autoattribute:: geosoft.gxapi.TD_BUTTON_RETRY
+
+::
+
+   Button results in TD_ID_RETRY return value. 
+
+.. autoattribute:: geosoft.gxapi.TD_BUTTON_CLOSE
+
+::
+
+   Button results in TD_ID_CLOSE return value. 
+
+.. _TD_ID:
+
+TD_ID constants
+-----------------------------------------------------------------------
+
+::
+
+   TaskDialog Common Button Return Values 
+
+.. autoattribute:: geosoft.gxapi.TD_ID_OK
+
+::
+
+   TD_BUTTON_OK pressed. 
+
+.. autoattribute:: geosoft.gxapi.TD_ID_CANCEL
+
+::
+
+   TD_BUTTON_CANCEL pressed. 
+
+.. autoattribute:: geosoft.gxapi.TD_ID_RETRY
+
+::
+
+   TD_BUTTON_RETRY pressed. 
+
+.. autoattribute:: geosoft.gxapi.TD_ID_YES
+
+::
+
+   TD_BUTTON_YES pressed. 
+
+.. autoattribute:: geosoft.gxapi.TD_ID_NO
+
+::
+
+   TD_BUTTON_NO pressed. 
+
+.. autoattribute:: geosoft.gxapi.TD_ID_CLOSE
+
+::
+
+   TD_BUTTON_CLOSE pressed. 
 
 	

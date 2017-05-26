@@ -1,7 +1,7 @@
- 
 
 .. _GXINTERNET:
 
+ 
 GXINTERNET class
 ==================================
 

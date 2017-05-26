@@ -1,7 +1,7 @@
- 
 
 .. _GXSURFACE:
 
+ 
 GXSURFACE class
 ==================================
 
