@@ -65,13 +65,13 @@ A single instance of this object must be created per thread and persist before u
 '''
 
 
-gxapi.GXContext.create.__doc__ = '''create((str)application, (str)version, (int)parent_wnd_id = 0) -> GXContext:
+gxapi.GXContext.create.__doc__ = '''create((str)application, (str)version, (int)parent_wnd_id=0, flags=0) -> GXContext:
 Creates the GX execution context (will return the current one if it exists).
 
 :param application: Calling application name (str)"
 :param version: Calling application version (str)
 :param parent_wnd_id: Calling application main window handle (HWND cast to unsigned on Windows) as an int (default 0)
-:param flags: Two flaggs currently supported (64 suppresses text progress messages and 128 GUI progress windows, default 0)
+:param flags: 0 default; 64 suppresses text progress messages; 128 suppresses GUI progress window
 :returns: A GX execution context.
 
 .. versionadded:: 9.1
