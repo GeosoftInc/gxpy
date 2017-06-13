@@ -423,7 +423,9 @@ def _make_PPoint(p):
 
 class Draw(Group):
     """
-    Create (start) a drawing group for 2D drawing elements.  On a 3D view, 2D drawing elements
+    Create (start) a drawing group for 2D drawing elements.
+
+    On a 3D view, 2D drawing elements
     are placed on the default drawing plane.  Drawing groups will lock the view such that only one
     drawing group can be instantiated at a time.
     
@@ -728,9 +730,11 @@ class Draw(Group):
 
 class Draw_3d(Draw):
     """
-    Create a 3D drawing group within a 3D view.  3D drawing groups accept 3D drawing objects that
-    can be created using methods of this class.  2D objects can also be drawn to a 3D group and will be
-    placed on the default drawing plane. within the 3D view.
+    Create a 3D drawing group within a 3D view.
+
+    3D drawing groups accept 3D drawing objects that can be created using methods of this class.
+    2D objects can also be drawn to a 3D group and will be placed on the default drawing plane
+    within the 3D view.
     
     :param render_backfaces:    True to turn backface rendering on.
     
@@ -974,6 +978,7 @@ class Draw_3d(Draw):
         
         .. code::
         
+            import geosoft.gxpy.geometry as gxgm
             import geosof.gxpy.view as gxv
             import geosogt.gxpy.group as gxg
             
