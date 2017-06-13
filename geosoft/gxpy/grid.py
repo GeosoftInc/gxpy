@@ -28,6 +28,7 @@ from . import utility as gxu
 
 __version__ = geosoft.__version__
 
+
 def _t(s):
     return geosoft.gxpy.system.translate(s)
 
@@ -97,10 +98,11 @@ def decorate_name(name, decorations=''):
         if end != -1:
             d = d[:end]
         ext = ext.split('(')[0]
-        return root + ext + '(' + d + ')'
+        return '{}{}({})'.format(root, ext, d)
+
     else:
         if ext.lower() == '.grd':
-            return root + ext + '(GRD)'
+            return '{}{}(GRD)'.format(root, ext)
         else:
             return name
 
