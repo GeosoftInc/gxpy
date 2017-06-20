@@ -7,6 +7,7 @@ import geosoft.gxpy.gx as gx
 import geosoft.gxpy.system as gsys
 import geosoft.gxpy.coordinate_system as gxcs
 import geosoft.gxpy.grid as gxgrd
+import geosoft.gxpy.utility as gxu
 
 from base import GXPYTest
 
@@ -515,26 +516,28 @@ class Test(GXPYTest):
         self.start()
 
         with gxgrd.Grid.open(self.g1f) as g:
-            self.assertTrue(isinstance(g[0], float))
-            self.assertEqual(g[0], 771.0)
-            self.assertEqual(g[(0,0)], 771.0)
-            self.assertEqual(g[(g.nx * g.ny) - 1], 243.0)
-            self.assertEqual(g[(g.nx - 1, g.ny - 1)], 243.0)
+            self.assertTrue(isinstance(g[0], tuple))
+            self.assertTrue(isinstance(g[0][3], float))
+            self.assertEqual(g[0][3], 771.0)
+            self.assertEqual(g[(0,0)][3], 771.0)
+            self.assertEqual(g[(g.nx * g.ny) - 1][3], 243.0)
+            self.assertEqual(g[(g.nx - 1, g.ny - 1)][3], 243.0)
 
             with gxgrd.Grid.copy(g, dtype=int) as g:
-                self.assertTrue(isinstance(g[0], int))
-                self.assertEqual(g[0], 771)
+                self.assertTrue(isinstance(g[0][3], int))
+                self.assertEqual(g[0][3], 771)
 
         with gxgrd.Grid.copy(self.g1f, dtype=int) as g:
-            self.assertTrue(isinstance(g[0], int))
-            self.assertEqual(g[0], 771)
+            self.assertTrue(isinstance(g[0][3], int))
+            self.assertEqual(g[0][3], 771)
+            self.assertEqual(g[45], (7.45, 44.0, 0.0, 1699))
 
     def test_open_int(self):
         self.start()
 
         with gxgrd.Grid.open(self.g1f, dtype=int) as g:
             vv = g.read_row(0)
-            self.assertEqual(g[0], 771)
+            self.assertEqual(g[0][3], 771)
 
     def test_value(self):
         self.start()
@@ -577,6 +580,46 @@ class Test(GXPYTest):
         with gxgrd.Grid.open(self.g1f) as g:
             uom = g.unit_of_measure
             self.assertEqual(uom, 'metres')
+
+    def test_iterator(self):
+
+        with gxgrd.Grid.open(self.g2f) as g0:
+            with gxgrd.Grid.index_window(g0, nx=75, ny=60) as g:
+                data = g.xyzv()[:, :, 3]
+                i = 0
+                sum = 0.0
+                dummies = 0
+                dum = g.dummy_value
+
+                for x, y, z, v in g:
+                    i += 1
+                    if v == dum:
+                        dummies += 1
+                    else:
+                        sum += v
+
+                self.assertEqual(i, g.nx * g.ny)
+
+        self.assertEqual(sum, np.nansum(data))
+        self.assertEqual(dummies, np.count_nonzero(np.isnan(data)))
+
+    def test_xyz(self):
+
+        with gxgrd.Grid.open(self.g1f) as g:
+            self.assertEqual(g.xyz(0), (g.x0, g.y0, 0.0))
+            self.assertEqual(g.xyz(1), (g.x0 + g.dx, g.y0, 0.0))
+            self.assertEqual(g.xyz(g.nx), (g.x0, g.y0 + g.dy, 0.0))
+            self.assertEqual(g.xyz((0,1)), (g.x0, g.y0 + g.dy, 0.0))
+
+            with gxgrd.Grid.copy(g) as gm:
+                cs_name = gxcs.name_from_hcs_orient_vcs(gm.coordinate_system.hcs, '0, 0, 1000, 0, -90, 25', '')
+                gm.coordinate_system = cs_name
+                self.assertEqual(gm.xyz(0), (18.595203516590775, 39.8775426296126, 1007.0))
+                self.assertEqual(gm.xyz((g.nx-1, g.ny-1)), (19.017821778331474, 40.783850416649244, 1008.0))
+
+                gm.rot = 2.0
+                self.assertEqual(gm.xyz(0), (18.595203516590775, 39.8775426296126, 1007.0))
+                self.assertEqual(gm.xyz((g.nx - 1, g.ny - 1)), (19.00281516607315, 40.75166863280787, 1008.0342903237216))
 
 
 ###############################################################################################
