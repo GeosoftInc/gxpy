@@ -110,6 +110,7 @@ def decorate_name(name, decorations=''):
 def delete_files(file_name):
     """
     Delete all files associates with this grid name.
+
     :param file_name:
 
     .. versionadded:: 9.2
@@ -160,6 +161,18 @@ class Grid:
         :meth:`index_window`    create a windowed grid based of grid indexes
         :meth:`from_data_array` create a new grid from a 2d data array
         ======================= ============================================
+
+    A grid instance supports iteration that yields (x, y, z, grid_value) by points along rows.
+    For example, the following prints the x, y, z, grid_value of every non-dummy point in a grid:
+
+    .. code::
+
+        import geosoft.gxpy.grid as gxgrd
+
+        g = gxgrd.Grid.open('some.grd')
+        for x, y, z, v in g:
+            if v != g.dummy_value
+                print(x, y, z, v)
 
     .. versionadded:: 9.1
     """
@@ -270,11 +283,13 @@ class Grid:
                                                 self.file_name_decorated,
                                                 gxapi.IMG_FILE_READORWRITE)
 
+        self._next = 0
         self._next_row = 0
         self._next_col = 0
         self._gxtype = self._img.e_type()
         self._dtype = gxu.dtype_gx(self._gxtype)
         self._is_int = gxu.is_int(self._gxtype)
+        self.rot = self.rot
 
         self._open = gx.track_resource(self.__class__.__name__, self._file_name)
 
@@ -339,28 +354,33 @@ class Grid:
         return self
 
     def __next__(self):
-        if self._next >= self.length:
+        if self._next >= self.nx * self.ny:
             self._next = 0
             raise StopIteration
         else:
-            i = self._next
+            v = self.__getitem__(self._next)
             self._next += 1
-            return self.np[i], self._start + self._incr * i
+            return v
 
     def __getitem__(self, item):
+
         if isinstance(item, int):
-            ix = item % self.ny
+            ix = item % self.nx
             iy = item // self.nx
         else:
             ix, iy = item
+
+        x, y, z = self.xyz((ix, iy))
+
         if self._hpg is None:
             self._hpg = self._img.geth_pg()
             self._hpg_is_int = gxu.is_int(self._hpg.e_type())
+
         v = self._get_pg().get(ix, iy)
         if self._is_int:
-            return int(v)
-        else:
-            return v
+            v = int(v)
+
+        return x, y, z, v
 
     def get_value(self, x, y):
         """
@@ -454,10 +474,8 @@ class Grid:
         else:
             dx = grd.dx * x0
             dy = grd.dy * y0
-            cos = math.cos(math.radians(grd.rot))
-            sin = math.sin(math.radians(grd.rot))
-            p['x0'] = grd.x0 - dx * cos - dy * sin
-            p['y0'] = grd.y0 - dy * cos + dx * sin
+            p['x0'] = grd.x0 - dx * grd._cos_rot - dy * grd._sin_rot
+            p['y0'] = grd.y0 - dy * grd._cos_rot + dx * grd._sin_rot
 
         wgd = cls.new(name, p, overwrite=True)
         wpg = wgd._get_pg()
@@ -502,6 +520,11 @@ class Grid:
     def close(self):
         """close the grid and release all instance resources."""
         self._close()
+
+    @property
+    def dummy_value(self):
+        """ Return the grid data dummy value."""
+        return gxu.gx_dummy(self.dtype)
 
     @property
     def gximg(self):
@@ -634,7 +657,7 @@ class Grid:
         grid rotation angle, degrees azimuth
         
         Note that grid rotations in the gxapi GXIMG are degrees clockwise, which is the opposite of
-        degree azimuth, used here.  All horizontal plane anles in the Python gxpy module are degrees
+        degree azimuth, used here.  All horizontal plane angles in the Python gxpy module are degrees
         azimuth for consistency.
 
         .. versionadded:: 9.2
@@ -708,7 +731,7 @@ class Grid:
         """
         Get the grid properties dictionary
 
-        :returns:dictionary of all grid properties
+        :returns: dictionary of all grid properties
 
         .. versionadded:: 9.1
         """
@@ -748,6 +771,9 @@ class Grid:
     @rot.setter
     def rot(self, v):
         self._img.set_info(self.dx, self.dy, self.x0, self.y0, -v)
+        self._cos_rot = math.cos(math.radians(v))
+        self._sin_rot = math.sin(math.radians(v))
+
 
     @coordinate_system.setter
     def coordinate_system(self, cs):
@@ -785,6 +811,7 @@ class Grid:
                            properties.get('x0', 0.0),
                            properties.get('y0', 0.0),
                            -properties.get('rot', 0.0))
+        self.rot = self.rot # calculates cos and sin
         cs = properties.get('coordinate_system', None)
         if cs is not None:
             if not isinstance(cs, gxcs.Coordinate_system):
@@ -822,7 +849,7 @@ class Grid:
         :param row:     row to read, if not specified the next row is read starting from row 0
         :param start:   the first point in the row, default is 0
         :param length:  number of points to read, the default is to the end of the row.
-        :return:
+        :return:        :class:`geosoft.gxvv.GXvv`
 
         .. versionadded:: 9.1
         """
@@ -844,7 +871,7 @@ class Grid:
         :param column:  column to read, if not specified the next column is read starting from column 0
         :param start:   the first point in the column, default is 0
         :param length:  number of points to read, the default is to the end of the col.
-        :return:
+        :return:        :class:`geosoft.gxvv.GXvv` instance
 
         .. versionadded:: 9.1
         """
@@ -886,14 +913,12 @@ class Grid:
 
         .. versionadded:: 9.2
         """
-        cosine = math.cos(math.radians(self.rot))
-        sine = math.sin(math.radians(self.rot))
         width = (self.nx - 1) * self.dx
         height = (self.ny - 1) * self.dy
         xy0 = (self.x0, self.y0)
-        xy1 = (self.x0 + width * cosine, self.y0 - width * sine)
-        xy2 = (xy1[0] + height * sine, xy1[1] + height * cosine)
-        xy3 = (self.x0 + height * sine, self.y0 + height * cosine)
+        xy1 = (self.x0 + width * self._cos_rot, self.y0 - width * self._sin_rot)
+        xy2 = (xy1[0] + height * self._sin_rot, xy1[1] + height * self._cos_rot)
+        xy3 = (self.x0 + height * self._sin_rot, self.y0 + height * self._cos_rot)
 
         return min(xy0[0], xy1[0], xy2[0], xy3[0]),\
                min(xy0[1], xy1[1], xy2[1], xy3[1]),\
@@ -925,8 +950,10 @@ class Grid:
 
     def xyzv(self):
         """
-        Return a numpy float array of (x,y,z,v) grid points, where (x, y, z) is the
-        location of each grid point in 3D space and v is the grid value at that location.
+        Return a numpy float array of (x, y, z, v) grid points.
+
+        x, y, z) is the location of each grid point in 3D space and v is the grid value at that location.
+        Dummies will be numpy.nan.
         
         .. versionadded:: 9.2
         """
@@ -935,20 +962,17 @@ class Grid:
         ny = self.ny
         dx = self.dx
         dy = self.dy
-        rot = self.rot
         cs = self.coordinate_system
         xyzv = np.zeros((ny, nx, 4))
         xyzv[:, :, 0:2] = np.mgrid[0: (nx - 0.5) * dx: dx, 0: (ny - 0.5) * dy: dy].swapaxes(0, 2)
 
-        if rot != 0.:
-            cosine = math.cos(math.radians(rot))
-            sine = math.sin(math.radians(rot))
+        if self.rot != 0.:
             x = xyzv[:, :, 0]
-            cosx = x * cosine
-            sinx = x * sine
+            cosx = x * self._cos_rot
+            sinx = x * self._sin_rot
             y = xyzv[:, :, 1]
-            cosy = y * cosine
-            siny = y * sine
+            cosy = y * self._cos_rot
+            siny = y * self._sin_rot
             xyzv[:, :, 0] = cosx + siny
             xyzv[:, :, 1] = cosy - sinx
 
@@ -965,6 +989,40 @@ class Grid:
                 xyzv[i, :, 3] = gxu.dummy_to_nan(self.read_row(i).np)
 
         return xyzv
+
+    def xyz(self, item):
+        """
+        Returns the (x, y, z) location of an indexed point in the grid.
+
+        :param item: tuple (ix, iy) grid point, or the point number counting by row
+        :return: trye (x, y, z) location
+
+        .. versionadded:: 9.2.1
+        """
+
+        if isinstance(item, int):
+            ix = item % self.nx
+            iy = item // self.nx
+        else:
+            ix, iy = item
+
+        # location on the grid
+        gx = ix * self.dx
+        gy = iy * self.dy
+
+        if self.rot != 0.:
+            gx, gy = gx * self._cos_rot + gy * self._sin_rot, gy * self._cos_rot - gx * self._sin_rot
+
+        gx += self.x0
+        gy += self.y0
+        gz = 0.
+
+        cs = self.coordinate_system
+        if cs.is_oriented:
+            gx, gy, gz = cs.xyz_from_oriented((gx, gy, gz))
+
+        return gx, gy, gz
+
 
 # grid utilities
 def array_locations(properties):

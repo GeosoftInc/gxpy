@@ -37,6 +37,16 @@ class Test(GXPYTest):
         self.assertEqual(gxu.gx_dummy(np.str_), '')
         self.assertEqual(gxu.gx_dummy('U48'), '')
 
+        self.assertEqual(gxu.gx_dummy(1.5),gxapi.rDUMMY)
+        self.assertEqual(gxu.gx_dummy(type(1.5)), gxapi.rDUMMY)
+        self.assertEqual(gxu.gx_dummy(3),gxapi.iDUMMY)
+        self.assertEqual(gxu.gx_dummy(type(3)), gxapi.iDUMMY)
+        self.assertEqual(gxu.gx_dummy(0xff),gxapi.iDUMMY)
+        self.assertEqual(gxu.gx_dummy('string'), '')
+        self.assertEqual(gxu.gx_dummy('U48'), '')
+        self.assertRaises(KeyError, gxu.gx_dummy, 1j)
+        self.assertRaises(KeyError, gxu.gx_dummy, type(1j))
+
         self.assertEqual(gxu.dummy_none(0), 0)
         self.assertEqual(gxu.dummy_none(1.), 1.)
         self.assertEqual(gxu.dummy_none(gxapi.iDUMMY), None)

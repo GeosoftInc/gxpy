@@ -586,10 +586,14 @@ def gxDummy(dtype):
 
 def gx_dummy(dtype):
     """
-    :returns:   GX dummy for this dtype
+    Return the dummy for this value, or this type.
+
+    :returns:   GX dummy for this data
+    :raises:    KeyError if the dtype is not supported
 
     .. versionadded:: 9.2
     """
+
     global _dummy_map
     if not bool(_dummy_map):
         _dummy_map = {
@@ -603,13 +607,20 @@ def gx_dummy(dtype):
             np.dtype(np.int32): gxapi.GS_S4DM,
             np.dtype(np.int64): gxapi.GS_S8DM,
             np.dtype(np.str_): ''}
+
     try:
-        return (_dummy_map[np.dtype(dtype)])
+        dtype = np.dtype(dtype)
+    except TypeError:
+        dtype = np.dtype(type(dtype))
+
+    try:
+        return (_dummy_map[dtype])
+
     except KeyError:
         s = str(dtype)
         if s[0] == 'U' or s[1] == 'U':
             return ''
-
+        raise
 
 def dummy_none(v):
     """ 
@@ -618,7 +629,7 @@ def dummy_none(v):
     .. versionadded:: 9.2
     """
 
-    if v == gx_dummy(np.dtype(type(v))):
+    if v == gx_dummy(v):
         return None
     else:
         return v
