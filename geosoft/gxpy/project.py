@@ -391,8 +391,9 @@ def get_user_input(title="Input required...", prompt='?', kind='string', default
     :param kind:        kind of response required: 'string', 'int', 'float', 'file', 'colour' or 'list'
     :param items:       comma-separated string or list/tupple of items for a list
     :param default:     default value.  For multifile can be a string ('|' delimiter) or list/tupple.
-    :param filemask:    File type mask '.dat', '*.dat,*.grd', '\*\*,*.grd' for multiple files
-                        Comma delimited, or a list/tupple
+    :param filemask:    File type masks, Comma delimited, or a list/tupple.  Examples:
+                        '.dat', '\*.dat,\*.grd', '\*\*,\*.grd' for multiple files
+
     :returns:       user response
     :raise:         :py:ex:GXCancel if the user cancels the dialog
 
