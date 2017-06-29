@@ -50,7 +50,11 @@ ZONE_LAST = 6
 
 class Aggregate_image:
     """
-    Aggregate images are composed of one or more image/grids that can be displayed in a 2D or 3D display group.
+    The AGG class supports the creation of aggregate images from one or more grid data sets. Aggergates
+    can be placed into a 2D or 3D view for display.
+
+    :param grid_file:   if specified, the :meth:`add_layer()` method is called with remaining parameters
+                        to create a single-image aggregate.
 
     :Constructors:
 
@@ -83,9 +87,10 @@ class Aggregate_image:
         """
         Create a new aggregate from a grid.
         
-        :param grid_file:   if specified, the :meth:`add_layer()` method is called with remaining parameters
-                            to create a single-image aggregate.
+        :param grid_file: grid file name
 
+        :meth:`add_layer` is called to add the grid as a layer.
+        
         .. versionadded:: 9.2
         """
 
