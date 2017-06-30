@@ -103,17 +103,58 @@ class Test(GXPYTest):
         self.assertEqual(r['TUP'][1]['q'], 1.5)
 
         s = gxu.get_parameters('param_test', ['a', 'tup', 'not_there'])
-        self.assertEqual(s['A'], 'string')
-        self.assertEqual(s['TUP'][1]['q'], 1.5)
-        self.assertEqual(s.get('NOT_THERE', None), None)
+        self.assertEqual(s['a'], 'string')
+        self.assertEqual(s['tup'][1]['q'], 1.5)
+        self.assertEqual(s.get('not_there', None), None)
 
         q = gxu.get_parameters('param_test', ['not_there'], default="yes I am")
-        self.assertEqual(q['NOT_THERE'], "yes I am")
+        self.assertEqual(q['not_there'], "yes I am")
 
         t = {'1': '\\', '2': '\\\\', '3': '\\\\\\', '4': '\\\\\\\\', '5': '\\\\\\\\\\'}
         gxu.save_parameters('escape', t)
         tt = gxu.get_parameters('escape')
         self.assertEqual(t, tt)
+
+    def test_parameters_2(self):
+        self.start()
+
+        self.assertRaises(gxu.UtilityException, gxu.save_parameters)
+        self.assertRaises(gxu.UtilityException, gxu.save_parameters, __file__)
+        group = os.path.basename(__file__).split('.')[0]
+        self.assertRaises(gxu.UtilityException, gxu.save_parameters, group, {'bad.parameter': ''})
+
+        parameter = 'GRID_NAME'
+        p = {parameter: ''}
+        gxu.save_parameters(group, p)
+        r = gxu.get_parameters(group)
+        self.assertEqual(r[parameter], '')
+
+        r = gxu.get_parameters(group, {parameter: 'bogus'})
+        self.assertEqual(r[parameter], '')
+        r = gxu.get_parameters(group, {'test': 'bogus'})
+        self.assertEqual(r['test'], 'bogus')
+
+        r = gxu.get_parameters(group, (parameter, 'test1', 'test2'))
+        self.assertEqual(r[parameter], '')
+        self.assertEqual(r['test1'], None)
+        self.assertEqual(r['test2'], None)
+
+        r = gxu.get_parameters(group, (parameter, 'test1', 'test2'), 99)
+        self.assertEqual(r[parameter], '')
+        self.assertEqual(r['test1'], 99)
+        self.assertEqual(r['test2'], 99)
+
+        gxu.save_parameters(group, r)
+        r = gxu.get_parameters(group)
+        self.assertEqual(r[parameter], '')
+        self.assertEqual(r['TEST1'], 99)
+        self.assertEqual(r['TEST2'], 99)
+
+        gxu.save_parameters(parms={'test_file': '.\\some_file', 't2': 'c:\\abc\\def'})
+        r = gxu.get_parameters()
+        self.assertEqual(r['TEST_FILE'], '.\\some_file')
+        self.assertEqual(r['T2'], 'c:\\abc\\def')
+
 
     def test_rdecode(self):
         self.start()
