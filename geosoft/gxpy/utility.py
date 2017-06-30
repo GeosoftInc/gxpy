@@ -43,6 +43,14 @@ _temp_folder_override = None
 # Assign callable to override unique ID generation
 _uuid_callable = None
 
+
+# check valid group/parameter string
+def _validate_parameter(s):
+    if '.' in s:
+        return False
+    return True
+
+
 class UtilityException(Exception):
     """
     Exceptions from :mod:`geosoft.gxpy.utility`.
@@ -681,23 +689,6 @@ def dummy_to_nan(data):
         return data
 
 
-def save_parameters(group='_', parms=None):
-    """
-    Save parameters to the Project Parameter Block.  Parameter group names and member names
-    are converted to uppercase.
-
-    :param group:   parameter block group name
-    :param parms:   dict containing named parameter settings
-
-    .. versionadded:: 9.1
-    """
-    if parms is not None:
-        for k, v in parms.items():
-            # remove escaped characters because set_str() puts them back in
-            s = json.dumps(v).replace('\\\\', '\\')
-            gxapi.GXSYS.set_string(group, k, s)
-
-
 def reg_from_dict(rd, max_size=4096, json_encode=True):
     """
     :class:`geosoft.gxapi.GXREG` instance from a dictionary
@@ -751,16 +742,48 @@ def dict_from_reg(reg, ordered=False):
     return dct
 
 
+def save_parameters(group='_', parms=None):
+    """
+    Save parameters to the Project Parameter Block.  Parameter group names and member names
+    are converted to uppercase.
+
+    :param group:   parameter block group name, default is '_'
+    :param parms:   dict containing named parameter settings, must be specified
+
+    .. versionadded:: 9.1
+    """
+
+    if not isinstance(parms, dict):
+        raise UtilityException('parms dictionary not defined.')
+
+    if not(_validate_parameter(group)):
+        raise UtilityException('Group name \'{}\' contains invalid character \'.\''.format(group))
+
+    for k, v in parms.items():
+        if not (_validate_parameter(k)):
+            raise UtilityException('Parameter name \'{}\' contains invalid character \'.\''.format(k))
+
+        # remove escaped characters because set_str() puts them back in
+        s = json.dumps(v).replace('\\\\', '\\')
+        gxapi.GXSYS.set_string(group.upper(), k, s)
+
+
 def get_parameters(group='_', parms=None, default=None):
     """
-    Get parameters from the Project Parameter Block.  Note that parameter names
-    will always be uppercase.
+    Get parameters from the Project Parameter Block.
 
     :param group:   name in the parameter block group name
-    :param parms:   if specified only these items are found and returned, otherwise all are found and returned
-    :param parms:   default parameter setting returned for parameters not found, otherwise dict will
-                    not have the parameter.
+    :param parms:   if specified only these keys are searched and the value is replaced by the found parameter.
+                    Parameter keys are not case sensitive, though if parms is not provided all returned keys will
+                    be upper-case.
+    :param default: default value for parameters not found, ignored if parms is provided as a dict, in which
+                    case the current key:value settings will be unchanged.
     :returns:       dictionary containing group parameters
+
+    .. versionchanged:: 9.2.1
+        Now retains case on keys passed in to parms, which allows callers to maintain case.  Note that
+        if not specifying parms, the returned keys will always be upper-case.
+        Fixed bug handling file name construction on Windows.
 
     .. versionadded:: 9.1
     """
@@ -768,17 +791,25 @@ def get_parameters(group='_', parms=None, default=None):
     sv = gxapi.str_ref()
     p = {}
 
-    if parms is not None:
-        for k in parms:
-            if gxapi.GXSYS.exist_string(group, k):
-                gxapi.GXSYS.gt_string(group, k, sv)
-                try:
-                    p[k.upper()] = json.loads(sv.value)
-                except ValueError:
-                    p[k.upper()] = sv.value
+    if not(_validate_parameter(group)):
+        raise UtilityException('Group name \'{}\' contains invalid character \'.\''.format(group))
+    group = group.upper()
 
-            elif default is not None:
-                p[k.upper()] = default
+    if parms is not None:
+        if not isinstance(parms, dict):
+            for k in parms:
+                p[k] = default
+            parms = p
+        for k, default in parms.items():
+            k_upper = k.upper()
+            if gxapi.GXSYS.exist_string(group, k_upper):
+                gxapi.GXSYS.gt_string(group, k_upper, sv)
+                try:
+                    p[k] = json.loads(sv.value.replace('\\', '\\\\'))
+                except ValueError:
+                    p[k] = sv.value
+            else:
+                p[k] = default
 
     else:
         hREG = gxapi.GXREG.create(4096)
