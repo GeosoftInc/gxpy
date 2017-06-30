@@ -1,11 +1,8 @@
 import os
 import geosoft.gxapi as gxapi
-import geosoft.gxpy.gx as gx
 import geosoft.gxpy.grid as gxgrid
 import geosoft.gxpy.project as gxproj
 import geosoft.gxpy.utility as gxu
-
-import pydevd
 
 
 # function to calculate grid statistics
@@ -27,9 +24,7 @@ def grid_stats(grid_file):
 # entry point when run from a Geosoft Desktop application
 def rungx():
 
-    pydevd.settrace('localhost', port=34765, stdoutToServer=True, stderrToServer=True)
-
-    # parameter 'GRID_FILE' is the last use grid file name for this script.
+    # parameter 'GRID_FILE' is the last-specified grid file name for this script.
     grid_parameter = 'GRID_FILE'
     group = os.path.basename(__file__).split('.')[0]
     parms = gxu.get_parameters(group, {grid_parameter: ''})
