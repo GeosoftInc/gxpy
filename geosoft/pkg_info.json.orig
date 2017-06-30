@@ -1,0 +1,8 @@
+{
+<<<<<<< HEAD
+	"version": "9.3.0",
+=======
+	"version": "9.2.1",
+>>>>>>> 6e238ede5754b9fd6e89aaf53e6b789df18c8c09
+	"pre-release": "b0"
+}
