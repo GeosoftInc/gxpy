@@ -29,6 +29,30 @@ information.
 
 _sources/config.rst.txt
 
+GXAPI Instance Resource Garbage Collection
+------------------------------------------
+
+The GXAPI Python garbage collection is not in reverse-order of creation, which can lead to resources that depend
+on prior resources being destroyed out of order.  For example, the following will assert on exit:
+
+.. code::
+
+   vox = gxapi.GXVOX.create('v1.geosoft_voxel')
+   voxe = gxapi.GXVOXE.create(vox)
+
+This is because Python garbage collection releases the **vox** instance before the **voxe** instance.  To avoid
+this problem, when creating a class instance that depends on a prior class instance, explicitly free the dependant
+instance as follows:
+
+.. code::
+
+   vox = gxapi.GXVOX.create('v1.geosoft_voxel')
+   voxe = gxapi.GXVOXE.create(vox)  # voxe depends on vox
+
+   # ... do some work with voxe ...
+
+   # release the voxe resource te ensure it is released before vox
+   del voxe
 
 Helper classes to pass immutable values by reference
 ----------------------------------------------------
