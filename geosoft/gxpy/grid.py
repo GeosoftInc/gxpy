@@ -400,7 +400,7 @@ class Grid:
         """
         Create a new Grid instance as a copy of an existing grid.
 
-        :param grd:         :class:`Grid` instance to save as a new grid
+        :param grd:         :class:`Grid` instance to save as a new grid, or a grid file name
         :param file_name:   name of the new grid (file with optional decorations), default is in memory
         :param dtype:       numpy data type, None to use type of the parent grid
         :param overwrite:   True to overwrite if the file exists, False to no overwrite.
@@ -409,7 +409,10 @@ class Grid:
         """
 
         if not isinstance(grd, Grid):
-            grd = Grid.open(grd)
+            grd = Grid.open(grd, mode=FILE_READ)
+            close_grid = True
+        else:
+            close_grid = False
 
         p = grd.properties()
         if dtype:
@@ -426,6 +429,9 @@ class Grid:
 
         copy = Grid.new(file_name, p, overwrite=overwrite)
         grd._img.copy(copy._img)
+
+        if close_grid:
+            grd.close()
 
         return copy
 
