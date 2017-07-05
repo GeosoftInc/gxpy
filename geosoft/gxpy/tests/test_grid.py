@@ -523,9 +523,8 @@ class Test(GXPYTest):
             self.assertEqual(g[(g.nx * g.ny) - 1][3], 243.0)
             self.assertEqual(g[(g.nx - 1, g.ny - 1)][3], 243.0)
 
-            with gxgrd.Grid.copy(g, dtype=int) as g:
-                self.assertTrue(isinstance(g[0][3], int))
-                self.assertEqual(g[0][3], 771)
+    def test_copy_from_file_name(self):
+        self.start()
 
         with gxgrd.Grid.copy(self.g1f, dtype=int) as g:
             self.assertTrue(isinstance(g[0][3], int))
@@ -585,6 +584,7 @@ class Test(GXPYTest):
 
         with gxgrd.Grid.open(self.g2f) as g0:
             with gxgrd.Grid.index_window(g0, nx=75, ny=60) as g:
+                g.delete_files()
                 data = g.xyzv()[:, :, 3]
                 i = 0
                 sum = 0.0
