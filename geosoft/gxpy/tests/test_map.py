@@ -11,6 +11,7 @@ import geosoft.gxpy.geometry as gxgm
 import geosoft.gxpy.coordinate_system as gxcs
 import geosoft.gxpy.system as gxsys
 import geosoft.gxpy.group as gxg
+import geosoft.gxpy.grid as gxgrd
 
 from base import GXPYTest
 
@@ -631,6 +632,19 @@ class Test(GXPYTest):
             maki = m['maki']
             self.assertEqual(maki['b'], ['4', '5', '6'])
             self.assertEqual(maki['units'], 'nT')
+
+    def test_geotiff(self):
+        self.start()
+
+        mapname = self._new_data_map()
+        with gxmap.Map.open(mapname) as map:
+            map.export_geotiff('test_geotiff.tif')
+            with gxgrd.Grid.open('test_geotiff.tif(TIF)') as tif:
+                tif.delete_files()
+                properties = tif.properties()
+                self.assertEqual(properties.get('nx'),1376)
+                self.assertEqual(properties.get('ny'),1512)
+                self.assertEqual(str(properties.get('coordinate_system')),'*unknown')
 
 
 if __name__ == '__main__':

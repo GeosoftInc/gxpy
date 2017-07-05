@@ -1104,6 +1104,19 @@ class Map:
         finally:
             self.current_data_view = current_view
 
+    def export_geotiff(self, geotiff, dpi=96):
+        """
+        Export map as a GeoTIFF image
+
+        :param geotiff:     GeoTIFF file name
+        :param dpi:         DPI to use (Default is common screen resolution of 96)
+
+        .. versionadded:: 9.3
+        """
+        self.gxmap.export_all_in_view(geotiff, "*Data", gxapi.rDUMMY, dpi, 
+            gxapi.MAP_EXPORT_BITS_24, gxapi.MAP_EXPORT_METHOD_NONE, 
+            gxapi.MAP_EXPORT_FORMAT_GTIFF, "")
+
 
 class _Mapplot:
     """Internal class to marshal MAPPLOT commands that support basic map annotations."""
