@@ -10,12 +10,10 @@ def grid_stats(grid_file):
     # create a gxapi.GXST instance to accumulate statistics
     stats = gxapi.GXST.create()
 
-    # open the grid
-    grid = gxgrid.Grid.open(grid_file)
-
-    # add data from each row to the stats instance
-    for row in range(grid.ny):
-        stats.data_vv(grid.read_row(row).gxvv)
+    # open the grid and add each grid row to the stats instance
+    with gxgrid.Grid.open(grid_file) as grid:
+        for row in range(grid.ny):
+            stats.data_vv(grid.read_row(row).gxvv)
 
     return stats
 
