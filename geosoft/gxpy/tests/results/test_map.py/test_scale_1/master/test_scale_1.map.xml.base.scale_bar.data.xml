@@ -818,22 +818,22 @@
    <Item type="FontRef" size="8">
       <Item name="Value" value="1"/>
    </Item>
-   <Item type="Text" size="24">
+   <Item type="Text" size="21">
       <Item name="Point" type="D2POINT">
          <Value name="X" value="458.7598945"/>
          <Value name="Y" value="16"/>
       </Item>
-      <Item name="UTF-8 Text" value="2500"/>
+      <Item name="UTF-8 Text" value="0"/>
    </Item>
    <Item type="FontRef" size="8">
       <Item name="Value" value="1"/>
    </Item>
-   <Item type="Text" size="21">
+   <Item type="Text" size="24">
       <Item name="Point" type="D2POINT">
          <Value name="X" value="480.7475813"/>
          <Value name="Y" value="16"/>
       </Item>
-      <Item name="UTF-8 Text" value="0"/>
+      <Item name="UTF-8 Text" value="2500"/>
    </Item>
    <Item type="FontRef" size="8">
       <Item name="Value" value="1"/>
