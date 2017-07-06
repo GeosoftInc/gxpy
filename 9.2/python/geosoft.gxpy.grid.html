@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>geosoft.gxpy.grid submodule &#8212; Geosoft GX Python API 9.2.0 documentation</title>
+    <title>geosoft.gxpy.grid submodule &#8212; Geosoft GX Python API 9.2.1 documentation</title>
     
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '9.2.0',
+        VERSION:     '9.2.1',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true,
@@ -50,7 +50,7 @@
         <li class="right" >
           <a href="geosoft.gxpy.geometry.html" title="geosoft.gxpy.geometry submodule"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.1 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="geosoft.gxpy.html" accesskey="U">gxpy modules reference</a> &#187;</li> 
       </ul>
     </div>
@@ -161,6 +161,16 @@
 </tr>
 </tbody>
 </table>
+<p>A grid instance supports iteration that yields (x, y, z, grid_value) by points along rows.
+For example, the following prints the x, y, z, grid_value of every non-dummy point in a grid:</p>
+<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">geosoft.gxpy.grid</span> <span class="k">as</span> <span class="nn">gxgrd</span>
+
+<span class="n">g</span> <span class="o">=</span> <span class="n">gxgrd</span><span class="o">.</span><span class="n">Grid</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;some.grd&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">g</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">v</span> <span class="o">!=</span> <span class="n">g</span><span class="o">.</span><span class="n">dummy_value</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
+</pre></div>
+</div>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.1.</span></p>
 </div>
@@ -188,7 +198,7 @@
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>grd</strong> &#8211; <a class="reference internal" href="#geosoft.gxpy.grid.Grid" title="geosoft.gxpy.grid.Grid"><code class="xref py py-class docutils literal"><span class="pre">Grid</span></code></a> instance to save as a new grid</li>
+<li><strong>grd</strong> &#8211; <a class="reference internal" href="#geosoft.gxpy.grid.Grid" title="geosoft.gxpy.grid.Grid"><code class="xref py py-class docutils literal"><span class="pre">Grid</span></code></a> instance to save as a new grid, or a grid file name</li>
 <li><strong>file_name</strong> &#8211; name of the new grid (file with optional decorations), default is in memory</li>
 <li><strong>dtype</strong> &#8211; numpy data type, None to use type of the parent grid</li>
 <li><strong>overwrite</strong> &#8211; True to overwrite if the file exists, False to no overwrite.</li>
@@ -245,6 +255,12 @@ deleted and garbage collection is performed.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.2.</span></p>
 </div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxpy.grid.Grid.dummy_value">
+<code class="descname">dummy_value</code><a class="headerlink" href="#geosoft.gxpy.grid.Grid.dummy_value" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the grid data dummy value.</p>
 </dd></dl>
 
 <dl class="attribute">
@@ -537,7 +553,14 @@ type a memory grid is created in the new type.</li>
 <dt id="geosoft.gxpy.grid.Grid.properties">
 <code class="descname">properties</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.grid.Grid.properties" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the grid properties dictionary</p>
-<p>:returns:dictionary of all grid properties</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dictionary of all grid properties</td>
+</tr>
+</tbody>
+</table>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.1.</span></p>
 </div>
@@ -557,7 +580,7 @@ type a memory grid is created in the new type.</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxvv.GXvv</span></code> instance</p>
 </td>
 </tr>
 </tbody>
@@ -581,7 +604,7 @@ type a memory grid is created in the new type.</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"></p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxvv.GXvv</span></code></p>
 </td>
 </tr>
 </tbody>
@@ -596,7 +619,7 @@ type a memory grid is created in the new type.</li>
 <code class="descname">rot</code><a class="headerlink" href="#geosoft.gxpy.grid.Grid.rot" title="Permalink to this definition">¶</a></dt>
 <dd><p>grid rotation angle, degrees azimuth</p>
 <p>Note that grid rotations in the gxapi GXIMG are degrees clockwise, which is the opposite of
-degree azimuth, used here.  All horizontal plane anles in the Python gxpy module are degrees
+degree azimuth, used here.  All horizontal plane angles in the Python gxpy module are degrees
 azimuth for consistency.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.2.</span></p>
@@ -692,10 +715,30 @@ the grid and modify those that need to change and pass the properties back.</p>
 </dd></dl>
 
 <dl class="method">
+<dt id="geosoft.gxpy.grid.Grid.xyz">
+<code class="descname">xyz</code><span class="sig-paren">(</span><em>item</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.grid.Grid.xyz" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the (x, y, z) location of an indexed point in the grid.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>item</strong> &#8211; tuple (ix, iy) grid point, or the point number counting by row</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">trye (x, y, z) location</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.2.1.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
 <dt id="geosoft.gxpy.grid.Grid.xyzv">
 <code class="descname">xyzv</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.grid.Grid.xyzv" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return a numpy float array of (x,y,z,v) grid points, where (x, y, z) is the
-location of each grid point in 3D space and v is the grid value at that location.</p>
+<dd><p>Return a numpy float array of (x, y, z, v) grid points.</p>
+<p>x, y, z) is the location of each grid point in 3D space and v is the grid value at that location.
+Dummies will be numpy.nan.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.2.</span></p>
 </div>
@@ -760,8 +803,15 @@ location of each grid point in 3D space and v is the grid value at that location
 <dl class="function">
 <dt id="geosoft.gxpy.grid.delete_files">
 <code class="descclassname">geosoft.gxpy.grid.</code><code class="descname">delete_files</code><span class="sig-paren">(</span><em>file_name</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.grid.delete_files" title="Permalink to this definition">¶</a></dt>
-<dd><p>Delete all files associates with this grid name.
-:param file_name:</p>
+<dd><p>Delete all files associates with this grid name.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>file_name</strong> &#8211; </td>
+</tr>
+</tbody>
+</table>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.2.</span></p>
 </div>
@@ -929,7 +979,7 @@ location of each grid point in 3D space and v is the grid value at that location
         <li class="right" >
           <a href="geosoft.gxpy.geometry.html" title="geosoft.gxpy.geometry submodule"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.1 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="geosoft.gxpy.html" >gxpy modules reference</a> &#187;</li> 
       </ul>
     </div>

@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>geosoft.gxpy.group submodule &#8212; Geosoft GX Python API 9.2.0 documentation</title>
+    <title>geosoft.gxpy.group submodule &#8212; Geosoft GX Python API 9.2.1 documentation</title>
     
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '9.2.0',
+        VERSION:     '9.2.1',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true,
@@ -50,7 +50,7 @@
         <li class="right" >
           <a href="geosoft.gxpy.grid.html" title="geosoft.gxpy.grid submodule"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.1 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="geosoft.gxpy.html" accesskey="U">gxpy modules reference</a> &#187;</li> 
       </ul>
     </div>
@@ -554,7 +554,8 @@ are valid.  For other fonts you will get the symbol requested.  The default is
 <dt id="geosoft.gxpy.group.Draw">
 <em class="property">class </em><code class="descclassname">geosoft.gxpy.group.</code><code class="descname">Draw</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.group.Draw" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#geosoft.gxpy.group.Group" title="geosoft.gxpy.group.Group"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxpy.group.Group</span></code></a></p>
-<p>Create (start) a drawing group for 2D drawing elements.  On a 3D view, 2D drawing elements
+<p>Create (start) a drawing group for 2D drawing elements.</p>
+<p>On a 3D view, 2D drawing elements
 are placed on the default drawing plane.  Drawing groups will lock the view such that only one
 drawing group can be instantiated at a time.</p>
 <p>Use <cite>with Draw() as group:</cite> to ensure correct unlocking when complete.</p>
@@ -781,9 +782,10 @@ which reference location.  The points are:</p>
 <dt id="geosoft.gxpy.group.Draw_3d">
 <em class="property">class </em><code class="descclassname">geosoft.gxpy.group.</code><code class="descname">Draw_3d</code><span class="sig-paren">(</span><em>view</em>, <em>*args</em>, <em>render_backfaces=False</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.group.Draw_3d" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#geosoft.gxpy.group.Draw" title="geosoft.gxpy.group.Draw"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxpy.group.Draw</span></code></a></p>
-<p>Create a 3D drawing group within a 3D view.  3D drawing groups accept 3D drawing objects that
-can be created using methods of this class.  2D objects can also be drawn to a 3D group and will be
-placed on the default drawing plane. within the 3D view.</p>
+<p>Create a 3D drawing group within a 3D view.</p>
+<p>3D drawing groups accept 3D drawing objects that can be created using methods of this class.
+2D objects can also be drawn to a 3D group and will be placed on the default drawing plane
+within the 3D view.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -925,7 +927,8 @@ geometry, color_integer, attibute)</cite>:</p>
 </tbody>
 </table>
 <p><strong>Example</strong></p>
-<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">geosof.gxpy.view</span> <span class="k">as</span> <span class="nn">gxv</span>
+<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">geosoft.gxpy.geometry</span> <span class="k">as</span> <span class="nn">gxgm</span>
+<span class="kn">import</span> <span class="nn">geosof.gxpy.view</span> <span class="k">as</span> <span class="nn">gxv</span>
 <span class="kn">import</span> <span class="nn">geosogt.gxpy.group</span> <span class="k">as</span> <span class="nn">gxg</span>
 
 <span class="k">def</span> <span class="nf">render_spheres</span><span class="p">(</span><span class="n">xyz</span><span class="p">,</span> <span class="n">cmap_radius</span><span class="p">):</span>
@@ -1554,7 +1557,7 @@ determined to center the bar off the location side specified.</li>
         <li class="right" >
           <a href="geosoft.gxpy.grid.html" title="geosoft.gxpy.grid submodule"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.1 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="geosoft.gxpy.html" >gxpy modules reference</a> &#187;</li> 
       </ul>
     </div>

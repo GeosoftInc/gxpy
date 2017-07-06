@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Geosoft GX API &#8212; Geosoft GX Python API 9.2.0 documentation</title>
+    <title>Geosoft GX API &#8212; Geosoft GX Python API 9.2.1 documentation</title>
     
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '9.2.0',
+        VERSION:     '9.2.1',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true,
@@ -50,7 +50,7 @@
         <li class="right" >
           <a href="geosoft.gxapi.classes.html" title="GX API Class/Library Reference"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.1 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="geosoft.gxapi.classes.html" accesskey="U">GX API Class/Library Reference</a> &#187;</li> 
       </ul>
     </div>
@@ -60,6 +60,7 @@
   <ul>
 <li><a class="reference internal" href="#">Geosoft GX API</a><ul>
 <li><a class="reference internal" href="#the-gxcontext-class">The GXContext class</a></li>
+<li><a class="reference internal" href="#gxapi-instance-resource-garbage-collection">GXAPI Instance Resource Garbage Collection</a></li>
 <li><a class="reference internal" href="#helper-classes-to-pass-immutable-values-by-reference">Helper classes to pass immutable values by reference</a></li>
 <li><a class="reference internal" href="#exceptions">Exceptions</a></li>
 </ul>
@@ -145,7 +146,7 @@ information.</p>
 
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXContext.create">
-<em class="property">static </em><code class="descname">create</code><span class="sig-paren">(</span><em>(str)application</em>, <em>(str)version</em>, <em>(int)parent_wnd_id = 0</em><span class="sig-paren">)</span> &rarr; GXContext:<a class="headerlink" href="#geosoft.gxapi.GXContext.create" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="descname">create</code><span class="sig-paren">(</span><em>(str)application</em>, <em>(str)version</em>, <em>(int)parent_wnd_id=0</em>, <em>flags=0</em><span class="sig-paren">)</span> &rarr; GXContext:<a class="headerlink" href="#geosoft.gxapi.GXContext.create" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates the GX execution context (will return the current one if it exists).</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -155,7 +156,7 @@ information.</p>
 <li><strong>application</strong> &#8211; Calling application name (str)&#8221;</li>
 <li><strong>version</strong> &#8211; Calling application version (str)</li>
 <li><strong>parent_wnd_id</strong> &#8211; Calling application main window handle (HWND cast to unsigned on Windows) as an int (default 0)</li>
-<li><strong>flags</strong> &#8211; Two flaggs currently supported (64 suppresses text progress messages and 128 GUI progress windows, default 0)</li>
+<li><strong>flags</strong> &#8211; 0 default; 64 suppresses text progress messages; 128 suppresses GUI progress window</li>
 </ul>
 </td>
 </tr>
@@ -278,6 +279,27 @@ other application windows. Has no effect on consoles owning standalone scripts.<
 
 <p>_sources/config.rst.txt</p>
 </div>
+<div class="section" id="gxapi-instance-resource-garbage-collection">
+<h2>GXAPI Instance Resource Garbage Collection<a class="headerlink" href="#gxapi-instance-resource-garbage-collection" title="Permalink to this headline">¶</a></h2>
+<p>The GXAPI Python garbage collection is not in reverse-order of creation, which can lead to resources that depend
+on prior resources being destroyed out of order.  For example, the following will assert on exit:</p>
+<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="n">vox</span> <span class="o">=</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">GXVOX</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="s1">&#39;v1.geosoft_voxel&#39;</span><span class="p">)</span>
+<span class="n">voxe</span> <span class="o">=</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">GXVOXE</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">vox</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This is because Python garbage collection releases the <strong>vox</strong> instance before the <strong>voxe</strong> instance.  To avoid
+this problem, when creating a class instance that depends on a prior class instance, explicitly free the dependant
+instance as follows:</p>
+<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="n">vox</span> <span class="o">=</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">GXVOX</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="s1">&#39;v1.geosoft_voxel&#39;</span><span class="p">)</span>
+<span class="n">voxe</span> <span class="o">=</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">GXVOXE</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">vox</span><span class="p">)</span>  <span class="c1"># voxe depends on vox</span>
+
+<span class="c1"># ... do some work with voxe ...</span>
+
+<span class="c1"># release the voxe resource te ensure it is released before vox</span>
+<span class="k">del</span> <span class="n">voxe</span>
+</pre></div>
+</div>
+</div>
 <div class="section" id="helper-classes-to-pass-immutable-values-by-reference">
 <h2>Helper classes to pass immutable values by reference<a class="headerlink" href="#helper-classes-to-pass-immutable-values-by-reference" title="Permalink to this headline">¶</a></h2>
 <p>Each of the classes below can be used to pass these immutable types by reference to the GX API.
@@ -397,7 +419,7 @@ very specific exceptions.</p>
         <li class="right" >
           <a href="geosoft.gxapi.classes.html" title="GX API Class/Library Reference"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.1 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="geosoft.gxapi.classes.html" >GX API Class/Library Reference</a> &#187;</li> 
       </ul>
     </div>

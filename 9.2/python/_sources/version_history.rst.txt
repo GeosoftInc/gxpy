@@ -2,13 +2,24 @@ geosoft.gxpy module history
 ==========================================
 
   
+Version 9.2.1
+-----------------
+
+
+New Functions
+^^^^^^^^^^^^^
+
+:func:`geosoft.gxpy.grid.Grid.xyz` Returns the (x, y, z) location of an indexed point in the grid.
+
+
+  
 Version 9.2
 -----------------
 
 New Classes
 ^^^^^^^^^^^
 
-:class:`geosoft.gxpy.agg.Aggregate_image` The AGG class supports the creation of aggregate images from one or more grid data sets. Aggergates
+:class:`geosoft.gxpy.agg.Aggregate_image` Aggregate images are composed of one or more image/grids that can be displayed in a 2D or 3D display group.
 
 :class:`geosoft.gxpy.coordinate_system.Coordinate_system` Coordinate system class. A coordinate system defines a horizontal and vertical reference
 
@@ -32,7 +43,7 @@ New Classes
 
 :class:`geosoft.gxpy.group.Color` Colours, which are stored as a 24-bit color integer.
 
-:class:`geosoft.gxpy.group.Draw_3d` Create a 3D drawing group within a 3D view.  3D drawing groups accept 3D drawing objects that
+:class:`geosoft.gxpy.group.Draw_3d` Create a 3D drawing group within a 3D view.
 
 :class:`geosoft.gxpy.group.Group` Geosoft group class.
 
@@ -130,7 +141,7 @@ New Functions
 
 :func:`geosoft.gxpy.grid.Grid.index_window` Create a windowed instance of a grid.
 
-:func:`geosoft.gxpy.grid.Grid.xyzv` Return a numpy float array of (x,y,z,v) grid points, where (x, y, z) is the
+:func:`geosoft.gxpy.grid.Grid.xyzv` Return a numpy float array of (x, y, z, v) grid points.
 
 :func:`geosoft.gxpy.grid.delete_files` Delete all files associates with this grid name.
 
@@ -268,7 +279,7 @@ New Functions
 
 :func:`geosoft.gxpy.utility.geosoft_metadata` Get the metadata dictionary for a geosoft data file.
 
-:func:`geosoft.gxpy.utility.gx_dummy` :returns:   GX dummy for this dtype
+:func:`geosoft.gxpy.utility.gx_dummy` Return the dummy for this value, or this type.
 
 :func:`geosoft.gxpy.utility.merge_dict` Update a dictionary by adding key-values from second dictionary.  Unlike Python's
 
@@ -462,7 +473,7 @@ New Functions
 
 :func:`geosoft.gxpy.utility.folder_workspace` Return the Geosoft project folder name.
 
-:func:`geosoft.gxpy.utility.get_parameters` Get parameters from the Project Parameter Block.  Note that parameter names
+:func:`geosoft.gxpy.utility.get_parameters` Get parameters from the Project Parameter Block.
 
 :func:`geosoft.gxpy.utility.get_shared_dict` Get a dictionary shared by an external application.
 
