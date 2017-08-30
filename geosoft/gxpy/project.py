@@ -160,7 +160,7 @@ class Geosoft_project:
 
     @property
     def open_voxels(self):
-        """list of voxels/voxettes open as a document"""
+        """list of voxels/voxets open as a document"""
         return self._list_open_docs(DOC_TYPE_VOXEL)
 
     @property
@@ -237,7 +237,7 @@ class Geosoft_project:
         """
         Return the state of the current database.
         
-        :returns: dict of the current database state, {} of there is no current database.
+        :returns: dict of the current database state, {} if there is no current database.
         
             =================== ========================================================
             'disp_chan_list'    list of displayed channels
@@ -389,9 +389,9 @@ def get_user_input(title="Input required...", prompt='?', kind='string', default
                         example: "Your title/nDescriptive help"
     :param prompt:      prompt string to
     :param kind:        kind of response required: 'string', 'int', 'float', 'file', 'colour' or 'list'
-    :param items:       comma-separated string or list/tupple of items for a list
-    :param default:     default value.  For multifile can be a string ('|' delimiter) or list/tupple.
-    :param filemask:    File type masks, Comma delimited, or a list/tupple.  Examples:
+    :param items:       comma-separated string or list/tuple of items for a list
+    :param default:     default value.  For multifile can be a string ('|' delimiter) or list/tuple.
+    :param filemask:    File type masks, Comma delimited, or a list/tuple.  Examples:
                         '.dat', '\*.dat,\*.grd', '\*\*,\*.grd' for multiple files
 
     :returns:       user response

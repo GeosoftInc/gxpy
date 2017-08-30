@@ -190,7 +190,7 @@ class Geosoft_gdb:
 
     **Some typical programming patterns**
 
-    Python Oasis extension opens read through all data in the current database:
+    Python Oasis extension opens and reads through all data in the current database:
 
     .. code::
 
@@ -596,7 +596,7 @@ class Geosoft_gdb:
 
     @property
     def pages_for_blobs(self):
-        """pages consumed  by blobs"""
+        """pages consumed by blobs"""
         try:
             return self._db.get_info(gxapi.DB_INFO_BLOB_SIZE)
         except gxapi.GXError:
@@ -921,7 +921,7 @@ class Geosoft_gdb:
             decimal decimal places to display
             unit    measurement unit
             label   channel label, which can be different from the channel name
-            protect proptection: 0 can be modified; 1 protected from modification
+            protect protection: 0 can be modified; 1 protected from modification
             columns number data columns, 1 for normal channels, n for VA channels
             type    data type, one of gxapi.DB_CATEGORY_CHAN constants
             ======= ==============================================================
@@ -1668,7 +1668,7 @@ class Geosoft_gdb:
         :param data:        numpy array shape (records,channels).  If single dimension, one channel
         :param channels:    channel name or symbol list, or a single name/symbol.  If a single name is specified
                             for multi-column data, a VA channel is assumed.
-        :param fid:         option fid tupple (start, increment), default (0.0,1.0)
+        :param fid:         option fid tuple (start, increment), default (0.0,1.0)
 
         .. versionadded:: 9.1
         """
@@ -1747,7 +1747,7 @@ class Geosoft_gdb:
 
             n += 1
             if progress:
-                progress('Scaning unique values in "{}", {}'.format(cn, str(l)), (n * 100.0) / len(lines))
+                progress('Scanning unique values in "{}", {}'.format(cn, str(l)), (n * 100.0) / len(lines))
             if stop:
                 if stop():
                     return set.tolist()

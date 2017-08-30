@@ -395,14 +395,14 @@ class View:
 
     @property
     def extent_visible(self):
-        """extend of visible groups in the view as (x_min, y_min, x_max, y_max)"""
+        """extent of visible groups in the view as (x_min, y_min, x_max, y_max)"""
         return self._extent(gxapi.MVIEW_EXTENT_VISIBLE)
 
     def extent_map_cm(self, extent):
         """
         Return an extent in map cm.
 
-        :param extent: tuple returned from one of the extent property.
+        :param extent: tuple returned from one of the extent properties.
 
         .. versionadded:: 9.2
         """
@@ -458,8 +458,8 @@ class View:
         """
         Returns the location of this point on the map (in cm) to the view location in view units.
             
-        :param x:   x, or a tupple (x,y), in map cm
-        :param y:   y if x is not a tupple
+        :param x:   x, or a tuple (x,y), in map cm
+        :param y:   y if x is not a tuple
         
         .. versionadded:: 9.2
         """
@@ -478,8 +478,8 @@ class View:
         """ 
         Returns the location of this point on the map in the view.
         
-        :param x:   x, or a tupple (x,y), in view units
-        :param y:   y if x is not a tupple
+        :param x:   x, or a tuple (x,y), in view units
+        :param y:   y if x is not a tuple
         
         .. versionadded:: 9.2
         """
@@ -540,7 +540,7 @@ class View_3d(View):
     horizontal plane at elevation 0, named 'plane_0' is created when a new 3d view is created.
     
     Planes are flat by default, but can be provided a grid that defines the plane surface relief,
-    which is intended for creating tinkgs like terrain surfaces on which 2d graphics are rendered.
+    which is intended for creating things like terrain surfaces on which 2d graphics are rendered.
     
     Planes can also be oriented within the 3D space to create sections, or for other more esoteric
     purposes.
@@ -569,7 +569,7 @@ class View_3d(View):
     @classmethod
     def new(cls, file_name=None, area_2d=None, overwrite=False, **kwargs):
         """
-        Createa a new 3D view.
+        Create a new 3D view.
         
         :param file_name:   name for the new 3D view file (.geosoft_3dv added).  If not specified a
                             unique temporary file is created.
