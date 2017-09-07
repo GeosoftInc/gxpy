@@ -1,7 +1,6 @@
 import unittest
 import os
 import numpy as np
-import gc
 from PIL import Image
 
 import geosoft
@@ -36,7 +35,6 @@ class Test(GXPYTest):
         self.start()
 
         with gxdb.Geosoft_gdb.open(self.gdb_name) as gdb:
-            self.assertEqual(gdb.file_name.lower(),self.gdb_name.lower())
             self.assertEqual(str(gdb).lower(),os.path.basename(self.gdb_name).lower())
             self.assertTrue(len(gdb.list_channels())>=6)
             self.assertTrue('X' in gdb.list_channels())
@@ -79,7 +77,6 @@ class Test(GXPYTest):
 
         with gxdb.Geosoft_gdb.open(self.gdb_name) as gdb:
             
-            self.assertEqual(gdb.file_name.lower(),self.gdb_name.lower())
             self.assertEqual(str(gdb).lower(),os.path.basename(self.gdb_name).lower())
             data, ch, fid = gdb.read_line('D578625')
             self.assertEqual(data.shape, (832, 8))
@@ -666,6 +663,87 @@ class Test(GXPYTest):
             gdb.delete_line('testgroup')
 
             gdb.discard()
+
+    def test_channel(self):
+        self.start()
+
+        with gxdb.Geosoft_gdb.open(self.gdb_name) as gdb:
+
+            gdb.delete_channel("detailtest")
+            ch = gxdb.Channel.new(gdb, "detailtest")
+            det = gdb.channel_details(ch.name)
+            try:
+                self.assertEqual(ch.name, det['name'])
+                self.assertEqual(ch.array, det['array'])
+                self.assertEqual(ch.decimal, det['decimal'])
+                self.assertEqual(ch.format, det['format'])
+                self.assertEqual(ch.label, det['label'])
+                self.assertEqual(ch.protect, det['protect'])
+                self.assertEqual(ch.symbol, det['symbol'])
+                self.assertEqual(ch.type, det['type'])
+                self.assertEqual(ch.unit, det['unit'])
+                self.assertEqual(ch.width, det['width'])
+                self.assertEqual(ch.class_, det['class'])
+
+                ch.protect = 1
+                ch.decimal = 6
+                ch.width = 10
+                ch.unit = 'nT'
+                ch.label = 'weirdo'
+                ch.format = gxapi.DB_CHAN_FORMAT_GEOGR
+                ch.class_ = 'geochem'
+                self.assertEqual(ch.protect, True)
+                self.assertEqual(ch.decimal, 6)
+                self.assertEqual(ch.unit, 'nT')
+                self.assertEqual(ch.label, 'weirdo')
+                self.assertEqual(ch.format, 4)
+                self.assertEqual(ch.class_, 'geochem')
+
+            finally:
+                self.assertRaises(gxdb.GdbException, gdb.delete_channel, ch.name)
+                ch.protect = False
+                gdb.delete_channel(ch.name)
+                gdb.discard()
+
+    def test_line(self):
+        self.start()
+
+        with gxdb.Geosoft_gdb.open(self.gdb_name) as gdb:
+
+            gdb.delete_line("T9999")
+            ln = gxdb.Line.new(gdb, "T9999")
+            det = gdb.line_details(ln.name)
+            try:
+                self.assertEqual(ln.name, det['name'])
+                self.assertEqual(ln.category, det['category'])
+                self.assertEqual(ln.date, det['date'])
+                self.assertEqual(ln.flight, det['flight'])
+                self.assertEqual(ln.number, det['number'])
+                self.assertEqual(ln.type, det['type'])
+                self.assertEqual(ln.version, det['version'])
+                self.assertEqual(ln.group_class, det['groupclass'])
+                self.assertEqual(ln.bearing, None)
+
+                ln.date = 2017
+                self.assertEqual(ln.date, 2017)
+
+            finally:
+                gdb.delete_line(ln.name)
+                gdb.discard()
+
+    def test_create_line_name(self):
+        self.assertEqual(gxdb.create_line_name(10, gxdb.LINE_TYPE_NORMAL, 4), 'L10.4')
+        self.assertEqual(gxdb.create_line_name(10, gxdb.LINE_TYPE_BASE, 4), 'B10.4')
+        self.assertEqual(gxdb.create_line_name('abc', gxdb.LINE_TYPE_RANDOM, 4), 'Dabc.4')
+        self.assertEqual(gxdb.create_line_name('20', gxdb.LINE_TYPE_SPECIAL, 4), 'P20.4')
+        self.assertEqual(gxdb.create_line_name('899', gxdb.LINE_TYPE_TIE, 1), 'T899.1')
+        self.assertEqual(gxdb.create_line_name('899', gxdb.LINE_TYPE_TEST, 1), 'S899.1')
+        self.assertEqual(gxdb.create_line_name('899', gxdb.LINE_TYPE_TREND, 1), 'R899.1')
+
+    def test_bearing(self):
+        with gxdb.Geosoft_gdb.open(self.gdb_name) as gdb:
+            ln = gxdb.Line(gdb, 'D578625')
+            self.assertAlmostEqual(ln.bearing, 0.0)
 
     def test_metadata(self):
         self.start()
