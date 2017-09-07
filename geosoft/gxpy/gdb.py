@@ -292,7 +292,7 @@ class Geosoft_gdb:
         return gdb
 
     @classmethod
-    def new(cls, name, maxLines=500, maxChannels=200, maxBlobs=0, pageSize=1024, comp=None):
+    def new(cls, name, maxLines=500, maxChannels=200, maxBlobs=0, pageSize=1024, comp=None, overwrite=False):
         """
         Create a new database.
 
@@ -305,10 +305,14 @@ class Geosoft_gdb:
                             | COMP_NONE
                             | COMP_SPEED (default)
                             | COMP_SIZE
+        :param overwrite:   True to overwrite existing database. Default is False, GdbException if file exists.
                             
         :returns:           :class:`Geosoft_gdb` instance
 
         .. versionadded:: 9.1
+
+        .. versionchanged:: 9.3
+            added parameter overwrite=False
         """
         maxLines = max(10, maxLines)
         maxChannels = max(25, maxChannels)
@@ -319,6 +323,10 @@ class Geosoft_gdb:
             comp = COMP_SPEED
 
         name = _gdb_name(name)
+
+        if not overwrite and os.path.isfile(name):
+            raise GdbException('Cannot overwrite existing database \'{}\''.format(name))
+
         gxapi.GXDB.create_comp(name,
                                maxLines, maxChannels, maxBlobs, 10, 100,
                                'SUPER', '',
