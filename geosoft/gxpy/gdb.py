@@ -101,18 +101,33 @@ def _va_width(data):
         raise GdbException(_t("Only one or two-dimensional data allowed."))
     return width
 
-def create_line_name(number, type, version):
+def delete_files(file_name):
     """
-    Returns a valid database line name constructed from the component parts.
+    Delete all files associates with this database name.
 
-    :param number:  line number, or a string
-    :param type:    one of LINE_TYPE_ constants
-    :param version: version number
-    :return:        string line name
+    :param file_name:   name of the database
+
+    .. versionadded:: 9.3
     """
-    sr = gxapi.str_ref()
-    gxapi.GXDB.set_line_name2(str(number), type, version, sr)
-    return sr.value
+
+    def df(fn):
+        try:
+            os.remove(fn)
+        except OSError as e:
+            pass
+
+    if file_name is not None:
+
+        path = os.path.abspath(file_name)
+        fn = os.path.dirname(path)
+        root, ext = os.path.splitext(os.path.basename(path))
+
+        if ext.lower() != '.gdb':
+            raise GdbException('File is not a Geosoft database file (no gdb extension): {}'.format(file_name))
+
+        df(file_name)
+        df(root + '.xml')
+
 
 class Geosoft_gdb:
     """

@@ -596,7 +596,8 @@ class Test(GXPYTest):
     def test_new(self):
         self.start()
 
-        with gxdb.Geosoft_gdb.new( os.path.join(self.folder, 'new.gdb')) as gdb:
+        gdb_file = os.path.join(self.folder, 'new.gdb')
+        with gxdb.Geosoft_gdb.new(gdb_file, overwrite=True) as gdb:
 
             #read an image and put it in a new database
             with open(os.path.join(self.folder, 'image.png'), 'rb') as im_handle:
@@ -616,9 +617,10 @@ class Test(GXPYTest):
             self.assertEqual(d.shape[0],imageIn.shape[1])
             self.assertEqual(d.shape[1],imageIn.shape[2])
 
-        self.assertRaises(gxdb.GdbException, gxdb.Geosoft_gdb.new, 'new.gdb')
-        with gxdb.Geosoft_gdb.new( os.path.join(self.folder, 'new.gdb'), overwrite=True) as gdb:
+        self.assertRaises(gxdb.GdbException, gxdb.Geosoft_gdb.new, gdb_file)
+        with gxdb.Geosoft_gdb.new( os.path.join(self.folder, gdb_file), overwrite=True) as gdb:
             pass
+        gxdb.delete_files(gdb_file)
 
 
     def test_details(self):
