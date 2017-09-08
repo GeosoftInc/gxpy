@@ -795,6 +795,7 @@ class Test(GXPYTest):
             gdb.discard()
 
     def test_create_line_name(self):
+        self.start()
         self.assertEqual(gxdb.create_line_name(10, gxdb.LINE_TYPE_NORMAL, 4), 'L10.4')
         self.assertEqual(gxdb.create_line_name(10, gxdb.LINE_TYPE_BASE, 4), 'B10.4')
         self.assertEqual(gxdb.create_line_name('abc', gxdb.LINE_TYPE_RANDOM, 4), 'Dabc.4')
@@ -804,6 +805,7 @@ class Test(GXPYTest):
         self.assertEqual(gxdb.create_line_name('899', gxdb.LINE_TYPE_TREND, 1), 'R899.1')
 
     def test_bearing(self):
+        self.start()
         with gxdb.Geosoft_gdb.open(self.gdb_name) as gdb:
             ln = gxdb.Line(gdb, 'D578625')
             self.assertAlmostEqual(ln.bearing(), 0.0)
@@ -831,6 +833,16 @@ class Test(GXPYTest):
             maki = m['maki']
             self.assertEqual(maki['b'], ['4', '5', '6'])
             self.assertEqual(maki['units'], 'nT')
+
+    def test_coordinate_system(self):
+        self.start()
+        with gxdb.Geosoft_gdb.open(self.gdb_name) as gdb:
+            try:
+                self.assertEqual(str(gdb.coordinate_system), 'Corrego Alegre 1970-72 / UTM zone 23S')
+                gdb.coordinate_system = 'NAD83 / UTM zone 25N'
+                self.assertEqual(str(gdb.coordinate_system), 'NAD83 / UTM zone 25N')
+            finally:
+                gdb.discard()
 
 
 ###############################################################################################

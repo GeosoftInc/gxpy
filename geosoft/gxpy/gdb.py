@@ -494,15 +494,24 @@ class Geosoft_gdb:
 
     @property
     def coordinate_system(self):
-        """ the coordinate system of the current :meth:`xyz_channels`."""
+        """
+        Coordinate system of the current :meth:`xyz_channels`.
+        Can be set (added in version 9.3).
+        """
         try:
-            x_symb = self.line_name_symb('X')[1]
+            x, y, z = self.xyz_channels
             ipj = gxapi.GXIPJ.create()
-            self.gxdb.get_ipj(x_symb, ipj)
+            self.gxdb.get_ipj(self.channel_name_symb(x)[1], ipj)
             return gxcs.Coordinate_system(ipj)
 
         except GdbException:
             return gxcs.Coordinate_system()
+
+    @coordinate_system.setter
+    def coordinate_system(self, cs):
+        cs = gxcs.Coordinate_system(cs)
+        x, y, z = self.xyz_channels
+        self.gxdb.set_ipj(self.channel_name_symb(x)[1], self.channel_name_symb(y)[1], cs.gxipj)
 
     @property
     def max_blobs(self):
