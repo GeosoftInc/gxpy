@@ -796,7 +796,7 @@ class Geosoft_gdb:
             number      numeric line number
             flight      flight number
             version     line version number
-            groupclass  class name for grouped lines, '' if not a grouped line
+            groupclass  class name for grouped lines, None if not a grouped line
             =========== ==============================================================
 
         .. versionadded:: 9.1
@@ -825,7 +825,7 @@ class Geosoft_gdb:
             if self._db.line_category(ls) == gxapi.DB_CATEGORY_LINE_GROUP:
                 detail['groupclass'] = get_detail(self._db.get_group_class)
             else:
-                detail['groupclass'] = ''
+                detail['groupclass'] = None
 
         finally:
             self._unlock(ls)
@@ -986,7 +986,7 @@ class Geosoft_gdb:
 
         return symb
 
-    def new_line(self, line, linetype=None, group=''):
+    def new_line(self, line, linetype=None, group=None):
         """
         Get a line symbol.  If line exists an error is raised.
 
@@ -1014,7 +1014,7 @@ class Geosoft_gdb:
         if symb != gxapi.NULLSYMB:
             raise GdbException('Cannot create existing line \'{}\''.format(line))
 
-        if len(group) > 0:
+        if group:
             linetype = SYMB_LINE_GROUP
         elif not linetype:
             linetype = SYMB_LINE_NORMAL
@@ -1024,7 +1024,7 @@ class Geosoft_gdb:
                                        gxapi.DB_OWN_SHARED,
                                        linetype,
                                        0)
-        if len(group) > 0:
+        if group:
             self._lock_write(symb)
             try:
                 self._set(symb, self._db.set_group_class, group)
@@ -1896,6 +1896,14 @@ class Line:
         finally:
             self.gdb._unlock(self._symb)
 
+    def _get_str(self, fn):
+        self.gdb._lock_read(self._symb)
+        try:
+            fn(self._symb, self._sr)
+            return self._sr.value
+        finally:
+            self.gdb._unlock(self._symb)
+
     def _set(self, fn, v):
         self.gdb._lock_write(self._symb)
         try:
@@ -1941,7 +1949,7 @@ class Line:
     @property
     def name(self):
         """
-        Line name
+        Line name, consistent with names constructed by :func: create_line_name
 
         .. versionadded:: 9.3
         """
@@ -1959,7 +1967,7 @@ class Line:
     @property
     def type(self):
         """
-        Line type:
+        Line type, which can be set:
 
         =================
         LINE_TYPE_NORMAL
@@ -1975,10 +1983,14 @@ class Line:
         """
         return self._get(self.gdb._db.line_type)
 
+    @type.setter
+    def type(self, value):
+        self._set(self.gdb._db.set_line_type, value)
+
     @property
     def category(self):
         """
-        Line category:
+        Line category, which can be set
 
         ====================
         LINE_CATAGORY_FLIGHT
@@ -1993,7 +2005,7 @@ class Line:
     @property
     def date(self):
         """
-        Line date.
+        Line date. Can be set.
 
         .. versionadded:: 9.3
         """
@@ -2006,7 +2018,7 @@ class Line:
     @property
     def flight(self):
         """
-        Line flight number (flight/cruise/survey event).
+        Line flight number (flight/cruise/survey event). Can be set.
 
         .. versionadded:: 9.3
         """
@@ -2016,35 +2028,67 @@ class Line:
     def flight(self, value):
         self._set(self.gdb._db.set_line_flight, value)
 
+
     @property
     def number(self):
         """
-        Line number.
+        Line number. Can be set
 
         .. versionadded:: 9.3
         """
         return self._get(self.gdb._db.line_number)
 
+    @number.setter
+    def number(self, value):
+        self._set(self.gdb._db.set_line_num, int(value))
+
     @property
     def version(self):
         """
-        Line version number.
+        Line version number. Can be set.
 
         .. versionadded:: 9.3
         """
         return self._get(self.gdb._db.line_version)
 
+    @version.setter
+    def version(self, value):
+        self._set(self.gdb._db.set_line_ver, value)
+
     @property
     def group_class(self):
         """
-        The lines group class name, '' for a group lines (LINE_CATEGORY_GROUP)
+        The lines group class name, '' for a group lines (LINE_CATEGORY_GROUP).
+        Only works for lines that are part of a group.
+        Can be set.
 
         .. versionadded:: 9.3
         """
         if self.category == LINE_CATEGORY_GROUP:
-            return self._get(self.gdb._db.get_group_class)
+            return self._get_str(self.gdb._db.get_group_class)
         else:
-            return ''
+            return None
+
+    @group_class.setter
+    def group_class(self, value):
+        if self.category == LINE_CATEGORY_GROUP:
+            self._set(self.gdb._db.set_group_class, value)
+        else:
+            raise GdbException('Line \'{}\' is not a grouped line.'.format(self.name))
+
+    @property
+    def selected(self):
+        return self.gdb._db.get_line_selection(self._symb) == gxapi.DB_LINE_SELECT_INCLUDE
+
+    @selected.setter
+    def selected(self, value):
+        if bool(value):
+            self.gdb._db.set_line_selection(self._symb, gxapi.DB_LINE_SELECT_INCLUDE)
+        else:
+            self.gdb._db.set_line_selection(self._symb, gxapi.DB_LINE_SELECT_EXCLUDE)
+
+    #===========================================================================================
+    # methods that work with line data
 
     def bearing(self):
         """

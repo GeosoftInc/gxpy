@@ -660,7 +660,7 @@ class Test(GXPYTest):
             self.assertEqual(det.get('flight'),0)
             self.assertEqual(det.get('version'),0)
             self.assertEqual(det.get('type'),gxapi.DB_LINE_TYPE_RANDOM)
-            self.assertEqual(det.get('groupclass'),'')
+            self.assertEqual(det.get('groupclass'), None)
 
             gdb.delete_line('testgroup')
             ls = gdb.new_line('testgroup', group="TeSt")
@@ -731,13 +731,55 @@ class Test(GXPYTest):
                 self.assertEqual(ln.type, det['type'])
                 self.assertEqual(ln.version, det['version'])
                 self.assertEqual(ln.group_class, det['groupclass'])
+                self.assertTrue(ln.selected)
 
                 ln.date = 2017
                 self.assertEqual(ln.date, 2017)
+                ln.selected = False
+                self.assertFalse(ln.selected)
+                ln.selected = True
+                self.assertTrue(ln.selected)
+                ln.number = 88.9
+                self.assertEqual(ln.number, 88)
+                ln.number = -88.9
+                self.assertEqual(ln.number, -88)
+                ln.type = gxdb.LINE_TYPE_NORMAL
+                self.assertEqual(ln.type, 0)
+                ln.type = gxdb.LINE_TYPE_BASE
+                self.assertEqual(ln.type, 1)
+                ln.type = gxdb.LINE_TYPE_TIE
+                self.assertEqual(ln.type, 2)
+                ln.type = gxdb.LINE_TYPE_TEST
+                self.assertEqual(ln.type, 3)
+                ln.type = gxdb.LINE_TYPE_TREND
+                self.assertEqual(ln.type, 4)
+                ln.type = gxdb.LINE_TYPE_SPECIAL
+                self.assertEqual(ln.type, 5)
+                ln.type = gxdb.LINE_TYPE_RANDOM
+                self.assertEqual(ln.type, 6)
+                ln.version = 7
+                self.assertEqual(ln.version, 7)
+                ln.flight = 1000
+                self.assertEqual(ln.flight, 1000)
+                try:
+                    ln.group_class = 'billy'
+                    self.assertTrue(False)
+                except gxdb.GdbException:
+                    pass
 
             finally:
                 gdb.delete_line(ln.name)
-                gdb.discard()
+
+            gdb.delete_line("L88")
+            ln = gxdb.Line.new(gdb, "L88", group='john')
+            try:
+                self.assertEqual(ln.group_class, 'john')
+                ln.group_class = 'billy'
+                self.assertEqual(ln.group_class, 'billy')
+            finally:
+                gdb.delete_line(ln.name)
+
+            gdb.discard()
 
     def test_create_line_name(self):
         self.assertEqual(gxdb.create_line_name(10, gxdb.LINE_TYPE_NORMAL, 4), 'L10.4')
