@@ -708,6 +708,19 @@ class Test(GXPYTest):
                 self.assertEqual(ch.format, 4)
                 self.assertEqual(ch.class_, 'geochem')
 
+                ch.name = "new_name"
+                self.assertEqual(ch.name, "new_name")
+                try:
+                    ch.name = list(gdb.list_channels())[0]
+                    self.assertTrue(False)
+                except:
+                    pass
+                try:
+                    ch.name = 45
+                    self.assertTrue(False)
+                except:
+                    pass
+
             finally:
                 self.assertRaises(gxdb.GdbException, gdb.delete_channel, ch.name)
                 ch.protect = False

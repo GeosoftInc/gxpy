@@ -15,6 +15,7 @@ Geosoft databases for line-oriented spatial data.
     Regression tests provide usage examples: `Tests <https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_gdb.py>`_
 
 """
+from enum import Enum
 import os
 import sys
 import math
@@ -35,44 +36,44 @@ def _t(s):
 
 # Constants
 
-LINE_TYPE_NORMAL = gxapi.DB_LINE_TYPE_NORMAL
-LINE_TYPE_BASE = gxapi.DB_LINE_TYPE_BASE
-LINE_TYPE_TIE = gxapi.DB_LINE_TYPE_TIE
-LINE_TYPE_TEST = gxapi.DB_LINE_TYPE_TEST
-LINE_TYPE_TREND = gxapi.DB_LINE_TYPE_TREND
-LINE_TYPE_SPECIAL = gxapi.DB_LINE_TYPE_SPECIAL
-LINE_TYPE_RANDOM = gxapi.DB_LINE_TYPE_RANDOM
+LINE_TYPE_NORMAL = gxapi.DB_LINE_TYPE_NORMAL #:
+LINE_TYPE_BASE = gxapi.DB_LINE_TYPE_BASE #:
+LINE_TYPE_TIE = gxapi.DB_LINE_TYPE_TIE #:
+LINE_TYPE_TEST = gxapi.DB_LINE_TYPE_TEST #:
+LINE_TYPE_TREND = gxapi.DB_LINE_TYPE_TREND  #:
+LINE_TYPE_SPECIAL = gxapi.DB_LINE_TYPE_SPECIAL  #:
+LINE_TYPE_RANDOM = gxapi.DB_LINE_TYPE_RANDOM  #:
 
-LINE_CATEGORY_FLIGHT = gxapi.DB_CATEGORY_LINE_FLIGHT
-LINE_CATEGORY_GROUP = gxapi.DB_CATEGORY_LINE_GROUP
-LINE_CATEGORY_NORMAL = gxapi.DB_CATEGORY_LINE_NORMAL
+LINE_CATEGORY_FLIGHT = gxapi.DB_CATEGORY_LINE_FLIGHT #:
+LINE_CATEGORY_GROUP = gxapi.DB_CATEGORY_LINE_GROUP #:
+LINE_CATEGORY_NORMAL = gxapi.DB_CATEGORY_LINE_NORMAL #:
 
-FORMAT_NORMAL = gxapi.DB_CHAN_FORMAT_NORMAL
-FORMAT_EXP = gxapi.DB_CHAN_FORMAT_EXP
-FORMAT_TIME = gxapi.DB_CHAN_FORMAT_TIME
-FORMAT_DATE = gxapi.DB_CHAN_FORMAT_DATE
-FORMAT_GEOGR = gxapi.DB_CHAN_FORMAT_GEOGR
-FORMAT_SIGDIG = gxapi.DB_CHAN_FORMAT_SIGDIG
-FORMAT_HEX = gxapi.DB_CHAN_FORMAT_HEX
+FORMAT_NORMAL = gxapi.DB_CHAN_FORMAT_NORMAL #:
+FORMAT_EXP = gxapi.DB_CHAN_FORMAT_EXP #:
+FORMAT_TIME = gxapi.DB_CHAN_FORMAT_TIME #:
+FORMAT_DATE = gxapi.DB_CHAN_FORMAT_DATE #:
+FORMAT_GEOGR = gxapi.DB_CHAN_FORMAT_GEOGR #:
+FORMAT_SIGDIG = gxapi.DB_CHAN_FORMAT_SIGDIG #:
+FORMAT_HEX = gxapi.DB_CHAN_FORMAT_HEX #:
 
-CHAN_ALL = None     # matches all channel types
-CHAN_NORMAL = 0     # non-array channels
-CHAN_ARRAY = 1      # array channels
-CHAN_DISPLAYED = 2  # displayed channels
+CHAN_ALL = None     #:
+CHAN_NORMAL = 0     #:
+CHAN_ARRAY = 1      #:
+CHAN_DISPLAYED = 2  #:
 
-SYMB_LINE_NORMAL = gxapi.DB_CATEGORY_LINE_NORMAL
-SYMB_LINE_FLIGHT = gxapi.DB_CATEGORY_LINE_FLIGHT
-SYMB_LINE_GROUP = gxapi.DB_CATEGORY_LINE_GROUP
+SYMB_LINE_NORMAL = gxapi.DB_CATEGORY_LINE_NORMAL #:
+SYMB_LINE_FLIGHT = gxapi.DB_CATEGORY_LINE_FLIGHT #:
+SYMB_LINE_GROUP = gxapi.DB_CATEGORY_LINE_GROUP #:
 
-SELECT_INCLUDE = gxapi.DB_LINE_SELECT_INCLUDE
-SELECT_EXCLUDE = gxapi.DB_LINE_SELECT_EXCLUDE
+SELECT_INCLUDE = gxapi.DB_LINE_SELECT_INCLUDE #:
+SELECT_EXCLUDE = gxapi.DB_LINE_SELECT_EXCLUDE #:
 
-COMP_NONE = gxapi.DB_COMP_NONE
-COMP_SPEED = gxapi.DB_COMP_SPEED
-COMP_SIZE = gxapi.DB_COMP_SIZE
+COMP_NONE = gxapi.DB_COMP_NONE #:
+COMP_SPEED = gxapi.DB_COMP_SPEED #:
+COMP_SIZE = gxapi.DB_COMP_SIZE #:
 
-READ_REMOVE_DUMMYROWS = 1
-READ_REMOVE_DUMMYCOLUMNS = 2
+READ_REMOVE_DUMMYROWS = 1 #:
+READ_REMOVE_DUMMYCOLUMNS = 2 #:
 
 
 class GdbException(Exception):
@@ -101,14 +102,29 @@ def _va_width(data):
         raise GdbException(_t("Only one or two-dimensional data allowed."))
     return width
 
-def create_line_name(number, type, version):
+def create_line_name(number=0, type=LINE_TYPE_NORMAL, version=0):
     """
     Returns a valid database line name constructed from the component parts.
 
-    :param number:  line number, or a string
-    :param type:    one of LINE_TYPE_ constants
-    :param version: version number
+    :param number:  line number, or a string, default is 0
+    :param type:    one of LINE_TYPE constants, default is LINE_TYPE_NORMAL
+    :param version: version number, default is 0
+
     :return:        string line name
+
+    Line name strings are constructed using the line naming convention as in the following:
+
+        ====== =======================================
+        L10.4  LINE_TYPE_NORMAL, number 10, version 4
+        B10.4  LINE_TYPE_BASE, number 10, version 4
+        D10.4  LINE_TYPE_RANDOM, number 10, version 4
+        P10.4  LINE_TYPE_SPECIAL, number 10, version 4
+        T10.4  LINE_TYPE_TIE, number 10, version 4
+        S10.4  LINE_TYPE_TEST, number 10, version 4
+        R10.4  LINE_TYPE_TREND, number 10, version 4
+        ====== =======================================
+
+    .. versionadded:: 9.3
     """
     sr = gxapi.str_ref()
     gxapi.GXDB.set_line_name2(str(number), type, version, sr)
@@ -235,7 +251,7 @@ class Geosoft_gdb:
             data, ch, fid = gdb.read_line(lsymb, channels=['X','Y','Z'])
             dummy = gxu.gx_dummy(data.dtype)
 
-            # get a dummy mask, True for all rows with a dummy
+            # get a dummy mask, `True` for all rows with a dummy
             dummy_mask = gxu.dummy_mask(data)
 
             squares = npd.square(npd)
@@ -329,18 +345,18 @@ class Geosoft_gdb:
         :param maxChannels: maximum number of channels, default 200
         :param maxBlobs:    maximum number of blobs, default lines*channels+20
         :param comp:        compression:
-        
+
                             | COMP_NONE
                             | COMP_SPEED (default)
                             | COMP_SIZE
-        :param overwrite:   True to overwrite existing database. Default is False, GdbException if file exists.
+        :param overwrite:   `True` to overwrite existing database. Default is `False`, GdbException if file exists.
                             
         :returns:           :class:`Geosoft_gdb` instance
 
         .. versionadded:: 9.1
 
         .. versionchanged:: 9.3
-            added parameter overwrite=False
+            added parameter `overwrite=False`
         """
         maxLines = max(10, maxLines)
         maxChannels = max(25, maxChannels)
@@ -386,7 +402,7 @@ class Geosoft_gdb:
         
         :param symb:        symbol name or number
         :param symb_type:   one of DB_SYMB_TYPE
-        :returns:           True if the symbol exists and is the expected symbol type, False otherwise
+        :returns:           `True` if the symbol exists and is the expected symbol type, `False` otherwise
 
         .. versionadded:: 9.1
         """
@@ -568,18 +584,18 @@ class Geosoft_gdb:
 
     @property
     def data_has_changed(self):
-        """True if data has changed"""
+        """`True` if data has changed"""
         return self._db.get_info(gxapi.DB_INFO_CHANGESLOST)
 
     def is_line(self, line, raise_err=False):
-        """Returns True if the line name exists"""
+        """Returns `True` if the line name exists"""
         exist = self._db.find_symb(line, gxapi.DB_SYMB_LINE) != gxapi.NULLSYMB
         if raise_err and not exist:
             raise GdbException(_t('"{}" is not a valid line'.format(line)))
         return exist
 
     def is_channel(self, chan, raise_err=False):
-        """Returns True if the channel name exists"""
+        """Returns `True` if the channel name exists"""
         exist = self._db.find_chan(chan) != gxapi.NULLSYMB
         if raise_err and not exist:
             raise GdbException(_t('"{}" is not a valid channel'.format(chan)))
@@ -650,7 +666,7 @@ class Geosoft_gdb:
         Return line name, symbol
 
         :param line:    line name, or symbol number
-        :param create:  True to create a line if one does not exist
+        :param create:  `True` to create a line if one does not exist
         :returns:       line name, symbol
         :raises:        GdbException if line not found or cannot be created
 
@@ -764,7 +780,7 @@ class Geosoft_gdb:
         """
         List of lines in the database
         
-        :param select=True: True to return selected lines, false to return all lines
+        :param select=True: `True` to return selected lines, `False` to return all lines
         :returns:           dictionary (line name: symbol)
 
         .. versionadded:: 9.1
@@ -993,16 +1009,16 @@ class Geosoft_gdb:
         :param line:        line name
         :param linetype:    line type for creating a new line, ignored if group defines
 
-            ================= =========================================
-            SYMB_LINE_NORMAL  normal lines, name is a string
-            SYMB_LINE_FLIGHT  flight lines, first letter is line type
-            ================= =========================================
+                                ================= =========================================
+                                SYMB_LINE_NORMAL  normal lines, name is a string
+                                SYMB_LINE_FLIGHT  flight lines, first letter is line type
+                                ================= =========================================
 
         :param group:       group name for a grouped class
 
         :returns:           line symbol
 
-        .. seealso:: function :func: create_line_name to create a valid line name.
+        .. seealso:: function :func:`create_line_name` to create a valid line name.
 
         .. versionadded:: 9.1
         """
@@ -1082,7 +1098,7 @@ class Geosoft_gdb:
         Change selected state of a line, or group of lines
         
         :param selection:   string representing selection, comma-delimit multiple selections
-        :param select=True: True to select, False to deselect
+        :param select=True: `True` to select, `False` to deselect
 
         "L99:800" will select all lines of type "L" in range 99 through 800.
 
@@ -1260,9 +1276,9 @@ class Geosoft_gdb:
         :param channels:    list of channels, strings or symbol number.  If empty, read all channels
         :param dtype:       numpy data type for the array, default np.float64 for multi-channel data,
                             data type for single channel data. Use "<Unnn" for string type.
-        :param common_fid:  True to resample all channels to a common fiducial
-        :param fid:         required fid (start, increment), ignored if common_fid=False.
-                            if common_fid=True and fid= is not defined, use the smallest common fid.
+        :param common_fid:  `True` to resample all channels to a common fiducial
+        :param fid:         required fid (start, increment), ignored if `common_fid=False`.
+                            if `common_fid=True` and fid= is not defined, use the smallest common fid.
         :returns:           list of tuples [(channel_name, vv), ...]
 
         If a requested channel is a VA, it is with channel names 'name[0]', 'name[1]', etc.
@@ -1609,7 +1625,7 @@ class Geosoft_gdb:
 
         :param chan:            channel to scan
         :param max=1000:        maximum values allowed, once this maximum is reached scanning stops
-        :param selected=True:   True to scan only selected lines
+        :param selected=True:   `True` to scan only selected lines
         :param dupl:            Stop growing list after this many lines fail to grow the list, 0 scans all lines
         :param progress:        progress reporting function
         :param stop:            stop check function
@@ -1667,7 +1683,7 @@ class Geosoft_gdb:
 
 class Channel:
     """
-    Class to work with database channels.  Use constructor :meth: Channel.new to create a new channel.
+    Class to work with database channels.  Use constructor :meth:`Channel.new` to create a new channel.
     Use instance properties to work with channel properties.
 
     :param gdb:     database instance
@@ -1676,6 +1692,21 @@ class Channel:
     .. versionadded:: 9.3
     """
 
+    def _get(self, fn):
+        self.gdb._lock_read(self._symb)
+        try:
+            return fn(self._symb)
+        finally:
+            self.gdb._unlock(self._symb)
+
+    def _get_str(self, fn):
+        self.gdb._lock_read(self._symb)
+        try:
+            fn(self._symb, self._sr)
+            return self._sr.value
+        finally:
+            self.gdb._unlock(self._symb)
+
     def _set(self, fn, v):
         self.gdb._lock_write(self._symb)
         try:
@@ -1683,10 +1714,10 @@ class Channel:
         finally:
             self.gdb._unlock(self._symb)
 
-    def __init__(self, gdb, channel):
+    def __init__(self, gdb, name):
 
         self.gdb = gdb
-        self._name, self._symb = gdb.channel_name_symb(channel)
+        name, self._symb = gdb.channel_name_symb(name)
         self._sr = gxapi.str_ref()
 
     @classmethod
@@ -1698,9 +1729,9 @@ class Channel:
         :param name:    channel name
         :param dtype:   numpy data type, defaule np.float64
         :param array:   array size, default 1
-        :param details: dictionary of other channel properties - see :meth: Geosoft_gdb.set_channel_details
-        :param replace: True to replace an existing channel.  All existing channel information and data is lost.
-                        default is False.
+        :param details: dictionary of other channel properties - see :meth:`Geosoft_gdb.set_channel_details`
+        :param replace: `True` to replace an existing channel.  All existing channel information and data is lost.
+                        default is `False`.
         :return:        Channel instance
         """
 
@@ -1718,11 +1749,21 @@ class Channel:
     @property
     def name(self):
         """
-        Channel name
+        Channel name.
 
         .. versionadded:: 9.3
         """
-        return self._name
+        return self._get_str(self.gdb._db.get_chan_name)
+
+    @name.setter
+    def name(self, name):
+        name = str(name)
+        if name != self.name:
+            if not self.gdb._db.is_chan_name(name):
+                raise GdbException('Invalid channel name \'{}\''.format(name))
+            if self.gdb._exist_symb(name, gxapi.DB_SYMB_CHAN):
+                raise GdbException('Cannot rename to an existing channel name \'{}\''.format(name))
+            self._set(self.gdb._db.set_chan_name, name)
 
     @property
     def symbol(self):
@@ -1746,7 +1787,7 @@ class Channel:
     @property
     def is_array(self):
         """
-        True if this is an array channel
+        `True` if this is an array channel
 
         .. versionadded:: 9.3
         """
@@ -1769,26 +1810,25 @@ class Channel:
 
     @property
     def format(self):
+        """
+        Channel display format:
+
+        ============= ========================================
+        FORMAT_NORMAL normal decimal or integer format
+        FORMAT_EXP    exponential
+        FORMAT_TIME   geosoft time (HH:MM:SS.ssss)
+        FORMAT_DATE   date (YYYY/MM/DD)
+        FORMAT_GEOGR  geographic (deg.mm.ss.ssss)
+        FORMAT_SIGDIG decimals is number of significant digits
+        FORMAT_HEX    hexadecimal
+        ============= ========================================
+
+        .. versionadded:: 9.3
+        """
         return self.gdb._db.get_chan_format(self._symb)
 
     @format.setter
     def format(self, value):
-        """
-        Display format
-
-        ============================== ========================================
-        geosoft.gxpy.gdb.FORMAT_NORMAL normal decimal or integer format
-        geosoft.gxpy.gdb.FORMAT_EXP    exponential
-        geosoft.gxpy.gdb.FORMAT_TIME   geosoft time (HH:MM:SS.ssss)
-        geosoft.gxpy.gdb.FORMAT_DATE   date (YYYY/MM/DD)
-        geosoft.gxpy.gdb.FORMAT_GEOGR  geographic (deg.mm.ss.ssss)
-        geosoft.gxpy.gdb.FORMAT_SIGDIG decimals is number of significant digits
-        geosoft.gxpy.gdb.FORMAT_HEX    hexadecimal
-        ============================== ========================================
-
-        .. versionadded:: 9.3
-        """
-
         self._set(self.gdb._db.set_chan_format, value)
 
     @property
@@ -1862,7 +1902,7 @@ class Channel:
     @property
     def protect(self):
         """
-        True if this channel is protected from modification.
+        `True` if this channel is protected from modification.
         Can be set.
 
         .. versionadded:: 9.3
@@ -1880,7 +1920,7 @@ class Channel:
 
 class Line:
     """
-    Class to work with database lines.  Use constructor :meth: Line.new to create a new line.
+    Class to work with database lines.  Use constructor :meth:`Line.new` to create a new line.
     Use instance properties to work with line properties.
 
     :param gdb:     database instance
@@ -1914,7 +1954,7 @@ class Line:
     def __init__(self, gdb, name):
 
         self.gdb = gdb
-        self._name, self._symb = gdb.line_name_symb(name)
+        name, self._symb = gdb.line_name_symb(name)
         self._sr = gxapi.str_ref()
 
     @classmethod
@@ -1931,7 +1971,7 @@ class Line:
             ================= =========================================
 
         :param group:       group name for a grouped class
-        :param replace:     True to replace line if it exists. Default is False.
+        :param replace:     `True` to replace line if it exists. Default is `False` .
         :returns:           Line instance
 
         .. versionadded:: 9.3
@@ -1949,11 +1989,13 @@ class Line:
     @property
     def name(self):
         """
-        Line name, consistent with names constructed by :func: create_line_name
+        Line name, consistent with names constructed by :func:`create_line_name`.
+
+        To change a line name change the type, number or version.
 
         .. versionadded:: 9.3
         """
-        return self._name
+        return self._get_str(self.gdb._db.get_symb_name)
 
     @property
     def symbol(self):
@@ -1969,15 +2011,13 @@ class Line:
         """
         Line type, which can be set:
 
-        =================
-        LINE_TYPE_NORMAL
-        LINE_TYPE_BASE
-        LINE_TYPE_TIE
-        LINE_TYPE_TEST
-        LINE_TYPE_TREND
-        LINE_TYPE_SPECIAL
-        LINE_TYPE_RANDOM
-        =================
+        | LINE_TYPE_NORMAL
+        | LINE_TYPE_BASE
+        | LINE_TYPE_TIE
+        | LINE_TYPE_TEST
+        | LINE_TYPE_TREND
+        | LINE_TYPE_SPECIAL
+        | LINE_TYPE_RANDOM
 
         .. versionadded:: 9.3
         """
@@ -1990,13 +2030,11 @@ class Line:
     @property
     def category(self):
         """
-        Line category, which can be set
+        Line category, which can be set:
 
-        ====================
-        LINE_CATAGORY_FLIGHT
-        LINE_CATEGORY_GROUP
-        LINE_CATEGORY_NORMAL
-        ====================
+        | LINE_CATAGORY_FLIGHT
+        | LINE_CATEGORY_GROUP
+        | LINE_CATEGORY_NORMAL
 
         .. versionadded:: 9.3
         """
