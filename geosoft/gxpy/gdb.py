@@ -101,6 +101,19 @@ def _va_width(data):
         raise GdbException(_t("Only one or two-dimensional data allowed."))
     return width
 
+def create_line_name(number, type, version):
+    """
+    Returns a valid database line name constructed from the component parts.
+
+    :param number:  line number, or a string
+    :param type:    one of LINE_TYPE_ constants
+    :param version: version number
+    :return:        string line name
+    """
+    sr = gxapi.str_ref()
+    gxapi.GXDB.set_line_name2(str(number), type, version, sr)
+    return sr.value
+
 def delete_files(file_name):
     """
     Delete all files associates with this database name.
@@ -2004,34 +2017,6 @@ class Line:
         self._set(self.gdb._db.set_line_flight, value)
 
     @property
-    def bearing(self):
-        """
-        Bearing of a line based on location of the first and last point in the line.
-
-        .. versionadded:: 9.3
-        """
-        x, y, z = self.gdb.xyz_channels
-        x = self.gdb.channel_name_symb(x)[1]
-        y = self.gdb.channel_name_symb(y)[1]
-
-        self.gdb._lock_read(x)
-        self.gdb._lock_read(y)
-        try:
-            bearing = gxapi.GXDU.direction(self.gdb._db, self._symb, x, y)
-        finally:
-            self.gdb._unlock(y)
-            self.gdb._unlock(x)
-
-        self._set(self.gdb._db.set_line_bearing, bearing)
-        if bearing == gxapi.rDUMMY:
-            return None
-        return bearing
-
-    @bearing.setter
-    def bearing(self, value):
-        self._set(self.gdb._db.set_line_bearing, value)
-
-    @property
     def number(self):
         """
         Line number.
@@ -2060,3 +2045,28 @@ class Line:
             return self._get(self.gdb._db.get_group_class)
         else:
             return ''
+
+    def bearing(self):
+        """
+        Return bearing of a line based on location of the first and last point in the line.
+        Returns None if the line is empty or first and last points are the same.
+
+        .. versionadded:: 9.3
+        """
+        x, y, z = self.gdb.xyz_channels
+        x = self.gdb.channel_name_symb(x)[1]
+        y = self.gdb.channel_name_symb(y)[1]
+
+        self.gdb._lock_read(x)
+        self.gdb._lock_read(y)
+        try:
+            bearing = gxapi.GXDU.direction(self.gdb._db, self._symb, x, y)
+        finally:
+            self.gdb._unlock(y)
+            self.gdb._unlock(x)
+
+        self._set(self.gdb._db.set_line_bearing, bearing)
+        if bearing == gxapi.rDUMMY:
+            return None
+        return bearing
+

@@ -731,7 +731,6 @@ class Test(GXPYTest):
                 self.assertEqual(ln.type, det['type'])
                 self.assertEqual(ln.version, det['version'])
                 self.assertEqual(ln.group_class, det['groupclass'])
-                self.assertEqual(ln.bearing, None)
 
                 ln.date = 2017
                 self.assertEqual(ln.date, 2017)
@@ -752,7 +751,7 @@ class Test(GXPYTest):
     def test_bearing(self):
         with gxdb.Geosoft_gdb.open(self.gdb_name) as gdb:
             ln = gxdb.Line(gdb, 'D578625')
-            self.assertAlmostEqual(ln.bearing, 0.0)
+            self.assertAlmostEqual(ln.bearing(), 0.0)
 
     def test_metadata(self):
         self.start()
