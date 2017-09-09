@@ -75,6 +75,9 @@ COMP_SIZE = gxapi.DB_COMP_SIZE #:
 READ_REMOVE_DUMMYROWS = 1 #:
 READ_REMOVE_DUMMYCOLUMNS = 2 #:
 
+SYMBOL_LOCK_NONE = gxapi.DB_LOCK_NONE
+SYMBOL_LOCK_READ = gxapi.DB_LOCK_READONLY
+SYMBOL_LOCK_WRITE = gxapi.DB_LOCK_READWRITE
 
 class GdbException(Exception):
     """
@@ -500,6 +503,7 @@ class Geosoft_gdb:
         """
         try:
             x, y, z = self.xyz_channels
+            ipj = gxapi.GXIPJ.create()
             ipj = gxapi.GXIPJ.create()
             self.gxdb.get_ipj(self.channel_name_symb(x)[1], ipj)
             return gxcs.Coordinate_system(ipj)
@@ -1067,40 +1071,47 @@ class Geosoft_gdb:
         .. versionadded:: 9.1
         """
 
-        if type(channels) is str:
+        if isinstance(channels, str) or isinstance(channels, int):
             channels = [channels]
 
         protected_channels = []
 
-        self._db.un_lock_all_symb()
         for s in channels:
+
             try:
-                cn, cs = self.channel_name_symb(s)
-                if Channel(self, cn).protect:
-                    protected_channels.append(cn)
+                c = Channel(self, s)
+                if c.protect:
+                    protected_channels.append(c.name)
                 else:
-                    self._lock_write(cs)
-                    self._db.delete_symb(cs)
+                    c.delete()
             except GdbException:
                 continue
 
         if len(protected_channels):
             raise GdbException('Cannot delete protected channels: {}'.format(protected_channels))
 
-    def delete_line(self, s):
+    def delete_line(self, lines):
         """
-        Delete a line by name or symbol.
+        Delete line(s) by name or symbol.
 
-        :param s: line name or symbol
+        :param lines: line name/symbol, or a list of names/symbols
 
         .. versionadded:: 9.1
         """
-        if type(s) is str:
-            s = self._db.find_symb(s, gxapi.DB_SYMB_LINE)
-            if s == gxapi.NULLSYMB:
-                return
-        self._lock_write(s)
-        self._db.delete_symb(s)
+
+        if isinstance(lines, str) or isinstance(lines, int):
+            lines = [lines]
+
+        for s in lines:
+
+            try:
+                ln, ls = self.line_name_symb(s)
+            except GdbException:
+                continue
+
+            self._unlock(ls)
+            self._lock_write(ls)
+            self._db.delete_symb(ls)
 
     def select_lines(self, selection='', select=True):
         """
@@ -1127,24 +1138,6 @@ class Geosoft_gdb:
 
     # =====================================================================================
     # reading and writing
-
-    def _lock_read(self, s):
-        try:
-            self._db.lock_symb(s, gxapi.DB_LOCK_READONLY, gxapi.DB_WAIT_INFINITY)
-        except GdbException:
-            raise GdbException('Cannot read lock symbol {}'.format(s))
-
-    def _lock_write(self, s):
-        try:
-            self._db.lock_symb(s, gxapi.DB_LOCK_READWRITE, gxapi.DB_WAIT_INFINITY)
-        except GdbException:
-            raise GdbException('Cannot write lock symbol {}'.format(s))
-
-    def _unlock(self, s):
-        try:
-            self._db.un_lock_symb(s)
-        except GdbException:
-            pass
 
     def _sorted_chan_list(self):
 
@@ -1197,6 +1190,30 @@ class Geosoft_gdb:
                     cType.append(self._db.get_chan_type(cs))
 
         return chNames, chSymbs, cType
+
+    def _lock_read(self, s):
+        try:
+            self._db.lock_symb(s, SYMBOL_LOCK_READ, gxapi.DB_WAIT_INFINITY)
+        except GdbException:
+            raise GdbException('Cannot read lock symbol {}'.format(s))
+
+    def _lock_write(self, s):
+        try:
+            self._db.lock_symb(s, SYMBOL_LOCK_WRITE, gxapi.DB_WAIT_INFINITY)
+        except GdbException:
+            raise GdbException('Cannot write lock symbol {}'.format(s))
+
+    def _unlock(self, s):
+        if self._db.get_symb_lock(s) != SYMBOL_LOCK_NONE:
+            self._db.un_lock_symb(s)
+
+    def unlock_all(self):
+        """
+        Unlock all locked symbols.
+
+        .. versionadded:: 9.3
+        """
+        self._db.un_lock_all_symb()
 
     def read_channel_vv(self, line, channel, dtype=None):
         """
@@ -1927,6 +1944,59 @@ class Channel:
             value = 0
         self._set(self.gdb._db.set_chan_protect, value)
 
+    @property
+    def locked(self):
+        """
+        True if symbol is locked.  See :prop:`lock` to determine if read or write lock, or to
+        set the lock.
+
+        Setting to `False` unlocks the symbol.
+
+        .. versionadded:: 9.3
+        """
+        return (self.lock != SYMBOL_LOCK_NONE)
+
+    @locked.setter
+    def locked(self, value):
+        if not value:
+            self.gdb._unlock(self._symb)
+        else:
+            raise GdbException('Use property \'lock\' to set SYMBOL_READ or SYMBOL_WRITE lock.')
+
+    @property
+    def lock(self):
+        """
+        Lock setting:
+
+        | -1 unlocked (SYMBOL_LOCK_NONE)
+        | 0 read-locked (SYMBOL_LOCK_READ)
+        | 1 write-locked (SYMBOL_LOCK_WRITE)
+
+        Can be set.
+
+        .. versionadded 9.3
+        """
+        return self.gdb._db.get_symb_lock(self.symbol)
+
+    @lock.setter
+    def lock(self, value):
+        if self.lock != value:
+            self.gdb._unlock(self.symbol)
+            self.gdb._db.lock_symb(self.symbol, value, gxapi.DB_WAIT_INFINITY)
+
+    def delete(self):
+        """
+        Delete the channel and all associated data.  After calling this method this
+        channel instance is no longer valid.
+
+        .. versionadded:: 9.3
+        """
+        if self.protect:
+            raise GdbException("Cannot delete protected channel '{}'".format(self.name))
+        self.lock = SYMBOL_LOCK_WRITE
+        self.gdb._db.delete_symb(self._symb)
+        self._symb = gxapi.NULLSYMB
+
 class Line:
     """
     Class to work with database lines.  Use constructor :meth:`Line.new` to create a new line.
@@ -2133,6 +2203,56 @@ class Line:
             self.gdb._db.set_line_selection(self._symb, gxapi.DB_LINE_SELECT_INCLUDE)
         else:
             self.gdb._db.set_line_selection(self._symb, gxapi.DB_LINE_SELECT_EXCLUDE)
+
+    @property
+    def locked(self):
+        """
+        True if symbol is locked.  See :prop:`lock` to determine if read or write lock, or to
+        set the lock.
+
+        Setting to `False` unlocks the symbol.
+
+        .. versionadded:: 9.3
+        """
+        return (self.lock != SYMBOL_LOCK_NONE)
+
+    @locked.setter
+    def locked(self, value):
+        if not value:
+            self.gdb._unlock(self._symb)
+        else:
+            raise GdbException('Use property \'lock\' to set SYMBOL_READ or SYMBOL_WRITE lock.')
+
+    @property
+    def lock(self):
+        """
+        Lock setting:
+
+        | -1 unlocked (SYMBOL_LOCK_NONE)
+        | 0 read-locked (SYMBOL_LOCK_READ)
+        | 1 write-locked (SYMBOL_LOCK_WRITE)
+
+        Can be set.
+
+        .. versionadded 9.3
+        """
+        return self.gdb._db.get_symb_lock(self.symbol)
+
+    @lock.setter
+    def lock(self, value):
+        if self.lock != value:
+            self.gdb._unlock(self.symbol)
+            self.gdb._db.lock_symb(self.symbol, value, gxapi.DB_WAIT_INFINITY)
+
+    def delete(self):
+        """
+        Delete the line and all data associated with the line.  After calling this method this
+        line instance is no longer valid.
+
+        .. versionadded:: 9.3
+        """
+        self.gdb.delete_line(self.symbol)
+        self._symb = gxapi.NULLSYMB
 
     #===========================================================================================
     # methods that work with line data

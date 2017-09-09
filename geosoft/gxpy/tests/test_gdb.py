@@ -678,10 +678,10 @@ class Test(GXPYTest):
 
         with gxdb.Geosoft_gdb.open(self.gdb_name) as gdb:
 
-            gdb.delete_channel("detailtest")
-            ch = gxdb.Channel.new(gdb, "detailtest")
-            det = gdb.channel_details(ch.name)
             try:
+                gdb.delete_channel("detailtest")
+                ch = gxdb.Channel.new(gdb, "detailtest")
+                det = gdb.channel_details(ch.name)
                 self.assertEqual(ch.name, det['name'])
                 self.assertEqual(ch.array, det['array'])
                 self.assertEqual(ch.decimal, det['decimal'])
@@ -721,10 +721,22 @@ class Test(GXPYTest):
                 except:
                     pass
 
-            finally:
+                self.assertFalse(ch.locked)
+                ch.lock = gxdb.SYMBOL_LOCK_READ
+                self.assertTrue(ch.locked)
+                self.assertEqual(ch.lock, gxdb.SYMBOL_LOCK_READ)
+                ch.lock = gxdb.SYMBOL_LOCK_WRITE
+                self.assertTrue(ch.locked)
+                self.assertEqual(ch.lock, gxdb.SYMBOL_LOCK_WRITE)
+                ch.locked = False
+
                 self.assertRaises(gxdb.GdbException, gdb.delete_channel, ch.name)
+                self.assertRaises(gxdb.GdbException, ch.delete)
                 ch.protect = False
-                gdb.delete_channel(ch.name)
+                ch.delete()
+                self.assertEqual(ch.symbol, gxapi.NULLSYMB)
+
+            finally:
                 gdb.discard()
 
     def test_line(self):
@@ -732,10 +744,10 @@ class Test(GXPYTest):
 
         with gxdb.Geosoft_gdb.open(self.gdb_name) as gdb:
 
-            gdb.delete_line("T9999")
-            ln = gxdb.Line.new(gdb, "T9999")
-            det = gdb.line_details(ln.name)
             try:
+                gdb.delete_line("T9999")
+                ln = gxdb.Line.new(gdb, "T9999")
+                det = gdb.line_details(ln.name)
                 self.assertEqual(ln.name, det['name'])
                 self.assertEqual(ln.category, det['category'])
                 self.assertEqual(ln.date, det['date'])
@@ -780,19 +792,58 @@ class Test(GXPYTest):
                 except gxdb.GdbException:
                     pass
 
-            finally:
-                gdb.delete_line(ln.name)
+                self.assertEqual(ln.lock, gxdb.SYMBOL_LOCK_NONE)
+                self.assertFalse(ln.locked)
+                ln.lock = gxdb.SYMBOL_LOCK_READ
+                self.assertTrue(ln.locked)
+                self.assertEqual(ln.lock, gxdb.SYMBOL_LOCK_READ)
+                ln.lock = gxdb.SYMBOL_LOCK_WRITE
+                self.assertTrue(ln.locked)
+                self.assertEqual(ln.lock, gxdb.SYMBOL_LOCK_WRITE)
+                ln.locked = False
 
-            gdb.delete_line("L88")
-            ln = gxdb.Line.new(gdb, "L88", group='john')
-            try:
+                ln.delete()
+                self.assertEqual(ln.symbol, gxapi.NULLSYMB)
+
+                gdb.delete_line("L88")
+                ln = gxdb.Line.new(gdb, "L88", group='john')
                 self.assertEqual(ln.group_class, 'john')
                 ln.group_class = 'billy'
                 self.assertEqual(ln.group_class, 'billy')
-            finally:
                 gdb.delete_line(ln.name)
 
-            gdb.discard()
+            finally:
+                gdb.discard()
+
+    def test_locks(self):
+        self.start()
+
+        with gxdb.Geosoft_gdb.open(self.gdb_name) as gdb:
+
+            try:
+                gdb.delete_line("T9999")
+                l = gxdb.Line.new(gdb, "T9999")
+                l.lock = gxdb.SYMBOL_LOCK_WRITE
+                self.assertTrue(l.locked)
+                ll = gxdb.Line.new(gdb, "T8")
+                ll.lock = gxdb.SYMBOL_LOCK_READ
+                self.assertTrue(ll.locked)
+                c = gxdb.Channel.new(gdb, "dummy")
+                c.lock = gxdb.SYMBOL_LOCK_WRITE
+                self.assertTrue(c.locked)
+                cc = gxdb.Channel.new(gdb, "dummy2")
+                cc.lock = gxdb.SYMBOL_LOCK_WRITE
+                self.assertTrue(cc.locked)
+
+                gdb.unlock_all()
+                self.assertFalse(l.locked)
+                self.assertFalse(ll.locked)
+                self.assertFalse(c.locked)
+                self.assertFalse(cc.locked)
+
+            finally:
+                gdb.discard()
+
 
     def test_create_line_name(self):
         self.start()
