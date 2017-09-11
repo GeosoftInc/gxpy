@@ -329,7 +329,7 @@ class Grid:
 
         :param file_name:   name of the grid file, None or '' for a memory grid.
                             (see `supported file formats <https://geosoftgxdev.atlassian.net/wiki/display/GXDEV92/Grid+File+Name+Decorations>`_)
-        :param properties:  dictionary of grid properties
+        :param properties:  dictionary of grid properties, see :meth:`properties`
         :param overwrite:   True to overwrite existing file
 
         .. versionadded:: 9.1

@@ -775,6 +775,38 @@ class Coordinate_system:
         lst = [s1.value.replace('"', '').strip(), s2.value, s3.value, s4.value, s5.value]
         return lst
 
+    @gxf.setter
+    def gxf(self, gxfs):
+        self._from_gxf(gxfs)
+
+    @property
+    def esri_wkt(self):
+        """
+        ESRI Well-Known-Text (wkt) format coordinate string
+
+        .. versionadded:: 9.3
+        """
+        sr = gxapi.str_ref()
+        self._gxapi_ipj.get_esri(sr)
+        return sr.value
+
+    @esri_wkt.setter
+    def esri_wkt(self, gxfs):
+        self._from_str(gxfs)
+
+    @property
+    def json(self):
+        """
+        JSON formatted coordinate system string.
+
+        .. versionadded:: 9.3
+        """
+        return json.dumps(self.coordinate_dict())
+
+    @json.setter
+    def json(self, json_str):
+        self._from_str(json_str)
+
     def cs_name(self, what=NAME):
         """
         Return requested name.
