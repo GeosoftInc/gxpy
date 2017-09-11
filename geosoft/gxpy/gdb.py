@@ -15,6 +15,7 @@ Geosoft databases for line-oriented spatial data.
     Regression tests provide usage examples: `Tests <https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_gdb.py>`_
 
 """
+from enum import Enum
 import os
 import sys
 import math
@@ -35,41 +36,48 @@ def _t(s):
 
 # Constants
 
-LINE_TYPE_NORMAL = gxapi.DB_LINE_TYPE_NORMAL
-LINE_TYPE_BASE = gxapi.DB_LINE_TYPE_BASE
-LINE_TYPE_TIE = gxapi.DB_LINE_TYPE_TIE
-LINE_TYPE_TEST = gxapi.DB_LINE_TYPE_TEST
-LINE_TYPE_TREND = gxapi.DB_LINE_TYPE_TREND
-LINE_TYPE_SPECIAL = gxapi.DB_LINE_TYPE_SPECIAL
-LINE_TYPE_RANDOM = gxapi.DB_LINE_TYPE_RANDOM
+LINE_TYPE_NORMAL = gxapi.DB_LINE_TYPE_NORMAL #:
+LINE_TYPE_BASE = gxapi.DB_LINE_TYPE_BASE #:
+LINE_TYPE_TIE = gxapi.DB_LINE_TYPE_TIE #:
+LINE_TYPE_TEST = gxapi.DB_LINE_TYPE_TEST #:
+LINE_TYPE_TREND = gxapi.DB_LINE_TYPE_TREND  #:
+LINE_TYPE_SPECIAL = gxapi.DB_LINE_TYPE_SPECIAL  #:
+LINE_TYPE_RANDOM = gxapi.DB_LINE_TYPE_RANDOM  #:
 
-FORMAT_NORMAL = gxapi.DB_CHAN_FORMAT_NORMAL
-FORMAT_EXP = gxapi.DB_CHAN_FORMAT_EXP
-FORMAT_TIME = gxapi.DB_CHAN_FORMAT_TIME
-FORMAT_DATE = gxapi.DB_CHAN_FORMAT_DATE
-FORMAT_GEOGR = gxapi.DB_CHAN_FORMAT_GEOGR
-FORMAT_SIGDIG = gxapi.DB_CHAN_FORMAT_SIGDIG
-FORMAT_HEX = gxapi.DB_CHAN_FORMAT_HEX
+LINE_CATEGORY_FLIGHT = gxapi.DB_CATEGORY_LINE_FLIGHT #:
+LINE_CATEGORY_GROUP = gxapi.DB_CATEGORY_LINE_GROUP #:
+LINE_CATEGORY_NORMAL = gxapi.DB_CATEGORY_LINE_NORMAL #:
 
-CHAN_ALL = None     # matches all channel types
-CHAN_NORMAL = 0     # non-array channels
-CHAN_ARRAY = 1      # array channels
-CHAN_DISPLAYED = 2  # displayed channels
+FORMAT_NORMAL = gxapi.DB_CHAN_FORMAT_NORMAL #:
+FORMAT_EXP = gxapi.DB_CHAN_FORMAT_EXP #:
+FORMAT_TIME = gxapi.DB_CHAN_FORMAT_TIME #:
+FORMAT_DATE = gxapi.DB_CHAN_FORMAT_DATE #:
+FORMAT_GEOGR = gxapi.DB_CHAN_FORMAT_GEOGR #:
+FORMAT_SIGDIG = gxapi.DB_CHAN_FORMAT_SIGDIG #:
+FORMAT_HEX = gxapi.DB_CHAN_FORMAT_HEX #:
 
-SYMB_LINE_NORMAL = gxapi.DB_CATEGORY_LINE_NORMAL
-SYMB_LINE_FLIGHT = gxapi.DB_CATEGORY_LINE_FLIGHT
-SYMB_LINE_GROUP = gxapi.DB_CATEGORY_LINE_GROUP
+CHAN_ALL = None     #:
+CHAN_NORMAL = 0     #:
+CHAN_ARRAY = 1      #:
+CHAN_DISPLAYED = 2  #:
 
-SELECT_INCLUDE = gxapi.DB_LINE_SELECT_INCLUDE
-SELECT_EXCLUDE = gxapi.DB_LINE_SELECT_EXCLUDE
+SYMB_LINE_NORMAL = gxapi.DB_CATEGORY_LINE_NORMAL #:
+SYMB_LINE_FLIGHT = gxapi.DB_CATEGORY_LINE_FLIGHT #:
+SYMB_LINE_GROUP = gxapi.DB_CATEGORY_LINE_GROUP #:
 
-COMP_NONE = gxapi.DB_COMP_NONE
-COMP_SPEED = gxapi.DB_COMP_SPEED
-COMP_SIZE = gxapi.DB_COMP_SIZE
+SELECT_INCLUDE = gxapi.DB_LINE_SELECT_INCLUDE #:
+SELECT_EXCLUDE = gxapi.DB_LINE_SELECT_EXCLUDE #:
 
-READ_REMOVE_DUMMYROWS = 1
-READ_REMOVE_DUMMYCOLUMNS = 2
+COMP_NONE = gxapi.DB_COMP_NONE #:
+COMP_SPEED = gxapi.DB_COMP_SPEED #:
+COMP_SIZE = gxapi.DB_COMP_SIZE #:
 
+READ_REMOVE_DUMMYROWS = 1 #:
+READ_REMOVE_DUMMYCOLUMNS = 2 #:
+
+SYMBOL_LOCK_NONE = gxapi.DB_LOCK_NONE
+SYMBOL_LOCK_READ = gxapi.DB_LOCK_READONLY
+SYMBOL_LOCK_WRITE = gxapi.DB_LOCK_READWRITE
 
 class GdbException(Exception):
     """
@@ -96,6 +104,61 @@ def _va_width(data):
     else:
         raise GdbException(_t("Only one or two-dimensional data allowed."))
     return width
+
+def create_line_name(number=0, type=LINE_TYPE_NORMAL, version=0):
+    """
+    Returns a valid database line name constructed from the component parts.
+
+    :param number:  line number, or a string, default is 0
+    :param type:    one of LINE_TYPE constants, default is LINE_TYPE_NORMAL
+    :param version: version number, default is 0
+
+    :return:        string line name
+
+    Line name strings are constructed using the line naming convention as in the following:
+
+        ====== =======================================
+        L10.4  LINE_TYPE_NORMAL, number 10, version 4
+        B10.4  LINE_TYPE_BASE, number 10, version 4
+        D10.4  LINE_TYPE_RANDOM, number 10, version 4
+        P10.4  LINE_TYPE_SPECIAL, number 10, version 4
+        T10.4  LINE_TYPE_TIE, number 10, version 4
+        S10.4  LINE_TYPE_TEST, number 10, version 4
+        R10.4  LINE_TYPE_TREND, number 10, version 4
+        ====== =======================================
+
+    .. versionadded:: 9.3
+    """
+    sr = gxapi.str_ref()
+    gxapi.GXDB.set_line_name2(str(number), type, version, sr)
+    return sr.value
+
+def delete_files(file_name):
+    """
+    Delete all files associates with this database name.
+
+    :param file_name:   name of the database
+
+    .. versionadded:: 9.3
+    """
+
+    def df(fn):
+        try:
+            os.remove(fn)
+        except OSError as e:
+            pass
+
+    if file_name is not None:
+
+        path = os.path.abspath(file_name)
+        fn = os.path.dirname(path)
+        root, ext = os.path.splitext(os.path.basename(path))
+
+        if ext.lower() != '.gdb':
+            raise GdbException('File is not a Geosoft database file (no gdb extension): {}'.format(file_name))
+
+        df(file_name)
+        df(root + '.xml')
 
 
 class Geosoft_gdb:
@@ -191,7 +254,7 @@ class Geosoft_gdb:
             data, ch, fid = gdb.read_line(lsymb, channels=['X','Y','Z'])
             dummy = gxu.gx_dummy(data.dtype)
 
-            # get a dummy mask, True for all rows with a dummy
+            # get a dummy mask, `True` for all rows with a dummy
             dummy_mask = gxu.dummy_mask(data)
 
             squares = npd.square(npd)
@@ -276,7 +339,7 @@ class Geosoft_gdb:
         return gdb
 
     @classmethod
-    def new(cls, name, maxLines=500, maxChannels=200, maxBlobs=0, pageSize=1024, comp=None):
+    def new(cls, name, maxLines=500, maxChannels=200, maxBlobs=0, pageSize=1024, comp=None, overwrite=False):
         """
         Create a new database.
 
@@ -285,14 +348,18 @@ class Geosoft_gdb:
         :param maxChannels: maximum number of channels, default 200
         :param maxBlobs:    maximum number of blobs, default lines*channels+20
         :param comp:        compression:
-        
+
                             | COMP_NONE
                             | COMP_SPEED (default)
                             | COMP_SIZE
+        :param overwrite:   `True` to overwrite existing database. Default is `False`, GdbException if file exists.
                             
         :returns:           :class:`Geosoft_gdb` instance
 
         .. versionadded:: 9.1
+
+        .. versionchanged:: 9.3
+            added parameter `overwrite=False`
         """
         maxLines = max(10, maxLines)
         maxChannels = max(25, maxChannels)
@@ -303,6 +370,10 @@ class Geosoft_gdb:
             comp = COMP_SPEED
 
         name = _gdb_name(name)
+
+        if not overwrite and os.path.isfile(name):
+            raise GdbException('Cannot overwrite existing database \'{}\''.format(name))
+
         gxapi.GXDB.create_comp(name,
                                maxLines, maxChannels, maxBlobs, 10, 100,
                                'SUPER', '',
@@ -334,7 +405,7 @@ class Geosoft_gdb:
         
         :param symb:        symbol name or number
         :param symb_type:   one of DB_SYMB_TYPE
-        :returns:           True if the symbol exists and is the expected symbol type, False otherwise
+        :returns:           `True` if the symbol exists and is the expected symbol type, `False` otherwise
 
         .. versionadded:: 9.1
         """
@@ -426,15 +497,25 @@ class Geosoft_gdb:
 
     @property
     def coordinate_system(self):
-        """ the coordinate system of the current :meth:`xyz_channels`."""
+        """
+        Coordinate system of the current :meth:`xyz_channels`.
+        Can be set (added in version 9.3).
+        """
         try:
-            x_symb = self.line_name_symb('X')[1]
+            x, y, z = self.xyz_channels
             ipj = gxapi.GXIPJ.create()
-            self.gxdb.get_ipj(x_symb, ipj)
+            ipj = gxapi.GXIPJ.create()
+            self.gxdb.get_ipj(self.channel_name_symb(x)[1], ipj)
             return gxcs.Coordinate_system(ipj)
 
         except GdbException:
             return gxcs.Coordinate_system()
+
+    @coordinate_system.setter
+    def coordinate_system(self, cs):
+        cs = gxcs.Coordinate_system(cs)
+        x, y, z = self.xyz_channels
+        self.gxdb.set_ipj(self.channel_name_symb(x)[1], self.channel_name_symb(y)[1], cs.gxipj)
 
     @property
     def max_blobs(self):
@@ -516,18 +597,18 @@ class Geosoft_gdb:
 
     @property
     def data_has_changed(self):
-        """True if data has changed"""
+        """`True` if data has changed"""
         return self._db.get_info(gxapi.DB_INFO_CHANGESLOST)
 
     def is_line(self, line, raise_err=False):
-        """Returns True if the line name exists"""
+        """Returns `True` if the line name exists"""
         exist = self._db.find_symb(line, gxapi.DB_SYMB_LINE) != gxapi.NULLSYMB
         if raise_err and not exist:
             raise GdbException(_t('"{}" is not a valid line'.format(line)))
         return exist
 
     def is_channel(self, chan, raise_err=False):
-        """Returns True if the channel name exists"""
+        """Returns `True` if the channel name exists"""
         exist = self._db.find_chan(chan) != gxapi.NULLSYMB
         if raise_err and not exist:
             raise GdbException(_t('"{}" is not a valid channel'.format(chan)))
@@ -577,12 +658,28 @@ class Geosoft_gdb:
 
         return (xmin, ymin, zmin, xmax, ymax, zmax)
 
+    def _get(self, s, fn):
+        self._lock_read(s)
+        try:
+            v = fn(s)
+        finally:
+            self._unlock(s)
+        return v
+
+
+    def _set(self, s, fn, v):
+        self._lock_write(s)
+        try:
+            fn(s, v)
+        finally:
+            self._unlock(s)
+
     def line_name_symb(self, line, create=False):
         """
         Return line name, symbol
 
         :param line:    line name, or symbol number
-        :param create:  True to create a line if one does not exist
+        :param create:  `True` to create a line if one does not exist
         :returns:       line name, symbol
         :raises:        GdbException if line not found or cannot be created
 
@@ -605,22 +702,24 @@ class Geosoft_gdb:
         """
         Return channel name, symbol
 
-        :param chan:    channel name, or symbol number
+        :param chan:    channel name, or symbol number or Channel instance
         :returns:       line name, symbol, returns ('',-1) if invalid
         :raises:        GdbException if channel does not exist
 
         .. versionadded:: 9.1
         """
 
-        if (self._exist_symb(chan, gxapi.DB_SYMB_CHAN)):
-            if type(chan) is str:
-                symb = self._db.find_symb(chan, gxapi.DB_SYMB_CHAN)
-                return chan, symb
-            else:
-                self._db.get_symb_name(chan, self._sr)
-                return self._sr.value, chan
+        if isinstance(chan, Channel):
+            return chan.name, chan.symbol
 
-        raise GdbException('Channel \'{}\' not found'.format(chan))
+        if not self._exist_symb(chan, gxapi.DB_SYMB_CHAN):
+            raise GdbException('Channel \'{}\' not found'.format(chan))
+        try:
+            symb = self._db.find_symb(chan, gxapi.DB_SYMB_CHAN)
+            return chan, symb
+        except:
+            self._db.get_symb_name(chan, self._sr)
+            return self._sr.value, chan
 
     def channel_width(self, channel):
         """
@@ -631,7 +730,7 @@ class Geosoft_gdb:
 
         .. versionadded:: 9.1
         """
-        return self._db.get_col_va(self.channel_name_symb(channel)[1])
+        return self._get(self.channel_name_symb(channel)[1], self._db.get_col_va)
 
     def list_channels(self, chan=None):
         """
@@ -694,7 +793,7 @@ class Geosoft_gdb:
         """
         List of lines in the database
         
-        :param select=True: True to return selected lines, false to return all lines
+        :param select=True: `True` to return selected lines, `False` to return all lines
         :returns:           dictionary (line name: symbol)
 
         .. versionadded:: 9.1
@@ -726,7 +825,7 @@ class Geosoft_gdb:
             number      numeric line number
             flight      flight number
             version     line version number
-            groupclass  class name for grouped lines, '' if not a grouped line
+            groupclass  class name for grouped lines, None if not a grouped line
             =========== ==============================================================
 
         .. versionadded:: 9.1
@@ -742,6 +841,7 @@ class Geosoft_gdb:
         ln, ls = self.line_name_symb(line)
         detail = {}
         self._lock_read(ls)
+
         try:
             detail['name'] = ln
             detail['symbol'] = ls
@@ -754,11 +854,10 @@ class Geosoft_gdb:
             if self._db.line_category(ls) == gxapi.DB_CATEGORY_LINE_GROUP:
                 detail['groupclass'] = get_detail(self._db.get_group_class)
             else:
-                detail['groupclass'] = ''
+                detail['groupclass'] = None
 
-        except:
+        finally:
             self._unlock(ls)
-            raise
 
         return detail
 
@@ -795,6 +894,7 @@ class Geosoft_gdb:
         cn, cs = self.channel_name_symb(channel)
         detail = {}
         self._lock_read(cs)
+
         try:
             detail['name'] = cn
             detail['symbol'] = cs
@@ -807,9 +907,9 @@ class Geosoft_gdb:
             detail['protect'] = self._db.get_chan_protect(cs)
             detail['array'] = self.channel_width(cs)
             detail['type'] = self._db.get_chan_type(cs)
-        except:
+
+        finally:
             self._unlock(cs)
-            raise
 
         return detail
 
@@ -830,6 +930,7 @@ class Geosoft_gdb:
 
         cs = self.channel_name_symb(channel)[1]
         self._lock_write(cs)
+
         try:
             set_detail('class', self._db.set_chan_class)
             set_detail('format', self._db.set_chan_format)
@@ -842,9 +943,8 @@ class Geosoft_gdb:
             if protect is not None:
                 self._db.set_chan_protect(cs, protect)
 
-        except:
+        finally:
             self._unlock(cs)
-            raise
 
     def channel_dtype(self, channel):
         """
@@ -868,14 +968,14 @@ class Geosoft_gdb:
         ls = self.line_name_symb(line)[1]
         cs = self.channel_name_symb(channel)[1]
         self._lock_read(cs)
+
         try:
             fidStart = self._db.get_fid_start(ls, cs)
             fidIncr = self._db.get_fid_incr(ls, cs)
-        except:
-            self._unlock(cs)
-            raise
 
-        self._unlock(cs)
+        finally:
+            self._unlock(cs)
+
         return (fidStart, fidIncr)
 
     # ========================================================================================
@@ -915,33 +1015,35 @@ class Geosoft_gdb:
 
         return symb
 
-    def new_line(self, line, linetype=None, group=''):
+    def new_line(self, line, linetype=None, group=None):
         """
         Get a line symbol.  If line exists an error is raised.
 
         :param line:        line name
         :param linetype:    line type for creating a new line, ignored if group defines
 
-            ================= =========================================
-            SYMB_LINE_NORMAL  normal lines, name is a string
-            SYMB_LINE_FLIGHT  flight lines, first letter is line type
-            ================= =========================================
+                                ================= =========================================
+                                SYMB_LINE_NORMAL  normal lines, name is a string
+                                SYMB_LINE_FLIGHT  flight lines, first letter is line type
+                                ================= =========================================
 
         :param group:       group name for a grouped class
 
         :returns:           line symbol
 
+        .. seealso:: function :func:`create_line_name` to create a valid line name.
+
         .. versionadded:: 9.1
         """
 
         if not self._db.is_line_name(line):
-            raise GdbException('Invalid line name \'{}\''.format(line))
+            raise GdbException('Invalid line name \'{}\'. Use create_line_name() to create a valid name.'.format(line))
 
         symb = self._db.find_symb(line, gxapi.DB_SYMB_LINE)
         if symb != gxapi.NULLSYMB:
             raise GdbException('Cannot create existing line \'{}\''.format(line))
 
-        if len(group) > 0:
+        if group:
             linetype = SYMB_LINE_GROUP
         elif not linetype:
             linetype = SYMB_LINE_NORMAL
@@ -951,15 +1053,12 @@ class Geosoft_gdb:
                                        gxapi.DB_OWN_SHARED,
                                        linetype,
                                        0)
-        if len(group) > 0:
+        if group:
             self._lock_write(symb)
             try:
-                self._db.set_group_class(symb, group)
+                self._set(symb, self._db.set_group_class, group)
             except geosoft.gxapi.GXAPIError:
-                self._unlock(symb)
-            except:
-                self._unlock(symb)
-                raise
+                pass
 
         return symb
 
@@ -972,39 +1071,54 @@ class Geosoft_gdb:
         .. versionadded:: 9.1
         """
 
-        if type(channels) is str:
+        if isinstance(channels, str) or isinstance(channels, int):
             channels = [channels]
 
-        self._db.un_lock_all_symb()
+        protected_channels = []
+
         for s in channels:
+
             try:
-                cn, cs = self.channel_name_symb(s)
-                self._lock_write(cs)
-                self._db.delete_symb(cs)
+                c = Channel(self, s)
+                if c.protect:
+                    protected_channels.append(c.name)
+                else:
+                    c.delete()
             except GdbException:
                 continue
 
-    def delete_line(self, s):
-        """
-        Delete a line by name or symbol.
+        if len(protected_channels):
+            raise GdbException('Cannot delete protected channels: {}'.format(protected_channels))
 
-        :param s: line name or symbol
+    def delete_line(self, lines):
+        """
+        Delete line(s) by name or symbol.
+
+        :param lines: line name/symbol, or a list of names/symbols
 
         .. versionadded:: 9.1
         """
-        if type(s) is str:
-            s = self._db.find_symb(s, gxapi.DB_SYMB_LINE)
-            if s == gxapi.NULLSYMB:
-                return
-        self._lock_write(s)
-        self._db.delete_symb(s)
+
+        if isinstance(lines, str) or isinstance(lines, int):
+            lines = [lines]
+
+        for s in lines:
+
+            try:
+                ln, ls = self.line_name_symb(s)
+            except GdbException:
+                continue
+
+            self._unlock(ls)
+            self._lock_write(ls)
+            self._db.delete_symb(ls)
 
     def select_lines(self, selection='', select=True):
         """
         Change selected state of a line, or group of lines
         
         :param selection:   string representing selection, comma-delimit multiple selections
-        :param select=True: True to select, False to deselect
+        :param select=True: `True` to select, `False` to deselect
 
         "L99:800" will select all lines of type "L" in range 99 through 800.
 
@@ -1024,24 +1138,6 @@ class Geosoft_gdb:
 
     # =====================================================================================
     # reading and writing
-
-    def _lock_read(self, s):
-        try:
-            self._db.lock_symb(s, gxapi.DB_LOCK_READONLY, gxapi.DB_WAIT_INFINITY)
-        except GdbException:
-            raise GdbException('Cannot read lock symbol {}'.format(s))
-
-    def _lock_write(self, s):
-        try:
-            self._db.lock_symb(s, gxapi.DB_LOCK_READWRITE, gxapi.DB_WAIT_INFINITY)
-        except GdbException:
-            raise GdbException('Cannot write lock symbol {}'.format(s))
-
-    def _unlock(self, s):
-        try:
-            self._db.un_lock_symb(s)
-        except GdbException:
-            pass
 
     def _sorted_chan_list(self):
 
@@ -1095,6 +1191,30 @@ class Geosoft_gdb:
 
         return chNames, chSymbs, cType
 
+    def _lock_read(self, s):
+        try:
+            self._db.lock_symb(s, SYMBOL_LOCK_READ, gxapi.DB_WAIT_INFINITY)
+        except GdbException:
+            raise GdbException('Cannot read lock symbol {}'.format(s))
+
+    def _lock_write(self, s):
+        try:
+            self._db.lock_symb(s, SYMBOL_LOCK_WRITE, gxapi.DB_WAIT_INFINITY)
+        except GdbException:
+            raise GdbException('Cannot write lock symbol {}'.format(s))
+
+    def _unlock(self, s):
+        if self._db.get_symb_lock(s) != SYMBOL_LOCK_NONE:
+            self._db.un_lock_symb(s)
+
+    def unlock_all(self):
+        """
+        Unlock all locked symbols.
+
+        .. versionadded:: 9.3
+        """
+        self._db.un_lock_all_symb()
+
     def read_channel_vv(self, line, channel, dtype=None):
         """
         Read data from a single channel, return in a vv.
@@ -1120,10 +1240,8 @@ class Geosoft_gdb:
         self._lock_read(cs)
         try:
             self._db.get_chan_vv(ls, cs, vv._vv)
-        except:
+        finally:
             self._unlock(cs)
-            raise
-        self._unlock(cs)
 
         return vv
 
@@ -1151,10 +1269,8 @@ class Geosoft_gdb:
         self._lock_read(cs)
         try:
             self._db.get_chan_va(ls, cs, va._va)
-        except:
+        finally:
             self._unlock(cs)
-            raise
-        self._unlock(cs)
         return va
 
     def read_channel(self, line, channel, dtype=None):
@@ -1186,9 +1302,9 @@ class Geosoft_gdb:
         :param channels:    list of channels, strings or symbol number.  If empty, read all channels
         :param dtype:       numpy data type for the array, default np.float64 for multi-channel data,
                             data type for single channel data. Use "<Unnn" for string type.
-        :param common_fid:  True to resample all channels to a common fiducial
-        :param fid:         required fid (start, increment), ignored if common_fid=False.
-                            if common_fid=True and fid= is not defined, use the smallest common fid.
+        :param common_fid:  `True` to resample all channels to a common fiducial
+        :param fid:         required fid (start, increment), ignored if `common_fid=False`.
+                            if `common_fid=True` and fid= is not defined, use the smallest common fid.
         :returns:           list of tuples [(channel_name, vv), ...]
 
         If a requested channel is a VA, it is with channel names 'name[0]', 'name[1]', etc.
@@ -1367,9 +1483,6 @@ class Geosoft_gdb:
         .. versionadded:: 9.2
         """
 
-        def cleanup():
-            self._unlock(cs)
-
         ln, ls = self.line_name_symb(line, create=True)
 
         try:
@@ -1384,11 +1497,8 @@ class Geosoft_gdb:
         self._lock_write(cs)
         try:
             self._db.put_chan_vv(ls, cs, vv._vv)
-        except:
-            cleanup()
-            raise
-
-        cleanup()
+        finally:
+            self._unlock(cs)
 
     def write_channel_va(self, line, channel, va):
         """
@@ -1400,9 +1510,6 @@ class Geosoft_gdb:
 
         .. versionadded:: 9.2
         """
-
-        def cleanup():
-            self._unlock(cs)
 
         ln, ls = self.line_name_symb(line, create=True)
 
@@ -1418,11 +1525,8 @@ class Geosoft_gdb:
         self._lock_write(cs)
         try:
             self._db.put_chan_va(ls, cs, va._va)
-        except:
-            cleanup()
-            raise
-
-        cleanup()
+        finally:
+            self._unlock(cs)
 
     def writeDataChan(self, *args, **kwargs):
         """
@@ -1441,9 +1545,6 @@ class Geosoft_gdb:
 
         .. versionadded:: 9.1
         """
-
-        def cleanup():
-            self._unlock(cs)
 
         ln, ls = self.line_name_symb(line, create=True)
 
@@ -1470,9 +1571,8 @@ class Geosoft_gdb:
             self._lock_write(cs)
             try:
                 self._db.put_chan_vv(ls, cs, vv._vv)
-            except:
-                cleanup()
-                raise
+            finally:
+                self._unlock(cs)
 
         else:
 
@@ -1482,11 +1582,8 @@ class Geosoft_gdb:
             self._lock_write(cs)
             try:
                 self._db.put_chan_va(ls, cs, va._va)
-            except:
-                cleanup()
-                raise
-
-        cleanup()
+            finally:
+                self._unlock(cs)
 
     def write_line_vv(self, line, chan_data):
         """
@@ -1554,7 +1651,7 @@ class Geosoft_gdb:
 
         :param chan:            channel to scan
         :param max=1000:        maximum values allowed, once this maximum is reached scanning stops
-        :param selected=True:   True to scan only selected lines
+        :param selected=True:   `True` to scan only selected lines
         :param dupl:            Stop growing list after this many lines fail to grow the list, 0 scans all lines
         :param progress:        progress reporting function
         :param stop:            stop check function
@@ -1608,3 +1705,579 @@ class Geosoft_gdb:
             set = set[:max]
 
         return set.tolist()
+
+
+class Channel:
+    """
+    Class to work with database channels.  Use constructor :meth:`Channel.new` to create a new channel.
+    Use instance properties to work with channel properties.
+
+    :param gdb:     database instance
+    :param name:    channel name string, must exist - see new() to create a new channel
+
+    .. versionadded:: 9.3
+    """
+
+    def _get(self, fn):
+        self.gdb._lock_read(self._symb)
+        try:
+            return fn(self._symb)
+        finally:
+            self.gdb._unlock(self._symb)
+
+    def _get_str(self, fn):
+        self.gdb._lock_read(self._symb)
+        try:
+            fn(self._symb, self._sr)
+            return self._sr.value
+        finally:
+            self.gdb._unlock(self._symb)
+
+    def _set(self, fn, v):
+        self.gdb._lock_write(self._symb)
+        try:
+            fn(self._symb, v)
+        finally:
+            self.gdb._unlock(self._symb)
+
+    def __init__(self, gdb, name):
+
+        self.gdb = gdb
+        name, self._symb = gdb.channel_name_symb(name)
+        self._sr = gxapi.str_ref()
+
+    @classmethod
+    def new(cls, gdb, name, dtype=np.float64, array=1, details=None, replace=False):
+        """
+        Create a new channel.
+
+        :param gdb:     Geosoft_gdb instance
+        :param name:    channel name
+        :param dtype:   numpy data type, defaule np.float64
+        :param array:   array size, default 1
+        :param details: dictionary of other channel properties - see :meth:`Geosoft_gdb.set_channel_details`
+        :param replace: `True` to replace an existing channel.  All existing channel information and data is lost.
+                        default is `False`.
+        :return:        Channel instance
+        """
+
+        if gdb._exist_symb(name, gxapi.DB_SYMB_CHAN):
+            if replace:
+                gdb.delete_channel(name)
+            else:
+                raise GdbException("Cannot replace existing channel '{}'".format(name))
+        symb = gdb.new_channel(name, dtype, array)
+        if details:
+            gdb.set_channel_details(symb, details)
+
+        return cls(gdb, name)
+
+    @property
+    def name(self):
+        """
+        Channel name.
+
+        .. versionadded:: 9.3
+        """
+        return self._get_str(self.gdb._db.get_chan_name)
+
+    @name.setter
+    def name(self, name):
+        name = str(name)
+        if name != self.name:
+            if not self.gdb._db.is_chan_name(name):
+                raise GdbException('Invalid channel name \'{}\''.format(name))
+            if self.gdb._exist_symb(name, gxapi.DB_SYMB_CHAN):
+                raise GdbException('Cannot rename to an existing channel name \'{}\''.format(name))
+            self._set(self.gdb._db.set_chan_name, name)
+
+    @property
+    def symbol(self):
+        """
+        Channel symbol
+
+        .. versionadded:: 9.3
+        """
+        return self._symb
+
+    @property
+    def array(self):
+        """
+        Array channel width, 1 for non-array channels
+
+        .. versionadded:: 9.3
+        """
+
+        return self.gdb.channel_width(self._symb)
+
+    @property
+    def is_array(self):
+        """
+        `True` if this is an array channel
+
+        .. versionadded:: 9.3
+        """
+
+        return bool(self.array > 1)
+
+    @property
+    def decimal(self):
+        """
+        Number of displayed decimal places, can be set.
+
+        .. versionadded:: 9.3
+        """
+
+        return self.gdb._db.get_chan_decimal(self._symb)
+
+    @decimal.setter
+    def decimal(self, value):
+        self._set(self.gdb._db.set_chan_decimal, value)
+
+    @property
+    def format(self):
+        """
+        Channel display format:
+
+        ============= ========================================
+        FORMAT_NORMAL normal decimal or integer format
+        FORMAT_EXP    exponential
+        FORMAT_TIME   geosoft time (HH:MM:SS.ssss)
+        FORMAT_DATE   date (YYYY/MM/DD)
+        FORMAT_GEOGR  geographic (deg.mm.ss.ssss)
+        FORMAT_SIGDIG decimals is number of significant digits
+        FORMAT_HEX    hexadecimal
+        ============= ========================================
+
+        .. versionadded:: 9.3
+        """
+        return self.gdb._db.get_chan_format(self._symb)
+
+    @format.setter
+    def format(self, value):
+        self._set(self.gdb._db.set_chan_format, value)
+
+    @property
+    def label(self):
+        """
+        Channel label used in display graphics, normally the same as the channel name.
+        Can be set.
+
+        .. versionadded:: 9.3
+        """
+        self.gdb._db.get_chan_label(self._symb, self._sr)
+        return self._sr.value
+
+    @label.setter
+    def label(self, value):
+        self._set(self.gdb._db.set_chan_label, value)
+
+    @property
+    def type(self):
+        """
+        Geosoft data type.
+
+        .. versionadded:: 9.3
+        """
+        return self.gdb._db.get_chan_type(self._symb)
+
+    @property
+    def unit(self):
+        """
+        Unit of measure, can be set.
+
+        .. versionadded:: 9.3
+        """
+        self.gdb._db.get_chan_unit(self._symb, self._sr)
+        return self._sr.value
+
+    @unit.setter
+    def unit(self, value):
+        self._set(self.gdb._db.set_chan_unit, value)
+
+    @property
+    def width(self):
+        """
+        Display window width in characters.
+        Can be set.
+
+        .. versionadded:: 9.3
+        """
+        return self.gdb._db.get_chan_width(self._symb)
+
+    @width.setter
+    def width(self, value):
+        self._set(self.gdb._db.set_chan_width, value)
+
+    @property
+    def class_(self):
+        """
+        Class name to which this channel is associated.
+        Can be set.
+
+        .. versionadded:: 9.3
+        """
+
+        self.gdb._db.get_chan_class(self._symb, self._sr)
+        return self._sr.value
+
+    @class_.setter
+    def class_(self, value):
+        self._set(self.gdb._db.set_chan_class, value)
+
+    @property
+    def protect(self):
+        """
+        `True` if this channel is protected from modification.
+        Can be set.
+
+        .. versionadded:: 9.3
+        """
+
+        return bool(self.gdb._db.get_chan_protect(self._symb))
+
+    @protect.setter
+    def protect(self, value):
+        if value:
+            value = 1
+        else:
+            value = 0
+        self._set(self.gdb._db.set_chan_protect, value)
+
+    @property
+    def locked(self):
+        """
+        True if symbol is locked.  See :prop:`lock` to determine if read or write lock, or to
+        set the lock.
+
+        Setting to `False` unlocks the symbol.
+
+        .. versionadded:: 9.3
+        """
+        return (self.lock != SYMBOL_LOCK_NONE)
+
+    @locked.setter
+    def locked(self, value):
+        if not value:
+            self.gdb._unlock(self._symb)
+        else:
+            raise GdbException('Use property \'lock\' to set SYMBOL_READ or SYMBOL_WRITE lock.')
+
+    @property
+    def lock(self):
+        """
+        Lock setting:
+
+        | -1 unlocked (SYMBOL_LOCK_NONE)
+        | 0 read-locked (SYMBOL_LOCK_READ)
+        | 1 write-locked (SYMBOL_LOCK_WRITE)
+
+        Can be set.
+
+        .. versionadded 9.3
+        """
+        return self.gdb._db.get_symb_lock(self.symbol)
+
+    @lock.setter
+    def lock(self, value):
+        if self.lock != value:
+            self.gdb._unlock(self.symbol)
+            self.gdb._db.lock_symb(self.symbol, value, gxapi.DB_WAIT_INFINITY)
+
+    def delete(self):
+        """
+        Delete the channel and all associated data.  After calling this method this
+        channel instance is no longer valid.
+
+        .. versionadded:: 9.3
+        """
+        if self.protect:
+            raise GdbException("Cannot delete protected channel '{}'".format(self.name))
+        self.lock = SYMBOL_LOCK_WRITE
+        self.gdb._db.delete_symb(self._symb)
+        self._symb = gxapi.NULLSYMB
+
+class Line:
+    """
+    Class to work with database lines.  Use constructor :meth:`Line.new` to create a new line.
+    Use instance properties to work with line properties.
+
+    :param gdb:     database instance
+    :param name:    line name string, must exist - see new() to create a new line
+
+    .. versionadded:: 9.3
+    """
+
+    def _get(self, fn):
+        self.gdb._lock_read(self._symb)
+        try:
+            return fn(self._symb)
+        finally:
+            self.gdb._unlock(self._symb)
+
+    def _get_str(self, fn):
+        self.gdb._lock_read(self._symb)
+        try:
+            fn(self._symb, self._sr)
+            return self._sr.value
+        finally:
+            self.gdb._unlock(self._symb)
+
+    def _set(self, fn, v):
+        self.gdb._lock_write(self._symb)
+        try:
+            fn(self._symb, v)
+        finally:
+            self.gdb._unlock(self._symb)
+
+    def __init__(self, gdb, name):
+
+        self.gdb = gdb
+        name, self._symb = gdb.line_name_symb(name)
+        self._sr = gxapi.str_ref()
+
+    @classmethod
+    def new(cls, gdb, name, linetype=None, group='', replace=False):
+        """
+        Create a new line.
+
+        :param name:        line name
+        :param linetype:    line type for creating a new line, ignored if group defines
+
+            ================= =========================================
+            SYMB_LINE_NORMAL  normal lines, name is a string
+            SYMB_LINE_FLIGHT  flight lines, first letter is line type
+            ================= =========================================
+
+        :param group:       group name for a grouped class
+        :param replace:     `True` to replace line if it exists. Default is `False` .
+        :returns:           Line instance
+
+        .. versionadded:: 9.3
+            """
+        if gdb._exist_symb(name, gxapi.DB_SYMB_CHAN):
+            if replace:
+                gdb.delete_line(name)
+            else:
+                raise GdbException("Cannot replace existing line '{}'".format(name))
+
+        symb = gdb.new_line(name, linetype, group)
+
+        return cls(gdb, name)
+
+    @property
+    def name(self):
+        """
+        Line name, consistent with names constructed by :func:`create_line_name`.
+
+        To change a line name change the type, number or version.
+
+        .. versionadded:: 9.3
+        """
+        return self._get_str(self.gdb._db.get_symb_name)
+
+    @property
+    def symbol(self):
+        """
+        Line symbol
+
+        .. versionadded:: 9.3
+        """
+        return self._symb
+
+    @property
+    def type(self):
+        """
+        Line type, which can be set:
+
+        | LINE_TYPE_NORMAL
+        | LINE_TYPE_BASE
+        | LINE_TYPE_TIE
+        | LINE_TYPE_TEST
+        | LINE_TYPE_TREND
+        | LINE_TYPE_SPECIAL
+        | LINE_TYPE_RANDOM
+
+        .. versionadded:: 9.3
+        """
+        return self._get(self.gdb._db.line_type)
+
+    @type.setter
+    def type(self, value):
+        self._set(self.gdb._db.set_line_type, value)
+
+    @property
+    def category(self):
+        """
+        Line category, which can be set:
+
+        | LINE_CATAGORY_FLIGHT
+        | LINE_CATEGORY_GROUP
+        | LINE_CATEGORY_NORMAL
+
+        .. versionadded:: 9.3
+        """
+        return self._get(self.gdb._db.line_category)
+
+    @property
+    def date(self):
+        """
+        Line date. Can be set.
+
+        .. versionadded:: 9.3
+        """
+        return self._get(self.gdb._db.line_date)
+
+    @date.setter
+    def date(self, value):
+        self._set(self.gdb._db.set_line_date, value)
+
+    @property
+    def flight(self):
+        """
+        Line flight number (flight/cruise/survey event). Can be set.
+
+        .. versionadded:: 9.3
+        """
+        return self._get(self.gdb._db.line_flight)
+    
+    @flight.setter
+    def flight(self, value):
+        self._set(self.gdb._db.set_line_flight, value)
+
+
+    @property
+    def number(self):
+        """
+        Line number. Can be set
+
+        .. versionadded:: 9.3
+        """
+        return self._get(self.gdb._db.line_number)
+
+    @number.setter
+    def number(self, value):
+        self._set(self.gdb._db.set_line_num, int(value))
+
+    @property
+    def version(self):
+        """
+        Line version number. Can be set.
+
+        .. versionadded:: 9.3
+        """
+        return self._get(self.gdb._db.line_version)
+
+    @version.setter
+    def version(self, value):
+        self._set(self.gdb._db.set_line_ver, value)
+
+    @property
+    def group_class(self):
+        """
+        The lines group class name, '' for a group lines (LINE_CATEGORY_GROUP).
+        Only works for lines that are part of a group.
+        Can be set.
+
+        .. versionadded:: 9.3
+        """
+        if self.category == LINE_CATEGORY_GROUP:
+            return self._get_str(self.gdb._db.get_group_class)
+        else:
+            return None
+
+    @group_class.setter
+    def group_class(self, value):
+        if self.category == LINE_CATEGORY_GROUP:
+            self._set(self.gdb._db.set_group_class, value)
+        else:
+            raise GdbException('Line \'{}\' is not a grouped line.'.format(self.name))
+
+    @property
+    def selected(self):
+        return self.gdb._db.get_line_selection(self._symb) == gxapi.DB_LINE_SELECT_INCLUDE
+
+    @selected.setter
+    def selected(self, value):
+        if bool(value):
+            self.gdb._db.set_line_selection(self._symb, gxapi.DB_LINE_SELECT_INCLUDE)
+        else:
+            self.gdb._db.set_line_selection(self._symb, gxapi.DB_LINE_SELECT_EXCLUDE)
+
+    @property
+    def locked(self):
+        """
+        True if symbol is locked.  See :prop:`lock` to determine if read or write lock, or to
+        set the lock.
+
+        Setting to `False` unlocks the symbol.
+
+        .. versionadded:: 9.3
+        """
+        return (self.lock != SYMBOL_LOCK_NONE)
+
+    @locked.setter
+    def locked(self, value):
+        if not value:
+            self.gdb._unlock(self._symb)
+        else:
+            raise GdbException('Use property \'lock\' to set SYMBOL_READ or SYMBOL_WRITE lock.')
+
+    @property
+    def lock(self):
+        """
+        Lock setting:
+
+        | -1 unlocked (SYMBOL_LOCK_NONE)
+        | 0 read-locked (SYMBOL_LOCK_READ)
+        | 1 write-locked (SYMBOL_LOCK_WRITE)
+
+        Can be set.
+
+        .. versionadded 9.3
+        """
+        return self.gdb._db.get_symb_lock(self.symbol)
+
+    @lock.setter
+    def lock(self, value):
+        if self.lock != value:
+            self.gdb._unlock(self.symbol)
+            self.gdb._db.lock_symb(self.symbol, value, gxapi.DB_WAIT_INFINITY)
+
+    def delete(self):
+        """
+        Delete the line and all data associated with the line.  After calling this method this
+        line instance is no longer valid.
+
+        .. versionadded:: 9.3
+        """
+        self.gdb.delete_line(self.symbol)
+        self._symb = gxapi.NULLSYMB
+
+    #===========================================================================================
+    # methods that work with line data
+
+    def bearing(self):
+        """
+        Return bearing of a line based on location of the first and last point in the line.
+        Returns None if the line is empty or first and last points are the same.
+
+        .. versionadded:: 9.3
+        """
+        x, y, z = self.gdb.xyz_channels
+        x = self.gdb.channel_name_symb(x)[1]
+        y = self.gdb.channel_name_symb(y)[1]
+
+        self.gdb._lock_read(x)
+        self.gdb._lock_read(y)
+        try:
+            bearing = gxapi.GXDU.direction(self.gdb._db, self._symb, x, y)
+        finally:
+            self.gdb._unlock(y)
+            self.gdb._unlock(x)
+
+        self._set(self.gdb._db.set_line_bearing, bearing)
+        if bearing == gxapi.rDUMMY:
+            return None
+        return bearing
+

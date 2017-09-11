@@ -1,7 +1,6 @@
 import unittest
 import os
 import numpy as np
-import gc
 from PIL import Image
 
 import geosoft
@@ -36,7 +35,7 @@ class Test(GXPYTest):
         self.start()
 
         with gxdb.Geosoft_gdb.open(self.gdb_name) as gdb:
-            self.assertEqual(gdb.file_name.lower(),self.gdb_name.lower())
+            self.assertEqual(len(gdb.file_name), len(self.gdb_name))
             self.assertEqual(str(gdb).lower(),os.path.basename(self.gdb_name).lower())
             self.assertTrue(len(gdb.list_channels())>=6)
             self.assertTrue('X' in gdb.list_channels())
@@ -79,7 +78,7 @@ class Test(GXPYTest):
 
         with gxdb.Geosoft_gdb.open(self.gdb_name) as gdb:
             
-            self.assertEqual(gdb.file_name.lower(),self.gdb_name.lower())
+            self.assertEqual(len(gdb.file_name), len(self.gdb_name))
             self.assertEqual(str(gdb).lower(),os.path.basename(self.gdb_name).lower())
             data, ch, fid = gdb.read_line('D578625')
             self.assertEqual(data.shape, (832, 8))
@@ -597,7 +596,8 @@ class Test(GXPYTest):
     def test_new(self):
         self.start()
 
-        with gxdb.Geosoft_gdb.new( os.path.join(self.folder, 'new.gdb')) as gdb:
+        gdb_file = os.path.join(self.folder, 'new.gdb')
+        with gxdb.Geosoft_gdb.new(gdb_file, overwrite=True) as gdb:
 
             #read an image and put it in a new database
             with open(os.path.join(self.folder, 'image.png'), 'rb') as im_handle:
@@ -616,6 +616,12 @@ class Test(GXPYTest):
             d,c,f = gdb.read_line('L5')
             self.assertEqual(d.shape[0],imageIn.shape[1])
             self.assertEqual(d.shape[1],imageIn.shape[2])
+
+        self.assertRaises(gxdb.GdbException, gxdb.Geosoft_gdb.new, gdb_file)
+        with gxdb.Geosoft_gdb.new( os.path.join(self.folder, gdb_file), overwrite=True) as gdb:
+            pass
+        gxdb.delete_files(gdb_file)
+
 
     def test_details(self):
         self.start()
@@ -654,7 +660,7 @@ class Test(GXPYTest):
             self.assertEqual(det.get('flight'),0)
             self.assertEqual(det.get('version'),0)
             self.assertEqual(det.get('type'),gxapi.DB_LINE_TYPE_RANDOM)
-            self.assertEqual(det.get('groupclass'),'')
+            self.assertEqual(det.get('groupclass'), None)
 
             gdb.delete_line('testgroup')
             ls = gdb.new_line('testgroup', group="TeSt")
@@ -666,6 +672,194 @@ class Test(GXPYTest):
             gdb.delete_line('testgroup')
 
             gdb.discard()
+
+    def test_channel(self):
+        self.start()
+
+        with gxdb.Geosoft_gdb.open(self.gdb_name) as gdb:
+
+            try:
+                gdb.delete_channel("detailtest")
+                ch = gxdb.Channel.new(gdb, "detailtest")
+                det = gdb.channel_details(ch.name)
+                self.assertEqual(ch.name, det['name'])
+                self.assertEqual(ch.array, det['array'])
+                self.assertEqual(ch.decimal, det['decimal'])
+                self.assertEqual(ch.format, det['format'])
+                self.assertEqual(ch.label, det['label'])
+                self.assertEqual(ch.protect, det['protect'])
+                self.assertEqual(ch.symbol, det['symbol'])
+                self.assertEqual(ch.type, det['type'])
+                self.assertEqual(ch.unit, det['unit'])
+                self.assertEqual(ch.width, det['width'])
+                self.assertEqual(ch.class_, det['class'])
+
+                ch.protect = 1
+                ch.decimal = 6
+                ch.width = 10
+                ch.unit = 'nT'
+                ch.label = 'weirdo'
+                ch.format = gxapi.DB_CHAN_FORMAT_GEOGR
+                ch.class_ = 'geochem'
+                self.assertEqual(ch.protect, True)
+                self.assertEqual(ch.decimal, 6)
+                self.assertEqual(ch.unit, 'nT')
+                self.assertEqual(ch.label, 'weirdo')
+                self.assertEqual(ch.format, 4)
+                self.assertEqual(ch.class_, 'geochem')
+
+                ch.name = "new_name"
+                self.assertEqual(ch.name, "new_name")
+                try:
+                    ch.name = list(gdb.list_channels())[0]
+                    self.assertTrue(False)
+                except:
+                    pass
+                try:
+                    ch.name = 45
+                    self.assertTrue(False)
+                except:
+                    pass
+
+                self.assertFalse(ch.locked)
+                ch.lock = gxdb.SYMBOL_LOCK_READ
+                self.assertTrue(ch.locked)
+                self.assertEqual(ch.lock, gxdb.SYMBOL_LOCK_READ)
+                ch.lock = gxdb.SYMBOL_LOCK_WRITE
+                self.assertTrue(ch.locked)
+                self.assertEqual(ch.lock, gxdb.SYMBOL_LOCK_WRITE)
+                ch.locked = False
+
+                self.assertRaises(gxdb.GdbException, gdb.delete_channel, ch.name)
+                self.assertRaises(gxdb.GdbException, ch.delete)
+                ch.protect = False
+                ch.delete()
+                self.assertEqual(ch.symbol, gxapi.NULLSYMB)
+
+            finally:
+                gdb.discard()
+
+    def test_line(self):
+        self.start()
+
+        with gxdb.Geosoft_gdb.open(self.gdb_name) as gdb:
+
+            try:
+                gdb.delete_line("T9999")
+                ln = gxdb.Line.new(gdb, "T9999")
+                det = gdb.line_details(ln.name)
+                self.assertEqual(ln.name, det['name'])
+                self.assertEqual(ln.category, det['category'])
+                self.assertEqual(ln.date, det['date'])
+                self.assertEqual(ln.flight, det['flight'])
+                self.assertEqual(ln.number, det['number'])
+                self.assertEqual(ln.type, det['type'])
+                self.assertEqual(ln.version, det['version'])
+                self.assertEqual(ln.group_class, det['groupclass'])
+                self.assertTrue(ln.selected)
+
+                ln.date = 2017
+                self.assertEqual(ln.date, 2017)
+                ln.selected = False
+                self.assertFalse(ln.selected)
+                ln.selected = True
+                self.assertTrue(ln.selected)
+                ln.number = 88.9
+                self.assertEqual(ln.number, 88)
+                ln.number = -88.9
+                self.assertEqual(ln.number, -88)
+                ln.type = gxdb.LINE_TYPE_NORMAL
+                self.assertEqual(ln.type, 0)
+                ln.type = gxdb.LINE_TYPE_BASE
+                self.assertEqual(ln.type, 1)
+                ln.type = gxdb.LINE_TYPE_TIE
+                self.assertEqual(ln.type, 2)
+                ln.type = gxdb.LINE_TYPE_TEST
+                self.assertEqual(ln.type, 3)
+                ln.type = gxdb.LINE_TYPE_TREND
+                self.assertEqual(ln.type, 4)
+                ln.type = gxdb.LINE_TYPE_SPECIAL
+                self.assertEqual(ln.type, 5)
+                ln.type = gxdb.LINE_TYPE_RANDOM
+                self.assertEqual(ln.type, 6)
+                ln.version = 7
+                self.assertEqual(ln.version, 7)
+                ln.flight = 1000
+                self.assertEqual(ln.flight, 1000)
+                try:
+                    ln.group_class = 'billy'
+                    self.assertTrue(False)
+                except gxdb.GdbException:
+                    pass
+
+                self.assertEqual(ln.lock, gxdb.SYMBOL_LOCK_NONE)
+                self.assertFalse(ln.locked)
+                ln.lock = gxdb.SYMBOL_LOCK_READ
+                self.assertTrue(ln.locked)
+                self.assertEqual(ln.lock, gxdb.SYMBOL_LOCK_READ)
+                ln.lock = gxdb.SYMBOL_LOCK_WRITE
+                self.assertTrue(ln.locked)
+                self.assertEqual(ln.lock, gxdb.SYMBOL_LOCK_WRITE)
+                ln.locked = False
+
+                ln.delete()
+                self.assertEqual(ln.symbol, gxapi.NULLSYMB)
+
+                gdb.delete_line("L88")
+                ln = gxdb.Line.new(gdb, "L88", group='john')
+                self.assertEqual(ln.group_class, 'john')
+                ln.group_class = 'billy'
+                self.assertEqual(ln.group_class, 'billy')
+                gdb.delete_line(ln.name)
+
+            finally:
+                gdb.discard()
+
+    def test_locks(self):
+        self.start()
+
+        with gxdb.Geosoft_gdb.open(self.gdb_name) as gdb:
+
+            try:
+                gdb.delete_line("T9999")
+                l = gxdb.Line.new(gdb, "T9999")
+                l.lock = gxdb.SYMBOL_LOCK_WRITE
+                self.assertTrue(l.locked)
+                ll = gxdb.Line.new(gdb, "T8")
+                ll.lock = gxdb.SYMBOL_LOCK_READ
+                self.assertTrue(ll.locked)
+                c = gxdb.Channel.new(gdb, "dummy")
+                c.lock = gxdb.SYMBOL_LOCK_WRITE
+                self.assertTrue(c.locked)
+                cc = gxdb.Channel.new(gdb, "dummy2")
+                cc.lock = gxdb.SYMBOL_LOCK_WRITE
+                self.assertTrue(cc.locked)
+
+                gdb.unlock_all()
+                self.assertFalse(l.locked)
+                self.assertFalse(ll.locked)
+                self.assertFalse(c.locked)
+                self.assertFalse(cc.locked)
+
+            finally:
+                gdb.discard()
+
+
+    def test_create_line_name(self):
+        self.start()
+        self.assertEqual(gxdb.create_line_name(10, gxdb.LINE_TYPE_NORMAL, 4), 'L10.4')
+        self.assertEqual(gxdb.create_line_name(10, gxdb.LINE_TYPE_BASE, 4), 'B10.4')
+        self.assertEqual(gxdb.create_line_name('abc', gxdb.LINE_TYPE_RANDOM, 4), 'Dabc.4')
+        self.assertEqual(gxdb.create_line_name('20', gxdb.LINE_TYPE_SPECIAL, 4), 'P20.4')
+        self.assertEqual(gxdb.create_line_name('899', gxdb.LINE_TYPE_TIE, 1), 'T899.1')
+        self.assertEqual(gxdb.create_line_name('899', gxdb.LINE_TYPE_TEST, 1), 'S899.1')
+        self.assertEqual(gxdb.create_line_name('899', gxdb.LINE_TYPE_TREND, 1), 'R899.1')
+
+    def test_bearing(self):
+        self.start()
+        with gxdb.Geosoft_gdb.open(self.gdb_name) as gdb:
+            ln = gxdb.Line(gdb, 'D578625')
+            self.assertAlmostEqual(ln.bearing(), 0.0)
 
     def test_metadata(self):
         self.start()
@@ -690,6 +884,16 @@ class Test(GXPYTest):
             maki = m['maki']
             self.assertEqual(maki['b'], ['4', '5', '6'])
             self.assertEqual(maki['units'], 'nT')
+
+    def test_coordinate_system(self):
+        self.start()
+        with gxdb.Geosoft_gdb.open(self.gdb_name) as gdb:
+            try:
+                self.assertEqual(str(gdb.coordinate_system), 'Corrego Alegre 1970-72 / UTM zone 23S')
+                gdb.coordinate_system = 'NAD83 / UTM zone 25N'
+                self.assertEqual(str(gdb.coordinate_system), 'NAD83 / UTM zone 25N')
+            finally:
+                gdb.discard()
 
 
 ###############################################################################################

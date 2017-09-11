@@ -111,7 +111,7 @@ def delete_files(file_name):
     """
     Delete all files associates with this grid name.
 
-    :param file_name:
+    :param file_name: name of the grid file
 
     .. versionadded:: 9.2
     """
