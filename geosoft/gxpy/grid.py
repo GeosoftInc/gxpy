@@ -725,13 +725,25 @@ class Grid:
     @property
     def coordinate_system(self):
         """
-        grid coordinate system as a :class:`geosoft.gxpy.coordinate_system.Coordinate_system` instance
+        grid coordinate system as a :class:`geosoft.gxpy.coordinate_system.Coordinate_system` instance.
+
+        Can be set from any :class:`geosoft.gxpy.coordinate_system.Coordinate_system` constructor.
 
         .. versionadded:: 9.2
+
+        .. versionmodified:: 9.3
+            added ability to set directly
         """
         cs = gxcs.Coordinate_system()
         self._img.get_ipj(cs.gxipj)
         return gxcs.Coordinate_system(cs)
+
+    @coordinate_system.setter
+    def coordinate_system(self, cs):
+        if not isinstance(cs, gxcs.Coordinate_system):
+            cs = gxcs.Coordinate_system(cs)
+        self._img.set_ipj(cs.gxipj)
+
 
     def properties(self):
         """
@@ -779,13 +791,6 @@ class Grid:
         self._img.set_info(self.dx, self.dy, self.x0, self.y0, -v)
         self._cos_rot = math.cos(math.radians(v))
         self._sin_rot = math.sin(math.radians(v))
-
-
-    @coordinate_system.setter
-    def coordinate_system(self, cs):
-        if not isinstance(cs, gxcs.Coordinate_system):
-            cs = gxcs.Coordinate_system(cs)
-        self._img.set_ipj(cs.gxipj)
 
     def set_properties(self, properties):
         """

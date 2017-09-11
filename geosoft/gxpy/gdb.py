@@ -517,7 +517,10 @@ class Geosoft_gdb:
     def coordinate_system(self):
         """
         Coordinate system of the current :meth:`xyz_channels`.
-        Can be set (added in version 9.3).
+        Can be set from any :class:`geosoft.gxpy.coordinate_system.Coordinate_system` constructor.
+
+        .. versionmodified:: 9.3
+            added setter
         """
         try:
             x, y, z = self.xyz_channels
@@ -530,7 +533,8 @@ class Geosoft_gdb:
 
     @coordinate_system.setter
     def coordinate_system(self, cs):
-        cs = gxcs.Coordinate_system(cs)
+        if not isinstance(cs, gxcs.Coordinate_system):
+            cs = gxcs.Coordinate_system(cs)
         x, y, z = self.xyz_channels
         self.gxdb.set_ipj(self.channel_name_symb(x)[1], self.channel_name_symb(y)[1], cs.gxipj)
         x, _, z = self.xyz_channels

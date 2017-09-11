@@ -195,6 +195,8 @@ class View:
 
     @coordinate_system.setter
     def coordinate_system(self, cs):
+        if not isinstance(cs, gxcs.Coordinate_system):
+            cs = gxcs.Coordinate_system(cs)
         self._cs = gxcs.Coordinate_system(cs)
         metres_per = self._cs.metres_per_unit
         self._uname = self._cs.units_name

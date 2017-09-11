@@ -34,10 +34,11 @@ print(gdb.xyz_channels)           # ('X', 'Y', 'Z')
 # split the line into sections knowing lines are E-W, and separated by 200 m.
 # see https://geosoftinc.github.io/gxpy/9.2/python/GXDU.html?highlight=split_line_xy2#geosoft.gxapi.GXDU.split_line_xy2
 
+# starting line number for split lines
 split_line_number_start = gxapi.int_ref()
 split_line_number_start.value = 1
 
-# create instances to the lies and channels needed by the split_line_xy2 function
+# create instances to the lines and channels needed by the split_line_xy2 function
 line = gxdb.Line(gdb, 'L0')
 x_channel = gxdb.Channel(gdb, 'X')
 y_channel = gxdb.Channel(gdb, 'Y')
