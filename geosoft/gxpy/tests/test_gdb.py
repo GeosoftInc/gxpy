@@ -42,10 +42,10 @@ class Test(GXPYTest):
             self.assertTrue('dx' in gdb.list_channels(chan=gxdb.CHAN_ALL))
             self.assertTrue('vector' in gdb.list_channels(chan=gxdb.CHAN_ARRAY))
             self.assertFalse('vector' in gdb.list_channels(chan=gxdb.CHAN_NORMAL))
-    
+
             self.assertEqual(gdb.channel_width('vector'),3)
             self.assertEqual(gdb.channel_width('x'),1)
-    
+
             gdb.discard()
 
     def test_read_write_channel_vv_va(self):
@@ -63,7 +63,7 @@ class Test(GXPYTest):
             self.assertEqual(va.length, 3)
             self.assertEqual(va.fid, (-10.0, 2.5))
             gdb.delete_channel('test_chan_vv')
-    
+
             va = gxva.GXva(np.array([[1., 2., 3.],[8,9,10]]), fid=(-10, 2.5))
             gdb.write_channel_va('T46', 'test_chan_va', va)
             self.assertRaises(gxdb.GdbException, gdb.read_channel_vv, 'T46', 'test_chan_va')
@@ -77,49 +77,49 @@ class Test(GXPYTest):
         self.start()
 
         with gxdb.Geosoft_gdb.open(self.gdb_name) as gdb:
-            
+
             self.assertEqual(len(gdb.file_name), len(self.gdb_name))
             self.assertEqual(str(gdb).lower(),os.path.basename(self.gdb_name).lower())
             data, ch, fid = gdb.read_line('D578625')
             self.assertEqual(data.shape, (832, 8))
-    
+
             gdb.write_line('T45', data, fid=(99, 0.5))
             data, ch, fid = gdb.read_line('T45')
             self.assertEqual(data.shape, (832, 8))
             self.assertEqual(len(ch), 8)
             self.assertEqual(ch[0], 'X')
             self.assertEqual(fid, (99.0, 0.5))
-    
+
             gdb.write_channel('T46', 'wva', data, fid=(-10, 2.5))
             data, fid = gdb.read_channel('T46', 'wva')
             self.assertEqual(data.shape, (832, 8))
             self.assertEqual(fid, (-10.0, 2.5))
             gdb.delete_channel('wva')
-    
+
             gdb.write_line('T46', data, channels='wideva', fid=(-10, 2.5))
             data, ch, fid = gdb.read_line('T46', 'wideva')
             self.assertEqual(data.shape, (832, 8))
             self.assertEqual(len(ch), 8)
             self.assertEqual(ch[0], 'wideva[0]')
             self.assertEqual(fid, (-10.0, 2.5))
-    
+
             data, ch, fid = gdb.read_line('T46')
             self.assertEqual(data.shape, (832, 16))
             self.assertEqual(len(ch), 16)
             self.assertEqual(ch[0], 'X')
             self.assertEqual(fid, (-10.0, 2.5))
-    
+
             data, fid = gdb.read_channel('T46', 'wideva')
             self.assertEqual(data.shape, (832, 8))
             self.assertEqual(fid, (-10.0, 2.5))
-    
+
             gdb.discard()
 
     def test_create_del_GDB(self):
         self.start()
 
         with gxdb.Geosoft_gdb.open(self.gdb_name) as gdb:
-                
+
 
             gdb.delete_channel('ian')
             gdb.new_channel('ian')
@@ -142,60 +142,60 @@ class Test(GXPYTest):
             self.assertTrue('X' in ch)
             self.assertTrue('vector' in ch)
             self.assertEqual(ch.get('dx'),1153)
-    
+
             try:
                 gdb.line_name_symb(8456712552)
                 self.assertTrue(False)
             except: pass
-    
+
             ln,ls = gdb.line_name_symb('bogus',create=True)
             self.assertEqual(ln,'bogus')
             gdb.delete_line('bogus')
             ls = gdb.line_name_symb('bogus2',create=True)[1]
             gdb.delete_line(ls)
-    
+
             ln,ls = gdb.line_name_symb('D578625')
             self.assertEqual(ln,'D578625')
             ln,ls = gdb.line_name_symb('Dwonk')
             self.assertEqual(ln,'Dwonk')
             ln,ls = gdb.line_name_symb(ls)
             self.assertEqual(ln,'Dwonk')
-    
+
             gdb.delete_channel('ccva')
             gdb.new_channel('ccva',array=8)
             cn,cs = gdb.channel_name_symb('ccva')
             self.assertEqual(cn,'ccva')
             cn,cs = gdb.channel_name_symb('ccva[4]')
             self.assertEqual(cn,'ccva[4]')
-    
+
             gdb.discard()
             cs = gdb.new_channel('cava',dtype=np.int64)
             self.assertTrue(gdb.channel_dtype(cs).type is np.int64)
-    
+
             gdb.select_lines(select=False)
             ln = gdb.list_lines()
             self.assertEqual(len(ln),0)
-    
+
             gdb.select_lines('bogus')
             ln = gdb.list_lines()
             self.assertEqual(len(ln), 0)
-    
+
             gdb.select_lines('D2')
             ln = gdb.list_lines()
             self.assertEqual(len(ln), 1)
-    
+
             gdb.select_lines('D')
             ln = gdb.list_lines()
             self.assertEqual(len(ln), 3)
             self.assertTrue('D2' in ln)
             self.assertTrue('Dwonk' in ln)
             self.assertTrue('D578625' in ln)
-    
+
             gdb.select_lines('D578625',select=False)
             ln = gdb.list_lines()
             self.assertFalse('D578625' in ln)
             self.assertEqual(len(ln), 2)
-    
+
             gdb.discard()
 
     def test_read_GDB(self):
@@ -207,20 +207,20 @@ class Test(GXPYTest):
             self.assertEqual(npd.shape[0],832)
             self.assertEqual(fid[0],0.0)
             self.assertEqual(fid[1],1.0)
-    
+
             ln,ls = gdb.line_name_symb('D578625')
             npd,ch,fid = gdb.read_line(ls,channels=['X','Y','Z','dx','dy'])
             self.assertEqual(npd.shape,(832,5))
             self.assertEqual(npd[10,:3].tolist(),[578625.0, 7773625.0, -1195.7531280517615])
-    
+
             npd,ch,fid = gdb.read_line(ls,'X')
             self.assertEqual(npd.shape,(832,1))
             self.assertEqual(npd[10],578625.0)
-    
+
             npd,ch,fid = gdb.read_line(ls,channels=['X','Y','Z'], dtype='<U32')
             self.assertEqual(npd.shape,(832,3))
             self.assertEqual(npd[10,:3].tolist(),['578625.0', '7773625.0', '-1195.8'])
-    
+
             gdb.discard()
 
     def test_read_vv_GDB(self):
@@ -628,50 +628,52 @@ class Test(GXPYTest):
 
         with gxdb.Geosoft_gdb.open(self.gdb_name) as gdb:
 
-            cs = gdb.new_channel("detailtest")
-            det = gdb.channel_details(cs)
-            self.assertEqual(det.get('name'),"detailtest")
-            self.assertEqual(det.get('array'),1)
-            self.assertEqual(det.get('decimal'),2)
-            self.assertEqual(det.get('format'),0)
-            self.assertEqual(det.get('label'),'detailtest')
-            self.assertEqual(det.get('protect'),0)
-            self.assertEqual(det.get('symbol'),cs)
-            self.assertEqual(det.get('type'),gxapi.GS_DOUBLE)
-            self.assertEqual(det.get('unit'),'')
-            self.assertEqual(det.get('width'),12)
+            try:
+                cs = gdb.new_channel("detailtest")
+                det = gdb.channel_details(cs)
+                self.assertEqual(det.get('name'),"detailtest")
+                self.assertEqual(det.get('array'),1)
+                self.assertEqual(det.get('decimal'),2)
+                self.assertEqual(det.get('format'),0)
+                self.assertEqual(det.get('label'),'detailtest')
+                self.assertEqual(det.get('protect'),0)
+                self.assertEqual(det.get('symbol'),cs)
+                self.assertEqual(det.get('type'),gxapi.GS_DOUBLE)
+                self.assertEqual(det.get('unit'),'')
+                self.assertEqual(det.get('width'),12)
 
-            gdb.set_channel_details(cs,{'protect':1, 'decimal':6, 'unit':'ft'})
-            det2 = gdb.channel_details(cs)
-            self.assertEqual(det2.get('protect'),1)
-            self.assertEqual(det2.get('decimal'),6)
-            self.assertEqual(det2.get('unit'),'ft')
+                gdb.set_channel_details(cs,{'protect':1, 'decimal':6, 'unit':'ft'})
+                det2 = gdb.channel_details(cs)
+                self.assertEqual(det2.get('protect'),1)
+                self.assertEqual(det2.get('decimal'),6)
+                self.assertEqual(det2.get('unit'),'ft')
 
-            gdb.set_channel_details(cs,det)
-            det2 = gdb.channel_details(cs)
-            self.assertEqual(det2.get('protect'),0)
-            self.assertEqual(det2.get('decimal'),2)
-            self.assertEqual(det2.get('unit'),'')
+                gdb.set_channel_details(cs,det)
+                det2 = gdb.channel_details(cs)
+                self.assertEqual(det2.get('protect'),0)
+                self.assertEqual(det2.get('decimal'),2)
+                self.assertEqual(det2.get('unit'),'')
 
-            det = gdb.line_details('D578625')
-            self.assertEqual(det.get('category'),gxdb.SYMB_LINE_NORMAL)
-            self.assertEqual(det.get('number'),578625)
-            self.assertEqual(det.get('name'),'D578625')
-            self.assertEqual(det.get('flight'),0)
-            self.assertEqual(det.get('version'),0)
-            self.assertEqual(det.get('type'),gxapi.DB_LINE_TYPE_RANDOM)
-            self.assertEqual(det.get('groupclass'), None)
+                det = gdb.line_details('D578625')
+                self.assertEqual(det.get('category'),gxdb.SYMB_LINE_NORMAL)
+                self.assertEqual(det.get('number'),578625)
+                self.assertEqual(det.get('name'),'D578625')
+                self.assertEqual(det.get('flight'),0)
+                self.assertEqual(det.get('version'),0)
+                self.assertEqual(det.get('type'),gxapi.DB_LINE_TYPE_RANDOM)
+                self.assertEqual(det.get('groupclass'), None)
 
-            gdb.delete_line('testgroup')
-            ls = gdb.new_line('testgroup', group="TeSt")
-            det = gdb.line_details(ls)
-            self.assertEqual(det.get('category'),gxdb.SYMB_LINE_GROUP)
-            self.assertEqual(det.get('name'),'testgroup')
-            self.assertEqual(det.get('symbol'),ls)
-            self.assertEqual(det.get('groupclass'),'TeSt')
-            gdb.delete_line('testgroup')
+                gdb.delete_line('testgroup')
+                ls = gdb.new_line('testgroup', group="TeSt")
+                det = gdb.line_details(ls)
+                self.assertEqual(det.get('category'),gxdb.SYMB_LINE_GROUP)
+                self.assertEqual(det.get('name'),'testgroup')
+                self.assertEqual(det.get('symbol'),ls)
+                self.assertEqual(det.get('groupclass'),'TeSt')
+                gdb.delete_line('testgroup')
 
-            gdb.discard()
+            finally:
+                gdb.discard()
 
     def test_channel(self):
         self.start()
@@ -755,7 +757,7 @@ class Test(GXPYTest):
                 self.assertEqual(ln.number, det['number'])
                 self.assertEqual(ln.type, det['type'])
                 self.assertEqual(ln.version, det['version'])
-                self.assertEqual(ln.group_class, det['groupclass'])
+                self.assertEqual(ln.group, det['groupclass'])
                 self.assertTrue(ln.selected)
 
                 ln.date = 2017
@@ -786,8 +788,10 @@ class Test(GXPYTest):
                 self.assertEqual(ln.version, 7)
                 ln.flight = 1000
                 self.assertEqual(ln.flight, 1000)
+
+                self.assertFalse(ln.grouped)
                 try:
-                    ln.group_class = 'billy'
+                    ln.group = 'billy'
                     self.assertTrue(False)
                 except gxdb.GdbException:
                     pass
@@ -807,9 +811,10 @@ class Test(GXPYTest):
 
                 gdb.delete_line("L88")
                 ln = gxdb.Line.new(gdb, "L88", group='john')
-                self.assertEqual(ln.group_class, 'john')
-                ln.group_class = 'billy'
-                self.assertEqual(ln.group_class, 'billy')
+                self.assertTrue(ln.grouped)
+                self.assertEqual(ln.group, 'john')
+                ln.group = 'billy'
+                self.assertEqual(ln.group, 'billy')
                 gdb.delete_line(ln.name)
 
             finally:
@@ -888,6 +893,27 @@ class Test(GXPYTest):
     def test_coordinate_system(self):
         self.start()
         with gxdb.Geosoft_gdb.open(self.gdb_name) as gdb:
+
+            try:
+                x, y, z = gdb.xyz_channels
+                self.assertEqual(gxdb.Channel(gdb, x).unit, 'm')
+                gdb.coordinate_system = '{"units": "km"}'
+                self.assertEqual(gxdb.Channel(gdb, x).unit, 'km')
+                self.assertEqual(gxdb.Channel(gdb, y).unit, 'km')
+                self.assertEqual(gxdb.Channel(gdb, z).unit, 'km')
+                self.assertEqual(gdb.coordinate_system, '*unknown')
+
+                gxdb.Channel(gdb, 'Z').delete()
+                self.assertEqual(gdb.xyz_channels, ('X', 'Y', None))
+                gdb.coordinate_system = '{"units": "cm"}'
+                self.assertEqual(gxdb.Channel(gdb, x).unit, 'cm')
+                self.assertEqual(gxdb.Channel(gdb, y).unit, 'cm')
+
+            finally:
+                gdb.discard()
+
+        with gxdb.Geosoft_gdb.open(self.gdb_name) as gdb:
+
             try:
                 self.assertEqual(str(gdb.coordinate_system), 'Corrego Alegre 1970-72 / UTM zone 23S')
                 gdb.coordinate_system = 'NAD83 / UTM zone 25N'
@@ -895,6 +921,26 @@ class Test(GXPYTest):
             finally:
                 gdb.discard()
 
+
+    def test_dup(self):
+        self.start()
+        with gxdb.Geosoft_gdb.open(self.gdb_name) as gdb:
+
+            try:
+                gxdb.Channel(gdb, 'x').width = 45
+                gxdb.Channel(gdb, 'x').decimal = 4
+                xx = gxdb.Channel.new(gdb, 'xx', dup='x')
+                self.assertEqual(xx.unit, 'm')
+                self.assertEqual(xx.width, 45)
+                self.assertEqual(xx.decimal, 4)
+
+                master_line = gxdb.Line(gdb, list(gdb.list_lines())[0])
+                master_line.flight = 77
+                copyline = gxdb.Line.new(gdb, 'D234567', dup=master_line)
+                self.assertEqual(copyline.flight, 77)
+
+            finally:
+                gdb.discard()
 
 ###############################################################################################
 

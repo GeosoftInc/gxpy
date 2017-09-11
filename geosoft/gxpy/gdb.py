@@ -105,6 +105,21 @@ def _va_width(data):
         raise GdbException(_t("Only one or two-dimensional data allowed."))
     return width
 
+def is_valid_line_name(name):
+    """
+    Return True if this is a valid line name.
+
+    See also :func:`create_line_name`
+
+    .. versionadded:: 9.3
+    """
+    name = str(name)
+    try:
+        int(name)
+        return False
+    except ValueError:
+        return bool(gxapi.GXDB.is_line_name(name))
+
 def create_line_name(number=0, type=LINE_TYPE_NORMAL, version=0):
     """
     Returns a valid database line name constructed from the component parts.
@@ -409,10 +424,13 @@ class Geosoft_gdb:
 
         .. versionadded:: 9.1
         """
-        if type(symb) is str:
+
+        if isinstance(symb, str):
             return self._db.exist_symb(symb, symb_type)
-        else:
+        elif isinstance(symb, int):
             return self._db.valid_symb(symb, symb_type)
+        elif isinstance(symb, Channel) or isinstance(symb, Line):
+            return True
 
     # ============================================================================
     # Information
@@ -504,7 +522,6 @@ class Geosoft_gdb:
         try:
             x, y, z = self.xyz_channels
             ipj = gxapi.GXIPJ.create()
-            ipj = gxapi.GXIPJ.create()
             self.gxdb.get_ipj(self.channel_name_symb(x)[1], ipj)
             return gxcs.Coordinate_system(ipj)
 
@@ -516,6 +533,11 @@ class Geosoft_gdb:
         cs = gxcs.Coordinate_system(cs)
         x, y, z = self.xyz_channels
         self.gxdb.set_ipj(self.channel_name_symb(x)[1], self.channel_name_symb(y)[1], cs.gxipj)
+        x, _, z = self.xyz_channels
+        if z:
+            z = Channel(self, z)
+            if not z.unit:
+                z.unit = Channel(self, x).unit
 
     @property
     def max_blobs(self):
@@ -601,17 +623,32 @@ class Geosoft_gdb:
         return self._db.get_info(gxapi.DB_INFO_CHANGESLOST)
 
     def is_line(self, line, raise_err=False):
-        """Returns `True` if the line name exists"""
-        exist = self._db.find_symb(line, gxapi.DB_SYMB_LINE) != gxapi.NULLSYMB
+        """
+        Returns `True` if the named line exists in the database.
+
+        :param line: line name
+        :param raise_err: True to raise an error if it does not exist
+
+        .. versionadded:: 9.1
+        """
+
+        exist = self._db.find_symb(str(line), gxapi.DB_SYMB_LINE) != gxapi.NULLSYMB
         if raise_err and not exist:
-            raise GdbException(_t('"{}" is not a valid line'.format(line)))
+            raise GdbException(_t('"{}" is not a line in the database'.format(line)))
         return exist
 
     def is_channel(self, chan, raise_err=False):
-        """Returns `True` if the channel name exists"""
+        """
+        Returns `True` if the channel name exists in the database.
+
+        :param chan: channel name
+        :param raise_err: True to raise an error if it does not exist
+
+        .. versionadded:: 9.1
+        """
         exist = self._db.find_chan(chan) != gxapi.NULLSYMB
         if raise_err and not exist:
-            raise GdbException(_t('"{}" is not a valid channel'.format(chan)))
+            raise GdbException(_t('"{}" is not a channel in the database'.format(chan)))
         return exist
 
     def extent_xyz(self):
@@ -686,17 +723,22 @@ class Geosoft_gdb:
         .. versionadded:: 9.1
         """
 
-        if (self._exist_symb(line, gxapi.DB_SYMB_LINE)):
-            if type(line) is str:
+        if isinstance(line, Line):
+            return line.name, line.symbol
+
+        elif isinstance(line, str):
+            if (self._exist_symb(line, gxapi.DB_SYMB_LINE)):
                 symb = self._db.find_symb(line, gxapi.DB_SYMB_LINE)
                 return line, symb
+            if create:
+                return line, self.new_line(line)
             else:
-                self._db.get_symb_name(line, self._sr)
-                return self._sr.value, line
-        if create:
-            return line, self.new_line(line)
+                raise GdbException('Line \'{}\' not found'.format(line))
+        else:
+            self._db.get_symb_name(line, self._sr)
+            return self._sr.value, line
 
-        raise GdbException('Line \'{}\' not found'.format(line))
+
 
     def channel_name_symb(self, chan):
         """
@@ -981,13 +1023,14 @@ class Geosoft_gdb:
     # ========================================================================================
     # management
 
-    def new_channel(self, name, dtype=np.float64, array=1, details={'width': 12, 'decimal': 2}):
+    def new_channel(self, name, dtype=np.float64, array=1, dup=None, details=None):
         """
         Return a channel symbol, create if it does not exist.
 
         :param name:        channel name
         :param dtype:       numpy dtype (ie. np.int64)
         :param array:       array columns (default is 1)
+        :param dup:         duplicate properties of this channel (name, symbol, Channel)
         :param details:     dictionary containing channel details, see channel_details()
 
         :returns:           channel symbol
@@ -1000,24 +1043,32 @@ class Geosoft_gdb:
             symb = gdb.newChan('X', dtype=np.float64, details={'decimal':4})
 
         .. versionadded:: 9.1
+
+        .. versionmodified:: 9.3
+            added support for duplication an existing channel via dup=
         """
 
         symb = self._db.find_symb(name, gxapi.DB_SYMB_CHAN)
         if symb == gxapi.NULLSYMB:
-            symb = self._db.create_symb_ex(name,
-                                           gxapi.DB_SYMB_CHAN,
-                                           gxapi.DB_OWN_SHARED,
-                                           gxu.gx_dtype(dtype),
-                                           array)
+            if dup:
+                symb = self._db.dup_symb_no_lock(self.channel_name_symb(dup)[1], name)
+            else:
+                symb = self._db.create_symb_ex(name,
+                                               gxapi.DB_SYMB_CHAN,
+                                               gxapi.DB_OWN_SHARED,
+                                               gxu.gx_dtype(dtype),
+                                               array)
 
         if details:
             self.set_channel_details(symb, details)
+        elif not dup:
+            self.set_channel_details(symb, {'width': 12, 'decimal': 2})
 
         return symb
 
-    def new_line(self, line, linetype=None, group=None):
+    def new_line(self, line, linetype=None, group=None, dup=None):
         """
-        Get a line symbol.  If line exists an error is raised.
+        Create a new line symbol.  If line exists an error is raised.
 
         :param line:        line name
         :param linetype:    line type for creating a new line, ignored if group defines
@@ -1028,6 +1079,7 @@ class Geosoft_gdb:
                                 ================= =========================================
 
         :param group:       group name for a grouped class
+        :param dup:         duplicate from an existing line (name, symbol of Line)
 
         :returns:           line symbol
 
@@ -1036,29 +1088,28 @@ class Geosoft_gdb:
         .. versionadded:: 9.1
         """
 
-        if not self._db.is_line_name(line):
+        if not is_valid_line_name(line):
             raise GdbException('Invalid line name \'{}\'. Use create_line_name() to create a valid name.'.format(line))
 
         symb = self._db.find_symb(line, gxapi.DB_SYMB_LINE)
         if symb != gxapi.NULLSYMB:
             raise GdbException('Cannot create existing line \'{}\''.format(line))
 
-        if group:
-            linetype = SYMB_LINE_GROUP
-        elif not linetype:
-            linetype = SYMB_LINE_NORMAL
-
-        symb = self._db.create_symb_ex(line,
+        if dup:
+            dup_symb = self.line_name_symb(dup)[1]
+            symb = self._db.dup_line_symb(dup_symb, line)
+        else:
+            if group:
+                linetype = SYMB_LINE_GROUP
+            elif not linetype:
+                linetype = SYMB_LINE_NORMAL
+            symb = self._db.create_symb_ex(line,
                                        gxapi.DB_SYMB_LINE,
                                        gxapi.DB_OWN_SHARED,
                                        linetype,
                                        0)
-        if group:
-            self._lock_write(symb)
-            try:
-                self._set(symb, self._db.set_group_class, group)
-            except geosoft.gxapi.GXAPIError:
-                pass
+            if group:
+                Line(self, symb).group = group
 
         return symb
 
@@ -1740,6 +1791,12 @@ class Channel:
         finally:
             self.gdb._unlock(self._symb)
 
+    def __repr__(self):
+        return "{}({})".format(self.__class__, self.__dict__)
+
+    def __str__(self):
+        return self.name
+
     def __init__(self, gdb, name):
 
         self.gdb = gdb
@@ -1747,7 +1804,7 @@ class Channel:
         self._sr = gxapi.str_ref()
 
     @classmethod
-    def new(cls, gdb, name, dtype=np.float64, array=1, details=None, replace=False):
+    def new(cls, gdb, name, dtype=np.float64, array=1, dup=None, details=None, replace=False):
         """
         Create a new channel.
 
@@ -1755,6 +1812,7 @@ class Channel:
         :param name:    channel name
         :param dtype:   numpy data type, defaule np.float64
         :param array:   array size, default 1
+        :param dup:     duplicate properties of this channal (name, symbol or Channel)
         :param details: dictionary of other channel properties - see :meth:`Geosoft_gdb.set_channel_details`
         :param replace: `True` to replace an existing channel.  All existing channel information and data is lost.
                         default is `False`.
@@ -1766,7 +1824,7 @@ class Channel:
                 gdb.delete_channel(name)
             else:
                 raise GdbException("Cannot replace existing channel '{}'".format(name))
-        symb = gdb.new_channel(name, dtype, array)
+        symb = gdb.new_channel(name, dtype, array=array, dup=dup)
         if details:
             gdb.set_channel_details(symb, details)
 
@@ -2030,6 +2088,12 @@ class Line:
         finally:
             self.gdb._unlock(self._symb)
 
+    def __repr__(self):
+        return "{}({})".format(self.__class__, self.__dict__)
+
+    def __str__(self):
+        return self.name
+
     def __init__(self, gdb, name):
 
         self.gdb = gdb
@@ -2037,7 +2101,7 @@ class Line:
         self._sr = gxapi.str_ref()
 
     @classmethod
-    def new(cls, gdb, name, linetype=None, group='', replace=False):
+    def new(cls, gdb, name, linetype=None, group=None, dup=None, replace=False):
         """
         Create a new line.
 
@@ -2050,18 +2114,23 @@ class Line:
             ================= =========================================
 
         :param group:       group name for a grouped class
+        :param dup:         duplicate properties of this line (name, symbol or Line).
         :param replace:     `True` to replace line if it exists. Default is `False` .
         :returns:           Line instance
 
         .. versionadded:: 9.3
-            """
-        if gdb._exist_symb(name, gxapi.DB_SYMB_CHAN):
+        """
+
+        if not is_valid_line_name(name):
+            raise GdbException('Invalid line name: {}'.format(name))
+
+        if gdb._exist_symb(name, gxapi.DB_SYMB_LINE):
             if replace:
                 gdb.delete_line(name)
             else:
                 raise GdbException("Cannot replace existing line '{}'".format(name))
 
-        symb = gdb.new_line(name, linetype, group)
+        gdb.new_line(name, linetype, group=group, dup=dup)
 
         return cls(gdb, name)
 
@@ -2173,7 +2242,16 @@ class Line:
         self._set(self.gdb._db.set_line_ver, value)
 
     @property
-    def group_class(self):
+    def grouped(self):
+        """
+        True if this is a grouped line.
+
+        .. versionadded:: 9.3
+        """
+        return self.category == LINE_CATEGORY_GROUP
+
+    @property
+    def group(self):
         """
         The lines group class name, '' for a group lines (LINE_CATEGORY_GROUP).
         Only works for lines that are part of a group.
@@ -2186,8 +2264,8 @@ class Line:
         else:
             return None
 
-    @group_class.setter
-    def group_class(self, value):
+    @group.setter
+    def group(self, value):
         if self.category == LINE_CATEGORY_GROUP:
             self._set(self.gdb._db.set_group_class, value)
         else:
