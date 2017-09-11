@@ -1,7 +1,6 @@
 import numpy as np
 import geosoft.gxpy as gxpy
 import geosoft.gxpy.gdb as gxdb
-import geosoft.gxapi as gxapi
 
 #create context
 gxc = gxpy.gx.GXpy()
@@ -23,6 +22,9 @@ gdb.write_line(line_name, data, channel_names)
 
 # set the coordinate system to 'NAD 83 / UTM zone 15N'
 gdb.coordinate_system = 'NAD83 / UTM zone 15N'
+
+# set the mag data units to 'nT'
+gxdb.Channel(gdb, 'mag').unit = 'nT'
 
 print(gdb.list_lines())     # {'L0': 100020}
 print(gdb.list_channels())  # {'mag': 100523, 'X': 100520, 'Y': 100521, 'Z': 100522}

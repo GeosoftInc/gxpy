@@ -17,12 +17,15 @@ channel_names = f.readline().strip().split(',')
 data = np.loadtxt(f, delimiter=',')
 
 #create a new database from list of channels and numpy data. All data is stored in a single line.
-gdb = gxdb.Geosoft_gdb.new('mag_data', overwrite=True)
+gdb = gxdb.Geosoft_gdb.new('mag_data_split', overwrite=True)
 line_name = gxdb.create_line_name()
 gdb.write_line(line_name, data, channel_names)
 
 # set the coordinate system to 'NAD 83 / UTM zone 15N'
 gdb.coordinate_system = 'NAD83 / UTM zone 15N'
+
+# set the mag data units to 'nT'
+gxdb.Channel(gdb, 'mag').unit = 'nT'
 
 print(list(gdb.list_lines()))     # ['L0']
 print(list(gdb.list_channels()))  # ['mag', 'X', 'Y', 'Z']
