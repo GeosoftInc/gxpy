@@ -249,14 +249,17 @@ class GXvv:
         start = fid[0] + start * fid[1]
         return npd, (start, fid[1])
 
-    def set_data(self, data, fid=(0.0, 1.0)):
+    def set_data(self, data, fid=None):
         """
         Set vv data from an array.  If the array is float type numpy.nan are
 
         :param data:    data array
-        :param fid:     fid tuple (start,increment), default (0.0,1.0)
+        :param fid:     fid tuple (start,increment), default does not change
 
         .. versionadded:: 9.1
+
+        .. versionmodified:: 9.3
+            default fid leaves fid unchanged
         """
 
         if not isinstance(data, np.ndarray):
@@ -275,11 +278,11 @@ class GXvv:
             for i in range(ne):
                 self._vv.set_string(i, str(npdata[i]))
 
-        if self._np:
-            self._np[:] = npdata[:]
+        self._np = None
 
         self._vv.set_len(npdata.shape[0])
-        self.fid = fid
+        if fid:
+            self.fid = fid
 
     def refid(self, fid, length):
         """

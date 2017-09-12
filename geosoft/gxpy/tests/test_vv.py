@@ -172,6 +172,19 @@ class Test(GXPYTest):
             self.assertEqual(npd[2], "-30.0")
             self.assertEqual(npd[3], "-87.66662")
 
+        npdata = np.array([1, 2, 3])
+        with gxvv.GXvv(npdata, fid=fid) as vv:
+            npd = vv.np
+            self.assertEqual(npd[1], 2)
+
+            npdata = np.array([1.,2.,-30.,-87.66662])
+            vv.set_data(npdata)
+            npd, fid = vv.get_data(start=0, n=4)
+            self.assertEqual(npd[0], 1)
+            self.assertEqual(npd[2], -30)
+            self.assertEqual(npd[3], -88)
+
+
     def test_string(self):
         self.start()
 
