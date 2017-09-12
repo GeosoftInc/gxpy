@@ -1,5 +1,6 @@
 import geosoft.gxpy as gxpy
 import geosoft.gxpy.gdb as gxdb
+import geosoft.gxapi as gxapi
 
 gxc = gxpy.gx.GXpy()
 
@@ -15,11 +16,11 @@ with gxdb.Geosoft_gdb.open('mag_data_split') as gdb:
         print ('processing line {}'.format(line))
 
         # read data from the line.
-        # The read_channel method returns the data as a numpy array, together with the fiducial
-        mag_data, fid = gdb.read_channel(line, 'mag')
+        # The read_channel method returns the data in a geosoft VV
+        mag_data = gdb.read_channel_vv(line, 'mag')
 
-        # use simple numpy math to subtract 5000, then save to the new_mag_channel
-        mag_data = mag_data - 5000
-        gdb.write_channel(line, new_mag_channel, mag_data, fid)
+        # use Geosoft GXVVU.translate function to subtract 5000.
+        gxapi.GXVVU.translate(mag_data.gxvv, -5000, 1)
+        gdb.write_channel_vv(line, new_mag_channel, mag_data)
 
 exit()
