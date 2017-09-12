@@ -1334,6 +1334,9 @@ class Geosoft_gdb:
 
         :returns:       numpy data, fid (start, increment)
 
+        For dtype=np.float, dummy values will be np.nan. For integer types dummy values will be the
+        Geosoft dummy values.
+
         .. versionadded:: 9.1
         """
 
@@ -1457,6 +1460,9 @@ class Geosoft_gdb:
         :raises:    GdbException if first channel requested is empty
 
         VA channels are expanded by element with channel names name[0], name[1], etc.
+
+        For dtype=np.float, dummy values will be np.nan. For integer types dummy values will be the
+        Geosoft dummy values.
 
         Examples:
 
