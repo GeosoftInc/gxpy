@@ -103,7 +103,7 @@ def check_version(v, raise_on_fail=True):
                 raise UtilityException(_t("GX Requires API {}, only {} installed.").format(v, __version__))
             return False
     except ValueError:
-        raise UtilityException('Invalid version string "{}", expecting something like "{}".'.format(v, __version__))
+        raise UtilityException(_t('Invalid version string "{}", expecting something like "{}".'.format(v, __version__)))
 
 
 def dict_from_lst(lst, ordered=False):
@@ -754,14 +754,14 @@ def save_parameters(group='_', parms=None):
     """
 
     if not isinstance(parms, dict):
-        raise UtilityException('parms dictionary not defined.')
+        raise UtilityException(_t('parms dictionary not defined.'))
 
     if not(_validate_parameter(group)):
-        raise UtilityException('Group name \'{}\' contains invalid character \'.\''.format(group))
+        raise UtilityException(_t('Group name \'{}\' contains invalid character \'.\''.format(group)))
 
     for k, v in parms.items():
         if not (_validate_parameter(k)):
-            raise UtilityException('Parameter name \'{}\' contains invalid character \'.\''.format(k))
+            raise UtilityException(_t('Parameter name \'{}\' contains invalid character \'.\''.format(k)))
 
         # remove escaped characters because set_str() puts them back in
         s = json.dumps(v).replace('\\\\', '\\')
@@ -792,7 +792,7 @@ def get_parameters(group='_', parms=None, default=None):
     p = {}
 
     if not(_validate_parameter(group)):
-        raise UtilityException('Group name \'{}\' contains invalid character \'.\''.format(group))
+        raise UtilityException(_t('Group name \'{}\' contains invalid character \'.\''.format(group)))
     group = group.upper()
 
     if parms is not None:
@@ -959,7 +959,7 @@ def run_external_python(script, script_args='',
     """
 
     if not os.path.isfile(script):
-        raise UtilityException('Cannot find script: {}'.format(script))
+        raise UtilityException(_t('Cannot find script: {}'.format(script)))
 
     s = gxapi.str_ref()
     gxapi.GXSYS.get_env('PYTHON_HOME', s)

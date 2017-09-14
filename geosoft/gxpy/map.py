@@ -418,7 +418,7 @@ class Map:
             mx, my = media
             if map_style == STYLE_MAP:
                 if mx <= 30.0:
-                    raise MapException('\'map\' style requires minimum 30cm media. Yours is {}cm'.format(mx))
+                    raise MapException(_t('\'map\' style requires minimum 30cm media. Yours is {}cm'.format(mx)))
                 m_left = max(1.5, mx * 0.025)
                 m_right = max(14.0, mx * 0.15)
                 m_bottom = max(5.0, my * 0.1)
@@ -691,7 +691,7 @@ class Map:
         views = self.view_list_2D
 
         if not (self.has_view(self.current_data_view) and self.has_view(self.current_base_view)):
-            raise MapException('The map must have both a base view and a data view.')
+            raise MapException(_t('The map must have both a base view and a data view.'))
 
         with gxv.View(self, self.current_base_view, gxg.READ_ONLY) as base:
             with gxv.View(self, self.current_data_view, gxg.READ_ONLY) as data:
@@ -1136,7 +1136,7 @@ class _Mapplot:
     def __init__(self, map, data_view=None, ref_prefix='', **kwargs):
 
         if not (map.has_view(map.current_base_view) and map.has_view(map.current_data_view)):
-            raise MapException("Map must have a '*Base' and '*Data' view.")
+            raise MapException(_t("Map must have a '*Base' and '*Data' view."))
 
         self._map = map
         self._ref_pre = ref_prefix

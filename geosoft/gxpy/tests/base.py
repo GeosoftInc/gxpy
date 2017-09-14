@@ -52,7 +52,7 @@ def _verify_no_gx_context():
         loc_gx = None
         pass
     if loc_gx is not None:
-        raise Exception("We have a GXContext but should not!")
+        raise Exception(_t("We have a GXContext but should not!"))
 
 
 class GXPYTest(unittest.TestCase):
@@ -75,7 +75,7 @@ class GXPYTest(unittest.TestCase):
         cls._test_case_py = inspect.getfile(cls)
         cls._test_case_filename = os.path.split(cls._test_case_py)[1]
         if cls._test_case_filename == os.path.split(__file__)[1]:
-            raise Exception("GXPYTest base class incorrectly detected as test case!")
+            raise Exception(_t("GXPYTest base class incorrectly detected as test case!"))
 
         cur_dir = os.path.dirname(cls._test_case_py)
         cls._result_base_dir = os.path.join(cur_dir, 'results', cls._test_case_filename)

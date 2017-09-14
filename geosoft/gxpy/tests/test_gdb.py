@@ -31,6 +31,70 @@ class Test(GXPYTest):
         self.start()
         self.assertEqual(gxdb.__version__, geosoft.__version__)
 
+        def setxyz(xyz):
+            gdb.xyz_channels = xyz
+
+        with gxdb.Geosoft_gdb.open(self.gdb_name) as gdb:
+            try:
+                self.assertRaises(gxdb.GdbException, gdb.is_line, 'nope', True)
+                self.assertRaises(gxdb.GdbException, gdb.is_channel, 'nope', True)
+                self.assertRaises(gxdb.GdbException, setxyz, ('x', 'y', 'crazy_cannot_exist'))
+                self.assertRaises(gxdb.GdbException, setxyz, ('crazy_cannot_exist', 'y'))
+                gdb.xyz_channels = ('x', 'y', 'z')
+                self.assertEqual(gdb.xyz_channels[2], 'z')
+                gdb.xyz_channels = ('x', 'y')
+                self.assertEqual(gdb.xyz_channels[2], 'z')
+
+            finally:
+                gdb.discard()
+
+        with gxdb.Geosoft_gdb.open(self.gdb_name) as gdb:
+            self.assertEqual(len(gdb.file_name), len(self.gdb_name))
+
+        with gxdb.Geosoft_gdb.open(os.path.splitext(self.gdb_name)[0]) as gdb:
+            self.assertEqual(len(gdb.file_name), len(self.gdb_name))
+            gdb.commit()
+            try:
+                l = list(gdb.list_lines())
+                c = list(gdb.list_channels())
+                self.assertTrue(gdb._exist_symb(gxdb.Line(gdb, l[0]), gxapi.DB_SYMB_LINE))
+                self.assertTrue(gdb._exist_symb(gxdb.Channel(gdb, c[0]), gxapi.DB_SYMB_CHAN))
+                self.assertFalse(gdb._exist_symb(gxdb.Channel(gdb, c[0]), gxapi.DB_SYMB_LINE))
+
+            finally:
+                gdb.discard()
+
+        self.assertFalse(gxdb.is_valid_line_name(123))
+
+        with gxdb.Geosoft_gdb.open(self.gdb_name) as gdb:
+            self.assertEqual(gdb.max_blobs, 650)
+            self.assertEqual(gdb.max_lines, 500)
+            self.assertEqual(gdb.max_channels, 50)
+            self.assertEqual(gdb.used_blobs, 14)
+            self.assertEqual(gdb.used_lines, 5)
+            self.assertEqual(gdb.used_channels, 6)
+            self.assertEqual(gdb.page_size_bytes, 1024)
+            self.assertEqual(gdb.number_of_blocks, 275)
+            self.assertEqual(gdb.lost_blocks, 0)
+            self.assertEqual(gdb.free_blocks, 36)
+            self.assertEqual(gdb.compression, 0)
+            self.assertEqual(gdb.pages_for_blobs, 0)
+            self.assertEqual(gdb.db_size_kb, 638)
+            self.assertEqual(gdb.index_size_kb, 303)
+            self.assertEqual(gdb.max_block_size_bytes, 67106792)
+            self.assertEqual(gdb.data_has_changed, 0)
+
+        with gxdb.Geosoft_gdb.open(os.path.splitext(self.gdb_name)[0]) as gdb:
+            try:
+                gxdb.Channel.new(gdb, 'empty')
+                data = gdb.read_line('D2','empty')[0]
+                self.assertEqual(len(data), 0)
+                data = gdb.read_line('D2', ('x', 'y', 'empty'))[0]
+                self.assertEqual(len(data), 832)
+                self.assertFalse(np.isfinite(data[:,2]).any())
+            finally:
+                gdb.discard()
+
     def test_noprops_GDB(self):
         self.start()
 
@@ -282,43 +346,91 @@ class Test(GXPYTest):
 
             gdb.discard()
 
-    def test_various(self):
-        self.start()
-
-        def setxyz(xyz):
-            gdb.xyz_channels = xyz
-
-
-        with gxdb.Geosoft_gdb.open(self.gdb_name) as gdb:
-            self.assertRaises(gxdb.GdbException, gdb.is_line, 'nope', True)
-            self.assertRaises(gxdb.GdbException, gdb.is_channel, 'nope', True)
-            self.assertRaises(gxdb.GdbException, setxyz, ('x', 'y', 'crazy_cannot_exist'))
-            gdb.discard()
-
-
     def test_read_masked_GDB(self):
         self.start()
 
 
         with gxdb.Geosoft_gdb.open(self.gdb_name) as gdb:
 
-            npd,ch,fid = gdb.read_line('D2', dummy=gxdb.READ_REMOVE_DUMMYROWS)
-            self.assertEqual(npd.shape, (825, 8))
-            self.assertEqual(npd.shape[1], 8)
-            self.assertEqual(npd.shape[1], len(ch))
+            try:
 
-            npd,ch,fid = gdb.read_line('D2',dummy=gxdb.READ_REMOVE_DUMMYCOLUMNS)
-            self.assertEqual(npd.shape, (832,2))
-            self.assertEqual(npd.shape[1], len(ch))
+                npd,ch,fid = gdb.read_line('D2', dummy=gxdb.READ_REMOVE_DUMMYROWS)
+                self.assertEqual(npd.shape, (825, 8))
+                self.assertEqual(npd.shape[1], 8)
+                self.assertEqual(npd.shape[1], len(ch))
 
-            npd,ch,fid = gdb.read_line('D2', channels=('x','y'), dummy=gxdb.READ_REMOVE_DUMMYCOLUMNS)
-            self.assertEqual(npd.shape, (832,1))
-            self.assertEqual(npd.shape[1], len(ch))
+                npd,ch,fid = gdb.read_line('D2',dummy=gxdb.READ_REMOVE_DUMMYCOLUMNS)
+                self.assertEqual(npd.shape, (832,2))
+                self.assertEqual(npd.shape[1], len(ch))
 
-            px = geosoft.gxpy.geometry.Point2(gdb.extent_xyz())
-            self.assertEqual(str(px), 'Point2[(578625.0, 7773625.0, -5261.5553894043005) (578625.0, 7782875.0, 1062.4999999999964)]')
+                npd,ch,fid = gdb.read_line('D2', channels=('x','y'), dummy=gxdb.READ_REMOVE_DUMMYCOLUMNS)
+                self.assertEqual(npd.shape, (832,1))
+                self.assertEqual(npd.shape[1], len(ch))
 
-            gdb.discard()
+                px = geosoft.gxpy.geometry.Point2(gdb.extent_xyz())
+                self.assertEqual(str(px), 'Point2[(578625.0, 7773625.0, -5261.5553894043005) (578625.0, 7782875.0, 1062.4999999999964)]')
+
+            finally:
+                gdb.discard()
+
+    def test_extent(self):
+        self.start()
+
+        with gxdb.Geosoft_gdb.open(self.gdb_name) as gdb:
+
+            try:
+
+                l = gdb.list_lines()
+                gdb.select_lines()
+                self.assertEqual(len(gdb.list_lines()), 5)
+                gdb.select_lines(select=False)
+                self.assertEqual(len(gdb.list_lines()), 0)
+                gdb.select_lines('D2')
+                self.assertEqual(len(gdb.list_lines()), 1)
+                self.assertFalse(gdb.is_line('D0'))
+                self.assertEqual(len(gdb.list_lines(select=False)), 5)
+
+                self.assertTrue(gdb.is_line('Dwonk'))
+
+                dy,_ = gdb.read_channel('D2', 'y')
+                dy [:] = np.nan
+                gdb.write_channel('D2', 'y', dy)
+                px = geosoft.gxpy.geometry.Point2(gdb.extent_xyz())
+                self.assertEqual(str(px), 'Point2[(578625.0, nan, -5261.5553894043005) (578625.0, nan, 1062.4999999999964)]')
+
+            finally:
+                gdb.discard()
+
+        with gxdb.Geosoft_gdb.open(self.gdb_name) as gdb:
+
+            try:
+                gdb.select_lines(select=False)
+                gdb.select_lines('D2')
+                dx,_ = gdb.read_channel('D2', 'x')
+                dx [:] = np.nan
+                gdb.write_channel('D2', 'x', dx)
+                px = geosoft.gxpy.geometry.Point2(gdb.extent_xyz())
+                self.assertEqual(str(px), 'Point2[(nan, 7773625.0, -5261.5553894043005) (nan, 7782875.0, 1062.4999999999964)]')
+
+            finally:
+                gdb.discard()
+
+        with gxdb.Geosoft_gdb.open(self.gdb_name) as gdb:
+
+            try:
+                gdb.select_lines(select=False)
+                gdb.select_lines('D2')
+                dx, _ = gdb.read_channel('D2', 'x')
+                dx[:] = np.nan
+                dx[1] = 1
+                dx[2] = 2
+                gdb.write_channel('D2', 'x', dx)
+                px = geosoft.gxpy.geometry.Point2(gdb.extent_xyz())
+                self.assertEqual(str(px),
+                                 'Point2[(1.0, 7773625.0, -5261.5553894043005) (2.0, 7782875.0, 1062.4999999999964)]')
+
+            finally:
+                gdb.discard()
 
     def test_write_vv_GDB(self):
         self.start()
@@ -330,11 +442,13 @@ class Test(GXPYTest):
             vv = gxvv.GXvv(np.array([1.0,2.0,3.0,4.0]))
             gdb.write_channel_vv('D590875', 'test', vv)
             npd, ch, fid = gdb.read_line('D590875', channels=['test'])
+            self.assertEqual(gdb.channel_fid('D590875', 'test'), fid)
             self.assertEqual(npd.shape,(4,1))
             self.assertEqual(npd[:,0].tolist(),[1.0,2.0,3.0,4.0])
 
             gdb.delete_channel('test')
-            gdb.new_channel('test', np.float64)
+            gdb.new_channel('test', np.float64, details={'unit': 'bubba'})
+            self.assertEqual(gxdb.Channel(gdb, 'test').unit, 'bubba')
             vv = gxvv.GXvv(dtype=np.float64)
             vv.set_data(np.array([1,2,3,4], dtype=np.int64))
             gdb.write_channel_vv('D590875', 'test', vv)
@@ -571,27 +685,28 @@ class Test(GXPYTest):
 
         with gxdb.Geosoft_gdb.open(self.gdb_name) as gdb:
 
-            gdb.select_lines(select=False)
-            gdb.select_lines('D578625,D2',select=True)
-            self.nl = 0
-            self.stp = 2
+            try:
+                gdb.select_lines(select=False)
+                gdb.select_lines('D578625,D2',select=True)
+                self.nl = 0
+                self.stp = 2
 
-            gdb.delete_channel('testlist')
-            gdb.new_channel('testlist',dtype=np.int)
-            gdb.write_channel('D578625', 'testlist', np.array([1,2,3,4,4,4,5,6,7,7,7,6,5,4], dtype=np.int))
-            gdb.write_channel('D2', 'testlist', np.array([12,12,12,13,13,13], dtype=np.int))
+                gdb.delete_channel('testlist')
+                gdb.new_channel('testlist',dtype=np.int)
+                gdb.write_channel('D578625', 'testlist', np.array([1,2,3,4,4,4,5,6,7,7,7,6,5,4], dtype=np.int))
+                gdb.write_channel('D2', 'testlist', np.array([12,12,12,13,13,13], dtype=np.int))
 
-            listVal = gdb.list_values('testlist', max=100, stop=enough)
-            listVal.sort()
-            self.assertEqual(listVal, ['1','12','13','2','3','4','5','6','7'])
-            self.nl = 0
-            self.stp = 1
-            listVal = gdb.list_values('dx', max=10000)
-            self.assertEqual(len(listVal),29)
-            listVal = gdb.list_values('dx')
-            self.assertEqual(len(listVal),29)
-
-            gdb.discard()
+                listVal = gdb.list_values('testlist', max=100, stop=enough)
+                listVal.sort()
+                self.assertEqual(listVal, ['1','12','13','2','3','4','5','6','7'])
+                self.nl = 0
+                self.stp = 1
+                listVal = gdb.list_values('dx', max=10000)
+                self.assertEqual(len(listVal),29)
+                listVal = gdb.list_values('dx')
+                self.assertEqual(len(listVal),29)
+            finally:
+                gdb.discard()
 
     def test_new(self):
         self.start()
@@ -683,6 +798,9 @@ class Test(GXPYTest):
             try:
                 gdb.delete_channel("detailtest")
                 ch = gxdb.Channel.new(gdb, "detailtest")
+                name, symb = gdb.channel_name_symb(ch)
+                self.assertEqual(ch.name, name)
+                self.assertEqual(ch.symbol, symb)
                 det = gdb.channel_details(ch.name)
                 self.assertEqual(ch.name, det['name'])
                 self.assertEqual(ch.array, det['array'])

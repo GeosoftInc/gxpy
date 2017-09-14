@@ -1489,7 +1489,7 @@ class Text_def:
             elif k in self.__dict__:
                 self.__dict__[k] = kwargs[k]
             else:
-                raise GroupException('Invalid text definition parameter ({})'.format(k))
+                raise GroupException(_t('Invalid text definition parameter ({})'.format(k)))
 
         if self.weight is None:
             if line_thick is None:
@@ -1664,7 +1664,7 @@ class Pen:
             elif k in self.__dict__:
                 self.__dict__[k] = kwargs[k]
             else:
-                raise GroupException('Invalid pen parameter ({})'.format(k))
+                raise GroupException(_t('Invalid pen parameter ({})'.format(k)))
 
     @classmethod
     def from_mapplot_string(cls, cstr):

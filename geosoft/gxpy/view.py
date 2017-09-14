@@ -126,7 +126,7 @@ class View:
                  copy=None):
 
         if type(map) is not geosoft.gxpy.map.Map:
-            raise ViewException('First parameter is not a Map instance.')
+            raise ViewException(_t('First parameter is not a Map instance.'))
 
         self._map = map
         self._name = map.classview(name)
@@ -152,7 +152,7 @@ class View:
             metres_per = self._cs.metres_per_unit
             self._uname = self._cs.units_name
             if metres_per <= 0.:
-                raise ViewException('Invalid units {}({})'.format(self._uname, metres_per))
+                raise ViewException(_t('Invalid units {}({})'.format(self._uname, metres_per)))
             self._metres_per_unit = 1.0 / metres_per
 
     @property
@@ -201,7 +201,7 @@ class View:
         metres_per = self._cs.metres_per_unit
         self._uname = self._cs.units_name
         if metres_per <= 0.:
-            raise ViewException('Invalid units {}({})'.format(self._uname, metres_per))
+            raise ViewException(_t('Invalid units {}({})'.format(self._uname, metres_per)))
         self._metres_per_unit = 1.0 / metres_per
         self.gxview.set_ipj(self._cs.gxipj)
 
@@ -233,7 +233,7 @@ class View:
         """
 
         if self._mode == READ_ONLY:
-            raise ViewException('Cannot modify a READ_ONLY view.')
+            raise ViewException(_t('Cannot modify a READ_ONLY view.'))
 
         # coordinate system
         self.coordinate_system = coordinate_system
