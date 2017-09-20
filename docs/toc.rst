@@ -77,6 +77,7 @@ Table of Contents
    GXMETA 
    GXMISC 
    GXMSTK 
+   GXMULTIVOXSET 
    GXMVG 
    GXMVIEW 
    GXMVU 
@@ -116,6 +117,7 @@ Table of Contents
    GXUSERMETA 
    GXVA 
    GXVAU 
+   GXVECTOR3D 
    GXVM 
    GXVOX 
    GXVOXD 

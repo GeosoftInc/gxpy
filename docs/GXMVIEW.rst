@@ -518,6 +518,12 @@ MVIEW_IS constants
 .. autoattribute:: geosoft.gxapi.MVIEW_IS_VOXD
 
 
+.. autoattribute:: geosoft.gxapi.MVIEW_IS_SHADOW_2D_INTERPRETATION
+
+
+.. autoattribute:: geosoft.gxapi.MVIEW_IS_VECTOR3D
+
+
 .. _MVIEW_LABEL_BOUND:
 
 MVIEW_LABEL_BOUND constants

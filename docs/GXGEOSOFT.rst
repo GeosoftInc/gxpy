@@ -610,11 +610,29 @@ GS_TYPES constants
 
    3 x 32-Bit floating point 
 
+.. autoattribute:: geosoft.gxapi.GS_DOUBLE3D
+
+::
+
+   3 x 64-Bit floating point 
+
+.. autoattribute:: geosoft.gxapi.GS_FLOAT2D
+
+::
+
+   2 x 32-Bit floating point 
+
+.. autoattribute:: geosoft.gxapi.GS_DOUBLE2D
+
+::
+
+   2 x 64-Bit floating point 
+
 .. autoattribute:: geosoft.gxapi.GS_MAXTYPE
 
 ::
 
-   Maximum supported type (GS_FLOAT3D) 
+   Maximum supported type (GS_DOUBLE2D) 
 
 .. autoattribute:: geosoft.gxapi.GS_TYPE_DEFAULT
 

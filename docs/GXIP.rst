@@ -344,6 +344,9 @@ IP_SYS constants
 .. autoattribute:: geosoft.gxapi.IP_SYS_ELREC_PRO
 
 
+.. autoattribute:: geosoft.gxapi.IP_SYS_PROSYS_II
+
+
 .. _IP_UBC_CONTROL:
 
 IP_UBC_CONTROL constants

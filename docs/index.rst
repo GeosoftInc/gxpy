@@ -776,6 +776,16 @@ GXMSTK class
 
  
 
+GXMULTIVOXSET class 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. autoclass:: geosoft.gxapi.GXMULTIVOXSET
+	:noindex:
+	
+:ref:`More... <GXMULTIVOXSET>`
+
+ 
+
 GXMVG class 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -1163,6 +1173,16 @@ GXVAU class
 	:noindex:
 	
 :ref:`More... <GXVAU>`
+
+ 
+
+GXVECTOR3D class 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. autoclass:: geosoft.gxapi.GXVECTOR3D
+	:noindex:
+	
+:ref:`More... <GXVECTOR3D>`
 
  
 
