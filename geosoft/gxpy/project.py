@@ -33,7 +33,6 @@ DOC_TYPE_MAP = "Map"
 DOC_TYPE_3DV = "3DView"
 DOC_TYPE_VOXEL = "Voxel"
 DOC_TYPE_VOXI = "VoxelInversion"
-DOC_TYPE_MXD = "MXD"
 DOC_TYPE_GMS3D = "GMS3D"
 DOC_TYPE_GMS2D = "GMS2D"
 DOC_TYPE_ALL = "All"
@@ -97,6 +96,11 @@ class Geosoft_project:
         gxapi.GXPROJ.get_name(s)
         self.project_file = os.path.normpath(s.value)
         self.name = os.path.basename(self.project_file).split('.')[0]
+
+    @property
+    def gid(self):
+        """ Geosoft ID of the user"""
+        return(geosoft.gxpy.gx.GXpy().gid)
 
     @property
     def project_databases(self):
@@ -473,3 +477,50 @@ def get_user_input(title="Input required...", prompt='?', kind='string', default
 
     finally:
         gxapi.GXSYS.filter_parm_group("USER_INPUT", 0)
+
+def add_document(doc, type=None, display=True):
+    """
+    Add a document to the project.  The document file can be any supported geosoft
+    document type.
+
+    :param doc:     file name for the document to open
+    :param type:    one of DOC_TYPE, default will decode the type from the file extension
+    :param display: False to prevent opening of the document, though the document will be added
+                    as a document in the project explorer.
+
+    .. versionadded:: 9.3
+    """
+
+    if not type:
+        ext = os.path.splitext(doc)[1].lower()
+        if ext == '.grd' or ('(' in ext):
+            type = DOC_TYPE_GRID
+        elif ext == '.gdb':
+            type = DOC_TYPE_DATABASE
+        elif ext == '.map':
+            type = DOC_TYPE_MAP
+        elif ext == '.geosoft_voxel':
+            type = DOC_TYPE_VOXEL
+        elif ext == '.geosoft_voxi':
+            type = DOC_TYPE_VOXI
+        elif ext == '.geosoft_3dv':
+            type = DOC_TYPE_3DV
+        elif ext == '.geosoft_gmsys2d':
+            type = DOC_TYPE_GMS2D
+        elif ext == '.geosoft_gmsys3d':
+            type = DOC_TYPE_GMS3D
+        else:
+            raise ProjectException('Cannot determine document type for file extension {}'.format(ext))
+
+    gxapi.GXPROJ.add_document(doc, type, display)
+
+def remove_document(doc):
+    """
+    Remove a document from the project.  The document is identified by the document name, which
+    is either a complete file path name, with qualifiers, or the name of the document in the project storage.
+
+    :param doc: document name (file and qualifiers if the document source is a file).
+
+    .. versionadded:: 9.3
+    """
+    gxapi.GXPROJ.remove_document(doc)
