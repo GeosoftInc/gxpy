@@ -391,15 +391,15 @@ def get_user_input(title="Input required...", prompt='?', kind='string', default
 
     :param title:       dialog box title.  A description can be added as a second-line using a line-break.
                         example: "Your title/nDescriptive help"
-    :param prompt:      prompt string to
+    :param prompt:      prompt string to present to the user.
     :param kind:        kind of response required: 'string', 'int', 'float', 'file', 'colour' or 'list'
-    :param items:       comma-separated string or list/tuple of items for a list
+    :param items:       comma-separated string or list/tuple of items for kind='list'
     :param default:     default value.  For multifile can be a string ('|' delimiter) or list/tuple.
     :param filemask:    File type masks, Comma delimited, or a list/tuple.  Examples:
                         '.dat', '\*.dat,\*.grd', '\*\*,\*.grd' for multiple files
 
     :returns:       user response
-    :raise:         :py:ex:GXCancel if the user cancels the dialog
+    :raise:         `GXCancel` if the user cancels the dialog
 
     .. versionadded:: 9.1
 
