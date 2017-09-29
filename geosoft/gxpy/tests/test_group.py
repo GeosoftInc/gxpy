@@ -143,8 +143,10 @@ class Test(GXPYTest):
                 with gxg.Draw(v) as g:
                     draw_stuff(g)
 
-        self.crc_map(map_file)
-        gxmap.delete_files(map_file)
+        try:
+            self.crc_map(map_file)
+        finally:
+            gxmap.delete_files(map_file)
 
     def test_view_groups_2(self):
         self.start()
@@ -166,8 +168,10 @@ class Test(GXPYTest):
                 with gxg.Draw(v, 'test_group') as g:
                     draw_stuff(g)
 
-        self.crc_map(map_file)
-        gxmap.delete_files(map_file)
+        try:
+            self.crc_map(map_file)
+        finally:
+            gxmap.delete_files(map_file)
 
     def test_reopen_map_view(self):
         self.start()
@@ -342,16 +346,18 @@ class Test(GXPYTest):
             with gxgrd.Grid.copy(grd, grid_file) as test:
                 grid_file = test.file_name
 
-        test_zone(gxagg.ZONE_LINEAR, "linear_shade", shade=True)
-        test_zone(gxagg.ZONE_EQUALAREA, "eq_area")
-        test_zone(gxagg.ZONE_DEFAULT, "default")
-        test_zone(gxagg.ZONE_LAST, "last")
-        test_zone(gxagg.ZONE_LINEAR, "linear")
-        test_zone(gxagg.ZONE_NORMAL, "normal")
-        test_zone(gxagg.ZONE_SHADE, "shade")
-        test_zone(gxagg.ZONE_LOGLINEAR, "log_linear")
+        try:
+            test_zone(gxagg.ZONE_LINEAR, "linear_shade", shade=True)
+            test_zone(gxagg.ZONE_EQUALAREA, "eq_area")
+            test_zone(gxagg.ZONE_DEFAULT, "default")
+            test_zone(gxagg.ZONE_LAST, "last")
+            test_zone(gxagg.ZONE_LINEAR, "linear")
+            test_zone(gxagg.ZONE_NORMAL, "normal")
+            test_zone(gxagg.ZONE_SHADE, "shade")
+            test_zone(gxagg.ZONE_LOGLINEAR, "log_linear")
 
-        gxgrd.delete_files(grid_file)
+        finally:
+            gxgrd.delete_files(grid_file)
 
     def test_text_definition(self):
         self.start()
@@ -736,8 +742,10 @@ class Test(GXPYTest):
                 pp += (0, 0, 20)
                 g.polypoint_3d(pp, style=gxg.POINT_STYLE_SPHERE, pen=gxg.Pen(line_color='G', line_thick=5))
 
-        self.crc_map(file_name)
-        gxmap.delete_files(file_name)
+        try:
+            self.crc_map(file_name)
+        finally:
+            gxmap.delete_files(file_name)
 
     def test_pp_3d(self):
         self.start()
@@ -773,8 +781,10 @@ class Test(GXPYTest):
                 pp += (0, 0, 10)
                 g.polyline_3d(pp, style=gxg.LINE3D_STYLE_TUBE_JOINED, pen=gxg.Pen(line_color='K64', line_thick=4))
 
-        self.crc_map(file_name)
-        gxmap.delete_files(file_name)
+        try:
+            self.crc_map(file_name)
+        finally:
+            gxmap.delete_files(file_name)
 
     def test_color_map(self):
         self.start()
