@@ -1095,6 +1095,7 @@ class Test(GXPYTest):
         with gxgrd.Grid(grid_file) as grd:
             cs = grd.coordinate_system
             area = grd.extent_2d()
+
         with gxmap.Map.new(map_file,
                              data_area=area, margins=(2, 10, 2, 2),
                              coordinate_system=cs, overwrite=True, scale=20000) as gmap:

@@ -144,9 +144,9 @@ def delete_files(file_name):
                 df(file_name + str(i))
 
 # constants
-FILE_READ = 0
-FILE_READWRITE = 1     # file exists, but can change properties
-FILE_NEW = 2
+FILE_READ = 0          #:
+FILE_READWRITE = 1     #: file exists, but can change properties
+FILE_NEW = 2           #:
 
 class Grid:
     """

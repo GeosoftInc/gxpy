@@ -130,7 +130,7 @@ def pop_resource(id):
         except KeyError:
             pass
 
-GX_WARNING_FILE = '_gx_warning_'
+GX_WARNING_FILE = '_gx_warning_' #:
 
 def _exit_cleanup():
     global gx

@@ -27,15 +27,15 @@ __version__ = geosoft.__version__
 def _t(s):
     return s
 
-DOC_TYPE_DATABASE = "Database"
-DOC_TYPE_GRID = "Grid"
-DOC_TYPE_MAP = "Map"
-DOC_TYPE_3DV = "3DView"
-DOC_TYPE_VOXEL = "Voxel"
-DOC_TYPE_VOXI = "VoxelInversion"
-DOC_TYPE_GMS3D = "GMS3D"
-DOC_TYPE_GMS2D = "GMS2D"
-DOC_TYPE_ALL = "All"
+DOC_TYPE_DATABASE = "Database"   #:
+DOC_TYPE_GRID = "Grid" #:
+DOC_TYPE_MAP = "Map" #:
+DOC_TYPE_3DV = "3DView" #:
+DOC_TYPE_VOXEL = "Voxel" #:
+DOC_TYPE_VOXI = "VoxelInversion" #:
+DOC_TYPE_GMS3D = "GMS3D" #:
+DOC_TYPE_GMS2D = "GMS2D" #:
+DOC_TYPE_ALL = "All" #:
 
 class ProjectException(Exception):
     """

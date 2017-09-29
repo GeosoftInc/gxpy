@@ -5,6 +5,8 @@ Geosoft databases for line-oriented spatial data.
 
     ==================== =========================
     :class:`Geosoft_gdb` Geosoft line database
+    :class:`Line`        line handling
+    :class:`Channel`     channel handling
     ==================== =========================
 
 .. seealso:: :mod:`geosoft.gxapi.GXGB`, :mod:`geosoft.gxapi.GXEDB`, 
@@ -75,9 +77,9 @@ COMP_SIZE = gxapi.DB_COMP_SIZE #:
 READ_REMOVE_DUMMYROWS = 1 #:
 READ_REMOVE_DUMMYCOLUMNS = 2 #:
 
-SYMBOL_LOCK_NONE = gxapi.DB_LOCK_NONE
-SYMBOL_LOCK_READ = gxapi.DB_LOCK_READONLY
-SYMBOL_LOCK_WRITE = gxapi.DB_LOCK_READWRITE
+SYMBOL_LOCK_NONE = gxapi.DB_LOCK_NONE #:
+SYMBOL_LOCK_READ = gxapi.DB_LOCK_READONLY #:
+SYMBOL_LOCK_WRITE = gxapi.DB_LOCK_READWRITE #:
 
 class GdbException(Exception):
     """
@@ -2026,7 +2028,7 @@ class Channel:
     @property
     def locked(self):
         """
-        True if symbol is locked.  See :prop:`lock` to determine if read or write lock, or to
+        True if symbol is locked.  Use property :any:`lock` to determine if read or write lock, or to
         set the lock.
 
         Setting to `False` unlocks the symbol.
@@ -2306,7 +2308,7 @@ class Line:
     @property
     def locked(self):
         """
-        True if symbol is locked.  See :prop:`lock` to determine if read or write lock, or to
+        True if symbol is locked.  Use property :any:`lock` to determine if read or write lock, or to
         set the lock.
 
         Setting to `False` unlocks the symbol.

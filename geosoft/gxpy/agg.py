@@ -40,13 +40,13 @@ class AggregateException(Exception):
     """
     pass
 
-ZONE_DEFAULT = 0
-ZONE_LINEAR = 1
-ZONE_NORMAL = 2
-ZONE_EQUALAREA = 3
-ZONE_SHADE = 4
-ZONE_LOGLINEAR = 5
-ZONE_LAST = 6
+ZONE_DEFAULT = 0 #:
+ZONE_LINEAR = 1 #:
+ZONE_NORMAL = 2 #:
+ZONE_EQUALAREA = 3 #:
+ZONE_SHADE = 4 #:
+ZONE_LOGLINEAR = 5 #:
+ZONE_LAST = 6 #:
 
 class Aggregate_image:
     """

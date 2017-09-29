@@ -46,24 +46,24 @@ def _plane_err(plane, view):
 
 VIEW_NAME_SIZE = 2080
 
-READ_ONLY = gxapi.MVIEW_READ
-WRITE_NEW = gxapi.MVIEW_WRITENEW
-WRITE_OLD = gxapi.MVIEW_WRITEOLD
+READ_ONLY = gxapi.MVIEW_READ #:
+WRITE_NEW = gxapi.MVIEW_WRITENEW #:
+WRITE_OLD = gxapi.MVIEW_WRITEOLD #:
 
-UNIT_VIEW = 0
-UNIT_MAP = 2
-UNIT_VIEW_UNWARPED = 3
+UNIT_VIEW = 0 #:
+UNIT_MAP = 2 #:
+UNIT_VIEW_UNWARPED = 3 #:
 
-GROUP_ALL = 0
-GROUP_MARKED = 1
-GROUP_VISIBLE = 2
-GROUP_AGG = 3
-GROUP_CSYMB = 4
-GROUP_VOXD = 5
+GROUP_ALL = 0 #:
+GROUP_MARKED = 1 #:
+GROUP_VISIBLE = 2 #:
+GROUP_AGG = 3 #:
+GROUP_CSYMB = 4 #:
+GROUP_VOXD = 5 #:
 
-EXTENT_ALL = gxapi.MVIEW_EXTENT_ALL
-EXTENT_VISIBLE = gxapi.MVIEW_EXTENT_VISIBLE
-EXTENT_CLIPPED = gxapi.MVIEW_EXTENT_CLIP
+EXTENT_ALL = gxapi.MVIEW_EXTENT_ALL #:
+EXTENT_VISIBLE = gxapi.MVIEW_EXTENT_VISIBLE #:
+EXTENT_CLIPPED = gxapi.MVIEW_EXTENT_CLIP #:
 
 
 class View:
@@ -538,8 +538,8 @@ class View_3d(View):
     to draw 3D elements using :class:`geosoft.gxpy.group.Draw_3d`, which must be created from a 
     :class:`geosoft.gxpy.view.View_3d` instance.
     
-    3D views also contain 2D drawing planes on which gxpy.group.Draw groups are placed.  A default 
-    horizontal plane at elevation 0, named 'plane_0' is created when a new 3d view is created.
+    3D views also contain 2D drawing planes on which :class:`geosoft.gxpy.group.Draw` groups are placed.
+    A default horizontal plane at elevation 0, named 'plane_0' is created when a new 3d view is created.
     
     Planes are flat by default, but can be provided a grid that defines the plane surface relief,
     which is intended for creating things like terrain surfaces on which 2d graphics are rendered.

@@ -49,45 +49,45 @@ class MapException(Exception):
     pass
 
 
-WRITE_NEW = 1
-WRITE_OLD = 2
+WRITE_NEW = 1 #:
+WRITE_OLD = 2 #:
 
-LIST_ALL = gxapi.MAP_LIST_MODE_ALL
-LIST_3D = gxapi.MAP_LIST_MODE_3D
-LIST_2D = gxapi.MAP_LIST_MODE_NOT3D
+LIST_ALL = gxapi.MAP_LIST_MODE_ALL #:
+LIST_3D = gxapi.MAP_LIST_MODE_3D #:
+LIST_2D = gxapi.MAP_LIST_MODE_NOT3D #:
 
-VIEW_NAME_SIZE = 2080
+VIEW_NAME_SIZE = 2080 #:
 
-TEXT_BOTTOM_LEFT = -1
-TEXT_BOTTOM_CENTER = 0
-TEXT_BOTTOM_RIGHT = 1
-TEXT_ALL_CENTER = 2
-TEXT_BASE_LEFT = 3
-TEXT_BASE_CENTER = 4
-TEXT_BASE_RIGHT = 5
-TEXT_BASE_ALL_CENTER = 6
-TEXT_BASE_FIT_BY_CHARACTER_WIDTH = 7
-TEXT_BASE_FIT_BY_CHARACTER_SIZE = 8
+TEXT_BOTTOM_LEFT = -1 #:
+TEXT_BOTTOM_CENTER = 0 #:
+TEXT_BOTTOM_RIGHT = 1 #:
+TEXT_ALL_CENTER = 2 #:
+TEXT_BASE_LEFT = 3 #:
+TEXT_BASE_CENTER = 4 #:
+TEXT_BASE_RIGHT = 5 #:
+TEXT_BASE_ALL_CENTER = 6 #:
+TEXT_BASE_FIT_BY_CHARACTER_WIDTH = 7 #:
+TEXT_BASE_FIT_BY_CHARACTER_SIZE = 8 #:
 
-MAP_LANDSCAPE = 0
-MAP_PORTRAIT = 1
+MAP_LANDSCAPE = 0 #:
+MAP_PORTRAIT = 1 #:
 
-TOP_IN = 1
-TOP_OUT = -1
+TOP_IN = 1 #:
+TOP_OUT = -1 #:
 
-GRID_NONE = 0
-GRID_DOTTED = 1
-GRID_CROSSES = 2
-GRID_LINES = 3
+GRID_NONE = 0 #:
+GRID_DOTTED = 1 #:
+GRID_CROSSES = 2 #:
+GRID_LINES = 3 #:
 
-GROUP_NEW = 0
-GROUP_APPEND = 1
+GROUP_NEW = 0 #:
+GROUP_APPEND = 1 #:
 
-VIEW_BASE = 0
-VIEW_DATA = 1
+VIEW_BASE = 0 #:
+VIEW_DATA = 1 #:
 
-STYLE_FIGURE = 0
-STYLE_MAP = 1
+STYLE_FIGURE = 0 #:
+STYLE_MAP = 1 #:
 
 
 def map_file_name(file_name, file_type='map'):
@@ -325,8 +325,8 @@ class Map:
                                 a :class:`geosoft.gxpy.coordinate_system.Coordinate_system` instance, a string 
                                 descriptor, such as '`WGS 84 / UTM zone 15N`', or another valid constructor supported
                                 by :class:`geosoft.gxpy.coordinate_system.Coordinate_system`.
-            :media:             media size as a tuple(x_cm, y_cm), or as a standard media name string.
-                                If the media name contains 'portrait', the media is media aspect will be portrait.
+            :media:             media size as a tuple (x_cm, y_cm), or as a standard media name string.
+                                If the media string contains 'portrait', the media aspect will be portrait.
                                 Named media sizes are read from media.csv, which includes A4, A3, A2, A1, A0, 
                                 letter, legal, ledger, A, B, C, D, E. For example `media='A4 portrait'`.
             :layout:            MAP_PORTRAIT or MAP_LANDSCAPE, overrides media setting.  If the layout is not 
@@ -347,7 +347,8 @@ class Map:
                                 spatial data near the edge of the defined data area.
             :overwrite:         True to overwrite an existing map.  If False and map exists, raises
                                 ``MapException``.
-            :no_data_view:      True to omit data view during map creation.
+            :no_data_view:      True to create a map without a 'Data' view. Use :class:`geosoft.gxpy.view.View` and
+                                :class:`geosoft.gxpy.view.View_3d` to add data views to a map.
 
         .. versionadded:: 9.2
         """
