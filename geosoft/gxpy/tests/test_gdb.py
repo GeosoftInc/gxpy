@@ -22,7 +22,8 @@ class Test(GXPYTest):
         cls.setUpGXPYTest()
         cls.folder, files = gsys.unzip(os.path.join(os.path.dirname(__file__), 'test_database.zip'),
                                        folder=cls._gx.temp_folder())
-        cls.gdb_name = os.path.join(cls.folder, files[0])
+        cls.gdb_name = os.path.join(cls.folder, 'test_database.gdb')
+        cls.gdb_empty = os.path.join(cls.folder, 'test_empty.gdb')
 
     def tf(f):
         return os.path.join(os.path.dirname(__file__), f)
@@ -111,6 +112,16 @@ class Test(GXPYTest):
             self.assertEqual(gdb.channel_width('x'),1)
 
             gdb.discard()
+
+    def test_empty(self):
+        self.start()
+
+        with gxdb.Geosoft_gdb.open(self.gdb_empty) as gdb:
+            lines = gdb.lines()
+            print(lines)
+            for line in lines:
+                npd, ch, fid = gdb.read_line(line)
+                print(gdb.file_name, line)
 
     def test_read_write_channel_vv_va(self):
         self.start()
