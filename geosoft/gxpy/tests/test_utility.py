@@ -119,8 +119,8 @@ class Test(GXPYTest):
         self.start()
 
         self.assertRaises(gxu.UtilityException, gxu.save_parameters)
-        self.assertRaises(gxu.UtilityException, gxu.save_parameters, __file__)
-        group = os.path.basename(__file__).split('.')[0]
+        self.assertRaises(gxu.UtilityException, gxu.save_parameters, self._test_case_filename)
+        group = os.path.basename(self._test_case_filename).split('.')[0]
         self.assertRaises(gxu.UtilityException, gxu.save_parameters, group, {'bad.parameter': ''})
 
         parameter = 'GRID_NAME'
@@ -462,7 +462,7 @@ class Test(GXPYTest):
         xml = gxu.xml_from_dict(d, pretty=True)
         self.assertTrue('<dataset ' in xml)
 
-        folder, files = gsys.unzip(os.path.join(os.path.dirname(__file__), 'testgrids.zip'),
+        folder, files = gsys.unzip(os.path.join(os.path.dirname(self._test_case_py), 'testgrids.zip'),
                                        folder=gx.gx.temp_folder())
         gxml = os.path.join(folder, 'test_grid_1.grd.xml')
         with open(gxml) as f:

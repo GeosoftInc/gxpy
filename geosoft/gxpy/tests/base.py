@@ -72,7 +72,7 @@ class GXPYTest(unittest.TestCase):
         _verify_no_gx_context()
 
         cls._cls_unique_id_count = 0
-        cls._test_case_py = inspect.getfile(cls)
+        cls._test_case_py = os.path.join(os.getcwd(), inspect.getfile(cls))
         cls._test_case_filename = os.path.split(cls._test_case_py)[1]
         if cls._test_case_filename == os.path.split(__file__)[1]:
             raise Exception(_t("GXPYTest base class incorrectly detected as test case!"))

@@ -20,13 +20,10 @@ class Test(GXPYTest):
     @classmethod
     def setUpClass(cls):
         cls.setUpGXPYTest()
-        cls.folder, files = gsys.unzip(os.path.join(os.path.dirname(__file__), 'test_database.zip'),
+        cls.folder, files = gsys.unzip(os.path.join(os.path.dirname(cls._test_case_py), 'test_database.zip'),
                                        folder=cls._gx.temp_folder())
         cls.gdb_name = os.path.join(cls.folder, 'test_database.gdb')
         cls.gdb_empty = os.path.join(cls.folder, 'test_empty.gdb')
-
-    def tf(f):
-        return os.path.join(os.path.dirname(__file__), f)
 
     def test_gdb(self):
         self.start()

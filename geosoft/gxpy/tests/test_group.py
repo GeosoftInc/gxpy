@@ -261,7 +261,7 @@ class Test(GXPYTest):
         self.start()
 
         # test grid file
-        folder, files = gsys.unzip(os.path.join(os.path.dirname(__file__), 'testgrids.zip'),
+        folder, files = gsys.unzip(os.path.join(os.path.dirname(self._test_case_py), 'testgrids.zip'),
                                    folder=self.gx.temp_folder())
         grid_file = os.path.join(folder, 'test_agg_utm.grd')
         map_file = os.path.join(self.gx.temp_folder(), "test_agg_utm")
@@ -294,7 +294,7 @@ class Test(GXPYTest):
         self.start()
 
         # test grid file
-        folder, files = gsys.unzip(os.path.join(os.path.dirname(__file__), 'testgrids.zip'),
+        folder, files = gsys.unzip(os.path.join(os.path.dirname(self._test_case_py), 'testgrids.zip'),
                                    folder=self.gx.temp_folder())
         grid_file = os.path.join(folder, 'test_agg_utm.grd')
         map_file = os.path.join(self.gx.temp_folder(), "test_agg_utm")
@@ -336,7 +336,7 @@ class Test(GXPYTest):
             self.crc_map(map_file, alt_crc_name='{}_{}'.format(gxsys.func_name(1), suffix))
 
         # test grid file
-        folder, files = gsys.unzip(os.path.join(os.path.dirname(__file__), 'testgrids.zip'),
+        folder, files = gsys.unzip(os.path.join(os.path.dirname(self._test_case_py), 'testgrids.zip'),
                                    folder=self.gx.temp_folder())
 
         with gxgrd.Grid(os.path.join(folder, 'test_agg_utm.grd')) as grd:
@@ -600,7 +600,7 @@ class Test(GXPYTest):
         self.start()
 
         # test grid file
-        folder, files = gsys.unzip(os.path.join(os.path.dirname(__file__), 'testgrids.zip'),
+        folder, files = gsys.unzip(os.path.join(os.path.dirname(self._test_case_py), 'testgrids.zip'),
                                    folder=self.gx.temp_folder())
         grid_file = os.path.join(folder, 'test_agg_utm.grd')
         map_file = os.path.join(self.gx.temp_folder(), "test_agg_utm")
@@ -633,7 +633,7 @@ class Test(GXPYTest):
         self.start()
 
         # test grid file
-        folder, files = gsys.unzip(os.path.join(os.path.dirname(__file__), 'testgrids.zip'),
+        folder, files = gsys.unzip(os.path.join(os.path.dirname(self._test_case_py), 'testgrids.zip'),
                                    folder=self.gx.temp_folder())
         grid_file = os.path.join(folder, 'test_agg_utm.grd')
         map_file = os.path.join(self.gx.temp_folder(), "test_agg_utm")
@@ -982,7 +982,7 @@ class Test(GXPYTest):
             return xyz, gxg.SYMBOL_3D_SPHERE, cint.int_value, (radius,)
 
         # test grid file
-        folder, files = gsys.unzip(os.path.join(os.path.dirname(__file__), 'testgrids.zip'),
+        folder, files = gsys.unzip(os.path.join(os.path.dirname(self._test_case_py), 'testgrids.zip'),
                                    folder=self.gx.temp_folder())
 
         grid_file = os.path.join(folder, 'test_agg_utm.grd')
@@ -1023,7 +1023,7 @@ class Test(GXPYTest):
                 cint = cmap.color_of_value(item[2]).int_value
                 return item, gxg.SYMBOL_3D_SPHERE, cint, (radius,)
 
-        folder, files = gsys.unzip(os.path.join(os.path.dirname(__file__), 'dem.zip'),
+        folder, files = gsys.unzip(os.path.join(os.path.dirname(self._test_case_py), 'dem.zip'),
                                    folder=self.gx.temp_folder())
 
         gdb_file = os.path.join(folder, 'dem')
@@ -1061,7 +1061,7 @@ class Test(GXPYTest):
         self.start()
 
         # test grid file
-        folder, files = gsys.unzip(os.path.join(os.path.dirname(__file__), 'testgrids.zip'),
+        folder, files = gsys.unzip(os.path.join(os.path.dirname(self._test_case_py), 'testgrids.zip'),
                                    folder=self.gx.temp_folder())
         grid_file = os.path.join(folder, 'test_agg_utm.grd')
         map_file = os.path.join(self.gx.temp_folder(), "test_agg_utm")
@@ -1097,7 +1097,7 @@ class Test(GXPYTest):
         self.start()
 
         # test grid file
-        folder, files = gsys.unzip(os.path.join(os.path.dirname(__file__), 'testgrids.zip'),
+        folder, files = gsys.unzip(os.path.join(os.path.dirname(self._test_case_py), 'testgrids.zip'),
                                    folder=self.gx.temp_folder())
         grid_file = os.path.join(folder, 'test_agg_utm.grd')
         map_file = os.path.join(self.gx.temp_folder(), "test_agg_utm")

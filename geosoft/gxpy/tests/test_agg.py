@@ -13,7 +13,7 @@ class Test(GXPYTest):
     @classmethod
     def setUpClass(cls):
         cls.setUpGXPYTest(res_stack=4)
-        cls.folder, files = gsys.unzip(os.path.join(os.path.dirname(__file__), 'testgrids.zip'),
+        cls.folder, files = gsys.unzip(os.path.join(os.path.dirname(cls._test_case_py), 'testgrids.zip'),
                                        folder=cls._gx.temp_folder())
         cls.g1f = os.path.join(cls.folder, 'test_grid_1.grd')
         cls.g2f = os.path.join(cls.folder, 'test_grid_2.grd')

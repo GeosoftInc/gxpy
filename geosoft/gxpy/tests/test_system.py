@@ -13,11 +13,11 @@ import geosoft.gxpy.system as gsys
 from base import GXPYTest
 
 
-def tf(f):
-    return os.path.join(os.path.dirname(__file__), f)
-
-
 class Test(GXPYTest):
+    @classmethod
+    def tf(cls, f):
+        return os.path.join(os.path.dirname(cls._test_case_py), f)
+
     def test_system(self):
         self.start()
         self.assertEqual(gsys.__version__, geosoft.__version__)
@@ -31,7 +31,6 @@ class Test(GXPYTest):
         self.assertIn("test_system.py", f)
         self.assertIn("line 28", f)
         self.assertIn("run", p)
-
 
     def test_func(self):
         self.start()
@@ -52,7 +51,7 @@ class Test(GXPYTest):
     def test_unzip(self):
         self.start()
 
-        folder, files = gsys.unzip(tf('little.zip'), tf('_test'), checkready=1)
+        folder, files = gsys.unzip(Test.tf('little.zip'), Test.tf('_test'), checkready=1)
         self.assertEqual(len(files), 3)
         self.assertTrue(os.path.isfile(folder + '\\little.png'))
         self.assertTrue(os.path.isfile(folder + '\\little - Copy.png'))
