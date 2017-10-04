@@ -1497,6 +1497,8 @@ class Geosoft_gdb:
 
         # get VVs of data, resampled to a common fid
         data = self.read_line_vv(line, channels, dtype, fid, common_fid=True)
+        if len(data) == 0:
+            raise GdbException('Database has no channels.')
         nvd = data[0][1].length
         fid = data[0][1].fid
         nCh = len(data)

@@ -120,8 +120,7 @@ class Test(GXPYTest):
             lines = gdb.lines()
             print(lines)
             for line in lines:
-                npd, ch, fid = gdb.read_line(line)
-                print(gdb.file_name, line)
+                self.assertRaises(gxdb.GdbException, gdb.read_line, line)
 
     def test_read_write_channel_vv_va(self):
         self.start()
