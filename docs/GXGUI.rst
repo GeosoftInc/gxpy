@@ -854,6 +854,30 @@ FILE_FILTER constants
 
    UBC location files \ `*`\ .loc		LOCAL 
 
+.. autoattribute:: geosoft.gxapi.FILE_FILTER_UBC_MOD
+
+::
+
+   UBC model files \ `*`\ .mod		LOCAL 
+
+.. autoattribute:: geosoft.gxapi.FILE_FILTER_UBC_DEN
+
+::
+
+   UBC density model files \ `*`\ .den		LOCAL 
+
+.. autoattribute:: geosoft.gxapi.FILE_FILTER_UBC_SUS
+
+::
+
+   UBC susceptibility model files \ `*`\ .sus		LOCAL 
+
+.. autoattribute:: geosoft.gxapi.FILE_FILTER_GOCAD_VOXET
+
+::
+
+   GOCAD voxet files \ `*`\ .vo		LOCAL 
+
 .. _FILE_FORM:
 
 FILE_FORM constants

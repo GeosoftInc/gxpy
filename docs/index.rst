@@ -346,6 +346,16 @@ GXDXFI class
 
  
 
+GXE3DV class 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. autoclass:: geosoft.gxapi.GXE3DV
+	:noindex:
+	
+:ref:`More... <GXE3DV>`
+
+ 
+
 GXEDB class 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
