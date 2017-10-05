@@ -311,9 +311,9 @@ class GXpy(_Singleton):
                         flags = 64
                 self.gxapi = gxapi.GXContext.create(name, version, self.parent_window, flags)
 
-            except:
+            except gxapi.GXAPIError as e:
                 self.gxapi = None
-                raise GXException(_t('GX services are not available.'))
+                raise GXException(_t('GX services are not available.\n{}'.format(e)))
 
             user = gxapi.str_ref()
             company = gxapi.str_ref()
