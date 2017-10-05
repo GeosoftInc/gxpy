@@ -175,7 +175,7 @@ def delete_files(file_name):
             raise GdbException(_t('File is not a Geosoft database file (no gdb extension): {}'.format(file_name)))
 
         df(file_name)
-        df(root + '.xml')
+        df(file_name + '.xml')
 
 
 class Geosoft_gdb:
