@@ -23,7 +23,6 @@ class Test(GXPYTest):
         cls.folder, files = gsys.unzip(os.path.join(os.path.dirname(cls._test_case_py), 'test_database.zip'),
                                        folder=cls._gx.temp_folder())
         cls.gdb_name = os.path.join(cls.folder, 'test_database.gdb')
-        cls.gdb_empty = os.path.join(cls.folder, 'test_empty.gdb')
 
     def test_gdb(self):
         self.start()
@@ -113,11 +112,74 @@ class Test(GXPYTest):
     def test_empty(self):
         self.start()
 
-        with gxdb.Geosoft_gdb.open(self.gdb_empty) as gdb:
-            lines = gdb.lines()
-            print(lines)
-            for line in lines:
-                self.assertRaises(gxdb.GdbException, gdb.read_line, line)
+        name = 'empty'
+        try:
+            with gxdb.Geosoft_gdb.new(name, overwrite=True) as gdb:
+                name = gdb.file_name
+                self.assertEqual(len(gdb.list_lines()), 0)
+                gdb.new_line('some_line')
+                gdb.new_line('_some_line')
+                lines = gdb.list_lines()
+                self.assertEqual(len(lines), 2)
+                self.assertTrue('Some_line' in lines) # note leading 's' was interpreted as line type 'S'
+                self.assertTrue('D_some_line' in lines)
+
+                npd, ch, fid = gdb.read_line(list(lines)[0])
+                self.assertEqual(npd.size, 0)
+                self.assertEqual(len(ch), 0)
+
+                gdb.new_channel('one')
+                npd, ch, fid = gdb.read_line(list(lines)[0])
+                self.assertEqual(npd.shape, (0, 1))
+                self.assertEqual(len(ch), 1)
+                self.assertEqual(fid, (0.0, 1.0))
+
+                gdb.new_channel('two')
+                npd, ch, fid = gdb.read_line(list(lines)[0])
+                self.assertEqual(npd.shape, (0, 2))
+                self.assertEqual(len(ch), 2)
+                self.assertEqual(fid, (0.0, 1.0))
+
+                ch = gdb.new_channel('three')
+                line = list(lines)[0]
+                gdb.write_channel(line, ch, [1, 2, 3, 4, 5])
+                npd, ch, fid = gdb.read_line(list(lines)[0])
+                self.assertEqual(npd.shape, (5, 3))
+                self.assertEqual(len(ch), 3)
+                self.assertEqual(fid, (0.0, 1.0))
+
+                ch = gdb.new_channel('four', dtype=np.int)
+                line = list(lines)[0]
+                gdb.write_channel(line, ch, [10, 20, 30, 40], fid=(-1.5, 2))
+                npd, ch, fid = gdb.read_line(line)
+                self.assertEqual(npd.shape, (7, 4))
+                self.assertEqual(len(ch), 4)
+                self.assertEqual(fid, (-1.5, 1.0))
+                self.assertEqual(npd[0][0], 10.)
+                self.assertEqual(npd[2][2], 1.5)
+                self.assertEqual(npd[5][2], 4.5)
+                self.assertTrue(np.isnan(npd[0][1]))
+                self.assertTrue(np.isnan(npd[1][2]))
+                self.assertTrue(np.isnan(npd[6][2]))
+
+                npd, ch, fid = gdb.read_line(line, 'four', dtype=np.int)
+                self.assertEqual(npd.shape, (4, 1))
+                self.assertEqual(len(ch), 1)
+                self.assertEqual(fid, (-1.5, 2.0))
+                self.assertEqual(npd[0][0], 10)
+                self.assertEqual(npd[3][0], 40)
+
+                npd, ch, fid = gdb.read_line(line, 'four', fid=(-0.13333, 0.000666))
+                self.assertEqual(npd.shape, (6958, 1))
+                self.assertEqual(len(ch), 1)
+                self.assertEqual(fid, (-0.13333, 0.000666))
+                self.assertAlmostEqual(npd[0][0], 16.83335)
+                self.assertAlmostEqual(npd[1000][0], 20.16335)
+
+
+        finally:
+            gxdb.delete_files(name)
+
 
     def test_read_write_channel_vv_va(self):
         self.start()

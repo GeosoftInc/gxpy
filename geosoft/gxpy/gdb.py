@@ -1439,14 +1439,19 @@ class Geosoft_gdb:
                         dend = start + incr * (vv[1].length - 1)
                         if dend > fend:
                             fend = dend
-            if fid is None:
-                fid = (start, incr)
 
-            # refid if there is some data
-            nvd = math.ceil(max((fend - fid[0] - sys.float_info.epsilon), 0) / fid[1]) + 1
-            if fend != gxapi.GS_R8MN:
-                for vv in chvv:
-                    vv[1].refid(fid, nvd)
+            if fid is None:
+                if start == gxapi.GS_R8MX:
+                    fid = (0.0, 1.0)
+                else:
+                    fid = (start, incr)
+
+            if start == gxapi.GS_R8MX:
+                nvd = 0
+            else:
+                nvd = math.ceil(max((fend - fid[0] - sys.float_info.epsilon), 0) / fid[1]) + 1
+            for vv in chvv:
+                vv[1].refid(fid, nvd)
 
         return chvv
 
@@ -1477,6 +1482,8 @@ class Geosoft_gdb:
 
         VA channels are expanded by element with channel names name[0], name[1], etc.
 
+        Empty
+
         Examples:
 
         .. code::
@@ -1498,7 +1505,7 @@ class Geosoft_gdb:
         # get VVs of data, resampled to a common fid
         data = self.read_line_vv(line, channels, dtype, fid, common_fid=True)
         if len(data) == 0:
-            raise GdbException('Database has no channels.')
+            return np.array([]), [], (0.0, 1.0)
         nvd = data[0][1].length
         fid = data[0][1].fid
         nCh = len(data)
@@ -1616,10 +1623,13 @@ class Geosoft_gdb:
 
         :param line:    line name or symbol
         :param channel: channel name or symbol
-        :param data:    numpy array (2D for VA channel)
+        :param data:    numpy array (2D for VA channel), or a list
         :param fid:     tuple (fid start, increment), default (0.0,1.0)
 
         .. versionadded:: 9.1
+
+        .. versionmodified:: 9.3
+            support for setting channel from a list
         """
 
         ln, ls = self.line_name_symb(line, create=True)
@@ -1631,6 +1641,9 @@ class Geosoft_gdb:
             if type(channel) is str:
                 cn = channel
                 cs = self.new_channel(channel, data.dtype, array=_va_width(data))
+
+        if not isinstance(data, np.ndarray):
+            data = np.array(data)
 
         w = self.channel_width(cs)
         if w != _va_width(data):
