@@ -159,3 +159,6 @@ $RECYCLE.BIN/
 # =========================
 .vs/
 *.geosoft_3dv
+/tutorial/The Geosoft Project/example.gpf.cache
+/tutorial/The Geosoft Project/example.gpf.cache.list
+/tutorial/The Geosoft Project/example.gpf
