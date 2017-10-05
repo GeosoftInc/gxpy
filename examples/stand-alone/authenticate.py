@@ -5,7 +5,9 @@ company = gxapi.str_ref()
 gxapi.GXSYS.get_licensed_user(user, company)
 
 try:
+    # this function requires a licence
     gxapi.GXST2.create()
     print(user.value, 'is licenced.')
+
 except gxapi.GXAPIError:
     print(user.value, 'is NOT licenced.')
