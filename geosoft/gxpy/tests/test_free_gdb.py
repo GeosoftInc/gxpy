@@ -1,8 +1,6 @@
 import unittest
 import os
 import numpy as np
-from PIL import Image
-
 import geosoft
 import geosoft.gxapi as gxapi
 import geosoft.gxpy.gx as gx
@@ -26,18 +24,11 @@ class Test(GXPYTest):
                                        folder=cls._gx.temp_folder())
         cls.gdb_name = os.path.join(cls.folder, files[0])
 
-        # determine license level
-        try:
-            gxapi.GXST2.create()
-            cls.free_license = False
-        except gxapi.GXAPIError:
-            cls.free_license = True
-
     def skip(self):
-        if self.free_license:
-            return True
-        print('\n****** Skipping free-licence test for licenced ID: {} ******'.format(self._gx.gid))
-        return False
+        if self._gx.entitled:
+            print('\n****** Skipping free-licence test for licenced ID: {} ******'.format(self._gx.gid))
+            return False
+        return True
 
     def tf(f):
         return os.path.join(os.path.dirname(__file__), f)
@@ -46,16 +37,13 @@ class Test(GXPYTest):
         self.start()
         if self.skip():
             with gxdb.Geosoft_gdb.open(self.gdb_name) as gdb:
-                self.assertEqual(str(gdb).lower(), os.path.basename(self.gdb_name).lower())
                 self.assertTrue(len(gdb.list_channels()) >= 6)
                 self.assertTrue('X' in gdb.list_channels())
                 self.assertTrue('dx' in gdb.list_channels(chan=gxdb.CHAN_ALL))
                 self.assertTrue('vector' in gdb.list_channels(chan=gxdb.CHAN_ARRAY))
                 self.assertFalse('vector' in gdb.list_channels(chan=gxdb.CHAN_NORMAL))
-
                 self.assertEqual(gdb.channel_width('vector'), 3)
                 self.assertEqual(gdb.channel_width('x'), 1)
-
                 gdb.discard()
 
     def test_read(self):
@@ -66,6 +54,22 @@ class Test(GXPYTest):
                     npd, ch, fid = gdb.read_line(l)
                     self.assertEqual(len(ch), 8)
 
+    def test_write(self):
+        self.start()
+        if self.skip():
+            try:
+                name = None
+                with gxdb.Geosoft_gdb.new('new', overwrite=True) as gdb:
+                    name = gdb.file_name
+                    npd = np.empty((2000, 2)) #TODO - make it large
+                    npd[:,:] = np.nan
+                    line = gdb.new_line('test')
+                    gdb.write_line(line, npd, ['x', 'y'])
+                    npd, ch, fid = gdb.read_line(line)
+                    self.assertEqual(len(ch), 2)
+                    self.assertEqual(npd.shape, (2000, 2))
+            finally:
+                gxdb.delete_files(name)
 
 ###############################################################################################
 

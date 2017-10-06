@@ -37,7 +37,7 @@ class Test(GXPYTest):
     def test_entitlements(self):
         with gx.GXpy(log=print) as gxc:
             ent = gxc.entitlements()
-            self.assertTrue(ent.get('1000'), 'Oasis montaj™ Base')
+            self.assertTrue(ent['1000'], 'Oasis montaj™ Base')
             self.assertTrue(gxc.has_entitlement(1000))
             self.assertTrue(gxc.has_entitlement('Oasis montaj™ Base'))
             self.assertTrue(gxc.has_entitlement(2000))
