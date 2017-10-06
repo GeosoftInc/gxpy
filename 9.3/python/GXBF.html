@@ -1,0 +1,900 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>GXBF class &#8212; Geosoft GX Python API 9.3.0b0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/maki.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '9.3.0b0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+ 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-87443115-1']);
+  _gaq.push(['_trackPageview']);
+</script>
+
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.0b0 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">GXBF class</a><ul>
+<li><a class="reference internal" href="#bf-byteorder-constants">BF_BYTEORDER constants</a></li>
+<li><a class="reference internal" href="#bf-close-constants">BF_CLOSE constants</a></li>
+<li><a class="reference internal" href="#bf-encode-constants">BF_ENCODE constants</a></li>
+<li><a class="reference internal" href="#bf-open-mode-constants">BF_OPEN_MODE constants</a></li>
+<li><a class="reference internal" href="#bf-seek-constants">BF_SEEK constants</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/GXBF.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="gxbf-class">
+<span id="gxbf"></span><h1>GXBF class<a class="headerlink" href="#gxbf-class" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="geosoft.gxapi.GXBF">
+<em class="property">class </em><code class="descclassname">geosoft.gxapi.</code><code class="descname">GXBF</code><a class="headerlink" href="#geosoft.gxapi.GXBF" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">BF</span> <span class="k">class</span> <span class="nc">is</span> <span class="n">used</span> <span class="n">to</span> <span class="n">access</span> <span class="p">(</span><span class="ow">or</span> <span class="n">create</span><span class="p">)</span> <span class="n">Binary</span> <span class="n">files</span> <span class="ow">and</span> <span class="n">remove</span>
+<span class="p">(</span><span class="ow">or</span> <span class="n">destroy</span><span class="p">)</span> <span class="n">files</span> <span class="kn">from</span> <span class="nn">use.</span> <span class="n">You</span> <span class="n">can</span> <span class="n">also</span> <span class="n">perform</span> <span class="n">a</span> <span class="n">variety</span> <span class="n">of</span>
+<span class="n">additional</span> <span class="n">tasks</span><span class="p">,</span> <span class="n">such</span> <span class="k">as</span> <span class="n">positioning</span> <span class="n">within</span> <span class="n">files</span><span class="p">,</span> <span class="n">reading</span> <span class="kn">from</span>
+<span class="nn">files</span> <span class="ow">and</span> <span class="n">writing</span> <span class="n">to</span> <span class="n">files</span><span class="o">.</span>
+</pre></div>
+</div>
+<dl class="method">
+<dt id="geosoft.gxapi.GXBF.ch_size">
+<code class="descname">ch_size</code><span class="sig-paren">(</span><em>(int)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXBF.ch_size" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Changes</span> <span class="n">the</span> <span class="n">size</span> <span class="n">of</span> <span class="n">a</span> <span class="n">file</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>int</em>) &#8211; new length in bytes</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Nothing</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">None</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.0.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXBF.copy">
+<code class="descname">copy</code><span class="sig-paren">(</span><em>(GXBF)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXBF.copy" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Copy</span> <span class="n">entire</span> <span class="n">contents</span> <span class="n">of</span> <span class="n">a</span> <span class="n">source</span> <span class="n">BF</span> <span class="n">to</span> <span class="n">a</span> <span class="n">destination</span> <span class="n">BF</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<a class="reference internal" href="#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXBF</span></code></a>) &#8211; Destination BF</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Nothing</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">None</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.0.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXBF.crc">
+<code class="descname">crc</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(int)arg2</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXBF.crc" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Compute</span> <span class="n">CRC</span> <span class="n">of</span> <span class="n">a</span> <span class="n">file</span><span class="o">.</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arg1</strong> (<em>int</em>) &#8211; number of bytes to CRC</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; CRC start (use <a class="reference internal" href="index.html#crc-init-value"><span class="std std-ref">CRC_INIT_VALUE constant</span></a> for new)</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">CRC Value</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.0.</span></p>
+</div>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="geosoft.gxapi.GXBF.create">
+<em class="property">static </em><code class="descname">create</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(int)arg2</em><span class="sig-paren">)</span> &rarr; GXBF:<a class="headerlink" href="#geosoft.gxapi.GXBF.create" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Create</span> <span class="n">BF</span> <span class="nb">object</span><span class="o">.</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arg1</strong> (<em>str</em>) &#8211; file name to open (&#8220;&#8221; is a temporary file)</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#bf-open-mode"><span class="std std-ref">BF_OPEN_MODE constants</span></a></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">BF Object</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXBF</span></code></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.0.</span></p>
+</div>
+<p><strong>Note:</strong></p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Run</span><span class="o">-</span><span class="n">time</span> <span class="n">specific</span> <span class="n">directory</span> <span class="n">paths</span> <span class="n">may</span> <span class="n">be</span> <span class="n">added</span> <span class="n">the</span> <span class="n">the</span> <span class="n">front</span> <span class="n">of</span> <span class="n">file</span> <span class="n">names</span>
+<span class="k">as</span> <span class="n">follows</span><span class="p">:</span>
+
+<span class="o">&lt;</span><span class="n">geosoft</span><span class="o">&gt;</span>      <span class="n">the</span> <span class="n">main</span> <span class="n">Geosoft</span> <span class="n">installation</span> <span class="n">directory</span>
+<span class="o">&lt;</span><span class="n">geosoft2</span><span class="o">&gt;</span>     <span class="n">the</span> <span class="n">secondary</span> <span class="n">Geosoft</span> <span class="n">installation</span> <span class="n">directory</span>
+<span class="o">&lt;</span><span class="n">geotemp</span><span class="o">&gt;</span>      <span class="n">the</span> <span class="n">Geosoft</span> <span class="n">temporary</span> <span class="n">file</span> <span class="n">directory</span>
+<span class="o">&lt;</span><span class="n">windows</span><span class="o">&gt;</span>      <span class="n">the</span> <span class="n">operating</span> <span class="n">system</span> <span class="n">Windows</span> <span class="n">directory</span>
+<span class="o">&lt;</span><span class="n">system</span><span class="o">&gt;</span>       <span class="n">the</span> <span class="n">operating</span> <span class="n">system</span> <span class="n">system</span> <span class="n">directory</span>
+<span class="o">&lt;</span><span class="n">other</span><span class="o">&gt;</span>        <span class="n">other</span> <span class="n">environment</span> <span class="n">variables</span>
+
+<span class="n">For</span> <span class="n">example</span> <span class="s2">&quot;&lt;geosoft&gt;/user/csv/datum.csv&quot;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="geosoft.gxapi.GXBF.create_sbf">
+<em class="property">static </em><code class="descname">create_sbf</code><span class="sig-paren">(</span><em>(GXSBF)arg1</em>, <em>(str)arg2</em>, <em>(int)arg3</em><span class="sig-paren">)</span> &rarr; GXBF:<a class="headerlink" href="#geosoft.gxapi.GXBF.create_sbf" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Create</span> <span class="n">BF</span> <span class="nb">object</span> <span class="n">inside</span> <span class="n">an</span> <span class="n">SBF</span><span class="o">.</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arg1</strong> (<a class="reference internal" href="GXSBF.html#geosoft.gxapi.GXSBF" title="geosoft.gxapi.GXSBF"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXSBF</span></code></a>) &#8211; Storage</li>
+<li><strong>arg2</strong> (<em>str</em>) &#8211; file name to open (&#8220;&#8221; is a temporary file)</li>
+<li><strong>arg3</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#bf-open-mode"><span class="std std-ref">BF_OPEN_MODE constants</span></a></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">BF Object</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXBF</span></code></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.0.</span></p>
+</div>
+<p><strong>Note:</strong></p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">see</span> <span class="n">sbf</span><span class="o">.</span><span class="n">gxh</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXBF.eof">
+<code class="descname">eof</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXBF.eof" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Returns</span> <span class="mi">1</span> <span class="k">if</span> <span class="n">at</span> <span class="n">the</span> <span class="n">end</span> <span class="n">of</span> <span class="n">the</span> <span class="n">file</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">1 if at the end of the file,
+0 if not at the end of the file</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.0.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXBF.is_null">
+<code class="descname">is_null</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; bool<a class="headerlink" href="#geosoft.gxapi.GXBF.is_null" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if the instance of <code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXBF</span> <span class="pre">is</span> <span class="pre">null</span> <span class="pre">(undefined)</span></code></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if this is a null instance of <a class="reference internal" href="#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXBF</span></code></a>, False otherwise.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool`</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="geosoft.gxapi.GXBF.null">
+<em class="property">static </em><code class="descname">null</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; GXBF<a class="headerlink" href="#geosoft.gxapi.GXBF.null" title="Permalink to this definition">¶</a></dt>
+<dd><p>A null (undefined) instance of <a class="reference internal" href="#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXBF</span></code></a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A null <a class="reference internal" href="#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXBF</span></code></a></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXBF</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXBF.query_write">
+<code class="descname">query_write</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXBF.query_write" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Check</span> <span class="k">if</span> <span class="n">you</span> <span class="n">can</span> <span class="n">write</span> <span class="n">to</span> <span class="n">the</span> <span class="n">BF</span><span class="o">.</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">0 - No
+1 - Yes</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.1.1.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXBF.read_binary_string">
+<code class="descname">read_binary_string</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(int)arg2</em>, <em>(str_ref)arg3</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXBF.read_binary_string" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Reads</span> <span class="n">string</span> <span class="n">data</span> <span class="kn">from</span> <span class="nn">current</span> <span class="n">position</span> <span class="ow">in</span> <span class="n">BF</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arg1</strong> (<em>int</em>) &#8211; Number of bytes to read</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#bf-encode"><span class="std std-ref">BF_ENCODE constants</span></a></li>
+<li><strong>arg3</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; data</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 6.3.0.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXBF.read_double">
+<code class="descname">read_double</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(float_ref)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXBF.read_double" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Reads</span> <span class="n">real</span> <span class="n">data</span> <span class="kn">from</span> <span class="nn">current</span> <span class="n">position</span> <span class="ow">in</span> <span class="n">BF</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arg1</strong> (<em>int</em>) &#8211; <a class="reference internal" href="index.html#gs-types"><span class="std std-ref">GS_TYPES constants</span></a> and <a class="reference internal" href="#bf-byteorder"><span class="std std-ref">BF_BYTEORDER constants</span></a></li>
+<li><strong>arg2</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; data</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.0.</span></p>
+</div>
+<p><strong>Note:</strong></p>
+<pre class="literal-block">
+If the data source may be in byte order different from that
+required by the reader, you can add the source byte-order
+to the BF elelment type.  The byte order will be swapped
+if required.  For example, to write out a real number 3.5
+with Most-Significant_Byte first (Mortorola) convention:
+
+<a class="reference internal" href="#geosoft.gxapi.GXBF.write_double" title="geosoft.gxapi.GXBF.write_double"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXBF.write_double()</span></code></a>(hBF,BF_BYTEORDER_MSB+GS_REAL,3.5).
+
+If a byte order is not specified, the source is assumed to be
+in the native byte order of the reading/writing computer.
+</pre>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXBF.read_int">
+<code class="descname">read_int</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(int_ref)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXBF.read_int" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Reads</span> <span class="nb">int</span> <span class="n">data</span> <span class="kn">from</span> <span class="nn">current</span> <span class="n">position</span> <span class="ow">in</span> <span class="n">BF</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arg1</strong> (<em>int</em>) &#8211; <a class="reference internal" href="index.html#gs-types"><span class="std std-ref">GS_TYPES constants</span></a> and <a class="reference internal" href="#bf-byteorder"><span class="std std-ref">BF_BYTEORDER constants</span></a></li>
+<li><strong>arg2</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; data</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.0.</span></p>
+</div>
+<p><strong>Note:</strong></p>
+<pre class="literal-block">
+If the data source may be in byte order different from that
+required by the reader, you can add the source byte-order
+to the BF elelment type.  The byte order will be swapped
+if required.  For example, to write out a real number 3.5
+with Most-Significant_Byte first (Mortorola) convention:
+
+<a class="reference internal" href="#geosoft.gxapi.GXBF.write_double" title="geosoft.gxapi.GXBF.write_double"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXBF.write_double()</span></code></a>(hBF,BF_BYTEORDER_MSB+GS_REAL,3.5).
+
+If a byte order is not specified, the source is assumed to be
+in the native byte order of the reading/writing computer.
+</pre>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXBF.read_vv">
+<code class="descname">read_vv</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(GXVV)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXBF.read_vv" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Read</span> <span class="n">data</span> <span class="n">to</span> <span class="n">a</span> <span class="n">VV</span> <span class="kn">from</span> <span class="nn">current</span> <span class="n">position</span> <span class="ow">in</span> <span class="n">BF</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arg1</strong> (<em>int</em>) &#8211; <a class="reference internal" href="index.html#gs-types"><span class="std std-ref">GS_TYPES constants</span></a> and <a class="reference internal" href="#bf-byteorder"><span class="std std-ref">BF_BYTEORDER constants</span></a></li>
+<li><strong>arg2</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; VV data to read, VV length is read</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.0.</span></p>
+</div>
+<p><strong>Note:</strong></p>
+<pre class="literal-block">
+If the data source may be in byte order different from that
+required by the reader, you can add the source byte-order
+to the BF elelment type.  The byte order will be swapped
+if required.  For example, to write out a real number 3.5
+with Most-Significant_Byte first (Mortorola) convention:
+
+<a class="reference internal" href="#geosoft.gxapi.GXBF.write_double" title="geosoft.gxapi.GXBF.write_double"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXBF.write_double()</span></code></a>(hBF,BF_BYTEORDER_MSB+GS_REAL,3.5).
+
+If a byte order is not specified, the source is assumed to be
+in the native byte order of the reading/writing computer.
+</pre>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXBF.seek">
+<code class="descname">seek</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(int)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXBF.seek" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Moves</span> <span class="n">file</span> <span class="n">position</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arg1</strong> (<em>int</em>) &#8211; number of bytes from reference point</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#bf-seek"><span class="std std-ref">BF_SEEK constants</span></a></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.0.</span></p>
+</div>
+<p><strong>Note:</strong></p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Terminates</span> <span class="k">if</span> <span class="n">attempt</span> <span class="n">to</span> <span class="n">move</span> <span class="n">past</span> <span class="n">the</span> <span class="n">end</span> <span class="n">of</span>
+<span class="n">a</span> <span class="n">read</span><span class="o">-</span><span class="n">only</span> <span class="n">file</span><span class="o">.</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXBF.set_destroy_status">
+<code class="descname">set_destroy_status</code><span class="sig-paren">(</span><em>(int)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXBF.set_destroy_status" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Set</span> <span class="n">the</span> <span class="n">flag</span> <span class="n">to</span> <span class="n">delete</span> <span class="n">the</span> <span class="n">file</span> <span class="n">on</span> <span class="n">close</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#bf-close"><span class="std std-ref">BF_CLOSE constants</span></a></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Nothing</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">None</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 6.0.0.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXBF.size">
+<code class="descname">size</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXBF.size" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Returns</span> <span class="n">the</span> <span class="n">file</span> <span class="n">length</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">File size in bytes.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.0.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXBF.tell">
+<code class="descname">tell</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXBF.tell" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Returns</span> <span class="n">current</span> <span class="n">position</span> <span class="n">of</span> <span class="n">file</span> <span class="n">pointer</span> <span class="ow">in</span> <span class="nb">bytes</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Current file pointer location</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.0.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXBF.write_binary_string">
+<code class="descname">write_binary_string</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(str)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXBF.write_binary_string" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Write</span> <span class="n">a</span> <span class="n">binary</span> <span class="n">string</span> <span class="n">to</span> <span class="n">a</span> <span class="n">BF</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arg1</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#bf-encode"><span class="std std-ref">BF_ENCODE constants</span></a></li>
+<li><strong>arg2</strong> (<em>str</em>) &#8211; string to write out</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 6.3.0.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXBF.write_data_null">
+<code class="descname">write_data_null</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXBF.write_data_null" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Writes</span> <span class="n">a</span> <span class="n">null</span> <span class="n">byte</span> <span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="n">to</span> <span class="n">BF</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Nothing</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">None</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.0.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXBF.write_double">
+<code class="descname">write_double</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(float)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXBF.write_double" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Writes</span> <span class="n">real</span> <span class="n">to</span> <span class="n">the</span> <span class="n">BF</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arg1</strong> (<em>int</em>) &#8211; <a class="reference internal" href="index.html#gs-types"><span class="std std-ref">GS_TYPES constants</span></a> and <a class="reference internal" href="#bf-byteorder"><span class="std std-ref">BF_BYTEORDER constants</span></a></li>
+<li><strong>arg2</strong> (<em>float</em>) &#8211; data</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.0.</span></p>
+</div>
+<p><strong>Note:</strong></p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">See</span> <span class="n">comments</span> <span class="n">on</span> <span class="n">byte</span> <span class="n">order</span> <span class="k">for</span> <span class="n">the</span> <span class="n">Read</span><span class="o">..</span> <span class="n">functions</span> <span class="k">if</span> <span class="n">you</span>
+<span class="n">want</span> <span class="n">to</span> <span class="n">enforce</span> <span class="n">a</span> <span class="n">certain</span> <span class="n">byte</span> <span class="n">order</span><span class="o">.</span>
+
+<span class="n">If</span> <span class="n">a</span> <span class="n">byte</span> <span class="n">order</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">specified</span><span class="p">,</span> <span class="n">the</span> <span class="n">data</span> <span class="ow">is</span> <span class="n">written</span>
+<span class="ow">in</span> <span class="n">the</span> <span class="n">native</span> <span class="n">byte</span> <span class="n">order</span> <span class="n">of</span> <span class="n">the</span> <span class="n">writing</span> <span class="n">computer</span><span class="o">.</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXBF.write_int">
+<code class="descname">write_int</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(int)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXBF.write_int" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Writes</span> <span class="nb">int</span> <span class="n">to</span> <span class="n">the</span> <span class="n">BF</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arg1</strong> (<em>int</em>) &#8211; <a class="reference internal" href="index.html#gs-types"><span class="std std-ref">GS_TYPES constants</span></a> and <a class="reference internal" href="#bf-byteorder"><span class="std std-ref">BF_BYTEORDER constants</span></a></li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; data</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.0.</span></p>
+</div>
+<p><strong>Note:</strong></p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">See</span> <span class="n">comments</span> <span class="n">on</span> <span class="n">byte</span> <span class="n">order</span> <span class="k">for</span> <span class="n">the</span> <span class="n">Read</span><span class="o">..</span> <span class="n">functions</span> <span class="k">if</span> <span class="n">you</span>
+<span class="n">want</span> <span class="n">to</span> <span class="n">enforce</span> <span class="n">a</span> <span class="n">certain</span> <span class="n">byte</span> <span class="n">order</span><span class="o">.</span>
+
+<span class="n">If</span> <span class="n">a</span> <span class="n">byte</span> <span class="n">order</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">specified</span><span class="p">,</span> <span class="n">the</span> <span class="n">data</span> <span class="ow">is</span> <span class="n">written</span>
+<span class="ow">in</span> <span class="n">the</span> <span class="n">native</span> <span class="n">byte</span> <span class="n">order</span> <span class="n">of</span> <span class="n">the</span> <span class="n">writing</span> <span class="n">computer</span><span class="o">.</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXBF.write_vv">
+<code class="descname">write_vv</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(GXVV)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXBF.write_vv" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Writes</span> <span class="n">VV</span> <span class="n">to</span> <span class="n">the</span> <span class="n">BF</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arg1</strong> (<em>int</em>) &#8211; <a class="reference internal" href="index.html#gs-types"><span class="std std-ref">GS_TYPES constants</span></a> and <a class="reference internal" href="#bf-byteorder"><span class="std std-ref">BF_BYTEORDER constants</span></a></li>
+<li><strong>arg2</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; data</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.0.</span></p>
+</div>
+<p><strong>Note:</strong></p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">See</span> <span class="n">comments</span> <span class="n">on</span> <span class="n">byte</span> <span class="n">order</span> <span class="k">for</span> <span class="n">the</span> <span class="n">Read</span><span class="o">..</span> <span class="n">functions</span> <span class="k">if</span> <span class="n">you</span>
+<span class="n">want</span> <span class="n">to</span> <span class="n">enforce</span> <span class="n">a</span> <span class="n">certain</span> <span class="n">byte</span> <span class="n">order</span><span class="o">.</span>
+
+<span class="n">If</span> <span class="n">a</span> <span class="n">byte</span> <span class="n">order</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">specified</span><span class="p">,</span> <span class="n">the</span> <span class="n">data</span> <span class="ow">is</span> <span class="n">written</span>
+<span class="ow">in</span> <span class="n">the</span> <span class="n">native</span> <span class="n">byte</span> <span class="n">order</span> <span class="n">of</span> <span class="n">the</span> <span class="n">writing</span> <span class="n">computer</span><span class="o">.</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<div class="section" id="bf-byteorder-constants">
+<span id="bf-byteorder"></span><h2>BF_BYTEORDER constants<a class="headerlink" href="#bf-byteorder-constants" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Byte</span> <span class="n">order</span> <span class="k">for</span> <span class="n">read</span><span class="o">/</span><span class="n">write</span>
+</pre></div>
+</div>
+<dl class="attribute">
+<dt id="geosoft.gxapi.BF_BYTEORDER_LSB">
+<code class="descclassname">gxapi.</code><code class="descname">BF_BYTEORDER_LSB</code><em class="property"> = 256</em><a class="headerlink" href="#geosoft.gxapi.BF_BYTEORDER_LSB" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Least</span> <span class="n">significant</span> <span class="n">byte</span> <span class="n">first</span> <span class="p">(</span><span class="n">Intel</span><span class="p">,</span> <span class="n">Windows</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="attribute">
+<dt id="geosoft.gxapi.BF_BYTEORDER_MSB">
+<code class="descclassname">gxapi.</code><code class="descname">BF_BYTEORDER_MSB</code><em class="property"> = 512</em><a class="headerlink" href="#geosoft.gxapi.BF_BYTEORDER_MSB" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Most</span> <span class="n">significant</span> <span class="n">byte</span> <span class="n">first</span> <span class="p">(</span><span class="n">Mororola</span><span class="p">,</span> <span class="n">Sun</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="bf-close-constants">
+<span id="bf-close"></span><h2>BF_CLOSE constants<a class="headerlink" href="#bf-close-constants" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Close</span> <span class="n">Flags</span>
+</pre></div>
+</div>
+<dl class="attribute">
+<dt id="geosoft.gxapi.BF_KEEP">
+<code class="descclassname">gxapi.</code><code class="descname">BF_KEEP</code><em class="property"> = 0</em><a class="headerlink" href="#geosoft.gxapi.BF_KEEP" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxapi.BF_DELETE">
+<code class="descclassname">gxapi.</code><code class="descname">BF_DELETE</code><em class="property"> = 1</em><a class="headerlink" href="#geosoft.gxapi.BF_DELETE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="bf-encode-constants">
+<span id="bf-encode"></span><h2>BF_ENCODE constants<a class="headerlink" href="#bf-encode-constants" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">way</span> <span class="n">a</span> <span class="n">string</span> <span class="ow">is</span> <span class="n">encoded</span>
+</pre></div>
+</div>
+<dl class="attribute">
+<dt id="geosoft.gxapi.BF_ENCODE_ANSI">
+<code class="descclassname">gxapi.</code><code class="descname">BF_ENCODE_ANSI</code><em class="property"> = 0</em><a class="headerlink" href="#geosoft.gxapi.BF_ENCODE_ANSI" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="ow">is</span> <span class="n">stored</span> <span class="k">as</span> <span class="n">ANSI</span> <span class="n">code</span> <span class="n">page</span>
+</pre></div>
+</div>
+<dl class="attribute">
+<dt id="geosoft.gxapi.BF_ENCODE_UTF8">
+<code class="descclassname">gxapi.</code><code class="descname">BF_ENCODE_UTF8</code><em class="property"> = 1</em><a class="headerlink" href="#geosoft.gxapi.BF_ENCODE_UTF8" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="ow">is</span> <span class="n">stored</span> <span class="k">as</span> <span class="n">UTF8</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="bf-open-mode-constants">
+<span id="bf-open-mode"></span><h2>BF_OPEN_MODE constants<a class="headerlink" href="#bf-open-mode-constants" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Open</span> <span class="n">Status</span>
+</pre></div>
+</div>
+<dl class="attribute">
+<dt id="geosoft.gxapi.BF_READ">
+<code class="descclassname">gxapi.</code><code class="descname">BF_READ</code><em class="property"> = 0</em><a class="headerlink" href="#geosoft.gxapi.BF_READ" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Read</span> <span class="n">only</span>
+</pre></div>
+</div>
+<dl class="attribute">
+<dt id="geosoft.gxapi.BF_READWRITE_NEW">
+<code class="descclassname">gxapi.</code><code class="descname">BF_READWRITE_NEW</code><em class="property"> = 1</em><a class="headerlink" href="#geosoft.gxapi.BF_READWRITE_NEW" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">erases</span> <span class="n">existing</span> <span class="n">file</span>
+</pre></div>
+</div>
+<dl class="attribute">
+<dt id="geosoft.gxapi.BF_READWRITE_OLD">
+<code class="descclassname">gxapi.</code><code class="descname">BF_READWRITE_OLD</code><em class="property"> = 2</em><a class="headerlink" href="#geosoft.gxapi.BF_READWRITE_OLD" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">file</span> <span class="n">must</span> <span class="n">pre</span><span class="o">-</span><span class="n">exist</span>
+</pre></div>
+</div>
+<dl class="attribute">
+<dt id="geosoft.gxapi.BF_READWRITE_APP">
+<code class="descclassname">gxapi.</code><code class="descname">BF_READWRITE_APP</code><em class="property"> = 4</em><a class="headerlink" href="#geosoft.gxapi.BF_READWRITE_APP" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="nb">open</span> <span class="ow">and</span> <span class="n">append</span> <span class="n">onto</span> <span class="n">pre</span><span class="o">-</span><span class="n">existing</span> <span class="n">file</span> <span class="p">(</span><span class="n">cannot</span> <span class="n">be</span> <span class="n">read</span> <span class="n">from</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="bf-seek-constants">
+<span id="bf-seek"></span><h2>BF_SEEK constants<a class="headerlink" href="#bf-seek-constants" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Seek</span> <span class="n">Location</span>
+</pre></div>
+</div>
+<dl class="attribute">
+<dt id="geosoft.gxapi.BF_SEEK_START">
+<code class="descclassname">gxapi.</code><code class="descname">BF_SEEK_START</code><em class="property"> = 0</em><a class="headerlink" href="#geosoft.gxapi.BF_SEEK_START" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxapi.BF_SEEK_CURRENT">
+<code class="descclassname">gxapi.</code><code class="descname">BF_SEEK_CURRENT</code><em class="property"> = 1</em><a class="headerlink" href="#geosoft.gxapi.BF_SEEK_CURRENT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxapi.BF_SEEK_EOF">
+<code class="descclassname">gxapi.</code><code class="descname">BF_SEEK_EOF</code><em class="property"> = 2</em><a class="headerlink" href="#geosoft.gxapi.BF_SEEK_EOF" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.0b0 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2017, Geosoft Inc.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
+    </div>
+<div class="footer">This page uses <a href="http://analytics.google.com/">
+Google Analytics</a> to collect statistics. You can disable it by blocking
+the JavaScript coming from www.google-analytics.com.
+<script type="text/javascript">
+  (function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ?
+              'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+  })();
+</script>
+</div>
+
+  </body>
+</html>

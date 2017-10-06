@@ -1,0 +1,908 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>geosoft.gxpy.coordinate_system submodule &#8212; Geosoft GX Python API 9.3.0b0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/maki.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '9.3.0b0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+ 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-87443115-1']);
+  _gaq.push(['_trackPageview']);
+</script>
+
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.0b0 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/geosoft.gxpy.coordinate_system.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-geosoft.gxpy.coordinate_system">
+<span id="geosoft-gxpy-coordinate-system-submodule"></span><h1>geosoft.gxpy.coordinate_system submodule<a class="headerlink" href="#module-geosoft.gxpy.coordinate_system" title="Permalink to this headline">¶</a></h1>
+<p>Coodinate systems</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Classes:</th><td class="field-body"><table border="1" class="first last docutils">
+<colgroup>
+<col width="35%" />
+<col width="65%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#geosoft.gxpy.coordinate_system.Coordinate_system" title="geosoft.gxpy.coordinate_system.Coordinate_system"><code class="xref py py-class docutils literal"><span class="pre">Coordinate_system</span></code></a></td>
+<td>define a coordinate system</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#geosoft.gxpy.coordinate_system.Coordinate_translate" title="geosoft.gxpy.coordinate_system.Coordinate_translate"><code class="xref py py-class docutils literal"><span class="pre">Coordinate_translate</span></code></a></td>
+<td>translate coordinates between coordinate systems</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#geosoft.gxpy.coordinate_system.Wkt" title="geosoft.gxpy.coordinate_system.Wkt"><code class="xref py py-class docutils literal"><span class="pre">Wkt</span></code></a></td>
+<td>well-know coordinate system for ESRI interoperability</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Coordinate systems describe how cartesian coordinates are located ralative to the Earth.  Cartesian coordinates
+are right-handed (x, y, z) spatial ordinates that describe locations within a coordinate system frame of reference.
+For coordinates relative to a horizontal plane, positive z is up, usually equivalent to elevation relative to
+a vertical datum.</p>
+<p>Coordinate systems can be oriented in three dimensions using an <cite>orientation</cite> definition, which defines an (x0, y0, z0)
+origin and rotation (rx, ry, rz) around the X, Y and then Z axis relative to a base coordinate system.</p>
+<p>Base coordinate systems are usually defined by &#8220;well-known&#8221; coordinate system projections on a datum of the earth.</p>
+<p><strong>Coordinate System Name</strong></p>
+<p>A coordinate system will also have a descriptive name that identifies the base system with a datum and &#8220;well-known&#8221;
+map projection description, plus optional orientation and vertical reference datum if defined.  Orientation
+parameters are enclosed in <cite>&lt;&gt;</cite> that define <cite>&lt;x0, y0, z0, rx, ry, rz&gt;</cite> (eg. <cite>&lt;400000, 6200000,0,0,-90,0&gt;</cite>).
+If a vertical reference datum is defined it will appear as a string in square brackets, for example  <cite>[CGVD28]</cite>.</p>
+<p>Example coordinate system names:</p>
+<blockquote>
+<div><div class="code highlight-default"><div class="highlight"><pre><span></span><span class="s2">&quot;NAD83 / UTM zone 15N&quot;</span>
+<span class="s2">&quot;NAD83 / UTM zone 15N &lt;450000,6250000,0,0,0,-25&gt;&quot;</span> <span class="c1"># oriented system, rotated -25 degrees</span>
+<span class="s2">&quot;NAD83 / UTM zone 15N [NAVD88]&quot;</span>
+<span class="s2">&quot;NAD83 / UTM zone 15N &lt;450000,6250000,0,0,0,-25&gt; [NAVD88]&quot;</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>The descriptive name for &#8220;well-known&#8221; coordinate systems is sufficient to describe the coordinate system from
+the <a class="reference external" href="http://www.epsg.org/">EPSG Geodetic Registry</a>. To fully locate ad-hoc coordinates you will need
+the parameters defined in the GXF stings.  See <a class="reference internal" href="#geosoft.gxpy.coordinate_system.Coordinate_system.gxf" title="geosoft.gxpy.coordinate_system.Coordinate_system.gxf"><code class="xref py py-attr docutils literal"><span class="pre">Coordinate_system.gxf</span></code></a>.</p>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXIPJ</span></code></a></p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Regression tests provide usage examples:     
+<a class="reference external" href="https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_coordinate_system.py">coordinate_system tests</a></p>
+</div>
+<dl class="exception">
+<dt id="geosoft.gxpy.coordinate_system.CSException">
+<em class="property">exception </em><code class="descclassname">geosoft.gxpy.coordinate_system.</code><code class="descname">CSException</code><a class="headerlink" href="#geosoft.gxpy.coordinate_system.CSException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">Exception</span></code></p>
+<p>Exceptions from <a class="reference internal" href="#module-geosoft.gxpy.coordinate_system" title="geosoft.gxpy.coordinate_system"><code class="xref py py-mod docutils literal"><span class="pre">geosoft.gxpy.coordinate_system</span></code></a>.</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.2.</span></p>
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="geosoft.gxpy.coordinate_system.Coordinate_system">
+<em class="property">class </em><code class="descclassname">geosoft.gxpy.coordinate_system.</code><code class="descname">Coordinate_system</code><span class="sig-paren">(</span><em>coordinate_system=None</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.coordinate_system.Coordinate_system" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>Coordinate system class. A coordinate system defines a horizontal and vertical reference
+system to locate (x, y, z) cartesian coordinates relative to the Earth.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>coordinate_system</strong> &#8211; <p>a coordinate system can be created from a number of different forms:</p>
+<ul class="simple">
+<li>Geosoft name string (ie. &#8220;WGS 84 / UTM zone 32N [geodetic]&#8221;)</li>
+<li>ESRI WKT string (ie. &#8220;PROJCS[&#8220;WGS_1984_UTM_Zone_35N&#8221;,GEOGCS[...&#8221;)</li>
+<li>a dictionary that contains the coordinate system properties (see <strong>Dictionary Structure</strong> below.)</li>
+<li>a JSON string that contains the coordinate system properties</li>
+<li>a list that contains the 5 
+<a class="reference external" href="http://www.geosoft.com/resources/goto/GXF-Grid-eXchange-File">GXF coordinate system strings</a>
+(eg: [&#8216;&#8220;WGS 84 / UTM zone 32N [geodetic]&#8221;, &#8220;WGS 84&#8221;, &#8220;UTM zone 32N&#8221;, &#8220;&#8221;, &#8220;&#8221;])</li>
+<li><a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXIPJ</span></code></a> instance</li>
+<li><a class="reference internal" href="#geosoft.gxpy.coordinate_system.Coordinate_system" title="geosoft.gxpy.coordinate_system.Coordinate_system"><code class="xref py py-class docutils literal"><span class="pre">Coordinate_system</span></code></a> instance, returns a copy</li>
+</ul>
+<p>For examples refer to  <a class="reference external" href="https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_coordinate_system.py">coordinate_system tests</a></p>
+</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Dictionary Structure:</th></tr>
+<tr class="field-even field"><td>&nbsp;</td><td class="field-body"><table class="first last docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Geosoft:</th><td class="field-body"><div class="code first highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>   <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;Geosoft&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="n">name</span>
+    <span class="s2">&quot;datum&quot;</span><span class="p">:</span> <span class="n">datum</span>
+    <span class="s2">&quot;method&quot;</span><span class="p">:</span> <span class="n">method</span>
+    <span class="s2">&quot;units&quot;</span><span class="p">:</span> <span class="n">units</span>
+    <span class="s2">&quot;local_datum&quot;</span><span class="p">:</span> <span class="n">local</span> <span class="n">datum</span> <span class="n">transform</span>
+    <span class="s2">&quot;orientation&quot;</span><span class="p">:</span> <span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">z0</span><span class="p">,</span> <span class="n">xR</span><span class="p">,</span> <span class="n">yR</span><span class="p">,</span> <span class="n">zR</span>
+    <span class="s2">&quot;vcs&quot;</span><span class="p">:</span> <span class="s2">&quot;vertical coordinate system&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">local:</th><td class="field-body"><p class="first">type &#8220;local&#8221; can be used to locate local coordinates in situations where one only has
+the (longitude, latitude) of a point on local coordinate system and the orientation
+of the local axis relative to geographic North.  Internally an Oblique Stereographic 
+projection is created with an origin at the defined origin point.</p>
+<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>   <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;local&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;lon_lat&quot;</span><span class="p">:</span> <span class="p">(</span><span class="n">lon</span><span class="p">,</span> <span class="n">lat</span><span class="p">)</span> <span class="n">required</span> <span class="n">longitude</span><span class="p">,</span> <span class="n">latitude</span> <span class="n">of</span> <span class="s2">&quot;origin&quot;</span><span class="p">,</span> <span class="ow">in</span> <span class="n">degrees</span>
+    <span class="s2">&quot;origin&quot;</span><span class="p">:</span> <span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">)</span> <span class="n">location</span> <span class="n">of</span> <span class="s2">&quot;lon_lat&quot;</span> <span class="n">on</span> <span class="n">the</span> <span class="n">local</span> <span class="n">coordinate</span> <span class="n">system</span><span class="p">,</span> <span class="n">default</span> <span class="ow">is</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+    <span class="s2">&quot;azimuth&quot;</span><span class="p">:</span> <span class="n">azimuth</span> <span class="n">of</span> <span class="n">rotation</span> <span class="n">of</span> <span class="n">local</span> <span class="n">axiz</span> <span class="n">relative</span> <span class="n">to</span> <span class="n">North</span><span class="o">.</span>
+    <span class="s2">&quot;elevation&quot;</span><span class="p">:</span> <span class="n">elevation</span> <span class="n">of</span> <span class="n">the</span> <span class="n">origin</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">vertical</span> <span class="n">coordinate</span> <span class="n">system</span><span class="p">,</span> <span class="n">default</span> <span class="ow">is</span> <span class="mf">0.</span>
+    <span class="s2">&quot;datum&quot;</span><span class="p">:</span> <span class="n">datum</span><span class="p">,</span> <span class="n">default</span> <span class="ow">is</span> <span class="s2">&quot;WGS 84&quot;</span>        
+    <span class="s2">&quot;local_datum&quot;</span><span class="p">:</span> <span class="n">local</span> <span class="n">datum</span> <span class="n">transform</span><span class="p">,</span> <span class="n">default</span> <span class="ow">is</span> <span class="n">the</span> <span class="n">default</span> <span class="k">for</span> <span class="n">the</span> <span class="n">datum</span>
+    <span class="s2">&quot;scale_factor&quot;</span><span class="p">:</span> <span class="n">local</span> <span class="n">scale</span> <span class="n">factor</span><span class="p">,</span> <span class="n">default</span> <span class="ow">is</span> <span class="mf">0.9996</span> <span class="n">to</span> <span class="n">be</span> <span class="n">similar</span> <span class="n">to</span> <span class="n">UTM</span> <span class="n">locally</span>
+    <span class="s2">&quot;vcs&quot;</span><span class="p">:</span> <span class="s2">&quot;vertical coordinate system&quot;</span> <span class="n">default</span> <span class="ow">is</span> <span class="n">undefined</span><span class="o">.</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Example:</th><td class="field-body">cs = geosoft.gxpy.Coordinate_system({&#8216;type&#8217;: &#8216;local&#8217;, &#8216;lon_lat&#8217;: (-96, 43), &#8216;azimuth&#8217;: 25})</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">EPSG:</th><td class="field-body"><p class="first">(<a class="reference external" href="http://www.epsg.org/">http://www.epsg.org/</a>)</p>
+<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>   <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;EPSG&quot;</span>
+    <span class="s2">&quot;code&quot;</span><span class="p">:</span> <span class="n">EPSG_code_number</span>
+    <span class="s2">&quot;orientation&quot;</span><span class="p">:</span> <span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">z0</span><span class="p">,</span> <span class="n">xR</span><span class="p">,</span> <span class="n">yR</span><span class="p">,</span> <span class="n">zR</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">ESRI:</th><td class="field-body"><p class="first">(<a class="reference external" href="http://webhelp.esri.com/arcgisserver/9.3/java/index.htm#geodatabases/the_ogc-607957855.htm">http://webhelp.esri.com/arcgisserver/9.3/java/index.htm#geodatabases/the_ogc-607957855.htm</a>)</p>
+<div class="code last highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>   <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;ESRI&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;wkt&quot;</span><span class="p">:</span> <span class="n">wkt</span> <span class="nb">format</span> <span class="n">string</span><span class="p">,</span> <span class="n">starts</span> <span class="k">with</span> <span class="s2">&quot;PROJCS[&quot;</span> <span class="ow">or</span> <span class="s2">&quot;GEOGCS[&quot;</span>
+    <span class="s2">&quot;orientation&quot;</span><span class="p">:</span> <span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">z0</span><span class="p">,</span> <span class="n">xR</span><span class="p">,</span> <span class="n">yR</span><span class="p">,</span> <span class="n">zR</span>
+    <span class="s2">&quot;vcs&quot;</span><span class="p">:</span> <span class="s2">&quot;vertical coordinate system&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.2: </span>supercedes <cite>ipj</cite> module.</p>
+</div>
+<dl class="method">
+<dt id="geosoft.gxpy.coordinate_system.Coordinate_system.coordinate_dict">
+<code class="descname">coordinate_dict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.coordinate_system.Coordinate_system.coordinate_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns &#8220;Geosoft&#8221; dictionary of coordinate system attributes.</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.2.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxpy.coordinate_system.Coordinate_system.cs_name">
+<code class="descname">cs_name</code><span class="sig-paren">(</span><em>what=None</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.coordinate_system.Coordinate_system.cs_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return requested name.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>what</strong> &#8211; <div class="line-block">
+<div class="line">NAME</div>
+<div class="line">NAME_HCS</div>
+<div class="line">NAME_VCS</div>
+<div class="line">NAME_HCS_VCS</div>
+<div class="line">NAME_PROJECTION</div>
+<div class="line">NAME_METHOD</div>
+<div class="line">NAME_DATUM</div>
+<div class="line">NAME_ELLIPSOID</div>
+<div class="line">NAME_LDATUM</div>
+<div class="line">NAME_UNIT</div>
+<div class="line">NAME_UNIT_FULL</div>
+<div class="line">NAME_TYPE</div>
+<div class="line">NAME_LLDATUM</div>
+<div class="line">NAME_METHOD_PARMS</div>
+<div class="line">NAME_METHOD_LABEL</div>
+<div class="line">NAME_DATUM_PARMS</div>
+<div class="line">NAME_LDATUM_PARMS</div>
+<div class="line">NAME_GEOID</div>
+<div class="line">NAME_LDATUMDESCRIPTION</div>
+<div class="line">NAME_METHOD_PARMS_NATIVE</div>
+<div class="line">NAME_ORIENTATION</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<p>If &#8216;what&#8217; is not specified, gxipj.NAME assumed, which returns the coordinate system display name.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The name requested</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.2.</span></p>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxpy.coordinate_system.Coordinate_system.esri_wkt">
+<code class="descname">esri_wkt</code><a class="headerlink" href="#geosoft.gxpy.coordinate_system.Coordinate_system.esri_wkt" title="Permalink to this definition">¶</a></dt>
+<dd><p>ESRI Well-Known-Text (wkt) format coordinate string</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.3.</span></p>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxpy.coordinate_system.Coordinate_system.gxf">
+<code class="descname">gxf</code><a class="headerlink" href="#geosoft.gxpy.coordinate_system.Coordinate_system.gxf" title="Permalink to this definition">¶</a></dt>
+<dd><p>The GXF string list from ipj. (<a class="reference external" href="http://www.geosoft.com/resources/goto/GXF-Grid-eXchange-File">http://www.geosoft.com/resources/goto/GXF-Grid-eXchange-File</a>)</p>
+<p>The first string (gxf[0]) is the coordinate system name in the form:</p>
+<blockquote>
+<div><cite>datum / projection &lt;x0,y0,z0,rx,ry,rz&gt; [vcs]</cite></div></blockquote>
+<p>The orientation parameters are between the &#8216;&lt;&gt;&#8217;, and will be omitted if all 0.</p>
+<p>&#8216;vcs&#8217; is the vertical coordinate system, and is omitted if the vcs is undefined.</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.2.</span></p>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxpy.coordinate_system.Coordinate_system.gxipj">
+<code class="descname">gxipj</code><a class="headerlink" href="#geosoft.gxpy.coordinate_system.Coordinate_system.gxipj" title="Permalink to this definition">¶</a></dt>
+<dd><p><a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXIPJ</span></code></a> instance</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxpy.coordinate_system.Coordinate_system.hcs">
+<code class="descname">hcs</code><a class="headerlink" href="#geosoft.gxpy.coordinate_system.Coordinate_system.hcs" title="Permalink to this definition">¶</a></dt>
+<dd><p>horizontal coordinate system name</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxpy.coordinate_system.Coordinate_system.is_oriented">
+<code class="descname">is_oriented</code><a class="headerlink" href="#geosoft.gxpy.coordinate_system.Coordinate_system.is_oriented" title="Permalink to this definition">¶</a></dt>
+<dd><p>True if the coordinate system has an orientation.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxpy.coordinate_system.Coordinate_system.json">
+<code class="descname">json</code><a class="headerlink" href="#geosoft.gxpy.coordinate_system.Coordinate_system.json" title="Permalink to this definition">¶</a></dt>
+<dd><p>JSON formatted coordinate system string.</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.3.</span></p>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxpy.coordinate_system.Coordinate_system.metres_per_unit">
+<code class="descname">metres_per_unit</code><a class="headerlink" href="#geosoft.gxpy.coordinate_system.Coordinate_system.metres_per_unit" title="Permalink to this definition">¶</a></dt>
+<dd><p>the number metres per distance unit of the coordinate system.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxpy.coordinate_system.Coordinate_system.name">
+<code class="descname">name</code><a class="headerlink" href="#geosoft.gxpy.coordinate_system.Coordinate_system.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>coordinate system name as &#8216;datum / projection &lt;orientation&gt; [vcs]&#8217;</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxpy.coordinate_system.Coordinate_system.oriented_from_xyz">
+<code class="descname">oriented_from_xyz</code><span class="sig-paren">(</span><em>xyz</em>, <em>column_ordered=False</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.coordinate_system.Coordinate_system.oriented_from_xyz" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return oriented (x, y, z) coordinates from true base (x, y, z) coordinates.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>xyz</strong> &#8211; (x, y, z) or iterable</li>
+<li><strong>column_ordered</strong> &#8211; if xyz is iterable, and this is True, the data is assumed to be
+column ordered and the results are returned column ordered.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">(x, y, z) in un-oriented space</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.2.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxpy.coordinate_system.Coordinate_system.same_as">
+<code class="descname">same_as</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.coordinate_system.Coordinate_system.same_as" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return True if both coordinate systems (HCS and VCS) are the same.</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.2.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxpy.coordinate_system.Coordinate_system.same_hcs">
+<code class="descname">same_hcs</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.coordinate_system.Coordinate_system.same_hcs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return True if the HCS are the same.</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.2.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxpy.coordinate_system.Coordinate_system.same_vcs">
+<code class="descname">same_vcs</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.coordinate_system.Coordinate_system.same_vcs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return True if the VCS are the same.</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.2.</span></p>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxpy.coordinate_system.Coordinate_system.units_name">
+<code class="descname">units_name</code><a class="headerlink" href="#geosoft.gxpy.coordinate_system.Coordinate_system.units_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>name of the distance units (abbreviation)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxpy.coordinate_system.Coordinate_system.vcs">
+<code class="descname">vcs</code><a class="headerlink" href="#geosoft.gxpy.coordinate_system.Coordinate_system.vcs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Vertical coordinate system name.  Can be set.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxpy.coordinate_system.Coordinate_system.xyz_from_oriented">
+<code class="descname">xyz_from_oriented</code><span class="sig-paren">(</span><em>xyz</em>, <em>column_ordered=False</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.coordinate_system.Coordinate_system.xyz_from_oriented" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return true base (x, y, z) coordinates from oriented (x, y, z) coordinates.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>xyz</strong> &#8211; (x, y, z) or irerable</li>
+<li><strong>column_ordered</strong> &#8211; if xyz is iterable, and this is True, the data is assumed to be
+column ordered and the results are returned column ordered.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">(x, y, z) in oriented space</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.2.</span></p>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="geosoft.gxpy.coordinate_system.Coordinate_translate">
+<em class="property">class </em><code class="descclassname">geosoft.gxpy.coordinate_system.</code><code class="descname">Coordinate_translate</code><span class="sig-paren">(</span><em>cs_from</em>, <em>cs_to</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.coordinate_system.Coordinate_translate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>Class to reproject coordinates between different coordinate systems.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Params cs_from:</th><td class="field-body">from <a class="reference internal" href="#geosoft.gxpy.coordinate_system.Coordinate_system" title="geosoft.gxpy.coordinate_system.Coordinate_system"><code class="xref py py-class docutils literal"><span class="pre">Coordinate_system</span></code></a></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Params cs_to:</th><td class="field-body">to <a class="reference internal" href="#geosoft.gxpy.coordinate_system.Coordinate_system" title="geosoft.gxpy.coordinate_system.Coordinate_system"><code class="xref py py-class docutils literal"><span class="pre">Coordinate_system</span></code></a></td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.2.</span></p>
+</div>
+<dl class="method">
+<dt id="geosoft.gxpy.coordinate_system.Coordinate_translate.convert">
+<code class="descname">convert</code><span class="sig-paren">(</span><em>xyz</em>, <em>in_place=False</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.coordinate_system.Coordinate_translate.convert" title="Permalink to this definition">¶</a></dt>
+<dd><p>Project data in array in which first columns are x,y or x,y,z.</p>
+<p>Coordinates are reprojected in-place.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>xyz</strong> &#8211; numply shape (n,2) or (n,3+), or list, or a single (x, y, z) tuple.
+Array dimension (n,2) for (x, y), (n,3+) for x,y,z.
+Only numpy arrays may have dimensions above 3.</li>
+<li><strong>in_place</strong> &#8211; if True, numpy array data is converted in-place.  Ignored for list or tuple</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Example:</th><td class="field-body"><p class="first">Given an array shape (500,6), which represents 500 data records with 6 columns
+in which the first 3 columns are coordinates X, Y and Z.</p>
+<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;float&#39;</span><span class="p">)</span> <span class="c1">#then fill the array with some data</span>
+
+<span class="n">xy_only</span> <span class="o">=</span> <span class="n">pj</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="n">data</span><span class="p">[:,</span><span class="mi">2</span><span class="p">])</span>     <span class="c1">#transform x,y</span>
+<span class="n">xyz_only</span> <span class="o">=</span> <span class="n">pj</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="n">data</span><span class="p">[:,</span><span class="mi">3</span><span class="p">])</span>    <span class="c1">#transform x,y and z</span>
+<span class="nb">all</span> <span class="o">=</span> <span class="n">pj</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>              <span class="c1">#transform x,y and z with data returned</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">projected data in the same form as passed (numpy array, list, or (x,y,z))</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.2.</span></p>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.coordinate_system.LIST_COORDINATESYSTEM">
+<code class="descclassname">geosoft.gxpy.coordinate_system.</code><code class="descname">LIST_COORDINATESYSTEM</code><em class="property"> = 0</em><a class="headerlink" href="#geosoft.gxpy.coordinate_system.LIST_COORDINATESYSTEM" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.coordinate_system.LIST_DATUM">
+<code class="descclassname">geosoft.gxpy.coordinate_system.</code><code class="descname">LIST_DATUM</code><em class="property"> = 1</em><a class="headerlink" href="#geosoft.gxpy.coordinate_system.LIST_DATUM" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.coordinate_system.LIST_LOCALDATUMDESCRIPTION">
+<code class="descclassname">geosoft.gxpy.coordinate_system.</code><code class="descname">LIST_LOCALDATUMDESCRIPTION</code><em class="property"> = 4</em><a class="headerlink" href="#geosoft.gxpy.coordinate_system.LIST_LOCALDATUMDESCRIPTION" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.coordinate_system.LIST_LOCALDATUMNAME">
+<code class="descclassname">geosoft.gxpy.coordinate_system.</code><code class="descname">LIST_LOCALDATUMNAME</code><em class="property"> = 5</em><a class="headerlink" href="#geosoft.gxpy.coordinate_system.LIST_LOCALDATUMNAME" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.coordinate_system.LIST_PROJECTION">
+<code class="descclassname">geosoft.gxpy.coordinate_system.</code><code class="descname">LIST_PROJECTION</code><em class="property"> = 2</em><a class="headerlink" href="#geosoft.gxpy.coordinate_system.LIST_PROJECTION" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.coordinate_system.LIST_UNITS">
+<code class="descclassname">geosoft.gxpy.coordinate_system.</code><code class="descname">LIST_UNITS</code><em class="property"> = 3</em><a class="headerlink" href="#geosoft.gxpy.coordinate_system.LIST_UNITS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.coordinate_system.LIST_UNITSDESCRIPTION">
+<code class="descclassname">geosoft.gxpy.coordinate_system.</code><code class="descname">LIST_UNITSDESCRIPTION</code><em class="property"> = 6</em><a class="headerlink" href="#geosoft.gxpy.coordinate_system.LIST_UNITSDESCRIPTION" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.coordinate_system.NAME">
+<code class="descclassname">geosoft.gxpy.coordinate_system.</code><code class="descname">NAME</code><em class="property"> = None</em><a class="headerlink" href="#geosoft.gxpy.coordinate_system.NAME" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.coordinate_system.NAME_DATUM">
+<code class="descclassname">geosoft.gxpy.coordinate_system.</code><code class="descname">NAME_DATUM</code><em class="property"> = 3</em><a class="headerlink" href="#geosoft.gxpy.coordinate_system.NAME_DATUM" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.coordinate_system.NAME_DATUM_PARMS">
+<code class="descclassname">geosoft.gxpy.coordinate_system.</code><code class="descname">NAME_DATUM_PARMS</code><em class="property"> = 12</em><a class="headerlink" href="#geosoft.gxpy.coordinate_system.NAME_DATUM_PARMS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.coordinate_system.NAME_ELLIPSOID">
+<code class="descclassname">geosoft.gxpy.coordinate_system.</code><code class="descname">NAME_ELLIPSOID</code><em class="property"> = 4</em><a class="headerlink" href="#geosoft.gxpy.coordinate_system.NAME_ELLIPSOID" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.coordinate_system.NAME_GEOID">
+<code class="descclassname">geosoft.gxpy.coordinate_system.</code><code class="descname">NAME_GEOID</code><em class="property"> = 14</em><a class="headerlink" href="#geosoft.gxpy.coordinate_system.NAME_GEOID" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.coordinate_system.NAME_HCS">
+<code class="descclassname">geosoft.gxpy.coordinate_system.</code><code class="descname">NAME_HCS</code><em class="property"> = 0</em><a class="headerlink" href="#geosoft.gxpy.coordinate_system.NAME_HCS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.coordinate_system.NAME_HCS_VCS">
+<code class="descclassname">geosoft.gxpy.coordinate_system.</code><code class="descname">NAME_HCS_VCS</code><em class="property"> = -2</em><a class="headerlink" href="#geosoft.gxpy.coordinate_system.NAME_HCS_VCS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.coordinate_system.NAME_LDATUM">
+<code class="descclassname">geosoft.gxpy.coordinate_system.</code><code class="descname">NAME_LDATUM</code><em class="property"> = 5</em><a class="headerlink" href="#geosoft.gxpy.coordinate_system.NAME_LDATUM" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.coordinate_system.NAME_LDATUMDESCRIPTION">
+<code class="descclassname">geosoft.gxpy.coordinate_system.</code><code class="descname">NAME_LDATUMDESCRIPTION</code><em class="property"> = 15</em><a class="headerlink" href="#geosoft.gxpy.coordinate_system.NAME_LDATUMDESCRIPTION" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.coordinate_system.NAME_LDATUM_PARMS">
+<code class="descclassname">geosoft.gxpy.coordinate_system.</code><code class="descname">NAME_LDATUM_PARMS</code><em class="property"> = 13</em><a class="headerlink" href="#geosoft.gxpy.coordinate_system.NAME_LDATUM_PARMS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.coordinate_system.NAME_LLDATUM">
+<code class="descclassname">geosoft.gxpy.coordinate_system.</code><code class="descname">NAME_LLDATUM</code><em class="property"> = 9</em><a class="headerlink" href="#geosoft.gxpy.coordinate_system.NAME_LLDATUM" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.coordinate_system.NAME_METHOD">
+<code class="descclassname">geosoft.gxpy.coordinate_system.</code><code class="descname">NAME_METHOD</code><em class="property"> = 2</em><a class="headerlink" href="#geosoft.gxpy.coordinate_system.NAME_METHOD" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.coordinate_system.NAME_METHOD_LABEL">
+<code class="descclassname">geosoft.gxpy.coordinate_system.</code><code class="descname">NAME_METHOD_LABEL</code><em class="property"> = 11</em><a class="headerlink" href="#geosoft.gxpy.coordinate_system.NAME_METHOD_LABEL" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.coordinate_system.NAME_METHOD_PARMS">
+<code class="descclassname">geosoft.gxpy.coordinate_system.</code><code class="descname">NAME_METHOD_PARMS</code><em class="property"> = 10</em><a class="headerlink" href="#geosoft.gxpy.coordinate_system.NAME_METHOD_PARMS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.coordinate_system.NAME_METHOD_PARMS_NATIVE">
+<code class="descclassname">geosoft.gxpy.coordinate_system.</code><code class="descname">NAME_METHOD_PARMS_NATIVE</code><em class="property"> = 16</em><a class="headerlink" href="#geosoft.gxpy.coordinate_system.NAME_METHOD_PARMS_NATIVE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.coordinate_system.NAME_ORIENTATION">
+<code class="descclassname">geosoft.gxpy.coordinate_system.</code><code class="descname">NAME_ORIENTATION</code><em class="property"> = 17</em><a class="headerlink" href="#geosoft.gxpy.coordinate_system.NAME_ORIENTATION" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.coordinate_system.NAME_PROJECTION">
+<code class="descclassname">geosoft.gxpy.coordinate_system.</code><code class="descname">NAME_PROJECTION</code><em class="property"> = 1</em><a class="headerlink" href="#geosoft.gxpy.coordinate_system.NAME_PROJECTION" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.coordinate_system.NAME_TYPE">
+<code class="descclassname">geosoft.gxpy.coordinate_system.</code><code class="descname">NAME_TYPE</code><em class="property"> = 8</em><a class="headerlink" href="#geosoft.gxpy.coordinate_system.NAME_TYPE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.coordinate_system.NAME_UNIT">
+<code class="descclassname">geosoft.gxpy.coordinate_system.</code><code class="descname">NAME_UNIT</code><em class="property"> = 6</em><a class="headerlink" href="#geosoft.gxpy.coordinate_system.NAME_UNIT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.coordinate_system.NAME_UNIT_FULL">
+<code class="descclassname">geosoft.gxpy.coordinate_system.</code><code class="descname">NAME_UNIT_FULL</code><em class="property"> = 7</em><a class="headerlink" href="#geosoft.gxpy.coordinate_system.NAME_UNIT_FULL" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.coordinate_system.NAME_VCS">
+<code class="descclassname">geosoft.gxpy.coordinate_system.</code><code class="descname">NAME_VCS</code><em class="property"> = -1</em><a class="headerlink" href="#geosoft.gxpy.coordinate_system.NAME_VCS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.coordinate_system.PARM_DATUM">
+<code class="descclassname">geosoft.gxpy.coordinate_system.</code><code class="descname">PARM_DATUM</code><em class="property"> = 'datum'</em><a class="headerlink" href="#geosoft.gxpy.coordinate_system.PARM_DATUM" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.coordinate_system.PARM_LOCAL_DATUM">
+<code class="descclassname">geosoft.gxpy.coordinate_system.</code><code class="descname">PARM_LOCAL_DATUM</code><em class="property"> = 'datumtrf'</em><a class="headerlink" href="#geosoft.gxpy.coordinate_system.PARM_LOCAL_DATUM" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.coordinate_system.PARM_PROJECTION">
+<code class="descclassname">geosoft.gxpy.coordinate_system.</code><code class="descname">PARM_PROJECTION</code><em class="property"> = 'transform'</em><a class="headerlink" href="#geosoft.gxpy.coordinate_system.PARM_PROJECTION" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.coordinate_system.PARM_UNITS">
+<code class="descclassname">geosoft.gxpy.coordinate_system.</code><code class="descname">PARM_UNITS</code><em class="property"> = 'units'</em><a class="headerlink" href="#geosoft.gxpy.coordinate_system.PARM_UNITS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="geosoft.gxpy.coordinate_system.Wkt">
+<em class="property">class </em><code class="descclassname">geosoft.gxpy.coordinate_system.</code><code class="descname">Wkt</code><span class="sig-paren">(</span><em>wkt</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.coordinate_system.Wkt" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>Helper class to parse WKT-formatted spatial reference strings.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>wkt</strong> &#8211; wkt (well-known text) string that describes a coordinate system.</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.2.</span></p>
+</div>
+<dl class="method">
+<dt id="geosoft.gxpy.coordinate_system.Wkt.find_key">
+<code class="descname">find_key</code><span class="sig-paren">(</span><em>k</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.coordinate_system.Wkt.find_key" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the name and list of items for a key</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>k</strong> &#8211; the key to look for in the wkt</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">name (&#8216;&#8217; if not found), list of parameters, ([] if no items)</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.2.</span></p>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxpy.coordinate_system.Wkt.name">
+<code class="descname">name</code><a class="headerlink" href="#geosoft.gxpy.coordinate_system.Wkt.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the ESRI coordinate system WKT string</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.2.</span></p>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="geosoft.gxpy.coordinate_system.find_key">
+<code class="descclassname">geosoft.gxpy.coordinate_system.</code><code class="descname">find_key</code><span class="sig-paren">(</span><em>wkt</em>, <em>k</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.coordinate_system.find_key" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find a key in the wkt, return it&#8217;s name and items.</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.2.</span></p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="geosoft.gxpy.coordinate_system.hcs_orient_vcs_from_name">
+<code class="descclassname">geosoft.gxpy.coordinate_system.</code><code class="descname">hcs_orient_vcs_from_name</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.coordinate_system.hcs_orient_vcs_from_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Split a full coordinate system name into its components. A name has the form &#8220;hcs &lt;orient&gt; [vcs]&#8221;
+:param name:
+:returns: hcs, orient, vcs</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.2.</span></p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="geosoft.gxpy.coordinate_system.list_from_wktsrs">
+<code class="descclassname">geosoft.gxpy.coordinate_system.</code><code class="descname">list_from_wktsrs</code><span class="sig-paren">(</span><em>wkt</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.coordinate_system.list_from_wktsrs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a list from a wkt spatial reference string.</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.2.</span></p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="geosoft.gxpy.coordinate_system.name_from_hcs_orient_vcs">
+<code class="descclassname">geosoft.gxpy.coordinate_system.</code><code class="descname">name_from_hcs_orient_vcs</code><span class="sig-paren">(</span><em>hcs</em>, <em>orient=None</em>, <em>vcs=None</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.coordinate_system.name_from_hcs_orient_vcs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Construct a coordinate system name from an hcs, orientation and vcs.  If orient or vcs are None or
+empty, the name will not include these parts.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>hcs</strong> &#8211; horizontal coordinate system string</li>
+<li><strong>orient</strong> &#8211; orientation string</li>
+<li><strong>vcs</strong> &#8211; vertical coordinate system string</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">&#8220;hcs &lt;orient&gt; [vcs]&#8221;</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.2.</span></p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="geosoft.gxpy.coordinate_system.name_list">
+<code class="descclassname">geosoft.gxpy.coordinate_system.</code><code class="descname">name_list</code><span class="sig-paren">(</span><em>what</em>, <em>datum_filter=''</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.coordinate_system.name_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a list of coordinate system names</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>what</strong> &#8211; <div class="line-block">
+<div class="line">LIST_COORDINATESYSTEM</div>
+<div class="line">LIST_DATUM</div>
+<div class="line">LIST_PROJECTION</div>
+<div class="line">LIST_UNITS</div>
+<div class="line">LIST_LOCALDATUMDESCRIPTION</div>
+<div class="line">LIST_LOCALDATUMNAME</div>
+<div class="line">LIST_UNITSDESCRIPTION</div>
+</div>
+</li>
+<li><strong>datum_filter</strong> &#8211; name of a datum to filter results</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">sorted list of names</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.2.</span></p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="geosoft.gxpy.coordinate_system.parameter_exists">
+<code class="descclassname">geosoft.gxpy.coordinate_system.</code><code class="descname">parameter_exists</code><span class="sig-paren">(</span><em>what</em>, <em>key</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.coordinate_system.parameter_exists" title="Permalink to this definition">¶</a></dt>
+<dd><p>Test if a parameter set exists in a coordinate system table.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>what</strong> &#8211; see <a class="reference internal" href="#geosoft.gxpy.coordinate_system.parameters" title="geosoft.gxpy.coordinate_system.parameters"><code class="xref py py-func docutils literal"><span class="pre">parameters()</span></code></a></li>
+<li><strong>key</strong> &#8211; parameter key</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">True if table/key exists</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.2.</span></p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="geosoft.gxpy.coordinate_system.parameters">
+<code class="descclassname">geosoft.gxpy.coordinate_system.</code><code class="descname">parameters</code><span class="sig-paren">(</span><em>what</em>, <em>key</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.coordinate_system.parameters" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a dictionary of parameters for a coordinate system item.  Parameters are maintained in 
+csv coordinate system table files in the Geosoft Desktop Applications <cite>csv</cite> folder.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>what</strong> &#8211; <div class="line-block">
+<div class="line">PARM_DATUM (from <cite>datum.csv</cite>)</div>
+<div class="line">PARM_PROJECTION (from <cite>transform.csv</cite>)</div>
+<div class="line">PARM_UNITS (from <cite>units.csv</cite>)</div>
+<div class="line">PARM_LOCAL_DATUM (from <cite>datumtrf.csv</cite>)</div>
+</div>
+</li>
+<li><strong>key</strong> &#8211; parameter key to find and return</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><a class="reference internal" href="#geosoft.gxpy.coordinate_system.CSException" title="geosoft.gxpy.coordinate_system.CSException"><strong>CSException</strong></a> &#8211; if table or key not found.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.2.</span></p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="geosoft.gxpy.coordinate_system.wkt_vcs">
+<code class="descclassname">geosoft.gxpy.coordinate_system.</code><code class="descname">wkt_vcs</code><span class="sig-paren">(</span><em>vcs</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.coordinate_system.wkt_vcs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compose a wkt VERTCS block from a Geosoft vcs string.</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.2.</span></p>
+</div>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.0b0 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2017, Geosoft Inc.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
+    </div>
+<div class="footer">This page uses <a href="http://analytics.google.com/">
+Google Analytics</a> to collect statistics. You can disable it by blocking
+the JavaScript coming from www.google-analytics.com.
+<script type="text/javascript">
+  (function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ?
+              'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+  })();
+</script>
+</div>
+
+  </body>
+</html>

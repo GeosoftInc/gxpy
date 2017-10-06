@@ -1,0 +1,577 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>GXDGW class &#8212; Geosoft GX Python API 9.3.0b0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/maki.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '9.3.0b0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+ 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-87443115-1']);
+  _gaq.push(['_trackPageview']);
+</script>
+
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.0b0 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">GXDGW class</a><ul>
+<li><a class="reference internal" href="#dgw-object-constants">DGW_OBJECT constants</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/GXDGW.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="gxdgw-class">
+<span id="gxdgw"></span><h1>GXDGW class<a class="headerlink" href="#gxdgw-class" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="geosoft.gxapi.GXDGW">
+<em class="property">class </em><code class="descclassname">geosoft.gxapi.</code><code class="descname">GXDGW</code><a class="headerlink" href="#geosoft.gxapi.GXDGW" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Provides</span> <span class="n">access</span> <span class="n">to</span> <span class="n">dialog</span> <span class="n">boxes</span> <span class="k">for</span> <span class="n">user</span> <span class="n">I</span><span class="o">/</span><span class="n">O</span><span class="o">.</span> <span class="n">You</span> <span class="n">can</span>
+<span class="n">use</span> <span class="n">this</span> <span class="k">class</span> <span class="nc">to</span> <span class="n">store</span> <span class="n">to</span><span class="p">,</span> <span class="ow">or</span> <span class="n">retrieve</span> <span class="n">information</span> <span class="kn">from</span>
+<span class="nn">the</span> <span class="n">current</span> <span class="n">workspace</span> <span class="n">parameter</span> <span class="n">block</span> <span class="n">via</span> <span class="n">dialog</span> <span class="n">boxes</span>
+</pre></div>
+</div>
+<p><strong>Note:</strong></p>
+<pre class="literal-block">
+Setting Fonts in GX dialogs.
+
+By default, &quot;new look&quot; GX dialogs uses the &quot;Tahoma&quot; font. This font can be
+overridden by updating the application settings. This can be done programmatically
+using the <a class="reference internal" href="GXSYS.html#geosoft.gxapi.GXSYS.global_set" title="geosoft.gxapi.GXSYS.global_set"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXSYS.global_set()</span></code></a> function using the following parameters:
+
+MONTAJ.GX_FONT=&quot;Font_name&quot;
+
+This sets the default font to &quot;Font_name&quot;. It applies to text in all
+components of the dialog.
+
+Additional customization of individual components can be accomplished
+using the following parameters:
+
+MONTAJ.GX_CAPTION_FONT=&quot;Caption_Font&quot;: Font for the field captions (labels)
+MONTAJ.GX_BUTTON_FONT=&quot;Button_Font&quot;  : Font for buttons, including the &quot;Browse&quot;
+                                button
+MONTAJ.GX_TITLE_FONT=&quot;Title_Font&quot;    : Font for special titles (see <a class="reference internal" href="#geosoft.gxapi.GXDGW.set_title" title="geosoft.gxapi.GXDGW.set_title"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXDGW.set_title()</span></code></a>).
+
+The font used for the text in edit windows remains the default, or the
+value specified using MONTAJ.GX_FONT.
+
+Note that the &quot;OK&quot; button, and the Title, use &quot;Bold&quot; versions of the
+specified font. If the bolded version does not exist as a normal font,
+then the operating system may provide its own alternative which may not
+appear the same as you expect.
+
+Before version 6.2. there used to be a parameter, MONTAJ.GX_CHARSET, that
+affected characters above ASCII 127. 6.2. introduced Unicode in the core
+montaj engine that eliminated the need for such a setting. All strings
+on the GX API level are encoded in UTF8 during runtime which makes it possible
+to represent all possible characters without using character sets.
+</pre>
+<dl class="staticmethod">
+<dt id="geosoft.gxapi.GXDGW.create">
+<em class="property">static </em><code class="descname">create</code><span class="sig-paren">(</span><em>(str)arg1</em><span class="sig-paren">)</span> &rarr; GXDGW:<a class="headerlink" href="#geosoft.gxapi.GXDGW.create" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="n">method</span> <span class="n">creates</span> <span class="n">a</span> <span class="n">Dialogue</span> <span class="n">window</span> <span class="kn">from</span> <span class="nn">a</span> <span class="n">specified</span>
+<span class="n">resource</span><span class="o">.</span> <span class="n">The</span> <span class="n">Resource</span> <span class="ow">is</span> <span class="n">loaded</span> <span class="n">into</span> <span class="n">memory</span> <span class="n">but</span> <span class="ow">not</span> <span class="n">displayed</span><span class="o">.</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>str</em>) &#8211; Name of the Window Resource to use</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Handle to the DGW object.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXDGW" title="geosoft.gxapi.GXDGW"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXDGW</span></code></a></td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.0.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXDGW.get_info_meta">
+<code class="descname">get_info_meta</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(int)arg2</em>, <em>(GXMETA)arg3</em>, <em>(int)arg4</em>, <em>(int)arg5</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXDGW.get_info_meta" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Copies</span> <span class="n">the</span> <span class="n">Dialogue</span> <span class="n">information</span> <span class="n">to</span> <span class="n">a</span> <span class="n">META</span> <span class="n">attribute</span><span class="o">.</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arg1</strong> (<em>int</em>) &#8211; Dialogue Object</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#dgw-object"><span class="std std-ref">DGW_OBJECT constants</span></a></li>
+<li><strong>arg3</strong> (<a class="reference internal" href="GXMETA.html#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXMETA</span></code></a>) &#8211; META</li>
+<li><strong>arg4</strong> (<em>int</em>) &#8211; Object</li>
+<li><strong>arg5</strong> (<em>int</em>) &#8211; Attribute</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.0.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXDGW.get_info_sys">
+<code class="descname">get_info_sys</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(int)arg2</em>, <em>(str)arg3</em>, <em>(str)arg4</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXDGW.get_info_sys" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="n">method</span> <span class="n">uses</span> <span class="n">the</span> <span class="n">information</span> <span class="ow">in</span> <span class="n">a</span> <span class="n">Dialogue</span> <span class="n">box</span> <span class="n">to</span>
+<span class="nb">set</span> <span class="n">a</span> <span class="n">SYS</span> <span class="n">variable</span><span class="o">.</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arg1</strong> (<em>int</em>) &#8211; Dialogue Object</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#dgw-object"><span class="std std-ref">DGW_OBJECT constants</span></a></li>
+<li><strong>arg3</strong> (<em>str</em>) &#8211; Group name of the Variable</li>
+<li><strong>arg4</strong> (<em>str</em>) &#8211; Variable name</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.0.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXDGW.get_list">
+<code class="descname">get_list</code><span class="sig-paren">(</span><em>(int)arg1</em><span class="sig-paren">)</span> &rarr; GXLST:<a class="headerlink" href="#geosoft.gxapi.GXDGW.get_list" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="n">method</span> <span class="n">retrieves</span> <span class="n">the</span> <span class="nb">list</span> <span class="p">(</span><span class="n">LST</span><span class="p">)</span> <span class="nb">object</span> <span class="n">associated</span>
+<span class="k">with</span> <span class="n">a</span> <span class="n">Dialogue</span> <span class="nb">object</span><span class="o">.</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>int</em>) &#8211; Dialogue Object</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">The List Object</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXLST</span></code></a></td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.0.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXDGW.gt_info">
+<code class="descname">gt_info</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(int)arg2</em>, <em>(str_ref)arg3</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXDGW.gt_info" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="n">method</span> <span class="n">fills</span> <span class="n">the</span> <span class="n">specified</span> <span class="n">string</span> <span class="k">with</span> <span class="n">the</span> <span class="n">text</span> <span class="kn">from</span>
+<span class="nn">the</span> <span class="n">text</span> <span class="nb">object</span> <span class="n">specified</span><span class="o">.</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arg1</strong> (<em>int</em>) &#8211; Handle to the TEXT Object</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#dgw-object"><span class="std std-ref">DGW_OBJECT constants</span></a></li>
+<li><strong>arg3</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; Where to place the String</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.0.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXDGW.is_null">
+<code class="descname">is_null</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; bool<a class="headerlink" href="#geosoft.gxapi.GXDGW.is_null" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if the instance of <code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXDGW</span> <span class="pre">is</span> <span class="pre">null</span> <span class="pre">(undefined)</span></code></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if this is a null instance of <a class="reference internal" href="#geosoft.gxapi.GXDGW" title="geosoft.gxapi.GXDGW"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXDGW</span></code></a>, False otherwise.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool`</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="geosoft.gxapi.GXDGW.null">
+<em class="property">static </em><code class="descname">null</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; GXDGW<a class="headerlink" href="#geosoft.gxapi.GXDGW.null" title="Permalink to this definition">¶</a></dt>
+<dd><p>A null (undefined) instance of <a class="reference internal" href="#geosoft.gxapi.GXDGW" title="geosoft.gxapi.GXDGW"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXDGW</span></code></a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A null <a class="reference internal" href="#geosoft.gxapi.GXDGW" title="geosoft.gxapi.GXDGW"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXDGW</span></code></a></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXDGW" title="geosoft.gxapi.GXDGW"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXDGW</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXDGW.run_dialogue">
+<code class="descname">run_dialogue</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXDGW.run_dialogue" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="n">method</span> <span class="n">runs</span> <span class="n">the</span> <span class="n">Dialogue</span> <span class="n">window</span><span class="o">.</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The Exit Code of the Dialogue window.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.0.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXDGW.set_info">
+<code class="descname">set_info</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(int)arg2</em>, <em>(str)arg3</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXDGW.set_info" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="n">method</span> <span class="n">sets</span> <span class="n">the</span> <span class="n">string</span> <span class="n">of</span> <span class="n">a</span> <span class="n">text</span> <span class="nb">object</span><span class="o">.</span> <span class="n">If</span> <span class="n">the</span> <span class="n">string</span>
+<span class="ow">is</span> <span class="n">too</span> <span class="n">long</span> <span class="n">it</span> <span class="n">will</span> <span class="n">be</span> <span class="n">truncated</span><span class="o">.</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arg1</strong> (<em>int</em>) &#8211; Handle to the TEXT Object</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#dgw-object"><span class="std std-ref">DGW_OBJECT constants</span></a></li>
+<li><strong>arg3</strong> (<em>str</em>) &#8211; String to set the Text To</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.0.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXDGW.set_info_meta">
+<code class="descname">set_info_meta</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(int)arg2</em>, <em>(GXMETA)arg3</em>, <em>(int)arg4</em>, <em>(int)arg5</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXDGW.set_info_meta" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="n">sets</span> <span class="n">a</span> <span class="n">text</span> <span class="nb">object</span> <span class="n">to</span> <span class="n">the</span> <span class="n">text</span> <span class="n">found</span> <span class="ow">in</span> <span class="n">a</span> <span class="n">META</span> <span class="n">attribute</span><span class="o">.</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arg1</strong> (<em>int</em>) &#8211; Dialogue Object</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#dgw-object"><span class="std std-ref">DGW_OBJECT constants</span></a></li>
+<li><strong>arg3</strong> (<a class="reference internal" href="GXMETA.html#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXMETA</span></code></a>) &#8211; META</li>
+<li><strong>arg4</strong> (<em>int</em>) &#8211; Object</li>
+<li><strong>arg5</strong> (<em>int</em>) &#8211; Attribute</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.0.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXDGW.set_info_sys">
+<code class="descname">set_info_sys</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(int)arg2</em>, <em>(str)arg3</em>, <em>(str)arg4</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXDGW.set_info_sys" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="n">sets</span> <span class="n">a</span> <span class="n">text</span> <span class="nb">object</span> <span class="n">to</span> <span class="n">the</span> <span class="n">text</span> <span class="n">found</span> <span class="ow">in</span> <span class="n">a</span> <span class="n">system</span>
+<span class="n">parameter</span> <span class="n">variable</span><span class="o">.</span> <span class="n">If</span> <span class="n">the</span> <span class="n">variable</span> <span class="n">has</span> <span class="ow">not</span> <span class="n">been</span> <span class="nb">set</span><span class="p">,</span>
+<span class="n">the</span> <span class="n">text</span> <span class="ow">is</span> <span class="ow">not</span> <span class="nb">set</span><span class="o">.</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arg1</strong> (<em>int</em>) &#8211; Dialogue Object</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#dgw-object"><span class="std std-ref">DGW_OBJECT constants</span></a></li>
+<li><strong>arg3</strong> (<em>str</em>) &#8211; Group name of the Variable</li>
+<li><strong>arg4</strong> (<em>str</em>) &#8211; Variable name</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.0.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXDGW.set_title">
+<code class="descname">set_title</code><span class="sig-paren">(</span><em>(str)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXDGW.set_title" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Changes</span> <span class="n">the</span> <span class="n">title</span> <span class="n">of</span> <span class="n">the</span> <span class="n">dialog</span><span class="o">.</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>str</em>) &#8211; Title to set</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Nothing</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">None</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.0.</span></p>
+</div>
+<p><strong>Note:</strong></p>
+<pre class="literal-block">
+A &quot;Special&quot;, additional title can be added to a dialog by using
+the following syntax:
+
+<a class="reference internal" href="#geosoft.gxapi.GXDGW.set_title" title="geosoft.gxapi.GXDGW.set_title"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXDGW.set_title()</span></code></a>(Diag, &quot;Window TitlenAdditional Title&quot;);
+
+In the title argument, a line break character 'n' is used to
+separate the parts.
+
+The window title free_appears as the title in the upper bar of the dialog.
+The additional title free_appears below this, in the main body of the
+dialog, and is separated from the rest of the fields by a horizontal
+line. It is printed in the bold version of the default font (or of the
+special font specified using the MONTAJ.GX_TITLE_FONT parameter noted
+above in &quot;Setting Fonts in GX dialogs.&quot;
+</pre>
+</dd></dl>
+
+</dd></dl>
+
+<div class="section" id="dgw-object-constants">
+<span id="dgw-object"></span><h2>DGW_OBJECT constants<a class="headerlink" href="#dgw-object-constants" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default"><div class="highlight"><pre><span></span>Dialog object defines
+INFO TYPE   EDIT   FEDIT  LEDIT  CEDIT  EBUT
+=========   =====  =====  =====  =====  =====
+LABEL       RW     RW     RW     RW     RW          R - can use GetInfo_DGW
+TEXT        RW     RW     RW     RW     .           W - can use \ :func:`geosoft.gxapi.GXDGW.set_info`\
+PATH        .      RW     .      .      .
+FILEPATH    .      RW     .      .      .
+LISTVAL     .      .      R      .      .
+LISTALIAS   .      .      RW     .      .
+</pre></div>
+</div>
+<dl class="attribute">
+<dt id="geosoft.gxapi.DGW_LABEL">
+<code class="descclassname">gxapi.</code><code class="descname">DGW_LABEL</code><em class="property"> = 0</em><a class="headerlink" href="#geosoft.gxapi.DGW_LABEL" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">text</span> <span class="n">label</span> <span class="n">tied</span> <span class="n">to</span> <span class="n">each</span> <span class="n">Dialogue</span> <span class="n">component</span><span class="o">.</span>
+</pre></div>
+</div>
+<dl class="attribute">
+<dt id="geosoft.gxapi.DGW_TEXT">
+<code class="descclassname">gxapi.</code><code class="descname">DGW_TEXT</code><em class="property"> = 1</em><a class="headerlink" href="#geosoft.gxapi.DGW_TEXT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">edit</span> <span class="n">field</span> <span class="n">text</span><span class="o">.</span>
+</pre></div>
+</div>
+<dl class="attribute">
+<dt id="geosoft.gxapi.DGW_PATH">
+<code class="descclassname">gxapi.</code><code class="descname">DGW_PATH</code><em class="property"> = 2</em><a class="headerlink" href="#geosoft.gxapi.DGW_PATH" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">file</span> <span class="n">edit</span> <span class="n">path</span><span class="o">.</span>
+</pre></div>
+</div>
+<dl class="attribute">
+<dt id="geosoft.gxapi.DGW_FILEPATH">
+<code class="descclassname">gxapi.</code><code class="descname">DGW_FILEPATH</code><em class="property"> = 3</em><a class="headerlink" href="#geosoft.gxapi.DGW_FILEPATH" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">complete</span> <span class="n">file</span> <span class="n">name</span><span class="p">,</span> <span class="n">path</span> <span class="n">included</span><span class="o">.</span>
+</pre></div>
+</div>
+<dl class="attribute">
+<dt id="geosoft.gxapi.DGW_LISTVAL">
+<code class="descclassname">gxapi.</code><code class="descname">DGW_LISTVAL</code><em class="property"> = 4</em><a class="headerlink" href="#geosoft.gxapi.DGW_LISTVAL" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">alias</span> <span class="n">value</span> <span class="n">associated</span> <span class="k">with</span> <span class="n">the</span> <span class="nb">list</span> <span class="n">entry</span><span class="o">.</span>
+</pre></div>
+</div>
+<dl class="attribute">
+<dt id="geosoft.gxapi.DGW_LISTALIAS">
+<code class="descclassname">gxapi.</code><code class="descname">DGW_LISTALIAS</code><em class="property"> = 5</em><a class="headerlink" href="#geosoft.gxapi.DGW_LISTALIAS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">text</span> <span class="n">value</span> <span class="n">associated</span> <span class="k">with</span> <span class="n">the</span> <span class="nb">list</span> <span class="n">entry</span><span class="o">.</span>
+</pre></div>
+</div>
+<dl class="attribute">
+<dt id="geosoft.gxapi.DGW_EXT">
+<code class="descclassname">gxapi.</code><code class="descname">DGW_EXT</code><em class="property"> = 7</em><a class="headerlink" href="#geosoft.gxapi.DGW_EXT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">extension</span> <span class="n">associated</span> <span class="k">with</span> <span class="n">a</span> <span class="n">filename</span> <span class="n">entry</span><span class="o">.</span>
+</pre></div>
+</div>
+<dl class="attribute">
+<dt id="geosoft.gxapi.DGW_HIDE">
+<code class="descclassname">gxapi.</code><code class="descname">DGW_HIDE</code><em class="property"> = 8</em><a class="headerlink" href="#geosoft.gxapi.DGW_HIDE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Hide</span> <span class="n">the</span> <span class="n">button</span> <span class="ow">or</span> <span class="n">entry</span> <span class="ow">and</span> <span class="n">its</span> <span class="n">label</span><span class="p">,</span> <span class="k">if</span> <span class="n">string</span> <span class="ow">is</span> <span class="ow">not</span> <span class="s2">&quot;0&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.0b0 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2017, Geosoft Inc.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
+    </div>
+<div class="footer">This page uses <a href="http://analytics.google.com/">
+Google Analytics</a> to collect statistics. You can disable it by blocking
+the JavaScript coming from www.google-analytics.com.
+<script type="text/javascript">
+  (function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ?
+              'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+  })();
+</script>
+</div>
+
+  </body>
+</html>

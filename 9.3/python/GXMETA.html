@@ -1,0 +1,1757 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>GXMETA class &#8212; Geosoft GX Python API 9.3.0b0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/maki.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '9.3.0b0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+ 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-87443115-1']);
+  _gaq.push(['_trackPageview']);
+</script>
+
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.0b0 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">GXMETA class</a><ul>
+<li><a class="reference internal" href="#h-meta-invalid-token-constant">H_META_INVALID_TOKEN constant</a></li>
+<li><a class="reference internal" href="#meta-core-attrib-constants">META_CORE_ATTRIB constants</a></li>
+<li><a class="reference internal" href="#meta-core-class-constants">META_CORE_CLASS constants</a></li>
+<li><a class="reference internal" href="#meta-core-type-constants">META_CORE_TYPE constants</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/GXMETA.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="gxmeta-class">
+<span id="gxmeta"></span><h1>GXMETA class<a class="headerlink" href="#gxmeta-class" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="geosoft.gxapi.GXMETA">
+<em class="property">class </em><code class="descclassname">geosoft.gxapi.</code><code class="descname">GXMETA</code><a class="headerlink" href="#geosoft.gxapi.GXMETA" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="n">META</span> <span class="nb">object</span> <span class="n">contains</span> <span class="n">hierarchical</span> <span class="n">organized</span> <span class="n">metadata</span>
+<span class="n">of</span> <span class="nb">any</span> <span class="nb">type</span><span class="p">,</span> <span class="n">including</span> <span class="n">other</span> <span class="n">objects</span><span class="o">.</span>  <span class="n">META</span> <span class="n">information</span>
+<span class="ow">is</span> <span class="n">organized</span> <span class="ow">in</span> <span class="n">an</span> <span class="n">XML</span><span class="o">-</span><span class="n">like</span> <span class="n">structure</span> <span class="n">based</span> <span class="n">on</span> <span class="n">a</span> <span class="n">data</span>
+<span class="n">schema</span> <span class="n">that</span> <span class="n">describes</span> <span class="n">the</span> <span class="n">data</span> <span class="n">hierarchy</span><span class="o">.</span>   <span class="n">META</span> <span class="n">objects</span>
+<span class="n">are</span> <span class="n">used</span> <span class="n">by</span> <span class="n">many</span> <span class="n">entities</span> <span class="n">that</span> <span class="n">need</span> <span class="n">to</span> <span class="n">store</span> <span class="n">metadata</span>
+<span class="n">specific</span> <span class="n">to</span> <span class="n">the</span> <span class="n">entities</span> <span class="ow">or</span> <span class="n">to</span> <span class="n">the</span> <span class="n">application</span><span class="o">.</span>
+
+<span class="n">Metadata</span> <span class="n">can</span> <span class="n">be</span> <span class="n">saved</span> <span class="ow">in</span> <span class="n">databases</span> <span class="ow">and</span> <span class="n">maps</span><span class="p">,</span> <span class="k">as</span> <span class="n">well</span> <span class="k">as</span> <span class="ow">in</span>
+<span class="n">channels</span><span class="p">,</span> <span class="n">lines</span><span class="p">,</span> <span class="n">views</span> <span class="ow">and</span> <span class="n">groups</span><span class="o">.</span>  <span class="n">Oasis</span> <span class="n">montaj</span> <span class="n">objects</span>
+<span class="n">can</span> <span class="n">be</span> <span class="n">queried</span> <span class="k">for</span> <span class="n">their</span> <span class="n">associated</span> <span class="n">metadata</span><span class="p">,</span> <span class="ow">and</span> <span class="k">if</span> <span class="n">it</span>
+<span class="n">exists</span><span class="p">,</span> <span class="n">the</span> <span class="n">metadata</span> <span class="n">can</span> <span class="n">be</span> <span class="n">retrieved</span> <span class="ow">and</span> <span class="n">utilized</span> <span class="n">by</span>
+<span class="n">other</span> <span class="n">Oasis</span> <span class="n">montaj</span> <span class="n">processes</span><span class="o">.</span>
+</pre></div>
+</div>
+<dl class="method">
+<dt id="geosoft.gxapi.GXMETA.copy">
+<code class="descname">copy</code><span class="sig-paren">(</span><em>(GXMETA)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXMETA.copy" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Copy</span> <span class="n">a</span> <span class="n">META</span> <span class="n">to</span> <span class="n">another</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<a class="reference internal" href="#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXMETA</span></code></a>) &#8211; Source META object.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Nothing</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">None</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.1.8.</span></p>
+</div>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="geosoft.gxapi.GXMETA.create">
+<em class="property">static </em><code class="descname">create</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; GXMETA:<a class="headerlink" href="#geosoft.gxapi.GXMETA.create" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Create</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">META Object</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXMETA</span></code></a></td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.8.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXMETA.create_attrib">
+<code class="descname">create_attrib</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(int)arg2</em>, <em>(int)arg3</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXMETA.create_attrib" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Create</span> <span class="n">an</span> <span class="n">attribute</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arg1</strong> (<em>str</em>) &#8211; Attribute Name</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; Parent class or <a class="reference internal" href="#meta-core-class"><span class="std std-ref">META_CORE_CLASS constants</span></a></li>
+<li><strong>arg3</strong> (<em>int</em>) &#8211; Type of Attribute or <a class="reference internal" href="#meta-core-type"><span class="std std-ref">META_CORE_TYPE constants</span></a></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">x - Attribute Token</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 6.1.0.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXMETA.create_class">
+<code class="descname">create_class</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(int)arg2</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXMETA.create_class" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Create</span> <span class="n">a</span> <span class="k">class</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arg1</strong> (<em>str</em>) &#8211; Class Name</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; Parent class or <a class="reference internal" href="#meta-core-class"><span class="std std-ref">META_CORE_CLASS constants</span></a>_Base</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">x - Class Token</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 6.1.0.</span></p>
+</div>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="geosoft.gxapi.GXMETA.create_s">
+<em class="property">static </em><code class="descname">create_s</code><span class="sig-paren">(</span><em>(GXBF)arg1</em><span class="sig-paren">)</span> &rarr; GXMETA:<a class="headerlink" href="#geosoft.gxapi.GXMETA.create_s" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Create</span> <span class="n">a</span> <span class="n">META</span> <span class="n">Object</span> <span class="kn">from</span> <span class="nn">a</span> <span class="n">BF</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<a class="reference internal" href="GXBF.html#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXBF</span></code></a>) &#8211; BF to serialize from</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">META Object</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXMETA</span></code></a></td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.1.8.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXMETA.create_type">
+<code class="descname">create_type</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(int)arg2</em>, <em>(int)arg3</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXMETA.create_type" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Create</span> <span class="n">an</span> <span class="n">attribute</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arg1</strong> (<em>str</em>) &#8211; Attribute Name</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; Parent Class or <a class="reference internal" href="#meta-core-class"><span class="std std-ref">META_CORE_CLASS constants</span></a></li>
+<li><strong>arg3</strong> (<em>int</em>) &#8211; Parent Type or <a class="reference internal" href="#meta-core-type"><span class="std std-ref">META_CORE_TYPE constants</span></a></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">x - Type Token</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 6.1.0.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXMETA.delete_all_items">
+<code class="descname">delete_all_items</code><span class="sig-paren">(</span><em>(int)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXMETA.delete_all_items" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Delete</span> <span class="nb">all</span> <span class="n">items</span> <span class="ow">in</span> <span class="n">this</span> <span class="n">class</span><span class="o">.</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>int</em>) &#8211; Class of items to delete</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Nothing</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">None</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.1.5.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXMETA.delete_attrib">
+<code class="descname">delete_attrib</code><span class="sig-paren">(</span><em>(int)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXMETA.delete_attrib" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Delete</span> <span class="n">Attrib</span> <span class="kn">from</span> <span class="nn">META.</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>int</em>) &#8211; Attrib to delete</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Nothing</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">None</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.1.6.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXMETA.delete_class">
+<code class="descname">delete_class</code><span class="sig-paren">(</span><em>(int)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXMETA.delete_class" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Delete</span> <span class="n">Class</span> <span class="kn">from</span> <span class="nn">META.</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>int</em>) &#8211; Class to delete</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Nothing</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">None</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.1.6.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXMETA.delete_data">
+<code class="descname">delete_data</code><span class="sig-paren">(</span><em>(int)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXMETA.delete_data" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Delete</span> <span class="n">Data</span> <span class="kn">from</span> <span class="nn">META.</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>int</em>) &#8211; Data to delete</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Nothing</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">None</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.1.6.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXMETA.delete_item">
+<code class="descname">delete_item</code><span class="sig-paren">(</span><em>(int)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXMETA.delete_item" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Delete</span> <span class="n">item</span> <span class="kn">from</span> <span class="nn">META.</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>int</em>) &#8211; Item to delete</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Nothing</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">None</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.1.6.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXMETA.delete_type">
+<code class="descname">delete_type</code><span class="sig-paren">(</span><em>(int)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXMETA.delete_type" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Delete</span> <span class="n">Type</span> <span class="kn">from</span> <span class="nn">META.</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>int</em>) &#8211; Type to delete</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Nothing</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">None</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.1.6.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXMETA.export_table_csv">
+<code class="descname">export_table_csv</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(str)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXMETA.export_table_csv" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Export</span> <span class="nb">all</span> <span class="n">items</span> <span class="ow">in</span> <span class="n">a</span> <span class="k">class</span> <span class="nc">as</span> <span class="n">a</span> <span class="n">CSV</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arg1</strong> (<em>int</em>) &#8211; Class of items to export</li>
+<li><strong>arg2</strong> (<em>str</em>) &#8211; Name of CSV file to produce</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.1.5.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXMETA.find_data">
+<code class="descname">find_data</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(int)arg2</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXMETA.find_data" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span>Does this meta/attribute have a value ?
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arg1</strong> (<em>int</em>) &#8211; Object</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; Attribute</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">x  - Data Value
+<a class="reference internal" href="#h-meta-invalid-token"><span class="std std-ref">H_META_INVALID_TOKEN constant</span></a> - No</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.1.6.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXMETA.get_attrib_bool">
+<code class="descname">get_attrib_bool</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(int)arg2</em>, <em>(int_ref)arg3</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXMETA.get_attrib_bool" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">a</span> <span class="n">boolean</span> <span class="n">value</span> <span class="n">to</span> <span class="n">an</span> <span class="n">attribute</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arg1</strong> (<em>int</em>) &#8211; Object</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; Attribute</li>
+<li><strong>arg3</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; Value to set</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.1.6.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXMETA.get_attrib_double">
+<code class="descname">get_attrib_double</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(int)arg2</em>, <em>(float_ref)arg3</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXMETA.get_attrib_double" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">an</span> <span class="n">integer</span> <span class="n">value</span> <span class="n">to</span> <span class="n">an</span> <span class="n">attribute</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arg1</strong> (<em>int</em>) &#8211; Object</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; Attribute</li>
+<li><strong>arg3</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Value to set</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.1.0.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXMETA.get_attrib_enum">
+<code class="descname">get_attrib_enum</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(int)arg2</em>, <em>(int_ref)arg3</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXMETA.get_attrib_enum" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">an</span> <span class="n">enum</span> <span class="n">value</span> <span class="n">to</span> <span class="n">an</span> <span class="n">attribute</span> <span class="p">(</span><span class="k">as</span> <span class="n">an</span> <span class="n">integer</span><span class="p">)</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arg1</strong> (<em>int</em>) &#8211; Object</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; Attribute</li>
+<li><strong>arg3</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; Value to set</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.1.6.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXMETA.get_attrib_int">
+<code class="descname">get_attrib_int</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(int)arg2</em>, <em>(int_ref)arg3</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXMETA.get_attrib_int" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">an</span> <span class="n">integer</span> <span class="n">value</span> <span class="n">to</span> <span class="n">an</span> <span class="n">attribute</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arg1</strong> (<em>int</em>) &#8211; Object</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; Attribute</li>
+<li><strong>arg3</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; Value to set</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.1.0.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXMETA.get_attrib_obj">
+<code class="descname">get_attrib_obj</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(int)arg2</em>, <em>(int)arg3</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXMETA.get_attrib_obj" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">an</span> <span class="nb">object</span> <span class="kn">from</span> <span class="nn">an</span> <span class="n">attribute</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arg1</strong> (<em>int</em>) &#8211; Object</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; Attribute</li>
+<li><strong>arg3</strong> (<em>int</em>) &#8211; Object to get info into</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.1.0.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXMETA.get_attrib_string">
+<code class="descname">get_attrib_string</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(int)arg2</em>, <em>(str_ref)arg3</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXMETA.get_attrib_string" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">a</span> <span class="n">string</span> <span class="n">value</span> <span class="n">to</span> <span class="n">an</span> <span class="n">attribute</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arg1</strong> (<em>int</em>) &#8211; Object</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; Attribute</li>
+<li><strong>arg3</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; String value to get</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.1.0.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXMETA.get_obj_name">
+<code class="descname">get_obj_name</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(str_ref)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXMETA.get_obj_name" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">the</span> <span class="n">name</span> <span class="n">of</span> <span class="n">this</span> <span class="n">item</span><span class="o">.</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arg1</strong> (<em>int</em>) &#8211; Object</li>
+<li><strong>arg2</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; Name of object</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.1.3.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXMETA.h_copy_across_attribute">
+<code class="descname">h_copy_across_attribute</code><span class="sig-paren">(</span><em>(GXMETA)arg1</em>, <em>(int)arg2</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXMETA.h_copy_across_attribute" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Copy</span> <span class="n">an</span> <span class="n">Attribute</span> <span class="kn">from</span> <span class="nn">one</span> <span class="n">META</span> <span class="n">to</span> <span class="n">another</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arg1</strong> (<a class="reference internal" href="#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXMETA</span></code></a>) &#8211; Source META object.</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; Attribute to copy</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">x                  - Handle of Attribute
+META_INVALID_TOKEN - No visible data</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.1.6.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXMETA.h_copy_across_class">
+<code class="descname">h_copy_across_class</code><span class="sig-paren">(</span><em>(GXMETA)arg1</em>, <em>(int)arg2</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXMETA.h_copy_across_class" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Copy</span> <span class="n">a</span> <span class="n">Class</span> <span class="kn">from</span> <span class="nn">one</span> <span class="n">META</span> <span class="n">to</span> <span class="n">another</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arg1</strong> (<a class="reference internal" href="#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXMETA</span></code></a>) &#8211; Source META object.</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; Class to copy</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">x                  - Handle of Class
+META_INVALID_TOKEN - No visible data anywhere</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.1.6.</span></p>
+</div>
+<p><strong>Note:</strong></p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="n">will</span> <span class="n">copy</span> <span class="nb">all</span> <span class="n">parent</span> <span class="n">classes</span> <span class="k">as</span> <span class="n">well</span><span class="o">.</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXMETA.h_copy_across_data">
+<code class="descname">h_copy_across_data</code><span class="sig-paren">(</span><em>(GXMETA)arg1</em>, <em>(int)arg2</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXMETA.h_copy_across_data" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Copy</span> <span class="n">a</span> <span class="n">Data</span> <span class="n">value</span> <span class="kn">from</span> <span class="nn">one</span> <span class="n">META</span> <span class="n">to</span> <span class="n">another</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arg1</strong> (<a class="reference internal" href="#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXMETA</span></code></a>) &#8211; Source META object.</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; Data value to copy</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">x                  - Handle of Data value
+META_INVALID_TOKEN - No visible data</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.1.6.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXMETA.h_copy_across_item">
+<code class="descname">h_copy_across_item</code><span class="sig-paren">(</span><em>(GXMETA)arg1</em>, <em>(int)arg2</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXMETA.h_copy_across_item" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Copy</span> <span class="n">an</span> <span class="n">Item</span> <span class="kn">from</span> <span class="nn">one</span> <span class="n">META</span> <span class="n">to</span> <span class="n">another</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arg1</strong> (<a class="reference internal" href="#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXMETA</span></code></a>) &#8211; Source META object.</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; Item to copy</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">x                  - Handle of Item
+META_INVALID_TOKEN - No visible data</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.1.6.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXMETA.h_copy_across_type">
+<code class="descname">h_copy_across_type</code><span class="sig-paren">(</span><em>(GXMETA)arg1</em>, <em>(int)arg2</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXMETA.h_copy_across_type" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Copy</span> <span class="n">a</span> <span class="n">Type</span> <span class="kn">from</span> <span class="nn">one</span> <span class="n">META</span> <span class="n">to</span> <span class="n">another</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arg1</strong> (<a class="reference internal" href="#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXMETA</span></code></a>) &#8211; Source META object.</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; Type to copy</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">x                  - Handle of type
+META_INVALID_TOKEN - No visible data anywhere</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.1.6.</span></p>
+</div>
+<p><strong>Note:</strong></p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Classes</span> <span class="ow">and</span> <span class="n">parent</span> <span class="n">types</span> <span class="n">will</span> <span class="n">also</span> <span class="n">be</span> <span class="n">copied</span><span class="o">.</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXMETA.h_creat_item">
+<code class="descname">h_creat_item</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(int)arg2</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXMETA.h_creat_item" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Creates</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">Class</span><span class="o">.</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arg1</strong> (<em>str</em>) &#8211; Unique item Name</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; Class (can be root)</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">x                    - Next Item
+<a class="reference internal" href="#h-meta-invalid-token"><span class="std std-ref">H_META_INVALID_TOKEN constant</span></a> - Error</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.1.6.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXMETA.h_get_next_item">
+<code class="descname">h_get_next_item</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(int)arg2</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXMETA.h_get_next_item" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Count</span> <span class="n">the</span> <span class="n">number</span> <span class="n">of</span> <span class="n">items</span> <span class="ow">in</span> <span class="n">a</span> <span class="k">class</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arg1</strong> (<em>int</em>) &#8211; Class</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; Starting Item (must <a class="reference internal" href="#h-meta-invalid-token"><span class="std std-ref">H_META_INVALID_TOKEN constant</span></a> for first item)</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">x                    - Next Item
+<a class="reference internal" href="#h-meta-invalid-token"><span class="std std-ref">H_META_INVALID_TOKEN constant</span></a> - No more items</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.1.3.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXMETA.has_value">
+<code class="descname">has_value</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(int)arg2</em><span class="sig-paren">)</span> &rarr; bool:<a class="headerlink" href="#geosoft.gxapi.GXMETA.has_value" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span>Does this meta/attribute have a value set?
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arg1</strong> (<em>int</em>) &#8211; Object</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; Attribute</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">bool</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">bool</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 6.0.1.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXMETA.import_table_csv">
+<code class="descname">import_table_csv</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(str)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXMETA.import_table_csv" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Import</span> <span class="n">a</span> <span class="n">CSV</span> <span class="n">into</span> <span class="n">a</span> <span class="k">class</span> <span class="nc">as</span> <span class="n">items</span><span class="o">.</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arg1</strong> (<em>int</em>) &#8211; Class to import into</li>
+<li><strong>arg2</strong> (<em>str</em>) &#8211; Name of CSV file to load</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.1.5.</span></p>
+</div>
+<p><strong>Note:</strong></p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Field</span> <span class="n">names</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">CSV</span> <span class="n">file</span> <span class="n">that</span> <span class="n">match</span> <span class="n">attribute</span> <span class="n">names</span> <span class="ow">in</span> <span class="n">the</span> <span class="k">class</span> <span class="nc">will</span> <span class="n">be</span>
+<span class="n">imported</span> <span class="n">into</span> <span class="n">table</span> <span class="n">entries</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">class</span><span class="o">.</span>  <span class="n">Usually</span> <span class="n">this</span> <span class="n">will</span> <span class="n">be</span> <span class="n">used</span> <span class="k">with</span>
+<span class="n">a</span> <span class="k">class</span> <span class="nc">created</span> <span class="n">using</span> <span class="n">the</span> <span class="n">hCreateTable_SCHEMA</span> <span class="n">method</span> <span class="n">so</span> <span class="n">that</span> <span class="n">the</span> <span class="n">contents</span> <span class="n">of</span>
+<span class="k">class</span> <span class="nc">can</span> <span class="n">be</span> <span class="n">viewed</span> <span class="k">as</span> <span class="n">a</span> <span class="n">table</span><span class="o">.</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXMETA.is_null">
+<code class="descname">is_null</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; bool<a class="headerlink" href="#geosoft.gxapi.GXMETA.is_null" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if the instance of <code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXMETA</span> <span class="pre">is</span> <span class="pre">null</span> <span class="pre">(undefined)</span></code></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if this is a null instance of <a class="reference internal" href="#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXMETA</span></code></a>, False otherwise.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool`</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXMETA.move_datas_across">
+<code class="descname">move_datas_across</code><span class="sig-paren">(</span><em>(GXMETA)arg1</em>, <em>(int)arg2</em>, <em>(int)arg3</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXMETA.move_datas_across" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Moves</span> <span class="n">data</span> <span class="n">items</span> <span class="kn">from</span> <span class="nn">one</span> <span class="n">META</span> <span class="n">to</span> <span class="n">another</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arg1</strong> (<a class="reference internal" href="#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXMETA</span></code></a>) &#8211; Source META Object</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; Object to copy data from</li>
+<li><strong>arg3</strong> (<em>int</em>) &#8211; Object to copy data to</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.1.8.</span></p>
+</div>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="geosoft.gxapi.GXMETA.null">
+<em class="property">static </em><code class="descname">null</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; GXMETA<a class="headerlink" href="#geosoft.gxapi.GXMETA.null" title="Permalink to this definition">¶</a></dt>
+<dd><p>A null (undefined) instance of <a class="reference internal" href="#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXMETA</span></code></a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A null <a class="reference internal" href="#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXMETA</span></code></a></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXMETA</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXMETA.resolve_umn">
+<code class="descname">resolve_umn</code><span class="sig-paren">(</span><em>(str)arg1</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXMETA.resolve_umn" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Resolve</span> <span class="n">a</span> <span class="n">Unique</span> <span class="n">Meta</span> <span class="n">Name</span> <span class="p">(</span><span class="n">UMN</span><span class="p">)</span> <span class="ow">and</span> <span class="n">find</span> <span class="n">the</span> <span class="n">token</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>str</em>) &#8211; Unique Meta Name (UMN)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">x                    - Token
+<a class="reference internal" href="#h-meta-invalid-token"><span class="std std-ref">H_META_INVALID_TOKEN constant</span></a> - Not found</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.1.0.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXMETA.serial">
+<code class="descname">serial</code><span class="sig-paren">(</span><em>(GXBF)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXMETA.serial" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Serialize</span> <span class="n">an</span> <span class="n">META</span> <span class="n">to</span> <span class="n">a</span> <span class="n">BF</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<a class="reference internal" href="GXBF.html#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXBF</span></code></a>) &#8211; BF to serialize to</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Nothing</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">None</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.1.8.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXMETA.set_attrib_bool">
+<code class="descname">set_attrib_bool</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(int)arg2</em>, <em>(int)arg3</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXMETA.set_attrib_bool" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Set</span> <span class="n">a</span> <span class="n">boolean</span> <span class="n">value</span> <span class="n">to</span> <span class="n">an</span> <span class="n">attribute</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arg1</strong> (<em>int</em>) &#8211; Object</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; Attribute</li>
+<li><strong>arg3</strong> (<em>int</em>) &#8211; Value to set</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.1.6.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXMETA.set_attrib_double">
+<code class="descname">set_attrib_double</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(int)arg2</em>, <em>(float)arg3</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXMETA.set_attrib_double" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Set</span> <span class="n">an</span> <span class="n">integer</span> <span class="n">value</span> <span class="n">to</span> <span class="n">an</span> <span class="n">attribute</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arg1</strong> (<em>int</em>) &#8211; Object</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; Attribute</li>
+<li><strong>arg3</strong> (<em>float</em>) &#8211; Value to set</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.1.0.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXMETA.set_attrib_enum">
+<code class="descname">set_attrib_enum</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(int)arg2</em>, <em>(int)arg3</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXMETA.set_attrib_enum" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Set</span> <span class="n">an</span> <span class="n">enum</span> <span class="n">value</span> <span class="n">to</span> <span class="n">an</span> <span class="n">attribute</span> <span class="p">(</span><span class="k">as</span> <span class="n">an</span> <span class="n">integer</span><span class="p">)</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arg1</strong> (<em>int</em>) &#8211; Object</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; Attribute</li>
+<li><strong>arg3</strong> (<em>int</em>) &#8211; Value to set</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.1.6.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXMETA.set_attrib_int">
+<code class="descname">set_attrib_int</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(int)arg2</em>, <em>(int)arg3</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXMETA.set_attrib_int" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Set</span> <span class="n">an</span> <span class="n">integer</span> <span class="n">value</span> <span class="n">to</span> <span class="n">an</span> <span class="n">attribute</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arg1</strong> (<em>int</em>) &#8211; Object</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; Attribute</li>
+<li><strong>arg3</strong> (<em>int</em>) &#8211; Value to set</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.1.0.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXMETA.set_attrib_obj">
+<code class="descname">set_attrib_obj</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(int)arg2</em>, <em>(int)arg3</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXMETA.set_attrib_obj" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Set</span> <span class="n">an</span> <span class="nb">object</span> <span class="n">to</span> <span class="n">an</span> <span class="n">attribute</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arg1</strong> (<em>int</em>) &#8211; Object</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; Attribute</li>
+<li><strong>arg3</strong> (<em>int</em>) &#8211; Object to set</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.1.0.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXMETA.set_attrib_string">
+<code class="descname">set_attrib_string</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(int)arg2</em>, <em>(str)arg3</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXMETA.set_attrib_string" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Set</span> <span class="n">a</span> <span class="n">string</span> <span class="n">value</span> <span class="n">to</span> <span class="n">an</span> <span class="n">attribute</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arg1</strong> (<em>int</em>) &#8211; Object</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; Attribute</li>
+<li><strong>arg3</strong> (<em>str</em>) &#8211; String value to set</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.1.0.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXMETA.set_attribute_editable">
+<code class="descname">set_attribute_editable</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(int)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXMETA.set_attribute_editable" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Allow</span><span class="o">/</span><span class="n">disallow</span> <span class="n">an</span> <span class="n">attribute</span> <span class="n">to</span> <span class="n">be</span> <span class="n">editable</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">browser</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arg1</strong> (<em>int</em>) &#8211; Attribute or <a class="reference internal" href="#meta-core-attrib"><span class="std std-ref">META_CORE_ATTRIB constants</span></a></li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; Editable Flag</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.1.6.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXMETA.set_attribute_visible">
+<code class="descname">set_attribute_visible</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(int)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXMETA.set_attribute_visible" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Allow</span><span class="o">/</span><span class="n">disallow</span> <span class="n">an</span> <span class="n">attribute</span> <span class="n">to</span> <span class="n">be</span> <span class="n">visible</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">browser</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arg1</strong> (<em>int</em>) &#8211; Attribute or <a class="reference internal" href="#meta-core-attrib"><span class="std std-ref">META_CORE_ATTRIB constants</span></a></li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; Editable Flag</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.1.6.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXMETA.set_empty_attrib">
+<code class="descname">set_empty_attrib</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(int)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXMETA.set_empty_attrib" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Set</span> <span class="n">an</span> <span class="n">empty</span> <span class="n">attribute</span> <span class="n">data</span> <span class="n">holder</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arg1</strong> (<em>int</em>) &#8211; MetaObject to set</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; Attribute MetaObject to set</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 6.3.0.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXMETA.write_text">
+<code class="descname">write_text</code><span class="sig-paren">(</span><em>(GXWA)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXMETA.write_text" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Write</span> <span class="n">the</span> <span class="n">entire</span> <span class="n">meta</span> <span class="k">as</span> <span class="n">a</span> <span class="n">text</span> <span class="n">file</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<a class="reference internal" href="GXWA.html#geosoft.gxapi.GXWA" title="geosoft.gxapi.GXWA"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXWA</span></code></a>) &#8211; WA to write to</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Nothing</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">None</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.1.6.</span></p>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<div class="section" id="h-meta-invalid-token-constant">
+<span id="h-meta-invalid-token"></span><h2>H_META_INVALID_TOKEN constant<a class="headerlink" href="#h-meta-invalid-token-constant" title="Permalink to this headline">¶</a></h2>
+<dl class="attribute">
+<dt id="geosoft.gxapi.H_META_INVALID_TOKEN">
+<code class="descclassname">gxapi.</code><code class="descname">H_META_INVALID_TOKEN</code><em class="property"> = -1</em><a class="headerlink" href="#geosoft.gxapi.H_META_INVALID_TOKEN" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">META</span> <span class="n">Invalid</span> <span class="n">Token</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="meta-core-attrib-constants">
+<span id="meta-core-attrib"></span><h2>META_CORE_ATTRIB constants<a class="headerlink" href="#meta-core-attrib-constants" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">META</span> <span class="n">Core</span> <span class="n">Attributes</span>
+</pre></div>
+</div>
+<dl class="attribute">
+<dt id="geosoft.gxapi.META_CORE_ATTRIB_Class_Description">
+<code class="descclassname">gxapi.</code><code class="descname">META_CORE_ATTRIB_Class_Description</code><em class="property"> = -300</em><a class="headerlink" href="#geosoft.gxapi.META_CORE_ATTRIB_Class_Description" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Description</span> <span class="n">of</span> <span class="n">this</span> <span class="k">class</span>
+</pre></div>
+</div>
+<dl class="attribute">
+<dt id="geosoft.gxapi.META_CORE_ATTRIB_Class_Application">
+<code class="descclassname">gxapi.</code><code class="descname">META_CORE_ATTRIB_Class_Application</code><em class="property"> = -301</em><a class="headerlink" href="#geosoft.gxapi.META_CORE_ATTRIB_Class_Application" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Application</span> <span class="n">that</span> <span class="n">created</span> <span class="n">this</span> <span class="k">class</span>
+</pre></div>
+</div>
+<dl class="attribute">
+<dt id="geosoft.gxapi.META_CORE_ATTRIB_Class_ReferenceURL">
+<code class="descclassname">gxapi.</code><code class="descname">META_CORE_ATTRIB_Class_ReferenceURL</code><em class="property"> = -302</em><a class="headerlink" href="#geosoft.gxapi.META_CORE_ATTRIB_Class_ReferenceURL" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">URL</span> <span class="n">that</span> <span class="n">defines</span> <span class="n">this</span> <span class="k">class</span>
+</pre></div>
+</div>
+<dl class="attribute">
+<dt id="geosoft.gxapi.META_CORE_ATTRIB_Class_Type">
+<code class="descclassname">gxapi.</code><code class="descname">META_CORE_ATTRIB_Class_Type</code><em class="property"> = -303</em><a class="headerlink" href="#geosoft.gxapi.META_CORE_ATTRIB_Class_Type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Type</span> <span class="n">of</span> <span class="n">Class</span>
+</pre></div>
+</div>
+<dl class="attribute">
+<dt id="geosoft.gxapi.META_CORE_ATTRIB_Type_Description">
+<code class="descclassname">gxapi.</code><code class="descname">META_CORE_ATTRIB_Type_Description</code><em class="property"> = -304</em><a class="headerlink" href="#geosoft.gxapi.META_CORE_ATTRIB_Type_Description" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Description</span> <span class="n">of</span> <span class="n">this</span> <span class="nb">type</span>
+</pre></div>
+</div>
+<dl class="attribute">
+<dt id="geosoft.gxapi.META_CORE_ATTRIB_Type_ReferenceURL">
+<code class="descclassname">gxapi.</code><code class="descname">META_CORE_ATTRIB_Type_ReferenceURL</code><em class="property"> = -305</em><a class="headerlink" href="#geosoft.gxapi.META_CORE_ATTRIB_Type_ReferenceURL" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">URL</span> <span class="n">that</span> <span class="n">defines</span> <span class="n">this</span> <span class="nb">type</span>
+</pre></div>
+</div>
+<dl class="attribute">
+<dt id="geosoft.gxapi.META_CORE_ATTRIB_Type_FixedSize">
+<code class="descclassname">gxapi.</code><code class="descname">META_CORE_ATTRIB_Type_FixedSize</code><em class="property"> = -306</em><a class="headerlink" href="#geosoft.gxapi.META_CORE_ATTRIB_Type_FixedSize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Fixed</span> <span class="n">size</span> <span class="n">of</span> <span class="n">this</span> <span class="nb">type</span> <span class="p">(</span><span class="ow">in</span> <span class="nb">bytes</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="attribute">
+<dt id="geosoft.gxapi.META_CORE_ATTRIB_Type_ByteOrder">
+<code class="descclassname">gxapi.</code><code class="descname">META_CORE_ATTRIB_Type_ByteOrder</code><em class="property"> = -307</em><a class="headerlink" href="#geosoft.gxapi.META_CORE_ATTRIB_Type_ByteOrder" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Byte</span> <span class="n">order</span> <span class="k">for</span> <span class="n">this</span> <span class="nb">type</span>
+</pre></div>
+</div>
+<dl class="attribute">
+<dt id="geosoft.gxapi.META_CORE_ATTRIB_Type_MinValue">
+<code class="descclassname">gxapi.</code><code class="descname">META_CORE_ATTRIB_Type_MinValue</code><em class="property"> = -308</em><a class="headerlink" href="#geosoft.gxapi.META_CORE_ATTRIB_Type_MinValue" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Minimum</span> <span class="n">Value</span> <span class="k">for</span> <span class="n">this</span> <span class="nb">type</span>
+</pre></div>
+</div>
+<dl class="attribute">
+<dt id="geosoft.gxapi.META_CORE_ATTRIB_Type_MaxValue">
+<code class="descclassname">gxapi.</code><code class="descname">META_CORE_ATTRIB_Type_MaxValue</code><em class="property"> = -309</em><a class="headerlink" href="#geosoft.gxapi.META_CORE_ATTRIB_Type_MaxValue" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Maximum</span> <span class="n">Value</span> <span class="k">for</span> <span class="n">this</span> <span class="nb">type</span>
+</pre></div>
+</div>
+<dl class="attribute">
+<dt id="geosoft.gxapi.META_CORE_ATTRIB_Type_MaxSize">
+<code class="descclassname">gxapi.</code><code class="descname">META_CORE_ATTRIB_Type_MaxSize</code><em class="property"> = -310</em><a class="headerlink" href="#geosoft.gxapi.META_CORE_ATTRIB_Type_MaxSize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Maximum</span> <span class="n">Size</span> <span class="ow">in</span> <span class="nb">bytes</span> <span class="k">for</span> <span class="n">this</span> <span class="nb">type</span>
+</pre></div>
+</div>
+<dl class="attribute">
+<dt id="geosoft.gxapi.META_CORE_ATTRIB_Type_ObjectClass">
+<code class="descclassname">gxapi.</code><code class="descname">META_CORE_ATTRIB_Type_ObjectClass</code><em class="property"> = -311</em><a class="headerlink" href="#geosoft.gxapi.META_CORE_ATTRIB_Type_ObjectClass" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Object</span> <span class="k">class</span> <span class="nc">that</span> <span class="n">manages</span> <span class="n">this</span> <span class="nb">type</span>
+</pre></div>
+</div>
+<dl class="attribute">
+<dt id="geosoft.gxapi.META_CORE_ATTRIB_Type_hCreatS_Func">
+<code class="descclassname">gxapi.</code><code class="descname">META_CORE_ATTRIB_Type_hCreatS_Func</code><em class="property"> = -312</em><a class="headerlink" href="#geosoft.gxapi.META_CORE_ATTRIB_Type_hCreatS_Func" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Object</span> <span class="n">creating</span> <span class="n">function</span>
+</pre></div>
+</div>
+<dl class="attribute">
+<dt id="geosoft.gxapi.META_CORE_ATTRIB_Type_sSerial_Func">
+<code class="descclassname">gxapi.</code><code class="descname">META_CORE_ATTRIB_Type_sSerial_Func</code><em class="property"> = -313</em><a class="headerlink" href="#geosoft.gxapi.META_CORE_ATTRIB_Type_sSerial_Func" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Object</span> <span class="n">serializationg</span> <span class="n">function</span>
+</pre></div>
+</div>
+<dl class="attribute">
+<dt id="geosoft.gxapi.META_CORE_ATTRIB_Type_Enum_Value">
+<code class="descclassname">gxapi.</code><code class="descname">META_CORE_ATTRIB_Type_Enum_Value</code><em class="property"> = -314</em><a class="headerlink" href="#geosoft.gxapi.META_CORE_ATTRIB_Type_Enum_Value" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Enumeration</span> <span class="n">Value</span>
+</pre></div>
+</div>
+<dl class="attribute">
+<dt id="geosoft.gxapi.META_CORE_ATTRIB_Attrib_Visible">
+<code class="descclassname">gxapi.</code><code class="descname">META_CORE_ATTRIB_Attrib_Visible</code><em class="property"> = -315</em><a class="headerlink" href="#geosoft.gxapi.META_CORE_ATTRIB_Attrib_Visible" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Is</span> <span class="n">this</span> <span class="n">attribute</span> <span class="n">visible</span> <span class="n">to</span> <span class="n">the</span> <span class="n">user</span>
+</pre></div>
+</div>
+<dl class="attribute">
+<dt id="geosoft.gxapi.META_CORE_ATTRIB_Attrib_Editable">
+<code class="descclassname">gxapi.</code><code class="descname">META_CORE_ATTRIB_Attrib_Editable</code><em class="property"> = -316</em><a class="headerlink" href="#geosoft.gxapi.META_CORE_ATTRIB_Attrib_Editable" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Is</span> <span class="n">this</span> <span class="n">atttribute</span> <span class="n">editable</span> <span class="n">by</span> <span class="n">the</span> <span class="n">user</span>
+</pre></div>
+</div>
+<dl class="attribute">
+<dt id="geosoft.gxapi.META_CORE_ATTRIB_Attrib_FlatName">
+<code class="descclassname">gxapi.</code><code class="descname">META_CORE_ATTRIB_Attrib_FlatName</code><em class="property"> = -317</em><a class="headerlink" href="#geosoft.gxapi.META_CORE_ATTRIB_Attrib_FlatName" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">flat</span> <span class="n">name</span> <span class="n">of</span> <span class="n">this</span> <span class="n">attribute</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="meta-core-class-constants">
+<span id="meta-core-class"></span><h2>META_CORE_CLASS constants<a class="headerlink" href="#meta-core-class-constants" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Meta</span> <span class="n">Core</span> <span class="n">Class</span> <span class="n">Objects</span>
+</pre></div>
+</div>
+<dl class="attribute">
+<dt id="geosoft.gxapi.META_CORE_CLASS_Base">
+<code class="descclassname">gxapi.</code><code class="descname">META_CORE_CLASS_Base</code><em class="property"> = -100</em><a class="headerlink" href="#geosoft.gxapi.META_CORE_CLASS_Base" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">All</span> <span class="n">Classes</span> <span class="n">are</span> <span class="n">subordinate</span> <span class="n">to</span> <span class="n">this</span> <span class="k">class</span>
+</pre></div>
+</div>
+<dl class="attribute">
+<dt id="geosoft.gxapi.META_CORE_CLASS_Predefined">
+<code class="descclassname">gxapi.</code><code class="descname">META_CORE_CLASS_Predefined</code><em class="property"> = -101</em><a class="headerlink" href="#geosoft.gxapi.META_CORE_CLASS_Predefined" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">All</span> <span class="n">Predefined</span> <span class="n">symbols</span> <span class="n">are</span> <span class="ow">in</span> <span class="n">this</span> <span class="k">class</span>
+</pre></div>
+</div>
+<dl class="attribute">
+<dt id="geosoft.gxapi.META_CORE_CLASS_Attributes">
+<code class="descclassname">gxapi.</code><code class="descname">META_CORE_CLASS_Attributes</code><em class="property"> = -102</em><a class="headerlink" href="#geosoft.gxapi.META_CORE_CLASS_Attributes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxapi.META_CORE_CLASS_ClassAttributes">
+<code class="descclassname">gxapi.</code><code class="descname">META_CORE_CLASS_ClassAttributes</code><em class="property"> = -103</em><a class="headerlink" href="#geosoft.gxapi.META_CORE_CLASS_ClassAttributes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxapi.META_CORE_CLASS_TypeAttributes">
+<code class="descclassname">gxapi.</code><code class="descname">META_CORE_CLASS_TypeAttributes</code><em class="property"> = -104</em><a class="headerlink" href="#geosoft.gxapi.META_CORE_CLASS_TypeAttributes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxapi.META_CORE_CLASS_ObjectAttributes">
+<code class="descclassname">gxapi.</code><code class="descname">META_CORE_CLASS_ObjectAttributes</code><em class="property"> = -105</em><a class="headerlink" href="#geosoft.gxapi.META_CORE_CLASS_ObjectAttributes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxapi.META_CORE_CLASS_EnumAttributes">
+<code class="descclassname">gxapi.</code><code class="descname">META_CORE_CLASS_EnumAttributes</code><em class="property"> = -106</em><a class="headerlink" href="#geosoft.gxapi.META_CORE_CLASS_EnumAttributes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxapi.META_CORE_CLASS_AttributeAttributes">
+<code class="descclassname">gxapi.</code><code class="descname">META_CORE_CLASS_AttributeAttributes</code><em class="property"> = -107</em><a class="headerlink" href="#geosoft.gxapi.META_CORE_CLASS_AttributeAttributes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxapi.META_CORE_CLASS_ItemAttributes">
+<code class="descclassname">gxapi.</code><code class="descname">META_CORE_CLASS_ItemAttributes</code><em class="property"> = -108</em><a class="headerlink" href="#geosoft.gxapi.META_CORE_CLASS_ItemAttributes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxapi.META_CORE_CLASS_Types">
+<code class="descclassname">gxapi.</code><code class="descname">META_CORE_CLASS_Types</code><em class="property"> = -109</em><a class="headerlink" href="#geosoft.gxapi.META_CORE_CLASS_Types" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxapi.META_CORE_CLASS_Enums">
+<code class="descclassname">gxapi.</code><code class="descname">META_CORE_CLASS_Enums</code><em class="property"> = -110</em><a class="headerlink" href="#geosoft.gxapi.META_CORE_CLASS_Enums" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxapi.META_CORE_CLASS_Enum_Bool">
+<code class="descclassname">gxapi.</code><code class="descname">META_CORE_CLASS_Enum_Bool</code><em class="property"> = -111</em><a class="headerlink" href="#geosoft.gxapi.META_CORE_CLASS_Enum_Bool" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxapi.META_CORE_CLASS_Enum_ClassType">
+<code class="descclassname">gxapi.</code><code class="descname">META_CORE_CLASS_Enum_ClassType</code><em class="property"> = -112</em><a class="headerlink" href="#geosoft.gxapi.META_CORE_CLASS_Enum_ClassType" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="meta-core-type-constants">
+<span id="meta-core-type"></span><h2>META_CORE_TYPE constants<a class="headerlink" href="#meta-core-type-constants" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">META</span> <span class="n">Core</span> <span class="n">Data</span> <span class="n">Types</span>
+</pre></div>
+</div>
+<dl class="attribute">
+<dt id="geosoft.gxapi.META_CORE_TYPE_Bytes">
+<code class="descclassname">gxapi.</code><code class="descname">META_CORE_TYPE_Bytes</code><em class="property"> = -200</em><a class="headerlink" href="#geosoft.gxapi.META_CORE_TYPE_Bytes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Data</span> <span class="n">Bytes</span> <span class="p">(</span><span class="n">Base</span> <span class="nb">type</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="attribute">
+<dt id="geosoft.gxapi.META_CORE_TYPE_Bool">
+<code class="descclassname">gxapi.</code><code class="descname">META_CORE_TYPE_Bool</code><em class="property"> = -201</em><a class="headerlink" href="#geosoft.gxapi.META_CORE_TYPE_Bool" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Boolean</span>
+</pre></div>
+</div>
+<dl class="attribute">
+<dt id="geosoft.gxapi.META_CORE_TYPE_I1">
+<code class="descclassname">gxapi.</code><code class="descname">META_CORE_TYPE_I1</code><em class="property"> = -202</em><a class="headerlink" href="#geosoft.gxapi.META_CORE_TYPE_I1" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Signed</span> <span class="n">character</span>
+</pre></div>
+</div>
+<dl class="attribute">
+<dt id="geosoft.gxapi.META_CORE_TYPE_U1">
+<code class="descclassname">gxapi.</code><code class="descname">META_CORE_TYPE_U1</code><em class="property"> = -203</em><a class="headerlink" href="#geosoft.gxapi.META_CORE_TYPE_U1" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Unsigned</span> <span class="n">character</span>
+</pre></div>
+</div>
+<dl class="attribute">
+<dt id="geosoft.gxapi.META_CORE_TYPE_I2">
+<code class="descclassname">gxapi.</code><code class="descname">META_CORE_TYPE_I2</code><em class="property"> = -204</em><a class="headerlink" href="#geosoft.gxapi.META_CORE_TYPE_I2" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Signed</span> <span class="n">short</span>
+</pre></div>
+</div>
+<dl class="attribute">
+<dt id="geosoft.gxapi.META_CORE_TYPE_U2">
+<code class="descclassname">gxapi.</code><code class="descname">META_CORE_TYPE_U2</code><em class="property"> = -205</em><a class="headerlink" href="#geosoft.gxapi.META_CORE_TYPE_U2" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Unsigned</span> <span class="n">short</span>
+</pre></div>
+</div>
+<dl class="attribute">
+<dt id="geosoft.gxapi.META_CORE_TYPE_I4">
+<code class="descclassname">gxapi.</code><code class="descname">META_CORE_TYPE_I4</code><em class="property"> = -206</em><a class="headerlink" href="#geosoft.gxapi.META_CORE_TYPE_I4" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Signed</span> <span class="n">long</span>
+</pre></div>
+</div>
+<dl class="attribute">
+<dt id="geosoft.gxapi.META_CORE_TYPE_U4">
+<code class="descclassname">gxapi.</code><code class="descname">META_CORE_TYPE_U4</code><em class="property"> = -207</em><a class="headerlink" href="#geosoft.gxapi.META_CORE_TYPE_U4" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Unsigned</span> <span class="n">long</span>
+</pre></div>
+</div>
+<dl class="attribute">
+<dt id="geosoft.gxapi.META_CORE_TYPE_I8">
+<code class="descclassname">gxapi.</code><code class="descname">META_CORE_TYPE_I8</code><em class="property"> = -208</em><a class="headerlink" href="#geosoft.gxapi.META_CORE_TYPE_I8" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Singed</span> <span class="n">long</span> <span class="n">long</span> <span class="p">(</span><span class="mi">64</span> <span class="n">bit</span> <span class="nb">int</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="attribute">
+<dt id="geosoft.gxapi.META_CORE_TYPE_U8">
+<code class="descclassname">gxapi.</code><code class="descname">META_CORE_TYPE_U8</code><em class="property"> = -209</em><a class="headerlink" href="#geosoft.gxapi.META_CORE_TYPE_U8" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Unsigned</span> <span class="n">long</span> <span class="n">long</span>
+</pre></div>
+</div>
+<dl class="attribute">
+<dt id="geosoft.gxapi.META_CORE_TYPE_R4">
+<code class="descclassname">gxapi.</code><code class="descname">META_CORE_TYPE_R4</code><em class="property"> = -210</em><a class="headerlink" href="#geosoft.gxapi.META_CORE_TYPE_R4" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Float</span> <span class="p">(</span><span class="mi">32</span><span class="n">bit</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="attribute">
+<dt id="geosoft.gxapi.META_CORE_TYPE_R8">
+<code class="descclassname">gxapi.</code><code class="descname">META_CORE_TYPE_R8</code><em class="property"> = -211</em><a class="headerlink" href="#geosoft.gxapi.META_CORE_TYPE_R8" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Double</span> <span class="p">(</span><span class="mi">64</span><span class="n">bit</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="attribute">
+<dt id="geosoft.gxapi.META_CORE_TYPE_String">
+<code class="descclassname">gxapi.</code><code class="descname">META_CORE_TYPE_String</code><em class="property"> = -212</em><a class="headerlink" href="#geosoft.gxapi.META_CORE_TYPE_String" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">String</span>
+</pre></div>
+</div>
+<dl class="attribute">
+<dt id="geosoft.gxapi.META_CORE_TYPE_Object">
+<code class="descclassname">gxapi.</code><code class="descname">META_CORE_TYPE_Object</code><em class="property"> = -213</em><a class="headerlink" href="#geosoft.gxapi.META_CORE_TYPE_Object" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Predefined</span> <span class="n">Object</span> <span class="p">(</span><span class="n">ITR</span><span class="p">,</span><span class="n">IPJ</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="attribute">
+<dt id="geosoft.gxapi.META_CORE_TYPE_Enum">
+<code class="descclassname">gxapi.</code><code class="descname">META_CORE_TYPE_Enum</code><em class="property"> = -214</em><a class="headerlink" href="#geosoft.gxapi.META_CORE_TYPE_Enum" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Enumeration</span>
+</pre></div>
+</div>
+<dl class="attribute">
+<dt id="geosoft.gxapi.META_CORE_TYPE_ClassType">
+<code class="descclassname">gxapi.</code><code class="descname">META_CORE_TYPE_ClassType</code><em class="property"> = -215</em><a class="headerlink" href="#geosoft.gxapi.META_CORE_TYPE_ClassType" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.0b0 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2017, Geosoft Inc.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
+    </div>
+<div class="footer">This page uses <a href="http://analytics.google.com/">
+Google Analytics</a> to collect statistics. You can disable it by blocking
+the JavaScript coming from www.google-analytics.com.
+<script type="text/javascript">
+  (function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ?
+              'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+  })();
+</script>
+</div>
+
+  </body>
+</html>

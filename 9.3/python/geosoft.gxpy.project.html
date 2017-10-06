@@ -1,0 +1,571 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>geosoft.gxpy.project submodule &#8212; Geosoft GX Python API 9.3.0b0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/maki.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '9.3.0b0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+ 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-87443115-1']);
+  _gaq.push(['_trackPageview']);
+</script>
+
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.0b0 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/geosoft.gxpy.project.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-geosoft.gxpy.project">
+<span id="geosoft-gxpy-project-submodule"></span><h1>geosoft.gxpy.project submodule<a class="headerlink" href="#module-geosoft.gxpy.project" title="Permalink to this headline">¶</a></h1>
+<p>Geosoft desktop project interface, which provides access to an active and open Geosoft desktop project.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Classes:</th><td class="field-body"><table border="1" class="first last docutils">
+<colgroup>
+<col width="53%" />
+<col width="47%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#geosoft.gxpy.project.Geosoft_project" title="geosoft.gxpy.project.Geosoft_project"><code class="xref py py-class docutils literal"><span class="pre">Geosoft_project</span></code></a></td>
+<td>the geosoft project</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="GXPROJ.html#geosoft.gxapi.GXPROJ" title="geosoft.gxapi.GXPROJ"><code class="xref py py-mod docutils literal"><span class="pre">geosoft.gxapi.GXPROJ</span></code></a>, <a class="reference internal" href="GXEDB.html#geosoft.gxapi.GXEDB" title="geosoft.gxapi.GXEDB"><code class="xref py py-mod docutils literal"><span class="pre">geosoft.gxapi.GXEDB</span></code></a>, <a class="reference internal" href="GXEMAP.html#geosoft.gxapi.GXEMAP" title="geosoft.gxapi.GXEMAP"><code class="xref py py-mod docutils literal"><span class="pre">geosoft.gxapi.GXEMAP</span></code></a></p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Test example:     
+<a class="reference external" href="https://github.com/GeosoftInc/gxpy/blob/master/examples/om-extensions/test_project.py">geosoft project tests</a></p>
+</div>
+<dl class="data">
+<dt id="geosoft.gxpy.project.DOC_TYPE_3DV">
+<code class="descclassname">geosoft.gxpy.project.</code><code class="descname">DOC_TYPE_3DV</code><em class="property"> = '3DView'</em><a class="headerlink" href="#geosoft.gxpy.project.DOC_TYPE_3DV" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.project.DOC_TYPE_ALL">
+<code class="descclassname">geosoft.gxpy.project.</code><code class="descname">DOC_TYPE_ALL</code><em class="property"> = 'All'</em><a class="headerlink" href="#geosoft.gxpy.project.DOC_TYPE_ALL" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.project.DOC_TYPE_DATABASE">
+<code class="descclassname">geosoft.gxpy.project.</code><code class="descname">DOC_TYPE_DATABASE</code><em class="property"> = 'Database'</em><a class="headerlink" href="#geosoft.gxpy.project.DOC_TYPE_DATABASE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.project.DOC_TYPE_GMS2D">
+<code class="descclassname">geosoft.gxpy.project.</code><code class="descname">DOC_TYPE_GMS2D</code><em class="property"> = 'GMS2D'</em><a class="headerlink" href="#geosoft.gxpy.project.DOC_TYPE_GMS2D" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.project.DOC_TYPE_GMS3D">
+<code class="descclassname">geosoft.gxpy.project.</code><code class="descname">DOC_TYPE_GMS3D</code><em class="property"> = 'GMS3D'</em><a class="headerlink" href="#geosoft.gxpy.project.DOC_TYPE_GMS3D" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.project.DOC_TYPE_GRID">
+<code class="descclassname">geosoft.gxpy.project.</code><code class="descname">DOC_TYPE_GRID</code><em class="property"> = 'Grid'</em><a class="headerlink" href="#geosoft.gxpy.project.DOC_TYPE_GRID" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.project.DOC_TYPE_MAP">
+<code class="descclassname">geosoft.gxpy.project.</code><code class="descname">DOC_TYPE_MAP</code><em class="property"> = 'Map'</em><a class="headerlink" href="#geosoft.gxpy.project.DOC_TYPE_MAP" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.project.DOC_TYPE_VOXEL">
+<code class="descclassname">geosoft.gxpy.project.</code><code class="descname">DOC_TYPE_VOXEL</code><em class="property"> = 'Voxel'</em><a class="headerlink" href="#geosoft.gxpy.project.DOC_TYPE_VOXEL" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.project.DOC_TYPE_VOXI">
+<code class="descclassname">geosoft.gxpy.project.</code><code class="descname">DOC_TYPE_VOXI</code><em class="property"> = 'VoxelInversion'</em><a class="headerlink" href="#geosoft.gxpy.project.DOC_TYPE_VOXI" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="geosoft.gxpy.project.Geosoft_project">
+<em class="property">class </em><code class="descclassname">geosoft.gxpy.project.</code><code class="descname">Geosoft_project</code><a class="headerlink" href="#geosoft.gxpy.project.Geosoft_project" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>Use this class to interact with an open Geosoft project. This singleton class is available only from an 
+extension running from an open Geosoft project.</p>
+<dl class="attribute">
+<dt id="geosoft.gxpy.project.Geosoft_project.current_3dv">
+<code class="descname">current_3dv</code><a class="headerlink" href="#geosoft.gxpy.project.Geosoft_project.current_3dv" title="Permalink to this definition">¶</a></dt>
+<dd><p>the open geosoft_3dv that has current (or most recent) focus</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxpy.project.Geosoft_project.current_database">
+<code class="descname">current_database</code><a class="headerlink" href="#geosoft.gxpy.project.Geosoft_project.current_database" title="Permalink to this definition">¶</a></dt>
+<dd><p>the open database that has current (or most recent) focus</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxpy.project.Geosoft_project.current_db_state">
+<code class="descname">current_db_state</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.project.Geosoft_project.current_db_state" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the state of the current database.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dict of the current database state, {} if there is no current database.<table border="1" class="docutils">
+<colgroup>
+<col width="25%" />
+<col width="75%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>&#8216;disp_chan_list&#8217;</td>
+<td>list of displayed channels</td>
+</tr>
+<tr class="row-even"><td>&#8216;selection&#8217;</td>
+<td>current selection as (line, channel, start_fid, end_fid)</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.2.</span></p>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxpy.project.Geosoft_project.current_gmsys_2d">
+<code class="descname">current_gmsys_2d</code><a class="headerlink" href="#geosoft.gxpy.project.Geosoft_project.current_gmsys_2d" title="Permalink to this definition">¶</a></dt>
+<dd><p>the open GM-SYS 2D model that has current (or most recent) focus</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxpy.project.Geosoft_project.current_gmsys_3d">
+<code class="descname">current_gmsys_3d</code><a class="headerlink" href="#geosoft.gxpy.project.Geosoft_project.current_gmsys_3d" title="Permalink to this definition">¶</a></dt>
+<dd><p>the open GM-SYS 3D model that has current (or most recent) focus</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxpy.project.Geosoft_project.current_grid">
+<code class="descname">current_grid</code><a class="headerlink" href="#geosoft.gxpy.project.Geosoft_project.current_grid" title="Permalink to this definition">¶</a></dt>
+<dd><p>the open grid that has current (or most recent) focus</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxpy.project.Geosoft_project.current_map">
+<code class="descname">current_map</code><a class="headerlink" href="#geosoft.gxpy.project.Geosoft_project.current_map" title="Permalink to this definition">¶</a></dt>
+<dd><p>the open map that has current (or most recent) focus</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxpy.project.Geosoft_project.current_map_state">
+<code class="descname">current_map_state</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.project.Geosoft_project.current_map_state" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the state of the current map.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dict of the current map state, {} if no current map.<table border="1" class="docutils">
+<colgroup>
+<col width="21%" />
+<col width="79%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>&#8216;current_view&#8217;</td>
+<td>name of the current view</td>
+</tr>
+<tr class="row-even"><td>&#8216;display_area&#8217;</td>
+<td>(min_x, min_y, max_x, max_y) in units of the current view</td>
+</tr>
+<tr class="row-odd"><td>&#8216;3d_view_name&#8217;</td>
+<td>if a 3D view, name of the view</td>
+</tr>
+<tr class="row-even"><td>&#8216;point&#8217;</td>
+<td>(x, y) of the current selection point</td>
+</tr>
+<tr class="row-odd"><td>&#8216;cursor&#8217;</td>
+<td>(x, y) of the current cursor location</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.2.</span></p>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxpy.project.Geosoft_project.current_voxel">
+<code class="descname">current_voxel</code><a class="headerlink" href="#geosoft.gxpy.project.Geosoft_project.current_voxel" title="Permalink to this definition">¶</a></dt>
+<dd><p>the open voxel that has current (or most recent) focus</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxpy.project.Geosoft_project.current_voxi">
+<code class="descname">current_voxi</code><a class="headerlink" href="#geosoft.gxpy.project.Geosoft_project.current_voxi" title="Permalink to this definition">¶</a></dt>
+<dd><p>the open VOXI model that has current (or most recent) focus</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxpy.project.Geosoft_project.gid">
+<code class="descname">gid</code><a class="headerlink" href="#geosoft.gxpy.project.Geosoft_project.gid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Geosoft ID of the user</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxpy.project.Geosoft_project.menus">
+<code class="descname">menus</code><a class="headerlink" href="#geosoft.gxpy.project.Geosoft_project.menus" title="Permalink to this definition">¶</a></dt>
+<dd><p>Oasis montaj menu information: (default_menus, loaded_menus, user_menus)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxpy.project.Geosoft_project.open_3dv">
+<code class="descname">open_3dv</code><a class="headerlink" href="#geosoft.gxpy.project.Geosoft_project.open_3dv" title="Permalink to this definition">¶</a></dt>
+<dd><p>list of geosoft_3dv (3d views) open in a 3D viewer</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxpy.project.Geosoft_project.open_databases">
+<code class="descname">open_databases</code><a class="headerlink" href="#geosoft.gxpy.project.Geosoft_project.open_databases" title="Permalink to this definition">¶</a></dt>
+<dd><p>list of databases open as a database document</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxpy.project.Geosoft_project.open_gmsys_2d">
+<code class="descname">open_gmsys_2d</code><a class="headerlink" href="#geosoft.gxpy.project.Geosoft_project.open_gmsys_2d" title="Permalink to this definition">¶</a></dt>
+<dd><p>list of GM-SYS 2D models open as a document</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxpy.project.Geosoft_project.open_gmsys_3d">
+<code class="descname">open_gmsys_3d</code><a class="headerlink" href="#geosoft.gxpy.project.Geosoft_project.open_gmsys_3d" title="Permalink to this definition">¶</a></dt>
+<dd><p>list of GM-SYS 3D models open as a document</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxpy.project.Geosoft_project.open_grids">
+<code class="descname">open_grids</code><a class="headerlink" href="#geosoft.gxpy.project.Geosoft_project.open_grids" title="Permalink to this definition">¶</a></dt>
+<dd><p>list of grids open as a grid document</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxpy.project.Geosoft_project.open_maps">
+<code class="descname">open_maps</code><a class="headerlink" href="#geosoft.gxpy.project.Geosoft_project.open_maps" title="Permalink to this definition">¶</a></dt>
+<dd><p>list of maps open as a map document</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxpy.project.Geosoft_project.open_voxels">
+<code class="descname">open_voxels</code><a class="headerlink" href="#geosoft.gxpy.project.Geosoft_project.open_voxels" title="Permalink to this definition">¶</a></dt>
+<dd><p>list of voxels/voxets open as a document</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxpy.project.Geosoft_project.open_voxi_models">
+<code class="descname">open_voxi_models</code><a class="headerlink" href="#geosoft.gxpy.project.Geosoft_project.open_voxi_models" title="Permalink to this definition">¶</a></dt>
+<dd><p>list of VOXI models open as a document</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxpy.project.Geosoft_project.project_3dv">
+<code class="descname">project_3dv</code><a class="headerlink" href="#geosoft.gxpy.project.Geosoft_project.project_3dv" title="Permalink to this definition">¶</a></dt>
+<dd><p>list of geosoft_3dv (3D views) in the project</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxpy.project.Geosoft_project.project_databases">
+<code class="descname">project_databases</code><a class="headerlink" href="#geosoft.gxpy.project.Geosoft_project.project_databases" title="Permalink to this definition">¶</a></dt>
+<dd><p>list of databases in the project</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxpy.project.Geosoft_project.project_gmsys_2d">
+<code class="descname">project_gmsys_2d</code><a class="headerlink" href="#geosoft.gxpy.project.Geosoft_project.project_gmsys_2d" title="Permalink to this definition">¶</a></dt>
+<dd><p>list of GM-SYS 2D models in the project</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxpy.project.Geosoft_project.project_gmsys_3d">
+<code class="descname">project_gmsys_3d</code><a class="headerlink" href="#geosoft.gxpy.project.Geosoft_project.project_gmsys_3d" title="Permalink to this definition">¶</a></dt>
+<dd><p>list of GM-SYS 3D models in the project</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxpy.project.Geosoft_project.project_grids">
+<code class="descname">project_grids</code><a class="headerlink" href="#geosoft.gxpy.project.Geosoft_project.project_grids" title="Permalink to this definition">¶</a></dt>
+<dd><p>list of grids in the project</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxpy.project.Geosoft_project.project_maps">
+<code class="descname">project_maps</code><a class="headerlink" href="#geosoft.gxpy.project.Geosoft_project.project_maps" title="Permalink to this definition">¶</a></dt>
+<dd><p>list of maps in the project</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxpy.project.Geosoft_project.project_voxels">
+<code class="descname">project_voxels</code><a class="headerlink" href="#geosoft.gxpy.project.Geosoft_project.project_voxels" title="Permalink to this definition">¶</a></dt>
+<dd><p>list of voxels/voxettes in the project</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxpy.project.Geosoft_project.project_voxi_models">
+<code class="descname">project_voxi_models</code><a class="headerlink" href="#geosoft.gxpy.project.Geosoft_project.project_voxi_models" title="Permalink to this definition">¶</a></dt>
+<dd><p>list of VOXI models in the project</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="geosoft.gxpy.project.ProjectException">
+<em class="property">exception </em><code class="descclassname">geosoft.gxpy.project.</code><code class="descname">ProjectException</code><a class="headerlink" href="#geosoft.gxpy.project.ProjectException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">Exception</span></code></p>
+<p>Exceptions from <a class="reference internal" href="#module-geosoft.gxpy.project" title="geosoft.gxpy.project"><code class="xref py py-mod docutils literal"><span class="pre">geosoft.gxpy.project</span></code></a>.</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.1.</span></p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="geosoft.gxpy.project.add_document">
+<code class="descclassname">geosoft.gxpy.project.</code><code class="descname">add_document</code><span class="sig-paren">(</span><em>doc</em>, <em>type=None</em>, <em>display=True</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.project.add_document" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a document to the project.  The document file can be any supported geosoft
+document type.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>doc</strong> &#8211; file name for the document to open</li>
+<li><strong>type</strong> &#8211; one of DOC_TYPE, default will decode the type from the file extension</li>
+<li><strong>display</strong> &#8211; False to prevent opening of the document, though the document will be added
+as a document in the project explorer.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.3.</span></p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="geosoft.gxpy.project.get_user_input">
+<code class="descclassname">geosoft.gxpy.project.</code><code class="descname">get_user_input</code><span class="sig-paren">(</span><em>title='Input required...'</em>, <em>prompt='?'</em>, <em>kind='string'</em>, <em>default=''</em>, <em>items=''</em>, <em>filemask=''</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.project.get_user_input" title="Permalink to this definition">¶</a></dt>
+<dd><p>Display a dialog prompt on the Geosoft Desktop and wait for user input.
+This method depends on <a class="reference external" href="https://github.com/GeosoftInc/gxpy/tree/master/geosoft/gxpy/user_input">user_input.gx</a>
+and can only be used from an extension running inside a Geosoft Desktop application.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>title</strong> &#8211; dialog box title.  A description can be added as a second-line using a line-break.
+example: &#8220;Your title/nDescriptive help&#8221;</li>
+<li><strong>prompt</strong> &#8211; prompt string to present to the user.</li>
+<li><strong>kind</strong> &#8211; kind of response required: &#8216;string&#8217;, &#8216;int&#8217;, &#8216;float&#8217;, &#8216;file&#8217;, &#8216;colour&#8217; or &#8216;list&#8217;</li>
+<li><strong>items</strong> &#8211; comma-separated string or list/tuple of items for kind=&#8217;list&#8217;</li>
+<li><strong>default</strong> &#8211; default value.  For multifile can be a string (&#8216;|&#8217; delimiter) or list/tuple.</li>
+<li><strong>filemask</strong> &#8211; File type masks, Comma delimited, or a list/tuple.  Examples:
+&#8216;.dat&#8217;, &#8216;*.dat,*.grd&#8217;, &#8216;**,*.grd&#8217; for multiple files</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">user response</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raise:</th><td class="field-body"><p class="first last"><cite>GXCancel</cite> if the user cancels the dialog</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.1.</span></p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="geosoft.gxpy.project.pause">
+<code class="descclassname">geosoft.gxpy.project.</code><code class="descname">pause</code><span class="sig-paren">(</span><em>title='Pause...'</em>, <em>cancel=False</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.project.pause" title="Permalink to this definition">¶</a></dt>
+<dd><p>Display a pause dialog, wait for user to press continue or cancel</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>title</strong> &#8211; The pause dialog title, default is &#8220;Pause...&#8221;</li>
+<li><strong>cancel</strong> &#8211; If True, show a cancel button</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last">:py:ex:GXCancel if the user cancels the dialog</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.2.</span></p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="geosoft.gxpy.project.remove_document">
+<code class="descclassname">geosoft.gxpy.project.</code><code class="descname">remove_document</code><span class="sig-paren">(</span><em>doc</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.project.remove_document" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove a document from the project.  The document is identified by the document name, which
+is either a complete file path name, with qualifiers, or the name of the document in the project storage.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>doc</strong> &#8211; document name (file and qualifiers if the document source is a file).</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.3.</span></p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="geosoft.gxpy.project.running_script">
+<code class="descclassname">geosoft.gxpy.project.</code><code class="descname">running_script</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.project.running_script" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">1 if running from a script, 0 if running interactively.</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.1.</span></p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="geosoft.gxpy.project.user_message">
+<code class="descclassname">geosoft.gxpy.project.</code><code class="descname">user_message</code><span class="sig-paren">(</span><em>title</em>, <em>message</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.project.user_message" title="Permalink to this definition">¶</a></dt>
+<dd><p>Display a message to the user</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>title</strong> &#8211; message box title</li>
+<li><strong>message</strong> &#8211; message</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.2.</span></p>
+</div>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.0b0 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2017, Geosoft Inc.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
+    </div>
+<div class="footer">This page uses <a href="http://analytics.google.com/">
+Google Analytics</a> to collect statistics. You can disable it by blocking
+the JavaScript coming from www.google-analytics.com.
+<script type="text/javascript">
+  (function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ?
+              'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+  })();
+</script>
+</div>
+
+  </body>
+</html>
