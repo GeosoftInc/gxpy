@@ -130,7 +130,7 @@ def pop_resource(id):
         except KeyError:
             pass
 
-GX_WARNING_FILE = '_gx_warning_' #:
+GX_WARNING_FILE = '_gx_warning_'
 
 def _exit_cleanup():
     global gx
@@ -225,15 +225,13 @@ class GXpy(_Singleton):
     :raises:
         :GXException(): if unable to create context
 
+    .. versionadded:: 9.1
+
     .. versionchanged:: 9.2
 
-        `parent_window=-1` creates a Tkinter frame as a parent for scripts that call UI functions.
-
-        Added `log` argument to support `log()`.
-
-        Made environment dictionary properties, deprecated environment.
-
-    .. versionadded:: 9.1
+        | * `parent_window=-1` creates a Tkinter frame as a parent for scripts that call UI functions.
+        | * Added `log` argument to support `log()`.
+        | * Made environment dictionary properties, deprecated environment.
 
     """
 
@@ -276,6 +274,7 @@ class GXpy(_Singleton):
         global _max_resource_heap
         global _stack_depth
         global _max_warnings
+        self._entitlements = None
 
         _gx_dict[id(self)] = gxs.call_location(1)
         if gx:
@@ -358,13 +357,12 @@ class GXpy(_Singleton):
                 self.log('UTC: {}'.format(self._start))
                 self.log('API: {}'.format(__version__))
                 self.log('GID: {}'.format(self.gid))
-                self.log('rights: {}'.format(json.dumps(self.entitlements())))
+                self.log('entitlements: {}'.format(json.dumps(self.entitlements())))
                 self.log('script: {}'.format(gxs.app_name()))
                 self.log('project path: {}'.format(gxu.folder_workspace()))
                 self.log('user path: {}'.format(gxu.folder_user()))
 
             # create a shared string ref for the convenience of Geosoft modules
-
             self._sr = gxapi.str_ref()
             gx = self
             self.log('GX open')
@@ -380,6 +378,14 @@ class GXpy(_Singleton):
             self.folder_workspace = gxu.folder_workspace()
             self.folder_temp = gxu.folder_temp()
             self.folder_user = gxu.folder_user()
+
+            # determine license
+            try:
+                # test is we can create a GXST2 instance, which requires a minimal license
+                gxapi.GXST2.create()
+                self._entitled = True
+            except gxapi.GXAPIError:
+                self._entitled = False
 
     def _remove_gx_temporary_folders(self):
         """ removes all GX temporary folders and """
@@ -409,6 +415,15 @@ class GXpy(_Singleton):
             for l in str(log_str).split('\n'):
                 logstr = dts + l + os.linesep
                 self._logf.write(logstr.encode('utf-8'))
+
+    @property
+    def version(self):
+        """
+        API version description
+
+        .. versionadded:: 9.3
+        """
+        return __version__
 
     @property
     def main_wind_id(self):
@@ -458,9 +473,74 @@ class GXpy(_Singleton):
         .. versionadded:: 9.1
         """
 
-        lst = gxapi.GXLST.create(1000)
-        gxapi.GXSYS.get_entitlement_rights(lst)
-        return gxu.dict_from_lst(lst)
+        if not self._entitlements:
+            lst = gxapi.GXLST.create(1000)
+            gxapi.GXSYS.get_entitlement_rights(lst)
+            self._entitlements = gxu.dict_from_lst(lst)
+        return self._entitlements
+
+    def has_entitlement(self, ent):
+        """
+        Returns True if the user has this entitlement.
+
+        :param ent: Entitlement number or descriptive name (case sensitive)
+
+        | Partial list of entitlements as of 9.3 platform (subject to change):
+        |    1000: "Oasis montaj™ Base"
+        |    10000: "Oasis montaj™ Mapping and Processing System"
+        |    100010: "Geosoft - Virtual Computer License"
+        |    10100: "Geophysics"
+        |    10101: "Geochemistry"
+        |    10102: "Drillhole Plotting"
+        |    10103: "Induced Polarization"
+        |    10104: "Geophysics Levelling"
+        |    10105: "MAGMAP Filtering"
+        |    10106: "Grav/Mag Interpretation"
+        |    10107: "Airborne Quality Control"
+        |    10108: "256-Channel Radiometric Processing"
+        |    10109: "Gravity and Terrain Correction"
+        |    10110: "GridKnit"
+        |    10111: "UXO Land"
+        |    10114: "UXO Marine"
+        |    10500: "montaj plus™ Modeling Lite (PotentQ)"
+        |    10520: "GM-SYS Basic Profile Modeling"
+        |    10521: "GM-SYS Intermediate Profile Modeling"
+        |    10522: "GM-SYS Advanced Profile Modeling"
+        |    10523: "GM-SYS 3D Modeling"
+        |    10524: "Depth to Basement"
+        |    10525: "Isostatic Residual"
+        |    10540: "montaj plus™ Grav/Mag Filtering"
+        |    10541: "montaj plus™ Compudrape"
+        |    10550: "montaj plus™ Praga Radiometric Processing System"
+        |    10560: "montaj plus™ CET Grid Analysis"
+        |    10561: "montaj plus™ CET Porphyry Analysis"
+        |    2000: "ArcGIS"
+        |    3000: "MapInfo"
+        |    30000: "Target™ Surface and Drillhole Mapping"
+        |    30101: "Target™ Geochemistry"
+        |    40000: "Target™ for ArcGIS Surface and Drillhole Mapping"
+        |    41000: "Geochemistry for ArcGIS"
+        |    5104: "montaj™ Geophysics Leveling - Basic"
+        |    5106: "montaj™ Grav/Mag Interpretation - Basic"
+
+        .. versionadded:: 9.3
+        """
+
+        ent = str(ent)
+        if ent in self.entitlements().keys():
+            return True
+        if ent in self.entitlements().values():
+            return True
+        return False
+
+    @property
+    def entitled(self):
+        """
+        True if this user has a minimal Geosoft desktop licence/entitlement
+
+        .. versionadded:: 9.3
+        """
+        return self._entitled
 
     @property
     def license_class(self):

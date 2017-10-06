@@ -38,6 +38,15 @@ class Test(GXPYTest):
         with gx.GXpy(log=print) as gxc:
             ent = gxc.entitlements()
             self.assertTrue(ent.get('1000'), 'Oasis montaj™ Base')
+            self.assertTrue(gxc.has_entitlement(1000))
+            self.assertTrue(gxc.has_entitlement('Oasis montaj™ Base'))
+            self.assertTrue(gxc.has_entitlement(2000))
+            self.assertTrue(gxc.has_entitlement("ArcGIS"))
+            self.assertTrue(gxc.has_entitlement(3000))
+            self.assertTrue(gxc.has_entitlement("MapInfo"))
+            self.assertFalse(gxc.has_entitlement("bogus"))
+            #for e in ent:
+            #    print('{}: "{}"'.format(e, ent[e]))
             gxc._close()
 
     def test_temp(self):
