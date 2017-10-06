@@ -47,6 +47,23 @@ class Test(GXPYTest):
             self.assertFalse(gxc.has_entitlement("bogus"))
             #for e in ent:
             #    print('{}: "{}"'.format(e, ent[e]))
+
+            if gxc.entitled:
+                self.assertTrue(gxc.has_entitlement(10000) or
+                                gxc.has_entitlement(30000) or
+                                gxc.has_entitlement(30101) or
+                                gxc.has_entitlement(40000) or
+                                gxc.has_entitlement(41000))
+            else:
+                self.assertTrue(gxc.has_entitlement(1000) and
+                                gxc.has_entitlement(2000) and
+                                gxc.has_entitlement(3000))
+                self.assertFalse(gxc.has_entitlement(10000))
+                self.assertFalse(gxc.has_entitlement(30000))
+                self.assertFalse(gxc.has_entitlement(30101))
+                self.assertFalse(gxc.has_entitlement(40000))
+                self.assertFalse(gxc.has_entitlement(41000))
+
             gxc._close()
 
     def test_temp(self):
