@@ -592,8 +592,6 @@ class Test(GXPYTest):
                     g.locate((450000, 5025000),
                              reference=gxg.REF_TOP_CENTER)
 
-
-
         self.crc_map(map_file)
 
     def test_color_bar(self):
@@ -664,7 +662,6 @@ class Test(GXPYTest):
 
 
         self.crc_map(map_file)
-
 
     def test_properties(self):
         self.start()
@@ -883,18 +880,22 @@ class Test(GXPYTest):
                 with gxg.Draw(v) as g:
                     g.rectangle(g.extent)
 
-                gxg.Color_symbols_group.new(v, 'outer_symbols', data, cmap)
+                cs = gxg.Color_symbols_group.new(v, 'outer_symbols', data, cmap, unit_of_measure='maki')
                 cmap = gxg.Color_map('hotcycle')
                 cmap.set_linear(0, 5, contour_interval=1)
-                gxg.Color_symbols_group.new(v, 'mark', data2, cmap,
+                nv = gxg.Color_symbols_group.new(v, 'mark', data2, cmap,
                                             symbol=gxg.SYMBOL_BOX,
                                             symbol_def=gxg.Text_def(font='symbols.gfn',
                                                                     height=0.15,
                                                                     color=gxg.C_WHITE,
-                                                                    weight=gxg.FONT_WEIGHT_ULTRALIGHT))
+                                                                    weight=gxg.FONT_WEIGHT_ULTRALIGHT)).name_in_view
 
-                cs = gxg.Color_symbols_group.open(v, 'mark')
+                cs = gxg.Color_symbols_group.open(v, nv)
                 self.assertEqual(cs.number, 2)
+
+                # add a color legend
+                #TODO - Jacques, the GXCSYMB.get_itr is missing
+                # gxg.legend_color_bar(v, 'symbol_legend', cs.color_map())
 
         self.crc_map(map_file)
 

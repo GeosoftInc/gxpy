@@ -7,6 +7,7 @@ Render groups in 3D views, or to 2D views on a map.
     :class:`Group`               base class for named rendering groups in 2D and 3D views.
     :class:`Draw`                2D drawing group, handles 2D drawing to a view or plane in a 3D view
     :class:`Draw_3d`             3D grawing group for 3D objects placed in a 3d view
+    :class:`Draw_3d`             3D grawing group for 3D objects placed in a 3d view
     :class:`Color`               colour definition
     :class:`Color_map`           maps values to colors
     :class:`Pen`                 pen definition, includes line colour, thickness and pattern, and fill.
@@ -177,6 +178,25 @@ LINE3D_STYLE_TUBE = 1 #:
 LINE3D_STYLE_TUBE_JOINED = 2 #:
 
 
+def _unit_of_measure(name):
+    if '.' in name:
+        return name[name.rfind('.') + 1:]
+    return ''
+
+def _name(name):
+    if '.' in name:
+        return name[:name.rfind('.')]
+    return name
+
+def _name_unit_of_measure(name, unit_of_measure):
+    # decorate name with unit_of_measure
+    if unit_of_measure:
+        if '.' in name:
+            if unit_of_measure.lower() != _unit_of_measure(name).lower():
+                raise GroupException("Unit of measure '{}' is inconsistent with name '{}'".format(unit_of_measure, name))
+        return name + '.' + unit_of_measure
+    return name
+
 def edge_reference(area, reference):
     """
     Location of a reference point of an area.
@@ -217,15 +237,18 @@ class Group:
 
     :parameters:
 
-        :view:          gxpy.View
-        :name:          group name, default is "_".
-        :plane:         plane number, or plane name if drawing to a 3D view.  Default is plane number 0.
-        :view_lock:     True to lock the view for a single-stream drawwing group.  Default is False.
+        :view:              gxpy.View
+        :name:              group name, default is "_".
+        :plane:             plane number, or plane name if drawing to a 3D view.  Default is plane number 0.
+        :view_lock:         True to lock the view for a single-stream drawwing group.  Default is False.
+        :unit_of_measure:   unit of measurement for data in this group, default is ''
 
     :Properties:
 
         :view:              the :class:`geosoft.gxpy.view.View` instance that contains this group
         :name:              the name of the group
+        :unit_of_measure:   the unit of measurement (uom) for this data in this group
+        :name_uom:          uom decorated group name as it appears in a view
         :extent:            extent of the group in view units
         :extent_map_cm:     extent of the group in map cm
         :drawing_coordinate_system:        the coordinate system of drawing coordinates. Setting to None will reset drawing
@@ -233,6 +256,9 @@ class Group:
                             coordinates will be transformed into the view cs.
 
     .. versionadded:: 9.2
+
+    .. versionmodified:: 9.3
+        added support for unit_of_measure
     """
 
     def __enter__(self):
@@ -256,17 +282,20 @@ class Group:
         return "{}({})".format(self.__class__, self.__dict__)
 
     def __str__(self):
-        return '{}/{}'.format(self.name, self.view.name)
+        return '{}/{}'.format(self.name_in_view, self.view.name)
 
     def __init__(self,
                  view,
                  name='_',
                  plane=None,
                  view_lock=False,
-                 mode=APPEND):
+                 mode=APPEND,
+                 unit_of_measure=''):
 
         if (len(name) == 0) or (name == view.name):
             name = name + '_'
+
+        name = _name_unit_of_measure(name, unit_of_measure)
 
         _lock = threading.Lock()
         _lock.acquire()
@@ -285,7 +314,7 @@ class Group:
         self._name = name
 
         self._mode = mode
-        self._view.gxview.start_group(name, mode)
+        self._view.gxview.start_group(self.name_in_view, mode)
 
         self._open = True
 
@@ -301,19 +330,29 @@ class Group:
     @property
     def name(self):
         """group name"""
+        return _name(self._name)
+
+    @property
+    def unit_of_measure(self):
+        """unit of measure"""
+        return _unit_of_measure(self._name)
+
+    @property
+    def name_in_view(self):
+        """Name of the group in a view, which includes the unit_of_measure (eg \"Cu.ppm\")"""
         return self._name
 
     @property
     def number(self):
         """group number in the view"""
-        return self.view.gxview.find_group(self.name)
+        return self.view.gxview.find_group(self.name_in_view)
 
     def _extent(self, unit=UNIT_VIEW):
         xmin = gxapi.float_ref()
         ymin = gxapi.float_ref()
         xmax = gxapi.float_ref()
         ymax = gxapi.float_ref()
-        self.view.gxview.get_group_extent(self.name, xmin, ymin, xmax, ymax, unit)
+        self.view.gxview.get_group_extent(self.name_in_view, xmin, ymin, xmax, ymax, unit)
         return xmin.value, ymin.value, xmax.value, ymax.value
 
     @property
@@ -324,14 +363,14 @@ class Group:
     @property
     def visible(self):
         """True if group is visible, can be set."""
-        return self.name in self.view.group_list_visible
+        return self.name_in_view in self.view.group_list_visible
 
     @visible.setter
     def visible(self, visibility):
         if self.visible != visibility:
             marked = self.view.group_list_marked
             self.view.gxview.mark_all_groups(0)
-            self.view.gxview.mark_group(self.name, 1)
+            self.view.gxview.mark_group(self.name_in_view, 1)
             if visibility is True:
                 self.view.gxview.hide_marked_groups(0)
             else:
@@ -377,7 +416,7 @@ class Group:
         area -= area.centroid
         area -= edge_reference(area, reference)
         area += location
-        self.view.gxview.relocate_group(self.name,
+        self.view.gxview.relocate_group(self.name_in_view,
                                         area.p0.x, area.p0.y, area.p1.x, area.p1.y,
                                         gxapi.MVIEW_RELOCATE_ASPECT_CENTER)
 
@@ -1085,7 +1124,8 @@ def legend_color_bar(view,
     :param division_line:       0, no division lines, 1 - line, 2 - tick
     :param interval_1:          annotation increment, default annotates everything
     :param interval_2:          secondary smaller annotations, 1/10, 1/ 5, 1/4 or 1/2 interval_1
-    :param title:               bar title, use new-lines for sub-titles.
+    :param title:               bar title, use new-lines for sub-titles.  Default uses the title and unit_of_measure
+                                from `cmap`.
 
     .. versionadded:: 9.2
     """
@@ -1176,8 +1216,8 @@ def legend_color_bar(view,
         gxapi.GXMVU.color_bar_reg(view.gxview, itr, itr2, gxu.reg_from_dict(cdict, 100, json_encode=False))
 
         if title is None:
-            if cmap.units:
-                title = '{}\n({})'.format(cmap.title, cmap.units)
+            if cmap.unit_of_measure:
+                title = '{}\n({})'.format(cmap.title, cmap.unit_of_measure)
             else:
                 title = cmap.title
 
@@ -1800,28 +1840,33 @@ class Color_symbols_group(Group):
     Create a color symbols group with color mapping.
 
     :param view:            the view in which to place the group
-    :param name:            group name
-    :param data:            iterable that yields `((x, y), data)`, or `((x, y, z), data, ...)`.  Only `((x,y), data)`
-                            is used.
+    :param group_name:      group name, which can optionally be decorated with the unit_of_measure (eg "Cu.ppm")
+    :param data:            iterable that yields `((x, y), data)`, or `((x, y, z), data, ...)`.  Only the
+                            first `data` value is used.
     :param color_map:       symbol fill color :class:`Color_map`.
-                            Symbols are filled with the color lookup using data.
+                            Symbols are filled with the color lookup using `data`.
     :param symbol_def:      :class:`Text_def` defines the symbol font to use, normally
                             `symbols.gfn` is expected, and if used the symbols defined by the `SYMBOL` manifest
                             are valid.  For other fonts you will get the symbol requested.  The default is
                             `Text_def(font='dymbols.gfn', color='k', weight=FONT_WEIGHT_ULTRALIGHT)`
     :param symbol:          the symbol to plot, normally one of `SYMBOL`.
+    :param unit_of_measure: unit of measure label.  If the group_name already has a unit_of_measure
+                            (eg "Cu.ppm") this unit_of_measure must match.
 
     .. versionadded:: 9.2
+
+    .. versionmodified:: 9.3
+        added unit_of_measure
     """
 
     def __exit__(self, exc_type, exc_val, exc_tb):
-        self.csymb = None
+        self.gxcsymb = None
         self._close()
 
-    def __init__(self, view, group_name, mode):
+    def __init__(self, view, group_name, mode, unit_of_measure=''):
 
-        self.csymb = None
-        super().__init__(view, group_name, mode=mode)
+        self.gxcsymb = None
+        super().__init__(view, group_name, mode=mode, unit_of_measure=unit_of_measure)
 
     @classmethod
     def new(cls,
@@ -1830,31 +1875,32 @@ class Color_symbols_group(Group):
             data,
             color_map,
             symbol_def=None,
-            symbol=SYMBOL_CIRCLE):
+            symbol=SYMBOL_CIRCLE,
+            unit_of_measure=''):
 
         def valid(xyd):
             if xyd[0][0] is None or xyd[0][1] is None or xyd[1] is None:
                 return False
             return True
 
-        cs = cls(view, name, mode=NEW)
-        cs.csymb = gxapi.GXCSYMB.create(color_map.save_file())
+        cs = cls(view, name, mode=NEW, unit_of_measure=unit_of_measure)
+        cs.gxcsymb = gxapi.GXCSYMB.create(color_map.save_file())
 
         if symbol_def is None:
             symbol_def = Text_def(font='geosoft.gfn',
                                   height=(0.25 * view.units_per_map_cm),
                                   weight=FONT_WEIGHT_ULTRALIGHT,
                                   color=C_BLACK)
-        cs.csymb.set_font(symbol_def.font, symbol_def.gfn, symbol_def.weight, symbol_def.italics)
-        cs.csymb.set_static_col(symbol_def.color.int_value, 0)
-        cs.csymb.set_scale(symbol_def.height)
-        cs.csymb.set_number(symbol)
+        cs.gxcsymb.set_font(symbol_def.font, symbol_def.gfn, symbol_def.weight, symbol_def.italics)
+        cs.gxcsymb.set_static_col(symbol_def.color.int_value, 0)
+        cs.gxcsymb.set_scale(symbol_def.height)
+        cs.gxcsymb.set_number(symbol)
 
         xy = gxgm.PPoint([xy[0] for xy in data if valid(xy)])
-        cs.csymb.add_data(gxvv.GXvv(xy.x).gxvv,
+        cs.gxcsymb.add_data(gxvv.GXvv(xy.x).gxvv,
                           gxvv.GXvv(xy.y).gxvv,
                           gxvv.GXvv([d[1] for d in data if valid(d)]).gxvv)
-        view.gxview.col_symbol(name, cs.csymb)
+        view.gxview.col_symbol(cs.name_in_view, cs.gxcsymb)
 
         return cs
 
@@ -1864,8 +1910,26 @@ class Color_symbols_group(Group):
              group_name):
         cs = cls(view, group_name, mode=READ_ONLY)
         group_number = view.gxview.find_group(group_name)
-        cs.csymb = view.gxview.get_col_symbol(group_number)
+        cs.gxcsymb = view.gxview.get_col_symbol(group_number)
         return cs
+
+    def color_map(self):
+        """
+        Return the :class:`geosoft.gxpy.group.Color_map` of a color symbol group.
+
+        :param layer: layer number or layer name
+        :returns: :class:`geosoft.gxpy.group.Color_map`
+
+        .. versionadded:: 9.3
+        """
+
+        itr = gxapi.GXITR.create()
+        self.gxcsymb.get_itr(itr)
+        cmap = geosoft.gxpy.group.Color_map(itr)
+        cmap.title = self.name
+        cmap.unit_of_measure = self.unit_of_measure
+
+        return cmap
 
 
 class Aggregate_group(Group):
@@ -1909,7 +1973,7 @@ class Aggregate_group(Group):
             name = agg.name
         agg_group = cls(view, name, mode=NEW)
         agg_group.agg = agg
-        view.gxview.aggregate(agg.gxagg, name)
+        view.gxview.aggregate(agg.gxagg, agg_group.name_in_view)
         return agg_group
 
     @classmethod
@@ -1917,7 +1981,7 @@ class Aggregate_group(Group):
              view,
              group_name):
         agg_group = cls(view, group_name, mode=READ_ONLY)
-        group_number = view.gxview.find_group(group_name)
+        group_number = view.gxview.find_group(agg_group.name_in_view)
         agg_group.agg = gxagg.Aggregate_image.open(view.gxview.get_aggregate(group_number))
         return agg_group
 
@@ -1930,14 +1994,21 @@ class Color_map:
                     which is the case for a `.tbl` file, the Color_map will be uninitialized and you
                     can use one of the `set` methods to establish zone values.
                     
-                    You can also provide an `int_value`, which will create an uninitialized map of the the
+                    You can also provide an `int`, which will create an uninitialized map of the the
                     specified length, or a :class:`geosoft.gxapi.GXITR` instance.
                     
                     If not specified the Geosoft default color table is used.
-                    
+
+    :param title:   Color map title which is displayed in the color map legend.
+    :param unit_of_measure: Unit of measure to be displayed in a color map legend.
+
+    .. versionadded:: 9.2
+
+    .. versionmodified:: 9.3
+        changed `units` to `unit_of_measure` for consistency across gxpy
     """
 
-    def __init__(self, cmap=None, title=None, units=None):
+    def __init__(self, cmap=None, title=None, unit_of_measure=None):
 
         if cmap is None:
             sr = gxapi.str_ref()
@@ -1971,7 +2042,7 @@ class Color_map:
 
         self._next = 0
         self._title = title
-        self._units= units
+        self._units= unit_of_measure
 
     def __iter__(self):
         return self
@@ -2031,17 +2102,17 @@ class Color_map:
             self._title = None
 
     @property
-    def units(self):
+    def unit_of_measure(self):
         """
-        Data units, expected to be the units of the data from which the color bar was made or is intended. 
-        None if no units
+        Data unit of measure for the data from which the color bar was made or is intended.
+        None if the unit of measure is unknown.
 
         .. versionadded:: 9.2
         """
         return self._units
 
-    @units.setter
-    def units(self, units):
+    @unit_of_measure.setter
+    def unit_of_measure(self, units):
         if units:
             self._units = str(units)
         else:
@@ -2185,9 +2256,18 @@ class Color_map:
         Save to a Geosoft file, `.tbl`, `.itr` or `.zon`.  If the file_name does not have an
         extension and the color_map has not been initialized a `.tbl` file is created (colors only), 
         otherwise a `.itr` is created, which contains both zone boundaries and colors.
-        
+
         :param file_name:   file name, if None a temporary file is created
-        :returns: 
+
+        This is useful for gxapi methods that require a colour map to be loaded from a file. Say you
+        cave a Color_map instance named `cmap` and you want to create a GXCSYMB instance, which
+        requires a colur map file:
+
+        .. code::
+
+            cs = gxapi.GXCSYMB.create(cmap.save_file())
+
+        .. versionadded:: 9.2
         """
 
         if file_name is None:
