@@ -61,13 +61,13 @@ class Test(GXPYTest):
                 name = None
                 with gxdb.Geosoft_gdb.new('new', overwrite=True) as gdb:
                     name = gdb.file_name
-                    npd = np.empty((2000, 2)) #TODO - make it large
+                    npd = np.empty((200000, 2)) #TODO - make it large
                     npd[:,:] = np.nan
                     line = gdb.new_line('test')
                     gdb.write_line(line, npd, ['x', 'y'])
                     npd, ch, fid = gdb.read_line(line)
                     self.assertEqual(len(ch), 2)
-                    self.assertEqual(npd.shape, (2000, 2))
+                    self.assertEqual(npd.shape, (200000, 2))
             finally:
                 gxdb.delete_files(name)
 
