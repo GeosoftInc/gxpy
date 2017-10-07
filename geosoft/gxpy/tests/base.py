@@ -44,6 +44,9 @@ if UPDATE_RESULTS:
     root_window.overrideredirect(1)
     root_window.withdraw()
 
+def _t(s):
+    return s
+
 def _verify_no_gx_context():
     loc_gx = None
     try:

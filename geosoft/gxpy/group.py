@@ -1,10 +1,11 @@
 """
 A Geosoft View (:class:`geosoft.gxpy.view.View` or :class:`geosoft.gxpy.view.View_3d`) contains graphical elements as
-:class:`Group` instances. Groups are named and can be manipulated by a Geosoft map or view viewer, which allows a
-user to turn a group on or off, or change the transparency of a group.
+:class:`Group` instances. Groups are named and are available to a user in a Geosoft viewer, which allows groups to
+be turned on or off, modify the transparency, or be deleted.
 
 2D views can only accept 2D groups, while a 3D view can accept both 2D and 3D groups. When a 2D group is placed
 in a 3D view, the group is placed on a the active plane inside the 3D view.
+in a 3D view, the group is placed on a the active plane inside the 3D view
 
 :Classes:
 
@@ -12,13 +13,12 @@ in a 3D view, the group is placed on a the active plane inside the 3D view.
     :class:`Group`               base class for named rendering groups in 2D and 3D views.
     :class:`Draw`                2D drawing group, handles 2D drawing to a view or plane in a 3D view
     :class:`Draw_3d`             3D grawing group for 3D objects placed in a 3d view
-    :class:`Draw_3d`             3D grawing group for 3D objects placed in a 3d view
+    :class:`Color_symbols_group` group for 2D symbols rendered based on data values
+    :class:`Aggregate_group`     group that contains a :class:`geosoft.gxpy.agg.Aggregate_image` instance
     :class:`Color`               colour definition
     :class:`Color_map`           maps values to colors
     :class:`Pen`                 pen definition, includes line colour, thickness and pattern, and fill.
     :class:`Text_def`            defined text characteristics
-    :class:`Color_symbols_group` group for 2D symbols rendered based on data values
-    :class:`Aggregate_group`     group that contains a :class:`geosoft.gxpy.agg.Aggregate_image` instance
     ============================ =============================================================================
 
 .. note::
@@ -190,10 +190,12 @@ def _unit_of_measure(name):
         return name[name.rfind('.') + 1:]
     return ''
 
+
 def _name(name):
     if '.' in name:
         return name[:name.rfind('.')]
     return name
+
 
 def _name_unit_of_measure(name, unit_of_measure):
     # decorate name with unit_of_measure
@@ -203,6 +205,33 @@ def _name_unit_of_measure(name, unit_of_measure):
                 raise GroupException("Unit of measure '{}' is inconsistent with name '{}'".format(unit_of_measure, name))
         return name + '.' + unit_of_measure
     return name
+
+
+def color_from_string(cstr):
+    """
+    Return a Geosoft color number from a color string.
+
+    :param cstr:    color string (see below)
+    :returns:       color
+
+    Colour strings may be "R", "G", "B", "C", "M", "Y",
+    "H", "S", "V", or "K" or a combination of these
+    characters, each followed by up to three digits
+    specifying a number between 0 and 255.
+    An empty string will produce C_ANY_NONE.
+
+    You must stay in the same color model, RGB, CMY,
+    HSV or K.
+
+    For example "R", "R127G22", "H255S127V32"
+
+    Characters are not case sensitive.
+
+    .. versionadded:: 9.3
+    """
+
+    return gxapi.GXMVIEW.color(str(cstr))
+
 
 def edge_reference(area, reference):
     """
@@ -247,7 +276,7 @@ class Group:
         :view:              gxpy.View
         :name:              group name, default is "_".
         :plane:             plane number, or plane name if drawing to a 3D view.  Default is plane number 0.
-        :view_lock:         True to lock the view for a single-stream drawwing group.  Default is False.
+        :view_lock:         True to lock the view for a single-stream drawing group.  Default is False.
         :unit_of_measure:   unit of measurement for data in this group, default is ''
 
     :Properties:
@@ -602,29 +631,6 @@ class Draw(Group):
             self.view.gxview.text_size(text_def.height)
             self.view.gxview.text_color(text_def.color.int_value)
 
-
-    def color(self, cstr):
-        """
-        Return a color from a color string.
-
-        :param cstr:    color string (see below)
-        :returns:       color
-
-        Colour strings may be "R","G","B","C","M","Y",
-        "H","S","V", or "K" or a combination of these
-        characters, each followed by up to three digits
-        specifying a number between 0 and 255.
-        An empty string will produce C_ANY_NONE.
-
-        You must stay in the same color model, RGB, CMY,
-        HSV or K.
-
-        For example "R", "R127G22", "H255S127V32"
-
-        Characters are not case sensitive.
-        """
-
-        return self.view.gxview.color(str)
 
     @_draw
     def graticule(self, dx=None, dy=None, ddx=None, ddy=None, style=GRATICULE_LINE):
@@ -1844,36 +1850,25 @@ class Pen:
 
 class Color_symbols_group(Group):
     """
-    Create a color symbols group with color mapping.
+    Data represented as colored symbols based on a :class:`Color_map`.
 
-    :param view:            the view in which to place the group
-    :param group_name:      group name, which can optionally be decorated with the unit_of_measure (eg "Cu.ppm")
-    :param data:            iterable that yields `((x, y), data)`, or `((x, y, z), data, ...)`.  Only the
-                            first `data` value is used.
-    :param color_map:       symbol fill color :class:`Color_map`.
-                            Symbols are filled with the color lookup using `data`.
-    :param symbol_def:      :class:`Text_def` defines the symbol font to use, normally
-                            `symbols.gfn` is expected, and if used the symbols defined by the `SYMBOL` manifest
-                            are valid.  For other fonts you will get the symbol requested.  The default is
-                            `Text_def(font='symbols.gfn', color='k', weight=FONT_WEIGHT_ULTRALIGHT)`
-    :param symbol:          the symbol to plot, normally one of `SYMBOL`.
-    :param unit_of_measure: unit of measure label.  If the group_name already has a unit_of_measure
-                            (eg "Cu.ppm") this unit_of_measure must match.
+    :Constructors:
 
-    .. versionadded:: 9.2
+        ============ =======================================
+        :func:`new`  create a new symbol group in a view
+        :func:`open` open an existing symbol group in a view
+        ============ =======================================
 
-    .. versionchanged:: 9.3
-        added `unit_of_measure`
     """
 
     def __exit__(self, exc_type, exc_val, exc_tb):
         self.gxcsymb = None
         self._close()
 
-    def __init__(self, view, group_name, mode, unit_of_measure=''):
+    def __init__(self, view, group_name, **kwargs):
 
         self.gxcsymb = None
-        super().__init__(view, group_name, mode=mode, unit_of_measure=unit_of_measure)
+        super().__init__(view, group_name, **kwargs)
 
     @classmethod
     def new(cls,
@@ -1883,14 +1878,32 @@ class Color_symbols_group(Group):
             color_map,
             symbol_def=None,
             symbol=SYMBOL_CIRCLE,
-            unit_of_measure=''):
+            **kwargs):
+        """
+        Create a new color symbols group with color mapping.
+
+        :param view:            the view in which to place the group
+        :param group_name:      group name, which can optionally be decorated with the unit_of_measure (eg "Cu.ppm")
+        :param data:            iterable that yields `((x, y), data)`, or `((x, y, z), data, ...)`.  Only the
+                                first `data` value is used.
+        :param color_map:       symbol fill color :class:`Color_map`.
+                                Symbols are filled with the color lookup using `data`.
+        :param symbol_def:      :class:`Text_def` defines the symbol font to use, normally
+                                `symbols.gfn` is expected, and if used the symbols defined by the `SYMBOL` manifest
+                                are valid.  For other fonts you will get the symbol requested.  The default is
+                                `Text_def(font='symbols.gfn', color='k', weight=FONT_WEIGHT_ULTRALIGHT)`
+        :param symbol:          the symbol to plot, normally one of `SYMBOL`.
+        :return:                :class:`Color_symbols_group` instance
+
+        .. versionadded:: 9.2
+        """
 
         def valid(xyd):
             if xyd[0][0] is None or xyd[0][1] is None or xyd[1] is None:
                 return False
             return True
 
-        cs = cls(view, name, mode=NEW, unit_of_measure=unit_of_measure)
+        cs = cls(view, name, mode=NEW, **kwargs)
         cs.gxcsymb = gxapi.GXCSYMB.create(color_map.save_file())
 
         if symbol_def is None:
@@ -1915,6 +1928,15 @@ class Color_symbols_group(Group):
     def open(cls,
              view,
              group_name):
+        """
+        Open an existing color symbols group.
+
+        :param view:        view that contains the group
+        :param group_name:  name of the group, which must be a color symbols group
+        :return:            :class:`Color_symbols_group` instance
+
+        .. versionadded:: 9.2
+        """
         cs = cls(view, group_name, mode=READ_ONLY)
         group_number = view.gxview.find_group(group_name)
         cs.gxcsymb = view.gxview.get_col_symbol(group_number)

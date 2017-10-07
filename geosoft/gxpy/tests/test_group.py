@@ -1135,6 +1135,12 @@ class Test(GXPYTest):
 
         self.crc_map(map_file)
 
+    def test_color_str(self):
+        self.start()
+
+        self.assertEqual(gxg.color_from_string("R"), 33554687)
+        self.assertEqual(gxg.color_from_string("H255S127V32"), 18907135)
+
 
 if __name__ == '__main__':
     unittest.main()
