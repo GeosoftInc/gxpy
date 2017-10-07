@@ -1,5 +1,10 @@
 """
-Render groups in 3D views, or to 2D views on a map.
+A Geosoft View (:class:`geosoft.gxpy.view.View` or :class:`geosoft.gxpy.view.View_3d`) contains graphical elements as
+:class:`Group` instances. Groups are named and can be manipulated by a Geosoft map or view viewer, which allows a
+user to turn a group on or off, or change the transparency of a group.
+
+2D views can only accept 2D groups, while a 3D view can accept both 2D and 3D groups. When a 2D group is placed
+in a 3D view, the group is placed on a the active plane inside the 3D view.
 
 :Classes:
 
@@ -21,7 +26,9 @@ Render groups in 3D views, or to 2D views on a map.
     Regression tests provide usage examples:     
     `group drawing tests <https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_group.py>`_
     
-.. seealso:: :class:`geosoft.gxapi.GXMVIEW`, :class:`geosoft.gxapi.GXMVU`
+.. seealso:: :mod:`geosoft.gxpy.view`, :mod:`geosoft.gxpy.map`
+
+   :class:`geosoft.gxapi.GXMVIEW`, :class:`geosoft.gxapi.GXMVU`
 
 """
 from functools import wraps
@@ -257,8 +264,8 @@ class Group:
 
     .. versionadded:: 9.2
 
-    .. versionmodified:: 9.3
-        added support for unit_of_measure
+    .. versionchanged:: 9.3
+        added support for `unit_of_measure`
     """
 
     def __enter__(self):
@@ -1848,15 +1855,15 @@ class Color_symbols_group(Group):
     :param symbol_def:      :class:`Text_def` defines the symbol font to use, normally
                             `symbols.gfn` is expected, and if used the symbols defined by the `SYMBOL` manifest
                             are valid.  For other fonts you will get the symbol requested.  The default is
-                            `Text_def(font='dymbols.gfn', color='k', weight=FONT_WEIGHT_ULTRALIGHT)`
+                            `Text_def(font='symbols.gfn', color='k', weight=FONT_WEIGHT_ULTRALIGHT)`
     :param symbol:          the symbol to plot, normally one of `SYMBOL`.
     :param unit_of_measure: unit of measure label.  If the group_name already has a unit_of_measure
                             (eg "Cu.ppm") this unit_of_measure must match.
 
     .. versionadded:: 9.2
 
-    .. versionmodified:: 9.3
-        added unit_of_measure
+    .. versionchanged:: 9.3
+        added `unit_of_measure`
     """
 
     def __exit__(self, exc_type, exc_val, exc_tb):
@@ -1916,9 +1923,6 @@ class Color_symbols_group(Group):
     def color_map(self):
         """
         Return the :class:`geosoft.gxpy.group.Color_map` of a color symbol group.
-
-        :param layer: layer number or layer name
-        :returns: :class:`geosoft.gxpy.group.Color_map`
 
         .. versionadded:: 9.3
         """
@@ -2004,7 +2008,7 @@ class Color_map:
 
     .. versionadded:: 9.2
 
-    .. versionmodified:: 9.3
+    .. versionchanged:: 9.3
         changed `units` to `unit_of_measure` for consistency across gxpy
     """
 

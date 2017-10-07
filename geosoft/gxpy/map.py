@@ -208,14 +208,14 @@ class Map:
 
     Geosoft maps will always have a 2D 'base' view, which uses map cm as the coordinate system and is
     intended for drawing map annotations, such as titles, a scale bar, North arrow and legends.  The
-    lower-left corner of the base view at location (0, 0) and the upper-right corner is defined by the
+    lower-left corner of the base view ia at location (0, 0) and the upper-right corner is defined by the
     media size and may be adjusted to fit the data view.
 
     Geosoft maps will also have one or more data views, each with it's own defined coordinate system
     and graphical content.  Creating a new map will create one data view, which will become the map's 
-    ``current_data_view``, within which any spatial data drawn by Geosoft 2D drawing applications
+    `current_data_view`, within which any spatial data drawn by Geosoft 2D drawing applications
     will be placed.  Maps may have more than one data view, including 3D data views, and the 
-    ``current_data_view`` can be changed to any 2D or 3D view, and subsequent drawing will be placed
+    `current_data_view` can be changed to any 2D or 3D view, and subsequent drawing will be placed
     in that view.
 
     3D views define a 3D spatial volume and accept both 2D and 3D drawing elements.  A 3D view will always

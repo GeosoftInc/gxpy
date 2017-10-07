@@ -1,5 +1,9 @@
 """
-Views, both 2D and 3D.  
+Views, which can be 2D or 3D, contain graphical elements that can be displayed to a user in a Geosoft
+map viewer or a Geosoft 3D viewer.  Geosoft maps can contain any number of 2D or 3D views.
+
+Views contain one or more :class:`geosoft.gxpy.group.Group`.  2D views can contain 2D groups, while
+3D views can contain both 2D and 3D groups.
 
 :Classes:
 
@@ -11,7 +15,9 @@ Views, both 2D and 3D.
 2D and 3D views can be placed on a :class:`geosoft.gxpy.map.Map`, though 3D views
 are stored in a `geosoft_3dv` file which can be worked with and viewed separately from a map.
 
-.. seealso:: :mod:`geosoft.gxpy.map`, :mod:`geosoft.gxpy.group`, :mod:`geosoft.gxapi.GXMVIEW`
+.. seealso:: :mod:`geosoft.gxpy.map`, :mod:`geosoft.gxpy.group`
+
+   :mod:`geosoft.gxapi.GXMVIEW`
 
 .. note::
 
