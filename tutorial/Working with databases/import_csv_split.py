@@ -25,7 +25,7 @@ gdb.write_line(line_name, data, channel_names)
 gdb.coordinate_system = 'NAD83 / UTM zone 15N'
 
 # set the mag data units to 'nT'
-gxdb.Channel(gdb, 'mag').unit = 'nT'
+gxdb.Channel(gdb, 'mag').unit_of_measure = 'nT'
 
 print(list(gdb.list_lines()))     # ['L0']
 print(list(gdb.list_channels()))  # ['mag', 'X', 'Y', 'Z']

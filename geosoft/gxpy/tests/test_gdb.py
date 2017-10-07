@@ -553,6 +553,58 @@ class Test(GXPYTest):
 
             gdb.discard()
 
+    def test_write_vv_GDB(self):
+        self.start()
+
+        with gxdb.Geosoft_gdb.open(self.gdb_name) as gdb:
+
+            gdb.delete_channel('test')
+            gdb.new_channel('test')
+            vv = gxvv.GXvv(np.array([1.0,2.0,3.0,4.0]))
+            gdb.write_channel_vv('D590875', 'test', vv)
+            npd, ch, fid = gdb.read_line('D590875', channels=['test'])
+            self.assertEqual(gdb.channel_fid('D590875', 'test'), fid)
+            self.assertEqual(npd.shape,(4,1))
+            self.assertEqual(npd[:,0].tolist(),[1.0,2.0,3.0,4.0])
+
+            gdb.delete_channel('test')
+            gdb.new_channel('test', np.float64, details={'unit': 'bubba'})
+            self.assertEqual(gxdb.Channel(gdb, 'test').unit_of_measure, 'bubba')
+            vv = gxvv.GXvv(dtype=np.float64)
+            vv.set_data(np.array([1,2,3,4], dtype=np.int64))
+            gdb.write_channel_vv('D590875', 'test', vv)
+            npd,ch,fid = gdb.read_line('D590875', channels=['test'], dtype=np.int)
+            self.assertEqual(npd.shape,(4,1))
+            self.assertEqual(npd[:,0].tolist(),[1,2,3,4])
+
+            gdb.delete_channel('test')
+            gdb.new_channel('test', np.int32)
+            gdb.write_channel_vv('D590875', 'test', vv)
+            npd,ch,fid = gdb.read_line('D590875', 'test')
+            self.assertEqual(npd.shape,(4,1))
+            self.assertEqual(npd[:,0].tolist(),[1.0,2.0,3.0,4.0])
+
+            gdb.delete_channel('test')
+            gdb.new_channel('test', dtype=np.int32)
+            vv.fid = (3,2)
+            gdb.write_channel_vv('D590875', 'test', vv)
+            npd,ch,fid = gdb.read_line('D590875', 'test', dtype=int)
+            self.assertEqual(npd.shape,(4,1))
+            self.assertEqual(npd[:,0].tolist(),[1,2,3,4])
+            self.assertEqual(fid[0],3.0)
+            self.assertEqual(fid[1],2.0)
+
+            gdb.new_channel('test', np.int32)
+            vv = gxvv.GXvv(np.array([1, 2, 3, 4], dtype=np.int32), fid=(2.5,0.33))
+            gdb.write_channel_vv('D590875', 'test', vv)
+            npd,ch,fid = gdb.read_line('D590875', channels=['test'])
+            self.assertEqual(npd.shape,(4,1))
+            self.assertEqual(npd[:,0].tolist(),[1,2,3,4])
+            self.assertEqual(fid[0], 2.5)
+            self.assertEqual(fid[1], 0.33)
+
+            gdb.discard()
+
     def test_write_GDB(self):
         self.start()
 
@@ -879,20 +931,20 @@ class Test(GXPYTest):
                 self.assertEqual(ch.protect, det['protect'])
                 self.assertEqual(ch.symbol, det['symbol'])
                 self.assertEqual(ch.type, det['type'])
-                self.assertEqual(ch.unit, det['unit'])
+                self.assertEqual(ch.unit_of_measure, det['unit'])
                 self.assertEqual(ch.width, det['width'])
                 self.assertEqual(ch.class_, det['class'])
 
                 ch.protect = 1
                 ch.decimal = 6
                 ch.width = 10
-                ch.unit = 'nT'
+                ch.unit_of_measure = 'nT'
                 ch.label = 'weirdo'
                 ch.format = gxapi.DB_CHAN_FORMAT_GEOGR
                 ch.class_ = 'geochem'
                 self.assertEqual(ch.protect, True)
                 self.assertEqual(ch.decimal, 6)
-                self.assertEqual(ch.unit, 'nT')
+                self.assertEqual(ch.unit_of_measure, 'nT')
                 self.assertEqual(ch.label, 'weirdo')
                 self.assertEqual(ch.format, 4)
                 self.assertEqual(ch.class_, 'geochem')
@@ -1083,18 +1135,18 @@ class Test(GXPYTest):
 
             try:
                 x, y, z = gdb.xyz_channels
-                self.assertEqual(gxdb.Channel(gdb, x).unit, 'm')
+                self.assertEqual(gxdb.Channel(gdb, x).unit_of_measure, 'm')
                 gdb.coordinate_system = '{"units": "km"}'
-                self.assertEqual(gxdb.Channel(gdb, x).unit, 'km')
-                self.assertEqual(gxdb.Channel(gdb, y).unit, 'km')
-                self.assertEqual(gxdb.Channel(gdb, z).unit, 'km')
+                self.assertEqual(gxdb.Channel(gdb, x).unit_of_measure, 'km')
+                self.assertEqual(gxdb.Channel(gdb, y).unit_of_measure, 'km')
+                self.assertEqual(gxdb.Channel(gdb, z).unit_of_measure, 'km')
                 self.assertEqual(gdb.coordinate_system, '*unknown')
 
                 gxdb.Channel(gdb, 'Z').delete()
                 self.assertEqual(gdb.xyz_channels, ('X', 'Y', None))
                 gdb.coordinate_system = '{"units": "cm"}'
-                self.assertEqual(gxdb.Channel(gdb, x).unit, 'cm')
-                self.assertEqual(gxdb.Channel(gdb, y).unit, 'cm')
+                self.assertEqual(gxdb.Channel(gdb, x).unit_of_measure, 'cm')
+                self.assertEqual(gxdb.Channel(gdb, y).unit_of_measure, 'cm')
 
             finally:
                 gdb.discard()
@@ -1117,7 +1169,7 @@ class Test(GXPYTest):
                 gxdb.Channel(gdb, 'x').width = 45
                 gxdb.Channel(gdb, 'x').decimal = 4
                 xx = gxdb.Channel.new(gdb, 'xx', dup='x')
-                self.assertEqual(xx.unit, 'm')
+                self.assertEqual(xx.unit_of_measure, 'm')
                 self.assertEqual(xx.width, 45)
                 self.assertEqual(xx.decimal, 4)
 

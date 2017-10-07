@@ -45,10 +45,11 @@ class GXvv:
     """
     VV class wrapper.
 
-    :param array:       array-like, None to create an empty VV
-    :param dtype:       numpy data type.  For unicode strings 'U#', where # is a string length. If not specified
-                        the type is taken from first element in array, of if no array the default is 'float'.
-    :param fid:         (start, increment) fiducial
+    :param array:           array-like, None to create an empty VV
+    :param dtype:           numpy data type.  For unicode strings 'U#', where # is a string length. If not specified
+                            the type is taken from first element in array, of if no array the default is 'float'.
+    :param fid:             (start, increment) fiducial
+    :param unit_of_measure: unit of measure for the contained data.
     
     :Constructors:
      
@@ -62,10 +63,11 @@ class GXvv:
         ``gxtype``      GX data type
         ``dtype``       numpy data type
 
-    .. versionchanged:: 9.2
-        allow construction directly from arrays
-
     .. versionadded:: 9.1
+
+    .. versionchanged:: 9.2 support construction directly from arrays
+
+    .. versionchanged:: 9.3 added unit_of_measure
     """
 
     def __enter__(self):
@@ -75,7 +77,7 @@ class GXvv:
         self._np = None
         self._vv = None
 
-    def __init__(self, array=None, dtype=None, fid=(0.0, 1.0)):
+    def __init__(self, array=None, dtype=None, fid=(0.0, 1.0), unit_of_measure=''):
 
         if (array is not None) and (type(array) is not np.ndarray):
             if dtype is None:
@@ -97,6 +99,7 @@ class GXvv:
         self._sr = None
         self._np = None
         self._next = 0
+        self._unit_of_measure = unit_of_measure
 
         if array is not None:
             self.set_data(array.flatten(), fid)
@@ -123,6 +126,15 @@ class GXvv:
         else:
             v = float(self.np[item])
         return v, start + incr * item
+
+    @property
+    def unit_of_measure(self):
+        """ data unit of measurement"""
+        return self._unit_of_measure
+
+    @unit_of_measure.setter
+    def unit_of_measure(self, uom):
+        self._unit_of_measure = str(uom)
 
     @property
     def gxvv(self):

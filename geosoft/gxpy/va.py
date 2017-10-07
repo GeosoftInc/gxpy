@@ -44,14 +44,16 @@ class GXva:
     """
     VA class wrapper.
 
-    :param array:   2D numpy array, None for an empty VA
-    :param dtype:   numpy data type, default np.float
-    :param width:   array width, default is determined from array.  The array will be
-                    reshapped to this width if specified.
-    :param fid:     fid tuple (start,increment), default (0.0, 1.0)
+    :param array:           2D numpy array, None for an empty VA
+    :param dtype:           numpy data type, default np.float
+    :param width:           array width, default is determined from array.  The array will be
+                            reshaped to this width if specified.
+    :param fid:             fid tuple (start,increment), default (0.0, 1.0)
+    :param unit_of_measure: the unit of measurement for the data
 
-    .. versionchanged:: 9.2
-        allow construction directly from numpy array
+    .. versionchanged:: 9.3 added unit_of_measure
+
+    .. versionchanged:: 9.2 allow construction directly from numpy array
 
     .. versionadded:: 9.1
     """
@@ -66,7 +68,7 @@ class GXva:
     def __len__(self):
         return self._va.len()
 
-    def __init__(self, array=None, width=None, dtype=None, fid=(0.0, 1.0)):
+    def __init__(self, array=None, width=None, dtype=None, fid=(0.0, 1.0), unit_of_measure=''):
 
         if (array is not None):
             if dtype is None:
@@ -83,6 +85,7 @@ class GXva:
         self._sr = None
         self._next = 0
         self._np = None
+        self._unit_of_measure = unit_of_measure
 
         if array is not None:
             if self._gxtype >= 0:
@@ -107,6 +110,15 @@ class GXva:
     def __getitem__(self, item):
         self._start, self._incr = self.fid
         return self.np[item], self._start + self._incr * item
+
+    @property
+    def unit_of_measure(self):
+        """ data unit of measurement"""
+        return self._unit_of_measure
+
+    @unit_of_measure.setter
+    def unit_of_measure(self, uom):
+        self._unit_of_measure = str(uom)
 
     @property
     def fid(self):

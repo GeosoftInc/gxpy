@@ -197,6 +197,7 @@ class Test(GXPYTest):
             self.assertEqual(list(vv.np), ['1', '2', 'abcd'])
 
     def test_iterator(self):
+        self.start()
 
         with gxvv.GXvv(range(1000)) as vv:
             l2 = [v for v in vv]
@@ -209,6 +210,13 @@ class Test(GXPYTest):
             self.assertEqual(vvlist[0], 0.0)
             self.assertEqual(vvlist[999], 999.)
 
+    def test_uom(self):
+        self.start()
+
+        with gxvv.GXvv(range(1000), unit_of_measure='maki') as vv:
+            self.assertEqual(vv.unit_of_measure, 'maki')
+            vv.unit_of_measure = 'nT'
+            self.assertEqual(vv.unit_of_measure, 'nT')
 
 ##############################################################################################
 if __name__ == '__main__':

@@ -136,6 +136,16 @@ class Test(GXPYTest):
         npdata = np.array(["name","maki","neil","macleod"]).reshape(2,2)
         self.assertRaises(gxva.VAException, gxva.GXva, npdata, fid=fidva)
 
+    def test_uom(self):
+        self.start()
+
+        npdata = np.array(range(45)).reshape((9, 5))
+        with gxva.GXva(npdata, unit_of_measure='maki') as va:
+            self.assertEqual(va.unit_of_measure, 'maki')
+            va.unit_of_measure = 'nT'
+            self.assertEqual(va.unit_of_measure, 'nT')
+
+
 ##############################################################################################
 if __name__ == '__main__':
 

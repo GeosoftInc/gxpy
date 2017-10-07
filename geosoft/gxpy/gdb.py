@@ -546,8 +546,8 @@ class Geosoft_gdb:
         x, _, z = self.xyz_channels
         if z:
             z = Channel(self, z)
-            if not z.unit:
-                z.unit = Channel(self, x).unit
+            if not z.unit_of_measure:
+                z.unit_of_measure = Channel(self, x).unit_of_measure
 
     @property
     def max_blobs(self):
@@ -1013,7 +1013,7 @@ class Geosoft_gdb:
         Return the fiducial of a line, channel
 
         :param line:    line name, symbol or Line
-        :param channel: channel name, symbol or Channel
+        :param channel: channel name, symbol or channel
         :returns:       (start,increment)
         """
         ls = self.line_name_symb(line)[1]
@@ -1039,7 +1039,7 @@ class Geosoft_gdb:
         :param name:        channel name
         :param dtype:       numpy dtype (ie. np.int64)
         :param array:       array columns (default is 1)
-        :param dup:         duplicate properties of this channel (name, symbol, Channel)
+        :param dup:         duplicate properties of this channel (name, symbol, channel)
         :param details:     dictionary containing channel details, see channel_details()
 
         :returns:           channel symbol
@@ -1310,6 +1310,8 @@ class Geosoft_gdb:
         finally:
             self._unlock(cs)
 
+        vv.unit_of_measure = Channel(self, cs).unit_of_measure
+
         return vv
 
 
@@ -1338,6 +1340,9 @@ class Geosoft_gdb:
             self._db.get_chan_va(ls, cs, va._va)
         finally:
             self._unlock(cs)
+
+        va.unit_of_measure = Channel(self, cs).unit_of_measure
+
         return va
 
     def read_channel(self, line, channel, dtype=None):
@@ -1583,6 +1588,9 @@ class Geosoft_gdb:
         finally:
             self._unlock(cs)
 
+        if vv.unit_of_measure:
+            Channel(self, cs).unit_of_measure = vv.unit_of_measure
+
     def write_channel_va(self, line, channel, va):
         """
         Write VA data to a single channel.
@@ -1611,25 +1619,30 @@ class Geosoft_gdb:
         finally:
             self._unlock(cs)
 
+        if va.unit_of_measure:
+            Channel(self, cs).unit_of_measure = va.unit_of_measure
+
     def writeDataChan(self, *args, **kwargs):
         """
         .. deprecated:: 9.2 use :meth:`write_channel`
         """
         self.write_channel(*args, **kwargs)
 
-    def write_channel(self, line, channel, data, fid=(0.0, 1.0)):
+    def write_channel(self, line, channel, data, fid=(0.0, 1.0), unit_of_measure=None):
         """
         Write data to a single channel.
 
-        :param line:    line name or symbol
-        :param channel: channel name or symbol
-        :param data:    numpy array (2D for VA channel), or a list
-        :param fid:     tuple (fid start, increment), default (0.0,1.0)
+        :param line:            line name or symbol
+        :param channel:         channel name or symbol
+        :param data:            numpy array (2D for VA channel), or a list
+        :param fid:             tuple (fid start, increment), default (0.0,1.0)
+        :param unit_of_measure: data unit of measurement
+
+        .. versionmodified:: 9.3 support for setting channel from a list
+
+            added unit_of_measure
 
         .. versionadded:: 9.1
-
-        .. versionmodified:: 9.3
-            support for setting channel from a list
         """
 
         ln, ls = self.line_name_symb(line, create=True)
@@ -1673,6 +1686,9 @@ class Geosoft_gdb:
                 self._db.put_chan_va(ls, cs, va._va)
             finally:
                 self._unlock(cs)
+
+        if unit_of_measure:
+            Channel(self, cs).unit_of_measure = unit_of_measure
 
     def write_line_vv(self, line, chan_data):
         """
@@ -1842,18 +1858,19 @@ class Channel:
         self._sr = gxapi.str_ref()
 
     @classmethod
-    def new(cls, gdb, name, dtype=np.float64, array=1, dup=None, details=None, replace=False):
+    def new(cls, gdb, name, dtype=np.float64, array=1, dup=None, details=None, replace=False, unit_of_measure=None):
         """
         Create a new channel.
 
-        :param gdb:     Geosoft_gdb instance
-        :param name:    channel name
-        :param dtype:   numpy data type, defaule np.float64
-        :param array:   array size, default 1
-        :param dup:     duplicate properties of this channal (name, symbol or Channel)
-        :param details: dictionary of other channel properties - see :meth:`Geosoft_gdb.set_channel_details`
-        :param replace: `True` to replace an existing channel.  All existing channel information and data is lost.
-                        default is `False`.
+        :param gdb:             Geosoft_gdb instance
+        :param name:            channel name
+        :param dtype:           numpy data type, defaule np.float64
+        :param array:           array size, default 1
+        :param dup:             duplicate properties of this channal (name, symbol or Channel)
+        :param details:         dictionary of other channel properties - see :meth:`Geosoft_gdb.set_channel_details`
+        :param replace:         `True` to replace existing channel.  Existing channel information and data is lost.
+                                default is `False`.
+        :param unit_of_measure: unit of measurement of the data
         :return:        Channel instance
         """
 
@@ -1866,7 +1883,11 @@ class Channel:
         if details:
             gdb.set_channel_details(symb, details)
 
-        return cls(gdb, name)
+        chan = cls(gdb, name)
+        if unit_of_measure:
+            chan.unit_of_measure = unit_of_measure
+
+        return chan
 
     @property
     def name(self):
@@ -1978,7 +1999,7 @@ class Channel:
         return self.gdb._db.get_chan_type(self._symb)
 
     @property
-    def unit(self):
+    def unit_of_measure(self):
         """
         Unit of measure, can be set.
 
@@ -1987,8 +2008,8 @@ class Channel:
         self.gdb._db.get_chan_unit(self._symb, self._sr)
         return self._sr.value
 
-    @unit.setter
-    def unit(self, value):
+    @unit_of_measure.setter
+    def unit_of_measure(self, value):
         self._set(self.gdb._db.set_chan_unit, value)
 
     @property
