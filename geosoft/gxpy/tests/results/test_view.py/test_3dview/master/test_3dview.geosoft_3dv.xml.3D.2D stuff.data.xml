@@ -107,14 +107,6 @@
    <Item type="PatThick" size="8">
       <Item name="Value" value="0.02"/>
    </Item>
-   <Item type="Rectangle" size="32">
-      <Item name="From" type="D2AREA">
-         <Value name="MinX" value="0"/>
-         <Value name="MinY" value="0"/>
-         <Value name="MaxX" value="1"/>
-         <Value name="MaxY" value="1"/>
-      </Item>
-   </Item>
    <Item type="LineStyle" size="12">
       <Item name="Style" value="2"/>
       <Item name="Pitch" value="2"/>

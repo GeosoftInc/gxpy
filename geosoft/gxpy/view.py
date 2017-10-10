@@ -311,6 +311,8 @@ class View:
         map_mxx, map_mxy = self.view_to_map_cm(view_mxx, view_mxy)
 
         if base_view:
+            if not isinstance(base_view, View):
+                base_view = View(self.map, base_view)
             _, _, mapx, mapy = base_view.extent_clip
             mapx, mapy = base_view.view_to_map_cm(mapx, mapy)
         else:
@@ -441,8 +443,8 @@ class View:
         
                         ::
                         
-                            UNITS_VIEW
-                            UNITS_MAP
+                            UNIT_VIEW
+                            UNIT_MAP
                             
         :returns: extent as (x_min, y_min, x_max, y_max)
         
@@ -453,6 +455,11 @@ class View:
         xmax = gxapi.float_ref()
         ymax = gxapi.float_ref()
         self.gxview.get_group_extent(group, xmin, ymin, xmax, ymax, unit)
+        if unit == UNIT_MAP:
+            xmin.value *= 0.1
+            xmax.value *= 0.1
+            ymin.value *= 0.1
+            ymax.value *= 0.1
         return xmin.value, ymin.value, xmax.value, ymax.value
 
     def delete_group(self, group_name):
@@ -717,11 +724,11 @@ class View_3d(View):
         except ViewException:
             return False
 
-    def groups_on_plane_list(self, plane):
+    def groups_on_plane_list(self, plane=0):
         """
         List of groups on a plane.
         
-        :param plane: name of the plane
+        :param plane: name of the plane or plane number
         :returns: list of groups on the plane
         
         .. versionadded:: 9.2

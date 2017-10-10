@@ -18,8 +18,8 @@
    <Item name="ExtClipRegion" value="-1"/>
    <Item name="Plane" value="1"/>
    <Item name="Extents" type="D2AREA">
-      <Value name="MinX" value="0"/>
-      <Value name="MinY" value="0"/>
+      <Value name="MinX" value="110"/>
+      <Value name="MinY" value="5"/>
       <Value name="MaxX" value="235"/>
       <Value name="MaxY" value="70"/>
    </Item>

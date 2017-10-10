@@ -9,6 +9,7 @@ import geosoft.gxpy.view as gxv
 import geosoft.gxpy.coordinate_system as gxcs
 import geosoft.gxpy.group as gxg
 import geosoft.gxpy.geometry as gxgm
+import geosoft.gxpy.viewer as gxvwr
 
 from base import GXPYTest
 
@@ -195,6 +196,37 @@ class Test(GXPYTest):
             with gxv.View(gmap, "vcs", coordinate_system="wgs 84 / UTM zone 15N [special]") as v:
                 self.assertTrue("WGS 84 / UTM zone 15N [special]" in str(v.coordinate_system))
 
+    def test_copy_view(self):
+        self.start()
+
+        testmap = os.path.join(self.gx.temp_folder(), "test_view_cs")
+        with gxmap.Map.new(testmap, overwrite=True) as gmap:
+            with gxv.View(gmap, 'test_a') as v:
+                with gxg.Draw(v, '2D stuff') as g:
+                    g.rectangle(v.extent_clip)
+                    draw_2d_stuff(g)
+            with gxv.View(gmap, 'test_b', copy='test_a') as v:
+                mdf = v.mdf('base')
+                self.assertEqual(mdf[0], (36.39513677811551, 39.99513677811551, 0.0, 6.395136778115507, 19.99513677811551, 0.0))
+                self.assertEqual(mdf[1], (100.0, 1.0, 0.0, 0.0))
+                mdf2 = v.mdf()
+                self.assertEqual(mdf2, ((30.0, 20.0, 0.0, 0.0, 0.0, 0.0), (100.0, 1.0, 0.0, 0.0)))
+
+                self.assertEqual(len(v.group_list), 1)
+                self.assertEqual(v.group_list[0], '2D stuff')
+                self.assertEqual(len(v.group_list_agg), 0)
+                self.assertEqual(len(v.group_list_csymb), 0)
+                self.assertEqual(len(v.group_list_marked), 1)
+                self.assertEqual(len(v.group_list_visible), 1)
+                self.assertEqual(len(v.group_list_voxel), 0)
+
+                self.assertEqual(v.extent_all, v.extent_visible)
+                self.assertEqual(v.extent_map_cm(), (0.0, 0.0, 30.0, 20.0))
+                self.assertEqual(v.extent_group('2D stuff', unit=gxv.UNIT_MAP), (0.0, 0.0, 30.0, 20.0))
+                self.assertEqual(v.extent_group('2D stuff'), (0.0, 0.0, 30.0, 20.0))
+
+            self.assertEqual(len(gmap.view_list), 4)
+
     def test_3dview(self):
         self.start()
 
@@ -209,7 +241,6 @@ class Test(GXPYTest):
                 self.assertEqual(v.map.name, 'test_3d')
 
                 with gxg.Draw(v, '2D stuff') as g:
-                    g.rectangle(v.extent_clip)
                     draw_2d_stuff(g)
 
                 v.new_drawing_plane('plane_0')
@@ -237,8 +268,36 @@ class Test(GXPYTest):
 
             self.crc_map(v3d_file)
 
-        except:
-            raise
+        finally:
+            if v3d_file:
+                gxmap.delete_files(v3d_file)
+
+    def test_planes(self):
+        self.start()
+
+        v3d_file = None
+
+        try:
+
+            with gxv.View_3d.new('test_3d', overwrite=True) as v:
+                v3d_file = v.file_name
+                with gxg.Draw(v, '2D stuff') as g:
+                    draw_2d_stuff(g)
+
+                v.new_drawing_plane('plane_0')
+                self.assertEqual(v.current_3d_drawing_plane, 'plane_0')
+                self.assertRaises(gxv.ViewException, v.new_drawing_plane, 'plane_0')
+                with gxg.Draw(v, '2D stuff2') as g:
+                    g.rectangle(v.extent_clip)
+
+                v.new_drawing_plane('vertical', rotation=(90.0, 0, 0))
+                self.assertEqual(v.current_3d_drawing_plane, 'vertical')
+                with gxg.Draw(v, '2D stuff vertical', plane='vertical') as g:
+                    g.rectangle(v.extent_clip)
+                    draw_2d_stuff(g)
+
+            #TODO add plane checking
+            # gxvwr.view_document(v3d_file)
 
         finally:
             if v3d_file:
@@ -303,9 +362,6 @@ class Test(GXPYTest):
                     g.box_3d(((20, 10, -10), (80, 50, 30)), pen=g.new_pen(line_color='R255G100B50'))
 
             self.crc_map(v3d_file)
-
-        except:
-            raise
 
         finally:
             if v3d_file:

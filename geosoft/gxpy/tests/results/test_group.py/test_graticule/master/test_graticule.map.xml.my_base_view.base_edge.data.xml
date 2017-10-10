@@ -115,10 +115,10 @@
    </Item>
    <Item type="Rectangle" size="32">
       <Item name="From" type="D2AREA">
-         <Value name="MinX" value="0"/>
-         <Value name="MinY" value="1"/>
-         <Value name="MaxX" value="40"/>
-         <Value name="MaxY" value="20"/>
+         <Value name="MinX" value="-1.8"/>
+         <Value name="MinY" value="-1.7"/>
+         <Value name="MaxX" value="5.8"/>
+         <Value name="MaxY" value="3.8"/>
       </Item>
    </Item>
    <Item type="LineColor" size="8">

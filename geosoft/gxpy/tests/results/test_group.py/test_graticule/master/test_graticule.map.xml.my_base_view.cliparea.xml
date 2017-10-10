@@ -2,24 +2,24 @@
    <Polygon Inclusive="True">
       <Points>
          <Point>
-            <Item name="X" value="0"/>
-            <Item name="Y" value="1"/>
+            <Item name="X" value="-1.8"/>
+            <Item name="Y" value="-1.7"/>
          </Point>
          <Point>
-            <Item name="X" value="0"/>
-            <Item name="Y" value="20"/>
+            <Item name="X" value="-1.8"/>
+            <Item name="Y" value="3.8"/>
          </Point>
          <Point>
-            <Item name="X" value="40"/>
-            <Item name="Y" value="20"/>
+            <Item name="X" value="5.8"/>
+            <Item name="Y" value="3.8"/>
          </Point>
          <Point>
-            <Item name="X" value="40"/>
-            <Item name="Y" value="1"/>
+            <Item name="X" value="5.8"/>
+            <Item name="Y" value="-1.7"/>
          </Point>
          <Point>
-            <Item name="X" value="0"/>
-            <Item name="Y" value="1"/>
+            <Item name="X" value="-1.8"/>
+            <Item name="Y" value="-1.7"/>
          </Point>
       </Points>
    </Polygon>
