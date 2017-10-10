@@ -34,6 +34,7 @@ class Test(GXPYTest):
             self.assertFalse(gxc.folder_user is None)
             gxc._close()
 
+    @unittest.skip('WIP')
     def test_entitlements(self):
         with gx.GXpy(log=print) as gxc:
             ent = gxc.entitlements()
