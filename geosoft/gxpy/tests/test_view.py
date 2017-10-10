@@ -256,15 +256,17 @@ class Test(GXPYTest):
                 with gxg.Draw_3d(v, '3D stuff') as g:
                     g.box_3d(((20, 10, -10), (80, 50, 30)), pen=g.new_pen(line_color='R255G100B50'))
 
-                self.assertEqual(len(v.plane_list), 2)
-                self.assertEqual(v.plane_number('plane_0'), 0)
-                self.assertEqual(v.plane_number('vertical'), 1)
+                self.assertTrue('Plane' in v.plane_list)
+                self.assertTrue('plane_0' in v.plane_list)
+                self.assertTrue('vertical' in v.plane_list)
+                self.assertEqual(v.plane_number('Plane'), 0)
                 self.assertEqual(v.plane_name('vertical'), 'vertical')
-                self.assertEqual(v.plane_name(1), 'vertical')
+                self.assertEqual(v.plane_name(2), 'vertical')
                 self.assertRaises(gxv.ViewException, v.plane_number, 'bogus')
                 self.assertRaises(gxv.ViewException, v.plane_number, -1)
-                self.assertRaises(gxv.ViewException, v.plane_name, 2)
+                self.assertRaises(gxv.ViewException, v.plane_name, 3)
                 self.assertRaises(gxv.ViewException, v.plane_name, 'bogus')
+                self.assertEqual(v.get_class_name('Plane'), 'vertical')
 
             self.crc_map(v3d_file)
 
@@ -281,23 +283,29 @@ class Test(GXPYTest):
 
             with gxv.View_3d.new('test_3d', overwrite=True) as v:
                 v3d_file = v.file_name
-                with gxg.Draw(v, '2D stuff') as g:
+                with gxg.Draw(v, 'default_plane') as g:
                     draw_2d_stuff(g)
-
-                v.new_drawing_plane('plane_0')
-                self.assertEqual(v.current_3d_drawing_plane, 'plane_0')
-                self.assertRaises(gxv.ViewException, v.new_drawing_plane, 'plane_0')
-                with gxg.Draw(v, '2D stuff2') as g:
-                    g.rectangle(v.extent_clip)
+                self.assertEqual(v.current_3d_drawing_plane, 'Plane')
+                self.assertRaises(gxv.ViewException, v.new_drawing_plane, 'Plane')
 
                 v.new_drawing_plane('vertical', rotation=(90.0, 0, 0))
                 self.assertEqual(v.current_3d_drawing_plane, 'vertical')
-                with gxg.Draw(v, '2D stuff vertical', plane='vertical') as g:
+                with gxg.Draw(v, '2D stuff vertical') as g:
                     g.rectangle(v.extent_clip)
                     draw_2d_stuff(g)
 
-            #TODO add plane checking
-            # gxvwr.view_document(v3d_file)
+                with gxg.Draw(v, 'rectangle_plane', plane='Plane') as g:
+                    g.rectangle(v.extent_clip)
+
+                self.assertTrue('vertical' in v.plane_list)
+                self.assertTrue('Plane' in v.plane_list)
+
+                gop = v.groups_on_plane_list('Plane')
+                self.assertEqual(len(gop), 2)
+                self.assertTrue('default_plane' in gop)
+                self.assertTrue('rectangle_plane' in gop)
+
+            self.crc_map(v3d_file)
 
         finally:
             if v3d_file:

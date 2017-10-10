@@ -1,6 +1,6 @@
 <planes>
    <Plane>
-      <Item name="Name" value="plane_0"/>
+      <Item name="Name" value="Plane"/>
       <Item name="Id" value="0"/>
       <Item name="Angle" type="D3POINT">
          <Value name="X" value="0"/>

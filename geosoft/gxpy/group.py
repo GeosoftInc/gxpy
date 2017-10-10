@@ -4,7 +4,6 @@ A Geosoft View (:class:`geosoft.gxpy.view.View` or :class:`geosoft.gxpy.view.Vie
 be turned on or off, modify the transparency, or be deleted.
 
 2D views can only accept 2D groups, while a 3D view can accept both 2D and 3D groups. When a 2D group is placed
-in a 3D view, the group is placed on a the active plane inside the 3D view.
 in a 3D view, the group is placed on a the active plane inside the 3D view
 
 :Classes:
@@ -318,7 +317,10 @@ class Group:
         return "{}({})".format(self.__class__, self.__dict__)
 
     def __str__(self):
-        return '{}/{}'.format(self.name_in_view, self.view.name)
+        if self.view.is_3d:
+            return '{}/{}/{}'.format(self.name_in_view, self.view.current_3d_drawing_plane, self.view.name)
+        else:
+            return '{}/{}'.format(self.name_in_view, self.view.name)
 
     def __init__(self,
                  view,
@@ -343,8 +345,9 @@ class Group:
         finally:
             _lock.release()
 
-        if view.is_3d and plane:
-            view.current_3d_drawing_plane = plane
+        if view.is_3d:
+            if plane:
+                view.current_3d_drawing_plane = plane
 
         self._view = view
         self._name = name
@@ -367,6 +370,14 @@ class Group:
     def name(self):
         """group name"""
         return _name(self._name)
+
+    @property
+    def drawing_plane(self):
+        """ drawing plane of this group, None for a group in a 2D view."""
+        if self.view.is_3d:
+            return self.view.current_3d_drawing_plane
+        else:
+            return None
 
     @property
     def unit_of_measure(self):
@@ -501,9 +512,8 @@ class Draw(Group):
     """
     Create (start) a drawing group for 2D drawing elements.
 
-    On a 3D view, 2D drawing elements
-    are placed on the default drawing plane.  Drawing groups will lock the view such that only one
-    drawing group can be instantiated at a time.
+    On a 3D view, 2D drawing elements are placed on the default drawing plane.
+    Drawing groups will lock the view such that only one drawing group can be instantiated at a time.
     
     Use `with Draw() as group:` to ensure correct unlocking when complete.
     
@@ -513,6 +523,13 @@ class Draw(Group):
     def __init__(self, *args, **kwargs):
 
         kwargs['view_lock'] = True
+        view = args[0]
+        if view.is_3d and 'plane' not in kwargs:
+            if view.current_3d_drawing_plane:
+                plane = view.current_3d_drawing_plane
+            else:
+                plane = 'Plane'
+            kwargs['plane'] = plane
         super().__init__(*args, **kwargs)
 
         self._pen = None

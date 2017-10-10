@@ -1,6 +1,6 @@
 <planes>
    <Plane>
-      <Item name="Name" value="plane_0"/>
+      <Item name="Name" value="Plane"/>
       <Item name="Id" value="0"/>
       <Item name="Angle" type="D3POINT">
          <Value name="X" value="0"/>
@@ -180,10 +180,10 @@
       </Item>
    </Plane>
    <Plane>
-      <Item name="Name" value="vertical"/>
+      <Item name="Name" value="plane_0"/>
       <Item name="Id" value="1"/>
       <Item name="Angle" type="D3POINT">
-         <Value name="X" value="90"/>
+         <Value name="X" value="0"/>
          <Value name="Y" value="0"/>
          <Value name="Z" value="0"/>
       </Item>
@@ -360,10 +360,10 @@
       </Item>
    </Plane>
    <Plane>
-      <Item name="Name" value="Plane"/>
+      <Item name="Name" value="vertical"/>
       <Item name="Id" value="2"/>
       <Item name="Angle" type="D3POINT">
-         <Value name="X" value="0"/>
+         <Value name="X" value="90"/>
          <Value name="Y" value="0"/>
          <Value name="Z" value="0"/>
       </Item>

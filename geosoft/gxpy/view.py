@@ -618,8 +618,9 @@ class View_3d(View):
         g_3dv.gxview.fit_map_window_3d(map_minx, map_miny, map_maxx, map_maxy,
                                        view_minx, view_miny, view_maxx, view_maxy)
 
-        if area_2d is not None:
-            g_3dv.new_drawing_plane('plane_0')
+        #TODO - remove?
+        # if area_2d is not None:
+        #    g_3dv.new_drawing_plane('plane_0')
 
         return g_3dv
 
@@ -661,12 +662,12 @@ class View_3d(View):
 
     @property
     def current_3d_drawing_plane(self):
-        """Name of the current 2d drawing plane, `None` if not defined.  Can be set to a plane number or a name."""
-        s = gxapi.str_ref()
-        try:
+        """Name of the current drawing plane in a 3D view, `None` if not defined.  Can be set to a plane number or name."""
+        if len(self.plane_list):
+            s = gxapi.str_ref()
             self.gxview.get_def_plane(s)
             return s.value
-        except gxapi.GXError:
+        else:
             return None
 
     @current_3d_drawing_plane.setter
@@ -674,6 +675,8 @@ class View_3d(View):
         if plane:
             if isinstance(plane, int):
                 plane = self.plane_name(plane)
+            if plane not in self.plane_list:
+                self.new_drawing_plane(plane)
             self.gxview.set_def_plane(plane)
 
     @property

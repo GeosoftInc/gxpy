@@ -1,5 +1,5 @@
 <header>
-   <Item name="Name" value="2D stuff"/>
+   <Item name="Name" value="2D stuff vertical"/>
    <Item name="AGG" value="False"/>
    <Item name="PAGG" value="False"/>
    <Item name="CSYMB" value="False"/>
@@ -16,7 +16,7 @@
    <Item name="MaxZ" value="GS_R8DM"/>
    <Item name="Transparency" value="GS_R8DM"/>
    <Item name="ExtClipRegion" value="-1"/>
-   <Item name="Plane" value="0"/>
+   <Item name="Plane" value="1"/>
    <Item name="Extents" type="D2AREA">
       <Value name="MinX" value="110"/>
       <Value name="MinY" value="5"/>
