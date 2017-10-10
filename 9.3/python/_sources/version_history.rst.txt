@@ -16,6 +16,8 @@ New Classes
 New Functions
 ^^^^^^^^^^^^^
 
+:func:`geosoft.gxpy.agg.Aggregate_image.layer_unit_of_measure` Return the unit of measurement for the specified layer
+
 :func:`geosoft.gxpy.gdb.Channel.delete` Delete the channel and all associated data.  After calling this method this
 
 :func:`geosoft.gxpy.gdb.Geosoft_gdb.unlock_all` Unlock all locked symbols.
@@ -31,6 +33,10 @@ New Functions
 :func:`geosoft.gxpy.gdb.delete_files` Delete all files associates with this database name.
 
 :func:`geosoft.gxpy.gdb.is_valid_line_name` Return True if this is a valid line name.
+
+:func:`geosoft.gxpy.group.Color_symbols_group.color_map` Return the :class:`geosoft.gxpy.group.Color_map` of a color symbol group.
+
+:func:`geosoft.gxpy.group.color_from_string` Return a Geosoft color number from a color string.
 
 :func:`geosoft.gxpy.gx.GXpy.has_entitlement` Returns True if the user has this entitlement.
 
@@ -79,7 +85,7 @@ New Classes
 
 :class:`geosoft.gxpy.group.Aggregate_group` Aggregate groups on a map
 
-:class:`geosoft.gxpy.group.Color_symbols_group` Create a color symbols group with color mapping.
+:class:`geosoft.gxpy.group.Color_map` Color map for establishing data color mapping for things like aggregates and color symbols.
 
 :class:`geosoft.gxpy.group.Color` Colours, which are stored as a 24-bit color integer.
 
@@ -114,6 +120,8 @@ New Functions
 ^^^^^^^^^^^^^
 
 :func:`geosoft.gxpy.agg.Aggregate_image.add_layer` Add an image layer to an aggregate
+
+:func:`geosoft.gxpy.agg.Aggregate_image.layer_color_map` Return the :class:`geosoft.gxpy.group.Color_map` of a layer.
 
 :func:`geosoft.gxpy.agg.Aggregate_image.new` Create a new aggregate from a grid.
 
@@ -189,6 +197,8 @@ New Functions
 
 :func:`geosoft.gxpy.group.Color_map.color_of_value` Return the gxg.Color of a value.  The mapping is determined with exclusive minima, inclusive maxima
 
+:func:`geosoft.gxpy.group.Color_map.save_file` Save to a Geosoft file, `.tbl`, `.itr` or `.zon`.  If the file_name does not have an
+
 :func:`geosoft.gxpy.group.Color_map.set_linear` Set the map boundaries based on a linear distribution between minimum and maximum.
 
 :func:`geosoft.gxpy.group.Color_map.set_logarithmic` Set the color boundaries based on a logarithmic distribution between minimum and maximum.
@@ -196,6 +206,10 @@ New Functions
 :func:`geosoft.gxpy.group.Color_map.set_normal` Set the color boundaries using a normal distribution around a mean.
 
 :func:`geosoft.gxpy.group.Color_map.set_sequential` Set color map zones based on a start and increment between each color zone.
+
+:func:`geosoft.gxpy.group.Color_symbols_group.new` Create a new color symbols group with color mapping.
+
+:func:`geosoft.gxpy.group.Color_symbols_group.open` Open an existing color symbols group.
 
 :func:`geosoft.gxpy.group.Draw.contour` Draw contours for a grid file.  A default contour interval is determined from the grid.
 
@@ -227,7 +241,7 @@ New Functions
 
 :func:`geosoft.gxpy.group.Draw_3d.sphere` Draw a sphere.
 
-:func:`geosoft.gxpy.group.Group.extent_map_cm` Return a view extent in map cm.
+:func:`geosoft.gxpy.group.Group.extent_map_cm` Return an extent in map cm.
 
 :func:`geosoft.gxpy.group.Group.locate` Locate the group relative to a point.
 
@@ -259,15 +273,13 @@ New Functions
 
 :func:`geosoft.gxpy.map.Map.annotate_data_xy` Annotate a data view axis
 
-:func:`geosoft.gxpy.map.Map.create_linked_3d_view` Create a linked 3D view inside a 2D map to a `gxpy.view.View_3d` in a 3DV
+:func:`geosoft.gxpy.map.Map.create_linked_3d_view` Create a linked 3D view inside a 2D map to a :class:`gxpy.view.View_3d` in a 3DV
 
 :func:`geosoft.gxpy.map.Map.delete_view` Delete a view from a map. You cannot delete the last view in a mep.
 
 :func:`geosoft.gxpy.map.Map.extent_data_views` Returns the extent of all data views on the map in map cm.
 
 :func:`geosoft.gxpy.map.Map.get_class_name` Get the view name associated with a class.
-
-:func:`geosoft.gxpy.map.Map.map_reference_location` Return the location of a reference point relative to the current clipping window
 
 :func:`geosoft.gxpy.map.Map.new` Create and open a new Geosoft map.
 
@@ -285,7 +297,7 @@ New Functions
 
 :func:`geosoft.gxpy.map.delete_files` Delete all files associates with this map name.
 
-:func:`geosoft.gxpy.map.map_file_name` Return a fully resolved map file path using the file name, with .map extyension
+:func:`geosoft.gxpy.map.map_file_name` Return a fully resolved map file path using the file name, with .map extension
 
 :func:`geosoft.gxpy.map.save_as_image` Save a map to an image file
 
@@ -575,6 +587,8 @@ New Functions
 
 :func:`geosoft.gxapi.GXIP.set_import_line` Set the line name for some imports.
 
+:func:`geosoft.gxapi.GXMULTIVOXSET.check_equal_to_legacy_voxel` Compare MULTIVOXSET to Legacy Voxel
+
 :func:`geosoft.gxapi.GXMULTIVOXSET.compute_default_cell_size` Used if the user does not provide a default cell size.
 
 :func:`geosoft.gxapi.GXMULTIVOXSET.convert_double_to_vector` Convert 3 Double Voxels to a Vector Voxel
@@ -602,6 +616,8 @@ New Functions
 :func:`geosoft.gxapi.GXMULTIVOXSET.export_to_voxel` Exports a Multi-Voxset into a Voxel
 
 :func:`geosoft.gxapi.GXMULTIVOXSET.export_to_wa` Export To GDB
+
+:func:`geosoft.gxapi.GXMULTIVOXSET.export_to_xml` Export a MULTIVOXSET to XML
 
 :func:`geosoft.gxapi.GXMULTIVOXSET.export_to_xyz` Export a MULTIVOXSET to an XYZ File
 

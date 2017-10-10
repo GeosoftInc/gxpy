@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>geosoft.gxpy.group submodule &#8212; Geosoft GX Python API 9.3.0b0 documentation</title>
+    <title>geosoft.gxpy.group submodule &#8212; Geosoft GX Python API 9.3.0 documentation</title>
     
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '9.3.0b0',
+        VERSION:     '9.3.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true,
@@ -42,7 +42,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.0b0 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.0 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -74,7 +74,12 @@
             
   <div class="section" id="module-geosoft.gxpy.group">
 <span id="geosoft-gxpy-group-submodule"></span><h1>geosoft.gxpy.group submodule<a class="headerlink" href="#module-geosoft.gxpy.group" title="Permalink to this headline">¶</a></h1>
-<p>Render groups in 3D views, or to 2D views on a map.</p>
+<p>A Geosoft View (<a class="reference internal" href="geosoft.gxpy.view.html#geosoft.gxpy.view.View" title="geosoft.gxpy.view.View"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxpy.view.View</span></code></a> or <a class="reference internal" href="geosoft.gxpy.view.html#geosoft.gxpy.view.View_3d" title="geosoft.gxpy.view.View_3d"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxpy.view.View_3d</span></code></a>) contains graphical elements as
+<a class="reference internal" href="#geosoft.gxpy.group.Group" title="geosoft.gxpy.group.Group"><code class="xref py py-class docutils literal"><span class="pre">Group</span></code></a> instances. Groups are named and are available to a user in a Geosoft viewer, which allows groups to
+be turned on or off, modify the transparency, or be deleted.</p>
+<p>2D views can only accept 2D groups, while a 3D view can accept both 2D and 3D groups. When a 2D group is placed
+in a 3D view, the group is placed on a the active plane inside the 3D view.
+in a 3D view, the group is placed on a the active plane inside the 3D view</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -94,6 +99,12 @@
 <tr class="row-odd"><td><a class="reference internal" href="#geosoft.gxpy.group.Draw_3d" title="geosoft.gxpy.group.Draw_3d"><code class="xref py py-class docutils literal"><span class="pre">Draw_3d</span></code></a></td>
 <td>3D grawing group for 3D objects placed in a 3d view</td>
 </tr>
+<tr class="row-even"><td><a class="reference internal" href="#geosoft.gxpy.group.Color_symbols_group" title="geosoft.gxpy.group.Color_symbols_group"><code class="xref py py-class docutils literal"><span class="pre">Color_symbols_group</span></code></a></td>
+<td>group for 2D symbols rendered based on data values</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#geosoft.gxpy.group.Aggregate_group" title="geosoft.gxpy.group.Aggregate_group"><code class="xref py py-class docutils literal"><span class="pre">Aggregate_group</span></code></a></td>
+<td>group that contains a <a class="reference internal" href="geosoft.gxpy.agg.html#geosoft.gxpy.agg.Aggregate_image" title="geosoft.gxpy.agg.Aggregate_image"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxpy.agg.Aggregate_image</span></code></a> instance</td>
+</tr>
 <tr class="row-even"><td><a class="reference internal" href="#geosoft.gxpy.group.Color" title="geosoft.gxpy.group.Color"><code class="xref py py-class docutils literal"><span class="pre">Color</span></code></a></td>
 <td>colour definition</td>
 </tr>
@@ -105,12 +116,6 @@
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="#geosoft.gxpy.group.Text_def" title="geosoft.gxpy.group.Text_def"><code class="xref py py-class docutils literal"><span class="pre">Text_def</span></code></a></td>
 <td>defined text characteristics</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="#geosoft.gxpy.group.Color_symbols_group" title="geosoft.gxpy.group.Color_symbols_group"><code class="xref py py-class docutils literal"><span class="pre">Color_symbols_group</span></code></a></td>
-<td>group for 2D symbols rendered based on data values</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="#geosoft.gxpy.group.Aggregate_group" title="geosoft.gxpy.group.Aggregate_group"><code class="xref py py-class docutils literal"><span class="pre">Aggregate_group</span></code></a></td>
-<td>group that contains a <a class="reference internal" href="geosoft.gxpy.agg.html#geosoft.gxpy.agg.Aggregate_image" title="geosoft.gxpy.agg.Aggregate_image"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxpy.agg.Aggregate_image</span></code></a> instance</td>
 </tr>
 </tbody>
 </table>
@@ -125,6 +130,7 @@
 </div>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
+<p><a class="reference internal" href="geosoft.gxpy.view.html#module-geosoft.gxpy.view" title="geosoft.gxpy.view"><code class="xref py py-mod docutils literal"><span class="pre">geosoft.gxpy.view</span></code></a>, <a class="reference internal" href="geosoft.gxpy.map.html#module-geosoft.gxpy.map" title="geosoft.gxpy.map"><code class="xref py py-mod docutils literal"><span class="pre">geosoft.gxpy.map</span></code></a></p>
 <p class="last"><a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW" title="geosoft.gxapi.GXMVIEW"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXMVIEW</span></code></a>, <a class="reference internal" href="GXMVU.html#geosoft.gxapi.GXMVU" title="geosoft.gxapi.GXMVU"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXMVU</span></code></a></p>
 </div>
 <dl class="data">
@@ -450,24 +456,35 @@ tuple (r, g, b), (c, m, y) or (h, s, v), each item defined in the range 0 to 255
 
 <dl class="class">
 <dt id="geosoft.gxpy.group.Color_map">
-<em class="property">class </em><code class="descclassname">geosoft.gxpy.group.</code><code class="descname">Color_map</code><span class="sig-paren">(</span><em>cmap=None</em>, <em>title=None</em>, <em>units=None</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.group.Color_map" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">geosoft.gxpy.group.</code><code class="descname">Color_map</code><span class="sig-paren">(</span><em>cmap=None</em>, <em>title=None</em>, <em>unit_of_measure=None</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.group.Color_map" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
 <p>Color map for establishing data color mapping for things like aggregates and color symbols.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>cmap</strong> &#8211; <p>the name of a Geosoft color map file (<cite>.tbl, .zon, .itr, .agg</cite>) from which to
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>cmap</strong> &#8211; <p>the name of a Geosoft color map file (<cite>.tbl, .zon, .itr, .agg</cite>) from which to
 establish the initial colors.  If the file does not have zone values,
 which is the case for a <cite>.tbl</cite> file, the Color_map will be uninitialized and you
 can use one of the <cite>set</cite> methods to establish zone values.</p>
-<p>You can also provide an <cite>int_value</cite>, which will create an uninitialized map of the the
+<p>You can also provide an <cite>int</cite>, which will create an uninitialized map of the the
 specified length, or a <a class="reference internal" href="GXITR.html#geosoft.gxapi.GXITR" title="geosoft.gxapi.GXITR"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXITR</span></code></a> instance.</p>
 <p>If not specified the Geosoft default color table is used.</p>
+</li>
+<li><strong>title</strong> &#8211; Color map title which is displayed in the color map legend.</li>
+<li><strong>unit_of_measure</strong> &#8211; Unit of measure to be displayed in a color map legend.</li>
+</ul>
 </td>
 </tr>
 </tbody>
 </table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.2.</span></p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified">Changed in version 9.3: </span>changed <cite>units</cite> to <cite>unit_of_measure</cite> for consistency across gxpy</p>
+</div>
 <dl class="attribute">
 <dt id="geosoft.gxpy.group.Color_map.brightness">
 <code class="descname">brightness</code><a class="headerlink" href="#geosoft.gxpy.group.Color_map.brightness" title="Permalink to this definition">¶</a></dt>
@@ -544,10 +561,17 @@ otherwise a <cite>.itr</cite> is created, which contains both zone boundaries an
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>file_name</strong> &#8211; file name, if None a temporary file is created</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"></td>
-</tr>
 </tbody>
 </table>
+<p>This is useful for gxapi methods that require a colour map to be loaded from a file. Say you
+cave a Color_map instance named <cite>cmap</cite> and you want to create a GXCSYMB instance, which
+requires a colur map file:</p>
+<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="n">cs</span> <span class="o">=</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">GXCSYMB</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">cmap</span><span class="o">.</span><span class="n">save_file</span><span class="p">())</span>
+</pre></div>
+</div>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.2.</span></p>
+</div>
 </dd></dl>
 
 <dl class="method">
@@ -656,10 +680,10 @@ None if no title</p>
 </dd></dl>
 
 <dl class="attribute">
-<dt id="geosoft.gxpy.group.Color_map.units">
-<code class="descname">units</code><a class="headerlink" href="#geosoft.gxpy.group.Color_map.units" title="Permalink to this definition">¶</a></dt>
-<dd><p>Data units, expected to be the units of the data from which the color bar was made or is intended. 
-None if no units</p>
+<dt id="geosoft.gxpy.group.Color_map.unit_of_measure">
+<code class="descname">unit_of_measure</code><a class="headerlink" href="#geosoft.gxpy.group.Color_map.unit_of_measure" title="Permalink to this definition">¶</a></dt>
+<dd><p>Data unit of measure for the data from which the color bar was made or is intended.
+None if the unit of measure is unknown.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.2.</span></p>
 </div>
@@ -669,26 +693,64 @@ None if no units</p>
 
 <dl class="class">
 <dt id="geosoft.gxpy.group.Color_symbols_group">
-<em class="property">class </em><code class="descclassname">geosoft.gxpy.group.</code><code class="descname">Color_symbols_group</code><span class="sig-paren">(</span><em>view</em>, <em>group_name</em>, <em>mode</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.group.Color_symbols_group" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">geosoft.gxpy.group.</code><code class="descname">Color_symbols_group</code><span class="sig-paren">(</span><em>view</em>, <em>group_name</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.group.Color_symbols_group" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#geosoft.gxpy.group.Group" title="geosoft.gxpy.group.Group"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxpy.group.Group</span></code></a></p>
-<p>Create a color symbols group with color mapping.</p>
+<p>Data represented as colored symbols based on a <a class="reference internal" href="#geosoft.gxpy.group.Color_map" title="geosoft.gxpy.group.Color_map"><code class="xref py py-class docutils literal"><span class="pre">Color_map</span></code></a>.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<tr class="field-odd field"><th class="field-name">Constructors:</th><td class="field-body"><table border="1" class="first last docutils">
+<colgroup>
+<col width="24%" />
+<col width="76%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#geosoft.gxpy.group.Color_symbols_group.new" title="geosoft.gxpy.group.Color_symbols_group.new"><code class="xref py py-func docutils literal"><span class="pre">new()</span></code></a></td>
+<td>create a new symbol group in a view</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#geosoft.gxpy.group.Color_symbols_group.open" title="geosoft.gxpy.group.Color_symbols_group.open"><code class="xref py py-func docutils literal"><span class="pre">open()</span></code></a></td>
+<td>open an existing symbol group in a view</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="geosoft.gxpy.group.Color_symbols_group.color_map">
+<code class="descname">color_map</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.group.Color_symbols_group.color_map" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the <a class="reference internal" href="#geosoft.gxpy.group.Color_map" title="geosoft.gxpy.group.Color_map"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxpy.group.Color_map</span></code></a> of a color symbol group.</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.3.</span></p>
+</div>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxpy.group.Color_symbols_group.new">
+<em class="property">classmethod </em><code class="descname">new</code><span class="sig-paren">(</span><em>view</em>, <em>name</em>, <em>data</em>, <em>color_map</em>, <em>symbol_def=None</em>, <em>symbol=20</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.group.Color_symbols_group.new" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a new color symbols group with color mapping.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>view</strong> &#8211; the view in which to place the group</li>
-<li><strong>name</strong> &#8211; group name</li>
-<li><strong>data</strong> &#8211; iterable that yields <cite>((x, y), data)</cite>, or <cite>((x, y, z), data, ...)</cite>.  Only <cite>((x,y), data)</cite>
-is used.</li>
+<li><strong>group_name</strong> &#8211; group name, which can optionally be decorated with the unit_of_measure (eg &#8220;Cu.ppm&#8221;)</li>
+<li><strong>data</strong> &#8211; iterable that yields <cite>((x, y), data)</cite>, or <cite>((x, y, z), data, ...)</cite>.  Only the
+first <cite>data</cite> value is used.</li>
 <li><strong>color_map</strong> &#8211; symbol fill color <a class="reference internal" href="#geosoft.gxpy.group.Color_map" title="geosoft.gxpy.group.Color_map"><code class="xref py py-class docutils literal"><span class="pre">Color_map</span></code></a>.
-Symbols are filled with the color lookup using data.</li>
+Symbols are filled with the color lookup using <cite>data</cite>.</li>
 <li><strong>symbol_def</strong> &#8211; <a class="reference internal" href="#geosoft.gxpy.group.Text_def" title="geosoft.gxpy.group.Text_def"><code class="xref py py-class docutils literal"><span class="pre">Text_def</span></code></a> defines the symbol font to use, normally
 <cite>symbols.gfn</cite> is expected, and if used the symbols defined by the <cite>SYMBOL</cite> manifest
 are valid.  For other fonts you will get the symbol requested.  The default is
-<cite>Text_def(font=&#8217;dymbols.gfn&#8217;, color=&#8217;k&#8217;, weight=FONT_WEIGHT_ULTRALIGHT)</cite></li>
+<cite>Text_def(font=&#8217;symbols.gfn&#8217;, color=&#8217;k&#8217;, weight=FONT_WEIGHT_ULTRALIGHT)</cite></li>
 <li><strong>symbol</strong> &#8211; the symbol to plot, normally one of <cite>SYMBOL</cite>.</li>
 </ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><a class="reference internal" href="#geosoft.gxpy.group.Color_symbols_group" title="geosoft.gxpy.group.Color_symbols_group"><code class="xref py py-class docutils literal"><span class="pre">Color_symbols_group</span></code></a> instance</p>
 </td>
 </tr>
 </tbody>
@@ -696,15 +758,31 @@ are valid.  For other fonts you will get the symbol requested.  The default is
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.2.</span></p>
 </div>
-<dl class="classmethod">
-<dt id="geosoft.gxpy.group.Color_symbols_group.new">
-<em class="property">classmethod </em><code class="descname">new</code><span class="sig-paren">(</span><em>view</em>, <em>name</em>, <em>data</em>, <em>color_map</em>, <em>symbol_def=None</em>, <em>symbol=20</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.group.Color_symbols_group.new" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+</dd></dl>
 
 <dl class="classmethod">
 <dt id="geosoft.gxpy.group.Color_symbols_group.open">
 <em class="property">classmethod </em><code class="descname">open</code><span class="sig-paren">(</span><em>view</em>, <em>group_name</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.group.Color_symbols_group.open" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Open an existing color symbols group.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>view</strong> &#8211; view that contains the group</li>
+<li><strong>group_name</strong> &#8211; name of the group, which must be a color symbols group</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><a class="reference internal" href="#geosoft.gxpy.group.Color_symbols_group" title="geosoft.gxpy.group.Color_symbols_group"><code class="xref py py-class docutils literal"><span class="pre">Color_symbols_group</span></code></a> instance</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.2.</span></p>
+</div>
+</dd></dl>
 
 </dd></dl>
 
@@ -718,31 +796,6 @@ are placed on the default drawing plane.  Drawing groups will lock the view such
 drawing group can be instantiated at a time.</p>
 <p>Use <cite>with Draw() as group:</cite> to ensure correct unlocking when complete.</p>
 <p>Inherits from the <cite>Group</cite> base class.</p>
-<dl class="method">
-<dt id="geosoft.gxpy.group.Draw.color">
-<code class="descname">color</code><span class="sig-paren">(</span><em>cstr</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.group.Draw.color" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return a color from a color string.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>cstr</strong> &#8211; color string (see below)</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">color</td>
-</tr>
-</tbody>
-</table>
-<p>Colour strings may be &#8220;R&#8221;,&#8221;G&#8221;,&#8221;B&#8221;,&#8221;C&#8221;,&#8221;M&#8221;,&#8221;Y&#8221;,
-&#8220;H&#8221;,&#8221;S&#8221;,&#8221;V&#8221;, or &#8220;K&#8221; or a combination of these
-characters, each followed by up to three digits
-specifying a number between 0 and 255.
-An empty string will produce C_ANY_NONE.</p>
-<p>You must stay in the same color model, RGB, CMY,
-HSV or K.</p>
-<p>For example &#8220;R&#8221;, &#8220;R127G22&#8221;, &#8220;H255S127V32&#8221;</p>
-<p>Characters are not case sensitive.</p>
-</dd></dl>
-
 <dl class="method">
 <dt id="geosoft.gxpy.group.Draw.contour">
 <code class="descname">contour</code><span class="sig-paren">(</span><em>grid_file_name</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.group.Draw.contour" title="Permalink to this definition">¶</a></dt>
@@ -1267,7 +1320,7 @@ be turned on.   Once on it cannot be turned off for a view.</p>
 
 <dl class="class">
 <dt id="geosoft.gxpy.group.Group">
-<em class="property">class </em><code class="descclassname">geosoft.gxpy.group.</code><code class="descname">Group</code><span class="sig-paren">(</span><em>view</em>, <em>name='_'</em>, <em>plane=None</em>, <em>view_lock=False</em>, <em>mode=0</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.group.Group" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">geosoft.gxpy.group.</code><code class="descname">Group</code><span class="sig-paren">(</span><em>view</em>, <em>name='_'</em>, <em>plane=None</em>, <em>view_lock=False</em>, <em>mode=0</em>, <em>unit_of_measure=''</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.group.Group" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
 <p>Geosoft group class.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -1284,19 +1337,27 @@ be turned on.   Once on it cannot be turned off for a view.</p>
 </tr>
 <tr class="field-odd field"><th class="field-name">plane:</th><td class="field-body">plane number, or plane name if drawing to a 3D view.  Default is plane number 0.</td>
 </tr>
-<tr class="field-even field"><th class="field-name">view_lock:</th><td class="field-body">True to lock the view for a single-stream drawwing group.  Default is False.</td>
+<tr class="field-even field"><th class="field-name">view_lock:</th><td class="field-body">True to lock the view for a single-stream drawing group.  Default is False.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">unit_of_measure:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">unit of measurement for data in this group, default is &#8216;&#8217;</td>
 </tr>
 </tbody>
 </table>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Properties:</th><td class="field-body"><table class="first last docutils field-list" frame="void" rules="none">
+<tr class="field-even field"><th class="field-name">Properties:</th><td class="field-body"><table class="first last docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">view:</th><td class="field-body">the <a class="reference internal" href="geosoft.gxpy.view.html#geosoft.gxpy.view.View" title="geosoft.gxpy.view.View"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxpy.view.View</span></code></a> instance that contains this group</td>
 </tr>
 <tr class="field-even field"><th class="field-name">name:</th><td class="field-body">the name of the group</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">unit_of_measure:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">the unit of measurement (uom) for this data in this group</td>
+</tr>
+<tr class="field-even field"><th class="field-name">name_uom:</th><td class="field-body">uom decorated group name as it appears in a view</td>
 </tr>
 <tr class="field-odd field"><th class="field-name">extent:</th><td class="field-body">extent of the group in view units</td>
 </tr>
@@ -1316,6 +1377,9 @@ coordinates will be transformed into the view cs.</td>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.2.</span></p>
 </div>
+<div class="versionchanged">
+<p><span class="versionmodified">Changed in version 9.3: </span>added support for <cite>unit_of_measure</cite></p>
+</div>
 <dl class="method">
 <dt id="geosoft.gxpy.group.Group.close">
 <code class="descname">close</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.group.Group.close" title="Permalink to this definition">¶</a></dt>
@@ -1325,18 +1389,18 @@ coordinates will be transformed into the view cs.</td>
 <dl class="attribute">
 <dt id="geosoft.gxpy.group.Group.extent">
 <code class="descname">extent</code><a class="headerlink" href="#geosoft.gxpy.group.Group.extent" title="Permalink to this definition">¶</a></dt>
-<dd><p>group extent as (xmin, ymion, xmax, ymax)</p>
+<dd><p>group extent as (xmin, ymin, xmax, ymax) in view units</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxpy.group.Group.extent_map_cm">
 <code class="descname">extent_map_cm</code><span class="sig-paren">(</span><em>extent=None</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.group.Group.extent_map_cm" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return a view extent in map cm.</p>
+<dd><p>Return an extent in map cm.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>extent</strong> &#8211; tuple returned an extent property.</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>extent</strong> &#8211; an extent in view units as a tuple (xmin, ymin, xmax, ymax), Default is the group extent.</td>
 </tr>
 </tbody>
 </table>
@@ -1382,9 +1446,21 @@ which reference location.  The points are:</p>
 </dd></dl>
 
 <dl class="attribute">
+<dt id="geosoft.gxpy.group.Group.name_in_view">
+<code class="descname">name_in_view</code><a class="headerlink" href="#geosoft.gxpy.group.Group.name_in_view" title="Permalink to this definition">¶</a></dt>
+<dd><p>Name of the group in a view, which includes the unit_of_measure (eg &#8220;Cu.ppm&#8221;)</p>
+</dd></dl>
+
+<dl class="attribute">
 <dt id="geosoft.gxpy.group.Group.number">
 <code class="descname">number</code><a class="headerlink" href="#geosoft.gxpy.group.Group.number" title="Permalink to this definition">¶</a></dt>
 <dd><p>group number in the view</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxpy.group.Group.unit_of_measure">
+<code class="descname">unit_of_measure</code><a class="headerlink" href="#geosoft.gxpy.group.Group.unit_of_measure" title="Permalink to this definition">¶</a></dt>
+<dd><p>unit of measure</p>
 </dd></dl>
 
 <dl class="attribute">
@@ -1877,6 +1953,34 @@ are scaled to cm.</li>
 <dd></dd></dl>
 
 <dl class="function">
+<dt id="geosoft.gxpy.group.color_from_string">
+<code class="descclassname">geosoft.gxpy.group.</code><code class="descname">color_from_string</code><span class="sig-paren">(</span><em>cstr</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.group.color_from_string" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a Geosoft color number from a color string.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>cstr</strong> &#8211; color string (see below)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">color</td>
+</tr>
+</tbody>
+</table>
+<p>Colour strings may be &#8220;R&#8221;, &#8220;G&#8221;, &#8220;B&#8221;, &#8220;C&#8221;, &#8220;M&#8221;, &#8220;Y&#8221;,
+&#8220;H&#8221;, &#8220;S&#8221;, &#8220;V&#8221;, or &#8220;K&#8221; or a combination of these
+characters, each followed by up to three digits
+specifying a number between 0 and 255.
+An empty string will produce C_ANY_NONE.</p>
+<p>You must stay in the same color model, RGB, CMY,
+HSV or K.</p>
+<p>For example &#8220;R&#8221;, &#8220;R127G22&#8221;, &#8220;H255S127V32&#8221;</p>
+<p>Characters are not case sensitive.</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.3.</span></p>
+</div>
+</dd></dl>
+
+<dl class="function">
 <dt id="geosoft.gxpy.group.edge_reference">
 <code class="descclassname">geosoft.gxpy.group.</code><code class="descname">edge_reference</code><span class="sig-paren">(</span><em>area</em>, <em>reference</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.group.edge_reference" title="Permalink to this definition">¶</a></dt>
 <dd><p>Location of a reference point of an area.</p>
@@ -1984,7 +2088,8 @@ determined to center the bar off the location side specified.</li>
 <li><strong>division_line</strong> &#8211; 0, no division lines, 1 - line, 2 - tick</li>
 <li><strong>interval_1</strong> &#8211; annotation increment, default annotates everything</li>
 <li><strong>interval_2</strong> &#8211; secondary smaller annotations, 1/10, 1/ 5, 1/4 or 1/2 interval_1</li>
-<li><strong>title</strong> &#8211; bar title, use new-lines for sub-titles.</li>
+<li><strong>title</strong> &#8211; bar title, use new-lines for sub-titles.  Default uses the title and unit_of_measure
+from <cite>cmap</cite>.</li>
 </ul>
 </td>
 </tr>
@@ -2039,7 +2144,7 @@ determined to center the bar off the location side specified.</li>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.0b0 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.0 documentation</a> &#187;</li> 
       </ul>
     </div>
 

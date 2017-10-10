@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>geosoft.gxpy.view submodule &#8212; Geosoft GX Python API 9.3.0b0 documentation</title>
+    <title>geosoft.gxpy.view submodule &#8212; Geosoft GX Python API 9.3.0 documentation</title>
     
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '9.3.0b0',
+        VERSION:     '9.3.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true,
@@ -42,7 +42,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.0b0 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.0 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -74,7 +74,10 @@
             
   <div class="section" id="module-geosoft.gxpy.view">
 <span id="geosoft-gxpy-view-submodule"></span><h1>geosoft.gxpy.view submodule<a class="headerlink" href="#module-geosoft.gxpy.view" title="Permalink to this headline">¶</a></h1>
-<p>Views, both 2D and 3D.</p>
+<p>Views, which can be 2D or 3D, contain graphical elements that can be displayed to a user in a Geosoft
+map viewer or a Geosoft 3D viewer.  Geosoft maps can contain any number of 2D or 3D views.</p>
+<p>Views contain one or more <a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Group" title="geosoft.gxpy.group.Group"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxpy.group.Group</span></code></a>.  2D views can contain 2D groups, while
+3D views can contain both 2D and 3D groups.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -101,7 +104,8 @@
 are stored in a <cite>geosoft_3dv</cite> file which can be worked with and viewed separately from a map.</p>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="geosoft.gxpy.map.html#module-geosoft.gxpy.map" title="geosoft.gxpy.map"><code class="xref py py-mod docutils literal"><span class="pre">geosoft.gxpy.map</span></code></a>, <a class="reference internal" href="geosoft.gxpy.group.html#module-geosoft.gxpy.group" title="geosoft.gxpy.group"><code class="xref py py-mod docutils literal"><span class="pre">geosoft.gxpy.group</span></code></a>, <a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW" title="geosoft.gxapi.GXMVIEW"><code class="xref py py-mod docutils literal"><span class="pre">geosoft.gxapi.GXMVIEW</span></code></a></p>
+<p><a class="reference internal" href="geosoft.gxpy.map.html#module-geosoft.gxpy.map" title="geosoft.gxpy.map"><code class="xref py py-mod docutils literal"><span class="pre">geosoft.gxpy.map</span></code></a>, <a class="reference internal" href="geosoft.gxpy.group.html#module-geosoft.gxpy.group" title="geosoft.gxpy.group"><code class="xref py py-mod docutils literal"><span class="pre">geosoft.gxpy.group</span></code></a></p>
+<p class="last"><a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW" title="geosoft.gxapi.GXMVIEW"><code class="xref py py-mod docutils literal"><span class="pre">geosoft.gxapi.GXMVIEW</span></code></a></p>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
@@ -290,8 +294,8 @@ defined this is view units per map metre.</td>
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>group</strong> &#8211; group name</li>
 <li><strong>unit</strong> &#8211; <p>units:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">UNITS_VIEW</span>
-<span class="n">UNITS_MAP</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">UNIT_VIEW</span>
+<span class="n">UNIT_MAP</span>
 </pre></div>
 </div>
 </li>
@@ -307,13 +311,13 @@ defined this is view units per map metre.</td>
 
 <dl class="method">
 <dt id="geosoft.gxpy.view.View.extent_map_cm">
-<code class="descname">extent_map_cm</code><span class="sig-paren">(</span><em>extent</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.view.View.extent_map_cm" title="Permalink to this definition">¶</a></dt>
+<code class="descname">extent_map_cm</code><span class="sig-paren">(</span><em>extent=None</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.view.View.extent_map_cm" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return an extent in map cm.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>extent</strong> &#8211; tuple returned from one of the extent properties.</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>extent</strong> &#8211; tuple returned from one of the extent properties.  Default is <a href="#id1"><span class="problematic" id="id2">:prop:`extent_clip`</span></a>.</td>
 </tr>
 </tbody>
 </table>
@@ -652,13 +656,13 @@ purposes.</p>
 
 <dl class="method">
 <dt id="geosoft.gxpy.view.View_3d.groups_on_plane_list">
-<code class="descname">groups_on_plane_list</code><span class="sig-paren">(</span><em>plane</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.view.View_3d.groups_on_plane_list" title="Permalink to this definition">¶</a></dt>
+<code class="descname">groups_on_plane_list</code><span class="sig-paren">(</span><em>plane=0</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.view.View_3d.groups_on_plane_list" title="Permalink to this definition">¶</a></dt>
 <dd><p>List of groups on a plane.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>plane</strong> &#8211; name of the plane</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>plane</strong> &#8211; name of the plane or plane number</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">list of groups on the plane</td>
 </tr>
@@ -798,7 +802,7 @@ unique temporary file is created.</li>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.0b0 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.0 documentation</a> &#187;</li> 
       </ul>
     </div>
 

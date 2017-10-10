@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>geosoft.gxpy.gdb submodule &#8212; Geosoft GX Python API 9.3.0b0 documentation</title>
+    <title>geosoft.gxpy.gdb submodule &#8212; Geosoft GX Python API 9.3.0 documentation</title>
     
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '9.3.0b0',
+        VERSION:     '9.3.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true,
@@ -42,7 +42,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.0b0 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.0 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -294,7 +294,7 @@ set the lock.</p>
 
 <dl class="classmethod">
 <dt id="geosoft.gxpy.gdb.Channel.new">
-<em class="property">classmethod </em><code class="descname">new</code><span class="sig-paren">(</span><em>gdb</em>, <em>name</em>, <em>dtype=&lt;class 'numpy.float64'&gt;</em>, <em>array=1</em>, <em>dup=None</em>, <em>details=None</em>, <em>replace=False</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.gdb.Channel.new" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="descname">new</code><span class="sig-paren">(</span><em>gdb</em>, <em>name</em>, <em>dtype=&lt;class 'numpy.float64'&gt;</em>, <em>array=1</em>, <em>dup=None</em>, <em>details=None</em>, <em>replace=False</em>, <em>unit_of_measure=None</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.gdb.Channel.new" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a new channel.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -307,8 +307,9 @@ set the lock.</p>
 <li><strong>array</strong> &#8211; array size, default 1</li>
 <li><strong>dup</strong> &#8211; duplicate properties of this channal (name, symbol or Channel)</li>
 <li><strong>details</strong> &#8211; dictionary of other channel properties - see <a class="reference internal" href="#geosoft.gxpy.gdb.Geosoft_gdb.set_channel_details" title="geosoft.gxpy.gdb.Geosoft_gdb.set_channel_details"><code class="xref py py-meth docutils literal"><span class="pre">Geosoft_gdb.set_channel_details()</span></code></a></li>
-<li><strong>replace</strong> &#8211; <cite>True</cite> to replace an existing channel.  All existing channel information and data is lost.
+<li><strong>replace</strong> &#8211; <cite>True</cite> to replace existing channel.  Existing channel information and data is lost.
 default is <cite>False</cite>.</li>
+<li><strong>unit_of_measure</strong> &#8211; unit of measurement of the data</li>
 </ul>
 </td>
 </tr>
@@ -348,8 +349,8 @@ Can be set.</p>
 </dd></dl>
 
 <dl class="attribute">
-<dt id="geosoft.gxpy.gdb.Channel.unit">
-<code class="descname">unit</code><a class="headerlink" href="#geosoft.gxpy.gdb.Channel.unit" title="Permalink to this definition">¶</a></dt>
+<dt id="geosoft.gxpy.gdb.Channel.unit_of_measure">
+<code class="descname">unit_of_measure</code><a class="headerlink" href="#geosoft.gxpy.gdb.Channel.unit_of_measure" title="Permalink to this definition">¶</a></dt>
 <dd><p>Unit of measure, can be set.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.3.</span></p>
@@ -620,7 +621,7 @@ deal with dummies).</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>line</strong> &#8211; line name, symbol or Line</li>
-<li><strong>channel</strong> &#8211; channel name, symbol or Channel</li>
+<li><strong>channel</strong> &#8211; channel name, symbol or channel</li>
 </ul>
 </td>
 </tr>
@@ -1099,7 +1100,7 @@ the dictionary items passed will be added to, or replace existing metadata.</p>
 <li><strong>name</strong> &#8211; channel name</li>
 <li><strong>dtype</strong> &#8211; numpy dtype (ie. np.int64)</li>
 <li><strong>array</strong> &#8211; array columns (default is 1)</li>
-<li><strong>dup</strong> &#8211; duplicate properties of this channel (name, symbol, Channel)</li>
+<li><strong>dup</strong> &#8211; duplicate properties of this channel (name, symbol, channel)</li>
 <li><strong>details</strong> &#8211; dictionary containing channel details, see channel_details()</li>
 </ul>
 </td>
@@ -1480,7 +1481,7 @@ of selections.</li>
 
 <dl class="method">
 <dt id="geosoft.gxpy.gdb.Geosoft_gdb.write_channel">
-<code class="descname">write_channel</code><span class="sig-paren">(</span><em>line</em>, <em>channel</em>, <em>data</em>, <em>fid=(0.0</em>, <em>1.0)</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.gdb.Geosoft_gdb.write_channel" title="Permalink to this definition">¶</a></dt>
+<code class="descname">write_channel</code><span class="sig-paren">(</span><em>line</em>, <em>channel</em>, <em>data</em>, <em>fid=(0.0</em>, <em>1.0)</em>, <em>unit_of_measure=None</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.gdb.Geosoft_gdb.write_channel" title="Permalink to this definition">¶</a></dt>
 <dd><p>Write data to a single channel.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -1491,6 +1492,7 @@ of selections.</li>
 <li><strong>channel</strong> &#8211; channel name or symbol</li>
 <li><strong>data</strong> &#8211; numpy array (2D for VA channel), or a list</li>
 <li><strong>fid</strong> &#8211; tuple (fid start, increment), default (0.0,1.0)</li>
+<li><strong>unit_of_measure</strong> &#8211; data unit of measurement</li>
 </ul>
 </td>
 </tr>
@@ -2034,7 +2036,7 @@ set the lock.</p>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.0b0 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.0 documentation</a> &#187;</li> 
       </ul>
     </div>
 

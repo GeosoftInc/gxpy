@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>geosoft.gxpy.va submodule &#8212; Geosoft GX Python API 9.3.0b0 documentation</title>
+    <title>geosoft.gxpy.va submodule &#8212; Geosoft GX Python API 9.3.0 documentation</title>
     
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '9.3.0b0',
+        VERSION:     '9.3.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true,
@@ -42,7 +42,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.0b0 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.0 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -108,7 +108,7 @@ data to the same fiducial so that vector-to-vector operations can be performed.<
 </div>
 <dl class="class">
 <dt id="geosoft.gxpy.va.GXva">
-<em class="property">class </em><code class="descclassname">geosoft.gxpy.va.</code><code class="descname">GXva</code><span class="sig-paren">(</span><em>array=None</em>, <em>width=None</em>, <em>dtype=None</em>, <em>fid=(0.0</em>, <em>1.0)</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.va.GXva" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">geosoft.gxpy.va.</code><code class="descname">GXva</code><span class="sig-paren">(</span><em>array=None</em>, <em>width=None</em>, <em>dtype=None</em>, <em>fid=(0.0</em>, <em>1.0)</em>, <em>unit_of_measure=''</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.va.GXva" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
 <p>VA class wrapper.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -119,13 +119,17 @@ data to the same fiducial so that vector-to-vector operations can be performed.<
 <li><strong>array</strong> &#8211; 2D numpy array, None for an empty VA</li>
 <li><strong>dtype</strong> &#8211; numpy data type, default np.float</li>
 <li><strong>width</strong> &#8211; array width, default is determined from array.  The array will be
-reshapped to this width if specified.</li>
+reshaped to this width if specified.</li>
 <li><strong>fid</strong> &#8211; fid tuple (start,increment), default (0.0, 1.0)</li>
+<li><strong>unit_of_measure</strong> &#8211; the unit of measurement for the data</li>
 </ul>
 </td>
 </tr>
 </tbody>
 </table>
+<div class="versionchanged">
+<p><span class="versionmodified">Changed in version 9.3: </span>added unit_of_measure</p>
+</div>
 <div class="versionchanged">
 <p><span class="versionmodified">Changed in version 9.2: </span>allow construction directly from numpy array</p>
 </div>
@@ -254,6 +258,12 @@ in another <cite>dtype</cite>.  Array will be 2-dimensional.</p>
 </dd></dl>
 
 <dl class="attribute">
+<dt id="geosoft.gxpy.va.GXva.unit_of_measure">
+<code class="descname">unit_of_measure</code><a class="headerlink" href="#geosoft.gxpy.va.GXva.unit_of_measure" title="Permalink to this definition">¶</a></dt>
+<dd><p>data unit of measurement</p>
+</dd></dl>
+
+<dl class="attribute">
 <dt id="geosoft.gxpy.va.GXva.width">
 <code class="descname">width</code><a class="headerlink" href="#geosoft.gxpy.va.GXva.width" title="Permalink to this definition">¶</a></dt>
 <dd><p>width of each row(element) in the VA</p>
@@ -288,7 +298,7 @@ in another <cite>dtype</cite>.  Array will be 2-dimensional.</p>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.0b0 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.0 documentation</a> &#187;</li> 
       </ul>
     </div>
 

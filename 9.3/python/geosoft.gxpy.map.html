@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>geosoft.gxpy.map submodule &#8212; Geosoft GX Python API 9.3.0b0 documentation</title>
+    <title>geosoft.gxpy.map submodule &#8212; Geosoft GX Python API 9.3.0 documentation</title>
     
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '9.3.0b0',
+        VERSION:     '9.3.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true,
@@ -42,7 +42,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.0b0 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.0 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -173,13 +173,13 @@ contains graphical elements defined relative to the coordinate system of the vie
 3D views.</p>
 <p>Geosoft maps will always have a 2D &#8216;base&#8217; view, which uses map cm as the coordinate system and is
 intended for drawing map annotations, such as titles, a scale bar, North arrow and legends.  The
-lower-left corner of the base view at location (0, 0) and the upper-right corner is defined by the
+lower-left corner of the base view ia at location (0, 0) and the upper-right corner is defined by the
 media size and may be adjusted to fit the data view.</p>
 <p>Geosoft maps will also have one or more data views, each with it&#8217;s own defined coordinate system
 and graphical content.  Creating a new map will create one data view, which will become the map&#8217;s 
-<code class="docutils literal"><span class="pre">current_data_view</span></code>, within which any spatial data drawn by Geosoft 2D drawing applications
+<cite>current_data_view</cite>, within which any spatial data drawn by Geosoft 2D drawing applications
 will be placed.  Maps may have more than one data view, including 3D data views, and the 
-<code class="docutils literal"><span class="pre">current_data_view</span></code> can be changed to any 2D or 3D view, and subsequent drawing will be placed
+<cite>current_data_view</cite> can be changed to any 2D or 3D view, and subsequent drawing will be placed
 in that view.</p>
 <p>3D views define a 3D spatial volume and accept both 2D and 3D drawing elements.  A 3D view will always
 contain a plane or surface on which 2D elements are drawn, and when a 3D view is the
@@ -345,7 +345,7 @@ with the same coordinate system, scale and clipping as the old view.</li>
 <dl class="method">
 <dt id="geosoft.gxpy.map.Map.create_linked_3d_view">
 <code class="descname">create_linked_3d_view</code><span class="sig-paren">(</span><em>view</em>, <em>name='3D'</em>, <em>area_on_map=(0</em>, <em>0</em>, <em>300</em>, <em>300)</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.map.Map.create_linked_3d_view" title="Permalink to this definition">¶</a></dt>
-<dd><p>Create a linked 3D view inside a 2D map to a <cite>gxpy.view.View_3d</cite> in a 3DV</p>
+<dd><p>Create a linked 3D view inside a 2D map to a <code class="xref py py-class docutils literal"><span class="pre">gxpy.view.View_3d</span></code> in a 3DV</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -475,44 +475,6 @@ If this is a 3D view, new groups are placed on the default drawing plane of the 
 <dt id="geosoft.gxpy.map.Map.has_view">
 <code class="descname">has_view</code><span class="sig-paren">(</span><em>view</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.map.Map.has_view" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns True if the map contains this view.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="geosoft.gxpy.map.Map.map_reference_location">
-<code class="descname">map_reference_location</code><span class="sig-paren">(</span><em>refp</em>, <em>view_name='base'</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.map.Map.map_reference_location" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the location of a reference point relative to the current clipping window
-extent of a view on the map.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>refp</strong> &#8211; <p>One of:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">REF_BOTTOM_LEFT</span>
-<span class="n">REF_BOTTOM_CENTER</span>
-<span class="n">REF_BOTTOM_RIGHT</span>
-<span class="n">REF_CENTER_LEFT</span>
-<span class="n">REF_CENTER</span>
-<span class="n">REF_CENTER_RIGHT</span>
-<span class="n">REF_TOP_LEFT</span>
-<span class="n">REF_TOP_CENTER</span>
-<span class="n">REF_TOP_RIGHT</span>
-</pre></div>
-</div>
-</li>
-<li><strong>view_name</strong> &#8211; the name of the view, default is the base view which returns the
-extent in map cm.</li>
-</ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">(x, y) in view units</p>
-</td>
-</tr>
-</tbody>
-</table>
-<div class="versionadded">
-<p><span class="versionmodified">New in version 9.2.</span></p>
-</div>
 </dd></dl>
 
 <dl class="method">
@@ -896,7 +858,7 @@ map.</p>
 <dl class="function">
 <dt id="geosoft.gxpy.map.map_file_name">
 <code class="descclassname">geosoft.gxpy.map.</code><code class="descname">map_file_name</code><span class="sig-paren">(</span><em>file_name</em>, <em>file_type='map'</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.map.map_file_name" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return a fully resolved map file path using the file name, with .map extyension</p>
+<dd><p>Return a fully resolved map file path using the file name, with .map extension</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -967,7 +929,7 @@ map.</p>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.0b0 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.0 documentation</a> &#187;</li> 
       </ul>
     </div>
 
