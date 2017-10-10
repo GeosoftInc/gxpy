@@ -96,10 +96,28 @@ class Test(GXPYTest):
                     self.assertRaises(gxg.GroupException, gxg.Group, v)
                 self.assertFalse(bool(v.lock))
 
+    def test_extent(self):
+        self.start()
+
+        map_file = None
+        try:
+            with gxmap.Map.new(data_area=(3, 2, 50, 40), coordinate_system='cm', overwrite=True) as map:
+                map_file = map.file_name
+                with gxv.View(map, 'data') as v:
+                    self.assertEqual(v.extent_map_cm(), (2.0, 6.0, 41.6, 38.4))
+                    with gxg.Draw(v, 'rectangle') as g:
+                        g.rectangle((3, 2, 28, 20),
+                                    pen=g.new_pen(line_thick=0.25, line_color='R', line_style=gxg.LINE_STYLE_LONG,
+                                                  line_pitch=5))
+                        self.assertEqual(g.extent, (3., 2., 28., 20.))
+                        self.assertEqual(g.extent_map_cm(), (3.0, 7.0, 23.0, 21.4))
+        finally:
+            gxmap.delete_files(map_file)
+
     def test_rectangle(self):
         self.start()
 
-        with gxmap.Map.new(data_area=(0, 0, 50, 40), coordinate_system='cm') as map:
+        with gxmap.Map.new(data_area=(0, 0, 50, 40), coordinate_system='cm', overwrite=True) as map:
             map_file = map.file_name
             with gxv.View(map, 'data') as v:
                 with gxg.Draw(v, 'rectangle') as g:
@@ -223,39 +241,14 @@ class Test(GXPYTest):
             with gxmap.Map.open(testmap) as gmap:
                 gmap.create_linked_3d_view(view_3d, area_on_map=(10, 10, 270, 250))
 
+        # test re-open a 3D view, with explicit close
+        view_3d = gxv.View_3d.open(test3dv)
+        group_list = view_3d.group_list
+        self.assertEqual(len(group_list), 3)
+        view_3d.close()
+
         self.crc_map(test3dv, alt_crc_name=gxsys.func_name() + '_3dv')
         self.crc_map(testmap, alt_crc_name=gxsys.func_name() + '_map')
-
-    def test_graticule(self):
-        self.start()
-
-        testmap = os.path.join(self.gx.temp_folder(), "test")
-        with gxmap.Map.new(testmap, overwrite=True) as gmap:
-            map_file = gmap.file_name
-            gmap.delete_view('data')
-
-            with gxv.View(gmap, "my_data_1", map_location=(2, 3), area=(0, 0, 1000, 1500), scale=10000) as v:
-                with gxg.Draw(v, 'line') as g:
-                    g.rectangle(v.extent_clip,
-                                   pen=g.new_pen(line_thick=5, line_color='G'))
-
-                    g.graticule(style=gxg.GRATICULE_LINE, pen=g.new_pen(line_thick=5))
-
-            with gxv.View(gmap, "my_data_2", map_location=(15, 3), area=(0, 0, 1000, 1500), scale=10000) as v:
-                with gxg.Draw(v, 'line') as g:
-                    g.rectangle(v.extent_clip,
-                                   pen=g.new_pen(line_thick=5, line_color='G'))
-                    g.graticule(style=gxg.GRATICULE_DOT, pen=g.new_pen(line_thick=5))
-
-            ex = gmap.extent_data_views()
-            area = (0, 0, ex[2] + 2, ex[3] + 3)
-            with gxv.View(gmap, "my_base_view", area=area, scale=100.0) as v:
-                with gxg.Draw(v, 'base_edge') as g:
-                    g.rectangle(v.extent_clip, pen=g.new_pen(line_thick=0.1, line_color='R'))
-            gmap.delete_view('base')
-
-        print(map_file)
-        self.crc_map(map_file)
 
     def test_basic_grid_1(self):
         self.start()
@@ -624,6 +617,10 @@ class Test(GXPYTest):
 
                 with gxagg.Aggregate_image.new(grid_file) as agg:
                     gxg.legend_color_bar(v, 'color_legend', agg.layer_color_map())
+                    self.assertEqual(agg.layer_unit_of_measure(0), 'maki')
+                    self.assertEqual(agg.layer_unit_of_measure(agg.layer_file_names[0]), 'maki')
+                    self.assertEqual(agg.layer_color_map(0).unit_of_measure, 'maki')
+
 
         self.crc_map(map_file)
 

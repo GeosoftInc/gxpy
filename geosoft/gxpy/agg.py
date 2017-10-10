@@ -152,6 +152,19 @@ class Aggregate_image:
         self.gxagg.list_img(vv._vv)
         return list(vv.np)
 
+    def _layer_index(self, layer):
+        if isinstance(layer, str):
+            layer = layer.lower()
+            for l in range(self.layer_count):
+                if layer == self.layer_file_names[l].lower():
+                    return l
+            raise AggregateException(_t('Layer \'{}\' not found.'.format(layer)))
+
+        if layer >= self.layer_count:
+            raise AggregateException(
+                _t('Layer \'{}\' ot of range for aggregate with {} layers.'.format(layer, self.layer_count)))
+        return layer
+
     def _create_name(self):
         s = ''
         layernames = self.layer_file_names
@@ -250,34 +263,31 @@ class Aggregate_image:
         
         :param layer: layer number or layer name
         :returns: :class:`geosoft.gxpy.group.Color_map`
+
+        .. versionadded:: 9.2
         """
 
-        if isinstance(layer, str):
-            layer = layer.lower()
-            lay = 0
-            for l in self.layer_file_names:
-                if layer == l.lower():
-                    layer = lay
-                    break
-                lay += 1
-            if lay == self.layer_count:
-                lay = 0
-                for l in self.layer_file_names:
-                    base = os.path.basename(l).split('.')[0]
-                    if layer == base.lower():
-                        layer = lay
-                        break
-                    lay += 1
-
-        if isinstance(layer, str) or (layer >= self.layer_count):
-            raise AggregateException(_t('Layer not found.'))
-
+        layer = self._layer_index(layer)
         itr = gxapi.GXITR.create()
         self.gxagg.get_layer_itr(layer, itr)
         cmap = geosoft.gxpy.group.Color_map(itr)
         cmap.title = os.path.basename(self.layer_file_names[layer]).split('.')[0]
 
         with gxgrd.Grid.open(self.layer_file_names[layer]) as g:
-            cmap.units = g.unit_of_measure
+            cmap.unit_of_measure = g.unit_of_measure
 
         return cmap
+
+    def layer_unit_of_measure(self, layer=0):
+        """
+        Return the unit of measurement for the specified layer
+
+        :param layer: layer number or layer name
+
+        .. versionadded:: 9.3
+        """
+
+        layer = self._layer_index(layer)
+        with gxgrd.Grid.open(self.layer_file_names[layer]) as g:
+            uom = g.unit_of_measure
+        return uom

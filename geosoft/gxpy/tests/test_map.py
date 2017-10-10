@@ -128,11 +128,24 @@ class Test(GXPYTest):
             views = map.view_list
             self.assertTrue('base' in views)
             self.assertTrue('data' in views)
+            self.assertEqual(len(map.aggregate_list()), 0)
 
         with gxmap.Map.new(data_area=(0, 0, 100, 80),
                              coordinate_system=gxcs.Coordinate_system("DHDN / Okarito 2000 [geodetic]")) as map:
             with gxv.View(map, 'data', mode=gxv.WRITE_OLD) as v:
                 self.assertEqual("DHDN / Okarito 2000 [geodetic]", str(v.coordinate_system))
+
+            self.assertEqual(map.current_data_view, 'data')
+            self.assertEqual(map.current_base_view, 'base')
+            self.assertEqual(map.current_section_view, 'section')
+
+            # the following does not make sense, for testing purposes only
+            map.current_data_view = 'base'
+            self.assertEqual(map.current_data_view, 'base')
+            map.current_base_view = 'data'
+            self.assertEqual(map.current_base_view, 'data')
+            map.current_section_view = 'data'
+            self.assertEqual(map.current_section_view, 'data')
 
     def test_lists(self):
         self.start()
@@ -412,7 +425,6 @@ class Test(GXPYTest):
 
         self.crc_map(mapfile)
 
-
     def test_surround_1(self):
         self.start()
 
@@ -588,7 +600,7 @@ class Test(GXPYTest):
         self.crc_map(mapfile)
         gxmap.delete_files(mapfile)
 
-    def text_view_extents(self):
+    def test_view_extents(self):
         self.start()
 
         testmap = os.path.join(self.gx.temp_folder(), "test")
@@ -645,6 +657,23 @@ class Test(GXPYTest):
                 self.assertEqual(properties.get('nx'),1376)
                 self.assertEqual(properties.get('ny'),1512)
                 self.assertEqual(str(properties.get('coordinate_system')),'*unknown')
+
+    def test_png(self):
+        self.start()
+
+        cs = gxcs.Coordinate_system('NAD83 / UTM zone 15N')
+        with gxmap.Map.new(data_area=(350000, 7000000, 400000, 7030000), coordinate_system=cs) as map:
+            mapfile = map.file_name
+            with gxv.View(map, 'data') as v:
+                with gxg.Draw(v) as g:
+                    g.rectangle(v.extent_clip)
+            map.surround()
+            map.commit_changes()
+
+        self.assertFalse(gxmap.crc_map(mapfile) == 0)
+        temp_png = self.gx.temp_file('test.png')
+        gxmap.save_as_image(mapfile, temp_png)
+        self.assertEqual(os.path.getsize(temp_png), 619)
 
 
 if __name__ == '__main__':

@@ -55,8 +55,7 @@ class Test(GXPYTest):
 
             cmap = agg.layer_color_map(layer=agg.layer_file_names[3])
             self.assertEqual(cmap.length, 63)
-            name = os.path.basename(agg.layer_file_names[1]).split('.')[0]
-            cmap = agg.layer_color_map(name)
+            cmap = agg.layer_color_map(agg.layer_file_names[1])
             self.assertEqual(cmap.length, 25)
 
 

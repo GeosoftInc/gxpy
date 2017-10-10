@@ -406,14 +406,18 @@ class View:
         """extent of visible groups in the view as (x_min, y_min, x_max, y_max)"""
         return self._extent(gxapi.MVIEW_EXTENT_VISIBLE)
 
-    def extent_map_cm(self, extent):
+    def extent_map_cm(self, extent=None):
         """
         Return an extent in map cm.
 
-        :param extent: tuple returned from one of the extent properties.
+        :param extent: tuple returned from one of the extent properties.  Default is :prop:`extent_clip`.
 
         .. versionadded:: 9.2
         """
+
+        if extent is None:
+            extent = self.extent_clip
+
         xmin, ymin = self.view_to_map_cm(extent[0], extent[1])
         xmax, ymax = self.view_to_map_cm(extent[2], extent[3])
         return xmin, ymin, xmax, ymax

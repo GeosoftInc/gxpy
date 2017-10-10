@@ -92,7 +92,7 @@ STYLE_MAP = 1 #:
 
 def map_file_name(file_name, file_type='map'):
     """
-    Return a fully resolved map file path using the file name, with .map extyension
+    Return a fully resolved map file path using the file name, with .map extension
 
     :param file_name:   file name, with ot without path and/or extension
     :param file_type:   Geosoft file type, 'map' or 'geosoft_3dv' expected.  Default is 'map'    
@@ -666,7 +666,7 @@ class Map:
 
         if s.value != new:
             self.gxmap.delete_view(new)
-            raise MapException(_t('Invalud view name "{}", suggest "{}"').format(new, s.value))
+            raise MapException(_t('Invalid view name "{}", suggest "{}"').format(new, s.value))
 
     def delete_view(self, name):
         """
@@ -741,7 +741,7 @@ class Map:
 
     def create_linked_3d_view(self, view, name='3D', area_on_map=(0, 0, 300, 300)):
         """
-        Create a linked 3D view inside a 2D map to a `gxpy.view.View_3d` in a 3DV
+        Create a linked 3D view inside a 2D map to a :class:`gxpy.view.View_3d` in a 3DV
 
         :param view:        :class:`gxpy.view.View_3d` instance
         :param name:        name of the linked view to create
@@ -753,56 +753,6 @@ class Map:
         self.gxmap.create_linked_3d_view(view.gxview, name,
                                          area_on_map[0], area_on_map[1],
                                          area_on_map[2], area_on_map[3])
-
-    def map_reference_location(self, refp, view_name='base'):
-        """
-        Return the location of a reference point relative to the current clipping window
-        extent of a view on the map.
-
-        :param refp: One of:
-
-            ::
-
-                REF_BOTTOM_LEFT
-                REF_BOTTOM_CENTER
-                REF_BOTTOM_RIGHT
-                REF_CENTER_LEFT
-                REF_CENTER
-                REF_CENTER_RIGHT
-                REF_TOP_LEFT
-                REF_TOP_CENTER
-                REF_TOP_RIGHT
-
-        :param view_name:    the name of the view, default is the base view which returns the
-                            extent in map cm.
-
-        :returns:   (x, y) in view units
-
-        .. versionadded:: 9.2
-        """
-
-        view_name = self.classview(view_name)
-
-        if not view_name:
-            with gxv.View(self, self.current_base_view) as v:
-                extent = v.extent_map_cm(v.extent_clip)
-        else:
-            with gxv.View(self, view_name) as v:
-                extent = v.extent_clip
-
-        xc = extent[0] + (extent[2] - extent[0]) * 0.5
-        yc = extent[1] + (extent[3] - extent[1]) * 0.5
-        rpoints = ((extent[0], extent[1]),
-                   (xc, extent[1]),
-                   (extent[2], extent[1]),
-                   (extent[0], yc),
-                   (xc, yc),
-                   (extent[2], yc),
-                   (extent[0], extent[3]),
-                   (xc, extent[3]),
-                   (extent[2], extent[3]))
-
-        return rpoints[refp]
 
     def surround(self, outer_pen=None, inner_pen=None, gap=0):
         """
@@ -1120,7 +1070,7 @@ class Map:
 
 
 class _Mapplot:
-    """Internal class to marshal MAPPLOT commands that support basic map annotations."""
+    """Internal class to marshal MAPPLOT commands to support basic map annotations."""
 
     def __enter__(self):
         return self

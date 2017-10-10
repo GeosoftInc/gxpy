@@ -393,7 +393,7 @@ class Group:
 
     @property
     def extent(self):
-        """group extent as (xmin, ymion, xmax, ymax)"""
+        """group extent as (xmin, ymin, xmax, ymax) in view units"""
         return self._extent(UNIT_VIEW)
 
     @property
@@ -418,9 +418,9 @@ class Group:
 
     def extent_map_cm(self, extent=None):
         """
-        Return a view extent in map cm.
+        Return an extent in map cm.
 
-        :param extent: tuple returned an extent property.
+        :param extent: an extent in view units as a tuple (xmin, ymin, xmax, ymax), Default is the group extent.
 
         .. versionadded:: 9.2
         """
