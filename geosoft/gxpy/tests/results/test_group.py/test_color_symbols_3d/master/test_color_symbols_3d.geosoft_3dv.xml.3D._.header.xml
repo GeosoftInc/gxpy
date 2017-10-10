@@ -4,7 +4,7 @@
    <Item name="PAGG" value="False"/>
    <Item name="CSYMB" value="False"/>
    <Item name="SUR" value="False"/>
-   <Item name="3D" value="True"/>
+   <Item name="3D" value="False"/>
    <Item name="Linked" value="False"/>
    <Item name="Maker" value="False"/>
    <Item name="Meta" value="False"/>
@@ -12,15 +12,16 @@
    <Item name="Hidden" value="False"/>
    <Item name="Clipped" value="False"/>
    <Item name="Moveable" value="False"/>
-   <Item name="MinZ" value="0"/>
-   <Item name="MaxZ" value="142"/>
+   <Item name="MinZ" value="GS_R8DM"/>
+   <Item name="MaxZ" value="GS_R8DM"/>
    <Item name="Transparency" value="GS_R8DM"/>
    <Item name="ExtClipRegion" value="-1"/>
+   <Item name="Plane" value="0"/>
    <Item name="Extents" type="D2AREA">
-      <Value name="MinX" value="108"/>
-      <Value name="MinY" value="3"/>
-      <Value name="MaxX" value="237"/>
-      <Value name="MaxY" value="72"/>
+      <Value name="MinX" value="0"/>
+      <Value name="MinY" value="0"/>
+      <Value name="MaxX" value="1"/>
+      <Value name="MaxY" value="1"/>
    </Item>
    <Item name="Matrix" type="D4MATRIX">
       <Value x="0" y="0" value="1"/>

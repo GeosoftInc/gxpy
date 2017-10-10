@@ -277,6 +277,7 @@ class Group:
         :plane:             plane number, or plane name if drawing to a 3D view.  Default is plane number 0.
         :view_lock:         True to lock the view for a single-stream drawing group.  Default is False.
         :unit_of_measure:   unit of measurement for data in this group, default is ''
+        :group_3d:          True for a 3D drawing group, default assumes a 2D drawing group to a plane.
 
     :Properties:
 
@@ -317,10 +318,9 @@ class Group:
         return "{}({})".format(self.__class__, self.__dict__)
 
     def __str__(self):
-        if self.view.is_3d:
+        if self.view.is_3d and not self.group_3d:
             return '{}/{}/{}'.format(self.name_in_view, self.view.current_3d_drawing_plane, self.view.name)
-        else:
-            return '{}/{}'.format(self.name_in_view, self.view.name)
+        return '{}/{}'.format(self.name_in_view, self.view.name)
 
     def __init__(self,
                  view,
@@ -328,7 +328,8 @@ class Group:
                  plane=None,
                  view_lock=False,
                  mode=APPEND,
-                 unit_of_measure=''):
+                 unit_of_measure='',
+                 group_3d=False):
 
         if (len(name) == 0) or (name == view.name):
             name = name + '_'
@@ -345,8 +346,17 @@ class Group:
         finally:
             _lock.release()
 
+        self.group_3d = False
         if view.is_3d:
-            if plane:
+            self.group_3d = group_3d
+
+            if not group_3d:
+                # setup a 2D drawing plane for this 2D group
+                if plane is None:
+                    if view.current_3d_drawing_plane:
+                        plane = view.current_3d_drawing_plane
+                    else:
+                        plane = 'Plane'
                 view.current_3d_drawing_plane = plane
 
         self._view = view
@@ -523,13 +533,6 @@ class Draw(Group):
     def __init__(self, *args, **kwargs):
 
         kwargs['view_lock'] = True
-        view = args[0]
-        if view.is_3d and 'plane' not in kwargs:
-            if view.current_3d_drawing_plane:
-                plane = view.current_3d_drawing_plane
-            else:
-                plane = 'Plane'
-            kwargs['plane'] = plane
         super().__init__(*args, **kwargs)
 
         self._pen = None
@@ -820,6 +823,7 @@ class Draw_3d(Draw):
         if not isinstance(view, gxv.View_3d):
             raise GroupException(_t('View is not 3D'))
 
+        kwargs['group_3d'] = True
         super().__init__(view, *args, **kwargs)
 
         if render_backfaces:

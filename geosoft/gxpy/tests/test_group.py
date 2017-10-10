@@ -283,6 +283,30 @@ class Test(GXPYTest):
 
         self.crc_map(map_file)
 
+    def test_basic_grid_3D(self):
+        self.start()
+
+        # test grid file
+        folder, files = gsys.unzip(os.path.join(os.path.dirname(self._test_case_py), 'testgrids.zip'),
+                                   folder=self.gx.temp_folder())
+        grid_file = os.path.join(folder, 'test_agg_utm.grd')
+        with gxgrd.Grid(grid_file) as grd:
+            cs = grd.coordinate_system
+            area = grd.extent_2d()
+        with gxv.View_3d.new("grid", overwrite=True) as v:
+            v3d_file = v.file_name
+            with gxg.Draw(v, 'line') as g:
+                g.rectangle(area, pen=g.new_pen(line_thick=0.1, line_color='R'))
+
+            with gxagg.Aggregate_image.new(grid_file) as agg:
+                with gxg.Aggregate_group.new(v, agg) as gagg:
+                    self.assertEqual(gagg.name, str(agg))
+
+            self.assertEqual(len(v.group_list_agg), 1)
+
+        self.crc_map(v3d_file)
+
+
     def test_basic_grid_2(self):
         self.start()
 
@@ -895,6 +919,45 @@ class Test(GXPYTest):
                 # gxg.legend_color_bar(v, 'symbol_legend', cs.color_map())
 
         self.crc_map(map_file)
+
+    def test_color_symbols_3d(self):
+        self.start()
+
+        data = [((0, 0), 1),
+                ((10, 0), 2),
+                ((0, 10), 3),
+                ((10, 10), 4)]
+        data2 = [((0, 0, 45), 1, 4),
+                 ((10, 0, 8), None, None),
+                 ((0, 10, 16), 3, 75),
+                 ((None, 10, -22), 4, 7)]
+
+        cmap = gxg.Color_map()
+        cmap.set_linear(0, 5, contour_interval=1)
+
+        try:
+            with gxv.View_3d.new('csymb') as v:
+                v3d_file = v.file_name
+                with gxg.Draw(v) as g:
+                    g.rectangle(g.extent)
+
+                cs = gxg.Color_symbols_group.new(v, 'outer_symbols', data, cmap, unit_of_measure='maki')
+                cmap = gxg.Color_map('hotcycle')
+                cmap.set_linear(0, 5, contour_interval=1)
+                nv = gxg.Color_symbols_group.new(v, 'mark', data2, cmap,
+                                                 symbol=gxg.SYMBOL_BOX,
+                                                 symbol_def=gxg.Text_def(font='symbols.gfn',
+                                                                         height=0.15,
+                                                                         color=gxg.C_WHITE,
+                                                                         weight=gxg.FONT_WEIGHT_ULTRALIGHT)).name_in_view
+
+                cs = gxg.Color_symbols_group.open(v, nv)
+                self.assertEqual(cs.number, 2)
+
+            self.crc_map(v3d_file)
+
+        finally:
+            gxmap.delete_files(v3d_file)
 
     def test_polydata_3d(self):
         self.start()
