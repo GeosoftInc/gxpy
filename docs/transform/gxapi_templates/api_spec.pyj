@@ -22,7 +22,7 @@ gx_defines = [
            constants=[
 {% for defined_value in definition.defined_value %}
                Constant('{{ defined_value.name }}', value='{{ defined_value.val }}', type={{ defined_value.get_spec_type() }}{% if defined_value.description %},
-                        doc={{ defined_value.description | clean_doc(24) }}{% endif %})                        {% if not loop.last %},
+                        doc={{ defined_value.description | clean_doc(24) }}{% endif %}){% if not loop.last %},
 {% else %}
 
            ]){% endif %}{% endfor %}{% endif %}{% if not loop.last %},
