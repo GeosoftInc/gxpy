@@ -501,6 +501,11 @@ class Coordinate_system:
         return self.cs_name(NAME_UNIT)
 
     @property
+    def unit_of_measure(self):
+        """ same as units_name, provided for naming consistency with other usage in gxpy."""
+        return self.units_name
+
+    @property
     def metres_per_unit(self):
         """ the number metres per distance unit of the coordinate system."""
         fr = gxapi.float_ref()
