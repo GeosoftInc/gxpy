@@ -91,10 +91,26 @@ class Test(GXPYTest):
             with gxv.View(map, 'data') as v:
                 self.assertFalse(bool(v.lock))
                 with gxg.Draw(v, 'rectangle') as g:
+                    self.assertEqual(str(g), 'rectangle/data')
+                    self.assertTrue(g.drawing_plane is None)
+                    self.assertEqual(g.unit_of_measure, '')
                     self.assertTrue(bool(v.lock))
                     self.assertEqual(v.lock, 'rectangle')
                     self.assertRaises(gxg.GroupException, gxg.Group, v)
                 self.assertFalse(bool(v.lock))
+
+    def test_cs(self):
+        self.start()
+
+        with gxmap.Map.new(data_area=(0, 0, 50, 40), coordinate_system='cm') as map:
+            with gxv.View(map, 'data') as v:
+                with gxg.Draw(v, 'rectangle') as g:
+                    self.assertEqual(g.drawing_coordinate_system.unit_of_measure, 'cm')
+                    g.drawing_coordinate_system = "NAD83 / UTM zone 15N"
+                    self.assertEqual(str(g.drawing_coordinate_system), "NAD83 / UTM zone 15N")
+                    g.drawing_coordinate_system = None
+                    self.assertEqual(g.drawing_coordinate_system.unit_of_measure, 'cm')
+
 
     def test_extent(self):
         self.start()
@@ -237,6 +253,8 @@ class Test(GXPYTest):
                 g.cylinder_3d(((80, 10, 0), (80, 10, 80)), 5, pen='y', close=gxg.CYLINDER_OPEN)
                 self.assertEqual(g.render_backfaces, True)
                 g.box_3d(((20, 10, 30), (80, 50, 50)), pen=g.new_pen(line_color='R255G100B50'))
+                g.box_3d(((80, 50, 50), (90,60, 65)), wireframe=True,
+                         pen=g.new_pen(line_color='R25G255B50', line_thick=2))
 
             with gxmap.Map.open(testmap) as gmap:
                 gmap.create_linked_3d_view(view_3d, area_on_map=(10, 10, 270, 250))
@@ -296,11 +314,13 @@ class Test(GXPYTest):
         with gxv.View_3d.new("grid", overwrite=True) as v:
             v3d_file = v.file_name
             with gxg.Draw(v, 'line') as g:
+                self.assertEqual(g.drawing_plane, 'Plane')
+                self.assertEqual(str(g), 'line/Plane/grid')
                 g.rectangle(area, pen=g.new_pen(line_thick=0.1, line_color='R'))
 
             with gxagg.Aggregate_image.new(grid_file) as agg:
                 with gxg.Aggregate_group.new(v, agg) as gagg:
-                    self.assertEqual(gagg.name, str(agg))
+                    self.assertEqual(str(gagg), agg.name + '/Plane/grid')
 
             self.assertEqual(len(v.group_list_agg), 1)
 
@@ -457,6 +477,11 @@ class Test(GXPYTest):
 
         p.line_color = (255, 127, 64)
         self.assertEqual(p.mapplot_string, 'r255g127b64t100')
+
+        p2 = gxg.Pen(line_color = (255, 127, 64))
+        self.assertTrue(p == p2)
+        p2.line_color = 'K'
+        self.assertFalse(p == p2)
 
         p = gxg.Pen.from_mapplot_string('r20b100k16R64K16')
         ms = p.mapplot_string
@@ -626,7 +651,7 @@ class Test(GXPYTest):
             grd.unit_of_measure = 'maki'
 
         with gxmap.Map.new(map_file, fixed_size=False,
-                             data_area=area, media="A4", margins=(2, 10, 2, 1),
+                             data_area=area, media="A4", margins=(7, 7, 2.5, 2.5),
                              coordinate_system=cs, overwrite=True) as gmap:
             map_file = gmap.file_name
             with gxv.View(gmap, "base") as v:
@@ -635,16 +660,31 @@ class Test(GXPYTest):
 
             with gxv.View(gmap, "data") as v:
                 with gxg.Draw(v, 'line') as g:
-                    #g.rectangle(area, pen=g.new_pen(line_thick=0.1, line_color='R'))
                     g.rectangle(v.extent_clip, pen=g.new_pen(line_thick=0.1, line_color='G'))
                     g.rectangle(v.extent_all, pen=g.new_pen(line_thick=0.1, line_color='B'))
 
                 with gxagg.Aggregate_image.new(grid_file) as agg:
-                    gxg.legend_color_bar(v, 'color_legend', agg.layer_color_map())
                     self.assertEqual(agg.layer_unit_of_measure(0), 'maki')
                     self.assertEqual(agg.layer_unit_of_measure(agg.layer_file_names[0]), 'maki')
                     self.assertEqual(agg.layer_color_map(0).unit_of_measure, 'maki')
 
+                    gxg.legend_color_bar(v, 'color_legend', agg.layer_color_map())
+                    gxg.legend_color_bar(v, 'color_legend', agg.layer_color_map(),
+                                         bar_location=gxg.COLOR_BAR_LEFT)
+
+                    gxg.legend_color_bar(v, 'bottom', agg.layer_color_map(),
+                                         bar_location=gxg.COLOR_BAR_BOTTOM,
+                                         box_size=0.5,
+                                         location=(1, -0.1),
+                                         annotation_offset=0.1)
+
+                    gxg.legend_color_bar(v, 'top', agg.layer_color_map(),
+                                         bar_location=gxg.COLOR_BAR_TOP,
+                                         box_size=0.5,
+                                         bar_width=0.1,
+                                         location=0.5,
+                                         interval_1 = 50,
+                                         annotation_offset=0.1)
 
         self.crc_map(map_file)
 
@@ -902,7 +942,7 @@ class Test(GXPYTest):
                     g.rectangle(g.extent)
 
                 cs = gxg.Color_symbols_group.new(v, 'outer_symbols', data, cmap, unit_of_measure='maki')
-                cmap = gxg.Color_map('hotcycle')
+                cmap = gxg.Color_map()
                 cmap.set_linear(0, 5, contour_interval=1)
                 nv = gxg.Color_symbols_group.new(v, 'mark', data2, cmap,
                                             symbol=gxg.SYMBOL_BOX,
@@ -915,8 +955,7 @@ class Test(GXPYTest):
                 self.assertEqual(cs.number, 2)
 
                 # add a color legend
-                #TODO - Jacques, the GXCSYMB.get_itr is missing
-                # gxg.legend_color_bar(v, 'symbol_legend', cs.color_map())
+                gxg.legend_color_bar(v, 'symbol_legend', cs.color_map())
 
         self.crc_map(map_file)
 

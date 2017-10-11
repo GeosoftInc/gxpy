@@ -27,7 +27,7 @@
                         <Item name="REG" type="REG">
                            <REG>
                               <Attributes>
-                                 <Item name="FILE" value="hotcycle.tbl"/>
+                                 <Item name="FILE" value="colour.tbl"/>
                               </Attributes>
                            </REG>
                         </Item>
@@ -47,13 +47,13 @@
                         </Model>
                      </Header>
                      <Colors>
-                        <Item name="Color" type="COL_ANY" colortype="CMY" cyan="255" magenta="255" yellow="255"/>
-                        <Item name="Color" type="COL_ANY" colortype="CMY" cyan="0" magenta="0" yellow="0"/>
-                        <Item name="Color" type="COL_ANY" colortype="CMY" cyan="0" magenta="0" yellow="255"/>
-                        <Item name="Color" type="COL_ANY" colortype="CMY" cyan="0" magenta="255" yellow="255"/>
-                        <Item name="Color" type="COL_ANY" colortype="CMY" cyan="255" magenta="255" yellow="255"/>
-                        <Item name="Color" type="COL_ANY" colortype="CMY" cyan="0" magenta="0" yellow="127"/>
-                        <Item name="Color" type="COL_ANY" colortype="CMY" cyan="0" magenta="0" yellow="0"/>
+                        <Item name="Color" type="COL_ANY" colortype="CMY" cyan="255" magenta="255" yellow="0"/>
+                        <Item name="Color" type="COL_ANY" colortype="CMY" cyan="255" magenta="0" yellow="110"/>
+                        <Item name="Color" type="COL_ANY" colortype="CMY" cyan="146" magenta="0" yellow="255"/>
+                        <Item name="Color" type="COL_ANY" colortype="CMY" cyan="0" magenta="75" yellow="255"/>
+                        <Item name="Color" type="COL_ANY" colortype="CMY" cyan="0" magenta="202" yellow="255"/>
+                        <Item name="Color" type="COL_ANY" colortype="CMY" cyan="0" magenta="134" yellow="0"/>
+                        <Item name="Color" type="COL_ANY" colortype="CMY" cyan="0" magenta="96" yellow="0"/>
                      </Colors>
                      <Levels>
                         <Item name="Color" value="GS_R8MN"/>

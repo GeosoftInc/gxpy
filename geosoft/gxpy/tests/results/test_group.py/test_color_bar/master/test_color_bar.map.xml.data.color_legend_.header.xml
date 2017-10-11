@@ -1,5 +1,5 @@
 <header>
-   <Item name="Name" value="color_legend"/>
+   <Item name="Name" value="color_legend_"/>
    <Item name="AGG" value="False"/>
    <Item name="PAGG" value="False"/>
    <Item name="CSYMB" value="False"/>
@@ -26,7 +26,7 @@
       <Value x="0" y="0" value="1"/>
       <Value x="1" y="0" value="0"/>
       <Value x="2" y="0" value="0"/>
-      <Value x="3" y="0" value="4259.89597"/>
+      <Value x="3" y="0" value="-4959.87943"/>
       <Value x="0" y="1" value="0"/>
       <Value x="1" y="1" value="1"/>
       <Value x="2" y="1" value="0"/>

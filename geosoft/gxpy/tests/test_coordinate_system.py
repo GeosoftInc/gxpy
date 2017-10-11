@@ -337,6 +337,15 @@ class Test(GXPYTest):
         params = gxcs.parameters(gxcs.PARM_PROJECTION, 'UTM zone 15N')
         self.assertEqual(float(params['P5']), 0.9996)
 
+    def test_unit_only(self):
+        self.start()
+
+        with gxcs.Coordinate_system('cm') as cs:
+            self.assertEqual(str(cs), '*unknown')
+            self.assertEqual(cs.gxf[3], 'cm,0.01')
+            self.assertEqual(cs.unit_of_measure, 'cm')
+            self.assertEqual(cs.units_name, cs.unit_of_measure)
+
 ###############################################################################################
 
 if __name__ == '__main__':

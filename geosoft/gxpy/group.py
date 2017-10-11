@@ -391,7 +391,9 @@ class Group:
 
     @property
     def unit_of_measure(self):
-        """unit of measure"""
+        """Unit of measure for scalar data contained in this group. This is only relevant
+        for groups that contain scalar data, such as a Colour_symbols_group. For
+        the spatial unit_of_measure use :attr:drawing_coordinate_system.unit_of_measure"""
         return _unit_of_measure(self._name)
 
     @property
@@ -435,7 +437,6 @@ class Group:
             self.view.gxview.mark_all_groups(0)
             for g in marked:
                 self.view.gxview.mark_group(g, 1)
-
 
     def extent_map_cm(self, extent=None):
         """
@@ -490,8 +491,6 @@ def _draw(func):
             try:
                 self.pen = kwargs.pop('pen')
                 func(self, *args, **kwargs)
-            except:
-                raise
             finally:
                 self.pen = cur_pen
         else:
@@ -537,7 +536,7 @@ class Draw(Group):
 
         self._pen = None
         self._text_def = None
-        self._drawing_coordinate_system = self.view.coordinate_system
+        self._drawing_coordinate_system = None
 
         if self._mode != READ_ONLY:
             self._init_pen()
@@ -550,15 +549,18 @@ class Draw(Group):
         view.  This is normally the same as the view coordinate system, but it can be set to a different
         coordinate system to have automatic reprojection occur during drawing.
         """
+        if self._drawing_coordinate_system is None:
+            return self.view.coordinate_system
+        return self._drawing_coordinate_system
 
     @drawing_coordinate_system.setter
     def drawing_coordinate_system(self, cs):
         if cs is None:
             self.view.gxview.set_user_ipj(self.view.coordinate_system.gxipj)
-            self._drawing_coordinate_system = self.view.coordinate_system
+            self._drawing_coordinate_system = None
         else:
-            self._drawing_coordinate_system = gxcs.Coordinate_system(cs).gxipj
-            self.view.gxview.set_user_ipj(self._drawing_coordinate_system)
+            self._drawing_coordinate_system = gxcs.Coordinate_system(cs)
+            self.view.gxview.set_user_ipj(self._drawing_coordinate_system.gxipj)
 
     @property
     def pen(self):
@@ -868,8 +870,6 @@ class Draw_3d(Draw):
         try:
             p = _make_Point(p)
             self.view.gxview.sphere_3d(p.x, p.y, p.z, radius)
-        except:
-            raise
         finally:
             self.view.gxview.fill_color(fci)
 
@@ -911,8 +911,6 @@ class Draw_3d(Draw):
             else:
                 self.view.gxview.box_3d(pp.p0.x, pp.p0.y, pp.p0.z,
                                         pp.p1.x, pp.p1.y, pp.p1.z)
-        except:
-            raise
         finally:
             self.view.gxview.fill_color(fci)
 
@@ -952,8 +950,6 @@ class Draw_3d(Draw):
                                          p2.p1.x, p2.p1.y, p2.p1.z,
                                          radius, r2,
                                          close)
-        except:
-            raise
         finally:
             self.view.gxview.fill_color(fci)
 
@@ -1150,14 +1146,15 @@ def legend_color_bar(view,
             COLOR_BAR_ANNOTATE_BOTTOM = -1
 
     :param box_size:            box size, height for vertical bars, width for horizontal bars
-    :param bar_width:           width of the color boxes
+    :param bar_width:           width of the color boxes, horizontal for vertical bars, vertical for horizontal bars
     :param max_bar_size:        maximum bar size, default is the size of the view edge
     :param minimum_gap:         minimum gap to between annotations.  Annotations are dropped in necessary.
     :param post_end_values:     post the maximum and minimum values
     :param annotate_vertical:   True to orient labels vertically 
     :param division_line:       0, no division lines, 1 - line, 2 - tick
-    :param interval_1:          annotation increment, default annotates everything
-    :param interval_2:          secondary smaller annotations, 1/10, 1/ 5, 1/4 or 1/2 interval_1
+    :param interval_1:          Major annotation increment, default annotates everything
+    :param interval_2:          secondary smaller annotations, reduced to 1/10, 1/5, 1/4 or 1/2 of interval_1.
+                                Default chooses something reasonable.
     :param title:               bar title, use new-lines for sub-titles.  Default uses the title and unit_of_measure
                                 from `cmap`.
 
@@ -1622,7 +1619,8 @@ class Text_def:
 
     @property
     def slant(self):
-        """text slant, 15 for italics, 0 for not italics, can be set."""
+        """text slant, 15 for italics, 0 for not italics, can be set.  If set, any slant
+           greater than 5 will result in a 15 degree slant to create italics."""
         if self.italics:
             return 15
         else:
@@ -1820,8 +1818,8 @@ class Pen:
         return cls(line_color=line_color, fill_color=fill_color, line_thick=line_thick)
 
     def __eq__(self, other):
-        for k, v in self.__dict__:
-            if other[k] != v:
+        for k, v in self.__dict__.items():
+            if other.__dict__[k] != v:
                 return False
         return True
 
