@@ -83,7 +83,11 @@ class Metadata:
 
     @property
     def gxmeta(self):
-        """ the :class:`gxapi.GXMETA` instance handle"""
+        """
+        The :class:`geosoft.gxapi.GXMETA` instance handle.
+
+        ..versionadded:: 9.3
+        """
         return self._gxmeta
 
     def meta_type(self, meta_name):
@@ -195,6 +199,7 @@ class Metadata:
     def get_attribute(self, attr_name):
         """
         Retrieve an attribute setting.
+
         :param attr_name:   attribute name (eg. '/my_metadata/parameters/frequency')
         :returns:           attribute setting
         """

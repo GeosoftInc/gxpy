@@ -34,3 +34,4 @@ from . import map
 from . import view
 from . import group
 from . import viewer
+from . import metadata
