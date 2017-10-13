@@ -1,0 +1,99 @@
+<data>
+   <Item type="Version" size="8">
+      <Item name="Value" value="Current"/>
+   </Item>
+   <Item type="CSymb" size="1497">
+      <Item name="CSYMB" type="CSYMB">
+         <CSYMB>
+            <Header>
+               <Item name="Symbol" value="20"/>
+               <Item name="Angle" value="0"/>
+               <Item name="Scale" value="0.25"/>
+               <Item name="Base" value="0"/>
+               <Item name="Scaled" value="False"/>
+               <Item name="DrawFill" value="True"/>
+               <Item name="DrawEdge" value="False"/>
+               <Item name="FillColor" type="COL_ANY" colortype="None"/>
+               <Item name="EdgeColor" type="COL_ANY" colortype="CMY" cyan="255" magenta="255" yellow="255"/>
+               <Item name="Font" value="geosoft(GFN,LIGHT)"/>
+               <Item name="ITR" type="ITR">
+                  <ITR>
+                     <Header>
+                        <Item name="ColorModel" value="3"/>
+                        <Item name="Min" value="GS_R8DM"/>
+                        <Item name="Max" value="GS_R8DM"/>
+                        <Item name="ActualBrightness" value="0"/>
+                        <Item name="Brightness" value="0"/>
+                        <Item name="REG" type="REG">
+                           <REG>
+                              <Attributes>
+                                 <Item name="FILE" value="colour.tbl"/>
+                              </Attributes>
+                           </REG>
+                        </Item>
+                        <Model>
+                           <Item name="Parameters" type="DoubleArray">
+                              <Value index="0" value="1"/>
+                              <Value index="1" value="0"/>
+                              <Value index="2" value="5"/>
+                              <Value index="3" value="0"/>
+                           </Item>
+                           <Shade>
+                              <Item name="Inclination" value="GS_R8DM"/>
+                              <Item name="Declination" value="GS_R8DM"/>
+                              <Item name="Scale" value="GS_R8DM"/>
+                              <Item name="OriginGrid" value=""/>
+                           </Shade>
+                        </Model>
+                     </Header>
+                     <Colors>
+                        <Item name="Color" type="COL_ANY" colortype="CMY" cyan="255" magenta="255" yellow="0"/>
+                        <Item name="Color" type="COL_ANY" colortype="CMY" cyan="255" magenta="0" yellow="110"/>
+                        <Item name="Color" type="COL_ANY" colortype="CMY" cyan="146" magenta="0" yellow="255"/>
+                        <Item name="Color" type="COL_ANY" colortype="CMY" cyan="0" magenta="75" yellow="255"/>
+                        <Item name="Color" type="COL_ANY" colortype="CMY" cyan="0" magenta="202" yellow="255"/>
+                        <Item name="Color" type="COL_ANY" colortype="CMY" cyan="0" magenta="134" yellow="0"/>
+                        <Item name="Color" type="COL_ANY" colortype="CMY" cyan="0" magenta="96" yellow="0"/>
+                     </Colors>
+                     <Levels>
+                        <Item name="Color" value="GS_R8MN"/>
+                        <Item name="Color" value="0"/>
+                        <Item name="Color" value="1"/>
+                        <Item name="Color" value="2"/>
+                        <Item name="Color" value="3"/>
+                        <Item name="Color" value="4"/>
+                        <Item name="Color" value="5"/>
+                        <Item name="Color" value="GS_R8MX"/>
+                     </Levels>
+                  </ITR>
+               </Item>
+            </Header>
+            <Points>
+               <Point>
+                  <Value name="X" value="0"/>
+                  <Value name="Y" value="0"/>
+               </Point>
+               <Point>
+                  <Value name="X" value="10"/>
+                  <Value name="Y" value="0"/>
+               </Point>
+               <Point>
+                  <Value name="X" value="0"/>
+                  <Value name="Y" value="10"/>
+               </Point>
+               <Point>
+                  <Value name="X" value="10"/>
+                  <Value name="Y" value="10"/>
+               </Point>
+            </Points>
+            <Values>
+               <Value Text="1"/>
+               <Value Text="2"/>
+               <Value Text="3"/>
+               <Value Text="4"/>
+            </Values>
+         </CSYMB>
+      </Item>
+   </Item>
+   <Item type="End" size="8"></Item>
+</data>

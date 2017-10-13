@@ -43,6 +43,7 @@ from . import coordinate_system as gxcs
 from . import utility as gxu
 from . import view as gxv
 from . import agg as gxagg
+from . import metadata as gxmeta
 
 __version__ = geosoft.__version__
 
@@ -183,27 +184,7 @@ LINE3D_STYLE_LINE = 0 #:
 LINE3D_STYLE_TUBE = 1 #:
 LINE3D_STYLE_TUBE_JOINED = 2 #:
 
-
-def _unit_of_measure(name):
-    if '.' in name:
-        return name[name.rfind('.') + 1:]
-    return ''
-
-
-def _name(name):
-    if '.' in name:
-        return name[:name.rfind('.')]
-    return name
-
-
-def _name_unit_of_measure(name, unit_of_measure):
-    # decorate name with unit_of_measure
-    if unit_of_measure:
-        if '.' in name:
-            if unit_of_measure.lower() != _unit_of_measure(name).lower():
-                raise GroupException("Unit of measure '{}' is inconsistent with name '{}'".format(unit_of_measure, name))
-        return name + '.' + unit_of_measure
-    return name
+_uom_attr = '/geosoft/data/unit_of_measure'
 
 
 def color_from_string(cstr):
@@ -278,6 +259,7 @@ class Group:
         :view_lock:         True to lock the view for a single-stream drawing group.  Default is False.
         :unit_of_measure:   unit of measurement for data in this group, default is ''
         :group_3d:          True for a 3D drawing group, default assumes a 2D drawing group to a plane.
+        :mode:              `APPEND` (default), `NEW` or `READ_ONLY`
 
     :Properties:
 
@@ -309,18 +291,25 @@ class Group:
                 self._drawing_coordinate_system = None
                 self._pen = None
                 self._text_def = None
+
+                # write metadata
+                if self._new_meta:
+                    self.view.gxview.set_meta(self.name, self._meta.gxmeta, 'geosoft')
+
             finally:
                 self._view.lock = False
                 self._view = None
                 self._open = False
+                self._meta = None
+                self._new_meta = False
 
     def __repr__(self):
         return "{}({})".format(self.__class__, self.__dict__)
 
     def __str__(self):
         if self.view.is_3d and not self.group_3d:
-            return '{}/{}/{}'.format(self.name_in_view, self.view.current_3d_drawing_plane, self.view.name)
-        return '{}/{}'.format(self.name_in_view, self.view.name)
+            return '{}/{}/{}'.format(self.name, self.view.current_3d_drawing_plane, self.view.name)
+        return '{}/{}'.format(self.name, self.view.name)
 
     def __init__(self,
                  view,
@@ -333,8 +322,6 @@ class Group:
 
         if (len(name) == 0) or (name == view.name):
             name = name + '_'
-
-        name = _name_unit_of_measure(name, unit_of_measure)
 
         _lock = threading.Lock()
         _lock.acquire()
@@ -361,10 +348,20 @@ class Group:
 
         self._view = view
         self._name = name
-
         self._mode = mode
-        self._view.gxview.start_group(self.name_in_view, mode)
 
+        self._new_meta = False
+        self._meta = None
+        if (mode != NEW) and self.view.gxview.exist_group(self.name):
+            sr = gxapi.str_ref()
+            gxm = self.view.gxview.get_meta(self.name, sr)
+            if sr.value == 'geosoft':
+                self._meta = gxmeta.Metadata(gxm)
+
+        if unit_of_measure:
+            self.unit_of_measure = unit_of_measure
+
+        self._view.gxview.start_group(self.name, mode)
         self._open = True
 
     def close(self):
@@ -379,7 +376,7 @@ class Group:
     @property
     def name(self):
         """group name"""
-        return _name(self._name)
+        return self._name
 
     @property
     def drawing_plane(self):
@@ -391,27 +388,38 @@ class Group:
 
     @property
     def unit_of_measure(self):
-        """Unit of measure for scalar data contained in this group. This is only relevant
+        """
+        Unit of measure for scalar data contained in this group. This is only relevant
         for groups that contain scalar data, such as a Colour_symbols_group. For
-        the spatial unit_of_measure use :attr:drawing_coordinate_system.unit_of_measure"""
-        return _unit_of_measure(self._name)
+        the spatial unit_of_measure use :attr:`drawing_coordinate_system.unit_of_measure`
 
-    @property
-    def name_in_view(self):
-        """Name of the group in a view, which includes the unit_of_measure (eg \"Cu.ppm\")"""
-        return self._name
+        Can be set.
+
+        ..versionadded:: 9.3
+
+        """
+        gxm = self.gx_metadata
+        if gxm.has_attribute(_uom_attr):
+            return gxm.get_attribute(_uom_attr)
+        return ''
+
+    @unit_of_measure.setter
+    def unit_of_measure(self, uom):
+        gxm = self.gx_metadata
+        gxm.set_attribute(_uom_attr, str(uom))
+        self.gx_metadata = gxm
 
     @property
     def number(self):
         """group number in the view"""
-        return self.view.gxview.find_group(self.name_in_view)
+        return self.view.gxview.find_group(self.name)
 
     def _extent(self, unit=UNIT_VIEW):
         xmin = gxapi.float_ref()
         ymin = gxapi.float_ref()
         xmax = gxapi.float_ref()
         ymax = gxapi.float_ref()
-        self.view.gxview.get_group_extent(self.name_in_view, xmin, ymin, xmax, ymax, unit)
+        self.view.gxview.get_group_extent(self.name, xmin, ymin, xmax, ymax, unit)
         return xmin.value, ymin.value, xmax.value, ymax.value
 
     @property
@@ -422,14 +430,14 @@ class Group:
     @property
     def visible(self):
         """True if group is visible, can be set."""
-        return self.name_in_view in self.view.group_list_visible
+        return self.name in self.view.group_list_visible
 
     @visible.setter
     def visible(self, visibility):
         if self.visible != visibility:
             marked = self.view.group_list_marked
             self.view.gxview.mark_all_groups(0)
-            self.view.gxview.mark_group(self.name_in_view, 1)
+            self.view.gxview.mark_group(self.name, 1)
             if visibility is True:
                 self.view.gxview.hide_marked_groups(0)
             else:
@@ -474,10 +482,27 @@ class Group:
         area -= area.centroid
         area -= edge_reference(area, reference)
         area += location
-        self.view.gxview.relocate_group(self.name_in_view,
+        self.view.gxview.relocate_group(self.name,
                                         area.p0.x, area.p0.y, area.p1.x, area.p1.y,
                                         gxapi.MVIEW_RELOCATE_ASPECT_CENTER)
 
+    @property
+    def gx_metadata(self):
+        """
+        The group Geosoft metadata as a Geosoft :class:`geosoft.gxpy.metadata.Metadata` instance.
+        Can be set.
+
+        .. versionadded:: 9.3
+        """
+        if self._meta:
+            return self._meta
+        else:
+            return gxmeta.Metadata()
+
+    @gx_metadata.setter
+    def gx_metadata(self, meta):
+        self._new_meta = True
+        self._meta = meta
 
 def _draw(func):
     @wraps(func)
@@ -1939,7 +1964,7 @@ class Color_symbols_group(Group):
         cs.gxcsymb.add_data(gxvv.GXvv(xy.x).gxvv,
                           gxvv.GXvv(xy.y).gxvv,
                           gxvv.GXvv([d[1] for d in data if valid(d)]).gxvv)
-        view.gxview.col_symbol(cs.name_in_view, cs.gxcsymb)
+        view.gxview.col_symbol(cs.name, cs.gxcsymb)
 
         return cs
 
@@ -2018,7 +2043,7 @@ class Aggregate_group(Group):
             name = agg.name
         agg_group = cls(view, name, mode=NEW)
         agg_group.agg = agg
-        view.gxview.aggregate(agg.gxagg, agg_group.name_in_view)
+        view.gxview.aggregate(agg.gxagg, agg_group.name)
         return agg_group
 
     @classmethod
@@ -2026,7 +2051,7 @@ class Aggregate_group(Group):
              view,
              group_name):
         agg_group = cls(view, group_name, mode=READ_ONLY)
-        group_number = view.gxview.find_group(agg_group.name_in_view)
+        group_number = view.gxview.find_group(agg_group.name)
         agg_group.agg = gxagg.Aggregate_image.open(view.gxview.get_aggregate(group_number))
         return agg_group
 

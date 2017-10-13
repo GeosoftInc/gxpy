@@ -99,6 +99,29 @@ class Test(GXPYTest):
                     self.assertRaises(gxg.GroupException, gxg.Group, v)
                 self.assertFalse(bool(v.lock))
 
+    def test_metadata(self):
+        self.start()
+
+        with gxmap.Map.new(data_area=(0, 0, 50, 40), coordinate_system='cm') as map:
+            with gxv.View(map, 'data') as v:
+                with gxg.Draw(v, 'rectangle') as g:
+
+                    meta = g.gx_metadata
+                    meta.node_token('maki/data/more')
+                    meta.set_attribute('/maki/data/more/scale', 45)
+                    meta.set_attribute('/maki/data/more/unit_of_measure', 'cm')
+                    g.gx_metadata = meta
+                    g.unit_of_measure = 'billy-bob'
+
+                with gxg.Draw(v, 'rectangle') as g:
+                    meta = g.gx_metadata
+                    self.assertTrue(meta.has_node('/maki/data'))
+                    self.assertTrue(meta.has_node('/maki/data/more'))
+                    self.assertEqual(meta.get_attribute('/maki/data/more/scale'), 45)
+                    self.assertEqual(meta.get_attribute('/maki/data/more/unit_of_measure'), 'cm')
+                    self.assertEqual(g.unit_of_measure, 'billy-bob')
+
+
     def test_cs(self):
         self.start()
 
@@ -562,6 +585,8 @@ class Test(GXPYTest):
                     height = ex[3] - ex[1]
                     cxy = (ex[0] + width / 2, ex[1] + height / 2)
                     td = gxg.Text_def(height=width / 20, color='K128', font='sr.gfn', weight=gxg.FONT_WEIGHT_XBOLD)
+                    self.assertTrue(td == gxg.Text_def(height=width / 20, color='K128', font='sr.gfn', weight=gxg.FONT_WEIGHT_XBOLD))
+                    self.assertEqual(td.mapplot_string, '5227.3,,,0,"sr"')
                     g.rectangle(ex)
                     g.line((ex[0], cxy[1], ex[2], cxy[1]))
                     g.line((cxy[0], ex[1], cxy[0], ex[3]))
@@ -941,21 +966,24 @@ class Test(GXPYTest):
                 with gxg.Draw(v) as g:
                     g.rectangle(g.extent)
 
-                cs = gxg.Color_symbols_group.new(v, 'outer_symbols', data, cmap, unit_of_measure='maki')
+                gxg.Color_symbols_group.new(v, 'outer_symbols', data, cmap, unit_of_measure='maki').close()
+                with gxg.Color_symbols_group.open(v, 'outer_symbols') as cs:
+                    cm = cs.color_map()
+                    self.assertEqual(cm.unit_of_measure, 'maki')
+                    self.assertEqual(cm.unit_of_measure, cs.unit_of_measure)
+
                 cmap = gxg.Color_map()
                 cmap.set_linear(0, 5, contour_interval=1)
-                nv = gxg.Color_symbols_group.new(v, 'mark', data2, cmap,
+                with gxg.Color_symbols_group.new(v, 'mark', data2, cmap,
                                             symbol=gxg.SYMBOL_BOX,
                                             symbol_def=gxg.Text_def(font='symbols.gfn',
                                                                     height=0.15,
                                                                     color=gxg.C_WHITE,
-                                                                    weight=gxg.FONT_WEIGHT_ULTRALIGHT)).name_in_view
+                                                                    weight=gxg.FONT_WEIGHT_ULTRALIGHT)) as cs:
+                    nv = cs.name
 
-                cs = gxg.Color_symbols_group.open(v, nv)
-                self.assertEqual(cs.number, 2)
-
-                # add a color legend
-                gxg.legend_color_bar(v, 'symbol_legend', cs.color_map())
+                with gxg.Color_symbols_group.open(v, nv) as cs:
+                    gxg.legend_color_bar(v, 'symbol_legend', cs.color_map())
 
         self.crc_map(map_file)
 
@@ -974,29 +1002,26 @@ class Test(GXPYTest):
         cmap = gxg.Color_map()
         cmap.set_linear(0, 5, contour_interval=1)
 
-        try:
-            with gxv.View_3d.new('csymb') as v:
-                v3d_file = v.file_name
-                with gxg.Draw(v) as g:
-                    g.rectangle(g.extent)
+        with gxv.View_3d.new('csymb', overwrite=True) as v:
+            v3d_file = v.file_name
+            with gxg.Draw(v) as g:
+                g.rectangle(g.extent)
 
-                cs = gxg.Color_symbols_group.new(v, 'outer_symbols', data, cmap, unit_of_measure='maki')
-                cmap = gxg.Color_map('hotcycle')
-                cmap.set_linear(0, 5, contour_interval=1)
-                nv = gxg.Color_symbols_group.new(v, 'mark', data2, cmap,
-                                                 symbol=gxg.SYMBOL_BOX,
-                                                 symbol_def=gxg.Text_def(font='symbols.gfn',
-                                                                         height=0.15,
-                                                                         color=gxg.C_WHITE,
-                                                                         weight=gxg.FONT_WEIGHT_ULTRALIGHT)).name_in_view
+            gxg.Color_symbols_group.new(v, 'outer_symbols', data, cmap, unit_of_measure='maki').close()
+            cmap = gxg.Color_map('hotcycle')
+            cmap.set_linear(0, 5, contour_interval=1)
+            with gxg.Color_symbols_group.new(v, 'mark', data2, cmap,
+                                             symbol=gxg.SYMBOL_BOX,
+                                             symbol_def=gxg.Text_def(font='symbols.gfn',
+                                                                     height=0.15,
+                                                                     color=gxg.C_WHITE,
+                                                                     weight=gxg.FONT_WEIGHT_ULTRALIGHT)) as cs:
+                nv = cs.name
 
-                cs = gxg.Color_symbols_group.open(v, nv)
+            with gxg.Color_symbols_group.open(v, nv) as cs:
                 self.assertEqual(cs.number, 2)
 
-            self.crc_map(v3d_file)
-
-        finally:
-            gxmap.delete_files(v3d_file)
+        self.crc_map(v3d_file)
 
     def test_polydata_3d(self):
         self.start()
@@ -1036,6 +1061,10 @@ class Test(GXPYTest):
 
         cmap = gxg.Color_map()
         cmap.set_linear(0, 5, contour_interval=1)
+        for c in cmap:
+            if c[0]:
+                self.assertTrue(isinstance(c[0], float))
+                self.assertTrue(isinstance(c[1], gxg.Color))
 
         with gxv.View_3d.new(area_2d=(-1, -1, 11, 11)) as v:
             v3d_file = v.file_name
