@@ -48,13 +48,13 @@ EMAP_PATH constants
 
 ::
 
-   file.gdb 
+   File.gdb 
 
 .. autoattribute:: geosoft.gxapi.EMAP_PATH_NAME
 
 ::
 
-   file 
+   File 
 
 .. _EMAP_REDRAW:
 

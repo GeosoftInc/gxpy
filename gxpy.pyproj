@@ -176,6 +176,7 @@
     <Content Include="docs\themes\maki\static\navigation.png" />
     <Content Include="docs\toc.rst" />
     <Content Include="docs\transform\gxapi_templates\api_rst.rst" />
+    <Content Include="docs\transform\gxapi_templates\api_spec.pyj" />
     <Content Include="docs\transform\gxapi_templates\class.rst" />
     <Content Include="docs\transform\gxapi_templates\index.rst" />
     <Content Include="docs\transform\gxapi_templates\toc.rst" />
@@ -825,6 +826,7 @@
     <Compile Include="geosoft\gxpy\tests\test_group.py" />
     <Compile Include="geosoft\gxpy\tests\test_gx.py" />
     <Compile Include="geosoft\gxpy\tests\test_map.py" />
+    <Compile Include="geosoft\gxpy\tests\test_metadata.py" />
     <Compile Include="geosoft\gxpy\tests\test_system.py" />
     <Compile Include="geosoft\gxpy\tests\test_utility.py" />
     <Compile Include="geosoft\gxpy\tests\test_va.py" />

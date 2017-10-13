@@ -21,25 +21,25 @@ ARCMAP_LOAD_FLAGS constants
 
 ::
 
-   If an exisiting frame is found delete it 
+   If an existing frame is found delete it 
 
 .. autoattribute:: geosoft.gxapi.ARCMAP_LOAD_DELLAYER
 
 ::
 
-   If an exisiting layer is found delete it 
+   If an existing layer is found delete it 
 
 .. autoattribute:: geosoft.gxapi.ARCMAP_LOAD_EXISTFRAME
 
 ::
 
-   If an exisiting frame is found add new layers to it 
+   If an existing frame is found add new layers to it 
 
 .. autoattribute:: geosoft.gxapi.ARCMAP_LOAD_COPYLAYER
 
 ::
 
-   If an exisiting layer is found make a copy 
+   If an existing layer is found make a copy 
 
 .. autoattribute:: geosoft.gxapi.ARCMAP_LOAD_HIDESIBLINGS
 

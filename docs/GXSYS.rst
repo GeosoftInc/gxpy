@@ -219,13 +219,13 @@ REG_DOMAIN constants
 
 ::
 
-   same as HKEY_LOCAL_MACHINE in Windows 
+   Same as HKEY_LOCAL_MACHINE in Windows 
 
 .. autoattribute:: geosoft.gxapi.REG_DOMAIN_USER
 
 ::
 
-   same as HKEY_CURRENT_USER in Windows 
+   Same as HKEY_CURRENT_USER in Windows 
 
 .. _SHELL_EXECUTE:
 
@@ -285,13 +285,13 @@ SYS_DIR constants
 
 ::
 
-   is the workspace working directory 
+   Is the workspace working directory 
 
 .. autoattribute:: geosoft.gxapi.SYS_DIR_GEOSOFT
 
 ::
 
-   is the geosoft installation directory (read-only) 
+   Is the geosoft installation directory (read-only) 
 
 .. autoattribute:: geosoft.gxapi.SYS_DIR_USER
 
@@ -647,7 +647,7 @@ SYS_FONT constants
 
 ::
 
-   available TrueType fonts 
+   Available TrueType fonts 
 
 .. _SYS_INFO:
 
@@ -774,13 +774,13 @@ SYS_PATH constants
 
 ::
 
-   is the workspace working directory 
+   Is the workspace working directory 
 
 .. autoattribute:: geosoft.gxapi.SYS_PATH_GEOSOFT
 
 ::
 
-   is the geosoft installation directory (read-only) 
+   Is the geosoft installation directory (read-only) 
 
 .. autoattribute:: geosoft.gxapi.SYS_PATH_GEOSOFT_USER
 

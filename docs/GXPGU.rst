@@ -113,7 +113,7 @@ PGU_TRANS constants
 
 ::
 
-   transform methods for the columns 
+   Transform methods for the columns 
 
 .. autoattribute:: geosoft.gxapi.PGU_TRANS_NONE
 
@@ -128,7 +128,7 @@ PGU_INTERP_ORDER constants
 
 ::
 
-   interpolation direction order 
+   Interpolation direction order 
 
 .. autoattribute:: geosoft.gxapi.PGU_INTERP_ORDER_XYZ
 

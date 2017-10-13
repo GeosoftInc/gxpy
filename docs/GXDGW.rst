@@ -29,7 +29,7 @@ DGW_OBJECT constants
 
 ::
 
-   The text label tied to each Dialogue component. 
+   The text label tied to each Dialog component. 
 
 .. autoattribute:: geosoft.gxapi.DGW_TEXT
 

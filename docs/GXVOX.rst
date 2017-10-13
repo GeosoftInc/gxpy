@@ -177,31 +177,31 @@ VOX_GRID_LOGOPT constants
 
 ::
 
-   linear 
+   Linear 
 
 .. autoattribute:: geosoft.gxapi.VOX_GRID_LOGOPT_LOG_SAVELINEAR
 
 ::
 
-   log, save as linear 
+   Log, save as linear 
 
 .. autoattribute:: geosoft.gxapi.VOX_GRID_LOGOPT_LOGLINEAR_SAVELINEAR
 
 ::
 
-   log-linear, save as linear 
+   Log-linear, save as linear 
 
 .. autoattribute:: geosoft.gxapi.VOX_GRID_LOGOPT_LOG_SAVELOG
 
 ::
 
-   log, save as log 
+   Log, save as log 
 
 .. autoattribute:: geosoft.gxapi.VOX_GRID_LOGOPT_LOGLINEAR_SAVELOG
 
 ::
 
-   log-linear, save as log 
+   Log-linear, save as log 
 
 .. _VOX_ORIGIN:
 

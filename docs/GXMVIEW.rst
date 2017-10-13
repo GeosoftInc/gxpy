@@ -594,7 +594,7 @@ MVIEW_NAME_LENGTH constant
 
 ::
 
-   maximum length for view and group names 
+   Maximum length for view and group names 
 
 .. _MVIEW_OPEN:
 
@@ -664,7 +664,7 @@ MVIEW_PJ constants
 
 ::
 
-   mode before the last MVIEW_PJ_OFF. 
+   Mode before the last MVIEW_PJ_OFF. 
 
 .. _MVIEW_RELOCATE:
 
@@ -754,25 +754,25 @@ MVIEW_UNIT constants
 
 ::
 
-   view coordinates 
+   View coordinates 
 
 .. autoattribute:: geosoft.gxapi.MVIEW_UNIT_PLOT
 
 ::
 
-   plot hi-metric (mm\ `*`\ 100) on the map. 
+   Plot hi-metric (mm\ `*`\ 100) on the map. 
 
 .. autoattribute:: geosoft.gxapi.MVIEW_UNIT_MM
 
 ::
 
-   plot mm on the map. 
+   Plot mm on the map. 
 
 .. autoattribute:: geosoft.gxapi.MVIEW_UNIT_VIEW_UNWARPED
 
 ::
 
-   view coordinates without a warp if there is one 
+   View coordinates without a warp if there is one 
 
 .. _MVIEW_EXTENT_UNIT:
 

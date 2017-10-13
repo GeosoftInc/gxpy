@@ -21,24 +21,24 @@ FFT_DETREND constants
 
 ::
 
-   no trend remove 
+   No trend remove 
 
 .. autoattribute:: geosoft.gxapi.FFT_DETREND_ENDS
 
 ::
 
-   detrend order 1 using only two end points 
+   Detrend order 1 using only two end points 
 
 .. autoattribute:: geosoft.gxapi.FFT_DETREND_ALL
 
 ::
 
-   detrend order 1 using all data points 
+   Detrend order 1 using all data points 
 
 .. autoattribute:: geosoft.gxapi.FFT_DETREND_MEAN
 
 ::
 
-   remove mean value 
+   Remove mean value 
 
 	

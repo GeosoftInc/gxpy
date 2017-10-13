@@ -210,19 +210,19 @@ DU_LEVEL constants
 
 ::
 
-   extract line corrections 
+   Extract line corrections 
 
 .. autoattribute:: geosoft.gxapi.DU_LEVEL_TIES
 
 ::
 
-   extract tie corrections 
+   Extract tie corrections 
 
 .. autoattribute:: geosoft.gxapi.DU_LEVEL_ALL
 
 ::
 
-   extract all corrections 
+   Extract all corrections 
 
 .. _DU_LINEOUT:
 
@@ -474,19 +474,19 @@ DU_MOVE constants
 
 ::
 
-   move input to absolute value in control channel 
+   Move input to absolute value in control channel 
 
 .. autoattribute:: geosoft.gxapi.DU_MOVE_MINUS
 
 ::
 
-   subtract control channel from input channel 
+   Subtract control channel from input channel 
 
 .. autoattribute:: geosoft.gxapi.DU_MOVE_PLUS
 
 ::
 
-   add control channel to input channel 
+   Add control channel to input channel 
 
 .. autoattribute:: geosoft.gxapi.DU_MOVE_INTERP
 
