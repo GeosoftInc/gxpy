@@ -10,7 +10,7 @@
 			<metadata_creation_date>2003-01-01</metadata_creation_date>
 			<georeference>
 				<dataextents>
-					<extent3d minx="-1.15" miny="-1.15" minz="0" maxx="11.15" maxy="11.15" maxz="0"/>
+					<extent3d minx="-0.13525" miny="-0.13525" minz="0" maxx="10.13525" maxy="10.13525" maxz="0"/>
 				</dataextents>
 				<projection type="UNKNOWN"/>
 			</georeference>

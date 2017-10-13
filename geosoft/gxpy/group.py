@@ -294,7 +294,14 @@ class Group:
 
                 # write metadata
                 if self._new_meta:
-                    self.view.gxview.set_meta(self.name, self._meta.gxmeta, 'geosoft')
+                    bf = gxapi.GXBF.create("", gxapi.BF_READWRITE_NEW)
+                    try:
+                        self._meta.gxmeta.serial(bf)
+                        bf.seek(0, gxapi.BF_SEEK_START)
+                        group_number = self.view.gxview.find_group(self.name)
+                        self.view.gxview.write_group_storage(group_number, "Geosoft_META", bf)
+                    finally:
+                        del bf
 
             finally:
                 self._view.lock = False
@@ -354,9 +361,14 @@ class Group:
         self._meta = None
         if (mode != NEW) and self.view.gxview.exist_group(self.name):
             sr = gxapi.str_ref()
-            gxm = self.view.gxview.get_meta(self.name, sr)
-            if sr.value == 'geosoft':
-                self._meta = gxmeta.Metadata(gxm)
+            group_number = self.view.gxview.find_group(self.name)
+            if self.view.gxview.group_storage_exists(group_number, "Geosoft_META"):
+                bf = self.view.gxview.read_group_storage(group_number, "Geosoft_META")
+                if bf.size():
+                    try:
+                        self._meta = gxmeta.Metadata(gxapi.GXMETA.create_s(bf))
+                    finally:
+                        del bf
 
         if unit_of_measure:
             self.unit_of_measure = unit_of_measure

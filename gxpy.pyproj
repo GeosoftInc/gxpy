@@ -812,6 +812,7 @@
     <Compile Include="geosoft\gxpy\group.py" />
     <Compile Include="geosoft\gxpy\gx.py" />
     <Compile Include="geosoft\gxpy\map.py" />
+    <Compile Include="geosoft\gxpy\metadata.py" />
     <Compile Include="geosoft\gxpy\project.py" />
     <Compile Include="geosoft\gxpy\system.py" />
     <Compile Include="geosoft\gxpy\tests\base.py" />
