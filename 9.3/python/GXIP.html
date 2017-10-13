@@ -584,7 +584,7 @@ UBC IP 3D inversion programmes.
 <li><strong>arg5</strong> (<em>str</em>) &#8211; Output error channel name (&#8220;&#8221; for none)</li>
 <li><strong>arg6</strong> (<em>str</em>) &#8211; Output OBS file name</li>
 <li><strong>arg7</strong> (<em>str</em>) &#8211; Output TOPO file name</li>
-<li><strong>arg8</strong> (<em>float</em>) &#8211; version number (3 or 5)</li>
+<li><strong>arg8</strong> (<em>float</em>) &#8211; Version number (3 or 5)</li>
 </ul>
 </td>
 </tr>
@@ -624,12 +624,12 @@ V/I gives volts/amp (or mV/mA).
 <li><strong>arg3</strong> (<em>int</em>) &#8211; irest</li>
 <li><strong>arg4</strong> (<em>float</em>) &#8211; chifact</li>
 <li><strong>arg5</strong> (<em>str</em>) &#8211; RES obs file</li>
-<li><strong>arg6</strong> (<em>str</em>) &#8211; mesh file</li>
-<li><strong>arg7</strong> (<em>str</em>) &#8211; topography file (required)</li>
-<li><strong>arg8</strong> (<em>str</em>) &#8211; initial model file (can be &#8220;&#8221; or &#8220;NULL&#8221;)</li>
-<li><strong>arg9</strong> (<em>float</em>) &#8211; reference model conductivity</li>
-<li><strong>arg10</strong> (<em>str</em>) &#8211; alphas</li>
-<li><strong>arg11</strong> (<em>str</em>) &#8211; weights file</li>
+<li><strong>arg6</strong> (<em>str</em>) &#8211; Mesh file</li>
+<li><strong>arg7</strong> (<em>str</em>) &#8211; Topography file (required)</li>
+<li><strong>arg8</strong> (<em>str</em>) &#8211; Initial model file (can be &#8220;&#8221; or &#8220;NULL&#8221;)</li>
+<li><strong>arg9</strong> (<em>float</em>) &#8211; Reference model conductivity</li>
+<li><strong>arg10</strong> (<em>str</em>) &#8211; Alphas</li>
+<li><strong>arg11</strong> (<em>str</em>) &#8211; Weights file</li>
 </ul>
 </td>
 </tr>
@@ -668,16 +668,16 @@ V/I gives volts/amp (or mV/mA).
 <li><strong>arg2</strong> (<em>int</em>) &#8211; niter</li>
 <li><strong>arg3</strong> (<em>float</em>) &#8211; chifact</li>
 <li><strong>arg4</strong> (<em>str</em>) &#8211; RES obs file</li>
-<li><strong>arg5</strong> (<em>str</em>) &#8211; topography file (required)</li>
+<li><strong>arg5</strong> (<em>str</em>) &#8211; Topography file (required)</li>
 <li><strong>arg6</strong> (<em>int</em>) &#8211; Mesh type <a class="reference internal" href="#ip-ubc-control"><span class="std std-ref">IP_UBC_CONTROL constants</span></a> FILE, VALUE or DEFAULT</li>
-<li><strong>arg7</strong> (<em>str</em>) &#8211; mesh file (can be &#8220;&#8221;) or value</li>
+<li><strong>arg7</strong> (<em>str</em>) &#8211; Mesh file (can be &#8220;&#8221;) or value</li>
 <li><strong>arg8</strong> (<em>int</em>) &#8211; Initial model type <a class="reference internal" href="#ip-ubc-control"><span class="std std-ref">IP_UBC_CONTROL constants</span></a> FILE, VALUE or DEFAULT</li>
-<li><strong>arg9</strong> (<em>str</em>) &#8211; initial model file (can be &#8220;&#8221;) or value</li>
+<li><strong>arg9</strong> (<em>str</em>) &#8211; Initial model file (can be &#8220;&#8221;) or value</li>
 <li><strong>arg10</strong> (<em>int</em>) &#8211; Reference model type <a class="reference internal" href="#ip-ubc-control"><span class="std std-ref">IP_UBC_CONTROL constants</span></a> FILE, VALUE or DEFAULT</li>
-<li><strong>arg11</strong> (<em>str</em>) &#8211; reference model file (can be &#8220;&#8221;) or value(</li>
+<li><strong>arg11</strong> (<em>str</em>) &#8211; Reference model file (can be &#8220;&#8221;) or value(</li>
 <li><strong>arg12</strong> (<em>int</em>) &#8211; Alphas type <a class="reference internal" href="#ip-ubc-control"><span class="std std-ref">IP_UBC_CONTROL constants</span></a> FILE, VALUE, LENGTH or DEFAULT</li>
-<li><strong>arg13</strong> (<em>str</em>) &#8211; alphas  file (can be &#8220;&#8221;), value or length</li>
-<li><strong>arg14</strong> (<em>str</em>) &#8211; weights file</li>
+<li><strong>arg13</strong> (<em>str</em>) &#8211; Alphas  file (can be &#8220;&#8221;), value or length</li>
+<li><strong>arg14</strong> (<em>str</em>) &#8211; Weights file</li>
 </ul>
 </td>
 </tr>
@@ -717,7 +717,7 @@ V/I gives volts/amp (or mV/mA).
 <li><strong>arg4</strong> (<em>str</em>) &#8211; Output error channel name (&#8220;&#8221; for none)</li>
 <li><strong>arg5</strong> (<em>str</em>) &#8211; Output OBS file name</li>
 <li><strong>arg6</strong> (<em>str</em>) &#8211; Output TOPO file name</li>
-<li><strong>arg7</strong> (<em>float</em>) &#8211; version number (3 or 5)</li>
+<li><strong>arg7</strong> (<em>float</em>) &#8211; Version number (3 or 5)</li>
 </ul>
 </td>
 </tr>
@@ -756,13 +756,13 @@ Include error channel output and version-specific formatting.
 <li><strong>arg3</strong> (<em>int</em>) &#8211; irest</li>
 <li><strong>arg4</strong> (<em>float</em>) &#8211; chifact</li>
 <li><strong>arg5</strong> (<em>str</em>) &#8211; IP obs file</li>
-<li><strong>arg6</strong> (<em>str</em>) &#8211; conductivity file</li>
-<li><strong>arg7</strong> (<em>str</em>) &#8211; mesh file</li>
-<li><strong>arg8</strong> (<em>str</em>) &#8211; topography file</li>
-<li><strong>arg9</strong> (<em>str</em>) &#8211; initial model file</li>
-<li><strong>arg10</strong> (<em>str</em>) &#8211; reference model</li>
-<li><strong>arg11</strong> (<em>str</em>) &#8211; alphas</li>
-<li><strong>arg12</strong> (<em>str</em>) &#8211; weights file</li>
+<li><strong>arg6</strong> (<em>str</em>) &#8211; Conductivity file</li>
+<li><strong>arg7</strong> (<em>str</em>) &#8211; Mesh file</li>
+<li><strong>arg8</strong> (<em>str</em>) &#8211; Topography file</li>
+<li><strong>arg9</strong> (<em>str</em>) &#8211; Initial model file</li>
+<li><strong>arg10</strong> (<em>str</em>) &#8211; Reference model</li>
+<li><strong>arg11</strong> (<em>str</em>) &#8211; Alphas</li>
+<li><strong>arg12</strong> (<em>str</em>) &#8211; Weights file</li>
 </ul>
 </td>
 </tr>
@@ -800,18 +800,18 @@ Include error channel output and version-specific formatting.
 <li><strong>arg2</strong> (<em>int</em>) &#8211; niter</li>
 <li><strong>arg3</strong> (<em>float</em>) &#8211; chifact</li>
 <li><strong>arg4</strong> (<em>str</em>) &#8211; RES obs file</li>
-<li><strong>arg5</strong> (<em>str</em>) &#8211; topography file (required)</li>
+<li><strong>arg5</strong> (<em>str</em>) &#8211; Topography file (required)</li>
 <li><strong>arg6</strong> (<em>int</em>) &#8211; Conductivity type <a class="reference internal" href="#ip-ubc-control"><span class="std std-ref">IP_UBC_CONTROL constants</span></a> FILE or VALUE</li>
 <li><strong>arg7</strong> (<em>str</em>) &#8211; Conductivity file (can be &#8220;&#8221;) or value</li>
 <li><strong>arg8</strong> (<em>int</em>) &#8211; Mesh type <a class="reference internal" href="#ip-ubc-control"><span class="std std-ref">IP_UBC_CONTROL constants</span></a> FILE, VALUE or DEFAULT</li>
-<li><strong>arg9</strong> (<em>str</em>) &#8211; mesh file (can be &#8220;&#8221;) or value</li>
+<li><strong>arg9</strong> (<em>str</em>) &#8211; Mesh file (can be &#8220;&#8221;) or value</li>
 <li><strong>arg10</strong> (<em>int</em>) &#8211; Initial model type <a class="reference internal" href="#ip-ubc-control"><span class="std std-ref">IP_UBC_CONTROL constants</span></a> FILE, VALUE or DEFAULT</li>
-<li><strong>arg11</strong> (<em>str</em>) &#8211; initial model file (can be &#8220;&#8221;) or value</li>
+<li><strong>arg11</strong> (<em>str</em>) &#8211; Initial model file (can be &#8220;&#8221;) or value</li>
 <li><strong>arg12</strong> (<em>int</em>) &#8211; Reference model type <a class="reference internal" href="#ip-ubc-control"><span class="std std-ref">IP_UBC_CONTROL constants</span></a> FILE, VALUE or DEFAULT</li>
-<li><strong>arg13</strong> (<em>str</em>) &#8211; reference model file (can be &#8220;&#8221;) or value(</li>
+<li><strong>arg13</strong> (<em>str</em>) &#8211; Reference model file (can be &#8220;&#8221;) or value(</li>
 <li><strong>arg14</strong> (<em>int</em>) &#8211; Alphas type <a class="reference internal" href="#ip-ubc-control"><span class="std std-ref">IP_UBC_CONTROL constants</span></a> FILE, VALUE, LENGTH or DEFAULT</li>
-<li><strong>arg15</strong> (<em>str</em>) &#8211; alphas  file (can be &#8220;&#8221;), value or length</li>
-<li><strong>arg16</strong> (<em>str</em>) &#8211; weights file</li>
+<li><strong>arg15</strong> (<em>str</em>) &#8211; Alphas  file (can be &#8220;&#8221;), value or length</li>
+<li><strong>arg16</strong> (<em>str</em>) &#8211; Weights file</li>
 </ul>
 </td>
 </tr>
@@ -844,7 +844,7 @@ Include error channel output and version-specific formatting.
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXDB</span></code></a>) &#8211; Database</li>
-<li><strong>arg2</strong> (<em>str</em>) &#8211; channel to check</li>
+<li><strong>arg2</strong> (<em>str</em>) &#8211; Channel to check</li>
 </ul>
 </td>
 </tr>
@@ -903,7 +903,7 @@ Include error channel output and version-specific formatting.
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXDB</span></code></a>) &#8211; Database</li>
-<li><strong>arg2</strong> (<em>str</em>) &#8211; channel to check</li>
+<li><strong>arg2</strong> (<em>str</em>) &#8211; Channel to check</li>
 <li><strong>arg3</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; <a class="reference internal" href="#ip-domain"><span class="std std-ref">IP_DOMAIN constants</span></a></li>
 <li><strong>arg4</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Delay or Base Frequency</li>
 <li><strong>arg5</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; Number of time windows or frequencies</li>
@@ -1045,7 +1045,7 @@ Include error channel output and version-specific formatting.
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXDB</span></code></a>) &#8211; DB object</li>
 <li><strong>arg2</strong> (<em>int</em>) &#8211; QC channel type.  <a class="reference internal" href="#ip-qctype"><span class="std std-ref">IP_QCTYPE constants</span></a></li>
-<li><strong>arg3</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; string to place name into</li>
+<li><strong>arg3</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; String to place name into</li>
 </ul>
 </td>
 </tr>
@@ -1847,7 +1847,7 @@ See <a class="reference internal" href="#geosoft.gxapi.GXIP.import_zonge_fld" ti
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<em>str</em>) &#8211; job file name</li>
+<li><strong>arg1</strong> (<em>str</em>) &#8211; Job file name</li>
 <li><strong>arg2</strong> (<em>int</em>) &#8211; Job type <a class="reference internal" href="#ip-plot"><span class="std std-ref">IP_PLOT constants</span></a></li>
 </ul>
 </td>
@@ -1898,9 +1898,9 @@ See <a class="reference internal" href="#geosoft.gxapi.GXIP.import_zonge_fld" ti
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXDB</span></code></a>) &#8211; DB object</li>
-<li><strong>arg2</strong> (<em>str</em>) &#8211; channel to plot</li>
+<li><strong>arg2</strong> (<em>str</em>) &#8211; Channel to plot</li>
 <li><strong>arg3</strong> (<em>str</em>) &#8211; &#8220;IPPLOT&#8221; INI file name</li>
-<li><strong>arg4</strong> (<em>str</em>) &#8211; map name to create</li>
+<li><strong>arg4</strong> (<em>str</em>) &#8211; Map name to create</li>
 </ul>
 </td>
 </tr>
@@ -1934,10 +1934,10 @@ As <a class="reference internal" href="#geosoft.gxapi.GXIP.ps_stack" title="geos
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXDB</span></code></a>) &#8211; DB object</li>
-<li><strong>arg2</strong> (<em>str</em>) &#8211; channel to plot</li>
+<li><strong>arg2</strong> (<em>str</em>) &#8211; Channel to plot</li>
 <li><strong>arg3</strong> (<em>str</em>) &#8211; &#8220;IPPLOT&#8221; INI file name</li>
 <li><strong>arg4</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#ip-stack-type"><span class="std std-ref">IP_STACK_TYPE constants</span></a></li>
-<li><strong>arg5</strong> (<em>str</em>) &#8211; map name to create</li>
+<li><strong>arg5</strong> (<em>str</em>) &#8211; Map name to create</li>
 </ul>
 </td>
 </tr>
@@ -1966,11 +1966,11 @@ Same as <a class="reference internal" href="#geosoft.gxapi.GXIP.pseudo_plot2" ti
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXDB</span></code></a>) &#8211; DB object</li>
-<li><strong>arg2</strong> (<em>str</em>) &#8211; channel to plot</li>
+<li><strong>arg2</strong> (<em>str</em>) &#8211; Channel to plot</li>
 <li><strong>arg3</strong> (<em>str</em>) &#8211; &#8220;IPPLOT&#8221; INI file name</li>
 <li><strong>arg4</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#ip-stack-type"><span class="std std-ref">IP_STACK_TYPE constants</span></a></li>
-<li><strong>arg5</strong> (<em>str</em>) &#8211; map name to create</li>
-<li><strong>arg6</strong> (<em>str</em>) &#8211; directory to create files</li>
+<li><strong>arg5</strong> (<em>str</em>) &#8211; Map name to create</li>
+<li><strong>arg6</strong> (<em>str</em>) &#8211; Directory to create files</li>
 </ul>
 </td>
 </tr>
@@ -2000,8 +2000,8 @@ Same as <a class="reference internal" href="#geosoft.gxapi.GXIP.pseudo_plot2" ti
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXDB</span></code></a>) &#8211; Database</li>
 <li><strong>arg2</strong> (<em>str</em>) &#8211; &#8220;IPPLOT&#8221; INI file name</li>
-<li><strong>arg3</strong> (<em>str</em>) &#8211; current line name</li>
-<li><strong>arg4</strong> (<em>str</em>) &#8211; map name to create</li>
+<li><strong>arg3</strong> (<em>str</em>) &#8211; Current line name</li>
+<li><strong>arg4</strong> (<em>str</em>) &#8211; Map name to create</li>
 </ul>
 </td>
 </tr>
@@ -2036,9 +2036,9 @@ Same as <a class="reference internal" href="#geosoft.gxapi.GXIP.pseudo_plot" tit
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXDB</span></code></a>) &#8211; Database</li>
 <li><strong>arg2</strong> (<em>str</em>) &#8211; &#8220;IPPLOT&#8221; INI file name</li>
-<li><strong>arg3</strong> (<em>str</em>) &#8211; current line name</li>
-<li><strong>arg4</strong> (<em>str</em>) &#8211; tag for created grids</li>
-<li><strong>arg5</strong> (<em>str</em>) &#8211; map name to create</li>
+<li><strong>arg3</strong> (<em>str</em>) &#8211; Current line name</li>
+<li><strong>arg4</strong> (<em>str</em>) &#8211; Tag for created grids</li>
+<li><strong>arg5</strong> (<em>str</em>) &#8211; Map name to create</li>
 </ul>
 </td>
 </tr>
@@ -2073,10 +2073,10 @@ Same as <a class="reference internal" href="#geosoft.gxapi.GXIP.pseudo_plot2" ti
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXDB</span></code></a>) &#8211; Database</li>
 <li><strong>arg2</strong> (<em>str</em>) &#8211; &#8220;IPPLOT&#8221; INI file name</li>
-<li><strong>arg3</strong> (<em>str</em>) &#8211; current line name</li>
-<li><strong>arg4</strong> (<em>str</em>) &#8211; tag for created grids</li>
-<li><strong>arg5</strong> (<em>str</em>) &#8211; map name to create</li>
-<li><strong>arg6</strong> (<em>str</em>) &#8211; directory to create files</li>
+<li><strong>arg3</strong> (<em>str</em>) &#8211; Current line name</li>
+<li><strong>arg4</strong> (<em>str</em>) &#8211; Tag for created grids</li>
+<li><strong>arg5</strong> (<em>str</em>) &#8211; Map name to create</li>
+<li><strong>arg6</strong> (<em>str</em>) &#8211; Directory to create files</li>
 </ul>
 </td>
 </tr>
@@ -2254,7 +2254,7 @@ it is assumed to be equal to 0.
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<em>str</em>) &#8211; job file name</li>
+<li><strong>arg1</strong> (<em>str</em>) &#8211; Job file name</li>
 <li><strong>arg2</strong> (<em>int</em>) &#8211; Job type  <a class="reference internal" href="#ip-plot"><span class="std std-ref">IP_PLOT constants</span></a></li>
 </ul>
 </td>
@@ -2284,7 +2284,7 @@ it is assumed to be equal to 0.
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXDB</span></code></a>) &#8211; Database</li>
-<li><strong>arg2</strong> (<em>str</em>) &#8211; channel to check</li>
+<li><strong>arg2</strong> (<em>str</em>) &#8211; Channel to check</li>
 <li><strong>arg3</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#ip-domain"><span class="std std-ref">IP_DOMAIN constants</span></a></li>
 <li><strong>arg4</strong> (<em>float</em>) &#8211; Delay or Base Frequency</li>
 <li><strong>arg5</strong> (<em>int</em>) &#8211; Number of time windows or frequencies</li>

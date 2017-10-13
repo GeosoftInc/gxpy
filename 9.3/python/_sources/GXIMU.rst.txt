@@ -282,7 +282,7 @@ IMU_TRANS constants
 
 ::
 
-   can be ANY orientation 
+   Can be ANY orientation 
 
 .. autoattribute:: geosoft.gxapi.IMU_TRANS_Y
 

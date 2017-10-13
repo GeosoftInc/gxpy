@@ -491,8 +491,8 @@ to the <code class="docutils literal"><span class="pre">value</span></code> prop
 <dl class="class">
 <dt>
 <em class="property">class </em><code class="descclassname">geosoft.gxapi.</code><code class="descname">GXACQUIRE</code></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="k">class</span> <span class="nc">is</span> <span class="n">used</span> <span class="n">to</span> <span class="kn">import</span> <span class="nn">Acquire</span> <span class="n">data</span><span class="o">.</span> <span class="n">It</span> <span class="n">uses</span> <span class="n">the</span>
-<span class="n">public</span> <span class="n">Acquire</span> <span class="n">API</span><span class="o">.</span>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="k">class</span> <span class="nc">is</span> <span class="n">used</span> <span class="n">to</span> <span class="kn">import</span> <span class="nn">acQuire</span> <span class="n">data</span><span class="o">.</span> <span class="n">It</span> <span class="n">uses</span> <span class="n">the</span>
+<span class="n">public</span> <span class="n">acQuire</span> <span class="n">API</span><span class="o">.</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -1464,28 +1464,28 @@ part of any functions:
 <dt>
 <em class="property">class </em><code class="descclassname">geosoft.gxapi.</code><code class="descname">GXITR</code></dt>
 <dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">ITR</span> <span class="k">class</span> <span class="nc">provides</span> <span class="n">access</span> <span class="n">to</span> <span class="n">ITR</span> <span class="n">files</span><span class="o">.</span> <span class="n">An</span> <span class="n">ITR</span> <span class="n">file</span> <span class="n">maps</span>
-<span class="n">ranges</span> <span class="n">of</span> <span class="n">values</span> <span class="n">to</span> <span class="n">specific</span> <span class="n">colours</span><span class="o">.</span> <span class="n">The</span> <span class="n">ITR</span> <span class="nb">object</span> <span class="ow">is</span> <span class="n">typically</span>
+<span class="n">ranges</span> <span class="n">of</span> <span class="n">values</span> <span class="n">to</span> <span class="n">specific</span> <span class="n">colors</span><span class="o">.</span> <span class="n">The</span> <span class="n">ITR</span> <span class="nb">object</span> <span class="ow">is</span> <span class="n">typically</span>
 <span class="n">used</span> <span class="ow">in</span> <span class="n">conjunction</span> <span class="k">with</span> <span class="n">MVIEW</span> <span class="n">objects</span> <span class="p">(</span><span class="n">see</span> <span class="n">MVIEW</span> <span class="ow">and</span> <span class="n">MVU</span><span class="p">)</span><span class="o">.</span>
 </pre></div>
 </div>
 <p><strong>Note:</strong></p>
 <pre class="literal-block">
-Histogram ranges and colour zone ranges
+Histogram ranges and color zone ranges
 
 Histogram bins are defined with inclusive minima and exclusive maxima;
 for instance if Min = 0 and Inc = 1, then the second bin would include
 all values z such that  0 &lt;= z &lt; 1 (the first bin has all values &lt; 0).
 
-Colour zones used in displaying grids (ITR, ZON etc...) are the
+Color zones used in displaying grids (ITR, ZON etc...) are the
 opposite, with exclusive minima and inclusive maxima.
 For instance, if a zone is defined from 0 to 1, then it would
 contain all values of z such that 0 &lt; z &lt;= 1.
 
 These definitions mean that it is impossible to perfectly assign
-ITR colours to individual bars of a histogram. The best work-around
-when the data values are integers is to define the colour zones using
+ITR colors to individual bars of a histogram. The best work-around
+when the data values are integers is to define the color zones using
 0.5 values between the integers. A general work-around is to make the
-number of histogram bins much larger than the number of colour zones.
+number of histogram bins much larger than the number of color zones.
 
 The <a class="reference internal" href="GXITR.html#geosoft.gxapi.GXITR.null" title="geosoft.gxapi.GXITR.null"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXITR.null()</span></code></a> is used to hold a NULL handle to an ITR class.
 </pre>
@@ -1770,8 +1770,8 @@ documentation in that folder for documentation on the file format.
 </div>
 <p><strong>Note:</strong></p>
 <pre class="literal-block">
-CSYMB groups (colour symbols) contain data and rules for
-presenting the data as colour symbols.  See <a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW.col_symbol" title="geosoft.gxapi.GXMVIEW.col_symbol"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXMVIEW.col_symbol()</span></code></a>
+CSYMB groups (color symbols) contain data and rules for
+presenting the data as color symbols.  See <a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW.col_symbol" title="geosoft.gxapi.GXMVIEW.col_symbol"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXMVIEW.col_symbol()</span></code></a>
 and the CSYMB class.
 
 AGG groups (aggregates) contain images.  See <a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW.aggregate" title="geosoft.gxapi.GXMVIEW.aggregate"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXMVIEW.aggregate()</span></code></a>
@@ -2070,22 +2070,22 @@ statistics for a grid.
 </pre>
 <p><strong>Note:</strong></p>
 <pre class="literal-block">
-<cite>*</cite><cite>*</cite><cite>*</cite> Histogram ranges and colour zone ranges <cite>*</cite><cite>*</cite><cite>*</cite>
+<cite>*</cite><cite>*</cite><cite>*</cite> Histogram ranges and color zone ranges <cite>*</cite><cite>*</cite><cite>*</cite>
 
 Histogram bins are defined with inclusive minima and exclusive maxima;
 for instance if Min = 0 and Inc = 1, then the second bin would include
 all values z such that  0 &gt;= z &gt; 1 (the first bin has all values &lt; 0).
 
-Colour zones used in displaying grids (ITR, ZON etc...) are the
+Color zones used in displaying grids (ITR, ZON etc...) are the
 opposite, with exclusive minima and inclusive maxima.
 For instance, if a zone is defined from 0 to 1, then it would
 contain all values of z such that 0 &gt; z &gt;= 1.
 
 These definitions mean that it is impossible to perfectly assign
-ITR colours to individual bars of a histogram. The best work-around
-when the data values are integers is to define the colour zones using
+ITR colors to individual bars of a histogram. The best work-around
+when the data values are integers is to define the color zones using
 0.5 values between the integers. A general work-around is to make the
-number of histogram bins much larger than the number of colour zones.
+number of histogram bins much larger than the number of color zones.
 
 See also  ST2 (bi-variate statistics)
 </pre>
@@ -2316,9 +2316,9 @@ Size:          The pattern tile size. If not specified, defaults to 2.0mm.
 Density:       The tiling density. If not specified, defaults to 1.0.
 Thickness:     The line thickness in the tile, expressed as a integer
 percentage (0-100) of the tile size.
-Colour:        The pattern line work colour. If not specified, defaults to black.
+Color:        The pattern line work color. If not specified, defaults to black.
 
-Background colour: The pattern background colour. If not specified, defaults to
+Background color: The pattern background color. If not specified, defaults to
 transparent (C_ANY_NONE)
 
 

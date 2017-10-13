@@ -94,22 +94,22 @@ statistics for a grid.
 </pre>
 <p><strong>Note:</strong></p>
 <pre class="literal-block">
-<cite>*</cite><cite>*</cite><cite>*</cite> Histogram ranges and colour zone ranges <cite>*</cite><cite>*</cite><cite>*</cite>
+<cite>*</cite><cite>*</cite><cite>*</cite> Histogram ranges and color zone ranges <cite>*</cite><cite>*</cite><cite>*</cite>
 
 Histogram bins are defined with inclusive minima and exclusive maxima;
 for instance if Min = 0 and Inc = 1, then the second bin would include
 all values z such that  0 &gt;= z &gt; 1 (the first bin has all values &lt; 0).
 
-Colour zones used in displaying grids (ITR, ZON etc...) are the
+Color zones used in displaying grids (ITR, ZON etc...) are the
 opposite, with exclusive minima and inclusive maxima.
 For instance, if a zone is defined from 0 to 1, then it would
 contain all values of z such that 0 &gt; z &gt;= 1.
 
 These definitions mean that it is impossible to perfectly assign
-ITR colours to individual bars of a histogram. The best work-around
-when the data values are integers is to define the colour zones using
+ITR colors to individual bars of a histogram. The best work-around
+when the data values are integers is to define the color zones using
 0.5 values between the integers. A general work-around is to make the
-number of histogram bins much larger than the number of colour zones.
+number of histogram bins much larger than the number of color zones.
 
 See also  ST2 (bi-variate statistics)
 </pre>
@@ -213,7 +213,7 @@ See also  ST2 (bi-variate statistics)
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>float</em>) &#8211; input value</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>float</em>) &#8211; Input value</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">The percentile at the given value (0 - 100)</td>
 </tr>
@@ -241,7 +241,7 @@ See also  ST2 (bi-variate statistics)
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>float</em>) &#8211; input percentile (0 - 100)</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>float</em>) &#8211; Input percentile (0 - 100)</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">The value at the given percentile.</td>
 </tr>
@@ -361,14 +361,14 @@ GS_R8DM for none</td>
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXST.get_norm_prob">
 <em class="property">static </em><code class="descname">get_norm_prob</code><span class="sig-paren">(</span><em>(float)arg1</em><span class="sig-paren">)</span> &rarr; float:<a class="headerlink" href="#geosoft.gxapi.GXST.get_norm_prob" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">return</span> <span class="n">percent</span> <span class="n">value</span>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Return</span> <span class="n">percent</span> <span class="n">value</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>float</em>) &#8211; real</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>float</em>) &#8211; Real</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">real<p>Notes                   this function is based on Normal Cumulative distribution function
 mit to about 5 standard deviations</p>
@@ -393,7 +393,7 @@ mit to about 5 standard deviations</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>float</em>) &#8211; real</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>float</em>) &#8211; Real</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">real<p>Notes                   this function is based on Normal Cumulative distribution function
 mit to about 5 standard deviations</p>
@@ -443,7 +443,7 @@ so this is equivalent to calling
 You should already have the data loaded in order to call this
 function.
 
-See the note above &quot;Histogram ranges and colour zone ranges&quot;
+See the note above &quot;Histogram ranges and color zone ranges&quot;
 </pre>
 </dd></dl>
 
@@ -480,7 +480,7 @@ See the note above &quot;Histogram ranges and colour zone ranges&quot;
 <span class="ow">and</span> <span class="n">the</span> <span class="n">one</span> <span class="n">after</span> <span class="n">the</span> <span class="n">maximum</span><span class="p">,</span> <span class="n">so</span> <span class="n">it</span> <span class="n">must</span> <span class="n">be</span> <span class="n">a</span> <span class="n">value</span> <span class="o">&gt;</span><span class="mf">2.</span>
 <span class="n">The</span> <span class="n">width</span> <span class="n">of</span> <span class="n">the</span> <span class="n">individual</span> <span class="n">bins</span> <span class="n">will</span> <span class="n">be</span> <span class="p">(</span><span class="n">Min</span><span class="o">-</span><span class="n">Max</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="c1"># - 2)</span>
 
-<span class="n">See</span> <span class="n">the</span> <span class="n">note</span> <span class="n">above</span> <span class="s2">&quot;Histogram ranges and colour zone ranges&quot;</span>
+<span class="n">See</span> <span class="n">the</span> <span class="n">note</span> <span class="n">above</span> <span class="s2">&quot;Histogram ranges and color zone ranges&quot;</span>
 </pre></div>
 </div>
 </dd></dl>

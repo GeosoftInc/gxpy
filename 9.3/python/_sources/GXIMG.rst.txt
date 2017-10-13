@@ -86,7 +86,7 @@ IMG_QUERY constants
    
    					Render modes are:    0 - interpolate
    					1 - pixelate
-   					2 - colour
+   					2 - color
    				 
 
 .. autoattribute:: geosoft.gxapi.IMG_QUERY_iKX
@@ -141,12 +141,12 @@ IMG_RELOCATE constants
 
 ::
 
-   will fit the image to fill the specified area 
+   Will fit the image to fill the specified area 
 
 .. autoattribute:: geosoft.gxapi.IMG_RELOCATE_ASPECT
 
 ::
 
-   will maintain aspect ratio 
+   Will maintain aspect ratio 
 
 	

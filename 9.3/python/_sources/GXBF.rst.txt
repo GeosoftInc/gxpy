@@ -84,19 +84,19 @@ BF_OPEN_MODE constants
 
 ::
 
-   erases existing file 
+   Erases existing file 
 
 .. autoattribute:: geosoft.gxapi.BF_READWRITE_OLD
 
 ::
 
-   file must pre-exist 
+   File must pre-exist 
 
 .. autoattribute:: geosoft.gxapi.BF_READWRITE_APP
 
 ::
 
-   open and append onto pre-existing file (cannot be read from) 
+   Open and append onto pre-existing file (cannot be read from) 
 
 .. _BF_SEEK:
 

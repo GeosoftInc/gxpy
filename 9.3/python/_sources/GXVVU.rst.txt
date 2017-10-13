@@ -57,7 +57,7 @@ VV_DUP constants
 
 ::
 
-   average numeric values (for strings, same as VV_DUP_1) 
+   Average numeric values (for strings, same as VV_DUP_1) 
 
 .. autoattribute:: geosoft.gxapi.VV_DUP_1
 
@@ -126,13 +126,13 @@ VVU_CLIP constants
 
 ::
 
-   clip replaces clipped values with a dummy. 
+   Clip replaces clipped values with a dummy. 
 
 .. autoattribute:: geosoft.gxapi.VVU_CLIP_LIMIT
 
 ::
 
-   clip replaces clipped values with the limit. 
+   Clip replaces clipped values with the limit. 
 
 .. _VVU_DUMMYREPEAT:
 
@@ -147,19 +147,19 @@ VVU_DUMMYREPEAT constants
 
 ::
 
-   dummies all but first point. 
+   Dummies all but first point. 
 
 .. autoattribute:: geosoft.gxapi.VVU_DUMMYREPEAT_LAST
 
 ::
 
-   dummies all but last point. 
+   Dummies all but last point. 
 
 .. autoattribute:: geosoft.gxapi.VVU_DUMMYREPEAT_MIDDLE
 
 ::
 
-   dummies all but middle point. 
+   Dummies all but middle point. 
 
 .. _VVU_INTERP:
 
@@ -255,13 +255,13 @@ VVU_MATCH constants
 
 ::
 
-   entire string 
+   Entire string 
 
 .. autoattribute:: geosoft.gxapi.VVU_MATCH_INPUT_LENGTH
 
 ::
 
-   match the first part of a string. 
+   Match the first part of a string. 
 
 .. _VVU_MODE:
 

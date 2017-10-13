@@ -21,13 +21,13 @@ FILE_EXT constants
 
 ::
 
-   will add the extension only if no extension is present. 
+   Will add the extension only if no extension is present. 
 
 .. autoattribute:: geosoft.gxapi.FILE_EXT_FORCE
 
 ::
 
-   will cause a renaming of the file extension to the new extension. 
+   Will cause a renaming of the file extension to the new extension. 
 
 .. _STR_CASE:
 

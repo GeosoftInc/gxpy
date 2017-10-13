@@ -15,13 +15,13 @@ PJ_ELEVATION constants
 
 ::
 
-   elevation correction method 
+   Elevation correction method 
 
 .. autoattribute:: geosoft.gxapi.PJ_ELEVATION_NONE
 
 ::
 
-   elevation transform not supported. 
+   Elevation transform not supported. 
 
 .. autoattribute:: geosoft.gxapi.PJ_ELEVATION_GEOCENTRIC
 

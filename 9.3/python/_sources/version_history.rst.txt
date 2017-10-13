@@ -12,6 +12,10 @@ New Classes
 
 :class:`geosoft.gxpy.gdb.Line` Class to work with database lines.  Use constructor :meth:`Line.new` to create a new line.
 
+:class:`geosoft.gxpy.metadata.Metadata` Simple interface to work with Geosoft metadata objects :class::`geosoft.gxapi.GXMETA`.
+
+:exc:`geosoft.gxpy.metadata.MetadataException` Exceptions from :mod:`geosoft.gxpy.metadata`.
+
 
 New Functions
 ^^^^^^^^^^^^^
@@ -20,7 +24,11 @@ New Functions
 
 :func:`geosoft.gxpy.gdb.Channel.delete` Delete the channel and all associated data.  After calling this method this
 
+:func:`geosoft.gxpy.gdb.Geosoft_gdb.get_gx_metadata` Return the database Geosoft metadata as a Geosoft :class:`geosoft.gxpy.metadata.Metadata` instance.
+
 :func:`geosoft.gxpy.gdb.Geosoft_gdb.unlock_all` Unlock all locked symbols.
+
+:func:`geosoft.gxpy.gdb.Geosoft_gdb.update_gxmeta` Update the database Geosoft metadata as a Geosoft :class:`geosoft.gxpy.metadata.Metadata` instance.
 
 :func:`geosoft.gxpy.gdb.Line.bearing` Return bearing of a line based on location of the first and last point in the line.
 
@@ -41,6 +49,18 @@ New Functions
 :func:`geosoft.gxpy.gx.GXpy.has_entitlement` Returns True if the user has this entitlement.
 
 :func:`geosoft.gxpy.map.Map.export_geotiff` Export map as a GeoTIFF image
+
+:func:`geosoft.gxpy.metadata.Metadata.has_attribute` Returns `True` if this attribute exists in the metadata.
+
+:func:`geosoft.gxpy.metadata.Metadata.has_node` Returns `True` if this node exists in the metadata.
+
+:func:`geosoft.gxpy.metadata.Metadata.meta_dict` Metadata content as a dictionary. Geosoft objects will appear as descriptive text strings.
+
+:func:`geosoft.gxpy.metadata.Metadata.meta_type` Return if this is a node (`META_TYPE_NODE`) or an attribute (`META_TYPE_ATTRIBUTE`).
+
+:func:`geosoft.gxpy.metadata.Metadata.node_attribute_token` returns the node and attribute number of an attribute.
+
+:func:`geosoft.gxpy.metadata.Metadata.set_attribute` Set an attribute to a value.  The attribute is created if it does not exist.
 
 :func:`geosoft.gxpy.project.add_document` Add a document to the project.  The document file can be any supported geosoft
 
@@ -641,6 +661,12 @@ New Functions
 
 :func:`geosoft.gxapi.GXMULTIVOXSET.list_properties_gocad` List all the properties available in this GOCAD file.
 
+:func:`geosoft.gxapi.GXMVIEW.delete_group_itr` Deletes existing ITR associated with a group.
+
+:func:`geosoft.gxapi.GXMVIEW.delete_group_storage` Deletes existing generic storage associated with a group.
+
+:func:`geosoft.gxapi.GXMVIEW.delete_group_tpat` Deletes existing TPAT associated with a group.
+
 :func:`geosoft.gxapi.GXMVIEW.find_group_by_guid` Find a Group by name.
 
 :func:`geosoft.gxapi.GXMVIEW.get_group_guid` Gets a GUID of a group in the MVIEW.
@@ -653,9 +679,17 @@ New Functions
 
 :func:`geosoft.gxapi.GXMVIEW.get_vector_3d` Get an existing VECTOR3D object from the view.
 
+:func:`geosoft.gxapi.GXMVIEW.group_itr_exists` Determine if group ITR exists.
+
+:func:`geosoft.gxapi.GXMVIEW.group_storage_exists` Determine if generic storage associated with a group exists.
+
+:func:`geosoft.gxapi.GXMVIEW.group_tpat_exists` Determine if group TPAT exists.
+
 :func:`geosoft.gxapi.GXMVIEW.set_group_itr` Set group ITR
 
 :func:`geosoft.gxapi.GXMVIEW.set_group_tpat` Set group TPAT
+
+:func:`geosoft.gxapi.GXMVIEW.write_group_storage` Open generic existing storage associated with a group for reading.
 
 :func:`geosoft.gxapi.GXPG.write_bf_ex` Write the contents of a 2D or 3D pager to a BF.
 
@@ -710,7 +744,7 @@ New Functions
 
 :func:`geosoft.gxapi.GXMVIEW.set_3d_point_of_view` Set 3D point of view (no effect on 2D views)
 
-:func:`geosoft.gxapi.GXPROJ.current_document_of_type` Get the name loaded document of a specific type.
+:func:`geosoft.gxapi.GXPROJ.current_document_of_type` Get the name of a loaded document of a specific type.
 
 :func:`geosoft.gxapi.GXPROJ.current_document` Get the name and type of the loaded document with focus.
 
@@ -865,11 +899,11 @@ New Functions
 
 :func:`geosoft.gxapi.GXGUI.coord_sys_wizard_grid` Launch the coordinate system definition/display GUI.
 
-:func:`geosoft.gxapi.GXGUI.get_client_window_area` Get the location of the oasis montaj client window.
+:func:`geosoft.gxapi.GXGUI.get_client_window_area` Get the location of the Oasis montaj client window.
 
-:func:`geosoft.gxapi.GXGUI.get_window_position` Get the oasis Montaj window's position state
+:func:`geosoft.gxapi.GXGUI.get_window_position` Get the Oasis montaj window's position state
 
-:func:`geosoft.gxapi.GXGUI.get_window_state` Retrieve the current state of the oasis Montaj window
+:func:`geosoft.gxapi.GXGUI.get_window_state` Retrieve the current state of the Oasis montaj window
 
 :func:`geosoft.gxapi.GXGUI.launch_geo_dotnetx_tool_ex` Launch a user created .Net GEOXTOOL.
 
@@ -877,9 +911,9 @@ New Functions
 
 :func:`geosoft.gxapi.GXGUI.launch_single_geo_dotnetx_tool_ex` Launch a user created .Net GEOXTOOL ensuring a single instance.
 
-:func:`geosoft.gxapi.GXGUI.set_window_position` Get the oasis Montaj window's position and state
+:func:`geosoft.gxapi.GXGUI.set_window_position` Get the Oasis montaj window's position and state
 
-:func:`geosoft.gxapi.GXGUI.set_window_state` Changes the state of the oasis Montaj window
+:func:`geosoft.gxapi.GXGUI.set_window_state` Changes the state of the Oasis montaj window
 
 :func:`geosoft.gxapi.GXIMU.get_z_peaks_vv` Same as \ :func:`geosoft.gxapi.GXIMU.get_zvv`\ , but find the closest peak value to the input locations, and return
 

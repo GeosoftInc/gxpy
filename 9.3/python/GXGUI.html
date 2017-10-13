@@ -133,7 +133,7 @@
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXGUI.color_form">
 <em class="property">static </em><code class="descname">color_form</code><span class="sig-paren">(</span><em>(int_ref)arg1</em>, <em>(int)arg2</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXGUI.color_form" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Select</span> <span class="n">a</span> <span class="n">colour</span><span class="o">.</span>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Select</span> <span class="n">a</span> <span class="n">color</span><span class="o">.</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -141,7 +141,7 @@
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; Colour (modified)</li>
+<li><strong>arg1</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; Color (modified)</li>
 <li><strong>arg2</strong> (<em>int</em>) &#8211; Ask about C_TRANSPARENT if white is selected (1: yes, 0: no)?</li>
 </ul>
 </td>
@@ -160,14 +160,14 @@
 </div>
 <p><strong>Note:</strong></p>
 <pre class="literal-block">
-Colour value is set on input, and new value returned.
-If the input colour type is C_TRANSPARENT, then the color
+Color value is set on input, and new value returned.
+If the input color type is C_TRANSPARENT, then the color
 is set to white, if any other type is input the output is
 guaranteed to be of the same type.
 
 If the third flag is <code class="docutils literal"><span class="pre">True</span></code> is used, then on exit, if white is
 selected, the user is prompted: 'Do you want white (Yes) or
-&quot;None&quot; (No) ?' and the colour is converted as requested.
+&quot;None&quot; (No) ?' and the color is converted as requested.
 If this is not the case, the C_TRANSPARENT is converted
 to white (if &quot;Ok&quot; is selected) and no choice is offered.
 </pre>
@@ -224,7 +224,7 @@ data ranges, percentiles, etc. Create it using
 <li><strong>arg2</strong> (<a class="reference internal" href="GXST.html#geosoft.gxapi.GXST" title="geosoft.gxapi.GXST"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXST</span></code></a>) &#8211; ST object (input)</li>
 <li><strong>arg3</strong> (<em>int</em>) &#8211; Max number of zones (8 or 12)</li>
 <li><strong>arg4</strong> (<em>int</em>) &#8211; Show file load/save buttons (TRUE or FALSE)?</li>
-<li><strong>arg5</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; Default colour transform file name</li>
+<li><strong>arg5</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; Default color transform file name</li>
 </ul>
 </td>
 </tr>
@@ -245,7 +245,7 @@ data ranges, percentiles, etc. Create it using
 The statistics object is required in order to determine
 data ranges, percentiles, etc. Create it using
 <a class="reference internal" href="GXST.html#geosoft.gxapi.GXST.create_exact" title="geosoft.gxapi.GXST.create_exact"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXST.create_exact()</span></code></a>, or be sure to enable histogram statistics.
-The colour transform file name is used as the default when the save
+The color transform file name is used as the default when the save
 button is pushed, and is updated both after the load and save buttons
 are pushed by the value input or selected by the user.
 </pre>
@@ -303,8 +303,8 @@ are pushed by the value input or selected by the user.
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXIPJ</span></code></a>) &#8211; original grid IPJ object</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXIPJ</span></code></a>) &#8211; source (target) grid IPJ object. This is supplied so the modified orientation can be calculated and displayed.</li>
+<li><strong>arg1</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXIPJ</span></code></a>) &#8211; Original grid IPJ object</li>
+<li><strong>arg2</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXIPJ</span></code></a>) &#8211; Source (target) grid IPJ object. This is supplied so the modified orientation can be calculated and displayed.</li>
 <li><strong>arg3</strong> (<em>int</em>) &#8211; Editable IPJ (0:No, 1:Yes)</li>
 <li><strong>arg4</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#coordsys-mode"><span class="std std-ref">COORDSYS_MODE constants</span></a></li>
 <li><strong>arg5</strong> (<em>str</em>) &#8211; Data source label</li>
@@ -417,7 +417,7 @@ method is not editable in the viewer while this one is.
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; Default colour transform file name</li>
+<li><strong>arg1</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; Default color transform file name</li>
 <li><strong>arg2</strong> (<a class="reference internal" href="GXITR.html#geosoft.gxapi.GXITR" title="geosoft.gxapi.GXITR"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXITR</span></code></a>) &#8211; ITR object (returned)</li>
 </ul>
 </td>
@@ -445,8 +445,8 @@ method is not editable in the viewer while this one is.
 <span class="n">unless</span> <span class="n">that</span> <span class="n">data</span> <span class="ow">is</span> <span class="n">already</span> <span class="n">given</span> <span class="ow">in</span> <span class="n">percent</span><span class="o">.</span>
 
 <span class="n">If</span> <span class="n">the</span> <span class="n">file</span> <span class="n">name</span> <span class="ow">is</span> <span class="n">defined</span> <span class="n">on</span> <span class="nb">input</span><span class="p">,</span> <span class="n">the</span> <span class="n">initial</span> <span class="n">ITR</span> <span class="n">will</span> <span class="n">be</span> <span class="n">loaded</span> <span class="kn">from</span> <span class="nn">it.</span>
-<span class="n">If</span> <span class="n">it</span> <span class="ow">is</span> <span class="n">left</span> <span class="n">blank</span><span class="p">,</span> <span class="n">a</span> <span class="n">default</span> <span class="mi">5</span><span class="o">-</span><span class="n">colour</span> <span class="n">transform</span> <span class="k">with</span>
-<span class="n">The</span> <span class="n">colour</span> <span class="n">transform</span> <span class="n">file</span> <span class="n">name</span> <span class="ow">is</span> <span class="n">used</span> <span class="k">as</span> <span class="n">the</span> <span class="n">default</span> <span class="n">when</span> <span class="n">the</span> <span class="n">save</span>
+<span class="n">If</span> <span class="n">it</span> <span class="ow">is</span> <span class="n">left</span> <span class="n">blank</span><span class="p">,</span> <span class="n">a</span> <span class="n">default</span> <span class="mi">5</span><span class="o">-</span><span class="n">color</span> <span class="n">transform</span> <span class="k">with</span>
+<span class="n">The</span> <span class="n">color</span> <span class="n">transform</span> <span class="n">file</span> <span class="n">name</span> <span class="ow">is</span> <span class="n">used</span> <span class="k">as</span> <span class="n">the</span> <span class="n">default</span> <span class="n">when</span> <span class="n">the</span> <span class="n">save</span>
 <span class="n">button</span> <span class="ow">is</span> <span class="n">pushed</span><span class="p">,</span> <span class="ow">and</span> <span class="ow">is</span> <span class="n">updated</span> <span class="n">both</span> <span class="n">after</span> <span class="n">the</span> <span class="n">load</span> <span class="ow">and</span> <span class="n">save</span> <span class="n">buttons</span>
 <span class="n">are</span> <span class="n">pushed</span> <span class="n">by</span> <span class="n">the</span> <span class="n">value</span> <span class="nb">input</span> <span class="ow">or</span> <span class="n">selected</span> <span class="n">by</span> <span class="n">the</span> <span class="n">user</span><span class="o">.</span>
 </pre></div>
@@ -550,7 +550,7 @@ All grids are required to be of the same type.
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<em>str</em>) &#8211; File Name</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; database type (returned)</li>
+<li><strong>arg2</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; Database type (returned)</li>
 </ul>
 </td>
 </tr>
@@ -762,7 +762,7 @@ then the FILE_FILTER_GDB value is returned.
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXGUI.gcs_datum_warning_shp">
 <em class="property">static </em><code class="descname">gcs_datum_warning_shp</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(GXIPJ)arg2</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXGUI.gcs_datum_warning_shp" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Launch</span> <span class="n">the</span> <span class="n">GCS</span> <span class="n">Datum</span> <span class="ne">Warning</span> <span class="n">dialogue</span> <span class="k">for</span> <span class="n">SHP</span> <span class="n">files</span><span class="o">.</span>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Launch</span> <span class="n">the</span> <span class="n">GCS</span> <span class="n">Datum</span> <span class="ne">Warning</span> <span class="n">dialog</span> <span class="k">for</span> <span class="n">SHP</span> <span class="n">files</span><span class="o">.</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -788,7 +788,7 @@ then the FILE_FILTER_GDB value is returned.
 <p><span class="versionmodified">New in version 7.1.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Runs</span> <span class="n">the</span> <span class="n">GCS</span> <span class="ne">Warning</span> <span class="n">dialogue</span> <span class="k">with</span> <span class="n">one</span> <span class="n">data</span> <span class="n">source</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Runs</span> <span class="n">the</span> <span class="n">GCS</span> <span class="ne">Warning</span> <span class="n">dialog</span> <span class="k">with</span> <span class="n">one</span> <span class="n">data</span> <span class="n">source</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -796,7 +796,7 @@ then the FILE_FILTER_GDB value is returned.
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXGUI.gcs_datum_warning_shp_ex">
 <em class="property">static </em><code class="descname">gcs_datum_warning_shp_ex</code><span class="sig-paren">(</span><em>(GXLST)arg1</em>, <em>(GXLST)arg2</em>, <em>(GXLST)arg3</em>, <em>(GXMVIEW)arg4</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXGUI.gcs_datum_warning_shp_ex" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Launch</span> <span class="n">the</span> <span class="n">GCS</span> <span class="n">Datum</span> <span class="ne">Warning</span> <span class="n">dialogue</span> <span class="k">for</span> <span class="n">SHP</span> <span class="n">files</span><span class="o">.</span>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Launch</span> <span class="n">the</span> <span class="n">GCS</span> <span class="n">Datum</span> <span class="ne">Warning</span> <span class="n">dialog</span> <span class="k">for</span> <span class="n">SHP</span> <span class="n">files</span><span class="o">.</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -824,7 +824,7 @@ then the FILE_FILTER_GDB value is returned.
 <p><span class="versionmodified">New in version 7.1.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Runs</span> <span class="n">the</span> <span class="n">GCS</span> <span class="ne">Warning</span> <span class="n">dialogue</span> <span class="k">with</span> <span class="n">multiple</span> <span class="n">data</span> <span class="n">sources</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Runs</span> <span class="n">the</span> <span class="n">GCS</span> <span class="ne">Warning</span> <span class="n">dialog</span> <span class="k">with</span> <span class="n">multiple</span> <span class="n">data</span> <span class="n">sources</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -832,7 +832,7 @@ then the FILE_FILTER_GDB value is returned.
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXGUI.gcs_datum_warning_shpdb_ex">
 <em class="property">static </em><code class="descname">gcs_datum_warning_shpdb_ex</code><span class="sig-paren">(</span><em>(GXLST)arg1</em>, <em>(GXLST)arg2</em>, <em>(GXLST)arg3</em>, <em>(GXDB)arg4</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXGUI.gcs_datum_warning_shpdb_ex" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Launch</span> <span class="n">the</span> <span class="n">GCS</span> <span class="n">Datum</span> <span class="ne">Warning</span> <span class="n">dialogue</span> <span class="k">for</span> <span class="n">SHP</span> <span class="n">files</span> <span class="p">(</span><span class="n">Database</span><span class="p">)</span><span class="o">.</span>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Launch</span> <span class="n">the</span> <span class="n">GCS</span> <span class="n">Datum</span> <span class="ne">Warning</span> <span class="n">dialog</span> <span class="k">for</span> <span class="n">SHP</span> <span class="n">files</span> <span class="p">(</span><span class="n">Database</span><span class="p">)</span><span class="o">.</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -860,7 +860,7 @@ then the FILE_FILTER_GDB value is returned.
 <p><span class="versionmodified">New in version 7.1.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Runs</span> <span class="n">the</span> <span class="n">GCS</span> <span class="ne">Warning</span> <span class="n">dialogue</span> <span class="k">with</span> <span class="n">multiple</span> <span class="n">data</span> <span class="n">sources</span> <span class="p">(</span><span class="n">Database</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Runs</span> <span class="n">the</span> <span class="n">GCS</span> <span class="ne">Warning</span> <span class="n">dialog</span> <span class="k">with</span> <span class="n">multiple</span> <span class="n">data</span> <span class="n">sources</span> <span class="p">(</span><span class="n">Database</span><span class="p">)</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -997,7 +997,7 @@ then the FILE_FILTER_GDB value is returned.
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXGUI.get_client_window_area">
 <em class="property">static </em><code class="descname">get_client_window_area</code><span class="sig-paren">(</span><em>(int_ref)arg1</em>, <em>(int_ref)arg2</em>, <em>(int_ref)arg3</em>, <em>(int_ref)arg4</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXGUI.get_client_window_area" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">the</span> <span class="n">location</span> <span class="n">of</span> <span class="n">the</span> <span class="n">oasis</span> <span class="n">montaj</span> <span class="n">client</span> <span class="n">window</span><span class="o">.</span>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">the</span> <span class="n">location</span> <span class="n">of</span> <span class="n">the</span> <span class="n">Oasis</span> <span class="n">montaj</span> <span class="n">client</span> <span class="n">window</span><span class="o">.</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -1201,7 +1201,7 @@ file filters, especially in GX.Net functions.
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXGUI.get_window_position">
 <em class="property">static </em><code class="descname">get_window_position</code><span class="sig-paren">(</span><em>(int_ref)arg1</em>, <em>(int_ref)arg2</em>, <em>(int_ref)arg3</em>, <em>(int_ref)arg4</em>, <em>(int_ref)arg5</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXGUI.get_window_position" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">the</span> <span class="n">oasis</span> <span class="n">Montaj</span> <span class="n">window</span><span class="s1">&#39;s position state</span>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">the</span> <span class="n">Oasis</span> <span class="n">montaj</span> <span class="n">window</span><span class="s1">&#39;s position state</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -1233,7 +1233,7 @@ file filters, especially in GX.Net functions.
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXGUI.get_window_state">
 <em class="property">static </em><code class="descname">get_window_state</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXGUI.get_window_state" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Retrieve</span> <span class="n">the</span> <span class="n">current</span> <span class="n">state</span> <span class="n">of</span> <span class="n">the</span> <span class="n">oasis</span> <span class="n">Montaj</span> <span class="n">window</span>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Retrieve</span> <span class="n">the</span> <span class="n">current</span> <span class="n">state</span> <span class="n">of</span> <span class="n">the</span> <span class="n">Oasis</span> <span class="n">montaj</span> <span class="n">window</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -1285,8 +1285,8 @@ file filters, especially in GX.Net functions.
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<em>str</em>) &#8211; data file name</li>
-<li><strong>arg2</strong> (<em>str</em>) &#8211; template to make</li>
+<li><strong>arg1</strong> (<em>str</em>) &#8211; Data file name</li>
+<li><strong>arg2</strong> (<em>str</em>) &#8211; Template to make</li>
 </ul>
 </td>
 </tr>
@@ -1315,8 +1315,8 @@ file filters, especially in GX.Net functions.
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<em>str</em>) &#8211; data file name</li>
-<li><strong>arg2</strong> (<em>str</em>) &#8211; template to make</li>
+<li><strong>arg1</strong> (<em>str</em>) &#8211; Data file name</li>
+<li><strong>arg2</strong> (<em>str</em>) &#8211; Template to make</li>
 <li><strong>arg3</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; Name of table</li>
 <li><strong>arg4</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#impch-type"><span class="std std-ref">IMPCH_TYPE constants</span></a></li>
 </ul>
@@ -1348,7 +1348,7 @@ file filters, especially in GX.Net functions.
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<em>str</em>) &#8211; External database connection string (Blank for OLEDB Wizard)</li>
-<li><strong>arg2</strong> (<em>str</em>) &#8211; template to make</li>
+<li><strong>arg2</strong> (<em>str</em>) &#8211; Template to make</li>
 <li><strong>arg3</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; Name of table</li>
 <li><strong>arg4</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#impch-type"><span class="std std-ref">IMPCH_TYPE constants</span></a></li>
 </ul>
@@ -1385,8 +1385,8 @@ new ADO technology, as opposed to DAO. Use in conjuction with
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<em>str</em>) &#8211; data file name</li>
-<li><strong>arg2</strong> (<em>str</em>) &#8211; template to make</li>
+<li><strong>arg1</strong> (<em>str</em>) &#8211; Data file name</li>
+<li><strong>arg2</strong> (<em>str</em>) &#8211; Template to make</li>
 <li><strong>arg3</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#impch-type"><span class="std std-ref">IMPCH_TYPE constants</span></a></li>
 </ul>
 </td>
@@ -1627,7 +1627,7 @@ the data (see <a class="reference internal" href="GXDU.html#geosoft.gxapi.GXDU.i
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<em>str</em>) &#8211; External database connection string (Blank for OLEDB Wizard)</li>
-<li><strong>arg2</strong> (<em>str</em>) &#8211; template to make</li>
+<li><strong>arg2</strong> (<em>str</em>) &#8211; Template to make</li>
 <li><strong>arg3</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; Name of table</li>
 <li><strong>arg4</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; Type of import returned <a class="reference internal" href="GXDH.html#dh-data"><span class="std std-ref">DH_DATA constants</span></a></li>
 <li><strong>arg5</strong> (<a class="reference internal" href="GXREG.html#geosoft.gxapi.GXREG" title="geosoft.gxapi.GXREG"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXREG</span></code></a>) &#8211; Drill Hole Object REG handle</li>
@@ -1666,7 +1666,7 @@ Same as <a class="reference internal" href="#geosoft.gxapi.GXGUI.import_drill_da
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<em>str</em>) &#8211; External database connection string (Blank for OLEDB Wizard)</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; template to make (if left blank, the created template name is returned)</li>
+<li><strong>arg2</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; Template to make (if left blank, the created template name is returned)</li>
 <li><strong>arg3</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; Name of table</li>
 <li><strong>arg4</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; Type of import returned <a class="reference internal" href="GXDH.html#dh-data"><span class="std std-ref">DH_DATA constants</span></a></li>
 <li><strong>arg5</strong> (<a class="reference internal" href="GXREG.html#geosoft.gxapi.GXREG" title="geosoft.gxapi.GXREG"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXREG</span></code></a>) &#8211; Drill Hole Object REG handle</li>
@@ -1705,7 +1705,7 @@ Same as <a class="reference internal" href="#geosoft.gxapi.GXGUI.import_drill_da
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<em>str</em>) &#8211; External database connection string  (e.g. &#8220;d:\Personal\test.mdb<cite>|</cite>Table&#8221; or &#8220;d:\File\test.gdb<cite>|</cite>TableX<cite>|</cite>FeatureClassY)&#8221;</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; template to make (if left blank, the created template name is returned)</li>
+<li><strong>arg2</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; Template to make (if left blank, the created template name is returned)</li>
 <li><strong>arg3</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; Name of table</li>
 <li><strong>arg4</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; Type of import returned <a class="reference internal" href="GXDH.html#dh-data"><span class="std std-ref">DH_DATA constants</span></a></li>
 <li><strong>arg5</strong> (<em>bool</em>) &#8211; bool Geosoft Geochemistry Database?</li>
@@ -1745,8 +1745,8 @@ Same as <a class="reference internal" href="#geosoft.gxapi.GXGUI.import_drill_da
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; connection string</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; template to make</li>
+<li><strong>arg1</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; Connection string</li>
+<li><strong>arg2</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; Template to make</li>
 <li><strong>arg3</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; Name of table</li>
 <li><strong>arg4</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; Type of import returned <a class="reference internal" href="GXDH.html#dh-data"><span class="std std-ref">DH_DATA constants</span></a></li>
 <li><strong>arg5</strong> (<a class="reference internal" href="GXREG.html#geosoft.gxapi.GXREG" title="geosoft.gxapi.GXREG"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXREG</span></code></a>) &#8211; Drill Hole Object REG handle</li>
@@ -1788,8 +1788,8 @@ Same as <a class="reference internal" href="#geosoft.gxapi.GXGUI.import_drill_da
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; connection string</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; template to make</li>
+<li><strong>arg1</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; Connection string</li>
+<li><strong>arg2</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; Template to make</li>
 <li><strong>arg3</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; Name of table</li>
 <li><strong>arg4</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; Type of import returned <a class="reference internal" href="GXDH.html#dh-data"><span class="std std-ref">DH_DATA constants</span></a></li>
 <li><strong>arg5</strong> (<a class="reference internal" href="GXREG.html#geosoft.gxapi.GXREG" title="geosoft.gxapi.GXREG"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXREG</span></code></a>) &#8211; Drill Hole Object REG handle</li>
@@ -1824,8 +1824,8 @@ Same as <a class="reference internal" href="#geosoft.gxapi.GXGUI.import_drill_da
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<em>str</em>) &#8211; data file name</li>
-<li><strong>arg2</strong> (<em>str</em>) &#8211; template to make</li>
+<li><strong>arg1</strong> (<em>str</em>) &#8211; Data file name</li>
+<li><strong>arg2</strong> (<em>str</em>) &#8211; Template to make</li>
 <li><strong>arg3</strong> (<em>str</em>) &#8211; Name of table</li>
 <li><strong>arg4</strong> (<em>int</em>) &#8211; Size of table name string</li>
 <li><strong>arg5</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; Type of import returned <a class="reference internal" href="GXDH.html#dh-data"><span class="std std-ref">DH_DATA constants</span></a></li>
@@ -2258,7 +2258,7 @@ non-zero  - Cancel</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<a class="reference internal" href="GXMETA.html#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXMETA</span></code></a>) &#8211; Meta object</li>
-<li><strong>arg2</strong> (<em>int</em>) &#8211; Root Token, H_META_INVALID_TOKEN for root</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; Root token, H_META_INVALID_TOKEN for root</li>
 <li><strong>arg3</strong> (<em>int</em>) &#8211; Display schema information ?</li>
 </ul>
 </td>
@@ -2402,17 +2402,17 @@ terminates on error</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.HDC</span></code>) &#8211; DC Handle</li>
-<li><strong>arg2</strong> (<em>int</em>) &#8211; left value of the render rect in Windows coordinates (bottom&gt;top)</li>
-<li><strong>arg3</strong> (<em>int</em>) &#8211; bottom value</li>
-<li><strong>arg4</strong> (<em>int</em>) &#8211; right value</li>
-<li><strong>arg5</strong> (<em>int</em>) &#8211; top value</li>
-<li><strong>arg6</strong> (<em>int</em>) &#8211; pattern number</li>
-<li><strong>arg7</strong> (<em>float</em>) &#8211; pattern thickness</li>
-<li><strong>arg8</strong> (<em>float</em>) &#8211; pattern pitch</li>
-<li><strong>arg9</strong> (<em>int</em>) &#8211; pattern colour</li>
-<li><strong>arg10</strong> (<em>int</em>) &#8211; is this window enabled?</li>
-<li><strong>arg11</strong> (<em>int</em>) &#8211; is this a button?</li>
-<li><strong>arg12</strong> (<em>int</em>) &#8211; is this window selected?</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; Left value of the render rect in Windows coordinates (bottom&gt;top)</li>
+<li><strong>arg3</strong> (<em>int</em>) &#8211; Bottom value</li>
+<li><strong>arg4</strong> (<em>int</em>) &#8211; Right value</li>
+<li><strong>arg5</strong> (<em>int</em>) &#8211; Top value</li>
+<li><strong>arg6</strong> (<em>int</em>) &#8211; Pattern number</li>
+<li><strong>arg7</strong> (<em>float</em>) &#8211; Pattern thickness</li>
+<li><strong>arg8</strong> (<em>float</em>) &#8211; Pattern pitch</li>
+<li><strong>arg9</strong> (<em>int</em>) &#8211; Pattern color</li>
+<li><strong>arg10</strong> (<em>int</em>) &#8211; Is this window enabled?</li>
+<li><strong>arg11</strong> (<em>int</em>) &#8211; Is this a button?</li>
+<li><strong>arg12</strong> (<em>int</em>) &#8211; Is this window selected?</li>
 </ul>
 </td>
 </tr>
@@ -2444,20 +2444,20 @@ Same as <a class="reference internal" href="#geosoft.gxapi.GXGUI.render_pattern"
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.HDC</span></code>) &#8211; DC Handle</li>
-<li><strong>arg2</strong> (<em>int</em>) &#8211; left value of the render rect in Windows coordinates (bottom&gt;top)</li>
-<li><strong>arg3</strong> (<em>int</em>) &#8211; bottom value</li>
-<li><strong>arg4</strong> (<em>int</em>) &#8211; right value</li>
-<li><strong>arg5</strong> (<em>int</em>) &#8211; top value</li>
-<li><strong>arg6</strong> (<em>int</em>) &#8211; pattern number</li>
-<li><strong>arg7</strong> (<em>float</em>) &#8211; pattern Size,           // input GS_R8DM to use default</li>
-<li><strong>arg8</strong> (<em>int</em>) &#8211; pattern Thick (0-100)   // input GS_S4DM to use default</li>
-<li><strong>arg9</strong> (<em>float</em>) &#8211; pattern Density,        // input GS_R8DM to use default</li>
-<li><strong>arg10</strong> (<em>int</em>) &#8211; pattern Pattern Color       // input GS_S4DM to use default</li>
-<li><strong>arg11</strong> (<em>int</em>) &#8211; pattern Background Color // input GS_S4DM to use default; can be C_TRANSPARENT</li>
-<li><strong>arg12</strong> (<em>int</em>) &#8211; is this window enabled?</li>
-<li><strong>arg13</strong> (<em>int</em>) &#8211; is this a button?</li>
-<li><strong>arg14</strong> (<em>int</em>) &#8211; is this window selected?</li>
+<li><strong>arg1</strong> (<code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.HDC</span></code>) &#8211; DC handle</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; Left value of the render rect in Windows coordinates (bottom&gt;top)</li>
+<li><strong>arg3</strong> (<em>int</em>) &#8211; Bottom value</li>
+<li><strong>arg4</strong> (<em>int</em>) &#8211; Right value</li>
+<li><strong>arg5</strong> (<em>int</em>) &#8211; Top value</li>
+<li><strong>arg6</strong> (<em>int</em>) &#8211; Pattern number</li>
+<li><strong>arg7</strong> (<em>float</em>) &#8211; Pattern size,           // input GS_R8DM to use default</li>
+<li><strong>arg8</strong> (<em>int</em>) &#8211; Pattern thick (0-100)   // input GS_S4DM to use default</li>
+<li><strong>arg9</strong> (<em>float</em>) &#8211; Pattern density,        // input GS_R8DM to use default</li>
+<li><strong>arg10</strong> (<em>int</em>) &#8211; Pattern color       // input GS_S4DM to use default</li>
+<li><strong>arg11</strong> (<em>int</em>) &#8211; Pattern background color // input GS_S4DM to use default; can be C_TRANSPARENT</li>
+<li><strong>arg12</strong> (<em>int</em>) &#8211; Is this window enabled?</li>
+<li><strong>arg13</strong> (<em>int</em>) &#8211; Is this a button?</li>
+<li><strong>arg14</strong> (<em>int</em>) &#8211; Is this window selected?</li>
 </ul>
 </td>
 </tr>
@@ -2562,7 +2562,7 @@ Same as <a class="reference internal" href="#geosoft.gxapi.GXGUI.render_pattern"
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXGUI.set_window_position">
 <em class="property">static </em><code class="descname">set_window_position</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(int)arg2</em>, <em>(int)arg3</em>, <em>(int)arg4</em>, <em>(int)arg5</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXGUI.set_window_position" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">the</span> <span class="n">oasis</span> <span class="n">Montaj</span> <span class="n">window</span><span class="s1">&#39;s position and state</span>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">the</span> <span class="n">Oasis</span> <span class="n">montaj</span> <span class="n">window</span><span class="s1">&#39;s position and state</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -2594,7 +2594,7 @@ Same as <a class="reference internal" href="#geosoft.gxapi.GXGUI.render_pattern"
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXGUI.set_window_state">
 <em class="property">static </em><code class="descname">set_window_state</code><span class="sig-paren">(</span><em>(int)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXGUI.set_window_state" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Changes</span> <span class="n">the</span> <span class="n">state</span> <span class="n">of</span> <span class="n">the</span> <span class="n">oasis</span> <span class="n">Montaj</span> <span class="n">window</span>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Changes</span> <span class="n">the</span> <span class="n">state</span> <span class="n">of</span> <span class="n">the</span> <span class="n">Oasis</span> <span class="n">montaj</span> <span class="n">window</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -2650,7 +2650,7 @@ Same as <a class="reference internal" href="#geosoft.gxapi.GXGUI.render_pattern"
 <dl class="staticmethod">
 <dt id="geosoft.gxapi.GXGUI.show_direct_hist">
 <em class="property">static </em><code class="descname">show_direct_hist</code><span class="sig-paren">(</span><em>(float)arg1</em>, <em>(float)arg2</em>, <em>(float)arg3</em>, <em>(float)arg4</em>, <em>(float)arg5</em>, <em>(int)arg6</em>, <em>(GXVV)arg7</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXGUI.show_direct_hist" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Display</span> <span class="n">Histogram</span> <span class="n">of</span> <span class="n">data</span> <span class="n">directly</span>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Display</span> <span class="n">histogram</span> <span class="n">of</span> <span class="n">data</span> <span class="n">directly</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -2752,12 +2752,12 @@ Same as <a class="reference internal" href="#geosoft.gxapi.GXGUI.render_pattern"
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; Symbol font file name</li>
 <li><strong>arg2</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.bool_ref" title="geosoft.gxapi.bool_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.bool_ref</span></code></a>) &#8211; Geosoft font? bool</li>
-<li><strong>arg3</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; weight <a class="reference internal" href="GXMVIEW.html#mview-font-weight"><span class="std std-ref">MVIEW_FONT_WEIGHT constants</span></a></li>
-<li><strong>arg4</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; symbol number</li>
-<li><strong>arg5</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; symbol size</li>
-<li><strong>arg6</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; symbol angle</li>
-<li><strong>arg7</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; edge colour</li>
-<li><strong>arg8</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; fill colour</li>
+<li><strong>arg3</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; Weight <a class="reference internal" href="GXMVIEW.html#mview-font-weight"><span class="std std-ref">MVIEW_FONT_WEIGHT constants</span></a></li>
+<li><strong>arg4</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; Symbol number</li>
+<li><strong>arg5</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Symbol size</li>
+<li><strong>arg6</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Symbol angle</li>
+<li><strong>arg7</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; Edge color</li>
+<li><strong>arg8</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; Fill color</li>
 </ul>
 </td>
 </tr>
@@ -2801,7 +2801,7 @@ Same as <a class="reference internal" href="#geosoft.gxapi.GXGUI.render_pattern"
 <p><span class="versionmodified">New in version 5.0.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Displays</span> <span class="n">the</span> <span class="n">thematic</span> <span class="n">voxel</span> <span class="n">codes</span><span class="p">,</span> <span class="n">colours</span><span class="p">,</span> <span class="n">total</span> <span class="n">volume</span> <span class="k">for</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Displays</span> <span class="n">the</span> <span class="n">thematic</span> <span class="n">voxel</span> <span class="n">codes</span><span class="p">,</span> <span class="n">colors</span><span class="p">,</span> <span class="n">total</span> <span class="n">volume</span> <span class="k">for</span>
 <span class="n">each</span> <span class="n">code</span><span class="p">,</span> <span class="ow">and</span> <span class="n">number</span> <span class="n">of</span> <span class="n">valid</span> <span class="n">items</span> <span class="p">(</span><span class="n">cubes</span><span class="p">)</span> <span class="k">for</span> <span class="n">each</span> <span class="n">code</span><span class="o">.</span>
 <span class="n">This</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">replacement</span> <span class="k">for</span> <span class="n">the</span> <span class="n">numeric</span> <span class="n">stats</span> <span class="n">done</span> <span class="n">on</span> <span class="n">normal</span>
 <span class="n">numerical</span> <span class="n">voxel</span> <span class="n">grids</span><span class="o">.</span>
@@ -3004,7 +3004,7 @@ link.
 
 <div class="section" id="aoi-return-state-constants">
 <span id="aoi-return-state"></span><h2>AOI_RETURN_STATE constants<a class="headerlink" href="#aoi-return-state-constants" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">AOI</span> <span class="n">Query</span> <span class="n">Return</span> <span class="n">State</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">AOI</span> <span class="n">query</span> <span class="k">return</span> <span class="n">state</span>
 </pre></div>
 </div>
 <dl class="attribute">
@@ -3012,7 +3012,7 @@ link.
 <code class="descclassname">gxapi.</code><code class="descname">AOI_RETURN_CANCEL</code><em class="property"> = -1</em><a class="headerlink" href="#geosoft.gxapi.AOI_RETURN_CANCEL" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">User</span> <span class="n">Canceled</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">User</span> <span class="n">canceled</span>
 </pre></div>
 </div>
 <dl class="attribute">
@@ -3116,7 +3116,7 @@ link.
 </div>
 <div class="section" id="file-filter-constants">
 <span id="file-filter"></span><h2>FILE_FILTER constants<a class="headerlink" href="#file-filter-constants" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">File</span> <span class="n">Filters</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">File</span> <span class="n">filters</span>
 </pre></div>
 </div>
 <dl class="attribute">
@@ -3124,7 +3124,7 @@ link.
 <code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_ALL</code><em class="property"> = 1</em><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_ALL" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<div class="highlight-default"><div class="highlight"><pre><span></span>All Files              \ `*`\ .\ `*`\                   ANYWHERE
+<div class="highlight-default"><div class="highlight"><pre><span></span>All files              \ `*`\ .\ `*`\                   ANYWHERE
 </pre></div>
 </div>
 <dl class="attribute">
@@ -3156,7 +3156,7 @@ link.
 <code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_INI</code><em class="property"> = 5</em><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_INI" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<div class="highlight-default"><div class="highlight"><pre><span></span>Parameter Files        \ `*`\ .ini                GEOSOFT
+<div class="highlight-default"><div class="highlight"><pre><span></span>Parameter files        \ `*`\ .ini                GEOSOFT
 </pre></div>
 </div>
 <dl class="attribute">
@@ -3164,7 +3164,7 @@ link.
 <code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_OMN</code><em class="property"> = 6</em><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_OMN" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<div class="highlight-default"><div class="highlight"><pre><span></span>Oasis Menu Files       \ `*`\ .omn                GEOSOFT
+<div class="highlight-default"><div class="highlight"><pre><span></span>Oasis Menu files       \ `*`\ .omn                GEOSOFT
 </pre></div>
 </div>
 <dl class="attribute">
@@ -3172,7 +3172,7 @@ link.
 <code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_VU</code><em class="property"> = 7</em><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_VU" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<div class="highlight-default"><div class="highlight"><pre><span></span>Oasis View Files       \ `*`\ .vu                 LOCAL
+<div class="highlight-default"><div class="highlight"><pre><span></span>Oasis View files       \ `*`\ .vu                 LOCAL
 </pre></div>
 </div>
 <dl class="attribute">
@@ -3180,7 +3180,7 @@ link.
 <code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_MAP</code><em class="property"> = 8</em><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_MAP" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<div class="highlight-default"><div class="highlight"><pre><span></span>Oasis Map Files        \ `*`\ .map                LOCAL
+<div class="highlight-default"><div class="highlight"><pre><span></span>Oasis Map files        \ `*`\ .map                LOCAL
 </pre></div>
 </div>
 <dl class="attribute">
@@ -3188,7 +3188,7 @@ link.
 <code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_PRJ</code><em class="property"> = 9</em><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_PRJ" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<div class="highlight-default"><div class="highlight"><pre><span></span>Projection File        \ `*`\ .prj                LOCAL
+<div class="highlight-default"><div class="highlight"><pre><span></span>Projection file        \ `*`\ .prj                LOCAL
 </pre></div>
 </div>
 <dl class="attribute">
@@ -3196,7 +3196,7 @@ link.
 <code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_CON</code><em class="property"> = 10</em><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_CON" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<div class="highlight-default"><div class="highlight"><pre><span></span>Configuration File     \ `*`\ .con                LOCAL
+<div class="highlight-default"><div class="highlight"><pre><span></span>Configuration file     \ `*`\ .con                LOCAL
 </pre></div>
 </div>
 <dl class="attribute">
@@ -3204,7 +3204,7 @@ link.
 <code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_MNU</code><em class="property"> = 11</em><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_MNU" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<div class="highlight-default"><div class="highlight"><pre><span></span>Sushi MNU Files        \ `*`\ .mnu                GEOSOFT
+<div class="highlight-default"><div class="highlight"><pre><span></span>Sushi MNU files        \ `*`\ .mnu                GEOSOFT
 </pre></div>
 </div>
 <dl class="attribute">
@@ -3212,7 +3212,7 @@ link.
 <code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_PDF</code><em class="property"> = 12</em><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_PDF" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<div class="highlight-default"><div class="highlight"><pre><span></span>PDF Files              \ `*`\ .pdf                GEOSOFT
+<div class="highlight-default"><div class="highlight"><pre><span></span>PDF files              \ `*`\ .pdf                GEOSOFT
 </pre></div>
 </div>
 <dl class="attribute">
@@ -3244,7 +3244,7 @@ link.
 <code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_TBL</code><em class="property"> = 16</em><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_TBL" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<div class="highlight-default"><div class="highlight"><pre><span></span>Color Table            \ `*`\ .tbl                GEOSOFT
+<div class="highlight-default"><div class="highlight"><pre><span></span>Color table            \ `*`\ .tbl                GEOSOFT
 </pre></div>
 </div>
 <dl class="attribute">
@@ -3308,7 +3308,7 @@ link.
 <code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_PNG</code><em class="property"> = 24</em><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_PNG" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<div class="highlight-default"><div class="highlight"><pre><span></span>PNG Files              \ `*`\ .png                LOCAL
+<div class="highlight-default"><div class="highlight"><pre><span></span>PNG files              \ `*`\ .png                LOCAL
 </pre></div>
 </div>
 <dl class="attribute">
@@ -3316,7 +3316,7 @@ link.
 <code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_JPG</code><em class="property"> = 25</em><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_JPG" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<div class="highlight-default"><div class="highlight"><pre><span></span>JPG Files              \ `*`\ .jpg                LOCAL
+<div class="highlight-default"><div class="highlight"><pre><span></span>JPG files              \ `*`\ .jpg                LOCAL
 </pre></div>
 </div>
 <dl class="attribute">
@@ -3324,7 +3324,7 @@ link.
 <code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_PCX</code><em class="property"> = 26</em><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_PCX" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<div class="highlight-default"><div class="highlight"><pre><span></span>PCX Files              \ `*`\ .pcx                LOCAL
+<div class="highlight-default"><div class="highlight"><pre><span></span>PCX files              \ `*`\ .pcx                LOCAL
 </pre></div>
 </div>
 <dl class="attribute">
@@ -3332,7 +3332,7 @@ link.
 <code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_GIF</code><em class="property"> = 27</em><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_GIF" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<div class="highlight-default"><div class="highlight"><pre><span></span>GIF Files              \ `*`\ .gif                LOCAL
+<div class="highlight-default"><div class="highlight"><pre><span></span>GIF files              \ `*`\ .gif                LOCAL
 </pre></div>
 </div>
 <dl class="attribute">
@@ -3340,7 +3340,7 @@ link.
 <code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_GRD</code><em class="property"> = 28</em><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_GRD" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<div class="highlight-default"><div class="highlight"><pre><span></span>GRD Files              \ `*`\ .grd                LOCAL
+<div class="highlight-default"><div class="highlight"><pre><span></span>GRD files              \ `*`\ .grd                LOCAL
 </pre></div>
 </div>
 <dl class="attribute">
@@ -3348,7 +3348,7 @@ link.
 <code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_ERS</code><em class="property"> = 29</em><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_ERS" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<div class="highlight-default"><div class="highlight"><pre><span></span>ERS Files              \ `*`\ .ers                LOCAL
+<div class="highlight-default"><div class="highlight"><pre><span></span>ERS files              \ `*`\ .ers                LOCAL
 </pre></div>
 </div>
 <dl class="attribute">
@@ -3356,7 +3356,7 @@ link.
 <code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_EPS</code><em class="property"> = 30</em><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_EPS" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<div class="highlight-default"><div class="highlight"><pre><span></span>EPS Files              \ `*`\ .eps                LOCAL
+<div class="highlight-default"><div class="highlight"><pre><span></span>EPS files              \ `*`\ .eps                LOCAL
 </pre></div>
 </div>
 <dl class="attribute">
@@ -3364,7 +3364,7 @@ link.
 <code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_SHP</code><em class="property"> = 31</em><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_SHP" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<div class="highlight-default"><div class="highlight"><pre><span></span>ArcView Shape Files    \ `*`\ .shp                LOCAL
+<div class="highlight-default"><div class="highlight"><pre><span></span>ArcView Shape files    \ `*`\ .shp                LOCAL
 </pre></div>
 </div>
 <dl class="attribute">
@@ -3372,7 +3372,7 @@ link.
 <code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_CGM</code><em class="property"> = 32</em><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_CGM" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<div class="highlight-default"><div class="highlight"><pre><span></span>CGM Files              \ `*`\ .cgm                LOCAL
+<div class="highlight-default"><div class="highlight"><pre><span></span>CGM files              \ `*`\ .cgm                LOCAL
 </pre></div>
 </div>
 <dl class="attribute">
@@ -3380,7 +3380,7 @@ link.
 <code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_TAB</code><em class="property"> = 33</em><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_TAB" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<div class="highlight-default"><div class="highlight"><pre><span></span>MapInfo Tab Files      \ `*`\ .tab                LOCAL
+<div class="highlight-default"><div class="highlight"><pre><span></span>MapInfo Tab files      \ `*`\ .tab                LOCAL
 </pre></div>
 </div>
 <dl class="attribute">
@@ -3396,7 +3396,7 @@ link.
 <code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_CSV</code><em class="property"> = 35</em><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_CSV" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<div class="highlight-default"><div class="highlight"><pre><span></span>MapInfo Tab Files      \ `*`\ .tab                LOCAL
+<div class="highlight-default"><div class="highlight"><pre><span></span>MapInfo Tab files      \ `*`\ .tab                LOCAL
 </pre></div>
 </div>
 <dl class="attribute">
@@ -3436,7 +3436,7 @@ link.
 <code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_XYZ</code><em class="property"> = 40</em><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_XYZ" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<div class="highlight-default"><div class="highlight"><pre><span></span>Geosoft XYZ Files      \ `*`\ .xyz                LOCAL
+<div class="highlight-default"><div class="highlight"><pre><span></span>Geosoft XYZ files      \ `*`\ .xyz                LOCAL
 </pre></div>
 </div>
 <dl class="attribute">
@@ -3444,7 +3444,7 @@ link.
 <code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_BAR</code><em class="property"> = 41</em><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_BAR" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<div class="highlight-default"><div class="highlight"><pre><span></span>Geosoft Bar File       \ `*`\ .geobar             LOCAL
+<div class="highlight-default"><div class="highlight"><pre><span></span>Geosoft Bar file       \ `*`\ .geobar             LOCAL
 </pre></div>
 </div>
 <dl class="attribute">
@@ -3452,7 +3452,7 @@ link.
 <code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_GEOSOFT_LICENSE</code><em class="property"> = 42</em><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_GEOSOFT_LICENSE" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<div class="highlight-default"><div class="highlight"><pre><span></span>Geosoft License Files   \ `*`\ .geosoft_license   LOCAL
+<div class="highlight-default"><div class="highlight"><pre><span></span>Geosoft License files   \ `*`\ .geosoft_license   LOCAL
 </pre></div>
 </div>
 <dl class="attribute">
@@ -3460,7 +3460,7 @@ link.
 <code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_XML</code><em class="property"> = 43</em><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_XML" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<div class="highlight-default"><div class="highlight"><pre><span></span>XML Files              \ `*`\ .xml                LOCAL
+<div class="highlight-default"><div class="highlight"><pre><span></span>XML files              \ `*`\ .xml                LOCAL
 </pre></div>
 </div>
 <dl class="attribute">
@@ -3468,7 +3468,7 @@ link.
 <code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_GXNET</code><em class="property"> = 44</em><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_GXNET" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<div class="highlight-default"><div class="highlight"><pre><span></span>GX.NET Files           \ `*`\ .dll                GEOSOFT
+<div class="highlight-default"><div class="highlight"><pre><span></span>GX.NET files           \ `*`\ .dll                GEOSOFT
 </pre></div>
 </div>
 <dl class="attribute">
@@ -3476,7 +3476,7 @@ link.
 <code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_ECW</code><em class="property"> = 45</em><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_ECW" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<div class="highlight-default"><div class="highlight"><pre><span></span>ECW Files              \ `*`\ .ecw                LOCAL
+<div class="highlight-default"><div class="highlight"><pre><span></span>ECW files              \ `*`\ .ecw                LOCAL
 </pre></div>
 </div>
 <dl class="attribute">
@@ -3484,7 +3484,7 @@ link.
 <code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_J2K</code><em class="property"> = 46</em><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_J2K" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<div class="highlight-default"><div class="highlight"><pre><span></span>J2K JPEG 2000 Files    \ `*`\ .j2k                LOCAL
+<div class="highlight-default"><div class="highlight"><pre><span></span>J2K JPEG 2000 files    \ `*`\ .j2k                LOCAL
 </pre></div>
 </div>
 <dl class="attribute">
@@ -3492,7 +3492,7 @@ link.
 <code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_JP2</code><em class="property"> = 47</em><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_JP2" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<div class="highlight-default"><div class="highlight"><pre><span></span>JP2 JPEG 2000 Files    \ `*`\ .jp2                LOCAL
+<div class="highlight-default"><div class="highlight"><pre><span></span>JP2 JPEG 2000 files    \ `*`\ .jp2                LOCAL
 </pre></div>
 </div>
 <dl class="attribute">
@@ -3508,7 +3508,7 @@ link.
 <code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_SVG</code><em class="property"> = 49</em><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_SVG" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<div class="highlight-default"><div class="highlight"><pre><span></span>SVG File               \ `*`\ .svg                LOCAL
+<div class="highlight-default"><div class="highlight"><pre><span></span>SVG file               \ `*`\ .svg                LOCAL
 </pre></div>
 </div>
 <dl class="attribute">
@@ -3516,7 +3516,7 @@ link.
 <code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_SVZ</code><em class="property"> = 50</em><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_SVZ" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<div class="highlight-default"><div class="highlight"><pre><span></span>SVG Compressed File    \ `*`\ .svz                LOCAL
+<div class="highlight-default"><div class="highlight"><pre><span></span>SVG Compressed file    \ `*`\ .svz                LOCAL
 </pre></div>
 </div>
 <dl class="attribute">
@@ -3524,7 +3524,7 @@ link.
 <code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_WRP</code><em class="property"> = 51</em><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_WRP" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<div class="highlight-default"><div class="highlight"><pre><span></span>Warp File              \ `*`\ .wrp                LOCAL
+<div class="highlight-default"><div class="highlight"><pre><span></span>Warp file              \ `*`\ .wrp                LOCAL
 </pre></div>
 </div>
 <dl class="attribute">
@@ -3532,7 +3532,7 @@ link.
 <code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_MAPPLOT</code><em class="property"> = 52</em><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_MAPPLOT" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<div class="highlight-default"><div class="highlight"><pre><span></span>MAPPLOT File           \ `*`\ .con                LOCAL
+<div class="highlight-default"><div class="highlight"><pre><span></span>MAPPLOT file           \ `*`\ .con                LOCAL
 </pre></div>
 </div>
 <dl class="attribute">
@@ -3540,7 +3540,7 @@ link.
 <code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_DTM</code><em class="property"> = 53</em><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_DTM" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<div class="highlight-default"><div class="highlight"><pre><span></span>Surpac DTM Files       \ `*`\ .dtm                LOCAL
+<div class="highlight-default"><div class="highlight"><pre><span></span>Surpac DTM files       \ `*`\ .dtm                LOCAL
 </pre></div>
 </div>
 <dl class="attribute">
@@ -3556,7 +3556,7 @@ link.
 <code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_MAPTEMPLATE</code><em class="property"> = 55</em><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_MAPTEMPLATE" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<div class="highlight-default"><div class="highlight"><pre><span></span>Map Template File      \ `*`\ .geosoft_maptemplate      LOCAL
+<div class="highlight-default"><div class="highlight"><pre><span></span>Map Template file      \ `*`\ .geosoft_maptemplate      LOCAL
 </pre></div>
 </div>
 <dl class="attribute">
@@ -3628,7 +3628,7 @@ link.
 <code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_ARGIS_LYR</code><em class="property"> = 64</em><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_ARGIS_LYR" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<div class="highlight-default"><div class="highlight"><pre><span></span>ArcGIS Layer Files                    \ `*`\ .lyr    LOCAL
+<div class="highlight-default"><div class="highlight"><pre><span></span>ArcGIS Layer files                    \ `*`\ .lyr    LOCAL
 </pre></div>
 </div>
 <dl class="attribute">
@@ -3636,7 +3636,7 @@ link.
 <code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_ARGIS_MXD</code><em class="property"> = 65</em><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_ARGIS_MXD" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<div class="highlight-default"><div class="highlight"><pre><span></span>ArcGIS Map Document Files     \ `*`\ .mxd    LOCAL
+<div class="highlight-default"><div class="highlight"><pre><span></span>ArcGIS Map Document files     \ `*`\ .mxd    LOCAL
 </pre></div>
 </div>
 <dl class="attribute">
@@ -3644,7 +3644,7 @@ link.
 <code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_GOCAD_TS</code><em class="property"> = 66</em><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_GOCAD_TS" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<div class="highlight-default"><div class="highlight"><pre><span></span>GOCAD TSurf Files                     \ `*`\ .ts     LOCAL
+<div class="highlight-default"><div class="highlight"><pre><span></span>GOCAD TSurf files                     \ `*`\ .ts     LOCAL
 </pre></div>
 </div>
 <dl class="attribute">
@@ -3660,7 +3660,7 @@ link.
 <code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_ECS</code><em class="property"> = 68</em><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_ECS" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<div class="highlight-default"><div class="highlight"><pre><span></span>GM-SYS Extern Coord Sys \ `*`\ .ecs               LOCAL
+<div class="highlight-default"><div class="highlight"><pre><span></span>GM-SYS external coordinate system     \ `*`\ .ecs     LOCAL
 </pre></div>
 </div>
 <dl class="attribute">
@@ -3676,7 +3676,7 @@ link.
 <code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_GMS3D</code><em class="property"> = 70</em><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_GMS3D" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<div class="highlight-default"><div class="highlight"><pre><span></span>GMSYS 3D Model \ `*`\ .geosoft_gms3d LOCAL
+<div class="highlight-default"><div class="highlight"><pre><span></span>GM-SYS 3D model   \ `*`\ .geosoft_gmsys3d    LOCAL
 </pre></div>
 </div>
 <dl class="attribute">
@@ -3708,7 +3708,7 @@ link.
 <code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_XLS</code><em class="property"> = 74</em><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_XLS" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<div class="highlight-default"><div class="highlight"><pre><span></span>Excel 97-2003 Workbook               \ `*`\ .xls                                     LOCAL
+<div class="highlight-default"><div class="highlight"><pre><span></span>Excel 97-2003 workbook               \ `*`\ .xls                                     LOCAL
 </pre></div>
 </div>
 <dl class="attribute">
@@ -3716,7 +3716,7 @@ link.
 <code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_XLSX</code><em class="property"> = 75</em><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_XLSX" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<div class="highlight-default"><div class="highlight"><pre><span></span>Excel 2007 Workbook                  \ `*`\ .xlsx                            LOCAL
+<div class="highlight-default"><div class="highlight"><pre><span></span>Excel 2007 workbook                  \ `*`\ .xlsx                            LOCAL
 </pre></div>
 </div>
 <dl class="attribute">
@@ -3844,7 +3844,7 @@ link.
 <code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_SEGY</code><em class="property"> = 91</em><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_SEGY" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<div class="highlight-default"><div class="highlight"><pre><span></span>SEGY files                                                   \ `*`\ .sgy                     LOCAL
+<div class="highlight-default"><div class="highlight"><pre><span></span>SEG-Y files                                                  \ `*`\ .sgy                     LOCAL
 </pre></div>
 </div>
 <dl class="attribute">
@@ -3876,7 +3876,7 @@ link.
 <code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_GMS</code><em class="property"> = 95</em><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_GMS" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<div class="highlight-default"><div class="highlight"><pre><span></span>GM-SYS                                                                       \ `*`\ .gms     LOCAL
+<div class="highlight-default"><div class="highlight"><pre><span></span>GM-SYS Profile model file            \ `*`\ .gms     LOCAL
 </pre></div>
 </div>
 <dl class="attribute">
@@ -3884,7 +3884,7 @@ link.
 <code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_FLT3D</code><em class="property"> = 96</em><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_FLT3D" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<div class="highlight-default"><div class="highlight"><pre><span></span>Geosoft 3D filter Files                      \ `*`\ .flt3d                   LOCAL
+<div class="highlight-default"><div class="highlight"><pre><span></span>Geosoft 3D filter files                      \ `*`\ .flt3d                   LOCAL
 </pre></div>
 </div>
 <dl class="attribute">
@@ -3900,7 +3900,7 @@ link.
 <code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_GEOSTRING</code><em class="property"> = 98</em><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_GEOSTRING" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<div class="highlight-default"><div class="highlight"><pre><span></span>Geostring Files \ `*`\ .geosoft_string LOCAL
+<div class="highlight-default"><div class="highlight"><pre><span></span>Geostring files \ `*`\ .geosoft_string LOCAL
 </pre></div>
 </div>
 <dl class="attribute">
@@ -3908,7 +3908,7 @@ link.
 <code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_GEOSURFACE</code><em class="property"> = 99</em><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_GEOSURFACE" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<div class="highlight-default"><div class="highlight"><pre><span></span>Geosurface Files \ `*`\ .geosoft_surface LOCAL
+<div class="highlight-default"><div class="highlight"><pre><span></span>Geosurface files \ `*`\ .geosoft_surface LOCAL
 </pre></div>
 </div>
 <dl class="attribute">
@@ -3948,7 +3948,7 @@ link.
 <code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_GMS2D</code><em class="property"> = 104</em><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_GMS2D" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<div class="highlight-default"><div class="highlight"><pre><span></span>GMSYS 2D Model \ `*`\ .geosoft_gms2d LOCAL
+<div class="highlight-default"><div class="highlight"><pre><span></span>GM-SYS Profile model    \ `*`\ .geosoft_gmsys2d   LOCAL
 </pre></div>
 </div>
 <dl class="attribute">
@@ -3972,7 +3972,7 @@ link.
 <code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_VT</code><em class="property"> = 107</em><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_VT" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<div class="highlight-default"><div class="highlight"><pre><span></span>Shell VT Files     \ `*`\ .vt        LOCAL
+<div class="highlight-default"><div class="highlight"><pre><span></span>Shell VT files     \ `*`\ .vt        LOCAL
 </pre></div>
 </div>
 <dl class="attribute">
@@ -3980,7 +3980,7 @@ link.
 <code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_INT</code><em class="property"> = 108</em><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_INT" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<div class="highlight-default"><div class="highlight"><pre><span></span>Shell INT Files     \ `*`\ .int      LOCAL
+<div class="highlight-default"><div class="highlight"><pre><span></span>Shell INT files     \ `*`\ .int      LOCAL
 </pre></div>
 </div>
 <dl class="attribute">
@@ -3988,7 +3988,7 @@ link.
 <code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_SGT</code><em class="property"> = 109</em><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_SGT" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<div class="highlight-default"><div class="highlight"><pre><span></span>Shell SGT Files     \ `*`\ .sgt      LOCAL
+<div class="highlight-default"><div class="highlight"><pre><span></span>Shell SGT files     \ `*`\ .sgt      LOCAL
 </pre></div>
 </div>
 <dl class="attribute">
@@ -3996,7 +3996,7 @@ link.
 <code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_IMGVIEW</code><em class="property"> = 110</em><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_IMGVIEW" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<div class="highlight-default"><div class="highlight"><pre><span></span>Image Viewer Files  \ `*`\ .imgview  LOCAL
+<div class="highlight-default"><div class="highlight"><pre><span></span>Image Viewer files  \ `*`\ .imgview  LOCAL
 </pre></div>
 </div>
 <dl class="attribute">
@@ -4004,7 +4004,7 @@ link.
 <code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_ZIP</code><em class="property"> = 111</em><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_ZIP" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<div class="highlight-default"><div class="highlight"><pre><span></span>Zip Files  \ `*`\ .zip  LOCAL
+<div class="highlight-default"><div class="highlight"><pre><span></span>Zip files  \ `*`\ .zip  LOCAL
 </pre></div>
 </div>
 <dl class="attribute">
@@ -4036,7 +4036,7 @@ link.
 <code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_PRJVIEW</code><em class="property"> = 115</em><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_PRJVIEW" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<div class="highlight-default"><div class="highlight"><pre><span></span>Layout Files  \ `*`\ .prjview  LOCAL
+<div class="highlight-default"><div class="highlight"><pre><span></span>Layout files  \ `*`\ .prjview  LOCAL
 </pre></div>
 </div>
 <dl class="attribute">
@@ -4060,7 +4060,7 @@ link.
 <code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_ASEG_ESF</code><em class="property"> = 118</em><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_ASEG_ESF" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<div class="highlight-default"><div class="highlight"><pre><span></span>ASEG ESF File  \ `*`\ .esf  LOCAL
+<div class="highlight-default"><div class="highlight"><pre><span></span>ASEG ESF file  \ `*`\ .esf  LOCAL
 </pre></div>
 </div>
 <dl class="attribute">

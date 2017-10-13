@@ -778,6 +778,20 @@ Can be set from any <a class="reference internal" href="geosoft.gxpy.coordinate_
 <dd><p>number of free blocks</p>
 </dd></dl>
 
+<dl class="method">
+<dt id="geosoft.gxpy.gdb.Geosoft_gdb.get_gx_metadata">
+<code class="descname">get_gx_metadata</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.gdb.Geosoft_gdb.get_gx_metadata" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the database Geosoft metadata as a Geosoft <a class="reference internal" href="geosoft.gxpy.metadata.html#geosoft.gxpy.metadata.Metadata" title="geosoft.gxpy.metadata.Metadata"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxpy.metadata.Metadata</span></code></a> instance.</p>
+<p>The internal database metadata is used to store various database properties that are not intended
+to be part of the exposed dataset metadata exposed by the :attr:metadata property.</p>
+<p>If you wish to add your own metadata to the internal properties you can use the
+:mod:geosoft.gxpy.metadata module to add metadata and save it to the database using
+:func:geosoft.gxapi.GXDB.set_meta.</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.3.</span></p>
+</div>
+</dd></dl>
+
 <dl class="attribute">
 <dt id="geosoft.gxpy.gdb.Geosoft_gdb.gxdb">
 <code class="descname">gxdb</code><a class="headerlink" href="#geosoft.gxpy.gdb.Geosoft_gdb.gxdb" title="Permalink to this definition">¶</a></dt>
@@ -1044,8 +1058,8 @@ the field.</p>
 <dl class="attribute">
 <dt id="geosoft.gxpy.gdb.Geosoft_gdb.metadata">
 <code class="descname">metadata</code><a class="headerlink" href="#geosoft.gxpy.gdb.Geosoft_gdb.metadata" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the database metadata as a dictionary.  Can be set, in which case
-the dictionary items passed will be added to, or replace existing metadata.</p>
+<dd><p>Return the database XML metadata as a dictionary.  Can be set, in which case
+the dictionary items passed will be added to, or replace existing XML metadata.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.2.</span></p>
 </div>
@@ -1448,6 +1462,27 @@ of selections.</li>
 <dt id="geosoft.gxpy.gdb.Geosoft_gdb.unlock_all">
 <code class="descname">unlock_all</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.gdb.Geosoft_gdb.unlock_all" title="Permalink to this definition">¶</a></dt>
 <dd><p>Unlock all locked symbols.</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.3.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxpy.gdb.Geosoft_gdb.update_gxmeta">
+<code class="descname">update_gxmeta</code><span class="sig-paren">(</span><em>meta</em>, <em>replace=False</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.gdb.Geosoft_gdb.update_gxmeta" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update the database Geosoft metadata as a Geosoft <a class="reference internal" href="geosoft.gxpy.metadata.html#geosoft.gxpy.metadata.Metadata" title="geosoft.gxpy.metadata.Metadata"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxpy.metadata.Metadata</span></code></a> instance.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>meta</strong> &#8211; the new metadata as a <code class="xref py py-class docutils literal"><span class="pre">geosoft.gxpy.Metadata</span></code> instance</li>
+<li><strong>relace</strong> &#8211; True to replace all database metadata.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.3.</span></p>
 </div>

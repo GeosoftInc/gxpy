@@ -376,12 +376,12 @@ the normal <a class="reference internal" href="#geosoft.gxapi.GXPJ.convert_xy" t
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<em>float</em>) &#8211; longitude  at (X,Y) origin</li>
-<li><strong>arg2</strong> (<em>float</em>) &#8211; latitude   at (X,Y) origin</li>
+<li><strong>arg1</strong> (<em>float</em>) &#8211; Longitude  at (X,Y) origin</li>
+<li><strong>arg2</strong> (<em>float</em>) &#8211; Latitude   at (X,Y) origin</li>
 <li><strong>arg3</strong> (<em>float</em>) &#8211; (X,Y) origin</li>
 <li><strong>arg4</strong> (<em>float</em>) &#8211; </li>
-<li><strong>arg5</strong> (<em>float</em>) &#8211; coordinate Y relative to geographic N (deg azm)</li>
-<li><strong>arg6</strong> (<em>float</em>) &#8211; scale to convert X,Y to m.</li>
+<li><strong>arg5</strong> (<em>float</em>) &#8211; Coordinate Y relative to geographic N (deg azm)</li>
+<li><strong>arg6</strong> (<em>float</em>) &#8211; Scale to convert X,Y to m.</li>
 <li><strong>arg7</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#pj-rect"><span class="std std-ref">PJ_RECT constants</span></a></li>
 </ul>
 </td>
@@ -574,7 +574,7 @@ return PJ_ELEVATION_NONE and elevation coordinates will not be changed.
 <li><strong>arg2</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Bounding Region Min Y</li>
 <li><strong>arg3</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Bounding Region Max X</li>
 <li><strong>arg4</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Bounding Region Max Y</li>
-<li><strong>arg5</strong> (<em>float</em>) &#8211; maximum allowable projection error if &lt;= 0.0, will use 0.005% of smallest dimension</li>
+<li><strong>arg5</strong> (<em>float</em>) &#8211; Maximum allowable projection error if &lt;= 0.0, will use 0.005% of smallest dimension</li>
 </ul>
 </td>
 </tr>
@@ -652,7 +652,7 @@ performed to an accuracy better than the specified error tolerance.
 <li><strong>arg3</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Bounding Region Max X</li>
 <li><strong>arg4</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Bounding Region Max Y</li>
 <li><strong>arg5</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Resolution</li>
-<li><strong>arg6</strong> (<em>float</em>) &#8211; maximum allowable projection error if &lt;= 0.0, will use 0.005% of smallest dimension</li>
+<li><strong>arg6</strong> (<em>float</em>) &#8211; Maximum allowable projection error if &lt;= 0.0, will use 0.005% of smallest dimension</li>
 </ul>
 </td>
 </tr>
@@ -759,7 +759,7 @@ performed to an accuracy better than the specified error tolerance.
 
 <div class="section" id="pj-elevation-constants">
 <span id="pj-elevation"></span><h2>PJ_ELEVATION constants<a class="headerlink" href="#pj-elevation-constants" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">elevation</span> <span class="n">correction</span> <span class="n">method</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Elevation</span> <span class="n">correction</span> <span class="n">method</span>
 </pre></div>
 </div>
 <dl class="attribute">
@@ -767,7 +767,7 @@ performed to an accuracy better than the specified error tolerance.
 <code class="descclassname">gxapi.</code><code class="descname">PJ_ELEVATION_NONE</code><em class="property"> = 0</em><a class="headerlink" href="#geosoft.gxapi.PJ_ELEVATION_NONE" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">elevation</span> <span class="n">transform</span> <span class="ow">not</span> <span class="n">supported</span><span class="o">.</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Elevation</span> <span class="n">transform</span> <span class="ow">not</span> <span class="n">supported</span><span class="o">.</span>
 </pre></div>
 </div>
 <dl class="attribute">

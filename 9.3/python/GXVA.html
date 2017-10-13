@@ -213,8 +213,8 @@ Dummies are not included in the average.
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Items to test for repeats (length equal to the number of columns in the VA)</li>
 <li><strong>arg2</strong> (<em>int</em>) &#8211; If set to 1, subtract single values in the following VV from every array row item before testing (e.g. an elevation value)</li>
-<li><strong>arg3</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; values to subtract from each row before doing the comparison test (length equal to the length of the VA). Can be VV_NULL (-1) if above subtraction parameter is zero</li>
-<li><strong>arg4</strong> (<em>float</em>) &#8211; comparison tolerance - set to zero or dummy for exact match</li>
+<li><strong>arg3</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Values to subtract from each row before doing the comparison test (length equal to the length of the VA). Can be VV_NULL (-1) if above subtraction parameter is zero</li>
+<li><strong>arg4</strong> (<em>float</em>) &#8211; Comparison tolerance - set to zero or dummy for exact match</li>
 </ul>
 </td>
 </tr>
@@ -252,10 +252,10 @@ Dummies are not included in the average.
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Items to test for repeats (length equal to the number of columns in the VA)</li>
 <li><strong>arg2</strong> (<em>int</em>) &#8211; If set to 1, subtract single values in the following VV from every array row item before testing (e.g. an elevation value)</li>
-<li><strong>arg3</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; values to subtract from each row before doing the comparison test (length equal to the length of the VA). Can be VV_NULL (-1) if above subtraction parameter is zero</li>
-<li><strong>arg4</strong> (<em>float</em>) &#8211; comparison tolerance - set to zero or dummy for exact match</li>
-<li><strong>arg5</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; row index of first mismatch</li>
-<li><strong>arg6</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; column index of first mismatch</li>
+<li><strong>arg3</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Values to subtract from each row before doing the comparison test (length equal to the length of the VA). Can be VV_NULL (-1) if above subtraction parameter is zero</li>
+<li><strong>arg4</strong> (<em>float</em>) &#8211; Comparison tolerance - set to zero or dummy for exact match</li>
+<li><strong>arg5</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; Row index of first mismatch</li>
+<li><strong>arg6</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; Column index of first mismatch</li>
 </ul>
 </td>
 </tr>
@@ -646,7 +646,7 @@ are converted to &quot;<cite>*</cite>&quot; string.
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<em>int</em>) &#8211; Row</li>
 <li><strong>arg2</strong> (<em>int</em>) &#8211; Column</li>
-<li><strong>arg3</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; string in which to place element</li>
+<li><strong>arg3</strong> (<a class="reference internal" href="index.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; String in which to place element</li>
 </ul>
 </td>
 </tr>
@@ -943,7 +943,7 @@ are converted to &quot;<cite>*</cite>&quot; string.
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<em>int</em>) &#8211; Row</li>
 <li><strong>arg2</strong> (<em>int</em>) &#8211; Column</li>
-<li><strong>arg3</strong> (<em>float</em>) &#8211; value to set</li>
+<li><strong>arg3</strong> (<em>float</em>) &#8211; Value to set</li>
 </ul>
 </td>
 </tr>
@@ -1025,7 +1025,7 @@ are converted to &quot;<cite>*</cite>&quot; string.
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<em>int</em>) &#8211; Row</li>
 <li><strong>arg2</strong> (<em>int</em>) &#8211; Column</li>
-<li><strong>arg3</strong> (<em>int</em>) &#8211; value to set</li>
+<li><strong>arg3</strong> (<em>int</em>) &#8211; Value to set</li>
 </ul>
 </td>
 </tr>
@@ -1058,7 +1058,7 @@ are converted to &quot;<cite>*</cite>&quot; string.
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>int</em>) &#8211; length</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>int</em>) &#8211; Length</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Nothing</td>
 </tr>
@@ -1089,7 +1089,7 @@ are converted to &quot;<cite>*</cite>&quot; string.
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>arg1</strong> (<em>int</em>) &#8211; Row</li>
 <li><strong>arg2</strong> (<em>int</em>) &#8211; Column</li>
-<li><strong>arg3</strong> (<em>str</em>) &#8211; string to set</li>
+<li><strong>arg3</strong> (<em>str</em>) &#8211; String to set</li>
 </ul>
 </td>
 </tr>
@@ -1153,8 +1153,8 @@ Translate (VA + base ) <cite>*</cite> mult
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<em>float</em>) &#8211; base value</li>
-<li><strong>arg2</strong> (<em>float</em>) &#8211; mult value</li>
+<li><strong>arg1</strong> (<em>float</em>) &#8211; Base value</li>
+<li><strong>arg2</strong> (<em>float</em>) &#8211; Mult value</li>
 </ul>
 </td>
 </tr>
@@ -1186,8 +1186,8 @@ Translate (VA + base ) <cite>*</cite> mult
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<em>int</em>) &#8211; first element in the window</li>
-<li><strong>arg2</strong> (<em>int</em>) &#8211; number of elements in the window</li>
+<li><strong>arg1</strong> (<em>int</em>) &#8211; First element in the window</li>
+<li><strong>arg2</strong> (<em>int</em>) &#8211; Number of elements in the window</li>
 <li><strong>arg3</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; VV in which to place results</li>
 </ul>
 </td>
@@ -1223,8 +1223,8 @@ Translate (VA + base ) <cite>*</cite> mult
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<em>float</em>) &#8211; start point (from 0.0)</li>
-<li><strong>arg2</strong> (<em>float</em>) &#8211; end point (&lt; VA elements - 1.0)</li>
+<li><strong>arg1</strong> (<em>float</em>) &#8211; Start point (from 0.0)</li>
+<li><strong>arg2</strong> (<em>float</em>) &#8211; End point (&lt; VA elements - 1.0)</li>
 <li><strong>arg3</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; VV in which to place results</li>
 </ul>
 </td>

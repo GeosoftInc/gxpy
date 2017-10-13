@@ -311,7 +311,7 @@ Reduction to magnetic pole (<a class="reference internal" href="#geosoft.gxapi.G
 <li><strong>arg1</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; VV to transform.</li>
 <li><strong>arg2</strong> (<em>float</em>) &#8211; Element space interval</li>
 <li><strong>arg3</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#fft-detrend"><span class="std std-ref">FFT_DETREND constants</span></a></li>
-<li><strong>arg4</strong> (<em>float</em>) &#8211; minimum expansion %</li>
+<li><strong>arg4</strong> (<em>float</em>) &#8211; Minimum expansion %</li>
 </ul>
 </td>
 </tr>
@@ -385,7 +385,7 @@ immediately after with <a class="reference internal" href="#geosoft.gxapi.GXFFT.
 <li><strong>arg1</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; VV contains channel data to perform FFT operations upon.</li>
 <li><strong>arg2</strong> (<em>float</em>) &#8211; Element space interval, should be the same as in Create(Ex)_FFT() call</li>
 <li><strong>arg3</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#fft-detrend"><span class="std std-ref">FFT_DETREND constants</span></a></li>
-<li><strong>arg4</strong> (<em>float</em>) &#8211; minimum expansion %, should be the same as in CreateEx_FFT() call</li>
+<li><strong>arg4</strong> (<em>float</em>) &#8211; Minimum expansion %, should be the same as in CreateEx_FFT() call</li>
 <li><strong>arg5</strong> (<em>float</em>) &#8211; DC level multiple</li>
 </ul>
 </td>
@@ -448,8 +448,8 @@ immediately after with <a class="reference internal" href="#geosoft.gxapi.GXFFT.
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; real component</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; imaginary component</li>
+<li><strong>arg1</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Real component</li>
+<li><strong>arg2</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Imaginary component</li>
 </ul>
 </td>
 </tr>
@@ -736,8 +736,8 @@ immediately after with <a class="reference internal" href="#geosoft.gxapi.GXFFT.
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; real component</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; imaginary component</li>
+<li><strong>arg1</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Real component</li>
+<li><strong>arg2</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Imaginary component</li>
 </ul>
 </td>
 </tr>
@@ -888,7 +888,7 @@ using the <a class="reference internal" href="#geosoft.gxapi.GXFFT.set_vv" title
 <code class="descclassname">gxapi.</code><code class="descname">FFT_DETREND_NONE</code><em class="property"> = 0</em><a class="headerlink" href="#geosoft.gxapi.FFT_DETREND_NONE" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">no</span> <span class="n">trend</span> <span class="n">remove</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">No</span> <span class="n">trend</span> <span class="n">remove</span>
 </pre></div>
 </div>
 <dl class="attribute">
@@ -896,7 +896,7 @@ using the <a class="reference internal" href="#geosoft.gxapi.GXFFT.set_vv" title
 <code class="descclassname">gxapi.</code><code class="descname">FFT_DETREND_ENDS</code><em class="property"> = 1</em><a class="headerlink" href="#geosoft.gxapi.FFT_DETREND_ENDS" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">detrend</span> <span class="n">order</span> <span class="mi">1</span> <span class="n">using</span> <span class="n">only</span> <span class="n">two</span> <span class="n">end</span> <span class="n">points</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Detrend</span> <span class="n">order</span> <span class="mi">1</span> <span class="n">using</span> <span class="n">only</span> <span class="n">two</span> <span class="n">end</span> <span class="n">points</span>
 </pre></div>
 </div>
 <dl class="attribute">
@@ -904,7 +904,7 @@ using the <a class="reference internal" href="#geosoft.gxapi.GXFFT.set_vv" title
 <code class="descclassname">gxapi.</code><code class="descname">FFT_DETREND_ALL</code><em class="property"> = 2</em><a class="headerlink" href="#geosoft.gxapi.FFT_DETREND_ALL" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">detrend</span> <span class="n">order</span> <span class="mi">1</span> <span class="n">using</span> <span class="nb">all</span> <span class="n">data</span> <span class="n">points</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Detrend</span> <span class="n">order</span> <span class="mi">1</span> <span class="n">using</span> <span class="nb">all</span> <span class="n">data</span> <span class="n">points</span>
 </pre></div>
 </div>
 <dl class="attribute">
@@ -912,7 +912,7 @@ using the <a class="reference internal" href="#geosoft.gxapi.GXFFT.set_vv" title
 <code class="descclassname">gxapi.</code><code class="descname">FFT_DETREND_MEAN</code><em class="property"> = 3</em><a class="headerlink" href="#geosoft.gxapi.FFT_DETREND_MEAN" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">remove</span> <span class="n">mean</span> <span class="n">value</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Remove</span> <span class="n">mean</span> <span class="n">value</span>
 </pre></div>
 </div>
 </div>

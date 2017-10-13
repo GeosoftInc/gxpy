@@ -45,13 +45,13 @@ EDB_PATH constants
 
 ::
 
-   file.gdb 
+   File.gdb 
 
 .. autoattribute:: geosoft.gxapi.EDB_PATH_NAME
 
 ::
 
-   file 
+   File 
 
 .. _EDB_PROF:
 

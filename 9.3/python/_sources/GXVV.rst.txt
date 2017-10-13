@@ -96,7 +96,7 @@ VV_LOG_NEGATIVE constants
 
 ::
 
-   dummies out value less than the minimum. 
+   Dummies out value less than the minimum. 
 
 .. autoattribute:: geosoft.gxapi.VV_LOG_NEGATIVE_YES
 
@@ -124,31 +124,31 @@ VV_LOOKUP constants
 
 ::
 
-   only exact matches are used 
+   Only exact matches are used 
 
 .. autoattribute:: geosoft.gxapi.VV_LOOKUP_NEAREST
 
 ::
 
-   nearest match is used (regardless of sampling range) 
+   Nearest match is used (regardless of sampling range) 
 
 .. autoattribute:: geosoft.gxapi.VV_LOOKUP_INTERPOLATE
 
 ::
 
-   interpolate between values (regardless of sampling range) 
+   Interpolate between values (regardless of sampling range) 
 
 .. autoattribute:: geosoft.gxapi.VV_LOOKUP_NEARESTCLOSE
 
 ::
 
-   use nearest match only if within sampling range 
+   Use nearest match only if within sampling range 
 
 .. autoattribute:: geosoft.gxapi.VV_LOOKUP_INTERPCLOSE
 
 ::
 
-   interpolate only if within sampling range 
+   Interpolate only if within sampling range 
 
 .. _VV_MASK:
 

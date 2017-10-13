@@ -132,79 +132,79 @@ IPJ_NAME constants
 
 ::
 
-   projected coordinate system name 
+   Projected coordinate system name 
 
 .. autoattribute:: geosoft.gxapi.IPJ_NAME_PROJECTION
 
 ::
 
-   projection name 
+   Projection name 
 
 .. autoattribute:: geosoft.gxapi.IPJ_NAME_METHOD
 
 ::
 
-   projection method name 
+   Projection method name 
 
 .. autoattribute:: geosoft.gxapi.IPJ_NAME_DATUM
 
 ::
 
-   datum name 
+   Datum name 
 
 .. autoattribute:: geosoft.gxapi.IPJ_NAME_ELLIPSOID
 
 ::
 
-   ellipsoid name 
+   Ellipsoid name 
 
 .. autoattribute:: geosoft.gxapi.IPJ_NAME_LDATUM
 
 ::
 
-   local datum name 
+   Local datum name 
 
 .. autoattribute:: geosoft.gxapi.IPJ_NAME_UNIT_ABBR
 
 ::
 
-   unit abbreviation 
+   Unit abbreviation 
 
 .. autoattribute:: geosoft.gxapi.IPJ_NAME_UNIT_FULL
 
 ::
 
-   full unit name 
+   Full unit name 
 
 .. autoattribute:: geosoft.gxapi.IPJ_NAME_TYPE
 
 ::
 
-   projection type description 
+   Projection type description 
 
 .. autoattribute:: geosoft.gxapi.IPJ_NAME_LLDATUM
 
 ::
 
-   datum transform table name 
+   Datum transform table name 
 
 .. autoattribute:: geosoft.gxapi.IPJ_NAME_METHOD_PARMS
 
 ::
 
-   projection method parameters in GXF order 
+   Projection method parameters in GXF order 
 
 .. autoattribute:: geosoft.gxapi.IPJ_NAME_METHOD_LABEL
 
 ::
 
-   projection method parameters labels 
+   Projection method parameters labels 
 
 .. autoattribute:: geosoft.gxapi.IPJ_NAME_DATUM_PARMS
 
 ::
 
-   datum parameters (major axis, flattening, prime meridian) 
+   Datum parameters (major axis, flattening, prime meridian) 
 
 .. autoattribute:: geosoft.gxapi.IPJ_NAME_LDATUM_PARMS
 
@@ -220,25 +220,25 @@ IPJ_NAME constants
 
 ::
 
-   geoid name if known 
+   Geoid name if known 
 
 .. autoattribute:: geosoft.gxapi.IPJ_NAME_LDATUMDESCRIPTION
 
 ::
 
-   local datum description 
+   Local datum description 
 
 .. autoattribute:: geosoft.gxapi.IPJ_NAME_METHOD_PARMS_NATIVE
 
 ::
 
-   projection method parameters in GXF order (Native units for eastings/northings) 
+   Projection method parameters in GXF order (Native units for eastings/northings) 
 
 .. autoattribute:: geosoft.gxapi.IPJ_NAME_ORIENTATION_PARMS
 
 ::
 
-   orientation parameters 
+   Orientation parameters 
 
 .. _IPJ_ORIENT:
 
@@ -464,48 +464,48 @@ IPJ_WARP constants
 
 ::
 
-   no warp 
+   No warp 
 
 .. autoattribute:: geosoft.gxapi.IPJ_WARP_TRANS1
 
 ::
 
-   translate only (needs 1 point) 
+   Translate only (needs 1 point) 
 
 .. autoattribute:: geosoft.gxapi.IPJ_WARP_TRANS2
 
 ::
 
-   translate, rotate, normal scale (needs 2 pts) 
+   Translate, rotate, normal scale (needs 2 pts) 
 
 .. autoattribute:: geosoft.gxapi.IPJ_WARP_TRANS3
 
 ::
 
-   translate, rotate, scale X and Y (needs 3 pts or more, least-square fit) 
+   Translate, rotate, scale X and Y (needs 3 pts or more, least-square fit) 
 
 .. autoattribute:: geosoft.gxapi.IPJ_WARP_QUAD
 
 ::
 
-   quadrilateral warp (needs 4 points) 
+   Quadrilateral warp (needs 4 points) 
 
 .. autoattribute:: geosoft.gxapi.IPJ_WARP_MULTIPOINT
 
 ::
 
-   multipoint warp (needs at least 3 points) 
+   Multipoint warp (needs at least 3 points) 
 
 .. autoattribute:: geosoft.gxapi.IPJ_WARP_LOG
 
 ::
 
-   convert from linear to log coords in X and/or Y 
+   Convert from linear to log coords in X and/or Y 
 
 .. autoattribute:: geosoft.gxapi.IPJ_WARP_MULTIPOINT_Y
 
 ::
 
-   multipoint warp in Y only (needs at least 3 points) 
+   Multipoint warp in Y only (needs at least 3 points) 
 
 	

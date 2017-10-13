@@ -75,7 +75,7 @@ PROJ_DISPLAY constants
 
 ::
 
-   Display the object unless user set option not too 
+   Display the object unless user set option not to 
 
 .. autoattribute:: geosoft.gxapi.PROJ_DISPLAY_ALWAYS
 

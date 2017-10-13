@@ -22,7 +22,7 @@ AGG_LAYER_ZONE constants
 ::
 
    
-   					If a colour table with no colour transform is passed
+   					If a color table with no color transform is passed
    					it will be used with the default zoning
    					method of the data, which is usually
    					AGG_LAYER_ZONE_EQUALAREA.

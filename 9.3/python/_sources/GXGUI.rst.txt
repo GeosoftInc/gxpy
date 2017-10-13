@@ -15,13 +15,13 @@ AOI_RETURN_STATE constants
 
 ::
 
-   AOI Query Return State 
+   AOI query return state 
 
 .. autoattribute:: geosoft.gxapi.AOI_RETURN_CANCEL
 
 ::
 
-   User Canceled 
+   User canceled 
 
 .. autoattribute:: geosoft.gxapi.AOI_RETURN_NODEFINE
 
@@ -114,13 +114,13 @@ FILE_FILTER constants
 
 ::
 
-   File Filters 
+   File filters 
 
 .. autoattribute:: geosoft.gxapi.FILE_FILTER_ALL
 
 ::
 
-   All Files              \ `*`\ .\ `*`\                   ANYWHERE 
+   All files              \ `*`\ .\ `*`\                   ANYWHERE 
 
 .. autoattribute:: geosoft.gxapi.FILE_FILTER_GDB
 
@@ -144,49 +144,49 @@ FILE_FILTER constants
 
 ::
 
-   Parameter Files        \ `*`\ .ini                GEOSOFT 
+   Parameter files        \ `*`\ .ini                GEOSOFT 
 
 .. autoattribute:: geosoft.gxapi.FILE_FILTER_OMN
 
 ::
 
-   Oasis Menu Files       \ `*`\ .omn                GEOSOFT 
+   Oasis Menu files       \ `*`\ .omn                GEOSOFT 
 
 .. autoattribute:: geosoft.gxapi.FILE_FILTER_VU
 
 ::
 
-   Oasis View Files       \ `*`\ .vu                 LOCAL 
+   Oasis View files       \ `*`\ .vu                 LOCAL 
 
 .. autoattribute:: geosoft.gxapi.FILE_FILTER_MAP
 
 ::
 
-   Oasis Map Files        \ `*`\ .map                LOCAL 
+   Oasis Map files        \ `*`\ .map                LOCAL 
 
 .. autoattribute:: geosoft.gxapi.FILE_FILTER_PRJ
 
 ::
 
-   Projection File        \ `*`\ .prj                LOCAL 
+   Projection file        \ `*`\ .prj                LOCAL 
 
 .. autoattribute:: geosoft.gxapi.FILE_FILTER_CON
 
 ::
 
-   Configuration File     \ `*`\ .con                LOCAL 
+   Configuration file     \ `*`\ .con                LOCAL 
 
 .. autoattribute:: geosoft.gxapi.FILE_FILTER_MNU
 
 ::
 
-   Sushi MNU Files        \ `*`\ .mnu                GEOSOFT 
+   Sushi MNU files        \ `*`\ .mnu                GEOSOFT 
 
 .. autoattribute:: geosoft.gxapi.FILE_FILTER_PDF
 
 ::
 
-   PDF Files              \ `*`\ .pdf                GEOSOFT 
+   PDF files              \ `*`\ .pdf                GEOSOFT 
 
 .. autoattribute:: geosoft.gxapi.FILE_FILTER_PLT
 
@@ -210,7 +210,7 @@ FILE_FILTER constants
 
 ::
 
-   Color Table            \ `*`\ .tbl                GEOSOFT 
+   Color table            \ `*`\ .tbl                GEOSOFT 
 
 .. autoattribute:: geosoft.gxapi.FILE_FILTER_ZON
 
@@ -258,61 +258,61 @@ FILE_FILTER constants
 
 ::
 
-   PNG Files              \ `*`\ .png                LOCAL 
+   PNG files              \ `*`\ .png                LOCAL 
 
 .. autoattribute:: geosoft.gxapi.FILE_FILTER_JPG
 
 ::
 
-   JPG Files              \ `*`\ .jpg                LOCAL 
+   JPG files              \ `*`\ .jpg                LOCAL 
 
 .. autoattribute:: geosoft.gxapi.FILE_FILTER_PCX
 
 ::
 
-   PCX Files              \ `*`\ .pcx                LOCAL 
+   PCX files              \ `*`\ .pcx                LOCAL 
 
 .. autoattribute:: geosoft.gxapi.FILE_FILTER_GIF
 
 ::
 
-   GIF Files              \ `*`\ .gif                LOCAL 
+   GIF files              \ `*`\ .gif                LOCAL 
 
 .. autoattribute:: geosoft.gxapi.FILE_FILTER_GRD
 
 ::
 
-   GRD Files              \ `*`\ .grd                LOCAL 
+   GRD files              \ `*`\ .grd                LOCAL 
 
 .. autoattribute:: geosoft.gxapi.FILE_FILTER_ERS
 
 ::
 
-   ERS Files              \ `*`\ .ers                LOCAL 
+   ERS files              \ `*`\ .ers                LOCAL 
 
 .. autoattribute:: geosoft.gxapi.FILE_FILTER_EPS
 
 ::
 
-   EPS Files              \ `*`\ .eps                LOCAL 
+   EPS files              \ `*`\ .eps                LOCAL 
 
 .. autoattribute:: geosoft.gxapi.FILE_FILTER_SHP
 
 ::
 
-   ArcView Shape Files    \ `*`\ .shp                LOCAL 
+   ArcView Shape files    \ `*`\ .shp                LOCAL 
 
 .. autoattribute:: geosoft.gxapi.FILE_FILTER_CGM
 
 ::
 
-   CGM Files              \ `*`\ .cgm                LOCAL 
+   CGM files              \ `*`\ .cgm                LOCAL 
 
 .. autoattribute:: geosoft.gxapi.FILE_FILTER_TAB
 
 ::
 
-   MapInfo Tab Files      \ `*`\ .tab                LOCAL 
+   MapInfo Tab files      \ `*`\ .tab                LOCAL 
 
 .. autoattribute:: geosoft.gxapi.FILE_FILTER_COMPS
 
@@ -324,7 +324,7 @@ FILE_FILTER constants
 
 ::
 
-   MapInfo Tab Files      \ `*`\ .tab                LOCAL 
+   MapInfo Tab files      \ `*`\ .tab                LOCAL 
 
 .. autoattribute:: geosoft.gxapi.FILE_FILTER_GPF
 
@@ -354,49 +354,49 @@ FILE_FILTER constants
 
 ::
 
-   Geosoft XYZ Files      \ `*`\ .xyz                LOCAL 
+   Geosoft XYZ files      \ `*`\ .xyz                LOCAL 
 
 .. autoattribute:: geosoft.gxapi.FILE_FILTER_BAR
 
 ::
 
-   Geosoft Bar File       \ `*`\ .geobar             LOCAL 
+   Geosoft Bar file       \ `*`\ .geobar             LOCAL 
 
 .. autoattribute:: geosoft.gxapi.FILE_FILTER_GEOSOFT_LICENSE
 
 ::
 
-   Geosoft License Files   \ `*`\ .geosoft_license   LOCAL 
+   Geosoft License files   \ `*`\ .geosoft_license   LOCAL 
 
 .. autoattribute:: geosoft.gxapi.FILE_FILTER_XML
 
 ::
 
-   XML Files              \ `*`\ .xml                LOCAL 
+   XML files              \ `*`\ .xml                LOCAL 
 
 .. autoattribute:: geosoft.gxapi.FILE_FILTER_GXNET
 
 ::
 
-   GX.NET Files           \ `*`\ .dll                GEOSOFT 
+   GX.NET files           \ `*`\ .dll                GEOSOFT 
 
 .. autoattribute:: geosoft.gxapi.FILE_FILTER_ECW
 
 ::
 
-   ECW Files              \ `*`\ .ecw                LOCAL 
+   ECW files              \ `*`\ .ecw                LOCAL 
 
 .. autoattribute:: geosoft.gxapi.FILE_FILTER_J2K
 
 ::
 
-   J2K JPEG 2000 Files    \ `*`\ .j2k                LOCAL 
+   J2K JPEG 2000 files    \ `*`\ .j2k                LOCAL 
 
 .. autoattribute:: geosoft.gxapi.FILE_FILTER_JP2
 
 ::
 
-   JP2 JPEG 2000 Files    \ `*`\ .jp2                LOCAL 
+   JP2 JPEG 2000 files    \ `*`\ .jp2                LOCAL 
 
 .. autoattribute:: geosoft.gxapi.FILE_FILTER_SEL
 
@@ -408,31 +408,31 @@ FILE_FILTER constants
 
 ::
 
-   SVG File               \ `*`\ .svg                LOCAL 
+   SVG file               \ `*`\ .svg                LOCAL 
 
 .. autoattribute:: geosoft.gxapi.FILE_FILTER_SVZ
 
 ::
 
-   SVG Compressed File    \ `*`\ .svz                LOCAL 
+   SVG Compressed file    \ `*`\ .svz                LOCAL 
 
 .. autoattribute:: geosoft.gxapi.FILE_FILTER_WRP
 
 ::
 
-   Warp File              \ `*`\ .wrp                LOCAL 
+   Warp file              \ `*`\ .wrp                LOCAL 
 
 .. autoattribute:: geosoft.gxapi.FILE_FILTER_MAPPLOT
 
 ::
 
-   MAPPLOT File           \ `*`\ .con                LOCAL 
+   MAPPLOT file           \ `*`\ .con                LOCAL 
 
 .. autoattribute:: geosoft.gxapi.FILE_FILTER_DTM
 
 ::
 
-   Surpac DTM Files       \ `*`\ .dtm                LOCAL 
+   Surpac DTM files       \ `*`\ .dtm                LOCAL 
 
 .. autoattribute:: geosoft.gxapi.FILE_FILTER_VOXEL
 
@@ -444,7 +444,7 @@ FILE_FILTER constants
 
 ::
 
-   Map Template File      \ `*`\ .geosoft_maptemplate      LOCAL 
+   Map Template file      \ `*`\ .geosoft_maptemplate      LOCAL 
 
 .. autoattribute:: geosoft.gxapi.FILE_FILTER_ACTION
 
@@ -498,19 +498,19 @@ FILE_FILTER constants
 
 ::
 
-   ArcGIS Layer Files			 \ `*`\ .lyr    LOCAL 
+   ArcGIS Layer files			 \ `*`\ .lyr    LOCAL 
 
 .. autoattribute:: geosoft.gxapi.FILE_FILTER_ARGIS_MXD
 
 ::
 
-   ArcGIS Map Document Files	 \ `*`\ .mxd    LOCAL 
+   ArcGIS Map Document files	 \ `*`\ .mxd    LOCAL 
 
 .. autoattribute:: geosoft.gxapi.FILE_FILTER_GOCAD_TS
 
 ::
 
-   GOCAD TSurf Files			 \ `*`\ .ts     LOCAL 
+   GOCAD TSurf files			 \ `*`\ .ts     LOCAL 
 
 .. autoattribute:: geosoft.gxapi.FILE_FILTER_LST
 
@@ -522,7 +522,7 @@ FILE_FILTER constants
 
 ::
 
-   GM-SYS Extern Coord Sys \ `*`\ .ecs               LOCAL 
+   GM-SYS external coordinate system     \ `*`\ .ecs     LOCAL 
 
 .. autoattribute:: geosoft.gxapi.FILE_FILTER_TARGET_FENCE
 
@@ -534,7 +534,7 @@ FILE_FILTER constants
 
 ::
 
-   GMSYS 3D Model \ `*`\ .geosoft_gms3d LOCAL 
+   GM-SYS 3D model   \ `*`\ .geosoft_gmsys3d    LOCAL 
 
 .. autoattribute:: geosoft.gxapi.FILE_FILTER_BT2
 
@@ -558,13 +558,13 @@ FILE_FILTER constants
 
 ::
 
-   Excel 97-2003 Workbook		\ `*`\ .xls					LOCAL 
+   Excel 97-2003 workbook		\ `*`\ .xls					LOCAL 
 
 .. autoattribute:: geosoft.gxapi.FILE_FILTER_XLSX
 
 ::
 
-   Excel 2007 Workbook 			\ `*`\ .xlsx				LOCAL 
+   Excel 2007 workbook 			\ `*`\ .xlsx				LOCAL 
 
 .. autoattribute:: geosoft.gxapi.FILE_FILTER_MDB
 
@@ -660,7 +660,7 @@ FILE_FILTER constants
 
 ::
 
-   SEGY files							\ `*`\ .sgy  			LOCAL 
+   SEG-Y files							\ `*`\ .sgy  			LOCAL 
 
 .. autoattribute:: geosoft.gxapi.FILE_FILTER_DAARC500
 
@@ -684,13 +684,13 @@ FILE_FILTER constants
 
 ::
 
-   GM-SYS									\ `*`\ .gms	LOCAL 
+   GM-SYS Profile model file		\ `*`\ .gms	LOCAL 
 
 .. autoattribute:: geosoft.gxapi.FILE_FILTER_FLT3D
 
 ::
 
-   Geosoft 3D filter Files			\ `*`\ .flt3d			LOCAL 
+   Geosoft 3D filter files			\ `*`\ .flt3d			LOCAL 
 
 .. autoattribute:: geosoft.gxapi.FILE_FILTER_RESOURCE_PACK
 
@@ -702,13 +702,13 @@ FILE_FILTER constants
 
 ::
 
-   Geostring Files \ `*`\ .geosoft_string LOCAL 
+   Geostring files \ `*`\ .geosoft_string LOCAL 
 
 .. autoattribute:: geosoft.gxapi.FILE_FILTER_GEOSURFACE
 
 ::
 
-   Geosurface Files \ `*`\ .geosoft_surface LOCAL 
+   Geosurface files \ `*`\ .geosoft_surface LOCAL 
 
 .. autoattribute:: geosoft.gxapi.FILE_FILTER_GEOSOFT3DV
 
@@ -738,7 +738,7 @@ FILE_FILTER constants
 
 ::
 
-   GMSYS 2D Model \ `*`\ .geosoft_gms2d LOCAL 
+   GM-SYS Profile model    \ `*`\ .geosoft_gmsys2d   LOCAL 
 
 .. autoattribute:: geosoft.gxapi.FILE_FILTER_IP_DATABASE_TEMPLATE
 
@@ -756,31 +756,31 @@ FILE_FILTER constants
 
 ::
 
-   Shell VT Files     \ `*`\ .vt        LOCAL 
+   Shell VT files     \ `*`\ .vt        LOCAL 
 
 .. autoattribute:: geosoft.gxapi.FILE_FILTER_INT
 
 ::
 
-   Shell INT Files     \ `*`\ .int      LOCAL 
+   Shell INT files     \ `*`\ .int      LOCAL 
 
 .. autoattribute:: geosoft.gxapi.FILE_FILTER_SGT
 
 ::
 
-   Shell SGT Files     \ `*`\ .sgt      LOCAL 
+   Shell SGT files     \ `*`\ .sgt      LOCAL 
 
 .. autoattribute:: geosoft.gxapi.FILE_FILTER_IMGVIEW
 
 ::
 
-   Image Viewer Files  \ `*`\ .imgview  LOCAL 
+   Image Viewer files  \ `*`\ .imgview  LOCAL 
 
 .. autoattribute:: geosoft.gxapi.FILE_FILTER_ZIP
 
 ::
 
-   Zip Files  \ `*`\ .zip  LOCAL 
+   Zip files  \ `*`\ .zip  LOCAL 
 
 .. autoattribute:: geosoft.gxapi.FILE_FILTER_GPS_TABLE
 
@@ -804,7 +804,7 @@ FILE_FILTER constants
 
 ::
 
-   Layout Files  \ `*`\ .prjview  LOCAL 
+   Layout files  \ `*`\ .prjview  LOCAL 
 
 .. autoattribute:: geosoft.gxapi.FILE_FILTER_LEAPFROG_MODEL
 
@@ -822,7 +822,7 @@ FILE_FILTER constants
 
 ::
 
-   ASEG ESF File  \ `*`\ .esf  LOCAL 
+   ASEG ESF file  \ `*`\ .esf  LOCAL 
 
 .. autoattribute:: geosoft.gxapi.FILE_FILTER_LACOSTE_DAT
 
