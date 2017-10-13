@@ -9,12 +9,11 @@ with open(join(dirname(__file__), 'pkg_info.json')) as fp:
 
 __version__ = "{}{}".format(_info['version'], _info['pre-release'])
 
-__all__ = ['gxapi', 'gxapi_cy', 'gxpy']
+__all__ = ['gxapi', 'gxpy']
 
 # docstring overrides for C++ classes inside gxapi module
 
 import geosoft.gxapi as gxapi
-import geosoft.gxapi_cy as gxapi_cy
 
 gxapi.GXCancel.__doc__ = '''
 A subclass of `SystemExit <https://docs.python.org/3/library/exceptions.html#SystemExit>`_ which is raised when a 
