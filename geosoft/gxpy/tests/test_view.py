@@ -63,6 +63,7 @@ class Test(GXPYTest):
             self.assertTrue('base' in vlist)
             self.assertTrue('data' in vlist)
             with gxv.View(gmap, 'base') as v:
+                self.assertTrue(v.guid)
                 self.assertEqual(v.name, "base")
                 self.assertEqual(v.scale, 1000.0)
                 self.assertEqual(v.aspect, 1.0)

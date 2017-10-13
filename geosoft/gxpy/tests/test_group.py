@@ -106,6 +106,7 @@ class Test(GXPYTest):
             with gxv.View(map, 'data') as v:
                 with gxg.Draw(v, 'rectangle') as g:
 
+                    self.assertTrue(g.guid)
                     meta = g.gx_metadata
                     meta.node_token('maki/data/more')
                     meta.set_attribute('/maki/data/more/scale', 45)

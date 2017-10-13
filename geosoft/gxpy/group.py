@@ -298,8 +298,7 @@ class Group:
                     try:
                         self._meta.gxmeta.serial(bf)
                         bf.seek(0, gxapi.BF_SEEK_START)
-                        group_number = self.view.gxview.find_group(self.name)
-                        self.view.gxview.write_group_storage(group_number, "Geosoft_META", bf)
+                        self.view.gxview.write_group_storage(self.number, "Geosoft_META", bf)
                     finally:
                         del bf
 
@@ -379,6 +378,17 @@ class Group:
     def close(self):
         """ Close the group, unlocks the view"""
         self._close()
+
+    @property
+    def guid(self):
+        """
+        The group GUID.
+
+        .. versionadded:: 9.3
+        """
+        sr = gxapi.str_ref()
+        self.view.gxview.get_group_guid(self.number, sr)
+        return sr.value
 
     @property
     def view(self):

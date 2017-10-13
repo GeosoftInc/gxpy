@@ -293,6 +293,17 @@ class View:
         """name of the view distance units"""
         return self._uname
 
+    @property
+    def guid(self):
+        """
+        The view GUID.
+
+        .. versionadded:: 9.3
+        """
+        sr = gxapi.str_ref()
+        self.gxview.get_guid(sr)
+        return sr.value
+
     def mdf(self, base_view=None):
         """
         Returns the Map Description File specification for this view as a data view.
