@@ -58,7 +58,7 @@ Helper classes to pass immutable values by reference
 ----------------------------------------------------
 
 Each of the classes below can be used to pass these immutable types by reference to the GX API.
-Instances of the objects have a :code`value` property that holds the reference to the immutable.
+Instances of the objects have a :code:`value` property that holds the reference to the immutable object.
 
 .. autoclass:: geosoft.gxapi.str_ref()
 
