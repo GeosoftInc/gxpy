@@ -27,7 +27,6 @@ information.
 .. autoclass:: geosoft.gxapi.GXContext
    :members:
 
-_sources/config.rst.txt
 
 GXAPI Instance Resource Garbage Collection
 ------------------------------------------

@@ -55,7 +55,7 @@ Helper classed to pass immutable values by reference
 
 
 Each of the classes above can be used to pass these immutable types by reference to the GX API.
-Instances of the objects has a ``value`` property holding a reference to the immutable.
+Instances of the objects has a ``value`` property holding a reference to the immutable object.
 
 Default instances will be intialized with dummy values for ``float_ref`` and ``int_ref``, an empty string
 for ``str_ref`` and ``False`` for ``bool_ref``. One can also set the value during intialization or assigning 
