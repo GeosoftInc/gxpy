@@ -1,4 +1,3 @@
-import numpy as np
 import os
 import unittest
 
@@ -59,8 +58,10 @@ class Test(GXPYTest):
         self.assertEqual(d['a'], 25)
         self.assertEqual(d['b'], [1, 2])
 
-        wa = gxapi.GXWA.create('test_meta.txt', 0)
-        meta.gxmeta.write_text(wa)
+        md = meta.meta_dict()
+        self.assertTrue('Maki' in md)
+        self.assertTrue('float' in md['Maki']['data']['more'])
+        self.assertTrue('json' in md)
 
 
 ##############################################################################################

@@ -16,8 +16,11 @@ Geosoft metadata.
 
 """
 
+import os
 import geosoft
 import geosoft.gxapi as gxapi
+from . import gx as gx
+from . import utility as gxu
 import json
 
 __version__ = geosoft.__version__
@@ -219,3 +222,78 @@ class Metadata:
                 if sr.value.startswith('__json__'):
                     return json.loads(sr.value[8:])
                 return sr.value
+
+    def meta_dict(self):
+        """
+        Metadata content as a dictionary. Geosoft objects will appear as descriptive text strings.
+
+        :return: dictionary of metadata
+
+        .. versionadded:: 9.3
+        """
+
+        def parse_node(s):
+            nest = 0
+            while s[0] == ' ':
+                nest += 1
+                s = s[3:]
+            name = s[1:]
+            return name, nest
+
+        def parse_attr(s):
+            parts = s.split('=', 1)
+            if len(parts) >= 2:
+                return parts[0].lstrip(), parts[1][1:-1]
+            else:
+                return parts[0].lstrip(), None
+
+
+        def metadict(ff):
+
+            def getone(ff, i):
+                d = {}
+                node_name, nest = parse_node(ff[i])
+                i += 1
+                while i < len(ff):
+                    while ff[i].lstrip()[0] != '\\':
+                        name, val = parse_attr(ff[i])
+                        if isinstance(val, str):
+                            if val.startswith('__json__'):
+                                val = val[8:].replace('\\"', '"')
+                                val = json.loads(val)
+                            d[name] = val
+                        else:
+                            d[name] = val
+                        i += 1
+                        if i == len(ff):
+                            return node_name, d, i
+                    else:
+                        next_name, next_nest = parse_node(ff[i])
+                        if next_nest <= nest:
+                            return node_name, d, i
+                        nn, dd, i = getone(ff, i)
+                        d[nn] = dd
+                return node_name, d, i
+
+            d = {}
+            name, dd, i = getone(ff, 0)
+            d[name] = dd
+            while i < len(ff):
+                name, dd, i = getone(ff, i)
+                d[name] = dd
+            return d
+
+        metafile = os.path.join(gx.GXpy().temp_folder(), 'meta_' + gxu.uuid())
+        wa = gxapi.GXWA.create(metafile, gxapi.WA_NEW)
+        self.gxmeta.write_text(wa)
+        wa = None
+        ff = []
+        with open(metafile, 'r') as f:
+            for line in f:
+                line = line.rstrip()
+                if line:
+                    ff.append(line)
+        os.remove(metafile)
+
+        md = metadict(ff)
+        return md
