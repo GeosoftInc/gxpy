@@ -30,6 +30,7 @@ from . import va as gxva
 from . import utility as gxu
 from . import gx as gx
 from . import coordinate_system as gxcs
+from . import metadata as gxmeta
 
 __version__ = geosoft.__version__
 
@@ -298,9 +299,9 @@ class Geosoft_gdb:
                         self._edb.un_lock()
                     self._edb = None
 
-                if self._metadata_changed:
+                if self._xmlmetadata_changed:
                     with open(self._file_name + '.xml', 'w+') as f:
-                        f.write(gxu.xml_from_dict(self._metadata))
+                        f.write(gxu.xml_from_dict(self._xmlmetadata))
                     self._db.sync()
 
                 self._db = None
@@ -323,9 +324,9 @@ class Geosoft_gdb:
         self._file_name = None
         self._db = None
         self._edb = None
-        self._metadata = None
-        self._metadata_changed = False
-        self._metadata_root = ''
+        self._xmlmetadata = None
+        self._xmlmetadata_changed = False
+        self._xmlmetadata_root = ''
 
         self._open = gx.track_resource(self.__class__.__name__, self._file_name)
 
@@ -491,28 +492,58 @@ class Geosoft_gdb:
         if z:
             self.gxdb.set_xyz_chan(2, z)
 
-    def _init_metadata(self):
-        if not self._metadata:
-            self._metadata = gxu.geosoft_metadata(self._file_name)
-        self._metadata_root = tuple(self._metadata.items())[0][0]
-
+    def _init_xmlmetadata(self):
+        if not self._xmlmetadata:
+            self._xmlmetadata = gxu.geosoft_metadata(self._file_name)
+        self._xmlmetadata_root = tuple(self._xmlmetadata.items())[0][0]
 
     @property
     def metadata(self):
         """
-        Return the database metadata as a dictionary.  Can be set, in which case
-        the dictionary items passed will be added to, or replace existing metadata.
+        Return the database XML metadata as a dictionary.  Can be set, in which case
+        the dictionary items passed will be added to, or replace existing XML metadata.
 
         .. versionadded:: 9.2
         """
-        self._init_metadata()
-        return self._metadata[self._metadata_root]
+        self._init_xmlmetadata()
+        return self._xmlmetadata[self._xmlmetadata_root]
 
     @metadata.setter
     def metadata(self, meta):
-        self._init_metadata()
-        self._metadata[self._metadata_root] = gxu.merge_dict(self._metadata[self._metadata_root], meta)
-        self._metadata_changed = True
+        self._init_xmlmetadata()
+        self._xmlmetadata[self._xmlmetadata_root] = gxu.merge_dict(self._xmlmetadata[self._xmlmetadata_root], meta)
+        self._xmlmetadata_changed = True
+
+    def get_gxmeta(self):
+        """
+        Return the database Geosoft metadata as a Geosoft :class:`geosoft.gxpy.metadata.Metadata` instance.
+
+        The internal database metadata is used to store various database properties that are not intended
+        to be part of the exposed dataset metadata exposed by the :attr:metadata property.
+
+        If you wish to add your own metadata to the internal properties you can use the
+        :mod:geosoft.gxpy.metadata module to add metadata and save it to the database using
+        :func:geosoft.gxapi.GXDB.set_meta.
+
+        .. versionadded:: 9.3
+        """
+        gxm = gxapi.GXMETA.create()
+        self.gxdb.get_meta(gxm)
+        return gxmeta.Metadata(gxm)
+
+    def update_gxmeta(self, meta, replace=False):
+        """
+        Update the database Geosoft metadata as a Geosoft :class:`geosoft.gxpy.metadata.Metadata` instance.
+
+        :param meta:    the new metadata as a :class:`geosoft.gxpy.Metadata` instance
+        :param relace:  True to replace all database metadata.
+
+
+        .. versionadded:: 9.3
+        """
+        gxm = gxapi.GXMETA.create()
+        self.gxdb.get_meta(gxm)
+        return gxmeta.Metadata(gxm)
 
     @property
     def file_name(self):
