@@ -1130,7 +1130,7 @@ class Test(GXPYTest):
             self.assertEqual(maki['units'], 'nT')
 
         with gxdb.Geosoft_gdb.open(self.gdb_name) as g:
-            d = g.get_gxmeta().meta_dict()
+            d = g.get_gx_metadata().meta_dict()
             self.assertTrue('Geosoft' in d)
 
     def test_coordinate_system(self):

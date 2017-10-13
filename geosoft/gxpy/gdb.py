@@ -514,7 +514,7 @@ class Geosoft_gdb:
         self._xmlmetadata[self._xmlmetadata_root] = gxu.merge_dict(self._xmlmetadata[self._xmlmetadata_root], meta)
         self._xmlmetadata_changed = True
 
-    def get_gxmeta(self):
+    def get_gx_metadata(self):
         """
         Return the database Geosoft metadata as a Geosoft :class:`geosoft.gxpy.metadata.Metadata` instance.
 

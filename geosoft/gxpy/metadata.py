@@ -82,7 +82,7 @@ class Metadata:
         if metadata:
             self._gxmeta = metadata
         else:
-            self._gxmeta = {}
+            self._gxmeta = gxapi.GXMETA.create()
 
     @property
     def gxmeta(self):
@@ -295,5 +295,7 @@ class Metadata:
                     ff.append(line)
         os.remove(metafile)
 
-        md = metadict(ff)
-        return md
+        if ff:
+            return metadict(ff)
+        else:
+            return {}
