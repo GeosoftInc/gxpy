@@ -476,8 +476,8 @@
   <HelpKINode Title="BARCHART_LABEL_PEND enumeration member" Url="html/T_GeoEngine_Core_GXNet_IntConstants.htm" />
   <HelpKINode Title="BARCHART_LABEL_PEND field" Url="html/F_GeoEngine_Core_GXNet_Constant_BARCHART_LABEL_PEND.htm" />
   <HelpKINode Title="BarPlot method" Url="html/M_Geosoft_Desktop_GXNet_CCHIMERA_BarPlot.htm" />
-  <HelpKINode Title="Base field" Url="html/F_GeoEngine_Core_GXNet_META_CORE_CLASSConstant_Base.htm" />
   <HelpKINode Title="BASE field" Url="html/F_GeoEngine_Core_GXNet_DB_LINE_TYPEConstant_BASE.htm" />
+  <HelpKINode Title="Base field" Url="html/F_GeoEngine_Core_GXNet_META_CORE_CLASSConstant_Base.htm" />
   <HelpKINode Title="BaseData method" Url="html/M_Geosoft_Desktop_GXNet_CDU_BaseData.htm" />
   <HelpKINode Title="BaseDataEx method" Url="html/M_Geosoft_Desktop_GXNet_CDU_BaseDataEx.htm" />
   <HelpKINode Title="BB_TEMPLATE_I2 field" Url="html/F_Geosoft_Desktop_GXNet_FILE_FILTERConstant_BB_TEMPLATE_I2.htm" />
@@ -10529,8 +10529,8 @@
   <HelpKINode Title="GeoEngine.Core.GXNet.WA_OPENConstant class" Url="html/T_GeoEngine_Core_GXNet_WA_OPENConstant.htm" />
   <HelpKINode Title="GEOGR field" Url="html/F_GeoEngine_Core_GXNet_DB_CHAN_FORMATConstant_GEOGR.htm" />
   <HelpKINode Title="GEOGRAPHIC field" Url="html/F_Geosoft_Desktop_GXNet_IP_STACK_TYPEConstant_GEOGRAPHIC.htm" />
-  <HelpKINode Title="GeoGxHandle property" Url="html/P_GeoEngine_Core_GXNet_CGXNETCore_GeoGxHandle.htm" />
   <HelpKINode Title="GeoGXHandle property" Url="html/P_GeoEngine_Core_GXNet_CHANDLE_GeoGXHandle.htm" />
+  <HelpKINode Title="GeoGxHandle property" Url="html/P_GeoEngine_Core_GXNet_CGXNETCore_GeoGxHandle.htm" />
   <HelpKINode Title="GEOID field">
     <HelpKINode Title="IPJ_NAMEConstant.GEOID Field" Url="html/F_GeoEngine_Core_GXNet_IPJ_NAMEConstant_GEOID.htm" />
     <HelpKINode Title="PJ_ELEVATIONConstant.GEOID Field" Url="html/F_GeoEngine_Core_GXNet_PJ_ELEVATIONConstant_GEOID.htm" />
@@ -12645,8 +12645,8 @@
   <HelpKINode Title="IiImportDrillDatabaseODBC method" Url="html/Overload_Geosoft_Desktop_GXNet_CGUI_IiImportDrillDatabaseODBC.htm" />
   <HelpKINode Title="IiImportDrillDatabaseODBCMaxwell method" Url="html/Overload_Geosoft_Desktop_GXNet_CGUI_IiImportDrillDatabaseODBCMaxwell.htm" />
   <HelpKINode Title="iIMGTYPE field" Url="html/F_GeoEngine_Core_GXNet_IMG_QUERYConstant_iIMGTYPE.htm" />
-  <HelpKINode Title="iImportAsciiWizard method" Url="html/Overload_Geosoft_Desktop_GXNet_CGUI_iImportAsciiWizard.htm" />
   <HelpKINode Title="IImportAsciiWizard method" Url="html/M_Geosoft_Desktop_GXNet_CSEMPLOT_IImportAsciiWizard.htm" />
+  <HelpKINode Title="iImportAsciiWizard method" Url="html/Overload_Geosoft_Desktop_GXNet_CGUI_iImportAsciiWizard.htm" />
   <HelpKINode Title="IImportBIN3 method" Url="html/M_Geosoft_Desktop_GXNet_CDU_IImportBIN3.htm" />
   <HelpKINode Title="iImportChemDatabase method" Url="html/Overload_Geosoft_Desktop_GXNet_CGUI_iImportChemDatabase.htm" />
   <HelpKINode Title="iImportChemDatabaseADO method" Url="html/Overload_Geosoft_Desktop_GXNet_CGUI_iImportChemDatabaseADO.htm" />
@@ -13249,8 +13249,8 @@
   <HelpKINode Title="iNSlices method" Url="html/M_GeoEngine_Core_GXNet_CPG_iNSlices.htm" />
   <HelpKINode Title="INT field" Url="html/F_Geosoft_Desktop_GXNet_FILE_FILTERConstant_INT.htm" />
   <HelpKINode Title="IntConstants enumeration">
-    <HelpKINode Title="IntConstants Enumeration" Url="html/T_Geosoft_Desktop_GXNet_IntConstants.htm" />
     <HelpKINode Title="IntConstants Enumeration" Url="html/T_GeoEngine_Core_GXNet_IntConstants.htm" />
+    <HelpKINode Title="IntConstants Enumeration" Url="html/T_Geosoft_Desktop_GXNet_IntConstants.htm" />
   </HelpKINode>
   <HelpKINode Title="InternalItem method" Url="html/M_GeoEngine_Core_GXNet_Vector_InternalItem.htm" />
   <HelpKINode Title="InternalUtils class">
@@ -17311,10 +17311,10 @@
     <HelpKINode Title="CDB.SetMETA Method " Url="html/M_GeoEngine_Core_GXNet_CDB_SetMETA.htm" />
     <HelpKINode Title="CDOCU.SetMETA Method " Url="html/M_Geosoft_Desktop_GXNet_CDOCU_SetMETA.htm" />
     <HelpKINode Title="CGIS.SetMETA Method " Url="html/M_GeoEngine_Core_GXNet_CGIS_SetMETA.htm" />
+    <HelpKINode Title="CHGD.SetMETA Method " Url="html/M_GeoEngine_Core_GXNet_CHGD_SetMETA.htm" />
     <HelpKINode Title="CHXYZ.SetMETA Method " Url="html/M_GeoEngine_Core_GXNet_CHXYZ_SetMETA.htm" />
     <HelpKINode Title="CIMG.SetMETA Method " Url="html/M_GeoEngine_Core_GXNet_CIMG_SetMETA.htm" />
     <HelpKINode Title="CMAP.SetMETA Method " Url="html/M_GeoEngine_Core_GXNet_CMAP_SetMETA.htm" />
-    <HelpKINode Title="CHGD.SetMETA Method " Url="html/M_GeoEngine_Core_GXNet_CHGD_SetMETA.htm" />
     <HelpKINode Title="CVOX.SetMETA Method " Url="html/M_GeoEngine_Core_GXNet_CVOX_SetMETA.htm" />
   </HelpKINode>
   <HelpKINode Title="SetMeta method" Url="html/M_GeoEngine_Core_GXNet_CMVIEW_SetMeta.htm" />

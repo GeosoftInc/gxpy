@@ -3,15 +3,15 @@
 
   <HelpTOCNode Title="Welcome" Url="html/welcome.htm" />
   <HelpTOCNode Title="Version History" Url="html/version-history.htm" />
-  <HelpTOCNode Id="b07b7fc5-7dd9-4991-8a2b-65da3ecb5c32" Title="GeoEngine.Core.GXNet" Url="html/N_GeoEngine_Core_GXNet.htm">
-    <HelpTOCNode Id="41c9ea45-838b-4cd5-9eb6-a587df4e3244" Title="ByteVector Class" Url="html/T_GeoEngine_Core_GXNet_ByteVector.htm">
+  <HelpTOCNode Id="b717d5c5-a557-4387-968b-11ca528651b1" Title="GeoEngine.Core.GXNet" Url="html/N_GeoEngine_Core_GXNet.htm">
+    <HelpTOCNode Id="5b8e8ba4-71af-45d6-857d-514d43d77804" Title="ByteVector Class" Url="html/T_GeoEngine_Core_GXNet_ByteVector.htm">
       <HelpTOCNode Title="ByteVector Constructor " Url="html/M_GeoEngine_Core_GXNet_ByteVector__ctor.htm" />
-      <HelpTOCNode Id="c0a62bb1-9231-44f9-9a31-cd8b872d4eec" Title="ByteVector Properties" Url="html/Properties_T_GeoEngine_Core_GXNet_ByteVector.htm">
+      <HelpTOCNode Id="baac82fc-6596-4b7c-bdfa-f97a17cc5b3a" Title="ByteVector Properties" Url="html/Properties_T_GeoEngine_Core_GXNet_ByteVector.htm">
         <HelpTOCNode Title="Item Property " Url="html/P_GeoEngine_Core_GXNet_ByteVector_Item.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="6e182253-f834-40b3-9814-784c9754c363" Title="C3DN Class" Url="html/T_GeoEngine_Core_GXNet_C3DN.htm">
-      <HelpTOCNode Id="40c08df7-63ae-4fb1-8250-9b8ff17f6184" Title="C3DN Methods" Url="html/Methods_T_GeoEngine_Core_GXNet_C3DN.htm">
+    <HelpTOCNode Id="44655316-f13d-41b8-a59e-12bf0c5a7524" Title="C3DN Class" Url="html/T_GeoEngine_Core_GXNet_C3DN.htm">
+      <HelpTOCNode Id="0c0b19e4-4396-45d9-a481-63e88450b187" Title="C3DN Methods" Url="html/Methods_T_GeoEngine_Core_GXNet_C3DN.htm">
         <HelpTOCNode Title="Copy Method " Url="html/M_GeoEngine_Core_GXNet_C3DN_Copy.htm" />
         <HelpTOCNode Title="Create Method " Url="html/M_GeoEngine_Core_GXNet_C3DN_Create.htm" />
         <HelpTOCNode Title="Dispose Method " Url="html/M_GeoEngine_Core_GXNet_C3DN_Dispose.htm" />
@@ -31,8 +31,8 @@
         <HelpTOCNode Title="SetShading Method " Url="html/M_GeoEngine_Core_GXNet_C3DN_SetShading.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="70a80688-db84-48d2-9560-2800cd4e8b5b" Title="C3DV Class" Url="html/T_GeoEngine_Core_GXNet_C3DV.htm">
-      <HelpTOCNode Id="b5a0a8ef-d2bc-47d0-8f84-075ca2aeea3b" Title="C3DV Methods" Url="html/Methods_T_GeoEngine_Core_GXNet_C3DV.htm">
+    <HelpTOCNode Id="3d0b40ab-5d83-4f30-a98a-19e490b65ae9" Title="C3DV Class" Url="html/T_GeoEngine_Core_GXNet_C3DV.htm">
+      <HelpTOCNode Id="95ff54ea-4b60-4790-832b-f08a0a1760c1" Title="C3DV Methods" Url="html/Methods_T_GeoEngine_Core_GXNet_C3DV.htm">
         <HelpTOCNode Title="CRC3DV Method " Url="html/M_GeoEngine_Core_GXNet_C3DV_CRC3DV.htm" />
         <HelpTOCNode Title="CreateNew Method " Url="html/M_GeoEngine_Core_GXNet_C3DV_CreateNew.htm" />
         <HelpTOCNode Title="FromMap Method " Url="html/M_GeoEngine_Core_GXNet_C3DV_FromMap.htm" />
@@ -41,8 +41,8 @@
         <HelpTOCNode Title="OpenMVIEW Method " Url="html/M_GeoEngine_Core_GXNet_C3DV_OpenMVIEW.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="e77d57b8-9a56-48dc-ad00-98a7004973cd" Title="CAGG Class" Url="html/T_GeoEngine_Core_GXNet_CAGG.htm">
-      <HelpTOCNode Id="64fb0bbf-664a-4f91-922e-1fd77805cb90" Title="CAGG Methods" Url="html/Methods_T_GeoEngine_Core_GXNet_CAGG.htm">
+    <HelpTOCNode Id="8c2eae59-588a-4c74-a0da-c88a0b7aad77" Title="CAGG Class" Url="html/T_GeoEngine_Core_GXNet_CAGG.htm">
+      <HelpTOCNode Id="dfdd0175-2560-4312-9ea1-41e164f84d71" Title="CAGG Methods" Url="html/Methods_T_GeoEngine_Core_GXNet_CAGG.htm">
         <HelpTOCNode Title="ChangeBrightness Method " Url="html/M_GeoEngine_Core_GXNet_CAGG_ChangeBrightness.htm" />
         <HelpTOCNode Title="Create Method " Url="html/M_GeoEngine_Core_GXNet_CAGG_Create.htm" />
         <HelpTOCNode Title="CreateMap Method " Url="html/M_GeoEngine_Core_GXNet_CAGG_CreateMap.htm" />
@@ -59,8 +59,8 @@
         <HelpTOCNode Title="SetRenderMethod Method " Url="html/M_GeoEngine_Core_GXNet_CAGG_SetRenderMethod.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="cf82bd80-c657-4eec-bba1-590dad1b4ee5" Title="CBF Class" Url="html/T_GeoEngine_Core_GXNet_CBF.htm">
-      <HelpTOCNode Id="b8371f86-ae98-4316-8a62-7edb3dedede4" Title="CBF Methods" Url="html/Methods_T_GeoEngine_Core_GXNet_CBF.htm">
+    <HelpTOCNode Id="63b975ac-4a28-4995-adef-9417031ba8c1" Title="CBF Class" Url="html/T_GeoEngine_Core_GXNet_CBF.htm">
+      <HelpTOCNode Id="20b5455f-a683-4915-8d02-b4d2430ec338" Title="CBF Methods" Url="html/Methods_T_GeoEngine_Core_GXNet_CBF.htm">
         <HelpTOCNode Title="ChSize Method " Url="html/M_GeoEngine_Core_GXNet_CBF_ChSize.htm" />
         <HelpTOCNode Title="Copy Method " Url="html/M_GeoEngine_Core_GXNet_CBF_Copy.htm" />
         <HelpTOCNode Title="CRC Method " Url="html/M_GeoEngine_Core_GXNet_CBF_CRC.htm" />
@@ -88,8 +88,8 @@
         <HelpTOCNode Title="WriteVV Method " Url="html/M_GeoEngine_Core_GXNet_CBF_WriteVV.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="95aa639e-49c1-4fd4-87fc-fe2002511cf8" Title="CDAT Class" Url="html/T_GeoEngine_Core_GXNet_CDAT.htm">
-      <HelpTOCNode Id="4a22fdbd-ee56-40f9-a4bb-bc4b1ec76c3c" Title="CDAT Methods" Url="html/Methods_T_GeoEngine_Core_GXNet_CDAT.htm">
+    <HelpTOCNode Id="b4219658-7ca3-4303-a7ca-0d2a48dbca57" Title="CDAT Class" Url="html/T_GeoEngine_Core_GXNet_CDAT.htm">
+      <HelpTOCNode Id="1d4f8ff0-5ad2-4eca-818d-798ae15ce483" Title="CDAT Methods" Url="html/Methods_T_GeoEngine_Core_GXNet_CDAT.htm">
         <HelpTOCNode Title="CreateDB Method " Url="html/M_GeoEngine_Core_GXNet_CDAT_CreateDB.htm" />
         <HelpTOCNode Title="CreateXGD Method " Url="html/M_GeoEngine_Core_GXNet_CDAT_CreateXGD.htm" />
         <HelpTOCNode Title="Dispose Method " Url="html/M_GeoEngine_Core_GXNet_CDAT_Dispose.htm" />
@@ -97,8 +97,8 @@
         <HelpTOCNode Title="RangeXYZ Method " Url="html/M_GeoEngine_Core_GXNet_CDAT_RangeXYZ.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="408ff99a-0633-42fa-8a06-e4011ab900ae" Title="CDATALINKD Class" Url="html/T_GeoEngine_Core_GXNet_CDATALINKD.htm">
-      <HelpTOCNode Id="02da56f3-5e17-486a-8533-f259a08a9cca" Title="CDATALINKD Methods" Url="html/Methods_T_GeoEngine_Core_GXNet_CDATALINKD.htm">
+    <HelpTOCNode Id="34ab740c-a0e2-487a-a147-94450f4a1cf0" Title="CDATALINKD Class" Url="html/T_GeoEngine_Core_GXNet_CDATALINKD.htm">
+      <HelpTOCNode Id="869d61d3-413e-4c8d-ba13-19a9f5099dd6" Title="CDATALINKD Methods" Url="html/Methods_T_GeoEngine_Core_GXNet_CDATALINKD.htm">
         <HelpTOCNode Title="CreateArcLYR Method " Url="html/M_GeoEngine_Core_GXNet_CDATALINKD_CreateArcLYR.htm" />
         <HelpTOCNode Title="CreateArcLYREx Method " Url="html/M_GeoEngine_Core_GXNet_CDATALINKD_CreateArcLYREx.htm" />
         <HelpTOCNode Title="CreateArcLYRFromTMP Method " Url="html/M_GeoEngine_Core_GXNet_CDATALINKD_CreateArcLYRFromTMP.htm" />
@@ -109,14 +109,14 @@
         <HelpTOCNode Title="GetIPJ Method " Url="html/M_GeoEngine_Core_GXNet_CDATALINKD_GetIPJ.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="2ffd0f84-61a2-4757-b484-2623955848fa" Title="CDATAMINE Class" Url="html/T_GeoEngine_Core_GXNet_CDATAMINE.htm">
-      <HelpTOCNode Id="9fff0dba-0cc0-470d-bf31-abf83d447640" Title="CDATAMINE Methods" Url="html/Methods_T_GeoEngine_Core_GXNet_CDATAMINE.htm">
+    <HelpTOCNode Id="c87bab56-a57f-4360-b0f4-d738b9a6a309" Title="CDATAMINE Class" Url="html/T_GeoEngine_Core_GXNet_CDATAMINE.htm">
+      <HelpTOCNode Id="7568805b-62e0-4b81-90a4-095fa2589eca" Title="CDATAMINE Methods" Url="html/Methods_T_GeoEngine_Core_GXNet_CDATAMINE.htm">
         <HelpTOCNode Title="CreateVoxel Method " Url="html/M_GeoEngine_Core_GXNet_CDATAMINE_CreateVoxel.htm" />
         <HelpTOCNode Title="NumericFieldLST Method " Url="html/M_GeoEngine_Core_GXNet_CDATAMINE_NumericFieldLST.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="0ddfd9b1-b7fe-41c5-9b7b-edb341299cf1" Title="CDB Class" Url="html/T_GeoEngine_Core_GXNet_CDB.htm">
-      <HelpTOCNode Id="83e9c59a-1fe6-453f-86dc-08311b2c43df" Title="CDB Methods" Url="html/Methods_T_GeoEngine_Core_GXNet_CDB.htm">
+    <HelpTOCNode Id="74ac513a-a55f-4f5d-8daa-a12de174aff8" Title="CDB Class" Url="html/T_GeoEngine_Core_GXNet_CDB.htm">
+      <HelpTOCNode Id="69173714-23d1-4012-954f-eac1bf8c22ca" Title="CDB Methods" Url="html/Methods_T_GeoEngine_Core_GXNet_CDB.htm">
         <HelpTOCNode Title="AddAssociatedLoad Method " Url="html/M_GeoEngine_Core_GXNet_CDB_AddAssociatedLoad.htm" />
         <HelpTOCNode Title="AddComment Method " Url="html/M_GeoEngine_Core_GXNet_CDB_AddComment.htm" />
         <HelpTOCNode Title="AddIntComment Method " Url="html/M_GeoEngine_Core_GXNet_CDB_AddIntComment.htm" />
@@ -299,8 +299,8 @@
         <HelpTOCNode Title="WriteBlobBF Method " Url="html/M_GeoEngine_Core_GXNet_CDB_WriteBlobBF.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="bcf232da-9da9-46f2-bc3a-5dd6c0a5d6d1" Title="CDBREAD Class" Url="html/T_GeoEngine_Core_GXNet_CDBREAD.htm">
-      <HelpTOCNode Id="4c19faae-5dce-4936-8301-ba911b1a4cb8" Title="CDBREAD Methods" Url="html/Methods_T_GeoEngine_Core_GXNet_CDBREAD.htm">
+    <HelpTOCNode Id="d14444f0-9740-4c23-9287-65829e7c3e08" Title="CDBREAD Class" Url="html/T_GeoEngine_Core_GXNet_CDBREAD.htm">
+      <HelpTOCNode Id="3e0b1c58-c30f-4855-8213-6830c7da254b" Title="CDBREAD Methods" Url="html/Methods_T_GeoEngine_Core_GXNet_CDBREAD.htm">
         <HelpTOCNode Title="Create Method " Url="html/M_GeoEngine_Core_GXNet_CDBREAD_Create.htm" />
         <HelpTOCNode Title="CreateXY Method " Url="html/M_GeoEngine_Core_GXNet_CDBREAD_CreateXY.htm" />
         <HelpTOCNode Title="CreateXYZ Method " Url="html/M_GeoEngine_Core_GXNet_CDBREAD_CreateXYZ.htm" />
@@ -316,8 +316,8 @@
         <HelpTOCNode Title="iGetNumberOfBlocksToProcess Method " Url="html/M_GeoEngine_Core_GXNet_CDBREAD_iGetNumberOfBlocksToProcess.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="ac8112dd-a413-47ea-8d09-804ee87e4b9a" Title="CDBWRITE Class" Url="html/T_GeoEngine_Core_GXNet_CDBWRITE.htm">
-      <HelpTOCNode Id="b4a16261-0406-4507-b051-d0293251b6a9" Title="CDBWRITE Methods" Url="html/Methods_T_GeoEngine_Core_GXNet_CDBWRITE.htm">
+    <HelpTOCNode Id="3f0ce1d5-7f1f-4e8b-bdec-3841d2c994ca" Title="CDBWRITE Class" Url="html/T_GeoEngine_Core_GXNet_CDBWRITE.htm">
+      <HelpTOCNode Id="67976193-96d8-4065-bfd5-37c76a80ad1c" Title="CDBWRITE Methods" Url="html/Methods_T_GeoEngine_Core_GXNet_CDBWRITE.htm">
         <HelpTOCNode Title="AddBlock Method " Url="html/M_GeoEngine_Core_GXNet_CDBWRITE_AddBlock.htm" />
         <HelpTOCNode Title="Commit Method " Url="html/M_GeoEngine_Core_GXNet_CDBWRITE_Commit.htm" />
         <HelpTOCNode Title="Create Method " Url="html/M_GeoEngine_Core_GXNet_CDBWRITE_Create.htm" />
@@ -335,8 +335,8 @@
         <HelpTOCNode Title="TestFunc Method " Url="html/M_GeoEngine_Core_GXNet_CDBWRITE_TestFunc.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="a67fc721-b061-49f6-91e5-0ba7204ee748" Title="CDSEL Class" Url="html/T_GeoEngine_Core_GXNet_CDSEL.htm">
-      <HelpTOCNode Id="27d30913-fce9-4674-8f0f-82597012bc98" Title="CDSEL Methods" Url="html/Methods_T_GeoEngine_Core_GXNet_CDSEL.htm">
+    <HelpTOCNode Id="f2901610-67e2-4937-b777-f63b1496ef6b" Title="CDSEL Class" Url="html/T_GeoEngine_Core_GXNet_CDSEL.htm">
+      <HelpTOCNode Id="12b549d0-fd55-476f-a452-4f1d555e375b" Title="CDSEL Methods" Url="html/Methods_T_GeoEngine_Core_GXNet_CDSEL.htm">
         <HelpTOCNode Title="Create Method " Url="html/M_GeoEngine_Core_GXNet_CDSEL_Create.htm" />
         <HelpTOCNode Title="DataSignificantFigures Method " Url="html/M_GeoEngine_Core_GXNet_CDSEL_DataSignificantFigures.htm" />
         <HelpTOCNode Title="Dispose Method " Url="html/M_GeoEngine_Core_GXNet_CDSEL_Dispose.htm" />
@@ -352,26 +352,26 @@
         <HelpTOCNode Title="SpatialAccuracy Method " Url="html/M_GeoEngine_Core_GXNet_CDSEL_SpatialAccuracy.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="54a3afb8-ff62-44d0-b63d-5ff3eae7c717" Title="CE3DV Class" Url="html/T_GeoEngine_Core_GXNet_CE3DV.htm">
-      <HelpTOCNode Id="cf3312b8-f6d5-414c-b871-caba1f86e095" Title="CE3DV Methods" Url="html/Methods_T_GeoEngine_Core_GXNet_CE3DV.htm">
+    <HelpTOCNode Id="64b54199-d3e2-4850-8fb5-02c9de6d0000" Title="CE3DV Class" Url="html/T_GeoEngine_Core_GXNet_CE3DV.htm">
+      <HelpTOCNode Id="2c04df6a-dec4-4460-a887-5b8362710465" Title="CE3DV Methods" Url="html/Methods_T_GeoEngine_Core_GXNet_CE3DV.htm">
         <HelpTOCNode Title="GetBaseView Method " Url="html/M_GeoEngine_Core_GXNet_CE3DV_GetBaseView.htm" />
         <HelpTOCNode Title="GetDataView Method " Url="html/M_GeoEngine_Core_GXNet_CE3DV_GetDataView.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="844a4d3d-0585-47af-8e3b-ef4381b80ef9" Title="CERROR Class" Url="html/T_GeoEngine_Core_GXNet_CERROR.htm">
+    <HelpTOCNode Id="95d40bcd-6372-4cf8-bde5-3db49e74d04e" Title="CERROR Class" Url="html/T_GeoEngine_Core_GXNet_CERROR.htm">
       <HelpTOCNode Title="CERROR Constructor " Url="html/M_GeoEngine_Core_GXNet_CERROR__ctor.htm" />
-      <HelpTOCNode Id="ee429480-87de-4ef4-b710-237b06fe29fc" Title="CERROR Properties" Url="html/Properties_T_GeoEngine_Core_GXNet_CERROR.htm">
+      <HelpTOCNode Id="70650357-2289-463e-9844-791b05f57562" Title="CERROR Properties" Url="html/Properties_T_GeoEngine_Core_GXNet_CERROR.htm">
         <HelpTOCNode Title="Code Property " Url="html/P_GeoEngine_Core_GXNet_CERROR_Code.htm" />
         <HelpTOCNode Title="ModuleName Property " Url="html/P_GeoEngine_Core_GXNet_CERROR_ModuleName.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="2cfd88cb-8bab-4a96-a499-a49ee36812cb" Title="CEXT Class" Url="html/T_GeoEngine_Core_GXNet_CEXT.htm">
-      <HelpTOCNode Id="bf9193e7-3308-48d1-be32-d30334ea4492" Title="CEXT Methods" Url="html/Methods_T_GeoEngine_Core_GXNet_CEXT.htm">
+    <HelpTOCNode Id="984636b5-d8a2-4c99-9026-117adc969819" Title="CEXT Class" Url="html/T_GeoEngine_Core_GXNet_CEXT.htm">
+      <HelpTOCNode Id="b42040f2-b157-407a-9cad-7632f2291540" Title="CEXT Methods" Url="html/Methods_T_GeoEngine_Core_GXNet_CEXT.htm">
         <HelpTOCNode Title="GetInfo Method " Url="html/M_GeoEngine_Core_GXNet_CEXT_GetInfo.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="98fa5659-2299-4868-9f7d-ab4b3d287c95" Title="CGEOSTRING Class" Url="html/T_GeoEngine_Core_GXNet_CGEOSTRING.htm">
-      <HelpTOCNode Id="86dddf26-8fa1-4c19-b8db-e8785b885ec2" Title="CGEOSTRING Methods" Url="html/Methods_T_GeoEngine_Core_GXNet_CGEOSTRING.htm">
+    <HelpTOCNode Id="51dcbadc-3113-4a64-a374-7774ecd969bf" Title="CGEOSTRING Class" Url="html/T_GeoEngine_Core_GXNet_CGEOSTRING.htm">
+      <HelpTOCNode Id="737615f3-14a3-4cf6-9304-78ee5ca1c2a2" Title="CGEOSTRING Methods" Url="html/Methods_T_GeoEngine_Core_GXNet_CGEOSTRING.htm">
         <HelpTOCNode Title="Dispose Method " Url="html/M_GeoEngine_Core_GXNet_CGEOSTRING_Dispose.htm" />
         <HelpTOCNode Title="GetAllShapes Method " Url="html/M_GeoEngine_Core_GXNet_CGEOSTRING_GetAllShapes.htm" />
         <HelpTOCNode Title="GetFeatureProperties Method " Url="html/M_GeoEngine_Core_GXNet_CGEOSTRING_GetFeatureProperties.htm" />
@@ -386,8 +386,8 @@
         <HelpTOCNode Title="Open Method " Url="html/M_GeoEngine_Core_GXNet_CGEOSTRING_Open.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="2c372ebf-011c-4425-bcee-6994ed15c4d3" Title="CGIS Class" Url="html/T_GeoEngine_Core_GXNet_CGIS.htm">
-      <HelpTOCNode Id="ed6f875a-277c-448f-9f12-a5cb2808a5c7" Title="CGIS Methods" Url="html/Methods_T_GeoEngine_Core_GXNet_CGIS.htm">
+    <HelpTOCNode Id="8bd6f239-dfb5-42eb-bfe0-4f2b2d20f155" Title="CGIS Class" Url="html/T_GeoEngine_Core_GXNet_CGIS.htm">
+      <HelpTOCNode Id="bc9079e1-2f4f-4556-809a-bcc8749873fb" Title="CGIS Methods" Url="html/Methods_T_GeoEngine_Core_GXNet_CGIS.htm">
         <HelpTOCNode Title="Create Method " Url="html/M_GeoEngine_Core_GXNet_CGIS_Create.htm" />
         <HelpTOCNode Title="CreateMap2D Method " Url="html/M_GeoEngine_Core_GXNet_CGIS_CreateMap2D.htm" />
         <HelpTOCNode Title="Dispose Method " Url="html/M_GeoEngine_Core_GXNet_CGIS_Dispose.htm" />
@@ -419,23 +419,23 @@
         <HelpTOCNode Title="SetTriangulationObjectIndex Method " Url="html/M_GeoEngine_Core_GXNet_CGIS_SetTriangulationObjectIndex.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="9be7067f-32da-4518-9ae0-c17bf29c04bb" Title="CGXAttribute Class" Url="html/T_GeoEngine_Core_GXNet_CGXAttribute.htm">
+    <HelpTOCNode Id="2255f6c6-8f91-432e-aa44-84044abcd705" Title="CGXAttribute Class" Url="html/T_GeoEngine_Core_GXNet_CGXAttribute.htm">
       <HelpTOCNode Title="CGXAttribute Constructor " Url="html/M_GeoEngine_Core_GXNet_CGXAttribute__ctor.htm" />
-      <HelpTOCNode Id="4c8c50a1-5811-4b17-9382-52ac451ca94b" Title="CGXAttribute Properties" Url="html/Properties_T_GeoEngine_Core_GXNet_CGXAttribute.htm">
+      <HelpTOCNode Id="d340812d-7072-4393-aeeb-e365d9f4c1f9" Title="CGXAttribute Properties" Url="html/Properties_T_GeoEngine_Core_GXNet_CGXAttribute.htm">
         <HelpTOCNode Title="GxList Property " Url="html/P_GeoEngine_Core_GXNet_CGXAttribute_GxList.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="f6d1b622-49a1-4f05-9885-f38c7b76588c" Title="CGXNETCore Class" Url="html/T_GeoEngine_Core_GXNet_CGXNETCore.htm">
-      <HelpTOCNode Id="c5f0a1a0-722d-4aad-b8e3-159e8e08d26c" Title="CGXNETCore Constructor " Url="html/Overload_GeoEngine_Core_GXNet_CGXNETCore__ctor.htm">
+    <HelpTOCNode Id="99cc1ad8-a23a-4a58-a9ef-399327018d86" Title="CGXNETCore Class" Url="html/T_GeoEngine_Core_GXNet_CGXNETCore.htm">
+      <HelpTOCNode Id="c058d458-4e7d-4470-a7ef-669a35615b56" Title="CGXNETCore Constructor " Url="html/Overload_GeoEngine_Core_GXNet_CGXNETCore__ctor.htm">
         <HelpTOCNode Title="CGXNETCore Constructor " Url="html/M_GeoEngine_Core_GXNet_CGXNETCore__ctor.htm" />
         <HelpTOCNode Title="CGXNETCore Constructor (IntPtr)" Url="html/M_GeoEngine_Core_GXNet_CGXNETCore__ctor_1.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="5cd67557-af97-4716-b26e-75f28f8ac128" Title="CGXNETCore Fields" Url="html/Fields_T_GeoEngine_Core_GXNet_CGXNETCore.htm">
+      <HelpTOCNode Id="489786bd-7a42-41b7-b422-ee9d4360cd20" Title="CGXNETCore Fields" Url="html/Fields_T_GeoEngine_Core_GXNet_CGXNETCore.htm">
         <HelpTOCNode Title="m_hGeoGxHandle Field" Url="html/F_GeoEngine_Core_GXNet_CGXNETCore_m_hGeoGxHandle.htm" />
         <HelpTOCNode Title="m_hPrevGeoGxHandle Field" Url="html/F_GeoEngine_Core_GXNet_CGXNETCore_m_hPrevGeoGxHandle.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="11d5abe7-e252-42c7-8cce-bff6cbd377bf" Title="CGXNETCore Methods" Url="html/Methods_T_GeoEngine_Core_GXNet_CGXNETCore.htm">
-        <HelpTOCNode Id="ec19b996-0b66-4243-8e92-a97154f37c07" Title="Dispose Method " Url="html/Overload_GeoEngine_Core_GXNet_CGXNETCore_Dispose.htm">
+      <HelpTOCNode Id="817d08a2-e1c1-47b2-a2ee-af7f9d244188" Title="CGXNETCore Methods" Url="html/Methods_T_GeoEngine_Core_GXNet_CGXNETCore.htm">
+        <HelpTOCNode Id="6bee1acc-8646-4a14-abfb-8ec93b298c17" Title="Dispose Method " Url="html/Overload_GeoEngine_Core_GXNet_CGXNETCore_Dispose.htm">
           <HelpTOCNode Title="Dispose Method " Url="html/M_GeoEngine_Core_GXNet_CGXNETCore_Dispose.htm" />
           <HelpTOCNode Title="Dispose Method (Boolean)" Url="html/M_GeoEngine_Core_GXNet_CGXNETCore_Dispose_1.htm" />
         </HelpTOCNode>
@@ -464,35 +464,35 @@
         <HelpTOCNode Title="ShowError Method " Url="html/M_GeoEngine_Core_GXNet_CGXNETCore_ShowError.htm" />
         <HelpTOCNode Title="UnlockParentWindow Method " Url="html/M_GeoEngine_Core_GXNet_CGXNETCore_UnlockParentWindow.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="43b9769c-0960-4e62-8cee-9868a0fd6df9" Title="CGXNETCore Properties" Url="html/Properties_T_GeoEngine_Core_GXNet_CGXNETCore.htm">
+      <HelpTOCNode Id="253f7633-21a4-40fe-8ade-5a219ca2f90d" Title="CGXNETCore Properties" Url="html/Properties_T_GeoEngine_Core_GXNet_CGXNETCore.htm">
         <HelpTOCNode Title="GeoGxHandle Property " Url="html/P_GeoEngine_Core_GXNet_CGXNETCore_GeoGxHandle.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="6f22b0cd-4bd6-4eff-a568-3479c5570590" Title="CGXNETCore Events" Url="html/Events_T_GeoEngine_Core_GXNet_CGXNETCore.htm">
+      <HelpTOCNode Id="86878bcb-86c7-4950-a976-7bb482d0d67f" Title="CGXNETCore Events" Url="html/Events_T_GeoEngine_Core_GXNet_CGXNETCore.htm">
         <HelpTOCNode Title="OnLockParentWindow Event" Url="html/E_GeoEngine_Core_GXNet_CGXNETCore_OnLockParentWindow.htm" />
         <HelpTOCNode Title="OnUnlockParentWindow Event" Url="html/E_GeoEngine_Core_GXNet_CGXNETCore_OnUnlockParentWindow.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
     <HelpTOCNode Title="CGXNETCore.LockParentWindowHandler Delegate" Url="html/T_GeoEngine_Core_GXNet_CGXNETCore_LockParentWindowHandler.htm" />
     <HelpTOCNode Title="CGXNETCore.UnlockParentWindowHandler Delegate" Url="html/T_GeoEngine_Core_GXNet_CGXNETCore_UnlockParentWindowHandler.htm" />
-    <HelpTOCNode Id="0e88a66b-8326-4ea6-b841-5f401eb5dbc7" Title="CHANDLE Class" Url="html/T_GeoEngine_Core_GXNet_CHANDLE.htm">
-      <HelpTOCNode Id="2b426439-cc84-4cc0-97a8-793fe7371215" Title="CHANDLE Constructor " Url="html/Overload_GeoEngine_Core_GXNet_CHANDLE__ctor.htm">
+    <HelpTOCNode Id="8fd36d7d-a487-40da-80f4-0c9680d0453f" Title="CHANDLE Class" Url="html/T_GeoEngine_Core_GXNet_CHANDLE.htm">
+      <HelpTOCNode Id="0db9dff5-dc04-4542-a32c-18edbf630430" Title="CHANDLE Constructor " Url="html/Overload_GeoEngine_Core_GXNet_CHANDLE__ctor.htm">
         <HelpTOCNode Title="CHANDLE Constructor " Url="html/M_GeoEngine_Core_GXNet_CHANDLE__ctor.htm" />
         <HelpTOCNode Title="CHANDLE Constructor (Int32)" Url="html/M_GeoEngine_Core_GXNet_CHANDLE__ctor_1.htm" />
         <HelpTOCNode Title="CHANDLE Constructor (Int32, Boolean)" Url="html/M_GeoEngine_Core_GXNet_CHANDLE__ctor_2.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="be4cafb1-68cc-4da5-9df6-c759cb3d10d8" Title="CHANDLE Fields" Url="html/Fields_T_GeoEngine_Core_GXNet_CHANDLE.htm">
+      <HelpTOCNode Id="f536a33f-9310-4232-821f-db43dabd30c8" Title="CHANDLE Fields" Url="html/Fields_T_GeoEngine_Core_GXNet_CHANDLE.htm">
         <HelpTOCNode Title="m_bDestroy Field" Url="html/F_GeoEngine_Core_GXNet_CHANDLE_m_bDestroy.htm" />
         <HelpTOCNode Title="m_bDisposed Field" Url="html/F_GeoEngine_Core_GXNet_CHANDLE_m_bDisposed.htm" />
         <HelpTOCNode Title="m_hHandle Field" Url="html/F_GeoEngine_Core_GXNet_CHANDLE_m_hHandle.htm" />
         <HelpTOCNode Title="m_pDelegate Field" Url="html/F_GeoEngine_Core_GXNet_CHANDLE_m_pDelegate.htm" />
         <HelpTOCNode Title="m_pGeoGXHandle Field" Url="html/F_GeoEngine_Core_GXNet_CHANDLE_m_pGeoGXHandle.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="18433f19-58bf-49cf-881b-8f8a94e4de7f" Title="CHANDLE Methods" Url="html/Methods_T_GeoEngine_Core_GXNet_CHANDLE.htm">
+      <HelpTOCNode Id="cf839167-e683-4112-a81e-e4ee2c32b89c" Title="CHANDLE Methods" Url="html/Methods_T_GeoEngine_Core_GXNet_CHANDLE.htm">
         <HelpTOCNode Title="bIsNull Method " Url="html/M_GeoEngine_Core_GXNet_CHANDLE_bIsNull.htm" />
         <HelpTOCNode Title="bIsValid Method " Url="html/M_GeoEngine_Core_GXNet_CHANDLE_bIsValid.htm" />
         <HelpTOCNode Title="CheckError Method " Url="html/M_GeoEngine_Core_GXNet_CHANDLE_CheckError.htm" />
         <HelpTOCNode Title="CheckValid Method " Url="html/M_GeoEngine_Core_GXNet_CHANDLE_CheckValid.htm" />
-        <HelpTOCNode Id="0b69e599-ed84-410c-9f88-ed69bc51302a" Title="Dispose Method " Url="html/Overload_GeoEngine_Core_GXNet_CHANDLE_Dispose.htm">
+        <HelpTOCNode Id="b29a3528-7052-4889-a52f-82a948330658" Title="Dispose Method " Url="html/Overload_GeoEngine_Core_GXNet_CHANDLE_Dispose.htm">
           <HelpTOCNode Title="Dispose Method " Url="html/M_GeoEngine_Core_GXNet_CHANDLE_Dispose.htm" />
           <HelpTOCNode Title="Dispose Method (Boolean)" Url="html/M_GeoEngine_Core_GXNet_CHANDLE_Dispose_1.htm" />
         </HelpTOCNode>
@@ -502,15 +502,15 @@
         <HelpTOCNode Title="ThrowOnError Method " Url="html/M_GeoEngine_Core_GXNet_CHANDLE_ThrowOnError.htm" />
         <HelpTOCNode Title="UnregisterResourceTracking Method " Url="html/M_GeoEngine_Core_GXNet_CHANDLE_UnregisterResourceTracking.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="f50463db-8a8c-4e17-8a8c-6a2ff5914bed" Title="CHANDLE Properties" Url="html/Properties_T_GeoEngine_Core_GXNet_CHANDLE.htm">
+      <HelpTOCNode Id="88f9fa28-b10a-4f3b-8ea3-44892e4aa7c6" Title="CHANDLE Properties" Url="html/Properties_T_GeoEngine_Core_GXNet_CHANDLE.htm">
         <HelpTOCNode Title="Delegate Property " Url="html/P_GeoEngine_Core_GXNet_CHANDLE_Delegate.htm" />
         <HelpTOCNode Title="GeoGXHandle Property " Url="html/P_GeoEngine_Core_GXNet_CHANDLE_GeoGXHandle.htm" />
         <HelpTOCNode Title="Handle Property " Url="html/P_GeoEngine_Core_GXNet_CHANDLE_Handle.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
     <HelpTOCNode Title="CHANDLE.DeleteDelegate Delegate" Url="html/T_GeoEngine_Core_GXNet_CHANDLE_DeleteDelegate.htm" />
-    <HelpTOCNode Id="3726e28a-8ca4-4bcb-948e-e1c00dac869d" Title="CHGD Class" Url="html/T_GeoEngine_Core_GXNet_CHGD.htm">
-      <HelpTOCNode Id="13f85f41-6c8b-4806-b3ea-b8c99bd96bf3" Title="CHGD Methods" Url="html/Methods_T_GeoEngine_Core_GXNet_CHGD.htm">
+    <HelpTOCNode Id="6e8aee93-d6c0-4dfe-b70d-c75de3e57ed3" Title="CHGD Class" Url="html/T_GeoEngine_Core_GXNet_CHGD.htm">
+      <HelpTOCNode Id="d83c4230-aecd-404f-8710-180744ad6c62" Title="CHGD Methods" Url="html/Methods_T_GeoEngine_Core_GXNet_CHGD.htm">
         <HelpTOCNode Title="Create Method " Url="html/M_GeoEngine_Core_GXNet_CHGD_Create.htm" />
         <HelpTOCNode Title="Dispose Method " Url="html/M_GeoEngine_Core_GXNet_CHGD_Dispose.htm" />
         <HelpTOCNode Title="ExportIMG Method " Url="html/M_GeoEngine_Core_GXNet_CHGD_ExportIMG.htm" />
@@ -519,8 +519,8 @@
         <HelpTOCNode Title="SetMETA Method " Url="html/M_GeoEngine_Core_GXNet_CHGD_SetMETA.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="93b3f4e9-16e7-4734-9835-3b0488dfe8bd" Title="CHXYZ Class" Url="html/T_GeoEngine_Core_GXNet_CHXYZ.htm">
-      <HelpTOCNode Id="a64157d7-503c-4dc0-b892-eb7bb7997a0c" Title="CHXYZ Methods" Url="html/Methods_T_GeoEngine_Core_GXNet_CHXYZ.htm">
+    <HelpTOCNode Id="325135be-1ef2-4436-8dd0-cd213dd2352e" Title="CHXYZ Class" Url="html/T_GeoEngine_Core_GXNet_CHXYZ.htm">
+      <HelpTOCNode Id="2636938c-a4c3-474a-9b26-cb783425b577" Title="CHXYZ Methods" Url="html/Methods_T_GeoEngine_Core_GXNet_CHXYZ.htm">
         <HelpTOCNode Title="Create Method " Url="html/M_GeoEngine_Core_GXNet_CHXYZ_Create.htm" />
         <HelpTOCNode Title="Dispose Method " Url="html/M_GeoEngine_Core_GXNet_CHXYZ_Dispose.htm" />
         <HelpTOCNode Title="GetMETA Method " Url="html/M_GeoEngine_Core_GXNet_CHXYZ_GetMETA.htm" />
@@ -529,8 +529,8 @@
         <HelpTOCNode Title="SetMETA Method " Url="html/M_GeoEngine_Core_GXNet_CHXYZ_SetMETA.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="86403985-c29e-4448-ab05-12bda70d6e8e" Title="CIGRF Class" Url="html/T_GeoEngine_Core_GXNet_CIGRF.htm">
-      <HelpTOCNode Id="a4448138-247f-47fe-9c46-482b643dbdb4" Title="CIGRF Methods" Url="html/Methods_T_GeoEngine_Core_GXNet_CIGRF.htm">
+    <HelpTOCNode Id="e46eec0b-8f03-49e9-b56c-0e91b4dddea4" Title="CIGRF Class" Url="html/T_GeoEngine_Core_GXNet_CIGRF.htm">
+      <HelpTOCNode Id="f1997636-0884-4945-803f-712cc689a598" Title="CIGRF Methods" Url="html/Methods_T_GeoEngine_Core_GXNet_CIGRF.htm">
         <HelpTOCNode Title="Calc Method " Url="html/M_GeoEngine_Core_GXNet_CIGRF_Calc.htm" />
         <HelpTOCNode Title="CalcVV Method " Url="html/M_GeoEngine_Core_GXNet_CIGRF_CalcVV.htm" />
         <HelpTOCNode Title="Create Method " Url="html/M_GeoEngine_Core_GXNet_CIGRF_Create.htm" />
@@ -538,8 +538,8 @@
         <HelpTOCNode Title="Dispose Method " Url="html/M_GeoEngine_Core_GXNet_CIGRF_Dispose.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="12dac876-a0c4-4bd1-a89b-ee5f5e25553b" Title="CIMG Class" Url="html/T_GeoEngine_Core_GXNet_CIMG.htm">
-      <HelpTOCNode Id="6285f747-372a-44bf-afb1-92a5c0d29c8b" Title="CIMG Methods" Url="html/Methods_T_GeoEngine_Core_GXNet_CIMG.htm">
+    <HelpTOCNode Id="3b926374-363c-4f8c-9a32-0fc310433a94" Title="CIMG Class" Url="html/T_GeoEngine_Core_GXNet_CIMG.htm">
+      <HelpTOCNode Id="fb7472de-a916-4c88-91e6-67ddcf02f244" Title="CIMG Methods" Url="html/Methods_T_GeoEngine_Core_GXNet_CIMG.htm">
         <HelpTOCNode Title="Average2 Method " Url="html/M_GeoEngine_Core_GXNet_CIMG_Average2.htm" />
         <HelpTOCNode Title="Copy Method " Url="html/M_GeoEngine_Core_GXNet_CIMG_Copy.htm" />
         <HelpTOCNode Title="Create Method " Url="html/M_GeoEngine_Core_GXNet_CIMG_Create.htm" />
@@ -600,8 +600,8 @@
         <HelpTOCNode Title="WriteY Method " Url="html/M_GeoEngine_Core_GXNet_CIMG_WriteY.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="c24996db-c78d-4fd3-8add-25d39869d438" Title="CIMU Class" Url="html/T_GeoEngine_Core_GXNet_CIMU.htm">
-      <HelpTOCNode Id="381a2872-63d7-4d0e-8813-02af4d7abbf5" Title="CIMU Methods" Url="html/Methods_T_GeoEngine_Core_GXNet_CIMU.htm">
+    <HelpTOCNode Id="fe4a2c0d-5080-4812-a07e-30de4889381d" Title="CIMU Class" Url="html/T_GeoEngine_Core_GXNet_CIMU.htm">
+      <HelpTOCNode Id="2a079a01-9ba3-47c1-b2ef-6a15be731431" Title="CIMU Methods" Url="html/Methods_T_GeoEngine_Core_GXNet_CIMU.htm">
         <HelpTOCNode Title="AggToGeoColor Method " Url="html/M_GeoEngine_Core_GXNet_CIMU_AggToGeoColor.htm" />
         <HelpTOCNode Title="CRC Method " Url="html/M_GeoEngine_Core_GXNet_CIMU_CRC.htm" />
         <HelpTOCNode Title="CRCGrid Method " Url="html/M_GeoEngine_Core_GXNet_CIMU_CRCGrid.htm" />
@@ -665,8 +665,8 @@
         <HelpTOCNode Title="UpdatePLY Method " Url="html/M_GeoEngine_Core_GXNet_CIMU_UpdatePLY.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="69b9b42c-f83b-410c-9861-c1ada0c62724" Title="CIPJ Class" Url="html/T_GeoEngine_Core_GXNet_CIPJ.htm">
-      <HelpTOCNode Id="7565a73a-7566-438b-b997-f2ba87ab4d04" Title="CIPJ Methods" Url="html/Methods_T_GeoEngine_Core_GXNet_CIPJ.htm">
+    <HelpTOCNode Id="bce3da50-4ed2-4244-ad04-3b883e48afe9" Title="CIPJ Class" Url="html/T_GeoEngine_Core_GXNet_CIPJ.htm">
+      <HelpTOCNode Id="d5a21021-8155-48f4-90cc-88e498aa679b" Title="CIPJ Methods" Url="html/Methods_T_GeoEngine_Core_GXNet_CIPJ.htm">
         <HelpTOCNode Title="AddExaggWarp Method " Url="html/M_GeoEngine_Core_GXNet_CIPJ_AddExaggWarp.htm" />
         <HelpTOCNode Title="AddLogWarp Method " Url="html/M_GeoEngine_Core_GXNet_CIPJ_AddLogWarp.htm" />
         <HelpTOCNode Title="AddMatrixWarp Method " Url="html/M_GeoEngine_Core_GXNet_CIPJ_AddMatrixWarp.htm" />
@@ -753,8 +753,8 @@
         <HelpTOCNode Title="SetXML Method " Url="html/M_GeoEngine_Core_GXNet_CIPJ_SetXML.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="9f90e9ec-0eaf-48c5-a117-839247d5554b" Title="CITR Class" Url="html/T_GeoEngine_Core_GXNet_CITR.htm">
-      <HelpTOCNode Id="d35e797f-4acf-48d8-a784-b8979ebabe7f" Title="CITR Methods" Url="html/Methods_T_GeoEngine_Core_GXNet_CITR.htm">
+    <HelpTOCNode Id="61afad81-2646-4faf-ae57-d552e545c0e2" Title="CITR Class" Url="html/T_GeoEngine_Core_GXNet_CITR.htm">
+      <HelpTOCNode Id="f59e45db-2c32-49ea-b24b-8b3aeb552dc1" Title="CITR Methods" Url="html/Methods_T_GeoEngine_Core_GXNet_CITR.htm">
         <HelpTOCNode Title="ChangeBrightness Method " Url="html/M_GeoEngine_Core_GXNet_CITR_ChangeBrightness.htm" />
         <HelpTOCNode Title="ColorVV Method " Url="html/M_GeoEngine_Core_GXNet_CITR_ColorVV.htm" />
         <HelpTOCNode Title="Copy Method " Url="html/M_GeoEngine_Core_GXNet_CITR_Copy.htm" />
@@ -790,8 +790,8 @@
         <HelpTOCNode Title="SetZoneValue Method " Url="html/M_GeoEngine_Core_GXNet_CITR_SetZoneValue.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="3f892e97-0c7a-4236-92f3-02dfd108330c" Title="CLAYOUT Class" Url="html/T_GeoEngine_Core_GXNet_CLAYOUT.htm">
-      <HelpTOCNode Id="2065a5cc-6b7a-481a-b097-46c810e4b55c" Title="CLAYOUT Methods" Url="html/Methods_T_GeoEngine_Core_GXNet_CLAYOUT.htm">
+    <HelpTOCNode Id="17143d3d-2190-4db5-919a-c491376fb872" Title="CLAYOUT Class" Url="html/T_GeoEngine_Core_GXNet_CLAYOUT.htm">
+      <HelpTOCNode Id="506a5ea8-9b42-4db9-aec9-c51b0d434149" Title="CLAYOUT Methods" Url="html/Methods_T_GeoEngine_Core_GXNet_CLAYOUT.htm">
         <HelpTOCNode Title="CalculateRects Method " Url="html/M_GeoEngine_Core_GXNet_CLAYOUT_CalculateRects.htm" />
         <HelpTOCNode Title="ClearAll Method " Url="html/M_GeoEngine_Core_GXNet_CLAYOUT_ClearAll.htm" />
         <HelpTOCNode Title="ClearConstraints Method " Url="html/M_GeoEngine_Core_GXNet_CLAYOUT_ClearConstraints.htm" />
@@ -806,24 +806,24 @@
         <HelpTOCNode Title="SetRectangleName Method " Url="html/M_GeoEngine_Core_GXNet_CLAYOUT_SetRectangleName.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="1057ef3f-ec85-49dd-b20b-36988adf0a8d" Title="CLL2 Class" Url="html/T_GeoEngine_Core_GXNet_CLL2.htm">
-      <HelpTOCNode Id="374e0171-28b2-4647-83c2-dddfd485364a" Title="CLL2 Methods" Url="html/Methods_T_GeoEngine_Core_GXNet_CLL2.htm">
+    <HelpTOCNode Id="a30ec9ff-257d-4415-9967-f60d049be5b1" Title="CLL2 Class" Url="html/T_GeoEngine_Core_GXNet_CLL2.htm">
+      <HelpTOCNode Id="75fbf408-710b-4348-a7db-93f6986a8511" Title="CLL2 Methods" Url="html/Methods_T_GeoEngine_Core_GXNet_CLL2.htm">
         <HelpTOCNode Title="Create Method " Url="html/M_GeoEngine_Core_GXNet_CLL2_Create.htm" />
         <HelpTOCNode Title="Dispose Method " Url="html/M_GeoEngine_Core_GXNet_CLL2_Dispose.htm" />
         <HelpTOCNode Title="Save Method " Url="html/M_GeoEngine_Core_GXNet_CLL2_Save.htm" />
         <HelpTOCNode Title="SetRow Method " Url="html/M_GeoEngine_Core_GXNet_CLL2_SetRow.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="c8d16bec-dcfe-4c64-9590-57805131cb82" Title="CLPT Class" Url="html/T_GeoEngine_Core_GXNet_CLPT.htm">
-      <HelpTOCNode Id="30a60ea3-6d8a-4bf4-97cf-3163dda38e5e" Title="CLPT Methods" Url="html/Methods_T_GeoEngine_Core_GXNet_CLPT.htm">
+    <HelpTOCNode Id="b00746eb-6549-4e86-b549-ba1562a2407d" Title="CLPT Class" Url="html/T_GeoEngine_Core_GXNet_CLPT.htm">
+      <HelpTOCNode Id="97764a42-14c6-408f-b7bf-61f0fa9475e8" Title="CLPT Methods" Url="html/Methods_T_GeoEngine_Core_GXNet_CLPT.htm">
         <HelpTOCNode Title="Create Method " Url="html/M_GeoEngine_Core_GXNet_CLPT_Create.htm" />
         <HelpTOCNode Title="Dispose Method " Url="html/M_GeoEngine_Core_GXNet_CLPT_Dispose.htm" />
         <HelpTOCNode Title="GetLST Method " Url="html/M_GeoEngine_Core_GXNet_CLPT_GetLST.htm" />
         <HelpTOCNode Title="GetStandardLST Method " Url="html/M_GeoEngine_Core_GXNet_CLPT_GetStandardLST.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="dce1281b-e488-489d-85ae-1a7ec8c29c32" Title="CLST Class" Url="html/T_GeoEngine_Core_GXNet_CLST.htm">
-      <HelpTOCNode Id="637d04a1-6b1c-4a12-8d8c-8ec0f369b074" Title="CLST Methods" Url="html/Methods_T_GeoEngine_Core_GXNet_CLST.htm">
+    <HelpTOCNode Id="d7ef4459-8e48-4d24-b3c8-ce4815fbd0e4" Title="CLST Class" Url="html/T_GeoEngine_Core_GXNet_CLST.htm">
+      <HelpTOCNode Id="bab16dea-364a-41ac-a34c-5ebc1264627b" Title="CLST Methods" Url="html/Methods_T_GeoEngine_Core_GXNet_CLST.htm">
         <HelpTOCNode Title="AddItem Method " Url="html/M_GeoEngine_Core_GXNet_CLST_AddItem.htm" />
         <HelpTOCNode Title="AddSymbItem Method " Url="html/M_GeoEngine_Core_GXNet_CLST_AddSymbItem.htm" />
         <HelpTOCNode Title="AddUniqueItem Method " Url="html/M_GeoEngine_Core_GXNet_CLST_AddUniqueItem.htm" />
@@ -856,8 +856,8 @@
         <HelpTOCNode Title="Sort Method " Url="html/M_GeoEngine_Core_GXNet_CLST_Sort.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="48feff75-c16c-4511-be43-e9104d82df54" Title="CLTB Class" Url="html/T_GeoEngine_Core_GXNet_CLTB.htm">
-      <HelpTOCNode Id="31e79571-5174-4d6a-8693-4b176de13b51" Title="CLTB Methods" Url="html/Methods_T_GeoEngine_Core_GXNet_CLTB.htm">
+    <HelpTOCNode Id="c1e9beeb-b7d4-4a49-be9f-3f1c3d9a1aae" Title="CLTB Class" Url="html/T_GeoEngine_Core_GXNet_CLTB.htm">
+      <HelpTOCNode Id="ba771de1-10d1-4cde-a3d5-103f151991ed" Title="CLTB Methods" Url="html/Methods_T_GeoEngine_Core_GXNet_CLTB.htm">
         <HelpTOCNode Title="AddRecord Method " Url="html/M_GeoEngine_Core_GXNet_CLTB_AddRecord.htm" />
         <HelpTOCNode Title="Contract Method " Url="html/M_GeoEngine_Core_GXNet_CLTB_Contract.htm" />
         <HelpTOCNode Title="Create Method " Url="html/M_GeoEngine_Core_GXNet_CLTB_Create.htm" />
@@ -886,8 +886,8 @@
         <HelpTOCNode Title="SetString Method " Url="html/M_GeoEngine_Core_GXNet_CLTB_SetString.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="eb726e61-24b7-4ef1-af1a-ee1c922aafc9" Title="CMAP Class" Url="html/T_GeoEngine_Core_GXNet_CMAP.htm">
-      <HelpTOCNode Id="7ee24fee-4eb0-4e4e-952f-beac37161bd1" Title="CMAP Methods" Url="html/Methods_T_GeoEngine_Core_GXNet_CMAP.htm">
+    <HelpTOCNode Id="d3fbbeca-3afe-4238-8005-f14822d83d4b" Title="CMAP Class" Url="html/T_GeoEngine_Core_GXNet_CMAP.htm">
+      <HelpTOCNode Id="d333ab6f-43a2-47f2-8f92-49b081acd2df" Title="CMAP Methods" Url="html/Methods_T_GeoEngine_Core_GXNet_CMAP.htm">
         <HelpTOCNode Title="AGGList Method " Url="html/M_GeoEngine_Core_GXNet_CMAP_AGGList.htm" />
         <HelpTOCNode Title="AGGListEx Method " Url="html/M_GeoEngine_Core_GXNet_CMAP_AGGListEx.htm" />
         <HelpTOCNode Title="Clean Method " Url="html/M_GeoEngine_Core_GXNet_CMAP_Clean.htm" />
@@ -940,8 +940,8 @@
         <HelpTOCNode Title="ViewListEx Method " Url="html/M_GeoEngine_Core_GXNet_CMAP_ViewListEx.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="af38f447-5dc6-487c-8460-4673433218e0" Title="CMAPL Class" Url="html/T_GeoEngine_Core_GXNet_CMAPL.htm">
-      <HelpTOCNode Id="6dd63143-aa9c-43e7-9b6a-e15aadb56496" Title="CMAPL Methods" Url="html/Methods_T_GeoEngine_Core_GXNet_CMAPL.htm">
+    <HelpTOCNode Id="5766b583-4372-4aeb-8f48-89119bb324c0" Title="CMAPL Class" Url="html/T_GeoEngine_Core_GXNet_CMAPL.htm">
+      <HelpTOCNode Id="339f33e9-4c3f-4aa4-83d2-6bfd62e06935" Title="CMAPL Methods" Url="html/Methods_T_GeoEngine_Core_GXNet_CMAPL.htm">
         <HelpTOCNode Title="Create Method " Url="html/M_GeoEngine_Core_GXNet_CMAPL_Create.htm" />
         <HelpTOCNode Title="CreateREG Method " Url="html/M_GeoEngine_Core_GXNet_CMAPL_CreateREG.htm" />
         <HelpTOCNode Title="Dispose Method " Url="html/M_GeoEngine_Core_GXNet_CMAPL_Dispose.htm" />
@@ -949,8 +949,8 @@
         <HelpTOCNode Title="ReplaceString Method " Url="html/M_GeoEngine_Core_GXNet_CMAPL_ReplaceString.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="5c6d6a2e-7174-4e1d-9fee-e8c5f566f621" Title="CMAPTEMPLATE Class" Url="html/T_GeoEngine_Core_GXNet_CMAPTEMPLATE.htm">
-      <HelpTOCNode Id="3cec184d-eade-48bf-8f9e-3fbdba6c778e" Title="CMAPTEMPLATE Methods" Url="html/Methods_T_GeoEngine_Core_GXNet_CMAPTEMPLATE.htm">
+    <HelpTOCNode Id="7ced7b1d-b136-41b9-b49e-7069bdd1db97" Title="CMAPTEMPLATE Class" Url="html/T_GeoEngine_Core_GXNet_CMAPTEMPLATE.htm">
+      <HelpTOCNode Id="17566650-8d30-406c-a03d-6b92de732bb3" Title="CMAPTEMPLATE Methods" Url="html/Methods_T_GeoEngine_Core_GXNet_CMAPTEMPLATE.htm">
         <HelpTOCNode Title="Commit Method " Url="html/M_GeoEngine_Core_GXNet_CMAPTEMPLATE_Commit.htm" />
         <HelpTOCNode Title="Create Method " Url="html/M_GeoEngine_Core_GXNet_CMAPTEMPLATE_Create.htm" />
         <HelpTOCNode Title="CreateMap Method " Url="html/M_GeoEngine_Core_GXNet_CMAPTEMPLATE_CreateMap.htm" />
@@ -964,8 +964,8 @@
         <HelpTOCNode Title="UpdateFromTmpCopy Method " Url="html/M_GeoEngine_Core_GXNet_CMAPTEMPLATE_UpdateFromTmpCopy.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="2ffe0da0-8fae-4912-9891-c81fa8e9db7d" Title="CMATH Class" Url="html/T_GeoEngine_Core_GXNet_CMATH.htm">
-      <HelpTOCNode Id="e3ac564a-ab2b-4208-a430-73f136501ddd" Title="CMATH Methods" Url="html/Methods_T_GeoEngine_Core_GXNet_CMATH.htm">
+    <HelpTOCNode Id="a099e9e7-98ba-4ef5-9c47-bd919ece4c71" Title="CMATH Class" Url="html/T_GeoEngine_Core_GXNet_CMATH.htm">
+      <HelpTOCNode Id="867b55ab-be66-4aa6-84df-1e91368b3f5e" Title="CMATH Methods" Url="html/Methods_T_GeoEngine_Core_GXNet_CMATH.htm">
         <HelpTOCNode Title="CrossProduct Method " Url="html/M_GeoEngine_Core_GXNet_CMATH_CrossProduct.htm" />
         <HelpTOCNode Title="iAbs Method " Url="html/M_GeoEngine_Core_GXNet_CMATH_iAbs.htm" />
         <HelpTOCNode Title="iAnd Method " Url="html/M_GeoEngine_Core_GXNet_CMATH_iAnd.htm" />
@@ -1005,8 +1005,8 @@
         <HelpTOCNode Title="SRand Method " Url="html/M_GeoEngine_Core_GXNet_CMATH_SRand.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="1cf2dd4b-d7c1-4160-b928-694c9dfee102" Title="CMETA Class" Url="html/T_GeoEngine_Core_GXNet_CMETA.htm">
-      <HelpTOCNode Id="444e5e56-819c-4351-9ada-7342b9250273" Title="CMETA Methods" Url="html/Methods_T_GeoEngine_Core_GXNet_CMETA.htm">
+    <HelpTOCNode Id="5061c68a-d5f8-47ed-9c53-73035d0d9004" Title="CMETA Class" Url="html/T_GeoEngine_Core_GXNet_CMETA.htm">
+      <HelpTOCNode Id="53aa6638-c4f4-47c8-9722-346512701d8f" Title="CMETA Methods" Url="html/Methods_T_GeoEngine_Core_GXNet_CMETA.htm">
         <HelpTOCNode Title="Copy Method " Url="html/M_GeoEngine_Core_GXNet_CMETA_Copy.htm" />
         <HelpTOCNode Title="Create Method " Url="html/M_GeoEngine_Core_GXNet_CMETA_Create.htm" />
         <HelpTOCNode Title="CreateAttrib Method " Url="html/M_GeoEngine_Core_GXNet_CMETA_CreateAttrib.htm" />
@@ -1053,8 +1053,8 @@
         <HelpTOCNode Title="WriteText Method " Url="html/M_GeoEngine_Core_GXNet_CMETA_WriteText.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="e6acb427-3650-4878-b22d-5c815009d5e9" Title="CMULTIVOXSET Class" Url="html/T_GeoEngine_Core_GXNet_CMULTIVOXSET.htm">
-      <HelpTOCNode Id="d9db9c92-5e54-44fa-b1c5-5c4edc9ef470" Title="CMULTIVOXSET Methods" Url="html/Methods_T_GeoEngine_Core_GXNet_CMULTIVOXSET.htm">
+    <HelpTOCNode Id="fda9b583-b06c-44b4-8a1e-2b3ae3c7f49f" Title="CMULTIVOXSET Class" Url="html/T_GeoEngine_Core_GXNet_CMULTIVOXSET.htm">
+      <HelpTOCNode Id="3fdfa910-738b-4527-89e3-5c444a9388ff" Title="CMULTIVOXSET Methods" Url="html/Methods_T_GeoEngine_Core_GXNet_CMULTIVOXSET.htm">
         <HelpTOCNode Title="CheckEqualToLegacyVoxel Method " Url="html/M_GeoEngine_Core_GXNet_CMULTIVOXSET_CheckEqualToLegacyVoxel.htm" />
         <HelpTOCNode Title="ConvertDoubleToVector Method " Url="html/M_GeoEngine_Core_GXNet_CMULTIVOXSET_ConvertDoubleToVector.htm" />
         <HelpTOCNode Title="ConvertVectorToDouble Method " Url="html/M_GeoEngine_Core_GXNet_CMULTIVOXSET_ConvertVectorToDouble.htm" />
@@ -1084,8 +1084,8 @@
         <HelpTOCNode Title="rComputeDefaultCellSize Method " Url="html/M_GeoEngine_Core_GXNet_CMULTIVOXSET_rComputeDefaultCellSize.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="3e5f87ab-fd22-4963-addc-90749cc81b2e" Title="CMVIEW Class" Url="html/T_GeoEngine_Core_GXNet_CMVIEW.htm">
-      <HelpTOCNode Id="e5a7e96d-e4c8-478c-8926-e6be3d43cacc" Title="CMVIEW Methods" Url="html/Methods_T_GeoEngine_Core_GXNet_CMVIEW.htm">
+    <HelpTOCNode Id="2a123f5a-0277-46b2-8fc2-7878592f1eab" Title="CMVIEW Class" Url="html/T_GeoEngine_Core_GXNet_CMVIEW.htm">
+      <HelpTOCNode Id="ed1742b8-947b-441c-996e-fc374a60d19f" Title="CMVIEW Methods" Url="html/Methods_T_GeoEngine_Core_GXNet_CMVIEW.htm">
         <HelpTOCNode Title="Aggregate Method " Url="html/M_GeoEngine_Core_GXNet_CMVIEW_Aggregate.htm" />
         <HelpTOCNode Title="Arc Method " Url="html/M_GeoEngine_Core_GXNet_CMVIEW_Arc.htm" />
         <HelpTOCNode Title="AxisX Method " Url="html/M_GeoEngine_Core_GXNet_CMVIEW_AxisX.htm" />
@@ -1310,8 +1310,8 @@
         <HelpTOCNode Title="ZValue Method " Url="html/M_GeoEngine_Core_GXNet_CMVIEW_ZValue.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="c04358ac-4f79-448a-88fb-bec1bef07e8c" Title="CMVU Class" Url="html/T_GeoEngine_Core_GXNet_CMVU.htm">
-      <HelpTOCNode Id="a1ee697b-f0ef-4211-8b89-42e3817fd67e" Title="CMVU Methods" Url="html/Methods_T_GeoEngine_Core_GXNet_CMVU.htm">
+    <HelpTOCNode Id="c7ecde5c-99ea-4836-9bd2-e1a4d5b4bf2c" Title="CMVU Class" Url="html/T_GeoEngine_Core_GXNet_CMVU.htm">
+      <HelpTOCNode Id="42602aa7-5787-4fd4-8a33-9d571ff4b816" Title="CMVU Methods" Url="html/Methods_T_GeoEngine_Core_GXNet_CMVU.htm">
         <HelpTOCNode Title="Arrow Method " Url="html/M_GeoEngine_Core_GXNet_CMVU_Arrow.htm" />
         <HelpTOCNode Title="ArrowVectorVV Method " Url="html/M_GeoEngine_Core_GXNet_CMVU_ArrowVectorVV.htm" />
         <HelpTOCNode Title="BarChart Method " Url="html/M_GeoEngine_Core_GXNet_CMVU_BarChart.htm" />
@@ -1373,22 +1373,22 @@
         <HelpTOCNode Title="TrndPath Method " Url="html/M_GeoEngine_Core_GXNet_CMVU_TrndPath.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="350942d6-13b6-465d-aee0-35a18d318f01" Title="CMXD Class" Url="html/T_GeoEngine_Core_GXNet_CMXD.htm">
-      <HelpTOCNode Id="cdb50796-b125-4992-8b2d-32d4b5160b75" Title="CMXD Methods" Url="html/Methods_T_GeoEngine_Core_GXNet_CMXD.htm">
+    <HelpTOCNode Id="baca6b23-5174-4dfd-8968-8231ccc5fce6" Title="CMXD Class" Url="html/T_GeoEngine_Core_GXNet_CMXD.htm">
+      <HelpTOCNode Id="598c02f3-0cc7-4d92-90e9-2780596e1e3a" Title="CMXD Methods" Url="html/Methods_T_GeoEngine_Core_GXNet_CMXD.htm">
         <HelpTOCNode Title="ConvertToMap Method " Url="html/M_GeoEngine_Core_GXNet_CMXD_ConvertToMap.htm" />
         <HelpTOCNode Title="CreateMetadata Method " Url="html/M_GeoEngine_Core_GXNet_CMXD_CreateMetadata.htm" />
         <HelpTOCNode Title="Sync Method " Url="html/M_GeoEngine_Core_GXNet_CMXD_Sync.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="f4d347d3-2d42-49f5-905f-9ebcb9e32096" Title="CPAT Class" Url="html/T_GeoEngine_Core_GXNet_CPAT.htm">
-      <HelpTOCNode Id="8a5dae47-1b5a-4009-888a-6786a04fc3fe" Title="CPAT Methods" Url="html/Methods_T_GeoEngine_Core_GXNet_CPAT.htm">
+    <HelpTOCNode Id="6e45feaa-1465-4ffc-b482-8bcd6eb30d78" Title="CPAT Class" Url="html/T_GeoEngine_Core_GXNet_CPAT.htm">
+      <HelpTOCNode Id="39027cc3-27b5-4a23-85dc-a3f39c021f7b" Title="CPAT Methods" Url="html/Methods_T_GeoEngine_Core_GXNet_CPAT.htm">
         <HelpTOCNode Title="Create Method " Url="html/M_GeoEngine_Core_GXNet_CPAT_Create.htm" />
         <HelpTOCNode Title="Dispose Method " Url="html/M_GeoEngine_Core_GXNet_CPAT_Dispose.htm" />
         <HelpTOCNode Title="GetLST Method " Url="html/M_GeoEngine_Core_GXNet_CPAT_GetLST.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="ef943e3c-432f-4c31-93a6-eb93f5e0d1e7" Title="CPG Class" Url="html/T_GeoEngine_Core_GXNet_CPG.htm">
-      <HelpTOCNode Id="65f0f4a4-abfb-4647-b8e6-07221017b0c7" Title="CPG Methods" Url="html/Methods_T_GeoEngine_Core_GXNet_CPG.htm">
+    <HelpTOCNode Id="e4646862-deaf-4f6b-a2eb-3dd766620109" Title="CPG Class" Url="html/T_GeoEngine_Core_GXNet_CPG.htm">
+      <HelpTOCNode Id="615f8909-f26a-411a-b7e3-06177227365b" Title="CPG Methods" Url="html/Methods_T_GeoEngine_Core_GXNet_CPG.htm">
         <HelpTOCNode Title="Copy Method " Url="html/M_GeoEngine_Core_GXNet_CPG_Copy.htm" />
         <HelpTOCNode Title="CopySubset Method " Url="html/M_GeoEngine_Core_GXNet_CPG_CopySubset.htm" />
         <HelpTOCNode Title="CopySubset3D Method " Url="html/M_GeoEngine_Core_GXNet_CPG_CopySubset3D.htm" />
@@ -1424,8 +1424,8 @@
         <HelpTOCNode Title="WriteWA Method " Url="html/M_GeoEngine_Core_GXNet_CPG_WriteWA.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="8765d392-add0-4a44-b268-6a317c0632ff" Title="CPJ Class" Url="html/T_GeoEngine_Core_GXNet_CPJ.htm">
-      <HelpTOCNode Id="73baa05a-1b64-485a-a874-48a143f34a48" Title="CPJ Methods" Url="html/Methods_T_GeoEngine_Core_GXNet_CPJ.htm">
+    <HelpTOCNode Id="fa14e799-8a63-4cce-a653-b1ba7c36296f" Title="CPJ Class" Url="html/T_GeoEngine_Core_GXNet_CPJ.htm">
+      <HelpTOCNode Id="188859c7-0539-48ec-abed-3696d509a79d" Title="CPJ Methods" Url="html/Methods_T_GeoEngine_Core_GXNet_CPJ.htm">
         <HelpTOCNode Title="ClipPLY Method " Url="html/M_GeoEngine_Core_GXNet_CPJ_ClipPLY.htm" />
         <HelpTOCNode Title="ConvertVV Method " Url="html/M_GeoEngine_Core_GXNet_CPJ_ConvertVV.htm" />
         <HelpTOCNode Title="ConvertVV3 Method " Url="html/M_GeoEngine_Core_GXNet_CPJ_ConvertVV3.htm" />
@@ -1447,8 +1447,8 @@
         <HelpTOCNode Title="SetupLDT Method " Url="html/M_GeoEngine_Core_GXNet_CPJ_SetupLDT.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="55a07229-ccee-4aa9-8b1e-39eeafc2b017" Title="CPLY Class" Url="html/T_GeoEngine_Core_GXNet_CPLY.htm">
-      <HelpTOCNode Id="830f1071-bc64-45f3-abb5-6d7b2239460e" Title="CPLY Methods" Url="html/Methods_T_GeoEngine_Core_GXNet_CPLY.htm">
+    <HelpTOCNode Id="07494fc5-5bf5-4683-b77e-48dcfed1c85d" Title="CPLY Class" Url="html/T_GeoEngine_Core_GXNet_CPLY.htm">
+      <HelpTOCNode Id="eaa5a275-b6da-4d82-9281-ded1c6ba748e" Title="CPLY Methods" Url="html/Methods_T_GeoEngine_Core_GXNet_CPLY.htm">
         <HelpTOCNode Title="AddPolygon Method " Url="html/M_GeoEngine_Core_GXNet_CPLY_AddPolygon.htm" />
         <HelpTOCNode Title="AddPolygonEx Method " Url="html/M_GeoEngine_Core_GXNet_CPLY_AddPolygonEx.htm" />
         <HelpTOCNode Title="ChangeIPJ Method " Url="html/M_GeoEngine_Core_GXNet_CPLY_ChangeIPJ.htm" />
@@ -1477,8 +1477,8 @@
         <HelpTOCNode Title="Thin Method " Url="html/M_GeoEngine_Core_GXNet_CPLY_Thin.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="c00bfdd1-5356-4008-b1ce-ac09e3d4627a" Title="CRA Class" Url="html/T_GeoEngine_Core_GXNet_CRA.htm">
-      <HelpTOCNode Id="7bcee0d2-7665-4c6f-aea3-a83cd4848230" Title="CRA Methods" Url="html/Methods_T_GeoEngine_Core_GXNet_CRA.htm">
+    <HelpTOCNode Id="1b8e06b5-0df3-4293-a015-7f77e07463dc" Title="CRA Class" Url="html/T_GeoEngine_Core_GXNet_CRA.htm">
+      <HelpTOCNode Id="8f7757c4-16d5-46c9-baa9-03ee6aa64457" Title="CRA Methods" Url="html/Methods_T_GeoEngine_Core_GXNet_CRA.htm">
         <HelpTOCNode Title="Create Method " Url="html/M_GeoEngine_Core_GXNet_CRA_Create.htm" />
         <HelpTOCNode Title="CreateSBF Method " Url="html/M_GeoEngine_Core_GXNet_CRA_CreateSBF.htm" />
         <HelpTOCNode Title="Dispose Method " Url="html/M_GeoEngine_Core_GXNet_CRA_Dispose.htm" />
@@ -1488,11 +1488,11 @@
         <HelpTOCNode Title="iSeek Method " Url="html/M_GeoEngine_Core_GXNet_CRA_iSeek.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="0ef78283-f46b-4fb0-bffd-c8155b971735" Title="CREFERENCE_ERROR Class" Url="html/T_GeoEngine_Core_GXNet_CREFERENCE_ERROR.htm">
+    <HelpTOCNode Id="fd223204-3fac-46d5-883a-ea204153a9c8" Title="CREFERENCE_ERROR Class" Url="html/T_GeoEngine_Core_GXNet_CREFERENCE_ERROR.htm">
       <HelpTOCNode Title="CREFERENCE_ERROR Constructor " Url="html/M_GeoEngine_Core_GXNet_CREFERENCE_ERROR__ctor.htm" />
     </HelpTOCNode>
-    <HelpTOCNode Id="8171c2d6-dbdd-440a-83bd-d59db92e47ff" Title="CREG Class" Url="html/T_GeoEngine_Core_GXNet_CREG.htm">
-      <HelpTOCNode Id="41b51d0a-38fd-4c82-9644-a54fd02ec543" Title="CREG Methods" Url="html/Methods_T_GeoEngine_Core_GXNet_CREG.htm">
+    <HelpTOCNode Id="230a7bf8-f8f7-4921-b746-c197bfc2179d" Title="CREG Class" Url="html/T_GeoEngine_Core_GXNet_CREG.htm">
+      <HelpTOCNode Id="6c5ad743-3451-4c43-b21e-93f65edb374c" Title="CREG Methods" Url="html/Methods_T_GeoEngine_Core_GXNet_CREG.htm">
         <HelpTOCNode Title="Clear Method " Url="html/M_GeoEngine_Core_GXNet_CREG_Clear.htm" />
         <HelpTOCNode Title="Copy Method " Url="html/M_GeoEngine_Core_GXNet_CREG_Copy.htm" />
         <HelpTOCNode Title="Create Method " Url="html/M_GeoEngine_Core_GXNet_CREG_Create.htm" />
@@ -1513,8 +1513,8 @@
         <HelpTOCNode Title="SetReal Method " Url="html/M_GeoEngine_Core_GXNet_CREG_SetReal.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="5a003076-1e29-4116-8e5b-1d5660474fad" Title="CSBF Class" Url="html/T_GeoEngine_Core_GXNet_CSBF.htm">
-      <HelpTOCNode Id="2b31ab43-c31b-4fff-8052-8c0927ea7aab" Title="CSBF Methods" Url="html/Methods_T_GeoEngine_Core_GXNet_CSBF.htm">
+    <HelpTOCNode Id="3bb6fe3e-cd24-47bd-abda-0838e9028af5" Title="CSBF Class" Url="html/T_GeoEngine_Core_GXNet_CSBF.htm">
+      <HelpTOCNode Id="2f42ba71-ac1c-423e-be2c-e7bdd15aace3" Title="CSBF Methods" Url="html/Methods_T_GeoEngine_Core_GXNet_CSBF.htm">
         <HelpTOCNode Title="Create Method " Url="html/M_GeoEngine_Core_GXNet_CSBF_Create.htm" />
         <HelpTOCNode Title="CreateObjList Method " Url="html/M_GeoEngine_Core_GXNet_CSBF_CreateObjList.htm" />
         <HelpTOCNode Title="DelDir Method " Url="html/M_GeoEngine_Core_GXNet_CSBF_DelDir.htm" />
@@ -1528,8 +1528,8 @@
         <HelpTOCNode Title="SaveLog Method " Url="html/M_GeoEngine_Core_GXNet_CSBF_SaveLog.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="e5cb4d54-87c9-414b-a88e-950553cdf9c6" Title="CST Class" Url="html/T_GeoEngine_Core_GXNet_CST.htm">
-      <HelpTOCNode Id="c8e5b0b1-10d6-4f62-9129-18366b9a44f2" Title="CST Methods" Url="html/Methods_T_GeoEngine_Core_GXNet_CST.htm">
+    <HelpTOCNode Id="b191f5dd-330e-45df-b7e7-6a031e592a1b" Title="CST Class" Url="html/T_GeoEngine_Core_GXNet_CST.htm">
+      <HelpTOCNode Id="5e4b4393-fae9-4a36-b859-d6a7bcf1d6e3" Title="CST Methods" Url="html/Methods_T_GeoEngine_Core_GXNet_CST.htm">
         <HelpTOCNode Title="Create Method " Url="html/M_GeoEngine_Core_GXNet_CST_Create.htm" />
         <HelpTOCNode Title="CreateExact Method " Url="html/M_GeoEngine_Core_GXNet_CST_CreateExact.htm" />
         <HelpTOCNode Title="Data Method " Url="html/M_GeoEngine_Core_GXNet_CST_Data.htm" />
@@ -1548,8 +1548,8 @@
         <HelpTOCNode Title="rNormalTest Method " Url="html/M_GeoEngine_Core_GXNet_CST_rNormalTest.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="e06630fd-1006-4a07-bdce-f425fc8aea51" Title="CST2 Class" Url="html/T_GeoEngine_Core_GXNet_CST2.htm">
-      <HelpTOCNode Id="678370cb-7c3d-4be1-999c-49beb967e369" Title="CST2 Methods" Url="html/Methods_T_GeoEngine_Core_GXNet_CST2.htm">
+    <HelpTOCNode Id="b9a9e62b-8c84-4978-9c1f-abe8d387a26d" Title="CST2 Class" Url="html/T_GeoEngine_Core_GXNet_CST2.htm">
+      <HelpTOCNode Id="8152c4ea-07a6-4235-892d-90f0189026a1" Title="CST2 Methods" Url="html/Methods_T_GeoEngine_Core_GXNet_CST2.htm">
         <HelpTOCNode Title="Create Method " Url="html/M_GeoEngine_Core_GXNet_CST2_Create.htm" />
         <HelpTOCNode Title="DataVV Method " Url="html/M_GeoEngine_Core_GXNet_CST2_DataVV.htm" />
         <HelpTOCNode Title="Dispose Method " Url="html/M_GeoEngine_Core_GXNet_CST2_Dispose.htm" />
@@ -1558,8 +1558,8 @@
         <HelpTOCNode Title="rGet Method " Url="html/M_GeoEngine_Core_GXNet_CST2_rGet.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="54444bc8-725f-4f6d-816b-5b06928593ab" Title="CSTR Class" Url="html/T_GeoEngine_Core_GXNet_CSTR.htm">
-      <HelpTOCNode Id="8f1ab927-4417-4217-8da2-be4697627e21" Title="CSTR Methods" Url="html/Methods_T_GeoEngine_Core_GXNet_CSTR.htm">
+    <HelpTOCNode Id="d5c6bb38-c7bb-4e8c-95df-b74e1d06cc49" Title="CSTR Class" Url="html/T_GeoEngine_Core_GXNet_CSTR.htm">
+      <HelpTOCNode Id="d3be13da-2d8f-4de0-8b35-3ad00075b0a0" Title="CSTR Methods" Url="html/Methods_T_GeoEngine_Core_GXNet_CSTR.htm">
         <HelpTOCNode Title="Escape Method " Url="html/M_GeoEngine_Core_GXNet_CSTR_Escape.htm" />
         <HelpTOCNode Title="iChar Method " Url="html/M_GeoEngine_Core_GXNet_CSTR_iChar.htm" />
         <HelpTOCNode Title="iCountTokens Method " Url="html/M_GeoEngine_Core_GXNet_CSTR_iCountTokens.htm" />
@@ -1619,8 +1619,8 @@
         <HelpTOCNode Title="UnQuote Method " Url="html/M_GeoEngine_Core_GXNet_CSTR_UnQuote.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="ee3f6bad-b0e4-4494-9a02-67736605cdbb" Title="CSURFACE Class" Url="html/T_GeoEngine_Core_GXNet_CSURFACE.htm">
-      <HelpTOCNode Id="2f981594-9896-4d1e-9a51-335ec5620b2c" Title="CSURFACE Methods" Url="html/Methods_T_GeoEngine_Core_GXNet_CSURFACE.htm">
+    <HelpTOCNode Id="61afc6ac-97a6-419c-aa01-463c7874e5f0" Title="CSURFACE Class" Url="html/T_GeoEngine_Core_GXNet_CSURFACE.htm">
+      <HelpTOCNode Id="f0228a78-5f39-4c3e-8354-3f92bc916389" Title="CSURFACE Methods" Url="html/Methods_T_GeoEngine_Core_GXNet_CSURFACE.htm">
         <HelpTOCNode Title="AddSurfaceItem Method " Url="html/M_GeoEngine_Core_GXNet_CSURFACE_AddSurfaceItem.htm" />
         <HelpTOCNode Title="AppendVulcanTriangulation Method " Url="html/M_GeoEngine_Core_GXNet_CSURFACE_AppendVulcanTriangulation.htm" />
         <HelpTOCNode Title="CRC Method " Url="html/M_GeoEngine_Core_GXNet_CSURFACE_CRC.htm" />
@@ -1639,8 +1639,8 @@
         <HelpTOCNode Title="Sync Method " Url="html/M_GeoEngine_Core_GXNet_CSURFACE_Sync.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="75bed592-9944-4149-8418-ca77b18ec65b" Title="CSURFACEITEM Class" Url="html/T_GeoEngine_Core_GXNet_CSURFACEITEM.htm">
-      <HelpTOCNode Id="8abcf475-e19b-4e6f-ad4d-db12d90119c3" Title="CSURFACEITEM Methods" Url="html/Methods_T_GeoEngine_Core_GXNet_CSURFACEITEM.htm">
+    <HelpTOCNode Id="c71a9e9c-2e01-469b-b268-85c1d3dc6802" Title="CSURFACEITEM Class" Url="html/T_GeoEngine_Core_GXNet_CSURFACEITEM.htm">
+      <HelpTOCNode Id="46e709f1-7312-4f30-a160-512435c21518" Title="CSURFACEITEM Methods" Url="html/Methods_T_GeoEngine_Core_GXNet_CSURFACEITEM.htm">
         <HelpTOCNode Title="ComputeExtendedInfo Method " Url="html/M_GeoEngine_Core_GXNet_CSURFACEITEM_ComputeExtendedInfo.htm" />
         <HelpTOCNode Title="Create Method " Url="html/M_GeoEngine_Core_GXNet_CSURFACEITEM_Create.htm" />
         <HelpTOCNode Title="Dispose Method " Url="html/M_GeoEngine_Core_GXNet_CSURFACEITEM_Dispose.htm" />
@@ -1660,8 +1660,8 @@
         <HelpTOCNode Title="SetPropertiesEx Method " Url="html/M_GeoEngine_Core_GXNet_CSURFACEITEM_SetPropertiesEx.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="1571986b-046b-4997-881b-7d769ace2fce" Title="CSYS Class" Url="html/T_GeoEngine_Core_GXNet_CSYS.htm">
-      <HelpTOCNode Id="2272bfc1-7b62-49a5-846a-8a0c4ce2fd49" Title="CSYS Methods" Url="html/Methods_T_GeoEngine_Core_GXNet_CSYS.htm">
+    <HelpTOCNode Id="be04e849-45ad-4c2c-a7c0-6a0d863b223b" Title="CSYS Class" Url="html/T_GeoEngine_Core_GXNet_CSYS.htm">
+      <HelpTOCNode Id="6fe45c96-58db-4f01-a86e-24518bb14be8" Title="CSYS Methods" Url="html/Methods_T_GeoEngine_Core_GXNet_CSYS.htm">
         <HelpTOCNode Title="Abort Method " Url="html/M_GeoEngine_Core_GXNet_CSYS_Abort.htm" />
         <HelpTOCNode Title="AddLineageParameter Method " Url="html/M_GeoEngine_Core_GXNet_CSYS_AddLineageParameter.htm" />
         <HelpTOCNode Title="AddLineageSource Method " Url="html/M_GeoEngine_Core_GXNet_CSYS_AddLineageSource.htm" />
@@ -1694,7 +1694,7 @@
         <HelpTOCNode Title="DisplayReal Method " Url="html/M_GeoEngine_Core_GXNet_CSYS_DisplayReal.htm" />
         <HelpTOCNode Title="DoCommand Method " Url="html/M_GeoEngine_Core_GXNet_CSYS_DoCommand.htm" />
         <HelpTOCNode Title="EMFObjectSize Method " Url="html/M_GeoEngine_Core_GXNet_CSYS_EMFObjectSize.htm" />
-        <HelpTOCNode Id="1794c0e4-1891-4ed0-bb15-79a4412706f2" Title="EnableGXDebugger Method " Url="html/Overload_GeoEngine_Core_GXNet_CSYS_EnableGXDebugger.htm">
+        <HelpTOCNode Id="3f304f09-25a9-4b12-8b3b-a040b6212703" Title="EnableGXDebugger Method " Url="html/Overload_GeoEngine_Core_GXNet_CSYS_EnableGXDebugger.htm">
           <HelpTOCNode Title="EnableGXDebugger Method (String, String)" Url="html/M_GeoEngine_Core_GXNet_CSYS_EnableGXDebugger.htm" />
           <HelpTOCNode Title="EnableGXDebugger Method (IWin32Window, String, String)" Url="html/M_GeoEngine_Core_GXNet_CSYS_EnableGXDebugger_1.htm" />
         </HelpTOCNode>
@@ -1777,11 +1777,11 @@
         <HelpTOCNode Title="IReplaceString Method " Url="html/M_GeoEngine_Core_GXNet_CSYS_IReplaceString.htm" />
         <HelpTOCNode Title="iRun Method " Url="html/M_GeoEngine_Core_GXNet_CSYS_iRun.htm" />
         <HelpTOCNode Title="iRunGS Method " Url="html/M_GeoEngine_Core_GXNet_CSYS_iRunGS.htm" />
-        <HelpTOCNode Id="ae9697c9-e6f9-4326-86e2-9580babd58ca" Title="iRunGX Method " Url="html/Overload_GeoEngine_Core_GXNet_CSYS_iRunGX.htm">
+        <HelpTOCNode Id="31cf3eb4-0cd2-4bc9-ae33-1c30682a05ed" Title="iRunGX Method " Url="html/Overload_GeoEngine_Core_GXNet_CSYS_iRunGX.htm">
           <HelpTOCNode Title="iRunGX Method (String)" Url="html/M_GeoEngine_Core_GXNet_CSYS_iRunGX.htm" />
           <HelpTOCNode Title="iRunGX Method (IWin32Window, String)" Url="html/M_GeoEngine_Core_GXNet_CSYS_iRunGX_1.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="d3042eaf-d9e6-4ed5-be1f-aadb07f78b95" Title="iRunGXEx Method " Url="html/Overload_GeoEngine_Core_GXNet_CSYS_iRunGXEx.htm">
+        <HelpTOCNode Id="4775ff37-2a79-4965-b954-2b1ab052cae4" Title="iRunGXEx Method " Url="html/Overload_GeoEngine_Core_GXNet_CSYS_iRunGXEx.htm">
           <HelpTOCNode Title="iRunGXEx Method (String, Int32)" Url="html/M_GeoEngine_Core_GXNet_CSYS_iRunGXEx.htm" />
           <HelpTOCNode Title="iRunGXEx Method (IWin32Window, String, Int32)" Url="html/M_GeoEngine_Core_GXNet_CSYS_iRunGXEx_1.htm" />
         </HelpTOCNode>
@@ -1850,8 +1850,8 @@
         <HelpTOCNode Title="WriteDebugLog Method " Url="html/M_GeoEngine_Core_GXNet_CSYS_WriteDebugLog.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="51b1ed82-dbce-404b-9645-113ade1d8fb4" Title="CTB Class" Url="html/T_GeoEngine_Core_GXNet_CTB.htm">
-      <HelpTOCNode Id="c2f8dd3e-8adc-4c38-a49f-ae6259c8845d" Title="CTB Methods" Url="html/Methods_T_GeoEngine_Core_GXNet_CTB.htm">
+    <HelpTOCNode Id="5dba7d92-400d-41e0-aee6-75b1a44d140a" Title="CTB Class" Url="html/T_GeoEngine_Core_GXNet_CTB.htm">
+      <HelpTOCNode Id="edcfafb5-eef7-4eba-b12a-c80f65401294" Title="CTB Methods" Url="html/Methods_T_GeoEngine_Core_GXNet_CTB.htm">
         <HelpTOCNode Title="Create Method " Url="html/M_GeoEngine_Core_GXNet_CTB_Create.htm" />
         <HelpTOCNode Title="CreateDB Method " Url="html/M_GeoEngine_Core_GXNet_CTB_CreateDB.htm" />
         <HelpTOCNode Title="CreateLTB Method " Url="html/M_GeoEngine_Core_GXNet_CTB_CreateLTB.htm" />
@@ -1877,8 +1877,8 @@
         <HelpTOCNode Title="Sort Method " Url="html/M_GeoEngine_Core_GXNet_CTB_Sort.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="967c8033-76df-42a7-8004-bb9287c29c9a" Title="CTPAT Class" Url="html/T_GeoEngine_Core_GXNet_CTPAT.htm">
-      <HelpTOCNode Id="b39edeae-0fa9-4007-8227-4898fba0d998" Title="CTPAT Methods" Url="html/Methods_T_GeoEngine_Core_GXNet_CTPAT.htm">
+    <HelpTOCNode Id="770a5bf7-f50d-433a-9d4a-78d2551f5eab" Title="CTPAT Class" Url="html/T_GeoEngine_Core_GXNet_CTPAT.htm">
+      <HelpTOCNode Id="f316061e-eacd-4ffb-8365-4601660ebeac" Title="CTPAT Methods" Url="html/Methods_T_GeoEngine_Core_GXNet_CTPAT.htm">
         <HelpTOCNode Title="AddColor Method " Url="html/M_GeoEngine_Core_GXNet_CTPAT_AddColor.htm" />
         <HelpTOCNode Title="Create Method " Url="html/M_GeoEngine_Core_GXNet_CTPAT_Create.htm" />
         <HelpTOCNode Title="Dispose Method " Url="html/M_GeoEngine_Core_GXNet_CTPAT_Dispose.htm" />
@@ -1889,15 +1889,15 @@
         <HelpTOCNode Title="SetupTranslationVV Method " Url="html/M_GeoEngine_Core_GXNet_CTPAT_SetupTranslationVV.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="dd38fa72-986f-4dd6-a277-a105a7057d87" Title="CTR Class" Url="html/T_GeoEngine_Core_GXNet_CTR.htm">
-      <HelpTOCNode Id="21931cec-99fb-48e8-8c0e-8c141bfcfceb" Title="CTR Methods" Url="html/Methods_T_GeoEngine_Core_GXNet_CTR.htm">
+    <HelpTOCNode Id="d70db94c-8b9f-41a5-acd4-5c38a9f17e1c" Title="CTR Class" Url="html/T_GeoEngine_Core_GXNet_CTR.htm">
+      <HelpTOCNode Id="e864f07e-2dbf-4a43-b57d-6270914b873b" Title="CTR Methods" Url="html/Methods_T_GeoEngine_Core_GXNet_CTR.htm">
         <HelpTOCNode Title="Copy Method " Url="html/M_GeoEngine_Core_GXNet_CTR_Copy.htm" />
         <HelpTOCNode Title="Create Method " Url="html/M_GeoEngine_Core_GXNet_CTR_Create.htm" />
         <HelpTOCNode Title="Dispose Method " Url="html/M_GeoEngine_Core_GXNet_CTR_Dispose.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="2206a8b5-3ba8-48e6-b6a5-bc535d472504" Title="CUSERMETA Class" Url="html/T_GeoEngine_Core_GXNet_CUSERMETA.htm">
-      <HelpTOCNode Id="916a81f6-b28d-447d-8d4b-d0d5564db73f" Title="CUSERMETA Methods" Url="html/Methods_T_GeoEngine_Core_GXNet_CUSERMETA.htm">
+    <HelpTOCNode Id="f6893e37-9403-447c-82a6-6edbf8caf2ce" Title="CUSERMETA Class" Url="html/T_GeoEngine_Core_GXNet_CUSERMETA.htm">
+      <HelpTOCNode Id="ab326c03-db2f-44b9-aac0-7821a0f9c5ff" Title="CUSERMETA Methods" Url="html/Methods_T_GeoEngine_Core_GXNet_CUSERMETA.htm">
         <HelpTOCNode Title="Create Method " Url="html/M_GeoEngine_Core_GXNet_CUSERMETA_Create.htm" />
         <HelpTOCNode Title="CreateS Method " Url="html/M_GeoEngine_Core_GXNet_CUSERMETA_CreateS.htm" />
         <HelpTOCNode Title="Dispose Method " Url="html/M_GeoEngine_Core_GXNet_CUSERMETA_Dispose.htm" />
@@ -1929,8 +1929,8 @@
         <HelpTOCNode Title="UpdateFileType Method " Url="html/M_GeoEngine_Core_GXNet_CUSERMETA_UpdateFileType.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="3df6e5bb-0f9e-4cd0-aeb8-ec7bbca8a637" Title="CVA Class" Url="html/T_GeoEngine_Core_GXNet_CVA.htm">
-      <HelpTOCNode Id="fbb1fa5e-ff92-4588-84c7-bd0c4529388c" Title="CVA Methods" Url="html/Methods_T_GeoEngine_Core_GXNet_CVA.htm">
+    <HelpTOCNode Id="e76a2aec-a8b0-4857-96ce-a9e33ee2e554" Title="CVA Class" Url="html/T_GeoEngine_Core_GXNet_CVA.htm">
+      <HelpTOCNode Id="7034f88c-89ef-4b4d-8d16-dda13884d852" Title="CVA Methods" Url="html/Methods_T_GeoEngine_Core_GXNet_CVA.htm">
         <HelpTOCNode Title="AddElevationsVVToDepths Method " Url="html/M_GeoEngine_Core_GXNet_CVA_AddElevationsVVToDepths.htm" />
         <HelpTOCNode Title="Append Method " Url="html/M_GeoEngine_Core_GXNet_CVA_Append.htm" />
         <HelpTOCNode Title="Average Method " Url="html/M_GeoEngine_Core_GXNet_CVA_Average.htm" />
@@ -1970,15 +1970,15 @@
         <HelpTOCNode Title="Window2 Method " Url="html/M_GeoEngine_Core_GXNet_CVA_Window2.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="249bb5e7-767a-4a3e-b2a2-93e46ef58ef3" Title="CVECTOR3D Class" Url="html/T_GeoEngine_Core_GXNet_CVECTOR3D.htm">
-      <HelpTOCNode Id="a03d9f33-2a4b-4606-93c8-961d0f2f0bab" Title="CVECTOR3D Methods" Url="html/Methods_T_GeoEngine_Core_GXNet_CVECTOR3D.htm">
+    <HelpTOCNode Id="0082cf08-e3de-496f-bd56-4ba1b29a1517" Title="CVECTOR3D Class" Url="html/T_GeoEngine_Core_GXNet_CVECTOR3D.htm">
+      <HelpTOCNode Id="6fe34294-2f62-40e7-9e42-24e96473a710" Title="CVECTOR3D Methods" Url="html/Methods_T_GeoEngine_Core_GXNet_CVECTOR3D.htm">
         <HelpTOCNode Title="Dispose Method " Url="html/M_GeoEngine_Core_GXNet_CVECTOR3D_Dispose.htm" />
         <HelpTOCNode Title="GetITR Method " Url="html/M_GeoEngine_Core_GXNet_CVECTOR3D_GetITR.htm" />
         <HelpTOCNode Title="SetITR Method " Url="html/M_GeoEngine_Core_GXNet_CVECTOR3D_SetITR.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="fd4f2a77-1ee9-4f78-8dca-d7828c1d7eb9" Title="CVM Class" Url="html/T_GeoEngine_Core_GXNet_CVM.htm">
-      <HelpTOCNode Id="e82c063c-d429-48e7-bf81-00b8e0e7ebe9" Title="CVM Methods" Url="html/Methods_T_GeoEngine_Core_GXNet_CVM.htm">
+    <HelpTOCNode Id="63f8ebdb-6c68-44c5-a5e5-8e0bd847adf8" Title="CVM Class" Url="html/T_GeoEngine_Core_GXNet_CVM.htm">
+      <HelpTOCNode Id="fb779a29-f331-478b-b635-08c81477a2e8" Title="CVM Methods" Url="html/Methods_T_GeoEngine_Core_GXNet_CVM.htm">
         <HelpTOCNode Title="Create Method " Url="html/M_GeoEngine_Core_GXNet_CVM_Create.htm" />
         <HelpTOCNode Title="CreateExt Method " Url="html/M_GeoEngine_Core_GXNet_CVM_CreateExt.htm" />
         <HelpTOCNode Title="Dispose Method " Url="html/M_GeoEngine_Core_GXNet_CVM_Dispose.htm" />
@@ -1992,8 +1992,8 @@
         <HelpTOCNode Title="SetString Method " Url="html/M_GeoEngine_Core_GXNet_CVM_SetString.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="f2a8ad3e-af51-4431-840c-74f3c89deb94" Title="CVOX Class" Url="html/T_GeoEngine_Core_GXNet_CVOX.htm">
-      <HelpTOCNode Id="6cd04f31-ea82-450d-b164-527a5f88dd13" Title="CVOX Methods" Url="html/Methods_T_GeoEngine_Core_GXNet_CVOX.htm">
+    <HelpTOCNode Id="bc4418e3-7048-4797-a790-747af7137944" Title="CVOX Class" Url="html/T_GeoEngine_Core_GXNet_CVOX.htm">
+      <HelpTOCNode Id="4032b2e2-bfcd-493b-a7d4-33e0514b8615" Title="CVOX Methods" Url="html/Methods_T_GeoEngine_Core_GXNet_CVOX.htm">
         <HelpTOCNode Title="AddGenerateBySubsetPG Method " Url="html/M_GeoEngine_Core_GXNet_CVOX_AddGenerateBySubsetPG.htm" />
         <HelpTOCNode Title="CalcStats Method " Url="html/M_GeoEngine_Core_GXNet_CVOX_CalcStats.htm" />
         <HelpTOCNode Title="ConvertDensityToVelocity Method " Url="html/M_GeoEngine_Core_GXNet_CVOX_ConvertDensityToVelocity.htm" />
@@ -2080,8 +2080,8 @@
         <HelpTOCNode Title="WriteXML Method " Url="html/M_GeoEngine_Core_GXNet_CVOX_WriteXML.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="373f15e5-063f-4a0c-b058-886be27b3111" Title="CVOXD Class" Url="html/T_GeoEngine_Core_GXNet_CVOXD.htm">
-      <HelpTOCNode Id="34a73ae9-e4c8-4902-9a55-290d393aa28e" Title="CVOXD Methods" Url="html/Methods_T_GeoEngine_Core_GXNet_CVOXD.htm">
+    <HelpTOCNode Id="20d25412-2ddb-4e65-a893-c437cacf616e" Title="CVOXD Class" Url="html/T_GeoEngine_Core_GXNet_CVOXD.htm">
+      <HelpTOCNode Id="e9b8bc61-2c6a-43f5-a07d-e7e2f3b5057b" Title="CVOXD Methods" Url="html/Methods_T_GeoEngine_Core_GXNet_CVOXD.htm">
         <HelpTOCNode Title="Create Method " Url="html/M_GeoEngine_Core_GXNet_CVOXD_Create.htm" />
         <HelpTOCNode Title="CreateITR Method " Url="html/M_GeoEngine_Core_GXNet_CVOXD_CreateITR.htm" />
         <HelpTOCNode Title="CreateThematic Method " Url="html/M_GeoEngine_Core_GXNet_CVOXD_CreateThematic.htm" />
@@ -2098,8 +2098,8 @@
         <HelpTOCNode Title="SetThematicSelection Method " Url="html/M_GeoEngine_Core_GXNet_CVOXD_SetThematicSelection.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="f8e26e3b-87f3-4779-9e5f-30cc9cdf85ae" Title="CVOXE Class" Url="html/T_GeoEngine_Core_GXNet_CVOXE.htm">
-      <HelpTOCNode Id="a9fbfd0f-1a03-4414-8a02-621bbdd4f1a3" Title="CVOXE Methods" Url="html/Methods_T_GeoEngine_Core_GXNet_CVOXE.htm">
+    <HelpTOCNode Id="5aaeed12-5f3c-42bf-88d3-c6ae2e069979" Title="CVOXE Class" Url="html/T_GeoEngine_Core_GXNet_CVOXE.htm">
+      <HelpTOCNode Id="42f41da2-d44c-4562-8890-a65fe805a112" Title="CVOXE Methods" Url="html/Methods_T_GeoEngine_Core_GXNet_CVOXE.htm">
         <HelpTOCNode Title="Create Method " Url="html/M_GeoEngine_Core_GXNet_CVOXE_Create.htm" />
         <HelpTOCNode Title="Dispose Method " Url="html/M_GeoEngine_Core_GXNet_CVOXE_Dispose.htm" />
         <HelpTOCNode Title="Profile Method " Url="html/M_GeoEngine_Core_GXNet_CVOXE_Profile.htm" />
@@ -2107,8 +2107,8 @@
         <HelpTOCNode Title="Vector Method " Url="html/M_GeoEngine_Core_GXNet_CVOXE_Vector.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="751282a3-6722-4514-af6c-d6c7e10c9255" Title="CVULCAN Class" Url="html/T_GeoEngine_Core_GXNet_CVULCAN.htm">
-      <HelpTOCNode Id="82b31d0d-43f0-48fe-ba24-56d8673006cc" Title="CVULCAN Methods" Url="html/Methods_T_GeoEngine_Core_GXNet_CVULCAN.htm">
+    <HelpTOCNode Id="180b7cdf-e21d-43d3-91f1-5f7ebffbbda6" Title="CVULCAN Class" Url="html/T_GeoEngine_Core_GXNet_CVULCAN.htm">
+      <HelpTOCNode Id="2d6342be-98ec-48b9-bc34-02bf59059844" Title="CVULCAN Methods" Url="html/Methods_T_GeoEngine_Core_GXNet_CVULCAN.htm">
         <HelpTOCNode Title="BlockModelToVoxel Method " Url="html/M_GeoEngine_Core_GXNet_CVULCAN_BlockModelToVoxel.htm" />
         <HelpTOCNode Title="GetBlockModelStringVariableValues Method " Url="html/M_GeoEngine_Core_GXNet_CVULCAN_GetBlockModelStringVariableValues.htm" />
         <HelpTOCNode Title="GetBlockModelVariableInfo Method " Url="html/M_GeoEngine_Core_GXNet_CVULCAN_GetBlockModelVariableInfo.htm" />
@@ -2117,8 +2117,8 @@
         <HelpTOCNode Title="TriangulationToView Method " Url="html/M_GeoEngine_Core_GXNet_CVULCAN_TriangulationToView.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="1eada541-f44b-407c-9793-8030dd3fbf65" Title="CVV Class" Url="html/T_GeoEngine_Core_GXNet_CVV.htm">
-      <HelpTOCNode Id="c3242063-07e7-4664-840a-603f13f1a279" Title="CVV Methods" Url="html/Methods_T_GeoEngine_Core_GXNet_CVV.htm">
+    <HelpTOCNode Id="70f341fe-4f56-4b6c-a44f-86a4264bcdc9" Title="CVV Class" Url="html/T_GeoEngine_Core_GXNet_CVV.htm">
+      <HelpTOCNode Id="a4e7b475-436a-4d3f-82b4-9f4623a9e0dd" Title="CVV Methods" Url="html/Methods_T_GeoEngine_Core_GXNet_CVV.htm">
         <HelpTOCNode Title="Abs Method " Url="html/M_GeoEngine_Core_GXNet_CVV_Abs.htm" />
         <HelpTOCNode Title="Add Method " Url="html/M_GeoEngine_Core_GXNet_CVV_Add.htm" />
         <HelpTOCNode Title="Add2 Method " Url="html/M_GeoEngine_Core_GXNet_CVV_Add2.htm" />
@@ -2205,8 +2205,8 @@
         <HelpTOCNode Title="WriteXML Method " Url="html/M_GeoEngine_Core_GXNet_CVV_WriteXML.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="25f20567-0203-414d-acfb-c790e3d42a66" Title="CWA Class" Url="html/T_GeoEngine_Core_GXNet_CWA.htm">
-      <HelpTOCNode Id="be06b55e-fe1d-47b0-bf8c-b1be9b20b999" Title="CWA Methods" Url="html/Methods_T_GeoEngine_Core_GXNet_CWA.htm">
+    <HelpTOCNode Id="57e68b67-0a37-49b3-8810-09fdafb682b1" Title="CWA Class" Url="html/T_GeoEngine_Core_GXNet_CWA.htm">
+      <HelpTOCNode Id="6e0fc1a5-dc49-4438-96fc-21c53f45cdcb" Title="CWA Methods" Url="html/Methods_T_GeoEngine_Core_GXNet_CWA.htm">
         <HelpTOCNode Title="Create Method " Url="html/M_GeoEngine_Core_GXNet_CWA_Create.htm" />
         <HelpTOCNode Title="CreateEx Method " Url="html/M_GeoEngine_Core_GXNet_CWA_CreateEx.htm" />
         <HelpTOCNode Title="CreateSBF Method " Url="html/M_GeoEngine_Core_GXNet_CWA_CreateSBF.htm" />
@@ -2216,61 +2216,61 @@
         <HelpTOCNode Title="Puts Method " Url="html/M_GeoEngine_Core_GXNet_CWA_Puts.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="fe9213b0-a023-4d61-bacb-ccc07e66b1e8" Title="DoubleVector Class" Url="html/T_GeoEngine_Core_GXNet_DoubleVector.htm">
+    <HelpTOCNode Id="e9e6b78d-6adb-4650-8c04-71f2fb24b617" Title="DoubleVector Class" Url="html/T_GeoEngine_Core_GXNet_DoubleVector.htm">
       <HelpTOCNode Title="DoubleVector Constructor " Url="html/M_GeoEngine_Core_GXNet_DoubleVector__ctor.htm" />
-      <HelpTOCNode Id="96422355-73a8-4ad5-aad1-322f784bb54f" Title="DoubleVector Properties" Url="html/Properties_T_GeoEngine_Core_GXNet_DoubleVector.htm">
+      <HelpTOCNode Id="994844dc-53b7-4004-9bdf-d02ff5b31dc8" Title="DoubleVector Properties" Url="html/Properties_T_GeoEngine_Core_GXNet_DoubleVector.htm">
         <HelpTOCNode Title="Item Property " Url="html/P_GeoEngine_Core_GXNet_DoubleVector_Item.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="5ce9b147-2f1b-44f6-85cc-b5234489c20d" Title="FloatVector Class" Url="html/T_GeoEngine_Core_GXNet_FloatVector.htm">
+    <HelpTOCNode Id="1d7caa05-e4f5-49ed-be95-3abc41439377" Title="FloatVector Class" Url="html/T_GeoEngine_Core_GXNet_FloatVector.htm">
       <HelpTOCNode Title="FloatVector Constructor " Url="html/M_GeoEngine_Core_GXNet_FloatVector__ctor.htm" />
-      <HelpTOCNode Id="fcc10af0-29f3-47d6-b36c-c5d5ace3fb27" Title="FloatVector Properties" Url="html/Properties_T_GeoEngine_Core_GXNet_FloatVector.htm">
+      <HelpTOCNode Id="76b5302a-96a8-4319-b3df-bb0b1634090f" Title="FloatVector Properties" Url="html/Properties_T_GeoEngine_Core_GXNet_FloatVector.htm">
         <HelpTOCNode Title="Item Property " Url="html/P_GeoEngine_Core_GXNet_FloatVector_Item.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="01e15410-182c-48df-8a9b-d637dca8ca2d" Title="InternalUtils Class" Url="html/T_GeoEngine_Core_GXNet_InternalUtils.htm">
+    <HelpTOCNode Id="24b88796-020f-421b-bf37-93e7cc22e2da" Title="InternalUtils Class" Url="html/T_GeoEngine_Core_GXNet_InternalUtils.htm">
       <HelpTOCNode Title="InternalUtils Constructor " Url="html/M_GeoEngine_Core_GXNet_InternalUtils__ctor.htm" />
-      <HelpTOCNode Id="1c284cb1-bbcf-4eae-b425-5855475b347b" Title="InternalUtils Methods" Url="html/Methods_T_GeoEngine_Core_GXNet_InternalUtils.htm">
+      <HelpTOCNode Id="21b699a0-2c8a-43a1-aa3f-5a291e782f98" Title="InternalUtils Methods" Url="html/Methods_T_GeoEngine_Core_GXNet_InternalUtils.htm">
         <HelpTOCNode Title="pGetInternalGXXPointer Method " Url="html/M_GeoEngine_Core_GXNet_InternalUtils_pGetInternalGXXPointer.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="a783c680-1865-4c23-bd7a-74520dfaa791" Title="IntVector Class" Url="html/T_GeoEngine_Core_GXNet_IntVector.htm">
+    <HelpTOCNode Id="800842bc-bf40-465b-87a3-c2385482c507" Title="IntVector Class" Url="html/T_GeoEngine_Core_GXNet_IntVector.htm">
       <HelpTOCNode Title="IntVector Constructor " Url="html/M_GeoEngine_Core_GXNet_IntVector__ctor.htm" />
-      <HelpTOCNode Id="5ea32ba4-3cc4-4811-9a80-4b59266a7764" Title="IntVector Properties" Url="html/Properties_T_GeoEngine_Core_GXNet_IntVector.htm">
+      <HelpTOCNode Id="0a112ac9-ea7e-47ef-b4f8-f47f6fc22ca4" Title="IntVector Properties" Url="html/Properties_T_GeoEngine_Core_GXNet_IntVector.htm">
         <HelpTOCNode Title="Item Property " Url="html/P_GeoEngine_Core_GXNet_IntVector_Item.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="59260cef-c645-47de-b03a-1e3bbb926bc3" Title="ShortVector Class" Url="html/T_GeoEngine_Core_GXNet_ShortVector.htm">
+    <HelpTOCNode Id="14a4bd9c-498a-424e-86f3-dfe36f5b7a72" Title="ShortVector Class" Url="html/T_GeoEngine_Core_GXNet_ShortVector.htm">
       <HelpTOCNode Title="ShortVector Constructor " Url="html/M_GeoEngine_Core_GXNet_ShortVector__ctor.htm" />
-      <HelpTOCNode Id="dfe8882c-2760-4781-8292-93001e44e76d" Title="ShortVector Properties" Url="html/Properties_T_GeoEngine_Core_GXNet_ShortVector.htm">
+      <HelpTOCNode Id="64aa70a9-1360-469f-ac41-e3650c57511e" Title="ShortVector Properties" Url="html/Properties_T_GeoEngine_Core_GXNet_ShortVector.htm">
         <HelpTOCNode Title="Item Property " Url="html/P_GeoEngine_Core_GXNet_ShortVector_Item.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="494a379b-2527-4ce1-b52e-925e60b1c359" Title="UShortVector Class" Url="html/T_GeoEngine_Core_GXNet_UShortVector.htm">
+    <HelpTOCNode Id="31f2454a-a124-48f4-b8a3-750718e01345" Title="UShortVector Class" Url="html/T_GeoEngine_Core_GXNet_UShortVector.htm">
       <HelpTOCNode Title="UShortVector Constructor " Url="html/M_GeoEngine_Core_GXNet_UShortVector__ctor.htm" />
-      <HelpTOCNode Id="b2a89487-5db9-4df9-ac40-3b11150d7976" Title="UShortVector Properties" Url="html/Properties_T_GeoEngine_Core_GXNet_UShortVector.htm">
+      <HelpTOCNode Id="ccdd3ff4-8a5e-4680-a7a3-96c898407d80" Title="UShortVector Properties" Url="html/Properties_T_GeoEngine_Core_GXNet_UShortVector.htm">
         <HelpTOCNode Title="Item Property " Url="html/P_GeoEngine_Core_GXNet_UShortVector_Item.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="ecd28ad9-fd36-4c16-b78e-635672822ae3" Title="Vector Class" Url="html/T_GeoEngine_Core_GXNet_Vector.htm">
+    <HelpTOCNode Id="709d732c-a47a-4a2f-af52-353a74a1f574" Title="Vector Class" Url="html/T_GeoEngine_Core_GXNet_Vector.htm">
       <HelpTOCNode Title="Vector Constructor " Url="html/M_GeoEngine_Core_GXNet_Vector__ctor.htm" />
-      <HelpTOCNode Id="98d81e3f-4c9f-45bc-98d3-1dcb6f80ede1" Title="Vector Fields" Url="html/Fields_T_GeoEngine_Core_GXNet_Vector.htm">
+      <HelpTOCNode Id="747393fe-98a5-4c03-ade5-c8a1152f772d" Title="Vector Fields" Url="html/Fields_T_GeoEngine_Core_GXNet_Vector.htm">
         <HelpTOCNode Title="m_array Field" Url="html/F_GeoEngine_Core_GXNet_Vector_m_array.htm" />
         <HelpTOCNode Title="m_count Field" Url="html/F_GeoEngine_Core_GXNet_Vector_m_count.htm" />
         <HelpTOCNode Title="SIZEOF_DOUBLE Field" Url="html/F_GeoEngine_Core_GXNet_Vector_SIZEOF_DOUBLE.htm" />
         <HelpTOCNode Title="SIZEOF_INT32 Field" Url="html/F_GeoEngine_Core_GXNet_Vector_SIZEOF_INT32.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="8888ba76-8450-4e77-96c9-f2182bc01d0d" Title="Vector Methods" Url="html/Methods_T_GeoEngine_Core_GXNet_Vector.htm">
+      <HelpTOCNode Id="b66b6141-ca9f-4065-8bdc-eab8a3ca0aa6" Title="Vector Methods" Url="html/Methods_T_GeoEngine_Core_GXNet_Vector.htm">
         <HelpTOCNode Title="InternalItem Method " Url="html/M_GeoEngine_Core_GXNet_Vector_InternalItem.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="deb90f6e-0a62-4ed3-86bb-4f4a9e6ff039" Title="Vector Properties" Url="html/Properties_T_GeoEngine_Core_GXNet_Vector.htm">
+      <HelpTOCNode Id="f158a081-2569-449f-b359-9dd6b2ff2c10" Title="Vector Properties" Url="html/Properties_T_GeoEngine_Core_GXNet_Vector.htm">
         <HelpTOCNode Title="Count Property " Url="html/P_GeoEngine_Core_GXNet_Vector_Count.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
   </HelpTOCNode>
-  <HelpTOCNode Id="dc2bb8cd-3eab-4fec-bbdc-b58f8119e12f" Title="Geosoft.Desktop.GXNet" Url="html/N_Geosoft_Desktop_GXNet.htm">
-    <HelpTOCNode Id="4507b76a-b104-423f-8749-ad352f4d76db" Title="CACQUIRE Class" Url="html/T_Geosoft_Desktop_GXNet_CACQUIRE.htm">
-      <HelpTOCNode Id="7b67562e-0543-4af9-bea8-efa3bf86a6db" Title="CACQUIRE Methods" Url="html/Methods_T_Geosoft_Desktop_GXNet_CACQUIRE.htm">
+  <HelpTOCNode Id="e455872e-936d-436a-9ad9-546362725aec" Title="Geosoft.Desktop.GXNet" Url="html/N_Geosoft_Desktop_GXNet.htm">
+    <HelpTOCNode Id="f9ab8da5-74ac-4d69-a5c8-4df21e5731fd" Title="CACQUIRE Class" Url="html/T_Geosoft_Desktop_GXNet_CACQUIRE.htm">
+      <HelpTOCNode Id="1f3fa661-34bd-4d85-abcc-f2d9df3bb843" Title="CACQUIRE Methods" Url="html/Methods_T_Geosoft_Desktop_GXNet_CACQUIRE.htm">
         <HelpTOCNode Title="Create Method " Url="html/M_Geosoft_Desktop_GXNet_CACQUIRE_Create.htm" />
         <HelpTOCNode Title="DeleteEmptyChan Method " Url="html/M_Geosoft_Desktop_GXNet_CACQUIRE_DeleteEmptyChan.htm" />
         <HelpTOCNode Title="Dispose Method " Url="html/M_Geosoft_Desktop_GXNet_CACQUIRE_Dispose.htm" />
@@ -2279,8 +2279,8 @@
         <HelpTOCNode Title="iSelectionTool Method " Url="html/M_Geosoft_Desktop_GXNet_CACQUIRE_iSelectionTool.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="d51bb86f-096d-48a9-8e9a-03da6ea28706" Title="CARCDB Class" Url="html/T_Geosoft_Desktop_GXNet_CARCDB.htm">
-      <HelpTOCNode Id="9436dd15-51ac-4f33-a5a5-3a5bdf8a4d5a" Title="CARCDB Methods" Url="html/Methods_T_Geosoft_Desktop_GXNet_CARCDB.htm">
+    <HelpTOCNode Id="01f5b3a4-a2ac-47c3-8aec-9e459a249c68" Title="CARCDB Class" Url="html/T_Geosoft_Desktop_GXNet_CARCDB.htm">
+      <HelpTOCNode Id="0b0de3e2-9838-400e-9ab0-8458e56e0108" Title="CARCDB Methods" Url="html/Methods_T_Geosoft_Desktop_GXNet_CARCDB.htm">
         <HelpTOCNode Title="CreateDAT Method " Url="html/M_Geosoft_Desktop_GXNet_CARCDB_CreateDAT.htm" />
         <HelpTOCNode Title="CreateDAT3D Method " Url="html/M_Geosoft_Desktop_GXNet_CARCDB_CreateDAT3D.htm" />
         <HelpTOCNode Title="Current Method " Url="html/M_Geosoft_Desktop_GXNet_CARCDB_Current.htm" />
@@ -2290,7 +2290,7 @@
         <HelpTOCNode Title="GetIPJ Method " Url="html/M_Geosoft_Desktop_GXNet_CARCDB_GetIPJ.htm" />
         <HelpTOCNode Title="iExistField Method " Url="html/M_Geosoft_Desktop_GXNet_CARCDB_iExistField.htm" />
         <HelpTOCNode Title="iGetIUnknown Method " Url="html/M_Geosoft_Desktop_GXNet_CARCDB_iGetIUnknown.htm" />
-        <HelpTOCNode Id="bb4f11a2-f3e2-4818-84eb-f0707a587374" Title="iImportChemDatabaseWizard Method " Url="html/Overload_Geosoft_Desktop_GXNet_CARCDB_iImportChemDatabaseWizard.htm">
+        <HelpTOCNode Id="5617cc2e-0b66-435d-ac33-6e3f30346cb8" Title="iImportChemDatabaseWizard Method " Url="html/Overload_Geosoft_Desktop_GXNet_CARCDB_iImportChemDatabaseWizard.htm">
           <HelpTOCNode Title="iImportChemDatabaseWizard Method (String, Int32)" Url="html/M_Geosoft_Desktop_GXNet_CARCDB_iImportChemDatabaseWizard.htm" />
           <HelpTOCNode Title="iImportChemDatabaseWizard Method (IWin32Window, String, Int32)" Url="html/M_Geosoft_Desktop_GXNet_CARCDB_iImportChemDatabaseWizard_1.htm" />
         </HelpTOCNode>
@@ -2298,8 +2298,8 @@
         <HelpTOCNode Title="SelTblGUI Method " Url="html/M_Geosoft_Desktop_GXNet_CARCDB_SelTblGUI.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="c322b19f-e616-45a1-963c-aad89212d16b" Title="CARCDH Class" Url="html/T_Geosoft_Desktop_GXNet_CARCDH.htm">
-      <HelpTOCNode Id="36315799-7a8a-4830-ba71-5c26de420069" Title="CARCDH Methods" Url="html/Methods_T_Geosoft_Desktop_GXNet_CARCDH.htm">
+    <HelpTOCNode Id="eb9d671a-98ab-4067-8800-ebb885128c7a" Title="CARCDH Class" Url="html/T_Geosoft_Desktop_GXNet_CARCDH.htm">
+      <HelpTOCNode Id="3fc76a6a-b540-4102-8ad5-27d177fae461" Title="CARCDH Methods" Url="html/Methods_T_Geosoft_Desktop_GXNet_CARCDH.htm">
         <HelpTOCNode Title="CloseProject Method " Url="html/M_Geosoft_Desktop_GXNet_CARCDH_CloseProject.htm" />
         <HelpTOCNode Title="GetCurrentStringFileGDB Method " Url="html/M_Geosoft_Desktop_GXNet_CARCDH_GetCurrentStringFileGDB.htm" />
         <HelpTOCNode Title="iGeostringsExtensionAvailable Method " Url="html/M_Geosoft_Desktop_GXNet_CARCDH_iGeostringsExtensionAvailable.htm" />
@@ -2312,8 +2312,8 @@
         <HelpTOCNode Title="StopEditingStringFileGDB Method " Url="html/M_Geosoft_Desktop_GXNet_CARCDH_StopEditingStringFileGDB.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="c9b2febe-1bca-4b8d-b654-eb5ec7f566e2" Title="CARCMAP Class" Url="html/T_Geosoft_Desktop_GXNet_CARCMAP.htm">
-      <HelpTOCNode Id="f0709bef-a174-4595-bfc3-71e52a0bbaa9" Title="CARCMAP Methods" Url="html/Methods_T_Geosoft_Desktop_GXNet_CARCMAP.htm">
+    <HelpTOCNode Id="f279c130-cace-477a-a2c6-bf3acfaac8bd" Title="CARCMAP Class" Url="html/T_Geosoft_Desktop_GXNet_CARCMAP.htm">
+      <HelpTOCNode Id="a402bc88-b9ca-4653-ad31-4490f26008dd" Title="CARCMAP Methods" Url="html/Methods_T_Geosoft_Desktop_GXNet_CARCMAP.htm">
         <HelpTOCNode Title="ChangeSize Method " Url="html/M_Geosoft_Desktop_GXNet_CARCMAP_ChangeSize.htm" />
         <HelpTOCNode Title="DisplayIn3DView Method " Url="html/M_Geosoft_Desktop_GXNet_CARCMAP_DisplayIn3DView.htm" />
         <HelpTOCNode Title="ExportFeatureLayerByNameTo3DFile Method " Url="html/M_Geosoft_Desktop_GXNet_CARCMAP_ExportFeatureLayerByNameTo3DFile.htm" />
@@ -2338,15 +2338,15 @@
         <HelpTOCNode Title="ShowSelectedLayersIn3D Method " Url="html/M_Geosoft_Desktop_GXNet_CARCMAP_ShowSelectedLayersIn3D.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="e0598b73-6536-47fb-b7ad-fd6109bcb7f4" Title="CARCSYS Class" Url="html/T_Geosoft_Desktop_GXNet_CARCSYS.htm">
-      <HelpTOCNode Id="68a93caa-6b20-47af-85e6-88939aee2452" Title="CARCSYS Methods" Url="html/Methods_T_Geosoft_Desktop_GXNet_CARCSYS.htm">
+    <HelpTOCNode Id="cd505df9-fa16-414d-8692-1de4bca382d4" Title="CARCSYS Class" Url="html/T_Geosoft_Desktop_GXNet_CARCSYS.htm">
+      <HelpTOCNode Id="24e3a3e4-b865-4f29-89d9-db366edc0fb2" Title="CARCSYS Methods" Url="html/Methods_T_Geosoft_Desktop_GXNet_CARCSYS.htm">
         <HelpTOCNode Title="IGetBrowseLoc Method " Url="html/M_Geosoft_Desktop_GXNet_CARCSYS_IGetBrowseLoc.htm" />
         <HelpTOCNode Title="IGetCurrentDoc Method " Url="html/M_Geosoft_Desktop_GXNet_CARCSYS_IGetCurrentDoc.htm" />
         <HelpTOCNode Title="SetBrowseLoc Method " Url="html/M_Geosoft_Desktop_GXNet_CARCSYS_SetBrowseLoc.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="02456f57-2812-4ebf-a4e5-eaa935b44698" Title="CBIGRID Class" Url="html/T_Geosoft_Desktop_GXNet_CBIGRID.htm">
-      <HelpTOCNode Id="2031c5bd-7c6b-4e2d-80bf-f4c7ce5121b0" Title="CBIGRID Methods" Url="html/Methods_T_Geosoft_Desktop_GXNet_CBIGRID.htm">
+    <HelpTOCNode Id="9bd56b74-8c14-4e61-94dd-2c78b4004474" Title="CBIGRID Class" Url="html/T_Geosoft_Desktop_GXNet_CBIGRID.htm">
+      <HelpTOCNode Id="682dfc4c-6792-48b4-b0e9-a82e9c28552b" Title="CBIGRID Methods" Url="html/Methods_T_Geosoft_Desktop_GXNet_CBIGRID.htm">
         <HelpTOCNode Title="Clear Method " Url="html/M_Geosoft_Desktop_GXNet_CBIGRID_Clear.htm" />
         <HelpTOCNode Title="Create Method " Url="html/M_Geosoft_Desktop_GXNet_CBIGRID_Create.htm" />
         <HelpTOCNode Title="Dispose Method " Url="html/M_Geosoft_Desktop_GXNet_CBIGRID_Dispose.htm" />
@@ -2357,8 +2357,8 @@
         <HelpTOCNode Title="SaveParms Method " Url="html/M_Geosoft_Desktop_GXNet_CBIGRID_SaveParms.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="635a853b-4c90-4bf5-8518-ae6f1cbf8b20" Title="CCHIMERA Class" Url="html/T_Geosoft_Desktop_GXNet_CCHIMERA.htm">
-      <HelpTOCNode Id="284760ba-b8c0-4991-8850-f931a96c317f" Title="CCHIMERA Methods" Url="html/Methods_T_Geosoft_Desktop_GXNet_CCHIMERA.htm">
+    <HelpTOCNode Id="13338591-e462-493c-aed3-97a51a9c77b7" Title="CCHIMERA Class" Url="html/T_Geosoft_Desktop_GXNet_CCHIMERA.htm">
+      <HelpTOCNode Id="1b5baf37-f47c-4716-b6ca-dfe9438c2f3d" Title="CCHIMERA Methods" Url="html/Methods_T_Geosoft_Desktop_GXNet_CCHIMERA.htm">
         <HelpTOCNode Title="BarPlot Method " Url="html/M_Geosoft_Desktop_GXNet_CCHIMERA_BarPlot.htm" />
         <HelpTOCNode Title="CategorizeByValue Method " Url="html/M_Geosoft_Desktop_GXNet_CCHIMERA_CategorizeByValue.htm" />
         <HelpTOCNode Title="CategorizeByValueDetLimit Method " Url="html/M_Geosoft_Desktop_GXNet_CCHIMERA_CategorizeByValueDetLimit.htm" />
@@ -2398,8 +2398,8 @@
         <HelpTOCNode Title="ZoneColouredTriPlot Method " Url="html/M_Geosoft_Desktop_GXNet_CCHIMERA_ZoneColouredTriPlot.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="c1bfe72b-dce4-42b6-bf5d-c6ddc56e9d4c" Title="CCOM Class" Url="html/T_Geosoft_Desktop_GXNet_CCOM.htm">
-      <HelpTOCNode Id="af86f41b-6568-4549-94b3-25acf51db841" Title="CCOM Methods" Url="html/Methods_T_Geosoft_Desktop_GXNet_CCOM.htm">
+    <HelpTOCNode Id="2a77550c-7c0c-4b57-9555-80214508428a" Title="CCOM Class" Url="html/T_Geosoft_Desktop_GXNet_CCOM.htm">
+      <HelpTOCNode Id="3e0977ad-b13a-4c65-aef5-2454aaf5442d" Title="CCOM Methods" Url="html/Methods_T_Geosoft_Desktop_GXNet_CCOM.htm">
         <HelpTOCNode Title="Create Method " Url="html/M_Geosoft_Desktop_GXNet_CCOM_Create.htm" />
         <HelpTOCNode Title="CreateNoTerminate Method " Url="html/M_Geosoft_Desktop_GXNet_CCOM_CreateNoTerminate.htm" />
         <HelpTOCNode Title="Dispose Method " Url="html/M_Geosoft_Desktop_GXNet_CCOM_Dispose.htm" />
@@ -2417,8 +2417,8 @@
         <HelpTOCNode Title="WriteLine Method " Url="html/M_Geosoft_Desktop_GXNet_CCOM_WriteLine.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="eee6e92b-abc3-46e7-a46b-b71d5a5e4e00" Title="CCSYMB Class" Url="html/T_Geosoft_Desktop_GXNet_CCSYMB.htm">
-      <HelpTOCNode Id="707aed35-0f8b-49f9-b9fe-93c0beb1b54c" Title="CCSYMB Methods" Url="html/Methods_T_Geosoft_Desktop_GXNet_CCSYMB.htm">
+    <HelpTOCNode Id="208b654a-44c9-4e5c-9be7-229ecd31b4ea" Title="CCSYMB Class" Url="html/T_Geosoft_Desktop_GXNet_CCSYMB.htm">
+      <HelpTOCNode Id="252955c6-7741-4fef-85f8-ed1d1a888f47" Title="CCSYMB Methods" Url="html/Methods_T_Geosoft_Desktop_GXNet_CCSYMB.htm">
         <HelpTOCNode Title="AddData Method " Url="html/M_Geosoft_Desktop_GXNet_CCSYMB_AddData.htm" />
         <HelpTOCNode Title="Create Method " Url="html/M_Geosoft_Desktop_GXNet_CCSYMB_Create.htm" />
         <HelpTOCNode Title="Dispose Method " Url="html/M_Geosoft_Desktop_GXNet_CCSYMB_Dispose.htm" />
@@ -2433,8 +2433,8 @@
         <HelpTOCNode Title="SetStaticCol Method " Url="html/M_Geosoft_Desktop_GXNet_CCSYMB_SetStaticCol.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="445cf9d2-d252-4f8f-b886-e22f776facf2" Title="CDGW Class" Url="html/T_Geosoft_Desktop_GXNet_CDGW.htm">
-      <HelpTOCNode Id="2834450e-14a7-4adf-9839-12b5c3128124" Title="CDGW Methods" Url="html/Methods_T_Geosoft_Desktop_GXNet_CDGW.htm">
+    <HelpTOCNode Id="28405c77-56da-4f36-89d6-9307e1c84948" Title="CDGW Class" Url="html/T_Geosoft_Desktop_GXNet_CDGW.htm">
+      <HelpTOCNode Id="25189a76-a32c-4efd-999f-45d368c3fb88" Title="CDGW Methods" Url="html/Methods_T_Geosoft_Desktop_GXNet_CDGW.htm">
         <HelpTOCNode Title="Create Method " Url="html/M_Geosoft_Desktop_GXNet_CDGW_Create.htm" />
         <HelpTOCNode Title="Dispose Method " Url="html/M_Geosoft_Desktop_GXNet_CDGW_Dispose.htm" />
         <HelpTOCNode Title="GetInfoMETA Method " Url="html/M_Geosoft_Desktop_GXNet_CDGW_GetInfoMETA.htm" />
@@ -2448,8 +2448,8 @@
         <HelpTOCNode Title="SetTitle Method " Url="html/M_Geosoft_Desktop_GXNet_CDGW_SetTitle.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="dd8e1a62-a912-4e6c-b226-8ff4efc0f4bd" Title="CDH Class" Url="html/T_Geosoft_Desktop_GXNet_CDH.htm">
-      <HelpTOCNode Id="9a49bd14-35f1-4293-b19d-b983655affcb" Title="CDH Methods" Url="html/Methods_T_Geosoft_Desktop_GXNet_CDH.htm">
+    <HelpTOCNode Id="a9b2ab57-3169-4713-9df3-7c319f0262c1" Title="CDH Class" Url="html/T_Geosoft_Desktop_GXNet_CDH.htm">
+      <HelpTOCNode Id="e5141e36-b5ce-45da-91b1-34c7841b28ec" Title="CDH Methods" Url="html/Methods_T_Geosoft_Desktop_GXNet_CDH.htm">
         <HelpTOCNode Title="AddSurveyTable Method " Url="html/M_Geosoft_Desktop_GXNet_CDH_AddSurveyTable.htm" />
         <HelpTOCNode Title="AssayHoleLST Method " Url="html/M_Geosoft_Desktop_GXNet_CDH_AssayHoleLST.htm" />
         <HelpTOCNode Title="AssayLST Method " Url="html/M_Geosoft_Desktop_GXNet_CDH_AssayLST.htm" />
@@ -2614,8 +2614,8 @@
         <HelpTOCNode Title="Wholeplot Method " Url="html/M_Geosoft_Desktop_GXNet_CDH_Wholeplot.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="c8d3ba57-810b-4b9f-80e4-aeeddcb779b8" Title="CDMPPLY Class" Url="html/T_Geosoft_Desktop_GXNet_CDMPPLY.htm">
-      <HelpTOCNode Id="bc38fa31-c830-48e4-90e1-c1b178550520" Title="CDMPPLY Methods" Url="html/Methods_T_Geosoft_Desktop_GXNet_CDMPPLY.htm">
+    <HelpTOCNode Id="cae62cf2-2157-4ea9-8c52-865d59ec4edf" Title="CDMPPLY Class" Url="html/T_Geosoft_Desktop_GXNet_CDMPPLY.htm">
+      <HelpTOCNode Id="9b56e84d-358d-4a2a-b136-d059b40c3b34" Title="CDMPPLY Methods" Url="html/Methods_T_Geosoft_Desktop_GXNet_CDMPPLY.htm">
         <HelpTOCNode Title="Clear Method " Url="html/M_Geosoft_Desktop_GXNet_CDMPPLY_Clear.htm" />
         <HelpTOCNode Title="Copy Method " Url="html/M_Geosoft_Desktop_GXNet_CDMPPLY_Copy.htm" />
         <HelpTOCNode Title="Create Method " Url="html/M_Geosoft_Desktop_GXNet_CDMPPLY_Create.htm" />
@@ -2638,8 +2638,8 @@
         <HelpTOCNode Title="SetPoly Method " Url="html/M_Geosoft_Desktop_GXNet_CDMPPLY_SetPoly.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="7b975dae-1631-491b-aaec-33994ddfafa4" Title="CDOCU Class" Url="html/T_Geosoft_Desktop_GXNet_CDOCU.htm">
-      <HelpTOCNode Id="6652f91d-5785-4443-9ca7-a93f4adc92f9" Title="CDOCU Methods" Url="html/Methods_T_Geosoft_Desktop_GXNet_CDOCU.htm">
+    <HelpTOCNode Id="ec06c182-a3b5-41a9-9699-ecffc60133b5" Title="CDOCU Class" Url="html/T_Geosoft_Desktop_GXNet_CDOCU.htm">
+      <HelpTOCNode Id="e36adf22-dabf-4d9b-ac3e-ee9d53fc3e57" Title="CDOCU Methods" Url="html/Methods_T_Geosoft_Desktop_GXNet_CDOCU.htm">
         <HelpTOCNode Title="Copy Method " Url="html/M_Geosoft_Desktop_GXNet_CDOCU_Copy.htm" />
         <HelpTOCNode Title="Create Method " Url="html/M_Geosoft_Desktop_GXNet_CDOCU_Create.htm" />
         <HelpTOCNode Title="CreateS Method " Url="html/M_Geosoft_Desktop_GXNet_CDOCU_CreateS.htm" />
@@ -2658,8 +2658,8 @@
         <HelpTOCNode Title="SetMETA Method " Url="html/M_Geosoft_Desktop_GXNet_CDOCU_SetMETA.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="c4aff228-0275-477b-9d68-7c97940c68cc" Title="CDU Class" Url="html/T_Geosoft_Desktop_GXNet_CDU.htm">
-      <HelpTOCNode Id="8c105815-f4c0-4f32-b68b-0d89b8278357" Title="CDU Methods" Url="html/Methods_T_Geosoft_Desktop_GXNet_CDU.htm">
+    <HelpTOCNode Id="4da69b2d-5d6b-4122-b9b7-3e3ab18bf3c4" Title="CDU Class" Url="html/T_Geosoft_Desktop_GXNet_CDU.htm">
+      <HelpTOCNode Id="185e11a1-dafa-4fa0-9c22-c093eb270fdc" Title="CDU Methods" Url="html/Methods_T_Geosoft_Desktop_GXNet_CDU.htm">
         <HelpTOCNode Title="ADOTableNames Method " Url="html/M_Geosoft_Desktop_GXNet_CDU_ADOTableNames.htm" />
         <HelpTOCNode Title="AnSig Method " Url="html/M_Geosoft_Desktop_GXNet_CDU_AnSig.htm" />
         <HelpTOCNode Title="Append Method " Url="html/M_Geosoft_Desktop_GXNet_CDU_Append.htm" />
@@ -2813,8 +2813,8 @@
         <HelpTOCNode Title="ZMask Method " Url="html/M_Geosoft_Desktop_GXNet_CDU_ZMask.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="b1d90846-eb21-4c1a-811c-e7c1ffbc890a" Title="CDXFI Class" Url="html/T_Geosoft_Desktop_GXNet_CDXFI.htm">
-      <HelpTOCNode Id="56eb63da-6c2c-4c15-b504-26f6292df667" Title="CDXFI Methods" Url="html/Methods_T_Geosoft_Desktop_GXNet_CDXFI.htm">
+    <HelpTOCNode Id="87cf698a-60ce-4acf-ae67-6cdd086959c0" Title="CDXFI Class" Url="html/T_Geosoft_Desktop_GXNet_CDXFI.htm">
+      <HelpTOCNode Id="81410488-cc5f-4845-8fd4-c691691862ed" Title="CDXFI Methods" Url="html/Methods_T_Geosoft_Desktop_GXNet_CDXFI.htm">
         <HelpTOCNode Title="Create Method " Url="html/M_Geosoft_Desktop_GXNet_CDXFI_Create.htm" />
         <HelpTOCNode Title="Dispose Method " Url="html/M_Geosoft_Desktop_GXNet_CDXFI_Dispose.htm" />
         <HelpTOCNode Title="DXF2PLY Method " Url="html/M_Geosoft_Desktop_GXNet_CDXFI_DXF2PLY.htm" />
@@ -2822,8 +2822,8 @@
         <HelpTOCNode Title="GetRange Method " Url="html/M_Geosoft_Desktop_GXNet_CDXFI_GetRange.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="88c00047-0209-493b-a92e-7ab05eb839ec" Title="CEDB Class" Url="html/T_Geosoft_Desktop_GXNet_CEDB.htm">
-      <HelpTOCNode Id="b211984d-230f-48ec-ae6a-5608e12ad7f0" Title="CEDB Methods" Url="html/Methods_T_Geosoft_Desktop_GXNet_CEDB.htm">
+    <HelpTOCNode Id="3753467a-f972-446c-93d6-2140c7c73789" Title="CEDB Class" Url="html/T_Geosoft_Desktop_GXNet_CEDB.htm">
+      <HelpTOCNode Id="a4bcc02a-2fc6-4064-af46-e181e27536cd" Title="CEDB Methods" Url="html/Methods_T_Geosoft_Desktop_GXNet_CEDB.htm">
         <HelpTOCNode Title="ApplyFormulaInternal Method " Url="html/M_Geosoft_Desktop_GXNet_CEDB_ApplyFormulaInternal.htm" />
         <HelpTOCNode Title="Current Method " Url="html/M_Geosoft_Desktop_GXNet_CEDB_Current.htm" />
         <HelpTOCNode Title="CurrentIfExists Method " Url="html/M_Geosoft_Desktop_GXNet_CEDB_CurrentIfExists.htm" />
@@ -2921,8 +2921,8 @@
         <HelpTOCNode Title="UnLock Method " Url="html/M_Geosoft_Desktop_GXNet_CEDB_UnLock.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="29fd1620-dad5-43eb-86f3-851fccf7e82a" Title="CEDOC Class" Url="html/T_Geosoft_Desktop_GXNet_CEDOC.htm">
-      <HelpTOCNode Id="43a3bc0c-d0b2-4788-97b8-d5df2ad086a5" Title="CEDOC Methods" Url="html/Methods_T_Geosoft_Desktop_GXNet_CEDOC.htm">
+    <HelpTOCNode Id="9984d835-1473-43d7-9b53-fc4a9530652c" Title="CEDOC Class" Url="html/T_Geosoft_Desktop_GXNet_CEDOC.htm">
+      <HelpTOCNode Id="4361fb6d-a3cc-4b13-986c-babd897d655e" Title="CEDOC Methods" Url="html/Methods_T_Geosoft_Desktop_GXNet_CEDOC.htm">
         <HelpTOCNode Title="CreateNewGMS3D Method " Url="html/M_Geosoft_Desktop_GXNet_CEDOC_CreateNewGMS3D.htm" />
         <HelpTOCNode Title="Current Method " Url="html/M_Geosoft_Desktop_GXNet_CEDOC_Current.htm" />
         <HelpTOCNode Title="CurrentIfExists Method " Url="html/M_Geosoft_Desktop_GXNet_CEDOC_CurrentIfExists.htm" />
@@ -2948,8 +2948,8 @@
         <HelpTOCNode Title="UnLoadVerify Method " Url="html/M_Geosoft_Desktop_GXNet_CEDOC_UnLoadVerify.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="ba3510fc-9f10-463b-b99c-ef0a7811b5de" Title="CEMAP Class" Url="html/T_Geosoft_Desktop_GXNet_CEMAP.htm">
-      <HelpTOCNode Id="2f3b3a1f-943d-4cc9-b6b1-28bb7c5cbbd1" Title="CEMAP Methods" Url="html/Methods_T_Geosoft_Desktop_GXNet_CEMAP.htm">
+    <HelpTOCNode Id="a4bd1873-abd8-48d6-a3d6-10e9c2dee452" Title="CEMAP Class" Url="html/T_Geosoft_Desktop_GXNet_CEMAP.htm">
+      <HelpTOCNode Id="129a4010-18ca-4133-bbb6-af3e7c9b4fb4" Title="CEMAP Methods" Url="html/Methods_T_Geosoft_Desktop_GXNet_CEMAP.htm">
         <HelpTOCNode Title="ActivateGroup Method " Url="html/M_Geosoft_Desktop_GXNet_CEMAP_ActivateGroup.htm" />
         <HelpTOCNode Title="ActivateView Method " Url="html/M_Geosoft_Desktop_GXNet_CEMAP_ActivateView.htm" />
         <HelpTOCNode Title="CopyToClip Method " Url="html/M_Geosoft_Desktop_GXNet_CEMAP_CopyToClip.htm" />
@@ -3039,8 +3039,8 @@
         <HelpTOCNode Title="UnLock Method " Url="html/M_Geosoft_Desktop_GXNet_CEMAP_UnLock.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="5748929f-8c39-42e5-9f8d-7bdbaf7753ea" Title="CEMAPTEMPLATE Class" Url="html/T_Geosoft_Desktop_GXNet_CEMAPTEMPLATE.htm">
-      <HelpTOCNode Id="b4b284f8-ad2a-4ad9-b1db-68c465f3d3fa" Title="CEMAPTEMPLATE Methods" Url="html/Methods_T_Geosoft_Desktop_GXNet_CEMAPTEMPLATE.htm">
+    <HelpTOCNode Id="6fefa352-b9a4-4c88-8751-52d7775da583" Title="CEMAPTEMPLATE Class" Url="html/T_Geosoft_Desktop_GXNet_CEMAPTEMPLATE.htm">
+      <HelpTOCNode Id="442574b9-f168-44fe-bae6-e41456031dfe" Title="CEMAPTEMPLATE Methods" Url="html/Methods_T_Geosoft_Desktop_GXNet_CEMAPTEMPLATE.htm">
         <HelpTOCNode Title="CreateVirtual Method " Url="html/M_Geosoft_Desktop_GXNet_CEMAPTEMPLATE_CreateVirtual.htm" />
         <HelpTOCNode Title="Current Method " Url="html/M_Geosoft_Desktop_GXNet_CEMAPTEMPLATE_Current.htm" />
         <HelpTOCNode Title="CurrentIfExists Method " Url="html/M_Geosoft_Desktop_GXNet_CEMAPTEMPLATE_CurrentIfExists.htm" />
@@ -3080,8 +3080,8 @@
         <HelpTOCNode Title="UnLock Method " Url="html/M_Geosoft_Desktop_GXNet_CEMAPTEMPLATE_UnLock.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="15f2b0bb-8b32-4775-950c-e512d066324c" Title="CEUL3 Class" Url="html/T_Geosoft_Desktop_GXNet_CEUL3.htm">
-      <HelpTOCNode Id="b8831404-f8f5-4602-a8eb-e1ce7ca46036" Title="CEUL3 Methods" Url="html/Methods_T_Geosoft_Desktop_GXNet_CEUL3.htm">
+    <HelpTOCNode Id="eb96a6d7-ce86-42a6-add1-c05a8ef460b0" Title="CEUL3 Class" Url="html/T_Geosoft_Desktop_GXNet_CEUL3.htm">
+      <HelpTOCNode Id="dbbf69ee-4161-4c35-8aa9-021c8e5e7f7f" Title="CEUL3 Methods" Url="html/Methods_T_Geosoft_Desktop_GXNet_CEUL3.htm">
         <HelpTOCNode Title="Creat Method " Url="html/M_Geosoft_Desktop_GXNet_CEUL3_Creat.htm" />
         <HelpTOCNode Title="Destr Method " Url="html/M_Geosoft_Desktop_GXNet_CEUL3_Destr.htm" />
         <HelpTOCNode Title="ExEulerCalc Method " Url="html/M_Geosoft_Desktop_GXNet_CEUL3_ExEulerCalc.htm" />
@@ -3090,15 +3090,15 @@
         <HelpTOCNode Title="Write Method " Url="html/M_Geosoft_Desktop_GXNet_CEUL3_Write.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="2b80e2bf-bde0-4392-a302-7e572f4006db" Title="CEXP Class" Url="html/T_Geosoft_Desktop_GXNet_CEXP.htm">
-      <HelpTOCNode Id="6e0b5070-e1c8-476c-8001-51d151b583c4" Title="CEXP Methods" Url="html/Methods_T_Geosoft_Desktop_GXNet_CEXP.htm">
+    <HelpTOCNode Id="e091948f-b6a4-4ed8-8f56-8397b36ddccf" Title="CEXP Class" Url="html/T_Geosoft_Desktop_GXNet_CEXP.htm">
+      <HelpTOCNode Id="e98e90c6-a51a-41b9-9e97-ec3b0949429e" Title="CEXP Methods" Url="html/Methods_T_Geosoft_Desktop_GXNet_CEXP.htm">
         <HelpTOCNode Title="Create Method " Url="html/M_Geosoft_Desktop_GXNet_CEXP_Create.htm" />
         <HelpTOCNode Title="CreateFile Method " Url="html/M_Geosoft_Desktop_GXNet_CEXP_CreateFile.htm" />
         <HelpTOCNode Title="Dispose Method " Url="html/M_Geosoft_Desktop_GXNet_CEXP_Dispose.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="3a42126c-7b1c-43fe-ae22-f1c873991dd9" Title="CFFT Class" Url="html/T_Geosoft_Desktop_GXNet_CFFT.htm">
-      <HelpTOCNode Id="25167e69-8c91-4329-b723-85b1a2100ee7" Title="CFFT Methods" Url="html/Methods_T_Geosoft_Desktop_GXNet_CFFT.htm">
+    <HelpTOCNode Id="289c85ae-6b43-4033-8d7c-8b05e6bee385" Title="CFFT Class" Url="html/T_Geosoft_Desktop_GXNet_CFFT.htm">
+      <HelpTOCNode Id="f469bd29-884d-4bce-8148-907782989db6" Title="CFFT Methods" Url="html/Methods_T_Geosoft_Desktop_GXNet_CFFT.htm">
         <HelpTOCNode Title="AppDens Method " Url="html/M_Geosoft_Desktop_GXNet_CFFT_AppDens.htm" />
         <HelpTOCNode Title="AppSusc Method " Url="html/M_Geosoft_Desktop_GXNet_CFFT_AppSusc.htm" />
         <HelpTOCNode Title="BandPass Method " Url="html/M_Geosoft_Desktop_GXNet_CFFT_BandPass.htm" />
@@ -3129,8 +3129,8 @@
         <HelpTOCNode Title="WriteSpectrum Method " Url="html/M_Geosoft_Desktop_GXNet_CFFT_WriteSpectrum.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="996212db-15f9-4347-9e32-174ebe78c889" Title="CFFT2 Class" Url="html/T_Geosoft_Desktop_GXNet_CFFT2.htm">
-      <HelpTOCNode Id="13e5c66a-6264-4e03-8b33-a09ff965c512" Title="CFFT2 Methods" Url="html/Methods_T_Geosoft_Desktop_GXNet_CFFT2.htm">
+    <HelpTOCNode Id="5892c9f7-51e6-4fa9-bc5c-2b5df6812bb4" Title="CFFT2 Class" Url="html/T_Geosoft_Desktop_GXNet_CFFT2.htm">
+      <HelpTOCNode Id="fd6b3405-34c3-4d65-8375-e3109603078c" Title="CFFT2 Methods" Url="html/Methods_T_Geosoft_Desktop_GXNet_CFFT2.htm">
         <HelpTOCNode Title="Fft2In Method " Url="html/M_Geosoft_Desktop_GXNet_CFFT2_Fft2In.htm" />
         <HelpTOCNode Title="FilterPG Method " Url="html/M_Geosoft_Desktop_GXNet_CFFT2_FilterPG.htm" />
         <HelpTOCNode Title="Flt Method " Url="html/M_Geosoft_Desktop_GXNet_CFFT2_Flt.htm" />
@@ -3143,21 +3143,21 @@
         <HelpTOCNode Title="TransPG Method " Url="html/M_Geosoft_Desktop_GXNet_CFFT2_TransPG.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="0eba3a4a-9402-449c-85bd-a96c1e04881a" Title="CFLT Class" Url="html/T_Geosoft_Desktop_GXNet_CFLT.htm">
-      <HelpTOCNode Id="8d718e75-a2a1-47be-88fc-62bcb0cca759" Title="CFLT Methods" Url="html/Methods_T_Geosoft_Desktop_GXNet_CFLT.htm">
+    <HelpTOCNode Id="be1667cb-30f9-4ad3-8f02-4f129a91d2d5" Title="CFLT Class" Url="html/T_Geosoft_Desktop_GXNet_CFLT.htm">
+      <HelpTOCNode Id="d81c2e9d-9d0a-45ca-a1d1-6a64b5236016" Title="CFLT Methods" Url="html/Methods_T_Geosoft_Desktop_GXNet_CFLT.htm">
         <HelpTOCNode Title="Create Method " Url="html/M_Geosoft_Desktop_GXNet_CFLT_Create.htm" />
         <HelpTOCNode Title="Dispose Method " Url="html/M_Geosoft_Desktop_GXNet_CFLT_Dispose.htm" />
         <HelpTOCNode Title="Load Method " Url="html/M_Geosoft_Desktop_GXNet_CFLT_Load.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="c40495cf-ac1d-45ee-9203-3aef6c32a8e4" Title="CGD Class" Url="html/T_Geosoft_Desktop_GXNet_CGD.htm">
-      <HelpTOCNode Id="e0e54312-ff74-430c-a02b-44eb77641e09" Title="CGD Methods" Url="html/Methods_T_Geosoft_Desktop_GXNet_CGD.htm">
+    <HelpTOCNode Id="455f89e4-43fa-46db-8c8d-f022b13bb871" Title="CGD Class" Url="html/T_Geosoft_Desktop_GXNet_CGD.htm">
+      <HelpTOCNode Id="8467f831-1492-419e-9f84-2e6703a50fa3" Title="CGD Methods" Url="html/Methods_T_Geosoft_Desktop_GXNet_CGD.htm">
         <HelpTOCNode Title="Create Method " Url="html/M_Geosoft_Desktop_GXNet_CGD_Create.htm" />
         <HelpTOCNode Title="Dispose Method " Url="html/M_Geosoft_Desktop_GXNet_CGD_Dispose.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="2d922e73-dbb4-4f87-903e-b836de4f2973" Title="CGER Class" Url="html/T_Geosoft_Desktop_GXNet_CGER.htm">
-      <HelpTOCNode Id="0fb3c620-ce3e-4aa6-abf7-38282045cbc1" Title="CGER Methods" Url="html/Methods_T_Geosoft_Desktop_GXNet_CGER.htm">
+    <HelpTOCNode Id="bf089097-3948-4b63-bf7c-9b8c26f43d67" Title="CGER Class" Url="html/T_Geosoft_Desktop_GXNet_CGER.htm">
+      <HelpTOCNode Id="c196c4de-9fd8-4c3b-a67d-de290c6b8e1f" Title="CGER Methods" Url="html/Methods_T_Geosoft_Desktop_GXNet_CGER.htm">
         <HelpTOCNode Title="Create Method " Url="html/M_Geosoft_Desktop_GXNet_CGER_Create.htm" />
         <HelpTOCNode Title="Dispose Method " Url="html/M_Geosoft_Desktop_GXNet_CGER_Dispose.htm" />
         <HelpTOCNode Title="IiGet Method " Url="html/M_Geosoft_Desktop_GXNet_CGER_IiGet.htm" />
@@ -3166,13 +3166,13 @@
         <HelpTOCNode Title="SetString Method " Url="html/M_Geosoft_Desktop_GXNet_CGER_SetString.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="fc581fde-da16-4062-a95f-4cd0620f3495" Title="CGMSYS Class" Url="html/T_Geosoft_Desktop_GXNet_CGMSYS.htm">
-      <HelpTOCNode Id="f1bca030-df85-4189-8e7f-6839d735a777" Title="CGMSYS Methods" Url="html/Methods_T_Geosoft_Desktop_GXNet_CGMSYS.htm">
+    <HelpTOCNode Id="3c926978-7610-42fe-941e-255debf983f4" Title="CGMSYS Class" Url="html/T_Geosoft_Desktop_GXNet_CGMSYS.htm">
+      <HelpTOCNode Id="effcafb3-ac69-44f7-b3fa-cadc9e642fad" Title="CGMSYS Methods" Url="html/Methods_T_Geosoft_Desktop_GXNet_CGMSYS.htm">
         <HelpTOCNode Title="Launch Method " Url="html/M_Geosoft_Desktop_GXNet_CGMSYS_Launch.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="d2c47eae-e155-4c10-922a-e6bae8edb97a" Title="CGU Class" Url="html/T_Geosoft_Desktop_GXNet_CGU.htm">
-      <HelpTOCNode Id="24aba560-2966-4709-8242-befff26359ee" Title="CGU Methods" Url="html/Methods_T_Geosoft_Desktop_GXNet_CGU.htm">
+    <HelpTOCNode Id="d73d84dd-a86c-42e3-adf9-c0d18ff83c01" Title="CGU Class" Url="html/T_Geosoft_Desktop_GXNet_CGU.htm">
+      <HelpTOCNode Id="ce466e30-4f85-4bf4-b000-d0c7ea3596c4" Title="CGU Methods" Url="html/Methods_T_Geosoft_Desktop_GXNet_CGU.htm">
         <HelpTOCNode Title="DipoleMag Method " Url="html/M_Geosoft_Desktop_GXNet_CGU_DipoleMag.htm" />
         <HelpTOCNode Title="EMHalfSpaceInv Method " Url="html/M_Geosoft_Desktop_GXNet_CGU_EMHalfSpaceInv.htm" />
         <HelpTOCNode Title="EMHalfSpaceVV Method " Url="html/M_Geosoft_Desktop_GXNet_CGU_EMHalfSpaceVV.htm" />
@@ -3201,10 +3201,10 @@
         <HelpTOCNode Title="VVEuler2 Method " Url="html/M_Geosoft_Desktop_GXNet_CGU_VVEuler2.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="6aabbdaf-4e05-404d-80a5-7fec301c6967" Title="CGUI Class" Url="html/T_Geosoft_Desktop_GXNet_CGUI.htm">
-      <HelpTOCNode Id="6e31baac-6e3e-4157-85c1-05a6d8e00f37" Title="CGUI Methods" Url="html/Methods_T_Geosoft_Desktop_GXNet_CGUI.htm">
+    <HelpTOCNode Id="68c7a702-e921-4fa2-afd6-299c4c21b2de" Title="CGUI Class" Url="html/T_Geosoft_Desktop_GXNet_CGUI.htm">
+      <HelpTOCNode Id="72158f34-9c4a-461e-a765-09a1eb0e3947" Title="CGUI Methods" Url="html/Methods_T_Geosoft_Desktop_GXNet_CGUI.htm">
         <HelpTOCNode Title="CreateWNDFromHWND Method " Url="html/M_Geosoft_Desktop_GXNet_CGUI_CreateWNDFromHWND.htm" />
-        <HelpTOCNode Id="a2b99a88-15cf-4cd6-aad2-e1933bffa9fd" Title="Fft2SpecFilter Method " Url="html/Overload_Geosoft_Desktop_GXNet_CGUI_Fft2SpecFilter.htm">
+        <HelpTOCNode Id="7aba7cc8-9f26-4fe3-ab79-3ca5fd605e4c" Title="Fft2SpecFilter Method " Url="html/Overload_Geosoft_Desktop_GXNet_CGUI_Fft2SpecFilter.htm">
           <HelpTOCNode Title="Fft2SpecFilter Method (String, String)" Url="html/M_Geosoft_Desktop_GXNet_CGUI_Fft2SpecFilter.htm" />
           <HelpTOCNode Title="Fft2SpecFilter Method (IWin32Window, String, String)" Url="html/M_Geosoft_Desktop_GXNet_CGUI_Fft2SpecFilter_1.htm" />
         </HelpTOCNode>
@@ -3212,28 +3212,28 @@
         <HelpTOCNode Title="GetParentWND Method " Url="html/M_Geosoft_Desktop_GXNet_CGUI_GetParentWND.htm" />
         <HelpTOCNode Title="GetPrinterLST Method " Url="html/M_Geosoft_Desktop_GXNet_CGUI_GetPrinterLST.htm" />
         <HelpTOCNode Title="GetWindowPosition Method " Url="html/M_Geosoft_Desktop_GXNet_CGUI_GetWindowPosition.htm" />
-        <HelpTOCNode Id="34bf32c5-7c94-4b6f-be9e-dc731cc955ec" Title="GridStatHist Method " Url="html/Overload_Geosoft_Desktop_GXNet_CGUI_GridStatHist.htm">
+        <HelpTOCNode Id="2fc2d800-47af-47bc-b091-bb47cc161a0d" Title="GridStatHist Method " Url="html/Overload_Geosoft_Desktop_GXNet_CGUI_GridStatHist.htm">
           <HelpTOCNode Title="GridStatHist Method (String)" Url="html/M_Geosoft_Desktop_GXNet_CGUI_GridStatHist.htm" />
           <HelpTOCNode Title="GridStatHist Method (IWin32Window, String)" Url="html/M_Geosoft_Desktop_GXNet_CGUI_GridStatHist_1.htm" />
         </HelpTOCNode>
         <HelpTOCNode Title="iColorForm Method " Url="html/M_Geosoft_Desktop_GXNet_CGUI_iColorForm.htm" />
         <HelpTOCNode Title="iColorTransform Method " Url="html/M_Geosoft_Desktop_GXNet_CGUI_iColorTransform.htm" />
-        <HelpTOCNode Id="e8371ceb-ee5e-4f03-8dea-5ddc0be15e7e" Title="iCoordSysWizard Method " Url="html/Overload_Geosoft_Desktop_GXNet_CGUI_iCoordSysWizard.htm">
+        <HelpTOCNode Id="95f8bda8-560f-4647-8b4b-e271f166780d" Title="iCoordSysWizard Method " Url="html/Overload_Geosoft_Desktop_GXNet_CGUI_iCoordSysWizard.htm">
           <HelpTOCNode Title="iCoordSysWizard Method (CIPJ, Int32, Int32, String, String)" Url="html/M_Geosoft_Desktop_GXNet_CGUI_iCoordSysWizard.htm" />
           <HelpTOCNode Title="iCoordSysWizard Method (IWin32Window, CIPJ, Int32, Int32, String, String)" Url="html/M_Geosoft_Desktop_GXNet_CGUI_iCoordSysWizard_1.htm" />
         </HelpTOCNode>
         <HelpTOCNode Title="iCoordSysWizardGrid Method " Url="html/M_Geosoft_Desktop_GXNet_CGUI_iCoordSysWizardGrid.htm" />
         <HelpTOCNode Title="iCoordSysWizardLicensed Method " Url="html/M_Geosoft_Desktop_GXNet_CGUI_iCoordSysWizardLicensed.htm" />
-        <HelpTOCNode Id="4e98e51a-6b9b-4218-b478-332dc104bc93" Title="iDatabaseType Method " Url="html/Overload_Geosoft_Desktop_GXNet_CGUI_iDatabaseType.htm">
+        <HelpTOCNode Id="be2683be-b450-4be4-9cb8-d857e8afa1c2" Title="iDatabaseType Method " Url="html/Overload_Geosoft_Desktop_GXNet_CGUI_iDatabaseType.htm">
           <HelpTOCNode Title="iDatabaseType Method (String, String)" Url="html/M_Geosoft_Desktop_GXNet_CGUI_iDatabaseType.htm" />
           <HelpTOCNode Title="iDatabaseType Method (IWin32Window, String, String)" Url="html/M_Geosoft_Desktop_GXNet_CGUI_iDatabaseType_1.htm" />
         </HelpTOCNode>
         <HelpTOCNode Title="iDatamineType Method " Url="html/M_Geosoft_Desktop_GXNet_CGUI_iDatamineType.htm" />
-        <HelpTOCNode Id="a99efa1c-358a-42b9-b928-6b08342285cb" Title="iExportXYZTemplateEditor Method " Url="html/Overload_Geosoft_Desktop_GXNet_CGUI_iExportXYZTemplateEditor.htm">
+        <HelpTOCNode Id="32f6bc77-abac-4ce4-bfd2-4b0b432f9a34" Title="iExportXYZTemplateEditor Method " Url="html/Overload_Geosoft_Desktop_GXNet_CGUI_iExportXYZTemplateEditor.htm">
           <HelpTOCNode Title="iExportXYZTemplateEditor Method (CDB, String, Int32)" Url="html/M_Geosoft_Desktop_GXNet_CGUI_iExportXYZTemplateEditor.htm" />
           <HelpTOCNode Title="iExportXYZTemplateEditor Method (IWin32Window, CDB, String, Int32)" Url="html/M_Geosoft_Desktop_GXNet_CGUI_iExportXYZTemplateEditor_1.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="c17d223b-1ab8-474f-bc11-375669333a8a" Title="iExportXYZTemplateEditorEx Method " Url="html/Overload_Geosoft_Desktop_GXNet_CGUI_iExportXYZTemplateEditorEx.htm">
+        <HelpTOCNode Id="04cc3f59-d4ca-4bb0-b672-7061083e77a6" Title="iExportXYZTemplateEditorEx Method " Url="html/Overload_Geosoft_Desktop_GXNet_CGUI_iExportXYZTemplateEditorEx.htm">
           <HelpTOCNode Title="iExportXYZTemplateEditorEx Method (CEDB, String)" Url="html/M_Geosoft_Desktop_GXNet_CGUI_iExportXYZTemplateEditorEx.htm" />
           <HelpTOCNode Title="iExportXYZTemplateEditorEx Method (IWin32Window, CEDB, String)" Url="html/M_Geosoft_Desktop_GXNet_CGUI_iExportXYZTemplateEditorEx_1.htm" />
         </HelpTOCNode>
@@ -3241,11 +3241,11 @@
         <HelpTOCNode Title="iGCSDatumWarningSHP Method " Url="html/M_Geosoft_Desktop_GXNet_CGUI_iGCSDatumWarningSHP.htm" />
         <HelpTOCNode Title="iGCSDatumWarningSHPDBEx Method " Url="html/M_Geosoft_Desktop_GXNet_CGUI_iGCSDatumWarningSHPDBEx.htm" />
         <HelpTOCNode Title="iGCSDatumWarningSHPEx Method " Url="html/M_Geosoft_Desktop_GXNet_CGUI_iGCSDatumWarningSHPEx.htm" />
-        <HelpTOCNode Id="bf623832-4bd2-459f-882f-4d8ba726109a" Title="iGetAreaOfInterest Method " Url="html/Overload_Geosoft_Desktop_GXNet_CGUI_iGetAreaOfInterest.htm">
+        <HelpTOCNode Id="a3c4f8d2-3a25-41b7-8936-7745c096164a" Title="iGetAreaOfInterest Method " Url="html/Overload_Geosoft_Desktop_GXNet_CGUI_iGetAreaOfInterest.htm">
           <HelpTOCNode Title="iGetAreaOfInterest Method (Double, Double, Double, Double, CPLY, CIPJ)" Url="html/M_Geosoft_Desktop_GXNet_CGUI_iGetAreaOfInterest.htm" />
           <HelpTOCNode Title="iGetAreaOfInterest Method (IWin32Window, Double, Double, Double, Double, CPLY, CIPJ)" Url="html/M_Geosoft_Desktop_GXNet_CGUI_iGetAreaOfInterest_1.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="d9b3a641-4c6d-4b46-af63-f6a2a93f13cd" Title="iGetAreaOfInterest3D Method " Url="html/Overload_Geosoft_Desktop_GXNet_CGUI_iGetAreaOfInterest3D.htm">
+        <HelpTOCNode Id="ad7174ef-f018-4c51-9f0a-c6b61394ada5" Title="iGetAreaOfInterest3D Method " Url="html/Overload_Geosoft_Desktop_GXNet_CGUI_iGetAreaOfInterest3D.htm">
           <HelpTOCNode Title="iGetAreaOfInterest3D Method (Double, Double, Double, Double, Double, Double, CPLY, CIPJ)" Url="html/M_Geosoft_Desktop_GXNet_CGUI_iGetAreaOfInterest3D.htm" />
           <HelpTOCNode Title="iGetAreaOfInterest3D Method (IWin32Window, Double, Double, Double, Double, Double, Double, CPLY, CIPJ)" Url="html/M_Geosoft_Desktop_GXNet_CGUI_iGetAreaOfInterest3D_1.htm" />
         </HelpTOCNode>
@@ -3256,111 +3256,111 @@
         <HelpTOCNode Title="IiBrowseDir Method " Url="html/M_Geosoft_Desktop_GXNet_CGUI_IiBrowseDir.htm" />
         <HelpTOCNode Title="IiColorTransformEx Method " Url="html/M_Geosoft_Desktop_GXNet_CGUI_IiColorTransformEx.htm" />
         <HelpTOCNode Title="IiCumulativePercent Method " Url="html/M_Geosoft_Desktop_GXNet_CGUI_IiCumulativePercent.htm" />
-        <HelpTOCNode Id="ea1b4712-0e4f-4fe3-83ad-4f08d49a2edd" Title="IiCustomFileForm Method " Url="html/Overload_Geosoft_Desktop_GXNet_CGUI_IiCustomFileForm.htm">
+        <HelpTOCNode Id="74e03c93-be8d-4e00-8623-297a2545992e" Title="IiCustomFileForm Method " Url="html/Overload_Geosoft_Desktop_GXNet_CGUI_IiCustomFileForm.htm">
           <HelpTOCNode Title="IiCustomFileForm Method (String, String, String, String, Int32, Int32)" Url="html/M_Geosoft_Desktop_GXNet_CGUI_IiCustomFileForm.htm" />
           <HelpTOCNode Title="IiCustomFileForm Method (IWin32Window, String, String, String, String, Int32, Int32)" Url="html/M_Geosoft_Desktop_GXNet_CGUI_IiCustomFileForm_1.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="6ba367c8-187e-48e0-b46c-eb0f2bec7db6" Title="IiDatFileForm Method " Url="html/Overload_Geosoft_Desktop_GXNet_CGUI_IiDatFileForm.htm">
+        <HelpTOCNode Id="59decb3f-27d5-4587-87e5-55fcbae818d0" Title="IiDatFileForm Method " Url="html/Overload_Geosoft_Desktop_GXNet_CGUI_IiDatFileForm.htm">
           <HelpTOCNode Title="IiDatFileForm Method (String, String, String, Int32, Int32, Int32)" Url="html/M_Geosoft_Desktop_GXNet_CGUI_IiDatFileForm.htm" />
           <HelpTOCNode Title="IiDatFileForm Method (IWin32Window, String, String, String, Int32, Int32, Int32)" Url="html/M_Geosoft_Desktop_GXNet_CGUI_IiDatFileForm_1.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="87700c06-0026-4028-ab39-650487376307" Title="IiGenFileForm Method " Url="html/Overload_Geosoft_Desktop_GXNet_CGUI_IiGenFileForm.htm">
+        <HelpTOCNode Id="bb686b93-569e-4f0e-8cc4-89c439ea96a7" Title="IiGenFileForm Method " Url="html/Overload_Geosoft_Desktop_GXNet_CGUI_IiGenFileForm.htm">
           <HelpTOCNode Title="IiGenFileForm Method (String, CVV, Int32, String, String, Int32, Int32)" Url="html/M_Geosoft_Desktop_GXNet_CGUI_IiGenFileForm.htm" />
           <HelpTOCNode Title="IiGenFileForm Method (IWin32Window, String, CVV, Int32, String, String, Int32, Int32)" Url="html/M_Geosoft_Desktop_GXNet_CGUI_IiGenFileForm_1.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="ad738b37-bf4b-418a-a327-757881a9cba4" Title="IiImportDrillDatabaseADO2 Method " Url="html/Overload_Geosoft_Desktop_GXNet_CGUI_IiImportDrillDatabaseADO2.htm">
+        <HelpTOCNode Id="939e8bee-cfc2-4100-94c0-3512844ff7fc" Title="IiImportDrillDatabaseADO2 Method " Url="html/Overload_Geosoft_Desktop_GXNet_CGUI_IiImportDrillDatabaseADO2.htm">
           <HelpTOCNode Title="IiImportDrillDatabaseADO2 Method (String, String, String, Int32, CREG)" Url="html/M_Geosoft_Desktop_GXNet_CGUI_IiImportDrillDatabaseADO2.htm" />
           <HelpTOCNode Title="IiImportDrillDatabaseADO2 Method (IWin32Window, String, String, String, Int32, CREG)" Url="html/M_Geosoft_Desktop_GXNet_CGUI_IiImportDrillDatabaseADO2_1.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="7d0a42e1-2243-4bd3-8cba-5da8e4ab3aa5" Title="IiImportDrillDatabaseESRI Method " Url="html/Overload_Geosoft_Desktop_GXNet_CGUI_IiImportDrillDatabaseESRI.htm">
+        <HelpTOCNode Id="dbae6097-224c-4dac-9f7d-343c2b6a28bf" Title="IiImportDrillDatabaseESRI Method " Url="html/Overload_Geosoft_Desktop_GXNet_CGUI_IiImportDrillDatabaseESRI.htm">
           <HelpTOCNode Title="IiImportDrillDatabaseESRI Method (String, String, String, Int32, Int32, CREG)" Url="html/M_Geosoft_Desktop_GXNet_CGUI_IiImportDrillDatabaseESRI.htm" />
           <HelpTOCNode Title="IiImportDrillDatabaseESRI Method (IWin32Window, String, String, String, Int32, Int32, CREG)" Url="html/M_Geosoft_Desktop_GXNet_CGUI_IiImportDrillDatabaseESRI_1.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="7bbc5d6c-08a1-4af0-87a5-42880d0d05f0" Title="IiImportDrillDatabaseODBC Method " Url="html/Overload_Geosoft_Desktop_GXNet_CGUI_IiImportDrillDatabaseODBC.htm">
+        <HelpTOCNode Id="90cc99da-b9cd-4ae0-9aa8-b5531b9a2063" Title="IiImportDrillDatabaseODBC Method " Url="html/Overload_Geosoft_Desktop_GXNet_CGUI_IiImportDrillDatabaseODBC.htm">
           <HelpTOCNode Title="IiImportDrillDatabaseODBC Method (String, String, String, Int32, CREG)" Url="html/M_Geosoft_Desktop_GXNet_CGUI_IiImportDrillDatabaseODBC.htm" />
           <HelpTOCNode Title="IiImportDrillDatabaseODBC Method (IWin32Window, String, String, String, Int32, CREG)" Url="html/M_Geosoft_Desktop_GXNet_CGUI_IiImportDrillDatabaseODBC_1.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="90103004-252b-4404-99fa-ef3cc9497fb5" Title="IiImportDrillDatabaseODBCMaxwell Method " Url="html/Overload_Geosoft_Desktop_GXNet_CGUI_IiImportDrillDatabaseODBCMaxwell.htm">
+        <HelpTOCNode Id="35574179-6d0e-474c-9910-2e29b06b1383" Title="IiImportDrillDatabaseODBCMaxwell Method " Url="html/Overload_Geosoft_Desktop_GXNet_CGUI_IiImportDrillDatabaseODBCMaxwell.htm">
           <HelpTOCNode Title="IiImportDrillDatabaseODBCMaxwell Method (String, String, String, Int32, CREG)" Url="html/M_Geosoft_Desktop_GXNet_CGUI_IiImportDrillDatabaseODBCMaxwell.htm" />
           <HelpTOCNode Title="IiImportDrillDatabaseODBCMaxwell Method (IWin32Window, String, String, String, Int32, CREG)" Url="html/M_Geosoft_Desktop_GXNet_CGUI_IiImportDrillDatabaseODBCMaxwell_1.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="d030877b-ee13-44d3-8111-1df5d2b57115" Title="iImportAsciiWizard Method " Url="html/Overload_Geosoft_Desktop_GXNet_CGUI_iImportAsciiWizard.htm">
+        <HelpTOCNode Id="1f159061-e94a-4b06-a9fc-1c2c29e72895" Title="iImportAsciiWizard Method " Url="html/Overload_Geosoft_Desktop_GXNet_CGUI_iImportAsciiWizard.htm">
           <HelpTOCNode Title="iImportAsciiWizard Method (String, String)" Url="html/M_Geosoft_Desktop_GXNet_CGUI_iImportAsciiWizard.htm" />
           <HelpTOCNode Title="iImportAsciiWizard Method (IWin32Window, String, String)" Url="html/M_Geosoft_Desktop_GXNet_CGUI_iImportAsciiWizard_1.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="18e0da42-9e54-4211-9b8a-8ca6f2f292b5" Title="iImportChemDatabase Method " Url="html/Overload_Geosoft_Desktop_GXNet_CGUI_iImportChemDatabase.htm">
+        <HelpTOCNode Id="c2cbed54-c3a5-406a-84a2-917e8fb8b0f1" Title="iImportChemDatabase Method " Url="html/Overload_Geosoft_Desktop_GXNet_CGUI_iImportChemDatabase.htm">
           <HelpTOCNode Title="iImportChemDatabase Method (String, String, String, Int32)" Url="html/M_Geosoft_Desktop_GXNet_CGUI_iImportChemDatabase.htm" />
           <HelpTOCNode Title="iImportChemDatabase Method (IWin32Window, String, String, String, Int32)" Url="html/M_Geosoft_Desktop_GXNet_CGUI_iImportChemDatabase_1.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="b1ec6688-1c1a-4396-9a6d-368ed706f889" Title="iImportChemDatabaseADO Method " Url="html/Overload_Geosoft_Desktop_GXNet_CGUI_iImportChemDatabaseADO.htm">
+        <HelpTOCNode Id="043fc58b-fcb4-48de-bd19-2f2ce1d8fb6f" Title="iImportChemDatabaseADO Method " Url="html/Overload_Geosoft_Desktop_GXNet_CGUI_iImportChemDatabaseADO.htm">
           <HelpTOCNode Title="iImportChemDatabaseADO Method (String, String, String, Int32)" Url="html/M_Geosoft_Desktop_GXNet_CGUI_iImportChemDatabaseADO.htm" />
           <HelpTOCNode Title="iImportChemDatabaseADO Method (IWin32Window, String, String, String, Int32)" Url="html/M_Geosoft_Desktop_GXNet_CGUI_iImportChemDatabaseADO_1.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="f8085163-0e29-42cd-81c5-28bd8696ee38" Title="iImportDatabase Method " Url="html/Overload_Geosoft_Desktop_GXNet_CGUI_iImportDatabase.htm">
+        <HelpTOCNode Id="494f2677-55b4-4b09-87ac-189580d1736c" Title="iImportDatabase Method " Url="html/Overload_Geosoft_Desktop_GXNet_CGUI_iImportDatabase.htm">
           <HelpTOCNode Title="iImportDatabase Method (String, String, String)" Url="html/M_Geosoft_Desktop_GXNet_CGUI_iImportDatabase.htm" />
           <HelpTOCNode Title="iImportDatabase Method (IWin32Window, String, String, String)" Url="html/M_Geosoft_Desktop_GXNet_CGUI_iImportDatabase_1.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="ba632cc7-b4c5-43d7-a190-cc177cef83eb" Title="iImportDatabaseADO Method " Url="html/Overload_Geosoft_Desktop_GXNet_CGUI_iImportDatabaseADO.htm">
+        <HelpTOCNode Id="28db7b6a-8401-4cdd-af5d-edd3c7df017e" Title="iImportDatabaseADO Method " Url="html/Overload_Geosoft_Desktop_GXNet_CGUI_iImportDatabaseADO.htm">
           <HelpTOCNode Title="iImportDatabaseADO Method (String, String, String)" Url="html/M_Geosoft_Desktop_GXNet_CGUI_iImportDatabaseADO.htm" />
           <HelpTOCNode Title="iImportDatabaseADO Method (IWin32Window, String, String, String)" Url="html/M_Geosoft_Desktop_GXNet_CGUI_iImportDatabaseADO_1.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="c885e102-74f7-448b-bd62-f9e23a877484" Title="iImportDatabaseSQL Method " Url="html/Overload_Geosoft_Desktop_GXNet_CGUI_iImportDatabaseSQL.htm">
+        <HelpTOCNode Id="6970c5e2-7705-46a9-99fc-908ee584ea82" Title="iImportDatabaseSQL Method " Url="html/Overload_Geosoft_Desktop_GXNet_CGUI_iImportDatabaseSQL.htm">
           <HelpTOCNode Title="iImportDatabaseSQL Method (String, String, String, String)" Url="html/M_Geosoft_Desktop_GXNet_CGUI_iImportDatabaseSQL.htm" />
           <HelpTOCNode Title="iImportDatabaseSQL Method (IWin32Window, String, String, String, String)" Url="html/M_Geosoft_Desktop_GXNet_CGUI_iImportDatabaseSQL_1.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="ed3e019d-35ce-4487-9338-2d014e027098" Title="iImportDatabaseSQLADO Method " Url="html/Overload_Geosoft_Desktop_GXNet_CGUI_iImportDatabaseSQLADO.htm">
+        <HelpTOCNode Id="ebea71db-f029-4dac-be83-88c5ef41ee30" Title="iImportDatabaseSQLADO Method " Url="html/Overload_Geosoft_Desktop_GXNet_CGUI_iImportDatabaseSQLADO.htm">
           <HelpTOCNode Title="iImportDatabaseSQLADO Method (String, String, String, String)" Url="html/M_Geosoft_Desktop_GXNet_CGUI_iImportDatabaseSQLADO.htm" />
           <HelpTOCNode Title="iImportDatabaseSQLADO Method (IWin32Window, String, String, String, String)" Url="html/M_Geosoft_Desktop_GXNet_CGUI_iImportDatabaseSQLADO_1.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="ef653b1b-4641-4f95-8eac-97b82654a4a6" Title="iImportDrillDatabaseADO Method " Url="html/Overload_Geosoft_Desktop_GXNet_CGUI_iImportDrillDatabaseADO.htm">
+        <HelpTOCNode Id="d57f749e-aacf-424b-83b6-73f962fed021" Title="iImportDrillDatabaseADO Method " Url="html/Overload_Geosoft_Desktop_GXNet_CGUI_iImportDrillDatabaseADO.htm">
           <HelpTOCNode Title="iImportDrillDatabaseADO Method (String, String, String, Int32, CREG)" Url="html/M_Geosoft_Desktop_GXNet_CGUI_iImportDrillDatabaseADO.htm" />
           <HelpTOCNode Title="iImportDrillDatabaseADO Method (IWin32Window, String, String, String, Int32, CREG)" Url="html/M_Geosoft_Desktop_GXNet_CGUI_iImportDrillDatabaseADO_1.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="cd7ada43-2462-4311-92e6-467f3473665a" Title="iImportTemplateSQL Method " Url="html/Overload_Geosoft_Desktop_GXNet_CGUI_iImportTemplateSQL.htm">
+        <HelpTOCNode Id="9d861300-986f-43c2-931f-1252a3ced31b" Title="iImportTemplateSQL Method " Url="html/Overload_Geosoft_Desktop_GXNet_CGUI_iImportTemplateSQL.htm">
           <HelpTOCNode Title="iImportTemplateSQL Method (String, String, String, String)" Url="html/M_Geosoft_Desktop_GXNet_CGUI_iImportTemplateSQL.htm" />
           <HelpTOCNode Title="iImportTemplateSQL Method (IWin32Window, String, String, String, String)" Url="html/M_Geosoft_Desktop_GXNet_CGUI_iImportTemplateSQL_1.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="9d7f3acf-64f9-4c6b-9a36-9d8e1870103a" Title="iImportTemplateSQLADO Method " Url="html/Overload_Geosoft_Desktop_GXNet_CGUI_iImportTemplateSQLADO.htm">
+        <HelpTOCNode Id="407aa0ed-f2c0-4ba0-b3ce-e2cbbcda6f5d" Title="iImportTemplateSQLADO Method " Url="html/Overload_Geosoft_Desktop_GXNet_CGUI_iImportTemplateSQLADO.htm">
           <HelpTOCNode Title="iImportTemplateSQLADO Method (String, String, String, String)" Url="html/M_Geosoft_Desktop_GXNet_CGUI_iImportTemplateSQLADO.htm" />
           <HelpTOCNode Title="iImportTemplateSQLADO Method (IWin32Window, String, String, String, String)" Url="html/M_Geosoft_Desktop_GXNet_CGUI_iImportTemplateSQLADO_1.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="374280ce-df7e-4884-9f7a-1e294d3b4a77" Title="iImportXYZTemplateEditor Method " Url="html/Overload_Geosoft_Desktop_GXNet_CGUI_iImportXYZTemplateEditor.htm">
+        <HelpTOCNode Id="373775d4-8cff-40f8-b255-b804ac399ddd" Title="iImportXYZTemplateEditor Method " Url="html/Overload_Geosoft_Desktop_GXNet_CGUI_iImportXYZTemplateEditor.htm">
           <HelpTOCNode Title="iImportXYZTemplateEditor Method (CDB, String, Int32, String)" Url="html/M_Geosoft_Desktop_GXNet_CGUI_iImportXYZTemplateEditor.htm" />
           <HelpTOCNode Title="iImportXYZTemplateEditor Method (IWin32Window, CDB, String, Int32, String)" Url="html/M_Geosoft_Desktop_GXNet_CGUI_iImportXYZTemplateEditor_1.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="5a24773e-ac14-43ee-aabb-c1247dc20c29" Title="IiODBCFileConnect Method " Url="html/Overload_Geosoft_Desktop_GXNet_CGUI_IiODBCFileConnect.htm">
+        <HelpTOCNode Id="803997fd-7ab4-4281-9754-3056ba5195db" Title="IiODBCFileConnect Method " Url="html/Overload_Geosoft_Desktop_GXNet_CGUI_IiODBCFileConnect.htm">
           <HelpTOCNode Title="IiODBCFileConnect Method (String, String, Int32, String)" Url="html/M_Geosoft_Desktop_GXNet_CGUI_IiODBCFileConnect.htm" />
           <HelpTOCNode Title="IiODBCFileConnect Method (IWin32Window, String, String, Int32, String)" Url="html/M_Geosoft_Desktop_GXNet_CGUI_IiODBCFileConnect_1.htm" />
         </HelpTOCNode>
         <HelpTOCNode Title="IiSymbolForm Method " Url="html/M_Geosoft_Desktop_GXNet_CGUI_IiSymbolForm.htm" />
         <HelpTOCNode Title="iLinePatternForm Method " Url="html/M_Geosoft_Desktop_GXNet_CGUI_iLinePatternForm.htm" />
-        <HelpTOCNode Id="90e04d83-ecba-4a77-8e62-8d2e92a7f0ec" Title="iMetaDataTool Method " Url="html/Overload_Geosoft_Desktop_GXNet_CGUI_iMetaDataTool.htm">
+        <HelpTOCNode Id="d61bab3a-fc32-4f84-afe0-fd03a503497a" Title="iMetaDataTool Method " Url="html/Overload_Geosoft_Desktop_GXNet_CGUI_iMetaDataTool.htm">
           <HelpTOCNode Title="iMetaDataTool Method (CMETA, Int32, Int32)" Url="html/M_Geosoft_Desktop_GXNet_CGUI_iMetaDataTool.htm" />
           <HelpTOCNode Title="iMetaDataTool Method (IWin32Window, CMETA, Int32, Int32)" Url="html/M_Geosoft_Desktop_GXNet_CGUI_iMetaDataTool_1.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="f1e738ee-a5e6-458e-ba0d-c4e75033dcef" Title="ImportChemWizard Method " Url="html/Overload_Geosoft_Desktop_GXNet_CGUI_ImportChemWizard.htm">
+        <HelpTOCNode Id="7d5c897d-28d5-4c7e-a833-53f92c911b75" Title="ImportChemWizard Method " Url="html/Overload_Geosoft_Desktop_GXNet_CGUI_ImportChemWizard.htm">
           <HelpTOCNode Title="ImportChemWizard Method (String, String, Int32)" Url="html/M_Geosoft_Desktop_GXNet_CGUI_ImportChemWizard.htm" />
           <HelpTOCNode Title="ImportChemWizard Method (IWin32Window, String, String, Int32)" Url="html/M_Geosoft_Desktop_GXNet_CGUI_ImportChemWizard_1.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="139657cc-b3f2-4347-aa7e-b84f74a038d4" Title="ImportDrillWizard Method " Url="html/Overload_Geosoft_Desktop_GXNet_CGUI_ImportDrillWizard.htm">
+        <HelpTOCNode Id="65557095-fa02-405b-871a-52fb74fbe1af" Title="ImportDrillWizard Method " Url="html/Overload_Geosoft_Desktop_GXNet_CGUI_ImportDrillWizard.htm">
           <HelpTOCNode Title="ImportDrillWizard Method (String, String, String, Int32, Int32, CREG)" Url="html/M_Geosoft_Desktop_GXNet_CGUI_ImportDrillWizard.htm" />
           <HelpTOCNode Title="ImportDrillWizard Method (IWin32Window, String, String, String, Int32, Int32, CREG)" Url="html/M_Geosoft_Desktop_GXNet_CGUI_ImportDrillWizard_1.htm" />
         </HelpTOCNode>
         <HelpTOCNode Title="InternetTrust Method " Url="html/M_Geosoft_Desktop_GXNet_CGUI_InternetTrust.htm" />
         <HelpTOCNode Title="iPatternForm Method " Url="html/M_Geosoft_Desktop_GXNet_CGUI_iPatternForm.htm" />
-        <HelpTOCNode Id="75da26ea-472f-483c-b13f-261921e8f1d4" Title="iTwoPanelSelection Method " Url="html/Overload_Geosoft_Desktop_GXNet_CGUI_iTwoPanelSelection.htm">
+        <HelpTOCNode Id="02cb5455-0346-4996-89ba-c34cf7afcb6a" Title="iTwoPanelSelection Method " Url="html/Overload_Geosoft_Desktop_GXNet_CGUI_iTwoPanelSelection.htm">
           <HelpTOCNode Title="iTwoPanelSelection Method (CLST, CLST, String)" Url="html/M_Geosoft_Desktop_GXNet_CGUI_iTwoPanelSelection.htm" />
           <HelpTOCNode Title="iTwoPanelSelection Method (IWin32Window, CLST, CLST, String)" Url="html/M_Geosoft_Desktop_GXNet_CGUI_iTwoPanelSelection_1.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="c512a86a-7746-4870-9fc9-fd37ca40bd71" Title="iTwoPanelSelection2 Method " Url="html/Overload_Geosoft_Desktop_GXNet_CGUI_iTwoPanelSelection2.htm">
+        <HelpTOCNode Id="b6cf04c2-b8eb-489f-8036-a3a1c2a0c50a" Title="iTwoPanelSelection2 Method " Url="html/Overload_Geosoft_Desktop_GXNet_CGUI_iTwoPanelSelection2.htm">
           <HelpTOCNode Title="iTwoPanelSelection2 Method (CLST, CLST, String)" Url="html/M_Geosoft_Desktop_GXNet_CGUI_iTwoPanelSelection2.htm" />
           <HelpTOCNode Title="iTwoPanelSelection2 Method (IWin32Window, CLST, CLST, String)" Url="html/M_Geosoft_Desktop_GXNet_CGUI_iTwoPanelSelection2_1.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="d735e622-8954-43d2-93cc-eceb6660ed03" Title="iTwoPanelSelectionEx Method " Url="html/Overload_Geosoft_Desktop_GXNet_CGUI_iTwoPanelSelectionEx.htm">
+        <HelpTOCNode Id="fa59fe51-8737-4184-8d54-1e9353aa7101" Title="iTwoPanelSelectionEx Method " Url="html/Overload_Geosoft_Desktop_GXNet_CGUI_iTwoPanelSelectionEx.htm">
           <HelpTOCNode Title="iTwoPanelSelectionEx Method (CLST, CLST, Int32, Int32, String)" Url="html/M_Geosoft_Desktop_GXNet_CGUI_iTwoPanelSelectionEx.htm" />
           <HelpTOCNode Title="iTwoPanelSelectionEx Method (IWin32Window, CLST, CLST, Int32, Int32, String)" Url="html/M_Geosoft_Desktop_GXNet_CGUI_iTwoPanelSelectionEx_1.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="12c3214c-1f8b-4542-b367-a2625afa3d95" Title="iTwoPanelSelectionEx2 Method " Url="html/Overload_Geosoft_Desktop_GXNet_CGUI_iTwoPanelSelectionEx2.htm">
+        <HelpTOCNode Id="7e9868ba-1090-4cc4-b8fb-93a72ee90192" Title="iTwoPanelSelectionEx2 Method " Url="html/Overload_Geosoft_Desktop_GXNet_CGUI_iTwoPanelSelectionEx2.htm">
           <HelpTOCNode Title="iTwoPanelSelectionEx2 Method (CLST, CLST, Int32, Int32, String, String)" Url="html/M_Geosoft_Desktop_GXNet_CGUI_iTwoPanelSelectionEx2.htm" />
           <HelpTOCNode Title="iTwoPanelSelectionEx2 Method (IWin32Window, CLST, CLST, Int32, Int32, String, String)" Url="html/M_Geosoft_Desktop_GXNet_CGUI_iTwoPanelSelectionEx2_1.htm" />
         </HelpTOCNode>
@@ -3370,7 +3370,7 @@
         <HelpTOCNode Title="LaunchGeoXToolEx Method " Url="html/M_Geosoft_Desktop_GXNet_CGUI_LaunchGeoXToolEx.htm" />
         <HelpTOCNode Title="LaunchSingleGeoDOTNETXTool Method " Url="html/M_Geosoft_Desktop_GXNet_CGUI_LaunchSingleGeoDOTNETXTool.htm" />
         <HelpTOCNode Title="LaunchSingleGeoDOTNETXToolEx Method " Url="html/M_Geosoft_Desktop_GXNet_CGUI_LaunchSingleGeoDOTNETXToolEx.htm" />
-        <HelpTOCNode Id="45696350-3171-47ca-ba1e-14f292953b9e" Title="MetaDataViewer Method " Url="html/Overload_Geosoft_Desktop_GXNet_CGUI_MetaDataViewer.htm">
+        <HelpTOCNode Id="479e355d-338f-40a1-9090-b591cdb4a885" Title="MetaDataViewer Method " Url="html/Overload_Geosoft_Desktop_GXNet_CGUI_MetaDataViewer.htm">
           <HelpTOCNode Title="MetaDataViewer Method (CMETA, Int32, Int32)" Url="html/M_Geosoft_Desktop_GXNet_CGUI_MetaDataViewer.htm" />
           <HelpTOCNode Title="MetaDataViewer Method (IWin32Window, CMETA, Int32, Int32)" Url="html/M_Geosoft_Desktop_GXNet_CGUI_MetaDataViewer_1.htm" />
         </HelpTOCNode>
@@ -3383,33 +3383,33 @@
         <HelpTOCNode Title="SetWindowPosition Method " Url="html/M_Geosoft_Desktop_GXNet_CGUI_SetWindowPosition.htm" />
         <HelpTOCNode Title="SetWindowState Method " Url="html/M_Geosoft_Desktop_GXNet_CGUI_SetWindowState.htm" />
         <HelpTOCNode Title="Show3DViewerDialog Method " Url="html/M_Geosoft_Desktop_GXNet_CGUI_Show3DViewerDialog.htm" />
-        <HelpTOCNode Id="28f8fd4b-c640-4f58-bb99-dd79e424cd23" Title="ShowDirectHist Method " Url="html/Overload_Geosoft_Desktop_GXNet_CGUI_ShowDirectHist.htm">
+        <HelpTOCNode Id="40d07c65-e8df-4769-bd09-b966fe073d76" Title="ShowDirectHist Method " Url="html/Overload_Geosoft_Desktop_GXNet_CGUI_ShowDirectHist.htm">
           <HelpTOCNode Title="ShowDirectHist Method (Double, Double, Double, Double, Double, Int32, CVV)" Url="html/M_Geosoft_Desktop_GXNet_CGUI_ShowDirectHist.htm" />
           <HelpTOCNode Title="ShowDirectHist Method (IWin32Window, Double, Double, Double, Double, Double, Int32, CVV)" Url="html/M_Geosoft_Desktop_GXNet_CGUI_ShowDirectHist_1.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="f93ee4c5-8719-473f-8135-d1112bd9e2f9" Title="ShowHist Method " Url="html/Overload_Geosoft_Desktop_GXNet_CGUI_ShowHist.htm">
+        <HelpTOCNode Id="777ca29e-82dc-4a1e-9e2a-a2a054369d82" Title="ShowHist Method " Url="html/Overload_Geosoft_Desktop_GXNet_CGUI_ShowHist.htm">
           <HelpTOCNode Title="ShowHist Method (CST)" Url="html/M_Geosoft_Desktop_GXNet_CGUI_ShowHist.htm" />
           <HelpTOCNode Title="ShowHist Method (IWin32Window, CST)" Url="html/M_Geosoft_Desktop_GXNet_CGUI_ShowHist_1.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="defc4a17-3fc2-4bfa-a006-4005c1a922d2" Title="SimpleMapDialog Method " Url="html/Overload_Geosoft_Desktop_GXNet_CGUI_SimpleMapDialog.htm">
+        <HelpTOCNode Id="59a155b0-a775-4b46-95ce-0a134ca2b9bb" Title="SimpleMapDialog Method " Url="html/Overload_Geosoft_Desktop_GXNet_CGUI_SimpleMapDialog.htm">
           <HelpTOCNode Title="SimpleMapDialog Method (CMAP, String, String)" Url="html/M_Geosoft_Desktop_GXNet_CGUI_SimpleMapDialog.htm" />
           <HelpTOCNode Title="SimpleMapDialog Method (IWin32Window, CMAP, String, String)" Url="html/M_Geosoft_Desktop_GXNet_CGUI_SimpleMapDialog_1.htm" />
         </HelpTOCNode>
         <HelpTOCNode Title="ThematicVoxelInfo Method " Url="html/M_Geosoft_Desktop_GXNet_CGUI_ThematicVoxelInfo.htm" />
-        <HelpTOCNode Id="41210e08-5ccf-4c53-9382-59a50559f3b4" Title="VoxelStatHist Method " Url="html/Overload_Geosoft_Desktop_GXNet_CGUI_VoxelStatHist.htm">
+        <HelpTOCNode Id="dbccf2b2-0523-4a8b-94d8-ca5cfb3a374a" Title="VoxelStatHist Method " Url="html/Overload_Geosoft_Desktop_GXNet_CGUI_VoxelStatHist.htm">
           <HelpTOCNode Title="VoxelStatHist Method (String)" Url="html/M_Geosoft_Desktop_GXNet_CGUI_VoxelStatHist.htm" />
           <HelpTOCNode Title="VoxelStatHist Method (IWin32Window, String)" Url="html/M_Geosoft_Desktop_GXNet_CGUI_VoxelStatHist_1.htm" />
         </HelpTOCNode>
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="a073436b-df5b-4df5-89a8-4f7d6b4bebd5" Title="CGX_NET Class" Url="html/T_Geosoft_Desktop_GXNet_CGX_NET.htm">
-      <HelpTOCNode Id="17e4074c-c7d6-414d-bc8d-eda90b86dea1" Title="CGX_NET Constructor " Url="html/Overload_Geosoft_Desktop_GXNet_CGX_NET__ctor.htm">
+    <HelpTOCNode Id="ec92ead7-8087-4706-9570-d525ed6725f2" Title="CGX_NET Class" Url="html/T_Geosoft_Desktop_GXNet_CGX_NET.htm">
+      <HelpTOCNode Id="659d03ff-3c7a-443a-9ec8-edcd9769399e" Title="CGX_NET Constructor " Url="html/Overload_Geosoft_Desktop_GXNet_CGX_NET__ctor.htm">
         <HelpTOCNode Title="CGX_NET Constructor " Url="html/M_Geosoft_Desktop_GXNet_CGX_NET__ctor.htm" />
         <HelpTOCNode Title="CGX_NET Constructor (IntPtr)" Url="html/M_Geosoft_Desktop_GXNet_CGX_NET__ctor_1.htm" />
         <HelpTOCNode Title="CGX_NET Constructor (String, String, Int32, IWin32Window, Int32)" Url="html/M_Geosoft_Desktop_GXNet_CGX_NET__ctor_2.htm" />
         <HelpTOCNode Title="CGX_NET Constructor (String, String, String, Int32, IWin32Window, Int32)" Url="html/M_Geosoft_Desktop_GXNet_CGX_NET__ctor_3.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="873d8ff1-7cef-4f8b-bc73-ef72e87b9adf" Title="CGX_NET Fields" Url="html/Fields_T_Geosoft_Desktop_GXNet_CGX_NET.htm">
+      <HelpTOCNode Id="80166694-a9d6-43ef-bc3d-dec4a5e9c30c" Title="CGX_NET Fields" Url="html/Fields_T_Geosoft_Desktop_GXNet_CGX_NET.htm">
         <HelpTOCNode Title="m_bCreate Field" Url="html/F_Geosoft_Desktop_GXNet_CGX_NET_m_bCreate.htm" />
         <HelpTOCNode Title="m_hLibrary Field" Url="html/F_Geosoft_Desktop_GXNet_CGX_NET_m_hLibrary.htm" />
         <HelpTOCNode Title="m_iFlags Field" Url="html/F_Geosoft_Desktop_GXNet_CGX_NET_m_iFlags.htm" />
@@ -3419,9 +3419,9 @@
         <HelpTOCNode Title="m_szRegistryKey Field" Url="html/F_Geosoft_Desktop_GXNet_CGX_NET_m_szRegistryKey.htm" />
         <HelpTOCNode Title="m_szVersion Field" Url="html/F_Geosoft_Desktop_GXNet_CGX_NET_m_szVersion.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="4be0d66f-2cca-46be-9cb0-e9ac90391fb5" Title="CGX_NET Methods" Url="html/Methods_T_Geosoft_Desktop_GXNet_CGX_NET.htm">
+      <HelpTOCNode Id="0665551a-e1b3-414a-83a5-fed6b18b01cd" Title="CGX_NET Methods" Url="html/Methods_T_Geosoft_Desktop_GXNet_CGX_NET.htm">
         <HelpTOCNode Title="Dispose Method " Url="html/M_Geosoft_Desktop_GXNet_CGX_NET_Dispose.htm" />
-        <HelpTOCNode Id="581e6b4c-bef8-4d71-89af-79cabd5e8bba" Title="Initialize Method " Url="html/Overload_Geosoft_Desktop_GXNet_CGX_NET_Initialize.htm">
+        <HelpTOCNode Id="a246f143-acf4-4c46-9544-61be6c243fc6" Title="Initialize Method " Url="html/Overload_Geosoft_Desktop_GXNet_CGX_NET_Initialize.htm">
           <HelpTOCNode Title="Initialize Method (String, String, Int32, IWin32Window, Int32)" Url="html/M_Geosoft_Desktop_GXNet_CGX_NET_Initialize.htm" />
           <HelpTOCNode Title="Initialize Method (String, String, String, Int32, IWin32Window, Int32)" Url="html/M_Geosoft_Desktop_GXNet_CGX_NET_Initialize_1.htm" />
         </HelpTOCNode>
@@ -3434,8 +3434,8 @@
         <HelpTOCNode Title="UnlockParentWindow Method " Url="html/M_Geosoft_Desktop_GXNet_CGX_NET_UnlockParentWindow.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="69c57302-9e39-4edf-912e-e5def6a447a3" Title="CHTTP Class" Url="html/T_Geosoft_Desktop_GXNet_CHTTP.htm">
-      <HelpTOCNode Id="160694a6-8a99-403f-b6bd-15144a4c054b" Title="CHTTP Methods" Url="html/Methods_T_Geosoft_Desktop_GXNet_CHTTP.htm">
+    <HelpTOCNode Id="74e1b722-21db-4a43-82b7-db0f9c26b57d" Title="CHTTP Class" Url="html/T_Geosoft_Desktop_GXNet_CHTTP.htm">
+      <HelpTOCNode Id="f079315d-a1d1-4054-b924-54926f0f04b1" Title="CHTTP Methods" Url="html/Methods_T_Geosoft_Desktop_GXNet_CHTTP.htm">
         <HelpTOCNode Title="Create Method " Url="html/M_Geosoft_Desktop_GXNet_CHTTP_Create.htm" />
         <HelpTOCNode Title="Dispose Method " Url="html/M_Geosoft_Desktop_GXNet_CHTTP_Dispose.htm" />
         <HelpTOCNode Title="Download Method " Url="html/M_Geosoft_Desktop_GXNet_CHTTP_Download.htm" />
@@ -3445,22 +3445,22 @@
         <HelpTOCNode Title="SilentDownload Method " Url="html/M_Geosoft_Desktop_GXNet_CHTTP_SilentDownload.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="67372493-e9bf-4fab-a421-9962faa49ffc" Title="CIEXP Class" Url="html/T_Geosoft_Desktop_GXNet_CIEXP.htm">
-      <HelpTOCNode Id="514d10f2-a1bf-4ddd-890f-be125df7738e" Title="CIEXP Methods" Url="html/Methods_T_Geosoft_Desktop_GXNet_CIEXP.htm">
+    <HelpTOCNode Id="1d519a18-2230-49d8-b709-4fa02348c5eb" Title="CIEXP Class" Url="html/T_Geosoft_Desktop_GXNet_CIEXP.htm">
+      <HelpTOCNode Id="99a03528-768b-4b9b-86b4-5e6520b931b8" Title="CIEXP Methods" Url="html/Methods_T_Geosoft_Desktop_GXNet_CIEXP.htm">
         <HelpTOCNode Title="AddGrid Method " Url="html/M_Geosoft_Desktop_GXNet_CIEXP_AddGrid.htm" />
         <HelpTOCNode Title="Create Method " Url="html/M_Geosoft_Desktop_GXNet_CIEXP_Create.htm" />
         <HelpTOCNode Title="Dispose Method " Url="html/M_Geosoft_Desktop_GXNet_CIEXP_Dispose.htm" />
         <HelpTOCNode Title="DoFormula Method " Url="html/M_Geosoft_Desktop_GXNet_CIEXP_DoFormula.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="6863a6e5-5d70-470b-b15d-f1f8a82d8cbc" Title="CINTERNET Class" Url="html/T_Geosoft_Desktop_GXNet_CINTERNET.htm">
-      <HelpTOCNode Id="eeb895aa-7923-4bf9-9f99-9c7b77e52f77" Title="CINTERNET Methods" Url="html/Methods_T_Geosoft_Desktop_GXNet_CINTERNET.htm">
+    <HelpTOCNode Id="bad25c61-501b-4003-8f88-dece14ec1738" Title="CINTERNET Class" Url="html/T_Geosoft_Desktop_GXNet_CINTERNET.htm">
+      <HelpTOCNode Id="a9bd82dc-508a-4d5a-9962-b3e1a07d85b2" Title="CINTERNET Methods" Url="html/Methods_T_Geosoft_Desktop_GXNet_CINTERNET.htm">
         <HelpTOCNode Title="iDownloadHTTP Method " Url="html/M_Geosoft_Desktop_GXNet_CINTERNET_iDownloadHTTP.htm" />
         <HelpTOCNode Title="SendMail Method " Url="html/M_Geosoft_Desktop_GXNet_CINTERNET_SendMail.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="6f2a8d3f-e71a-4bc3-b63a-605a32158474" Title="CIP Class" Url="html/T_Geosoft_Desktop_GXNet_CIP.htm">
-      <HelpTOCNode Id="8253c7df-40b8-4e4d-805b-043c29a6ffdb" Title="CIP Methods" Url="html/Methods_T_Geosoft_Desktop_GXNet_CIP.htm">
+    <HelpTOCNode Id="54dd3a95-a1dc-4fd4-b474-f14acf8b2972" Title="CIP Class" Url="html/T_Geosoft_Desktop_GXNet_CIP.htm">
+      <HelpTOCNode Id="e273b53f-a329-4472-9601-2d03f98238bb" Title="CIP Methods" Url="html/Methods_T_Geosoft_Desktop_GXNet_CIP.htm">
         <HelpTOCNode Title="AverageDuplicatesQC Method " Url="html/M_Geosoft_Desktop_GXNet_CIP_AverageDuplicatesQC.htm" />
         <HelpTOCNode Title="ConvertUBCIP2DToGrid Method " Url="html/M_Geosoft_Desktop_GXNet_CIP_ConvertUBCIP2DToGrid.htm" />
         <HelpTOCNode Title="Create Method " Url="html/M_Geosoft_Desktop_GXNet_CIP_Create.htm" />
@@ -3535,16 +3535,16 @@
         <HelpTOCNode Title="WriteDistantElectrodesLST Method " Url="html/M_Geosoft_Desktop_GXNet_CIP_WriteDistantElectrodesLST.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="1c8168b0-d2e6-4642-aad8-74ab7a3f9067" Title="CIPGUI Class" Url="html/T_Geosoft_Desktop_GXNet_CIPGUI.htm">
-      <HelpTOCNode Id="7575bc14-ee1a-4fbb-9d6c-a1c28e795557" Title="CIPGUI Methods" Url="html/Methods_T_Geosoft_Desktop_GXNet_CIPGUI.htm">
+    <HelpTOCNode Id="f10d7668-243a-47ae-b84d-1bac2807dcfb" Title="CIPGUI Class" Url="html/T_Geosoft_Desktop_GXNet_CIPGUI.htm">
+      <HelpTOCNode Id="6b3a97ae-0bc9-4430-98cd-a90385ff784a" Title="CIPGUI Methods" Url="html/Methods_T_Geosoft_Desktop_GXNet_CIPGUI.htm">
         <HelpTOCNode Title="iIPQCToolExists Method " Url="html/M_Geosoft_Desktop_GXNet_CIPGUI_iIPQCToolExists.htm" />
         <HelpTOCNode Title="iModifyJob Method " Url="html/M_Geosoft_Desktop_GXNet_CIPGUI_iModifyJob.htm" />
         <HelpTOCNode Title="LaunchIPQCTool Method " Url="html/M_Geosoft_Desktop_GXNet_CIPGUI_LaunchIPQCTool.htm" />
         <HelpTOCNode Title="LaunchOffsetIPQCTool Method " Url="html/M_Geosoft_Desktop_GXNet_CIPGUI_LaunchOffsetIPQCTool.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="edc4cb04-1dd6-443d-9672-ae3dafb2826f" Title="CKGRD Class" Url="html/T_Geosoft_Desktop_GXNet_CKGRD.htm">
-      <HelpTOCNode Id="d7cf9f78-a62e-473d-a9c3-2e60062b11e2" Title="CKGRD Methods" Url="html/Methods_T_Geosoft_Desktop_GXNet_CKGRD.htm">
+    <HelpTOCNode Id="8be9ceb1-0833-4df7-a3e4-f75adbbe7ca8" Title="CKGRD Class" Url="html/T_Geosoft_Desktop_GXNet_CKGRD.htm">
+      <HelpTOCNode Id="3979bcd3-80bc-453b-a918-bdf822ee5f82" Title="CKGRD Methods" Url="html/Methods_T_Geosoft_Desktop_GXNet_CKGRD.htm">
         <HelpTOCNode Title="Clear Method " Url="html/M_Geosoft_Desktop_GXNet_CKGRD_Clear.htm" />
         <HelpTOCNode Title="Create Method " Url="html/M_Geosoft_Desktop_GXNet_CKGRD_Create.htm" />
         <HelpTOCNode Title="Dispose Method " Url="html/M_Geosoft_Desktop_GXNet_CKGRD_Dispose.htm" />
@@ -3555,21 +3555,21 @@
         <HelpTOCNode Title="iSaveParms Method " Url="html/M_Geosoft_Desktop_GXNet_CKGRD_iSaveParms.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="10de5e15-66b6-48ef-8217-20bbb4c0dfe5" Title="CLMSG Class" Url="html/T_Geosoft_Desktop_GXNet_CLMSG.htm">
-      <HelpTOCNode Id="e54a33e4-3e07-45a7-ab39-208534d601de" Title="CLMSG Methods" Url="html/Methods_T_Geosoft_Desktop_GXNet_CLMSG.htm">
+    <HelpTOCNode Id="08e9b476-3dd1-4231-bb7c-56d9a81434d8" Title="CLMSG Class" Url="html/T_Geosoft_Desktop_GXNet_CLMSG.htm">
+      <HelpTOCNode Id="d5bfe177-2099-4df7-a51a-51af2516d587" Title="CLMSG Methods" Url="html/Methods_T_Geosoft_Desktop_GXNet_CLMSG.htm">
         <HelpTOCNode Title="GotoPoint Method " Url="html/M_Geosoft_Desktop_GXNet_CLMSG_GotoPoint.htm" />
         <HelpTOCNode Title="ViewArea Method " Url="html/M_Geosoft_Desktop_GXNet_CLMSG_ViewArea.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="d44234f3-31d4-4224-a4ca-a2730e3b28bb" Title="CMISC Class" Url="html/T_Geosoft_Desktop_GXNet_CMISC.htm">
-      <HelpTOCNode Id="8f3c25f4-cfb1-411d-9093-6961cd7effb8" Title="CMISC Methods" Url="html/Methods_T_Geosoft_Desktop_GXNet_CMISC.htm">
+    <HelpTOCNode Id="5adf76a4-73c0-4650-ba5c-0614c44ad98a" Title="CMISC Class" Url="html/T_Geosoft_Desktop_GXNet_CMISC.htm">
+      <HelpTOCNode Id="73701134-7737-4016-bbde-b856ab8ad0fe" Title="CMISC Methods" Url="html/Methods_T_Geosoft_Desktop_GXNet_CMISC.htm">
         <HelpTOCNode Title="ConvertCG3toRAW Method " Url="html/M_Geosoft_Desktop_GXNet_CMISC_ConvertCG3toRAW.htm" />
         <HelpTOCNode Title="ConvertCG5toRAW Method " Url="html/M_Geosoft_Desktop_GXNet_CMISC_ConvertCG5toRAW.htm" />
         <HelpTOCNode Title="Ukoa2Tbl Method " Url="html/M_Geosoft_Desktop_GXNet_CMISC_Ukoa2Tbl.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="c7af2c31-9db7-48c4-b295-397ff40a6013" Title="CMSTK Class" Url="html/T_Geosoft_Desktop_GXNet_CMSTK.htm">
-      <HelpTOCNode Id="9f8b56ea-43dd-4e87-973d-372624701a80" Title="CMSTK Methods" Url="html/Methods_T_Geosoft_Desktop_GXNet_CMSTK.htm">
+    <HelpTOCNode Id="78b93fc4-85db-4dac-8f89-a9f62e640a19" Title="CMSTK Class" Url="html/T_Geosoft_Desktop_GXNet_CMSTK.htm">
+      <HelpTOCNode Id="37a6a66d-d4f1-4015-a0b2-580b6b004b02" Title="CMSTK Methods" Url="html/Methods_T_Geosoft_Desktop_GXNet_CMSTK.htm">
         <HelpTOCNode Title="AddSTK Method " Url="html/M_Geosoft_Desktop_GXNet_CMSTK_AddSTK.htm" />
         <HelpTOCNode Title="ChanListVV Method " Url="html/M_Geosoft_Desktop_GXNet_CMSTK_ChanListVV.htm" />
         <HelpTOCNode Title="Create Method " Url="html/M_Geosoft_Desktop_GXNet_CMSTK_Create.htm" />
@@ -3585,8 +3585,8 @@
         <HelpTOCNode Title="SetYAxisDirection Method " Url="html/M_Geosoft_Desktop_GXNet_CMSTK_SetYAxisDirection.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="c39b491a-8367-471e-87d5-e349f44ff798" Title="CMVG Class" Url="html/T_Geosoft_Desktop_GXNet_CMVG.htm">
-      <HelpTOCNode Id="a3fd87d3-6400-4e9a-9db5-79a47dd1bcd8" Title="CMVG Methods" Url="html/Methods_T_Geosoft_Desktop_GXNet_CMVG.htm">
+    <HelpTOCNode Id="1309522b-01da-4019-9e4f-ad3187b524f9" Title="CMVG Class" Url="html/T_Geosoft_Desktop_GXNet_CMVG.htm">
+      <HelpTOCNode Id="2aec712a-8d83-41aa-9d55-b16fd76eb4a5" Title="CMVG Methods" Url="html/Methods_T_Geosoft_Desktop_GXNet_CMVG.htm">
         <HelpTOCNode Title="AxisX Method " Url="html/M_Geosoft_Desktop_GXNet_CMVG_AxisX.htm" />
         <HelpTOCNode Title="AxisY Method " Url="html/M_Geosoft_Desktop_GXNet_CMVG_AxisY.htm" />
         <HelpTOCNode Title="Create Method " Url="html/M_Geosoft_Desktop_GXNet_CMVG_Create.htm" />
@@ -3601,23 +3601,23 @@
         <HelpTOCNode Title="RescaleYRange Method " Url="html/M_Geosoft_Desktop_GXNet_CMVG_RescaleYRange.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="f3ffb0d2-aa2a-4744-844c-3134517502f7" Title="CPDF3D Class" Url="html/T_Geosoft_Desktop_GXNet_CPDF3D.htm">
-      <HelpTOCNode Id="b6a95351-5944-4ea6-a1a0-0b669ae92131" Title="CPDF3D Methods" Url="html/Methods_T_Geosoft_Desktop_GXNet_CPDF3D.htm">
+    <HelpTOCNode Id="0d0001e0-3853-4fdd-9964-fea549d621a2" Title="CPDF3D Class" Url="html/T_Geosoft_Desktop_GXNet_CPDF3D.htm">
+      <HelpTOCNode Id="d0d3972b-4b81-4f03-915b-d43dc65bea2a" Title="CPDF3D Methods" Url="html/Methods_T_Geosoft_Desktop_GXNet_CPDF3D.htm">
         <HelpTOCNode Title="Export2D Method " Url="html/M_Geosoft_Desktop_GXNet_CPDF3D_Export2D.htm" />
         <HelpTOCNode Title="Render Method " Url="html/M_Geosoft_Desktop_GXNet_CPDF3D_Render.htm" />
         <HelpTOCNode Title="RenderToPage Method " Url="html/M_Geosoft_Desktop_GXNet_CPDF3D_RenderToPage.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="c0db4a29-6ac1-4950-92d5-ac35fea781ef" Title="CPGEXP Class" Url="html/T_Geosoft_Desktop_GXNet_CPGEXP.htm">
-      <HelpTOCNode Id="f0770153-4870-486a-849a-1356fb55307c" Title="CPGEXP Methods" Url="html/Methods_T_Geosoft_Desktop_GXNet_CPGEXP.htm">
+    <HelpTOCNode Id="baddb3c6-cc80-433b-bdda-77106a22fea3" Title="CPGEXP Class" Url="html/T_Geosoft_Desktop_GXNet_CPGEXP.htm">
+      <HelpTOCNode Id="21ec0442-8a24-4e36-a67a-98ebb7b922ac" Title="CPGEXP Methods" Url="html/Methods_T_Geosoft_Desktop_GXNet_CPGEXP.htm">
         <HelpTOCNode Title="AddPager Method " Url="html/M_Geosoft_Desktop_GXNet_CPGEXP_AddPager.htm" />
         <HelpTOCNode Title="Create Method " Url="html/M_Geosoft_Desktop_GXNet_CPGEXP_Create.htm" />
         <HelpTOCNode Title="Dispose Method " Url="html/M_Geosoft_Desktop_GXNet_CPGEXP_Dispose.htm" />
         <HelpTOCNode Title="DoFormula Method " Url="html/M_Geosoft_Desktop_GXNet_CPGEXP_DoFormula.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="d9c93311-7060-4c5a-87cc-a572b7c558c3" Title="CPGU Class" Url="html/T_Geosoft_Desktop_GXNet_CPGU.htm">
-      <HelpTOCNode Id="a9d0f82b-bc09-4d1b-bf61-3f64824185e9" Title="CPGU Methods" Url="html/Methods_T_Geosoft_Desktop_GXNet_CPGU.htm">
+    <HelpTOCNode Id="c24326d5-541a-4c85-94b9-f2ea22d13294" Title="CPGU Class" Url="html/T_Geosoft_Desktop_GXNet_CPGU.htm">
+      <HelpTOCNode Id="5cc20a75-14e6-46b2-bdcc-611a16b93b8d" Title="CPGU Methods" Url="html/Methods_T_Geosoft_Desktop_GXNet_CPGU.htm">
         <HelpTOCNode Title="AddScalar Method " Url="html/M_Geosoft_Desktop_GXNet_CPGU_AddScalar.htm" />
         <HelpTOCNode Title="Bool Method " Url="html/M_Geosoft_Desktop_GXNet_CPGU_Bool.htm" />
         <HelpTOCNode Title="CorrelationMatrix Method " Url="html/M_Geosoft_Desktop_GXNet_CPGU_CorrelationMatrix.htm" />
@@ -3665,13 +3665,13 @@
         <HelpTOCNode Title="Trend Method " Url="html/M_Geosoft_Desktop_GXNet_CPGU_Trend.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="059bb881-64e0-4725-b624-ed402149ee08" Title="CPRAGA3 Class" Url="html/T_Geosoft_Desktop_GXNet_CPRAGA3.htm">
-      <HelpTOCNode Id="fb21acd6-be2e-470f-8d3f-cc7f623c8d4c" Title="CPRAGA3 Methods" Url="html/Methods_T_Geosoft_Desktop_GXNet_CPRAGA3.htm">
+    <HelpTOCNode Id="fa19516e-1926-4723-84db-dc38462a9a1b" Title="CPRAGA3 Class" Url="html/T_Geosoft_Desktop_GXNet_CPRAGA3.htm">
+      <HelpTOCNode Id="40a1455b-4d5f-498d-878d-6e04b56e9fc0" Title="CPRAGA3 Methods" Url="html/Methods_T_Geosoft_Desktop_GXNet_CPRAGA3.htm">
         <HelpTOCNode Title="iLaunch Method " Url="html/M_Geosoft_Desktop_GXNet_CPRAGA3_iLaunch.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="6436c13a-d4f2-49bd-9714-b9a962059ee1" Title="CPROJ Class" Url="html/T_Geosoft_Desktop_GXNet_CPROJ.htm">
-      <HelpTOCNode Id="6398f1f9-caae-4074-b770-cf86039514cd" Title="CPROJ Methods" Url="html/Methods_T_Geosoft_Desktop_GXNet_CPROJ.htm">
+    <HelpTOCNode Id="be045d6b-0e31-4c6b-86e6-20fb8187c14a" Title="CPROJ Class" Url="html/T_Geosoft_Desktop_GXNet_CPROJ.htm">
+      <HelpTOCNode Id="0a7f7625-b263-46eb-a9f1-56bf65fde129" Title="CPROJ Methods" Url="html/Methods_T_Geosoft_Desktop_GXNet_CPROJ.htm">
         <HelpTOCNode Title="DropMapClipData Method " Url="html/M_Geosoft_Desktop_GXNet_CPROJ_DropMapClipData.htm" />
         <HelpTOCNode Title="iAddDocument Method " Url="html/M_Geosoft_Desktop_GXNet_CPROJ_iAddDocument.htm" />
         <HelpTOCNode Title="iAddDocumentWithoutOpening Method " Url="html/M_Geosoft_Desktop_GXNet_CPROJ_iAddDocumentWithoutOpening.htm" />
@@ -3687,8 +3687,8 @@
         <HelpTOCNode Title="iSaveCloseDocuments Method " Url="html/M_Geosoft_Desktop_GXNet_CPROJ_iSaveCloseDocuments.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="78687f92-b4ea-47dc-b548-fa556d565322" Title="CRGRD Class" Url="html/T_Geosoft_Desktop_GXNet_CRGRD.htm">
-      <HelpTOCNode Id="a1d04b34-5cb2-4994-a153-e3e110895731" Title="CRGRD Methods" Url="html/Methods_T_Geosoft_Desktop_GXNet_CRGRD.htm">
+    <HelpTOCNode Id="c56c2235-b037-4f23-8bb7-f565ed441c2b" Title="CRGRD Class" Url="html/T_Geosoft_Desktop_GXNet_CRGRD.htm">
+      <HelpTOCNode Id="c4be0632-875a-4574-bc79-326b17e88851" Title="CRGRD Methods" Url="html/Methods_T_Geosoft_Desktop_GXNet_CRGRD.htm">
         <HelpTOCNode Title="Clear Method " Url="html/M_Geosoft_Desktop_GXNet_CRGRD_Clear.htm" />
         <HelpTOCNode Title="Create Method " Url="html/M_Geosoft_Desktop_GXNet_CRGRD_Create.htm" />
         <HelpTOCNode Title="CreateIMG Method " Url="html/M_Geosoft_Desktop_GXNet_CRGRD_CreateIMG.htm" />
@@ -3701,8 +3701,8 @@
         <HelpTOCNode Title="RunVV Method " Url="html/M_Geosoft_Desktop_GXNet_CRGRD_RunVV.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="c46b9a44-b71c-4a5b-af1e-d5ce529bb904" Title="CSEMPLOT Class" Url="html/T_Geosoft_Desktop_GXNet_CSEMPLOT.htm">
-      <HelpTOCNode Id="277b82df-708c-4768-a42d-98aee312e262" Title="CSEMPLOT Methods" Url="html/Methods_T_Geosoft_Desktop_GXNet_CSEMPLOT.htm">
+    <HelpTOCNode Id="5bbdb4ad-41f4-4f96-ba56-8f5e331d6502" Title="CSEMPLOT Class" Url="html/T_Geosoft_Desktop_GXNet_CSEMPLOT.htm">
+      <HelpTOCNode Id="c04bd668-2765-43d8-8f08-9685e9340992" Title="CSEMPLOT Methods" Url="html/Methods_T_Geosoft_Desktop_GXNet_CSEMPLOT.htm">
         <HelpTOCNode Title="ApplyFilterToMask Method " Url="html/M_Geosoft_Desktop_GXNet_CSEMPLOT_ApplyFilterToMask.htm" />
         <HelpTOCNode Title="ConvertDummies Method " Url="html/M_Geosoft_Desktop_GXNet_CSEMPLOT_ConvertDummies.htm" />
         <HelpTOCNode Title="CreateGroups Method " Url="html/M_Geosoft_Desktop_GXNet_CSEMPLOT_CreateGroups.htm" />
@@ -3754,8 +3754,8 @@
         <HelpTOCNode Title="TotalOxides Method " Url="html/M_Geosoft_Desktop_GXNet_CSEMPLOT_TotalOxides.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="f8fc4293-d176-47f8-9c3d-6eaab8772415" Title="CSHP Class" Url="html/T_Geosoft_Desktop_GXNet_CSHP.htm">
-      <HelpTOCNode Id="d1278623-2eff-4b81-ad50-114114f9684d" Title="CSHP Methods" Url="html/Methods_T_Geosoft_Desktop_GXNet_CSHP.htm">
+    <HelpTOCNode Id="64bdcbaa-4c5e-48b8-87b3-6432d39f9dcf" Title="CSHP Class" Url="html/T_Geosoft_Desktop_GXNet_CSHP.htm">
+      <HelpTOCNode Id="cee12375-7686-47cf-b2f8-683c116a3184" Title="CSHP Methods" Url="html/Methods_T_Geosoft_Desktop_GXNet_CSHP.htm">
         <HelpTOCNode Title="AppendItem Method " Url="html/M_Geosoft_Desktop_GXNet_CSHP_AppendItem.htm" />
         <HelpTOCNode Title="Create Method " Url="html/M_Geosoft_Desktop_GXNet_CSHP_Create.htm" />
         <HelpTOCNode Title="Dispose Method " Url="html/M_Geosoft_Desktop_GXNet_CSHP_Dispose.htm" />
@@ -3781,8 +3781,8 @@
         <HelpTOCNode Title="WriteItem Method " Url="html/M_Geosoft_Desktop_GXNet_CSHP_WriteItem.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="acd6d934-3c46-4cb3-b13a-dba5259ba6fc" Title="CSQLSRV Class" Url="html/T_Geosoft_Desktop_GXNet_CSQLSRV.htm">
-      <HelpTOCNode Id="f239cc77-af8c-401d-9f24-4ad0c5a81d3e" Title="CSQLSRV Methods" Url="html/Methods_T_Geosoft_Desktop_GXNet_CSQLSRV.htm">
+    <HelpTOCNode Id="73d042b9-9d49-411d-8b50-e4b5c3ca21a6" Title="CSQLSRV Class" Url="html/T_Geosoft_Desktop_GXNet_CSQLSRV.htm">
+      <HelpTOCNode Id="acc978a5-908d-447a-ab45-078fc197a345" Title="CSQLSRV Methods" Url="html/Methods_T_Geosoft_Desktop_GXNet_CSQLSRV.htm">
         <HelpTOCNode Title="iAttachMDF Method " Url="html/M_Geosoft_Desktop_GXNet_CSQLSRV_iAttachMDF.htm" />
         <HelpTOCNode Title="iDetachDB Method " Url="html/M_Geosoft_Desktop_GXNet_CSQLSRV_iDetachDB.htm" />
         <HelpTOCNode Title="iGetDatabaseLanguagesLST Method " Url="html/M_Geosoft_Desktop_GXNet_CSQLSRV_iGetDatabaseLanguagesLST.htm" />
@@ -3791,8 +3791,8 @@
         <HelpTOCNode Title="iGetServersLST Method " Url="html/M_Geosoft_Desktop_GXNet_CSQLSRV_iGetServersLST.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="ea53b00e-f6e8-466e-acaf-e3c3c4220879" Title="CSTK Class" Url="html/T_Geosoft_Desktop_GXNet_CSTK.htm">
-      <HelpTOCNode Id="775db9c9-7b64-4e8d-80a2-83d2074aeca1" Title="CSTK Methods" Url="html/Methods_T_Geosoft_Desktop_GXNet_CSTK.htm">
+    <HelpTOCNode Id="e43ef469-2b8d-464e-8925-a1c17a76fdb4" Title="CSTK Class" Url="html/T_Geosoft_Desktop_GXNet_CSTK.htm">
+      <HelpTOCNode Id="4779c1a2-553e-49c2-afe3-5b445a570449" Title="CSTK Methods" Url="html/Methods_T_Geosoft_Desktop_GXNet_CSTK.htm">
         <HelpTOCNode Title="GetTransParms Method " Url="html/M_Geosoft_Desktop_GXNet_CSTK_GetTransParms.htm" />
         <HelpTOCNode Title="iGetAxisFormat Method " Url="html/M_Geosoft_Desktop_GXNet_CSTK_iGetAxisFormat.htm" />
         <HelpTOCNode Title="IGetAxisParms Method " Url="html/M_Geosoft_Desktop_GXNet_CSTK_IGetAxisParms.htm" />
@@ -3822,13 +3822,13 @@
         <HelpTOCNode Title="SetVAIndexStart Method " Url="html/M_Geosoft_Desktop_GXNet_CSTK_SetVAIndexStart.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="4457b9f4-6984-45bc-bac9-ec47b5e34994" Title="CSTRINGS Class" Url="html/T_Geosoft_Desktop_GXNet_CSTRINGS.htm">
-      <HelpTOCNode Id="503eb757-958d-4c15-b331-51e1a15bcb54" Title="CSTRINGS Methods" Url="html/Methods_T_Geosoft_Desktop_GXNet_CSTRINGS.htm">
+    <HelpTOCNode Id="6e8a9489-5d4e-4b88-a1da-e481e817316d" Title="CSTRINGS Class" Url="html/T_Geosoft_Desktop_GXNet_CSTRINGS.htm">
+      <HelpTOCNode Id="fe06719c-ab6c-4d96-8e55-57fe72d7104b" Title="CSTRINGS Methods" Url="html/Methods_T_Geosoft_Desktop_GXNet_CSTRINGS.htm">
         <HelpTOCNode Title="LaunchDigitizationUI Method " Url="html/M_Geosoft_Desktop_GXNet_CSTRINGS_LaunchDigitizationUI.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="625f27b3-62ce-4c44-8d1f-ac5eedd57b02" Title="CTC Class" Url="html/T_Geosoft_Desktop_GXNet_CTC.htm">
-      <HelpTOCNode Id="c23ab19a-e6e4-4be7-a2b4-91f830125735" Title="CTC Methods" Url="html/Methods_T_Geosoft_Desktop_GXNet_CTC.htm">
+    <HelpTOCNode Id="7feffbae-42ad-4641-982f-280faa19851c" Title="CTC Class" Url="html/T_Geosoft_Desktop_GXNet_CTC.htm">
+      <HelpTOCNode Id="b7694da2-d42f-4687-a330-f71748c2d4da" Title="CTC Methods" Url="html/Methods_T_Geosoft_Desktop_GXNet_CTC.htm">
         <HelpTOCNode Title="Create Method " Url="html/M_Geosoft_Desktop_GXNet_CTC_Create.htm" />
         <HelpTOCNode Title="CreateEx Method " Url="html/M_Geosoft_Desktop_GXNet_CTC_CreateEx.htm" />
         <HelpTOCNode Title="Dispose Method " Url="html/M_Geosoft_Desktop_GXNet_CTC_Dispose.htm" />
@@ -3838,8 +3838,8 @@
         <HelpTOCNode Title="Grterain2 Method " Url="html/M_Geosoft_Desktop_GXNet_CTC_Grterain2.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="1e00d0c6-7732-4edc-9492-19c7e062c28f" Title="CTEST Class" Url="html/T_Geosoft_Desktop_GXNet_CTEST.htm">
-      <HelpTOCNode Id="7d2e4741-b1fc-4ff0-8f16-e49f3f3ffc45" Title="CTEST Methods" Url="html/Methods_T_Geosoft_Desktop_GXNet_CTEST.htm">
+    <HelpTOCNode Id="a4493204-4baf-478c-87f0-b5f50629bf51" Title="CTEST Class" Url="html/T_Geosoft_Desktop_GXNet_CTEST.htm">
+      <HelpTOCNode Id="58a64913-30fa-44b3-9cb1-9fd633665a5c" Title="CTEST Methods" Url="html/Methods_T_Geosoft_Desktop_GXNet_CTEST.htm">
         <HelpTOCNode Title="CoreClass Method " Url="html/M_Geosoft_Desktop_GXNet_CTEST_CoreClass.htm" />
         <HelpTOCNode Title="EnableDisableArcEngineLicense Method " Url="html/M_Geosoft_Desktop_GXNet_CTEST_EnableDisableArcEngineLicense.htm" />
         <HelpTOCNode Title="iArcEngineLicense Method " Url="html/M_Geosoft_Desktop_GXNet_CTEST_iArcEngineLicense.htm" />
@@ -3847,8 +3847,8 @@
         <HelpTOCNode Title="WrapperTest Method " Url="html/M_Geosoft_Desktop_GXNet_CTEST_WrapperTest.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="9ecd3994-716c-4bcc-bdb3-da3511c61e7f" Title="CTIN Class" Url="html/T_Geosoft_Desktop_GXNet_CTIN.htm">
-      <HelpTOCNode Id="96c9e6f6-6844-4739-ab37-fc1651391fa5" Title="CTIN Methods" Url="html/Methods_T_Geosoft_Desktop_GXNet_CTIN.htm">
+    <HelpTOCNode Id="61cb38a8-e9ce-4a71-87b5-30068f6e4129" Title="CTIN Class" Url="html/T_Geosoft_Desktop_GXNet_CTIN.htm">
+      <HelpTOCNode Id="2268819e-f124-4578-99da-38e89f03ae38" Title="CTIN Methods" Url="html/Methods_T_Geosoft_Desktop_GXNet_CTIN.htm">
         <HelpTOCNode Title="Copy Method " Url="html/M_Geosoft_Desktop_GXNet_CTIN_Copy.htm" />
         <HelpTOCNode Title="Create Method " Url="html/M_Geosoft_Desktop_GXNet_CTIN_Create.htm" />
         <HelpTOCNode Title="CreateS Method " Url="html/M_Geosoft_Desktop_GXNet_CTIN_CreateS.htm" />
@@ -3874,37 +3874,37 @@
         <HelpTOCNode Title="SetIPJ Method " Url="html/M_Geosoft_Desktop_GXNet_CTIN_SetIPJ.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="92bf0865-367f-4808-b2ed-d47dfd9240f4" Title="CTRND Class" Url="html/T_Geosoft_Desktop_GXNet_CTRND.htm">
-      <HelpTOCNode Id="10e7bccc-5042-4994-9d26-b7b41f7674c4" Title="CTRND Methods" Url="html/Methods_T_Geosoft_Desktop_GXNet_CTRND.htm">
+    <HelpTOCNode Id="df87c944-cb48-4b1f-87b1-a1f367b27901" Title="CTRND Class" Url="html/T_Geosoft_Desktop_GXNet_CTRND.htm">
+      <HelpTOCNode Id="e1bd948d-b16c-434c-acc0-eebaef78fb06" Title="CTRND Methods" Url="html/Methods_T_Geosoft_Desktop_GXNet_CTRND.htm">
         <HelpTOCNode Title="GetMaxMin Method " Url="html/M_Geosoft_Desktop_GXNet_CTRND_GetMaxMin.htm" />
         <HelpTOCNode Title="GetMesh Method " Url="html/M_Geosoft_Desktop_GXNet_CTRND_GetMesh.htm" />
         <HelpTOCNode Title="TrndDB Method " Url="html/M_Geosoft_Desktop_GXNet_CTRND_TrndDB.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="7e6d0826-8101-4720-81f0-aedc8b2dd1b0" Title="CUNC Class" Url="html/T_Geosoft_Desktop_GXNet_CUNC.htm">
-      <HelpTOCNode Id="299e90c8-ad6c-4076-89c3-7f8591b6519b" Title="CUNC Methods" Url="html/Methods_T_Geosoft_Desktop_GXNet_CUNC.htm">
+    <HelpTOCNode Id="4e1ac49e-df51-4252-bb9c-b54a1f1e9b65" Title="CUNC Class" Url="html/T_Geosoft_Desktop_GXNet_CUNC.htm">
+      <HelpTOCNode Id="d1f6f0d8-5a0b-4a6d-b4ab-6a32087f186f" Title="CUNC Methods" Url="html/Methods_T_Geosoft_Desktop_GXNet_CUNC.htm">
         <HelpTOCNode Title="iIsValidUTF16Char Method " Url="html/M_Geosoft_Desktop_GXNet_CUNC_iIsValidUTF16Char.htm" />
         <HelpTOCNode Title="iValidSymbol Method " Url="html/M_Geosoft_Desktop_GXNet_CUNC_iValidSymbol.htm" />
         <HelpTOCNode Title="UTF16ValToSTR Method " Url="html/M_Geosoft_Desktop_GXNet_CUNC_UTF16ValToSTR.htm" />
         <HelpTOCNode Title="ValidateSymbols Method " Url="html/M_Geosoft_Desktop_GXNet_CUNC_ValidateSymbols.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="5b65c19d-a93b-4c13-87f0-5760278000ce" Title="CVAU Class" Url="html/T_Geosoft_Desktop_GXNet_CVAU.htm">
-      <HelpTOCNode Id="f7c21c0a-a152-4b12-bad6-54d981725516" Title="CVAU Methods" Url="html/Methods_T_Geosoft_Desktop_GXNet_CVAU.htm">
+    <HelpTOCNode Id="cd521fb8-72e1-4683-b1ee-dbd7837fffae" Title="CVAU Class" Url="html/T_Geosoft_Desktop_GXNet_CVAU.htm">
+      <HelpTOCNode Id="689998e0-fcc0-4fe2-a328-59328b870793" Title="CVAU Methods" Url="html/Methods_T_Geosoft_Desktop_GXNet_CVAU.htm">
         <HelpTOCNode Title="Prune Method " Url="html/M_Geosoft_Desktop_GXNet_CVAU_Prune.htm" />
         <HelpTOCNode Title="TotalVector Method " Url="html/M_Geosoft_Desktop_GXNet_CVAU_TotalVector.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="56e46609-46e8-4150-99d7-5cec39755ccc" Title="CVVEXP Class" Url="html/T_Geosoft_Desktop_GXNet_CVVEXP.htm">
-      <HelpTOCNode Id="537fb64e-e364-45aa-8708-8d2c056ce8f0" Title="CVVEXP Methods" Url="html/Methods_T_Geosoft_Desktop_GXNet_CVVEXP.htm">
+    <HelpTOCNode Id="33b56858-39a2-47f1-be57-57f127d7da1c" Title="CVVEXP Class" Url="html/T_Geosoft_Desktop_GXNet_CVVEXP.htm">
+      <HelpTOCNode Id="eae2c0c8-b417-409e-ab67-8cef3215bb0d" Title="CVVEXP Methods" Url="html/Methods_T_Geosoft_Desktop_GXNet_CVVEXP.htm">
         <HelpTOCNode Title="AddVV Method " Url="html/M_Geosoft_Desktop_GXNet_CVVEXP_AddVV.htm" />
         <HelpTOCNode Title="Create Method " Url="html/M_Geosoft_Desktop_GXNet_CVVEXP_Create.htm" />
         <HelpTOCNode Title="Dispose Method " Url="html/M_Geosoft_Desktop_GXNet_CVVEXP_Dispose.htm" />
         <HelpTOCNode Title="DoFormula Method " Url="html/M_Geosoft_Desktop_GXNet_CVVEXP_DoFormula.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="5f175571-5263-4e10-9d29-9e04f3640129" Title="CVVU Class" Url="html/T_Geosoft_Desktop_GXNet_CVVU.htm">
-      <HelpTOCNode Id="37f4a5e9-dde4-4774-954e-1910bce803a9" Title="CVVU Methods" Url="html/Methods_T_Geosoft_Desktop_GXNet_CVVU.htm">
+    <HelpTOCNode Id="acb3f4fb-7b6a-421a-ad98-bfe6738f8343" Title="CVVU Class" Url="html/T_Geosoft_Desktop_GXNet_CVVU.htm">
+      <HelpTOCNode Id="c8af1065-b04c-48a3-9055-24a808c0986c" Title="CVVU Methods" Url="html/Methods_T_Geosoft_Desktop_GXNet_CVVU.htm">
         <HelpTOCNode Title="AverageRepeat Method " Url="html/M_Geosoft_Desktop_GXNet_CVVU_AverageRepeat.htm" />
         <HelpTOCNode Title="AverageRepeat2 Method " Url="html/M_Geosoft_Desktop_GXNet_CVVU_AverageRepeat2.htm" />
         <HelpTOCNode Title="AverageRepeat2Ex Method " Url="html/M_Geosoft_Desktop_GXNet_CVVU_AverageRepeat2Ex.htm" />
