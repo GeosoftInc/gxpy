@@ -758,12 +758,12 @@ class Draw(Group):
 
         if close:
             self.view.gxview.poly_line(gxapi.MVIEW_DRAW_POLYGON,
-                                       gxvv.GXvv(pp.x)._vv,
-                                       gxvv.GXvv(pp.y)._vv)
+                                       gxvv.GXvv(pp.x).gxvv,
+                                       gxvv.GXvv(pp.y).gxvv)
         else:
             self.view.gxview.poly_line(gxapi.MVIEW_DRAW_POLYLINE,
-                                       gxvv.GXvv(pp.x)._vv,
-                                       gxvv.GXvv(pp.y)._vv)
+                                       gxvv.GXvv(pp.x).gxvv,
+                                       gxvv.GXvv(pp.y).gxvv)
 
     @_draw
     def polygon(self, pp, close=False):

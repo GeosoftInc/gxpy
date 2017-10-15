@@ -16,7 +16,7 @@ data to the same fiducial so that vector-to-vector operations can be performed.
 .. note::
 
     Regression tests provide usage examples:    
-    `va tests <https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_va.py>`_
+    `va tests <https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_gxva.py>`_
 
 """
 import warnings
@@ -63,10 +63,10 @@ class GXva:
 
     def __exit__(self, type, value, traceback):
         self._np = None
-        self._va = None
+        self._gxva = None
 
     def __len__(self):
-        return self._va.len()
+        return self._gxva.len()
 
     def __init__(self, array=None, width=None, dtype=None, fid=(0.0, 1.0), unit_of_measure=''):
 
@@ -79,7 +79,7 @@ class GXva:
         self._gxtype = gxu.gx_dtype(dtype)
         self._dtype = gxu.dtype_gx(self._gxtype)
         self._width = width
-        self._va = gxapi.GXVA.create_ext(self._gxtype, 0, self._width)
+        self._gxva = gxapi.GXVA.create_ext(self._gxtype, 0, self._width)
         self.fid = fid
         self._start, self._incr = self.fid
         self._sr = None
@@ -89,8 +89,8 @@ class GXva:
 
         if array is not None:
             if self._gxtype >= 0:
-                self._va.set_ln(array.shape[0])
-                self._va.set_array_np(0, 0, array)
+                self._gxva.set_ln(array.shape[0])
+                self._gxva.set_array_np(0, 0, array)
             else:
                 raise VAException(_t("VA of strings is not supported."))
 
@@ -127,12 +127,12 @@ class GXva:
 
         .. versionadded:: 9.1
         """
-        return self._va.get_fid_start(), self._va.get_fid_incr()
+        return self._gxva.get_fid_start(), self._gxva.get_fid_incr()
 
     @fid.setter
     def fid(self, fid):
-        self._va.set_fid_start(fid[0])
-        self._va.set_fid_incr(fid[1])
+        self._gxva.set_fid_start(fid[0])
+        self._gxva.set_fid_incr(fid[1])
 
 
     def refid(self, fid, length):
@@ -144,7 +144,7 @@ class GXva:
 
         .. versionadded:: 9.1
         """
-        self._va.re_fid(fid[0], fid[1], length)
+        self._gxva.re_fid(fid[0], fid[1], length)
         self.fid = fid
 
     @property
@@ -205,6 +205,15 @@ class GXva:
             self._np, *_ = self.get_data()
         return self._np
 
+    @property
+    def gxva(self):
+        """
+        The :class:`geosoft.gxapi.GXVA` instance handle.
+
+        ..versionadded:: 9.3
+        """
+        return self._gxva
+
     def get_data(self, dtype=None, start=0, n=None, start_col=0, n_col=None):
         """
         Return a numpy array of data from a va.
@@ -242,7 +251,7 @@ class GXva:
             raise VAException(_t('Cannot get columns (start,n) ({},{}) from VA of width {}').
                               format(start_col, n_col, self._width))
 
-        npd = self._va.get_array_np(start, start_col, n, n_col, dtype).reshape(-1, n_col)
+        npd = self._gxva.get_array_np(start, start_col, n, n_col, dtype).reshape(-1, n_col)
 
         fid = self.fid
         start = fid[0] + start * fid[1]
@@ -264,6 +273,6 @@ class GXva:
             raise VAException(_t('Numpy data does not match VA data width ({}).'
                                 .format(self._width)))
 
-        self._va.set_array_np(0, 0, npd)
-        self._va.set_ln(npd.shape[0])
+        self._gxva.set_array_np(0, 0, npd)
+        self._gxva.set_ln(npd.shape[0])
         self.fid = fid

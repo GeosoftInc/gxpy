@@ -76,11 +76,11 @@ class Aggregate_image:
         return self
 
     def __exit__(self, type, value, traceback):
-        self.gxagg = None
+        self._gxagg = None
         pass
 
     def __init__(self):
-        self.gxagg = None
+        self._gxagg = None
 
     @classmethod
     def new(cls, grid_file=None, **kwargs):
@@ -95,7 +95,7 @@ class Aggregate_image:
         """
 
         agg = cls()
-        agg.gxagg = gxapi.GXAGG.create()
+        agg._gxagg = gxapi.GXAGG.create()
         if grid_file is not None:
             agg.add_layer(grid_file, **kwargs)
         return agg
@@ -113,12 +113,17 @@ class Aggregate_image:
         agg = cls()
         if not isinstance(gxagg, gxapi.GXAGG):
             raise AggregateException(_t('A gxapi.GXAGG isstance is required.'))
-        agg.gxagg = gxagg
+        agg._gxagg = gxagg
         return agg
 
     def close(self):
         """Close an Aggregate, releases resources."""
-        self.gxagg = None
+        self._gxagg = None
+
+    @property
+    def gxagg(self):
+        """ The :class:`geosoft.gxapi.GXAGG` instance handle."""
+        return self._gxagg
 
     @property
     def layer_count(self):
@@ -149,7 +154,7 @@ class Aggregate_image:
         """
 
         vv = gxvv.GXvv(dtype='U1024')
-        self.gxagg.list_img(vv._vv)
+        self.gxagg.list_img(vv.gxvv)
         return list(vv.np)
 
     def _layer_index(self, layer):

@@ -252,12 +252,12 @@ class Map:
         if not _internal:
             raise MapException(_t("Map must be created from Map.new(), or Map.open()."))
 
-        self.gxmap = None
+        self._gxmap = None
         self._remove = False
         self._file_name = map_file_name(file_name)
         self._name = os.path.splitext(os.path.split(self._file_name)[1])[0]
         self._annotation_outer_edge = 0.0
-        self.gxmap = gxapi.GXMAP.create(self.file_name, mode)
+        self._gxmap = gxapi.GXMAP.create(self.file_name, mode)
         self._metadata = None
         self._metadata_changed = False
         self._metadata_root = ''
@@ -266,9 +266,9 @@ class Map:
 
     def _close(self, pop=True):
         if self._open:
-            if self.gxmap:
+            if self._gxmap:
 
-                self.gxmap = None
+                self._gxmap = None
 
                 if self._metadata_changed:
                     with open(self._file_name + '.xml', 'w+') as f:
@@ -471,6 +471,11 @@ class Map:
                      inside_margin)
 
         return map
+
+    @property
+    def gxmap(self):
+        """ The :class:`geosoft.gxapi.GXMAP` instance handle."""
+        return self._gxmap
 
     @property
     def name(self):

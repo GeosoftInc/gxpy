@@ -443,7 +443,7 @@ class Geosoft_gdb:
 
     @property
     def gxdb(self):
-        """:class:`geosoft.gxapi.GXDB` instance"""
+        """The :class:`geosoft.gxapi.GXDB` instance handle"""
         return self._db
 
     @property
@@ -1337,7 +1337,7 @@ class Geosoft_gdb:
         vv = gxvv.GXvv(dtype=dtype)
         self._lock_read(cs)
         try:
-            self._db.get_chan_vv(ls, cs, vv._vv)
+            self._db.get_chan_vv(ls, cs, vv.gxvv)
         finally:
             self._unlock(cs)
 
@@ -1368,7 +1368,7 @@ class Geosoft_gdb:
         va = gxva.GXva(width=w, dtype=dtype)
         self._lock_read(cs)
         try:
-            self._db.get_chan_va(ls, cs, va._va)
+            self._db.get_chan_va(ls, cs, va.gxva)
         finally:
             self._unlock(cs)
 
@@ -1615,7 +1615,7 @@ class Geosoft_gdb:
 
         self._lock_write(cs)
         try:
-            self._db.put_chan_vv(ls, cs, vv._vv)
+            self._db.put_chan_vv(ls, cs, vv.gxvv)
         finally:
             self._unlock(cs)
 
@@ -1646,7 +1646,7 @@ class Geosoft_gdb:
 
         self._lock_write(cs)
         try:
-            self._db.put_chan_va(ls, cs, va._va)
+            self._db.put_chan_va(ls, cs, va.gxva)
         finally:
             self._unlock(cs)
 
@@ -1703,7 +1703,7 @@ class Geosoft_gdb:
 
             self._lock_write(cs)
             try:
-                self._db.put_chan_vv(ls, cs, vv._vv)
+                self._db.put_chan_vv(ls, cs, vv.gxvv)
             finally:
                 self._unlock(cs)
 
@@ -1714,7 +1714,7 @@ class Geosoft_gdb:
 
             self._lock_write(cs)
             try:
-                self._db.put_chan_va(ls, cs, va._va)
+                self._db.put_chan_va(ls, cs, va.gxva)
             finally:
                 self._unlock(cs)
 

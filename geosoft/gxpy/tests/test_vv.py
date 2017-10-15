@@ -4,8 +4,6 @@ import unittest
 
 import geosoft
 import geosoft.gxapi as gxapi
-import geosoft.gxpy.gx as gx
-import geosoft.gxpy.system as gsys
 import geosoft.gxpy.vv as gxvv
 import geosoft.gxpy.utility as gxu
 
@@ -19,6 +17,7 @@ class Test(GXPYTest):
         self.assertEqual(gxvv.__version__, geosoft.__version__)
 
         with gxvv.GXvv(dtype=np.float) as vv:
+            self.assertTrue(vv.gxvv, gxapi.GXVV)
             self.assertEqual(vv.fid, (0.0, 1.0))
 
         fid = (10.1,0.99)

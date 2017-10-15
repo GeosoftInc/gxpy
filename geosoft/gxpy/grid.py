@@ -171,7 +171,7 @@ class Grid:
 
         g = gxgrd.Grid.open('some.grd')
         for x, y, z, v in g:
-            if v != g.dummy_value
+            if v:
                 print(x, y, z, v)
 
     .. versionadded:: 9.1
@@ -288,6 +288,7 @@ class Grid:
         self._next_col = 0
         self._gxtype = self._img.e_type()
         self._dtype = gxu.dtype_gx(self._gxtype)
+        self._dummy = gxu.gx_dummy(self._dtype)
         self._is_int = gxu.is_int(self._gxtype)
         self.rot = self.rot
 
@@ -379,6 +380,8 @@ class Grid:
         v = self._get_pg().get(ix, iy)
         if self._is_int:
             v = int(v)
+        if v == self._dummy:
+            v = None
 
         return x, y, z, v
 
@@ -530,11 +533,11 @@ class Grid:
     @property
     def dummy_value(self):
         """ Return the grid data dummy value."""
-        return gxu.gx_dummy(self.dtype)
+        return self._dummy
 
     @property
     def gximg(self):
-        """ Retrun handle to the underlying GXIMG."""
+        """ The :class:`geosoft.gxapi.GXIMG` instance handle."""
         return self._img
 
     def _init_metadata(self):
@@ -851,7 +854,7 @@ class Grid:
         iy = iy0
         dtype = self._dtype
         for i in range(ny):
-            self._img.write_y(iy, ix0, 0, gxvv.GXvv(data[i, :], dtype=dtype)._vv)
+            self._img.write_y(iy, ix0, 0, gxvv.GXvv(data[i, :], dtype=dtype).gxvv)
             iy += order
 
     def read_row(self, row=None, start=0, length=0):
@@ -860,7 +863,7 @@ class Grid:
         :param row:     row to read, if not specified the next row is read starting from row 0
         :param start:   the first point in the row, default is 0
         :param length:  number of points to read, the default is to the end of the row.
-        :return:        :class:`geosoft.gxvv.GXvv`
+        :return:        :class:`geosoft.gxvv.GXvv` instance
 
         .. versionadded:: 9.1
         """

@@ -898,7 +898,7 @@ class Coordinate_system:
         y = gxvv.GXvv(y, dtype=float)
         z = gxvv.GXvv(z, dtype=float)
 
-        self.gxipj.convert_orientation_warp_vv(x._vv, y._vv, z._vv, direction)
+        self.gxipj.convert_orientation_warp_vv(x.gxvv, y.gxvv, z.gxvv, direction)
 
         if xyz.ndim == 1:
             return x[0][0], y[0][0], z[0][0]

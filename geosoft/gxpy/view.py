@@ -110,7 +110,7 @@ class View:
 
     def _close(self):
         if self._open:
-            self.gxview = None
+            self._gxview = None
             self._pen = None
             self._map = None  # release map
             self._open = False
@@ -138,7 +138,7 @@ class View:
         self._name = map.classview(name)
         if mode == WRITE_OLD and not map.has_view(self._name):
             mode = WRITE_NEW
-        self.gxview = gxapi.GXMVIEW.create(self._map.gxmap, self._name, mode)
+        self._gxview = gxapi.GXMVIEW.create(self._map.gxmap, self._name, mode)
         self._mode = mode
         self._lock = None
         self._open = True
@@ -198,6 +198,11 @@ class View:
     def coordinate_system(self):
         """ :class:`geosoft.gxpy.coordinate_system.Coordinate_system` instance of the view."""
         return self._cs
+
+    @property
+    def gxview(self):
+        """ The :class:`geosoft.gxapi.GXIPJ` instance handle."""
+        return self._gxview
 
     @coordinate_system.setter
     def coordinate_system(self, cs):
