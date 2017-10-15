@@ -17,7 +17,7 @@ The GX API has two parts:
     2.  The *Geosoft gxpy API* is a set of :ref:`Python modules <gxpy>` that provide a
         Pythonic abstraction of key parts of the underlying *Geosoft GX API*.  This hides much of the
         complexity of the low-level *Geosoft GX API*, while providing low-level access where necessary.
-        The coding of the *Geosoft gxpy API* Python modules also provides an invaluable reference for
+Instances of the objects has a ``value`` property holding a reference to the immutable.
         how to work with the low-level libraries.  The Python source code for the *Geosoft GX API* can
         be found on `github <https://github.com/GeosoftInc/gxpy>`_.
 
