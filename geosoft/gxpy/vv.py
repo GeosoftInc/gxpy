@@ -89,7 +89,7 @@ class GXvv:
             try:
                 dtype = array.dtype
             except AttributeError:
-                dtype = np.float
+                dtype = np.float64
 
         self._gxtype = gxu.gx_dtype(dtype)
         self._dtype = gxu.dtype_gx(self._gxtype)
