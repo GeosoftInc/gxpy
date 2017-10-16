@@ -169,12 +169,27 @@ class Grid:
 
         import geosoft.gxpy.grid as gxgrd
 
-        g = gxgrd.Grid.open('some.grd')
-        for x, y, z, v in g:
-            if v:
-                print(x, y, z, v)
+        with gxgrd.Grid.open('some.grd') ad g:
+            for x, y, z, v in g:
+                if v is not None:
+                    print(x, y, z, v)
+
+    Specific grid cell values can be indexed (null grid values are None):
+
+    .. code::
+
+        import geosoft.gxpy.grid as gxgrd
+
+        with gxgrd.Grid.open('some.grd') as g:
+            for ix in range(g.nx):
+                for iy in range(g.ny):
+                    x, y, z, v = g[ix, iy]
+                    if v is not None:
+                        print(x, y, z, v)
 
     .. versionadded:: 9.1
+
+    .. versionchanged:: 9.2.1 added iterator support
     """
 
     _delete_files = False
