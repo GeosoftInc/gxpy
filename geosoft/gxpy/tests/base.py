@@ -143,12 +143,10 @@ class GXPYTest(unittest.TestCase):
 
     @property
     def result_dir(self):
-        # Do something if you want
         return self._result_dir
 
     @result_dir.setter
     def result_dir(self, value):
-        # Do something if you want
         self._result_dir = value
 
     @classmethod
