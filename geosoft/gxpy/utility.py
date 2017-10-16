@@ -510,7 +510,7 @@ def gx_dtype(dtype):
     if not bool(_np2gx_type):
         _np2gx_type = {
             str(np.dtype(np.float)): gxapi.GS_DOUBLE,
-            str(np.dtype(np.int)): gxapi.GS_LONG,
+            str(np.dtype(np.int)): gxapi.GS_LONG64,
             str(np.dtype(np.byte)): gxapi.GS_BYTE,
             str(np.dtype(np.float64)): gxapi.GS_DOUBLE,
             str(np.dtype(np.float32)): gxapi.GS_FLOAT,
@@ -672,6 +672,9 @@ def dummy_mask(npd):
 def dummy_to_nan(data):
     """
     Replaces dummies in float data to numpy.nan.  All other data types are returned unchanged.
+
+    If passed data is a numpy array, dummies are changed in-place.
+    The numpy array is returned.
     
     :param data:    float value or a numpy array
     :returns:       data with dummies replaced by numpy.nan
@@ -679,14 +682,18 @@ def dummy_to_nan(data):
     .. versionadded:: 9.2
     """
 
-    if not isinstance(data, np.ndarray):
-        data = np.array(data)
-    if not ((data.dtype == np.float64) or (data.dtype == np.float32)):
-        return data
+    if isinstance(data, np.ndarray):
+        if not ((data.dtype == np.float64) or (data.dtype == np.float32)):
+            return data
+        else:
+            gxdummy = gx_dummy(data.dtype)
+            data[data == gxdummy] = np.nan
+            return data
     else:
-        gxdummy = gx_dummy(data.dtype)
-        data[data == gxdummy] = np.nan
-        return data
+        if data == gxapi.rDUMMY:
+            return np.nan
+        else:
+            return data
 
 
 def reg_from_dict(rd, max_size=4096, json_encode=True):

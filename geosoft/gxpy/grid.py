@@ -4,7 +4,7 @@ Geosoft grids and image handling, including all `supported file formats <https:/
 :Classes:
 
     ============= ====================================================
-    :class:`Grid` grid, which can be in memory or created from a file 
+    :class:`Grid` grid, which can be in memory or created from a file _
     ============= ====================================================
 
 .. seealso:: :class:`geosoft.gxapi.GXIMG`, :class:`geosoft.gxapi.GXIMU`
@@ -206,9 +206,6 @@ class Grid:
                 # an HGD memory grid was made, save it to an HGD file
                 gxapi.GXHGD.h_create_img(self._img, decorate_name(self._file_name, 'HGD'))
 
-            self._hpg = None
-            self._img = None
-
             if self._metadata_changed:
                 with open(self._file_name + '.xml', 'w+') as f:
                     f.write(gxu.xml_from_dict(self._metadata))
@@ -217,6 +214,12 @@ class Grid:
             if pop:
                 gx.pop_resource(self._open)
             self._open = None
+            self._img = None
+            self._buffer_np = None
+            self._buffer_x = None
+            self._buffer_y = None
+            self._cs = None
+            self._gxpg = None
 
     def __repr__(self):
         return "{}({})".format(self.__class__, self.__dict__)
@@ -231,7 +234,6 @@ class Grid:
 
         self._delete_files = False
         self._readonly = False
-        self._hpg = None
         self._decoration = ''
 
         # When working with very large grids (gigabyte+), the
@@ -256,6 +258,14 @@ class Grid:
         self._metadata_changed = False
         self._metadata_root = ''
         self._img = None
+        self._buffered_row = None
+        self._buffer_np = None
+        self._buffered_xy = None
+        self._buffer_x = None
+        self._buffer_y = None
+        self._cs = None
+        self._gxpg = None
+
         gxtype = gxu.gx_dtype(dtype)
         if (self._file_name is None):
             self._img = gxapi.GXIMG.create(gxtype, kx, dim[0], dim[1])
@@ -373,17 +383,28 @@ class Grid:
 
         x, y, z = self.xyz((ix, iy))
 
-        if self._hpg is None:
-            self._hpg = self._img.geth_pg()
-            self._hpg_is_int = gxu.is_int(self._hpg.e_type())
+        if self._buffered_row != iy:
+            self._buffered_row = iy
+            self._buffer_np = self.read_row(self._buffered_row).np
+            if not self._is_int:
+                gxu.dummy_to_nan(self._buffer_np)
 
-        v = self._get_pg().get(ix, iy)
+        v = self._buffer_np[ix]
         if self._is_int:
             v = int(v)
-        if v == self._dummy:
+            if v == gxapi.iDUMMY:
+                v = None
+        elif np.isnan(v):
             v = None
-
+        else:
+            v = float(v)
         return x, y, z, v
+
+    def _get_pg(self):
+        """Get an pager for the grid, adding the handle to the class so it does not get destroyed."""
+        if self._gxpg is None:
+            self._gxpg = self._img.geth_pg()
+        return self._gxpg
 
     def get_value(self, x, y):
         """
@@ -449,7 +470,7 @@ class Grid:
         :param y0:          integer index of the first Y point
         :param nx:          number of points in x
         :param ny:          number of points in y
-        :param overwrite:   True to overwrite existing file
+        :param overwrite:   True to overwrite existing file, default is False
 
         .. versionadded:: 9.2
         """
@@ -472,6 +493,7 @@ class Grid:
             path, file_name, root, ext, dec = name_parts(grd.file_name_decorated)
             name = '{}_({},{})({},{}){}'.format(root, x0, y0, nx, ny, ext)
             name = decorate_name(name, dec)
+            overwrite=True
 
         # create new grid
         p = grd.properties()
@@ -486,11 +508,12 @@ class Grid:
             p['x0'] = grd.x0 - dx * grd._cos_rot - dy * grd._sin_rot
             p['y0'] = grd.y0 - dy * grd._cos_rot + dx * grd._sin_rot
 
-        wgd = cls.new(name, p, overwrite=True)
-        wpg = wgd._get_pg()
-        wpg.copy_subset(grd._get_pg(), 0, 0, y0, x0, ny, nx)
+        window_grid = cls.new(name, p, overwrite=overwrite)
+        source_pager = grd._get_pg()
+        window_pager = window_grid._get_pg()
+        window_pager.copy_subset(source_pager, 0, 0, y0, x0, ny, nx)
 
-        return wgd
+        return window_grid
 
     @classmethod
     def from_data_array(cls, data, file_name, properties={}):
@@ -737,15 +760,15 @@ class Grid:
         .. versionmodified:: 9.3
             added ability to set directly
         """
-        cs = gxcs.Coordinate_system()
-        self._img.get_ipj(cs.gxipj)
-        return gxcs.Coordinate_system(cs)
+        if self._cs is None:
+            self._cs = gxcs.Coordinate_system()
+            self._img.get_ipj(self._cs.gxipj)
+        return self._cs
 
     @coordinate_system.setter
     def coordinate_system(self, cs):
-        if not isinstance(cs, gxcs.Coordinate_system):
-            cs = gxcs.Coordinate_system(cs)
-        self._img.set_ipj(cs.gxipj)
+        self._cs = cs = gxcs.Coordinate_system(cs)
+        self._img.set_ipj(self._cs.gxipj)
 
 
     def properties(self):
@@ -831,12 +854,6 @@ class Grid:
             if not isinstance(cs, gxcs.Coordinate_system):
                 cs = gxcs.Coordinate_system(cs)
             self._img.set_ipj(cs.gxipj)
-
-    def _get_pg(self):
-        """Get an hpg for the grid, adding the handle to the class so it does not get destroyed."""
-        if self._hpg is None:
-            self._hpg = self._img.geth_pg()
-        return self._hpg
 
     def write_rows(self, data, ix0=0, iy0=0, order=1):
         """
@@ -1020,20 +1037,28 @@ class Grid:
         else:
             ix, iy = item
 
-        # location on the grid
-        gx = ix * self.dx
-        gy = iy * self.dy
+        if self._buffered_xy != iy:
+            self._buffered_xy = iy
+            self._buffer_x = np.arange(self.nx, dtype=np.float64)
+            self._buffer_x *= self.dx
+            self._buffer_y = np.zeros(self.nx, dtype=np.float64)
+            self._buffer_y += iy * self.dy
 
-        if self.rot != 0.:
-            gx, gy = gx * self._cos_rot + gy * self._sin_rot, gy * self._cos_rot - gx * self._sin_rot
+            if self.rot != 0.:
+                rx = self._buffer_x * self._cos_rot + self._buffer_y * self._sin_rot
+                self._buffer_y *= self._buffer_y * self._cos_rot
+                self._buffer_y -= self._buffer_x * self._sin_rot
+                self._buffer_x = rx
 
-        gx += self.x0
-        gy += self.y0
+            self._buffer_x += self.x0
+            self._buffer_y += self.y0
+
+        gx = self._buffer_x[ix]
+        gy = self._buffer_y[ix]
         gz = 0.
 
-        cs = self.coordinate_system
-        if cs.is_oriented:
-            gx, gy, gz = cs.xyz_from_oriented((gx, gy, gz))
+        if self.coordinate_system.is_oriented:
+            gx, gy, gz = self.coordinate_system.xyz_from_oriented((gx, gy, gz))
 
         return gx, gy, gz
 

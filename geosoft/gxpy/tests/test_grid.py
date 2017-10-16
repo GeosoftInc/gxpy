@@ -283,7 +283,7 @@ class Test(GXPYTest):
             p = g.properties()
             window = os.path.join(self.folder,'testwindow.grd(GRD)')
 
-            with gxgrd.Grid.index_window(g, window, 4, 2, 96, 5) as gw:
+            with gxgrd.Grid.index_window(g, window, 4, 2, 96, 5, overwrite=True) as gw:
                 pw = gw.properties()
                 self.assertAlmostEqual(gw.x0, g.x0+(4*g.dx))
                 self.assertAlmostEqual(gw.y0, g.y0+(2*g.dy))
@@ -291,6 +291,7 @@ class Test(GXPYTest):
                 self.assertEqual(gw.ny, 5)
 
             with gxgrd.Grid.index_window(g, x0=4, y0=2, nx=96, ny=5, overwrite=True) as gw:
+                nx = gw.nx
                 gw.delete_files()
                 pw = gw.properties()
                 self.assertAlmostEqual(gw.x0, g.x0+(4*g.dx))
@@ -582,17 +583,24 @@ class Test(GXPYTest):
     def test_iterator(self):
 
         with gxgrd.Grid.open(self.g2f) as g0:
-            with gxgrd.Grid.index_window(g0, nx=75, ny=60) as g:
+
+            self.assertEqual(g0[0, 0], (8.0, 44.0, 0.0, 763.0))
+            self.assertEqual(g0[100, 100], (9.0, 45.0, 0.0, 88.0))
+
+            with gxgrd.Grid.index_window(g0, nx=75, ny=60, overwrite=True) as g:
                 g.delete_files()
+
+                self.assertEqual(g[1, 1], (8.0099999999999998, 44.009999999999998, 0.0, 384.0))
+                self.assertEqual(g[74, 59], (8.7400000000000002, 44.590000000000003, 0.0, 530.0))
+
                 data = g.xyzv()[:, :, 3]
                 i = 0
                 sum = 0.0
                 dummies = 0
-                dum = g.dummy_value
 
                 for x, y, z, v in g:
                     i += 1
-                    if v == dum:
+                    if v is None:
                         dummies += 1
                     else:
                         sum += v
