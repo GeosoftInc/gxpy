@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gmd:MD_Metadata xsi:schemaLocation="http://www.isotc211.org/2005/gmd ../schemas/iso19139fra/gmd/gmd.xsd" xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:map="urn:brgm:mapping" xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:gml="http://www.opengis.net/gml" xmlns:gts="http://www.isotc211.org/2005/gts" xmlns:gmx="http://www.isotc211.org/2005/gmx" xmlns:gfc="http://www.isotc211.org/2005/gfc" xmlns:gco="http://www.isotc211.org/2005/gco">
+	<geosoft xmlns="http://www.geosoft.com/schema/geo">
+		<dataset version="1">
+			<title>elevation</title>
+			<file_format>ers</file_format>
+			<data_created_by>IAN-OFFICE\Ian</data_created_by>
+			<data_creation_date>2017-10-15</data_creation_date>
+			<metadata_created_by>IAN-OFFICE\Ian</metadata_created_by>
+			<metadata_creation_date>2017-10-15</metadata_creation_date>
+			<georeference>
+				<dataextents>
+					<extent2d minx="336575" miny="6160350" maxx="341525" maxy="6163475"/>
+				</dataextents>
+				<projection type="TRANSVERSE_MERCATOR" name="GDA94 / UTM zone 54S" projection="UTM zone 54S" ellipsoid="GRS 1980" datum="GDA94" datumtrf="GDA94 to WGS 84 (1)" datumtrf_description="[GDA94] (1m) Australia - onshore" radius="6378137" eccentricity="0.081819191042815806">
+					<shift x="0" y="0" z="0"/>
+					<parameters scale="0.9996" false_east="500000" false_north="10000000" lat_origin="0" lon_origin="141"/>
+					<units name="m" unit_scale="1"/>
+				</projection>
+			</georeference>
+		</dataset>
+	</geosoft>
+	<gmd:identificationInfo>
+		<gmd:MD_DataIdentification>
+			<gmd:citation>
+				<gmd:CI_Citation>
+					<gmd:title>
+						<gco:CharacterString>elevation</gco:CharacterString>
+					</gmd:title>
+					<gmd:date>
+						<gmd:CI_Date>
+							<gmd:date>
+								<gco:Date>2017-10-15</gco:Date>
+							</gmd:date>
+						</gmd:CI_Date>
+					</gmd:date>
+				</gmd:CI_Citation>
+			</gmd:citation>
+			<gmd:resourceFormat>
+				<gmd:MD_Format>
+					<gmd:name>
+						<gco:CharacterString>ers</gco:CharacterString>
+					</gmd:name>
+				</gmd:MD_Format>
+			</gmd:resourceFormat>
+			<gmd:pointOfContact>
+				<gmd:CI_ResponsibleParty>
+					<gmd:individualName>
+						<gco:CharacterString>IAN-OFFICE\Ian</gco:CharacterString>
+					</gmd:individualName>
+				</gmd:CI_ResponsibleParty>
+			</gmd:pointOfContact>
+			<gmd:extent>
+				<gmd:EX_Extent>
+					<gmd:geographicElement>
+						<gmd:EX_GeographicBoundingBox>
+							<gmd:westBoundLongitude>
+								<gco:Decimal>139.21596870046031</gco:Decimal>
+							</gmd:westBoundLongitude>
+							<gmd:eastBoundLongitude>
+								<gco:Decimal>139.27056905090356</gco:Decimal>
+							</gmd:eastBoundLongitude>
+							<gmd:southBoundLatitude>
+								<gco:Decimal>-34.686591878636285</gco:Decimal>
+							</gmd:southBoundLatitude>
+							<gmd:northBoundLatitude>
+								<gco:Decimal>-34.657645662500187</gco:Decimal>
+							</gmd:northBoundLatitude>
+						</gmd:EX_GeographicBoundingBox>
+					</gmd:geographicElement>
+				</gmd:EX_Extent>
+			</gmd:extent>
+		</gmd:MD_DataIdentification>
+	</gmd:identificationInfo>
+	<gmd:contact>
+		<gmd:CI_ResponsibleParty>
+			<gmd:individualName>
+				<gco:CharacterString>IAN-OFFICE\Ian</gco:CharacterString>
+			</gmd:individualName>
+		</gmd:CI_ResponsibleParty>
+	</gmd:contact>
+	<gmd:dateStamp>
+		<gco:Date>2017-10-15</gco:Date>
+	</gmd:dateStamp>
+	<gmd:referenceSystemInfo>
+		<gmd:MD_ReferenceSystem>
+			<gmd:referenceSystemIdentifier>
+				<gmd:RS_Identifier>
+					<gmd:codeSpace>
+						<gco:CharacterString>ESRI</gco:CharacterString>
+					</gmd:codeSpace>
+					<gmd:code>
+						<gco:CharacterString>PROJCS["UTM_zone_54S",GEOGCS["GCS_GDA_1994",DATUM["D_GDA_1994",SPHEROID["GRS_1980",6378137,298.257222101]],PRIMEM["Greenwich",0],UNIT["Degree",0.0174532925199432955]],PROJECTION["Transverse_Mercator"],PARAMETER["False_Easting",500000],PARAMETER["False_Northing",10000000],PARAMETER["Central_Meridian",141],PARAMETER["Scale_Factor",0.9996],PARAMETER["Latitude_Of_Origin",0],UNIT["Meter",1]]</gco:CharacterString>
+					</gmd:code>
+					<gmd:version>
+						<gco:CharacterString>1</gco:CharacterString>
+					</gmd:version>
+				</gmd:RS_Identifier>
+			</gmd:referenceSystemIdentifier>
+		</gmd:MD_ReferenceSystem>
+	</gmd:referenceSystemInfo>
+</gmd:MD_Metadata>
