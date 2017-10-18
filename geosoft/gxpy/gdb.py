@@ -793,15 +793,16 @@ class Geosoft_gdb:
 
         if isinstance(chan, Channel):
             return chan.name, chan.symbol
+        if isinstance(chan, str):
+            symb = self._db.find_symb(chan, gxapi.DB_SYMB_CHAN)
+            if symb == -1:
+                raise GdbException(_t('Channel \'{}\' not found'.format(chan)))
+            return chan, symb
 
         if not self._exist_symb(chan, gxapi.DB_SYMB_CHAN):
-            raise GdbException(_t('Channel \'{}\' not found'.format(chan)))
-        try:
-            symb = self._db.find_symb(chan, gxapi.DB_SYMB_CHAN)
-            return chan, symb
-        except:
-            self._db.get_symb_name(chan, self._sr)
-            return self._sr.value, chan
+            raise GdbException(_t('Channel symbol \'{}\' not found'.format(chan)))
+        self._db.get_symb_name(chan, self._sr)
+        return self._sr.value, chan
 
     def channel_width(self, channel):
         """
@@ -1244,20 +1245,25 @@ class Geosoft_gdb:
         channels = []
 
         # put x,y,z at the front
-        try:
-            nX, sX = self.channel_name_symb(self._db.get_xyz_chan_symb(gxapi.DB_CHAN_X))
+        xch = self._db.get_xyz_chan_symb(gxapi.DB_CHAN_X)
+        if xch != -1:
+            nX, sX = self.channel_name_symb()
             channels.append(nX)
-        except GdbException:
+        else:
             nX = ''
-        try:
-            nY, sY = self.channel_name_symb(self._db.get_xyz_chan_symb(gxapi.DB_CHAN_Y))
+
+        ych = self._db.get_xyz_chan_symb(gxapi.DB_CHAN_Y)
+        if ych != -1:
+            nY, sY = self.channel_name_symb(ych)
             channels.append(nY)
-        except GdbException:
+        else:
             nY = ''
-        try:
-            nZ, sZ = self.channel_name_symb(self._db.get_xyz_chan_symb(gxapi.DB_CHAN_Z))
+
+        zch = self._db.get_xyz_chan_symb(gxapi.DB_CHAN_Z)
+        if zch != -1:
+            nZ, sZ = self.channel_name_symb(zch)
             channels.append(nZ)
-        except GdbException:
+        else:
             nZ = ''
 
         for c in ch:
@@ -1678,13 +1684,12 @@ class Geosoft_gdb:
 
         ln, ls = self.line_name_symb(line, create=True)
 
-        try:
+        if isinstance(channel, str):
+            cn = channel
+            cs = self.new_channel(channel, data.dtype, array=_va_width(data))
+        else:
             cn, cs = self.channel_name_symb(channel)
-
-        except GdbException:
-            if type(channel) is str:
-                cn = channel
-                cs = self.new_channel(channel, data.dtype, array=_va_width(data))
+            
 
         if not isinstance(data, np.ndarray):
             data = np.array(data)
