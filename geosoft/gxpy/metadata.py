@@ -283,7 +283,7 @@ class Metadata:
                 d[name] = dd
             return d
 
-        metafile = os.path.join(gx.GXpy().temp_folder(), 'meta_' + gxu.uuid())
+        metafile = os.path.join(gx.gx.temp_folder(), 'meta_' + gxu.uuid())
         wa = gxapi.GXWA.create(metafile, gxapi.WA_NEW)
         self.gxmeta.write_text(wa)
         wa = None
