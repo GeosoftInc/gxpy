@@ -1185,6 +1185,36 @@ class Test(GXPYTest):
             finally:
                 gdb.discard()
 
+    def test_large_va(self):
+        self.start()
+
+        try:
+            name = None
+            with gxdb.Geosoft_gdb.new('new', overwrite=True) as gdb:
+                name = gdb.file_name
+                npd = np.empty((2000000, 3))  # TODO - jacques, this works - see next one
+                npd[:, :] = np.nan
+                line = gdb.new_line('test')
+                gxdb.Channel.new(gdb, 'xx', array=3)
+                gdb.write_line(line, npd, ['xx[0]', 'xx[1]', 'xx[2]'])
+                npd2, ch, fid = gdb.read_line(line)
+                self.assertEqual(len(ch), 3, npd.shape)
+
+            name = None
+            with gxdb.Geosoft_gdb.new('new', overwrite=True) as gdb:
+                name = gdb.file_name
+                npd = np.empty((20000000, 3))  # TODO - this bigger one fails, but not nicely (see above, which works), same as problem reported in forum
+                npd[:, :] = np.nan
+                line = gdb.new_line('test')
+                gxdb.Channel.new(gdb, 'xx', array=3) #TODO failure is when we attempt to write. Symbols are OK, but core reports invalid symbol (-1)
+                gdb.write_line(line, npd, ['xx[0]', 'xx[1]', 'xx[2]'])
+                npd2, ch, fid = gdb.read_line(line)
+                self.assertEqual(len(ch), 3, npd.shape)
+
+        finally:
+            gxdb.delete_files(name)
+
+
 ###############################################################################################
 
 if __name__ == '__main__':
