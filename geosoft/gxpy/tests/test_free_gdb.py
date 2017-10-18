@@ -54,22 +54,43 @@ class Test(GXPYTest):
                     npd, ch, fid = gdb.read_line(l)
                     self.assertEqual(len(ch), 8)
 
-    def test_write(self):
+    def test_large_write(self):
         self.start()
         if self.skip():
             try:
                 name = None
                 with gxdb.Geosoft_gdb.new('new', overwrite=True) as gdb:
                     name = gdb.file_name
-                    npd = np.empty((200000, 2)) #TODO - make it large
+                    npd = np.empty((200000, 2))
                     npd[:,:] = np.nan
                     line = gdb.new_line('test')
                     gdb.write_line(line, npd, ['x', 'y'])
-                    npd, ch, fid = gdb.read_line(line)
+                    npd2, ch, fid = gdb.read_line(line)
                     self.assertEqual(len(ch), 2)
-                    self.assertEqual(npd.shape, (200000, 2))
+                    self.assertEqual(npd2.shape, npd.shape)
             finally:
                 gxdb.delete_files(name)
+
+    def test_va_write(self):
+        self.start()
+        if self.skip():
+            try:
+                name = None
+                with gxdb.Geosoft_gdb.new('new', overwrite=True) as gdb:
+                    name = gdb.file_name
+                    npd = np.empty((2000000, 3))
+                    npd[:, :] = np.nan
+                    line = gdb.new_line('test')
+                    c = gxdb.Channel.new(gdb, 'xx', array=3)
+                    gdb.write_line(line, npd, ['xx[0]', 'xx[1]', 'xx[2]'])
+                    c = gxdb.Channel(gdb, 'xx')
+                    self.assertEqual(c.array, 3)
+                    npd2, ch, fid = gdb.read_line(line)
+                    self.assertEqual(len(ch), 3, npd.shape)
+
+            finally:
+                gxdb.delete_files(name)
+
 
 ###############################################################################################
 
