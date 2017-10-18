@@ -1247,7 +1247,7 @@ class Geosoft_gdb:
         # put x,y,z at the front
         xch = self._db.get_xyz_chan_symb(gxapi.DB_CHAN_X)
         if xch != -1:
-            nX, sX = self.channel_name_symb()
+            nX, sX = self.channel_name_symb(xch)
             channels.append(nX)
         else:
             nX = ''
