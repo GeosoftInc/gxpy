@@ -39,7 +39,7 @@ win32gui.SystemParametersInfo(win32con.SPI_SETFONTSMOOTHING, True)
 
 # Make root window for UI methods
 root_window = None
-if UPDATE_RESULTS:
+if UPDATE_RESULTS and SHOW_TEST_VIEWERS:
     root_window = Tk()
     root_window.overrideredirect(1)
     root_window.withdraw()
@@ -240,7 +240,14 @@ class GXPYTest(unittest.TestCase):
             for xml_result in xml_result_files:
                 xml_master = xml_result.replace(os.path.splitext(xml_result_part)[0],
                                                 os.path.splitext(xml_master_part)[0])
+                print("Updating {}".format(xml_master))
                 shutil.copyfile(xml_result, xml_master)
+            xml_result_file_names = [os.path.split(f)[1].lower() for f in xml_result_files]
+            not_in_results = [f for f in xml_master_files if os.path.split(f)[1].lower() not in xml_result_file_names]
+            for f in not_in_results:
+                print("Removing {}".format(f))
+                os.remove(f)
+
 
         result_dir = os.path.join(self.result_dir, 'result')
         master_dir = os.path.join(self.result_dir, 'master')
