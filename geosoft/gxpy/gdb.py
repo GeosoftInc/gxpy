@@ -1090,6 +1090,8 @@ class Geosoft_gdb:
         """
 
         symb = self._db.find_symb(name, gxapi.DB_SYMB_CHAN)
+        if array < 1:
+            array = 1
         if symb == gxapi.NULLSYMB:
             if dup:
                 symb = self._db.dup_symb_no_lock(self.channel_name_symb(dup)[1], name)
@@ -1694,10 +1696,14 @@ class Geosoft_gdb:
         if not isinstance(data, np.ndarray):
             data = np.array(data)
 
+        if _va_width(data) == 0:
+            # no data to write
+            return
+
         w = self.channel_width(cs)
         if w != _va_width(data):
             raise GdbException(
-                _t("Array data width {} does not fit into VA channel '{}' with width {}").
+                _t("Array data width {} does not fit into channel '{}' with width {}").
                 format(_va_width(data), cn, w))
 
         # 1D channel
@@ -1757,7 +1763,8 @@ class Geosoft_gdb:
         :param line:        line to write to, name or symbol
         :param data:        numpy array shape (records,channels).  If single dimension, one channel
         :param channels:    channel name or symbol list, or a single name/symbol.  If a single name is specified
-                            for multi-column data, a VA channel is assumed.
+                            for multi-column data, a VA channel is assumed. If None, a sorted list of all channels
+                            is assumed.
         :param fid:         option fid tuple (start, increment), default (0.0,1.0)
 
         .. versionadded:: 9.1
@@ -1767,9 +1774,28 @@ class Geosoft_gdb:
             self.write_channel(line, channels, data, fid=fid)
 
         else:
+
             if channels is None:
                 channels = self._sorted_chan_list()
 
+            if data.ndim == 1:
+                data = data.reshape((-1, 1))
+
+            # ensure data matches channels
+            np_data = 0
+            for chan in channels:
+                try:
+                    ch, cs = self.channel_name_symb(chan)
+                    w = self.channel_width(cs)
+                except GdbException:
+                    w = 1
+                np_data += w
+
+            # channel - data mismatch
+            if data.shape[1] != np_data:
+                raise GdbException(_t('Data dimension ({}) does not match data required by channels ({}).').format(data.shape, channels))
+
+            # all good, write the data
             np_index = 0
             for chan in channels:
                 try:
@@ -1780,10 +1806,6 @@ class Geosoft_gdb:
                     cs = chan
                 self.write_channel(line, cs, data[:, np_index: np_index + w], fid=fid)
                 np_index += w
-
-            # error if there is any data left
-            if np_index - data.shape[1] != 0:
-                raise GdbException(_t('More data than channels, but data up to channels was written out.'))
 
     def list_values(self, chan, max=1000, selected=True, dupl=50, progress=None, stop=None):
         """

@@ -777,7 +777,8 @@ class Test(GXPYTest):
                 pass
 
             ch = ['a','b','c','d','e']
-            gdb.write_line('testline',npd,channels=ch)
+            self.assertRaises(gxdb.GdbException, gdb.write_line, 'testline', npd, ['xx', 'yy'])
+            gdb.write_line('testline', npd, channels=ch)
             npd2, ch2, fid2 = gdb.read_line('testline',channels=ch)
             self.assertEqual(npd.shape,npd2.shape)
             self.assertEqual(ch2, ch)
@@ -1185,32 +1186,44 @@ class Test(GXPYTest):
             finally:
                 gdb.discard()
 
-    @unittest.skip('This test shows throws error now, skipping to let fixture pass')
-    def test_large_va(self):
+    @unittest.skip('skipping to let fixture pass')
+    def test_large_stress(self):
         self.start()
 
         try:
             name = None
-            with gxdb.Geosoft_gdb.new('new', overwrite=True) as gdb:
+            with gxdb.Geosoft_gdb.new('new', overwrite=True, comp=gxdb.COMP_NONE, pageSize=64) as gdb:
                 name = gdb.file_name
-                npd = np.empty((2000000, 3))  # TODO - jacques, this works - see next one
-                npd[:, :] = np.nan
+                npd = np.zeros(1000000) #TODO, this is 8 meg of data. This should not fit in 4 meg.
                 line = gdb.new_line('test')
-                gxdb.Channel.new(gdb, 'xx', array=3)
-                gdb.write_line(line, npd, ['xx[0]', 'xx[1]', 'xx[2]'])
+                gdb.write_line(line, npd, ['xx'])
                 npd2, ch, fid = gdb.read_line(line)
-                self.assertEqual(len(ch), 3, npd.shape)
+                self.assertEqual(len(ch), 1)
 
-            name = None
-            with gxdb.Geosoft_gdb.new('new', overwrite=True) as gdb:
+            with gxdb.Geosoft_gdb.new('new', overwrite=True, comp=gxdb.COMP_NONE, pageSize=64) as gdb:
                 name = gdb.file_name
-                npd = np.empty((20000000, 3))  # TODO - this bigger one fails, but not nicely (see above, which works), same as problem reported in forum
-                npd[:, :] = np.nan
+                npd = np.zeros(4000000) #TODO, this is 32 meg of data, reported as 4.11 meg in the error?
                 line = gdb.new_line('test')
-                gxdb.Channel.new(gdb, 'xx', array=3) #TODO failure is when we attempt to write. Symbols are OK, but core reports invalid symbol (-1)
-                gdb.write_line(line, npd, ['xx[0]', 'xx[1]', 'xx[2]'])
+                gdb.write_line(line, npd, ['xx'])
                 npd2, ch, fid = gdb.read_line(line)
-                self.assertEqual(len(ch), 3, npd.shape)
+                self.assertEqual(len(ch), 1)
+
+        finally:
+            gxdb.delete_files(name)
+
+    @unittest.skip('skipping to let fixture pass')
+    def test_very_large_stress(self):
+        self.start()
+
+        try:
+            name = None
+            with gxdb.Geosoft_gdb.new('new', overwrite=True, comp=gxdb.COMP_NONE, pageSize=64) as gdb:
+                name = gdb.file_name
+                npd = np.zeros(1000000000)  # TODO, this should NOT work. On one test I got an indexing error
+                line = gdb.new_line('test')
+                gdb.write_line(line, npd, ['xx'])
+                npd2, ch, fid = gdb.read_line(line)
+                self.assertEqual(len(ch), 1)
 
         finally:
             gxdb.delete_files(name)
