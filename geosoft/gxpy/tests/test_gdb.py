@@ -1208,24 +1208,6 @@ class Test(GXPYTest):
         finally:
             gxdb.delete_files(name)
 
-    @unittest.skip('skipping to let fixture pass')
-    def test_very_large_stress(self):
-        self.start()
-
-        try:
-            name = None
-            with gxdb.Geosoft_gdb.new('new', overwrite=True, comp=gxdb.COMP_NONE, pageSize=64) as gdb:
-                name = gdb.file_name
-                npd = np.zeros(1000000000)  # TODO, this should NOT work. On one test I got an indexing error
-                line = gdb.new_line('test')
-                gdb.write_line(line, npd, ['xx'])
-                npd2, ch, fid = gdb.read_line(line)
-                self.assertEqual(len(ch), 1)
-
-        finally:
-            gxdb.delete_files(name)
-
-
 ###############################################################################################
 
 if __name__ == '__main__':
