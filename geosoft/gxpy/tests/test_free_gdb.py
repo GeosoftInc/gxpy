@@ -1,9 +1,13 @@
 import unittest
 import os
 import numpy as np
+import geosoft.gxapi as gxapi
 import geosoft.gxpy.system as gsys
 import geosoft.gxpy.gdb as gxdb
 import geosoft.gxpy.grid as gxgrd
+import geosoft.gxpy.coordinate_system as gxcs
+import geosoft.gxpy.metadata as gxmeta
+import geosoft.gxpy.vv as gxvv
 
 from base import GXPYTest
 
@@ -86,18 +90,65 @@ class Test(GXPYTest):
             finally:
                 gxdb.delete_files(name)
 
-    def test_grid_write(self):
+    def test_grid(self):
         self.start()
-        name = 'test_free.grd(GRD)'
-        with gxgrd.Grid.new(name, properties={'nx': 1200, 'ny': 800}, overwrite=True) as grd:
-            name = grd.file_name_decorated
-            self.assertEqual(grd.nx, 1200)
-            self.assertEqual(grd.ny, 800)
-        with gxgrd.Grid.open(name) as grd:
-            grd.delete_files()
-            self.assertEqual(grd.nx, 1200)
-            self.assertEqual(grd.ny, 800)
-            
+
+        if self.skip():
+
+            name = 'test_free.grd(GRD)'
+            with gxgrd.Grid.new(name, properties={'nx': 1200, 'ny': 800}, overwrite=True) as grd:
+                name = grd.file_name_decorated
+                self.assertEqual(grd.nx, 1200)
+                self.assertEqual(grd.ny, 800)
+            with gxgrd.Grid.open(name) as grd:
+                grd.delete_files()
+                self.assertEqual(grd.nx, 1200)
+                self.assertEqual(grd.ny, 800)
+
+
+    def test_voxel(self):
+        self.start()
+        if self.skip():
+
+            name = 'voxel.geosoft_voxel'
+            gxapi.GXVOX.generate_constant_value(name,
+                                                1.0,
+                                                5,
+                                                0, 0, 0,
+                                                1, 1, 1,
+                                                300, 200, 50,
+                                                gxcs.Coordinate_system().gxipj,
+                                                gxmeta.Metadata().gxmeta)
+
+            gxvox = gxapi.GXVOX.create(name)
+            minx = gxapi.float_ref()
+            miny = gxapi.float_ref()
+            minz = gxapi.float_ref()
+            maxx = gxapi.float_ref()
+            maxy = gxapi.float_ref()
+            maxz = gxapi.float_ref()
+            gxvox.get_area(minx, miny, minz, maxx, maxy, maxz)
+            self.assertEqual(minx.value, -0.5)
+            self.assertEqual(maxz.value, 49.5)
+
+            vvx = gxvv.GXvv()
+            vvy = gxvv.GXvv()
+            vvz = gxvv.GXvv()
+            gxvox.get_location_points(vvx.gxvv, vvy.gxvv, vvz.gxvv)
+            gxvoxe = gxapi.GXVOXE.create(gxvox)
+            vvd = gxvv.GXvv([float(n) for n in range(500)])
+            gxvoxe.vector(0., 0., 0., 1.5, 1.5, 0.5, vvd.gxvv, gxapi.VOXE_EVAL_INTERP)
+            self.assertEqual(vvd.length, 500)
+            self.assertEqual(vvd[0][0], 1.0)
+            self.assertEqual(vvd[499][0], gxapi.rDUMMY)
+            gxvoxe = None
+            gxvox = None
+
+            try:
+                os.remove(name)
+                os.remove(name + '.xml')
+            except:
+                pass
 
 ###############################################################################################
 
