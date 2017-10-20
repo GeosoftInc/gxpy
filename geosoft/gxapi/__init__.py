@@ -361,8 +361,8 @@ __all__ = [
 ]
 
 
-from . import GX3DN
-from . import GXVV
+from .GX3DN import GX3DN
+from .GXVV import GXVV
 ### endblock ClassImports
 
 

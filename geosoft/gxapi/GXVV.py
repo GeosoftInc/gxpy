@@ -11,6 +11,9 @@ class GXVV:
 ### endblock ClassImplementation
 ### block ClassExtend
 # NOTICE: The code generator will not replace the code in this block
+    def get_data_np(self, start: int, num_elements: int, dtype: int):
+        r, a = self._wrapper.get_data_array(start, num_elements, 5)
+        return (r, np.asarray(a))
 ### endblock ClassExtend
 
 

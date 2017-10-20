@@ -11,6 +11,8 @@ class GX3DN:
 ### endblock ClassImplementation
 ### block ClassExtend
 # NOTICE: The code generator will not replace the code in this block
+    def test(self):
+        print("test")
 ### endblock ClassExtend
 
 
