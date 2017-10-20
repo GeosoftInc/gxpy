@@ -36,21 +36,21 @@ if 'bdist_wheel' in sys.argv:
         if arg.startswith('--python-tag='):
             pythontag = arg[13:]
             if pythontag == "cp34":
-                shutil.copyfile('gxapi_cy.cp34-win_amd64.pyd', 'geosoft/gxapi_cy.pyd')
+                shutil.copyfile('gxapi_cy.cp34-win_amd64.pyd', 'geosoft/gxapi/gxapi_cy.pyd')
             elif pythontag == "cp35":
-                shutil.copyfile('gxapi_cy.cp35-win_amd64.pyd', 'geosoft/gxapi_cy.pyd')
+                shutil.copyfile('gxapi_cy.cp35-win_amd64.pyd', 'geosoft/gxapi/gxapi_cy.pyd')
             elif pythontag == "cp36":
-                shutil.copyfile('gxapi_cy.cp36-win_amd64.pyd', 'geosoft/gxapi_cy.pyd')
+                shutil.copyfile('gxapi_cy.cp36-win_amd64.pyd', 'geosoft/gxapi/gxapi_cy.pyd')
             break
 else:
     # Copy the version we are building for
     py_ver_major_minor = sys.version_info[:2]
     if py_ver_major_minor == (3,4):
-        shutil.copyfile('gxapi_cy.cp34-win_amd64.pyd', 'geosoft/gxapi_cy.pyd')
+        shutil.copyfile('gxapi_cy.cp34-win_amd64.pyd', 'geosoft/gxapi/gxapi_cy.pyd')
     elif py_ver_major_minor == (3,5):
-        shutil.copyfile('gxapi_cy.cp35-win_amd64.pyd', 'geosoft/gxapi_cy.pyd')
+        shutil.copyfile('gxapi_cy.cp35-win_amd64.pyd', 'geosoft/gxapi/gxapi_cy.pyd')
     elif py_ver_major_minor == (3,6):
-        shutil.copyfile('gxapi_cy.cp36-win_amd64.pyd', 'geosoft/gxapi_cy.pyd')
+        shutil.copyfile('gxapi_cy.cp36-win_amd64.pyd', 'geosoft/gxapi/gxapi_cy.pyd')
 
 key_file = path.join('geosoft', 'geosoft.key')
 with open(key_file, 'w') as f:
@@ -86,7 +86,8 @@ setup(
         'geosoft.gxpy.user_input'
     ],
     package_data={
-        'geosoft': ['geosoft.key', 'gxapi.pyd', '*.dll', '*.json'],
+        'geosoft': ['*.json'],
+        'geosoft.gxapi': ['geosoft.key', 'gxapi.pyd', '*.dll'],
         'geosoft.gxpy._jdcal': ['*.txt', '*.rst'],
         'geosoft.gxpy.user_input': ['*.gx']
     },

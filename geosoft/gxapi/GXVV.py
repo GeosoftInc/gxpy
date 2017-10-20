@@ -1,6 +1,6 @@
 ### extends 'class_empty.py'
-
 ### block Header
+from . import gxapi_cy
 # NOTICE: The code generator will not replace the code in this block
 ### endblock Header
 
