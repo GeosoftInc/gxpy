@@ -799,6 +799,7 @@
     <Compile Include="examples\stand-alone\show_leak_warnings.py" />
     <Compile Include="examples\stand-alone\test_ui_prompts.py" />
     <Compile Include="examples\stand-alone\test_viewer.py" />
+    <Compile Include="geosoft\gxapi\__init__.py" />
     <Compile Include="geosoft\gxpy\agg.py" />
     <Compile Include="geosoft\gxpy\coordinate_system.py" />
     <Compile Include="geosoft\gxpy\dataframe.py" />
@@ -877,6 +878,7 @@
     <Folder Include="examples\stand-alone\results\test_viewer.py\test_mapviewer\result" />
     <Folder Include="geosoft" />
     <Folder Include="geosoft.egg-info" />
+    <Folder Include="geosoft\gxapi\" />
     <Folder Include="geosoft\gxpy" />
     <Folder Include="geosoft\gxpy\tests" />
     <Folder Include="geosoft\gxpy\tests\results\" />

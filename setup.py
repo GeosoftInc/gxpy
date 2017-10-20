@@ -80,6 +80,7 @@ setup(
     install_requires=dependencies,
     packages=[
         'geosoft',
+        'geosoft.gxapi',
         'geosoft.gxpy',
         'geosoft.gxpy._jdcal',
         'geosoft.gxpy.user_input'
