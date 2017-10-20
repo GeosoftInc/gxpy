@@ -191,10 +191,7 @@ class Test(GXPYTest):
             vv = gdb.read_channel_vv('T46', 'test_chan_vv')
             self.assertEqual(vv.length, 3)
             self.assertEqual(vv.fid, (-10.0, 2.5))
-            va = gdb.read_channel_va('T46', 'test_chan_vv')
-            self.assertEqual(va.width, 1)
-            self.assertEqual(va.length, 3)
-            self.assertEqual(va.fid, (-10.0, 2.5))
+            self.assertRaises(gxva.VAException, gdb.read_channel_va, 'T46', 'test_chan_vv')
             gdb.delete_channel('test_chan_vv')
 
             va = gxva.GXva(np.array([[1., 2., 3.],[8,9,10]]), fid=(-10, 2.5))
@@ -729,7 +726,7 @@ class Test(GXPYTest):
 
         with gxdb.Geosoft_gdb.open(self.gdb_name) as gdb:
 
-            npd,ch,fid = gdb.read_line('D578625',channels=['dx','dy','vector'])
+            npd, ch, fid = gdb.read_line('D578625', channels=['dx','dy','vector'])
 
             try:
                 gdb.new_line("&$#@**")
@@ -751,8 +748,8 @@ class Test(GXPYTest):
 
             gdb.delete_line('testline')
             gdb.new_line('testline')
-            gdb.write_line('testline',npd,channels=ch)
-            npd2,ch2,fid2 = gdb.read_line('testline',channels=ch)
+            gdb.write_line('testline', npd, channels=ch)
+            npd2,ch2,fid2 = gdb.read_line('testline', channels=ch)
             self.assertEqual(npd.shape,npd2.shape)
 
             gdb.delete_line('testline')
