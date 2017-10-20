@@ -3,6 +3,7 @@ import os
 import unittest
 
 import geosoft
+import geosoft.gxpy
 import geosoft.gxapi as gxapi
 import geosoft.gxpy.vv as gxvv
 import geosoft.gxpy.utility as gxu

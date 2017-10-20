@@ -46,10 +46,11 @@ class GXva:
 
     :param array:           2D numpy array, None for an empty VA
     :param dtype:           numpy data type, default np.float
-    :param width:           array width, default is determined from array.  The array will be
-                            reshaped to this width if specified.
+    :param width:           array width, default is determined from array.
     :param fid:             fid tuple (start,increment), default (0.0, 1.0)
     :param unit_of_measure: the unit of measurement for the data
+
+    Maximum number of elements must be less that 2^31 - 1
 
     .. versionchanged:: 9.3 added unit_of_measure
 
@@ -70,13 +71,26 @@ class GXva:
 
     def __init__(self, array=None, width=None, dtype=None, fid=(0.0, 1.0), unit_of_measure=''):
 
-        if (array is not None):
-            if dtype is None:
-                dtype = array.dtype
+        if array is not None:
+            if not isinstance(array, np.ndarray):
+                array = np.array(array)
+
+            if array.ndim != 2:
+                raise VAException(_t('array must have 2 dimensions'))
+
             if width is None:
                 width = array.shape[1]
 
+            if dtype is None:
+                dtype = array.dtype
+
+        if width is None or (width < 2):
+            raise VAException('width must be >= 2')
+
         self._gxtype = gxu.gx_dtype(dtype)
+        if self._gxtype < 0:
+            raise VAException(_t("VA of strings is not supported."))
+
         self._dtype = gxu.dtype_gx(self._gxtype)
         self._width = width
         self._gxva = gxapi.GXVA.create_ext(self._gxtype, 0, self._width)
@@ -88,11 +102,7 @@ class GXva:
         self._unit_of_measure = unit_of_measure
 
         if array is not None:
-            if self._gxtype >= 0:
-                self._gxva.set_ln(array.shape[0])
-                self._gxva.set_array_np(0, 0, array)
-            else:
-                raise VAException(_t("VA of strings is not supported."))
+            self.set_data(array, fid)
 
     def __iter__(self):
         return self
@@ -264,15 +274,20 @@ class GXva:
         :param npdata:  numpy data array (must be 2D)
         :param fid:     fid tuple (start,increment), default (0.0,1.0)
 
+        Maximum number of elements must be less that 2^31 - 1
+
         .. versionadded:: 9.1
         """
 
         try:
             npd = npdata.reshape((-1, self._width))
         except ValueError:
-            raise VAException(_t('Numpy data does not match VA data width ({}).'
-                                .format(self._width)))
+            raise VAException(_t('Numpy data does not align with VA data width ({}).').format(self._width))
 
-        self._gxva.set_array_np(0, 0, npd)
+        max_length = gxapi.iMAX // self._width
+        if npdata.shape[0] > max_length:
+            raise VAException(_t('Array length {} too long. Maximum is {} for width {}').format(npdata.shape[0], max_length, self._width))
+
         self._gxva.set_ln(npd.shape[0])
+        self._gxva.set_array_np(0, 0, npd)
         self.fid = fid

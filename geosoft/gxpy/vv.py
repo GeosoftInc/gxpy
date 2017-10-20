@@ -102,7 +102,7 @@ class GXvv:
         self._unit_of_measure = unit_of_measure
 
         if array is not None:
-            self.set_data(array.flatten(), fid)
+            self.set_data(array, fid)
 
     def __len__(self):
         return self._gxvv.length()
@@ -265,7 +265,7 @@ class GXvv:
         """
         Set vv data from an array.  If the array is float type numpy.nan are
 
-        :param data:    data array
+        :param data:    data array, must be dimension 1
         :param fid:     fid tuple (start,increment), default does not change
 
         .. versionadded:: 9.1
@@ -276,23 +276,31 @@ class GXvv:
 
         if not isinstance(data, np.ndarray):
             data = np.array(data)
-        npdata = data.flatten()
+
+        if data.ndim > 1:
+            if data.shape[1] == 1:
+                data = data[:,0]
+            else:
+                raise VVException(_t('only 1 dimension allowed, data has {} dimensions'.format(data.ndim)))
+
+        if np.size(data) > gxapi.iMAX:
+            raise VVException(_t('data length {}, max allowed is {})').format(np.size(data), gxapi.iMAX))
 
         # numerical data
         if self._gxtype >= 0:
-            if npdata.dtype == np.float32 or npdata.dtype == np.float64:
-                npdata[npdata == np.nan] = gxu.gx_dummy(npdata.dtype)
-            self._gxvv.set_data_np(0, npdata)
+            if data.dtype == np.float32 or data.dtype == np.float64:
+                data[data == np.nan] = gxu.gx_dummy(data.dtype)
+            self._gxvv.set_data_np(0, data)
 
         # strings
         else:
-            ne = npdata.shape[0]
+            ne = data.shape[0]
             for i in range(ne):
-                self._gxvv.set_string(i, str(npdata[i]))
+                self._gxvv.set_string(i, str(data[i]))
 
         self._np = None
 
-        self._gxvv.set_len(npdata.shape[0])
+        self._gxvv.set_len(data.shape[0])
         if fid:
             self.fid = fid
 

@@ -145,7 +145,6 @@ class Test(GXPYTest):
             va.unit_of_measure = 'nT'
             self.assertEqual(va.unit_of_measure, 'nT')
 
-
 ##############################################################################################
 if __name__ == '__main__':
 
