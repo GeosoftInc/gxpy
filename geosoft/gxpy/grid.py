@@ -366,6 +366,8 @@ class Grid:
 
         # set basic grid properties
         dtype = properties.get('dtype', None)
+        if dtype is None:
+            dtype = np.float64
         nx = properties.get('nx', 0)
         ny = properties.get('ny', 0)
         if (nx <= 0) or (ny <= 0):

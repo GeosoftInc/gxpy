@@ -52,7 +52,7 @@ class Test(unittest.TestCase):
                 npd_size = np.size(npd)
                 gdb.write_line(line, npd, ['xx'])
                 del npd
-                
+
                 npd2, ch, fid = gdb.read_line(line)
                 self.assertEqual(len(ch), 1)
                 self.assertEqual(np.size(npd2), npd_size)

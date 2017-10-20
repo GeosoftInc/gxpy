@@ -1,14 +1,9 @@
 import unittest
 import os
 import numpy as np
-import geosoft
-import geosoft.gxapi as gxapi
-import geosoft.gxpy.gx as gx
-import geosoft.gxpy.utility as gxu
 import geosoft.gxpy.system as gsys
 import geosoft.gxpy.gdb as gxdb
-import geosoft.gxpy.vv as gxvv
-import geosoft.gxpy.va as gxva
+import geosoft.gxpy.grid as gxgrd
 
 from base import GXPYTest
 
@@ -91,6 +86,18 @@ class Test(GXPYTest):
             finally:
                 gxdb.delete_files(name)
 
+    def test_grid_write(self):
+        self.start()
+        name = 'test_free.grd(GRD)'
+        with gxgrd.Grid.new(name, properties={'nx': 1200, 'ny': 800}, overwrite=True) as grd:
+            name = grd.file_name_decorated
+            self.assertEqual(grd.nx, 1200)
+            self.assertEqual(grd.ny, 800)
+        with gxgrd.Grid.open(name) as grd:
+            grd.delete_files()
+            self.assertEqual(grd.nx, 1200)
+            self.assertEqual(grd.ny, 800)
+            
 
 ###############################################################################################
 
