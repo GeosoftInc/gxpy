@@ -29,28 +29,28 @@ for f in glob("geosoft/*.pyd"):
         raise Exception("An application is using a file we need to change: \n {}".format(str(e)))
 
 
-dependencies = ['numpy>=1.11', 'pandas', 'xmltodict']
+dependencies = ['numpy', 'pandas', 'xmltodict']
 if 'bdist_wheel' in sys.argv:
     # Have to specify python-tag to specify which module
     for arg in sys.argv:
         if arg.startswith('--python-tag='):
             pythontag = arg[13:]
             if pythontag == "cp34":
-                shutil.copyfile('gxapi.cp34-win_amd64.pyd', 'geosoft/gxapi.pyd')
+                shutil.copyfile('gxapi_cy.cp34-win_amd64.pyd', 'geosoft/gxapi_cy.pyd')
             elif pythontag == "cp35":
-                shutil.copyfile('gxapi.cp35-win_amd64.pyd', 'geosoft/gxapi.pyd')
+                shutil.copyfile('gxapi_cy.cp35-win_amd64.pyd', 'geosoft/gxapi_cy.pyd')
             elif pythontag == "cp36":
-                shutil.copyfile('gxapi.cp36-win_amd64.pyd', 'geosoft/gxapi.pyd')
+                shutil.copyfile('gxapi_cy.cp36-win_amd64.pyd', 'geosoft/gxapi_cy.pyd')
             break
 else:
     # Copy the version we are building for
     py_ver_major_minor = sys.version_info[:2]
     if py_ver_major_minor == (3,4):
-        shutil.copyfile('gxapi.cp34-win_amd64.pyd', 'geosoft/gxapi.pyd')
+        shutil.copyfile('gxapi_cy.cp34-win_amd64.pyd', 'geosoft/gxapi_cy.pyd')
     elif py_ver_major_minor == (3,5):
-        shutil.copyfile('gxapi.cp35-win_amd64.pyd', 'geosoft/gxapi.pyd')
+        shutil.copyfile('gxapi_cy.cp35-win_amd64.pyd', 'geosoft/gxapi_cy.pyd')
     elif py_ver_major_minor == (3,6):
-        shutil.copyfile('gxapi.cp36-win_amd64.pyd', 'geosoft/gxapi.pyd')
+        shutil.copyfile('gxapi_cy.cp36-win_amd64.pyd', 'geosoft/gxapi_cy.pyd')
 
 key_file = path.join('geosoft', 'geosoft.key')
 with open(key_file, 'w') as f:

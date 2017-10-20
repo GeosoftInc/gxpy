@@ -626,7 +626,6 @@
     <Content Include="geosoft\geoengine.core.gx_u.dll" />
     <Content Include="geosoft\geogx_u.dll" />
     <Content Include="geosoft\geosoft.key" />
-    <Content Include="geosoft\gxapi.pyd" />
     <Content Include="geosoft\gxpy\tests\dem.zip" />
     <Content Include="geosoft\gxpy\tests\little.zip" />
     <Content Include="geosoft\gxpy\tests\results\test_group.py\test_3D\master\test_3D_3dv.geosoft_3dv.png" />
@@ -754,9 +753,6 @@
     <Content Include="geosoft\vcruntime140.dll" />
     <Content Include="GX Developer\Python\GX Developer for Python.html" />
     <Content Include="GX Developer\Python\GX Developer for Python.txt" />
-    <Content Include="gxapi.cp34-win_amd64.pyd" />
-    <Content Include="gxapi.cp35-win_amd64.pyd" />
-    <Content Include="gxapi.cp36-win_amd64.pyd" />
     <Content Include="README.rst" />
     <Content Include="requirements.txt" />
   </ItemGroup>
