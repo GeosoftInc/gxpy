@@ -1,0 +1,19 @@
+### extends 'class_empty.py'
+
+### block Header
+# NOTICE: The code generator will not replace the code in this block
+### endblock Header
+
+### block ClassImplementation
+# NOTICE: Do not edit anything here, it is generated code
+class GX3DN:
+    pass
+### endblock ClassImplementation
+### block ClassExtend
+# NOTICE: The code generator will not replace the code in this block
+### endblock ClassExtend
+
+
+### block Footer
+# NOTICE: The code generator will not replace the code in this block
+### endblock Footer

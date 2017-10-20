@@ -309,12 +309,12 @@ VV_WINDOW_LIMIT = 1
 # NOTICE: Do not edit anything here, it is generated code
 
 __all__ = [
-    'GXGEOSOFT',
+
     'GX3DN',
     'GXVV',
 ]
 
-from . import GXGEOSOFT
+
 from . import GX3DN
 from . import GXVV
 ### endblock ClassImports
