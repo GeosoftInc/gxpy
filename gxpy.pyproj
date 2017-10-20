@@ -5,7 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{24c32035-61d8-49c0-80c4-47476e29b1bb}</ProjectGuid>
     <ProjectHome />
-    <StartupFile>examples\stand-alone\test_ui_prompts.py</StartupFile>
+    <StartupFile>geosoft\gxpy\tests\test_gdb.py</StartupFile>
     <SearchPath />
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>

@@ -351,3 +351,9 @@ class GXPYTest(unittest.TestCase):
 
             else:
                 self.fail(report)
+
+    @classmethod
+    def pause(cls):
+        if not _prevent_interactive:
+            print("\n\nHit Return key to continue...")
+            input()
