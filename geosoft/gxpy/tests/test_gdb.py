@@ -70,7 +70,7 @@ class Test(GXPYTest):
             self.assertEqual(gdb.used_blobs, 14)
             self.assertEqual(gdb.used_lines, 5)
             self.assertEqual(gdb.used_channels, 6)
-            self.assertEqual(gdb.page_size_bytes, 1024)
+            self.assertEqual(gdb.max_compressed_channel_bytes, 67106816)
             self.assertEqual(gdb.number_of_blocks, 275)
             self.assertEqual(gdb.lost_blocks, 0)
             self.assertEqual(gdb.free_blocks, 36)
@@ -831,30 +831,45 @@ class Test(GXPYTest):
         self.start()
 
         gdb_file = os.path.join(self.folder, 'new.gdb')
-        with gxdb.Geosoft_gdb.new(gdb_file, overwrite=True) as gdb:
 
-            #read an image and put it in a new database
-            with open(os.path.join(self.folder, 'image.png'), 'rb') as im_handle:
-                im = Image.open(im_handle)
-                im.thumbnail( (20,20), Image.ANTIALIAS)
-                imageIn = np.asarray(im,dtype=np.float32)
-            gdb.new_channel('R',dtype=np.int)
-            gdb.new_channel('G',dtype=np.int)
-            gdb.new_channel('B', dtype=np.int)
-            gdb.new_channel('A', dtype=np.int)
-            for l in range(imageIn.shape[0]):
-                gdb.write_line('L{}'.format(l),imageIn[l,:,:],channels=['R','G','B','A'])
+        try:
 
-            self.assertEqual(len(gdb.list_lines()),imageIn.shape[0])
-            self.assertEqual(len(gdb.list_channels()),4)
-            d,c,f = gdb.read_line('L5')
-            self.assertEqual(d.shape[0],imageIn.shape[1])
-            self.assertEqual(d.shape[1],imageIn.shape[2])
+            with gxdb.Geosoft_gdb.new(gdb_file, overwrite=True) as gdb:
 
-        self.assertRaises(gxdb.GdbException, gxdb.Geosoft_gdb.new, gdb_file)
-        with gxdb.Geosoft_gdb.new( os.path.join(self.folder, gdb_file), overwrite=True) as gdb:
-            pass
-        gxdb.delete_files(gdb_file)
+                #read an image and put it in a new database
+                with open(os.path.join(self.folder, 'image.png'), 'rb') as im_handle:
+                    im = Image.open(im_handle)
+                    im.thumbnail( (20,20), Image.ANTIALIAS)
+                    imageIn = np.asarray(im,dtype=np.float32)
+                gdb.new_channel('R',dtype=np.int)
+                gdb.new_channel('G',dtype=np.int)
+                gdb.new_channel('B', dtype=np.int)
+                gdb.new_channel('A', dtype=np.int)
+                for l in range(imageIn.shape[0]):
+                    gdb.write_line('L{}'.format(l),imageIn[l,:,:],channels=['R','G','B','A'])
+
+                self.assertEqual(len(gdb.list_lines()),imageIn.shape[0])
+                self.assertEqual(len(gdb.list_channels()),4)
+                d,c,f = gdb.read_line('L5')
+                self.assertEqual(d.shape[0],imageIn.shape[1])
+                self.assertEqual(d.shape[1],imageIn.shape[2])
+
+            self.assertRaises(gxdb.GdbException, gxdb.Geosoft_gdb.new, gdb_file)
+
+            with gxdb.Geosoft_gdb.new(gdb_file, overwrite=True) as gdb:
+                self.assertEqual(gdb.max_compressed_channel_bytes, 67106816)
+            with gxdb.Geosoft_gdb.new(gdb_file, overwrite=True, pageSize=0) as gdb:
+                self.assertEqual(gdb.max_compressed_channel_bytes, 4194176)
+            with gxdb.Geosoft_gdb.new(gdb_file, overwrite=True, pageSize=4096) as gdb:
+                self.assertEqual(gdb.max_compressed_channel_bytes, 268427264)
+            try:
+                with gxdb.Geosoft_gdb.new(gdb_file, overwrite=True, pageSize=5000) as gdb:
+                    self.assertTrue(False) # this should have failed
+            except:
+                pass
+
+        finally:
+            gxdb.delete_files(gdb_file)
 
 
     def test_details(self):

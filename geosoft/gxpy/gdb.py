@@ -357,7 +357,8 @@ class Geosoft_gdb:
         return gdb
 
     @classmethod
-    def new(cls, name, maxLines=500, maxChannels=200, maxBlobs=0, pageSize=1024, comp=None, overwrite=False):
+    def new(cls, name, maxLines=500, maxChannels=200, maxBlobs=0, pageSize=1024,
+            comp=None, overwrite=False):
         """
         Create a new database.
 
@@ -371,6 +372,11 @@ class Geosoft_gdb:
                             | COMP_SPEED (default)
                             | COMP_SIZE
         :param overwrite:   `True` to overwrite existing database. Default is `False`, GdbException if file exists.
+        :param pageSize:    page size (default is 1024), which limits the amount of compressed data that can be stored
+                            in a single channel on a line. The maximum compressed data size for a channel will be this
+                            number * 65534 (default 1024 * 65534 = 64 MB of compressed data). This will be forced to
+                            a power of 2 between 64 and 4096, which would allow for a maximum of 256 MB compressed
+                            data per channel per line.
                             
         :returns:           :class:`Geosoft_gdb` instance
 
@@ -383,9 +389,16 @@ class Geosoft_gdb:
         maxChannels = max(25, maxChannels)
         minBlobs = maxChannels * maxLines + 20
         maxBlobs = max(minBlobs, maxBlobs)
-        pageSize = min(max(pageSize, 64), 4096)
         if not comp:
             comp = COMP_SPEED
+
+        # validate pageSize:
+        ps = 64
+        while ps < pageSize:
+            ps *= 2
+            if ps > 4096:
+                raise GdbException(_t('Page size cannot be larger than 4096 (256 MB per line-channel).'))
+        pageSize = ps
 
         name = _gdb_name(name)
 
@@ -611,9 +624,10 @@ class Geosoft_gdb:
         return self._db.get_info(gxapi.DB_INFO_CHANS_USED)
 
     @property
-    def page_size_bytes(self):
-        """blocking page size"""
-        return self._db.get_info(gxapi.DB_INFO_PAGE_SIZE)
+    def max_compressed_channel_bytes(self):
+        """maximum compressed data per channel per line in bytes"""
+        ps = self._db.get_info(gxapi.DB_INFO_PAGE_SIZE)
+        return  ps * 65534
 
     @property
     def number_of_blocks(self):
