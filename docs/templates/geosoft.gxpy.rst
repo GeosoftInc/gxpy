@@ -18,9 +18,10 @@ The following sub-modules organize functions into logical groups.
 
 {% for module in modules %}   geosoft.gxpy.{{ module[0] }}
 {% endfor %}
-
-
+   
 See https://github.com/GeosoftInc/gxpy/tree/master/examples for example scripts that use the Python modules.
+
+See https://github.com/GeosoftInc/gxpy/tree/master/geosoft/gxpy/tests for tests that exercise the gxpy modules.
 
 .. automodule:: geosoft.gxpy
     :members:

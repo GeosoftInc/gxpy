@@ -1,0 +1,6 @@
+/
+/ My Python extensions
+/------------------------------------------------------------------------------
+
+MENU "MyPython"
+ITEM "Hello"   ,hello_world_extension.py
