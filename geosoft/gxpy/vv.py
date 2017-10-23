@@ -251,11 +251,11 @@ class GXvv:
                         vvd = gxapi.GXVV.create_ext(gxapi.GS_DOUBLE, n)
 
                     vvd.copy(self._gxva)  # this will do the conversion
-                    npd = vvd.get_data_np(start, n, dtype)
+                    _, npd = vvd.get_data_np(start, n, dtype)
 
                 # numeric to numeric
                 else:
-                    npd = self._gxva.get_data_np(start, n, dtype)
+                    _, npd = self._gxva.get_data_np(start, n, dtype)
 
         fid = self.fid
         start = fid[0] + start * fid[1]

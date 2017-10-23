@@ -47,7 +47,8 @@ class GXContext:
         p_geo._create_internal(p_geo)
         return GXContext(p_geo)
 
-    def _internal_p(self):
+    @classmethod
+    def _internal_p(cls):
         p_geo = GXContext._get_tls_geo()
         return p_geo._internal_p()
 

@@ -5,6 +5,8 @@ from geosoft.gxapi import GXContext, int_ref, float_ref, str_ref
 
 ### block Header
 # NOTICE: The code generator will not replace the code in this block
+from . import gxapi_cy_extend
+import numpy as np
 ### endblock Header
 
 ### block ClassImplementation
@@ -610,9 +612,14 @@ class GXVV:
 ### block ClassExtend
 # NOTICE: The code generator will not replace the code in this block
     def get_data_np(self, start: int, num_elements: int, dtype: int):
-        b = bytearray() 
-        r self._wrapper.get_data(start, num_elements, 5)
-        return (r, np.frombuffer(a))
+        r, a = self.get_data_array(start, num_elements, 5)
+        return (r, np.asarray(a))
+
+    def get_data_array(self, start: int, num_elements: int, dtype: int):
+        print("ENTER")
+        input()
+        r, a = gxapi_cy_extend.WrapVVExtra.get_data_array_vv(GXContext._internal_p(), self._wrapper.handle, start, num_elements, dtype)
+        return (r, a)
 ### endblock ClassExtend
 
 
