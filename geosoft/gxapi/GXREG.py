@@ -58,21 +58,21 @@ class GXREG:
 
 
     def copy(self, p2: 'GXREG') -> None:
-        self._wrapper.copy(p2)
+        self._wrapper.copy(p2._wrapper)
         
 
 
 
     @classmethod
     def create(cls, p1: int) -> 'GXREG':
-        ret_val = gxapi_cy.WrapREG.create(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapREG.create(GXContext._get_tls_geo(), p1)
         return GXREG(ret_val)
 
 
 
     @classmethod
     def create_s(cls, p1: 'GXBF') -> 'GXREG':
-        ret_val = gxapi_cy.WrapREG.create_s(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapREG.create_s(GXContext._get_tls_geo(), p1._wrapper)
         return GXREG(ret_val)
 
 
@@ -130,7 +130,7 @@ class GXREG:
 
 
     def merge(self, p2: 'GXREG', p3: int) -> None:
-        self._wrapper.merge(p2, p3)
+        self._wrapper.merge(p2._wrapper, p3)
         
 
 
@@ -144,7 +144,7 @@ class GXREG:
 
 
     def serial(self, p2: 'GXBF') -> None:
-        self._wrapper.serial(p2)
+        self._wrapper.serial(p2._wrapper)
         
 
 

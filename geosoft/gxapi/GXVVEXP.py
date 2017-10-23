@@ -51,7 +51,7 @@ class GXVVEXP:
 
 
     def add_vv(self, p2: 'GXVV', p3: str) -> None:
-        self._wrapper.add_vv(p2, p3.encode())
+        self._wrapper.add_vv(p2._wrapper, p3.encode())
         
 
 

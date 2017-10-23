@@ -72,7 +72,7 @@ class GXLAYOUT:
 
     @classmethod
     def create(cls, p1: int, p2: str) -> 'GXLAYOUT':
-        ret_val = gxapi_cy.WrapLAYOUT.create(GXContext._get_tls_geo(), p2.encode())
+        ret_val = gxapi_cy.WrapLAYOUT.create(GXContext._get_tls_geo(), p1, p2.encode())
         return GXLAYOUT(ret_val)
 
 

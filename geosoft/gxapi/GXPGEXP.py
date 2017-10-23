@@ -51,7 +51,7 @@ class GXPGEXP:
 
 
     def add_pager(self, p2: 'GXPG', p3: str) -> None:
-        self._wrapper.add_pager(p2, p3.encode())
+        self._wrapper.add_pager(p2._wrapper, p3.encode())
         
 
 

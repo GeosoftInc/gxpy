@@ -51,14 +51,14 @@ class GXGIS:
 
     @classmethod
     def create(cls, p1: str, p2: str, p3: int) -> 'GXGIS':
-        ret_val = gxapi_cy.WrapGIS.create(GXContext._get_tls_geo(), p2.encode(), p3)
+        ret_val = gxapi_cy.WrapGIS.create(GXContext._get_tls_geo(), p1.encode(), p2.encode(), p3)
         return GXGIS(ret_val)
 
 
 
 
     def create_map2_d(self, p2: str, p3: float, p4: 'GXIPJ', p5: int) -> None:
-        self._wrapper.create_map2_d(p2.encode(), p3, p4, p5)
+        self._wrapper.create_map2_d(p2.encode(), p3, p4._wrapper, p5)
         
 
 
@@ -67,7 +67,7 @@ class GXGIS:
 
 
     def get_bpr_models_lst(self, p2: str, p3: 'GXLST') -> None:
-        self._wrapper.get_bpr_models_lst(p2.encode(), p3)
+        self._wrapper.get_bpr_models_lst(p2.encode(), p3._wrapper)
         
 
 
@@ -81,7 +81,7 @@ class GXGIS:
 
 
     def get_meta(self, p2: 'GXMETA') -> None:
-        self._wrapper.get_meta(p2)
+        self._wrapper.get_meta(p2._wrapper)
         
 
 
@@ -95,7 +95,7 @@ class GXGIS:
 
     @classmethod
     def datamine_type(cls, p1: str) -> int:
-        ret_val = gxapi_cy.WrapGIS.datamine_type(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapGIS.datamine_type(GXContext._get_tls_geo(), p1.encode())
         return ret_val
 
 
@@ -109,21 +109,21 @@ class GXGIS:
 
     @classmethod
     def is_mi_map_file(cls, p1: str) -> int:
-        ret_val = gxapi_cy.WrapGIS.is_mi_map_file(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapGIS.is_mi_map_file(GXContext._get_tls_geo(), p1.encode())
         return ret_val
 
 
 
     @classmethod
     def is_mi_raster_tab_file(cls, p1: str) -> int:
-        ret_val = gxapi_cy.WrapGIS.is_mi_raster_tab_file(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapGIS.is_mi_raster_tab_file(GXContext._get_tls_geo(), p1.encode())
         return ret_val
 
 
 
     @classmethod
     def is_mi_rotated_raster_tab_file(cls, p1: str) -> int:
-        ret_val = gxapi_cy.WrapGIS.is_mi_rotated_raster_tab_file(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapGIS.is_mi_rotated_raster_tab_file(GXContext._get_tls_geo(), p1.encode())
         return ret_val
 
 
@@ -158,56 +158,56 @@ class GXGIS:
 
     @classmethod
     def scan_mi_raster_tab_file(cls, p1: str, p2: str_ref, p4: 'GXIPJ') -> None:
-        p2.value = gxapi_cy.WrapGIS.scan_mi_raster_tab_file(GXContext._get_tls_geo(), p2.value.encode(), p4)
+        p2.value = gxapi_cy.WrapGIS.scan_mi_raster_tab_file(GXContext._get_tls_geo(), p1.encode(), p2.value.encode(), p4._wrapper)
         
 
 
 
 
     def load_ascii(self, p2: 'GXWA') -> None:
-        self._wrapper.load_ascii(p2)
+        self._wrapper.load_ascii(p2._wrapper)
         
 
 
 
 
     def load_gdb(self, p2: 'GXDB') -> None:
-        self._wrapper.load_gdb(p2)
+        self._wrapper.load_gdb(p2._wrapper)
         
 
 
 
 
     def load_map(self, p2: 'GXMVIEW') -> None:
-        self._wrapper.load_map(p2)
+        self._wrapper.load_map(p2._wrapper)
         
 
 
 
 
     def load_map_ex(self, p2: 'GXMAP', p3: str) -> None:
-        self._wrapper.load_map_ex(p2, p3.encode())
+        self._wrapper.load_map_ex(p2._wrapper, p3.encode())
         
 
 
 
 
     def load_meta_groups_map(self, p2: 'GXMVIEW', p3: 'GXMETA', p4: int, p5: str, p6: str) -> None:
-        self._wrapper.load_meta_groups_map(p2, p3, p4, p5.encode(), p6.encode())
+        self._wrapper.load_meta_groups_map(p2._wrapper, p3._wrapper, p4, p5.encode(), p6.encode())
         
 
 
 
 
     def load_ply(self, p2: 'GXPLY') -> None:
-        self._wrapper.load_ply(p2)
+        self._wrapper.load_ply(p2._wrapper)
         
 
 
 
 
     def load_shapes_gdb(self, p2: 'GXDB') -> None:
-        self._wrapper.load_shapes_gdb(p2)
+        self._wrapper.load_shapes_gdb(p2._wrapper)
         
 
 
@@ -221,21 +221,21 @@ class GXGIS:
 
 
     def set_ipj(self, p2: 'GXIPJ') -> None:
-        self._wrapper.set_ipj(p2)
+        self._wrapper.set_ipj(p2._wrapper)
         
 
 
 
 
     def set_lst(self, p2: 'GXLST') -> None:
-        self._wrapper.set_lst(p2)
+        self._wrapper.set_lst(p2._wrapper)
         
 
 
 
 
     def set_meta(self, p2: 'GXMETA') -> None:
-        self._wrapper.set_meta(p2)
+        self._wrapper.set_meta(p2._wrapper)
         
 
 

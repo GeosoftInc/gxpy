@@ -74,21 +74,21 @@ class GXKGRD:
 
 
     def run(self, p2: str, p3: 'GXDAT', p4: 'GXDAT', p5: 'GXDAT', p6: str, p7: str, p8: int, p9: int, p10: int) -> int:
-        ret_val = self._wrapper.run(p2.encode(), p3, p4, p5, p6.encode(), p7.encode(), p8, p9, p10)
+        ret_val = self._wrapper.run(p2.encode(), p3._wrapper, p4._wrapper, p5._wrapper, p6.encode(), p7.encode(), p8, p9, p10)
         return ret_val
 
 
 
     @classmethod
     def run2(cls, p1: 'GXDB', p2: str, p3: str, p4: str, p5: str, p6: str, p7: str, p8: str, p9: str, p10: int) -> int:
-        ret_val = gxapi_cy.WrapKGRD.run2(GXContext._get_tls_geo(), p2.encode(), p3.encode(), p4.encode(), p5.encode(), p6.encode(), p7.encode(), p8.encode(), p9.encode(), p10)
+        ret_val = gxapi_cy.WrapKGRD.run2(GXContext._get_tls_geo(), p1._wrapper, p2.encode(), p3.encode(), p4.encode(), p5.encode(), p6.encode(), p7.encode(), p8.encode(), p9.encode(), p10)
         return ret_val
 
 
 
     @classmethod
     def run3(cls, p1: 'GXDB', p2: str, p3: str, p4: str, p5: str, p6: str, p7: str, p8: str, p9: str, p10: str, p11: int) -> int:
-        ret_val = gxapi_cy.WrapKGRD.run3(GXContext._get_tls_geo(), p2.encode(), p3.encode(), p4.encode(), p5.encode(), p6.encode(), p7.encode(), p8.encode(), p9.encode(), p10.encode(), p11)
+        ret_val = gxapi_cy.WrapKGRD.run3(GXContext._get_tls_geo(), p1._wrapper, p2.encode(), p3.encode(), p4.encode(), p5.encode(), p6.encode(), p7.encode(), p8.encode(), p9.encode(), p10.encode(), p11)
         return ret_val
 
 

@@ -51,42 +51,42 @@ class GXVULCAN:
 
     @classmethod
     def is_valid_triangulation_file(cls, p1: str) -> int:
-        ret_val = gxapi_cy.WrapVULCAN.is_valid_triangulation_file(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapVULCAN.is_valid_triangulation_file(GXContext._get_tls_geo(), p1.encode())
         return ret_val
 
 
 
     @classmethod
     def is_valid_block_model_file(cls, p1: str) -> int:
-        ret_val = gxapi_cy.WrapVULCAN.is_valid_block_model_file(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapVULCAN.is_valid_block_model_file(GXContext._get_tls_geo(), p1.encode())
         return ret_val
 
 
 
     @classmethod
     def triangulation_to_view(cls, p1: str, p2: 'GXIPJ', p3: 'GXMVIEW', p4: str) -> None:
-        gxapi_cy.WrapVULCAN.triangulation_to_view(GXContext._get_tls_geo(), p2, p3, p4.encode())
+        gxapi_cy.WrapVULCAN.triangulation_to_view(GXContext._get_tls_geo(), p1.encode(), p2._wrapper, p3._wrapper, p4.encode())
         
 
 
 
     @classmethod
     def get_block_model_variable_info(cls, p1: str, p2: int, p3: 'GXLST') -> None:
-        gxapi_cy.WrapVULCAN.get_block_model_variable_info(GXContext._get_tls_geo(), p2, p3)
+        gxapi_cy.WrapVULCAN.get_block_model_variable_info(GXContext._get_tls_geo(), p1.encode(), p2, p3._wrapper)
         
 
 
 
     @classmethod
     def get_block_model_string_variable_values(cls, p1: str, p2: str, p3: 'GXLST') -> None:
-        gxapi_cy.WrapVULCAN.get_block_model_string_variable_values(GXContext._get_tls_geo(), p2.encode(), p3)
+        gxapi_cy.WrapVULCAN.get_block_model_string_variable_values(GXContext._get_tls_geo(), p1.encode(), p2.encode(), p3._wrapper)
         
 
 
 
     @classmethod
     def block_model_to_voxel(cls, p1: str, p2: 'GXIPJ', p3: str, p4: str, p5: int, p6: str) -> None:
-        gxapi_cy.WrapVULCAN.block_model_to_voxel(GXContext._get_tls_geo(), p2, p3.encode(), p4.encode(), p5, p6.encode())
+        gxapi_cy.WrapVULCAN.block_model_to_voxel(GXContext._get_tls_geo(), p1.encode(), p2._wrapper, p3.encode(), p4.encode(), p5, p6.encode())
         
 
 

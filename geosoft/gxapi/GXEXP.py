@@ -51,14 +51,14 @@ class GXEXP:
 
     @classmethod
     def create(cls, p1: 'GXDB', p2: str, p3: int) -> 'GXEXP':
-        ret_val = gxapi_cy.WrapEXP.create(GXContext._get_tls_geo(), p2.encode(), p3)
+        ret_val = gxapi_cy.WrapEXP.create(GXContext._get_tls_geo(), p1._wrapper, p2.encode(), p3)
         return GXEXP(ret_val)
 
 
 
     @classmethod
     def create_file(cls, p1: 'GXDB', p2: str) -> 'GXEXP':
-        ret_val = gxapi_cy.WrapEXP.create_file(GXContext._get_tls_geo(), p2.encode())
+        ret_val = gxapi_cy.WrapEXP.create_file(GXContext._get_tls_geo(), p1._wrapper, p2.encode())
         return GXEXP(ret_val)
 
 

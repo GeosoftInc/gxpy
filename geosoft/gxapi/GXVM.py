@@ -51,14 +51,14 @@ class GXVM:
 
     @classmethod
     def create(cls, p1: int, p2: int) -> 'GXVM':
-        ret_val = gxapi_cy.WrapVM.create(GXContext._get_tls_geo(), p2)
+        ret_val = gxapi_cy.WrapVM.create(GXContext._get_tls_geo(), p1, p2)
         return GXVM(ret_val)
 
 
 
     @classmethod
     def create_ext(cls, p1: int, p2: int) -> 'GXVM':
-        ret_val = gxapi_cy.WrapVM.create_ext(GXContext._get_tls_geo(), p2)
+        ret_val = gxapi_cy.WrapVM.create_ext(GXContext._get_tls_geo(), p1, p2)
         return GXVM(ret_val)
 
 

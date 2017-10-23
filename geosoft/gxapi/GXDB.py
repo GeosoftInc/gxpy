@@ -65,7 +65,7 @@ class GXDB:
 
 
     def dup_symb_across(self, p2: 'GXDB', p3: int) -> int:
-        ret_val = self._wrapper.dup_symb_across(p2, p3)
+        ret_val = self._wrapper.dup_symb_across(p2._wrapper, p3)
         return ret_val
 
 
@@ -86,35 +86,35 @@ class GXDB:
 
 
     def get_chan_vv(self, p2: int, p3: int, p4: 'GXVV') -> None:
-        self._wrapper.get_chan_vv(p2, p3, p4)
+        self._wrapper.get_chan_vv(p2, p3, p4._wrapper)
         
 
 
 
 
     def get_chan_vv_expanded(self, p2: int, p3: int, p4: 'GXVV') -> None:
-        self._wrapper.get_chan_vv_expanded(p2, p3, p4)
+        self._wrapper.get_chan_vv_expanded(p2, p3, p4._wrapper)
         
 
 
 
 
     def get_ipj(self, p2: int, p3: 'GXIPJ') -> None:
-        self._wrapper.get_ipj(p2, p3)
+        self._wrapper.get_ipj(p2, p3._wrapper)
         
 
 
 
 
     def get_itr(self, p2: int, p3: 'GXITR') -> None:
-        self._wrapper.get_itr(p2, p3)
+        self._wrapper.get_itr(p2, p3._wrapper)
         
 
 
 
 
     def get_reg_symb(self, p2: int, p3: 'GXREG') -> None:
-        self._wrapper.get_reg_symb(p2, p3)
+        self._wrapper.get_reg_symb(p2, p3._wrapper)
         
 
 
@@ -128,7 +128,7 @@ class GXDB:
 
 
     def get_va_chan_vv(self, p2: int, p3: int, p4: 'GXVV', p5: int, p6: int) -> None:
-        self._wrapper.get_va_chan_vv(p2, p3, p4, p5, p6)
+        self._wrapper.get_va_chan_vv(p2, p3, p4._wrapper, p5, p6)
         
 
 
@@ -289,21 +289,21 @@ class GXDB:
 
 
     def put_chan_vv(self, p2: int, p3: int, p4: 'GXVV') -> None:
-        self._wrapper.put_chan_vv(p2, p3, p4)
+        self._wrapper.put_chan_vv(p2, p3, p4._wrapper)
         
 
 
 
 
     def put_va_chan_vv(self, p2: int, p3: int, p4: 'GXVV', p5: int, p6: int) -> None:
-        self._wrapper.put_va_chan_vv(p2, p3, p4, p5, p6)
+        self._wrapper.put_va_chan_vv(p2, p3, p4._wrapper, p5, p6)
         
 
 
 
 
     def read_blob_bf(self, p2: int, p3: 'GXBF') -> None:
-        self._wrapper.read_blob_bf(p2, p3)
+        self._wrapper.read_blob_bf(p2, p3._wrapper)
         
 
 
@@ -408,21 +408,21 @@ class GXDB:
 
 
     def set_ipj(self, p2: int, p3: int, p4: 'GXIPJ') -> None:
-        self._wrapper.set_ipj(p2, p3, p4)
+        self._wrapper.set_ipj(p2, p3, p4._wrapper)
         
 
 
 
 
     def set_itr(self, p2: int, p3: 'GXITR') -> None:
-        self._wrapper.set_itr(p2, p3)
+        self._wrapper.set_itr(p2, p3._wrapper)
         
 
 
 
 
     def set_reg_symb(self, p2: int, p3: 'GXREG') -> None:
-        self._wrapper.set_reg_symb(p2, p3)
+        self._wrapper.set_reg_symb(p2, p3._wrapper)
         
 
 
@@ -436,7 +436,7 @@ class GXDB:
 
 
     def write_blob_bf(self, p2: int, p3: 'GXBF') -> None:
-        self._wrapper.write_blob_bf(p2, p3)
+        self._wrapper.write_blob_bf(p2, p3._wrapper)
         
 
 
@@ -461,21 +461,21 @@ class GXDB:
 
     @classmethod
     def create(cls, p1: str, p2: int, p3: int, p4: int, p5: int, p6: int, p7: str, p8: str) -> None:
-        gxapi_cy.WrapDB.create(GXContext._get_tls_geo(), p2, p3, p4, p5, p6, p7.encode(), p8.encode())
+        gxapi_cy.WrapDB.create(GXContext._get_tls_geo(), p1.encode(), p2, p3, p4, p5, p6, p7.encode(), p8.encode())
         
 
 
 
     @classmethod
     def create_comp(cls, p1: str, p2: int, p3: int, p4: int, p5: int, p6: int, p7: str, p8: str, p9: int, p10: int) -> None:
-        gxapi_cy.WrapDB.create_comp(GXContext._get_tls_geo(), p2, p3, p4, p5, p6, p7.encode(), p8.encode(), p9, p10)
+        gxapi_cy.WrapDB.create_comp(GXContext._get_tls_geo(), p1.encode(), p2, p3, p4, p5, p6, p7.encode(), p8.encode(), p9, p10)
         
 
 
 
     @classmethod
     def create_ex(cls, p1: str, p2: int, p3: int, p4: int, p5: int, p6: int, p7: str, p8: str, p9: int) -> None:
-        gxapi_cy.WrapDB.create_ex(GXContext._get_tls_geo(), p2, p3, p4, p5, p6, p7.encode(), p8.encode(), p9)
+        gxapi_cy.WrapDB.create_ex(GXContext._get_tls_geo(), p1.encode(), p2, p3, p4, p5, p6, p7.encode(), p8.encode(), p9)
         
 
 
@@ -498,21 +498,21 @@ class GXDB:
 
     @classmethod
     def grow(cls, p1: str, p2: int, p3: int, p4: int, p5: int, p6: int) -> None:
-        gxapi_cy.WrapDB.grow(GXContext._get_tls_geo(), p2, p3, p4, p5, p6)
+        gxapi_cy.WrapDB.grow(GXContext._get_tls_geo(), p1.encode(), p2, p3, p4, p5, p6)
         
 
 
 
     @classmethod
     def can_open(cls, p1: str, p2: str, p3: str) -> int:
-        ret_val = gxapi_cy.WrapDB.can_open(GXContext._get_tls_geo(), p2.encode(), p3.encode())
+        ret_val = gxapi_cy.WrapDB.can_open(GXContext._get_tls_geo(), p1.encode(), p2.encode(), p3.encode())
         return ret_val
 
 
 
     @classmethod
     def can_open_read_only(cls, p1: str, p2: str, p3: str) -> int:
-        ret_val = gxapi_cy.WrapDB.can_open_read_only(GXContext._get_tls_geo(), p2.encode(), p3.encode())
+        ret_val = gxapi_cy.WrapDB.can_open_read_only(GXContext._get_tls_geo(), p1.encode(), p2.encode(), p3.encode())
         return ret_val
 
 
@@ -540,21 +540,21 @@ class GXDB:
 
     @classmethod
     def open(cls, p1: str, p2: str, p3: str) -> 'GXDB':
-        ret_val = gxapi_cy.WrapDB.open(GXContext._get_tls_geo(), p2.encode(), p3.encode())
+        ret_val = gxapi_cy.WrapDB.open(GXContext._get_tls_geo(), p1.encode(), p2.encode(), p3.encode())
         return GXDB(ret_val)
 
 
 
     @classmethod
     def open_read_only(cls, p1: str, p2: str, p3: str) -> 'GXDB':
-        ret_val = gxapi_cy.WrapDB.open_read_only(GXContext._get_tls_geo(), p2.encode(), p3.encode())
+        ret_val = gxapi_cy.WrapDB.open_read_only(GXContext._get_tls_geo(), p1.encode(), p2.encode(), p3.encode())
         return GXDB(ret_val)
 
 
 
     @classmethod
     def repair(cls, p1: str) -> None:
-        gxapi_cy.WrapDB.repair(GXContext._get_tls_geo())
+        gxapi_cy.WrapDB.repair(GXContext._get_tls_geo(), p1.encode())
         
 
 
@@ -621,7 +621,7 @@ class GXDB:
 
 
     def window_va_ch2(self, p2: int, p3: int, p4: int, p5: 'GXVV') -> None:
-        self._wrapper.window_va_ch2(p2, p3, p4, p5)
+        self._wrapper.window_va_ch2(p2, p3, p4, p5._wrapper)
         
 
 
@@ -674,7 +674,7 @@ class GXDB:
 
     @classmethod
     def is_chan_name(cls, p1: str) -> int:
-        ret_val = gxapi_cy.WrapDB.is_chan_name(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapDB.is_chan_name(GXContext._get_tls_geo(), p1.encode())
         return ret_val
 
 
@@ -688,7 +688,7 @@ class GXDB:
 
     @classmethod
     def is_line_name(cls, p1: str) -> int:
-        ret_val = gxapi_cy.WrapDB.is_line_name(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapDB.is_line_name(GXContext._get_tls_geo(), p1.encode())
         return ret_val
 
 
@@ -751,14 +751,14 @@ class GXDB:
 
     @classmethod
     def set_line_name(cls, p1: int, p2: int, p3: int, p4: str_ref) -> None:
-        p4.value = gxapi_cy.WrapDB.set_line_name(GXContext._get_tls_geo(), p2, p3, p4.value.encode())
+        p4.value = gxapi_cy.WrapDB.set_line_name(GXContext._get_tls_geo(), p1, p2, p3, p4.value.encode())
         
 
 
 
     @classmethod
     def set_line_name2(cls, p1: str, p2: int, p3: int, p4: str_ref) -> None:
-        p4.value = gxapi_cy.WrapDB.set_line_name2(GXContext._get_tls_geo(), p2, p3, p4.value.encode())
+        p4.value = gxapi_cy.WrapDB.set_line_name2(GXContext._get_tls_geo(), p1.encode(), p2, p3, p4.value.encode())
         
 
 
@@ -867,14 +867,14 @@ class GXDB:
 
 
     def get_meta(self, p2: 'GXMETA') -> None:
-        self._wrapper.get_meta(p2)
+        self._wrapper.get_meta(p2._wrapper)
         
 
 
 
 
     def set_meta(self, p2: 'GXMETA') -> None:
-        self._wrapper.set_meta(p2)
+        self._wrapper.set_meta(p2._wrapper)
         
 
 
@@ -885,42 +885,42 @@ class GXDB:
 
 
     def array_lst(self, p2: 'GXLST') -> None:
-        self._wrapper.array_lst(p2)
+        self._wrapper.array_lst(p2._wrapper)
         
 
 
 
 
     def array_size_lst(self, p2: int, p3: 'GXLST') -> None:
-        self._wrapper.array_size_lst(p2, p3)
+        self._wrapper.array_size_lst(p2, p3._wrapper)
         
 
 
 
 
     def chan_lst(self, p2: 'GXLST') -> None:
-        self._wrapper.chan_lst(p2)
+        self._wrapper.chan_lst(p2._wrapper)
         
 
 
 
 
     def normal_chan_lst(self, p2: 'GXLST') -> None:
-        self._wrapper.normal_chan_lst(p2)
+        self._wrapper.normal_chan_lst(p2._wrapper)
         
 
 
 
 
     def class_chan_lst(self, p2: 'GXLST', p3: str) -> None:
-        self._wrapper.class_chan_lst(p2, p3.encode())
+        self._wrapper.class_chan_lst(p2._wrapper, p3.encode())
         
 
 
 
 
     def class_group_lst(self, p2: 'GXLST', p3: str) -> None:
-        self._wrapper.class_group_lst(p2, p3.encode())
+        self._wrapper.class_group_lst(p2._wrapper, p3.encode())
         
 
 
@@ -941,7 +941,7 @@ class GXDB:
 
 
     def csv_chan_lst(self, p2: 'GXLST', p3: str) -> None:
-        self._wrapper.csv_chan_lst(p2, p3.encode())
+        self._wrapper.csv_chan_lst(p2._wrapper, p3.encode())
         
 
 
@@ -990,7 +990,7 @@ class GXDB:
 
 
     def get_chan_order_lst(self, p2: 'GXLST') -> None:
-        self._wrapper.get_chan_order_lst(p2)
+        self._wrapper.get_chan_order_lst(p2._wrapper)
         
 
 
@@ -1004,7 +1004,7 @@ class GXDB:
 
 
     def class_chan_list(self, p2: 'GXVV', p3: str) -> int:
-        ret_val = self._wrapper.class_chan_list(p2, p3.encode())
+        ret_val = self._wrapper.class_chan_list(p2._wrapper, p3.encode())
         return ret_val
 
 
@@ -1046,14 +1046,14 @@ class GXDB:
 
 
     def symb_list(self, p2: 'GXVV', p3: int) -> int:
-        ret_val = self._wrapper.symb_list(p2, p3)
+        ret_val = self._wrapper.symb_list(p2._wrapper, p3)
         return ret_val
 
 
 
 
     def line_lst(self, p2: 'GXLST') -> None:
-        self._wrapper.line_lst(p2)
+        self._wrapper.line_lst(p2._wrapper)
         
 
 
@@ -1067,21 +1067,21 @@ class GXDB:
 
 
     def mask_chan_lst(self, p2: 'GXLST') -> None:
-        self._wrapper.mask_chan_lst(p2)
+        self._wrapper.mask_chan_lst(p2._wrapper)
         
 
 
 
 
     def selected_line_lst(self, p2: 'GXLST') -> None:
-        self._wrapper.selected_line_lst(p2)
+        self._wrapper.selected_line_lst(p2._wrapper)
         
 
 
 
 
     def set_chan_order_lst(self, p2: 'GXLST') -> None:
-        self._wrapper.set_chan_order_lst(p2)
+        self._wrapper.set_chan_order_lst(p2._wrapper)
         
 
 
@@ -1095,14 +1095,14 @@ class GXDB:
 
 
     def string_chan_lst(self, p2: 'GXLST') -> None:
-        self._wrapper.string_chan_lst(p2)
+        self._wrapper.string_chan_lst(p2._wrapper)
         
 
 
 
 
     def symb_lst(self, p2: 'GXLST', p3: int) -> None:
-        self._wrapper.symb_lst(p2, p3)
+        self._wrapper.symb_lst(p2._wrapper, p3)
         
 
 
@@ -1183,21 +1183,21 @@ class GXDB:
 
     @classmethod
     def gen_valid_chan_symb(cls, p1: str, p2: str_ref) -> None:
-        p2.value = gxapi_cy.WrapDB.gen_valid_chan_symb(GXContext._get_tls_geo(), p2.value.encode())
+        p2.value = gxapi_cy.WrapDB.gen_valid_chan_symb(GXContext._get_tls_geo(), p1.encode(), p2.value.encode())
         
 
 
 
     @classmethod
     def gen_valid_line_symb(cls, p1: str, p2: str_ref) -> None:
-        p2.value = gxapi_cy.WrapDB.gen_valid_line_symb(GXContext._get_tls_geo(), p2.value.encode())
+        p2.value = gxapi_cy.WrapDB.gen_valid_line_symb(GXContext._get_tls_geo(), p1.encode(), p2.value.encode())
         
 
 
 
 
     def get_chan_va(self, p2: int, p3: int, p4: 'GXVA') -> None:
-        self._wrapper.get_chan_va(p2, p3, p4)
+        self._wrapper.get_chan_va(p2, p3, p4._wrapper)
         
 
 
@@ -1218,14 +1218,14 @@ class GXDB:
 
 
     def set_va_base_coordinate_info(self, p2: int, p3: int, p4: float, p5: 'GXVV', p6: str, p7: int) -> None:
-        self._wrapper.set_va_base_coordinate_info(p2, p3, p4, p5, p6.encode(), p7)
+        self._wrapper.set_va_base_coordinate_info(p2, p3, p4, p5._wrapper, p6.encode(), p7)
         
 
 
 
 
     def get_va_base_coordinate_info(self, p2: int, p3: int_ref, p4: float_ref, p5: 'GXVV', p6: str_ref) -> None:
-        p3.value, p4.value, p6.value = self._wrapper.get_va_base_coordinate_info(p2, p3.value, p4.value, p5, p6.value.encode())
+        p3.value, p4.value, p6.value = self._wrapper.get_va_base_coordinate_info(p2, p3.value, p4.value, p5._wrapper, p6.value.encode())
         
 
 
@@ -1281,7 +1281,7 @@ class GXDB:
 
 
     def put_chan_va(self, p2: int, p3: int, p4: 'GXVA') -> None:
-        self._wrapper.put_chan_va(p2, p3, p4)
+        self._wrapper.put_chan_va(p2, p3, p4._wrapper)
         
 
 

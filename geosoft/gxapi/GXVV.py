@@ -65,14 +65,14 @@ class GXVV:
 
 
     def copy(self, p2: 'GXVV') -> None:
-        self._wrapper.copy(p2)
+        self._wrapper.copy(p2._wrapper)
         
 
 
 
 
     def copy2(self, p2: int, p3: 'GXVV', p4: int, p5: int) -> None:
-        self._wrapper.copy2(p2, p3, p4, p5)
+        self._wrapper.copy2(p2, p3._wrapper, p4, p5)
         
 
 
@@ -93,7 +93,7 @@ class GXVV:
 
 
     def mask(self, p2: 'GXVV') -> None:
-        self._wrapper.mask(p2)
+        self._wrapper.mask(p2._wrapper)
         
 
 
@@ -107,7 +107,7 @@ class GXVV:
 
 
     def serial(self, p2: 'GXBF') -> None:
-        self._wrapper.serial(p2)
+        self._wrapper.serial(p2._wrapper)
         
 
 
@@ -128,21 +128,21 @@ class GXVV:
 
 
     def add(self, p2: 'GXVV', p3: 'GXVV') -> None:
-        self._wrapper.add(p2, p3)
+        self._wrapper.add(p2._wrapper, p3._wrapper)
         
 
 
 
 
     def add2(self, p2: float, p3: 'GXVV', p4: float, p5: 'GXVV') -> None:
-        self._wrapper.add2(p2, p3, p4, p5)
+        self._wrapper.add2(p2, p3._wrapper, p4, p5._wrapper)
         
 
 
 
 
     def append(self, p2: 'GXVV') -> None:
-        self._wrapper.append(p2)
+        self._wrapper.append(p2._wrapper)
         
 
 
@@ -163,21 +163,21 @@ class GXVV:
 
     @classmethod
     def create(cls, p1: int, p2: int) -> 'GXVV':
-        ret_val = gxapi_cy.WrapVV.create(GXContext._get_tls_geo(), p2)
+        ret_val = gxapi_cy.WrapVV.create(GXContext._get_tls_geo(), p1, p2)
         return GXVV(ret_val)
 
 
 
     @classmethod
     def create_ext(cls, p1: int, p2: int) -> 'GXVV':
-        ret_val = gxapi_cy.WrapVV.create_ext(GXContext._get_tls_geo(), p2)
+        ret_val = gxapi_cy.WrapVV.create_ext(GXContext._get_tls_geo(), p1, p2)
         return GXVV(ret_val)
 
 
 
     @classmethod
     def create_s(cls, p1: 'GXBF') -> 'GXVV':
-        ret_val = gxapi_cy.WrapVV.create_s(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapVV.create_s(GXContext._get_tls_geo(), p1._wrapper)
         return GXVV(ret_val)
 
 
@@ -193,14 +193,14 @@ class GXVV:
 
 
     def divide(self, p2: 'GXVV', p3: 'GXVV') -> None:
-        self._wrapper.divide(p2, p3)
+        self._wrapper.divide(p2._wrapper, p3._wrapper)
         
 
 
 
 
     def fid_norm(self, p2: 'GXVV') -> None:
-        self._wrapper.fid_norm(p2)
+        self._wrapper.fid_norm(p2._wrapper)
         
 
 
@@ -277,14 +277,14 @@ class GXVV:
 
 
     def index_insert(self, p2: 'GXVV', p3: 'GXVV') -> None:
-        self._wrapper.index_insert(p2, p3)
+        self._wrapper.index_insert(p2._wrapper, p3._wrapper)
         
 
 
 
 
     def index_order(self, p2: 'GXVV') -> None:
-        self._wrapper.index_order(p2)
+        self._wrapper.index_order(p2._wrapper)
         
 
 
@@ -312,14 +312,14 @@ class GXVV:
 
 
     def lines_to_xy(self, p2: 'GXVV', p3: 'GXVV') -> None:
-        self._wrapper.lines_to_xy(p2, p3)
+        self._wrapper.lines_to_xy(p2._wrapper, p3._wrapper)
         
 
 
 
 
     def lookup_index(self, p2: 'GXVV', p3: 'GXVV') -> None:
-        self._wrapper.lookup_index(p2, p3)
+        self._wrapper.lookup_index(p2._wrapper, p3._wrapper)
         
 
 
@@ -333,56 +333,56 @@ class GXVV:
 
 
     def mask_and(self, p2: 'GXVV', p3: 'GXVV') -> None:
-        self._wrapper.mask_and(p2, p3)
+        self._wrapper.mask_and(p2._wrapper, p3._wrapper)
         
 
 
 
 
     def mask_or(self, p2: 'GXVV', p3: 'GXVV') -> None:
-        self._wrapper.mask_or(p2, p3)
+        self._wrapper.mask_or(p2._wrapper, p3._wrapper)
         
 
 
 
 
     def mask_str(self, p2: 'GXVV', p3: str) -> None:
-        self._wrapper.mask_str(p2, p3.encode())
+        self._wrapper.mask_str(p2._wrapper, p3.encode())
         
 
 
 
 
     def multiply(self, p2: 'GXVV', p3: 'GXVV') -> None:
-        self._wrapper.multiply(p2, p3)
+        self._wrapper.multiply(p2._wrapper, p3._wrapper)
         
 
 
 
 
     def amplitude_3d(self, p2: 'GXVV', p3: 'GXVV', p4: 'GXVV') -> None:
-        self._wrapper.amplitude_3d(p2, p3, p4)
+        self._wrapper.amplitude_3d(p2._wrapper, p3._wrapper, p4._wrapper)
         
 
 
 
 
     def polygon_mask(self, p2: 'GXVV', p3: 'GXVV', p4: 'GXPLY', p5: int) -> None:
-        self._wrapper.polygon_mask(p2, p3, p4, p5)
+        self._wrapper.polygon_mask(p2._wrapper, p3._wrapper, p4._wrapper, p5)
         
 
 
 
     @classmethod
     def project(cls, p1: 'GXPJ', p2: 'GXVV', p3: 'GXVV') -> None:
-        gxapi_cy.WrapVV.project(GXContext._get_tls_geo(), p2, p3)
+        gxapi_cy.WrapVV.project(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3._wrapper)
         
 
 
 
     @classmethod
     def project_3d(cls, p1: 'GXPJ', p2: 'GXVV', p3: 'GXVV', p4: 'GXVV') -> None:
-        gxapi_cy.WrapVV.project_3d(GXContext._get_tls_geo(), p2, p3, p4)
+        gxapi_cy.WrapVV.project_3d(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3._wrapper, p4._wrapper)
         
 
 
@@ -403,7 +403,7 @@ class GXVV:
 
 
     def re_fid_vv(self, p2: 'GXVV') -> None:
-        self._wrapper.re_fid_vv(p2)
+        self._wrapper.re_fid_vv(p2._wrapper)
         
 
 
@@ -445,7 +445,7 @@ class GXVV:
 
 
     def weighted_mean(self, p2: 'GXVV') -> float:
-        ret_val = self._wrapper.weighted_mean(p2)
+        ret_val = self._wrapper.weighted_mean(p2._wrapper)
         return ret_val
 
 
@@ -522,7 +522,7 @@ class GXVV:
 
 
     def setup_index(self, p2: 'GXVV', p3: 'GXVV', p4: int, p5: float) -> None:
-        self._wrapper.setup_index(p2, p3, p4, p5)
+        self._wrapper.setup_index(p2._wrapper, p3._wrapper, p4, p5)
         
 
 
@@ -536,49 +536,49 @@ class GXVV:
 
 
     def sort_index(self, p2: 'GXVV') -> None:
-        self._wrapper.sort_index(p2)
+        self._wrapper.sort_index(p2._wrapper)
         
 
 
 
 
     def sort_index1(self, p2: 'GXVV', p3: int) -> None:
-        self._wrapper.sort_index1(p2, p3)
+        self._wrapper.sort_index1(p2._wrapper, p3)
         
 
 
 
 
     def sort_index2(self, p2: 'GXVV', p3: 'GXVV', p4: int, p5: int) -> None:
-        self._wrapper.sort_index2(p2, p3, p4, p5)
+        self._wrapper.sort_index2(p2._wrapper, p3._wrapper, p4, p5)
         
 
 
 
 
     def sort_index3(self, p2: 'GXVV', p3: 'GXVV', p4: 'GXVV', p5: int, p6: int, p7: int) -> None:
-        self._wrapper.sort_index3(p2, p3, p4, p5, p6, p7)
+        self._wrapper.sort_index3(p2._wrapper, p3._wrapper, p4._wrapper, p5, p6, p7)
         
 
 
 
 
     def sort_index4(self, p2: 'GXVV', p3: 'GXVV', p4: 'GXVV', p5: 'GXVV', p6: int, p7: int, p8: int, p9: int) -> None:
-        self._wrapper.sort_index4(p2, p3, p4, p5, p6, p7, p8, p9)
+        self._wrapper.sort_index4(p2._wrapper, p3._wrapper, p4._wrapper, p5._wrapper, p6, p7, p8, p9)
         
 
 
 
     @classmethod
     def statistics(cls, p1: 'GXST', p2: 'GXVV') -> None:
-        gxapi_cy.WrapVV.statistics(GXContext._get_tls_geo(), p2)
+        gxapi_cy.WrapVV.statistics(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper)
         
 
 
 
 
     def subtract(self, p2: 'GXVV', p3: 'GXVV') -> None:
-        self._wrapper.subtract(p2, p3)
+        self._wrapper.subtract(p2._wrapper, p3._wrapper)
         
 
 
@@ -610,8 +610,9 @@ class GXVV:
 ### block ClassExtend
 # NOTICE: The code generator will not replace the code in this block
     def get_data_np(self, start: int, num_elements: int, dtype: int):
-        r, a = self._wrapper.get_data_array(start, num_elements, 5)
-        return (r, np.asarray(a))
+        b = bytearray() 
+        r self._wrapper.get_data(start, num_elements, 5)
+        return (r, np.frombuffer(a))
 ### endblock ClassExtend
 
 

@@ -51,21 +51,21 @@ class GXDBWRITE:
 
     @classmethod
     def create(cls, p1: 'GXDB') -> 'GXDBWRITE':
-        ret_val = gxapi_cy.WrapDBWRITE.create(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapDBWRITE.create(GXContext._get_tls_geo(), p1._wrapper)
         return GXDBWRITE(ret_val)
 
 
 
     @classmethod
     def create_xy(cls, p1: 'GXDB') -> 'GXDBWRITE':
-        ret_val = gxapi_cy.WrapDBWRITE.create_xy(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapDBWRITE.create_xy(GXContext._get_tls_geo(), p1._wrapper)
         return GXDBWRITE(ret_val)
 
 
 
     @classmethod
     def create_xyz(cls, p1: 'GXDB') -> 'GXDBWRITE':
-        ret_val = gxapi_cy.WrapDBWRITE.create_xyz(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapDBWRITE.create_xyz(GXContext._get_tls_geo(), p1._wrapper)
         return GXDBWRITE(ret_val)
 
 
@@ -152,7 +152,7 @@ class GXDBWRITE:
 
 
     def test_func(self, p2: 'GXRA') -> None:
-        self._wrapper.test_func(p2)
+        self._wrapper.test_func(p2._wrapper)
         
 
 

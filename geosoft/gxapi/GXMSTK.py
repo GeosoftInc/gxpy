@@ -58,7 +58,7 @@ class GXMSTK:
 
 
     def chan_list_vv(self, p2: 'GXDB', p3: 'GXVV', p4: 'GXVV', p5: 'GXVV', p6: 'GXVV', p7: 'GXVV') -> None:
-        self._wrapper.chan_list_vv(p2, p3, p4, p5, p6, p7)
+        self._wrapper.chan_list_vv(p2._wrapper, p3._wrapper, p4._wrapper, p5._wrapper, p6._wrapper, p7._wrapper)
         
 
 
@@ -74,7 +74,7 @@ class GXMSTK:
 
 
     def draw_profile(self, p2: 'GXDB', p3: int, p4: 'GXMAP') -> None:
-        self._wrapper.draw_profile(p2, p3, p4)
+        self._wrapper.draw_profile(p2._wrapper, p3, p4._wrapper)
         
 
 
@@ -88,7 +88,7 @@ class GXMSTK:
 
 
     def find_stk2(self, p2: str, p3: int_ref, p4: 'GXVV') -> None:
-        p3.value = self._wrapper.find_stk2(p2.encode(), p3.value, p4)
+        p3.value = self._wrapper.find_stk2(p2.encode(), p3.value, p4._wrapper)
         
 
 
@@ -123,14 +123,14 @@ class GXMSTK:
 
 
     def read_ini(self, p2: 'GXRA') -> None:
-        self._wrapper.read_ini(p2)
+        self._wrapper.read_ini(p2._wrapper)
         
 
 
 
 
     def save_profile(self, p2: 'GXWA') -> None:
-        self._wrapper.save_profile(p2)
+        self._wrapper.save_profile(p2._wrapper)
         
 
 

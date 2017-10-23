@@ -65,7 +65,7 @@ class GXMVG:
 
     @classmethod
     def create(cls, p1: 'GXMAP', p2: str, p3: float, p4: float, p5: float, p6: float, p7: float, p8: float, p9: float, p10: float) -> 'GXMVG':
-        ret_val = gxapi_cy.WrapMVG.create(GXContext._get_tls_geo(), p2.encode(), p3, p4, p5, p6, p7, p8, p9, p10)
+        ret_val = gxapi_cy.WrapMVG.create(GXContext._get_tls_geo(), p1._wrapper, p2.encode(), p3, p4, p5, p6, p7, p8, p9, p10)
         return GXMVG(ret_val)
 
 
@@ -102,14 +102,14 @@ class GXMVG:
 
 
     def poly_line_va(self, p2: int, p3: int, p4: 'GXVV', p5: 'GXVA', p6: 'GXVV') -> None:
-        self._wrapper.poly_line_va(p2, p3, p4, p5, p6)
+        self._wrapper.poly_line_va(p2, p3, p4._wrapper, p5._wrapper, p6._wrapper)
         
 
 
 
 
     def poly_line_vv(self, p2: int, p3: int, p4: 'GXVV', p5: 'GXVV') -> None:
-        self._wrapper.poly_line_vv(p2, p3, p4, p5)
+        self._wrapper.poly_line_vv(p2, p3, p4._wrapper, p5._wrapper)
         
 
 

@@ -51,7 +51,7 @@ class GX3DN:
 
 
     def copy(self, p2: 'GX3DN') -> None:
-        self._wrapper.copy(p2)
+        self._wrapper.copy(p2._wrapper)
         
 
 

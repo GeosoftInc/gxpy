@@ -51,7 +51,7 @@ class GXDXFI:
 
     @classmethod
     def create(cls, p1: str) -> 'GXDXFI':
-        ret_val = gxapi_cy.WrapDXFI.create(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapDXFI.create(GXContext._get_tls_geo(), p1.encode())
         return GXDXFI(ret_val)
 
 
@@ -60,14 +60,14 @@ class GXDXFI:
 
     @classmethod
     def dxf2_ply(cls, p1: 'GXPLY', p2: 'GXDXFI') -> None:
-        gxapi_cy.WrapDXFI.dxf2_ply(GXContext._get_tls_geo(), p2)
+        gxapi_cy.WrapDXFI.dxf2_ply(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper)
         
 
 
 
 
     def dxf2_view_ex(self, p2: 'GXMVIEW', p3: int, p4: int, p5: str, p6: int, p7: int) -> None:
-        self._wrapper.dxf2_view_ex(p2, p3, p4, p5.encode(), p6, p7)
+        self._wrapper.dxf2_view_ex(p2._wrapper, p3, p4, p5.encode(), p6, p7)
         
 
 

@@ -51,7 +51,7 @@ class GXHXYZ:
 
     @classmethod
     def create(cls, p1: str) -> 'GXHXYZ':
-        ret_val = gxapi_cy.WrapHXYZ.create(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapHXYZ.create(GXContext._get_tls_geo(), p1.encode())
         return GXHXYZ(ret_val)
 
 
@@ -60,28 +60,28 @@ class GXHXYZ:
 
 
     def get_meta(self, p2: 'GXMETA') -> None:
-        self._wrapper.get_meta(p2)
+        self._wrapper.get_meta(p2._wrapper)
         
 
 
 
     @classmethod
     def h_create_db(cls, p1: 'GXDB', p2: 'GXVV', p3: str) -> 'GXHXYZ':
-        ret_val = gxapi_cy.WrapHXYZ.h_create_db(GXContext._get_tls_geo(), p2, p3.encode())
+        ret_val = gxapi_cy.WrapHXYZ.h_create_db(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3.encode())
         return GXHXYZ(ret_val)
 
 
 
     @classmethod
     def h_create_sql(cls, p1: str, p2: str, p3: str, p4: str, p5: 'GXIPJ', p6: str) -> 'GXHXYZ':
-        ret_val = gxapi_cy.WrapHXYZ.h_create_sql(GXContext._get_tls_geo(), p2.encode(), p3.encode(), p4.encode(), p5, p6.encode())
+        ret_val = gxapi_cy.WrapHXYZ.h_create_sql(GXContext._get_tls_geo(), p1.encode(), p2.encode(), p3.encode(), p4.encode(), p5._wrapper, p6.encode())
         return GXHXYZ(ret_val)
 
 
 
 
     def set_meta(self, p2: 'GXMETA') -> None:
-        self._wrapper.set_meta(p2)
+        self._wrapper.set_meta(p2._wrapper)
         
 
 

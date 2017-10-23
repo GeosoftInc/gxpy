@@ -51,14 +51,14 @@ class GXMAPL:
 
     @classmethod
     def create(cls, p1: str, p2: str, p3: int) -> 'GXMAPL':
-        ret_val = gxapi_cy.WrapMAPL.create(GXContext._get_tls_geo(), p2.encode(), p3)
+        ret_val = gxapi_cy.WrapMAPL.create(GXContext._get_tls_geo(), p1.encode(), p2.encode(), p3)
         return GXMAPL(ret_val)
 
 
 
     @classmethod
     def create_reg(cls, p1: str, p2: str, p3: int, p4: 'GXREG') -> 'GXMAPL':
-        ret_val = gxapi_cy.WrapMAPL.create_reg(GXContext._get_tls_geo(), p2.encode(), p3, p4)
+        ret_val = gxapi_cy.WrapMAPL.create_reg(GXContext._get_tls_geo(), p1.encode(), p2.encode(), p3, p4._wrapper)
         return GXMAPL(ret_val)
 
 
@@ -67,7 +67,7 @@ class GXMAPL:
 
 
     def process(self, p2: 'GXMAP') -> None:
-        self._wrapper.process(p2)
+        self._wrapper.process(p2._wrapper)
         
 
 

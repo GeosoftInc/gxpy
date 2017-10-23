@@ -51,7 +51,7 @@ class GXGER:
 
     @classmethod
     def create(cls, p1: str) -> 'GXGER':
-        ret_val = gxapi_cy.WrapGER.create(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapGER.create(GXContext._get_tls_geo(), p1.encode())
         return GXGER(ret_val)
 
 

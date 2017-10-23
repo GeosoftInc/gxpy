@@ -72,28 +72,28 @@ class GXARCDB:
 
 
     def export_to_db(self, p2: 'GXDB', p3: str, p4: str) -> None:
-        self._wrapper.export_to_db(p2, p3.encode(), p4.encode())
+        self._wrapper.export_to_db(p2._wrapper, p3.encode(), p4.encode())
         
 
 
 
 
     def field_lst(self, p2: 'GXLST') -> None:
-        self._wrapper.field_lst(p2)
+        self._wrapper.field_lst(p2._wrapper)
         
 
 
 
     @classmethod
     def from_i_unknown(cls, p1: int) -> 'GXARCDB':
-        ret_val = gxapi_cy.WrapARCDB.from_i_unknown(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapARCDB.from_i_unknown(GXContext._get_tls_geo(), p1)
         return GXARCDB(ret_val)
 
 
 
 
     def get_ipj(self, p2: 'GXIPJ') -> None:
-        self._wrapper.get_ipj(p2)
+        self._wrapper.get_ipj(p2._wrapper)
         
 
 
@@ -121,7 +121,7 @@ class GXARCDB:
 
     @classmethod
     def sel_tbl_ex_gui(cls, p1: int_ref) -> 'GXARCDB':
-        ret_val, p1.value = gxapi_cy.WrapARCDB.sel_tbl_ex_gui(GXContext._get_tls_geo())
+        ret_val, p1.value = gxapi_cy.WrapARCDB.sel_tbl_ex_gui(GXContext._get_tls_geo(), p1.value)
         return GXARCDB(ret_val)
 
 

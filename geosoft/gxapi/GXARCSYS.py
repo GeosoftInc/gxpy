@@ -51,21 +51,21 @@ class GXARCSYS:
 
     @classmethod
     def get_browse_loc(cls, p1: str_ref) -> None:
-        p1.value = gxapi_cy.WrapARCSYS.get_browse_loc(GXContext._get_tls_geo())
+        p1.value = gxapi_cy.WrapARCSYS.get_browse_loc(GXContext._get_tls_geo(), p1.value.encode())
         
 
 
 
     @classmethod
     def get_current_doc(cls, p1: str_ref) -> None:
-        p1.value = gxapi_cy.WrapARCSYS.get_current_doc(GXContext._get_tls_geo())
+        p1.value = gxapi_cy.WrapARCSYS.get_current_doc(GXContext._get_tls_geo(), p1.value.encode())
         
 
 
 
     @classmethod
     def set_browse_loc(cls, p1: str) -> None:
-        gxapi_cy.WrapARCSYS.set_browse_loc(GXContext._get_tls_geo())
+        gxapi_cy.WrapARCSYS.set_browse_loc(GXContext._get_tls_geo(), p1.encode())
         
 
 

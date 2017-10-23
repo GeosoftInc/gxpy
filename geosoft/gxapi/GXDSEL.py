@@ -88,7 +88,7 @@ class GXDSEL:
 
 
     def select_area(self, p2: 'GXPLY') -> None:
-        self._wrapper.select_area(p2)
+        self._wrapper.select_area(p2._wrapper)
         
 
 
@@ -123,7 +123,7 @@ class GXDSEL:
 
 
     def set_ipj(self, p2: 'GXIPJ', p3: int) -> None:
-        self._wrapper.set_ipj(p2, p3)
+        self._wrapper.set_ipj(p2._wrapper, p3)
         
 
 

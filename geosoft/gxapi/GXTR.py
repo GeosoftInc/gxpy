@@ -51,7 +51,7 @@ class GXTR:
 
     @classmethod
     def create(cls, p1: int) -> 'GXTR':
-        ret_val = gxapi_cy.WrapTR.create(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapTR.create(GXContext._get_tls_geo(), p1)
         return GXTR(ret_val)
 
 
@@ -60,7 +60,7 @@ class GXTR:
 
 
     def copy(self, p2: 'GXTR') -> None:
-        self._wrapper.copy(p2)
+        self._wrapper.copy(p2._wrapper)
         
 
 

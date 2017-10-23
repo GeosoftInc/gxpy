@@ -51,35 +51,35 @@ class GXDATALINKD:
 
     @classmethod
     def create_arc_lyr(cls, p1: str) -> 'GXDATALINKD':
-        ret_val = gxapi_cy.WrapDATALINKD.create_arc_lyr(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapDATALINKD.create_arc_lyr(GXContext._get_tls_geo(), p1.encode())
         return GXDATALINKD(ret_val)
 
 
 
     @classmethod
     def create_arc_lyr_ex(cls, p1: str, p2: int) -> 'GXDATALINKD':
-        ret_val = gxapi_cy.WrapDATALINKD.create_arc_lyr_ex(GXContext._get_tls_geo(), p2)
+        ret_val = gxapi_cy.WrapDATALINKD.create_arc_lyr_ex(GXContext._get_tls_geo(), p1.encode(), p2)
         return GXDATALINKD(ret_val)
 
 
 
     @classmethod
     def create_arc_lyr_from_tmp(cls, p1: str) -> 'GXDATALINKD':
-        ret_val = gxapi_cy.WrapDATALINKD.create_arc_lyr_from_tmp(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapDATALINKD.create_arc_lyr_from_tmp(GXContext._get_tls_geo(), p1.encode())
         return GXDATALINKD(ret_val)
 
 
 
     @classmethod
     def create_arc_lyr_from_tmp_ex(cls, p1: str, p2: int) -> 'GXDATALINKD':
-        ret_val = gxapi_cy.WrapDATALINKD.create_arc_lyr_from_tmp_ex(GXContext._get_tls_geo(), p2)
+        ret_val = gxapi_cy.WrapDATALINKD.create_arc_lyr_from_tmp_ex(GXContext._get_tls_geo(), p1.encode(), p2)
         return GXDATALINKD(ret_val)
 
 
 
     @classmethod
     def create_bing(cls, p1: int) -> 'GXDATALINKD':
-        ret_val = gxapi_cy.WrapDATALINKD.create_bing(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapDATALINKD.create_bing(GXContext._get_tls_geo(), p1)
         return GXDATALINKD(ret_val)
 
 
@@ -95,7 +95,7 @@ class GXDATALINKD:
 
 
     def get_ipj(self, p2: 'GXIPJ') -> None:
-        self._wrapper.get_ipj(p2)
+        self._wrapper.get_ipj(p2._wrapper)
         
 
 

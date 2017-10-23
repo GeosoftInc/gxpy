@@ -60,14 +60,14 @@ class GXLPT:
 
 
     def get_lst(self, p2: 'GXLST') -> None:
-        self._wrapper.get_lst(p2)
+        self._wrapper.get_lst(p2._wrapper)
         
 
 
 
 
     def get_standard_lst(self, p2: 'GXLST') -> None:
-        self._wrapper.get_standard_lst(p2)
+        self._wrapper.get_standard_lst(p2._wrapper)
         
 
 

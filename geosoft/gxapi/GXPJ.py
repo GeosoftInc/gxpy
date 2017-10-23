@@ -51,21 +51,21 @@ class GXPJ:
 
 
     def clip_ply(self, p2: float, p3: float, p4: float, p5: float, p6: float, p7: 'GXPLY') -> None:
-        self._wrapper.clip_ply(p2, p3, p4, p5, p6, p7)
+        self._wrapper.clip_ply(p2, p3, p4, p5, p6, p7._wrapper)
         
 
 
 
 
     def convert_vv(self, p2: 'GXVV', p3: 'GXVV') -> None:
-        self._wrapper.convert_vv(p2, p3)
+        self._wrapper.convert_vv(p2._wrapper, p3._wrapper)
         
 
 
 
 
     def convert_vv3(self, p2: 'GXVV', p3: 'GXVV', p4: 'GXVV') -> None:
-        self._wrapper.convert_vv3(p2, p3, p4)
+        self._wrapper.convert_vv3(p2._wrapper, p3._wrapper, p4._wrapper)
         
 
 
@@ -93,21 +93,21 @@ class GXPJ:
 
     @classmethod
     def create(cls, p1: str, p2: str) -> 'GXPJ':
-        ret_val = gxapi_cy.WrapPJ.create(GXContext._get_tls_geo(), p2.encode())
+        ret_val = gxapi_cy.WrapPJ.create(GXContext._get_tls_geo(), p1.encode(), p2.encode())
         return GXPJ(ret_val)
 
 
 
     @classmethod
     def create_ipj(cls, p1: 'GXIPJ', p2: 'GXIPJ') -> 'GXPJ':
-        ret_val = gxapi_cy.WrapPJ.create_ipj(GXContext._get_tls_geo(), p2)
+        ret_val = gxapi_cy.WrapPJ.create_ipj(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper)
         return GXPJ(ret_val)
 
 
 
     @classmethod
     def create_rectified(cls, p1: float, p2: float, p3: float, p4: float, p5: float, p6: float, p7: int) -> 'GXPJ':
-        ret_val = gxapi_cy.WrapPJ.create_rectified(GXContext._get_tls_geo(), p2, p3, p4, p5, p6, p7)
+        ret_val = gxapi_cy.WrapPJ.create_rectified(GXContext._get_tls_geo(), p1, p2, p3, p4, p5, p6, p7)
         return GXPJ(ret_val)
 
 

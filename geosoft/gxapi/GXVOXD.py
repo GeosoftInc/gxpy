@@ -51,21 +51,21 @@ class GXVOXD:
 
     @classmethod
     def create(cls, p1: 'GXVOX', p2: str, p3: int, p4: float) -> 'GXVOXD':
-        ret_val = gxapi_cy.WrapVOXD.create(GXContext._get_tls_geo(), p2.encode(), p3, p4)
+        ret_val = gxapi_cy.WrapVOXD.create(GXContext._get_tls_geo(), p1._wrapper, p2.encode(), p3, p4)
         return GXVOXD(ret_val)
 
 
 
     @classmethod
     def create_itr(cls, p1: 'GXVOX', p2: 'GXITR') -> 'GXVOXD':
-        ret_val = gxapi_cy.WrapVOXD.create_itr(GXContext._get_tls_geo(), p2)
+        ret_val = gxapi_cy.WrapVOXD.create_itr(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper)
         return GXVOXD(ret_val)
 
 
 
     @classmethod
     def create_thematic(cls, p1: 'GXVOX') -> 'GXVOXD':
-        ret_val = gxapi_cy.WrapVOXD.create_thematic(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapVOXD.create_thematic(GXContext._get_tls_geo(), p1._wrapper)
         return GXVOXD(ret_val)
 
 
@@ -79,14 +79,14 @@ class GXVOXD:
 
 
     def get_thematic_info(self, p2: 'GXTPAT', p3: 'GXVV') -> None:
-        self._wrapper.get_thematic_info(p2, p3)
+        self._wrapper.get_thematic_info(p2._wrapper, p3._wrapper)
         
 
 
 
 
     def set_thematic_selection(self, p2: 'GXVV') -> None:
-        self._wrapper.set_thematic_selection(p2)
+        self._wrapper.set_thematic_selection(p2._wrapper)
         
 
 
@@ -109,7 +109,7 @@ class GXVOXD:
 
 
     def get_itr(self, p2: 'GXITR') -> None:
-        self._wrapper.get_itr(p2)
+        self._wrapper.get_itr(p2._wrapper)
         
 
 
@@ -130,7 +130,7 @@ class GXVOXD:
 
 
     def set_itr(self, p2: 'GXITR') -> None:
-        self._wrapper.set_itr(p2)
+        self._wrapper.set_itr(p2._wrapper)
         
 
 

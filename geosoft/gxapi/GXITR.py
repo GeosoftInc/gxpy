@@ -58,14 +58,14 @@ class GXITR:
 
 
     def color_vv(self, p2: 'GXVV', p3: 'GXVV') -> None:
-        self._wrapper.color_vv(p2, p3)
+        self._wrapper.color_vv(p2._wrapper, p3._wrapper)
         
 
 
 
 
     def copy(self, p2: 'GXITR') -> None:
-        self._wrapper.copy(p2)
+        self._wrapper.copy(p2._wrapper)
         
 
 
@@ -79,28 +79,28 @@ class GXITR:
 
     @classmethod
     def create_file(cls, p1: str) -> 'GXITR':
-        ret_val = gxapi_cy.WrapITR.create_file(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapITR.create_file(GXContext._get_tls_geo(), p1.encode())
         return GXITR(ret_val)
 
 
 
     @classmethod
     def create_img(cls, p1: 'GXIMG', p2: str, p3: int, p4: float) -> 'GXITR':
-        ret_val = gxapi_cy.WrapITR.create_img(GXContext._get_tls_geo(), p2.encode(), p3, p4)
+        ret_val = gxapi_cy.WrapITR.create_img(GXContext._get_tls_geo(), p1._wrapper, p2.encode(), p3, p4)
         return GXITR(ret_val)
 
 
 
     @classmethod
     def create_map(cls, p1: 'GXMAP', p2: str) -> 'GXITR':
-        ret_val = gxapi_cy.WrapITR.create_map(GXContext._get_tls_geo(), p2.encode())
+        ret_val = gxapi_cy.WrapITR.create_map(GXContext._get_tls_geo(), p1._wrapper, p2.encode())
         return GXITR(ret_val)
 
 
 
     @classmethod
     def create_s(cls, p1: 'GXBF') -> 'GXITR':
-        ret_val = gxapi_cy.WrapITR.create_s(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapITR.create_s(GXContext._get_tls_geo(), p1._wrapper)
         return GXITR(ret_val)
 
 
@@ -109,7 +109,7 @@ class GXITR:
 
 
     def equal_area(self, p2: 'GXST', p3: float) -> None:
-        self._wrapper.equal_area(p2, p3)
+        self._wrapper.equal_area(p2._wrapper, p3)
         
 
 
@@ -221,14 +221,14 @@ class GXITR:
 
 
     def serial(self, p2: 'GXBF') -> None:
-        self._wrapper.serial(p2)
+        self._wrapper.serial(p2._wrapper)
         
 
 
 
     @classmethod
     def set_agg_map(cls, p1: 'GXMAP', p2: str, p3: 'GXITR') -> None:
-        gxapi_cy.WrapITR.set_agg_map(GXContext._get_tls_geo(), p2.encode(), p3)
+        gxapi_cy.WrapITR.set_agg_map(GXContext._get_tls_geo(), p1._wrapper, p2.encode(), p3._wrapper)
         
 
 

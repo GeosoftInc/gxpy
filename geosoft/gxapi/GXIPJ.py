@@ -100,7 +100,7 @@ class GXIPJ:
 
 
     def add_warp(self, p2: int, p3: 'GXVV', p4: 'GXVV', p5: 'GXVV', p6: 'GXVV') -> None:
-        self._wrapper.add_warp(p2, p3, p4, p5, p6)
+        self._wrapper.add_warp(p2, p3._wrapper, p4._wrapper, p5._wrapper, p6._wrapper)
         
 
 
@@ -121,21 +121,21 @@ class GXIPJ:
 
 
     def convert_orientation_warp_vv(self, p2: 'GXVV', p3: 'GXVV', p4: 'GXVV', p5: int) -> None:
-        self._wrapper.convert_orientation_warp_vv(p2, p3, p4, p5)
+        self._wrapper.convert_orientation_warp_vv(p2._wrapper, p3._wrapper, p4._wrapper, p5)
         
 
 
 
 
     def copy(self, p2: 'GXIPJ') -> None:
-        self._wrapper.copy(p2)
+        self._wrapper.copy(p2._wrapper)
         
 
 
 
 
     def copy_projection(self, p2: 'GXIPJ') -> None:
-        self._wrapper.copy_projection(p2)
+        self._wrapper.copy_projection(p2._wrapper)
         
 
 
@@ -149,14 +149,14 @@ class GXIPJ:
 
     @classmethod
     def create_s(cls, p1: 'GXBF') -> 'GXIPJ':
-        ret_val = gxapi_cy.WrapIPJ.create_s(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapIPJ.create_s(GXContext._get_tls_geo(), p1._wrapper)
         return GXIPJ(ret_val)
 
 
 
     @classmethod
     def create_xml(cls, p1: str) -> 'GXIPJ':
-        ret_val = gxapi_cy.WrapIPJ.create_xml(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapIPJ.create_xml(GXContext._get_tls_geo(), p1.encode())
         return GXIPJ(ret_val)
 
 
@@ -179,14 +179,14 @@ class GXIPJ:
 
 
     def get_crooked_section_view_v_vs(self, p2: 'GXVV', p3: 'GXVV', p4: 'GXVV', p5: int_ref) -> None:
-        p5.value = self._wrapper.get_crooked_section_view_v_vs(p2, p3, p4, p5.value)
+        p5.value = self._wrapper.get_crooked_section_view_v_vs(p2._wrapper, p3._wrapper, p4._wrapper, p5.value)
         
 
 
 
     @classmethod
     def get_list(cls, p1: int, p2: str, p3: 'GXLST') -> None:
-        gxapi_cy.WrapIPJ.get_list(GXContext._get_tls_geo(), p2.encode(), p3)
+        gxapi_cy.WrapIPJ.get_list(GXContext._get_tls_geo(), p1, p2.encode(), p3._wrapper)
         
 
 
@@ -207,14 +207,14 @@ class GXIPJ:
 
 
     def get_plane_equation2(self, p2: 'GXIPJ', p3: float, p4: float, p5: float, p6: float, p7: float_ref, p8: float_ref, p9: float_ref, p10: float_ref, p11: float_ref, p12: float_ref, p13: float_ref, p14: float_ref, p15: float_ref) -> None:
-        p7.value, p8.value, p9.value, p10.value, p11.value, p12.value, p13.value, p14.value, p15.value = self._wrapper.get_plane_equation2(p2, p3, p4, p5, p6, p7.value, p8.value, p9.value, p10.value, p11.value, p12.value, p13.value, p14.value, p15.value)
+        p7.value, p8.value, p9.value, p10.value, p11.value, p12.value, p13.value, p14.value, p15.value = self._wrapper.get_plane_equation2(p2._wrapper, p3, p4, p5, p6, p7.value, p8.value, p9.value, p10.value, p11.value, p12.value, p13.value, p14.value, p15.value)
         
 
 
 
 
     def compare_datums(self, p2: 'GXIPJ') -> int:
-        ret_val = self._wrapper.compare_datums(p2)
+        ret_val = self._wrapper.compare_datums(p2._wrapper)
         return ret_val
 
 
@@ -228,21 +228,21 @@ class GXIPJ:
 
 
     def convert_warp_vv(self, p2: 'GXVV', p3: 'GXVV', p4: int) -> int:
-        ret_val = self._wrapper.convert_warp_vv(p2, p3, p4)
+        ret_val = self._wrapper.convert_warp_vv(p2._wrapper, p3._wrapper, p4)
         return ret_val
 
 
 
 
     def coordinate_systems_are_the_same(self, p2: 'GXIPJ') -> int:
-        ret_val = self._wrapper.coordinate_systems_are_the_same(p2)
+        ret_val = self._wrapper.coordinate_systems_are_the_same(p2._wrapper)
         return ret_val
 
 
 
 
     def coordinate_systems_are_the_same_within_a_small_tolerance(self, p2: 'GXIPJ') -> int:
-        ret_val = self._wrapper.coordinate_systems_are_the_same_within_a_small_tolerance(p2)
+        ret_val = self._wrapper.coordinate_systems_are_the_same_within_a_small_tolerance(p2._wrapper)
         return ret_val
 
 
@@ -347,14 +347,14 @@ class GXIPJ:
 
 
     def orientations_are_the_same(self, p2: 'GXIPJ') -> int:
-        ret_val = self._wrapper.orientations_are_the_same(p2)
+        ret_val = self._wrapper.orientations_are_the_same(p2._wrapper)
         return ret_val
 
 
 
 
     def orientations_are_the_same_within_a_small_tolerance(self, p2: 'GXIPJ') -> int:
-        ret_val = self._wrapper.orientations_are_the_same_within_a_small_tolerance(p2)
+        ret_val = self._wrapper.orientations_are_the_same_within_a_small_tolerance(p2._wrapper)
         return ret_val
 
 
@@ -389,14 +389,14 @@ class GXIPJ:
 
 
     def support_datum_transform(self, p2: 'GXIPJ') -> int:
-        ret_val = self._wrapper.support_datum_transform(p2)
+        ret_val = self._wrapper.support_datum_transform(p2._wrapper)
         return ret_val
 
 
 
     @classmethod
     def unit_name(cls, p1: float, p2: int, p3: str_ref) -> None:
-        p3.value = gxapi_cy.WrapIPJ.unit_name(GXContext._get_tls_geo(), p2, p3.value.encode())
+        p3.value = gxapi_cy.WrapIPJ.unit_name(GXContext._get_tls_geo(), p1, p2, p3.value.encode())
         
 
 
@@ -410,14 +410,14 @@ class GXIPJ:
 
 
     def warps_are_the_same(self, p2: 'GXIPJ') -> int:
-        ret_val = self._wrapper.warps_are_the_same(p2)
+        ret_val = self._wrapper.warps_are_the_same(p2._wrapper)
         return ret_val
 
 
 
 
     def warps_are_the_same_within_a_small_tolerance(self, p2: 'GXIPJ') -> int:
-        ret_val = self._wrapper.warps_are_the_same_within_a_small_tolerance(p2)
+        ret_val = self._wrapper.warps_are_the_same_within_a_small_tolerance(p2._wrapper)
         return ret_val
 
 
@@ -438,7 +438,7 @@ class GXIPJ:
 
 
     def new_box_resolution(self, p2: 'GXIPJ', p3: float, p4: float, p5: float, p6: float, p7: float, p8: float_ref, p9: float_ref, p10: float_ref) -> None:
-        p8.value, p9.value, p10.value = self._wrapper.new_box_resolution(p2, p3, p4, p5, p6, p7, p8.value, p9.value, p10.value)
+        p8.value, p9.value, p10.value = self._wrapper.new_box_resolution(p2._wrapper, p3, p4, p5, p6, p7, p8.value, p9.value, p10.value)
         
 
 
@@ -466,14 +466,14 @@ class GXIPJ:
 
     @classmethod
     def unit_scale(cls, p1: str, p2: float) -> float:
-        ret_val = gxapi_cy.WrapIPJ.unit_scale(GXContext._get_tls_geo(), p2)
+        ret_val = gxapi_cy.WrapIPJ.unit_scale(GXContext._get_tls_geo(), p1.encode(), p2)
         return ret_val
 
 
 
 
     def serial(self, p2: 'GXBF') -> None:
-        self._wrapper.serial(p2)
+        self._wrapper.serial(p2._wrapper)
         
 
 
@@ -536,7 +536,7 @@ class GXIPJ:
 
 
     def set_crooked_section_view(self, p2: 'GXVV', p3: 'GXVV', p4: 'GXVV', p5: int) -> None:
-        self._wrapper.set_crooked_section_view(p2, p3, p4, p5)
+        self._wrapper.set_crooked_section_view(p2._wrapper, p3._wrapper, p4._wrapper, p5)
         
 
 
@@ -627,7 +627,7 @@ class GXIPJ:
 
 
     def reproject_section_grid(self, p2: 'GXIPJ', p3: float_ref, p4: float_ref, p5: float_ref, p6: float_ref, p7: float_ref) -> None:
-        p3.value, p4.value, p5.value, p6.value, p7.value = self._wrapper.reproject_section_grid(p2, p3.value, p4.value, p5.value, p6.value, p7.value)
+        p3.value, p4.value, p5.value, p6.value, p7.value = self._wrapper.reproject_section_grid(p2._wrapper, p3.value, p4.value, p5.value, p6.value, p7.value)
         
 
 

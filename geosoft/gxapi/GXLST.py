@@ -72,7 +72,7 @@ class GXLST:
 
 
     def append(self, p2: 'GXLST') -> None:
-        self._wrapper.append(p2)
+        self._wrapper.append(p2._wrapper)
         
 
 
@@ -100,21 +100,21 @@ class GXLST:
 
 
     def copy(self, p2: 'GXLST') -> None:
-        self._wrapper.copy(p2)
+        self._wrapper.copy(p2._wrapper)
         
 
 
 
     @classmethod
     def create(cls, p1: int) -> 'GXLST':
-        ret_val = gxapi_cy.WrapLST.create(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapLST.create(GXContext._get_tls_geo(), p1)
         return GXLST(ret_val)
 
 
 
     @classmethod
     def create_s(cls, p1: 'GXBF') -> 'GXLST':
-        ret_val = gxapi_cy.WrapLST.create_s(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapLST.create_s(GXContext._get_tls_geo(), p1._wrapper)
         return GXLST(ret_val)
 
 
@@ -130,7 +130,7 @@ class GXLST:
 
 
     def find_items(self, p2: int, p3: 'GXLST', p4: 'GXVV') -> None:
-        self._wrapper.find_items(p2, p3, p4)
+        self._wrapper.find_items(p2, p3._wrapper, p4._wrapper)
         
 
 
@@ -228,14 +228,14 @@ class GXLST:
 
 
     def select_csv_string_items(self, p2: str, p3: 'GXLST') -> None:
-        self._wrapper.select_csv_string_items(p2.encode(), p3)
+        self._wrapper.select_csv_string_items(p2.encode(), p3._wrapper)
         
 
 
 
 
     def serial(self, p2: 'GXBF') -> None:
-        self._wrapper.serial(p2)
+        self._wrapper.serial(p2._wrapper)
         
 
 

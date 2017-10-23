@@ -51,7 +51,7 @@ class GXDOCU:
 
 
     def copy(self, p2: 'GXDOCU') -> None:
-        self._wrapper.copy(p2)
+        self._wrapper.copy(p2._wrapper)
         
 
 
@@ -65,7 +65,7 @@ class GXDOCU:
 
     @classmethod
     def create_s(cls, p1: 'GXBF') -> 'GXDOCU':
-        ret_val = gxapi_cy.WrapDOCU.create_s(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapDOCU.create_s(GXContext._get_tls_geo(), p1._wrapper)
         return GXDOCU(ret_val)
 
 
@@ -88,7 +88,7 @@ class GXDOCU:
 
 
     def get_meta(self, p2: 'GXMETA') -> None:
-        self._wrapper.get_meta(p2)
+        self._wrapper.get_meta(p2._wrapper)
         
 
 
@@ -130,7 +130,7 @@ class GXDOCU:
 
 
     def serial(self, p2: 'GXBF') -> None:
-        self._wrapper.serial(p2)
+        self._wrapper.serial(p2._wrapper)
         
 
 
@@ -151,7 +151,7 @@ class GXDOCU:
 
 
     def set_meta(self, p2: 'GXMETA') -> None:
-        self._wrapper.set_meta(p2)
+        self._wrapper.set_meta(p2._wrapper)
         
 
 

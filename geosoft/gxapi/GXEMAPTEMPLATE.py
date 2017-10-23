@@ -92,7 +92,7 @@ class GXEMAPTEMPLATE:
 
     @classmethod
     def get_map_templates_lst(cls, p1: 'GXLST', p2: int) -> int:
-        ret_val = gxapi_cy.WrapEMAPTEMPLATE.get_map_templates_lst(GXContext._get_tls_geo(), p2)
+        ret_val = gxapi_cy.WrapEMAPTEMPLATE.get_map_templates_lst(GXContext._get_tls_geo(), p1._wrapper, p2)
         return ret_val
 
 
@@ -113,7 +113,7 @@ class GXEMAPTEMPLATE:
 
     @classmethod
     def i_get_specified_map_name(cls, p1: str, p2: str, p3: str_ref) -> int:
-        ret_val, p3.value = gxapi_cy.WrapEMAPTEMPLATE.i_get_specified_map_name(GXContext._get_tls_geo(), p2.encode(), p3.value.encode())
+        ret_val, p3.value = gxapi_cy.WrapEMAPTEMPLATE.i_get_specified_map_name(GXContext._get_tls_geo(), p1.encode(), p2.encode(), p3.value.encode())
         return ret_val
 
 
@@ -127,7 +127,7 @@ class GXEMAPTEMPLATE:
 
     @classmethod
     def loaded(cls, p1: str) -> int:
-        ret_val = gxapi_cy.WrapEMAPTEMPLATE.loaded(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapEMAPTEMPLATE.loaded(GXContext._get_tls_geo(), p1.encode())
         return ret_val
 
 
@@ -155,14 +155,14 @@ class GXEMAPTEMPLATE:
 
     @classmethod
     def load(cls, p1: str) -> 'GXEMAPTEMPLATE':
-        ret_val = gxapi_cy.WrapEMAPTEMPLATE.load(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapEMAPTEMPLATE.load(GXContext._get_tls_geo(), p1.encode())
         return GXEMAPTEMPLATE(ret_val)
 
 
 
     @classmethod
     def load_no_activate(cls, p1: str) -> 'GXEMAPTEMPLATE':
-        ret_val = gxapi_cy.WrapEMAPTEMPLATE.load_no_activate(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapEMAPTEMPLATE.load_no_activate(GXContext._get_tls_geo(), p1.encode())
         return GXEMAPTEMPLATE(ret_val)
 
 
@@ -183,7 +183,7 @@ class GXEMAPTEMPLATE:
 
     @classmethod
     def un_load(cls, p1: str) -> None:
-        gxapi_cy.WrapEMAPTEMPLATE.un_load(GXContext._get_tls_geo())
+        gxapi_cy.WrapEMAPTEMPLATE.un_load(GXContext._get_tls_geo(), p1.encode())
         
 
 
@@ -197,7 +197,7 @@ class GXEMAPTEMPLATE:
 
     @classmethod
     def un_load_verify(cls, p1: str, p2: int) -> None:
-        gxapi_cy.WrapEMAPTEMPLATE.un_load_verify(GXContext._get_tls_geo(), p2)
+        gxapi_cy.WrapEMAPTEMPLATE.un_load_verify(GXContext._get_tls_geo(), p1.encode(), p2)
         
 
 
@@ -318,7 +318,7 @@ class GXEMAPTEMPLATE:
 
     @classmethod
     def create_virtual(cls, p1: str) -> 'GXEMAPTEMPLATE':
-        ret_val = gxapi_cy.WrapEMAPTEMPLATE.create_virtual(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapEMAPTEMPLATE.create_virtual(GXContext._get_tls_geo(), p1.encode())
         return GXEMAPTEMPLATE(ret_val)
 
 

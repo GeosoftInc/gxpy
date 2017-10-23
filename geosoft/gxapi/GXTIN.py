@@ -51,21 +51,21 @@ class GXTIN:
 
 
     def copy(self, p2: 'GXTIN') -> None:
-        self._wrapper.copy(p2)
+        self._wrapper.copy(p2._wrapper)
         
 
 
 
     @classmethod
     def create(cls, p1: 'GXVV', p2: 'GXVV', p3: 'GXVV') -> 'GXTIN':
-        ret_val = gxapi_cy.WrapTIN.create(GXContext._get_tls_geo(), p2, p3)
+        ret_val = gxapi_cy.WrapTIN.create(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3._wrapper)
         return GXTIN(ret_val)
 
 
 
     @classmethod
     def create_s(cls, p1: 'GXBF') -> 'GXTIN':
-        ret_val = gxapi_cy.WrapTIN.create_s(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapTIN.create_s(GXContext._get_tls_geo(), p1._wrapper)
         return GXTIN(ret_val)
 
 
@@ -74,49 +74,49 @@ class GXTIN:
 
     @classmethod
     def export_xml(cls, p1: str, p2: int_ref, p3: str) -> None:
-        p2.value = gxapi_cy.WrapTIN.export_xml(GXContext._get_tls_geo(), p2.value, p3.encode())
+        p2.value = gxapi_cy.WrapTIN.export_xml(GXContext._get_tls_geo(), p1.encode(), p2.value, p3.encode())
         
 
 
 
 
     def get_convex_hull(self, p2: 'GXPLY') -> None:
-        self._wrapper.get_convex_hull(p2)
+        self._wrapper.get_convex_hull(p2._wrapper)
         
 
 
 
 
     def get_ipj(self, p2: 'GXIPJ') -> None:
-        self._wrapper.get_ipj(p2)
+        self._wrapper.get_ipj(p2._wrapper)
         
 
 
 
 
     def get_joins(self, p2: 'GXVV', p3: 'GXVV', p4: 'GXVV') -> None:
-        self._wrapper.get_joins(p2, p3, p4)
+        self._wrapper.get_joins(p2._wrapper, p3._wrapper, p4._wrapper)
         
 
 
 
 
     def get_mesh(self, p2: 'GXVV') -> None:
-        self._wrapper.get_mesh(p2)
+        self._wrapper.get_mesh(p2._wrapper)
         
 
 
 
 
     def get_nodes(self, p2: 'GXVV', p3: 'GXVV', p4: 'GXVV') -> None:
-        self._wrapper.get_nodes(p2, p3, p4)
+        self._wrapper.get_nodes(p2._wrapper, p3._wrapper, p4._wrapper)
         
 
 
 
 
     def get_triangles(self, p2: 'GXVV', p3: 'GXVV', p4: 'GXVV') -> None:
-        self._wrapper.get_triangles(p2, p3, p4)
+        self._wrapper.get_triangles(p2._wrapper, p3._wrapper, p4._wrapper)
         
 
 
@@ -130,7 +130,7 @@ class GXTIN:
 
 
     def get_voronoi_edges(self, p2: 'GXVV') -> None:
-        self._wrapper.get_voronoi_edges(p2)
+        self._wrapper.get_voronoi_edges(p2._wrapper)
         
 
 
@@ -158,7 +158,7 @@ class GXTIN:
 
 
     def interp_vv(self, p2: 'GXVV', p3: 'GXVV', p4: 'GXVV') -> None:
-        self._wrapper.interp_vv(p2, p3, p4)
+        self._wrapper.interp_vv(p2._wrapper, p3._wrapper, p4._wrapper)
         
 
 
@@ -172,14 +172,14 @@ class GXTIN:
 
 
     def linear_interp_vv(self, p2: 'GXVV', p3: 'GXVV', p4: 'GXVV') -> None:
-        self._wrapper.linear_interp_vv(p2, p3, p4)
+        self._wrapper.linear_interp_vv(p2._wrapper, p3._wrapper, p4._wrapper)
         
 
 
 
 
     def nearest_vv(self, p2: 'GXVV', p3: 'GXVV', p4: 'GXVV') -> None:
-        self._wrapper.nearest_vv(p2, p3, p4)
+        self._wrapper.nearest_vv(p2._wrapper, p3._wrapper, p4._wrapper)
         
 
 
@@ -193,14 +193,14 @@ class GXTIN:
 
 
     def serial(self, p2: 'GXBF') -> None:
-        self._wrapper.serial(p2)
+        self._wrapper.serial(p2._wrapper)
         
 
 
 
 
     def set_ipj(self, p2: 'GXIPJ') -> None:
-        self._wrapper.set_ipj(p2)
+        self._wrapper.set_ipj(p2._wrapper)
         
 
 

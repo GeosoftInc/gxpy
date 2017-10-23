@@ -51,7 +51,7 @@ class GXPROJ:
 
     @classmethod
     def drop_map_clip_data(cls, p1: int) -> None:
-        gxapi_cy.WrapPROJ.drop_map_clip_data(GXContext._get_tls_geo())
+        gxapi_cy.WrapPROJ.drop_map_clip_data(GXContext._get_tls_geo(), p1)
         
 
 
@@ -62,14 +62,14 @@ class GXPROJ:
 
     @classmethod
     def add_document(cls, p1: str, p2: str, p3: int) -> int:
-        ret_val = gxapi_cy.WrapPROJ.add_document(GXContext._get_tls_geo(), p2.encode(), p3)
+        ret_val = gxapi_cy.WrapPROJ.add_document(GXContext._get_tls_geo(), p1.encode(), p2.encode(), p3)
         return ret_val
 
 
 
     @classmethod
     def add_document_without_opening(cls, p1: str, p2: str) -> int:
-        ret_val = gxapi_cy.WrapPROJ.add_document_without_opening(GXContext._get_tls_geo(), p2.encode())
+        ret_val = gxapi_cy.WrapPROJ.add_document_without_opening(GXContext._get_tls_geo(), p1.encode(), p2.encode())
         return ret_val
 
 
@@ -83,63 +83,63 @@ class GXPROJ:
 
     @classmethod
     def list_documents(cls, p1: 'GXVV', p2: str) -> int:
-        ret_val = gxapi_cy.WrapPROJ.list_documents(GXContext._get_tls_geo(), p2.encode())
+        ret_val = gxapi_cy.WrapPROJ.list_documents(GXContext._get_tls_geo(), p1._wrapper, p2.encode())
         return ret_val
 
 
 
     @classmethod
     def list_loaded_documents(cls, p1: 'GXVV', p2: str) -> int:
-        ret_val = gxapi_cy.WrapPROJ.list_loaded_documents(GXContext._get_tls_geo(), p2.encode())
+        ret_val = gxapi_cy.WrapPROJ.list_loaded_documents(GXContext._get_tls_geo(), p1._wrapper, p2.encode())
         return ret_val
 
 
 
     @classmethod
     def current_document(cls, p1: str_ref, p3: str_ref) -> None:
-        p1.value, p3.value = gxapi_cy.WrapPROJ.current_document(GXContext._get_tls_geo(), p3.value.encode())
+        p1.value, p3.value = gxapi_cy.WrapPROJ.current_document(GXContext._get_tls_geo(), p1.value.encode(), p3.value.encode())
         
 
 
 
     @classmethod
     def current_document_of_type(cls, p1: str_ref, p3: str) -> None:
-        p1.value = gxapi_cy.WrapPROJ.current_document_of_type(GXContext._get_tls_geo(), p3.encode())
+        p1.value = gxapi_cy.WrapPROJ.current_document_of_type(GXContext._get_tls_geo(), p1.value.encode(), p3.encode())
         
 
 
 
     @classmethod
     def list_tools(cls, p1: 'GXLST', p2: int) -> int:
-        ret_val = gxapi_cy.WrapPROJ.list_tools(GXContext._get_tls_geo(), p2)
+        ret_val = gxapi_cy.WrapPROJ.list_tools(GXContext._get_tls_geo(), p1._wrapper, p2)
         return ret_val
 
 
 
     @classmethod
     def remove_document(cls, p1: str) -> int:
-        ret_val = gxapi_cy.WrapPROJ.remove_document(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapPROJ.remove_document(GXContext._get_tls_geo(), p1.encode())
         return ret_val
 
 
 
     @classmethod
     def remove_tool(cls, p1: str) -> int:
-        ret_val = gxapi_cy.WrapPROJ.remove_tool(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapPROJ.remove_tool(GXContext._get_tls_geo(), p1.encode())
         return ret_val
 
 
 
     @classmethod
     def save_close_documents(cls, p1: str) -> int:
-        ret_val = gxapi_cy.WrapPROJ.save_close_documents(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapPROJ.save_close_documents(GXContext._get_tls_geo(), p1.encode())
         return ret_val
 
 
 
     @classmethod
     def get_name(cls, p1: str_ref) -> None:
-        p1.value = gxapi_cy.WrapPROJ.get_name(GXContext._get_tls_geo())
+        p1.value = gxapi_cy.WrapPROJ.get_name(GXContext._get_tls_geo(), p1.value.encode())
         
 
 

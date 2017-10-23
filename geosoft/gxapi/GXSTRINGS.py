@@ -51,7 +51,7 @@ class GXSTRINGS:
 
     @classmethod
     def launch_digitization_ui(cls, p1: str, p2: str) -> None:
-        gxapi_cy.WrapSTRINGS.launch_digitization_ui(GXContext._get_tls_geo(), p2.encode())
+        gxapi_cy.WrapSTRINGS.launch_digitization_ui(GXContext._get_tls_geo(), p1.encode(), p2.encode())
         
 
 

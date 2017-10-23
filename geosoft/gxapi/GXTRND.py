@@ -51,21 +51,21 @@ class GXTRND:
 
     @classmethod
     def get_max_min(cls, p1: 'GXVV', p2: 'GXVV', p3: 'GXVV', p4: 'GXVV', p5: 'GXVV', p6: 'GXVV', p7: float, p8: int) -> None:
-        gxapi_cy.WrapTRND.get_max_min(GXContext._get_tls_geo(), p2, p3, p4, p5, p6, p7, p8)
+        gxapi_cy.WrapTRND.get_max_min(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3._wrapper, p4._wrapper, p5._wrapper, p6._wrapper, p7, p8)
         
 
 
 
     @classmethod
     def get_mesh(cls, p1: 'GXDB', p2: str, p3: float, p4: float, p5: 'GXVV', p6: int) -> None:
-        gxapi_cy.WrapTRND.get_mesh(GXContext._get_tls_geo(), p2.encode(), p3, p4, p5, p6)
+        gxapi_cy.WrapTRND.get_mesh(GXContext._get_tls_geo(), p1._wrapper, p2.encode(), p3, p4, p5._wrapper, p6)
         
 
 
 
     @classmethod
     def trnd_db(cls, p1: 'GXDB', p2: str, p3: float, p4: float, p5: float, p6: float, p7: float, p8: float, p9: float, p10: float) -> None:
-        gxapi_cy.WrapTRND.trnd_db(GXContext._get_tls_geo(), p2.encode(), p3, p4, p5, p6, p7, p8, p9, p10)
+        gxapi_cy.WrapTRND.trnd_db(GXContext._get_tls_geo(), p1._wrapper, p2.encode(), p3, p4, p5, p6, p7, p8, p9, p10)
         
 
 

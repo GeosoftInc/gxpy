@@ -51,14 +51,14 @@ class GXRA:
 
     @classmethod
     def create(cls, p1: str) -> 'GXRA':
-        ret_val = gxapi_cy.WrapRA.create(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapRA.create(GXContext._get_tls_geo(), p1.encode())
         return GXRA(ret_val)
 
 
 
     @classmethod
     def create_sbf(cls, p1: 'GXSBF', p2: str) -> 'GXRA':
-        ret_val = gxapi_cy.WrapRA.create_sbf(GXContext._get_tls_geo(), p2.encode())
+        ret_val = gxapi_cy.WrapRA.create_sbf(GXContext._get_tls_geo(), p1._wrapper, p2.encode())
         return GXRA(ret_val)
 
 

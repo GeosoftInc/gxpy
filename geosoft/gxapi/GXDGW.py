@@ -51,7 +51,7 @@ class GXDGW:
 
     @classmethod
     def create(cls, p1: str) -> 'GXDGW':
-        ret_val = gxapi_cy.WrapDGW.create(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapDGW.create(GXContext._get_tls_geo(), p1.encode())
         return GXDGW(ret_val)
 
 
@@ -60,7 +60,7 @@ class GXDGW:
 
 
     def get_info_meta(self, p2: int, p3: int, p4: 'GXMETA', p5: int, p6: int) -> None:
-        self._wrapper.get_info_meta(p2, p3, p4, p5, p6)
+        self._wrapper.get_info_meta(p2, p3, p4._wrapper, p5, p6)
         
 
 
@@ -102,7 +102,7 @@ class GXDGW:
 
 
     def set_info_meta(self, p2: int, p3: int, p4: 'GXMETA', p5: int, p6: int) -> None:
-        self._wrapper.set_info_meta(p2, p3, p4, p5, p6)
+        self._wrapper.set_info_meta(p2, p3, p4._wrapper, p5, p6)
         
 
 

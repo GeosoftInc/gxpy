@@ -58,7 +58,7 @@ class GXSBF:
 
 
     def create_obj_list(self, p2: 'GXLST', p3: int) -> None:
-        self._wrapper.create_obj_list(p2, p3)
+        self._wrapper.create_obj_list(p2._wrapper, p3)
         
 
 
@@ -81,14 +81,14 @@ class GXSBF:
 
     @classmethod
     def h_get_db(cls, p1: 'GXDB') -> 'GXSBF':
-        ret_val = gxapi_cy.WrapSBF.h_get_db(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapSBF.h_get_db(GXContext._get_tls_geo(), p1._wrapper)
         return GXSBF(ret_val)
 
 
 
     @classmethod
     def h_get_map(cls, p1: 'GXMAP') -> 'GXSBF':
-        ret_val = gxapi_cy.WrapSBF.h_get_map(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapSBF.h_get_map(GXContext._get_tls_geo(), p1._wrapper)
         return GXSBF(ret_val)
 
 

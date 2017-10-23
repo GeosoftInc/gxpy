@@ -51,21 +51,21 @@ class GXMISC:
 
     @classmethod
     def convert_cg3to_raw(cls, p1: str, p2: str, p3: int) -> None:
-        gxapi_cy.WrapMISC.convert_cg3to_raw(GXContext._get_tls_geo(), p2.encode(), p3)
+        gxapi_cy.WrapMISC.convert_cg3to_raw(GXContext._get_tls_geo(), p1.encode(), p2.encode(), p3)
         
 
 
 
     @classmethod
     def convert_cg5to_raw(cls, p1: str, p2: str, p3: int) -> None:
-        gxapi_cy.WrapMISC.convert_cg5to_raw(GXContext._get_tls_geo(), p2.encode(), p3)
+        gxapi_cy.WrapMISC.convert_cg5to_raw(GXContext._get_tls_geo(), p1.encode(), p2.encode(), p3)
         
 
 
 
     @classmethod
     def ukoa2_tbl(cls, p1: str, p2: str, p3: str) -> None:
-        gxapi_cy.WrapMISC.ukoa2_tbl(GXContext._get_tls_geo(), p2.encode(), p3.encode())
+        gxapi_cy.WrapMISC.ukoa2_tbl(GXContext._get_tls_geo(), p1.encode(), p2.encode(), p3.encode())
         
 
 

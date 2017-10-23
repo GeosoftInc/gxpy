@@ -51,7 +51,7 @@ class GXTEST:
 
     @classmethod
     def enable_disable_arc_engine_license(cls, p1: int) -> None:
-        gxapi_cy.WrapTEST.enable_disable_arc_engine_license(GXContext._get_tls_geo())
+        gxapi_cy.WrapTEST.enable_disable_arc_engine_license(GXContext._get_tls_geo(), p1)
         
 
 
@@ -72,14 +72,14 @@ class GXTEST:
 
     @classmethod
     def wrapper_test(cls, p1: str, p2: str) -> None:
-        gxapi_cy.WrapTEST.wrapper_test(GXContext._get_tls_geo(), p2.encode())
+        gxapi_cy.WrapTEST.wrapper_test(GXContext._get_tls_geo(), p1.encode(), p2.encode())
         
 
 
 
     @classmethod
     def core_class(cls, p1: str, p2: str) -> None:
-        gxapi_cy.WrapTEST.core_class(GXContext._get_tls_geo(), p2.encode())
+        gxapi_cy.WrapTEST.core_class(GXContext._get_tls_geo(), p1.encode(), p2.encode())
         
 
 

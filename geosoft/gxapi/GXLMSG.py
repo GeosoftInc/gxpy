@@ -51,14 +51,14 @@ class GXLMSG:
 
     @classmethod
     def goto_point(cls, p1: float, p2: float, p3: float, p4: 'GXIPJ') -> None:
-        gxapi_cy.WrapLMSG.goto_point(GXContext._get_tls_geo(), p2, p3, p4)
+        gxapi_cy.WrapLMSG.goto_point(GXContext._get_tls_geo(), p1, p2, p3, p4._wrapper)
         
 
 
 
     @classmethod
     def view_area(cls, p1: float, p2: float, p3: float, p4: float, p5: 'GXIPJ') -> None:
-        gxapi_cy.WrapLMSG.view_area(GXContext._get_tls_geo(), p2, p3, p4, p5)
+        gxapi_cy.WrapLMSG.view_area(GXContext._get_tls_geo(), p1, p2, p3, p4, p5._wrapper)
         
 
 

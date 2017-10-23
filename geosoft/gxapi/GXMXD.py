@@ -51,21 +51,21 @@ class GXMXD:
 
     @classmethod
     def create_metadata(cls, p1: str) -> None:
-        gxapi_cy.WrapMXD.create_metadata(GXContext._get_tls_geo())
+        gxapi_cy.WrapMXD.create_metadata(GXContext._get_tls_geo(), p1.encode())
         
 
 
 
     @classmethod
     def convert_to_map(cls, p1: str, p2: str) -> None:
-        gxapi_cy.WrapMXD.convert_to_map(GXContext._get_tls_geo(), p2.encode())
+        gxapi_cy.WrapMXD.convert_to_map(GXContext._get_tls_geo(), p1.encode(), p2.encode())
         
 
 
 
     @classmethod
     def sync(cls, p1: str) -> None:
-        gxapi_cy.WrapMXD.sync(GXContext._get_tls_geo())
+        gxapi_cy.WrapMXD.sync(GXContext._get_tls_geo(), p1.encode())
         
 
 

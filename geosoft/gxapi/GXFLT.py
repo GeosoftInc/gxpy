@@ -51,7 +51,7 @@ class GXFLT:
 
     @classmethod
     def create(cls, p1: str) -> int:
-        ret_val = gxapi_cy.WrapFLT.create(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapFLT.create(GXContext._get_tls_geo(), p1.encode())
         return ret_val
 
 
@@ -60,7 +60,7 @@ class GXFLT:
 
     @classmethod
     def load(cls, p1: str) -> int:
-        ret_val = gxapi_cy.WrapFLT.load(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapFLT.load(GXContext._get_tls_geo(), p1.encode())
         return ret_val
 
 

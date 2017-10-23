@@ -51,14 +51,14 @@ class GXVAU:
 
     @classmethod
     def prune(cls, p1: 'GXVA', p2: 'GXVV', p3: int) -> None:
-        gxapi_cy.WrapVAU.prune(GXContext._get_tls_geo(), p2, p3)
+        gxapi_cy.WrapVAU.prune(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3)
         
 
 
 
     @classmethod
     def total_vector(cls, p1: 'GXVA', p2: 'GXVA', p3: 'GXVA', p4: 'GXVA') -> None:
-        gxapi_cy.WrapVAU.total_vector(GXContext._get_tls_geo(), p2, p3, p4)
+        gxapi_cy.WrapVAU.total_vector(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3._wrapper, p4._wrapper)
         
 
 

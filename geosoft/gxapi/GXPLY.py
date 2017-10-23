@@ -51,21 +51,21 @@ class GXPLY:
 
 
     def add_polygon(self, p2: 'GXVV', p3: 'GXVV') -> None:
-        self._wrapper.add_polygon(p2, p3)
+        self._wrapper.add_polygon(p2._wrapper, p3._wrapper)
         
 
 
 
 
     def add_polygon_ex(self, p2: 'GXVV', p3: 'GXVV', p4: int) -> None:
-        self._wrapper.add_polygon_ex(p2, p3, p4)
+        self._wrapper.add_polygon_ex(p2._wrapper, p3._wrapper, p4)
         
 
 
 
 
     def change_ipj(self, p2: 'GXIPJ') -> None:
-        self._wrapper.change_ipj(p2)
+        self._wrapper.change_ipj(p2._wrapper)
         
 
 
@@ -79,7 +79,7 @@ class GXPLY:
 
 
     def copy(self, p2: 'GXPLY') -> None:
-        self._wrapper.copy(p2)
+        self._wrapper.copy(p2._wrapper)
         
 
 
@@ -93,7 +93,7 @@ class GXPLY:
 
     @classmethod
     def create_s(cls, p1: 'GXBF') -> 'GXPLY':
-        ret_val = gxapi_cy.WrapPLY.create_s(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapPLY.create_s(GXContext._get_tls_geo(), p1._wrapper)
         return GXPLY(ret_val)
 
 
@@ -109,21 +109,21 @@ class GXPLY:
 
 
     def get_ipj(self, p2: 'GXIPJ') -> None:
-        self._wrapper.get_ipj(p2)
+        self._wrapper.get_ipj(p2._wrapper)
         
 
 
 
 
     def get_polygon(self, p2: 'GXVV', p3: 'GXVV', p4: int) -> None:
-        self._wrapper.get_polygon(p2, p3, p4)
+        self._wrapper.get_polygon(p2._wrapper, p3._wrapper, p4)
         
 
 
 
 
     def get_polygon_ex(self, p2: 'GXVV', p3: 'GXVV', p4: int, p5: int_ref) -> None:
-        p5.value = self._wrapper.get_polygon_ex(p2, p3, p4, p5.value)
+        p5.value = self._wrapper.get_polygon_ex(p2._wrapper, p3._wrapper, p4, p5.value)
         
 
 
@@ -137,14 +137,14 @@ class GXPLY:
 
 
     def clip_line_int(self, p2: float, p3: float, p4: float, p5: float, p6: 'GXVV', p7: float, p8: int_ref) -> int:
-        ret_val, p8.value = self._wrapper.clip_line_int(p2, p3, p4, p5, p6, p7, p8.value)
+        ret_val, p8.value = self._wrapper.clip_line_int(p2, p3, p4, p5, p6._wrapper, p7, p8.value)
         return ret_val
 
 
 
 
     def clip_ply(self, p2: 'GXPLY', p3: 'GXPLY') -> int:
-        ret_val = self._wrapper.clip_ply(p2, p3)
+        ret_val = self._wrapper.clip_ply(p2._wrapper, p3._wrapper)
         return ret_val
 
 
@@ -200,7 +200,7 @@ class GXPLY:
 
 
     def serial(self, p2: 'GXBF') -> None:
-        self._wrapper.serial(p2)
+        self._wrapper.serial(p2._wrapper)
         
 
 
@@ -214,7 +214,7 @@ class GXPLY:
 
 
     def set_ipj(self, p2: 'GXIPJ') -> None:
-        self._wrapper.set_ipj(p2)
+        self._wrapper.set_ipj(p2._wrapper)
         
 
 

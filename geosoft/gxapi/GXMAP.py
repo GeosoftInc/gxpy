@@ -90,7 +90,7 @@ class GXMAP:
 
 
     def create_linked_3d_view(self, p2: 'GXMVIEW', p3: str, p4: float, p5: float, p6: float, p7: float) -> None:
-        self._wrapper.create_linked_3d_view(p2, p3.encode(), p4, p5, p6, p7)
+        self._wrapper.create_linked_3d_view(p2._wrapper, p3.encode(), p4, p5, p6, p7)
         
 
 
@@ -101,14 +101,14 @@ class GXMAP:
 
 
     def agg_list(self, p2: 'GXLST', p3: int) -> None:
-        self._wrapper.agg_list(p2, p3)
+        self._wrapper.agg_list(p2._wrapper, p3)
         
 
 
 
 
     def agg_list_ex(self, p2: 'GXLST', p3: int, p4: int) -> None:
-        self._wrapper.agg_list_ex(p2, p3, p4)
+        self._wrapper.agg_list_ex(p2._wrapper, p3, p4)
         
 
 
@@ -143,7 +143,7 @@ class GXMAP:
 
     @classmethod
     def create(cls, p1: str, p2: int) -> 'GXMAP':
-        ret_val = gxapi_cy.WrapMAP.create(GXContext._get_tls_geo(), p2)
+        ret_val = gxapi_cy.WrapMAP.create(GXContext._get_tls_geo(), p1.encode(), p2)
         return GXMAP(ret_val)
 
 
@@ -173,7 +173,7 @@ class GXMAP:
 
 
     def dup_map(self, p2: 'GXMAP', p3: int) -> None:
-        self._wrapper.dup_map(p2, p3)
+        self._wrapper.dup_map(p2._wrapper, p3)
         
 
 
@@ -208,14 +208,14 @@ class GXMAP:
 
 
     def group_list(self, p2: 'GXLST') -> None:
-        self._wrapper.group_list(p2)
+        self._wrapper.group_list(p2._wrapper)
         
 
 
 
 
     def group_list_ex(self, p2: 'GXLST', p3: int) -> None:
-        self._wrapper.group_list_ex(p2, p3)
+        self._wrapper.group_list_ex(p2._wrapper, p3)
         
 
 
@@ -355,21 +355,21 @@ class GXMAP:
 
 
     def set_meta(self, p2: 'GXMETA') -> None:
-        self._wrapper.set_meta(p2)
+        self._wrapper.set_meta(p2._wrapper)
         
 
 
 
 
     def set_reg(self, p2: 'GXREG') -> None:
-        self._wrapper.set_reg(p2)
+        self._wrapper.set_reg(p2._wrapper)
         
 
 
 
     @classmethod
     def sync(cls, p1: str) -> None:
-        gxapi_cy.WrapMAP.sync(GXContext._get_tls_geo())
+        gxapi_cy.WrapMAP.sync(GXContext._get_tls_geo(), p1.encode())
         
 
 
@@ -383,14 +383,14 @@ class GXMAP:
 
 
     def view_list(self, p2: 'GXLST') -> None:
-        self._wrapper.view_list(p2)
+        self._wrapper.view_list(p2._wrapper)
         
 
 
 
 
     def view_list_ex(self, p2: 'GXLST', p3: int) -> None:
-        self._wrapper.view_list_ex(p2, p3)
+        self._wrapper.view_list_ex(p2._wrapper, p3)
         
 
 

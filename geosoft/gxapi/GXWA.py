@@ -58,28 +58,28 @@ class GXWA:
 
     @classmethod
     def create(cls, p1: str, p2: int) -> 'GXWA':
-        ret_val = gxapi_cy.WrapWA.create(GXContext._get_tls_geo(), p2)
+        ret_val = gxapi_cy.WrapWA.create(GXContext._get_tls_geo(), p1.encode(), p2)
         return GXWA(ret_val)
 
 
 
     @classmethod
     def create_ex(cls, p1: str, p2: int, p3: int) -> 'GXWA':
-        ret_val = gxapi_cy.WrapWA.create_ex(GXContext._get_tls_geo(), p2, p3)
+        ret_val = gxapi_cy.WrapWA.create_ex(GXContext._get_tls_geo(), p1.encode(), p2, p3)
         return GXWA(ret_val)
 
 
 
     @classmethod
     def create_sbf(cls, p1: 'GXSBF', p2: str, p3: int) -> 'GXWA':
-        ret_val = gxapi_cy.WrapWA.create_sbf(GXContext._get_tls_geo(), p2.encode(), p3)
+        ret_val = gxapi_cy.WrapWA.create_sbf(GXContext._get_tls_geo(), p1._wrapper, p2.encode(), p3)
         return GXWA(ret_val)
 
 
 
     @classmethod
     def create_sbf_ex(cls, p1: 'GXSBF', p2: str, p3: int, p4: int) -> 'GXWA':
-        ret_val = gxapi_cy.WrapWA.create_sbf_ex(GXContext._get_tls_geo(), p2.encode(), p3, p4)
+        ret_val = gxapi_cy.WrapWA.create_sbf_ex(GXContext._get_tls_geo(), p1._wrapper, p2.encode(), p3, p4)
         return GXWA(ret_val)
 
 

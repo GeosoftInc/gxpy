@@ -76,7 +76,7 @@ class GXMAPTEMPLATE:
 
     @classmethod
     def create(cls, p1: str, p2: str, p3: int) -> 'GXMAPTEMPLATE':
-        ret_val = gxapi_cy.WrapMAPTEMPLATE.create(GXContext._get_tls_geo(), p2.encode(), p3)
+        ret_val = gxapi_cy.WrapMAPTEMPLATE.create(GXContext._get_tls_geo(), p1.encode(), p2.encode(), p3)
         return GXMAPTEMPLATE(ret_val)
 
 

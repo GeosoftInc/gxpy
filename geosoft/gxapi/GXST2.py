@@ -58,7 +58,7 @@ class GXST2:
 
 
     def data_vv(self, p2: 'GXVV', p3: 'GXVV') -> None:
-        self._wrapper.data_vv(p2, p3)
+        self._wrapper.data_vv(p2._wrapper, p3._wrapper)
         
 
 

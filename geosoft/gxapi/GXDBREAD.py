@@ -51,21 +51,21 @@ class GXDBREAD:
 
     @classmethod
     def create(cls, p1: 'GXDB', p2: 'GXLST') -> 'GXDBREAD':
-        ret_val = gxapi_cy.WrapDBREAD.create(GXContext._get_tls_geo(), p2)
+        ret_val = gxapi_cy.WrapDBREAD.create(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper)
         return GXDBREAD(ret_val)
 
 
 
     @classmethod
     def create_xy(cls, p1: 'GXDB', p2: 'GXLST') -> 'GXDBREAD':
-        ret_val = gxapi_cy.WrapDBREAD.create_xy(GXContext._get_tls_geo(), p2)
+        ret_val = gxapi_cy.WrapDBREAD.create_xy(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper)
         return GXDBREAD(ret_val)
 
 
 
     @classmethod
     def create_xyz(cls, p1: 'GXDB', p2: 'GXLST') -> 'GXDBREAD':
-        ret_val = gxapi_cy.WrapDBREAD.create_xyz(GXContext._get_tls_geo(), p2)
+        ret_val = gxapi_cy.WrapDBREAD.create_xyz(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper)
         return GXDBREAD(ret_val)
 
 

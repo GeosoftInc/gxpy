@@ -51,14 +51,14 @@ class GXTC:
 
     @classmethod
     def create(cls, p1: 'GXIMG', p2: float, p3: float, p4: float, p5: float, p6: float, p7: float, p8: int, p9: float, p10: int) -> 'GXTC':
-        ret_val = gxapi_cy.WrapTC.create(GXContext._get_tls_geo(), p2, p3, p4, p5, p6, p7, p8, p9, p10)
+        ret_val = gxapi_cy.WrapTC.create(GXContext._get_tls_geo(), p1._wrapper, p2, p3, p4, p5, p6, p7, p8, p9, p10)
         return GXTC(ret_val)
 
 
 
     @classmethod
     def create_ex(cls, p1: 'GXIMG', p2: float, p3: float, p4: float, p5: float, p6: float, p7: float, p8: int, p9: float, p10: int, p11: int) -> 'GXTC':
-        ret_val = gxapi_cy.WrapTC.create_ex(GXContext._get_tls_geo(), p2, p3, p4, p5, p6, p7, p8, p9, p10, p11)
+        ret_val = gxapi_cy.WrapTC.create_ex(GXContext._get_tls_geo(), p1._wrapper, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11)
         return GXTC(ret_val)
 
 
@@ -67,28 +67,28 @@ class GXTC:
 
 
     def grregter(self, p2: 'GXIMG', p3: 'GXIMG') -> None:
-        self._wrapper.grregter(p2, p3)
+        self._wrapper.grregter(p2._wrapper, p3._wrapper)
         
 
 
 
 
     def grterain(self, p2: 'GXVV', p3: 'GXVV', p4: 'GXVV', p5: 'GXVV', p6: 'GXVV', p7: 'GXIMG', p8: float) -> None:
-        self._wrapper.grterain(p2, p3, p4, p5, p6, p7, p8)
+        self._wrapper.grterain(p2._wrapper, p3._wrapper, p4._wrapper, p5._wrapper, p6._wrapper, p7._wrapper, p8)
         
 
 
 
 
     def grterain2(self, p2: 'GXVV', p3: 'GXVV', p4: 'GXVV', p5: 'GXVV', p6: 'GXVV', p7: 'GXVV', p8: 'GXIMG', p9: float) -> None:
-        self._wrapper.grterain2(p2, p3, p4, p5, p6, p7, p8, p9)
+        self._wrapper.grterain2(p2._wrapper, p3._wrapper, p4._wrapper, p5._wrapper, p6._wrapper, p7._wrapper, p8._wrapper, p9)
         
 
 
 
 
     def g_gterain(self, p2: 'GXVV', p3: 'GXVV', p4: 'GXVV', p5: 'GXVV', p6: float, p7: float, p8: int) -> None:
-        self._wrapper.g_gterain(p2, p3, p4, p5, p6, p7, p8)
+        self._wrapper.g_gterain(p2._wrapper, p3._wrapper, p4._wrapper, p5._wrapper, p6, p7, p8)
         
 
 

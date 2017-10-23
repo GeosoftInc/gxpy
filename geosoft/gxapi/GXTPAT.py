@@ -95,7 +95,7 @@ class GXTPAT:
 
 
     def setup_translation_vv(self, p2: 'GXLTB', p3: int, p4: 'GXVV') -> None:
-        self._wrapper.setup_translation_vv(p2, p3, p4)
+        self._wrapper.setup_translation_vv(p2._wrapper, p3, p4._wrapper)
         
 
 

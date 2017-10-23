@@ -105,7 +105,7 @@ class GXMETA:
 
 
     def copy(self, p2: 'GXMETA') -> None:
-        self._wrapper.copy(p2)
+        self._wrapper.copy(p2._wrapper)
         
 
 
@@ -119,7 +119,7 @@ class GXMETA:
 
     @classmethod
     def create_s(cls, p1: 'GXBF') -> 'GXMETA':
-        ret_val = gxapi_cy.WrapMETA.create_s(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapMETA.create_s(GXContext._get_tls_geo(), p1._wrapper)
         return GXMETA(ret_val)
 
 
@@ -128,7 +128,7 @@ class GXMETA:
 
 
     def serial(self, p2: 'GXBF') -> None:
-        self._wrapper.serial(p2)
+        self._wrapper.serial(p2._wrapper)
         
 
 
@@ -206,7 +206,7 @@ class GXMETA:
 
 
     def write_text(self, p2: 'GXWA') -> None:
-        self._wrapper.write_text(p2)
+        self._wrapper.write_text(p2._wrapper)
         
 
 
@@ -313,42 +313,42 @@ class GXMETA:
 
 
     def h_copy_across_attribute(self, p2: 'GXMETA', p3: int) -> int:
-        ret_val = self._wrapper.h_copy_across_attribute(p2, p3)
+        ret_val = self._wrapper.h_copy_across_attribute(p2._wrapper, p3)
         return ret_val
 
 
 
 
     def h_copy_across_class(self, p2: 'GXMETA', p3: int) -> int:
-        ret_val = self._wrapper.h_copy_across_class(p2, p3)
+        ret_val = self._wrapper.h_copy_across_class(p2._wrapper, p3)
         return ret_val
 
 
 
 
     def h_copy_across_data(self, p2: 'GXMETA', p3: int) -> int:
-        ret_val = self._wrapper.h_copy_across_data(p2, p3)
+        ret_val = self._wrapper.h_copy_across_data(p2._wrapper, p3)
         return ret_val
 
 
 
 
     def h_copy_across_item(self, p2: 'GXMETA', p3: int) -> int:
-        ret_val = self._wrapper.h_copy_across_item(p2, p3)
+        ret_val = self._wrapper.h_copy_across_item(p2._wrapper, p3)
         return ret_val
 
 
 
 
     def h_copy_across_type(self, p2: 'GXMETA', p3: int) -> int:
-        ret_val = self._wrapper.h_copy_across_type(p2, p3)
+        ret_val = self._wrapper.h_copy_across_type(p2._wrapper, p3)
         return ret_val
 
 
 
 
     def move_datas_across(self, p2: 'GXMETA', p3: int, p4: int) -> None:
-        self._wrapper.move_datas_across(p2, p3, p4)
+        self._wrapper.move_datas_across(p2._wrapper, p3, p4)
         
 
 

@@ -58,21 +58,21 @@ class GXTB:
 
     @classmethod
     def create(cls, p1: str) -> 'GXTB':
-        ret_val = gxapi_cy.WrapTB.create(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapTB.create(GXContext._get_tls_geo(), p1.encode())
         return GXTB(ret_val)
 
 
 
     @classmethod
     def create_db(cls, p1: 'GXDB') -> 'GXTB':
-        ret_val = gxapi_cy.WrapTB.create_db(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapTB.create_db(GXContext._get_tls_geo(), p1._wrapper)
         return GXTB(ret_val)
 
 
 
     @classmethod
     def create_ltb(cls, p1: 'GXLTB') -> 'GXTB':
-        ret_val = gxapi_cy.WrapTB.create_ltb(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapTB.create_ltb(GXContext._get_tls_geo(), p1._wrapper)
         return GXTB(ret_val)
 
 
@@ -144,7 +144,7 @@ class GXTB:
 
 
     def load_db(self, p2: 'GXDB', p3: int) -> None:
-        self._wrapper.load_db(p2, p3)
+        self._wrapper.load_db(p2._wrapper, p3)
         
 
 
@@ -165,7 +165,7 @@ class GXTB:
 
 
     def save_db(self, p2: 'GXDB', p3: int) -> None:
-        self._wrapper.save_db(p2, p3)
+        self._wrapper.save_db(p2._wrapper, p3)
         
 
 

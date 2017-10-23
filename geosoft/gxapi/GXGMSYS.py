@@ -51,7 +51,7 @@ class GXGMSYS:
 
     @classmethod
     def launch(cls, p1: str) -> None:
-        gxapi_cy.WrapGMSYS.launch(GXContext._get_tls_geo())
+        gxapi_cy.WrapGMSYS.launch(GXContext._get_tls_geo(), p1.encode())
         
 
 

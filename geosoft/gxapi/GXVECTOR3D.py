@@ -53,14 +53,14 @@ class GXVECTOR3D:
 
 
     def get_itr(self, p2: 'GXITR') -> None:
-        self._wrapper.get_itr(p2)
+        self._wrapper.get_itr(p2._wrapper)
         
 
 
 
 
     def set_itr(self, p2: 'GXITR') -> None:
-        self._wrapper.set_itr(p2)
+        self._wrapper.set_itr(p2._wrapper)
         
 
 

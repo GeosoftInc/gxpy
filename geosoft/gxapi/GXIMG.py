@@ -51,70 +51,70 @@ class GXIMG:
 
     @classmethod
     def average2(cls, p1: str, p2: str) -> None:
-        gxapi_cy.WrapIMG.average2(GXContext._get_tls_geo(), p2.encode())
+        gxapi_cy.WrapIMG.average2(GXContext._get_tls_geo(), p1.encode(), p2.encode())
         
 
 
 
 
     def copy(self, p2: 'GXIMG') -> None:
-        self._wrapper.copy(p2)
+        self._wrapper.copy(p2._wrapper)
         
 
 
 
     @classmethod
     def create(cls, p1: int, p2: int, p3: int, p4: int) -> 'GXIMG':
-        ret_val = gxapi_cy.WrapIMG.create(GXContext._get_tls_geo(), p2, p3, p4)
+        ret_val = gxapi_cy.WrapIMG.create(GXContext._get_tls_geo(), p1, p2, p3, p4)
         return GXIMG(ret_val)
 
 
 
     @classmethod
     def create_file(cls, p1: int, p2: str, p3: int) -> 'GXIMG':
-        ret_val = gxapi_cy.WrapIMG.create_file(GXContext._get_tls_geo(), p2.encode(), p3)
+        ret_val = gxapi_cy.WrapIMG.create_file(GXContext._get_tls_geo(), p1, p2.encode(), p3)
         return GXIMG(ret_val)
 
 
 
     @classmethod
     def create_mem(cls, p1: int, p2: int, p3: int, p4: int) -> 'GXIMG':
-        ret_val = gxapi_cy.WrapIMG.create_mem(GXContext._get_tls_geo(), p2, p3, p4)
+        ret_val = gxapi_cy.WrapIMG.create_mem(GXContext._get_tls_geo(), p1, p2, p3, p4)
         return GXIMG(ret_val)
 
 
 
     @classmethod
     def create_new_file(cls, p1: int, p2: int, p3: int, p4: int, p5: str) -> 'GXIMG':
-        ret_val = gxapi_cy.WrapIMG.create_new_file(GXContext._get_tls_geo(), p2, p3, p4, p5.encode())
+        ret_val = gxapi_cy.WrapIMG.create_new_file(GXContext._get_tls_geo(), p1, p2, p3, p4, p5.encode())
         return GXIMG(ret_val)
 
 
 
     @classmethod
     def create_out_file(cls, p1: int, p2: str, p3: 'GXIMG') -> 'GXIMG':
-        ret_val = gxapi_cy.WrapIMG.create_out_file(GXContext._get_tls_geo(), p2.encode(), p3)
+        ret_val = gxapi_cy.WrapIMG.create_out_file(GXContext._get_tls_geo(), p1, p2.encode(), p3._wrapper)
         return GXIMG(ret_val)
 
 
 
 
     def create_projected(self, p2: 'GXIPJ') -> None:
-        self._wrapper.create_projected(p2)
+        self._wrapper.create_projected(p2._wrapper)
         
 
 
 
 
     def create_projected2(self, p2: 'GXIPJ', p3: float) -> None:
-        self._wrapper.create_projected2(p2, p3)
+        self._wrapper.create_projected2(p2._wrapper, p3)
         
 
 
 
 
     def create_projected3(self, p2: 'GXIPJ', p3: float, p4: float) -> None:
-        self._wrapper.create_projected3(p2, p3, p4)
+        self._wrapper.create_projected3(p2._wrapper, p3, p4)
         
 
 
@@ -137,35 +137,35 @@ class GXIMG:
 
 
     def get_ipj(self, p2: 'GXIPJ') -> None:
-        self._wrapper.get_ipj(p2)
+        self._wrapper.get_ipj(p2._wrapper)
         
 
 
 
 
     def get_meta(self, p2: 'GXMETA') -> None:
-        self._wrapper.get_meta(p2)
+        self._wrapper.get_meta(p2._wrapper)
         
 
 
 
 
     def get_pg(self, p2: 'GXPG') -> None:
-        self._wrapper.get_pg(p2)
+        self._wrapper.get_pg(p2._wrapper)
         
 
 
 
 
     def get_projected_cell_size(self, p2: 'GXIPJ', p3: float_ref) -> None:
-        p3.value = self._wrapper.get_projected_cell_size(p2, p3.value)
+        p3.value = self._wrapper.get_projected_cell_size(p2._wrapper, p3.value)
         
 
 
 
 
     def get_tr(self, p2: 'GXTR') -> None:
-        self._wrapper.get_tr(p2)
+        self._wrapper.get_tr(p2._wrapper)
         
 
 
@@ -186,7 +186,7 @@ class GXIMG:
 
 
     def get_def_itr(self, p2: 'GXITR') -> int:
-        ret_val = self._wrapper.get_def_itr(p2)
+        ret_val = self._wrapper.get_def_itr(p2._wrapper)
         return ret_val
 
 
@@ -200,14 +200,14 @@ class GXIMG:
 
     @classmethod
     def is_valid_img_file(cls, p1: str) -> int:
-        ret_val = gxapi_cy.WrapIMG.is_valid_img_file(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapIMG.is_valid_img_file(GXContext._get_tls_geo(), p1.encode())
         return ret_val
 
 
 
     @classmethod
     def is_valid_img_file_ex(cls, p1: str, p2: str_ref) -> int:
-        ret_val, p2.value = gxapi_cy.WrapIMG.is_valid_img_file_ex(GXContext._get_tls_geo(), p2.value.encode())
+        ret_val, p2.value = gxapi_cy.WrapIMG.is_valid_img_file_ex(GXContext._get_tls_geo(), p1.encode(), p2.value.encode())
         return ret_val
 
 
@@ -221,14 +221,14 @@ class GXIMG:
 
 
     def inherit(self, p2: 'GXIPJ', p3: float) -> None:
-        self._wrapper.inherit(p2, p3)
+        self._wrapper.inherit(p2._wrapper, p3)
         
 
 
 
 
     def inherit_img(self, p2: 'GXIMG') -> None:
-        self._wrapper.inherit_img(p2)
+        self._wrapper.inherit_img(p2._wrapper)
         
 
 
@@ -270,7 +270,7 @@ class GXIMG:
 
 
     def set_def_itr(self, p2: 'GXITR') -> int:
-        ret_val = self._wrapper.set_def_itr(p2)
+        ret_val = self._wrapper.set_def_itr(p2._wrapper)
         return ret_val
 
 
@@ -284,7 +284,7 @@ class GXIMG:
 
 
     def load_img(self, p2: 'GXIMG') -> None:
-        self._wrapper.load_img(p2)
+        self._wrapper.load_img(p2._wrapper)
         
 
 
@@ -305,28 +305,28 @@ class GXIMG:
 
 
     def read_v(self, p2: int, p3: int, p4: int, p5: 'GXVV') -> None:
-        self._wrapper.read_v(p2, p3, p4, p5)
+        self._wrapper.read_v(p2, p3, p4, p5._wrapper)
         
 
 
 
 
     def read_x(self, p2: int, p3: int, p4: int, p5: 'GXVV') -> None:
-        self._wrapper.read_x(p2, p3, p4, p5)
+        self._wrapper.read_x(p2, p3, p4, p5._wrapper)
         
 
 
 
 
     def read_y(self, p2: int, p3: int, p4: int, p5: 'GXVV') -> None:
-        self._wrapper.read_y(p2, p3, p4, p5)
+        self._wrapper.read_y(p2, p3, p4, p5._wrapper)
         
 
 
 
     @classmethod
     def refresh_gi(cls, p1: str) -> None:
-        gxapi_cy.WrapIMG.refresh_gi(GXContext._get_tls_geo())
+        gxapi_cy.WrapIMG.refresh_gi(GXContext._get_tls_geo(), p1.encode())
         
 
 
@@ -340,14 +340,14 @@ class GXIMG:
 
     @classmethod
     def report(cls, p1: str, p2: 'GXWA', p3: int, p4: int, p5: str) -> None:
-        gxapi_cy.WrapIMG.report(GXContext._get_tls_geo(), p2, p3, p4, p5.encode())
+        gxapi_cy.WrapIMG.report(GXContext._get_tls_geo(), p1.encode(), p2._wrapper, p3, p4, p5.encode())
         
 
 
 
     @classmethod
     def report_csv(cls, p1: str, p2: 'GXWA', p3: int, p4: int, p5: int) -> None:
-        gxapi_cy.WrapIMG.report_csv(GXContext._get_tls_geo(), p2, p3, p4, p5)
+        gxapi_cy.WrapIMG.report_csv(GXContext._get_tls_geo(), p1.encode(), p2._wrapper, p3, p4, p5)
         
 
 
@@ -382,56 +382,56 @@ class GXIMG:
 
 
     def set_ipj(self, p2: 'GXIPJ') -> None:
-        self._wrapper.set_ipj(p2)
+        self._wrapper.set_ipj(p2._wrapper)
         
 
 
 
 
     def set_meta(self, p2: 'GXMETA') -> None:
-        self._wrapper.set_meta(p2)
+        self._wrapper.set_meta(p2._wrapper)
         
 
 
 
 
     def set_pg(self, p2: 'GXPG') -> None:
-        self._wrapper.set_pg(p2)
+        self._wrapper.set_pg(p2._wrapper)
         
 
 
 
 
     def set_tr(self, p2: 'GXTR') -> None:
-        self._wrapper.set_tr(p2)
+        self._wrapper.set_tr(p2._wrapper)
         
 
 
 
     @classmethod
     def sync(cls, p1: str) -> None:
-        gxapi_cy.WrapIMG.sync(GXContext._get_tls_geo())
+        gxapi_cy.WrapIMG.sync(GXContext._get_tls_geo(), p1.encode())
         
 
 
 
 
     def write_v(self, p2: int, p3: int, p4: int, p5: 'GXVV') -> None:
-        self._wrapper.write_v(p2, p3, p4, p5)
+        self._wrapper.write_v(p2, p3, p4, p5._wrapper)
         
 
 
 
 
     def write_x(self, p2: int, p3: int, p4: int, p5: 'GXVV') -> None:
-        self._wrapper.write_x(p2, p3, p4, p5)
+        self._wrapper.write_x(p2, p3, p4, p5._wrapper)
         
 
 
 
 
     def write_y(self, p2: int, p3: int, p4: int, p5: 'GXVV') -> None:
-        self._wrapper.write_y(p2, p3, p4, p5)
+        self._wrapper.write_y(p2, p3, p4, p5._wrapper)
         
 
 

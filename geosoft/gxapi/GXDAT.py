@@ -51,14 +51,14 @@ class GXDAT:
 
     @classmethod
     def create_db(cls, p1: 'GXDB', p2: str, p3: str, p4: str) -> 'GXDAT':
-        ret_val = gxapi_cy.WrapDAT.create_db(GXContext._get_tls_geo(), p2.encode(), p3.encode(), p4.encode())
+        ret_val = gxapi_cy.WrapDAT.create_db(GXContext._get_tls_geo(), p1._wrapper, p2.encode(), p3.encode(), p4.encode())
         return GXDAT(ret_val)
 
 
 
     @classmethod
     def create_xgd(cls, p1: str, p2: int) -> 'GXDAT':
-        ret_val = gxapi_cy.WrapDAT.create_xgd(GXContext._get_tls_geo(), p2)
+        ret_val = gxapi_cy.WrapDAT.create_xgd(GXContext._get_tls_geo(), p1.encode(), p2)
         return GXDAT(ret_val)
 
 
@@ -67,7 +67,7 @@ class GXDAT:
 
     @classmethod
     def get_lst(cls, p1: 'GXLST', p2: str, p3: int, p4: int) -> None:
-        gxapi_cy.WrapDAT.get_lst(GXContext._get_tls_geo(), p2.encode(), p3, p4)
+        gxapi_cy.WrapDAT.get_lst(GXContext._get_tls_geo(), p1._wrapper, p2.encode(), p3, p4)
         
 
 

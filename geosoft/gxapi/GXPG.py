@@ -51,28 +51,28 @@ class GXPG:
 
 
     def copy(self, p2: 'GXPG') -> None:
-        self._wrapper.copy(p2)
+        self._wrapper.copy(p2._wrapper)
         
 
 
 
 
     def copy_subset(self, p2: 'GXPG', p3: int, p4: int, p5: int, p6: int, p7: int, p8: int) -> None:
-        self._wrapper.copy_subset(p2, p3, p4, p5, p6, p7, p8)
+        self._wrapper.copy_subset(p2._wrapper, p3, p4, p5, p6, p7, p8)
         
 
 
 
     @classmethod
     def create(cls, p1: int, p2: int, p3: int) -> 'GXPG':
-        ret_val = gxapi_cy.WrapPG.create(GXContext._get_tls_geo(), p2, p3)
+        ret_val = gxapi_cy.WrapPG.create(GXContext._get_tls_geo(), p1, p2, p3)
         return GXPG(ret_val)
 
 
 
     @classmethod
     def create_s(cls, p1: 'GXBF') -> 'GXPG':
-        ret_val = gxapi_cy.WrapPG.create_s(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapPG.create_s(GXContext._get_tls_geo(), p1._wrapper)
         return GXPG(ret_val)
 
 
@@ -130,14 +130,14 @@ class GXPG:
 
 
     def read_col(self, p2: int, p3: int, p4: int, p5: 'GXVV') -> None:
-        self._wrapper.read_col(p2, p3, p4, p5)
+        self._wrapper.read_col(p2, p3, p4, p5._wrapper)
         
 
 
 
 
     def read_row(self, p2: int, p3: int, p4: int, p5: 'GXVV') -> None:
-        self._wrapper.read_row(p2, p3, p4, p5)
+        self._wrapper.read_row(p2, p3, p4, p5._wrapper)
         
 
 
@@ -151,28 +151,28 @@ class GXPG:
 
 
     def serial(self, p2: 'GXBF') -> None:
-        self._wrapper.serial(p2)
+        self._wrapper.serial(p2._wrapper)
         
 
 
 
 
     def statistics(self, p2: 'GXST') -> None:
-        self._wrapper.statistics(p2)
+        self._wrapper.statistics(p2._wrapper)
         
 
 
 
 
     def write_col(self, p2: int, p3: int, p4: int, p5: 'GXVV') -> None:
-        self._wrapper.write_col(p2, p3, p4, p5)
+        self._wrapper.write_col(p2, p3, p4, p5._wrapper)
         
 
 
 
 
     def write_row(self, p2: int, p3: int, p4: int, p5: 'GXVV') -> None:
-        self._wrapper.write_row(p2, p3, p4, p5)
+        self._wrapper.write_row(p2, p3, p4, p5._wrapper)
         
 
 
@@ -183,35 +183,35 @@ class GXPG:
 
 
     def copy_subset_3d(self, p2: 'GXPG', p3: int, p4: int, p5: int, p6: int, p7: int, p8: int, p9: int, p10: int, p11: int) -> None:
-        self._wrapper.copy_subset_3d(p2, p3, p4, p5, p6, p7, p8, p9, p10, p11)
+        self._wrapper.copy_subset_3d(p2._wrapper, p3, p4, p5, p6, p7, p8, p9, p10, p11)
         
 
 
 
     @classmethod
     def create_3d(cls, p1: int, p2: int, p3: int, p4: int) -> 'GXPG':
-        ret_val = gxapi_cy.WrapPG.create_3d(GXContext._get_tls_geo(), p2, p3, p4)
+        ret_val = gxapi_cy.WrapPG.create_3d(GXContext._get_tls_geo(), p1, p2, p3, p4)
         return GXPG(ret_val)
 
 
 
 
     def read_col_3d(self, p2: int, p3: int, p4: int, p5: int, p6: 'GXVV') -> None:
-        self._wrapper.read_col_3d(p2, p3, p4, p5, p6)
+        self._wrapper.read_col_3d(p2, p3, p4, p5, p6._wrapper)
         
 
 
 
 
     def read_row_3d(self, p2: int, p3: int, p4: int, p5: int, p6: 'GXVV') -> None:
-        self._wrapper.read_row_3d(p2, p3, p4, p5, p6)
+        self._wrapper.read_row_3d(p2, p3, p4, p5, p6._wrapper)
         
 
 
 
 
     def read_trace_3d(self, p2: int, p3: int, p4: int, p5: int, p6: 'GXVV') -> None:
-        self._wrapper.read_trace_3d(p2, p3, p4, p5, p6)
+        self._wrapper.read_trace_3d(p2, p3, p4, p5, p6._wrapper)
         
 
 
@@ -225,21 +225,21 @@ class GXPG:
 
 
     def write_col_3d(self, p2: int, p3: int, p4: int, p5: int, p6: 'GXVV') -> None:
-        self._wrapper.write_col_3d(p2, p3, p4, p5, p6)
+        self._wrapper.write_col_3d(p2, p3, p4, p5, p6._wrapper)
         
 
 
 
 
     def write_row_3d(self, p2: int, p3: int, p4: int, p5: int, p6: 'GXVV') -> None:
-        self._wrapper.write_row_3d(p2, p3, p4, p5, p6)
+        self._wrapper.write_row_3d(p2, p3, p4, p5, p6._wrapper)
         
 
 
 
 
     def write_trace_3d(self, p2: int, p3: int, p4: int, p5: int, p6: 'GXVV') -> None:
-        self._wrapper.write_trace_3d(p2, p3, p4, p5, p6)
+        self._wrapper.write_trace_3d(p2, p3, p4, p5, p6._wrapper)
         
 
 
@@ -250,35 +250,35 @@ class GXPG:
 
 
     def read_bf(self, p2: 'GXBF', p3: int, p4: int, p5: int, p6: int, p7: int) -> None:
-        self._wrapper.read_bf(p2, p3, p4, p5, p6, p7)
+        self._wrapper.read_bf(p2._wrapper, p3, p4, p5, p6, p7)
         
 
 
 
 
     def read_ra(self, p2: 'GXRA', p3: int, p4: int, p5: int, p6: int, p7: str) -> None:
-        self._wrapper.read_ra(p2, p3, p4, p5, p6, p7.encode())
+        self._wrapper.read_ra(p2._wrapper, p3, p4, p5, p6, p7.encode())
         
 
 
 
 
     def write_bf(self, p2: 'GXBF', p3: int, p4: int, p5: int, p6: int, p7: int) -> None:
-        self._wrapper.write_bf(p2, p3, p4, p5, p6, p7)
+        self._wrapper.write_bf(p2._wrapper, p3, p4, p5, p6, p7)
         
 
 
 
 
     def write_bf_ex(self, p2: 'GXBF', p3: int, p4: int, p5: int, p6: int, p7: int, p8: float) -> None:
-        self._wrapper.write_bf_ex(p2, p3, p4, p5, p6, p7, p8)
+        self._wrapper.write_bf_ex(p2._wrapper, p3, p4, p5, p6, p7, p8)
         
 
 
 
 
     def write_wa(self, p2: 'GXWA', p3: int, p4: int, p5: int, p6: int, p7: str) -> None:
-        self._wrapper.write_wa(p2, p3, p4, p5, p6, p7.encode())
+        self._wrapper.write_wa(p2._wrapper, p3, p4, p5, p6, p7.encode())
         
 
 

@@ -58,7 +58,7 @@ class GXACQUIRE:
 
 
     def delete_empty_chan(self, p2: 'GXDB') -> None:
-        self._wrapper.delete_empty_chan(p2)
+        self._wrapper.delete_empty_chan(p2._wrapper)
         
 
 
@@ -67,14 +67,14 @@ class GXACQUIRE:
 
 
     def import_hole(self, p2: str, p3: str, p4: str, p5: 'GXVV', p6: int, p7: int) -> int:
-        ret_val = self._wrapper.import_hole(p2.encode(), p3.encode(), p4.encode(), p5, p6, p7)
+        ret_val = self._wrapper.import_hole(p2.encode(), p3.encode(), p4.encode(), p5._wrapper, p6, p7)
         return ret_val
 
 
 
 
     def import_point(self, p2: 'GXDB', p3: str, p4: int) -> int:
-        ret_val = self._wrapper.import_point(p2, p3.encode(), p4)
+        ret_val = self._wrapper.import_point(p2._wrapper, p3.encode(), p4)
         return ret_val
 
 

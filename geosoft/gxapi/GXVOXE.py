@@ -51,7 +51,7 @@ class GXVOXE:
 
     @classmethod
     def create(cls, p1: 'GXVOX') -> 'GXVOXE':
-        ret_val = gxapi_cy.WrapVOXE.create(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapVOXE.create(GXContext._get_tls_geo(), p1._wrapper)
         return GXVOXE(ret_val)
 
 
@@ -60,7 +60,7 @@ class GXVOXE:
 
 
     def profile(self, p2: 'GXVV', p3: 'GXVV', p4: 'GXVV', p5: 'GXVV', p6: int) -> None:
-        self._wrapper.profile(p2, p3, p4, p5, p6)
+        self._wrapper.profile(p2._wrapper, p3._wrapper, p4._wrapper, p5._wrapper, p6)
         
 
 
@@ -74,7 +74,7 @@ class GXVOXE:
 
 
     def vector(self, p2: float, p3: float, p4: float, p5: float, p6: float, p7: float, p8: 'GXVV', p9: int) -> None:
-        self._wrapper.vector(p2, p3, p4, p5, p6, p7, p8, p9)
+        self._wrapper.vector(p2, p3, p4, p5, p6, p7, p8._wrapper, p9)
         
 
 

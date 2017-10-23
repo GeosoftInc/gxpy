@@ -51,7 +51,7 @@ class GXGEOSTRING:
 
     @classmethod
     def open(cls, p1: str, p2: int) -> 'GXGEOSTRING':
-        ret_val = gxapi_cy.WrapGEOSTRING.open(GXContext._get_tls_geo(), p2)
+        ret_val = gxapi_cy.WrapGEOSTRING.open(GXContext._get_tls_geo(), p1.encode(), p2)
         return GXGEOSTRING(ret_val)
 
 
@@ -60,49 +60,49 @@ class GXGEOSTRING:
 
 
     def get_ipj(self, p2: 'GXIPJ') -> None:
-        self._wrapper.get_ipj(p2)
+        self._wrapper.get_ipj(p2._wrapper)
         
 
 
 
 
     def get_features(self, p2: 'GXLST') -> None:
-        self._wrapper.get_features(p2)
+        self._wrapper.get_features(p2._wrapper)
         
 
 
 
 
     def get_sections(self, p2: 'GXLST') -> None:
-        self._wrapper.get_sections(p2)
+        self._wrapper.get_sections(p2._wrapper)
         
 
 
 
 
     def get_all_shapes(self, p2: 'GXLST') -> None:
-        self._wrapper.get_all_shapes(p2)
+        self._wrapper.get_all_shapes(p2._wrapper)
         
 
 
 
 
     def get_shapes_for_feature(self, p2: str, p3: 'GXLST') -> None:
-        self._wrapper.get_shapes_for_feature(p2.encode(), p3)
+        self._wrapper.get_shapes_for_feature(p2.encode(), p3._wrapper)
         
 
 
 
 
     def get_shapes_for_section(self, p2: str, p3: 'GXLST') -> None:
-        self._wrapper.get_shapes_for_section(p2.encode(), p3)
+        self._wrapper.get_shapes_for_section(p2.encode(), p3._wrapper)
         
 
 
 
 
     def get_shapes_for_feature_and_section(self, p2: str, p3: str, p4: 'GXLST') -> None:
-        self._wrapper.get_shapes_for_feature_and_section(p2.encode(), p3.encode(), p4)
+        self._wrapper.get_shapes_for_feature_and_section(p2.encode(), p3.encode(), p4._wrapper)
         
 
 
@@ -123,7 +123,7 @@ class GXGEOSTRING:
 
 
     def get_shape_properties(self, p2: str, p3: str_ref, p5: str_ref, p7: 'GXVV', p8: 'GXVV', p9: 'GXVV') -> None:
-        p3.value, p5.value = self._wrapper.get_shape_properties(p2.encode(), p3.value.encode(), p5.value.encode(), p7, p8, p9)
+        p3.value, p5.value = self._wrapper.get_shape_properties(p2.encode(), p3.value.encode(), p5.value.encode(), p7._wrapper, p8._wrapper, p9._wrapper)
         
 
 

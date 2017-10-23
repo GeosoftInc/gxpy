@@ -58,7 +58,7 @@ class GXSHP:
 
     @classmethod
     def create(cls, p1: str, p2: int) -> 'GXSHP':
-        ret_val = gxapi_cy.WrapSHP.create(GXContext._get_tls_geo(), p2)
+        ret_val = gxapi_cy.WrapSHP.create(GXContext._get_tls_geo(), p1.encode(), p2)
         return GXSHP(ret_val)
 
 
@@ -123,21 +123,21 @@ class GXSHP:
 
     @classmethod
     def open(cls, p1: str) -> 'GXSHP':
-        ret_val = gxapi_cy.WrapSHP.open(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapSHP.open(GXContext._get_tls_geo(), p1.encode())
         return GXSHP(ret_val)
 
 
 
 
     def set_arc(self, p2: 'GXVV', p3: 'GXVV') -> None:
-        self._wrapper.set_arc(p2, p3)
+        self._wrapper.set_arc(p2._wrapper, p3._wrapper)
         
 
 
 
 
     def set_arc_z(self, p2: 'GXVV', p3: 'GXVV', p4: 'GXVV') -> None:
-        self._wrapper.set_arc_z(p2, p3, p4)
+        self._wrapper.set_arc_z(p2._wrapper, p3._wrapper, p4._wrapper)
         
 
 
@@ -151,7 +151,7 @@ class GXSHP:
 
 
     def set_ipj(self, p2: 'GXIPJ') -> None:
-        self._wrapper.set_ipj(p2)
+        self._wrapper.set_ipj(p2._wrapper)
         
 
 
@@ -172,14 +172,14 @@ class GXSHP:
 
 
     def set_polygon(self, p2: 'GXVV', p3: 'GXVV', p4: int) -> None:
-        self._wrapper.set_polygon(p2, p3, p4)
+        self._wrapper.set_polygon(p2._wrapper, p3._wrapper, p4)
         
 
 
 
 
     def set_polygon_z(self, p2: 'GXVV', p3: 'GXVV', p4: 'GXVV', p5: int) -> None:
-        self._wrapper.set_polygon_z(p2, p3, p4, p5)
+        self._wrapper.set_polygon_z(p2._wrapper, p3._wrapper, p4._wrapper, p5)
         
 
 

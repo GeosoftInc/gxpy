@@ -51,7 +51,7 @@ class GXEDOC:
 
     @classmethod
     def create_new_gms_3d(cls, p1: str, p2: int, p3: int, p4: int) -> 'GXEDOC':
-        ret_val = gxapi_cy.WrapEDOC.create_new_gms_3d(GXContext._get_tls_geo(), p2, p3, p4)
+        ret_val = gxapi_cy.WrapEDOC.create_new_gms_3d(GXContext._get_tls_geo(), p1.encode(), p2, p3, p4)
         return GXEDOC(ret_val)
 
 
@@ -62,21 +62,21 @@ class GXEDOC:
 
     @classmethod
     def current(cls, p1: int) -> 'GXEDOC':
-        ret_val = gxapi_cy.WrapEDOC.current(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapEDOC.current(GXContext._get_tls_geo(), p1)
         return GXEDOC(ret_val)
 
 
 
     @classmethod
     def current_no_activate(cls, p1: int) -> 'GXEDOC':
-        ret_val = gxapi_cy.WrapEDOC.current_no_activate(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapEDOC.current_no_activate(GXContext._get_tls_geo(), p1)
         return GXEDOC(ret_val)
 
 
 
     @classmethod
     def current_if_exists(cls, p1: int) -> 'GXEDOC':
-        ret_val = gxapi_cy.WrapEDOC.current_if_exists(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapEDOC.current_if_exists(GXContext._get_tls_geo(), p1)
         return GXEDOC(ret_val)
 
 
@@ -85,7 +85,7 @@ class GXEDOC:
 
     @classmethod
     def get_documents_lst(cls, p1: 'GXLST', p2: int, p3: int) -> int:
-        ret_val = gxapi_cy.WrapEDOC.get_documents_lst(GXContext._get_tls_geo(), p2, p3)
+        ret_val = gxapi_cy.WrapEDOC.get_documents_lst(GXContext._get_tls_geo(), p1._wrapper, p2, p3)
         return ret_val
 
 
@@ -106,14 +106,14 @@ class GXEDOC:
 
     @classmethod
     def have_current(cls, p1: int) -> int:
-        ret_val = gxapi_cy.WrapEDOC.have_current(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapEDOC.have_current(GXContext._get_tls_geo(), p1)
         return ret_val
 
 
 
     @classmethod
     def loaded(cls, p1: str, p2: int) -> int:
-        ret_val = gxapi_cy.WrapEDOC.loaded(GXContext._get_tls_geo(), p2)
+        ret_val = gxapi_cy.WrapEDOC.loaded(GXContext._get_tls_geo(), p1.encode(), p2)
         return ret_val
 
 
@@ -141,14 +141,14 @@ class GXEDOC:
 
     @classmethod
     def load(cls, p1: str, p2: int) -> 'GXEDOC':
-        ret_val = gxapi_cy.WrapEDOC.load(GXContext._get_tls_geo(), p2)
+        ret_val = gxapi_cy.WrapEDOC.load(GXContext._get_tls_geo(), p1.encode(), p2)
         return GXEDOC(ret_val)
 
 
 
     @classmethod
     def load_no_activate(cls, p1: str, p2: int) -> 'GXEDOC':
-        ret_val = gxapi_cy.WrapEDOC.load_no_activate(GXContext._get_tls_geo(), p2)
+        ret_val = gxapi_cy.WrapEDOC.load_no_activate(GXContext._get_tls_geo(), p1.encode(), p2)
         return GXEDOC(ret_val)
 
 
@@ -169,7 +169,7 @@ class GXEDOC:
 
     @classmethod
     def sync(cls, p1: str, p2: int) -> None:
-        gxapi_cy.WrapEDOC.sync(GXContext._get_tls_geo(), p2)
+        gxapi_cy.WrapEDOC.sync(GXContext._get_tls_geo(), p1.encode(), p2)
         
 
 
@@ -183,28 +183,28 @@ class GXEDOC:
 
     @classmethod
     def un_load(cls, p1: str, p2: int) -> None:
-        gxapi_cy.WrapEDOC.un_load(GXContext._get_tls_geo(), p2)
+        gxapi_cy.WrapEDOC.un_load(GXContext._get_tls_geo(), p1.encode(), p2)
         
 
 
 
     @classmethod
     def un_load_all(cls, p1: int) -> None:
-        gxapi_cy.WrapEDOC.un_load_all(GXContext._get_tls_geo())
+        gxapi_cy.WrapEDOC.un_load_all(GXContext._get_tls_geo(), p1)
         
 
 
 
     @classmethod
     def un_load_discard(cls, p1: str, p2: int) -> None:
-        gxapi_cy.WrapEDOC.un_load_discard(GXContext._get_tls_geo(), p2)
+        gxapi_cy.WrapEDOC.un_load_discard(GXContext._get_tls_geo(), p1.encode(), p2)
         
 
 
 
     @classmethod
     def un_load_verify(cls, p1: str, p2: int, p3: int) -> None:
-        gxapi_cy.WrapEDOC.un_load_verify(GXContext._get_tls_geo(), p2, p3)
+        gxapi_cy.WrapEDOC.un_load_verify(GXContext._get_tls_geo(), p1.encode(), p2, p3)
         
 
 

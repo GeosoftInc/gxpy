@@ -51,7 +51,7 @@ class GXIEXP:
 
 
     def add_grid(self, p2: 'GXIMG', p3: str) -> None:
-        self._wrapper.add_grid(p2, p3.encode())
+        self._wrapper.add_grid(p2._wrapper, p3.encode())
         
 
 

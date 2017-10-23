@@ -60,7 +60,7 @@ class GXPAT:
 
 
     def get_lst(self, p2: str, p3: 'GXLST') -> None:
-        self._wrapper.get_lst(p2.encode(), p3)
+        self._wrapper.get_lst(p2.encode(), p3._wrapper)
         
 
 

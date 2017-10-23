@@ -58,7 +58,7 @@ class GXDMPPLY:
 
 
     def copy(self, p2: 'GXDMPPLY') -> None:
-        self._wrapper.copy(p2)
+        self._wrapper.copy(p2._wrapper)
         
 
 
@@ -88,7 +88,7 @@ class GXDMPPLY:
 
 
     def get_joins(self, p2: int, p3: 'GXVV') -> None:
-        self._wrapper.get_joins(p2, p3)
+        self._wrapper.get_joins(p2, p3._wrapper)
         
 
 
@@ -102,7 +102,7 @@ class GXDMPPLY:
 
 
     def get_poly(self, p2: int, p3: 'GXVV', p4: 'GXVV', p5: 'GXVV') -> None:
-        self._wrapper.get_poly(p2, p3, p4, p5)
+        self._wrapper.get_poly(p2, p3._wrapper, p4._wrapper, p5._wrapper)
         
 
 
@@ -158,14 +158,14 @@ class GXDMPPLY:
 
 
     def project_poly(self, p2: int, p3: float, p4: float, p5: float, p6: float, p7: float, p8: 'GXVV', p9: 'GXVV', p10: 'GXVV') -> None:
-        self._wrapper.project_poly(p2, p3, p4, p5, p6, p7, p8, p9, p10)
+        self._wrapper.project_poly(p2, p3, p4, p5, p6, p7, p8._wrapper, p9._wrapper, p10._wrapper)
         
 
 
 
 
     def re_project_poly(self, p2: int, p3: float, p4: float, p5: float, p6: float, p7: 'GXVV', p8: 'GXVV', p9: 'GXVV', p10: 'GXVV', p11: 'GXVV') -> None:
-        self._wrapper.re_project_poly(p2, p3, p4, p5, p6, p7, p8, p9, p10, p11)
+        self._wrapper.re_project_poly(p2, p3, p4, p5, p6, p7._wrapper, p8._wrapper, p9._wrapper, p10._wrapper, p11._wrapper)
         
 
 
@@ -179,7 +179,7 @@ class GXDMPPLY:
 
 
     def set_poly(self, p2: int, p3: 'GXVV', p4: 'GXVV', p5: 'GXVV') -> None:
-        self._wrapper.set_poly(p2, p3, p4, p5)
+        self._wrapper.set_poly(p2, p3._wrapper, p4._wrapper, p5._wrapper)
         
 
 

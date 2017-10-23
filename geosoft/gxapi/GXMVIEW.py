@@ -79,14 +79,14 @@ class GXMVIEW:
 
 
     def draw_object_3d(self, p2: int, p3: int, p4: int, p5: int, p6: 'GXVV', p7: 'GXVV', p8: 'GXVV', p9: 'GXVV', p10: 'GXVV', p11: 'GXVV', p12: 'GXVV', p13: 'GXVV', p14: 'GXVV') -> None:
-        self._wrapper.draw_object_3d(p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14)
+        self._wrapper.draw_object_3d(p2, p3, p4, p5, p6._wrapper, p7._wrapper, p8._wrapper, p9._wrapper, p10._wrapper, p11._wrapper, p12._wrapper, p13._wrapper, p14._wrapper)
         
 
 
 
 
     def draw_surface_3d_ex(self, p2: str, p3: 'GXVV', p4: 'GXVV', p5: 'GXVV', p6: 'GXVV', p7: 'GXVV', p8: 'GXVV', p9: 'GXVV', p10: int, p11: 'GXVV', p12: 'GXVV', p13: 'GXVV', p14: 'GXIPJ') -> None:
-        self._wrapper.draw_surface_3d_ex(p2.encode(), p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14)
+        self._wrapper.draw_surface_3d_ex(p2.encode(), p3._wrapper, p4._wrapper, p5._wrapper, p6._wrapper, p7._wrapper, p8._wrapper, p9._wrapper, p10, p11._wrapper, p12._wrapper, p13._wrapper, p14._wrapper)
         
 
 
@@ -100,14 +100,14 @@ class GXMVIEW:
 
     @classmethod
     def font_weight_lst(cls, p1: 'GXLST') -> None:
-        gxapi_cy.WrapMVIEW.font_weight_lst(GXContext._get_tls_geo())
+        gxapi_cy.WrapMVIEW.font_weight_lst(GXContext._get_tls_geo(), p1._wrapper)
         
 
 
 
 
     def get_agg_file_names(self, p2: str, p3: 'GXVV') -> None:
-        self._wrapper.get_agg_file_names(p2.encode(), p3)
+        self._wrapper.get_agg_file_names(p2.encode(), p3._wrapper)
         
 
 
@@ -135,7 +135,7 @@ class GXMVIEW:
 
 
     def poly_line_3d(self, p2: 'GXVV', p3: 'GXVV', p4: 'GXVV') -> None:
-        self._wrapper.poly_line_3d(p2, p3, p4)
+        self._wrapper.poly_line_3d(p2._wrapper, p3._wrapper, p4._wrapper)
         
 
 
@@ -149,7 +149,7 @@ class GXMVIEW:
 
 
     def set_meta(self, p2: str, p3: 'GXMETA', p4: str) -> None:
-        self._wrapper.set_meta(p2.encode(), p3, p4.encode())
+        self._wrapper.set_meta(p2.encode(), p3._wrapper, p4.encode())
         
 
 
@@ -163,7 +163,7 @@ class GXMVIEW:
 
 
     def update_met_afrom_group(self, p2: str, p3: 'GXMETA') -> None:
-        self._wrapper.update_met_afrom_group(p2.encode(), p3)
+        self._wrapper.update_met_afrom_group(p2.encode(), p3._wrapper)
         
 
 
@@ -181,7 +181,7 @@ class GXMVIEW:
 
 
     def get_plane_clip_ply(self, p2: int, p3: 'GXPLY') -> None:
-        self._wrapper.get_plane_clip_ply(p2, p3)
+        self._wrapper.get_plane_clip_ply(p2, p3._wrapper)
         
 
 
@@ -237,14 +237,14 @@ class GXMVIEW:
 
 
     def list_plane_groups(self, p2: int, p3: 'GXLST') -> None:
-        self._wrapper.list_plane_groups(p2, p3)
+        self._wrapper.list_plane_groups(p2, p3._wrapper)
         
 
 
 
 
     def list_planes(self, p2: 'GXLST') -> None:
-        self._wrapper.list_planes(p2)
+        self._wrapper.list_planes(p2._wrapper)
         
 
 
@@ -279,7 +279,7 @@ class GXMVIEW:
 
 
     def set_h_3dn(self, p2: 'GX3DN') -> None:
-        self._wrapper.set_h_3dn(p2)
+        self._wrapper.set_h_3dn(p2._wrapper)
         
 
 
@@ -300,7 +300,7 @@ class GXMVIEW:
 
 
     def set_plane_clip_ply(self, p2: int, p3: 'GXPLY') -> None:
-        self._wrapper.set_plane_clip_ply(p2, p3)
+        self._wrapper.set_plane_clip_ply(p2, p3._wrapper)
         
 
 
@@ -357,7 +357,7 @@ class GXMVIEW:
 
 
     def clip_poly_ex(self, p2: 'GXVV', p3: 'GXVV', p4: int, p5: int) -> None:
-        self._wrapper.clip_poly_ex(p2, p3, p4, p5)
+        self._wrapper.clip_poly_ex(p2._wrapper, p3._wrapper, p4, p5)
         
 
 
@@ -392,7 +392,7 @@ class GXMVIEW:
 
 
     def clip_poly(self, p2: 'GXVV', p3: 'GXVV', p4: int) -> None:
-        self._wrapper.clip_poly(p2, p3, p4)
+        self._wrapper.clip_poly(p2._wrapper, p3._wrapper, p4)
         
 
 
@@ -413,21 +413,21 @@ class GXMVIEW:
 
 
     def ext_clip_ply_list(self, p2: 'GXLST') -> None:
-        self._wrapper.ext_clip_ply_list(p2)
+        self._wrapper.ext_clip_ply_list(p2._wrapper)
         
 
 
 
 
     def get_clip_ply(self, p2: 'GXPLY') -> None:
-        self._wrapper.get_clip_ply(p2)
+        self._wrapper.get_clip_ply(p2._wrapper)
         
 
 
 
 
     def get_ext_clip_ply(self, p2: int, p3: 'GXPLY') -> None:
-        self._wrapper.get_ext_clip_ply(p2, p3)
+        self._wrapper.get_ext_clip_ply(p2, p3._wrapper)
         
 
 
@@ -441,7 +441,7 @@ class GXMVIEW:
 
 
     def get_ply(self, p2: 'GXPLY') -> None:
-        self._wrapper.get_ply(p2)
+        self._wrapper.get_ply(p2._wrapper)
         
 
 
@@ -469,14 +469,14 @@ class GXMVIEW:
 
 
     def set_ext_clip_ply(self, p2: int, p3: str, p4: 'GXPLY') -> int:
-        ret_val = self._wrapper.set_ext_clip_ply(p2, p3.encode(), p4)
+        ret_val = self._wrapper.set_ext_clip_ply(p2, p3.encode(), p4._wrapper)
         return ret_val
 
 
 
 
     def set_clip_ply(self, p2: 'GXPLY') -> None:
-        self._wrapper.set_clip_ply(p2)
+        self._wrapper.set_clip_ply(p2._wrapper)
         
 
 
@@ -494,42 +494,42 @@ class GXMVIEW:
 
     @classmethod
     def color2_rgb(cls, p1: int, p2: int_ref, p3: int_ref, p4: int_ref) -> None:
-        p2.value, p3.value, p4.value = gxapi_cy.WrapMVIEW.color2_rgb(GXContext._get_tls_geo(), p2.value, p3.value, p4.value)
+        p2.value, p3.value, p4.value = gxapi_cy.WrapMVIEW.color2_rgb(GXContext._get_tls_geo(), p1, p2.value, p3.value, p4.value)
         
 
 
 
     @classmethod
     def color_descr(cls, p1: int, p2: str_ref) -> None:
-        p2.value = gxapi_cy.WrapMVIEW.color_descr(GXContext._get_tls_geo(), p2.value.encode())
+        p2.value = gxapi_cy.WrapMVIEW.color_descr(GXContext._get_tls_geo(), p1, p2.value.encode())
         
 
 
 
     @classmethod
     def color(cls, p1: str) -> int:
-        ret_val = gxapi_cy.WrapMVIEW.color(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapMVIEW.color(GXContext._get_tls_geo(), p1.encode())
         return ret_val
 
 
 
     @classmethod
     def color_cmy(cls, p1: int, p2: int, p3: int) -> int:
-        ret_val = gxapi_cy.WrapMVIEW.color_cmy(GXContext._get_tls_geo(), p2, p3)
+        ret_val = gxapi_cy.WrapMVIEW.color_cmy(GXContext._get_tls_geo(), p1, p2, p3)
         return ret_val
 
 
 
     @classmethod
     def color_hsv(cls, p1: int, p2: int, p3: int) -> int:
-        ret_val = gxapi_cy.WrapMVIEW.color_hsv(GXContext._get_tls_geo(), p2, p3)
+        ret_val = gxapi_cy.WrapMVIEW.color_hsv(GXContext._get_tls_geo(), p1, p2, p3)
         return ret_val
 
 
 
     @classmethod
     def color_rgb(cls, p1: int, p2: int, p3: int) -> int:
-        ret_val = gxapi_cy.WrapMVIEW.color_rgb(GXContext._get_tls_geo(), p2, p3)
+        ret_val = gxapi_cy.WrapMVIEW.color_rgb(GXContext._get_tls_geo(), p1, p2, p3)
         return ret_val
 
 
@@ -733,14 +733,14 @@ class GXMVIEW:
 
 
     def classified_symbols(self, p2: 'GXVV', p3: 'GXVV', p4: 'GXVV', p5: float, p6: float, p7: str, p8: str, p9: str) -> None:
-        self._wrapper.classified_symbols(p2, p3, p4, p5, p6, p7.encode(), p8.encode(), p9.encode())
+        self._wrapper.classified_symbols(p2._wrapper, p3._wrapper, p4._wrapper, p5, p6, p7.encode(), p8.encode(), p9.encode())
         
 
 
 
 
     def complex_polygon(self, p2: 'GXVV', p3: 'GXVV', p4: 'GXVV') -> None:
-        self._wrapper.complex_polygon(p2, p3, p4)
+        self._wrapper.complex_polygon(p2._wrapper, p3._wrapper, p4._wrapper)
         
 
 
@@ -761,42 +761,42 @@ class GXMVIEW:
 
 
     def line_vv(self, p2: 'GXVV') -> None:
-        self._wrapper.line_vv(p2)
+        self._wrapper.line_vv(p2._wrapper)
         
 
 
 
 
     def polygon_dm(self, p2: 'GXVV', p3: 'GXVV') -> None:
-        self._wrapper.polygon_dm(p2, p3)
+        self._wrapper.polygon_dm(p2._wrapper, p3._wrapper)
         
 
 
 
 
     def polygon_ply(self, p2: 'GXPLY') -> None:
-        self._wrapper.polygon_ply(p2)
+        self._wrapper.polygon_ply(p2._wrapper)
         
 
 
 
 
     def poly_line(self, p2: int, p3: 'GXVV', p4: 'GXVV') -> None:
-        self._wrapper.poly_line(p2, p3, p4)
+        self._wrapper.poly_line(p2, p3._wrapper, p4._wrapper)
         
 
 
 
 
     def poly_line_dm(self, p2: 'GXVV', p3: 'GXVV') -> None:
-        self._wrapper.poly_line_dm(p2, p3)
+        self._wrapper.poly_line_dm(p2._wrapper, p3._wrapper)
         
 
 
 
 
     def poly_wrap(self, p2: 'GXVV', p3: 'GXVV') -> None:
-        self._wrapper.poly_wrap(p2, p3)
+        self._wrapper.poly_wrap(p2._wrapper, p3._wrapper)
         
 
 
@@ -817,7 +817,7 @@ class GXMVIEW:
 
 
     def size_symbols(self, p2: 'GXVV', p3: 'GXVV', p4: 'GXVV') -> None:
-        self._wrapper.size_symbols(p2, p3, p4)
+        self._wrapper.size_symbols(p2._wrapper, p3._wrapper, p4._wrapper)
         
 
 
@@ -831,14 +831,14 @@ class GXMVIEW:
 
 
     def symbols(self, p2: 'GXVV', p3: 'GXVV') -> None:
-        self._wrapper.symbols(p2, p3)
+        self._wrapper.symbols(p2._wrapper, p3._wrapper)
         
 
 
 
 
     def symbols_itr(self, p2: str, p3: 'GXVV', p4: 'GXVV', p5: 'GXVV') -> None:
-        self._wrapper.symbols_itr(p2.encode(), p3, p4, p5)
+        self._wrapper.symbols_itr(p2.encode(), p3._wrapper, p4._wrapper, p5._wrapper)
         
 
 
@@ -856,7 +856,7 @@ class GXMVIEW:
 
 
     def aggregate(self, p2: 'GXAGG', p3: str) -> None:
-        self._wrapper.aggregate(p2, p3.encode())
+        self._wrapper.aggregate(p2._wrapper, p3.encode())
         
 
 
@@ -877,7 +877,7 @@ class GXMVIEW:
 
 
     def col_symbol(self, p2: str, p3: 'GXCSYMB') -> None:
-        self._wrapper.col_symbol(p2.encode(), p3)
+        self._wrapper.col_symbol(p2.encode(), p3._wrapper)
         
 
 
@@ -891,7 +891,7 @@ class GXMVIEW:
 
 
     def datalinkd(self, p2: 'GXDATALINKD', p3: str) -> None:
-        self._wrapper.datalinkd(p2, p3.encode())
+        self._wrapper.datalinkd(p2._wrapper, p3.encode())
         
 
 
@@ -926,7 +926,7 @@ class GXMVIEW:
 
 
     def link(self, p2: 'GXDB', p3: str) -> None:
-        self._wrapper.link(p2, p3.encode())
+        self._wrapper.link(p2._wrapper, p3.encode())
         
 
 
@@ -940,14 +940,14 @@ class GXMVIEW:
 
 
     def meta(self, p2: 'GXMETA', p3: str) -> None:
-        self._wrapper.meta(p2, p3.encode())
+        self._wrapper.meta(p2._wrapper, p3.encode())
         
 
 
 
 
     def voxd(self, p2: 'GXVOXD', p3: str) -> None:
-        self._wrapper.voxd(p2, p3.encode())
+        self._wrapper.voxd(p2._wrapper, p3.encode())
         
 
 
@@ -961,7 +961,7 @@ class GXMVIEW:
 
 
     def draw_vector_voxel_vectors(self, p2: 'GXVOX', p3: str, p4: 'GXITR', p5: float, p6: float, p7: float, p8: float, p9: int) -> None:
-        self._wrapper.draw_vector_voxel_vectors(p2, p3.encode(), p4, p5, p6, p7, p8, p9)
+        self._wrapper.draw_vector_voxel_vectors(p2._wrapper, p3.encode(), p4._wrapper, p5, p6, p7, p8, p9)
         
 
 
@@ -975,7 +975,7 @@ class GXMVIEW:
 
 
     def draw_vectors_3d(self, p2: str, p3: 'GXVV', p4: 'GXVV', p5: 'GXVV', p6: 'GXVV', p7: 'GXVV', p8: 'GXVV', p9: 'GXITR', p10: float, p11: float, p12: float) -> None:
-        self._wrapper.draw_vectors_3d(p2.encode(), p3, p4, p5, p6, p7, p8, p9, p10, p11, p12)
+        self._wrapper.draw_vectors_3d(p2.encode(), p3._wrapper, p4._wrapper, p5._wrapper, p6._wrapper, p7._wrapper, p8._wrapper, p9._wrapper, p10, p11, p12)
         
 
 
@@ -986,7 +986,7 @@ class GXMVIEW:
 
 
     def set_group_itr(self, p2: int, p3: 'GXITR') -> None:
-        self._wrapper.set_group_itr(p2, p3)
+        self._wrapper.set_group_itr(p2, p3._wrapper)
         
 
 
@@ -1014,7 +1014,7 @@ class GXMVIEW:
 
 
     def set_group_tpat(self, p2: int, p3: 'GXTPAT') -> None:
-        self._wrapper.set_group_tpat(p2, p3)
+        self._wrapper.set_group_tpat(p2, p3._wrapper)
         
 
 
@@ -1063,21 +1063,21 @@ class GXMVIEW:
 
 
     def write_group_storage(self, p2: int, p3: str, p4: 'GXBF') -> None:
-        self._wrapper.write_group_storage(p2, p3.encode(), p4)
+        self._wrapper.write_group_storage(p2, p3.encode(), p4._wrapper)
         
 
 
 
 
     def copy_marked_groups(self, p2: 'GXMVIEW') -> None:
-        self._wrapper.copy_marked_groups(p2)
+        self._wrapper.copy_marked_groups(p2._wrapper)
         
 
 
 
 
     def copy_raw_marked_groups(self, p2: 'GXMVIEW') -> None:
-        self._wrapper.copy_raw_marked_groups(p2)
+        self._wrapper.copy_raw_marked_groups(p2._wrapper)
         
 
 
@@ -1119,7 +1119,7 @@ class GXMVIEW:
 
 
     def group_to_ply(self, p2: str, p3: 'GXPLY') -> None:
-        self._wrapper.group_to_ply(p2.encode(), p3)
+        self._wrapper.group_to_ply(p2.encode(), p3._wrapper)
         
 
 
@@ -1182,7 +1182,7 @@ class GXMVIEW:
 
 
     def list_groups(self, p2: 'GXLST', p3: int) -> int:
-        ret_val = self._wrapper.list_groups(p2, p3)
+        ret_val = self._wrapper.list_groups(p2._wrapper, p3)
         return ret_val
 
 
@@ -1319,7 +1319,7 @@ class GXMVIEW:
 
 
     def set_working_ipj(self, p2: 'GXIPJ') -> None:
-        self._wrapper.set_working_ipj(p2)
+        self._wrapper.set_working_ipj(p2._wrapper)
         
 
 
@@ -1340,14 +1340,14 @@ class GXMVIEW:
 
 
     def get_ipj(self, p2: 'GXIPJ') -> None:
-        self._wrapper.get_ipj(p2)
+        self._wrapper.get_ipj(p2._wrapper)
         
 
 
 
 
     def get_user_ipj(self, p2: 'GXIPJ') -> None:
-        self._wrapper.get_user_ipj(p2)
+        self._wrapper.get_user_ipj(p2._wrapper)
         
 
 
@@ -1368,14 +1368,14 @@ class GXMVIEW:
 
 
     def set_ipj(self, p2: 'GXIPJ') -> None:
-        self._wrapper.set_ipj(p2)
+        self._wrapper.set_ipj(p2._wrapper)
         
 
 
 
 
     def set_user_ipj(self, p2: 'GXIPJ') -> None:
-        self._wrapper.set_user_ipj(p2)
+        self._wrapper.set_user_ipj(p2._wrapper)
         
 
 
@@ -1474,7 +1474,7 @@ class GXMVIEW:
 
 
     def label_fid(self, p2: 'GXVV', p3: float, p4: float, p5: float, p6: float, p7: float) -> None:
-        self._wrapper.label_fid(p2, p3, p4, p5, p6, p7)
+        self._wrapper.label_fid(p2._wrapper, p3, p4, p5, p6, p7)
         
 
 
@@ -1495,7 +1495,7 @@ class GXMVIEW:
 
     @classmethod
     def optimum_tick(cls, p1: float, p2: float, p3: float_ref) -> None:
-        p3.value = gxapi_cy.WrapMVIEW.optimum_tick(GXContext._get_tls_geo(), p2, p3.value)
+        p3.value = gxapi_cy.WrapMVIEW.optimum_tick(GXContext._get_tls_geo(), p1, p2, p3.value)
         
 
 
@@ -1506,21 +1506,21 @@ class GXMVIEW:
 
     @classmethod
     def create(cls, p1: 'GXMAP', p2: str, p3: int) -> 'GXMVIEW':
-        ret_val = gxapi_cy.WrapMVIEW.create(GXContext._get_tls_geo(), p2.encode(), p3)
+        ret_val = gxapi_cy.WrapMVIEW.create(GXContext._get_tls_geo(), p1._wrapper, p2.encode(), p3)
         return GXMVIEW(ret_val)
 
 
 
     @classmethod
     def create_crooked_section(cls, p1: 'GXMAP', p2: 'GXIPJ', p3: str, p4: float, p5: float, p6: float, p7: float, p8: float, p9: float, p10: float, p11: float, p12: 'GXVV', p13: 'GXVV', p14: 'GXVV') -> 'GXMVIEW':
-        ret_val = gxapi_cy.WrapMVIEW.create_crooked_section(GXContext._get_tls_geo(), p2, p3.encode(), p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14)
+        ret_val = gxapi_cy.WrapMVIEW.create_crooked_section(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3.encode(), p4, p5, p6, p7, p8, p9, p10, p11, p12._wrapper, p13._wrapper, p14._wrapper)
         return GXMVIEW(ret_val)
 
 
 
     @classmethod
     def create_crooked_section_data_profile(cls, p1: 'GXMAP', p2: 'GXIPJ', p3: str, p4: float, p5: float, p6: float, p7: float, p8: float, p9: float, p10: float, p11: float, p12: int, p13: 'GXVV', p14: 'GXVV', p15: 'GXVV') -> 'GXMVIEW':
-        ret_val = gxapi_cy.WrapMVIEW.create_crooked_section_data_profile(GXContext._get_tls_geo(), p2, p3.encode(), p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15)
+        ret_val = gxapi_cy.WrapMVIEW.create_crooked_section_data_profile(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3.encode(), p4, p5, p6, p7, p8, p9, p10, p11, p12, p13._wrapper, p14._wrapper, p15._wrapper)
         return GXMVIEW(ret_val)
 
 

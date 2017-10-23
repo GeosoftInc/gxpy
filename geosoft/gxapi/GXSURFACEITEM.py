@@ -51,7 +51,7 @@ class GXSURFACEITEM:
 
     @classmethod
     def create(cls, p1: str, p2: str) -> 'GXSURFACEITEM':
-        ret_val = gxapi_cy.WrapSURFACEITEM.create(GXContext._get_tls_geo(), p2.encode())
+        ret_val = gxapi_cy.WrapSURFACEITEM.create(GXContext._get_tls_geo(), p1.encode(), p2.encode())
         return GXSURFACEITEM(ret_val)
 
 
@@ -116,14 +116,14 @@ class GXSURFACEITEM:
 
 
     def add_mesh(self, p2: 'GXVV', p3: 'GXVV', p4: 'GXVV', p5: 'GXVV', p6: 'GXVV', p7: 'GXVV') -> int:
-        ret_val = self._wrapper.add_mesh(p2, p3, p4, p5, p6, p7)
+        ret_val = self._wrapper.add_mesh(p2._wrapper, p3._wrapper, p4._wrapper, p5._wrapper, p6._wrapper, p7._wrapper)
         return ret_val
 
 
 
 
     def get_mesh(self, p2: int, p3: 'GXVV', p4: 'GXVV', p5: 'GXVV', p6: 'GXVV', p7: 'GXVV', p8: 'GXVV') -> None:
-        self._wrapper.get_mesh(p2, p3, p4, p5, p6, p7, p8)
+        self._wrapper.get_mesh(p2, p3._wrapper, p4._wrapper, p5._wrapper, p6._wrapper, p7._wrapper, p8._wrapper)
         
 
 

@@ -51,14 +51,14 @@ class GXCOM:
 
     @classmethod
     def create(cls, p1: str, p2: int, p3: int, p4: int, p5: int, p6: int, p7: int) -> 'GXCOM':
-        ret_val = gxapi_cy.WrapCOM.create(GXContext._get_tls_geo(), p2, p3, p4, p5, p6, p7)
+        ret_val = gxapi_cy.WrapCOM.create(GXContext._get_tls_geo(), p1.encode(), p2, p3, p4, p5, p6, p7)
         return GXCOM(ret_val)
 
 
 
     @classmethod
     def create_no_terminate(cls, p1: str, p2: int, p3: int, p4: int, p5: int, p6: int, p7: int) -> 'GXCOM':
-        ret_val = gxapi_cy.WrapCOM.create_no_terminate(GXContext._get_tls_geo(), p2, p3, p4, p5, p6, p7)
+        ret_val = gxapi_cy.WrapCOM.create_no_terminate(GXContext._get_tls_geo(), p1.encode(), p2, p3, p4, p5, p6, p7)
         return GXCOM(ret_val)
 
 
@@ -109,21 +109,21 @@ class GXCOM:
 
 
     def read_em61_lines_wa(self, p2: int, p3: 'GXWA') -> None:
-        self._wrapper.read_em61_lines_wa(p2, p3)
+        self._wrapper.read_em61_lines_wa(p2, p3._wrapper)
         
 
 
 
 
     def read_file2_wa(self, p2: 'GXWA') -> None:
-        self._wrapper.read_file2_wa(p2)
+        self._wrapper.read_file2_wa(p2._wrapper)
         
 
 
 
 
     def read_lines_wa(self, p2: int, p3: 'GXWA') -> None:
-        self._wrapper.read_lines_wa(p2, p3)
+        self._wrapper.read_lines_wa(p2, p3._wrapper)
         
 
 

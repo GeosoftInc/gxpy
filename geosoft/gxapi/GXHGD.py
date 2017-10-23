@@ -51,7 +51,7 @@ class GXHGD:
 
     @classmethod
     def create(cls, p1: str) -> 'GXHGD':
-        ret_val = gxapi_cy.WrapHGD.create(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapHGD.create(GXContext._get_tls_geo(), p1.encode())
         return GXHGD(ret_val)
 
 
@@ -67,21 +67,21 @@ class GXHGD:
 
 
     def get_meta(self, p2: 'GXMETA') -> None:
-        self._wrapper.get_meta(p2)
+        self._wrapper.get_meta(p2._wrapper)
         
 
 
 
     @classmethod
     def h_create_img(cls, p1: 'GXIMG', p2: str) -> 'GXHGD':
-        ret_val = gxapi_cy.WrapHGD.h_create_img(GXContext._get_tls_geo(), p2.encode())
+        ret_val = gxapi_cy.WrapHGD.h_create_img(GXContext._get_tls_geo(), p1._wrapper, p2.encode())
         return GXHGD(ret_val)
 
 
 
 
     def set_meta(self, p2: 'GXMETA') -> None:
-        self._wrapper.set_meta(p2)
+        self._wrapper.set_meta(p2._wrapper)
         
 
 

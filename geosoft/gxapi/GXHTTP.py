@@ -51,7 +51,7 @@ class GXHTTP:
 
     @classmethod
     def create(cls, p1: str, p2: str, p3: str, p4: str) -> 'GXHTTP':
-        ret_val = gxapi_cy.WrapHTTP.create(GXContext._get_tls_geo(), p2.encode(), p3.encode(), p4.encode())
+        ret_val = gxapi_cy.WrapHTTP.create(GXContext._get_tls_geo(), p1.encode(), p2.encode(), p3.encode(), p4.encode())
         return GXHTTP(ret_val)
 
 
@@ -60,28 +60,28 @@ class GXHTTP:
 
 
     def download(self, p2: str, p3: 'GXBF', p4: int) -> None:
-        self._wrapper.download(p2.encode(), p3, p4)
+        self._wrapper.download(p2.encode(), p3._wrapper, p4)
         
 
 
 
 
     def silent_download(self, p2: str, p3: 'GXBF', p4: int) -> None:
-        self._wrapper.silent_download(p2.encode(), p3, p4)
+        self._wrapper.silent_download(p2.encode(), p3._wrapper, p4)
         
 
 
 
 
     def get(self, p2: str, p3: str, p4: 'GXBF', p5: 'GXBF') -> None:
-        self._wrapper.get(p2.encode(), p3.encode(), p4, p5)
+        self._wrapper.get(p2.encode(), p3.encode(), p4._wrapper, p5._wrapper)
         
 
 
 
 
     def post(self, p2: str, p3: str, p4: 'GXBF') -> None:
-        self._wrapper.post(p2.encode(), p3.encode(), p4)
+        self._wrapper.post(p2.encode(), p3.encode(), p4._wrapper)
         
 
 

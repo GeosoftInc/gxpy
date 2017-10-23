@@ -58,21 +58,21 @@ class GXIGRF:
 
 
     def calc_vv(self, p2: 'GXVV', p3: 'GXVV', p4: 'GXVV', p5: 'GXVV', p6: 'GXVV', p7: 'GXVV') -> None:
-        self._wrapper.calc_vv(p2, p3, p4, p5, p6, p7)
+        self._wrapper.calc_vv(p2._wrapper, p3._wrapper, p4._wrapper, p5._wrapper, p6._wrapper, p7._wrapper)
         
 
 
 
     @classmethod
     def create(cls, p1: float, p2: int, p3: str) -> 'GXIGRF':
-        ret_val = gxapi_cy.WrapIGRF.create(GXContext._get_tls_geo(), p2, p3.encode())
+        ret_val = gxapi_cy.WrapIGRF.create(GXContext._get_tls_geo(), p1, p2, p3.encode())
         return GXIGRF(ret_val)
 
 
 
     @classmethod
     def date_range(cls, p1: str, p2: float_ref, p3: float_ref) -> None:
-        p2.value, p3.value = gxapi_cy.WrapIGRF.date_range(GXContext._get_tls_geo(), p2.value, p3.value)
+        p2.value, p3.value = gxapi_cy.WrapIGRF.date_range(GXContext._get_tls_geo(), p1.encode(), p2.value, p3.value)
         
 
 

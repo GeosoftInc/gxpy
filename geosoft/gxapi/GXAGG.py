@@ -72,7 +72,7 @@ class GXAGG:
 
     @classmethod
     def create_map(cls, p1: 'GXMAP', p2: str) -> 'GXAGG':
-        ret_val = gxapi_cy.WrapAGG.create_map(GXContext._get_tls_geo(), p2.encode())
+        ret_val = gxapi_cy.WrapAGG.create_map(GXContext._get_tls_geo(), p1._wrapper, p2.encode())
         return GXAGG(ret_val)
 
 
@@ -81,14 +81,14 @@ class GXAGG:
 
 
     def get_layer_itr(self, p2: int, p3: 'GXITR') -> None:
-        self._wrapper.get_layer_itr(p2, p3)
+        self._wrapper.get_layer_itr(p2, p3._wrapper)
         
 
 
 
 
     def list_img(self, p2: 'GXVV') -> int:
-        ret_val = self._wrapper.list_img(p2)
+        ret_val = self._wrapper.list_img(p2._wrapper)
         return ret_val
 
 
@@ -130,7 +130,7 @@ class GXAGG:
 
 
     def set_layer_itr(self, p2: int, p3: 'GXITR') -> None:
-        self._wrapper.set_layer_itr(p2, p3)
+        self._wrapper.set_layer_itr(p2, p3._wrapper)
         
 
 

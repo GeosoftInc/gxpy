@@ -72,7 +72,7 @@ class GXST:
 
 
     def data_vv(self, p2: 'GXVV') -> None:
-        self._wrapper.data_vv(p2)
+        self._wrapper.data_vv(p2._wrapper)
         
 
 
@@ -81,7 +81,7 @@ class GXST:
 
 
     def get_histogram_bins(self, p2: 'GXVV') -> None:
-        self._wrapper.get_histogram_bins(p2)
+        self._wrapper.get_histogram_bins(p2._wrapper)
         
 
 
@@ -137,14 +137,14 @@ class GXST:
 
     @classmethod
     def get_norm_prob(cls, p1: float) -> float:
-        ret_val = gxapi_cy.WrapST.get_norm_prob(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapST.get_norm_prob(GXContext._get_tls_geo(), p1)
         return ret_val
 
 
 
     @classmethod
     def get_norm_prob_x(cls, p1: float) -> float:
-        ret_val = gxapi_cy.WrapST.get_norm_prob_x(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapST.get_norm_prob_x(GXContext._get_tls_geo(), p1)
         return ret_val
 
 

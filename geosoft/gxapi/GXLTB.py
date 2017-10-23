@@ -58,28 +58,28 @@ class GXLTB:
 
 
     def contract(self, p2: 'GXLTB') -> 'GXLTB':
-        ret_val = self._wrapper.contract(p2)
+        ret_val = self._wrapper.contract(p2._wrapper)
         return GXLTB(ret_val)
 
 
 
     @classmethod
     def create(cls, p1: str, p2: int, p3: int, p4: str) -> 'GXLTB':
-        ret_val = gxapi_cy.WrapLTB.create(GXContext._get_tls_geo(), p2, p3, p4.encode())
+        ret_val = gxapi_cy.WrapLTB.create(GXContext._get_tls_geo(), p1.encode(), p2, p3, p4.encode())
         return GXLTB(ret_val)
 
 
 
     @classmethod
     def create_crypt(cls, p1: str, p2: int, p3: int, p4: int, p5: str, p6: str) -> 'GXLTB':
-        ret_val = gxapi_cy.WrapLTB.create_crypt(GXContext._get_tls_geo(), p2, p3, p4, p5.encode(), p6.encode())
+        ret_val = gxapi_cy.WrapLTB.create_crypt(GXContext._get_tls_geo(), p1.encode(), p2, p3, p4, p5.encode(), p6.encode())
         return GXLTB(ret_val)
 
 
 
     @classmethod
     def create_ex(cls, p1: str, p2: int, p3: int, p4: int, p5: str) -> 'GXLTB':
-        ret_val = gxapi_cy.WrapLTB.create_ex(GXContext._get_tls_geo(), p2, p3, p4, p5.encode())
+        ret_val = gxapi_cy.WrapLTB.create_ex(GXContext._get_tls_geo(), p1.encode(), p2, p3, p4, p5.encode())
         return GXLTB(ret_val)
 
 
@@ -95,21 +95,21 @@ class GXLTB:
 
 
     def get_con_lst(self, p2: int, p3: str, p4: int, p5: 'GXLST') -> None:
-        self._wrapper.get_con_lst(p2, p3.encode(), p4, p5)
+        self._wrapper.get_con_lst(p2, p3.encode(), p4, p5._wrapper)
         
 
 
 
 
     def get_lst(self, p2: int, p3: 'GXLST') -> None:
-        self._wrapper.get_lst(p2, p3)
+        self._wrapper.get_lst(p2, p3._wrapper)
         
 
 
 
 
     def get_lst2(self, p2: int, p3: int, p4: 'GXLST') -> None:
-        self._wrapper.get_lst2(p2, p3, p4)
+        self._wrapper.get_lst2(p2, p3, p4._wrapper)
         
 
 
@@ -179,7 +179,7 @@ class GXLTB:
 
 
     def merge(self, p2: 'GXLTB') -> 'GXLTB':
-        ret_val = self._wrapper.merge(p2)
+        ret_val = self._wrapper.merge(p2._wrapper)
         return GXLTB(ret_val)
 
 

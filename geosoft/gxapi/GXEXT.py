@@ -51,7 +51,7 @@ class GXEXT:
 
     @classmethod
     def get_info(cls, p1: str, p2: float_ref, p3: float_ref, p4: float_ref, p5: float_ref, p6: 'GXIPJ') -> None:
-        p2.value, p3.value, p4.value, p5.value = gxapi_cy.WrapEXT.get_info(GXContext._get_tls_geo(), p2.value, p3.value, p4.value, p5.value, p6)
+        p2.value, p3.value, p4.value, p5.value = gxapi_cy.WrapEXT.get_info(GXContext._get_tls_geo(), p1.encode(), p2.value, p3.value, p4.value, p5.value, p6._wrapper)
         
 
 

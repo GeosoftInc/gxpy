@@ -81,14 +81,14 @@ class GXBIGRID:
 
 
     def run(self, p2: str, p3: 'GXDAT', p4: 'GXDAT') -> None:
-        self._wrapper.run(p2.encode(), p3, p4)
+        self._wrapper.run(p2.encode(), p3._wrapper, p4._wrapper)
         
 
 
 
 
     def run2(self, p2: str, p3: 'GXDAT', p4: 'GXDAT', p5: 'GXIPJ') -> None:
-        self._wrapper.run2(p2.encode(), p3, p4, p5)
+        self._wrapper.run2(p2.encode(), p3._wrapper, p4._wrapper, p5._wrapper)
         
 
 

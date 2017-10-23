@@ -51,14 +51,14 @@ class GXUSERMETA:
 
     @classmethod
     def create(cls, p1: int) -> 'GXUSERMETA':
-        ret_val = gxapi_cy.WrapUSERMETA.create(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapUSERMETA.create(GXContext._get_tls_geo(), p1)
         return GXUSERMETA(ret_val)
 
 
 
     @classmethod
     def create_s(cls, p1: str) -> 'GXUSERMETA':
-        ret_val = gxapi_cy.WrapUSERMETA.create_s(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapUSERMETA.create_s(GXContext._get_tls_geo(), p1.encode())
         return GXUSERMETA(ret_val)
 
 
@@ -88,7 +88,7 @@ class GXUSERMETA:
 
 
     def get_ipj(self, p2: 'GXIPJ') -> None:
-        self._wrapper.get_ipj(p2)
+        self._wrapper.get_ipj(p2._wrapper)
         
 
 
@@ -109,7 +109,7 @@ class GXUSERMETA:
 
 
     def compare(self, p2: 'GXUSERMETA') -> int:
-        ret_val = self._wrapper.compare(p2)
+        ret_val = self._wrapper.compare(p2._wrapper)
         return ret_val
 
 
@@ -193,7 +193,7 @@ class GXUSERMETA:
 
 
     def set_ipj(self, p2: 'GXIPJ') -> None:
-        self._wrapper.set_ipj(p2)
+        self._wrapper.set_ipj(p2._wrapper)
         
 
 
@@ -228,21 +228,21 @@ class GXUSERMETA:
 
     @classmethod
     def update_extents2_d(cls, p1: str, p2: 'GXIPJ', p3: float, p4: float, p5: float, p6: float) -> None:
-        gxapi_cy.WrapUSERMETA.update_extents2_d(GXContext._get_tls_geo(), p2, p3, p4, p5, p6)
+        gxapi_cy.WrapUSERMETA.update_extents2_d(GXContext._get_tls_geo(), p1.encode(), p2._wrapper, p3, p4, p5, p6)
         
 
 
 
     @classmethod
     def update_file_type(cls, p1: str, p2: str) -> None:
-        gxapi_cy.WrapUSERMETA.update_file_type(GXContext._get_tls_geo(), p2.encode())
+        gxapi_cy.WrapUSERMETA.update_file_type(GXContext._get_tls_geo(), p1.encode(), p2.encode())
         
 
 
 
     @classmethod
     def save_file_lineage(cls, p1: str, p2: int) -> None:
-        gxapi_cy.WrapUSERMETA.save_file_lineage(GXContext._get_tls_geo(), p2)
+        gxapi_cy.WrapUSERMETA.save_file_lineage(GXContext._get_tls_geo(), p1.encode(), p2)
         
 
 

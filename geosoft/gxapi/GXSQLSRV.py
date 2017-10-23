@@ -51,42 +51,42 @@ class GXSQLSRV:
 
     @classmethod
     def attach_mdf(cls, p1: str, p2: str, p3: str, p4: str, p5: str, p6: str) -> int:
-        ret_val = gxapi_cy.WrapSQLSRV.attach_mdf(GXContext._get_tls_geo(), p2.encode(), p3.encode(), p4.encode(), p5.encode(), p6.encode())
+        ret_val = gxapi_cy.WrapSQLSRV.attach_mdf(GXContext._get_tls_geo(), p1.encode(), p2.encode(), p3.encode(), p4.encode(), p5.encode(), p6.encode())
         return ret_val
 
 
 
     @classmethod
     def detach_db(cls, p1: str, p2: str, p3: str, p4: str) -> int:
-        ret_val = gxapi_cy.WrapSQLSRV.detach_db(GXContext._get_tls_geo(), p2.encode(), p3.encode(), p4.encode())
+        ret_val = gxapi_cy.WrapSQLSRV.detach_db(GXContext._get_tls_geo(), p1.encode(), p2.encode(), p3.encode(), p4.encode())
         return ret_val
 
 
 
     @classmethod
     def get_database_languages_lst(cls, p1: 'GXLST', p2: str, p3: str, p4: str, p5: int) -> int:
-        ret_val = gxapi_cy.WrapSQLSRV.get_database_languages_lst(GXContext._get_tls_geo(), p2.encode(), p3.encode(), p4.encode(), p5)
+        ret_val = gxapi_cy.WrapSQLSRV.get_database_languages_lst(GXContext._get_tls_geo(), p1._wrapper, p2.encode(), p3.encode(), p4.encode(), p5)
         return ret_val
 
 
 
     @classmethod
     def get_databases_lst(cls, p1: 'GXLST', p2: str, p3: str, p4: str, p5: int) -> int:
-        ret_val = gxapi_cy.WrapSQLSRV.get_databases_lst(GXContext._get_tls_geo(), p2.encode(), p3.encode(), p4.encode(), p5)
+        ret_val = gxapi_cy.WrapSQLSRV.get_databases_lst(GXContext._get_tls_geo(), p1._wrapper, p2.encode(), p3.encode(), p4.encode(), p5)
         return ret_val
 
 
 
     @classmethod
     def get_login_gui(cls, p1: str, p2: str_ref, p4: str_ref, p6: int, p7: int_ref) -> None:
-        p2.value, p4.value, p7.value = gxapi_cy.WrapSQLSRV.get_login_gui(GXContext._get_tls_geo(), p2.value.encode(), p4.value.encode(), p6, p7.value)
+        p2.value, p4.value, p7.value = gxapi_cy.WrapSQLSRV.get_login_gui(GXContext._get_tls_geo(), p1.encode(), p2.value.encode(), p4.value.encode(), p6, p7.value)
         
 
 
 
     @classmethod
     def get_servers_lst(cls, p1: 'GXLST') -> int:
-        ret_val = gxapi_cy.WrapSQLSRV.get_servers_lst(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapSQLSRV.get_servers_lst(GXContext._get_tls_geo(), p1._wrapper)
         return ret_val
 
 

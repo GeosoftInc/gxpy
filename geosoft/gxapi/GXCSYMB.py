@@ -93,14 +93,14 @@ class GXCSYMB:
 
 
     def add_data(self, p2: 'GXVV', p3: 'GXVV', p4: 'GXVV') -> None:
-        self._wrapper.add_data(p2, p3, p4)
+        self._wrapper.add_data(p2._wrapper, p3._wrapper, p4._wrapper)
         
 
 
 
     @classmethod
     def create(cls, p1: str) -> 'GXCSYMB':
-        ret_val = gxapi_cy.WrapCSYMB.create(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapCSYMB.create(GXContext._get_tls_geo(), p1.encode())
         return GXCSYMB(ret_val)
 
 
@@ -109,7 +109,7 @@ class GXCSYMB:
 
 
     def get_itr(self, p2: 'GXITR') -> None:
-        self._wrapper.get_itr(p2)
+        self._wrapper.get_itr(p2._wrapper)
         
 
 

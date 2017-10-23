@@ -172,7 +172,7 @@ class GXEDB:
 
 
     def get_profile_split_vv(self, p2: 'GXVV') -> None:
-        self._wrapper.get_profile_split_vv(p2)
+        self._wrapper.get_profile_split_vv(p2._wrapper)
         
 
 
@@ -214,14 +214,14 @@ class GXEDB:
 
 
     def histogram(self, p2: 'GXST', p3: float, p4: float, p5: int) -> None:
-        self._wrapper.histogram(p2, p3, p4, p5)
+        self._wrapper.histogram(p2._wrapper, p3, p4, p5)
         
 
 
 
 
     def all_chan_list(self, p2: 'GXVV') -> int:
-        ret_val = self._wrapper.all_chan_list(p2)
+        ret_val = self._wrapper.all_chan_list(p2._wrapper)
         return ret_val
 
 
@@ -235,21 +235,21 @@ class GXEDB:
 
 
     def disp_chan_list(self, p2: 'GXVV') -> int:
-        ret_val = self._wrapper.disp_chan_list(p2)
+        ret_val = self._wrapper.disp_chan_list(p2._wrapper)
         return ret_val
 
 
 
 
     def disp_chan_lst(self, p2: 'GXLST') -> int:
-        ret_val = self._wrapper.disp_chan_lst(p2)
+        ret_val = self._wrapper.disp_chan_lst(p2._wrapper)
         return ret_val
 
 
 
 
     def disp_class_chan_lst(self, p2: 'GXLST', p3: str) -> int:
-        ret_val = self._wrapper.disp_class_chan_lst(p2, p3.encode())
+        ret_val = self._wrapper.disp_class_chan_lst(p2._wrapper, p3.encode())
         return ret_val
 
 
@@ -263,7 +263,7 @@ class GXEDB:
 
 
     def find_nearest(self, p2: float_ref, p3: float_ref, p4: float_ref, p5: 'GXIPJ') -> int:
-        ret_val, p2.value, p3.value, p4.value = self._wrapper.find_nearest(p2.value, p3.value, p4.value, p5)
+        ret_val, p2.value, p3.value, p4.value = self._wrapper.find_nearest(p2.value, p3.value, p4.value, p5._wrapper)
         return ret_val
 
 
@@ -305,21 +305,21 @@ class GXEDB:
 
     @classmethod
     def get_databases_lst(cls, p1: 'GXLST', p2: int) -> int:
-        ret_val = gxapi_cy.WrapEDB.get_databases_lst(GXContext._get_tls_geo(), p2)
+        ret_val = gxapi_cy.WrapEDB.get_databases_lst(GXContext._get_tls_geo(), p1._wrapper, p2)
         return ret_val
 
 
 
 
     def get_mark_chan_vv(self, p2: 'GXVV', p3: int) -> int:
-        ret_val = self._wrapper.get_mark_chan_vv(p2, p3)
+        ret_val = self._wrapper.get_mark_chan_vv(p2._wrapper, p3)
         return ret_val
 
 
 
 
     def get_mark_chan_va(self, p2: 'GXVA', p3: int) -> int:
-        ret_val = self._wrapper.get_mark_chan_va(p2, p3)
+        ret_val = self._wrapper.get_mark_chan_va(p2._wrapper, p3)
         return ret_val
 
 
@@ -361,7 +361,7 @@ class GXEDB:
 
     @classmethod
     def loaded(cls, p1: str) -> int:
-        ret_val = gxapi_cy.WrapEDB.loaded(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapEDB.loaded(GXContext._get_tls_geo(), p1.encode())
         return ret_val
 
 
@@ -431,14 +431,14 @@ class GXEDB:
 
     @classmethod
     def load(cls, p1: str) -> 'GXEDB':
-        ret_val = gxapi_cy.WrapEDB.load(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapEDB.load(GXContext._get_tls_geo(), p1.encode())
         return GXEDB(ret_val)
 
 
 
     @classmethod
     def load_no_activate(cls, p1: str) -> 'GXEDB':
-        ret_val = gxapi_cy.WrapEDB.load_no_activate(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapEDB.load_no_activate(GXContext._get_tls_geo(), p1.encode())
         return GXEDB(ret_val)
 
 
@@ -459,21 +459,21 @@ class GXEDB:
 
     @classmethod
     def load_new(cls, p1: str) -> 'GXEDB':
-        ret_val = gxapi_cy.WrapEDB.load_new(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapEDB.load_new(GXContext._get_tls_geo(), p1.encode())
         return GXEDB(ret_val)
 
 
 
     @classmethod
     def load_pass(cls, p1: str, p2: str, p3: str) -> 'GXEDB':
-        ret_val = gxapi_cy.WrapEDB.load_pass(GXContext._get_tls_geo(), p2.encode(), p3.encode())
+        ret_val = gxapi_cy.WrapEDB.load_pass(GXContext._get_tls_geo(), p1.encode(), p2.encode(), p3.encode())
         return GXEDB(ret_val)
 
 
 
     @classmethod
     def load_with_view(cls, p1: str, p2: 'GXEDB') -> 'GXEDB':
-        ret_val = gxapi_cy.WrapEDB.load_with_view(GXContext._get_tls_geo(), p2)
+        ret_val = gxapi_cy.WrapEDB.load_with_view(GXContext._get_tls_geo(), p1.encode(), p2._wrapper)
         return GXEDB(ret_val)
 
 
@@ -599,7 +599,7 @@ class GXEDB:
 
 
     def set_profile_split_vv(self, p2: 'GXVV') -> None:
-        self._wrapper.set_profile_split_vv(p2)
+        self._wrapper.set_profile_split_vv(p2._wrapper)
         
 
 
@@ -627,14 +627,14 @@ class GXEDB:
 
 
     def statistics(self, p2: 'GXST') -> None:
-        self._wrapper.statistics(p2)
+        self._wrapper.statistics(p2._wrapper)
         
 
 
 
     @classmethod
     def un_load(cls, p1: str) -> None:
-        gxapi_cy.WrapEDB.un_load(GXContext._get_tls_geo())
+        gxapi_cy.WrapEDB.un_load(GXContext._get_tls_geo(), p1.encode())
         
 
 
@@ -662,14 +662,14 @@ class GXEDB:
 
     @classmethod
     def un_load_discard(cls, p1: str) -> None:
-        gxapi_cy.WrapEDB.un_load_discard(GXContext._get_tls_geo())
+        gxapi_cy.WrapEDB.un_load_discard(GXContext._get_tls_geo(), p1.encode())
         
 
 
 
     @classmethod
     def un_load_verify(cls, p1: str, p2: int) -> None:
-        gxapi_cy.WrapEDB.un_load_verify(GXContext._get_tls_geo(), p2)
+        gxapi_cy.WrapEDB.un_load_verify(GXContext._get_tls_geo(), p1.encode(), p2)
         
 
 
@@ -687,28 +687,28 @@ class GXEDB:
 
     @classmethod
     def load_control(cls, p1: str, p2: int) -> None:
-        gxapi_cy.WrapEDB.load_control(GXContext._get_tls_geo(), p2)
+        gxapi_cy.WrapEDB.load_control(GXContext._get_tls_geo(), p1.encode(), p2)
         
 
 
 
     @classmethod
     def load_new_control(cls, p1: str, p2: int) -> None:
-        gxapi_cy.WrapEDB.load_new_control(GXContext._get_tls_geo(), p2)
+        gxapi_cy.WrapEDB.load_new_control(GXContext._get_tls_geo(), p1.encode(), p2)
         
 
 
 
     @classmethod
     def load_pass_control(cls, p1: str, p2: str, p3: str, p4: int) -> None:
-        gxapi_cy.WrapEDB.load_pass_control(GXContext._get_tls_geo(), p2.encode(), p3.encode(), p4)
+        gxapi_cy.WrapEDB.load_pass_control(GXContext._get_tls_geo(), p1.encode(), p2.encode(), p3.encode(), p4)
         
 
 
 
     @classmethod
     def load_with_view_control(cls, p1: str, p2: 'GXEDB', p3: int) -> None:
-        gxapi_cy.WrapEDB.load_with_view_control(GXContext._get_tls_geo(), p2, p3)
+        gxapi_cy.WrapEDB.load_with_view_control(GXContext._get_tls_geo(), p1.encode(), p2._wrapper, p3)
         
 
 

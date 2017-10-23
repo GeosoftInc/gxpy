@@ -58,28 +58,28 @@ class GX3DV:
 
 
     def copy_to_map(self, p2: 'GXMAP', p3: str, p4: float, p5: float, p6: float, p7: float, p8: int, p9: str_ref, p11: str_ref) -> None:
-        p9.value, p11.value = self._wrapper.copy_to_map(p2, p3.encode(), p4, p5, p6, p7, p8, p9.value.encode(), p11.value.encode())
+        p9.value, p11.value = self._wrapper.copy_to_map(p2._wrapper, p3.encode(), p4, p5, p6, p7, p8, p9.value.encode(), p11.value.encode())
         
 
 
 
     @classmethod
     def create_new(cls, p1: str, p2: 'GXMVIEW') -> 'GX3DV':
-        ret_val = gxapi_cy.Wrap3DV.create_new(GXContext._get_tls_geo(), p2)
+        ret_val = gxapi_cy.Wrap3DV.create_new(GXContext._get_tls_geo(), p1.encode(), p2._wrapper)
         return GX3DV(ret_val)
 
 
 
     @classmethod
     def open(cls, p1: str) -> 'GX3DV':
-        ret_val = gxapi_cy.Wrap3DV.open(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.Wrap3DV.open(GXContext._get_tls_geo(), p1.encode())
         return GX3DV(ret_val)
 
 
 
     @classmethod
     def from_map(cls, p1: 'GXMAP') -> 'GX3DV':
-        ret_val = gxapi_cy.Wrap3DV.from_map(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.Wrap3DV.from_map(GXContext._get_tls_geo(), p1._wrapper)
         return GX3DV(ret_val)
 
 

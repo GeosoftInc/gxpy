@@ -58,14 +58,14 @@ class GXARCDH:
 
     @classmethod
     def set_project(cls, p1: str, p2: str) -> None:
-        gxapi_cy.WrapARCDH.set_project(GXContext._get_tls_geo(), p2.encode())
+        gxapi_cy.WrapARCDH.set_project(GXContext._get_tls_geo(), p1.encode(), p2.encode())
         
 
 
 
     @classmethod
     def set_string_file_gdb(cls, p1: str) -> None:
-        gxapi_cy.WrapARCDH.set_string_file_gdb(GXContext._get_tls_geo())
+        gxapi_cy.WrapARCDH.set_string_file_gdb(GXContext._get_tls_geo(), p1.encode())
         
 
 
@@ -93,28 +93,28 @@ class GXARCDH:
 
     @classmethod
     def get_current_string_file_gdb(cls, p1: str_ref) -> None:
-        p1.value = gxapi_cy.WrapARCDH.get_current_string_file_gdb(GXContext._get_tls_geo())
+        p1.value = gxapi_cy.WrapARCDH.get_current_string_file_gdb(GXContext._get_tls_geo(), p1.value.encode())
         
 
 
 
     @classmethod
     def is_valid_fgdb_file_name(cls, p1: str) -> int:
-        ret_val = gxapi_cy.WrapARCDH.is_valid_fgdb_file_name(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapARCDH.is_valid_fgdb_file_name(GXContext._get_tls_geo(), p1.encode())
         return ret_val
 
 
 
     @classmethod
     def is_valid_feature_class_name(cls, p1: str) -> int:
-        ret_val = gxapi_cy.WrapARCDH.is_valid_feature_class_name(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapARCDH.is_valid_feature_class_name(GXContext._get_tls_geo(), p1.encode())
         return ret_val
 
 
 
     @classmethod
     def s_prompt_for_esri_symbol(cls, p1: int, p2: str, p3: int, p4: str_ref, p6: int_ref, p7: int_ref) -> None:
-        p4.value, p6.value, p7.value = gxapi_cy.WrapARCDH.s_prompt_for_esri_symbol(GXContext._get_tls_geo(), p2.encode(), p3, p4.value.encode(), p6.value, p7.value)
+        p4.value, p6.value, p7.value = gxapi_cy.WrapARCDH.s_prompt_for_esri_symbol(GXContext._get_tls_geo(), p1, p2.encode(), p3, p4.value.encode(), p6.value, p7.value)
         
 
 

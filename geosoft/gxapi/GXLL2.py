@@ -51,7 +51,7 @@ class GXLL2:
 
     @classmethod
     def create(cls, p1: float, p2: float, p3: float, p4: float, p5: int, p6: int, p7: 'GXIPJ', p8: 'GXIPJ') -> 'GXLL2':
-        ret_val = gxapi_cy.WrapLL2.create(GXContext._get_tls_geo(), p2, p3, p4, p5, p6, p7, p8)
+        ret_val = gxapi_cy.WrapLL2.create(GXContext._get_tls_geo(), p1, p2, p3, p4, p5, p6, p7._wrapper, p8._wrapper)
         return GXLL2(ret_val)
 
 
@@ -67,7 +67,7 @@ class GXLL2:
 
 
     def set_row(self, p2: int, p3: 'GXVV', p4: 'GXVV') -> None:
-        self._wrapper.set_row(p2, p3, p4)
+        self._wrapper.set_row(p2, p3._wrapper, p4._wrapper)
         
 
 

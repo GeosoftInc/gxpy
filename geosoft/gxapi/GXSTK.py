@@ -51,7 +51,7 @@ class GXSTK:
 
 
     def get_trans_parms(self, p2: int_ref, p3: float_ref, p4: 'GXVV', p5: 'GXVV', p6: int_ref, p7: float_ref, p8: 'GXVV', p9: 'GXVV') -> None:
-        p2.value, p3.value, p6.value, p7.value = self._wrapper.get_trans_parms(p2.value, p3.value, p4, p5, p6.value, p7.value, p8, p9)
+        p2.value, p3.value, p6.value, p7.value = self._wrapper.get_trans_parms(p2.value, p3.value, p4._wrapper, p5._wrapper, p6.value, p7.value, p8._wrapper, p9._wrapper)
         
 
 
@@ -107,21 +107,21 @@ class GXSTK:
 
 
     def get_profile(self, p2: int_ref, p3: float_ref, p4: float_ref, p5: str_ref, p7: int_ref, p8: int_ref, p9: int_ref, p10: 'GXVV', p11: str_ref, p13: int_ref, p14: str_ref, p16: float_ref, p17: str_ref, p19: int_ref) -> None:
-        p2.value, p3.value, p4.value, p5.value, p7.value, p8.value, p9.value, p11.value, p13.value, p14.value, p16.value, p17.value, p19.value = self._wrapper.get_profile(p2.value, p3.value, p4.value, p5.value.encode(), p7.value, p8.value, p9.value, p10, p11.value.encode(), p13.value, p14.value.encode(), p16.value, p17.value.encode(), p19.value)
+        p2.value, p3.value, p4.value, p5.value, p7.value, p8.value, p9.value, p11.value, p13.value, p14.value, p16.value, p17.value, p19.value = self._wrapper.get_profile(p2.value, p3.value, p4.value, p5.value.encode(), p7.value, p8.value, p9.value, p10._wrapper, p11.value.encode(), p13.value, p14.value.encode(), p16.value, p17.value.encode(), p19.value)
         
 
 
 
 
     def get_profile_ex(self, p2: int_ref, p3: float_ref, p4: float_ref, p5: str_ref, p7: int_ref, p8: int_ref, p9: int_ref, p10: int_ref, p11: 'GXVV', p12: str_ref, p14: int_ref, p15: str_ref, p17: float_ref, p18: str_ref, p20: int_ref) -> None:
-        p2.value, p3.value, p4.value, p5.value, p7.value, p8.value, p9.value, p10.value, p12.value, p14.value, p15.value, p17.value, p18.value, p20.value = self._wrapper.get_profile_ex(p2.value, p3.value, p4.value, p5.value.encode(), p7.value, p8.value, p9.value, p10.value, p11, p12.value.encode(), p14.value, p15.value.encode(), p17.value, p18.value.encode(), p20.value)
+        p2.value, p3.value, p4.value, p5.value, p7.value, p8.value, p9.value, p10.value, p12.value, p14.value, p15.value, p17.value, p18.value, p20.value = self._wrapper.get_profile_ex(p2.value, p3.value, p4.value, p5.value.encode(), p7.value, p8.value, p9.value, p10.value, p11._wrapper, p12.value.encode(), p14.value, p15.value.encode(), p17.value, p18.value.encode(), p20.value)
         
 
 
 
 
     def get_symb_parms(self, p2: str_ref, p4: float_ref, p5: str_ref, p7: str_ref, p9: int_ref, p10: int_ref, p11: float_ref, p12: int_ref, p13: 'GXVV', p14: 'GXVV', p15: int_ref, p16: str_ref, p18: float_ref, p19: str_ref) -> None:
-        p2.value, p4.value, p5.value, p7.value, p9.value, p10.value, p11.value, p12.value, p15.value, p16.value, p18.value, p19.value = self._wrapper.get_symb_parms(p2.value.encode(), p4.value, p5.value.encode(), p7.value.encode(), p9.value, p10.value, p11.value, p12.value, p13, p14, p15.value, p16.value.encode(), p18.value, p19.value.encode())
+        p2.value, p4.value, p5.value, p7.value, p9.value, p10.value, p11.value, p12.value, p15.value, p16.value, p18.value, p19.value = self._wrapper.get_symb_parms(p2.value.encode(), p4.value, p5.value.encode(), p7.value.encode(), p9.value, p10.value, p11.value, p12.value, p13._wrapper, p14._wrapper, p15.value, p16.value.encode(), p18.value, p19.value.encode())
         
 
 
@@ -142,7 +142,7 @@ class GXSTK:
 
 
     def set_array_colors(self, p2: 'GXITR') -> None:
-        self._wrapper.set_array_colors(p2)
+        self._wrapper.set_array_colors(p2._wrapper)
         
 
 
@@ -198,21 +198,21 @@ class GXSTK:
 
 
     def set_profile(self, p2: int, p3: float, p4: float, p5: str, p6: int, p7: int, p8: int, p9: 'GXVV', p10: str, p11: int, p12: str, p13: float, p14: str, p15: int) -> None:
-        self._wrapper.set_profile(p2, p3, p4, p5.encode(), p6, p7, p8, p9, p10.encode(), p11, p12.encode(), p13, p14.encode(), p15)
+        self._wrapper.set_profile(p2, p3, p4, p5.encode(), p6, p7, p8, p9._wrapper, p10.encode(), p11, p12.encode(), p13, p14.encode(), p15)
         
 
 
 
 
     def set_profile_ex(self, p2: int, p3: float, p4: float, p5: str, p6: int, p7: int, p8: int, p9: int, p10: 'GXVV', p11: str, p12: int, p13: str, p14: float, p15: str, p16: int) -> None:
-        self._wrapper.set_profile_ex(p2, p3, p4, p5.encode(), p6, p7, p8, p9, p10, p11.encode(), p12, p13.encode(), p14, p15.encode(), p16)
+        self._wrapper.set_profile_ex(p2, p3, p4, p5.encode(), p6, p7, p8, p9, p10._wrapper, p11.encode(), p12, p13.encode(), p14, p15.encode(), p16)
         
 
 
 
 
     def set_symb_parms(self, p2: str, p3: float, p4: str, p5: str, p6: int, p7: int, p8: float, p9: int, p10: 'GXVV', p11: 'GXVV', p12: int, p13: str, p14: float, p15: str) -> None:
-        self._wrapper.set_symb_parms(p2.encode(), p3, p4.encode(), p5.encode(), p6, p7, p8, p9, p10, p11, p12, p13.encode(), p14, p15.encode())
+        self._wrapper.set_symb_parms(p2.encode(), p3, p4.encode(), p5.encode(), p6, p7, p8, p9, p10._wrapper, p11._wrapper, p12, p13.encode(), p14, p15.encode())
         
 
 

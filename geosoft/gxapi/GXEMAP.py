@@ -222,7 +222,7 @@ class GXEMAP:
 
 
     def font_lst(self, p2: 'GXLST', p3: int) -> None:
-        self._wrapper.font_lst(p2, p3)
+        self._wrapper.font_lst(p2._wrapper, p3)
         
 
 
@@ -236,7 +236,7 @@ class GXEMAP:
 
 
     def create_group_snapshot(self, p2: 'GXLST') -> int:
-        ret_val = self._wrapper.create_group_snapshot(p2)
+        ret_val = self._wrapper.create_group_snapshot(p2._wrapper)
         return ret_val
 
 
@@ -264,7 +264,7 @@ class GXEMAP:
 
     @classmethod
     def get_maps_lst(cls, p1: 'GXLST', p2: int) -> int:
-        ret_val = gxapi_cy.WrapEMAP.get_maps_lst(GXContext._get_tls_geo(), p2)
+        ret_val = gxapi_cy.WrapEMAP.get_maps_lst(GXContext._get_tls_geo(), p1._wrapper, p2)
         return ret_val
 
 
@@ -285,7 +285,7 @@ class GXEMAP:
 
     @classmethod
     def i_get_specified_map_name(cls, p1: str, p2: str, p3: str_ref) -> int:
-        ret_val, p3.value = gxapi_cy.WrapEMAP.i_get_specified_map_name(GXContext._get_tls_geo(), p2.encode(), p3.value.encode())
+        ret_val, p3.value = gxapi_cy.WrapEMAP.i_get_specified_map_name(GXContext._get_tls_geo(), p1.encode(), p2.encode(), p3.value.encode())
         return ret_val
 
 
@@ -299,7 +299,7 @@ class GXEMAP:
 
     @classmethod
     def reload_grid(cls, p1: str) -> None:
-        gxapi_cy.WrapEMAP.reload_grid(GXContext._get_tls_geo())
+        gxapi_cy.WrapEMAP.reload_grid(GXContext._get_tls_geo(), p1.encode())
         
 
 
@@ -327,7 +327,7 @@ class GXEMAP:
 
     @classmethod
     def loaded(cls, p1: str) -> int:
-        ret_val = gxapi_cy.WrapEMAP.loaded(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapEMAP.loaded(GXContext._get_tls_geo(), p1.encode())
         return ret_val
 
 
@@ -355,7 +355,7 @@ class GXEMAP:
 
 
     def doubleize_group_snapshot(self, p2: 'GXLST') -> int:
-        ret_val = self._wrapper.doubleize_group_snapshot(p2)
+        ret_val = self._wrapper.doubleize_group_snapshot(p2._wrapper)
         return ret_val
 
 
@@ -369,28 +369,28 @@ class GXEMAP:
 
 
     def get_view_ipj(self, p2: str, p3: 'GXIPJ') -> None:
-        self._wrapper.get_view_ipj(p2.encode(), p3)
+        self._wrapper.get_view_ipj(p2.encode(), p3._wrapper)
         
 
 
 
     @classmethod
     def load(cls, p1: str) -> 'GXEMAP':
-        ret_val = gxapi_cy.WrapEMAP.load(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapEMAP.load(GXContext._get_tls_geo(), p1.encode())
         return GXEMAP(ret_val)
 
 
 
     @classmethod
     def load_no_activate(cls, p1: str) -> 'GXEMAP':
-        ret_val = gxapi_cy.WrapEMAP.load_no_activate(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapEMAP.load_no_activate(GXContext._get_tls_geo(), p1.encode())
         return GXEMAP(ret_val)
 
 
 
     @classmethod
     def load_with_view(cls, p1: str, p2: 'GXEMAP') -> 'GXEMAP':
-        ret_val = gxapi_cy.WrapEMAP.load_with_view(GXContext._get_tls_geo(), p2)
+        ret_val = gxapi_cy.WrapEMAP.load_with_view(GXContext._get_tls_geo(), p1.encode(), p2._wrapper)
         return GXEMAP(ret_val)
 
 
@@ -439,7 +439,7 @@ class GXEMAP:
 
     @classmethod
     def un_load(cls, p1: str) -> None:
-        gxapi_cy.WrapEMAP.un_load(GXContext._get_tls_geo())
+        gxapi_cy.WrapEMAP.un_load(GXContext._get_tls_geo(), p1.encode())
         
 
 
@@ -453,7 +453,7 @@ class GXEMAP:
 
     @classmethod
     def un_load_verify(cls, p1: str, p2: int) -> None:
-        gxapi_cy.WrapEMAP.un_load_verify(GXContext._get_tls_geo(), p2)
+        gxapi_cy.WrapEMAP.un_load_verify(GXContext._get_tls_geo(), p1.encode(), p2)
         
 
 
@@ -499,28 +499,28 @@ class GXEMAP:
 
 
     def digitize(self, p2: 'GXWA', p3: 'GXIMG', p4: int, p5: str, p6: str, p7: str, p8: int) -> int:
-        ret_val = self._wrapper.digitize(p2, p3, p4, p5.encode(), p6.encode(), p7.encode(), p8)
+        ret_val = self._wrapper.digitize(p2._wrapper, p3._wrapper, p4, p5.encode(), p6.encode(), p7.encode(), p8)
         return ret_val
 
 
 
 
     def digitize2(self, p2: 'GXVV', p3: 'GXVV', p4: 'GXVV', p5: 'GXIMG', p6: str, p7: int) -> int:
-        ret_val = self._wrapper.digitize2(p2, p3, p4, p5, p6.encode(), p7)
+        ret_val = self._wrapper.digitize2(p2._wrapper, p3._wrapper, p4._wrapper, p5._wrapper, p6.encode(), p7)
         return ret_val
 
 
 
 
     def digitize_peaks(self, p2: 'GXVV', p3: 'GXVV', p4: 'GXVV', p5: 'GXIMG', p6: str, p7: int) -> int:
-        ret_val = self._wrapper.digitize_peaks(p2, p3, p4, p5, p6.encode(), p7)
+        ret_val = self._wrapper.digitize_peaks(p2._wrapper, p3._wrapper, p4._wrapper, p5._wrapper, p6.encode(), p7)
         return ret_val
 
 
 
 
     def digitize_polygon(self, p2: 'GXVV', p3: 'GXVV', p4: 'GXVV', p5: 'GXIMG', p6: str, p7: int, p8: int) -> int:
-        ret_val = self._wrapper.digitize_polygon(p2, p3, p4, p5, p6.encode(), p7, p8)
+        ret_val = self._wrapper.digitize_polygon(p2._wrapper, p3._wrapper, p4._wrapper, p5._wrapper, p6.encode(), p7, p8)
         return ret_val
 
 
@@ -590,14 +590,14 @@ class GXEMAP:
 
 
     def get_poly_line(self, p2: str, p3: 'GXVV', p4: 'GXVV') -> int:
-        ret_val = self._wrapper.get_poly_line(p2.encode(), p3, p4)
+        ret_val = self._wrapper.get_poly_line(p2.encode(), p3._wrapper, p4._wrapper)
         return ret_val
 
 
 
 
     def get_poly_line_xyz(self, p2: str, p3: 'GXVV', p4: 'GXVV', p5: 'GXVV') -> int:
-        ret_val = self._wrapper.get_poly_line_xyz(p2.encode(), p3, p4, p5)
+        ret_val = self._wrapper.get_poly_line_xyz(p2.encode(), p3._wrapper, p4._wrapper, p5._wrapper)
         return ret_val
 
 
@@ -647,7 +647,7 @@ class GXEMAP:
 
 
     def get_selected_vertices(self, p2: 'GXVV', p3: 'GXVV') -> None:
-        self._wrapper.get_selected_vertices(p2, p3)
+        self._wrapper.get_selected_vertices(p2._wrapper, p3._wrapper)
         
 
 
@@ -658,7 +658,7 @@ class GXEMAP:
 
     @classmethod
     def create_virtual(cls, p1: str) -> 'GXEMAP':
-        ret_val = gxapi_cy.WrapEMAP.create_virtual(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapEMAP.create_virtual(GXContext._get_tls_geo(), p1.encode())
         return GXEMAP(ret_val)
 
 
@@ -669,14 +669,14 @@ class GXEMAP:
 
     @classmethod
     def load_control(cls, p1: str, p2: int) -> None:
-        gxapi_cy.WrapEMAP.load_control(GXContext._get_tls_geo(), p2)
+        gxapi_cy.WrapEMAP.load_control(GXContext._get_tls_geo(), p1.encode(), p2)
         
 
 
 
     @classmethod
     def load_with_view_control(cls, p1: str, p2: 'GXEMAP', p3: int) -> None:
-        gxapi_cy.WrapEMAP.load_with_view_control(GXContext._get_tls_geo(), p2, p3)
+        gxapi_cy.WrapEMAP.load_with_view_control(GXContext._get_tls_geo(), p1.encode(), p2._wrapper, p3)
         
 
 

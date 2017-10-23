@@ -62,49 +62,49 @@ class GXDH:
 
 
     def creat_chan_lst(self, p2: 'GXLST') -> None:
-        self._wrapper.creat_chan_lst(p2)
+        self._wrapper.creat_chan_lst(p2._wrapper)
         
 
 
 
 
     def depth_data_lst(self, p2: 'GXLST') -> None:
-        self._wrapper.depth_data_lst(p2)
+        self._wrapper.depth_data_lst(p2._wrapper)
         
 
 
 
 
     def from_to_data_lst(self, p2: str, p3: 'GXLST') -> None:
-        self._wrapper.from_to_data_lst(p2.encode(), p3)
+        self._wrapper.from_to_data_lst(p2.encode(), p3._wrapper)
         
 
 
 
 
     def get_geology_contacts(self, p2: 'GXLST', p3: str, p4: str, p5: int, p6: float, p7: 'GXVV', p8: 'GXVV', p9: 'GXVV') -> None:
-        self._wrapper.get_geology_contacts(p2, p3.encode(), p4.encode(), p5, p6, p7, p8, p9)
+        self._wrapper.get_geology_contacts(p2._wrapper, p3.encode(), p4.encode(), p5, p6, p7._wrapper, p8._wrapper, p9._wrapper)
         
 
 
 
 
     def get_oriented_core_dip_dir(self, p2: 'GXLST', p3: str, p4: str, p5: int, p6: str, p7: str) -> None:
-        self._wrapper.get_oriented_core_dip_dir(p2, p3.encode(), p4.encode(), p5, p6.encode(), p7.encode())
+        self._wrapper.get_oriented_core_dip_dir(p2._wrapper, p3.encode(), p4.encode(), p5, p6.encode(), p7.encode())
         
 
 
 
 
     def get_unique_channel_items(self, p2: str, p3: int, p4: 'GXVV') -> None:
-        self._wrapper.get_unique_channel_items(p2.encode(), p3, p4)
+        self._wrapper.get_unique_channel_items(p2.encode(), p3, p4._wrapper)
         
 
 
 
 
     def get_unique_channel_items_from_collar(self, p2: str, p3: int, p4: 'GXVV') -> None:
-        self._wrapper.get_unique_channel_items_from_collar(p2.encode(), p3, p4)
+        self._wrapper.get_unique_channel_items_from_collar(p2.encode(), p3, p4._wrapper)
         
 
 
@@ -118,7 +118,7 @@ class GXDH:
 
 
     def find_hole_intersection(self, p2: int, p3: 'GXIMG', p4: float_ref, p5: float_ref, p6: float_ref) -> int:
-        ret_val, p4.value, p5.value, p6.value = self._wrapper.find_hole_intersection(p2, p3, p4.value, p5.value, p6.value)
+        ret_val, p4.value, p5.value, p6.value = self._wrapper.find_hole_intersection(p2, p3._wrapper, p4.value, p5.value, p6.value)
         return ret_val
 
 
@@ -139,42 +139,42 @@ class GXDH:
 
 
     def litho_grid_3d(self, p2: str, p3: 'GXTPAT', p4: str, p5: float, p6: float, p7: float, p8: int, p9: 'GXREG', p10: int) -> None:
-        self._wrapper.litho_grid_3d(p2.encode(), p3, p4.encode(), p5, p6, p7, p8, p9, p10)
+        self._wrapper.litho_grid_3d(p2.encode(), p3._wrapper, p4.encode(), p5, p6, p7, p8, p9._wrapper, p10)
         
 
 
 
 
     def numeric_chan_lst(self, p2: 'GXLST') -> None:
-        self._wrapper.numeric_chan_lst(p2)
+        self._wrapper.numeric_chan_lst(p2._wrapper)
         
 
 
 
 
     def numeric_from_to_data_lst(self, p2: str, p3: 'GXLST') -> None:
-        self._wrapper.numeric_from_to_data_lst(p2.encode(), p3)
+        self._wrapper.numeric_from_to_data_lst(p2.encode(), p3._wrapper)
         
 
 
 
 
     def punch_grid_holes(self, p2: 'GXIMG', p3: 'GXVV', p4: 'GXVV', p5: 'GXVV', p6: float) -> None:
-        self._wrapper.punch_grid_holes(p2, p3, p4, p5, p6)
+        self._wrapper.punch_grid_holes(p2._wrapper, p3._wrapper, p4._wrapper, p5._wrapper, p6)
         
 
 
 
 
     def string_chan_lst(self, p2: 'GXLST') -> None:
-        self._wrapper.string_chan_lst(p2)
+        self._wrapper.string_chan_lst(p2._wrapper)
         
 
 
 
 
     def string_from_to_data_lst(self, p2: str, p3: 'GXLST') -> None:
-        self._wrapper.string_from_to_data_lst(p2.encode(), p3)
+        self._wrapper.string_from_to_data_lst(p2.encode(), p3._wrapper)
         
 
 
@@ -248,21 +248,21 @@ class GXDH:
 
 
     def assay_hole_lst(self, p2: int, p3: 'GXLST') -> None:
-        self._wrapper.assay_hole_lst(p2, p3)
+        self._wrapper.assay_hole_lst(p2, p3._wrapper)
         
 
 
 
 
     def assay_lst(self, p2: 'GXLST') -> None:
-        self._wrapper.assay_lst(p2)
+        self._wrapper.assay_lst(p2._wrapper)
         
 
 
 
     @classmethod
     def auto_select_holes(cls, p1: int) -> None:
-        gxapi_cy.WrapDH.auto_select_holes(GXContext._get_tls_geo())
+        gxapi_cy.WrapDH.auto_select_holes(GXContext._get_tls_geo(), p1)
         
 
 
@@ -276,7 +276,7 @@ class GXDH:
 
 
     def composite_db(self, p2: 'GXDB', p3: 'GXDB', p4: int, p5: int, p6: float, p7: str, p8: str, p9: str, p10: float, p11: float, p12: float, p13: int, p14: str) -> None:
-        self._wrapper.composite_db(p2, p3, p4, p5, p6, p7.encode(), p8.encode(), p9.encode(), p10, p11, p12, p13, p14.encode())
+        self._wrapper.composite_db(p2._wrapper, p3._wrapper, p4, p5, p6, p7.encode(), p8.encode(), p9.encode(), p10, p11, p12, p13, p14.encode())
         
 
 
@@ -304,14 +304,14 @@ class GXDH:
 
     @classmethod
     def convert_old_line_names(cls, p1: 'GXDB', p2: 'GXLST') -> None:
-        gxapi_cy.WrapDH.convert_old_line_names(GXContext._get_tls_geo(), p2)
+        gxapi_cy.WrapDH.convert_old_line_names(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper)
         
 
 
 
     @classmethod
     def create(cls, p1: str) -> 'GXDH':
-        ret_val = gxapi_cy.WrapDH.create(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapDH.create(GXContext._get_tls_geo(), p1.encode())
         return GXDH(ret_val)
 
 
@@ -325,7 +325,7 @@ class GXDH:
 
     @classmethod
     def create_external(cls, p1: str) -> 'GXDH':
-        ret_val = gxapi_cy.WrapDH.create_external(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapDH.create_external(GXContext._get_tls_geo(), p1.encode())
         return GXDH(ret_val)
 
 
@@ -339,14 +339,14 @@ class GXDH:
 
     @classmethod
     def datamine_to_csv(cls, p1: str, p2: str) -> None:
-        gxapi_cy.WrapDH.datamine_to_csv(GXContext._get_tls_geo(), p2.encode())
+        gxapi_cy.WrapDH.datamine_to_csv(GXContext._get_tls_geo(), p1.encode(), p2.encode())
         
 
 
 
 
     def delete_holes(self, p2: 'GXLST') -> None:
-        self._wrapper.delete_holes(p2)
+        self._wrapper.delete_holes(p2._wrapper)
         
 
 
@@ -362,7 +362,7 @@ class GXDH:
 
 
     def export_geodatabase_lst(self, p2: 'GXLST', p3: str, p4: str, p5: str_ref, p7: int) -> None:
-        p5.value = self._wrapper.export_geodatabase_lst(p2, p3.encode(), p4.encode(), p5.value.encode(), p7)
+        p5.value = self._wrapper.export_geodatabase_lst(p2._wrapper, p3.encode(), p4.encode(), p5.value.encode(), p7)
         
 
 
@@ -376,7 +376,7 @@ class GXDH:
 
 
     def export_lst(self, p2: 'GXLST', p3: str, p4: int) -> None:
-        self._wrapper.export_lst(p2, p3.encode(), p4)
+        self._wrapper.export_lst(p2._wrapper, p3.encode(), p4)
         
 
 
@@ -390,21 +390,21 @@ class GXDH:
 
 
     def get_databases_vv(self, p2: 'GXVV') -> None:
-        self._wrapper.get_databases_vv(p2)
+        self._wrapper.get_databases_vv(p2._wrapper)
         
 
 
 
 
     def get_databases_sorted_vv(self, p2: 'GXVV') -> None:
-        self._wrapper.get_databases_sorted_vv(p2)
+        self._wrapper.get_databases_sorted_vv(p2._wrapper)
         
 
 
 
 
     def get_data_type(self, p2: 'GXDB', p3: int_ref) -> None:
-        p3.value = self._wrapper.get_data_type(p2, p3.value)
+        p3.value = self._wrapper.get_data_type(p2._wrapper, p3.value)
         
 
 
@@ -425,21 +425,21 @@ class GXDH:
 
 
     def get_hole_survey(self, p2: int, p3: 'GXVV', p4: 'GXVV', p5: 'GXVV', p6: 'GXVV') -> None:
-        self._wrapper.get_hole_survey(p2, p3, p4, p5, p6)
+        self._wrapper.get_hole_survey(p2, p3._wrapper, p4._wrapper, p5._wrapper, p6._wrapper)
         
 
 
 
 
     def get_ipj(self, p2: 'GXIPJ') -> None:
-        self._wrapper.get_ipj(p2)
+        self._wrapper.get_ipj(p2._wrapper)
         
 
 
 
 
     def get_map_names_vv(self, p2: 'GXVV') -> None:
-        self._wrapper.get_map_names_vv(p2)
+        self._wrapper.get_map_names_vv(p2._wrapper)
         
 
 
@@ -467,28 +467,28 @@ class GXDH:
 
 
     def get_selected_holes_vv(self, p2: 'GXVV') -> None:
-        self._wrapper.get_selected_holes_vv(p2)
+        self._wrapper.get_selected_holes_vv(p2._wrapper)
         
 
 
 
     @classmethod
     def get_table_default_chan_lst(cls, p1: 'GXLST', p2: int) -> None:
-        gxapi_cy.WrapDH.get_table_default_chan_lst(GXContext._get_tls_geo(), p2)
+        gxapi_cy.WrapDH.get_table_default_chan_lst(GXContext._get_tls_geo(), p1._wrapper, p2)
         
 
 
 
 
     def hole_lst(self, p2: 'GXLST') -> None:
-        self._wrapper.hole_lst(p2)
+        self._wrapper.hole_lst(p2._wrapper)
         
 
 
 
 
     def hole_lst2(self, p2: 'GXLST') -> None:
-        self._wrapper.hole_lst2(p2)
+        self._wrapper.hole_lst2(p2._wrapper)
         
 
 
@@ -509,28 +509,28 @@ class GXDH:
 
 
     def compositing_tool_gui(self, p2: 'GXMAP', p3: float, p4: float, p5: float) -> int:
-        ret_val = self._wrapper.compositing_tool_gui(p2, p3, p4, p5)
+        ret_val = self._wrapper.compositing_tool_gui(p2._wrapper, p3, p4, p5)
         return ret_val
 
 
 
     @classmethod
     def create_collar_table(cls, p1: str, p2: int, p3: str_ref) -> None:
-        p3.value = gxapi_cy.WrapDH.create_collar_table(GXContext._get_tls_geo(), p2, p3.value.encode())
+        p3.value = gxapi_cy.WrapDH.create_collar_table(GXContext._get_tls_geo(), p1.encode(), p2, p3.value.encode())
         
 
 
 
     @classmethod
     def create_collar_table_dir(cls, p1: str, p2: str, p3: int, p4: str_ref) -> None:
-        p4.value = gxapi_cy.WrapDH.create_collar_table_dir(GXContext._get_tls_geo(), p2.encode(), p3, p4.value.encode())
+        p4.value = gxapi_cy.WrapDH.create_collar_table_dir(GXContext._get_tls_geo(), p1.encode(), p2.encode(), p3, p4.value.encode())
         
 
 
 
 
     def delete_will_delete_db(self, p2: 'GXLST') -> int:
-        ret_val = self._wrapper.delete_will_delete_db(p2)
+        ret_val = self._wrapper.delete_will_delete_db(p2._wrapper)
         return ret_val
 
 
@@ -565,28 +565,28 @@ class GXDH:
 
     @classmethod
     def get_section_id(cls, p1: float, p2: float, p3: float, p4: str_ref) -> None:
-        p4.value = gxapi_cy.WrapDH.get_section_id(GXContext._get_tls_geo(), p2, p3, p4.value.encode())
+        p4.value = gxapi_cy.WrapDH.get_section_id(GXContext._get_tls_geo(), p1, p2, p3, p4.value.encode())
         
 
 
 
     @classmethod
     def get_template_blob(cls, p1: 'GXDB', p2: str, p3: int_ref) -> int:
-        ret_val, p3.value = gxapi_cy.WrapDH.get_template_blob(GXContext._get_tls_geo(), p2.encode(), p3.value)
+        ret_val, p3.value = gxapi_cy.WrapDH.get_template_blob(GXContext._get_tls_geo(), p1._wrapper, p2.encode(), p3.value)
         return ret_val
 
 
 
     @classmethod
     def get_template_info(cls, p1: str, p2: int_ref, p3: str_ref, p5: str_ref) -> None:
-        p2.value, p3.value, p5.value = gxapi_cy.WrapDH.get_template_info(GXContext._get_tls_geo(), p2.value, p3.value.encode(), p5.value.encode())
+        p2.value, p3.value, p5.value = gxapi_cy.WrapDH.get_template_info(GXContext._get_tls_geo(), p1.encode(), p2.value, p3.value.encode(), p5.value.encode())
         
 
 
 
     @classmethod
     def get_template_info_ex(cls, p1: str, p2: int_ref, p3: str_ref, p5: str_ref, p7: 'GXLST') -> None:
-        p2.value, p3.value, p5.value = gxapi_cy.WrapDH.get_template_info_ex(GXContext._get_tls_geo(), p2.value, p3.value.encode(), p5.value.encode(), p7)
+        p2.value, p3.value, p5.value = gxapi_cy.WrapDH.get_template_info_ex(GXContext._get_tls_geo(), p1.encode(), p2.value, p3.value.encode(), p5.value.encode(), p7._wrapper)
         
 
 
@@ -607,7 +607,7 @@ class GXDH:
 
     @classmethod
     def have_current2(cls, p1: str_ref) -> int:
-        ret_val, p1.value = gxapi_cy.WrapDH.have_current2(GXContext._get_tls_geo())
+        ret_val, p1.value = gxapi_cy.WrapDH.have_current2(GXContext._get_tls_geo(), p1.value.encode())
         return ret_val
 
 
@@ -621,7 +621,7 @@ class GXDH:
 
     @classmethod
     def hole_select_from_list_gui(cls, p1: 'GXLST', p2: 'GXLST') -> int:
-        ret_val = gxapi_cy.WrapDH.hole_select_from_list_gui(GXContext._get_tls_geo(), p2)
+        ret_val = gxapi_cy.WrapDH.hole_select_from_list_gui(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper)
         return ret_val
 
 
@@ -698,14 +698,14 @@ class GXDH:
 
     @classmethod
     def modify_rock_codes_gui(cls, p1: str) -> int:
-        ret_val = gxapi_cy.WrapDH.modify_rock_codes_gui(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapDH.modify_rock_codes_gui(GXContext._get_tls_geo(), p1.encode())
         return ret_val
 
 
 
     @classmethod
     def modify_rock_codes_gui2(cls, p1: 'GXDB', p2: str) -> int:
-        ret_val = gxapi_cy.WrapDH.modify_rock_codes_gui2(GXContext._get_tls_geo(), p2.encode())
+        ret_val = gxapi_cy.WrapDH.modify_rock_codes_gui2(GXContext._get_tls_geo(), p1._wrapper, p2.encode())
         return ret_val
 
 
@@ -740,28 +740,28 @@ class GXDH:
 
     @classmethod
     def modify_structure_codes_gui(cls, p1: str) -> int:
-        ret_val = gxapi_cy.WrapDH.modify_structure_codes_gui(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapDH.modify_structure_codes_gui(GXContext._get_tls_geo(), p1.encode())
         return ret_val
 
 
 
     @classmethod
     def modify_structure_codes_gui2(cls, p1: 'GXDB', p2: str) -> int:
-        ret_val = gxapi_cy.WrapDH.modify_structure_codes_gui2(GXContext._get_tls_geo(), p2.encode())
+        ret_val = gxapi_cy.WrapDH.modify_structure_codes_gui2(GXContext._get_tls_geo(), p1._wrapper, p2.encode())
         return ret_val
 
 
 
     @classmethod
     def import2(cls, p1: str, p2: 'GXDB', p3: int, p4: int, p5: str, p6: int, p7: str) -> None:
-        gxapi_cy.WrapDH.import2(GXContext._get_tls_geo(), p2, p3, p4, p5.encode(), p6, p7.encode())
+        gxapi_cy.WrapDH.import2(GXContext._get_tls_geo(), p1.encode(), p2._wrapper, p3, p4, p5.encode(), p6, p7.encode())
         
 
 
 
 
     def import_las(self, p2: str, p3: str, p4: float, p5: int, p6: 'GXWA') -> None:
-        self._wrapper.import_las(p2.encode(), p3.encode(), p4, p5, p6)
+        self._wrapper.import_las(p2.encode(), p3.encode(), p4, p5, p6._wrapper)
         
 
 
@@ -782,28 +782,28 @@ class GXDH:
 
 
     def qa_dip_az_curvature_lst(self, p2: 'GXLST', p3: float, p4: 'GXWA') -> int:
-        ret_val = self._wrapper.qa_dip_az_curvature_lst(p2, p3, p4)
+        ret_val = self._wrapper.qa_dip_az_curvature_lst(p2._wrapper, p3, p4._wrapper)
         return ret_val
 
 
 
 
     def qa_dip_az_survey_lst(self, p2: 'GXLST', p3: 'GXWA') -> int:
-        ret_val = self._wrapper.qa_dip_az_survey_lst(p2, p3)
+        ret_val = self._wrapper.qa_dip_az_survey_lst(p2._wrapper, p3._wrapper)
         return ret_val
 
 
 
 
     def qa_east_north_curvature_lst(self, p2: 'GXLST', p3: float, p4: 'GXWA') -> int:
-        ret_val = self._wrapper.qa_east_north_curvature_lst(p2, p3, p4)
+        ret_val = self._wrapper.qa_east_north_curvature_lst(p2._wrapper, p3, p4._wrapper)
         return ret_val
 
 
 
 
     def qa_east_north_survey_lst(self, p2: 'GXLST', p3: 'GXWA') -> int:
-        ret_val = self._wrapper.qa_east_north_survey_lst(p2, p3)
+        ret_val = self._wrapper.qa_east_north_survey_lst(p2._wrapper, p3._wrapper)
         return ret_val
 
 
@@ -824,7 +824,7 @@ class GXDH:
 
 
     def load_data_parameters_ini(self, p2: 'GXDB', p3: str) -> None:
-        self._wrapper.load_data_parameters_ini(p2, p3.encode())
+        self._wrapper.load_data_parameters_ini(p2._wrapper, p3.encode())
         
 
 
@@ -845,14 +845,14 @@ class GXDH:
 
 
     def mask_ply(self, p2: 'GXPLY', p3: 'GXIPJ', p4: float, p5: str, p6: int, p7: int) -> None:
-        self._wrapper.mask_ply(p2, p3, p4, p5.encode(), p6, p7)
+        self._wrapper.mask_ply(p2._wrapper, p3._wrapper, p4, p5.encode(), p6, p7)
         
 
 
 
     @classmethod
     def open(cls, p1: str) -> 'GXDH':
-        ret_val = gxapi_cy.WrapDH.open(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapDH.open(GXContext._get_tls_geo(), p1.encode())
         return GXDH(ret_val)
 
 
@@ -866,98 +866,98 @@ class GXDH:
 
 
     def plot_hole_traces(self, p2: 'GXMAP', p3: str) -> None:
-        self._wrapper.plot_hole_traces(p2, p3.encode())
+        self._wrapper.plot_hole_traces(p2._wrapper, p3.encode())
         
 
 
 
 
     def plot_hole_traces_3d(self, p2: 'GXMVIEW', p3: str) -> None:
-        self._wrapper.plot_hole_traces_3d(p2, p3.encode())
+        self._wrapper.plot_hole_traces_3d(p2._wrapper, p3.encode())
         
 
 
 
 
     def plot_symbols_3d(self, p2: 'GXMVIEW', p3: str) -> None:
-        self._wrapper.plot_symbols_3d(p2, p3.encode())
+        self._wrapper.plot_symbols_3d(p2._wrapper, p3.encode())
         
 
 
 
 
     def qa_collar(self, p2: 'GXWA') -> None:
-        self._wrapper.qa_collar(p2)
+        self._wrapper.qa_collar(p2._wrapper)
         
 
 
 
 
     def qa_collar_lst(self, p2: 'GXLST', p3: 'GXWA') -> None:
-        self._wrapper.qa_collar_lst(p2, p3)
+        self._wrapper.qa_collar_lst(p2._wrapper, p3._wrapper)
         
 
 
 
 
     def qa_dip_az_curvature(self, p2: 'GXWA', p3: float) -> None:
-        self._wrapper.qa_dip_az_curvature(p2, p3)
+        self._wrapper.qa_dip_az_curvature(p2._wrapper, p3)
         
 
 
 
 
     def qa_dip_az_curvature2(self, p2: 'GXWA', p3: float, p4: str) -> None:
-        self._wrapper.qa_dip_az_curvature2(p2, p3, p4.encode())
+        self._wrapper.qa_dip_az_curvature2(p2._wrapper, p3, p4.encode())
         
 
 
 
 
     def qa_dip_az_survey(self, p2: 'GXDB', p3: 'GXWA', p4: int, p5: str) -> None:
-        self._wrapper.qa_dip_az_survey(p2, p3, p4, p5.encode())
+        self._wrapper.qa_dip_az_survey(p2._wrapper, p3._wrapper, p4, p5.encode())
         
 
 
 
 
     def qa_east_north_curvature(self, p2: 'GXWA', p3: float) -> None:
-        self._wrapper.qa_east_north_curvature(p2, p3)
+        self._wrapper.qa_east_north_curvature(p2._wrapper, p3)
         
 
 
 
 
     def qa_east_north_curvature2(self, p2: 'GXWA', p3: float, p4: str) -> None:
-        self._wrapper.qa_east_north_curvature2(p2, p3, p4.encode())
+        self._wrapper.qa_east_north_curvature2(p2._wrapper, p3, p4.encode())
         
 
 
 
 
     def qa_east_north_survey(self, p2: 'GXDB', p3: 'GXWA', p4: int, p5: str) -> None:
-        self._wrapper.qa_east_north_survey(p2, p3, p4, p5.encode())
+        self._wrapper.qa_east_north_survey(p2._wrapper, p3._wrapper, p4, p5.encode())
         
 
 
 
 
     def qa_from_to_data(self, p2: 'GXDB', p3: 'GXWA', p4: int, p5: str) -> None:
-        self._wrapper.qa_from_to_data(p2, p3, p4, p5.encode())
+        self._wrapper.qa_from_to_data(p2._wrapper, p3._wrapper, p4, p5.encode())
         
 
 
 
 
     def qa_point_data(self, p2: 'GXDB', p3: 'GXWA', p4: int, p5: str) -> None:
-        self._wrapper.qa_point_data(p2, p3, p4, p5.encode())
+        self._wrapper.qa_point_data(p2._wrapper, p3._wrapper, p4, p5.encode())
         
 
 
 
 
     def qa_write_unregistered_holes(self, p2: 'GXDB', p3: 'GXWA') -> None:
-        self._wrapper.qa_write_unregistered_holes(p2, p3)
+        self._wrapper.qa_write_unregistered_holes(p2._wrapper, p3._wrapper)
         
 
 
@@ -978,42 +978,42 @@ class GXDH:
 
 
     def re_survey_east_north(self, p2: str, p3: 'GXVV', p4: 'GXVV', p5: 'GXVV', p6: 'GXVV', p7: float, p8: float, p9: float, p10: float, p11: float_ref) -> None:
-        p11.value = self._wrapper.re_survey_east_north(p2.encode(), p3, p4, p5, p6, p7, p8, p9, p10, p11.value)
+        p11.value = self._wrapper.re_survey_east_north(p2.encode(), p3._wrapper, p4._wrapper, p5._wrapper, p6._wrapper, p7, p8, p9, p10, p11.value)
         
 
 
 
 
     def re_survey_pol_fit(self, p2: str, p3: 'GXVV', p4: 'GXVV', p5: 'GXVV', p6: float, p7: float, p8: float, p9: float, p10: float, p11: float, p12: int, p13: int, p14: 'GXVV', p15: 'GXVV', p16: 'GXVV', p17: 'GXVV') -> None:
-        self._wrapper.re_survey_pol_fit(p2.encode(), p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17)
+        self._wrapper.re_survey_pol_fit(p2.encode(), p3._wrapper, p4._wrapper, p5._wrapper, p6, p7, p8, p9, p10, p11, p12, p13, p14._wrapper, p15._wrapper, p16._wrapper, p17._wrapper)
         
 
 
 
 
     def re_survey_rad_curve(self, p2: str, p3: 'GXVV', p4: 'GXVV', p5: 'GXVV', p6: float, p7: float, p8: float, p9: float, p10: float, p11: float, p12: int, p13: 'GXVV', p14: 'GXVV', p15: 'GXVV', p16: 'GXVV') -> None:
-        self._wrapper.re_survey_rad_curve(p2.encode(), p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16)
+        self._wrapper.re_survey_rad_curve(p2.encode(), p3._wrapper, p4._wrapper, p5._wrapper, p6, p7, p8, p9, p10, p11, p12, p13._wrapper, p14._wrapper, p15._wrapper, p16._wrapper)
         
 
 
 
 
     def re_survey_straight(self, p2: str, p3: float, p4: float, p5: float, p6: float, p7: float, p8: float, p9: float, p10: float, p11: int, p12: 'GXVV', p13: 'GXVV', p14: 'GXVV', p15: 'GXVV') -> None:
-        self._wrapper.re_survey_straight(p2.encode(), p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15)
+        self._wrapper.re_survey_straight(p2.encode(), p3, p4, p5, p6, p7, p8, p9, p10, p11, p12._wrapper, p13._wrapper, p14._wrapper, p15._wrapper)
         
 
 
 
 
     def re_survey_straight_seg(self, p2: str, p3: 'GXVV', p4: 'GXVV', p5: 'GXVV', p6: float, p7: float, p8: float, p9: float, p10: float, p11: float, p12: int, p13: 'GXVV', p14: 'GXVV', p15: 'GXVV', p16: 'GXVV') -> None:
-        self._wrapper.re_survey_straight_seg(p2.encode(), p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16)
+        self._wrapper.re_survey_straight_seg(p2.encode(), p3._wrapper, p4._wrapper, p5._wrapper, p6, p7, p8, p9, p10, p11, p12, p13._wrapper, p14._wrapper, p15._wrapper, p16._wrapper)
         
 
 
 
 
     def save_data_parameters_ini(self, p2: 'GXDB', p3: str) -> None:
-        self._wrapper.save_data_parameters_ini(p2, p3.encode())
+        self._wrapper.save_data_parameters_ini(p2._wrapper, p3.encode())
         
 
 
@@ -1048,7 +1048,7 @@ class GXDH:
 
 
     def select_holes(self, p2: 'GXVV', p3: int) -> None:
-        self._wrapper.select_holes(p2, p3)
+        self._wrapper.select_holes(p2._wrapper, p3)
         
 
 
@@ -1062,21 +1062,21 @@ class GXDH:
 
 
     def select_ply(self, p2: 'GXPLY') -> None:
-        self._wrapper.select_ply(p2)
+        self._wrapper.select_ply(p2._wrapper)
         
 
 
 
 
     def select_ply2(self, p2: 'GXPLY', p3: int, p4: int, p5: int) -> None:
-        self._wrapper.select_ply2(p2, p3, p4, p5)
+        self._wrapper.select_ply2(p2._wrapper, p3, p4, p5)
         
 
 
 
 
     def set_crooked_section_ipj(self, p2: 'GXIPJ') -> None:
-        self._wrapper.set_crooked_section_ipj(p2)
+        self._wrapper.set_crooked_section_ipj(p2._wrapper)
         
 
 
@@ -1097,14 +1097,14 @@ class GXDH:
 
 
     def set_ipj(self, p2: 'GXIPJ') -> None:
-        self._wrapper.set_ipj(p2)
+        self._wrapper.set_ipj(p2._wrapper)
         
 
 
 
 
     def set_map(self, p2: 'GXMAP') -> None:
-        self._wrapper.set_map(p2)
+        self._wrapper.set_map(p2._wrapper)
         
 
 
@@ -1118,28 +1118,28 @@ class GXDH:
 
 
     def set_selected_holes_vv(self, p2: 'GXVV', p3: int) -> None:
-        self._wrapper.set_selected_holes_vv(p2, p3)
+        self._wrapper.set_selected_holes_vv(p2._wrapper, p3)
         
 
 
 
     @classmethod
     def set_template_blob(cls, p1: 'GXDB', p2: str, p3: int) -> None:
-        gxapi_cy.WrapDH.set_template_blob(GXContext._get_tls_geo(), p2.encode(), p3)
+        gxapi_cy.WrapDH.set_template_blob(GXContext._get_tls_geo(), p1._wrapper, p2.encode(), p3)
         
 
 
 
 
     def significant_intersections_db(self, p2: 'GXDB', p3: 'GXDB', p4: int, p5: str, p6: float, p7: float, p8: float, p9: float, p10: float, p11: float, p12: float) -> None:
-        self._wrapper.significant_intersections_db(p2, p3, p4, p5.encode(), p6, p7, p8, p9, p10, p11, p12)
+        self._wrapper.significant_intersections_db(p2._wrapper, p3._wrapper, p4, p5.encode(), p6, p7, p8, p9, p10, p11, p12)
         
 
 
 
 
     def test_import_las(self, p2: str, p3: str, p4: float, p5: 'GXWA', p6: int_ref) -> None:
-        p6.value = self._wrapper.test_import_las(p2.encode(), p3.encode(), p4, p5, p6.value)
+        p6.value = self._wrapper.test_import_las(p2.encode(), p3.encode(), p4, p5._wrapper, p6.value)
         
 
 
@@ -1153,7 +1153,7 @@ class GXDH:
 
 
     def un_selected_hole_lst(self, p2: 'GXLST') -> None:
-        self._wrapper.un_selected_hole_lst(p2)
+        self._wrapper.un_selected_hole_lst(p2._wrapper)
         
 
 
@@ -1181,7 +1181,7 @@ class GXDH:
 
 
     def surface_intersections(self, p2: 'GXDB', p3: str, p4: int) -> None:
-        self._wrapper.surface_intersections(p2, p3.encode(), p4)
+        self._wrapper.surface_intersections(p2._wrapper, p3.encode(), p4)
         
 
 

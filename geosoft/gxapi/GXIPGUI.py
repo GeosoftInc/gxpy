@@ -51,21 +51,21 @@ class GXIPGUI:
 
     @classmethod
     def modify_job(cls, p1: 'GXIP', p2: 'GXDB', p3: str, p4: int, p5: int_ref) -> int:
-        ret_val, p5.value = gxapi_cy.WrapIPGUI.modify_job(GXContext._get_tls_geo(), p2, p3.encode(), p4, p5.value)
+        ret_val, p5.value = gxapi_cy.WrapIPGUI.modify_job(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3.encode(), p4, p5.value)
         return ret_val
 
 
 
     @classmethod
     def launch_ipqc_tool(cls, p1: str, p2: str, p3: str) -> None:
-        gxapi_cy.WrapIPGUI.launch_ipqc_tool(GXContext._get_tls_geo(), p2.encode(), p3.encode())
+        gxapi_cy.WrapIPGUI.launch_ipqc_tool(GXContext._get_tls_geo(), p1.encode(), p2.encode(), p3.encode())
         
 
 
 
     @classmethod
     def launch_offset_ipqc_tool(cls, p1: str, p2: str, p3: str) -> None:
-        gxapi_cy.WrapIPGUI.launch_offset_ipqc_tool(GXContext._get_tls_geo(), p2.encode(), p3.encode())
+        gxapi_cy.WrapIPGUI.launch_offset_ipqc_tool(GXContext._get_tls_geo(), p1.encode(), p2.encode(), p3.encode())
         
 
 

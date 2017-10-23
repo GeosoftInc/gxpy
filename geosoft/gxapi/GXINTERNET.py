@@ -51,14 +51,14 @@ class GXINTERNET:
 
     @classmethod
     def download_http(cls, p1: str, p2: str, p3: int) -> int:
-        ret_val = gxapi_cy.WrapINTERNET.download_http(GXContext._get_tls_geo(), p2.encode(), p3)
+        ret_val = gxapi_cy.WrapINTERNET.download_http(GXContext._get_tls_geo(), p1.encode(), p2.encode(), p3)
         return ret_val
 
 
 
     @classmethod
     def send_mail(cls, p1: str, p2: str, p3: str, p4: str, p5: str, p6: str, p7: str, p8: str) -> None:
-        gxapi_cy.WrapINTERNET.send_mail(GXContext._get_tls_geo(), p2.encode(), p3.encode(), p4.encode(), p5.encode(), p6.encode(), p7.encode(), p8.encode())
+        gxapi_cy.WrapINTERNET.send_mail(GXContext._get_tls_geo(), p1.encode(), p2.encode(), p3.encode(), p4.encode(), p5.encode(), p6.encode(), p7.encode(), p8.encode())
         
 
 

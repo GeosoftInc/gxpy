@@ -65,7 +65,7 @@ class GXBF:
 
 
     def copy(self, p2: 'GXBF') -> None:
-        self._wrapper.copy(p2)
+        self._wrapper.copy(p2._wrapper)
         
 
 
@@ -79,14 +79,14 @@ class GXBF:
 
     @classmethod
     def create(cls, p1: str, p2: int) -> 'GXBF':
-        ret_val = gxapi_cy.WrapBF.create(GXContext._get_tls_geo(), p2)
+        ret_val = gxapi_cy.WrapBF.create(GXContext._get_tls_geo(), p1.encode(), p2)
         return GXBF(ret_val)
 
 
 
     @classmethod
     def create_sbf(cls, p1: 'GXSBF', p2: str, p3: int) -> 'GXBF':
-        ret_val = gxapi_cy.WrapBF.create_sbf(GXContext._get_tls_geo(), p2.encode(), p3)
+        ret_val = gxapi_cy.WrapBF.create_sbf(GXContext._get_tls_geo(), p1._wrapper, p2.encode(), p3)
         return GXBF(ret_val)
 
 
@@ -146,7 +146,7 @@ class GXBF:
 
 
     def read_vv(self, p2: int, p3: 'GXVV') -> None:
-        self._wrapper.read_vv(p2, p3)
+        self._wrapper.read_vv(p2, p3._wrapper)
         
 
 
@@ -188,7 +188,7 @@ class GXBF:
 
 
     def write_vv(self, p2: int, p3: 'GXVV') -> None:
-        self._wrapper.write_vv(p2, p3)
+        self._wrapper.write_vv(p2, p3._wrapper)
         
 
 

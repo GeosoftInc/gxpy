@@ -100,28 +100,28 @@ class GXFFT:
 
     @classmethod
     def create(cls, p1: 'GXVV', p2: float, p3: int) -> 'GXFFT':
-        ret_val = gxapi_cy.WrapFFT.create(GXContext._get_tls_geo(), p2, p3)
+        ret_val = gxapi_cy.WrapFFT.create(GXContext._get_tls_geo(), p1._wrapper, p2, p3)
         return GXFFT(ret_val)
 
 
 
     @classmethod
     def create_ex(cls, p1: 'GXVV', p2: float, p3: int, p4: float) -> 'GXFFT':
-        ret_val = gxapi_cy.WrapFFT.create_ex(GXContext._get_tls_geo(), p2, p3, p4)
+        ret_val = gxapi_cy.WrapFFT.create_ex(GXContext._get_tls_geo(), p1._wrapper, p2, p3, p4)
         return GXFFT(ret_val)
 
 
 
     @classmethod
     def create_ref(cls, p1: 'GXVV', p2: float, p3: int) -> 'GXFFT':
-        ret_val = gxapi_cy.WrapFFT.create_ref(GXContext._get_tls_geo(), p2, p3)
+        ret_val = gxapi_cy.WrapFFT.create_ref(GXContext._get_tls_geo(), p1._wrapper, p2, p3)
         return GXFFT(ret_val)
 
 
 
     @classmethod
     def create_ref_ex(cls, p1: 'GXVV', p2: float, p3: int, p4: float, p5: float) -> 'GXFFT':
-        ret_val = gxapi_cy.WrapFFT.create_ref_ex(GXContext._get_tls_geo(), p2, p3, p4, p5)
+        ret_val = gxapi_cy.WrapFFT.create_ref_ex(GXContext._get_tls_geo(), p1._wrapper, p2, p3, p4, p5)
         return GXFFT(ret_val)
 
 
@@ -137,7 +137,7 @@ class GXFFT:
 
 
     def get_vv(self, p2: 'GXVV', p3: 'GXVV') -> None:
-        self._wrapper.get_vv(p2, p3)
+        self._wrapper.get_vv(p2._wrapper, p3._wrapper)
         
 
 
@@ -165,7 +165,7 @@ class GXFFT:
 
 
     def inverse(self, p2: 'GXVV', p3: 'GXVV') -> None:
-        self._wrapper.inverse(p2, p3)
+        self._wrapper.inverse(p2._wrapper, p3._wrapper)
         
 
 
@@ -207,14 +207,14 @@ class GXFFT:
 
 
     def set_vv(self, p2: 'GXVV', p3: 'GXVV') -> None:
-        self._wrapper.set_vv(p2, p3)
+        self._wrapper.set_vv(p2._wrapper, p3._wrapper)
         
 
 
 
 
     def spectrum(self, p2: 'GXVV') -> None:
-        self._wrapper.spectrum(p2)
+        self._wrapper.spectrum(p2._wrapper)
         
 
 
@@ -235,7 +235,7 @@ class GXFFT:
 
 
     def write_spectrum(self, p2: 'GXVV', p3: str) -> None:
-        self._wrapper.write_spectrum(p2, p3.encode())
+        self._wrapper.write_spectrum(p2._wrapper, p3.encode())
         
 
 

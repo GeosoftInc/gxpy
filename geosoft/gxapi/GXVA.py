@@ -65,56 +65,56 @@ class GXVA:
 
 
     def add_elevations_vv_to_depths(self, p2: 'GXVV', p3: int) -> None:
-        self._wrapper.add_elevations_vv_to_depths(p2, p3)
+        self._wrapper.add_elevations_vv_to_depths(p2._wrapper, p3)
         
 
 
 
 
     def append(self, p2: 'GXVA') -> None:
-        self._wrapper.append(p2)
+        self._wrapper.append(p2._wrapper)
         
 
 
 
 
     def average(self, p2: 'GXVV', p3: int) -> None:
-        self._wrapper.average(p2, p3)
+        self._wrapper.average(p2._wrapper, p3)
         
 
 
 
 
     def copy(self, p2: 'GXVA') -> None:
-        self._wrapper.copy(p2)
+        self._wrapper.copy(p2._wrapper)
         
 
 
 
 
     def copy2(self, p2: int, p3: int, p4: 'GXVA', p5: int, p6: int, p7: int, p8: int) -> None:
-        self._wrapper.copy2(p2, p3, p4, p5, p6, p7, p8)
+        self._wrapper.copy2(p2, p3, p4._wrapper, p5, p6, p7, p8)
         
 
 
 
     @classmethod
     def create(cls, p1: int, p2: int, p3: int) -> 'GXVA':
-        ret_val = gxapi_cy.WrapVA.create(GXContext._get_tls_geo(), p2, p3)
+        ret_val = gxapi_cy.WrapVA.create(GXContext._get_tls_geo(), p1, p2, p3)
         return GXVA(ret_val)
 
 
 
     @classmethod
     def create_ext(cls, p1: int, p2: int, p3: int) -> 'GXVA':
-        ret_val = gxapi_cy.WrapVA.create_ext(GXContext._get_tls_geo(), p2, p3)
+        ret_val = gxapi_cy.WrapVA.create_ext(GXContext._get_tls_geo(), p1, p2, p3)
         return GXVA(ret_val)
 
 
 
     @classmethod
     def create_vv(cls, p1: 'GXVV', p2: int, p3: int) -> 'GXVA':
-        ret_val = gxapi_cy.WrapVA.create_vv(GXContext._get_tls_geo(), p2, p3)
+        ret_val = gxapi_cy.WrapVA.create_vv(GXContext._get_tls_geo(), p1._wrapper, p2, p3)
         return GXVA(ret_val)
 
 
@@ -130,7 +130,7 @@ class GXVA:
 
 
     def get_vv(self, p2: int, p3: int, p4: 'GXVV') -> None:
-        self._wrapper.get_vv(p2, p3, p4)
+        self._wrapper.get_vv(p2, p3, p4._wrapper)
         
 
 
@@ -165,14 +165,14 @@ class GXVA:
 
     @classmethod
     def index_order(cls, p1: 'GXVV', p2: 'GXVA') -> None:
-        gxapi_cy.WrapVA.index_order(GXContext._get_tls_geo(), p2)
+        gxapi_cy.WrapVA.index_order(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper)
         
 
 
 
 
     def lookup_index(self, p2: 'GXVV', p3: 'GXVA') -> None:
-        self._wrapper.lookup_index(p2, p3)
+        self._wrapper.lookup_index(p2._wrapper, p3._wrapper)
         
 
 
@@ -263,7 +263,7 @@ class GXVA:
 
 
     def set_vv(self, p2: int, p3: int, p4: 'GXVV') -> None:
-        self._wrapper.set_vv(p2, p3, p4)
+        self._wrapper.set_vv(p2, p3, p4._wrapper)
         
 
 
@@ -277,28 +277,28 @@ class GXVA:
 
 
     def window(self, p2: int, p3: int, p4: 'GXVV') -> None:
-        self._wrapper.window(p2, p3, p4)
+        self._wrapper.window(p2, p3, p4._wrapper)
         
 
 
 
 
     def window2(self, p2: float, p3: float, p4: 'GXVV') -> None:
-        self._wrapper.window2(p2, p3, p4)
+        self._wrapper.window2(p2, p3, p4._wrapper)
         
 
 
 
 
     def check_for_repeating(self, p2: 'GXVV', p3: int, p4: 'GXVV', p5: float) -> int:
-        ret_val = self._wrapper.check_for_repeating(p2, p3, p4, p5)
+        ret_val = self._wrapper.check_for_repeating(p2._wrapper, p3, p4._wrapper, p5)
         return ret_val
 
 
 
 
     def check_for_repeating2(self, p2: 'GXVV', p3: int, p4: 'GXVV', p5: float, p6: int_ref, p7: int_ref) -> int:
-        ret_val, p6.value, p7.value = self._wrapper.check_for_repeating2(p2, p3, p4, p5, p6.value, p7.value)
+        ret_val, p6.value, p7.value = self._wrapper.check_for_repeating2(p2._wrapper, p3, p4._wrapper, p5, p6.value, p7.value)
         return ret_val
 
 

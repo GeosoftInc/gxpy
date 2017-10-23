@@ -51,28 +51,28 @@ class GXUNC:
 
     @classmethod
     def is_valid_utf16_char(cls, p1: int) -> int:
-        ret_val = gxapi_cy.WrapUNC.is_valid_utf16_char(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapUNC.is_valid_utf16_char(GXContext._get_tls_geo(), p1)
         return ret_val
 
 
 
     @classmethod
     def valid_symbol(cls, p1: str, p2: int, p3: int) -> int:
-        ret_val = gxapi_cy.WrapUNC.valid_symbol(GXContext._get_tls_geo(), p2, p3)
+        ret_val = gxapi_cy.WrapUNC.valid_symbol(GXContext._get_tls_geo(), p1.encode(), p2, p3)
         return ret_val
 
 
 
     @classmethod
     def utf16_val_to_str(cls, p1: int, p2: str_ref) -> None:
-        p2.value = gxapi_cy.WrapUNC.utf16_val_to_str(GXContext._get_tls_geo(), p2.value.encode())
+        p2.value = gxapi_cy.WrapUNC.utf16_val_to_str(GXContext._get_tls_geo(), p1, p2.value.encode())
         
 
 
 
     @classmethod
     def validate_symbols(cls, p1: 'GXVV', p2: str, p3: int) -> None:
-        gxapi_cy.WrapUNC.validate_symbols(GXContext._get_tls_geo(), p2.encode(), p3)
+        gxapi_cy.WrapUNC.validate_symbols(GXContext._get_tls_geo(), p1._wrapper, p2.encode(), p3)
         
 
 

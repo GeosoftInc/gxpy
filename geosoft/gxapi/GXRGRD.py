@@ -65,7 +65,7 @@ class GXRGRD:
 
     @classmethod
     def create_img(cls, p1: 'GXVV', p2: 'GXVV', p3: 'GXVV', p4: 'GXIPJ', p5: str, p6: str) -> 'GXIMG':
-        ret_val = gxapi_cy.WrapRGRD.create_img(GXContext._get_tls_geo(), p2, p3, p4, p5.encode(), p6.encode())
+        ret_val = gxapi_cy.WrapRGRD.create_img(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3._wrapper, p4._wrapper, p5.encode(), p6.encode())
         return GXIMG(ret_val)
 
 
@@ -74,7 +74,7 @@ class GXRGRD:
 
 
     def default(self, p2: str, p3: 'GXDAT') -> int:
-        ret_val = self._wrapper.default(p2.encode(), p3)
+        ret_val = self._wrapper.default(p2.encode(), p3._wrapper)
         return ret_val
 
 
@@ -88,14 +88,14 @@ class GXRGRD:
 
 
     def run(self, p2: 'GXDAT', p3: 'GXDAT') -> int:
-        ret_val = self._wrapper.run(p2, p3)
+        ret_val = self._wrapper.run(p2._wrapper, p3._wrapper)
         return ret_val
 
 
 
     @classmethod
     def run2(cls, p1: 'GXDB', p2: str, p3: str, p4: str, p5: str, p6: str) -> int:
-        ret_val = gxapi_cy.WrapRGRD.run2(GXContext._get_tls_geo(), p2.encode(), p3.encode(), p4.encode(), p5.encode(), p6.encode())
+        ret_val = gxapi_cy.WrapRGRD.run2(GXContext._get_tls_geo(), p1._wrapper, p2.encode(), p3.encode(), p4.encode(), p5.encode(), p6.encode())
         return ret_val
 
 
@@ -109,7 +109,7 @@ class GXRGRD:
 
     @classmethod
     def run_vv(cls, p1: 'GXVV', p2: 'GXVV', p3: 'GXVV', p4: 'GXIPJ', p5: str, p6: str) -> None:
-        gxapi_cy.WrapRGRD.run_vv(GXContext._get_tls_geo(), p2, p3, p4, p5.encode(), p6.encode())
+        gxapi_cy.WrapRGRD.run_vv(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3._wrapper, p4._wrapper, p5.encode(), p6.encode())
         
 
 
