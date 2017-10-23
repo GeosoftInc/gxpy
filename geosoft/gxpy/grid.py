@@ -669,7 +669,7 @@ class Grid:
 
         .. versionadded:: 9.2
         """
-        return self._img.query_double(gxapi.IMG_QUERY_rXO)
+        return self._img.query(gxapi.IMG_QUERY_rXO)
 
     @property
     def y0(self):
@@ -678,7 +678,7 @@ class Grid:
 
         .. versionadded:: 9.2
         """
-        return self._img.query_double(gxapi.IMG_QUERY_rYO)
+        return self._img.query(gxapi.IMG_QUERY_rYO)
 
     @property
     def dx(self):
@@ -687,7 +687,7 @@ class Grid:
 
         .. versionadded:: 9.2
         """
-        return self._img.query_double(gxapi.IMG_QUERY_rDX)
+        return self._img.query(gxapi.IMG_QUERY_rDX)
 
     @property
     def dy(self):
@@ -696,7 +696,7 @@ class Grid:
 
         .. versionadded:: 9.2
         """
-        return self._img.query_double(gxapi.IMG_QUERY_rDY)
+        return self._img.query(gxapi.IMG_QUERY_rDY)
 
     @property
     def rot(self):
@@ -709,7 +709,7 @@ class Grid:
 
         .. versionadded:: 9.2
         """
-        return -self._img.query_double(gxapi.IMG_QUERY_rROT)
+        return -self._img.query(gxapi.IMG_QUERY_rROT)
 
     @property
     def file_name(self):
