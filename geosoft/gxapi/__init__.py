@@ -71,7 +71,11 @@ class GXError(RuntimeError):
 
     .. versionadded:: 9.1
     """
-    pass
+    
+    def __init__(self, message, module, error_number):
+        super(RuntimeError, self).__init__(message)
+        self.module = module
+        self.error_number = error_number
     
 ### endblock Header
 
