@@ -75,7 +75,7 @@ class GXvv:
 
     def __exit__(self, type, value, traceback):
         self._np = None
-        self._gxva = None
+        self._gxvv = None
 
     def __init__(self, array=None, dtype=None, fid=(0.0, 1.0), unit_of_measure=''):
 
@@ -94,7 +94,7 @@ class GXvv:
         self._gxtype = gxu.gx_dtype(dtype)
         self._dtype = gxu.dtype_gx(self._gxtype)
         self._is_int = gxu.is_int(self._gxtype)
-        self._gxva = gxapi.GXVV.create_ext(self._gxtype, 0)
+        self._gxvv = gxapi.GXVV.create_ext(self._gxtype, 0)
         self.fid = fid
         self._sr = None
         self._np = None
@@ -105,7 +105,7 @@ class GXvv:
             self.set_data(array.flatten(), fid)
 
     def __len__(self):
-        return self._gxva.length()
+        return self._gxvv.length()
 
     def __iter__(self):
         return self
@@ -139,7 +139,7 @@ class GXvv:
     @property
     def gxvv(self):
         """:class:`geosoft.gxapi.GXVV` instance"""
-        return self._gxva
+        return self._gxvv
 
     @property
     def fid(self):
@@ -148,12 +148,12 @@ class GXvv:
 
         .. versionadded:: 9.1
         """
-        return (self._gxva.get_fid_start(), self._gxva.get_fid_incr())
+        return (self._gxvv.get_fid_start(), self._gxvv.get_fid_incr())
 
     @fid.setter
     def fid(self, fid):
-        self._gxva.set_fid_start(fid[0])
-        self._gxva.set_fid_incr(fid[1])
+        self._gxvv.set_fid_start(fid[0])
+        self._gxvv.set_fid_incr(fid[1])
 
     @property
     def length(self):
@@ -237,7 +237,7 @@ class GXvv:
                     self._sr = gxapi.str_ref()
                 npd = np.empty((n,), dtype=dtype)
                 for i in range(start, start + n):
-                    self._gxva.get_string(i, self._sr)
+                    self._gxvv.get_string(i, self._sr)
                     npd[i - start] = self._sr.value
 
             # numeric wanted
@@ -250,12 +250,12 @@ class GXvv:
                     else:
                         vvd = gxapi.GXVV.create_ext(gxapi.GS_DOUBLE, n)
 
-                    vvd.copy(self._gxva)  # this will do the conversion
+                    vvd.copy(self._gxvv)  # this will do the conversion
                     _, npd = vvd.get_data_np(start, n, dtype)
 
                 # numeric to numeric
                 else:
-                    _, npd = self._gxva.get_data_np(start, n, dtype)
+                    _, npd = self._gxvv.get_data_np(start, n, dtype)
 
         fid = self.fid
         start = fid[0] + start * fid[1]
@@ -282,17 +282,17 @@ class GXvv:
         if self._gxtype >= 0:
             if npdata.dtype == np.float32 or npdata.dtype == np.float64:
                 npdata[npdata == np.nan] = gxu.gx_dummy(npdata.dtype)
-            self._gxva.set_data_np(0, npdata)
+            self._gxvv.set_data_np(0, npdata)
 
         # strings
         else:
             ne = npdata.shape[0]
             for i in range(ne):
-                self._gxva.set_string(i, str(npdata[i]))
+                self._gxvv.set_string(i, str(npdata[i]))
 
         self._np = None
 
-        self._gxva.set_len(npdata.shape[0])
+        self._gxvv.set_len(npdata.shape[0])
         if fid:
             self.fid = fid
 
@@ -305,7 +305,7 @@ class GXvv:
 
         .. versionadded:: 9.1
         """
-        self._gxva.re_fid(fid[0], fid[1], length)
+        self._gxvv.re_fid(fid[0], fid[1], length)
         self.fid = fid
 
     def list(self):

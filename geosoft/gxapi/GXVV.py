@@ -3,6 +3,7 @@ from . import gxapi_cy
 
 from geosoft.gxapi import GXContext, int_ref, float_ref, str_ref
 
+
 ### block Header
 # NOTICE: The code generator will not replace the code in this block
 from . import gxapi_cy_extend
@@ -612,13 +613,23 @@ class GXVV:
 ### block ClassExtend
 # NOTICE: The code generator will not replace the code in this block
     def get_data_np(self, start: int, num_elements: int, dtype: int):
-        r, a = self.get_data_array(start, num_elements, 5)
+        from .GXNumpy import gs_from_np
+        gs_type = gs_from_np(dtype)
+        r, a = self.get_data_array(start, num_elements, gs_type)
         return (r, np.asarray(a))
 
-    def get_data_array(self, start: int, num_elements: int, dtype: int):
-        print("ENTER")
-        input()
-        r, a = gxapi_cy_extend.WrapVVExtra.get_data_array_vv(GXContext._internal_p(), self._wrapper.handle, start, num_elements, dtype)
+    def set_data_np(self, start: int, array: type(np.ndarray)):
+        from .GXNumpy import gs_from_np
+        gs_type = gs_from_np(array.dtype)
+        num_elements = np.prod(array.shape)
+        if not array.flags['C_CONTIGUOUS']:
+            array = np.ascontiguousarray(array)
+        #print("ENTER")
+        #input()
+        return self.set_data(start, num_elements, array.data.tobytes(), gs_type)
+    
+    def get_data_array(self, start: int, num_elements: int, gs_type: int):
+        r, a = gxapi_cy_extend.WrapVVExtra.get_data_array_vv(GXContext._internal_p(), self._wrapper.handle, start, num_elements, gs_type)
         return (r, a)
 ### endblock ClassExtend
 
