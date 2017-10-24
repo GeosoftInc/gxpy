@@ -1,7 +1,20 @@
 ### extends 'class_empty.py'
+### block ClassImports
+# NOTICE: Do not edit anything here, it is generated code
 from . import gxapi_cy
-
-from geosoft.gxapi import GXContext, int_ref, float_ref, str_ref
+from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
+from .GXAGG import GXAGG
+from .GXBF import GXBF
+from .GXCSYMB import GXCSYMB
+from .GXDATALINKD import GXDATALINKD
+from .GXITR import GXITR
+from .GXMAP import GXMAP
+from .GXMETA import GXMETA
+from .GXREG import GXREG
+from .GXTPAT import GXTPAT
+from .GXVECTOR3D import GXVECTOR3D
+from .GXVOXD import GXVOXD
+### endblock ClassImports
 
 ### block Header
 # NOTICE: The code generator will not replace the code in this block
