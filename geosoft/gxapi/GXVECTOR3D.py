@@ -23,7 +23,7 @@ class GXVECTOR3D:
         self._wrapper = None
 
     def __init__(self, wrapper=None):
-        self._wrapper = wrapper if wrapper else gxapi_cy.WrapVECTOR3D(0)
+        self._wrapper = wrapper if wrapper else gxapi_cy.WrapVECTOR3D(GXContext._get_tls_geo(), 0)
 
     @classmethod
     def null(cls) -> 'GXVECTOR3D':

@@ -23,7 +23,7 @@ class GXDAT:
         self._wrapper = None
 
     def __init__(self, wrapper=None):
-        self._wrapper = wrapper if wrapper else gxapi_cy.WrapDAT(0)
+        self._wrapper = wrapper if wrapper else gxapi_cy.WrapDAT(GXContext._get_tls_geo(), 0)
 
     @classmethod
     def null(cls) -> 'GXDAT':

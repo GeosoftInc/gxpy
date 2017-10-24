@@ -23,7 +23,7 @@ class GXPGU:
         self._wrapper = None
 
     def __init__(self, wrapper=None):
-        self._wrapper = wrapper if wrapper else gxapi_cy.WrapPGU(0)
+        self._wrapper = wrapper if wrapper else gxapi_cy.WrapPGU(GXContext._get_tls_geo(), 0)
 
     @classmethod
     def null(cls) -> 'GXPGU':
@@ -50,8 +50,8 @@ class GXPGU:
 
 
     @classmethod
-    def bool(cls, p1: 'GXPG', p2: str) -> None:
-        gxapi_cy.WrapPGU.bool(GXContext._get_tls_geo(), p1._wrapper, p2.encode())
+    def bool_mask(cls, p1: 'GXPG', p2: str) -> None:
+        gxapi_cy.WrapPGU.bool_mask(GXContext._get_tls_geo(), p1._wrapper, p2.encode())
         
 
 

@@ -23,7 +23,7 @@ class GXMSTK:
         self._wrapper = None
 
     def __init__(self, wrapper=None):
-        self._wrapper = wrapper if wrapper else gxapi_cy.WrapMSTK(0)
+        self._wrapper = wrapper if wrapper else gxapi_cy.WrapMSTK(GXContext._get_tls_geo(), 0)
 
     @classmethod
     def null(cls) -> 'GXMSTK':
@@ -101,8 +101,8 @@ class GXMSTK:
 
 
 
-    def delete(self, p2: int) -> None:
-        self._wrapper.delete(p2)
+    def delete_stk(self, p2: int) -> None:
+        self._wrapper.delete_stk(p2)
         
 
 

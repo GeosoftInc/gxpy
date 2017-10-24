@@ -23,7 +23,7 @@ class GXDATALINKD:
         self._wrapper = None
 
     def __init__(self, wrapper=None):
-        self._wrapper = wrapper if wrapper else gxapi_cy.WrapDATALINKD(0)
+        self._wrapper = wrapper if wrapper else gxapi_cy.WrapDATALINKD(GXContext._get_tls_geo(), 0)
 
     @classmethod
     def null(cls) -> 'GXDATALINKD':

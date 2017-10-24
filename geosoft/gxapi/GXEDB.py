@@ -23,7 +23,7 @@ class GXEDB:
         self._wrapper = None
 
     def __init__(self, wrapper=None):
-        self._wrapper = wrapper if wrapper else gxapi_cy.WrapEDB(0)
+        self._wrapper = wrapper if wrapper else gxapi_cy.WrapEDB(GXContext._get_tls_geo(), 0)
 
     @classmethod
     def null(cls) -> 'GXEDB':
@@ -332,8 +332,8 @@ class GXEDB:
 
 
 
-    def get_profile_parm(self, p2: int, p3: int, p4: int) -> int:
-        ret_val = self._wrapper.get_profile_parm(p2, p3, p4)
+    def get_profile_parm_int(self, p2: int, p3: int, p4: int) -> int:
+        ret_val = self._wrapper.get_profile_parm_int(p2, p3, p4)
         return ret_val
 
 
@@ -507,8 +507,8 @@ class GXEDB:
 
 
 
-    def get_profile_parm(self, p2: int, p3: int, p4: int) -> float:
-        ret_val = self._wrapper.get_profile_parm(p2, p3, p4)
+    def get_profile_parm_double(self, p2: int, p3: int, p4: int) -> float:
+        ret_val = self._wrapper.get_profile_parm_double(p2, p3, p4)
         return ret_val
 
 

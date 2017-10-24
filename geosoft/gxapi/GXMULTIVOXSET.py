@@ -23,7 +23,7 @@ class GXMULTIVOXSET:
         self._wrapper = None
 
     def __init__(self, wrapper=None):
-        self._wrapper = wrapper if wrapper else gxapi_cy.WrapMULTIVOXSET(0)
+        self._wrapper = wrapper if wrapper else gxapi_cy.WrapMULTIVOXSET(GXContext._get_tls_geo(), 0)
 
     @classmethod
     def null(cls) -> 'GXMULTIVOXSET':

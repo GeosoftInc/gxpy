@@ -23,7 +23,7 @@ class GXDU:
         self._wrapper = None
 
     def __init__(self, wrapper=None):
-        self._wrapper = wrapper if wrapper else gxapi_cy.WrapDU(0)
+        self._wrapper = wrapper if wrapper else gxapi_cy.WrapDU(GXContext._get_tls_geo(), 0)
 
     @classmethod
     def null(cls) -> 'GXDU':
@@ -267,8 +267,8 @@ class GXDU:
 
 
     @classmethod
-    def export(cls, p1: 'GXDB', p2: int, p3: str, p4: 'GXVV', p5: int, p6: str, p7: int, p8: int) -> None:
-        gxapi_cy.WrapDU.export(GXContext._get_tls_geo(), p1._wrapper, p2, p3.encode(), p4._wrapper, p5, p6.encode(), p7, p8)
+    def export1(cls, p1: 'GXDB', p2: int, p3: str, p4: 'GXVV', p5: int, p6: str, p7: int, p8: int) -> None:
+        gxapi_cy.WrapDU.export1(GXContext._get_tls_geo(), p1._wrapper, p2, p3.encode(), p4._wrapper, p5, p6.encode(), p7, p8)
         
 
 

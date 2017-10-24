@@ -23,7 +23,7 @@ class GXPJ:
         self._wrapper = None
 
     def __init__(self, wrapper=None):
-        self._wrapper = wrapper if wrapper else gxapi_cy.WrapPJ(0)
+        self._wrapper = wrapper if wrapper else gxapi_cy.WrapPJ(GXContext._get_tls_geo(), 0)
 
     @classmethod
     def null(cls) -> 'GXPJ':

@@ -23,7 +23,7 @@ class GXMATH:
         self._wrapper = None
 
     def __init__(self, wrapper=None):
-        self._wrapper = wrapper if wrapper else gxapi_cy.WrapMATH(0)
+        self._wrapper = wrapper if wrapper else gxapi_cy.WrapMATH(GXContext._get_tls_geo(), 0)
 
     @classmethod
     def null(cls) -> 'GXMATH':
@@ -57,8 +57,8 @@ class GXMATH:
 
 
     @classmethod
-    def abs_(cls, p1: int) -> int:
-        ret_val = gxapi_cy.WrapMATH.abs_(GXContext._get_tls_geo(), p1)
+    def abs_int_(cls, p1: int) -> int:
+        ret_val = gxapi_cy.WrapMATH.abs_int_(GXContext._get_tls_geo(), p1)
         return ret_val
 
 
@@ -71,8 +71,8 @@ class GXMATH:
 
 
     @classmethod
-    def mod_(cls, p1: int, p2: int) -> int:
-        ret_val = gxapi_cy.WrapMATH.mod_(GXContext._get_tls_geo(), p1, p2)
+    def mod_int_(cls, p1: int, p2: int) -> int:
+        ret_val = gxapi_cy.WrapMATH.mod_int_(GXContext._get_tls_geo(), p1, p2)
         return ret_val
 
 
@@ -85,8 +85,8 @@ class GXMATH:
 
 
     @classmethod
-    def round_(cls, p1: float) -> int:
-        ret_val = gxapi_cy.WrapMATH.round_(GXContext._get_tls_geo(), p1)
+    def round_int_(cls, p1: float) -> int:
+        ret_val = gxapi_cy.WrapMATH.round_int_(GXContext._get_tls_geo(), p1)
         return ret_val
 
 
@@ -120,8 +120,8 @@ class GXMATH:
 
 
     @classmethod
-    def abs_(cls, p1: float) -> float:
-        ret_val = gxapi_cy.WrapMATH.abs_(GXContext._get_tls_geo(), p1)
+    def abs_double_(cls, p1: float) -> float:
+        ret_val = gxapi_cy.WrapMATH.abs_double_(GXContext._get_tls_geo(), p1)
         return ret_val
 
 
@@ -232,8 +232,8 @@ class GXMATH:
 
 
     @classmethod
-    def mod_(cls, p1: float, p2: float) -> float:
-        ret_val = gxapi_cy.WrapMATH.mod_(GXContext._get_tls_geo(), p1, p2)
+    def mod_double_(cls, p1: float, p2: float) -> float:
+        ret_val = gxapi_cy.WrapMATH.mod_double_(GXContext._get_tls_geo(), p1, p2)
         return ret_val
 
 
@@ -260,8 +260,8 @@ class GXMATH:
 
 
     @classmethod
-    def round_(cls, p1: float, p2: int) -> float:
-        ret_val = gxapi_cy.WrapMATH.round_(GXContext._get_tls_geo(), p1, p2)
+    def round_double_(cls, p1: float, p2: int) -> float:
+        ret_val = gxapi_cy.WrapMATH.round_double_(GXContext._get_tls_geo(), p1, p2)
         return ret_val
 
 

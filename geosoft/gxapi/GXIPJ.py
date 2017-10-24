@@ -23,7 +23,7 @@ class GXIPJ:
         self._wrapper = None
 
     def __init__(self, wrapper=None):
-        self._wrapper = wrapper if wrapper else gxapi_cy.WrapIPJ(0)
+        self._wrapper = wrapper if wrapper else gxapi_cy.WrapIPJ(GXContext._get_tls_geo(), 0)
 
     @classmethod
     def null(cls) -> 'GXIPJ':
@@ -374,8 +374,8 @@ class GXIPJ:
 
 
 
-    def set_gxf(self, p2: str, p3: str, p4: str, p5: str, p6: str) -> int:
-        ret_val = self._wrapper.set_gxf(p2.encode(), p3.encode(), p4.encode(), p5.encode(), p6.encode())
+    def set_gxf_safe(self, p2: str, p3: str, p4: str, p5: str, p6: str) -> int:
+        ret_val = self._wrapper.set_gxf_safe(p2.encode(), p3.encode(), p4.encode(), p5.encode(), p6.encode())
         return ret_val
 
 

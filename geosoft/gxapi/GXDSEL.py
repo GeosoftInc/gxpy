@@ -23,7 +23,7 @@ class GXDSEL:
         self._wrapper = None
 
     def __init__(self, wrapper=None):
-        self._wrapper = wrapper if wrapper else gxapi_cy.WrapDSEL(0)
+        self._wrapper = wrapper if wrapper else gxapi_cy.WrapDSEL(GXContext._get_tls_geo(), 0)
 
     @classmethod
     def null(cls) -> 'GXDSEL':

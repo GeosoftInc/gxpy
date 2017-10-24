@@ -2,6 +2,7 @@ import geosoft.gxapi as gxa
 import numpy as np
 
 def gs_from_np(dtype):
+    dtype = np.dtype(dtype)
     if dtype == np.byte:
         return gxa.GS_BYTE
     elif dtype == np.ubyte:

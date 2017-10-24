@@ -23,7 +23,7 @@ class GXKGRD:
         self._wrapper = None
 
     def __init__(self, wrapper=None):
-        self._wrapper = wrapper if wrapper else gxapi_cy.WrapKGRD(0)
+        self._wrapper = wrapper if wrapper else gxapi_cy.WrapKGRD(GXContext._get_tls_geo(), 0)
 
     @classmethod
     def null(cls) -> 'GXKGRD':

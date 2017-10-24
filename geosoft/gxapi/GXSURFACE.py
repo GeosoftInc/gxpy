@@ -23,7 +23,7 @@ class GXSURFACE:
         self._wrapper = None
 
     def __init__(self, wrapper=None):
-        self._wrapper = wrapper if wrapper else gxapi_cy.WrapSURFACE(0)
+        self._wrapper = wrapper if wrapper else gxapi_cy.WrapSURFACE(GXContext._get_tls_geo(), 0)
 
     @classmethod
     def null(cls) -> 'GXSURFACE':

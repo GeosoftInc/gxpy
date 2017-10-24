@@ -3,7 +3,6 @@ from . import gxapi_cy
 
 from geosoft.gxapi import GXContext, int_ref, float_ref, str_ref
 
-
 ### block Header
 # NOTICE: The code generator will not replace the code in this block
 from . import gxapi_cy_extend
@@ -26,7 +25,7 @@ class GXVV:
         self._wrapper = None
 
     def __init__(self, wrapper=None):
-        self._wrapper = wrapper if wrapper else gxapi_cy.WrapVV(0)
+        self._wrapper = wrapper if wrapper else gxapi_cy.WrapVV(GXContext._get_tls_geo(), 0)
 
     @classmethod
     def null(cls) -> 'GXVV':

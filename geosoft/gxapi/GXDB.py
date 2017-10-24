@@ -23,7 +23,7 @@ class GXDB:
         self._wrapper = None
 
     def __init__(self, wrapper=None):
-        self._wrapper = wrapper if wrapper else gxapi_cy.WrapDB(0)
+        self._wrapper = wrapper if wrapper else gxapi_cy.WrapDB(GXContext._get_tls_geo(), 0)
 
     @classmethod
     def null(cls) -> 'GXDB':
@@ -239,8 +239,8 @@ class GXDB:
 
 
 
-    def get_reg_symb_setting(self, p2: int, p3: str) -> int:
-        ret_val = self._wrapper.get_reg_symb_setting(p2, p3.encode())
+    def get_reg_symb_setting_int(self, p2: int, p3: str) -> int:
+        ret_val = self._wrapper.get_reg_symb_setting_int(p2, p3.encode())
         return ret_val
 
 
@@ -316,8 +316,8 @@ class GXDB:
 
 
 
-    def get_reg_symb_setting(self, p2: int, p3: str) -> float:
-        ret_val = self._wrapper.get_reg_symb_setting(p2, p3.encode())
+    def get_reg_symb_setting_double(self, p2: int, p3: str) -> float:
+        ret_val = self._wrapper.get_reg_symb_setting_double(p2, p3.encode())
         return ret_val
 
 

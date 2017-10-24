@@ -23,7 +23,7 @@ class GXDBREAD:
         self._wrapper = None
 
     def __init__(self, wrapper=None):
-        self._wrapper = wrapper if wrapper else gxapi_cy.WrapDBREAD(0)
+        self._wrapper = wrapper if wrapper else gxapi_cy.WrapDBREAD(GXContext._get_tls_geo(), 0)
 
     @classmethod
     def null(cls) -> 'GXDBREAD':

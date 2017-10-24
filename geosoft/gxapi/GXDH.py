@@ -23,7 +23,7 @@ class GXDH:
         self._wrapper = None
 
     def __init__(self, wrapper=None):
-        self._wrapper = wrapper if wrapper else gxapi_cy.WrapDH(0)
+        self._wrapper = wrapper if wrapper else gxapi_cy.WrapDH(GXContext._get_tls_geo(), 0)
 
     @classmethod
     def null(cls) -> 'GXDH':
@@ -354,8 +354,8 @@ class GXDH:
 
 
 
-    def export(self, p2: str, p3: int) -> None:
-        self._wrapper.export(p2.encode(), p3)
+    def export_file(self, p2: str, p3: int) -> None:
+        self._wrapper.export_file(p2.encode(), p3)
         
 
 

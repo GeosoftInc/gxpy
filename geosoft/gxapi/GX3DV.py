@@ -23,7 +23,7 @@ class GX3DV:
         self._wrapper = None
 
     def __init__(self, wrapper=None):
-        self._wrapper = wrapper if wrapper else gxapi_cy.Wrap3DV(0)
+        self._wrapper = wrapper if wrapper else gxapi_cy.Wrap3DV(GXContext._get_tls_geo(), 0)
 
     @classmethod
     def null(cls) -> 'GX3DV':

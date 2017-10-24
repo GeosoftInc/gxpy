@@ -23,7 +23,7 @@ class GXIMG:
         self._wrapper = None
 
     def __init__(self, wrapper=None):
-        self._wrapper = wrapper if wrapper else gxapi_cy.WrapIMG(0)
+        self._wrapper = wrapper if wrapper else gxapi_cy.WrapIMG(GXContext._get_tls_geo(), 0)
 
     @classmethod
     def null(cls) -> 'GXIMG':
@@ -255,8 +255,8 @@ class GXIMG:
 
 
 
-    def query(self, p2: int) -> int:
-        ret_val = self._wrapper.query(p2)
+    def query_int(self, p2: int) -> int:
+        ret_val = self._wrapper.query_int(p2)
         return ret_val
 
 
@@ -360,8 +360,8 @@ class GXIMG:
 
 
 
-    def query(self, p2: int) -> float:
-        ret_val = self._wrapper.query(p2)
+    def query_double(self, p2: int) -> float:
+        ret_val = self._wrapper.query_double(p2)
         return ret_val
 
 
