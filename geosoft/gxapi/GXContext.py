@@ -54,13 +54,11 @@ class GXContext:
 
     def get_main_wnd_id(self):
         p_geo = GXContext._get_tls_geo()
-        wnd_id = p_geo.get_main_wnd()
-        return 0 if wnd_id is None else wnd_id
+        return p_geo.get_main_wnd()
 
     def get_active_wnd_id(self):
         p_geo = GXContext._get_tls_geo()
-        wnd_id = p_geo.get_active_wnd()
-        return 0 if wnd_id is None else wnd_id
+        return p_geo.get_active_wnd()
 
     def enable_application_windows(self, enable):
         p_geo = GXContext._get_tls_geo()
