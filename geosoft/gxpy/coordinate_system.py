@@ -1029,19 +1029,19 @@ class Coordinate_translate:
             self._pj.convert_vv(vvx, vvy)
 
         if in_place:
-            _, xyz[:, 0] = vvx.get_data_np(0, npoints, 'f8')
-            _, xyz[:, 1] = vvy.get_data_np(0, npoints, 'f8')
+            xyz[:, 0] = vvx.get_data_np(0, npoints, 'f8')
+            xyz[:, 1] = vvy.get_data_np(0, npoints, 'f8')
             if nd == 3:
-                _, xyz[:, 2] = vvz.get_data_np(0, npoints, 'f8')
+                xyz[:, 2] = vvz.get_data_np(0, npoints, 'f8')
             return xyz
 
         if nd >= 3:
-            xyz = np.transpose(np.array([vvx.get_data_np(0, npoints, 'f8')[1],
-                                         vvy.get_data_np(0, npoints, 'f8')[1],
-                                         vvz.get_data_np(0, npoints, 'f8')[1]]))
+            xyz = np.transpose(np.array([vvx.get_data_np(0, npoints, 'f8'),
+                                         vvy.get_data_np(0, npoints, 'f8'),
+                                         vvz.get_data_np(0, npoints, 'f8')]))
         else:
-            xyz = np.transpose(np.array([vvx.get_data_np(0, npoints, 'f8')[1],
-                                         vvy.get_data_np(0, npoints, 'f8')[1]]))
+            xyz = np.transpose(np.array([vvx.get_data_np(0, npoints, 'f8'),
+                                         vvy.get_data_np(0, npoints, 'f8')]))
 
         if xyz_type is np.ndarray:
             return xyz

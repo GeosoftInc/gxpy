@@ -55,16 +55,16 @@ class GXVV:
 
 
 
-    def get_data(self, p2: int, p3: int, p4: type(bytearray), p5: int) -> int:
-        ret_val = self._wrapper.get_data(p2, p3, p4, p5)
-        return ret_val
+    def get_data(self, start: int, elements: int, data: type(bytearray), gs_type: int) -> None:
+        self._wrapper.get_data(start, elements, data, gs_type)
+        
 
 
 
 
-    def set_data(self, p2: int, p3: int, p4: type(bytearray), p5: int) -> int:
-        ret_val = self._wrapper.set_data(p2, p3, p4, p5)
-        return ret_val
+    def set_data(self, start: int, elements: int, data: type(bytearray), gs_type: int) -> None:
+        self._wrapper.set_data(start, elements, data, gs_type)
+        
 
 
 
@@ -614,25 +614,21 @@ class GXVV:
 ### endblock ClassImplementation
 ### block ClassExtend
 # NOTICE: The code generator will not replace the code in this block
-    def get_data_np(self, start: int, num_elements: int, dtype: int):
+    def get_data_np(self, start: int, num_elements: int, np_dtype: type(np.dtype)):
         from .GXNumpy import gs_from_np
-        gs_type = gs_from_np(dtype)
-        r, a = self.get_data_array(start, num_elements, gs_type)
-        return (r, np.asarray(a))
+        gs_type = gs_from_np(np_dtype)
+        return np.asarray(self.get_data_array(start, num_elements, gs_type))
 
-    def set_data_np(self, start: int, array: type(np.ndarray)):
+    def set_data_np(self, start: int, np_array: type(np.ndarray)):
         from .GXNumpy import gs_from_np
-        gs_type = gs_from_np(array.dtype)
-        num_elements = np.prod(array.shape)
-        if not array.flags['C_CONTIGUOUS']:
-            array = np.ascontiguousarray(array)
-        #print("ENTER")
-        #input()
-        return self.set_data(start, num_elements, array.data.tobytes(), gs_type)
+        gs_type = gs_from_np(np_array.dtype)
+        num_elements = np.prod(np_array.shape)
+        if not np_array.flags['C_CONTIGUOUS']:
+            np_array = np.ascontiguousarray(np_array)
+        self.set_data(start, num_elements, np_array.data.tobytes(), gs_type)
     
     def get_data_array(self, start: int, num_elements: int, gs_type: int):
-        r, a = gxapi_cy_extend.WrapVVExtra.get_data_array_vv(GXContext._internal_p(), self._wrapper.handle, start, num_elements, gs_type)
-        return (r, a)
+        return gxapi_cy_extend.GXMemMethods.get_data_array_vv(GXContext._internal_p(), self._wrapper.handle, start, num_elements, gs_type)
 ### endblock ClassExtend
 
 

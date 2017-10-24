@@ -8,6 +8,8 @@ from .GXVV import GXVV
 
 ### block Header
 # NOTICE: The code generator will not replace the code in this block
+import numpy as np
+from . import gxapi_cy_extend
 ### endblock Header
 
 ### block ClassImplementation
@@ -53,16 +55,16 @@ class GXVA:
 
 
 
-    def get_array(self, p2: int, p3: int, p4: int, p5: int, p6: type(bytearray), p7: int) -> int:
-        ret_val = self._wrapper.get_array(p2, p3, p4, p5, p6, p7)
-        return ret_val
+    def get_array(self, start_row: int, start_col: int, rows: int, cols: int, data: type(bytearray), gs_type: int) -> None:
+        self._wrapper.get_array(start_row, start_col, rows, cols, data, gs_type)
+        
 
 
 
 
-    def set_array(self, p2: int, p3: int, p4: int, p5: int, p6: type(bytearray), p7: int) -> int:
-        ret_val = self._wrapper.set_array(p2, p3, p4, p5, p6, p7)
-        return ret_val
+    def set_array(self, start_row: int, start_col: int, rows: int, cols: int, data: type(bytearray), gs_type: int) -> None:
+        self._wrapper.set_array(start_row, start_col, rows, cols, data, gs_type)
+        
 
 
 
@@ -304,13 +306,27 @@ class GXVA:
         ret_val, p6.value, p7.value = self._wrapper.check_for_repeating2(p2._wrapper, p3, p4._wrapper, p5, p6.value, p7.value)
         return ret_val
 
-
-
-
-
 ### endblock ClassImplementation
 ### block ClassExtend
 # NOTICE: The code generator will not replace the code in this block
+    def get_array_np(self, start_row: int, start_col: int, rows: int, cols: int, np_dtype: type(np.dtype)):
+        from .GXNumpy import gs_from_np
+        gs_type = gs_from_np(np_dtype)
+        return np.asarray(self.get_data_array(start_row, start_col, rows, cols, gs_type))
+
+    def set_array_np(self, start_row: int, start_col: int, np_array: type(np.ndarray)):
+        from .GXNumpy import gs_from_np
+        gs_type = gs_from_np(np_array.dtype)
+        if np_array.ndim != 2:
+            raise GXAPIError("Only 2D Numpy arrays supported for this method");
+        rows = np_array.shape[0];
+        columns = np_array.shape[1];
+        if not np_array.flags['C_CONTIGUOUS']:
+            np_array = np.ascontiguousarray(np_array)
+        self.set_array(start_row, start_col, rows, columns, np_array.data.tobytes(), gs_type)
+    
+    def get_data_array(self, start_row: int, start_col: int, rows: int, cols: int, gs_type: int):
+        return gxapi_cy_extend.GXMemMethods.get_array_data_va(GXContext._internal_p(), self._wrapper.handle, start_row, start_col, rows, cols, gs_type)
 ### endblock ClassExtend
 
 
