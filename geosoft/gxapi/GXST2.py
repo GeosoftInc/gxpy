@@ -14,6 +14,12 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 # NOTICE: Do not edit anything here, it is generated code
 class GXST2:
     """
+    GXST2 class.
+
+    Bi-variate statistics. The :class:`GXST2` class accumulates statistics
+    on two data vectors simultaneously in order to compute correlation
+    information. Statistics are accumulated using the DataVV_ST2 function.
+    See also :class:`GXST` (mono-variate statistics).
     """
 
     def __enter__(self):
@@ -33,7 +39,7 @@ class GXST2:
         """
         A null (undefined) instance of :class:`GXST2`
         
-        :returns: A null :class:`GX3DN`
+        :returns: A null :class:`GXST2`
         """
         return cls()
 

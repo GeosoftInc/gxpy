@@ -14,6 +14,11 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 # NOTICE: Do not edit anything here, it is generated code
 class GXMVU:
     """
+    GXMVU class.
+
+    A catchall library for methods using the :class:`GXMAP` and :class:`GXMVIEW` classes.
+    These include drawing flight paths, legends, postings, and
+    special objects such as histograms and bar charts.
     """
 
     def __enter__(self):
@@ -33,7 +38,7 @@ class GXMVU:
         """
         A null (undefined) instance of :class:`GXMVU`
         
-        :returns: A null :class:`GX3DN`
+        :returns: A null :class:`GXMVU`
         """
         return cls()
 

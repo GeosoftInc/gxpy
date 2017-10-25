@@ -14,6 +14,9 @@ from .GXMVIEW import GXMVIEW
 # NOTICE: Do not edit anything here, it is generated code
 class GX3DV:
     """
+    GX3DV class.
+
+    TODO...
     """
 
     def __enter__(self):
@@ -33,7 +36,7 @@ class GX3DV:
         """
         A null (undefined) instance of :class:`GX3DV`
         
-        :returns: A null :class:`GX3DN`
+        :returns: A null :class:`GX3DV`
         """
         return cls()
 

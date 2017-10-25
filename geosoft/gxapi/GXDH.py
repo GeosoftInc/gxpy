@@ -16,6 +16,17 @@ from .GXREG import GXREG
 # NOTICE: Do not edit anything here, it is generated code
 class GXDH:
     """
+    GXDH class.
+
+    This class is used for importing and interacting with Drill Hole
+    data files. For detailed information on Drill Hole data,
+    see the documentation for Wholeplot.
+
+    **Note:**
+
+    The :class:`GXDH` class has some defines not used by any functions.
+        :attr:`DH_DEFINE_PLAN`
+        `DH_DEFINE_SECT`
     """
 
     def __enter__(self):
@@ -35,7 +46,7 @@ class GXDH:
         """
         A null (undefined) instance of :class:`GXDH`
         
-        :returns: A null :class:`GX3DN`
+        :returns: A null :class:`GXDH`
         """
         return cls()
 

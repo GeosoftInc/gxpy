@@ -14,6 +14,32 @@ from .GXREG import GXREG
 # NOTICE: Do not edit anything here, it is generated code
 class GXITR:
     """
+    GXITR class.
+
+    The :class:`GXITR` class provides access to :class:`GXITR` files. An :class:`GXITR` file maps
+    ranges of values to specific colors. The :class:`GXITR` object is typically
+    used in conjunction with :class:`GXMVIEW` objects (see :class:`GXMVIEW` and :class:`GXMVU`).
+
+    **Note:**
+
+    Histogram ranges and color zone ranges
+    
+    Histogram bins are defined with inclusive minima and exclusive maxima;
+    for instance if Min = 0 and Inc = 1, then the second bin would include
+    all values z such that  0 <= z < 1 (the first bin has all values < 0).
+    
+    Color zones used in displaying grids (:class:`GXITR`, ZON etc...) are the
+    opposite, with exclusive minima and inclusive maxima.
+    For instance, if a zone is defined from 0 to 1, then it would
+    contain all values of z such that 0 < z <= 1.
+    
+    These definitions mean that it is impossible to perfectly assign
+    :class:`GXITR` colors to individual bars of a histogram. The best work-around
+    when the data values are integers is to define the color zones using
+    0.5 values between the integers. A general work-around is to make the
+    number of histogram bins much larger than the number of color zones.
+    
+    The :attr:`ITR_NULL` is used to hold a NULL handle to an :class:`GXITR` class.
     """
 
     def __enter__(self):
@@ -33,7 +59,7 @@ class GXITR:
         """
         A null (undefined) instance of :class:`GXITR`
         
-        :returns: A null :class:`GX3DN`
+        :returns: A null :class:`GXITR`
         """
         return cls()
 

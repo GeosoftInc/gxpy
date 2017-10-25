@@ -14,6 +14,10 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 # NOTICE: Do not edit anything here, it is generated code
 class GXMISC:
     """
+    GXMISC class.
+
+    Not a class. A catch-all for miscellaneous geophysical
+    methods, primarily file conversions.
     """
 
     def __enter__(self):
@@ -33,7 +37,7 @@ class GXMISC:
         """
         A null (undefined) instance of :class:`GXMISC`
         
-        :returns: A null :class:`GX3DN`
+        :returns: A null :class:`GXMISC`
         """
         return cls()
 

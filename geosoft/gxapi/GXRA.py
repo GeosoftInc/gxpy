@@ -14,6 +14,11 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 # NOTICE: Do not edit anything here, it is generated code
 class GXRA:
     """
+    GXRA class.
+
+    The :class:`GXRA` class is used to access ASCII files sequentially or
+    by line number. The files are opened in read-only mode, so no
+    write operations are defined
     """
 
     def __enter__(self):
@@ -33,7 +38,7 @@ class GXRA:
         """
         A null (undefined) instance of :class:`GXRA`
         
-        :returns: A null :class:`GX3DN`
+        :returns: A null :class:`GXRA`
         """
         return cls()
 

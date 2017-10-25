@@ -14,6 +14,13 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 # NOTICE: Do not edit anything here, it is generated code
 class GXGEOSTRING:
     """
+    GXGEOSTRING class.
+
+    The :class:`GXGEOSTRING` class is used to read information stored in Geostring files 
+    (``*.geosoft_string``). Geosoft geostrings are 3D vector files that store digitized 
+    interpretations drawn on section maps. Both polygon and polyline features can be 
+    stored in the same file. This API currently only provides read access, 
+    but read/write support could be added in the future.
     """
 
     def __enter__(self):
@@ -33,7 +40,7 @@ class GXGEOSTRING:
         """
         A null (undefined) instance of :class:`GXGEOSTRING`
         
-        :returns: A null :class:`GX3DN`
+        :returns: A null :class:`GXGEOSTRING`
         """
         return cls()
 

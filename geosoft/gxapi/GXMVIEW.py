@@ -24,6 +24,29 @@ from .GXVOXD import GXVOXD
 # NOTICE: Do not edit anything here, it is generated code
 class GXMVIEW:
     """
+    GXMVIEW class.
+
+    A view (:class:`GXMVIEW` class) has a 2-D/3-D translation matrix, a map
+    projection and a clip region.  A view contains any number of
+    "groups", and each "group" contains one or more graphics
+    elements (entities).  Different types of groups will contain
+    different types of entities:
+
+    **Note:**
+
+    :class:`GXCSYMB` groups (color symbols) contain data and rules for
+    presenting the data as color symbols.  See ColSymbol_MVIEW
+    and the :class:`GXCSYMB` class.
+    
+    :class:`GXAGG` groups (aggregates) contain images.  See Aggregate_MVIEW
+    and the :class:`GXAGG` class.
+    
+    PAGG groups (poly-aggregates) contain images with multiple
+    frames that make up an animation.  See PolyAggregate_MVIEW
+    and the PAGG class.
+    
+    Standard groups contain symbols, lines, polylines, and polygons.
+    See StartGroup_MVIEW.
     """
 
     def __enter__(self):
@@ -43,7 +66,7 @@ class GXMVIEW:
         """
         A null (undefined) instance of :class:`GXMVIEW`
         
-        :returns: A null :class:`GX3DN`
+        :returns: A null :class:`GXMVIEW`
         """
         return cls()
 

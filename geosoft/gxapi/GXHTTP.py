@@ -14,6 +14,22 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 # NOTICE: Do not edit anything here, it is generated code
 class GXHTTP:
     """
+    GXHTTP class.
+
+    Connect to an Internet Server using :class:`GXHTTP`.
+
+    **Note:**
+
+    References:
+    
+    1. http://www.w3.org/Protocols/:class:`GXHTTP`/HTTP2.html
+    
+    2. http://www.w3.org/Addressing/URL/5_BNF.html
+    
+    Note that path and search must conform be xalpha string (ref 2.).
+    Special characters can be specified with a %xx, where xx is the
+    hex ASCII number.  For example, a search string "This one" should
+    be  specified as "This%20one"
     """
 
     def __enter__(self):
@@ -33,7 +49,7 @@ class GXHTTP:
         """
         A null (undefined) instance of :class:`GXHTTP`
         
-        :returns: A null :class:`GX3DN`
+        :returns: A null :class:`GXHTTP`
         """
         return cls()
 

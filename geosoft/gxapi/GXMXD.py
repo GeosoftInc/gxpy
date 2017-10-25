@@ -14,6 +14,10 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 # NOTICE: Do not edit anything here, it is generated code
 class GXMXD:
     """
+    GXMXD class.
+
+    A :class:`GXMXD` wraps and provides manipulation and usage for
+    the content of an ArcGIS :class:`GXMXD` file.
     """
 
     def __enter__(self):
@@ -33,7 +37,7 @@ class GXMXD:
         """
         A null (undefined) instance of :class:`GXMXD`
         
-        :returns: A null :class:`GX3DN`
+        :returns: A null :class:`GXMXD`
         """
         return cls()
 

@@ -14,6 +14,12 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 # NOTICE: Do not edit anything here, it is generated code
 class GXPJ:
     """
+    GXPJ class.
+
+    The :class:`GXPJ` object is created from two :class:`GXIPJ` objects,
+    and is used for converting data in an OASIS database
+    or map object from one map coordinate (projection)
+    system to another.
     """
 
     def __enter__(self):
@@ -33,7 +39,7 @@ class GXPJ:
         """
         A null (undefined) instance of :class:`GXPJ`
         
-        :returns: A null :class:`GX3DN`
+        :returns: A null :class:`GXPJ`
         """
         return cls()
 

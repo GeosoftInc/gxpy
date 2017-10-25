@@ -14,6 +14,9 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 # NOTICE: Do not edit anything here, it is generated code
 class GXWA:
     """
+    GXWA class.
+
+    The :class:`GXWA` class enables you to access and write data to ASCII files.
     """
 
     def __enter__(self):
@@ -33,7 +36,7 @@ class GXWA:
         """
         A null (undefined) instance of :class:`GXWA`
         
-        :returns: A null :class:`GX3DN`
+        :returns: A null :class:`GXWA`
         """
         return cls()
 

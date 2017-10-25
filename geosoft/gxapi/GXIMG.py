@@ -14,6 +14,38 @@ from .GXPG import GXPG
 # NOTICE: Do not edit anything here, it is generated code
 class GXIMG:
     """
+    GXIMG class.
+
+    The :class:`GXIMG` class performs read and write operations on grid
+    file data. When efficient access along both rows and columns
+    is desired the :class:`GXPG` class is recommended (see :class:`GXPG` and :class:`GXPGU`);
+    the :class:`GXIMG` is first created, then the :class:`GXPG` is obtained from
+    the :class:`GXIMG` using GetPG_IMG.
+
+    **Note:**
+
+    The :class:`GXIMG` methods use the XGD DATs to access grid files in different
+    formats.  The characteristics of a grid can be controlled using
+    decorations on a grid file name.  For example:
+    
+    CreateNewFile_IMG(:attr:`GS_DOUBLE`,1,100,100,"mag.grd");
+    -> creates a new grid file "mag.grd" with all defaults.
+    
+    CreateNewFile_IMG(:attr:`GS_DOUBLE`,1,100,100,"mag.grd(GRD;comp=none)");
+    -> creates a new grid file "mag.grd" with no compression.
+    
+    CreateNewFile_IMG(:attr:`GS_DOUBLE`,1,100,100,"mag.grd(GRD;comp=size;type=short");
+    -> creates a new grid file "mag.grd" compressed for size, numbers
+    stored as 2-byte integers..
+    
+    See `DAT_XGD`.DOC for information about file name decorations available
+    for all :class:`GXDAT` types.
+    
+    Different grid types support different features.  For example, not all
+    grid types support projection information.  Geosoft will always create
+    a ``*.gi`` file that is used to store all such information that we require
+    from a grid.  If the grid does support this information, both the grid
+    and the ``*.gi`` file will contain the information.
     """
 
     def __enter__(self):
@@ -33,7 +65,7 @@ class GXIMG:
         """
         A null (undefined) instance of :class:`GXIMG`
         
-        :returns: A null :class:`GX3DN`
+        :returns: A null :class:`GXIMG`
         """
         return cls()
 

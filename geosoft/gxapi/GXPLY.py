@@ -14,6 +14,10 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 # NOTICE: Do not edit anything here, it is generated code
 class GXPLY:
     """
+    GXPLY class.
+
+    The :class:`GXPLY` object contains the definitions for one or more
+    polygons, and does import and export of polygon files.
     """
 
     def __enter__(self):
@@ -33,7 +37,7 @@ class GXPLY:
         """
         A null (undefined) instance of :class:`GXPLY`
         
-        :returns: A null :class:`GX3DN`
+        :returns: A null :class:`GXPLY`
         """
         return cls()
 

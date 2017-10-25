@@ -14,6 +14,12 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 # NOTICE: Do not edit anything here, it is generated code
 class GXKGRD:
     """
+    GXKGRD class.
+
+    The :class:`GXKGRD` object is used as a storage place for the control
+    parameters that the Krigrid program needs to execute. The
+    Run_KGRD function executes the Krigrid program using the
+    :class:`GXKGRD` object.
     """
 
     def __enter__(self):
@@ -33,7 +39,7 @@ class GXKGRD:
         """
         A null (undefined) instance of :class:`GXKGRD`
         
-        :returns: A null :class:`GX3DN`
+        :returns: A null :class:`GXKGRD`
         """
         return cls()
 

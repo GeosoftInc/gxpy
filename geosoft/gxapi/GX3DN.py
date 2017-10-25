@@ -14,6 +14,12 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 # NOTICE: Do not edit anything here, it is generated code
 class GX3DN:
     """
+    GX3DN class.
+
+    This class manages the rendering of a 3D view. It allows
+    the positioning of the camera, specification of the zoom
+    as well as some rendering controls for the axis. It is
+    directly related to the :class:`GXMVIEW` class.
     """
 
     def __enter__(self):

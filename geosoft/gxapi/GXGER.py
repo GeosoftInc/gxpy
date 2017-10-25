@@ -14,6 +14,34 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 # NOTICE: Do not edit anything here, it is generated code
 class GXGER:
     """
+    GXGER class.
+
+    Allows access to a Geosoft format error message file. This class
+    does not in itself produce an error message, but retrieves a
+    selected message from the file, and allows the
+    setting of replacement parameters within the message. It
+    is up to the user to display or use the message.
+
+    **Note:**
+
+    :class:`GXGER` message files contain numbered messages that can be used within GXs.
+    Following is an example from the file :class:`GXGEOSOFT`.:class:`GXGER`:
+    
+    
+          #20008
+          ! Invalid password. The product installation has failed.
+    
+          #20009
+          ! Unable to find INI file: %1
+          ! See the documentation for details
+    
+    
+    A '#' character in column 1 indicates a message number.  The message
+    follows on lines that begin with a '!' character.  Strings in the message
+    may be replaced at run time with values using the SetString_GER,
+    SetInt_GER and SetReal_GER methods. The iGet_GER will return the message
+    with strings replaced by their settings.  By convention, we recommend
+    that you use "%1", "%2", etc. as replacement strings.
     """
 
     def __enter__(self):
@@ -33,7 +61,7 @@ class GXGER:
         """
         A null (undefined) instance of :class:`GXGER`
         
-        :returns: A null :class:`GX3DN`
+        :returns: A null :class:`GXGER`
         """
         return cls()
 

@@ -14,6 +14,9 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 # NOTICE: Do not edit anything here, it is generated code
 class GXEXT:
     """
+    GXEXT class.
+
+    External (plug-in) image methods.
     """
 
     def __enter__(self):
@@ -33,7 +36,7 @@ class GXEXT:
         """
         A null (undefined) instance of :class:`GXEXT`
         
-        :returns: A null :class:`GX3DN`
+        :returns: A null :class:`GXEXT`
         """
         return cls()
 

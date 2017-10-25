@@ -774,7 +774,7 @@ class Grid:
 
         .. versionadded:: 9.2
 
-        .. versionmodified:: 9.3
+        .. versionchanged:: 9.3
             added ability to set directly
         """
         if self._cs is None:

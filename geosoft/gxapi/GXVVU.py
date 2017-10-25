@@ -14,6 +14,11 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 # NOTICE: Do not edit anything here, it is generated code
 class GXVVU:
     """
+    GXVVU class.
+
+    These methods are not a class. Utility methods perform
+    various operations on :class:`GXVV` objects, including pruning,
+    splining, clipping and filtering.
     """
 
     def __enter__(self):
@@ -33,7 +38,7 @@ class GXVVU:
         """
         A null (undefined) instance of :class:`GXVVU`
         
-        :returns: A null :class:`GX3DN`
+        :returns: A null :class:`GXVVU`
         """
         return cls()
 

@@ -14,6 +14,10 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 # NOTICE: Do not edit anything here, it is generated code
 class GXEDOC:
     """
+    GXEDOC class.
+
+    The :class:`GXEDOC` class provides access to a generic documents views as loaded within
+    Oasis montaj.
     """
 
     def __enter__(self):
@@ -33,7 +37,7 @@ class GXEDOC:
         """
         A null (undefined) instance of :class:`GXEDOC`
         
-        :returns: A null :class:`GX3DN`
+        :returns: A null :class:`GXEDOC`
         """
         return cls()
 

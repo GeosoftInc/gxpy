@@ -14,6 +14,10 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 # NOTICE: Do not edit anything here, it is generated code
 class GXVAU:
     """
+    GXVAU class.
+
+    This is not a class. These are methods that work on
+    data stored in :class:`GXVA` objects
     """
 
     def __enter__(self):
@@ -33,7 +37,7 @@ class GXVAU:
         """
         A null (undefined) instance of :class:`GXVAU`
         
-        :returns: A null :class:`GX3DN`
+        :returns: A null :class:`GXVAU`
         """
         return cls()
 

@@ -14,6 +14,9 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 # NOTICE: Do not edit anything here, it is generated code
 class GXDMPPLY:
     """
+    GXDMPPLY class.
+
+    Datamine Multiple polygon object
     """
 
     def __enter__(self):
@@ -33,7 +36,7 @@ class GXDMPPLY:
         """
         A null (undefined) instance of :class:`GXDMPPLY`
         
-        :returns: A null :class:`GX3DN`
+        :returns: A null :class:`GXDMPPLY`
         """
         return cls()
 

@@ -14,6 +14,9 @@ from .GXMVIEW import GXMVIEW
 # NOTICE: Do not edit anything here, it is generated code
 class GXE3DV:
     """
+    GXE3DV class.
+
+    Methods to manipulate an active 3D View
     """
 
     def __enter__(self):
@@ -33,7 +36,7 @@ class GXE3DV:
         """
         A null (undefined) instance of :class:`GXE3DV`
         
-        :returns: A null :class:`GX3DN`
+        :returns: A null :class:`GXE3DV`
         """
         return cls()
 

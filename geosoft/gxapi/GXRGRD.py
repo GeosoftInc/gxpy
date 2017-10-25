@@ -14,6 +14,11 @@ from .GXIMG import GXIMG
 # NOTICE: Do not edit anything here, it is generated code
 class GXRGRD:
     """
+    GXRGRD class.
+
+    The :class:`GXRGRD` object is used as a storage place for the control
+    parameters which the Rangrid (minimum curvature) program needs to execute. The
+    Run_RGRD function executes the Rangrid program using the :class:`GXRGRD` object.
     """
 
     def __enter__(self):
@@ -33,7 +38,7 @@ class GXRGRD:
         """
         A null (undefined) instance of :class:`GXRGRD`
         
-        :returns: A null :class:`GX3DN`
+        :returns: A null :class:`GXRGRD`
         """
         return cls()
 

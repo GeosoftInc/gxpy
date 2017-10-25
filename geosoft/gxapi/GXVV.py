@@ -16,6 +16,22 @@ import numpy as np
 # NOTICE: Do not edit anything here, it is generated code
 class GXVV:
     """
+    GXVV class.
+
+    The :class:`GXVV` class stores very long vector (array) data (such
+    as channel data from an OASIS database) in memory and
+    performs specific actions on the data. This set of
+    functions is similar to the :class:`GXVM` functions except that
+    you cannot access data directly and therefore you cannot
+    use a :class:`GXVV` to pass data to an external (non-Geosoft)
+    Dynamic Link Library (DLL) object function.
+    
+    If you want to pass data to a DLL, you must move a subset
+    of the data stored in memory to a small vector object and
+    then use the GetPtrVM_GEO function to pass a pointer to the
+    data on to the external function.
+    
+    See :class:`GXVVU` for more utility methods.
     """
 
     def __enter__(self):
@@ -35,7 +51,7 @@ class GXVV:
         """
         A null (undefined) instance of :class:`GXVV`
         
-        :returns: A null :class:`GX3DN`
+        :returns: A null :class:`GXVV`
         """
         return cls()
 

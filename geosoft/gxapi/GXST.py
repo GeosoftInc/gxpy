@@ -14,6 +14,34 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 # NOTICE: Do not edit anything here, it is generated code
 class GXST:
     """
+    GXST class.
+
+    Mono-variate statistics. The :class:`GXST` class is used to accumulate statistical
+    information about a set of data. This class is usually used in conjunction
+    with others. For instance, Stat_DU (see :class:`GXDU`) will add a channel's
+    data to the :class:`GXST` object, and sComputeST_IMG (see :class:`GXIMG`) will compute
+    statistics for a grid.
+
+    **Note:**
+
+    *** Histogram ranges and color zone ranges ***
+    
+    Histogram bins are defined with inclusive minima and exclusive maxima;
+    for instance if Min = 0 and Inc = 1, then the second bin would include
+    all values z such that  0 >= z > 1 (the first bin has all values < 0).
+    
+    Color zones used in displaying grids (:class:`GXITR`, ZON etc...) are the
+    opposite, with exclusive minima and inclusive maxima.
+    For instance, if a zone is defined from 0 to 1, then it would
+    contain all values of z such that 0 > z >= 1.
+    
+    These definitions mean that it is impossible to perfectly assign
+    :class:`GXITR` colors to individual bars of a histogram. The best work-around
+    when the data values are integers is to define the color zones using
+    0.5 values between the integers. A general work-around is to make the
+    number of histogram bins much larger than the number of color zones.
+    
+    See also  :class:`GXST2` (bi-variate statistics)
     """
 
     def __enter__(self):
@@ -33,7 +61,7 @@ class GXST:
         """
         A null (undefined) instance of :class:`GXST`
         
-        :returns: A null :class:`GX3DN`
+        :returns: A null :class:`GXST`
         """
         return cls()
 

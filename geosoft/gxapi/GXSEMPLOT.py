@@ -14,6 +14,9 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 # NOTICE: Do not edit anything here, it is generated code
 class GXSEMPLOT:
     """
+    GXSEMPLOT class.
+
+    Oasis montaj implementation of RTE :class:`GXSEMPLOT`
     """
 
     def __enter__(self):
@@ -33,7 +36,7 @@ class GXSEMPLOT:
         """
         A null (undefined) instance of :class:`GXSEMPLOT`
         
-        :returns: A null :class:`GX3DN`
+        :returns: A null :class:`GXSEMPLOT`
         """
         return cls()
 

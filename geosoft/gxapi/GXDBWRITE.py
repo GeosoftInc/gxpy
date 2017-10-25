@@ -16,6 +16,12 @@ from .GXVV import GXVV
 # NOTICE: Do not edit anything here, it is generated code
 class GXDBWRITE:
     """
+    GXDBWRITE class.
+
+    The :class:`GXDBWRITE` class is used to open and write to databases. Large blocks of data
+      are split into blocks and served up sequentially to prevent the over-use of virtual memory when VVs or VAs are being written to channels.
+      Individual data blocks are limited by default to 1 MB (which is user-alterable). Data less than the block size
+      are served up whole, one block per line.
     """
 
     def __enter__(self):
@@ -35,7 +41,7 @@ class GXDBWRITE:
         """
         A null (undefined) instance of :class:`GXDBWRITE`
         
-        :returns: A null :class:`GX3DN`
+        :returns: A null :class:`GXDBWRITE`
         """
         return cls()
 

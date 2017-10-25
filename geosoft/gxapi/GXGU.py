@@ -14,6 +14,12 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 # NOTICE: Do not edit anything here, it is generated code
 class GXGU:
     """
+    GXGU class.
+
+    Not a class. A catch-all group of functions performing
+    various geophysical processes, including the calculation
+    of simple EM model responses, certain instrument dump
+    file imports, and 2D Euler deconvolution.
     """
 
     def __enter__(self):
@@ -33,7 +39,7 @@ class GXGU:
         """
         A null (undefined) instance of :class:`GXGU`
         
-        :returns: A null :class:`GX3DN`
+        :returns: A null :class:`GXGU`
         """
         return cls()
 

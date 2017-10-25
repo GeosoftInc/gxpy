@@ -14,6 +14,16 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 # NOTICE: Do not edit anything here, it is generated code
 class GXUNC:
     """
+    GXUNC class.
+
+    This library is not a class. Use the :class:`GXUNC` library functions
+    to work with Unicode characters and strings. Since version 6.2
+    all strings are represented internally in the the GX engine
+    as UTF-8. The character set concept was discarded as a way to
+    work with characters that does not fall within the normal
+    ASCII range 0x01-0x7F. The utilities here aids with any new
+    functionality that is now possible (e.g. an expanded symbol range
+    with TrueType fonts).
     """
 
     def __enter__(self):
@@ -33,7 +43,7 @@ class GXUNC:
         """
         A null (undefined) instance of :class:`GXUNC`
         
-        :returns: A null :class:`GX3DN`
+        :returns: A null :class:`GXUNC`
         """
         return cls()
 

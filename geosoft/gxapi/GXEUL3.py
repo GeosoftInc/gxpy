@@ -14,6 +14,10 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 # NOTICE: Do not edit anything here, it is generated code
 class GXEUL3:
     """
+    GXEUL3 class.
+
+    This is a specialized class which performs 3D Euler deconvolution
+    for potential field interpretation.
     """
 
     def __enter__(self):
@@ -33,7 +37,7 @@ class GXEUL3:
         """
         A null (undefined) instance of :class:`GXEUL3`
         
-        :returns: A null :class:`GX3DN`
+        :returns: A null :class:`GXEUL3`
         """
         return cls()
 

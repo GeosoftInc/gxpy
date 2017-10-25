@@ -14,6 +14,27 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 # NOTICE: Do not edit anything here, it is generated code
 class GXVM:
     """
+    GXVM class.
+
+    In-memory vector data methods
+    The :class:`GXVM` class will store vector (array) data in a memory buffer which
+    can be accessed using the :class:`GXVM` methods.
+    The main use for the :class:`GXVM` class is to store data in a single physical
+    memory location.  This memory can then be accessed by a user DLL using
+    the GetPtrVM_GEO function defined in gx_extern.h.
+    :class:`GXVM` memory can be any size, but a :class:`GXVM` is intended for handling relatively
+    small sets of data compared to a :class:`GXVV`, which can work efficiently with
+    very large volumes of data.  The acceptable maximum :class:`GXVM` size depends on
+    the operating system and the performance requirements of an application.
+    The best performance is achieved when all :class:`GXVM` memory can be stored
+    comfortably within the the available system RAM.  If all :class:`GXVM` memory
+    will not fit in the system RAM, the operating system virtual memory
+    manager will be used to swap memory to the operations systems virtual
+    memory paging file.  Note that the operating system virtual memory
+    manager is much slower than the manager used by Geosoft when working with
+    very large arrays in a :class:`GXVV`.
+    
+    See :class:`GXVV` for methods to move data between a :class:`GXVM` and a :class:`GXVV`.
     """
 
     def __enter__(self):
@@ -33,7 +54,7 @@ class GXVM:
         """
         A null (undefined) instance of :class:`GXVM`
         
-        :returns: A null :class:`GX3DN`
+        :returns: A null :class:`GXVM`
         """
         return cls()
 

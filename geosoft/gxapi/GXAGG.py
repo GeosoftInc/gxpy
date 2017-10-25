@@ -14,6 +14,12 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 # NOTICE: Do not edit anything here, it is generated code
 class GXAGG:
     """
+    GXAGG class.
+
+    The :class:`GXAGG` class is used to handle image display on maps.
+    An aggregate contains one or more image layers (LAY) with
+    each layer representing a grid or image file. The :class:`GXAGG`
+    will combine all the layers to form one image
     """
 
     def __enter__(self):
@@ -33,7 +39,7 @@ class GXAGG:
         """
         A null (undefined) instance of :class:`GXAGG`
         
-        :returns: A null :class:`GX3DN`
+        :returns: A null :class:`GXAGG`
         """
         return cls()
 

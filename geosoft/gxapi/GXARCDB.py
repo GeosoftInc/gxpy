@@ -14,6 +14,10 @@ from .GXDAT import GXDAT
 # NOTICE: Do not edit anything here, it is generated code
 class GXARCDB:
     """
+    GXARCDB class.
+
+    The :class:`GXARCDB` class is used in ArcGIS to access table contents from
+    data sources and layers.
     """
 
     def __enter__(self):
@@ -33,7 +37,7 @@ class GXARCDB:
         """
         A null (undefined) instance of :class:`GXARCDB`
         
-        :returns: A null :class:`GX3DN`
+        :returns: A null :class:`GXARCDB`
         """
         return cls()
 

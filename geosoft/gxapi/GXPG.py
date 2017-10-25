@@ -14,6 +14,18 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 # NOTICE: Do not edit anything here, it is generated code
 class GXPG:
     """
+    GXPG class.
+
+    Pager methods for large 2-D arrays
+    This class handles very-large 2-D arrays in which efficient
+    access is required along both rows and columns.
+
+    **Note:**
+
+    Typically a grid is accessed using the :class:`GXIMG` class, and a :class:`GXPG`
+    is obtained from the :class:`GXIMG` using the GetPG_IMG function.
+    Following operations on the :class:`GXPG`, it can be written back to
+    the :class:`GXIMG` using SetPG_IMG.
     """
 
     def __enter__(self):
@@ -33,7 +45,7 @@ class GXPG:
         """
         A null (undefined) instance of :class:`GXPG`
         
-        :returns: A null :class:`GX3DN`
+        :returns: A null :class:`GXPG`
         """
         return cls()
 

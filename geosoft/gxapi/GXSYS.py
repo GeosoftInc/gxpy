@@ -15,6 +15,44 @@ from .GXWA import GXWA
 # NOTICE: Do not edit anything here, it is generated code
 class GXSYS:
     """
+    GXSYS class.
+
+    The :class:`GXSYS` library functions perform a wide range functions,
+    including the storage and retrieval of named parameters
+    from the current workspace; writing messages to the user;
+    display of progress bars; retrieving file, date and time
+    information from the operating system; and providing warning
+    and error handling functions.
+
+    **Note:**
+
+    PARAMETER CONTROL FUNCTIONS
+    
+    Parameters can be named with an index extension.
+    For example, a parameter could be named as "PARM[1]".
+    The index can be a positive number, or it can be a '*'.
+    
+    If the index is a '*' in "SetString_SYS", then the value string
+    will be parsed into multiple values. Commas are assumed to be delimiters.
+    
+    E.g.
+    
+    SetString_SYS("group1",
+    "multiparm[*]",
+    "value1,\\"value,2\\",\\"value 3\\",  value4  ,\\"value 5 \\"");
+    
+    This call will set   multiparm[0] ="value1"
+    multiparm[1] ="value,2"
+    multiparm[2] ="value 3"
+    multiparm[3] ="value4"
+    multiparm[4] ="value 5"
+    
+    To read a parameter, name the parameter with the index.  Thre is no
+    looped-reading ability.  For example:
+    
+    GetString_SYS("group1","multiparm[3]",sSetting);
+    
+    returns sSetting = "value4"
     """
 
     def __enter__(self):
@@ -34,7 +72,7 @@ class GXSYS:
         """
         A null (undefined) instance of :class:`GXSYS`
         
-        :returns: A null :class:`GX3DN`
+        :returns: A null :class:`GXSYS`
         """
         return cls()
 

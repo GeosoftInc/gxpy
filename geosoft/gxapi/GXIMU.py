@@ -14,6 +14,11 @@ from .GXIMG import GXIMG
 # NOTICE: Do not edit anything here, it is generated code
 class GXIMU:
     """
+    GXIMU class.
+
+    Not a class. This is a catch-all group of functions working
+    on :class:`GXIMG` objects (see :class:`GXIMG`). Grid operations include masking,
+    trending, windowing, expanding and grid stitching.
     """
 
     def __enter__(self):
@@ -33,7 +38,7 @@ class GXIMU:
         """
         A null (undefined) instance of :class:`GXIMU`
         
-        :returns: A null :class:`GX3DN`
+        :returns: A null :class:`GXIMU`
         """
         return cls()
 

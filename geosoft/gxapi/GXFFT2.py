@@ -14,6 +14,11 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 # NOTICE: Do not edit anything here, it is generated code
 class GXFFT2:
     """
+    GXFFT2 class.
+
+    2-D Fast Fourier Transforms
+    These methods now work with an :class:`GXIMG` object, instead of creating
+    their own :class:`GXFFT2` object.
     """
 
     def __enter__(self):
@@ -33,7 +38,7 @@ class GXFFT2:
         """
         A null (undefined) instance of :class:`GXFFT2`
         
-        :returns: A null :class:`GX3DN`
+        :returns: A null :class:`GXFFT2`
         """
         return cls()
 

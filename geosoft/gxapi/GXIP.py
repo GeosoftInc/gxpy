@@ -14,6 +14,19 @@ from .GXPG import GXPG
 # NOTICE: Do not edit anything here, it is generated code
 class GXIP:
     """
+    GXIP class.
+
+    This class is used in the :class:`GXIP` System for the import, export
+    and processing of Induced Polarization data.
+
+    **Note:**
+
+    The following defines are used in GX code but are not
+    part of any functions:
+    
+    `IP_ARRAY`
+    `IP_CHANNELS`
+    `IP_LINES`
     """
 
     def __enter__(self):
@@ -33,7 +46,7 @@ class GXIP:
         """
         A null (undefined) instance of :class:`GXIP`
         
-        :returns: A null :class:`GX3DN`
+        :returns: A null :class:`GXIP`
         """
         return cls()
 

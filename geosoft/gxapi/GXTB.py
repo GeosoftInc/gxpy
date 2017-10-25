@@ -14,6 +14,13 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 # NOTICE: Do not edit anything here, it is generated code
 class GXTB:
     """
+    GXTB class.
+
+    The :class:`GXTB` class is a high-performance table class used to
+    perform table-based processing, such as leveling data in
+    an OASIS database. The :class:`GXLTB` class is recommended for use
+    with small tables produced from short lists such as the
+    different geographic projections and their defining parameters.
     """
 
     def __enter__(self):
@@ -33,7 +40,7 @@ class GXTB:
         """
         A null (undefined) instance of :class:`GXTB`
         
-        :returns: A null :class:`GX3DN`
+        :returns: A null :class:`GXTB`
         """
         return cls()
 

@@ -14,6 +14,17 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 # NOTICE: Do not edit anything here, it is generated code
 class GXDB:
     """
+    GXDB class.
+
+    The :class:`GXDB` class is used to create, open and work with databases and database symbols.
+    Database symbols are objects inside databases, such as lines, channels and blobs
+
+    **Note:**
+
+    The following defines are not used by any methods but are
+    used by GX's:
+    
+    :attr:`DB_ACTIVITY_BLOB`
     """
 
     def __enter__(self):
@@ -33,7 +44,7 @@ class GXDB:
         """
         A null (undefined) instance of :class:`GXDB`
         
-        :returns: A null :class:`GX3DN`
+        :returns: A null :class:`GXDB`
         """
         return cls()
 

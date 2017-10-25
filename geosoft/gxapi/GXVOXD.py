@@ -14,6 +14,9 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 # NOTICE: Do not edit anything here, it is generated code
 class GXVOXD:
     """
+    GXVOXD class.
+
+    :class:`GXVOX` Display object.
     """
 
     def __enter__(self):
@@ -33,7 +36,7 @@ class GXVOXD:
         """
         A null (undefined) instance of :class:`GXVOXD`
         
-        :returns: A null :class:`GX3DN`
+        :returns: A null :class:`GXVOXD`
         """
         return cls()
 

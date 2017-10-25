@@ -569,7 +569,7 @@ class Geosoft_gdb:
         Coordinate system of the current :meth:`xyz_channels`.
         Can be set from any :class:`geosoft.gxpy.coordinate_system.Coordinate_system` constructor.
 
-        .. versionmodified:: 9.3
+        .. versionchanged:: 9.3
             added setter
         """
         try:
@@ -1099,7 +1099,7 @@ class Geosoft_gdb:
 
         .. versionadded:: 9.1
 
-        .. versionmodified:: 9.3
+        .. versionchanged:: 9.3
             added support for duplication an existing channel via dup=
         """
 
@@ -1691,7 +1691,7 @@ class Geosoft_gdb:
         :param fid:             tuple (fid start, increment), default (0.0,1.0)
         :param unit_of_measure: data unit of measurement
 
-        .. versionmodified:: 9.3 support for setting channel from a list
+        .. versionchanged:: 9.3 support for setting channel from a list
 
             added unit_of_measure
 

@@ -16,6 +16,13 @@ from .GXREG import GXREG
 # NOTICE: Do not edit anything here, it is generated code
 class GXMAP:
     """
+    GXMAP class.
+
+    MAPs are containers for :class:`GXMVIEW` objects. A view is a 3-D translation
+    and a clip window on a map. Graphic entities can be drawn in an :class:`GXMVIEW`.
+    It is recommended that the :class:`GXMAP` class be instantiated by first creating
+    an :class:`GXEMAP` object and calling the Lock_EMAP() function.
+    (See the explanation on the distinction between the :class:`GXMAP` and :class:`GXEMAP` classes).
     """
 
     def __enter__(self):
@@ -35,7 +42,7 @@ class GXMAP:
         """
         A null (undefined) instance of :class:`GXMAP`
         
-        :returns: A null :class:`GX3DN`
+        :returns: A null :class:`GXMAP`
         """
         return cls()
 

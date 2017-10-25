@@ -22,6 +22,8 @@
     <VisualStudioVersion Condition=" '$(VisualStudioVersion)' == '' ">10.0</VisualStudioVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Content Include=".gitattributes" />
+    <Content Include=".gitignore" />
     <Content Include="build\lib\geosoft\gxapi.pyd" />
     <Content Include="build\lib\geosoft\gxpy\_jdcal\LICENSE.txt" />
     <Content Include="build\lib\geosoft\gxpy\_jdcal\README.rst" />
@@ -838,7 +840,6 @@
     <Compile Include="geosoft\gxapi\GXFFT2.py" />
     <Compile Include="geosoft\gxapi\GXFLT.py" />
     <Compile Include="geosoft\gxapi\GXGD.py" />
-    <Compile Include="geosoft\gxapi\GXGEO.py" />
     <Compile Include="geosoft\gxapi\GXGEOSTRING.py" />
     <Compile Include="geosoft\gxapi\GXGER.py" />
     <Compile Include="geosoft\gxapi\GXGIS.py" />

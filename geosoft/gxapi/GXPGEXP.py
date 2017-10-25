@@ -14,6 +14,12 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 # NOTICE: Do not edit anything here, it is generated code
 class GXPGEXP:
     """
+    GXPGEXP class.
+
+    The :class:`GXPGEXP` class is similar to the :class:`GXEXP` class, but is used
+    to apply math expressions to pagers (:class:`GXPG` objects).
+    
+    It works only on PGs of the same dimensions.
     """
 
     def __enter__(self):
@@ -33,7 +39,7 @@ class GXPGEXP:
         """
         A null (undefined) instance of :class:`GXPGEXP`
         
-        :returns: A null :class:`GX3DN`
+        :returns: A null :class:`GXPGEXP`
         """
         return cls()
 

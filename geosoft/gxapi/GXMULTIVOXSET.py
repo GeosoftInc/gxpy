@@ -14,6 +14,9 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 # NOTICE: Do not edit anything here, it is generated code
 class GXMULTIVOXSET:
     """
+    GXMULTIVOXSET class.
+
+    High Performance 3D Grid.
     """
 
     def __enter__(self):
@@ -33,7 +36,7 @@ class GXMULTIVOXSET:
         """
         A null (undefined) instance of :class:`GXMULTIVOXSET`
         
-        :returns: A null :class:`GX3DN`
+        :returns: A null :class:`GXMULTIVOXSET`
         """
         return cls()
 

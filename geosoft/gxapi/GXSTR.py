@@ -14,6 +14,13 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 # NOTICE: Do not edit anything here, it is generated code
 class GXSTR:
     """
+    GXSTR class.
+
+    This library is not a class. Use the :class:`GXSTR` library functions
+    to work with and manipulate string variables. Since the
+    GX Programming Language does not provide string literal
+    tokens, you must use these functions for any string operations
+    you want to perform.
     """
 
     def __enter__(self):
@@ -33,7 +40,7 @@ class GXSTR:
         """
         A null (undefined) instance of :class:`GXSTR`
         
-        :returns: A null :class:`GX3DN`
+        :returns: A null :class:`GXSTR`
         """
         return cls()
 

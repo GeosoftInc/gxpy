@@ -14,6 +14,18 @@ from .GXDB import GXDB
 # NOTICE: Do not edit anything here, it is generated code
 class GXEDB:
     """
+    GXEDB class.
+
+    The :class:`GXEDB` class provides access to a database as displayed within
+    Oasis montaj, but does not change data within the database itself.
+    It performs functions such as setting the current line.
+
+    **Note:**
+
+    To obtain access to the database itself, it is recommended practice
+    to begin with an :class:`GXEDB` object, and use the Lock_EDB function to
+    lock the underlying map to prevent external changes. The returned
+    :class:`GXDB` object (see :class:`GXDB`) may then be safely used to make changes to the map itself.
     """
 
     def __enter__(self):
@@ -33,7 +45,7 @@ class GXEDB:
         """
         A null (undefined) instance of :class:`GXEDB`
         
-        :returns: A null :class:`GX3DN`
+        :returns: A null :class:`GXEDB`
         """
         return cls()
 

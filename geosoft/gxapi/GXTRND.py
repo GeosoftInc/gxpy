@@ -14,6 +14,12 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 # NOTICE: Do not edit anything here, it is generated code
 class GXTRND:
     """
+    GXTRND class.
+
+    The :class:`GXTRND` methods are used to determine trend directions in database data by locating
+    maxima and minima along lines and joining them in a specified direction.
+    The resulting trend lines are appended to the database and used by gridding methods
+    such as Bigrid and Rangrid to enforce features in the specified direction.
     """
 
     def __enter__(self):
@@ -33,7 +39,7 @@ class GXTRND:
         """
         A null (undefined) instance of :class:`GXTRND`
         
-        :returns: A null :class:`GX3DN`
+        :returns: A null :class:`GXTRND`
         """
         return cls()
 

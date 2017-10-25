@@ -14,6 +14,9 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 # NOTICE: Do not edit anything here, it is generated code
 class GXGMSYS:
     """
+    GXGMSYS class.
+
+    The :class:`GXGMSYS` Methods
     """
 
     def __enter__(self):
@@ -33,7 +36,7 @@ class GXGMSYS:
         """
         A null (undefined) instance of :class:`GXGMSYS`
         
-        :returns: A null :class:`GX3DN`
+        :returns: A null :class:`GXGMSYS`
         """
         return cls()
 

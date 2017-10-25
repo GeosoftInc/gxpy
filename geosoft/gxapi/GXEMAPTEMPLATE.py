@@ -14,6 +14,48 @@ from .GXMAPTEMPLATE import GXMAPTEMPLATE
 # NOTICE: Do not edit anything here, it is generated code
 class GXEMAPTEMPLATE:
     """
+    GXEMAPTEMPLATE class.
+
+    The :class:`GXEMAPTEMPLATE` class provides access to a map template as displayed within
+    Oasis montaj, but does not change data within the template itself.
+    It performs functions such as setting the currently displayed area,
+    or drawing "tracking" lines or boxes on the template (which are not
+    part of the template itself).
+
+    **Note:**
+
+    To obtain access to the map template itself, it is recommended practice
+    to begin with an :class:`GXEMAPTEMPLATE` object, and use the Lock function to
+    lock the underlying template to prevent external changes. The returned
+    :class:`GXMAPTEMPLATE` object may then be safely used to make changes to the template itself.
+    
+    VIRTUAL :class:`GXEMAPTEMPLATE` SUPPORT
+    
+    These methods are only available when running in an external application.
+    They allow the GX to open a map template and then create a Virtual :class:`GXEMAPTEMPLATE` from that
+    map template. The GX can then call MakeCurrent and set the current :class:`GXEMAPTEMPLATE` so
+    that code that follows sees this map template as the current :class:`GXMAPTEMPLATE`.
+    
+    Supported methods on Virtual EMAPTEMPLATEs are:
+    
+      Current_EMAPTEMPLATE
+      CurrentNoActivate_EMAPTEMPLATE
+      MakeCurrent_EMAPTEMPLATE
+      iHaveCurrent_EMAPTEMPLATE
+      CurrentIfExists_EMAPTEMPLATE
+    
+      Lock_EMAPTEMPLATE
+      UnLock_EMAPTEMPLATE
+    
+      IGetName_EMAPTEMPLATE
+    
+      iLoaded_EMAPTEMPLATE
+      Load_EMAPTEMPLATE
+      LoadNoActivate_EMAPTEMPLATE
+      UnLoadVerify_EMAPTEMPLATE
+      UnLoad_EMAPTEMPLATE
+    
+      CreateVirtual_EMAPTEMPLATE
     """
 
     def __enter__(self):
@@ -33,7 +75,7 @@ class GXEMAPTEMPLATE:
         """
         A null (undefined) instance of :class:`GXEMAPTEMPLATE`
         
-        :returns: A null :class:`GX3DN`
+        :returns: A null :class:`GXEMAPTEMPLATE`
         """
         return cls()
 

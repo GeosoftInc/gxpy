@@ -14,6 +14,13 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 # NOTICE: Do not edit anything here, it is generated code
 class GXREG:
     """
+    GXREG class.
+
+    The :class:`GXREG` class is used for storing and retrieving named
+    variables. Many classes contain :class:`GXREG` objects for storing
+    information particular to the class.  The :class:`GXMETA` class supersedes
+    the :class:`GXREG` class and is gradually replacing the use of the
+    :class:`GXREG` class in newer applications.
     """
 
     def __enter__(self):
@@ -33,7 +40,7 @@ class GXREG:
         """
         A null (undefined) instance of :class:`GXREG`
         
-        :returns: A null :class:`GX3DN`
+        :returns: A null :class:`GXREG`
         """
         return cls()
 

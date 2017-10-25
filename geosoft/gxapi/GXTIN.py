@@ -14,6 +14,14 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 # NOTICE: Do not edit anything here, it is generated code
 class GXTIN:
     """
+    GXTIN class.
+
+    The :class:`GXTIN` class calculates the Delaunay triangulation of the
+    positions in a database. This is the "best" set of triangles
+    that can be formed from irregularly distributed points. The
+    serialized :class:`GXTIN` files can be used for gridding using the
+    Tin-based Nearest Neighbour Algorithm, or for plotting the
+    Delaunay triangles or Voronoi cells to a map.
     """
 
     def __enter__(self):
@@ -33,7 +41,7 @@ class GXTIN:
         """
         A null (undefined) instance of :class:`GXTIN`
         
-        :returns: A null :class:`GX3DN`
+        :returns: A null :class:`GXTIN`
         """
         return cls()
 

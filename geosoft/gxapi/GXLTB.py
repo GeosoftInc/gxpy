@@ -14,6 +14,31 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 # NOTICE: Do not edit anything here, it is generated code
 class GXLTB:
     """
+    GXLTB class.
+
+    An :class:`GXLTB` object is typically created from a CSV (comma-separated values)
+    file, and is a table of information that may be accessed by row
+    or column. The :class:`GXLTB` class is recommended for use with small tables
+    produced from short lists (of the order of 1000's or records) such
+    as the different geographic projections and their defining parameters.
+    Large tables, such as those required for table-lookup functions, should
+    be accessed using the :class:`GXTB` class.
+
+    **Note:**
+
+    An :class:`GXLTB` ASCII table file has the following structure:
+    
+    / comments
+    key_name,col_1,col_2,col_3,etc...    /field names
+    key_1,token,token,token,etc...       /data lines
+    key_2,token,token,token,etc...
+    etc...
+    
+    The first column must be the key column (all entries unique).
+    
+    The header line is optional and can be used to find entries.
+    
+    Comment and empty lines are ignored.
     """
 
     def __enter__(self):
@@ -33,7 +58,7 @@ class GXLTB:
         """
         A null (undefined) instance of :class:`GXLTB`
         
-        :returns: A null :class:`GX3DN`
+        :returns: A null :class:`GXLTB`
         """
         return cls()
 

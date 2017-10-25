@@ -14,6 +14,9 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 # NOTICE: Do not edit anything here, it is generated code
 class GXVULCAN:
     """
+    GXVULCAN class.
+
+    The :class:`GXVULCAN` class is used for importing Maptek® Vulcan block and triangulation files.
     """
 
     def __enter__(self):
@@ -33,7 +36,7 @@ class GXVULCAN:
         """
         A null (undefined) instance of :class:`GXVULCAN`
         
-        :returns: A null :class:`GX3DN`
+        :returns: A null :class:`GXVULCAN`
         """
         return cls()
 

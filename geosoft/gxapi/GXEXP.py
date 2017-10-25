@@ -14,6 +14,13 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 # NOTICE: Do not edit anything here, it is generated code
 class GXEXP:
     """
+    GXEXP class.
+
+    :class:`GXEXP` objects are created from text strings that contain
+    C-like math to be applied to channels in a database.
+    It is used with the Math_DU function (see :class:`GXDU`). See also
+    :class:`GXIEXP` for applying math expressions to images (grids).
+    See also Math_DU applies expressions to the database
     """
 
     def __enter__(self):
@@ -33,7 +40,7 @@ class GXEXP:
         """
         A null (undefined) instance of :class:`GXEXP`
         
-        :returns: A null :class:`GX3DN`
+        :returns: A null :class:`GXEXP`
         """
         return cls()
 

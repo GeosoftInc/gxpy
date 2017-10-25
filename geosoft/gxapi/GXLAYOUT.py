@@ -14,6 +14,20 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 # NOTICE: Do not edit anything here, it is generated code
 class GXLAYOUT:
     """
+    GXLAYOUT class.
+
+    Layout class for generic relative layout calculation
+    
+    The relative layout algorithm allows a logical organization of layout rectangles.
+    You can set constraints with English-like semantics. For example:
+    
+    "Set the left side of rectangle 1 equal to the right side of rectangle 2 plus 10 pixels."
+    "Set the bottom of rectangle 1 to 25 percent of the height of rectangle 2."
+    "Move node 1 such that its bottom is equal to the top of rectangle 2 minus 10 pixels."
+    
+    The last constraint set would enjoy priority over any others as it would be
+    the last one that would influence the rectangle calculations. See the notes for iSetConstraint
+    for more details.
     """
 
     def __enter__(self):
@@ -33,7 +47,7 @@ class GXLAYOUT:
         """
         A null (undefined) instance of :class:`GXLAYOUT`
         
-        :returns: A null :class:`GX3DN`
+        :returns: A null :class:`GXLAYOUT`
         """
         return cls()
 

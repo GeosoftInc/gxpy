@@ -14,6 +14,14 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 # NOTICE: Do not edit anything here, it is generated code
 class GXPAT:
     """
+    GXPAT class.
+
+    A :class:`GXPAT` object is created from a Geosoft format pattern file.
+    It contains all the individual patterns listed in the file.
+    
+    Notes: You may create your own fill patterns. They can be added to the "user.pat"
+    file in the <geosoft>\\user\\etc directory. User pattern numbers should be in the 
+    range between 20000 and 29999.
     """
 
     def __enter__(self):
@@ -33,7 +41,7 @@ class GXPAT:
         """
         A null (undefined) instance of :class:`GXPAT`
         
-        :returns: A null :class:`GX3DN`
+        :returns: A null :class:`GXPAT`
         """
         return cls()
 

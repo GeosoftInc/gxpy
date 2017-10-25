@@ -14,6 +14,9 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 # NOTICE: Do not edit anything here, it is generated code
 class GXTEST:
     """
+    GXTEST class.
+
+    Used to place special testing methods
     """
 
     def __enter__(self):
@@ -33,7 +36,7 @@ class GXTEST:
         """
         A null (undefined) instance of :class:`GXTEST`
         
-        :returns: A null :class:`GX3DN`
+        :returns: A null :class:`GXTEST`
         """
         return cls()
 

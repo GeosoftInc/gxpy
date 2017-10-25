@@ -14,6 +14,20 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 # NOTICE: Do not edit anything here, it is generated code
 class GXMETA:
     """
+    GXMETA class.
+
+    A :class:`GXMETA` object contains hierarchical organized metadata
+    of any type, including other objects.  :class:`GXMETA` information
+    is organized in an XML-like structure based on a data
+    schema that describes the data hierarchy.   :class:`GXMETA` objects
+    are used by many entities that need to store metadata
+    specific to the entities or to the application.
+    
+    Metadata can be saved in databases and maps, as well as in
+    channels, lines, views and groups.  Oasis montaj objects
+    can be queried for their associated metadata, and if it
+    exists, the metadata can be retrieved and utilized by
+    other Oasis montaj processes.
     """
 
     def __enter__(self):
@@ -33,7 +47,7 @@ class GXMETA:
         """
         A null (undefined) instance of :class:`GXMETA`
         
-        :returns: A null :class:`GX3DN`
+        :returns: A null :class:`GXMETA`
         """
         return cls()
 

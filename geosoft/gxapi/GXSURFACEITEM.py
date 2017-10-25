@@ -14,6 +14,11 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 # NOTICE: Do not edit anything here, it is generated code
 class GXSURFACEITEM:
     """
+    GXSURFACEITEM class.
+
+    The :class:`GXSURFACEITEM` allows you to create, read and alter Geosurface files (``*.geosoft_surface``).
+    A Geosurface file can contain one or more surface items (see :class:`GXSURFACE` class). A surface item can
+    contains one or more triangular polyhedral meshes.
     """
 
     def __enter__(self):
@@ -33,7 +38,7 @@ class GXSURFACEITEM:
         """
         A null (undefined) instance of :class:`GXSURFACEITEM`
         
-        :returns: A null :class:`GX3DN`
+        :returns: A null :class:`GXSURFACEITEM`
         """
         return cls()
 

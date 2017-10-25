@@ -14,6 +14,10 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 # NOTICE: Do not edit anything here, it is generated code
 class GXARCSYS:
     """
+    GXARCSYS class.
+
+    This library is not a class. It contains various general
+    system utilities used by the Geosoft extensions for ArcGIS.
     """
 
     def __enter__(self):
@@ -33,7 +37,7 @@ class GXARCSYS:
         """
         A null (undefined) instance of :class:`GXARCSYS`
         
-        :returns: A null :class:`GX3DN`
+        :returns: A null :class:`GXARCSYS`
         """
         return cls()
 

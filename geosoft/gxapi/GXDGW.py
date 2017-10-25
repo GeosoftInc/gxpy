@@ -14,6 +14,45 @@ from .GXLST import GXLST
 # NOTICE: Do not edit anything here, it is generated code
 class GXDGW:
     """
+    GXDGW class.
+
+    Provides access to dialog boxes for user I/O. You can
+    use this class to store to, or retrieve information from
+    the current workspace parameter block via dialog boxes
+
+    **Note:**
+
+    Setting Fonts in GX dialogs.
+    
+    By default, "new look" GX dialogs uses the "Tahoma" font. This font can be
+    overridden by updating the application settings. This can be done programmatically
+    using the GlobalSet_SYS function using the following parameters:
+    
+    MONTAJ.GX_FONT="Font_name"
+    
+    This sets the default font to "Font_name". It applies to text in all
+    components of the dialog.
+    
+    Additional customization of individual components can be accomplished
+    using the following parameters:
+    
+    MONTAJ.GX_CAPTION_FONT="Caption_Font": Font for the field captions (labels)
+    MONTAJ.GX_BUTTON_FONT="Button_Font"  : Font for buttons, including the "Browse" button
+    MONTAJ.GX_TITLE_FONT="Title_Font"    : Font for special titles (see SetTitle_DGW).
+    
+    The font used for the text in edit windows remains the default, or the
+    value specified using MONTAJ.GX_FONT.
+    
+    Note that the "OK" button, and the Title, use "Bold" versions of the
+    specified font. If the bolded version does not exist as a normal font,
+    then the operating system may provide its own alternative which may not
+    appear the same as you expect.
+    
+    Before version 6.2. there used to be a parameter, MONTAJ.GX_CHARSET, that
+    affected characters above ASCII 127. 6.2. introduced Unicode in the core
+    montaj engine that eliminated the need for such a setting. All strings
+    on the GX API level are encoded in `UTF8` during runtime which makes it possible
+    to represent all possible characters without using character sets.
     """
 
     def __enter__(self):
@@ -33,7 +72,7 @@ class GXDGW:
         """
         A null (undefined) instance of :class:`GXDGW`
         
-        :returns: A null :class:`GX3DN`
+        :returns: A null :class:`GXDGW`
         """
         return cls()
 

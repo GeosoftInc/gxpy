@@ -14,6 +14,12 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 # NOTICE: Do not edit anything here, it is generated code
 class GXLST:
     """
+    GXLST class.
+
+    The :class:`GXLST` class is used to create and retrieve lists,
+    and to perform specific actions on lists, including
+    retrieving list items, sorting lists and adding or
+    removing list items.
     """
 
     def __enter__(self):
@@ -33,7 +39,7 @@ class GXLST:
         """
         A null (undefined) instance of :class:`GXLST`
         
-        :returns: A null :class:`GX3DN`
+        :returns: A null :class:`GXLST`
         """
         return cls()
 

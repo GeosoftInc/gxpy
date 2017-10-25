@@ -14,6 +14,12 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 # NOTICE: Do not edit anything here, it is generated code
 class GXFFT:
     """
+    GXFFT class.
+
+    This class allows for the application of predefined
+    filters to data in an OASIS database. The system uses
+    the Winograd algorithm to transform data in the spatial
+    domain to the wavenumber or Fourier domain.
     """
 
     def __enter__(self):
@@ -33,7 +39,7 @@ class GXFFT:
         """
         A null (undefined) instance of :class:`GXFFT`
         
-        :returns: A null :class:`GX3DN`
+        :returns: A null :class:`GXFFT`
         """
         return cls()
 

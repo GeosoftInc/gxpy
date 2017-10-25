@@ -14,6 +14,12 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 # NOTICE: Do not edit anything here, it is generated code
 class GXHXYZ:
     """
+    GXHXYZ class.
+
+    High Performance Data Point Storage. This is used
+    to put Point data on a DAP server. It is compressed
+    and uses a Quad-Tree design to allow very high speed
+    data extraction. It is also multi-threaded.
     """
 
     def __enter__(self):
@@ -33,7 +39,7 @@ class GXHXYZ:
         """
         A null (undefined) instance of :class:`GXHXYZ`
         
-        :returns: A null :class:`GX3DN`
+        :returns: A null :class:`GXHXYZ`
         """
         return cls()
 

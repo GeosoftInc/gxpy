@@ -14,6 +14,9 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 # NOTICE: Do not edit anything here, it is generated code
 class GXSTRINGS:
     """
+    GXSTRINGS class.
+
+    The :class:`GXSTRINGS` class is used for displaying digitization tools for interpretations
     """
 
     def __enter__(self):
@@ -33,7 +36,7 @@ class GXSTRINGS:
         """
         A null (undefined) instance of :class:`GXSTRINGS`
         
-        :returns: A null :class:`GX3DN`
+        :returns: A null :class:`GXSTRINGS`
         """
         return cls()
 

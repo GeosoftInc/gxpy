@@ -14,6 +14,18 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 # NOTICE: Do not edit anything here, it is generated code
 class GXDAT:
     """
+    GXDAT class.
+
+    The :class:`GXDAT` object is used to access data from an variety of data sources
+    using the same access functions. The :class:`GXDAT` interface supports data access
+    on a point-by-point, of line-by-line basis.  For example,
+    the Run_BIGRID function uses 2 :class:`GXDAT` objects - one :class:`GXDAT` associated with the
+    input data source, which is read line-by-line, and a second associated with
+    the output grid file output grid file.
+    
+    Use a specific :class:`GXDAT` creation method for an associated
+    information source in order to make a :class:`GXDAT` as required
+    by a specific processing function.  The gridding methods all use DATs.
     """
 
     def __enter__(self):
@@ -33,7 +45,7 @@ class GXDAT:
         """
         A null (undefined) instance of :class:`GXDAT`
         
-        :returns: A null :class:`GX3DN`
+        :returns: A null :class:`GXDAT`
         """
         return cls()
 

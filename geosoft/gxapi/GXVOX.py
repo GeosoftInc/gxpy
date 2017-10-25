@@ -15,6 +15,12 @@ from .GXST import GXST
 # NOTICE: Do not edit anything here, it is generated code
 class GXVOX:
     """
+    GXVOX class.
+
+    High Performance 3D Grid. Designed for accessing
+    3D grids quickly using slices. It designed arround
+    non-uniform multi-resolution  compressed storage.
+    o sample a voxel at specific locations, use the :class:`GXVOXE` class.
     """
 
     def __enter__(self):
@@ -34,7 +40,7 @@ class GXVOX:
         """
         A null (undefined) instance of :class:`GXVOX`
         
-        :returns: A null :class:`GX3DN`
+        :returns: A null :class:`GXVOX`
         """
         return cls()
 

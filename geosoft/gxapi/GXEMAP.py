@@ -15,6 +15,69 @@ from .GXMAP import GXMAP
 # NOTICE: Do not edit anything here, it is generated code
 class GXEMAP:
     """
+    GXEMAP class.
+
+    The :class:`GXEMAP` class provides access to a map as displayed within
+    Oasis montaj, but (usually) does not change data within the map itself.
+    It performs functions such as setting the currently displayed area,
+    or drawing "tracking" lines or boxes on the map (which are not
+    part of the map itself).
+
+    **Note:**
+
+    To obtain access to the map itself, it is recommended practice
+    to begin with an :class:`GXEMAP` object, and use the Lock_EMAP function to
+    lock the underlying map to prevent external changes. The returned
+    :class:`GXMAP` object (see :class:`GXMAP`) may then be safely used to make changes to the map itself.
+    
+    :class:`GXMAP` Redraw Rules:
+    
+    1. Redraws only occur at the end of the proccess (GX or SCRIPT) not during.
+    You can safely call other GX's and the map will not redraw. If you need the
+    map to redraw immediately use Redraw_EMAP instead.
+    
+    2. If the final GX calls Cancel_SYS, the map redraw is not done. If you
+    need to force a redraw when the user hits cancel use the Redraw_EMAP function.
+    
+    3. You can set the redraw flag to :attr:`EMAP_REDRAW_YES` or :attr:`EMAP_REDRAW_NO` at any
+    time using SetRedrawFlag_EMAP. This flag will only be looked at, when
+    the last call to UnLock_EMAP occurs and is ignored on a Cancel_SYS.
+    
+    4. Redraw_EMAP only works if the current map is not locked. It will do nothing
+    if the map is locked.  Issue an UnLock_EMAP before using this function.
+    
+    
+    VIRTUAL :class:`GXEMAP` SUPPORT
+    
+    These methods are only available when running in an external application.
+    They allow the GX to open a :class:`GXMAP` and then create a Virtual :class:`GXEMAP` from that
+    map. The GX can then call MakeCurrent_EMAP and set the current :class:`GXEMAP` so
+    that code that follows sees this map as the current :class:`GXMAP`.
+    
+    Supported methods on Virtual EMAPS are:
+    
+    Current_EMAP
+    CurrentNoActivate_EMAP
+    MakeCurrent_EMAP
+    iHaveCurrent_EMAP
+    CurrentIfExists_EMAP
+    Current_MAP
+    
+    Lock_EMAP
+    UnLock_EMAP
+    iIsLocked_EMAP
+    
+    IGetName_EMAP
+    SetRedrawFlag_EMAP
+    Redraw_EMAP
+    
+    iLoaded_EMAP
+    Load_EMAP
+    LoadNoActivate_EMAP
+    UnLoadVerify_EMAP
+    UnLoad_EMAP
+    
+    CreateVirtual_EMAP
     """
 
     def __enter__(self):
@@ -34,7 +97,7 @@ class GXEMAP:
         """
         A null (undefined) instance of :class:`GXEMAP`
         
-        :returns: A null :class:`GX3DN`
+        :returns: A null :class:`GXEMAP`
         """
         return cls()
 

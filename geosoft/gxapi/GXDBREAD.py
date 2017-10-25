@@ -15,6 +15,12 @@ from .GXVV import GXVV
 # NOTICE: Do not edit anything here, it is generated code
 class GXDBREAD:
     """
+    GXDBREAD class.
+
+    The :class:`GXDBREAD` class is used to open and read from databases. Very large lines
+      are split into blocks and served up sequentially to prevent the over-use of virtual memory when channels are read into VVs or VAs.
+      Individual data blocks are limited by default to 1 MB (which is user-alterable). Single lines smaller than the block size
+      are served up whole, one block per line.
     """
 
     def __enter__(self):
@@ -34,7 +40,7 @@ class GXDBREAD:
         """
         A null (undefined) instance of :class:`GXDBREAD`
         
-        :returns: A null :class:`GX3DN`
+        :returns: A null :class:`GXDBREAD`
         """
         return cls()
 

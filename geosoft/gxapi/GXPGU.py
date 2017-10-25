@@ -14,6 +14,10 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 # NOTICE: Do not edit anything here, it is generated code
 class GXPGU:
     """
+    GXPGU class.
+
+    A collection of methods applied to :class:`GXPG` objects, including
+    fills, trending and 2-D :class:`GXFFT` operations.
     """
 
     def __enter__(self):
@@ -33,7 +37,7 @@ class GXPGU:
         """
         A null (undefined) instance of :class:`GXPGU`
         
-        :returns: A null :class:`GX3DN`
+        :returns: A null :class:`GXPGU`
         """
         return cls()
 

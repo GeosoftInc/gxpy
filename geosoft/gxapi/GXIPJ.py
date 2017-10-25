@@ -14,6 +14,22 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 # NOTICE: Do not edit anything here, it is generated code
 class GXIPJ:
     """
+    GXIPJ class.
+
+    The :class:`GXIPJ` class describes a single spatial reference in the world,
+    defined under a coordinate system, an orientation,
+    and a warp (which can be used to distort the projected object
+    to a particular shape or boundary).
+
+    **Note:**
+
+    :class:`GXIPJ` objects may be attached to channels or views. Two IPJs taken
+    together are used to create a :class:`GXPJ` object, which allows for the
+    conversion of positions from one projection to the other.
+    See also the :class:`GXLL2` class, which creates Datum correction lookups.
+    
+    See also          :class:`GXPJ`    Converts coordinates between projections
+    :class:`GXLL2`   Creates Datum correction lookups.
     """
 
     def __enter__(self):
@@ -33,7 +49,7 @@ class GXIPJ:
         """
         A null (undefined) instance of :class:`GXIPJ`
         
-        :returns: A null :class:`GX3DN`
+        :returns: A null :class:`GXIPJ`
         """
         return cls()
 

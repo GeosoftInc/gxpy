@@ -14,6 +14,12 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 # NOTICE: Do not edit anything here, it is generated code
 class GXCSYMB:
     """
+    GXCSYMB class.
+
+    This class is used for generating and modifying colored symbol objects.
+    Symbol fills are assigned colors based on their Z values and a zone, Aggregate
+    or :class:`GXITR` file which defines what colors are associated with different ranges
+    of Z values. The position of a symbol is defined by its X,Y coordinates.
     """
 
     def __enter__(self):
@@ -33,7 +39,7 @@ class GXCSYMB:
         """
         A null (undefined) instance of :class:`GXCSYMB`
         
-        :returns: A null :class:`GX3DN`
+        :returns: A null :class:`GXCSYMB`
         """
         return cls()
 

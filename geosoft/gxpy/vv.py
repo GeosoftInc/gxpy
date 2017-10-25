@@ -270,7 +270,7 @@ class GXvv:
 
         .. versionadded:: 9.1
 
-        .. versionmodified:: 9.3
+        .. versionchanged:: 9.3
             default fid leaves fid unchanged
         """
 

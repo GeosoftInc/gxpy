@@ -14,6 +14,13 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 # NOTICE: Do not edit anything here, it is generated code
 class GXMAPL:
     """
+    GXMAPL class.
+
+    The :class:`GXMAPL` class is the interface with the MAPPLOT program,
+    which reads a MAPPLOT control file and plots graphical
+    entities to a map. The :class:`GXMAPL` object is created for a given
+    control file, then passed to the MAPPLOT program, along
+    with the target :class:`GXMAP` object on which to do the drawing
     """
 
     def __enter__(self):
@@ -33,7 +40,7 @@ class GXMAPL:
         """
         A null (undefined) instance of :class:`GXMAPL`
         
-        :returns: A null :class:`GX3DN`
+        :returns: A null :class:`GXMAPL`
         """
         return cls()
 

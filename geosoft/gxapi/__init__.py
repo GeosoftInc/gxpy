@@ -15,6 +15,10 @@ class ref_value:
     def value(self, value):
         self._value = value
 
+class bool_ref(ref_value):
+    def __init__(self, value=False):
+        self._value = value
+
 class int_ref(ref_value):
     def __init__(self, value=0):
         self._value = value
@@ -5318,7 +5322,7 @@ __all__ = [
     'GXDSEL',
     'GXE3DV',
     'GXEXT',
-    'GXGEO',
+
 
     'GXGEOSTRING',
     'GXGIS',
@@ -5443,7 +5447,7 @@ from .GXDBWRITE import GXDBWRITE
 from .GXDSEL import GXDSEL
 from .GXE3DV import GXE3DV
 from .GXEXT import GXEXT
-from .GXGEO import GXGEO
+
 
 from .GXGEOSTRING import GXGEOSTRING
 from .GXGIS import GXGIS

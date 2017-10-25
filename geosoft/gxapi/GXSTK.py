@@ -14,6 +14,16 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 # NOTICE: Do not edit anything here, it is generated code
 class GXSTK:
     """
+    GXSTK class.
+
+    The :class:`GXSTK` class is used for plotting a single data profile in
+    an :class:`GXMVIEW`. The :class:`GXMSTK` class (see :class:`GXMSTK`) is used to plot
+    multiple :class:`GXSTK` objects to a single map.
+    
+    Use AddSTK_MSTK fuction to create a :class:`GXSTK` object before
+    using functions in this file
+    
+    SEE :class:`GXMSTK` FILE FOR DETAILED DESCRIPTIONS OF ALL FUNCTION PARAMETERS.
     """
 
     def __enter__(self):
@@ -33,7 +43,7 @@ class GXSTK:
         """
         A null (undefined) instance of :class:`GXSTK`
         
-        :returns: A null :class:`GX3DN`
+        :returns: A null :class:`GXSTK`
         """
         return cls()
 

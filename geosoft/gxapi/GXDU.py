@@ -14,6 +14,19 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 # NOTICE: Do not edit anything here, it is generated code
 class GXDU:
     """
+    GXDU class.
+
+    :class:`GXDU` functions provide a variety of common utilities that can be applied
+    efficiently to the contents of a database. Most :class:`GXDU` library functions take
+    as their first argument a :class:`GXDB` object, and apply standard processes to data
+    stored in an OASIS database, including import and export functions.
+
+    **Note:**
+
+    The following defines are used by GX functions but are not required
+    for any methods:
+    
+    `DU_LINES`
     """
 
     def __enter__(self):
@@ -33,7 +46,7 @@ class GXDU:
         """
         A null (undefined) instance of :class:`GXDU`
         
-        :returns: A null :class:`GX3DN`
+        :returns: A null :class:`GXDU`
         """
         return cls()
 

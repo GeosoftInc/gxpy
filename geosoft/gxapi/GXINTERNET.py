@@ -14,6 +14,11 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 # NOTICE: Do not edit anything here, it is generated code
 class GXINTERNET:
     """
+    GXINTERNET class.
+
+    This library provides functions for accessing the internet
+    and MAPI-compliant e-mail services.
+    Supported by Oasis montaj ONLY.
     """
 
     def __enter__(self):
@@ -33,7 +38,7 @@ class GXINTERNET:
         """
         A null (undefined) instance of :class:`GXINTERNET`
         
-        :returns: A null :class:`GX3DN`
+        :returns: A null :class:`GXINTERNET`
         """
         return cls()
 

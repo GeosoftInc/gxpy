@@ -14,6 +14,13 @@ from .GXSTK import GXSTK
 # NOTICE: Do not edit anything here, it is generated code
 class GXMSTK:
     """
+    GXMSTK class.
+
+    Multi-profile stack
+    This class is used for storing data of multiple profiles and
+    plotting profiles in a map. It is a container of :class:`GXSTK` class objects.
+    
+    See also:         :class:`GXSTK` class.
     """
 
     def __enter__(self):
@@ -33,7 +40,7 @@ class GXMSTK:
         """
         A null (undefined) instance of :class:`GXMSTK`
         
-        :returns: A null :class:`GX3DN`
+        :returns: A null :class:`GXMSTK`
         """
         return cls()
 

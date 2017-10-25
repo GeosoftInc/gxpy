@@ -14,6 +14,9 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 # NOTICE: Do not edit anything here, it is generated code
 class GXFLT:
     """
+    GXFLT class.
+
+    The :class:`GXFLT` class allows the application of user-defined convolution filters to data in an OASIS database
     """
 
     def __enter__(self):
@@ -33,7 +36,7 @@ class GXFLT:
         """
         A null (undefined) instance of :class:`GXFLT`
         
-        :returns: A null :class:`GX3DN`
+        :returns: A null :class:`GXFLT`
         """
         return cls()
 

@@ -14,6 +14,15 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 # NOTICE: Do not edit anything here, it is generated code
 class GXSBF:
     """
+    GXSBF class.
+
+    The :class:`GXSBF` class provides a means of storing data in a
+    file-type directory structure within a workspace, database
+    or map. Each of these three objects contains its own :class:`GXSBF` object,
+    which may be accessed using the hGetSYS_SBF, hGetDB_SBF and
+    hGetMAP_SBF functions. To access data in a file, or create a
+    new file in the :class:`GXSBF` object, call the CreatSBF_BF function (see :class:`GXBF`),
+    which will return a :class:`GXBF` object to use.
     """
 
     def __enter__(self):
@@ -33,7 +42,7 @@ class GXSBF:
         """
         A null (undefined) instance of :class:`GXSBF`
         
-        :returns: A null :class:`GX3DN`
+        :returns: A null :class:`GXSBF`
         """
         return cls()
 

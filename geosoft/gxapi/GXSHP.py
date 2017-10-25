@@ -14,6 +14,15 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 # NOTICE: Do not edit anything here, it is generated code
 class GXSHP:
     """
+    GXSHP class.
+
+    The :class:`GXSHP` class is used to create ESRI shape files.
+
+    **Note:**
+
+    Shape files contain a single "geometry" type, e.g.
+    points, arcs or polygons. They may be accompanied by
+    a DBF file containing attribute data.
     """
 
     def __enter__(self):
@@ -33,7 +42,7 @@ class GXSHP:
         """
         A null (undefined) instance of :class:`GXSHP`
         
-        :returns: A null :class:`GX3DN`
+        :returns: A null :class:`GXSHP`
         """
         return cls()
 

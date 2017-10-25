@@ -14,6 +14,10 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 # NOTICE: Do not edit anything here, it is generated code
 class GXBIGRID:
     """
+    GXBIGRID class.
+
+    The Bigrid class is used to grid data using a optimized algorithm that
+    assumes data is collected in semi-straight lines.
     """
 
     def __enter__(self):
@@ -33,7 +37,7 @@ class GXBIGRID:
         """
         A null (undefined) instance of :class:`GXBIGRID`
         
-        :returns: A null :class:`GX3DN`
+        :returns: A null :class:`GXBIGRID`
         """
         return cls()
 

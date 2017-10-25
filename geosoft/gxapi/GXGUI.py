@@ -14,6 +14,11 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 # NOTICE: Do not edit anything here, it is generated code
 class GXGUI:
     """
+    GXGUI class.
+
+    These are graphical functions that typically create a
+    dialog-style window for a specific function. Examples include
+    file import wizards, and the Histogram and Scatter tools.
     """
 
     def __enter__(self):
@@ -33,7 +38,7 @@ class GXGUI:
         """
         A null (undefined) instance of :class:`GXGUI`
         
-        :returns: A null :class:`GX3DN`
+        :returns: A null :class:`GXGUI`
         """
         return cls()
 

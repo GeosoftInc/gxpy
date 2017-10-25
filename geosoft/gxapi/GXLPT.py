@@ -14,6 +14,11 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 # NOTICE: Do not edit anything here, it is generated code
 class GXLPT:
     """
+    GXLPT class.
+
+    This class allows access to the current default line patterns.
+    It does not allow the definition of individual patterns. It is
+    is used primarily with :class:`GXMAP` class functions.
     """
 
     def __enter__(self):
@@ -33,7 +38,7 @@ class GXLPT:
         """
         A null (undefined) instance of :class:`GXLPT`
         
-        :returns: A null :class:`GX3DN`
+        :returns: A null :class:`GXLPT`
         """
         return cls()
 

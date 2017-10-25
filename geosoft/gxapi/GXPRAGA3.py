@@ -14,6 +14,13 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 # NOTICE: Do not edit anything here, it is generated code
 class GXPRAGA3:
     """
+    GXPRAGA3 class.
+
+    :class:`GXPRAGA3` application methods
+
+    **Note:**
+
+    No notes
     """
 
     def __enter__(self):
@@ -33,7 +40,7 @@ class GXPRAGA3:
         """
         A null (undefined) instance of :class:`GXPRAGA3`
         
-        :returns: A null :class:`GX3DN`
+        :returns: A null :class:`GXPRAGA3`
         """
         return cls()
 

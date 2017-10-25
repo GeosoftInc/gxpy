@@ -14,6 +14,9 @@ from .GXMVIEW import GXMVIEW
 # NOTICE: Do not edit anything here, it is generated code
 class GXMVG:
     """
+    GXMVG class.
+
+    The :class:`GXMVG` class provides the ability to create view graphs.
     """
 
     def __enter__(self):
@@ -33,7 +36,7 @@ class GXMVG:
         """
         A null (undefined) instance of :class:`GXMVG`
         
-        :returns: A null :class:`GX3DN`
+        :returns: A null :class:`GXMVG`
         """
         return cls()
 

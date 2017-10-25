@@ -14,6 +14,41 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 # NOTICE: Do not edit anything here, it is generated code
 class GXTPAT:
     """
+    GXTPAT class.
+
+    The full name of the pattern.
+    ex: "felsic volcanics"
+    Code:          Short-form of the pattern description. This is the value
+    which typically appears (for instance) in the "Rock code"
+    channel in a Wholeplot From-To data group.
+    ex: "FVOL"
+    The code is CASE-SENSITIVE.
+    
+    Label:         Text to use as a short-form in labels, graphs etc.
+    By default, this is the same as the code.
+    ex: "FVol."
+    Pattern Attributes:  (See DEFAULT.:class:`GXPAT` in \\src\\etc for more inforation)
+    Pattern:       The Pattern Index; defined in DEFAULT.:class:`GXPAT`, or in the user's
+    USER.:class:`GXPAT` file. If not specified, defaults to 0 (solid fill).
+    Size:          The pattern tile size. If not specified, defaults to 2.0mm.
+    Density:       The tiling density. If not specified, defaults to 1.0.
+    Thickness:     The line thickness in the tile, expressed as a integer
+    percentage (0-100) of the tile size.
+    Color:        The pattern line work color. If not specified, defaults to black.
+    
+    Background color: The pattern background color. If not specified, defaults to
+    transparent (C_ANY_NONE)
+    
+    
+    Symbols:
+    
+    Symbol Font     The name of the symbol font to use for a given symbol index
+    
+    Symbol Number   Index into the font.
+    
+    Symbol Rotation: Rotation in degrees CCW.
+    
+    Symbol Scaling  Additional scale factor to apply to symbol size (Default 1.0)
     """
 
     def __enter__(self):
@@ -33,7 +68,7 @@ class GXTPAT:
         """
         A null (undefined) instance of :class:`GXTPAT`
         
-        :returns: A null :class:`GX3DN`
+        :returns: A null :class:`GXTPAT`
         """
         return cls()
 

@@ -14,6 +14,11 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 # NOTICE: Do not edit anything here, it is generated code
 class GXTR:
     """
+    GXTR class.
+
+    The :class:`GXTR` object contains trend information about a grid or
+    grid pager. Currently, it is used only in conjunction with
+    the GetTR_IMG, SetTR_IMG, and Trend_PGU functions.
     """
 
     def __enter__(self):
@@ -33,7 +38,7 @@ class GXTR:
         """
         A null (undefined) instance of :class:`GXTR`
         
-        :returns: A null :class:`GX3DN`
+        :returns: A null :class:`GXTR`
         """
         return cls()
 

@@ -14,6 +14,11 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 # NOTICE: Do not edit anything here, it is generated code
 class GXGD:
     """
+    GXGD class.
+
+    This class provides access to Geosoft grid files using an old interface.
+    Only the SampleGD_DU function uses this class.  Use the :class:`GXIMG` class
+    instead.
     """
 
     def __enter__(self):
@@ -33,7 +38,7 @@ class GXGD:
         """
         A null (undefined) instance of :class:`GXGD`
         
-        :returns: A null :class:`GX3DN`
+        :returns: A null :class:`GXGD`
         """
         return cls()
 

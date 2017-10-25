@@ -14,6 +14,10 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 # NOTICE: Do not edit anything here, it is generated code
 class GXARCDH:
     """
+    GXARCDH class.
+
+    This library is not a class. It contains various utilities
+    used in the Target extension for ArcGIS.
     """
 
     def __enter__(self):
@@ -33,7 +37,7 @@ class GXARCDH:
         """
         A null (undefined) instance of :class:`GXARCDH`
         
-        :returns: A null :class:`GX3DN`
+        :returns: A null :class:`GXARCDH`
         """
         return cls()
 

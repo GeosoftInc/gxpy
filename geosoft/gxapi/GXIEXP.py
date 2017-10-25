@@ -14,6 +14,10 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 # NOTICE: Do not edit anything here, it is generated code
 class GXIEXP:
     """
+    GXIEXP class.
+
+    The :class:`GXIEXP` class is similar to the :class:`GXEXP` class, but is used
+    to apply math expressions to grids (:class:`GXIMG` objects).
     """
 
     def __enter__(self):
@@ -33,7 +37,7 @@ class GXIEXP:
         """
         A null (undefined) instance of :class:`GXIEXP`
         
-        :returns: A null :class:`GX3DN`
+        :returns: A null :class:`GXIEXP`
         """
         return cls()
 

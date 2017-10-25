@@ -14,6 +14,11 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 # NOTICE: Do not edit anything here, it is generated code
 class GXMAPTEMPLATE:
     """
+    GXMAPTEMPLATE class.
+
+    A :class:`GXMAPTEMPLATE` wraps and provides manipulation and usage for the XML content in map template files.
+    See the annotated schema file maptemplate.xsd in the <:class:`GXGEOSOFT`>\\maptemplate folder and the accompanying
+    documentation in that folder for documentation on the file format.
     """
 
     def __enter__(self):
@@ -33,7 +38,7 @@ class GXMAPTEMPLATE:
         """
         A null (undefined) instance of :class:`GXMAPTEMPLATE`
         
-        :returns: A null :class:`GX3DN`
+        :returns: A null :class:`GXMAPTEMPLATE`
         """
         return cls()
 

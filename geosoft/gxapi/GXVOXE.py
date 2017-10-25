@@ -14,6 +14,10 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 # NOTICE: Do not edit anything here, it is generated code
 class GXVOXE:
     """
+    GXVOXE class.
+
+    :class:`GXVOX` evaluator class. Used to sample values from
+    the voxel.
     """
 
     def __enter__(self):
@@ -33,7 +37,7 @@ class GXVOXE:
         """
         A null (undefined) instance of :class:`GXVOXE`
         
-        :returns: A null :class:`GX3DN`
+        :returns: A null :class:`GXVOXE`
         """
         return cls()
 

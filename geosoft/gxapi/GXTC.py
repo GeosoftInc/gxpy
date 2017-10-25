@@ -14,6 +14,14 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 # NOTICE: Do not edit anything here, it is generated code
 class GXTC:
     """
+    GXTC class.
+
+    The :class:`GXTC` object is used in gravitational modelling to create
+    a terrain correction grid from a topography grid. This is
+    accomplished with a call first to Grregter_TC, which determines
+    the terrain correction from an input topography grid, then
+    to Grterain_TC, which calculates the actual corrections at
+    the input positions.
     """
 
     def __enter__(self):
@@ -33,7 +41,7 @@ class GXTC:
         """
         A null (undefined) instance of :class:`GXTC`
         
-        :returns: A null :class:`GX3DN`
+        :returns: A null :class:`GXTC`
         """
         return cls()
 

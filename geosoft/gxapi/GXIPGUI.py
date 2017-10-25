@@ -14,6 +14,10 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 # NOTICE: Do not edit anything here, it is generated code
 class GXIPGUI:
     """
+    GXIPGUI class.
+
+    This class is used in the :class:`GXIP` System for :class:`GXGUI` functions
+    such as defining parameters for pseudo-section plots.
     """
 
     def __enter__(self):
@@ -33,7 +37,7 @@ class GXIPGUI:
         """
         A null (undefined) instance of :class:`GXIPGUI`
         
-        :returns: A null :class:`GX3DN`
+        :returns: A null :class:`GXIPGUI`
         """
         return cls()
 

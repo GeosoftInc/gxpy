@@ -14,6 +14,12 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 # NOTICE: Do not edit anything here, it is generated code
 class GXBF:
     """
+    GXBF class.
+
+    The :class:`GXBF` class is used to access (or create) Binary files and remove
+    (or destroy) files from use. You can also perform a variety of
+    additional tasks, such as positioning within files, reading from
+    files and writing to files.
     """
 
     def __enter__(self):
@@ -33,7 +39,7 @@ class GXBF:
         """
         A null (undefined) instance of :class:`GXBF`
         
-        :returns: A null :class:`GX3DN`
+        :returns: A null :class:`GXBF`
         """
         return cls()
 

@@ -428,7 +428,7 @@ class View:
         """
         Return an extent in map cm.
 
-        :param extent: tuple returned from one of the extent properties.  Default is :prop:`extent_clip`.
+        :param extent: tuple returned from one of the extent properties.  Default is :attr:`extent_clip`.
 
         .. versionadded:: 9.2
         """

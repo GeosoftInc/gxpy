@@ -14,6 +14,9 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 # NOTICE: Do not edit anything here, it is generated code
 class GXDXFI:
     """
+    GXDXFI class.
+
+    The :class:`GXDXFI` class is used for importing AutoCAD® dxf files into Geosoft maps.
     """
 
     def __enter__(self):
@@ -33,7 +36,7 @@ class GXDXFI:
         """
         A null (undefined) instance of :class:`GXDXFI`
         
-        :returns: A null :class:`GX3DN`
+        :returns: A null :class:`GXDXFI`
         """
         return cls()
 

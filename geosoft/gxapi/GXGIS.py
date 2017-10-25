@@ -14,6 +14,11 @@ from .GXIPJ import GXIPJ
 # NOTICE: Do not edit anything here, it is generated code
 class GXGIS:
     """
+    GXGIS class.
+
+    The :class:`GXGIS` class is used for the import, export,
+    and interrogation of :class:`GXGIS` Data stored in external formats,
+    such as MapInfo® TAB files.
     """
 
     def __enter__(self):
@@ -33,7 +38,7 @@ class GXGIS:
         """
         A null (undefined) instance of :class:`GXGIS`
         
-        :returns: A null :class:`GX3DN`
+        :returns: A null :class:`GXGIS`
         """
         return cls()
 

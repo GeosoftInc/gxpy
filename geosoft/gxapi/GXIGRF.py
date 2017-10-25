@@ -14,6 +14,12 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 # NOTICE: Do not edit anything here, it is generated code
 class GXIGRF:
     """
+    GXIGRF class.
+
+    International Geomagnetic Reference Field
+    Methods to work with :class:`GXIGRF` objects. The :class:`GXIGRF` object
+    contains data for the :class:`GXIGRF` model of the geomagnetic
+    reference field.
     """
 
     def __enter__(self):
@@ -33,7 +39,7 @@ class GXIGRF:
         """
         A null (undefined) instance of :class:`GXIGRF`
         
-        :returns: A null :class:`GX3DN`
+        :returns: A null :class:`GXIGRF`
         """
         return cls()
 

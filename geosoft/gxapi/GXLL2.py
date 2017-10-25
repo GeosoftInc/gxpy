@@ -14,6 +14,11 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 # NOTICE: Do not edit anything here, it is generated code
 class GXLL2:
     """
+    GXLL2 class.
+
+    local datum lookup creator
+    ll2 methods are used to create :class:`GXLL2` objects.  :class:`GXLL2` objects contain
+    latitude, longitude correction lookup tables to convert between datums.
     """
 
     def __enter__(self):
@@ -33,7 +38,7 @@ class GXLL2:
         """
         A null (undefined) instance of :class:`GXLL2`
         
-        :returns: A null :class:`GX3DN`
+        :returns: A null :class:`GXLL2`
         """
         return cls()
 

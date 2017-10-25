@@ -16,6 +16,20 @@ from . import gxapi_cy_extend
 # NOTICE: Do not edit anything here, it is generated code
 class GXVA:
     """
+    GXVA class.
+
+    The :class:`GXVA` class is the 2-Dimensional analogue to the :class:`GXVV` class.
+    When displayed in a database, :class:`GXVA` objects are displayed graphically
+    as profiles, one to a cell, and can also be displayed one column of
+    data at a time by specifying an index; e.g. CH[0]. A :class:`GXVA` object is
+    declared with a fixed number of columns, which cannot be altered.
+    The number of rows, however can be changed, in the same way that
+    the length of a :class:`GXVV` can be changed. Data can be added or extracted
+    using VVs, either by row or column.
+    
+    A :class:`GXVA` is used to store an array of data in which each element may have
+    multiple elements.  For example, 256-channel radiometric data can
+    be stored in a :class:`GXVA` that is 256 elements wide.
     """
 
     def __enter__(self):
@@ -35,7 +49,7 @@ class GXVA:
         """
         A null (undefined) instance of :class:`GXVA`
         
-        :returns: A null :class:`GX3DN`
+        :returns: A null :class:`GXVA`
         """
         return cls()
 
@@ -305,6 +319,10 @@ class GXVA:
     def check_for_repeating2(self, p2: 'GXVV', p3: int, p4: 'GXVV', p5: float, p6: int_ref, p7: int_ref) -> int:
         ret_val, p6.value, p7.value = self._wrapper.check_for_repeating2(p2._wrapper, p3, p4._wrapper, p5, p6.value, p7.value)
         return ret_val
+
+
+
+
 
 ### endblock ClassImplementation
 ### block ClassExtend

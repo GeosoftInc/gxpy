@@ -14,6 +14,9 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 # NOTICE: Do not edit anything here, it is generated code
 class GXPDF3D:
     """
+    GXPDF3D class.
+
+    The :class:`GXPDF3D` class provides the ability to create 3D PDFs.
     """
 
     def __enter__(self):
@@ -33,7 +36,7 @@ class GXPDF3D:
         """
         A null (undefined) instance of :class:`GXPDF3D`
         
-        :returns: A null :class:`GX3DN`
+        :returns: A null :class:`GXPDF3D`
         """
         return cls()
 
