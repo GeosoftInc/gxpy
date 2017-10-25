@@ -401,9 +401,6 @@ class GXLST:
         is searched.
         If it cannot be found, the list will be
         empty.  Not finding a file is not an error.
-        
-        This function replaces the iLoadFile_LST function which
-        actually always returned 0, or terminated on an error.
         """
         self._wrapper.load_file(p2.encode())
         

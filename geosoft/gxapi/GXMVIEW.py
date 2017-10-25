@@ -44,10 +44,6 @@ class GXMVIEW:
     :class:`geosoft.gxapi.GXAGG` groups (aggregates) contain images.  See Aggregate_MVIEW
     and the :class:`geosoft.gxapi.GXAGG` class.
     
-    PAGG groups (poly-aggregates) contain images with multiple
-    frames that make up an animation.  See PolyAggregate_MVIEW
-    and the PAGG class.
-    
     Standard groups contain symbols, lines, polylines, and polygons.
     See StartGroup_MVIEW.
     """

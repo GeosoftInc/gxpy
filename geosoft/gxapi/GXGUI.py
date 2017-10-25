@@ -338,13 +338,6 @@ class GXGUI:
         Allows the user to edit an XYZ export template
         using a complex dialog. The template name
         may change during editing.
-
-        **Note:**
-
-        Will use the :class:`geosoft.gxapi.GXEDB` passed in. This function replaces
-        the 'buggy' function ExportXYZTemplateEditor_GUI.
-        This extended function actually uses the :class:`geosoft.gxapi.GXEDB` handle
-        passed to it and not just the current :class:`geosoft.gxapi.GXDB`.
         """
         ret_val, p2.value = gxapi_cy.WrapGUI.export_xyz_template_editor_ex(GXContext._get_tls_geo(), p1._wrapper, p2.value.encode())
         return ret_val

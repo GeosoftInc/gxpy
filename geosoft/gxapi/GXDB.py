@@ -1148,7 +1148,7 @@ class GXDB:
         **Note:**
 
         Returns the actual number of data items (rows) in a channel. For :class:`geosoft.gxapi.GXVA` channels no correction is
-        necessary for the number of columns (which was true of the obsoleted function iGetLength_DB).
+        necessary for the number of columns.
         """
         ret_val = self._wrapper.get_channel_length(p2, p3)
         return ret_val

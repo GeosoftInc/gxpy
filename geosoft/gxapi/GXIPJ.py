@@ -378,8 +378,7 @@ class GXIPJ:
         in one PCS, and an oriented grid from a different PCS is
         to be displayed in that view.
         
-        If the two input IPJs share the same PCS (determined
-        using the iSame_IPJ function), then the GetPlaneEquation_IPJ
+        If the two input IPJs share the same PCS then the GetPlaneEquation_IPJ
         function is called directly, using the input :class:`geosoft.gxapi.GXIPJ`.
         """
         p7.value, p8.value, p9.value, p10.value, p11.value, p12.value, p13.value, p14.value, p15.value = self._wrapper.get_plane_equation2(p2._wrapper, p3, p4, p5, p6, p7.value, p8.value, p9.value, p10.value, p11.value, p12.value, p13.value, p14.value, p15.value)
