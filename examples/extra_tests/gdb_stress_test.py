@@ -1,5 +1,5 @@
-import numpy as np
 import os
+import sys
 import geosoft
 import geosoft.gxapi as gxapi
 import geosoft.gxpy.gx as gx
@@ -10,7 +10,10 @@ import geosoft.gxpy.vv as gxvv
 import geosoft.gxpy.va as gxva
 
 gxc = gx.GXpy()
-dir = 'g:\\db_stress_test'
+dir = sys.argv[1]
+if not dir:
+    print('folder path that contains one or more test databases is required as a single command line parameter')
+    exit()
 max_lines_per_db = 4
 for filename in os.listdir(dir):
     if filename.endswith('.gdb'):
