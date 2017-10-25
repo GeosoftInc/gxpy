@@ -1,8 +1,10 @@
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+from typing import NewType
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
+
 
 ### endblock ClassImports
 
@@ -16,8 +18,8 @@ class GXIEXP:
     """
     GXIEXP class.
 
-    The :class:`GXIEXP` class is similar to the :class:`GXEXP` class, but is used
-    to apply math expressions to grids (:class:`GXIMG` objects).
+    The :class:`geosoft.gxapi.GXIEXP` class is similar to the :class:`geosoft.gxapi.GXEXP` class, but is used
+    to apply math expressions to grids (:class:`geosoft.gxapi.GXIMG` objects).
     """
 
     def __enter__(self):
@@ -33,19 +35,19 @@ class GXIEXP:
         self._wrapper = wrapper if wrapper else gxapi_cy.WrapIEXP(GXContext._get_tls_geo(), 0)
 
     @classmethod
-    def null(cls) -> 'GXIEXP':
+    def null(cls):
         """
-        A null (undefined) instance of :class:`GXIEXP`
+        A null (undefined) instance of :class:`geosoft.gxapi.GXIEXP`
         
-        :returns: A null :class:`GXIEXP`
+        :returns: A null :class:`geosoft.gxapi.GXIEXP`
         """
         return cls()
 
-    def is_null(self) -> bool:
+    def is_null(self):
         """
-        Check if the instance of :class:`GXIEXP` is null (undefined)`
+        Check if the instance of :class:`geosoft.gxapi.GXIEXP` is null (undefined)`
         
-        :returns: True if this is a null (undefined) instance of :class:`GXIEXP`, False otherwise.
+        :returns: True if this is a null (undefined) instance of :class:`geosoft.gxapi.GXIEXP`, False otherwise.
         """
         return self._wrapper.handle == 0
 
@@ -57,14 +59,21 @@ class GXIEXP:
 
 
 
-    def add_grid(self, p2: 'GXIMG', p3: str) -> None:
+    def add_grid(self, p2, p3):
+        """
+        This method adds an image to the :class:`geosoft.gxapi.GXIEXP` object with a
+        variable name.
+        """
         self._wrapper.add_grid(p2._wrapper, p3.encode())
         
 
 
 
     @classmethod
-    def create(cls) -> 'GXIEXP':
+    def create(cls):
+        """
+        This method creates an :class:`geosoft.gxapi.GXIEXP` object.
+        """
         ret_val = gxapi_cy.WrapIEXP.create(GXContext._get_tls_geo())
         return GXIEXP(ret_val)
 
@@ -73,7 +82,10 @@ class GXIEXP:
 
 
 
-    def do_formula(self, p2: str, p3: int) -> None:
+    def do_formula(self, p2, p3):
+        """
+        This method runs a formula on the grids.
+        """
         self._wrapper.do_formula(p2.encode(), p3)
         
 

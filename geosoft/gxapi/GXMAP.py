@@ -1,11 +1,14 @@
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+from typing import NewType
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 from .GXLPT import GXLPT
 from .GXMETA import GXMETA
 from .GXREG import GXREG
+
+
 ### endblock ClassImports
 
 ### block Header
@@ -18,11 +21,11 @@ class GXMAP:
     """
     GXMAP class.
 
-    MAPs are containers for :class:`GXMVIEW` objects. A view is a 3-D translation
-    and a clip window on a map. Graphic entities can be drawn in an :class:`GXMVIEW`.
-    It is recommended that the :class:`GXMAP` class be instantiated by first creating
-    an :class:`GXEMAP` object and calling the Lock_EMAP() function.
-    (See the explanation on the distinction between the :class:`GXMAP` and :class:`GXEMAP` classes).
+    MAPs are containers for :class:`geosoft.gxapi.GXMVIEW` objects. A view is a 3-D translation
+    and a clip window on a map. Graphic entities can be drawn in an :class:`geosoft.gxapi.GXMVIEW`.
+    It is recommended that the :class:`geosoft.gxapi.GXMAP` class be instantiated by first creating
+    an :class:`geosoft.gxapi.GXEMAP` object and calling the Lock_EMAP() function.
+    (See the explanation on the distinction between the :class:`geosoft.gxapi.GXMAP` and :class:`geosoft.gxapi.GXEMAP` classes).
     """
 
     def __enter__(self):
@@ -38,19 +41,19 @@ class GXMAP:
         self._wrapper = wrapper if wrapper else gxapi_cy.WrapMAP(GXContext._get_tls_geo(), 0)
 
     @classmethod
-    def null(cls) -> 'GXMAP':
+    def null(cls):
         """
-        A null (undefined) instance of :class:`GXMAP`
+        A null (undefined) instance of :class:`geosoft.gxapi.GXMAP`
         
-        :returns: A null :class:`GXMAP`
+        :returns: A null :class:`geosoft.gxapi.GXMAP`
         """
         return cls()
 
-    def is_null(self) -> bool:
+    def is_null(self):
         """
-        Check if the instance of :class:`GXMAP` is null (undefined)`
+        Check if the instance of :class:`geosoft.gxapi.GXMAP` is null (undefined)`
         
-        :returns: True if this is a null (undefined) instance of :class:`GXMAP`, False otherwise.
+        :returns: True if this is a null (undefined) instance of :class:`geosoft.gxapi.GXMAP`, False otherwise.
         """
         return self._wrapper.handle == 0
 
@@ -62,35 +65,50 @@ class GXMAP:
 
 
 
-    def export_all_in_view(self, p2: str, p3: str, p4: float, p5: float, p6: int, p7: int, p8: str, p9: str) -> None:
+    def export_all_in_view(self, p2, p3, p4, p5, p6, p7, p8, p9):
+        """
+        Export the entire map in view units to an external format. View and Group names are removed and plane spatial coordinates will be in the units of the map.
+        """
         self._wrapper.export_all_in_view(p2.encode(), p3.encode(), p4, p5, p6, p7, p8.encode(), p9.encode())
         
 
 
 
 
-    def export_all_raster(self, p2: str, p3: str, p4: int, p5: int, p6: float, p7: int, p8: int, p9: str, p10: str) -> None:
+    def export_all_raster(self, p2, p3, p4, p5, p6, p7, p8, p9, p10):
+        """
+        Export the entire map to map to a non-geo raster format.
+        """
         self._wrapper.export_all_raster(p2.encode(), p3.encode(), p4, p5, p6, p7, p8, p9.encode(), p10.encode())
         
 
 
 
 
-    def export_area_in_view(self, p2: str, p3: str, p4: float, p5: float, p6: int, p7: int, p8: float, p9: float, p10: float, p11: float, p12: str, p13: str) -> None:
+    def export_area_in_view(self, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13):
+        """
+        Export an area of a map in view units to an external format
+        """
         self._wrapper.export_area_in_view(p2.encode(), p3.encode(), p4, p5, p6, p7, p8, p9, p10, p11, p12.encode(), p13.encode())
         
 
 
 
 
-    def export_area_raster(self, p2: str, p3: str, p4: float, p5: float, p6: float, p7: float, p8: int, p9: int, p10: float, p11: int, p12: int, p13: str, p14: str) -> None:
+    def export_area_raster(self, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14):
+        """
+        Export an area of a map to a non-geo raster format.
+        """
         self._wrapper.export_area_raster(p2.encode(), p3.encode(), p4, p5, p6, p7, p8, p9, p10, p11, p12, p13.encode(), p14.encode())
         
 
 
 
 
-    def render_bitmap(self, p2: str, p3: float, p4: float, p5: float, p6: float, p7: str, p8: int) -> None:
+    def render_bitmap(self, p2, p3, p4, p5, p6, p7, p8):
+        """
+        Render a map to a bitmap.
+        """
         self._wrapper.render_bitmap(p2.encode(), p3, p4, p5, p6, p7.encode(), p8)
         
 
@@ -101,7 +119,10 @@ class GXMAP:
 
 
 
-    def create_linked_3d_view(self, p2: 'GXMVIEW', p3: str, p4: float, p5: float, p6: float, p7: float) -> None:
+    def create_linked_3d_view(self, p2, p3, p4, p5, p6, p7):
+        """
+        Create a 3D View in this map that is linked to a :class:`geosoft.gxapi.GXMVIEW` in a 3D View file.
+        """
         self._wrapper.create_linked_3d_view(p2._wrapper, p3.encode(), p4, p5, p6, p7)
         
 
@@ -112,63 +133,109 @@ class GXMAP:
 
 
 
-    def agg_list(self, p2: 'GXLST', p3: int) -> None:
+    def agg_list(self, p2, p3):
+        """
+        Get a list of all aggregates in this map.
+
+        **Note:**
+
+        List items are returned as view/agg/layer.
+        The layer name is optional
+        """
         self._wrapper.agg_list(p2._wrapper, p3)
         
 
 
 
 
-    def agg_list_ex(self, p2: 'GXLST', p3: int, p4: int) -> None:
+    def agg_list_ex(self, p2, p3, p4):
+        """
+        Get a list of aggregates in this map based on a mode
+
+        **Note:**
+
+        List items are returned as view/agg/layer.
+        The layer name is optional
+        """
         self._wrapper.agg_list_ex(p2._wrapper, p3, p4)
         
 
 
 
 
-    def clean(self) -> None:
+    def clean(self):
+        """
+        Clean up empty groups in all views in map.
+        """
         self._wrapper.clean()
         
 
 
 
 
-    def commit(self) -> None:
+    def commit(self):
+        """
+        Commit any changes to a map.
+        """
         self._wrapper.commit()
         
 
 
 
 
-    def copy_map_to_view(self, p2: str, p3: str) -> None:
+    def copy_map_to_view(self, p2, p3):
+        """
+        Copy entire map into one view in output map.
+        """
         self._wrapper.copy_map_to_view(p2.encode(), p3.encode())
         
 
 
 
 
-    def crc_map(self, p2: int_ref, p3: str) -> None:
+    def crc_map(self, p2, p3):
+        """
+        Generate an XML CRC of a :class:`geosoft.gxapi.GXMAP`
+        """
         p2.value = self._wrapper.crc_map(p2.value, p3.encode())
         
 
 
 
     @classmethod
-    def create(cls, p1: str, p2: int) -> 'GXMAP':
+    def create(cls, p1, p2):
+        """
+        Create a :class:`geosoft.gxapi.GXMAP`.
+        """
         ret_val = gxapi_cy.WrapMAP.create(GXContext._get_tls_geo(), p1.encode(), p2)
         return GXMAP(ret_val)
 
 
 
     @classmethod
-    def current(cls) -> 'GXMAP':
+    def current(cls):
+        """
+        This method returns the Current map opened.
+
+        **Note:**
+
+        If there is no current map, and running interactively,
+        the user is prompted to open a map.
+        """
         ret_val = gxapi_cy.WrapMAP.current(GXContext._get_tls_geo())
         return GXMAP(ret_val)
 
 
 
 
-    def delete_view(self, p2: str) -> None:
+    def delete_view(self, p2):
+        """
+        Deletes a view in this map.
+
+        **Note:**
+
+        If the view does not exist, nothing happens.
+        """
         self._wrapper.delete_view(p2.encode())
         
 
@@ -177,238 +244,433 @@ class GXMAP:
 
 
 
-    def discard(self) -> None:
+    def discard(self):
+        """
+        Discard all changes made to the map.
+        """
         self._wrapper.discard()
         
 
 
 
 
-    def dup_map(self, p2: 'GXMAP', p3: int) -> None:
+    def dup_map(self, p2, p3):
+        """
+        Duplicate copy of current map.
+
+        **Note:**
+
+        Before version 6.2 text in maps were displayed with a character set
+        defining how characters above ASCII 127 would be displayed. 6.2 introduced
+        Unicode in the core montaj engine that eliminated the need for such a setting and
+        greatly increased the number of symbols that can be used. The only caveat
+        of the new system is that text may appear corrupted (especially with GFN fonts) in
+        versions prior to 6.2 that render maps created in version 6.2 and later.
+        The constant :attr:`geosoft.gxapi.DUPMAP_COPY_PRE62` provides a way to create maps that can be
+        distributed to versions prior to 6.2.
+        """
         self._wrapper.dup_map(p2._wrapper, p3)
         
 
 
 
 
-    def get_lpt(self) -> 'GXLPT':
+    def get_lpt(self):
+        """
+        Get the :class:`geosoft.gxapi.GXLPT` Object of a :class:`geosoft.gxapi.GXMAP`.
+        """
         ret_val = self._wrapper.get_lpt()
         return GXLPT(ret_val)
 
 
 
 
-    def get_map_size(self, p2: float_ref, p3: float_ref, p4: float_ref, p5: float_ref) -> None:
+    def get_map_size(self, p2, p3, p4, p5):
+        """
+        Get the size of the Map.
+        """
         p2.value, p3.value, p4.value, p5.value = self._wrapper.get_map_size(p2.value, p3.value, p4.value, p5.value)
         
 
 
 
 
-    def get_meta(self) -> 'GXMETA':
+    def get_meta(self):
+        """
+        Get the map's :class:`geosoft.gxapi.GXMETA`
+
+        **Note:**
+
+        If the map has no :class:`geosoft.gxapi.GXMETA`, an empty :class:`geosoft.gxapi.GXMETA` will be created.
+        """
         ret_val = self._wrapper.get_meta()
         return GXMETA(ret_val)
 
 
 
 
-    def get_reg(self) -> 'GXREG':
+    def get_reg(self):
+        """
+        Get the map's :class:`geosoft.gxapi.GXREG`
+
+        **Note:**
+
+        If the map has no :class:`geosoft.gxapi.GXREG`, an empty :class:`geosoft.gxapi.GXREG` will be created.
+        """
         ret_val = self._wrapper.get_reg()
         return GXREG(ret_val)
 
 
 
 
-    def group_list(self, p2: 'GXLST') -> None:
+    def group_list(self, p2):
+        """
+        Get a list of all views/groups in this map.
+
+        **Note:**
+
+        Returns all groups in the form "ViewName\\GroupName"
+        To get a :class:`geosoft.gxapi.GXLST` of groups in a specific map view, use
+        the iListGroups_MVIEW function.
+        """
         self._wrapper.group_list(p2._wrapper)
         
 
 
 
 
-    def group_list_ex(self, p2: 'GXLST', p3: int) -> None:
+    def group_list_ex(self, p2, p3):
+        """
+        Get a list of views/groups in this map for this mode
+        """
         self._wrapper.group_list_ex(p2._wrapper, p3)
         
 
 
 
 
-    def duplicate_view(self, p2: str, p3: str_ref, p5: int) -> None:
+    def duplicate_view(self, p2, p3, p5):
+        """
+        Duplicate an entire view
+        """
         p3.value = self._wrapper.duplicate_view(p2.encode(), p3.value.encode(), p5)
         
 
 
 
 
-    def exist_view(self, p2: str) -> int:
+    def exist_view(self, p2):
+        """
+        Checks to see if a view exists.
+        """
         ret_val = self._wrapper.exist_view(p2.encode())
         return ret_val
 
 
 
 
-    def get_class_name(self, p2: str, p3: str_ref) -> None:
+    def get_class_name(self, p2, p3):
+        """
+        Get a class name.
+
+        **Note:**
+
+        Map class names are intended to be used to record the
+        names of certain view classes in the map, such as the
+        "Data", "Base" and "Section" views.
+        
+        There can only be one name for each class, but it can
+        be changed.  This lets the "Data" class name change,
+        for example, so plotting can select which class to plot
+        to.
+        
+        If a name is not set, the class name is set and
+        returned.
+        """
         p3.value = self._wrapper.get_class_name(p2.encode(), p3.value.encode())
         
 
 
 
 
-    def get_file_name(self, p2: str_ref) -> None:
+    def get_file_name(self, p2):
+        """
+        Get the name of the map.
+        """
         p2.value = self._wrapper.get_file_name(p2.value.encode())
         
 
 
 
 
-    def get_map_name(self, p2: str_ref) -> None:
+    def get_map_name(self, p2):
+        """
+        Get the Map Name of the Map.
+        """
         p2.value = self._wrapper.get_map_name(p2.value.encode())
         
 
 
 
 
-    def packed_files(self) -> int:
+    def packed_files(self):
+        """
+        The number of packed files in the current map.
+        """
         ret_val = self._wrapper.packed_files()
         return ret_val
 
 
 
 
-    def un_pack_files_ex(self, p2: int, p3: str_ref) -> None:
+    def un_pack_files_ex(self, p2, p3):
+        """
+        UnPack all files from map to workspace.
+
+        **Note:**
+
+        The option to force will simply overwrite the files.
+        When the non-force option is in effect the method will
+        stop if any files are going to be overwritting. These
+        file names will end up in the Errors string.
+        """
         p3.value = self._wrapper.un_pack_files_ex(p2, p3.value.encode())
         
 
 
 
 
-    def un_pack_files_to_folder(self, p2: int, p3: str, p4: str_ref) -> None:
+    def un_pack_files_to_folder(self, p2, p3, p4):
+        """
+        UnPack all files from map to workspace.
+        """
         p4.value = self._wrapper.un_pack_files_to_folder(p2, p3.encode(), p4.value.encode())
         
 
 
 
 
-    def pack_files(self) -> None:
+    def pack_files(self):
+        """
+        Pack all files in the map so that it can be mailed.
+        """
         self._wrapper.pack_files()
         
 
 
 
 
-    def render(self, p2: str) -> None:
+    def render(self, p2):
+        """
+        Render a map to file/device.
+        """
         self._wrapper.render(p2.encode())
         
 
 
 
 
-    def resize_all(self) -> None:
+    def resize_all(self):
+        """
+        Resize a map to the extents of all views.
+
+        **Note:**
+
+        This is the same as ResizeAllEx_MAP with
+        :attr:`geosoft.gxapi.MVIEW_EXTENT_CLIP`.
+        """
         self._wrapper.resize_all()
         
 
 
 
 
-    def resize_all_ex(self, p2: int) -> None:
+    def resize_all_ex(self, p2):
+        """
+        ResizeAll_MAP with selection of view extent type selection.
+
+        **Note:**
+
+        :attr:`geosoft.gxapi.MVIEW_EXTENT_VISIBLE` gives a more "reasonable" map size, and won't
+        clip off labels outside a graph window.
+        """
         self._wrapper.resize_all_ex(p2)
         
 
 
 
 
-    def get_map_scale(self) -> float:
+    def get_map_scale(self):
+        """
+        Get the current map scale
+
+        **Note:**
+
+        If there is a "Data" view, the scale is derived from
+        this view.
+        
+        If their is no data view, the scale is derived
+        from the first view that is not scaled in mm.
+        otherwise, the scale is 1000 (mm).
+        
+        All views must be closed, or open read-only.
+        """
         ret_val = self._wrapper.get_map_scale()
         return ret_val
 
 
 
 
-    def save_as_mxd(self, p2: str) -> None:
+    def save_as_mxd(self, p2):
+        """
+        Save as ArcGIS :class:`geosoft.gxapi.GXMXD`
+        """
         self._wrapper.save_as_mxd(p2.encode())
         
 
 
 
 
-    def set_class_name(self, p2: str, p3: str) -> None:
+    def set_class_name(self, p2, p3):
+        """
+        Set a class name.
+
+        **Note:**
+
+        Map class names are intended to be used to record the
+        names of certain view classes in the map, such as the
+        "Data", "Base" and "Section" views.
+        
+        There can only be one name for each class, but it can
+        be changed.  This lets the "Data" class name change,
+        for example, so plotting can select which class to plot
+        to.
+        
+        If a name is not set, the class name is set and
+        returned.
+        """
         self._wrapper.set_class_name(p2.encode(), p3.encode())
         
 
 
 
 
-    def set_current(self) -> None:
+    def set_current(self):
+        """
+        Sets the current map to this map.
+        """
         self._wrapper.set_current()
         
 
 
 
 
-    def set_map_name(self, p2: str) -> None:
+    def set_map_name(self, p2):
+        """
+        Set the Map Name of the Map.
+        """
         self._wrapper.set_map_name(p2.encode())
         
 
 
 
 
-    def set_map_scale(self, p2: float) -> None:
+    def set_map_scale(self, p2):
+        """
+        Set the current map scale
+
+        **Note:**
+
+        All views in the map will be resized for the new
+        map scale.
+        """
         self._wrapper.set_map_scale(p2)
         
 
 
 
 
-    def set_map_size(self, p2: float, p3: float, p4: float, p5: float) -> None:
+    def set_map_size(self, p2, p3, p4, p5):
+        """
+        Set the size of the Map.
+
+        **Note:**
+
+        The map size is area on the :class:`geosoft.gxapi.GXMAP` that contains graphics
+        to be plotted.  The area can be bigger or smaller that
+        the current views.  In the absense of any other information
+        only the area defined by the map size is plotted.
+        """
         self._wrapper.set_map_size(p2, p3, p4, p5)
         
 
 
 
 
-    def set_meta(self, p2: 'GXMETA') -> None:
+    def set_meta(self, p2):
+        """
+        Write a :class:`geosoft.gxapi.GXMETA` to a map.
+        """
         self._wrapper.set_meta(p2._wrapper)
         
 
 
 
 
-    def set_reg(self, p2: 'GXREG') -> None:
+    def set_reg(self, p2):
+        """
+        Write a :class:`geosoft.gxapi.GXREG` to a map.
+        """
         self._wrapper.set_reg(p2._wrapper)
         
 
 
 
     @classmethod
-    def sync(cls, p1: str) -> None:
+    def sync(cls, p1):
+        """
+        Syncronize the Metadata
+        """
         gxapi_cy.WrapMAP.sync(GXContext._get_tls_geo(), p1.encode())
         
 
 
 
 
-    def un_pack_files(self) -> None:
+    def un_pack_files(self):
+        """
+        UnPack all files from map to workspace.
+        """
         self._wrapper.un_pack_files()
         
 
 
 
 
-    def view_list(self, p2: 'GXLST') -> None:
+    def view_list(self, p2):
+        """
+        Get a list of all views in this map.
+        """
         self._wrapper.view_list(p2._wrapper)
         
 
 
 
 
-    def view_list_ex(self, p2: 'GXLST', p3: int) -> None:
+    def view_list_ex(self, p2, p3):
+        """
+        Get a list of views of certain types in this map
+        """
         self._wrapper.view_list_ex(p2._wrapper, p3)
         
 
 
 
 
-    def get_data_proj(self) -> int:
+    def get_data_proj(self):
+        """
+        Get the projection type of the Data view of a map.
+        """
         ret_val = self._wrapper.get_data_proj()
         return ret_val
 

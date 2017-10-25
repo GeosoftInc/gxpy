@@ -1,8 +1,10 @@
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+from typing import NewType
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
+
 
 ### endblock ClassImports
 
@@ -16,7 +18,7 @@ class GXVOXE:
     """
     GXVOXE class.
 
-    :class:`GXVOX` evaluator class. Used to sample values from
+    :class:`geosoft.gxapi.GXVOX` evaluator class. Used to sample values from
     the voxel.
     """
 
@@ -33,19 +35,19 @@ class GXVOXE:
         self._wrapper = wrapper if wrapper else gxapi_cy.WrapVOXE(GXContext._get_tls_geo(), 0)
 
     @classmethod
-    def null(cls) -> 'GXVOXE':
+    def null(cls):
         """
-        A null (undefined) instance of :class:`GXVOXE`
+        A null (undefined) instance of :class:`geosoft.gxapi.GXVOXE`
         
-        :returns: A null :class:`GXVOXE`
+        :returns: A null :class:`geosoft.gxapi.GXVOXE`
         """
         return cls()
 
-    def is_null(self) -> bool:
+    def is_null(self):
         """
-        Check if the instance of :class:`GXVOXE` is null (undefined)`
+        Check if the instance of :class:`geosoft.gxapi.GXVOXE` is null (undefined)`
         
-        :returns: True if this is a null (undefined) instance of :class:`GXVOXE`, False otherwise.
+        :returns: True if this is a null (undefined) instance of :class:`geosoft.gxapi.GXVOXE`, False otherwise.
         """
         return self._wrapper.handle == 0
 
@@ -57,7 +59,10 @@ class GXVOXE:
 
 
     @classmethod
-    def create(cls, p1: 'GXVOX') -> 'GXVOXE':
+    def create(cls, p1):
+        """
+        Create a handle to an :class:`geosoft.gxapi.GXVOXE` object
+        """
         ret_val = gxapi_cy.WrapVOXE.create(GXContext._get_tls_geo(), p1._wrapper)
         return GXVOXE(ret_val)
 
@@ -66,21 +71,30 @@ class GXVOXE:
 
 
 
-    def profile(self, p2: 'GXVV', p3: 'GXVV', p4: 'GXVV', p5: 'GXVV', p6: int) -> None:
+    def profile(self, p2, p3, p4, p5, p6):
+        """
+        Extract a profile of data along points provided.
+        """
         self._wrapper.profile(p2._wrapper, p3._wrapper, p4._wrapper, p5._wrapper, p6)
         
 
 
 
 
-    def value(self, p2: float, p3: float, p4: float, p5: int) -> float:
+    def value(self, p2, p3, p4, p5):
+        """
+        Get a value at a specific point
+        """
         ret_val = self._wrapper.value(p2, p3, p4, p5)
         return ret_val
 
 
 
 
-    def vector(self, p2: float, p3: float, p4: float, p5: float, p6: float, p7: float, p8: 'GXVV', p9: int) -> None:
+    def vector(self, p2, p3, p4, p5, p6, p7, p8, p9):
+        """
+        Extract a profile of data along a vector
+        """
         self._wrapper.vector(p2, p3, p4, p5, p6, p7, p8._wrapper, p9)
         
 

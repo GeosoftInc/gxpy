@@ -1,9 +1,12 @@
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+from typing import NewType
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 from .GXMVIEW import GXMVIEW
+
+
 ### endblock ClassImports
 
 ### block Header
@@ -32,19 +35,19 @@ class GXE3DV:
         self._wrapper = wrapper if wrapper else gxapi_cy.WrapE3DV(GXContext._get_tls_geo(), 0)
 
     @classmethod
-    def null(cls) -> 'GXE3DV':
+    def null(cls):
         """
-        A null (undefined) instance of :class:`GXE3DV`
+        A null (undefined) instance of :class:`geosoft.gxapi.GXE3DV`
         
-        :returns: A null :class:`GXE3DV`
+        :returns: A null :class:`geosoft.gxapi.GXE3DV`
         """
         return cls()
 
-    def is_null(self) -> bool:
+    def is_null(self):
         """
-        Check if the instance of :class:`GXE3DV` is null (undefined)`
+        Check if the instance of :class:`geosoft.gxapi.GXE3DV` is null (undefined)`
         
-        :returns: True if this is a null (undefined) instance of :class:`GXE3DV`, False otherwise.
+        :returns: True if this is a null (undefined) instance of :class:`geosoft.gxapi.GXE3DV`, False otherwise.
         """
         return self._wrapper.handle == 0
 
@@ -56,14 +59,20 @@ class GXE3DV:
 
 
 
-    def get_data_view(self) -> 'GXMVIEW':
+    def get_data_view(self):
+        """
+        Get the current data (3D) :class:`geosoft.gxapi.GXMVIEW`
+        """
         ret_val = self._wrapper.get_data_view()
         return GXMVIEW(ret_val)
 
 
 
 
-    def get_base_view(self) -> 'GXMVIEW':
+    def get_base_view(self):
+        """
+        Get the current Base :class:`geosoft.gxapi.GXMVIEW` (used to draw 2D legends for groups)
+        """
         ret_val = self._wrapper.get_base_view()
         return GXMVIEW(ret_val)
 

@@ -1,8 +1,10 @@
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+from typing import NewType
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
+
 
 ### endblock ClassImports
 
@@ -16,7 +18,7 @@ class GXTRND:
     """
     GXTRND class.
 
-    The :class:`GXTRND` methods are used to determine trend directions in database data by locating
+    The :class:`geosoft.gxapi.GXTRND` methods are used to determine trend directions in database data by locating
     maxima and minima along lines and joining them in a specified direction.
     The resulting trend lines are appended to the database and used by gridding methods
     such as Bigrid and Rangrid to enforce features in the specified direction.
@@ -35,19 +37,19 @@ class GXTRND:
         self._wrapper = wrapper if wrapper else gxapi_cy.WrapTRND(GXContext._get_tls_geo(), 0)
 
     @classmethod
-    def null(cls) -> 'GXTRND':
+    def null(cls):
         """
-        A null (undefined) instance of :class:`GXTRND`
+        A null (undefined) instance of :class:`geosoft.gxapi.GXTRND`
         
-        :returns: A null :class:`GXTRND`
+        :returns: A null :class:`geosoft.gxapi.GXTRND`
         """
         return cls()
 
-    def is_null(self) -> bool:
+    def is_null(self):
         """
-        Check if the instance of :class:`GXTRND` is null (undefined)`
+        Check if the instance of :class:`geosoft.gxapi.GXTRND` is null (undefined)`
         
-        :returns: True if this is a null (undefined) instance of :class:`GXTRND`, False otherwise.
+        :returns: True if this is a null (undefined) instance of :class:`geosoft.gxapi.GXTRND`, False otherwise.
         """
         return self._wrapper.handle == 0
 
@@ -59,21 +61,34 @@ class GXTRND:
 
 
     @classmethod
-    def get_max_min(cls, p1: 'GXVV', p2: 'GXVV', p3: 'GXVV', p4: 'GXVV', p5: 'GXVV', p6: 'GXVV', p7: float, p8: int) -> None:
+    def get_max_min(cls, p1, p2, p3, p4, p5, p6, p7, p8):
+        """
+        Find the max/min nodes in a line.
+
+        **Note:**
+
+        Trend lines positions consist of X and Y VVs
+        """
         gxapi_cy.WrapTRND.get_max_min(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3._wrapper, p4._wrapper, p5._wrapper, p6._wrapper, p7, p8)
         
 
 
 
     @classmethod
-    def get_mesh(cls, p1: 'GXDB', p2: str, p3: float, p4: float, p5: 'GXVV', p6: int) -> None:
+    def get_mesh(cls, p1, p2, p3, p4, p5, p6):
+        """
+        Get the lines in a trend mesh.
+        """
         gxapi_cy.WrapTRND.get_mesh(GXContext._get_tls_geo(), p1._wrapper, p2.encode(), p3, p4, p5._wrapper, p6)
         
 
 
 
     @classmethod
-    def trnd_db(cls, p1: 'GXDB', p2: str, p3: float, p4: float, p5: float, p6: float, p7: float, p8: float, p9: float, p10: float) -> None:
+    def trnd_db(cls, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10):
+        """
+        Uses a selected channel to find data trends in a database.
+        """
         gxapi_cy.WrapTRND.trnd_db(GXContext._get_tls_geo(), p1._wrapper, p2.encode(), p3, p4, p5, p6, p7, p8, p9, p10)
         
 

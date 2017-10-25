@@ -1,8 +1,10 @@
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+from typing import NewType
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
+
 
 ### endblock ClassImports
 
@@ -32,19 +34,19 @@ class GXSQLSRV:
         self._wrapper = wrapper if wrapper else gxapi_cy.WrapSQLSRV(GXContext._get_tls_geo(), 0)
 
     @classmethod
-    def null(cls) -> 'GXSQLSRV':
+    def null(cls):
         """
-        A null (undefined) instance of :class:`GXSQLSRV`
+        A null (undefined) instance of :class:`geosoft.gxapi.GXSQLSRV`
         
-        :returns: A null :class:`GXSQLSRV`
+        :returns: A null :class:`geosoft.gxapi.GXSQLSRV`
         """
         return cls()
 
-    def is_null(self) -> bool:
+    def is_null(self):
         """
-        Check if the instance of :class:`GXSQLSRV` is null (undefined)`
+        Check if the instance of :class:`geosoft.gxapi.GXSQLSRV` is null (undefined)`
         
-        :returns: True if this is a null (undefined) instance of :class:`GXSQLSRV`, False otherwise.
+        :returns: True if this is a null (undefined) instance of :class:`geosoft.gxapi.GXSQLSRV`, False otherwise.
         """
         return self._wrapper.handle == 0
 
@@ -56,42 +58,65 @@ class GXSQLSRV:
 
 
     @classmethod
-    def attach_mdf(cls, p1: str, p2: str, p3: str, p4: str, p5: str, p6: str) -> int:
+    def attach_mdf(cls, p1, p2, p3, p4, p5, p6):
+        """
+        Attaches an MDF SQL server file to a server.
+
+        **Note:**
+
+        The file's path need to be visible as local files on the server.
+        Network drives and substitutes may not work.
+        """
         ret_val = gxapi_cy.WrapSQLSRV.attach_mdf(GXContext._get_tls_geo(), p1.encode(), p2.encode(), p3.encode(), p4.encode(), p5.encode(), p6.encode())
         return ret_val
 
 
 
     @classmethod
-    def detach_db(cls, p1: str, p2: str, p3: str, p4: str) -> int:
+    def detach_db(cls, p1, p2, p3, p4):
+        """
+        Detaches a SQL Server database from a server.
+        """
         ret_val = gxapi_cy.WrapSQLSRV.detach_db(GXContext._get_tls_geo(), p1.encode(), p2.encode(), p3.encode(), p4.encode())
         return ret_val
 
 
 
     @classmethod
-    def get_database_languages_lst(cls, p1: 'GXLST', p2: str, p3: str, p4: str, p5: int) -> int:
+    def get_database_languages_lst(cls, p1, p2, p3, p4, p5):
+        """
+        Get a list of the languages into :class:`geosoft.gxapi.GXLST`
+        """
         ret_val = gxapi_cy.WrapSQLSRV.get_database_languages_lst(GXContext._get_tls_geo(), p1._wrapper, p2.encode(), p3.encode(), p4.encode(), p5)
         return ret_val
 
 
 
     @classmethod
-    def get_databases_lst(cls, p1: 'GXLST', p2: str, p3: str, p4: str, p5: int) -> int:
+    def get_databases_lst(cls, p1, p2, p3, p4, p5):
+        """
+        Get a list of the database into :class:`geosoft.gxapi.GXLST`
+        """
         ret_val = gxapi_cy.WrapSQLSRV.get_databases_lst(GXContext._get_tls_geo(), p1._wrapper, p2.encode(), p3.encode(), p4.encode(), p5)
         return ret_val
 
 
 
     @classmethod
-    def get_login_gui(cls, p1: str, p2: str_ref, p4: str_ref, p6: int, p7: int_ref) -> None:
+    def get_login_gui(cls, p1, p2, p4, p6, p7):
+        """
+        Get/Test login information to SQL Server
+        """
         p2.value, p4.value, p7.value = gxapi_cy.WrapSQLSRV.get_login_gui(GXContext._get_tls_geo(), p1.encode(), p2.value.encode(), p4.value.encode(), p6, p7.value)
         
 
 
 
     @classmethod
-    def get_servers_lst(cls, p1: 'GXLST') -> int:
+    def get_servers_lst(cls, p1):
+        """
+        Get a list of the visible servers into :class:`geosoft.gxapi.GXLST`
+        """
         ret_val = gxapi_cy.WrapSQLSRV.get_servers_lst(GXContext._get_tls_geo(), p1._wrapper)
         return ret_val
 

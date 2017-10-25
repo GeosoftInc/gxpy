@@ -1,8 +1,10 @@
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+from typing import NewType
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
+
 
 ### endblock ClassImports
 
@@ -16,10 +18,10 @@ class GXST2:
     """
     GXST2 class.
 
-    Bi-variate statistics. The :class:`GXST2` class accumulates statistics
+    Bi-variate statistics. The :class:`geosoft.gxapi.GXST2` class accumulates statistics
     on two data vectors simultaneously in order to compute correlation
     information. Statistics are accumulated using the DataVV_ST2 function.
-    See also :class:`GXST` (mono-variate statistics).
+    See also :class:`geosoft.gxapi.GXST` (mono-variate statistics).
     """
 
     def __enter__(self):
@@ -35,19 +37,19 @@ class GXST2:
         self._wrapper = wrapper if wrapper else gxapi_cy.WrapST2(GXContext._get_tls_geo(), 0)
 
     @classmethod
-    def null(cls) -> 'GXST2':
+    def null(cls):
         """
-        A null (undefined) instance of :class:`GXST2`
+        A null (undefined) instance of :class:`geosoft.gxapi.GXST2`
         
-        :returns: A null :class:`GXST2`
+        :returns: A null :class:`geosoft.gxapi.GXST2`
         """
         return cls()
 
-    def is_null(self) -> bool:
+    def is_null(self):
         """
-        Check if the instance of :class:`GXST2` is null (undefined)`
+        Check if the instance of :class:`geosoft.gxapi.GXST2` is null (undefined)`
         
-        :returns: True if this is a null (undefined) instance of :class:`GXST2`, False otherwise.
+        :returns: True if this is a null (undefined) instance of :class:`geosoft.gxapi.GXST2`, False otherwise.
         """
         return self._wrapper.handle == 0
 
@@ -59,14 +61,20 @@ class GXST2:
 
 
     @classmethod
-    def create(cls) -> 'GXST2':
+    def create(cls):
+        """
+        Creates a statistics object which is used to accumulate statistics.
+        """
         ret_val = gxapi_cy.WrapST2.create(GXContext._get_tls_geo())
         return GXST2(ret_val)
 
 
 
 
-    def data_vv(self, p2: 'GXVV', p3: 'GXVV') -> None:
+    def data_vv(self, p2, p3):
+        """
+        Add all the values in VVx and VVy to :class:`geosoft.gxapi.GXST2` object.
+        """
         self._wrapper.data_vv(p2._wrapper, p3._wrapper)
         
 
@@ -75,21 +83,30 @@ class GXST2:
 
 
 
-    def items(self) -> int:
+    def items(self):
+        """
+        Gets Number of items
+        """
         ret_val = self._wrapper.items()
         return ret_val
 
 
 
 
-    def reset(self) -> None:
+    def reset(self):
+        """
+        Resets the Statistics.
+        """
         self._wrapper.reset()
         
 
 
 
 
-    def get(self, p2: int) -> float:
+    def get(self, p2):
+        """
+        Gets correlation coeff. from the :class:`geosoft.gxapi.GXST2` object.
+        """
         ret_val = self._wrapper.get(p2)
         return ret_val
 

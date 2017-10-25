@@ -1,8 +1,10 @@
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+from typing import NewType
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
+
 
 ### endblock ClassImports
 
@@ -32,19 +34,19 @@ class GXEXT:
         self._wrapper = wrapper if wrapper else gxapi_cy.WrapEXT(GXContext._get_tls_geo(), 0)
 
     @classmethod
-    def null(cls) -> 'GXEXT':
+    def null(cls):
         """
-        A null (undefined) instance of :class:`GXEXT`
+        A null (undefined) instance of :class:`geosoft.gxapi.GXEXT`
         
-        :returns: A null :class:`GXEXT`
+        :returns: A null :class:`geosoft.gxapi.GXEXT`
         """
         return cls()
 
-    def is_null(self) -> bool:
+    def is_null(self):
         """
-        Check if the instance of :class:`GXEXT` is null (undefined)`
+        Check if the instance of :class:`geosoft.gxapi.GXEXT` is null (undefined)`
         
-        :returns: True if this is a null (undefined) instance of :class:`GXEXT`, False otherwise.
+        :returns: True if this is a null (undefined) instance of :class:`geosoft.gxapi.GXEXT`, False otherwise.
         """
         return self._wrapper.handle == 0
 
@@ -56,7 +58,10 @@ class GXEXT:
 
 
     @classmethod
-    def get_info(cls, p1: str, p2: float_ref, p3: float_ref, p4: float_ref, p5: float_ref, p6: 'GXIPJ') -> None:
+    def get_info(cls, p1, p2, p3, p4, p5, p6):
+        """
+        Retrieves information about an external image format.
+        """
         p2.value, p3.value, p4.value, p5.value = gxapi_cy.WrapEXT.get_info(GXContext._get_tls_geo(), p1.encode(), p2.value, p3.value, p4.value, p5.value, p6._wrapper)
         
 

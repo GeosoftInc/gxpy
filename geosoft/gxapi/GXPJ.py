@@ -1,8 +1,10 @@
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+from typing import NewType
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
+
 
 ### endblock ClassImports
 
@@ -16,7 +18,7 @@ class GXPJ:
     """
     GXPJ class.
 
-    The :class:`GXPJ` object is created from two :class:`GXIPJ` objects,
+    The :class:`geosoft.gxapi.GXPJ` object is created from two :class:`geosoft.gxapi.GXIPJ` objects,
     and is used for converting data in an OASIS database
     or map object from one map coordinate (projection)
     system to another.
@@ -35,19 +37,19 @@ class GXPJ:
         self._wrapper = wrapper if wrapper else gxapi_cy.WrapPJ(GXContext._get_tls_geo(), 0)
 
     @classmethod
-    def null(cls) -> 'GXPJ':
+    def null(cls):
         """
-        A null (undefined) instance of :class:`GXPJ`
+        A null (undefined) instance of :class:`geosoft.gxapi.GXPJ`
         
-        :returns: A null :class:`GXPJ`
+        :returns: A null :class:`geosoft.gxapi.GXPJ`
         """
         return cls()
 
-    def is_null(self) -> bool:
+    def is_null(self):
         """
-        Check if the instance of :class:`GXPJ` is null (undefined)`
+        Check if the instance of :class:`geosoft.gxapi.GXPJ` is null (undefined)`
         
-        :returns: True if this is a null (undefined) instance of :class:`GXPJ`, False otherwise.
+        :returns: True if this is a null (undefined) instance of :class:`geosoft.gxapi.GXPJ`, False otherwise.
         """
         return self._wrapper.handle == 0
 
@@ -59,63 +61,133 @@ class GXPJ:
 
 
 
-    def clip_ply(self, p2: float, p3: float, p4: float, p5: float, p6: float, p7: 'GXPLY') -> None:
+    def clip_ply(self, p2, p3, p4, p5, p6, p7):
+        """
+        Create a clip polygon from a projected area.
+
+        **Note:**
+
+        A rectangular area from (MinX, MinY) to (MaxX, MaxY)
+        is projected throught the :class:`geosoft.gxapi.GXPJ`. The resulting (non-rectangular)
+        area is then digitized along its edges, then thinned to
+        remove near-collinear points. The thinning is done to any
+        point whose neighbors subtend an angle greater than
+        (180 degrees - maximum deviation).  (i.e. if max. dev = 0,
+        only co-linear points would be removed).
+        """
         self._wrapper.clip_ply(p2, p3, p4, p5, p6, p7._wrapper)
         
 
 
 
 
-    def convert_vv(self, p2: 'GXVV', p3: 'GXVV') -> None:
+    def convert_vv(self, p2, p3):
+        """
+        Convert VVx/VVy from input projection to output projection.
+
+        **Note:**
+
+        This function is equivalent to Project_VV.
+        """
         self._wrapper.convert_vv(p2._wrapper, p3._wrapper)
         
 
 
 
 
-    def convert_vv3(self, p2: 'GXVV', p3: 'GXVV', p4: 'GXVV') -> None:
+    def convert_vv3(self, p2, p3, p4):
+        """
+        Convert VVx/VVy/VVz projections
+
+        **Note:**
+
+        This function is equivalent to Project3D_VV.
+        """
         self._wrapper.convert_vv3(p2._wrapper, p3._wrapper, p4._wrapper)
         
 
 
 
 
-    def convert_xy(self, p2: float_ref, p3: float_ref) -> None:
+    def convert_xy(self, p2, p3):
+        """
+        Convert X, Y from input projection to output projection.
+        """
         p2.value, p3.value = self._wrapper.convert_xy(p2.value, p3.value)
         
 
 
 
 
-    def convert_xy_from_xyz(self, p2: float_ref, p3: float_ref, p4: float) -> None:
+    def convert_xy_from_xyz(self, p2, p3, p4):
+        """
+        Convert X, Y from input projection to output projection, taking Z into account
+
+        **Note:**
+
+        This function is used (for instance) when projecting voxel model locations
+        where the user expects that the vertical position will not change. The
+        regular ConvertXYZ_PJ may result in shifts of hundreds, even a thousand
+        meters in case where you are going from the geoid to an ellipsoid.
+        The value of Z can have an important effect on the accuracy of the results, as
+        the normal ConvertXY_PJ assumes a value of Z=0 internally and calls
+        ConvertXYZ_PJ.
+        """
         p2.value, p3.value = self._wrapper.convert_xy_from_xyz(p2.value, p3.value, p4)
         
 
 
 
 
-    def convert_xyz(self, p2: float_ref, p3: float_ref, p4: float_ref) -> None:
+    def convert_xyz(self, p2, p3, p4):
+        """
+        Convert X,Y,Z from input projection to output projection.
+        """
         p2.value, p3.value, p4.value = self._wrapper.convert_xyz(p2.value, p3.value, p4.value)
         
 
 
 
     @classmethod
-    def create(cls, p1: str, p2: str) -> 'GXPJ':
+    def create(cls, p1, p2):
+        """
+        This method creates a projection object.
+        """
         ret_val = gxapi_cy.WrapPJ.create(GXContext._get_tls_geo(), p1.encode(), p2.encode())
         return GXPJ(ret_val)
 
 
 
     @classmethod
-    def create_ipj(cls, p1: 'GXIPJ', p2: 'GXIPJ') -> 'GXPJ':
+    def create_ipj(cls, p1, p2):
+        """
+        This method creates a projection object from IPJs.
+
+        **Note:**
+
+        If converting to/from long/lat in the natural coordinate
+        system of the source/target, only the long/lat system
+        can be passed as (:class:`geosoft.gxapi.GXIPJ`)0.
+        """
         ret_val = gxapi_cy.WrapPJ.create_ipj(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper)
         return GXPJ(ret_val)
 
 
 
     @classmethod
-    def create_rectified(cls, p1: float, p2: float, p3: float, p4: float, p5: float, p6: float, p7: int) -> 'GXPJ':
+    def create_rectified(cls, p1, p2, p3, p4, p5, p6, p7):
+        """
+        Create a rectified :class:`geosoft.gxapi.GXPJ` from lon,lat,rotation
+
+        **Note:**
+
+        Given an X,Y coordinate system, the lat/lon origin and
+        angle of the coordinate system, this will create a :class:`geosoft.gxapi.GXPJ`
+        to convert between X,Y coordinates and Lon,Lat.
+        The Lon/Lat is determined using a Transverse Mercator
+        projection with central meridian through the center
+        of the coordinates on a WGS 84 datum.
+        """
         ret_val = gxapi_cy.WrapPJ.create_rectified(GXContext._get_tls_geo(), p1, p2, p3, p4, p5, p6, p7)
         return GXPJ(ret_val)
 
@@ -124,63 +196,152 @@ class GXPJ:
 
 
 
-    def elevation(self) -> int:
+    def elevation(self):
+        """
+        Get elevation correction method
+
+        **Note:**
+
+        To determine the model in use, refer to the datum_trf column in the
+        user\\csv\\datumtrf.csv file.  The datum and geoid model are named in
+        the sqare brackets following the transform name as follows:
+        
+        name [datum_model:geoid]
+        
+        The datum_model is the name of the datum transformation model which will
+        be in a file with extension .ll2 in the \\etc directory.  The geoid is the
+        name of the geoid model which will be in a grid file with extension .grd
+        in the \\etc directory.  If the geoid model is missing, this method will
+        return :attr:`geosoft.gxapi.PJ_ELEVATION_NONE` and elevation coordinates will not be changed.
+        """
         ret_val = self._wrapper.elevation()
         return ret_val
 
 
 
 
-    def is_input_ll(self) -> int:
+    def is_input_ll(self):
+        """
+        Is the input projection a lat/long.
+        """
         ret_val = self._wrapper.is_input_ll()
         return ret_val
 
 
 
 
-    def is_output_ll(self) -> int:
+    def is_output_ll(self):
+        """
+        Is the output projection a lat/long.
+        """
         ret_val = self._wrapper.is_output_ll()
         return ret_val
 
 
 
 
-    def project_bounding_rectangle(self, p2: float_ref, p3: float_ref, p4: float_ref, p5: float_ref) -> None:
+    def project_bounding_rectangle(self, p2, p3, p4, p5):
+        """
+        Project a bounding rectangle.
+
+        **Note:**
+
+        A rectangular area from (dMinX, dMinY) to (dMaxX, dMaxY)
+        is projected throught the :class:`geosoft.gxapi.GXPJ`. The resulting region area is
+        then digitized along its edges and a new bounding rectangle
+        is computed.  If there is a lot of curve through the
+        projection the resulting bounding region may be slightly
+        smaller than the true region.
+        """
         p2.value, p3.value, p4.value, p5.value = self._wrapper.project_bounding_rectangle(p2.value, p3.value, p4.value, p5.value)
         
 
 
 
 
-    def project_bounding_rectangle2(self, p2: float_ref, p3: float_ref, p4: float_ref, p5: float_ref, p6: float) -> None:
+    def project_bounding_rectangle2(self, p2, p3, p4, p5, p6):
+        """
+        Project a bounding rectangle with error tolerance.
+
+        **Note:**
+
+        This is the same as ProjectBoundingRectangle_PJ except that the bounding
+        rectangle will be limited to an area within which the projection can be
+        performed to an accuracy better than the specified error tolerance.
+        """
         p2.value, p3.value, p4.value, p5.value = self._wrapper.project_bounding_rectangle2(p2.value, p3.value, p4.value, p5.value, p6)
         
 
 
 
 
-    def project_bounding_rectangle_res(self, p2: float_ref, p3: float_ref, p4: float_ref, p5: float_ref, p6: float_ref) -> None:
+    def project_bounding_rectangle_res(self, p2, p3, p4, p5, p6):
+        """
+        Project a bounding rectangle with resolution.
+
+        **Note:**
+
+        This function behaves just like ProjBoundingRectangle_PJ
+        except that it also computes an approximate resolution
+        at the reprojected coordinate system from a given original
+        resolution.
+        """
         p2.value, p3.value, p4.value, p5.value, p6.value = self._wrapper.project_bounding_rectangle_res(p2.value, p3.value, p4.value, p5.value, p6.value)
         
 
 
 
 
-    def project_bounding_rectangle_res2(self, p2: float_ref, p3: float_ref, p4: float_ref, p5: float_ref, p6: float_ref, p7: float) -> None:
+    def project_bounding_rectangle_res2(self, p2, p3, p4, p5, p6, p7):
+        """
+        Project a bounding rectangle with resolution and error tolerance.
+
+        **Note:**
+
+        This is the same as ProjectBoundingRectangleRes_PJ except that the bounding
+        rectangle will be limited to an area within which the projection can be
+        performed to an accuracy better than the specified error tolerance.
+        """
         p2.value, p3.value, p4.value, p5.value, p6.value = self._wrapper.project_bounding_rectangle_res2(p2.value, p3.value, p4.value, p5.value, p6.value, p7)
         
 
 
 
 
-    def project_limited_bounding_rectangle(self, p2: float, p3: float, p4: float, p5: float, p6: float_ref, p7: float_ref, p8: float_ref, p9: float_ref) -> None:
+    def project_limited_bounding_rectangle(self, p2, p3, p4, p5, p6, p7, p8, p9):
+        """
+        Project a bounding rectangle with limits.
+
+        **Note:**
+
+        The bounding rectangle will be limited to no larger
+        than the area specified in the output projection.  This
+        is useful when projecting from limits that are unreasonable
+        in the target projection.
+        """
         p6.value, p7.value, p8.value, p9.value = self._wrapper.project_limited_bounding_rectangle(p2, p3, p4, p5, p6.value, p7.value, p8.value, p9.value)
         
 
 
 
 
-    def setup_ldt(self) -> None:
+    def setup_ldt(self):
+        """
+        Setup the :class:`geosoft.gxapi.GXPJ` with LDT check.
+
+        **Note:**
+
+        By default, a :class:`geosoft.gxapi.GXPJ` on the same datum will not apply a LDT,
+        is intended for transformations between datums.  However,
+        in some instances you might want to convert between LDTs on
+        the same datum, such as when you have two sets of coordinates
+        that you KNOW came from WGS84 and were placed on this datum
+        using differnt LDT's.  If you want to combine such coordinate
+        systems, one or the other should be converted to the other's
+        LDT.  Note that a more logical way to do this would be to
+        convert both sets back to their original WGS84 coordinates
+        and combine in WGS84.
+        """
         self._wrapper.setup_ldt()
         
 

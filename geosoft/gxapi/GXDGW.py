@@ -1,9 +1,12 @@
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+from typing import NewType
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 from .GXLST import GXLST
+
+
 ### endblock ClassImports
 
 ### block Header
@@ -68,19 +71,19 @@ class GXDGW:
         self._wrapper = wrapper if wrapper else gxapi_cy.WrapDGW(GXContext._get_tls_geo(), 0)
 
     @classmethod
-    def null(cls) -> 'GXDGW':
+    def null(cls):
         """
-        A null (undefined) instance of :class:`GXDGW`
+        A null (undefined) instance of :class:`geosoft.gxapi.GXDGW`
         
-        :returns: A null :class:`GXDGW`
+        :returns: A null :class:`geosoft.gxapi.GXDGW`
         """
         return cls()
 
-    def is_null(self) -> bool:
+    def is_null(self):
         """
-        Check if the instance of :class:`GXDGW` is null (undefined)`
+        Check if the instance of :class:`geosoft.gxapi.GXDGW` is null (undefined)`
         
-        :returns: True if this is a null (undefined) instance of :class:`GXDGW`, False otherwise.
+        :returns: True if this is a null (undefined) instance of :class:`geosoft.gxapi.GXDGW`, False otherwise.
         """
         return self._wrapper.handle == 0
 
@@ -92,7 +95,11 @@ class GXDGW:
 
 
     @classmethod
-    def create(cls, p1: str) -> 'GXDGW':
+    def create(cls, p1):
+        """
+        This method creates a Dialog window from a specified
+        resource. The Resource is loaded into memory but not displayed.
+        """
         ret_val = gxapi_cy.WrapDGW.create(GXContext._get_tls_geo(), p1.encode())
         return GXDGW(ret_val)
 
@@ -101,63 +108,113 @@ class GXDGW:
 
 
 
-    def get_info_meta(self, p2: int, p3: int, p4: 'GXMETA', p5: int, p6: int) -> None:
+    def get_info_meta(self, p2, p3, p4, p5, p6):
+        """
+        Copies the Dialog information to a :class:`geosoft.gxapi.GXMETA` attribute.
+        """
         self._wrapper.get_info_meta(p2, p3, p4._wrapper, p5, p6)
         
 
 
 
 
-    def get_info_sys(self, p2: int, p3: int, p4: str, p5: str) -> None:
+    def get_info_sys(self, p2, p3, p4, p5):
+        """
+        This method uses the information in a Dialog box to
+        set a :class:`geosoft.gxapi.GXSYS` variable.
+        """
         self._wrapper.get_info_sys(p2, p3, p4.encode(), p5.encode())
         
 
 
 
 
-    def get_list(self, p2: int) -> 'GXLST':
+    def get_list(self, p2):
+        """
+        This method retrieves the list (:class:`geosoft.gxapi.GXLST`) object associated
+        with a Dialog object.
+        """
         ret_val = self._wrapper.get_list(p2)
         return GXLST(ret_val)
 
 
 
 
-    def gt_info(self, p2: int, p3: int, p4: str_ref) -> None:
+    def gt_info(self, p2, p3, p4):
+        """
+        This method fills the specified string with the text from
+        the text object specified.
+        """
         p4.value = self._wrapper.gt_info(p2, p3, p4.value.encode())
         
 
 
 
 
-    def run_dialogue(self) -> int:
+    def run_dialogue(self):
+        """
+        This method runs the Dialog window.
+        """
         ret_val = self._wrapper.run_dialogue()
         return ret_val
 
 
 
 
-    def set_info(self, p2: int, p3: int, p4: str) -> None:
+    def set_info(self, p2, p3, p4):
+        """
+        This method sets the string of a text object. If the string
+        is too long it will be truncated.
+        """
         self._wrapper.set_info(p2, p3, p4.encode())
         
 
 
 
 
-    def set_info_meta(self, p2: int, p3: int, p4: 'GXMETA', p5: int, p6: int) -> None:
+    def set_info_meta(self, p2, p3, p4, p5, p6):
+        """
+        This sets a text object to the text found in a :class:`geosoft.gxapi.GXMETA` attribute.
+        """
         self._wrapper.set_info_meta(p2, p3, p4._wrapper, p5, p6)
         
 
 
 
 
-    def set_info_sys(self, p2: int, p3: int, p4: str, p5: str) -> None:
+    def set_info_sys(self, p2, p3, p4, p5):
+        """
+        This sets a text object to the text found in a system
+        parameter variable. If the variable has not been set,
+        the text is not set.
+        """
         self._wrapper.set_info_sys(p2, p3, p4.encode(), p5.encode())
         
 
 
 
 
-    def set_title(self, p2: str) -> None:
+    def set_title(self, p2):
+        """
+        Changes the title of the dialog.
+
+        **Note:**
+
+        A "Special", additional title can be added to a dialog by using
+        the following syntax:
+        
+        SetTitle_DGW(Diag, "Window Title\\nAdditional Title");
+        
+        In the title argument, a line break character '\\n' is used to
+        separate the parts.
+        
+        The window title free_appears as the title in the upper bar of the dialog.
+        The additional title free_appears below this, in the main body of the
+        dialog, and is separated from the rest of the fields by a horizontal
+        line. It is printed in the bold version of the default font (or of the
+        special font specified using the MONTAJ.GX_TITLE_FONT parameter noted
+        above in "Setting Fonts in GX dialogs."
+        """
         self._wrapper.set_title(p2.encode())
         
 

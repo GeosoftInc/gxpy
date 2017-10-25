@@ -1,8 +1,10 @@
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+from typing import NewType
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
+
 
 ### endblock ClassImports
 
@@ -16,7 +18,7 @@ class GXTC:
     """
     GXTC class.
 
-    The :class:`GXTC` object is used in gravitational modelling to create
+    The :class:`geosoft.gxapi.GXTC` object is used in gravitational modelling to create
     a terrain correction grid from a topography grid. This is
     accomplished with a call first to Grregter_TC, which determines
     the terrain correction from an input topography grid, then
@@ -37,19 +39,19 @@ class GXTC:
         self._wrapper = wrapper if wrapper else gxapi_cy.WrapTC(GXContext._get_tls_geo(), 0)
 
     @classmethod
-    def null(cls) -> 'GXTC':
+    def null(cls):
         """
-        A null (undefined) instance of :class:`GXTC`
+        A null (undefined) instance of :class:`geosoft.gxapi.GXTC`
         
-        :returns: A null :class:`GXTC`
+        :returns: A null :class:`geosoft.gxapi.GXTC`
         """
         return cls()
 
-    def is_null(self) -> bool:
+    def is_null(self):
         """
-        Check if the instance of :class:`GXTC` is null (undefined)`
+        Check if the instance of :class:`geosoft.gxapi.GXTC` is null (undefined)`
         
-        :returns: True if this is a null (undefined) instance of :class:`GXTC`, False otherwise.
+        :returns: True if this is a null (undefined) instance of :class:`geosoft.gxapi.GXTC`, False otherwise.
         """
         return self._wrapper.handle == 0
 
@@ -61,14 +63,20 @@ class GXTC:
 
 
     @classmethod
-    def create(cls, p1: 'GXIMG', p2: float, p3: float, p4: float, p5: float, p6: float, p7: float, p8: int, p9: float, p10: int) -> 'GXTC':
+    def create(cls, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10):
+        """
+        Creates a Terrain Correction object
+        """
         ret_val = gxapi_cy.WrapTC.create(GXContext._get_tls_geo(), p1._wrapper, p2, p3, p4, p5, p6, p7, p8, p9, p10)
         return GXTC(ret_val)
 
 
 
     @classmethod
-    def create_ex(cls, p1: 'GXIMG', p2: float, p3: float, p4: float, p5: float, p6: float, p7: float, p8: int, p9: float, p10: int, p11: int) -> 'GXTC':
+    def create_ex(cls, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11):
+        """
+        Creates a Terrain Correction object	with surveytype
+        """
         ret_val = gxapi_cy.WrapTC.create_ex(GXContext._get_tls_geo(), p1._wrapper, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11)
         return GXTC(ret_val)
 
@@ -77,28 +85,40 @@ class GXTC:
 
 
 
-    def grregter(self, p2: 'GXIMG', p3: 'GXIMG') -> None:
+    def grregter(self, p2, p3):
+        """
+        Create a terrain correction grid for a topo grid.
+        """
         self._wrapper.grregter(p2._wrapper, p3._wrapper)
         
 
 
 
 
-    def grterain(self, p2: 'GXVV', p3: 'GXVV', p4: 'GXVV', p5: 'GXVV', p6: 'GXVV', p7: 'GXIMG', p8: float) -> None:
+    def grterain(self, p2, p3, p4, p5, p6, p7, p8):
+        """
+        Calculate terrain corrections.
+        """
         self._wrapper.grterain(p2._wrapper, p3._wrapper, p4._wrapper, p5._wrapper, p6._wrapper, p7._wrapper, p8)
         
 
 
 
 
-    def grterain2(self, p2: 'GXVV', p3: 'GXVV', p4: 'GXVV', p5: 'GXVV', p6: 'GXVV', p7: 'GXVV', p8: 'GXIMG', p9: float) -> None:
+    def grterain2(self, p2, p3, p4, p5, p6, p7, p8, p9):
+        """
+        Calculate terrain corrections (work for marine gravity too).
+        """
         self._wrapper.grterain2(p2._wrapper, p3._wrapper, p4._wrapper, p5._wrapper, p6._wrapper, p7._wrapper, p8._wrapper, p9)
         
 
 
 
 
-    def g_gterain(self, p2: 'GXVV', p3: 'GXVV', p4: 'GXVV', p5: 'GXVV', p6: float, p7: float, p8: int) -> None:
+    def g_gterain(self, p2, p3, p4, p5, p6, p7, p8):
+        """
+        Calculate GG terrain corrections
+        """
         self._wrapper.g_gterain(p2._wrapper, p3._wrapper, p4._wrapper, p5._wrapper, p6, p7, p8)
         
 

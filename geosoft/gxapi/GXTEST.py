@@ -1,8 +1,10 @@
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+from typing import NewType
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
+
 
 ### endblock ClassImports
 
@@ -32,19 +34,19 @@ class GXTEST:
         self._wrapper = wrapper if wrapper else gxapi_cy.WrapTEST(GXContext._get_tls_geo(), 0)
 
     @classmethod
-    def null(cls) -> 'GXTEST':
+    def null(cls):
         """
-        A null (undefined) instance of :class:`GXTEST`
+        A null (undefined) instance of :class:`geosoft.gxapi.GXTEST`
         
-        :returns: A null :class:`GXTEST`
+        :returns: A null :class:`geosoft.gxapi.GXTEST`
         """
         return cls()
 
-    def is_null(self) -> bool:
+    def is_null(self):
         """
-        Check if the instance of :class:`GXTEST` is null (undefined)`
+        Check if the instance of :class:`geosoft.gxapi.GXTEST` is null (undefined)`
         
-        :returns: True if this is a null (undefined) instance of :class:`GXTEST`, False otherwise.
+        :returns: True if this is a null (undefined) instance of :class:`geosoft.gxapi.GXTEST`, False otherwise.
         """
         return self._wrapper.handle == 0
 
@@ -56,35 +58,50 @@ class GXTEST:
 
 
     @classmethod
-    def enable_disable_arc_engine_license(cls, p1: int) -> None:
+    def enable_disable_arc_engine_license(cls, p1):
+        """
+        Forcefully disable ArEngine license availability for testing purposes
+        """
         gxapi_cy.WrapTEST.enable_disable_arc_engine_license(GXContext._get_tls_geo(), p1)
         
 
 
 
     @classmethod
-    def arc_engine_license(cls) -> int:
+    def arc_engine_license(cls):
+        """
+        Test availability of an ArEngine license on this system
+        """
         ret_val = gxapi_cy.WrapTEST.arc_engine_license(GXContext._get_tls_geo())
         return ret_val
 
 
 
     @classmethod
-    def test_mode(cls) -> int:
+    def test_mode(cls):
+        """
+        Checks to see if we are running inside testing system
+        """
         ret_val = gxapi_cy.WrapTEST.test_mode(GXContext._get_tls_geo())
         return ret_val
 
 
 
     @classmethod
-    def wrapper_test(cls, p1: str, p2: str) -> None:
+    def wrapper_test(cls, p1, p2):
+        """
+        Test to make sure all wrappers are valid linking
+        """
         gxapi_cy.WrapTEST.wrapper_test(GXContext._get_tls_geo(), p1.encode(), p2.encode())
         
 
 
 
     @classmethod
-    def core_class(cls, p1: str, p2: str) -> None:
+    def core_class(cls, p1, p2):
+        """
+        Generic Class Test Wrapper
+        """
         gxapi_cy.WrapTEST.core_class(GXContext._get_tls_geo(), p1.encode(), p2.encode())
         
 

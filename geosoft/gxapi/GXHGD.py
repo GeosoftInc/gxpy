@@ -1,8 +1,10 @@
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+from typing import NewType
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
+
 
 ### endblock ClassImports
 
@@ -36,19 +38,19 @@ class GXHGD:
         self._wrapper = wrapper if wrapper else gxapi_cy.WrapHGD(GXContext._get_tls_geo(), 0)
 
     @classmethod
-    def null(cls) -> 'GXHGD':
+    def null(cls):
         """
-        A null (undefined) instance of :class:`GXHGD`
+        A null (undefined) instance of :class:`geosoft.gxapi.GXHGD`
         
-        :returns: A null :class:`GXHGD`
+        :returns: A null :class:`geosoft.gxapi.GXHGD`
         """
         return cls()
 
-    def is_null(self) -> bool:
+    def is_null(self):
         """
-        Check if the instance of :class:`GXHGD` is null (undefined)`
+        Check if the instance of :class:`geosoft.gxapi.GXHGD` is null (undefined)`
         
-        :returns: True if this is a null (undefined) instance of :class:`GXHGD`, False otherwise.
+        :returns: True if this is a null (undefined) instance of :class:`geosoft.gxapi.GXHGD`, False otherwise.
         """
         return self._wrapper.handle == 0
 
@@ -60,7 +62,10 @@ class GXHGD:
 
 
     @classmethod
-    def create(cls, p1: str) -> 'GXHGD':
+    def create(cls, p1):
+        """
+        Create a handle to an :class:`geosoft.gxapi.GXHGD` object
+        """
         ret_val = gxapi_cy.WrapHGD.create(GXContext._get_tls_geo(), p1.encode())
         return GXHGD(ret_val)
 
@@ -69,28 +74,40 @@ class GXHGD:
 
 
 
-    def export_img(self, p2: str) -> None:
+    def export_img(self, p2):
+        """
+        Export all layers of this :class:`geosoft.gxapi.GXHGD` into grid files.
+        """
         self._wrapper.export_img(p2.encode())
         
 
 
 
 
-    def get_meta(self, p2: 'GXMETA') -> None:
+    def get_meta(self, p2):
+        """
+        Get the metadata of a grid.
+        """
         self._wrapper.get_meta(p2._wrapper)
         
 
 
 
     @classmethod
-    def h_create_img(cls, p1: 'GXIMG', p2: str) -> 'GXHGD':
+    def h_create_img(cls, p1, p2):
+        """
+        Make an :class:`geosoft.gxapi.GXHGD` from an :class:`geosoft.gxapi.GXIMG`
+        """
         ret_val = gxapi_cy.WrapHGD.h_create_img(GXContext._get_tls_geo(), p1._wrapper, p2.encode())
         return GXHGD(ret_val)
 
 
 
 
-    def set_meta(self, p2: 'GXMETA') -> None:
+    def set_meta(self, p2):
+        """
+        Set the metadata of a grid.
+        """
         self._wrapper.set_meta(p2._wrapper)
         
 

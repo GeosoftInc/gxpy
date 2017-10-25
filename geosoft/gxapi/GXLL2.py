@@ -1,8 +1,10 @@
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+from typing import NewType
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
+
 
 ### endblock ClassImports
 
@@ -17,7 +19,7 @@ class GXLL2:
     GXLL2 class.
 
     local datum lookup creator
-    ll2 methods are used to create :class:`GXLL2` objects.  :class:`GXLL2` objects contain
+    ll2 methods are used to create :class:`geosoft.gxapi.GXLL2` objects.  :class:`geosoft.gxapi.GXLL2` objects contain
     latitude, longitude correction lookup tables to convert between datums.
     """
 
@@ -34,19 +36,19 @@ class GXLL2:
         self._wrapper = wrapper if wrapper else gxapi_cy.WrapLL2(GXContext._get_tls_geo(), 0)
 
     @classmethod
-    def null(cls) -> 'GXLL2':
+    def null(cls):
         """
-        A null (undefined) instance of :class:`GXLL2`
+        A null (undefined) instance of :class:`geosoft.gxapi.GXLL2`
         
-        :returns: A null :class:`GXLL2`
+        :returns: A null :class:`geosoft.gxapi.GXLL2`
         """
         return cls()
 
-    def is_null(self) -> bool:
+    def is_null(self):
         """
-        Check if the instance of :class:`GXLL2` is null (undefined)`
+        Check if the instance of :class:`geosoft.gxapi.GXLL2` is null (undefined)`
         
-        :returns: True if this is a null (undefined) instance of :class:`GXLL2`, False otherwise.
+        :returns: True if this is a null (undefined) instance of :class:`geosoft.gxapi.GXLL2`, False otherwise.
         """
         return self._wrapper.handle == 0
 
@@ -58,7 +60,10 @@ class GXLL2:
 
 
     @classmethod
-    def create(cls, p1: float, p2: float, p3: float, p4: float, p5: int, p6: int, p7: 'GXIPJ', p8: 'GXIPJ') -> 'GXLL2':
+    def create(cls, p1, p2, p3, p4, p5, p6, p7, p8):
+        """
+        Create an empty :class:`geosoft.gxapi.GXLL2` table to be filled
+        """
         ret_val = gxapi_cy.WrapLL2.create(GXContext._get_tls_geo(), p1, p2, p3, p4, p5, p6, p7._wrapper, p8._wrapper)
         return GXLL2(ret_val)
 
@@ -67,14 +72,34 @@ class GXLL2:
 
 
 
-    def save(self, p2: str) -> None:
+    def save(self, p2):
+        """
+        Save an :class:`geosoft.gxapi.GXLL2` to a named resource
+
+        **Note:**
+
+        The named resource is the name of the datum transform define
+        inside square brackets in the datum transform name in the
+        datumtrf table.
+        """
         self._wrapper.save(p2.encode())
         
 
 
 
 
-    def set_row(self, p2: int, p3: 'GXVV', p4: 'GXVV') -> None:
+    def set_row(self, p2, p3, p4):
+        """
+        Define a row of the :class:`geosoft.gxapi.GXLL2`
+
+        **Note:**
+
+        The correction data is in degrees, added to the input
+        datum to product output datum results.
+        
+        The :class:`geosoft.gxapi.GXVV` lengths must be equal to #longitudes defined
+        by Create_LL2.
+        """
         self._wrapper.set_row(p2, p3._wrapper, p4._wrapper)
         
 

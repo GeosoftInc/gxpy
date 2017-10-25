@@ -1,8 +1,10 @@
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+from typing import NewType
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
+
 
 ### endblock ClassImports
 
@@ -16,7 +18,7 @@ class GXFLT:
     """
     GXFLT class.
 
-    The :class:`GXFLT` class allows the application of user-defined convolution filters to data in an OASIS database
+    The :class:`geosoft.gxapi.GXFLT` class allows the application of user-defined convolution filters to data in an OASIS database
     """
 
     def __enter__(self):
@@ -32,19 +34,19 @@ class GXFLT:
         self._wrapper = wrapper if wrapper else gxapi_cy.WrapFLT(GXContext._get_tls_geo(), 0)
 
     @classmethod
-    def null(cls) -> 'GXFLT':
+    def null(cls):
         """
-        A null (undefined) instance of :class:`GXFLT`
+        A null (undefined) instance of :class:`geosoft.gxapi.GXFLT`
         
-        :returns: A null :class:`GXFLT`
+        :returns: A null :class:`geosoft.gxapi.GXFLT`
         """
         return cls()
 
-    def is_null(self) -> bool:
+    def is_null(self):
         """
-        Check if the instance of :class:`GXFLT` is null (undefined)`
+        Check if the instance of :class:`geosoft.gxapi.GXFLT` is null (undefined)`
         
-        :returns: True if this is a null (undefined) instance of :class:`GXFLT`, False otherwise.
+        :returns: True if this is a null (undefined) instance of :class:`geosoft.gxapi.GXFLT`, False otherwise.
         """
         return self._wrapper.handle == 0
 
@@ -56,7 +58,17 @@ class GXFLT:
 
 
     @classmethod
-    def create(cls, p1: str) -> int:
+    def create(cls, p1):
+        """
+        Create a filter from a comma/space delimited string.
+
+        **Note:**
+
+        Terminates process if filter not found.
+        Sample Fraser Filter string:
+        
+              "-1,-1,1,1"
+        """
         ret_val = gxapi_cy.WrapFLT.create(GXContext._get_tls_geo(), p1.encode())
         return ret_val
 
@@ -65,7 +77,28 @@ class GXFLT:
 
 
     @classmethod
-    def load(cls, p1: str) -> int:
+    def load(cls, p1):
+        """
+        Load and return handle to a convolution filter.
+
+        **Note:**
+
+        Terminates process if filter not found.
+        A filter file is an ASCII file that contains filter
+        coefficients, which are simply mumbers.  There can be
+        one coefficient to a line.  Blank lines and comment lines
+        are skipped.  Comment lines beginn with a forward slash
+        character in column 1.  Following is an example Fraser
+        Filter file:
+        
+           /----------------------
+           / Fraser Filter
+           /----------------------
+           -1
+           -1
+           1
+           1
+        """
         ret_val = gxapi_cy.WrapFLT.load(GXContext._get_tls_geo(), p1.encode())
         return ret_val
 

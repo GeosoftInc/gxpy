@@ -1,8 +1,10 @@
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+from typing import NewType
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
+
 
 ### endblock ClassImports
 
@@ -33,19 +35,19 @@ class GXEUL3:
         self._wrapper = wrapper if wrapper else gxapi_cy.WrapEUL3(GXContext._get_tls_geo(), 0)
 
     @classmethod
-    def null(cls) -> 'GXEUL3':
+    def null(cls):
         """
-        A null (undefined) instance of :class:`GXEUL3`
+        A null (undefined) instance of :class:`geosoft.gxapi.GXEUL3`
         
-        :returns: A null :class:`GXEUL3`
+        :returns: A null :class:`geosoft.gxapi.GXEUL3`
         """
         return cls()
 
-    def is_null(self) -> bool:
+    def is_null(self):
         """
-        Check if the instance of :class:`GXEUL3` is null (undefined)`
+        Check if the instance of :class:`geosoft.gxapi.GXEUL3` is null (undefined)`
         
-        :returns: True if this is a null (undefined) instance of :class:`GXEUL3`, False otherwise.
+        :returns: True if this is a null (undefined) instance of :class:`geosoft.gxapi.GXEUL3`, False otherwise.
         """
         return self._wrapper.handle == 0
 
@@ -57,42 +59,60 @@ class GXEUL3:
 
 
 
-    def destr(self) -> None:
+    def destr(self):
+        """
+        Destroys a :class:`geosoft.gxapi.GXEUL3` object.
+        """
         self._wrapper.destr()
         
 
 
 
     @classmethod
-    def creat(cls, p1: 'GXIMG', p2: 'GXIMG', p3: 'GXIMG', p4: 'GXIMG', p5: int, p6: float, p7: float, p8: float, p9: int, p10: float, p11: float) -> 'GXEUL3':
+    def creat(cls, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11):
+        """
+        Creates an :class:`geosoft.gxapi.GXEUL3` object.
+        """
         ret_val = gxapi_cy.WrapEUL3.creat(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3._wrapper, p4._wrapper, p5, p6, p7, p8, p9, p10, p11)
         return GXEUL3(ret_val)
 
 
 
 
-    def get_result(self, p2: 'GXVV', p3: int) -> None:
+    def get_result(self, p2, p3):
+        """
+        Get a result field :class:`geosoft.gxapi.GXVV` from :class:`geosoft.gxapi.GXEUL3` object
+        """
         self._wrapper.get_result(p2._wrapper, p3)
         
 
 
 
 
-    def write(self, p2: str) -> None:
+    def write(self, p2):
+        """
+        Write the results of :class:`geosoft.gxapi.GXEUL3` object to output file.
+        """
         self._wrapper.write(p2.encode())
         
 
 
 
     @classmethod
-    def ex_euler_derive(cls, p1: 'GXVV', p2: float, p3: 'GXVV', p4: int, p5: 'GXVV', p6: 'GXVV', p7: int) -> int:
+    def ex_euler_derive(cls, p1, p2, p3, p4, p5, p6, p7):
+        """
+        Calculates gradients
+        """
         ret_val = gxapi_cy.WrapEUL3.ex_euler_derive(GXContext._get_tls_geo(), p1._wrapper, p2, p3._wrapper, p4, p5._wrapper, p6._wrapper, p7)
         return ret_val
 
 
 
     @classmethod
-    def ex_euler_calc(cls, p1: int, p2: float, p3: int, p4: float, p5: float, p6: float, p7: float, p8: float, p9: float, p10: float, p11: int, p12: 'GXVV', p13: 'GXVV', p14: 'GXVV', p15: 'GXVV', p16: int, p17: 'GXVV', p18: 'GXVV', p19: 'GXVV', p20: 'GXVV') -> int:
+    def ex_euler_calc(cls, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17, p18, p19, p20):
+        """
+        Does the exeuler depth calculations
+        """
         ret_val = gxapi_cy.WrapEUL3.ex_euler_calc(GXContext._get_tls_geo(), p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12._wrapper, p13._wrapper, p14._wrapper, p15._wrapper, p16, p17._wrapper, p18._wrapper, p19._wrapper, p20._wrapper)
         return ret_val
 

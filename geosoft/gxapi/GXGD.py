@@ -1,8 +1,10 @@
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+from typing import NewType
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
+
 
 ### endblock ClassImports
 
@@ -17,7 +19,7 @@ class GXGD:
     GXGD class.
 
     This class provides access to Geosoft grid files using an old interface.
-    Only the SampleGD_DU function uses this class.  Use the :class:`GXIMG` class
+    Only the SampleGD_DU function uses this class.  Use the :class:`geosoft.gxapi.GXIMG` class
     instead.
     """
 
@@ -34,19 +36,19 @@ class GXGD:
         self._wrapper = wrapper if wrapper else gxapi_cy.WrapGD(GXContext._get_tls_geo(), 0)
 
     @classmethod
-    def null(cls) -> 'GXGD':
+    def null(cls):
         """
-        A null (undefined) instance of :class:`GXGD`
+        A null (undefined) instance of :class:`geosoft.gxapi.GXGD`
         
-        :returns: A null :class:`GXGD`
+        :returns: A null :class:`geosoft.gxapi.GXGD`
         """
         return cls()
 
-    def is_null(self) -> bool:
+    def is_null(self):
         """
-        Check if the instance of :class:`GXGD` is null (undefined)`
+        Check if the instance of :class:`geosoft.gxapi.GXGD` is null (undefined)`
         
-        :returns: True if this is a null (undefined) instance of :class:`GXGD`, False otherwise.
+        :returns: True if this is a null (undefined) instance of :class:`geosoft.gxapi.GXGD`, False otherwise.
         """
         return self._wrapper.handle == 0
 
@@ -58,7 +60,10 @@ class GXGD:
 
 
     @classmethod
-    def create(cls, p1: str, p2: int) -> 'GXGD':
+    def create(cls, p1, p2):
+        """
+        This method creates a :class:`geosoft.gxapi.GXGD` object.
+        """
         ret_val = gxapi_cy.WrapGD.create(GXContext._get_tls_geo(), p1.encode(), p2)
         return GXGD(ret_val)
 

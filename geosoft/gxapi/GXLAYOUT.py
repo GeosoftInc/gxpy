@@ -1,8 +1,10 @@
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+from typing import NewType
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
+
 
 ### endblock ClassImports
 
@@ -43,19 +45,19 @@ class GXLAYOUT:
         self._wrapper = wrapper if wrapper else gxapi_cy.WrapLAYOUT(GXContext._get_tls_geo(), 0)
 
     @classmethod
-    def null(cls) -> 'GXLAYOUT':
+    def null(cls):
         """
-        A null (undefined) instance of :class:`GXLAYOUT`
+        A null (undefined) instance of :class:`geosoft.gxapi.GXLAYOUT`
         
-        :returns: A null :class:`GXLAYOUT`
+        :returns: A null :class:`geosoft.gxapi.GXLAYOUT`
         """
         return cls()
 
-    def is_null(self) -> bool:
+    def is_null(self):
         """
-        Check if the instance of :class:`GXLAYOUT` is null (undefined)`
+        Check if the instance of :class:`geosoft.gxapi.GXLAYOUT` is null (undefined)`
         
-        :returns: True if this is a null (undefined) instance of :class:`GXLAYOUT`, False otherwise.
+        :returns: True if this is a null (undefined) instance of :class:`geosoft.gxapi.GXLAYOUT`, False otherwise.
         """
         return self._wrapper.handle == 0
 
@@ -67,28 +69,46 @@ class GXLAYOUT:
 
 
 
-    def calculate_rects(self, p2: float_ref, p3: float_ref, p4: float_ref, p5: float_ref) -> None:
+    def calculate_rects(self, p2, p3, p4, p5):
+        """
+        Calculate new positions based on initial conditions and constraints
+
+        **Note:**
+
+        Use iGetRectangle to obtain the results for the other rectangles. Depending
+        on the constraints set the parent rectangle may also change
+        after the calculation (returned here for convenience).
+        """
         p2.value, p3.value, p4.value, p5.value = self._wrapper.calculate_rects(p2.value, p3.value, p4.value, p5.value)
         
 
 
 
 
-    def clear_all(self) -> None:
+    def clear_all(self):
+        """
+        Remove all children and constraints from layout
+        """
         self._wrapper.clear_all()
         
 
 
 
 
-    def clear_constraints(self) -> None:
+    def clear_constraints(self):
+        """
+        Remove all constraints from layout
+        """
         self._wrapper.clear_constraints()
         
 
 
 
     @classmethod
-    def create(cls, p1: int, p2: str) -> 'GXLAYOUT':
+    def create(cls, p1, p2):
+        """
+        Creates a layout calculation object
+        """
         ret_val = gxapi_cy.WrapLAYOUT.create(GXContext._get_tls_geo(), p1, p2.encode())
         return GXLAYOUT(ret_val)
 
@@ -97,49 +117,104 @@ class GXLAYOUT:
 
 
 
-    def get_rectangle(self, p2: int, p3: float_ref, p4: float_ref, p5: float_ref, p6: float_ref) -> None:
+    def get_rectangle(self, p2, p3, p4, p5, p6):
+        """
+        Gets the current bounds for a rectangle or the parent layout
+        """
         p3.value, p4.value, p5.value, p6.value = self._wrapper.get_rectangle(p2, p3.value, p4.value, p5.value, p6.value)
         
 
 
 
 
-    def get_rect_name(self, p2: int, p3: str_ref) -> None:
+    def get_rect_name(self, p2, p3):
+        """
+        Gets an optional name the current info for a rectangle or the parent layout
+        """
         p3.value = self._wrapper.get_rect_name(p2, p3.value.encode())
         
 
 
 
 
-    def add_constraint(self, p2: int, p3: int, p4: int, p5: int, p6: float, p7: float) -> int:
+    def add_constraint(self, p2, p3, p4, p5, p6, p7):
+        """
+        Add a constraint between any two rectangles or to one with absolute positioning
+
+        **Note:**
+
+        Constraints can be applied between 2 rectangles in the layout, or to 1 rectangle with
+        absolute positioning. Use the constraints to control left, right, bottom, top,
+        width, height, or centering configurations. Examples:
+        
+        (ordered as rectangle from, constraint from, rectangle to, constraint to, offset modifier, multiplicative modifier)
+        
+        A, :attr:`geosoft.gxapi.LAYOUT_CONSTR_LEFT`, B, :attr:`geosoft.gxapi.LAYOUT_CONSTR_LEFT`, 0, 0, 1.0 		               Set left position of A equal to left pos of B
+        A, :attr:`geosoft.gxapi.LAYOUT_CONSTR_LEFT`, B, :attr:`geosoft.gxapi.LAYOUT_CONSTR_RIGHT`, 0, 0, 1.0		               Set left pos of A equal to right of B
+        
+        The offset modifier is used for additive manipulation of constraints
+        A, :attr:`geosoft.gxapi.LAYOUT_CONSTR_LEFT`, B, :attr:`geosoft.gxapi.LAYOUT_CONSTR_LEFT`, 10, 0, 1.0		               Set left pos of A equal to left of B, plus 10
+        A, :attr:`geosoft.gxapi.LAYOUT_CONSTR_BOTTOM`, B, :attr:`geosoft.gxapi.LAYOUT_CONSTR_TOP`, -20, 0, 1.0	               Set bottom of A equal to top of B, minus 20
+        
+        Multiplicative manipulation of constraints
+        A, :attr:`geosoft.gxapi.LAYOUT_CONSTR_WIDTH`, B, :attr:`geosoft.gxapi.LAYOUT_CONSTR_WIDTH`, 0, 0.5	                  Set the width of A equal to 0.5 times the width of B
+        A, :attr:`geosoft.gxapi.LAYOUT_CONSTR_HEIGHT`, B, :attr:`geosoft.gxapi.LAYOUT_CONSTR_WIDTH`, 0, 1.2	                  Set the height of A equal to 1.2 times the width of B
+        
+        You can use BOTH the multiplicative and offset modifiers in conjunction (multiplicative gets precedence)
+        A, :attr:`geosoft.gxapi.LAYOUT_CONSTR_WIDTH`, B, :attr:`geosoft.gxapi.LAYOUT_CONSTR_WIDTH`, 10, 0.5 	                  A(width) = (0.5 * B(width)) + 10
+        A, :attr:`geosoft.gxapi.LAYOUT_CONSTR_LEFT`, B, :attr:`geosoft.gxapi.LAYOUT_CONSTR_WIDTH`, -20, 0.1	                  A(left) = (0.1 * B(width)) + (-20)
+        
+        If second node is -2, use absolute positioning
+        A,:attr:`geosoft.gxapi.LAYOUT_CONSTR_LEFT`,-2,<ignored>,25,<ignored>,<ignored> 	               Position left of A at position 25
+        A,:attr:`geosoft.gxapi.LAYOUT_CONSTR_WIDTH`,-2,<ignored>,30,<ignored>,<ignored>	               Set width of A to 30
+        
+        Use the MOVE constraints to move an entire window without resizing
+        A, :attr:`geosoft.gxapi.LAYOUT_CONSTR_MOVEL`, B, :attr:`geosoft.gxapi.LAYOUT_CONSTR_LEFT`, 0, 0, 1.0	                  Move node A, align left with left side of B
+        A, :attr:`geosoft.gxapi.LAYOUT_CONSTR_MOVEL`, B, :attr:`geosoft.gxapi.LAYOUT_CONSTR_RIGHT`, 0, 0, 1.0	               Move node A, align left with right side of B
+        A, :attr:`geosoft.gxapi.LAYOUT_CONSTR_MOVET`, B, :attr:`geosoft.gxapi.LAYOUT_CONSTR_WIDTH`, 0, 0, 1.0	               Move node A, align bottom to position equal to width of B
+        A, :attr:`geosoft.gxapi.LAYOUT_CONSTR_MOVER`, B, :attr:`geosoft.gxapi.LAYOUT_CONSTR_RIGHT`, 10, 1.1	                  Move node A, align right to 1.1*right of B, plus 10
+        A, :attr:`geosoft.gxapi.LAYOUT_CONSTR_MOVEL`, NULL, 10, 0, 1.0	                                 Move node A, align left at position 10
+        """
         ret_val = self._wrapper.add_constraint(p2, p3, p4, p5, p6, p7)
         return ret_val
 
 
 
 
-    def add_rectangle(self, p2: float, p3: float, p4: float, p5: float) -> int:
+    def add_rectangle(self, p2, p3, p4, p5):
+        """
+        Adds a rectangle as one of the layout's children (Higer.
+        """
         ret_val = self._wrapper.add_rectangle(p2, p3, p4, p5)
         return ret_val
 
 
 
 
-    def num_rectangles(self) -> int:
+    def num_rectangles(self):
+        """
+        Returns the number of children in the list.
+        """
         ret_val = self._wrapper.num_rectangles()
         return ret_val
 
 
 
 
-    def set_rectangle(self, p2: int, p3: float, p4: float, p5: float, p6: float) -> None:
+    def set_rectangle(self, p2, p3, p4, p5, p6):
+        """
+        Sets the current bounds for a rectangle previously added to the layout
+        """
         self._wrapper.set_rectangle(p2, p3, p4, p5, p6)
         
 
 
 
 
-    def set_rectangle_name(self, p2: int, p3: str) -> None:
+    def set_rectangle_name(self, p2, p3):
+        """
+        Sets an optional name the current info for a rectangle or the parent layout
+        """
         self._wrapper.set_rectangle_name(p2, p3.encode())
         
 

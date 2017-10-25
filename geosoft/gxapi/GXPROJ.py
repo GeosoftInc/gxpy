@@ -1,8 +1,10 @@
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+from typing import NewType
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
+
 
 ### endblock ClassImports
 
@@ -32,19 +34,19 @@ class GXPROJ:
         self._wrapper = wrapper if wrapper else gxapi_cy.WrapPROJ(GXContext._get_tls_geo(), 0)
 
     @classmethod
-    def null(cls) -> 'GXPROJ':
+    def null(cls):
         """
-        A null (undefined) instance of :class:`GXPROJ`
+        A null (undefined) instance of :class:`geosoft.gxapi.GXPROJ`
         
-        :returns: A null :class:`GXPROJ`
+        :returns: A null :class:`geosoft.gxapi.GXPROJ`
         """
         return cls()
 
-    def is_null(self) -> bool:
+    def is_null(self):
         """
-        Check if the instance of :class:`GXPROJ` is null (undefined)`
+        Check if the instance of :class:`geosoft.gxapi.GXPROJ` is null (undefined)`
         
-        :returns: True if this is a null (undefined) instance of :class:`GXPROJ`, False otherwise.
+        :returns: True if this is a null (undefined) instance of :class:`geosoft.gxapi.GXPROJ`, False otherwise.
         """
         return self._wrapper.handle == 0
 
@@ -56,7 +58,10 @@ class GXPROJ:
 
 
     @classmethod
-    def drop_map_clip_data(cls, p1: int) -> None:
+    def drop_map_clip_data(cls, p1):
+        """
+        Drop Map clipboard data in the current project (workspace background)
+        """
         gxapi_cy.WrapPROJ.drop_map_clip_data(GXContext._get_tls_geo(), p1)
         
 
@@ -67,84 +72,223 @@ class GXPROJ:
 
 
     @classmethod
-    def add_document(cls, p1: str, p2: str, p3: int) -> int:
+    def add_document(cls, p1, p2, p3):
+        """
+        Adds (and opens) a document file in the current project.
+
+        **Note:**
+
+        The passed file name must be a valid
+        file name complete with an extension and
+        qualifiers (if applicable).
+        
+        The type string can be one of the following:
+        
+            Database      
+            Grid          
+            Map           
+            3DView        
+            Voxel         
+            VoxelInversion
+            GMS3D         
+            GMS2D
+        """
         ret_val = gxapi_cy.WrapPROJ.add_document(GXContext._get_tls_geo(), p1.encode(), p2.encode(), p3)
         return ret_val
 
 
 
     @classmethod
-    def add_document_without_opening(cls, p1: str, p2: str) -> int:
+    def add_document_without_opening(cls, p1, p2):
+        """
+        Adds (and opens) a document file in the current project.
+
+        **Note:**
+
+        The passed file name must be a valid
+        file name complete with an extension and
+        qualifiers (if applicable).
+        
+        The type string can be one of the following:
+        
+            Database      
+            Grid          
+            Map           
+            3DView        
+            Voxel         
+            VoxelInversion
+            GMS3D         
+            GMS2D
+        """
         ret_val = gxapi_cy.WrapPROJ.add_document_without_opening(GXContext._get_tls_geo(), p1.encode(), p2.encode())
         return ret_val
 
 
 
     @classmethod
-    def get_command_environment(cls) -> int:
+    def get_command_environment(cls):
+        """
+        The current command environment
+        """
         ret_val = gxapi_cy.WrapPROJ.get_command_environment(GXContext._get_tls_geo())
         return ret_val
 
 
 
     @classmethod
-    def list_documents(cls, p1: 'GXVV', p2: str) -> int:
+    def list_documents(cls, p1, p2):
+        """
+        Fills a :class:`geosoft.gxapi.GXVV` with documents of a certain type.
+
+        **Note:**
+
+        The type string can be one of the following:
+        Database         List Databases.
+        Grid             List Grids.
+        Map              List Maps.
+        3DView           List 3D Views.
+        Voxel            List Voxels.
+        VoxelInversion   List VOXI Documents.
+        :class:`geosoft.gxapi.GXMXD`              List ArcGIS MXDs.
+        GMS3D            List GM-:class:`geosoft.gxapi.GXSYS` 3D Models.
+        GMS2D            List GM-:class:`geosoft.gxapi.GXSYS` 2D Models.
+        All              Lists all files.
+        """
         ret_val = gxapi_cy.WrapPROJ.list_documents(GXContext._get_tls_geo(), p1._wrapper, p2.encode())
         return ret_val
 
 
 
     @classmethod
-    def list_loaded_documents(cls, p1: 'GXVV', p2: str) -> int:
+    def list_loaded_documents(cls, p1, p2):
+        """
+        Fills a :class:`geosoft.gxapi.GXVV` with loaded documents of a certain type.
+
+        **Note:**
+
+        The type string can be one of the following:
+        Database         List Databases.
+        Grid             List Grids.
+        Map              List Maps.
+        3DView           List 3D Views.
+        Voxel            List Voxels.
+        VoxelInversion   List VOXI Documents.
+        :class:`geosoft.gxapi.GXMXD`              List ArcGIS MXDs.
+        GMS3D            List GM-:class:`geosoft.gxapi.GXSYS` 3D Models.
+        GMS2D            List GM-:class:`geosoft.gxapi.GXSYS` 2D Models.
+        All              Lists all files.
+        """
         ret_val = gxapi_cy.WrapPROJ.list_loaded_documents(GXContext._get_tls_geo(), p1._wrapper, p2.encode())
         return ret_val
 
 
 
     @classmethod
-    def current_document(cls, p1: str_ref, p3: str_ref) -> None:
+    def current_document(cls, p1, p3):
+        """
+        Get the name and type of the loaded document with focus.
+        """
         p1.value, p3.value = gxapi_cy.WrapPROJ.current_document(GXContext._get_tls_geo(), p1.value.encode(), p3.value.encode())
         
 
 
 
     @classmethod
-    def current_document_of_type(cls, p1: str_ref, p3: str) -> None:
+    def current_document_of_type(cls, p1, p3):
+        """
+        Get the name of a loaded document of a specific type.
+        """
         p1.value = gxapi_cy.WrapPROJ.current_document_of_type(GXContext._get_tls_geo(), p1.value.encode(), p3.encode())
         
 
 
 
     @classmethod
-    def list_tools(cls, p1: 'GXLST', p2: int) -> int:
+    def list_tools(cls, p1, p2):
+        """
+        Fills an :class:`geosoft.gxapi.GXLST` object with tools of a certain type and
+        notes the current visibility setting.
+
+        **Note:**
+
+        GX will terminate if there is an error.
+        
+        :class:`geosoft.gxapi.GXLST` object will hold the tool name in the name column and
+        include whether the tool is currently visible in the value
+        column (1=visible, 0-hidden).
+        """
         ret_val = gxapi_cy.WrapPROJ.list_tools(GXContext._get_tls_geo(), p1._wrapper, p2)
         return ret_val
 
 
 
     @classmethod
-    def remove_document(cls, p1: str) -> int:
+    def remove_document(cls, p1):
+        """
+        Removes (and closes if visible) a document from the current project.
+
+        **Note:**
+
+        The passed file name must be a valid
+        file name complete with an extension and
+        qualifiers (if applicable).
+        """
         ret_val = gxapi_cy.WrapPROJ.remove_document(GXContext._get_tls_geo(), p1.encode())
         return ret_val
 
 
 
     @classmethod
-    def remove_tool(cls, p1: str) -> int:
+    def remove_tool(cls, p1):
+        """
+        Removes (and closes if visible) a auxiliary tool from the current project.
+
+        **Note:**
+
+        Nothing
+        """
         ret_val = gxapi_cy.WrapPROJ.remove_tool(GXContext._get_tls_geo(), p1.encode())
         return ret_val
 
 
 
     @classmethod
-    def save_close_documents(cls, p1: str) -> int:
+    def save_close_documents(cls, p1):
+        """
+        Saves and closes (if visible) documents contained in the current project.
+
+        **Note:**
+
+        This wrapper brings up the save dialog tool to allow
+        the user to save the modified documents for this project.
+        Only documents that have actually changed will be listed.
+        
+        The type string can be one of the following:
+        
+            Database      
+            Grid          
+            Map           
+            3DView        
+            Voxel         
+            VoxelInversion
+            GMS3D         
+            GMS2D
+            All
+        """
         ret_val = gxapi_cy.WrapPROJ.save_close_documents(GXContext._get_tls_geo(), p1.encode())
         return ret_val
 
 
 
     @classmethod
-    def get_name(cls, p1: str_ref) -> None:
+    def get_name(cls, p1):
+        """
+        Return the name of the project file.
+
+        **Note:**
+
+        Return the name of the project file.
+        """
         p1.value = gxapi_cy.WrapPROJ.get_name(GXContext._get_tls_geo(), p1.value.encode())
         
 

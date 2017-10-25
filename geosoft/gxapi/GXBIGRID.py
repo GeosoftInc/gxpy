@@ -1,8 +1,10 @@
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+from typing import NewType
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
+
 
 ### endblock ClassImports
 
@@ -33,19 +35,19 @@ class GXBIGRID:
         self._wrapper = wrapper if wrapper else gxapi_cy.WrapBIGRID(GXContext._get_tls_geo(), 0)
 
     @classmethod
-    def null(cls) -> 'GXBIGRID':
+    def null(cls):
         """
-        A null (undefined) instance of :class:`GXBIGRID`
+        A null (undefined) instance of :class:`geosoft.gxapi.GXBIGRID`
         
-        :returns: A null :class:`GXBIGRID`
+        :returns: A null :class:`geosoft.gxapi.GXBIGRID`
         """
         return cls()
 
-    def is_null(self) -> bool:
+    def is_null(self):
         """
-        Check if the instance of :class:`GXBIGRID` is null (undefined)`
+        Check if the instance of :class:`geosoft.gxapi.GXBIGRID` is null (undefined)`
         
-        :returns: True if this is a null (undefined) instance of :class:`GXBIGRID`, False otherwise.
+        :returns: True if this is a null (undefined) instance of :class:`geosoft.gxapi.GXBIGRID`, False otherwise.
         """
         return self._wrapper.handle == 0
 
@@ -57,14 +59,27 @@ class GXBIGRID:
 
 
 
-    def clear(self) -> None:
+    def clear(self):
+        """
+        Clears all the parameters in a :class:`geosoft.gxapi.GXBIGRID` object
+        """
         self._wrapper.clear()
         
 
 
 
     @classmethod
-    def create(cls) -> 'GXBIGRID':
+    def create(cls):
+        """
+        Create a handle to a Bigrid object
+
+        **Note:**
+
+        The Bigrid object is initially empty. It will store the
+        control file parameters which the Bigrid program needs
+        to execute. Use the LoadParms_BIGRID method to get the
+        control file parameters into the :class:`geosoft.gxapi.GXBIGRID` object.
+        """
         ret_val = gxapi_cy.WrapBIGRID.create(GXContext._get_tls_geo())
         return GXBIGRID(ret_val)
 
@@ -73,35 +88,67 @@ class GXBIGRID:
 
 
 
-    def load_parms(self, p2: str) -> int:
+    def load_parms(self, p2):
+        """
+        Retrieves a Bigrid object's control parameters from a file,
+        or sets the parameters to default if the file doesn't exist.
+
+        **Note:**
+
+        If the control file name passed into this function is a file
+        which does not exist, then the defaults for a Bigrid control
+        file will be generated and put into the :class:`geosoft.gxapi.GXBIGRID` object.
+        Otherwise, the control file's settings are retrieved from
+        the file and loaded into the :class:`geosoft.gxapi.GXBIGRID` object.
+        """
         ret_val = self._wrapper.load_parms(p2.encode())
         return ret_val
 
 
 
 
-    def load_warp(self, p2: str, p3: str, p4: str) -> int:
+    def load_warp(self, p2, p3, p4):
+        """
+        Load a warp projection.
+        """
         ret_val = self._wrapper.load_warp(p2.encode(), p3.encode(), p4.encode())
         return ret_val
 
 
 
 
-    def run(self, p2: str, p3: 'GXDAT', p4: 'GXDAT') -> None:
+    def run(self, p2, p3, p4):
+        """
+        Executes the Bigrid program, using the input channel and
+        output file parameters.
+        """
         self._wrapper.run(p2.encode(), p3._wrapper, p4._wrapper)
         
 
 
 
 
-    def run2(self, p2: str, p3: 'GXDAT', p4: 'GXDAT', p5: 'GXIPJ') -> None:
+    def run2(self, p2, p3, p4, p5):
+        """
+        Executes the Bigrid program, using the input channel and
+        output file parameters with a projection handle.
+        """
         self._wrapper.run2(p2.encode(), p3._wrapper, p4._wrapper, p5._wrapper)
         
 
 
 
 
-    def save_parms(self, p2: str) -> None:
+    def save_parms(self, p2):
+        """
+        Puts the Bigrid object's control parameters back into
+        its control file.
+
+        **Note:**
+
+        If the control file did not previously exist, it will be
+        created. Otherwise, the old file will be overwritten.
+        """
         self._wrapper.save_parms(p2.encode())
         
 

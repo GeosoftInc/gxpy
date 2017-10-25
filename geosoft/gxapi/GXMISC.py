@@ -1,8 +1,10 @@
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+from typing import NewType
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
+
 
 ### endblock ClassImports
 
@@ -33,19 +35,19 @@ class GXMISC:
         self._wrapper = wrapper if wrapper else gxapi_cy.WrapMISC(GXContext._get_tls_geo(), 0)
 
     @classmethod
-    def null(cls) -> 'GXMISC':
+    def null(cls):
         """
-        A null (undefined) instance of :class:`GXMISC`
+        A null (undefined) instance of :class:`geosoft.gxapi.GXMISC`
         
-        :returns: A null :class:`GXMISC`
+        :returns: A null :class:`geosoft.gxapi.GXMISC`
         """
         return cls()
 
-    def is_null(self) -> bool:
+    def is_null(self):
         """
-        Check if the instance of :class:`GXMISC` is null (undefined)`
+        Check if the instance of :class:`geosoft.gxapi.GXMISC` is null (undefined)`
         
-        :returns: True if this is a null (undefined) instance of :class:`GXMISC`, False otherwise.
+        :returns: True if this is a null (undefined) instance of :class:`geosoft.gxapi.GXMISC`, False otherwise.
         """
         return self._wrapper.handle == 0
 
@@ -57,21 +59,42 @@ class GXMISC:
 
 
     @classmethod
-    def convert_cg3to_raw(cls, p1: str, p2: str, p3: int) -> None:
+    def convert_cg3to_raw(cls, p1, p2, p3):
+        """
+        Convert a CG3 dump to RAW format.
+        """
         gxapi_cy.WrapMISC.convert_cg3to_raw(GXContext._get_tls_geo(), p1.encode(), p2.encode(), p3)
         
 
 
 
     @classmethod
-    def convert_cg5to_raw(cls, p1: str, p2: str, p3: int) -> None:
+    def convert_cg5to_raw(cls, p1, p2, p3):
+        """
+        Convert a CG5 dump to RAW format.
+        """
         gxapi_cy.WrapMISC.convert_cg5to_raw(GXContext._get_tls_geo(), p1.encode(), p2.encode(), p3)
         
 
 
 
     @classmethod
-    def ukoa2_tbl(cls, p1: str, p2: str, p3: str) -> None:
+    def ukoa2_tbl(cls, p1, p2, p3):
+        """
+        Convert a UKOA file to a location TBL file.
+
+        **Note:**
+
+        The TBL file will contain the following fields:
+        
+        = Line:string16
+        = Station:long
+        = Latitude:double
+        = Longitude:double
+        = X:double
+        = Y:double
+        = Elevation:double
+        """
         gxapi_cy.WrapMISC.ukoa2_tbl(GXContext._get_tls_geo(), p1.encode(), p2.encode(), p3.encode())
         
 

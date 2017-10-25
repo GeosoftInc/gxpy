@@ -1,8 +1,10 @@
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+from typing import NewType
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
+
 
 ### endblock ClassImports
 
@@ -32,19 +34,19 @@ class GXDATALINKD:
         self._wrapper = wrapper if wrapper else gxapi_cy.WrapDATALINKD(GXContext._get_tls_geo(), 0)
 
     @classmethod
-    def null(cls) -> 'GXDATALINKD':
+    def null(cls):
         """
-        A null (undefined) instance of :class:`GXDATALINKD`
+        A null (undefined) instance of :class:`geosoft.gxapi.GXDATALINKD`
         
-        :returns: A null :class:`GXDATALINKD`
+        :returns: A null :class:`geosoft.gxapi.GXDATALINKD`
         """
         return cls()
 
-    def is_null(self) -> bool:
+    def is_null(self):
         """
-        Check if the instance of :class:`GXDATALINKD` is null (undefined)`
+        Check if the instance of :class:`geosoft.gxapi.GXDATALINKD` is null (undefined)`
         
-        :returns: True if this is a null (undefined) instance of :class:`GXDATALINKD`, False otherwise.
+        :returns: True if this is a null (undefined) instance of :class:`geosoft.gxapi.GXDATALINKD`, False otherwise.
         """
         return self._wrapper.handle == 0
 
@@ -56,35 +58,66 @@ class GXDATALINKD:
 
 
     @classmethod
-    def create_arc_lyr(cls, p1: str) -> 'GXDATALINKD':
+    def create_arc_lyr(cls, p1):
+        """
+        Create an :class:`geosoft.gxapi.GXDATALINKD` object from a ArcGIS LYR file
+
+        **Note:**
+
+        Needs ArcEngine licence.
+        """
         ret_val = gxapi_cy.WrapDATALINKD.create_arc_lyr(GXContext._get_tls_geo(), p1.encode())
         return GXDATALINKD(ret_val)
 
 
 
     @classmethod
-    def create_arc_lyr_ex(cls, p1: str, p2: int) -> 'GXDATALINKD':
+    def create_arc_lyr_ex(cls, p1, p2):
+        """
+        Create an :class:`geosoft.gxapi.GXDATALINKD` object from a ArcGIS LYR file
+
+        **Note:**
+
+        Needs ArcEngine licence.
+        """
         ret_val = gxapi_cy.WrapDATALINKD.create_arc_lyr_ex(GXContext._get_tls_geo(), p1.encode(), p2)
         return GXDATALINKD(ret_val)
 
 
 
     @classmethod
-    def create_arc_lyr_from_tmp(cls, p1: str) -> 'GXDATALINKD':
+    def create_arc_lyr_from_tmp(cls, p1):
+        """
+        Create an :class:`geosoft.gxapi.GXDATALINKD` object from a temporary ArcGIS LYR file
+
+        **Note:**
+
+        Needs ArcEngine licence.
+        """
         ret_val = gxapi_cy.WrapDATALINKD.create_arc_lyr_from_tmp(GXContext._get_tls_geo(), p1.encode())
         return GXDATALINKD(ret_val)
 
 
 
     @classmethod
-    def create_arc_lyr_from_tmp_ex(cls, p1: str, p2: int) -> 'GXDATALINKD':
+    def create_arc_lyr_from_tmp_ex(cls, p1, p2):
+        """
+        Create an :class:`geosoft.gxapi.GXDATALINKD` object from a temporary ArcGIS LYR file
+
+        **Note:**
+
+        Needs ArcEngine licence.
+        """
         ret_val = gxapi_cy.WrapDATALINKD.create_arc_lyr_from_tmp_ex(GXContext._get_tls_geo(), p1.encode(), p2)
         return GXDATALINKD(ret_val)
 
 
 
     @classmethod
-    def create_bing(cls, p1: int) -> 'GXDATALINKD':
+    def create_bing(cls, p1):
+        """
+        Create an :class:`geosoft.gxapi.GXDATALINKD` object for a BING dataset
+        """
         ret_val = gxapi_cy.WrapDATALINKD.create_bing(GXContext._get_tls_geo(), p1)
         return GXDATALINKD(ret_val)
 
@@ -93,14 +126,20 @@ class GXDATALINKD:
 
 
 
-    def get_extents(self, p2: float_ref, p3: float_ref, p4: float_ref, p5: float_ref) -> None:
+    def get_extents(self, p2, p3, p4, p5):
+        """
+        Get the data extents of the DATALINK Display object.
+        """
         p2.value, p3.value, p4.value, p5.value = self._wrapper.get_extents(p2.value, p3.value, p4.value, p5.value)
         
 
 
 
 
-    def get_ipj(self, p2: 'GXIPJ') -> None:
+    def get_ipj(self, p2):
+        """
+        Get the projection of the DATALINK Display object.
+        """
         self._wrapper.get_ipj(p2._wrapper)
         
 

@@ -1,8 +1,10 @@
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+from typing import NewType
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
+
 
 ### endblock ClassImports
 
@@ -16,7 +18,7 @@ class GXUNC:
     """
     GXUNC class.
 
-    This library is not a class. Use the :class:`GXUNC` library functions
+    This library is not a class. Use the :class:`geosoft.gxapi.GXUNC` library functions
     to work with Unicode characters and strings. Since version 6.2
     all strings are represented internally in the the GX engine
     as UTF-8. The character set concept was discarded as a way to
@@ -39,19 +41,19 @@ class GXUNC:
         self._wrapper = wrapper if wrapper else gxapi_cy.WrapUNC(GXContext._get_tls_geo(), 0)
 
     @classmethod
-    def null(cls) -> 'GXUNC':
+    def null(cls):
         """
-        A null (undefined) instance of :class:`GXUNC`
+        A null (undefined) instance of :class:`geosoft.gxapi.GXUNC`
         
-        :returns: A null :class:`GXUNC`
+        :returns: A null :class:`geosoft.gxapi.GXUNC`
         """
         return cls()
 
-    def is_null(self) -> bool:
+    def is_null(self):
         """
-        Check if the instance of :class:`GXUNC` is null (undefined)`
+        Check if the instance of :class:`geosoft.gxapi.GXUNC` is null (undefined)`
         
-        :returns: True if this is a null (undefined) instance of :class:`GXUNC`, False otherwise.
+        :returns: True if this is a null (undefined) instance of :class:`geosoft.gxapi.GXUNC`, False otherwise.
         """
         return self._wrapper.handle == 0
 
@@ -63,28 +65,49 @@ class GXUNC:
 
 
     @classmethod
-    def is_valid_utf16_char(cls, p1: int) -> int:
+    def is_valid_utf16_char(cls, p1):
+        """
+        Check if the UTF-16 value is a valid Unicode character code point.
+        """
         ret_val = gxapi_cy.WrapUNC.is_valid_utf16_char(GXContext._get_tls_geo(), p1)
         return ret_val
 
 
 
     @classmethod
-    def valid_symbol(cls, p1: str, p2: int, p3: int) -> int:
+    def valid_symbol(cls, p1, p2, p3):
+        """
+        See if a Symbol number is valid in a particular font.
+        """
         ret_val = gxapi_cy.WrapUNC.valid_symbol(GXContext._get_tls_geo(), p1.encode(), p2, p3)
         return ret_val
 
 
 
     @classmethod
-    def utf16_val_to_str(cls, p1: int, p2: str_ref) -> None:
+    def utf16_val_to_str(cls, p1, p2):
+        """
+        Convert a UTF-16 value to a UTF-8 encoded string.
+
+        **Note:**
+
+        An empty string will be returned for invalid symbols
+        """
         p2.value = gxapi_cy.WrapUNC.utf16_val_to_str(GXContext._get_tls_geo(), p1, p2.value.encode())
         
 
 
 
     @classmethod
-    def validate_symbols(cls, p1: 'GXVV', p2: str, p3: int) -> None:
+    def validate_symbols(cls, p1, p2, p3):
+        """
+        High performance method to see if a set of symbols
+        are valid in a particular font.
+
+        **Note:**
+
+        Invalid symbols in the :class:`geosoft.gxapi.GXVV` will be set to -1 by this call. :class:`geosoft.gxapi.GXVV` has to be of type :attr:`geosoft.gxapi.GS_LONG`.
+        """
         gxapi_cy.WrapUNC.validate_symbols(GXContext._get_tls_geo(), p1._wrapper, p2.encode(), p3)
         
 

@@ -1,8 +1,10 @@
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+from typing import NewType
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
+
 
 ### endblock ClassImports
 
@@ -16,8 +18,8 @@ class GXMXD:
     """
     GXMXD class.
 
-    A :class:`GXMXD` wraps and provides manipulation and usage for
-    the content of an ArcGIS :class:`GXMXD` file.
+    A :class:`geosoft.gxapi.GXMXD` wraps and provides manipulation and usage for
+    the content of an ArcGIS :class:`geosoft.gxapi.GXMXD` file.
     """
 
     def __enter__(self):
@@ -33,19 +35,19 @@ class GXMXD:
         self._wrapper = wrapper if wrapper else gxapi_cy.WrapMXD(GXContext._get_tls_geo(), 0)
 
     @classmethod
-    def null(cls) -> 'GXMXD':
+    def null(cls):
         """
-        A null (undefined) instance of :class:`GXMXD`
+        A null (undefined) instance of :class:`geosoft.gxapi.GXMXD`
         
-        :returns: A null :class:`GXMXD`
+        :returns: A null :class:`geosoft.gxapi.GXMXD`
         """
         return cls()
 
-    def is_null(self) -> bool:
+    def is_null(self):
         """
-        Check if the instance of :class:`GXMXD` is null (undefined)`
+        Check if the instance of :class:`geosoft.gxapi.GXMXD` is null (undefined)`
         
-        :returns: True if this is a null (undefined) instance of :class:`GXMXD`, False otherwise.
+        :returns: True if this is a null (undefined) instance of :class:`geosoft.gxapi.GXMXD`, False otherwise.
         """
         return self._wrapper.handle == 0
 
@@ -57,21 +59,30 @@ class GXMXD:
 
 
     @classmethod
-    def create_metadata(cls, p1: str) -> None:
+    def create_metadata(cls, p1):
+        """
+        Create metadata for this brand new :class:`geosoft.gxapi.GXMXD` (we are the creator)
+        """
         gxapi_cy.WrapMXD.create_metadata(GXContext._get_tls_geo(), p1.encode())
         
 
 
 
     @classmethod
-    def convert_to_map(cls, p1: str, p2: str) -> None:
+    def convert_to_map(cls, p1, p2):
+        """
+        Create Geosoft map from ArcGIS :class:`geosoft.gxapi.GXMXD`
+        """
         gxapi_cy.WrapMXD.convert_to_map(GXContext._get_tls_geo(), p1.encode(), p2.encode())
         
 
 
 
     @classmethod
-    def sync(cls, p1: str) -> None:
+    def sync(cls, p1):
+        """
+        Syncronize any Metadata for this :class:`geosoft.gxapi.GXMXD`
+        """
         gxapi_cy.WrapMXD.sync(GXContext._get_tls_geo(), p1.encode())
         
 

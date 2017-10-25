@@ -1,8 +1,10 @@
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+from typing import NewType
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
+
 
 ### endblock ClassImports
 
@@ -34,19 +36,19 @@ class GXINTERNET:
         self._wrapper = wrapper if wrapper else gxapi_cy.WrapINTERNET(GXContext._get_tls_geo(), 0)
 
     @classmethod
-    def null(cls) -> 'GXINTERNET':
+    def null(cls):
         """
-        A null (undefined) instance of :class:`GXINTERNET`
+        A null (undefined) instance of :class:`geosoft.gxapi.GXINTERNET`
         
-        :returns: A null :class:`GXINTERNET`
+        :returns: A null :class:`geosoft.gxapi.GXINTERNET`
         """
         return cls()
 
-    def is_null(self) -> bool:
+    def is_null(self):
         """
-        Check if the instance of :class:`GXINTERNET` is null (undefined)`
+        Check if the instance of :class:`geosoft.gxapi.GXINTERNET` is null (undefined)`
         
-        :returns: True if this is a null (undefined) instance of :class:`GXINTERNET`, False otherwise.
+        :returns: True if this is a null (undefined) instance of :class:`geosoft.gxapi.GXINTERNET`, False otherwise.
         """
         return self._wrapper.handle == 0
 
@@ -58,14 +60,30 @@ class GXINTERNET:
 
 
     @classmethod
-    def download_http(cls, p1: str, p2: str, p3: int) -> int:
+    def download_http(cls, p1, p2, p3):
+        """
+        Download :class:`geosoft.gxapi.GXHTTP` file from the internet to file.
+
+        **Note:**
+
+        The file must be stored on a server that supports
+        the :class:`geosoft.gxapi.GXHTTP` protocol and not require a password.
+        """
         ret_val = gxapi_cy.WrapINTERNET.download_http(GXContext._get_tls_geo(), p1.encode(), p2.encode(), p3)
         return ret_val
 
 
 
     @classmethod
-    def send_mail(cls, p1: str, p2: str, p3: str, p4: str, p5: str, p6: str, p7: str, p8: str) -> None:
+    def send_mail(cls, p1, p2, p3, p4, p5, p6, p7, p8):
+        """
+        Prepaire an email for the user.
+
+        **Note:**
+
+        Requires a MAPI complient mail system to be installed
+        on the client machine.
+        """
         gxapi_cy.WrapINTERNET.send_mail(GXContext._get_tls_geo(), p1.encode(), p2.encode(), p3.encode(), p4.encode(), p5.encode(), p6.encode(), p7.encode(), p8.encode())
         
 

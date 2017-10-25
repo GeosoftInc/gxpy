@@ -1,8 +1,10 @@
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+from typing import NewType
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
+
 
 ### endblock ClassImports
 
@@ -16,7 +18,7 @@ class GXPAT:
     """
     GXPAT class.
 
-    A :class:`GXPAT` object is created from a Geosoft format pattern file.
+    A :class:`geosoft.gxapi.GXPAT` object is created from a Geosoft format pattern file.
     It contains all the individual patterns listed in the file.
     
     Notes: You may create your own fill patterns. They can be added to the "user.pat"
@@ -37,19 +39,19 @@ class GXPAT:
         self._wrapper = wrapper if wrapper else gxapi_cy.WrapPAT(GXContext._get_tls_geo(), 0)
 
     @classmethod
-    def null(cls) -> 'GXPAT':
+    def null(cls):
         """
-        A null (undefined) instance of :class:`GXPAT`
+        A null (undefined) instance of :class:`geosoft.gxapi.GXPAT`
         
-        :returns: A null :class:`GXPAT`
+        :returns: A null :class:`geosoft.gxapi.GXPAT`
         """
         return cls()
 
-    def is_null(self) -> bool:
+    def is_null(self):
         """
-        Check if the instance of :class:`GXPAT` is null (undefined)`
+        Check if the instance of :class:`geosoft.gxapi.GXPAT` is null (undefined)`
         
-        :returns: True if this is a null (undefined) instance of :class:`GXPAT`, False otherwise.
+        :returns: True if this is a null (undefined) instance of :class:`geosoft.gxapi.GXPAT`, False otherwise.
         """
         return self._wrapper.handle == 0
 
@@ -61,7 +63,10 @@ class GXPAT:
 
 
     @classmethod
-    def create(cls) -> 'GXPAT':
+    def create(cls):
+        """
+        Creates a pattern object with current default patterns.
+        """
         ret_val = gxapi_cy.WrapPAT.create(GXContext._get_tls_geo())
         return GXPAT(ret_val)
 
@@ -70,7 +75,16 @@ class GXPAT:
 
 
 
-    def get_lst(self, p2: str, p3: 'GXLST') -> None:
+    def get_lst(self, p2, p3):
+        """
+        Copies all pattern names into a :class:`geosoft.gxapi.GXLST` object.
+
+        **Note:**
+
+        Returns a list of the available patterns.
+        There will always be at least two items,
+        "None" and "Solid Fill"
+        """
         self._wrapper.get_lst(p2.encode(), p3._wrapper)
         
 

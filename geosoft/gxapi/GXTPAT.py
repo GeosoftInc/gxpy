@@ -1,8 +1,10 @@
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+from typing import NewType
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
+
 
 ### endblock ClassImports
 
@@ -27,9 +29,9 @@ class GXTPAT:
     Label:         Text to use as a short-form in labels, graphs etc.
     By default, this is the same as the code.
     ex: "FVol."
-    Pattern Attributes:  (See DEFAULT.:class:`GXPAT` in \\src\\etc for more inforation)
-    Pattern:       The Pattern Index; defined in DEFAULT.:class:`GXPAT`, or in the user's
-    USER.:class:`GXPAT` file. If not specified, defaults to 0 (solid fill).
+    Pattern Attributes:  (See DEFAULT.:class:`geosoft.gxapi.GXPAT` in \\src\\etc for more inforation)
+    Pattern:       The Pattern Index; defined in DEFAULT.:class:`geosoft.gxapi.GXPAT`, or in the user's
+    USER.:class:`geosoft.gxapi.GXPAT` file. If not specified, defaults to 0 (solid fill).
     Size:          The pattern tile size. If not specified, defaults to 2.0mm.
     Density:       The tiling density. If not specified, defaults to 1.0.
     Thickness:     The line thickness in the tile, expressed as a integer
@@ -64,19 +66,19 @@ class GXTPAT:
         self._wrapper = wrapper if wrapper else gxapi_cy.WrapTPAT(GXContext._get_tls_geo(), 0)
 
     @classmethod
-    def null(cls) -> 'GXTPAT':
+    def null(cls):
         """
-        A null (undefined) instance of :class:`GXTPAT`
+        A null (undefined) instance of :class:`geosoft.gxapi.GXTPAT`
         
-        :returns: A null :class:`GXTPAT`
+        :returns: A null :class:`geosoft.gxapi.GXTPAT`
         """
         return cls()
 
-    def is_null(self) -> bool:
+    def is_null(self):
         """
-        Check if the instance of :class:`GXTPAT` is null (undefined)`
+        Check if the instance of :class:`geosoft.gxapi.GXTPAT` is null (undefined)`
         
-        :returns: True if this is a null (undefined) instance of :class:`GXTPAT`, False otherwise.
+        :returns: True if this is a null (undefined) instance of :class:`geosoft.gxapi.GXTPAT`, False otherwise.
         """
         return self._wrapper.handle == 0
 
@@ -88,14 +90,24 @@ class GXTPAT:
 
 
 
-    def add_color(self, p2: str, p3: str, p4: str, p5: int) -> None:
+    def add_color(self, p2, p3, p4, p5):
+        """
+        Add a new color to the list
+
+        **Note:**
+
+        The new code must be unique; not in the existing list.
+        """
         self._wrapper.add_color(p2.encode(), p3.encode(), p4.encode(), p5)
         
 
 
 
     @classmethod
-    def create(cls) -> 'GXTPAT':
+    def create(cls):
+        """
+        Creates an empty thematic pattern object.
+        """
         ret_val = gxapi_cy.WrapTPAT.create(GXContext._get_tls_geo())
         return GXTPAT(ret_val)
 
@@ -104,35 +116,90 @@ class GXTPAT:
 
 
 
-    def code(self, p2: str) -> int:
+    def code(self, p2):
+        """
+        Find the index of a given thematic pattern
+        """
         ret_val = self._wrapper.code(p2.encode())
         return ret_val
 
 
 
 
-    def get_solid_pattern(self, p2: int, p3: str_ref, p5: str_ref, p7: str_ref, p9: int_ref) -> None:
+    def get_solid_pattern(self, p2, p3, p5, p7, p9):
+        """
+        Get solid pattern info from the :class:`geosoft.gxapi.GXTPAT`.
+
+        **Note:**
+
+        Returns the solid color, pattern foreground color, or symbol
+        color, along with the code, label and description.
+        """
         p3.value, p5.value, p7.value, p9.value = self._wrapper.get_solid_pattern(p2, p3.value.encode(), p5.value.encode(), p7.value.encode(), p9.value)
         
 
 
 
 
-    def size(self) -> int:
+    def size(self):
+        """
+        Returns the number of rows (items) in the :class:`geosoft.gxapi.GXTPAT` object.
+        """
         ret_val = self._wrapper.size()
         return ret_val
 
 
 
 
-    def load_csv(self, p2: str) -> None:
+    def load_csv(self, p2):
+        """
+        Load thematic patterns from a CSV file
+
+        **Note:**
+
+        The type of thematic patterns file is recognized from the types
+        of fields found inside it.
+        
+        The following fields are identified. Only the "CODE" field is
+        required, as the "default" thematic pattern is a solid black color.
+        
+        CODE   The pattern code (required by all types - CASE SENSITIVE)
+        LABEL  Longer text identifier to use in legends etc. (up to 31 characters)
+        DESCRIPTION Much longer text string (up to 127 characters).
+        
+        COLOR  Line color used in patterns, and for solid colors, the color.
+        If only this field is found (and none below), the pattern file
+        is assumed to be type TPAT_TYPE_COLOR.
+        
+        PATTERN         Geosoft pattern ID.
+        PAT_SIZE        Pattern tile size, or symbol size (default 2mm)
+        PAT_DENSITY     Pattern tile density (default 1.0)
+        PAT_THICKNESS   Pattern line thickness as % of size (default 5)
+        BACK_COLOR      Background color for the pattern. Also used for symbols
+        (Default background is transparent).
+        
+        SYMBFONT        Symbol font (e.g. "symbols.gfn")
+        SYMBNUM         Symbol number of the current font
+        SYMBROT         Symbol rotation
+        SYMBSCL         Additional scaling factor applied to the current size
+        """
         self._wrapper.load_csv(p2.encode())
         
 
 
 
 
-    def setup_translation_vv(self, p2: 'GXLTB', p3: int, p4: 'GXVV') -> None:
+    def setup_translation_vv(self, p2, p3, p4):
+        """
+        Initializes a :class:`geosoft.gxapi.GXVV` used to map :class:`geosoft.gxapi.GXTPAT` indices to output values
+
+        **Note:**
+
+        The input :class:`geosoft.gxapi.GXLTB` object should have key values matching the :class:`geosoft.gxapi.GXTPAT` codes.
+        Whether the matches are case sensitive or not is dependent on how the
+        :class:`geosoft.gxapi.GXLTB` oject was created (see ltb.h).
+        The :class:`geosoft.gxapi.GXLTB` field values are converted to the output :class:`geosoft.gxapi.GXVV` type.
+        """
         self._wrapper.setup_translation_vv(p2._wrapper, p3, p4._wrapper)
         
 

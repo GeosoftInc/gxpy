@@ -1,8 +1,10 @@
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+from typing import NewType
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
+
 
 ### endblock ClassImports
 
@@ -32,19 +34,19 @@ class GXLMSG:
         self._wrapper = wrapper if wrapper else gxapi_cy.WrapLMSG(GXContext._get_tls_geo(), 0)
 
     @classmethod
-    def null(cls) -> 'GXLMSG':
+    def null(cls):
         """
-        A null (undefined) instance of :class:`GXLMSG`
+        A null (undefined) instance of :class:`geosoft.gxapi.GXLMSG`
         
-        :returns: A null :class:`GXLMSG`
+        :returns: A null :class:`geosoft.gxapi.GXLMSG`
         """
         return cls()
 
-    def is_null(self) -> bool:
+    def is_null(self):
         """
-        Check if the instance of :class:`GXLMSG` is null (undefined)`
+        Check if the instance of :class:`geosoft.gxapi.GXLMSG` is null (undefined)`
         
-        :returns: True if this is a null (undefined) instance of :class:`GXLMSG`, False otherwise.
+        :returns: True if this is a null (undefined) instance of :class:`geosoft.gxapi.GXLMSG`, False otherwise.
         """
         return self._wrapper.handle == 0
 
@@ -56,14 +58,20 @@ class GXLMSG:
 
 
     @classmethod
-    def goto_point(cls, p1: float, p2: float, p3: float, p4: 'GXIPJ') -> None:
+    def goto_point(cls, p1, p2, p3, p4):
+        """
+        Sends a move cursor message
+        """
         gxapi_cy.WrapLMSG.goto_point(GXContext._get_tls_geo(), p1, p2, p3, p4._wrapper)
         
 
 
 
     @classmethod
-    def view_area(cls, p1: float, p2: float, p3: float, p4: float, p5: 'GXIPJ') -> None:
+    def view_area(cls, p1, p2, p3, p4, p5):
+        """
+        Sends a view area message
+        """
         gxapi_cy.WrapLMSG.view_area(GXContext._get_tls_geo(), p1, p2, p3, p4, p5._wrapper)
         
 
