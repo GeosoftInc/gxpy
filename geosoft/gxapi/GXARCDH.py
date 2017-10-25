@@ -37,17 +37,17 @@ class GXARCDH:
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of :class:`geosoft.gxapi.GXARCDH`
+        A null (undefined) instance of `GXARCDH`
         
-        :returns: A null :class:`geosoft.gxapi.GXARCDH`
+        :returns: A null `GXARCDH`
         """
         return cls()
 
     def is_null(self):
         """
-        Check if the instance of :class:`geosoft.gxapi.GXARCDH` is null (undefined)`
+        Check if the instance of `GXARCDH` is null (undefined)`
         
-        :returns: True if this is a null (undefined) instance of :class:`geosoft.gxapi.GXARCDH`, False otherwise.
+        :returns: True if this is a null (undefined) instance of `GXARCDH`, False otherwise.
         """
         return self._wrapper.handle == 0
 
@@ -61,7 +61,7 @@ class GXARCDH:
     @classmethod
     def close_project(cls):
         """
-        Closes the current :class:`geosoft.gxapi.GXDH` project in the Target extension
+        Closes the current `GXDH` project in the Target extension
         """
         gxapi_cy.WrapARCDH.close_project(GXContext._get_tls_geo())
         
@@ -71,7 +71,7 @@ class GXARCDH:
     @classmethod
     def set_project(cls, p1, p2):
         """
-        Sets the current :class:`geosoft.gxapi.GXDH` project in the Target extension
+        Sets the current `GXDH` project in the Target extension
         """
         gxapi_cy.WrapARCDH.set_project(GXContext._get_tls_geo(), p1.encode(), p2.encode())
         

@@ -18,7 +18,7 @@ class GXSTR:
     """
     GXSTR class.
 
-    This library is not a class. Use the :class:`geosoft.gxapi.GXSTR` library functions
+    This library is not a class. Use the `GXSTR` library functions
     to work with and manipulate string variables. Since the
     GX Programming Language does not provide string literal
     tokens, you must use these functions for any string operations
@@ -40,17 +40,17 @@ class GXSTR:
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of :class:`geosoft.gxapi.GXSTR`
+        A null (undefined) instance of `GXSTR`
         
-        :returns: A null :class:`geosoft.gxapi.GXSTR`
+        :returns: A null `GXSTR`
         """
         return cls()
 
     def is_null(self):
         """
-        Check if the instance of :class:`geosoft.gxapi.GXSTR` is null (undefined)`
+        Check if the instance of `GXSTR` is null (undefined)`
         
-        :returns: True if this is a null (undefined) instance of :class:`geosoft.gxapi.GXSTR`, False otherwise.
+        :returns: True if this is a null (undefined) instance of `GXSTR`, False otherwise.
         """
         return self._wrapper.handle == 0
 
@@ -161,7 +161,7 @@ class GXSTR:
         **Note:**
 
         The multifile string must use '|' as a delimiter.
-        Do not pass a string after calling iTokenize_STR.
+        Do not pass a string after calling `tokenize`.
         """
         p2.value = gxapi_cy.WrapSTR.get_m_file(GXContext._get_tls_geo(), p1.encode(), p2.value.encode(), p4)
         
@@ -488,8 +488,8 @@ class GXSTR:
         String may be modified. This function should not be
         used to determine if a file name string is defined, because
         a valid file name can contain spaces, and once "tested" the
-        name will be altered. Instead, use iStrMin2_STR, or use
-        iFileExist_SYS to see if the file actually exists.
+        name will be altered. Instead, use `str_min2`, or use
+        `GXSYS.file_exist` to see if the file actually exists.
         """
         ret_val, p1.value = gxapi_cy.WrapSTR.str_min(GXContext._get_tls_geo(), p1.value.encode())
         return ret_val
@@ -565,7 +565,7 @@ class GXSTR:
     @classmethod
     def xyz_line(cls, p1, p2):
         """
-        Make a valid XYZ line name from a valid :class:`geosoft.gxapi.GXDB` line name.
+        Make a valid XYZ line name from a valid `GXDB` line name.
         """
         p2.value = gxapi_cy.WrapSTR.xyz_line(GXContext._get_tls_geo(), p1.encode(), p2.value.encode())
         
@@ -740,6 +740,10 @@ class GXSTR:
         the typestr will always be kept the full length to be the first part,
         while the dbstr and/or chstr will be shortened to be the
         second and/or third part of the output string.
+
+        .. seealso::
+
+            GenNewGroupName_MVIEW
         """
         p4.value = gxapi_cy.WrapSTR.gen_group_name(GXContext._get_tls_geo(), p1.encode(), p2.encode(), p3.encode(), p4.value.encode())
         
@@ -762,7 +766,7 @@ class GXSTR:
         trailing delimiters are ignored.
         
         DO NOT use this function except in GXC code. The corresponding
-        IGetToken_STR function will not operate correctly in GX.Net code.
+        `get_token` function will not operate correctly in GX.Net code.
         """
         ret_val = gxapi_cy.WrapSTR.count_tokens(GXContext._get_tls_geo(), p1.encode(), p2.encode())
         return ret_val
@@ -776,14 +780,18 @@ class GXSTR:
 
         **Note:**
 
-        Call iTokens_STR  to prepare the tokenized
+        Call `tokens`  to prepare the tokenized
         string.
         You MUST NOT get tokens beyond number of tokens returned
-        by iTokens_STR or iTokens2_STR.
+        by `tokens` or `tokens2`.
         The first token has index 0.
         
         DO NOT use this function except in GXC code.
-        IGetToken_STR function will not operate correctly in GX.Net code.
+        `get_token` function will not operate correctly in GX.Net code.
+
+        .. seealso::
+
+            `tokens`, GetToken_STR
         """
         p1.value = gxapi_cy.WrapSTR.get_token(GXContext._get_tls_geo(), p1.value.encode(), p3.encode(), p4)
         
@@ -826,6 +834,10 @@ class GXSTR:
         
         NOT use this function except in GXC code. The corresponding
         etToken_STR function will not operate correctly in GX.Net code.
+
+        .. seealso::
+
+            GetToken_STR
         """
         ret_val, p1.value = gxapi_cy.WrapSTR.tokenize(GXContext._get_tls_geo(), p1.value.encode(), p2.encode(), p3.encode(), p4.encode(), p5.encode())
         return ret_val
@@ -844,7 +856,11 @@ class GXSTR:
         Use GetToken_STR to extract tokens.
         
         DO NOT use this function except in GXC code. The corresponding
-        IGetToken_STR function will not operate correctly in GX.Net code.
+        `get_token` function will not operate correctly in GX.Net code.
+
+        .. seealso::
+
+            `tokens2`, GetToken_STR
         """
         ret_val, p1.value = gxapi_cy.WrapSTR.tokens(GXContext._get_tls_geo(), p1.value.encode(), p2.encode())
         return ret_val
@@ -859,10 +875,10 @@ class GXSTR:
         **Note:**
 
         This function is for old GX compatibility only.
-        See iTokenize_STR.
+        See `tokenize`.
         
         DO NOT use this function except in GXC code. The corresponding
-        IGetToken_STR function will not operate correctly in GX.Net code.
+        `get_token` function will not operate correctly in GX.Net code.
         """
         ret_val, p1.value = gxapi_cy.WrapSTR.tokens2(GXContext._get_tls_geo(), p1.value.encode(), p2.encode(), p3.encode(), p4.encode(), p5.encode())
         return ret_val

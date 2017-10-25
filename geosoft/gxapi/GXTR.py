@@ -18,9 +18,9 @@ class GXTR:
     """
     GXTR class.
 
-    The :class:`geosoft.gxapi.GXTR` object contains trend information about a grid or
+    The `GXTR` object contains trend information about a grid or
     grid pager. Currently, it is used only in conjunction with
-    the GetTR_IMG, SetTR_IMG, and Trend_PGU functions.
+    the `GXIMG.get_tr`, `GXIMG.set_tr`, and `GXPGU.trend` functions.
     """
 
     def __enter__(self):
@@ -38,17 +38,17 @@ class GXTR:
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of :class:`geosoft.gxapi.GXTR`
+        A null (undefined) instance of `GXTR`
         
-        :returns: A null :class:`geosoft.gxapi.GXTR`
+        :returns: A null `GXTR`
         """
         return cls()
 
     def is_null(self):
         """
-        Check if the instance of :class:`geosoft.gxapi.GXTR` is null (undefined)`
+        Check if the instance of `GXTR` is null (undefined)`
         
-        :returns: True if this is a null (undefined) instance of :class:`geosoft.gxapi.GXTR`, False otherwise.
+        :returns: True if this is a null (undefined) instance of `GXTR`, False otherwise.
         """
         return self._wrapper.handle == 0
 

@@ -19,7 +19,7 @@ class GXARCDB:
     """
     GXARCDB class.
 
-    The :class:`geosoft.gxapi.GXARCDB` class is used in ArcGIS to access table contents from
+    The `GXARCDB` class is used in ArcGIS to access table contents from
     data sources and layers.
     """
 
@@ -38,17 +38,17 @@ class GXARCDB:
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of :class:`geosoft.gxapi.GXARCDB`
+        A null (undefined) instance of `GXARCDB`
         
-        :returns: A null :class:`geosoft.gxapi.GXARCDB`
+        :returns: A null `GXARCDB`
         """
         return cls()
 
     def is_null(self):
         """
-        Check if the instance of :class:`geosoft.gxapi.GXARCDB` is null (undefined)`
+        Check if the instance of `GXARCDB` is null (undefined)`
         
-        :returns: True if this is a null (undefined) instance of :class:`geosoft.gxapi.GXARCDB`, False otherwise.
+        :returns: True if this is a null (undefined) instance of `GXARCDB`, False otherwise.
         """
         return self._wrapper.handle == 0
 
@@ -62,7 +62,7 @@ class GXARCDB:
 
     def create_dat(self, p2, p3, p4):
         """
-        Create a handle to a ARCGIS table :class:`geosoft.gxapi.GXDAT` 2D object
+        Create a handle to a ARCGIS table `GXDAT` 2D object
         """
         ret_val = self._wrapper.create_dat(p2.encode(), p3.encode(), p4.encode())
         return GXDAT(ret_val)
@@ -72,7 +72,7 @@ class GXARCDB:
 
     def create_dat_3d(self, p2, p3, p4, p5):
         """
-        Create a handle to a ARCGIS table :class:`geosoft.gxapi.GXDAT` 3D object
+        Create a handle to a ARCGIS table `GXDAT` 3D object
         """
         ret_val = self._wrapper.create_dat_3d(p2.encode(), p3.encode(), p4.encode(), p5.encode())
         return GXDAT(ret_val)
@@ -92,7 +92,7 @@ class GXARCDB:
 
     def export_to_db(self, p2, p3, p4):
         """
-        Export data from an :class:`geosoft.gxapi.GXARCDB` table into a group in a Geosoft GDB using a template.
+        Export data from an `GXARCDB` table into a group in a Geosoft GDB using a template.
 
         **Note:**
 
@@ -109,7 +109,7 @@ class GXARCDB:
 
     def field_lst(self, p2):
         """
-        Place the list of field names in a :class:`geosoft.gxapi.GXLST`.
+        Place the list of field names in a `GXLST`.
 
         **Note:**
 
@@ -126,7 +126,7 @@ class GXARCDB:
         """
         This method attempts to make a table handle from an IUnknown pointer
         
-        Returns				 :class:`geosoft.gxapi.GXARCDB` Handle, :attr:`geosoft.gxapi.ARCDB_NULL` if not successful
+        Returns				 `GXARCDB` Handle, `ARCDB_NULL` if not successful
         """
         ret_val = gxapi_cy.WrapARCDB.from_i_unknown(GXContext._get_tls_geo(), p1)
         return GXARCDB(ret_val)
@@ -140,7 +140,7 @@ class GXARCDB:
 
         **Note:**
 
-        If the table does not have an :class:`geosoft.gxapi.GXIPJ`, the :class:`geosoft.gxapi.GXIPJ` that is
+        If the table does not have an `GXIPJ`, the `GXIPJ` that is
         returned will have an unknown projection.
         """
         self._wrapper.get_ipj(p2._wrapper)
@@ -182,7 +182,7 @@ class GXARCDB:
     @classmethod
     def sel_tbl_ex_gui(cls, p1):
         """
-        Select table :class:`geosoft.gxapi.GXGUI` with table type.
+        Select table `GXGUI` with table type.
         """
         ret_val, p1.value = gxapi_cy.WrapARCDB.sel_tbl_ex_gui(GXContext._get_tls_geo(), p1.value)
         return GXARCDB(ret_val)
@@ -192,11 +192,11 @@ class GXARCDB:
     @classmethod
     def sel_tbl_gui(cls):
         """
-        Select table :class:`geosoft.gxapi.GXGUI`.
+        Select table `GXGUI`.
 
         **Note:**
 
-        Terminates with Cancel on cancel, returns :attr:`geosoft.gxapi.ARCDB_NULL` if there are no valid tables in current document.
+        Terminates with Cancel on cancel, returns `ARCDB_NULL` if there are no valid tables in current document.
         """
         ret_val = gxapi_cy.WrapARCDB.sel_tbl_gui(GXContext._get_tls_geo())
         return GXARCDB(ret_val)

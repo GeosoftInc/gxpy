@@ -36,17 +36,17 @@ class GXDOCU:
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of :class:`geosoft.gxapi.GXDOCU`
+        A null (undefined) instance of `GXDOCU`
         
-        :returns: A null :class:`geosoft.gxapi.GXDOCU`
+        :returns: A null `GXDOCU`
         """
         return cls()
 
     def is_null(self):
         """
-        Check if the instance of :class:`geosoft.gxapi.GXDOCU` is null (undefined)`
+        Check if the instance of `GXDOCU` is null (undefined)`
         
-        :returns: True if this is a null (undefined) instance of :class:`geosoft.gxapi.GXDOCU`, False otherwise.
+        :returns: True if this is a null (undefined) instance of `GXDOCU`, False otherwise.
         """
         return self._wrapper.handle == 0
 
@@ -60,7 +60,7 @@ class GXDOCU:
 
     def copy(self, p2):
         """
-        Copy :class:`geosoft.gxapi.GXDOCU`
+        Copy `GXDOCU`
         """
         self._wrapper.copy(p2._wrapper)
         
@@ -187,7 +187,7 @@ class GXDOCU:
 
     def serial(self, p2):
         """
-        Serialize :class:`geosoft.gxapi.GXDOCU`
+        Serialize `GXDOCU`
         """
         self._wrapper.serial(p2._wrapper)
         
@@ -226,12 +226,12 @@ class GXDOCU:
         The document name can be a URL link to the document using one of
         the supported protocols. The following protocols are supported:
         
-           http://www.mywebserver.com/MyFile.doc                 - :class:`geosoft.gxapi.GXHTTP`
+           http://www.mywebserver.com/MyFile.doc                 - `GXHTTP`
            dap://my.dap.server.com/dcs?DatasetName?MyFile.doc    - DAP (DAP Document Access)
            ftp://my.ftp.server.com/Dir1/MyFile.doc               - FTP protocol
         
         The full file name will be stored but no data will be stored with
-        the :class:`geosoft.gxapi.GXDOCU` class and the document can be retrieved using the sGetFile_DOCU
+        the `GXDOCU` class and the document can be retrieved using the sGetFile_DOCU
         method.
         """
         self._wrapper.set_file(p2.encode(), p3.encode(), p4.encode())
@@ -246,12 +246,12 @@ class GXDOCU:
 
         **Note:**
 
-        See SetFile_DOCU.
+        See `set_file`.
         This function is the same as sSetFile_DOCU, plus insures that a
-        :class:`geosoft.gxapi.GXMETA` exists that includes the "Data" class.  If the file has
+        `GXMETA` exists that includes the "Data" class.  If the file has
         associated metadata, either supported natively in the file, or
         through an associated file "filename.extension.GeosoftMeta",
-        that metadata will be loaded into the :class:`geosoft.gxapi.GXDOCU` meta, and a Data
+        that metadata will be loaded into the `GXDOCU` meta, and a Data
         class will be constructed if one does not exist.
         
         Also, the Document type Extension is very important in that it

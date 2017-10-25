@@ -29,9 +29,9 @@ class GXTPAT:
     Label:         Text to use as a short-form in labels, graphs etc.
     By default, this is the same as the code.
     ex: "FVol."
-    Pattern Attributes:  (See DEFAULT.:class:`geosoft.gxapi.GXPAT` in \\src\\etc for more inforation)
-    Pattern:       The Pattern Index; defined in DEFAULT.:class:`geosoft.gxapi.GXPAT`, or in the user's
-    USER.:class:`geosoft.gxapi.GXPAT` file. If not specified, defaults to 0 (solid fill).
+    Pattern Attributes:  (See DEFAULT.`GXPAT` in \\src\\etc for more inforation)
+    Pattern:       The Pattern Index; defined in DEFAULT.`GXPAT`, or in the user's
+    USER.`GXPAT` file. If not specified, defaults to 0 (solid fill).
     Size:          The pattern tile size. If not specified, defaults to 2.0mm.
     Density:       The tiling density. If not specified, defaults to 1.0.
     Thickness:     The line thickness in the tile, expressed as a integer
@@ -68,17 +68,17 @@ class GXTPAT:
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of :class:`geosoft.gxapi.GXTPAT`
+        A null (undefined) instance of `GXTPAT`
         
-        :returns: A null :class:`geosoft.gxapi.GXTPAT`
+        :returns: A null `GXTPAT`
         """
         return cls()
 
     def is_null(self):
         """
-        Check if the instance of :class:`geosoft.gxapi.GXTPAT` is null (undefined)`
+        Check if the instance of `GXTPAT` is null (undefined)`
         
-        :returns: True if this is a null (undefined) instance of :class:`geosoft.gxapi.GXTPAT`, False otherwise.
+        :returns: True if this is a null (undefined) instance of `GXTPAT`, False otherwise.
         """
         return self._wrapper.handle == 0
 
@@ -128,7 +128,7 @@ class GXTPAT:
 
     def get_solid_pattern(self, p2, p3, p5, p7, p9):
         """
-        Get solid pattern info from the :class:`geosoft.gxapi.GXTPAT`.
+        Get solid pattern info from the `GXTPAT`.
 
         **Note:**
 
@@ -143,7 +143,7 @@ class GXTPAT:
 
     def size(self):
         """
-        Returns the number of rows (items) in the :class:`geosoft.gxapi.GXTPAT` object.
+        Returns the number of rows (items) in the `GXTPAT` object.
         """
         ret_val = self._wrapper.size()
         return ret_val
@@ -191,14 +191,14 @@ class GXTPAT:
 
     def setup_translation_vv(self, p2, p3, p4):
         """
-        Initializes a :class:`geosoft.gxapi.GXVV` used to map :class:`geosoft.gxapi.GXTPAT` indices to output values
+        Initializes a `GXVV` used to map `GXTPAT` indices to output values
 
         **Note:**
 
-        The input :class:`geosoft.gxapi.GXLTB` object should have key values matching the :class:`geosoft.gxapi.GXTPAT` codes.
+        The input `GXLTB` object should have key values matching the `GXTPAT` codes.
         Whether the matches are case sensitive or not is dependent on how the
-        :class:`geosoft.gxapi.GXLTB` oject was created (see ltb.h).
-        The :class:`geosoft.gxapi.GXLTB` field values are converted to the output :class:`geosoft.gxapi.GXVV` type.
+        `GXLTB` oject was created (see ltb.h).
+        The `GXLTB` field values are converted to the output `GXVV` type.
         """
         self._wrapper.setup_translation_vv(p2._wrapper, p3, p4._wrapper)
         

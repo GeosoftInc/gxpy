@@ -18,9 +18,9 @@ class GXTB:
     """
     GXTB class.
 
-    The :class:`geosoft.gxapi.GXTB` class is a high-performance table class used to
+    The `GXTB` class is a high-performance table class used to
     perform table-based processing, such as leveling data in
-    an OASIS database. The :class:`geosoft.gxapi.GXLTB` class is recommended for use
+    an OASIS database. The `GXLTB` class is recommended for use
     with small tables produced from short lists such as the
     different geographic projections and their defining parameters.
     """
@@ -40,17 +40,17 @@ class GXTB:
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of :class:`geosoft.gxapi.GXTB`
+        A null (undefined) instance of `GXTB`
         
-        :returns: A null :class:`geosoft.gxapi.GXTB`
+        :returns: A null `GXTB`
         """
         return cls()
 
     def is_null(self):
         """
-        Check if the instance of :class:`geosoft.gxapi.GXTB` is null (undefined)`
+        Check if the instance of `GXTB` is null (undefined)`
         
-        :returns: True if this is a null (undefined) instance of :class:`geosoft.gxapi.GXTB`, False otherwise.
+        :returns: True if this is a null (undefined) instance of `GXTB`, False otherwise.
         """
         return self._wrapper.handle == 0
 
@@ -84,7 +84,7 @@ class GXTB:
         **Note:**
 
         If the table contains fewer data columns than are defined by the
-        the table header, the :class:`geosoft.gxapi.GXTB` object will read in the table and dummy
+        the table header, the `GXTB` object will read in the table and dummy
         the elements of the missing data columns.
         """
         ret_val = gxapi_cy.WrapTB.create(GXContext._get_tls_geo(), p1.encode())
@@ -102,7 +102,7 @@ class GXTB:
         The table will contain fields for all channels in
         the database.
         
-        The database is not loaded with data.  Use the LoadDB_TB
+        The database is not loaded with data.  Use the `load_db`
         function to load data into the table.
         """
         ret_val = gxapi_cy.WrapTB.create_db(GXContext._get_tls_geo(), p1._wrapper)
@@ -113,7 +113,7 @@ class GXTB:
     @classmethod
     def create_ltb(cls, p1):
         """
-        Create a table from an :class:`geosoft.gxapi.GXLTB` database.
+        Create a table from an `GXLTB` database.
         """
         ret_val = gxapi_cy.WrapTB.create_ltb(GXContext._get_tls_geo(), p1._wrapper)
         return GXTB(ret_val)
@@ -215,7 +215,7 @@ class GXTB:
 
     def load_db(self, p2, p3):
         """
-        Load a database into a :class:`geosoft.gxapi.GXTB`
+        Load a database into a `GXTB`
 
         **Note:**
 
@@ -250,7 +250,7 @@ class GXTB:
 
     def save_db(self, p2, p3):
         """
-        Save a :class:`geosoft.gxapi.GXTB` in a database line
+        Save a `GXTB` in a database line
 
         **Note:**
 
@@ -281,8 +281,8 @@ class GXTB:
         **Note:**
 
         The table field containing the element to be set MUST be
-        of type :attr:`geosoft.gxapi.GS_BYTE`, :attr:`geosoft.gxapi.GS_USHORT`, :attr:`geosoft.gxapi.GS_SHORT`, or :attr:`geosoft.gxapi.GS_LONG`.
-        If the field is :attr:`geosoft.gxapi.GS_BYTE`, :attr:`geosoft.gxapi.GS_USHORT`, or :attr:`geosoft.gxapi.GS_LONG`, the new data
+        of type `GS_BYTE`, `GS_USHORT`, `GS_SHORT`, or `GS_LONG`.
+        If the field is `GS_BYTE`, `GS_USHORT`, or `GS_LONG`, the new data
         value will cause an overflow if the value is out of range of
         the data type. The new element value will then be invalid.
         
@@ -307,8 +307,8 @@ class GXTB:
         **Note:**
 
         The table field containing the element to be set MUST be
-        of type :attr:`geosoft.gxapi.GS_FLOAT` or :attr:`geosoft.gxapi.GS_DOUBLE`.
-        If the field is :attr:`geosoft.gxapi.GS_FLOAT` the new data value will cause an
+        of type `GS_FLOAT` or `GS_DOUBLE`.
+        If the field is `GS_FLOAT` the new data value will cause an
         overflow if the value is out of range of the data type.
         The new element value will then be invalid.
         

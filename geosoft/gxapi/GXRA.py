@@ -18,7 +18,7 @@ class GXRA:
     """
     GXRA class.
 
-    The :class:`geosoft.gxapi.GXRA` class is used to access ASCII files sequentially or
+    The `GXRA` class is used to access ASCII files sequentially or
     by line number. The files are opened in read-only mode, so no
     write operations are defined
     """
@@ -38,17 +38,17 @@ class GXRA:
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of :class:`geosoft.gxapi.GXRA`
+        A null (undefined) instance of `GXRA`
         
-        :returns: A null :class:`geosoft.gxapi.GXRA`
+        :returns: A null `GXRA`
         """
         return cls()
 
     def is_null(self):
         """
-        Check if the instance of :class:`geosoft.gxapi.GXRA` is null (undefined)`
+        Check if the instance of `GXRA` is null (undefined)`
         
-        :returns: True if this is a null (undefined) instance of :class:`geosoft.gxapi.GXRA`, False otherwise.
+        :returns: True if this is a null (undefined) instance of `GXRA`, False otherwise.
         """
         return self._wrapper.handle == 0
 
@@ -62,7 +62,7 @@ class GXRA:
     @classmethod
     def create(cls, p1):
         """
-        Creates :class:`geosoft.gxapi.GXRA`
+        Creates `GXRA`
         """
         ret_val = gxapi_cy.WrapRA.create(GXContext._get_tls_geo(), p1.encode())
         return GXRA(ret_val)
@@ -72,15 +72,19 @@ class GXRA:
     @classmethod
     def create_sbf(cls, p1, p2):
         """
-        Creates :class:`geosoft.gxapi.GXRA` on an :class:`geosoft.gxapi.GXSBF`
+        Creates `GXRA` on an `GXSBF`
 
         **Note:**
 
-        This method allows you to open an :class:`geosoft.gxapi.GXRA` in a structured file
-        storage (an :class:`geosoft.gxapi.GXSBF`).  SBFs can be created inside other data
+        This method allows you to open an `GXRA` in a structured file
+        storage (an `GXSBF`).  SBFs can be created inside other data
         containers, such as workspaces, maps, images and databases.
         This lets you store application specific information together
         with the data to which it applies.
+
+        .. seealso::
+
+            sbf.gxh
         """
         ret_val = gxapi_cy.WrapRA.create_sbf(GXContext._get_tls_geo(), p1._wrapper, p2.encode())
         return GXRA(ret_val)
@@ -92,7 +96,7 @@ class GXRA:
 
     def gets(self, p2):
         """
-        Get next full line from :class:`geosoft.gxapi.GXRA`
+        Get next full line from `GXRA`
         """
         ret_val, p2.value = self._wrapper.gets(p2.value.encode())
         return ret_val
@@ -102,7 +106,7 @@ class GXRA:
 
     def len(self):
         """
-        Returns the total number of lines in :class:`geosoft.gxapi.GXRA`
+        Returns the total number of lines in `GXRA`
         """
         ret_val = self._wrapper.len()
         return ret_val

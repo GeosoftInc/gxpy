@@ -18,7 +18,7 @@ class GXDSEL:
     """
     GXDSEL class.
 
-    The :class:`geosoft.gxapi.GXDSEL` object is used to select subsets of data from the DATA object
+    The `GXDSEL` object is used to select subsets of data from the DATA object
     """
 
     def __enter__(self):
@@ -36,17 +36,17 @@ class GXDSEL:
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of :class:`geosoft.gxapi.GXDSEL`
+        A null (undefined) instance of `GXDSEL`
         
-        :returns: A null :class:`geosoft.gxapi.GXDSEL`
+        :returns: A null `GXDSEL`
         """
         return cls()
 
     def is_null(self):
         """
-        Check if the instance of :class:`geosoft.gxapi.GXDSEL` is null (undefined)`
+        Check if the instance of `GXDSEL` is null (undefined)`
         
-        :returns: True if this is a null (undefined) instance of :class:`geosoft.gxapi.GXDSEL`, False otherwise.
+        :returns: True if this is a null (undefined) instance of `GXDSEL`, False otherwise.
         """
         return self._wrapper.handle == 0
 
@@ -153,7 +153,7 @@ class GXDSEL:
 
         **Note:**
 
-        Resolution must be specified in the units of the selection :class:`geosoft.gxapi.GXIPJ`.
+        Resolution must be specified in the units of the selection `GXIPJ`.
         
         This will be the optimum data resoulution.  (grid cell for grids, data
         separation for other data types).
@@ -201,7 +201,7 @@ class GXDSEL:
         If reprojection is not forced, the data may come in any projection.
         
         The spatial resolution and accuracy are accumed to be in the
-        coordinate system defined by this :class:`geosoft.gxapi.GXIPJ`.
+        coordinate system defined by this `GXIPJ`.
         """
         self._wrapper.set_ipj(p2._wrapper, p3)
         
@@ -215,7 +215,7 @@ class GXDSEL:
 
         **Note:**
 
-        Must be specified in the units of the selection :class:`geosoft.gxapi.GXIPJ`.
+        Must be specified in the units of the selection `GXIPJ`.
         
         The spatial accuracy is used improve compression performance for
         the spatial component of the data returned.

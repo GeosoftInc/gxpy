@@ -18,7 +18,7 @@ class GXVULCAN:
     """
     GXVULCAN class.
 
-    The :class:`geosoft.gxapi.GXVULCAN` class is used for importing Maptek® Vulcan block and triangulation files.
+    The `GXVULCAN` class is used for importing Maptek® Vulcan block and triangulation files.
     """
 
     def __enter__(self):
@@ -36,17 +36,17 @@ class GXVULCAN:
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of :class:`geosoft.gxapi.GXVULCAN`
+        A null (undefined) instance of `GXVULCAN`
         
-        :returns: A null :class:`geosoft.gxapi.GXVULCAN`
+        :returns: A null `GXVULCAN`
         """
         return cls()
 
     def is_null(self):
         """
-        Check if the instance of :class:`geosoft.gxapi.GXVULCAN` is null (undefined)`
+        Check if the instance of `GXVULCAN` is null (undefined)`
         
-        :returns: True if this is a null (undefined) instance of :class:`geosoft.gxapi.GXVULCAN`, False otherwise.
+        :returns: True if this is a null (undefined) instance of `GXVULCAN`, False otherwise.
         """
         return self._wrapper.handle == 0
 

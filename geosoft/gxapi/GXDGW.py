@@ -29,7 +29,7 @@ class GXDGW:
     
     By default, "new look" GX dialogs uses the "Tahoma" font. This font can be
     overridden by updating the application settings. This can be done programmatically
-    using the GlobalSet_SYS function using the following parameters:
+    using the `GXSYS.global_set` function using the following parameters:
     
     MONTAJ.GX_FONT="Font_name"
     
@@ -41,7 +41,7 @@ class GXDGW:
     
     MONTAJ.GX_CAPTION_FONT="Caption_Font": Font for the field captions (labels)
     MONTAJ.GX_BUTTON_FONT="Button_Font"  : Font for buttons, including the "Browse" button
-    MONTAJ.GX_TITLE_FONT="Title_Font"    : Font for special titles (see SetTitle_DGW).
+    MONTAJ.GX_TITLE_FONT="Title_Font"    : Font for special titles (see `set_title`).
     
     The font used for the text in edit windows remains the default, or the
     value specified using MONTAJ.GX_FONT.
@@ -73,17 +73,17 @@ class GXDGW:
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of :class:`geosoft.gxapi.GXDGW`
+        A null (undefined) instance of `GXDGW`
         
-        :returns: A null :class:`geosoft.gxapi.GXDGW`
+        :returns: A null `GXDGW`
         """
         return cls()
 
     def is_null(self):
         """
-        Check if the instance of :class:`geosoft.gxapi.GXDGW` is null (undefined)`
+        Check if the instance of `GXDGW` is null (undefined)`
         
-        :returns: True if this is a null (undefined) instance of :class:`geosoft.gxapi.GXDGW`, False otherwise.
+        :returns: True if this is a null (undefined) instance of `GXDGW`, False otherwise.
         """
         return self._wrapper.handle == 0
 
@@ -110,7 +110,7 @@ class GXDGW:
 
     def get_info_meta(self, p2, p3, p4, p5, p6):
         """
-        Copies the Dialog information to a :class:`geosoft.gxapi.GXMETA` attribute.
+        Copies the Dialog information to a `GXMETA` attribute.
         """
         self._wrapper.get_info_meta(p2, p3, p4._wrapper, p5, p6)
         
@@ -121,7 +121,7 @@ class GXDGW:
     def get_info_sys(self, p2, p3, p4, p5):
         """
         This method uses the information in a Dialog box to
-        set a :class:`geosoft.gxapi.GXSYS` variable.
+        set a `GXSYS` variable.
         """
         self._wrapper.get_info_sys(p2, p3, p4.encode(), p5.encode())
         
@@ -131,7 +131,7 @@ class GXDGW:
 
     def get_list(self, p2):
         """
-        This method retrieves the list (:class:`geosoft.gxapi.GXLST`) object associated
+        This method retrieves the list (`GXLST`) object associated
         with a Dialog object.
         """
         ret_val = self._wrapper.get_list(p2)
@@ -174,7 +174,7 @@ class GXDGW:
 
     def set_info_meta(self, p2, p3, p4, p5, p6):
         """
-        This sets a text object to the text found in a :class:`geosoft.gxapi.GXMETA` attribute.
+        This sets a text object to the text found in a `GXMETA` attribute.
         """
         self._wrapper.set_info_meta(p2, p3, p4._wrapper, p5, p6)
         
@@ -203,7 +203,7 @@ class GXDGW:
         A "Special", additional title can be added to a dialog by using
         the following syntax:
         
-        SetTitle_DGW(Diag, "Window Title\\nAdditional Title");
+        `set_title`(Diag, "Window Title\\nAdditional Title");
         
         In the title argument, a line break character '\\n' is used to
         separate the parts.

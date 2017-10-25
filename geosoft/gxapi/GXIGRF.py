@@ -19,8 +19,8 @@ class GXIGRF:
     GXIGRF class.
 
     International Geomagnetic Reference Field
-    Methods to work with :class:`geosoft.gxapi.GXIGRF` objects. The :class:`geosoft.gxapi.GXIGRF` object
-    contains data for the :class:`geosoft.gxapi.GXIGRF` model of the geomagnetic
+    Methods to work with `GXIGRF` objects. The `GXIGRF` object
+    contains data for the `GXIGRF` model of the geomagnetic
     reference field.
     """
 
@@ -39,17 +39,17 @@ class GXIGRF:
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of :class:`geosoft.gxapi.GXIGRF`
+        A null (undefined) instance of `GXIGRF`
         
-        :returns: A null :class:`geosoft.gxapi.GXIGRF`
+        :returns: A null `GXIGRF`
         """
         return cls()
 
     def is_null(self):
         """
-        Check if the instance of :class:`geosoft.gxapi.GXIGRF` is null (undefined)`
+        Check if the instance of `GXIGRF` is null (undefined)`
         
-        :returns: True if this is a null (undefined) instance of :class:`geosoft.gxapi.GXIGRF`, False otherwise.
+        :returns: True if this is a null (undefined) instance of `GXIGRF`, False otherwise.
         """
         return self._wrapper.handle == 0
 
@@ -63,13 +63,13 @@ class GXIGRF:
 
     def calc(self, p2, p3, p4, p5, p6, p7):
         """
-        Calculate :class:`geosoft.gxapi.GXIGRF` data for a given :class:`geosoft.gxapi.GXIGRF` model.
+        Calculate `GXIGRF` data for a given `GXIGRF` model.
 
         **Note:**
 
-        Calculate :class:`geosoft.gxapi.GXIGRF` data (total field, inclination, and declination)
-        for a given :class:`geosoft.gxapi.GXIGRF` model. The model used will be the same as that
-        obtained with Create_IGRF.
+        Calculate `GXIGRF` data (total field, inclination, and declination)
+        for a given `GXIGRF` model. The model used will be the same as that
+        obtained with `create`.
         """
         p5.value, p6.value, p7.value = self._wrapper.calc(p2, p3, p4, p5.value, p6.value, p7.value)
         
@@ -79,21 +79,21 @@ class GXIGRF:
 
     def calc_vv(self, p2, p3, p4, p5, p6, p7):
         """
-        Calculate :class:`geosoft.gxapi.GXIGRF` data :class:`geosoft.gxapi.GXVV`'s for a given :class:`geosoft.gxapi.GXIGRF` model.
+        Calculate `GXIGRF` data `GXVV`'s for a given `GXIGRF` model.
 
         **Note:**
 
-        Calculate :class:`geosoft.gxapi.GXIGRF` data (total field, inclination, and declination)
-        for a given :class:`geosoft.gxapi.GXIGRF` model. The model used will be the same as that
-        obtained with Create_IGRF.
-        All of the :class:`geosoft.gxapi.GXVV`'s should be the same length. The function
+        Calculate `GXIGRF` data (total field, inclination, and declination)
+        for a given `GXIGRF` model. The model used will be the same as that
+        obtained with `create`.
+        All of the `GXVV`'s should be the same length. The function
         will abort if they are not.
         
         No assumption is made on what data types are contained by
-        any of the :class:`geosoft.gxapi.GXVV`'s. However, all total field, inclination, and
+        any of the `GXVV`'s. However, all total field, inclination, and
         declination values are internally calculated as real data.
         These values will be converted to the types contained in the
-        output :class:`geosoft.gxapi.GXVV`'s.
+        output `GXVV`'s.
         """
         self._wrapper.calc_vv(p2._wrapper, p3._wrapper, p4._wrapper, p5._wrapper, p6._wrapper, p7._wrapper)
         
@@ -103,12 +103,12 @@ class GXIGRF:
     @classmethod
     def create(cls, p1, p2, p3):
         """
-        Create an :class:`geosoft.gxapi.GXIGRF`.
+        Create an `GXIGRF`.
 
         **Note:**
 
-        If the year of the :class:`geosoft.gxapi.GXIGRF` model is dummy, then
-        the :class:`geosoft.gxapi.GXIGRF` year nearest to the line's date will
+        If the year of the `GXIGRF` model is dummy, then
+        the `GXIGRF` year nearest to the line's date will
         be used. Otherwise, the specified year is used.
         """
         ret_val = gxapi_cy.WrapIGRF.create(GXContext._get_tls_geo(), p1, p2, p3.encode())
@@ -119,7 +119,7 @@ class GXIGRF:
     @classmethod
     def date_range(cls, p1, p2, p3):
         """
-        Determine the range of years covered by an :class:`geosoft.gxapi.GXIGRF` or DGRF file
+        Determine the range of years covered by an `GXIGRF` or DGRF file
 
         **Note:**
 

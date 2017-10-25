@@ -18,8 +18,8 @@ class GXPGEXP:
     """
     GXPGEXP class.
 
-    The :class:`geosoft.gxapi.GXPGEXP` class is similar to the :class:`geosoft.gxapi.GXEXP` class, but is used
-    to apply math expressions to pagers (:class:`geosoft.gxapi.GXPG` objects).
+    The `GXPGEXP` class is similar to the `GXEXP` class, but is used
+    to apply math expressions to pagers (`GXPG` objects).
     
     It works only on PGs of the same dimensions.
     """
@@ -39,17 +39,17 @@ class GXPGEXP:
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of :class:`geosoft.gxapi.GXPGEXP`
+        A null (undefined) instance of `GXPGEXP`
         
-        :returns: A null :class:`geosoft.gxapi.GXPGEXP`
+        :returns: A null `GXPGEXP`
         """
         return cls()
 
     def is_null(self):
         """
-        Check if the instance of :class:`geosoft.gxapi.GXPGEXP` is null (undefined)`
+        Check if the instance of `GXPGEXP` is null (undefined)`
         
-        :returns: True if this is a null (undefined) instance of :class:`geosoft.gxapi.GXPGEXP`, False otherwise.
+        :returns: True if this is a null (undefined) instance of `GXPGEXP`, False otherwise.
         """
         return self._wrapper.handle == 0
 
@@ -63,7 +63,7 @@ class GXPGEXP:
 
     def add_pager(self, p2, p3):
         """
-        This method adds an pager to the :class:`geosoft.gxapi.GXPGEXP` object with a
+        This method adds an pager to the `GXPGEXP` object with a
         variable name.
         """
         self._wrapper.add_pager(p2._wrapper, p3.encode())
@@ -74,7 +74,7 @@ class GXPGEXP:
     @classmethod
     def create(cls):
         """
-        This method creates an :class:`geosoft.gxapi.GXPGEXP` object.
+        This method creates an `GXPGEXP` object.
         """
         ret_val = gxapi_cy.WrapPGEXP.create(GXContext._get_tls_geo())
         return GXPGEXP(ret_val)

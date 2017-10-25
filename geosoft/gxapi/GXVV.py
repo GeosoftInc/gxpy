@@ -20,20 +20,20 @@ class GXVV:
     """
     GXVV class.
 
-    The VV class stores very long vector (array) data (such
+    The `GXVV` class stores very long vector (array) data (such
     as channel data from an OASIS database) in memory and
     performs specific actions on the data. This set of
-    functions is similar to the :class:`geosoft.gxapi.GXVM` functions except that
+    functions is similar to the `GXVM` functions except that
     you cannot access data directly and therefore you cannot
-    use a VV to pass data to an external (non-Geosoft)
+    use a `GXVV` to pass data to an external (non-Geosoft)
     Dynamic Link Library (DLL) object function.
     
     If you want to pass data to a DLL, you must move a subset
     of the data stored in memory to a small vector object and
-    then use the GetPtrVM_GEO function to pass a pointer to the
+    then use the `GXGEO.get_ptr_vm` function to pass a pointer to the
     data on to the external function.
     
-    See :class:`geosoft.gxapi.GXVVU` for more utility methods.
+    See `GXVVU` for more utility methods.
     """
 
     def __enter__(self):
@@ -51,17 +51,17 @@ class GXVV:
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of :class:`geosoft.gxapi.GXVV`
+        A null (undefined) instance of `GXVV`
         
-        :returns: A null :class:`geosoft.gxapi.GXVV`
+        :returns: A null `GXVV`
         """
         return cls()
 
     def is_null(self):
         """
-        Check if the instance of :class:`geosoft.gxapi.GXVV` is null (undefined)`
+        Check if the instance of `GXVV` is null (undefined)`
         
-        :returns: True if this is a null (undefined) instance of :class:`geosoft.gxapi.GXVV`, False otherwise.
+        :returns: True if this is a null (undefined) instance of `GXVV`, False otherwise.
         """
         return self._wrapper.handle == 0
 
@@ -75,7 +75,7 @@ class GXVV:
 
     def get_data(self, start, elements, data, gs_type):
         """
-        Copy data from user memory to a VV
+        Copy data from user memory to a `GXVV`
         """
         self._wrapper.get_data(start, elements, data, gs_type)
         
@@ -85,7 +85,7 @@ class GXVV:
 
     def set_data(self, start, elements, data, gs_type):
         """
-        Copy data from user memory to a VV
+        Copy data from user memory to a `GXVV`
         """
         self._wrapper.set_data(start, elements, data, gs_type)
         
@@ -95,7 +95,7 @@ class GXVV:
 
     def copy(self, p2):
         """
-        Copy one VV to another.
+        Copy one `GXVV` to another.
         """
         self._wrapper.copy(p2._wrapper)
         
@@ -109,10 +109,10 @@ class GXVV:
 
         **Note:**
 
-        1. Unlike _Copy_VV destination VV is not reallocated, nor is
+        1. Unlike Copy_VV destination `GXVV` is not reallocated, nor is
         the length changed. The caller must make any desired changes.
         
-        2. All VV types are supported and will be converted using
+        2. All `GXVV` types are supported and will be converted using
         Convert_GS if necessary.
         """
         self._wrapper.copy2(p2, p3._wrapper, p4, p5)
@@ -123,7 +123,7 @@ class GXVV:
 
     def log(self, p2, p3, p4):
         """
-        Apply log to the VV.
+        Apply log to the vv.
 
         **Note:**
 
@@ -138,7 +138,7 @@ class GXVV:
 
     def log_linear(self, p2):
         """
-        Take the log10 or original value of a VV.
+        Take the log10 or original value of a `GXVV`.
 
         **Note:**
 
@@ -162,16 +162,16 @@ class GXVV:
 
     def mask(self, p2):
         """
-        Mask one VV against another.
+        Mask one `GXVV` against another.
 
         **Note:**
 
-        All elements in the mask VV that are dummies will replace
-        the value in the original VV with a dummy.
+        All elements in the mask `GXVV` that are dummies will replace
+        the value in the original `GXVV` with a dummy.
         
-        The modified VV will always be the same length as the mask
-        VV after this call.  If the mask is longer than the target,
-        the target will be lengthened with dummies.
+        The modified `GXVV` will always be the same length as the mask
+        `GXVV` after this call.  If the mask is longer than the target,
+        the target will be lengthenned with dummies.
         """
         self._wrapper.mask(p2._wrapper)
         
@@ -181,7 +181,7 @@ class GXVV:
 
     def reverse(self):
         """
-        Reverses the order of the data in a VV.
+        Reverses the order of the data in a `GXVV`.
         """
         self._wrapper.reverse()
         
@@ -201,11 +201,11 @@ class GXVV:
 
     def trans(self, p2, p3):
         """
-        Translate (VV + base ) * mult
+        Translate (`GXVV` + base ) * mult
 
         **Note:**
 
-        All VV types now supported.
+        All `GXVV` types now supported.
         """
         self._wrapper.trans(p2, p3)
         
@@ -215,7 +215,7 @@ class GXVV:
 
     def abs(self):
         """
-        Take the absolute value of values in a VV.
+        Take the absolute value of values in a `GXVV`.
         """
         self._wrapper.abs()
         
@@ -239,7 +239,7 @@ class GXVV:
 
         **Note:**
 
-        The multipliers must be defined and within the :attr:`geosoft.gxapi.GS_R8MN` :attr:`geosoft.gxapi.GS_R8MX` range.
+        The multipliers must be defined and within the `GS_R8MN` `GS_R8MX` range.
         """
         self._wrapper.add2(p2, p3._wrapper, p4, p5._wrapper)
         
@@ -249,7 +249,7 @@ class GXVV:
 
     def append(self, p2):
         """
-        Appends VV's
+        Appends `GXVV`'s
         """
         self._wrapper.append(p2._wrapper)
         
@@ -259,7 +259,7 @@ class GXVV:
 
     def crc(self, p2):
         """
-        Compute the CRC value of a VV.
+        Compute the CRC value of a `GXVV`.
         """
         ret_val = self._wrapper.crc(p2)
         return ret_val
@@ -269,7 +269,7 @@ class GXVV:
 
     def crc_inexact(self, p2, p3, p4):
         """
-        Compute the CRC value of a VV and allows you to specify
+        Compute the CRC value of a `GXVV` and allows you to specify
         number of bits of floats/doubles to drop so that the CRC
         will be same even of this are changed.
 
@@ -286,20 +286,20 @@ class GXVV:
     @classmethod
     def create(cls, p1, p2):
         """
-        Create a VV.
+        Create a `GXVV`.
 
         **Note:**
 
-        To set the fiducial start and increment for the data in the VV
-        you need to call SetFidStart_VV and SetFidIncr_VV.
+        To set the fiducial start and increment for the data in the `GXVV`
+        you need to call `set_fid_start` and `set_fid_incr`.
         
-        If you are basing the VV data on fiducial information from a
-        different VV, call GetFidStart_VV and GetFidIncr_VV to obtain
-        that VV's fiducial information. Do this prior to setting the
-        new VV's fiducial start and increment.
+        If you are basing the `GXVV` data on fiducial information from a
+        different `GXVV`, call GetFidStart_VV and GetFidIncr_VV to obtain
+        that `GXVV`'s fiducial information. Do this prior to setting the
+        new `GXVV`'s fiducial start and increment.
         
-        If you do not know the required length for a VV, use 0
-        and the VV length will be adjusted as needed.  This is
+        If you do not know the required length for a `GXVV`, use 0
+        and the `GXVV` length will be adjusted as needed.  This is
         a bit less efficient than setting the length when you
         know it.
         """
@@ -311,15 +311,15 @@ class GXVV:
     @classmethod
     def create_ext(cls, p1, p2):
         """
-        Create a VV, using one of the `GS_TYPES` special data types.
+        Create a `GXVV`, using one of the `GS_TYPES` special data types.
 
         **Note:**
 
-        See Create_VV
+        See `create`
         
-        Do not use data type flags: :attr:`geosoft.gxapi.GS_INT` or :attr:`geosoft.gxapi.GS_REAL` on CreateExt(),
+        Do not use data type flags: `GS_INT` or `GS_REAL`,
         this will result in a respective data type of unsigned byte or
-        short for the VV.
+        short for the `GXVV`.
         """
         ret_val = gxapi_cy.WrapVV.create_ext(GXContext._get_tls_geo(), p1, p2)
         return GXVV(ret_val)
@@ -329,7 +329,7 @@ class GXVV:
     @classmethod
     def create_s(cls, p1):
         """
-        Create a VV  from serialized source.
+        Create a `GXVV`  from serialized source.
         """
         ret_val = gxapi_cy.WrapVV.create_s(GXContext._get_tls_geo(), p1._wrapper)
         return GXVV(ret_val)
@@ -348,7 +348,7 @@ class GXVV:
         Differences with dummies result in dummies.
         An even number of differences locates data accurately.
         An odd number of differences locates result 1/2 element lower
-        in the VV.
+        in the `GXVV`.
         """
         self._wrapper.diff(p2)
         
@@ -358,7 +358,7 @@ class GXVV:
 
     def divide(self, p2, p3):
         """
-        Divide one VV by another: VV_A / VV_B = VV_C
+        Divide one `GXVV` by another: VV_A / VV_B = VV_C
         """
         self._wrapper.divide(p2._wrapper, p3._wrapper)
         
@@ -368,11 +368,11 @@ class GXVV:
 
     def fid_norm(self, p2):
         """
-        Re-sample a pair of VV's to match each other.
+        Re-sample a pair of `GXVV`'s to match each other.
 
         **Note:**
 
-        Both VV's will return with the same start
+        Both `GXVV`'s will return with the same start
         fid and fid increment.  The smaller start fid
         and fid increment will be used.
         """
@@ -384,7 +384,7 @@ class GXVV:
 
     def fill_int(self, p2):
         """
-        Fill a VV with an int value.
+        Fill a `GXVV` with an int value.
         """
         self._wrapper.fill_int(p2)
         
@@ -394,7 +394,7 @@ class GXVV:
 
     def fill_double(self, p2):
         """
-        Fill a VV with a real value.
+        Fill a `GXVV` with a real value.
         """
         self._wrapper.fill_double(p2)
         
@@ -404,7 +404,7 @@ class GXVV:
 
     def fill_string(self, p2):
         """
-        Fill a VV with a string value.
+        Fill a `GXVV` with a string value.
         """
         self._wrapper.fill_string(p2.encode())
         
@@ -414,7 +414,7 @@ class GXVV:
 
     def count_dummies(self, p2, p3):
         """
-        Count the number of dummies in a VV
+        Count the number of dummies in a `GXVV`
         """
         ret_val = self._wrapper.count_dummies(p2, p3)
         return ret_val
@@ -424,7 +424,7 @@ class GXVV:
 
     def find_dum(self, p2, p3, p4, p5):
         """
-        Finds the first dummy or non-dummy value in a VV
+        Finds the first dummy or non-dummy value in a `GXVV`
 
         **Note:**
 
@@ -440,7 +440,7 @@ class GXVV:
 
     def get_fid_expansion(self):
         """
-        Gets the Fiducial expansion from a VV
+        Gets the Fiducial expansion from a `GXVV`
         """
         ret_val = self._wrapper.get_fid_expansion()
         return ret_val
@@ -450,7 +450,7 @@ class GXVV:
 
     def get_int(self, p2):
         """
-        Get an integer element from a VV.
+        Get an integer element from a `GXVV`.
         """
         ret_val = self._wrapper.get_int(p2)
         return ret_val
@@ -460,7 +460,7 @@ class GXVV:
 
     def get_string(self, p2, p3):
         """
-        Get a string element from a VV.
+        Get a string element from a `GXVV`.
 
         **Note:**
 
@@ -493,7 +493,7 @@ class GXVV:
 
     def length(self):
         """
-        Returns current VV length.
+        Returns current `GXVV` length.
         """
         ret_val = self._wrapper.length()
         return ret_val
@@ -503,25 +503,25 @@ class GXVV:
 
     def index_insert(self, p2, p3):
         """
-        Insert items into a VV using an index VV.
+        Insert items into a `GXVV` using an index `GXVV`.
 
         **Note:**
 
-        The items in the input data VV are inserted into
-        the output VV using the indices in the index VV.
+        The items in the input data `GXVV` are inserted into
+        the output `GXVV` using the indices in the index `GXVV`.
         Values not referenced are not altered, so the output
-        VV should be pre-initialized. The output VV length
+        `GXVV` should be pre-initialized. The output `GXVV` length
         will NOT be changed, and index values referencing
-        beyond the end of the output VV data will return an
+        beyond the end of the output `GXVV` data will return an
         error.
         
         This function is useful when working with channel data that include
         dummies, but where the dummies must be removed before processing.
-        Create and initialize an index (0, 1, 2...) VV, using the InitIndex_VV
+        Create and initialize an index (0, 1, 2...) `GXVV`, using the `init_index`
         function, and when you remove
         the dummies, remove the corresponding index values as well.
-        After processing, init a VV to dummies, then use IndexInsert_VV to
-        put the processed values at the correct locations in the data VV
+        After processing, init a `GXVV` to dummies, then use `index_insert` to
+        put the processed values at the correct locations in the data `GXVV`
         before you write it back to the channel.
         """
         self._wrapper.index_insert(p2._wrapper, p3._wrapper)
@@ -532,12 +532,12 @@ class GXVV:
 
     def index_order(self, p2):
         """
-        Reorder a VV.
+        Reorder a `GXVV`.
 
         **Note:**
 
-        Given an index VV (of type INT), this method reorders a
-        VV. Please make sure that the index holds valid information.
+        Given an index `GXVV` (of type INT), this method reorders a
+        `GXVV`. Please make sure that the index holds valid information.
         """
         self._wrapper.index_order(p2._wrapper)
         
@@ -547,13 +547,13 @@ class GXVV:
 
     def init_index(self, p2):
         """
-        Initialize an index VV to values 0, 1, 2, etc...
+        Initialize an index `GXVV` to values 0, 1, 2, etc...
 
         **Note:**
 
-        Populates a VV with the values 0, 1, 2, 3, 4 etc., to be
-        used for various indexing functions, such as IndexInsert_VV or
-        IndexOrder_VV.
+        Populates a `GXVV` with the values 0, 1, 2, 3, 4 etc., to be
+        used for various indexing functions, such as `index_insert` or
+        `index_order`.
         """
         self._wrapper.init_index(p2)
         
@@ -563,11 +563,11 @@ class GXVV:
 
     def inv_log(self, p2, p3, p4):
         """
-        Inverse of the _Log_VV function.
+        Inverse of the `log` function.
 
         **Note:**
 
-        This is the inverse function for _Log_VV, with the same inputs.
+        This is the inverse function for `log`, with the same inputs.
         
         NEGATIVE_NO    - will not return values smaller than the input minimum
         NEGATIVE_YES   - if the data is in the range +/- minimum,
@@ -596,15 +596,15 @@ class GXVV:
 
     def lines_to_xy(self, p2, p3):
         """
-        Convert a 2D Line segment VV into X and Y VVs.
+        Convert a 2D Line segment `GXVV` into X and Y VVs.
 
         **Note:**
 
-        Some GX functions (such as GetVoronoiEdges_TIN) return
-        a special VV where each element contains the start and end
+        Some GX functions (such as `GXTIN.get_voronoi_edges`) return
+        a special `GXVV` where each element contains the start and end
         points of lines, (X_1, Y_1) and (X_2, Y_2).
         This GX dumps the individual X and Y values into individual
-        X and Y VVs of type :attr:`geosoft.gxapi.GS_DOUBLE` (REAL). N lines produces 2*N
+        X and Y VVs of type `GS_DOUBLE` (REAL). N lines produces 2*N
         X and Y values.
         """
         self._wrapper.lines_to_xy(p2._wrapper, p3._wrapper)
@@ -615,18 +615,18 @@ class GXVV:
 
     def lookup_index(self, p2, p3):
         """
-        Lookup a VV from another VV using an index VV.
+        Lookup a `GXVV` from another `GXVV` using an index `GXVV`.
 
         **Note:**
 
         This method assigns index values of 0.0, 1.0, 2.0 etc. to the individual
-        values in the input Data VV, and uses linear interpolation to calculate the values of
-        Result VV at the input indices contained in the Index VV.
+        values in the input Data `GXVV`, and uses linear interpolation to calculate the values of
+        Result `GXVV` at the input indices contained in the Index `GXVV`.
         
-        If the input Data VV is string type, then only values at the integral index values
+        If the input Data `GXVV` is string type, then only values at the integral index values
         are returned.
         
-        See also SetupIndex_VV for an example of how this can be implemented.
+        See also `setup_index` for an example of how this can be implemented.
         """
         self._wrapper.lookup_index(p2._wrapper, p3._wrapper)
         
@@ -636,25 +636,29 @@ class GXVV:
 
     def make_mem_based(self):
         """
-        Make this VV use regular instead of virtual memory.
+        Make this `GXVV` use regular instead of virtual memory.
 
         **Note:**
 
         This function should be called immediately aftter
-        Create_VV.
+        `create`.
         
         Normal VVs are optimised to prevent thrashing, and to
         efficiently support many extremely large VVs, although
         there is a small performance penalty.
-        This function is intended for VV's that you know can be
+        This function is intended for `GXVV`'s that you know can be
         handled by the operating system virtual memory manager,
-        and will be used heavily.  By using a memory based VV, you
+        and will be used heavily.  By using a memory based `GXVV`, you
         can achieve some performance improvements provided your
         application does not cause the memory manager to "thrash".
         
         External programs that use the GX API may prefer to use
-        memory-based VV's because you can get direct access to
-        the VV through the GetPtrVV_GEO function (see gx_extern.h).
+        memory-based `GXVV`'s because you can get direct access to
+        the `GXVV` through the `GXGEO.get_ptr_vv` function (see gx_extern.h).
+
+        .. seealso::
+
+            `GXGEO.get_ptr_vv` in gx_extern.h
         """
         self._wrapper.make_mem_based()
         
@@ -692,14 +696,14 @@ class GXVV:
 
     def mask_str(self, p2, p3):
         """
-        Mask one VV against another using a string.
+        Mask one `GXVV` against another using a string.
 
         **Note:**
 
-        All elements in the mask VV that are same as string will replace
-        the original VV with a 1.
+        All elements in the mask `GXVV` that are same as string will replace
+        the original `GXVV` with a 1.
         
-        The modified VV will always be expanded to the MaskVV size but
+        The modified `GXVV` will always be expanded to the MaskVV size but
         not shortened after this call.  If the mask is longer than the target,
         the target will be lengthenned with dummies before applying the mask.
         """
@@ -731,7 +735,7 @@ class GXVV:
 
     def polygon_mask(self, p2, p3, p4, p5):
         """
-        Mask a VV using XY data and a polygon
+        Mask a `GXVV` using XY data and a polygon
 
         **Note:**
 
@@ -745,11 +749,11 @@ class GXVV:
     @classmethod
     def project(cls, p1, p2, p3):
         """
-        This method projects an X and Y VV.
+        This method projects an X and Y `GXVV`.
 
         **Note:**
 
-        This function is equivalent to ConvertVV_PJ.
+        This function is equivalent to `GXPJ.convert_vv`.
         """
         gxapi_cy.WrapVV.project(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3._wrapper)
         
@@ -759,11 +763,11 @@ class GXVV:
     @classmethod
     def project_3d(cls, p1, p2, p3, p4):
         """
-        This method projects an X,Y,Z VV.
+        This method projects an X,Y,Z `GXVV`.
 
         **Note:**
 
-        This function is equivalent to ConvertVV3_PJ.
+        This function is equivalent to `GXPJ.convert_vv3`.
         """
         gxapi_cy.WrapVV.project_3d(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3._wrapper, p4._wrapper)
         
@@ -773,11 +777,11 @@ class GXVV:
 
     def range_double(self, p2, p3):
         """
-        Get the min. and max. values of a VV while ignoring dummies.
+        Get the min. and max. values of a `GXVV` while ignoring dummies.
 
         **Note:**
 
-        Minimum and maximum become :attr:`geosoft.gxapi.GS_R8DM` if entire VV is dummy.
+        Minimum and maximum become `GS_R8DM` if entire `GXVV` is dummy.
         """
         p2.value, p3.value = self._wrapper.range_double(p2.value, p3.value)
         
@@ -787,7 +791,7 @@ class GXVV:
 
     def re_fid(self, p2, p3, p4):
         """
-        Re-sample a VV to a new fid start/icrement
+        Re-sample a `GXVV` to a new fid start/icrement
         """
         self._wrapper.re_fid(p2, p3, p4)
         
@@ -797,12 +801,12 @@ class GXVV:
 
     def re_fid_vv(self, p2):
         """
-        Re-sample a VV to match another VV.
+        Re-sample a `GXVV` to match another `GXVV`.
 
         **Note:**
 
-        This method will honor the VV FID Expansion and will expand/contract
-        VV's based on this flag if it is used.
+        This method will honor the `GXVV` FID Expansion and will expand/contract
+        `GXVV`'s based on this flag if it is used.
         """
         self._wrapper.re_fid_vv(p2._wrapper)
         
@@ -812,7 +816,7 @@ class GXVV:
 
     def re_sample(self, p2, p3, p4, p5, p6, p7):
         """
-        Resamples a VV from one fid/incr to another fid/incr.
+        Resamples a `GXVV` from one fid/incr to another fid/incr.
         """
         self._wrapper.re_sample(p2, p3, p4, p5, p6, p7)
         
@@ -822,7 +826,7 @@ class GXVV:
 
     def get_fid_incr(self):
         """
-        Gets the Fiducial increment from a VV
+        Gets the Fiducial increment from a `GXVV`
         """
         ret_val = self._wrapper.get_fid_incr()
         return ret_val
@@ -832,7 +836,7 @@ class GXVV:
 
     def get_fid_start(self):
         """
-        Gets the Fiducial start from a VV
+        Gets the Fiducial start from a `GXVV`
         """
         ret_val = self._wrapper.get_fid_start()
         return ret_val
@@ -842,7 +846,7 @@ class GXVV:
 
     def get_double(self, p2):
         """
-        Get a real element from a VV.
+        Get a real element from a `GXVV`.
 
         **Note:**
 
@@ -857,7 +861,7 @@ class GXVV:
 
     def sum(self):
         """
-        Calculate the sum of the values in a VV.
+        Calculate the sum of the values in a `GXVV`.
 
         **Note:**
 
@@ -885,7 +889,7 @@ class GXVV:
 
     def set_fid_expansion(self, p2):
         """
-        Sets the Fiducial expansion from a VV
+        Sets the Fiducial expansion from a `GXVV`
         """
         self._wrapper.set_fid_expansion(p2)
         
@@ -895,7 +899,7 @@ class GXVV:
 
     def set_fid_incr(self, p2):
         """
-        Sets the Fiducial increment of a VV
+        Sets the Fiducial increment of a `GXVV`
         """
         self._wrapper.set_fid_incr(p2)
         
@@ -905,7 +909,7 @@ class GXVV:
 
     def set_fid_start(self, p2):
         """
-        Sets the Fiducial start of a VV
+        Sets the Fiducial start of a `GXVV`
         """
         self._wrapper.set_fid_start(p2)
         
@@ -915,16 +919,16 @@ class GXVV:
 
     def set_int(self, p2, p3):
         """
-        Set an integer element in a VV.
+        Set an integer element in a `GXVV`.
 
         **Note:**
 
         Element being set cannot be < 0.
-        If the element is > current VV length, the VV length is
+        If the element is > current `GXVV` length, the `GXVV` length is
         increased.
         It is good practice to set the length ahead of time to the
-        expected maximum value, as some VV processes rely on the
-        current maximum length of the VV when you pass it in as an
+        expected maximum value, as some `GXVV` processes rely on the
+        current maximum length of the `GXVV` when you pass it in as an
         argument, and unexpected results may occur if the length is
         not what you expect it to be because of dynamic allocation at
         an earlier time.
@@ -937,12 +941,12 @@ class GXVV:
 
     def set_int_n(self, p2, p3, p4):
         """
-        Set N integer elements in a VV.
+        Set N integer elements in a `GXVV`.
 
         **Note:**
 
         Element being set cannot be < 0.
-        If the element is > current VV length, the VV length is
+        If the element is > current `GXVV` length, the `GXVV` length is
         increased.
         """
         self._wrapper.set_int_n(p2, p3, p4)
@@ -953,15 +957,15 @@ class GXVV:
 
     def set_len(self, p2):
         """
-        Set the length of a VV.
+        Set the length of a `GXVV`.
 
         **Note:**
 
-        If increasing the VV size, new elements are set to dummies.
+        If increasing the `GXVV` size, new elements are set to dummies.
         
         It is good practice to set the length ahead of time to the
-        expected maximum value, as some VV processes rely on the
-        current maximum length of the VV when you pass it in as an
+        expected maximum value, as some `GXVV` processes rely on the
+        current maximum length of the `GXVV` when you pass it in as an
         argument, and unexpected results may occur if the length is
         not what you expect it to be because of dynamic allocation at
         an earlier time.
@@ -974,16 +978,16 @@ class GXVV:
 
     def set_double(self, p2, p3):
         """
-        Set a real element in a VV.
+        Set a real element in a `GXVV`.
 
         **Note:**
 
         Element being set cannot be < 0.
-        If the element is > current VV length, the VV length is
+        If the element is > current `GXVV` length, the `GXVV` length is
         increased.
         It is good practice to set the length ahead of time to the
-        expected maximum value, as some VV processes rely on the
-        current maximum length of the VV when you pass it in as an
+        expected maximum value, as some `GXVV` processes rely on the
+        current maximum length of the `GXVV` when you pass it in as an
         argument, and unexpected results may occur if the length is
         not what you expect it to be because of dynamic allocation at
         an earlier time.
@@ -996,12 +1000,12 @@ class GXVV:
 
     def set_double_n(self, p2, p3, p4):
         """
-        Set N real elements in a VV.
+        Set N real elements in a `GXVV`.
 
         **Note:**
 
         Element being set cannot be < 0.
-        If the element is > current VV length, the VV length is
+        If the element is > current `GXVV` length, the `GXVV` length is
         increased.
         """
         self._wrapper.set_double_n(p2, p3, p4)
@@ -1012,16 +1016,16 @@ class GXVV:
 
     def set_string(self, p2, p3):
         """
-        Set a string element in a VV.
+        Set a string element in a `GXVV`.
 
         **Note:**
 
         Element being set cannot be < 0.
-        If the element is > current VV length, the VV length is
+        If the element is > current `GXVV` length, the `GXVV` length is
         increased.
         It is good practice to set the length ahead of time to the
-        expected maximum value, as some VV processes rely on the
-        current maximum length of the VV when you pass it in as an
+        expected maximum value, as some `GXVV` processes rely on the
+        current maximum length of the `GXVV` when you pass it in as an
         argument, and unexpected results may occur if the length is
         not what you expect it to be because of dynamic allocation at
         an earlier time.
@@ -1034,12 +1038,12 @@ class GXVV:
 
     def set_string_n(self, p2, p3, p4):
         """
-        Set N string elements in a VV.
+        Set N string elements in a `GXVV`.
 
         **Note:**
 
         Element being set cannot be < 0.
-        If the element is > current VV length, the VV length is
+        If the element is > current `GXVV` length, the `GXVV` length is
         increased.
         """
         self._wrapper.set_string_n(p2, p3, p4.encode())
@@ -1050,23 +1054,23 @@ class GXVV:
 
     def setup_index(self, p2, p3, p4, p5):
         """
-        Setup an index VV from VV1 to VV2.
+        Setup an index `GXVV` from VV1 to VV2.
 
         **Note:**
 
-        The input reference VV must be in ascending numerical order.
+        The input reference `GXVV` must be in ascending numerical order.
         If your reference data is NOT ordered, then use the the
-        SortIndex1_VV function to create an order index, then sort
-        both the reference and data VVs using this index VV before
-        you call SetupIndex_VV.
+        `sort_index1` function to create an order index, then sort
+        both the reference and data VVs using this index `GXVV` before
+        you call `setup_index`.
         
         Example: You have a reference data set taken at specific times, hVVt, hVVy
         and you want to calculate/estimate/interpolate the values hVVy2 at a second set
         of times hVVt2
         
-        Step 1: Create an index, hVVi, type :attr:`geosoft.gxapi.GS_DOUBLE`, and call SetupIndex_VV.
+        Step 1: Create an index, hVVi, type `GS_DOUBLE`, and call `setup_index`.
         
-        e.g. : SetupIndex_VV(hVVt, hVVt2, hVVi, VV_LOOKUP_XXX, rSpacing);
+        e.g. : `setup_index`(hVVt, hVVt2, hVVi, VV_LOOKUP_XXX, rSpacing);
         
         Internally, this assigns index values of 0.0, 1.0, 2.0 etc. to the individual
         values in hVVt, then, depending on the lookup method chosen, assigns
@@ -1075,7 +1079,7 @@ class GXVV:
         Step 2: To determine what the lookup values hVVy2 should be at times hVVt2,
         call the sLookupIndex_VV function:
         
-        e.g. : LookupIndex_VV(hVVy, hVVi, hVVy2);
+        e.g. : `lookup_index`(hVVy, hVVi, hVVy2);
         
         Internally, this assigns index values of 0.0, 1.0, 2.0 etc. to the individual
         values in hVVy, and uses linear interpolation to calculate the values of
@@ -1089,7 +1093,7 @@ class GXVV:
 
     def sort(self, p2):
         """
-        Sort a VV.
+        Sort a `GXVV`.
         """
         self._wrapper.sort(p2)
         
@@ -1099,13 +1103,13 @@ class GXVV:
 
     def sort_index(self, p2):
         """
-        Sort index VV based on a data VV.
+        Sort index `GXVV` based on a data `GXVV`.
 
         **Note:**
 
-        Create an Index VV (of type :attr:`geosoft.gxapi.GS_LONG`) based on a data VV.
+        Create an Index `GXVV` (of type `GS_LONG`) based on a data `GXVV`.
         This index vv can then be used by the IndexOrder method
-        to order a group of VV's.
+        to order a group of `GXVV`'s.
         """
         self._wrapper.sort_index(p2._wrapper)
         
@@ -1115,16 +1119,16 @@ class GXVV:
 
     def sort_index1(self, p2, p3):
         """
-        Sort index VV based on 1 data VV - set orders.
+        Sort index `GXVV` based on 1 data `GXVV` - set orders.
 
         **Note:**
 
-        Create an Index VV (of type :attr:`geosoft.gxapi.GS_LONG`) based on a data VV.
+        Create an Index `GXVV` (of type `GS_LONG`) based on a data `GXVV`.
         This index vv can then be used by the IndexOrder method
-        to order a group of VV's. The individual VVs may be ordered
+        to order a group of `GXVV`'s. The individual VVs may be ordered
         in ascending or descending order.
-        If the primary VV values of two indices are the same, then
-        the secondary VV values are compared. If the secondary values
+        If the primary `GXVV` values of two indices are the same, then
+        the secondary `GXVV` values are compared. If the secondary values
         are the same, the ternary values are compared, etc.
         """
         self._wrapper.sort_index1(p2._wrapper, p3)
@@ -1135,16 +1139,16 @@ class GXVV:
 
     def sort_index2(self, p2, p3, p4, p5):
         """
-        Sort index VV based on 2 data VVs - set orders.
+        Sort index `GXVV` based on 2 data VVs - set orders.
 
         **Note:**
 
-        Create an Index VV (of type :attr:`geosoft.gxapi.GS_LONG`) based on a data VV.
+        Create an Index `GXVV` (of type `GS_LONG`) based on a data `GXVV`.
         This index vv can then be used by the IndexOrder method
-        to order a group of VV's. The individual VVs may be ordered
+        to order a group of `GXVV`'s. The individual VVs may be ordered
         in ascending or descending order.
-        If the primary VV values of two indices are the same, then
-        the secondary VV values are compared. If the secondary values
+        If the primary `GXVV` values of two indices are the same, then
+        the secondary `GXVV` values are compared. If the secondary values
         are the same, the ternary values are compared, etc
         """
         self._wrapper.sort_index2(p2._wrapper, p3._wrapper, p4, p5)
@@ -1155,16 +1159,16 @@ class GXVV:
 
     def sort_index3(self, p2, p3, p4, p5, p6, p7):
         """
-        Sort index VV based on 3 data VVs - set orders.
+        Sort index `GXVV` based on 3 data VVs - set orders.
 
         **Note:**
 
-        Create an Index VV (of type :attr:`geosoft.gxapi.GS_LONG`) based on a data VV.
+        Create an Index `GXVV` (of type `GS_LONG`) based on a data `GXVV`.
         This index vv can then be used by the IndexOrder method
-        to order a group of VV's. The individual VVs may be ordered
+        to order a group of `GXVV`'s. The individual VVs may be ordered
         in ascending or descending order.
-        If the primary VV values of two indices are the same, then
-        the secondary VV values are compared. If the secondary values
+        If the primary `GXVV` values of two indices are the same, then
+        the secondary `GXVV` values are compared. If the secondary values
         are the same, the third values are compared, etc
         """
         self._wrapper.sort_index3(p2._wrapper, p3._wrapper, p4._wrapper, p5, p6, p7)
@@ -1175,16 +1179,16 @@ class GXVV:
 
     def sort_index4(self, p2, p3, p4, p5, p6, p7, p8, p9):
         """
-        Sort index VV based on 4 data VVs - set orders.
+        Sort index `GXVV` based on 4 data VVs - set orders.
 
         **Note:**
 
-        Create an Index VV (of type :attr:`geosoft.gxapi.GS_LONG`) based on a data VV.
+        Create an Index `GXVV` (of type `GS_LONG`) based on a data `GXVV`.
         This index vv can then be used by the IndexOrder method
-        to order a group of VV's. The individual VVs may be ordered
+        to order a group of `GXVV`'s. The individual VVs may be ordered
         in ascending or descending order.
-        If the primary VV values of two indices are the same, then
-        the secondary VV values are compared. If the secondary values
+        If the primary `GXVV` values of two indices are the same, then
+        the secondary `GXVV` values are compared. If the secondary values
         are the same, the third values are compared, etc
         """
         self._wrapper.sort_index4(p2._wrapper, p3._wrapper, p4._wrapper, p5._wrapper, p6, p7, p8, p9)
@@ -1195,7 +1199,7 @@ class GXVV:
     @classmethod
     def statistics(cls, p1, p2):
         """
-        Add a VV to a :class:`geosoft.gxapi.GXST`.
+        Add a `GXVV` to a `GXST`.
         """
         gxapi_cy.WrapVV.statistics(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper)
         
@@ -1205,7 +1209,7 @@ class GXVV:
 
     def subtract(self, p2, p3):
         """
-        Subtract one VV from another: VV_A - VV_B = VV_C
+        Subtract one `GXVV` from another: VV_A - VV_B = VV_C
         """
         self._wrapper.subtract(p2._wrapper, p3._wrapper)
         
@@ -1238,7 +1242,7 @@ class GXVV:
 
     def write_xml(self, p2, p3, p4):
         """
-        Write the VV data as an XML object with bytes and formating.
+        Write the `GXVV` data as an XML object with bytes and formating.
         """
         self._wrapper.write_xml(p2.encode(), p3, p4)
         

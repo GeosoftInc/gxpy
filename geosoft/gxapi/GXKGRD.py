@@ -18,10 +18,10 @@ class GXKGRD:
     """
     GXKGRD class.
 
-    The :class:`geosoft.gxapi.GXKGRD` object is used as a storage place for the control
+    The `GXKGRD` object is used as a storage place for the control
     parameters that the Krigrid program needs to execute. The
     Run_KGRD function executes the Krigrid program using the
-    :class:`geosoft.gxapi.GXKGRD` object.
+    `GXKGRD` object.
     """
 
     def __enter__(self):
@@ -39,17 +39,17 @@ class GXKGRD:
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of :class:`geosoft.gxapi.GXKGRD`
+        A null (undefined) instance of `GXKGRD`
         
-        :returns: A null :class:`geosoft.gxapi.GXKGRD`
+        :returns: A null `GXKGRD`
         """
         return cls()
 
     def is_null(self):
         """
-        Check if the instance of :class:`geosoft.gxapi.GXKGRD` is null (undefined)`
+        Check if the instance of `GXKGRD` is null (undefined)`
         
-        :returns: True if this is a null (undefined) instance of :class:`geosoft.gxapi.GXKGRD`, False otherwise.
+        :returns: True if this is a null (undefined) instance of `GXKGRD`, False otherwise.
         """
         return self._wrapper.handle == 0
 
@@ -63,7 +63,7 @@ class GXKGRD:
 
     def clear(self):
         """
-        Clears all the parameters in a :class:`geosoft.gxapi.GXKGRD` object
+        Clears all the parameters in a `GXKGRD` object
         """
         self._wrapper.clear()
         
@@ -80,7 +80,7 @@ class GXKGRD:
         The Krigrid object is initially empty. It will store the
         control file parameters which the Krigrid program needs
         to execute. Use the LoadParms_KGRD method to get the
-        control file parameters into the :class:`geosoft.gxapi.GXKGRD` object.
+        control file parameters into the `GXKGRD` object.
         """
         ret_val = gxapi_cy.WrapKGRD.create(GXContext._get_tls_geo())
         return GXKGRD(ret_val)
@@ -98,9 +98,9 @@ class GXKGRD:
 
         If the control file name passed into this function is a file
         which does not exist, then the defaults for a Krigrid control
-        file will be generated and put into the :class:`geosoft.gxapi.GXKGRD` object.
+        file will be generated and put into the `GXKGRD` object.
         Otherwise, the control file's settings are retrieved from
-        the file and loaded into the :class:`geosoft.gxapi.GXKGRD` object.
+        the file and loaded into the `GXKGRD` object.
         """
         ret_val = self._wrapper.load_parms(p2.encode())
         return ret_val

@@ -18,9 +18,9 @@ class GXAGG:
     """
     GXAGG class.
 
-    The :class:`geosoft.gxapi.GXAGG` class is used to handle image display on maps.
+    The `GXAGG` class is used to handle image display on maps.
     An aggregate contains one or more image layers (LAY) with
-    each layer representing a grid or image file. The :class:`geosoft.gxapi.GXAGG`
+    each layer representing a grid or image file. The `GXAGG`
     will combine all the layers to form one image
     """
 
@@ -39,17 +39,17 @@ class GXAGG:
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of :class:`geosoft.gxapi.GXAGG`
+        A null (undefined) instance of `GXAGG`
         
-        :returns: A null :class:`geosoft.gxapi.GXAGG`
+        :returns: A null `GXAGG`
         """
         return cls()
 
     def is_null(self):
         """
-        Check if the instance of :class:`geosoft.gxapi.GXAGG` is null (undefined)`
+        Check if the instance of `GXAGG` is null (undefined)`
         
-        :returns: True if this is a null (undefined) instance of :class:`geosoft.gxapi.GXAGG`, False otherwise.
+        :returns: True if this is a null (undefined) instance of `GXAGG`, False otherwise.
         """
         return self._wrapper.handle == 0
 
@@ -99,7 +99,7 @@ class GXAGG:
     @classmethod
     def create_map(cls, p1, p2):
         """
-        Create :class:`geosoft.gxapi.GXAGG` from Map with Group name.
+        Create `GXAGG` from Map with Group name.
 
         **Note:**
 
@@ -118,7 +118,7 @@ class GXAGG:
 
     def get_layer_itr(self, p2, p3):
         """
-        Get the :class:`geosoft.gxapi.GXITR` of a layer
+        Get the `GXITR` of a layer
 
         **Note:**
 
@@ -127,7 +127,7 @@ class GXAGG:
         
         An error will occur if the layer does not exist.
         
-        Caller must create/destroy :class:`geosoft.gxapi.GXITR`.
+        Caller must create/destroy `GXITR`.
         """
         self._wrapper.get_layer_itr(p2, p3._wrapper)
         
@@ -137,11 +137,11 @@ class GXAGG:
 
     def list_img(self, p2):
         """
-        Lists file names of all the IMGs inside of the :class:`geosoft.gxapi.GXAGG`.
+        Lists file names of all the IMGs inside of the `GXAGG`.
 
         **Note:**
 
-        The returned :class:`geosoft.gxapi.GXVV` contains the file names.
+        The returned `GXVV` contains the file names.
         """
         ret_val = self._wrapper.list_img(p2._wrapper)
         return ret_val
@@ -162,6 +162,10 @@ class GXAGG:
     def layer_img(self, p2, p3, p4, p5):
         """
         Add an image as a layer in an aggregate.
+
+        .. seealso::
+
+            `layer_shade_img`
         """
         self._wrapper.layer_img(p2.encode(), p3, p4.encode(), p5)
         
@@ -172,6 +176,10 @@ class GXAGG:
     def layer_img_ex(self, p2, p3, p4, p5, p6, p7):
         """
         Add an image as a layer in an aggregate.
+
+        .. seealso::
+
+            `layer_shade_img`
         """
         self._wrapper.layer_img_ex(p2.encode(), p3, p4.encode(), p5, p6, p7)
         
@@ -200,20 +208,24 @@ class GXAGG:
 
     def get_brightness(self):
         """
-        Get the brightness setting of the :class:`geosoft.gxapi.GXAGG`
+        Get the brightness setting of the `GXAGG`
 
         **Note:**
 
         Brightness can range from -1.0 (black) to 1.0 (white).
         This brightness control is relative to the normal color
-        when the :class:`geosoft.gxapi.GXAGG` is created.
+        when the `GXAGG` is created.
         
-        :class:`geosoft.gxapi.GXAGG` brightness depends on the brightness of the :class:`geosoft.gxapi.GXITR` of each layer.
+        `GXAGG` brightness depends on the brightness of the `GXITR` of each layer.
         Calling dGetBright_AGG will poll all layers, and if all have the same
         brightness, this is returned.  If any of the layers have a different
         brightness, the current brightness of each layer is changed to be
         the reference brightness (0.0)and the brightness value of 0.0 is
         returned.
+
+        .. seealso::
+
+            `change_brightness`, `get_brightness`, `change_brightness`
         """
         ret_val = self._wrapper.get_brightness()
         return ret_val
@@ -223,7 +235,7 @@ class GXAGG:
 
     def set_layer_itr(self, p2, p3):
         """
-        Set the :class:`geosoft.gxapi.GXITR` of a layer
+        Set the `GXITR` of a layer
 
         **Note:**
 
@@ -232,7 +244,7 @@ class GXAGG:
         
         An error will occur if the layer does not exist.
         
-        Caller must create/destroy :class:`geosoft.gxapi.GXITR`.
+        Caller must create/destroy `GXITR`.
         """
         self._wrapper.set_layer_itr(p2, p3._wrapper)
         

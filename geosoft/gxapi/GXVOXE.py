@@ -18,7 +18,7 @@ class GXVOXE:
     """
     GXVOXE class.
 
-    :class:`geosoft.gxapi.GXVOX` evaluator class. Used to sample values from
+    `GXVOX` evaluator class. Used to sample values from
     the voxel.
     """
 
@@ -37,17 +37,17 @@ class GXVOXE:
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of :class:`geosoft.gxapi.GXVOXE`
+        A null (undefined) instance of `GXVOXE`
         
-        :returns: A null :class:`geosoft.gxapi.GXVOXE`
+        :returns: A null `GXVOXE`
         """
         return cls()
 
     def is_null(self):
         """
-        Check if the instance of :class:`geosoft.gxapi.GXVOXE` is null (undefined)`
+        Check if the instance of `GXVOXE` is null (undefined)`
         
-        :returns: True if this is a null (undefined) instance of :class:`geosoft.gxapi.GXVOXE`, False otherwise.
+        :returns: True if this is a null (undefined) instance of `GXVOXE`, False otherwise.
         """
         return self._wrapper.handle == 0
 
@@ -61,7 +61,7 @@ class GXVOXE:
     @classmethod
     def create(cls, p1):
         """
-        Create a handle to an :class:`geosoft.gxapi.GXVOXE` object
+        Create a handle to an `GXVOXE` object
         """
         ret_val = gxapi_cy.WrapVOXE.create(GXContext._get_tls_geo(), p1._wrapper)
         return GXVOXE(ret_val)

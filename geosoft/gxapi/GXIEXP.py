@@ -18,8 +18,8 @@ class GXIEXP:
     """
     GXIEXP class.
 
-    The :class:`geosoft.gxapi.GXIEXP` class is similar to the :class:`geosoft.gxapi.GXEXP` class, but is used
-    to apply math expressions to grids (:class:`geosoft.gxapi.GXIMG` objects).
+    The `GXIEXP` class is similar to the `GXEXP` class, but is used
+    to apply math expressions to grids (`GXIMG` objects).
     """
 
     def __enter__(self):
@@ -37,17 +37,17 @@ class GXIEXP:
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of :class:`geosoft.gxapi.GXIEXP`
+        A null (undefined) instance of `GXIEXP`
         
-        :returns: A null :class:`geosoft.gxapi.GXIEXP`
+        :returns: A null `GXIEXP`
         """
         return cls()
 
     def is_null(self):
         """
-        Check if the instance of :class:`geosoft.gxapi.GXIEXP` is null (undefined)`
+        Check if the instance of `GXIEXP` is null (undefined)`
         
-        :returns: True if this is a null (undefined) instance of :class:`geosoft.gxapi.GXIEXP`, False otherwise.
+        :returns: True if this is a null (undefined) instance of `GXIEXP`, False otherwise.
         """
         return self._wrapper.handle == 0
 
@@ -61,7 +61,7 @@ class GXIEXP:
 
     def add_grid(self, p2, p3):
         """
-        This method adds an image to the :class:`geosoft.gxapi.GXIEXP` object with a
+        This method adds an image to the `GXIEXP` object with a
         variable name.
         """
         self._wrapper.add_grid(p2._wrapper, p3.encode())
@@ -72,7 +72,7 @@ class GXIEXP:
     @classmethod
     def create(cls):
         """
-        This method creates an :class:`geosoft.gxapi.GXIEXP` object.
+        This method creates an `GXIEXP` object.
         """
         ret_val = gxapi_cy.WrapIEXP.create(GXContext._get_tls_geo())
         return GXIEXP(ret_val)

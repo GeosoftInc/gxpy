@@ -20,7 +20,7 @@ class GXCSYMB:
 
     This class is used for generating and modifying colored symbol objects.
     Symbol fills are assigned colors based on their Z values and a zone, Aggregate
-    or :class:`geosoft.gxapi.GXITR` file which defines what colors are associated with different ranges
+    or `GXITR` file which defines what colors are associated with different ranges
     of Z values. The position of a symbol is defined by its X,Y coordinates.
     """
 
@@ -39,17 +39,17 @@ class GXCSYMB:
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of :class:`geosoft.gxapi.GXCSYMB`
+        A null (undefined) instance of `GXCSYMB`
         
-        :returns: A null :class:`geosoft.gxapi.GXCSYMB`
+        :returns: A null `GXCSYMB`
         """
         return cls()
 
     def is_null(self):
         """
-        Check if the instance of :class:`geosoft.gxapi.GXCSYMB` is null (undefined)`
+        Check if the instance of `GXCSYMB` is null (undefined)`
         
-        :returns: True if this is a null (undefined) instance of :class:`geosoft.gxapi.GXCSYMB`, False otherwise.
+        :returns: True if this is a null (undefined) instance of `GXCSYMB`, False otherwise.
         """
         return self._wrapper.handle == 0
 
@@ -88,7 +88,7 @@ class GXCSYMB:
 
         **Note:**
 
-        Use this method after a call to SetStaticCol_CSYMB. This method
+        Use this method after a call to `set_static_col`. This method
         reestablishes the symbol color association with their Z data
         values and color transform.
         """
@@ -118,8 +118,8 @@ class GXCSYMB:
         code point. GFN fonts wil produce valid symbols depending on the font for 0x01-0x7f and the degree,
         plus-minus and diameter symbol (latin small letter o with stroke) for 0xB0, 0xB1 and 0xF8 respectively.
         
-        It is possible to check if a character is valid using iIsValidUTF16Char_UNC. The high 16-bits are reserved
-        for future use. Also see: iValidSymbol_UNC and ValidateSymbols_UNC
+        It is possible to check if a character is valid using `GXUNC.is_valid_utf16_char`. The high 16-bits are reserved
+        for future use. Also see: `GXUNC.valid_symbol` and `GXUNC.validate_symbols`
         """
         self._wrapper.set_number(p2)
         
@@ -149,7 +149,7 @@ class GXCSYMB:
     @classmethod
     def create(cls, p1):
         """
-        Create a :class:`geosoft.gxapi.GXCSYMB`.
+        Create a `GXCSYMB`.
         """
         ret_val = gxapi_cy.WrapCSYMB.create(GXContext._get_tls_geo(), p1.encode())
         return GXCSYMB(ret_val)
@@ -161,7 +161,7 @@ class GXCSYMB:
 
     def get_itr(self, p2):
         """
-        Get the :class:`geosoft.gxapi.GXITR` of the :class:`geosoft.gxapi.GXCSYMB`
+        Get the `GXITR` of the `GXCSYMB`
         """
         self._wrapper.get_itr(p2._wrapper)
         

@@ -18,7 +18,7 @@ class GXMVU:
     """
     GXMVU class.
 
-    A catchall library for methods using the :class:`geosoft.gxapi.GXMAP` and :class:`geosoft.gxapi.GXMVIEW` classes.
+    A catchall library for methods using the `GXMAP` and `GXMVIEW` classes.
     These include drawing flight paths, legends, postings, and
     special objects such as histograms and bar charts.
     """
@@ -38,17 +38,17 @@ class GXMVU:
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of :class:`geosoft.gxapi.GXMVU`
+        A null (undefined) instance of `GXMVU`
         
-        :returns: A null :class:`geosoft.gxapi.GXMVU`
+        :returns: A null `GXMVU`
         """
         return cls()
 
     def is_null(self):
         """
-        Check if the instance of :class:`geosoft.gxapi.GXMVU` is null (undefined)`
+        Check if the instance of `GXMVU` is null (undefined)`
         
-        :returns: True if this is a null (undefined) instance of :class:`geosoft.gxapi.GXMVU`, False otherwise.
+        :returns: True if this is a null (undefined) instance of `GXMVU`, False otherwise.
         """
         return self._wrapper.handle == 0
 
@@ -78,9 +78,9 @@ class GXMVU:
 
         The locations are given in two VVs, and the directions
         in the two others. A wide range of sizes are available.
-        If the scaling is set to :attr:`geosoft.gxapi.rDUMMY`, then arrows are automatically
+        If the scaling is set to `rDUMMY`, then arrows are automatically
         scaled so the largest is 1cm in length.
-        If the line thickness is set to :attr:`geosoft.gxapi.rDUMMY`, the line thickness scales
+        If the line thickness is set to `rDUMMY`, the line thickness scales
         with the arrow size, and is 1/20 of the vector length.
         """
         gxapi_cy.WrapMVU.arrow_vector_vv(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3._wrapper, p4._wrapper, p5._wrapper, p6, p7, p8, p9, p10, p11)
@@ -125,7 +125,7 @@ class GXMVU:
 
         **Note:**
 
-        Similar to CDIPixelPlot_MVU, but plotted onto a series of
+        Similar to `cdi_pixel_plot`, but plotted onto a series of
         plotting planes which hang from the XY path in 3D. Each vertical plane azimuth
         is defined by two adjacent points on the path. The color "pixel" for each
         data point is plotted in two halves, with each half on adjacent plotting planes,
@@ -149,12 +149,12 @@ class GXMVU:
     @classmethod
     def color_bar2(cls, p1, p2, p3, p4, p5, p6, p7, p8, p9):
         """
-        Create a Color Bar from two :class:`geosoft.gxapi.GXITR`
+        Create a Color Bar from two `GXITR`
 
         **Note:**
 
-        The secondary :class:`geosoft.gxapi.GXITR` is used to blend horizontally with the
-        primary :class:`geosoft.gxapi.GXITR` in each box.
+        The secondary `GXITR` is used to blend horizontally with the
+        primary `GXITR` in each box.
         """
         gxapi_cy.WrapMVU.color_bar2(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3._wrapper, p4, p5, p6, p7, p8, p9)
         
@@ -168,8 +168,8 @@ class GXMVU:
 
         **Note:**
 
-        The secondary :class:`geosoft.gxapi.GXITR` is used to blend horizontally with the
-        primary :class:`geosoft.gxapi.GXITR` in each box.
+        The secondary `GXITR` is used to blend horizontally with the
+        primary `GXITR` in each box.
         """
         gxapi_cy.WrapMVU.color_bar2_style(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3._wrapper, p4, p5, p6, p7, p8, p9, p10)
         
@@ -187,6 +187,10 @@ class GXMVU:
         plotted above or below the colorbar. Labels above are text-justified
         to the bottom of the text, and labels below are text-justified to
         the top of the text.
+
+        .. seealso::
+
+            `color_bar`
         """
         gxapi_cy.WrapMVU.color_bar_hor(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3, p4, p5, p6, p7, p8, p9)
         
@@ -200,8 +204,8 @@ class GXMVU:
 
         **Note:**
 
-        The secondary :class:`geosoft.gxapi.GXITR` is used to blend horizontally with the
-        primary :class:`geosoft.gxapi.GXITR` in each box.
+        The secondary `GXITR` is used to blend horizontally with the
+        primary `GXITR` in each box.
         """
         gxapi_cy.WrapMVU.color_bar_hor2(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3._wrapper, p4, p5, p6, p7, p8, p9, p10)
         
@@ -215,8 +219,8 @@ class GXMVU:
 
         **Note:**
 
-        The secondary :class:`geosoft.gxapi.GXITR` is used to blend horizontally with the
-        primary :class:`geosoft.gxapi.GXITR` in each box.
+        The secondary `GXITR` is used to blend horizontally with the
+        primary `GXITR` in each box.
         """
         gxapi_cy.WrapMVU.color_bar_hor2_style(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3._wrapper, p4, p5, p6, p7, p8, p9, p10, p11)
         
@@ -250,9 +254,9 @@ class GXMVU:
 
         **Note:**
 
-        To allow for expansion, all parameters are passed inside the :class:`geosoft.gxapi.GXREG` object.
+        To allow for expansion, all parameters are passed inside the `GXREG` object.
         
-        BAR_ORIENTATION        one of MVU_ORIENTATION_XXX (DEFAULT = :attr:`geosoft.gxapi.MVU_ORIENTATION_VERTICAL`)
+        BAR_ORIENTATION        one of MVU_ORIENTATION_XXX (DEFAULT = `MVU_ORIENTATION_VERTICAL`)
         DECIMALS					decimals in plotted values (see sFormatStr_GS for rules) (DEFAULT = 1)
         ANNOFF						annotation offset from bar (+/- determines side of the bar left/right and below/above)
         BOX_SIZE               box height (mm) (width for horizontal color bar) (DEFAULT = 4)
@@ -264,7 +268,7 @@ class GXMVU:
         X								X location	(REQUIRED)
         Y								Y location	(REQUIRED)
         POST_MAXMIN            Post limit values at ends of the bar (0 or 1)? (DEFAULT = 0)
-        DIVISION_STYLE         One of MVU_DIVISION_STYLE_XXX (DEFAULT = :attr:`geosoft.gxapi.MVU_DIVISION_STYLE_LINES`)
+        DIVISION_STYLE         One of MVU_DIVISION_STYLE_XXX (DEFAULT = `MVU_DIVISION_STYLE_LINES`)
         """
         gxapi_cy.WrapMVU.color_bar_reg(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3._wrapper, p4._wrapper)
         
@@ -288,10 +292,10 @@ class GXMVU:
 
         **Note:**
 
-        The clipping :class:`geosoft.gxapi.GXPLY` can include a surrounding inclusive polygon
+        The clipping `GXPLY` can include a surrounding inclusive polygon
         and zero, one or more interior exclusive polygons. Construct
-        a :class:`geosoft.gxapi.GXPLY` object using the AddPolygonEx_PLY function, to add both
-        inclusive (as the first :class:`geosoft.gxapi.GXPLY`) and exclusive interior regions.
+        a `GXPLY` object using the `GXPLY.add_polygon_ex` function, to add both
+        inclusive (as the first `GXPLY`) and exclusive interior regions.
         """
         gxapi_cy.WrapMVU.contour_ply(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3.encode(), p4.encode())
         
@@ -306,14 +310,14 @@ class GXMVU:
         **Note:**
 
         If the symbol size, color, font etc are specified in
-        the :class:`geosoft.gxapi.GXITR`'s :class:`geosoft.gxapi.GXREG`, then the Symbol scale factor is used
+        the `GXITR`'s `GXREG`, then the Symbol scale factor is used
         allow the user to adjust the symbol sizes. They will be
-        plotted at a size equal to the size in the :class:`geosoft.gxapi.GXREG` times
+        plotted at a size equal to the size in the `GXREG` times
         the scale factor.
-        If no symbol size info can be found in the :class:`geosoft.gxapi.GXREG`, then
+        If no symbol size info can be found in the `GXREG`, then
         the symbol size is set equal to the Label Font Size.
         If no symbol font or number info is included in the
-        :class:`geosoft.gxapi.GXREG`, it is the programmer's responsibility to select
+        `GXREG`, it is the programmer's responsibility to select
         the correct font and symbol before CSymbLegend is
         called. The same is true of the edge color.
         """
@@ -386,6 +390,10 @@ class GXMVU:
         The function attempts to duplicate the colors, etc. used.
         Complex polygon objects will be exported as independent
         single polygons.
+
+        .. seealso::
+
+            `GXLST` class
         """
         gxapi_cy.WrapMVU.export_datamine_string(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3.encode())
         
@@ -400,6 +408,10 @@ class GXMVU:
         **Note:**
 
         Supported objects exported include lines, polygons, text.
+
+        .. seealso::
+
+            `GXLST` class
         """
         gxapi_cy.WrapMVU.export_dxf_3d(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3._wrapper)
         
@@ -409,16 +421,20 @@ class GXMVU:
     @classmethod
     def export_surpac_str(cls, p1, p2, p3, p4):
         """
-        Export selected map groups in a map view to a Surpac :class:`geosoft.gxapi.GXSTR` file.
+        Export selected map groups in a map view to a Surpac `GXSTR` file.
 
         **Note:**
 
         The lines, rectangles and polygons in the specified groups
-        will be exported to a Surpac :class:`geosoft.gxapi.GXSTR` file. An accompanying styles
+        will be exported to a Surpac `GXSTR` file. An accompanying styles
         file will be created which will attempt to duplicate the
         colors, etc. used.
         Complex polygon objects will be exported as independent
         single polygons.
+
+        .. seealso::
+
+            `GXLST` class
         """
         gxapi_cy.WrapMVU.export_surpac_str(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3._wrapper, p4._wrapper)
         
@@ -453,6 +469,10 @@ class GXMVU:
         to determine the label up direction.  Normally, use an
         angle of 60 degrees unless there are lines that run in
         this direction.
+
+        .. seealso::
+
+            `path_plot`
         """
         gxapi_cy.WrapMVU.flight_plot(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3._wrapper, p4.encode(), p5, p6, p7, p8, p9)
         
@@ -469,8 +489,12 @@ class GXMVU:
         The specified line group will be used to create a new group that
         is composed of all the resolved polygonal areas in the line group.
         Each polygonal area is assigned a color/pattern as specified in the
-        color and pattern :class:`geosoft.gxapi.GXVV`'s.  Color/patterns are assigned in rotating
+        color and pattern `GXVV`'s.  Color/patterns are assigned in rotating
         sequence.
+
+        .. seealso::
+
+            `re_gen_areas`
         """
         gxapi_cy.WrapMVU.gen_areas(GXContext._get_tls_geo(), p1._wrapper, p2.encode(), p3._wrapper, p4._wrapper, p5)
         
@@ -499,8 +523,12 @@ class GXMVU:
 
         **Note:**
 
-        This function just calls Histogram2_MVU with decimals set
+        This function just calls `histogram2` with decimals set
         to -7 (7 significant figures).
+
+        .. seealso::
+
+            `histogram2`, `histogram3`
         """
         gxapi_cy.WrapMVU.histogram(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3._wrapper, p4.encode(), p5.encode(), p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17, p18._wrapper)
         
@@ -537,7 +565,7 @@ class GXMVU:
     @classmethod
     def histogram4(cls, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17, p18, p19, p20, p21):
         """
-        As Histogram3_MVU, but allow probability scaling of percents.
+        As `histogram3`, but allow probability scaling of percents.
         """
         gxapi_cy.WrapMVU.histogram4(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3._wrapper, p4.encode(), p5.encode(), p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17, p18, p19, p20, p21._wrapper)
         
@@ -547,11 +575,11 @@ class GXMVU:
     @classmethod
     def histogram5(cls, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17, p18, p19, p20, p21, p22, p23):
         """
-        As Histogram4_MVU, but allow :class:`geosoft.gxapi.GXITR` to color bars.
+        As `histogram4`, but allow `GXITR` to color bars.
 
         **Note:**
 
-        The :class:`geosoft.gxapi.GXITR` can be empty (but must still be a valid :class:`geosoft.gxapi.GXITR` object).
+        The `GXITR` can be empty (but must still be a valid `GXITR` object).
         """
         gxapi_cy.WrapMVU.histogram5(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3._wrapper, p4.encode(), p5.encode(), p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17, p18, p19, p20, p21, p22._wrapper, p23._wrapper)
         
@@ -561,12 +589,12 @@ class GXMVU:
     @classmethod
     def exportable_dxf_3d_groups_lst(cls, p1, p2):
         """
-        Return a :class:`geosoft.gxapi.GXLST` of groups you can export using sExportDXF3D_MVU.
+        Return a `GXLST` of groups you can export using sExportDXF3D_MVU.
 
         **Note:**
 
         Returns a list of visible groups that the DXF 3D export can
-        export. Removes things like :class:`geosoft.gxapi.GXVOXD`, :class:`geosoft.gxapi.GXAGG`, and target
+        export. Removes things like `GXVOXD`, `GXAGG`, and target
         groups starting with "Dh", which are typically plotted in 3D
         views on a reference plan oriented toward the user, and thus
         not exportable.
@@ -579,11 +607,11 @@ class GXMVU:
     @classmethod
     def mapset_test(cls, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14):
         """
-        Test function to ensure parameters to Mapset_MVU is sane
+        Test function to ensure parameters to `mapset` is sane
 
         **Note:**
 
-        Use ShowError_SYS to display errors that may have been encountered. This function can also be used
+        Use `GXSYS.show_error` to display errors that may have been encountered. This function can also be used
         to calculate the default scale without creating a map.
         """
         ret_val, p8.value = gxapi_cy.WrapMVU.mapset_test(GXContext._get_tls_geo(), p1, p2, p3, p4, p5.encode(), p6, p7, p8.value, p9, p10, p11, p12, p13, p14)
@@ -594,11 +622,11 @@ class GXMVU:
     @classmethod
     def mapset2_test(cls, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15):
         """
-        Test function to ensure parameters to Mapset_MVU is sane
+        Test function to ensure parameters to `mapset` is sane
 
         **Note:**
 
-        Same as iMapsetTest_MVU, with vertical exaggeration.
+        Same as `mapset_test`, with vertical exaggeration.
         """
         ret_val, p8.value = gxapi_cy.WrapMVU.mapset2_test(GXContext._get_tls_geo(), p1, p2, p3, p4, p5.encode(), p6, p7, p8.value, p9, p10, p11, p12, p13, p14, p15)
         return ret_val
@@ -625,7 +653,7 @@ class GXMVU:
     @classmethod
     def load_plot(cls, p1, p2):
         """
-        Load a Geosoft PLT file into a :class:`geosoft.gxapi.GXMAP`.
+        Load a Geosoft PLT file into a `GXMAP`.
         """
         gxapi_cy.WrapMVU.load_plot(GXContext._get_tls_geo(), p1._wrapper, p2.encode())
         
@@ -642,6 +670,10 @@ class GXMVU:
         This only creates a map, it does not read the PLT into
         the map.  The base view and data view will be the same
         size.
+
+        .. seealso::
+
+            `load_plot`
         """
         gxapi_cy.WrapMVU.map_from_plt(GXContext._get_tls_geo(), p1._wrapper, p2.encode(), p3.encode(), p4.encode(), p5, p6)
         
@@ -671,7 +703,7 @@ class GXMVU:
     @classmethod
     def mapset2(cls, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17, p18):
         """
-        Same as Mapset_MVU, with vertical exaggeration.
+        Same as `mapset`, with vertical exaggeration.
         """
         gxapi_cy.WrapMVU.mapset2(GXContext._get_tls_geo(), p1._wrapper, p2.encode(), p3.encode(), p4, p5, p6, p7, p8.encode(), p9, p10, p11, p12, p13, p14, p15, p16, p17, p18)
         
@@ -695,8 +727,12 @@ class GXMVU:
 
         **Note:**
 
-        See FlightPlot_MVU.  This is the same except for the
+        See `flight_plot`.  This is the same except for the
         additional line gap parameter.
+
+        .. seealso::
+
+            FlighPlot_MVU
         """
         gxapi_cy.WrapMVU.path_plot(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3._wrapper, p4.encode(), p5, p6, p7, p8, p9, p10)
         
@@ -711,6 +747,10 @@ class GXMVU:
         **Note:**
 
         This is the same except for the additional line compass parameter.
+
+        .. seealso::
+
+            `path_plot`
         """
         gxapi_cy.WrapMVU.path_plot_ex(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3._wrapper, p4.encode(), p5, p6, p7, p8, p9, p10, p11)
         
@@ -725,6 +765,10 @@ class GXMVU:
         **Note:**
 
         This is the same except for the additional line dummies parameter.
+
+        .. seealso::
+
+            `path_plot_ex`
         """
         gxapi_cy.WrapMVU.path_plot_ex2(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3._wrapper, p4.encode(), p5, p6, p7, p8, p9, p10, p11, p12)
         
@@ -774,7 +818,7 @@ class GXMVU:
 
         **Note:**
 
-        TODO... Move to :class:`geosoft.gxapi.GXVOX` method for surface generation only and use GeosurfaceD to display.
+        TODO... Move to `GXVOX` method for surface generation only and use GeosurfaceD to display.
         """
         gxapi_cy.WrapMVU.generate_surface_from_voxel(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3, p4, p5, p6, p7, p8, p9, p10.encode())
         
@@ -808,7 +852,7 @@ class GXMVU:
 
         **Note:**
 
-        The :class:`geosoft.gxapi.GXITR` can be empty (but must still be a valid :class:`geosoft.gxapi.GXITR` object).
+        The `GXITR` can be empty (but must still be a valid `GXITR` object).
         """
         gxapi_cy.WrapMVU.probability(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3._wrapper, p4.encode(), p5.encode(), p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17, p18._wrapper)
         
@@ -875,6 +919,10 @@ class GXMVU:
         the most likely attributes for the new polygon groups.
         
         There must be existing polygon groups in the area group.
+
+        .. seealso::
+
+            `gen_areas`
         """
         gxapi_cy.WrapMVU.re_gen_areas(GXContext._get_tls_geo(), p1._wrapper, p2.encode())
         
@@ -888,8 +936,8 @@ class GXMVU:
 
         **Note:**
 
-        Symbols are not plotted for positions where the flag :class:`geosoft.gxapi.GXVV`
-        value is 0 or :attr:`geosoft.gxapi.iDUMMY`.
+        Symbols are not plotted for positions where the flag `GXVV`
+        value is 0 or `iDUMMY`.
         """
         gxapi_cy.WrapMVU.symb_off(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3._wrapper, p4._wrapper, p5, p6)
         
@@ -919,7 +967,7 @@ class GXMVU:
     @classmethod
     def tick_ex(cls, p1, p2, p3, p4, p5, p6, p7, p8, p9):
         """
-        Same as Tick_MVU, with gap allowance.
+        Same as `tick`, with gap allowance.
         """
         gxapi_cy.WrapMVU.tick_ex(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3._wrapper, p4._wrapper, p5, p6, p7, p8, p9)
         

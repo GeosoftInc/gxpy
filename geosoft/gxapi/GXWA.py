@@ -18,7 +18,7 @@ class GXWA:
     """
     GXWA class.
 
-    The :class:`geosoft.gxapi.GXWA` class enables you to access and write data to ASCII files.
+    The `GXWA` class enables you to access and write data to ASCII files.
     """
 
     def __enter__(self):
@@ -36,17 +36,17 @@ class GXWA:
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of :class:`geosoft.gxapi.GXWA`
+        A null (undefined) instance of `GXWA`
         
-        :returns: A null :class:`geosoft.gxapi.GXWA`
+        :returns: A null `GXWA`
         """
         return cls()
 
     def is_null(self):
         """
-        Check if the instance of :class:`geosoft.gxapi.GXWA` is null (undefined)`
+        Check if the instance of `GXWA` is null (undefined)`
         
-        :returns: True if this is a null (undefined) instance of :class:`geosoft.gxapi.GXWA`, False otherwise.
+        :returns: True if this is a null (undefined) instance of `GXWA`, False otherwise.
         """
         return self._wrapper.handle == 0
 
@@ -74,7 +74,7 @@ class GXWA:
 
         **Note:**
 
-        ANSI Encoding is assumed, See CreateEx_WA to override this.
+        ANSI Encoding is assumed, See `create_ex` to override this.
         """
         ret_val = gxapi_cy.WrapWA.create(GXContext._get_tls_geo(), p1.encode(), p2)
         return GXWA(ret_val)
@@ -91,7 +91,7 @@ class GXWA:
         Before version 6.2. text in on the GX API level were handled as characters in the current ANSI code page
         defining how characters above ASCII 127 would be displayed. 6.2. introduced Unicode in the core
         montaj engine that greatly increased the number of symbols that can be used. The `WA_ENCODE` constants
-        were introduce that controls how text are written to files on disk with the :class:`geosoft.gxapi.GXWA` class.
+        were introduce that controls how text are written to files on disk with the `GXWA` class.
         """
         ret_val = gxapi_cy.WrapWA.create_ex(GXContext._get_tls_geo(), p1.encode(), p2, p3)
         return GXWA(ret_val)
@@ -101,11 +101,11 @@ class GXWA:
     @classmethod
     def create_sbf(cls, p1, p2, p3):
         """
-        Creates an ASCII file to write to in an :class:`geosoft.gxapi.GXSBF`.
+        Creates an ASCII file to write to in an `GXSBF`.
 
         **Note:**
 
-        See sbf.gxh. ANSI Encoding is assumed, See CreateSBFEx_WA to override this.
+        See sbf.gxh. ANSI Encoding is assumed, See `create_sbf_ex` to override this.
         """
         ret_val = gxapi_cy.WrapWA.create_sbf(GXContext._get_tls_geo(), p1._wrapper, p2.encode(), p3)
         return GXWA(ret_val)
@@ -115,7 +115,7 @@ class GXWA:
     @classmethod
     def create_sbf_ex(cls, p1, p2, p3, p4):
         """
-        Creates an ASCII file to write to in an :class:`geosoft.gxapi.GXSBF`.
+        Creates an ASCII file to write to in an `GXSBF`.
 
         **Note:**
 
@@ -123,7 +123,7 @@ class GXWA:
         Before version 6.2. text in on the GX API level were handled as characters in the current ANSI code page
         defining how characters above ASCII 127 would be displayed. 6.2. introduced Unicode in the core
         montaj engine that greatly increased the number of symbols that can be used. The `WA_ENCODE` constants
-        were introduce that controls how text are written to files on disk with the :class:`geosoft.gxapi.GXWA` class.
+        were introduce that controls how text are written to files on disk with the `GXWA` class.
         """
         ret_val = gxapi_cy.WrapWA.create_sbf_ex(GXContext._get_tls_geo(), p1._wrapper, p2.encode(), p3, p4)
         return GXWA(ret_val)
@@ -135,7 +135,7 @@ class GXWA:
 
     def new_line(self):
         """
-        Forces a new line in the :class:`geosoft.gxapi.GXWA` object.
+        Forces a new line in the `GXWA` object.
         """
         self._wrapper.new_line()
         

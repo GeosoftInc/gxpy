@@ -18,7 +18,7 @@ class GXEDOC:
     """
     GXEDOC class.
 
-    The :class:`geosoft.gxapi.GXEDOC` class provides access to a generic documents views as loaded within
+    The `GXEDOC` class provides access to a generic documents views as loaded within
     Oasis montaj.
     """
 
@@ -37,17 +37,17 @@ class GXEDOC:
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of :class:`geosoft.gxapi.GXEDOC`
+        A null (undefined) instance of `GXEDOC`
         
-        :returns: A null :class:`geosoft.gxapi.GXEDOC`
+        :returns: A null `GXEDOC`
         """
         return cls()
 
     def is_null(self):
         """
-        Check if the instance of :class:`geosoft.gxapi.GXEDOC` is null (undefined)`
+        Check if the instance of `GXEDOC` is null (undefined)`
         
-        :returns: True if this is a null (undefined) instance of :class:`geosoft.gxapi.GXEDOC`, False otherwise.
+        :returns: True if this is a null (undefined) instance of `GXEDOC`, False otherwise.
         """
         return self._wrapper.handle == 0
 
@@ -61,11 +61,11 @@ class GXEDOC:
     @classmethod
     def create_new_gms_3d(cls, p1, p2, p3, p4):
         """
-        Creates a new :class:`geosoft.gxapi.GXGMSYS` 3D Model into the workspace, flags as new.
+        Creates a new `GXGMSYS` 3D Model into the workspace, flags as new.
 
         **Note:**
 
-        See Load_EDOC. This is used for brand new documents, it also sets
+        See `load`. This is used for brand new documents, it also sets
         an internal flag such that if on closing the user chooses
         not to save changes, the document is deleted thus keeping the
         project folders clean.
@@ -96,7 +96,7 @@ class GXEDOC:
 
         **Note:**
 
-        This function acts just like Current_EDOC except that the document is not activated (brought to foreground) and no
+        This function acts just like `current` except that the document is not activated (brought to foreground) and no
         				guarantee is given about which document is currently active.
         """
         ret_val = gxapi_cy.WrapEDOC.current_no_activate(GXContext._get_tls_geo(), p1)
@@ -119,7 +119,7 @@ class GXEDOC:
     @classmethod
     def get_documents_lst(cls, p1, p2, p3):
         """
-        Load the file names of open documents into a :class:`geosoft.gxapi.GXLST`.
+        Load the file names of open documents into a `GXLST`.
         """
         ret_val = gxapi_cy.WrapEDOC.get_documents_lst(GXContext._get_tls_geo(), p1._wrapper, p2, p3)
         return ret_val
@@ -129,7 +129,7 @@ class GXEDOC:
 
     def get_name(self, p2):
         """
-        Get the name of the document object of this :class:`geosoft.gxapi.GXEDOC`.
+        Get the name of the document object of this `GXEDOC`.
         """
         p2.value = self._wrapper.get_name(p2.value.encode())
         
@@ -221,7 +221,7 @@ class GXEDOC:
 
         **Note:**
 
-        This function acts just like Load_EDOC except that the document(s) is not activated (brought to foreground) and no
+        This function acts just like `load` except that the document(s) is not activated (brought to foreground) and no
         					guarantee is given about which document is currently active.
         """
         ret_val = gxapi_cy.WrapEDOC.load_no_activate(GXContext._get_tls_geo(), p1.encode(), p2)
@@ -232,7 +232,7 @@ class GXEDOC:
 
     def make_current(self):
         """
-        Makes this :class:`geosoft.gxapi.GXEDOC` object the current active object to the user.
+        Makes this `GXEDOC` object the current active object to the user.
         """
         self._wrapper.make_current()
         
@@ -277,7 +277,7 @@ class GXEDOC:
         **Note:**
 
         If the document is not loaded, nothing happens.
-        Same as UnLoadVerify_EDOC with FALSE to prompt save.
+        Same as `un_load_verify` with FALSE to prompt save.
         """
         gxapi_cy.WrapEDOC.un_load(GXContext._get_tls_geo(), p1.encode(), p2)
         
@@ -317,7 +317,7 @@ class GXEDOC:
 
         If the document is not loaded, nothing happens.
         The user can be prompted to save before unloading.
-        If :attr:`geosoft.gxapi.EDOC_UNLOAD_NO_PROMPT`, data is always saved.
+        If `EDOC_UNLOAD_NO_PROMPT`, data is always saved.
         """
         gxapi_cy.WrapEDOC.un_load_verify(GXContext._get_tls_geo(), p1.encode(), p2, p3)
         

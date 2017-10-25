@@ -18,8 +18,8 @@ class GXSURFACEITEM:
     """
     GXSURFACEITEM class.
 
-    The :class:`geosoft.gxapi.GXSURFACEITEM` allows you to create, read and alter Geosurface files (``*.geosoft_surface``).
-    A Geosurface file can contain one or more surface items (see :class:`geosoft.gxapi.GXSURFACE` class). A surface item can
+    The `GXSURFACEITEM` allows you to create, read and alter Geosurface files (``*.geosoft_surface``).
+    A Geosurface file can contain one or more surface items (see `GXSURFACE` class). A surface item can
     contains one or more triangular polyhedral meshes.
     """
 
@@ -38,17 +38,17 @@ class GXSURFACEITEM:
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of :class:`geosoft.gxapi.GXSURFACEITEM`
+        A null (undefined) instance of `GXSURFACEITEM`
         
-        :returns: A null :class:`geosoft.gxapi.GXSURFACEITEM`
+        :returns: A null `GXSURFACEITEM`
         """
         return cls()
 
     def is_null(self):
         """
-        Check if the instance of :class:`geosoft.gxapi.GXSURFACEITEM` is null (undefined)`
+        Check if the instance of `GXSURFACEITEM` is null (undefined)`
         
-        :returns: True if this is a null (undefined) instance of :class:`geosoft.gxapi.GXSURFACEITEM`, False otherwise.
+        :returns: True if this is a null (undefined) instance of `GXSURFACEITEM`, False otherwise.
         """
         return self._wrapper.handle == 0
 
@@ -62,7 +62,11 @@ class GXSURFACEITEM:
     @classmethod
     def create(cls, p1, p2):
         """
-        Create a :class:`geosoft.gxapi.GXSURFACEITEM`
+        Create a `GXSURFACEITEM`
+
+        .. seealso::
+
+            `set_properties` and `set_default_render_properties`
         """
         ret_val = gxapi_cy.WrapSURFACEITEM.create(GXContext._get_tls_geo(), p1.encode(), p2.encode())
         return GXSURFACEITEM(ret_val)
@@ -78,7 +82,7 @@ class GXSURFACEITEM:
 
         **Note:**
 
-        The value returned by this call will not be valid for newly created items until after a call to AddSurfaceItem_SURFACE.
+        The value returned by this call will not be valid for newly created items until after a call to `GXSURFACE.add_surface_item`.
         """
         p2.value = self._wrapper.get_guid(p2.value.encode())
         
@@ -89,6 +93,10 @@ class GXSURFACEITEM:
     def set_properties(self, p2, p3, p4, p5, p6, p7, p8, p9):
         """
         Sets the properties of the surface item.
+
+        .. seealso::
+
+            `GXSYS.generate_guid`
         """
         self._wrapper.set_properties(p2.encode(), p3.encode(), p4.encode(), p5.encode(), p6, p7.encode(), p8.encode(), p9)
         
@@ -99,6 +107,10 @@ class GXSURFACEITEM:
     def set_properties_ex(self, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11):
         """
         Sets the properties of the surface item (includes new properties introduced in 8.5).
+
+        .. seealso::
+
+            `GXSYS.generate_guid`
         """
         self._wrapper.set_properties_ex(p2.encode(), p3.encode(), p4.encode(), p5.encode(), p6, p7.encode(), p8.encode(), p9, p10, p11)
         
@@ -129,6 +141,10 @@ class GXSURFACEITEM:
     def set_default_render_properties(self, p2, p3, p4):
         """
         Sets default render properties of the surface item.
+
+        .. seealso::
+
+            `GXMVIEW.color`
         """
         self._wrapper.set_default_render_properties(p2, p3, p4)
         
@@ -139,6 +155,10 @@ class GXSURFACEITEM:
     def get_default_render_properties(self, p2, p3, p4):
         """
         Gets default render properties of the surface item.
+
+        .. seealso::
+
+            `GXMVIEW.color`
         """
         p2.value, p3.value, p4.value = self._wrapper.get_default_render_properties(p2.value, p3.value, p4.value)
         

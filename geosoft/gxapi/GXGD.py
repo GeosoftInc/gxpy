@@ -19,7 +19,7 @@ class GXGD:
     GXGD class.
 
     This class provides access to Geosoft grid files using an old interface.
-    Only the SampleGD_DU function uses this class.  Use the :class:`geosoft.gxapi.GXIMG` class
+    Only the `GXDU.sample_gd` function uses this class.  Use the `GXIMG` class
     instead.
     """
 
@@ -38,17 +38,17 @@ class GXGD:
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of :class:`geosoft.gxapi.GXGD`
+        A null (undefined) instance of `GXGD`
         
-        :returns: A null :class:`geosoft.gxapi.GXGD`
+        :returns: A null `GXGD`
         """
         return cls()
 
     def is_null(self):
         """
-        Check if the instance of :class:`geosoft.gxapi.GXGD` is null (undefined)`
+        Check if the instance of `GXGD` is null (undefined)`
         
-        :returns: True if this is a null (undefined) instance of :class:`geosoft.gxapi.GXGD`, False otherwise.
+        :returns: True if this is a null (undefined) instance of `GXGD`, False otherwise.
         """
         return self._wrapper.handle == 0
 
@@ -62,7 +62,7 @@ class GXGD:
     @classmethod
     def create(cls, p1, p2):
         """
-        This method creates a :class:`geosoft.gxapi.GXGD` object.
+        This method creates a `GXGD` object.
         """
         ret_val = gxapi_cy.WrapGD.create(GXContext._get_tls_geo(), p1.encode(), p2)
         return GXGD(ret_val)

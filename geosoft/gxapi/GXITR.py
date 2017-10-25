@@ -19,9 +19,9 @@ class GXITR:
     """
     GXITR class.
 
-    The :class:`geosoft.gxapi.GXITR` class provides access to :class:`geosoft.gxapi.GXITR` files. An :class:`geosoft.gxapi.GXITR` file maps
-    ranges of values to specific colors. The :class:`geosoft.gxapi.GXITR` object is typically
-    used in conjunction with :class:`geosoft.gxapi.GXMVIEW` objects (see :class:`geosoft.gxapi.GXMVIEW` and :class:`geosoft.gxapi.GXMVU`).
+    The `GXITR` class provides access to `GXITR` files. An `GXITR` file maps
+    ranges of values to specific colors. The `GXITR` object is typically
+    used in conjunction with `GXMVIEW` objects (see `GXMVIEW` and `GXMVU`).
 
     **Note:**
 
@@ -31,18 +31,18 @@ class GXITR:
     for instance if Min = 0 and Inc = 1, then the second bin would include
     all values z such that  0 <= z < 1 (the first bin has all values < 0).
     
-    Color zones used in displaying grids (:class:`geosoft.gxapi.GXITR`, ZON etc...) are the
+    Color zones used in displaying grids (`GXITR`, ZON etc...) are the
     opposite, with exclusive minima and inclusive maxima.
     For instance, if a zone is defined from 0 to 1, then it would
     contain all values of z such that 0 < z <= 1.
     
     These definitions mean that it is impossible to perfectly assign
-    :class:`geosoft.gxapi.GXITR` colors to individual bars of a histogram. The best work-around
+    `GXITR` colors to individual bars of a histogram. The best work-around
     when the data values are integers is to define the color zones using
     0.5 values between the integers. A general work-around is to make the
     number of histogram bins much larger than the number of color zones.
     
-    The :attr:`geosoft.gxapi.ITR_NULL` is used to hold a NULL handle to an :class:`geosoft.gxapi.GXITR` class.
+    The `ITR_NULL` is used to hold a NULL handle to an `GXITR` class.
     """
 
     def __enter__(self):
@@ -60,17 +60,17 @@ class GXITR:
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of :class:`geosoft.gxapi.GXITR`
+        A null (undefined) instance of `GXITR`
         
-        :returns: A null :class:`geosoft.gxapi.GXITR`
+        :returns: A null `GXITR`
         """
         return cls()
 
     def is_null(self):
         """
-        Check if the instance of :class:`geosoft.gxapi.GXITR` is null (undefined)`
+        Check if the instance of `GXITR` is null (undefined)`
         
-        :returns: True if this is a null (undefined) instance of :class:`geosoft.gxapi.GXITR`, False otherwise.
+        :returns: True if this is a null (undefined) instance of `GXITR`, False otherwise.
         """
         return self._wrapper.handle == 0
 
@@ -100,7 +100,7 @@ class GXITR:
 
     def color_vv(self, p2, p3):
         """
-        Get color transform of a :class:`geosoft.gxapi.GXVV`.
+        Get color transform of a `GXVV`.
 
         **Note:**
 
@@ -125,7 +125,7 @@ class GXITR:
     @classmethod
     def create(cls):
         """
-        Create an :class:`geosoft.gxapi.GXITR` object
+        Create an `GXITR` object
         """
         ret_val = gxapi_cy.WrapITR.create(GXContext._get_tls_geo())
         return GXITR(ret_val)
@@ -135,7 +135,7 @@ class GXITR:
     @classmethod
     def create_file(cls, p1):
         """
-        Create an :class:`geosoft.gxapi.GXITR` object from an itr, tbl, zon, lut file.
+        Create an `GXITR` object from an itr, tbl, zon, lut file.
         """
         ret_val = gxapi_cy.WrapITR.create_file(GXContext._get_tls_geo(), p1.encode())
         return GXITR(ret_val)
@@ -145,11 +145,11 @@ class GXITR:
     @classmethod
     def create_img(cls, p1, p2, p3, p4):
         """
-        Create an :class:`geosoft.gxapi.GXITR` for an image.
+        Create an `GXITR` for an image.
 
         **Note:**
 
-        The :attr:`geosoft.gxapi.ITR_ZONE_DEFAULT` model will ask the :class:`geosoft.gxapi.GXIMG` to provide
+        The `ITR_ZONE_DEFAULT` model will ask the `GXIMG` to provide
         a model if it can.
         
         If a shaded relief model is selected, a shaded image
@@ -165,7 +165,7 @@ class GXITR:
     @classmethod
     def create_map(cls, p1, p2):
         """
-        Create :class:`geosoft.gxapi.GXITR` from Map with :class:`geosoft.gxapi.GXAGG` Group name.
+        Create `GXITR` from Map with `GXAGG` Group name.
         """
         ret_val = gxapi_cy.WrapITR.create_map(GXContext._get_tls_geo(), p1._wrapper, p2.encode())
         return GXITR(ret_val)
@@ -175,7 +175,7 @@ class GXITR:
     @classmethod
     def create_s(cls, p1):
         """
-        Create an :class:`geosoft.gxapi.GXITR` object from a :class:`geosoft.gxapi.GXBF`
+        Create an `GXITR` object from a `GXBF`
         """
         ret_val = gxapi_cy.WrapITR.create_s(GXContext._get_tls_geo(), p1._wrapper)
         return GXITR(ret_val)
@@ -197,15 +197,15 @@ class GXITR:
 
     def get_data_limits(self, p2, p3):
         """
-        Get :class:`geosoft.gxapi.GXITR` max/min data limits.
+        Get `GXITR` max/min data limits.
 
         **Note:**
 
         In some ITRs, especially those defined and
-        embedded inside grid (:class:`geosoft.gxapi.GXIMG`) objects, the
+        embedded inside grid (`GXIMG`) objects, the
         actual data minimum and maximum values are
         stored. This function retrieves those values.
-        This is NOT true of all :class:`geosoft.gxapi.GXITR` objects, and in
+        This is NOT true of all `GXITR` objects, and in
         those cases dummy values will be returned.
         """
         p2.value, p3.value = self._wrapper.get_data_limits(p2.value, p3.value)
@@ -216,7 +216,7 @@ class GXITR:
 
     def get_reg(self):
         """
-        Get the :class:`geosoft.gxapi.GXITR`'s :class:`geosoft.gxapi.GXREG`
+        Get the `GXITR`'s `GXREG`
         """
         ret_val = self._wrapper.get_reg()
         return GXREG(ret_val)
@@ -226,11 +226,11 @@ class GXITR:
 
     def get_zone_color(self, p2, p3):
         """
-        Get the color in a zone of the :class:`geosoft.gxapi.GXITR`
+        Get the color in a zone of the `GXITR`
 
         **Note:**
 
-        Valid indices are 0 to N-1, where N is the size of the :class:`geosoft.gxapi.GXITR`.
+        Valid indices are 0 to N-1, where N is the size of the `GXITR`.
         """
         p3.value = self._wrapper.get_zone_color(p2, p3.value)
         
@@ -250,7 +250,7 @@ class GXITR:
 
     def get_size(self):
         """
-        Get the number of zones in an :class:`geosoft.gxapi.GXITR`
+        Get the number of zones in an `GXITR`
         """
         ret_val = self._wrapper.get_size()
         return ret_val
@@ -260,12 +260,12 @@ class GXITR:
 
     def get_zone_model_type(self):
         """
-        Get the :class:`geosoft.gxapi.GXITR` zone model (e.g. Linear, LogLin, Equal Area).
+        Get the `GXITR` zone model (e.g. Linear, LogLin, Equal Area).
 
         **Note:**
 
         This function may be used to determine if a color
-        transform is included in an :class:`geosoft.gxapi.GXITR`.
+        transform is included in an `GXITR`.
         """
         ret_val = self._wrapper.get_zone_model_type()
         return ret_val
@@ -319,7 +319,7 @@ class GXITR:
 
     def power_zone(self, p2):
         """
-        Modified :class:`geosoft.gxapi.GXITR` zone values to 10 (or e) raized to the power of the values
+        Modified `GXITR` zone values to 10 (or e) raized to the power of the values
         """
         self._wrapper.power_zone(p2)
         
@@ -329,13 +329,17 @@ class GXITR:
 
     def get_brightness(self):
         """
-        Get the brightness setting of the :class:`geosoft.gxapi.GXITR`
+        Get the brightness setting of the `GXITR`
 
         **Note:**
 
         Brightness can range from -1.0 (black) to 1.0 (white).
         This brightness control is relative to the normal color
-        when the :class:`geosoft.gxapi.GXITR` is created.
+        when the `GXITR` is created.
+
+        .. seealso::
+
+            `change_brightness`, `GXAGG.get_brightness`, `GXAGG.change_brightness`
         """
         ret_val = self._wrapper.get_brightness()
         return ret_val
@@ -345,11 +349,11 @@ class GXITR:
 
     def get_zone_value(self, p2):
         """
-        Get the value in a zone of the :class:`geosoft.gxapi.GXITR`
+        Get the value in a zone of the `GXITR`
 
         **Note:**
 
-        Valid indices are 0 to N-2, where N is the size of the :class:`geosoft.gxapi.GXITR`.
+        Valid indices are 0 to N-2, where N is the size of the `GXITR`.
         """
         ret_val = self._wrapper.get_zone_value(p2)
         return ret_val
@@ -379,7 +383,7 @@ class GXITR:
 
     def serial(self, p2):
         """
-        Serialize an :class:`geosoft.gxapi.GXITR` to a :class:`geosoft.gxapi.GXBF`
+        Serialize an `GXITR` to a `GXBF`
         """
         self._wrapper.serial(p2._wrapper)
         
@@ -389,11 +393,11 @@ class GXITR:
     @classmethod
     def set_agg_map(cls, p1, p2, p3):
         """
-        Set :class:`geosoft.gxapi.GXITR` to an :class:`geosoft.gxapi.GXAGG` in map
+        Set `GXITR` to an `GXAGG` in map
 
         **Note:**
 
-        See the CreateMap_ITR function
+        See the `create_map` function
         """
         gxapi_cy.WrapITR.set_agg_map(GXContext._get_tls_geo(), p1._wrapper, p2.encode(), p3._wrapper)
         
@@ -403,7 +407,7 @@ class GXITR:
 
     def set_bright_contrast(self, p2, p3):
         """
-        Set the brightness of the :class:`geosoft.gxapi.GXITR` colors
+        Set the brightness of the `GXITR` colors
 
         **Note:**
 
@@ -424,7 +428,7 @@ class GXITR:
 
     def set_color_model(self, p2):
         """
-        Set the color model of an :class:`geosoft.gxapi.GXITR`.
+        Set the color model of an `GXITR`.
         """
         self._wrapper.set_color_model(p2)
         
@@ -434,7 +438,7 @@ class GXITR:
 
     def set_data_limits(self, p2, p3):
         """
-        Set :class:`geosoft.gxapi.GXITR` max/min data limits.
+        Set `GXITR` max/min data limits.
         """
         self._wrapper.set_data_limits(p2, p3)
         
@@ -444,7 +448,7 @@ class GXITR:
 
     def set_size(self, p2):
         """
-        Set the number of zones in an :class:`geosoft.gxapi.GXITR`
+        Set the number of zones in an `GXITR`
         """
         self._wrapper.set_size(p2)
         
@@ -454,11 +458,11 @@ class GXITR:
 
     def set_zone_color(self, p2, p3):
         """
-        Set the color in a zone of the :class:`geosoft.gxapi.GXITR`
+        Set the color in a zone of the `GXITR`
 
         **Note:**
 
-        Valid indices are 0 to N-1, where N is the size of the :class:`geosoft.gxapi.GXITR`.
+        Valid indices are 0 to N-1, where N is the size of the `GXITR`.
         """
         self._wrapper.set_zone_color(p2, p3)
         
@@ -468,11 +472,11 @@ class GXITR:
 
     def set_zone_value(self, p2, p3):
         """
-        Set the value in a zone of the :class:`geosoft.gxapi.GXITR`
+        Set the value in a zone of the `GXITR`
 
         **Note:**
 
-        Valid indices are 0 to N-2, where N is the size of the :class:`geosoft.gxapi.GXITR`.
+        Valid indices are 0 to N-2, where N is the size of the `GXITR`.
         """
         self._wrapper.set_zone_value(p2, p3)
         

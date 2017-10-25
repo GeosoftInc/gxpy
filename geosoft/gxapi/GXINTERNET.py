@@ -38,17 +38,17 @@ class GXINTERNET:
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of :class:`geosoft.gxapi.GXINTERNET`
+        A null (undefined) instance of `GXINTERNET`
         
-        :returns: A null :class:`geosoft.gxapi.GXINTERNET`
+        :returns: A null `GXINTERNET`
         """
         return cls()
 
     def is_null(self):
         """
-        Check if the instance of :class:`geosoft.gxapi.GXINTERNET` is null (undefined)`
+        Check if the instance of `GXINTERNET` is null (undefined)`
         
-        :returns: True if this is a null (undefined) instance of :class:`geosoft.gxapi.GXINTERNET`, False otherwise.
+        :returns: True if this is a null (undefined) instance of `GXINTERNET`, False otherwise.
         """
         return self._wrapper.handle == 0
 
@@ -62,12 +62,16 @@ class GXINTERNET:
     @classmethod
     def download_http(cls, p1, p2, p3):
         """
-        Download :class:`geosoft.gxapi.GXHTTP` file from the internet to file.
+        Download `GXHTTP` file from the internet to file.
 
         **Note:**
 
         The file must be stored on a server that supports
-        the :class:`geosoft.gxapi.GXHTTP` protocol and not require a password.
+        the `GXHTTP` protocol and not require a password.
+
+        .. seealso::
+
+            iserver.gxh internet class.
         """
         ret_val = gxapi_cy.WrapINTERNET.download_http(GXContext._get_tls_geo(), p1.encode(), p2.encode(), p3)
         return ret_val

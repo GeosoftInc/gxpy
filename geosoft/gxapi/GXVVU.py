@@ -19,7 +19,7 @@ class GXVVU:
     GXVVU class.
 
     These methods are not a class. Utility methods perform
-    various operations on :class:`geosoft.gxapi.GXVV` objects, including pruning,
+    various operations on `GXVV` objects, including pruning,
     splining, clipping and filtering.
     """
 
@@ -38,17 +38,17 @@ class GXVVU:
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of :class:`geosoft.gxapi.GXVVU`
+        A null (undefined) instance of `GXVVU`
         
-        :returns: A null :class:`geosoft.gxapi.GXVVU`
+        :returns: A null `GXVVU`
         """
         return cls()
 
     def is_null(self):
         """
-        Check if the instance of :class:`geosoft.gxapi.GXVVU` is null (undefined)`
+        Check if the instance of `GXVVU` is null (undefined)`
         
-        :returns: True if this is a null (undefined) instance of :class:`geosoft.gxapi.GXVVU`, False otherwise.
+        :returns: True if this is a null (undefined) instance of `GXVVU`, False otherwise.
         """
         return self._wrapper.handle == 0
 
@@ -66,11 +66,15 @@ class GXVVU:
 
         **Note:**
 
-        Repeated values in the reference :class:`geosoft.gxapi.GXVV` will be averaged
-        in the data :class:`geosoft.gxapi.GXVV`.  The first value in the data :class:`geosoft.gxapi.GXVV` will be set to the
-        average and subsequent data :class:`geosoft.gxapi.GXVV` values will be dummied out.
+        Repeated values in the reference `GXVV` will be averaged
+        in the data `GXVV`.  The first value in the data `GXVV` will be set to the
+        average and subsequent data `GXVV` values will be dummied out.
         Data is processed only to the minimum length of the
-        input :class:`geosoft.gxapi.GXVV` lengths.
+        input `GXVV` lengths.
+
+        .. seealso::
+
+            `remove_dummy`
         """
         gxapi_cy.WrapVVU.average_repeat(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper)
         
@@ -84,12 +88,16 @@ class GXVVU:
 
         **Note:**
 
-        Repeated values in the reference :class:`geosoft.gxapi.GXVV` will be set to the mean, median, minimum or maximum value
-        in the data :class:`geosoft.gxapi.GXVV`.  For minimum and maximum, the index in the data :class:`geosoft.gxapi.GXVV` containing the minimum or maximum value
+        Repeated values in the reference `GXVV` will be set to the mean, median, minimum or maximum value
+        in the data `GXVV`.  For minimum and maximum, the index in the data `GXVV` containing the minimum or maximum value
         is retained, and the other repeated values are dummied out. For mean and median, the first value in the 
-        data :class:`geosoft.gxapi.GXVV` will be reset and subsequent data :class:`geosoft.gxapi.GXVV` values will be dummied out.
+        data `GXVV` will be reset and subsequent data `GXVV` values will be dummied out.
         Data is processed only to the minimum length of the
-        input :class:`geosoft.gxapi.GXVV` lengths.
+        input `GXVV` lengths.
+
+        .. seealso::
+
+            `remove_dummy`
         """
         gxapi_cy.WrapVVU.average_repeat_ex(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3)
         
@@ -103,14 +111,18 @@ class GXVVU:
 
         **Note:**
 
-        Repeated values in the reference :class:`geosoft.gxapi.GXVV` will be averaged
-        in the data :class:`geosoft.gxapi.GXVV`.  The first value in the data :class:`geosoft.gxapi.GXVV` will be set to the
-        average and subsequent data :class:`geosoft.gxapi.GXVV` values will be dummied out.
+        Repeated values in the reference `GXVV` will be averaged
+        in the data `GXVV`.  The first value in the data `GXVV` will be set to the
+        average and subsequent data `GXVV` values will be dummied out.
         Data is processed only to the minimum length of the
-        input :class:`geosoft.gxapi.GXVV` lengths.
-        Both the reference :class:`geosoft.gxapi.GXVV` values must repeat for the averageing
+        input `GXVV` lengths.
+        Both the reference `GXVV` values must repeat for the averageing
         to occur. This version is useful for averaging on repeated
         (X,Y) locations.
+
+        .. seealso::
+
+            RemoveDummy_VV
         """
         gxapi_cy.WrapVVU.average_repeat2(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3._wrapper)
         
@@ -124,13 +136,17 @@ class GXVVU:
 
         **Note:**
 
-        Repeated values in the reference :class:`geosoft.gxapi.GXVV` will be set to the mean, median, minimum or maximum value
-        in the data :class:`geosoft.gxapi.GXVV`.  The first value in the data :class:`geosoft.gxapi.GXVV` will be reset and subsequent data :class:`geosoft.gxapi.GXVV` values will be dummied out.
+        Repeated values in the reference `GXVV` will be set to the mean, median, minimum or maximum value
+        in the data `GXVV`.  The first value in the data `GXVV` will be reset and subsequent data `GXVV` values will be dummied out.
         Data is processed only to the minimum length of the
-        input :class:`geosoft.gxapi.GXVV` lengths.
-        Both the reference :class:`geosoft.gxapi.GXVV` values must repeat for the averageing
+        input `GXVV` lengths.
+        Both the reference `GXVV` values must repeat for the averageing
         to occur. This version is useful for averaging on repeated
         (X,Y) locations.
+
+        .. seealso::
+
+            RemoveDummy_VV
         """
         gxapi_cy.WrapVVU.average_repeat2_ex(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3._wrapper, p4)
         
@@ -140,11 +156,11 @@ class GXVVU:
     @classmethod
     def binary_search(cls, p1, p2, p3, p4):
         """
-        Search  numeric value in a :class:`geosoft.gxapi.GXVV`.
+        Search  numeric value in a `GXVV`.
 
         **Note:**
 
-        The :class:`geosoft.gxapi.GXVV` should be sorted.Search comparison is made on double
+        The `GXVV` should be sorted.Search comparison is made on double
         comparison of the data.
         """
         p3.value, p4.value = gxapi_cy.WrapVVU.binary_search(GXContext._get_tls_geo(), p1._wrapper, p2, p3.value, p4.value)
@@ -155,7 +171,7 @@ class GXVVU:
     @classmethod
     def box_cox(cls, p1, p2):
         """
-        Run Box-Cox (lambda) Transformation on :class:`geosoft.gxapi.GXVV`.
+        Run Box-Cox (lambda) Transformation on `GXVV`.
         """
         gxapi_cy.WrapVVU.box_cox(GXContext._get_tls_geo(), p1._wrapper, p2)
         
@@ -182,7 +198,7 @@ class GXVVU:
     @classmethod
     def clip(cls, p1, p2, p3, p4):
         """
-        Clip a :class:`geosoft.gxapi.GXVV` to a range.
+        Clip a `GXVV` to a range.
         """
         gxapi_cy.WrapVVU.clip(GXContext._get_tls_geo(), p1._wrapper, p2, p3, p4)
         
@@ -202,10 +218,10 @@ class GXVVU:
             are replaced by -0.5*value, and detection limit is ignored.
         
         2. If not auto-converting negatives, and the detection limit is not
-           :attr:`geosoft.gxapi.rDUMMY`, then values less than the detection limit are converted to
+           `rDUMMY`, then values less than the detection limit are converted to
            one-half the detection limit.
         
-        This function is identical to ClipToDetectLimit_CHIMERA.
+        This function is identical to `GXCHIMERA.clip_to_detect_limit`.
         """
         gxapi_cy.WrapVVU.clip_to_detect_limit(GXContext._get_tls_geo(), p1._wrapper, p2, p3)
         
@@ -215,7 +231,7 @@ class GXVVU:
     @classmethod
     def decimate(cls, p1, p2):
         """
-        Decimate a :class:`geosoft.gxapi.GXVV`.
+        Decimate a `GXVV`.
 
         **Note:**
 
@@ -240,7 +256,7 @@ class GXVVU:
     @classmethod
     def distance(cls, p1, p2, p3, p4, p5, p6, p7):
         """
-        Create a cumulative distance :class:`geosoft.gxapi.GXVV`
+        Create a cumulative distance `GXVV`
         """
         gxapi_cy.WrapVVU.distance(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3._wrapper, p4, p5, p6, p7)
         
@@ -250,13 +266,13 @@ class GXVVU:
     @classmethod
     def distance_non_cumulative(cls, p1, p2, p3, p4, p5, p6, p7):
         """
-        Create a non cumulative distance :class:`geosoft.gxapi.GXVV` i.e each
+        Create a non cumulative distance `GXVV` i.e each
         distance element is the distance of the corresponding
         (X,Y) element and the previous element.
 
         **Note:**
 
-        The fist distace element is :attr:`geosoft.gxapi.rDUMMY`.
+        The fist distace element is `rDUMMY`.
         """
         gxapi_cy.WrapVVU.distance_non_cumulative(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3._wrapper, p4, p5, p6, p7)
         
@@ -266,14 +282,14 @@ class GXVVU:
     @classmethod
     def distance_3d(cls, p1, p2, p3, p4, p5):
         """
-        Create a cumulative distance :class:`geosoft.gxapi.GXVV` from X, Y and Z VVs
+        Create a cumulative distance `GXVV` from X, Y and Z VVs
 
         **Note:**
 
-        The output :class:`geosoft.gxapi.GXVV` is the length of the shortest X,Y or Z input :class:`geosoft.gxapi.GXVV`.
+        The output `GXVV` is the length of the shortest X,Y or Z input `GXVV`.
         Any values with dummies are ignored - the distance at that
         point is equal to the distance at the previous valid point.
-        The returned :class:`geosoft.gxapi.GXVV` is the cumulative straight-line distance
+        The returned `GXVV` is the cumulative straight-line distance
         between the points. No re-sampling is performed.
         VVs of any type are supported.
         """
@@ -292,7 +308,7 @@ class GXVVU:
         Locate the starting points of line segements determined by an input gap distance.
         The returned indices indicate where to break the line, given an input gap.
         The number of returned indices is one less than the number of line segments.
-        (So if there are no gaps the returned :class:`geosoft.gxapi.GXVV` has zero length).
+        (So if there are no gaps the returned `GXVV` has zero length).
         """
         gxapi_cy.WrapVVU.find_gaps_3d(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3._wrapper, p4, p5._wrapper)
         
@@ -302,7 +318,7 @@ class GXVVU:
     @classmethod
     def dummy_range(cls, p1, p2, p3, p4, p5):
         """
-        Dummy values inside or outside a range in a :class:`geosoft.gxapi.GXVV`
+        Dummy values inside or outside a range in a `GXVV`
 
         **Note:**
 
@@ -340,12 +356,12 @@ class GXVVU:
     @classmethod
     def dummy_repeat(cls, p1, p2):
         """
-        Dummy repeat values in a :class:`geosoft.gxapi.GXVV`.
+        Dummy repeat values in a `GXVV`.
 
         **Note:**
 
         Either the first, middle or last point will be left.
-                          Use Interp_VVU to interpolate after if desired.
+                          Use `interp` to interpolate after if desired.
         """
         gxapi_cy.WrapVVU.dummy_repeat(GXContext._get_tls_geo(), p1._wrapper, p2)
         
@@ -359,12 +375,12 @@ class GXVVU:
 
         **Note:**
 
-        Created for duplicate sample handling in :class:`geosoft.gxapi.GXCHIMERA`. On input,
-        a numeric :class:`geosoft.gxapi.GXVV` containing data values, and a sample type :class:`geosoft.gxapi.GXVV`.
+        Created for duplicate sample handling in `GXCHIMERA`. On input,
+        a numeric `GXVV` containing data values, and a sample type `GXVV`.
         Sample pairs have types "1" and "2". This routine searches for
         types in order "1 2 1 2", and writes the mean values of pairs
-        to the mean value :class:`geosoft.gxapi.GXVV`, and the differences with the mean (equal
-        values, negative and positive) to the difference :class:`geosoft.gxapi.GXVV`. Results
+        to the mean value `GXVV`, and the differences with the mean (equal
+        values, negative and positive) to the difference `GXVV`. Results
         for samples out of order, for unmatched values, or when the
         sample type does not equal "1" or "2" are set to dummy.
         """
@@ -380,7 +396,7 @@ class GXVVU:
 
         **Note:**
 
-        :class:`geosoft.gxapi.GXVV` is set to input length (except for -1)
+        `GXVV` is set to input length (except for -1)
         See RAND for a short discription of the
         random number generator used.
         """
@@ -392,7 +408,7 @@ class GXVVU:
     @classmethod
     def filter(cls, p1, p2, p3):
         """
-        Apply a convolution filter to a :class:`geosoft.gxapi.GXVV`.
+        Apply a convolution filter to a `GXVV`.
         """
         gxapi_cy.WrapVVU.filter(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3)
         
@@ -402,20 +418,20 @@ class GXVVU:
     @classmethod
     def find_string_items(cls, p1, p2, p3, p4, p5, p6):
         """
-        Searches a :class:`geosoft.gxapi.GXVV` for items in a second :class:`geosoft.gxapi.GXVV`, returns indices of those found.
+        Searches a `GXVV` for items in a second `GXVV`, returns indices of those found.
 
         **Note:**
 
         This is a much more efficient way of determining if items in
-        one :class:`geosoft.gxapi.GXVV` are found in a second, than by searching
+        one `GXVV` are found in a second, than by searching
         repeatedly in a loop.
-        The returned :attr:`geosoft.gxapi.GS_LONG` :class:`geosoft.gxapi.GXVV` contains the same number of items as
-        the "search items" :class:`geosoft.gxapi.GXVV`, and contains -1 for items where the
+        The returned `GS_LONG` `GXVV` contains the same number of items as
+        the "search items" `GXVV`, and contains -1 for items where the
         value is not found, and the index of items that are found.
         Comparisons are case-tolerant.
         Non-string VVs are converted to string type VVs (element size 24) internally.
         
-        The method requires that the :class:`geosoft.gxapi.GXVV` items be sorted, and
+        The method requires that the `GXVV` items be sorted, and
         will do so internally. Since the input VVs may already be sorted,
         the method will run faster if this stage can be skipped.
         """
@@ -427,7 +443,7 @@ class GXVVU:
     @classmethod
     def fractal_filter(cls, p1, p2, p3, p4):
         """
-        Fractal filter a :class:`geosoft.gxapi.GXVV`.
+        Fractal filter a `GXVV`.
         """
         gxapi_cy.WrapVVU.fractal_filter(GXContext._get_tls_geo(), p1._wrapper, p2, p3, p4._wrapper)
         
@@ -442,7 +458,7 @@ class GXVVU:
         **Note:**
 
         Input X and Y location VVs, and a location.
-        Returns the index of the point in the :class:`geosoft.gxapi.GXVV` closest to the
+        Returns the index of the point in the `GXVV` closest to the
         input point.
         """
         ret_val = gxapi_cy.WrapVVU.close_xy(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3, p4)
@@ -458,10 +474,10 @@ class GXVVU:
         **Note:**
 
         Input X and Y location VVs, and a location.
-        Returns the index of the point in the :class:`geosoft.gxapi.GXVV` closest to the
+        Returns the index of the point in the `GXVV` closest to the
         input point.
         This skips points where the mask value is dummy.
-        If no valid points are in the VVs, or all the mask :class:`geosoft.gxapi.GXVV` values
+        If no valid points are in the VVs, or all the mask `GXVV` values
         are dummy, the returned index is -1.
         """
         ret_val = gxapi_cy.WrapVVU.close_xym(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3._wrapper, p4, p5)
@@ -477,7 +493,7 @@ class GXVVU:
         **Note:**
 
         Input X, Y and Z location VVs, and a location.
-        Returns the index of the point in the :class:`geosoft.gxapi.GXVV` closest to the
+        Returns the index of the point in the `GXVV` closest to the
         input point.
         """
         ret_val = gxapi_cy.WrapVVU.close_xyz(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3._wrapper, p4, p5, p6)
@@ -493,10 +509,10 @@ class GXVVU:
         **Note:**
 
         Input X, Y and Z location VVs, and a location.
-        Returns the index of the point in the :class:`geosoft.gxapi.GXVV` closest to the
+        Returns the index of the point in the `GXVV` closest to the
         input point.
         This skips points where the mask value is dummy.
-        If no valid points are in the VVs, or all the mask :class:`geosoft.gxapi.GXVV` values
+        If no valid points are in the VVs, or all the mask `GXVV` values
         are dummy, the returned index is -1.
         """
         ret_val = gxapi_cy.WrapVVU.close_xyzm(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3._wrapper, p4._wrapper, p5, p6, p7)
@@ -507,12 +523,12 @@ class GXVVU:
     @classmethod
     def dummy_back_tracks(cls, p1):
         """
-        Dummy all points that keep a :class:`geosoft.gxapi.GXVV` from being monotonically increasing.
+        Dummy all points that keep a `GXVV` from being monotonically increasing.
 
         **Note:**
 
-        The :class:`geosoft.gxapi.GXVV` length remains the same. Any point that is less than or equal to
-        the previous (valid) point in the :class:`geosoft.gxapi.GXVV` is dummied.
+        The `GXVV` length remains the same. Any point that is less than or equal to
+        the previous (valid) point in the `GXVV` is dummied.
         """
         ret_val = gxapi_cy.WrapVVU.dummy_back_tracks(GXContext._get_tls_geo(), p1._wrapper)
         return ret_val
@@ -522,13 +538,13 @@ class GXVVU:
     @classmethod
     def find_dummy(cls, p1, p2, p3, p4, p5):
         """
-        Find the first dummy|non-dummy value in :class:`geosoft.gxapi.GXVV`
+        Find the first dummy|non-dummy value in `GXVV`
 
         **Note:**
 
         Start and end of range are always defined lowest
         to largest even if decreasing search order.  To search
-        entire :class:`geosoft.gxapi.GXVV` range, specify 0,-1.
+        entire `GXVV` range, specify 0,-1.
         """
         ret_val = gxapi_cy.WrapVVU.find_dummy(GXContext._get_tls_geo(), p1._wrapper, p2, p3, p4, p5)
         return ret_val
@@ -586,18 +602,22 @@ class GXVVU:
     @classmethod
     def search_text(cls, p1, p2, p3, p4, p5, p6):
         """
-        Search for a text value in a :class:`geosoft.gxapi.GXVV`
+        Search for a text value in a `GXVV`
 
         **Note:**
 
         Search comparison is made on string comparison
         of the data. Returns index of first item matching
         the input string.
-        If start index is -1 or dummy, then full :class:`geosoft.gxapi.GXVV` is searched.
-        Use :attr:`geosoft.gxapi.VVU_MATCH_INPUT_LENGTH` to match the first part of a string.
+        If start index is -1 or dummy, then full `GXVV` is searched.
+        Use `VVU_MATCH_INPUT_LENGTH` to match the first part of a string.
         This is also recommended for matching numerical values, since
         the displayed value in the database may not be the same as the
         stored value.
+
+        .. seealso::
+
+            sSearchReplace_VV
         """
         ret_val = gxapi_cy.WrapVVU.search_text(GXContext._get_tls_geo(), p1._wrapper, p2.encode(), p3, p4, p5, p6)
         return ret_val
@@ -607,13 +627,13 @@ class GXVVU:
     @classmethod
     def mask(cls, p1, p2):
         """
-        Mask dummies in one :class:`geosoft.gxapi.GXVV` onto another.
+        Mask dummies in one `GXVV` onto another.
 
         **Note:**
 
-        :class:`geosoft.gxapi.GXVV` to mask will be resampled to reference :class:`geosoft.gxapi.GXVV` if required.
-        The returned length of the :class:`geosoft.gxapi.GXVV` to mask will be the shorter
-        of the reference :class:`geosoft.gxapi.GXVV` or the mask :class:`geosoft.gxapi.GXVV`.
+        `GXVV` to mask will be resampled to reference `GXVV` if required.
+        The returned length of the `GXVV` to mask will be the shorter
+        of the reference `GXVV` or the mask `GXVV`.
         """
         gxapi_cy.WrapVVU.mask(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper)
         
@@ -661,16 +681,16 @@ class GXVVU:
     @classmethod
     def noise_check(cls, p1, p2, p3, p4):
         """
-        Check on deviation of data from variable background in a :class:`geosoft.gxapi.GXVV`
+        Check on deviation of data from variable background in a `GXVV`
 
         **Note:**
 
-        This function checks vertical deviation of data in input :class:`geosoft.gxapi.GXVV`
+        This function checks vertical deviation of data in input `GXVV`
         against a moving straight line. The straight line at any time is
-        defined by two extreme points of a data segment.  Output :class:`geosoft.gxapi.GXVV` will
-        be 0 if data point in input :class:`geosoft.gxapi.GXVV` falls within the deviation,
+        defined by two extreme points of a data segment.  Output `GXVV` will
+        be 0 if data point in input `GXVV` falls within the deviation,
         otherwise, it will be 1.
-        Output :class:`geosoft.gxapi.GXVV` will be 0 if the straight line is vertical.
+        Output `GXVV` will be 0 if the straight line is vertical.
         """
         gxapi_cy.WrapVVU.noise_check(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3, p4)
         
@@ -680,21 +700,21 @@ class GXVVU:
     @classmethod
     def noise_check2(cls, p1, p2, p3, p4, p5):
         """
-        Like NoiseCheck_VVU, but returns maximum deviation at all points.
+        Like `noise_check`, but returns maximum deviation at all points.
 
         **Note:**
 
-        This function checks vertical deviation of data in an input :class:`geosoft.gxapi.GXVV`
+        This function checks vertical deviation of data in an input `GXVV`
         against a moving straight line, where the X-axis value is
         taken to be the data index, and the Y-axis value is the
-        input data :class:`geosoft.gxapi.GXVV` value. The straight line is drawn between data points
+        input data `GXVV` value. The straight line is drawn between data points
         at the ends of the line segment, whose length is an input.
         
-        The output flag :class:`geosoft.gxapi.GXVV` is set to 0 if data point in input :class:`geosoft.gxapi.GXVV` falls within the
+        The output flag `GXVV` is set to 0 if data point in input `GXVV` falls within the
         deviation for all the moving line segments of which it is a part, otherwise, it
         will be set to 1.
         
-        The output maximum deviation :class:`geosoft.gxapi.GXVV` contains the maximum deviation at each point
+        The output maximum deviation `GXVV` contains the maximum deviation at each point
         for all the moving line segments that it is a part of.
         """
         gxapi_cy.WrapVVU.noise_check2(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3._wrapper, p4, p5)
@@ -709,7 +729,7 @@ class GXVVU:
 
         **Note:**
 
-        :class:`geosoft.gxapi.GXVV` is set to input length (except for -1)
+        `GXVV` is set to input length (except for -1)
         See RAND for a short discription of the
         random number generator used.
         """
@@ -726,7 +746,7 @@ class GXVVU:
         **Note:**
 
         Often on maps plotted symbols and text overlap each other.
-        This routine accepts of :class:`geosoft.gxapi.GXVV` of locations and returns a new
+        This routine accepts of `GXVV` of locations and returns a new
         set of locations offset from the originals, and guaranteed
         not to overlap, given the size of the original symbols.
         The returned offset X, Y
@@ -786,7 +806,7 @@ class GXVVU:
     @classmethod
     def offset_correct2(cls, p1, p2, p3, p4, p5, p6):
         """
-        Same as OffsetCorrect_VVU, but for an arbitrary offset angle.
+        Same as `offset_correct`, but for an arbitrary offset angle.
         """
         gxapi_cy.WrapVVU.offset_correct2(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3, p4, p5._wrapper, p6._wrapper)
         
@@ -796,7 +816,7 @@ class GXVVU:
     @classmethod
     def offset_correct3(cls, p1, p2, p3, p4, p5, p6, p7):
         """
-        Same as OffsetCorrect2_VVU, but specify smoothing interval.
+        Same as `offset_correct2`, but specify smoothing interval.
 
         **Note:**
 
@@ -853,7 +873,7 @@ class GXVVU:
         **Note:**
 
         Often on maps plotted symbols and text overlap each other.
-        This routine accepts of :class:`geosoft.gxapi.GXVV` of locations and returns a new
+        This routine accepts of `GXVV` of locations and returns a new
         set of locations offset from the originals, and guaranteed
         not to overlap, given the size of the original symbols.
         The returned offset X, Y
@@ -877,19 +897,19 @@ class GXVVU:
     @classmethod
     def pick_peak(cls, p1, p2, p3, p4):
         """
-        Find peaks in a :class:`geosoft.gxapi.GXVV` - method one.
+        Find peaks in a `GXVV` - method one.
 
         **Note:**
 
         Peaks are the maximum point within a sequence of
-        positive values in the input :class:`geosoft.gxapi.GXVV`.  The width is the
+        positive values in the input `GXVV`.  The width is the
         number of points in the positive sequence.
         
-        A :class:`geosoft.gxapi.GXVV` may have to be pre-filtered before finding
+        A `GXVV` may have to be pre-filtered before finding
         the peak values:
         
-        Use BPFilt_VVU to smooth the data as required.
-        Use Filter_VVU to apply a Laplace filter
+        Use `bp_filt` to smooth the data as required.
+        Use `filter` to apply a Laplace filter
         "-0.5,1.0,-0.5" to make curvature data.
         """
         gxapi_cy.WrapVVU.pick_peak(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3, p4)
@@ -900,16 +920,16 @@ class GXVVU:
     @classmethod
     def pick_peak2(cls, p1, p2, p3, p4):
         """
-        Find peaks in a :class:`geosoft.gxapi.GXVV` - method two.
+        Find peaks in a `GXVV` - method two.
 
         **Note:**
 
         Peaks are the maximum point within a sequence of
-        values in the input :class:`geosoft.gxapi.GXVV`. Maximum points must be above
+        values in the input `GXVV`. Maximum points must be above
         the base level and have a local amplitude greater
         than the minimum amplitude specified.
         
-        A :class:`geosoft.gxapi.GXVV` may have to be pre-filtered before finding
+        A `GXVV` may have to be pre-filtered before finding
         the peak values.
         """
         gxapi_cy.WrapVVU.pick_peak2(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3, p4)
@@ -920,7 +940,7 @@ class GXVVU:
     @classmethod
     def pick_peak3(cls, p1, p2, p3, p4, p5, p6, p7, p8, p9):
         """
-        Find peaks in a :class:`geosoft.gxapi.GXVV` - method two, returning width and half-amplitude widths.
+        Find peaks in a `GXVV` - method two, returning width and half-amplitude widths.
 
         **Note:**
 
@@ -942,13 +962,17 @@ class GXVVU:
     @classmethod
     def poly_fill(cls, p1, p2, p3):
         """
-        Fill a :class:`geosoft.gxapi.GXVV` with values from an n'th order polynomial, integral x.
+        Fill a `GXVV` with values from an n'th order polynomial, integral x.
 
         **Note:**
 
-        The output :class:`geosoft.gxapi.GXVV` length must be set as desired before calling.
+        The output `GXVV` length must be set as desired before calling.
         
         The X scale is unitless (1 per element), i.e. 0,1,2,3,...
+
+        .. seealso::
+
+            `trend`, `trend2`, `poly_fill2`
         """
         gxapi_cy.WrapVVU.poly_fill(GXContext._get_tls_geo(), p1._wrapper, p2, p3._wrapper)
         
@@ -958,12 +982,16 @@ class GXVVU:
     @classmethod
     def poly_fill2(cls, p1, p2, p3, p4):
         """
-        Fill a :class:`geosoft.gxapi.GXVV` with values from an n'th order polynomial, specified X
+        Fill a `GXVV` with values from an n'th order polynomial, specified X
 
         **Note:**
 
-        The output :class:`geosoft.gxapi.GXVV` length must be set as desired before calling.
-        The X scale is defined by a X :class:`geosoft.gxapi.GXVV` (see Trend_VV for unitless X).
+        The output `GXVV` length must be set as desired before calling.
+        The X scale is defined by a X `GXVV` (see Trend_VV for unitless X).
+
+        .. seealso::
+
+            `trend`, `trend2`, `poly_fill`
         """
         gxapi_cy.WrapVVU.poly_fill2(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3, p4._wrapper)
         
@@ -973,7 +1001,7 @@ class GXVVU:
     @classmethod
     def polygon_mask(cls, p1, p2, p3, p4, p5):
         """
-        Mask a :class:`geosoft.gxapi.GXVV` using XY data and a polygon.
+        Mask a `GXVV` using XY data and a polygon.
 
         **Note:**
 
@@ -987,13 +1015,13 @@ class GXVVU:
     @classmethod
     def prune(cls, p1, p2, p3):
         """
-        Prune values from a :class:`geosoft.gxapi.GXVV` based on reference :class:`geosoft.gxapi.GXVV`
+        Prune values from a `GXVV` based on reference `GXVV`
 
         **Note:**
 
-        Pruning will shorten the :class:`geosoft.gxapi.GXVV` by removing values
+        Pruning will shorten the `GXVV` by removing values
         that are either dummy or non-dummy in the reference
-        :class:`geosoft.gxapi.GXVV`
+        `GXVV`
         """
         gxapi_cy.WrapVVU.prune(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3)
         
@@ -1003,12 +1031,12 @@ class GXVVU:
     @classmethod
     def qc(cls, p1, p2, p3, p4, p5, p6, p7, p8):
         """
-        Quality control on deviation of data from norm in a :class:`geosoft.gxapi.GXVV`
+        Quality control on deviation of data from norm in a `GXVV`
 
         **Note:**
 
-        This function tests data in input :class:`geosoft.gxapi.GXVV` against
-        two separate criteria. Each element of the output :class:`geosoft.gxapi.GXVV`
+        This function tests data in input `GXVV` against
+        two separate criteria. Each element of the output `GXVV`
         will have one of the following indicators:
         
         =========  ==============================================================
@@ -1070,8 +1098,8 @@ class GXVVU:
 
         **Note:**
 
-        Created for duplicate sample handling in :class:`geosoft.gxapi.GXCHIMERA`. On input,
-        a numeric or text :class:`geosoft.gxapi.GXVV` containing data values, and a sample type :class:`geosoft.gxapi.GXVV`.
+        Created for duplicate sample handling in `GXCHIMERA`. On input,
+        a numeric or text `GXVV` containing data values, and a sample type `GXVV`.
         Sample pairs have types "1" and "2". This routine searches for
         types in order "1 2 1 2", and calulates the unnormalized relative variance,
         defined as the sum of the squared differences between duplicates
@@ -1089,7 +1117,7 @@ class GXVVU:
     @classmethod
     def remove_dummy(cls, p1):
         """
-        Remove dummy values from a :class:`geosoft.gxapi.GXVV`
+        Remove dummy values from a `GXVV`
         """
         gxapi_cy.WrapVVU.remove_dummy(GXContext._get_tls_geo(), p1._wrapper)
         
@@ -1103,7 +1131,7 @@ class GXVVU:
 
         **Note:**
 
-        Removes all indices where either :class:`geosoft.gxapi.GXVV` has a dummy, or is
+        Removes all indices where either `GXVV` has a dummy, or is
         not defined (due to length differences).
         """
         gxapi_cy.WrapVVU.remove_dummy2(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper)
@@ -1118,7 +1146,7 @@ class GXVVU:
 
         **Note:**
 
-        Removes all indices where any :class:`geosoft.gxapi.GXVV` has a dummy, or is
+        Removes all indices where any `GXVV` has a dummy, or is
         not defined (due to length differences).
         """
         gxapi_cy.WrapVVU.remove_dummy3(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3._wrapper)
@@ -1133,7 +1161,7 @@ class GXVVU:
 
         **Note:**
 
-        Removes all indices where any :class:`geosoft.gxapi.GXVV` has a dummy, or is
+        Removes all indices where any `GXVV` has a dummy, or is
         not defined (due to length differences).
         """
         gxapi_cy.WrapVVU.remove_dummy4(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3._wrapper, p4._wrapper)
@@ -1148,11 +1176,11 @@ class GXVVU:
 
         **Note:**
 
-        Created for duplicate sample handling in :class:`geosoft.gxapi.GXCHIMERA`. On input,
-        a numeric or text :class:`geosoft.gxapi.GXVV` containing data values, and a sample type :class:`geosoft.gxapi.GXVV`.
+        Created for duplicate sample handling in `GXCHIMERA`. On input,
+        a numeric or text `GXVV` containing data values, and a sample type `GXVV`.
         Sample pairs have types "1" and "2". This routine searches for
         types in order "1 2 1 2", and replaces the pair of values in the
-        data :class:`geosoft.gxapi.GXVV` according to the `VV_DUP` value.
+        data `GXVV` according to the `VV_DUP` value.
         Results for samples out of order, for unmatched pairs, or when the
         sample type does not equal "1" or "2" remain unchanged.
         """
@@ -1173,7 +1201,7 @@ class GXVVU:
         if defined, are treated according to the value of `VV_XYDUP`.
         The returned VVs are shortened to the new length, without
         duplicates.
-        The Z :class:`geosoft.gxapi.GXVV` can be set to NULL on input, in which case it is ignored.
+        The Z `GXVV` can be set to NULL on input, in which case it is ignored.
         """
         gxapi_cy.WrapVVU.remove_xy_dup(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3._wrapper, p4)
         
@@ -1188,7 +1216,7 @@ class GXVVU:
         **Note:**
 
         Searches for duplicated (X, Y) locations and removes the
-        duplicates (can be more than just a pair). The Index :class:`geosoft.gxapi.GXVV` is
+        duplicates (can be more than just a pair). The Index `GXVV` is
         updated accordingly .i.e if  (X,Y) location of Index[0] == Index[1]
         Index[1] is removed.
         """
@@ -1249,12 +1277,16 @@ class GXVVU:
     @classmethod
     def search_replace(cls, p1, p2, p3):
         """
-        Search and replace numeric values in a :class:`geosoft.gxapi.GXVV`.
+        Search and replace numeric values in a `GXVV`.
 
         **Note:**
 
         Search comparison is made on double comparison
         of the data.
+
+        .. seealso::
+
+            SearchReplaceText_VV
         """
         gxapi_cy.WrapVVU.search_replace(GXContext._get_tls_geo(), p1._wrapper, p2, p3)
         
@@ -1264,12 +1296,16 @@ class GXVVU:
     @classmethod
     def search_replace_text(cls, p1, p2, p3, p4, p5, p6):
         """
-        Search and replace text values in a :class:`geosoft.gxapi.GXVV`
+        Search and replace text values in a `GXVV`
 
         **Note:**
 
         Search comparison is made on string comparison
         of the data.
+
+        .. seealso::
+
+            SearchReplace_VV
         """
         gxapi_cy.WrapVVU.search_replace_text(GXContext._get_tls_geo(), p1._wrapper, p2, p3, p4.encode(), p5.encode(), p6)
         
@@ -1279,12 +1315,16 @@ class GXVVU:
     @classmethod
     def search_replace_text_ex(cls, p1, p2, p3, p4, p5, p6, p7):
         """
-        Search and replace text values in a :class:`geosoft.gxapi.GXVV`, count items changed.
+        Search and replace text values in a `GXVV`, count items changed.
 
         **Note:**
 
         Search comparison is made on a string comparison
         of the data.
+
+        .. seealso::
+
+            SearchReplaceText_VV
         """
         p7.value = gxapi_cy.WrapVVU.search_replace_text_ex(GXContext._get_tls_geo(), p1._wrapper, p2, p3, p4.encode(), p5.encode(), p6, p7.value)
         
@@ -1294,7 +1334,7 @@ class GXVVU:
     @classmethod
     def spline(cls, p1, p2, p3, p4, p5, p6, p7, p8, p9):
         """
-        Spline a Y :class:`geosoft.gxapi.GXVV` onto an X :class:`geosoft.gxapi.GXVV`.
+        Spline a Y `GXVV` onto an X `GXVV`.
         """
         gxapi_cy.WrapVVU.spline(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3._wrapper, p4, p5, p6, p7, p8, p9)
         
@@ -1304,7 +1344,7 @@ class GXVVU:
     @classmethod
     def spline2(cls, p1, p2, p3, p4, p5):
         """
-        Spline a Y :class:`geosoft.gxapi.GXVV` onto an X :class:`geosoft.gxapi.GXVV`. Uses specified values of X in X2
+        Spline a Y `GXVV` onto an X `GXVV`. Uses specified values of X in X2
         """
         gxapi_cy.WrapVVU.spline2(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3._wrapper, p4._wrapper, p5)
         
@@ -1318,7 +1358,7 @@ class GXVVU:
 
         **Note:**
 
-        Parses a series of space, tab or comma-delimited values to a :class:`geosoft.gxapi.GXVV`.
+        Parses a series of space, tab or comma-delimited values to a `GXVV`.
         """
         ret_val = gxapi_cy.WrapVVU.tokenize_to_values(GXContext._get_tls_geo(), p1._wrapper, p2.encode())
         return ret_val
@@ -1328,11 +1368,11 @@ class GXVVU:
     @classmethod
     def translate(cls, p1, p2, p3):
         """
-        Translate values in a :class:`geosoft.gxapi.GXVV`
+        Translate values in a `GXVV`
 
         **Note:**
 
-        (new :class:`geosoft.gxapi.GXVV`) = ((old :class:`geosoft.gxapi.GXVV`) + base) * scale
+        (new `GXVV`) = ((old `GXVV`) + base) * scale
         """
         gxapi_cy.WrapVVU.translate(GXContext._get_tls_geo(), p1._wrapper, p2, p3)
         
@@ -1352,8 +1392,12 @@ class GXVVU:
         
         The X scale is unitless (1 per element), i.e. 0,1,2,3,...
         
-        The polynomial :class:`geosoft.gxapi.GXVV` length is set to the number of coefficients
+        The polynomial `GXVV` length is set to the number of coefficients
         (order + 1)
+
+        .. seealso::
+
+            `poly_fill`, `trend2`, `poly_fill2`
         """
         gxapi_cy.WrapVVU.trend(GXContext._get_tls_geo(), p1._wrapper, p2, p3._wrapper)
         
@@ -1371,10 +1415,14 @@ class GXVVU:
         
            Y(x) = c[0] + c[1]x + c[2](x**2) + ... + c[n](x**n)
         
-        The X scale is defined by a X :class:`geosoft.gxapi.GXVV` (see Trend_VV for unitless X).
+        The X scale is defined by a X `GXVV` (see Trend_VV for unitless X).
         
-        The polynomial :class:`geosoft.gxapi.GXVV` length is set to the number of coefficients
+        The polynomial `GXVV` length is set to the number of coefficients
         (order + 1)
+
+        .. seealso::
+
+            `poly_fill`, `trend2`, `poly_fill2`
         """
         gxapi_cy.WrapVVU.trend2(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3, p4._wrapper)
         
@@ -1388,7 +1436,7 @@ class GXVVU:
 
         **Note:**
 
-        :class:`geosoft.gxapi.GXVV` is set to input length (except for -1)
+        `GXVV` is set to input length (except for -1)
         See rand.gxh for a short discription of the
         random number generator used.
         """

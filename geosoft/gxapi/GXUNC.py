@@ -18,7 +18,7 @@ class GXUNC:
     """
     GXUNC class.
 
-    This library is not a class. Use the :class:`geosoft.gxapi.GXUNC` library functions
+    This library is not a class. Use the `GXUNC` library functions
     to work with Unicode characters and strings. Since version 6.2
     all strings are represented internally in the the GX engine
     as UTF-8. The character set concept was discarded as a way to
@@ -43,17 +43,17 @@ class GXUNC:
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of :class:`geosoft.gxapi.GXUNC`
+        A null (undefined) instance of `GXUNC`
         
-        :returns: A null :class:`geosoft.gxapi.GXUNC`
+        :returns: A null `GXUNC`
         """
         return cls()
 
     def is_null(self):
         """
-        Check if the instance of :class:`geosoft.gxapi.GXUNC` is null (undefined)`
+        Check if the instance of `GXUNC` is null (undefined)`
         
-        :returns: True if this is a null (undefined) instance of :class:`geosoft.gxapi.GXUNC`, False otherwise.
+        :returns: True if this is a null (undefined) instance of `GXUNC`, False otherwise.
         """
         return self._wrapper.handle == 0
 
@@ -106,7 +106,7 @@ class GXUNC:
 
         **Note:**
 
-        Invalid symbols in the :class:`geosoft.gxapi.GXVV` will be set to -1 by this call. :class:`geosoft.gxapi.GXVV` has to be of type :attr:`geosoft.gxapi.GS_LONG`.
+        Invalid symbols in the `GXVV` will be set to -1 by this call. `GXVV` has to be of type `GS_LONG`.
         """
         gxapi_cy.WrapUNC.validate_symbols(GXContext._get_tls_geo(), p1._wrapper, p2.encode(), p3)
         

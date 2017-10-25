@@ -27,8 +27,8 @@ class GXDH:
 
     **Note:**
 
-    The :class:`geosoft.gxapi.GXDH` class has some defines not used by any functions.
-        :attr:`geosoft.gxapi.DH_DEFINE_PLAN`
+    The `GXDH` class has some defines not used by any functions.
+        `DH_DEFINE_PLAN`
         `DH_DEFINE_SECT`
     """
 
@@ -47,17 +47,17 @@ class GXDH:
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of :class:`geosoft.gxapi.GXDH`
+        A null (undefined) instance of `GXDH`
         
-        :returns: A null :class:`geosoft.gxapi.GXDH`
+        :returns: A null `GXDH`
         """
         return cls()
 
     def is_null(self):
         """
-        Check if the instance of :class:`geosoft.gxapi.GXDH` is null (undefined)`
+        Check if the instance of `GXDH` is null (undefined)`
         
-        :returns: True if this is a null (undefined) instance of :class:`geosoft.gxapi.GXDH`, False otherwise.
+        :returns: True if this is a null (undefined) instance of `GXDH`, False otherwise.
         """
         return self._wrapper.handle == 0
 
@@ -85,7 +85,7 @@ class GXDH:
 
     def creat_chan_lst(self, p2):
         """
-        Fills a :class:`geosoft.gxapi.GXLST` with available string and numeric channel code values.
+        Fills a `GXLST` with available string and numeric channel code values.
 
         **Note:**
 
@@ -102,7 +102,7 @@ class GXDH:
 
     def depth_data_lst(self, p2):
         """
-        Fills a :class:`geosoft.gxapi.GXLST` with available channel code values from Depth databases.
+        Fills a `GXLST` with available channel code values from Depth databases.
 
         **Note:**
 
@@ -119,7 +119,7 @@ class GXDH:
 
     def from_to_data_lst(self, p2, p3):
         """
-        Fills a :class:`geosoft.gxapi.GXLST` with available string and numeric channel code values from From-To databases.
+        Fills a `GXLST` with available string and numeric channel code values from From-To databases.
 
         **Note:**
 
@@ -140,9 +140,9 @@ class GXDH:
 
         **Note:**
 
-        For the input :class:`geosoft.gxapi.GXLST` of holes, returns XYZ location of top or bottom
+        For the input `GXLST` of holes, returns XYZ location of top or bottom
         contact with the input geology. Those selected holes which do NOT
-        have contacts, return :attr:`geosoft.gxapi.rDUMMY` for the corresponding locations.
+        have contacts, return `rDUMMY` for the corresponding locations.
         """
         self._wrapper.get_geology_contacts(p2._wrapper, p3.encode(), p4.encode(), p5, p6, p7._wrapper, p8._wrapper, p9._wrapper)
         
@@ -157,7 +157,7 @@ class GXDH:
         **Note:**
 
         The input data are the oriented core alpha and beta values, using either
-        top or bottom reference. The values for each hole in the :class:`geosoft.gxapi.GXLST` are converted
+        top or bottom reference. The values for each hole in the `GXLST` are converted
         to "absolute" dip and dip-direction values, using the resurveyed hole
         orientations at each depth.
         The alpha and beta data must be from the same database, and the output
@@ -171,7 +171,7 @@ class GXDH:
 
     def get_unique_channel_items(self, p2, p3, p4):
         """
-        Return a :class:`geosoft.gxapi.GXVV` with unique items in a channel.
+        Return a `GXVV` with unique items in a channel.
 
         **Note:**
 
@@ -185,7 +185,7 @@ class GXDH:
 
     def get_unique_channel_items_from_collar(self, p2, p3, p4):
         """
-        Return a :class:`geosoft.gxapi.GXVV` with unique items in a channel.
+        Return a `GXVV` with unique items in a channel.
 
         **Note:**
 
@@ -217,10 +217,10 @@ class GXDH:
 
         **Note:**
 
-        Input the hole index and an :class:`geosoft.gxapi.GXIMG` object. Returns XYZ location
+        Input the hole index and an `GXIMG` object. Returns XYZ location
         of the hole intersection with the DEM. Interpolation inside the DEM
-        uses the native :class:`geosoft.gxapi.GXIMG` interp method. If no intersection is found the
-        returned XYZ locations are :attr:`geosoft.gxapi.rDUMMY`.
+        uses the native `GXIMG` interp method. If no intersection is found the
+        returned XYZ locations are `rDUMMY`.
         """
         ret_val, p4.value, p5.value, p6.value = self._wrapper.find_hole_intersection(p2, p3._wrapper, p4.value, p5.value, p6.value)
         return ret_val
@@ -264,7 +264,7 @@ class GXDH:
         **Note:**
 
         Values in the input channel are assigned the index of the corresponding
-        item found in the input :class:`geosoft.gxapi.GXTPAT`.
+        item found in the input `GXTPAT`.
         The compositing gap refers to the size of gaps in the data (either
         a blank lithology or missing from-to interval) which will be ignored
         when compositing lithologies into contiguous from-to intervals.
@@ -280,7 +280,7 @@ class GXDH:
 
     def numeric_chan_lst(self, p2):
         """
-        Fills a :class:`geosoft.gxapi.GXLST` with available numeric channel code values.
+        Fills a `GXLST` with available numeric channel code values.
 
         **Note:**
 
@@ -297,7 +297,7 @@ class GXDH:
 
     def numeric_from_to_data_lst(self, p2, p3):
         """
-        Fills a :class:`geosoft.gxapi.GXLST` with available numeric channel code values from From-To databases..
+        Fills a `GXLST` with available numeric channel code values from From-To databases..
 
         **Note:**
 
@@ -333,7 +333,7 @@ class GXDH:
 
     def string_chan_lst(self, p2):
         """
-        Fills a :class:`geosoft.gxapi.GXLST` with available string channel code values.
+        Fills a `GXLST` with available string channel code values.
 
         **Note:**
 
@@ -350,7 +350,7 @@ class GXDH:
 
     def string_from_to_data_lst(self, p2, p3):
         """
-        Fills a :class:`geosoft.gxapi.GXLST` with available string-type channel code values from From-To databases.
+        Fills a `GXLST` with available string-type channel code values from From-To databases.
 
         **Note:**
 
@@ -375,7 +375,7 @@ class GXDH:
 
         **Note:**
 
-        Works for both single and multiple :class:`geosoft.gxapi.GXDB` Wholeplots.
+        Works for both single and multiple `GXDB` Wholeplots.
         """
         ret_val = self._wrapper.h_assay_db(p2)
         return GXDB(ret_val)
@@ -389,7 +389,7 @@ class GXDH:
 
         **Note:**
 
-        Works for both single and multiple :class:`geosoft.gxapi.GXDB` Wholeplots.
+        Works for both single and multiple `GXDB` Wholeplots.
         """
         ret_val = self._wrapper.h_assay_symb(p2, p3)
         return ret_val
@@ -403,7 +403,7 @@ class GXDH:
 
         **Note:**
 
-        Works for both single and multiple :class:`geosoft.gxapi.GXDB` Wholeplots.
+        Works for both single and multiple `GXDB` Wholeplots.
         """
         ret_val = self._wrapper.h_collar_db()
         return GXDB(ret_val)
@@ -417,7 +417,7 @@ class GXDH:
 
         **Note:**
 
-        Works for both single and multiple :class:`geosoft.gxapi.GXDB` Wholeplots.
+        Works for both single and multiple `GXDB` Wholeplots.
         """
         ret_val = self._wrapper.h_collar_symb()
         return ret_val
@@ -431,7 +431,7 @@ class GXDH:
 
         **Note:**
 
-        Works for both single and multiple :class:`geosoft.gxapi.GXDB` Wholeplots.
+        Works for both single and multiple `GXDB` Wholeplots.
         """
         ret_val = self._wrapper.h_dip_az_survey_db()
         return GXDB(ret_val)
@@ -445,7 +445,7 @@ class GXDH:
 
         **Note:**
 
-        Works for both single and multiple :class:`geosoft.gxapi.GXDB` Wholeplots.
+        Works for both single and multiple `GXDB` Wholeplots.
         """
         ret_val = self._wrapper.h_dip_az_survey_symb(p2)
         return ret_val
@@ -459,7 +459,7 @@ class GXDH:
 
         **Note:**
 
-        Works for both single and multiple :class:`geosoft.gxapi.GXDB` Wholeplots.
+        Works for both single and multiple `GXDB` Wholeplots.
         """
         ret_val = self._wrapper.h_en_survey_db()
         return GXDB(ret_val)
@@ -473,7 +473,7 @@ class GXDH:
 
         **Note:**
 
-        Works for both single and multiple :class:`geosoft.gxapi.GXDB` Wholeplots.
+        Works for both single and multiple `GXDB` Wholeplots.
         """
         ret_val = self._wrapper.h_en_survey_symb(p2)
         return ret_val
@@ -498,7 +498,7 @@ class GXDH:
 
     def assay_hole_lst(self, p2, p3):
         """
-        Populate an :class:`geosoft.gxapi.GXLST` with holes in an assay database
+        Populate an `GXLST` with holes in an assay database
         """
         self._wrapper.assay_hole_lst(p2, p3._wrapper)
         
@@ -508,13 +508,13 @@ class GXDH:
 
     def assay_lst(self, p2):
         """
-        Return the :class:`geosoft.gxapi.GXLST` of from-to and point assay datasets
+        Return the `GXLST` of from-to and point assay datasets
 
         **Note:**
 
-        Assay dataset name is given as :attr:`geosoft.gxapi.LST_ITEM_NAME`
-        Assay dataset number is given as :attr:`geosoft.gxapi.LST_ITEM_VALUE`
-        Returns an empty :class:`geosoft.gxapi.GXLST` if no datasets.
+        Assay dataset name is given as `LST_ITEM_NAME`
+        Assay dataset number is given as `LST_ITEM_VALUE`
+        Returns an empty `GXLST` if no datasets.
         """
         self._wrapper.assay_lst(p2._wrapper)
         
@@ -595,13 +595,13 @@ class GXDH:
 
         **Note:**
 
-        The input :class:`geosoft.gxapi.GXLST` must be filled using a function like SymbLST_DB, which
-        puts the name and symbol into the :class:`geosoft.gxapi.GXLST` items.
+        The input `GXLST` must be filled using a function like `GXDB.symb_lst`, which
+        puts the name and symbol into the `GXLST` items.
         Any names with a period are truncated at the period, and
         the line name in the database is changed to the new name
         (just the hole name).
-        The :class:`geosoft.gxapi.GXLST` is modified to have the new names.
-        A value is put into the :class:`geosoft.gxapi.GXDB` :class:`geosoft.gxapi.GXREG` "DH_CONVERTED_NAMES" parameter so
+        The `GXLST` is modified to have the new names.
+        A value is put into the `GXDB` `GXREG` "DH_CONVERTED_NAMES" parameter so
         this process is done only once on a database.
         
         DO NOT use on old-style single-database Wholeplot projects.
@@ -614,7 +614,7 @@ class GXDH:
     @classmethod
     def create(cls, p1):
         """
-        Create :class:`geosoft.gxapi.GXDH`.
+        Create `GXDH`.
         """
         ret_val = gxapi_cy.WrapDH.create(GXContext._get_tls_geo(), p1.encode())
         return GXDH(ret_val)
@@ -634,11 +634,11 @@ class GXDH:
     @classmethod
     def create_external(cls, p1):
         """
-        Create a :class:`geosoft.gxapi.GXDH` from an external process (no montaj running).
+        Create a `GXDH` from an external process (no montaj running).
 
         **Note:**
 
-        The regular Create_DH assumes a workspace is open and creates
+        The regular `create` assumes a workspace is open and creates
         the project from the databases which are currently loaded.
         This function instead creates the project from all projects
         in the input databases's directory.
@@ -655,7 +655,7 @@ class GXDH:
 
         **Note:**
 
-        If no :class:`geosoft.gxapi.GXDH` database is open the Open :class:`geosoft.gxapi.GXDH` Project :class:`geosoft.gxapi.GXGUI` will be displayed which may be
+        If no `GXDH` database is open the Open `GXDH` Project `GXGUI` will be displayed which may be
         cancelled by the user in which case the GX will terminate with cancel.
         """
         ret_val = gxapi_cy.WrapDH.current(GXContext._get_tls_geo())
@@ -689,7 +689,7 @@ class GXDH:
 
         **Note:**
 
-        Removes all lines in the input :class:`geosoft.gxapi.GXLST` from :class:`geosoft.gxapi.GXDH` project databases.
+        Removes all lines in the input `GXLST` from `GXDH` project databases.
         If all the database lines would be removed, the database is
         simply deleted.
         """
@@ -738,11 +738,11 @@ class GXDH:
 
     def export_lst(self, p2, p3, p4):
         """
-        Exports a :class:`geosoft.gxapi.GXLST` of holes in a Drill Hole database to an external file.
+        Exports a `GXLST` of holes in a Drill Hole database to an external file.
 
         **Note:**
 
-        Use functions like SelectedLineLST_DB to construct the :class:`geosoft.gxapi.GXLST`
+        Use functions like `GXDB.selected_line_lst` to construct the `GXLST`
         """
         self._wrapper.export_lst(p2._wrapper, p3.encode(), p4)
         
@@ -762,7 +762,7 @@ class GXDH:
 
     def get_databases_vv(self, p2):
         """
-        Get the names of the project databases in a :class:`geosoft.gxapi.GXVV`.
+        Get the names of the project databases in a `GXVV`.
         """
         self._wrapper.get_databases_vv(p2._wrapper)
         
@@ -772,7 +772,7 @@ class GXDH:
 
     def get_databases_sorted_vv(self, p2):
         """
-        Get the names of the project databases in a :class:`geosoft.gxapi.GXVV`, same as GetDatabasesVV_DH but the list is sorted alphabetically.
+        Get the names of the project databases in a `GXVV`, same as `get_databases_vv` but the list is sorted alphabetically.
         """
         self._wrapper.get_databases_sorted_vv(p2._wrapper)
         
@@ -786,7 +786,7 @@ class GXDH:
 
         **Note:**
 
-        Returns :attr:`geosoft.gxapi.DH_DATA_UNKNOWN` if it can't determine the type.
+        Returns `DH_DATA_UNKNOWN` if it can't determine the type.
         """
         p3.value = self._wrapper.get_data_type(p2._wrapper, p3.value)
         
@@ -826,7 +826,7 @@ class GXDH:
 
     def get_ipj(self, p2):
         """
-        Get the project :class:`geosoft.gxapi.GXIPJ`.
+        Get the project `GXIPJ`.
 
         **Note:**
 
@@ -846,8 +846,8 @@ class GXDH:
         **Note:**
 
         This will return the currently plotted map name(s)
-        in a :class:`geosoft.gxapi.GXVV`. This should only be called after a call
-        to Wholeplot_DH. The :class:`geosoft.gxapi.GXVV` size is set to the number
+        in a `GXVV`. This should only be called after a call
+        to `wholeplot`. The `GXVV` size is set to the number
         of maps created.
         """
         self._wrapper.get_map_names_vv(p2._wrapper)
@@ -878,7 +878,7 @@ class GXDH:
 
     def get_reg(self):
         """
-        Get the :class:`geosoft.gxapi.GXREG` Object used in this project.
+        Get the `GXREG` Object used in this project.
         """
         ret_val = self._wrapper.get_reg()
         return GXREG(ret_val)
@@ -888,7 +888,7 @@ class GXDH:
 
     def get_selected_holes_vv(self, p2):
         """
-        Populate a :class:`geosoft.gxapi.GXVV` with the indices of all selected holes
+        Populate a `GXVV` with the indices of all selected holes
         """
         self._wrapper.get_selected_holes_vv(p2._wrapper)
         
@@ -902,8 +902,8 @@ class GXDH:
 
         **Note:**
 
-        Fills a :class:`geosoft.gxapi.GXLST` with the default channel names created according to
-        type (Collar, Survey, Assay). Value is in the :attr:`geosoft.gxapi.LST_ITEM_NAME` part.
+        Fills a `GXLST` with the default channel names created according to
+        type (Collar, Survey, Assay). Value is in the `LST_ITEM_NAME` part.
         """
         gxapi_cy.WrapDH.get_table_default_chan_lst(GXContext._get_tls_geo(), p1._wrapper, p2)
         
@@ -913,7 +913,7 @@ class GXDH:
 
     def hole_lst(self, p2):
         """
-        Populate an :class:`geosoft.gxapi.GXLST` with the list of the selected holes
+        Populate an `GXLST` with the list of the selected holes
         """
         self._wrapper.hole_lst(p2._wrapper)
         
@@ -923,7 +923,7 @@ class GXDH:
 
     def hole_lst2(self, p2):
         """
-        Populate an :class:`geosoft.gxapi.GXLST` with the list of all the holes
+        Populate an `GXLST` with the list of all the holes
         """
         self._wrapper.hole_lst2(p2._wrapper)
         
@@ -967,7 +967,7 @@ class GXDH:
     @classmethod
     def create_collar_table(cls, p1, p2, p3):
         """
-        Create a collar table :class:`geosoft.gxapi.GXDB` with channels set up.
+        Create a collar table `GXDB` with channels set up.
 
         **Note:**
 
@@ -1085,7 +1085,7 @@ class GXDH:
     @classmethod
     def get_template_info(cls, p1, p2, p3, p5):
         """
-        Retrieve the file, :class:`geosoft.gxapi.GXDH` Table name and type from an import template.
+        Retrieve the file, `GXDH` Table name and type from an import template.
 
         **Note:**
 
@@ -1101,11 +1101,11 @@ class GXDH:
         The DRILLTYPE is one of DH_DATA_XXX, and the DRILLTABLE
         is the name of the Wholeplot database table; e.g. Project_Assay.gdb
         in the above case. The DRILLTABLE is only included in the template
-        for :attr:`geosoft.gxapi.DH_DATA_FROMTO` and :attr:`geosoft.gxapi.DH_DATA_POINT`, but this function will
+        for `DH_DATA_FROMTO` and `DH_DATA_POINT`, but this function will
         return the appropriate table names (e.g. Collar, Survey, ENSurvey)
         for the other types.
         If the DRILLTYPE is NOT found in the template, a value of
-        :attr:`geosoft.gxapi.DH_DATA_UNKNOWN` is returned for the data type; likely an indication that this
+        `DH_DATA_UNKNOWN` is returned for the data type; likely an indication that this
         is not a new-style template produced by Wholeplot.
         """
         p2.value, p3.value, p5.value = gxapi_cy.WrapDH.get_template_info(GXContext._get_tls_geo(), p1.encode(), p2.value, p3.value.encode(), p5.value.encode())
@@ -1116,7 +1116,7 @@ class GXDH:
     @classmethod
     def get_template_info_ex(cls, p1, p2, p3, p5, p7):
         """
-        Retrieve the file, :class:`geosoft.gxapi.GXDH` Table name, type and channel list from an import template.
+        Retrieve the file, `GXDH` Table name, type and channel list from an import template.
 
         **Note:**
 
@@ -1132,11 +1132,11 @@ class GXDH:
         The DRILLTYPE is one of DH_DATA_XXX, and the DRILLTABLE
         is the name of the Wholeplot database table; e.g. Project_Assay.gdb
         in the above case. The DRILLTABLE is only included in the template
-        for :attr:`geosoft.gxapi.DH_DATA_FROMTO` and :attr:`geosoft.gxapi.DH_DATA_POINT`, but this function will
+        for `DH_DATA_FROMTO` and `DH_DATA_POINT`, but this function will
         return the appropriate table names (e.g. Collar, Survey, ENSurvey)
         for the other types.
         If the DRILLTYPE is NOT found in the template, a value of
-        :attr:`geosoft.gxapi.DH_DATA_UNKNOWN` is returned for the data type; likely an indication that this
+        `DH_DATA_UNKNOWN` is returned for the data type; likely an indication that this
         is not a new-style template produced by Wholeplot.
         This version also returns a list of the channels in the template checks can be made to
         see if the import will exceed the database channel limit.
@@ -1281,7 +1281,7 @@ class GXDH:
 
         **Note:**
 
-        Currently supports :attr:`geosoft.gxapi.DH_PLOT_PLAN` and :attr:`geosoft.gxapi.DH_PLOT_SECTION`
+        Currently supports `DH_PLOT_PLAN` and `DH_PLOT_SECTION`
         """
         ret_val, p4.value = self._wrapper.modify_hole_traces_gui2(p2.encode(), p3, p4.value)
         return ret_val
@@ -1440,7 +1440,7 @@ class GXDH:
 
     def import_las(self, p2, p3, p4, p5, p6):
         """
-        Imports LAS Data into a :class:`geosoft.gxapi.GXDH` database
+        Imports LAS Data into a `GXDH` database
 
         **Note:**
 
@@ -1460,7 +1460,7 @@ class GXDH:
 
         **Note:**
 
-        Works for both single and multiple :class:`geosoft.gxapi.GXDB` Wholeplots.
+        Works for both single and multiple `GXDB` Wholeplots.
         """
         ret_val = self._wrapper.num_assays()
         return ret_val
@@ -1480,7 +1480,7 @@ class GXDH:
 
     def qa_dip_az_curvature_lst(self, p2, p3, p4):
         """
-        Do QA/QC Curvature checking on Dip Azimuth data for holes in a :class:`geosoft.gxapi.GXLST`.
+        Do QA/QC Curvature checking on Dip Azimuth data for holes in a `GXLST`.
 
         **Note:**
 
@@ -1494,7 +1494,7 @@ class GXDH:
 
     def qa_dip_az_survey_lst(self, p2, p3):
         """
-        Do QA/QC on Dip/Az Survey data for holes in a :class:`geosoft.gxapi.GXLST`.
+        Do QA/QC on Dip/Az Survey data for holes in a `GXLST`.
 
         **Note:**
 
@@ -1509,7 +1509,7 @@ class GXDH:
 
     def qa_east_north_curvature_lst(self, p2, p3, p4):
         """
-        Do QA/QC Curvature checking on Dip Azimuth data for holes in a :class:`geosoft.gxapi.GXLST`.
+        Do QA/QC Curvature checking on Dip Azimuth data for holes in a `GXLST`.
 
         **Note:**
 
@@ -1523,7 +1523,7 @@ class GXDH:
 
     def qa_east_north_survey_lst(self, p2, p3):
         """
-        Do QA/QC on East/North Survey data for holes in a :class:`geosoft.gxapi.GXLST`.
+        Do QA/QC on East/North Survey data for holes in a `GXLST`.
 
         **Note:**
 
@@ -1569,7 +1569,7 @@ class GXDH:
         **Note:**
 
         Wholeplot data graphing parameters for each channel are stored
-        in the channel :class:`geosoft.gxapi.GXREG`. This function lets a user transfer pre-defined
+        in the channel `GXREG`. This function lets a user transfer pre-defined
         settings to individual INI files (eg. cu.ini).
         """
         self._wrapper.load_data_parameters_ini(p2._wrapper, p3.encode())
@@ -1607,8 +1607,8 @@ class GXDH:
         Data values inside the polygon area, and within the slice thickness
         have their mask channel values set to 1.
         If the specified mask channel does not exist, it is created.
-        :attr:`geosoft.gxapi.DH_MASK_NEW` --- Mask is created new for each selected hole
-        :attr:`geosoft.gxapi.DH_MASK_APPEND` --- Current selection is added to previous.
+        `DH_MASK_NEW` --- Mask is created new for each selected hole
+        `DH_MASK_APPEND` --- Current selection is added to previous.
         """
         self._wrapper.mask_ply(p2._wrapper, p3._wrapper, p4, p5.encode(), p6, p7)
         
@@ -1618,7 +1618,7 @@ class GXDH:
     @classmethod
     def open(cls, p1):
         """
-        Open :class:`geosoft.gxapi.GXDH` from collar database and load all associated databases.
+        Open `GXDH` from collar database and load all associated databases.
         """
         ret_val = gxapi_cy.WrapDH.open(GXContext._get_tls_geo(), p1.encode())
         return GXDH(ret_val)
@@ -1628,7 +1628,7 @@ class GXDH:
 
     def open_job(self, p2, p3):
         """
-        Open a :class:`geosoft.gxapi.GXDH` plotting job
+        Open a `GXDH` plotting job
         """
         self._wrapper.open_job(p2.encode(), p3)
         
@@ -1690,7 +1690,7 @@ class GXDH:
 
     def qa_collar_lst(self, p2, p3):
         """
-        Do QA/QC on Hole Collar data - :class:`geosoft.gxapi.GXLST` of holes.
+        Do QA/QC on Hole Collar data - `GXLST` of holes.
         """
         self._wrapper.qa_collar_lst(p2._wrapper, p3._wrapper)
         
@@ -1826,7 +1826,7 @@ class GXDH:
         **Note:**
 
         The parameter file must correspond to the plot Type.
-        The hDH->hMAP value must be set first, using SetMAP_DH().
+        The hDH->hMAP value must be set first, using `set_map`().
         Overwrites existing hole and hole data groups.
         Replots the legend if the legend is enabled.
         This should only be used on a slightly modified version of the
@@ -1951,9 +1951,9 @@ class GXDH:
         **Note:**
 
         Wholeplot data graphing parameters for each channel are stored
-        in the channel :class:`geosoft.gxapi.GXREG`. This function lets a user transfer pre-defined
+        in the channel `GXREG`. This function lets a user transfer pre-defined
         settings to individual INI files (eg. cu.ini).
-        As of v6.3, the :class:`geosoft.gxapi.GXDH` object is NOT required for this function, and
+        As of v6.3, the `GXDH` object is NOT required for this function, and
         is, in fact, ignored.
         """
         self._wrapper.save_data_parameters_ini(p2._wrapper, p3.encode())
@@ -1964,7 +1964,7 @@ class GXDH:
 
     def save_job(self, p2, p3):
         """
-        Save a :class:`geosoft.gxapi.GXDH` plotting job
+        Save a `GXDH` plotting job
         """
         self._wrapper.save_job(p2.encode(), p3)
         
@@ -2015,7 +2015,7 @@ class GXDH:
         **Note:**
 
         Indices less than 0 are skipped. This lets you use this function
-        after a call to FindItems_LST, which returns -1 for indices not located.
+        after a call to `GXLST.find_items`, which returns -1 for indices not located.
         """
         self._wrapper.select_holes(p2._wrapper, p3)
         
@@ -2040,13 +2040,13 @@ class GXDH:
 
     def select_ply(self, p2):
         """
-        Select all holes in :class:`geosoft.gxapi.GXPLY` (Polygon) object.
+        Select all holes in `GXPLY` (Polygon) object.
 
         **Note:**
 
         This function operates the same as the call:
         
-        SelectPLY2_DH(Drill, 1, 0, 0);
+        `select_ply2`(Drill, 1, 0, 0);
         """
         self._wrapper.select_ply(p2._wrapper)
         
@@ -2056,7 +2056,7 @@ class GXDH:
 
     def select_ply2(self, p2, p3, p4, p5):
         """
-        Select holes in :class:`geosoft.gxapi.GXPLY` (Polygon) object with options.
+        Select holes in `GXPLY` (Polygon) object with options.
 
         **Note:**
 
@@ -2132,7 +2132,7 @@ class GXDH:
 
     def set_ipj(self, p2):
         """
-        Set the project :class:`geosoft.gxapi.GXIPJ`.
+        Set the project `GXIPJ`.
 
         **Note:**
 
@@ -2140,8 +2140,8 @@ class GXDH:
         in the DH_EAST channel in the collar table. This
         function sets the projection of the (DH_EAST, DH_NORTH)
         channel pairs in each of the project databases to the
-        input :class:`geosoft.gxapi.GXIPJ`.
-        The input :class:`geosoft.gxapi.GXIPJ` cannot be a geographic coordinate system
+        input `GXIPJ`.
+        The input `GXIPJ` cannot be a geographic coordinate system
         or this call will fail with an error message.
         """
         self._wrapper.set_ipj(p2._wrapper)
@@ -2152,7 +2152,7 @@ class GXDH:
 
     def set_map(self, p2):
         """
-        Store the current :class:`geosoft.gxapi.GXMAP` to the :class:`geosoft.gxapi.GXDH` object.
+        Store the current `GXMAP` to the `GXDH` object.
 
         **Note:**
 
@@ -2172,7 +2172,7 @@ class GXDH:
 
         **Note:**
 
-        Gets the :class:`geosoft.gxapi.GXIPJ` of the collar table current x channel and copies it
+        Gets the `GXIPJ` of the collar table current x channel and copies it
         into the named database (as long as it is in the project!)
         """
         self._wrapper.set_new_ipj(p2.encode())
@@ -2225,7 +2225,7 @@ class GXDH:
 
         **Note:**
 
-        See ImportLAS_DH.
+        See `import_las`.
         Determines if the import of the LAS data will result in data
         being overwritten, interpolated or resampled. Warnings are written to a log
         file, as in sImportLAS_DH. Warnings are not registered in cases
@@ -2250,7 +2250,7 @@ class GXDH:
 
     def un_selected_hole_lst(self, p2):
         """
-        Populate an :class:`geosoft.gxapi.GXLST` with the list of the unselected holes
+        Populate an `GXLST` with the list of the unselected holes
         """
         self._wrapper.un_selected_hole_lst(p2._wrapper)
         

@@ -18,7 +18,7 @@ class GXGMSYS:
     """
     GXGMSYS class.
 
-    The :class:`geosoft.gxapi.GXGMSYS` Methods
+    The `GXGMSYS` Methods
     """
 
     def __enter__(self):
@@ -36,17 +36,17 @@ class GXGMSYS:
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of :class:`geosoft.gxapi.GXGMSYS`
+        A null (undefined) instance of `GXGMSYS`
         
-        :returns: A null :class:`geosoft.gxapi.GXGMSYS`
+        :returns: A null `GXGMSYS`
         """
         return cls()
 
     def is_null(self):
         """
-        Check if the instance of :class:`geosoft.gxapi.GXGMSYS` is null (undefined)`
+        Check if the instance of `GXGMSYS` is null (undefined)`
         
-        :returns: True if this is a null (undefined) instance of :class:`geosoft.gxapi.GXGMSYS`, False otherwise.
+        :returns: True if this is a null (undefined) instance of `GXGMSYS`, False otherwise.
         """
         return self._wrapper.handle == 0
 
@@ -60,7 +60,7 @@ class GXGMSYS:
     @classmethod
     def launch(cls, p1):
         """
-        Launch :class:`geosoft.gxapi.GXGMSYS` with extension
+        Launch `GXGMSYS` with extension
         """
         gxapi_cy.WrapGMSYS.launch(GXContext._get_tls_geo(), p1.encode())
         

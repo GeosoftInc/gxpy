@@ -37,17 +37,17 @@ class GXARCMAP:
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of :class:`geosoft.gxapi.GXARCMAP`
+        A null (undefined) instance of `GXARCMAP`
         
-        :returns: A null :class:`geosoft.gxapi.GXARCMAP`
+        :returns: A null `GXARCMAP`
         """
         return cls()
 
     def is_null(self):
         """
-        Check if the instance of :class:`geosoft.gxapi.GXARCMAP` is null (undefined)`
+        Check if the instance of `GXARCMAP` is null (undefined)`
         
-        :returns: True if this is a null (undefined) instance of :class:`geosoft.gxapi.GXARCMAP`, False otherwise.
+        :returns: True if this is a null (undefined) instance of `GXARCMAP`, False otherwise.
         """
         return self._wrapper.handle == 0
 
@@ -101,7 +101,7 @@ class GXARCMAP:
     @classmethod
     def get_current_document_info(cls, p1, p2, p3):
         """
-        Get some info on the current :class:`geosoft.gxapi.GXMXD` in ArcMap and selected layer (if any)
+        Get some info on the current `GXMXD` in ArcMap and selected layer (if any)
         """
         p1.value, p2.value, p3.value = gxapi_cy.WrapARCMAP.get_current_document_info(GXContext._get_tls_geo(), p1.value.encode(), p2.value.encode(), p3.value.encode())
         
@@ -240,7 +240,7 @@ class GXARCMAP:
 
         **Note:**
 
-        Loads any file type recognized as "raster" formats by ARC :class:`geosoft.gxapi.GXGIS`.
+        Loads any file type recognized as "raster" formats by ARC `GXGIS`.
         This includes geosoft GRD files.
         """
         gxapi_cy.WrapARCMAP.load_raster(GXContext._get_tls_geo(), p1.encode())
@@ -251,7 +251,7 @@ class GXARCMAP:
     @classmethod
     def load_shape(cls, p1, p2, p3):
         """
-        Load a :class:`geosoft.gxapi.GXSHP` file to the current data frame
+        Load a `GXSHP` file to the current data frame
 
         **Note:**
 
@@ -267,12 +267,12 @@ class GXARCMAP:
     @classmethod
     def map_view_to_shape(cls, p1, p2, p3, p4):
         """
-        Create :class:`geosoft.gxapi.GXSHP` file(s) from a Geosoft Map view.
+        Create `GXSHP` file(s) from a Geosoft Map view.
 
         **Note:**
 
-        The output :class:`geosoft.gxapi.GXSHP` file name(s) are made up as follows
-        (where NAME is the input :class:`geosoft.gxapi.GXSHP` file name):
+        The output `GXSHP` file name(s) are made up as follows
+        (where NAME is the input `GXSHP` file name):
         
               NAME_pt.shp    (point objects)
               NAME_ln.shp    (line or arc objects)
@@ -296,7 +296,7 @@ class GXARCMAP:
     @classmethod
     def show_layer_by_name_in_3d(cls, p1, p2, p3):
         """
-        Shows a layer in ArcMap in a 3D view in an :class:`geosoft.gxapi.GXMXD`
+        Shows a layer in ArcMap in a 3D view in an `GXMXD`
         """
         gxapi_cy.WrapARCMAP.show_layer_by_name_in_3d(GXContext._get_tls_geo(), p1.encode(), p2.encode(), p3.encode())
         
@@ -316,7 +316,7 @@ class GXARCMAP:
     @classmethod
     def get_ipj_for_predefined_esri_gcs(cls, p1, p2):
         """
-        Fills an :class:`geosoft.gxapi.GXIPJ` with a predefined ESRI GCS
+        Fills an `GXIPJ` with a predefined ESRI GCS
         """
         gxapi_cy.WrapARCMAP.get_ipj_for_predefined_esri_gcs(GXContext._get_tls_geo(), p1._wrapper, p2)
         
@@ -326,7 +326,7 @@ class GXARCMAP:
     @classmethod
     def get_ipj_for_predefined_esri_pcs(cls, p1, p2):
         """
-        Fills an :class:`geosoft.gxapi.GXIPJ` with a predefined ESRI PCS
+        Fills an `GXIPJ` with a predefined ESRI PCS
         """
         gxapi_cy.WrapARCMAP.get_ipj_for_predefined_esri_pcs(GXContext._get_tls_geo(), p1._wrapper, p2)
         

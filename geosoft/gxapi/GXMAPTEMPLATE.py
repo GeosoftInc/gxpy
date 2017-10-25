@@ -18,7 +18,7 @@ class GXMAPTEMPLATE:
     """
     GXMAPTEMPLATE class.
 
-    A :class:`geosoft.gxapi.GXMAPTEMPLATE` wraps and provides manipulation and usage for the XML content in map template files.
+    A `GXMAPTEMPLATE` wraps and provides manipulation and usage for the XML content in map template files.
     See the annotated schema file maptemplate.xsd in the <GEOSOFT>\\maptemplate folder and the accompanying
     documentation in that folder for documentation on the file format.
     """
@@ -38,17 +38,17 @@ class GXMAPTEMPLATE:
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of :class:`geosoft.gxapi.GXMAPTEMPLATE`
+        A null (undefined) instance of `GXMAPTEMPLATE`
         
-        :returns: A null :class:`geosoft.gxapi.GXMAPTEMPLATE`
+        :returns: A null `GXMAPTEMPLATE`
         """
         return cls()
 
     def is_null(self):
         """
-        Check if the instance of :class:`geosoft.gxapi.GXMAPTEMPLATE` is null (undefined)`
+        Check if the instance of `GXMAPTEMPLATE` is null (undefined)`
         
-        :returns: True if this is a null (undefined) instance of :class:`geosoft.gxapi.GXMAPTEMPLATE`, False otherwise.
+        :returns: True if this is a null (undefined) instance of `GXMAPTEMPLATE`, False otherwise.
         """
         return self._wrapper.handle == 0
 
@@ -108,7 +108,7 @@ class GXMAPTEMPLATE:
     @classmethod
     def create(cls, p1, p2, p3):
         """
-        Create a :class:`geosoft.gxapi.GXMAPTEMPLATE` from an existing file.
+        Create a `GXMAPTEMPLATE` from an existing file.
 
         **Note:**
 

@@ -19,7 +19,7 @@ class GXMVG:
     """
     GXMVG class.
 
-    The :class:`geosoft.gxapi.GXMVG` class provides the ability to create view graphs.
+    The `GXMVG` class provides the ability to create view graphs.
     """
 
     def __enter__(self):
@@ -37,17 +37,17 @@ class GXMVG:
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of :class:`geosoft.gxapi.GXMVG`
+        A null (undefined) instance of `GXMVG`
         
-        :returns: A null :class:`geosoft.gxapi.GXMVG`
+        :returns: A null `GXMVG`
         """
         return cls()
 
     def is_null(self):
         """
-        Check if the instance of :class:`geosoft.gxapi.GXMVG` is null (undefined)`
+        Check if the instance of `GXMVG` is null (undefined)`
         
-        :returns: True if this is a null (undefined) instance of :class:`geosoft.gxapi.GXMVG`, False otherwise.
+        :returns: True if this is a null (undefined) instance of `GXMVG`, False otherwise.
         """
         return self._wrapper.handle == 0
 
@@ -95,7 +95,7 @@ class GXMVG:
     @classmethod
     def create(cls, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10):
         """
-        Create a :class:`geosoft.gxapi.GXMVG` object
+        Create a `GXMVG` object
 
         **Note:**
 
@@ -111,7 +111,7 @@ class GXMVG:
 
     def get_mview(self):
         """
-        Get the :class:`geosoft.gxapi.GXMVIEW` Handle of the Object.
+        Get the `GXMVIEW` Handle of the Object.
 
         **Note:**
 
@@ -125,7 +125,7 @@ class GXMVG:
 
     def grid(self, p2, p3, p4, p5, p6, p7, p8):
         """
-        Draw a grid in the current :class:`geosoft.gxapi.GXMVG`
+        Draw a grid in the current `GXMVG`
 
         **Note:**
 
@@ -155,6 +155,10 @@ class GXMVG:
         When Log annotation is applied, labels will be drawn in decades.
         
         Obsolete
+
+        .. seealso::
+
+            sAxisX_MVG
         """
         self._wrapper.label_x(p2, p3, p4, p5, p6, p7, p8)
         
@@ -174,6 +178,10 @@ class GXMVG:
         When Log annotation is applied, labels will be drawn in decades.
         
         Obsolete
+
+        .. seealso::
+
+            sAxisY_MVG
         """
         self._wrapper.label_y(p2, p3, p4, p5, p6, p7, p8)
         
@@ -183,11 +191,11 @@ class GXMVG:
 
     def poly_line_va(self, p2, p3, p4, p5, p6):
         """
-        Creates PolyLines/polygons from :class:`geosoft.gxapi.GXVV` and :class:`geosoft.gxapi.GXVA`.
+        Creates PolyLines/polygons from `GXVV` and `GXVA`.
 
         **Note:**
 
-        If the :class:`geosoft.gxapi.GXVV` contains dummies, the polylines
+        If the `GXVV` contains dummies, the polylines
         will break at the dummies; the polygons
         will skip the dummies.
         
@@ -204,11 +212,11 @@ class GXMVG:
 
     def poly_line_vv(self, p2, p3, p4, p5):
         """
-        Creates PolyLines/polygons from :class:`geosoft.gxapi.GXVV` and :class:`geosoft.gxapi.GXVV`.
+        Creates PolyLines/polygons from `GXVV` and `GXVV`.
 
         **Note:**
 
-        If the :class:`geosoft.gxapi.GXVV` contains dummies, the polylines
+        If the `GXVV` contains dummies, the polylines
         will break at the dummies; the polygons
         will skip the dummies.
         

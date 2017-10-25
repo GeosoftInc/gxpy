@@ -39,17 +39,17 @@ class GXHXYZ:
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of :class:`geosoft.gxapi.GXHXYZ`
+        A null (undefined) instance of `GXHXYZ`
         
-        :returns: A null :class:`geosoft.gxapi.GXHXYZ`
+        :returns: A null `GXHXYZ`
         """
         return cls()
 
     def is_null(self):
         """
-        Check if the instance of :class:`geosoft.gxapi.GXHXYZ` is null (undefined)`
+        Check if the instance of `GXHXYZ` is null (undefined)`
         
-        :returns: True if this is a null (undefined) instance of :class:`geosoft.gxapi.GXHXYZ`, False otherwise.
+        :returns: True if this is a null (undefined) instance of `GXHXYZ`, False otherwise.
         """
         return self._wrapper.handle == 0
 
@@ -63,7 +63,7 @@ class GXHXYZ:
     @classmethod
     def create(cls, p1):
         """
-        Create a handle to an :class:`geosoft.gxapi.GXHXYZ` object
+        Create a handle to an `GXHXYZ` object
         """
         ret_val = gxapi_cy.WrapHXYZ.create(GXContext._get_tls_geo(), p1.encode())
         return GXHXYZ(ret_val)
@@ -85,7 +85,7 @@ class GXHXYZ:
     @classmethod
     def h_create_db(cls, p1, p2, p3):
         """
-        Make an :class:`geosoft.gxapi.GXHXYZ` from GDB
+        Make an `GXHXYZ` from GDB
         """
         ret_val = gxapi_cy.WrapHXYZ.h_create_db(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3.encode())
         return GXHXYZ(ret_val)
@@ -95,7 +95,7 @@ class GXHXYZ:
     @classmethod
     def h_create_sql(cls, p1, p2, p3, p4, p5, p6):
         """
-        Make an :class:`geosoft.gxapi.GXHXYZ` from SQL Query
+        Make an `GXHXYZ` from SQL Query
         """
         ret_val = gxapi_cy.WrapHXYZ.h_create_sql(GXContext._get_tls_geo(), p1.encode(), p2.encode(), p3.encode(), p4.encode(), p5._wrapper, p6.encode())
         return GXHXYZ(ret_val)

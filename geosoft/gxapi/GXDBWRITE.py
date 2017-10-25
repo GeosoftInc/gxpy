@@ -21,10 +21,10 @@ class GXDBWRITE:
     """
     GXDBWRITE class.
 
-    The :class:`geosoft.gxapi.GXDBWRITE` class is used to open and write to databases. Large blocks of data
-      are split into blocks and served up sequentially to prevent the over-use of virtual memory when VVs or VAs are being written to channels.
-      Individual data blocks are limited by default to 1 MB (which is user-alterable). Data less than the block size
-      are served up whole, one block per line.
+    The `GXDBWRITE` class is used to open and write to databases. Large blocks of data
+    are split into blocks and served up sequentially to prevent the over-use of virtual memory when VVs or VAs are being written to channels.
+    Individual data blocks are limited by default to 1 MB (which is user-alterable). Data less than the block size
+    are served up whole, one block per line.
     """
 
     def __enter__(self):
@@ -42,17 +42,17 @@ class GXDBWRITE:
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of :class:`geosoft.gxapi.GXDBWRITE`
+        A null (undefined) instance of `GXDBWRITE`
         
-        :returns: A null :class:`geosoft.gxapi.GXDBWRITE`
+        :returns: A null `GXDBWRITE`
         """
         return cls()
 
     def is_null(self):
         """
-        Check if the instance of :class:`geosoft.gxapi.GXDBWRITE` is null (undefined)`
+        Check if the instance of `GXDBWRITE` is null (undefined)`
         
-        :returns: True if this is a null (undefined) instance of :class:`geosoft.gxapi.GXDBWRITE`, False otherwise.
+        :returns: True if this is a null (undefined) instance of `GXDBWRITE`, False otherwise.
         """
         return self._wrapper.handle == 0
 
@@ -66,8 +66,8 @@ class GXDBWRITE:
     @classmethod
     def create(cls, p1):
         """
-        Create a :class:`geosoft.gxapi.GXDBWRITE` object
-        Add channels using the iAddChannel_DBWRITE() method.channel.
+        Create a `GXDBWRITE` object
+        Add channels using the `add_channel`() method.channel.
         """
         ret_val = gxapi_cy.WrapDBWRITE.create(GXContext._get_tls_geo(), p1._wrapper)
         return GXDBWRITE(ret_val)
@@ -77,8 +77,8 @@ class GXDBWRITE:
     @classmethod
     def create_xy(cls, p1):
         """
-        Create a :class:`geosoft.gxapi.GXDBWRITE` object for a XY-located data. Add channels using the
-        		               iAddChannel_DBWRITE() method.
+        Create a `GXDBWRITE` object for a XY-located data. Add channels using the
+        `add_channel`() method.
         """
         ret_val = gxapi_cy.WrapDBWRITE.create_xy(GXContext._get_tls_geo(), p1._wrapper)
         return GXDBWRITE(ret_val)
@@ -88,8 +88,8 @@ class GXDBWRITE:
     @classmethod
     def create_xyz(cls, p1):
         """
-        Create a :class:`geosoft.gxapi.GXDBWRITE` object for a XYZ-located data.
-        Add channels using the iAddChannel_DBWRITE() method.channel
+        Create a `GXDBWRITE` object for a XYZ-located data.
+        Add channels using the `add_channel`() method.channel
         """
         ret_val = gxapi_cy.WrapDBWRITE.create_xyz(GXContext._get_tls_geo(), p1._wrapper)
         return GXDBWRITE(ret_val)
@@ -101,7 +101,7 @@ class GXDBWRITE:
 
     def add_channel(self, p2):
         """
-        Add a data channel to the :class:`geosoft.gxapi.GXDBWRITE` object.
+        Add a data channel to the `GXDBWRITE` object.
         """
         ret_val = self._wrapper.add_channel(p2)
         return ret_val
@@ -115,7 +115,7 @@ class GXDBWRITE:
 
     def get_db(self):
         """
-        Get the output :class:`geosoft.gxapi.GXDB` handle from the :class:`geosoft.gxapi.GXDBWRITE` object.
+        Get the output `GXDB` handle from the `GXDBWRITE` object.
         """
         ret_val = self._wrapper.get_db()
         return GXDB(ret_val)
@@ -125,12 +125,12 @@ class GXDBWRITE:
 
     def get_vv(self, p2):
         """
-        Get the :class:`geosoft.gxapi.GXVV` handle for a channel.
+        Get the `GXVV` handle for a channel.
 
         **Note:**
 
-        Call only for single-column (regular) channels. You can call the iGetChanArraySize_DBWRITE
-        function to find the number fo columns in a given channel. The :class:`geosoft.gxapi.GXVV` is filled anew for each block served up.
+        Call only for single-column (regular) channels. You can call the `get_chan_array_size`
+        function to find the number fo columns in a given channel. The `GXVV` is filled anew for each block served up.
         """
         ret_val = self._wrapper.get_vv(p2)
         return GXVV(ret_val)
@@ -140,13 +140,13 @@ class GXDBWRITE:
 
     def get_va(self, p2):
         """
-        Get the :class:`geosoft.gxapi.GXVA` handle for an array channel.
+        Get the `GXVA` handle for an array channel.
 
         **Note:**
 
-        Call only for array (multi-column) channels. You can call the iGetChanArraySize_DBWRITE
-        function to find the number fo columns in a given channel, or you can call iCol_VA on the returned :class:`geosoft.gxapi.GXVA` handle.
-        The :class:`geosoft.gxapi.GXVA` is filled anew for each block served up.
+        Call only for array (multi-column) channels. You can call the `get_chan_array_size`
+        function to find the number fo columns in a given channel, or you can call `GXVA.col` on the returned `GXVA` handle.
+        The `GXVA` is filled anew for each block served up.
         """
         ret_val = self._wrapper.get_va(p2)
         return GXVA(ret_val)
@@ -156,12 +156,12 @@ class GXDBWRITE:
 
     def get_v_vx(self):
         """
-        Get the X channel :class:`geosoft.gxapi.GXVV` handle.
+        Get the X channel `GXVV` handle.
 
         **Note:**
 
         Only available for the CreateXY or CreateXYZ methods.
-        The :class:`geosoft.gxapi.GXVV` is filled anew for each block served up.
+        The `GXVV` is filled anew for each block served up.
         """
         ret_val = self._wrapper.get_v_vx()
         return GXVV(ret_val)
@@ -171,12 +171,12 @@ class GXDBWRITE:
 
     def get_v_vy(self):
         """
-        Get the Y channel :class:`geosoft.gxapi.GXVV` handle.
+        Get the Y channel `GXVV` handle.
 
         **Note:**
 
         Only available for the CreateXY or CreateXYZ methods.
-        The :class:`geosoft.gxapi.GXVV` is filled anew for each block served up.
+        The `GXVV` is filled anew for each block served up.
         """
         ret_val = self._wrapper.get_v_vy()
         return GXVV(ret_val)
@@ -186,13 +186,13 @@ class GXDBWRITE:
 
     def get_v_vz(self):
         """
-        Get the Z channel :class:`geosoft.gxapi.GXVV` handle.
+        Get the Z channel `GXVV` handle.
 
         **Note:**
 
         Only available for the CreateXY or CreateXYZ methods.
-        The :class:`geosoft.gxapi.GXVV` is filled anew for each block served up.
-        If the Z channel is an array channel, the returned :class:`geosoft.gxapi.GXVV` is the "base" :class:`geosoft.gxapi.GXVV` of the :class:`geosoft.gxapi.GXVA` and contains all items sequentially.
+        The `GXVV` is filled anew for each block served up.
+        If the Z channel is an array channel, the returned `GXVV` is the "base" `GXVV` of the `GXVA` and contains all items sequentially.
         """
         ret_val = self._wrapper.get_v_vz()
         return GXVV(ret_val)
@@ -207,7 +207,7 @@ class GXDBWRITE:
         **Note:**
 
         Regular channels have one column of data. Array channels have more than one column of data.
-        This function should be called to determine whether to use GetVV_DBWRITE or GetVA_DBWRITE to access data
+        This function should be called to determine whether to use `get_vv` or `get_va` to access data
         for a channel.
         """
         ret_val = self._wrapper.get_chan_array_size(p2)

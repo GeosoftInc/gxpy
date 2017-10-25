@@ -19,8 +19,8 @@ class GXSURFACE:
     """
     GXSURFACE class.
 
-    The :class:`geosoft.gxapi.GXSURFACE` class allows you to create, read and alter Geosurface files (``*.geosoft_surface``).
-    A Geosurface file can contain one or more surface items (see :class:`geosoft.gxapi.GXSURFACEITEM` class). In turn each item can
+    The `GXSURFACE` class allows you to create, read and alter Geosurface files (``*.geosoft_surface``).
+    A Geosurface file can contain one or more surface items (see `GXSURFACEITEM` class). In turn each item can
     contains one or more triangular polyhedral meshes.
     """
 
@@ -39,17 +39,17 @@ class GXSURFACE:
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of :class:`geosoft.gxapi.GXSURFACE`
+        A null (undefined) instance of `GXSURFACE`
         
-        :returns: A null :class:`geosoft.gxapi.GXSURFACE`
+        :returns: A null `GXSURFACE`
         """
         return cls()
 
     def is_null(self):
         """
-        Check if the instance of :class:`geosoft.gxapi.GXSURFACE` is null (undefined)`
+        Check if the instance of `GXSURFACE` is null (undefined)`
         
-        :returns: True if this is a null (undefined) instance of :class:`geosoft.gxapi.GXSURFACE`, False otherwise.
+        :returns: True if this is a null (undefined) instance of `GXSURFACE`, False otherwise.
         """
         return self._wrapper.handle == 0
 
@@ -85,7 +85,7 @@ class GXSURFACE:
 
     def get_ipj(self, p2):
         """
-        Get the coordinate system of the :class:`geosoft.gxapi.GXSURFACE`.
+        Get the coordinate system of the `GXSURFACE`.
         """
         self._wrapper.get_ipj(p2._wrapper)
         
@@ -95,7 +95,7 @@ class GXSURFACE:
 
     def set_ipj(self, p2):
         """
-        Change the coordinate system of the :class:`geosoft.gxapi.GXSURFACE`.
+        Change the coordinate system of the `GXSURFACE`.
         """
         self._wrapper.set_ipj(p2._wrapper)
         
@@ -115,7 +115,7 @@ class GXSURFACE:
 
     def get_surface_item(self, p2):
         """
-        Get the an existing surface item from the :class:`geosoft.gxapi.GXSURFACE`
+        Get the an existing surface item from the `GXSURFACE`
         """
         ret_val = self._wrapper.get_surface_item(p2.encode())
         return GXSURFACEITEM(ret_val)
@@ -125,7 +125,7 @@ class GXSURFACE:
 
     def add_surface_item(self, p2):
         """
-        Add a new surface item to the :class:`geosoft.gxapi.GXSURFACE`
+        Add a new surface item to the `GXSURFACE`
         """
         self._wrapper.add_surface_item(p2._wrapper)
         

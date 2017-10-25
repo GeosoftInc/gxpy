@@ -18,11 +18,11 @@ class GXTC:
     """
     GXTC class.
 
-    The :class:`geosoft.gxapi.GXTC` object is used in gravitational modelling to create
+    The `GXTC` object is used in gravitational modelling to create
     a terrain correction grid from a topography grid. This is
-    accomplished with a call first to Grregter_TC, which determines
+    accomplished with a call first to `grregter`, which determines
     the terrain correction from an input topography grid, then
-    to Grterain_TC, which calculates the actual corrections at
+    to `grterain`, which calculates the actual corrections at
     the input positions.
     """
 
@@ -41,17 +41,17 @@ class GXTC:
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of :class:`geosoft.gxapi.GXTC`
+        A null (undefined) instance of `GXTC`
         
-        :returns: A null :class:`geosoft.gxapi.GXTC`
+        :returns: A null `GXTC`
         """
         return cls()
 
     def is_null(self):
         """
-        Check if the instance of :class:`geosoft.gxapi.GXTC` is null (undefined)`
+        Check if the instance of `GXTC` is null (undefined)`
         
-        :returns: True if this is a null (undefined) instance of :class:`geosoft.gxapi.GXTC`, False otherwise.
+        :returns: True if this is a null (undefined) instance of `GXTC`, False otherwise.
         """
         return self._wrapper.handle == 0
 

@@ -37,17 +37,17 @@ class GXBIGRID:
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of :class:`geosoft.gxapi.GXBIGRID`
+        A null (undefined) instance of `GXBIGRID`
         
-        :returns: A null :class:`geosoft.gxapi.GXBIGRID`
+        :returns: A null `GXBIGRID`
         """
         return cls()
 
     def is_null(self):
         """
-        Check if the instance of :class:`geosoft.gxapi.GXBIGRID` is null (undefined)`
+        Check if the instance of `GXBIGRID` is null (undefined)`
         
-        :returns: True if this is a null (undefined) instance of :class:`geosoft.gxapi.GXBIGRID`, False otherwise.
+        :returns: True if this is a null (undefined) instance of `GXBIGRID`, False otherwise.
         """
         return self._wrapper.handle == 0
 
@@ -61,7 +61,7 @@ class GXBIGRID:
 
     def clear(self):
         """
-        Clears all the parameters in a :class:`geosoft.gxapi.GXBIGRID` object
+        Clears all the parameters in a `GXBIGRID` object
         """
         self._wrapper.clear()
         
@@ -78,7 +78,7 @@ class GXBIGRID:
         The Bigrid object is initially empty. It will store the
         control file parameters which the Bigrid program needs
         to execute. Use the LoadParms_BIGRID method to get the
-        control file parameters into the :class:`geosoft.gxapi.GXBIGRID` object.
+        control file parameters into the `GXBIGRID` object.
         """
         ret_val = gxapi_cy.WrapBIGRID.create(GXContext._get_tls_geo())
         return GXBIGRID(ret_val)
@@ -97,9 +97,9 @@ class GXBIGRID:
 
         If the control file name passed into this function is a file
         which does not exist, then the defaults for a Bigrid control
-        file will be generated and put into the :class:`geosoft.gxapi.GXBIGRID` object.
+        file will be generated and put into the `GXBIGRID` object.
         Otherwise, the control file's settings are retrieved from
-        the file and loaded into the :class:`geosoft.gxapi.GXBIGRID` object.
+        the file and loaded into the `GXBIGRID` object.
         """
         ret_val = self._wrapper.load_parms(p2.encode())
         return ret_val

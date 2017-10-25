@@ -18,7 +18,7 @@ class GXUSERMETA:
     """
     GXUSERMETA class.
 
-    The :class:`geosoft.gxapi.GXUSERMETA` class handles user style metadata tied to real
+    The `GXUSERMETA` class handles user style metadata tied to real
     data.
     """
 
@@ -37,17 +37,17 @@ class GXUSERMETA:
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of :class:`geosoft.gxapi.GXUSERMETA`
+        A null (undefined) instance of `GXUSERMETA`
         
-        :returns: A null :class:`geosoft.gxapi.GXUSERMETA`
+        :returns: A null `GXUSERMETA`
         """
         return cls()
 
     def is_null(self):
         """
-        Check if the instance of :class:`geosoft.gxapi.GXUSERMETA` is null (undefined)`
+        Check if the instance of `GXUSERMETA` is null (undefined)`
         
-        :returns: True if this is a null (undefined) instance of :class:`geosoft.gxapi.GXUSERMETA`, False otherwise.
+        :returns: True if this is a null (undefined) instance of `GXUSERMETA`, False otherwise.
         """
         return self._wrapper.handle == 0
 
@@ -61,7 +61,7 @@ class GXUSERMETA:
     @classmethod
     def create(cls, p1):
         """
-        Creates an empty :class:`geosoft.gxapi.GXUSERMETA` object
+        Creates an empty `GXUSERMETA` object
         """
         ret_val = gxapi_cy.WrapUSERMETA.create(GXContext._get_tls_geo(), p1)
         return GXUSERMETA(ret_val)
@@ -71,7 +71,7 @@ class GXUSERMETA:
     @classmethod
     def create_s(cls, p1):
         """
-        Create a :class:`geosoft.gxapi.GXUSERMETA` from a file
+        Create a `GXUSERMETA` from a file
         """
         ret_val = gxapi_cy.WrapUSERMETA.create_s(GXContext._get_tls_geo(), p1.encode())
         return GXUSERMETA(ret_val)
@@ -113,7 +113,7 @@ class GXUSERMETA:
 
     def get_ipj(self, p2):
         """
-        Get the :class:`geosoft.gxapi.GXIPJ`
+        Get the `GXIPJ`
         """
         self._wrapper.get_ipj(p2._wrapper)
         
@@ -143,7 +143,7 @@ class GXUSERMETA:
 
     def compare(self, p2):
         """
-        Compare 2 :class:`geosoft.gxapi.GXUSERMETA`'s
+        Compare 2 `GXUSERMETA`'s
         """
         ret_val = self._wrapper.compare(p2._wrapper)
         return ret_val
@@ -203,7 +203,7 @@ class GXUSERMETA:
 
     def serial(self, p2, p3):
         """
-        Serialize :class:`geosoft.gxapi.GXUSERMETA` to a :class:`geosoft.gxapi.GXBF`.
+        Serialize `GXUSERMETA` to a `GXBF`.
         """
         self._wrapper.serial(p2, p3.encode())
         
@@ -263,7 +263,7 @@ class GXUSERMETA:
 
     def set_ipj(self, p2):
         """
-        Set the :class:`geosoft.gxapi.GXIPJ`
+        Set the `GXIPJ`
         """
         self._wrapper.set_ipj(p2._wrapper)
         

@@ -18,7 +18,7 @@ class GXDB:
     """
     GXDB class.
 
-    The :class:`geosoft.gxapi.GXDB` class is used to create, open and work with databases and database symbols.
+    The `GXDB` class is used to create, open and work with databases and database symbols.
     Database symbols are objects inside databases, such as lines, channels and blobs
 
     **Note:**
@@ -26,7 +26,7 @@ class GXDB:
     The following defines are not used by any methods but are
     used by GX's:
     
-    :attr:`geosoft.gxapi.DB_ACTIVITY_BLOB`
+    `DB_ACTIVITY_BLOB`
     """
 
     def __enter__(self):
@@ -44,17 +44,17 @@ class GXDB:
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of :class:`geosoft.gxapi.GXDB`
+        A null (undefined) instance of `GXDB`
         
-        :returns: A null :class:`geosoft.gxapi.GXDB`
+        :returns: A null `GXDB`
         """
         return cls()
 
     def is_null(self):
         """
-        Check if the instance of :class:`geosoft.gxapi.GXDB` is null (undefined)`
+        Check if the instance of `GXDB` is null (undefined)`
         
-        :returns: True if this is a null (undefined) instance of :class:`geosoft.gxapi.GXDB`, False otherwise.
+        :returns: True if this is a null (undefined) instance of `GXDB`, False otherwise.
         """
         return self._wrapper.handle == 0
 
@@ -129,12 +129,16 @@ class GXDB:
 
     def get_chan_vv(self, p2, p3, p4):
         """
-        Place the contents of a channel in a :class:`geosoft.gxapi.GXVV`.
+        Place the contents of a channel in a `GXVV`.
 
         **Note:**
 
-        If a :class:`geosoft.gxapi.GXVA` channel is specified, then element [0] of this
-        :class:`geosoft.gxapi.GXVA` channel is used to populated the :class:`geosoft.gxapi.GXVV`.
+        If a `GXVA` channel is specified, then element [0] of this
+        `GXVA` channel is used to populated the `GXVV`.
+
+        .. seealso::
+
+            `GXVV` class.
         """
         self._wrapper.get_chan_vv(p2, p3, p4._wrapper)
         
@@ -144,14 +148,18 @@ class GXDB:
 
     def get_chan_vv_expanded(self, p2, p3, p4):
         """
-        Read a channel into a :class:`geosoft.gxapi.GXVV`. If the channel is a :class:`geosoft.gxapi.GXVA` channel it is
-        treaded as a :class:`geosoft.gxapi.GXVV` channel with multiple values per fid and the FID expation
+        Read a channel into a `GXVV`. If the channel is a `GXVA` channel it is
+        treaded as a `GXVV` channel with multiple values per fid and the FID expation
         is set to the array size.
 
         **Note:**
 
-        This method is to be used in conjunction with the ReFidVV_VV method
+        This method is to be used in conjunction with the `GXVV.re_fid_vv` method
         that will honor the FID Expansion setting.
+
+        .. seealso::
+
+            `GXVV` class.
         """
         self._wrapper.get_chan_vv_expanded(p2, p3, p4._wrapper)
         
@@ -161,11 +169,11 @@ class GXDB:
 
     def get_ipj(self, p2, p3):
         """
-        Get georeference information in an :class:`geosoft.gxapi.GXIPJ`.
+        Get georeference information in an `GXIPJ`.
 
         **Note:**
 
-        If the channel does not have an :class:`geosoft.gxapi.GXIPJ`, the :class:`geosoft.gxapi.GXIPJ` that is
+        If the channel does not have an `GXIPJ`, the `GXIPJ` that is
         returned will have an unknown projection.
         """
         self._wrapper.get_ipj(p2, p3._wrapper)
@@ -176,12 +184,12 @@ class GXDB:
 
     def get_itr(self, p2, p3):
         """
-        Get :class:`geosoft.gxapi.GXITR` for a channel.
+        Get `GXITR` for a channel.
 
         **Note:**
 
-        If a channel does not have an :class:`geosoft.gxapi.GXITR`, GetITR_DB will not change
-        the passed :class:`geosoft.gxapi.GXITR`.
+        If a channel does not have an `GXITR`, `get_itr` will not change
+        the passed `GXITR`.
         Channel must be locked for READONLY or READWRITE.
         """
         self._wrapper.get_itr(p2, p3._wrapper)
@@ -192,7 +200,7 @@ class GXDB:
 
     def get_reg_symb(self, p2, p3):
         """
-        Get a :class:`geosoft.gxapi.GXREG` object from a symbol
+        Get a `GXREG` object from a symbol
         """
         self._wrapper.get_reg_symb(p2, p3._wrapper)
         
@@ -202,11 +210,11 @@ class GXDB:
 
     def get_reg_symb_setting(self, p2, p3, p4):
         """
-        Get a :class:`geosoft.gxapi.GXREG` string setting from a symbol reg
+        Get a `GXREG` string setting from a symbol reg
 
         **Note:**
 
-        The symbol :class:`geosoft.gxapi.GXREG` is used to store a variety of attribute
+        The symbol `GXREG` is used to store a variety of attribute
         about the symbol.  Following a conventionally used entries:
         
         UNITS                   - channel units
@@ -220,9 +228,9 @@ class GXDB:
         _PJ_units
         _PJ_datum_transform
         
-        This is a convenient but low-performance way to get/set :class:`geosoft.gxapi.GXREG`
+        This is a convenient but low-performance way to get/set `GXREG`
         settings.  If performance is an issue, and more than one
-        setting is to be Get and or Set, use the :class:`geosoft.gxapi.GXREG` directly.
+        setting is to be Get and or Set, use the `GXREG` directly.
         """
         p4.value = self._wrapper.get_reg_symb_setting(p2, p3.encode(), p4.value.encode())
         
@@ -232,12 +240,16 @@ class GXDB:
 
     def get_va_chan_vv(self, p2, p3, p4, p5, p6):
         """
-        Place the contents of a specific part of a channel in a :class:`geosoft.gxapi.GXVV`.
+        Place the contents of a specific part of a channel in a `GXVV`.
 
         **Note:**
 
-        If a :class:`geosoft.gxapi.GXVA` channel is specified, then element [0] of this
-        :class:`geosoft.gxapi.GXVA` channel is used to populated the :class:`geosoft.gxapi.GXVV`.
+        If a `GXVA` channel is specified, then element [0] of this
+        `GXVA` channel is used to populated the `GXVV`.
+
+        .. seealso::
+
+            `GXVV` class.
         """
         self._wrapper.get_va_chan_vv(p2, p3, p4._wrapper, p5, p6)
         
@@ -300,7 +312,7 @@ class GXDB:
         The channel label is stored in the "CLASS" parameter
         of the channel reg. If no class is defined, then an
         empty string is returned.
-        The channel must be locked :attr:`geosoft.gxapi.DB_LOCK_READONLY` or :attr:`geosoft.gxapi.DB_LOCK_READWRITE`
+        The channel must be locked `DB_LOCK_READONLY` or `DB_LOCK_READWRITE`
         """
         p3.value = self._wrapper.get_chan_class(p2, p3.value.encode())
         
@@ -315,7 +327,7 @@ class GXDB:
 
         **Note:**
 
-        The channel must be locked :attr:`geosoft.gxapi.DB_LOCK_READONLY` or :attr:`geosoft.gxapi.DB_LOCK_READWRITE`
+        The channel must be locked `DB_LOCK_READONLY` or `DB_LOCK_READWRITE`
         """
         ret_val = self._wrapper.get_chan_decimal(p2)
         return ret_val
@@ -331,7 +343,7 @@ class GXDB:
         **Note:**
 
         The returned format is one of the `DB_CHAN_FORMAT`.
-        The channel must be locked :attr:`geosoft.gxapi.DB_LOCK_READONLY` or :attr:`geosoft.gxapi.DB_LOCK_READWRITE`
+        The channel must be locked `DB_LOCK_READONLY` or `DB_LOCK_READWRITE`
         """
         ret_val = self._wrapper.get_chan_format(p2)
         return ret_val
@@ -363,7 +375,7 @@ class GXDB:
         The channel label is stored in the "LABEL" parameter
         of the channel reg.  If the setting is empty, the
         channel name is returned.
-        The channel must be locked :attr:`geosoft.gxapi.DB_LOCK_READONLY` or :attr:`geosoft.gxapi.DB_LOCK_READWRITE`
+        The channel must be locked `DB_LOCK_READONLY` or `DB_LOCK_READWRITE`
         """
         p3.value = self._wrapper.get_chan_label(p2, p3.value.encode())
         
@@ -378,7 +390,7 @@ class GXDB:
 
         **Note:**
 
-        The channel must be locked :attr:`geosoft.gxapi.DB_LOCK_READONLY` or :attr:`geosoft.gxapi.DB_LOCK_READWRITE`
+        The channel must be locked `DB_LOCK_READONLY` or `DB_LOCK_READWRITE`
         """
         p3.value = self._wrapper.get_chan_name(p2, p3.value.encode())
         
@@ -392,7 +404,7 @@ class GXDB:
 
         **Note:**
 
-        The channel must be locked :attr:`geosoft.gxapi.DB_LOCK_READONLY` or :attr:`geosoft.gxapi.DB_LOCK_READWRITE`
+        The channel must be locked `DB_LOCK_READONLY` or `DB_LOCK_READWRITE`
         """
         ret_val = self._wrapper.get_chan_protect(p2)
         return ret_val
@@ -410,7 +422,7 @@ class GXDB:
         The type returned is one of the `DB_CATEGORY_CHAN`.
         Use the GS_SIMPLE_TYPE() macro to convert to INT,REAL
         or string types.
-        The channel must be locked :attr:`geosoft.gxapi.DB_LOCK_READONLY` or :attr:`geosoft.gxapi.DB_LOCK_READWRITE`
+        The channel must be locked `DB_LOCK_READONLY` or `DB_LOCK_READWRITE`
         """
         ret_val = self._wrapper.get_chan_type(p2)
         return ret_val
@@ -426,7 +438,7 @@ class GXDB:
 
         The unit label is stored in the "UNITS" parameter
         of the channel reg.
-        The channel must be locked :attr:`geosoft.gxapi.DB_LOCK_READONLY` or :attr:`geosoft.gxapi.DB_LOCK_READWRITE`
+        The channel must be locked `DB_LOCK_READONLY` or `DB_LOCK_READWRITE`
         """
         p3.value = self._wrapper.get_chan_unit(p2, p3.value.encode())
         
@@ -441,7 +453,7 @@ class GXDB:
 
         **Note:**
 
-        The channel must be locked :attr:`geosoft.gxapi.DB_LOCK_READONLY` or :attr:`geosoft.gxapi.DB_LOCK_READWRITE`
+        The channel must be locked `DB_LOCK_READONLY` or `DB_LOCK_READWRITE`
         """
         ret_val = self._wrapper.get_chan_width(p2)
         return ret_val
@@ -461,16 +473,16 @@ class GXDB:
 
     def get_reg_symb_setting_int(self, p2, p3):
         """
-        Get an integer-valued :class:`geosoft.gxapi.GXREG` setting from a symbol reg
+        Get an integer-valued `GXREG` setting from a symbol reg
 
         **Note:**
 
-        Same as GetRegSymbSetting_DB, but converts
+        Same as `get_reg_symb_setting`, but converts
         the setting automatically to an integer value.
         
-        This is a convenient but low-performance way to get/set :class:`geosoft.gxapi.GXREG`
+        This is a convenient but low-performance way to get/set `GXREG`
         settings.  If performance is an issue, and more than one
-        setting is to be Get and or Set, use the :class:`geosoft.gxapi.GXREG` directly.
+        setting is to be Get and or Set, use the `GXREG` directly.
         """
         ret_val = self._wrapper.get_reg_symb_setting_int(p2, p3.encode())
         return ret_val
@@ -485,7 +497,7 @@ class GXDB:
         **Note:**
 
         See GetChanName_DB for more information
-        The channel must be locked :attr:`geosoft.gxapi.DB_LOCK_READONLY` or :attr:`geosoft.gxapi.DB_LOCK_READWRITE`
+        The channel must be locked `DB_LOCK_READONLY` or `DB_LOCK_READWRITE`
         """
         p3.value = self._wrapper.get_symb_name(p2, p3.value.encode())
         
@@ -495,15 +507,15 @@ class GXDB:
 
     def have_itr(self, p2):
         """
-        Returns TRUE if channel has an :class:`geosoft.gxapi.GXITR`.
+        Returns TRUE if channel has an `GXITR`.
 
         **Note:**
 
-        If a channel has an :class:`geosoft.gxapi.GXITR`, the :class:`geosoft.gxapi.GXITR` colors are used to
+        If a channel has an `GXITR`, the `GXITR` colors are used to
         display channel values in the spreadsheet.
         
-        If a channel does not have an :class:`geosoft.gxapi.GXITR`, GetITR_DB will not change
-        the passed :class:`geosoft.gxapi.GXITR`.
+        If a channel does not have an `GXITR`, `get_itr` will not change
+        the passed `GXITR`.
         """
         ret_val = self._wrapper.have_itr(p2)
         return ret_val
@@ -559,14 +571,18 @@ class GXDB:
 
     def put_chan_vv(self, p2, p3, p4):
         """
-        Place the contents of a :class:`geosoft.gxapi.GXVV` in a channel.
+        Place the contents of a `GXVV` in a channel.
 
         **Note:**
 
-        If a :class:`geosoft.gxapi.GXVA` channel is specified, then element [0] of this
-        :class:`geosoft.gxapi.GXVA` channel will be populated with the :class:`geosoft.gxapi.GXVV`.
+        If a `GXVA` channel is specified, then element [0] of this
+        `GXVA` channel will be populated with the `GXVV`.
         
         There is a limit of 2000 elements for non-licensed users.
+
+        .. seealso::
+
+            `GXVV` class.
         """
         self._wrapper.put_chan_vv(p2, p3, p4._wrapper)
         
@@ -576,12 +592,16 @@ class GXDB:
 
     def put_va_chan_vv(self, p2, p3, p4, p5, p6):
         """
-        Place the contents of a :class:`geosoft.gxapi.GXVV` at a specific part of a channel.
+        Place the contents of a `GXVV` at a specific part of a channel.
 
         **Note:**
 
-        If a :class:`geosoft.gxapi.GXVA` channel is specified, then element [0] of this
-        :class:`geosoft.gxapi.GXVA` channel will be populated with the :class:`geosoft.gxapi.GXVV`.
+        If a `GXVA` channel is specified, then element [0] of this
+        `GXVA` channel will be populated with the `GXVV`.
+
+        .. seealso::
+
+            `GXVV` class.
         """
         self._wrapper.put_va_chan_vv(p2, p3, p4._wrapper, p5, p6)
         
@@ -616,16 +636,16 @@ class GXDB:
 
     def get_reg_symb_setting_double(self, p2, p3):
         """
-        Get a real-valued :class:`geosoft.gxapi.GXREG` setting from a symbol reg
+        Get a real-valued `GXREG` setting from a symbol reg
 
         **Note:**
 
-        Same as GetRegSymbSetting_DB, but converts
+        Same as `get_reg_symb_setting`, but converts
         the setting automatically to a real value.
         
-        This is a convenient but low-performance way to get/set :class:`geosoft.gxapi.GXREG`
+        This is a convenient but low-performance way to get/set `GXREG`
         settings.  If performance is an issue, and more than one
-        setting is to be Get and or Set, use the :class:`geosoft.gxapi.GXREG` directly.
+        setting is to be Get and or Set, use the `GXREG` directly.
         """
         ret_val = self._wrapper.get_reg_symb_setting_double(p2, p3.encode())
         return ret_val
@@ -639,10 +659,10 @@ class GXDB:
 
         **Note:**
 
-        Value to set must be either :attr:`geosoft.gxapi.DB_CHAN_PROTECTED` or
-        :attr:`geosoft.gxapi.DB_CHAN_UNPROTECTED`
+        Value to set must be either `DB_CHAN_PROTECTED` or
+        `DB_CHAN_UNPROTECTED`
         This method does its own channel locking/unlocking.
-        Channels already lock :attr:`geosoft.gxapi.DB_LOCK_READONLY` are ignored.
+        Channels already lock `DB_LOCK_READONLY` are ignored.
         """
         self._wrapper.set_all_chan_protect(p2)
         
@@ -658,7 +678,7 @@ class GXDB:
 
         The channel class is stored in the "CLASS" parameter
         of the channel reg.
-        The channel must be locked :attr:`geosoft.gxapi.DB_LOCK_READWRITE`
+        The channel must be locked `DB_LOCK_READWRITE`
         """
         self._wrapper.set_chan_class(p2, p3.encode())
         
@@ -674,7 +694,7 @@ class GXDB:
         **Note:**
 
         The number of display digits must be from 0 to 50.
-        The channel must be locked :attr:`geosoft.gxapi.DB_LOCK_READWRITE`
+        The channel must be locked `DB_LOCK_READWRITE`
         """
         self._wrapper.set_chan_decimal(p2, p3)
         
@@ -688,7 +708,7 @@ class GXDB:
 
         **Note:**
 
-        The channel must be locked :attr:`geosoft.gxapi.DB_LOCK_READWRITE`
+        The channel must be locked `DB_LOCK_READWRITE`
         """
         self._wrapper.set_chan_format(p2, p3)
         
@@ -719,7 +739,7 @@ class GXDB:
 
         The channel label is stored in the "LABEL" parameter
         of the channel reg.
-        The channel must be locked :attr:`geosoft.gxapi.DB_LOCK_READWRITE`
+        The channel must be locked `DB_LOCK_READWRITE`
         """
         self._wrapper.set_chan_label(p2, p3.encode())
         
@@ -733,7 +753,7 @@ class GXDB:
 
         **Note:**
 
-        The channel must be locked :attr:`geosoft.gxapi.DB_LOCK_READWRITE`
+        The channel must be locked `DB_LOCK_READWRITE`
         """
         self._wrapper.set_chan_name(p2, p3.encode())
         
@@ -748,9 +768,9 @@ class GXDB:
 
         **Note:**
 
-        Value to set must be either :attr:`geosoft.gxapi.DB_CHAN_PROTECTED` or
-        :attr:`geosoft.gxapi.DB_CHAN_UNPROTECTED`
-        The channel must be locked :attr:`geosoft.gxapi.DB_LOCK_READWRITE`
+        Value to set must be either `DB_CHAN_PROTECTED` or
+        `DB_CHAN_UNPROTECTED`
+        The channel must be locked `DB_LOCK_READWRITE`
         """
         self._wrapper.set_chan_protect(p2, p3)
         
@@ -795,7 +815,7 @@ class GXDB:
 
         **Note:**
 
-        The channel must be locked :attr:`geosoft.gxapi.DB_LOCK_READWRITE`
+        The channel must be locked `DB_LOCK_READWRITE`
         """
         self._wrapper.set_chan_unit(p2, p3.encode())
         
@@ -810,7 +830,7 @@ class GXDB:
         **Note:**
 
         The number of display digits must be from 0 to 50.
-        The channel must be locked :attr:`geosoft.gxapi.DB_LOCK_READWRITE`
+        The channel must be locked `DB_LOCK_READWRITE`
         """
         self._wrapper.set_chan_width(p2, p3)
         
@@ -820,7 +840,7 @@ class GXDB:
 
     def set_ipj(self, p2, p3, p4):
         """
-        Set a :class:`geosoft.gxapi.GXREG` object into a symbol
+        Set a `GXREG` object into a symbol
         """
         self._wrapper.set_ipj(p2, p3, p4._wrapper)
         
@@ -830,11 +850,11 @@ class GXDB:
 
     def set_itr(self, p2, p3):
         """
-        Set :class:`geosoft.gxapi.GXITR` for a channel.
+        Set `GXITR` for a channel.
 
         **Note:**
 
-        Use :attr:`geosoft.gxapi.ITR_NULL` to clear the channel :class:`geosoft.gxapi.GXITR`.
+        Use `ITR_NULL` to clear the channel `GXITR`.
         Channel must be locked for READONLY or READWRITE.
         """
         self._wrapper.set_itr(p2, p3._wrapper)
@@ -845,7 +865,7 @@ class GXDB:
 
     def set_reg_symb(self, p2, p3):
         """
-        Set a :class:`geosoft.gxapi.GXREG` object into a symbol
+        Set a `GXREG` object into a symbol
         """
         self._wrapper.set_reg_symb(p2, p3._wrapper)
         
@@ -855,11 +875,11 @@ class GXDB:
 
     def set_reg_symb_setting(self, p2, p3, p4):
         """
-        Set a :class:`geosoft.gxapi.GXREG` string setting in a symbol reg
+        Set a `GXREG` string setting in a symbol reg
 
         **Note:**
 
-        The symbol :class:`geosoft.gxapi.GXREG` is used to store a variety of attribute
+        The symbol `GXREG` is used to store a variety of attribute
         about the symbol.  Following a conventionally used entries:
         
         UNITS                   - channel units
@@ -873,9 +893,9 @@ class GXDB:
         _PJ_units
         _PJ_datum_transform
         
-        This is a convenient but low-performance way to get/set :class:`geosoft.gxapi.GXREG`
+        This is a convenient but low-performance way to get/set `GXREG`
         settings.  If performance is an issue, and more than one
-        setting is to be Get and or Set, use the :class:`geosoft.gxapi.GXREG` directly.
+        setting is to be Get and or Set, use the `GXREG` directly.
         """
         self._wrapper.set_reg_symb_setting(p2, p3.encode(), p4.encode())
         
@@ -964,6 +984,10 @@ class GXDB:
         after the process finishes. This function will delete a line L0
         a) If it exists and is empty
         b) It is not the only line in the database.
+
+        .. seealso::
+
+            `GXEDB.del_line0` - deletes an empty line 0 from the currently edited database.
         """
         self._wrapper.del_line0()
         
@@ -1001,7 +1025,11 @@ class GXDB:
         **Note:**
 
         This method is useful to determine if another session already locked a database.
-        By using this method before an Open_DB a GX may handle errors like this more gracefully.
+        By using this method before an `open` a GX may handle errors like this more gracefully.
+
+        .. seealso::
+
+            `open`, `open_read_only`, `can_open_read_only`
         """
         ret_val = gxapi_cy.WrapDB.can_open(GXContext._get_tls_geo(), p1.encode(), p2.encode(), p3.encode())
         return ret_val
@@ -1016,7 +1044,11 @@ class GXDB:
         **Note:**
 
         This method is useful to determine if another session already locked a database.
-        By using this method before an OpenReadOnly_DB a GX may handle errors like this more gracefully.
+        By using this method before an `open_read_only` a GX may handle errors like this more gracefully.
+
+        .. seealso::
+
+            `open`, `open_read_only`, `can_open`
         """
         ret_val = gxapi_cy.WrapDB.can_open_read_only(GXContext._get_tls_geo(), p1.encode(), p2.encode(), p3.encode())
         return ret_val
@@ -1064,6 +1096,10 @@ class GXDB:
     def open(cls, p1, p2, p3):
         """
         This method opens a database.
+
+        .. seealso::
+
+            `open_read_only`, `can_open`, `can_open_read_only`
         """
         ret_val = gxapi_cy.WrapDB.open(GXContext._get_tls_geo(), p1.encode(), p2.encode(), p3.encode())
         return GXDB(ret_val)
@@ -1078,7 +1114,11 @@ class GXDB:
         **Note:**
 
         This method is useful to open multiple reader instances on the same database. This call will fail
-        if a :class:`geosoft.gxapi.GXDB` has already been opened with Open_DB or locked in the application with Lock_EDB.
+        if a `GXDB` has already been opened with `open` or locked in the application with `GXEDB.lock`.
+
+        .. seealso::
+
+            `open`, `can_open`, `can_open_read_only`
         """
         ret_val = gxapi_cy.WrapDB.open_read_only(GXContext._get_tls_geo(), p1.encode(), p2.encode(), p3.encode())
         return GXDB(ret_val)
@@ -1129,11 +1169,11 @@ class GXDB:
 
     def get_col_va(self, p2):
         """
-        Returns the # of columns in a :class:`geosoft.gxapi.GXVA` channel.
+        Returns the # of columns in a `GXVA` channel.
 
         **Note:**
 
-        If the channel is :class:`geosoft.gxapi.GXVV`, this function returns 1.
+        If the channel is `GXVV`, this function returns 1.
         """
         ret_val = self._wrapper.get_col_va(p2)
         return ret_val
@@ -1147,7 +1187,7 @@ class GXDB:
 
         **Note:**
 
-        Returns the actual number of data items (rows) in a channel. For :class:`geosoft.gxapi.GXVA` channels no correction is
+        Returns the actual number of data items (rows) in a channel. For `GXVA` channels no correction is
         necessary for the number of columns.
         """
         ret_val = self._wrapper.get_channel_length(p2, p3)
@@ -1195,7 +1235,7 @@ class GXDB:
 
         **Note:**
 
-        This function normally used for :class:`geosoft.gxapi.GXVA` channels. A copy of the
+        This function normally used for `GXVA` channels. A copy of the
         original channel will be made if start and end column
         numbers to copy are dummies.
         All the columns including start and end columns will be copied
@@ -1212,11 +1252,11 @@ class GXDB:
 
         **Note:**
 
-        Similar to WindowVACh_DB, but the input and output channels must
-        contain the same number of columns. The input :class:`geosoft.gxapi.GXVV` tells which columns
+        Similar to `window_va_ch`, but the input and output channels must
+        contain the same number of columns. The input `GXVV` tells which columns
         to copy over; 0 values indicate that the output column is to be
         dummied, and non-zero values indicate the column is to be copied.
-        The :class:`geosoft.gxapi.GXVV` length must be the same as the number of columns.
+        The `GXVV` length must be the same as the number of columns.
         """
         self._wrapper.window_va_ch2(p2, p3, p4, p5._wrapper)
         
@@ -1265,7 +1305,7 @@ class GXDB:
 
         **Note:**
 
-        The channel must be locked :attr:`geosoft.gxapi.DB_LOCK_READONLY` or :attr:`geosoft.gxapi.DB_LOCK_READWRITE`
+        The channel must be locked `DB_LOCK_READONLY` or `DB_LOCK_READWRITE`
         """
         p3.value, p4.value = self._wrapper.get_line_map_fid(p2, p3.value, p4.value)
         
@@ -1348,7 +1388,7 @@ class GXDB:
 
         **Note:**
 
-        The channel must be locked :attr:`geosoft.gxapi.DB_LOCK_READONLY` or :attr:`geosoft.gxapi.DB_LOCK_READWRITE`
+        The channel must be locked `DB_LOCK_READONLY` or `DB_LOCK_READWRITE`
         """
         ret_val = self._wrapper.line_category(p2)
         return ret_val
@@ -1362,7 +1402,7 @@ class GXDB:
 
         **Note:**
 
-        The channel must be locked :attr:`geosoft.gxapi.DB_LOCK_READONLY` or :attr:`geosoft.gxapi.DB_LOCK_READWRITE`
+        The channel must be locked `DB_LOCK_READONLY` or `DB_LOCK_READWRITE`
         """
         ret_val = self._wrapper.line_flight(p2)
         return ret_val
@@ -1400,7 +1440,7 @@ class GXDB:
 
         **Note:**
 
-        The channel must be locked :attr:`geosoft.gxapi.DB_LOCK_READONLY` or :attr:`geosoft.gxapi.DB_LOCK_READWRITE`
+        The channel must be locked `DB_LOCK_READONLY` or `DB_LOCK_READWRITE`
         """
         ret_val = self._wrapper.line_number(p2)
         return ret_val
@@ -1414,7 +1454,7 @@ class GXDB:
 
         **Note:**
 
-        The channel must be locked :attr:`geosoft.gxapi.DB_LOCK_READONLY` or :attr:`geosoft.gxapi.DB_LOCK_READWRITE`
+        The channel must be locked `DB_LOCK_READONLY` or `DB_LOCK_READWRITE`
         """
         p3.value = self._wrapper.line_number2(p2, p3.value.encode())
         
@@ -1428,7 +1468,7 @@ class GXDB:
 
         **Note:**
 
-        The channel must be locked :attr:`geosoft.gxapi.DB_LOCK_READONLY` or :attr:`geosoft.gxapi.DB_LOCK_READWRITE`
+        The channel must be locked `DB_LOCK_READONLY` or `DB_LOCK_READWRITE`
         """
         ret_val = self._wrapper.line_type(p2)
         return ret_val
@@ -1442,7 +1482,7 @@ class GXDB:
 
         **Note:**
 
-        The channel must be locked :attr:`geosoft.gxapi.DB_LOCK_READONLY` or :attr:`geosoft.gxapi.DB_LOCK_READWRITE`
+        The channel must be locked `DB_LOCK_READONLY` or `DB_LOCK_READWRITE`
         """
         ret_val = self._wrapper.line_version(p2)
         return ret_val
@@ -1458,7 +1498,7 @@ class GXDB:
         **Note:**
 
         This MUST be called to generate a line name when calls
-        are made to iExistSymb_DB, CreateSymb_DB or DeleteSymb_DB
+        are made to `exist_symb`, `create_symb` or `delete_symb`
         for an operation on a line.
         See also SetLineName2_DB.
         """
@@ -1475,7 +1515,7 @@ class GXDB:
         **Note:**
 
         This MUST be called to generate a line name when calls
-        are made to iExistSymb_DB, CreateSymb_DB or DeleteSymb_DB
+        are made to `exist_symb`, `create_symb` or `delete_symb`
         for an operation on a line.
         The line number can be any combination of letters and numbers,
         i.e. XU324, 98765, A, 23NGV etc.
@@ -1513,14 +1553,18 @@ class GXDB:
 
         **Note:**
 
-        The channel must be locked :attr:`geosoft.gxapi.DB_LOCK_READONLY` or :attr:`geosoft.gxapi.DB_LOCK_READWRITE`
+        The channel must be locked `DB_LOCK_READONLY` or `DB_LOCK_READWRITE`
         
-        This function simply returns a value set using the SetLineBearing_DB
-        function. It returns :attr:`geosoft.gxapi.rDUMMY` for line categories other than
-        :attr:`geosoft.gxapi.DB_CATEGORY_LINE_FLIGHT`.
+        This function simply returns a value set using the `set_line_bearing`
+        function. It returns `rDUMMY` for line categories other than
+        `DB_CATEGORY_LINE_FLIGHT`.
         
         To calculate the line azimuth based on the first and
-        last non-dummy locations, use the rDirection_DU function.
+        last non-dummy locations, use the `GXDU.direction` function.
+
+        .. seealso::
+
+            `set_line_bearing`, `GXDU.direction`
         """
         ret_val = self._wrapper.line_bearing(p2)
         return ret_val
@@ -1534,7 +1578,7 @@ class GXDB:
 
         **Note:**
 
-        The channel must be locked :attr:`geosoft.gxapi.DB_LOCK_READONLY` or :attr:`geosoft.gxapi.DB_LOCK_READWRITE`
+        The channel must be locked `DB_LOCK_READONLY` or `DB_LOCK_READWRITE`
         """
         ret_val = self._wrapper.line_date(p2)
         return ret_val
@@ -1563,7 +1607,7 @@ class GXDB:
         affect that set of selections.
         
         E.g. "L99:800" is the string to select all normal lines from
-        99 to 800. If Select_DB is called again to select "L1000",
+        99 to 800. If `select` is called again to select "L1000",
         then lines 99 to 800 and 1000 would all be selected.
         
         Use a "T" prefix for Tie lines.
@@ -1583,12 +1627,16 @@ class GXDB:
 
         **Note:**
 
-        The channel must be locked :attr:`geosoft.gxapi.DB_LOCK_READWRITE`
+        The channel must be locked `DB_LOCK_READWRITE`
         
         This function simply sets a value in the line's metadata
-        that is retrieved using the rLineBearing_DB
+        that is retrieved using the `line_bearing`
         function. It terminates for line categories other than
-        :attr:`geosoft.gxapi.DB_CATEGORY_LINE_FLIGHT`.
+        `DB_CATEGORY_LINE_FLIGHT`.
+
+        .. seealso::
+
+            `line_bearing`, `GXDU.direction`
         """
         self._wrapper.set_line_bearing(p2, p3)
         
@@ -1602,7 +1650,7 @@ class GXDB:
 
         **Note:**
 
-        The channel must be locked :attr:`geosoft.gxapi.DB_LOCK_READWRITE`
+        The channel must be locked `DB_LOCK_READWRITE`
         """
         self._wrapper.set_line_date(p2, p3)
         
@@ -1616,7 +1664,7 @@ class GXDB:
 
         **Note:**
 
-        The channel must be locked :attr:`geosoft.gxapi.DB_LOCK_READWRITE`
+        The channel must be locked `DB_LOCK_READWRITE`
         """
         self._wrapper.set_line_flight(p2, p3)
         
@@ -1630,8 +1678,8 @@ class GXDB:
 
         **Note:**
 
-        for full range, set Start Fid to :attr:`geosoft.gxapi.rMIN` and End Fid to :attr:`geosoft.gxapi.rMAX`.
-        for no data, set Start and End Fids to :attr:`geosoft.gxapi.rDUMMY`.
+        for full range, set Start Fid to `rMIN` and End Fid to `rMAX`.
+        for no data, set Start and End Fids to `rDUMMY`.
         """
         self._wrapper.set_line_map_fid(p2, p3, p4)
         
@@ -1645,7 +1693,7 @@ class GXDB:
 
         **Note:**
 
-        The channel must be locked :attr:`geosoft.gxapi.DB_LOCK_READWRITE`
+        The channel must be locked `DB_LOCK_READWRITE`
         """
         self._wrapper.set_line_num(p2, p3)
         
@@ -1659,7 +1707,7 @@ class GXDB:
 
         **Note:**
 
-        The channel must be locked :attr:`geosoft.gxapi.DB_LOCK_READWRITE`
+        The channel must be locked `DB_LOCK_READWRITE`
         """
         self._wrapper.set_line_type(p2, p3)
         
@@ -1673,7 +1721,7 @@ class GXDB:
 
         **Note:**
 
-        The channel must be locked :attr:`geosoft.gxapi.DB_LOCK_READWRITE`
+        The channel must be locked `DB_LOCK_READWRITE`
         """
         self._wrapper.set_line_ver(p2, p3)
         
@@ -1725,7 +1773,7 @@ class GXDB:
 
     def array_lst(self, p2):
         """
-        Load a :class:`geosoft.gxapi.GXLST` object with array (:class:`geosoft.gxapi.GXVA`) channel symbols.
+        Load a `GXLST` object with array (`GXVA`) channel symbols.
         """
         self._wrapper.array_lst(p2._wrapper)
         
@@ -1735,7 +1783,7 @@ class GXDB:
 
     def array_size_lst(self, p2, p3):
         """
-        Load a :class:`geosoft.gxapi.GXLST` object with array (:class:`geosoft.gxapi.GXVA`) channel symbols with a particular number of columns.
+        Load a `GXLST` object with array (`GXVA`) channel symbols with a particular number of columns.
         """
         self._wrapper.array_size_lst(p2, p3._wrapper)
         
@@ -1745,17 +1793,17 @@ class GXDB:
 
     def chan_lst(self, p2):
         """
-        Load a :class:`geosoft.gxapi.GXLST` with database channels.
+        Load a `GXLST` with database channels.
 
         **Note:**
 
-        Populates a :class:`geosoft.gxapi.GXLST` with channel symbols.
-        The name is put into the "Name" part of the :class:`geosoft.gxapi.GXLST` (0),
+        Populates a `GXLST` with channel symbols.
+        The name is put into the "Name" part of the `GXLST` (0),
         and the handle, an integer value written as a string, is
-        placed in the value part of the :class:`geosoft.gxapi.GXLST` (1).
+        placed in the value part of the `GXLST` (1).
         Array channels are included, as well as virtual channels (array channel single columns loaded in the database like \\"Chan[1]\\".
         
-        The :class:`geosoft.gxapi.GXLST` is cleared first, and the items are sorted by name.
+        The `GXLST` is cleared first, and the items are sorted by name.
         """
         self._wrapper.chan_lst(p2._wrapper)
         
@@ -1765,11 +1813,11 @@ class GXDB:
 
     def normal_chan_lst(self, p2):
         """
-        Load a :class:`geosoft.gxapi.GXLST` with non-array database channels.
+        Load a `GXLST` with non-array database channels.
 
         **Note:**
 
-        Like ChanLST_DB, but does not include array channels or virtual channels.
+        Like `chan_lst`, but does not include array channels or virtual channels.
         """
         self._wrapper.normal_chan_lst(p2._wrapper)
         
@@ -1779,16 +1827,16 @@ class GXDB:
 
     def class_chan_lst(self, p2, p3):
         """
-        Load a :class:`geosoft.gxapi.GXLST` with channels in a particular class.
+        Load a `GXLST` with channels in a particular class.
 
         **Note:**
 
         The Name of the symbol is placed in the
         item name and the item value is set to the symbol handle.
         Only channels with the given class name are included,
-        e.g. use "ASSAY" for assay channels in :class:`geosoft.gxapi.GXCHIMERA`.
+        e.g. use "ASSAY" for assay channels in `GXCHIMERA`.
         
-        The :class:`geosoft.gxapi.GXLST` is cleared first, and the items are sorted by name.
+        The `GXLST` is cleared first, and the items are sorted by name.
         """
         self._wrapper.class_chan_lst(p2._wrapper, p3.encode())
         
@@ -1798,7 +1846,7 @@ class GXDB:
 
     def class_group_lst(self, p2, p3):
         """
-        Load a :class:`geosoft.gxapi.GXLST` with group lines in a particular class.
+        Load a `GXLST` with group lines in a particular class.
 
         **Note:**
 
@@ -1807,7 +1855,7 @@ class GXDB:
         Only group lines with the given class name are included,
         e.g. use "TARGETS" for UX-Detect Target groups.
         
-        The :class:`geosoft.gxapi.GXLST` is cleared first, and the items are sorted by name.
+        The `GXLST` is cleared first, and the items are sorted by name.
         """
         self._wrapper.class_group_lst(p2._wrapper, p3.encode())
         
@@ -1824,7 +1872,7 @@ class GXDB:
         If symbol already exits, and it is the same type
         simply returns a handle to the existing symbol.
         
-        This method simple calls CreateSymbEx_DB with the
+        This method simple calls `create_symb_ex` with the
         extra info set to 1.
         
         STRING-type channels: To create a string-type channel,
@@ -1834,12 +1882,12 @@ class GXDB:
         
         BLOBS: Blobs (Binary Large Objects) can be used for storing
         miscellaneous data which does not fit well into any of the
-        other various storage objects, such as a :class:`geosoft.gxapi.GXREG`. Generally,
-        one or more objects is serialized to a :class:`geosoft.gxapi.GXBF` object, which
+        other various storage objects, such as a `GXREG`. Generally,
+        one or more objects is serialized to a `GXBF` object, which
         is then written to the blob using the sWriteBlobBF_DB()
         function. Retrieval is done in the reverse order, using
         sWriteBlobBF_DB() first, then extracting the objects from the
-        :class:`geosoft.gxapi.GXBF` object.
+        `GXBF` object.
         To avoid namespace problems, Geosoft reserves the following
         name prefixes:
         
@@ -1869,7 +1917,7 @@ class GXDB:
         For instance, "-32" will create a string channel with
         32 characters per item.
         
-        Symbol name for :attr:`geosoft.gxapi.DB_CATEGORY_LINE_FLIGHT` must conform to
+        Symbol name for `DB_CATEGORY_LINE_FLIGHT` must conform to
         the following line naming syntax:
         
         [type][number.version:flight]
@@ -1887,7 +1935,7 @@ class GXDB:
         Note the "Flight" is any whole number that may be useful
         to differentiate processing tasks.
         
-        The ability to create a :class:`geosoft.gxapi.GXVA` channel is not available in the
+        The ability to create a `GXVA` channel is not available in the
         free interface and requires a Montaj license.
         """
         ret_val = self._wrapper.create_symb_ex(p2.encode(), p3, p4, p5, p6)
@@ -1898,7 +1946,7 @@ class GXDB:
 
     def csv_chan_lst(self, p2, p3):
         """
-        Load a :class:`geosoft.gxapi.GXLST` with channels in a comma-separated list.
+        Load a `GXLST` with channels in a comma-separated list.
 
         **Note:**
 
@@ -1907,7 +1955,7 @@ class GXDB:
         Only channels in the list which are present in the database
         are included.
         
-        The :class:`geosoft.gxapi.GXLST` is cleared first.
+        The `GXLST` is cleared first.
         """
         self._wrapper.csv_chan_lst(p2._wrapper, p3.encode())
         
@@ -1946,6 +1994,10 @@ class GXDB:
 
         The symbol will be locked READWRITE.
         The new name must not already exist in the database.
+
+        .. seealso::
+
+            `dup_symb_no_lock`
         """
         ret_val = self._wrapper.dup_symb(p2, p3.encode())
         return ret_val
@@ -1961,6 +2013,10 @@ class GXDB:
 
         The symbol will be NOT be locked.
         The new name must not already exist in the database.
+
+        .. seealso::
+
+            `dup_symb`
         """
         ret_val = self._wrapper.dup_symb_no_lock(p2, p3.encode())
         return ret_val
@@ -1974,14 +2030,14 @@ class GXDB:
 
         **Note:**
 
-        To work with a specific column from a :class:`geosoft.gxapi.GXVA` channel,
-        specify the :class:`geosoft.gxapi.GXVA` element number in square brackets as part
-        of the :class:`geosoft.gxapi.GXVA` channel name (e.g. "EM[3]" will treat the fourth
-        column of the :class:`geosoft.gxapi.GXVA` channel as a :class:`geosoft.gxapi.GXVV`).
+        To work with a specific column from a `GXVA` channel,
+        specify the `GXVA` element number in square brackets as part
+        of the `GXVA` channel name (e.g. "EM[3]" will treat the fourth
+        column of the `GXVA` channel as a `GXVV`).
         
-        See notes for FindSymb_DB.
+        See notes for `find_symb`.
         Introduced in v5.1.3.
-        The new FindChan_DB searches using the exact channel name.
+        The new `find_chan` searches using the exact channel name.
         """
         ret_val = self._wrapper.find_chan(p2.encode())
         return ret_val
@@ -1995,18 +2051,18 @@ class GXDB:
 
         **Note:**
 
-        To work with a specific column from a :class:`geosoft.gxapi.GXVA` channel,
-        specify the :class:`geosoft.gxapi.GXVA` element number in square brackets as part
-        of the :class:`geosoft.gxapi.GXVA` channel name (e.g. "EM[3]" will treat the fourth
-        column of the :class:`geosoft.gxapi.GXVA` channel as a :class:`geosoft.gxapi.GXVV`).
+        To work with a specific column from a `GXVA` channel,
+        specify the `GXVA` element number in square brackets as part
+        of the `GXVA` channel name (e.g. "EM[3]" will treat the fourth
+        column of the `GXVA` channel as a `GXVV`).
         
         For backward compatibility with GXs not employing the
-        GetXYZChanSymb_DB function, the following behaviour has
+        `get_xyz_chan_symb` function, the following behaviour has
         been introduced as of v5.1.3:  (also true for "Y").
         
-        FindSymb_DB(hDB, "X", :attr:`geosoft.gxapi.DB_SYMB_CHAN`) is now equivalent to:
+        `find_symb`(hDB, "X", `DB_SYMB_CHAN`) is now equivalent to:
         
-        GetXYZChanSymb_DB(hDB, :attr:`geosoft.gxapi.DB_CHAN_X`);
+        `get_xyz_chan_symb`(hDB, `DB_CHAN_X`);
         
         In other words, the current X or Y is searched for, not
         necessarily the literal "X" or "Y". This ensures that newer
@@ -2014,7 +2070,7 @@ class GXDB:
         (or other similar names) instead of "X" and "Y" will still
         work with older GXs expecting "X" and "Y".
         
-        The new FindChan_DB searches using the exact channel name.
+        The new `find_chan` searches using the exact channel name.
         """
         ret_val = self._wrapper.find_symb(p2.encode(), p3)
         return ret_val
@@ -2025,9 +2081,9 @@ class GXDB:
     def get_chan_order_lst(self, p2):
         """
         This method gets the channel display order for a
-        database. The list will be stored in an :class:`geosoft.gxapi.GXLST` object.
+        database. The list will be stored in an `GXLST` object.
         In order to modify this displayed channels list,
-        call SetChanOrderLST_DB after.
+        call `set_chan_order_lst` after.
         """
         self._wrapper.get_chan_order_lst(p2._wrapper)
         
@@ -2047,15 +2103,15 @@ class GXDB:
 
     def class_chan_list(self, p2, p3):
         """
-        Place a list of channels for a given class in a :class:`geosoft.gxapi.GXVV`.
+        Place a list of channels for a given class in a `GXVV`.
 
         **Note:**
 
         This method generates a list of symbols in the database
-        and places their handles into a :class:`geosoft.gxapi.GXVV`. The list is not
+        and places their handles into a `GXVV`. The list is not
         sorted.
         Only channels with the given class name are included,
-        e.g. use "ASSAY" for assay channels used in :class:`geosoft.gxapi.GXCHIMERA`.
+        e.g. use "ASSAY" for assay channels used in `GXCHIMERA`.
         """
         ret_val = self._wrapper.class_chan_list(p2._wrapper, p3.encode())
         return ret_val
@@ -2069,9 +2125,9 @@ class GXDB:
 
         **Note:**
 
-        See notes for iExistSymb_DB.
+        See notes for `exist_symb`.
         Introduced in v5.1.3.
-        iExistChan_DB searches using the exact channel name.
+        `exist_chan` searches using the exact channel name.
         """
         ret_val = self._wrapper.exist_chan(p2.encode())
         return ret_val
@@ -2090,10 +2146,10 @@ class GXDB:
         GetXYZChan_DB function, the following behaviour has
         been introduced as of v5.1.3:  (also true for "Y").
         
-        iExistSymb_DB(hDB, "X", :attr:`geosoft.gxapi.DB_SYMB_CHAN`) is now equivalent to:
+        `exist_symb`(hDB, "X", `DB_SYMB_CHAN`) is now equivalent to:
         
-        GetXYZChan_DB(hDB, :attr:`geosoft.gxapi.DB_CHAN_X`, sXCh);
-        iExistSymb_DB(hDB, sXCh, :attr:`geosoft.gxapi.DB_SYMB_CHAN`);
+        GetXYZChan_DB(hDB, `DB_CHAN_X`, sXCh);
+        `exist_symb`(hDB, sXCh, `DB_SYMB_CHAN`);
         
         In other words, the current X or Y is searched for, not
         necessarily the literal "X" or "Y". This ensures that newer
@@ -2101,7 +2157,7 @@ class GXDB:
         (or other similar names) instead of "X" and "Y" will still
         work with older GXs expecting "X" and "Y".
         
-        The new iExistChan_DB searches using the exact channel name.
+        The new `exist_chan` searches using the exact channel name.
         """
         ret_val = self._wrapper.exist_symb(p2.encode(), p3)
         return ret_val
@@ -2146,7 +2202,7 @@ class GXDB:
 
     def symb_list(self, p2, p3):
         """
-        Place a list of symbols in a :class:`geosoft.gxapi.GXVV`.
+        Place a list of symbols in a `GXVV`.
         """
         ret_val = self._wrapper.symb_list(p2._wrapper, p3)
         return ret_val
@@ -2156,15 +2212,15 @@ class GXDB:
 
     def line_lst(self, p2):
         """
-        Load a :class:`geosoft.gxapi.GXLST` with database lines.
+        Load a `GXLST` with database lines.
 
         **Note:**
 
-        Populates a :class:`geosoft.gxapi.GXLST` with channel symbols.
-        The name is put into the "Name" part of the :class:`geosoft.gxapi.GXLST` (0),
+        Populates a `GXLST` with channel symbols.
+        The name is put into the "Name" part of the `GXLST` (0),
         and the handle, an integer value written as a string, is
-        placed in the value part of the :class:`geosoft.gxapi.GXLST` (1).
-        The :class:`geosoft.gxapi.GXLST` is cleared first, and the items are sorted in logical line order.
+        placed in the value part of the `GXLST` (1).
+        The `GXLST` is cleared first, and the items are sorted in logical line order.
         """
         self._wrapper.line_lst(p2._wrapper)
         
@@ -2184,19 +2240,19 @@ class GXDB:
 
     def mask_chan_lst(self, p2):
         """
-        Load a :class:`geosoft.gxapi.GXLST` with mask channels.
+        Load a `GXLST` with mask channels.
 
         **Note:**
 
-        Loads a :class:`geosoft.gxapi.GXLST` with all channels with CLASS "MASK", as well
+        Loads a `GXLST` with all channels with CLASS "MASK", as well
         as all channels containing the string "MASK", as long
         as the CLASS for these channels is not set to something
         other than "" or "MASK".
         
-        This function is a duplicate of the MaskChanLST_CHIMERA
-        function, and can be used if :class:`geosoft.gxapi.GXCHIMERA` is not installed.
+        This function is a duplicate of the `GXCHIMERA.mask_chan_lst`
+        function, and can be used if `GXCHIMERA` is not installed.
         
-        The :class:`geosoft.gxapi.GXLST` is cleared first, and the items are sorted by name.
+        The `GXLST` is cleared first, and the items are sorted by name.
         "None" is added at the end, with a handle value of "-1".
         """
         self._wrapper.mask_chan_lst(p2._wrapper)
@@ -2207,15 +2263,15 @@ class GXDB:
 
     def selected_line_lst(self, p2):
         """
-        Load a :class:`geosoft.gxapi.GXLST` with the selected lines.
+        Load a `GXLST` with the selected lines.
 
         **Note:**
 
-        This method populates a :class:`geosoft.gxapi.GXLST` object with all of the symbols
+        This method populates a `GXLST` object with all of the symbols
         of the selected lines in the database.
-        The name is put into the "Name" part of the :class:`geosoft.gxapi.GXLST` (0),
+        The name is put into the "Name" part of the `GXLST` (0),
         and the handle, an integer value written as a string, is
-        placed in the value part of the :class:`geosoft.gxapi.GXLST` (1).
+        placed in the value part of the `GXLST` (1).
         
         Symbols are automatically sorted in logical line order.
         """
@@ -2228,8 +2284,8 @@ class GXDB:
     def set_chan_order_lst(self, p2):
         """
         This method sets the channel display order for a
-        database. The list to modify will be stored in an :class:`geosoft.gxapi.GXLST`
-        object. Call GetChanOrderLST_DB to populate the :class:`geosoft.gxapi.GXLST`.
+        database. The list to modify will be stored in an `GXLST`
+        object. Call `get_chan_order_lst` to populate the `GXLST`.
         """
         self._wrapper.set_chan_order_lst(p2._wrapper)
         
@@ -2248,7 +2304,7 @@ class GXDB:
         
         This can be used, for instance, to make "Easting" and "Northing"
         the current X and Y channels, and have GXs using the
-        GetXYZChanSymb_DB function to load "X" and "Y" work as desired.
+        `get_xyz_chan_symb` function to load "X" and "Y" work as desired.
         """
         self._wrapper.set_xyz_chan(p2, p3.encode())
         
@@ -2258,7 +2314,7 @@ class GXDB:
 
     def string_chan_lst(self, p2):
         """
-        Load a :class:`geosoft.gxapi.GXLST` with string-type channels.
+        Load a `GXLST` with string-type channels.
 
         **Note:**
 
@@ -2267,7 +2323,7 @@ class GXDB:
         Only channels with the string-type data (sChanType_DB < 0)
         are included.
         
-        The :class:`geosoft.gxapi.GXLST` is cleared first, and the items are sorted by name.
+        The `GXLST` is cleared first, and the items are sorted by name.
         """
         self._wrapper.string_chan_lst(p2._wrapper)
         
@@ -2277,20 +2333,24 @@ class GXDB:
 
     def symb_lst(self, p2, p3):
         """
-        Populate a :class:`geosoft.gxapi.GXLST` with database symbols.
+        Populate a `GXLST` with database symbols.
 
         **Note:**
 
-        Populates a :class:`geosoft.gxapi.GXLST` with channel, line, blob or user symbols.
-        The name is put into the "Name" part of the :class:`geosoft.gxapi.GXLST` (0),
+        Populates a `GXLST` with channel, line, blob or user symbols.
+        The name is put into the "Name" part of the `GXLST` (0),
         and the handle, an integer value written as a string, is
-        placed in the value part of the :class:`geosoft.gxapi.GXLST` (1).
+        placed in the value part of the `GXLST` (1).
         
         Line symbols are automatically sorted in logical line order.
         
-        NOTE: The :class:`geosoft.gxapi.GXLST` is NOT cleared before being filled. If you
-        want to clear the :class:`geosoft.gxapi.GXLST` and get sorted values, use the
-        ChanLST_DB and LineLST_DB functions.
+        NOTE: The `GXLST` is NOT cleared before being filled. If you
+        want to clear the `GXLST` and get sorted values, use the
+        `chan_lst` and `line_lst` functions.
+
+        .. seealso::
+
+            `chan_lst`, `line_lst`, `selected_line_lst`
         """
         self._wrapper.symb_lst(p2._wrapper, p3)
         
@@ -2334,7 +2394,7 @@ class GXDB:
         
         As of v6.0, the load-status of channels is no longer stored
         in the database, but in the project, so this function is
-        equivalent to calling Associate_DB.
+        equivalent to calling `associate`.
         """
         self._wrapper.add_associated_load(p2, p3)
         
@@ -2374,7 +2434,7 @@ class GXDB:
         and is followed by a carriage return.
         The activity log is created automatically if it does not exist.
         
-        See Notes in AddComment_DB.
+        See Notes in `add_comment`.
         """
         self._wrapper.add_int_comment(p2.encode(), p3, p4)
         
@@ -2395,7 +2455,7 @@ class GXDB:
         and if followed by a carriage return.
         The activity log is created automatically if it does not exist.
         
-        See Notes in AddComment_DB.
+        See Notes in `add_comment`.
         """
         self._wrapper.add_double_comment(p2.encode(), p3, p4)
         
@@ -2416,7 +2476,7 @@ class GXDB:
         and is followed by a carriage return.
         The activity log is created automatically if it does not exist.
         
-        See Notes in AddComment_DB.
+        See Notes in `add_comment`.
         """
         self._wrapper.add_time_comment(p2.encode(), p3)
         
@@ -2508,7 +2568,11 @@ class GXDB:
 
     def get_chan_va(self, p2, p3, p4):
         """
-        Place the contents of a channel in a :class:`geosoft.gxapi.GXVA`.
+        Place the contents of a channel in a `GXVA`.
+
+        .. seealso::
+
+            `GXVA` class.
         """
         self._wrapper.get_chan_va(p2, p3, p4._wrapper)
         
@@ -2518,11 +2582,11 @@ class GXDB:
 
     def get_va_scaling(self, p2, p3, p4):
         """
-        Get base and range for :class:`geosoft.gxapi.GXVA` channel cell display.
+        Get base and range for `GXVA` channel cell display.
 
         **Note:**
 
-        See SetVAScaling_DB.
+        See `set_va_scaling`.
         """
         p3.value, p4.value = self._wrapper.get_va_scaling(p2, p3.value, p4.value)
         
@@ -2532,11 +2596,11 @@ class GXDB:
 
     def get_va_windows(self, p2, p3, p4):
         """
-        Get the range of windows displayed for a :class:`geosoft.gxapi.GXVA` channel.
+        Get the range of windows displayed for a `GXVA` channel.
 
         **Note:**
 
-        See SetVAWindows_DB.
+        See `set_va_windows`.
         """
         p3.value, p4.value = self._wrapper.get_va_windows(p2, p3.value, p4.value)
         
@@ -2550,7 +2614,7 @@ class GXDB:
 
         **Note:**
 
-        See GetVABaseCoordinateInfo_DB.
+        See `get_va_base_coordinate_info`.
         """
         self._wrapper.set_va_base_coordinate_info(p2, p3, p4, p5._wrapper, p6.encode(), p7)
         
@@ -2564,7 +2628,7 @@ class GXDB:
 
         **Note:**
 
-        See SetVABaseCoordinateInfo_DB.
+        See `set_va_base_coordinate_info`.
         """
         p3.value, p4.value, p6.value = self._wrapper.get_va_base_coordinate_info(p2, p3.value, p4.value, p5._wrapper, p6.value.encode())
         
@@ -2582,6 +2646,10 @@ class GXDB:
         Group classes are used to identify group lines used for
         special purposes, e.g.: "COLLAR" for the Wholeplot collar table,
         or "TARGETS" for the UX-Detect Targets list.
+
+        .. seealso::
+
+            `line_category` - to see if a line is a group line.
         """
         p3.value = self._wrapper.get_group_class(p2, p3.value.encode())
         
@@ -2601,11 +2669,11 @@ class GXDB:
 
     def get_va_prof_color_file(self, p2, p3):
         """
-        Get colors for a :class:`geosoft.gxapi.GXVA` channel when displayed in the profile window.
+        Get colors for a `GXVA` channel when displayed in the profile window.
 
         **Note:**
 
-        See SetVAProfColorFile_DB.
+        See `set_va_prof_color_file`.
         """
         p3.value = self._wrapper.get_va_prof_color_file(p2, p3.value.encode())
         
@@ -2615,7 +2683,7 @@ class GXDB:
 
     def get_va_prof_sect_option(self, p2, p3):
         """
-        Get the display options of :class:`geosoft.gxapi.GXVA` channels
+        Get the display options of `GXVA` channels
         """
         p3.value = self._wrapper.get_va_prof_sect_option(p2, p3.value.encode())
         
@@ -2625,7 +2693,7 @@ class GXDB:
 
     def get_va_sect_color_file(self, p2, p3):
         """
-        Get colors for a :class:`geosoft.gxapi.GXVA` channel when displayed section in the profile window.
+        Get colors for a `GXVA` channel when displayed section in the profile window.
 
         **Note:**
 
@@ -2663,7 +2731,11 @@ class GXDB:
 
     def put_chan_va(self, p2, p3, p4):
         """
-        Place the contents of a :class:`geosoft.gxapi.GXVA` in a channel.
+        Place the contents of a `GXVA` in a channel.
+
+        .. seealso::
+
+            `GXVA` class.
         """
         self._wrapper.put_chan_va(p2, p3, p4._wrapper)
         
@@ -2686,6 +2758,11 @@ class GXDB:
         channels are assumed to be associated with it. This means
         that a group class should only be defined when you wish to
         associate a subset of the available channels to group line.
+
+        .. seealso::
+
+            `line_category` - to see if a line is a group line.
+            `associate` - Associate a channel with a group.
         """
         self._wrapper.set_group_class(p2, p3.encode())
         
@@ -2695,7 +2772,7 @@ class GXDB:
 
     def set_va_prof_color_file(self, p2, p3):
         """
-        Set colors for a :class:`geosoft.gxapi.GXVA` channel when displayed in the profile window.
+        Set colors for a `GXVA` channel when displayed in the profile window.
 
         **Note:**
 
@@ -2703,7 +2780,7 @@ class GXDB:
         file does not exist, or if it is not a valid color zone file.
         
         The individual columns in the array channel are displayed using the input
-        zone file colors. A linear :class:`geosoft.gxapi.GXITR` from 0 to 1 is created on the color zones
+        zone file colors. A linear `GXITR` from 0 to 1 is created on the color zones
         to map to individual channel indices (expressed as a fraction as shown below).
         
         For instance, for a file with 8 colors the ranges are as follows:
@@ -2745,7 +2822,7 @@ class GXDB:
 
     def set_va_prof_sect_option(self, p2, p3):
         """
-        Set the display options of :class:`geosoft.gxapi.GXVA` channels
+        Set the display options of `GXVA` channels
         """
         self._wrapper.set_va_prof_sect_option(p2, p3.encode())
         
@@ -2755,11 +2832,11 @@ class GXDB:
 
     def set_va_scaling(self, p2, p3, p4):
         """
-        Set base and range for :class:`geosoft.gxapi.GXVA` channel cell display.
+        Set base and range for `GXVA` channel cell display.
 
         **Note:**
 
-        By default, :class:`geosoft.gxapi.GXVA` profiles autoscale to fit in the database cell.
+        By default, `GXVA` profiles autoscale to fit in the database cell.
         This lets the user set a single base and range for all cells.
         If either input is a dummy, both are set as dummies, and autoscaling
         is used.
@@ -2772,7 +2849,7 @@ class GXDB:
 
     def set_va_sect_color_file(self, p2, p3):
         """
-        Set colors for a :class:`geosoft.gxapi.GXVA` channel when displayed section in the profile window.
+        Set colors for a `GXVA` channel when displayed section in the profile window.
 
         **Note:**
 
@@ -2787,11 +2864,11 @@ class GXDB:
 
     def set_va_windows(self, p2, p3, p4):
         """
-        Set the range of windows to display for a :class:`geosoft.gxapi.GXVA` channel.
+        Set the range of windows to display for a `GXVA` channel.
 
         **Note:**
 
-        Use to display a subset of the :class:`geosoft.gxapi.GXVA` channel windows in the GDB.
+        Use to display a subset of the `GXVA` channel windows in the GDB.
         Windows index from 0.
         """
         self._wrapper.set_va_windows(p2, p3, p4)

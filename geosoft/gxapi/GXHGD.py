@@ -40,17 +40,17 @@ class GXHGD:
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of :class:`geosoft.gxapi.GXHGD`
+        A null (undefined) instance of `GXHGD`
         
-        :returns: A null :class:`geosoft.gxapi.GXHGD`
+        :returns: A null `GXHGD`
         """
         return cls()
 
     def is_null(self):
         """
-        Check if the instance of :class:`geosoft.gxapi.GXHGD` is null (undefined)`
+        Check if the instance of `GXHGD` is null (undefined)`
         
-        :returns: True if this is a null (undefined) instance of :class:`geosoft.gxapi.GXHGD`, False otherwise.
+        :returns: True if this is a null (undefined) instance of `GXHGD`, False otherwise.
         """
         return self._wrapper.handle == 0
 
@@ -64,7 +64,7 @@ class GXHGD:
     @classmethod
     def create(cls, p1):
         """
-        Create a handle to an :class:`geosoft.gxapi.GXHGD` object
+        Create a handle to an `GXHGD` object
         """
         ret_val = gxapi_cy.WrapHGD.create(GXContext._get_tls_geo(), p1.encode())
         return GXHGD(ret_val)
@@ -76,7 +76,7 @@ class GXHGD:
 
     def export_img(self, p2):
         """
-        Export all layers of this :class:`geosoft.gxapi.GXHGD` into grid files.
+        Export all layers of this `GXHGD` into grid files.
         """
         self._wrapper.export_img(p2.encode())
         
@@ -96,7 +96,7 @@ class GXHGD:
     @classmethod
     def h_create_img(cls, p1, p2):
         """
-        Make an :class:`geosoft.gxapi.GXHGD` from an :class:`geosoft.gxapi.GXIMG`
+        Make an `GXHGD` from an `GXIMG`
         """
         ret_val = gxapi_cy.WrapHGD.h_create_img(GXContext._get_tls_geo(), p1._wrapper, p2.encode())
         return GXHGD(ret_val)

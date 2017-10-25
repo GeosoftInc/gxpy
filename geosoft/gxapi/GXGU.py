@@ -39,17 +39,17 @@ class GXGU:
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of :class:`geosoft.gxapi.GXGU`
+        A null (undefined) instance of `GXGU`
         
-        :returns: A null :class:`geosoft.gxapi.GXGU`
+        :returns: A null `GXGU`
         """
         return cls()
 
     def is_null(self):
         """
-        Check if the instance of :class:`geosoft.gxapi.GXGU` is null (undefined)`
+        Check if the instance of `GXGU` is null (undefined)`
         
-        :returns: True if this is a null (undefined) instance of :class:`geosoft.gxapi.GXGU`, False otherwise.
+        :returns: True if this is a null (undefined) instance of `GXGU`, False otherwise.
         """
         return self._wrapper.handle == 0
 
@@ -227,7 +227,7 @@ class GXGU:
     @classmethod
     def geonics_dat2_db(cls, p1, p2, p3, p4, p5):
         """
-        Convert a Geonics EM31/EM38/EM61 file in :class:`geosoft.gxapi.GXDAT` format to a database.
+        Convert a Geonics EM31/EM38/EM61 file in `GXDAT` format to a database.
 
         **Note:**
 
@@ -264,7 +264,7 @@ class GXGU:
     @classmethod
     def gr_demvv(cls, p1, p2, p3, p4):
         """
-        Get gravity DEM grid :class:`geosoft.gxapi.GXVV` for Bouguer anomaly
+        Get gravity DEM grid `GXVV` for Bouguer anomaly
         """
         gxapi_cy.WrapGU.gr_demvv(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3._wrapper, p4._wrapper)
         
@@ -323,6 +323,10 @@ class GXGU:
         "GDB" is the original data. Cut off the part including the
         underscore when creating the map, so you don't get map group
         Names like "SYMBOLS_UxData_Targets_Targets".
+
+        .. seealso::
+
+            `GXSTR.gen_group_name`
         """
         p3.value = gxapi_cy.WrapGU.gen_ux_detect_symbols_group_name(GXContext._get_tls_geo(), p1.encode(), p2.encode(), p3.value.encode())
         
@@ -454,7 +458,7 @@ class GXGU:
         All VVs must be REAL
         
         The output X and Y values are the same as the inputs,
-        except if :attr:`geosoft.gxapi.PEAKEULER_XY_FIT` is selected. All other
+        except if `PEAKEULER_XY_FIT` is selected. All other
         output values are set to dummy if:
         
              a) The input X or Y is a dummy
@@ -475,6 +479,10 @@ class GXGU:
         **Note:**
 
         All VVs must be REAL
+
+        .. seealso::
+
+            `vv_euler`
         """
         gxapi_cy.WrapGU.vv_euler2(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3._wrapper, p4._wrapper, p5._wrapper, p6._wrapper, p7._wrapper, p8._wrapper, p9._wrapper, p10._wrapper, p11._wrapper, p12._wrapper, p13._wrapper, p14, p15, p16)
         

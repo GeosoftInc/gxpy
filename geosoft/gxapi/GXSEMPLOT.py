@@ -18,7 +18,7 @@ class GXSEMPLOT:
     """
     GXSEMPLOT class.
 
-    Oasis montaj implementation of RTE :class:`geosoft.gxapi.GXSEMPLOT`
+    Oasis montaj implementation of RTE `GXSEMPLOT`
     """
 
     def __enter__(self):
@@ -36,17 +36,17 @@ class GXSEMPLOT:
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of :class:`geosoft.gxapi.GXSEMPLOT`
+        A null (undefined) instance of `GXSEMPLOT`
         
-        :returns: A null :class:`geosoft.gxapi.GXSEMPLOT`
+        :returns: A null `GXSEMPLOT`
         """
         return cls()
 
     def is_null(self):
         """
-        Check if the instance of :class:`geosoft.gxapi.GXSEMPLOT` is null (undefined)`
+        Check if the instance of `GXSEMPLOT` is null (undefined)`
         
-        :returns: True if this is a null (undefined) instance of :class:`geosoft.gxapi.GXSEMPLOT`, False otherwise.
+        :returns: True if this is a null (undefined) instance of `GXSEMPLOT`, False otherwise.
         """
         return self._wrapper.handle == 0
 
@@ -118,10 +118,10 @@ class GXSEMPLOT:
 
         **Note:**
 
-        The Parameters :class:`geosoft.gxapi.GXGUI` is loaded based on settings stored in
+        The Parameters `GXGUI` is loaded based on settings stored in
         the map. The map is then re-plotted, overwriting the old one,
         based on the new settings. Note that the selection of data
-        in the current :class:`geosoft.gxapi.GXDB` is used to replot the map.
+        in the current `GXDB` is used to replot the map.
         """
         gxapi_cy.WrapSEMPLOT.edit_map_plot_parameters(GXContext._get_tls_geo(), p1._wrapper, p2.encode(), p3.encode(), p4._wrapper, p5.encode())
         
@@ -204,16 +204,16 @@ class GXSEMPLOT:
     @classmethod
     def filter_lst(cls, p1):
         """
-        Fill a :class:`geosoft.gxapi.GXLST` with existing :class:`geosoft.gxapi.GXSEMPLOT` filters
+        Fill a `GXLST` with existing `GXSEMPLOT` filters
 
         **Note:**
 
         "Supplied" filters are stored in \\etc, while user-edited and new filters
         are stored in user\\etc. This function finds all files with the extension
         ".semfilter", first in user\\etc, then in \\etc, and adds the file names
-        (without the extension) to the :class:`geosoft.gxapi.GXLST`. The name with the extension is stored
+        (without the extension) to the `GXLST`. The name with the extension is stored
         as the value.
-        The :class:`geosoft.gxapi.GXLST` is cleared first.
+        The `GXLST` is cleared first.
         """
         gxapi_cy.WrapSEMPLOT.filter_lst(GXContext._get_tls_geo(), p1._wrapper)
         
@@ -240,7 +240,7 @@ class GXSEMPLOT:
     @classmethod
     def get_associated_lst(cls, p1, p2, p3):
         """
-        Get the associated channels for this group in a :class:`geosoft.gxapi.GXLST`
+        Get the associated channels for this group in a `GXLST`
         """
         gxapi_cy.WrapSEMPLOT.get_associated_lst(GXContext._get_tls_geo(), p1._wrapper, p2, p3._wrapper)
         
@@ -250,7 +250,7 @@ class GXSEMPLOT:
     @classmethod
     def get_current_mineral_lst(cls, p1, p2, p3):
         """
-        Retrieve :class:`geosoft.gxapi.GXLST` of minerals in selected lines.
+        Retrieve `GXLST` of minerals in selected lines.
 
         **Note:**
 
@@ -265,7 +265,7 @@ class GXSEMPLOT:
     @classmethod
     def get_current_position_lst(cls, p1, p2):
         """
-        Retrieve :class:`geosoft.gxapi.GXLST` of positions in selected lines.
+        Retrieve `GXLST` of positions in selected lines.
         """
         gxapi_cy.WrapSEMPLOT.get_current_position_lst(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper)
         
@@ -275,7 +275,7 @@ class GXSEMPLOT:
     @classmethod
     def get_full_mineral_lst(cls, p1):
         """
-        Retrieve :class:`geosoft.gxapi.GXLST` of all minerals in Semplot_Minerals.csv
+        Retrieve `GXLST` of all minerals in Semplot_Minerals.csv
         """
         gxapi_cy.WrapSEMPLOT.get_full_mineral_lst(GXContext._get_tls_geo(), p1._wrapper)
         
@@ -285,7 +285,7 @@ class GXSEMPLOT:
     @classmethod
     def get_full_position_lst(cls, p1):
         """
-        Retrieve :class:`geosoft.gxapi.GXLST` of all possible mineral positions.
+        Retrieve `GXLST` of all possible mineral positions.
         """
         gxapi_cy.WrapSEMPLOT.get_full_position_lst(GXContext._get_tls_geo(), p1._wrapper)
         
@@ -303,7 +303,7 @@ class GXSEMPLOT:
         item (if the channel exists in the database) is the Sample Number.
         After this are included all string channels which are NOT oxides or
         elements. (The list can include the mineral).
-        Channel symbol is the :class:`geosoft.gxapi.GXLST` value (except for the first item - "Anomaly")
+        Channel symbol is the `GXLST` value (except for the first item - "Anomaly")
         """
         gxapi_cy.WrapSEMPLOT.get_grouping_lst(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper)
         
@@ -347,7 +347,7 @@ class GXSEMPLOT:
 
         **Note:**
 
-        First looks at the :class:`geosoft.gxapi.GXSEMPLOT`.MINERAL_CHANNEL value.
+        First looks at the `GXSEMPLOT`.MINERAL_CHANNEL value.
         If not found, returns the first MINERAL class
         channel found. If still not found, returns a
         blank string.
@@ -360,7 +360,7 @@ class GXSEMPLOT:
     @classmethod
     def import_ascii_wizard(cls, p1, p2, p3):
         """
-        Generate a :class:`geosoft.gxapi.GXSEMPLOT` ASCII import template.
+        Generate a `GXSEMPLOT` ASCII import template.
 
         **Note:**
 
@@ -389,7 +389,7 @@ class GXSEMPLOT:
 
         **Note:**
 
-        This wrapper is for :class:`geosoft.gxapi.GXSEMPLOT`, and does not require the import licence.
+        This wrapper is for `GXSEMPLOT`, and does not require the import licence.
         
            1. Binary import templates have extension .I2 by convention.  See
               BINARY.I2 for a description of the template format.
@@ -402,6 +402,10 @@ class GXSEMPLOT:
               unless a line name is passed in.  In this case, the specified name
               is used and the imported channels on the previous line will be
               destroyed.
+
+        .. seealso::
+
+            `GXDU.lab_template` in du.gxh
         """
         gxapi_cy.WrapSEMPLOT.import_bin(GXContext._get_tls_geo(), p1._wrapper, p2.encode(), p3.encode(), p4.encode(), p5, p6)
         
@@ -427,7 +431,7 @@ class GXSEMPLOT:
 
         Maintains a list of the symbols used in plotting. Call before
         Plotting one or more legends - symbols are accumulated.
-        PlotSymbolLegend_SEMPLOT uses this information to create a legend.
+        `plot_symbol_legend` uses this information to create a legend.
         """
         gxapi_cy.WrapSEMPLOT.init_group_symbols_used(GXContext._get_tls_geo(), p1._wrapper)
         
@@ -453,10 +457,10 @@ class GXSEMPLOT:
 
         First checks the view name to see if it starts with
         ``"XYplt_"`` or ``"Triplt_"``. Failing that it looks in the
-        view :class:`geosoft.gxapi.GXREG` for a value for "Components.Type", which will
+        view `GXREG` for a value for "Components.Type", which will
         be either "XYPlot" or "TriPlot".
         If the view does not appear to be an XYPlot or a TriPlot view,
-        the function returns :attr:`geosoft.gxapi.SEMPLOT_PLOT_UNKNOWN`.
+        the function returns `SEMPLOT_PLOT_UNKNOWN`.
         """
         ret_val = gxapi_cy.WrapSEMPLOT.view_type(GXContext._get_tls_geo(), p1._wrapper, p2.encode())
         return ret_val
@@ -547,10 +551,10 @@ class GXSEMPLOT:
         Only values with mask values of 1 are plotted, if the mask
         channel is specified.
         
-        Call "ResetUsedChannel_SEMPLOT" prior to this function
+        Call "`reset_used_channel`" prior to this function
         in order to track the values actually plotted.
         
-        Call InitGroupSymbolsUsed_SEMPLOT prior to this function
+        Call `init_group_symbols_used` prior to this function
         to reset recording of the symbols used in plotting (for legends etc).
         """
         gxapi_cy.WrapSEMPLOT.plot(GXContext._get_tls_geo(), p1._wrapper, p2.encode(), p3.encode(), p4.encode(), p5.encode(), p6, p7)
@@ -565,7 +569,7 @@ class GXSEMPLOT:
 
         **Note:**
 
-        This function depends on InitGroupSymbolsUsed_SEMPLOT
+        This function depends on `init_group_symbols_used`
         before the plot for which this legend is created is made.
         The symbols and groups to use in the legend are stored to
         a database blob after the plot is made. These values are
@@ -594,17 +598,17 @@ class GXSEMPLOT:
     @classmethod
     def replot(cls, p1, p2, p3, p4, p5):
         """
-        Replot an existing :class:`geosoft.gxapi.GXSEMPLOT` plot based on current data.
+        Replot an existing `GXSEMPLOT` plot based on current data.
 
         **Note:**
 
         Note that the selection of data
-        in the current :class:`geosoft.gxapi.GXDB` is used to replot the map.
+        in the current `GXDB` is used to replot the map.
         
-        Call "ResetUsedChannel_SEMPLOT" prior to this function
+        Call "`reset_used_channel`" prior to this function
         in order to track the values actually plotted.
         
-        Call InitGroupSymbolsUsed_SEMPLOT prior to this function
+        Call `init_group_symbols_used` prior to this function
         to reset recording of the symbols used in plotting (for legends etc).
         """
         gxapi_cy.WrapSEMPLOT.replot(GXContext._get_tls_geo(), p1._wrapper, p2.encode(), p3.encode(), p4._wrapper, p5.encode())
@@ -619,7 +623,7 @@ class GXSEMPLOT:
 
         **Note:**
 
-        Searches the VIEW :class:`geosoft.gxapi.GXREG` for information on a previously
+        Searches the VIEW `GXREG` for information on a previously
         created legend, and if it finds that info, replots the Legend,
         using the current data, group key etc.
         """
@@ -717,7 +721,7 @@ class GXSEMPLOT:
     @classmethod
     def set_itr(cls, p1, p2, p3):
         """
-        Put :class:`geosoft.gxapi.GXITR` into a channel.
+        Put `GXITR` into a channel.
         """
         gxapi_cy.WrapSEMPLOT.set_itr(GXContext._get_tls_geo(), p1._wrapper, p2, p3._wrapper)
         

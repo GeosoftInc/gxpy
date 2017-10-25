@@ -18,7 +18,7 @@ class GXPJ:
     """
     GXPJ class.
 
-    The :class:`geosoft.gxapi.GXPJ` object is created from two :class:`geosoft.gxapi.GXIPJ` objects,
+    The `GXPJ` object is created from two `GXIPJ` objects,
     and is used for converting data in an OASIS database
     or map object from one map coordinate (projection)
     system to another.
@@ -39,17 +39,17 @@ class GXPJ:
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of :class:`geosoft.gxapi.GXPJ`
+        A null (undefined) instance of `GXPJ`
         
-        :returns: A null :class:`geosoft.gxapi.GXPJ`
+        :returns: A null `GXPJ`
         """
         return cls()
 
     def is_null(self):
         """
-        Check if the instance of :class:`geosoft.gxapi.GXPJ` is null (undefined)`
+        Check if the instance of `GXPJ` is null (undefined)`
         
-        :returns: True if this is a null (undefined) instance of :class:`geosoft.gxapi.GXPJ`, False otherwise.
+        :returns: True if this is a null (undefined) instance of `GXPJ`, False otherwise.
         """
         return self._wrapper.handle == 0
 
@@ -68,7 +68,7 @@ class GXPJ:
         **Note:**
 
         A rectangular area from (MinX, MinY) to (MaxX, MaxY)
-        is projected throught the :class:`geosoft.gxapi.GXPJ`. The resulting (non-rectangular)
+        is projected throught the `GXPJ`. The resulting (non-rectangular)
         area is then digitized along its edges, then thinned to
         remove near-collinear points. The thinning is done to any
         point whose neighbors subtend an angle greater than
@@ -87,7 +87,7 @@ class GXPJ:
 
         **Note:**
 
-        This function is equivalent to Project_VV.
+        This function is equivalent to `GXVV.project`.
         """
         self._wrapper.convert_vv(p2._wrapper, p3._wrapper)
         
@@ -101,7 +101,7 @@ class GXPJ:
 
         **Note:**
 
-        This function is equivalent to Project3D_VV.
+        This function is equivalent to `GXVV.project_3d`.
         """
         self._wrapper.convert_vv3(p2._wrapper, p3._wrapper, p4._wrapper)
         
@@ -127,11 +127,11 @@ class GXPJ:
 
         This function is used (for instance) when projecting voxel model locations
         where the user expects that the vertical position will not change. The
-        regular ConvertXYZ_PJ may result in shifts of hundreds, even a thousand
+        regular `convert_xyz` may result in shifts of hundreds, even a thousand
         meters in case where you are going from the geoid to an ellipsoid.
         The value of Z can have an important effect on the accuracy of the results, as
-        the normal ConvertXY_PJ assumes a value of Z=0 internally and calls
-        ConvertXYZ_PJ.
+        the normal `convert_xy` assumes a value of Z=0 internally and calls
+        `convert_xyz`.
         """
         p2.value, p3.value = self._wrapper.convert_xy_from_xyz(p2.value, p3.value, p4)
         
@@ -167,7 +167,7 @@ class GXPJ:
 
         If converting to/from long/lat in the natural coordinate
         system of the source/target, only the long/lat system
-        can be passed as (:class:`geosoft.gxapi.GXIPJ`)0.
+        can be passed as (`GXIPJ`)0.
         """
         ret_val = gxapi_cy.WrapPJ.create_ipj(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper)
         return GXPJ(ret_val)
@@ -177,12 +177,12 @@ class GXPJ:
     @classmethod
     def create_rectified(cls, p1, p2, p3, p4, p5, p6, p7):
         """
-        Create a rectified :class:`geosoft.gxapi.GXPJ` from lon,lat,rotation
+        Create a rectified `GXPJ` from lon,lat,rotation
 
         **Note:**
 
         Given an X,Y coordinate system, the lat/lon origin and
-        angle of the coordinate system, this will create a :class:`geosoft.gxapi.GXPJ`
+        angle of the coordinate system, this will create a `GXPJ`
         to convert between X,Y coordinates and Lon,Lat.
         The Lon/Lat is determined using a Transverse Mercator
         projection with central meridian through the center
@@ -212,7 +212,7 @@ class GXPJ:
         be in a file with extension .ll2 in the \\etc directory.  The geoid is the
         name of the geoid model which will be in a grid file with extension .grd
         in the \\etc directory.  If the geoid model is missing, this method will
-        return :attr:`geosoft.gxapi.PJ_ELEVATION_NONE` and elevation coordinates will not be changed.
+        return `PJ_ELEVATION_NONE` and elevation coordinates will not be changed.
         """
         ret_val = self._wrapper.elevation()
         return ret_val
@@ -247,7 +247,7 @@ class GXPJ:
         **Note:**
 
         A rectangular area from (dMinX, dMinY) to (dMaxX, dMaxY)
-        is projected throught the :class:`geosoft.gxapi.GXPJ`. The resulting region area is
+        is projected throught the `GXPJ`. The resulting region area is
         then digitized along its edges and a new bounding rectangle
         is computed.  If there is a lot of curve through the
         projection the resulting bounding region may be slightly
@@ -265,7 +265,7 @@ class GXPJ:
 
         **Note:**
 
-        This is the same as ProjectBoundingRectangle_PJ except that the bounding
+        This is the same as `project_bounding_rectangle` except that the bounding
         rectangle will be limited to an area within which the projection can be
         performed to an accuracy better than the specified error tolerance.
         """
@@ -298,7 +298,7 @@ class GXPJ:
 
         **Note:**
 
-        This is the same as ProjectBoundingRectangleRes_PJ except that the bounding
+        This is the same as `project_bounding_rectangle_res` except that the bounding
         rectangle will be limited to an area within which the projection can be
         performed to an accuracy better than the specified error tolerance.
         """
@@ -318,6 +318,10 @@ class GXPJ:
         than the area specified in the output projection.  This
         is useful when projecting from limits that are unreasonable
         in the target projection.
+
+        .. seealso::
+
+            `project_bounding_rectangle`.
         """
         p6.value, p7.value, p8.value, p9.value = self._wrapper.project_limited_bounding_rectangle(p2, p3, p4, p5, p6.value, p7.value, p8.value, p9.value)
         
@@ -327,11 +331,11 @@ class GXPJ:
 
     def setup_ldt(self):
         """
-        Setup the :class:`geosoft.gxapi.GXPJ` with LDT check.
+        Setup the `GXPJ` with LDT check.
 
         **Note:**
 
-        By default, a :class:`geosoft.gxapi.GXPJ` on the same datum will not apply a LDT,
+        By default, a `GXPJ` on the same datum will not apply a LDT,
         is intended for transformations between datums.  However,
         in some instances you might want to convert between LDTs on
         the same datum, such as when you have two sets of coordinates

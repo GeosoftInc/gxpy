@@ -36,17 +36,17 @@ class GXPROJ:
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of :class:`geosoft.gxapi.GXPROJ`
+        A null (undefined) instance of `GXPROJ`
         
-        :returns: A null :class:`geosoft.gxapi.GXPROJ`
+        :returns: A null `GXPROJ`
         """
         return cls()
 
     def is_null(self):
         """
-        Check if the instance of :class:`geosoft.gxapi.GXPROJ` is null (undefined)`
+        Check if the instance of `GXPROJ` is null (undefined)`
         
-        :returns: True if this is a null (undefined) instance of :class:`geosoft.gxapi.GXPROJ`, False otherwise.
+        :returns: True if this is a null (undefined) instance of `GXPROJ`, False otherwise.
         """
         return self._wrapper.handle == 0
 
@@ -138,7 +138,7 @@ class GXPROJ:
     @classmethod
     def list_documents(cls, p1, p2):
         """
-        Fills a :class:`geosoft.gxapi.GXVV` with documents of a certain type.
+        Fills a `GXVV` with documents of a certain type.
 
         **Note:**
 
@@ -149,9 +149,9 @@ class GXPROJ:
         3DView           List 3D Views.
         Voxel            List Voxels.
         VoxelInversion   List VOXI Documents.
-        :class:`geosoft.gxapi.GXMXD`              List ArcGIS MXDs.
-        GMS3D            List GM-:class:`geosoft.gxapi.GXSYS` 3D Models.
-        GMS2D            List GM-:class:`geosoft.gxapi.GXSYS` 2D Models.
+        `GXMXD`              List ArcGIS MXDs.
+        GMS3D            List GM-`GXSYS` 3D Models.
+        GMS2D            List GM-`GXSYS` 2D Models.
         All              Lists all files.
         """
         ret_val = gxapi_cy.WrapPROJ.list_documents(GXContext._get_tls_geo(), p1._wrapper, p2.encode())
@@ -162,7 +162,7 @@ class GXPROJ:
     @classmethod
     def list_loaded_documents(cls, p1, p2):
         """
-        Fills a :class:`geosoft.gxapi.GXVV` with loaded documents of a certain type.
+        Fills a `GXVV` with loaded documents of a certain type.
 
         **Note:**
 
@@ -173,9 +173,9 @@ class GXPROJ:
         3DView           List 3D Views.
         Voxel            List Voxels.
         VoxelInversion   List VOXI Documents.
-        :class:`geosoft.gxapi.GXMXD`              List ArcGIS MXDs.
-        GMS3D            List GM-:class:`geosoft.gxapi.GXSYS` 3D Models.
-        GMS2D            List GM-:class:`geosoft.gxapi.GXSYS` 2D Models.
+        `GXMXD`              List ArcGIS MXDs.
+        GMS3D            List GM-`GXSYS` 3D Models.
+        GMS2D            List GM-`GXSYS` 2D Models.
         All              Lists all files.
         """
         ret_val = gxapi_cy.WrapPROJ.list_loaded_documents(GXContext._get_tls_geo(), p1._wrapper, p2.encode())
@@ -206,14 +206,14 @@ class GXPROJ:
     @classmethod
     def list_tools(cls, p1, p2):
         """
-        Fills an :class:`geosoft.gxapi.GXLST` object with tools of a certain type and
+        Fills an `GXLST` object with tools of a certain type and
         notes the current visibility setting.
 
         **Note:**
 
         GX will terminate if there is an error.
         
-        :class:`geosoft.gxapi.GXLST` object will hold the tool name in the name column and
+        `GXLST` object will hold the tool name in the name column and
         include whether the tool is currently visible in the value
         column (1=visible, 0-hidden).
         """

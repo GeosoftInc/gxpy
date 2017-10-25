@@ -18,7 +18,7 @@ class GXSTRINGS:
     """
     GXSTRINGS class.
 
-    The :class:`geosoft.gxapi.GXSTRINGS` class is used for displaying digitization tools for interpretations
+    The `GXSTRINGS` class is used for displaying digitization tools for interpretations
     """
 
     def __enter__(self):
@@ -36,17 +36,17 @@ class GXSTRINGS:
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of :class:`geosoft.gxapi.GXSTRINGS`
+        A null (undefined) instance of `GXSTRINGS`
         
-        :returns: A null :class:`geosoft.gxapi.GXSTRINGS`
+        :returns: A null `GXSTRINGS`
         """
         return cls()
 
     def is_null(self):
         """
-        Check if the instance of :class:`geosoft.gxapi.GXSTRINGS` is null (undefined)`
+        Check if the instance of `GXSTRINGS` is null (undefined)`
         
-        :returns: True if this is a null (undefined) instance of :class:`geosoft.gxapi.GXSTRINGS`, False otherwise.
+        :returns: True if this is a null (undefined) instance of `GXSTRINGS`, False otherwise.
         """
         return self._wrapper.handle == 0
 

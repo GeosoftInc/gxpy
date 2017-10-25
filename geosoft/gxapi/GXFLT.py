@@ -18,7 +18,7 @@ class GXFLT:
     """
     GXFLT class.
 
-    The :class:`geosoft.gxapi.GXFLT` class allows the application of user-defined convolution filters to data in an OASIS database
+    The `GXFLT` class allows the application of user-defined convolution filters to data in an OASIS database
     """
 
     def __enter__(self):
@@ -36,17 +36,17 @@ class GXFLT:
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of :class:`geosoft.gxapi.GXFLT`
+        A null (undefined) instance of `GXFLT`
         
-        :returns: A null :class:`geosoft.gxapi.GXFLT`
+        :returns: A null `GXFLT`
         """
         return cls()
 
     def is_null(self):
         """
-        Check if the instance of :class:`geosoft.gxapi.GXFLT` is null (undefined)`
+        Check if the instance of `GXFLT` is null (undefined)`
         
-        :returns: True if this is a null (undefined) instance of :class:`geosoft.gxapi.GXFLT`, False otherwise.
+        :returns: True if this is a null (undefined) instance of `GXFLT`, False otherwise.
         """
         return self._wrapper.handle == 0
 

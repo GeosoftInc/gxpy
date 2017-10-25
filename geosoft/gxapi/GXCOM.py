@@ -36,17 +36,17 @@ class GXCOM:
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of :class:`geosoft.gxapi.GXCOM`
+        A null (undefined) instance of `GXCOM`
         
-        :returns: A null :class:`geosoft.gxapi.GXCOM`
+        :returns: A null `GXCOM`
         """
         return cls()
 
     def is_null(self):
         """
-        Check if the instance of :class:`geosoft.gxapi.GXCOM` is null (undefined)`
+        Check if the instance of `GXCOM` is null (undefined)`
         
-        :returns: True if this is a null (undefined) instance of :class:`geosoft.gxapi.GXCOM`, False otherwise.
+        :returns: True if this is a null (undefined) instance of `GXCOM`, False otherwise.
         """
         return self._wrapper.handle == 0
 
@@ -60,7 +60,7 @@ class GXCOM:
     @classmethod
     def create(cls, p1, p2, p3, p4, p5, p6, p7):
         """
-        Create :class:`geosoft.gxapi.GXCOM` object.
+        Create `GXCOM` object.
         """
         ret_val = gxapi_cy.WrapCOM.create(GXContext._get_tls_geo(), p1.encode(), p2, p3, p4, p5, p6, p7)
         return GXCOM(ret_val)
@@ -70,7 +70,7 @@ class GXCOM:
     @classmethod
     def create_no_terminate(cls, p1, p2, p3, p4, p5, p6, p7):
         """
-        Create :class:`geosoft.gxapi.GXCOM` object.
+        Create `GXCOM` object.
         """
         ret_val = gxapi_cy.WrapCOM.create_no_terminate(GXContext._get_tls_geo(), p1.encode(), p2, p3, p4, p5, p6, p7)
         return GXCOM(ret_val)
@@ -82,7 +82,7 @@ class GXCOM:
 
     def read_line_no_terminate(self, p2):
         """
-        Reads a Line from the :class:`geosoft.gxapi.GXCOM`
+        Reads a Line from the `GXCOM`
         """
         ret_val, p2.value = self._wrapper.read_line_no_terminate(p2.value.encode())
         return ret_val
@@ -92,7 +92,7 @@ class GXCOM:
 
     def read_chars_no_terminate(self, p2):
         """
-        Reads characters from the :class:`geosoft.gxapi.GXCOM`, times out and does not terminate
+        Reads characters from the `GXCOM`, times out and does not terminate
         """
         ret_val, p2.value = self._wrapper.read_chars_no_terminate(p2.value.encode())
         return ret_val
@@ -102,7 +102,7 @@ class GXCOM:
 
     def read_line(self, p2):
         """
-        Reads a Line from the :class:`geosoft.gxapi.GXCOM`
+        Reads a Line from the `GXCOM`
         """
         p2.value = self._wrapper.read_line(p2.value.encode())
         
@@ -112,7 +112,7 @@ class GXCOM:
 
     def write_chars_no_terminate(self, p2):
         """
-        Writes characters to the :class:`geosoft.gxapi.GXCOM`.  Does not terminate upon error
+        Writes characters to the `GXCOM`.  Does not terminate upon error
         """
         ret_val = self._wrapper.write_chars_no_terminate(p2.encode())
         return ret_val
@@ -132,7 +132,7 @@ class GXCOM:
 
     def read_chars(self, p2):
         """
-        Reads characters from the :class:`geosoft.gxapi.GXCOM`
+        Reads characters from the `GXCOM`
         """
         p2.value = self._wrapper.read_chars(p2.value.encode())
         
@@ -142,7 +142,7 @@ class GXCOM:
 
     def read_em61_lines_wa(self, p2, p3):
         """
-        Reads Lines from the :class:`geosoft.gxapi.GXCOM` to a :class:`geosoft.gxapi.GXWA`: Geonics EM61 only
+        Reads Lines from the `GXCOM` to a `GXWA`: Geonics EM61 only
         """
         self._wrapper.read_em61_lines_wa(p2, p3._wrapper)
         
@@ -152,7 +152,7 @@ class GXCOM:
 
     def read_file2_wa(self, p2):
         """
-        Reads entire dataset from the :class:`geosoft.gxapi.GXCOM` to a :class:`geosoft.gxapi.GXWA`
+        Reads entire dataset from the `GXCOM` to a `GXWA`
         """
         self._wrapper.read_file2_wa(p2._wrapper)
         
@@ -162,7 +162,7 @@ class GXCOM:
 
     def read_lines_wa(self, p2, p3):
         """
-        Reads Lines from the :class:`geosoft.gxapi.GXCOM` to a :class:`geosoft.gxapi.GXWA`
+        Reads Lines from the `GXCOM` to a `GXWA`
         """
         self._wrapper.read_lines_wa(p2, p3._wrapper)
         
@@ -182,7 +182,7 @@ class GXCOM:
 
     def write_chars(self, p2):
         """
-        Writes characters to the :class:`geosoft.gxapi.GXCOM`
+        Writes characters to the `GXCOM`
         """
         self._wrapper.write_chars(p2.encode())
         
@@ -192,7 +192,7 @@ class GXCOM:
 
     def write_line(self, p2):
         """
-        Writes a Line to the :class:`geosoft.gxapi.GXCOM`
+        Writes a Line to the `GXCOM`
         """
         self._wrapper.write_line(p2.encode())
         

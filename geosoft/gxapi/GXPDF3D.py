@@ -18,7 +18,7 @@ class GXPDF3D:
     """
     GXPDF3D class.
 
-    The :class:`geosoft.gxapi.GXPDF3D` class provides the ability to create 3D PDFs.
+    The `GXPDF3D` class provides the ability to create 3D PDFs.
     """
 
     def __enter__(self):
@@ -36,17 +36,17 @@ class GXPDF3D:
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of :class:`geosoft.gxapi.GXPDF3D`
+        A null (undefined) instance of `GXPDF3D`
         
-        :returns: A null :class:`geosoft.gxapi.GXPDF3D`
+        :returns: A null `GXPDF3D`
         """
         return cls()
 
     def is_null(self):
         """
-        Check if the instance of :class:`geosoft.gxapi.GXPDF3D` is null (undefined)`
+        Check if the instance of `GXPDF3D` is null (undefined)`
         
-        :returns: True if this is a null (undefined) instance of :class:`geosoft.gxapi.GXPDF3D`, False otherwise.
+        :returns: True if this is a null (undefined) instance of `GXPDF3D`, False otherwise.
         """
         return self._wrapper.handle == 0
 

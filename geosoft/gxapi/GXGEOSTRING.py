@@ -18,7 +18,7 @@ class GXGEOSTRING:
     """
     GXGEOSTRING class.
 
-    The :class:`geosoft.gxapi.GXGEOSTRING` class is used to read information stored in Geostring files 
+    The `GXGEOSTRING` class is used to read information stored in Geostring files 
     (``*.geosoft_string``). Geosoft geostrings are 3D vector files that store digitized 
     interpretations drawn on section maps. Both polygon and polyline features can be 
     stored in the same file. This API currently only provides read access, 
@@ -40,17 +40,17 @@ class GXGEOSTRING:
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of :class:`geosoft.gxapi.GXGEOSTRING`
+        A null (undefined) instance of `GXGEOSTRING`
         
-        :returns: A null :class:`geosoft.gxapi.GXGEOSTRING`
+        :returns: A null `GXGEOSTRING`
         """
         return cls()
 
     def is_null(self):
         """
-        Check if the instance of :class:`geosoft.gxapi.GXGEOSTRING` is null (undefined)`
+        Check if the instance of `GXGEOSTRING` is null (undefined)`
         
-        :returns: True if this is a null (undefined) instance of :class:`geosoft.gxapi.GXGEOSTRING`, False otherwise.
+        :returns: True if this is a null (undefined) instance of `GXGEOSTRING`, False otherwise.
         """
         return self._wrapper.handle == 0
 

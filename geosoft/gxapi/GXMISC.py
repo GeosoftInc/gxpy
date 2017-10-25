@@ -37,17 +37,17 @@ class GXMISC:
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of :class:`geosoft.gxapi.GXMISC`
+        A null (undefined) instance of `GXMISC`
         
-        :returns: A null :class:`geosoft.gxapi.GXMISC`
+        :returns: A null `GXMISC`
         """
         return cls()
 
     def is_null(self):
         """
-        Check if the instance of :class:`geosoft.gxapi.GXMISC` is null (undefined)`
+        Check if the instance of `GXMISC` is null (undefined)`
         
-        :returns: True if this is a null (undefined) instance of :class:`geosoft.gxapi.GXMISC`, False otherwise.
+        :returns: True if this is a null (undefined) instance of `GXMISC`, False otherwise.
         """
         return self._wrapper.handle == 0
 

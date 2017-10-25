@@ -18,8 +18,8 @@ class GXDATAMINE:
     """
     GXDATAMINE class.
 
-    :class:`geosoft.gxapi.GXDATAMINE` functions provide an interface to Datamine Software Limited files.
-    See also :class:`geosoft.gxapi.GXGIS` for various other Datamine-specific functions.
+    `GXDATAMINE` functions provide an interface to Datamine Software Limited files.
+    See also `GXGIS` for various other Datamine-specific functions.
 
     **Note:**
 
@@ -41,17 +41,17 @@ class GXDATAMINE:
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of :class:`geosoft.gxapi.GXDATAMINE`
+        A null (undefined) instance of `GXDATAMINE`
         
-        :returns: A null :class:`geosoft.gxapi.GXDATAMINE`
+        :returns: A null `GXDATAMINE`
         """
         return cls()
 
     def is_null(self):
         """
-        Check if the instance of :class:`geosoft.gxapi.GXDATAMINE` is null (undefined)`
+        Check if the instance of `GXDATAMINE` is null (undefined)`
         
-        :returns: True if this is a null (undefined) instance of :class:`geosoft.gxapi.GXDATAMINE`, False otherwise.
+        :returns: True if this is a null (undefined) instance of `GXDATAMINE`, False otherwise.
         """
         return self._wrapper.handle == 0
 
@@ -79,11 +79,11 @@ class GXDATAMINE:
     @classmethod
     def numeric_field_lst(cls, p1, p2):
         """
-        Return a :class:`geosoft.gxapi.GXLST` containing the non-standard numeric fields in a Datamine file.
+        Return a `GXLST` containing the non-standard numeric fields in a Datamine file.
 
         **Note:**
 
-        At this time, only :attr:`geosoft.gxapi.GIS_DMTYPE_BLOCKMODEL` files are supported.
+        At this time, only `GIS_DMTYPE_BLOCKMODEL` files are supported.
         The field names go in the name part, and field indices (1 to N)
         in the value part.
         """

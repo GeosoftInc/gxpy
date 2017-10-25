@@ -20,7 +20,7 @@ class GXLPT:
 
     This class allows access to the current default line patterns.
     It does not allow the definition of individual patterns. It is
-    is used primarily with :class:`geosoft.gxapi.GXMAP` class functions.
+    is used primarily with `GXMAP` class functions.
     """
 
     def __enter__(self):
@@ -38,17 +38,17 @@ class GXLPT:
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of :class:`geosoft.gxapi.GXLPT`
+        A null (undefined) instance of `GXLPT`
         
-        :returns: A null :class:`geosoft.gxapi.GXLPT`
+        :returns: A null `GXLPT`
         """
         return cls()
 
     def is_null(self):
         """
-        Check if the instance of :class:`geosoft.gxapi.GXLPT` is null (undefined)`
+        Check if the instance of `GXLPT` is null (undefined)`
         
-        :returns: True if this is a null (undefined) instance of :class:`geosoft.gxapi.GXLPT`, False otherwise.
+        :returns: True if this is a null (undefined) instance of `GXLPT`, False otherwise.
         """
         return self._wrapper.handle == 0
 
@@ -74,7 +74,7 @@ class GXLPT:
 
     def get_lst(self, p2):
         """
-        Copies all pattern names into a :class:`geosoft.gxapi.GXLST` object.
+        Copies all pattern names into a `GXLST` object.
         """
         self._wrapper.get_lst(p2._wrapper)
         
@@ -84,7 +84,7 @@ class GXLPT:
 
     def get_standard_lst(self, p2):
         """
-        Copies the six standard line types into a :class:`geosoft.gxapi.GXLST` object.
+        Copies the six standard line types into a `GXLST` object.
 
         **Note:**
 

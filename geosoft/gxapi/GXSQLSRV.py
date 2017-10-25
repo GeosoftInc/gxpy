@@ -36,17 +36,17 @@ class GXSQLSRV:
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of :class:`geosoft.gxapi.GXSQLSRV`
+        A null (undefined) instance of `GXSQLSRV`
         
-        :returns: A null :class:`geosoft.gxapi.GXSQLSRV`
+        :returns: A null `GXSQLSRV`
         """
         return cls()
 
     def is_null(self):
         """
-        Check if the instance of :class:`geosoft.gxapi.GXSQLSRV` is null (undefined)`
+        Check if the instance of `GXSQLSRV` is null (undefined)`
         
-        :returns: True if this is a null (undefined) instance of :class:`geosoft.gxapi.GXSQLSRV`, False otherwise.
+        :returns: True if this is a null (undefined) instance of `GXSQLSRV`, False otherwise.
         """
         return self._wrapper.handle == 0
 
@@ -85,7 +85,7 @@ class GXSQLSRV:
     @classmethod
     def get_database_languages_lst(cls, p1, p2, p3, p4, p5):
         """
-        Get a list of the languages into :class:`geosoft.gxapi.GXLST`
+        Get a list of the languages into `GXLST`
         """
         ret_val = gxapi_cy.WrapSQLSRV.get_database_languages_lst(GXContext._get_tls_geo(), p1._wrapper, p2.encode(), p3.encode(), p4.encode(), p5)
         return ret_val
@@ -95,7 +95,7 @@ class GXSQLSRV:
     @classmethod
     def get_databases_lst(cls, p1, p2, p3, p4, p5):
         """
-        Get a list of the database into :class:`geosoft.gxapi.GXLST`
+        Get a list of the database into `GXLST`
         """
         ret_val = gxapi_cy.WrapSQLSRV.get_databases_lst(GXContext._get_tls_geo(), p1._wrapper, p2.encode(), p3.encode(), p4.encode(), p5)
         return ret_val
@@ -115,7 +115,7 @@ class GXSQLSRV:
     @classmethod
     def get_servers_lst(cls, p1):
         """
-        Get a list of the visible servers into :class:`geosoft.gxapi.GXLST`
+        Get a list of the visible servers into `GXLST`
         """
         ret_val = gxapi_cy.WrapSQLSRV.get_servers_lst(GXContext._get_tls_geo(), p1._wrapper)
         return ret_val

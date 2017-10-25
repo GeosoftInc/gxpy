@@ -18,7 +18,7 @@ class GXTRND:
     """
     GXTRND class.
 
-    The :class:`geosoft.gxapi.GXTRND` methods are used to determine trend directions in database data by locating
+    The `GXTRND` methods are used to determine trend directions in database data by locating
     maxima and minima along lines and joining them in a specified direction.
     The resulting trend lines are appended to the database and used by gridding methods
     such as Bigrid and Rangrid to enforce features in the specified direction.
@@ -39,17 +39,17 @@ class GXTRND:
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of :class:`geosoft.gxapi.GXTRND`
+        A null (undefined) instance of `GXTRND`
         
-        :returns: A null :class:`geosoft.gxapi.GXTRND`
+        :returns: A null `GXTRND`
         """
         return cls()
 
     def is_null(self):
         """
-        Check if the instance of :class:`geosoft.gxapi.GXTRND` is null (undefined)`
+        Check if the instance of `GXTRND` is null (undefined)`
         
-        :returns: True if this is a null (undefined) instance of :class:`geosoft.gxapi.GXTRND`, False otherwise.
+        :returns: True if this is a null (undefined) instance of `GXTRND`, False otherwise.
         """
         return self._wrapper.handle == 0
 

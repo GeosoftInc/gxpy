@@ -38,17 +38,17 @@ class GXMATH:
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of :class:`geosoft.gxapi.GXMATH`
+        A null (undefined) instance of `GXMATH`
         
-        :returns: A null :class:`geosoft.gxapi.GXMATH`
+        :returns: A null `GXMATH`
         """
         return cls()
 
     def is_null(self):
         """
-        Check if the instance of :class:`geosoft.gxapi.GXMATH` is null (undefined)`
+        Check if the instance of `GXMATH` is null (undefined)`
         
-        :returns: True if this is a null (undefined) instance of :class:`geosoft.gxapi.GXMATH`, False otherwise.
+        :returns: True if this is a null (undefined) instance of `GXMATH`, False otherwise.
         """
         return self._wrapper.handle == 0
 
@@ -366,6 +366,10 @@ class GXMATH:
         returns log10(Z) for lambda = 0.
         returns (Z^lambda - 1)/lambda for Z > 0.
         returns dummy for Z = dummy.
+
+        .. seealso::
+
+            `lambda_trans_rev_`
         """
         ret_val = gxapi_cy.WrapMATH.lambda_trans_(GXContext._get_tls_geo(), p1, p2)
         return ret_val
@@ -380,6 +384,10 @@ class GXMATH:
         **Note:**
 
         See rLambdaTrans.
+
+        .. seealso::
+
+            `lambda_trans_`
         """
         ret_val = gxapi_cy.WrapMATH.lambda_trans_rev_(GXContext._get_tls_geo(), p1, p2)
         return ret_val
@@ -437,6 +445,10 @@ class GXMATH:
             minimum * ( log10( |Z| / minimum) + 1 )   for Z > minimum
             Z for |Z| <= minimum   (the linear part of the range)
             -minimum * ( log10( |Z| / minimum) + 1 )   for Z < -minimum
+
+        .. seealso::
+
+            `un_log_z_`
         """
         ret_val = gxapi_cy.WrapMATH.log_z_(GXContext._get_tls_geo(), p1, p2, p3)
         return ret_val
@@ -502,7 +514,7 @@ class GXMATH:
 
         **Note:**
 
-        Use SRand_MATH to seed the random number generator before a series of
+        Use `s_rand_` to seed the random number generator before a series of
         calls to this function are made.
         The standard "C" function rand() is called.
         """
@@ -591,6 +603,10 @@ class GXMATH:
         **Note:**
 
         See Notes for rLogZ.
+
+        .. seealso::
+
+            `log_z_`
         """
         ret_val = gxapi_cy.WrapMATH.un_log_z_(GXContext._get_tls_geo(), p1, p2, p3)
         return ret_val
@@ -604,7 +620,7 @@ class GXMATH:
 
         **Note:**
 
-        Use the rRand_MATH function to create a random number between  0 and 1.
+        Use the `rand_` function to create a random number between  0 and 1.
         The standard "C" function srand() is called.
         """
         gxapi_cy.WrapMATH.s_rand_(GXContext._get_tls_geo())

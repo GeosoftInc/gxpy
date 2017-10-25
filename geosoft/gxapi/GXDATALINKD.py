@@ -36,17 +36,17 @@ class GXDATALINKD:
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of :class:`geosoft.gxapi.GXDATALINKD`
+        A null (undefined) instance of `GXDATALINKD`
         
-        :returns: A null :class:`geosoft.gxapi.GXDATALINKD`
+        :returns: A null `GXDATALINKD`
         """
         return cls()
 
     def is_null(self):
         """
-        Check if the instance of :class:`geosoft.gxapi.GXDATALINKD` is null (undefined)`
+        Check if the instance of `GXDATALINKD` is null (undefined)`
         
-        :returns: True if this is a null (undefined) instance of :class:`geosoft.gxapi.GXDATALINKD`, False otherwise.
+        :returns: True if this is a null (undefined) instance of `GXDATALINKD`, False otherwise.
         """
         return self._wrapper.handle == 0
 
@@ -60,7 +60,7 @@ class GXDATALINKD:
     @classmethod
     def create_arc_lyr(cls, p1):
         """
-        Create an :class:`geosoft.gxapi.GXDATALINKD` object from a ArcGIS LYR file
+        Create an `GXDATALINKD` object from a ArcGIS LYR file
 
         **Note:**
 
@@ -74,7 +74,7 @@ class GXDATALINKD:
     @classmethod
     def create_arc_lyr_ex(cls, p1, p2):
         """
-        Create an :class:`geosoft.gxapi.GXDATALINKD` object from a ArcGIS LYR file
+        Create an `GXDATALINKD` object from a ArcGIS LYR file
 
         **Note:**
 
@@ -88,7 +88,7 @@ class GXDATALINKD:
     @classmethod
     def create_arc_lyr_from_tmp(cls, p1):
         """
-        Create an :class:`geosoft.gxapi.GXDATALINKD` object from a temporary ArcGIS LYR file
+        Create an `GXDATALINKD` object from a temporary ArcGIS LYR file
 
         **Note:**
 
@@ -102,7 +102,7 @@ class GXDATALINKD:
     @classmethod
     def create_arc_lyr_from_tmp_ex(cls, p1, p2):
         """
-        Create an :class:`geosoft.gxapi.GXDATALINKD` object from a temporary ArcGIS LYR file
+        Create an `GXDATALINKD` object from a temporary ArcGIS LYR file
 
         **Note:**
 
@@ -116,7 +116,7 @@ class GXDATALINKD:
     @classmethod
     def create_bing(cls, p1):
         """
-        Create an :class:`geosoft.gxapi.GXDATALINKD` object for a BING dataset
+        Create an `GXDATALINKD` object for a BING dataset
         """
         ret_val = gxapi_cy.WrapDATALINKD.create_bing(GXContext._get_tls_geo(), p1)
         return GXDATALINKD(ret_val)

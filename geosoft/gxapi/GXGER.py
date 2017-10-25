@@ -26,8 +26,8 @@ class GXGER:
 
     **Note:**
 
-    :class:`geosoft.gxapi.GXGER` message files contain numbered messages that can be used within GXs.
-    Following is an example from the file GEOSOFT.:class:`geosoft.gxapi.GXGER`:
+    `GXGER` message files contain numbered messages that can be used within GXs.
+    Following is an example from the file GEOSOFT.`GXGER`:
     
     
           #20008
@@ -40,8 +40,8 @@ class GXGER:
     
     A '#' character in column 1 indicates a message number.  The message
     follows on lines that begin with a '!' character.  Strings in the message
-    may be replaced at run time with values using the SetString_GER,
-    SetInt_GER and SetReal_GER methods. The iGet_GER will return the message
+    may be replaced at run time with values using the `set_string`,
+    `set_int` and `set_double` methods. The iGet_GER will return the message
     with strings replaced by their settings.  By convention, we recommend
     that you use "%1", "%2", etc. as replacement strings.
     """
@@ -61,17 +61,17 @@ class GXGER:
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of :class:`geosoft.gxapi.GXGER`
+        A null (undefined) instance of `GXGER`
         
-        :returns: A null :class:`geosoft.gxapi.GXGER`
+        :returns: A null `GXGER`
         """
         return cls()
 
     def is_null(self):
         """
-        Check if the instance of :class:`geosoft.gxapi.GXGER` is null (undefined)`
+        Check if the instance of `GXGER` is null (undefined)`
         
-        :returns: True if this is a null (undefined) instance of :class:`geosoft.gxapi.GXGER`, False otherwise.
+        :returns: True if this is a null (undefined) instance of `GXGER`, False otherwise.
         """
         return self._wrapper.handle == 0
 
@@ -89,7 +89,7 @@ class GXGER:
 
         **Note:**
 
-        The :class:`geosoft.gxapi.GXGER` file may be in the local directory or the GEOSOFT
+        The `GXGER` file may be in the local directory or the GEOSOFT
         directory.
         """
         ret_val = gxapi_cy.WrapGER.create(GXContext._get_tls_geo(), p1.encode())

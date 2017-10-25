@@ -21,9 +21,9 @@ class GXMSTK:
 
     Multi-profile stack
     This class is used for storing data of multiple profiles and
-    plotting profiles in a map. It is a container of :class:`geosoft.gxapi.GXSTK` class objects.
+    plotting profiles in a map. It is a container of `GXSTK` class objects.
     
-    See also:         :class:`geosoft.gxapi.GXSTK` class.
+    See also:         `GXSTK` class.
     """
 
     def __enter__(self):
@@ -41,17 +41,17 @@ class GXMSTK:
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of :class:`geosoft.gxapi.GXMSTK`
+        A null (undefined) instance of `GXMSTK`
         
-        :returns: A null :class:`geosoft.gxapi.GXMSTK`
+        :returns: A null `GXMSTK`
         """
         return cls()
 
     def is_null(self):
         """
-        Check if the instance of :class:`geosoft.gxapi.GXMSTK` is null (undefined)`
+        Check if the instance of `GXMSTK` is null (undefined)`
         
-        :returns: True if this is a null (undefined) instance of :class:`geosoft.gxapi.GXMSTK`, False otherwise.
+        :returns: True if this is a null (undefined) instance of `GXMSTK`, False otherwise.
         """
         return self._wrapper.handle == 0
 
@@ -65,11 +65,11 @@ class GXMSTK:
 
     def add_stk(self):
         """
-        Create and add a :class:`geosoft.gxapi.GXSTK` object to :class:`geosoft.gxapi.GXMSTK`
+        Create and add a `GXSTK` object to `GXMSTK`
 
         **Note:**
 
-        Index to the added :class:`geosoft.gxapi.GXSTK` object is the last one in :class:`geosoft.gxapi.GXMSTK` container.
+        Index to the added `GXSTK` object is the last one in `GXMSTK` container.
         """
         ret_val = self._wrapper.add_stk()
         return GXSTK(ret_val)
@@ -84,7 +84,7 @@ class GXMSTK:
         **Note:**
 
         Terms 'used' and 'unused' indicate that the a channel name
-        in database also 'in' and 'not in' the :class:`geosoft.gxapi.GXMSTK` object respectively
+        in database also 'in' and 'not in' the `GXMSTK` object respectively
         """
         self._wrapper.chan_list_vv(p2._wrapper, p3._wrapper, p4._wrapper, p5._wrapper, p6._wrapper, p7._wrapper)
         
@@ -94,7 +94,7 @@ class GXMSTK:
     @classmethod
     def create(cls):
         """
-        Create :class:`geosoft.gxapi.GXMSTK`.
+        Create `GXMSTK`.
         """
         ret_val = gxapi_cy.WrapMSTK.create(GXContext._get_tls_geo())
         return GXMSTK(ret_val)
@@ -126,7 +126,7 @@ class GXMSTK:
 
     def find_stk2(self, p2, p3, p4):
         """
-        Find index of :class:`geosoft.gxapi.GXSTK` from a string of group names and X/Y channels
+        Find index of `GXSTK` from a string of group names and X/Y channels
 
         **Note:**
 
@@ -145,8 +145,8 @@ class GXMSTK:
 
     def get_stk(self, p2):
         """
-        Get a specific :class:`geosoft.gxapi.GXSTK` object from a :class:`geosoft.gxapi.GXMSTK` object
-        (Index of 0 gets the first :class:`geosoft.gxapi.GXSTK` in the :class:`geosoft.gxapi.GXMSTK`)
+        Get a specific `GXSTK` object from a `GXMSTK` object
+        (Index of 0 gets the first `GXSTK` in the `GXMSTK`)
         """
         ret_val = self._wrapper.get_stk(p2)
         return GXSTK(ret_val)
@@ -156,7 +156,7 @@ class GXMSTK:
 
     def delete_stk(self, p2):
         """
-        Delete a :class:`geosoft.gxapi.GXSTK` object
+        Delete a `GXSTK` object
 
         **Note:**
 
@@ -170,7 +170,7 @@ class GXMSTK:
 
     def find_stk(self, p2, p3, p4, p6, p8):
         """
-        Find index of :class:`geosoft.gxapi.GXSTK` from a string of group names and X/Y channels
+        Find index of `GXSTK` from a string of group names and X/Y channels
 
         **Note:**
 
@@ -189,7 +189,7 @@ class GXMSTK:
 
     def get_num_stk(self):
         """
-        Get the number of :class:`geosoft.gxapi.GXSTK` objects in a :class:`geosoft.gxapi.GXMSTK` object
+        Get the number of `GXSTK` objects in a `GXMSTK` object
         """
         ret_val = self._wrapper.get_num_stk()
         return ret_val
@@ -209,7 +209,7 @@ class GXMSTK:
 
     def save_profile(self, p2):
         """
-        Save multiple profile INI parameters in a :class:`geosoft.gxapi.GXWA` file of INI format
+        Save multiple profile INI parameters in a `GXWA` file of INI format
         """
         self._wrapper.save_profile(p2._wrapper)
         

@@ -18,7 +18,7 @@ class GXSHP:
     """
     GXSHP class.
 
-    The :class:`geosoft.gxapi.GXSHP` class is used to create ESRI shape files.
+    The `GXSHP` class is used to create ESRI shape files.
 
     **Note:**
 
@@ -42,17 +42,17 @@ class GXSHP:
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of :class:`geosoft.gxapi.GXSHP`
+        A null (undefined) instance of `GXSHP`
         
-        :returns: A null :class:`geosoft.gxapi.GXSHP`
+        :returns: A null `GXSHP`
         """
         return cls()
 
     def is_null(self):
         """
-        Check if the instance of :class:`geosoft.gxapi.GXSHP` is null (undefined)`
+        Check if the instance of `GXSHP` is null (undefined)`
         
-        :returns: True if this is a null (undefined) instance of :class:`geosoft.gxapi.GXSHP`, False otherwise.
+        :returns: True if this is a null (undefined) instance of `GXSHP`, False otherwise.
         """
         return self._wrapper.handle == 0
 
@@ -66,12 +66,12 @@ class GXSHP:
 
     def append_item(self):
         """
-        Append the current item and data to an old :class:`geosoft.gxapi.GXSHP` object.
+        Append the current item and data to an old `GXSHP` object.
 
         **Note:**
 
-        The currently stored :class:`geosoft.gxapi.GXSHP` item and data are written to the
-        :class:`geosoft.gxapi.GXSHP` geometry and data files. (If no data fields have been
+        The currently stored `GXSHP` item and data are written to the
+        `GXSHP` geometry and data files. (If no data fields have been
         defined, then the data file is not written).
         """
         self._wrapper.append_item()
@@ -82,7 +82,7 @@ class GXSHP:
     @classmethod
     def create(cls, p1, p2):
         """
-        Create a new :class:`geosoft.gxapi.GXSHP` object
+        Create a new `GXSHP` object
 
         **Note:**
 
@@ -96,13 +96,13 @@ class GXSHP:
         
         Type                    Required geometry function.
         
-        :attr:`geosoft.gxapi.SHP_GEOM_TYPE_POINT`     SetPoint_SHP
-        :attr:`geosoft.gxapi.SHP_GEOM_TYPE_ARC`       SetArc_SHP
-        :attr:`geosoft.gxapi.SHP_GEOM_TYPE_POLYGON`   SetPolygon_SHP
+        `SHP_GEOM_TYPE_POINT`     `set_point`
+        `SHP_GEOM_TYPE_ARC`       `set_arc`
+        `SHP_GEOM_TYPE_POLYGON`   `set_polygon`
         
-        :attr:`geosoft.gxapi.SHP_GEOM_TYPE_POINTZ`    SetPointZ_SHP
-        :attr:`geosoft.gxapi.SHP_GEOM_TYPE_ARCZ`      SetArcZ_SHP
-        :attr:`geosoft.gxapi.SHP_GEOM_TYPE_POLYGONZ`  SetPolygonZ_SHP
+        `SHP_GEOM_TYPE_POINTZ`    `set_point_z`
+        `SHP_GEOM_TYPE_ARCZ`      `set_arc_z`
+        `SHP_GEOM_TYPE_POLYGONZ`  `set_polygon_z`
         """
         ret_val = gxapi_cy.WrapSHP.create(GXContext._get_tls_geo(), p1.encode(), p2)
         return GXSHP(ret_val)
@@ -199,7 +199,7 @@ class GXSHP:
 
     def type(self):
         """
-        Get the :class:`geosoft.gxapi.GXSHP` object's geometry type.
+        Get the `GXSHP` object's geometry type.
         """
         ret_val = self._wrapper.type()
         return ret_val
@@ -209,7 +209,7 @@ class GXSHP:
     @classmethod
     def open(cls, p1):
         """
-        Open an old :class:`geosoft.gxapi.GXSHP` object
+        Open an old `GXSHP` object
         """
         ret_val = gxapi_cy.WrapSHP.open(GXContext._get_tls_geo(), p1.encode())
         return GXSHP(ret_val)
@@ -223,7 +223,7 @@ class GXSHP:
 
         **Note:**
 
-        Can ONLY be used for :attr:`geosoft.gxapi.SHP_GEOM_TYPE_ARC` files.
+        Can ONLY be used for `SHP_GEOM_TYPE_ARC` files.
         """
         self._wrapper.set_arc(p2._wrapper, p3._wrapper)
         
@@ -237,7 +237,7 @@ class GXSHP:
 
         **Note:**
 
-        Can ONLY be used for :attr:`geosoft.gxapi.SHP_GEOM_TYPE_ARCZ` files.
+        Can ONLY be used for `SHP_GEOM_TYPE_ARCZ` files.
         """
         self._wrapper.set_arc_z(p2._wrapper, p3._wrapper, p4._wrapper)
         
@@ -261,12 +261,12 @@ class GXSHP:
 
     def set_ipj(self, p2):
         """
-        Set a :class:`geosoft.gxapi.GXSHP` object's projection.
+        Set a `GXSHP` object's projection.
 
         **Note:**
 
-        If the :class:`geosoft.gxapi.GXSHP` object has a projection, and it
-        is not :attr:`geosoft.gxapi.IPJ_TYPE_NONE`, then it will be output
+        If the `GXSHP` object has a projection, and it
+        is not `IPJ_TYPE_NONE`, then it will be output
         to a file with the .prj extension when the
         first object is output.
         This function should be called BEFORE the first
@@ -284,7 +284,7 @@ class GXSHP:
 
         **Note:**
 
-        Can ONLY be used for :attr:`geosoft.gxapi.SHP_GEOM_TYPE_POINT` files.
+        Can ONLY be used for `SHP_GEOM_TYPE_POINT` files.
         """
         self._wrapper.set_point(p2, p3)
         
@@ -298,7 +298,7 @@ class GXSHP:
 
         **Note:**
 
-        Can ONLY be used for :attr:`geosoft.gxapi.SHP_GEOM_TYPE_POINTZ` files.
+        Can ONLY be used for `SHP_GEOM_TYPE_POINTZ` files.
         """
         self._wrapper.set_point_z(p2, p3, p4)
         
@@ -312,7 +312,7 @@ class GXSHP:
 
         **Note:**
 
-        Can ONLY be used for :attr:`geosoft.gxapi.SHP_GEOM_TYPE_POLYGON` files.
+        Can ONLY be used for `SHP_GEOM_TYPE_POLYGON` files.
         """
         self._wrapper.set_polygon(p2._wrapper, p3._wrapper, p4)
         
@@ -326,7 +326,7 @@ class GXSHP:
 
         **Note:**
 
-        Can ONLY be used for :attr:`geosoft.gxapi.SHP_GEOM_TYPE_POLYGONZ` files.
+        Can ONLY be used for `SHP_GEOM_TYPE_POLYGONZ` files.
         """
         self._wrapper.set_polygon_z(p2._wrapper, p3._wrapper, p4._wrapper, p5)
         
@@ -368,8 +368,8 @@ class GXSHP:
 
         **Note:**
 
-        The currently stored :class:`geosoft.gxapi.GXSHP` item and data are written to the
-        :class:`geosoft.gxapi.GXSHP` geometry and data files. (If no data fields have been
+        The currently stored `GXSHP` item and data are written to the
+        `GXSHP` geometry and data files. (If no data fields have been
         defined, then the data file is not written).
         """
         self._wrapper.write_item()

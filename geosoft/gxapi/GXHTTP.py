@@ -18,13 +18,13 @@ class GXHTTP:
     """
     GXHTTP class.
 
-    Connect to an Internet Server using :class:`geosoft.gxapi.GXHTTP`.
+    Connect to an Internet Server using `GXHTTP`.
 
     **Note:**
 
     References:
     
-    1. http://www.w3.org/Protocols/:class:`geosoft.gxapi.GXHTTP`/HTTP2.html
+    1. http://www.w3.org/Protocols/`GXHTTP`/HTTP2.html
     
     2. http://www.w3.org/Addressing/URL/5_BNF.html
     
@@ -49,17 +49,17 @@ class GXHTTP:
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of :class:`geosoft.gxapi.GXHTTP`
+        A null (undefined) instance of `GXHTTP`
         
-        :returns: A null :class:`geosoft.gxapi.GXHTTP`
+        :returns: A null `GXHTTP`
         """
         return cls()
 
     def is_null(self):
         """
-        Check if the instance of :class:`geosoft.gxapi.GXHTTP` is null (undefined)`
+        Check if the instance of `GXHTTP` is null (undefined)`
         
-        :returns: True if this is a null (undefined) instance of :class:`geosoft.gxapi.GXHTTP`, False otherwise.
+        :returns: True if this is a null (undefined) instance of `GXHTTP`, False otherwise.
         """
         return self._wrapper.handle == 0
 
@@ -73,7 +73,7 @@ class GXHTTP:
     @classmethod
     def create(cls, p1, p2, p3, p4):
         """
-        This method creates a connection to an :class:`geosoft.gxapi.GXHTTP` server
+        This method creates a connection to an `GXHTTP` server
 
         **Note:**
 
@@ -108,12 +108,12 @@ class GXHTTP:
 
     def download(self, p2, p3, p4):
         """
-        Download file from the internet to a :class:`geosoft.gxapi.GXBF`.
+        Download file from the internet to a `GXBF`.
 
         **Note:**
 
         The file will be written starting at the current location
-        in the :class:`geosoft.gxapi.GXBF`
+        in the `GXBF`
         """
         self._wrapper.download(p2.encode(), p3._wrapper, p4)
         
@@ -123,12 +123,12 @@ class GXHTTP:
 
     def silent_download(self, p2, p3, p4):
         """
-        Download file from the internet to a :class:`geosoft.gxapi.GXBF` with no prompt for proxy authentication.
+        Download file from the internet to a `GXBF` with no prompt for proxy authentication.
 
         **Note:**
 
         The file will be written starting at the current location
-        in the :class:`geosoft.gxapi.GXBF`. No prompt for proxy authentication
+        in the `GXBF`. No prompt for proxy authentication
         """
         self._wrapper.silent_download(p2.encode(), p3._wrapper, p4)
         
@@ -142,8 +142,8 @@ class GXHTTP:
 
         **Note:**
 
-        Full contents of the :class:`geosoft.gxapi.GXBF` are sent in an :class:`geosoft.gxapi.GXHTTP` GET message.
-        :class:`geosoft.gxapi.GXBF` pointer is returned to location before the call.
+        Full contents of the `GXBF` are sent in an `GXHTTP` GET message.
+        `GXBF` pointer is returned to location before the call.
         
         request URL will be:
         http://server/path?search
@@ -160,7 +160,7 @@ class GXHTTP:
 
         **Note:**
 
-        Full contents of the :class:`geosoft.gxapi.GXBF` are sent as an :class:`geosoft.gxapi.GXHTTP` POST message.
+        Full contents of the `GXBF` are sent as an `GXHTTP` POST message.
         
         request URL will be:
         http://server/path?search

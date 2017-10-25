@@ -18,11 +18,11 @@ class GXEXP:
     """
     GXEXP class.
 
-    :class:`geosoft.gxapi.GXEXP` objects are created from text strings that contain
+    `GXEXP` objects are created from text strings that contain
     C-like math to be applied to channels in a database.
-    It is used with the Math_DU function (see :class:`geosoft.gxapi.GXDU`). See also
-    :class:`geosoft.gxapi.GXIEXP` for applying math expressions to images (grids).
-    See also Math_DU applies expressions to the database
+    It is used with the `GXDU.math` function (see `GXDU`). See also
+    `GXIEXP` for applying math expressions to images (grids).
+    See also `GXDU.math` applies expressions to the database
     """
 
     def __enter__(self):
@@ -40,17 +40,17 @@ class GXEXP:
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of :class:`geosoft.gxapi.GXEXP`
+        A null (undefined) instance of `GXEXP`
         
-        :returns: A null :class:`geosoft.gxapi.GXEXP`
+        :returns: A null `GXEXP`
         """
         return cls()
 
     def is_null(self):
         """
-        Check if the instance of :class:`geosoft.gxapi.GXEXP` is null (undefined)`
+        Check if the instance of `GXEXP` is null (undefined)`
         
-        :returns: True if this is a null (undefined) instance of :class:`geosoft.gxapi.GXEXP`, False otherwise.
+        :returns: True if this is a null (undefined) instance of `GXEXP`, False otherwise.
         """
         return self._wrapper.handle == 0
 
@@ -64,7 +64,7 @@ class GXEXP:
     @classmethod
     def create(cls, p1, p2, p3):
         """
-        This method creates an :class:`geosoft.gxapi.GXEXP` object.
+        This method creates an `GXEXP` object.
 
         **Note:**
 
@@ -90,7 +90,7 @@ class GXEXP:
         
            ``$``
              prefix to a local GX variable name.  Such names will be
-             evaluated to the variable value at the time Create_EXP
+             evaluated to the variable value at the time `create`
              is called.
         
         All other tokens are assumed to be channel names.
@@ -103,7 +103,7 @@ class GXEXP:
     @classmethod
     def create_file(cls, p1, p2):
         """
-        This method creates an :class:`geosoft.gxapi.GXEXP` object from a file
+        This method creates an `GXEXP` object from a file
         """
         ret_val = gxapi_cy.WrapEXP.create_file(GXContext._get_tls_geo(), p1._wrapper, p2.encode())
         return GXEXP(ret_val)

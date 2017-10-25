@@ -20,10 +20,10 @@ class GXDBREAD:
     """
     GXDBREAD class.
 
-    The :class:`geosoft.gxapi.GXDBREAD` class is used to open and read from databases. Very large lines
-      are split into blocks and served up sequentially to prevent the over-use of virtual memory when channels are read into VVs or VAs.
-      Individual data blocks are limited by default to 1 MB (which is user-alterable). Single lines smaller than the block size
-      are served up whole, one block per line.
+    The `GXDBREAD` class is used to open and read from databases. Very large lines
+    are split into blocks and served up sequentially to prevent the over-use of virtual memory when channels are read into VVs or VAs.
+    Individual data blocks are limited by default to 1 MB (which is user-alterable). Single lines smaller than the block size
+    are served up whole, one block per line.
     """
 
     def __enter__(self):
@@ -41,17 +41,17 @@ class GXDBREAD:
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of :class:`geosoft.gxapi.GXDBREAD`
+        A null (undefined) instance of `GXDBREAD`
         
-        :returns: A null :class:`geosoft.gxapi.GXDBREAD`
+        :returns: A null `GXDBREAD`
         """
         return cls()
 
     def is_null(self):
         """
-        Check if the instance of :class:`geosoft.gxapi.GXDBREAD` is null (undefined)`
+        Check if the instance of `GXDBREAD` is null (undefined)`
         
-        :returns: True if this is a null (undefined) instance of :class:`geosoft.gxapi.GXDBREAD`, False otherwise.
+        :returns: True if this is a null (undefined) instance of `GXDBREAD`, False otherwise.
         """
         return self._wrapper.handle == 0
 
@@ -65,8 +65,8 @@ class GXDBREAD:
     @classmethod
     def create(cls, p1, p2):
         """
-        Create a :class:`geosoft.gxapi.GXDBREAD` object
-        Add channels using the iAddChannel_DBREAD() method.channel.
+        Create a `GXDBREAD` object
+        Add channels using the `add_channel`() method.channel.
         """
         ret_val = gxapi_cy.WrapDBREAD.create(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper)
         return GXDBREAD(ret_val)
@@ -76,8 +76,8 @@ class GXDBREAD:
     @classmethod
     def create_xy(cls, p1, p2):
         """
-        Create a :class:`geosoft.gxapi.GXDBREAD` object for a XY-located data. Add channels using the
-        		               iAddChannel_DBREAD() method.
+        Create a `GXDBREAD` object for a XY-located data. Add channels using the
+        		               `add_channel`() method.
         """
         ret_val = gxapi_cy.WrapDBREAD.create_xy(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper)
         return GXDBREAD(ret_val)
@@ -87,8 +87,8 @@ class GXDBREAD:
     @classmethod
     def create_xyz(cls, p1, p2):
         """
-        Create a :class:`geosoft.gxapi.GXDBREAD` object for a XYZ-located data.
-        Add channels using the iAddChannel_DBREAD() method.channel
+        Create a `GXDBREAD` object for a XYZ-located data.
+        Add channels using the `add_channel`() method.channel
         """
         ret_val = gxapi_cy.WrapDBREAD.create_xyz(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper)
         return GXDBREAD(ret_val)
@@ -100,7 +100,7 @@ class GXDBREAD:
 
     def add_channel(self, p2):
         """
-        Add a data channel to the :class:`geosoft.gxapi.GXDBREAD` object.
+        Add a data channel to the `GXDBREAD` object.
         """
         ret_val = self._wrapper.add_channel(p2)
         return ret_val
@@ -114,12 +114,12 @@ class GXDBREAD:
 
     def get_vv(self, p2):
         """
-        Get the :class:`geosoft.gxapi.GXVV` handle for a channel.
+        Get the `GXVV` handle for a channel.
 
         **Note:**
 
-        Call only for single-column (regular) channels. You can call the iGetChanArraySize_DBREAD
-        function to find the number fo columns in a given channel. The :class:`geosoft.gxapi.GXVV` is filled anew for 
+        Call only for single-column (regular) channels. You can call the `get_chan_array_size`
+        function to find the number fo columns in a given channel. The `GXVV` is filled anew for 
         each block served up.
         """
         ret_val = self._wrapper.get_vv(p2)
@@ -130,13 +130,13 @@ class GXDBREAD:
 
     def get_va(self, p2):
         """
-        Get the :class:`geosoft.gxapi.GXVA` handle for an array channel.
+        Get the `GXVA` handle for an array channel.
 
         **Note:**
 
-        Call only for array (multi-column) channels. You can call the iGetChanArraySize_DBREAD
-        function to find the number fo columns in a given channel, or you can call iCol_VA on the returned :class:`geosoft.gxapi.GXVA` handle.
-        The :class:`geosoft.gxapi.GXVA` is filled anew for each block served up.
+        Call only for array (multi-column) channels. You can call the `get_chan_array_size`
+        function to find the number fo columns in a given channel, or you can call `GXVA.col` on the returned `GXVA` handle.
+        The `GXVA` is filled anew for each block served up.
         """
         ret_val = self._wrapper.get_va(p2)
         return GXVA(ret_val)
@@ -146,12 +146,12 @@ class GXDBREAD:
 
     def get_v_vx(self):
         """
-        Get the X channel :class:`geosoft.gxapi.GXVV` handle.
+        Get the X channel `GXVV` handle.
 
         **Note:**
 
         Only available for the CreateXY or CreateXYZ methods.
-        The :class:`geosoft.gxapi.GXVV` is filled anew for each block served up.
+        The `GXVV` is filled anew for each block served up.
         """
         ret_val = self._wrapper.get_v_vx()
         return GXVV(ret_val)
@@ -161,12 +161,12 @@ class GXDBREAD:
 
     def get_v_vy(self):
         """
-        Get the Y channel :class:`geosoft.gxapi.GXVV` handle.
+        Get the Y channel `GXVV` handle.
 
         **Note:**
 
         Only available for the CreateXY or CreateXYZ methods.
-        The :class:`geosoft.gxapi.GXVV` is filled anew for each block served up.
+        The `GXVV` is filled anew for each block served up.
         """
         ret_val = self._wrapper.get_v_vy()
         return GXVV(ret_val)
@@ -176,13 +176,13 @@ class GXDBREAD:
 
     def get_v_vz(self):
         """
-        Get the Z channel :class:`geosoft.gxapi.GXVV` handle.
+        Get the Z channel `GXVV` handle.
 
         **Note:**
 
         Only available for the CreateXY or CreateXYZ methods.
-        The :class:`geosoft.gxapi.GXVV` is filled anew for each block served up.
-        If the Z channel is an array channel, the returned :class:`geosoft.gxapi.GXVV` is the "base" :class:`geosoft.gxapi.GXVV` of the :class:`geosoft.gxapi.GXVA` and contains all items sequentially.
+        The `GXVV` is filled anew for each block served up.
+        If the Z channel is an array channel, the returned `GXVV` is the "base" `GXVV` of the `GXVA` and contains all items sequentially.
         """
         ret_val = self._wrapper.get_v_vz()
         return GXVV(ret_val)
@@ -197,7 +197,7 @@ class GXDBREAD:
         **Note:**
 
         Regular channels have one column of data. Array channels have more than one column of data.
-        This function should be called to determine whether to use GetVV_DBREAD or GetVA_DBREAD to access data
+        This function should be called to determine whether to use `get_vv` or `get_va` to access data
         for a channel.
         """
         ret_val = self._wrapper.get_chan_array_size(p2)
@@ -232,8 +232,8 @@ class GXDBREAD:
 
         **Note:**
 
-        The next block of data is read and copied into the channel :class:`geosoft.gxapi.GXVV` and/or :class:`geosoft.gxapi.GXVA` objects, accessed using
-        the GetVV_DBREAD and GetVA_DBREAD functions.
+        The next block of data is read and copied into the channel `GXVV` and/or `GXVA` objects, accessed using
+        the `get_vv` and `get_va` functions.
         """
         ret_val, p2.value, p3.value, p4.value = self._wrapper.get_next_block(p2.value, p3.value, p4.value)
         return ret_val

@@ -18,7 +18,7 @@ class GXPLY:
     """
     GXPLY class.
 
-    The :class:`geosoft.gxapi.GXPLY` object contains the definitions for one or more
+    The `GXPLY` object contains the definitions for one or more
     polygons, and does import and export of polygon files.
     """
 
@@ -37,17 +37,17 @@ class GXPLY:
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of :class:`geosoft.gxapi.GXPLY`
+        A null (undefined) instance of `GXPLY`
         
-        :returns: A null :class:`geosoft.gxapi.GXPLY`
+        :returns: A null `GXPLY`
         """
         return cls()
 
     def is_null(self):
         """
-        Check if the instance of :class:`geosoft.gxapi.GXPLY` is null (undefined)`
+        Check if the instance of `GXPLY` is null (undefined)`
         
-        :returns: True if this is a null (undefined) instance of :class:`geosoft.gxapi.GXPLY`, False otherwise.
+        :returns: True if this is a null (undefined) instance of `GXPLY`, False otherwise.
         """
         return self._wrapper.handle == 0
 
@@ -85,7 +85,7 @@ class GXPLY:
 
         **Note:**
 
-        The :class:`geosoft.gxapi.GXPLY` is re-projected to the new projection.
+        The `GXPLY` is re-projected to the new projection.
         """
         self._wrapper.change_ipj(p2._wrapper)
         
@@ -95,7 +95,7 @@ class GXPLY:
 
     def clear(self):
         """
-        Clear/remove all polygons from the :class:`geosoft.gxapi.GXPLY`.
+        Clear/remove all polygons from the `GXPLY`.
         """
         self._wrapper.clear()
         
@@ -105,7 +105,7 @@ class GXPLY:
 
     def copy(self, p2):
         """
-        Destroys a :class:`geosoft.gxapi.GXPLY` Object
+        Destroys a `GXPLY` Object
         """
         self._wrapper.copy(p2._wrapper)
         
@@ -125,7 +125,7 @@ class GXPLY:
     @classmethod
     def create_s(cls, p1):
         """
-        Create an :class:`geosoft.gxapi.GXPLY` Object from a :class:`geosoft.gxapi.GXBF`
+        Create an `GXPLY` Object from a `GXBF`
         """
         ret_val = gxapi_cy.WrapPLY.create_s(GXContext._get_tls_geo(), p1._wrapper)
         return GXPLY(ret_val)
@@ -141,7 +141,7 @@ class GXPLY:
 
         **Note:**
 
-        If there are no polygons in the :class:`geosoft.gxapi.GXPLY` object, returns dummies.
+        If there are no polygons in the `GXPLY` object, returns dummies.
         """
         p2.value, p3.value, p4.value, p5.value = self._wrapper.extent(p2.value, p3.value, p4.value, p5.value)
         
@@ -161,7 +161,7 @@ class GXPLY:
 
     def get_polygon(self, p2, p3, p4):
         """
-        Get a polygon from the :class:`geosoft.gxapi.GXPLY`
+        Get a polygon from the `GXPLY`
         """
         self._wrapper.get_polygon(p2._wrapper, p3._wrapper, p4)
         
@@ -171,7 +171,7 @@ class GXPLY:
 
     def get_polygon_ex(self, p2, p3, p4, p5):
         """
-        Get a polygon from the :class:`geosoft.gxapi.GXPLY`
+        Get a polygon from the `GXPLY`
         """
         p5.value = self._wrapper.get_polygon_ex(p2._wrapper, p3._wrapper, p4, p5.value)
         
@@ -191,15 +191,15 @@ class GXPLY:
 
     def clip_line_int(self, p2, p3, p4, p5, p6, p7, p8):
         """
-        Clips a line in or out of the polygons for intersections (:attr:`geosoft.gxapi.GS_DOUBLE`).
-        Intersections are returned as fiducials down the line stored in :class:`geosoft.gxapi.GXVV`
+        Clips a line in or out of the polygons for intersections (`GS_DOUBLE`).
+        Intersections are returned as fiducials down the line stored in `GXVV`
         starting at the first point of the line.
         Examples:
-        No intersection: :attr:`geosoft.gxapi.PLY_LINE_CLIP_OUTSIDE`, 0 intersections
-        Starts outside, ends inside: :attr:`geosoft.gxapi.PLY_LINE_CLIP_OUTSIDE`, 1 intersection
-        Starts outside, intersects then ends inside or outside: :attr:`geosoft.gxapi.PLY_LINE_CLIP_OUTSIDE`, 2 intersections
-        Starts inside, ends inside : :attr:`geosoft.gxapi.PLY_LINE_CLIP_INSIDE`, 1 intersection (gives end-of-line)
-        Starts inside, ends outside : :attr:`geosoft.gxapi.PLY_LINE_CLIP_INSIDE`, 1 intersection
+        No intersection: `PLY_LINE_CLIP_OUTSIDE`, 0 intersections
+        Starts outside, ends inside: `PLY_LINE_CLIP_OUTSIDE`, 1 intersection
+        Starts outside, intersects then ends inside or outside: `PLY_LINE_CLIP_OUTSIDE`, 2 intersections
+        Starts inside, ends inside : `PLY_LINE_CLIP_INSIDE`, 1 intersection (gives end-of-line)
+        Starts inside, ends outside : `PLY_LINE_CLIP_INSIDE`, 1 intersection
         """
         ret_val, p8.value = self._wrapper.clip_line_int(p2, p3, p4, p5, p6._wrapper, p7, p8.value)
         return ret_val
@@ -225,7 +225,7 @@ class GXPLY:
 
     def get_description(self, p2):
         """
-        Get the :class:`geosoft.gxapi.GXPLY` description string
+        Get the `GXPLY` description string
         """
         p2.value = self._wrapper.get_description(p2.value.encode())
         
@@ -299,7 +299,7 @@ class GXPLY:
 
     def serial(self, p2):
         """
-        Serialize an :class:`geosoft.gxapi.GXPLY` to a :class:`geosoft.gxapi.GXBF`
+        Serialize an `GXPLY` to a `GXBF`
         """
         self._wrapper.serial(p2._wrapper)
         
@@ -309,7 +309,7 @@ class GXPLY:
 
     def set_description(self, p2):
         """
-        Set the :class:`geosoft.gxapi.GXPLY` description string
+        Set the `GXPLY` description string
         """
         self._wrapper.set_description(p2.encode())
         

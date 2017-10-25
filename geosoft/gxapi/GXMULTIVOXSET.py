@@ -36,17 +36,17 @@ class GXMULTIVOXSET:
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of :class:`geosoft.gxapi.GXMULTIVOXSET`
+        A null (undefined) instance of `GXMULTIVOXSET`
         
-        :returns: A null :class:`geosoft.gxapi.GXMULTIVOXSET`
+        :returns: A null `GXMULTIVOXSET`
         """
         return cls()
 
     def is_null(self):
         """
-        Check if the instance of :class:`geosoft.gxapi.GXMULTIVOXSET` is null (undefined)`
+        Check if the instance of `GXMULTIVOXSET` is null (undefined)`
         
-        :returns: True if this is a null (undefined) instance of :class:`geosoft.gxapi.GXMULTIVOXSET`, False otherwise.
+        :returns: True if this is a null (undefined) instance of `GXMULTIVOXSET`, False otherwise.
         """
         return self._wrapper.handle == 0
 
@@ -70,7 +70,7 @@ class GXMULTIVOXSET:
     @classmethod
     def export_to_xyz(cls, p1, p2, p3, p4, p5, p6, p7):
         """
-        Export a :class:`geosoft.gxapi.GXMULTIVOXSET` to an XYZ File
+        Export a `GXMULTIVOXSET` to an XYZ File
         """
         gxapi_cy.WrapMULTIVOXSET.export_to_xyz(GXContext._get_tls_geo(), p1.encode(), p2.encode(), p3, p4, p5, p6, p7)
         
@@ -80,7 +80,7 @@ class GXMULTIVOXSET:
     @classmethod
     def export_to_binary(cls, p1, p2, p3, p4, p5, p6, p7, p8):
         """
-        Export contents of :class:`geosoft.gxapi.GXMULTIVOXSET` to a Binary File.
+        Export contents of `GXMULTIVOXSET` to a Binary File.
         """
         gxapi_cy.WrapMULTIVOXSET.export_to_binary(GXContext._get_tls_geo(), p1.encode(), p2.encode(), p3, p4, p5, p6, p7, p8)
         
@@ -90,7 +90,7 @@ class GXMULTIVOXSET:
     @classmethod
     def export_to_xml(cls, p1, p2):
         """
-        Export a :class:`geosoft.gxapi.GXMULTIVOXSET` to XML
+        Export a `GXMULTIVOXSET` to XML
         """
         gxapi_cy.WrapMULTIVOXSET.export_to_xml(GXContext._get_tls_geo(), p1.encode(), p2.encode())
         
@@ -100,7 +100,7 @@ class GXMULTIVOXSET:
     @classmethod
     def check_equal_to_legacy_voxel(cls, p1, p2):
         """
-        Compare :class:`geosoft.gxapi.GXMULTIVOXSET` to Legacy Voxel
+        Compare `GXMULTIVOXSET` to Legacy Voxel
         """
         gxapi_cy.WrapMULTIVOXSET.check_equal_to_legacy_voxel(GXContext._get_tls_geo(), p1.encode(), p2.encode())
         

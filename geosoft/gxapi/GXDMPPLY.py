@@ -36,17 +36,17 @@ class GXDMPPLY:
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of :class:`geosoft.gxapi.GXDMPPLY`
+        A null (undefined) instance of `GXDMPPLY`
         
-        :returns: A null :class:`geosoft.gxapi.GXDMPPLY`
+        :returns: A null `GXDMPPLY`
         """
         return cls()
 
     def is_null(self):
         """
-        Check if the instance of :class:`geosoft.gxapi.GXDMPPLY` is null (undefined)`
+        Check if the instance of `GXDMPPLY` is null (undefined)`
         
-        :returns: True if this is a null (undefined) instance of :class:`geosoft.gxapi.GXDMPPLY`, False otherwise.
+        :returns: True if this is a null (undefined) instance of `GXDMPPLY`, False otherwise.
         """
         return self._wrapper.handle == 0
 
@@ -60,7 +60,7 @@ class GXDMPPLY:
 
     def clear(self):
         """
-        Clear/remove all polygons from the :class:`geosoft.gxapi.GXDMPPLY`.
+        Clear/remove all polygons from the `GXDMPPLY`.
         """
         self._wrapper.clear()
         
@@ -80,7 +80,7 @@ class GXDMPPLY:
     @classmethod
     def create(cls):
         """
-        Creates a :class:`geosoft.gxapi.GXDMPPLY` object.
+        Creates a `GXDMPPLY` object.
         """
         ret_val = gxapi_cy.WrapDMPPLY.create(GXContext._get_tls_geo())
         return GXDMPPLY(ret_val)
@@ -152,11 +152,11 @@ class GXDMPPLY:
 
     def get_poly(self, p2, p3, p4, p5):
         """
-        Get a specific polygon from a :class:`geosoft.gxapi.GXDMPPLY` object.
+        Get a specific polygon from a `GXDMPPLY` object.
 
         **Note:**
 
-        Get the number of points from the :class:`geosoft.gxapi.GXVV` length.
+        Get the number of points from the `GXVV` length.
         """
         self._wrapper.get_poly(p2, p3._wrapper, p4._wrapper, p5._wrapper)
         
@@ -182,7 +182,7 @@ class GXDMPPLY:
 
     def get_vertex(self, p2, p3, p4, p5, p6):
         """
-        Get a vertex location from a :class:`geosoft.gxapi.GXDMPPLY` object.
+        Get a vertex location from a `GXDMPPLY` object.
         """
         p4.value, p5.value, p6.value = self._wrapper.get_vertex(p2, p3, p4.value, p5.value, p6.value)
         
@@ -192,7 +192,7 @@ class GXDMPPLY:
 
     def num_joins(self):
         """
-        Get the number of joining lines in a :class:`geosoft.gxapi.GXDMPPLY` object.
+        Get the number of joining lines in a `GXDMPPLY` object.
         """
         ret_val = self._wrapper.num_joins()
         return ret_val
@@ -202,7 +202,7 @@ class GXDMPPLY:
 
     def num_polys(self):
         """
-        Get the number of polygons in a :class:`geosoft.gxapi.GXDMPPLY` object.
+        Get the number of polygons in a `GXDMPPLY` object.
 
         **Note:**
 
@@ -275,7 +275,7 @@ class GXDMPPLY:
 
         **Note:**
 
-        This is the inverse operation of ProjectPoly_DMPPLY.
+        This is the inverse operation of `project_poly`.
         
         Input the 2D locations on the projected vertical plane. These locations
         are projected back onto the original polygon plane.
@@ -298,11 +298,11 @@ class GXDMPPLY:
 
     def set_poly(self, p2, p3, p4, p5):
         """
-        Set a specific polygon into a :class:`geosoft.gxapi.GXDMPPLY` object.
+        Set a specific polygon into a `GXDMPPLY` object.
 
         **Note:**
 
-        Get the number of points from the :class:`geosoft.gxapi.GXVV` length.
+        Get the number of points from the `GXVV` length.
         """
         self._wrapper.set_poly(p2, p3._wrapper, p4._wrapper, p5._wrapper)
         

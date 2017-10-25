@@ -18,10 +18,10 @@ class GXMETA:
     """
     GXMETA class.
 
-    A :class:`geosoft.gxapi.GXMETA` object contains hierarchical organized metadata
-    of any type, including other objects.  :class:`geosoft.gxapi.GXMETA` information
+    A `GXMETA` object contains hierarchical organized metadata
+    of any type, including other objects.  `GXMETA` information
     is organized in an XML-like structure based on a data
-    schema that describes the data hierarchy.   :class:`geosoft.gxapi.GXMETA` objects
+    schema that describes the data hierarchy.   `GXMETA` objects
     are used by many entities that need to store metadata
     specific to the entities or to the application.
     
@@ -47,17 +47,17 @@ class GXMETA:
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of :class:`geosoft.gxapi.GXMETA`
+        A null (undefined) instance of `GXMETA`
         
-        :returns: A null :class:`geosoft.gxapi.GXMETA`
+        :returns: A null `GXMETA`
         """
         return cls()
 
     def is_null(self):
         """
-        Check if the instance of :class:`geosoft.gxapi.GXMETA` is null (undefined)`
+        Check if the instance of `GXMETA` is null (undefined)`
         
-        :returns: True if this is a null (undefined) instance of :class:`geosoft.gxapi.GXMETA`, False otherwise.
+        :returns: True if this is a null (undefined) instance of `GXMETA`, False otherwise.
         """
         return self._wrapper.handle == 0
 
@@ -81,7 +81,7 @@ class GXMETA:
 
     def delete_attrib(self, p2):
         """
-        Delete Attrib from :class:`geosoft.gxapi.GXMETA`.
+        Delete Attrib from `GXMETA`.
         """
         self._wrapper.delete_attrib(p2)
         
@@ -129,7 +129,7 @@ class GXMETA:
 
     def delete_class(self, p2):
         """
-        Delete Class from :class:`geosoft.gxapi.GXMETA`.
+        Delete Class from `GXMETA`.
         """
         self._wrapper.delete_class(p2)
         
@@ -143,7 +143,7 @@ class GXMETA:
 
     def copy(self, p2):
         """
-        Copy a :class:`geosoft.gxapi.GXMETA` to another
+        Copy a `GXMETA` to another
         """
         self._wrapper.copy(p2._wrapper)
         
@@ -163,7 +163,7 @@ class GXMETA:
     @classmethod
     def create_s(cls, p1):
         """
-        Create a :class:`geosoft.gxapi.GXMETA` Object from a :class:`geosoft.gxapi.GXBF`
+        Create a `GXMETA` Object from a `GXBF`
         """
         ret_val = gxapi_cy.WrapMETA.create_s(GXContext._get_tls_geo(), p1._wrapper)
         return GXMETA(ret_val)
@@ -175,7 +175,7 @@ class GXMETA:
 
     def serial(self, p2):
         """
-        Serialize an :class:`geosoft.gxapi.GXMETA` to a :class:`geosoft.gxapi.GXBF`
+        Serialize an `GXMETA` to a `GXBF`
         """
         self._wrapper.serial(p2._wrapper)
         
@@ -314,7 +314,7 @@ class GXMETA:
 
     def delete_item(self, p2):
         """
-        Delete item from :class:`geosoft.gxapi.GXMETA`.
+        Delete item from `GXMETA`.
         """
         self._wrapper.delete_item(p2)
         
@@ -436,7 +436,7 @@ class GXMETA:
 
     def h_copy_across_attribute(self, p2, p3):
         """
-        Copy an Attribute from one :class:`geosoft.gxapi.GXMETA` to another
+        Copy an Attribute from one `GXMETA` to another
         """
         ret_val = self._wrapper.h_copy_across_attribute(p2._wrapper, p3)
         return ret_val
@@ -446,7 +446,7 @@ class GXMETA:
 
     def h_copy_across_class(self, p2, p3):
         """
-        Copy a Class from one :class:`geosoft.gxapi.GXMETA` to another
+        Copy a Class from one `GXMETA` to another
 
         **Note:**
 
@@ -460,7 +460,7 @@ class GXMETA:
 
     def h_copy_across_data(self, p2, p3):
         """
-        Copy a Data value from one :class:`geosoft.gxapi.GXMETA` to another
+        Copy a Data value from one `GXMETA` to another
         """
         ret_val = self._wrapper.h_copy_across_data(p2._wrapper, p3)
         return ret_val
@@ -470,7 +470,7 @@ class GXMETA:
 
     def h_copy_across_item(self, p2, p3):
         """
-        Copy an Item from one :class:`geosoft.gxapi.GXMETA` to another
+        Copy an Item from one `GXMETA` to another
         """
         ret_val = self._wrapper.h_copy_across_item(p2._wrapper, p3)
         return ret_val
@@ -480,7 +480,7 @@ class GXMETA:
 
     def h_copy_across_type(self, p2, p3):
         """
-        Copy a Type from one :class:`geosoft.gxapi.GXMETA` to another
+        Copy a Type from one `GXMETA` to another
 
         **Note:**
 
@@ -494,7 +494,7 @@ class GXMETA:
 
     def move_datas_across(self, p2, p3, p4):
         """
-        Moves data items from one :class:`geosoft.gxapi.GXMETA` to another
+        Moves data items from one `GXMETA` to another
         """
         self._wrapper.move_datas_across(p2._wrapper, p3, p4)
         
@@ -518,7 +518,7 @@ class GXMETA:
 
     def delete_data(self, p2):
         """
-        Delete Data from :class:`geosoft.gxapi.GXMETA`.
+        Delete Data from `GXMETA`.
         """
         self._wrapper.delete_data(p2)
         
@@ -528,7 +528,7 @@ class GXMETA:
 
     def delete_type(self, p2):
         """
-        Delete Type from :class:`geosoft.gxapi.GXMETA`.
+        Delete Type from `GXMETA`.
         """
         self._wrapper.delete_type(p2)
         

@@ -36,17 +36,17 @@ class GXTEST:
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of :class:`geosoft.gxapi.GXTEST`
+        A null (undefined) instance of `GXTEST`
         
-        :returns: A null :class:`geosoft.gxapi.GXTEST`
+        :returns: A null `GXTEST`
         """
         return cls()
 
     def is_null(self):
         """
-        Check if the instance of :class:`geosoft.gxapi.GXTEST` is null (undefined)`
+        Check if the instance of `GXTEST` is null (undefined)`
         
-        :returns: True if this is a null (undefined) instance of :class:`geosoft.gxapi.GXTEST`, False otherwise.
+        :returns: True if this is a null (undefined) instance of `GXTEST`, False otherwise.
         """
         return self._wrapper.handle == 0
 

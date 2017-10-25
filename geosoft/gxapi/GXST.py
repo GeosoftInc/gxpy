@@ -18,10 +18,10 @@ class GXST:
     """
     GXST class.
 
-    Mono-variate statistics. The :class:`geosoft.gxapi.GXST` class is used to accumulate statistical
+    Mono-variate statistics. The `GXST` class is used to accumulate statistical
     information about a set of data. This class is usually used in conjunction
-    with others. For instance, Stat_DU (see :class:`geosoft.gxapi.GXDU`) will add a channel's
-    data to the :class:`geosoft.gxapi.GXST` object, and sComputeST_IMG (see :class:`geosoft.gxapi.GXIMG`) will compute
+    with others. For instance, `GXDU.stat` (see `GXDU`) will add a channel's
+    data to the `GXST` object, and sComputeST_IMG (see `GXIMG`) will compute
     statistics for a grid.
 
     **Note:**
@@ -32,18 +32,18 @@ class GXST:
     for instance if Min = 0 and Inc = 1, then the second bin would include
     all values z such that  0 >= z > 1 (the first bin has all values < 0).
     
-    Color zones used in displaying grids (:class:`geosoft.gxapi.GXITR`, ZON etc...) are the
+    Color zones used in displaying grids (`GXITR`, ZON etc...) are the
     opposite, with exclusive minima and inclusive maxima.
     For instance, if a zone is defined from 0 to 1, then it would
     contain all values of z such that 0 > z >= 1.
     
     These definitions mean that it is impossible to perfectly assign
-    :class:`geosoft.gxapi.GXITR` colors to individual bars of a histogram. The best work-around
+    `GXITR` colors to individual bars of a histogram. The best work-around
     when the data values are integers is to define the color zones using
     0.5 values between the integers. A general work-around is to make the
     number of histogram bins much larger than the number of color zones.
     
-    See also  :class:`geosoft.gxapi.GXST2` (bi-variate statistics)
+    See also  `GXST2` (bi-variate statistics)
     """
 
     def __enter__(self):
@@ -61,17 +61,17 @@ class GXST:
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of :class:`geosoft.gxapi.GXST`
+        A null (undefined) instance of `GXST`
         
-        :returns: A null :class:`geosoft.gxapi.GXST`
+        :returns: A null `GXST`
         """
         return cls()
 
     def is_null(self):
         """
-        Check if the instance of :class:`geosoft.gxapi.GXST` is null (undefined)`
+        Check if the instance of `GXST` is null (undefined)`
         
-        :returns: True if this is a null (undefined) instance of :class:`geosoft.gxapi.GXST`, False otherwise.
+        :returns: True if this is a null (undefined) instance of `GXST`, False otherwise.
         """
         return self._wrapper.handle == 0
 
@@ -117,7 +117,7 @@ class GXST:
 
     def data_vv(self, p2):
         """
-        Add all the values in this :class:`geosoft.gxapi.GXVV` to the statistics object.
+        Add all the values in this `GXVV` to the statistics object.
         """
         self._wrapper.data_vv(p2._wrapper)
         
@@ -133,9 +133,9 @@ class GXST:
 
         **Note:**
 
-        The length of the returned :class:`geosoft.gxapi.GXVV` is set to the total
+        The length of the returned `GXVV` is set to the total
         number of bins. If a histogram is not defined in
-        the :class:`geosoft.gxapi.GXST`, then the returned length is zero.
+        the `GXST`, then the returned length is zero.
         """
         self._wrapper.get_histogram_bins(p2._wrapper)
         
@@ -149,9 +149,9 @@ class GXST:
 
         **Note:**
 
-        The items correspond to those in Histogram2_ST.
+        The items correspond to those in `histogram2`.
         If a histogram is not defined in
-        the :class:`geosoft.gxapi.GXST`, then the returned number of bins is zero, and
+        the `GXST`, then the returned number of bins is zero, and
         the min and max values will be dummies.
         """
         p2.value, p3.value, p4.value = self._wrapper.get_histogram_info(p2.value, p3.value, p4.value)
@@ -162,7 +162,7 @@ class GXST:
 
     def histogram(self, p2):
         """
-        This method prepares :class:`geosoft.gxapi.GXST` for recording histogram.
+        This method prepares `GXST` for recording histogram.
 
         **Note:**
 
@@ -170,10 +170,10 @@ class GXST:
         and the one after the maximum, so it must be a value >2.
         
         IMPORTANT: This function gets the histogram minimum and
-        maximum from the current min and max values stored in the :class:`geosoft.gxapi.GXST`,
+        maximum from the current min and max values stored in the `GXST`,
         so this is equivalent to calling
         
-        Histogram2_ST( #bins, Min, (Max-Min)/(# bins -2));
+        `histogram2`( #bins, Min, (Max-Min)/(# bins -2));
         
         You should already have the data loaded in order to call this
         function.
@@ -188,7 +188,7 @@ class GXST:
 
     def histogram2(self, p2, p3, p4):
         """
-        This method prepares :class:`geosoft.gxapi.GXST` for recording histogram.
+        This method prepares `GXST` for recording histogram.
 
         **Note:**
 
@@ -247,15 +247,15 @@ class GXST:
     def get_info(self, p2):
         """
         This method allows you to retrieve (and compute) the
-        information from the :class:`geosoft.gxapi.GXST` object.
+        information from the `GXST` object.
 
         **Note:**
 
-        The following can only be determined if the :class:`geosoft.gxapi.GXST` has recorded
-        a histogram: :attr:`geosoft.gxapi.ST_MEDIAN`, :attr:`geosoft.gxapi.ST_MODE`
+        The following can only be determined if the `GXST` has recorded
+        a histogram: `ST_MEDIAN`, `ST_MODE`
         
-        :attr:`geosoft.gxapi.ST_MINPOS` can be used to retrieve the smallest value greater
-        than zero, but not from :class:`geosoft.gxapi.GXST` objects recovered from serialized object.
+        `ST_MINPOS` can be used to retrieve the smallest value greater
+        than zero, but not from `GXST` objects recovered from serialized object.
         """
         ret_val = self._wrapper.get_info(p2)
         return ret_val

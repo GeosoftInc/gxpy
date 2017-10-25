@@ -37,17 +37,17 @@ class GX3DV:
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of :class:`geosoft.gxapi.GX3DV`
+        A null (undefined) instance of `GX3DV`
         
-        :returns: A null :class:`geosoft.gxapi.GX3DV`
+        :returns: A null `GX3DV`
         """
         return cls()
 
     def is_null(self):
         """
-        Check if the instance of :class:`geosoft.gxapi.GX3DV` is null (undefined)`
+        Check if the instance of `GX3DV` is null (undefined)`
         
-        :returns: True if this is a null (undefined) instance of :class:`geosoft.gxapi.GX3DV`, False otherwise.
+        :returns: True if this is a null (undefined) instance of `GX3DV`, False otherwise.
         """
         return self._wrapper.handle == 0
 
@@ -61,7 +61,7 @@ class GX3DV:
 
     def open_mview(self, p2):
         """
-        Open :class:`geosoft.gxapi.GX3DV`'s 3D :class:`geosoft.gxapi.GXMVIEW`
+        Open `GX3DV`'s 3D `GXMVIEW`
         """
         ret_val = self._wrapper.open_mview(p2)
         return GXMVIEW(ret_val)
@@ -71,12 +71,12 @@ class GX3DV:
 
     def copy_to_map(self, p2, p3, p4, p5, p6, p7, p8, p9, p11):
         """
-        Copy the :class:`geosoft.gxapi.GX3DV`'s 3D :class:`geosoft.gxapi.GXMVIEW` into a map.
+        Copy the `GX3DV`'s 3D `GXMVIEW` into a map.
 
         **Note:**
 
-        A :class:`geosoft.gxapi.GX3DV` packs all source files. This functions creates an unpacked map and
-        unpacks the packed files in the same way that UnPackFilesEx in the :class:`geosoft.gxapi.GXMAP` class does.
+        A `GX3DV` packs all source files. This functions creates an unpacked map and
+        unpacks the packed files in the same way that UnPackFilesEx in the `GXMAP` class does.
         """
         p9.value, p11.value = self._wrapper.copy_to_map(p2._wrapper, p3.encode(), p4, p5, p6, p7, p8, p9.value.encode(), p11.value.encode())
         
@@ -86,7 +86,7 @@ class GX3DV:
     @classmethod
     def create_new(cls, p1, p2):
         """
-        Create a new :class:`geosoft.gxapi.GX3DV`.
+        Create a new `GX3DV`.
         """
         ret_val = gxapi_cy.Wrap3DV.create_new(GXContext._get_tls_geo(), p1.encode(), p2._wrapper)
         return GX3DV(ret_val)
@@ -96,7 +96,7 @@ class GX3DV:
     @classmethod
     def open(cls, p1):
         """
-        Open an existing :class:`geosoft.gxapi.GX3DV`.
+        Open an existing `GX3DV`.
         """
         ret_val = gxapi_cy.Wrap3DV.open(GXContext._get_tls_geo(), p1.encode())
         return GX3DV(ret_val)
@@ -106,7 +106,7 @@ class GX3DV:
     @classmethod
     def from_map(cls, p1):
         """
-        Get an :class:`geosoft.gxapi.GX3DV` from :class:`geosoft.gxapi.GXMAP` handle (e.g. from Lock_EMAP on open geosoft_3dv document in project)
+        Get an `GX3DV` from `GXMAP` handle (e.g. from `GXEMAP.lock` on open geosoft_3dv document in project)
         """
         ret_val = gxapi_cy.Wrap3DV.from_map(GXContext._get_tls_geo(), p1._wrapper)
         return GX3DV(ret_val)
@@ -116,7 +116,7 @@ class GX3DV:
 
     def crc_3dv(self, p2, p3):
         """
-        Generate an XML CRC of a :class:`geosoft.gxapi.GX3DV`
+        Generate an XML CRC of a `GX3DV`
         """
         p2.value = self._wrapper.crc_3dv(p2.value, p3.encode())
         

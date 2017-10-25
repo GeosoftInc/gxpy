@@ -18,7 +18,7 @@ class GXIPGUI:
     """
     GXIPGUI class.
 
-    This class is used in the :class:`geosoft.gxapi.GXIP` System for :class:`geosoft.gxapi.GXGUI` functions
+    This class is used in the `GXIP` System for `GXGUI` functions
     such as defining parameters for pseudo-section plots.
     """
 
@@ -37,17 +37,17 @@ class GXIPGUI:
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of :class:`geosoft.gxapi.GXIPGUI`
+        A null (undefined) instance of `GXIPGUI`
         
-        :returns: A null :class:`geosoft.gxapi.GXIPGUI`
+        :returns: A null `GXIPGUI`
         """
         return cls()
 
     def is_null(self):
         """
-        Check if the instance of :class:`geosoft.gxapi.GXIPGUI` is null (undefined)`
+        Check if the instance of `GXIPGUI` is null (undefined)`
         
-        :returns: True if this is a null (undefined) instance of :class:`geosoft.gxapi.GXIPGUI`, False otherwise.
+        :returns: True if this is a null (undefined) instance of `GXIPGUI`, False otherwise.
         """
         return self._wrapper.handle == 0
 
@@ -61,7 +61,7 @@ class GXIPGUI:
     @classmethod
     def modify_job(cls, p1, p2, p3, p4, p5):
         """
-        Modify parameters for an :class:`geosoft.gxapi.GXIP` plot.
+        Modify parameters for an `GXIP` plot.
         """
         ret_val, p5.value = gxapi_cy.WrapIPGUI.modify_job(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3.encode(), p4, p5.value)
         return ret_val
@@ -71,7 +71,7 @@ class GXIPGUI:
     @classmethod
     def launch_ipqc_tool(cls, p1, p2, p3):
         """
-        Launch the In-Line :class:`geosoft.gxapi.GXIP` QC tool on a database.
+        Launch the In-Line `GXIP` QC tool on a database.
 
         **Note:**
 
@@ -85,7 +85,7 @@ class GXIPGUI:
     @classmethod
     def launch_offset_ipqc_tool(cls, p1, p2, p3):
         """
-        Launch the Offset :class:`geosoft.gxapi.GXIP` QC tool on a database.
+        Launch the Offset `GXIP` QC tool on a database.
 
         **Note:**
 

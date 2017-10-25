@@ -24,10 +24,10 @@ class GXPG:
 
     **Note:**
 
-    Typically a grid is accessed using the :class:`geosoft.gxapi.GXIMG` class, and a :class:`geosoft.gxapi.GXPG`
-    is obtained from the :class:`geosoft.gxapi.GXIMG` using the GetPG_IMG function.
-    Following operations on the :class:`geosoft.gxapi.GXPG`, it can be written back to
-    the :class:`geosoft.gxapi.GXIMG` using SetPG_IMG.
+    Typically a grid is accessed using the `GXIMG` class, and a `GXPG`
+    is obtained from the `GXIMG` using the `GXIMG.get_pg` function.
+    Following operations on the `GXPG`, it can be written back to
+    the `GXIMG` using `GXIMG.set_pg`.
     """
 
     def __enter__(self):
@@ -45,17 +45,17 @@ class GXPG:
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of :class:`geosoft.gxapi.GXPG`
+        A null (undefined) instance of `GXPG`
         
-        :returns: A null :class:`geosoft.gxapi.GXPG`
+        :returns: A null `GXPG`
         """
         return cls()
 
     def is_null(self):
         """
-        Check if the instance of :class:`geosoft.gxapi.GXPG` is null (undefined)`
+        Check if the instance of `GXPG` is null (undefined)`
         
-        :returns: True if this is a null (undefined) instance of :class:`geosoft.gxapi.GXPG`, False otherwise.
+        :returns: True if this is a null (undefined) instance of `GXPG`, False otherwise.
         """
         return self._wrapper.handle == 0
 
@@ -103,7 +103,7 @@ class GXPG:
     @classmethod
     def create_s(cls, p1):
         """
-        Create a 2D :class:`geosoft.gxapi.GXPG` from serialized source.
+        Create a 2D `GXPG` from serialized source.
 
         **Note:**
 
@@ -179,7 +179,7 @@ class GXPG:
 
     def get(self, p2, p3):
         """
-        Read a single value from a 2D :class:`geosoft.gxapi.GXPG`
+        Read a single value from a 2D `GXPG`
 
         **Note:**
 
@@ -223,11 +223,11 @@ class GXPG:
 
     def serial(self, p2):
         """
-        Serialize a 2D :class:`geosoft.gxapi.GXPG` to a :class:`geosoft.gxapi.GXBF`.
+        Serialize a 2D `GXPG` to a `GXBF`.
 
         **Note:**
 
-        For 3D pagers, use WriteBF_PG.
+        For 3D pagers, use `write_bf`.
         """
         self._wrapper.serial(p2._wrapper)
         
@@ -369,7 +369,7 @@ class GXPG:
 
     def read_bf(self, p2, p3, p4, p5, p6, p7):
         """
-        Read the contents of a 2D or 3D pager to from a :class:`geosoft.gxapi.GXBF`.
+        Read the contents of a 2D or 3D pager to from a `GXBF`.
         """
         self._wrapper.read_bf(p2._wrapper, p3, p4, p5, p6, p7)
         
@@ -379,7 +379,7 @@ class GXPG:
 
     def read_ra(self, p2, p3, p4, p5, p6, p7):
         """
-        Read the contents of a 2D or 3D pager to from an :class:`geosoft.gxapi.GXRA`.
+        Read the contents of a 2D or 3D pager to from an `GXRA`.
 
         **Note:**
 
@@ -393,7 +393,7 @@ class GXPG:
 
     def write_bf(self, p2, p3, p4, p5, p6, p7):
         """
-        Write the contents of a 2D or 3D pager to a :class:`geosoft.gxapi.GXBF`.
+        Write the contents of a 2D or 3D pager to a `GXBF`.
         """
         self._wrapper.write_bf(p2._wrapper, p3, p4, p5, p6, p7)
         
@@ -403,7 +403,7 @@ class GXPG:
 
     def write_bf_ex(self, p2, p3, p4, p5, p6, p7, p8):
         """
-        Write the contents of a 2D or 3D pager to a :class:`geosoft.gxapi.GXBF`.
+        Write the contents of a 2D or 3D pager to a `GXBF`.
         """
         self._wrapper.write_bf_ex(p2._wrapper, p3, p4, p5, p6, p7, p8)
         
@@ -413,7 +413,7 @@ class GXPG:
 
     def write_wa(self, p2, p3, p4, p5, p6, p7):
         """
-        Write the contents of a 2D or 3D pager to a :class:`geosoft.gxapi.GXWA`
+        Write the contents of a 2D or 3D pager to a `GXWA`
 
         **Note:**
 

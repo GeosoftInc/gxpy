@@ -18,11 +18,11 @@ class GXREG:
     """
     GXREG class.
 
-    The :class:`geosoft.gxapi.GXREG` class is used for storing and retrieving named
-    variables. Many classes contain :class:`geosoft.gxapi.GXREG` objects for storing
-    information particular to the class.  The :class:`geosoft.gxapi.GXMETA` class supersedes
-    the :class:`geosoft.gxapi.GXREG` class and is gradually replacing the use of the
-    :class:`geosoft.gxapi.GXREG` class in newer applications.
+    The `GXREG` class is used for storing and retrieving named
+    variables. Many classes contain `GXREG` objects for storing
+    information particular to the class.  The `GXMETA` class supersedes
+    the `GXREG` class and is gradually replacing the use of the
+    `GXREG` class in newer applications.
     """
 
     def __enter__(self):
@@ -40,17 +40,17 @@ class GXREG:
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of :class:`geosoft.gxapi.GXREG`
+        A null (undefined) instance of `GXREG`
         
-        :returns: A null :class:`geosoft.gxapi.GXREG`
+        :returns: A null `GXREG`
         """
         return cls()
 
     def is_null(self):
         """
-        Check if the instance of :class:`geosoft.gxapi.GXREG` is null (undefined)`
+        Check if the instance of `GXREG` is null (undefined)`
         
-        :returns: True if this is a null (undefined) instance of :class:`geosoft.gxapi.GXREG`, False otherwise.
+        :returns: True if this is a null (undefined) instance of `GXREG`, False otherwise.
         """
         return self._wrapper.handle == 0
 
@@ -64,7 +64,7 @@ class GXREG:
 
     def clear(self):
         """
-        Clears all the parameters in a :class:`geosoft.gxapi.GXREG` object
+        Clears all the parameters in a `GXREG` object
         """
         self._wrapper.clear()
         
@@ -84,7 +84,7 @@ class GXREG:
     @classmethod
     def create(cls, p1):
         """
-        Create a handle to a :class:`geosoft.gxapi.GXREG` object
+        Create a handle to a `GXREG` object
         """
         ret_val = gxapi_cy.WrapREG.create(GXContext._get_tls_geo(), p1)
         return GXREG(ret_val)
@@ -94,7 +94,7 @@ class GXREG:
     @classmethod
     def create_s(cls, p1):
         """
-        Create a handle to a :class:`geosoft.gxapi.GXREG` object from a :class:`geosoft.gxapi.GXBF`
+        Create a handle to a `GXREG` object from a `GXBF`
         """
         ret_val = gxapi_cy.WrapREG.create_s(GXContext._get_tls_geo(), p1._wrapper)
         return GXREG(ret_val)
@@ -106,7 +106,7 @@ class GXREG:
 
     def get(self, p2, p3):
         """
-        Gets a string for a specified parameter in the :class:`geosoft.gxapi.GXREG` object
+        Gets a string for a specified parameter in the `GXREG` object
         """
         p3.value = self._wrapper.get(p2.encode(), p3.value.encode())
         
@@ -116,11 +116,11 @@ class GXREG:
 
     def get_int(self, p2, p3):
         """
-        Gets an int for a specified parameter in the :class:`geosoft.gxapi.GXREG` object
+        Gets an int for a specified parameter in the `GXREG` object
 
         **Note:**
 
-        If parameter is not present in :class:`geosoft.gxapi.GXREG`, :attr:`geosoft.gxapi.iDUMMY` is returned.
+        If parameter is not present in `GXREG`, `iDUMMY` is returned.
         """
         p3.value = self._wrapper.get_int(p2.encode(), p3.value)
         
@@ -130,7 +130,7 @@ class GXREG:
 
     def get_one(self, p2, p3, p5):
         """
-        Gets n-th entry of the :class:`geosoft.gxapi.GXREG` object
+        Gets n-th entry of the `GXREG` object
         """
         p3.value, p5.value = self._wrapper.get_one(p2, p3.value.encode(), p5.value.encode())
         
@@ -140,11 +140,11 @@ class GXREG:
 
     def get_double(self, p2, p3):
         """
-        Gets an real for a specified parameter in the :class:`geosoft.gxapi.GXREG` object
+        Gets an real for a specified parameter in the `GXREG` object
 
         **Note:**
 
-        If parameter is not present in :class:`geosoft.gxapi.GXREG`, :attr:`geosoft.gxapi.rDUMMY` is returned.
+        If parameter is not present in `GXREG`, `rDUMMY` is returned.
         """
         p3.value = self._wrapper.get_double(p2.encode(), p3.value)
         
@@ -154,7 +154,7 @@ class GXREG:
 
     def entries(self):
         """
-        Get the number of parms in a :class:`geosoft.gxapi.GXREG` object
+        Get the number of parms in a `GXREG` object
         """
         ret_val = self._wrapper.entries()
         return ret_val
@@ -168,7 +168,7 @@ class GXREG:
 
         **Note:**
 
-        Items are loaded into the :class:`geosoft.gxapi.GXREG` in the format "GROUP.ITEM".
+        Items are loaded into the `GXREG` in the format "GROUP.ITEM".
         """
         self._wrapper.load_ini(p2.encode())
         
@@ -198,11 +198,11 @@ class GXREG:
 
     def save_ini(self, p2):
         """
-        Save a :class:`geosoft.gxapi.GXREG` to an INI file.
+        Save a `GXREG` to an INI file.
 
         **Note:**
 
-        Only :class:`geosoft.gxapi.GXREG` parameters in the form "GROUP.ITEM" are
+        Only `GXREG` parameters in the form "GROUP.ITEM" are
         dumped to the INI file, because they match the INI format
         which groups items under [GROUP] headings.
         Single-word items (without a separating period) are skipped.
@@ -215,7 +215,7 @@ class GXREG:
 
     def serial(self, p2):
         """
-        Serialize a :class:`geosoft.gxapi.GXREG` object into a file.
+        Serialize a `GXREG` object into a file.
         """
         self._wrapper.serial(p2._wrapper)
         
@@ -225,16 +225,16 @@ class GXREG:
 
     def set(self, p2, p3):
         """
-        Sets a string parameter in the :class:`geosoft.gxapi.GXREG` object
+        Sets a string parameter in the `GXREG` object
 
         **Note:**
 
         To remove a parameter completely, use one of the
         following:
         
-        SetInt_REG(Reg, sParam, :attr:`geosoft.gxapi.iDUMMY`);
+        `set_int`(Reg, sParam, `iDUMMY`);
         or
-        SetReal_REG(Reg, sParam, :attr:`geosoft.gxapi.rDUMMY`);
+        `set_double`(Reg, sParam, `rDUMMY`);
         """
         self._wrapper.set(p2.encode(), p3.encode())
         
@@ -244,7 +244,7 @@ class GXREG:
 
     def set_int(self, p2, p3):
         """
-        Sets an int for a specified parameter in the :class:`geosoft.gxapi.GXREG` object
+        Sets an int for a specified parameter in the `GXREG` object
         """
         self._wrapper.set_int(p2.encode(), p3)
         
@@ -254,7 +254,7 @@ class GXREG:
 
     def set_double(self, p2, p3):
         """
-        Sets an real for a specified parameter in the :class:`geosoft.gxapi.GXREG` object
+        Sets an real for a specified parameter in the `GXREG` object
         """
         self._wrapper.set_double(p2.encode(), p3)
         

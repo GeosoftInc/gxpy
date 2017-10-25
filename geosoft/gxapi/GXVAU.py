@@ -19,7 +19,7 @@ class GXVAU:
     GXVAU class.
 
     This is not a class. These are methods that work on
-    data stored in :class:`geosoft.gxapi.GXVA` objects
+    data stored in `GXVA` objects
     """
 
     def __enter__(self):
@@ -37,17 +37,17 @@ class GXVAU:
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of :class:`geosoft.gxapi.GXVAU`
+        A null (undefined) instance of `GXVAU`
         
-        :returns: A null :class:`geosoft.gxapi.GXVAU`
+        :returns: A null `GXVAU`
         """
         return cls()
 
     def is_null(self):
         """
-        Check if the instance of :class:`geosoft.gxapi.GXVAU` is null (undefined)`
+        Check if the instance of `GXVAU` is null (undefined)`
         
-        :returns: True if this is a null (undefined) instance of :class:`geosoft.gxapi.GXVAU`, False otherwise.
+        :returns: True if this is a null (undefined) instance of `GXVAU`, False otherwise.
         """
         return self._wrapper.handle == 0
 
@@ -61,13 +61,13 @@ class GXVAU:
     @classmethod
     def prune(cls, p1, p2, p3):
         """
-        Prune values from a :class:`geosoft.gxapi.GXVA` based on reference :class:`geosoft.gxapi.GXVA`
+        Prune values from a `GXVA` based on reference `GXVA`
 
         **Note:**
 
-        Pruning will shorten the :class:`geosoft.gxapi.GXVA` by removing values
+        Pruning will shorten the `GXVA` by removing values
         that are either dummy or non-dummy in the reference
-        :class:`geosoft.gxapi.GXVA`
+        `GXVA`
         """
         gxapi_cy.WrapVAU.prune(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3)
         

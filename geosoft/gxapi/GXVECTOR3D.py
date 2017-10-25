@@ -18,7 +18,7 @@ class GXVECTOR3D:
     """
     GXVECTOR3D class.
 
-    :class:`geosoft.gxapi.GXVECTOR3D` Display object.
+    `GXVECTOR3D` Display object.
     """
 
     def __enter__(self):
@@ -36,17 +36,17 @@ class GXVECTOR3D:
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of :class:`geosoft.gxapi.GXVECTOR3D`
+        A null (undefined) instance of `GXVECTOR3D`
         
-        :returns: A null :class:`geosoft.gxapi.GXVECTOR3D`
+        :returns: A null `GXVECTOR3D`
         """
         return cls()
 
     def is_null(self):
         """
-        Check if the instance of :class:`geosoft.gxapi.GXVECTOR3D` is null (undefined)`
+        Check if the instance of `GXVECTOR3D` is null (undefined)`
         
-        :returns: True if this is a null (undefined) instance of :class:`geosoft.gxapi.GXVECTOR3D`, False otherwise.
+        :returns: True if this is a null (undefined) instance of `GXVECTOR3D`, False otherwise.
         """
         return self._wrapper.handle == 0
 
@@ -62,7 +62,7 @@ class GXVECTOR3D:
 
     def get_itr(self, p2):
         """
-        Get the :class:`geosoft.gxapi.GXITR` of the :class:`geosoft.gxapi.GXVECTOR3D`
+        Get the `GXITR` of the `GXVECTOR3D`
         """
         self._wrapper.get_itr(p2._wrapper)
         
@@ -72,7 +72,7 @@ class GXVECTOR3D:
 
     def set_itr(self, p2):
         """
-        Set the :class:`geosoft.gxapi.GXITR` of the :class:`geosoft.gxapi.GXVECTOR3D`
+        Set the `GXITR` of the `GXVECTOR3D`
         """
         self._wrapper.set_itr(p2._wrapper)
         

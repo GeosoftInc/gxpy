@@ -19,7 +19,7 @@ class GXEMAPTEMPLATE:
     """
     GXEMAPTEMPLATE class.
 
-    The :class:`geosoft.gxapi.GXEMAPTEMPLATE` class provides access to a map template as displayed within
+    The `GXEMAPTEMPLATE` class provides access to a map template as displayed within
     Oasis montaj, but does not change data within the template itself.
     It performs functions such as setting the currently displayed area,
     or drawing "tracking" lines or boxes on the template (which are not
@@ -28,37 +28,37 @@ class GXEMAPTEMPLATE:
     **Note:**
 
     To obtain access to the map template itself, it is recommended practice
-    to begin with an :class:`geosoft.gxapi.GXEMAPTEMPLATE` object, and use the Lock function to
+    to begin with an `GXEMAPTEMPLATE` object, and use the Lock function to
     lock the underlying template to prevent external changes. The returned
-    :class:`geosoft.gxapi.GXMAPTEMPLATE` object may then be safely used to make changes to the template itself.
+    `GXMAPTEMPLATE` object may then be safely used to make changes to the template itself.
     
-    VIRTUAL :class:`geosoft.gxapi.GXEMAPTEMPLATE` SUPPORT
+    VIRTUAL `GXEMAPTEMPLATE` SUPPORT
     
     These methods are only available when running in an external application.
-    They allow the GX to open a map template and then create a Virtual :class:`geosoft.gxapi.GXEMAPTEMPLATE` from that
-    map template. The GX can then call MakeCurrent and set the current :class:`geosoft.gxapi.GXEMAPTEMPLATE` so
-    that code that follows sees this map template as the current :class:`geosoft.gxapi.GXMAPTEMPLATE`.
+    They allow the GX to open a map template and then create a Virtual `GXEMAPTEMPLATE` from that
+    map template. The GX can then call MakeCurrent and set the current `GXEMAPTEMPLATE` so
+    that code that follows sees this map template as the current `GXMAPTEMPLATE`.
     
     Supported methods on Virtual EMAPTEMPLATEs are:
     
-      Current_EMAPTEMPLATE
-      CurrentNoActivate_EMAPTEMPLATE
-      MakeCurrent_EMAPTEMPLATE
-      iHaveCurrent_EMAPTEMPLATE
-      CurrentIfExists_EMAPTEMPLATE
+      `current`
+      `current_no_activate`
+      `make_current`
+      `have_current`
+      `current_if_exists`
     
-      Lock_EMAPTEMPLATE
-      UnLock_EMAPTEMPLATE
+      `lock`
+      `un_lock`
     
-      IGetName_EMAPTEMPLATE
+      `get_name`
     
-      iLoaded_EMAPTEMPLATE
-      Load_EMAPTEMPLATE
-      LoadNoActivate_EMAPTEMPLATE
-      UnLoadVerify_EMAPTEMPLATE
-      UnLoad_EMAPTEMPLATE
+      `loaded`
+      `load`
+      `load_no_activate`
+      `un_load_verify`
+      `un_load`
     
-      CreateVirtual_EMAPTEMPLATE
+      `create_virtual`
     """
 
     def __enter__(self):
@@ -76,17 +76,17 @@ class GXEMAPTEMPLATE:
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of :class:`geosoft.gxapi.GXEMAPTEMPLATE`
+        A null (undefined) instance of `GXEMAPTEMPLATE`
         
-        :returns: A null :class:`geosoft.gxapi.GXEMAPTEMPLATE`
+        :returns: A null `GXEMAPTEMPLATE`
         """
         return cls()
 
     def is_null(self):
         """
-        Check if the instance of :class:`geosoft.gxapi.GXEMAPTEMPLATE` is null (undefined)`
+        Check if the instance of `GXEMAPTEMPLATE` is null (undefined)`
         
-        :returns: True if this is a null (undefined) instance of :class:`geosoft.gxapi.GXEMAPTEMPLATE`, False otherwise.
+        :returns: True if this is a null (undefined) instance of `GXEMAPTEMPLATE`, False otherwise.
         """
         return self._wrapper.handle == 0
 
@@ -138,7 +138,7 @@ class GXEMAPTEMPLATE:
 
         **Note:**
 
-        This function acts just like Current_EMAPTEMPLATE except that the document is not activated (brought to foreground) and no
+        This function acts just like `current` except that the document is not activated (brought to foreground) and no
         guarantee is given about which document is currently active.
         """
         ret_val = gxapi_cy.WrapEMAPTEMPLATE.current_no_activate(GXContext._get_tls_geo())
@@ -161,7 +161,7 @@ class GXEMAPTEMPLATE:
     @classmethod
     def get_map_templates_lst(cls, p1, p2):
         """
-        Load the file names of open maps into a :class:`geosoft.gxapi.GXLST`.
+        Load the file names of open maps into a `GXLST`.
         """
         ret_val = gxapi_cy.WrapEMAPTEMPLATE.get_map_templates_lst(GXContext._get_tls_geo(), p1._wrapper, p2)
         return ret_val
@@ -171,7 +171,7 @@ class GXEMAPTEMPLATE:
 
     def get_name(self, p2):
         """
-        Get the name of the map object of this :class:`geosoft.gxapi.GXEMAPTEMPLATE`.
+        Get the name of the map object of this `GXEMAPTEMPLATE`.
         """
         p2.value = self._wrapper.get_name(p2.value.encode())
         
@@ -275,7 +275,7 @@ class GXEMAPTEMPLATE:
 
         **Note:**
 
-        This function acts just like Load_EMAPTEMPLATE except that the document(s) is not activated (brought to foreground) and no
+        This function acts just like `load` except that the document(s) is not activated (brought to foreground) and no
         guarantee is given about which document is currently active.
         """
         ret_val = gxapi_cy.WrapEMAPTEMPLATE.load_no_activate(GXContext._get_tls_geo(), p1.encode())
@@ -296,7 +296,7 @@ class GXEMAPTEMPLATE:
 
     def make_current(self):
         """
-        Makes this :class:`geosoft.gxapi.GXEMAPTEMPLATE` object the current active object to the user.
+        Makes this `GXEMAPTEMPLATE` object the current active object to the user.
         """
         self._wrapper.make_current()
         
@@ -311,7 +311,7 @@ class GXEMAPTEMPLATE:
         **Note:**
 
         If the map template is not loaded, nothing happens.
-        Same as UnLoadVerify_EMAPTEMPLATE with FALSE to prompt save.
+        Same as `un_load_verify` with FALSE to prompt save.
         """
         gxapi_cy.WrapEMAPTEMPLATE.un_load(GXContext._get_tls_geo(), p1.encode())
         
@@ -365,7 +365,7 @@ class GXEMAPTEMPLATE:
         **Note:**
 
         The coordinates are returned in the current template units
-        (See GetUnits and SetUnits in :class:`geosoft.gxapi.GXMAPTEMPLATE`)
+        (See GetUnits and SetUnits in `GXMAPTEMPLATE`)
         """
         ret_val, p3.value, p4.value, p5.value, p6.value = self._wrapper.get_box(p2.encode(), p3.value, p4.value, p5.value, p6.value)
         return ret_val
@@ -380,7 +380,7 @@ class GXEMAPTEMPLATE:
         **Note:**
 
         The coordinates are returned in the current template units
-        (See GetUnits and SetUnits in :class:`geosoft.gxapi.GXMAPTEMPLATE`)
+        (See GetUnits and SetUnits in `GXMAPTEMPLATE`)
         """
         ret_val, p3.value, p4.value, p5.value, p6.value = self._wrapper.get_line(p2.encode(), p3.value, p4.value, p5.value, p6.value)
         return ret_val
@@ -395,7 +395,7 @@ class GXEMAPTEMPLATE:
         **Note:**
 
         The coordinates are returned in the current template units
-        (See GetUnits and SetUnits in :class:`geosoft.gxapi.GXMAPTEMPLATE`)
+        (See GetUnits and SetUnits in `GXMAPTEMPLATE`)
         """
         ret_val, p3.value, p4.value = self._wrapper.get_point(p2.encode(), p3.value, p4.value)
         return ret_val
@@ -410,7 +410,7 @@ class GXEMAPTEMPLATE:
         **Note:**
 
         The coordinates are returned in the current template units
-        (See GetUnits and SetUnits in :class:`geosoft.gxapi.GXMAPTEMPLATE`)
+        (See GetUnits and SetUnits in `GXMAPTEMPLATE`)
         """
         ret_val, p3.value, p4.value, p5.value, p6.value = self._wrapper.get_rect(p2.encode(), p3.value, p4.value, p5.value, p6.value)
         return ret_val
@@ -438,7 +438,7 @@ class GXEMAPTEMPLATE:
 
         **Note:**
 
-        If nothing is selected the string will be empty and the function will return :attr:`geosoft.gxapi.GS_FALSE`;
+        If nothing is selected the string will be empty and the function will return `GS_FALSE`;
         """
         ret_val, p2.value = self._wrapper.get_item_selection(p2.value.encode())
         return ret_val
@@ -471,7 +471,7 @@ class GXEMAPTEMPLATE:
         **Note:**
 
         The coordinates are based on the current template units
-        (See GetUnits and SetUnits in :class:`geosoft.gxapi.GXMAPTEMPLATE`)
+        (See GetUnits and SetUnits in `GXMAPTEMPLATE`)
         """
         p2.value, p3.value, p4.value, p5.value = self._wrapper.get_display_area(p2.value, p3.value, p4.value, p5.value)
         
@@ -511,7 +511,7 @@ class GXEMAPTEMPLATE:
         **Note:**
 
         The coordinates are based on the current template units
-        (See GetUnits and SetUnits in :class:`geosoft.gxapi.GXMAPTEMPLATE`)
+        (See GetUnits and SetUnits in `GXMAPTEMPLATE`)
         """
         self._wrapper.set_display_area(p2, p3, p4, p5)
         
@@ -550,7 +550,7 @@ class GXEMAPTEMPLATE:
     @classmethod
     def create_virtual(cls, p1):
         """
-        Makes this :class:`geosoft.gxapi.GXEMAPTEMPLATE` object the current active object to the user.
+        Makes this `GXEMAPTEMPLATE` object the current active object to the user.
         """
         ret_val = gxapi_cy.WrapEMAPTEMPLATE.create_virtual(GXContext._get_tls_geo(), p1.encode())
         return GXEMAPTEMPLATE(ret_val)

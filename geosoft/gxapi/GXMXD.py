@@ -18,8 +18,8 @@ class GXMXD:
     """
     GXMXD class.
 
-    A :class:`geosoft.gxapi.GXMXD` wraps and provides manipulation and usage for
-    the content of an ArcGIS :class:`geosoft.gxapi.GXMXD` file.
+    A `GXMXD` wraps and provides manipulation and usage for
+    the content of an ArcGIS `GXMXD` file.
     """
 
     def __enter__(self):
@@ -37,17 +37,17 @@ class GXMXD:
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of :class:`geosoft.gxapi.GXMXD`
+        A null (undefined) instance of `GXMXD`
         
-        :returns: A null :class:`geosoft.gxapi.GXMXD`
+        :returns: A null `GXMXD`
         """
         return cls()
 
     def is_null(self):
         """
-        Check if the instance of :class:`geosoft.gxapi.GXMXD` is null (undefined)`
+        Check if the instance of `GXMXD` is null (undefined)`
         
-        :returns: True if this is a null (undefined) instance of :class:`geosoft.gxapi.GXMXD`, False otherwise.
+        :returns: True if this is a null (undefined) instance of `GXMXD`, False otherwise.
         """
         return self._wrapper.handle == 0
 
@@ -61,7 +61,7 @@ class GXMXD:
     @classmethod
     def create_metadata(cls, p1):
         """
-        Create metadata for this brand new :class:`geosoft.gxapi.GXMXD` (we are the creator)
+        Create metadata for this brand new `GXMXD` (we are the creator)
         """
         gxapi_cy.WrapMXD.create_metadata(GXContext._get_tls_geo(), p1.encode())
         
@@ -71,7 +71,7 @@ class GXMXD:
     @classmethod
     def convert_to_map(cls, p1, p2):
         """
-        Create Geosoft map from ArcGIS :class:`geosoft.gxapi.GXMXD`
+        Create Geosoft map from ArcGIS `GXMXD`
         """
         gxapi_cy.WrapMXD.convert_to_map(GXContext._get_tls_geo(), p1.encode(), p2.encode())
         
@@ -81,7 +81,7 @@ class GXMXD:
     @classmethod
     def sync(cls, p1):
         """
-        Syncronize any Metadata for this :class:`geosoft.gxapi.GXMXD`
+        Syncronize any Metadata for this `GXMXD`
         """
         gxapi_cy.WrapMXD.sync(GXContext._get_tls_geo(), p1.encode())
         

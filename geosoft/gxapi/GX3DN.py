@@ -21,7 +21,7 @@ class GX3DN:
     This class manages the rendering of a 3D view. It allows
     the positioning of the camera, specification of the zoom
     as well as some rendering controls for the axis. It is
-    directly related to the :class:`geosoft.gxapi.GXMVIEW` class.
+    directly related to the `GXMVIEW` class.
     """
 
     def __enter__(self):
@@ -39,17 +39,17 @@ class GX3DN:
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of :class:`geosoft.gxapi.GX3DN`
+        A null (undefined) instance of `GX3DN`
         
-        :returns: A null :class:`geosoft.gxapi.GX3DN`
+        :returns: A null `GX3DN`
         """
         return cls()
 
     def is_null(self):
         """
-        Check if the instance of :class:`geosoft.gxapi.GX3DN` is null (undefined)`
+        Check if the instance of `GX3DN` is null (undefined)`
         
-        :returns: True if this is a null (undefined) instance of :class:`geosoft.gxapi.GX3DN`, False otherwise.
+        :returns: True if this is a null (undefined) instance of `GX3DN`, False otherwise.
         """
         return self._wrapper.handle == 0
 
@@ -63,7 +63,7 @@ class GX3DN:
 
     def copy(self, p2):
         """
-        Copy one :class:`geosoft.gxapi.GX3DN` object to another.
+        Copy one `GX3DN` object to another.
         """
         self._wrapper.copy(p2._wrapper)
         
@@ -73,7 +73,7 @@ class GX3DN:
     @classmethod
     def create(cls):
         """
-        Creates a :class:`geosoft.gxapi.GX3DN`.
+        Creates a `GX3DN`.
         """
         ret_val = gxapi_cy.Wrap3DN.create(GXContext._get_tls_geo())
         return GX3DN(ret_val)

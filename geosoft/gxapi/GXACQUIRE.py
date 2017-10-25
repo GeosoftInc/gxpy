@@ -37,17 +37,17 @@ class GXACQUIRE:
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of :class:`geosoft.gxapi.GXACQUIRE`
+        A null (undefined) instance of `GXACQUIRE`
         
-        :returns: A null :class:`geosoft.gxapi.GXACQUIRE`
+        :returns: A null `GXACQUIRE`
         """
         return cls()
 
     def is_null(self):
         """
-        Check if the instance of :class:`geosoft.gxapi.GXACQUIRE` is null (undefined)`
+        Check if the instance of `GXACQUIRE` is null (undefined)`
         
-        :returns: True if this is a null (undefined) instance of :class:`geosoft.gxapi.GXACQUIRE`, False otherwise.
+        :returns: True if this is a null (undefined) instance of `GXACQUIRE`, False otherwise.
         """
         return self._wrapper.handle == 0
 

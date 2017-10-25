@@ -18,13 +18,13 @@ class GXSBF:
     """
     GXSBF class.
 
-    The :class:`geosoft.gxapi.GXSBF` class provides a means of storing data in a
+    The `GXSBF` class provides a means of storing data in a
     file-type directory structure within a workspace, database
-    or map. Each of these three objects contains its own :class:`geosoft.gxapi.GXSBF` object,
-    which may be accessed using the hGetSYS_SBF, hGetDB_SBF and
-    hGetMAP_SBF functions. To access data in a file, or create a
-    new file in the :class:`geosoft.gxapi.GXSBF` object, call the CreatSBF_BF function (see :class:`geosoft.gxapi.GXBF`),
-    which will return a :class:`geosoft.gxapi.GXBF` object to use.
+    or map. Each of these three objects contains its own `GXSBF` object,
+    which may be accessed using the `h_get_sys`, `h_get_db` and
+    `h_get_map` functions. To access data in a file, or create a
+    new file in the `GXSBF` object, call the CreatSBF_BF function (see `GXBF`),
+    which will return a `GXBF` object to use.
     """
 
     def __enter__(self):
@@ -42,17 +42,17 @@ class GXSBF:
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of :class:`geosoft.gxapi.GXSBF`
+        A null (undefined) instance of `GXSBF`
         
-        :returns: A null :class:`geosoft.gxapi.GXSBF`
+        :returns: A null `GXSBF`
         """
         return cls()
 
     def is_null(self):
         """
-        Check if the instance of :class:`geosoft.gxapi.GXSBF` is null (undefined)`
+        Check if the instance of `GXSBF` is null (undefined)`
         
-        :returns: True if this is a null (undefined) instance of :class:`geosoft.gxapi.GXSBF`, False otherwise.
+        :returns: True if this is a null (undefined) instance of `GXSBF`, False otherwise.
         """
         return self._wrapper.handle == 0
 
@@ -66,7 +66,7 @@ class GXSBF:
 
     def create(self, p2, p3):
         """
-        Create a child :class:`geosoft.gxapi.GXSBF` object inside an :class:`geosoft.gxapi.GXSBF`.
+        Create a child `GXSBF` object inside an `GXSBF`.
         """
         ret_val = self._wrapper.create(p2.encode(), p3)
         return GXSBF(ret_val)
@@ -76,14 +76,14 @@ class GXSBF:
 
     def create_obj_list(self, p2, p3):
         """
-        Fills an :class:`geosoft.gxapi.GXLST` with embedded storage names of an :class:`geosoft.gxapi.GXSBF`.
+        Fills an `GXLST` with embedded storage names of an `GXSBF`.
 
         **Note:**
 
-        Function will populate an :class:`geosoft.gxapi.GXLST` object with embedded files (:attr:`geosoft.gxapi.SBF_TYPE_FILES`),
-        directories (:attr:`geosoft.gxapi.SBF_TYPE_DIRS`), or both (pass :attr:`geosoft.gxapi.SBF_TYPE_BOTH`) in an :class:`geosoft.gxapi.GXSBF`.
+        Function will populate an `GXLST` object with embedded files (`SBF_TYPE_FILES`),
+        directories (`SBF_TYPE_DIRS`), or both (pass `SBF_TYPE_BOTH`) in an `GXSBF`.
         Along with the Name of the file or directory, a constant "dir" or "file" string is written
-        to the :class:`geosoft.gxapi.GXLST` also.
+        to the `GXLST` also.
         """
         self._wrapper.create_obj_list(p2._wrapper, p3)
         

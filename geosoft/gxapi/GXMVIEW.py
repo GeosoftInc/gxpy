@@ -29,7 +29,7 @@ class GXMVIEW:
     """
     GXMVIEW class.
 
-    A view (:class:`geosoft.gxapi.GXMVIEW` class) has a 2-D/3-D translation matrix, a map
+    A view (`GXMVIEW` class) has a 2-D/3-D translation matrix, a map
     projection and a clip region.  A view contains any number of
     "groups", and each "group" contains one or more graphics
     elements (entities).  Different types of groups will contain
@@ -37,15 +37,15 @@ class GXMVIEW:
 
     **Note:**
 
-    :class:`geosoft.gxapi.GXCSYMB` groups (color symbols) contain data and rules for
-    presenting the data as color symbols.  See ColSymbol_MVIEW
-    and the :class:`geosoft.gxapi.GXCSYMB` class.
+    `GXCSYMB` groups (color symbols) contain data and rules for
+    presenting the data as color symbols.  See `col_symbol`
+    and the `GXCSYMB` class.
     
-    :class:`geosoft.gxapi.GXAGG` groups (aggregates) contain images.  See Aggregate_MVIEW
-    and the :class:`geosoft.gxapi.GXAGG` class.
+    `GXAGG` groups (aggregates) contain images.  See `aggregate`
+    and the `GXAGG` class.
     
     Standard groups contain symbols, lines, polylines, and polygons.
-    See StartGroup_MVIEW.
+    See `start_group`.
     """
 
     def __enter__(self):
@@ -63,17 +63,17 @@ class GXMVIEW:
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of :class:`geosoft.gxapi.GXMVIEW`
+        A null (undefined) instance of `GXMVIEW`
         
-        :returns: A null :class:`geosoft.gxapi.GXMVIEW`
+        :returns: A null `GXMVIEW`
         """
         return cls()
 
     def is_null(self):
         """
-        Check if the instance of :class:`geosoft.gxapi.GXMVIEW` is null (undefined)`
+        Check if the instance of `GXMVIEW` is null (undefined)`
         
-        :returns: True if this is a null (undefined) instance of :class:`geosoft.gxapi.GXMVIEW`, False otherwise.
+        :returns: True if this is a null (undefined) instance of `GXMVIEW`, False otherwise.
         """
         return self._wrapper.handle == 0
 
@@ -173,7 +173,7 @@ class GXMVIEW:
     @classmethod
     def font_weight_lst(cls, p1):
         """
-        Fill a :class:`geosoft.gxapi.GXLST` with the different font weights.
+        Fill a `GXLST` with the different font weights.
         """
         gxapi_cy.WrapMVIEW.font_weight_lst(GXContext._get_tls_geo(), p1._wrapper)
         
@@ -183,12 +183,12 @@ class GXMVIEW:
 
     def get_agg_file_names(self, p2, p3):
         """
-        Get the names of grid files stored in an :class:`geosoft.gxapi.GXAGG`.
+        Get the names of grid files stored in an `GXAGG`.
 
         **Note:**
 
-        The group must be an :class:`geosoft.gxapi.GXAGG` group. Check this using
-        iIsGroup_MVIEW(View, sGroup, :attr:`geosoft.gxapi.MVIEW_IS_AGG`).
+        The group must be an `GXAGG` group. Check this using
+        `is_group`(View, sGroup, `MVIEW_IS_AGG`).
         """
         self._wrapper.get_agg_file_names(p2.encode(), p3._wrapper)
         
@@ -214,7 +214,7 @@ class GXMVIEW:
 
         Area will be 0 if error occured (does not fail).
         This will return the bounding rectangle as if the text was placed at 0,0 and adjusted according to
-        the current text alignment and angle set for the view. Also see notes for TextSize_MVIEW.
+        the current text alignment and angle set for the view. Also see notes for `text_size`.
         """
         p3.value, p4.value, p5.value, p6.value = self._wrapper.measure_text(p2.encode(), p3.value, p4.value, p5.value, p6.value)
         
@@ -263,7 +263,7 @@ class GXMVIEW:
 
     def set_meta(self, p2, p3, p4):
         """
-        Update the :class:`geosoft.gxapi.GXMETA` in this group with the new meta object.
+        Update the `GXMETA` in this group with the new meta object.
         """
         self._wrapper.set_meta(p2.encode(), p3._wrapper, p4.encode())
         
@@ -287,7 +287,7 @@ class GXMVIEW:
 
     def update_met_afrom_group(self, p2, p3):
         """
-        Fill the :class:`geosoft.gxapi.GXMETA` with group dataset information
+        Fill the `GXMETA` with group dataset information
         """
         self._wrapper.update_met_afrom_group(p2.encode(), p3._wrapper)
         
@@ -405,11 +405,11 @@ class GXMVIEW:
 
         Section views are recognized because their projection contains one of the following orientations:
         
-        :attr:`geosoft.gxapi.IPJ_ORIENT_SECTION` - Target-type sections with Z projection horizontally
-        :attr:`geosoft.gxapi.IPJ_ORIENT_SECTION_NORMAL` - Like :attr:`geosoft.gxapi.IPJ_ORIENT_SECTION`, but Z projects
+        `IPJ_ORIENT_SECTION` - Target-type sections with Z projection horizontally
+        `IPJ_ORIENT_SECTION_NORMAL` - Like `IPJ_ORIENT_SECTION`, but Z projects
         perpendicular to the secton plane.
-        :attr:`geosoft.gxapi.IPJ_ORIENT_SECTION_CROOKED` - Crooked sections
-        :attr:`geosoft.gxapi.IPJ_ORIENT_3D` - Some Sections extracted from a voxel - e.g. VoxelToGrids,
+        `IPJ_ORIENT_SECTION_CROOKED` - Crooked sections
+        `IPJ_ORIENT_3D` - Some Sections extracted from a voxel - e.g. VoxelToGrids,
         as the voxel can have any orientation in 3D.
         """
         ret_val = self._wrapper.is_section()
@@ -427,7 +427,7 @@ class GXMVIEW:
         The group names are placed in the list names, group
         numbers are placed in the list values.
         
-        Groups are added to the end of the :class:`geosoft.gxapi.GXLST`.
+        Groups are added to the end of the `GXLST`.
         """
         self._wrapper.list_plane_groups(p2, p3._wrapper)
         
@@ -444,7 +444,7 @@ class GXMVIEW:
         The plane names are placed in the list names, plane
         numbers are placed in the list values.
         
-        Planes are added to the end of the :class:`geosoft.gxapi.GXLST`.
+        Planes are added to the end of the `GXLST`.
         """
         self._wrapper.list_planes(p2._wrapper)
         
@@ -501,11 +501,11 @@ class GXMVIEW:
 
     def set_h_3dn(self, p2):
         """
-        Set the :class:`geosoft.gxapi.GX3DN` object for this view
+        Set the `GX3DN` object for this view
 
         **Note:**
 
-        To make the view a 2D view, set a :class:`geosoft.gxapi.GX3DN` of NULL.
+        To make the view a 2D view, set a `GX3DN` of NULL.
         """
         self._wrapper.set_h_3dn(p2._wrapper)
         
@@ -515,7 +515,7 @@ class GXMVIEW:
 
     def get_3d_point_of_view(self, p2, p3, p4, p5, p6, p7):
         """
-        Get 3D point of view (values are will be :attr:`geosoft.gxapi.rDUMMY` if view for 2D views)
+        Get 3D point of view (values are will be `rDUMMY` if view for 2D views)
         """
         p2.value, p3.value, p4.value, p5.value, p6.value, p7.value = self._wrapper.get_3d_point_of_view(p2.value, p3.value, p4.value, p5.value, p6.value, p7.value)
         
@@ -639,7 +639,7 @@ class GXMVIEW:
         **Note:**
 
         The polygon will be added to the current clip region.
-        The :class:`geosoft.gxapi.GXVV`'s cannot have any dummy elements.
+        The `GXVV`'s cannot have any dummy elements.
         """
         self._wrapper.clip_poly_ex(p2._wrapper, p3._wrapper, p4, p5)
         
@@ -698,7 +698,7 @@ class GXMVIEW:
         **Note:**
 
         The polygon will be added to the current clip region.
-        The :class:`geosoft.gxapi.GXVV`'s cannot have any dummy elements.
+        The `GXVV`'s cannot have any dummy elements.
         """
         self._wrapper.clip_poly(p2._wrapper, p3._wrapper, p4)
         
@@ -722,7 +722,7 @@ class GXMVIEW:
 
     def delete_ext_clip_ply(self, p2):
         """
-        Deletes an extended clip :class:`geosoft.gxapi.GXPLY` object used by this view.
+        Deletes an extended clip `GXPLY` object used by this view.
         """
         self._wrapper.delete_ext_clip_ply(p2)
         
@@ -732,7 +732,7 @@ class GXMVIEW:
 
     def ext_clip_ply_list(self, p2):
         """
-        Get the names of existing extended clip :class:`geosoft.gxapi.GXPLY` objects in this view as list.
+        Get the names of existing extended clip `GXPLY` objects in this view as list.
         """
         self._wrapper.ext_clip_ply_list(p2._wrapper)
         
@@ -746,10 +746,10 @@ class GXMVIEW:
 
         **Note:**
 
-        The returned :class:`geosoft.gxapi.GXPLY` is recast into the User projection.
+        The returned `GXPLY` is recast into the User projection.
         For oriented views (especially sections), use
-        GetPLY_MVIEW, which returns the Clip :class:`geosoft.gxapi.GXPLY` in the view's native
-        projection (e.g. the one set using SetIPJ_MVIEW).
+        `get_ply`, which returns the Clip `GXPLY` in the view's native
+        projection (e.g. the one set using `set_ipj`).
         """
         self._wrapper.get_clip_ply(p2._wrapper)
         
@@ -759,7 +759,7 @@ class GXMVIEW:
 
     def get_ext_clip_ply(self, p2, p3):
         """
-        Get an extended clip :class:`geosoft.gxapi.GXPLY` object used by this view.
+        Get an extended clip `GXPLY` object used by this view.
         """
         self._wrapper.get_ext_clip_ply(p2, p3._wrapper)
         
@@ -808,7 +808,7 @@ class GXMVIEW:
 
     def get_name_ext_clip_ply(self, p2, p3):
         """
-        Get the name of the extended clip :class:`geosoft.gxapi.GXPLY` object in this view.
+        Get the name of the extended clip `GXPLY` object in this view.
         """
         p3.value = self._wrapper.get_name_ext_clip_ply(p2, p3.value.encode())
         
@@ -818,7 +818,7 @@ class GXMVIEW:
 
     def num_ext_clip_ply(self):
         """
-        Get the number of extended clip :class:`geosoft.gxapi.GXPLY` objects in this view.
+        Get the number of extended clip `GXPLY` objects in this view.
         """
         ret_val = self._wrapper.num_ext_clip_ply()
         return ret_val
@@ -828,7 +828,7 @@ class GXMVIEW:
 
     def set_ext_clip_ply(self, p2, p3, p4):
         """
-        Set an extended clip :class:`geosoft.gxapi.GXPLY` object used by this view.
+        Set an extended clip `GXPLY` object used by this view.
         """
         ret_val = self._wrapper.set_ext_clip_ply(p2, p3.encode(), p4._wrapper)
         return ret_val
@@ -838,7 +838,7 @@ class GXMVIEW:
 
     def set_clip_ply(self, p2):
         """
-        Set clipping region to a :class:`geosoft.gxapi.GXPLY`
+        Set clipping region to a `GXPLY`
         """
         self._wrapper.set_clip_ply(p2._wrapper)
         
@@ -867,6 +867,10 @@ class GXMVIEW:
         **Note:**
 
         Color component intensities will be in the range 0-255.
+
+        .. seealso::
+
+            `color`
         """
         p2.value, p3.value, p4.value = gxapi_cy.WrapMVIEW.color2_rgb(GXContext._get_tls_geo(), p1, p2.value, p3.value, p4.value)
         
@@ -880,7 +884,7 @@ class GXMVIEW:
 
         **Note:**
 
-        See iColor_MVIEW.
+        See `color`.
         """
         p2.value = gxapi_cy.WrapMVIEW.color_descr(GXContext._get_tls_geo(), p1, p2.value.encode())
         
@@ -906,6 +910,10 @@ class GXMVIEW:
         For example "R", "R127G22", "H255S127V32"
         
         Characters are not case sensitive.
+
+        .. seealso::
+
+            iColorXXX_MVIEW macros
         """
         ret_val = gxapi_cy.WrapMVIEW.color(GXContext._get_tls_geo(), p1.encode())
         return ret_val
@@ -920,6 +928,10 @@ class GXMVIEW:
         **Note:**
 
         Color component intensities must be in the range 0-255.
+
+        .. seealso::
+
+            `color`
         """
         ret_val = gxapi_cy.WrapMVIEW.color_cmy(GXContext._get_tls_geo(), p1, p2, p3)
         return ret_val
@@ -934,6 +946,10 @@ class GXMVIEW:
         **Note:**
 
         Color component intensities must be in the range 0-255.
+
+        .. seealso::
+
+            `color`
         """
         ret_val = gxapi_cy.WrapMVIEW.color_hsv(GXContext._get_tls_geo(), p1, p2, p3)
         return ret_val
@@ -948,6 +964,10 @@ class GXMVIEW:
         **Note:**
 
         Color component intensities must be in the range 0-255.
+
+        .. seealso::
+
+            `color`
         """
         ret_val = gxapi_cy.WrapMVIEW.color_rgb(GXContext._get_tls_geo(), p1, p2, p3)
         return ret_val
@@ -973,9 +993,9 @@ class GXMVIEW:
         by this call.  Use the Group clipping functions
         instead.
         
-        It is highly recommended that you use the GroupClipMode_MVIEW
+        It is highly recommended that you use the `group_clip_mode`
         function to control clipping on a group-by-group basis, instead
-        of using ClipMode_MVIEW when inside a group, as it is impossible
+        of using `clip_mode` when inside a group, as it is impossible
         to determine the  true visible extents of a group. In such cases, the
         "zoom to full map extents" command may give incorrect results.
         """
@@ -1065,7 +1085,7 @@ class GXMVIEW:
         The default value is 0.0.
         Setting an angle of -999 inititates the random angle
         feature, and each pattern tile is rotated to a different
-        angle. Using this along with PatStyle(View, :attr:`geosoft.gxapi.MVIEW_TILE_RANDOM`)
+        angle. Using this along with PatStyle(View, `MVIEW_TILE_RANDOM`)
         can give a "hand-drawn" effect to geological fills.
         
         See the IMPORTANT note for sPatNumber_MVIEW().
@@ -1104,7 +1124,7 @@ class GXMVIEW:
         **Note:**
 
         Pattern 0 is solid fill.(default)
-        Set the pattern color using FillColor_MVIEW.
+        Set the pattern color using `fill_color`.
         
         Patterns are selected by ordinal value (pattern number)
         from those defined in default.pat.  If default.pat does
@@ -1148,7 +1168,7 @@ class GXMVIEW:
         **Note:**
 
         Normally, the unit cell is duplicated across the fill area
-        like floor tiles (:attr:`geosoft.gxapi.MVIEW_TILE_RECTANGULAR`).
+        like floor tiles (`MVIEW_TILE_RECTANGULAR`).
         DIAGONAL tiling rotates the tiling positions (but not the tiles)
         by 45 degrees.
         TRIANGULAR tiling
@@ -1223,7 +1243,7 @@ class GXMVIEW:
         specified in the [MONTAJ] section of GEOSOFT.INI
         will be used.
         
-        See TextFont_MVIEW for the font name syntax.
+        See `text_font` for the font name syntax.
         """
         self._wrapper.symb_font(p2.encode(), p3, p4, p5)
         
@@ -1241,8 +1261,8 @@ class GXMVIEW:
         code point. GFN fonts wil produce valid symbols depending on the font for 0x01-0x7f and the degree,
         plus-minus and diameter symbol(latin small letter o with stroke) for 0xB0, 0xB1 and 0xF8 respectively.
         
-        It is possible to check if a character is valid using iIsValidUTF16Char_UNC. The high 16-bits are reserved
-        for future use. Also see: iValidSymbol_UNC and ValidateSymbols_UNC.
+        It is possible to check if a character is valid using `GXUNC.is_valid_utf16_char`. The high 16-bits are reserved
+        for future use. Also see: `GXUNC.valid_symbol` and `GXUNC.validate_symbols`.
         """
         self._wrapper.symb_number(p2)
         
@@ -1442,7 +1462,7 @@ class GXMVIEW:
 
         **Note:**
 
-        You pass a :class:`geosoft.gxapi.GXVV` with polygon sizes and 2 point vvs.
+        You pass a `GXVV` with polygon sizes and 2 point vvs.
         """
         self._wrapper.complex_polygon(p2._wrapper, p3._wrapper, p4._wrapper)
         
@@ -1472,7 +1492,7 @@ class GXMVIEW:
 
     def line_vv(self, p2):
         """
-        Draw line segments stored in a GS_D2LINE :class:`geosoft.gxapi.GXVV`.
+        Draw line segments stored in a GS_D2LINE `GXVV`.
         """
         self._wrapper.line_vv(p2._wrapper)
         
@@ -1492,7 +1512,7 @@ class GXMVIEW:
 
     def polygon_ply(self, p2):
         """
-        Draw a complex polygon from :class:`geosoft.gxapi.GXPLY`.
+        Draw a complex polygon from `GXPLY`.
         """
         self._wrapper.polygon_ply(p2._wrapper)
         
@@ -1506,8 +1526,8 @@ class GXMVIEW:
 
         **Note:**
 
-        Dummies in X and/or Y :class:`geosoft.gxapi.GXVV` are deleted and it results
-        in 'solid' line. Using PolyLineDm_MVIEW (below) function
+        Dummies in X and/or Y `GXVV` are deleted and it results
+        in 'solid' line. Using `poly_line_dm` (below) function
         if gaps from dummies are to be kept.
         """
         self._wrapper.poly_line(p2, p3._wrapper, p4._wrapper)
@@ -1528,13 +1548,17 @@ class GXMVIEW:
 
     def poly_wrap(self, p2, p3):
         """
-        Draw wrapped polylines from X and Y :class:`geosoft.gxapi.GXVV`'s.
+        Draw wrapped polylines from X and Y `GXVV`'s.
 
         **Note:**
 
         Convert a given VVy into a wrapped VVy using
         the current view window as the wrap region.
         Then draw polylines from it.
+
+        .. seealso::
+
+            `poly_line`
         """
         self._wrapper.poly_wrap(p2._wrapper, p3._wrapper)
         
@@ -1594,7 +1618,7 @@ class GXMVIEW:
 
     def symbols_itr(self, p2, p3, p4, p5):
         """
-        Plot symbols using an :class:`geosoft.gxapi.GXITR`
+        Plot symbols using an `GXITR`
         """
         self._wrapper.symbols_itr(p2.encode(), p3._wrapper, p4._wrapper, p5._wrapper)
         
@@ -1632,7 +1656,7 @@ class GXMVIEW:
 
         **Note:**
 
-        This method returns a cached object owned by the :class:`geosoft.gxapi.GXMVIEW` and will be destroyed automatically when the :class:`geosoft.gxapi.GXMVIEW` is disposed
+        This method returns a cached object owned by the `GXMVIEW` and will be destroyed automatically when the `GXMVIEW` is disposed
         """
         ret_val = self._wrapper.get_aggregate(p2)
         return GXAGG(ret_val)
@@ -1647,7 +1671,7 @@ class GXMVIEW:
         **Note:**
 
         The line name can be created by calling LineLabel_DB using
-        :attr:`geosoft.gxapi.DB_LINE_LABEL_FORMAT_LINK`. This insures that the label is
+        `DB_LINE_LABEL_FORMAT_LINK`. This insures that the label is
         created is the same way as used in the database.
         """
         self._wrapper.change_line_message(p2.encode())
@@ -1672,7 +1696,7 @@ class GXMVIEW:
 
         **Note:**
 
-        This method returns a cached object owned by the :class:`geosoft.gxapi.GXMVIEW` and will be destroyed automatically when the :class:`geosoft.gxapi.GXMVIEW` is disposed
+        This method returns a cached object owned by the `GXMVIEW` and will be destroyed automatically when the `GXMVIEW` is disposed
         """
         ret_val = self._wrapper.get_col_symbol(p2)
         return GXCSYMB(ret_val)
@@ -1682,7 +1706,7 @@ class GXMVIEW:
 
     def datalinkd(self, p2, p3):
         """
-        Add a Data Link Display (:class:`geosoft.gxapi.GXDATALINKD`) object to the view.
+        Add a Data Link Display (`GXDATALINKD`) object to the view.
         """
         self._wrapper.datalinkd(p2._wrapper, p3.encode())
         
@@ -1692,11 +1716,11 @@ class GXMVIEW:
 
     def get_datalinkd(self, p2):
         """
-        Get an existing Data Link Display (:class:`geosoft.gxapi.GXDATALINKD`) object from the view.
+        Get an existing Data Link Display (`GXDATALINKD`) object from the view.
 
         **Note:**
 
-        This method returns a cached object owned by the :class:`geosoft.gxapi.GXMVIEW` and will be destroyed automatically when the :class:`geosoft.gxapi.GXMVIEW` is disposed
+        This method returns a cached object owned by the `GXMVIEW` and will be destroyed automatically when the `GXMVIEW` is disposed
         """
         ret_val = self._wrapper.get_datalinkd(p2)
         return GXDATALINKD(ret_val)
@@ -1766,7 +1790,7 @@ class GXMVIEW:
 
     def voxd(self, p2, p3):
         """
-        Add a Voxel Display (:class:`geosoft.gxapi.GXVOXD`) object to the view.
+        Add a Voxel Display (`GXVOXD`) object to the view.
         """
         self._wrapper.voxd(p2._wrapper, p3.encode())
         
@@ -1776,11 +1800,11 @@ class GXMVIEW:
 
     def get_voxd(self, p2):
         """
-        Get an existing :class:`geosoft.gxapi.GXVOXD` object from the view.
+        Get an existing `GXVOXD` object from the view.
 
         **Note:**
 
-        This method returns a cached object owned by the :class:`geosoft.gxapi.GXMVIEW` and will be destroyed automatically when the :class:`geosoft.gxapi.GXMVIEW` is disposed
+        This method returns a cached object owned by the `GXMVIEW` and will be destroyed automatically when the `GXMVIEW` is disposed
         """
         ret_val = self._wrapper.get_voxd(p2)
         return GXVOXD(ret_val)
@@ -1794,7 +1818,7 @@ class GXMVIEW:
 
         **Note:**
 
-        This will result in a :class:`geosoft.gxapi.GXVECTOR3D` group object within the view
+        This will result in a `GXVECTOR3D` group object within the view
         """
         self._wrapper.draw_vector_voxel_vectors(p2._wrapper, p3.encode(), p4._wrapper, p5, p6, p7, p8, p9)
         
@@ -1804,11 +1828,11 @@ class GXMVIEW:
 
     def get_vector_3d(self, p2):
         """
-        Get an existing :class:`geosoft.gxapi.GXVECTOR3D` object from the view.
+        Get an existing `GXVECTOR3D` object from the view.
 
         **Note:**
 
-        This method returns a cached object owned by the :class:`geosoft.gxapi.GXMVIEW` and will be destroyed automatically when the :class:`geosoft.gxapi.GXMVIEW` is disposed
+        This method returns a cached object owned by the `GXMVIEW` and will be destroyed automatically when the `GXMVIEW` is disposed
         """
         ret_val = self._wrapper.get_vector_3d(p2)
         return GXVECTOR3D(ret_val)
@@ -1832,11 +1856,11 @@ class GXMVIEW:
 
     def set_group_itr(self, p2, p3):
         """
-        Set group :class:`geosoft.gxapi.GXITR`
+        Set group `GXITR`
 
         **Note:**
 
-        A group :class:`geosoft.gxapi.GXITR` associate a color distribution with mixed vector groups (e.g. Drillhole Lithology tubes) groups. Used by legend UI support in 3D.
+        A group `GXITR` associate a color distribution with mixed vector groups (e.g. Drillhole Lithology tubes) groups. Used by legend UI support in 3D.
         Note that modifying this information does not currently change the group contents and a group needs to be regenerated (e.g. with maker) 
         to refresh the objects.
         """
@@ -1848,11 +1872,11 @@ class GXMVIEW:
 
     def get_group_itr(self, p2):
         """
-        Get group :class:`geosoft.gxapi.GXITR`
+        Get group `GXITR`
 
         **Note:**
 
-        A group :class:`geosoft.gxapi.GXITR` associate a color distribution with mixed vector groups (e.g. Drillhole Lithology tubes) groups. Used by legend UI support in 3D.
+        A group `GXITR` associate a color distribution with mixed vector groups (e.g. Drillhole Lithology tubes) groups. Used by legend UI support in 3D.
         Note that modifying this information does not currently change the group contents and a group needs to be regenerated (e.g. with maker) 
         to refresh the objects.
         """
@@ -1864,11 +1888,11 @@ class GXMVIEW:
 
     def group_itr_exists(self, p2):
         """
-        Determine if group :class:`geosoft.gxapi.GXITR` exists.
+        Determine if group `GXITR` exists.
 
         **Note:**
 
-        A group :class:`geosoft.gxapi.GXITR` associate a color distribution with mixed vector groups (e.g. Drillhole Lithology tubes) groups. Used by legend UI support in 3D.
+        A group `GXITR` associate a color distribution with mixed vector groups (e.g. Drillhole Lithology tubes) groups. Used by legend UI support in 3D.
         Note that modifying this information does not currently change the group contents and a group needs to be regenerated (e.g. with maker) 
         to refresh the objects.
         """
@@ -1880,11 +1904,11 @@ class GXMVIEW:
 
     def delete_group_itr(self, p2):
         """
-        Deletes existing :class:`geosoft.gxapi.GXITR` associated with a group.
+        Deletes existing `GXITR` associated with a group.
 
         **Note:**
 
-        A group :class:`geosoft.gxapi.GXITR` associate a color distribution with mixed vector groups (e.g. Drillhole Lithology tubes) groups. Used by legend UI support in 3D.
+        A group `GXITR` associate a color distribution with mixed vector groups (e.g. Drillhole Lithology tubes) groups. Used by legend UI support in 3D.
         Note that modifying this information does not currently change the group contents and a group needs to be regenerated (e.g. with maker) 
         to refresh the objects.
         """
@@ -1896,11 +1920,11 @@ class GXMVIEW:
 
     def set_group_tpat(self, p2, p3):
         """
-        Set group :class:`geosoft.gxapi.GXTPAT`
+        Set group `GXTPAT`
 
         **Note:**
 
-        A group :class:`geosoft.gxapi.GXTPAT` associate a thematic color map with mixed vector groups (e.g. Drillhole Lithology tubes) groups. Used by legend UI support in 3D.
+        A group `GXTPAT` associate a thematic color map with mixed vector groups (e.g. Drillhole Lithology tubes) groups. Used by legend UI support in 3D.
         Note that modifying this information does not currently change the group contents and a group needs to be regenerated (e.g. with maker) 
         to refresh the objects.
         """
@@ -1912,11 +1936,11 @@ class GXMVIEW:
 
     def get_group_tpat(self, p2):
         """
-        Get group :class:`geosoft.gxapi.GXTPAT`
+        Get group `GXTPAT`
 
         **Note:**
 
-        A group :class:`geosoft.gxapi.GXTPAT` associate a thematic color map with mixed vector groups (e.g. Drillhole Lithology tubes) groups. Used by legend UI support in 3D.
+        A group `GXTPAT` associate a thematic color map with mixed vector groups (e.g. Drillhole Lithology tubes) groups. Used by legend UI support in 3D.
         Note that modifying this information does not currently change the group contents and a group needs to be regenerated (e.g. with maker) 
         to refresh the objects.
         """
@@ -1928,11 +1952,11 @@ class GXMVIEW:
 
     def group_tpat_exists(self, p2):
         """
-        Determine if group :class:`geosoft.gxapi.GXTPAT` exists.
+        Determine if group `GXTPAT` exists.
 
         **Note:**
 
-        A group :class:`geosoft.gxapi.GXTPAT` associate a thematic color map with mixed vector groups (e.g. Drillhole Lithology tubes) groups. Used by legend UI support in 3D.
+        A group `GXTPAT` associate a thematic color map with mixed vector groups (e.g. Drillhole Lithology tubes) groups. Used by legend UI support in 3D.
         Note that modifying this information does not currently change the group contents and a group needs to be regenerated (e.g. with maker) 
         to refresh the objects.
         """
@@ -1944,11 +1968,11 @@ class GXMVIEW:
 
     def delete_group_tpat(self, p2):
         """
-        Deletes existing :class:`geosoft.gxapi.GXTPAT` associated with a group.
+        Deletes existing `GXTPAT` associated with a group.
 
         **Note:**
 
-        A group :class:`geosoft.gxapi.GXTPAT` associate a thematic color map with mixed vector groups (e.g. Drillhole Lithology tubes) groups. Used by legend UI support in 3D.
+        A group `GXTPAT` associate a thematic color map with mixed vector groups (e.g. Drillhole Lithology tubes) groups. Used by legend UI support in 3D.
         Note that modifying this information does not currently change the group contents and a group needs to be regenerated (e.g. with maker) 
         to refresh the objects.
         """
@@ -1974,7 +1998,7 @@ class GXMVIEW:
 
     def read_group_storage(self, p2, p3):
         """
-        Reads existing generic storage associated with a group into an in-memory :class:`geosoft.gxapi.GXBF`.
+        Reads existing generic storage associated with a group into an in-memory `GXBF`.
 
         **Note:**
 
@@ -2100,14 +2124,14 @@ class GXMVIEW:
 
     def group_to_ply(self, p2, p3):
         """
-        Save all polygons in group into :class:`geosoft.gxapi.GXPLY` obj.
+        Save all polygons in group into `GXPLY` obj.
 
         **Note:**
 
         The coordinates will be in the working coordinate system
         of the view.  The SetWorkingIPJ_MVIEW method can be used
         to change the working coordinate system. This function will
-        return an empty :class:`geosoft.gxapi.GXPLY` if the group is hidden.
+        return an empty `GXPLY` if the group is hidden.
         """
         self._wrapper.group_to_ply(p2.encode(), p3._wrapper)
         
@@ -2184,7 +2208,7 @@ class GXMVIEW:
         **Note:**
 
         Views are always physically movable in the API, this
-        flag is for preventing accidental moving in the :class:`geosoft.gxapi.GXGUI`.
+        flag is for preventing accidental moving in the `GXGUI`.
         By default views are not movable.
         """
         ret_val = self._wrapper.is_movable()
@@ -2219,7 +2243,7 @@ class GXMVIEW:
 
         **Note:**
 
-        Views with lower numbers should render first, :attr:`geosoft.gxapi.iDUMMY` is undefined
+        Views with lower numbers should render first, `iDUMMY` is undefined
         """
         ret_val = self._wrapper.render_order()
         return ret_val
@@ -2348,7 +2372,7 @@ class GXMVIEW:
         **Note:**
 
         Views are always physically movable in the API, this
-        flag is for preventing accidental moving in the :class:`geosoft.gxapi.GXGUI`.
+        flag is for preventing accidental moving in the `GXGUI`.
         By default views are not movable.
         """
         self._wrapper.set_movability(p2)
@@ -2363,7 +2387,7 @@ class GXMVIEW:
 
         **Note:**
 
-        Views with lower numbers should render first, :attr:`geosoft.gxapi.iDUMMY` is undefined
+        Views with lower numbers should render first, `iDUMMY` is undefined
         """
         self._wrapper.set_render_order(p2)
         
@@ -2404,7 +2428,7 @@ class GXMVIEW:
 
     def get_group_guid(self, p2, p3):
         """
-        Gets a GUID of a group in the :class:`geosoft.gxapi.GXMVIEW`.
+        Gets a GUID of a group in the `GXMVIEW`.
 
         **Note:**
 
@@ -2440,6 +2464,10 @@ class GXMVIEW:
         the view.  The working coordinate system can be different than the view
         coordinate system, in which case the coordinates are re-projected to the
         view coordinate system before they are placed in the view.
+
+        .. seealso::
+
+            `mode_pj` to control use of the working projection.
         """
         self._wrapper.set_working_ipj(p2._wrapper)
         
@@ -2502,6 +2530,10 @@ class GXMVIEW:
         This controls how your coordinates and attributes will be interpreted.
         A working projection must be set useing SetWorkingIPJ_MVIEW for this
         method to have any effect.
+
+        .. seealso::
+
+            SetWorkingIPJ
         """
         self._wrapper.mode_pj(p2)
         
@@ -2515,8 +2547,8 @@ class GXMVIEW:
 
         **Note:**
 
-        North is calculated from the :class:`geosoft.gxapi.GXIPJ` North direction.
-        It will be :attr:`geosoft.gxapi.rDUMMY` if :class:`geosoft.gxapi.GXIPJ` is unknown.
+        North is calculated from the `GXIPJ` North direction.
+        It will be `rDUMMY` if `GXIPJ` is unknown.
         """
         ret_val = self._wrapper.north()
         return ret_val
@@ -2530,17 +2562,17 @@ class GXMVIEW:
 
         **Note:**
 
-        As of v5.1.8, this function also sets the User :class:`geosoft.gxapi.GXIPJ`,
+        As of v5.1.8, this function also sets the User `GXIPJ`,
         and automatically clears the WARP before doing so, so
         that instead of the following construction:
         
-        SetIPJ_MVIEW(View,hIPJ);
+        `set_ipj`(View,hIPJ);
         ClearWarp_IPJ(hIPJ);
-        SetUserIPJ_MVIEW(View,hIPJ);
+        `set_user_ipj`(View,hIPJ);
         
         you can simply use:
         
-        SetIPJ_MVIEW(View,hIPJ);
+        `set_ipj`(View,hIPJ);
         """
         self._wrapper.set_ipj(p2._wrapper)
         
@@ -2584,7 +2616,7 @@ class GXMVIEW:
 
     def get_group_freeze_scale(self, p2, p3):
         """
-        Get a scale freezing value for the group (:attr:`geosoft.gxapi.rDUMMY` for disabled).
+        Get a scale freezing value for the group (`rDUMMY` for disabled).
         """
         p3.value = self._wrapper.get_group_freeze_scale(p2, p3.value)
         
@@ -2594,7 +2626,7 @@ class GXMVIEW:
 
     def set_freeze_scale(self, p2):
         """
-        Set a scale freezing value into stream (:attr:`geosoft.gxapi.rDUMMY` for disabled).
+        Set a scale freezing value into stream (`rDUMMY` for disabled).
 
         **Note:**
 
@@ -2608,7 +2640,7 @@ class GXMVIEW:
 
     def set_group_freeze_scale(self, p2, p3):
         """
-        Set a scale freezing value for the group (:attr:`geosoft.gxapi.rDUMMY` for disabled).
+        Set a scale freezing value for the group (`rDUMMY` for disabled).
         """
         self._wrapper.set_group_freeze_scale(p2, p3)
         
@@ -2667,6 +2699,10 @@ class GXMVIEW:
         **Note:**
 
         All coordinates are in view units.
+
+        .. seealso::
+
+            rOptimumTick_MVIEW
         """
         self._wrapper.axis_x(p2, p3, p4, p5, p6, p7)
         
@@ -2681,6 +2717,10 @@ class GXMVIEW:
         **Note:**
 
         All coordinates are in view units.
+
+        .. seealso::
+
+            rOptimumTick_MVIEW
         """
         self._wrapper.axis_y(p2, p3, p4, p5, p6, p7)
         
@@ -2696,6 +2736,10 @@ class GXMVIEW:
 
         The grid will be drawn in the current window specified
         by the last SetWindow call.
+
+        .. seealso::
+
+            `axis_x`, `axis_y`, `optimum_tick`
         """
         self._wrapper.grid(p2, p3, p4, p5, p6)
         
@@ -2713,7 +2757,7 @@ class GXMVIEW:
         where a label is present. The label is drawn
         below the tick.
         
-        The incoming X :class:`geosoft.gxapi.GXVV` is used to define the place for
+        The incoming X `GXVV` is used to define the place for
         label.
         """
         self._wrapper.label_fid(p2._wrapper, p3, p4, p5, p6, p7)
@@ -2731,6 +2775,10 @@ class GXMVIEW:
         Label bounding will justify edge labels to be inside
         the bar limits. But bounding does not apply if
         labels are drawn vertically (top right or top left)
+
+        .. seealso::
+
+            `axis_x`, `axis_y`, `optimum_tick`
         """
         self._wrapper.label_x(p2, p3, p4, p5, p6, p7, p8)
         
@@ -2747,6 +2795,10 @@ class GXMVIEW:
         Label bounding will justify edge labels to be inside
         the bar limits. But bounding does not apply if
         labels are drawn vertically (top right or top left)
+
+        .. seealso::
+
+            `axis_x`, `axis_y`, `optimum_tick`
         """
         self._wrapper.label_y(p2, p3, p4, p5, p6, p7, p8)
         
@@ -2770,7 +2822,7 @@ class GXMVIEW:
     @classmethod
     def create(cls, p1, p2, p3):
         """
-        Create :class:`geosoft.gxapi.GXMVIEW`.
+        Create `GXMVIEW`.
 
         **Note:**
 
@@ -2797,7 +2849,7 @@ class GXMVIEW:
         the crooked feature, beginning at zero on the left, but the
         status bar will show the true (X, Y, Z) location.
         
-        If the scale is set to :attr:`geosoft.gxapi.rDUMMY`, then it will be calculated so that
+        If the scale is set to `rDUMMY`, then it will be calculated so that
         the points will all fit horizontally.
         """
         ret_val = gxapi_cy.WrapMVIEW.create_crooked_section(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3.encode(), p4, p5, p6, p7, p8, p9, p10, p11, p12._wrapper, p13._wrapper, p14._wrapper)
@@ -2812,11 +2864,11 @@ class GXMVIEW:
 
         **Note:**
 
-        This is the same as CreateCrookedSection_MVIEW, except that the
+        This is the same as `create_crooked_section`, except that the
         vertical axis plots a data value, not elevation, and allows for
         logarithmic scaling.
         
-        See Also: CreateCrookedSection_MVIEW.
+        See Also: `create_crooked_section`.
         """
         ret_val = gxapi_cy.WrapMVIEW.create_crooked_section_data_profile(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3.encode(), p4, p5, p6, p7, p8, p9, p10, p11, p12, p13._wrapper, p14._wrapper, p15._wrapper)
         return GXMVIEW(ret_val)
@@ -2835,13 +2887,13 @@ class GXMVIEW:
         The CLIP region is the current view window or the limits
         of the current clip polygon.
         
-        If :attr:`geosoft.gxapi.MVIEW_EXTENT_ALL` is requested and the view has no groups, the
+        If `MVIEW_EXTENT_ALL` is requested and the view has no groups, the
         clip extents are returned.
         
         If clip extents are requested and there are no clip extents, an
         area 0.0,0.0 1.0,1.0 is returned.
         
-        The :attr:`geosoft.gxapi.MVIEW_EXTENT_VISIBLE` flag will return the union of the :attr:`geosoft.gxapi.MVIEW_EXTENT_CLIP` area and the
+        The `MVIEW_EXTENT_VISIBLE` flag will return the union of the `MVIEW_EXTENT_CLIP` area and the
         extents of all non-masked visible groups in the view.
         """
         p4.value, p5.value, p6.value, p7.value = self._wrapper.extent(p2, p3, p4.value, p5.value, p6.value, p7.value)
@@ -2852,7 +2904,7 @@ class GXMVIEW:
 
     def get_map(self):
         """
-        Get the :class:`geosoft.gxapi.GXMAP` of the view.
+        Get the `GXMAP` of the view.
         """
         ret_val = self._wrapper.get_map()
         return GXMAP(ret_val)
@@ -2862,7 +2914,7 @@ class GXMVIEW:
 
     def get_reg(self):
         """
-        Get the :class:`geosoft.gxapi.GXREG` of the view.
+        Get the `GXREG` of the view.
         """
         ret_val = self._wrapper.get_reg()
         return GXREG(ret_val)
@@ -2882,7 +2934,7 @@ class GXMVIEW:
 
     def get_guid(self, p2):
         """
-        Gets the GUID of the :class:`geosoft.gxapi.GXMVIEW`.
+        Gets the GUID of the `GXMVIEW`.
 
         **Note:**
 
@@ -2918,7 +2970,7 @@ class GXMVIEW:
         redundant points from polylines and polygons.  Points
         that deviate from a straight line by less than the
         thinning resolution are removed.  This can significantly
-        reduce the size of a :class:`geosoft.gxapi.GXMAP` file.
+        reduce the size of a `GXMAP` file.
         We recommend that you set the thinning resolution to
         0.02 mm.
         
@@ -2954,6 +3006,10 @@ class GXMVIEW:
 
         X and Y scales will be redefined and units will remain unchanged.
         The final X and Y ranges (if changed) are returned.
+
+        .. seealso::
+
+            `fit_window`
         """
         p2.value, p3.value, p4.value, p5.value, p6.value, p7.value, p8.value, p9.value = self._wrapper.best_fit_window(p2.value, p3.value, p4.value, p5.value, p6.value, p7.value, p8.value, p9.value, p10)
         
@@ -2972,7 +3028,7 @@ class GXMVIEW:
         (such as changing a view location and size) to treat a 3D
         view just like a 2D view.
         
-        The FitMapWindow3D_MVIEW function allows you to
+        The `fit_map_window_3d` function allows you to
         locate and set the "apparent" 2D mapping of a 3D view on
         the map. An intial map window is established
         as specified on the map, and the view scaling is
@@ -2993,6 +3049,10 @@ class GXMVIEW:
 
         X and Y scales will be redefined and the units will be set to <unknown>.
         Coordinate ranges must be greater than 0.0.
+
+        .. seealso::
+
+            `set_window`
         """
         self._wrapper.fit_window(p2, p3, p4, p5, p6, p7, p8, p9)
         
@@ -3006,7 +3066,7 @@ class GXMVIEW:
 
         **Note:**
 
-        :class:`geosoft.gxapi.GXMVIEW` class names are intended to be used to record the
+        `GXMVIEW` class names are intended to be used to record the
         names of certain classes in the view, such as "Plane"
         for the default drawing plane.
         """
@@ -3132,6 +3192,10 @@ class GXMVIEW:
         The provided coordinates are converted to map mm
         using the current view translation and scaling.
         SetWindow is effectively called.
+
+        .. seealso::
+
+            `set_window`, `scale_window`, `tran_scale`
         """
         self._wrapper.scale_window(p2, p3, p4, p5, p6, p7, p8, p9)
         
@@ -3145,7 +3209,7 @@ class GXMVIEW:
 
         **Note:**
 
-        :class:`geosoft.gxapi.GXMVIEW` class names are intended to be used to record the
+        `GXMVIEW` class names are intended to be used to record the
         names of certain classes in the view, such as "Plane"
         for the default drawing plane.
         """
@@ -3163,6 +3227,10 @@ class GXMVIEW:
 
         The current clip region will be set to the clip
         window.
+
+        .. seealso::
+
+            `fit_window`, `scale_window`, `extent`.
         """
         self._wrapper.set_window(p2, p3, p4, p5, p6)
         
@@ -3177,7 +3245,7 @@ class GXMVIEW:
         **Note:**
 
         Warning. For reasons unknown (and maybe a bug), this
-        function resets the view :class:`geosoft.gxapi.GXIPJ` units. It is a good idea
+        function resets the view `GXIPJ` units. It is a good idea
         to call the SetUnits_IPJ function after calling this
         function in order to restore them. This will be addressed
         in v6.4.
@@ -3191,6 +3259,11 @@ class GXMVIEW:
     def user_to_view(self, p2, p3):
         """
         Convert a USERplot in mm to a VIEW coordinate
+
+        .. seealso::
+
+            `set_user_ipj`
+            `get_user_ipj`
         """
         p2.value, p3.value = self._wrapper.user_to_view(p2.value, p3.value)
         
@@ -3201,6 +3274,11 @@ class GXMVIEW:
     def view_to_user(self, p2, p3):
         """
         Convert a VIEW coordinate to a USER coordinate.
+
+        .. seealso::
+
+            `set_user_ipj`
+            `get_user_ipj`
         """
         p2.value, p3.value = self._wrapper.view_to_user(p2.value, p3.value)
         

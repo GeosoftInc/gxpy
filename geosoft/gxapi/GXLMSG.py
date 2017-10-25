@@ -36,17 +36,17 @@ class GXLMSG:
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of :class:`geosoft.gxapi.GXLMSG`
+        A null (undefined) instance of `GXLMSG`
         
-        :returns: A null :class:`geosoft.gxapi.GXLMSG`
+        :returns: A null `GXLMSG`
         """
         return cls()
 
     def is_null(self):
         """
-        Check if the instance of :class:`geosoft.gxapi.GXLMSG` is null (undefined)`
+        Check if the instance of `GXLMSG` is null (undefined)`
         
-        :returns: True if this is a null (undefined) instance of :class:`geosoft.gxapi.GXLMSG`, False otherwise.
+        :returns: True if this is a null (undefined) instance of `GXLMSG`, False otherwise.
         """
         return self._wrapper.handle == 0
 

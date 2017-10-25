@@ -18,7 +18,7 @@ class GXDXFI:
     """
     GXDXFI class.
 
-    The :class:`geosoft.gxapi.GXDXFI` class is used for importing AutoCAD® dxf files into Geosoft maps.
+    The `GXDXFI` class is used for importing AutoCAD® dxf files into Geosoft maps.
     """
 
     def __enter__(self):
@@ -36,17 +36,17 @@ class GXDXFI:
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of :class:`geosoft.gxapi.GXDXFI`
+        A null (undefined) instance of `GXDXFI`
         
-        :returns: A null :class:`geosoft.gxapi.GXDXFI`
+        :returns: A null `GXDXFI`
         """
         return cls()
 
     def is_null(self):
         """
-        Check if the instance of :class:`geosoft.gxapi.GXDXFI` is null (undefined)`
+        Check if the instance of `GXDXFI` is null (undefined)`
         
-        :returns: True if this is a null (undefined) instance of :class:`geosoft.gxapi.GXDXFI`, False otherwise.
+        :returns: True if this is a null (undefined) instance of `GXDXFI`, False otherwise.
         """
         return self._wrapper.handle == 0
 
@@ -60,7 +60,7 @@ class GXDXFI:
     @classmethod
     def create(cls, p1):
         """
-        Create :class:`geosoft.gxapi.GXDXFI`.
+        Create `GXDXFI`.
         """
         ret_val = gxapi_cy.WrapDXFI.create(GXContext._get_tls_geo(), p1.encode())
         return GXDXFI(ret_val)
@@ -72,7 +72,7 @@ class GXDXFI:
     @classmethod
     def dxf2_ply(cls, p1, p2):
         """
-        Convert a DXF file to a :class:`geosoft.gxapi.GXPLY` object
+        Convert a DXF file to a `GXPLY` object
         """
         gxapi_cy.WrapDXFI.dxf2_ply(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper)
         

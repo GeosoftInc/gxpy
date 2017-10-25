@@ -37,17 +37,17 @@ class GXE3DV:
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of :class:`geosoft.gxapi.GXE3DV`
+        A null (undefined) instance of `GXE3DV`
         
-        :returns: A null :class:`geosoft.gxapi.GXE3DV`
+        :returns: A null `GXE3DV`
         """
         return cls()
 
     def is_null(self):
         """
-        Check if the instance of :class:`geosoft.gxapi.GXE3DV` is null (undefined)`
+        Check if the instance of `GXE3DV` is null (undefined)`
         
-        :returns: True if this is a null (undefined) instance of :class:`geosoft.gxapi.GXE3DV`, False otherwise.
+        :returns: True if this is a null (undefined) instance of `GXE3DV`, False otherwise.
         """
         return self._wrapper.handle == 0
 
@@ -61,7 +61,7 @@ class GXE3DV:
 
     def get_data_view(self):
         """
-        Get the current data (3D) :class:`geosoft.gxapi.GXMVIEW`
+        Get the current data (3D) `GXMVIEW`
         """
         ret_val = self._wrapper.get_data_view()
         return GXMVIEW(ret_val)
@@ -71,7 +71,7 @@ class GXE3DV:
 
     def get_base_view(self):
         """
-        Get the current Base :class:`geosoft.gxapi.GXMVIEW` (used to draw 2D legends for groups)
+        Get the current Base `GXMVIEW` (used to draw 2D legends for groups)
         """
         ret_val = self._wrapper.get_base_view()
         return GXMVIEW(ret_val)

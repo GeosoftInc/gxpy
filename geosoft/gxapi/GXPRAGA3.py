@@ -18,7 +18,7 @@ class GXPRAGA3:
     """
     GXPRAGA3 class.
 
-    :class:`geosoft.gxapi.GXPRAGA3` application methods
+    `GXPRAGA3` application methods
 
     **Note:**
 
@@ -40,17 +40,17 @@ class GXPRAGA3:
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of :class:`geosoft.gxapi.GXPRAGA3`
+        A null (undefined) instance of `GXPRAGA3`
         
-        :returns: A null :class:`geosoft.gxapi.GXPRAGA3`
+        :returns: A null `GXPRAGA3`
         """
         return cls()
 
     def is_null(self):
         """
-        Check if the instance of :class:`geosoft.gxapi.GXPRAGA3` is null (undefined)`
+        Check if the instance of `GXPRAGA3` is null (undefined)`
         
-        :returns: True if this is a null (undefined) instance of :class:`geosoft.gxapi.GXPRAGA3`, False otherwise.
+        :returns: True if this is a null (undefined) instance of `GXPRAGA3`, False otherwise.
         """
         return self._wrapper.handle == 0
 

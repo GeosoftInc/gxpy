@@ -18,10 +18,10 @@ class GXST2:
     """
     GXST2 class.
 
-    Bi-variate statistics. The :class:`geosoft.gxapi.GXST2` class accumulates statistics
+    Bi-variate statistics. The `GXST2` class accumulates statistics
     on two data vectors simultaneously in order to compute correlation
-    information. Statistics are accumulated using the DataVV_ST2 function.
-    See also :class:`geosoft.gxapi.GXST` (mono-variate statistics).
+    information. Statistics are accumulated using the `data_vv` function.
+    See also `GXST` (mono-variate statistics).
     """
 
     def __enter__(self):
@@ -39,17 +39,17 @@ class GXST2:
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of :class:`geosoft.gxapi.GXST2`
+        A null (undefined) instance of `GXST2`
         
-        :returns: A null :class:`geosoft.gxapi.GXST2`
+        :returns: A null `GXST2`
         """
         return cls()
 
     def is_null(self):
         """
-        Check if the instance of :class:`geosoft.gxapi.GXST2` is null (undefined)`
+        Check if the instance of `GXST2` is null (undefined)`
         
-        :returns: True if this is a null (undefined) instance of :class:`geosoft.gxapi.GXST2`, False otherwise.
+        :returns: True if this is a null (undefined) instance of `GXST2`, False otherwise.
         """
         return self._wrapper.handle == 0
 
@@ -73,7 +73,7 @@ class GXST2:
 
     def data_vv(self, p2, p3):
         """
-        Add all the values in VVx and VVy to :class:`geosoft.gxapi.GXST2` object.
+        Add all the values in VVx and VVy to `GXST2` object.
         """
         self._wrapper.data_vv(p2._wrapper, p3._wrapper)
         
@@ -105,7 +105,7 @@ class GXST2:
 
     def get(self, p2):
         """
-        Gets correlation coeff. from the :class:`geosoft.gxapi.GXST2` object.
+        Gets correlation coeff. from the `GXST2` object.
         """
         ret_val = self._wrapper.get(p2)
         return ret_val

@@ -37,17 +37,17 @@ class GXEUL3:
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of :class:`geosoft.gxapi.GXEUL3`
+        A null (undefined) instance of `GXEUL3`
         
-        :returns: A null :class:`geosoft.gxapi.GXEUL3`
+        :returns: A null `GXEUL3`
         """
         return cls()
 
     def is_null(self):
         """
-        Check if the instance of :class:`geosoft.gxapi.GXEUL3` is null (undefined)`
+        Check if the instance of `GXEUL3` is null (undefined)`
         
-        :returns: True if this is a null (undefined) instance of :class:`geosoft.gxapi.GXEUL3`, False otherwise.
+        :returns: True if this is a null (undefined) instance of `GXEUL3`, False otherwise.
         """
         return self._wrapper.handle == 0
 
@@ -61,7 +61,7 @@ class GXEUL3:
 
     def destr(self):
         """
-        Destroys a :class:`geosoft.gxapi.GXEUL3` object.
+        Destroys a `GXEUL3` object.
         """
         self._wrapper.destr()
         
@@ -71,7 +71,7 @@ class GXEUL3:
     @classmethod
     def creat(cls, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11):
         """
-        Creates an :class:`geosoft.gxapi.GXEUL3` object.
+        Creates an `GXEUL3` object.
         """
         ret_val = gxapi_cy.WrapEUL3.creat(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3._wrapper, p4._wrapper, p5, p6, p7, p8, p9, p10, p11)
         return GXEUL3(ret_val)
@@ -81,7 +81,7 @@ class GXEUL3:
 
     def get_result(self, p2, p3):
         """
-        Get a result field :class:`geosoft.gxapi.GXVV` from :class:`geosoft.gxapi.GXEUL3` object
+        Get a result field `GXVV` from `GXEUL3` object
         """
         self._wrapper.get_result(p2._wrapper, p3)
         
@@ -91,7 +91,7 @@ class GXEUL3:
 
     def write(self, p2):
         """
-        Write the results of :class:`geosoft.gxapi.GXEUL3` object to output file.
+        Write the results of `GXEUL3` object to output file.
         """
         self._wrapper.write(p2.encode())
         

@@ -18,7 +18,7 @@ class GXPAT:
     """
     GXPAT class.
 
-    A :class:`geosoft.gxapi.GXPAT` object is created from a Geosoft format pattern file.
+    A `GXPAT` object is created from a Geosoft format pattern file.
     It contains all the individual patterns listed in the file.
     
     Notes: You may create your own fill patterns. They can be added to the "user.pat"
@@ -41,17 +41,17 @@ class GXPAT:
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of :class:`geosoft.gxapi.GXPAT`
+        A null (undefined) instance of `GXPAT`
         
-        :returns: A null :class:`geosoft.gxapi.GXPAT`
+        :returns: A null `GXPAT`
         """
         return cls()
 
     def is_null(self):
         """
-        Check if the instance of :class:`geosoft.gxapi.GXPAT` is null (undefined)`
+        Check if the instance of `GXPAT` is null (undefined)`
         
-        :returns: True if this is a null (undefined) instance of :class:`geosoft.gxapi.GXPAT`, False otherwise.
+        :returns: True if this is a null (undefined) instance of `GXPAT`, False otherwise.
         """
         return self._wrapper.handle == 0
 
@@ -77,7 +77,7 @@ class GXPAT:
 
     def get_lst(self, p2, p3):
         """
-        Copies all pattern names into a :class:`geosoft.gxapi.GXLST` object.
+        Copies all pattern names into a `GXLST` object.
 
         **Note:**
 

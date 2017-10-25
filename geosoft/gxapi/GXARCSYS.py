@@ -37,17 +37,17 @@ class GXARCSYS:
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of :class:`geosoft.gxapi.GXARCSYS`
+        A null (undefined) instance of `GXARCSYS`
         
-        :returns: A null :class:`geosoft.gxapi.GXARCSYS`
+        :returns: A null `GXARCSYS`
         """
         return cls()
 
     def is_null(self):
         """
-        Check if the instance of :class:`geosoft.gxapi.GXARCSYS` is null (undefined)`
+        Check if the instance of `GXARCSYS` is null (undefined)`
         
-        :returns: True if this is a null (undefined) instance of :class:`geosoft.gxapi.GXARCSYS`, False otherwise.
+        :returns: True if this is a null (undefined) instance of `GXARCSYS`, False otherwise.
         """
         return self._wrapper.handle == 0
 

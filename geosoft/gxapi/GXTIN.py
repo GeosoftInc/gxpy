@@ -18,10 +18,10 @@ class GXTIN:
     """
     GXTIN class.
 
-    The :class:`geosoft.gxapi.GXTIN` class calculates the Delaunay triangulation of the
+    The `GXTIN` class calculates the Delaunay triangulation of the
     positions in a database. This is the "best" set of triangles
     that can be formed from irregularly distributed points. The
-    serialized :class:`geosoft.gxapi.GXTIN` files can be used for gridding using the
+    serialized `GXTIN` files can be used for gridding using the
     Tin-based Nearest Neighbour Algorithm, or for plotting the
     Delaunay triangles or Voronoi cells to a map.
     """
@@ -41,17 +41,17 @@ class GXTIN:
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of :class:`geosoft.gxapi.GXTIN`
+        A null (undefined) instance of `GXTIN`
         
-        :returns: A null :class:`geosoft.gxapi.GXTIN`
+        :returns: A null `GXTIN`
         """
         return cls()
 
     def is_null(self):
         """
-        Check if the instance of :class:`geosoft.gxapi.GXTIN` is null (undefined)`
+        Check if the instance of `GXTIN` is null (undefined)`
         
-        :returns: True if this is a null (undefined) instance of :class:`geosoft.gxapi.GXTIN`, False otherwise.
+        :returns: True if this is a null (undefined) instance of `GXTIN`, False otherwise.
         """
         return self._wrapper.handle == 0
 
@@ -65,7 +65,7 @@ class GXTIN:
 
     def copy(self, p2):
         """
-        Copy :class:`geosoft.gxapi.GXTIN`
+        Copy `GXTIN`
         """
         self._wrapper.copy(p2._wrapper)
         
@@ -75,12 +75,12 @@ class GXTIN:
     @classmethod
     def create(cls, p1, p2, p3):
         """
-        This method creates a :class:`geosoft.gxapi.GXTIN` object.
+        This method creates a `GXTIN` object.
 
         **Note:**
 
-        CreateTIN does the :class:`geosoft.gxapi.GXTIN` calculation.
-        The Z values are not required, and a 0-length :class:`geosoft.gxapi.GXVV` can be used to indicate
+        CreateTIN does the `GXTIN` calculation.
+        The Z values are not required, and a 0-length `GXVV` can be used to indicate
         the values are not to be used.
         """
         ret_val = gxapi_cy.WrapTIN.create(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3._wrapper)
@@ -91,7 +91,7 @@ class GXTIN:
     @classmethod
     def create_s(cls, p1):
         """
-        Create :class:`geosoft.gxapi.GXTIN` from a serialized source
+        Create `GXTIN` from a serialized source
         """
         ret_val = gxapi_cy.WrapTIN.create_s(GXContext._get_tls_geo(), p1._wrapper)
         return GXTIN(ret_val)
@@ -103,7 +103,7 @@ class GXTIN:
     @classmethod
     def export_xml(cls, p1, p2, p3):
         """
-        Export a :class:`geosoft.gxapi.GXTIN` object as XML
+        Export a `GXTIN` object as XML
         """
         p2.value = gxapi_cy.WrapTIN.export_xml(GXContext._get_tls_geo(), p1.encode(), p2.value, p3.encode())
         
@@ -113,7 +113,7 @@ class GXTIN:
 
     def get_convex_hull(self, p2):
         """
-        Get the convex hull of the :class:`geosoft.gxapi.GXTIN`.
+        Get the convex hull of the `GXTIN`.
 
         **Note:**
 
@@ -138,20 +138,20 @@ class GXTIN:
 
     def get_joins(self, p2, p3, p4):
         """
-        Get joins from a :class:`geosoft.gxapi.GXTIN` mesh.
+        Get joins from a `GXTIN` mesh.
 
         **Note:**
 
         The join information is returned in three VVs.
         
-            - The joins :class:`geosoft.gxapi.GXVV` is a list off the adjacent nodes for
+            - The joins `GXVV` is a list off the adjacent nodes for
               each node, arranged for 1st node, 2nd node etc.
-            - The index :class:`geosoft.gxapi.GXVV` gives the starting index in the
-              joins :class:`geosoft.gxapi.GXVV` for the adjacent nodes to each node.
-            - The number :class:`geosoft.gxapi.GXVV` gives the number of adjacent nodes
+            - The index `GXVV` gives the starting index in the
+              joins `GXVV` for the adjacent nodes to each node.
+            - The number `GXVV` gives the number of adjacent nodes
               for each node.
         
-        All VVs must be type :attr:`geosoft.gxapi.GS_LONG`.
+        All VVs must be type `GS_LONG`.
         """
         self._wrapper.get_joins(p2._wrapper, p3._wrapper, p4._wrapper)
         
@@ -161,7 +161,7 @@ class GXTIN:
 
     def get_mesh(self, p2):
         """
-        Get lines from a :class:`geosoft.gxapi.GXTIN` mesh.
+        Get lines from a `GXTIN` mesh.
         """
         self._wrapper.get_mesh(p2._wrapper)
         
@@ -171,11 +171,11 @@ class GXTIN:
 
     def get_nodes(self, p2, p3, p4):
         """
-        Get the X,Y locations and Z values of the :class:`geosoft.gxapi.GXTIN` nodes.
+        Get the X,Y locations and Z values of the `GXTIN` nodes.
 
         **Note:**
 
-        If this is not a Z-valued :class:`geosoft.gxapi.GXTIN`, the Z values will
+        If this is not a Z-valued `GXTIN`, the Z values will
         be dummies.
         """
         self._wrapper.get_nodes(p2._wrapper, p3._wrapper, p4._wrapper)
@@ -216,7 +216,7 @@ class GXTIN:
 
     def is_z_valued(self):
         """
-        Does the :class:`geosoft.gxapi.GXTIN` contain Z values with each X,Y?
+        Does the `GXTIN` contain Z values with each X,Y?
         """
         ret_val = self._wrapper.is_z_valued()
         return ret_val
@@ -255,7 +255,7 @@ class GXTIN:
 
     def nodes(self):
         """
-        Returns the number of nodes in the :class:`geosoft.gxapi.GXTIN`
+        Returns the number of nodes in the `GXTIN`
         """
         ret_val = self._wrapper.nodes()
         return ret_val
@@ -269,11 +269,11 @@ class GXTIN:
 
         **Note:**
 
-        The :class:`geosoft.gxapi.GXTIN` have been created using max length = :attr:`geosoft.gxapi.rDUMMY` to
-        ensure that the :class:`geosoft.gxapi.GXTIN` has a convex hull (otherwise the
+        The `GXTIN` have been created using max length = `rDUMMY` to
+        ensure that the `GXTIN` has a convex hull (otherwise the
         routine that locates the triangle for a given location may fail).
-        The :class:`geosoft.gxapi.GXTIN` must also have been created using the Z values.
-        Values located outside the convex hull are set to :attr:`geosoft.gxapi.rDUMMY`.
+        The `GXTIN` must also have been created using the Z values.
+        Values located outside the convex hull are set to `rDUMMY`.
         The method is based on the following paper:
         
         Sambridge, M., Braun, J., and McQueen, H., 1995,
@@ -289,7 +289,7 @@ class GXTIN:
 
     def triangles(self):
         """
-        Returns the number of triangles in the :class:`geosoft.gxapi.GXTIN`.
+        Returns the number of triangles in the `GXTIN`.
         """
         ret_val = self._wrapper.triangles()
         return ret_val
@@ -303,13 +303,13 @@ class GXTIN:
 
         **Note:**
 
-        The :class:`geosoft.gxapi.GXTIN` have been created using max length = :attr:`geosoft.gxapi.rDUMMY` to
-        ensure that the :class:`geosoft.gxapi.GXTIN` has a convex hull (otherwise the
+        The `GXTIN` have been created using max length = `rDUMMY` to
+        ensure that the `GXTIN` has a convex hull (otherwise the
         routine that locates the triangle for a given location may fail).
-        The :class:`geosoft.gxapi.GXTIN` must also have been created using the Z values.
-        Values located outside the convex hull are set to :attr:`geosoft.gxapi.rDUMMY`.
+        The `GXTIN` must also have been created using the Z values.
+        Values located outside the convex hull are set to `rDUMMY`.
         
-        The values are set assuming that each :class:`geosoft.gxapi.GXTIN` triangle defines a
+        The values are set assuming that each `GXTIN` triangle defines a
         plane.
         """
         self._wrapper.linear_interp_vv(p2._wrapper, p3._wrapper, p4._wrapper)
@@ -324,11 +324,11 @@ class GXTIN:
 
         **Note:**
 
-        The :class:`geosoft.gxapi.GXTIN` have been created using max length = :attr:`geosoft.gxapi.rDUMMY` to
-        ensure that the :class:`geosoft.gxapi.GXTIN` has a convex hull (otherwise the
+        The `GXTIN` have been created using max length = `rDUMMY` to
+        ensure that the `GXTIN` has a convex hull (otherwise the
         routine that locates the triangle for a given location may fail).
-        The :class:`geosoft.gxapi.GXTIN` must also have been created using the Z values.
-        Values located outside the convex hull are set to :attr:`geosoft.gxapi.rDUMMY`.
+        The `GXTIN` must also have been created using the Z values.
+        Values located outside the convex hull are set to `rDUMMY`.
         
         Within each voronoi triangle, the Z value of node closest to the input
         X,Y location is returned.
@@ -346,7 +346,7 @@ class GXTIN:
         **Note:**
 
         The TINned range is the range of X and Y covered by
-        the :class:`geosoft.gxapi.GXTIN` triangles. It can thus be less than the full
+        the `GXTIN` triangles. It can thus be less than the full
         X and Y range of the nodes themselves, if a full
         convex hull is not calculated.
         """
@@ -358,7 +358,7 @@ class GXTIN:
 
     def serial(self, p2):
         """
-        Serialize :class:`geosoft.gxapi.GXTIN`
+        Serialize `GXTIN`
         """
         self._wrapper.serial(p2._wrapper)
         
