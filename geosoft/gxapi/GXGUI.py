@@ -999,11 +999,16 @@ class GXGUI:
         
         Returned Values (not set on input)
         
-        Size:    pattern tile size in mm.
-        Thick:   pattern line thickness in percent of the tile size.
-                 valid range is 0-100.
-        Density: Tile spacing. A value of 1 means tiles are laid with no overlap.
-                 A value of 2 means they overlap each other.
+        Size
+             pattern tile size in mm.
+        
+        Thick
+             pattern line thickness in percent of the tile size.
+             valid range is 0-100.
+        
+        Density
+             Tile spacing. A value of 1 means tiles are laid with no overlap.
+             A value of 2 means they overlap each other.
         
         The pattern Angle and Style parameters are not user-definable.
         """

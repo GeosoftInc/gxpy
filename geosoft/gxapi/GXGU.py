@@ -98,9 +98,8 @@ class GXGU:
         **Note:**
 
         Assumes that the database is new and empty. If not, existing channels
-        with names X, Y, Mag1, Mag2, Time, Date,
-        and Mark will deleted and then created.  Existing lines will
-        be erased and then created if they are the same as the new ones.
+        with names X, Y, Mag1, Mag2, Time, Date, and Mark will deleted and then created.  
+        Existing lines will be erased and then created if they are the same as the new ones.
         """
         gxapi_cy.WrapGU.geometrics2_db(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3._wrapper, p4, p5, p6, p7, p8, p9, p10, p11)
         
@@ -126,61 +125,65 @@ class GXGU:
 
         There are six cases to consider:
         
-        Case        Flag  Solutions      Symptons
-        -------     ----  -------------  -----------------------------
-        
+        ========    ====  =============  ========================================
+        Case        Flag  Solutions      Symptoms
+        ========    ====  =============  ========================================
         CASE 1A:    0     No correction  Recorded and actual Line lengths same
                                          Reading densities vary slightly (passed
                                          the tolerance test)
-        
-        CASE 1B:    -1    No correction  Line lengths same
+        --------    ----  -------------  ----------------------------------------
+        CASE 1B     -1    No correction  Line lengths same
                                          Reading densities vary and cannot
                                          pass the tolerance test
-        
-        CASE 2A:    1     Corrected by   Recorded line length too short
-                          extension      Possilble high readings in segment(s)
+        --------    ----  -------------  ----------------------------------------
+        CASE 2A     1     Corrected by   Recorded line length too short
+                          extension      Possible high readings in segment(s)
                                          Corrected (by extending) and actual
                                          lengths become the same
-        
-        CASE 2B:    2     Corrected by   Recorded line length too short
-                          interpolation  Possilble high readings in segment(s)
+        --------    ----  -------------  ----------------------------------------
+        CASE 2B     2     Corrected by   Recorded line length too short
+                          interpolation  Possible high readings in segment(s)
                                          Corrected (by extending) and actual
                                          lengths are not same. Interpolation is
                                          then applied
-        
-        CASE 3A:    1     Corrected by   Recorded line length too long
+        --------    ----  -------------  ----------------------------------------
+        CASE 3A     1     Corrected by   Recorded line length too long
                           shifting or    Possible low readings in segment(s)
                           (shrank)       Corrected (by shifting) and actual
                                          lengths are same
-        
-        CASE 3B:    2     Corrected by   Recorded line length too long
+        --------    ----  -------------  ----------------------------------------
+        CASE 3B     2     Corrected by   Recorded line length too long
                           interpolation  Possible low readings in segment(s)
                                          Corrected (by shifting) and actual
                                          lengths are not same. Interpolation
                                          is then applied
+        ========    ====  =============  ========================================
         
         
         TERMINOLOGY:
         
-        Segments:         A segment refers to the distance and its contents between
-                          two adjacent fiducial markers
+        Segments
+             A segment refers to the distance and its contents between
+             two adjacent fiducial markers
         
-        Normal Density:   The density (number of readings) shared by the segments in
-                          in a survey line.
-                          The number of segments with the density is greater than the
-                          number of segments having a different density in a line.
+        Normal Density
+             The density (number of readings) shared by the segments in
+             a survey line. The number of segments with the density is greater 
+             than the number of segments having a different density in a line.
         
         Tolerance and Bound:
-                          Tolerance is defined as a percentage, say 50% (=0.5).
-                          Based on the tolerance, a lower bound and upper bound
+             Tolerance is defined as a percentage, say ``50% (=0.5)``.
+             Based on the tolerance, a lower bound and upper bound
         
-                          can be defined:
+             can be defined:
         
-                          Lower bound = (Normal Density) - (Normal Density)*Tolerance
-                          Upper bound = (Normal Density) - (Normal Density)*Tolerance
+             ::
         
-                          Segments will pass the tolerance test if the number of readings
-                          falls within the Lower and Upper Bounds.
+                 Lower bound = (Normal Density) - (Normal Density)*Tolerance
+                 Upper bound = (Normal Density) - (Normal Density)*Tolerance
+        
+             Segments will pass the tolerance test if the number of readings
+             falls within the Lower and Upper Bounds.
         """
         gxapi_cy.WrapGU.geometrics_qc(GXContext._get_tls_geo(), p1._wrapper, p2.encode(), p3._wrapper, p4, p5, p6, p7._wrapper, p8._wrapper)
         
@@ -453,6 +456,7 @@ class GXGU:
         The output X and Y values are the same as the inputs,
         except if :attr:`geosoft.gxapi.PEAKEULER_XY_FIT` is selected. All other
         output values are set to dummy if:
+        
              a) The input X or Y is a dummy
              b) The derived window size is a dummy.
              c) The derived solution is outside the range

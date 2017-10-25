@@ -422,18 +422,21 @@ class GXMATH:
 
         **Note:**
 
-        Mode = 0 (regular log mode)
+        Mode = 0 (regular log mode) returns:
         
-        Returns:
-        Log10(Z)  for Z > minimum
-        Log10(minimum) for Z <= minimum
+        ::
         
-        Mode = 1 (log / linear / negative log mode)
+            Log10(Z)  for Z > minimum
+            Log10(minimum) for Z <= minimum
         
-        Returns:
-        minimum * ( log10( |Z| / minimum) + 1 )   for Z > minimum
-        Z for |Z| <= minimum   (the linear part of the range)
-        -minimum * ( log10( |Z| / minimum) + 1 )   for Z < -minimum
+        
+        Mode = 1 (log / linear / negative log mode) returns:
+        
+        ::
+        
+            minimum * ( log10( |Z| / minimum) + 1 )   for Z > minimum
+            Z for |Z| <= minimum   (the linear part of the range)
+            -minimum * ( log10( |Z| / minimum) + 1 )   for Z < -minimum
         """
         ret_val = gxapi_cy.WrapMATH.log_z_(GXContext._get_tls_geo(), p1, p2, p3)
         return ret_val

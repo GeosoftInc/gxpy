@@ -35,19 +35,16 @@ class GXEMAP:
     
     :class:`geosoft.gxapi.GXMAP` Redraw Rules:
     
-    1. Redraws only occur at the end of the proccess (GX or SCRIPT) not during.
-    You can safely call other GX's and the map will not redraw. If you need the
-    map to redraw immediately use Redraw_EMAP instead.
-    
-    2. If the final GX calls Cancel_SYS, the map redraw is not done. If you
-    need to force a redraw when the user hits cancel use the Redraw_EMAP function.
-    
-    3. You can set the redraw flag to :attr:`geosoft.gxapi.EMAP_REDRAW_YES` or :attr:`geosoft.gxapi.EMAP_REDRAW_NO` at any
-    time using SetRedrawFlag_EMAP. This flag will only be looked at, when
-    the last call to UnLock_EMAP occurs and is ignored on a Cancel_SYS.
-    
-    4. Redraw_EMAP only works if the current map is not locked. It will do nothing
-    if the map is locked.  Issue an UnLock_EMAP before using this function.
+        1. Redraws only occur at the end of the proccess (GX or SCRIPT) not during.
+           You can safely call other GX's and the map will not redraw. If you need the
+           map to redraw immediately use Redraw_EMAP instead.
+        2. If the final GX calls Cancel_SYS, the map redraw is not done. If you
+           need to force a redraw when the user hits cancel use the Redraw_EMAP function.
+        3. You can set the redraw flag to :attr:`geosoft.gxapi.EMAP_REDRAW_YES` or :attr:`geosoft.gxapi.EMAP_REDRAW_NO` at any
+            time using SetRedrawFlag_EMAP. This flag will only be looked at, when
+            the last call to UnLock_EMAP occurs and is ignored on a Cancel_SYS.
+        4. Redraw_EMAP only works if the current map is not locked. It will do nothing
+           if the map is locked.  Issue an UnLock_EMAP before using this function.
     
     
     VIRTUAL :class:`geosoft.gxapi.GXEMAP` SUPPORT
@@ -59,28 +56,24 @@ class GXEMAP:
     
     Supported methods on Virtual EMAPS are:
     
-    Current_EMAP
-    CurrentNoActivate_EMAP
-    MakeCurrent_EMAP
-    iHaveCurrent_EMAP
-    CurrentIfExists_EMAP
-    Current_MAP
-    
-    Lock_EMAP
-    UnLock_EMAP
-    iIsLocked_EMAP
-    
-    IGetName_EMAP
-    SetRedrawFlag_EMAP
-    Redraw_EMAP
-    
-    iLoaded_EMAP
-    Load_EMAP
-    LoadNoActivate_EMAP
-    UnLoadVerify_EMAP
-    UnLoad_EMAP
-    
-    CreateVirtual_EMAP
+        | Current_EMAP
+        | CurrentNoActivate_EMAP
+        | MakeCurrent_EMAP
+        | iHaveCurrent_EMAP
+        | CurrentIfExists_EMAP
+        | Current_MAP
+        | Lock_EMAP
+        | UnLock_EMAP
+        | iIsLocked_EMAP
+        | IGetName_EMAP
+        | SetRedrawFlag_EMAP
+        | Redraw_EMAP
+        | iLoaded_EMAP
+        | Load_EMAP
+        | LoadNoActivate_EMAP
+        | UnLoadVerify_EMAP
+        | UnLoad_EMAP
+        | CreateVirtual_EMAP
     """
 
     def __enter__(self):
@@ -162,12 +155,11 @@ class GXEMAP:
 
         Four objects are placed on the clipboard:
         
-        1. Georefernce Text
-        2. Bitmap of current window screen resolution
-        3. EMF of current window screen resolution
-        4. Entire map as a Geosoft View (go to view mode
-        and hit paste). The coordinates are placed
-        in the current view coordinates.
+            1. Georefernce Text
+            2. Bitmap of current window screen resolution
+            3. EMF of current window screen resolution
+            4. Entire map as a Geosoft View (go to view mode and hit paste). The coordinates are placed
+               in the current view coordinates.
         """
         self._wrapper.copy_to_clip()
         

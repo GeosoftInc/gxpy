@@ -363,6 +363,7 @@ class GXMVU:
         the forward model curves. This is useful for trouble-shooting
         or understanding why a certain inversion result was obtained.
         The earth model is a simple halfspace.
+        
         The forward model is plotted either as a function of
         resistivity at a single height, or as a function of height at
         a single resistivity. In either case, the relevant VVs must be
@@ -381,8 +382,8 @@ class GXMVU:
         **Note:**
 
         The lines, rectangles and polygons in the specified groups
-        will be exported to a Datamine coordinate string (*.dm) file.
-        The function attemps to duplicate the colors, etc. used.
+        will be exported to a Datamine coordinate string (``*.dm``) file.
+        The function attempts to duplicate the colors, etc. used.
         Complex polygon objects will be exported as independent
         single polygons.
         """

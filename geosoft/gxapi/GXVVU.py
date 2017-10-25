@@ -542,19 +542,22 @@ class GXVVU:
 
         **Note:**
 
-        Edge behaviour: Dummies at the ends are treated as follows
-        for various combinations of the inside and outside interpolation
-         choices:
+        Edge behaviour
+             Dummies at the ends are treated as follows
+             for various combinations of the inside and outside interpolation
+             choices:
+        
+        ::
         
           if ((iOutside==VV_INTERP_EDGE_NEAREST) ||
               (iOutside==VV_INTERP_EDGE_SAME && iInside==VV_INTERP_NEAREST))
         
-             // -- Set dummies to the same value as the last defined element
+               // -- Set dummies to the same value as the last defined element
         
           else if ((iOutside==VV_INTERP_EDGE_LINEAR) ||
                    (iOutside==VV_INTERP_EDGE_SAME &&  iInside==VV_INTERP_LINEAR))
         
-             // --- Set dummies using the slope of the last two defined elements
+               // --- Set dummies using the slope of the last two defined elements
         
           endif
         
@@ -767,13 +770,13 @@ class GXVVU:
         
         The algorithm:
         
-        1. Determine average distance between each point = D
-        2. Smoothing interval = MAX(2*D, Offset distance) = I
-        3. Thin input points to be at least the smoothing interval I apart from each other.
-        4. Smoothly re-interpolate the thinned points at five times the
-           original average distance D.
-        5. For each input point, calculate the bearing using the nearest points
-           on the smoothed curve
+            1. Determine average distance between each point = D
+            2. Smoothing interval = MAX(2*D, Offset distance) = I
+            3. Thin input points to be at least the smoothing interval I apart from each other.
+            4. Smoothly re-interpolate the thinned points at five times the
+               original average distance D.
+            5. For each input point, calculate the bearing using the nearest points
+               on the smoothed curve
         """
         gxapi_cy.WrapVVU.offset_correct(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3, p4, p5._wrapper, p6._wrapper)
         
@@ -829,13 +832,13 @@ class GXVVU:
         
         The algorithm:
         
-        1. Determine average distance between each point = D
-        2. Default smoothing interval = MAX(2*D, Offset distance) = I
-        3. Thin input points to be at least the smoothing interval I apart from each other.
-        4. Smoothly re-interpolate the thinned points at five times the
-        original average distance D.
-        5. For each input point, calculate the bearing using the nearest points
-        on the smoothed curve
+            1. Determine average distance between each point = D
+            2. Default smoothing interval = MAX(2*D, Offset distance) = I
+            3. Thin input points to be at least the smoothing interval I apart from each other.
+            4. Smoothly re-interpolate the thinned points at five times the
+               original average distance D.
+            5. For each input point, calculate the bearing using the nearest points
+               on the smoothed curve
         """
         gxapi_cy.WrapVVU.offset_correct_xyz(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3._wrapper, p4, p5, p6, p7, p8._wrapper, p9._wrapper, p10._wrapper)
         
@@ -1000,7 +1003,7 @@ class GXVVU:
     @classmethod
     def qc(cls, p1, p2, p3, p4, p5, p6, p7, p8):
         """
-        Qualit control on deviation of data from norm in a :class:`geosoft.gxapi.GXVV`
+        Quality control on deviation of data from norm in a :class:`geosoft.gxapi.GXVV`
 
         **Note:**
 
@@ -1008,19 +1011,27 @@ class GXVVU:
         two separate criteria. Each element of the output :class:`geosoft.gxapi.GXVV`
         will have one of the following indicators:
         
+        =========  ==============================================================
         Indicator  Meaning
-        ---------  --------
+        =========  ==============================================================
           0        Input data passed both tests
+        ---------  --------------------------------------------------------------
           1        The input data and is greater than the nominal value
                    plus maximum tolerance/deviation (Criterion #1)
+        ---------  --------------------------------------------------------------
           2        The input data over a specified distance is greater than the
-                           nominal value plus allowed tolerance (Criterion #2)
+                   nominal value plus allowed tolerance (Criterion #2)
+        ---------  --------------------------------------------------------------
           3        The input data failed on above two tests
+        ---------  --------------------------------------------------------------
          -1        The input data and is less than the nominal value
                    minus maximum tolerance (Criterion #1)
+        ---------  --------------------------------------------------------------
          -2        The input data over a specified distance is less than the
-                           nominal value minus allowed tolerance (Criterion #2)
+                   nominal value minus allowed tolerance (Criterion #2)
+        ---------  --------------------------------------------------------------
          -3        The input data failed on above two tests
+        =========  ==============================================================
         """
         gxapi_cy.WrapVVU.qc(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3._wrapper, p4, p5, p6, p7, p8)
         

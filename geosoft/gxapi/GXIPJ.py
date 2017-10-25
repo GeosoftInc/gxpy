@@ -515,21 +515,25 @@ class GXIPJ:
 
     def set_vcs(self, p2):
         """
-        Set the Verical Coordinate System in the :class:`geosoft.gxapi.GXIPJ` name string
+        Set the Vertical Coordinate System in the :class:`geosoft.gxapi.GXIPJ` name string
 
         **Note:**
 
         The vertical coordinate system (vcs) describes the datum used for vertical coordinates. The vcs name, if
-        			known, will appear in square brackets as part of the coordinate system name.
+        known, will appear in square brackets as part of the coordinate system name.
         
-        			Examples:
-                       "WGS 84 [geoid]"
-                       "WGS 84 / UTM zone 12S" - the vcs is not known.
-        			   "WGS 84 / UTM zone 12S [NAVD88]"
+        Examples:
         
-                    Valid inputs:
-                      "NAVD88"          - Clears existing vcs, if any, and sets the VCS name to "NAVD88".
-                      ""                - Clears the vcs
+        ::
+        
+            "WGS 84 [geoid]"
+            "WGS 84 / UTM zone 12S" - the vcs is not known.
+            "WGS 84 / UTM zone 12S [NAVD88]"
+        
+        Valid inputs:
+        
+             "NAVD88"          - Clears existing vcs, if any, and sets the VCS name to "NAVD88".
+             ""                - Clears the vcs
         """
         self._wrapper.set_vcs(p2.encode())
         
@@ -1039,18 +1043,29 @@ class GXIPJ:
         
         The coordinate system may also be oriented arbitrarily in 3D relative to
         the base coordinate system by specifying the orientation as a set of
-        6 comma-separated values between angled brackets after the coordinate system name:
+        6 comma-separated values between angled brackets after the coordinate 
+        system name, e.g:
         
-        "datum / projection"<oX,oY,oZ,rX,rY,rZ>
-        21037<oX,oY,oZ,rX,rY,rZ>
+        ::
+        
+             "datum / projection"<oX,oY,oZ,rX,rY,rZ>
+             21037<oX,oY,oZ,rX,rY,rZ>
         
         where:
+        
         oX,oY,oZ    is the location of the local origin on the CS
+        
         rX,rY,rZ    are rotations in degrees azimuth (clockwise) of
-        the local axis frame around the X, Y and Z axis
-        respectively.  A simple plane rotation will only have
-        a rotation around Z.  For example:
-        "Arc 1960 / UTM zone 37S"<525000,2500000,0,0,0,15>
+                    the local axis frame around the X, Y and Z axis
+                    respectively.  A simple plane rotation will only have
+                    a rotation around Z.  
+        
+        For example:
+        
+        ::
+        
+             "Arc 1960 / UTM zone 37S"<525000,2500000,0,0,0,15>
+        
         defines a local system with origin at (525000,2500000)
         with a rotation of 15 degrees azimuth.
         
@@ -1076,7 +1091,9 @@ class GXIPJ:
         For a non-EPSG datum, you can define your own datum parameters in the
         Datum stringfield as follows:
         
-        "*YourDatumName",major_axis,flattening(or eccentricity)[,prime_meridian]
+        ::
+        
+             "*YourDatumName",major_axis,flattening(or eccentricity)[,prime_meridian]
         
         where
         The * before "YourDatumName" indicates this is a non-EPSG name.
@@ -1093,17 +1110,22 @@ class GXIPJ:
         Projection names not defined in "transform.csv" can be defined in the
         "projection" string as follows:
         
-        method,length_units,P1,P2,...
+        ::
+        
+             method,length_units,P1,P2,...
         
         where:
         
-        "method" is a method from the table "transform_parameters.csv".
-        "length_units" is a "Unit_length" from units.csv.
-        P1 through P8 (or fewer) are the projection parameters for the method
-        as defined in "transform_parameters.csv", and in the order defined.
-        Parameters that are blank in "transform_parameters.csv" are omitted
-        from the list so that each method will have a minimum list of
-        parameters.
+            method
+                 is a method from the table "transform_parameters.csv".
+        
+            length_units
+                 is a "Unit_length" from units.csv.
+                 P1 through P8 (or fewer) are the projection parameters for the method
+                 as defined in "transform_parameters.csv", and in the order defined.
+                 Parameters that are blank in "transform_parameters.csv" are omitted
+                 from the list so that each method will have a minimum list of
+                 parameters.
         
         Angular parameters must always be degrees, and may be defined a
         decimal degree fromat, or "DEG.MM.SS.ssss".
@@ -1112,25 +1134,27 @@ class GXIPJ:
         
         Examples:
         
-        Geographic long,lat on datum "Arc 1960":
-        "4210","","","",""
-        "Arc 1960","","","",""
-        "","Arc 1960","","",""
+        ::
         
-        Projected Coordinate System, UTM zone 37S
-        "21037","","","",""
-        "","4210","16137","",""
-        ""Arc 1960 / UTM zone 37S"","","","",""
-        "",""Arc 1960"","UTM zone 37S","",""
-        "",""Arc 1960"","UTM zone 37S","m",""
-        "",""Arc 1960"","UTM zone 37S","m,1.0",""
-        "",""Arc 1960"","UTM zone 37S","m,1.0","");
-        "",""Arc 1960"","UTM zone 37S","m","Arc 1960 to WGS 84 (1)"
+            Geographic long,lat on datum "Arc 1960":
+            "4210","","","",""
+            "Arc 1960","","","",""
+            "","Arc 1960","","",""
         
-        Locally oriented coordinate system (origin at 525000,2500000, rotated 15 deg):
-        "21037<525000,2500000,0,0,0,15>","","","",""
-        "<525000,2500000,0,0,0,15>","4210","16137","",""
-        ""Arc 1960 / UTM zone 37S"<525000,2500000,0,0,0,15>","","","",""
+            Projected Coordinate System, UTM zone 37S
+            "21037","","","",""
+            "","4210","16137","",""
+            ""Arc 1960 / UTM zone 37S"","","","",""
+            "",""Arc 1960"","UTM zone 37S","",""
+            "",""Arc 1960"","UTM zone 37S","m",""
+            "",""Arc 1960"","UTM zone 37S","m,1.0",""
+            "",""Arc 1960"","UTM zone 37S","m,1.0","");
+            "",""Arc 1960"","UTM zone 37S","m","Arc 1960 to WGS 84 (1)"
+        
+            Locally oriented coordinate system (origin at 525000,2500000, rotated 15 deg):
+            "21037<525000,2500000,0,0,0,15>","","","",""
+            "<525000,2500000,0,0,0,15>","4210","16137","",""
+            ""Arc 1960 / UTM zone 37S"<525000,2500000,0,0,0,15>","","","",""
         """
         self._wrapper.set_gxf(p2.encode(), p3.encode(), p4.encode(), p5.encode(), p6.encode())
         

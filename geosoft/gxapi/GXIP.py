@@ -102,7 +102,7 @@ class GXIP:
         **Note:**
 
         Outputs a ``*.DAT`` file of the survey data for use in the
-        UBC 2D inversion programme IPINV2D.
+        UBC 2D inversion program IPINV2D.
         Include error channel output and version-specific formatting.
         """
         self._wrapper.export_ubcip3(p2._wrapper, p3.encode(), p4.encode(), p5.encode(), p6.encode(), p7.encode(), p8)
@@ -113,13 +113,13 @@ class GXIP:
     @classmethod
     def export_ubcip_control(cls, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12):
         """
-        Export a control file for using in the UBC IPINV2D programme.
+        Export a control file for using in the UBC IPINV2D program.
 
         **Note:**
 
         UBC Version 3 Control file.
         Outputs a control file for use in the
-        UBC 2D :class:`geosoft.gxapi.GXIP` inversion programme IPINV2D.
+        UBC 2D :class:`geosoft.gxapi.GXIP` inversion program IPINV2D.
         """
         gxapi_cy.WrapIP.export_ubcip_control(GXContext._get_tls_geo(), p1.encode(), p2, p3, p4, p5.encode(), p6.encode(), p7.encode(), p8.encode(), p9.encode(), p10.encode(), p11.encode(), p12.encode())
         
@@ -129,7 +129,7 @@ class GXIP:
     @classmethod
     def export_ubcip_control_v5(cls, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16):
         """
-        Export a control file for using in the UBC IPINV2D programme.
+        Export a control file for using in the UBC IPINV2D program.
 
         **Note:**
 
@@ -148,7 +148,7 @@ class GXIP:
         **Note:**
 
         Outputs a ``*.DAT`` file of the survey data for use in the
-        UBC 2D inversion programme DCINV2D.
+        UBC 2D inversion program DCINV2D.
         Voltage and current channels should be in units such that
         V/I gives volts/amp (or mV/mA).
         """
@@ -160,14 +160,13 @@ class GXIP:
     @classmethod
     def export_ubc_res_control(cls, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11):
         """
-        Export a control file for using in the UBC DCINV2D programme.
+        Export a control file for using in the UBC DCINV2D program.
 
         **Note:**
 
         UBC Version 3.
         Outputs a control file for use in the
-        UBC 2D resistivity inversion programme DCINV2D.
-        Superceded by ExportUBCResControl2_IP, which has a selection for output version number.
+        UBC 2D resistivity inversion program DCINV2D.
         """
         gxapi_cy.WrapIP.export_ubc_res_control(GXContext._get_tls_geo(), p1.encode(), p2, p3, p4, p5.encode(), p6.encode(), p7.encode(), p8.encode(), p9, p10.encode(), p11.encode())
         
@@ -177,13 +176,13 @@ class GXIP:
     @classmethod
     def export_ubc_res_control_v5(cls, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14):
         """
-        Export a control file for using in the UBC DCINV2D programme.
+        Export a control file for using in the UBC DCINV2D program.
 
         **Note:**
 
-        UBC Version 5
-        			  Outputs a control file for use in the
-        UBC 2D resistivity inversion programme DCINV2D.
+        UBC Version 5.
+        Outputs a control file for use in the
+        UBC 2D resistivity inversion program DCINV2D.
         """
         gxapi_cy.WrapIP.export_ubc_res_control_v5(GXContext._get_tls_geo(), p1.encode(), p2, p3, p4.encode(), p5.encode(), p6, p7.encode(), p8, p9.encode(), p10, p11.encode(), p12, p13.encode(), p14.encode())
         
@@ -198,7 +197,7 @@ class GXIP:
         **Note:**
 
         Outputs a ``*.DAT`` file of the survey data for use in the
-        UBC :class:`geosoft.gxapi.GXIP` 3D inversion programmes.
+        UBC :class:`geosoft.gxapi.GXIP` 3D inversion programs.
         """
         self._wrapper.export_data_to_ubc_3d(p2._wrapper, p3._wrapper, p4, p5, p6.encode(), p7.encode(), p8.encode(), p9, p10.encode(), p11.encode())
         
@@ -208,7 +207,7 @@ class GXIP:
     @classmethod
     def import_ubc2_dmod(cls, p1, p2):
         """
-        Import a MOD file from the UBC IPINV2D programme.
+        Import a MOD file from the UBC IPINV2D program.
 
         **Note:**
 
@@ -224,7 +223,7 @@ class GXIP:
     @classmethod
     def import_ubc2_dmsh(cls, p1, p2, p3, p4, p5):
         """
-        Import a MSH file from the UBC IPINV2D programme.
+        Import a MSH file from the UBC IPINV2D program.
 
         **Note:**
 
@@ -238,7 +237,7 @@ class GXIP:
     @classmethod
     def import_ubc2_d_topo(cls, p1, p2, p3, p4):
         """
-        Import a Topography file from the UBC IPINV2D programme.
+        Import a Topography file from the UBC IPINV2D program.
 
         **Note:**
 
@@ -817,15 +816,16 @@ class GXIP:
 
         This function recalculates "derived" channel values from
         "core" data.
-        1. Recalculates the "STN" and "N" channels, using the TX1,
-           TX2, RX1 and RX2 channels (depending on the system).
-        2. Recalculates the apparent resistivity "ResCalc",
-           average "IP_Avg" and metal factor "MF" channels
-        3. Recalculates the "X" and "Y" channels. One of these will
-           be equal to "STN", the other to the internally stored
-           line number for the current line.
-        4. Recalculate the "Z" channel, based on the current "Topo"
-           channel, and the "N" values.
+        
+            1. Recalculates the "STN" and "N" channels, using the TX1,
+               TX2, RX1 and RX2 channels (depending on the system).
+            2. Recalculates the apparent resistivity "ResCalc",
+               average "IP_Avg" and metal factor "MF" channels
+            3. Recalculates the "X" and "Y" channels. One of these will
+               be equal to "STN", the other to the internally stored
+               line number for the current line.
+            4. Recalculate the "Z" channel, based on the current "Topo"
+               channel, and the "N" values.
         
         Warning: If you make a change to an electrode location, you
         would have to call Recalculate_IP, then recalculate "Topo"

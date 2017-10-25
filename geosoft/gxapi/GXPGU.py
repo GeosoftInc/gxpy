@@ -525,7 +525,7 @@ class GXPGU:
         This is an "in-place" operation, and set up so that the input and
         output pagers may be the same handle. (If they are different, the
         input pager remains unchanged).
-        Pagers and VVs must be type REAL.
+        Pagers and VVs must be type :attr:`geosoft.gxapi.GS_DOUBLE`.
         """
         gxapi_cy.WrapPGU.invert_matrix(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper)
         
@@ -558,7 +558,7 @@ class GXPGU:
         of the matrix a
         The LU decomposition and the permutation vector are obtained
         from LUBackSub_PGU.
-        Pagers and VVs must be type REAL except for the permutation vector,
+        Pagers and VVs must be type :attr:`geosoft.gxapi.GS_DOUBLE` except for the permutation vector,
         which should be INT
         """
         gxapi_cy.WrapPGU.lu_back_sub(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3._wrapper, p4._wrapper)
@@ -582,7 +582,7 @@ class GXPGU:
         input pager remains unchanged).
         The LU decomposition, and the permutation vector are used for
         LUBackSub_PGU.
-        Pagers must be type REAL and the permutation vector type INT
+        Pagers must be type :attr:`geosoft.gxapi.GS_DOUBLE` and the permutation vector type INT
         """
         gxapi_cy.WrapPGU.lu_decomp(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3._wrapper)
         
@@ -618,8 +618,12 @@ class GXPGU:
         The matrix is input as an M rows (data) by N columns (variables) :class:`geosoft.gxapi.GXPG`.
         The vector must be of length N. The output :class:`geosoft.gxapi.GXVV` is set to length M.
         The :class:`geosoft.gxapi.GXPG` and VVs must be type :attr:`geosoft.gxapi.GS_DOUBLE`.
-        Terminates if: Matrices, :class:`geosoft.gxapi.GXVV` are not expected sizes (taken from U)
-                       PGs are not REAL.
+        
+        Terminates if: 
+        
+             Matrices, :class:`geosoft.gxapi.GXVV` are not expected sizes (taken from U)
+             PGs are not :attr:`geosoft.gxapi.GS_DOUBLE`.
+        
         Dummies are treated as 0 values.
         """
         gxapi_cy.WrapPGU.matrix_vector_mult(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3._wrapper)
@@ -635,15 +639,19 @@ class GXPGU:
         **Note:**
 
         The matrix is input as an N rows (data) by M columns (variables) :class:`geosoft.gxapi.GXPG`.
-        On return, the matrix is decomposed to A = U * W * Vt.
-        If M<N, then an error will be registered. In this case, augment the
-        "A" :class:`geosoft.gxapi.GXPG` with rows of zero values.
+        On return, the matrix is decomposed to A = U * W * Vt. If M<N, then an error will 
+        be registered. In this case, augment the "A" :class:`geosoft.gxapi.GXPG` with rows of zero values.
+        
         The input matrices must be A[M,N], U[M.N] and V[N,N]. The length of the W :class:`geosoft.gxapi.GXVV`
         is set by sSVD_PGU to N.
-        The Pagers must be type REAL.
-        Terminates if: U is not M by N. (Taken from size of A)
-                       V is not N by N. (Taken from #columns in A).
-                       PGs, :class:`geosoft.gxapi.GXVV` are not REAL
+        
+        The Pagers must be type :attr:`geosoft.gxapi.GS_DOUBLE`.
+        
+        Terminates if: 
+        
+             U is not M by N. (Taken from size of A)
+             V is not N by N. (Taken from #columns in A).
+             PGs, VV are not :attr:`geosoft.gxapi.GS_DOUBLE`
         """
         gxapi_cy.WrapPGU.sv_decompose(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3._wrapper, p4._wrapper)
         
@@ -664,9 +672,13 @@ class GXPGU:
         The input matrices must be A[M,N], U[M.N] and V[N,N]. The length of the W :class:`geosoft.gxapi.GXVV`
         is set by sSVDecompose_PGU to N.
         The Pagers must be type :attr:`geosoft.gxapi.GS_DOUBLE`.
-        Terminates if: U is not M by N. (Taken from size of A)
-                       V is not N by N. (Taken from #columns in A).
-                       PGs, :class:`geosoft.gxapi.GXVV` are not REAL.
+        
+        Terminates if: 
+        
+             U is not M by N. (Taken from size of A)
+             V is not N by N. (Taken from #columns in A).
+             PGs, VV are not :attr:`geosoft.gxapi.GS_DOUBLE`.
+        
         Dummies are treated as 0 values.
         """
         gxapi_cy.WrapPGU.sv_recompose(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3._wrapper, p4, p5._wrapper)
