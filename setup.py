@@ -58,7 +58,7 @@ else:
         shutil.copyfile('gxapi_cy.cp36-win_amd64.pyd', 'geosoft/gxapi/gxapi_cy.pyd')
         shutil.copyfile('gxapi_cy_extend.cp36-win_amd64.pyd', 'geosoft/gxapi/gxapi_cy_extend.pyd')
 
-key_file = path.join('geosoft', 'geosoft.key')
+key_file = path.join('geosoft', 'gxapi', 'geosoft.key')
 with open(key_file, 'w') as f:
     use_default_key = True
     for arg in sys.argv:
